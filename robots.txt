@@ -1,0 +1,33 @@
+# Robots.txt for Aimpro Digital
+# Generated for optimal SEO performance
+
+User-agent: *
+Allow: /
+
+# Allow important directories
+Allow: /wp-content/uploads/
+Allow: /wp-content/themes/aimpro/assets/
+
+# Disallow admin areas and unnecessary files
+Disallow: /wp-admin/
+Disallow: /wp-includes/
+Disallow: /wp-content/plugins/
+Disallow: /wp-content/cache/
+Disallow: /wp-content/themes/*/
+Allow: /wp-content/themes/aimpro/assets/
+
+# Disallow search and login pages
+Disallow: /search
+Disallow: /wp-login.php
+Disallow: /wp-register.php
+
+# Allow specific important files
+Allow: /wp-content/themes/aimpro/manifest.json
+Allow: /wp-content/themes/aimpro/assets/images/
+
+# Sitemap location (when available)
+Sitemap: http://aimpro.local/sitemap.xml
+Sitemap: http://aimpro.local/wp-sitemap.xml
+
+# Crawl delay for respectful crawling
+Crawl-delay: 1
