@@ -191,9 +191,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
         
         lastScroll = currentScroll;
-    });
-
-    // Animated Stats Counter
+    });    // Animated Stats Counter
     function animateStats() {
         const statNumbers = document.querySelectorAll('.stat-number');
         
@@ -201,12 +199,13 @@ document.addEventListener('DOMContentLoaded', function() {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     const target = entry.target;
-                    const finalNumber = parseInt(target.textContent.replace(/[^\d]/g, ''));
-                    const suffix = target.textContent.replace(/[\d]/g, '');
+                    const finalNumber = parseInt(target.getAttribute('data-count'));
+                    const currentText = target.textContent;
+                    const suffix = currentText.replace(/[\d]/g, ''); // Extract non-numeric characters
                     let currentNumber = 0;
-                    const increment = finalNumber / 100;
+                    const increment = finalNumber / 50; // Smoother animation
                     const duration = 2000; // 2 seconds
-                    const interval = duration / 100;
+                    const interval = duration / 50;
 
                     const counter = setInterval(() => {
                         currentNumber += increment;
@@ -221,7 +220,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     observer.unobserve(target);
                 }
             });
-        }, { threshold: 0.5 });
+        }, { threshold: 0.3 });
 
         statNumbers.forEach(stat => observer.observe(stat));
     }
@@ -444,6 +443,107 @@ document.addEventListener('DOMContentLoaded', function() {
             });
         }
     }
+
+    // Enhanced Intersection Observer for Animations
+    const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+    };
+
+    const animationObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+                
+                // Add staggered animation for card grids
+                if (entry.target.classList.contains('grid') || 
+                    entry.target.classList.contains('team-grid') ||
+                    entry.target.classList.contains('testimonials-grid') ||
+                    entry.target.classList.contains('blog-grid')) {
+                    
+                    const cards = entry.target.querySelectorAll('.service-card, .team-member, .testimonial-card, .blog-card');
+                    cards.forEach((card, index) => {
+                        setTimeout(() => {
+                            card.classList.add('visible');
+                        }, index * 100);
+                    });
+                }
+            }
+        });
+    }, observerOptions);
+
+    // Observe all animation elements
+    const animatedElements = document.querySelectorAll('.fade-in, .slide-up, .service-card, .team-member, .testimonial-card, .blog-card, .stat-item');
+    animatedElements.forEach(el => {
+        animationObserver.observe(el);
+    });
+
+    // Enhanced Form Handling (if forms exist)
+    const forms = document.querySelectorAll('form');
+    forms.forEach(form => {
+        form.addEventListener('submit', function(e) {
+            const submitBtn = form.querySelector('button[type="submit"], input[type="submit"]');
+            if (submitBtn) {
+                submitBtn.style.pointerEvents = 'none';
+                submitBtn.style.opacity = '0.7';
+                
+                // Re-enable after 3 seconds to prevent spam
+                setTimeout(() => {
+                    submitBtn.style.pointerEvents = 'auto';
+                    submitBtn.style.opacity = '1';
+                }, 3000);
+            }
+        });
+    });
+
+    // Enhanced Button Click Effects
+    document.querySelectorAll('.btn, .btn-primary, .btn-secondary, .btn-outline').forEach(button => {
+        button.addEventListener('click', function(e) {
+            // Create ripple effect
+            const ripple = document.createElement('span');
+            const rect = this.getBoundingClientRect();
+            const size = Math.max(rect.width, rect.height);
+            const x = e.clientX - rect.left - size / 2;
+            const y = e.clientY - rect.top - size / 2;
+            
+            ripple.style.cssText = `
+                position: absolute;
+                width: ${size}px;
+                height: ${size}px;
+                left: ${x}px;
+                top: ${y}px;
+                background: rgba(255, 255, 255, 0.3);
+                border-radius: 50%;
+                transform: scale(0);
+                animation: ripple 0.6s ease-out;
+                pointer-events: none;
+                z-index: 1;
+            `;
+            
+            this.appendChild(ripple);
+            
+            setTimeout(() => {
+                ripple.remove();
+            }, 600);
+        });
+    });
+
+    // CSS for ripple animation
+    const style = document.createElement('style');
+    style.textContent = `
+        @keyframes ripple {
+            to {
+                transform: scale(2);
+                opacity: 0;
+            }
+        }
+        
+        .btn, .btn-primary, .btn-secondary, .btn-outline {
+            position: relative;
+            overflow: hidden;
+        }
+    `;
+    document.head.appendChild(style);
 });
 
 // CSS Animations for Ripple Effect

@@ -56,8 +56,9 @@
 
 <!-- Hero Section -->
 <section id="home" class="hero-section">
-    <div class="hero-background"></div>
-    <div class="container">        <div class="hero-content">            <h1>Get More Leads & More Customers With <span class="highlight curly-underline">PRECISION</span> Digital <span class="highlight-word">Magic</span>.</h1>
+    <div class="hero-background parallax-bg"></div>    <div class="container">
+        <div class="hero-content">
+            <h1>Get More Leads & More Customers With <span class="highlight curly-underline">PRECISION</span> Digital <span class="highlight-word">Magic</span>.</h1>
             <div class="curly-underline-accent"></div>
             <p class="hero-subtitle">Lead Generation, SEO, PPC, Website, AI Marketing and Automation. Drive <strong class="highlight-underline">REAL RESULTS</strong> and boost your revenue with strategies that actually <strong class="highlight-word">work</strong>.</p>
             <div class="hero-ctas">
@@ -74,7 +75,7 @@
 <!-- Service Tags Strip -->
 <section class="service-tags-strip">
     <div class="container">
-        <div class="tags-wrapper">
+        <div class="tags-wrapper slide-up">
             <div class="tag">SEO</div>
             <div class="tag">Google Ads</div>
             <div class="tag">Social Media</div>
@@ -101,77 +102,65 @@
 
 <!-- Stats Counter -->
 <section class="stats-section">
-    <div class="container">
-        <div class="stats-grid">
-            <div class="stat-item">
+    <div class="container">        <div class="stats-grid">
+            <div class="stat-item counter">
                 <div class="stat-number" data-count="25">0</div>
                 <div class="stat-label">Years of Experience</div>
             </div>
-            <div class="stat-item">
-                <div class="stat-number" data-count="98">0</div>
-                <div class="stat-label">% Increase in Client Leads</div>
+            <div class="stat-item counter">
+                <div class="stat-number" data-count="98">0%</div>
+                <div class="stat-label">Increase in Client Leads</div>
             </div>
-            <div class="stat-item">
-                <div class="stat-number" data-count="15">0</div>
-                <div class="stat-label">+ Industries Transformed</div>
+            <div class="stat-item counter">
+                <div class="stat-number" data-count="15">0+</div>
+                <div class="stat-label">Industries Transformed</div>
             </div>
-            <div class="stat-item">
-                <div class="stat-number" data-count="199">0</div>
-                <div class="stat-label">% Increase in Conversion Rates</div>
+            <div class="stat-item counter">
+                <div class="stat-number" data-count="199">0%</div>
+                <div class="stat-label">Increase in Conversion Rates</div>
             </div>
-        </div>    </div>
-</section>
-
-<!-- Reusable CTA Section -->
-<section class="section-cta">
-    <div class="container">
-        <h2>You Bring the Ambition, We Drive the <span class="highlight-underline">Results</span></h2>
-        <p>Request a free review. We'll send you a strategy breakdown within 24 hours.</p>
-        <div class="cta-buttons">
-            <a href="#contact" class="btn-primary">Get Free Marketing Review</a>
-            <a href="tel:01212858490" class="btn-ghost">Call 0121 285 8490</a>
         </div>
     </div>
 </section>
 
 <!-- Service Overview Grid -->
 <section id="services" class="services-grid">
-    <div class="container">
-        <h2>Digital Marketing Services That <span class="highlight curly-underline">DELIVER</span></h2>
-        <div class="curly-underline-accent"></div>
-        <p class="section-subtitle">No fluff. Just results. Our multi-channel marketing services integrate to make marketing magic happen.</p>
+    <div class="container">        <div class="content-center">
+            <h2>Digital Marketing Services That <span class="highlight curly-underline">DELIVER</span></h2>
+            <p class="section-subtitle">No fluff. Just results. Our multi-channel marketing services integrate to make marketing magic happen.</p>
+        </div>
         <div class="grid">
-            <div class="service-card">
+            <div class="service-card slide-up">
                 <div class="service-icon">🎯</div>
                 <h3>Lead Generation</h3>
                 <p>Generate high-quality leads with targeted campaigns that convert prospects into customers using advanced data analytics and proven strategies.</p>
                 <a href="#contact" class="service-cta">GET MORE LEADS →</a>
             </div>
-            <div class="service-card">
+            <div class="service-card slide-up">
                 <div class="service-icon">📊</div>
                 <h3>Google Ads Management</h3>
                 <p>Maximize your ROI with expertly managed Google Ads campaigns that target the right audience at the right time with precision targeting.</p>
                 <a href="#contact" class="service-cta">BOOST YOUR ROI →</a>
             </div>
-            <div class="service-card">
+            <div class="service-card slide-up">
                 <div class="service-icon">🌐</div>
                 <h3>Website Design</h3>
                 <p>Create stunning, conversion-focused websites that not only look great but drive results and provide exceptional user experiences.</p>
                 <a href="#contact" class="service-cta">BUILD BETTER WEBSITE →</a>
             </div>
-            <div class="service-card">
+            <div class="service-card slide-up">
                 <div class="service-icon">📱</div>
                 <h3>Social Media Ads</h3>
                 <p>Reach your target audience on social platforms with compelling ad campaigns that drive engagement and conversions across all channels.</p>
                 <a href="#contact" class="service-cta">SCALE YOUR REACH →</a>
             </div>
-            <div class="service-card">
+            <div class="service-card slide-up">
                 <div class="service-icon">🤖</div>
                 <h3>AI Powered CRM</h3>
                 <p>Streamline your customer relationships with intelligent CRM systems that automate processes and provide valuable insights.</p>
                 <a href="#contact" class="service-cta">AUTOMATE YOUR CRM →</a>
             </div>
-            <div class="service-card">
+            <div class="service-card slide-up">
                 <div class="service-icon">⚡</div>
                 <h3>Marketing Automation</h3>
                 <p>Automate your marketing workflows to nurture leads, retain customers, and scale your business efficiently with smart automation.</p>
@@ -186,11 +175,11 @@
 
 <!-- Team Section -->
 <section id="about" class="team-section">
-    <div class="container">
-        <h2>Meet The Experts Who Make <span class="highlight curly-underline">MAGIC</span> Happen</h2>
-        <div class="curly-underline-accent"></div>
-        <p class="section-subtitle">Not all experts wear masks. Our marketing specialists love talking with clients. We're always hands-on, delivering results for businesses like yours.</p>
-        <div class="team-grid">            <div class="team-member">
+    <div class="container">        <div class="content-center">
+            <h2>Meet The Experts Who Make <span class="highlight curly-underline">MAGIC</span> Happen</h2>
+            <p class="section-subtitle">Not all experts wear masks. Our marketing specialists love talking with clients. We're always hands-on, delivering results for businesses like yours.</p>
+        </div>
+        <div class="team-grid"><div class="team-member">
                 <div class="member-photo">
                     <img src="<?php echo get_template_directory_uri(); ?>/assets/images/ajay-dhunna.svg" alt="Ajay Dhunna" />
                 </div>
@@ -221,11 +210,12 @@
 <!-- Testimonials Section -->
 <section class="testimonials-section">
     <div class="container">
-        <h2>Don't Just Take Our Word for It</h2>
-        <div class="curly-underline-accent"></div>
-        <p class="section-subtitle">Here's what our awesome clients have to say about working with us:</p>
-        <div class="testimonials-grid">
-            <div class="testimonial-card">
+        <div class="content-center">
+            <h2>Don't Just Take Our Word for It</h2>
+            <div class="curly-underline-accent"></div>
+            <p class="section-subtitle">Here's what our awesome clients have to say about working with us:</p>
+        </div><div class="testimonials-grid">
+            <div class="testimonial-card slide-up">
                 <div class="testimonial-content">
                     <p>"Honestly, if you have a business that relies on your website to bring in business, don't waste your time on any other company. From my experience, I have gained approximately 50% increase in qualified leads."</p>
                 </div>
@@ -234,7 +224,7 @@
                     <span>Marketing Director</span>
                 </div>
             </div>
-            <div class="testimonial-card">
+            <div class="testimonial-card slide-up">
                 <div class="testimonial-content">
                     <p>"No negatives at all. One of the best companies we have ever worked with. So dynamic and on trend. Incredibly proactive in everything they do and the bonus is that they are such lovely people to work with."</p>
                 </div>
@@ -253,9 +243,11 @@
 <!-- Latest Blogs -->
 <section class="blog-section">
     <div class="container">
-        <h2>Scale Up Your <span class="highlight curly-underline">MARKETING</span></h2>
-        <div class="curly-underline-accent"></div>
-        <p class="section-subtitle">No secrets here. We share what we know so marketers like you can increase your leads, traffic and sales.</p>
+        <div class="content-center">
+            <h2>Scale Up Your <span class="highlight curly-underline">MARKETING</span></h2>
+            <div class="curly-underline-accent"></div>
+            <p class="section-subtitle">No secrets here. We share what we know so marketers like you can increase your leads, traffic and sales.</p>
+        </div>
         <div class="blog-grid">
             <?php
             $recent_posts = wp_get_recent_posts(array(
@@ -268,7 +260,7 @@
                 $categories = get_the_category($post['ID']);
                 $category_name = !empty($categories) ? $categories[0]->name : 'Uncategorized';
                 ?>
-                <article class="blog-card">                    <div class="blog-meta">
+                <article class="blog-card slide-up">                    <div class="blog-meta">
                         <span class="blog-date"><?php echo get_the_date('M j, Y', $post['ID']); ?></span>
                         <span class="blog-category"><?php echo $category_name; ?></span>
                     </div>
@@ -373,8 +365,7 @@ document.addEventListener('DOMContentLoaded', function() {
     if (statsSection) {
         observer.observe(statsSection);
     }
-    
-    // Smooth scrolling for navigation links
+      // Smooth scrolling for navigation links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
             e.preventDefault();
@@ -386,6 +377,24 @@ document.addEventListener('DOMContentLoaded', function() {
                 });
             }
         });
+    });
+    
+    // Animation intersection observer
+    const animatedElements = document.querySelectorAll('.slide-up, .fade-in');
+    const animationObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+                animationObserver.unobserve(entry.target);
+            }
+        });
+    }, {
+        threshold: 0.1,
+        rootMargin: '50px'
+    });
+    
+    animatedElements.forEach(element => {
+        animationObserver.observe(element);
     });
       // Mobile menu toggle
     const mobileToggle = document.querySelector('.mobile-menu-toggle');
