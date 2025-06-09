@@ -1,0 +1,68 @@
+{
+  "name": "Aimpro Digital - Premier Digital Marketing Agency",
+  "short_name": "Aimpro Digital",
+  "description": "Transform your business with data-driven digital marketing strategies. Expert SEO, PPC, social media marketing, and web development services.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#FFD700",
+  "orientation": "portrait-primary",
+  "categories": ["business", "marketing", "productivity"],
+  "lang": "en-US",
+  "icons": [
+    {
+      "src": "/wp-content/themes/aimpro/assets/images/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/wp-content/themes/aimpro/assets/images/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "/wp-content/themes/aimpro/assets/images/screenshot-desktop.png",
+      "sizes": "1280x720",
+      "type": "image/png",
+      "form_factor": "wide",
+      "label": "Aimpro Digital Homepage on Desktop"
+    },
+    {
+      "src": "/wp-content/themes/aimpro/assets/images/screenshot-mobile.png",
+      "sizes": "750x1334",
+      "type": "image/png",
+      "form_factor": "narrow",
+      "label": "Aimpro Digital Homepage on Mobile"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Get Free Audit",
+      "short_name": "Free Audit",
+      "description": "Get a free marketing audit for your business",
+      "url": "/#contact",
+      "icons": [
+        {
+          "src": "/wp-content/themes/aimpro/assets/images/audit-icon.png",
+          "sizes": "96x96"
+        }
+      ]
+    },
+    {
+      "name": "Our Services",
+      "short_name": "Services",
+      "description": "View our digital marketing services",
+      "url": "/#services",
+      "icons": [
+        {
+          "src": "/wp-content/themes/aimpro/assets/images/services-icon.png",
+          "sizes": "96x96"
+        }
+      ]
+    }
+  ]
+}
