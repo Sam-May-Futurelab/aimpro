@@ -66,41 +66,47 @@
 
 <!-- Hero Section -->
 <section id="home" class="hero-section premium-hero">
-    <div class="hero-background parallax-bg"></div>    <!-- Floating Elements -->
+    <div class="hero-background"></div>
+    <!-- Floating Elements -->
     <div class="floating-elements">
         <div class="floating-shape shape-1"></div>
         <div class="floating-shape shape-2"></div>
-    </div>
-    <div class="container">
-        <div class="hero-content">
-            <div class="hero-badge slide-up-delay-1">
-                <span class="badge-icon">🚀</span>
-                <span>Award-Winning Digital Agency</span>
+    </div>    <div class="container">
+        <div class="hero-wrapper">
+            <div class="hero-content">
+                <div class="hero-badge slide-up-delay-1">
+                    <span class="badge-icon">🚀</span>
+                    <span>Award-Winning Digital Agency</span>
+                </div>
+                <h1 class="hero-title">Get More Leads & More Customers With <span class="highlight curly-underline">PRECISION</span> Digital <span class="highlight-word">Marketing</span>.</h1>
+                <p class="hero-subtitle">Lead Generation, SEO, PPC, Website, AI Marketing and Automation. Drive <strong class="highlight-underline">REAL RESULTS</strong> and boost your revenue with strategies that actually <strong class="highlight-word">work</strong>.</p>
+                <div class="hero-ctas">
+                    <a href="#contact" class="btn-primary large shine-effect pulse-animation">GET FREE MARKETING REVIEW</a>
+                    <a href="tel:+441212858490" class="btn-secondary large premium-hover">
+                        <span class="phone-icon">📞</span>
+                        CALL NOW: 0121 285 8490
+                    </a>
+                </div>
+                <!-- Trust Indicators -->
+                <div class="trust-indicators">
+                    <div class="trust-item">
+                        <span class="trust-icon">⭐</span>
+                        <span>5.0 Rating</span>
+                    </div>
+                    <div class="trust-item">
+                        <span class="trust-icon">🏆</span>
+                        <span>Award Winning</span>
+                    </div>                    <div class="trust-item">
+                        <span class="trust-icon">✅</span>
+                        <span>Guaranteed Results</span>
+                    </div>
+                </div>
             </div>
-            <h1 class="hero-title">Get More Leads & More Customers With <span class="highlight curly-underline">PRECISION</span> Digital <span class="highlight-word">Magic</span>.</h1>
-            <p class="hero-subtitle">Lead Generation, SEO, PPC, Website, AI Marketing and Automation. Drive <strong class="highlight-underline">REAL RESULTS</strong> and boost your revenue with strategies that actually <strong class="highlight-word">work</strong>.</p>
-            <div class="hero-ctas">
-                <a href="#contact" class="btn-primary large shine-effect pulse-animation">GET FREE MARKETING REVIEW</a>
-                <a href="tel:+441212858490" class="btn-secondary large premium-hover">
-                    <span class="phone-icon">📞</span>
-                    CALL NOW: 0121 285 8490
-                </a>
+            <!-- Lottie Animation Container -->
+            <div class="hero-animation">
+                <div id="lottie-hero-animation"></div>
             </div>
-            <!-- Trust Indicators -->
-            <div class="trust-indicators">
-                <div class="trust-item">
-                    <span class="trust-icon">⭐</span>
-                    <span>5.0 Rating</span>
-                </div>
-                <div class="trust-item">
-                    <span class="trust-icon">🏆</span>
-                    <span>Award Winning</span>
-                </div>
-                <div class="trust-item">
-                    <span class="trust-icon">✅</span>
-                    <span>Guaranteed Results</span>
-                </div>
-            </div>        </div>
+        </div>
     </div>
 </section>
 
@@ -682,20 +688,10 @@ document.addEventListener('DOMContentLoaded', function() {    // Stats counter a
     const loadAnimatedElements = document.querySelectorAll('.service-card, .team-member, .testimonial-card, .blog-card');
     loadAnimatedElements.forEach((el, index) => {
         el.style.animationDelay = `${index * 0.1}s`;
-    });
+    });    // GSAP Premium Animations
+    gsap.registerPlugin(ScrollTrigger);
 
-    // GSAP Premium Animations
-    gsap.registerPlugin(ScrollTrigger);    // Hero parallax effect (simplified)
-    gsap.to('.hero-background', {
-        yPercent: -30,
-        ease: "none",
-        scrollTrigger: {
-            trigger: '.hero-section',
-            start: "top bottom",
-            end: "bottom top",
-            scrub: 1
-        }
-    });// Floating elements animation (simplified)
+    // Floating elements animation (simplified)
     gsap.to('.floating-shape', {
         y: "random(-30, 30)",
         x: "random(-20, 20)",

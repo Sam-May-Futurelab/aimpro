@@ -543,7 +543,50 @@ document.addEventListener('DOMContentLoaded', function() {
             overflow: hidden;
         }
     `;
-    document.head.appendChild(style);
+    document.head.appendChild(style);    // Initialize Lottie Hero Animation
+    function initLottieHeroAnimation() {
+        const container = document.getElementById('lottie-hero-animation');
+        if (container && typeof lottie !== 'undefined') {
+            // Add loading class
+            container.classList.add('loading');
+            
+            try {
+                // Load and play the hero animation
+                const animation = lottie.loadAnimation({
+                    container: container,
+                    renderer: 'svg',
+                    loop: true,
+                    autoplay: true,
+                    path: aimpro_data.theme_url + '/assets/images/hero.json'
+                });
+                
+                // Handle successful load
+                animation.addEventListener('DOMLoaded', function() {
+                    container.classList.remove('loading');
+                    console.log('Lottie hero animation loaded successfully');
+                });
+                
+                // Handle error
+                animation.addEventListener('error', function(error) {
+                    container.classList.remove('loading');
+                    console.warn('Lottie animation failed to load:', error);
+                });
+                
+            } catch (error) {
+                container.classList.remove('loading');
+                console.warn('Failed to initialize Lottie animation:', error);
+            }
+        } else if (container) {
+            console.warn('Lottie library not available or container not found');
+        }
+    }
+    
+    // Initialize Lottie animation after DOM is ready
+    initLottieHeroAnimation();
+    
+    // Re-initialize if needed (for dynamic content)
+    document.addEventListener('lottie-hero-refresh', initLottieHeroAnimation);
+
 });
 
 // CSS Animations for Ripple Effect
