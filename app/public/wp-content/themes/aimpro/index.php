@@ -2,8 +2,14 @@
 <html <?php language_attributes(); ?>>
 <head>
     <meta charset="<?php bloginfo('charset'); ?>">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><?php wp_title('|', true, 'right'); ?><?php bloginfo('name'); ?></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">    <title><?php wp_title('|', true, 'right'); ?><?php bloginfo('name'); ?></title>
+    <!-- Google Fonts - Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <!-- GSAP for Premium Animations -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
     <?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
@@ -25,22 +31,26 @@
 </div>
 
 <!-- Sticky Header -->
-<header class="sticky-header">
+<header class="sticky-header glassmorphism-header">
     <div class="container">
         <div class="header-content">
             <div class="logo">
-                <a href="<?php echo home_url(); ?>">Aimpro Digital</a>
-            </div>            <nav class="main-nav">
+                <a href="<?php echo home_url(); ?>" class="logo-text">
+                    <span class="logo-gradient">Aimpro</span>
+                    <span class="logo-subtitle">Digital</span>
+                </a>
+            </div>
+            <nav class="main-nav">
                 <ul>
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#services">Services</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="#home" class="nav-link">Home</a></li>
+                    <li><a href="#services" class="nav-link">Services</a></li>
+                    <li><a href="#about" class="nav-link">About</a></li>
+                    <li><a href="#contact" class="nav-link">Contact</a></li>
                 </ul>
             </nav>
             <div class="header-ctas">
-                <a href="#contact" class="btn-outline">GET FREE AUDIT</a>
-                <a href="tel:+441212858490" class="btn-primary">TALK TO AN EXPERT</a>
+                <a href="#contact" class="btn-outline premium-hover">GET FREE AUDIT</a>
+                <a href="tel:+441212858490" class="btn-primary shine-effect">TALK TO AN EXPERT</a>
             </div>
             <div class="mobile-menu-toggle">
                 <span></span>
@@ -55,18 +65,58 @@
 <main id="main-content" role="main">
 
 <!-- Hero Section -->
-<section id="home" class="hero-section">
-    <div class="hero-background parallax-bg"></div>    <div class="container">
-        <div class="hero-content">            <h1>Get More Leads & More Customers With <span class="highlight curly-underline">PRECISION</span> Digital <span class="highlight-word">Magic</span>.</h1>
+<section id="home" class="hero-section premium-hero">
+    <div class="hero-background parallax-bg"></div>
+    <!-- Floating Elements -->
+    <div class="floating-elements">
+        <div class="floating-shape shape-1"></div>
+        <div class="floating-shape shape-2"></div>
+        <div class="floating-shape shape-3"></div>
+        <div class="floating-shape shape-4"></div>
+        <div class="floating-particles">
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="hero-content">
+            <div class="hero-badge slide-up-delay-1">
+                <span class="badge-icon">🚀</span>
+                <span>Award-Winning Digital Agency</span>
+            </div>
+            <h1 class="hero-title">Get More Leads & More Customers With <span class="highlight curly-underline">PRECISION</span> Digital <span class="highlight-word">Magic</span>.</h1>
             <p class="hero-subtitle">Lead Generation, SEO, PPC, Website, AI Marketing and Automation. Drive <strong class="highlight-underline">REAL RESULTS</strong> and boost your revenue with strategies that actually <strong class="highlight-word">work</strong>.</p>
             <div class="hero-ctas">
-                <a href="#contact" class="btn-primary large">GET FREE MARKETING REVIEW</a>
-                <a href="tel:+441212858490" class="btn-secondary large">
+                <a href="#contact" class="btn-primary large shine-effect pulse-animation">GET FREE MARKETING REVIEW</a>
+                <a href="tel:+441212858490" class="btn-secondary large premium-hover">
                     <span class="phone-icon">📞</span>
                     CALL NOW: 0121 285 8490
                 </a>
             </div>
+            <!-- Trust Indicators -->
+            <div class="trust-indicators">
+                <div class="trust-item">
+                    <span class="trust-icon">⭐</span>
+                    <span>5.0 Rating</span>
+                </div>
+                <div class="trust-item">
+                    <span class="trust-icon">🏆</span>
+                    <span>Award Winning</span>
+                </div>
+                <div class="trust-item">
+                    <span class="trust-icon">✅</span>
+                    <span>Guaranteed Results</span>
+                </div>
+            </div>
         </div>
+    </div>
+    <!-- Scroll Indicator -->
+    <div class="scroll-indicator">
+        <div class="scroll-arrow"></div>
+        <span>Scroll to explore</span>
     </div>
 </section>
 
@@ -170,35 +220,58 @@
 </section>
 
 <!-- Team Section -->
-<section id="about" class="team-section">
-    <div class="container">        <div class="content-center">
+<section id="about" class="team-section premium-team">
+    <div class="container">
+        <div class="content-center">
             <h2>Meet The Experts Who Make <span class="highlight curly-underline">MAGIC</span> Happen</h2>
             <p class="section-subtitle">Not all experts wear masks. Our marketing specialists love talking with clients. We're always hands-on, delivering results for businesses like yours.</p>
         </div>
-        <div class="team-grid"><div class="team-member">
+        <div class="team-grid">
+            <div class="team-member premium-card">
                 <div class="member-photo">
                     <img src="<?php echo get_template_directory_uri(); ?>/assets/images/ajay-dhunna.svg" alt="Ajay Dhunna" />
+                    <div class="member-overlay">
+                        <div class="credentials">
+                            <span class="credential-badge">Google Certified</span>
+                            <span class="credential-badge">Meta Partner</span>
+                        </div>
+                    </div>
                 </div>
                 <h3>Ajay Dhunna</h3>
                 <p class="member-title">Director of Marketing</p>
+                <p class="member-expertise">25+ Years Experience • 500+ Campaigns</p>
             </div>
-            <div class="team-member">
+            <div class="team-member premium-card">
                 <div class="member-photo">
                     <img src="<?php echo get_template_directory_uri(); ?>/assets/images/dinesh-thapa.svg" alt="Dinesh Thapa" />
+                    <div class="member-overlay">
+                        <div class="credentials">
+                            <span class="credential-badge">Growth Expert</span>
+                            <span class="credential-badge">Data Analyst</span>
+                        </div>
+                    </div>
                 </div>
                 <h3>Dinesh Thapa</h3>
                 <p class="member-title">Business Growth Specialist</p>
+                <p class="member-expertise">ROI Optimization • Analytics Expert</p>
             </div>
-            <div class="team-member">
+            <div class="team-member premium-card">
                 <div class="member-photo">
                     <img src="<?php echo get_template_directory_uri(); ?>/assets/images/james-butler.svg" alt="James Butler" />
+                    <div class="member-overlay">
+                        <div class="credentials">
+                            <span class="credential-badge">UX Designer</span>
+                            <span class="credential-badge">Brand Expert</span>
+                        </div>
+                    </div>
                 </div>
                 <h3>James Butler</h3>
                 <p class="member-title">Creative Director</p>
+                <p class="member-expertise">Award-Winning Designer • Brand Strategy</p>
             </div>
         </div>
         <div class="team-cta-section">
-            <a href="#contact" class="btn-primary large">TALK TO OUR EXPERTS</a>
+            <a href="#contact" class="btn-primary large shine-effect">TALK TO OUR EXPERTS</a>
         </div>
     </div>
 </section>
@@ -268,9 +341,124 @@
                 </div>
                 <button class="carousel-next">›</button>
             </div>
+        </div>        <div class="testimonials-cta-section">
+            <a href="#contact" class="btn-primary large shine-effect">GET RESULTS LIKE THESE</a>
         </div>
-        <div class="testimonials-cta-section">
-            <a href="#contact" class="btn-primary large">GET RESULTS LIKE THESE</a>
+    </div>
+</section>
+
+<!-- Video Testimonials Section -->
+<section class="video-testimonials-section premium-section">
+    <div class="container">
+        <div class="content-center">
+            <h2>See What Our Clients Say</h2>
+            <p class="section-subtitle">Real stories from real businesses that transformed with our help</p>
+        </div>
+        <div class="video-testimonials-grid">
+            <div class="video-testimonial premium-card">
+                <div class="video-thumbnail">
+                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/video-thumb-1.jpg" alt="Client Success Story" />
+                    <div class="play-button">
+                        <svg width="40" height="40" viewBox="0 0 40 40">
+                            <path d="M15 10L30 20L15 30V10Z" fill="white"/>
+                        </svg>
+                    </div>
+                    <div class="video-overlay"></div>
+                </div>
+                <div class="video-info">
+                    <h4>"500% ROI in 6 Months"</h4>
+                    <p>Sarah, E-commerce Store Owner</p>
+                </div>
+            </div>
+            <div class="video-testimonial premium-card">
+                <div class="video-thumbnail">
+                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/video-thumb-2.jpg" alt="Client Success Story" />
+                    <div class="play-button">
+                        <svg width="40" height="40" viewBox="0 0 40 40">
+                            <path d="M15 10L30 20L15 30V10Z" fill="white"/>
+                        </svg>
+                    </div>
+                    <div class="video-overlay"></div>
+                </div>
+                <div class="video-info">
+                    <h4>"Lead Generation Transformed Our Business"</h4>
+                    <p>Michael, B2B Service Provider</p>
+                </div>
+            </div>
+            <div class="video-testimonial premium-card">
+                <div class="video-thumbnail">
+                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/video-thumb-3.jpg" alt="Client Success Story" />
+                    <div class="play-button">
+                        <svg width="40" height="40" viewBox="0 0 40 40">
+                            <path d="M15 10L30 20L15 30V10Z" fill="white"/>
+                        </svg>
+                    </div>
+                    <div class="video-overlay"></div>
+                </div>
+                <div class="video-info">
+                    <h4>"From Local to National Success"</h4>
+                    <p>Emma, Restaurant Chain Owner</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Magazine-Style Insights Section -->
+<section class="insights-section magazine-layout">
+    <div class="container">
+        <div class="content-center">
+            <h2>Latest Insights & Digital Marketing Trends</h2>
+            <p class="section-subtitle">Stay ahead with our expert insights and industry analysis</p>
+        </div>
+        <div class="insights-grid">
+            <article class="featured-insight">
+                <div class="insight-image">
+                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/insight-featured.jpg" alt="Featured Insight" />
+                    <div class="insight-category">Featured</div>
+                </div>
+                <div class="insight-content">
+                    <h3>The Future of AI in Digital Marketing: What You Need to Know</h3>
+                    <p>Discover how artificial intelligence is revolutionizing digital marketing and what it means for your business in 2024.</p>
+                    <div class="insight-meta">
+                        <span class="read-time">8 min read</span>
+                        <span class="publish-date">Dec 15, 2023</span>
+                    </div>
+                    <a href="#" class="insight-link">Read More →</a>
+                </div>
+            </article>
+            <div class="insights-sidebar">
+                <article class="insight-card">
+                    <div class="insight-image-small">
+                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/insight-1.jpg" alt="Insight" />
+                    </div>
+                    <div class="insight-content-small">
+                        <h4>Google Ads Best Practices for 2024</h4>
+                        <span class="read-time">5 min read</span>
+                    </div>
+                </article>
+                <article class="insight-card">
+                    <div class="insight-image-small">
+                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/insight-2.jpg" alt="Insight" />
+                    </div>
+                    <div class="insight-content-small">
+                        <h4>SEO Trends That Will Drive Traffic</h4>
+                        <span class="read-time">6 min read</span>
+                    </div>
+                </article>
+                <article class="insight-card">
+                    <div class="insight-image-small">
+                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/insight-3.jpg" alt="Insight" />
+                    </div>
+                    <div class="insight-content-small">
+                        <h4>Social Media ROI: Measuring Success</h4>
+                        <span class="read-time">4 min read</span>
+                    </div>
+                </article>
+            </div>
+        </div>
+        <div class="insights-cta">
+            <a href="#" class="btn-outline premium-hover">View All Insights</a>
         </div>
     </div>
 </section>
@@ -566,6 +754,196 @@ document.addEventListener('DOMContentLoaded', function() {    // Stats counter a
     loadAnimatedElements.forEach((el, index) => {
         el.style.animationDelay = `${index * 0.1}s`;
     });
+
+    // GSAP Premium Animations
+    gsap.registerPlugin(ScrollTrigger);
+
+    // Hero parallax effect
+    gsap.to('.hero-background', {
+        yPercent: -50,
+        ease: "none",
+        scrollTrigger: {
+            trigger: '.hero-section',
+            start: "top bottom",
+            end: "bottom top",
+            scrub: true
+        }
+    });
+
+    // Floating elements animation
+    gsap.to('.floating-shape', {
+        y: "random(-100, 100)",
+        x: "random(-50, 50)",
+        rotation: "random(-360, 360)",
+        duration: "random(10, 20)",
+        repeat: -1,
+        yoyo: true,
+        ease: "sine.inOut"
+    });
+
+    // Particles animation
+    gsap.to('.particle', {
+        y: "random(-200, 200)",
+        x: "random(-100, 100)",
+        scale: "random(0.5, 1.5)",
+        opacity: "random(0.3, 1)",
+        duration: "random(5, 15)",
+        repeat: -1,
+        yoyo: true,
+        ease: "power1.inOut"
+    });
+
+    // Premium scroll animations
+    gsap.utils.toArray('.premium-card').forEach(card => {
+        gsap.fromTo(card, 
+            {
+                y: 100,
+                opacity: 0,
+                scale: 0.8
+            },
+            {
+                y: 0,
+                opacity: 1,
+                scale: 1,
+                duration: 0.8,
+                ease: "back.out(1.7)",
+                scrollTrigger: {
+                    trigger: card,
+                    start: "top 80%",
+                    end: "bottom 20%"
+                }
+            }
+        );
+    });
+
+    // Hero badge animation
+    gsap.fromTo('.hero-badge', 
+        {
+            y: -50,
+            opacity: 0
+        },
+        {
+            y: 0,
+            opacity: 1,
+            duration: 1,
+            delay: 0.5,
+            ease: "bounce.out"
+        }
+    );
+
+    // Trust indicators animation
+    gsap.fromTo('.trust-indicators .trust-item', 
+        {
+            y: 30,
+            opacity: 0
+        },
+        {
+            y: 0,
+            opacity: 1,
+            duration: 0.6,
+            delay: 1.5,
+            stagger: 0.2,
+            ease: "power2.out"
+        }
+    );
+
+    // Section transitions with wave effect
+    gsap.utils.toArray('section').forEach(section => {
+        gsap.fromTo(section.querySelectorAll('h2, h3'), 
+            {
+                y: 50,
+                opacity: 0
+            },
+            {
+                y: 0,
+                opacity: 1,
+                duration: 0.8,
+                stagger: 0.1,
+                ease: "power3.out",
+                scrollTrigger: {
+                    trigger: section,
+                    start: "top 75%"
+                }
+            }
+        );
+    });
+
+    // Video testimonial hover effects
+    document.querySelectorAll('.video-testimonial').forEach(video => {
+        video.addEventListener('mouseenter', () => {
+            gsap.to(video.querySelector('.play-button'), {
+                scale: 1.2,
+                duration: 0.3,
+                ease: "back.out(1.7)"
+            });
+            gsap.to(video.querySelector('.video-overlay'), {
+                opacity: 0.3,
+                duration: 0.3
+            });
+        });
+
+        video.addEventListener('mouseleave', () => {
+            gsap.to(video.querySelector('.play-button'), {
+                scale: 1,
+                duration: 0.3,
+                ease: "power2.out"
+            });
+            gsap.to(video.querySelector('.video-overlay'), {
+                opacity: 0,
+                duration: 0.3
+            });
+        });
+    });
+
+    // Scroll indicator animation
+    gsap.to('.scroll-indicator', {
+        y: 10,
+        duration: 2,
+        repeat: -1,
+        yoyo: true,
+        ease: "power2.inOut"
+    });
+
+    // Enhanced button hover effects
+    document.querySelectorAll('.shine-effect').forEach(btn => {
+        btn.addEventListener('mouseenter', () => {
+            gsap.to(btn, {
+                scale: 1.05,
+                duration: 0.3,
+                ease: "power2.out"
+            });
+        });
+
+        btn.addEventListener('mouseleave', () => {
+            gsap.to(btn, {
+                scale: 1,
+                duration: 0.3,
+                ease: "power2.out"
+            });
+        });
+    });
+
+    // Loading screen animation
+    const loadingScreen = document.getElementById('loading-screen');
+    if (loadingScreen) {
+        gsap.to('.loading-spinner', {
+            rotation: 360,
+            duration: 2,
+            repeat: -1,
+            ease: "none"
+        });
+
+        window.addEventListener('load', () => {
+            gsap.to(loadingScreen, {
+                opacity: 0,
+                duration: 0.8,
+                ease: "power2.inOut",
+                onComplete: () => {
+                    loadingScreen.style.display = 'none';
+                }
+            });
+        });
+    }
 });
 </script>
 
