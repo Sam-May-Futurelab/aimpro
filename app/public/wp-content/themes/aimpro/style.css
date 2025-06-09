@@ -2179,114 +2179,6 @@ h3 + p {
 }
 
 /* ===============================================
-   VIDEO TESTIMONIALS SECTION
-   =============================================== */
-
-.video-testimonials-section {
-    background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
-    position: relative;
-}
-
-.video-testimonials-section.premium-section {
-    padding: 6rem 0;
-}
-
-.video-testimonials-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
-    margin-top: 3rem;
-}
-
-.video-testimonial {
-    background: white;
-    border-radius: 20px;
-    overflow: hidden;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-    position: relative;
-}
-
-.video-testimonial:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
-}
-
-.video-thumbnail {
-    position: relative;
-    height: 200px;
-    overflow: hidden;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-}
-
-.video-thumbnail img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 0.4s ease;
-}
-
-.video-testimonial:hover .video-thumbnail img {
-    transform: scale(1.05);
-}
-
-.play-button {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 60px;
-    height: 60px;
-    background: rgba(255, 255, 255, 0.9);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    backdrop-filter: blur(10px);
-    border: 2px solid rgba(255, 255, 255, 0.3);
-}
-
-.play-button:hover {
-    background: rgba(255, 255, 255, 1);
-    transform: translate(-50%, -50%) scale(1.1);
-}
-
-.play-button svg {
-    margin-left: 3px;
-}
-
-.video-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(0, 0, 0, 0.2);
-    opacity: 0;
-    transition: opacity 0.3s ease;
-}
-
-.video-info {
-    padding: 1.5rem;
-}
-
-.video-info h4 {
-    font-size:  1.125rem;
-    font-weight: 700;
-    color: #1a202c;
-    margin-bottom: 0.5rem;
-    line-height: 1.4;
-}
-
-.video-info p {
-    color: #718096;
-    font-size: 0.9rem;
-    font-weight: 500;
-}
-
-/* ===============================================
    MAGAZINE-STYLE INSIGHTS SECTION
    =============================================== */
 
@@ -2465,26 +2357,15 @@ h3 + p {
    RESPONSIVE DESIGN FOR NEW SECTIONS
    =============================================== */
 
-@media (max-width: 1024px) {
-    .insights-grid {
+@media (max-width: 1024px) {    .insights-grid {
         grid-template-columns: 1fr;
         gap: 2rem;
-    }
-    
-    .video-testimonials-grid {
-        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-        gap: 1.5rem;
     }
 }
 
 @media (max-width: 768px) {
-    .video-testimonials-section.premium-section,
     .insights-section.magazine-layout {
         padding: 4rem 0;
-    }
-    
-    .video-thumbnail {
-        height: 180px;
     }
     
     .insight-image {
@@ -2514,10 +2395,6 @@ h3 + p {
 }
 
 @media (max-width: 480px) {
-    .video-testimonials-grid {
-        grid-template-columns: 1fr;
-    }
-    
     .insights-grid {
         gap: 1.5rem;
     }

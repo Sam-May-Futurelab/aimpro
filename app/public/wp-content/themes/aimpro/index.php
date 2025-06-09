@@ -331,62 +331,7 @@
     </div>
 </section>
 
-<!-- Video Testimonials Section -->
-<section class="video-testimonials-section premium-section">
-    <div class="container">
-        <div class="content-center">
-            <h2>See What Our Clients Say</h2>
-            <p class="section-subtitle">Real stories from real businesses that transformed with our help</p>
-        </div>
-        <div class="video-testimonials-grid">
-            <div class="video-testimonial premium-card">
-                <div class="video-thumbnail">
-                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/video-thumb-1.jpg" alt="Client Success Story" />
-                    <div class="play-button">
-                        <svg width="40" height="40" viewBox="0 0 40 40">
-                            <path d="M15 10L30 20L15 30V10Z" fill="white"/>
-                        </svg>
-                    </div>
-                    <div class="video-overlay"></div>
-                </div>
-                <div class="video-info">
-                    <h4>"500% ROI in 6 Months"</h4>
-                    <p>Sarah, E-commerce Store Owner</p>
-                </div>
-            </div>
-            <div class="video-testimonial premium-card">
-                <div class="video-thumbnail">
-                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/video-thumb-2.jpg" alt="Client Success Story" />
-                    <div class="play-button">
-                        <svg width="40" height="40" viewBox="0 0 40 40">
-                            <path d="M15 10L30 20L15 30V10Z" fill="white"/>
-                        </svg>
-                    </div>
-                    <div class="video-overlay"></div>
-                </div>
-                <div class="video-info">
-                    <h4>"Lead Generation Transformed Our Business"</h4>
-                    <p>Michael, B2B Service Provider</p>
-                </div>
-            </div>
-            <div class="video-testimonial premium-card">
-                <div class="video-thumbnail">
-                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/video-thumb-3.jpg" alt="Client Success Story" />
-                    <div class="play-button">
-                        <svg width="40" height="40" viewBox="0 0 40 40">
-                            <path d="M15 10L30 20L15 30V10Z" fill="white"/>
-                        </svg>
-                    </div>
-                    <div class="video-overlay"></div>
-                </div>
-                <div class="video-info">
-                    <h4>"From Local to National Success"</h4>
-                    <p>Emma, Restaurant Chain Owner</p>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
+
 
 <!-- Magazine-Style Insights Section -->
 <section class="insights-section magazine-layout">
