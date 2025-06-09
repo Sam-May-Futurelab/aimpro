@@ -66,20 +66,10 @@
 
 <!-- Hero Section -->
 <section id="home" class="hero-section premium-hero">
-    <div class="hero-background parallax-bg"></div>
-    <!-- Floating Elements -->
+    <div class="hero-background parallax-bg"></div>    <!-- Floating Elements -->
     <div class="floating-elements">
         <div class="floating-shape shape-1"></div>
         <div class="floating-shape shape-2"></div>
-        <div class="floating-shape shape-3"></div>
-        <div class="floating-shape shape-4"></div>
-        <div class="floating-particles">
-            <div class="particle"></div>
-            <div class="particle"></div>
-            <div class="particle"></div>
-            <div class="particle"></div>
-            <div class="particle"></div>
-        </div>
     </div>
     <div class="container">
         <div class="hero-content">
@@ -110,13 +100,7 @@
                     <span class="trust-icon">✅</span>
                     <span>Guaranteed Results</span>
                 </div>
-            </div>
-        </div>
-    </div>
-    <!-- Scroll Indicator -->
-    <div class="scroll-indicator">
-        <div class="scroll-arrow"></div>
-        <span>Scroll to explore</span>
+            </div>        </div>
     </div>
 </section>
 
@@ -756,41 +740,25 @@ document.addEventListener('DOMContentLoaded', function() {    // Stats counter a
     });
 
     // GSAP Premium Animations
-    gsap.registerPlugin(ScrollTrigger);
-
-    // Hero parallax effect
+    gsap.registerPlugin(ScrollTrigger);    // Hero parallax effect (simplified)
     gsap.to('.hero-background', {
-        yPercent: -50,
+        yPercent: -30,
         ease: "none",
         scrollTrigger: {
             trigger: '.hero-section',
             start: "top bottom",
             end: "bottom top",
-            scrub: true
+            scrub: 1
         }
-    });
-
-    // Floating elements animation
+    });// Floating elements animation (simplified)
     gsap.to('.floating-shape', {
-        y: "random(-100, 100)",
-        x: "random(-50, 50)",
-        rotation: "random(-360, 360)",
-        duration: "random(10, 20)",
+        y: "random(-30, 30)",
+        x: "random(-20, 20)",
+        rotation: "random(-180, 180)",
+        duration: "random(8, 12)",
         repeat: -1,
         yoyo: true,
         ease: "sine.inOut"
-    });
-
-    // Particles animation
-    gsap.to('.particle', {
-        y: "random(-200, 200)",
-        x: "random(-100, 100)",
-        scale: "random(0.5, 1.5)",
-        opacity: "random(0.3, 1)",
-        duration: "random(5, 15)",
-        repeat: -1,
-        yoyo: true,
-        ease: "power1.inOut"
     });
 
     // Premium scroll animations
@@ -814,38 +782,26 @@ document.addEventListener('DOMContentLoaded', function() {    // Stats counter a
                 }
             }
         );
-    });
-
-    // Hero badge animation
+    });    // Hero badge animation (simplified)
     gsap.fromTo('.hero-badge', 
         {
-            y: -50,
             opacity: 0
         },
         {
-            y: 0,
             opacity: 1,
             duration: 1,
-            delay: 0.5,
-            ease: "bounce.out"
-        }
-    );
-
-    // Trust indicators animation
-    gsap.fromTo('.trust-indicators .trust-item', 
-        {
-            y: 30,
-            opacity: 0
-        },
-        {
-            y: 0,
-            opacity: 1,
-            duration: 0.6,
-            delay: 1.5,
-            stagger: 0.2,
+            delay: 0.8,
             ease: "power2.out"
         }
-    );
+    );// Trust indicators simple fade-in
+    gsap.set('.trust-indicators .trust-item', { opacity: 0 });
+    gsap.to('.trust-indicators .trust-item', {
+        opacity: 1,
+        duration: 0.6,
+        delay: 2,
+        stagger: 0.2,
+        ease: "power2.out"
+    });
 
     // Section transitions with wave effect
     gsap.utils.toArray('section').forEach(section => {
@@ -892,17 +848,7 @@ document.addEventListener('DOMContentLoaded', function() {    // Stats counter a
                 opacity: 0,
                 duration: 0.3
             });
-        });
-    });
-
-    // Scroll indicator animation
-    gsap.to('.scroll-indicator', {
-        y: 10,
-        duration: 2,
-        repeat: -1,
-        yoyo: true,
-        ease: "power2.inOut"
-    });
+        });    });
 
     // Enhanced button hover effects
     document.querySelectorAll('.shine-effect').forEach(btn => {

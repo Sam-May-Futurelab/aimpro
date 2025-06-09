@@ -51,20 +51,7 @@ section {
 }
 
 .premium-hero {
-    background: linear-gradient(135deg, 
-        #667eea 0%, 
-        #764ba2 25%, 
-        #667eea 50%, 
-        #764ba2 75%, 
-        #667eea 100%);
-    background-size: 200% 200%;
-    animation: gradient-shift 8s ease infinite;
-}
-
-@keyframes gradient-shift {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
 }
 
 .floating-elements {
@@ -75,22 +62,22 @@ section {
     bottom: 0;
     pointer-events: none;
     z-index: 1;
+    overflow: hidden;
 }
 
 .floating-shape {
     position: absolute;
-    background: rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.08);
     border-radius: 50%;
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .shape-1 {
-    width: 100px;
-    height: 100px;
+    width: 80px;
+    height: 80px;
     top: 20%;
     left: 10%;
-    animation: float 8s ease-in-out infinite;
 }
 
 .shape-2 {
@@ -98,81 +85,13 @@ section {
     height: 60px;
     top: 60%;
     right: 15%;
-    animation: float 10s ease-in-out infinite reverse;
 }
 
-.shape-3 {
-    width: 80px;
-    height: 80px;
-    bottom: 30%;
-    left: 20%;
-    animation: float 12s ease-in-out infinite;
-}
-
-.shape-4 {
-    width: 40px;
-    height: 40px;
-    top: 30%;
-    right: 30%;
-    animation: float 6s ease-in-out infinite reverse;
-}
-
-.floating-particles {
-    position: absolute;
+.hero-badge {
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
-}
-
-.particle {
-    position: absolute;
-    width: 4px;
-    height: 4px;
-    background: rgba(255, 255, 255, 0.6);
-    border-radius: 50%;
-    animation: particle-float 15s linear infinite;
-}
-
-.particle:nth-child(1) {
-    top: 20%;
-    left: 20%;
-    animation-delay: 0s;
-}
-
-.particle:nth-child(2) {
-    top: 40%;
-    left: 60%;
-    animation-delay: -3s;
-}
-
-.particle:nth-child(3) {
-    top: 70%;
-    left: 30%;
-    animation-delay: -6s;
-}
-
-.particle:nth-child(4) {
-    top: 30%;
-    left: 80%;
-    animation-delay: -9s;
-}
-
-.particle:nth-child(5) {
-    top: 80%;
-    left: 10%;
-    animation-delay: -12s;
-}
-
-@keyframes particle-float {
-    0%, 100% {
-        transform: translateY(0px) rotate(0deg);
-        opacity: 1;
-    }
-    50% {
-        transform: translateY(-100px) rotate(180deg);
-        opacity: 0.3;
-    }
 }
 
 .hero-badge {
@@ -206,9 +125,12 @@ section {
 .trust-indicators {
     display: flex;
     justify-content: center;
-    gap: 2rem;
-    margin-top: 3rem;
+    gap: 1.5rem;
+    margin-top: 2rem;
     flex-wrap: wrap;
+    position: relative;
+    z-index: 3;
+    padding: 0 1rem;
 }
 
 .trust-item {
@@ -217,48 +139,22 @@ section {
     gap: 0.5rem;
     background: rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(10px);
-    padding: 0.75rem 1.25rem;
-    border-radius: 25px;
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    font-size: 0.875rem;
+    padding: 0.6rem 1rem;
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    font-size: 0.8rem;
     font-weight: 600;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+}
+
+.trust-item:hover {
+    background: rgba(255, 255, 255, 0.15);
+    transform: translateY(-1px);
 }
 
 .trust-icon {
     font-size: 1.1rem;
-}
-
-.scroll-indicator {
-    position: absolute;
-    bottom: 2rem;
-    left: 50%;
-    transform: translateX(-50%);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 0.5rem;
-    color: rgba(255, 255, 255, 0.8);
-    font-size: 0.875rem;
-    font-weight: 500;
-}
-
-.scroll-arrow {
-    width: 20px;
-    height: 20px;
-    border-right: 2px solid rgba(255, 255, 255, 0.8);
-    border-bottom: 2px solid rgba(255, 255, 255, 0.8);
-    transform: rotate(45deg);
-}
-
-.hero-section::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    height: 100px;
-    background: linear-gradient(to bottom, transparent, rgba(248, 250, 252, 0.1));
-    z-index: 1;
 }
 
 .hero-background {
@@ -274,10 +170,11 @@ section {
 
 .hero-content {
     position: relative;
-    z-index: 2;
+    z-index: 4;
     max-width: 800px;
     text-align: center;
     margin: 0 auto;
+    transform: translateZ(0);
 }
 
 .hero-content h1 {
@@ -2081,18 +1978,6 @@ select:focus {
         padding: 0.5rem 1rem;
         letter-spacing: 0.3px;
     }
-}
-
-/* Enhanced Visual Effects */
-.hero-section::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    height: 100px;
-    background: linear-gradient(to bottom, transparent, rgba(248, 250, 252, 0.1));
-    z-index: 1;
 }
 
 /* Subtle Floating Animation for Service Tags */
