@@ -137,13 +137,13 @@
 </section>
 
 <!-- Stats Counter -->
-<section class="stats-section">
-    <!-- Stats Lottie Animation Background -->
+<section class="stats-section">    <!-- Stats Lottie Animation Background -->
     <div class="stats-animation-bg">
         <div class="animation-layer">
-            <div id="lottie-stats-animation-left" class="lottie-stats-instance"></div>
-            <div id="lottie-stats-animation-center" class="lottie-stats-instance"></div>
-            <div id="lottie-stats-animation-right" class="lottie-stats-instance"></div>
+            <!-- Single stretched center animation for optimal performance -->
+            <div id="lottie-stats-animation-center" class="lottie-stats-instance lottie-stats-single"></div>
+            <!-- CSS fallback animation -->
+            <div class="css-wave-animation" style="display: none;"></div>
         </div>
     </div>
     

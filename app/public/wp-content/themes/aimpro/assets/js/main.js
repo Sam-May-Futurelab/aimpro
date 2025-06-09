@@ -1,197 +1,94 @@
-// Enhanced JavaScript for Aimpro Digital
+// Performance-Optimized JavaScript for Aimpro Digital
 document.addEventListener('DOMContentLoaded', function() {
     
-    // Loading Screen Management
+    // Performance optimizations
+    const performanceMode = true; // Enable performance mode
+    const reducedAnimations = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    
+    // Throttle functions for better performance
+    function throttle(func, wait) {
+        let timeout;
+        return function executedFunction(...args) {
+            const later = () => {
+                clearTimeout(timeout);
+                func(...args);
+            };
+            clearTimeout(timeout);
+            timeout = setTimeout(later, wait);
+        };
+    }
+    
+    // Debounce function for expensive operations
+    function debounce(func, wait) {
+        let timeout;
+        return function executedFunction(...args) {
+            const later = () => {
+                clearTimeout(timeout);
+                func(...args);
+            };
+            clearTimeout(timeout);
+            timeout = setTimeout(later, wait);
+        };
+    }    
+    // Quick loading screen removal
     const loadingScreen = document.getElementById('loading-screen');
-    const loadingText = document.querySelector('.loading-text');
-    const loadingMessages = [
-        'Crafting your digital success...',
-        'Optimizing for performance...',
-        'Loading premium experience...',
-        'Almost ready...'
-    ];
-    let messageIndex = 0;
-    
-    // Rotate loading messages
-    const messageInterval = setInterval(() => {
-        messageIndex = (messageIndex + 1) % loadingMessages.length;
-        if (loadingText) {
-            loadingText.textContent = loadingMessages[messageIndex];
-        }
-    }, 1500);
-    
-    // Hide loading screen when page is fully loaded
-    window.addEventListener('load', function() {
-        clearInterval(messageInterval);
+    if (loadingScreen) {
         setTimeout(() => {
-            if (loadingScreen) {
-                loadingScreen.classList.add('fade-out');
-                setTimeout(() => {
-                    loadingScreen.style.display = 'none';
-                }, 500);
-            }
-        }, 1000); // Show loading screen for at least 1 second
-    });
+            loadingScreen.style.display = 'none';
+        }, 300); // Much faster loading screen removal
+    }
     
-    // Back to Top Button
+    // Optimized Back to Top Button
     const backToTop = document.createElement('button');
     backToTop.className = 'back-to-top';
     backToTop.innerHTML = '↑';
     backToTop.setAttribute('aria-label', 'Back to top');
-    backToTop.setAttribute('title', 'Back to top');
     document.body.appendChild(backToTop);
     
-    // Show/hide back to top button
-    window.addEventListener('scroll', function() {
+    // Throttled scroll handler for better performance
+    const handleScroll = throttle(() => {
         if (window.pageYOffset > 300) {
             backToTop.classList.add('visible');
         } else {
             backToTop.classList.remove('visible');
         }
-    });
+    }, 100); // Throttle to 10fps max
     
-    // Back to top click handler
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    
     backToTop.addEventListener('click', function() {
-        window.scrollTo({
-            top: 0,
-            behavior: 'smooth'
-        });
-    });
-    
-    // Enhanced Error Handling
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    });    
+    // Remove heavy error handling and performance monitoring
+    // Keep only essential error handling
     window.addEventListener('error', function(e) {
-        console.error('JavaScript Error:', e.error);
-        // Could implement user-friendly error reporting here
+        console.warn('Error:', e.error?.message || 'Unknown error');
     });
     
-    // Performance monitoring
-    if ('performance' in window) {
-        window.addEventListener('load', function() {
-            setTimeout(() => {
-                const perfData = performance.getEntriesByType('navigation')[0];
-                if (perfData && perfData.loadEventEnd - perfData.loadEventStart > 3000) {
-                    console.log('Page load time is high, consider optimizing');
-                }
-            }, 0);
-        });
-    }
-    
-    // Enhanced keyboard navigation
-    document.addEventListener('keydown', function(e) {
-        // Escape key closes mobile menu
-        if (e.key === 'Escape') {
-            const mobileToggle = document.querySelector('.mobile-menu-toggle');
-            const mainNav = document.querySelector('.main-nav');
-            if (mobileToggle && mobileToggle.classList.contains('active')) {
-                mobileToggle.classList.remove('active');
-                mainNav.classList.remove('mobile-active');
-            }
-        }
-        
-        // Space or Enter on CTA buttons
-        if ((e.key === ' ' || e.key === 'Enter') && e.target.classList.contains('btn')) {
-            e.preventDefault();
-            e.target.click();
-        }
-    });
-    
-    // Lazy loading for images (if not using native lazy loading)
-    const images = document.querySelectorAll('img[data-src]');
-    const imageObserver = new IntersectionObserver((entries, observer) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                const img = entry.target;
-                img.src = img.dataset.src;
-                img.removeAttribute('data-src');
-                imageObserver.unobserve(img);
-            }
-        });
-    });
-    
-    images.forEach(img => imageObserver.observe(img));
-    
-    // Progressive Web App prompt handling
-    let deferredPrompt;
-    window.addEventListener('beforeinstallprompt', (e) => {
-        e.preventDefault();
-        deferredPrompt = e;
-        
-        // Could show custom install button here
-        console.log('PWA install prompt available');
-    });
-    
-    // Enhanced analytics tracking (placeholder)
-    function trackEvent(category, action, label) {
-        // Google Analytics or other analytics integration
-        if (typeof gtag !== 'undefined') {
-            gtag('event', action, {
-                event_category: category,
-                event_label: label
-            });
-        }
-        console.log(`Track: ${category} - ${action} - ${label}`);
-    }
-    
-    // Track CTA clicks
-    document.querySelectorAll('.btn, .btn-primary, .btn-secondary').forEach(button => {
-        button.addEventListener('click', function() {
-            const buttonText = this.textContent.trim();
-            trackEvent('CTA', 'click', buttonText);
-        });
-    });
-    
-    // Track scroll depth
-    let maxScroll = 0;
-    window.addEventListener('scroll', function() {
-        const scrollPercent = Math.round(
-            (window.scrollY / (document.body.scrollHeight - window.innerHeight)) * 100
-        );
-        
-        if (scrollPercent > maxScroll && scrollPercent % 25 === 0) {
-            maxScroll = scrollPercent;
-            trackEvent('Scroll', 'depth', `${scrollPercent}%`);
-        }
-    });
-
-    // Mobile Menu Toggle
+    // Mobile Menu Toggle (simplified)
     const mobileToggle = document.querySelector('.mobile-menu-toggle');
     const mainNav = document.querySelector('.main-nav');
-    const headerCtas = document.querySelector('.header-ctas');
-
-    if (mobileToggle) {
+    
+    if (mobileToggle && mainNav) {
         mobileToggle.addEventListener('click', function() {
             this.classList.toggle('active');
             mainNav.classList.toggle('mobile-active');
-            headerCtas.classList.toggle('mobile-active');
         });
-    }    // Header Scroll Effect
+    }    // Optimized Header Scroll Effect
     const header = document.querySelector('.sticky-header');
-    let lastScroll = 0;
-
-    window.addEventListener('scroll', function() {
-        const currentScroll = window.pageYOffset;
+    if (header) {
+        const headerScroll = throttle(() => {
+            const currentScroll = window.pageYOffset;
+            
+            if (currentScroll > 100) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        }, 50);
         
-        if (currentScroll > 100) {
-            header.style.background = 'rgba(255, 255, 255, 0.99)';
-            header.style.backdropFilter = 'blur(10px)';
-            header.style.boxShadow = '0 4px 24px rgba(0, 0, 0, 0.12)';
-            header.classList.add('scrolled');
-        } else {
-            header.style.background = 'rgba(255, 255, 255, 0.98)';
-            header.style.backdropFilter = 'blur(8px)';
-            header.style.boxShadow = '0 2px 16px rgba(0, 0, 0, 0.08)';
-            header.classList.remove('scrolled');
-        }
-
-        // Hide/show header on scroll
-        if (currentScroll > lastScroll && currentScroll > 200) {
-            header.style.transform = 'translateY(-100%)';
-        } else {
-            header.style.transform = 'translateY(0)';
-        }
-        
-        lastScroll = currentScroll;
-    });// Animated Stats Counter
+        window.addEventListener('scroll', headerScroll, { passive: true });
+    }    // Simplified Stats Counter Animation
     function animateStats() {
         const statNumbers = document.querySelectorAll('.stat-number');
         
@@ -200,80 +97,55 @@ document.addEventListener('DOMContentLoaded', function() {
                 if (entry.isIntersecting) {
                     const target = entry.target;
                     const finalNumber = parseInt(target.getAttribute('data-count'));
-                    const currentText = target.textContent;
-                    const suffix = currentText.replace(/[\d]/g, ''); // Extract non-numeric characters
-                    let currentNumber = 0;
-                    const increment = finalNumber / 50; // Smoother animation
-                    const duration = 2000; // 2 seconds
-                    const interval = duration / 50;
-
+                    const suffix = target.textContent.replace(/[\d]/g, '');
+                    
+                    // Faster, simpler animation
+                    let current = 0;
+                    const increment = finalNumber / 30; // Reduced from 50 for faster animation
+                    
                     const counter = setInterval(() => {
-                        currentNumber += increment;
-                        if (currentNumber >= finalNumber) {
+                        current += increment;
+                        if (current >= finalNumber) {
                             target.textContent = finalNumber + suffix;
                             clearInterval(counter);
                         } else {
-                            target.textContent = Math.floor(currentNumber) + suffix;
+                            target.textContent = Math.floor(current) + suffix;
                         }
-                    }, interval);
-
+                    }, 50); // Faster interval
+                    
                     observer.unobserve(target);
                 }
             });
-        }, { threshold: 0.3 });
-
+        }, { threshold: 0.5 }); // Higher threshold for better performance
+        
         statNumbers.forEach(stat => observer.observe(stat));
     }
-
-    // Initialize stats animation
-    animateStats();
-
-    // Smooth Scroll for Anchor Links
+    
+    animateStats();    
+    // Simplified smooth scroll
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
             e.preventDefault();
             const target = document.querySelector(this.getAttribute('href'));
             if (target) {
-                target.scrollIntoView({
-                    behavior: 'smooth',
-                    block: 'start'
-                });
+                target.scrollIntoView({ behavior: 'smooth' });
             }
         });
-    });    // Enhanced Service Cards with Magnetic Effect
-    const serviceCards = document.querySelectorAll('.service-card');
-    serviceCards.forEach((card, index) => {
-        card.style.animationDelay = `${index * 0.1}s`;
-        
-        card.addEventListener('mouseenter', function() {
-            this.style.transform = 'translateY(-10px) scale(1.02)';
-            this.style.boxShadow = '0 25px 50px rgba(0, 0, 0, 0.15)';
-        });
-        
-        card.addEventListener('mouseleave', function() {
-            this.style.transform = 'translateY(0) scale(1)';
-            this.style.boxShadow = '0 4px 6px rgba(0, 0, 0, 0.05)';
-        });
-        
-        // Add magnetic effect on hover
-        card.addEventListener('mousemove', function(e) {
-            const rect = this.getBoundingClientRect();
-            const x = e.clientX - rect.left;
-            const y = e.clientY - rect.top;
-            
-            const centerX = rect.width / 2;
-            const centerY = rect.height / 2;
-            
-            const deltaX = (x - centerX) * 0.03;
-            const deltaY = (y - centerY) * 0.03;
-            
-            this.style.transform = `translateY(-10px) scale(1.02) translate(${deltaX}px, ${deltaY}px)`;
-        });
-        
-        card.addEventListener('mouseleave', function() {
-            this.style.transform = 'translateY(0) scale(1) translate(0, 0)';
-        });
     });
+    
+    // Lightweight card hover effects (only if performance mode is off)
+    if (!performanceMode) {
+        const serviceCards = document.querySelectorAll('.service-card');
+        serviceCards.forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-5px)'; // Reduced movement
+            });
+            
+            card.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0)';
+            });
+        });
+    }
 
     // Button Ripple Effect
     document.querySelectorAll('.btn, .btn-primary, .btn-secondary').forEach(button => {
@@ -323,65 +195,26 @@ document.addEventListener('DOMContentLoaded', function() {
         element.style.transform = 'translateY(30px)';
         element.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
         revealObserver.observe(element);
-    });
+    });    // Simplified lightweight animations (only if performance mode allows)
+    if (!performanceMode) {
+        // Basic tag hover effects (CSS-based)
+        const tags = document.querySelectorAll('.tag');
+        tags.forEach(tag => {
+            tag.classList.add('hover-effect');
+        });
 
-    // Enhanced Tag Animation
-    const tags = document.querySelectorAll('.tag');
-    tags.forEach((tag, index) => {
-        tag.style.animationDelay = `${index * 0.1}s`;
-        
-        tag.addEventListener('mouseenter', function() {
-            this.style.transform = 'translateY(-5px) scale(1.05)';
-            this.style.boxShadow = '0 10px 20px rgba(255, 184, 0, 0.3)';
+        // Simple blog card effects
+        const blogCards = document.querySelectorAll('.blog-card');
+        blogCards.forEach(card => {
+            card.classList.add('hover-effect');
         });
-        
-        tag.addEventListener('mouseleave', function() {
-            this.style.transform = 'translateY(0) scale(1)';
-            this.style.boxShadow = '0 4px 6px rgba(0, 0, 0, 0.05)';
-        });
-    });
 
-    // Blog Cards Enhanced Animation
-    const blogCards = document.querySelectorAll('.blog-card');
-    blogCards.forEach(card => {
-        card.addEventListener('mouseenter', function() {
-            const readMore = this.querySelector('.read-more');
-            if (readMore) {
-                readMore.style.transform = 'translateX(5px)';
-            }
+        // Minimal social icon effects
+        const socialIcons = document.querySelectorAll('.social-icon');
+        socialIcons.forEach(icon => {
+            icon.classList.add('hover-effect');
         });
-        
-        card.addEventListener('mouseleave', function() {
-            const readMore = this.querySelector('.read-more');
-            if (readMore) {
-                readMore.style.transform = 'translateX(0)';
-            }
-        });
-    });
-
-    // Footer Social Icons Animation
-    const socialIcons = document.querySelectorAll('.social-icon');
-    socialIcons.forEach((icon, index) => {
-        icon.addEventListener('mouseenter', function() {
-            this.style.transform = 'translateY(-3px) rotate(5deg) scale(1.1)';
-        });
-        
-        icon.addEventListener('mouseleave', function() {
-            this.style.transform = 'translateY(0) rotate(0deg) scale(1)';
-        });
-    });
-
-    // Add scroll progress indicator
-    const scrollIndicator = document.createElement('div');
-    scrollIndicator.className = 'scroll-indicator';
-    document.body.appendChild(scrollIndicator);
-
-    window.addEventListener('scroll', function() {
-        const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
-        const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-        const scrolled = (winScroll / height) * 100;
-        scrollIndicator.style.setProperty('--scroll-width', scrolled + '%');
-    });    // Note: serviceCards already handled above with magnetic effects
+    }// Note: serviceCards already handled above with magnetic effects
 
     // Enhanced CTA button tracking effect
     document.querySelectorAll('.btn-primary, .btn-secondary, .btn-ghost').forEach(button => {
@@ -429,109 +262,29 @@ document.addEventListener('DOMContentLoaded', function() {
                     nav.style.transform = 'translateX(-100%)';
                 }
             });
-        }
-    }
+        }    }
 
-    // Enhanced Intersection Observer for Animations
-    const observerOptions = {
-        threshold: 0.1,
-        rootMargin: '0px 0px -50px 0px'
-    };
-
-    const animationObserver = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('visible');
-                
-                // Add staggered animation for card grids
-                if (entry.target.classList.contains('grid') || 
-                    entry.target.classList.contains('team-grid') ||
-                    entry.target.classList.contains('testimonials-grid') ||
-                    entry.target.classList.contains('blog-grid')) {
-                    
-                    const cards = entry.target.querySelectorAll('.service-card, .team-member, .testimonial-card, .blog-card');
-                    cards.forEach((card, index) => {
-                        setTimeout(() => {
-                            card.classList.add('visible');
-                        }, index * 100);
-                    });
-                }
-            }
-        });
-    }, observerOptions);
-
-    // Observe all animation elements
-    const animatedElements = document.querySelectorAll('.fade-in, .slide-up, .service-card, .team-member, .testimonial-card, .blog-card, .stat-item');
-    animatedElements.forEach(el => {
-        animationObserver.observe(el);
-    });
-
-    // Enhanced Form Handling (if forms exist)
+    // Simplified form handling
     const forms = document.querySelectorAll('form');
     forms.forEach(form => {
         form.addEventListener('submit', function(e) {
             const submitBtn = form.querySelector('button[type="submit"], input[type="submit"]');
             if (submitBtn) {
-                submitBtn.style.pointerEvents = 'none';
-                submitBtn.style.opacity = '0.7';
-                
-                // Re-enable after 3 seconds to prevent spam
+                submitBtn.disabled = true;
                 setTimeout(() => {
-                    submitBtn.style.pointerEvents = 'auto';
-                    submitBtn.style.opacity = '1';
-                }, 3000);
+                    submitBtn.disabled = false;
+                }, 2000);
             }
         });
-    });
-
-    // Enhanced Button Click Effects
-    document.querySelectorAll('.btn, .btn-primary, .btn-secondary, .btn-outline').forEach(button => {
+    });    // Simple button click feedback (no heavy ripple effects)
+    document.querySelectorAll('.btn, .btn-primary, .btn-secondary').forEach(button => {
         button.addEventListener('click', function(e) {
-            // Create ripple effect
-            const ripple = document.createElement('span');
-            const rect = this.getBoundingClientRect();
-            const size = Math.max(rect.width, rect.height);
-            const x = e.clientX - rect.left - size / 2;
-            const y = e.clientY - rect.top - size / 2;
-            
-            ripple.style.cssText = `
-                position: absolute;
-                width: ${size}px;
-                height: ${size}px;
-                left: ${x}px;
-                top: ${y}px;
-                background: rgba(255, 255, 255, 0.3);
-                border-radius: 50%;
-                transform: scale(0);
-                animation: ripple 0.6s ease-out;
-                pointer-events: none;
-                z-index: 1;
-            `;
-            
-            this.appendChild(ripple);
-            
+            this.style.transform = 'scale(0.98)';
             setTimeout(() => {
-                ripple.remove();
-            }, 600);
+                this.style.transform = 'scale(1)';
+            }, 150);
         });
-    });
-
-    // CSS for ripple animation
-    const style = document.createElement('style');
-    style.textContent = `
-        @keyframes ripple {
-            to {
-                transform: scale(2);
-                opacity: 0;
-            }
-        }
-        
-        .btn, .btn-primary, .btn-secondary, .btn-outline {
-            position: relative;
-            overflow: hidden;
-        }
-    `;
-    document.head.appendChild(style);    // Initialize Lottie Hero Animation
+    });// Initialize Lottie Hero Animation
     function initLottieHeroAnimation() {
         const container = document.getElementById('lottie-hero-animation');
         if (container && typeof lottie !== 'undefined') {
@@ -569,40 +322,121 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
       // Initialize Lottie animation after DOM is ready
-    initLottieHeroAnimation();    // Initialize Lottie Stats Animation
+    initLottieHeroAnimation();    // Initialize Optimized Single Lottie Stats Animation
     function initLottieStatsAnimation() {
-        const animationIds = ['lottie-stats-animation-left', 'lottie-stats-animation-center', 'lottie-stats-animation-right'];
+        const animationIds = ['lottie-stats-animation-center']; // Single center animation only
         const animations = [];
+        let loadedCount = 0;
+        let sharedAnimationData = null;
         
-        animationIds.forEach((id) => {
-            const container = document.getElementById(id);
-            
-            if (container && typeof lottie !== 'undefined') {
-                container.classList.add('loading');
-                
-                try {
-                    const animation = lottie.loadAnimation({
-                        container: container,
-                        renderer: 'svg',
-                        loop: true,
-                        autoplay: true,
-                        path: aimpro_data.theme_url + '/assets/images/stats.json'
+        // Performance optimization: Load animation data once and reuse
+        if (typeof lottie !== 'undefined') {
+            // Pre-load the animation data
+            fetch(aimpro_data.theme_url + '/assets/images/stats.json')
+                .then(response => response.json())
+                .then(animationData => {
+                    sharedAnimationData = animationData;
+                    
+                    // Create animations with staggered initialization for performance
+                    animationIds.forEach((id, index) => {
+                        const container = document.getElementById(id);
+                        
+                        if (container) {
+                            container.classList.add('loading');
+                            
+                            // Stagger the animation creation to avoid performance spikes
+                            setTimeout(() => {
+                                try {
+                                    const animation = lottie.loadAnimation({
+                                        container: container,
+                                        renderer: 'svg',
+                                        loop: true,
+                                        autoplay: true,
+                                        animationData: sharedAnimationData, // Use shared data
+                                        rendererSettings: {
+                                            progressiveLoad: false, // We already have the data
+                                            hideOnTransparent: true,
+                                            preserveAspectRatio: 'xMidYMid slice'
+                                        }
+                                    });
+                                    
+                                    // Add slight variation to prevent identical sync
+                                    if (index > 0) {
+                                        animation.addEventListener('DOMLoaded', function() {
+                                            // Add small random offset to avoid perfect sync
+                                            const randomOffset = (Math.random() * 0.5) + (index * 0.2);
+                                            setTimeout(() => {
+                                                animation.goToAndPlay(randomOffset * animation.totalFrames, true);
+                                            }, index * 100);
+                                        });
+                                    }
+                                    
+                                    animation.addEventListener('DOMLoaded', function() {
+                                        container.classList.remove('loading');
+                                        loadedCount++;
+                                        
+                                        if (loadedCount === 1) {
+                                            console.log('Stats animations loaded successfully');
+                                        }
+                                    });
+                                    
+                                    animation.addEventListener('error', function(error) {
+                                        container.classList.remove('loading');
+                                        console.warn(`Stats animation error for ${id}:`, error);
+                                    });
+                                    
+                                    // Performance optimization
+                                    animation.setSubframe(false);
+                                    animations.push(animation);
+                                    
+                                } catch (error) {
+                                    container.classList.remove('loading');
+                                    console.warn(`Failed to load stats animation ${id}:`, error);
+                                }
+                            }, index * 150); // Stagger by 150ms
+                        }
                     });
-                    
-                    animation.addEventListener('DOMLoaded', function() {
-                        container.classList.remove('loading');
-                    });
-                    
-                    animations.push(animation);
-                    
-                } catch (error) {
-                    container.classList.remove('loading');
-                    console.warn(`Failed to load animation ${id}:`, error);
-                }
-            }
-        });
+                })
+                .catch(error => {
+                    console.warn('Failed to pre-load animation data:', error);
+                    initCSSWaveAnimation();
+                });
+        } else {
+            // Fallback to CSS animation if Lottie unavailable
+            initCSSWaveAnimation();
+        }
         
         return animations;
+    }    // Fallback CSS Wave Animation
+    function initCSSWaveAnimation() {
+        const containers = document.querySelectorAll('.lottie-stats-instance');
+        const fallbackDiv = document.querySelector('.css-wave-animation');
+        
+        containers.forEach(container => {
+            // Remove loading state
+            container.classList.remove('loading');
+            container.classList.add('css-fallback');
+        });
+        
+        // Show CSS animation
+        if (fallbackDiv) {
+            fallbackDiv.style.display = 'block';
+            console.log('CSS wave animation fallback activated');
+        }
+        
+        // Add performance optimization for CSS animation
+        containers.forEach(container => {
+            container.style.willChange = 'transform, opacity';
+        });
+        
+        // Clean up after animation settles
+        setTimeout(() => {
+            containers.forEach(container => {
+                if (container) {
+                    container.style.willChange = 'auto';
+                }
+            });
+        }, 2000);
     }
       // Initialize stats animation after DOM is ready
     setTimeout(() => {
@@ -613,67 +447,92 @@ document.addEventListener('DOMContentLoaded', function() {
     document.addEventListener('lottie-hero-refresh', initLottieHeroAnimation);
     document.addEventListener('lottie-stats-refresh', initLottieStatsAnimation);
 
+    // Performance monitoring for stats section
+    function monitorStatsPerformance() {
+        const statsSection = document.querySelector('.stats-section');
+        if (!statsSection) return;
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const startTime = performance.now();
+                    
+                    // Monitor frame rate when stats section is visible
+                    let frameCount = 0;
+                    const frameMonitor = () => {
+                        frameCount++;
+                        if (frameCount < 60) { // Monitor for ~1 second at 60fps
+                            requestAnimationFrame(frameMonitor);
+                        } else {
+                            const endTime = performance.now();
+                            const avgFrameTime = (endTime - startTime) / frameCount;
+                            
+                            if (avgFrameTime > 16.67) { // Below 60fps
+                                console.warn('Stats animation performance below 60fps:', avgFrameTime + 'ms per frame');
+                            } else {
+                                console.log('Stats animation performance optimal:', avgFrameTime + 'ms per frame');
+                            }
+                        }
+                    };
+                    
+                    requestAnimationFrame(frameMonitor);
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.1 });
+        
+        observer.observe(statsSection);
+    }
+
+    // Initialize performance monitoring
+    monitorStatsPerformance();
+
 });
 
-// CSS Animations for Ripple Effect
+// Lightweight CSS for better performance
 const style = document.createElement('style');
 style.textContent = `
-    @keyframes ripple {
-        to {
-            transform: scale(4);
-            opacity: 0;
-        }
-    }
-    
+    /* Basic button transitions only */
     .btn, .btn-primary, .btn-secondary {
-        position: relative;
-        overflow: hidden;
+        transition: transform 0.15s ease;
     }
     
-    /* Enhanced Hover Animations */
-    .service-card {
-        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    /* Simplified hover effects */
+    .hover-effect {
+        transition: transform 0.2s ease;
     }
     
-    .team-member {
-        transition: all 0.3s ease;
+    .hover-effect:hover {
+        transform: translateY(-2px);
     }
     
-    .blog-card {
-        transition: all 0.3s ease;
+    /* Basic card transitions */
+    .service-card, .team-member, .blog-card {
+        transition: transform 0.2s ease;
     }
     
-    /* Stagger Animation for Grid Items */
-    .service-card:nth-child(1) { animation-delay: 0s; }
-    .service-card:nth-child(2) { animation-delay: 0.1s; }
-    .service-card:nth-child(3) { animation-delay: 0.2s; }
-    .service-card:nth-child(4) { animation-delay: 0.3s; }
-    .service-card:nth-child(5) { animation-delay: 0.4s; }
-    .service-card:nth-child(6) { animation-delay: 0.5s; }
-    
-    .team-member:nth-child(1) { animation-delay: 0s; }
-    .team-member:nth-child(2) { animation-delay: 0.2s; }
-    .team-member:nth-child(3) { animation-delay: 0.4s; }
-    
-    /* Enhanced Button Glow Effect */
-    .btn-primary:hover {
-        box-shadow: 0 0 30px rgba(255, 184, 0, 0.6), 0 8px 25px rgba(255, 184, 0, 0.4);
-    }
-    
-    .btn-secondary:hover {
-        box-shadow: 0 0 20px rgba(255, 184, 0, 0.4), 0 8px 25px rgba(255, 184, 0, 0.3);
-    }
-    
-    /* Scroll Indicator Style */
-    .scroll-indicator {
+    /* Back to top button */
+    .back-to-top {
         position: fixed;
-        top: 0;
-        left: 0;
-        height: 4px;
-        background: rgba(255, 184, 0, 0.8);
+        bottom: 20px;
+        right: 20px;
+        width: 50px;
+        height: 50px;
+        background: #FFD700;
+        color: #1a1a1a;
+        border: none;
+        border-radius: 50%;
+        font-size: 20px;
+        cursor: pointer;
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.3s ease;
         z-index: 1000;
-        width: var(--scroll-width, 0%);
-        transition: width 0.2s ease;
+    }
+    
+    .back-to-top.visible {
+        opacity: 1;
+        visibility: visible;
     }
 `;
 document.head.appendChild(style);
