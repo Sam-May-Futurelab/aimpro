@@ -164,9 +164,7 @@ document.addEventListener('DOMContentLoaded', function() {
             mainNav.classList.toggle('mobile-active');
             headerCtas.classList.toggle('mobile-active');
         });
-    }
-
-    // Header Scroll Effect
+    }    // Header Scroll Effect
     const header = document.querySelector('.sticky-header');
     let lastScroll = 0;
 
@@ -174,13 +172,15 @@ document.addEventListener('DOMContentLoaded', function() {
         const currentScroll = window.pageYOffset;
         
         if (currentScroll > 100) {
-            header.style.background = 'rgba(255, 255, 255, 0.98)';
-            header.style.backdropFilter = 'blur(15px)';
-            header.style.boxShadow = '0 2px 20px rgba(0, 0, 0, 0.1)';
-        } else {
-            header.style.background = 'rgba(255, 255, 255, 0.95)';
+            header.style.background = 'rgba(255, 255, 255, 0.99)';
             header.style.backdropFilter = 'blur(10px)';
-            header.style.boxShadow = 'none';
+            header.style.boxShadow = '0 4px 24px rgba(0, 0, 0, 0.12)';
+            header.classList.add('scrolled');
+        } else {
+            header.style.background = 'rgba(255, 255, 255, 0.98)';
+            header.style.backdropFilter = 'blur(8px)';
+            header.style.boxShadow = '0 2px 16px rgba(0, 0, 0, 0.08)';
+            header.classList.remove('scrolled');
         }
 
         // Hide/show header on scroll
@@ -191,7 +191,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
         
         lastScroll = currentScroll;
-    });    // Animated Stats Counter
+    });// Animated Stats Counter
     function animateStats() {
         const statNumbers = document.querySelectorAll('.stat-number');
         
@@ -240,19 +240,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 });
             }
         });
-    });
-
-    // Enhanced Parallax Effect for Hero
-    const hero = document.querySelector('.hero-section');
-    const heroBackground = document.querySelector('.hero-background');
-    
-    if (hero && heroBackground) {
-        window.addEventListener('scroll', function() {
-            const scrolled = window.pageYOffset;
-            const rate = scrolled * -0.3;
-            heroBackground.style.transform = `translateY(${rate}px)`;
-        });
-    }    // Enhanced Service Cards with Magnetic Effect
+    });    // Enhanced Service Cards with Magnetic Effect
     const serviceCards = document.querySelectorAll('.service-card');
     serviceCards.forEach((card, index) => {
         card.style.animationDelay = `${index * 0.1}s`;
@@ -580,12 +568,50 @@ document.addEventListener('DOMContentLoaded', function() {
             console.warn('Lottie library not available or container not found');
         }
     }
-    
-    // Initialize Lottie animation after DOM is ready
-    initLottieHeroAnimation();
+      // Initialize Lottie animation after DOM is ready
+    initLottieHeroAnimation();    // Initialize Lottie Stats Animation
+    function initLottieStatsAnimation() {
+        const animationIds = ['lottie-stats-animation-left', 'lottie-stats-animation-center', 'lottie-stats-animation-right'];
+        const animations = [];
+        
+        animationIds.forEach((id) => {
+            const container = document.getElementById(id);
+            
+            if (container && typeof lottie !== 'undefined') {
+                container.classList.add('loading');
+                
+                try {
+                    const animation = lottie.loadAnimation({
+                        container: container,
+                        renderer: 'svg',
+                        loop: true,
+                        autoplay: true,
+                        path: aimpro_data.theme_url + '/assets/images/stats.json'
+                    });
+                    
+                    animation.addEventListener('DOMLoaded', function() {
+                        container.classList.remove('loading');
+                    });
+                    
+                    animations.push(animation);
+                    
+                } catch (error) {
+                    container.classList.remove('loading');
+                    console.warn(`Failed to load animation ${id}:`, error);
+                }
+            }
+        });
+        
+        return animations;
+    }
+      // Initialize stats animation after DOM is ready
+    setTimeout(() => {
+        initLottieStatsAnimation();
+    }, 500); // Add delay to ensure everything is loaded
     
     // Re-initialize if needed (for dynamic content)
     document.addEventListener('lottie-hero-refresh', initLottieHeroAnimation);
+    document.addEventListener('lottie-stats-refresh', initLottieStatsAnimation);
 
 });
 

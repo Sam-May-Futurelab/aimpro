@@ -138,7 +138,16 @@
 
 <!-- Stats Counter -->
 <section class="stats-section">
-    <div class="container">        <div class="stats-grid">
+    <!-- Stats Lottie Animation Background -->
+    <div class="stats-animation-bg">
+        <div class="animation-layer">
+            <div id="lottie-stats-animation-left" class="lottie-stats-instance"></div>
+            <div id="lottie-stats-animation-center" class="lottie-stats-instance"></div>
+            <div id="lottie-stats-animation-right" class="lottie-stats-instance"></div>
+        </div>
+    </div>
+    
+    <div class="container"><div class="stats-grid">
             <div class="stat-item counter">
                 <div class="stat-number" data-count="25">0</div>
                 <div class="stat-label">Years of Experience</div>
