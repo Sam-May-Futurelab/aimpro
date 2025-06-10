@@ -893,6 +893,15 @@ section {
     z-index: 2;
 }
 
+/* Hide team member credential overlays */
+.member-overlay,
+.credentials,
+.credential-badge {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+}
+
 .team-member h3 {
     color: #1a202c;
     margin-bottom: 0.5rem;
@@ -1943,9 +1952,9 @@ p {
 }
 
 .logo-image {
-    height: 45px;
+    height: 55px;
     width: auto;
-    max-width: 200px;
+    max-width: 250px;
     object-fit: contain;
     display: block;
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -1959,15 +1968,15 @@ p {
 /* Responsive logo sizing */
 @media (max-width: 768px) {
     .logo-image {
-        height: 35px;
-        max-width: 150px;
+        height: 45px;
+        max-width: 180px;
     }
 }
 
 @media (max-width: 480px) {
     .logo-image {
-        height: 30px;
-        max-width: 120px;
+        height: 40px;
+        max-width: 150px;
     }
 }
 
