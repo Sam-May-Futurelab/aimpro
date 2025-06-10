@@ -697,14 +697,58 @@
 <!-- Contact & Footer -->
 <section class="final-cta-section">
     <div class="container">
-        <div class="final-cta-content">            <h2>You Bring the Ambition, We Drive the <span class="highlight curly-underline">RESULTS</span></h2>
+        <div class="final-cta-content">
+            <h2>You Bring the Ambition, We Drive the <span class="highlight curly-underline">RESULTS</span></h2>
             <p>Request a marketing review today. We'll send you a detailed analysis of your website and marketing, breaking down your next steps to success.</p>
-            <div class="final-cta-buttons">
-                <a href="#contact" class="btn-primary large">ACCELERATE YOUR GROWTH</a>
-                <a href="tel:+441212858490" class="btn-secondary large">
-                    <span class="phone-icon">📞</span>
-                    CALL NOW: 0121 285 8490
-                </a>
+            
+            <!-- Contact Form -->
+            <div class="contact-form-wrapper">
+                <form class="contact-form" id="contact-form" method="post" action="#" novalidate>
+                    <div class="form-header">
+                        <h3>Get In Touch</h3>
+                        <p>We'd love to hear from you. Send us a message and we'll respond as soon as possible.</p>
+                    </div>
+                    
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label for="name">Name *</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">Email *</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="phone">Phone</label>
+                            <input type="tel" id="phone" name="phone">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="referral">Where did you find us?</label>
+                            <select id="referral" name="referral">
+                                <option value="">Please select...</option>
+                                <option value="google-search">Google Search</option>
+                                <option value="social-media">Social Media</option>
+                                <option value="referral">Referral</option>
+                                <option value="linkedin">LinkedIn</option>
+                                <option value="facebook">Facebook</option>
+                                <option value="instagram">Instagram</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group full-width">
+                            <label for="query">Query</label>
+                            <textarea id="query" name="query" rows="4" placeholder="Tell us about your inquiry..."></textarea>
+                        </div>
+                    </div>
+                    
+                    <div class="form-actions">
+                        <button type="submit" class="form-submit-btn">Submit</button>
+                    </div>
+                </form>
             </div>
         </div>
     </div>
