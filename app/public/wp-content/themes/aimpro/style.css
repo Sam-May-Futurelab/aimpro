@@ -37,9 +37,116 @@ Version: 1.0
     --shadow-orange: 0 10px 25px rgba(241, 90, 37, 0.3);
     --shadow-orange-hover: 0 20px 40px rgba(241, 90, 37, 0.4);
     --shadow-dark: 0 40px 80px rgba(0, 0, 0, 0.3);
+      /* Backdrop Filters */
+    --backdrop-blur: blur(20px);
+}
+
+/* Light Theme Variables */
+:root.light-theme {
+    /* Primary Colors - Clean Light Theme */
+    --primary-black: #ffffff;
+    --primary-black-light: #f8fafc;
+    --primary-orange: #f15a25;
+    --primary-orange-light: #ff6b35;
+    --primary-orange-dark: #d14a1f;
+    
+    /* Background Colors */
+    --bg-primary: #ffffff;
+    --bg-secondary: #f8fafc;
+    --bg-tertiary: #f1f5f9;
+    --bg-card: #ffffff;
+    --bg-overlay: rgba(0, 0, 0, 0.05);
+    
+    /* Glass Morphism - Light Theme */
+    --glass-bg: rgba(255, 255, 255, 0.8);
+    --glass-bg-light: rgba(255, 255, 255, 0.6);
+    --glass-border: rgba(0, 0, 0, 0.1);
+    --glass-orange-border: rgba(241, 90, 37, 0.3);
+    
+    /* Text Colors - Light Theme */
+    --text-primary: #1a202c;
+    --text-secondary: #2d3748;
+    --text-muted: #4a5568;
+    --text-dark: #1a202c;
+    --text-light: #ffffff;
+    
+    /* Enhanced Text Colors for Better Readability */
+    --text-readable-secondary: #4a5568;
+    --text-readable-muted: #718096;
+    
+    /* Border Colors */
+    --border-light: #e2e8f0;
+    --border-medium: #cbd5e0;
+    --border-dark: #a0aec0;
+    
+    /* Accent Gradients - Light Theme */
+    --gradient-orange: linear-gradient(135deg, #f15a25, #ff6b35);
+    --gradient-orange-subtle: linear-gradient(135deg, rgba(241, 90, 37, 0.1), rgba(255, 107, 53, 0.05));
+    --gradient-dark: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+    --gradient-glass: linear-gradient(145deg, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.7) 50%, rgba(0, 0, 0, 0.05) 100%);
+    
+    /* Shadows - Light Theme */
+    --shadow-orange: 0 10px 25px rgba(241, 90, 37, 0.15);
+    --shadow-orange-hover: 0 20px 40px rgba(241, 90, 37, 0.25);
+    --shadow-dark: 0 40px 80px rgba(0, 0, 0, 0.1);
+    --shadow-card: 0 4px 6px rgba(0, 0, 0, 0.07);
+    --shadow-card-hover: 0 8px 25px rgba(0, 0, 0, 0.15);
+    
+    /* Component Specific Colors */
+    --header-bg: rgba(255, 255, 255, 0.95);
+    --hero-bg: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+    --section-bg: #ffffff;
+    --card-bg: #ffffff;
+    --input-bg: #ffffff;
+    --input-border: #e2e8f0;
+    --input-focus: #f15a25;
+    
+    /* Navigation Colors */
+    --nav-link: #4a5568;
+    --nav-link-hover: #f15a25;
+    --nav-link-active: #f15a25;
+    
+    /* Button Colors */
+    --btn-primary-bg: #f15a25;
+    --btn-primary-text: #ffffff;
+    --btn-secondary-bg: transparent;
+    --btn-secondary-text: #f15a25;
+    --btn-secondary-border: #f15a25;
+    
+    /* Service Card Colors */
+    --service-card-bg: #ffffff;
+    --service-card-border: #e2e8f0;
+    --service-card-shadow: 0 4px 6px rgba(0, 0, 0, 0.07);
+    --service-card-hover-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+      /* Footer Colors */
+    --footer-bg: #1a202c;
+    --footer-text: #e2e8f0;
+    --footer-link: #cbd5e0;
+    --footer-link-hover: #f15a25;
     
     /* Backdrop Filters */
     --backdrop-blur: blur(20px);
+}
+
+/* Theme Transition Styles */
+* {
+    transition: background-color 0.3s ease, 
+                color 0.3s ease, 
+                border-color 0.3s ease, 
+                box-shadow 0.3s ease;
+}
+
+/* Dark Theme (Default) Body Styles */
+body {
+    background: var(--primary-black);
+    color: var(--text-primary);
+    transition: background-color 0.5s ease, color 0.5s ease;
+}
+
+/* Light Theme Body Styles */
+body.light-theme {
+    background: var(--bg-primary);
+    color: var(--text-primary);
 }
 
 /* Reset and Base Styles */
@@ -52,8 +159,6 @@ Version: 1.0
 body {
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     line-height: 1.6;
-    color: var(--text-primary);
-    background: var(--primary-black);
     overflow-x: hidden;
     font-weight: 400;
     font-optical-sizing: auto;
@@ -1306,6 +1411,229 @@ section {
 .premium-service-card:nth-child(4) { animation-delay: 0.4s; }
 .premium-service-card:nth-child(5) { animation-delay: 0.5s; }
 .premium-service-card:nth-child(6) { animation-delay: 0.6s; }
+
+/* ===============================================
+   LIGHT THEME COMPONENT STYLES
+   =============================================== */
+
+/* Light Theme Header */
+.light-theme .sticky-header {
+    background: var(--header-bg) !important;
+    border-bottom: 1px solid var(--border-light);
+    box-shadow: var(--shadow-card);
+}
+
+.light-theme .logo a,
+.light-theme .logo-link {
+    color: var(--text-primary);
+}
+
+.light-theme .nav-link {
+    color: var(--nav-link);
+}
+
+.light-theme .nav-link:hover {
+    color: var(--nav-link-hover);
+    background: rgba(241, 90, 37, 0.05);
+}
+
+/* Light Theme Hero Section */
+.light-theme .hero-section {
+    background: var(--hero-bg);
+    color: var(--text-primary);
+}
+
+.light-theme .hero-content h1 {
+    color: var(--text-primary);
+}
+
+.light-theme .hero-content p {
+    color: var(--text-muted);
+}
+
+/* Light Theme Service Cards */
+.light-theme .service-card,
+.light-theme .premium-service-card {
+    background: var(--service-card-bg);
+    border: 1px solid var(--service-card-border);
+    box-shadow: var(--service-card-shadow);
+    color: var(--text-primary);
+}
+
+.light-theme .service-card:hover,
+.light-theme .premium-service-card:hover {
+    box-shadow: var(--service-card-hover-shadow);
+    transform: translateY(-2px);
+}
+
+.light-theme .service-card h3,
+.light-theme .premium-service-card h3 {
+    color: var(--text-primary);
+}
+
+.light-theme .service-card p,
+.light-theme .premium-service-card p {
+    color: var(--text-muted);
+}
+
+/* Light Theme Buttons */
+.light-theme .btn-primary {
+    background: var(--btn-primary-bg);
+    color: var(--btn-primary-text);
+    border: 2px solid var(--btn-primary-bg);
+}
+
+.light-theme .btn-secondary,
+.light-theme .btn-outline {
+    background: var(--btn-secondary-bg);
+    color: var(--btn-secondary-text);
+    border: 2px solid var(--btn-secondary-border);
+}
+
+.light-theme .btn-secondary:hover,
+.light-theme .btn-outline:hover {
+    background: var(--btn-primary-bg);
+    color: var(--btn-primary-text);
+}
+
+/* Light Theme Sections */
+.light-theme .services-section,
+.light-theme .about-section,
+.light-theme .contact-section {
+    background: var(--section-bg);
+    color: var(--text-primary);
+}
+
+.light-theme .section-title {
+    color: var(--text-primary);
+}
+
+.light-theme .section-subtitle {
+    color: var(--text-muted);
+}
+
+/* Light Theme Stats Section */
+.light-theme .stats-section {
+    background: var(--bg-secondary);
+}
+
+.light-theme .stat-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border-light);
+    box-shadow: var(--shadow-card);
+}
+
+.light-theme .stat-number {
+    color: var(--primary-orange);
+}
+
+.light-theme .stat-label {
+    color: var(--text-muted);
+}
+
+/* Light Theme Forms */
+.light-theme .form-group input,
+.light-theme .form-group textarea,
+.light-theme .form-group select {
+    background: var(--input-bg);
+    border: 1px solid var(--input-border);
+    color: var(--text-primary);
+}
+
+.light-theme .form-group input:focus,
+.light-theme .form-group textarea:focus,
+.light-theme .form-group select:focus {
+    border-color: var(--input-focus);
+    box-shadow: 0 0 0 2px rgba(241, 90, 37, 0.1);
+}
+
+.light-theme .form-group label {
+    color: var(--text-primary);
+}
+
+/* Light Theme Theme Toggle in Light Mode */
+.light-theme .theme-toggle {
+    background: rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.light-theme .theme-toggle:hover {
+    background: rgba(0, 0, 0, 0.15);
+    border-color: rgba(241, 90, 37, 0.5);
+}
+
+.light-theme .theme-toggle .theme-icon {
+    color: var(--text-primary);
+}
+
+.light-theme .theme-toggle:hover .theme-icon {
+    color: var(--primary-orange);
+}
+
+/* Light Theme Mobile Menu */
+.light-theme .main-nav.mobile-active {
+    background: var(--bg-primary);
+    border-top: 1px solid var(--border-light);
+}
+
+.light-theme .mobile-menu-toggle span {
+    background: var(--text-primary);
+}
+
+/* Light Theme Footer */
+.light-theme .footer {
+    background: var(--footer-bg);
+    color: var(--footer-text);
+}
+
+.light-theme .footer a {
+    color: var(--footer-link);
+}
+
+.light-theme .footer a:hover {
+    color: var(--footer-link-hover);
+}
+
+/* Light Theme Animation Adjustments */
+.light-theme .service-icon-animated {
+    background: var(--bg-secondary);
+    border: 2px solid var(--border-medium);
+}
+
+.light-theme .premium-service-card:hover .service-icon-animated {
+    border-color: rgba(241, 90, 37, 0.3);
+    box-shadow: 0 6px 15px rgba(241, 90, 37, 0.1);
+}
+
+/* Light Theme Loading Screen */
+.light-theme .loading-screen {
+    background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+    color: var(--text-primary);
+}
+
+.light-theme .loading-text {
+    color: var(--text-muted);
+}
+
+/* Light Theme Glassmorphism Adjustments */
+.light-theme .glassmorphism-card {
+    background: rgba(255, 255, 255, 0.9);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(20px);
+}
+
+/* Light Theme CTA Sections */
+.light-theme .cta-section {
+    background: var(--bg-tertiary);
+}
+
+.light-theme .cta-content h2 {
+    color: var(--text-primary);
+}
+
+.light-theme .cta-content p {
+    color: var(--text-muted);
+}
 
 /* Responsive Design for Premium Services */
 @media (max-width: 1200px) {
@@ -2788,6 +3116,49 @@ p {
     display: flex;
     gap: 1rem;
     align-items: center;
+}
+
+/* Theme Toggle Button */
+.theme-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-left: 1rem;
+    backdrop-filter: blur(10px);
+}
+
+.theme-toggle:hover {
+    background: rgba(255, 255, 255, 0.15);
+    border-color: rgba(241, 90, 37, 0.5);
+    transform: scale(1.05);
+}
+
+.theme-icon {
+    color: #ffffff;
+    transition: all 0.3s ease, opacity 0.3s ease;
+    position: absolute;
+    width: 20px;
+    height: 20px;
+}
+
+/* Initialize icon visibility - sun hidden, moon visible (dark theme) */
+.theme-toggle .sun-icon {
+    opacity: 0;
+}
+
+.theme-toggle .moon-icon {
+    opacity: 1;
+}
+
+.theme-toggle:hover .theme-icon {
+    color: #f15a25;
 }
 
 .mobile-menu-toggle {

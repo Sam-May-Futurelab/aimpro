@@ -1037,10 +1037,64 @@ document.addEventListener('DOMContentLoaded', function() {
                 break;
         }
     }
-    
-    // Preload animation data early
+      // Preload animation data early
     if (typeof aimpro_data !== 'undefined' && aimpro_data.theme_url) {
         preloadAnimationData();
+    }
+      // Theme Toggle Functionality
+    const themeToggle = document.querySelector('.theme-toggle');
+    const sunIcon = document.querySelector('.sun-icon');
+    const moonIcon = document.querySelector('.moon-icon');
+    
+    if (themeToggle) {
+        // Initialize theme state (currently dark theme)
+        let isDarkTheme = true;
+        
+        // Toggle button click handler
+        themeToggle.addEventListener('click', function() {
+            // Toggle theme state
+            isDarkTheme = !isDarkTheme;
+            
+            // Apply theme to body element
+            if (isDarkTheme) {
+                // Remove light theme class (activate dark theme)
+                document.body.classList.remove('light-theme');
+                document.documentElement.classList.remove('light-theme');
+                
+                // Show moon icon (dark theme active)
+                sunIcon.style.opacity = '0';
+                moonIcon.style.opacity = '1';
+                themeToggle.setAttribute('aria-label', 'Switch to light theme');
+                console.log('Switched to dark theme');
+            } else {
+                // Add light theme class (activate light theme)
+                document.body.classList.add('light-theme');
+                document.documentElement.classList.add('light-theme');
+                
+                // Show sun icon (light theme active)
+                sunIcon.style.opacity = '1';
+                moonIcon.style.opacity = '0';
+                themeToggle.setAttribute('aria-label', 'Switch to dark theme');
+                console.log('Switched to light theme');
+            }
+            
+            // Add feedback animation
+            themeToggle.style.transform = 'scale(0.95)';
+            setTimeout(() => {
+                themeToggle.style.transform = 'scale(1)';
+            }, 150);
+        });
+        
+        // Initialize with correct icon and theme (moon for current dark theme)
+        document.body.classList.remove('light-theme');
+        document.documentElement.classList.remove('light-theme');
+        sunIcon.style.opacity = '0';
+        moonIcon.style.opacity = '1';
+        themeToggle.setAttribute('aria-label', 'Switch to light theme');
+        
+        console.log('Theme toggle initialized successfully');
+    } else {
+        console.warn('Theme toggle button not found');
     }
 });
 
