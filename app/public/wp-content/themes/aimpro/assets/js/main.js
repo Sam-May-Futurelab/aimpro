@@ -151,20 +151,52 @@ document.addEventListener('DOMContentLoaded', function() {
             maxScroll = scrollPercent;
             trackEvent('Scroll', 'depth', `${scrollPercent}%`);
         }
-    });
-
-    // Mobile Menu Toggle
+    });    // Mobile Menu Toggle
     const mobileToggle = document.querySelector('.mobile-menu-toggle');
     const mainNav = document.querySelector('.main-nav');
     const headerCtas = document.querySelector('.header-ctas');
 
-    if (mobileToggle) {
-        mobileToggle.addEventListener('click', function() {
+    if (mobileToggle && mainNav) {
+        // Only add mobile CTAs on mobile devices
+        if (window.innerWidth <= 768) {
+            const mobileCtas = document.createElement('div');
+            mobileCtas.className = 'mobile-ctas';
+            mobileCtas.innerHTML = `
+                <a href="#contact" class="btn-outline mobile-cta">GET FREE AUDIT</a>
+                <a href="tel:+441212858490" class="btn-primary mobile-cta">TALK TO AN EXPERT</a>
+            `;
+            mainNav.appendChild(mobileCtas);
+        }        mobileToggle.addEventListener('click', function() {
             this.classList.toggle('active');
             mainNav.classList.toggle('mobile-active');
-            headerCtas.classList.toggle('mobile-active');
+            
+            // Prevent body scroll when menu is open
+            if (mainNav.classList.contains('mobile-active')) {
+                document.body.style.overflow = 'hidden';
+            } else {
+                document.body.style.overflow = '';
+            }
+            
+            if (headerCtas) {
+                headerCtas.classList.toggle('mobile-active');
+            }
         });
-    }    // Header Scroll Effect
+        
+        // Close mobile menu when clicking on nav links
+        const navLinks = mainNav.querySelectorAll('a');
+        navLinks.forEach(link => {
+            link.addEventListener('click', function() {
+                if (mainNav.classList.contains('mobile-active')) {
+                    mobileToggle.classList.remove('active');
+                    mainNav.classList.remove('mobile-active');
+                    document.body.style.overflow = '';
+                    if (headerCtas) {
+                        headerCtas.classList.remove('mobile-active');
+                    }
+                }
+            });
+        });
+    }// Header Scroll Effect
     const header = document.querySelector('.sticky-header');
     let lastScroll = 0;
 
