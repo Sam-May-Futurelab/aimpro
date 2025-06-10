@@ -345,7 +345,7 @@ section {
     flex-wrap: wrap;
 }
 
-/* Service Tags Strip */
+/* Service Tags Strip - Professional Animation Update */
 .service-tags-strip {
     padding: 1rem 0;
     background: var(--gradient-gold);
@@ -396,24 +396,23 @@ section {
 }
 
 .tag:nth-child(odd) {
-    animation: float 6s ease-in-out infinite;
+    animation: none !important;
 }
 
 .tag:nth-child(even) {
-    animation: float 6s ease-in-out infinite reverse;
-    animation-delay: -3s;
+    animation: none !important;
 }
 
 .tag:hover {
-    transform: none;
-    box-shadow: 0 2px 4px rgba(255, 184, 0, 0.1);
-    background: rgba(255, 255, 255, 0.2);
-    border-color: rgba(255, 255, 255, 0.3);
+    transform: translateY(-2px) !important;
+    box-shadow: 0 4px 8px rgba(255, 184, 0, 0.2) !important;
+    background: rgba(255, 255, 255, 0.25) !important;
+    border-color: rgba(255, 255, 255, 0.4) !important;
 }
 
 @keyframes float {
     0%, 100% { transform: translateY(0px); }
-    50% { transform: translateY(-10px); }
+    50% { transform: translateY(-1px); }
 }
 
 /* Value Statement */
