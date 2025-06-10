@@ -1522,28 +1522,53 @@ section {
 }
 
 .light-theme .hero-badge {
-    background: rgba(255, 255, 255, 0.9);
-    color: var(--accent);
-    border: 1px solid rgba(241, 90, 37, 0.3);
-    text-shadow: none;
+    background: rgba(255, 255, 255, 0.12) !important;
+    border: 1px solid rgba(255, 255, 255, 0.25) !important;
+    color: #ffffff !important;
+    backdrop-filter: blur(20px) !important;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3) !important;
+}
+
+.light-theme .hero-badge:hover {
+    background: rgba(241, 90, 37, 0.9) !important;
+    border-color: rgba(241, 90, 37, 1) !important;
+    color: #ffffff !important;
 }
 
 .light-theme .hero-badge span {
-    color: var(--accent) !important;
+    color: #ffffff !important;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3) !important;
 }
 
-/* Light theme trust indicators - white text for dark hero background */
+.light-theme .badge-icon {
+    filter: brightness(1.1) drop-shadow(0 1px 2px rgba(0, 0, 0, 0.3));
+}
+
+/* Light theme trust indicators - Premium clean look for dark hero background */
 .light-theme .trust-indicators {
     color: #ffffff;
 }
 
 .light-theme .trust-item {
+    background: rgba(255, 255, 255, 0.12) !important;
+    border: 1px solid rgba(255, 255, 255, 0.25) !important;
+    color: #ffffff !important;
+    backdrop-filter: blur(20px) !important;
+}
+
+.light-theme .trust-item:hover {
+    background: rgba(241, 90, 37, 0.9) !important;
+    border-color: rgba(241, 90, 37, 1) !important;
     color: #ffffff !important;
 }
 
 .light-theme .trust-item span {
     color: #ffffff !important;
-    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3) !important;
+}
+
+.light-theme .trust-icon {
+    filter: brightness(1.1) drop-shadow(0 1px 2px rgba(0, 0, 0, 0.3));
 }
 
 /* Light Theme Premium Services Section - Enhanced Readability */
