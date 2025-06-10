@@ -140,8 +140,10 @@
 <section class="stats-section">    <!-- Stats Lottie Animation Background -->
     <div class="stats-animation-bg">
         <div class="animation-layer">
-            <!-- Single stretched center animation for optimal performance -->
-            <div id="lottie-stats-animation-center" class="lottie-stats-instance lottie-stats-single"></div>
+            <!-- Three optimized Lottie instances for full-width animated coverage -->
+            <div id="lottie-stats-animation-left" class="lottie-stats-instance"></div>
+            <div id="lottie-stats-animation-center" class="lottie-stats-instance"></div>
+            <div id="lottie-stats-animation-right" class="lottie-stats-instance"></div>
             <!-- CSS fallback animation -->
             <div class="css-wave-animation" style="display: none;"></div>
         </div>
@@ -225,10 +227,9 @@
             <h2>Meet The Experts Who Make <span class="highlight curly-underline">MAGIC</span> Happen</h2>
             <p class="section-subtitle">Not all experts wear masks. Our marketing specialists love talking with clients. We're always hands-on, delivering results for businesses like yours.</p>
         </div>
-        <div class="team-grid">
-            <div class="team-member premium-card">
+        <div class="team-grid">            <div class="team-member premium-card">
                 <div class="member-photo">
-                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/ajay-dhunna.svg" alt="Ajay Dhunna" />
+                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/ajay-dhunna.png" alt="Ajay Dhunna" />
                     <div class="member-overlay">
                         <div class="credentials">
                             <span class="credential-badge">Google Certified</span>
@@ -239,10 +240,9 @@
                 <h3>Ajay Dhunna</h3>
                 <p class="member-title">Director of Marketing</p>
                 <p class="member-expertise">25+ Years Experience • 500+ Campaigns</p>
-            </div>
-            <div class="team-member premium-card">
+            </div>            <div class="team-member premium-card">
                 <div class="member-photo">
-                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/dinesh-thapa.svg" alt="Dinesh Thapa" />
+                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/dinesh-thapa.png" alt="Dinesh Thapa" />
                     <div class="member-overlay">
                         <div class="credentials">
                             <span class="credential-badge">Growth Expert</span>
@@ -253,10 +253,9 @@
                 <h3>Dinesh Thapa</h3>
                 <p class="member-title">Business Growth Specialist</p>
                 <p class="member-expertise">ROI Optimization • Analytics Expert</p>
-            </div>
-            <div class="team-member premium-card">
+            </div>            <div class="team-member premium-card">
                 <div class="member-photo">
-                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/james-butler.svg" alt="James Butler" />
+                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/james-butler.png" alt="James Butler" />
                     <div class="member-overlay">
                         <div class="credentials">
                             <span class="credential-badge">UX Designer</span>

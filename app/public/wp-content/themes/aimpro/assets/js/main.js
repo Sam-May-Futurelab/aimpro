@@ -1,94 +1,197 @@
-// Performance-Optimized JavaScript for Aimpro Digital
+// Enhanced JavaScript for Aimpro Digital
 document.addEventListener('DOMContentLoaded', function() {
     
-    // Performance optimizations
-    const performanceMode = true; // Enable performance mode
-    const reducedAnimations = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    
-    // Throttle functions for better performance
-    function throttle(func, wait) {
-        let timeout;
-        return function executedFunction(...args) {
-            const later = () => {
-                clearTimeout(timeout);
-                func(...args);
-            };
-            clearTimeout(timeout);
-            timeout = setTimeout(later, wait);
-        };
-    }
-    
-    // Debounce function for expensive operations
-    function debounce(func, wait) {
-        let timeout;
-        return function executedFunction(...args) {
-            const later = () => {
-                clearTimeout(timeout);
-                func(...args);
-            };
-            clearTimeout(timeout);
-            timeout = setTimeout(later, wait);
-        };
-    }    
-    // Quick loading screen removal
+    // Loading Screen Management
     const loadingScreen = document.getElementById('loading-screen');
-    if (loadingScreen) {
-        setTimeout(() => {
-            loadingScreen.style.display = 'none';
-        }, 300); // Much faster loading screen removal
-    }
+    const loadingText = document.querySelector('.loading-text');
+    const loadingMessages = [
+        'Crafting your digital success...',
+        'Optimizing for performance...',
+        'Loading premium experience...',
+        'Almost ready...'
+    ];
+    let messageIndex = 0;
     
-    // Optimized Back to Top Button
+    // Rotate loading messages
+    const messageInterval = setInterval(() => {
+        messageIndex = (messageIndex + 1) % loadingMessages.length;
+        if (loadingText) {
+            loadingText.textContent = loadingMessages[messageIndex];
+        }
+    }, 1500);
+    
+    // Hide loading screen when page is fully loaded
+    window.addEventListener('load', function() {
+        clearInterval(messageInterval);
+        setTimeout(() => {
+            if (loadingScreen) {
+                loadingScreen.classList.add('fade-out');
+                setTimeout(() => {
+                    loadingScreen.style.display = 'none';
+                }, 500);
+            }
+        }, 1000); // Show loading screen for at least 1 second
+    });
+    
+    // Back to Top Button
     const backToTop = document.createElement('button');
     backToTop.className = 'back-to-top';
     backToTop.innerHTML = '↑';
     backToTop.setAttribute('aria-label', 'Back to top');
+    backToTop.setAttribute('title', 'Back to top');
     document.body.appendChild(backToTop);
     
-    // Throttled scroll handler for better performance
-    const handleScroll = throttle(() => {
+    // Show/hide back to top button
+    window.addEventListener('scroll', function() {
         if (window.pageYOffset > 300) {
             backToTop.classList.add('visible');
         } else {
             backToTop.classList.remove('visible');
         }
-    }, 100); // Throttle to 10fps max
-    
-    window.addEventListener('scroll', handleScroll, { passive: true });
-    
-    backToTop.addEventListener('click', function() {
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-    });    
-    // Remove heavy error handling and performance monitoring
-    // Keep only essential error handling
-    window.addEventListener('error', function(e) {
-        console.warn('Error:', e.error?.message || 'Unknown error');
     });
     
-    // Mobile Menu Toggle (simplified)
+    // Back to top click handler
+    backToTop.addEventListener('click', function() {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    });
+    
+    // Enhanced Error Handling
+    window.addEventListener('error', function(e) {
+        console.error('JavaScript Error:', e.error);
+        // Could implement user-friendly error reporting here
+    });
+    
+    // Performance monitoring
+    if ('performance' in window) {
+        window.addEventListener('load', function() {
+            setTimeout(() => {
+                const perfData = performance.getEntriesByType('navigation')[0];
+                if (perfData && perfData.loadEventEnd - perfData.loadEventStart > 3000) {
+                    console.log('Page load time is high, consider optimizing');
+                }
+            }, 0);
+        });
+    }
+    
+    // Enhanced keyboard navigation
+    document.addEventListener('keydown', function(e) {
+        // Escape key closes mobile menu
+        if (e.key === 'Escape') {
+            const mobileToggle = document.querySelector('.mobile-menu-toggle');
+            const mainNav = document.querySelector('.main-nav');
+            if (mobileToggle && mobileToggle.classList.contains('active')) {
+                mobileToggle.classList.remove('active');
+                mainNav.classList.remove('mobile-active');
+            }
+        }
+        
+        // Space or Enter on CTA buttons
+        if ((e.key === ' ' || e.key === 'Enter') && e.target.classList.contains('btn')) {
+            e.preventDefault();
+            e.target.click();
+        }
+    });
+    
+    // Lazy loading for images (if not using native lazy loading)
+    const images = document.querySelectorAll('img[data-src]');
+    const imageObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const img = entry.target;
+                img.src = img.dataset.src;
+                img.removeAttribute('data-src');
+                imageObserver.unobserve(img);
+            }
+        });
+    });
+    
+    images.forEach(img => imageObserver.observe(img));
+    
+    // Progressive Web App prompt handling
+    let deferredPrompt;
+    window.addEventListener('beforeinstallprompt', (e) => {
+        e.preventDefault();
+        deferredPrompt = e;
+        
+        // Could show custom install button here
+        console.log('PWA install prompt available');
+    });
+    
+    // Enhanced analytics tracking (placeholder)
+    function trackEvent(category, action, label) {
+        // Google Analytics or other analytics integration
+        if (typeof gtag !== 'undefined') {
+            gtag('event', action, {
+                event_category: category,
+                event_label: label
+            });
+        }
+        console.log(`Track: ${category} - ${action} - ${label}`);
+    }
+    
+    // Track CTA clicks
+    document.querySelectorAll('.btn, .btn-primary, .btn-secondary').forEach(button => {
+        button.addEventListener('click', function() {
+            const buttonText = this.textContent.trim();
+            trackEvent('CTA', 'click', buttonText);
+        });
+    });
+    
+    // Track scroll depth
+    let maxScroll = 0;
+    window.addEventListener('scroll', function() {
+        const scrollPercent = Math.round(
+            (window.scrollY / (document.body.scrollHeight - window.innerHeight)) * 100
+        );
+        
+        if (scrollPercent > maxScroll && scrollPercent % 25 === 0) {
+            maxScroll = scrollPercent;
+            trackEvent('Scroll', 'depth', `${scrollPercent}%`);
+        }
+    });
+
+    // Mobile Menu Toggle
     const mobileToggle = document.querySelector('.mobile-menu-toggle');
     const mainNav = document.querySelector('.main-nav');
-    
-    if (mobileToggle && mainNav) {
+    const headerCtas = document.querySelector('.header-ctas');
+
+    if (mobileToggle) {
         mobileToggle.addEventListener('click', function() {
             this.classList.toggle('active');
             mainNav.classList.toggle('mobile-active');
+            headerCtas.classList.toggle('mobile-active');
         });
-    }    // Optimized Header Scroll Effect
+    }    // Header Scroll Effect
     const header = document.querySelector('.sticky-header');
-    if (header) {
-        const headerScroll = throttle(() => {
-            const currentScroll = window.pageYOffset;
-            
-            if (currentScroll > 100) {
-                header.classList.add('scrolled');
-            } else {
-                header.classList.remove('scrolled');
-            }
-        }, 50);
+    let lastScroll = 0;
+
+    window.addEventListener('scroll', function() {
+        const currentScroll = window.pageYOffset;
         
-        window.addEventListener('scroll', headerScroll, { passive: true });
-    }    // Simplified Stats Counter Animation
+        if (currentScroll > 100) {
+            header.style.background = 'rgba(255, 255, 255, 0.99)';
+            header.style.backdropFilter = 'blur(10px)';
+            header.style.boxShadow = '0 4px 24px rgba(0, 0, 0, 0.12)';
+            header.classList.add('scrolled');
+        } else {
+            header.style.background = 'rgba(255, 255, 255, 0.98)';
+            header.style.backdropFilter = 'blur(8px)';
+            header.style.boxShadow = '0 2px 16px rgba(0, 0, 0, 0.08)';
+            header.classList.remove('scrolled');
+        }
+
+        // Hide/show header on scroll
+        if (currentScroll > lastScroll && currentScroll > 200) {
+            header.style.transform = 'translateY(-100%)';
+        } else {
+            header.style.transform = 'translateY(0)';
+        }
+        
+        lastScroll = currentScroll;
+    });// Animated Stats Counter
     function animateStats() {
         const statNumbers = document.querySelectorAll('.stat-number');
         
@@ -97,55 +200,80 @@ document.addEventListener('DOMContentLoaded', function() {
                 if (entry.isIntersecting) {
                     const target = entry.target;
                     const finalNumber = parseInt(target.getAttribute('data-count'));
-                    const suffix = target.textContent.replace(/[\d]/g, '');
-                    
-                    // Faster, simpler animation
-                    let current = 0;
-                    const increment = finalNumber / 30; // Reduced from 50 for faster animation
-                    
+                    const currentText = target.textContent;
+                    const suffix = currentText.replace(/[\d]/g, ''); // Extract non-numeric characters
+                    let currentNumber = 0;
+                    const increment = finalNumber / 50; // Smoother animation
+                    const duration = 2000; // 2 seconds
+                    const interval = duration / 50;
+
                     const counter = setInterval(() => {
-                        current += increment;
-                        if (current >= finalNumber) {
+                        currentNumber += increment;
+                        if (currentNumber >= finalNumber) {
                             target.textContent = finalNumber + suffix;
                             clearInterval(counter);
                         } else {
-                            target.textContent = Math.floor(current) + suffix;
+                            target.textContent = Math.floor(currentNumber) + suffix;
                         }
-                    }, 50); // Faster interval
-                    
+                    }, interval);
+
                     observer.unobserve(target);
                 }
             });
-        }, { threshold: 0.5 }); // Higher threshold for better performance
-        
+        }, { threshold: 0.3 });
+
         statNumbers.forEach(stat => observer.observe(stat));
     }
-    
-    animateStats();    
-    // Simplified smooth scroll
+
+    // Initialize stats animation
+    animateStats();
+
+    // Smooth Scroll for Anchor Links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
             e.preventDefault();
             const target = document.querySelector(this.getAttribute('href'));
             if (target) {
-                target.scrollIntoView({ behavior: 'smooth' });
+                target.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
             }
         });
-    });
-    
-    // Lightweight card hover effects (only if performance mode is off)
-    if (!performanceMode) {
-        const serviceCards = document.querySelectorAll('.service-card');
-        serviceCards.forEach(card => {
-            card.addEventListener('mouseenter', function() {
-                this.style.transform = 'translateY(-5px)'; // Reduced movement
-            });
-            
-            card.addEventListener('mouseleave', function() {
-                this.style.transform = 'translateY(0)';
-            });
+    });    // Enhanced Service Cards with Magnetic Effect
+    const serviceCards = document.querySelectorAll('.service-card');
+    serviceCards.forEach((card, index) => {
+        card.style.animationDelay = `${index * 0.1}s`;
+        
+        card.addEventListener('mouseenter', function() {
+            this.style.transform = 'translateY(-10px) scale(1.02)';
+            this.style.boxShadow = '0 25px 50px rgba(0, 0, 0, 0.15)';
         });
-    }
+        
+        card.addEventListener('mouseleave', function() {
+            this.style.transform = 'translateY(0) scale(1)';
+            this.style.boxShadow = '0 4px 6px rgba(0, 0, 0, 0.05)';
+        });
+        
+        // Add magnetic effect on hover
+        card.addEventListener('mousemove', function(e) {
+            const rect = this.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+            
+            const centerX = rect.width / 2;
+            const centerY = rect.height / 2;
+            
+            const deltaX = (x - centerX) * 0.03;
+            const deltaY = (y - centerY) * 0.03;
+            
+            this.style.transform = `translateY(-10px) scale(1.02) translate(${deltaX}px, ${deltaY}px)`;
+        });
+        
+        card.addEventListener('mouseleave', function() {
+            this.style.transform = 'translateY(0) scale(1) translate(0, 0)';
+        });
+    });
 
     // Button Ripple Effect
     document.querySelectorAll('.btn, .btn-primary, .btn-secondary').forEach(button => {
@@ -195,26 +323,65 @@ document.addEventListener('DOMContentLoaded', function() {
         element.style.transform = 'translateY(30px)';
         element.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
         revealObserver.observe(element);
-    });    // Simplified lightweight animations (only if performance mode allows)
-    if (!performanceMode) {
-        // Basic tag hover effects (CSS-based)
-        const tags = document.querySelectorAll('.tag');
-        tags.forEach(tag => {
-            tag.classList.add('hover-effect');
-        });
+    });
 
-        // Simple blog card effects
-        const blogCards = document.querySelectorAll('.blog-card');
-        blogCards.forEach(card => {
-            card.classList.add('hover-effect');
+    // Enhanced Tag Animation
+    const tags = document.querySelectorAll('.tag');
+    tags.forEach((tag, index) => {
+        tag.style.animationDelay = `${index * 0.1}s`;
+        
+        tag.addEventListener('mouseenter', function() {
+            this.style.transform = 'translateY(-5px) scale(1.05)';
+            this.style.boxShadow = '0 10px 20px rgba(255, 184, 0, 0.3)';
         });
+        
+        tag.addEventListener('mouseleave', function() {
+            this.style.transform = 'translateY(0) scale(1)';
+            this.style.boxShadow = '0 4px 6px rgba(0, 0, 0, 0.05)';
+        });
+    });
 
-        // Minimal social icon effects
-        const socialIcons = document.querySelectorAll('.social-icon');
-        socialIcons.forEach(icon => {
-            icon.classList.add('hover-effect');
+    // Blog Cards Enhanced Animation
+    const blogCards = document.querySelectorAll('.blog-card');
+    blogCards.forEach(card => {
+        card.addEventListener('mouseenter', function() {
+            const readMore = this.querySelector('.read-more');
+            if (readMore) {
+                readMore.style.transform = 'translateX(5px)';
+            }
         });
-    }// Note: serviceCards already handled above with magnetic effects
+        
+        card.addEventListener('mouseleave', function() {
+            const readMore = this.querySelector('.read-more');
+            if (readMore) {
+                readMore.style.transform = 'translateX(0)';
+            }
+        });
+    });
+
+    // Footer Social Icons Animation
+    const socialIcons = document.querySelectorAll('.social-icon');
+    socialIcons.forEach((icon, index) => {
+        icon.addEventListener('mouseenter', function() {
+            this.style.transform = 'translateY(-3px) rotate(5deg) scale(1.1)';
+        });
+        
+        icon.addEventListener('mouseleave', function() {
+            this.style.transform = 'translateY(0) rotate(0deg) scale(1)';
+        });
+    });
+
+    // Add scroll progress indicator
+    const scrollIndicator = document.createElement('div');
+    scrollIndicator.className = 'scroll-indicator';
+    document.body.appendChild(scrollIndicator);
+
+    window.addEventListener('scroll', function() {
+        const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+        const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+        const scrolled = (winScroll / height) * 100;
+        scrollIndicator.style.setProperty('--scroll-width', scrolled + '%');
+    });    // Note: serviceCards already handled above with magnetic effects
 
     // Enhanced CTA button tracking effect
     document.querySelectorAll('.btn-primary, .btn-secondary, .btn-ghost').forEach(button => {
@@ -262,29 +429,109 @@ document.addEventListener('DOMContentLoaded', function() {
                     nav.style.transform = 'translateX(-100%)';
                 }
             });
-        }    }
+        }
+    }
 
-    // Simplified form handling
+    // Enhanced Intersection Observer for Animations
+    const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+    };
+
+    const animationObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+                
+                // Add staggered animation for card grids
+                if (entry.target.classList.contains('grid') || 
+                    entry.target.classList.contains('team-grid') ||
+                    entry.target.classList.contains('testimonials-grid') ||
+                    entry.target.classList.contains('blog-grid')) {
+                    
+                    const cards = entry.target.querySelectorAll('.service-card, .team-member, .testimonial-card, .blog-card');
+                    cards.forEach((card, index) => {
+                        setTimeout(() => {
+                            card.classList.add('visible');
+                        }, index * 100);
+                    });
+                }
+            }
+        });
+    }, observerOptions);
+
+    // Observe all animation elements
+    const animatedElements = document.querySelectorAll('.fade-in, .slide-up, .service-card, .team-member, .testimonial-card, .blog-card, .stat-item');
+    animatedElements.forEach(el => {
+        animationObserver.observe(el);
+    });
+
+    // Enhanced Form Handling (if forms exist)
     const forms = document.querySelectorAll('form');
     forms.forEach(form => {
         form.addEventListener('submit', function(e) {
             const submitBtn = form.querySelector('button[type="submit"], input[type="submit"]');
             if (submitBtn) {
-                submitBtn.disabled = true;
+                submitBtn.style.pointerEvents = 'none';
+                submitBtn.style.opacity = '0.7';
+                
+                // Re-enable after 3 seconds to prevent spam
                 setTimeout(() => {
-                    submitBtn.disabled = false;
-                }, 2000);
+                    submitBtn.style.pointerEvents = 'auto';
+                    submitBtn.style.opacity = '1';
+                }, 3000);
             }
         });
-    });    // Simple button click feedback (no heavy ripple effects)
-    document.querySelectorAll('.btn, .btn-primary, .btn-secondary').forEach(button => {
+    });
+
+    // Enhanced Button Click Effects
+    document.querySelectorAll('.btn, .btn-primary, .btn-secondary, .btn-outline').forEach(button => {
         button.addEventListener('click', function(e) {
-            this.style.transform = 'scale(0.98)';
+            // Create ripple effect
+            const ripple = document.createElement('span');
+            const rect = this.getBoundingClientRect();
+            const size = Math.max(rect.width, rect.height);
+            const x = e.clientX - rect.left - size / 2;
+            const y = e.clientY - rect.top - size / 2;
+            
+            ripple.style.cssText = `
+                position: absolute;
+                width: ${size}px;
+                height: ${size}px;
+                left: ${x}px;
+                top: ${y}px;
+                background: rgba(255, 255, 255, 0.3);
+                border-radius: 50%;
+                transform: scale(0);
+                animation: ripple 0.6s ease-out;
+                pointer-events: none;
+                z-index: 1;
+            `;
+            
+            this.appendChild(ripple);
+            
             setTimeout(() => {
-                this.style.transform = 'scale(1)';
-            }, 150);
+                ripple.remove();
+            }, 600);
         });
-    });// Initialize Lottie Hero Animation
+    });
+
+    // CSS for ripple animation
+    const style = document.createElement('style');
+    style.textContent = `
+        @keyframes ripple {
+            to {
+                transform: scale(2);
+                opacity: 0;
+            }
+        }
+        
+        .btn, .btn-primary, .btn-secondary, .btn-outline {
+            position: relative;
+            overflow: hidden;
+        }
+    `;
+    document.head.appendChild(style);    // Initialize Lottie Hero Animation
     function initLottieHeroAnimation() {
         const container = document.getElementById('lottie-hero-animation');
         if (container && typeof lottie !== 'undefined') {
@@ -322,9 +569,9 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
       // Initialize Lottie animation after DOM is ready
-    initLottieHeroAnimation();    // Initialize Optimized Single Lottie Stats Animation
+    initLottieHeroAnimation();    // Initialize Optimized Triple Lottie Stats Animation
     function initLottieStatsAnimation() {
-        const animationIds = ['lottie-stats-animation-center']; // Single center animation only
+        const animationIds = ['lottie-stats-animation-left', 'lottie-stats-animation-center', 'lottie-stats-animation-right'];
         const animations = [];
         let loadedCount = 0;
         let sharedAnimationData = null;
@@ -489,50 +736,65 @@ document.addEventListener('DOMContentLoaded', function() {
 
 });
 
-// Lightweight CSS for better performance
+// CSS Animations for Ripple Effect
 const style = document.createElement('style');
 style.textContent = `
-    /* Basic button transitions only */
+    @keyframes ripple {
+        to {
+            transform: scale(4);
+            opacity: 0;
+        }
+    }
+    
     .btn, .btn-primary, .btn-secondary {
-        transition: transform 0.15s ease;
+        position: relative;
+        overflow: hidden;
     }
     
-    /* Simplified hover effects */
-    .hover-effect {
-        transition: transform 0.2s ease;
+    /* Enhanced Hover Animations */
+    .service-card {
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     }
     
-    .hover-effect:hover {
-        transform: translateY(-2px);
-    }
-    
-    /* Basic card transitions */
-    .service-card, .team-member, .blog-card {
-        transition: transform 0.2s ease;
-    }
-    
-    /* Back to top button */
-    .back-to-top {
-        position: fixed;
-        bottom: 20px;
-        right: 20px;
-        width: 50px;
-        height: 50px;
-        background: #FFD700;
-        color: #1a1a1a;
-        border: none;
-        border-radius: 50%;
-        font-size: 20px;
-        cursor: pointer;
-        opacity: 0;
-        visibility: hidden;
+    .team-member {
         transition: all 0.3s ease;
-        z-index: 1000;
     }
     
-    .back-to-top.visible {
-        opacity: 1;
-        visibility: visible;
+    .blog-card {
+        transition: all 0.3s ease;
+    }
+    
+    /* Stagger Animation for Grid Items */
+    .service-card:nth-child(1) { animation-delay: 0s; }
+    .service-card:nth-child(2) { animation-delay: 0.1s; }
+    .service-card:nth-child(3) { animation-delay: 0.2s; }
+    .service-card:nth-child(4) { animation-delay: 0.3s; }
+    .service-card:nth-child(5) { animation-delay: 0.4s; }
+    .service-card:nth-child(6) { animation-delay: 0.5s; }
+    
+    .team-member:nth-child(1) { animation-delay: 0s; }
+    .team-member:nth-child(2) { animation-delay: 0.2s; }
+    .team-member:nth-child(3) { animation-delay: 0.4s; }
+    
+    /* Enhanced Button Glow Effect */
+    .btn-primary:hover {
+        box-shadow: 0 0 30px rgba(255, 184, 0, 0.6), 0 8px 25px rgba(255, 184, 0, 0.4);
+    }
+    
+    .btn-secondary:hover {
+        box-shadow: 0 0 20px rgba(255, 184, 0, 0.4), 0 8px 25px rgba(255, 184, 0, 0.3);
+    }
+    
+    /* Scroll Indicator Style */
+    .scroll-indicator {
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 4px;
+        background: rgba(255, 184, 0, 0.8);
+        z-index: 1000;
+        width: var(--scroll-width, 0%);
+        transition: width 0.2s ease;
     }
 `;
 document.head.appendChild(style);

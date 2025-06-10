@@ -2,7 +2,7 @@
 Theme Name: Aimpro
 Author: Sam
 Description: Custom theme for Aimpro site.
-Version: 1.2
+Version: 1.0
 */
 
 /* Reset and Base Styles */
@@ -310,28 +310,39 @@ section {
 
 .tag {
     background: rgba(255, 255, 255, 0.15);
-    backdrop-filter: blur(5px); /* Reduced blur for better performance */
+    backdrop-filter: blur(10px);
     padding: 0.6rem 1.2rem;
     border-radius: 50px;
     font-weight: 700;
     color: white;
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08); /* Simplified shadow */
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
     border: 1px solid rgba(255, 255, 255, 0.2);
-    transition: transform 0.2s ease, background 0.2s ease; /* Simplified transition */
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     text-transform: uppercase;
     letter-spacing: 0.5px;
     font-size: 0.75rem;
-    will-change: transform; /* Hint for hardware acceleration */
 }
 
-/* Removed heavy floating animation for performance */
+.tag:nth-child(odd) {
+    animation: float 6s ease-in-out infinite;
+}
+
+.tag:nth-child(even) {
+    animation: float 6s ease-in-out infinite reverse;
+    animation-delay: -3s;
+}
+
 .tag:hover {
-    transform: translateY(-3px); /* Reduced movement */
+    transform: translateY(-5px) scale(1.05);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
     background: rgba(255, 255, 255, 0.25);
     border-color: rgba(255, 255, 255, 0.4);
 }
 
-/* Removed @keyframes float animation to improve performance */
+@keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+}
 
 /* Value Statement */
 .value-statement {
@@ -406,38 +417,41 @@ section {
     height: 100%;
 }
 
-/* Animation Layer - Single Stretched Animation Layout */
+/* Animation Layer - Flex Layout for Full Width Coverage */
 .animation-layer {
     position: relative;
     width: 100%;
     height: 100%;
     display: flex;
-    justify-content: center;
-    align-items: center;
 }
 
-/* Single Stretched Lottie Animation Instance */
-.lottie-stats-single {
-    width: 100% !important;
+/* Lottie Animation Instances */
+.lottie-stats-instance {
+    flex: 1;
+    width: 33.33%;
     height: 100%;
     min-height: 400px;
     position: relative;
-    transform: translateZ(0) scaleX(1.2); /* Stretch slightly for full coverage */
+    transform: translateZ(0);
     will-change: transform;
-    flex: none;
 }
 
-/* Performance optimizations for single animation */
-.lottie-stats-single svg {
+/* Add slight visual variations to prevent identical appearance */
+.lottie-stats-instance:nth-child(2) {
+    opacity: 0.95;
+    transform: scaleX(-1) translateZ(0); /* Mirror the center one */
+}
+
+.lottie-stats-instance:nth-child(3) {
+    opacity: 0.9;
+    filter: hue-rotate(5deg);
+}
+
+/* Performance optimizations */
+.lottie-stats-instance svg {
     width: 100% !important;
     height: 100% !important;
     object-fit: cover;
-    transform: scaleX(1.1); /* Additional stretch for seamless coverage */
-}
-
-/* Remove old multi-animation styles */
-.lottie-stats-instance:not(.lottie-stats-single) {
-    display: none;
 }
 
 /* CSS Fallback Wave Animation */
@@ -488,13 +502,14 @@ section {
     }
 }
 
-/* Optimized Stats Lottie animation loading */
+/* Loading state for Stats Lottie animation */
 .lottie-stats-single.loading {
-    background: rgba(255, 255, 255, 0.05);
-    /* Removed heavy shimmer animation for better performance */
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.1) 50%, rgba(255, 255, 255, 0.05) 100%);
+    background-size: 200% 100%;
+    animation: shimmer 1.5s ease-in-out infinite;
 }
 
-/* Simplified fallback content if Lottie fails to load */
+/* Fallback content if Lottie fails to load */
 .lottie-stats-single:empty::after {
     content: "〜〜〜";
     position: absolute;
@@ -503,10 +518,18 @@ section {
     transform: translate(-50%, -50%);
     font-size: 3rem;
     opacity: 0.1;
-    /* Removed heavy wave animation */
+    animation: wave 3s ease-in-out infinite;
 }
 
-/* Removed complex keyframe animations to improve performance */
+@keyframes wave {
+    0%, 100% { transform: translate(-50%, -50%) scaleX(1); }
+    50% { transform: translate(-50%, -50%) scaleX(1.1); }
+}
+
+@keyframes shimmer {
+    0% { background-position: -200% 0; }
+    100% { background-position: 200% 0; }
+}
 
 .stats-section::before {
     content: '';
@@ -535,15 +558,13 @@ section {
 .stat-item {
     padding: 2rem;
     position: relative;
-    transition: transform 0.2s ease; /* Simplified transition */
-    will-change: transform; /* Performance hint */
+    transition: all 0.3s ease;
 }
 
 .stat-item:hover {
-    transform: translateY(-3px); /* Reduced movement for better performance */
+    transform: translateY(-5px);
 }
 
-/* Simplified bottom border effect */
 .stat-item::after {
     content: '';
     position: absolute;
@@ -553,7 +574,7 @@ section {
     width: 0;
     height: 3px;
     background: linear-gradient(135deg, #FFD700, #FFA500);
-    transition: width 0.2s ease; /* Faster transition */
+    transition: width 0.3s ease;
 }
 
 .stat-item:hover::after {
@@ -589,38 +610,22 @@ section {
     color: #1a202c;
 }
 
-.services-grid .grid {
-    display: grid !important;
-    grid-template-columns: repeat(3, 1fr) !important;
-    gap: 2rem;
+.grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2.5rem;
     margin-bottom: 2rem;
-}
-
-/* Ensure 2-column layout on smaller screens */
-@media (max-width: 768px) {
-    .services-grid .grid {
-        grid-template-columns: repeat(2, 1fr) !important;
-        gap: 1.5rem;
-    }
-}
-
-/* Single column layout on mobile */
-@media (max-width: 480px) {
-    .services-grid .grid {
-        grid-template-columns: 1fr !important;
-        gap: 1.5rem;
-    }
 }
 
 .service-card {
     background: linear-gradient(145deg, #ffffff 0%, #fafbfc 50%, #f8fafc 100%);
-    padding: 2.5rem 2rem;
-    border-radius: 16px;
+    padding: 3.5rem 2.5rem;
+    border-radius: 20px;
     box-shadow: 
-        0 6px 24px rgba(0, 0, 0, 0.06),
-        0 3px 12px rgba(0, 0, 0, 0.03),
+        0 8px 32px rgba(0, 0, 0, 0.08),
+        0 4px 16px rgba(0, 0, 0, 0.04),
         inset 0 1px 0 rgba(255, 255, 255, 0.9);
-    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
     border: 1px solid rgba(255, 255, 255, 0.8);
     position: relative;
     overflow: hidden;
@@ -629,8 +634,7 @@ section {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    aspect-ratio: 1 / 1;
-    min-height: unset;
+    min-height: 420px;
 }
 
 .service-card::before {
@@ -675,16 +679,16 @@ section {
 }
 
 .service-card:hover {
-    transform: translateY(-8px) scale(1.02);
+    transform: translateY(-15px) scale(1.03);
     box-shadow: 
-        0 20px 40px rgba(0, 0, 0, 0.08),
-        0 8px 20px rgba(255, 215, 0, 0.1),
+        0 35px 70px rgba(0, 0, 0, 0.12),
+        0 15px 35px rgba(255, 215, 0, 0.15),
         inset 0 1px 0 rgba(255, 255, 255, 1);
 }
 
 .service-icon {
-    font-size: 2.8rem;
-    margin-bottom: 1.5rem;
+    font-size: 3.5rem;
+    margin-bottom: 2rem;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -694,20 +698,19 @@ section {
         rgba(255, 215, 0, 0.15) 0%, 
         rgba(255, 165, 0, 0.1) 50%, 
         rgba(255, 215, 0, 0.05) 100%);
-    width: 80px;
-    height: 80px;
-    border-radius: 24px;
-    margin: 0 auto 1.5rem;
+    width: 100px;
+    height: 100px;
+    border-radius: 28px;
+    margin: 0 auto 2rem;
     backdrop-filter: blur(20px);
     border: 2px solid rgba(255, 215, 0, 0.2);
     box-shadow: 
-        0 6px 18px rgba(255, 215, 0, 0.08),
+        0 8px 24px rgba(255, 215, 0, 0.1),
         inset 0 1px 0 rgba(255, 255, 255, 0.8);
     position: relative;
     z-index: 2;
 }
 
-/* Optimized service icon styling */
 .service-icon::before {
     content: '';
     position: absolute;
@@ -719,24 +722,24 @@ section {
     border-radius: 30px;
     z-index: -1;
     opacity: 0;
-    transition: opacity 0.2s ease; /* Faster transition */
+    transition: opacity 0.4s ease;
 }
 
-/* Simplified service card hover effect */
 .service-card:hover .service-icon {
-    transform: scale(1.05); /* Reduced scale for better performance */
-    filter: brightness(1.1); /* Reduced brightness change */
+    transform: scale(1.15) rotate(8deg);
+    filter: brightness(1.3);
     box-shadow: 
-        0 8px 20px rgba(255, 215, 0, 0.15); /* Simplified shadow */
+        0 12px 32px rgba(255, 215, 0, 0.2),
+        inset 0 1px 0 rgba(255, 255, 255, 1);
     border-color: rgba(255, 215, 0, 0.4);
 }
 
 .service-card h3 {
     color: #1a202c;
-    margin-bottom: 1rem;
-    font-size: 1.3rem;
+    margin-bottom: 1.5rem;
+    font-size: 1.5rem;
     font-weight: 700;
-    line-height: 1.2;
+    line-height: 1.3;
     letter-spacing: -0.02em;
     position: relative;
     z-index: 2;
@@ -744,9 +747,9 @@ section {
 
 .service-card p {
     color: #4a5568;
-    font-size: 0.95rem;
-    line-height: 1.5;
-    margin-bottom: 1.5rem;
+    font-size: 1.05rem;
+    line-height: 1.6;
+    margin-bottom: 2rem;
     position: relative;
     z-index: 2;
     font-weight: 400;
@@ -847,6 +850,10 @@ section {
     border: 4px solid #667eea;
     transition: all 0.3s ease;
     position: relative;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .member-photo::before {
@@ -868,11 +875,13 @@ section {
 }
 
 .member-photo img {
-    width: 100%;
-    height: 100%;
+    width: 90%;
+    height: 90%;
     object-fit: cover;
     object-position: center;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-radius: 50%;
+    position: relative;
+    z-index: 2;
 }
 
 .team-member h3 {
@@ -927,8 +936,7 @@ section {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
     position: relative;
     border-left: 4px solid transparent;
-    transition: transform 0.2s ease, box-shadow 0.2s ease, border-left-color 0.2s ease; /* Specific transitions only */
-    will-change: transform; /* Performance hint */
+    transition: all 0.3s ease;
 }
 
 .testimonial-card::before {
@@ -940,18 +948,17 @@ section {
     color: #FFB800;
     font-family: serif;
     opacity: 0.2;
-    transition: opacity 0.2s ease; /* Faster transition */
+    transition: opacity 0.3s ease;
 }
 
-/* Simplified hover effect */
 .testimonial-card:hover {
     border-left-color: #FFB800;
-    transform: translateY(-3px); /* Reduced movement */
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08); /* Lighter shadow */
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
 }
 
 .testimonial-card:hover::before {
-    opacity: 0.3; /* Reduced opacity change */
+    opacity: 0.4;
 }
 
 .testimonial-content p {
@@ -1300,7 +1307,7 @@ section {
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 12'%3E%3Cpath d='M2 6c20-4 40 4 58-2s40 6 58 2' stroke='%23FFFFFF' stroke-width='3' fill='none'/%3E%3C/svg%3E");
 }
 
-/* Optimized loading screen */
+/* Loading Screen */
 .loading-screen {
     position: fixed;
     top: 0;
@@ -1312,7 +1319,7 @@ section {
     align-items: center;
     justify-content: center;
     z-index: 10000;
-    transition: opacity 0.3s ease; /* Faster transition */
+    transition: opacity 0.5s ease, visibility 0.5s ease;
 }
 
 .loading-screen.hidden {
@@ -1328,7 +1335,7 @@ section {
 .loading-logo h2 {
     font-size: 3rem;
     margin-bottom: 2rem;
-    /* Removed heavy pulse animation for better performance */
+    animation: pulse 2s ease-in-out infinite alternate;
 }
 
 .gradient-text {
@@ -1345,20 +1352,18 @@ section {
     margin-bottom: 2rem;
 }
 
-/* Simplified spinner animation */
 .spinner-ring {
     width: 60px;
     height: 60px;
     border: 4px solid rgba(255, 255, 255, 0.3);
     border-top: 4px solid #FFD700;
     border-radius: 50%;
-    animation: spin 0.8s linear infinite; /* Faster rotation */
+    animation: spin 1s linear infinite;
 }
 
-/* Optimized spin animation */
 @keyframes spin {
-    from { transform: rotate(0deg); }
-    to { transform: rotate(360deg); }
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
 }
 
 .loading-text {
@@ -1367,7 +1372,7 @@ section {
     font-weight: 500;
 }
 
-/* Optimized Back to Top Button */
+/* Back to Top Button */
 .back-to-top {
     position: fixed;
     bottom: 30px;
@@ -1383,35 +1388,33 @@ section {
     cursor: pointer;
     opacity: 0;
     visibility: hidden;
-    transform: translateY(10px); /* Reduced initial transform */
-    transition: opacity 0.2s ease, visibility 0.2s ease, transform 0.2s ease; /* Faster, specific transitions */
+    transform: translateY(20px) scale(0.8);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     z-index: 1000;
     box-shadow: 0 4px 15px rgba(255, 215, 0, 0.4);
-    will-change: transform; /* Performance hint */
 }
 
 .back-to-top.visible {
     opacity: 1;
     visibility: visible;
-    transform: translateY(0);
+    transform: translateY(0) scale(1);
 }
 
-/* Simplified hover effect */
 .back-to-top:hover {
-    transform: translateY(-2px); /* Reduced movement */
-    box-shadow: 0 6px 20px rgba(255, 215, 0, 0.5); /* Lighter shadow */
+    transform: translateY(-3px) scale(1.1);
+    box-shadow: 0 8px 25px rgba(255, 215, 0, 0.6);
+    background: linear-gradient(135deg, #FFA500 0%, #FF8C00 100%);
 }
 
 .back-to-top:active {
-    transform: translateY(0) scale(0.95); /* Simplified active state */
+    transform: translateY(-1px) scale(0.95);
 }
 
 /* Animation Classes */
-/* Optimized animation classes for better performance */
 .fade-in {
     opacity: 0;
-    transform: translateY(20px); /* Reduced movement */
-    transition: opacity 0.4s ease, transform 0.4s ease; /* Faster, simpler transition */
+    transform: translateY(30px);
+    transition: all 0.6s ease-out;
 }
 
 .fade-in.visible {
@@ -1421,8 +1424,8 @@ section {
 
 .slide-up {
     opacity: 0;
-    transform: translateY(30px); /* Reduced movement */
-    transition: opacity 0.5s ease, transform 0.5s ease; /* Faster transition */
+    transform: translateY(50px);
+    transition: all 0.8s ease-out;
 }
 
 .slide-up.visible {
@@ -1431,14 +1434,13 @@ section {
 }
 
 .counter {
-    transition: opacity 0.2s ease; /* Simplified transition */
+    transition: all 0.3s ease;
 }
 
-/* Simplified keyframe animations */
 @keyframes slideInUp {
     from {
         opacity: 0;
-        transform: translateY(30px); /* Reduced movement */
+        transform: translateY(50px);
     }
     to {
         opacity: 1;
@@ -1449,7 +1451,7 @@ section {
 @keyframes fadeInScale {
     from {
         opacity: 0;
-        transform: scale(0.95); /* Less dramatic scale change */
+        transform: scale(0.9);
     }
     to {
         opacity: 1;
@@ -1457,36 +1459,52 @@ section {
     }
 }
 
-/* Removed complex bounceIn animation for performance */
+@keyframes bounceIn {
+    0% {
+        opacity: 0;
+        transform: scale(0.3) translateY(100px);
+    }
+    50% {
+        opacity: 1;
+        transform: scale(1.1) translateY(-10px);
+    }
+    70% {
+        transform: scale(0.95) translateY(5px);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
+}
 
-/* Simplified animation application */
+/* Enhance existing animation classes */
 .slide-up.visible {
-    animation: slideInUp 0.5s ease forwards; /* Faster, simpler easing */
+    animation: slideInUp 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
 }
 
 .fade-in.visible {
-    animation: fadeInScale 0.4s ease forwards; /* Faster, simpler easing */
+    animation: fadeInScale 0.6s cubic-bezier(0.4, 0, 0.2, 1) forwards;
 }
 
-/* Optimized stagger animation delays with reduced times */
-.service-card:nth-child(1) { animation-delay: 0.05s; }
-.service-card:nth-child(2) { animation-delay: 0.1s; }
-.service-card:nth-child(3) { animation-delay: 0.15s; }
-.service-card:nth-child(4) { animation-delay: 0.2s; }
-.service-card:nth-child(5) { animation-delay: 0.25s; }
-.service-card:nth-child(6) { animation-delay: 0.3s; }
+/* Stagger animation delays for cards */
+.service-card:nth-child(1) { animation-delay: 0.1s; }
+.service-card:nth-child(2) { animation-delay: 0.2s; }
+.service-card:nth-child(3) { animation-delay: 0.3s; }
+.service-card:nth-child(4) { animation-delay: 0.4s; }
+.service-card:nth-child(5) { animation-delay: 0.5s; }
+.service-card:nth-child(6) { animation-delay: 0.6s; }
 
-.team-member:nth-child(1) { animation-delay: 0.05s; }
-.team-member:nth-child(2) { animation-delay: 0.1s; }
-.team-member:nth-child(3) { animation-delay: 0.15s; }
+.team-member:nth-child(1) { animation-delay: 0.1s; }
+.team-member:nth-child(2) { animation-delay: 0.2s; }
+.team-member:nth-child(3) { animation-delay: 0.3s; }
 
-.testimonial-card:nth-child(1) { animation-delay: 0.05s; }
-.testimonial-card:nth-child(2) { animation-delay: 0.1s; }
-.testimonial-card:nth-child(3) { animation-delay: 0.15s; }
+.testimonial-card:nth-child(1) { animation-delay: 0.1s; }
+.testimonial-card:nth-child(2) { animation-delay: 0.2s; }
+.testimonial-card:nth-child(3) { animation-delay: 0.3s; }
 
-.blog-card:nth-child(1) { animation-delay: 0.05s; }
-.blog-card:nth-child(2) { animation-delay: 0.1s; }
-.blog-card:nth-child(3) { animation-delay: 0.15s; }
+.blog-card:nth-child(1) { animation-delay: 0.1s; }
+.blog-card:nth-child(2) { animation-delay: 0.2s; }
+.blog-card:nth-child(3) { animation-delay: 0.3s; }
 
 /* Typography */
 h1, h2, h3, h4, h5, h6 {
@@ -1711,8 +1729,6 @@ p {
         inset 0 -1px 0 rgba(0, 0, 0, 0.1);
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     cursor: pointer;
-    position: relative;
-    overflow: hidden;
 }
 
 .btn-secondary.large {
@@ -2224,7 +2240,6 @@ select:focus {
 }
 
 /* Responsive styles for Stats Animation */
-
 @media (max-width: 768px) {
     .lottie-stats-single {
         min-height: 300px;
@@ -2234,6 +2249,7 @@ select:focus {
     
     .stats-animation-bg {
         opacity: 0.2;
+
     }
     
     .lottie-stats-single:empty::after {
@@ -2494,5 +2510,25 @@ select:focus {
     
     .video-info {
         padding: 1.25rem;
+    }
+}
+
+/* ===============================================
+   SERVICES GRID RESPONSIVE LAYOUT
+   =============================================== */
+
+/* Tablet landscape - 2 columns */
+@media (max-width: 1024px) {
+    .grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+    }
+}
+
+/* Tablet portrait and mobile - 1 column */
+@media (max-width: 768px) {
+    .grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
     }
 }
