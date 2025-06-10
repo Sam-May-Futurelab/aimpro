@@ -436,9 +436,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const observerOptions = {
         threshold: 0.1,
         rootMargin: '0px 0px -50px 0px'
-    };
-
-    const animationObserver = new IntersectionObserver((entries) => {
+    };    const animationObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 entry.target.classList.add('visible');
@@ -447,9 +445,10 @@ document.addEventListener('DOMContentLoaded', function() {
                 if (entry.target.classList.contains('grid') || 
                     entry.target.classList.contains('team-grid') ||
                     entry.target.classList.contains('testimonials-grid') ||
-                    entry.target.classList.contains('blog-grid')) {
+                    entry.target.classList.contains('blog-grid') ||
+                    entry.target.classList.contains('insights-grid')) {
                     
-                    const cards = entry.target.querySelectorAll('.service-card, .team-member, .testimonial-card, .blog-card');
+                    const cards = entry.target.querySelectorAll('.service-card, .team-member, .testimonial-card, .blog-card, .featured-insight, .insight-card');
                     cards.forEach((card, index) => {
                         setTimeout(() => {
                             card.classList.add('visible');
@@ -458,10 +457,8 @@ document.addEventListener('DOMContentLoaded', function() {
                 }
             }
         });
-    }, observerOptions);
-
-    // Observe all animation elements
-    const animatedElements = document.querySelectorAll('.fade-in, .slide-up, .service-card, .team-member, .testimonial-card, .blog-card, .stat-item');
+    }, observerOptions);    // Observe all animation elements
+    const animatedElements = document.querySelectorAll('.fade-in, .slide-up, .service-card, .team-member, .testimonial-card, .blog-card, .stat-item, .featured-insight, .insight-card, .insights-grid');
     animatedElements.forEach(el => {
         animationObserver.observe(el);
     });
@@ -569,92 +566,176 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
       // Initialize Lottie animation after DOM is ready
-    initLottieHeroAnimation();    // Initialize Optimized Triple Lottie Stats Animation
+    initLottieHeroAnimation();    // Initialize Optimized Triple Lottie Stats Animation with Enhanced Performance
     function initLottieStatsAnimation() {
         const animationIds = ['lottie-stats-animation-left', 'lottie-stats-animation-center', 'lottie-stats-animation-right'];
         const animations = [];
         let loadedCount = 0;
         let sharedAnimationData = null;
+        let statsVisible = false;
+        let animationsCreated = false;
         
-        // Performance optimization: Load animation data once and reuse
-        if (typeof lottie !== 'undefined') {
-            // Pre-load the animation data
-            fetch(aimpro_data.theme_url + '/assets/images/stats.json')
-                .then(response => response.json())
-                .then(animationData => {
-                    sharedAnimationData = animationData;
-                    
-                    // Create animations with staggered initialization for performance
-                    animationIds.forEach((id, index) => {
-                        const container = document.getElementById(id);
-                        
-                        if (container) {
-                            container.classList.add('loading');
-                            
-                            // Stagger the animation creation to avoid performance spikes
-                            setTimeout(() => {
-                                try {
-                                    const animation = lottie.loadAnimation({
-                                        container: container,
-                                        renderer: 'svg',
-                                        loop: true,
-                                        autoplay: true,
-                                        animationData: sharedAnimationData, // Use shared data
-                                        rendererSettings: {
-                                            progressiveLoad: false, // We already have the data
-                                            hideOnTransparent: true,
-                                            preserveAspectRatio: 'xMidYMid slice'
-                                        }
-                                    });
-                                    
-                                    // Add slight variation to prevent identical sync
-                                    if (index > 0) {
-                                        animation.addEventListener('DOMLoaded', function() {
-                                            // Add small random offset to avoid perfect sync
-                                            const randomOffset = (Math.random() * 0.5) + (index * 0.2);
-                                            setTimeout(() => {
-                                                animation.goToAndPlay(randomOffset * animation.totalFrames, true);
-                                            }, index * 100);
-                                        });
-                                    }
-                                    
-                                    animation.addEventListener('DOMLoaded', function() {
-                                        container.classList.remove('loading');
-                                        loadedCount++;
-                                        
-                                        if (loadedCount === 1) {
-                                            console.log('Stats animations loaded successfully');
-                                        }
-                                    });
-                                    
-                                    animation.addEventListener('error', function(error) {
-                                        container.classList.remove('loading');
-                                        console.warn(`Stats animation error for ${id}:`, error);
-                                    });
-                                    
-                                    // Performance optimization
-                                    animation.setSubframe(false);
-                                    animations.push(animation);
-                                    
-                                } catch (error) {
-                                    container.classList.remove('loading');
-                                    console.warn(`Failed to load stats animation ${id}:`, error);
-                                }
-                            }, index * 150); // Stagger by 150ms
-                        }
-                    });
-                })
-                .catch(error => {
-                    console.warn('Failed to pre-load animation data:', error);
+        // Intersection Observer for lazy loading animations only when visible
+        const statsSection = document.querySelector('.stats-section');
+        if (!statsSection) {
+            console.warn('Stats section not found');
+            return [];
+        }
+        
+        const statsObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting && !animationsCreated) {
+                    statsVisible = true;
+                    animationsCreated = true;
+                    loadStatsAnimations();
+                    statsObserver.unobserve(entry.target);
+                }
+            });
+        }, { 
+            rootMargin: '100px', // Start loading 100px before section comes into view
+            threshold: 0.1 
+        });
+        
+        statsObserver.observe(statsSection);
+        
+        function loadStatsAnimations() {
+            // Performance optimization: Load animation data once and reuse
+            if (typeof lottie !== 'undefined') {
+                // Check for reduced motion preference
+                const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+                if (prefersReducedMotion) {
+                    console.log('Reduced motion detected, using CSS fallback');
                     initCSSWaveAnimation();
-                });
-        } else {
-            // Fallback to CSS animation if Lottie unavailable
-            initCSSWaveAnimation();
+                    return;
+                }
+                
+                // Pre-load the animation data with AbortController for cancellation
+                const abortController = new AbortController();
+                
+                // Set a timeout to fallback if loading takes too long
+                const loadTimeout = setTimeout(() => {
+                    abortController.abort();
+                    console.warn('Animation loading timeout, using CSS fallback');
+                    initCSSWaveAnimation();
+                }, 3000); // 3 second timeout
+                
+                fetch(aimpro_data.theme_url + '/assets/images/stats.json', {
+                    signal: abortController.signal,
+                    cache: 'force-cache' // Use browser cache if available
+                })
+                    .then(response => {
+                        clearTimeout(loadTimeout);
+                        if (!response.ok) throw new Error('Failed to fetch animation data');
+                        return response.json();
+                    })
+                    .then(animationData => {
+                        sharedAnimationData = animationData;
+                        
+                        // Reduce animation complexity for better performance
+                        if (sharedAnimationData.layers) {
+                            sharedAnimationData.layers = sharedAnimationData.layers.slice(0, Math.min(5, sharedAnimationData.layers.length));
+                        }
+                        
+                        // Create animations with staggered initialization for performance
+                        animationIds.forEach((id, index) => {
+                            const container = document.getElementById(id);
+                            
+                            if (container) {
+                                container.classList.add('loading');
+                                
+                                // Stagger the animation creation to avoid performance spikes
+                                setTimeout(() => {
+                                    try {
+                                        const animation = lottie.loadAnimation({
+                                            container: container,
+                                            renderer: 'canvas', // Use canvas for better performance on complex animations
+                                            loop: true,
+                                            autoplay: statsVisible, // Only autoplay if section is visible
+                                            animationData: sharedAnimationData, // Use shared data
+                                            rendererSettings: {
+                                                progressiveLoad: false, // We already have the data
+                                                hideOnTransparent: true,
+                                                preserveAspectRatio: 'xMidYMid slice',
+                                                context: container.getContext ? container.getContext('2d') : null,
+                                                scaleMode: 'noScale',
+                                                clearCanvas: true
+                                            }
+                                        });
+                                        
+                                        // Performance optimizations
+                                        animation.setSubframe(false);
+                                        animation.setSpeed(0.8); // Slightly slower for smoother performance
+                                        
+                                        // Add slight variation to prevent identical sync
+                                        if (index > 0) {
+                                            animation.addEventListener('DOMLoaded', function() {
+                                                // Add small random offset to avoid perfect sync
+                                                const randomOffset = (Math.random() * 0.3) + (index * 0.15);
+                                                setTimeout(() => {
+                                                    if (animation && animation.totalFrames) {
+                                                        animation.goToAndPlay(randomOffset * animation.totalFrames, true);
+                                                    }
+                                                }, index * 80);
+                                            });
+                                        }
+                                        
+                                        animation.addEventListener('DOMLoaded', function() {
+                                            container.classList.remove('loading');
+                                            loadedCount++;
+                                            
+                                            if (loadedCount === 1) {
+                                                console.log('Stats animations loaded successfully');
+                                            }
+                                        });
+                                        
+                                        animation.addEventListener('error', function(error) {
+                                            container.classList.remove('loading');
+                                            console.warn(`Stats animation error for ${id}:`, error);
+                                        });
+                                        
+                                        // Pause animation when not visible for performance
+                                        const containerObserver = new IntersectionObserver((entries) => {
+                                            entries.forEach(entry => {
+                                                if (entry.isIntersecting) {
+                                                    animation.play();
+                                                } else {
+                                                    animation.pause();
+                                                }
+                                            });
+                                        }, { threshold: 0.1 });
+                                          containerObserver.observe(container);
+                                        animations.push(animation);
+                                        
+                                        // Store animations globally for cleanup
+                                        if (!window.statsAnimations) {
+                                            window.statsAnimations = [];
+                                        }
+                                        window.statsAnimations.push(animation);
+                                        
+                                    } catch (error) {
+                                        container.classList.remove('loading');
+                                        console.warn(`Failed to load stats animation ${id}:`, error);
+                                        initCSSWaveAnimation();
+                                    }
+                                }, index * 120); // Reduced stagger time
+                            }
+                        });
+                    })
+                    .catch(error => {
+                        clearTimeout(loadTimeout);
+                        if (error.name !== 'AbortError') {
+                            console.warn('Failed to pre-load animation data:', error);
+                        }
+                        initCSSWaveAnimation();
+                    });
+            } else {
+                // Fallback to CSS animation if Lottie unavailable
+                initCSSWaveAnimation();
+            }
         }
         
         return animations;
-    }    // Fallback CSS Wave Animation
+    }// Fallback CSS Wave Animation
     function initCSSWaveAnimation() {
         const containers = document.querySelectorAll('.lottie-stats-instance');
         const fallbackDiv = document.querySelector('.css-wave-animation');
@@ -684,40 +765,66 @@ document.addEventListener('DOMContentLoaded', function() {
                 }
             });
         }, 2000);
-    }
-      // Initialize stats animation after DOM is ready
+    }      // Initialize stats animation after DOM is ready with performance awareness
     setTimeout(() => {
-        initLottieStatsAnimation();
+        initPerformanceAwareAnimations();
     }, 500); // Add delay to ensure everything is loaded
     
     // Re-initialize if needed (for dynamic content)
     document.addEventListener('lottie-hero-refresh', initLottieHeroAnimation);
-    document.addEventListener('lottie-stats-refresh', initLottieStatsAnimation);
-
-    // Performance monitoring for stats section
+    document.addEventListener('lottie-stats-refresh', initLottieStatsAnimation);    // Enhanced Performance monitoring for stats section
     function monitorStatsPerformance() {
         const statsSection = document.querySelector('.stats-section');
         if (!statsSection) return;
         
+        let performanceMonitoringActive = false;
+        
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    const startTime = performance.now();
+                if (entry.isIntersecting && !performanceMonitoringActive) {
+                    performanceMonitoringActive = true;
                     
-                    // Monitor frame rate when stats section is visible
+                    const startTime = performance.now();
                     let frameCount = 0;
+                    let lastFrameTime = startTime;
+                    const frameMetrics = [];
+                    
+                    // Enhanced frame rate monitoring
                     const frameMonitor = () => {
+                        const currentTime = performance.now();
+                        const frameDuration = currentTime - lastFrameTime;
+                        frameMetrics.push(frameDuration);
+                        lastFrameTime = currentTime;
                         frameCount++;
-                        if (frameCount < 60) { // Monitor for ~1 second at 60fps
+                        
+                        if (frameCount < 120) { // Monitor for ~2 seconds at 60fps
                             requestAnimationFrame(frameMonitor);
                         } else {
-                            const endTime = performance.now();
-                            const avgFrameTime = (endTime - startTime) / frameCount;
+                            // Calculate performance metrics
+                            const avgFrameTime = frameMetrics.reduce((a, b) => a + b, 0) / frameMetrics.length;
+                            const maxFrameTime = Math.max(...frameMetrics);
+                            const fps = 1000 / avgFrameTime;
                             
-                            if (avgFrameTime > 16.67) { // Below 60fps
-                                console.warn('Stats animation performance below 60fps:', avgFrameTime + 'ms per frame');
+                            // Performance thresholds
+                            if (avgFrameTime > 20) { // Below 50fps
+                                console.warn(`Stats animation performance low: ${fps.toFixed(1)}fps (avg: ${avgFrameTime.toFixed(1)}ms, max: ${maxFrameTime.toFixed(1)}ms)`);
+                                
+                                // Automatically optimize if performance is poor
+                                optimizeAnimationsForPerformance();
+                            } else if (avgFrameTime > 16.67) { // Below 60fps
+                                console.log(`Stats animation performance moderate: ${fps.toFixed(1)}fps`);
                             } else {
-                                console.log('Stats animation performance optimal:', avgFrameTime + 'ms per frame');
+                                console.log(`Stats animation performance optimal: ${fps.toFixed(1)}fps`);
+                            }
+                            
+                            // Memory usage monitoring
+                            if (performance.memory) {
+                                const memoryMB = (performance.memory.usedJSHeapSize / 1024 / 1024).toFixed(1);
+                                console.log(`Memory usage: ${memoryMB}MB`);
+                                
+                                if (performance.memory.usedJSHeapSize > 50 * 1024 * 1024) { // > 50MB
+                                    console.warn('High memory usage detected, consider reducing animation complexity');
+                                }
                             }
                         }
                     };
@@ -730,10 +837,163 @@ document.addEventListener('DOMContentLoaded', function() {
         
         observer.observe(statsSection);
     }
+    
+    // Auto-optimization function for poor performance
+    function optimizeAnimationsForPerformance() {
+        const animations = document.querySelectorAll('.lottie-stats-instance');
+        const cssWave = document.querySelector('.css-wave-animation');
+        
+        console.log('Optimizing animations for better performance...');
+        
+        // Reduce animation quality and complexity
+        animations.forEach((container, index) => {
+            // Add performance optimization classes
+            container.classList.add('performance-optimized');
+            
+            // Reduce opacity for less visual complexity
+            container.style.opacity = `${0.3 - (index * 0.05)}`;
+            
+            // Apply blur to reduce detail
+            container.style.filter = 'blur(1px)';
+            
+            // Scale down slightly
+            container.style.transform = 'scale(0.95) translateZ(0)';
+        });
+        
+        // Simplify CSS animation if present
+        if (cssWave) {
+            cssWave.style.animationDuration = '20s'; // Slower animation
+            cssWave.style.opacity = '0.2'; // Reduced opacity
+        }
+        
+        // Clean up unused animations after 5 seconds
+        setTimeout(() => {
+            if (window.gc && typeof window.gc === 'function') {
+                window.gc(); // Force garbage collection if available
+            }
+        }, 5000);
+    }
+    
+    // Memory cleanup function
+    function cleanupStatsAnimations() {
+        const animations = window.statsAnimations || [];
+        
+        animations.forEach(animation => {
+            if (animation && typeof animation.destroy === 'function') {
+                animation.destroy();
+            }
+        });
+        
+        // Clear references
+        window.statsAnimations = [];
+        
+        // Force cleanup of any remaining references
+        const containers = document.querySelectorAll('.lottie-stats-instance');
+        containers.forEach(container => {
+            container.innerHTML = '';
+            container.style.willChange = 'auto';
+        });
+        
+        console.log('Stats animations cleaned up');
+    }
+    
+    // Cleanup on page unload
+    window.addEventListener('beforeunload', cleanupStatsAnimations);
+    
+    // Cleanup if user navigates away and comes back
+    document.addEventListener('visibilitychange', () => {
+        if (document.hidden) {
+            // Pause animations when tab is not visible
+            const animations = window.statsAnimations || [];
+            animations.forEach(animation => {
+                if (animation && typeof animation.pause === 'function') {
+                    animation.pause();
+                }
+            });
+        } else {
+            // Resume animations when tab becomes visible
+            const animations = window.statsAnimations || [];
+            animations.forEach(animation => {
+                if (animation && typeof animation.play === 'function') {
+                    animation.play();
+                }
+            });
+        }
+    });
 
     // Initialize performance monitoring
     monitorStatsPerformance();
 
+    // Preload animation data for better performance
+    function preloadAnimationData() {
+        const link = document.createElement('link');
+        link.rel = 'preload';
+        link.href = aimpro_data.theme_url + '/assets/images/stats.json';
+        link.as = 'fetch';
+        link.crossOrigin = 'anonymous';
+        document.head.appendChild(link);
+    }
+    
+    // Device performance detection
+    function detectDevicePerformance() {
+        const navigator = window.navigator;
+        let performanceLevel = 'high'; // Default to high performance
+        
+        // Check for low-end device indicators
+        if (navigator.hardwareConcurrency && navigator.hardwareConcurrency <= 2) {
+            performanceLevel = 'low';
+        }
+        
+        if (navigator.deviceMemory && navigator.deviceMemory <= 2) {
+            performanceLevel = 'low';
+        }
+        
+        // Check connection speed
+        if (navigator.connection) {
+            const connection = navigator.connection;
+            if (connection.effectiveType === 'slow-2g' || 
+                connection.effectiveType === '2g' ||
+                connection.saveData) {
+                performanceLevel = 'low';
+            }
+        }
+        
+        // Check for mobile device
+        if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+            if (performanceLevel === 'high') {
+                performanceLevel = 'medium';
+            }
+        }
+        
+        console.log(`Device performance level: ${performanceLevel}`);
+        return performanceLevel;
+    }
+    
+    // Initialize performance-aware animations
+    function initPerformanceAwareAnimations() {
+        const performanceLevel = detectDevicePerformance();
+        
+        switch (performanceLevel) {
+            case 'low':
+                console.log('Low performance device detected, using CSS animations only');
+                initCSSWaveAnimation();
+                break;
+            case 'medium':
+                console.log('Medium performance device detected, using optimized Lottie animations');
+                setTimeout(initLottieStatsAnimation, 1000); // Delay for medium devices
+                break;
+            case 'high':
+            default:
+                console.log('High performance device detected, using full Lottie animations');
+                initLottieStatsAnimation();
+                break;
+        }
+    }
+    
+    // Preload animation data early
+    if (typeof aimpro_data !== 'undefined' && aimpro_data.theme_url) {
+        preloadAnimationData();
+    }
 });
 
 // CSS Animations for Ripple Effect

@@ -2,14 +2,29 @@
 <html <?php language_attributes(); ?>>
 <head>
     <meta charset="<?php bloginfo('charset'); ?>">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">    <title><?php wp_title('|', true, 'right'); ?><?php bloginfo('name'); ?></title>
-    <!-- Google Fonts - Inter -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Performance Optimization: Resource Hints -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    <link rel="dns-prefetch" href="//fonts.googleapis.com">
+    <link rel="dns-prefetch" href="//cdnjs.cloudflare.com">
+    
+    <!-- Preload critical animation data -->
+    <link rel="preload" href="<?php echo get_template_directory_uri(); ?>/assets/images/stats.json" as="fetch" crossorigin>
+    <link rel="preload" href="<?php echo get_template_directory_uri(); ?>/assets/js/main.js" as="script">
+    <link rel="preload" href="<?php echo get_template_directory_uri(); ?>/style.css" as="style">
+    
+    <title><?php wp_title('|', true, 'right'); ?><?php bloginfo('name'); ?></title>
+    
+    <!-- Google Fonts - Inter with performance optimizations -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
     <!-- GSAP for Premium Animations -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    
     <?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
@@ -33,11 +48,9 @@
 <!-- Sticky Header -->
 <header class="sticky-header glassmorphism-header">
     <div class="container">
-        <div class="header-content">
-            <div class="logo">
-                <a href="<?php echo home_url(); ?>" class="logo-text">
-                    <span class="logo-gradient">Aimpro</span>
-                    <span class="logo-subtitle">Digital</span>
+        <div class="header-content">            <div class="logo">
+                <a href="<?php echo home_url(); ?>" class="logo-link" aria-label="Aimpro Digital - Home">
+                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/Aimpro-Digital-UK-Final-Logo.png" alt="Aimpro Digital - Award-Winning Digital Marketing Agency" class="logo-image" width="200" height="45">
                 </a>
             </div>
             <nav class="main-nav">
@@ -348,16 +361,13 @@
 
 
 <!-- Magazine-Style Insights Section -->
-<section class="insights-section magazine-layout">
-    <div class="container">
+<section class="insights-section magazine-layout">    <div class="container">
         <div class="content-center">
-            <h2>Latest Insights & Digital Marketing Trends</h2>
-            <p class="section-subtitle">Stay ahead with our expert insights and industry analysis</p>
+            <h2>Stay ahead with our expert insights and industry analysis</h2>
         </div>
-        <div class="insights-grid">
-            <article class="featured-insight">
+        <div class="insights-grid">            <article class="featured-insight">
                 <div class="insight-image">
-                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/insight-featured.jpg" alt="Featured Insight" />
+                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/hero-background.png" alt="Featured Insight" />
                     <div class="insight-category">Featured</div>
                 </div>
                 <div class="insight-content">
@@ -373,7 +383,7 @@
             <div class="insights-sidebar">
                 <article class="insight-card">
                     <div class="insight-image-small">
-                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/insight-1.jpg" alt="Insight" />
+                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/ajay-dhunna.png" alt="Insight" />
                     </div>
                     <div class="insight-content-small">
                         <h4>Google Ads Best Practices for 2024</h4>
@@ -382,7 +392,7 @@
                 </article>
                 <article class="insight-card">
                     <div class="insight-image-small">
-                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/insight-2.jpg" alt="Insight" />
+                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/dinesh-thapa.png" alt="Insight" />
                     </div>
                     <div class="insight-content-small">
                         <h4>SEO Trends That Will Drive Traffic</h4>
@@ -391,7 +401,7 @@
                 </article>
                 <article class="insight-card">
                     <div class="insight-image-small">
-                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/insight-3.jpg" alt="Insight" />
+                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/james-butler.png" alt="Insight" />
                     </div>
                     <div class="insight-content-small">
                         <h4>Social Media ROI: Measuring Success</h4>
