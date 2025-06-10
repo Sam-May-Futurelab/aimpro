@@ -90,11 +90,10 @@
                 <div class="hero-badge slide-up-delay-1">
                     <span class="badge-icon">🚀</span>
                     <span>Award-Winning Digital Agency</span>
-                </div>
-                <h1 class="hero-title">Get More Leads & More Customers With <span class="highlight curly-underline">PRECISION</span> Digital <span class="highlight-word">Marketing</span>.</h1>
-                <p class="hero-subtitle">Lead Generation, SEO, PPC, Website, AI Marketing and Automation. Drive <strong class="highlight-underline">REAL RESULTS</strong> and boost your revenue with strategies that actually <strong class="highlight-word">work</strong>.</p>
+                </div>                <h1 class="hero-title">Drive More Leads & Scale Your Business With <span class="highlight curly-underline">PRECISION</span> Digital <span class="highlight-word">Marketing</span>.</h1>
+                <p class="hero-subtitle">Strategic Lead Generation, SEO, PPC, Web Design, AI Marketing & Automation. Transform prospects into profits with data-driven strategies that deliver <strong class="highlight-underline">MEASURABLE RESULTS</strong> and accelerate your <strong class="highlight-word">growth</strong>.</p>
                 <div class="hero-ctas">
-                    <a href="#contact" class="btn-primary large shine-effect pulse-animation">GET FREE MARKETING REVIEW</a>
+                    <a href="#contact" class="btn-primary large shine-effect pulse-animation">CLAIM YOUR FREE GROWTH STRATEGY</a>
                     <a href="tel:+441212858490" class="btn-secondary large premium-hover">
                         <span class="phone-icon">📞</span>
                         CALL NOW: 0121 285 8490
@@ -142,9 +141,9 @@
 <!-- Agency Value Statement -->
 <section class="value-statement">
     <div class="container">
-        <div class="content-center">            <h2>A Data-Driven Digital Agency Committed To Your <span class="highlight curly-underline">GROWTH</span></h2>
-            <p>We help businesses transform their digital presence through modern strategies and data-driven marketing. Our proven methodologies deliver measurable results that drive real growth and maximize your revenue potential.</p>
-            <a href="#contact" class="btn-primary large">GET FREE STRATEGY AUDIT</a>
+        <div class="content-center">            <h2>A Results-Driven Digital Agency Obsessed With Your <span class="highlight curly-underline">SUCCESS</span></h2>
+            <p>We partner with ambitious businesses to transform their digital presence through intelligent strategies and performance-focused marketing. Our proven methodologies deliver quantifiable results that drive exponential growth and maximize your competitive advantage.</p>
+            <a href="#contact" class="btn-primary large">CLAIM YOUR FREE GROWTH AUDIT</a>
         </div>
     </div>
 </section>
@@ -193,9 +192,8 @@
     </div>
     
     <div class="container">
-        <div class="content-center">
-            <h2>Digital Marketing Services That <span class="highlight curly-underline">DELIVER</span></h2>
-            <p class="section-subtitle">No fluff. Just results. Our multi-channel marketing services integrate to make marketing magic happen.</p>
+        <div class="content-center">            <h2>Premium Digital Marketing Solutions That <span class="highlight curly-underline">DELIVER</span></h2>
+            <p class="section-subtitle">Zero fluff. Pure performance. Our integrated marketing ecosystem works seamlessly to transform prospects into profits.</p>
         </div>
         
         <div class="premium-services-grid">
@@ -219,7 +217,7 @@
                         <h3>Lead Generation</h3>
                     </div>
                     <div class="service-description">
-                        <p>Generate high-quality leads with targeted campaigns that convert prospects into customers using advanced data analytics and proven strategies.</p>
+                        <p>Deploy high-impact lead generation campaigns that attract, qualify, and convert your ideal prospects into profitable customers using advanced targeting and conversion optimization.</p>
                         <div class="service-features">
                             <span class="feature-tag">✓ Advanced Targeting</span>
                             <span class="feature-tag">✓ Lead Scoring</span>
@@ -228,7 +226,7 @@
                     </div>
                     <div class="service-action">
                         <a href="#contact" class="premium-service-cta">
-                            <span>GET MORE LEADS</span>
+                            <span>SCALE YOUR LEADS</span>
                             <div class="cta-arrow">
                                 <svg width="20" height="20" viewBox="0 0 24 24">
                                     <path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2" fill="none"/>
@@ -260,7 +258,7 @@
                         <h3>Google Ads Management</h3>
                     </div>
                     <div class="service-description">
-                        <p>Maximize your ROI with expertly managed Google Ads campaigns that target the right audience at the right time with precision targeting.</p>
+                        <p>Dominate search results with expertly crafted Google Ads campaigns that capture high-intent traffic and convert clicks into customers with surgical precision and maximum ROI.</p>
                         <div class="service-features">
                             <span class="feature-tag">✓ ROI Optimization</span>
                             <span class="feature-tag">✓ Keyword Research</span>
@@ -269,7 +267,7 @@
                     </div>
                     <div class="service-action">
                         <a href="#contact" class="premium-service-cta">
-                            <span>BOOST YOUR ROI</span>
+                            <span>MAXIMIZE YOUR ROI</span>
                             <div class="cta-arrow">
                                 <svg width="20" height="20" viewBox="0 0 24 24">
                                     <path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2" fill="none"/>
@@ -303,7 +301,7 @@
                         <h3>Website Design</h3>
                     </div>
                     <div class="service-description">
-                        <p>Create stunning, conversion-focused websites that not only look great but drive results and provide exceptional user experiences.</p>
+                        <p>Engineer premium, conversion-optimized websites that captivate visitors and transform them into customers through strategic design and seamless user experiences.</p>
                         <div class="service-features">
                             <span class="feature-tag">✓ Mobile First</span>
                             <span class="feature-tag">✓ SEO Ready</span>
@@ -347,7 +345,7 @@
                         <h3>Social Media Ads</h3>
                     </div>
                     <div class="service-description">
-                        <p>Reach your target audience on social platforms with compelling ad campaigns that drive engagement and conversions across all channels.</p>
+                        <p>Amplify your brand presence across social platforms with strategic ad campaigns that cut through the noise, capture attention, and convert audiences into loyal customers.</p>
                         <div class="service-features">
                             <span class="feature-tag">✓ Multi-Platform</span>
                             <span class="feature-tag">✓ Creative Testing</span>
@@ -459,7 +457,7 @@
         </div>
         
         <div class="services-cta-section">
-            <a href="#contact" class="btn-primary large pulse-animation">GET FREE MARKETING REVIEW</a>
+            <a href="#contact" class="btn-primary large pulse-animation">UNLOCK YOUR GROWTH POTENTIAL</a>
         </div>
     </div>
 </section>
@@ -467,9 +465,8 @@
 <!-- Team Section -->
 <section id="about" class="team-section premium-team">
     <div class="container">
-        <div class="content-center">
-            <h2>Meet The Experts Who Make <span class="highlight curly-underline">MAGIC</span> Happen</h2>
-            <p class="section-subtitle">Not all experts wear masks. Our marketing specialists love talking with clients. We're always hands-on, delivering results for businesses like yours.</p>
+        <div class="content-center">            <h2>Meet The Experts Who Make <span class="highlight curly-underline">MAGIC</span> Happen</h2>
+            <p class="section-subtitle">No faceless agencies here. Our marketing specialists are passionate about client success and personally invested in delivering exceptional results for every business we partner with.</p>
         </div>
         <div class="team-grid">            <div class="team-member premium-card">
                 <div class="member-photo">
@@ -521,10 +518,9 @@
 <!-- Testimonials Section -->
 <section class="testimonials-section">
     <div class="container">
-        <div class="content-center">
-            <h2>Don't Just Take Our Word for It</h2>
+        <div class="content-center">            <h2>Don't Just Take Our Word for It</h2>
             <div class="curly-underline-accent"></div>
-            <p class="section-subtitle">Here's what our awesome clients have to say about working with us:</p>        </div>
+            <p class="section-subtitle">Discover how we've transformed businesses across industries with strategies that deliver measurable growth:</p></div>
         <div class="testimonials-carousel-wrapper">
             <div class="testimonials-carousel-container">
                 <div class="testimonials-carousel-track">
@@ -584,7 +580,7 @@
                 <button class="carousel-next">›</button>
             </div>
         </div>        <div class="testimonials-cta-section">
-            <a href="#contact" class="btn-primary large shine-effect">GET RESULTS LIKE THESE</a>
+            <a href="#contact" class="btn-primary large shine-effect">START YOUR SUCCESS STORY</a>
         </div>
     </div>
 </section>
@@ -594,7 +590,8 @@
 <!-- Magazine-Style Insights Section -->
 <section class="insights-section magazine-layout">    <div class="container">
         <div class="content-center">
-            <h2>Stay ahead with our expert insights and industry analysis</h2>
+            <h2>Stay Ahead With Expert Insights & Cutting-Edge Industry Intelligence</h2>
+            <p class="section-subtitle">Exclusive strategies and data-driven insights from our marketing experts to keep you at the forefront of digital innovation.</p>
         </div>
         <div class="insights-grid">            <article class="featured-insight">
                 <div class="insight-image">
@@ -651,7 +648,7 @@
 <section class="blog-section">
     <div class="container">
         <div class="content-center">            <h2>Scale Up Your <span class="highlight curly-underline">MARKETING</span></h2>
-            <p class="section-subtitle">No secrets here. We share what we know so marketers like you can increase your leads, traffic and sales.</p>
+            <p class="section-subtitle">Zero secrets. Maximum value. We share proven strategies and insider insights to help ambitious marketers like you accelerate growth, drive traffic, and maximize revenue.</p>
         </div>
         <div class="blog-grid">
             <?php
@@ -690,7 +687,7 @@
         <div class="final-cta-content">            <h2>You Bring the Ambition, We Drive the <span class="highlight curly-underline">RESULTS</span></h2>
             <p>Request a marketing review today. We'll send you a detailed analysis of your website and marketing, breaking down your next steps to success.</p>
             <div class="final-cta-buttons">
-                <a href="#contact" class="btn-primary large">GET FREE MARKETING REVIEW</a>
+                <a href="#contact" class="btn-primary large">ACCELERATE YOUR GROWTH</a>
                 <a href="tel:+441212858490" class="btn-secondary large">
                     <span class="phone-icon">📞</span>
                     CALL NOW: 0121 285 8490
