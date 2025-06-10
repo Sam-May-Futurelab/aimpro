@@ -907,24 +907,11 @@ document.addEventListener('DOMContentLoaded', function() {    // Stats counter a
             if (headerCtas) {
                 headerCtas.classList.toggle('mobile-active');
             }
-        });
-    }
+        });    }
     
-    // Header scroll effect
-    const header = document.querySelector('.sticky-header');
-    let lastScrollY = window.scrollY;
+    // Header scroll effect - SIMPLIFIED (header stays consistent)
+    // No need for scroll-based class changes since header is always dark
     
-    window.addEventListener('scroll', () => {
-        const currentScrollY = window.scrollY;
-        
-        if (currentScrollY > 100) {
-            header.classList.add('scrolled');
-        } else {
-            header.classList.remove('scrolled');
-        }
-          lastScrollY = currentScrollY;
-    });
-
     // Testimonials Carousel
     const carousel = {
         track: document.querySelector('.testimonials-carousel-track'),
