@@ -183,52 +183,283 @@
     </div>
 </section>
 
-<!-- Service Overview Grid -->
-<section id="services" class="services-grid">
-    <div class="container">        <div class="content-center">
+<!-- Premium Service Showcase -->
+<section id="services" class="premium-services-section">
+    <div class="services-background-gradient"></div>
+    <div class="floating-elements">
+        <div class="floating-orb orb-1"></div>
+        <div class="floating-orb orb-2"></div>
+        <div class="floating-orb orb-3"></div>
+    </div>
+    
+    <div class="container">
+        <div class="content-center">
             <h2>Digital Marketing Services That <span class="highlight curly-underline">DELIVER</span></h2>
             <p class="section-subtitle">No fluff. Just results. Our multi-channel marketing services integrate to make marketing magic happen.</p>
         </div>
-        <div class="grid">
-            <div class="service-card slide-up">
-                <div class="service-icon">🎯</div>
-                <h3>Lead Generation</h3>
-                <p>Generate high-quality leads with targeted campaigns that convert prospects into customers using advanced data analytics and proven strategies.</p>
-                <a href="#contact" class="service-cta">GET MORE LEADS →</a>
+        
+        <div class="premium-services-grid">
+            <!-- Lead Generation Service -->
+            <div class="premium-service-card" data-service="lead-generation">
+                <div class="service-background">
+                    <div class="service-pattern pattern-1"></div>
+                </div>
+                <div class="service-content">
+                    <div class="service-header">
+                        <div class="service-icon-container">
+                            <div class="service-icon-animated">
+                                <svg class="service-svg" viewBox="0 0 100 100">
+                                    <circle cx="50" cy="50" r="20" class="icon-circle"/>
+                                    <path d="M30 30 L50 50 L70 30" class="icon-arrow"/>
+                                    <circle cx="50" cy="50" r="3" class="icon-dot"/>
+                                </svg>
+                            </div>
+                            <div class="service-badge">Lead Gen</div>
+                        </div>
+                        <h3>Lead Generation</h3>
+                    </div>
+                    <div class="service-description">
+                        <p>Generate high-quality leads with targeted campaigns that convert prospects into customers using advanced data analytics and proven strategies.</p>
+                        <div class="service-features">
+                            <span class="feature-tag">✓ Advanced Targeting</span>
+                            <span class="feature-tag">✓ Lead Scoring</span>
+                            <span class="feature-tag">✓ Conversion Tracking</span>
+                        </div>
+                    </div>
+                    <div class="service-action">
+                        <a href="#contact" class="premium-service-cta">
+                            <span>GET MORE LEADS</span>
+                            <div class="cta-arrow">
+                                <svg width="20" height="20" viewBox="0 0 24 24">
+                                    <path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2" fill="none"/>
+                                </svg>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="service-overlay"></div>
             </div>
-            <div class="service-card slide-up">
-                <div class="service-icon">📊</div>
-                <h3>Google Ads Management</h3>
-                <p>Maximize your ROI with expertly managed Google Ads campaigns that target the right audience at the right time with precision targeting.</p>
-                <a href="#contact" class="service-cta">BOOST YOUR ROI →</a>
+
+            <!-- Google Ads Management -->
+            <div class="premium-service-card" data-service="google-ads">
+                <div class="service-background">
+                    <div class="service-pattern pattern-2"></div>
+                </div>
+                <div class="service-content">
+                    <div class="service-header">
+                        <div class="service-icon-container">
+                            <div class="service-icon-animated">
+                                <svg class="service-svg" viewBox="0 0 100 100">
+                                    <rect x="20" y="40" width="60" height="20" class="icon-bar"/>
+                                    <rect x="30" y="30" width="40" height="40" class="icon-chart" fill="none" stroke="currentColor"/>
+                                    <path d="M35 50 L45 40 L55 45 L65 35" class="icon-line"/>
+                                </svg>
+                            </div>
+                            <div class="service-badge">PPC</div>
+                        </div>
+                        <h3>Google Ads Management</h3>
+                    </div>
+                    <div class="service-description">
+                        <p>Maximize your ROI with expertly managed Google Ads campaigns that target the right audience at the right time with precision targeting.</p>
+                        <div class="service-features">
+                            <span class="feature-tag">✓ ROI Optimization</span>
+                            <span class="feature-tag">✓ Keyword Research</span>
+                            <span class="feature-tag">✓ A/B Testing</span>
+                        </div>
+                    </div>
+                    <div class="service-action">
+                        <a href="#contact" class="premium-service-cta">
+                            <span>BOOST YOUR ROI</span>
+                            <div class="cta-arrow">
+                                <svg width="20" height="20" viewBox="0 0 24 24">
+                                    <path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2" fill="none"/>
+                                </svg>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="service-overlay"></div>
             </div>
-            <div class="service-card slide-up">
-                <div class="service-icon">🌐</div>
-                <h3>Website Design</h3>
-                <p>Create stunning, conversion-focused websites that not only look great but drive results and provide exceptional user experiences.</p>
-                <a href="#contact" class="service-cta">BUILD BETTER WEBSITE →</a>
+
+            <!-- Website Design -->
+            <div class="premium-service-card" data-service="website-design">
+                <div class="service-background">
+                    <div class="service-pattern pattern-3"></div>
+                </div>
+                <div class="service-content">
+                    <div class="service-header">
+                        <div class="service-icon-container">
+                            <div class="service-icon-animated">
+                                <svg class="service-svg" viewBox="0 0 100 100">
+                                    <rect x="15" y="25" width="70" height="50" class="icon-browser" fill="none" stroke="currentColor"/>
+                                    <rect x="15" y="25" width="70" height="12" class="icon-header"/>
+                                    <circle cx="22" cy="31" r="2" class="icon-dot"/>
+                                    <circle cx="30" cy="31" r="2" class="icon-dot"/>
+                                    <circle cx="38" cy="31" r="2" class="icon-dot"/>
+                                </svg>
+                            </div>
+                            <div class="service-badge">Web</div>
+                        </div>
+                        <h3>Website Design</h3>
+                    </div>
+                    <div class="service-description">
+                        <p>Create stunning, conversion-focused websites that not only look great but drive results and provide exceptional user experiences.</p>
+                        <div class="service-features">
+                            <span class="feature-tag">✓ Mobile First</span>
+                            <span class="feature-tag">✓ SEO Ready</span>
+                            <span class="feature-tag">✓ Fast Loading</span>
+                        </div>
+                    </div>
+                    <div class="service-action">
+                        <a href="#contact" class="premium-service-cta">
+                            <span>BUILD BETTER WEBSITE</span>
+                            <div class="cta-arrow">
+                                <svg width="20" height="20" viewBox="0 0 24 24">
+                                    <path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2" fill="none"/>
+                                </svg>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="service-overlay"></div>
             </div>
-            <div class="service-card slide-up">
-                <div class="service-icon">📱</div>
-                <h3>Social Media Ads</h3>
-                <p>Reach your target audience on social platforms with compelling ad campaigns that drive engagement and conversions across all channels.</p>
-                <a href="#contact" class="service-cta">SCALE YOUR REACH →</a>
+
+            <!-- Social Media Ads -->
+            <div class="premium-service-card" data-service="social-media">
+                <div class="service-background">
+                    <div class="service-pattern pattern-4"></div>
+                </div>
+                <div class="service-content">
+                    <div class="service-header">
+                        <div class="service-icon-container">
+                            <div class="service-icon-animated">
+                                <svg class="service-svg" viewBox="0 0 100 100">
+                                    <circle cx="30" cy="30" r="12" class="icon-circle"/>
+                                    <circle cx="70" cy="30" r="12" class="icon-circle"/>
+                                    <circle cx="50" cy="70" r="12" class="icon-circle"/>
+                                    <path d="M42 30 L58 30" class="icon-line"/>
+                                    <path d="M38 42 L42 58" class="icon-line"/>
+                                    <path d="M62 42 L58 58" class="icon-line"/>
+                                </svg>
+                            </div>
+                            <div class="service-badge">Social</div>
+                        </div>
+                        <h3>Social Media Ads</h3>
+                    </div>
+                    <div class="service-description">
+                        <p>Reach your target audience on social platforms with compelling ad campaigns that drive engagement and conversions across all channels.</p>
+                        <div class="service-features">
+                            <span class="feature-tag">✓ Multi-Platform</span>
+                            <span class="feature-tag">✓ Creative Testing</span>
+                            <span class="feature-tag">✓ Audience Insights</span>
+                        </div>
+                    </div>
+                    <div class="service-action">
+                        <a href="#contact" class="premium-service-cta">
+                            <span>SCALE YOUR REACH</span>
+                            <div class="cta-arrow">
+                                <svg width="20" height="20" viewBox="0 0 24 24">
+                                    <path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2" fill="none"/>
+                                </svg>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="service-overlay"></div>
             </div>
-            <div class="service-card slide-up">
-                <div class="service-icon">🤖</div>
-                <h3>AI Powered CRM</h3>
-                <p>Streamline your customer relationships with intelligent CRM systems that automate processes and provide valuable insights.</p>
-                <a href="#contact" class="service-cta">AUTOMATE YOUR CRM →</a>
+
+            <!-- AI Powered CRM -->
+            <div class="premium-service-card" data-service="ai-crm">
+                <div class="service-background">
+                    <div class="service-pattern pattern-5"></div>
+                </div>
+                <div class="service-content">
+                    <div class="service-header">
+                        <div class="service-icon-container">
+                            <div class="service-icon-animated">
+                                <svg class="service-svg" viewBox="0 0 100 100">
+                                    <circle cx="50" cy="50" r="25" class="icon-brain" fill="none" stroke="currentColor"/>
+                                    <path d="M35 45 Q50 35 65 45" class="icon-curve"/>
+                                    <path d="M35 55 Q50 65 65 55" class="icon-curve"/>
+                                    <circle cx="42" cy="45" r="2" class="icon-dot"/>
+                                    <circle cx="58" cy="45" r="2" class="icon-dot"/>
+                                </svg>
+                            </div>
+                            <div class="service-badge">AI</div>
+                        </div>
+                        <h3>AI Powered CRM</h3>
+                    </div>
+                    <div class="service-description">
+                        <p>Streamline your customer relationships with intelligent CRM systems that automate processes and provide valuable insights.</p>
+                        <div class="service-features">
+                            <span class="feature-tag">✓ Smart Automation</span>
+                            <span class="feature-tag">✓ Predictive Analytics</span>
+                            <span class="feature-tag">✓ Customer Insights</span>
+                        </div>
+                    </div>
+                    <div class="service-action">
+                        <a href="#contact" class="premium-service-cta">
+                            <span>AUTOMATE YOUR CRM</span>
+                            <div class="cta-arrow">
+                                <svg width="20" height="20" viewBox="0 0 24 24">
+                                    <path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2" fill="none"/>
+                                </svg>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="service-overlay"></div>
             </div>
-            <div class="service-card slide-up">
-                <div class="service-icon">⚡</div>
-                <h3>Marketing Automation</h3>
-                <p>Automate your marketing workflows to nurture leads, retain customers, and scale your business efficiently with smart automation.</p>
-                <a href="#contact" class="service-cta">AUTOMATE YOUR GROWTH →</a>
+
+            <!-- Marketing Automation -->
+            <div class="premium-service-card" data-service="automation">
+                <div class="service-background">
+                    <div class="service-pattern pattern-6"></div>
+                </div>
+                <div class="service-content">
+                    <div class="service-header">
+                        <div class="service-icon-container">
+                            <div class="service-icon-animated">
+                                <svg class="service-svg" viewBox="0 0 100 100">
+                                    <circle cx="25" cy="50" r="8" class="icon-gear"/>
+                                    <circle cx="50" cy="30" r="8" class="icon-gear"/>
+                                    <circle cx="75" cy="50" r="8" class="icon-gear"/>
+                                    <circle cx="50" cy="70" r="8" class="icon-gear"/>
+                                    <path d="M33 50 L42 50" class="icon-connect"/>
+                                    <path d="M58 50 L67 50" class="icon-connect"/>
+                                    <path d="M50 38 L50 42" class="icon-connect"/>
+                                    <path d="M50 58 L50 62" class="icon-connect"/>
+                                </svg>
+                            </div>
+                            <div class="service-badge">Auto</div>
+                        </div>
+                        <h3>Marketing Automation</h3>
+                    </div>
+                    <div class="service-description">
+                        <p>Automate your marketing workflows to nurture leads, retain customers, and scale your business efficiently with smart automation.</p>
+                        <div class="service-features">
+                            <span class="feature-tag">✓ Workflow Builder</span>
+                            <span class="feature-tag">✓ Lead Nurturing</span>
+                            <span class="feature-tag">✓ Performance Tracking</span>
+                        </div>
+                    </div>
+                    <div class="service-action">
+                        <a href="#contact" class="premium-service-cta">
+                            <span>AUTOMATE YOUR GROWTH</span>
+                            <div class="cta-arrow">
+                                <svg width="20" height="20" viewBox="0 0 24 24">
+                                    <path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2" fill="none"/>
+                                </svg>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="service-overlay"></div>
             </div>
         </div>
+        
         <div class="services-cta-section">
-            <a href="#contact" class="btn-primary large">GET FREE MARKETING REVIEW</a>
+            <a href="#contact" class="btn-primary large pulse-animation">GET FREE MARKETING REVIEW</a>
         </div>
     </div>
 </section>

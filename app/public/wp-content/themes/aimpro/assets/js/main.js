@@ -240,7 +240,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 });
             }
         });
-    });    // Enhanced Service Cards with Magnetic Effect
+    });    // Enhanced Service Cards with Magnetic Effect (Legacy)
     const serviceCards = document.querySelectorAll('.service-card');
     serviceCards.forEach((card, index) => {
         card.style.animationDelay = `${index * 0.1}s`;
@@ -272,6 +272,125 @@ document.addEventListener('DOMContentLoaded', function() {
         
         card.addEventListener('mouseleave', function() {
             this.style.transform = 'translateY(0) scale(1) translate(0, 0)';
+        });
+    });
+
+    // Premium Service Cards Interactive Effects
+    const premiumServiceCards = document.querySelectorAll('.premium-service-card');
+    
+    premiumServiceCards.forEach((card, index) => {
+        // Staggered animation delay
+        card.style.animationDelay = `${index * 0.15}s`;
+        
+        // Enhanced hover effects with parallax
+        card.addEventListener('mouseenter', function() {
+            // Activate pattern animation
+            const pattern = this.querySelector('.service-pattern');
+            if (pattern) {
+                pattern.style.opacity = '0.15';
+                pattern.style.transform = 'scale(1.05)';
+            }
+              // Icon animation
+            const icon = this.querySelector('.service-icon-animated');
+            if (icon) {
+                icon.style.transform = 'scale(1.1)';
+            }
+        });
+        
+        card.addEventListener('mouseleave', function() {
+            // Reset pattern
+            const pattern = this.querySelector('.service-pattern');
+            if (pattern) {
+                pattern.style.opacity = '0.1';
+                pattern.style.transform = 'scale(1)';
+            }
+              // Reset icon
+            const icon = this.querySelector('.service-icon-animated');
+            if (icon) {
+                icon.style.transform = 'scale(1)';
+            }
+        });
+          // Advanced parallax mouse tracking
+        card.addEventListener('mousemove', function(e) {
+            const rect = this.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+            
+            const centerX = rect.width / 2;
+            const centerY = rect.height / 2;
+            
+            const deltaX = (x - centerX) / centerX;
+            const deltaY = (y - centerY) / centerY;
+            
+            // Apply subtle hover effect with gentle parallax movement (no rotation)
+            this.style.transform = `
+                translateY(-8px) 
+                scale(1.02)
+                translate(${deltaX * 3}px, ${deltaY * 3}px)
+            `;
+            
+            // Move background pattern with cursor
+            const pattern = this.querySelector('.service-pattern');
+            if (pattern) {
+                pattern.style.transform = `
+                    scale(1.05) 
+                    translate(${deltaX * 8}px, ${deltaY * 8}px)
+                `;
+            }
+            
+            // Move icon slightly opposite to cursor for depth
+            const icon = this.querySelector('.service-icon-animated');
+            if (icon) {
+                icon.style.transform = `
+                    scale(1.1) 
+                    translate(${deltaX * -3}px, ${deltaY * -3}px)
+                `;
+            }
+        });
+          card.addEventListener('mouseleave', function() {
+            this.style.transform = 'translateY(0) scale(1)';
+            
+            const pattern = this.querySelector('.service-pattern');
+            if (pattern) {
+                pattern.style.transform = 'scale(1) translate(0, 0)';
+            }
+              const icon = this.querySelector('.service-icon-animated');
+            if (icon) {
+                icon.style.transform = 'scale(1) translate(0, 0)';
+            }
+        });
+        
+        // CTA button enhanced effects
+        const ctaButton = card.querySelector('.premium-service-cta');
+        if (ctaButton) {
+            ctaButton.addEventListener('mouseenter', function() {
+                const arrow = this.querySelector('.cta-arrow');
+                if (arrow) {
+                    arrow.style.transform = 'translateX(8px) scale(1.1)';
+                }
+            });
+            
+            ctaButton.addEventListener('mouseleave', function() {
+                const arrow = this.querySelector('.cta-arrow');
+                if (arrow) {
+                    arrow.style.transform = 'translateX(0) scale(1)';
+                }
+            });
+        }
+    });
+
+    // Add floating orbs animation control
+    const floatingOrbs = document.querySelectorAll('.floating-orb');
+    floatingOrbs.forEach((orb, index) => {
+        // Add random initial position
+        orb.style.animationDelay = `${index * 2}s`;
+        
+        // Add interaction with mouse movement
+        document.addEventListener('mousemove', function(e) {
+            const moveX = (e.clientX / window.innerWidth - 0.5) * 20;
+            const moveY = (e.clientY / window.innerHeight - 0.5) * 20;
+            
+            orb.style.transform = `translate(${moveX * (index + 1)}px, ${moveY * (index + 1)}px)`;
         });
     });
 
@@ -323,22 +442,12 @@ document.addEventListener('DOMContentLoaded', function() {
         element.style.transform = 'translateY(30px)';
         element.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
         revealObserver.observe(element);
-    });
-
-    // Enhanced Tag Animation
+    });    // Enhanced Tag Animation
     const tags = document.querySelectorAll('.tag');
     tags.forEach((tag, index) => {
         tag.style.animationDelay = `${index * 0.1}s`;
         
-        tag.addEventListener('mouseenter', function() {
-            this.style.transform = 'translateY(-5px) scale(1.05)';
-            this.style.boxShadow = '0 10px 20px rgba(255, 184, 0, 0.3)';
-        });
-        
-        tag.addEventListener('mouseleave', function() {
-            this.style.transform = 'translateY(0) scale(1)';
-            this.style.boxShadow = '0 4px 6px rgba(0, 0, 0, 0.05)';
-        });
+        // No hover movement effects - keeping tags static on hover
     });
 
     // Blog Cards Enhanced Animation
@@ -357,17 +466,15 @@ document.addEventListener('DOMContentLoaded', function() {
                 readMore.style.transform = 'translateX(0)';
             }
         });
-    });
-
-    // Footer Social Icons Animation
+    });    // Footer Social Icons Animation
     const socialIcons = document.querySelectorAll('.social-icon');
     socialIcons.forEach((icon, index) => {
         icon.addEventListener('mouseenter', function() {
-            this.style.transform = 'translateY(-3px) rotate(5deg) scale(1.1)';
+            this.style.transform = 'translateY(-3px) scale(1.1)';
         });
         
         icon.addEventListener('mouseleave', function() {
-            this.style.transform = 'translateY(0) rotate(0deg) scale(1)';
+            this.style.transform = 'translateY(0) scale(1)';
         });
     });
 
