@@ -2103,7 +2103,6 @@ section {
 .cta-button:hover {
     transform: translateY(-2px);
     box-shadow: 0 8px 25px rgba(255, 184, 0, 0.4);
-    background: linear-gradient(135deg, #FF6B35, #FFB800);
 }
 
 /* Footer Bottom */
@@ -3134,13 +3133,10 @@ select:focus {
 
 .insights-section .content-center h2 {
     color: var(--text-primary);
-    font-size: 2.75rem;
-    font-weight: 800;
-    margin-bottom: 1rem;
-    background: var(--gradient-gold);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+    font-size: 3.5rem;
+    font-weight: 900;
+    margin-bottom: 2rem;
+    line-height: 1.2;
 }
 
 .insights-section .section-subtitle {
@@ -3566,7 +3562,6 @@ select:focus {
     );
     background-size: 200% 100%;
     animation: shimmer 2s ease-in-out infinite;
-    border-radius: 8px;
 }
 
 /* Memory management helpers */
@@ -3596,5 +3591,177 @@ select:focus {
     .insight-card,
     .service-card {
         transition-duration: 0.2s;
+    }
+}
+
+/* ===============================================
+   FINAL CTA SECTION - LUXURY THEME
+   =============================================== */
+
+.final-cta-section {
+    padding: 6rem 0;
+    background: var(--gradient-dark);
+    position: relative;
+    overflow: hidden;
+}
+
+.final-cta-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+        radial-gradient(circle at 20% 20%, rgba(255, 215, 0, 0.08) 0%, transparent 50%),
+        radial-gradient(circle at 80% 80%, rgba(255, 165, 0, 0.05) 0%, transparent 50%);
+    z-index: 1;
+}
+
+.final-cta-content {
+    text-align: center;
+    position: relative;
+    z-index: 2;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.final-cta-content h2 {
+    font-size: 3.5rem;
+    font-weight: 900;
+    color: var(--text-primary);
+    margin-bottom: 2rem;
+    line-height: 1.2;
+}
+
+.final-cta-content p {
+    font-size: 1.3rem;
+    color: var(--text-secondary);
+    margin-bottom: 3rem;
+    line-height: 1.6;
+}
+
+.final-cta-buttons {
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.final-cta-buttons .btn-primary {
+    background: var(--gradient-gold);
+    color: var(--primary-black);
+    border: 2px solid transparent;
+    box-shadow: var(--shadow-gold);
+}
+
+.final-cta-buttons .btn-primary:hover {
+    box-shadow: var(--shadow-gold-hover);
+    transform: translateY(-3px);
+}
+
+.final-cta-buttons .btn-secondary {
+    background: transparent;
+    color: var(--primary-gold);
+    border: 2px solid var(--primary-gold);
+    backdrop-filter: blur(10px);
+}
+
+.final-cta-buttons .btn-secondary:hover {
+    background: var(--primary-gold);
+    color: var(--primary-black);
+    box-shadow: var(--shadow-gold);
+    transform: translateY(-3px);
+}
+
+/* ===============================================
+   BACK TO TOP BUTTON - LUXURY THEME
+   =============================================== */
+
+.back-to-top {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    width: 60px;
+    height: 60px;
+    background: var(--gradient-gold);
+    color: var(--primary-black);
+    border: none;
+    border-radius: 50%;
+    font-size: 1.5rem;
+    font-weight: bold;
+    cursor: pointer;
+    z-index: 1000;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(20px);
+    box-shadow: var(--shadow-gold);
+    backdrop-filter: blur(10px);
+    border: 2px solid rgba(255, 215, 0, 0.3);
+}
+
+.back-to-top.visible {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.back-to-top:hover {
+    transform: translateY(-5px) scale(1.1);
+    box-shadow: var(--shadow-gold-hover);
+    background: linear-gradient(135deg, var(--primary-gold-light) 0%, var(--primary-gold) 100%);
+}
+
+.back-to-top:active {
+    transform: translateY(-2px) scale(1.05);
+}
+
+/* Mobile responsive adjustments */
+@media (max-width: 768px) {
+    .final-cta-content h2 {
+        font-size: 2.5rem;
+    }
+    
+    .final-cta-content p {
+        font-size: 1.1rem;
+    }
+    
+    .final-cta-buttons {
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+    
+    .final-cta-buttons .btn-primary,
+    .final-cta-buttons .btn-secondary {
+        width: 100%;
+        max-width: 300px;
+    }
+    
+    .back-to-top {
+        width: 50px;
+        height: 50px;
+        bottom: 1.5rem;
+        right: 1.5rem;
+        font-size: 1.2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .final-cta-section {
+        padding: 4rem 0;
+    }
+    
+    .final-cta-content h2 {
+        font-size: 2rem;
+    }
+    
+    .back-to-top {
+        width: 45px;
+        height: 45px;
+        bottom: 1rem;
+        right: 1rem;
+        font-size: 1.1rem;
     }
 }
