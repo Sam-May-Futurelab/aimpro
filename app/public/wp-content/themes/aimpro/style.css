@@ -875,8 +875,8 @@ section {
 }
 
 .member-photo img {
-    width: 90%;
-    height: 90%;
+    width: 100%;
+    height: 100%;
     object-fit: cover;
     object-position: center;
     border-radius: 50%;
@@ -2531,4 +2531,17 @@ select:focus {
         grid-template-columns: 1fr;
         gap: 1.5rem;
     }
+}
+
+/* Hide member overlays and credential badges */
+.member-overlay {
+    display: none !important;
+}
+
+.member-overlay .credentials {
+    display: none !important;
+}
+
+.credential-badge {
+    display: none !important;
 }
