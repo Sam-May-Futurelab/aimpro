@@ -240,124 +240,33 @@ document.addEventListener('DOMContentLoaded', function() {
                 });
             }
         });
-    });    // Enhanced Service Cards with Magnetic Effect (Legacy)
+    });    // Enhanced Service Cards - Performance Optimized
     const serviceCards = document.querySelectorAll('.service-card');
     serviceCards.forEach((card, index) => {
         card.style.animationDelay = `${index * 0.1}s`;
         
+        // Simple hover effects - no complex mouse tracking
         card.addEventListener('mouseenter', function() {
-            this.style.transform = 'translateY(-10px) scale(1.02)';
-            this.style.boxShadow = '0 25px 50px rgba(0, 0, 0, 0.15)';
+            this.classList.add('card-hover');
         });
         
         card.addEventListener('mouseleave', function() {
-            this.style.transform = 'translateY(0) scale(1)';
-            this.style.boxShadow = '0 4px 6px rgba(0, 0, 0, 0.05)';
+            this.classList.remove('card-hover');
         });
-        
-        // Add magnetic effect on hover
-        card.addEventListener('mousemove', function(e) {
-            const rect = this.getBoundingClientRect();
-            const x = e.clientX - rect.left;
-            const y = e.clientY - rect.top;
-            
-            const centerX = rect.width / 2;
-            const centerY = rect.height / 2;
-            
-            const deltaX = (x - centerX) * 0.03;
-            const deltaY = (y - centerY) * 0.03;
-            
-            this.style.transform = `translateY(-10px) scale(1.02) translate(${deltaX}px, ${deltaY}px)`;
-        });
-        
-        card.addEventListener('mouseleave', function() {
-            this.style.transform = 'translateY(0) scale(1) translate(0, 0)';
-        });
-    });
-
-    // Premium Service Cards Interactive Effects
+    });    // Premium Service Cards - Performance Optimized
     const premiumServiceCards = document.querySelectorAll('.premium-service-card');
     
     premiumServiceCards.forEach((card, index) => {
         // Staggered animation delay
         card.style.animationDelay = `${index * 0.15}s`;
         
-        // Enhanced hover effects with parallax
+        // Simple hover effects without complex transforms
         card.addEventListener('mouseenter', function() {
-            // Activate pattern animation
-            const pattern = this.querySelector('.service-pattern');
-            if (pattern) {
-                pattern.style.opacity = '0.15';
-                pattern.style.transform = 'scale(1.05)';
-            }
-              // Icon animation
-            const icon = this.querySelector('.service-icon-animated');
-            if (icon) {
-                icon.style.transform = 'scale(1.1)';
-            }
+            this.classList.add('premium-card-hover');
         });
         
         card.addEventListener('mouseleave', function() {
-            // Reset pattern
-            const pattern = this.querySelector('.service-pattern');
-            if (pattern) {
-                pattern.style.opacity = '0.1';
-                pattern.style.transform = 'scale(1)';
-            }
-              // Reset icon
-            const icon = this.querySelector('.service-icon-animated');
-            if (icon) {
-                icon.style.transform = 'scale(1)';
-            }
-        });
-          // Advanced parallax mouse tracking
-        card.addEventListener('mousemove', function(e) {
-            const rect = this.getBoundingClientRect();
-            const x = e.clientX - rect.left;
-            const y = e.clientY - rect.top;
-            
-            const centerX = rect.width / 2;
-            const centerY = rect.height / 2;
-            
-            const deltaX = (x - centerX) / centerX;
-            const deltaY = (y - centerY) / centerY;
-            
-            // Apply subtle hover effect with gentle parallax movement (no rotation)
-            this.style.transform = `
-                translateY(-8px) 
-                scale(1.02)
-                translate(${deltaX * 3}px, ${deltaY * 3}px)
-            `;
-            
-            // Move background pattern with cursor
-            const pattern = this.querySelector('.service-pattern');
-            if (pattern) {
-                pattern.style.transform = `
-                    scale(1.05) 
-                    translate(${deltaX * 8}px, ${deltaY * 8}px)
-                `;
-            }
-            
-            // Move icon slightly opposite to cursor for depth
-            const icon = this.querySelector('.service-icon-animated');
-            if (icon) {
-                icon.style.transform = `
-                    scale(1.1) 
-                    translate(${deltaX * -3}px, ${deltaY * -3}px)
-                `;
-            }
-        });
-          card.addEventListener('mouseleave', function() {
-            this.style.transform = 'translateY(0) scale(1)';
-            
-            const pattern = this.querySelector('.service-pattern');
-            if (pattern) {
-                pattern.style.transform = 'scale(1) translate(0, 0)';
-            }
-              const icon = this.querySelector('.service-icon-animated');
-            if (icon) {
-                icon.style.transform = 'scale(1) translate(0, 0)';
-            }
+            this.classList.remove('premium-card-hover');
         });
         
         // CTA button enhanced effects
