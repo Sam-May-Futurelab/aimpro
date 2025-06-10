@@ -1515,6 +1515,13 @@ section {
     text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
 }
 
+.light-theme .hero-subtitle .highlight-underline,
+.light-theme .hero-subtitle .highlight-word {
+    color: var(--primary-orange) !important;
+    font-weight: 700;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
 .light-theme .section-subtitle {
     color: var(--text-secondary) !important;
     font-weight: 400;
@@ -2916,13 +2923,13 @@ p {
 }
 
 .highlight-word {
-    color: #f15a25;
+    color: var(--primary-orange) !important;
     font-weight: 700;
     position: relative;
 }
 
 .highlight-underline {
-    color: #f15a25;
+    color: var(--primary-orange) !important;
     font-weight: 700;
 }
 
