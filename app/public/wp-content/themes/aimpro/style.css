@@ -1818,7 +1818,6 @@ section {
 .light-theme .service-description p {
     color: var(--text-secondary) !important;
     font-weight: 400;
-    line-height: 1.6;
 }
 
 .light-theme .feature-tag {
@@ -2118,9 +2117,9 @@ section {
 }
 
 .member-expertise {
-    color: var(--text-readable-secondary);
+    color: var(--text-muted) !important;
+    font-weight: 400;
     font-size: 0.9rem;
-    font-weight: 500;
     margin-top: 0.5rem;
     opacity: 0.95;
     text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
@@ -2166,7 +2165,7 @@ section {
 .testimonial-card {
     background: var(--glass-bg);
     padding: 3.5rem;
-    border-radius: 24px;
+    border-radius: 28px; /* Increased from 24px for softer corners */
     box-shadow: 
         0 20px 40px rgba(0, 0, 0, 0.15),
         0 8px 32px rgba(255, 215, 0, 0.1),
@@ -2176,6 +2175,28 @@ section {
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     backdrop-filter: var(--backdrop-blur);
     border: 1px solid var(--glass-border);
+    /* Add soft bottom fade effect */
+    overflow: hidden;
+}
+
+.testimonial-card::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 30px;
+    background: linear-gradient(
+        to bottom,
+        transparent 0%,
+        rgba(0, 0, 0, 0.02) 30%,
+        rgba(0, 0, 0, 0.05) 70%,
+        rgba(0, 0, 0, 0.08) 100%
+    );
+    border-bottom-left-radius: 28px;
+    border-bottom-right-radius: 28px;
+    pointer-events: none;
+    z-index: 1;
 }
 
 .testimonial-card::before {
@@ -3030,7 +3051,6 @@ p {
         0 15px 40px rgba(0, 0, 0, 0.2),
         inset 0 1px 0 rgba(255, 255, 255, 0.3),
         inset 0 -1px 0 rgba(0, 0, 0, 0.1);
-    border-color: rgba(255, 255, 255, 0.3);
 }
 
 .btn-primary {
@@ -3079,7 +3099,6 @@ p {
         0 15px 40px rgba(255, 215, 0, 0.4),
         inset 0 1px 0 rgba(255, 255, 255, 0.5),
         inset 0 -1px 0 rgba(0, 0, 0, 0.1);
-    border-color: rgba(255, 215, 0, 0.5);
 }
 
 .btn-primary:hover::after {
@@ -3422,7 +3441,6 @@ p {
 .theme-toggle:hover {
     background: rgba(255, 255, 255, 0.15);
     border-color: rgba(241, 90, 37, 0.5);
-    transform: scale(1.05);
 }
 
 .theme-icon {
@@ -3775,11 +3793,16 @@ select:focus {
         padding: 0.55rem 1.1rem;
         letter-spacing: 0.4px;
     }
-    
-    /* Mobile Testimonials */
+      /* Mobile Testimonials */
     .testimonial-card {
         padding: 2rem; /* Reduced from 3.5rem */
-        border-radius: 16px; /* Reduced from 24px */
+        border-radius: 20px; /* Increased from 16px for softer mobile corners */
+    }
+    
+    .testimonial-card::after {
+        border-bottom-left-radius: 20px;
+        border-bottom-right-radius: 20px;
+        height: 25px; /* Slightly reduced for mobile */
     }
     
     .testimonial-card::before {
@@ -3831,12 +3854,17 @@ select:focus {
         padding: 0.5rem 1rem;
         letter-spacing: 0.3px;
     }
-    
-    /* Extra Small Mobile - Further Reduce Testimonials */
+      /* Extra Small Mobile - Further Reduce Testimonials */
     .testimonial-card {
         padding: 1.5rem; /* Further reduced from 2rem */
-        border-radius: 12px; /* Further reduced from 16px */
+        border-radius: 16px; /* Adjusted from 12px for softer edges */
         margin-bottom: 1.5rem; /* Reduced spacing between cards */
+    }
+    
+    .testimonial-card::after {
+        border-bottom-left-radius: 16px;
+        border-bottom-right-radius: 16px;
+        height: 20px; /* Further reduced for smaller screens */
     }
     
     .testimonial-card::before {
@@ -3872,8 +3900,14 @@ select:focus {
 @media (max-width: 375px) {
     .testimonial-card {
         padding: 1.25rem; /* Ultra compact padding */
-        border-radius: 10px; /* Smaller border radius */
+        border-radius: 14px; /* Increased from 10px for softer edges */
         margin-bottom: 1.25rem;
+    }
+    
+    .testimonial-card::after {
+        border-bottom-left-radius: 14px;
+        border-bottom-right-radius: 14px;
+        height: 18px; /* Smallest soft fade for ultra-small screens */
     }
     
     .testimonial-card::before {
@@ -3886,6 +3920,10 @@ select:focus {
         font-size: 0.85rem; /* Very small text */
         line-height: 1.4; /* Tight line height */
         margin-bottom: 1.25rem;
+    }
+    
+    .testimonial-author {
+        margin-top: 1rem; /* Reduced spacing */
     }
     
     .testimonial-author strong {
@@ -3912,7 +3950,7 @@ select:focus {
     }
     
     .css-wave-animation {
-        background: linear-gradient(135deg, rgba(255,255,255,0.02) 0%, rgba(255,255,255,0.01) 100%);
+        background: none;
         animation: none;
     }
     
@@ -3922,35 +3960,35 @@ select:focus {
     }
 }
 
-/* Mobile performance optimizations */
-@media (max-width: 768px) {
+/* Low bandwidth optimizations */
+@media (max-width: 768px) and (prefers-reduced-data: reduce) {
     .lottie-stats-instance {
-        min-height: 300px;
-        transform: scale(1.1); /* Slight scale up for mobile */
-        filter: blur(0.3px); /* Slight blur to reduce detail on mobile */
-    }
-    
-    .stats-animation-bg {
-        opacity: 0.25; /* Reduce opacity on mobile for better performance */
+        display: none;
     }
     
     .css-wave-animation {
-        animation-duration: 8s; /* Faster animation on mobile */
-        background-size: 300px 100%, 200px 100%, 400px 100%; /* Smaller patterns */
-    }
-}
-
-@media (max-width: 480px) {
-    .lottie-stats-instance {
-        min-height: 250px;
-        transform: scale(1.15);
-        filter: blur(0.5px); /* More blur on very small screens */
+        background: none;
+        animation: none;
     }
     
     .stats-animation-bg {
-        opacity: 0.2;
+        background: linear-gradient(135deg, #1a202c 0%, #2d3748 100%);
+        opacity: 1;
     }
-    
+}
+
+/* Critical loading states with better UX */
+.stats-section.loading {
+    background: linear-gradient(135deg, #1a202c 0%, #2d3748 100%);
+}
+
+.stats-section.loading .lottie-stats-instance {
+    background: linear-gradient(
+        90deg, 
+        rgba(255, 255, 255, 0.02) 0%, 
+        rgba(255, 255, 255, 0.04) 50%, 
+        rgba(255, 255, 255, 0.02) 100%
+    );
     .css-wave-animation {
         animation-duration: 6s; /* Even faster on small screens */
         background-size: 250px 100%, 150px 100%, 300px 100%;
@@ -4707,6 +4745,16 @@ select:focus {
     color: var(--text-primary) !important;
 }
 
+.light-theme .testimonial-card::after {
+    background: linear-gradient(
+        to bottom,
+        transparent 0%,
+        rgba(0, 0, 0, 0.01) 30%,
+        rgba(0, 0, 0, 0.03) 70%,
+        rgba(0, 0, 0, 0.06) 100%
+    );
+}
+
 .light-theme .testimonial-card:hover {
     background: rgba(255, 255, 255, 1) !important;
     box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
@@ -4980,8 +5028,245 @@ select:focus {
     }
     
     .form-group input,
-    .form-group select,
-    .form-group textarea {
+    .form-group select,    .form-group textarea {
         padding: 0.75rem;
     }
+}
+
+/* ================================
+   TARGET ICON STRATEGIC PLACEMENT
+   ================================ */
+
+/* Base Target Icon Styles */
+.target-icon {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    background-image: url('assets/images/aimpro-target.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    opacity: 0.6;
+    pointer-events: none;
+    z-index: 1;
+    transition: all 0.3s ease;
+}
+
+/* Subtle Animation for Target Icons */
+.target-icon.animate {
+    animation: targetFloat 4s ease-in-out infinite;
+}
+
+@keyframes targetFloat {
+    0%, 100% { transform: translateY(0px) scale(1); }
+    50% { transform: translateY(-10px) scale(1.05); }
+}
+
+/* Hero Section Target Icons */
+.hero-section {
+    position: relative;
+}
+
+.hero-target-1 {
+    top: 70%;
+    left: 15%;
+    width: 48px;
+    height: 48px;
+    opacity: 0.3;
+    animation: targetFloat 5s ease-in-out infinite;
+}
+
+.hero-target-2 {
+    bottom: 20%;
+    left: 8%;
+    width: 32px;
+    height: 32px;
+    opacity: 0.25;
+    animation: targetFloat 6s ease-in-out infinite reverse;
+}
+
+/* Stats Section Target Icons */
+.stats-section {
+    position: relative;
+}
+
+.stats-target-1 {
+    top: 5%;
+    left: 5%;
+    width: 28px;
+    height: 28px;
+    opacity: 0.2;
+    animation: targetFloat 7s ease-in-out infinite;
+}
+
+/* Services Section Target Icons */
+.services-section {
+    position: relative;
+}
+
+.services-target-1 {
+    top: 15%;
+    right: 10%;
+    width: 36px;
+    height: 36px;
+    opacity: 0.25;
+    animation: targetFloat 5.5s ease-in-out infinite;
+}
+
+/* Testimonials Section Target Icons */
+.testimonials-section {
+    position: relative;
+}
+
+.testimonials-target-1 {
+    bottom: 10%;
+    right: 8%;
+    width: 40px;
+    height: 40px;
+    opacity: 0.2;
+    animation: targetFloat 6.5s ease-in-out infinite;
+}
+
+/* Insights Section Target Icons */
+.insights-section {
+    position: relative;
+}
+
+.insights-target-1 {
+    top: 15%;
+    left: 3%;
+    width: 30px;
+    height: 30px;
+    opacity: 0.3;
+    animation: targetFloat 8s ease-in-out infinite;
+}
+
+/* Contact Section Target Icons */
+.final-cta-section {
+    position: relative;
+}
+
+.contact-target-1 {
+    bottom: 15%;
+    left: 10%;
+    width: 26px;
+    height: 26px;
+    opacity: 0.2;
+    animation: targetFloat 6s ease-in-out infinite reverse;
+}
+
+.contact-target-2 {
+    top: 10%;
+    right: 5%;
+    width: 38px;
+    height: 38px;
+    opacity: 0.3;
+    animation: targetFloat 5s ease-in-out infinite;
+}
+
+/* Service Card Target Accents on Hover */
+.service-card {
+    position: relative;
+}
+
+.service-card:hover::before {
+    content: '';
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 20px;
+    height: 20px;
+    background-image: url('assets/images/aimpro-target.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    opacity: 0.3;
+    animation: targetFloat 3s ease-in-out infinite;
+    z-index: 2;
+}
+
+/* Button Hover Target Effects */
+.btn-primary:hover,
+.cta-btn:hover {
+    position: relative;
+}
+
+.btn-primary:hover::after,
+.cta-btn:hover::after {
+    content: '';
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    width: 16px;
+    height: 16px;
+    background-image: url('assets/images/aimpro-target.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    opacity: 0.4;
+    animation: targetFloat 2s ease-in-out infinite;
+}
+
+/* Responsive Target Icon Adjustments */
+@media (max-width: 768px) {
+    .hero-target-1,
+    .hero-target-2,
+    .stats-target-1,
+    .services-target-1,
+    .testimonials-target-1,
+    .insights-target-1,
+    .contact-target-1,
+    .contact-target-2,
+    .floating-target-hero,
+    .floating-target-services,
+    .floating-target-insights {
+        width: 20px;
+        height: 20px;
+        opacity: 0.12;
+    }
+    
+    .service-card:hover::before {
+        width: 14px;
+        height: 14px;
+    }
+    
+    .btn-primary:hover::after,
+    .cta-btn:hover::after {
+        width: 12px;
+        height: 12px;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-target-1,
+    .hero-target-2,
+    .stats-target-1,
+    .services-target-1,
+    .testimonials-target-1,
+    .insights-target-1,
+    .contact-target-1,
+    .contact-target-2,
+    .floating-target-hero,
+    .floating-target-services,
+    .floating-target-insights {
+        display: none; /* Hide on very small screens to avoid clutter */
+    }
+}
+
+/* Light Theme Target Icon Adjustments */
+:root.light-theme .hero-target-1,
+:root.light-theme .hero-target-2,
+:root.light-theme .stats-target-1,
+:root.light-theme .services-target-1,
+:root.light-theme .testimonials-target-1,
+:root.light-theme .insights-target-1,
+:root.light-theme .contact-target-1,
+:root.light-theme .contact-target-2 {
+    opacity: 0.25; /* Slightly more visible in light theme */
+    filter: contrast(1.2) brightness(0.8); /* Darker for better visibility on light background */
+}
+
+:root.light-theme .service-card:hover::before,
+:root.light-theme .btn-primary:hover::after,
+:root.light-theme .cta-btn:hover::after {
+    opacity: 0.4;
+    filter: contrast(1.3) brightness(0.7);
 }

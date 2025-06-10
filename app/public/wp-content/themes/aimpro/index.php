@@ -97,12 +97,16 @@
 
 <!-- Hero Section -->
 <section id="home" class="hero-section premium-hero">
-    <div class="hero-background"></div>
+    <div class="hero-background"></div>    <!-- Target Icons -->
+    <div class="target-icon hero-target-1"></div>
+    <div class="target-icon hero-target-2"></div>
+    <!-- Additional floating targets -->
+    <div class="target-icon floating-target-hero" style="top: 60%; right: 25%; width: 24px; height: 24px; opacity: 0.15; animation: targetFloat 9s ease-in-out infinite;"></div>
     <!-- Floating Elements -->
     <div class="floating-elements">
         <div class="floating-shape shape-1"></div>
         <div class="floating-shape shape-2"></div>
-    </div>    <div class="container">
+    </div><div class="container">
         <div class="hero-wrapper">
             <div class="hero-content">
                 <div class="hero-badge slide-up-delay-1">
@@ -162,7 +166,10 @@
 </section>
 
 <!-- Stats Counter -->
-<section class="stats-section">    <!-- Stats Lottie Animation Background -->
+<section class="stats-section">
+    <!-- Target Icons -->
+    <div class="target-icon stats-target-1"></div>
+    <!-- Stats Lottie Animation Background -->
     <div class="stats-animation-bg">
         <div class="animation-layer">
             <!-- Three optimized Lottie instances for full-width animated coverage -->
@@ -197,7 +204,10 @@
 
 <!-- Premium Service Showcase -->
 <section id="services" class="premium-services-section">
-    <div class="services-background-gradient"></div>
+    <div class="services-background-gradient"></div>    <!-- Target Icons -->
+    <div class="target-icon services-target-1"></div>
+    <!-- Additional floating targets -->
+    <div class="target-icon floating-target-services" style="bottom: 25%; left: 12%; width: 28px; height: 28px; opacity: 0.18; animation: targetFloat 7.5s ease-in-out infinite reverse;"></div>
     <div class="floating-elements">
         <div class="floating-orb orb-1"></div>
         <div class="floating-orb orb-2"></div>
@@ -530,6 +540,8 @@
 
 <!-- Testimonials Section -->
 <section class="testimonials-section">
+    <!-- Target Icons -->
+    <div class="target-icon testimonials-target-1"></div>
     <div class="container">
         <div class="content-center">            <h2>Don't Just Take Our Word for It</h2>
             <div class="curly-underline-accent"></div>
@@ -601,7 +613,11 @@
 
 
 <!-- Magazine-Style Insights Section -->
-<section class="insights-section magazine-layout">    <div class="container">
+<section class="insights-section magazine-layout">    <!-- Target Icons -->
+    <div class="target-icon insights-target-1"></div>
+    <!-- Additional floating targets -->
+    <div class="target-icon floating-target-insights" style="bottom: 20%; right: 15%; width: 32px; height: 32px; opacity: 0.2; animation: targetFloat 6.5s ease-in-out infinite;"></div>
+    <div class="container">
         <div class="content-center">
             <h2>Stay Ahead With Expert Insights & Cutting-Edge Industry Intelligence</h2>
             <p class="section-subtitle">Exclusive strategies and data-driven insights from our marketing experts to keep you at the forefront of digital innovation.</p>
@@ -696,6 +712,9 @@
 
 <!-- Contact & Footer -->
 <section class="final-cta-section">
+    <!-- Target Icons -->
+    <div class="target-icon contact-target-1"></div>
+    <div class="target-icon contact-target-2"></div>
     <div class="container">
         <div class="final-cta-content">
             <h2>You Bring the Ambition, We Drive the <span class="highlight curly-underline">RESULTS</span></h2>
