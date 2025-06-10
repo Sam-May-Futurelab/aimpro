@@ -50,14 +50,166 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
     
-    // Back to top click handler
+    // Back to Top functionality
     backToTop.addEventListener('click', function() {
         window.scrollTo({
             top: 0,
             behavior: 'smooth'
         });
     });
+
+    // Service Tags Particle System
+    class ParticleSystem {
+        constructor() {
+            this.particles = [];
+            this.colors = ['#007cba', '#ff6b6b', '#4ecdc4', '#45b7d1', '#96ceb4', '#feca57', '#ff9ff3', '#54a0ff'];
+        }        createParticle(x, y, color) {
+            return {
+                x: x,
+                y: y,
+                vx: (Math.random() - 0.5) * 10,
+                vy: (Math.random() - 0.5) * 10,
+                life: 1,
+                decay: 0.015, // Slower decay for longer visibility
+                size: Math.random() * 8 + 3, // Larger particles
+                color: color,
+                rotation: Math.random() * 360,
+                rotationSpeed: (Math.random() - 0.5) * 15 // Faster rotation
+            };
+        }createExplosion(element) {
+            const rect = element.getBoundingClientRect();
+            const centerX = rect.left + rect.width / 2;
+            const centerY = rect.top + rect.height / 2;
+            
+            console.log('Creating explosion at:', centerX, centerY); // Debug log
+            
+            // Create multiple bursts with different colors
+            const colors = ['#FFD700', '#FF6B35', '#F59E0B', '#EF4444', '#8B5CF6', '#06B6D4'];
+            
+            // Create multiple particles for confetti effect
+            for (let i = 0; i < 25; i++) {
+                const color = colors[Math.floor(Math.random() * colors.length)];
+                const particle = this.createParticle(centerX, centerY, color);
+                // Add more spread to particles
+                particle.vx = (Math.random() - 0.5) * 12;
+                particle.vy = (Math.random() - 0.5) * 12 - 5; // More upward motion
+                particle.size = Math.random() * 8 + 3; // Larger particles
+                this.particles.push(particle);
+            }
+
+            // Start animation if not already running
+            if (!this.animating) {
+                this.animate();
+            }
+        }
+
+        animate() {
+            this.animating = true;
+            
+            // Create canvas if it doesn't exist
+            if (!this.canvas) {
+                this.canvas = document.createElement('canvas');
+                this.canvas.style.position = 'fixed';
+                this.canvas.style.top = '0';
+                this.canvas.style.left = '0';
+                this.canvas.style.width = '100%';
+                this.canvas.style.height = '100%';
+                this.canvas.style.pointerEvents = 'none';
+                this.canvas.style.zIndex = '9999';
+                document.body.appendChild(this.canvas);
+                this.ctx = this.canvas.getContext('2d');
+                
+                // Set canvas size
+                this.resizeCanvas();
+                window.addEventListener('resize', () => this.resizeCanvas());
+            }
+
+            // Clear canvas
+            this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
+
+            // Update and draw particles
+            for (let i = this.particles.length - 1; i >= 0; i--) {
+                const particle = this.particles[i];
+                
+                // Update particle
+                particle.x += particle.vx;
+                particle.y += particle.vy;
+                particle.vy += 0.3; // gravity
+                particle.life -= particle.decay;
+                particle.rotation += particle.rotationSpeed;
+
+                // Remove dead particles
+                if (particle.life <= 0) {
+                    this.particles.splice(i, 1);
+                    continue;
+                }                // Draw particle
+                this.ctx.save();
+                this.ctx.translate(particle.x, particle.y);
+                this.ctx.rotate(particle.rotation * Math.PI / 180);
+                this.ctx.globalAlpha = particle.life;
+                this.ctx.fillStyle = particle.color;
+                
+                // Draw larger confetti shape (rectangle with shadow)
+                const size = particle.size * particle.life;
+                
+                // Add shadow for better visibility
+                this.ctx.shadowColor = particle.color;
+                this.ctx.shadowBlur = 3;
+                this.ctx.shadowOffsetX = 1;
+                this.ctx.shadowOffsetY = 1;
+                
+                // Draw main confetti rectangle
+                this.ctx.fillRect(-size/2, -size/3, size, size/1.5);
+                
+                // Add sparkle effect
+                this.ctx.shadowBlur = 0;
+                this.ctx.fillStyle = '#FFFFFF';
+                this.ctx.globalAlpha = particle.life * 0.8;
+                this.ctx.fillRect(-size/4, -size/6, size/2, size/6);
+                
+                this.ctx.restore();
+            }
+
+            // Continue animation if particles exist
+            if (this.particles.length > 0) {
+                requestAnimationFrame(() => this.animate());
+            } else {
+                this.animating = false;
+            }
+        }
+
+        resizeCanvas() {
+            this.canvas.width = window.innerWidth;
+            this.canvas.height = window.innerHeight;
+        }
+
+        destroy() {
+            if (this.canvas) {
+                document.body.removeChild(this.canvas);
+                this.canvas = null;
+            }
+            this.particles = [];
+            this.animating = false;
+        }    }
+
+    // Initialize particle system
+    const particleSystem = new ParticleSystem();
+
+    // Add hover effects to service tags
+    const serviceTags = document.querySelectorAll('.tag');
     
+    serviceTags.forEach(tag => {
+        tag.addEventListener('mouseenter', function() {
+            console.log('Tag hovered:', this.textContent); // Debug log
+            particleSystem.createExplosion(this);
+        });
+    });
+
+    // Clean up on page unload
+    window.addEventListener('beforeunload', function() {
+        particleSystem.destroy();
+    });
+
     // Enhanced Error Handling
     window.addEventListener('error', function(e) {
         console.error('JavaScript Error:', e.error);
