@@ -3190,6 +3190,75 @@ select:focus {
         padding: 0.5rem 1rem;
         letter-spacing: 0.3px;
     }
+    
+    /* Extra Small Mobile - Further Reduce Testimonials */
+    .testimonial-card {
+        padding: 1.5rem; /* Further reduced from 2rem */
+        border-radius: 12px; /* Further reduced from 16px */
+        margin-bottom: 1.5rem; /* Reduced spacing between cards */
+    }
+    
+    .testimonial-card::before {
+        font-size: 2rem; /* Further reduced from 2.5rem */
+        left: 12px; /* Further reduced from 16px */
+        top: 12px; /* Reduced from default */
+    }
+    
+    .testimonial-content p {
+        font-size: 0.9rem; /* Further reduced from 1rem */
+        line-height: 1.5; /* Further reduced from 1.6 */
+        margin-bottom: 1.5rem; /* Further reduced from 2rem */
+    }
+    
+    .testimonial-author {
+        margin-top: 1rem; /* Reduced spacing */
+    }
+    
+    .testimonial-author strong {
+        font-size: 0.95rem; /* Slightly smaller */
+        margin-bottom: 0.15rem; /* Reduced spacing */
+    }
+    
+    .testimonial-author span {
+        font-size: 0.8rem; /* Further reduced */
+    }
+      .testimonials-grid {
+        gap: 1.5rem; /* Further reduced from 2rem */
+    }
+}
+
+/* Ultra Small Mobile - Testimonials Compact Mode */
+@media (max-width: 375px) {
+    .testimonial-card {
+        padding: 1.25rem; /* Ultra compact padding */
+        border-radius: 10px; /* Smaller border radius */
+        margin-bottom: 1.25rem;
+    }
+    
+    .testimonial-card::before {
+        font-size: 1.75rem; /* Much smaller quote mark */
+        left: 10px;
+        top: 10px;
+    }
+    
+    .testimonial-content p {
+        font-size: 0.85rem; /* Very small text */
+        line-height: 1.4; /* Tight line height */
+        margin-bottom: 1.25rem;
+    }
+    
+    .testimonial-author strong {
+        font-size: 0.9rem;
+        margin-bottom: 0.1rem;
+    }
+    
+    .testimonial-author span {
+        font-size: 0.75rem;
+    }
+    
+    .testimonials-grid {
+        gap: 1.25rem; /* Minimal spacing */
+    }
 }
 
 /* Reduced Motion Support - Performance First */
