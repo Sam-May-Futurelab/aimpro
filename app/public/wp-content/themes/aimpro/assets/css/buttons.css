@@ -34,7 +34,8 @@
     left: -100%;
     width: 100%;
     height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+    /* Removed white gradient background to eliminate white hover effect */
+    background: transparent;
     transition: left 0.6s ease;
 }
 
@@ -43,12 +44,11 @@
 }
 
 .btn:hover {
-    transform: translateY(-3px) scale(1.02);
+    /* Remove transform to prevent content shift */
     box-shadow: 
         0 15px 40px rgba(0, 0, 0, 0.2),
         inset 0 1px 0 rgba(255, 255, 255, 0.3),
         inset 0 -1px 0 rgba(0, 0, 0, 0.1);
-    overflow: visible;
 }
 
 /* Primary button with shine effect */
@@ -85,7 +85,8 @@
     left: 50%;
     width: 0;
     height: 0;
-    background: rgba(255, 255, 255, 0.3);
+    /* Removed white background to eliminate white circle effect */
+    background: transparent;
     border-radius: 50%;
     transform: translate(-50%, -50%);
     transition: width 0.6s, height 0.6s;
@@ -95,11 +96,16 @@
 .btn-primary:hover {
     background: linear-gradient(135deg, rgba(255, 165, 0, 0.95) 0%, rgba(255, 140, 0, 0.95) 100%);
     color: #1a202c;
-    transform: translateY(-3px) scale(1.02);
+    /* Remove transform to prevent content shift */
     box-shadow: 
         0 15px 40px rgba(255, 215, 0, 0.4),
         inset 0 1px 0 rgba(255, 255, 255, 0.5),
         inset 0 -1px 0 rgba(0, 0, 0, 0.1);
+}
+
+.btn-primary:hover::after {
+    width: 300px;
+    height: 300px;
 }
 
 .btn-primary:hover::after {
@@ -115,14 +121,6 @@
     letter-spacing: 1px;
     line-height: 1.3;
     min-width: 240px;
-}
-
-/* Specific styles for large primary buttons to prevent turning white */
-.btn-primary.large:hover {
-    background: linear-gradient(135deg, rgba(255, 165, 0, 0.95) 0%, rgba(255, 140, 0, 0.95) 100%) !important;
-    color: #1a202c !important;
-    transform: translateY(-3px) scale(1.02);
-    box-shadow: var(--shadow-orange-hover);
 }
 
 /* Secondary button */
@@ -175,7 +173,7 @@
 .btn-secondary:hover {
     background: linear-gradient(135deg, rgba(255, 215, 0, 0.9) 0%, rgba(255, 165, 0, 0.9) 100%);
     color: #1a202c;
-    transform: translateY(-3px) scale(1.02);
+    /* Remove transform to prevent content shift */
     box-shadow: 
         0 15px 40px rgba(255, 215, 0, 0.3),
         inset 0 1px 0 rgba(255, 255, 255, 0.3),
@@ -209,8 +207,8 @@
 
 .btn-outline:hover {
     background: rgba(255, 165, 0, 0.9);
-    color: white;
-    transform: translateY(-3px) scale(1.02);
+    /* Removed color: white to eliminate white hover effect */
+    /* Remove transform to prevent content shift */
     box-shadow: 
         0 15px 40px rgba(255, 165, 0, 0.3),
         inset 0 1px 0 rgba(255, 255, 255, 0.3),
@@ -247,7 +245,7 @@
     color: var(--primary-black);
     background: var(--gradient-orange);
     border-color: var(--primary-orange);
-    transform: translateY(-2px);
+    /* Remove transform to prevent content shift */
     box-shadow: var(--shadow-orange-hover);
 }
 
@@ -315,7 +313,7 @@
     opacity: 0;
     animation: targetZoomIn 1s cubic-bezier(0.17, 0.67, 0.3, 1.33) forwards, 
                targetFloat 2s ease-in-out infinite 1s;
-    z-index: 100;
+    z-index: 10;
     transform-origin: center;
     pointer-events: none;
 }
@@ -351,12 +349,8 @@
     left: -50%;
     width: 200%;
     height: 200%;
-    background: linear-gradient(
-        to right,
-        rgba(255,255,255,0) 0%,
-        rgba(255,255,255,0.3) 50%,
-        rgba(255,255,255,0) 100%
-    );
+    /* Removed white gradient background to eliminate white shine effect */
+    background: transparent;
     transform: rotate(30deg);
     transition: all 0.5s;
     opacity: 0;
@@ -403,7 +397,7 @@
 }
 
 .premium-hover:hover {
-    color: #fff;
+    /* Removed color: #fff to eliminate white hover effect */
     border-color: transparent;
 }
 
@@ -450,10 +444,10 @@
 }
 
 .footer-cta:hover {
-    transform: translateY(-3px);
+    /* Remove transform to prevent content shift */
     box-shadow: var(--shadow-orange-hover);
-    background: linear-gradient(135deg, var(--primary-orange-light) 0%, var(--primary-orange) 100%) !important;
-    color: var(--text-primary) !important;
+    background: linear-gradient(135deg, var(--primary-orange-light) 0%, var(--primary-orange) 100%);
+    color: var(--text-primary);
 }
 
 /* CTA Button (used in footer and other sections) */
@@ -478,51 +472,41 @@
 }
 
 .cta-button:hover {
-    transform: translateY(-3px);
+    /* Remove transform to prevent content shift */
     box-shadow: var(--shadow-orange-hover);
-    background: linear-gradient(135deg, var(--primary-orange-light) 0%, var(--primary-orange) 100%) !important;
-    color: var(--text-primary) !important;
-}
-
-/* Ensure target effects don't affect button colors */
-.btn-primary.large:hover,
-.footer-cta:hover,
-.cta-button:hover {
-    overflow: visible !important;
-    position: relative !important;
-    z-index: 5;
+    background: linear-gradient(135deg, var(--primary-orange-light) 0%, var(--primary-orange) 100%);
+    color: var(--text-primary);
 }
 
 /* Main CTA Buttons Target Effect Enhancement */
 .footer-cta:hover::before,
 .btn-primary.large:hover::before,
 .cta-button:hover::before {
-    width: 60px;
-    height: 60px;
-    top: -30px;
-    right: -30px;
+    width: 30px;
+    height: 30px;
+    top: -15px;
+    right: -15px;
     animation: targetZoomInLarge 1s cubic-bezier(0.17, 0.67, 0.3, 1.33) forwards, 
                targetFloatLarge 2s ease-in-out infinite 1s;
-    opacity: 0;
+    opacity: 0.95;
     transform-origin: center;
-    z-index: 100;
 }
 
 @keyframes targetZoomInLarge {
     0% {
-        transform: scale(0.05) translate(500px, 500px);
+        transform: scale(0.1) translate(300px, 300px);
         opacity: 0;
     }
     40% {
-        transform: scale(1.5) translate(100px, 100px);
+        transform: scale(3) translate(80px, 80px);
         opacity: 0.95;
     }
     70% {
-        transform: scale(1.2) translate(20px, 20px);
+        transform: scale(2) translate(20px, 20px);
         opacity: 0.9;
     }
     100% {
-        transform: scale(1) translate(0, 0);
+        transform: scale(1.2) translate(0, 0);
         opacity: 0.95;
     }
 }
@@ -563,74 +547,6 @@
     color: white;
 }
 
-/* Premium Service CTA Button - Moved from main stylesheet */
-.premium-service-cta {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.8rem;
-    background: linear-gradient(135deg, rgba(255, 215, 0, 0.9), rgba(255, 165, 0, 0.8));
-    color: #000;
-    padding: 1rem 1.5rem;
-    border-radius: 15px;
-    text-decoration: none;
-    font-weight: 700;
-    font-size: 0.9rem;
-    letter-spacing: 0.5px;
-    transition: all 0.3s ease;
-    position: relative;
-    overflow: hidden;
-    box-shadow: 0 6px 16px rgba(255, 215, 0, 0.3);
-    transform: translateZ(0);
-}
-
-.premium-service-cta::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(90deg,
-        transparent 0%,
-        rgba(255, 255, 255, 0.2) 50%,
-        transparent 100%);
-    transition: left 0.3s ease;
-}
-
-.premium-service-cta:hover {
-    transform: translateY(-1px) translateZ(0) !important;
-    box-shadow: 0 8px 20px rgba(241, 90, 37, 0.4) !important;
-    background: linear-gradient(135deg, #f15a25, #ff6b35) !important;
-}
-
-.premium-service-cta:hover::before {
-    left: 100% !important;
-}
-
-.cta-arrow {
-    transition: transform 0.2s ease;
-}
-
-.premium-service-cta:hover .cta-arrow {
-    transform: translateX(3px) !important;
-}
-
-/* Light theme premium service CTA */
-.light-theme .premium-service-cta {
-    background: var(--btn-primary-bg) !important;
-    color: var(--btn-primary-text) !important;
-    border: 2px solid var(--btn-primary-bg);
-}
-
-.light-theme .premium-service-cta:hover {
-    background: var(--primary-orange-light) !important;
-    box-shadow: 0 8px 20px rgba(241, 90, 37, 0.3);
-}
-
-.light-theme .premium-service-cta span {
-    color: var(--text-dark);
-}
-
 /* Final CTA Button Container */
 .final-cta-buttons {
     display: flex;
@@ -650,8 +566,6 @@
 .final-cta-buttons .btn-primary:hover {
     box-shadow: var(--shadow-orange-hover);
     transform: translateY(-3px);
-    background: linear-gradient(135deg, rgba(255, 165, 0, 0.95) 0%, rgba(255, 140, 0, 0.95) 100%) !important;
-    color: #1a202c !important;
 }
 
 .final-cta-buttons .btn-secondary {
@@ -682,11 +596,6 @@
         min-width: auto;
         max-width: 280px;
         width: 100%;
-    }
-    
-    .premium-service-cta {
-        padding: 0.8rem 1.2rem;
-        font-size: 0.85rem;
     }
     
     .btn-primary.large,
@@ -740,100 +649,4 @@
 
 .back-to-top:active {
     transform: translateY(-2px) scale(1.05);
-}
-
-/* Services Section CTA Button Styles - Moved from main stylesheet */
-.services-cta-section .btn-primary.large {
-    position: relative;
-    min-width: 280px;
-    max-width: 100%;
-    width: auto;
-    display: inline-block;
-    white-space: nowrap;
-    overflow: visible;
-}
-
-/* Target icon positioned on button corner */
-.services-cta-section .btn-primary.large::before {
-    content: '';
-    position: absolute;
-    top: -8px;
-    right: -8px;
-    width: 24px;
-    height: 24px;
-    background-image: url('../images/aimpro-target.png');
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
-    opacity: 0.7;
-    z-index: 5;
-    transition: all 0.3s ease;
-    animation: targetFloat 4s ease-in-out infinite;
-}
-
-.services-cta-section .btn-primary.large:hover::before {
-    opacity: 1 !important;
-    transform: scale(1.2) !important;
-    animation-duration: 2s !important;
-}
-
-/* Additional Button Styles Moved from style.css */
-
-/* Additional Mobile Styles */
-@media (max-width: 768px) {
-    .btn-primary,
-    .btn-secondary,
-    .btn-outline {
-        min-width: auto;
-    }
-    
-    .btn-primary.large,
-    .btn-secondary.large {
-        padding: 16px 32px;
-        font-size: 1rem;
-    }
-    
-    .btn-primary:hover::after,
-    .cta-btn:hover::after {
-        width: 12px !important;
-        height: 12px !important;
-    }
-}
-
-/* Light Theme Button Adjustments */
-:root.light-theme .btn-primary:hover::after,
-:root.light-theme .cta-btn:hover::after {
-    opacity: 0.4 !important;
-    filter: contrast(1.3) brightness(0.7);
-}
-
-/* Target Icon Styles */
-.target-icon {
-    position: absolute;
-    width: 40px;
-    height: 40px;
-    background-image: url('../images/aimpro-target.png');
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
-    opacity: 0.6;
-    pointer-events: none;
-    z-index: 1;
-    transition: all 0.3s ease;
-}
-
-/* Target Icon for Other Elements */
-.service-card::before {
-    content: '';
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    width: 20px;
-    height: 20px;
-    background-image: url('../images/aimpro-target.png');
-    background-size: contain;
-    background-repeat: no-repeat;
-    opacity: 0.3;
-    animation: targetFloat 3s ease-in-out infinite;
-    z-index: 2;
 }
