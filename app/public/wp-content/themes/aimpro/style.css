@@ -182,36 +182,7 @@ section {
     margin: 0;
 }
 
-/* Luxury Hero Section */
-.hero-section {
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    position: relative;
-    background: var(--gradient-dark);
-    color: var(--text-primary);
-    overflow: hidden;
-    padding: 2rem 0;
-}
-
-.premium-hero {
-    background: var(--gradient-dark);
-    position: relative;
-}
-
-.premium-hero::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: 
-        radial-gradient(circle at 20% 30%, rgba(241, 90, 37, 0.1) 0%, transparent 50%),
-        radial-gradient(circle at 80% 70%, rgba(255, 107, 53, 0.08) 0%, transparent 60%),
-        radial-gradient(circle at 50% 50%, rgba(255, 107, 53, 0.05) 0%, transparent 70%);
-    z-index: 2;
-}
+/* Luxury Hero Section - Moved to hero.css */
 
 .floating-elements {
     position: absolute;
@@ -246,46 +217,13 @@ section {
     right: 15%;
 }
 
-.hero-badge {
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-}
-
-.hero-badge {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;    background: var(--glass-bg);
-    backdrop-filter: var(--backdrop-blur);
-    padding: 0.75rem 1.5rem;
-    border-radius: 50px;
-    border: 1px solid var(--glass-orange-border);
-    margin-bottom: 2rem;
-    font-size: 0.875rem;
-    font-weight: 600;
-    box-shadow: var(--shadow-orange);
-    transition: all 0.3s ease;
-}
-
-.hero-badge:hover {
-    background: rgba(241, 90, 37, 0.15);
-    transform: translateY(-1px);
-    box-shadow: var(--shadow-orange-hover);
-}
+/* Hero Badge - Moved to hero.css */
 
 .badge-icon {
     font-size: 1.2rem;
 }
 
-.hero-title {
-    font-size: 3.5rem;
-    font-weight: 900;
-    line-height: 1.1;
-    margin-bottom: 1.5rem;
-    text-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    letter-spacing: -0.02em;
-}
+/* Hero title - Moved to hero.css */
 
 .trust-indicators {
     display: flex;
@@ -322,184 +260,17 @@ section {
     font-size: 1.1rem;
 }
 
-.hero-background {
-    position: absolute;
-    top: -20%;
-    left: 0;
-    right: 0;
-    bottom: -20%;    background: linear-gradient(135deg, rgba(255, 215, 0, 0.15) 0%, rgba(255, 165, 0, 0.1) 100%),
-                url('assets/images/hero-background.png');
-    background-size: cover;
-    background-position: center center;
-    background-repeat: no-repeat;
-    z-index: 0;
-}
+/* Hero background - Moved to hero.css */
 
-.hero-content {
-    position: relative;
-    z-index: 4;
-    max-width: none;
-    text-align: left;
-    margin: 0;
-    transform: translateZ(0);
-    flex: 1;
-    padding-right: 2rem;
-}
+/* Hero content, wrapper, and animation - Moved to hero.css */
 
-/* Hero Wrapper for Two-Column Layout */
-.hero-wrapper {
-    display: flex;
-    align-items: center;
-    gap: 3rem;
-    max-width: 1200px;
-    margin: 0 auto;
-    width: 100%;
-}
+/* Lottie fallback and loading - Moved to hero.css */
 
-/* Hero Animation Container */
-.hero-animation {
-    flex: 0 0 45%;
-    max-width: 500px;
-    position: relative;
-    z-index: 4;
-}
+/* Hero target icon - Moved to hero.css */
 
-#lottie-hero-animation {
-    width: 100%;
-    height: 400px;
-    max-width: 500px;
-    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.05) 100%);
-    border-radius: 20px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    overflow: hidden;
-}
+/* Float gentle animation - Moved to hero.css */
 
-/* Fallback content if Lottie fails to load */
-#lottie-hero-animation:empty::after {
-    content: "✨";
-    font-size: 4rem;
-    opacity: 0.3;
-    animation: pulse 2s infinite;
-}
-
-/* Loading state for Lottie animation */
-#lottie-hero-animation.loading {
-    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.05) 100%);
-}
-
-/* Target Icon in Hero Animation Container */
-.hero-target-icon {
-    position: absolute;
-    bottom: 12px;
-    right: 12px;
-    width: 36px;
-    height: 36px;
-    background: rgba(255, 255, 255, 0.12);
-    backdrop-filter: blur(15px);
-    border-radius: 50%;
-    border: 1.5px solid rgba(255, 184, 0, 0.3);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 10;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);    box-shadow: 
-        0 4px 16px rgba(0, 0, 0, 0.08),
-        0 2px 8px rgba(255, 184, 0, 0.15),
-        inset 0 1px 0 rgba(255, 255, 255, 0.15);
-    pointer-events: none;
-    overflow: hidden;
-    animation: float-gentle 5s ease-in-out infinite;
-}
-
-.hero-target-icon::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: linear-gradient(135deg, rgba(255, 184, 0, 0.08) 0%, rgba(241, 90, 37, 0.08) 100%);
-    border-radius: 50%;
-    opacity: 0;
-    transition: opacity 0.3s ease;
-}
-
-.hero-target-icon:hover::before {
-    opacity: 1;
-}
-
-.hero-target-icon img {
-    width: 20px;
-    height: 20px;
-    object-fit: contain;
-    filter: brightness(1.1) contrast(1.05);
-    transition: all 0.3s ease;
-    position: relative;
-    z-index: 2;
-    opacity: 0.9;
-}
-
-.hero-target-icon:hover {
-    transform: translateY(-1px) scale(1.03);
-    border-color: rgba(255, 184, 0, 0.6);
-    box-shadow: 
-        0 6px 20px rgba(0, 0, 0, 0.12),
-        0 3px 12px rgba(255, 184, 0, 0.25),
-        inset 0 1px 0 rgba(255, 255, 255, 0.25);
-    animation: none;
-}
-
-.hero-target-icon:hover img {
-    transform: scale(1.05);
-    filter: brightness(1.3) contrast(1.1);
-    opacity: 1;
-}
-
-.hero-target-icon:active {
-    transform: translateY(0) scale(1);
-}
-
-/* Gentle floating animation for target icon */
-@keyframes float-gentle {
-    0%, 100% {
-        transform: translateY(0px) rotate(0deg);
-    }
-    50% {
-        transform: translateY(-2px) rotate(1deg);
-    }
-}
-
-/* Responsive adjustments for target icon */
-@media (max-width: 768px) {
-    .hero-target-icon {
-        width: 32px;
-        height: 32px;
-        bottom: 10px;
-        right: 10px;
-    }
-    
-    .hero-target-icon img {
-        width: 18px;
-        height: 18px;
-    }
-}
-
-@media (max-width: 480px) {
-    .hero-target-icon {
-        width: 28px;
-        height: 28px;
-        bottom: 8px;
-        right: 8px;
-    }
-    
-    .hero-target-icon img {
-        width: 16px;
-        height: 16px;
-    }
-}
+/* Responsive adjustments for target icon - Moved to hero.css */
 
 #lottie-hero-animation.loading::before {
     content: '';
@@ -516,8 +287,7 @@ section {
 }
 
 @keyframes spin {
-    0% { transform: translate(-50%, -50%) rotate(0deg); }
-    100% { transform: translate(-50%, -50%) rotate(360deg); }
+    0% { transform: translate(-50%, -50%) rotate(0deg); }    100% { transform: translate(-50%, -50%) rotate(360deg); }
 }
 
 @keyframes pulse {
@@ -525,16 +295,7 @@ section {
     50% { opacity: 0.1; }
 }
 
-.hero-content h1 {
-    margin-bottom: 1.5rem;
-    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-.hero-subtitle {
-    font-size: 1.25rem;
-    margin-bottom: 2.5rem;
-    opacity: 0.9;
-}
+/* Hero content h1 and subtitle - Moved to hero.css */
 
 /* Improved Text Readability for Specific Sections */
 .section-subtitle {
@@ -548,16 +309,10 @@ section {
 .insights-section .section-subtitle {
     color: #f7fafc !important;
     font-weight: 400;
-    opacity: 1;
-    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+    opacity: 1;    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
 }
 
-.hero-ctas {
-    display: flex;
-    gap: 1.5rem;
-    justify-content: flex-start;
-    flex-wrap: wrap;
-}
+/* Hero CTAs - Moved to hero.css */
 
 /* Service Tags Strip - Professional Animation Update */
 .service-tags-strip {
