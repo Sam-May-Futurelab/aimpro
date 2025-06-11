@@ -646,6 +646,12 @@
     transform: translateY(-3px);
 }
 
+/* Blog CTA Section */
+.blog-cta-section {
+    padding-top: 3rem;
+    text-align: center;
+}
+
 /* Mobile Button Adjustments */
 @media (max-width: 768px) {
     .btn,

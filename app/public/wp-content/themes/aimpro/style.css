@@ -50,10 +50,9 @@ Version: 1.0
     --primary-orange-light: #ff6b35;
     --primary-orange-dark: #d14a1f;
     
-    /* Background Colors */
-    --bg-primary: #ffffff;
-    --bg-secondary: #f8fafc;
-    --bg-tertiary: #f1f5f9;
+    /* Background Colors */    --bg-primary: #ffffff;
+    --bg-secondary: #fefefe;
+    --bg-tertiary: #ffffff;
     --bg-card: #ffffff;
     --bg-overlay: rgba(0, 0, 0, 0.05);
     
@@ -1409,7 +1408,7 @@ section {
 
 /* Light Theme Premium Services Section - Enhanced Readability */
 .light-theme .premium-services-section {
-    background: linear-gradient(135deg, #ffffff 0%, #f8fafc 50%, #e2e8f0 100%);
+    background: linear-gradient(135deg, #ffffff 0%, #fefefe 50%, #ffffff 100%);
     color: var(--text-primary);
 }
 
@@ -2204,12 +2203,6 @@ section {
     color: var(--text-secondary);
     margin-bottom: 1.5rem;
     font-size: 1rem;
-}
-
-/* Blog CTA Section */
-.blog-cta-section {
-    padding-top: 3rem;
-    text-align: center;
 }
 
 /* Premium Footer - Moved to assets/css/footer.css */
@@ -3396,7 +3389,7 @@ select:focus {
 
 /* Light Theme Insights Section - Enhanced Readability */
 .light-theme .insights-section {
-    background: var(--bg-tertiary);
+    background: #ffffff;
     color: var(--text-primary);
 }
 
