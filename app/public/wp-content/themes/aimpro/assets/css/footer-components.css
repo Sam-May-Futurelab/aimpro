@@ -118,36 +118,23 @@
     font-size: 0.9rem;
 }
 
-.cta-button {
-    display: inline-block;
-    background: linear-gradient(135deg, #f15a25, #ff6b35);
-    color: white;
-    padding: 0.75rem 1.5rem;
-    border-radius: 25px;
-    text-decoration: none;
-    font-weight: 600;
-    font-size: 0.9rem;
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 15px rgba(241, 90, 37, 0.3);
-}
-
-.cta-button:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 8px 25px rgba(255, 184, 0, 0.4);
-}
+/* CTA button styles moved to buttons.css */
 
 /* Light Theme Footer CTA */
 .light-theme .footer-cta {
-    background: linear-gradient(135deg, rgba(255, 215, 0, 0.05), rgba(255, 165, 0, 0.05));
-    border: 1px solid rgba(255, 215, 0, 0.1);
+    background: linear-gradient(135deg, rgba(241, 90, 37, 0.05), rgba(255, 107, 53, 0.08));
+    border: 1px solid rgba(241, 90, 37, 0.15);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
 }
 
 .light-theme .footer-cta h4 {
-    color: var(--text-dark);
+    color: var(--primary-orange-dark);
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
 }
 
 .light-theme .footer-cta p {
-    color: #64748b;
+    color: var(--text-readable-secondary);
+    font-weight: 500;
 }
 
 /* Responsive adjustments */

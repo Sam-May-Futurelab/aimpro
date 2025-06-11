@@ -2,42 +2,304 @@
    BUTTON STYLES
    ============================================ */
 
+/* Base Button Styles */
+.btn {
+    display: inline-block;
+    padding: 16px 32px;
+    border-radius: 25px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1rem;
+    text-align: center;
+    border: none;
+    cursor: pointer;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    line-height: 1.4;
+    backdrop-filter: blur(20px);
+    box-shadow: 
+        0 8px 32px rgba(0, 0, 0, 0.1),
+        inset 0 1px 0 rgba(255, 255, 255, 0.2),
+        inset 0 -1px 0 rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+    transition: left 0.6s ease;
+}
+
+.btn:hover::before {
+    left: 100%;
+}
+
+.btn:hover {
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: 
+        0 15px 40px rgba(0, 0, 0, 0.2),
+        inset 0 1px 0 rgba(255, 255, 255, 0.3),
+        inset 0 -1px 0 rgba(0, 0, 0, 0.1);
+}
+
 /* Primary button with shine effect */
 .btn-primary {
-    background: var(--gradient-orange);
-    color: var(--text-primary);
-    padding: 14px 32px;
-    border-radius: 30px;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    text-decoration: none;
     display: inline-block;
+    padding: 14px 28px;
+    background: linear-gradient(135deg, rgba(255, 215, 0, 0.9) 0%, rgba(255, 165, 0, 0.9) 100%);
+    color: #1a202c;
+    font-weight: 700;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    border-radius: 25px;
+    text-decoration: none;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    cursor: pointer;
+    line-height: 1.4;
+    backdrop-filter: blur(20px);
+    box-shadow: 
+        0 8px 32px rgba(255, 215, 0, 0.3),
+        inset 0 1px 0 rgba(255, 255, 255, 0.4),
+        inset 0 -1px 0 rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(255, 215, 0, 0.3);
     position: relative;
-    border: none;
     overflow: hidden;
-    transition: all 0.3s ease;
-    font-size: 0.95rem;
-    box-shadow: var(--shadow-orange);
     min-width: 180px;
     text-align: center;
 }
 
+.btn-primary::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    transition: width 0.6s, height 0.6s;
+    z-index: 1;
+}
+
 .btn-primary:hover {
-    transform: translateY(-3px);
-    box-shadow: var(--shadow-orange-hover);
+    background: linear-gradient(135deg, rgba(255, 165, 0, 0.95) 0%, rgba(255, 140, 0, 0.95) 100%);
+    color: #1a202c;
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: 
+        0 15px 40px rgba(255, 215, 0, 0.4),
+        inset 0 1px 0 rgba(255, 255, 255, 0.5),
+        inset 0 -1px 0 rgba(0, 0, 0, 0.1);
+}
+
+.btn-primary:hover::after {
+    width: 300px;
+    height: 300px;
 }
 
 .btn-primary.large {
     padding: 18px 36px;
-    font-size: 1.1rem;
+    font-size: 1.125rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    line-height: 1.3;
     min-width: 240px;
+}
+
+/* Secondary button */
+.btn-secondary {
+    background: rgba(255, 255, 255, 0.1);
+    color: #f15a25;
+    border: 1px solid rgba(241, 90, 37, 0.3);
+    border-radius: 25px;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    line-height: 1.4;
+    padding: 14px 28px;
+    font-weight: 700;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    text-decoration: none;
+    backdrop-filter: blur(20px);
+    box-shadow: 
+        0 8px 32px rgba(0, 0, 0, 0.1),
+        inset 0 1px 0 rgba(255, 255, 255, 0.2),
+        inset 0 -1px 0 rgba(0, 0, 0, 0.1);
+    min-width: 180px;
+    text-align: center;
+}
+
+.btn-secondary.large {
+    padding: 18px 36px;
+    font-size: 1rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    background: rgba(255, 255, 255, 0.15);
+    color: #f15a25;
+    border: 1px solid rgba(241, 90, 37, 0.4);
+    border-radius: 30px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    line-height: 1.3;
+    backdrop-filter: blur(20px);
+    box-shadow:
+        0 10px 35px rgba(0, 0, 0, 0.15),
+        inset 0 1px 0 rgba(255, 255, 255, 0.25),
+        inset 0 -1px 0 rgba(0, 0, 0, 0.1);
+    min-width: 240px;
+}
+
+.btn-secondary:hover {
+    background: linear-gradient(135deg, rgba(255, 215, 0, 0.9) 0%, rgba(255, 165, 0, 0.9) 100%);
+    color: #1a202c;
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: 
+        0 15px 40px rgba(255, 215, 0, 0.3),
+        inset 0 1px 0 rgba(255, 255, 255, 0.3),
+        inset 0 -1px 0 rgba(0, 0, 0, 0.1);
+}
+
+/* Outline button with premium hover effect */
+.btn-outline {
+    display: inline-block;
+    padding: 14px 28px;
+    border: 1px solid rgba(241, 90, 37, 0.4);
+    background: rgba(255, 255, 255, 0.1);
+    color: #f15a25;
+    font-weight: 700;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    border-radius: 25px;
+    text-decoration: none;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    cursor: pointer;
+    line-height: 1.4;
+    backdrop-filter: blur(20px);
+    box-shadow: 
+        0 8px 32px rgba(0, 0, 0, 0.1),
+        inset 0 1px 0 rgba(255, 255, 255, 0.2),
+        inset 0 -1px 0 rgba(0, 0, 0, 0.1);
+    min-width: 180px;
+    text-align: center;
+}
+
+.btn-outline:hover {
+    background: rgba(255, 165, 0, 0.9);
+    color: white;
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: 
+        0 15px 40px rgba(255, 165, 0, 0.3),
+        inset 0 1px 0 rgba(255, 255, 255, 0.3),
+        inset 0 -1px 0 rgba(0, 0, 0, 0.1);
+}
+
+/* Service CTA button */
+.service-cta {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--primary-orange);
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 0.95rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 16px 24px;
+    background: linear-gradient(135deg, 
+        rgba(241, 90, 37, 0.08) 0%, 
+        rgba(255, 107, 53, 0.05) 100%);
+    border: 2px solid rgba(241, 90, 37, 0.2);
+    border-radius: 25px;
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    line-height: 1;
+    position: relative;
+    z-index: 2;
+    backdrop-filter: blur(10px);
+    margin-top: auto;
+    box-shadow: var(--shadow-orange);
+}
+
+.service-cta:hover {
+    color: var(--primary-black);
+    background: var(--gradient-orange);
+    border-color: var(--primary-orange);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-orange-hover);
+}
+
+/* Read More button */
+.read-more {
+    display: inline-block;
+    color: var(--primary-orange);
+    text-decoration: none;
+    font-weight: 600;
+    padding: 12px 24px;
+    border: 2px solid var(--primary-orange);
+    border-radius: 6px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-size: 0.9rem;
+    line-height: 1.4;
+}
+
+.read-more:hover {
+    background: var(--primary-orange);
+    color: var(--primary-black);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-orange);
+}
+
+.read-more::after {
+    content: '→';
+    margin-left: 8px;
+    transition: transform 0.3s ease;
+}
+
+.read-more:hover::after {
+    transform: translateX(3px);
 }
 
 /* Shine effect */
 .shine-effect {
     position: relative;
     overflow: hidden;
+}
+
+/* Button Hover Target Effects */
+.btn-primary:hover,
+.cta-btn:hover {
+    position: relative;
+}
+
+.btn-primary:hover::after,
+.cta-btn:hover::after {
+    content: '';
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    width: 16px;
+    height: 16px;
+    background-image: url('../images/aimpro-target.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    opacity: 0.4;
+    animation: targetFloat 2s ease-in-out infinite;
 }
 
 .shine-effect::after {
@@ -78,60 +340,7 @@
     }
 }
 
-/* Secondary button */
-.btn-secondary {
-    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.05) 100%);
-    color: var(--text-primary);
-    padding: 14px 32px;
-    border-radius: 30px;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    text-decoration: none;
-    display: inline-block;
-    position: relative;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(10px);
-    transition: all 0.3s ease;
-    font-size: 0.95rem;
-    min-width: 180px;
-    text-align: center;
-}
-
-.btn-secondary:hover {
-    background: linear-gradient(135deg, rgba(255, 255, 255, 0.15) 0%, rgba(255, 255, 255, 0.1) 100%);
-    transform: translateY(-3px);
-}
-
-.btn-secondary.large {
-    padding: 18px 36px;
-    font-size: 1.1rem;
-    min-width: 240px;
-}
-
-/* Outline button with premium hover effect */
-.btn-outline {
-    background: transparent;
-    color: var(--text-primary);
-    padding: 14px 32px;
-    border-radius: 30px;
-    font-weight: 600;
-    letter-spacing: 0.5px;
-    text-decoration: none;
-    display: inline-block;
-    position: relative;
-    border: 1px solid rgba(255, 255, 255, 0.3);
-    transition: all 0.3s ease;
-    font-size: 0.95rem;
-    min-width: 180px;
-    text-align: center;
-}
-
-.btn-outline:hover {
-    border-color: var(--primary-orange);
-    color: var(--primary-orange);
-}
-
+/* Premium hover effect */
 .premium-hover {
     position: relative;
     z-index: 1;
@@ -177,58 +386,7 @@
     }
 }
 
-/* Light theme button adjustments */
-.light-theme .btn-primary {
-    background: var(--gradient-orange);
-    color: #ffffff;
-}
-
-.light-theme .btn-secondary {
-    background: rgba(241, 90, 37, 0.1);
-    color: var(--primary-orange);
-    border-color: rgba(241, 90, 37, 0.2);
-}
-
-.light-theme .btn-outline {
-    border-color: rgba(241, 90, 37, 0.3);
-    color: var(--primary-orange);
-}
-
-/* Mobile Button Adjustments */
-@media (max-width: 768px) {
-    .btn {
-        padding: 14px 28px;
-        font-size: 0.9rem;
-        border-radius: 22px;
-        backdrop-filter: blur(15px);
-    }
-    
-    .btn-primary,
-    .btn-secondary,
-    .btn-outline {
-        min-width: auto;
-    }
-    
-    .btn-primary.large,
-    .btn-secondary.large {
-        padding: 16px 32px;
-        font-size: 1rem;
-    }
-    
-    .hero-ctas {
-        flex-direction: column;
-        gap: 1rem;
-        align-items: flex-start;
-    }
-    
-    .hero-ctas .btn {
-        width: 100%;
-        max-width: 280px;
-        text-align: center;
-    }
-}
-
-/* For the Get Free Audit button in the footer */
+/* Footer CTA */
 .footer-cta {
     background: var(--gradient-orange);
     color: var(--text-primary);
@@ -254,6 +412,7 @@
     box-shadow: var(--shadow-orange-hover);
 }
 
+/* CTA Button (used in footer and other sections) */
 .cta-button {
     display: inline-block;
     background: var(--gradient-orange);
@@ -277,4 +436,182 @@
 .cta-button:hover {
     transform: translateY(-3px);
     box-shadow: var(--shadow-orange-hover);
+}
+
+/* Light theme button adjustments */
+.light-theme .btn-primary {
+    background: var(--btn-primary-bg);
+    color: var(--btn-primary-text);
+    border: 2px solid var(--btn-primary-bg);
+}
+
+.light-theme .btn-secondary,
+.light-theme .btn-outline {
+    background: var(--btn-secondary-bg);
+    color: var(--btn-secondary-text);
+    border: 2px solid var(--btn-secondary-border);
+}
+
+.light-theme .btn-secondary:hover,
+.light-theme .btn-outline:hover {
+    background: var(--btn-primary-bg);
+    color: var(--btn-primary-text);
+}
+
+.light-theme .service-cta {
+    background: rgba(241, 90, 37, 0.1);
+    color: var(--primary-orange-dark);
+    border-color: rgba(241, 90, 37, 0.2);
+}
+
+.light-theme .service-cta:hover {
+    background: var(--gradient-orange);
+    color: white;
+}
+
+/* Final CTA Button Container */
+.final-cta-buttons {
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.final-cta-buttons .btn-primary {
+    background: var(--gradient-orange);    
+    color: var(--primary-black);
+    border: 2px solid transparent;
+    box-shadow: var(--shadow-orange);
+}
+
+.final-cta-buttons .btn-primary:hover {
+    box-shadow: var(--shadow-orange-hover);
+    transform: translateY(-3px);
+}
+
+.final-cta-buttons .btn-secondary {
+    background: transparent;
+    color: var(--primary-orange);
+    border: 2px solid var(--primary-orange);
+    backdrop-filter: blur(10px);
+}
+
+.final-cta-buttons .btn-secondary:hover {
+    background: var(--primary-orange);
+    color: var(--primary-black);
+    box-shadow: var(--shadow-orange);
+    transform: translateY(-3px);
+}
+
+/* Mobile Button Adjustments */
+@media (max-width: 768px) {
+    .btn,
+    .btn-primary,
+    .btn-secondary,
+    .btn-outline,
+    .service-cta,
+    .cta-button,
+    .footer-cta {
+        padding: 12px 24px;
+        font-size: 0.9rem;
+        min-width: auto;
+        max-width: 280px;
+        width: 100%;
+    }
+    
+    .btn-primary.large,
+    .btn-secondary.large {
+        padding: 14px 28px;
+        font-size: 1rem;
+    }
+    
+    .service-cta {
+        padding: 12px 20px;
+        font-size: 0.85rem;
+        letter-spacing: 0.5px;
+    }
+}
+
+/* ===============================================
+   BACK TO TOP BUTTON - LUXURY THEME
+   =============================================== */
+
+.back-to-top {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    width: 60px;
+    height: 60px;
+    background: var(--gradient-orange);
+    color: var(--primary-black);
+    border: none;
+    border-radius: 50%;
+    font-size: 1.5rem;
+    font-weight: bold;
+    cursor: pointer;
+    z-index: 1000;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(20px);
+    box-shadow: var(--shadow-orange);
+    backdrop-filter: blur(10px);
+    border: 2px solid rgba(241, 90, 37, 0.3);
+}
+
+.back-to-top.visible {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.back-to-top:hover {
+    transform: translateY(-5px) scale(1.1);
+    box-shadow: var(--shadow-orange-hover);
+    background: linear-gradient(135deg, var(--primary-orange-light) 0%, var(--primary-orange) 100%);
+}
+
+.back-to-top:active {
+    transform: translateY(-2px) scale(1.05);
+}
+
+/* Back to Top Button */
+.back-to-top {
+    position: fixed;
+    bottom: 2rem;    
+    right: 2rem;
+    width: 60px;
+    height: 60px;
+    background: var(--gradient-orange);
+    color: var(--primary-black);
+    border: none;
+    border-radius: 50%;
+    font-size: 1.5rem;
+    font-weight: bold;
+    cursor: pointer;
+    z-index: 1000;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(20px);
+    box-shadow: var(--shadow-orange);
+    backdrop-filter: blur(10px);
+    border: 2px solid rgba(241, 90, 37, 0.3);
+}
+
+.back-to-top.visible {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.back-to-top:hover {
+    transform: translateY(-5px) scale(1.1);
+    box-shadow: var(--shadow-orange-hover);
+    background: linear-gradient(135deg, var(--primary-orange-light) 0%, var(--primary-orange) 100%);
+}
+
+.back-to-top:active {
+    transform: translateY(-2px) scale(1.05);
 }
