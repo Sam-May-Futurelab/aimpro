@@ -1080,39 +1080,7 @@ section {
 }
 
 /* Enhanced responsive styling for the main CTA button */
-.services-cta-section .btn-primary.large {
-    position: relative;
-    min-width: 280px;
-    max-width: 100%;
-    width: auto;
-    display: inline-block;
-    white-space: nowrap;
-    overflow: visible;
-}
-
-/* Target icon positioned on button corner */
-.services-cta-section .btn-primary.large::before {
-    content: '';
-    position: absolute;
-    top: -8px;
-    right: -8px;
-    width: 24px;
-    height: 24px;
-    background-image: url('assets/images/aimpro-target.png');
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
-    opacity: 0.7;
-    z-index: 5;
-    transition: all 0.3s ease;
-    animation: targetFloat 4s ease-in-out infinite;
-}
-
-.services-cta-section .btn-primary.large:hover::before {
-    opacity: 1;
-    transform: scale(1.2);
-    animation-duration: 2s;
-}
+/* Services CTA styles moved to buttons.css */
 
 .team-cta-section {
     text-align: center;
@@ -1485,57 +1453,7 @@ section {
 }
 
 /* Simplified CTA button for better performance */
-.premium-service-cta {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.8rem;
-    background: linear-gradient(135deg, rgba(255, 215, 0, 0.9), rgba(255, 165, 0, 0.8));
-    color: #000;
-    padding: 1rem 1.5rem;
-    border-radius: 15px;
-    text-decoration: none;
-    font-weight: 700;
-    font-size: 0.9rem;
-    letter-spacing: 0.5px;
-    transition: all 0.3s ease; /* Simplified transition */
-    position: relative;
-    overflow: hidden;
-    box-shadow: 0 6px 16px rgba(255, 215, 0, 0.3); /* Reduced shadow */
-    transform: translateZ(0); /* Hardware acceleration */
-}
-
-.premium-service-cta::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(90deg,
-        transparent 0%,
-        rgba(255, 255, 255, 0.2) 50%, /* Reduced opacity */
-        transparent 100%);
-    transition: left 0.3s ease; /* Faster transition */
-}
-
-/* Simplified CTA hover effects */
-.premium-service-cta:hover {
-    transform: translateY(-1px) translateZ(0); /* Reduced movement */
-    box-shadow: 0 8px 20px rgba(241, 90, 37, 0.4); /* Simplified shadow */
-    background: linear-gradient(135deg, #f15a25, #ff6b35);
-}
-
-.premium-service-cta:hover::before {
-    left: 100%;
-}
-
-.cta-arrow {
-    transition: transform 0.2s ease; /* Faster transition */
-}
-
-.premium-service-cta:hover .cta-arrow {
-    transform: translateX(2px); /* Reduced movement */
-}
+/* Premium service CTA styles moved to buttons.css */
 
 .service-overlay {
     position: absolute;
@@ -1944,21 +1862,7 @@ section {
     font-weight: 700;
 }
 
-.light-theme .premium-service-cta {
-    background: var(--btn-primary-bg) !important;
-    color: var(--btn-primary-text) !important;
-    border: 2px solid var(--btn-primary-bg);
-}
-
-.light-theme .premium-service-cta:hover {
-    background: var(--primary-orange-light) !important;
-    box-shadow: 0 8px 20px rgba(241, 90, 37, 0.3);
-}
-
-.light-theme .premium-service-cta span {
-    color: var(--btn-primary-text) !important;
-    font-weight: 700;
-}
+/* Light theme premium service CTA styles moved to buttons.css */
 
 /* Light Theme Animation Adjustments */
 .light-theme .service-icon-animated {
@@ -2088,11 +1992,7 @@ section {
     .service-description p {
         font-size: 0.95rem;
     }
-    
-    .premium-service-cta {
-        padding: 0.8rem 1.2rem;
-        font-size: 0.85rem;
-    }
+      /* Premium service CTA media query styles moved to buttons.css */
 }
 
 /* Luxury Team Section */
@@ -2818,17 +2718,7 @@ select:focus {
         backdrop-filter: blur(15px);
     }
     
-    .btn-primary,
-    .btn-secondary,
-    .btn-outline {
-        min-width: auto;
-    }
-    
-    .btn-primary.large,
-    .btn-secondary.large {
-        padding: 16px 32px;
-        font-size: 1rem;
-    }
+        /* Button styles moved to buttons.css */
       .hero-ctas {
         flex-direction: column;
         gap: 1rem;
@@ -4055,30 +3945,14 @@ select:focus {
    TARGET ICON STRATEGIC PLACEMENT
    ================================ */
 
-/* Base Target Icon Styles */
-.target-icon {
-    position: absolute;
-    width: 40px;
-    height: 40px;
-    background-image: url('assets/images/aimpro-target.png');
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
-    opacity: 0.6;
-    pointer-events: none;
-    z-index: 1;
-    transition: all 0.3s ease;
-}
+/* Target Icon Styles - Moved to buttons.css */
 
 /* Subtle Animation for Target Icons */
 .target-icon.animate {
     animation: targetFloat 4s ease-in-out infinite;
 }
 
-@keyframes targetFloat {
-    0%, 100% { transform: translateY(0px) scale(1); }
-    50% { transform: translateY(-10px) scale(1.05); }
-}
+/* Animation keyframes moved to buttons.css */
 
 /* Hero Section Target Icons */
 .hero-section {
@@ -4192,14 +4066,7 @@ select:focus {
     position: absolute;
     top: 10px;
     right: 10px;
-    width: 20px;
-    height: 20px;
-    background-image: url('assets/images/aimpro-target.png');
-    background-size: contain;
-    background-repeat: no-repeat;
-    opacity: 0.3;
-    animation: targetFloat 3s ease-in-out infinite;
-    z-index: 2;
+    /* Target icon for service card - Moved to buttons.css */
 }
 
 /* Button Hover Target Effects - Moved to buttons.css */
@@ -4226,12 +4093,7 @@ select:focus {
         width: 14px;
         height: 14px;
     }
-    
-    .btn-primary:hover::after,
-    .cta-btn:hover::after {
-        width: 12px;
-        height: 12px;
-    }
+      /* Button hover styles moved to buttons.css */
 }
 
 @media (max-width: 480px) {
@@ -4264,11 +4126,7 @@ select:focus {
 }
 
 :root.light-theme .service-card:hover::before,
-:root.light-theme .btn-primary:hover::after,
-:root.light-theme .cta-btn:hover::after {
-    opacity: 0.4;
-    filter: contrast(1.3) brightness(0.7);
-}
+/* Button hover styles in light theme moved to buttons.css */
 
 .insight-card:hover {    transform: translateY(-4px);
     border: var(--glass-orange-border);
