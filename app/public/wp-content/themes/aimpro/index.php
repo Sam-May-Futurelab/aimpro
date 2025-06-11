@@ -64,30 +64,11 @@
             <div class="header-ctas">
                 <a href="#contact" class="btn-outline premium-hover">GET FREE AUDIT</a>
                 <a href="tel:+441212858490" class="btn-primary shine-effect">TALK TO AN EXPERT</a>
-            </div>
-            <div class="mobile-menu-toggle">
+            </div>            <div class="mobile-menu-toggle">
                 <span></span>
                 <span></span>
                 <span></span>
             </div>
-            
-            <!-- Theme Toggle Button -->
-            <button class="theme-toggle" id="theme-toggle" aria-label="Toggle light/dark theme">
-                <svg class="theme-icon sun-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <circle cx="12" cy="12" r="5"></circle>
-                    <line x1="12" y1="1" x2="12" y2="3"></line>
-                    <line x1="12" y1="21" x2="12" y2="23"></line>
-                    <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
-                    <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
-                    <line x1="1" y1="12" x2="3" y2="12"></line>
-                    <line x1="21" y1="12" x2="23" y2="12"></line>
-                    <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
-                    <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
-                </svg>
-                <svg class="theme-icon moon-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
-                </svg>
-            </button>
         </div>
     </div>
 </header>
@@ -845,8 +826,29 @@
                         <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
                             <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
                         </svg>
-                    </a>
+                    </a>                </div>
+                
+                <!-- Theme Toggle Button -->
+                <div class="footer-theme-toggle">
+                    <span class="theme-toggle-label">Theme:</span>
+                    <button class="theme-toggle" id="theme-toggle" aria-label="Toggle light/dark theme">
+                        <svg class="theme-icon sun-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="5"></circle>
+                            <line x1="12" y1="1" x2="12" y2="3"></line>
+                            <line x1="12" y1="21" x2="12" y2="23"></line>
+                            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                            <line x1="1" y1="12" x2="3" y2="12"></line>
+                            <line x1="21" y1="12" x2="23" y2="12"></line>
+                            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                        </svg>
+                        <svg class="theme-icon moon-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                        </svg>
+                    </button>
                 </div>
+                
                 <div class="footer-cta">
                     <h4>Ready to Grow?</h4>
                     <p>Get your free digital marketing audit today.</p>

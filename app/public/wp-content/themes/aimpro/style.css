@@ -2761,6 +2761,87 @@ section {
     background: linear-gradient(135deg, #1da1f2, #14171a);
 }
 
+/* Footer Theme Toggle */
+.footer-theme-toggle {
+    margin-top: 2rem;
+    padding: 1.5rem 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 1.25rem;
+}
+
+.footer-theme-toggle .toggle-label {
+    font-size: 0.95rem;
+    color: #cbd5e1;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+}
+
+.footer-theme-toggle .theme-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    background: var(--gradient-orange);
+    border-radius: 12px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(241, 90, 37, 0.25);
+}
+
+.footer-theme-toggle .theme-toggle::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.5s ease;
+}
+
+.footer-theme-toggle .theme-toggle:hover::before {
+    left: 100%;
+}
+
+.footer-theme-toggle .theme-toggle:hover {
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 12px 25px rgba(241, 90, 37, 0.4);
+}
+
+.footer-theme-toggle .theme-icon {
+    width: 20px;
+    height: 20px;
+    color: var(--primary-black);
+    transition: all 0.3s ease;
+    position: relative;
+    z-index: 2;
+}
+
+.footer-theme-toggle .theme-toggle:hover .theme-icon {
+    transform: rotate(180deg);
+}
+
+/* Light theme adjustments for footer theme toggle */
+.light-theme .footer-theme-toggle {
+    border-top-color: rgba(0, 0, 0, 0.1);
+}
+
+.light-theme .footer-theme-toggle .toggle-label {
+    color: #64748b;
+}
+
+.light-theme .footer-theme-toggle .theme-toggle:hover {
+    box-shadow: 0 8px 20px rgba(241, 90, 37, 0.3);
+}
+
 /* Footer CTA */
 .footer-cta {
     background: linear-gradient(135deg, rgba(255, 215, 0, 0.1), rgba(255, 165, 0, 0.1));
