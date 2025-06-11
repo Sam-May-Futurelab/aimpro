@@ -1198,10 +1198,9 @@ document.addEventListener('DOMContentLoaded', function() {
     const themeToggle = document.querySelector('.theme-toggle');
     const sunIcon = document.querySelector('.sun-icon');
     const moonIcon = document.querySelector('.moon-icon');
-    
-    if (themeToggle) {
-        // Initialize theme state (currently dark theme)
-        let isDarkTheme = true;
+      if (themeToggle) {
+        // Initialize theme state (now starting with light theme)
+        let isDarkTheme = false;
         
         // Toggle button click handler
         themeToggle.addEventListener('click', function() {
@@ -1238,12 +1237,12 @@ document.addEventListener('DOMContentLoaded', function() {
             }, 150);
         });
         
-        // Initialize with correct icon and theme (moon for current dark theme)
-        document.body.classList.remove('light-theme');
-        document.documentElement.classList.remove('light-theme');
-        sunIcon.style.opacity = '0';
-        moonIcon.style.opacity = '1';
-        themeToggle.setAttribute('aria-label', 'Switch to light theme');
+        // Initialize with light theme as default
+        document.body.classList.add('light-theme');
+        document.documentElement.classList.add('light-theme');
+        sunIcon.style.opacity = '1';
+        moonIcon.style.opacity = '0';
+        themeToggle.setAttribute('aria-label', 'Switch to dark theme');
         
         console.log('Theme toggle initialized successfully');
     } else {

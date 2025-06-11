@@ -872,6 +872,13 @@ section {
     border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
+/* Remove background for light theme stat items */
+.light-theme .stat-item {
+    background: transparent !important;
+    border: none !important;
+    backdrop-filter: none !important;
+}
+
 .stat-item:hover {
     transform: translateY(-5px);
 }
@@ -908,9 +915,9 @@ section {
 .stat-label {
     font-size: 1.125rem;
     font-weight: 600;
-    color: white;
+    color: var(--primary-orange);
     opacity: 0.95;
-    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
 }
 
 /* Services Grid */
@@ -1835,8 +1842,8 @@ section {
 
 /* Light Theme Stats Section */
 .light-theme .stats-section {
-    background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 50%, #cbd5e1 100%);
-    color: var(--text-primary);
+    background: var(--bg-secondary) !important;
+    color: #ffffff;
 }
 
 /* Light Theme Stats Section - Remove dark overlay to show Lottie animation */
@@ -1857,17 +1864,19 @@ section {
 }
 
 .light-theme .stat-item {
-    color: var(--text-primary);
+    background: transparent !important;
+    border: none !important;
+    backdrop-filter: none !important;
 }
 
 .light-theme .stat-card {
-    background: var(--card-bg);
-    border: 1px solid var(--border-light);
-    box-shadow: var(--shadow-card);
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
 }
 
 .light-theme .stat-number {
-    color: var(--primary-orange);
+    color: var(--primary-orange) !important;
     text-shadow: none;
     filter: none;
     background: var(--gradient-orange);
@@ -1877,7 +1886,10 @@ section {
 }
 
 .light-theme .stat-label {
-    color: var(--text-muted);
+    color: var(--primary-orange) !important;
+    opacity: 1;
+    text-shadow: none;
+    font-weight: 600;
 }
 
 /* Light Theme Forms */
