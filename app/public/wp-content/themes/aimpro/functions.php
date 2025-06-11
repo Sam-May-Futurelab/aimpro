@@ -47,9 +47,11 @@ add_action('after_setup_theme', 'aimpro_theme_setup');
  */
 function aimpro_enqueue_assets() {
     $theme_version = wp_get_theme()->get('Version');    // Enqueue styles with preload for critical CSS
-    wp_enqueue_style('aimpro-style', get_stylesheet_uri(), array(), $theme_version);
-      // Enqueue header and menu styles
+    wp_enqueue_style('aimpro-style', get_stylesheet_uri(), array(), $theme_version);    // Enqueue header and menu styles
     wp_enqueue_style('aimpro-header-menu', get_template_directory_uri() . '/assets/css/header-menu.css', array('aimpro-style'), $theme_version);
+    
+    // Enqueue mega menu improvements
+    wp_enqueue_style('aimpro-mega-menu-improvements', get_template_directory_uri() . '/assets/css/mega-menu-improvements.css', array('aimpro-header-menu'), $theme_version);
     
     // Enqueue hero styles
     wp_enqueue_style('aimpro-hero', get_template_directory_uri() . '/assets/css/hero.css', array('aimpro-style'), $theme_version);
@@ -67,9 +69,11 @@ function aimpro_enqueue_assets() {
     wp_enqueue_style('google-fonts', 'https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap', array(), null);
       // Enqueue Lottie library for animations
     wp_enqueue_script('lottie-web', 'https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.12.2/lottie.min.js', array(), '5.12.2', true);
-    
-    // Enqueue scripts with proper dependencies and defer loading
+      // Enqueue scripts with proper dependencies and defer loading
     wp_enqueue_script('aimpro-main', get_template_directory_uri() . '/assets/js/main.js', array('lottie-web'), $theme_version, true);
+    
+    // Enqueue mega menu script for mobile functionality
+    wp_enqueue_script('aimpro-mega-menu', get_template_directory_uri() . '/assets/js/mega-menu.js', array('aimpro-main'), $theme_version, true);
     
     // Add inline script for critical path optimization
     $inline_script = "

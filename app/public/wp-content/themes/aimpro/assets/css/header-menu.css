@@ -6,6 +6,7 @@
 .mega-menu,
 .dropdown-menu {
     display: none;
+    visibility: hidden;
     position: absolute;
     top: 100%;
     left: 0;
@@ -16,15 +17,54 @@
     z-index: 1000;
     opacity: 0;
     transform: translateY(-10px);
-    transition: all 0.3s ease;
+    transition: opacity 0.3s ease, transform 0.3s ease, visibility 0s linear 0.3s;
+    max-height: 85vh; /* Limit height to prevent overflow */
+    overflow-y: auto; /* Add scrolling if needed */
+    scrollbar-width: thin; /* Firefox */
+    scrollbar-color: rgba(241, 90, 37, 0.2) transparent; /* Firefox */
 }
 
-/* Show on hover */
+/* Customize scrollbar for webkit browsers */
+.mega-menu::-webkit-scrollbar,
+.dropdown-menu::-webkit-scrollbar {
+    width: 6px;
+}
+
+.mega-menu::-webkit-scrollbar-thumb,
+.dropdown-menu::-webkit-scrollbar-thumb {
+    background-color: rgba(241, 90, 37, 0.2);
+    border-radius: 6px;
+}
+
+.mega-menu::-webkit-scrollbar-track,
+.dropdown-menu::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+/* Show on hover with improved behavior */
 .nav-item-mega:hover .mega-menu,
 .nav-item-dropdown:hover .dropdown-menu {
     display: block;
+    visibility: visible;
     opacity: 1;
     transform: translateY(0);
+    transition: opacity 0.3s ease, transform 0.3s ease, visibility 0s linear 0s;
+}
+
+/* Add hover buffer area to prevent accidental closing */
+.nav-item-mega::after,
+.nav-item-dropdown::after {
+    content: '';
+    position: absolute;
+    height: 20px;
+    width: 100%;
+    bottom: -20px;
+    left: 0;
+}
+
+/* Ensure dropdown items don't overflow */
+.nav-item-dropdown {
+    position: relative;
 }
 
 /* Mega menu specific styling */
@@ -32,6 +72,8 @@
     width: 800px;
     left: 50%;
     transform: translateX(-50%) translateY(-10px);
+    padding: 1rem;
+    z-index: 1001; /* Ensure it's above other elements */
 }
 
 .nav-item-mega:hover .mega-menu {
@@ -74,17 +116,28 @@
     padding: 0.5rem 0;
     display: block;
     transition: all 0.3s ease;
+    font-weight: 500; /* Slightly bolder for better readability */
 }
 
 .mega-menu-list a:hover {
     color: var(--primary-orange);
     padding-left: 0.5rem;
+    background-color: rgba(241, 90, 37, 0.05); /* Subtle highlight */
+    border-radius: 4px;
 }
 
 /* Dropdown menu styling */
 .dropdown-menu {
-    width: 280px;
+    width: 350px; /* Increased from 320px to fit longer content */
     padding: 1rem 0;
+    left: 50%;
+    transform: translateX(-50%) translateY(-10px);
+    margin-top: 0.5rem;
+    max-height: 450px; /* Set specific max-height to ensure content fits */
+}
+
+.nav-item-dropdown:hover .dropdown-menu {
+    transform: translateX(-50%) translateY(0);
 }
 
 .dropdown-menu li {
@@ -98,22 +151,59 @@
     display: block;
     font-size: 0.95rem;
     transition: all 0.3s ease;
+    font-weight: 500; /* Slightly bolder for better readability */
+    white-space: normal; /* Allow text to wrap if needed */
+    position: relative;
+    line-height: 1.3; /* Improved line height for readability */
+    max-width: 100%; /* Ensure text doesn't overflow */
 }
 
 .dropdown-menu a:hover {
     background: rgba(241, 90, 37, 0.1);
     color: var(--primary-orange);
+    border-radius: 4px;
+    margin: 0 0.5rem;
+    padding-left: 2rem; /* Slightly increase left padding on hover */
+}
+
+/* Adjust positioning for specific navigation items to prevent edge overflow */
+.main-nav ul li:nth-last-child(2) .dropdown-menu,
+.main-nav ul li:nth-last-child(3) .dropdown-menu {
+    left: auto;
+    right: 0;
+    transform: translateY(-10px);
+}
+
+.main-nav ul li:nth-last-child(2):hover .dropdown-menu,
+.main-nav ul li:nth-last-child(3):hover .dropdown-menu {
+    transform: translateY(0);
 }
 
 /* Navigation arrows */
 .nav-arrow {
     margin-left: 0.5rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
     transition: transform 0.3s ease;
+}
+
+.nav-arrow svg {
+    width: 14px;
+    height: 14px;
+    stroke: currentColor;
+    stroke-width: 2;
+    transition: all 0.3s ease;
 }
 
 .nav-item-mega:hover .nav-arrow,
 .nav-item-dropdown:hover .nav-arrow {
     transform: rotate(180deg);
+}
+
+/* Add a subtle animation for the arrow on hover */
+.nav-link:hover .nav-arrow svg {
+    stroke: var(--primary-orange);
 }
 
 /* Mobile responsive */
@@ -157,7 +247,13 @@
 
 .light-theme .mega-menu-list a,
 .light-theme .dropdown-menu a {
-    color: var(--text-light-secondary);
+    color: #333333; /* Darker text for better readability in light mode */
+    font-weight: 500;
+}
+
+.light-theme .mega-menu-column h4.mega-menu-title {
+    color: var(--primary-orange);
+    font-weight: 700;
 }
 
 .light-theme .mega-menu-list a:hover,
@@ -194,6 +290,12 @@
     justify-content: space-between;
     padding: 1rem 0;
     gap: 2rem;
+}
+
+.logo {
+    margin-right: 1rem; /* Add space after logo */
+    margin-left: -1rem; /* Move logo slightly to the left */
+    flex-shrink: 0; /* Prevent logo from shrinking */
 }
 
 .logo a {
@@ -281,7 +383,8 @@
 .main-nav ul {
     display: flex;
     list-style: none;
-    gap: 2rem;
+    gap: 1.5rem; /* Reduced from 2rem to create more space */
+    justify-content: center; /* Center the navigation items */
 }
 
 .main-nav a {
@@ -321,6 +424,18 @@
     display: flex;
     gap: 1rem;
     align-items: center;
+    margin-left: auto; /* Push to the right */
+    padding-right: 1.5rem; /* Add padding to move buttons further right */
+    position: relative; /* Needed for absolute positioning adjustment */
+    right: -1rem; /* Move further to the right */
+}
+
+/* Style adjustments for header CTA buttons */
+.header-ctas .btn-outline,
+.header-ctas .btn-primary {
+    padding: 0.5rem 1rem;
+    font-size: 0.85rem;
+    white-space: nowrap;
 }
 
 /* Theme Toggle Button */

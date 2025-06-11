@@ -53,10 +53,124 @@
                     <img src="<?php echo get_template_directory_uri(); ?>/assets/images/Aimpro-Digital-UK-Final-Logo.png" alt="Aimpro Digital - Award-Winning Digital Marketing Agency" class="logo-image" width="200" height="45">
                 </a>
             </div>            <nav class="main-nav">
-                <ul>
-                    <li><a href="#home" class="nav-link">Home</a></li>
-                    <li><a href="#services" class="nav-link">Services</a></li>
-                    <li><a href="#about" class="nav-link">About</a></li>
+                <ul>                    <li><a href="#home" class="nav-link">Home</a></li>
+                    <li class="nav-item-mega">
+                        <a href="#services" class="nav-link">Services <span class="nav-arrow">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="6 9 12 15 18 9"></polyline>
+                            </svg>
+                        </span></a>
+                        <div class="mega-menu">
+                            <div class="mega-menu-container">
+                                <div class="mega-menu-grid">
+                                    <div class="mega-menu-column">
+                                        <h4 class="mega-menu-title">SEO</h4>
+                                        <ul class="mega-menu-list">
+                                            <li><a href="#local-seo">Local SEO</a></li>
+                                            <li><a href="#seo-audit">SEO Audit</a></li>
+                                            <li><a href="#technical-seo">Technical SEO</a></li>
+                                            <li><a href="#on-page-seo">On-Page SEO</a></li>
+                                            <li><a href="#white-label-seo">White Label SEO</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="mega-menu-column">
+                                        <h4 class="mega-menu-title">Ads</h4>
+                                        <ul class="mega-menu-list">
+                                            <li><a href="#google-ads">Google Ads</a></li>
+                                            <li><a href="#meta-ads">Meta Ads (FB/Instagram)</a></li>
+                                            <li><a href="#microsoft-ads">Microsoft/Bing Ads</a></li>
+                                            <li><a href="#retargeting">Retargeting & Display</a></li>
+                                            <li><a href="#ppc-audit">PPC Audit</a></li>
+                                            <li><a href="#white-label-ppc">White Label PPC</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="mega-menu-column">
+                                        <h4 class="mega-menu-title">Automation</h4>
+                                        <ul class="mega-menu-list">
+                                            <li><a href="#ai-crm">AI CRM Setup</a></li>
+                                            <li><a href="#email-sms">Email & SMS Flows</a></li>
+                                            <li><a href="#email-campaigns">Email Campaigns</a></li>
+                                            <li><a href="#funnel-automation">Funnel Automation</a></li>
+                                            <li><a href="#chatbots">Chatbots</a></li>
+                                            <li><a href="#ai-tools">AI Tools</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="mega-menu-column">
+                                        <h4 class="mega-menu-title">Websites</h4>
+                                        <ul class="mega-menu-list">
+                                            <li><a href="#website-design">Website Design</a></li>
+                                            <li><a href="#landing-pages">Landing Pages</a></li>
+                                            <li><a href="#funnel-builds">Funnel Builds</a></li>
+                                            <li><a href="#ux-ui">UX/UI Optimisation</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>                    <li class="nav-item-dropdown">
+                        <a href="#solutions" class="nav-link">Solutions <span class="nav-arrow">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="6 9 12 15 18 9"></polyline>
+                            </svg>
+                        </span></a>
+                        <div class="dropdown-menu">
+                            <ul>
+                                <li><a href="#lead-generation">Lead Generation (B2B/B2C)</a></li>
+                                <li><a href="#automate-marketing">Automate Marketing</a></li>
+                                <li><a href="#improve-roi">Improve ROI from Ads</a></li>
+                                <li><a href="#rank-higher">Rank Higher Locally</a></li>
+                                <li><a href="#high-converting-website">Build a High-Converting Website</a></li>
+                                <li><a href="#streamline-funnel">Streamline Your Sales Funnel</a></li>
+                            </ul>
+                        </div>
+                    </li>                    <li class="nav-item-dropdown">
+                        <a href="#industries" class="nav-link">Industries <span class="nav-arrow">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="6 9 12 15 18 9"></polyline>
+                            </svg>
+                        </span></a>
+                        <div class="dropdown-menu">
+                            <ul>
+                                <li><a href="#automotive">Automotive</a></li>
+                                <li><a href="#home-garden">Home and Garden</a></li>
+                                <li><a href="#finance">Finance</a></li>
+                                <li><a href="#professional-services">Professional Services</a></li>
+                                <li><a href="#estate-agents">Estate Agents</a></li>
+                                <li><a href="#coaches-consultants">Coaches & Consultants</a></li>
+                                <li><a href="#ecommerce">E-commerce</a></li>
+                            </ul>
+                        </div>
+                    </li>                    <li class="nav-item-dropdown">
+                        <a href="#resources" class="nav-link">Resources <span class="nav-arrow">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="6 9 12 15 18 9"></polyline>
+                            </svg>
+                        </span></a>
+                        <div class="dropdown-menu">
+                            <ul>
+                                <li><a href="/blog">Blog</a></li>
+                                <li><a href="#templates-tools">Templates & Tools</a></li>
+                                <li><a href="#case-studies">Case Studies</a></li>
+                                <li><a href="#events-webinars">Events & Webinars</a></li>
+                                <li><a href="#training-mentoring">Training & Mentoring</a></li>
+                            </ul>
+                        </div>
+                    </li>                    <li class="nav-item-dropdown">
+                        <a href="#about" class="nav-link">About <span class="nav-arrow">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="6 9 12 15 18 9"></polyline>
+                            </svg>
+                        </span></a>
+                        <div class="dropdown-menu">
+                            <ul>
+                                <li><a href="#company">Company</a></li>
+                                <li><a href="#team">Team</a></li>
+                                <li><a href="#testimonials">Testimonials</a></li>
+                                <li><a href="#careers">Careers</a></li>
+                                <li><a href="#become-partner">Become a Partner</a></li>
+                            </ul>
+                        </div>
+                    </li>
                     <li><a href="#contact" class="nav-link">Contact</a></li>
                 </ul>
             </nav>
