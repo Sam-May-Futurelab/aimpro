@@ -117,6 +117,14 @@
     min-width: 240px;
 }
 
+/* Specific styles for large primary buttons to prevent turning white */
+.btn-primary.large:hover {
+    background: linear-gradient(135deg, rgba(255, 165, 0, 0.95) 0%, rgba(255, 140, 0, 0.95) 100%) !important;
+    color: #1a202c !important;
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: var(--shadow-orange-hover);
+}
+
 /* Secondary button */
 .btn-secondary {
     background: rgba(255, 255, 255, 0.1);
@@ -307,7 +315,7 @@
     opacity: 0;
     animation: targetZoomIn 1s cubic-bezier(0.17, 0.67, 0.3, 1.33) forwards, 
                targetFloat 2s ease-in-out infinite 1s;
-    z-index: 10;
+    z-index: 100;
     transform-origin: center;
     pointer-events: none;
 }
@@ -444,8 +452,8 @@
 .footer-cta:hover {
     transform: translateY(-3px);
     box-shadow: var(--shadow-orange-hover);
-    background: linear-gradient(135deg, var(--primary-orange-light) 0%, var(--primary-orange) 100%);
-    color: var(--text-primary);
+    background: linear-gradient(135deg, var(--primary-orange-light) 0%, var(--primary-orange) 100%) !important;
+    color: var(--text-primary) !important;
 }
 
 /* CTA Button (used in footer and other sections) */
@@ -472,8 +480,17 @@
 .cta-button:hover {
     transform: translateY(-3px);
     box-shadow: var(--shadow-orange-hover);
-    background: linear-gradient(135deg, var(--primary-orange-light) 0%, var(--primary-orange) 100%);
-    color: var(--text-primary);
+    background: linear-gradient(135deg, var(--primary-orange-light) 0%, var(--primary-orange) 100%) !important;
+    color: var(--text-primary) !important;
+}
+
+/* Ensure target effects don't affect button colors */
+.btn-primary.large:hover,
+.footer-cta:hover,
+.cta-button:hover {
+    overflow: visible !important;
+    position: relative !important;
+    z-index: 5;
 }
 
 /* Main CTA Buttons Target Effect Enhancement */
@@ -488,6 +505,7 @@
                targetFloatLarge 2s ease-in-out infinite 1s;
     opacity: 0;
     transform-origin: center;
+    z-index: 100;
 }
 
 @keyframes targetZoomInLarge {
@@ -564,6 +582,8 @@
 .final-cta-buttons .btn-primary:hover {
     box-shadow: var(--shadow-orange-hover);
     transform: translateY(-3px);
+    background: linear-gradient(135deg, rgba(255, 165, 0, 0.95) 0%, rgba(255, 140, 0, 0.95) 100%) !important;
+    color: #1a202c !important;
 }
 
 .final-cta-buttons .btn-secondary {
