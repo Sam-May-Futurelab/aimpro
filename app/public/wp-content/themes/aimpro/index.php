@@ -62,8 +62,8 @@
             </nav>
             
             <div class="header-ctas">
-                <a href="#contact" class="btn-outline premium-hover">GET FREE AUDIT</a>
-                <a href="tel:+441212858490" class="btn-primary shine-effect">TALK TO AN EXPERT</a>
+                <a href="#contact" class="btn-outline premium-hover">Get a Free Audit</a>
+                <a href="tel:+441212858490" class="btn-primary shine-effect">Book a Call</a>
             </div>            <div class="mobile-menu-toggle">
                 <span></span>
                 <span></span>
@@ -95,10 +95,13 @@
                 <p class="hero-subtitle">Expert Lead Generation, SEO, PPC & Automation. Data-driven strategies that deliver <strong class="highlight-underline">MEASURABLE RESULTS</strong> and accelerate your <strong class="highlight-word">growth</strong>.</p>                <div class="hero-ctas">
                     <a href="#contact" class="btn-primary large shine-effect pulse-animation">CLAIM YOUR FREE GROWTH STRATEGY</a>
                 </div>
-            </div>
-            <!-- Lottie Animation Container -->
+            </div>            <!-- Lottie Animation Container -->
             <div class="hero-animation">
                 <div id="lottie-hero-animation"></div>
+                <!-- Target Icon -->
+                <div class="hero-target-icon">
+                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/aimpro-target.png" alt="Target" />
+                </div>
             </div>
         </div>
     </div>

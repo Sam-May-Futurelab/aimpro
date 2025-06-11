@@ -390,6 +390,117 @@ section {
     background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.05) 100%);
 }
 
+/* Target Icon in Hero Animation Container */
+.hero-target-icon {
+    position: absolute;
+    bottom: 12px;
+    right: 12px;
+    width: 36px;
+    height: 36px;
+    background: rgba(255, 255, 255, 0.12);
+    backdrop-filter: blur(15px);
+    border-radius: 50%;
+    border: 1.5px solid rgba(255, 184, 0, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);    box-shadow: 
+        0 4px 16px rgba(0, 0, 0, 0.08),
+        0 2px 8px rgba(255, 184, 0, 0.15),
+        inset 0 1px 0 rgba(255, 255, 255, 0.15);
+    pointer-events: none;
+    overflow: hidden;
+    animation: float-gentle 5s ease-in-out infinite;
+}
+
+.hero-target-icon::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(255, 184, 0, 0.08) 0%, rgba(241, 90, 37, 0.08) 100%);
+    border-radius: 50%;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.hero-target-icon:hover::before {
+    opacity: 1;
+}
+
+.hero-target-icon img {
+    width: 20px;
+    height: 20px;
+    object-fit: contain;
+    filter: brightness(1.1) contrast(1.05);
+    transition: all 0.3s ease;
+    position: relative;
+    z-index: 2;
+    opacity: 0.9;
+}
+
+.hero-target-icon:hover {
+    transform: translateY(-1px) scale(1.03);
+    border-color: rgba(255, 184, 0, 0.6);
+    box-shadow: 
+        0 6px 20px rgba(0, 0, 0, 0.12),
+        0 3px 12px rgba(255, 184, 0, 0.25),
+        inset 0 1px 0 rgba(255, 255, 255, 0.25);
+    animation: none;
+}
+
+.hero-target-icon:hover img {
+    transform: scale(1.05);
+    filter: brightness(1.3) contrast(1.1);
+    opacity: 1;
+}
+
+.hero-target-icon:active {
+    transform: translateY(0) scale(1);
+}
+
+/* Gentle floating animation for target icon */
+@keyframes float-gentle {
+    0%, 100% {
+        transform: translateY(0px) rotate(0deg);
+    }
+    50% {
+        transform: translateY(-2px) rotate(1deg);
+    }
+}
+
+/* Responsive adjustments for target icon */
+@media (max-width: 768px) {
+    .hero-target-icon {
+        width: 32px;
+        height: 32px;
+        bottom: 10px;
+        right: 10px;
+    }
+    
+    .hero-target-icon img {
+        width: 18px;
+        height: 18px;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-target-icon {
+        width: 28px;
+        height: 28px;
+        bottom: 8px;
+        right: 8px;
+    }
+    
+    .hero-target-icon img {
+        width: 16px;
+        height: 16px;
+    }
+}
+
 #lottie-hero-animation.loading::before {
     content: '';
     position: absolute;
@@ -2812,13 +2923,13 @@ section {
 }
 
 .footer-theme-toggle .theme-toggle:hover {
-    transform: translateY(-3px) scale(1.05);
-    box-shadow: 0 12px 25px rgba(241, 90, 37, 0.4);
+    transform: translateY(-2px) scale(1.05);
+    box-shadow: 0 8px 20px rgba(241, 90, 37, 0.4);
 }
 
 .footer-theme-toggle .theme-icon {
-    width: 20px;
-    height: 20px;
+    width: 18px;
+    height: 18px;
     color: var(--primary-black);
     transition: all 0.3s ease;
     position: relative;

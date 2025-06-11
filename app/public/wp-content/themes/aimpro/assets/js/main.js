@@ -735,14 +735,14 @@ document.addEventListener('DOMContentLoaded', function() {
             // Add loading class
             container.classList.add('loading');
             
-            try {
-                // Load and play the hero animation
+            try {                // Load and play the hero animation with cache busting
+                const cacheBuster = Date.now(); // Current timestamp to prevent caching
                 const animation = lottie.loadAnimation({
                     container: container,
                     renderer: 'svg',
                     loop: true,
                     autoplay: true,
-                    path: aimpro_data.theme_url + '/assets/images/hero.json'
+                    path: aimpro_data.theme_url + '/assets/images/hero.json?v=' + cacheBuster
                 });
                 
                 // Handle successful load
@@ -818,10 +818,11 @@ document.addEventListener('DOMContentLoaded', function() {
                     console.warn('Animation loading timeout, using CSS fallback');
                     initCSSWaveAnimation();
                 }, 3000); // 3 second timeout
-                
-                fetch(aimpro_data.theme_url + '/assets/images/stats.json', {
+                  // Add cache busting parameter to ensure fresh content
+                const cacheBuster = Date.now();
+                fetch(aimpro_data.theme_url + '/assets/images/stats.json?v=' + cacheBuster, {
                     signal: abortController.signal,
-                    cache: 'force-cache' // Use browser cache if available
+                    cache: 'no-cache' // Disable cache to ensure fresh content
                 })
                     .then(response => {
                         clearTimeout(loadTimeout);
