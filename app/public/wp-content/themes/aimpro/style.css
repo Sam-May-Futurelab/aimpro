@@ -5511,3 +5511,58 @@ select:focus {
     opacity: 0.4;
     filter: contrast(1.3) brightness(0.7);
 }
+
+.insight-card:hover {    transform: translateY(-4px);
+    border: var(--glass-orange-border);
+    box-shadow: var(--shadow-orange-hover);
+}
+
+.insight-image-small {
+    flex-shrink: 0;
+    width: 80px;
+    height: 80px;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.insight-image-small img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.insight-card:hover .insight-image-small img {
+    transform: scale(1.1);
+}
+
+.insight-content-small {
+    flex: 1;
+}
+
+.insight-content-small h4 {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 0.5rem;
+    line-height: 1.4;
+}
+
+.insight-content-small .read-time {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+}
+
+/* Insights CTA */
+.insights-cta {
+    text-align: center;
+    margin-top: 2rem;
+}
+
+.btn-outline.premium-hover {
+    background: transparent;    border: 2px solid var(--primary-orange);
+    color: var(--primary-orange);
+    padding: 1rem 2rem;
+    border-radius: 50px;
+    font-weight: 600;
+}
