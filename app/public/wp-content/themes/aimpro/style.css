@@ -2206,6 +2206,12 @@ section {
     font-size: 1rem;
 }
 
+/* Blog CTA Section */
+.blog-cta-section {
+    padding-top: 3rem;
+    text-align: center;
+}
+
 /* Premium Footer - Moved to assets/css/footer.css */
 
 @keyframes slideInUp {
@@ -3937,3 +3943,4 @@ select:focus {
     border-radius: 50px;
     font-weight: 600;
 }
+
