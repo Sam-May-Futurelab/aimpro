@@ -957,6 +957,43 @@ section {
 .services-cta-section {
     text-align: center;
     margin-top: 3rem;
+    padding: 0 1rem; /* Add padding for mobile spacing */
+    position: relative;
+}
+
+/* Enhanced responsive styling for the main CTA button */
+.services-cta-section .btn-primary.large {
+    position: relative;
+    min-width: 280px;
+    max-width: 100%;
+    width: auto;
+    display: inline-block;
+    white-space: nowrap;
+    overflow: visible;
+}
+
+/* Target icon positioned on button corner */
+.services-cta-section .btn-primary.large::before {
+    content: '';
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    width: 24px;
+    height: 24px;
+    background-image: url('assets/images/aimpro-target.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    opacity: 0.7;
+    z-index: 5;
+    transition: all 0.3s ease;
+    animation: targetFloat 4s ease-in-out infinite;
+}
+
+.services-cta-section .btn-primary.large:hover::before {
+    opacity: 1;
+    transform: scale(1.2);
+    animation-duration: 2s;
 }
 
 .team-cta-section {
