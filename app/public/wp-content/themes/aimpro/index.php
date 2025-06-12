@@ -770,31 +770,31 @@
                     <a href="#" class="insight-link">Read More →</a>
                 </div>
             </article>
-            <div class="insights-sidebar">
-                <article class="insight-card">
+            <div class="insights-sidebar">                <article class="insight-card">
                     <div class="insight-image-small">
                         <img src="<?php echo get_template_directory_uri(); ?>/assets/images/ajay-dhunna.png" alt="Insight" />
                     </div>
                     <div class="insight-content-small">
                         <h4>Google Ads Best Practices for 2024</h4>
+                        <p>Latest optimization strategies for maximum ROI and Quality Score improvement.</p>
                         <span class="read-time">5 min read</span>
                     </div>
-                </article>
-                <article class="insight-card">
+                </article>                <article class="insight-card">
                     <div class="insight-image-small">
                         <img src="<?php echo get_template_directory_uri(); ?>/assets/images/dinesh-thapa.png" alt="Insight" />
                     </div>
                     <div class="insight-content-small">
                         <h4>SEO Trends That Will Drive Traffic</h4>
+                        <p>AI-powered tools and content strategies generating massive organic growth.</p>
                         <span class="read-time">6 min read</span>
                     </div>
-                </article>
-                <article class="insight-card">
+                </article>                <article class="insight-card">
                     <div class="insight-image-small">
                         <img src="<?php echo get_template_directory_uri(); ?>/assets/images/james-butler.png" alt="Insight" />
                     </div>
                     <div class="insight-content-small">
                         <h4>Social Media ROI: Measuring Success</h4>
+                        <p>Advanced metrics and frameworks to track social marketing investment returns.</p>
                         <span class="read-time">4 min read</span>
                     </div>
                 </article>

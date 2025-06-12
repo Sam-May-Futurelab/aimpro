@@ -2819,6 +2819,14 @@ select:focus {
     line-height: 1.4;
 }
 
+.insight-content-small p {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    line-height: 1.4;
+    margin-bottom: 0.5rem;
+    opacity: 0.9;
+}
+
 .insight-content-small .read-time {
     font-size: 0.85rem;
     color: var(--text-muted);
