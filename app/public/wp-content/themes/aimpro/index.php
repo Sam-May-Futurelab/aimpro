@@ -561,9 +561,53 @@
                 <div class="service-overlay"></div>
             </div>
         </div>
-        
-        <div class="services-cta-section">
+          <div class="services-cta-section">
             <a href="#contact" class="btn-primary large pulse-animation">UNLOCK YOUR GROWTH POTENTIAL</a>
+        </div>
+    </div>
+</section>
+
+<!-- Visit Our Office Section -->
+<section class="office-visit-section">
+    <div class="container">
+        <div class="office-content-wrapper">
+            <div class="office-content">
+                <h2>Come See Us... We're a <span class="highlight curly-underline">REAL</span> Company with Real Humans</h2>
+                <p>Let's discuss your project over a coffee. Book a time to visit our Birmingham office and meet the team behind your marketing success.</p>
+                
+                <div class="calendar-booking">
+                    <a href="#" class="btn-primary large calendar-btn">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                            <line x1="16" y1="2" x2="16" y2="6"></line>
+                            <line x1="8" y1="2" x2="8" y2="6"></line>
+                            <line x1="3" y1="10" x2="21" y2="10"></line>
+                        </svg>
+                        BOOK A COFFEE MEETING
+                    </a>
+                </div>
+                
+                <div class="office-details">
+                    <h3>Our Birmingham Office</h3>
+                    <p><strong>WeWork Colmore Row</strong><br>
+                    1 Colmore Row, Birmingham B3 2BJ<br>
+                    Right in the heart of Birmingham's business district</p>
+                </div>
+            </div>
+            
+            <div class="office-visual">
+                <div class="office-image">
+                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/wework-colmore-row.jpg" alt="WeWork Colmore Row Birmingham Office" />
+                </div>
+                <div class="office-map">
+                    <a href="https://www.google.com/search?q=weworks%2C+colmore+row" target="_blank" class="map-link">
+                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/colmore-row-map.jpg" alt="Map to WeWork Colmore Row" />
+                        <div class="map-overlay">
+                            <span>View on Google Maps</span>
+                        </div>
+                    </a>
+                </div>
+            </div>
         </div>
     </div>
 </section>
