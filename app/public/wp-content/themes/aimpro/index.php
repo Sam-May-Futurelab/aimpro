@@ -53,19 +53,18 @@
                     <img src="<?php echo get_template_directory_uri(); ?>/assets/images/Aimpro-Digital-UK-Final-Logo.png" alt="Aimpro Digital - Award-Winning Digital Marketing Agency" class="logo-image" width="200" height="45">
                 </a>
             </div>            <nav class="main-nav">
-                <ul>                    <li><a href="#home" class="nav-link">Home</a></li>
-                    <li class="nav-item-mega">
+                <ul>                    <li><a href="#home" class="nav-link">Home</a></li>                    <li class="nav-item-dropdown nav-item-multilevel">
                         <a href="#services" class="nav-link">Services <span class="nav-arrow">
                             <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                 <polyline points="6 9 12 15 18 9"></polyline>
                             </svg>
                         </span></a>
-                        <div class="mega-menu">
-                            <div class="mega-menu-container">
-                                <div class="mega-menu-grid">
-                                    <div class="mega-menu-column">
-                                        <h4 class="mega-menu-title">SEO</h4>
-                                        <ul class="mega-menu-list">
+                        <div class="dropdown-menu">
+                            <ul>
+                                <li class="dropdown-submenu">
+                                    <a href="#seo">SEO Services <span class="submenu-arrow">›</span></a>
+                                    <div class="submenu">
+                                        <ul>
                                             <li><a href="#local-seo">Local SEO</a></li>
                                             <li><a href="#seo-audit">SEO Audit</a></li>
                                             <li><a href="#technical-seo">Technical SEO</a></li>
@@ -73,9 +72,11 @@
                                             <li><a href="#white-label-seo">White Label SEO</a></li>
                                         </ul>
                                     </div>
-                                    <div class="mega-menu-column">
-                                        <h4 class="mega-menu-title">Ads</h4>
-                                        <ul class="mega-menu-list">
+                                </li>
+                                <li class="dropdown-submenu">
+                                    <a href="#ads">Advertising & PPC <span class="submenu-arrow">›</span></a>
+                                    <div class="submenu">
+                                        <ul>
                                             <li><a href="#google-ads">Google Ads</a></li>
                                             <li><a href="#meta-ads">Meta Ads (FB/Instagram)</a></li>
                                             <li><a href="#microsoft-ads">Microsoft/Bing Ads</a></li>
@@ -84,9 +85,11 @@
                                             <li><a href="#white-label-ppc">White Label PPC</a></li>
                                         </ul>
                                     </div>
-                                    <div class="mega-menu-column">
-                                        <h4 class="mega-menu-title">Automation</h4>
-                                        <ul class="mega-menu-list">
+                                </li>
+                                <li class="dropdown-submenu">
+                                    <a href="#automation">Marketing Automation <span class="submenu-arrow">›</span></a>
+                                    <div class="submenu">
+                                        <ul>
                                             <li><a href="#ai-crm">AI CRM Setup</a></li>
                                             <li><a href="#email-sms">Email & SMS Flows</a></li>
                                             <li><a href="#email-campaigns">Email Campaigns</a></li>
@@ -95,19 +98,22 @@
                                             <li><a href="#ai-tools">AI Tools</a></li>
                                         </ul>
                                     </div>
-                                    <div class="mega-menu-column">
-                                        <h4 class="mega-menu-title">Websites</h4>
-                                        <ul class="mega-menu-list">
+                                </li>
+                                <li class="dropdown-submenu">
+                                    <a href="#websites">Website Development <span class="submenu-arrow">›</span></a>
+                                    <div class="submenu">
+                                        <ul>
                                             <li><a href="#website-design">Website Design</a></li>
                                             <li><a href="#landing-pages">Landing Pages</a></li>
                                             <li><a href="#funnel-builds">Funnel Builds</a></li>
                                             <li><a href="#ux-ui">UX/UI Optimisation</a></li>
                                         </ul>
                                     </div>
-                                </div>
-                            </div>
+                                </li>
+                                <li><a href="#all-services">View All Services</a></li>
+                            </ul>
                         </div>
-                    </li>                    <li class="nav-item-dropdown">
+                    </li><li class="nav-item-dropdown">
                         <a href="#solutions" class="nav-link">Solutions <span class="nav-arrow">
                             <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                 <polyline points="6 9 12 15 18 9"></polyline>

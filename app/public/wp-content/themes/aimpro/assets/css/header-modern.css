@@ -672,3 +672,97 @@
     color: var(--nav-link-hover);
     background: rgba(241, 90, 37, 0.05);
 }
+
+/* ============================================
+   MULTI-LEVEL DROPDOWN SYSTEM
+   ============================================ */
+
+/* Multi-level dropdown styles */
+.dropdown-submenu {
+    position: relative;
+}
+
+.dropdown-submenu > a {
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+}
+
+.submenu-arrow {
+    margin-left: auto;
+    font-size: 1.2rem;
+    transition: transform 0.3s ease;
+    color: var(--primary-orange) !important;
+}
+
+.dropdown-submenu:hover .submenu-arrow {
+    transform: rotate(90deg);
+}
+
+.submenu {
+    position: absolute;
+    left: 100%;
+    top: 0;
+    background: rgba(15, 23, 42, 0.95);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(241, 90, 37, 0.2);
+    border-radius: 12px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.25);
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: all 0.3s ease;
+    min-width: 250px;
+    z-index: 110;
+}
+
+.dropdown-submenu:hover .submenu {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: all;
+}
+
+.submenu ul {
+    padding: 1rem 0;
+    margin: 0;
+    list-style: none;
+}
+
+.submenu li {
+    width: 100%;
+}
+
+.submenu a {
+    padding: 0.75rem 1.5rem !important;
+    display: block !important;
+    color: #ffffff !important;
+    text-decoration: none;
+    font-size: 0.9rem !important;
+    transition: all 0.3s ease;
+    border-radius: 0 !important;
+    margin: 0 !important;
+}
+
+.submenu a:hover {
+    background: rgba(241, 90, 37, 0.2) !important;
+    color: #ffffff !important;
+    padding-left: 2rem !important;
+    transform: none !important;
+}
+
+/* Light theme submenu styles */
+.light-theme .submenu {
+    background: rgba(255, 255, 255, 0.95) !important;
+    border: 1px solid rgba(0, 0, 0, 0.1) !important;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15) !important;
+}
+
+.light-theme .submenu a {
+    color: #1e293b !important;
+}
+
+.light-theme .submenu a:hover {
+    background: rgba(241, 90, 37, 0.15) !important;
+    color: #0f172a !important;
+}
