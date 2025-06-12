@@ -5,96 +5,33 @@ Description: Custom theme for Aimpro site.
 Version: 1.0
 */
 
-/* CSS Variables moved to variables.css */
+/**
+ * NOTICE: This theme uses a modular CSS architecture.
+ * 
+ * Most styles have been moved to dedicated CSS files:
+ * - variables.css: CSS variables and design tokens
+ * - base.css: Typography, resets, and base styles
+ * - animations.css: All animations and keyframes
+ * - components.css: Reusable UI components
+ * - ui-elements.css: Smaller UI elements and decorations
+ * - responsive.css: Media queries for responsive design
+ * - sections/*.css: Section-specific styles
+ * - header-menu.css: Header and navigation styles
+ * - footer.css & footer-components.css: Footer styles
+ * - buttons.css: Button system
+ * - contact-form.css: Contact form styles
+ * 
+ * This file is maintained for WordPress theme compatibility
+ * and contains only styles that haven't yet been refactored.
+ */
 
-/* Dark Theme (Default) Body Styles */
-body {
-    background: var(--primary-black);
-    color: var(--text-primary);
-    transition: background-color 0.5s ease, color 0.5s ease;
-}
+/* Floating Elements - Moved to ui-elements.css */
 
-/* Light Theme Body Styles */
-body.light-theme {
-    background: var(--bg-primary);
-    color: var(--text-primary);
-}
+/* Trust Indicators - Moved to ui-elements.css */
 
-/* Reset and Base Styles */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+/* Custom CSS Wave Animation - Moved to ui-elements.css */
 
-body {
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-    line-height: 1.6;
-    overflow-x: hidden;
-    font-weight: 400;
-    font-optical-sizing: auto;
-}
-
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
-}
-
-/* Smooth scrolling */
-html {
-    scroll-behavior: smooth;
-}
-
-/* Section Spacing */
-section {
-    padding: 5rem 0;
-    margin: 0;
-}
-
-/* Luxury Hero Section - Moved to hero.css */
-
-.floating-elements {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    pointer-events: none;
-    z-index: 3;
-    overflow: hidden;
-}
-
-.floating-shape {
-    position: absolute;
-    background: rgba(241, 90, 37, 0.08);
-    border-radius: 50%;
-    backdrop-filter: blur(5px);
-    border: 1px solid rgba(241, 90, 37, 0.1);
-}
-
-.shape-1 {
-    width: 80px;
-    height: 80px;
-    top: 20%;
-    left: 10%;
-}
-
-.shape-2 {
-    width: 60px;
-    height: 60px;
-    top: 60%;
-    right: 15%;
-}
-
-/* Hero Badge - Moved to hero.css */
-
-.badge-icon {
-    font-size: 1.2rem;
-}
-
-/* Hero title - Moved to hero.css */
-
+/* Trust Indicators */
 .trust-indicators {
     display: flex;
     justify-content: flex-start;
@@ -103,6 +40,73 @@ section {
     flex-wrap: wrap;
     position: relative;
     z-index: 3;
+    padding: 0;
+}
+
+.trust-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: var(--glass-bg);
+    backdrop-filter: blur(10px);
+    padding: 0.6rem 1rem;
+    border-radius: 20px;
+    border: 1px solid var(--glass-orange-border);
+    font-size: 0.8rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+}
+
+.trust-item:hover {
+    background: rgba(241, 90, 37, 0.15);
+    transform: translateY(-1px);
+    box-shadow: var(--shadow-orange);
+}
+
+.trust-icon {
+    font-size: 1.1rem;
+}
+
+/* Custom CSS Wave Animation */
+.css-wave {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 50px;
+    background-repeat: repeat-x;
+    background-size: auto 100%;
+    animation: css-wave-flow 25s linear infinite;
+    z-index: 1;
+    opacity: 0.5;
+}
+
+.css-wave::before,
+.css-wave::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    background-repeat: repeat-x;
+    background-size: auto 100%;
+    opacity: 0.5;
+    animation: css-wave-flow 25s linear infinite, css-wave-pulse 5s ease-in-out infinite alternate;
+}
+
+.css-wave::before {
+    animation-duration: 35s;
+    animation-delay: -2s;
+    background-position: 100px 0;
+}
+
+.css-wave::after {
+    animation-duration: 15s;
+    animation-delay: -5s;
+    background-position: -100px 0;
+}
     padding: 0;
 }
 
@@ -142,28 +146,7 @@ section {
 
 /* Responsive adjustments for target icon - Moved to hero.css */
 
-#lottie-hero-animation.loading::before {
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 40px;
-    height: 40px;
-    border: 3px solid rgba(255, 255, 255, 0.3);
-    border-top: 3px solid rgba(255, 184, 0, 0.8);
-    border-radius: 50%;
-    animation: spin 1s linear infinite;
-}
-
-@keyframes spin {
-    0% { transform: translate(-50%, -50%) rotate(0deg); }    100% { transform: translate(-50%, -50%) rotate(360deg); }
-}
-
-@keyframes pulse {
-    0%, 100% { opacity: 0.3; }
-    50% { opacity: 0.1; }
-}
+/* Loading animation - Moved to animations.css */
 
 /* Hero content h1 and subtitle - Moved to hero.css */
 
@@ -274,48 +257,7 @@ section {
 .tag:nth-child(7) { animation-delay: 0.7s; }
 .tag:nth-child(8) { animation-delay: 0.8s; }
 
-/* Value Statement */
-.value-statement {
-    padding: 4rem 0;
-    background: var(--gradient-dark);
-    position: relative;
-    overflow: hidden;
-}
-
-.value-statement::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23f15a25' fill-opacity='0.03'%3E%3Ccircle cx='30' cy='30' r='2'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
-}
-
-.value-statement .container {
-    position: relative;
-    z-index: 2;
-    padding: 0 20px;
-}
-
-.content-center {
-    text-align: center;
-    max-width: 900px;
-    margin: 0 auto;
-    position: relative;
-}
-
-.value-statement h2 {
-    margin-bottom: 2rem;
-    color: var(--text-primary);
-    font-size: 3rem;
-    font-weight: 800;
-}
-
-.value-statement p {
-    font-size: 1.25rem;
-    color: var(--text-secondary);
-    margin-bottom: 3rem;
+/* Value Statement - Moved to sections/value-statement.css */
 }
 
 /* Stats Section */

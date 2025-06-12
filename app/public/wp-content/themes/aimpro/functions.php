@@ -47,33 +47,49 @@ add_action('after_setup_theme', 'aimpro_theme_setup');
  */
 function aimpro_enqueue_assets() {
     $theme_version = wp_get_theme()->get('Version');
-    
-    // Enqueue CSS variables first
+      // Enqueue CSS variables first
     wp_enqueue_style('aimpro-variables', get_template_directory_uri() . '/assets/css/variables.css', array(), $theme_version);
     
-    // Enqueue styles with preload for critical CSS
-    wp_enqueue_style('aimpro-style', get_stylesheet_uri(), array('aimpro-variables'), $theme_version);
+    // Enqueue base styles for typography, resets, and base components
+    wp_enqueue_style('aimpro-base', get_template_directory_uri() . '/assets/css/base.css', array('aimpro-variables'), $theme_version);
+    
+    // Enqueue animations
+    wp_enqueue_style('aimpro-animations', get_template_directory_uri() . '/assets/css/animations.css', array('aimpro-variables'), $theme_version);
+      // Enqueue components
+    wp_enqueue_style('aimpro-components', get_template_directory_uri() . '/assets/css/components.css', array('aimpro-base'), $theme_version);
+    
+    // Enqueue UI elements
+    wp_enqueue_style('aimpro-ui-elements', get_template_directory_uri() . '/assets/css/ui-elements.css', array('aimpro-base'), $theme_version);
     
     // Enqueue header and menu styles
-    wp_enqueue_style('aimpro-header-menu', get_template_directory_uri() . '/assets/css/header-menu.css', array('aimpro-style'), $theme_version);
+    wp_enqueue_style('aimpro-header-menu', get_template_directory_uri() . '/assets/css/header-menu.css', array('aimpro-base'), $theme_version);
     
     // Enqueue mega menu improvements
     wp_enqueue_style('aimpro-mega-menu-improvements', get_template_directory_uri() . '/assets/css/mega-menu-improvements.css', array('aimpro-header-menu'), $theme_version);
     
     // Enqueue hero styles
-    wp_enqueue_style('aimpro-hero', get_template_directory_uri() . '/assets/css/hero.css', array('aimpro-style'), $theme_version);
+    wp_enqueue_style('aimpro-hero', get_template_directory_uri() . '/assets/css/hero.css', array('aimpro-base'), $theme_version);
     
     // Enqueue button styles
-    wp_enqueue_style('aimpro-buttons', get_template_directory_uri() . '/assets/css/buttons.css', array('aimpro-style'), $theme_version);
+    wp_enqueue_style('aimpro-buttons', get_template_directory_uri() . '/assets/css/buttons.css', array('aimpro-base'), $theme_version);
+      // Enqueue section-specific styles
+    wp_enqueue_style('aimpro-visit-us', get_template_directory_uri() . '/assets/css/sections/visit-us.css', array('aimpro-base'), $theme_version);
+    wp_enqueue_style('aimpro-value-statement', get_template_directory_uri() . '/assets/css/sections/value-statement.css', array('aimpro-base'), $theme_version);
     
     // Enqueue footer styles
-    wp_enqueue_style('aimpro-footer', get_template_directory_uri() . '/assets/css/footer.css', array('aimpro-style'), $theme_version);
+    wp_enqueue_style('aimpro-footer', get_template_directory_uri() . '/assets/css/footer.css', array('aimpro-base'), $theme_version);
     
     // Enqueue footer components styles (CTA buttons, theme toggle)
     wp_enqueue_style('aimpro-footer-components', get_template_directory_uri() . '/assets/css/footer-components.css', array('aimpro-footer', 'aimpro-buttons'), $theme_version);
     
     // Enqueue contact form styles
-    wp_enqueue_style('aimpro-contact-form', get_template_directory_uri() . '/assets/css/contact-form.css', array('aimpro-style'), $theme_version);
+    wp_enqueue_style('aimpro-contact-form', get_template_directory_uri() . '/assets/css/contact-form.css', array('aimpro-base'), $theme_version);
+    
+    // Enqueue responsive styles (should be loaded last)
+    wp_enqueue_style('aimpro-responsive', get_template_directory_uri() . '/assets/css/responsive.css', array('aimpro-base'), $theme_version);
+    
+    // Enqueue main style.css for backwards compatibility and WordPress theme recognition
+    wp_enqueue_style('aimpro-style', get_stylesheet_uri(), array('aimpro-variables', 'aimpro-base'), $theme_version);
     
     // Preload critical fonts
     wp_enqueue_style('google-fonts', 'https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap', array(), null);

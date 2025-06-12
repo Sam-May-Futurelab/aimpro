@@ -1,0 +1,115 @@
+/**
+ * UI Elements Styles for AimPro Theme
+ * Contains smaller reusable UI elements that don't fit into larger component categories
+ */
+
+/* Floating Elements */
+.floating-elements {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    pointer-events: none;
+    z-index: 3;
+    overflow: hidden;
+}
+
+.floating-shape {
+    position: absolute;
+    background: rgba(241, 90, 37, 0.08);
+    border-radius: 50%;
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(241, 90, 37, 0.1);
+}
+
+.shape-1 {
+    width: 80px;
+    height: 80px;
+    top: 20%;
+    left: 10%;
+}
+
+.shape-2 {
+    width: 60px;
+    height: 60px;
+    top: 60%;
+    right: 15%;
+}
+
+/* Trust Indicators */
+.trust-indicators {
+    display: flex;
+    justify-content: flex-start;
+    gap: 1.5rem;
+    margin-top: 2rem;
+    flex-wrap: wrap;
+    position: relative;
+    z-index: 3;
+    padding: 0;
+}
+
+.trust-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: var(--glass-bg);
+    backdrop-filter: blur(10px);
+    padding: 0.6rem 1rem;
+    border-radius: 20px;
+    border: 1px solid var(--glass-orange-border);
+    font-size: 0.8rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+}
+
+.trust-item:hover {
+    background: rgba(241, 90, 37, 0.15);
+    transform: translateY(-1px);
+    box-shadow: var(--shadow-orange);
+}
+
+.trust-icon {
+    font-size: 1.1rem;
+}
+
+/* Custom CSS Wave Animation */
+.css-wave {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 50px;
+    background-repeat: repeat-x;
+    background-size: auto 100%;
+    animation: css-wave-flow 25s linear infinite;
+    z-index: 1;
+    opacity: 0.5;
+}
+
+.css-wave::before,
+.css-wave::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    background-repeat: repeat-x;
+    background-size: auto 100%;
+    opacity: 0.5;
+    animation: css-wave-flow 25s linear infinite, css-wave-pulse 5s ease-in-out infinite alternate;
+}
+
+.css-wave::before {
+    animation-duration: 35s;
+    animation-delay: -2s;
+    background-position: 100px 0;
+}
+
+.css-wave::after {
+    animation-duration: 15s;
+    animation-delay: -5s;
+    background-position: -100px 0;
+}

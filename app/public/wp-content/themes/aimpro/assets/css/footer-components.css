@@ -71,12 +71,29 @@
 }
 
 /* Light theme adjustments for footer theme toggle */
+/* Light theme adjustments for footer theme toggle */
 .light-theme .footer-theme-toggle {
     border-top-color: rgba(0, 0, 0, 0.1);
 }
 
 .light-theme .footer-theme-toggle .toggle-label {
     color: #64748b;
+}
+
+/* Orange background with dark icon for light theme to match other buttons */
+.light-theme .footer-theme-toggle .theme-toggle {
+    background: var(--gradient-orange);
+}
+
+/* Dark icon color to show against orange background */
+body.light-theme footer .footer-theme-toggle .theme-toggle .theme-icon,
+body.light-theme .footer-theme-toggle .theme-toggle .theme-icon,
+.light-theme .footer-theme-toggle .theme-toggle .sun-icon,
+.light-theme .footer-theme-toggle .theme-toggle .moon-icon,
+.light-theme .theme-icon {
+    color: var(--primary-black) !important;
+    fill: var(--primary-black) !important;
+    stroke: var(--primary-black) !important;
 }
 
 .light-theme .footer-theme-toggle .theme-toggle:hover {
