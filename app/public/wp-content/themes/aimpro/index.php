@@ -586,26 +586,26 @@
                         BOOK A COFFEE MEETING
                     </a>
                 </div>
-                
-                <div class="office-details">
+                  <div class="office-details">
                     <h3>Our Birmingham Office</h3>
-                    <p><strong>WeWork Colmore Row</strong><br>
-                    1 Colmore Row, Birmingham B3 2BJ<br>
+                    <p><strong>Located in: 55 Colmore Row</strong><br>
+                    Address: 55 Colmore Row, Birmingham B3 2AA<br>
                     Right in the heart of Birmingham's business district</p>
                 </div>
             </div>
             
             <div class="office-visual">
                 <div class="office-image">
-                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/wework-colmore-row.jpg" alt="WeWork Colmore Row Birmingham Office" />
+                    <!-- Office image - replace with actual image when available -->
+                    <img src="https://images.unsplash.com/photo-1604328698692-f76ea9498e76?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="55 Colmore Row Birmingham Office" />
                 </div>
                 <div class="office-map">
-                    <a href="https://www.google.com/search?q=weworks%2C+colmore+row" target="_blank" class="map-link">
-                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/colmore-row-map.jpg" alt="Map to WeWork Colmore Row" />
-                        <div class="map-overlay">
+                    <div class="map-container">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2429.981800277795!2d-1.9008778836825295!3d52.48076417980789!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4870bc8d3a49a4c7%3A0x4acfb08548f8dd3e!2s55%20Colmore%20Row%2C%20Birmingham%20B3%202AA!5e0!3m2!1sen!2suk!4v1623501234567!5m2!1sen!2suk" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                        <a href="https://maps.google.com/?q=55+Colmore+Row+Birmingham+B3+2AA" target="_blank" class="map-overlay">
                             <span>View on Google Maps</span>
-                        </div>
-                    </a>
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
