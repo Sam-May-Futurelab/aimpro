@@ -47,15 +47,21 @@
     gap: 1.5rem;
 }
 
-.form-field {
+/* Form field and form group are used interchangeably in the theme */
+/* Standardizing to use both for compatibility */
+
+.form-field,
+.form-group {
     margin-bottom: 1.5rem;
 }
 
-.form-field.full-width {
+.form-field.full-width,
+.form-group.full-width {
     grid-column: span 2;
 }
 
-.form-field label {
+.form-field label,
+.form-group label {
     display: block;
     margin-bottom: 0.5rem;
     color: var(--text-secondary);
@@ -64,7 +70,10 @@
 
 .form-field input,
 .form-field textarea,
-.form-field select {
+.form-field select,
+.form-group input,
+.form-group textarea,
+.form-group select {
     width: 100%;
     padding: 1rem;
     border-radius: 10px;
@@ -78,7 +87,10 @@
 
 .form-field input:focus,
 .form-field textarea:focus,
-.form-field select:focus {
+.form-field select:focus,
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus {
     outline: none;
     border-color: var(--primary-orange);
     box-shadow: 0 0 0 2px rgba(241, 90, 37, 0.2);
@@ -89,9 +101,76 @@
     margin-top: 1rem;
 }
 
+/* Form submit button */
+.form-actions {
+    margin-top: 2rem;
+    text-align: center;
+}
+
+.form-submit-btn {
+    display: inline-block;
+    padding: 14px 36px;
+    background: linear-gradient(135deg, var(--primary-orange) 0%, var(--secondary-orange, #ff8c00) 100%);
+    color: #ffffff;
+    font-weight: 600;
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    border-radius: 30px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 
+        0 8px 20px rgba(241, 90, 37, 0.3),
+        inset 0 1px 0 rgba(255, 255, 255, 0.2);
+    position: relative;
+    overflow: hidden;
+}
+
+.form-submit-btn:hover {
+    background: linear-gradient(135deg, var(--secondary-orange, #ff8c00) 0%, var(--primary-orange) 100%);
+    box-shadow: 
+        0 10px 25px rgba(241, 90, 37, 0.4),
+        inset 0 1px 0 rgba(255, 255, 255, 0.3);
+    transform: translateY(-2px);
+}
+
+.form-submit-btn:active {
+    transform: translateY(1px);
+    box-shadow: 
+        0 5px 15px rgba(241, 90, 37, 0.3),
+        inset 0 1px 0 rgba(255, 255, 255, 0.2);
+}
+
+.form-submit-btn:focus {
+    outline: none;
+    box-shadow: 
+        0 8px 20px rgba(241, 90, 37, 0.3),
+        inset 0 1px 0 rgba(255, 255, 255, 0.2),
+        0 0 0 3px rgba(241, 90, 37, 0.2);
+}
+
+/* Light theme form submit button */
+.light-theme .form-submit-btn {
+    background: linear-gradient(135deg, var(--primary-orange) 0%, var(--secondary-orange, #ff8c00) 100%);
+    color: #ffffff;
+    box-shadow: 
+        0 8px 20px rgba(241, 90, 37, 0.2),
+        inset 0 1px 0 rgba(255, 255, 255, 0.2);
+}
+
+.light-theme .form-submit-btn:hover {
+    background: linear-gradient(135deg, var(--secondary-orange, #ff8c00) 0%, var(--primary-orange) 100%);
+    box-shadow: 
+        0 10px 25px rgba(241, 90, 37, 0.3),
+        inset 0 1px 0 rgba(255, 255, 255, 0.3);
+}
+
 /* Form validation styling */
 .form-field input.error,
-.form-field textarea.error {
+.form-field textarea.error,
+.form-group input.error,
+.form-group textarea.error {
     border-color: #e53e3e;
     box-shadow: 0 0 0 2px rgba(229, 62, 62, 0.2);
 }
@@ -160,17 +239,28 @@
 
 .light-theme .form-field input,
 .light-theme .form-field textarea,
-.light-theme .form-field select {
-    background: var(--bg-tertiary);
-    border: 1px solid var(--border-light);
+.light-theme .form-field select,
+.light-theme .form-group input,
+.light-theme .form-group textarea,
+.light-theme .form-group select {
+    background: var(--input-bg, var(--bg-tertiary));
+    border: 1px solid var(--input-border, var(--border-light));
     color: var(--text-primary);
 }
 
 .light-theme .form-field input:focus,
 .light-theme .form-field textarea:focus,
-.light-theme .form-field select:focus {
-    border-color: var(--primary-orange);
+.light-theme .form-field select:focus,
+.light-theme .form-group input:focus,
+.light-theme .form-group textarea:focus,
+.light-theme .form-group select:focus {
+    border-color: var(--input-focus, var(--primary-orange));
     box-shadow: 0 0 0 2px rgba(241, 90, 37, 0.1);
+}
+
+.light-theme .form-field label,
+.light-theme .form-group label {
+    color: var(--text-primary);
 }
 
 /* Responsive form styling */
@@ -179,7 +269,8 @@
         grid-template-columns: 1fr;
     }
     
-    .form-field.full-width {
+    .form-field.full-width,
+    .form-group.full-width {
         grid-column: span 1;
     }
     
