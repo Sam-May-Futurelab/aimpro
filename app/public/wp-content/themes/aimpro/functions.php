@@ -108,9 +108,11 @@ function aimpro_enqueue_assets() {
     wp_enqueue_style('aimpro-header-overrides', get_template_directory_uri() . '/assets/css/header-overrides.css', array('aimpro-header-modern', 'aimpro-buttons'), $theme_version);
       // Enqueue ebook/lead magnet styles
     wp_enqueue_style('aimpro-ebook', get_template_directory_uri() . '/assets/css/ebook.css', array('aimpro-base'), $theme_version . '-' . time());
-    
-    // Enqueue insights styles
+      // Enqueue insights styles
     wp_enqueue_style('aimpro-insights', get_template_directory_uri() . '/assets/css/insights.css', array('aimpro-base'), $theme_version . '-' . time());
+    
+    // Enqueue page template styles
+    wp_enqueue_style('aimpro-page-templates', get_template_directory_uri() . '/assets/css/page-templates.css', array('aimpro-base'), $theme_version . '-' . time());
     
     // Enqueue main style.css for backwards compatibility and WordPress theme recognition
     wp_enqueue_style('aimpro-style', get_stylesheet_uri(), array('aimpro-variables', 'aimpro-base'), $theme_version);
@@ -1714,4 +1716,178 @@ function aimpro_submissions_page() {
         </style>
     </div>
     <?php
+}
+
+/**
+ * Breadcrumbs Functionality
+ */
+/**
+ * Helper function to display embedded videos consistently across templates
+ *
+ * @param string $video_url The URL of the video to embed
+ * @param array $args Optional. Additional arguments for the video embed
+ * @return string HTML output for the video embed
+ */
+function aimpro_video_embed($video_url, $args = array()) {
+    if (empty($video_url)) {
+        return '';
+    }
+
+    $defaults = array(
+        'class' => 'video-embed',
+        'width' => 800,
+        'height' => 450,
+        'title' => '',
+    );
+    
+    $args = wp_parse_args($args, $defaults);
+    
+    // Get oEmbed HTML
+    $embed_code = wp_oembed_get($video_url, array(
+        'width' => $args['width'],
+        'height' => $args['height'],
+    ));
+    
+    if (!$embed_code) {
+        return '';
+    }
+    
+    $output = '<div class="' . esc_attr($args['class']) . '">';
+    $output .= $embed_code;
+    $output .= '</div>';
+    
+    if (!empty($args['title'])) {
+        $output .= '<div class="video-caption">' . esc_html($args['title']) . '</div>';
+    }
+    
+    return $output;
+}
+
+/**
+ * Breadcrumbs function for all page templates
+ * 
+ * @return string HTML output for the breadcrumbs
+ */
+function aimpro_breadcrumbs() {
+    // Settings
+    $breadcrumb_separator = '<span class="breadcrumb-separator">/</span>';
+    $home_title = 'Home';
+    
+    // Get the query & post information
+    global $post, $wp_query;
+    
+    // Do not display on the homepage
+    if (!is_front_page()) {
+        
+        // Build the breadcrumbs
+        echo '<nav aria-label="Breadcrumb" class="breadcrumbs">';
+        echo '<ol>';
+        
+        // Home page
+        echo '<li class="breadcrumb-item"><a href="' . esc_url(home_url()) . '">' . esc_html($home_title) . '</a></li>';
+        echo $breadcrumb_separator;
+        
+        if (is_archive() && !is_tax() && !is_category() && !is_tag()) {
+            
+            // Archive page
+            echo '<li class="breadcrumb-item current">' . post_type_archive_title('', false) . '</li>';
+            
+        } else if (is_archive() && is_tax() && !is_category() && !is_tag()) {
+            
+            // Custom post type archive
+            $post_type = get_post_type();
+            if ($post_type != 'post') {
+                $post_type_object = get_post_type_object($post_type);
+                $post_type_archive = get_post_type_archive_link($post_type);
+                echo '<li class="breadcrumb-item"><a href="' . esc_url($post_type_archive) . '">' . esc_html($post_type_object->labels->name) . '</a></li>';
+                echo $breadcrumb_separator;
+            }
+            
+            // Current term
+            $current_term = get_queried_object();
+            $taxonomy = get_taxonomy($current_term->taxonomy);
+            echo '<li class="breadcrumb-item current">' . esc_html($current_term->name) . '</li>';
+            
+        } else if (is_single()) {
+            
+            // Single post
+            $post_type = get_post_type();
+            
+            if ($post_type != 'post') {
+                $post_type_object = get_post_type_object($post_type);
+                $post_type_archive = get_post_type_archive_link($post_type);
+                echo '<li class="breadcrumb-item"><a href="' . esc_url($post_type_archive) . '">' . esc_html($post_type_object->labels->name) . '</a></li>';
+                echo $breadcrumb_separator;
+            } else {
+                // Categories
+                $categories = get_the_category();
+                if ($categories) {
+                    $category = $categories[0];
+                    echo '<li class="breadcrumb-item"><a href="' . esc_url(get_category_link($category->term_id)) . '">' . esc_html($category->name) . '</a></li>';
+                    echo $breadcrumb_separator;
+                }
+            }
+            
+            // Current post
+            echo '<li class="breadcrumb-item current">' . get_the_title() . '</li>';
+            
+        } else if (is_page()) {
+            
+            // Standard page
+            if ($post->post_parent) {
+                // Parent pages
+                $parent_id = $post->post_parent;
+                $breadcrumbs = array();
+                
+                while ($parent_id) {
+                    $page = get_post($parent_id);
+                    $breadcrumbs[] = '<li class="breadcrumb-item"><a href="' . esc_url(get_permalink($page->ID)) . '">' . get_the_title($page->ID) . '</a></li>';
+                    $parent_id = $page->post_parent;
+                }
+                
+                // Display breadcrumbs in reverse order
+                $breadcrumbs = array_reverse($breadcrumbs);
+                for ($i = 0; $i < count($breadcrumbs); $i++) {
+                    echo $breadcrumbs[$i];
+                    if ($i != count($breadcrumbs) - 1) echo $breadcrumb_separator;
+                }
+                
+                echo $breadcrumb_separator;
+            }
+            
+            // Current page
+            echo '<li class="breadcrumb-item current">' . get_the_title() . '</li>';
+            
+        } else if (is_category()) {
+            
+            // Category page
+            echo '<li class="breadcrumb-item current">' . single_cat_title('', false) . '</li>';
+            
+        } else if (is_tag()) {
+            
+            // Tag page
+            echo '<li class="breadcrumb-item current">' . single_tag_title('', false) . '</li>';
+            
+        } else if (is_author()) {
+            
+            // Author archive
+            global $author;
+            $userdata = get_userdata($author);
+            echo '<li class="breadcrumb-item current">' . esc_html($userdata->display_name) . '</li>';
+            
+        } else if (is_search()) {
+            
+            // Search results page
+            echo '<li class="breadcrumb-item current">Search results for "' . get_search_query() . '"</li>';
+            
+        } else if (is_404()) {
+            
+            // 404 page
+            echo '<li class="breadcrumb-item current">404 Error</li>';
+            
+        }
+        
+        echo '</ol>';
+        echo '</nav>';
+    }
 }
