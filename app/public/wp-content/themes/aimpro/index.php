@@ -208,17 +208,16 @@
         <div class="floating-shape shape-1"></div>
         <div class="floating-shape shape-2"></div>
     </div><div class="container">
-        <div class="hero-wrapper">
-            <div class="hero-content">                <div class="hero-badge slide-up-delay-1">
-                    <span>Award-Winning Digital Agency</span>
-                </div><h1 class="hero-title">Scale Your Business With <span class="highlight curly-underline">PRECISION</span> Digital <span class="highlight-word" style="color: #f15a25 !important; -webkit-text-fill-color: #f15a25 !important;">Marketing</span></h1>                <div class="hero-straplines">
+        <div class="hero-wrapper">            <div class="hero-content">                <div class="hero-badge slide-up-delay-1">
+                    <span><?php echo aimpro_get_field('hero_badge_text', 'Award-Winning Digital Agency'); ?></span>
+                </div><?php echo aimpro_get_field('hero_title', '<h1 class="hero-title">Scale Your Business With <span class="highlight curly-underline">PRECISION</span> Digital <span class="highlight-word" style="color: #f15a25 !important; -webkit-text-fill-color: #f15a25 !important;">Marketing</span></h1>'); ?>                <div class="hero-straplines">
                     <span class="strapline active">No Fluff. Just Results.</span>
                     <span class="strapline">Data-Driven Strategy. Measurable Results.</span>
                     <span class="strapline">Grow Your Business With Precision Marketing.</span>
                     <span class="strapline">Your High-ROI Digital Marketing Partner</span>
                 </div>
-                <p class="hero-subtitle">Expert Lead Generation, SEO, PPC & Automation. Data-driven strategies that deliver <strong class="highlight-underline">MEASURABLE RESULTS</strong> and accelerate your <strong class="highlight-word">growth</strong>.</p>                <div class="hero-ctas">
-                    <a href="#contact" class="btn-primary large shine-effect pulse-animation">CLAIM YOUR FREE GROWTH STRATEGY</a>
+                <p class="hero-subtitle"><?php echo aimpro_get_field('hero_subtitle', 'Expert Lead Generation, SEO, PPC & Automation. Data-driven strategies that deliver <strong class="highlight-underline">MEASURABLE RESULTS</strong> and accelerate your <strong class="highlight-word">growth</strong>.'); ?></p>                <div class="hero-ctas">
+                    <a href="<?php echo aimpro_get_field('hero_primary_cta_url', '#contact'); ?>" class="btn-primary large shine-effect pulse-animation"><?php echo aimpro_get_field('hero_primary_cta_text', 'CLAIM YOUR FREE GROWTH STRATEGY'); ?></a>
                 </div>
             </div>            <!-- Lottie Animation Container -->
             <div class="hero-animation">
@@ -273,23 +272,22 @@
             <div class="css-wave-animation" style="display: none;"></div>
         </div>
     </div>
-    
-    <div class="container"><div class="stats-grid">
+      <div class="container"><div class="stats-grid">
             <div class="stat-item counter">
-                <div class="stat-number" data-count="25">0</div>
-                <div class="stat-label">Years of Experience</div>
+                <div class="stat-number" data-count="<?php echo aimpro_get_field('stat_1_number', '25'); ?>"><?php echo aimpro_get_field('stat_1_number', '0'); ?></div>
+                <div class="stat-label"><?php echo aimpro_get_field('stat_1_label', 'Years of Experience'); ?></div>
             </div>
             <div class="stat-item counter">
-                <div class="stat-number" data-count="98">0%</div>
-                <div class="stat-label">Increase in Client Leads</div>
+                <div class="stat-number" data-count="<?php echo aimpro_get_field('stat_2_number', '98'); ?>"><?php echo aimpro_get_field('stat_2_number', '0'); ?>%</div>
+                <div class="stat-label"><?php echo aimpro_get_field('stat_2_label', 'Increase in Client Leads'); ?></div>
             </div>
             <div class="stat-item counter">
-                <div class="stat-number" data-count="15">0+</div>
-                <div class="stat-label">Industries Transformed</div>
+                <div class="stat-number" data-count="<?php echo aimpro_get_field('stat_3_number', '15'); ?>"><?php echo aimpro_get_field('stat_3_number', '0'); ?>+</div>
+                <div class="stat-label"><?php echo aimpro_get_field('stat_3_label', 'Industries Transformed'); ?></div>
             </div>
             <div class="stat-item counter">
-                <div class="stat-number" data-count="199">0%</div>
-                <div class="stat-label">Increase in Conversion Rates</div>
+                <div class="stat-number" data-count="<?php echo aimpro_get_field('stat_4_number', '199'); ?>"><?php echo aimpro_get_field('stat_4_number', '0'); ?>%</div>
+                <div class="stat-label"><?php echo aimpro_get_field('stat_4_label', 'Increase in Conversion Rates'); ?></div>
             </div>
         </div>
     </div>
@@ -307,9 +305,8 @@
         <div class="floating-orb orb-3"></div>
     </div>
     
-    <div class="container">
-        <div class="content-center">            <h2>Premium Digital Marketing Solutions That <span class="highlight curly-underline">DELIVER</span></h2>
-            <p class="section-subtitle">Zero fluff. Pure performance. Our integrated marketing ecosystem works seamlessly to transform prospects into profits.</p>
+    <div class="container">        <div class="content-center">            <h2><?php echo aimpro_get_field('services_title', 'Premium Digital Marketing Solutions That <span class="highlight curly-underline">DELIVER</span>'); ?></h2>
+            <p class="section-subtitle"><?php echo aimpro_get_field('services_subtitle', 'Zero fluff. Pure performance. Our integrated marketing ecosystem works seamlessly to transform prospects into profits.'); ?></p>
         </div>
         
         <div class="premium-services-grid">            <!-- SEO Services -->
@@ -575,11 +572,9 @@
 
 <!-- Visit Our Office Section -->
 <section class="office-visit-section scroll-animate">
-    <div class="container">
-        <div class="office-content-wrapper">
-            <div class="office-content animate-slide-left">
-                <h2 class="animate-fade-up" data-delay="0.1">Come See Us... We're a <span class="highlight curly-underline">REAL</span> Company with Real Humans</h2>
-                <p class="animate-fade-up" data-delay="0.2">Let's discuss your project over a coffee. Book a time to visit our Birmingham office and meet the team behind your marketing success.</p>
+    <div class="container">        <div class="office-content-wrapper">            <div class="office-content animate-slide-left">
+                <h2 class="animate-fade-up" data-delay="0.1"><?php echo aimpro_get_field('office_title', 'Come See Us... We\'re a <span class="highlight curly-underline">REAL</span> Company with Real Humans'); ?></h2>
+                <p class="animate-fade-up" data-delay="0.2"><?php echo aimpro_get_field('office_description', 'Let\'s discuss your project over a coffee. Book a time to visit our Birmingham office and meet the team behind your marketing success.'); ?></p>
                 
                 <div class="calendar-booking animate-fade-up" data-delay="0.3">
                     <a href="#" class="btn-primary large calendar-btn">
@@ -593,10 +588,10 @@
                     </a>
                 </div>
                   <div class="office-details animate-fade-up" data-delay="0.4">
-                    <h3>Our Birmingham Office</h3>
-                    <p><strong>Located in: 55 Colmore Row</strong><br>
+                    <h3><?php echo aimpro_get_field('office_address_title', 'Our Birmingham Office'); ?></h3>
+                    <?php echo aimpro_get_field('office_address', '<p><strong>Located in: 55 Colmore Row</strong><br>
                     Address: 55 Colmore Row, Birmingham B3 2AA<br>
-                    Right in the heart of Birmingham's business district</p>
+                    Right in the heart of Birmingham\'s business district</p>'); ?>
                 </div>
             </div>
             

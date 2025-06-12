@@ -301,6 +301,215 @@ function aimpro_customize_register($wp_customize) {
 add_action('customize_register', 'aimpro_customize_register');
 
 /**
+ * ========================================
+ * LANDING PAGE CUSTOM FIELDS SYSTEM
+ * ========================================
+ * Makes the landing page content editable via WordPress admin
+ */
+
+// Add custom fields support
+add_action('init', 'aimpro_add_custom_fields_support');
+function aimpro_add_custom_fields_support() {
+    add_post_type_support('page', 'custom-fields');
+}
+
+// Add meta boxes for landing page content
+add_action('add_meta_boxes', 'aimpro_add_landing_page_meta_boxes');
+function aimpro_add_landing_page_meta_boxes() {
+    // Only show on front page or pages with landing page template
+    $screen = get_current_screen();
+    if ($screen->post_type == 'page') {
+        add_meta_box(
+            'aimpro_hero_section',
+            'Hero Section Content',
+            'aimpro_hero_section_callback',
+            'page',
+            'normal',
+            'high'
+        );
+        
+        add_meta_box(
+            'aimpro_stats_section',
+            'Stats Section',
+            'aimpro_stats_section_callback',
+            'page',
+            'normal',
+            'high'
+        );
+        
+        add_meta_box(
+            'aimpro_services_preview',
+            'Services Preview Section',
+            'aimpro_services_preview_callback',
+            'page',
+            'normal',
+            'high'
+        );
+        
+        add_meta_box(
+            'aimpro_office_section',
+            'Office Visit Section',
+            'aimpro_office_section_callback',
+            'page',
+            'normal',
+            'high'
+        );
+    }
+}
+
+// Hero Section Meta Box
+function aimpro_hero_section_callback($post) {
+    wp_nonce_field('aimpro_save_meta_box_data', 'aimpro_meta_box_nonce');
+    
+    $hero_badge = get_post_meta($post->ID, '_hero_badge', true) ?: '#1 RATED DIGITAL MARKETING AGENCY';
+    $hero_title = get_post_meta($post->ID, '_hero_title', true) ?: 'Boost Your Online Presence with <span class="text-gradient">Data-Driven Marketing</span>';
+    $hero_subtitle = get_post_meta($post->ID, '_hero_subtitle', true) ?: 'Transform your business with proven digital marketing strategies that deliver measurable results. From SEO to PPC, we drive growth that matters.';
+    $hero_cta_primary = get_post_meta($post->ID, '_hero_cta_primary', true) ?: 'GET FREE MARKETING AUDIT';
+    $hero_cta_secondary = get_post_meta($post->ID, '_hero_cta_secondary', true) ?: 'TALK TO AN EXPERT';
+    
+    echo '<table class="form-table">';
+    echo '<tr><th><label for="hero_badge">Hero Badge Text</label></th>';
+    echo '<td><input type="text" id="hero_badge" name="hero_badge" value="' . esc_attr($hero_badge) . '" style="width: 100%;" /></td></tr>';
+    
+    echo '<tr><th><label for="hero_title">Hero Title (HTML allowed)</label></th>';
+    echo '<td><textarea id="hero_title" name="hero_title" rows="3" style="width: 100%;">' . esc_textarea($hero_title) . '</textarea></td></tr>';
+    
+    echo '<tr><th><label for="hero_subtitle">Hero Subtitle</label></th>';
+    echo '<td><textarea id="hero_subtitle" name="hero_subtitle" rows="4" style="width: 100%;">' . esc_textarea($hero_subtitle) . '</textarea></td></tr>';
+    
+    echo '<tr><th><label for="hero_cta_primary">Primary CTA Button Text</label></th>';
+    echo '<td><input type="text" id="hero_cta_primary" name="hero_cta_primary" value="' . esc_attr($hero_cta_primary) . '" style="width: 100%;" /></td></tr>';
+    
+    echo '<tr><th><label for="hero_cta_secondary">Secondary CTA Button Text</label></th>';
+    echo '<td><input type="text" id="hero_cta_secondary" name="hero_cta_secondary" value="' . esc_attr($hero_cta_secondary) . '" style="width: 100%;" /></td></tr>';
+    echo '</table>';
+}
+
+// Stats Section Meta Box
+function aimpro_stats_section_callback($post) {
+    $stats = get_post_meta($post->ID, '_stats_section', true) ?: array(
+        array('number' => '500+', 'label' => 'Clients Served'),
+        array('number' => '99%', 'label' => 'Client Satisfaction'),
+        array('number' => '250%', 'label' => 'Average ROI Increase'),
+        array('number' => '24/7', 'label' => 'Support Available')
+    );
+    
+    echo '<div id="stats-container">';
+    foreach ($stats as $index => $stat) {
+        echo '<div class="stat-item" style="border: 1px solid #ddd; padding: 15px; margin-bottom: 10px; border-radius: 5px;">';
+        echo '<h4>Stat ' . ($index + 1) . '</h4>';
+        echo '<label>Number/Value: <input type="text" name="stats[' . $index . '][number]" value="' . esc_attr($stat['number']) . '" style="width: 100%; margin: 5px 0;" /></label>';
+        echo '<label>Label: <input type="text" name="stats[' . $index . '][label]" value="' . esc_attr($stat['label']) . '" style="width: 100%; margin: 5px 0;" /></label>';
+        echo '</div>';
+    }
+    echo '</div>';
+}
+
+// Services Preview Meta Box
+function aimpro_services_preview_callback($post) {
+    $services_title = get_post_meta($post->ID, '_services_title', true) ?: 'Our <span class="highlight">Premium</span> Digital Marketing Services';
+    $services_subtitle = get_post_meta($post->ID, '_services_subtitle', true) ?: 'Comprehensive solutions designed to accelerate your digital growth and maximize ROI across all channels.';
+    
+    echo '<table class="form-table">';
+    echo '<tr><th><label for="services_title">Services Section Title (HTML allowed)</label></th>';
+    echo '<td><textarea id="services_title" name="services_title" rows="2" style="width: 100%;">' . esc_textarea($services_title) . '</textarea></td></tr>';
+    
+    echo '<tr><th><label for="services_subtitle">Services Section Subtitle</label></th>';
+    echo '<td><textarea id="services_subtitle" name="services_subtitle" rows="3" style="width: 100%;">' . esc_textarea($services_subtitle) . '</textarea></td></tr>';
+    echo '</table>';
+}
+
+// Office Section Meta Box
+function aimpro_office_section_callback($post) {
+    $office_title = get_post_meta($post->ID, '_office_title', true) ?: 'Come See Us... We\'re a <span class="highlight curly-underline">REAL</span> Company with Real Humans';
+    $office_description = get_post_meta($post->ID, '_office_description', true) ?: 'Let\'s discuss your project over a coffee. Book a time to visit our Birmingham office and meet the team behind your marketing success.';
+    $office_address_title = get_post_meta($post->ID, '_office_address_title', true) ?: 'Our Birmingham Office';
+    $office_address = get_post_meta($post->ID, '_office_address', true) ?: '<strong>Located in: 55 Colmore Row</strong><br>Address: 55 Colmore Row, Birmingham B3 2AA<br>Right in the heart of Birmingham\'s business district';
+    
+    echo '<table class="form-table">';
+    echo '<tr><th><label for="office_title">Office Section Title (HTML allowed)</label></th>';
+    echo '<td><textarea id="office_title" name="office_title" rows="2" style="width: 100%;">' . esc_textarea($office_title) . '</textarea></td></tr>';
+    
+    echo '<tr><th><label for="office_description">Office Description</label></th>';
+    echo '<td><textarea id="office_description" name="office_description" rows="3" style="width: 100%;">' . esc_textarea($office_description) . '</textarea></td></tr>';
+    
+    echo '<tr><th><label for="office_address_title">Office Address Title</label></th>';
+    echo '<td><input type="text" id="office_address_title" name="office_address_title" value="' . esc_attr($office_address_title) . '" style="width: 100%;" /></td></tr>';
+    
+    echo '<tr><th><label for="office_address">Office Address (HTML allowed)</label></th>';
+    echo '<td><textarea id="office_address" name="office_address" rows="4" style="width: 100%;">' . esc_textarea($office_address) . '</textarea></td></tr>';
+    echo '</table>';
+}
+
+// Save meta box data
+add_action('save_post', 'aimpro_save_meta_box_data');
+function aimpro_save_meta_box_data($post_id) {
+    // Check if nonce is valid
+    if (!isset($_POST['aimpro_meta_box_nonce']) || !wp_verify_nonce($_POST['aimpro_meta_box_nonce'], 'aimpro_save_meta_box_data')) {
+        return;
+    }
+
+    // Check if user has permissions
+    if (!current_user_can('edit_post', $post_id)) {
+        return;
+    }
+
+    // Check if not an autosave
+    if (defined('DOING_AUTOSAVE') && DOING_AUTOSAVE) {
+        return;
+    }
+
+    // Save hero section fields
+    $hero_fields = array('hero_badge', 'hero_title', 'hero_subtitle', 'hero_cta_primary', 'hero_cta_secondary');
+    foreach ($hero_fields as $field) {
+        if (isset($_POST[$field])) {
+            update_post_meta($post_id, '_' . $field, sanitize_text_field($_POST[$field]));
+        }
+    }
+    
+    // Save stats section
+    if (isset($_POST['stats'])) {
+        $stats_data = array();
+        foreach ($_POST['stats'] as $stat) {
+            $stats_data[] = array(
+                'number' => sanitize_text_field($stat['number']),
+                'label' => sanitize_text_field($stat['label'])
+            );
+        }
+        update_post_meta($post_id, '_stats_section', $stats_data);
+    }
+    
+    // Save services section
+    if (isset($_POST['services_title'])) {
+        update_post_meta($post_id, '_services_title', wp_kses_post($_POST['services_title']));
+    }
+    if (isset($_POST['services_subtitle'])) {
+        update_post_meta($post_id, '_services_subtitle', sanitize_textarea_field($_POST['services_subtitle']));
+    }
+    
+    // Save office section
+    $office_fields = array('office_title', 'office_description', 'office_address_title', 'office_address');
+    foreach ($office_fields as $field) {
+        if (isset($_POST[$field])) {
+            if ($field === 'office_title' || $field === 'office_address') {
+                update_post_meta($post_id, '_' . $field, wp_kses_post($_POST[$field]));
+            } else {
+                update_post_meta($post_id, '_' . $field, sanitize_textarea_field($_POST[$field]));
+            }
+        }
+    }
+}
+
+// Helper function to get custom field with fallback
+/**
+ * Helper function to get landing page field values from options
+ */
+function aimpro_get_field($field_name, $default = '') {
+    $value = get_option($field_name, $default);
+    return $value ? $value : $default;
+}
+
+/**
  * Theme Activation Hook
  */
 function aimpro_theme_activation() {
@@ -310,6 +519,265 @@ function aimpro_theme_activation() {
     // Set default customizer values
     set_theme_mod('company_phone', '+1 (555) 123-4567');
     set_theme_mod('company_email', 'hello@aimprodigital.com');
+    
+    // Set default landing page values
+    aimpro_set_default_landing_page_values();
+}
+
+/**
+ * Set default landing page field values
+ */
+function aimpro_set_default_landing_page_values() {
+    $defaults = array(
+        'hero_badge_text' => 'Award-Winning Digital Agency',
+        'hero_title' => '<h1 class="hero-title">Scale Your Business With <span class="highlight curly-underline">PRECISION</span> Digital <span class="highlight-word" style="color: #f15a25 !important; -webkit-text-fill-color: #f15a25 !important;">Marketing</span></h1>',
+        'hero_subtitle' => 'Expert Lead Generation, SEO, PPC & Automation. Data-driven strategies that deliver <strong class="highlight-underline">MEASURABLE RESULTS</strong> and accelerate your <strong class="highlight-word">growth</strong>.',
+        'hero_primary_cta_text' => 'CLAIM YOUR FREE GROWTH STRATEGY',
+        'hero_primary_cta_url' => '#contact',
+        'stat_1_number' => '25',
+        'stat_1_label' => 'Years of Experience',
+        'stat_2_number' => '98',
+        'stat_2_label' => 'Increase in Client Leads',
+        'stat_3_number' => '15',
+        'stat_3_label' => 'Industries Transformed',
+        'stat_4_number' => '199',
+        'stat_4_label' => 'Increase in Conversion Rates',
+        'services_title' => 'Premium Digital Marketing Solutions That <span class="highlight curly-underline">DELIVER</span>',
+        'services_subtitle' => 'Zero fluff. Pure performance. Our integrated marketing ecosystem works seamlessly to transform prospects into profits.',
+        'office_title' => 'Come See Us... We\'re a <span class="highlight curly-underline">REAL</span> Company with Real Humans',
+        'office_description' => 'Let\'s discuss your project over a coffee. Book a time to visit our Birmingham office and meet the team behind your marketing success.',
+        'office_address_title' => 'Our Birmingham Office',
+        'office_address' => '<p><strong>Located in: 55 Colmore Row</strong><br>
+                    Address: 55 Colmore Row, Birmingham B3 2AA<br>
+                    Right in the heart of Birmingham\'s business district</p>'
+    );
+    
+    foreach ($defaults as $key => $value) {
+        // Only set if not already set
+        if (!get_option($key, false)) {
+            update_option($key, $value);
+        }
+    }
 }
 add_action('after_switch_theme', 'aimpro_theme_activation');
+
+/**
+ * Create Landing Page Settings Admin Page
+ */
+function aimpro_add_admin_pages() {
+    add_menu_page(
+        'Landing Page Settings',
+        'Landing Page',
+        'manage_options',
+        'aimpro-landing-page',
+        'aimpro_landing_page_admin',
+        'dashicons-admin-page',
+        30
+    );
+}
+add_action('admin_menu', 'aimpro_add_admin_pages');
+
+/**
+ * Landing Page Settings Admin Page Content
+ */
+function aimpro_landing_page_admin() {
+    // Handle form submission
+    if (isset($_POST['submit']) && wp_verify_nonce($_POST['aimpro_landing_page_nonce'], 'aimpro_landing_page_save')) {
+        if (current_user_can('manage_options')) {
+            // Save all the custom fields
+            $fields = array(
+                'hero_badge_text', 'hero_title', 'hero_subtitle', 'hero_primary_cta_text', 'hero_primary_cta_url',
+                'stat_1_number', 'stat_1_label', 'stat_2_number', 'stat_2_label',
+                'stat_3_number', 'stat_3_label', 'stat_4_number', 'stat_4_label',
+                'services_title', 'services_subtitle',
+                'office_title', 'office_description', 'office_address_title', 'office_address'
+            );
+            
+            foreach ($fields as $field) {
+                if (isset($_POST[$field])) {
+                    if (in_array($field, array('hero_title', 'office_title', 'office_address'))) {
+                        // Allow HTML for specific fields
+                        update_option($field, wp_kses_post($_POST[$field]));
+                    } else {
+                        // Sanitize text fields
+                        update_option($field, sanitize_text_field($_POST[$field]));
+                    }
+                }
+            }
+            
+            echo '<div class="notice notice-success"><p>Landing page settings saved successfully!</p></div>';
+        }
+    }
+    
+    ?>
+    <div class="wrap">
+        <h1>Landing Page Settings</h1>
+        <p>Edit the content for your landing page. Changes will appear immediately on the frontend.</p>
+        
+        <form method="post" action="">
+            <?php wp_nonce_field('aimpro_landing_page_save', 'aimpro_landing_page_nonce'); ?>
+            
+            <div class="aimpro-admin-sections">
+                
+                <!-- Hero Section -->
+                <div class="aimpro-admin-section">
+                    <h2>Hero Section</h2>
+                    <table class="form-table">
+                        <tr>
+                            <th scope="row">Badge Text</th>
+                            <td>
+                                <input type="text" name="hero_badge_text" value="<?php echo esc_attr(get_option('hero_badge_text', 'Award-Winning Digital Agency')); ?>" class="regular-text" />
+                                <p class="description">Small badge text above the main title</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Main Title</th>
+                            <td>
+                                <textarea name="hero_title" rows="3" class="large-text"><?php echo esc_textarea(get_option('hero_title', '<h1 class="hero-title">Scale Your Business With <span class="highlight curly-underline">PRECISION</span> Digital <span class="highlight-word" style="color: #f15a25 !important; -webkit-text-fill-color: #f15a25 !important;">Marketing</span></h1>')); ?></textarea>
+                                <p class="description">Main hero title (HTML allowed for styling)</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Subtitle</th>
+                            <td>
+                                <textarea name="hero_subtitle" rows="3" class="large-text"><?php echo esc_textarea(get_option('hero_subtitle', 'Expert Lead Generation, SEO, PPC & Automation. Data-driven strategies that deliver <strong class="highlight-underline">MEASURABLE RESULTS</strong> and accelerate your <strong class="highlight-word">growth</strong>.')); ?></textarea>
+                                <p class="description">Hero subtitle text</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Primary CTA Text</th>
+                            <td>
+                                <input type="text" name="hero_primary_cta_text" value="<?php echo esc_attr(get_option('hero_primary_cta_text', 'CLAIM YOUR FREE GROWTH STRATEGY')); ?>" class="regular-text" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Primary CTA URL</th>
+                            <td>
+                                <input type="text" name="hero_primary_cta_url" value="<?php echo esc_attr(get_option('hero_primary_cta_url', '#contact')); ?>" class="regular-text" />
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                
+                <!-- Stats Section -->
+                <div class="aimpro-admin-section">
+                    <h2>Stats Section</h2>
+                    <table class="form-table">
+                        <tr>
+                            <th scope="row">Stat 1</th>
+                            <td>
+                                <input type="number" name="stat_1_number" value="<?php echo esc_attr(get_option('stat_1_number', '25')); ?>" class="small-text" />
+                                <input type="text" name="stat_1_label" value="<?php echo esc_attr(get_option('stat_1_label', 'Years of Experience')); ?>" class="regular-text" placeholder="Label" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Stat 2</th>
+                            <td>
+                                <input type="number" name="stat_2_number" value="<?php echo esc_attr(get_option('stat_2_number', '98')); ?>" class="small-text" />
+                                <input type="text" name="stat_2_label" value="<?php echo esc_attr(get_option('stat_2_label', 'Increase in Client Leads')); ?>" class="regular-text" placeholder="Label" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Stat 3</th>
+                            <td>
+                                <input type="number" name="stat_3_number" value="<?php echo esc_attr(get_option('stat_3_number', '15')); ?>" class="small-text" />
+                                <input type="text" name="stat_3_label" value="<?php echo esc_attr(get_option('stat_3_label', 'Industries Transformed')); ?>" class="regular-text" placeholder="Label" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Stat 4</th>
+                            <td>
+                                <input type="number" name="stat_4_number" value="<?php echo esc_attr(get_option('stat_4_number', '199')); ?>" class="small-text" />
+                                <input type="text" name="stat_4_label" value="<?php echo esc_attr(get_option('stat_4_label', 'Increase in Conversion Rates')); ?>" class="regular-text" placeholder="Label" />
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                
+                <!-- Services Section -->
+                <div class="aimpro-admin-section">
+                    <h2>Services Section</h2>
+                    <table class="form-table">
+                        <tr>
+                            <th scope="row">Section Title</th>
+                            <td>
+                                <textarea name="services_title" rows="2" class="large-text"><?php echo esc_textarea(get_option('services_title', 'Premium Digital Marketing Solutions That <span class="highlight curly-underline">DELIVER</span>')); ?></textarea>
+                                <p class="description">Services section main title</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Section Subtitle</th>
+                            <td>
+                                <textarea name="services_subtitle" rows="2" class="large-text"><?php echo esc_textarea(get_option('services_subtitle', 'Zero fluff. Pure performance. Our integrated marketing ecosystem works seamlessly to transform prospects into profits.')); ?></textarea>
+                                <p class="description">Services section subtitle</p>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                
+                <!-- Office Section -->
+                <div class="aimpro-admin-section">
+                    <h2>Office Visit Section</h2>
+                    <table class="form-table">
+                        <tr>
+                            <th scope="row">Section Title</th>
+                            <td>                                <textarea name="office_title" rows="2" class="large-text"><?php echo esc_textarea(get_option('office_title', 'Come See Us... We\'re a <span class="highlight curly-underline">REAL</span> Company with Real Humans')); ?></textarea>
+                                <p class="description">Office section title (HTML allowed)</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Description</th>
+                            <td>
+                                <textarea name="office_description" rows="3" class="large-text"><?php echo esc_textarea(get_option('office_description', 'Let\'s discuss your project over a coffee. Book a time to visit our Birmingham office and meet the team behind your marketing success.')); ?></textarea>
+                                <p class="description">Office section description</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Address Title</th>
+                            <td>
+                                <input type="text" name="office_address_title" value="<?php echo esc_attr(get_option('office_address_title', 'Our Birmingham Office')); ?>" class="regular-text" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Address Details</th>
+                            <td>
+                                <textarea name="office_address" rows="4" class="large-text"><?php echo esc_textarea(get_option('office_address', '<p><strong>Located in: 55 Colmore Row</strong><br>
+                    Address: 55 Colmore Row, Birmingham B3 2AA<br>
+                    Right in the heart of Birmingham\'s business district</p>')); ?></textarea>
+                                <p class="description">Full address details (HTML allowed)</p>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                
+            </div>
+            
+            <?php submit_button('Save Landing Page Settings'); ?>
+        </form>
+    </div>
+    
+    <style>
+    .aimpro-admin-section {
+        background: #fff;
+        border: 1px solid #c3c4c7;
+        box-shadow: 0 1px 1px rgba(0, 0, 0, 0.04);
+        margin: 20px 0;
+        padding: 20px;
+    }
+    .aimpro-admin-section h2 {
+        margin-top: 0;
+        color: #1d2327;
+        font-size: 18px;
+        font-weight: 600;
+        border-bottom: 1px solid #dcdcde;
+        padding-bottom: 10px;
+    }
+    .aimpro-admin-sections .form-table th {
+        width: 200px;
+        font-weight: 600;
+    }
+    </style>
+    <?php
+}
+
 ?>
