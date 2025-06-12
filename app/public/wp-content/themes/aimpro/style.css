@@ -5,136 +5,7 @@ Description: Custom theme for Aimpro site.
 Version: 1.0
 */
 
-/* Root Variables - Luxury Black/Orange Theme */
-:root {
-    /* Primary Colors - Luxury Black/Orange Scheme */
-    --primary-black: #0a0a0a;
-    --primary-black-light: #1a1a1a;
-    --primary-orange: #f15a25;
-    --primary-orange-light: #ff6b35;
-    --primary-orange-dark: #d14a1f;    
-    /* Glass Morphism */
-    --glass-bg: rgba(255, 255, 255, 0.1);
-    --glass-bg-light: rgba(255, 255, 255, 0.05);
-    --glass-border: rgba(255, 255, 255, 0.1);
-    --glass-orange-border: rgba(241, 90, 37, 0.2);
-      /* Text Colors */
-    --text-primary: #ffffff;
-    --text-secondary: rgba(255, 255, 255, 0.95);
-    --text-muted: rgba(255, 255, 255, 0.85);
-    --text-dark: #1a202c;
-    
-    /* Enhanced Text Colors for Better Readability */
-    --text-readable-secondary: #e2e8f0;
-    --text-readable-muted: #cbd5e0;
-      /* Accent Gradients */
-    --gradient-orange: linear-gradient(135deg, #f15a25, #ff6b35);
-    --gradient-orange-subtle: linear-gradient(135deg, rgba(241, 90, 37, 0.9), rgba(255, 107, 53, 0.8));
-    --gradient-dark: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
-    --gradient-glass: linear-gradient(145deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.05) 50%, rgba(0, 0, 0, 0.1) 100%);
-    
-    /* Shadows */
-    --shadow-orange: 0 10px 25px rgba(241, 90, 37, 0.3);
-    --shadow-orange-hover: 0 20px 40px rgba(241, 90, 37, 0.4);
-    --shadow-dark: 0 40px 80px rgba(0, 0, 0, 0.3);
-      /* Backdrop Filters */
-    --backdrop-blur: blur(20px);
-}
-
-/* Light Theme Variables */
-:root.light-theme {
-    /* Primary Colors - Clean Light Theme */
-    --primary-black: #ffffff;
-    --primary-black-light: #f8fafc;
-    --primary-orange: #f15a25;
-    --primary-orange-light: #ff6b35;
-    --primary-orange-dark: #d14a1f;
-    
-    /* Background Colors */    --bg-primary: #ffffff;
-    --bg-secondary: #fefefe;
-    --bg-tertiary: #ffffff;
-    --bg-card: #ffffff;
-    --bg-overlay: rgba(0, 0, 0, 0.05);
-    
-    /* Glass Morphism - Light Theme */
-    --glass-bg: rgba(255, 255, 255, 0.8);
-    --glass-bg-light: rgba(255, 255, 255, 0.6);
-    --glass-border: rgba(0, 0, 0, 0.1);
-    --glass-orange-border: rgba(241, 90, 37, 0.3);    /* Text Colors - Light Theme */
-    --text-primary: #1a202c;
-    --text-secondary: #2d3748;
-    --text-muted: #4a5568;
-    --text-readable-secondary: #374151;
-    --text-readable-muted: #6b7280;
-    --accent: #f15a25;
-    --text-dark: #1a202c;
-    --text-light: #ffffff;
-    
-    /* Enhanced Text Colors for Better Readability */
-    --text-readable-secondary: #4a5568;
-    --text-readable-muted: #718096;
-    
-    /* Border Colors */
-    --border-light: #e2e8f0;
-    --border-medium: #cbd5e0;
-    --border-dark: #a0aec0;
-    
-    /* Accent Gradients - Light Theme */
-    --gradient-orange: linear-gradient(135deg, #f15a25, #ff6b35);
-    --gradient-orange-subtle: linear-gradient(135deg, rgba(241, 90, 37, 0.1), rgba(255, 107, 53, 0.05));
-    --gradient-dark: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
-    --gradient-glass: linear-gradient(145deg, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.7) 50%, rgba(0, 0, 0, 0.05) 100%);
-    
-    /* Shadows - Light Theme */
-    --shadow-orange: 0 10px 25px rgba(241, 90, 37, 0.15);
-    --shadow-orange-hover: 0 20px 40px rgba(241, 90, 37, 0.25);
-    --shadow-dark: 0 40px 80px rgba(0, 0, 0, 0.1);
-    --shadow-card: 0 4px 6px rgba(0, 0, 0, 0.07);
-    --shadow-card-hover: 0 8px 25px rgba(0, 0, 0, 0.15);
-    
-    /* Component Specific Colors */
-    --header-bg: rgba(255, 255, 255, 0.95);
-    --hero-bg: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
-    --section-bg: #ffffff;
-    --card-bg: #ffffff;
-    --input-bg: #ffffff;
-    --input-border: #e2e8f0;
-    --input-focus: #f15a25;
-    
-    /* Navigation Colors */
-    --nav-link: #4a5568;
-    --nav-link-hover: #f15a25;
-    --nav-link-active: #f15a25;
-    
-    /* Button Colors */
-    --btn-primary-bg: #f15a25;
-    --btn-primary-text: #ffffff;
-    --btn-secondary-bg: transparent;
-    --btn-secondary-text: #f15a25;
-    --btn-secondary-border: #f15a25;
-    
-    /* Service Card Colors */
-    --service-card-bg: #ffffff;
-    --service-card-border: #e2e8f0;
-    --service-card-shadow: 0 4px 6px rgba(0, 0, 0, 0.07);
-    --service-card-hover-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
-      /* Footer Colors */
-    --footer-bg: #1a202c;
-    --footer-text: #e2e8f0;
-    --footer-link: #cbd5e0;
-    --footer-link-hover: #f15a25;
-    
-    /* Backdrop Filters */
-    --backdrop-blur: blur(20px);
-}
-
-/* Theme Transition Styles */
-* {
-    transition: background-color 0.3s ease, 
-                color 0.3s ease, 
-                border-color 0.3s ease, 
-                box-shadow 0.3s ease;
-}
+/* CSS Variables moved to variables.css */
 
 /* Dark Theme (Default) Body Styles */
 body {
@@ -3653,23 +3524,11 @@ select:focus {
     }
 }
 
-/* Light Theme Target Icon Adjustments */
-:root.light-theme .hero-target-1,
-:root.light-theme .hero-target-2,
-:root.light-theme .stats-target-1,
-:root.light-theme .services-target-1,
-:root.light-theme .testimonials-target-1,
-:root.light-theme .insights-target-1,
-:root.light-theme .contact-target-1,
-:root.light-theme .contact-target-2 {
-    opacity: 0.25; /* Slightly more visible in light theme */
-    filter: contrast(1.2) brightness(0.8); /* Darker for better visibility on light background */
-}
+/* Light Theme Target Icon Adjustments moved to variables.css */
+/* Light Theme Service Card Hover Styles moved to variables.css */
 
-:root.light-theme .service-card:hover::before,
-/* Button hover styles in light theme moved to buttons.css */
-
-.insight-card:hover {    transform: translateY(-4px);
+.insight-card:hover {
+    transform: translateY(-4px);
     border: var(--glass-orange-border);
     box-shadow: var(--shadow-orange-hover);
 }
