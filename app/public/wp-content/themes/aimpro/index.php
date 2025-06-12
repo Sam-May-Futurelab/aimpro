@@ -929,24 +929,23 @@
                     $categories = get_the_category();
                     $category_name = !empty($categories) ? esc_html($categories[0]->name) : 'Uncategorized';
                     ?>
-                    <article class="blog-card">
-                        <div class="blog-image">
-                            <?php if (has_post_thumbnail()): ?>
-                                <a href="<?php the_permalink(); ?>">
-                                    <?php the_post_thumbnail('medium', array('class' => 'blog-thumbnail', 'alt' => get_the_title())); ?>
-                                </a>
-                            <?php else: ?>
-                                <a href="<?php the_permalink(); ?>">
+                    <article class="blog-card">                        <div class="blog-image">
+                            <a href="<?php the_permalink(); ?>">
+                                <?php if (has_post_thumbnail()): ?>
+                                    <?php the_post_thumbnail('medium_large', array('class' => 'blog-thumbnail', 'alt' => get_the_title())); ?>
+                                <?php else: ?>
                                     <img src="<?php echo get_template_directory_uri(); ?>/assets/images/default-blog.png" alt="<?php the_title_attribute(); ?>" class="blog-thumbnail" />
-                                </a>
-                            <?php endif; ?>
+                                <?php endif; ?>
+                            </a>
                             <span class="blog-category"><?php echo $category_name; ?></span>
-                        </div>
-                          <div class="blog-content">
-                            <h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
-                            <div class="blog-meta">
-                                <span class="blog-date"><?php echo get_the_date('M j, Y'); ?></span>
-                            </div>                            <p class="blog-excerpt"><?php echo wp_trim_words(get_the_excerpt(), 15, '...'); ?></p>
+                        </div>                          <div class="blog-content">
+                            <div>
+                                <h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
+                                <div class="blog-meta">
+                                    <span class="blog-date"><?php echo get_the_date('M j, Y'); ?></span>
+                                </div>
+                                <p class="blog-excerpt"><?php echo wp_trim_words(get_the_excerpt(), 15, '...'); ?></p>
+                            </div>
                             <a href="<?php the_permalink(); ?>" class="btn-outline btn-sm">Read More</a>
                         </div>
                     </article>

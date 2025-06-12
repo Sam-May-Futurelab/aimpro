@@ -33,14 +33,37 @@ function aimpro_theme_setup() {
     add_image_size('hero-image', 1920, 800, true);
     add_image_size('service-image', 400, 300, true);
     add_image_size('team-image', 300, 300, true);
-    
-    // Register navigation menus
-    register_nav_menus(array(
-        'primary' => __('Primary Menu', 'aimpro'),
-        'footer' => __('Footer Menu', 'aimpro')
-    ));
 }
 add_action('after_setup_theme', 'aimpro_theme_setup');
+
+/**
+ * Add custom image sizes for blog thumbnails
+ */
+function aimpro_add_image_sizes() {
+    // Add a custom image size for blog cards
+    add_image_size('blog-thumbnail', 600, 400, true);
+    
+    // Add support for featured images if not already added
+    add_theme_support('post-thumbnails');
+}
+add_action('after_setup_theme', 'aimpro_add_image_sizes');
+
+/**
+ * Filter the thumbnail size attributes to improve blog images
+ */
+function aimpro_filter_post_thumbnail_html($html, $post_id, $post_thumbnail_id, $size, $attr) {
+    if ($size === 'medium_large' || $size === 'medium') {
+        // Replace with our custom size for blog thumbnails
+        $html = wp_get_attachment_image(
+            $post_thumbnail_id,
+            'blog-thumbnail',
+            false,
+            $attr
+        );
+    }
+    return $html;
+}
+add_filter('post_thumbnail_html', 'aimpro_filter_post_thumbnail_html', 10, 5);
 
 /**
  * Enqueue Scripts and Styles with Performance Optimizations
