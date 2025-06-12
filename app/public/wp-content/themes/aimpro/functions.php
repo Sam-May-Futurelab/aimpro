@@ -232,22 +232,88 @@ function aimpro_register_post_types() {
 }
 add_action('init', 'aimpro_register_post_types');
 
-// AJAX handler for contact form (if needed)
+// Handle Main Contact Form Submission
 function aimpro_handle_contact_form() {
-    check_ajax_referer('aimpro_nonce', 'nonce');
+    if (!isset($_POST['contact_form']) || !wp_verify_nonce($_POST['contact_nonce'], 'contact_submission')) {
+        return;
+    }
     
+    // Sanitize and validate input
     $name = sanitize_text_field($_POST['name']);
     $email = sanitize_email($_POST['email']);
-    $message = sanitize_textarea_field($_POST['message']);
+    $phone = sanitize_text_field($_POST['phone']);
+    $referral = sanitize_text_field($_POST['referral']);
+    $message = sanitize_textarea_field($_POST['query']);
     
-    // Process form submission here
-    // For now, just return success
-    wp_send_json_success(array(
-        'message' => 'Thank you for your message! We\'ll get back to you soon.'
-    ));
+    if (empty($name) || empty($email) || !is_email($email)) {
+        wp_redirect(add_query_arg('contact_error', '1', $_POST['_wp_http_referer']));
+        exit;
+    }
+    
+    global $wpdb;
+    $table_name = $wpdb->prefix . 'aimpro_submissions';
+    
+    // Store in database
+    $result = $wpdb->insert(
+        $table_name,
+        array(
+            'form_type' => 'contact',
+            'name' => $name,
+            'email' => $email,
+            'phone' => $phone,
+            'referral' => $referral,
+            'message' => $message,
+            'ip_address' => $_SERVER['REMOTE_ADDR'],
+            'user_agent' => $_SERVER['HTTP_USER_AGENT']
+        ),
+        array('%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s')
+    );
+    
+    if ($result) {        // Send email notification to admin
+        $to = 'sam@futurelab.solutions';
+        $subject = 'New Contact Form Submission - ' . get_bloginfo('name');
+        $message_body = "New contact form submission:\n\n";
+        $message_body .= "Name: {$name}\n";
+        $message_body .= "Email: {$email}\n";
+        $message_body .= "Phone: {$phone}\n";
+        $message_body .= "Found us via: {$referral}\n";
+        $message_body .= "Message: {$message}\n";
+        $message_body .= "IP Address: {$_SERVER['REMOTE_ADDR']}\n";
+        $message_body .= "Date: " . current_time('mysql') . "\n";
+        
+        $headers = array(
+            'Content-Type: text/plain; charset=UTF-8',
+            'From: ' . get_bloginfo('name') . ' <noreply@' . parse_url(home_url(), PHP_URL_HOST) . '>',
+            'Reply-To: ' . $email
+        );
+        
+        wp_mail($to, $subject, $message_body, $headers);
+        
+        // Send auto-response to user
+        $user_subject = 'Thank you for contacting us - ' . get_bloginfo('name');
+        $user_message = "Hi {$name},\n\n";
+        $user_message .= "Thank you for getting in touch with us!\n\n";
+        $user_message .= "We've received your message and one of our team members will respond within 24 hours.\n\n";        $user_message .= "In the meantime, feel free to check out our latest insights and case studies on our website.\n\n";
+        $user_message .= "Best regards,\n";
+        $user_message .= "The Aimpro Team\n";
+        $user_message .= "sam@futurelab.solutions\n";
+        $user_message .= "Phone: +44 121 285 8490";
+        
+        $user_headers = array(
+            'Content-Type: text/plain; charset=UTF-8',
+            'From: Aimpro Digital <sam@futurelab.solutions>'
+        );
+        
+        wp_mail($email, $user_subject, $user_message, $user_headers);
+        
+        wp_redirect(add_query_arg('contact_success', '1', $_POST['_wp_http_referer']));
+    } else {
+        wp_redirect(add_query_arg('contact_error', '1', $_POST['_wp_http_referer']));
+    }
+    exit;
 }
-add_action('wp_ajax_contact_form', 'aimpro_handle_contact_form');
-add_action('wp_ajax_nopriv_contact_form', 'aimpro_handle_contact_form');
+add_action('admin_post_contact_form', 'aimpro_handle_contact_form');
+add_action('admin_post_nopriv_contact_form', 'aimpro_handle_contact_form');
 
 // Add Open Graph meta tags
 function aimpro_add_og_meta() {
@@ -993,15 +1059,8 @@ function aimpro_landing_page_admin() {
                             <td>
                                 <input type="text" name="lead_magnet_phone_label" value="<?php echo esc_attr(get_option('lead_magnet_phone_label', 'Phone Number *')); ?>" class="regular-text" />
                                 <p class="description">Label for the phone field</p>
-                            </td>
-                        </tr>
+                            </td>                        </tr>
                         <tr>
-                            <th scope="row">Company Field Label</th>
-                            <td>
-                                <input type="text" name="lead_magnet_company_label" value="<?php echo esc_attr(get_option('lead_magnet_company_label', 'Company Name')); ?>" class="regular-text" />
-                                <p class="description">Label for the company field (optional field)</p>
-                            </td>
-                        </tr>                        <tr>
                             <th scope="row">Submit Button Text</th>
                             <td>
                                 <input type="text" name="lead_magnet_submit_text" value="<?php echo esc_attr(get_option('lead_magnet_submit_text', 'GET FREE EBOOK NOW')); ?>" class="regular-text" />
@@ -1344,3 +1403,204 @@ function aimpro_cleanup_escaped_quotes() {    $fields_to_clean = array(
 // Uncomment the next line to run cleanup once
 // Cleanup function disabled after fixing escaped quotes
 // add_action('admin_init', 'aimpro_cleanup_escaped_quotes');
+
+// Form Handling Functions
+// =======================
+
+// Create database table for form submissions
+function aimpro_create_submissions_table() {
+    global $wpdb;
+    
+    $table_name = $wpdb->prefix . 'aimpro_submissions';
+    
+    $charset_collate = $wpdb->get_charset_collate();
+    
+    $sql = "CREATE TABLE $table_name (
+        id mediumint(9) NOT NULL AUTO_INCREMENT,
+        form_type varchar(50) NOT NULL,
+        name varchar(100) NOT NULL,
+        email varchar(100) NOT NULL,
+        phone varchar(20),
+        company varchar(100),
+        referral varchar(50),
+        message text,
+        ip_address varchar(45),
+        user_agent text,
+        submission_date datetime DEFAULT CURRENT_TIMESTAMP,
+        PRIMARY KEY (id)
+    ) $charset_collate;";
+    
+    require_once(ABSPATH . 'wp-admin/includes/upgrade.php');
+    dbDelta($sql);
+}
+add_action('after_switch_theme', 'aimpro_create_submissions_table');
+
+// Handle Lead Magnet Form Submission
+function aimpro_handle_lead_magnet_form() {
+    if (!isset($_POST['lead_magnet_form']) || !wp_verify_nonce($_POST['lead_magnet_nonce'], 'lead_magnet_submission')) {
+        return;
+    }
+    
+    // Sanitize and validate input
+    $name = sanitize_text_field($_POST['lead_name']);
+    $email = sanitize_email($_POST['lead_email']);
+    $phone = sanitize_text_field($_POST['lead_phone']);
+    
+    if (empty($name) || empty($email) || !is_email($email)) {
+        wp_redirect(add_query_arg('lead_error', '1', $_POST['_wp_http_referer']));
+        exit;
+    }
+    
+    global $wpdb;
+    $table_name = $wpdb->prefix . 'aimpro_submissions';
+    
+    // Store in database
+    $result = $wpdb->insert(
+        $table_name,
+        array(
+            'form_type' => 'lead_magnet',
+            'name' => $name,
+            'email' => $email,
+            'phone' => $phone,
+            'ip_address' => $_SERVER['REMOTE_ADDR'],
+            'user_agent' => $_SERVER['HTTP_USER_AGENT']
+        ),
+        array('%s', '%s', '%s', '%s', '%s', '%s')
+    );
+    
+    if ($result) {        // Send email notification to admin
+        $to = 'sam@futurelab.solutions';
+        $subject = 'New Lead Magnet Download Request - ' . get_bloginfo('name');
+        $message = "New lead magnet download request:\n\n";
+        $message .= "Name: {$name}\n";
+        $message .= "Email: {$email}\n";
+        $message .= "Phone: {$phone}\n";
+        $message .= "IP Address: {$_SERVER['REMOTE_ADDR']}\n";
+        $message .= "Date: " . current_time('mysql') . "\n";
+        
+        $headers = array(
+            'Content-Type: text/plain; charset=UTF-8',
+            'From: ' . get_bloginfo('name') . ' <noreply@' . parse_url(home_url(), PHP_URL_HOST) . '>',
+            'Reply-To: ' . $email
+        );
+        
+        wp_mail($to, $subject, $message, $headers);
+        
+        // Send auto-response to user
+        $user_subject = 'Your Free Digital Marketing Guide - ' . get_bloginfo('name');
+        $user_message = "Hi {$name},\n\n";
+        $user_message .= "Thank you for requesting our Digital Marketing Guide!\n\n";        $user_message .= "We'll be sending you the guide shortly along with some exclusive insights.\n\n";
+        $user_message .= "Our team will also be in touch within 24 hours to schedule your free consultation.\n\n";
+        $user_message .= "Best regards,\n";
+        $user_message .= "The Aimpro Team\n";
+        $user_message .= "sam@futurelab.solutions\n";
+        $user_message .= "Phone: +44 121 285 8490";
+        
+        $user_headers = array(
+            'Content-Type: text/plain; charset=UTF-8',
+            'From: Aimpro Digital <sam@futurelab.solutions>'
+        );
+        
+        wp_mail($email, $user_subject, $user_message, $user_headers);
+        
+        wp_redirect(add_query_arg('lead_success', '1', $_POST['_wp_http_referer']));
+    } else {
+        wp_redirect(add_query_arg('lead_error', '1', $_POST['_wp_http_referer']));
+    }
+    exit;
+}
+add_action('admin_post_lead_magnet_form', 'aimpro_handle_lead_magnet_form');
+add_action('admin_post_nopriv_lead_magnet_form', 'aimpro_handle_lead_magnet_form');
+
+// Add admin menu for viewing form submissions
+function aimpro_add_submissions_menu() {
+    add_menu_page(
+        'Form Submissions',
+        'Form Submissions',
+        'manage_options',
+        'aimpro-submissions',
+        'aimpro_submissions_page',
+        'dashicons-email-alt',
+        30
+    );
+}
+add_action('admin_menu', 'aimpro_add_submissions_menu');
+
+// Display form submissions page
+function aimpro_submissions_page() {
+    global $wpdb;
+    $table_name = $wpdb->prefix . 'aimpro_submissions';
+    
+    // Handle deletion
+    if (isset($_GET['delete_id']) && wp_verify_nonce($_GET['_wpnonce'], 'delete_submission')) {
+        $wpdb->delete($table_name, array('id' => intval($_GET['delete_id'])), array('%d'));
+        echo '<div class="notice notice-success"><p>Submission deleted successfully!</p></div>';
+    }
+    
+    $submissions = $wpdb->get_results("SELECT * FROM $table_name ORDER BY submission_date DESC");
+    
+    ?>
+    <div class="wrap">
+        <h1>Form Submissions</h1>
+        <p>View and manage all form submissions from your website.</p>
+        
+        <table class="wp-list-table widefat fixed striped">
+            <thead>
+                <tr>
+                    <th>Date</th>
+                    <th>Type</th>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Phone</th>
+                    <th>Message</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php if ($submissions): ?>
+                    <?php foreach ($submissions as $submission): ?>
+                        <tr>
+                            <td><?php echo date('M j, Y g:i A', strtotime($submission->submission_date)); ?></td>
+                            <td>
+                                <span class="submission-type <?php echo esc_attr($submission->form_type); ?>">
+                                    <?php echo $submission->form_type === 'lead_magnet' ? 'Lead Magnet' : 'Contact Form'; ?>
+                                </span>
+                            </td>
+                            <td><strong><?php echo esc_html($submission->name); ?></strong></td>
+                            <td><a href="mailto:<?php echo esc_attr($submission->email); ?>"><?php echo esc_html($submission->email); ?></a></td>
+                            <td><?php echo esc_html($submission->phone); ?></td>
+                            <td><?php echo esc_html(wp_trim_words($submission->message, 10)); ?></td>
+                            <td>
+                                <a href="?page=aimpro-submissions&delete_id=<?php echo $submission->id; ?>&_wpnonce=<?php echo wp_create_nonce('delete_submission'); ?>" 
+                                   onclick="return confirm('Are you sure you want to delete this submission?')" 
+                                   class="button button-small">Delete</a>
+                            </td>
+                        </tr>
+                    <?php endforeach; ?>
+                <?php else: ?>
+                    <tr>
+                        <td colspan="7">No submissions found.</td>
+                    </tr>
+                <?php endif; ?>
+            </tbody>
+        </table>
+        
+        <style>
+        .submission-type {
+            padding: 3px 8px;
+            border-radius: 3px;
+            font-size: 12px;
+            font-weight: bold;
+        }
+        .submission-type.lead_magnet {
+            background: #e7f3ff;
+            color: #0073aa;
+        }
+        .submission-type.contact {
+            background: #f0f6fc;
+            color: #2c3338;
+        }
+        </style>
+    </div>
+    <?php
+}

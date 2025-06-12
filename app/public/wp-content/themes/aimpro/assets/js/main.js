@@ -1316,6 +1316,98 @@ document.addEventListener('DOMContentLoaded', function() {
     } else {
         console.warn('Theme toggle button not found');
     }
+    
+    // Form Handling
+    // ==============
+    
+    // Lead Magnet Form
+    const leadMagnetForm = document.getElementById('lead-magnet-form');
+    if (leadMagnetForm) {
+        leadMagnetForm.addEventListener('submit', function(e) {
+            const submitBtn = this.querySelector('.submit-btn');
+            const originalText = submitBtn.textContent;
+            
+            // Add loading state
+            submitBtn.textContent = 'SENDING...';
+            submitBtn.disabled = true;
+            submitBtn.style.opacity = '0.7';
+            
+            // Basic validation
+            const name = this.querySelector('[name="lead_name"]').value.trim();
+            const email = this.querySelector('[name="lead_email"]').value.trim();
+            const phone = this.querySelector('[name="lead_phone"]').value.trim();
+            
+            if (!name || !email || !phone) {
+                e.preventDefault();
+                alert('Please fill in all required fields.');
+                submitBtn.textContent = originalText;
+                submitBtn.disabled = false;
+                submitBtn.style.opacity = '1';
+                return;
+            }
+            
+            // Email validation
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(email)) {
+                e.preventDefault();
+                alert('Please enter a valid email address.');
+                submitBtn.textContent = originalText;
+                submitBtn.disabled = false;
+                submitBtn.style.opacity = '1';
+                return;
+            }
+        });
+    }
+    
+    // Main Contact Form
+    const contactForm = document.getElementById('contact-form');
+    if (contactForm) {
+        contactForm.addEventListener('submit', function(e) {
+            const submitBtn = this.querySelector('.form-submit-btn');
+            const originalText = submitBtn.textContent;
+            
+            // Add loading state
+            submitBtn.textContent = 'SENDING...';
+            submitBtn.disabled = true;
+            submitBtn.style.opacity = '0.7';
+            
+            // Basic validation
+            const name = this.querySelector('[name="name"]').value.trim();
+            const email = this.querySelector('[name="email"]').value.trim();
+            
+            if (!name || !email) {
+                e.preventDefault();
+                alert('Please fill in all required fields.');
+                submitBtn.textContent = originalText;
+                submitBtn.disabled = false;
+                submitBtn.style.opacity = '1';
+                return;
+            }
+            
+            // Email validation
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(email)) {
+                e.preventDefault();
+                alert('Please enter a valid email address.');
+                submitBtn.textContent = originalText;
+                submitBtn.disabled = false;
+                submitBtn.style.opacity = '1';
+                return;
+            }
+        });
+    }
+    
+    // Auto-hide success/error messages after 5 seconds
+    const formMessages = document.querySelectorAll('.form-message');
+    formMessages.forEach(message => {
+        setTimeout(() => {
+            message.style.transition = 'opacity 0.5s ease';
+            message.style.opacity = '0';
+            setTimeout(() => {
+                message.style.display = 'none';
+            }, 500);
+        }, 5000);
+    });
 });
 
 // CSS Animations for Ripple Effect

@@ -595,12 +595,24 @@
                         <li>Step-by-Step Implementation Guide</li>
                     </ul>
                 </div>
-            </div>
-              <div class="lead-capture-form animate-slide-right">
+            </div>              <div class="lead-capture-form animate-slide-right">
                 <h3><?php echo aimpro_get_field('lead_magnet_form_title', 'Get Your Free Digital Marketing Guide'); ?></h3>
                 <p class="form-subtitle"><?php echo aimpro_get_field('lead_magnet_form_subtitle', 'Fill out the form below and we\'ll send you our comprehensive guide plus schedule a free consultation.'); ?></p>
                 
-                <form class="lead-magnet-form" id="lead-magnet-form" method="post" action="#" novalidate>
+                <?php if (isset($_GET['lead_success'])): ?>
+                    <div class="form-message success">
+                        <p><strong>Thank you!</strong> Your request has been submitted successfully. Check your email for the guide and we'll be in touch within 24 hours!</p>
+                    </div>
+                <?php elseif (isset($_GET['lead_error'])): ?>
+                    <div class="form-message error">
+                        <p><strong>Error:</strong> There was a problem submitting your request. Please try again or contact us directly.</p>
+                    </div>
+                <?php endif; ?>
+                  <form class="lead-magnet-form" id="lead-magnet-form" method="post" action="<?php echo admin_url('admin-post.php'); ?>" novalidate>
+                    <?php wp_nonce_field('lead_magnet_submission', 'lead_magnet_nonce'); ?>
+                    <input type="hidden" name="action" value="lead_magnet_form">
+                    <input type="hidden" name="lead_magnet_form" value="1">
+                    
                     <div class="form-group">
                         <label for="lead_name"><?php echo aimpro_get_field('lead_magnet_name_label', 'Full Name *'); ?></label>
                         <input type="text" id="lead_name" name="lead_name" placeholder="Enter your full name" required>
@@ -891,17 +903,29 @@
 </section>
 
 <!-- Contact & Footer -->
-<section class="final-cta-section">
+<section id="contact" class="final-cta-section">
     <!-- Target Icons -->
     <div class="target-icon contact-target-1"></div>
     <div class="target-icon contact-target-2"></div>
     <div class="container">        <div class="final-cta-content">
             <h2><?php echo aimpro_get_field('final_cta_title', 'You Bring the Ambition, We Drive the <span class="highlight curly-underline">RESULTS</span>'); ?></h2>
             <p><?php echo aimpro_get_field('final_cta_description', 'Request a marketing review today. We\'ll send you a detailed analysis of your website and marketing, breaking down your next steps to success.'); ?></p>
-            
-            <!-- Contact Form -->
+              <!-- Contact Form -->
             <div class="contact-form-wrapper">
-                <form class="contact-form" id="contact-form" method="post" action="#" novalidate>                    <div class="form-header">
+                <?php if (isset($_GET['contact_success'])): ?>
+                    <div class="form-message success">
+                        <p><strong>Thank you!</strong> Your message has been sent successfully. We'll respond within 24 hours!</p>
+                    </div>
+                <?php elseif (isset($_GET['contact_error'])): ?>
+                    <div class="form-message error">
+                        <p><strong>Error:</strong> There was a problem sending your message. Please try again or contact us directly.</p>
+                    </div>
+                <?php endif; ?><form class="contact-form" id="contact-form" method="post" action="<?php echo admin_url('admin-post.php'); ?>" novalidate>
+                    <?php wp_nonce_field('contact_submission', 'contact_nonce'); ?>
+                    <input type="hidden" name="action" value="contact_form">
+                    <input type="hidden" name="contact_form" value="1">
+                    
+                    <div class="form-header">
                         <h3><?php echo aimpro_get_field('contact_form_title', 'Get In Touch'); ?></h3>
                         <p><?php echo aimpro_get_field('contact_form_subtitle', 'We\'d love to hear from you. Send us a message and we\'ll respond as soon as possible.'); ?></p>
                     </div>
@@ -951,10 +975,10 @@
     </div>
 </section>
 
-<footer id="contact" class="footer-section">
+<footer class="footer-section">
     <div class="footer-background-pattern"></div>
     <div class="container">
-        <div class="footer-content">            <div class="footer-column footer-brand">
+        <div class="footer-content"><div class="footer-column footer-brand">
                 <div class="footer-logo">
                     <img src="<?php echo get_template_directory_uri(); ?>/assets/images/Aimpro-Digital-UK-Final-Logo.png" alt="Aimpro Digital - Digital Marketing Agency" class="footer-logo-img">
                     <p class="brand-tagline">Transforming Businesses Through Digital Excellence</p>
