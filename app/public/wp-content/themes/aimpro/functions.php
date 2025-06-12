@@ -82,9 +82,10 @@ function aimpro_enqueue_assets() {
     wp_enqueue_style('aimpro-contact-form', get_template_directory_uri() . '/assets/css/contact-form.css', array('aimpro-base'), $theme_version);
     
     // Enqueue responsive styles (should be loaded last)
-    wp_enqueue_style('aimpro-responsive', get_template_directory_uri() . '/assets/css/responsive.css', array('aimpro-base'), $theme_version);
-      // Enqueue header overrides (loaded last to ensure proper specificity)
+    wp_enqueue_style('aimpro-responsive', get_template_directory_uri() . '/assets/css/responsive.css', array('aimpro-base'), $theme_version);    // Enqueue header overrides (loaded last to ensure proper specificity)
     wp_enqueue_style('aimpro-header-overrides', get_template_directory_uri() . '/assets/css/header-overrides.css', array('aimpro-header-modern', 'aimpro-buttons'), $theme_version);
+      // Enqueue ebook/lead magnet styles
+    wp_enqueue_style('aimpro-ebook', get_template_directory_uri() . '/assets/css/ebook.css', array('aimpro-base'), $theme_version . '-' . time());
     
     // Enqueue main style.css for backwards compatibility and WordPress theme recognition
     wp_enqueue_style('aimpro-style', get_stylesheet_uri(), array('aimpro-variables', 'aimpro-base'), $theme_version);
@@ -615,13 +616,13 @@ function aimpro_set_default_landing_page_values() {
         'lead_magnet_title' => 'Get Our Free Digital Marketing <span class="highlight curly-underline">GUIDE</span>',
         'lead_magnet_subtitle' => 'Download our comprehensive digital marketing guide packed with proven strategies to grow your business.',
         'lead_magnet_ebook_title' => 'The Ultimate Digital Marketing Playbook',
-        'lead_magnet_ebook_description' => 'Discover the exact strategies we use to help our clients increase leads by 200%+ and dominate their local markets.',
-        'lead_magnet_form_title' => 'Download Your Free Guide',
+        'lead_magnet_ebook_description' => 'Discover the exact strategies we use to help our clients increase leads by 200%+ and dominate their local markets.',        'lead_magnet_form_title' => 'Get Your Free Digital Marketing Guide',
+        'lead_magnet_form_subtitle' => 'Fill out the form below and we\'ll send you our comprehensive guide plus schedule a free consultation.',
         'lead_magnet_name_label' => 'Full Name *',
         'lead_magnet_email_label' => 'Email Address *',
         'lead_magnet_phone_label' => 'Phone Number *',
-        'lead_magnet_submit_text' => 'GET FREE GUIDE NOW',
-        'lead_magnet_privacy_text' => 'We respect your privacy. Unsubscribe at any time.'
+        'lead_magnet_submit_text' => 'GET FREE EBOOK NOW',
+        'lead_magnet_privacy_text' => 'We respect your privacy and will never share your information. <a href="/privacy-policy">Privacy Policy</a>'
     );
     
     foreach ($defaults as $key => $value) {
@@ -687,8 +688,7 @@ function aimpro_landing_page_admin() {
                 'testimonial_3_content', 'testimonial_3_author', 'testimonial_3_title',
                 'testimonial_4_content', 'testimonial_4_author', 'testimonial_4_title',
                 'testimonial_5_content', 'testimonial_5_author', 'testimonial_5_title',
-                'lead_magnet_title', 'lead_magnet_subtitle', 'lead_magnet_ebook_title', 'lead_magnet_ebook_description',
-                'lead_magnet_form_title', 'lead_magnet_name_label', 'lead_magnet_email_label', 'lead_magnet_phone_label',
+                'lead_magnet_title', 'lead_magnet_subtitle', 'lead_magnet_ebook_title', 'lead_magnet_ebook_description',                'lead_magnet_form_title', 'lead_magnet_form_subtitle', 'lead_magnet_name_label', 'lead_magnet_email_label', 'lead_magnet_phone_label',
                 'lead_magnet_submit_text', 'lead_magnet_privacy_text'
             );
               foreach ($fields as $field) {
@@ -960,12 +960,18 @@ function aimpro_landing_page_admin() {
                                 <textarea name="lead_magnet_ebook_description" rows="3" class="large-text"><?php echo esc_textarea(get_option('lead_magnet_ebook_description', 'Discover the exact strategies we use to help our clients increase leads by 200%+ and dominate their local markets.')); ?></textarea>
                                 <p class="description">Description of what's inside the ebook</p>
                             </td>
-                        </tr>
-                        <tr>
+                        </tr>                        <tr>
                             <th scope="row">Form Title</th>
                             <td>
-                                <input type="text" name="lead_magnet_form_title" value="<?php echo esc_attr(get_option('lead_magnet_form_title', 'Download Your Free Guide')); ?>" class="regular-text" />
-                                <p class="description">Title above the download form</p>
+                                <input type="text" name="lead_magnet_form_title" value="<?php echo esc_attr(get_option('lead_magnet_form_title', 'Get Your Free Digital Marketing Guide')); ?>" class="regular-text" />
+                                <p class="description">Title above the form</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Form Subtitle</th>
+                            <td>
+                                <textarea name="lead_magnet_form_subtitle" rows="2" class="large-text"><?php echo esc_textarea(get_option('lead_magnet_form_subtitle', 'Fill out the form below and we\'ll send you our comprehensive guide plus schedule a free consultation.')); ?></textarea>
+                                <p class="description">Subtitle text below the form title</p>
                             </td>
                         </tr>
                         <tr>
@@ -990,17 +996,22 @@ function aimpro_landing_page_admin() {
                             </td>
                         </tr>
                         <tr>
+                            <th scope="row">Company Field Label</th>
+                            <td>
+                                <input type="text" name="lead_magnet_company_label" value="<?php echo esc_attr(get_option('lead_magnet_company_label', 'Company Name')); ?>" class="regular-text" />
+                                <p class="description">Label for the company field (optional field)</p>
+                            </td>
+                        </tr>                        <tr>
                             <th scope="row">Submit Button Text</th>
                             <td>
-                                <input type="text" name="lead_magnet_submit_text" value="<?php echo esc_attr(get_option('lead_magnet_submit_text', 'GET FREE GUIDE NOW')); ?>" class="regular-text" />
-                                <p class="description">Text for the download button</p>
+                                <input type="text" name="lead_magnet_submit_text" value="<?php echo esc_attr(get_option('lead_magnet_submit_text', 'GET FREE EBOOK NOW')); ?>" class="regular-text" />
+                                <p class="description">Text for the submit button</p>
                             </td>
-                        </tr>
-                        <tr>
+                        </tr>                        <tr>
                             <th scope="row">Privacy Text</th>
                             <td>
-                                <input type="text" name="lead_magnet_privacy_text" value="<?php echo esc_attr(get_option('lead_magnet_privacy_text', 'We respect your privacy. Unsubscribe at any time.')); ?>" class="regular-text" />
-                                <p class="description">Small privacy notice below the form</p>
+                                <textarea name="lead_magnet_privacy_text" rows="2" class="large-text"><?php echo esc_textarea(get_option('lead_magnet_privacy_text', 'We respect your privacy and will never share your information. <a href="/privacy-policy">Privacy Policy</a>')); ?></textarea>
+                                <p class="description">Privacy notice below the form (HTML allowed for links)</p>
                             </td>
                         </tr>
                     </table>

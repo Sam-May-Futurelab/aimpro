@@ -1,0 +1,470 @@
+/* Lead Magnet Section - Dedicated Styles */
+.lead-magnet-section {
+    padding: 100px 0;
+    background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+    position: relative;
+    overflow: hidden;
+    border-top: 1px solid #e2e8f0;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.lead-magnet-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ff6b35' fill-opacity='0.02'%3E%3Ccircle cx='30' cy='30' r='4'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E") repeat;
+    z-index: 1;
+}
+
+.lead-magnet-section .container {
+    position: relative;
+    z-index: 2;
+}
+
+.lead-magnet-section .content-center {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.lead-magnet-section h2 {
+    font-size: 3.5rem;
+    font-weight: 800;
+    margin-bottom: 1.5rem;
+    color: var(--text-primary);
+    line-height: 1.2;
+}
+
+.lead-magnet-section .section-subtitle {
+    font-size: 1.25rem;
+    color: var(--text-secondary);
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+.lead-magnet-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Ebook Preview */
+.ebook-preview {
+    text-align: center;
+    position: relative;
+    perspective: 1200px;
+}
+
+.ebook-cover {
+    position: relative;
+    display: inline-block;
+    transform: perspective(1200px) rotateY(-20deg) rotateX(5deg);
+    transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    transform-style: preserve-3d;
+}
+
+.ebook-cover:hover {
+    transform: perspective(1200px) rotateY(-10deg) rotateX(2deg) scale(1.08);
+}
+
+.ebook-image {
+    width: 300px;
+    height: 400px;
+    background: linear-gradient(145deg, #ffffff 0%, #f1f5f9 100%);
+    border: 3px solid var(--primary-orange);
+    border-radius: 15px;
+    box-shadow: 
+        0 30px 60px rgba(0, 0, 0, 0.2),
+        0 20px 40px rgba(255, 107, 53, 0.15),
+        inset 0 1px 0 rgba(255, 255, 255, 0.9),
+        15px 0 30px rgba(0, 0, 0, 0.1);
+    transition: all 0.5s ease;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 2rem;
+    overflow: hidden;
+    transform-style: preserve-3d;
+}
+
+.ebook-cover:hover .ebook-image {
+    box-shadow: 
+        0 40px 80px rgba(0, 0, 0, 0.25),
+        0 25px 50px rgba(255, 107, 53, 0.2),
+        inset 0 1px 0 rgba(255, 255, 255, 0.9),
+        20px 0 40px rgba(0, 0, 0, 0.15);
+}
+
+.ebook-image::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ff6b35' fill-opacity='0.03'%3E%3Cpath d='M20 20c0-11.046-8.954-20-20-20v20h20z'/%3E%3C/g%3E%3C/svg%3E") repeat;
+    z-index: 1;
+}
+
+.ebook-image::after {
+    content: '';
+    position: absolute;
+    top: 5px;
+    left: -5px;
+    right: 5px;
+    bottom: -5px;
+    background: linear-gradient(145deg, rgba(0,0,0,0.1), rgba(0,0,0,0.05));
+    border-radius: 15px;
+    z-index: -1;
+    transform: translateZ(-10px);
+}
+
+/* Spine effect for 3D book look */
+.ebook-cover::before {
+    content: '';
+    position: absolute;
+    left: -8px;
+    top: 5px;
+    bottom: 5px;
+    width: 8px;
+    background: linear-gradient(180deg, #cc5429, #ff6b35);
+    border-radius: 0 0 0 8px;
+    transform: rotateY(-90deg);
+    transform-origin: right center;
+    z-index: -1;
+}
+
+/* Page effect */
+.ebook-cover::after {
+    content: '';
+    position: absolute;
+    right: 3px;
+    top: 8px;
+    bottom: 8px;
+    width: 3px;
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 1px;
+    transform: translateZ(1px);
+}
+
+.ebook-content {
+    position: relative;
+    z-index: 2;
+    color: var(--text-primary);
+    transform: translateZ(20px);
+}
+
+.ebook-logo {
+    font-size: 1.8rem;
+    font-weight: 900;
+    color: var(--primary-orange);
+    margin-bottom: 1.2rem;
+    letter-spacing: 3px;
+    text-shadow: 0 2px 4px rgba(255, 107, 53, 0.3);
+}
+
+.ebook-title {
+    font-size: 1.5rem;
+    font-weight: 800;
+    line-height: 1.2;
+    margin-bottom: 0.8rem;
+    color: var(--text-primary);
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.ebook-subtitle {
+    font-size: 1rem;
+    color: var(--text-secondary);
+    font-weight: 600;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+.ebook-badge {
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    background: linear-gradient(135deg, var(--primary-orange), #ff8f65);
+    color: white;
+    padding: 0.7rem 1.2rem;
+    border-radius: 25px;
+    font-size: 0.9rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    box-shadow: 
+        0 8px 20px rgba(255, 107, 53, 0.4),
+        0 3px 8px rgba(0, 0, 0, 0.2);
+    z-index: 4;
+    transform: translateZ(30px);
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        transform: translateZ(30px) scale(1);
+    }
+    50% {
+        transform: translateZ(30px) scale(1.05);
+    }
+}
+
+.ebook-details {
+    margin-top: 2rem;
+    text-align: left;
+    max-width: 350px;
+}
+
+.ebook-details h3 {
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 1rem;
+    line-height: 1.3;
+}
+
+.ebook-details p {
+    color: var(--text-secondary);
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+}
+
+.ebook-features {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.ebook-features li {
+    color: var(--text-primary);
+    font-size: 0.95rem;
+    margin-bottom: 0.75rem;
+    position: relative;
+    padding-left: 1.5rem;
+}
+
+.ebook-features li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: var(--primary-orange);
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+/* Lead Capture Form */
+.lead-capture-form {
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    border-radius: 20px;
+    padding: 3rem;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 
+        0 20px 40px rgba(0, 0, 0, 0.08),
+        0 5px 15px rgba(0, 0, 0, 0.04);
+}
+
+.lead-capture-form::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--primary-orange), #ff8f65);
+}
+
+.lead-capture-form h3 {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.lead-capture-form .form-subtitle {
+    color: var(--text-secondary);
+    text-align: center;
+    margin-bottom: 2.5rem;
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+.lead-magnet-section .form-group {
+    margin-bottom: 1.5rem;
+}
+
+.lead-magnet-section .form-group label {
+    display: block;
+    color: var(--text-primary);
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    font-size: 0.95rem;
+}
+
+.lead-magnet-section .form-group input[type="text"],
+.lead-magnet-section .form-group input[type="email"] {
+    width: 100%;
+    padding: 1rem 1.25rem;
+    border: 2px solid #e2e8f0;
+    border-radius: 12px;
+    background: #ffffff;
+    color: var(--text-primary);
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.02);
+}
+
+.lead-magnet-section .form-group input[type="text"]:focus,
+.lead-magnet-section .form-group input[type="email"]:focus {
+    outline: none;
+    border-color: var(--primary-orange);
+    background: #ffffff;
+    box-shadow: 
+        0 0 0 3px rgba(255, 107, 53, 0.1),
+        0 4px 8px rgba(0, 0, 0, 0.08);
+}
+
+.lead-magnet-section .form-group input::placeholder {
+    color: #94a3b8;
+}
+
+/* Use existing button styles from buttons.css */
+.lead-magnet-section .btn.btn-primary.large.submit-btn {
+    width: 100%;
+    margin-bottom: 1.5rem;
+}
+
+.lead-magnet-section .privacy-notice {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    text-align: center;
+    line-height: 1.4;
+}
+
+.lead-magnet-section .privacy-notice a {
+    color: var(--primary-orange);
+    text-decoration: none;
+}
+
+.lead-magnet-section .privacy-notice a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .lead-magnet-wrapper {
+        gap: 60px;
+    }
+    
+    .lead-capture-form {
+        padding: 2.5rem;
+    }
+    
+    .ebook-image {
+        width: 250px;
+        height: 330px;
+        padding: 1.5rem;
+    }
+    
+    .ebook-logo {
+        font-size: 1.3rem;
+    }
+    
+    .ebook-title {
+        font-size: 1.2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .lead-magnet-section {
+        padding: 80px 0;
+    }
+    
+    .lead-magnet-section h2 {
+        font-size: 2.5rem;
+    }
+    
+    .lead-magnet-wrapper {
+        grid-template-columns: 1fr;
+        gap: 50px;
+        text-align: center;
+    }
+    
+    .ebook-cover {
+        transform: none;
+    }
+    
+    .ebook-cover:hover {
+        transform: scale(1.05);
+    }
+    
+    .ebook-details {
+        text-align: center;
+        margin: 2rem auto 0;
+    }
+    
+    .lead-capture-form {
+        padding: 2rem;
+    }
+    
+    .lead-capture-form h3 {
+        font-size: 1.75rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .lead-magnet-section {
+        padding: 60px 0;
+    }
+    
+    .lead-magnet-section h2 {
+        font-size: 2rem;
+    }
+    
+    .lead-magnet-section .section-subtitle {
+        font-size: 1.1rem;
+    }
+    
+    .ebook-image {
+        width: 200px;
+        height: 270px;
+        padding: 1rem;
+    }
+    
+    .ebook-logo {
+        font-size: 1.1rem;
+        margin-bottom: 0.75rem;
+    }
+    
+    .ebook-title {
+        font-size: 1rem;
+    }
+    
+    .ebook-subtitle {
+        font-size: 0.85rem;
+    }    
+    .lead-capture-form {
+        padding: 1.5rem;
+    }
+    
+    .lead-capture-form h3 {
+        font-size: 1.5rem;
+    }
+    
+    .lead-magnet-section .form-group input[type="text"],
+    .lead-magnet-section .form-group input[type="email"] {
+        padding: 0.875rem 1rem;
+    }
+}
