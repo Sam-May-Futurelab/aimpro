@@ -306,9 +306,8 @@
             <p class="section-subtitle">Zero fluff. Pure performance. Our integrated marketing ecosystem works seamlessly to transform prospects into profits.</p>
         </div>
         
-        <div class="premium-services-grid">
-            <!-- Lead Generation Service -->
-            <div class="premium-service-card" data-service="lead-generation">
+        <div class="premium-services-grid">            <!-- SEO Services -->
+            <div class="premium-service-card" data-service="seo-services">
                 <div class="service-background">
                     <div class="service-pattern pattern-1"></div>
                 </div>
@@ -317,26 +316,27 @@
                         <div class="service-icon-container">
                             <div class="service-icon-animated">
                                 <svg class="service-svg" viewBox="0 0 100 100">
-                                    <circle cx="50" cy="50" r="20" class="icon-circle"/>
-                                    <path d="M30 30 L50 50 L70 30" class="icon-arrow"/>
-                                    <circle cx="50" cy="50" r="3" class="icon-dot"/>
+                                    <circle cx="40" cy="40" r="20" class="icon-circle" fill="none" stroke="currentColor"/>
+                                    <path d="M56 56 L70 70" class="icon-arrow" stroke="currentColor"/>
+                                    <path d="M35 40 L45 40" class="icon-line" stroke="currentColor"/>
+                                    <path d="M35 45 L50 45" class="icon-line" stroke="currentColor"/>
                                 </svg>
                             </div>
-                            <div class="service-badge">Lead Gen</div>
+                            <div class="service-badge">SEO</div>
                         </div>
-                        <h3>Lead Generation</h3>
+                        <h3>SEO Services</h3>
                     </div>
                     <div class="service-description">
-                        <p>Deploy high-impact lead generation campaigns that attract, qualify, and convert your ideal prospects into profitable customers using advanced targeting and conversion optimization.</p>
+                        <p>Dominate search results with comprehensive SEO strategies including local SEO, technical optimization, and on-page excellence that drive organic traffic and qualified leads.</p>
                         <div class="service-features">
-                            <span class="feature-tag">✓ Advanced Targeting</span>
-                            <span class="feature-tag">✓ Lead Scoring</span>
-                            <span class="feature-tag">✓ Conversion Tracking</span>
+                            <span class="feature-tag">✓ Local SEO</span>
+                            <span class="feature-tag">✓ Technical SEO</span>
+                            <span class="feature-tag">✓ SEO Audits</span>
                         </div>
                     </div>
                     <div class="service-action">
                         <a href="#contact" class="premium-service-cta">
-                            <span>SCALE YOUR LEADS</span>
+                            <span>RANK HIGHER</span>
                             <div class="cta-arrow">
                                 <svg width="20" height="20" viewBox="0 0 24 24">
                                     <path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2" fill="none"/>
@@ -430,10 +430,8 @@
                     </div>
                 </div>
                 <div class="service-overlay"></div>
-            </div>
-
-            <!-- Social Media Ads -->
-            <div class="premium-service-card" data-service="social-media">
+            </div>            <!-- Meta Ads (Facebook/Instagram) -->
+            <div class="premium-service-card" data-service="meta-ads">
                 <div class="service-background">
                     <div class="service-pattern pattern-4"></div>
                 </div>
@@ -442,24 +440,22 @@
                         <div class="service-icon-container">
                             <div class="service-icon-animated">
                                 <svg class="service-svg" viewBox="0 0 100 100">
-                                    <circle cx="30" cy="30" r="12" class="icon-circle"/>
-                                    <circle cx="70" cy="30" r="12" class="icon-circle"/>
-                                    <circle cx="50" cy="70" r="12" class="icon-circle"/>
-                                    <path d="M42 30 L58 30" class="icon-line"/>
-                                    <path d="M38 42 L42 58" class="icon-line"/>
-                                    <path d="M62 42 L58 58" class="icon-line"/>
+                                    <rect x="25" y="25" width="50" height="50" rx="8" class="icon-circle" fill="none" stroke="currentColor"/>
+                                    <circle cx="40" cy="40" r="3" class="icon-dot"/>
+                                    <circle cx="60" cy="40" r="3" class="icon-dot"/>
+                                    <path d="M35 55 Q50 65 65 55" class="icon-line" fill="none" stroke="currentColor"/>
                                 </svg>
                             </div>
-                            <div class="service-badge">Social</div>
+                            <div class="service-badge">Meta</div>
                         </div>
-                        <h3>Social Media Ads</h3>
+                        <h3>Meta Ads (FB/Instagram)</h3>
                     </div>
                     <div class="service-description">
-                        <p>Amplify your brand presence across social platforms with strategic ad campaigns that cut through the noise, capture attention, and convert audiences into loyal customers.</p>
+                        <p>Amplify your brand presence across Facebook and Instagram with strategic ad campaigns that capture attention, engage audiences, and convert social traffic into loyal customers.</p>
                         <div class="service-features">
-                            <span class="feature-tag">✓ Multi-Platform</span>
-                            <span class="feature-tag">✓ Creative Testing</span>
-                            <span class="feature-tag">✓ Audience Insights</span>
+                            <span class="feature-tag">✓ Facebook Ads</span>
+                            <span class="feature-tag">✓ Instagram Ads</span>
+                            <span class="feature-tag">✓ Retargeting Campaigns</span>
                         </div>
                     </div>
                     <div class="service-action">
