@@ -710,12 +710,11 @@ function aimpro_set_default_landing_page_values() {
         'value_statement_title' => 'A Results-Driven Digital Agency Obsessed With Your <span class="highlight curly-underline">SUCCESS</span>',
         'value_statement_description' => 'We partner with ambitious businesses to transform their digital presence through intelligent strategies and performance-focused marketing. Our proven methodologies deliver quantifiable results that drive exponential growth and maximize your competitive advantage.',
         'value_statement_cta_text' => 'CLAIM YOUR FREE GROWTH AUDIT',
-        'value_statement_cta_url' => '#contact',
-        // Blog Section
+        'value_statement_cta_url' => '#contact',        // Blog Section
         'blog_title' => 'Scale Up Your <span class="highlight curly-underline">MARKETING</span>',
         'blog_subtitle' => 'Zero secrets. Maximum value. We share proven strategies and insider insights to help ambitious marketers like you accelerate growth, drive traffic, and maximize revenue.',
-        'blog_cta_text' => 'READ MORE INSIGHTS',
-        'blog_cta_url' => '/blog',        // Final CTA Section
+        'blog_cta_text' => 'MORE BLOGS',
+        'blog_cta_url' => '/blog',// Final CTA Section
         'final_cta_title' => 'You Bring the Ambition, We Drive the <span class="highlight curly-underline">RESULTS</span>',
         'final_cta_description' => 'Request a marketing review today. We\'ll send you a detailed analysis of your website and marketing, breaking down your next steps to success.',
         // Service Tags

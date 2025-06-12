@@ -901,44 +901,66 @@
                     <p>No insights found. Please add some insights in the admin panel.</p>
                 <?php endif; wp_reset_postdata(); ?>
             </div>
-        </div>
-        <div class="insights-cta">
-            <a href="<?php echo get_post_type_archive_link('insight'); ?>" class="btn-outline premium-hover"><?php echo aimpro_get_field('insights_cta_text', 'View All Insights'); ?></a>
+        </div>        <div class="insights-cta">
+            <a href="<?php echo get_post_type_archive_link('insight'); ?>" class="btn-outline premium-hover"><?php echo aimpro_get_field('insights_cta_text', 'More Blogs'); ?></a>
         </div>
     </div>
 </section>
 
 <!-- Latest Blogs -->
 <section class="blog-section">
-    <div class="container">        <div class="content-center">            <h2><?php echo aimpro_get_field('blog_title', 'Scale Up Your <span class="highlight curly-underline">MARKETING</span>'); ?></h2>
-            <p class="section-subtitle"><?php echo aimpro_get_field('blog_subtitle', 'Zero secrets. Maximum value. We share proven strategies and insider insights to help ambitious marketers like you accelerate growth, drive traffic, and maximize revenue.'); ?></p>
+    <div class="container">
+        <div class="content-center">
+            <h2><?php echo aimpro_get_field('blog_title', 'Latest <span class="highlight curly-underline">BLOGS</span>'); ?></h2>
+            <p class="section-subtitle"><?php echo aimpro_get_field('blog_subtitle', 'Expert insights and industry updates to keep you ahead of the competition'); ?></p>
         </div>
+        
         <div class="blog-grid">
             <?php
-            $recent_posts = wp_get_recent_posts(array(
-                'numberposts' => 3,
+            // Get the 3 most recent posts
+            $recent_posts = get_posts(array(
+                'posts_per_page' => 3,
                 'post_status' => 'publish'
             ));
             
-            foreach($recent_posts as $post) {
-                setup_postdata($post);
-                $categories = get_the_category($post['ID']);
-                $category_name = !empty($categories) ? $categories[0]->name : 'Uncategorized';
-                ?>
-                <article class="blog-card slide-up">                    <div class="blog-meta">
-                        <span class="blog-date"><?php echo get_the_date('M j, Y', $post['ID']); ?></span>
-                        <span class="blog-category"><?php echo $category_name; ?></span>
-                    </div>
-                    <h3><a href="<?php echo get_permalink($post['ID']); ?>"><?php echo $post['post_title']; ?></a></h3>
-                    <p><?php echo wp_trim_words($post['post_content'], 20, '...'); ?></p>
-                    <a href="<?php echo get_permalink($post['ID']); ?>" class="read-more">Read More</a>
-                </article>
-                <?php
+            if (!empty($recent_posts)) {
+                foreach ($recent_posts as $post) {
+                    setup_postdata($post);
+                    $categories = get_the_category();
+                    $category_name = !empty($categories) ? esc_html($categories[0]->name) : 'Uncategorized';
+                    ?>
+                    <article class="blog-card">
+                        <div class="blog-image">
+                            <?php if (has_post_thumbnail()): ?>
+                                <a href="<?php the_permalink(); ?>">
+                                    <?php the_post_thumbnail('medium', array('class' => 'blog-thumbnail', 'alt' => get_the_title())); ?>
+                                </a>
+                            <?php else: ?>
+                                <a href="<?php the_permalink(); ?>">
+                                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/default-blog.png" alt="<?php the_title_attribute(); ?>" class="blog-thumbnail" />
+                                </a>
+                            <?php endif; ?>
+                            <span class="blog-category"><?php echo $category_name; ?></span>
+                        </div>
+                          <div class="blog-content">
+                            <h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
+                            <div class="blog-meta">
+                                <span class="blog-date"><?php echo get_the_date('M j, Y'); ?></span>
+                            </div>                            <p class="blog-excerpt"><?php echo wp_trim_words(get_the_excerpt(), 15, '...'); ?></p>
+                            <a href="<?php the_permalink(); ?>" class="btn-outline btn-sm">Read More</a>
+                        </div>
+                    </article>
+                    <?php
+                }
+                wp_reset_postdata();
+            } else {
+                echo '<p class="no-posts-found">No blog posts found. Please add some posts in the WordPress admin.</p>';
             }
-            wp_reset_postdata();
             ?>
-        </div>        <div class="blog-cta-section">
-            <a href="<?php echo aimpro_get_field('blog_cta_url', '/blog'); ?>" class="btn-primary large"><?php echo aimpro_get_field('blog_cta_text', 'READ MORE INSIGHTS'); ?></a>
+        </div>
+        
+        <div class="blog-cta-section">
+            <a href="<?php echo aimpro_get_field('blog_cta_url', '/blog'); ?>" class="btn-primary large"><?php echo aimpro_get_field('blog_cta_text', 'MORE BLOGS'); ?></a>
         </div>
     </div>
 </section>
