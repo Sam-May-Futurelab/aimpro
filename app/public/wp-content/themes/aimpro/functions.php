@@ -610,8 +610,18 @@ function aimpro_set_default_landing_page_values() {
         'testimonial_4_author' => 'Sarah Thompson',
         'testimonial_4_title' => 'Marketing Manager, London',
         'testimonial_5_content' => 'Our online visibility has improved dramatically thanks to Aimpro Digital\'s SEO expertise. Within months, we went from barely being on the map to ranking on the first page for key terms. The team is knowledgeable, transparent, and always ready with helpful advice. Couldn\'t recommend them more!',
-        'testimonial_5_author' => 'James Whitfield',
-        'testimonial_5_title' => 'Director, Birmingham'
+        'testimonial_5_author' => 'James Whitfield',        'testimonial_5_title' => 'Director, Birmingham',
+        // Lead Magnet Section
+        'lead_magnet_title' => 'Get Our Free Digital Marketing <span class="highlight curly-underline">GUIDE</span>',
+        'lead_magnet_subtitle' => 'Download our comprehensive digital marketing guide packed with proven strategies to grow your business.',
+        'lead_magnet_ebook_title' => 'The Ultimate Digital Marketing Playbook',
+        'lead_magnet_ebook_description' => 'Discover the exact strategies we use to help our clients increase leads by 200%+ and dominate their local markets.',
+        'lead_magnet_form_title' => 'Download Your Free Guide',
+        'lead_magnet_name_label' => 'Full Name *',
+        'lead_magnet_email_label' => 'Email Address *',
+        'lead_magnet_phone_label' => 'Phone Number *',
+        'lead_magnet_submit_text' => 'GET FREE GUIDE NOW',
+        'lead_magnet_privacy_text' => 'We respect your privacy. Unsubscribe at any time.'
     );
     
     foreach ($defaults as $key => $value) {
@@ -673,15 +683,17 @@ function aimpro_landing_page_admin() {
                 'contact_form_query_placeholder', 'contact_form_submit_text',
                 'office_title', 'office_description', 'office_address_title', 'office_address',
                 'testimonials_title', 'testimonials_subtitle',
-                'testimonial_1_content', 'testimonial_1_author', 'testimonial_1_title',
-                'testimonial_2_content', 'testimonial_2_author', 'testimonial_2_title',
+                'testimonial_1_content', 'testimonial_1_author', 'testimonial_1_title',                'testimonial_2_content', 'testimonial_2_author', 'testimonial_2_title',
                 'testimonial_3_content', 'testimonial_3_author', 'testimonial_3_title',
                 'testimonial_4_content', 'testimonial_4_author', 'testimonial_4_title',
-                'testimonial_5_content', 'testimonial_5_author', 'testimonial_5_title'
+                'testimonial_5_content', 'testimonial_5_author', 'testimonial_5_title',
+                'lead_magnet_title', 'lead_magnet_subtitle', 'lead_magnet_ebook_title', 'lead_magnet_ebook_description',
+                'lead_magnet_form_title', 'lead_magnet_name_label', 'lead_magnet_email_label', 'lead_magnet_phone_label',
+                'lead_magnet_submit_text', 'lead_magnet_privacy_text'
             );
               foreach ($fields as $field) {
                 if (isset($_POST[$field])) {
-                    if (in_array($field, array('hero_title', 'office_title', 'office_address', 'value_statement_title', 'blog_title', 'final_cta_title'))) {
+                    if (in_array($field, array('hero_title', 'office_title', 'office_address', 'value_statement_title', 'blog_title', 'final_cta_title', 'lead_magnet_title'))) {
                         // Allow HTML for specific fields
                         update_option($field, wp_kses_post(wp_unslash($_POST[$field])));
                     } else {
@@ -912,6 +924,83 @@ function aimpro_landing_page_admin() {
                             <td>
                                 <input type="text" name="contact_form_submit_text" value="<?php echo esc_attr(get_option('contact_form_submit_text', 'Submit')); ?>" class="regular-text" />
                                 <p class="description">Text for the form submit button.</p>
+                            </td>
+                        </tr>                    </table>
+                </div>
+                
+                <!-- Lead Magnet Section -->
+                <div class="aimpro-admin-section">
+                    <h2>Lead Magnet Section</h2>
+                    <p class="description">Customize the free digital marketing guide lead magnet section.</p>
+                    <table class="form-table">
+                        <tr>
+                            <th scope="row">Section Title</th>
+                            <td>
+                                <textarea name="lead_magnet_title" rows="2" class="large-text"><?php echo esc_textarea(get_option('lead_magnet_title', 'Get Our Free Digital Marketing <span class="highlight curly-underline">GUIDE</span>')); ?></textarea>
+                                <p class="description">Main title for the lead magnet section (HTML allowed)</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Section Subtitle</th>
+                            <td>
+                                <textarea name="lead_magnet_subtitle" rows="2" class="large-text"><?php echo esc_textarea(get_option('lead_magnet_subtitle', 'Download our comprehensive digital marketing guide packed with proven strategies to grow your business.')); ?></textarea>
+                                <p class="description">Subtitle text below the main title</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Ebook Title</th>
+                            <td>
+                                <input type="text" name="lead_magnet_ebook_title" value="<?php echo esc_attr(get_option('lead_magnet_ebook_title', 'The Ultimate Digital Marketing Playbook')); ?>" class="regular-text" />
+                                <p class="description">Title of the ebook/guide</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Ebook Description</th>
+                            <td>
+                                <textarea name="lead_magnet_ebook_description" rows="3" class="large-text"><?php echo esc_textarea(get_option('lead_magnet_ebook_description', 'Discover the exact strategies we use to help our clients increase leads by 200%+ and dominate their local markets.')); ?></textarea>
+                                <p class="description">Description of what's inside the ebook</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Form Title</th>
+                            <td>
+                                <input type="text" name="lead_magnet_form_title" value="<?php echo esc_attr(get_option('lead_magnet_form_title', 'Download Your Free Guide')); ?>" class="regular-text" />
+                                <p class="description">Title above the download form</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Name Field Label</th>
+                            <td>
+                                <input type="text" name="lead_magnet_name_label" value="<?php echo esc_attr(get_option('lead_magnet_name_label', 'Full Name *')); ?>" class="regular-text" />
+                                <p class="description">Label for the name field</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Email Field Label</th>
+                            <td>
+                                <input type="text" name="lead_magnet_email_label" value="<?php echo esc_attr(get_option('lead_magnet_email_label', 'Email Address *')); ?>" class="regular-text" />
+                                <p class="description">Label for the email field</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Phone Field Label</th>
+                            <td>
+                                <input type="text" name="lead_magnet_phone_label" value="<?php echo esc_attr(get_option('lead_magnet_phone_label', 'Phone Number *')); ?>" class="regular-text" />
+                                <p class="description">Label for the phone field</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Submit Button Text</th>
+                            <td>
+                                <input type="text" name="lead_magnet_submit_text" value="<?php echo esc_attr(get_option('lead_magnet_submit_text', 'GET FREE GUIDE NOW')); ?>" class="regular-text" />
+                                <p class="description">Text for the download button</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Privacy Text</th>
+                            <td>
+                                <input type="text" name="lead_magnet_privacy_text" value="<?php echo esc_attr(get_option('lead_magnet_privacy_text', 'We respect your privacy. Unsubscribe at any time.')); ?>" class="regular-text" />
+                                <p class="description">Small privacy notice below the form</p>
                             </td>
                         </tr>
                     </table>
@@ -1242,4 +1331,5 @@ function aimpro_cleanup_escaped_quotes() {    $fields_to_clean = array(
 
 // Run cleanup on theme activation or when needed
 // Uncomment the next line to run cleanup once
-add_action('admin_init', 'aimpro_cleanup_escaped_quotes');
+// Cleanup function disabled after fixing escaped quotes
+// add_action('admin_init', 'aimpro_cleanup_escaped_quotes');

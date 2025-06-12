@@ -563,7 +563,73 @@
             </div>
         </div>
           <div class="services-cta-section">
-            <a href="#contact" class="btn-primary large pulse-animation">UNLOCK YOUR GROWTH POTENTIAL</a>
+            <a href="#contact" class="btn-primary large pulse-animation">UNLOCK YOUR GROWTH POTENTIAL</a>        </div>
+    </div>
+</section>
+
+<!-- Lead Magnet Section -->
+<section class="lead-magnet-section">
+    <div class="container">
+        <div class="content-center">
+            <h2><?php echo aimpro_get_field('lead_magnet_title', 'Get Our Free Digital Marketing <span class="highlight curly-underline">GUIDE</span>'); ?></h2>
+            <p class="section-subtitle"><?php echo aimpro_get_field('lead_magnet_subtitle', 'Download our comprehensive digital marketing guide packed with proven strategies to grow your business.'); ?></p>
+        </div>
+        
+        <div class="lead-magnet-wrapper">            <div class="ebook-preview animate-slide-left">
+                <div class="ebook-cover">
+                    <div class="ebook-image">
+                        <div class="ebook-content">
+                            <div class="ebook-logo">AIMPRO</div>
+                            <div class="ebook-title"><?php echo strip_tags(aimpro_get_field('lead_magnet_ebook_title', 'The Ultimate Digital Marketing Playbook')); ?></div>
+                            <div class="ebook-subtitle">Complete Guide to Online Success</div>
+                        </div>
+                        <div class="ebook-badge">FREE</div>
+                    </div>
+                </div>
+                <div class="ebook-details">
+                    <h3><?php echo aimpro_get_field('lead_magnet_ebook_title', 'The Ultimate Digital Marketing Playbook'); ?></h3>
+                    <p><?php echo aimpro_get_field('lead_magnet_ebook_description', 'Discover the exact strategies we use to help our clients increase leads by 200%+ and dominate their local markets.'); ?></p>
+                    <ul class="ebook-features">
+                        <li>50+ Pages of Actionable Strategies</li>
+                        <li>Case Studies & Real Examples</li>
+                        <li>Step-by-Step Implementation Guide</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="lead-form-container animate-slide-right">
+                <div class="lead-form-wrapper">
+                    <h3><?php echo aimpro_get_field('lead_magnet_form_title', 'Download Your Free Guide'); ?></h3>
+                    
+                    <form class="lead-magnet-form" id="lead-magnet-form" method="post" action="#" novalidate>
+                        <div class="form-group">
+                            <label for="lead_name"><?php echo aimpro_get_field('lead_magnet_name_label', 'Full Name *'); ?></label>
+                            <input type="text" id="lead_name" name="lead_name" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="lead_email"><?php echo aimpro_get_field('lead_magnet_email_label', 'Email Address *'); ?></label>
+                            <input type="email" id="lead_email" name="lead_email" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="lead_phone"><?php echo aimpro_get_field('lead_magnet_phone_label', 'Phone Number *'); ?></label>
+                            <input type="tel" id="lead_phone" name="lead_phone" required>
+                        </div>
+                        
+                        <button type="submit" class="lead-submit-btn">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                                <polyline points="7,10 12,15 17,10"></polyline>
+                                <line x1="12" y1="15" x2="12" y2="3"></line>
+                            </svg>
+                            <?php echo aimpro_get_field('lead_magnet_submit_text', 'GET FREE GUIDE NOW'); ?>
+                        </button>
+                        
+                        <p class="privacy-notice"><?php echo aimpro_get_field('lead_magnet_privacy_text', 'We respect your privacy. Unsubscribe at any time.'); ?></p>
+                    </form>
+                </div>
+            </div>
         </div>
     </div>
 </section>
