@@ -149,7 +149,8 @@
 
 /* Light Theme Service Card Hover Styles */
 :root.light-theme .service-card:hover::before {
-    /* Styles for service card hover in light theme */
+    opacity: 0.15;
+    filter: contrast(1.1) brightness(0.9);
 }
 
 /* Theme Transition Styles */

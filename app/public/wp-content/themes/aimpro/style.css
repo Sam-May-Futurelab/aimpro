@@ -107,13 +107,16 @@ Version: 1.0
     animation-delay: -5s;
     background-position: -100px 0;
 }
+
+.trust-indicators {
     padding: 0;
 }
 
 .trust-item {
     display: flex;
     align-items: center;
-    gap: 0.5rem;    background: var(--glass-bg);
+    gap: 0.5rem;
+    background: var(--glass-bg);
     backdrop-filter: blur(10px);
     padding: 0.6rem 1rem;
     border-radius: 20px;
@@ -258,7 +261,6 @@ Version: 1.0
 .tag:nth-child(8) { animation-delay: 0.8s; }
 
 /* Value Statement - Moved to sections/value-statement.css */
-}
 
 /* Stats Section */
 .stats-section {

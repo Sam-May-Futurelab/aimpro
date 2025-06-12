@@ -88,6 +88,9 @@ function aimpro_enqueue_assets() {
     // Enqueue responsive styles (should be loaded last)
     wp_enqueue_style('aimpro-responsive', get_template_directory_uri() . '/assets/css/responsive.css', array('aimpro-base'), $theme_version);
     
+    // Enqueue header overrides (loaded last to ensure proper specificity)
+    wp_enqueue_style('aimpro-header-overrides', get_template_directory_uri() . '/assets/css/header-overrides.css', array('aimpro-header-menu', 'aimpro-buttons'), $theme_version);
+    
     // Enqueue main style.css for backwards compatibility and WordPress theme recognition
     wp_enqueue_style('aimpro-style', get_stylesheet_uri(), array('aimpro-variables', 'aimpro-base'), $theme_version);
     
