@@ -204,6 +204,14 @@
     text-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
 }
 
+/* Fix highlighted text in hero title */
+.hero-title .highlight-word {
+    -webkit-text-fill-color: #f15a25 !important;
+    color: #f15a25 !important;
+    text-shadow: none !important;
+    background: none !important;
+}
+
 /* Hero Straplines */
 .hero-straplines {
     height: 30px;

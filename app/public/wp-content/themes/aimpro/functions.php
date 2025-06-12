@@ -547,10 +547,45 @@ function aimpro_set_default_landing_page_values() {
         'stat_3_number' => '15',
         'stat_3_label' => 'Industries Transformed',
         'stat_4_number' => '199',
-        'stat_4_label' => 'Increase in Conversion Rates',
-        // Services
+        'stat_4_label' => 'Increase in Conversion Rates',        // Services
         'services_title' => 'Premium Digital Marketing Solutions That <span class="highlight curly-underline">DELIVER</span>',
         'services_subtitle' => 'Zero fluff. Pure performance. Our integrated marketing ecosystem works seamlessly to transform prospects into profits.',
+        // Value Statement
+        'value_statement_title' => 'A Results-Driven Digital Agency Obsessed With Your <span class="highlight curly-underline">SUCCESS</span>',
+        'value_statement_description' => 'We partner with ambitious businesses to transform their digital presence through intelligent strategies and performance-focused marketing. Our proven methodologies deliver quantifiable results that drive exponential growth and maximize your competitive advantage.',
+        'value_statement_cta_text' => 'CLAIM YOUR FREE GROWTH AUDIT',
+        'value_statement_cta_url' => '#contact',
+        // Blog Section
+        'blog_title' => 'Scale Up Your <span class="highlight curly-underline">MARKETING</span>',
+        'blog_subtitle' => 'Zero secrets. Maximum value. We share proven strategies and insider insights to help ambitious marketers like you accelerate growth, drive traffic, and maximize revenue.',
+        'blog_cta_text' => 'READ MORE INSIGHTS',
+        'blog_cta_url' => '/blog',        // Final CTA Section
+        'final_cta_title' => 'You Bring the Ambition, We Drive the <span class="highlight curly-underline">RESULTS</span>',
+        'final_cta_description' => 'Request a marketing review today. We\'ll send you a detailed analysis of your website and marketing, breaking down your next steps to success.',
+        // Service Tags
+        'service_tag_1' => 'SEO',
+        'service_tag_2' => 'Google Ads',
+        'service_tag_3' => 'Social Media',
+        'service_tag_4' => 'Website',
+        'service_tag_5' => 'Ads',
+        'service_tag_6' => 'Email',
+        'service_tag_7' => 'AI Automation',
+        'service_tag_8' => 'CRM',
+        // Header CTA Buttons
+        'header_cta_1_text' => 'Get a Free Audit',
+        'header_cta_1_url' => '#contact',
+        'header_cta_2_text' => 'Book a Call',
+        'header_cta_2_url' => 'tel:+441212858490',
+        // Contact Form
+        'contact_form_title' => 'Get In Touch',
+        'contact_form_subtitle' => 'We\'d love to hear from you. Send us a message and we\'ll respond as soon as possible.',
+        'contact_form_name_label' => 'Name *',
+        'contact_form_email_label' => 'Email *',
+        'contact_form_phone_label' => 'Phone',
+        'contact_form_referral_label' => 'Where did you find us?',
+        'contact_form_query_label' => 'Query',
+        'contact_form_query_placeholder' => 'Tell us about your inquiry...',
+        'contact_form_submit_text' => 'Submit',
         // Office
         'office_title' => 'Come See Us... We\'re a <span class="highlight curly-underline">REAL</span> Company with Real Humans',
         'office_description' => 'Let\'s discuss your project over a coffee. Book a time to visit our Birmingham office and meet the team behind your marketing success.',
@@ -617,9 +652,9 @@ add_action('admin_menu', 'aimpro_add_admin_pages');
 /**
  * Landing Page Settings Admin Page Content
  */
-function aimpro_landing_page_admin() {    // Handle form submission
-    if (isset($_POST['submit']) && wp_verify_nonce($_POST['aimpro_landing_page_nonce'], 'aimpro_landing_page_save')) {
-        if (current_user_can('manage_options')) {
+function aimpro_landing_page_admin() {
+    // Handle form submission
+    if (isset($_POST['submit']) && wp_verify_nonce($_POST['aimpro_landing_page_nonce'], 'aimpro_landing_page_save')) {        if (current_user_can('manage_options')) {
             // Save all the custom fields
             $fields = array(
                 'hero_badge_text', 'hero_title', 'hero_subtitle', 'hero_primary_cta_text', 'hero_primary_cta_url',
@@ -627,6 +662,15 @@ function aimpro_landing_page_admin() {    // Handle form submission
                 'stat_1_number', 'stat_1_label', 'stat_2_number', 'stat_2_label',
                 'stat_3_number', 'stat_3_label', 'stat_4_number', 'stat_4_label',
                 'services_title', 'services_subtitle',
+                'service_tag_1', 'service_tag_2', 'service_tag_3', 'service_tag_4', 
+                'service_tag_5', 'service_tag_6', 'service_tag_7', 'service_tag_8',
+                'value_statement_title', 'value_statement_description', 'value_statement_cta_text', 'value_statement_cta_url',
+                'blog_title', 'blog_subtitle', 'blog_cta_text', 'blog_cta_url',
+                'final_cta_title', 'final_cta_description',
+                'header_cta_1_text', 'header_cta_1_url', 'header_cta_2_text', 'header_cta_2_url',
+                'contact_form_title', 'contact_form_subtitle', 'contact_form_name_label', 'contact_form_email_label',
+                'contact_form_phone_label', 'contact_form_referral_label', 'contact_form_query_label', 
+                'contact_form_query_placeholder', 'contact_form_submit_text',
                 'office_title', 'office_description', 'office_address_title', 'office_address',
                 'testimonials_title', 'testimonials_subtitle',
                 'testimonial_1_content', 'testimonial_1_author', 'testimonial_1_title',
@@ -635,15 +679,14 @@ function aimpro_landing_page_admin() {    // Handle form submission
                 'testimonial_4_content', 'testimonial_4_author', 'testimonial_4_title',
                 'testimonial_5_content', 'testimonial_5_author', 'testimonial_5_title'
             );
-            
-            foreach ($fields as $field) {
+              foreach ($fields as $field) {
                 if (isset($_POST[$field])) {
-                    if (in_array($field, array('hero_title', 'office_title', 'office_address'))) {
+                    if (in_array($field, array('hero_title', 'office_title', 'office_address', 'value_statement_title', 'blog_title', 'final_cta_title'))) {
                         // Allow HTML for specific fields
-                        update_option($field, wp_kses_post($_POST[$field]));
+                        update_option($field, wp_kses_post(wp_unslash($_POST[$field])));
                     } else {
-                        // Sanitize text fields
-                        update_option($field, sanitize_textarea_field($_POST[$field]));
+                        // Sanitize text fields and remove magic quotes
+                        update_option($field, sanitize_textarea_field(wp_unslash($_POST[$field])));
                     }
                 }
             }
@@ -781,6 +824,181 @@ function aimpro_landing_page_admin() {    // Handle form submission
                             <td>
                                 <textarea name="services_subtitle" rows="2" class="large-text"><?php echo esc_textarea(get_option('services_subtitle', 'Zero fluff. Pure performance. Our integrated marketing ecosystem works seamlessly to transform prospects into profits.')); ?></textarea>
                                 <p class="description">Services section subtitle</p>
+                            </td>
+                        </tr>                    </table>
+                </div>
+                
+                <!-- Service Tags Section -->
+                <div class="aimpro-admin-section">
+                    <h2>Service Tags Strip</h2>
+                    <p class="description">These are the scrolling service tags that appear below the hero section.</p>
+                    <table class="form-table">
+                        <tr>
+                            <th scope="row">Service Tags</th>
+                            <td>
+                                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
+                                    <input type="text" name="service_tag_1" value="<?php echo esc_attr(get_option('service_tag_1', 'SEO')); ?>" class="regular-text" placeholder="Tag 1" />
+                                    <input type="text" name="service_tag_2" value="<?php echo esc_attr(get_option('service_tag_2', 'Google Ads')); ?>" class="regular-text" placeholder="Tag 2" />
+                                    <input type="text" name="service_tag_3" value="<?php echo esc_attr(get_option('service_tag_3', 'Social Media')); ?>" class="regular-text" placeholder="Tag 3" />
+                                    <input type="text" name="service_tag_4" value="<?php echo esc_attr(get_option('service_tag_4', 'Website')); ?>" class="regular-text" placeholder="Tag 4" />
+                                    <input type="text" name="service_tag_5" value="<?php echo esc_attr(get_option('service_tag_5', 'Ads')); ?>" class="regular-text" placeholder="Tag 5" />
+                                    <input type="text" name="service_tag_6" value="<?php echo esc_attr(get_option('service_tag_6', 'Email')); ?>" class="regular-text" placeholder="Tag 6" />
+                                    <input type="text" name="service_tag_7" value="<?php echo esc_attr(get_option('service_tag_7', 'AI Automation')); ?>" class="regular-text" placeholder="Tag 7" />
+                                    <input type="text" name="service_tag_8" value="<?php echo esc_attr(get_option('service_tag_8', 'CRM')); ?>" class="regular-text" placeholder="Tag 8" />
+                                </div>
+                                <p class="description">Enter the service offerings you want to highlight in the scrolling tags section.</p>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                
+                <!-- Header CTA Buttons -->
+                <div class="aimpro-admin-section">
+                    <h2>Header CTA Buttons</h2>
+                    <p class="description">The call-to-action buttons in the top navigation header.</p>
+                    <table class="form-table">
+                        <tr>
+                            <th scope="row">Primary CTA Button</th>
+                            <td>
+                                <input type="text" name="header_cta_1_text" value="<?php echo esc_attr(get_option('header_cta_1_text', 'Get a Free Audit')); ?>" class="regular-text" placeholder="Button Text" />
+                                <input type="text" name="header_cta_1_url" value="<?php echo esc_attr(get_option('header_cta_1_url', '#contact')); ?>" class="regular-text" placeholder="Button URL" style="margin-top: 5px;" />
+                                <p class="description">Primary header button (outline style)</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Secondary CTA Button</th>
+                            <td>
+                                <input type="text" name="header_cta_2_text" value="<?php echo esc_attr(get_option('header_cta_2_text', 'Book a Call')); ?>" class="regular-text" placeholder="Button Text" />
+                                <input type="text" name="header_cta_2_url" value="<?php echo esc_attr(get_option('header_cta_2_url', 'tel:+441212858490')); ?>" class="regular-text" placeholder="Button URL" style="margin-top: 5px;" />
+                                <p class="description">Secondary header button (solid style). Use "tel:" for phone numbers.</p>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                
+                <!-- Contact Form Labels -->
+                <div class="aimpro-admin-section">
+                    <h2>Contact Form Labels</h2>
+                    <p class="description">Customize the contact form field labels and messages.</p>
+                    <table class="form-table">
+                        <tr>
+                            <th scope="row">Form Title</th>
+                            <td>
+                                <input type="text" name="contact_form_title" value="<?php echo esc_attr(get_option('contact_form_title', 'Get In Touch')); ?>" class="regular-text" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Form Subtitle</th>
+                            <td>
+                                <textarea name="contact_form_subtitle" rows="2" class="large-text"><?php echo esc_textarea(get_option('contact_form_subtitle', 'We\'d love to hear from you. Send us a message and we\'ll respond as soon as possible.')); ?></textarea>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Field Labels</th>
+                            <td>
+                                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 10px;">
+                                    <input type="text" name="contact_form_name_label" value="<?php echo esc_attr(get_option('contact_form_name_label', 'Name *')); ?>" class="regular-text" placeholder="Name Label" />
+                                    <input type="text" name="contact_form_email_label" value="<?php echo esc_attr(get_option('contact_form_email_label', 'Email *')); ?>" class="regular-text" placeholder="Email Label" />
+                                    <input type="text" name="contact_form_phone_label" value="<?php echo esc_attr(get_option('contact_form_phone_label', 'Phone')); ?>" class="regular-text" placeholder="Phone Label" />
+                                    <input type="text" name="contact_form_referral_label" value="<?php echo esc_attr(get_option('contact_form_referral_label', 'Where did you find us?')); ?>" class="regular-text" placeholder="Referral Label" />
+                                </div>
+                                <input type="text" name="contact_form_query_label" value="<?php echo esc_attr(get_option('contact_form_query_label', 'Query')); ?>" class="regular-text" placeholder="Query Label" style="margin-bottom: 10px;" />
+                                <input type="text" name="contact_form_query_placeholder" value="<?php echo esc_attr(get_option('contact_form_query_placeholder', 'Tell us about your inquiry...')); ?>" class="regular-text" placeholder="Query Placeholder Text" />
+                                <p class="description">Customize the labels for all form fields.</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Submit Button</th>
+                            <td>
+                                <input type="text" name="contact_form_submit_text" value="<?php echo esc_attr(get_option('contact_form_submit_text', 'Submit')); ?>" class="regular-text" />
+                                <p class="description">Text for the form submit button.</p>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                
+                <!-- Value Statement Section -->
+                <div class="aimpro-admin-section">
+                    <h2>Value Statement Section</h2>
+                    <table class="form-table">
+                        <tr>
+                            <th scope="row">Section Title</th>
+                            <td>
+                                <textarea name="value_statement_title" rows="2" class="large-text"><?php echo esc_textarea(get_option('value_statement_title', 'A Results-Driven Digital Agency Obsessed With Your <span class="highlight curly-underline">SUCCESS</span>')); ?></textarea>
+                                <p class="description">Value statement main title (HTML allowed)</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Description</th>
+                            <td>
+                                <textarea name="value_statement_description" rows="4" class="large-text"><?php echo esc_textarea(get_option('value_statement_description', 'We partner with ambitious businesses to transform their digital presence through intelligent strategies and performance-focused marketing. Our proven methodologies deliver quantifiable results that drive exponential growth and maximize your competitive advantage.')); ?></textarea>
+                                <p class="description">Value statement description text</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">CTA Button Text</th>
+                            <td>
+                                <input type="text" name="value_statement_cta_text" value="<?php echo esc_attr(get_option('value_statement_cta_text', 'CLAIM YOUR FREE GROWTH AUDIT')); ?>" class="regular-text" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">CTA Button URL</th>
+                            <td>
+                                <input type="text" name="value_statement_cta_url" value="<?php echo esc_attr(get_option('value_statement_cta_url', '#contact')); ?>" class="regular-text" />
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                
+                <!-- Blog Section -->
+                <div class="aimpro-admin-section">
+                    <h2>Blog Section</h2>
+                    <table class="form-table">
+                        <tr>
+                            <th scope="row">Section Title</th>
+                            <td>
+                                <textarea name="blog_title" rows="2" class="large-text"><?php echo esc_textarea(get_option('blog_title', 'Scale Up Your <span class="highlight curly-underline">MARKETING</span>')); ?></textarea>
+                                <p class="description">Blog section main title (HTML allowed)</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Section Subtitle</th>
+                            <td>
+                                <textarea name="blog_subtitle" rows="3" class="large-text"><?php echo esc_textarea(get_option('blog_subtitle', 'Zero secrets. Maximum value. We share proven strategies and insider insights to help ambitious marketers like you accelerate growth, drive traffic, and maximize revenue.')); ?></textarea>
+                                <p class="description">Blog section subtitle</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">CTA Button Text</th>
+                            <td>
+                                <input type="text" name="blog_cta_text" value="<?php echo esc_attr(get_option('blog_cta_text', 'READ MORE INSIGHTS')); ?>" class="regular-text" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">CTA Button URL</th>
+                            <td>
+                                <input type="text" name="blog_cta_url" value="<?php echo esc_attr(get_option('blog_cta_url', '/blog')); ?>" class="regular-text" />
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                
+                <!-- Final CTA Section -->
+                <div class="aimpro-admin-section">
+                    <h2>Final CTA Section</h2>
+                    <table class="form-table">
+                        <tr>
+                            <th scope="row">Section Title</th>
+                            <td>
+                                <textarea name="final_cta_title" rows="2" class="large-text"><?php echo esc_textarea(get_option('final_cta_title', 'You Bring the Ambition, We Drive the <span class="highlight curly-underline">RESULTS</span>')); ?></textarea>
+                                <p class="description">Final CTA main title (HTML allowed)</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Description</th>
+                            <td>
+                                <textarea name="final_cta_description" rows="3" class="large-text"><?php echo esc_textarea(get_option('final_cta_description', 'Request a marketing review today. We\'ll send you a detailed analysis of your website and marketing, breaking down your next steps to success.')); ?></textarea>
+                                <p class="description">Final CTA description text</p>
                             </td>
                         </tr>
                     </table>
@@ -998,4 +1216,30 @@ function aimpro_landing_page_admin() {    // Handle form submission
     <?php
 }
 
-?>
+/**
+ * Clean up escaped quotes in database values
+ * Run this once to fix existing data
+ */
+function aimpro_cleanup_escaped_quotes() {    $fields_to_clean = array(
+        'testimonials_title', 'testimonials_subtitle',
+        'testimonial_1_content', 'testimonial_2_content', 'testimonial_3_content', 
+        'testimonial_4_content', 'testimonial_5_content',
+        'office_description', 'value_statement_description', 'hero_subtitle',
+        'contact_form_subtitle'
+    );
+    
+    foreach ($fields_to_clean as $field) {
+        $value = get_option($field);
+        if ($value) {
+            // Remove multiple levels of escaping
+            $cleaned = wp_unslash($value);
+            $cleaned = stripslashes($cleaned);
+            $cleaned = str_replace(array('\\\'', '\\"'), array("'", '"'), $cleaned);
+            update_option($field, $cleaned);
+        }
+    }
+}
+
+// Run cleanup on theme activation or when needed
+// Uncomment the next line to run cleanup once
+add_action('admin_init', 'aimpro_cleanup_escaped_quotes');

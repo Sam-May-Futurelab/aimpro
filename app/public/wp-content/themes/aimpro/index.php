@@ -180,11 +180,10 @@
                     <li><a href="#contact" class="nav-link">Contact</a></li>
                 </ul>
             </nav>
-            
-            <div class="header-ctas">
-                <a href="#contact" class="btn-outline premium-hover">Get a Free Audit</a>
-                <a href="tel:+441212858490" class="btn-primary shine-effect">Book a Call</a>
-            </div>            <div class="mobile-menu-toggle">
+              <div class="header-ctas">
+                <a href="<?php echo aimpro_get_field('header_cta_1_url', '#contact'); ?>" class="btn-outline premium-hover"><?php echo aimpro_get_field('header_cta_1_text', 'Get a Free Audit'); ?></a>
+                <a href="<?php echo aimpro_get_field('header_cta_2_url', 'tel:+441212858490'); ?>" class="btn-primary shine-effect"><?php echo aimpro_get_field('header_cta_2_text', 'Book a Call'); ?></a>
+            </div><div class="mobile-menu-toggle">
                 <span></span>
                 <span></span>
                 <span></span>
@@ -234,14 +233,14 @@
 <section class="service-tags-strip">
     <div class="container">
         <div class="tags-wrapper slide-up">
-            <div class="tag">SEO</div>
-            <div class="tag">Google Ads</div>
-            <div class="tag">Social Media</div>
-            <div class="tag">Website</div>
-            <div class="tag">Ads</div>
-            <div class="tag">Email</div>
-            <div class="tag">AI Automation</div>
-            <div class="tag">CRM</div>
+            <div class="tag"><?php echo aimpro_get_field('service_tag_1', 'SEO'); ?></div>
+            <div class="tag"><?php echo aimpro_get_field('service_tag_2', 'Google Ads'); ?></div>
+            <div class="tag"><?php echo aimpro_get_field('service_tag_3', 'Social Media'); ?></div>
+            <div class="tag"><?php echo aimpro_get_field('service_tag_4', 'Website'); ?></div>
+            <div class="tag"><?php echo aimpro_get_field('service_tag_5', 'Ads'); ?></div>
+            <div class="tag"><?php echo aimpro_get_field('service_tag_6', 'Email'); ?></div>
+            <div class="tag"><?php echo aimpro_get_field('service_tag_7', 'AI Automation'); ?></div>
+            <div class="tag"><?php echo aimpro_get_field('service_tag_8', 'CRM'); ?></div>
         </div>
     </div>
 </section>
@@ -249,9 +248,9 @@
 <!-- Agency Value Statement -->
 <section class="value-statement">
     <div class="container">
-        <div class="content-center">            <h2>A Results-Driven Digital Agency Obsessed With Your <span class="highlight curly-underline">SUCCESS</span></h2>
-            <p>We partner with ambitious businesses to transform their digital presence through intelligent strategies and performance-focused marketing. Our proven methodologies deliver quantifiable results that drive exponential growth and maximize your competitive advantage.</p>
-            <a href="#contact" class="btn-primary large">CLAIM YOUR FREE GROWTH AUDIT</a>
+        <div class="content-center">            <h2><?php echo aimpro_get_field('value_statement_title', 'A Results-Driven Digital Agency Obsessed With Your <span class="highlight curly-underline">SUCCESS</span>'); ?></h2>
+            <p><?php echo aimpro_get_field('value_statement_description', 'We partner with ambitious businesses to transform their digital presence through intelligent strategies and performance-focused marketing. Our proven methodologies deliver quantifiable results that drive exponential growth and maximize your competitive advantage.'); ?></p>
+            <a href="<?php echo aimpro_get_field('value_statement_cta_url', '#contact'); ?>" class="btn-primary large"><?php echo aimpro_get_field('value_statement_cta_text', 'CLAIM YOUR FREE GROWTH AUDIT'); ?></a>
         </div>
     </div>
 </section>
@@ -800,9 +799,8 @@
 
 <!-- Latest Blogs -->
 <section class="blog-section">
-    <div class="container">
-        <div class="content-center">            <h2>Scale Up Your <span class="highlight curly-underline">MARKETING</span></h2>
-            <p class="section-subtitle">Zero secrets. Maximum value. We share proven strategies and insider insights to help ambitious marketers like you accelerate growth, drive traffic, and maximize revenue.</p>
+    <div class="container">        <div class="content-center">            <h2><?php echo aimpro_get_field('blog_title', 'Scale Up Your <span class="highlight curly-underline">MARKETING</span>'); ?></h2>
+            <p class="section-subtitle"><?php echo aimpro_get_field('blog_subtitle', 'Zero secrets. Maximum value. We share proven strategies and insider insights to help ambitious marketers like you accelerate growth, drive traffic, and maximize revenue.'); ?></p>
         </div>
         <div class="blog-grid">
             <?php
@@ -828,9 +826,8 @@
             }
             wp_reset_postdata();
             ?>
-        </div>
-        <div class="blog-cta-section">
-            <a href="/blog" class="btn-primary large">READ MORE INSIGHTS</a>
+        </div>        <div class="blog-cta-section">
+            <a href="<?php echo aimpro_get_field('blog_cta_url', '/blog'); ?>" class="btn-primary large"><?php echo aimpro_get_field('blog_cta_text', 'READ MORE INSIGHTS'); ?></a>
         </div>
     </div>
 </section>
@@ -840,37 +837,35 @@
     <!-- Target Icons -->
     <div class="target-icon contact-target-1"></div>
     <div class="target-icon contact-target-2"></div>
-    <div class="container">
-        <div class="final-cta-content">
-            <h2>You Bring the Ambition, We Drive the <span class="highlight curly-underline">RESULTS</span></h2>
-            <p>Request a marketing review today. We'll send you a detailed analysis of your website and marketing, breaking down your next steps to success.</p>
+    <div class="container">        <div class="final-cta-content">
+            <h2><?php echo aimpro_get_field('final_cta_title', 'You Bring the Ambition, We Drive the <span class="highlight curly-underline">RESULTS</span>'); ?></h2>
+            <p><?php echo aimpro_get_field('final_cta_description', 'Request a marketing review today. We\'ll send you a detailed analysis of your website and marketing, breaking down your next steps to success.'); ?></p>
             
             <!-- Contact Form -->
             <div class="contact-form-wrapper">
-                <form class="contact-form" id="contact-form" method="post" action="#" novalidate>
-                    <div class="form-header">
-                        <h3>Get In Touch</h3>
-                        <p>We'd love to hear from you. Send us a message and we'll respond as soon as possible.</p>
+                <form class="contact-form" id="contact-form" method="post" action="#" novalidate>                    <div class="form-header">
+                        <h3><?php echo aimpro_get_field('contact_form_title', 'Get In Touch'); ?></h3>
+                        <p><?php echo aimpro_get_field('contact_form_subtitle', 'We\'d love to hear from you. Send us a message and we\'ll respond as soon as possible.'); ?></p>
                     </div>
                     
                     <div class="form-grid">
                         <div class="form-group">
-                            <label for="name">Name *</label>
+                            <label for="name"><?php echo aimpro_get_field('contact_form_name_label', 'Name *'); ?></label>
                             <input type="text" id="name" name="name" required>
                         </div>
                         
                         <div class="form-group">
-                            <label for="email">Email *</label>
+                            <label for="email"><?php echo aimpro_get_field('contact_form_email_label', 'Email *'); ?></label>
                             <input type="email" id="email" name="email" required>
                         </div>
                         
                         <div class="form-group">
-                            <label for="phone">Phone</label>
+                            <label for="phone"><?php echo aimpro_get_field('contact_form_phone_label', 'Phone'); ?></label>
                             <input type="tel" id="phone" name="phone">
                         </div>
                         
                         <div class="form-group">
-                            <label for="referral">Where did you find us?</label>
+                            <label for="referral"><?php echo aimpro_get_field('contact_form_referral_label', 'Where did you find us?'); ?></label>
                             <select id="referral" name="referral">
                                 <option value="">Please select...</option>
                                 <option value="google-search">Google Search</option>
@@ -884,13 +879,13 @@
                         </div>
                         
                         <div class="form-group full-width">
-                            <label for="query">Query</label>
-                            <textarea id="query" name="query" rows="4" placeholder="Tell us about your inquiry..."></textarea>
+                            <label for="query"><?php echo aimpro_get_field('contact_form_query_label', 'Query'); ?></label>
+                            <textarea id="query" name="query" rows="4" placeholder="<?php echo esc_attr(aimpro_get_field('contact_form_query_placeholder', 'Tell us about your inquiry...')); ?>"></textarea>
                         </div>
                     </div>
                     
                     <div class="form-actions">
-                        <button type="submit" class="form-submit-btn">Submit</button>
+                        <button type="submit" class="form-submit-btn"><?php echo aimpro_get_field('contact_form_submit_text', 'Submit'); ?></button>
                     </div>
                 </form>
             </div>
