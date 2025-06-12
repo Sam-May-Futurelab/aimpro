@@ -205,7 +205,12 @@
         <div class="hero-wrapper">
             <div class="hero-content">                <div class="hero-badge slide-up-delay-1">
                     <span>Award-Winning Digital Agency</span>
-                </div><h1 class="hero-title">Scale Your Business With <span class="highlight curly-underline">PRECISION</span> Digital <span class="highlight-word" style="color: #f15a25 !important; -webkit-text-fill-color: #f15a25 !important;">Marketing</span></h1>
+                </div><h1 class="hero-title">Scale Your Business With <span class="highlight curly-underline">PRECISION</span> Digital <span class="highlight-word" style="color: #f15a25 !important; -webkit-text-fill-color: #f15a25 !important;">Marketing</span></h1>                <div class="hero-straplines">
+                    <span class="strapline active">No Fluff. Just Results.</span>
+                    <span class="strapline">Data-Driven Strategy. Measurable Results.</span>
+                    <span class="strapline">Grow Your Business With Precision Marketing.</span>
+                    <span class="strapline">Your High-ROI Digital Marketing Partner</span>
+                </div>
                 <p class="hero-subtitle">Expert Lead Generation, SEO, PPC & Automation. Data-driven strategies that deliver <strong class="highlight-underline">MEASURABLE RESULTS</strong> and accelerate your <strong class="highlight-word">growth</strong>.</p>                <div class="hero-ctas">
                     <a href="#contact" class="btn-primary large shine-effect pulse-animation">CLAIM YOUR FREE GROWTH STRATEGY</a>
                 </div>
@@ -910,7 +915,6 @@
                         <div class="contact-icon">
                             <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
                                 <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
-                            </svg>
                         </div>
                         <div class="contact-details">
                             <span class="contact-label">Address</span>
@@ -1329,6 +1333,17 @@ document.addEventListener('DOMContentLoaded', function() {    // Stats counter a
                 }
             });
         });
+    }
+    
+    // Simple strapline rotation
+    const straplines = document.querySelectorAll('.strapline');
+    if (straplines.length > 1) {
+        let currentIndex = 0;
+        setInterval(() => {
+            straplines[currentIndex].classList.remove('active');
+            currentIndex = (currentIndex + 1) % straplines.length;
+            straplines[currentIndex].classList.add('active');
+        }, 3000);
     }
 });
 </script>
