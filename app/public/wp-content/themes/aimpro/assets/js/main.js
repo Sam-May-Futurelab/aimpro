@@ -291,8 +291,7 @@ document.addEventListener('DOMContentLoaded', function() {
             trackEvent('CTA', 'click', buttonText);
         });
     });
-    
-    // Track scroll depth
+      // Track scroll depth
     let maxScroll = 0;
     window.addEventListener('scroll', function() {
         const scrollPercent = Math.round(
@@ -303,7 +302,76 @@ document.addEventListener('DOMContentLoaded', function() {
             maxScroll = scrollPercent;
             trackEvent('Scroll', 'depth', `${scrollPercent}%`);
         }
-    });    // Mobile Menu Toggle
+    });
+
+    // ========================================
+    // PREMIUM SCROLL-IN ANIMATIONS
+    // ========================================
+    
+    // Performance-optimized intersection observer for scroll animations
+    const scrollAnimationObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const element = entry.target;
+                
+                // Add in-view class to trigger animation
+                element.classList.add('in-view');
+                
+                // Clean up will-change after animation completes
+                const animationName = getComputedStyle(element).animationName;
+                if (animationName && animationName !== 'none') {
+                    element.addEventListener('animationend', function onAnimationEnd() {
+                        element.classList.add('animation-complete');
+                        element.removeEventListener('animationend', onAnimationEnd);
+                    }, { once: true });
+                }
+                
+                // Stop observing this element to save performance
+                scrollAnimationObserver.unobserve(element);
+            }
+        });
+    }, {
+        threshold: 0.1, // Trigger when 10% visible
+        rootMargin: '0px 0px -50px 0px' // Start animation slightly before element comes into view
+    });
+
+    // Initialize scroll animations
+    function initScrollAnimations() {
+        const animatedElements = document.querySelectorAll('[class*="animate-"]');
+        
+        // Only observe elements that aren't already animated
+        animatedElements.forEach(element => {
+            if (!element.classList.contains('in-view')) {
+                scrollAnimationObserver.observe(element);
+            }
+        });
+    }
+
+    // Start observing elements
+    initScrollAnimations();
+
+    // Re-initialize animations for any dynamically added content
+    const mutationObserver = new MutationObserver((mutations) => {
+        mutations.forEach((mutation) => {
+            mutation.addedNodes.forEach((node) => {
+                if (node.nodeType === Node.ELEMENT_NODE) {
+                    const newAnimatedElements = node.querySelectorAll('[class*="animate-"]');
+                    newAnimatedElements.forEach(element => {
+                        if (!element.classList.contains('in-view')) {
+                            scrollAnimationObserver.observe(element);
+                        }
+                    });
+                }
+            });
+        });
+    });
+
+    // Start observing for dynamic content
+    mutationObserver.observe(document.body, {
+        childList: true,
+        subtree: true
+    });
+    // Mobile Menu Toggle
     const mobileToggle = document.querySelector('.mobile-menu-toggle');
     const mainNav = document.querySelector('.main-nav');
     const headerCtas = document.querySelector('.header-ctas');

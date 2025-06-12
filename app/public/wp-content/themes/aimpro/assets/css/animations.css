@@ -149,6 +149,96 @@
 .tag:nth-child(6) { animation-delay: 0.6s; }
 .tag:nth-child(7) { animation-delay: 0.7s; }
 
+/* ========================================
+   PREMIUM SCROLL-IN ANIMATIONS
+   ======================================== */
+
+/* Performance-optimized keyframes using transform3d for GPU acceleration */
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translate3d(-60px, 0, 0);
+    }
+    to {
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+    }
+}
+
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        transform: translate3d(60px, 0, 0);
+    }
+    to {
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+    }
+}
+
+@keyframes fadeUpIn {
+    from {
+        opacity: 0;
+        transform: translate3d(0, 30px, 0);
+    }
+    to {
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+    }
+}
+
+@keyframes scaleInUp {
+    from {
+        opacity: 0;
+        transform: translate3d(0, 20px, 0) scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: translate3d(0, 0, 0) scale(1);
+    }
+}
+
+/* Base classes for scroll animations - initially hidden */
+.scroll-animate [class*="animate-"] {
+    opacity: 0;
+    will-change: transform, opacity;
+}
+
+/* Animation trigger classes */
+.animate-slide-left.in-view {
+    animation: slideInLeft 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+}
+
+.animate-slide-right.in-view {
+    animation: slideInRight 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+}
+
+.animate-fade-up.in-view {
+    animation: fadeUpIn 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+}
+
+.animate-scale-up.in-view {
+    animation: scaleInUp 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+}
+
+/* Dynamic animation delays based on data-delay attribute */
+.animate-fade-up[data-delay="0.1"].in-view { animation-delay: 0.1s; }
+.animate-fade-up[data-delay="0.2"].in-view { animation-delay: 0.2s; }
+.animate-fade-up[data-delay="0.3"].in-view { animation-delay: 0.3s; }
+.animate-fade-up[data-delay="0.4"].in-view { animation-delay: 0.4s; }
+.animate-fade-up[data-delay="0.5"].in-view { animation-delay: 0.5s; }
+
+.animate-scale-up[data-delay="0.2"].in-view { animation-delay: 0.2s; }
+.animate-scale-up[data-delay="0.4"].in-view { animation-delay: 0.4s; }
+
+/* Clean up will-change after animation completes for performance */
+.animate-slide-left.animation-complete,
+.animate-slide-right.animation-complete,
+.animate-fade-up.animation-complete,
+.animate-scale-up.animation-complete {
+    will-change: auto;
+}
+
 /* Reduced Motion Preferences */
 @media (prefers-reduced-motion: reduce) {
     * {

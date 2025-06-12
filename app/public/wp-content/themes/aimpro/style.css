@@ -1767,8 +1767,7 @@ Version: 1.0
         rgba(0, 0, 0, 0.05) 70%,
         rgba(0, 0, 0, 0.08) 100%
     );
-    border-bottom-left-radius: 24px; /* Updated to match new border-radius */
-    border-bottom-right-radius: 24px; /* Updated to match new border-radius */
+    border-radius: 0 0 24px 24px; /* Only round bottom corners to match parent */
     pointer-events: none;
     z-index: 1;
 }
@@ -2333,16 +2332,14 @@ select:focus {
         font-size: 0.72rem;
         padding: 0.55rem 1.1rem;
         letter-spacing: 0.4px;
-    }
-      /* Mobile Testimonials */
+    }    /* Mobile Testimonials */
     .testimonial-card {
         padding: 2rem; /* Reduced from 3.5rem */
         border-radius: 20px; /* Increased from 16px for softer mobile corners */
     }
     
     .testimonial-card::after {
-        border-bottom-left-radius: 20px;
-        border-bottom-right-radius: 20px;
+        border-radius: 0 0 20px 20px; /* Match parent border-radius properly */
         height: 25px; /* Slightly reduced for mobile */
     }
     
@@ -2394,8 +2391,7 @@ select:focus {
         font-size: 0.7rem;
         padding: 0.5rem 1rem;
         letter-spacing: 0.3px;
-    }
-      /* Extra Small Mobile - Further Reduce Testimonials */
+    }    /* Extra Small Mobile - Further Reduce Testimonials */
     .testimonial-card {
         padding: 1.5rem; /* Further reduced from 2rem */
         border-radius: 16px; /* Adjusted from 12px for softer edges */
@@ -2403,8 +2399,7 @@ select:focus {
     }
     
     .testimonial-card::after {
-        border-bottom-left-radius: 16px;
-        border-bottom-right-radius: 16px;
+        border-radius: 0 0 16px 16px; /* Match parent border-radius properly */
         height: 20px; /* Further reduced for smaller screens */
     }
     
@@ -2446,8 +2441,7 @@ select:focus {
     }
     
     .testimonial-card::after {
-        border-bottom-left-radius: 14px;
-        border-bottom-right-radius: 14px;
+        border-radius: 0 0 14px 14px; /* Match parent border-radius properly */
         height: 18px; /* Smallest soft fade for ultra-small screens */
     }
     

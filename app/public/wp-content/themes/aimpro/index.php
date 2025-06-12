@@ -574,14 +574,14 @@
 </section>
 
 <!-- Visit Our Office Section -->
-<section class="office-visit-section">
+<section class="office-visit-section scroll-animate">
     <div class="container">
         <div class="office-content-wrapper">
-            <div class="office-content">
-                <h2>Come See Us... We're a <span class="highlight curly-underline">REAL</span> Company with Real Humans</h2>
-                <p>Let's discuss your project over a coffee. Book a time to visit our Birmingham office and meet the team behind your marketing success.</p>
+            <div class="office-content animate-slide-left">
+                <h2 class="animate-fade-up" data-delay="0.1">Come See Us... We're a <span class="highlight curly-underline">REAL</span> Company with Real Humans</h2>
+                <p class="animate-fade-up" data-delay="0.2">Let's discuss your project over a coffee. Book a time to visit our Birmingham office and meet the team behind your marketing success.</p>
                 
-                <div class="calendar-booking">
+                <div class="calendar-booking animate-fade-up" data-delay="0.3">
                     <a href="#" class="btn-primary large calendar-btn">
                         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                             <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
@@ -592,7 +592,7 @@
                         BOOK A COFFEE MEETING
                     </a>
                 </div>
-                  <div class="office-details">
+                  <div class="office-details animate-fade-up" data-delay="0.4">
                     <h3>Our Birmingham Office</h3>
                     <p><strong>Located in: 55 Colmore Row</strong><br>
                     Address: 55 Colmore Row, Birmingham B3 2AA<br>
@@ -600,12 +600,12 @@
                 </div>
             </div>
             
-            <div class="office-visual">
-                <div class="office-image">
+            <div class="office-visual animate-slide-right">
+                <div class="office-image animate-scale-up" data-delay="0.2">
                     <!-- Office image - replace with actual image when available -->
                     <img src="https://images.unsplash.com/photo-1604328698692-f76ea9498e76?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="55 Colmore Row Birmingham Office" />
                 </div>
-                <div class="office-map">
+                <div class="office-map animate-scale-up" data-delay="0.4">
                     <div class="map-container">
                         <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2429.981800277795!2d-1.9008778836825295!3d52.48076417980789!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4870bc8d3a49a4c7%3A0x4acfb08548f8dd3e!2s55%20Colmore%20Row%2C%20Birmingham%20B3%202AA!5e0!3m2!1sen!2suk!4v1623501234567!5m2!1sen!2suk" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
                         <a href="https://maps.google.com/?q=55+Colmore+Row+Birmingham+B3+2AA" target="_blank" class="map-overlay">
