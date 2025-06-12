@@ -813,56 +813,97 @@
     <div class="target-icon floating-target-insights" style="bottom: 20%; right: 15%; width: 32px; height: 32px; opacity: 0.2; animation: targetFloat 6.5s ease-in-out infinite;"></div>
     <div class="container">
         <div class="content-center">
-            <h2>Stay Ahead With Expert Insights & Cutting-Edge Industry Intelligence</h2>
-            <p class="section-subtitle">Exclusive strategies and data-driven insights from our marketing experts to keep you at the forefront of digital innovation.</p>
+            <h2><?php echo aimpro_get_field('insights_title', 'Stay Ahead With Expert Insights & Cutting-Edge Industry Intelligence'); ?></h2>
+            <p class="section-subtitle"><?php echo aimpro_get_field('insights_subtitle', 'Exclusive strategies and data-driven insights from our marketing experts to keep you at the forefront of digital innovation.'); ?></p>
         </div>
-        <div class="insights-grid">            <article class="featured-insight">
-                <div class="insight-image">
-                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/hero-background.png" alt="Featured Insight" />
-                    <div class="insight-category">Featured</div>
-                </div>
-                <div class="insight-content">
-                    <h3>The Future of AI in Digital Marketing: What You Need to Know</h3>
-                    <p>Discover how artificial intelligence is revolutionizing digital marketing and what it means for your business in 2024.</p>
-                    <div class="insight-meta">
-                        <span class="read-time">8 min read</span>
-                        <span class="publish-date">Dec 15, 2023</span>
+        <div class="insights-grid">
+            <?php
+            // Get featured insight
+            $featured_insights_args = array(
+                'post_type' => 'insight',
+                'posts_per_page' => 1,
+                'meta_query' => array(
+                    array(
+                        'key' => 'insight_featured',
+                        'value' => '1',
+                        'compare' => '='
+                    )
+                )
+            );
+            
+            $featured_insights = new WP_Query($featured_insights_args);
+            
+            // If no featured insight, get the most recent
+            if (!$featured_insights->have_posts()) {
+                $featured_insights_args = array(
+                    'post_type' => 'insight',
+                    'posts_per_page' => 1
+                );
+                $featured_insights = new WP_Query($featured_insights_args);
+            }
+            
+            if ($featured_insights->have_posts()) : 
+                $featured_insights->the_post();
+                $read_time = aimpro_get_read_time(get_the_ID());
+                ?>
+                <article class="featured-insight">
+                    <div class="insight-image">
+                        <?php if (has_post_thumbnail()) : ?>
+                            <?php the_post_thumbnail('large', array('alt' => get_the_title())); ?>
+                        <?php else: ?>
+                            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/hero-background.png" alt="<?php the_title(); ?>" />
+                        <?php endif; ?>
+                        <div class="insight-category">Featured</div>
                     </div>
-                    <a href="#" class="insight-link">Read More →</a>
-                </div>
-            </article>
-            <div class="insights-sidebar">                <article class="insight-card">
-                    <div class="insight-image-small">
-                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/ajay-dhunna.png" alt="Insight" />
-                    </div>
-                    <div class="insight-content-small">
-                        <h4>Google Ads Best Practices for 2024</h4>
-                        <p>Latest optimization strategies for maximum ROI and Quality Score improvement.</p>
-                        <span class="read-time">5 min read</span>
-                    </div>
-                </article>                <article class="insight-card">
-                    <div class="insight-image-small">
-                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/dinesh-thapa.png" alt="Insight" />
-                    </div>
-                    <div class="insight-content-small">
-                        <h4>SEO Trends That Will Drive Traffic</h4>
-                        <p>AI-powered tools and content strategies generating massive organic growth.</p>
-                        <span class="read-time">6 min read</span>
-                    </div>
-                </article>                <article class="insight-card">
-                    <div class="insight-image-small">
-                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/james-butler.png" alt="Insight" />
-                    </div>
-                    <div class="insight-content-small">
-                        <h4>Social Media ROI: Measuring Success</h4>
-                        <p>Advanced metrics and frameworks to track social marketing investment returns.</p>
-                        <span class="read-time">4 min read</span>
+                    <div class="insight-content">
+                        <h3><?php the_title(); ?></h3>
+                        <p><?php echo wp_trim_words(get_the_excerpt(), 20, '...'); ?></p>
+                        <div class="insight-meta">
+                            <span class="read-time"><?php echo esc_html($read_time); ?> min read</span>
+                            <span class="publish-date"><?php echo get_the_date('M j, Y'); ?></span>
+                        </div>
+                        <a href="<?php the_permalink(); ?>" class="insight-link">Read More →</a>
                     </div>
                 </article>
+            <?php endif; wp_reset_postdata(); ?>
+            
+            <div class="insights-sidebar">
+                <?php
+                // Get the rest of the insights
+                $insights_args = array(
+                    'post_type' => 'insight',
+                    'posts_per_page' => 3,
+                    'post__not_in' => $featured_insights->have_posts() ? array($featured_insights->posts[0]->ID) : array()
+                );
+                
+                $insights = new WP_Query($insights_args);
+                
+                if ($insights->have_posts()) :
+                    while ($insights->have_posts()) : $insights->the_post();
+                        $read_time = aimpro_get_read_time(get_the_ID());
+                        ?>
+                        <article class="insight-card">
+                            <div class="insight-image-small">
+                                <?php if (has_post_thumbnail()) : ?>
+                                    <?php the_post_thumbnail('thumbnail', array('alt' => get_the_title())); ?>
+                                <?php else: ?>
+                                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/default-insight.png" alt="<?php the_title(); ?>" />
+                                <?php endif; ?>
+                            </div>
+                            <div class="insight-content-small">
+                                <h4><?php the_title(); ?></h4>
+                                <p><?php echo wp_trim_words(get_the_excerpt(), 10, '...'); ?></p>
+                                <span class="read-time"><?php echo esc_html($read_time); ?> min read</span>
+                            </div>
+                        </article>
+                    <?php endwhile;
+                else : ?>
+                    <p>No insights found. Please add some insights in the admin panel.</p>
+                <?php endif; wp_reset_postdata(); ?>
             </div>
         </div>
         <div class="insights-cta">
-            <a href="#" class="btn-outline premium-hover">View All Insights</a>
+            <a href="<?php echo get_post_type_archive_link('insight'); ?>" class="btn-outline premium-hover"><?php echo aimpro_get_field('insights_cta_text', 'View All Insights'); ?></a>
         </div>
     </div>
 </section>

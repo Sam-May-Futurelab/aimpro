@@ -80,12 +80,14 @@ function aimpro_enqueue_assets() {
     
     // Enqueue contact form styles
     wp_enqueue_style('aimpro-contact-form', get_template_directory_uri() . '/assets/css/contact-form.css', array('aimpro-base'), $theme_version);
-    
-    // Enqueue responsive styles (should be loaded last)
+      // Enqueue responsive styles (should be loaded last)
     wp_enqueue_style('aimpro-responsive', get_template_directory_uri() . '/assets/css/responsive.css', array('aimpro-base'), $theme_version);    // Enqueue header overrides (loaded last to ensure proper specificity)
     wp_enqueue_style('aimpro-header-overrides', get_template_directory_uri() . '/assets/css/header-overrides.css', array('aimpro-header-modern', 'aimpro-buttons'), $theme_version);
       // Enqueue ebook/lead magnet styles
     wp_enqueue_style('aimpro-ebook', get_template_directory_uri() . '/assets/css/ebook.css', array('aimpro-base'), $theme_version . '-' . time());
+    
+    // Enqueue insights styles
+    wp_enqueue_style('aimpro-insights', get_template_directory_uri() . '/assets/css/insights.css', array('aimpro-base'), $theme_version . '-' . time());
     
     // Enqueue main style.css for backwards compatibility and WordPress theme recognition
     wp_enqueue_style('aimpro-style', get_stylesheet_uri(), array('aimpro-variables', 'aimpro-base'), $theme_version);
@@ -219,6 +221,7 @@ add_action('init', 'aimpro_optimize_wordpress');
 
 // Add custom post type for testimonials (if needed)
 function aimpro_register_post_types() {
+    // Register Testimonials post type
     register_post_type('testimonial', array(
         'labels' => array(
             'name' => 'Testimonials',
@@ -229,8 +232,94 @@ function aimpro_register_post_types() {
         'menu_icon' => 'dashicons-format-quote',
         'show_in_rest' => true
     ));
+    
+    // Register Insights post type
+    register_post_type('insight', array(
+        'labels' => array(
+            'name' => 'Insights',
+            'singular_name' => 'Insight',
+            'add_new' => 'Add New Insight',
+            'add_new_item' => 'Add New Insight',
+            'edit_item' => 'Edit Insight',
+            'view_item' => 'View Insight',
+            'search_items' => 'Search Insights',
+            'not_found' => 'No insights found',
+            'not_found_in_trash' => 'No insights found in trash'
+        ),
+        'public' => true,
+        'has_archive' => true,
+        'rewrite' => array('slug' => 'insights'),
+        'menu_position' => 5,
+        'menu_icon' => 'dashicons-lightbulb',
+        'supports' => array('title', 'editor', 'excerpt', 'thumbnail', 'author'),
+        'show_in_rest' => true    ));
 }
 add_action('init', 'aimpro_register_post_types');
+
+// Add meta box for Insight Read Time
+function aimpro_add_insight_meta_boxes() {
+    add_meta_box(
+        'insight_read_time',
+        'Insight Details',
+        'aimpro_insight_meta_box_callback',
+        'insight',
+        'side',
+        'high'
+    );
+}
+add_action('add_meta_boxes', 'aimpro_add_insight_meta_boxes');
+
+// Insight meta box callback function
+function aimpro_insight_meta_box_callback($post) {
+    wp_nonce_field('aimpro_save_insight_meta', 'aimpro_insight_meta_nonce');
+    $read_time = get_post_meta($post->ID, 'insight_read_time', true);
+    $is_featured = get_post_meta($post->ID, 'insight_featured', true);
+    ?>
+    <p>
+        <label for="insight_read_time">Read Time (in minutes):</label>
+        <input type="number" id="insight_read_time" name="insight_read_time" min="1" max="60" value="<?php echo esc_attr($read_time ? $read_time : '5'); ?>">
+    </p>
+    <p>
+        <input type="checkbox" id="insight_featured" name="insight_featured" value="1" <?php checked($is_featured, '1'); ?>>
+        <label for="insight_featured">Feature this insight</label>
+        <span class="description">(Shows in large featured area)</span>
+    </p>
+    <?php
+}
+
+// Save insight meta data
+function aimpro_save_insight_meta($post_id) {
+    // Check if nonce is set and valid
+    if (!isset($_POST['aimpro_insight_meta_nonce']) || !wp_verify_nonce($_POST['aimpro_insight_meta_nonce'], 'aimpro_save_insight_meta')) {
+        return;
+    }
+    
+    // Check if autosave
+    if (defined('DOING_AUTOSAVE') && DOING_AUTOSAVE) {
+        return;
+    }
+    
+    // Check user permissions
+    if (!current_user_can('edit_post', $post_id)) {
+        return;
+    }
+    
+    // Save read time
+    if (isset($_POST['insight_read_time'])) {
+        update_post_meta($post_id, 'insight_read_time', sanitize_text_field($_POST['insight_read_time']));
+    }
+    
+    // Save featured status
+    $featured = isset($_POST['insight_featured']) ? '1' : '0';
+    update_post_meta($post_id, 'insight_featured', $featured);
+}
+add_action('save_post_insight', 'aimpro_save_insight_meta');
+
+// Helper function to get insight read time
+function aimpro_get_read_time($post_id) {
+    $read_time = get_post_meta($post_id, 'insight_read_time', true);
+    return $read_time ? $read_time : '5';
+}
 
 // Handle Main Contact Form Submission
 function aimpro_handle_contact_form() {
