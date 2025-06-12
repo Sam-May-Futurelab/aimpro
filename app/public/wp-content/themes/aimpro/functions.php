@@ -60,12 +60,8 @@ function aimpro_enqueue_assets() {
     
     // Enqueue UI elements
     wp_enqueue_style('aimpro-ui-elements', get_template_directory_uri() . '/assets/css/ui-elements.css', array('aimpro-base'), $theme_version);
-    
-    // Enqueue header and menu styles
-    wp_enqueue_style('aimpro-header-menu', get_template_directory_uri() . '/assets/css/header-menu.css', array('aimpro-base'), $theme_version);
-    
-    // Enqueue mega menu improvements
-    wp_enqueue_style('aimpro-mega-menu-improvements', get_template_directory_uri() . '/assets/css/mega-menu-improvements.css', array('aimpro-header-menu'), $theme_version);
+      // Enqueue modern header styles (replaces old header-menu.css)
+    wp_enqueue_style('aimpro-header-modern', get_template_directory_uri() . '/assets/css/header-modern.css', array('aimpro-base'), $theme_version);
     
     // Enqueue hero styles
     wp_enqueue_style('aimpro-hero', get_template_directory_uri() . '/assets/css/hero.css', array('aimpro-base'), $theme_version);
@@ -87,9 +83,8 @@ function aimpro_enqueue_assets() {
     
     // Enqueue responsive styles (should be loaded last)
     wp_enqueue_style('aimpro-responsive', get_template_directory_uri() . '/assets/css/responsive.css', array('aimpro-base'), $theme_version);
-    
-    // Enqueue header overrides (loaded last to ensure proper specificity)
-    wp_enqueue_style('aimpro-header-overrides', get_template_directory_uri() . '/assets/css/header-overrides.css', array('aimpro-header-menu', 'aimpro-buttons'), $theme_version);
+      // Enqueue header overrides (loaded last to ensure proper specificity)
+    wp_enqueue_style('aimpro-header-overrides', get_template_directory_uri() . '/assets/css/header-overrides.css', array('aimpro-header-modern', 'aimpro-buttons'), $theme_version);
     
     // Enqueue main style.css for backwards compatibility and WordPress theme recognition
     wp_enqueue_style('aimpro-style', get_stylesheet_uri(), array('aimpro-variables', 'aimpro-base'), $theme_version);
