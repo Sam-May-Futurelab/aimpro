@@ -205,7 +205,7 @@
         <div class="hero-wrapper">
             <div class="hero-content">                <div class="hero-badge slide-up-delay-1">
                     <span>Award-Winning Digital Agency</span>
-                </div><h1 class="hero-title">Scale Your Business With <span class="highlight curly-underline">PRECISION</span> Digital <span class="highlight-word">Marketing</span></h1>
+                </div><h1 class="hero-title">Scale Your Business With <span class="highlight curly-underline">PRECISION</span> Digital <span class="highlight-word" style="color: #f15a25 !important; -webkit-text-fill-color: #f15a25 !important;">Marketing</span></h1>
                 <p class="hero-subtitle">Expert Lead Generation, SEO, PPC & Automation. Data-driven strategies that deliver <strong class="highlight-underline">MEASURABLE RESULTS</strong> and accelerate your <strong class="highlight-word">growth</strong>.</p>                <div class="hero-ctas">
                     <a href="#contact" class="btn-primary large shine-effect pulse-animation">CLAIM YOUR FREE GROWTH STRATEGY</a>
                 </div>
