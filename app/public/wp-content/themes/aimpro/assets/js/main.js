@@ -1312,3 +1312,97 @@ style.textContent = `
     }
 `;
 document.head.appendChild(style);
+
+// ============================================
+// SMART SUBMENU POSITIONING
+// Prevents submenus from causing page scrolling
+// ============================================
+
+function initSmartSubmenus() {
+    const navItems = document.querySelectorAll('.nav-item-dropdown, .nav-item-mega');
+    
+    navItems.forEach(item => {
+        const submenu = item.querySelector('.dropdown-menu, .mega-menu');
+        if (!submenu) return;
+
+        // Add hover listeners for positioning
+        item.addEventListener('mouseenter', function() {
+            setTimeout(() => {
+                adjustSubmenuPosition(submenu);
+            }, 50); // Small delay to ensure CSS transition starts
+        });
+    });
+}
+
+function adjustSubmenuPosition(submenu) {
+    const rect = submenu.getBoundingClientRect();
+    const viewportWidth = window.innerWidth;
+    const viewportHeight = window.innerHeight;
+    
+    // Reset any previous adjustments
+    submenu.style.left = '';
+    submenu.style.right = '';
+    submenu.style.transform = '';
+    submenu.style.maxHeight = '';
+    
+    // Check horizontal overflow
+    if (rect.right > viewportWidth - 20) {
+        // Menu overflows right side
+        submenu.style.left = 'auto';
+        submenu.style.right = '0';
+        submenu.style.transform = 'translateX(0)';
+    } else if (rect.left < 20) {
+        // Menu overflows left side
+        submenu.style.left = '0';
+        submenu.style.transform = 'translateX(0)';
+    } else {
+        // Default centered position
+        submenu.style.left = '50%';
+        submenu.style.transform = 'translateX(-50%)';
+    }
+    
+    // Check vertical overflow (prevent scrolling)
+    const maxAllowedHeight = viewportHeight - rect.top - 40; // 40px buffer
+    if (rect.height > maxAllowedHeight) {
+        submenu.style.maxHeight = maxAllowedHeight + 'px';
+        submenu.style.overflowY = 'hidden'; // Never allow scrolling
+        
+        // For mega menus, adjust grid layout to fit
+        if (submenu.classList.contains('mega-menu')) {
+            const grid = submenu.querySelector('.mega-menu-grid');
+            if (grid && maxAllowedHeight < 400) {
+                grid.style.gridTemplateColumns = 'repeat(2, 1fr)';
+                grid.style.gap = '1.5rem';
+            }
+        }
+    }
+}
+
+// Initialize smart submenus when DOM is ready
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initSmartSubmenus);
+} else {
+    initSmartSubmenus();
+}
+
+// Re-adjust on window resize
+let resizeTimeout;
+window.addEventListener('resize', function() {
+    clearTimeout(resizeTimeout);
+    resizeTimeout = setTimeout(() => {
+        // Reset all submenu adjustments on resize
+        document.querySelectorAll('.dropdown-menu, .mega-menu').forEach(submenu => {
+            submenu.style.left = '';
+            submenu.style.right = '';
+            submenu.style.transform = '';
+            submenu.style.maxHeight = '';
+            submenu.style.overflowY = '';
+            
+            const grid = submenu.querySelector('.mega-menu-grid');
+            if (grid) {
+                grid.style.gridTemplateColumns = '';
+                grid.style.gap = '';
+            }
+        });
+    }, 250);
+});
