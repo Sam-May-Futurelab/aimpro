@@ -1732,20 +1732,20 @@ Version: 1.0
 
 .testimonials-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-    gap: 3rem;
+    grid-template-columns: repeat(auto-fit, minmax(380px, 1fr)); /* Slightly reduced from 400px */
+    gap: 2.5rem; /* Reduced from 3rem for better spacing with smaller cards */
 }
 
 .testimonial-card {
     background: var(--glass-bg);
-    padding: 3.5rem;
-    border-radius: 28px; /* Increased from 24px for softer corners */
+    padding: 2.5rem; /* Reduced from 3.5rem to make smaller */
+    border-radius: 24px; /* Slightly reduced for better proportions */
     box-shadow: 
-        0 20px 40px rgba(0, 0, 0, 0.15),
-        0 8px 32px rgba(255, 215, 0, 0.1),
+        0 15px 30px rgba(0, 0, 0, 0.12), /* Reduced shadow for smaller size */
+        0 6px 24px rgba(255, 215, 0, 0.08),
         inset 0 1px 0 rgba(255, 255, 255, 0.1);
     position: relative;
-    border-left: 6px solid transparent;
+    border-left: 4px solid transparent; /* Reduced from 6px */
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     backdrop-filter: var(--backdrop-blur);
     border: 1px solid var(--glass-border);
@@ -1759,7 +1759,7 @@ Version: 1.0
     bottom: 0;
     left: 0;
     right: 0;
-    height: 30px;
+    height: 25px; /* Reduced from 30px for smaller cards */
     background: linear-gradient(
         to bottom,
         transparent 0%,
@@ -1767,8 +1767,8 @@ Version: 1.0
         rgba(0, 0, 0, 0.05) 70%,
         rgba(0, 0, 0, 0.08) 100%
     );
-    border-bottom-left-radius: 28px;
-    border-bottom-right-radius: 28px;
+    border-bottom-left-radius: 24px; /* Updated to match new border-radius */
+    border-bottom-right-radius: 24px; /* Updated to match new border-radius */
     pointer-events: none;
     z-index: 1;
 }
@@ -1777,7 +1777,8 @@ Version: 1.0
     content: '"';
     position: absolute;
     top: -5px;
-    left: 24px;    font-size: 3.5rem;
+    left: 20px; /* Slightly reduced from 24px */
+    font-size: 3rem; /* Reduced from 3.5rem for smaller cards */
     color: var(--primary-orange);
     font-family: serif;
     opacity: 0.15;
@@ -1787,10 +1788,10 @@ Version: 1.0
 
 .testimonial-card:hover {
     border-left-color: var(--primary-orange);
-    transform: translateY(-8px);
+    transform: translateY(-6px); /* Slightly reduced from -8px */
     box-shadow: 
-        0 32px 64px rgba(0, 0, 0, 0.2),
-        0 16px 48px rgba(241, 90, 37, 0.15),
+        0 25px 50px rgba(0, 0, 0, 0.18), /* Adjusted for smaller cards */
+        0 12px 36px rgba(241, 90, 37, 0.12),
         inset 0 1px 0 rgba(255, 255, 255, 0.2);
     border-color: var(--glass-orange-border);
 }
@@ -1802,9 +1803,9 @@ Version: 1.0
 .testimonial-content p {
     font-style: italic;
     color: var(--text-secondary);
-    margin-bottom: 2.5rem;
-    font-size: 1.125rem;
-    line-height: 1.8;
+    margin-bottom: 2rem; /* Reduced from 2.5rem */
+    font-size: 1.05rem; /* Slightly reduced from 1.125rem */
+    line-height: 1.7; /* Slightly reduced from 1.8 */
     text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
 }
 
