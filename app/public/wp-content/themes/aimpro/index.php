@@ -209,12 +209,11 @@
         <div class="floating-shape shape-2"></div>
     </div><div class="container">
         <div class="hero-wrapper">            <div class="hero-content">                <div class="hero-badge slide-up-delay-1">
-                    <span><?php echo aimpro_get_field('hero_badge_text', 'Award-Winning Digital Agency'); ?></span>
-                </div><?php echo aimpro_get_field('hero_title', '<h1 class="hero-title">Scale Your Business With <span class="highlight curly-underline">PRECISION</span> Digital <span class="highlight-word" style="color: #f15a25 !important; -webkit-text-fill-color: #f15a25 !important;">Marketing</span></h1>'); ?>                <div class="hero-straplines">
-                    <span class="strapline active">No Fluff. Just Results.</span>
-                    <span class="strapline">Data-Driven Strategy. Measurable Results.</span>
-                    <span class="strapline">Grow Your Business With Precision Marketing.</span>
-                    <span class="strapline">Your High-ROI Digital Marketing Partner</span>
+                    <span><?php echo aimpro_get_field('hero_badge_text', 'Award-Winning Digital Agency'); ?></span>                </div><?php echo aimpro_get_field('hero_title', '<h1 class="hero-title">Scale Your Business With <span class="highlight curly-underline">PRECISION</span> Digital <span class="highlight-word" style="color: #f15a25 !important; -webkit-text-fill-color: #f15a25 !important;">Marketing</span></h1>'); ?>                <div class="hero-straplines">
+                    <span class="strapline active"><?php echo aimpro_get_field('hero_strapline_1', 'No Fluff. Just Results.'); ?></span>
+                    <span class="strapline"><?php echo aimpro_get_field('hero_strapline_2', 'Data-Driven Strategy. Measurable Results.'); ?></span>
+                    <span class="strapline"><?php echo aimpro_get_field('hero_strapline_3', 'Grow Your Business With Precision Marketing.'); ?></span>
+                    <span class="strapline"><?php echo aimpro_get_field('hero_strapline_4', 'Your High-ROI Digital Marketing Partner'); ?></span>
                 </div>
                 <p class="hero-subtitle"><?php echo aimpro_get_field('hero_subtitle', 'Expert Lead Generation, SEO, PPC & Automation. Data-driven strategies that deliver <strong class="highlight-underline">MEASURABLE RESULTS</strong> and accelerate your <strong class="highlight-word">growth</strong>.'); ?></p>                <div class="hero-ctas">
                     <a href="<?php echo aimpro_get_field('hero_primary_cta_url', '#contact'); ?>" class="btn-primary large shine-effect pulse-animation"><?php echo aimpro_get_field('hero_primary_cta_text', 'CLAIM YOUR FREE GROWTH STRATEGY'); ?></a>
@@ -670,56 +669,54 @@
 <section class="testimonials-section">
     <!-- Target Icons -->
     <div class="target-icon testimonials-target-1"></div>
-    <div class="container">
-        <div class="content-center">            <h2>Don't Just Take Our Word for It</h2>
+    <div class="container">        <div class="content-center">            <h2><?php echo aimpro_get_field('testimonials_title', 'Don\'t Just Take Our Word for It'); ?></h2>
             <div class="curly-underline-accent"></div>
-            <p class="section-subtitle">Discover how we've transformed businesses across industries with strategies that deliver measurable growth:</p></div>
+            <p class="section-subtitle"><?php echo aimpro_get_field('testimonials_subtitle', 'Discover how we\'ve transformed businesses across industries with strategies that deliver measurable growth:'); ?></p></div>
         <div class="testimonials-carousel-wrapper">
             <div class="testimonials-carousel-container">
-                <div class="testimonials-carousel-track">
-                    <div class="testimonial-card slide-up">
+                <div class="testimonials-carousel-track">                    <div class="testimonial-card slide-up">
                         <div class="testimonial-content">
-                            <p>"Honestly, if you have a business that relies on your website to bring in business, don't waste your time on any other company. From my experience, I have gained approximately 50% increase in qualified leads."</p>
+                            <p>"<?php echo aimpro_get_field('testimonial_1_content', 'Honestly, if you have a business that relies on your website to bring in business, don\'t waste your time on any other company. From my experience, I have gained approximately 50% increase in qualified leads.'); ?>"</p>
                         </div>
                         <div class="testimonial-author">
-                            <strong>Emily Hargreaves</strong>
-                            <span>Marketing Director</span>
+                            <strong><?php echo aimpro_get_field('testimonial_1_author', 'Emily Hargreaves'); ?></strong>
+                            <span><?php echo aimpro_get_field('testimonial_1_title', 'Marketing Director'); ?></span>
                         </div>
                     </div>
                     <div class="testimonial-card slide-up">
                         <div class="testimonial-content">
-                            <p>"No negatives at all. One of the best companies we have ever worked with. So dynamic and on trend. Incredibly proactive in everything they do and the bonus is that they are such lovely people to work with."</p>
+                            <p>"<?php echo aimpro_get_field('testimonial_2_content', 'No negatives at all. One of the best companies we have ever worked with. So dynamic and on trend. Incredibly proactive in everything they do and the bonus is that they are such lovely people to work with.'); ?>"</p>
                         </div>
                         <div class="testimonial-author">
-                            <strong>Charlotte Davies</strong>
-                            <span>Business Owner</span>
+                            <strong><?php echo aimpro_get_field('testimonial_2_author', 'Charlotte Davies'); ?></strong>
+                            <span><?php echo aimpro_get_field('testimonial_2_title', 'Business Owner'); ?></span>
                         </div>
                     </div>
                     <div class="testimonial-card slide-up">
                         <div class="testimonial-content">
-                            <p>"The Google Ads campaigns run by Aimpro Digital have been a fantastic success. Their attention to detail and ability to target the right audience has really paid off. We've seen a significant increase in traffic and conversions, all thanks to their hard work and expertise!"</p>
+                            <p>"<?php echo aimpro_get_field('testimonial_3_content', 'The Google Ads campaigns run by Aimpro Digital have been a fantastic success. Their attention to detail and ability to target the right audience has really paid off. We\'ve seen a significant increase in traffic and conversions, all thanks to their hard work and expertise!'); ?>"</p>
                         </div>
                         <div class="testimonial-author">
-                            <strong>Tom Ridley</strong>
-                            <span>Sales Director, Sheffield</span>
+                            <strong><?php echo aimpro_get_field('testimonial_3_author', 'Tom Ridley'); ?></strong>
+                            <span><?php echo aimpro_get_field('testimonial_3_title', 'Sales Director, Sheffield'); ?></span>
                         </div>
                     </div>
                     <div class="testimonial-card slide-up">
                         <div class="testimonial-content">
-                            <p>"Aimpro Digital has been a game-changer for our business! Since partnering with them, we've seen a consistent flow of quality leads that truly align with our services. It's been a breath of fresh air to work with a team that understands our goals and delivers on their promises."</p>
+                            <p>"<?php echo aimpro_get_field('testimonial_4_content', 'Aimpro Digital has been a game-changer for our business! Since partnering with them, we\'ve seen a consistent flow of quality leads that truly align with our services. It\'s been a breath of fresh air to work with a team that understands our goals and delivers on their promises.'); ?>"</p>
                         </div>
                         <div class="testimonial-author">
-                            <strong>Sarah Thompson</strong>
-                            <span>Marketing Manager, London</span>
+                            <strong><?php echo aimpro_get_field('testimonial_4_author', 'Sarah Thompson'); ?></strong>
+                            <span><?php echo aimpro_get_field('testimonial_4_title', 'Marketing Manager, London'); ?></span>
                         </div>
                     </div>
                     <div class="testimonial-card slide-up">
                         <div class="testimonial-content">
-                            <p>"Our online visibility has improved dramatically thanks to Aimpro Digital's SEO expertise. Within months, we went from barely being on the map to ranking on the first page for key terms. The team is knowledgeable, transparent, and always ready with helpful advice. Couldn't recommend them more!"</p>
+                            <p>"<?php echo aimpro_get_field('testimonial_5_content', 'Our online visibility has improved dramatically thanks to Aimpro Digital\'s SEO expertise. Within months, we went from barely being on the map to ranking on the first page for key terms. The team is knowledgeable, transparent, and always ready with helpful advice. Couldn\'t recommend them more!'); ?>"</p>
                         </div>
                         <div class="testimonial-author">
-                            <strong>James Whitfield</strong>
-                            <span>Director, Birmingham</span>
+                            <strong><?php echo aimpro_get_field('testimonial_5_author', 'James Whitfield'); ?></strong>
+                            <span><?php echo aimpro_get_field('testimonial_5_title', 'Director, Birmingham'); ?></span>
                         </div>
                     </div>
                 </div>

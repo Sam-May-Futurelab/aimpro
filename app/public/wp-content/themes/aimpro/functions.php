@@ -534,6 +534,12 @@ function aimpro_set_default_landing_page_values() {
         'hero_subtitle' => 'Expert Lead Generation, SEO, PPC & Automation. Data-driven strategies that deliver <strong class="highlight-underline">MEASURABLE RESULTS</strong> and accelerate your <strong class="highlight-word">growth</strong>.',
         'hero_primary_cta_text' => 'CLAIM YOUR FREE GROWTH STRATEGY',
         'hero_primary_cta_url' => '#contact',
+        // Hero straplines
+        'hero_strapline_1' => 'No Fluff. Just Results.',
+        'hero_strapline_2' => 'Data-Driven Strategy. Measurable Results.',
+        'hero_strapline_3' => 'Grow Your Business With Precision Marketing.',
+        'hero_strapline_4' => 'Your High-ROI Digital Marketing Partner',
+        // Stats
         'stat_1_number' => '25',
         'stat_1_label' => 'Years of Experience',
         'stat_2_number' => '98',
@@ -542,14 +548,35 @@ function aimpro_set_default_landing_page_values() {
         'stat_3_label' => 'Industries Transformed',
         'stat_4_number' => '199',
         'stat_4_label' => 'Increase in Conversion Rates',
+        // Services
         'services_title' => 'Premium Digital Marketing Solutions That <span class="highlight curly-underline">DELIVER</span>',
         'services_subtitle' => 'Zero fluff. Pure performance. Our integrated marketing ecosystem works seamlessly to transform prospects into profits.',
+        // Office
         'office_title' => 'Come See Us... We\'re a <span class="highlight curly-underline">REAL</span> Company with Real Humans',
         'office_description' => 'Let\'s discuss your project over a coffee. Book a time to visit our Birmingham office and meet the team behind your marketing success.',
         'office_address_title' => 'Our Birmingham Office',
         'office_address' => '<p><strong>Located in: 55 Colmore Row</strong><br>
                     Address: 55 Colmore Row, Birmingham B3 2AA<br>
-                    Right in the heart of Birmingham\'s business district</p>'
+                    Right in the heart of Birmingham\'s business district</p>',
+        // Testimonials
+        'testimonials_title' => 'Don\'t Just Take Our Word for It',
+        'testimonials_subtitle' => 'Discover how we\'ve transformed businesses across industries with strategies that deliver measurable growth:',
+        // Individual testimonials
+        'testimonial_1_content' => 'Honestly, if you have a business that relies on your website to bring in business, don\'t waste your time on any other company. From my experience, I have gained approximately 50% increase in qualified leads.',
+        'testimonial_1_author' => 'Emily Hargreaves',
+        'testimonial_1_title' => 'Marketing Director',
+        'testimonial_2_content' => 'No negatives at all. One of the best companies we have ever worked with. So dynamic and on trend. Incredibly proactive in everything they do and the bonus is that they are such lovely people to work with.',
+        'testimonial_2_author' => 'Charlotte Davies',
+        'testimonial_2_title' => 'Business Owner',
+        'testimonial_3_content' => 'The Google Ads campaigns run by Aimpro Digital have been a fantastic success. Their attention to detail and ability to target the right audience has really paid off. We\'ve seen a significant increase in traffic and conversions, all thanks to their hard work and expertise!',
+        'testimonial_3_author' => 'Tom Ridley',
+        'testimonial_3_title' => 'Sales Director, Sheffield',
+        'testimonial_4_content' => 'Aimpro Digital has been a game-changer for our business! Since partnering with them, we\'ve seen a consistent flow of quality leads that truly align with our services. It\'s been a breath of fresh air to work with a team that understands our goals and delivers on their promises.',
+        'testimonial_4_author' => 'Sarah Thompson',
+        'testimonial_4_title' => 'Marketing Manager, London',
+        'testimonial_5_content' => 'Our online visibility has improved dramatically thanks to Aimpro Digital\'s SEO expertise. Within months, we went from barely being on the map to ranking on the first page for key terms. The team is knowledgeable, transparent, and always ready with helpful advice. Couldn\'t recommend them more!',
+        'testimonial_5_author' => 'James Whitfield',
+        'testimonial_5_title' => 'Director, Birmingham'
     );
     
     foreach ($defaults as $key => $value) {
@@ -560,6 +587,16 @@ function aimpro_set_default_landing_page_values() {
     }
 }
 add_action('after_switch_theme', 'aimpro_theme_activation');
+
+// Ensure defaults are set on admin page load
+add_action('admin_init', 'aimpro_ensure_defaults');
+function aimpro_ensure_defaults() {
+    // Check if defaults need to be set
+    if (!get_option('aimpro_defaults_set', false)) {
+        aimpro_set_default_landing_page_values();
+        update_option('aimpro_defaults_set', true);
+    }
+}
 
 /**
  * Create Landing Page Settings Admin Page
@@ -580,17 +617,23 @@ add_action('admin_menu', 'aimpro_add_admin_pages');
 /**
  * Landing Page Settings Admin Page Content
  */
-function aimpro_landing_page_admin() {
-    // Handle form submission
+function aimpro_landing_page_admin() {    // Handle form submission
     if (isset($_POST['submit']) && wp_verify_nonce($_POST['aimpro_landing_page_nonce'], 'aimpro_landing_page_save')) {
         if (current_user_can('manage_options')) {
             // Save all the custom fields
             $fields = array(
                 'hero_badge_text', 'hero_title', 'hero_subtitle', 'hero_primary_cta_text', 'hero_primary_cta_url',
+                'hero_strapline_1', 'hero_strapline_2', 'hero_strapline_3', 'hero_strapline_4',
                 'stat_1_number', 'stat_1_label', 'stat_2_number', 'stat_2_label',
                 'stat_3_number', 'stat_3_label', 'stat_4_number', 'stat_4_label',
                 'services_title', 'services_subtitle',
-                'office_title', 'office_description', 'office_address_title', 'office_address'
+                'office_title', 'office_description', 'office_address_title', 'office_address',
+                'testimonials_title', 'testimonials_subtitle',
+                'testimonial_1_content', 'testimonial_1_author', 'testimonial_1_title',
+                'testimonial_2_content', 'testimonial_2_author', 'testimonial_2_title',
+                'testimonial_3_content', 'testimonial_3_author', 'testimonial_3_title',
+                'testimonial_4_content', 'testimonial_4_author', 'testimonial_4_title',
+                'testimonial_5_content', 'testimonial_5_author', 'testimonial_5_title'
             );
             
             foreach ($fields as $field) {
@@ -600,7 +643,7 @@ function aimpro_landing_page_admin() {
                         update_option($field, wp_kses_post($_POST[$field]));
                     } else {
                         // Sanitize text fields
-                        update_option($field, sanitize_text_field($_POST[$field]));
+                        update_option($field, sanitize_textarea_field($_POST[$field]));
                     }
                 }
             }
@@ -649,11 +692,39 @@ function aimpro_landing_page_admin() {
                             <td>
                                 <input type="text" name="hero_primary_cta_text" value="<?php echo esc_attr(get_option('hero_primary_cta_text', 'CLAIM YOUR FREE GROWTH STRATEGY')); ?>" class="regular-text" />
                             </td>
-                        </tr>
-                        <tr>
+                        </tr>                        <tr>
                             <th scope="row">Primary CTA URL</th>
                             <td>
                                 <input type="text" name="hero_primary_cta_url" value="<?php echo esc_attr(get_option('hero_primary_cta_url', '#contact')); ?>" class="regular-text" />
+                            </td>
+                        </tr>
+                    </table>
+                    
+                    <h3>Hero Straplines (Rotating Text)</h3>
+                    <table class="form-table">
+                        <tr>
+                            <th scope="row">Strapline 1</th>
+                            <td>
+                                <input type="text" name="hero_strapline_1" value="<?php echo esc_attr(get_option('hero_strapline_1', 'No Fluff. Just Results.')); ?>" class="regular-text" />
+                                <p class="description">First rotating message (appears first)</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Strapline 2</th>
+                            <td>
+                                <input type="text" name="hero_strapline_2" value="<?php echo esc_attr(get_option('hero_strapline_2', 'Data-Driven Strategy. Measurable Results.')); ?>" class="regular-text" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Strapline 3</th>
+                            <td>
+                                <input type="text" name="hero_strapline_3" value="<?php echo esc_attr(get_option('hero_strapline_3', 'Grow Your Business With Precision Marketing.')); ?>" class="regular-text" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Strapline 4</th>
+                            <td>
+                                <input type="text" name="hero_strapline_4" value="<?php echo esc_attr(get_option('hero_strapline_4', 'Your High-ROI Digital Marketing Partner')); ?>" class="regular-text" />
                             </td>
                         </tr>
                     </table>
@@ -745,9 +816,156 @@ function aimpro_landing_page_admin() {
                     Address: 55 Colmore Row, Birmingham B3 2AA<br>
                     Right in the heart of Birmingham\'s business district</p>')); ?></textarea>
                                 <p class="description">Full address details (HTML allowed)</p>
+                            </td>                        </tr>
+                    </table>
+                </div>
+                
+                <!-- Testimonials Section -->
+                <div class="aimpro-admin-section">
+                    <h2>Testimonials Section</h2>
+                    <table class="form-table">
+                        <tr>
+                            <th scope="row">Section Title</th>
+                            <td>
+                                <input type="text" name="testimonials_title" value="<?php echo esc_attr(get_option('testimonials_title', 'Don\'t Just Take Our Word for It')); ?>" class="regular-text" />
+                                <p class="description">Main heading for testimonials section</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Section Subtitle</th>
+                            <td>
+                                <textarea name="testimonials_subtitle" rows="2" class="large-text"><?php echo esc_textarea(get_option('testimonials_subtitle', 'Discover how we\'ve transformed businesses across industries with strategies that deliver measurable growth:')); ?></textarea>
+                                <p class="description">Description below the testimonials title</p>
                             </td>
                         </tr>
                     </table>
+                    
+                    <h3>Individual Testimonials</h3>
+                    
+                    <!-- Testimonial 1 -->
+                    <div style="border: 1px solid #ddd; padding: 15px; margin: 10px 0; border-radius: 5px;">
+                        <h4>Testimonial 1</h4>
+                        <table class="form-table">
+                            <tr>
+                                <th scope="row">Content</th>
+                                <td>
+                                    <textarea name="testimonial_1_content" rows="3" class="large-text"><?php echo esc_textarea(get_option('testimonial_1_content', 'Honestly, if you have a business that relies on your website to bring in business, don\'t waste your time on any other company. From my experience, I have gained approximately 50% increase in qualified leads.')); ?></textarea>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Author Name</th>
+                                <td>
+                                    <input type="text" name="testimonial_1_author" value="<?php echo esc_attr(get_option('testimonial_1_author', 'Emily Hargreaves')); ?>" class="regular-text" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Author Title</th>
+                                <td>
+                                    <input type="text" name="testimonial_1_title" value="<?php echo esc_attr(get_option('testimonial_1_title', 'Marketing Director')); ?>" class="regular-text" />
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                    
+                    <!-- Testimonial 2 -->
+                    <div style="border: 1px solid #ddd; padding: 15px; margin: 10px 0; border-radius: 5px;">
+                        <h4>Testimonial 2</h4>
+                        <table class="form-table">
+                            <tr>
+                                <th scope="row">Content</th>
+                                <td>
+                                    <textarea name="testimonial_2_content" rows="3" class="large-text"><?php echo esc_textarea(get_option('testimonial_2_content', 'No negatives at all. One of the best companies we have ever worked with. So dynamic and on trend. Incredibly proactive in everything they do and the bonus is that they are such lovely people to work with.')); ?></textarea>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Author Name</th>
+                                <td>
+                                    <input type="text" name="testimonial_2_author" value="<?php echo esc_attr(get_option('testimonial_2_author', 'Charlotte Davies')); ?>" class="regular-text" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Author Title</th>
+                                <td>
+                                    <input type="text" name="testimonial_2_title" value="<?php echo esc_attr(get_option('testimonial_2_title', 'Business Owner')); ?>" class="regular-text" />
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                    
+                    <!-- Testimonial 3 -->
+                    <div style="border: 1px solid #ddd; padding: 15px; margin: 10px 0; border-radius: 5px;">
+                        <h4>Testimonial 3</h4>
+                        <table class="form-table">
+                            <tr>
+                                <th scope="row">Content</th>
+                                <td>
+                                    <textarea name="testimonial_3_content" rows="3" class="large-text"><?php echo esc_textarea(get_option('testimonial_3_content', 'The Google Ads campaigns run by Aimpro Digital have been a fantastic success. Their attention to detail and ability to target the right audience has really paid off. We\'ve seen a significant increase in traffic and conversions, all thanks to their hard work and expertise!')); ?></textarea>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Author Name</th>
+                                <td>
+                                    <input type="text" name="testimonial_3_author" value="<?php echo esc_attr(get_option('testimonial_3_author', 'Tom Ridley')); ?>" class="regular-text" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Author Title</th>
+                                <td>
+                                    <input type="text" name="testimonial_3_title" value="<?php echo esc_attr(get_option('testimonial_3_title', 'Sales Director, Sheffield')); ?>" class="regular-text" />
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                    
+                    <!-- Testimonial 4 -->
+                    <div style="border: 1px solid #ddd; padding: 15px; margin: 10px 0; border-radius: 5px;">
+                        <h4>Testimonial 4</h4>
+                        <table class="form-table">
+                            <tr>
+                                <th scope="row">Content</th>
+                                <td>
+                                    <textarea name="testimonial_4_content" rows="3" class="large-text"><?php echo esc_textarea(get_option('testimonial_4_content', 'Aimpro Digital has been a game-changer for our business! Since partnering with them, we\'ve seen a consistent flow of quality leads that truly align with our services. It\'s been a breath of fresh air to work with a team that understands our goals and delivers on their promises.')); ?></textarea>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Author Name</th>
+                                <td>
+                                    <input type="text" name="testimonial_4_author" value="<?php echo esc_attr(get_option('testimonial_4_author', 'Sarah Thompson')); ?>" class="regular-text" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Author Title</th>
+                                <td>
+                                    <input type="text" name="testimonial_4_title" value="<?php echo esc_attr(get_option('testimonial_4_title', 'Marketing Manager, London')); ?>" class="regular-text" />
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                    
+                    <!-- Testimonial 5 -->
+                    <div style="border: 1px solid #ddd; padding: 15px; margin: 10px 0; border-radius: 5px;">
+                        <h4>Testimonial 5</h4>
+                        <table class="form-table">
+                            <tr>
+                                <th scope="row">Content</th>
+                                <td>
+                                    <textarea name="testimonial_5_content" rows="3" class="large-text"><?php echo esc_textarea(get_option('testimonial_5_content', 'Our online visibility has improved dramatically thanks to Aimpro Digital\'s SEO expertise. Within months, we went from barely being on the map to ranking on the first page for key terms. The team is knowledgeable, transparent, and always ready with helpful advice. Couldn\'t recommend them more!')); ?></textarea>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Author Name</th>
+                                <td>
+                                    <input type="text" name="testimonial_5_author" value="<?php echo esc_attr(get_option('testimonial_5_author', 'James Whitfield')); ?>" class="regular-text" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Author Title</th>
+                                <td>
+                                    <input type="text" name="testimonial_5_title" value="<?php echo esc_attr(get_option('testimonial_5_title', 'Director, Birmingham')); ?>" class="regular-text" />
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
                 </div>
                 
             </div>
