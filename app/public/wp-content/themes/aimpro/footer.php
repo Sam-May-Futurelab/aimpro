@@ -18,15 +18,14 @@
                     <span class="cert-badge">Meta Partner</span>
                 </div>
             </div>
-            
-            <div class="footer-column footer-services">
+              <div class="footer-column footer-services">
                 <h3>Our Services</h3>
                 <ul class="footer-links">
-                    <li><a href="<?php echo home_url(); ?>#services">Search Engine Optimization</a></li>
-                    <li><a href="<?php echo home_url(); ?>#services">Pay-Per-Click Advertising</a></li>
-                    <li><a href="<?php echo home_url(); ?>#services">Web Development</a></li>
-                    <li><a href="<?php echo home_url(); ?>#services">Social Media Marketing</a></li>
-                    <li><a href="<?php echo home_url(); ?>#services">Digital Strategy</a></li>
+                    <li><a href="<?php echo home_url('/seo-services'); ?>">Search Engine Optimization</a></li>
+                    <li><a href="<?php echo home_url('/advertising-ppc'); ?>">Pay-Per-Click Advertising</a></li>
+                    <li><a href="<?php echo home_url('/website-development'); ?>">Web Development</a></li>
+                    <li><a href="<?php echo home_url('/marketing-automation'); ?>">Marketing Automation</a></li>
+                    <li><a href="<?php echo home_url('/services'); ?>">All Services</a></li>
                 </ul>
             </div>
             
@@ -97,8 +96,9 @@
                 <a href="#" class="footer-link">Terms of Service</a>
                 <a href="#" class="footer-link">Sitemap</a>
             </div>
-        </div>
-    </div>
+        </div>    </div>
 </footer>
 
 <?php wp_footer(); ?>
+</body>
+</html>
