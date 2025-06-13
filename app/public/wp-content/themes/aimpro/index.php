@@ -112,23 +112,22 @@
                                 </li>
                                 <li><a href="#all-services">View All Services</a></li>
                             </ul>
-                        </div>
-                    </li><li class="nav-item-dropdown">
-                        <a href="#solutions" class="nav-link">Solutions <span class="nav-arrow">
+                        </div>                    </li><li class="nav-item-dropdown">
+                        <a href="<?php echo home_url('/solutions'); ?>" class="nav-link">Solutions <span class="nav-arrow">
                             <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                 <polyline points="6 9 12 15 18 9"></polyline>
                             </svg>
                         </span></a>
                         <div class="dropdown-menu">
                             <ul>
-                                <li><a href="#lead-generation">Lead Generation (B2B/B2C)</a></li>
-                                <li><a href="#automate-marketing">Automate Marketing</a></li>
-                                <li><a href="#improve-roi">Improve ROI from Ads</a></li>
-                                <li><a href="#rank-higher">Rank Higher Locally</a></li>
-                                <li><a href="#high-converting-website">Build a High-Converting Website</a></li>
-                                <li><a href="#streamline-funnel">Streamline Your Sales Funnel</a></li>
+                                <li><a href="<?php echo home_url('/lead-generation'); ?>">Lead Generation (B2B/B2C)</a></li>
+                                <li><a href="<?php echo home_url('/automate-marketing'); ?>">Automate Marketing</a></li>
+                                <li><a href="<?php echo home_url('/improve-roi-ads'); ?>">Improve ROI from Ads</a></li>
+                                <li><a href="<?php echo home_url('/rank-higher-locally'); ?>">Rank Higher Locally</a></li>
+                                <li><a href="<?php echo home_url('/high-converting-website'); ?>">Build a High-Converting Website</a></li>
+                                <li><a href="<?php echo home_url('/streamline-sales-funnel'); ?>">Streamline Your Sales Funnel</a></li>
                             </ul>
-                        </div>                    </li>                    <li class="nav-item-dropdown">
+                        </div>                    </li><li class="nav-item-dropdown">
                         <a href="<?php echo home_url('/industries'); ?>" class="nav-link">Industries <span class="nav-arrow">
                             <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                 <polyline points="6 9 12 15 18 9"></polyline>
