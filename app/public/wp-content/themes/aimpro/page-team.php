@@ -95,10 +95,10 @@ get_header(); ?>
             </div>
         </section>
 
-        <!-- SEO Team -->
-        <section class="seo-team">
+        <!-- Marketing Specialists -->
+        <section class="marketing-team">
             <div class="section-content">
-                <h2>SEO Specialists</h2>
+                <h2>Marketing Specialists</h2>
                 <div class="team-grid">
                     <div class="team-member">
                         <div class="member-photo">
@@ -118,30 +118,6 @@ get_header(); ?>
 
                     <div class="team-member">
                         <div class="member-photo">
-                            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/team/seo-analyst.jpg" alt="David Park - SEO Analyst" />
-                        </div>
-                        <div class="member-info">
-                            <h3>David Park</h3>
-                            <h4>Senior SEO Analyst</h4>
-                            <p>David focuses on keyword research, competitive analysis, and performance tracking. His analytical approach helps clients achieve sustainable organic growth.</p>
-                            <div class="member-specialties">
-                                <span class="specialty">Keyword Research</span>
-                                <span class="specialty">Competitive Analysis</span>
-                                <span class="specialty">Performance Analytics</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- PPC Team -->
-        <section class="ppc-team">
-            <div class="section-content">
-                <h2>PPC Specialists</h2>
-                <div class="team-grid">
-                    <div class="team-member">
-                        <div class="member-photo">
                             <img src="<?php echo get_template_directory_uri(); ?>/assets/images/team/ppc-lead.jpg" alt="Lisa Thompson - PPC Lead" />
                         </div>
                         <div class="member-info">
@@ -152,6 +128,22 @@ get_header(); ?>
                                 <span class="specialty">Google Ads</span>
                                 <span class="specialty">Facebook Ads</span>
                                 <span class="specialty">Campaign Optimization</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="team-member">
+                        <div class="member-photo">
+                            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/team/content-lead.jpg" alt="Maria Gonzalez - Content Lead" />
+                        </div>
+                        <div class="member-info">
+                            <h3>Maria Gonzalez</h3>
+                            <h4>Content Strategy Lead</h4>
+                            <p>Maria develops comprehensive content strategies that engage audiences and drive conversions. She specializes in blog content, social media strategy, and content calendar development.</p>
+                            <div class="member-specialties">
+                                <span class="specialty">Content Strategy</span>
+                                <span class="specialty">Blog Writing</span>
+                                <span class="specialty">Social Media</span>
                             </div>
                         </div>
                     </div>
@@ -175,27 +167,11 @@ get_header(); ?>
             </div>
         </section>
 
-        <!-- Content & Creative Team -->
-        <section class="content-team">
+        <!-- Technical Team -->
+        <section class="technical-team">
             <div class="section-content">
-                <h2>Content & Creative Team</h2>
+                <h2>Technical & Creative Team</h2>
                 <div class="team-grid">
-                    <div class="team-member">
-                        <div class="member-photo">
-                            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/team/content-lead.jpg" alt="Maria Gonzalez - Content Lead" />
-                        </div>
-                        <div class="member-info">
-                            <h3>Maria Gonzalez</h3>
-                            <h4>Content Strategy Lead</h4>
-                            <p>Maria develops comprehensive content strategies that engage audiences and drive conversions. She specializes in blog content, social media strategy, and content calendar development.</p>
-                            <div class="member-specialties">
-                                <span class="specialty">Content Strategy</span>
-                                <span class="specialty">Blog Writing</span>
-                                <span class="specialty">Social Media</span>
-                            </div>
-                        </div>
-                    </div>
-
                     <div class="team-member">
                         <div class="member-photo">
                             <img src="<?php echo get_template_directory_uri(); ?>/assets/images/team/designer.jpg" alt="James Wilson - Creative Director" />
@@ -208,30 +184,6 @@ get_header(); ?>
                                 <span class="specialty">Graphic Design</span>
                                 <span class="specialty">UX/UI Design</span>
                                 <span class="specialty">Brand Identity</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Analytics & Development Team -->
-        <section class="analytics-team">
-            <div class="section-content">
-                <h2>Analytics & Development</h2>
-                <div class="team-grid">
-                    <div class="team-member">
-                        <div class="member-photo">
-                            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/team/analytics-lead.jpg" alt="Jennifer Kim - Analytics Lead" />
-                        </div>
-                        <div class="member-info">
-                            <h3>Jennifer Kim</h3>
-                            <h4>Analytics Team Lead</h4>
-                            <p>Jennifer transforms data into actionable insights. She specializes in Google Analytics, conversion tracking, and performance reporting to help clients understand their marketing ROI.</p>
-                            <div class="member-specialties">
-                                <span class="specialty">Google Analytics</span>
-                                <span class="specialty">Conversion Tracking</span>
-                                <span class="specialty">Performance Reporting</span>
                             </div>
                         </div>
                     </div>
@@ -248,6 +200,22 @@ get_header(); ?>
                                 <span class="specialty">Web Development</span>
                                 <span class="specialty">Conversion Optimization</span>
                                 <span class="specialty">Technical Implementation</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="team-member">
+                        <div class="member-photo">
+                            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/team/analytics-lead.jpg" alt="Jennifer Kim - Analytics Lead" />
+                        </div>
+                        <div class="member-info">
+                            <h3>Jennifer Kim</h3>
+                            <h4>Analytics Team Lead</h4>
+                            <p>Jennifer transforms data into actionable insights. She specializes in Google Analytics, conversion tracking, and performance reporting to help clients understand their marketing ROI.</p>
+                            <div class="member-specialties">
+                                <span class="specialty">Google Analytics</span>
+                                <span class="specialty">Conversion Tracking</span>
+                                <span class="specialty">Performance Reporting</span>
                             </div>
                         </div>
                     </div>
@@ -290,239 +258,7 @@ get_header(); ?>
                     <a href="<?php echo home_url('/contact'); ?>" class="btn btn-secondary">Get in Touch</a>
                 </div>
             </div>
-        </section>
-
-    </div>
-</main>
-
-<?php get_footer(); ?>
-
-<main class="team-page">
-    <!-- Team Hero Section -->
-    <section class="team-hero">
-        <div class="container">
-            <h1>Our Team</h1>
-            <p class="hero-subtitle">Meet the experts behind your digital success</p>
-        </div>
-    </section>
-
-    <!-- Team Introduction Section -->
-    <section class="team-intro">
-        <div class="container">
-            <h2>The People Behind Our Success</h2>
-            <p>Our diverse team of digital marketing experts brings together years of experience, creativity, and passion for helping businesses grow. Each team member is dedicated to delivering exceptional results and building lasting relationships with our clients.</p>
-        </div>
-    </section>
-
-    <!-- Leadership Team Section -->
-    <section class="leadership-team">
-        <div class="container">
-            <h2>Leadership Team</h2>
-            <div class="team-grid">
-                <div class="team-member">
-                    <div class="member-photo">
-                        <div class="photo-placeholder">Photo</div>
-                    </div>
-                    <div class="member-info">
-                        <h3>John Smith</h3>
-                        <h4>Chief Executive Officer</h4>
-                        <p>With over 15 years in digital marketing, John leads our strategic vision and ensures we deliver exceptional value to every client. His expertise spans SEO, PPC, and business development.</p>
-                        <div class="member-contact">
-                            <span>john@aimpro.com</span>
-                            <span>LinkedIn</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="team-member">
-                    <div class="member-photo">
-                        <div class="photo-placeholder">Photo</div>
-                    </div>
-                    <div class="member-info">
-                        <h3>Sarah Johnson</h3>
-                        <h4>Chief Marketing Officer</h4>
-                        <p>Sarah brings innovative marketing strategies and deep industry expertise. She specializes in brand development, content strategy, and multi-channel campaign management.</p>
-                        <div class="member-contact">
-                            <span>sarah@aimpro.com</span>
-                            <span>LinkedIn</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="team-member">
-                    <div class="member-photo">
-                        <div class="photo-placeholder">Photo</div>
-                    </div>
-                    <div class="member-info">
-                        <h3>Mike Chen</h3>
-                        <h4>Chief Technology Officer</h4>
-                        <p>Mike oversees our technology stack and development initiatives. His background in software engineering and data analytics helps drive our technical innovation.</p>
-                        <div class="member-contact">
-                            <span>mike@aimpro.com</span>
-                            <span>LinkedIn</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Marketing Team Section -->
-    <section class="marketing-team">
-        <div class="container">
-            <h2>Marketing Specialists</h2>
-            <div class="team-grid">
-                <div class="team-member">
-                    <div class="member-photo">
-                        <div class="photo-placeholder">Photo</div>
-                    </div>
-                    <div class="member-info">
-                        <h3>Emily Rodriguez</h3>
-                        <h4>SEO Specialist</h4>
-                        <p>Emily is our SEO expert with 8+ years of experience in technical SEO, content optimization, and link building strategies.</p>
-                    </div>
-                </div>
-
-                <div class="team-member">
-                    <div class="member-photo">
-                        <div class="photo-placeholder">Photo</div>
-                    </div>
-                    <div class="member-info">
-                        <h3>David Wilson</h3>
-                        <h4>PPC Manager</h4>
-                        <p>David manages our paid advertising campaigns across Google Ads, Facebook, and other platforms, optimizing for maximum ROI.</p>
-                    </div>
-                </div>
-
-                <div class="team-member">
-                    <div class="member-photo">
-                        <div class="photo-placeholder">Photo</div>
-                    </div>
-                    <div class="member-info">
-                        <h3>Lisa Park</h3>
-                        <h4>Content Marketing Manager</h4>
-                        <p>Lisa creates compelling content strategies and manages our content production across all digital channels.</p>
-                    </div>
-                </div>
-
-                <div class="team-member">
-                    <div class="member-photo">
-                        <div class="photo-placeholder">Photo</div>
-                    </div>
-                    <div class="member-info">
-                        <h3>Alex Thompson</h3>
-                        <h4>Social Media Specialist</h4>
-                        <p>Alex handles social media strategy, community management, and social advertising campaigns for our clients.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Technical Team Section -->
-    <section class="technical-team">
-        <div class="container">
-            <h2>Technical Team</h2>
-            <div class="team-grid">
-                <div class="team-member">
-                    <div class="member-photo">
-                        <div class="photo-placeholder">Photo</div>
-                    </div>
-                    <div class="member-info">
-                        <h3>Rachel Kim</h3>
-                        <h4>Web Developer</h4>
-                        <p>Rachel builds and maintains high-performance websites with a focus on user experience and conversion optimization.</p>
-                    </div>
-                </div>
-
-                <div class="team-member">
-                    <div class="member-photo">
-                        <div class="photo-placeholder">Photo</div>
-                    </div>
-                    <div class="member-info">
-                        <h3>Tom Anderson</h3>
-                        <h4>Data Analyst</h4>
-                        <p>Tom analyzes campaign performance and provides insights that drive strategic decisions and improve client results.</p>
-                    </div>
-                </div>
-
-                <div class="team-member">
-                    <div class="member-photo">
-                        <div class="photo-placeholder">Photo</div>
-                    </div>
-                    <div class="member-info">
-                        <h3>Jessica Martinez</h3>
-                        <h4>UX/UI Designer</h4>
-                        <p>Jessica designs user interfaces and experiences that convert visitors into customers for our client websites.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Client Success Team Section -->
-    <section class="client-success-team">
-        <div class="container">
-            <h2>Client Success</h2>
-            <div class="team-grid">
-                <div class="team-member">
-                    <div class="member-photo">
-                        <div class="photo-placeholder">Photo</div>
-                    </div>
-                    <div class="member-info">
-                        <h3>Amanda Foster</h3>
-                        <h4>Account Manager</h4>
-                        <p>Amanda ensures our clients receive exceptional service and their marketing goals are consistently met and exceeded.</p>
-                    </div>
-                </div>
-
-                <div class="team-member">
-                    <div class="member-photo">
-                        <div class="photo-placeholder">Photo</div>
-                    </div>
-                    <div class="member-info">
-                        <h3>James Wright</h3>
-                        <h4>Customer Success Manager</h4>
-                        <p>James works closely with clients to understand their business objectives and align our strategies for maximum impact.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Team Culture Section -->
-    <section class="team-culture">
-        <div class="container">
-            <h2>Our Team Culture</h2>
-            <div class="culture-highlights">
-                <div class="culture-item">
-                    <h3>Continuous Learning</h3>
-                    <p>We invest in our team's growth through training, certifications, and conference attendance.</p>
-                </div>
-                <div class="culture-item">
-                    <h3>Collaboration</h3>
-                    <p>Our open office environment and regular team meetings foster creativity and knowledge sharing.</p>
-                </div>
-                <div class="culture-item">
-                    <h3>Work-Life Balance</h3>
-                    <p>We support flexible working arrangements and prioritize our team's well-being.</p>
-                </div>
-                <div class="culture-item">
-                    <h3>Innovation</h3>
-                    <p>We encourage experimentation and new ideas to stay ahead of industry trends.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Join Our Team CTA -->
-    <section class="join-team-cta">
-        <div class="container">
-            <h2>Join Our Growing Team</h2>
-            <p>Are you passionate about digital marketing? We're always looking for talented individuals to join our team.</p>
-            <a href="/careers" class="cta-button">View Open Positions</a>
-        </div>
-    </section>
+        </section>    </div>
 </main>
 
 <?php get_footer(); ?>
