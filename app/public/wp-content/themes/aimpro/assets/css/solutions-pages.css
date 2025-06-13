@@ -1,0 +1,431 @@
+/**
+ * Solutions Pages Styling
+ * Clean, modern styling for solution pages including lead generation
+ */
+
+/* ===== PAGE STRUCTURE ===== */
+
+/* Solution Overview Section */
+.solution-overview {
+    padding: 4rem 0;
+    background: #f8fafc;
+}
+
+.overview-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: center;
+}
+
+.overview-text h2 {
+    font-size: 2.25rem;
+    font-weight: 700;
+    color: #1a202c;
+    margin-bottom: 1.5rem;
+    line-height: 1.3;
+}
+
+.overview-text p {
+    font-size: 1.125rem;
+    color: #4a5568;
+    line-height: 1.7;
+    margin-bottom: 2rem;
+}
+
+/* Solution Challenges */
+.solution-challenges {
+    background: white;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    border-left: 4px solid #f15a25;
+}
+
+.solution-challenges h3 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #1a202c;
+    margin-bottom: 1rem;
+}
+
+.solution-challenges ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.solution-challenges li {
+    color: #4a5568;
+    margin-bottom: 0.75rem;
+    padding-left: 1.5rem;
+    position: relative;
+}
+
+.solution-challenges li::before {
+    content: "×";
+    position: absolute;
+    left: 0;
+    color: #e53e3e;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+/* ===== METHODS & TOOLS SECTIONS ===== */
+
+/* Lead Generation Methods Section */
+.lead-generation-methods,
+.lead-generation-tools {
+    padding: 5rem 0;
+}
+
+.lead-generation-methods h2,
+.lead-generation-tools h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #1a202c;
+    margin-bottom: 3rem;
+}
+
+/* Methods Grid */
+.methods-grid,
+.tools-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+/* Method Card & Tool Category Styling */
+.method-card,
+.tool-card,
+.tool-category {
+    background: white;
+    border-radius: 16px;
+    padding: 2.5rem;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+    border: 1px solid #e2e8f0;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.method-card::before,
+.tool-card::before,
+.tool-category::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #f15a25, #ff7849);
+}
+
+.method-card:hover,
+.tool-card:hover,
+.tool-category:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
+}
+
+/* Method Headers */
+.method-card h3,
+.tool-card h3,
+.tool-category h3 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #1a202c;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.method-card h3::before,
+.tool-card h3::before {
+    content: "🎯";
+    font-size: 1.25rem;
+}
+
+/* Tool category icons */
+.tool-category h3::before {
+    content: "🔧";
+    font-size: 1.25rem;
+}
+
+/* Method Description */
+.method-card p,
+.tool-card p {
+    color: #4a5568;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+    font-size: 1rem;
+}
+
+/* Method Features List & Tool List */
+.method-features,
+.tool-features,
+.tool-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.method-features li,
+.tool-features li,
+.tool-list li {
+    color: #2d3748;
+    margin-bottom: 0.75rem;
+    padding-left: 1.5rem;
+    position: relative;
+    font-weight: 500;
+}
+
+.method-features li::before,
+.tool-features li::before,
+.tool-list li::before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: #f15a25;
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+/* ===== TOOLS & TECHNOLOGIES ===== */
+
+.lead-generation-tools {
+    background: #f7fafc;
+}
+
+/* Different icons for tool categories */
+.tool-card.analytics h3::before {
+    content: "📊";
+}
+
+.tool-card.crm h3::before {
+    content: "🔗";
+}
+
+.tool-card.optimization h3::before {
+    content: "⚡";
+}
+
+/* ===== CTA SECTION ===== */
+
+/* Ready to Generate More Leads CTA */
+.solutions-cta,
+.lead-generation-cta {
+    padding: 5rem 0;
+    background: linear-gradient(135deg, #1a202c 0%, #2d3748 100%);
+    color: white;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.solutions-cta::before,
+.lead-generation-cta::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="50" cy="50" r="0.5" fill="rgba(255,255,255,0.05)"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+    opacity: 0.3;
+}
+
+.solutions-cta .section-content,
+.lead-generation-cta .section-content {
+    position: relative;
+    z-index: 2;
+}
+
+.solutions-cta h2,
+.lead-generation-cta h2 {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    background: linear-gradient(45deg, #ffffff, #f15a25);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.solutions-cta p,
+.lead-generation-cta p {
+    font-size: 1.25rem;
+    margin-bottom: 3rem;
+    opacity: 0.9;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* CTA Buttons */
+.cta-buttons {
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 2rem;
+}
+
+.cta-buttons .btn {
+    padding: 1rem 2rem;
+    border-radius: 50px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.cta-buttons .btn-primary {
+    background: linear-gradient(45deg, #f15a25, #ff7849);
+    color: white;
+    box-shadow: 0 8px 25px rgba(241, 90, 37, 0.3);
+    border: none;
+}
+
+.cta-buttons .btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 35px rgba(241, 90, 37, 0.4);
+    color: white;
+}
+
+.cta-buttons .btn-secondary {
+    background: transparent;
+    color: white;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+.cta-buttons .btn-secondary:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.5);
+    color: white;
+}
+
+/* CTA Features & Benefits */
+.cta-features,
+.cta-benefits {
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 2rem;
+    opacity: 0.8;
+}
+
+.cta-feature,
+.benefit {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.9rem;
+}
+
+.cta-feature::before {
+    content: "✓";
+    color: #f15a25;
+    font-weight: bold;
+}
+
+/* ===== RESPONSIVE DESIGN ===== */
+
+@media (max-width: 768px) {
+    /* Overview Section */
+    .overview-content {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
+    .overview-text h2 {
+        font-size: 1.875rem;
+    }
+    
+    .overview-text p {
+        font-size: 1rem;
+    }
+    
+    /* Solution Challenges */
+    .solution-challenges {
+        padding: 1.5rem;
+    }
+    
+    /* Methods Grid */
+    .methods-grid,
+    .tools-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+      /* Method Cards & Tool Categories */
+    .method-card,
+    .tool-card,
+    .tool-category {
+        padding: 2rem;
+    }
+    
+    .method-card h3,
+    .tool-card h3,
+    .tool-category h3 {
+        font-size: 1.25rem;
+    }
+    
+    /* CTA Section */
+    .solutions-cta h2,
+    .lead-generation-cta h2 {
+        font-size: 2rem;
+    }
+    
+    .solutions-cta p,
+    .lead-generation-cta p {
+        font-size: 1.125rem;
+    }
+    
+    .cta-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .cta-buttons .btn {
+        width: 100%;
+        max-width: 300px;
+        text-align: center;
+    }
+    
+    .cta-features,
+    .cta-benefits {
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .lead-generation-methods,
+    .lead-generation-tools,
+    .solutions-cta,
+    .lead-generation-cta {
+        padding: 3rem 0;
+    }
+    
+    .solution-overview {
+        padding: 3rem 0;
+    }
+    
+    .method-card,
+    .tool-card,
+    .tool-category {
+        padding: 1.5rem;
+    }
+    
+    .solutions-cta h2,
+    .lead-generation-cta h2 {
+        font-size: 1.75rem;
+    }
+}
