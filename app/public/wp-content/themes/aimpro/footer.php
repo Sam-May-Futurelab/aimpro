@@ -78,17 +78,19 @@
                     </a>
                 </div>
             </div>
-        </div>
-          <div class="footer-bottom">
+        </div>        <div class="footer-bottom">
             <div class="copyright">
                 © <?php echo date('Y'); ?> Aimpro Digital. All Rights Reserved.
             </div>
             <div class="footer-bottom-center">
                 <!-- Theme Toggle Button -->
-                <button class="theme-toggle" aria-label="Switch to dark theme" title="Toggle Theme">
-                    <span class="sun-icon">☀️</span>
-                    <span class="moon-icon">🌙</span>
-                </button>
+                <div class="footer-theme-toggle">
+                    <span class="toggle-label">Theme</span>
+                    <button class="theme-toggle" aria-label="Switch to dark theme" title="Toggle Theme">
+                        <span class="theme-icon sun-icon">☀️</span>
+                        <span class="theme-icon moon-icon">🌙</span>
+                    </button>
+                </div>
             </div>
             <div class="footer-bottom-links">
                 <a href="#" class="footer-link">Privacy Policy</a>

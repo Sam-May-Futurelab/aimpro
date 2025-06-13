@@ -2,19 +2,87 @@
    FOOTER CTA AND THEME TOGGLE STYLES
    ============================================ */
 
-/* Footer Theme Toggle */
-.footer-theme-toggle {
-    margin-top: 2rem;
-    padding: 1.5rem 0;
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
+/* Footer Bottom Layout */
+.footer-bottom {
     display: flex;
     align-items: center;
-    justify-content: flex-start;
-    gap: 1.25rem;
+    justify-content: space-between;
+    padding: 1.5rem 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    margin-top: 2rem;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.footer-bottom-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+}
+
+.footer-bottom-links {
+    display: flex;
+    gap: 1.5rem;
+    align-items: center;
+}
+
+.footer-link {
+    color: #cbd5e1;
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: color 0.3s ease;
+}
+
+.footer-link:hover {
+    color: var(--accent-orange);
+}
+
+.copyright {
+    color: #94a3b8;
+    font-size: 0.9rem;
+}
+
+/* Responsive footer bottom */
+@media (max-width: 768px) {
+    .footer-bottom {
+        flex-direction: column;
+        text-align: center;
+        gap: 1.5rem;
+    }
+    
+    .footer-bottom-links {
+        justify-content: center;
+    }
+}
+
+/* Light theme adjustments for footer bottom */
+.light-theme .footer-bottom {
+    border-top-color: rgba(0, 0, 0, 0.1);
+}
+
+.light-theme .footer-link {
+    color: #64748b;
+}
+
+.light-theme .footer-link:hover {
+    color: var(--accent-orange);
+}
+
+.light-theme .copyright {
+    color: #64748b;
+}
+
+/* Footer Theme Toggle */
+.footer-theme-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
 }
 
 .footer-theme-toggle .toggle-label {
-    font-size: 0.95rem;
+    font-size: 0.85rem;
     color: #cbd5e1;
     font-weight: 600;
     letter-spacing: 0.5px;
@@ -25,16 +93,16 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 44px;
-    height: 44px;
+    width: 36px;
+    height: 36px;
     background: var(--gradient-orange);
-    border-radius: 12px;
+    border-radius: 10px;
     border: none;
     cursor: pointer;
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     position: relative;
     overflow: hidden;
-    box-shadow: 0 4px 12px rgba(241, 90, 37, 0.25);
+    box-shadow: 0 3px 8px rgba(241, 90, 37, 0.25);
 }
 
 .footer-theme-toggle .theme-toggle::before {
@@ -53,29 +121,45 @@
 }
 
 .footer-theme-toggle .theme-toggle:hover {
-    transform: translateY(-2px) scale(1.05);
-    box-shadow: 0 8px 20px rgba(241, 90, 37, 0.4);
+    transform: translateY(-1px) scale(1.05);
+    box-shadow: 0 6px 16px rgba(241, 90, 37, 0.4);
 }
 
 .footer-theme-toggle .theme-icon {
-    width: 18px;
-    height: 18px;
+    width: 16px;
+    height: 16px;
     color: var(--primary-black);
     transition: all 0.3s ease;
     position: relative;
     z-index: 2;
+    font-size: 16px;
 }
 
 .footer-theme-toggle .theme-toggle:hover .theme-icon {
     transform: rotate(180deg);
 }
 
-/* Light theme adjustments for footer theme toggle */
-/* Light theme adjustments for footer theme toggle */
-.light-theme .footer-theme-toggle {
-    border-top-color: rgba(0, 0, 0, 0.1);
+/* Hide moon icon by default, show sun icon */
+.footer-theme-toggle .moon-icon {
+    opacity: 0;
+    position: absolute;
 }
 
+.footer-theme-toggle .sun-icon {
+    opacity: 1;
+    position: relative;
+}
+
+/* In dark theme, hide sun and show moon */
+body:not(.light-theme) .footer-theme-toggle .sun-icon {
+    opacity: 0;
+}
+
+body:not(.light-theme) .footer-theme-toggle .moon-icon {
+    opacity: 1;
+}
+
+/* Light theme adjustments for footer theme toggle */
 .light-theme .footer-theme-toggle .toggle-label {
     color: #64748b;
 }
@@ -97,7 +181,7 @@ body.light-theme .footer-theme-toggle .theme-toggle .theme-icon,
 }
 
 .light-theme .footer-theme-toggle .theme-toggle:hover {
-    box-shadow: 0 8px 20px rgba(241, 90, 37, 0.3);
+    box-shadow: 0 6px 16px rgba(241, 90, 37, 0.3);
 }
 
 /* Footer CTA */
