@@ -54,7 +54,7 @@
                 </a>
             </div>            <nav class="main-nav">
                 <ul>                    <li><a href="#home" class="nav-link">Home</a></li>                    <li class="nav-item-dropdown nav-item-multilevel">
-                        <a href="#services" class="nav-link">Services <span class="nav-arrow">
+                        <a href="<?php echo home_url('/services'); ?>" class="nav-link">Services <span class="nav-arrow">
                             <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                 <polyline points="6 9 12 15 18 9"></polyline>
                             </svg>
@@ -106,13 +106,11 @@
                                             <li><a href="#website-design">Website Design</a></li>
                                             <li><a href="#landing-pages">Landing Pages</a></li>
                                             <li><a href="#funnel-builds">Funnel Builds</a></li>
-                                            <li><a href="#ux-ui">UX/UI Optimisation</a></li>
-                                        </ul>
+                                            <li><a href="#ux-ui">UX/UI Optimisation</a></li>                                        </ul>
                                     </div>
                                 </li>
-                                <li><a href="#all-services">View All Services</a></li>
                             </ul>
-                        </div>                    </li><li class="nav-item-dropdown">
+                        </div></li><li class="nav-item-dropdown">
                         <a href="<?php echo home_url('/solutions'); ?>" class="nav-link">Solutions <span class="nav-arrow">
                             <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                 <polyline points="6 9 12 15 18 9"></polyline>
