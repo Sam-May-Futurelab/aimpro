@@ -122,116 +122,115 @@ get_header(); ?>
                             </div>
                         </form>
                     </div>
-                </div>
-
-                <!-- Contact Information Sidebar -->
+                </div>                <!-- Contact Information Sidebar -->
                 <div class="contact-info-section">
                     
-                    <!-- Office Information -->
+                    <!-- Office CTA -->
                     <div class="contact-info-card">
-                        <h3>Visit Our Birmingham Office</h3>
-                        <div class="office-details">
-                            <div class="office-item">
-                                <div class="office-icon">🏢</div>
-                                <div class="office-content">
-                                    <strong>Located in:</strong> 55 Colmore Row<br>
-                                    <span>Birmingham B3 2AA</span><br>
-                                    <em>Right in the heart of Birmingham's business district</em>
-                                </div>
-                            </div>
-                            
-                            <div class="office-item">
-                                <div class="office-icon">🚗</div>
-                                <div class="office-content">
-                                    <strong>Parking:</strong> Multiple car parks nearby<br>
-                                    <span>Easy access from Birmingham city center</span>
-                                </div>
-                            </div>
-                            
-                            <div class="office-item">
-                                <div class="office-icon">🚇</div>
-                                <div class="office-content">
-                                    <strong>Public Transport:</strong> 2 minutes from Birmingham Snow Hill<br>
-                                    <span>Excellent transport links</span>
-                                </div>
-                            </div>
-                        </div>
-                        
                         <div class="office-cta">
                             <p><strong>Want to meet in person?</strong><br>
                             Book a time to visit our office and meet the team behind your marketing success.</p>
                             <a href="tel:+441212858490" class="btn btn-secondary">Book Office Visit</a>
                         </div>
                     </div>
-
-                    <!-- Direct Contact Methods -->
-                    <div class="contact-info-card">
-                        <h3>Direct Contact</h3>
-                        <div class="contact-methods">
-                            <div class="contact-method">
-                                <div class="method-icon">📞</div>
-                                <div class="method-content">
-                                    <span class="method-label">Phone</span>
-                                    <a href="tel:+441212858490" class="method-value">+44 121 285 8490</a>
-                                    <span class="method-note">Mon-Fri: 9AM-6PM GMT</span>
+                    
+                    <!-- Side-by-side cards container -->
+                    <div class="contact-cards-container">
+                        <!-- Direct Contact Methods -->
+                        <div class="contact-info-card">
+                            <h3>Direct Contact</h3>
+                            <div class="contact-methods">
+                                <div class="contact-method">
+                                    <div class="method-icon">📞</div>
+                                    <div class="method-content">
+                                        <span class="method-label">Phone</span>
+                                        <a href="tel:+441212858490" class="method-value">+44 121 285 8490</a>
+                                        <span class="method-note">Mon-Fri: 9AM-6PM GMT</span>
+                                    </div>
                                 </div>
+                                
+                                <div class="contact-method">
+                                    <div class="method-icon">✉️</div>
+                                    <div class="method-content">
+                                        <span class="method-label">Email</span>
+                                        <a href="mailto:hello@aimpro.co.uk" class="method-value">hello@aimpro.co.uk</a>
+                                        <span class="method-note">We respond within 24 hours</span>
+                                    </div>
+                                </div>
+                                
+                                <div class="contact-method">
+                                    <div class="method-icon">💬</div>
+                                    <div class="method-content">
+                                        <span class="method-label">WhatsApp</span>
+                                        <a href="https://wa.me/441212858490" class="method-value">+44 121 285 8490</a>
+                                        <span class="method-note">Quick responses during business hours</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Services Quick Links -->
+                        <div class="contact-info-card">
+                            <h3>Looking for Specific Services?</h3>
+                            <div class="service-quick-links">
+                                <a href="<?php echo home_url('/seo-services'); ?>" class="service-link">
+                                    <span class="service-icon">🔍</span>
+                                    <span class="service-name">SEO Services</span>
+                                    <span class="service-arrow">→</span>
+                                </a>
+                                <a href="<?php echo home_url('/google-ads'); ?>" class="service-link">
+                                    <span class="service-icon">📊</span>
+                                    <span class="service-name">Google Ads</span>
+                                    <span class="service-arrow">→</span>
+                                </a>
+                                <a href="<?php echo home_url('/website-development'); ?>" class="service-link">
+                                    <span class="service-icon">💻</span>
+                                    <span class="service-name">Web Development</span>
+                                    <span class="service-arrow">→</span>
+                                </a>
+                                <a href="<?php echo home_url('/marketing-automation'); ?>" class="service-link">
+                                    <span class="service-icon">🤖</span>
+                                    <span class="service-name">Marketing Automation</span>
+                                    <span class="service-arrow">→</span>
+                                </a>
                             </div>
                             
-                            <div class="contact-method">
-                                <div class="method-icon">✉️</div>
-                                <div class="method-content">
-                                    <span class="method-label">Email</span>
-                                    <a href="mailto:hello@aimpro.co.uk" class="method-value">hello@aimpro.co.uk</a>
-                                    <span class="method-note">We respond within 24 hours</span>
-                                </div>
-                            </div>
-                            
-                            <div class="contact-method">
-                                <div class="method-icon">💬</div>
-                                <div class="method-content">
-                                    <span class="method-label">WhatsApp</span>
-                                    <a href="https://wa.me/441212858490" class="method-value">+44 121 285 8490</a>
-                                    <span class="method-note">Quick responses during business hours</span>
-                                </div>
+                            <div class="services-cta">
+                                <a href="<?php echo home_url('/services'); ?>" class="btn btn-outline">View All Services</a>
                             </div>
                         </div>
-                    </div>
-
-                    <!-- Services Quick Links -->
-                    <div class="contact-info-card">
-                        <h3>Looking for Specific Services?</h3>
-                        <div class="service-quick-links">
-                            <a href="<?php echo home_url('/seo-services'); ?>" class="service-link">
-                                <span class="service-icon">🔍</span>
-                                <span class="service-name">SEO Services</span>
-                                <span class="service-arrow">→</span>
-                            </a>
-                            <a href="<?php echo home_url('/google-ads'); ?>" class="service-link">
-                                <span class="service-icon">📊</span>
-                                <span class="service-name">Google Ads</span>
-                                <span class="service-arrow">→</span>
-                            </a>
-                            <a href="<?php echo home_url('/website-development'); ?>" class="service-link">
-                                <span class="service-icon">💻</span>
-                                <span class="service-name">Web Development</span>
-                                <span class="service-arrow">→</span>
-                            </a>
-                            <a href="<?php echo home_url('/marketing-automation'); ?>" class="service-link">
-                                <span class="service-icon">🤖</span>
-                                <span class="service-name">Marketing Automation</span>
-                                <span class="service-arrow">→</span>
-                            </a>
-                        </div>
-                        
-                        <div class="services-cta">
-                            <a href="<?php echo home_url('/services'); ?>" class="btn btn-outline">View All Services</a>
-                        </div>
-                    </div>
-
-                </div>
+                    </div>                </div>
             </div>
         </div>
     </div>
+
+    <!-- Visit Us Section -->
+    <section class="visit-us-section">
+        <div class="container">
+            <div class="visit-us-container">
+                <div class="visit-us-content">
+                    <h2>Come See Us... We're a REAL Company with Real Humans</h2>
+                    <p>Let's discuss your project over a coffee. Book a time to visit our Birmingham office and meet the team behind your marketing success.</p>
+                    
+                    <div class="visit-cta">
+                        <a href="tel:+441212858490" class="btn btn-primary large">BOOK A COFFEE MEETING</a>
+                    </div>
+                </div>
+                
+                <div class="office-info">
+                    <div class="office-details">
+                        <h3>Our Birmingham Office</h3>
+                        <p><strong>Located in:</strong> 55 Colmore Row</p>
+                        <p><strong>Address:</strong> 55 Colmore Row, Birmingham B3 2AA</p>
+                        <p>Right in the heart of Birmingham's business district</p>
+                    </div>
+                      <div class="office-image">
+                        <img src="https://images.unsplash.com/photo-1604328698692-f76ea9498e76?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="55 Colmore Row Birmingham Office">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <!-- FAQ Section -->
     <section class="contact-faq">
@@ -482,6 +481,17 @@ get_header(); ?>
 }
 
 /* Contact Info Cards */
+.contact-cards-container {
+    display: flex;
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.contact-cards-container .contact-info-card {
+    flex: 1;
+    margin-bottom: 0;
+}
+
 .contact-info-card {
     background: var(--glass-bg);
     border: var(--glass-border);
@@ -543,6 +553,7 @@ get_header(); ?>
     border: 1px solid rgba(241, 90, 37, 0.3);
     border-radius: 12px;
     text-align: center;
+    margin-bottom: 2rem;
 }
 
 /* Contact Methods */
@@ -874,6 +885,104 @@ get_header(); ?>
     }
     
     .contact-final-cta h2 {
+        font-size: 2rem;
+    }
+      .contact-cards-container {
+        flex-direction: column;
+        gap: 2rem;
+    }
+}
+
+/* Visit Us Section */
+.visit-us-section {
+    padding: 6rem 0;
+    background: var(--bg-primary);
+    border-top: 1px solid var(--border-light);
+}
+
+.visit-us-container {
+    background: var(--glass-bg);
+    border: var(--glass-border);
+    border-radius: 20px;
+    padding: 3rem;
+    backdrop-filter: blur(20px);
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.visit-us-content {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.visit-us-content h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 1.5rem;
+    background: var(--gradient-orange);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.visit-us-content p {
+    font-size: 1.2rem;
+    color: var(--text-secondary);
+    max-width: 700px;
+    margin: 0 auto 2rem;
+    line-height: 1.6;
+}
+
+.visit-cta {
+    margin-bottom: 1rem;
+}
+
+.office-info {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: center;
+}
+
+.office-details h3 {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 1.5rem;
+}
+
+.office-details p {
+    font-size: 1.1rem;
+    color: var(--text-secondary);
+    margin-bottom: 0.75rem;
+    line-height: 1.5;
+}
+
+.office-image {
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: var(--shadow-lg);
+}
+
+.office-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 15px;
+}
+
+@media (max-width: 768px) {
+    .office-info {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
+    .visit-us-container {
+        padding: 2rem;
+    }
+    
+    .visit-us-content h2 {
         font-size: 2rem;
     }
 }
