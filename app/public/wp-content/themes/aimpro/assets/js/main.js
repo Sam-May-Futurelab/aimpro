@@ -443,7 +443,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
         
         lastScroll = currentScroll;
-    });// Animated Stats Counter
+    });    // Animated Stats Counter
     function animateStats() {
         const statNumbers = document.querySelectorAll('.stat-number');
         
@@ -451,9 +451,35 @@ document.addEventListener('DOMContentLoaded', function() {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     const target = entry.target;
-                    const finalNumber = parseInt(target.getAttribute('data-count'));
+                    
+                    // Get number from data-count attribute or extract from text content
+                    let finalNumber;
+                    const dataCount = target.getAttribute('data-count');
+                    
+                    if (dataCount) {
+                        // Use data-count if available (homepage stats)
+                        finalNumber = parseInt(dataCount);
+                    } else {
+                        // Extract number from text content (service page stats)
+                        const textContent = target.textContent;
+                        const numberMatch = textContent.match(/[\d,]+/);
+                        if (numberMatch) {
+                            finalNumber = parseInt(numberMatch[0].replace(/,/g, ''));
+                        } else {
+                            // If no number found, don't animate (e.g., "24/7", "< 3 Sec")
+                            observer.unobserve(target);
+                            return;
+                        }
+                    }
+                    
+                    // Skip animation if we couldn't get a valid number
+                    if (isNaN(finalNumber) || finalNumber <= 0) {
+                        observer.unobserve(target);
+                        return;
+                    }
+                    
                     const currentText = target.textContent;
-                    const suffix = currentText.replace(/[\d]/g, ''); // Extract non-numeric characters
+                    const suffix = currentText.replace(/[\d,]/g, ''); // Extract non-numeric characters
                     let currentNumber = 0;
                     const increment = finalNumber / 50; // Smoother animation
                     const duration = 2000; // 2 seconds
@@ -462,10 +488,10 @@ document.addEventListener('DOMContentLoaded', function() {
                     const counter = setInterval(() => {
                         currentNumber += increment;
                         if (currentNumber >= finalNumber) {
-                            target.textContent = finalNumber + suffix;
+                            target.textContent = finalNumber.toLocaleString() + suffix;
                             clearInterval(counter);
                         } else {
-                            target.textContent = Math.floor(currentNumber) + suffix;
+                            target.textContent = Math.floor(currentNumber).toLocaleString() + suffix;
                         }
                     }, interval);
 
