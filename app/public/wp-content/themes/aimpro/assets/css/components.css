@@ -45,6 +45,14 @@
     font-size: 2.5rem;
     margin-bottom: 1.5rem;
     color: var(--primary-orange);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 70px;
+}
+
+.service-icon i {
+    font-size: 2.5rem;
 }
 
 .service-card h3 {

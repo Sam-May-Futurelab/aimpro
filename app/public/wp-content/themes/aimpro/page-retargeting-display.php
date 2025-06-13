@@ -60,10 +60,9 @@ get_header(); ?>
                 <p>Most website visitors leave without converting. Our retargeting and display advertising strategies keep your brand top-of-mind, re-engage interested prospects, and guide them back to complete their purchase or inquiry across millions of websites.</p>
             </div>
             
-            <div class="services-grid">
-                <div class="service-item">
+            <div class="services-grid">                <div class="service-item">
                     <div class="service-icon">
-                        <i class="fas fa-undo-alt"></i>
+                        <i class="fas fa-bullseye"></i>
                     </div>
                     <h3>Website Retargeting</h3>
                     <p>Re-engage website visitors with personalized ads based on their browsing behavior and pages visited.</p>
@@ -79,7 +78,7 @@ get_header(); ?>
                 
                 <div class="service-item">
                     <div class="service-icon">
-                        <i class="fas fa-eye"></i>
+                        <i class="fas fa-ad"></i>
                     </div>
                     <h3>Display Advertising</h3>
                     <p>Build brand awareness and reach new audiences through visually compelling display ads across premium websites.</p>
@@ -87,7 +86,7 @@ get_header(); ?>
                 
                 <div class="service-item">
                     <div class="service-icon">
-                        <i class="fas fa-video"></i>
+                        <i class="fas fa-play-circle"></i>
                     </div>
                     <h3>Video Retargeting</h3>
                     <p>Engage prospects with dynamic video content that showcases your products or services in action.</p>
@@ -95,7 +94,7 @@ get_header(); ?>
                 
                 <div class="service-item">
                     <div class="service-icon">
-                        <i class="fas fa-users"></i>
+                        <i class="fas fa-user-friends"></i>
                     </div>
                     <h3>Lookalike Audiences</h3>
                     <p>Expand your reach by targeting new prospects who share characteristics with your best customers.</p>

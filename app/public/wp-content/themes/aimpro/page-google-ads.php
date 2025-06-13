@@ -4,7 +4,81 @@
  * Description: Google Ads management services page
  */
 
-get_header(); ?>
+get_header(); 
+?>
+<style>
+/* Direct page styles to ensure they override theme styles */
+#primary.google-ads-page #contact.cta-section {
+    background: linear-gradient(135deg, #F15A25 0%, #e04a15 100%) !important;
+    padding: 60px 0 !important;
+    margin: 60px 0 !important;
+    border-radius: 16px !important;
+    box-shadow: 0 20px 40px rgba(241, 90, 37, 0.2) !important;
+    color: white !important;
+    position: relative !important;
+    overflow: hidden !important;
+}
+
+#primary.google-ads-page #contact.cta-section .cta-content h2 {
+    font-size: 36px !important;
+    font-weight: 700 !important;
+    margin-bottom: 20px !important;
+    color: white !important;
+}
+
+#primary.google-ads-page #contact.cta-section .cta-content p {
+    font-size: 18px !important;
+    margin-bottom: 30px !important;
+    color: rgba(255, 255, 255, 0.95) !important;
+    line-height: 1.6 !important;
+}
+
+#primary.google-ads-page #contact.cta-section .cta-buttons {
+    display: flex !important;
+    justify-content: center !important;
+    gap: 20px !important;
+    margin-bottom: 30px !important;
+}
+
+#primary.google-ads-page #contact.cta-section .btn-primary {
+    background: white !important;
+    color: #F15A25 !important;
+    border: none !important;
+}
+
+#primary.google-ads-page #contact.cta-section .btn-outline {
+    background: transparent !important;
+    color: white !important;
+    border: 2px solid white !important;
+}
+
+#primary.google-ads-page #contact.cta-section .cta-features {
+    display: flex !important;
+    justify-content: center !important;
+    gap: 40px !important;
+    flex-wrap: wrap !important;
+}
+
+#primary.google-ads-page #contact.cta-section .cta-features span {
+    color: white !important;
+    font-size: 16px !important;
+    font-weight: 500 !important;
+}
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+    #primary.google-ads-page #contact.cta-section .cta-buttons {
+        flex-direction: column !important;
+        align-items: center !important;
+    }
+    
+    #primary.google-ads-page #contact.cta-section .cta-features {
+        flex-direction: column !important;
+        align-items: center !important;
+        gap: 15px !important;
+    }
+}
+</style>
 
 <main id="primary" class="services-page google-ads-page">
     <!-- Breadcrumbs -->
