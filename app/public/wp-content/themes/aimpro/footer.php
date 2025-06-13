@@ -46,8 +46,7 @@
                     </div>
                 </div>
             </div>
-            
-            <div class="footer-column footer-connect">
+              <div class="footer-column footer-connect">
                 <h3>Connect With Us</h3>
                 <p class="connect-description">Follow us for the latest digital marketing insights and updates.</p>
                 <div class="social-icons">
@@ -76,12 +75,6 @@
                         </svg>
                     </a>
                 </div>
-            </div>
-        </div>        <div class="footer-bottom">
-            <div class="copyright">
-                © <?php echo date('Y'); ?> Aimpro Digital. All Rights Reserved.
-            </div>
-            <div class="footer-bottom-center">
                 <!-- Theme Toggle Button -->
                 <div class="footer-theme-toggle">
                     <span class="toggle-label">Theme</span>
@@ -90,13 +83,22 @@
                         <span class="theme-icon moon-icon">🌙</span>
                     </button>
                 </div>
-            </div>            <div class="footer-bottom-links">
+            </div>
+        </div>        <div class="footer-bottom">
+            <div class="copyright">
+                © <?php echo date('Y'); ?> Aimpro Digital. All Rights Reserved.
+            </div>
+            <div class="designer-credit">
+                <span class="credit-text">Designed by</span>
+                <a href="https://www.futurelab.solutions/" target="_blank" rel="noopener" class="futurelab-link">Futurelab</a>
+            </div>
+            <div class="footer-bottom-links">
                 <a href="<?php echo home_url('/contact'); ?>" class="footer-link">Contact Us</a>
                 <a href="#" class="footer-link">Privacy Policy</a>
                 <a href="#" class="footer-link">Terms of Service</a>
                 <a href="#" class="footer-link">Sitemap</a>
             </div>
-        </div>    </div>
+        </div></div>
 </footer>
 
 <?php wp_footer(); ?>

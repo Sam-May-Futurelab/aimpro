@@ -405,21 +405,98 @@
     width: 100%;
 }
 
-/* Light Theme Footer */
-.light-theme .footer {
-    background: var(--footer-bg);
-    color: var(--footer-text);
+/* Theme Toggle in Connect Section */
+.footer-connect .footer-theme-toggle {
+    margin-top: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    justify-content: flex-start;
 }
 
-.light-theme .footer a {
-    color: var(--footer-link);
+/* Designer Credit - Inline in footer bottom */
+.designer-credit {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.85rem;
+    opacity: 0.8;
+    transition: opacity 0.3s ease;
+    justify-content: center;
 }
 
-.light-theme .footer a:hover {
-    color: var(--footer-link-hover);
+.designer-credit:hover {
+    opacity: 1;
 }
 
-/* Footer Responsive Design */
+.credit-text {
+    color: var(--text-muted);
+    font-size: 0.8rem;
+}
+
+.futurelab-link {
+    color: var(--primary-orange);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.85rem;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.futurelab-link:hover {
+    color: var(--primary-orange-light);
+    text-decoration: none;
+}
+
+.futurelab-link:after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background: var(--primary-orange);
+    transition: width 0.3s ease;
+}
+
+.futurelab-link:hover:after {
+    width: 100%;
+}
+
+/* Light Theme Designer Credit */
+:root.light-theme .credit-text {
+    color: var(--text-muted);
+}
+
+:root.light-theme .futurelab-link {
+    color: var(--primary-orange);
+}
+
+:root.light-theme .futurelab-link:hover {
+    color: var(--primary-orange-dark);
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    .footer-connect .footer-theme-toggle {
+        justify-content: center;
+        margin-top: 1rem;
+    }
+    
+    .designer-credit {
+        font-size: 0.8rem;
+        margin: 0.5rem 0;
+    }
+    
+    .credit-text {
+        font-size: 0.75rem;
+    }
+    
+    .futurelab-link {
+        font-size: 0.8rem;
+    }
+}
+
 @media (max-width: 1200px) {
     .footer-content {
         grid-template-columns: 1fr 1fr;
