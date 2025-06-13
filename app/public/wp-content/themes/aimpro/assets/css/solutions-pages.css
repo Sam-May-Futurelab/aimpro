@@ -92,8 +92,8 @@
 .methods-grid,
 .tools-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
     margin-top: 3rem;
 }
 
@@ -103,7 +103,7 @@
 .tool-category {
     background: white;
     border-radius: 16px;
-    padding: 2.5rem;
+    padding: 2rem;
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
     border: 1px solid #e2e8f0;
     transition: all 0.3s ease;
@@ -134,13 +134,13 @@
 .method-card h3,
 .tool-card h3,
 .tool-category h3 {
-    font-size: 1.5rem;
+    font-size: 1.25rem;
     font-weight: 700;
     color: #1a202c;
     margin-bottom: 1rem;
     display: flex;
     align-items: center;
-    gap: 0.75rem;
+    gap: 0.5rem;
 }
 
 .method-card h3::before,
@@ -160,8 +160,8 @@
 .tool-card p {
     color: #4a5568;
     line-height: 1.6;
-    margin-bottom: 1.5rem;
-    font-size: 1rem;
+    margin-bottom: 1.25rem;
+    font-size: 0.9rem;
 }
 
 /* Method Features List & Tool List */
@@ -219,11 +219,12 @@
 .solutions-cta,
 .lead-generation-cta {
     padding: 5rem 0;
-    background: linear-gradient(135deg, #1a202c 0%, #2d3748 100%);
-    color: white;
+    background: linear-gradient(135deg, #f8fafc 0%, #ffffff 100%);
+    color: #1a202c;
     text-align: center;
     position: relative;
     overflow: hidden;
+    border-top: 1px solid #e2e8f0;
 }
 
 .solutions-cta::before,
@@ -234,7 +235,7 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="50" cy="50" r="0.5" fill="rgba(255,255,255,0.05)"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="50" cy="50" r="0.5" fill="rgba(241,90,37,0.02)"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
     opacity: 0.3;
 }
 
@@ -249,7 +250,7 @@
     font-size: 3rem;
     font-weight: 700;
     margin-bottom: 1.5rem;
-    background: linear-gradient(45deg, #ffffff, #f15a25);
+    background: linear-gradient(45deg, #1a202c, #f15a25);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -259,7 +260,7 @@
 .lead-generation-cta p {
     font-size: 1.25rem;
     margin-bottom: 3rem;
-    opacity: 0.9;
+    color: #4a5568;
     max-width: 600px;
     margin-left: auto;
     margin-right: auto;
@@ -300,14 +301,14 @@
 
 .cta-buttons .btn-secondary {
     background: transparent;
-    color: white;
-    border: 2px solid rgba(255, 255, 255, 0.3);
+    color: #1a202c;
+    border: 2px solid #e2e8f0;
 }
 
 .cta-buttons .btn-secondary:hover {
-    background: rgba(255, 255, 255, 0.1);
-    border-color: rgba(255, 255, 255, 0.5);
-    color: white;
+    background: #f8fafc;
+    border-color: #f15a25;
+    color: #f15a25;
 }
 
 /* CTA Features & Benefits */
@@ -318,7 +319,7 @@
     justify-content: center;
     flex-wrap: wrap;
     margin-top: 2rem;
-    opacity: 0.8;
+    color: #4a5568;
 }
 
 .cta-feature,
@@ -335,7 +336,268 @@
     font-weight: bold;
 }
 
+/* ===== BUSINESS TYPE STRATEGIES SECTION ===== */
+
+/* Lead Generation Strategies by Business Type */
+.lead-generation-strategies,
+.business-type-strategies,
+.lead-generation-types {
+    padding: 5rem 0;
+    background: #ffffff;
+}
+
+.lead-generation-strategies h2,
+.business-type-strategies h2,
+.lead-generation-types h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #1a202c;
+    margin-bottom: 3rem;
+}
+
+/* Business Type Cards Grid */
+.business-types-grid,
+.strategies-grid,
+.types-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+/* Business Type Card */
+.business-type-card,
+.strategy-card,
+.type-card {
+    background: white;
+    border-radius: 16px;
+    padding: 2.5rem;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+    border: 1px solid #e2e8f0;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.business-type-card::before,
+.strategy-card::before,
+.type-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #f15a25, #ff7849);
+}
+
+.business-type-card:hover,
+.strategy-card:hover,
+.type-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
+}
+
+/* Business Type Headers */
+.business-type-card h3,
+.strategy-card h3,
+.type-card h3 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #1a202c;
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+/* Different icons for business types */
+.business-type-card.b2b h3::before,
+.type-card:first-child h3::before {
+    content: "🏢";
+    font-size: 1.25rem;
+}
+
+.business-type-card.b2c h3::before,
+.type-card:nth-child(2) h3::before {
+    content: "🛍️";
+    font-size: 1.25rem;
+}
+
+.business-type-card.local h3::before,
+.type-card:nth-child(3) h3::before {
+    content: "📍";
+    font-size: 1.25rem;
+}
+
+/* Generic icon for strategy cards */
+.strategy-card h3::before {
+    content: "🎯";
+    font-size: 1.25rem;
+}
+
+/* Strategy Lists */
+.strategy-list,
+.business-strategies,
+.type-features {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 1.5rem 0;
+}
+
+.strategy-list li,
+.business-strategies li,
+.type-features li {
+    color: #2d3748;
+    margin-bottom: 0.75rem;
+    padding-left: 1.5rem;
+    position: relative;
+    font-weight: 500;
+    line-height: 1.5;
+}
+
+.strategy-list li::before,
+.business-strategies li::before,
+.type-features li::before {
+    content: "→";
+    position: absolute;
+    left: 0;
+    color: #f15a25;
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+/* Average Results Badge */
+.average-result,
+.result-badge,
+.type-results {
+    background: linear-gradient(45deg, #f15a25, #ff7849);
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border-radius: 25px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    text-align: center;
+    margin-top: 1rem;
+    box-shadow: 0 4px 15px rgba(241, 90, 37, 0.3);
+}
+
+.type-results span {
+    color: white;
+    font-weight: 600;
+}
+
+/* Specific business type styling */
+.b2b-card,
+.type-card:first-child {
+    border-left: 4px solid #3182ce;
+}
+
+.b2c-card,
+.type-card:nth-child(2) {
+    border-left: 4px solid #e53e3e;
+}
+
+.local-card,
+.type-card:nth-child(3) {
+    border-left: 4px solid #38a169;
+}
+
+/* ===== LEAD GENERATION PROCESS SECTION ===== */
+
+.lead-generation-process {
+    padding: 5rem 0;
+    background: #f8fafc;
+    position: relative;
+}
+
+.lead-generation-process h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #1a202c;
+    margin-bottom: 3rem;
+}
+
+.process-steps {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    position: relative;
+    z-index: 2;
+}
+
+/* Process connecting line */
+.process-steps::before {
+    content: '';
+    position: absolute;
+    top: 3rem;
+    left: 5%;
+    right: 5%;
+    height: 2px;
+    background: linear-gradient(90deg, #f15a25, #ff7849);
+    z-index: -1;
+    opacity: 0.3;
+}
+
+.process-step {
+    text-align: center;
+    position: relative;
+    z-index: 3;
+    background: white;
+    padding: 2rem;
+    border-radius: 16px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    border: 1px solid #e2e8f0;
+    transition: all 0.3s ease;
+}
+
+.process-step:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+}
+
+.step-number {
+    width: 4rem;
+    height: 4rem;
+    background: linear-gradient(45deg, #f15a25, #ff7849);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin: 0 auto 1.5rem;
+    box-shadow: 0 4px 15px rgba(241, 90, 37, 0.3);
+    position: relative;
+    z-index: 4;
+}
+
+.step-content h3 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #1a202c;
+    margin-bottom: 1rem;
+}
+
+.step-content p {
+    color: #4a5568;
+    line-height: 1.6;
+    font-size: 0.95rem;
+}
+
 /* ===== RESPONSIVE DESIGN ===== */
+
+@media (max-width: 1200px) {
+    /* Large tablets - 2 columns */
+    .methods-grid,
+    .tools-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+    }
+}
 
 @media (max-width: 768px) {
     /* Overview Section */
@@ -356,12 +618,49 @@
     .solution-challenges {
         padding: 1.5rem;
     }
-    
-    /* Methods Grid */
+      /* Methods Grid */
     .methods-grid,
     .tools-grid {
         grid-template-columns: 1fr;
         gap: 1.5rem;
+    }
+      /* Business Type Strategies */
+    .business-types-grid,
+    .strategies-grid,
+    .types-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .business-type-card,
+    .strategy-card,
+    .type-card {
+        padding: 2rem;
+    }
+    
+    .business-type-card h3,
+    .strategy-card h3,
+    .type-card h3 {
+        font-size: 1.25rem;
+    }
+    
+    .lead-generation-strategies h2,
+    .business-type-strategies h2,
+    .lead-generation-types h2 {
+        font-size: 2rem;
+    }
+    
+    /* Process Section */
+    .lead-generation-process h2 {
+        font-size: 2rem;
+    }
+    
+    .process-steps {
+        grid-template-columns: 1fr;
+    }
+    
+    .process-steps::before {
+        display: none;
     }
       /* Method Cards & Tool Categories */
     .method-card,
@@ -409,6 +708,10 @@
 @media (max-width: 480px) {
     .lead-generation-methods,
     .lead-generation-tools,
+    .lead-generation-strategies,
+    .business-type-strategies,
+    .lead-generation-types,
+    .lead-generation-process,
     .solutions-cta,
     .lead-generation-cta {
         padding: 3rem 0;
@@ -420,12 +723,26 @@
     
     .method-card,
     .tool-card,
-    .tool-category {
+    .tool-category,
+    .business-type-card,
+    .strategy-card,
+    .type-card,
+    .process-step {
         padding: 1.5rem;
     }
     
     .solutions-cta h2,
-    .lead-generation-cta h2 {
+    .lead-generation-cta h2,
+    .lead-generation-strategies h2,
+    .business-type-strategies h2,
+    .lead-generation-types h2,
+    .lead-generation-process h2 {
         font-size: 1.75rem;
+    }
+    
+    .step-number {
+        width: 3rem;
+        height: 3rem;
+        font-size: 1.25rem;
     }
 }
