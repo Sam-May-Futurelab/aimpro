@@ -28,16 +28,14 @@ get_header(); ?>
             <div class="hero-pattern"></div>
         </div>
         <div class="container">
-            <div class="hero-content">
-                <div class="hero-badge">
+            <div class="hero-content">                <div class="hero-badge">
                     <span>Google Premier Partner</span>
                 </div>
                 <h1>Google Ads Management That <span class="highlight">DOMINATES SEARCH</span></h1>
-                <p class="hero-subtitle">Stop losing money on Google Ads. Our certified experts create high-converting campaigns that turn search traffic into paying customers with <strong>average 420% ROAS</strong>.</p>
-                <div class="hero-stats">
+                <p class="hero-subtitle">Stop losing money on Google Ads. Our certified experts create high-converting campaigns that turn search traffic into paying customers with <strong>199% increase in conversion rates</strong>.</p><div class="hero-stats">
                     <div class="stat-item">
-                        <span class="stat-number">420%</span>
-                        <span class="stat-label">Average ROAS</span>
+                        <span class="stat-number">199%</span>
+                        <span class="stat-label">Increase in Conversion Rates</span>
                     </div>
                     <div class="stat-item">
                         <span class="stat-number">67%</span>
@@ -47,10 +45,9 @@ get_header(); ?>
                         <span class="stat-number">£1.8M+</span>
                         <span class="stat-label">Google Ads Managed</span>
                     </div>
-                </div>
-                <div class="hero-ctas">
-                    <a href="#contact" class="btn-primary large">Get Free Google Ads Audit</a>
-                    <a href="#services" class="btn-outline large">View Google Ads Services</a>
+                </div>                <div class="hero-ctas">
+                    <a href="#contact" class="btn-primary streamlined">Get Free Google Ads Audit</a>
+                    <a href="#services" class="btn-outline streamlined">View Google Ads Services</a>
                 </div>
             </div>
         </div>

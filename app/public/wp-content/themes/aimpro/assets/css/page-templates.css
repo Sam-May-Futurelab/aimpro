@@ -1179,9 +1179,77 @@
     max-width: 800px;
     margin: 0 auto;
     line-height: 1.6;
-    color: var(--text-readable-secondary) !important;
+    color: white !important;
     opacity: 1 !important;
     text-align: center;
+}
+
+.hero-subtitle strong {
+    color: var(--primary-orange) !important;
+    font-weight: 700;
+}
+
+/* Google Ads page buttons centering */
+.google-ads-page .hero-ctas {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    justify-content: center;
+    width: 100%;
+    margin-top: 1.5rem;
+}
+
+/* Streamlined buttons for Google Ads page */
+.btn-primary.streamlined,
+.btn-outline.streamlined {
+    padding: 12px 24px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    border-radius: 6px;
+    min-width: 180px;
+    text-align: center;
+    transition: all 0.2s ease;
+}
+
+.btn-primary.streamlined:hover,
+.btn-outline.streamlined:hover {
+    transform: translateY(-2px);
+}
+
+/* Service pages hero-cta styling for consistency */
+.service-page .hero-cta {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    justify-content: center;
+    width: 100%;
+    margin-top: 1.5rem;
+}
+
+@media (max-width: 768px) {
+    .google-ads-page .hero-ctas,
+    .service-page .hero-cta {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .google-ads-page .hero-ctas .btn-primary,
+    .google-ads-page .hero-ctas .btn-outline,
+    .service-page .hero-cta .btn-primary,
+    .service-page .hero-cta .btn-secondary {
+        width: 100%;
+        max-width: 250px;
+        text-align: center;
+    }
+    
+    .btn-primary.streamlined,
+    .btn-outline.streamlined {
+        padding: 10px 20px;
+        font-size: 0.9rem;
+        min-width: 160px;
+        max-width: 220px;
+    }
 }
 
 /* Light Theme Hero Section Overrides */
@@ -1218,8 +1286,13 @@
 :root.light-theme .service-page .service-hero .hero-subtitle,
 :root.light-theme .page-hero .hero-subtitle,
 :root.light-theme .service-hero .hero-subtitle {
-    color: var(--text-secondary) !important;
+    color: white !important;
     opacity: 1 !important;
+}
+
+:root.light-theme .hero-subtitle strong {
+    color: var(--primary-orange) !important;
+    font-weight: 700;
 }
 
 /* Content Section Text Color Fixes - High Specificity */
