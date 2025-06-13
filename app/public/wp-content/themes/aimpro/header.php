@@ -163,12 +163,11 @@
                                 <li><a href="<?php echo home_url('/become-a-partner'); ?>">Become a Partner</a></li>
                             </ul>
                         </div>
-                    </li>
-                    <li><a href="<?php echo home_url(); ?>#contact" class="nav-link">Contact</a></li>
+                    </li>                    <li><a href="<?php echo home_url('/contact'); ?>" class="nav-link">Contact</a></li>
                 </ul>
             </nav>
             <div class="header-ctas">
-                <a href="<?php echo home_url(); ?>#contact" class="btn-outline premium-hover">Get a Free Audit</a>
+                <a href="<?php echo home_url('/contact'); ?>" class="btn-outline premium-hover">Get a Free Audit</a>
                 <a href="tel:+441212858490" class="btn-primary shine-effect">Book a Call</a>
             </div>
             <button class="mobile-menu-toggle" aria-label="Toggle Mobile Menu">

@@ -90,8 +90,8 @@
                         <span class="theme-icon moon-icon">🌙</span>
                     </button>
                 </div>
-            </div>
-            <div class="footer-bottom-links">
+            </div>            <div class="footer-bottom-links">
+                <a href="<?php echo home_url('/contact'); ?>" class="footer-link">Contact Us</a>
                 <a href="#" class="footer-link">Privacy Policy</a>
                 <a href="#" class="footer-link">Terms of Service</a>
                 <a href="#" class="footer-link">Sitemap</a>
