@@ -27,28 +27,28 @@ get_header(); ?>
 
     <!-- Hero Section -->
     <section class="page-hero service-hero">
-        <div class="container">
-            <div class="hero-content">
+        <div class="container">            <div class="hero-content">
                 <h1>Meta Ads (Facebook/Instagram) Management</h1>
                 <p class="hero-subtitle">Drive targeted traffic and conversions with expertly managed Facebook and Instagram advertising campaigns that reach your ideal customers where they spend their time.</p>
-                <div class="hero-cta">
-                    <a href="#contact" class="btn-primary">Start Your Meta Campaign</a>
-                    <a href="#packages" class="btn-secondary">View Packages</a>
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <div class="stat-number">285%</div>
+                        <div class="stat-label">Average ROAS Increase</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">65%</div>
+                        <div class="stat-label">Lower Cost Per Lead</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">450%</div>
+                        <div class="stat-label">Reach Expansion</div>
+                    </div>
+                </div>
+                <div class="hero-ctas">
+                    <a href="#contact" class="btn-primary streamlined">Start Your Meta Campaign</a>
+                    <a href="#packages" class="btn-outline streamlined">View Packages</a>
                 </div>
             </div>
-            <div class="hero-stats">
-                <div class="stat-item">
-                    <div class="stat-number">285%</div>
-                    <div class="stat-label">Average ROAS Increase</div>
-                </div>
-                <div class="stat-item">
-                    <div class="stat-number">65%</div>
-                    <div class="stat-label">Lower Cost Per Lead</div>
-                </div>
-                <div class="stat-item">
-                    <div class="stat-number">450%</div>
-                    <div class="stat-label">Reach Expansion</div>
-                </div>
             </div>
         </div>
     </section>

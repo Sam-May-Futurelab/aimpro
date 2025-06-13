@@ -28,26 +28,25 @@ get_header(); ?>
     <!-- Hero Section -->
     <section class="page-hero service-hero">
         <div class="container">
-            <div class="hero-content">
-                <h1>AI-Powered CRM Setup & Implementation</h1>
+            <div class="hero-content">                <h1>AI-Powered CRM Setup & Implementation</h1>
                 <p class="hero-subtitle">Transform your customer relationship management with AI-driven CRM systems that automate lead scoring, predict customer behavior, and optimize your entire sales funnel for maximum conversion.</p>
-                <div class="hero-cta">
-                    <a href="#contact" class="btn-primary">Start CRM Setup</a>
-                    <a href="#packages" class="btn-secondary">View Packages</a>
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <div class="stat-number">340%</div>
+                        <div class="stat-label">Lead Conversion Increase</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">85%</div>
+                        <div class="stat-label">Faster Lead Response</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">60%</div>
+                        <div class="stat-label">Sales Cycle Reduction</div>
+                    </div>
                 </div>
-            </div>
-            <div class="hero-stats">
-                <div class="stat-item">
-                    <div class="stat-number">340%</div>
-                    <div class="stat-label">Lead Conversion Increase</div>
-                </div>
-                <div class="stat-item">
-                    <div class="stat-number">85%</div>
-                    <div class="stat-label">Faster Lead Response</div>
-                </div>
-                <div class="stat-item">
-                    <div class="stat-number">60%</div>
-                    <div class="stat-label">Sales Cycle Reduction</div>
+                <div class="hero-ctas">
+                    <a href="#contact" class="btn-primary streamlined">Start CRM Setup</a>
+                    <a href="#packages" class="btn-outline streamlined">View Packages</a>
                 </div>
             </div>
         </div>

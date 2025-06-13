@@ -28,26 +28,25 @@ get_header(); ?>
     <!-- Hero Section -->
     <section class="page-hero service-hero">
         <div class="container">
-            <div class="hero-content">
-                <h1>Email & SMS Automation Flows</h1>
+            <div class="hero-content">                <h1>Email & SMS Automation Flows</h1>
                 <p class="hero-subtitle">Create sophisticated multi-channel communication sequences that nurture leads, recover abandoned carts, and build lasting customer relationships through intelligent email and SMS automation.</p>
-                <div class="hero-cta">
-                    <a href="#contact" class="btn-primary">Build Your Flows</a>
-                    <a href="#packages" class="btn-secondary">View Packages</a>
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <div class="stat-number">580%</div>
+                        <div class="stat-label">Revenue Per Email Increase</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">45%</div>
+                        <div class="stat-label">Higher SMS Open Rates</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">320%</div>
+                        <div class="stat-label">Cart Recovery Improvement</div>
+                    </div>
                 </div>
-            </div>
-            <div class="hero-stats">
-                <div class="stat-item">
-                    <div class="stat-number">580%</div>
-                    <div class="stat-label">Revenue Per Email Increase</div>
-                </div>
-                <div class="stat-item">
-                    <div class="stat-number">45%</div>
-                    <div class="stat-label">Higher SMS Open Rates</div>
-                </div>
-                <div class="stat-item">
-                    <div class="stat-number">320%</div>
-                    <div class="stat-label">Cart Recovery Improvement</div>
+                <div class="hero-ctas">
+                    <a href="#contact" class="btn-primary streamlined">Build Your Flows</a>
+                    <a href="#packages" class="btn-outline streamlined">View Packages</a>
                 </div>
             </div>
         </div>

@@ -28,26 +28,25 @@ get_header(); ?>
     <!-- Hero Section -->
     <section class="page-hero service-hero">
         <div class="container">
-            <div class="hero-content">
-                <h1>Comprehensive PPC Audit Services</h1>
+            <div class="hero-content">                <h1>Comprehensive PPC Audit Services</h1>
                 <p class="hero-subtitle">Uncover hidden opportunities and eliminate waste in your PPC campaigns with our detailed 50-point audit that identifies exactly what's preventing optimal performance.</p>
-                <div class="hero-cta">
-                    <a href="#contact" class="btn-primary">Get Your Audit</a>
-                    <a href="#packages" class="btn-secondary">View Audit Packages</a>
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <div class="stat-number">£47K</div>
+                        <div class="stat-label">Average Annual Savings</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">340%</div>
+                        <div class="stat-label">Average ROI Improvement</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">72hrs</div>
+                        <div class="stat-label">Audit Delivery Time</div>
+                    </div>
                 </div>
-            </div>
-            <div class="hero-stats">
-                <div class="stat-item">
-                    <div class="stat-number">£47K</div>
-                    <div class="stat-label">Average Annual Savings</div>
-                </div>
-                <div class="stat-item">
-                    <div class="stat-number">340%</div>
-                    <div class="stat-label">Average ROI Improvement</div>
-                </div>
-                <div class="stat-item">
-                    <div class="stat-number">72hrs</div>
-                    <div class="stat-label">Audit Delivery Time</div>
+                <div class="hero-ctas">
+                    <a href="#contact" class="btn-primary streamlined">Get Your Audit</a>
+                    <a href="#packages" class="btn-outline streamlined">View Audit Packages</a>
                 </div>
             </div>
         </div>

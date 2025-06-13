@@ -27,28 +27,28 @@ get_header(); ?>
 
     <!-- Hero Section -->
     <section class="page-hero service-hero">
-        <div class="container">
-            <div class="hero-content">
+        <div class="container">            <div class="hero-content">
                 <h1>Microsoft/Bing Ads Management</h1>
                 <p class="hero-subtitle">Tap into the less competitive, higher-converting Bing search network to reach quality prospects and achieve better ROI with lower cost-per-click rates.</p>
-                <div class="hero-cta">
-                    <a href="#contact" class="btn-primary">Start Bing Campaigns</a>
-                    <a href="#packages" class="btn-secondary">View Packages</a>
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <div class="stat-number">45%</div>
+                        <div class="stat-label">Lower Average CPC</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">320%</div>
+                        <div class="stat-label">ROI Improvement</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">25%</div>
+                        <div class="stat-label">Additional Market Share</div>
+                    </div>
+                </div>
+                <div class="hero-ctas">
+                    <a href="#contact" class="btn-primary streamlined">Start Bing Campaigns</a>
+                    <a href="#packages" class="btn-outline streamlined">View Packages</a>
                 </div>
             </div>
-            <div class="hero-stats">
-                <div class="stat-item">
-                    <div class="stat-number">45%</div>
-                    <div class="stat-label">Lower Average CPC</div>
-                </div>
-                <div class="stat-item">
-                    <div class="stat-number">320%</div>
-                    <div class="stat-label">ROI Improvement</div>
-                </div>
-                <div class="stat-item">
-                    <div class="stat-number">25%</div>
-                    <div class="stat-label">Additional Market Share</div>
-                </div>
             </div>
         </div>
     </section>

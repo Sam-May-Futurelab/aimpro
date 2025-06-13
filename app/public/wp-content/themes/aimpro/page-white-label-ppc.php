@@ -28,26 +28,25 @@ get_header(); ?>
     <!-- Hero Section -->
     <section class="page-hero service-hero">
         <div class="container">
-            <div class="hero-content">
-                <h1>White Label PPC Services for Agencies</h1>
+            <div class="hero-content">                <h1>White Label PPC Services for Agencies</h1>
                 <p class="hero-subtitle">Scale your agency's PPC offerings without hiring specialists. Our white label PPC management delivers exceptional results under your brand name while you focus on client relationships.</p>
-                <div class="hero-cta">
-                    <a href="#contact" class="btn-primary">Partner With Us</a>
-                    <a href="#packages" class="btn-secondary">View Partnership Plans</a>
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <div class="stat-number">150+</div>
+                        <div class="stat-label">Agency Partners</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">£2.3M</div>
+                        <div class="stat-label">Monthly Ad Spend Managed</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">24hrs</div>
+                        <div class="stat-label">Average Response Time</div>
+                    </div>
                 </div>
-            </div>
-            <div class="hero-stats">
-                <div class="stat-item">
-                    <div class="stat-number">150+</div>
-                    <div class="stat-label">Agency Partners</div>
-                </div>
-                <div class="stat-item">
-                    <div class="stat-number">£2.3M</div>
-                    <div class="stat-label">Monthly Ad Spend Managed</div>
-                </div>
-                <div class="stat-item">
-                    <div class="stat-number">24hrs</div>
-                    <div class="stat-label">Average Response Time</div>
+                <div class="hero-ctas">
+                    <a href="#contact" class="btn-primary streamlined">Partner With Us</a>
+                    <a href="#packages" class="btn-outline streamlined">View Partnership Plans</a>
                 </div>
             </div>
         </div>

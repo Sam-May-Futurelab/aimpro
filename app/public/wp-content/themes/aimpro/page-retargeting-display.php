@@ -28,26 +28,25 @@ get_header(); ?>
     <!-- Hero Section -->
     <section class="page-hero service-hero">
         <div class="container">
-            <div class="hero-content">
-                <h1>Retargeting & Display Advertising</h1>
+            <div class="hero-content">                <h1>Retargeting & Display Advertising</h1>
                 <p class="hero-subtitle">Re-engage interested prospects and build brand awareness with strategic retargeting and display campaigns that convert browsers into buyers across the web.</p>
-                <div class="hero-cta">
-                    <a href="#contact" class="btn-primary">Start Retargeting</a>
-                    <a href="#packages" class="btn-secondary">View Packages</a>
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <div class="stat-number">475%</div>
+                        <div class="stat-label">Conversion Rate Increase</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">68%</div>
+                        <div class="stat-label">Lower Cost Per Conversion</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">12x</div>
+                        <div class="stat-label">Higher Click-Through Rate</div>
+                    </div>
                 </div>
-            </div>
-            <div class="hero-stats">
-                <div class="stat-item">
-                    <div class="stat-number">475%</div>
-                    <div class="stat-label">Conversion Rate Increase</div>
-                </div>
-                <div class="stat-item">
-                    <div class="stat-number">68%</div>
-                    <div class="stat-label">Lower Cost Per Conversion</div>
-                </div>
-                <div class="stat-item">
-                    <div class="stat-number">12x</div>
-                    <div class="stat-label">Higher Click-Through Rate</div>
+                <div class="hero-ctas">
+                    <a href="#contact" class="btn-primary streamlined">Start Retargeting</a>
+                    <a href="#packages" class="btn-outline streamlined">View Packages</a>
                 </div>
             </div>
         </div>

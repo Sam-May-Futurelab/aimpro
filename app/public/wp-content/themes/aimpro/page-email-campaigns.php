@@ -28,26 +28,25 @@ get_header(); ?>
     <!-- Hero Section -->
     <section class="page-hero service-hero">
         <div class="container">
-            <div class="hero-content">
-                <h1>Strategic Email Marketing Campaigns</h1>
+            <div class="hero-content">                <h1>Strategic Email Marketing Campaigns</h1>
                 <p class="hero-subtitle">Drive engagement, nurture relationships, and boost sales with expertly crafted email campaigns that cut through inbox clutter and deliver measurable results for your business.</p>
-                <div class="hero-cta">
-                    <a href="#contact" class="btn-primary">Launch Campaigns</a>
-                    <a href="#packages" class="btn-secondary">View Packages</a>
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <div class="stat-number">4,200%</div>
+                        <div class="stat-label">Average ROI</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">35%</div>
+                        <div class="stat-label">Higher Open Rates</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">280%</div>
+                        <div class="stat-label">Click-Through Improvement</div>
+                    </div>
                 </div>
-            </div>
-            <div class="hero-stats">
-                <div class="stat-item">
-                    <div class="stat-number">4,200%</div>
-                    <div class="stat-label">Average ROI</div>
-                </div>
-                <div class="stat-item">
-                    <div class="stat-number">35%</div>
-                    <div class="stat-label">Higher Open Rates</div>
-                </div>
-                <div class="stat-item">
-                    <div class="stat-number">280%</div>
-                    <div class="stat-label">Click-Through Improvement</div>
+                <div class="hero-ctas">
+                    <a href="#contact" class="btn-primary streamlined">Launch Campaigns</a>
+                    <a href="#packages" class="btn-outline streamlined">View Packages</a>
                 </div>
             </div>
         </div>

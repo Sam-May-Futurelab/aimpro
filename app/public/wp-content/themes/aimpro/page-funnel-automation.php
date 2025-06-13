@@ -28,26 +28,25 @@ get_header(); ?>
     <!-- Hero Section -->
     <section class="page-hero service-hero">
         <div class="container">
-            <div class="hero-content">
-                <h1>Sales Funnel Automation</h1>
+            <div class="hero-content">                <h1>Sales Funnel Automation</h1>
                 <p class="hero-subtitle">Build intelligent sales funnels that automatically guide prospects from awareness to purchase, nurturing leads at every stage while you focus on growing your business.</p>
-                <div class="hero-cta">
-                    <a href="#contact" class="btn-primary">Build Your Funnel</a>
-                    <a href="#packages" class="btn-secondary">View Packages</a>
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <div class="stat-number">420%</div>
+                        <div class="stat-label">Conversion Rate Increase</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">75%</div>
+                        <div class="stat-label">Less Manual Work</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">180%</div>
+                        <div class="stat-label">Revenue Growth</div>
+                    </div>
                 </div>
-            </div>
-            <div class="hero-stats">
-                <div class="stat-item">
-                    <div class="stat-number">420%</div>
-                    <div class="stat-label">Conversion Rate Increase</div>
-                </div>
-                <div class="stat-item">
-                    <div class="stat-number">75%</div>
-                    <div class="stat-label">Less Manual Work</div>
-                </div>
-                <div class="stat-item">
-                    <div class="stat-number">180%</div>
-                    <div class="stat-label">Revenue Growth</div>
+                <div class="hero-ctas">
+                    <a href="#contact" class="btn-primary streamlined">Build Your Funnel</a>
+                    <a href="#packages" class="btn-outline streamlined">View Packages</a>
                 </div>
             </div>
         </div>

@@ -28,26 +28,25 @@ get_header(); ?>
     <!-- Hero Section -->
     <section class="page-hero service-hero">
         <div class="container">
-            <div class="hero-content">
-                <h1>AI-Powered Chatbot Development</h1>
+            <div class="hero-content">                <h1>AI-Powered Chatbot Development</h1>
                 <p class="hero-subtitle">Engage website visitors 24/7, qualify leads automatically, and provide instant customer support with intelligent chatbots that understand context and drive conversions.</p>
-                <div class="hero-cta">
-                    <a href="#contact" class="btn-primary">Build Your Chatbot</a>
-                    <a href="#packages" class="btn-secondary">View Packages</a>
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <div class="stat-number">380%</div>
+                        <div class="stat-label">Lead Qualification Increase</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">24/7</div>
+                        <div class="stat-label">Instant Response Time</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">65%</div>
+                        <div class="stat-label">Support Cost Reduction</div>
+                    </div>
                 </div>
-            </div>
-            <div class="hero-stats">
-                <div class="stat-item">
-                    <div class="stat-number">380%</div>
-                    <div class="stat-label">Lead Qualification Increase</div>
-                </div>
-                <div class="stat-item">
-                    <div class="stat-number">24/7</div>
-                    <div class="stat-label">Instant Response Time</div>
-                </div>
-                <div class="stat-item">
-                    <div class="stat-number">65%</div>
-                    <div class="stat-label">Support Cost Reduction</div>
+                <div class="hero-ctas">
+                    <a href="#contact" class="btn-primary streamlined">Build Your Chatbot</a>
+                    <a href="#packages" class="btn-outline streamlined">View Packages</a>
                 </div>
             </div>
         </div>

@@ -1190,7 +1190,9 @@
 }
 
 /* Google Ads page buttons centering */
-.google-ads-page .hero-ctas {
+.google-ads-page .hero-ctas,
+.meta-ads-page .hero-ctas,
+.service-page .hero-ctas {
     display: flex;
     flex-direction: row;
     gap: 1rem;
@@ -1199,9 +1201,64 @@
     margin-top: 1.5rem;
 }
 
-/* Streamlined buttons for Google Ads page */
+/* Careers Page Benefit Cards Grid */
+.benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    margin: 2rem 0;
+}
+
+.benefit-card {
+    background: var(--glass-bg);
+    border-radius: 12px;
+    padding: 2rem;
+    border: 1px solid var(--glass-border);
+    backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
+    height: 100%;
+}
+
+.benefit-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-lg);
+    border-color: var(--glass-orange-border);
+}
+
+.benefit-card .benefit-icon {
+    color: var(--primary-orange);
+    margin-bottom: 1.5rem;
+}
+
+.benefit-card h3 {
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+    color: var(--text-primary);
+    font-weight: 600;
+}
+
+.benefit-card p {
+    color: var(--text-secondary);
+    line-height: 1.6;
+}
+
+/* Responsive adjustments for Benefits Grid */
+@media (max-width: 992px) {
+    .benefits-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .benefits-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Streamlined buttons for service pages */
 .btn-primary.streamlined,
-.btn-outline.streamlined {
+.btn-outline.streamlined,
+.btn-secondary.streamlined {
     padding: 12px 24px;
     font-size: 0.95rem;
     font-weight: 600;
@@ -1213,7 +1270,8 @@
 }
 
 .btn-primary.streamlined:hover,
-.btn-outline.streamlined:hover {
+.btn-outline.streamlined:hover,
+.btn-secondary.streamlined:hover {
     transform: translateY(-2px);
 }
 
@@ -1229,6 +1287,8 @@
 
 @media (max-width: 768px) {
     .google-ads-page .hero-ctas,
+    .meta-ads-page .hero-ctas,
+    .service-page .hero-ctas,
     .service-page .hero-cta {
         flex-direction: column;
         align-items: center;
@@ -1236,6 +1296,10 @@
     
     .google-ads-page .hero-ctas .btn-primary,
     .google-ads-page .hero-ctas .btn-outline,
+    .meta-ads-page .hero-ctas .btn-primary,
+    .meta-ads-page .hero-ctas .btn-outline,
+    .service-page .hero-ctas .btn-primary,
+    .service-page .hero-ctas .btn-outline,
     .service-page .hero-cta .btn-primary,
     .service-page .hero-cta .btn-secondary {
         width: 100%;
@@ -1244,7 +1308,8 @@
     }
     
     .btn-primary.streamlined,
-    .btn-outline.streamlined {
+    .btn-outline.streamlined,
+    .btn-secondary.streamlined {
         padding: 10px 20px;
         font-size: 0.9rem;
         min-width: 160px;
