@@ -1148,11 +1148,38 @@ Version: 1.0
     text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
 
+/* About page exception - orange title - EXTREME SPECIFICITY - FORCE OVERRIDE */
+html body.light-theme .about-page .hero-title,
+html body.light-theme .about-page .hero-content .hero-title,
+html body.light-theme .about-page h1.hero-title,
+html body.light-theme .about-page .page-hero h1.hero-title,
+body.light-theme .about-page section.page-hero .hero-content h1,
+html:root body.light-theme .about-page .page-hero .hero-title {
+    color: #f15a25 !important;
+    -webkit-text-fill-color: #f15a25 !important;
+    background: none !important;
+    -webkit-background-clip: initial !important;
+    background-clip: initial !important;
+    text-shadow: none !important;
+}
+
 .light-theme .hero-content p,
 .light-theme .hero-subtitle {
     color: #ffffff !important;
     font-weight: 500;
     text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+/* About page exception - dark text */
+.light-theme .about-page .hero-description {
+    color: #1a202c !important;
+    text-shadow: none !important;
+}
+
+/* About page badge fix */
+.light-theme .about-page .hero-badge {
+    color: #f15a25 !important;
+    text-shadow: none !important;
 }
 
 .light-theme .hero-title .highlight {

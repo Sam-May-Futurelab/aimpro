@@ -1053,6 +1053,17 @@
     text-shadow: none;
 }
 
+/* About page specific override - must come after general rule */
+:root.light-theme .about-page .page-hero h1,
+:root.light-theme .about-page .hero-title {
+    color: #f15a25 !important;
+    -webkit-text-fill-color: #f15a25 !important;
+    background: none !important;
+    -webkit-background-clip: initial !important;
+    background-clip: initial !important;
+    text-shadow: none !important;
+}
+
 :root.light-theme .service-page .page-hero .hero-subtitle,
 :root.light-theme .service-page .service-hero .hero-subtitle,
 :root.light-theme .page-hero .hero-subtitle,
@@ -1250,4 +1261,252 @@
 :root.light-theme .quick-contact-grid .contact-label,
 :root.light-theme .quick-contact-grid .contact-value {
     color: var(--text-secondary) !important;
+}
+
+/* About Page Specific Styling */
+.about-page .page-hero {
+    background: var(--gradient-dark);
+    padding: 80px 0 50px;
+    text-align: center;
+    margin-bottom: 60px;
+    position: relative;
+    border-bottom: 1px solid var(--border-light);
+}
+
+.about-page .hero-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.about-page .hero-badge {
+    display: inline-block;
+    padding: 8px 20px;
+    background: rgba(241, 90, 37, 0.1);
+    border: 1px solid rgba(241, 90, 37, 0.3);
+    border-radius: 50px;
+    color: var(--primary-orange);
+    font-size: 14px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 20px;
+}
+
+.about-page .hero-title {
+    font-size: 48px;
+    margin-bottom: 20px;
+    font-weight: 800;
+    color: var(--text-primary);
+    line-height: 1.2;
+}
+
+.about-page .hero-description {
+    font-size: 18px;
+    color: var(--text-readable-secondary);
+    line-height: 1.6;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* About Page Stats Container */
+.about-page .stats-container {
+    margin: 60px 0;
+    padding: 40px 0;
+    background: var(--background-subtle);
+    border-radius: 20px;
+    border: 1px solid var(--border-light);
+}
+
+.about-page .stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 40px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.about-page .stat-item {
+    text-align: center;
+}
+
+.about-page .stat-number {
+    display: block;
+    font-size: 48px;
+    font-weight: 900;
+    color: var(--primary-orange);
+    line-height: 1;
+    margin-bottom: 10px;
+}
+
+.about-page .stat-label {
+    font-size: 16px;
+    color: var(--text-readable-secondary);
+    font-weight: 500;
+}
+
+/* Values Grid */
+.about-page .values-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 40px;
+    margin-top: 60px;
+}
+
+.about-page .value-item {
+    padding: 40px;
+    background: var(--background-subtle);
+    border-radius: 20px;
+    border: 1px solid var(--border-light);
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.about-page .value-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    border-color: var(--primary-orange);
+}
+
+.about-page .value-icon {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto 20px;
+    background: linear-gradient(135deg, var(--primary-orange), #ff8c42);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+}
+
+.about-page .value-item h3 {
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 15px;
+}
+
+.about-page .value-item p {
+    color: var(--text-readable-secondary);
+    line-height: 1.6;
+    font-size: 16px;
+}
+
+/* Services Ticker */
+.about-page .services-ticker {
+    margin: 80px 0;
+    overflow: hidden;
+    background: var(--background-subtle);
+    padding: 20px 0;
+    border-top: 1px solid var(--border-light);
+    border-bottom: 1px solid var(--border-light);
+}
+
+.about-page .ticker-wrapper {
+    white-space: nowrap;
+    animation: ticker 30s linear infinite;
+}
+
+.about-page .ticker-content {
+    display: inline-block;
+}
+
+.about-page .ticker-content span {
+    display: inline-block;
+    padding: 10px 30px;
+    margin: 0 10px;
+    background: var(--background-primary);
+    border: 1px solid var(--border-light);
+    border-radius: 25px;
+    color: var(--text-primary);
+    font-weight: 600;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+@keyframes ticker {
+    0% { transform: translateX(100%); }
+    100% { transform: translateX(-100%); }
+}
+
+/* About CTA Section */
+.about-page .about-cta {
+    margin: 80px 0;
+    padding: 60px 40px;
+    background: var(--gradient-dark);
+    border-radius: 20px;
+    text-align: center;
+}
+
+.about-page .about-cta h2 {
+    font-size: 36px;
+    font-weight: 800;
+    color: var(--text-primary);
+    margin-bottom: 20px;
+}
+
+.about-page .about-cta p {
+    font-size: 18px;
+    color: var(--text-readable-secondary);
+    margin-bottom: 40px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.about-page .cta-buttons {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .about-page .hero-title {
+        font-size: 36px;
+    }
+    
+    .about-page .hero-description {
+        font-size: 16px;
+    }
+    
+    .about-page .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 30px;
+    }
+    
+    .about-page .values-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+    
+    .about-page .value-item {
+        padding: 30px 20px;
+    }
+    
+    .about-page .about-cta {
+        padding: 40px 20px;
+    }
+    
+    .about-page .cta-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .about-page .hero-title {
+        font-size: 28px;
+    }
+    
+    .about-page .stats-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .about-page .stat-number {
+        font-size: 36px;
+    }
 }

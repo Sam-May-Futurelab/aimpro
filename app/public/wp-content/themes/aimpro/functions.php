@@ -115,9 +115,11 @@ function aimpro_enqueue_assets() {
       // Enqueue ebook/lead magnet styles
     wp_enqueue_style('aimpro-ebook', get_template_directory_uri() . '/assets/css/ebook.css', array('aimpro-base'), $theme_version . '-' . time());    // Enqueue insights styles
     wp_enqueue_style('aimpro-insights', get_template_directory_uri() . '/assets/css/insights.css', array('aimpro-base'), $theme_version . '-' . time());
-    
-    // Enqueue page template styles AFTER insights to ensure proper override
+      // Enqueue page template styles AFTER insights to ensure proper override
     wp_enqueue_style('aimpro-page-templates', get_template_directory_uri() . '/assets/css/page-templates.css', array('aimpro-base', 'aimpro-insights'), $theme_version . '-' . time());
+    
+    // Enqueue About page fix CSS - HIGHEST PRIORITY
+    wp_enqueue_style('aimpro-about-fix', get_template_directory_uri() . '/assets/css/about-page-fix.css', array('aimpro-variables', 'aimpro-base', 'aimpro-page-templates'), $theme_version . '-' . time());
     
     // Enqueue main style.css for backwards compatibility and WordPress theme recognition
     wp_enqueue_style('aimpro-style', get_stylesheet_uri(), array('aimpro-variables', 'aimpro-base'), $theme_version);
