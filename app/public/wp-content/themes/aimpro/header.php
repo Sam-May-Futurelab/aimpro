@@ -103,22 +103,20 @@
                                 <li><a href="<?php echo home_url(); ?>#streamline-funnel">Streamline Your Sales Funnel</a></li>
                             </ul>
                         </div>
-                    </li>
-                    <li class="nav-item-dropdown">
-                        <a href="<?php echo home_url(); ?>#industries" class="nav-link">Industries <span class="nav-arrow">
+                    </li>                    <li class="nav-item-dropdown">
+                        <a href="<?php echo home_url('/industries'); ?>" class="nav-link">Industries <span class="nav-arrow">
                             <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                 <polyline points="6 9 12 15 18 9"></polyline>
                             </svg>
-                        </span></a>
-                        <div class="dropdown-menu">
+                        </span></a>                        <div class="dropdown-menu">
                             <ul>
-                                <li><a href="<?php echo home_url(); ?>#automotive">Automotive</a></li>
-                                <li><a href="<?php echo home_url(); ?>#home-garden">Home and Garden</a></li>
-                                <li><a href="<?php echo home_url(); ?>#finance">Finance</a></li>
-                                <li><a href="<?php echo home_url(); ?>#professional-services">Professional Services</a></li>
-                                <li><a href="<?php echo home_url(); ?>#estate-agents">Estate Agents</a></li>
-                                <li><a href="<?php echo home_url(); ?>#coaches-consultants">Coaches & Consultants</a></li>
-                                <li><a href="<?php echo home_url(); ?>#ecommerce">E-commerce</a></li>
+                                <li><a href="<?php echo home_url('/automotive'); ?>">Automotive</a></li>
+                                <li><a href="<?php echo home_url('/home-garden'); ?>">Home and Garden</a></li>
+                                <li><a href="<?php echo home_url('/finance'); ?>">Finance</a></li>
+                                <li><a href="<?php echo home_url('/professional-services'); ?>">Professional Services</a></li>
+                                <li><a href="<?php echo home_url('/estate-agents'); ?>">Estate Agents</a></li>
+                                <li><a href="<?php echo home_url('/coaches-consultants'); ?>">Coaches & Consultants</a></li>
+                                <li><a href="<?php echo home_url('/ecommerce'); ?>">E-commerce</a></li>
                             </ul>
                         </div>
                     </li>                    <li class="nav-item-dropdown">
