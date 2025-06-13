@@ -162,18 +162,17 @@
                             </ul>
                         </div>
                     </li>                    <li class="nav-item-dropdown">
-                        <a href="#about" class="nav-link">About <span class="nav-arrow">
+                        <a href="<?php echo home_url('/about'); ?>" class="nav-link">About <span class="nav-arrow">
                             <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                 <polyline points="6 9 12 15 18 9"></polyline>
                             </svg>
-                        </span></a>
-                        <div class="dropdown-menu">
+                        </span></a>                        <div class="dropdown-menu">
                             <ul>
-                                <li><a href="#company">Company</a></li>
-                                <li><a href="#team">Team</a></li>
-                                <li><a href="#testimonials">Testimonials</a></li>
-                                <li><a href="#careers">Careers</a></li>
-                                <li><a href="#become-partner">Become a Partner</a></li>
+                                <li><a href="<?php echo home_url('/company'); ?>">Company</a></li>
+                                <li><a href="<?php echo home_url('/team'); ?>">Team</a></li>
+                                <li><a href="<?php echo home_url('/testimonials'); ?>">Testimonials</a></li>
+                                <li><a href="<?php echo home_url('/careers'); ?>">Careers</a></li>
+                                <li><a href="<?php echo home_url('/become-a-partner'); ?>">Become a Partner</a></li>
                             </ul>
                         </div>
                     </li>
@@ -682,7 +681,7 @@
 </section>
 
 <!-- Team Section -->
-<section id="about" class="team-section premium-team">
+<section id="team" class="team-section premium-team">
     <div class="container">
         <div class="content-center">            <h2>Meet The Experts Who Make <span class="highlight curly-underline">MAGIC</span> Happen</h2>
             <p class="section-subtitle">No faceless agencies here. Our marketing specialists are passionate about client success and personally invested in delivering exceptional results for every business we partner with.</p>
