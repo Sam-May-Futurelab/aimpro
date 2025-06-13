@@ -122,10 +122,7 @@ function aimpro_enqueue_assets() {
       // Enqueue Lottie library for animations
     wp_enqueue_script('lottie-web', 'https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.12.2/lottie.min.js', array(), '5.12.2', true);
       // Enqueue scripts with proper dependencies and defer loading
-    wp_enqueue_script('aimpro-main', get_template_directory_uri() . '/assets/js/main.js', array('lottie-web'), $theme_version, true);
-    
-    // Enqueue mega menu script for mobile functionality
-    wp_enqueue_script('aimpro-mega-menu', get_template_directory_uri() . '/assets/js/mega-menu.js', array('aimpro-main'), $theme_version, true);
+    wp_enqueue_script('aimpro-main', get_template_directory_uri() . '/assets/js/main.js', array('lottie-web'), $theme_version, true);    // Note: mega-menu.js removed as it was causing navigation conflicts and isn't needed for current navigation structure
     
     // Add inline script for critical path optimization
     $inline_script = "

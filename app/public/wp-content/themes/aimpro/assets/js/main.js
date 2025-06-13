@@ -478,21 +478,28 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     // Initialize stats animation
-    animateStats();
-
-    // Smooth Scroll for Anchor Links
+    animateStats();    // Smooth Scroll for Anchor Links (only for same-page anchors)
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
-            e.preventDefault();
-            const target = document.querySelector(this.getAttribute('href'));
+            const href = this.getAttribute('href');
+            
+            // Skip if it's just "#" or if it's a navigation link that should go to another page
+            if (href === '#' || href.length <= 1) {
+                return;
+            }
+            
+            // Only proceed if the target element exists on the current page
+            const target = document.querySelector(href);
             if (target) {
+                e.preventDefault();
                 target.scrollIntoView({
                     behavior: 'smooth',
                     block: 'start'
                 });
             }
+            // If target doesn't exist, let the browser handle it normally (navigate to new page)
         });
-    });    // Enhanced Service Cards - Performance Optimized
+    });// Enhanced Service Cards - Performance Optimized
     const serviceCards = document.querySelectorAll('.service-card');
     serviceCards.forEach((card, index) => {
         card.style.animationDelay = `${index * 0.1}s`;
