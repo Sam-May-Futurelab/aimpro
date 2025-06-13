@@ -62,16 +62,15 @@ get_header(); ?>
 
 <!-- Service Tags Strip -->
 <section class="service-tags-strip">
-    <div class="container">
-        <div class="tags-wrapper slide-up">
-            <div class="tag"><?php echo aimpro_get_field('service_tag_1', 'SEO'); ?></div>
-            <div class="tag"><?php echo aimpro_get_field('service_tag_2', 'Google Ads'); ?></div>
-            <div class="tag"><?php echo aimpro_get_field('service_tag_3', 'Social Media'); ?></div>
-            <div class="tag"><?php echo aimpro_get_field('service_tag_4', 'Website'); ?></div>
-            <div class="tag"><?php echo aimpro_get_field('service_tag_5', 'Ads'); ?></div>
-            <div class="tag"><?php echo aimpro_get_field('service_tag_6', 'Email'); ?></div>
-            <div class="tag"><?php echo aimpro_get_field('service_tag_7', 'AI Automation'); ?></div>
-            <div class="tag"><?php echo aimpro_get_field('service_tag_8', 'CRM'); ?></div>
+    <div class="container">        <div class="tags-wrapper slide-up">
+            <a href="<?php echo home_url('/seo-services'); ?>" class="tag"><?php echo aimpro_get_field('service_tag_1', 'SEO'); ?></a>
+            <a href="<?php echo home_url('/google-ads'); ?>" class="tag"><?php echo aimpro_get_field('service_tag_2', 'Google Ads'); ?></a>
+            <a href="<?php echo home_url('/meta-ads'); ?>" class="tag"><?php echo aimpro_get_field('service_tag_3', 'Social Media'); ?></a>
+            <a href="<?php echo home_url('/website-design'); ?>" class="tag"><?php echo aimpro_get_field('service_tag_4', 'Website'); ?></a>
+            <a href="<?php echo home_url('/retargeting-display'); ?>" class="tag"><?php echo aimpro_get_field('service_tag_5', 'Ads'); ?></a>
+            <a href="<?php echo home_url('/email-campaigns'); ?>" class="tag"><?php echo aimpro_get_field('service_tag_6', 'Email'); ?></a>
+            <a href="<?php echo home_url('/ai-tools'); ?>" class="tag"><?php echo aimpro_get_field('service_tag_7', 'AI Automation'); ?></a>
+            <a href="<?php echo home_url('/ai-crm-setup'); ?>" class="tag"><?php echo aimpro_get_field('service_tag_8', 'CRM'); ?></a>
         </div>
     </div>
 </section>
