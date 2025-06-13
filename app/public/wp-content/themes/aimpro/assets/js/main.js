@@ -453,22 +453,50 @@ document.addEventListener('DOMContentLoaded', function() {
                     const target = entry.target;
                     
                     // Get number from data-count attribute or extract from text content
-                    let finalNumber;
+                    let finalNumber, prefix = '', suffix = '';
                     const dataCount = target.getAttribute('data-count');
                     
                     if (dataCount) {
                         // Use data-count if available (homepage stats)
                         finalNumber = parseInt(dataCount);
+                        const currentText = target.textContent;
+                        suffix = currentText.replace(/[\d,]/g, ''); // Extract non-numeric characters
                     } else {
                         // Extract number from text content (service page stats)
-                        const textContent = target.textContent;
-                        const numberMatch = textContent.match(/[\d,]+/);
-                        if (numberMatch) {
-                            finalNumber = parseInt(numberMatch[0].replace(/,/g, ''));
-                        } else {
-                            // If no number found, don't animate (e.g., "24/7", "< 3 Sec")
+                        const textContent = target.textContent.trim();
+                        
+                        // Skip animation for special formats that shouldn't be animated
+                        const skipPatterns = [
+                            /^\d+\/\d+$/,        // "24/7"
+                            /^<.*>/,             // "< 3 Sec"
+                            /^\d+(\.\d+)?x$/,    // "3.2x", "12x"
+                            /^\d+hr?s?$/,        // "24hr", "72hrs"
+                            /^\d+(\.\d+)?s$/,    // "2.1s"
+                            /^.*days?$/i         // "7 Days"
+                        ];
+                        
+                        const shouldSkip = skipPatterns.some(pattern => pattern.test(textContent));
+                        if (shouldSkip) {
                             observer.unobserve(target);
                             return;
+                        }
+                        
+                        // Better parsing for currency and complex formats
+                        const match = textContent.match(/^([^\d]*)([\d,]+(?:\.\d+)?)(.*?)$/);
+                        if (match) {
+                            prefix = match[1]; // e.g., "£"
+                            finalNumber = parseFloat(match[2].replace(/,/g, '')); // e.g., "2.5" -> 2.5
+                            suffix = match[3]; // e.g., "M+"
+                        } else {
+                            // Fallback: try to extract just numbers
+                            const numberMatch = textContent.match(/[\d,]+/);
+                            if (numberMatch) {
+                                finalNumber = parseInt(numberMatch[0].replace(/,/g, ''));
+                                suffix = textContent.replace(/[\d,]/g, '');
+                            } else {
+                                observer.unobserve(target);
+                                return;
+                            }
                         }
                     }
                     
@@ -478,20 +506,24 @@ document.addEventListener('DOMContentLoaded', function() {
                         return;
                     }
                     
-                    const currentText = target.textContent;
-                    const suffix = currentText.replace(/[\d,]/g, ''); // Extract non-numeric characters
                     let currentNumber = 0;
                     const increment = finalNumber / 50; // Smoother animation
                     const duration = 2000; // 2 seconds
-                    const interval = duration / 50;
-
-                    const counter = setInterval(() => {
+                    const interval = duration / 50;                    const counter = setInterval(() => {
                         currentNumber += increment;
                         if (currentNumber >= finalNumber) {
-                            target.textContent = finalNumber.toLocaleString() + suffix;
+                            // Final number with proper decimal handling
+                            const displayNumber = finalNumber % 1 === 0 ? 
+                                finalNumber.toLocaleString() : 
+                                finalNumber.toLocaleString(undefined, { minimumFractionDigits: 1, maximumFractionDigits: 1 });
+                            target.textContent = prefix + displayNumber + suffix;
                             clearInterval(counter);
                         } else {
-                            target.textContent = Math.floor(currentNumber).toLocaleString() + suffix;
+                            // During animation, preserve decimal places if original number has them
+                            const displayNumber = finalNumber % 1 === 0 ? 
+                                Math.floor(currentNumber).toLocaleString() : 
+                                currentNumber.toLocaleString(undefined, { minimumFractionDigits: 1, maximumFractionDigits: 1 });
+                            target.textContent = prefix + displayNumber + suffix;
                         }
                     }, interval);
 
