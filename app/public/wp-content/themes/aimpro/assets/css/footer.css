@@ -476,6 +476,23 @@
     color: var(--primary-orange-dark);
 }
 
+/* Light Theme Footer Contact Fixes */
+:root.light-theme .contact-details span {
+    color: var(--text-primary) !important;
+}
+
+:root.light-theme .contact-details a {
+    color: var(--text-primary) !important;
+}
+
+:root.light-theme .contact-details a:hover {
+    color: var(--primary-orange) !important;
+}
+
+:root.light-theme .contact-label {
+    color: var(--text-secondary) !important;
+}
+
 /* Mobile Responsive */
 @media (max-width: 768px) {
     .footer-connect .footer-theme-toggle {

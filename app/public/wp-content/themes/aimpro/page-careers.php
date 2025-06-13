@@ -414,22 +414,21 @@ get_header(); ?>
                     </div>
                 </form>
             </div>
-        </section>
-
-        <!-- Contact HR -->
+        </section>        <!-- Contact HR -->
         <section class="contact-hr">
             <div class="section-content">
                 <h2>Questions About Careers?</h2>
                 <p>Our HR team is here to help answer any questions about working at Aimpro Digital</p>
                 <div class="contact-info">
                     <div class="contact-item">
-                        <strong>Email:</strong> careers@aimprodigital.com
+                        <strong>Email:</strong>
+                        <a href="mailto:careers@aimpro.co.uk">careers@aimpro.co.uk</a>
                     </div>
                     <div class="contact-item">
-                        <strong>Phone:</strong> (555) 123-4567 ext. 101
+                        <strong>Phone:</strong>
+                        <a href="tel:+441212858490">+44 121 285 8490</a>
                     </div>
                 </div>
-                <a href="<?php echo home_url('/contact'); ?>" class="btn btn-secondary">Contact HR Team</a>
             </div>
         </section>
 
