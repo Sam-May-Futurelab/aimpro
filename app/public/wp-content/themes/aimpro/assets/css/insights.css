@@ -5,8 +5,8 @@
 
 /* Archive Page Styles */
 .page-header {
-    background: linear-gradient(135deg, #262A3F 0%, #18101C 100%);
-    color: #ffffff;
+    background: var(--gradient-dark);
+    color: var(--text-primary);
     padding: 80px 0 50px;
     text-align: center;
     margin-bottom: 60px;
@@ -16,6 +16,7 @@
     font-size: 48px;
     margin-bottom: 20px;
     font-weight: 800;
+    color: var(--text-primary);
 }
 
 .page-header .subtitle {
@@ -23,7 +24,20 @@
     max-width: 800px;
     margin: 0 auto;
     line-height: 1.6;
-    opacity: 0.85;
+    color: var(--text-readable-secondary);
+    opacity: 1;
+}
+
+/* Light Theme Overrides for Insights Pages */
+:root.light-theme .page-header h1 {
+    color: var(--primary-orange);
+    font-weight: 800;
+    text-shadow: none;
+}
+
+:root.light-theme .page-header .subtitle {
+    color: var(--text-secondary);
+    opacity: 1;
 }
 
 .insights-archive {
