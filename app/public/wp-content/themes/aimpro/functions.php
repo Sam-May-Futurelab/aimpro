@@ -69,9 +69,15 @@ add_filter('post_thumbnail_html', 'aimpro_filter_post_thumbnail_html', 10, 5);
  * Enqueue Scripts and Styles with Performance Optimizations
  */
 function aimpro_enqueue_assets() {
+    // DEBUG: Add console log to see if CSS enqueue function runs
+    echo '<script>console.log("🎨 CSS ENQUEUE: aimpro_enqueue_assets() function called");</script>';
+    
     $theme_version = wp_get_theme()->get('Version');
       // Enqueue CSS variables first
     wp_enqueue_style('aimpro-variables', get_template_directory_uri() . '/assets/css/variables.css', array(), $theme_version);
+    
+    // DEBUG: Add console log to confirm CSS files are being enqueued
+    echo '<script>console.log("📁 CSS FILES: Enqueuing variables.css and other CSS files...");</script>';
     
     // Enqueue base styles for typography, resets, and base components
     wp_enqueue_style('aimpro-base', get_template_directory_uri() . '/assets/css/base.css', array('aimpro-variables'), $theme_version);

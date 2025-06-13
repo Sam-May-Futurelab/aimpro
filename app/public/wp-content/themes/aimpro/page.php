@@ -11,6 +11,9 @@
 
 get_header();
 
+// DEBUG: Add console log to identify which template is loading
+echo '<script>console.log("🔴 LOADING: page.php template");</script>';
+
 // Get page title and potential custom H1
 $page_title = get_the_title();
 $custom_h1 = get_field('custom_h1_text'); // Using ACF for custom H1

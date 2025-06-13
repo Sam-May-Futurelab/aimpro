@@ -1,10 +1,30 @@
+about/:31 🟢 LOADING: page-about.php template
+about/:57 
+            
+            
+           GET http://aimpro.local/wp-content/themes/aimpro/assets/images/company-image.jpg 404 (Not Found)
+about/:103 
+            
+            
+           GET http://aimpro.local/wp-content/themes/aimpro/assets/images/team-placeholder.jpg 404 (Not Found)
 <?php
 /**
  * Template Name: About Page
  * Description: Main About page template
  */
 
-get_header(); ?>
+get_header(); 
+
+// DEBUG: Add console log to identify which template is loading
+echo '<script>console.log("🟢 LOADING: page-about.php template");</script>';
+
+// DEBUG: Add inline CSS to test if ANY styling works
+echo '<style>
+    body { background-color: #f0f0f0 !important; }
+    .about-hero { background-color: #e74c3c !important; color: white !important; padding: 40px !important; }
+    h1 { color: white !important; font-size: 2rem !important; }
+</style>';
+?>
 
 <main id="main" class="main-content">
     <div class="container">

@@ -3,6 +3,25 @@
  * Header template for Aimpro Digital theme
  */
 ?>
+<!DOCTYPE html>
+<html <?php language_attributes(); ?>>
+<head>
+    <meta charset="<?php bloginfo('charset'); ?>">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="profile" href="https://gmpg.org/xfn/11">
+    
+    <!-- DEBUG: wp_head() called -->
+    <script>console.log("🔧 HEADER: wp_head() about to be called");</script>
+    
+    <?php wp_head(); ?>
+    
+    <!-- DEBUG: wp_head() completed -->
+    <script>console.log("✅ HEADER: wp_head() completed");</script>
+</head>
+
+<body <?php body_class(); ?>>
+<?php wp_body_open(); ?>
+
 <!-- Sticky Header -->
 <header class="sticky-header glassmorphism-header">
     <div class="container">
