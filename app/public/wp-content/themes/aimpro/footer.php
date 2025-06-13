@@ -27,24 +27,11 @@
                     <li><a href="<?php echo home_url('/marketing-automation'); ?>">Marketing Automation</a></li>
                     <li><a href="<?php echo home_url('/services'); ?>">All Services</a></li>
                 </ul>
-            </div>
-            
-            <div class="footer-column footer-contact">
+            </div>            <div class="footer-column footer-contact">
                 <h3>Get in Touch</h3>
-                <div class="contact-info">
-                    <div class="contact-item">
-                        <i class="contact-icon">📍</i>
-                        <span>55 Colmore Row, Birmingham B3 2AA</span>
-                    </div>
-                    <div class="contact-item">
-                        <i class="contact-icon">📞</i>
-                        <a href="tel:+441212858490">+44 121 285 8490</a>
-                    </div>
-                    <div class="contact-item">
-                        <i class="contact-icon">✉️</i>
-                        <a href="mailto:hello@aimpro.co.uk">hello@aimpro.co.uk</a>
-                    </div>
-                </div>
+                <span>55 Colmore Row, Birmingham B3 2AA</span>
+                <a href="tel:+441212858490">+44 121 285 8490</a>
+                <a href="mailto:hello@aimpro.co.uk">hello@aimpro.co.uk</a>
             </div>
               <div class="footer-column footer-connect">
                 <h3>Connect With Us</h3>

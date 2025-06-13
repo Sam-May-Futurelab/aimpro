@@ -178,58 +178,48 @@
 /* Footer Contact Column */
 .contact-item {
     display: flex;
-    align-items: flex-start;
-    gap: 1rem;
-    margin-bottom: 1.5rem;
-    padding: 1rem;
-    background: rgba(255, 255, 255, 0.03);
-    border-radius: 12px;
-    border: 1px solid rgba(255, 255, 255, 0.05);
-    transition: all 0.3s ease;
-}
-
-.contact-item:hover {
-    background: rgba(255, 255, 255, 0.05);
-    border-color: rgba(255, 215, 0, 0.2);
-    transform: translateY(-2px);
-}
-
-.contact-icon {
-    flex-shrink: 0;    
-    width: 40px;
-    height: 40px;
-    background: var(--gradient-orange);
-    border-radius: 10px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: var(--primary-black);
+    margin-bottom: 1rem;
+    padding: 0;
+    transition: color 0.3s ease;
 }
 
 .contact-details {
     display: flex;
     flex-direction: column;
-    gap: 0.25rem;
-}
-
-.contact-label {
-    font-size: 0.75rem;
-    color: #94a3b8;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-    font-weight: 600;
 }
 
 .contact-details a,
 .contact-details span {
-    color: #e2e8f0;
+    color: var(--footer-text);
     text-decoration: none;
     font-size: 0.95rem;
     transition: color 0.3s ease;
+    text-align: left;
+    line-height: 1.5;
 }
 
 .contact-details a:hover {
-    color: #f15a25;
+    color: var(--primary-orange);
+}
+
+/* Ensure contact info is left-aligned */
+.footer-contact .contact-info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+/* Responsive Footer - Contact Section */
+@media (max-width: 768px) {
+    .contact-item {
+        margin-bottom: 0.85rem;
+    }
+    
+    .contact-details a,
+    .contact-details span {
+        font-size: 0.9rem;
+        line-height: 1.4;
+    }
 }
 
 /* Footer Connect Column */
@@ -477,20 +467,13 @@
 }
 
 /* Light Theme Footer Contact Fixes */
-:root.light-theme .contact-details span {
-    color: var(--text-primary) !important;
-}
-
+:root.light-theme .contact-details span,
 :root.light-theme .contact-details a {
-    color: var(--text-primary) !important;
+    color: var(--footer-text) !important;
 }
 
 :root.light-theme .contact-details a:hover {
     color: var(--primary-orange) !important;
-}
-
-:root.light-theme .contact-label {
-    color: var(--text-secondary) !important;
 }
 
 /* Light Theme Footer Comprehensive Fixes */
@@ -510,9 +493,9 @@
 }
 
 /* Fix for contact items in light theme */
-:root.light-theme .contact-item {
-    background: rgba(255, 255, 255, 0.1) !important;
-    border: 1px solid rgba(255, 255, 255, 0.15) !important;
+:root.light-theme .contact-details span,
+:root.light-theme .contact-details a {
+    color: var(--footer-text) !important;
 }
 
 :root.light-theme .contact-item:hover {
