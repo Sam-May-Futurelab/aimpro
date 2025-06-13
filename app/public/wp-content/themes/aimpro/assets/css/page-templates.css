@@ -363,7 +363,7 @@
 /* Service-Specific Styles */
 .service-feature-list {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(3, 1fr);
     gap: 2rem;
     margin: 3rem 0;
 }
@@ -517,7 +517,7 @@
 /* Industry Page Styles */
 .industry-stats {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: repeat(4, 1fr);
     gap: 2rem;
     margin: 3rem 0;
     text-align: center;
@@ -548,7 +548,7 @@
 /* Service Card Grids */
 .services-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    grid-template-columns: repeat(3, 1fr);
     gap: 2rem;
     margin-top: 3rem;
 }
@@ -920,6 +920,96 @@
     color: white;
 }
 
+/* Service Subcategories Grid */
+.service-subcategories {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    margin: 2rem 0 3rem;
+}
+
+.subcategory-card {
+    background: var(--glass-bg);
+    border-radius: 12px;
+    padding: 2rem;
+    border: 1px solid var(--glass-border);
+    backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.subcategory-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-lg);
+    border-color: var(--glass-orange-border);
+}
+
+.subcategory-card h3 {
+    font-size: 1.4rem;
+    margin-top: 0;
+    margin-bottom: 1rem;
+    color: var(--text-primary);
+}
+
+.subcategory-card p {
+    margin-bottom: 1.2rem;
+    color: var(--text-secondary);
+    flex-grow: 1;
+}
+
+.subcategory-card .service-link {
+    margin-top: auto;
+    align-self: flex-start;
+}
+
+/* Categories Grid Layouts */
+.categories-grid,
+.ai-categories-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    margin: 2rem 0 3rem;
+}
+
+.category-grid-item {
+    background: var(--glass-bg);
+    border-radius: 12px;
+    padding: 2rem;
+    border: 1px solid var(--glass-border);
+    backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
+}
+
+.category-grid-item:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-lg);
+    border-color: var(--glass-orange-border);
+}
+
+@media (max-width: 992px) {
+    .service-subcategories {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .categories-grid,
+    .ai-categories-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .service-subcategories {
+        grid-template-columns: 1fr;
+    }
+    
+    .categories-grid,
+    .ai-categories-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
 /* Responsive Design */
 @media (max-width: 992px) {
     .page-hero h1 {
@@ -938,6 +1028,12 @@
     .resource-download-box {
         flex-direction: column;
         text-align: center;
+    }
+    
+    .service-feature-list,
+    .services-grid,
+    .industry-stats {
+        grid-template-columns: repeat(2, 1fr);
     }
 }
 
@@ -962,7 +1058,9 @@
         font-size: 1.25rem;
     }
     
-    .service-feature-list {
+    .service-feature-list,
+    .services-grid,
+    .industry-stats {
         grid-template-columns: 1fr;
     }
     
@@ -973,11 +1071,6 @@
     .overview-content {
         grid-template-columns: 1fr;
         gap: 2rem;
-    }
-    
-    .services-grid {
-        grid-template-columns: 1fr;
-        gap: 1.5rem;
     }
     
     .case-study-content {
@@ -995,6 +1088,63 @@
     
     .package-card.featured {
         transform: none;
+    }
+}
+
+/* Hero Stats Grid - For service pages like Google Ads */
+.hero-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    margin: 2rem 0;
+    text-align: center;
+}
+
+.hero-stats .stat-item {
+    background: var(--glass-bg);
+    border-radius: 12px;
+    padding: 1.5rem;
+    border: 1px solid var(--glass-border);
+    backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
+}
+
+.hero-stats .stat-number {
+    display: block;
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: var(--primary-orange);
+    margin-bottom: 0.5rem;
+    line-height: 1;
+}
+
+.hero-stats .stat-label {
+    color: var(--text-secondary);
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+/* Responsive adjustments */
+@media (max-width: 992px) {
+    .hero-stats {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1rem;
+    }
+    
+    .hero-stats .stat-number {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-stats {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-stats {
+        grid-template-columns: 1fr;
     }
 }
 
@@ -1075,7 +1225,6 @@
 /* Content Section Text Color Fixes - High Specificity */
 .service-page .section-content h2,
 .service-page .overview-content h2,
-.service-page .services-grid h2,
 .service-page h2,
 .category-landing-page h2,
 .about-page h2,

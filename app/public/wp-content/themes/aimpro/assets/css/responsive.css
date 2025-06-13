@@ -36,14 +36,14 @@
     .hero-title {
         font-size: 3rem;
     }
-    
-    .service-grid {
+      .service-grid {
         grid-template-columns: repeat(2, 1fr);
         gap: 1.5rem;
     }
     
     .stats-grid {
         grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
     }
     
     .team-grid {
