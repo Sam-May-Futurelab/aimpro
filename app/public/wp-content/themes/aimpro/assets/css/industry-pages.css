@@ -1,0 +1,733 @@
+/* 
+ * Industry Pages Styling
+ * For Aimpro Digital Theme - Industry-specific pages
+ */
+
+/* Hero Section Override - Prevent spacing conflicts */
+.hero-section,
+.premium-hero {
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+/* Common Industry Page Styles */
+.main-content {
+    color: var(--text-primary, #1e293b);
+    font-family: 'Inter', sans-serif;
+}
+
+.section-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Only apply to industry/service content sections, not hero */
+.main-content section:not(.hero-section):not(.premium-hero) {
+    margin: 80px 0;
+}
+
+/* Page Header */
+.page-header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.page-header h1 {
+    font-size: 48px;
+    font-weight: 800;
+    margin-bottom: 20px;
+    color: var(--text-primary, #1e293b);
+}
+
+.page-subtitle {
+    font-size: 20px;
+    max-width: 800px;
+    margin: 0 auto;
+    color: var(--text-secondary, #64748b);
+    line-height: 1.6;
+}
+
+/* Industry Overview Section */
+.industry-overview .section-content {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.overview-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: center;
+}
+
+.overview-text h2 {
+    font-size: 36px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    color: var(--text-primary, #1e293b);
+}
+
+.overview-text p {
+    font-size: 18px;
+    line-height: 1.6;
+    color: var(--text-secondary, #64748b);
+    margin-bottom: 30px;
+}
+
+.industry-challenges {
+    background: var(--bg-alt, #f8fafc);
+    padding: 30px;
+    border-radius: 12px;
+    margin-top: 30px;
+}
+
+.industry-challenges h3 {
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 15px;
+    color: var(--text-primary, #1e293b);
+}
+
+.industry-challenges ul {
+    margin: 0;
+    padding-left: 20px;
+}
+
+.industry-challenges li {
+    margin-bottom: 10px;
+    color: var(--text-secondary, #64748b);
+    line-height: 1.5;
+}
+
+.overview-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* Success Story Section */
+.home-garden-case-study {
+    background: var(--bg-alt, #f8fafc);
+    padding: 60px 0;
+    border-radius: 16px;
+}
+
+.case-study-content {
+    display: grid;
+    grid-template-columns: 3fr 2fr;
+    gap: 40px;
+    align-items: center;
+}
+
+.case-study-label {
+    display: inline-block;
+    background: var(--primary-orange, #F15A25);
+    color: white;
+    padding: 6px 12px;
+    border-radius: 30px;
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+.case-study-text h2 {
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    color: var(--text-primary, #1e293b);
+}
+
+.case-study-text p {
+    font-size: 18px;
+    line-height: 1.6;
+    color: var(--text-secondary, #64748b);
+    margin-bottom: 30px;
+}
+
+.case-study-challenge, 
+.case-study-solution {
+    margin-bottom: 30px;
+}
+
+.case-study-challenge h3, 
+.case-study-solution h3 {
+    font-size: 22px;
+    font-weight: 600;
+    margin-bottom: 15px;
+    color: var(--text-primary, #1e293b);
+}
+
+.case-study-challenge ul, 
+.case-study-solution ul {
+    margin: 0;
+    padding-left: 20px;
+}
+
+.case-study-challenge li, 
+.case-study-solution li {
+    margin-bottom: 10px;
+    color: var(--text-secondary, #64748b);
+    line-height: 1.5;
+}
+
+.case-study-results {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.result-item {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.result-number {
+    font-size: 36px;
+    font-weight: 800;
+    color: var(--primary-orange, #F15A25);
+    margin-bottom: 10px;
+}
+
+.result-label {
+    font-size: 16px;
+    color: var(--text-secondary, #64748b);
+    line-height: 1.4;
+}
+
+.case-study-cta {
+    display: inline-block;
+    background: var(--primary-orange, #F15A25);
+    color: white;
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.case-study-cta:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(241, 90, 37, 0.2);
+}
+
+/* Seasonal Marketing Calendar */
+.seasonal-calendar {
+    margin: 80px 0;
+}
+
+.seasonal-calendar h2 {
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 40px;
+    text-align: center;
+    color: var(--text-primary, #1e293b);
+}
+
+.calendar-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+}
+
+.season-card {
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.season-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+}
+
+.season-header {
+    padding: 20px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.season-header h3 {
+    font-size: 22px;
+    font-weight: 600;
+    margin-bottom: 5px;
+    color: var(--text-primary, #1e293b);
+}
+
+.season-revenue {
+    display: inline-block;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--primary-orange, #F15A25);
+}
+
+.season-content {
+    padding: 20px;
+}
+
+.season-content h4 {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 15px;
+    color: var(--text-primary, #1e293b);
+}
+
+.season-content ul {
+    margin: 0 0 15px 0;
+    padding-left: 20px;
+}
+
+.season-content li {
+    margin-bottom: 10px;
+    color: var(--text-secondary, #64748b);
+    line-height: 1.5;
+}
+
+.season-tactics {
+    margin-top: 15px;
+    padding-top: 15px;
+    border-top: 1px dashed rgba(0, 0, 0, 0.1);
+    font-size: 14px;
+    color: var(--text-secondary, #64748b);
+}
+
+/* Spring card */
+.season-card.spring .season-header {
+    background: rgba(129, 199, 132, 0.1);
+}
+
+/* Summer card */
+.season-card.summer .season-header {
+    background: rgba(255, 193, 7, 0.1);
+}
+
+/* Fall card */
+.season-card.fall .season-header {
+    background: rgba(230, 74, 25, 0.1);
+}
+
+/* Winter card */
+.season-card.winter .season-header {
+    background: rgba(33, 150, 243, 0.1);
+}
+
+/* Visual Marketing Section */
+.visual-marketing {
+    margin: 80px 0 !important;
+    background: var(--bg-alt, #f8fafc) !important;
+    padding: 60px 0 !important;
+    border-radius: 16px !important;
+}
+
+.visual-marketing h2 {
+    font-size: 32px !important;
+    font-weight: 700 !important;
+    margin-bottom: 40px !important;
+    text-align: center !important;
+    color: var(--text-primary, #1e293b) !important;
+}
+
+.visual-examples {
+    display: grid !important;
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 30px !important;
+    margin-top: 40px !important;
+}
+
+.example-card {
+    background: white !important;
+    border-radius: 12px !important;
+    overflow: hidden !important;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05) !important;
+    transition: transform 0.3s ease, box-shadow 0.3s ease !important;
+}
+
+.example-card:hover {
+    transform: translateY(-5px) !important;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1) !important;
+}
+
+.example-image {
+    height: 200px !important;
+    overflow: hidden !important;
+    position: relative !important;
+}
+
+.example-image img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    transition: transform 0.3s ease !important;
+}
+
+.example-card:hover .example-image img {
+    transform: scale(1.05) !important;
+}
+
+.example-content {
+    padding: 25px !important;
+}
+
+.example-content h3 {
+    font-size: 20px !important;
+    font-weight: 600 !important;
+    margin-bottom: 12px !important;
+    color: var(--text-primary, #1e293b) !important;
+}
+
+.example-content p {
+    font-size: 16px !important;
+    line-height: 1.6 !important;
+    color: var(--text-secondary, #64748b) !important;
+    margin-bottom: 20px !important;
+}
+
+.example-stats {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 8px !important;
+}
+
+.example-stats .stat {
+    display: inline-flex !important;
+    align-items: center !important;
+    font-size: 14px !important;
+    font-weight: 600 !important;
+    color: var(--primary-orange, #F15A25) !important;
+    background: rgba(241, 90, 37, 0.1) !important;
+    padding: 6px 12px !important;
+    border-radius: 20px !important;
+    width: fit-content !important;
+}
+
+.example-stats .stat:first-child {
+    margin-bottom: 4px !important;
+}
+
+/* Alternative layout for better visual impact */
+.visual-examples .example-card:nth-child(1) .example-image {
+    background: linear-gradient(135deg, rgba(52, 168, 83, 0.1) 0%, rgba(52, 168, 83, 0.05) 100%) !important;
+}
+
+.visual-examples .example-card:nth-child(2) .example-image {
+    background: linear-gradient(135deg, rgba(33, 150, 243, 0.1) 0%, rgba(33, 150, 243, 0.05) 100%) !important;
+}
+
+.visual-examples .example-card:nth-child(3) .example-image {
+    background: linear-gradient(135deg, rgba(156, 39, 176, 0.1) 0%, rgba(156, 39, 176, 0.05) 100%) !important;
+}
+
+/* Responsive design for visual marketing */
+@media (max-width: 992px) {
+    .visual-examples {
+        grid-template-columns: repeat(2, 1fr) !important;
+    }
+}
+
+@media (max-width: 768px) {
+    .visual-examples {
+        grid-template-columns: 1fr !important;
+    }
+    
+    .visual-marketing {
+        padding: 40px 0 !important;
+    }
+    
+    .visual-marketing h2 {
+        font-size: 28px !important;
+    }
+    
+    .example-image {
+        height: 180px !important;
+    }
+    
+    .example-content {
+        padding: 20px !important;
+    }
+    
+    .example-stats {
+        flex-direction: row !important;
+        flex-wrap: wrap !important;
+        gap: 8px !important;
+    }
+    
+    .example-stats .stat {
+        font-size: 12px !important;
+        padding: 4px 8px !important;
+    }
+}
+
+/* Generic Example Cards for any industry page */
+.example-cards-grid,
+.examples-grid,
+.showcase-grid {
+    display: grid !important;
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 30px !important;
+    margin: 40px 0 !important;
+}
+
+.example-card,
+.showcase-card,
+.feature-showcase {
+    background: white !important;
+    border-radius: 12px !important;
+    overflow: hidden !important;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05) !important;
+    transition: transform 0.3s ease, box-shadow 0.3s ease !important;
+}
+
+.example-card:hover,
+.showcase-card:hover,
+.feature-showcase:hover {
+    transform: translateY(-5px) !important;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1) !important;
+}
+
+/* Universal stat styling */
+.stats-grid,
+.metrics-grid,
+.results-grid {
+    display: grid !important;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)) !important;
+    gap: 20px !important;
+    margin: 30px 0 !important;
+}
+
+.stat-item,
+.metric-item,
+.result-item {
+    text-align: center !important;
+    padding: 20px !important;
+    background: white !important;
+    border-radius: 10px !important;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05) !important;
+}
+
+.stat-number,
+.metric-number,
+.result-number {
+    font-size: 36px !important;
+    font-weight: 800 !important;
+    color: var(--primary-orange, #F15A25) !important;
+    margin-bottom: 10px !important;
+    display: block !important;
+}
+
+.stat-label,
+.metric-label,
+.result-label {
+    font-size: 16px !important;
+    color: var(--text-secondary, #64748b) !important;
+    line-height: 1.4 !important;
+}
+
+/* Performance indicators and arrows */
+.performance-indicator,
+.growth-indicator,
+.improvement-stat {
+    display: inline-flex !important;
+    align-items: center !important;
+    font-size: 14px !important;
+    font-weight: 600 !important;
+    color: var(--primary-orange, #F15A25) !important;
+    background: rgba(241, 90, 37, 0.1) !important;
+    padding: 6px 12px !important;
+    border-radius: 20px !important;
+    margin: 4px 0 !important;
+}
+
+.performance-indicator:before,
+.growth-indicator:before,
+.improvement-stat:before {
+    content: '↗' !important;
+    margin-right: 4px !important;
+    font-size: 16px !important;
+}
+
+/* Common button styles for all industry pages */
+.btn {
+    display: inline-block !important;
+    padding: 15px 30px !important;
+    border-radius: 8px !important;
+    font-weight: 600 !important;
+    text-decoration: none !important;
+    transition: transform 0.3s ease, box-shadow 0.3s ease !important;
+    font-size: 16px !important;
+}
+
+.btn-primary {
+    background: white !important;
+    color: var(--primary-orange, #F15A25) !important;
+    border: none !important;
+}
+
+.btn-primary:hover {
+    transform: translateY(-3px) !important;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15) !important;
+    background: #f8f8f8 !important;
+}
+
+.btn-secondary {
+    background: transparent !important;
+    color: white !important;
+    border: 2px solid white !important;
+}
+
+.btn-secondary:hover {
+    transform: translateY(-3px) !important;
+    background: rgba(255, 255, 255, 0.2) !important;
+}
+
+/* Universal industry page content styling */
+.main-content section:not(.hero-section):not(.premium-hero) {
+    margin: 60px 0 !important;
+}
+
+.main-content .section-content {
+    max-width: 1200px !important;
+    margin: 0 auto !important;
+    padding: 0 20px !important;
+}
+
+.main-content .page-header {
+    text-align: center !important;
+    margin-bottom: 60px !important;
+}
+
+.main-content .page-header h1 {
+    font-size: 48px !important;
+    font-weight: 800 !important;
+    margin-bottom: 20px !important;
+}
+
+.main-content .page-subtitle {
+    font-size: 20px !important;
+    max-width: 800px !important;
+    margin: 0 auto !important;
+    line-height: 1.6 !important;
+}
+
+/* Universal styling for all vertical content sections */
+.main-content ul {
+    margin: 15px 0 !important;
+    padding-left: 20px !important;
+}
+
+.main-content ul li {
+    margin-bottom: 10px !important;
+    line-height: 1.5 !important;
+}
+
+.main-content h2 {
+    font-size: 32px !important;
+    font-weight: 700 !important;
+    margin-bottom: 20px !important;
+}
+
+.main-content h3 {
+    font-size: 24px !important;
+    font-weight: 600 !important;
+    margin-bottom: 15px !important;
+}
+
+.main-content p {
+    font-size: 16px !important;
+    line-height: 1.6 !important;
+    margin-bottom: 15px !important;
+}
+
+/* Fix for any remaining vertical list issues */
+.main-content .content-list,
+.main-content .feature-list,
+.main-content .benefit-list {
+    display: grid !important;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)) !important;
+    gap: 20px !important;
+    margin: 30px 0 !important;
+}
+
+.main-content .content-list-item,
+.main-content .feature-list-item,
+.main-content .benefit-list-item {
+    background: white !important;
+    padding: 20px !important;
+    border-radius: 8px !important;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05) !important;
+}
+
+/* Force grid layouts where appropriate */
+.main-content .two-column-grid {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    gap: 40px !important;
+    align-items: start !important;
+}
+
+.main-content .three-column-grid {
+    display: grid !important;
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 30px !important;
+}
+
+.main-content .four-column-grid {
+    display: grid !important;
+    grid-template-columns: repeat(4, 1fr) !important;
+    gap: 25px !important;
+}
+
+/* Responsive grid adjustments */
+@media (max-width: 1024px) {
+    .main-content .four-column-grid {
+        grid-template-columns: repeat(3, 1fr) !important;
+    }
+    
+    .main-content .three-column-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+    }
+}
+
+@media (max-width: 768px) {
+    .main-content .two-column-grid,
+    .main-content .three-column-grid,
+    .main-content .four-column-grid {
+        grid-template-columns: 1fr !important;
+    }
+    
+    .main-content .page-header h1 {
+        font-size: 36px !important;
+    }
+    
+    .main-content .page-subtitle {
+        font-size: 18px !important;
+    }
+    
+    .main-content h2 {
+        font-size: 28px !important;
+    }
+    
+    .main-content h3 {
+        font-size: 22px !important;
+    }
+}
+
+/* Fix for Safari grid issues */
+@supports (-webkit-touch-callout: none) {
+    .calendar-grid,
+    .visual-marketing-grid {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .season-card,
+    .visual-marketing-item {
+        flex: 1 1 300px;
+    }
+}

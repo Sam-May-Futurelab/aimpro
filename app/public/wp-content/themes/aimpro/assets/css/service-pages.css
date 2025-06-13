@@ -3,6 +3,13 @@
  * For Aimpro Digital Theme - Google Ads Pages
  */
 
+/* Hero Section Override - Prevent spacing conflicts */
+.hero-section,
+.premium-hero {
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
 /* Google Ads Page Specific Styles */
 .google-ads-page {
     --primary-orange: #F15A25;
@@ -638,8 +645,8 @@
     padding: 0 20px !important;
 }
 
-/* Force section spacing */
-.google-ads-page section {
+/* Force section spacing for content sections only */
+.google-ads-page section:not(.hero-section):not(.premium-hero) {
     padding: 60px 0 !important;
 }
 
@@ -753,8 +760,756 @@
     line-height: 1.6;
 }
 
-/* Add more specific styling to the template used for service pages */
-body.page-template-service .cta-section,
-.service-page .cta-section {
-    margin: 60px 0;
+/* ===== LOCAL SEO SECTIONS ===== */
+
+/* Local SEO Services Section */
+.local-seo-services {
+    padding: 4rem 0;
+    background: #f8fafc;
+}
+
+.local-seo-services .section-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.local-seo-services h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #1a202c;
+    margin-bottom: 3rem;
+    position: relative;
+}
+
+.local-seo-services h2::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background: linear-gradient(45deg, #f15a25, #ff7849);
+    border-radius: 2px;
+}
+
+.local-seo-services [name="services-grid"] {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.local-seo-services .service-card {
+    background: white;
+    border-radius: 16px;
+    padding: 2rem;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+    border: 1px solid #e2e8f0;
+    position: relative;
+    overflow: hidden;
+}
+
+.local-seo-services .service-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(45deg, #f15a25, #ff7849);
+}
+
+.local-seo-services .service-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+}
+
+.local-seo-services .service-icon {
+    width: 64px;
+    height: 64px;
+    background: linear-gradient(45deg, #f15a25, #ff7849);
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+    color: white;
+}
+
+.local-seo-services .service-icon svg {
+    width: 32px;
+    height: 32px;
+}
+
+.local-seo-services .service-content h3 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #1a202c;
+    margin-bottom: 1rem;
+}
+
+.local-seo-services .service-content p {
+    color: #4a5568;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+}
+
+.local-seo-services .service-features {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.local-seo-services .service-features li {
+    color: #2d3748;
+    padding: 0.5rem 0;
+    padding-left: 1.5rem;
+    position: relative;
+    font-size: 0.95rem;
+}
+
+.local-seo-services .service-features li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    top: 0.5rem;
+    color: #f15a25;
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+/* Local SEO Industries Section */
+.local-seo-industries {
+    padding: 4rem 0;
+    background: white;
+}
+
+.local-seo-industries .section-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.local-seo-industries h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #1a202c;
+    margin-bottom: 3rem;
+    position: relative;
+}
+
+.local-seo-industries h2::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background: linear-gradient(45deg, #f15a25, #ff7849);
+    border-radius: 2px;
+}
+
+.industries-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.industry-card {
+    background: #f8fafc;
+    border-radius: 16px;
+    padding: 2rem;
+    transition: all 0.3s ease;
+    border: 1px solid #e2e8f0;
+    position: relative;
+    overflow: hidden;
+}
+
+.industry-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(45deg, #f15a25, #ff7849);
+}
+
+.industry-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
+    background: white;
+}
+
+.industry-card h3 {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #1a202c;
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid #e2e8f0;
+}
+
+.industry-features {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 1.5rem 0;
+}
+
+.industry-features li {
+    color: #2d3748;
+    padding: 0.75rem 0;
+    padding-left: 1.5rem;
+    position: relative;
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+.industry-features li::before {
+    content: '•';
+    position: absolute;
+    left: 0;
+    top: 0.75rem;
+    color: #f15a25;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+.industry-results {
+    background: linear-gradient(45deg, #f15a25, #ff7849);
+    color: white;
+    padding: 1rem;
+    border-radius: 12px;
+    text-align: center;
+    font-weight: 600;
+    font-size: 0.95rem;
+    margin-top: 1.5rem;
+}
+
+.industry-results span {
+    display: block;
+}
+
+/* ===== HIGH-CONVERTING WEBSITE SECTIONS ===== */
+
+/* Website Optimization Services Section */
+.website-optimization-services {
+    padding: 4rem 0;
+    background: #f8fafc;
+}
+
+.website-optimization-services .section-content {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.website-optimization-services h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #1a202c;
+    margin-bottom: 3rem;
+    position: relative;
+}
+
+.website-optimization-services h2::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background: linear-gradient(45deg, #f15a25, #ff7849);
+    border-radius: 2px;
+}
+
+/* 4-column grid for service cards */
+.website-optimization-services .services-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.website-optimization-services .service-card {
+    background: white;
+    border-radius: 16px;
+    padding: 2rem;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+    border: 1px solid #e2e8f0;
+    position: relative;
+    overflow: hidden;
+}
+
+.website-optimization-services .service-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(45deg, #f15a25, #ff7849);
+}
+
+.website-optimization-services .service-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+}
+
+.website-optimization-services .service-icon {
+    width: 64px;
+    height: 64px;
+    background: linear-gradient(45deg, #f15a25, #ff7849);
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+    color: white;
+}
+
+.website-optimization-services .service-icon svg {
+    width: 32px;
+    height: 32px;
+}
+
+.website-optimization-services .service-content h3 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #1a202c;
+    margin-bottom: 1rem;
+}
+
+.website-optimization-services .service-content p {
+    color: #4a5568;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+    font-size: 0.95rem;
+}
+
+.website-optimization-services .service-features {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.website-optimization-services .service-features li {
+    color: #2d3748;
+    padding: 0.5rem 0;
+    padding-left: 1.5rem;
+    position: relative;
+    font-size: 0.9rem;
+    line-height: 1.4;
+}
+
+.website-optimization-services .service-features li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    top: 0.5rem;
+    color: #f15a25;
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+/* Conversion Elements Section */
+.conversion-elements {
+    padding: 4rem 0;
+    background: white;
+}
+
+.conversion-elements .section-content {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.conversion-elements h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #1a202c;
+    margin-bottom: 3rem;
+    position: relative;
+}
+
+.conversion-elements h2::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background: linear-gradient(45deg, #f15a25, #ff7849);
+    border-radius: 2px;
+}
+
+/* 4-column grid for conversion elements */
+.elements-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.element-card {
+    background: #f8fafc;
+    border-radius: 16px;
+    padding: 2rem;
+    transition: all 0.3s ease;
+    border: 1px solid #e2e8f0;
+    position: relative;
+    overflow: hidden;
+}
+
+.element-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+}
+
+.element-card:nth-child(1)::before {
+    background: linear-gradient(45deg, #10b981, #34d399); /* Value Props - Green */
+}
+
+.element-card:nth-child(2)::before {
+    background: linear-gradient(45deg, #f15a25, #ff7849); /* CTA - Orange */
+}
+
+.element-card:nth-child(3)::before {
+    background: linear-gradient(45deg, #3b82f6, #60a5fa); /* Trust - Blue */
+}
+
+.element-card:nth-child(4)::before {
+    background: linear-gradient(45deg, #8b5cf6, #a78bfa); /* UX - Purple */
+}
+
+.element-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
+    background: white;
+}
+
+.element-card h3 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #1a202c;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.element-card h3::before {
+    content: '';
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.element-card:nth-child(1) h3::before {
+    background: #10b981;
+}
+
+.element-card:nth-child(2) h3::before {
+    background: #f15a25;
+}
+
+.element-card:nth-child(3) h3::before {
+    background: #3b82f6;
+}
+
+.element-card:nth-child(4) h3::before {
+    background: #8b5cf6;
+}
+
+.element-card p {
+    color: #4a5568;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+    font-size: 0.95rem;
+}
+
+.element-features {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.element-features li {
+    color: #2d3748;
+    padding: 0.5rem 0;
+    padding-left: 1.5rem;
+    position: relative;
+    font-size: 0.9rem;
+    line-height: 1.4;
+}
+
+.element-features li::before {
+    content: '▶';
+    position: absolute;
+    left: 0;
+    top: 0.5rem;
+    color: #f15a25;
+    font-size: 0.8rem;
+}
+
+/* ===== SALES FUNNEL STAGES SECTION ===== */
+
+.funnel-stages {
+    padding: 4rem 0;
+    background: #f8fafc;
+    position: relative;
+}
+
+.funnel-stages .section-content {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.funnel-stages h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #1a202c;
+    margin-bottom: 3rem;
+    position: relative;
+}
+
+.funnel-stages h2::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background: linear-gradient(45deg, #f15a25, #ff7849);
+    border-radius: 2px;
+}
+
+.stages-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    margin-top: 3rem;
+    position: relative;
+}
+
+/* Funnel flow line connecting stages */
+.stages-grid::before {
+    content: '';
+    position: absolute;
+    top: 50px;
+    left: 10%;
+    right: 10%;
+    height: 2px;
+    background: linear-gradient(90deg, #f15a25, #ff7849, #f15a25);
+    z-index: 1;
+    opacity: 0.3;
+}
+
+.stage-card {
+    background: white;
+    border-radius: 20px;
+    padding: 2rem;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+    border: 1px solid #e2e8f0;
+    position: relative;
+    overflow: hidden;
+    z-index: 2;
+}
+
+.stage-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(45deg, #f15a25, #ff7849);
+}
+
+.stage-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+}
+
+.stage-number {
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(45deg, #f15a25, #ff7849);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    position: relative;
+    z-index: 3;
+}
+
+.stage-card h3 {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #1a202c;
+    margin-bottom: 1rem;
+}
+
+.stage-card p {
+    color: #4a5568;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+    font-size: 0.95rem;
+}
+
+.stage-features {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.stage-features li {
+    color: #2d3748;
+    padding: 0.5rem 0;
+    padding-left: 1.5rem;
+    position: relative;
+    font-size: 0.9rem;
+    line-height: 1.4;
+}
+
+.stage-features li::before {
+    content: '•';
+    position: absolute;
+    left: 0;
+    top: 0.5rem;
+    color: #f15a25;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+/* Stage-specific styling */
+.stage-card:nth-child(1) .stage-number {
+    background: linear-gradient(45deg, #10b981, #34d399); /* Awareness - Green */
+}
+
+.stage-card:nth-child(2) .stage-number {
+    background: linear-gradient(45deg, #3b82f6, #60a5fa); /* Interest - Blue */
+}
+
+.stage-card:nth-child(3) .stage-number {
+    background: linear-gradient(45deg, #8b5cf6, #a78bfa); /* Consideration - Purple */
+}
+
+.stage-card:nth-child(4) .stage-number {
+    background: linear-gradient(45deg, #f59e0b, #fbbf24); /* Decision - Yellow */
+}
+
+.stage-card:nth-child(5) .stage-number {
+    background: linear-gradient(45deg, #f15a25, #ff7849); /* Action - Orange */
+}
+
+.stage-card:nth-child(6) .stage-number {
+    background: linear-gradient(45deg, #06b6d4, #22d3ee); /* Retention - Cyan */
+}
+
+/* Corresponding top border colors */
+.stage-card:nth-child(1)::before {
+    background: linear-gradient(45deg, #10b981, #34d399);
+}
+
+.stage-card:nth-child(2)::before {
+    background: linear-gradient(45deg, #3b82f6, #60a5fa);
+}
+
+.stage-card:nth-child(3)::before {
+    background: linear-gradient(45deg, #8b5cf6, #a78bfa);
+}
+
+.stage-card:nth-child(4)::before {
+    background: linear-gradient(45deg, #f59e0b, #fbbf24);
+}
+
+.stage-card:nth-child(5)::before {
+    background: linear-gradient(45deg, #f15a25, #ff7849);
+}
+
+.stage-card:nth-child(6)::before {
+    background: linear-gradient(45deg, #06b6d4, #22d3ee);
+}
+
+/* Responsive Design for Funnel Stages */
+@media (max-width: 1200px) {
+    .stages-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+    }
+    
+    .stages-grid::before {
+        display: none; /* Hide connecting line on smaller screens */
+    }
+}
+
+@media (max-width: 768px) {
+    .funnel-stages {
+        padding: 2rem 0;
+    }
+    
+    .funnel-stages .section-content {
+        padding: 0 1rem;
+    }
+    
+    .funnel-stages h2 {
+        font-size: 2rem;
+        margin-bottom: 2rem;
+    }
+    
+    .stages-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .stage-card {
+        padding: 1.5rem;
+    }
+    
+    .stage-number {
+        width: 50px;
+        height: 50px;
+        font-size: 1.2rem;
+        margin-bottom: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .funnel-stages h2 {
+        font-size: 1.75rem;
+    }
+    
+    .stage-card h3 {
+        font-size: 1.2rem;
+    }
+    
+    .stage-card {
+        padding: 1.25rem;
+    }
 }
