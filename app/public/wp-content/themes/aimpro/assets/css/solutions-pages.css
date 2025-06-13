@@ -1003,6 +1003,268 @@
     color: white;
 }
 
+/* ===== PLATFORM OPTIMIZATION SECTION ===== */
+
+.platform-optimization {
+    padding: 5rem 0;
+    background: #f8fafc;
+}
+
+.platform-optimization h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #1a202c;
+    margin-bottom: 3rem;
+}
+
+/* Platform Optimization Grid */
+.platforms-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+/* Platform Card */
+.platform-card {
+    background: white;
+    border-radius: 16px;
+    padding: 2.5rem;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+    border: 1px solid #e2e8f0;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.platform-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #4285f4, #ea4335, #fbbc05);
+}
+
+.platform-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
+}
+
+/* Platform Headers with specific colors */
+.platform-card h3 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #1a202c;
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+/* Different icons for platforms */
+.platform-card:nth-child(1) h3::before {
+    content: "🎯";
+    font-size: 1.25rem;
+}
+
+.platform-card:nth-child(2) h3::before {
+    content: "👥";
+    font-size: 1.25rem;
+}
+
+.platform-card:nth-child(3) h3::before {
+    content: "💼";
+    font-size: 1.25rem;
+}
+
+/* Platform Features List */
+.platform-features {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 1.5rem 0;
+}
+
+.platform-features li {
+    color: #2d3748;
+    margin-bottom: 0.75rem;
+    padding-left: 1.5rem;
+    position: relative;
+    font-weight: 500;
+    line-height: 1.5;
+}
+
+.platform-features li::before {
+    content: "🚀";
+    position: absolute;
+    left: 0;
+    font-size: 1rem;
+}
+
+/* Platform Results Badge */
+.platform-results {
+    background: linear-gradient(45deg, #4285f4, #ea4335);
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border-radius: 25px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    text-align: center;
+    margin-top: 1rem;
+    box-shadow: 0 4px 15px rgba(66, 133, 244, 0.3);
+}
+
+.platform-results span {
+    color: white;
+    font-weight: 600;
+}
+
+/* Platform-specific border colors */
+.platform-card:nth-child(1) {
+    border-left: 4px solid #4285f4;
+}
+
+.platform-card:nth-child(2) {
+    border-left: 4px solid #ea4335;
+}
+
+.platform-card:nth-child(3) {
+    border-left: 4px solid #0077b5;
+}
+
+/* ===== ROI METRICS SECTION ===== */
+
+.roi-metrics {
+    padding: 5rem 0;
+    background: #ffffff;
+}
+
+.roi-metrics h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #1a202c;
+    margin-bottom: 3rem;
+}
+
+/* Metrics Grid */
+.metrics-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+/* Metric Category Card */
+.metric-category {
+    background: white;
+    border-radius: 16px;
+    padding: 2.5rem;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+    border: 1px solid #e2e8f0;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.metric-category::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #10b981, #059669);
+}
+
+.metric-category:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
+}
+
+/* Metric Category Headers */
+.metric-category h3 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #1a202c;
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+/* Different icons for metric categories */
+.metric-category:nth-child(1) h3::before {
+    content: "📊";
+    font-size: 1.25rem;
+}
+
+.metric-category:nth-child(2) h3::before {
+    content: "💰";
+    font-size: 1.25rem;
+}
+
+.metric-category:nth-child(3) h3::before {
+    content: "⚡";
+    font-size: 1.25rem;
+}
+
+/* Metric List */
+.metric-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.metric-list li {
+    color: #2d3748;
+    margin-bottom: 0.75rem;
+    padding-left: 1.5rem;
+    position: relative;
+    font-weight: 500;
+    line-height: 1.5;
+    background: #f8fafc;
+    padding: 0.75rem 0.75rem 0.75rem 2rem;
+    border-radius: 8px;
+    margin-bottom: 0.5rem;
+    border-left: 3px solid #10b981;
+}
+
+.metric-list li::before {
+    content: "📈";
+    position: absolute;
+    left: 0.5rem;
+    top: 0.75rem;
+    font-size: 0.9rem;
+}
+
+/* Category-specific accent colors */
+.metric-category:nth-child(1) {
+    border-left: 4px solid #10b981;
+}
+
+.metric-category:nth-child(1) .metric-list li {
+    border-left-color: #10b981;
+}
+
+.metric-category:nth-child(2) {
+    border-left: 4px solid #f59e0b;
+}
+
+.metric-category:nth-child(2) .metric-list li {
+    border-left-color: #f59e0b;
+}
+
+.metric-category:nth-child(3) {
+    border-left: 4px solid #3b82f6;
+}
+
+.metric-category:nth-child(3) .metric-list li {
+    border-left-color: #3b82f6;
+}
+
 /* ===== RESPONSIVE DESIGN ===== */
 
 @media (max-width: 1200px) {
@@ -1063,6 +1325,42 @@
         font-size: 2rem;
     }
     
+    /* Platform Optimization */
+    .platforms-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .platform-card {
+        padding: 2rem;
+    }
+    
+    .platform-card h3 {
+        font-size: 1.25rem;
+    }
+    
+    .platform-optimization h2 {
+        font-size: 2rem;
+    }
+    
+    /* ROI Metrics */
+    .metrics-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .metric-category {
+        padding: 2rem;
+    }
+    
+    .metric-category h3 {
+        font-size: 1.25rem;
+    }
+    
+    .roi-metrics h2 {
+        font-size: 2rem;
+    }
+
     /* Testimonials */
     .testimonial-content blockquote {
         font-size: 1.25rem;
