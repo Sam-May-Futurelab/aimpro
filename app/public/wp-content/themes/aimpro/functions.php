@@ -115,7 +115,9 @@ function aimpro_enqueue_assets() {
       // Enqueue ebook/lead magnet styles
     wp_enqueue_style('aimpro-ebook', get_template_directory_uri() . '/assets/css/ebook.css', array('aimpro-base'), $theme_version . '-' . time());    // Enqueue insights styles
     wp_enqueue_style('aimpro-insights', get_template_directory_uri() . '/assets/css/insights.css', array('aimpro-base'), $theme_version . '-' . time());
-      // Enqueue page template styles AFTER insights to ensure proper override
+      // Enqueue blog styles
+    wp_enqueue_style('aimpro-blog', get_template_directory_uri() . '/assets/css/blog.css', array('aimpro-base'), $theme_version . '-' . time());
+    // Enqueue page template styles AFTER insights to ensure proper override
     wp_enqueue_style('aimpro-page-templates', get_template_directory_uri() . '/assets/css/page-templates.css', array('aimpro-base', 'aimpro-insights'), $theme_version . '-' . time());
     
     // Enqueue About page fix CSS - HIGHEST PRIORITY
@@ -1295,8 +1297,7 @@ function aimpro_landing_page_admin() {
                             <td>
                                 <textarea name="office_description" rows="3" class="large-text"><?php echo esc_textarea(get_option('office_description', 'Let\'s discuss your project over a coffee. Book a time to visit our Birmingham office and meet the team behind your marketing success.')); ?></textarea>
                                 <p class="description">Office section description</p>
-                            </td>
-                        </tr>
+                            </td </tr>
                         <tr>
                             <th scope="row">Address Title</th>
                             <td>
@@ -2247,18 +2248,3 @@ function aimpro_display_about_video() {
     
     return $output;
 }
-
-/**
- * Enqueue media uploader scripts for admin
- */
-function aimpro_enqueue_admin_scripts($hook) {
-    global $post;
-    
-    if ($hook == 'post.php' || $hook == 'post-new.php') {
-        if (isset($post) && $post->post_type == 'page') {
-            wp_enqueue_media();
-            wp_enqueue_script('jquery');
-        }
-    }
-}
-add_action('admin_enqueue_scripts', 'aimpro_enqueue_admin_scripts');
