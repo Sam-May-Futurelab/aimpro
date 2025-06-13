@@ -121,20 +121,19 @@
                                 <li><a href="<?php echo home_url(); ?>#ecommerce">E-commerce</a></li>
                             </ul>
                         </div>
-                    </li>
-                    <li class="nav-item-dropdown">
-                        <a href="<?php echo home_url(); ?>#resources" class="nav-link">Resources <span class="nav-arrow">
+                    </li>                    <li class="nav-item-dropdown">
+                        <a href="<?php echo home_url('/resources'); ?>" class="nav-link">Resources <span class="nav-arrow">
                             <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                 <polyline points="6 9 12 15 18 9"></polyline>
                             </svg>
                         </span></a>
                         <div class="dropdown-menu">
                             <ul>
-                                <li><a href="<?php echo home_url('/blog'); ?>">Blog</a></li>
-                                <li><a href="<?php echo home_url(); ?>#templates-tools">Templates & Tools</a></li>
-                                <li><a href="<?php echo home_url(); ?>#case-studies">Case Studies</a></li>
-                                <li><a href="<?php echo home_url(); ?>#events-webinars">Events & Webinars</a></li>
-                                <li><a href="<?php echo home_url(); ?>#training-mentoring">Training & Mentoring</a></li>
+                                <li><a href="<?php echo home_url('/blog'); ?>">Blog & Insights</a></li>
+                                <li><a href="<?php echo home_url('/case-studies'); ?>">Case Studies</a></li>
+                                <li><a href="<?php echo home_url('/templates-tools'); ?>">Templates & Tools</a></li>
+                                <li><a href="<?php echo home_url('/events-webinars'); ?>">Events & Webinars</a></li>
+                                <li><a href="<?php echo home_url('/training-mentoring'); ?>">Training & Mentoring</a></li>
                             </ul>
                         </div>
                     </li>
