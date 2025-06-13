@@ -1895,3 +1895,370 @@ function aimpro_breadcrumbs() {
         echo '</nav>';
     }
 }
+
+/**
+ * About Page Video Management
+ * Add custom meta box for video upload in WordPress admin
+ */
+
+// Add meta box for About page video
+function aimpro_add_about_video_meta_box() {
+    add_meta_box(
+        'about_page_video',
+        'About Page Video',
+        'aimpro_about_video_meta_box_callback',
+        'page',
+        'normal',
+        'high'
+    );
+}
+add_action('add_meta_boxes', 'aimpro_add_about_video_meta_box');
+
+// Meta box callback function
+function aimpro_about_video_meta_box_callback($post) {
+    // Only show on About page
+    if ($post->post_name !== 'about' && $post->ID !== get_option('aimpro_about_page_id')) {
+        echo '<p>This video section is only available for the About page.</p>';
+        return;
+    }
+    
+    wp_nonce_field('aimpro_about_video_nonce', 'aimpro_about_video_nonce');
+    
+    $video_url = get_post_meta($post->ID, '_about_page_video', true);
+    $video_type = get_post_meta($post->ID, '_about_page_video_type', true);
+    $video_enabled = get_post_meta($post->ID, '_about_page_video_enabled', true);
+    
+    if (!$video_type) $video_type = 'upload'; // Default to upload
+    
+    ?>
+    <table class="form-table">
+        <tr>
+            <th scope="row">
+                <label for="about_video_enabled">Enable Video Section</label>
+            </th>
+            <td>
+                <input type="checkbox" id="about_video_enabled" name="about_video_enabled" value="1" <?php checked($video_enabled, '1'); ?> />
+                <p class="description">Check to display the video section on the About page.</p>
+            </td>
+        </tr>
+        <tr>
+            <th scope="row">
+                <label for="video_type">Video Type</label>
+            </th>
+            <td>
+                <label style="margin-right: 20px;">
+                    <input type="radio" name="video_type" value="upload" <?php checked($video_type, 'upload'); ?> />
+                    Upload Video File
+                </label>
+                <label>
+                    <input type="radio" name="video_type" value="url" <?php checked($video_type, 'url'); ?> />
+                    YouTube/Vimeo URL
+                </label>
+                <p class="description">Choose whether to upload a video file or use a YouTube/Vimeo URL.</p>
+            </td>
+        </tr>
+        <tr id="upload_video_row" style="<?php echo $video_type === 'url' ? 'display: none;' : ''; ?>">
+            <th scope="row">
+                <label for="about_video_url">Upload Video</label>
+            </th>
+            <td>
+                <input type="hidden" id="about_video_url" name="about_video_url" value="<?php echo esc_url($video_url); ?>" />
+                <div id="video_preview" style="margin-bottom: 10px;">
+                    <?php if ($video_url && $video_type === 'upload'): ?>
+                        <video width="300" height="200" controls>
+                            <source src="<?php echo esc_url($video_url); ?>" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                        <br>
+                        <button type="button" class="button" id="remove_video_btn">Remove Video</button>
+                    <?php else: ?>
+                        <p>No video selected</p>
+                    <?php endif; ?>
+                </div>
+                <button type="button" class="button" id="upload_video_btn">
+                    <?php echo ($video_url && $video_type === 'upload') ? 'Change Video' : 'Upload Video'; ?>
+                </button>
+                <p class="description">Upload a video file (MP4 recommended) for the About page.</p>
+            </td>
+        </tr>
+        <tr id="url_video_row" style="<?php echo $video_type === 'upload' ? 'display: none;' : ''; ?>">
+            <th scope="row">
+                <label for="video_url_input">Video URL</label>
+            </th>
+            <td>
+                <input type="url" id="video_url_input" name="video_url_input" value="<?php echo $video_type === 'url' ? esc_url($video_url) : ''; ?>" style="width: 100%; max-width: 500px;" placeholder="https://www.youtube.com/watch?v=..." />
+                <div id="url_video_preview" style="margin-top: 10px;">
+                    <?php if ($video_url && $video_type === 'url'): ?>
+                        <div style="max-width: 300px;">
+                            <?php echo aimpro_get_video_embed($video_url, 300, 200); ?>
+                        </div>
+                    <?php endif; ?>
+                </div>
+                <p class="description">
+                    Paste a YouTube or Vimeo URL here. Examples:<br>
+                    • https://www.youtube.com/watch?v=VIDEO_ID<br>
+                    • https://youtu.be/VIDEO_ID<br>
+                    • https://vimeo.com/VIDEO_ID
+                </p>
+            </td>
+        </tr>
+    </table>
+      <script>
+    jQuery(document).ready(function($) {
+        var mediaUploader;
+        
+        // Handle video type toggle
+        $('input[name="video_type"]').change(function() {
+            var selectedType = $(this).val();
+            if (selectedType === 'upload') {
+                $('#upload_video_row').show();
+                $('#url_video_row').hide();
+                $('#video_url_input').val('');
+                $('#url_video_preview').empty();
+            } else {
+                $('#upload_video_row').hide();
+                $('#url_video_row').show();
+                $('#about_video_url').val('');
+                updateVideoPreview('');
+            }
+        });
+        
+        // Handle URL input changes
+        $('#video_url_input').on('input', function() {
+            var url = $(this).val();
+            if (url) {
+                updateUrlPreview(url);
+            } else {
+                $('#url_video_preview').empty();
+            }
+        });
+        
+        function updateUrlPreview(url) {
+            if (isValidVideoUrl(url)) {
+                var embedCode = getEmbedCode(url, 300, 200);
+                $('#url_video_preview').html('<div style="max-width: 300px;">' + embedCode + '</div>');
+            } else {
+                $('#url_video_preview').html('<p style="color: #d63384;">Please enter a valid YouTube or Vimeo URL</p>');
+            }
+        }
+        
+        function isValidVideoUrl(url) {
+            var youtubeRegex = /(?:youtube\.com\/(?:[^\/]+\/.+\/|(?:v|e(?:mbed)?)\/|.*[?&]v=)|youtu\.be\/)([^"&?\/\s]{11})/;
+            var vimeoRegex = /(?:vimeo)\.com.*(?:videos|video|channels|)\/([\d]+)/i;
+            return youtubeRegex.test(url) || vimeoRegex.test(url);
+        }
+        
+        function getEmbedCode(url, width, height) {
+            // YouTube
+            var youtubeMatch = url.match(/(?:youtube\.com\/(?:[^\/]+\/.+\/|(?:v|e(?:mbed)?)\/|.*[?&]v=)|youtu\.be\/)([^"&?\/\s]{11})/);
+            if (youtubeMatch) {
+                var videoId = youtubeMatch[1];
+                return '<iframe width="' + width + '" height="' + height + '" src="https://www.youtube.com/embed/' + videoId + '" frameborder="0" allowfullscreen></iframe>';
+            }
+            
+            // Vimeo
+            var vimeoMatch = url.match(/(?:vimeo)\.com.*(?:videos|video|channels|)\/([\d]+)/i);
+            if (vimeoMatch) {
+                var videoId = vimeoMatch[1];
+                return '<iframe width="' + width + '" height="' + height + '" src="https://player.vimeo.com/video/' + videoId + '" frameborder="0" allowfullscreen></iframe>';
+            }
+            
+            return '<p>Preview not available</p>';
+        }
+        
+        $('#upload_video_btn').click(function(e) {
+            e.preventDefault();
+            
+            if (mediaUploader) {
+                mediaUploader.open();
+                return;
+            }
+            
+            mediaUploader = wp.media({
+                title: 'Choose Video',
+                button: {
+                    text: 'Choose Video'
+                },
+                library: {
+                    type: 'video'
+                },
+                multiple: false
+            });
+            
+            mediaUploader.on('select', function() {
+                var attachment = mediaUploader.state().get('selection').first().toJSON();
+                $('#about_video_url').val(attachment.url);
+                updateVideoPreview(attachment.url);
+                $('#upload_video_btn').text('Change Video');
+            });
+            
+            mediaUploader.open();
+        });
+        
+        $('#remove_video_btn').click(function(e) {
+            e.preventDefault();
+            $('#about_video_url').val('');
+            $('#video_preview').html('<p>No video selected</p>');
+            $('#upload_video_btn').text('Upload Video');
+        });
+        
+        function updateVideoPreview(url) {
+            if (url) {
+                var preview = '<video width="300" height="200" controls>' +
+                             '<source src="' + url + '" type="video/mp4">' +
+                             'Your browser does not support the video tag.' +
+                             '</video><br>' +
+                             '<button type="button" class="button" id="remove_video_btn">Remove Video</button>';
+                $('#video_preview').html(preview);
+                
+                // Re-bind remove button
+                $('#remove_video_btn').click(function(e) {
+                    e.preventDefault();
+                    $('#about_video_url').val('');
+                    $('#video_preview').html('<p>No video selected</p>');
+                    $('#upload_video_btn').text('Upload Video');
+                });
+            } else {
+                $('#video_preview').html('<p>No video selected</p>');
+            }
+        }
+    });
+    </script>
+    <?php
+}
+
+// Save meta box data
+function aimpro_save_about_video_meta_box($post_id) {
+    if (!isset($_POST['aimpro_about_video_nonce']) || !wp_verify_nonce($_POST['aimpro_about_video_nonce'], 'aimpro_about_video_nonce')) {
+        return;
+    }
+    
+    if (defined('DOING_AUTOSAVE') && DOING_AUTOSAVE) {
+        return;
+    }
+    
+    if (!current_user_can('edit_post', $post_id)) {
+        return;
+    }
+    
+    // Save video enabled status
+    $video_enabled = isset($_POST['about_video_enabled']) ? '1' : '0';
+    update_post_meta($post_id, '_about_page_video_enabled', $video_enabled);
+    
+    // Save video type
+    $video_type = isset($_POST['video_type']) ? sanitize_text_field($_POST['video_type']) : 'upload';
+    update_post_meta($post_id, '_about_page_video_type', $video_type);
+    
+    // Save video URL based on type
+    if ($video_type === 'upload' && isset($_POST['about_video_url'])) {
+        update_post_meta($post_id, '_about_page_video', sanitize_url($_POST['about_video_url']));
+    } elseif ($video_type === 'url' && isset($_POST['video_url_input'])) {
+        $video_url = sanitize_url($_POST['video_url_input']);
+        if (aimpro_is_valid_video_url($video_url)) {
+            update_post_meta($post_id, '_about_page_video', $video_url);
+        }
+    }
+}
+add_action('save_post', 'aimpro_save_about_video_meta_box');
+
+// Function to get about page video
+function aimpro_get_about_video() {
+    $about_page = get_page_by_path('about');
+    if (!$about_page) {
+        return false;
+    }
+    
+    $video_enabled = get_post_meta($about_page->ID, '_about_page_video_enabled', true);
+    $video_url = get_post_meta($about_page->ID, '_about_page_video', true);
+    
+    if ($video_enabled === '1' && !empty($video_url)) {
+        return $video_url;
+    }
+    
+    return false;
+}
+
+// Helper function to validate video URLs
+function aimpro_is_valid_video_url($url) {
+    $youtube_regex = '/(?:youtube\.com\/(?:[^\/]+\/.+\/|(?:v|e(?:mbed)?)\/|.*[?&]v=)|youtu\.be\/)([^"&?\/\s]{11})/';
+    $vimeo_regex = '/(?:vimeo)\.com.*(?:videos|video|channels|)\/([\d]+)/i';
+    
+    return preg_match($youtube_regex, $url) || preg_match($vimeo_regex, $url);
+}
+
+// Helper function to get video embed code
+function aimpro_get_video_embed($url, $width = 560, $height = 315) {
+    if (!aimpro_is_valid_video_url($url)) {
+        return '<p>Invalid video URL</p>';
+    }
+    
+    // YouTube
+    if (preg_match('/(?:youtube\.com\/(?:[^\/]+\/.+\/|(?:v|e(?:mbed)?)\/|.*[?&]v=)|youtu\.be\/)([^"&?\/\s]{11})/', $url, $matches)) {
+        $video_id = $matches[1];
+        return '<iframe width="' . $width . '" height="' . $height . '" src="https://www.youtube.com/embed/' . $video_id . '" frameborder="0" allowfullscreen></iframe>';
+    }
+    
+    // Vimeo
+    if (preg_match('/(?:vimeo)\.com.*(?:videos|video|channels|)\/([\d]+)/i', $url, $matches)) {
+        $video_id = $matches[1];
+        return '<iframe width="' . $width . '" height="' . $height . '" src="https://player.vimeo.com/video/' . $video_id . '" frameborder="0" allowfullscreen></iframe>';
+    }
+    
+    return '<p>Video format not supported</p>';
+}
+
+// Helper function to get video type from About page
+function aimpro_get_about_video_type() {
+    $about_page = get_page_by_path('about');
+    if (!$about_page) {
+        return false;
+    }
+    
+    return get_post_meta($about_page->ID, '_about_page_video_type', true);
+}
+
+// Function to display About page video section
+function aimpro_display_about_video() {
+    $video_url = aimpro_get_about_video();
+    $video_type = aimpro_get_about_video_type();
+    
+    if (!$video_url) {
+        return '';
+    }
+    
+    $output = '<div class="about-video-section">';
+    
+    if ($video_type === 'url') {
+        // For YouTube/Vimeo URLs, use embed code
+        $output .= '<div class="video-container">';
+        $output .= aimpro_get_video_embed($video_url, 800, 450);
+        $output .= '</div>';
+    } else {
+        // For uploaded videos, use HTML5 video tag
+        $output .= '<div class="video-container">';
+        $output .= '<video width="800" height="450" controls>';
+        $output .= '<source src="' . esc_url($video_url) . '" type="video/mp4">';
+        $output .= 'Your browser does not support the video tag.';
+        $output .= '</video>';
+        $output .= '</div>';
+    }
+    
+    $output .= '</div>';
+    
+    return $output;
+}
+
+/**
+ * Enqueue media uploader scripts for admin
+ */
+function aimpro_enqueue_admin_scripts($hook) {
+    global $post;
+    
+    if ($hook == 'post.php' || $hook == 'post-new.php') {
+        if (isset($post) && $post->post_type == 'page') {
+            wp_enqueue_media();
+            wp_enqueue_script('jquery');
+        }
+    }
+}
+add_action('admin_enqueue_scripts', 'aimpro_enqueue_admin_scripts');

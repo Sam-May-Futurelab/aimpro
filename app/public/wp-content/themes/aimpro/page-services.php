@@ -38,6 +38,16 @@ get_header(); ?>
                         <div class="stat-label">Client Satisfaction</div>
                     </div>
                 </div>
+            </div>        </section>
+
+        <!-- Service Links Grid -->
+        <section class="service-links-grid">
+            <div class="section-content">
+                <div class="service-links-heading">
+                    <h2>Our Services</h2>
+                    <p>Explore our comprehensive range of services designed to elevate your digital presence</p>
+                </div>
+                <?php include(get_template_directory() . '/service-links.php'); ?>
             </div>
         </section>
 

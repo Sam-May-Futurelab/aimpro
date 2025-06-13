@@ -21,8 +21,7 @@ get_header(); ?>
 
     <!-- Main Content -->
     <div class="container">
-        
-        <!-- Company Overview -->
+          <!-- Company Overview -->
         <section class="company-overview">
             <div class="section-content">
                 <div class="content-header">
@@ -30,7 +29,8 @@ get_header(); ?>
                     <p class="section-description">Welcome to Aimpro Digital, where strategy, creativity, and technology converge to drive exceptional results. We're a team of passionate digital experts dedicated to helping UK businesses achieve their full potential. From lead generation to marketing automation, we build powerful, data-backed solutions that fuel your brand's success.</p>
                 </div>
             </div>
-        </section>
+        </section>        <!-- Admin Managed Video Section -->
+        <?php echo aimpro_display_about_video(); ?>
 
         <!-- Values Section -->
         <section class="values-section">

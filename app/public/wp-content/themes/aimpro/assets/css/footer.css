@@ -493,6 +493,98 @@
     color: var(--text-secondary) !important;
 }
 
+/* Light Theme Footer Comprehensive Fixes */
+:root.light-theme .footer-section {
+    background: var(--footer-bg) !important; /* Ensure footer stays dark in light theme */
+    color: var(--footer-text) !important;
+}
+
+:root.light-theme .footer-section .footer-content {
+    color: var(--footer-text) !important;
+}
+
+/* Footer Column Headers */
+:root.light-theme .footer-column h3 {
+    color: white !important;
+    font-weight: 700;
+}
+
+/* Fix for contact items in light theme */
+:root.light-theme .contact-item {
+    background: rgba(255, 255, 255, 0.1) !important;
+    border: 1px solid rgba(255, 255, 255, 0.15) !important;
+}
+
+:root.light-theme .contact-item:hover {
+    background: rgba(255, 255, 255, 0.15) !important;
+    border-color: rgba(241, 90, 37, 0.3) !important;
+}
+
+/* Footer Links */
+:root.light-theme .footer-links a {
+    color: var(--footer-link) !important;
+}
+
+:root.light-theme .footer-links a:hover {
+    color: var(--footer-link-hover) !important;
+}
+
+/* Footer Descriptions and Text */
+:root.light-theme .brand-tagline {
+    color: #94a3b8 !important;
+}
+
+:root.light-theme .footer-description {
+    color: var(--footer-text) !important;
+}
+
+:root.light-theme .connect-description {
+    color: #94a3b8 !important;
+}
+
+/* Fix for address text in light theme */
+:root.light-theme .contact-item span,
+:root.light-theme .contact-item a {
+    color: var(--footer-text) !important;
+}
+
+/* Footer Bottom Content */
+:root.light-theme .footer-bottom-content {
+    color: var(--footer-text) !important;
+}
+
+:root.light-theme .footer-copyright .copyright-main {
+    color: var(--footer-text) !important;
+}
+
+:root.light-theme .footer-copyright .company-info {
+    color: #94a3b8 !important;
+}
+
+:root.light-theme .legal-link {
+    color: var(--footer-link) !important;
+}
+
+:root.light-theme .legal-link:hover {
+    color: var(--footer-link-hover) !important;
+}
+
+/* Newsletter Input in Light Theme */
+:root.light-theme .newsletter-input {
+    background: rgba(255, 255, 255, 0.08) !important;
+    color: white !important;
+    border-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+:root.light-theme .newsletter-input::placeholder {
+    color: rgba(255, 255, 255, 0.6) !important;
+}
+
+:root.light-theme .newsletter-input:focus {
+    background: rgba(255, 255, 255, 0.12) !important;
+    border-color: rgba(241, 90, 37, 0.5) !important;
+}
+
 /* Mobile Responsive */
 @media (max-width: 768px) {
     .footer-connect .footer-theme-toggle {

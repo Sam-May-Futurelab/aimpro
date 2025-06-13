@@ -743,3 +743,41 @@
 .back-to-top:active {
     transform: translateY(-2px) scale(1.05);
 }
+
+/* Button Container Alignment Fixes */
+.cta-buttons,
+.hero-ctas,
+.final-cta-buttons,
+.button-group {
+    display: flex;
+    align-items: baseline; /* Use baseline alignment to prevent button misalignment */
+    justify-content: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+}
+
+/* Ensure all buttons in containers have consistent alignment */
+.cta-buttons .btn,
+.hero-ctas .btn,
+.final-cta-buttons .btn,
+.button-group .btn,
+.cta-buttons .btn-primary,
+.cta-buttons .btn-secondary,
+.hero-ctas .btn-primary,
+.hero-ctas .btn-secondary {
+    vertical-align: baseline;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    position: relative;
+    top: 0; /* Reset positioning */
+}
+
+/* Override any hover transforms that could cause misalignment */
+.cta-buttons .btn:hover,
+.hero-ctas .btn:hover,
+.final-cta-buttons .btn:hover,
+.button-group .btn:hover {
+    transform: none !important; /* Force removal of transforms that cause alignment issues */
+}

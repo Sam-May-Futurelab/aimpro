@@ -85,11 +85,17 @@ $service_cta_link = get_field('service_cta_link');
                             <h3><?php echo esc_html($feature['title']); ?></h3>
                             <p><?php echo wp_kses_post($feature['description']); ?></p>
                         </div>
-                    <?php endforeach; ?>
-                </div>
+                    <?php endforeach; ?>                </div>
             </div>
             <?php endif; ?>
-              <div class="service-cta">
+
+            <!-- Related Services -->
+            <div class="related-services">
+                <h3><?php echo esc_html__('Explore Our Other Services', 'aimpro'); ?></h3>
+                <?php include(get_template_directory() . '/service-links.php'); ?>
+            </div>
+            
+            <div class="service-cta">
                 <div class="cta-box">
                     <h3><?php echo esc_html__('Ready to get started?', 'aimpro'); ?></h3>
                     <p><?php echo esc_html__('Contact us today to learn how our services can benefit your business.', 'aimpro'); ?></p>
