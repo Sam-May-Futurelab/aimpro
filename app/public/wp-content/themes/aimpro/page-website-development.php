@@ -49,112 +49,6 @@ get_header(); ?>
             </div>
         </section>
 
-        <!-- Services Grid -->
-        <section class="services-grid">
-            <div class="section-content">
-                <h2>Our Website Development Services</h2>
-                <div class="services-list">
-                    
-                    <div class="service-card">
-                        <div class="service-icon">
-                            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <rect x="3" y="3" width="18" height="18" rx="2" ry="2" stroke="currentColor" stroke-width="2"/>
-                                <path d="M9 9H15M9 13H15M9 17H15" stroke="currentColor" stroke-width="2"/>
-                            </svg>
-                        </div>
-                        <div class="service-content">
-                            <h3>Custom Website Design</h3>
-                            <p>Beautiful, professional websites designed from scratch to reflect your brand and achieve your business goals with optimal user experience.</p>
-                            <ul class="service-features">
-                                <li>Custom UI/UX design</li>
-                                <li>Responsive mobile design</li>
-                                <li>Brand-aligned visual identity</li>
-                                <li>User journey optimization</li>
-                                <li>Accessibility compliance</li>
-                            </ul>
-                            <div class="service-results">
-                                <span>Average: 180% improvement in user engagement</span>
-                            </div>
-                            <a href="<?php echo home_url('/website-design'); ?>" class="service-cta">Learn More</a>
-                        </div>
-                    </div>
-
-                    <div class="service-card">
-                        <div class="service-icon">
-                            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M14 2H6C4.89543 2 4 2.89543 4 4V20C4 21.1046 4.89543 22 6 22H18C19.1046 22 20 21.1046 20 20V8L14 2Z" stroke="currentColor" stroke-width="2"/>
-                                <path d="M14 2V8H20" stroke="currentColor" stroke-width="2"/>
-                                <path d="M16 13H8M16 17H8M10 9H8" stroke="currentColor" stroke-width="2"/>
-                            </svg>
-                        </div>
-                        <div class="service-content">
-                            <h3>High-Converting Landing Pages</h3>
-                            <p>Dedicated landing pages designed specifically for your campaigns with laser focus on conversions and lead generation.</p>
-                            <ul class="service-features">
-                                <li>Conversion-focused design</li>
-                                <li>A/B testing setup</li>
-                                <li>Form optimization</li>
-                                <li>Call-to-action optimization</li>
-                                <li>Analytics integration</li>
-                            </ul>
-                            <div class="service-results">
-                                <span>Average: 340% increase in conversion rates</span>
-                            </div>
-                            <a href="<?php echo home_url('/landing-pages'); ?>" class="service-cta">Learn More</a>
-                        </div>
-                    </div>
-
-                    <div class="service-card">
-                        <div class="service-icon">
-                            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M4.5 16.5C4.5 17.9 5.6 19 7 19H17C18.4 19 19.5 17.9 19.5 16.5V7.5C19.5 6.1 18.4 5 17 5H7C5.6 5 4.5 6.1 4.5 7.5V16.5Z" stroke="currentColor" stroke-width="2"/>
-                                <path d="M8 9L12 13L16 9" stroke="currentColor" stroke-width="2"/>
-                            </svg>
-                        </div>
-                        <div class="service-content">
-                            <h3>Sales Funnel Development</h3>
-                            <p>Complete sales funnel websites that guide visitors through a strategic journey from awareness to purchase with optimized conversion paths.</p>
-                            <ul class="service-features">
-                                <li>Multi-step funnel design</li>
-                                <li>Lead magnet integration</li>
-                                <li>Payment gateway setup</li>
-                                <li>Email automation integration</li>
-                                <li>Conversion tracking</li>
-                            </ul>
-                            <div class="service-results">
-                                <span>Average: 420% increase in sales velocity</span>
-                            </div>
-                            <a href="<?php echo home_url('/funnel-builds'); ?>" class="service-cta">Learn More</a>
-                        </div>
-                    </div>
-
-                    <div class="service-card">
-                        <div class="service-icon">
-                            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M12 2L13.09 8.26L22 9L13.09 9.74L12 16L10.91 9.74L2 9L10.91 8.26L12 2Z" stroke="currentColor" stroke-width="2"/>
-                            </svg>
-                        </div>
-                        <div class="service-content">
-                            <h3>UX/UI Optimization</h3>
-                            <p>Optimize existing websites for better user experience, improved conversions, and enhanced performance through data-driven design improvements.</p>
-                            <ul class="service-features">
-                                <li>User experience audits</li>
-                                <li>Conversion rate optimization</li>
-                                <li>Mobile optimization</li>
-                                <li>Page speed improvements</li>
-                                <li>User testing and analytics</li>
-                            </ul>
-                            <div class="service-results">
-                                <span>Average: 165% improvement in user satisfaction</span>
-                            </div>
-                            <a href="<?php echo home_url('/ux-ui-optimization'); ?>" class="service-cta">Learn More</a>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-        </section>
-
         <!-- Development Success Story -->
         <section class="development-case-study">
             <div class="section-content">
@@ -374,96 +268,6 @@ get_header(); ?>
             </div>
         </section>
 
-        <!-- Website Packages -->
-        <section class="website-packages">
-            <div class="section-content">
-                <h2>Website Development Packages</h2>
-                <div class="packages-grid">
-                    
-                    <div class="package-card">
-                        <div class="package-header">
-                            <h3>Business Website</h3>
-                            <div class="package-price">
-                                <span class="price">£2,997</span>
-                                <span class="period">one-time</span>
-                            </div>
-                        </div>
-                        <div class="package-features">
-                            <ul>
-                                <li>✓ Up to 10 custom pages</li>
-                                <li>✓ Mobile-responsive design</li>
-                                <li>✓ SEO optimization</li>
-                                <li>✓ Contact forms</li>
-                                <li>✓ Google Analytics setup</li>
-                                <li>✓ 3 months support</li>
-                                <li>✓ Content management training</li>
-                            </ul>
-                        </div>
-                        <div class="package-cta">
-                            <a href="<?php echo home_url('/contact'); ?>" class="btn btn-secondary">Get Started</a>
-                        </div>
-                    </div>
-
-                    <div class="package-card featured">
-                        <div class="package-badge">Most Popular</div>
-                        <div class="package-header">
-                            <h3>E-commerce Website</h3>
-                            <div class="package-price">
-                                <span class="price">£5,997</span>
-                                <span class="period">one-time</span>
-                            </div>
-                        </div>
-                        <div class="package-features">
-                            <ul>
-                                <li>✓ Custom e-commerce design</li>
-                                <li>✓ Product catalog setup</li>
-                                <li>✓ Payment gateway integration</li>
-                                <li>✓ Inventory management</li>
-                                <li>✓ SEO optimization</li>
-                                <li>✓ Mobile optimization</li>
-                                <li>✓ Analytics & tracking</li>
-                                <li>✓ 6 months support</li>
-                                <li>✓ Training included</li>
-                            </ul>
-                        </div>
-                        <div class="package-cta">
-                            <a href="<?php echo home_url('/contact'); ?>" class="btn btn-primary">Get Started</a>
-                        </div>
-                    </div>
-
-                    <div class="package-card">
-                        <div class="package-header">
-                            <h3>Custom Development</h3>
-                            <div class="package-price">
-                                <span class="price">£9,997</span>
-                                <span class="period">starting from</span>
-                            </div>
-                        </div>
-                        <div class="package-features">
-                            <ul>
-                                <li>✓ Completely custom design</li>
-                                <li>✓ Advanced functionality</li>
-                                <li>✓ Third-party integrations</li>
-                                <li>✓ Database development</li>
-                                <li>✓ API development</li>
-                                <li>✓ Performance optimization</li>
-                                <li>✓ Security implementation</li>
-                                <li>✓ 12 months support</li>
-                                <li>✓ Dedicated project manager</li>
-                            </ul>
-                        </div>
-                        <div class="package-cta">
-                            <a href="<?php echo home_url('/contact'); ?>" class="btn btn-secondary">Get Quote</a>
-                        </div>
-                    </div>
-
-                </div>
-                <div class="packages-note">
-                    <p><strong>All packages include:</strong> SSL certificate, hosting setup assistance, basic SEO optimization, mobile responsiveness, and our 30-day satisfaction guarantee.</p>
-                </div>
-            </div>
-        </section>
-
         <!-- Client Testimonial -->
         <section class="client-testimonial">
             <div class="section-content">
@@ -483,22 +287,14 @@ get_header(); ?>
                     </div>
                 </div>
             </div>
-        </section>
-
-        <!-- CTA Section -->
-        <section class="service-cta">
+        </section>        <!-- CTA Section -->
+        <section class="cta-section">
             <div class="section-content">
                 <div class="cta-content">
-                    <h2>Ready to Build Your High-Converting Website?</h2>
-                    <p>Get a free website audit and consultation. We'll analyze your current site and show you exactly how to improve conversions and performance.</p>
+                    <h2>Ready to Automate Your Marketing?</h2>
+                    <p>Let's create a custom automation strategy that saves you time while improving your marketing results.</p>
                     <div class="cta-buttons">
-                        <a href="<?php echo home_url('/contact'); ?>" class="btn btn-primary">Get Free Website Audit</a>
-                        <a href="<?php echo home_url('/services'); ?>" class="btn btn-secondary">View All Services</a>
-                    </div>
-                    <div class="cta-features">
-                        <span>✓ Free design consultation</span>
-                        <span>✓ Performance analysis included</span>
-                        <span>✓ No obligation quote</span>
+                        <a href="<?php echo home_url('/contact'); ?>" class="btn btn-primary">Get Started</a>
                     </div>
                 </div>
             </div>
