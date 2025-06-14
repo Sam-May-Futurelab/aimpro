@@ -186,14 +186,12 @@ get_header(); ?>
         <section class="resources-newsletter">
             <div class="section-content">
                 <div class="newsletter-content">
-                    <h2>Stay Updated</h2>
-                    <p>Get the latest resources, insights, and industry updates delivered directly to your inbox.</p>
+                    <h2>Stay Updated</h2>                    <p>Get the latest resources, insights, and industry updates delivered directly to your inbox.</p>
                     <form class="newsletter-form" action="#" method="post">
                         <div class="form-group">
                             <input type="email" name="email" placeholder="Enter your email address" required>
                             <button type="submit" class="btn btn-primary">Subscribe</button>
                         </div>
-                        <p class="form-note">No spam, unsubscribe at any time.</p>
                     </form>
                 </div>
             </div>

@@ -316,12 +316,10 @@ get_header(); ?>
             <div class="section-content">
                 <h2>Get New Tools First</h2>
                 <p>Be the first to access our latest templates and tools. We release new resources monthly.</p>
-                <form class="newsletter-form" action="#" method="post">
-                    <div class="form-group">
+                <form class="newsletter-form" action="#" method="post">                    <div class="form-group">
                         <input type="email" name="email" placeholder="Enter your email address" required>
                         <button type="submit" class="btn btn-primary">Get Updates</button>
                     </div>
-                    <p class="form-note">Join 5,000+ marketers who get our monthly resource updates.</p>
                 </form>
             </div>
         </section>

@@ -400,12 +400,6 @@
     box-shadow: 0 8px 20px rgba(241, 90, 37, 0.3);
 }
 
-.form-note {
-    color: #6b7280;
-    font-size: 0.85rem;
-    margin: 0;
-}
-
 /* ===== CASE STUDIES SPECIFIC STYLING ===== */
 
 .case-study-grid {
@@ -1161,11 +1155,6 @@
     box-shadow: 0 8px 20px rgba(241, 90, 37, 0.3);
 }
 
-.tools-cta .form-note {
-    color: #6b7280;
-    font-size: 0.85rem;
-    margin: 0;
-}
 
 /* ===== CASE STUDIES PAGE COMPREHENSIVE STYLING ===== */
 

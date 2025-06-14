@@ -43,8 +43,7 @@ get_header(); ?>
 
         <!-- Featured Upcoming Event -->
         <section class="featured-event">
-            <div class="section-content">
-                <div class="event-featured">
+            <div class="section-content">                <div class="event-featured">
                     <div class="event-badge">Next Event</div>
                     <div class="event-content">
                         <div class="event-meta">
@@ -100,9 +99,6 @@ get_header(); ?>
                             </div>
                             <a href="#" class="register-btn">Register Now</a>
                         </div>
-                    </div>
-                    <div class="event-image">
-                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/events/digital-trends-2025.jpg" alt="Digital Marketing Trends 2025" />
                     </div>
                 </div>
             </div>
@@ -251,11 +247,10 @@ get_header(); ?>
                             <img src="<?php echo get_template_directory_uri(); ?>/assets/images/events/seo-fundamentals.jpg" alt="SEO Fundamentals" />
                             <div class="play-button">▶</div>
                             <div class="duration">52 min</div>
-                        </div>
-                        <div class="event-info">
+                        </div>                        <div class="event-info">
                             <h3>SEO Fundamentals for 2025</h3>
                             <p>Complete guide to search engine optimization, covering technical SEO, content optimization, and link building strategies.</p>
-                            <div class="event-stats">
+                            <div class="on-demand-event-stats">
                                 <span class="views">1,240 views</span>
                                 <span class="rating">★★★★★ 4.8</span>
                             </div>
@@ -268,11 +263,10 @@ get_header(); ?>
                             <img src="<?php echo get_template_directory_uri(); ?>/assets/images/events/facebook-ads-mastery.jpg" alt="Facebook Ads Mastery" />
                             <div class="play-button">▶</div>
                             <div class="duration">1h 15m</div>
-                        </div>
-                        <div class="event-info">
+                        </div>                        <div class="event-info">
                             <h3>Facebook Ads Mastery Workshop</h3>
                             <p>Advanced Facebook advertising strategies including audience targeting, creative optimization, and campaign scaling techniques.</p>
-                            <div class="event-stats">
+                            <div class="on-demand-event-stats">
                                 <span class="views">890 views</span>
                                 <span class="rating">★★★★★ 4.9</span>
                             </div>
@@ -285,11 +279,10 @@ get_header(); ?>
                             <img src="<?php echo get_template_directory_uri(); ?>/assets/images/events/analytics-deep-dive.jpg" alt="Analytics Deep Dive" />
                             <div class="play-button">▶</div>
                             <div class="duration">38 min</div>
-                        </div>
-                        <div class="event-info">
+                        </div>                        <div class="event-info">
                             <h3>Google Analytics 4 Deep Dive</h3>
                             <p>Comprehensive walkthrough of GA4 setup, configuration, and advanced reporting for better marketing insights.</p>
-                            <div class="event-stats">
+                            <div class="on-demand-event-stats">
                                 <span class="views">2,100 views</span>
                                 <span class="rating">★★★★☆ 4.6</span>
                             </div>
@@ -343,30 +336,11 @@ get_header(); ?>
         <section class="events-newsletter">
             <div class="section-content">
                 <h2>Never Miss an Event</h2>
-                <p>Get notified about upcoming webinars, workshops, and exclusive invitations to premium events.</p>
-                <form class="newsletter-form" action="#" method="post">
+                <p>Get notified about upcoming webinars, workshops, and exclusive invitations to premium events.</p>                <form class="newsletter-form" action="#" method="post">
                     <div class="form-group">
                         <input type="email" name="email" placeholder="Enter your email address" required>
                         <button type="submit" class="btn btn-primary">Get Event Updates</button>
                     </div>
-                    <div class="form-options">
-                        <label class="checkbox-label">
-                            <input type="checkbox" name="preferences[]" value="webinars" checked>
-                            <span class="checkmark"></span>
-                            Free webinars
-                        </label>
-                        <label class="checkbox-label">
-                            <input type="checkbox" name="preferences[]" value="workshops">
-                            <span class="checkmark"></span>
-                            Premium workshops
-                        </label>
-                        <label class="checkbox-label">
-                            <input type="checkbox" name="preferences[]" value="conferences">
-                            <span class="checkmark"></span>
-                            Conference invitations
-                        </label>
-                    </div>
-                    <p class="form-note">Join 3,500+ marketers who stay updated with our events.</p>
                 </form>
             </div>
         </section>
