@@ -6,7 +6,7 @@
 
 get_header(); ?>
 
-<main id="main" class="main-content">
+<main id="main" class="main-content rank-higher-locally-page">
     <div class="container">
         
         <!-- Page Header -->
@@ -43,72 +43,66 @@ get_header(); ?>
                 </div>
             </div>
         </section>        <!-- Local SEO Services -->
-        <section class="local-seo-services">
-            <div class="section-content">
-                <h2>Our Local SEO Services</h2>
-                <div class="benefits-grid-2x2">
-                      <div class="benefit-card compact">
-                        <div class="benefit-icon">
+        <section class="service-overview">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Our Local SEO Services</h2>
+                </div>
+                <div class="features-grid">
+                      <div class="feature-item">
+                        <div class="feature-icon">
                             <i class="fab fa-google"></i>
                         </div>
-                        <div class="benefit-content">
-                            <h3>Google My Business Optimization</h3>
-                            <p>Maximize your Google My Business profile to appear prominently in local search results and Google Maps.</p>
-                            <ul class="feature-list">
-                                <li>Complete profile optimization</li>
-                                <li>Regular posting and updates</li>
-                                <li>Photo and video optimization</li>
-                                <li>Q&A management</li>
-                            </ul>
-                        </div>
+                        <h3>Google My Business Optimization</h3>
+                        <p>Maximize your Google My Business profile to appear prominently in local search results and Google Maps.</p>
+                        <ul class="feature-list">
+                            <li>Complete profile optimization</li>
+                            <li>Regular posting and updates</li>
+                            <li>Photo and video optimization</li>
+                            <li>Q&A management</li>
+                        </ul>
                     </div>
 
-                    <div class="benefit-card compact">
-                        <div class="benefit-icon">
+                    <div class="feature-item">
+                        <div class="feature-icon">
                             <i class="fas fa-building"></i>
                         </div>
-                        <div class="benefit-content">
-                            <h3>Local Citation Building</h3>
-                            <p>Build consistent business listings across local directories to improve search visibility and credibility.</p>
-                            <ul class="feature-list">
-                                <li>Directory submission campaigns</li>
-                                <li>NAP consistency monitoring</li>
-                                <li>Industry-specific citations</li>
-                                <li>Citation cleanup & corrections</li>
-                            </ul>
-                        </div>
+                        <h3>Local Citation Building</h3>
+                        <p>Build consistent business listings across local directories to improve search visibility and credibility.</p>
+                        <ul class="feature-list">
+                            <li>Directory submission campaigns</li>
+                            <li>NAP consistency monitoring</li>
+                            <li>Industry-specific citations</li>
+                            <li>Citation cleanup & corrections</li>
+                        </ul>
                     </div>
 
-                    <div class="benefit-card compact">
-                        <div class="benefit-icon">
+                    <div class="feature-item">
+                        <div class="feature-icon">
                             <i class="fas fa-star"></i>
                         </div>
-                        <div class="benefit-content">
-                            <h3>Review Management</h3>
-                            <p>Generate positive reviews and manage your online reputation to build trust with potential customers.</p>
-                            <ul class="feature-list">
-                                <li>Review generation campaigns</li>
-                                <li>Review response management</li>
-                                <li>Reputation monitoring</li>
-                                <li>Review widget implementation</li>
-                            </ul>
-                        </div>
+                        <h3>Review Management</h3>
+                        <p>Generate positive reviews and manage your online reputation to build trust with potential customers.</p>
+                        <ul class="feature-list">
+                            <li>Review generation campaigns</li>
+                            <li>Review response management</li>
+                            <li>Reputation monitoring</li>
+                            <li>Review widget implementation</li>
+                        </ul>
                     </div>
 
-                    <div class="benefit-card compact">
-                        <div class="benefit-icon">
+                    <div class="feature-item">
+                        <div class="feature-icon">
                             <i class="fas fa-search-location"></i>
                         </div>
-                        <div class="benefit-content">
-                            <h3>Local Keyword Optimization</h3>
-                            <p>Target location-specific keywords that drive local traffic and qualified leads to your business.</p>
-                            <ul class="feature-list">
-                                <li>Local keyword research</li>
-                                <li>Location page creation</li>
-                                <li>Service area optimization</li>
-                                <li>Local content strategy</li>
-                            </ul>
-                        </div>
+                        <h3>Local Keyword Optimization</h3>
+                        <p>Target location-specific keywords that drive local traffic and qualified leads to your business.</p>
+                        <ul class="feature-list">
+                            <li>Local keyword research</li>
+                            <li>Location page creation</li>
+                            <li>Service area optimization</li>
+                            <li>Local content strategy</li>
+                        </ul>
                     </div>
 
                 </div>

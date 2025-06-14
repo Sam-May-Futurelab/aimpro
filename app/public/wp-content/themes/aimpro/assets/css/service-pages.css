@@ -1289,3 +1289,159 @@
     margin: 0;
     font-size: 14px;
 }
+
+/* Rank Higher Locally Page Specific Styles */
+.rank-higher-locally-page .service-overview {
+    background: var(--bg-light, #f8f9fa);
+    padding: 80px 0;
+}
+
+.rank-higher-locally-page .section-header {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto 60px;
+}
+
+.rank-higher-locally-page .section-header h2 {
+    font-size: 36px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    color: var(--text-primary, #1a1a1a) !important;
+}
+
+.rank-higher-locally-page .section-header p {
+    font-size: 18px;
+    line-height: 1.6;
+    color: var(--text-secondary, #64748b) !important;
+}
+
+/* Rank higher locally features grid - 4 columns */
+.rank-higher-locally-page .features-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+@media (max-width: 1024px) {
+    .rank-higher-locally-page .features-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 25px;
+    }
+}
+
+@media (max-width: 768px) {
+    .rank-higher-locally-page .features-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+}
+
+/* Rank higher locally feature items - styled like other pages but with space for feature lists */
+.rank-higher-locally-page .feature-item {
+    background: var(--bg-light, #f8f9fa);
+    padding: 25px 20px;
+    border-radius: 12px;
+    text-align: left;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 2px solid transparent;
+}
+
+.rank-higher-locally-page .feature-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(241, 90, 37, 0.1);
+    border-color: var(--primary-orange, #F15A25);
+    background: white;
+}
+
+.rank-higher-locally-page .feature-icon {
+    color: var(--primary-orange, #F15A25);
+    font-size: 36px;
+    margin-bottom: 15px;
+    display: block;
+    text-align: center;
+}
+
+.rank-higher-locally-page .feature-item h3 {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 12px;
+    color: var(--text-primary, #1a1a1a) !important;
+    text-align: center;
+}
+
+.rank-higher-locally-page .feature-item p {
+    color: var(--text-secondary, #64748b) !important;
+    line-height: 1.5;
+    margin-bottom: 15px;
+    font-size: 14px;
+    text-align: center;
+}
+
+.rank-higher-locally-page .feature-item .feature-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.rank-higher-locally-page .feature-item .feature-list li {
+    color: var(--text-secondary, #64748b) !important;
+    font-size: 14px;
+    line-height: 1.4;
+    margin-bottom: 8px;
+    padding-left: 20px;
+    position: relative;
+}
+
+.rank-higher-locally-page .feature-item .feature-list li:before {
+    content: "✓";
+    color: var(--primary-orange, #F15A25);
+    font-weight: bold;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+/* Improve ROI Ads Page - Ensure CTA text and buttons are white */
+.improve-roi-ads-page .cta-section {
+    background: var(--primary-orange, #F15A25);
+    color: white;
+}
+
+.improve-roi-ads-page .cta-section .cta-content h2 {
+    color: white !important;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.improve-roi-ads-page .cta-section .cta-content p {
+    color: rgba(255, 255, 255, 0.95) !important;
+}
+
+.improve-roi-ads-page .cta-section .btn-primary {
+    background: white;
+    color: var(--primary-orange, #F15A25) !important;
+    border: 2px solid white;
+}
+
+.improve-roi-ads-page .cta-section .btn-primary:hover {
+    background: rgba(255, 255, 255, 0.9);
+    color: var(--primary-orange, #F15A25) !important;
+}
+
+.improve-roi-ads-page .cta-section .btn-secondary {
+    background: rgba(255, 255, 255, 0.2);
+    color: white !important;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+.improve-roi-ads-page .cta-section .btn-secondary:hover {
+    background: rgba(255, 255, 255, 0.3);
+    color: white !important;
+}
+
+.improve-roi-ads-page .cta-section .cta-features {
+    color: white;
+}
+
+.improve-roi-ads-page .cta-section .cta-features span {
+    color: rgba(255, 255, 255, 0.95) !important;
+}
