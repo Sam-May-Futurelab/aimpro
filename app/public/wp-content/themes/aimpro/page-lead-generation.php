@@ -243,13 +243,12 @@ get_header(); ?>
             </div>
         </section>        <!-- Lead Generation Tools -->
         <section class="lead-generation-tools">
-            <div class="container">
+            <div class="section-content">
                 <h2>Lead Generation Tools & Technologies</h2>
                 <div class="tools-grid">
                     
                     <div class="tool-card analytics">
                         <h3>Analytics & Tracking</h3>
-                        <p>Comprehensive tracking systems to measure and optimize your lead generation efforts.</p>
                         <ul class="tool-features">
                             <li>Google Analytics 4 setup</li>
                             <li>Conversion tracking implementation</li>
@@ -260,7 +259,6 @@ get_header(); ?>
 
                     <div class="tool-card crm">
                         <h3>CRM Integration</h3>
-                        <p>Seamless CRM integrations to manage and nurture your leads efficiently.</p>
                         <ul class="tool-features">
                             <li>HubSpot integration</li>
                             <li>Salesforce automation</li>
@@ -271,7 +269,6 @@ get_header(); ?>
 
                     <div class="tool-card optimization">
                         <h3>Landing Page Optimization</h3>
-                        <p>Advanced optimization techniques to maximize your landing page conversions.</p>
                         <ul class="tool-features">
                             <li>A/B testing frameworks</li>
                             <li>Heat mapping analysis</li>
@@ -282,7 +279,6 @@ get_header(); ?>
 
                     <div class="tool-card automation">
                         <h3>Email Marketing</h3>
-                        <p>Powerful email automation to nurture leads through your sales funnel.</p>
                         <ul class="tool-features">
                             <li>Automated email sequences</li>
                             <li>Lead nurturing campaigns</li>
@@ -290,14 +286,10 @@ get_header(); ?>
                             <li>Performance analytics</li>
                         </ul>
                     </div>
-                            <ul class="feature-list">
-                                <li>Automated email sequences</li>
-                                <li>Lead nurturing campaigns</li>
-                                <li>Behavioral email triggers</li>
-                                <li>Performance analytics</li>
-                            </ul>
-                        </div>                        </ul>
-                    </div>
+                    
+                </div>
+            </div>
+        </section>
                 
                 </div>
             </div>

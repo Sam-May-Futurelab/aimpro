@@ -266,19 +266,17 @@ get_header(); ?>
 
                 </div>
             </div>
-        </section>
-
-        <!-- Funnel Stages -->
+        </section>        <!-- Funnel Stages -->
         <section class="funnel-stages">
             <div class="section-content">
                 <h2>Sales Funnel Stages We Optimize</h2>
-                <div class="stages-grid">
+                <div class="metrics-grid">
                     
-                    <div class="stage-card">
+                    <div class="metric-category">
                         <div class="stage-number">1</div>
                         <h3>Awareness</h3>
                         <p>Attract potential customers through strategic content and advertising.</p>
-                        <ul class="stage-features">
+                        <ul class="metric-list">
                             <li>Content marketing strategy</li>
                             <li>Social media presence</li>
                             <li>Paid advertising campaigns</li>
@@ -286,11 +284,11 @@ get_header(); ?>
                         </ul>
                     </div>
 
-                    <div class="stage-card">
+                    <div class="metric-category">
                         <div class="stage-number">2</div>
                         <h3>Interest</h3>
                         <p>Engage prospects with valuable content and lead magnets.</p>
-                        <ul class="stage-features">
+                        <ul class="metric-list">
                             <li>Lead magnet creation</li>
                             <li>Email opt-in optimization</li>
                             <li>Educational content delivery</li>
@@ -298,11 +296,11 @@ get_header(); ?>
                         </ul>
                     </div>
 
-                    <div class="stage-card">
+                    <div class="metric-category">
                         <div class="stage-number">3</div>
                         <h3>Consideration</h3>
                         <p>Nurture leads with targeted content that addresses their needs.</p>
-                        <ul class="stage-features">
+                        <ul class="metric-list">
                             <li>Email nurture sequences</li>
                             <li>Case study presentations</li>
                             <li>Product demonstrations</li>
@@ -310,11 +308,11 @@ get_header(); ?>
                         </ul>
                     </div>
 
-                    <div class="stage-card">
+                    <div class="metric-category">
                         <div class="stage-number">4</div>
                         <h3>Decision</h3>
                         <p>Remove barriers and provide compelling reasons to purchase.</p>
-                        <ul class="stage-features">
+                        <ul class="metric-list">
                             <li>Objection handling content</li>
                             <li>Social proof integration</li>
                             <li>Risk reversal offers</li>
@@ -322,11 +320,11 @@ get_header(); ?>
                         </ul>
                     </div>
 
-                    <div class="stage-card">
+                    <div class="metric-category">
                         <div class="stage-number">5</div>
                         <h3>Action</h3>
                         <p>Optimize the purchase process for maximum conversions.</p>
-                        <ul class="stage-features">
+                        <ul class="metric-list">
                             <li>Checkout optimization</li>
                             <li>Payment gateway integration</li>
                             <li>Order confirmation automation</li>
@@ -334,11 +332,11 @@ get_header(); ?>
                         </ul>
                     </div>
 
-                    <div class="stage-card">
+                    <div class="metric-category">
                         <div class="stage-number">6</div>
                         <h3>Retention</h3>
                         <p>Keep customers engaged and encourage repeat purchases.</p>
-                        <ul class="stage-features">
+                        <ul class="metric-list">
                             <li>Customer onboarding</li>
                             <li>Upsell and cross-sell campaigns</li>
                             <li>Loyalty program development</li>

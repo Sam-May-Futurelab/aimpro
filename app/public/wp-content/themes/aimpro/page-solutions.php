@@ -38,10 +38,11 @@ get_header(); ?>
                         <div class="stat-label">Successful Projects</div>
                     </div>
                 </div>
-            </div>
-        </section>        <!-- Solutions Grid -->
+            </div>        </section>
+
+        <!-- Solutions Grid -->
         <section class="solutions-section">
-            <div class="container">
+            <div class="section-content">
                 <h2>Our Digital Marketing Solutions</h2>
                 <div class="solutions-main-grid">
                     
