@@ -276,47 +276,7 @@ get_header(); ?>
                         <li>Ongoing maintenance</li>
                     </ul>
                     <a href="#contact" class="btn-outline">Get Started</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Portfolio Section -->
-    <section id="portfolio" class="portfolio-section">
-        <div class="container">
-            <h2>Recent Website Designs</h2>
-            <div class="portfolio-grid">
-                <div class="portfolio-item">
-                    <div class="portfolio-image">
-                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/portfolio-tech-startup.jpg" alt="Tech Startup Website" />
-                    </div>
-                    <div class="portfolio-content">
-                        <h3>Tech Startup</h3>
-                        <p>Modern SaaS website with conversion-focused design</p>
-                        <div class="portfolio-result">340% increase in trial signups</div>
-                    </div>
-                </div>
-                <div class="portfolio-item">
-                    <div class="portfolio-image">
-                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/portfolio-law-firm.jpg" alt="Law Firm Website" />
-                    </div>
-                    <div class="portfolio-content">
-                        <h3>Law Firm</h3>
-                        <p>Professional website building trust and credibility</p>
-                        <div class="portfolio-result">280% increase in consultations</div>
-                    </div>
-                </div>
-                <div class="portfolio-item">
-                    <div class="portfolio-image">
-                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/portfolio-ecommerce.jpg" alt="E-commerce Website" />
-                    </div>
-                    <div class="portfolio-content">
-                        <h3>E-commerce Store</h3>
-                        <p>High-converting online store with seamless UX</p>
-                        <div class="portfolio-result">380% increase in sales</div>
-                    </div>
-                </div>
-            </div>
+                </div>            </div>
         </div>
     </section>
 

@@ -270,65 +270,64 @@ get_header(); ?>
                     </ul>
                 </div>
             </div>
-        </section>
-
-        <!-- Financial Marketing Funnel -->
-        <section class="finance-funnel">
-            <div class="section-content">
+        </section>        <!-- Financial Marketing Funnel -->
+        <section class="optimization-process">
+            <div class="container">
                 <h2>The Financial Services Marketing Funnel</h2>
-                <div class="funnel-stages">
-                    
-                    <div class="funnel-stage">
-                        <div class="stage-number">1</div>
-                        <div class="stage-content">
+                
+                <div class="process-timeline">
+                    <div class="process-step">
+                        <div class="step-number">1</div>
+                        <div class="step-content">
                             <h3>Awareness: Educational Content</h3>
                             <p>Attract prospects with educational content about financial planning, investment strategies, and market insights.</p>
-                            <div class="stage-tactics">
-                                <span class="tactic">Financial education blog posts</span>
-                                <span class="tactic">Market analysis videos</span>
-                                <span class="tactic">Social media insights</span>
-                            </div>
+                            <ul class="step-tactics">
+                                <li>Financial education blog posts</li>
+                                <li>Market analysis videos</li>
+                                <li>Social media insights</li>
+                            </ul>
                         </div>
                     </div>
 
-                    <div class="funnel-stage">
-                        <div class="stage-number">2</div>
-                        <div class="stage-content">
+                    <div class="process-step">
+                        <div class="step-number">2</div>
+                        <div class="step-content">
                             <h3>Interest: Value-Added Tools</h3>
                             <p>Engage prospects with calculators, guides, and resources that provide immediate value and capture contact information.</p>
-                            <div class="stage-tactics">
-                                <span class="tactic">Financial calculators</span>
-                                <span class="tactic">Planning guides</span>
-                                <span class="tactic">Webinar registration</span>
-                            </div>
+                            <ul class="step-tactics">
+                                <li>Financial calculators</li>
+                                <li>Planning guides</li>
+                                <li>Webinar registration</li>
+                            </ul>
                         </div>
                     </div>
 
-                    <div class="funnel-stage">
-                        <div class="stage-number">3</div>
-                        <div class="stage-content">
+                    <div class="process-step">
+                        <div class="step-number">3</div>
+                        <div class="step-content">
                             <h3>Consideration: Trust Building</h3>
                             <p>Build trust through case studies, testimonials, and demonstrations of expertise and qualifications.</p>
-                            <div class="stage-tactics">
-                                <span class="tactic">Client success stories</span>
-                                <span class="tactic">Professional credentials</span>
-                                <span class="tactic">Regulatory compliance</span>
-                            </div>
+                            <ul class="step-tactics">
+                                <li>Client success stories</li>
+                                <li>Professional credentials</li>
+                                <li>Regulatory compliance</li>
+                            </ul>
                         </div>
                     </div>
 
-                    <div class="funnel-stage">
-                        <div class="stage-number">4</div>
-                        <div class="stage-content">
+                    <div class="process-step">
+                        <div class="step-number">4</div>
+                        <div class="step-content">
                             <h3>Conversion: Consultation Booking</h3>
                             <p>Convert qualified prospects into consultations with clear value propositions and easy booking processes.</p>
-                            <div class="stage-tactics">
-                                <span class="tactic">Free consultation offers</span>
-                                <span class="tactic">Online booking systems</span>
-                                <span class="tactic">Qualification questions</span>
-                            </div>
+                            <ul class="step-tactics">
+                                <li>Free consultation offers</li>
+                                <li>Online booking systems</li>
+                                <li>Qualification questions</li>
+                            </ul>
                         </div>
-                    </div>                </div>
+                    </div>
+                </div>
             </div>
         </section>
 

@@ -276,83 +276,12 @@ get_header(); ?>
                     <div class="step-content">
                         <h3>Testing & Optimization</h3>
                         <p>A/B test flow performance and continuously optimize timing, content, and triggers for maximum effectiveness.</p>
-                    </div>
-                </div>
+                    </div>                </div>
             </div>
         </div>
     </section>
 
-    <!-- Packages Section -->
-    <section id="packages" class="packages-section">
-        <div class="container">
-            <h2>Email & SMS Flow Packages</h2>
-            <div class="packages-grid">
-                <div class="package-item">
-                    <div class="package-header">
-                        <h3>Starter Flows</h3>
-                        <div class="package-price">£1,497</div>
-                    </div>
-                    <div class="package-features">
-                        <ul>
-                            <li>3 essential automation flows</li>
-                            <li>Welcome series (5 emails)</li>
-                            <li>Abandoned cart recovery</li>
-                            <li>Basic SMS integration</li>
-                            <li>Template design</li>
-                            <li>Setup & launch</li>
-                            <li>30-day optimization</li>
-                        </ul>
-                    </div>
-                    <div class="package-cta">
-                        <a href="#contact" class="btn-outline">Get Started</a>
-                    </div>
-                </div>
-                
-                <div class="package-item featured">
-                    <div class="package-badge">Most Popular</div>
-                    <div class="package-header">
-                        <h3>Complete Flow Suite</h3>
-                        <div class="package-price">£2,997</div>
-                    </div>
-                    <div class="package-features">
-                        <ul>
-                            <li>8 comprehensive automation flows</li>
-                            <li>Welcome, nurturing & lifecycle flows</li>
-                            <li>Advanced SMS automation</li>
-                            <li>Behavioral triggers</li>
-                            <li>Custom design & copy</li>
-                            <li>A/B testing setup</li>
-                            <li>90-day optimization</li>
-                        </ul>
-                    </div>
-                    <div class="package-cta">
-                        <a href="#contact" class="btn-primary">Get Started</a>
-                    </div>
-                </div>
-                
-                <div class="package-item">
-                    <div class="package-header">
-                        <h3>Enterprise Automation</h3>
-                        <div class="package-price">£5,997</div>
-                    </div>
-                    <div class="package-features">
-                        <ul>
-                            <li>Unlimited custom flows</li>
-                            <li>Advanced segmentation</li>
-                            <li>Cross-channel coordination</li>
-                            <li>Predictive send timing</li>
-                            <li>Custom integrations</li>
-                            <li>Dedicated flow specialist</li>
-                            <li>6-month optimization</li>
-                        </ul>
-                    </div>
-                    <div class="package-cta">
-                        <a href="#contact" class="btn-outline">Get Started</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>    <!-- Tools & Platforms -->
+    <!-- Tools & Platforms -->
     <section class="whitelabel-benefits">
         <div class="section-content">
             <h2>Platforms We Use</h2>

@@ -286,84 +286,11 @@ get_header(); ?>
                     </div>
                     <h3>Implementation Support</h3>
                     <p>30 days of email support to help you implement changes and answer technical questions.</p>
-                </div>
-            </div>
+                </div>            </div>
         </div>
     </section>
 
-    <!-- Packages Section -->
-    <section id="packages" class="packages-section">
-        <div class="container">
-            <h2>PPC Audit Packages</h2>
-            <div class="packages-grid">
-                <div class="package-item">
-                    <div class="package-header">
-                        <h3>Basic Audit</h3>
-                        <div class="package-price">£497</div>
-                    </div>
-                    <div class="package-features">
-                        <ul>
-                            <li>25-point audit checklist</li>
-                            <li>Google Ads account review</li>
-                            <li>10-page findings report</li>
-                            <li>Priority recommendations</li>
-                            <li>Cost savings identification</li>
-                            <li>72-hour delivery</li>
-                            <li>Email support (7 days)</li>
-                        </ul>
-                    </div>
-                    <div class="package-cta">
-                        <a href="#contact" class="btn-outline">Order Audit</a>
-                    </div>
-                </div>
-                
-                <div class="package-item featured">
-                    <div class="package-badge">Most Popular</div>
-                    <div class="package-header">
-                        <h3>Complete Audit</h3>
-                        <div class="package-price">£997</div>
-                    </div>
-                    <div class="package-features">
-                        <ul>
-                            <li>Full 50-point audit</li>
-                            <li>Multi-platform review</li>
-                            <li>25+ page detailed report</li>
-                            <li>Video presentation call</li>
-                            <li>Implementation roadmap</li>
-                            <li>Competitor analysis</li>
-                            <li>30-day email support</li>
-                        </ul>
-                    </div>
-                    <div class="package-cta">
-                        <a href="#contact" class="btn-primary">Order Audit</a>
-                    </div>
-                </div>
-                
-                <div class="package-item">
-                    <div class="package-header">
-                        <h3>Enterprise Audit</h3>
-                        <div class="package-price">£1,997</div>
-                    </div>
-                    <div class="package-features">
-                        <ul>
-                            <li>Comprehensive 75-point audit</li>
-                            <li>All platforms + landing pages</li>
-                            <li>Custom recommendations</li>
-                            <li>In-person/video strategy session</li>
-                            <li>Implementation assistance</li>
-                            <li>Quarterly follow-up reviews</li>
-                            <li>90-day implementation support</li>
-                        </ul>
-                    </div>
-                    <div class="package-cta">
-                        <a href="#contact" class="btn-outline">Order Audit</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Why Audit Section -->    <!-- Why You Need a PPC Audit -->
+    <!-- Why Audit Section --><!-- Why You Need a PPC Audit -->
     <section class="whitelabel-benefits">
         <div class="section-content">
             <h2>Why You Need a PPC Audit</h2>

@@ -333,75 +333,68 @@ get_header(); ?>
                 </div>
             </div>
         </div>
-    </section>
-
-    <!-- Packages Section -->
-    <section id="packages" class="packages-section">
+    </section>    <!-- Packages Section -->
+    <section id="packages" class="pricing-section">
         <div class="container">
-            <h2>Funnel Automation Packages</h2>
-            <div class="packages-grid">
-                <div class="package-item">
-                    <div class="package-header">
+            <div class="section-header">
+                <h2>Funnel Automation Packages</h2>
+                <p>Transform your sales process with automated funnels that convert visitors into customers.</p>
+            </div>
+            
+            <div class="pricing-grid">
+                <div class="pricing-card">
+                    <div class="pricing-header">
                         <h3>Starter Funnel</h3>
-                        <div class="package-price">£2,997</div>
+                        <div class="price">£2,997</div>
+                        <p>Essential funnel foundation</p>
                     </div>
-                    <div class="package-features">
-                        <ul>
-                            <li>3-stage funnel design</li>
-                            <li>1 lead magnet creation</li>
-                            <li>2 landing pages</li>
-                            <li>5-email nurture sequence</li>
-                            <li>Basic automation setup</li>
-                            <li>Performance tracking</li>
-                            <li>30-day optimization</li>
-                        </ul>
-                    </div>
-                    <div class="package-cta">
-                        <a href="#contact" class="btn-outline">Get Started</a>
-                    </div>
+                    <ul class="pricing-features">
+                        <li>3-stage funnel design</li>
+                        <li>1 lead magnet creation</li>
+                        <li>2 landing pages</li>
+                        <li>5-email nurture sequence</li>
+                        <li>Basic automation setup</li>
+                        <li>Performance tracking</li>
+                        <li>30-day optimization</li>
+                    </ul>
+                    <a href="#contact" class="btn-outline">Get Started</a>
                 </div>
                 
-                <div class="package-item featured">
-                    <div class="package-badge">Most Popular</div>
-                    <div class="package-header">
+                <div class="pricing-card featured">
+                    <div class="pricing-badge">Most Popular</div>
+                    <div class="pricing-header">
                         <h3>Complete Funnel System</h3>
-                        <div class="package-price">£5,997</div>
+                        <div class="price">£5,997</div>
+                        <p>Complete automation solution</p>
                     </div>
-                    <div class="package-features">
-                        <ul>
-                            <li>5-stage funnel architecture</li>
-                            <li>3 lead magnets + resources</li>
-                            <li>5 optimized landing pages</li>
-                            <li>Multi-channel sequences</li>
-                            <li>Advanced automation flows</li>
-                            <li>A/B testing setup</li>
-                            <li>90-day optimization</li>
-                        </ul>
-                    </div>
-                    <div class="package-cta">
-                        <a href="#contact" class="btn-primary">Get Started</a>
-                    </div>
+                    <ul class="pricing-features">
+                        <li>5-stage funnel architecture</li>
+                        <li>3 lead magnets + resources</li>
+                        <li>5 optimized landing pages</li>
+                        <li>Multi-channel sequences</li>
+                        <li>Advanced automation flows</li>
+                        <li>A/B testing setup</li>
+                        <li>90-day optimization</li>
+                    </ul>
+                    <a href="#contact" class="btn-primary">Get Started</a>
                 </div>
                 
-                <div class="package-item">
-                    <div class="package-header">
+                <div class="pricing-card">
+                    <div class="pricing-header">
                         <h3>Enterprise Funnel Suite</h3>
-                        <div class="package-price">£12,997</div>
+                        <div class="price">£12,997</div>
+                        <p>Full enterprise ecosystem</p>
                     </div>
-                    <div class="package-features">
-                        <ul>
-                            <li>Multi-funnel ecosystem</li>
-                            <li>Custom asset creation</li>
-                            <li>Advanced segmentation</li>
-                            <li>Predictive automation</li>
-                            <li>Custom integrations</li>
-                            <li>Dedicated funnel specialist</li>
-                            <li>6-month optimization</li>
-                        </ul>
-                    </div>
-                    <div class="package-cta">
-                        <a href="#contact" class="btn-outline">Get Started</a>
-                    </div>
+                    <ul class="pricing-features">
+                        <li>Multi-funnel ecosystem</li>
+                        <li>Custom asset creation</li>
+                        <li>Advanced segmentation</li>
+                        <li>Predictive automation</li>
+                        <li>Custom integrations</li>
+                        <li>Dedicated funnel specialist</li>
+                        <li>6-month optimization</li>
+                    </ul>
+                    <a href="#contact" class="btn-outline">Get Started</a>
                 </div>
             </div>
         </div>

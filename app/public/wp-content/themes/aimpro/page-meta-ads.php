@@ -208,77 +208,70 @@ get_header(); ?>
                 </div>
             </div>
         </div>
-    </section>
-
-    <!-- Packages Section -->
-    <section id="packages" class="packages-section">
+    </section>    <!-- Packages Section -->
+    <section id="packages" class="pricing-section">
         <div class="container">
-            <h2>Meta Ads Management Packages</h2>
-            <div class="packages-grid">
-                <div class="package-item">
-                    <div class="package-header">
+            <div class="section-header">
+                <h2>Meta Ads Management Packages</h2>
+                <p>Professional Meta advertising management that drives real results for your business.</p>
+            </div>
+            
+            <div class="pricing-grid">
+                <div class="pricing-card">
+                    <div class="pricing-header">
                         <h3>Starter</h3>
-                        <div class="package-price">£697<span>/month</span></div>
+                        <div class="price">£697<span>/month</span></div>
+                        <p>Perfect for small businesses</p>
                     </div>
-                    <div class="package-features">
-                        <ul>
-                            <li>Up to £2,000 ad spend management</li>
-                            <li>Facebook & Instagram campaigns</li>
-                            <li>Basic audience targeting</li>
-                            <li>3 ad creative variations</li>
-                            <li>Weekly performance reports</li>
-                            <li>Conversion tracking setup</li>
-                            <li>Monthly strategy calls</li>
-                        </ul>
-                    </div>
-                    <div class="package-cta">
-                        <a href="#contact" class="btn-outline">Get Started</a>
-                    </div>
+                    <ul class="pricing-features">
+                        <li>Up to £2,000 ad spend management</li>
+                        <li>Facebook & Instagram campaigns</li>
+                        <li>Basic audience targeting</li>
+                        <li>3 ad creative variations</li>
+                        <li>Weekly performance reports</li>
+                        <li>Conversion tracking setup</li>
+                        <li>Monthly strategy calls</li>
+                    </ul>
+                    <a href="#contact" class="btn-outline">Get Started</a>
                 </div>
                 
-                <div class="package-item featured">
-                    <div class="package-badge">Most Popular</div>
-                    <div class="package-header">
+                <div class="pricing-card featured">
+                    <div class="pricing-badge">Most Popular</div>
+                    <div class="pricing-header">
                         <h3>Professional</h3>
-                        <div class="package-price">£1,197<span>/month</span></div>
+                        <div class="price">£1,197<span>/month</span></div>
+                        <p>Comprehensive Meta advertising</p>
                     </div>
-                    <div class="package-features">
-                        <ul>
-                            <li>Up to £5,000 ad spend management</li>
-                            <li>Full Meta platform coverage</li>
-                            <li>Advanced audience targeting</li>
-                            <li>Unlimited ad creative testing</li>
-                            <li>Bi-weekly optimization reports</li>
-                            <li>Retargeting campaigns</li>
-                            <li>Lookalike audience creation</li>
-                            <li>Priority support</li>
-                        </ul>
-                    </div>
-                    <div class="package-cta">
-                        <a href="#contact" class="btn-primary">Get Started</a>
-                    </div>
+                    <ul class="pricing-features">
+                        <li>Up to £5,000 ad spend management</li>
+                        <li>Full Meta platform coverage</li>
+                        <li>Advanced audience targeting</li>
+                        <li>Unlimited ad creative testing</li>
+                        <li>Bi-weekly optimization reports</li>
+                        <li>Retargeting campaigns</li>
+                        <li>Lookalike audience creation</li>
+                        <li>Priority support</li>
+                    </ul>
+                    <a href="#contact" class="btn-primary">Get Started</a>
                 </div>
                 
-                <div class="package-item">
-                    <div class="package-header">
+                <div class="pricing-card">
+                    <div class="pricing-header">
                         <h3>Enterprise</h3>
-                        <div class="package-price">£1,997<span>/month</span></div>
+                        <div class="price">£1,997<span>/month</span></div>
+                        <p>Full-service enterprise solution</p>
                     </div>
-                    <div class="package-features">
-                        <ul>
-                            <li>Unlimited ad spend management</li>
-                            <li>Multi-platform integration</li>
-                            <li>Custom audience development</li>
-                            <li>Video ad production</li>
-                            <li>Daily performance monitoring</li>
-                            <li>Advanced attribution modeling</li>
-                            <li>Dedicated account manager</li>
-                            <li>24/7 priority support</li>
-                        </ul>
-                    </div>
-                    <div class="package-cta">
-                        <a href="#contact" class="btn-outline">Get Started</a>
-                    </div>
+                    <ul class="pricing-features">
+                        <li>Unlimited ad spend management</li>
+                        <li>Multi-platform integration</li>
+                        <li>Custom audience development</li>
+                        <li>Video ad production</li>
+                        <li>Daily performance monitoring</li>
+                        <li>Advanced attribution modeling</li>
+                        <li>Dedicated account manager</li>
+                        <li>24/7 priority support</li>
+                    </ul>
+                    <a href="#contact" class="btn-outline">Get Started</a>
                 </div>
             </div>
         </div>

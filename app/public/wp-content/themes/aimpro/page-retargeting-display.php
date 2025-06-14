@@ -256,81 +256,8 @@ get_header(); ?>
                 <div class="type-item">
                     <div class="type-icon">
                         <i class="fas fa-mobile-alt"></i>
-                    </div>
-                    <h3>Cross-Device Retargeting</h3>
+                    </div>                    <h3>Cross-Device Retargeting</h3>
                     <p>Follow users across all their devices to maintain consistent messaging and maximize conversion opportunities.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Packages Section -->
-    <section id="packages" class="packages-section">
-        <div class="container">
-            <h2>Retargeting & Display Packages</h2>
-            <div class="packages-grid">
-                <div class="package-item">
-                    <div class="package-header">
-                        <h3>Starter</h3>
-                        <div class="package-price">£597<span>/month</span></div>
-                    </div>
-                    <div class="package-features">
-                        <ul>
-                            <li>Up to £1,500 ad spend management</li>
-                            <li>Basic website retargeting setup</li>
-                            <li>Google Display Network campaigns</li>
-                            <li>3 audience segments</li>
-                            <li>5 ad creative variations</li>
-                            <li>Monthly performance reports</li>
-                            <li>Email support</li>
-                        </ul>
-                    </div>
-                    <div class="package-cta">
-                        <a href="#contact" class="btn-outline">Get Started</a>
-                    </div>
-                </div>
-                
-                <div class="package-item featured">
-                    <div class="package-badge">Most Popular</div>
-                    <div class="package-header">
-                        <h3>Professional</h3>
-                        <div class="package-price">£997<span>/month</span></div>
-                    </div>
-                    <div class="package-features">
-                        <ul>
-                            <li>Up to £4,000 ad spend management</li>
-                            <li>Multi-platform retargeting</li>
-                            <li>Dynamic product ads</li>
-                            <li>Advanced audience segmentation</li>
-                            <li>Video retargeting campaigns</li>
-                            <li>Bi-weekly optimization reports</li>
-                            <li>Priority phone support</li>
-                        </ul>
-                    </div>
-                    <div class="package-cta">
-                        <a href="#contact" class="btn-primary">Get Started</a>
-                    </div>
-                </div>
-                
-                <div class="package-item">
-                    <div class="package-header">
-                        <h3>Enterprise</h3>
-                        <div class="package-price">£1,597<span>/month</span></div>
-                    </div>
-                    <div class="package-features">
-                        <ul>
-                            <li>Unlimited ad spend management</li>
-                            <li>Full cross-platform integration</li>
-                            <li>Custom audience development</li>
-                            <li>Sequential retargeting campaigns</li>
-                            <li>Advanced attribution modeling</li>
-                            <li>Dedicated account manager</li>
-                            <li>24/7 priority support</li>
-                        </ul>
-                    </div>
-                    <div class="package-cta">
-                        <a href="#contact" class="btn-outline">Get Started</a>
-                    </div>
                 </div>
             </div>
         </div>

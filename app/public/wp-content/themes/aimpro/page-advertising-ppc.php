@@ -402,22 +402,20 @@ get_header(); ?>
                     </div>
                 </div>
             </div>
-        </section>
-
-        <!-- CTA Section -->
-        <section class="service-cta">
-            <div class="section-content">
+        </section>        <!-- CTA Section -->
+        <section id="contact" class="cta-section">
+            <div class="container">
                 <div class="cta-content">
                     <h2>Ready to Maximize Your Advertising ROI?</h2>
                     <p>Get a free PPC audit and strategy session. We'll analyze your current campaigns and show you exactly how to improve performance and reduce costs.</p>
                     <div class="cta-buttons">
-                        <a href="<?php echo home_url('/contact'); ?>" class="btn btn-primary">Get Free PPC Audit</a>
-                        <a href="<?php echo home_url('/services'); ?>" class="btn btn-secondary">View All Services</a>
+                        <a href="<?php echo home_url('/contact'); ?>" class="btn-primary">Get Free PPC Audit</a>
+                        <a href="<?php echo home_url('/services'); ?>" class="btn-outline">View All Services</a>
                     </div>
                     <div class="cta-features">
-                        <span>✓ Free campaign analysis</span>
-                        <span>✓ Performance improvement plan</span>
-                        <span>✓ No obligation consultation</span>
+                        <span class="feature-check">✓ Free campaign analysis</span>
+                        <span class="feature-check">✓ Performance improvement plan</span>
+                        <span class="feature-check">✓ No obligation consultation</span>
                     </div>
                 </div>
             </div>

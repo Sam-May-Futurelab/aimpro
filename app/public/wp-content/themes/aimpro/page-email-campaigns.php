@@ -159,75 +159,76 @@ get_header(); ?>
                 </div>
             </div>
         </div>
-    </section>
-
-    <!-- Campaign Types Section -->
-    <section class="campaign-types-section">
+    </section>    <!-- Campaign Types Section -->
+    <section class="service-overview">
         <div class="container">
-            <h2>Types of Email Campaigns We Create</h2>
-            <div class="campaign-types-grid">
-                <div class="campaign-type-item">
-                    <div class="campaign-icon">
+            <div class="section-header">
+                <h2>Types of Email Campaigns We Create</h2>
+                <p>Comprehensive email marketing solutions tailored to your specific business objectives and audience needs.</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-item">
+                    <div class="service-icon">
                         <i class="fas fa-newspaper"></i>
                     </div>
                     <h3>Newsletter Campaigns</h3>
                     <p>Regular, value-packed newsletters that keep your brand top-of-mind and drive consistent engagement.</p>
-                    <div class="campaign-metrics">
+                    <div class="service-metric">
                         <span>Average: 28% open rate</span>
                     </div>
                 </div>
                 
-                <div class="campaign-type-item">
-                    <div class="campaign-icon">
+                <div class="service-item">
+                    <div class="service-icon">
                         <i class="fas fa-rocket"></i>
                     </div>
                     <h3>Product Launch Campaigns</h3>
                     <p>Build anticipation and drive sales for new products or services with strategic launch sequences.</p>
-                    <div class="campaign-metrics">
+                    <div class="service-metric">
                         <span>Average: 45% higher sales</span>
                     </div>
                 </div>
                 
-                <div class="campaign-type-item">
-                    <div class="campaign-icon">
+                <div class="service-item">
+                    <div class="service-icon">
                         <i class="fas fa-percentage"></i>
                     </div>
                     <h3>Promotional Campaigns</h3>
                     <p>Time-sensitive offers and sales campaigns designed to drive immediate action and revenue.</p>
-                    <div class="campaign-metrics">
+                    <div class="service-metric">
                         <span>Average: 12% conversion rate</span>
                     </div>
                 </div>
                 
-                <div class="campaign-type-item">
-                    <div class="campaign-icon">
+                <div class="service-item">
+                    <div class="service-icon">
                         <i class="fas fa-graduation-cap"></i>
                     </div>
                     <h3>Educational Content</h3>
                     <p>Value-driven campaigns that educate your audience and position your brand as an industry expert.</p>
-                    <div class="campaign-metrics">
+                    <div class="service-metric">
                         <span>Average: 35% higher engagement</span>
                     </div>
                 </div>
                 
-                <div class="campaign-type-item">
-                    <div class="campaign-icon">
+                <div class="service-item">
+                    <div class="service-icon">
                         <i class="fas fa-calendar-check"></i>
                     </div>
                     <h3>Event & Webinar Promotion</h3>
                     <p>Drive registrations and attendance for your events, webinars, and speaking engagements.</p>
-                    <div class="campaign-metrics">
+                    <div class="service-metric">
                         <span>Average: 65% registration rate</span>
                     </div>
                 </div>
                 
-                <div class="campaign-type-item">
-                    <div class="campaign-icon">
+                <div class="service-item">
+                    <div class="service-icon">
                         <i class="fas fa-heart"></i>
                     </div>
                     <h3>Customer Retention</h3>
                     <p>Keep existing customers engaged with exclusive offers, updates, and loyalty programs.</p>
-                    <div class="campaign-metrics">
+                    <div class="service-metric">
                         <span>Average: 25% repeat purchase increase</span>
                     </div>
                 </div>
@@ -279,113 +280,41 @@ get_header(); ?>
                         <p>Monitor performance metrics and continuously optimize future campaigns based on data insights.</p>
                     </div>
                 </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Packages Section -->
-    <section id="packages" class="packages-section">
+            </div>        </div>
+    </section>    <!-- Best Practices Section -->
+    <section class="service-overview">
         <div class="container">
-            <h2>Email Campaign Packages</h2>
-            <div class="packages-grid">
-                <div class="package-item">
-                    <div class="package-header">
-                        <h3>Essential Campaigns</h3>
-                        <div class="package-price">£697<span>/month</span></div>
-                    </div>
-                    <div class="package-features">
-                        <ul>
-                            <li>4 email campaigns per month</li>
-                            <li>Basic audience segmentation</li>
-                            <li>Mobile-responsive templates</li>
-                            <li>Subject line optimization</li>
-                            <li>Performance reporting</li>
-                            <li>List management</li>
-                            <li>Email support</li>
-                        </ul>
-                    </div>
-                    <div class="package-cta">
-                        <a href="#contact" class="btn-outline">Get Started</a>
-                    </div>
-                </div>
-                
-                <div class="package-item featured">
-                    <div class="package-badge">Most Popular</div>
-                    <div class="package-header">
-                        <h3>Professional Campaigns</h3>
-                        <div class="package-price">£1,297<span>/month</span></div>
-                    </div>
-                    <div class="package-features">
-                        <ul>
-                            <li>8 email campaigns per month</li>
-                            <li>Advanced segmentation</li>
-                            <li>Custom template design</li>
-                            <li>A/B testing</li>
-                            <li>Behavioral targeting</li>
-                            <li>Detailed analytics</li>
-                            <li>Priority support</li>
-                        </ul>
-                    </div>
-                    <div class="package-cta">
-                        <a href="#contact" class="btn-primary">Get Started</a>
-                    </div>
-                </div>
-                
-                <div class="package-item">
-                    <div class="package-header">
-                        <h3>Enterprise Campaigns</h3>
-                        <div class="package-price">£2,497<span>/month</span></div>
-                    </div>
-                    <div class="package-features">
-                        <ul>
-                            <li>Unlimited email campaigns</li>
-                            <li>Advanced personalization</li>
-                            <li>Multi-variate testing</li>
-                            <li>Predictive analytics</li>
-                            <li>Custom integrations</li>
-                            <li>Dedicated account manager</li>
-                            <li>24/7 priority support</li>
-                        </ul>
-                    </div>
-                    <div class="package-cta">
-                        <a href="#contact" class="btn-outline">Get Started</a>
-                    </div>
-                </div>
+            <div class="section-header">
+                <h2>Email Marketing Best Practices We Follow</h2>
+                <p>Our proven strategies ensure your emails deliver maximum impact and engagement.</p>
             </div>
-        </div>
-    </section>
-
-    <!-- Best Practices Section -->
-    <section class="best-practices-section">
-        <div class="container">
-            <h2>Email Marketing Best Practices We Follow</h2>
-            <div class="practices-grid">
-                <div class="practice-item">
-                    <div class="practice-icon">
+            <div class="services-grid">
+                <div class="service-item">
+                    <div class="service-icon">
                         <i class="fas fa-mobile-alt"></i>
                     </div>
                     <h3>Mobile-First Design</h3>
                     <p>Over 60% of emails are opened on mobile devices. Our templates are optimized for perfect mobile experience.</p>
                 </div>
                 
-                <div class="practice-item">
-                    <div class="practice-icon">
+                <div class="service-item">
+                    <div class="service-icon">
                         <i class="fas fa-user-tag"></i>
                     </div>
                     <h3>Smart Personalization</h3>
                     <p>Go beyond "Hi [Name]" with behavioral personalization based on purchase history and engagement patterns.</p>
                 </div>
                 
-                <div class="practice-item">
-                    <div class="practice-icon">
+                <div class="service-item">
+                    <div class="service-icon">
                         <i class="fas fa-clock"></i>
                     </div>
                     <h3>Optimal Send Times</h3>
                     <p>Use data analytics to determine the best send times for your specific audience and industry.</p>
                 </div>
                 
-                <div class="practice-item">
-                    <div class="practice-icon">
+                <div class="service-item">
+                    <div class="service-icon">
                         <i class="fas fa-shield-alt"></i>
                     </div>
                     <h3>Deliverability Focus</h3>

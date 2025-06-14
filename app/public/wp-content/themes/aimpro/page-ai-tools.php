@@ -155,10 +155,8 @@ get_header(); ?>
                         </div>
                         <div class="result-item">
                             <div class="result-number">£850K</div>
-                            <div class="result-label">Additional Annual Revenue</div>
-                        </div>
+                            <div class="result-label">Additional Annual Revenue</div>                        </div>
                     </div>
-                    <p class="results-summary">AI tools freed up 35 hours per week while generating £850K in additional revenue through improved efficiency and personalization.</p>
                 </div>
             </div>
         </div>
@@ -334,80 +332,7 @@ get_header(); ?>
                         <span>Reduce costs by 30%</span>
                     </div>
                 </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Packages Section -->
-    <section id="packages" class="packages-section">
-        <div class="container">
-            <h2>AI Tools Implementation Packages</h2>
-            <div class="packages-grid">
-                <div class="package-item">
-                    <div class="package-header">
-                        <h3>AI Starter Pack</h3>
-                        <div class="package-price">£2,497</div>
-                    </div>
-                    <div class="package-features">
-                        <ul>
-                            <li>3 essential AI tools setup</li>
-                            <li>Content generation automation</li>
-                            <li>Basic analytics integration</li>
-                            <li>Team training (2 sessions)</li>
-                            <li>30-day optimization</li>
-                            <li>Email support</li>
-                            <li>Performance reporting</li>
-                        </ul>
-                    </div>
-                    <div class="package-cta">
-                        <a href="#contact" class="btn-outline">Get Started</a>
-                    </div>
-                </div>
-                
-                <div class="package-item featured">
-                    <div class="package-badge">Most Popular</div>
-                    <div class="package-header">
-                        <h3>AI Growth Suite</h3>
-                        <div class="package-price">£4,997</div>
-                    </div>
-                    <div class="package-features">
-                        <ul>
-                            <li>7 advanced AI tools</li>
-                            <li>Full automation workflows</li>
-                            <li>Predictive analytics setup</li>
-                            <li>Personalization engine</li>
-                            <li>Comprehensive training</li>
-                            <li>90-day optimization</li>
-                            <li>Priority support</li>
-                        </ul>
-                    </div>
-                    <div class="package-cta">
-                        <a href="#contact" class="btn-primary">Get Started</a>
-                    </div>
-                </div>
-                
-                <div class="package-item">
-                    <div class="package-header">
-                        <h3>Enterprise AI Transformation</h3>
-                        <div class="package-price">£9,997</div>
-                    </div>
-                    <div class="package-features">
-                        <ul>
-                            <li>Custom AI solution development</li>
-                            <li>Enterprise tool integration</li>
-                            <li>Advanced machine learning</li>
-                            <li>Multi-channel automation</li>
-                            <li>Dedicated AI specialist</li>
-                            <li>6-month implementation</li>
-                            <li>24/7 priority support</li>
-                        </ul>
-                    </div>
-                    <div class="package-cta">
-                        <a href="#contact" class="btn-outline">Get Started</a>
-                    </div>
-                </div>
-            </div>
-        </div>
+            </div>        </div>
     </section>
 
     <!-- Benefits Section -->

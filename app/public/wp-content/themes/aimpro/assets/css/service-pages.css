@@ -1760,3 +1760,438 @@
     margin: 0;
     font-size: 14px;
 }
+
+/* Chatbots Page Styling */
+.chatbots-page {
+    --primary-orange: #F15A25;
+}
+
+/* Features Grid for Advanced Chatbot Features */
+.chatbots-page .features-grid {
+    display: grid !important;
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 30px !important;
+    margin-top: 40px !important;
+}
+
+@media (max-width: 1024px) {
+    .chatbots-page .features-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+    }
+}
+
+@media (max-width: 768px) {
+    .chatbots-page .features-grid {
+        grid-template-columns: 1fr !important;
+    }
+}
+
+.chatbots-page .feature-item {
+    background: white !important;
+    padding: 30px !important;
+    border-radius: 16px !important;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05) !important;
+    transition: transform 0.3s ease, box-shadow 0.3s ease !important;
+    border: 1px solid rgba(241, 90, 37, 0.1) !important;
+    position: relative;
+    overflow: hidden;
+}
+
+.chatbots-page .feature-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--primary-orange, #F15A25), rgba(241, 90, 37, 0.6));
+}
+
+.chatbots-page .feature-item:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+}
+
+.chatbots-page .feature-item .feature-icon {
+    width: 60px;
+    height: 60px;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(241, 90, 37, 0.1);
+    border-radius: 12px;
+    color: var(--primary-orange, #F15A25);
+    font-size: 24px;
+}
+
+.chatbots-page .feature-item h3 {
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 12px;
+    color: var(--text-primary, #1a1a1a) !important;
+}
+
+.chatbots-page .feature-item p {
+    color: var(--text-secondary, #64748b) !important;
+    line-height: 1.6;
+    margin: 0;
+    font-size: 15px;
+}
+
+/* Service Metrics Enhancement */
+.chatbots-page .service-item .service-metric {
+    margin-top: 15px;
+    padding: 8px 12px;
+    background: rgba(241, 90, 37, 0.1);
+    border-radius: 8px;
+    border-left: 3px solid var(--primary-orange, #F15A25);
+}
+
+.chatbots-page .service-item .service-metric span {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--primary-orange, #F15A25);
+}
+
+/* Platforms Section */
+.chatbots-page .platforms-section {
+    padding: 80px 0;
+    background: #f8fafc;
+}
+
+.chatbots-page .platforms-section h2 {
+    text-align: center;
+    margin-bottom: 50px;
+    font-size: 36px;
+    color: var(--text-primary, #1a1a1a);
+}
+
+.chatbots-page .platforms-grid {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 30px !important;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+    .chatbots-page .platforms-grid {
+        grid-template-columns: 1fr !important;
+    }
+}
+
+.chatbots-page .platform-item {
+    background: white !important;
+    padding: 40px 30px !important;
+    border-radius: 16px !important;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05) !important;
+    transition: transform 0.3s ease, box-shadow 0.3s ease !important;
+    text-align: center;
+    border: 1px solid rgba(241, 90, 37, 0.1) !important;
+}
+
+.chatbots-page .platform-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+}
+
+.chatbots-page .platform-item .platform-icon {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(241, 90, 37, 0.1);
+    border-radius: 20px;
+    color: var(--primary-orange, #F15A25);
+    font-size: 32px;
+}
+
+.chatbots-page .platform-item h3 {
+    font-size: 22px;
+    margin-bottom: 15px;
+    color: var(--text-primary, #1a1a1a);
+}
+
+.chatbots-page .platform-item p {
+    color: var(--text-secondary, #64748b);
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* Industries Section */
+.chatbots-page .industries-section {
+    padding: 80px 0;
+    background: white;
+}
+
+.chatbots-page .industries-section h2 {
+    text-align: center;
+    margin-bottom: 50px;
+    font-size: 36px;
+    color: var(--text-primary, #1a1a1a);
+}
+
+.chatbots-page .industries-grid {
+    display: grid !important;
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 30px !important;
+}
+
+@media (max-width: 1024px) {
+    .chatbots-page .industries-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+    }
+}
+
+@media (max-width: 768px) {
+    .chatbots-page .industries-grid {
+        grid-template-columns: 1fr !important;
+    }
+}
+
+.chatbots-page .industry-item {
+    background: #f8fafc !important;
+    padding: 30px !important;
+    border-radius: 12px !important;
+    transition: transform 0.3s ease, box-shadow 0.3s ease !important;
+    border-left: 4px solid var(--primary-orange, #F15A25);
+}
+
+.chatbots-page .industry-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+    background: white !important;
+}
+
+.chatbots-page .industry-item h3 {
+    font-size: 20px;
+    margin-bottom: 12px;
+    color: var(--primary-orange, #F15A25) !important;
+    font-weight: 600;
+}
+
+.chatbots-page .industry-item p {
+    color: var(--text-secondary, #64748b) !important;
+    line-height: 1.6;
+    margin: 0;
+    font-size: 15px;
+}
+
+/* Process Section Enhancement */
+.chatbots-page .process-section {
+    padding: 80px 0;
+    background: #f8fafc;
+}
+
+.chatbots-page .process-section h2 {
+    text-align: center;
+    margin-bottom: 50px;
+    font-size: 36px;
+    color: var(--text-primary, #1a1a1a);
+}
+
+.chatbots-page .process-steps {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 30px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.chatbots-page .process-step {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    background: white;
+    padding: 30px;
+    border-radius: 16px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.chatbots-page .process-step:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.chatbots-page .process-step .step-number {
+    width: 50px;
+    height: 50px;
+    background: var(--primary-orange, #F15A25);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    font-weight: 700;
+    flex-shrink: 0;
+}
+
+.chatbots-page .process-step .step-content h3 {
+    font-size: 22px;
+    margin-bottom: 10px;
+    color: var(--text-primary, #1a1a1a);
+}
+
+.chatbots-page .process-step .step-content p {
+    color: var(--text-secondary, #64748b);
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* Case Study Section Enhancements */
+.chatbots-page .case-study-section {
+    padding: 80px 0;
+    background: white;
+}
+
+.chatbots-page .case-study-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: start;
+}
+
+@media (max-width: 1024px) {
+    .chatbots-page .case-study-content {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+}
+
+.chatbots-page .case-study-text h2 {
+    font-size: 32px;
+    margin-bottom: 20px;
+    color: var(--text-primary, #1a1a1a);
+}
+
+.chatbots-page .case-study-intro {
+    font-size: 18px;
+    color: var(--text-secondary, #64748b);
+    margin-bottom: 30px;
+    line-height: 1.6;
+}
+
+.chatbots-page .case-study-challenge,
+.chatbots-page .case-study-solution {
+    margin-bottom: 30px;
+}
+
+.chatbots-page .case-study-challenge h3,
+.chatbots-page .case-study-solution h3 {
+    font-size: 20px;
+    margin-bottom: 15px;
+    color: var(--primary-orange, #F15A25);
+}
+
+.chatbots-page .case-study-solution ul {
+    list-style: none;
+    padding: 0;
+}
+
+.chatbots-page .case-study-solution li {
+    position: relative;
+    padding-left: 25px;
+    margin-bottom: 10px;
+    color: var(--text-secondary, #64748b);
+    line-height: 1.6;
+}
+
+.chatbots-page .case-study-solution li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: var(--primary-orange, #F15A25);
+    font-weight: bold;
+}
+
+.chatbots-page .case-study-results {
+    background: #f8fafc;
+    padding: 40px;
+    border-radius: 16px;
+    border: 1px solid rgba(241, 90, 37, 0.1);
+}
+
+.chatbots-page .case-study-results h3 {
+    font-size: 24px;
+    margin-bottom: 30px;
+    color: var(--text-primary, #1a1a1a);
+    text-align: center;
+}
+
+.chatbots-page .results-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+}
+
+@media (max-width: 768px) {
+    .chatbots-page .results-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.chatbots-page .result-item {
+    text-align: center;
+    padding: 20px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+}
+
+.chatbots-page .result-number {
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--primary-orange, #F15A25);
+    margin-bottom: 5px;
+}
+
+.chatbots-page .result-label {
+    font-size: 14px;
+    color: var(--text-secondary, #64748b);
+    font-weight: 500;
+}
+
+/* Testimonial Section */
+.chatbots-page .testimonial-section {
+    padding: 80px 0;
+    background: rgba(241, 90, 37, 0.05);
+}
+
+.chatbots-page .testimonial-content {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.chatbots-page .testimonial-content blockquote {
+    font-size: 24px;
+    line-height: 1.6;
+    color: var(--text-primary, #1a1a1a);
+    margin-bottom: 30px;
+    font-style: italic;
+    position: relative;
+}
+
+.chatbots-page .testimonial-content blockquote::before {
+    content: '"';
+    font-size: 60px;
+    color: var(--primary-orange, #F15A25);
+    position: absolute;
+    top: -10px;
+    left: -30px;
+}
+
+.chatbots-page .testimonial-content cite {
+    font-style: normal;
+    color: var(--text-secondary, #64748b);
+}
+
+.chatbots-page .testimonial-content cite strong {
+    color: var(--text-primary, #1a1a1a);
+    font-weight: 600;
+}

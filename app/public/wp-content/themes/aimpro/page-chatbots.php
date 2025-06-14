@@ -146,8 +146,7 @@ get_header(); ?>
                         </div>
                         <div class="result-item">
                             <div class="result-number">95%</div>
-                            <div class="result-label">Website Engagement Rate</div>
-                        </div>
+                            <div class="result-label">Website Engagement Rate</div>                        </div>
                         <div class="result-item">
                             <div class="result-number">24/7</div>
                             <div class="result-label">Instant Response Time</div>
@@ -157,79 +156,79 @@ get_header(); ?>
                             <div class="result-label">Additional Annual Revenue</div>
                         </div>
                     </div>
-                    <p class="results-summary">The chatbot now handles 85% of initial inquiries automatically, generating £425K in additional revenue while freeing up staff for complex legal work.</p>
                 </div>
             </div>
         </div>
-    </section>
-
-    <!-- Chatbot Types Section -->
-    <section class="chatbot-types-section">
+    </section>    <!-- Chatbot Types Section -->
+    <section class="service-overview">
         <div class="container">
-            <h2>Types of Chatbots We Build</h2>
-            <div class="chatbot-types-grid">
-                <div class="chatbot-type-item">
-                    <div class="chatbot-icon">
+            <div class="section-header">
+                <h2>Types of Chatbots We Build</h2>
+                <p>Custom chatbot solutions designed for specific business needs and customer engagement goals.</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-item">
+                    <div class="service-icon">
                         <i class="fas fa-user-tie"></i>
                     </div>
                     <h3>Lead Generation Bots</h3>
                     <p>Engage visitors, qualify prospects, and capture contact information through conversational lead forms.</p>
-                    <div class="chatbot-metrics">
+                    <div class="service-metric">
                         <span>Average: 45% lead capture rate</span>
                     </div>
                 </div>
                 
-                <div class="chatbot-type-item">
-                    <div class="chatbot-icon">
+                <div class="service-item">
+                    <div class="service-icon">
                         <i class="fas fa-life-ring"></i>
                     </div>
                     <h3>Customer Support Bots</h3>
                     <p>Provide instant answers to common questions and escalate complex issues to human agents when needed.</p>
-                    <div class="chatbot-metrics">
+                    <div class="service-metric">
                         <span>Average: 70% issue resolution</span>
                     </div>
                 </div>
                 
-                <div class="chatbot-type-item">
-                    <div class="chatbot-icon">
+                <div class="service-item">
+                    <div class="service-icon">
                         <i class="fas fa-shopping-bag"></i>
                     </div>
                     <h3>E-commerce Bots</h3>
                     <p>Recommend products, assist with purchases, track orders, and handle returns or exchanges.</p>
-                    <div class="chatbot-metrics">
+                    <div class="service-metric">
                         <span>Average: 25% sales increase</span>
                     </div>
                 </div>
                 
-                <div class="chatbot-type-item">
-                    <div class="chatbot-icon">
+                <div class="service-item">
+                    <div class="service-icon">
                         <i class="fas fa-calendar"></i>
                     </div>
                     <h3>Appointment Booking Bots</h3>
                     <p>Allow visitors to check availability and book appointments or consultations directly through chat.</p>
-                    <div class="chatbot-metrics">
+                    <div class="service-metric">
                         <span>Average: 60% booking completion</span>
                     </div>
                 </div>
                 
-                <div class="chatbot-type-item">
-                    <div class="chatbot-icon">
+                <div class="service-item">
+                    <div class="service-icon">
                         <i class="fas fa-graduation-cap"></i>
                     </div>
                     <h3>Educational Bots</h3>
                     <p>Guide users through learning paths, answer course questions, and provide educational resources.</p>
-                    <div class="chatbot-metrics">
+                    <div class="service-metric">
                         <span>Average: 85% engagement rate</span>
                     </div>
                 </div>
                 
-                <div class="chatbot-type-item">
-                    <div class="chatbot-icon">
+                <div class="service-item">
+                    <div class="service-icon">
                         <i class="fas fa-poll"></i>
                     </div>
                     <h3>Survey & Feedback Bots</h3>
                     <p>Collect customer feedback, conduct surveys, and gather insights through interactive conversations.</p>
-                    <div class="chatbot-metrics">
+                    <div class="service-metric">
                         <span>Average: 3x higher completion</span>
                     </div>
                 </div>
@@ -283,12 +282,13 @@ get_header(); ?>
                 </div>
             </div>
         </div>
-    </section>
-
-    <!-- Features Section -->
-    <section class="features-section">
+    </section>    <!-- Features Section -->
+    <section class="service-overview">
         <div class="container">
-            <h2>Advanced Chatbot Features</h2>
+            <div class="section-header">
+                <h2>Advanced Chatbot Features</h2>
+                <p>Cutting-edge AI capabilities that make our chatbots intelligent, responsive, and highly effective.</p>
+            </div>
             <div class="features-grid">
                 <div class="feature-item">
                     <div class="feature-icon">
@@ -336,78 +336,6 @@ get_header(); ?>
                     </div>
                     <h3>Advanced Analytics</h3>
                     <p>Detailed insights into conversation patterns, user satisfaction, and optimization opportunities.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Packages Section -->
-    <section id="packages" class="packages-section">
-        <div class="container">
-            <h2>Chatbot Development Packages</h2>
-            <div class="packages-grid">
-                <div class="package-item">
-                    <div class="package-header">
-                        <h3>Basic Chatbot</h3>
-                        <div class="package-price">£1,997</div>
-                    </div>
-                    <div class="package-features">
-                        <ul>
-                            <li>Simple conversation flows</li>
-                            <li>FAQ automation</li>
-                            <li>Lead capture forms</li>
-                            <li>Basic integrations</li>
-                            <li>Website deployment</li>
-                            <li>30-day support</li>
-                            <li>Performance reporting</li>
-                        </ul>
-                    </div>
-                    <div class="package-cta">
-                        <a href="#contact" class="btn-outline">Get Started</a>
-                    </div>
-                </div>
-                
-                <div class="package-item featured">
-                    <div class="package-badge">Most Popular</div>
-                    <div class="package-header">
-                        <h3>Smart Chatbot</h3>
-                        <div class="package-price">£3,997</div>
-                    </div>
-                    <div class="package-features">
-                        <ul>
-                            <li>AI-powered conversations</li>
-                            <li>Lead qualification flows</li>
-                            <li>Appointment booking</li>
-                            <li>CRM integration</li>
-                            <li>Multi-platform deployment</li>
-                            <li>90-day optimization</li>
-                            <li>Advanced analytics</li>
-                        </ul>
-                    </div>
-                    <div class="package-cta">
-                        <a href="#contact" class="btn-primary">Get Started</a>
-                    </div>
-                </div>
-                
-                <div class="package-item">
-                    <div class="package-header">
-                        <h3>Enterprise Chatbot</h3>
-                        <div class="package-price">£7,997</div>
-                    </div>
-                    <div class="package-features">
-                        <ul>
-                            <li>Custom AI development</li>
-                            <li>Advanced personalization</li>
-                            <li>Multi-language support</li>
-                            <li>Complex workflow automation</li>
-                            <li>Enterprise integrations</li>
-                            <li>Dedicated bot manager</li>
-                            <li>6-month optimization</li>
-                        </ul>
-                    </div>
-                    <div class="package-cta">
-                        <a href="#contact" class="btn-outline">Get Started</a>
-                    </div>
                 </div>
             </div>
         </div>
