@@ -466,10 +466,8 @@ get_header(); ?>
                     </div>
                 </div>
             </div>
-        </section>
-
-        <!-- CTA Section -->
-        <section class="funnel-cta">
+        </section>        <!-- CTA Section -->
+        <section class="funnel-cta text-center">
             <div class="section-content">
                 <h2>Ready to Streamline Your Sales Funnel?</h2>
                 <p>Let's build a sales funnel that converts more prospects into customers and accelerates your business growth.</p>

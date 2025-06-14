@@ -206,12 +206,11 @@ get_header(); ?>
         </section>
 
         <!-- Lead Generation Types -->
-        <section class="lead-generation-types">
+        <section class="lead-generation-types text-center">
             <div class="section-content">
                 <h2>Lead Generation Strategies by Business Type</h2>
                 <div class="types-grid">
-                    
-                    <div class="type-card">
+                      <div class="type-card">
                         <h3>B2B Lead Generation</h3>
                         <ul class="type-features">
                             <li>LinkedIn advertising & outreach</li>
@@ -220,12 +219,7 @@ get_header(); ?>
                             <li>Account-based marketing (ABM)</li>
                             <li>Sales-qualified lead (SQL) optimization</li>
                         </ul>
-                        <div class="type-results">
-                            <span>Average: 300% B2B lead increase</span>
-                        </div>
-                    </div>
-
-                    <div class="type-card">
+                    </div>                    <div class="type-card">
                         <h3>B2C Lead Generation</h3>
                         <ul class="type-features">
                             <li>Facebook & Instagram lead ads</li>
@@ -234,12 +228,7 @@ get_header(); ?>
                             <li>Contest and giveaway campaigns</li>
                             <li>SMS marketing integration</li>
                         </ul>
-                        <div class="type-results">
-                            <span>Average: 250% B2C lead increase</span>
-                        </div>
-                    </div>
-
-                    <div class="type-card">
+                    </div>                    <div class="type-card">
                         <h3>Local Business Lead Generation</h3>
                         <ul class="type-features">
                             <li>Google My Business optimization</li>
@@ -248,21 +237,18 @@ get_header(); ?>
                             <li>Review generation campaigns</li>
                             <li>Local event marketing</li>
                         </ul>
-                        <div class="type-results">
-                            <span>Average: 400% local lead increase</span>
-                        </div>
                     </div>
 
                 </div>
             </div>
-        </section>        <!-- Lead Generation Tools -->
-        <section class="lead-generation-tools">
+        </section><!-- Lead Generation Tools -->
+        <section class="lead-generation-tools text-center">
             <div class="section-content">
                 <h2>Lead Generation Tools & Technologies</h2>
                 <div class="benefits-grid-4">
                     
-                    <div class="benefit-card">
-                        <div class="benefit-icon">
+                    <div class="benefit-card compact">
+                        <div class="benefit-icon text-center">
                             <i class="fas fa-chart-bar"></i>
                         </div>
                         <div class="benefit-content">
@@ -276,8 +262,8 @@ get_header(); ?>
                         </div>
                     </div>
 
-                    <div class="benefit-card">
-                        <div class="benefit-icon">
+                    <div class="benefit-card compact">
+                        <div class="benefit-icon text-center">
                             <i class="fas fa-database"></i>
                         </div>
                         <div class="benefit-content">
@@ -291,8 +277,8 @@ get_header(); ?>
                         </div>
                     </div>
 
-                    <div class="benefit-card">
-                        <div class="benefit-icon">
+                    <div class="benefit-card compact">
+                        <div class="benefit-icon text-center">
                             <i class="fas fa-chart-line"></i>
                         </div>
                         <div class="benefit-content">
@@ -306,8 +292,8 @@ get_header(); ?>
                         </div>
                     </div>
 
-                    <div class="benefit-card">
-                        <div class="benefit-icon">
+                    <div class="benefit-card compact">
+                        <div class="benefit-icon text-center">
                             <i class="fas fa-envelope-open-text"></i>
                         </div>
                         <div class="benefit-content">
@@ -326,7 +312,7 @@ get_header(); ?>
         </section>
 
         <!-- Lead Generation Testimonial -->
-        <section class="lead-generation-testimonial">
+        <section class="lead-generation-testimonial text-center">
             <div class="section-content">
                 <div class="testimonial-content">
                     <blockquote>
@@ -345,7 +331,7 @@ get_header(); ?>
         </section>
 
         <!-- CTA Section -->
-        <section class="lead-generation-cta">
+        <section class="lead-generation-cta text-center">
             <div class="section-content">
                 <h2>Ready to Generate More Qualified Leads?</h2>
                 <p>Let's create a custom lead generation strategy that fills your sales pipeline with high-quality prospects.</p>

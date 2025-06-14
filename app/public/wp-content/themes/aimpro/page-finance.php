@@ -243,50 +243,31 @@ get_header(); ?>
 
                 </div>
             </div>
-        </section>
-
-        <!-- Compliance Framework -->
+        </section>        <!-- Compliance Framework -->
         <section class="compliance-framework">
             <div class="section-content">
                 <h2>Our Financial Marketing Compliance Framework</h2>
-                <div class="compliance-grid">
-                    
-                    <div class="compliance-item">
-                        <div class="compliance-icon">✓</div>
-                        <h3>FCA Regulation Compliance</h3>
-                        <p>All campaigns reviewed for FCA compliance including appropriate risk warnings, disclaimers, and promotional guidelines.</p>
-                    </div>
-
-                    <div class="compliance-item">
-                        <div class="compliance-icon">✓</div>
-                        <h3>GDPR Data Protection</h3>
-                        <p>Strict data handling procedures ensuring all lead generation and customer data processing meets GDPR requirements.</p>
-                    </div>
-
-                    <div class="compliance-item">
-                        <div class="compliance-icon">✓</div>
-                        <h3>Platform Policy Adherence</h3>
-                        <p>Expert knowledge of Google Ads, Facebook, and LinkedIn financial services policies to ensure campaign approval.</p>
-                    </div>
-
-                    <div class="compliance-item">
-                        <div class="compliance-icon">✓</div>
-                        <h3>Risk Warning Implementation</h3>
-                        <p>Proper implementation of required risk warnings and disclaimers across all marketing materials and channels.</p>
-                    </div>
-
-                    <div class="compliance-item">
-                        <div class="compliance-icon">✓</div>
-                        <h3>Documentation & Audit Trail</h3>
-                        <p>Complete documentation of all campaigns and communications for regulatory audit requirements.</p>
-                    </div>
-
-                    <div class="compliance-item">
-                        <div class="compliance-icon">✓</div>
-                        <h3>Ongoing Compliance Monitoring</h3>
-                        <p>Regular review and updates to ensure ongoing compliance with evolving financial services regulations.</p>
-                    </div>
-
+                <div class="compliance-list-container">
+                    <ul class="feature-list compliance-list">
+                        <li>
+                            <strong>FCA Regulation Compliance</strong> - All campaigns reviewed for FCA compliance including appropriate risk warnings, disclaimers, and promotional guidelines.
+                        </li>
+                        <li>
+                            <strong>GDPR Data Protection</strong> - Strict data handling procedures ensuring all lead generation and customer data processing meets GDPR requirements.
+                        </li>
+                        <li>
+                            <strong>Platform Policy Adherence</strong> - Expert knowledge of Google Ads, Facebook, and LinkedIn financial services policies to ensure campaign approval.
+                        </li>
+                        <li>
+                            <strong>Risk Warning Implementation</strong> - Proper implementation of required risk warnings and disclaimers across all marketing materials and channels.
+                        </li>
+                        <li>
+                            <strong>Documentation & Audit Trail</strong> - Complete documentation of all campaigns and communications for regulatory audit requirements.
+                        </li>
+                        <li>
+                            <strong>Ongoing Compliance Monitoring</strong> - Regular review and updates to ensure ongoing compliance with evolving financial services regulations.
+                        </li>
+                    </ul>
                 </div>
             </div>
         </section>
@@ -368,10 +349,8 @@ get_header(); ?>
                     </div>
                 </div>
             </div>
-        </section>
-
-        <!-- CTA Section -->
-        <section class="finance-cta">
+        </section>        <!-- CTA Section -->
+        <section class="finance-cta text-center">
             <div class="section-content">
                 <h2>Ready to Grow Your Financial Services Business?</h2>
                 <p>Let's create a compliant, trust-building marketing strategy that generates high-value leads for your financial services.</p>

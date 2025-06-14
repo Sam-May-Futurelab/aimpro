@@ -47,8 +47,7 @@ get_header(); ?>
             <div class="section-content">
                 <h2>Our Local SEO Services</h2>
                 <div class="benefits-grid-2x2">
-                    
-                    <div class="benefit-card">
+                      <div class="benefit-card compact">
                         <div class="benefit-icon">
                             <i class="fab fa-google"></i>
                         </div>
@@ -64,7 +63,7 @@ get_header(); ?>
                         </div>
                     </div>
 
-                    <div class="benefit-card">
+                    <div class="benefit-card compact">
                         <div class="benefit-icon">
                             <i class="fas fa-building"></i>
                         </div>
@@ -80,7 +79,7 @@ get_header(); ?>
                         </div>
                     </div>
 
-                    <div class="benefit-card">
+                    <div class="benefit-card compact">
                         <div class="benefit-icon">
                             <i class="fas fa-star"></i>
                         </div>
@@ -96,7 +95,7 @@ get_header(); ?>
                         </div>
                     </div>
 
-                    <div class="benefit-card">
+                    <div class="benefit-card compact">
                         <div class="benefit-icon">
                             <i class="fas fa-search-location"></i>
                         </div>
@@ -207,134 +206,56 @@ get_header(); ?>
                             <h3>Monitoring & Optimization</h3>
                             <p>Track local rankings, monitor reviews, and continuously optimize for better performance.</p>
                         </div>
-                    </div>
-
-                </div>
+                    </div>                </div>
             </div>
-        </section>
-
-        <!-- Local SEO Benefits -->
-        <section class="local-seo-benefits">
+        </section>        
+        
+        <!-- Local SEO Benefits -->        <section class="local-seo-benefits">
             <div class="section-content">
                 <h2>Local SEO Benefits for Your Business</h2>
-                <div class="benefits-grid">
+                <p class="section-description">Powerful local search optimization that drives real business results</p>
+                <div class="benefits-grid-2x2">
                     
-                    <div class="benefit-card">
-                        <div class="benefit-icon">📍</div>
+                    <div class="benefit-card compact">
+                        <div class="benefit-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
                         <div class="benefit-content">
                             <h3>Increased Local Visibility</h3>
                             <p>Appear prominently when potential customers search for your services in your area.</p>
-                            <span class="benefit-metric">Average: 400% visibility increase</span>
                         </div>
                     </div>
 
-                    <div class="benefit-card">
-                        <div class="benefit-icon">📞</div>
+                    <div class="benefit-card compact">
+                        <div class="benefit-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
                         <div class="benefit-content">
                             <h3>More Phone Calls</h3>
                             <p>Generate more qualified phone leads from customers ready to book or buy.</p>
-                            <span class="benefit-metric">Average: 250% call increase</span>
                         </div>
                     </div>
 
-                    <div class="benefit-card">
-                        <div class="benefit-icon">🚗</div>
+                    <div class="benefit-card compact">
+                        <div class="benefit-icon">
+                            <i class="fas fa-walking"></i>
+                        </div>
                         <div class="benefit-content">
                             <h3>Increased Foot Traffic</h3>
                             <p>Drive more customers to your physical location with improved local search presence.</p>
-                            <span class="benefit-metric">Average: 180% foot traffic boost</span>
                         </div>
                     </div>
 
-                    <div class="benefit-card">
-                        <div class="benefit-icon">⭐</div>
+                    <div class="benefit-card compact">
+                        <div class="benefit-icon">
+                            <i class="fas fa-star"></i>
+                        </div>
                         <div class="benefit-content">
                             <h3>Better Online Reputation</h3>
                             <p>Build trust with positive reviews and professional online presence management.</p>
-                            <span class="benefit-metric">Average: 4.7+ star rating</span>
-                        </div>
-                    </div>
-
-                </div>
+                        </div>                    </div>                </div>
             </div>
-        </section>
-
-        <!-- Local SEO by Industry -->
-        <section class="local-seo-industries">
-            <div class="section-content">
-                <h2>Local SEO by Industry</h2>
-                <div class="industries-grid">
-                    
-                    <div class="industry-card">
-                        <h3>Healthcare & Medical</h3>                        <ul class="industry-features">
-                            <li>Medical practice optimization</li>
-                            <li>HIPAA-compliant review management</li>
-                            <li>Health-focused content creation</li>
-                            <li>Medical directory submissions</li>
-                        </ul>
-                    </div>
-
-                    <div class="industry-card">
-                        <h3>Professional Services</h3>                        <ul class="industry-features">
-                            <li>Law firm local optimization</li>
-                            <li>Financial advisor visibility</li>
-                            <li>Professional certification highlighting</li>
-                            <li>Service area expansion</li>
-                        </ul>
-                    </div>
-
-                    <div class="industry-card">
-                        <h3>Home Services</h3>                        <ul class="industry-features">
-                            <li>Contractor local optimization</li>
-                            <li>Emergency service visibility</li>
-                            <li>Service area mapping</li>
-                            <li>Before/after photo optimization</li>
-                        </ul>
-                    </div>
-
-                </div>
-            </div>
-        </section>
-
-        <!-- Local SEO Tools -->
-        <section class="local-seo-tools">
-            <div class="section-content">
-                <h2>Local SEO Tools & Technologies</h2>
-                <div class="tools-grid">
-                    
-                    <div class="tool-category">
-                        <h3>Ranking & Visibility</h3>
-                        <ul class="tool-list">
-                            <li>BrightLocal ranking tracking</li>
-                            <li>Local Falcon grid tracking</li>
-                            <li>Google My Business insights</li>
-                            <li>Local SERP monitoring</li>
-                        </ul>
-                    </div>
-
-                    <div class="tool-category">
-                        <h3>Citation Management</h3>
-                        <ul class="tool-list">
-                            <li>Yext business listings</li>
-                            <li>Moz Local management</li>
-                            <li>Local citation auditing</li>
-                            <li>NAP consistency monitoring</li>
-                        </ul>
-                    </div>
-
-                    <div class="tool-category">
-                        <h3>Review Management</h3>
-                        <ul class="tool-list">
-                            <li>ReviewTrackers monitoring</li>
-                            <li>Podium messaging</li>
-                            <li>Google review automation</li>
-                            <li>Reputation management dashboards</li>
-                        </ul>
-                    </div>
-
-                </div>
-            </div>
-        </section>
+        </section>  
 
         <!-- Local SEO Testimonial -->
         <section class="local-seo-testimonial">

@@ -41,24 +41,19 @@ get_header(); ?>
                     </div>
                 </div>
             </div>
-        </section>
-
-        <!-- Automotive Services -->
+        </section>        <!-- Automotive Services -->
         <section class="automotive-services">
             <div class="section-content">
                 <h2>Our Automotive Marketing Services</h2>
-                <div class="services-grid">
-                    
-                    <div class="service-card">
-                        <div class="service-icon">
-                            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M21 21L16.514 16.506M19 10.5C19 15.194 15.194 19 10.5 19C5.806 19 2 15.194 2 10.5C2 5.806 5.806 2 10.5 2C15.194 2 19 5.806 19 10.5Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                            </svg>
+                <div class="benefits-grid-2x2">
+                      <div class="benefit-card">
+                        <div class="benefit-icon">
+                            <i class="fas fa-map-marker-alt"></i>
                         </div>
-                        <div class="service-content">
+                        <div class="benefit-content">
                             <h3>Local SEO for Dealerships</h3>
                             <p>Dominate local search results when customers search for "car dealerships near me" or specific vehicle models in your area.</p>
-                            <ul class="service-features">
+                            <ul class="feature-list">
                                 <li>Google My Business optimization</li>
                                 <li>Local directory listings</li>
                                 <li>Location-based keyword targeting</li>
@@ -67,18 +62,14 @@ get_header(); ?>
                         </div>
                     </div>
 
-                    <div class="service-card">
-                        <div class="service-icon">
-                            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M7 17C8.10457 17 9 16.1046 9 15C9 13.8954 8.10457 13 7 13C5.89543 13 5 13.8954 5 15C5 16.1046 5.89543 17 7 17Z" stroke="currentColor" stroke-width="2"/>
-                                <path d="M17 17C18.1046 17 19 16.1046 19 15C19 13.8954 18.1046 13 17 13C15.8954 13 15 13.8954 15 15C15 16.1046 15.8954 17 17 17Z" stroke="currentColor" stroke-width="2"/>
-                                <path d="M5 15H15M19 15H20.5C21.3284 15 22 14.3284 22 13.5V11L19.5 8.5H16.5L15 11V15M5 15V11L6.5 8.5H9.5L11 11V15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                            </svg>
+                    <div class="benefit-card">
+                        <div class="benefit-icon">
+                            <i class="fas fa-car"></i>
                         </div>
-                        <div class="service-content">
+                        <div class="benefit-content">
                             <h3>Vehicle Inventory Marketing</h3>
                             <p>Showcase your inventory with dynamic advertising that automatically promotes your available vehicles to interested buyers.</p>
-                            <ul class="service-features">
+                            <ul class="feature-list">
                                 <li>Dynamic vehicle ads on Google</li>
                                 <li>Facebook vehicle showcase campaigns</li>
                                 <li>Inventory-based remarketing</li>
@@ -87,17 +78,14 @@ get_header(); ?>
                         </div>
                     </div>
 
-                    <div class="service-card">
-                        <div class="service-icon">
-                            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M17.5 19H9C7.89543 19 7 18.1046 7 17V7C7 5.89543 7.89543 5 9 5H17.5C18.6046 5 19.5 5.89543 19.5 7V17C19.5 18.1046 18.6046 19 17.5 19Z" stroke="currentColor" stroke-width="2"/>
-                                <path d="M12 15L16 11L12 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                            </svg>
+                    <div class="benefit-card">
+                        <div class="benefit-icon">
+                            <i class="fas fa-wrench"></i>
                         </div>
-                        <div class="service-content">
+                        <div class="benefit-content">
                             <h3>Service Department Marketing</h3>
                             <p>Drive consistent revenue with targeted campaigns for oil changes, tire rotations, and major automotive services.</p>
-                            <ul class="service-features">
+                            <ul class="feature-list">
                                 <li>Service appointment booking campaigns</li>
                                 <li>Maintenance reminder automation</li>
                                 <li>Seasonal service promotions</li>
@@ -106,18 +94,14 @@ get_header(); ?>
                         </div>
                     </div>
 
-                    <div class="service-card">
-                        <div class="service-icon">
-                            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                <path d="M2 17L12 22L22 17" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                <path d="M2 12L12 17L22 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                            </svg>
+                    <div class="benefit-card">
+                        <div class="benefit-icon">
+                            <i class="fas fa-chart-line"></i>
                         </div>
-                        <div class="service-content">
+                        <div class="benefit-content">
                             <h3>Lead Generation Campaigns</h3>
                             <p>Generate high-quality leads for sales and service departments with targeted PPC campaigns and conversion optimization.</p>
-                            <ul class="service-features">
+                            <ul class="feature-list">
                                 <li>Google Ads for automotive</li>
                                 <li>Facebook lead generation</li>
                                 <li>Trade-in value campaigns</li>
@@ -285,10 +269,8 @@ get_header(); ?>
                     </div>
                 </div>
             </div>
-        </section>
-
-        <!-- CTA Section -->
-        <section class="automotive-cta">
+        </section>        <!-- CTA Section -->
+        <section class="automotive-cta text-center">
             <div class="section-content">
                 <h2>Ready to Accelerate Your Automotive Marketing?</h2>
                 <p>Let's discuss how our automotive marketing expertise can drive more qualified leads to your dealership.</p>

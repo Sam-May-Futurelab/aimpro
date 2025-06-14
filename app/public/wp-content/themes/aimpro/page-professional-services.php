@@ -271,8 +271,7 @@ get_header(); ?>
             </div>
         </section>
 
-        <!-- CTA Section -->
-        <section class="professional-cta">
+        <!-- CTA Section -->        <section class="professional-cta text-center">
             <div class="section-content">
                 <h2>Ready to Elevate Your Professional Practice?</h2>
                 <p>Let's discuss how our professional services marketing expertise can generate high-quality leads for your firm.</p>

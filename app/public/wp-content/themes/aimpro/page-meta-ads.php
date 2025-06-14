@@ -155,10 +155,8 @@ get_header(); ?>
                         </div>
                         <div class="result-item">
                             <div class="result-number">450%</div>
-                            <div class="result-label">Qualified Traffic Increase</div>
-                        </div>
+                            <div class="result-label">Qualified Traffic Increase</div>                        </div>
                     </div>
-                    <p class="results-summary">Within 6 months, the client achieved their highest revenue month in company history while maintaining profitable ad spend ratios.</p>
                 </div>
             </div>
         </div>
@@ -357,9 +355,7 @@ get_header(); ?>
                 </div>
             </div>
         </div>
-    </section>
-
-    <!-- Testimonial Section -->
+    </section>    <!-- Testimonial Section -->
     <section class="testimonial-section">
         <div class="container">
             <div class="testimonial-content">
@@ -372,15 +368,21 @@ get_header(); ?>
                 </cite>
             </div>
         </div>
-    </section>    <!-- CTA Section -->
-    <section class="simple-cta-section">
+    </section>    
+    
+    <!-- CTA Section -->
+    <section class="meta-ads-cta text-center">
         <div class="section-content">
-            <div class="simple-cta-content">
-                <h2>Ready to Maximize Your Meta Advertising ROI?</h2>
-                <p>Let our Meta Ads specialists create campaigns that connect with your ideal customers and drive measurable results. Get started with a free strategy consultation.</p>
-                <div class="simple-cta-buttons">
-                    <a href="<?php echo home_url('/contact'); ?>" class="btn btn-primary">Start Your Campaign</a>
-                </div>
+            <h2>Ready to Build Your High-Converting Website?</h2>
+            <p>Get a free website audit and consultation. We'll analyze your current site and show you exactly how to improve conversions and performance.</p>
+            <div class="cta-buttons">
+                <a href="<?php echo home_url('/contact'); ?>" class="btn btn-primary">Get Free Website Audit</a>
+                <a href="<?php echo home_url('/services'); ?>" class="btn btn-secondary">View All Services</a>
+            </div>
+            <div class="cta-benefits">
+                <span class="benefit">✓ Free design consultation</span>
+                <span class="benefit">✓ Performance analysis included</span>
+                <span class="benefit">✓ No obligation quote</span>
             </div>
         </div>
     </section>

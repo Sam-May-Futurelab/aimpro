@@ -370,10 +370,8 @@ get_header(); ?>
                     </div>
                 </div>
             </div>
-        </section>
-
-        <!-- CTA Section -->
-        <section class="website-cta">
+        </section>        <!-- CTA Section -->
+        <section class="website-cta text-center">
             <div class="section-content">
                 <h2>Ready to Build a High-Converting Website?</h2>
                 <p>Let's create a website that not only looks great but converts visitors into customers at a higher rate.</p>
