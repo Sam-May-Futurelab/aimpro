@@ -6,7 +6,7 @@
 
 get_header(); ?>
 
-<main id="main" class="main-content">
+<main id="main" class="main-content seo-service-page">
     <div class="container">
         
         <!-- Page Header -->

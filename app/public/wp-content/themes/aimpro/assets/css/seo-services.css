@@ -1,0 +1,653 @@
+/* 
+ * SEO Services Styling
+ * For Aimpro Digital Theme - Covers Local SEO, SEO Audit, Technical SEO, On-page SEO, and White Label SEO
+ */
+
+/* Common section styling for SEO service pages */
+.seo-service-page section,
+.audit-components,
+.audit-report,
+.audit-process,
+.audit-case-study,
+.seo-audit-overview,
+.local-ranking-factors {
+    padding: 60px 0;
+}
+
+.seo-service-page .section-header,
+.audit-components h2,
+.audit-report h2,
+.audit-process h2,
+.local-ranking-factors h3 {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto 40px;
+}
+
+.seo-service-page .section-header h2,
+.audit-components h2,
+.audit-report h2,
+.audit-process h2 {
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 15px;
+    color: #1e293b;
+}
+
+.seo-service-page .section-header p {
+    font-size: 18px;
+    line-height: 1.6;
+    color: #64748b;
+}
+
+/* SEO Audit Overview Section */
+.seo-audit-overview .overview-content {
+    display: flex;
+    gap: 40px;
+    align-items: center;
+}
+
+.seo-audit-overview .overview-text {
+    flex: 1;
+}
+
+.seo-audit-overview .overview-image {
+    flex: 1;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.seo-audit-overview .overview-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.seo-audit-overview h2 {
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    color: #1e293b;
+}
+
+.seo-audit-overview p {
+    font-size: 18px;
+    line-height: 1.6;
+    color: #64748b;
+    margin-bottom: 30px;
+}
+
+.audit-benefits {
+    background: #f8fafc;
+    border-radius: 12px;
+    padding: 25px;
+    margin-top: 30px;
+}
+
+.audit-benefits h3 {
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 15px;
+    color: #1e293b;
+}
+
+.audit-benefits ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px 20px;
+}
+
+.audit-benefits ul li {
+    position: relative;
+    padding-left: 22px;
+    color: #334155;
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+.audit-benefits ul li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: #F15A25;
+    font-weight: 600;
+}
+
+/* SEO Audit Components Grid */
+.components-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.component-card {
+    background: #ffffff;
+    border-radius: 12px;
+    padding: 30px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.component-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.component-card.featured {
+    border-top: 4px solid #F15A25;
+}
+
+.component-icon {
+    width: 60px;
+    height: 60px;
+    background: rgba(241, 90, 37, 0.1);
+    color: #F15A25;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.component-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.component-content h3 {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 15px;
+    color: #1e293b;
+    position: relative;
+}
+
+.component-content p {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #64748b;
+    margin-bottom: 20px;
+}
+
+.component-features {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    flex: 1;
+}
+
+.component-features li {
+    position: relative;
+    padding-left: 22px;
+    margin-bottom: 10px;
+    color: #334155;
+    font-size: 15px;
+    line-height: 1.5;
+}
+
+.component-features li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: #F15A25;
+    font-weight: 600;
+}
+
+/* SEO Audit Report Features */
+.audit-report {
+    background: #f8fafc;
+}
+
+.report-features {
+    display: flex;
+    gap: 40px;
+    margin-top: 40px;
+}
+
+.report-col {
+    flex: 1;
+}
+
+.report-image {
+    flex: 1;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.report-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 12px;
+}
+
+.report-sections {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.report-section {
+    background: #ffffff;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.report-section h4 {
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 8px;
+    color: #1e293b;
+}
+
+.report-section p {
+    font-size: 15px;
+    line-height: 1.5;
+    color: #64748b;
+    margin: 0;
+}
+
+/* Audit Process Steps */
+.process-steps {
+    margin-top: 50px;
+    position: relative;
+}
+
+.process-step {
+    display: flex;
+    gap: 30px;
+    margin-bottom: 40px;
+    position: relative;
+}
+
+.process-step:last-child {
+    margin-bottom: 0;
+}
+
+.process-step::after {
+    content: '';
+    position: absolute;
+    top: 50px;
+    left: 20px;
+    bottom: -40px;
+    width: 2px;
+    background: rgba(241, 90, 37, 0.2);
+}
+
+.process-step:last-child::after {
+    display: none;
+}
+
+.step-number {
+    width: 40px;
+    height: 40px;
+    background: #F15A25;
+    border-radius: 50%;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 18px;
+    flex-shrink: 0;
+    position: relative;
+    z-index: 2;
+}
+
+.step-content {
+    flex: 1;
+}
+
+.step-content h3 {
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 10px;
+    color: #1e293b;
+}
+
+.step-content p {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #64748b;
+    margin-bottom: 10px;
+}
+
+.step-duration {
+    display: inline-block;
+    padding: 5px 12px;
+    background: rgba(241, 90, 37, 0.1);
+    color: #F15A25;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+/* Audit Case Study Section */
+.audit-case-study {
+    background: #f8fafc;
+}
+
+.case-study-content {
+    display: flex;
+    gap: 40px;
+    align-items: center;
+}
+
+.case-study-text {
+    flex: 1;
+}
+
+.case-study-results {
+    flex: 1;
+    background: #ffffff;
+    border-radius: 12px;
+    padding: 30px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.case-study-label {
+    display: inline-block;
+    padding: 5px 12px;
+    background: rgba(241, 90, 37, 0.1);
+    color: #F15A25;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+.case-study-text h2 {
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    color: #1e293b;
+    text-align: left;
+}
+
+.case-study-text p {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #64748b;
+    margin-bottom: 30px;
+}
+
+.case-study-challenge, 
+.case-study-solution {
+    margin-bottom: 25px;
+}
+
+.case-study-challenge h3, 
+.case-study-solution h3 {
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 15px;
+    color: #1e293b;
+}
+
+.case-study-challenge ul, 
+.case-study-solution ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.case-study-challenge ul li, 
+.case-study-solution ul li {
+    position: relative;
+    padding-left: 22px;
+    margin-bottom: 10px;
+    color: #334155;
+    font-size: 15px;
+    line-height: 1.5;
+}
+
+.case-study-challenge ul li::before {
+    content: '⚠';
+    position: absolute;
+    left: 0;
+    color: #f59e0b;
+    font-weight: 600;
+}
+
+.case-study-solution ul li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: #10b981;
+    font-weight: 600;
+}
+
+.results-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.result-item {
+    text-align: center;
+    padding: 20px;
+    background: #f8fafc;
+    border-radius: 10px;
+}
+
+.result-number {
+    font-size: 36px;
+    font-weight: 800;
+    color: #F15A25;
+    margin-bottom: 5px;
+}
+
+.result-label {
+    font-size: 14px;
+    color: #64748b;
+    font-weight: 500;
+}
+
+/* Pricing Section */
+.audit-pricing {
+    padding: 60px 0;
+}
+
+.pricing-options {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.pricing-card {
+    background: #ffffff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.pricing-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.pricing-header {
+    background: rgba(241, 90, 37, 0.1);
+    padding: 25px;
+    text-align: center;
+}
+
+.pricing-header h3 {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 10px;
+    color: #1e293b;
+}
+
+.pricing-price {
+    font-size: 36px;
+    font-weight: 800;
+    color: #F15A25;
+}
+
+.pricing-period {
+    font-size: 14px;
+    color: #64748b;
+}
+
+.pricing-features {
+    padding: 25px;
+}
+
+.pricing-features ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.pricing-features ul li {
+    position: relative;
+    padding-left: 22px;
+    margin-bottom: 15px;
+    color: #334155;
+    font-size: 15px;
+    line-height: 1.5;
+}
+
+.pricing-features ul li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: #F15A25;
+    font-weight: 600;
+}
+
+.pricing-cta {
+    padding: 0 25px 25px;
+    text-align: center;
+}
+
+.pricing-cta .btn {
+    display: inline-block;
+    background: #F15A25;
+    color: white;
+    border-radius: 8px;
+    padding: 12px 25px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    width: 100%;
+}
+
+.pricing-cta .btn:hover {
+    background: #e44c1c;
+    transform: translateY(-2px);
+}
+
+/* Local SEO Specific Styles */
+.local-ranking-factors {
+    background: #f8fafc;
+    border-radius: 12px;
+    padding: 40px;
+    margin-top: 50px;
+}
+
+.local-ranking-factors h3 {
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 25px;
+    color: #1e293b;
+    text-align: center;
+}
+
+.ranking-factors-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.ranking-factor-item {
+    background: #ffffff;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    display: flex;
+    align-items: flex-start;
+}
+
+.ranking-factor-icon {
+    flex: 0 0 40px;
+    height: 40px;
+    background: rgba(241, 90, 37, 0.1);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #F15A25;
+    font-size: 18px;
+    margin-right: 15px;
+}
+
+.ranking-factor-content {
+    flex: 1;
+}
+
+.ranking-factor-content h4 {
+    font-size: 17px;
+    font-weight: 700;
+    margin-bottom: 5px;
+    color: #1e293b;
+}
+
+.ranking-factor-content p {
+    font-size: 14px;
+    line-height: 1.5;
+    color: #64748b;
+    margin: 0;
+}
+
+/* Responsive Styles */
+@media (max-width: 1024px) {
+    .components-grid,
+    .pricing-options {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .ranking-factors-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .audit-benefits ul {
+        grid-template-columns: 1fr;
+    }
+    
+    .seo-audit-overview .overview-content,
+    .case-study-content {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 768px) {
+    .components-grid,
+    .pricing-options,
+    .ranking-factors-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .report-features {
+        flex-direction: column;
+    }
+    
+    .report-sections {
+        grid-template-columns: 1fr;
+    }
+}
