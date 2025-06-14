@@ -1285,3 +1285,181 @@
     background-color: rgba(255, 255, 255, 0.15);
     color: white !important;
 }
+
+/* Funnel Automation Packages Grid Fix */
+.packages-section {
+    padding: 80px 0;
+    background: var(--bg-alt, #f8fafc);
+}
+
+.packages-section h2 {
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 36px;
+    font-weight: 700;
+    color: var(--text-primary, #1a1a1a);
+}
+
+.packages-grid {
+    display: grid !important;
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 30px !important;
+    margin-top: 40px !important;
+}
+
+.package-item {
+    background: white !important;
+    border-radius: 16px !important;
+    box-shadow: 0 5px 30px rgba(0, 0, 0, 0.05) !important;
+    overflow: hidden !important;
+    transition: transform 0.3s ease, box-shadow 0.3s ease !important;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.package-item:hover {
+    transform: translateY(-5px) !important;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1) !important;
+}
+
+.package-item.featured {
+    border: 2px solid var(--primary-orange, #F15A25) !important;
+    transform: scale(1.03) !important;
+    z-index: 2;
+}
+
+.package-item.featured:hover {
+    transform: translateY(-5px) scale(1.03) !important;
+}
+
+.package-badge {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: var(--primary-orange, #F15A25);
+    color: white;
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.package-header {
+    padding: 30px 25px 20px;
+    text-align: center;
+    border-bottom: 1px solid var(--border-color, #e5e7eb);
+}
+
+.package-header h3 {
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 15px;
+    color: var(--text-primary, #1a1a1a);
+}
+
+.package-price {
+    font-size: 32px;
+    font-weight: 800;
+    color: var(--primary-orange, #F15A25);
+}
+
+.package-features {
+    padding: 25px;
+    flex-grow: 1;
+}
+
+.package-features ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.package-features ul li {
+    padding: 10px 0;
+    position: relative;
+    padding-left: 25px;
+    color: var(--text-secondary, #64748b);
+}
+
+.package-features ul li::before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: var(--primary-orange, #F15A25);
+    font-weight: bold;
+}
+
+.package-cta {
+    padding: 0 25px 30px;
+    text-align: center;
+}
+
+.package-cta .btn-primary,
+.package-cta .btn-outline {
+    display: inline-block;
+    padding: 12px 30px;
+    border-radius: 8px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    width: 100%;
+}
+
+.package-cta .btn-primary {
+    background: var(--primary-orange, #F15A25);
+    color: white;
+    border: none;
+}
+
+.package-cta .btn-primary:hover {
+    background: var(--primary-orange-dark, #e04f1b);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(241, 90, 37, 0.3);
+}
+
+.package-cta .btn-outline {
+    background: transparent;
+    color: var(--primary-orange, #F15A25);
+    border: 2px solid var(--primary-orange, #F15A25);
+}
+
+.package-cta .btn-outline:hover {
+    background: rgba(241, 90, 37, 0.05);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(241, 90, 37, 0.1);
+}
+
+/* Responsive styling for packages */
+@media (max-width: 1024px) {
+    .packages-grid {
+        grid-template-columns: repeat(3, 1fr) !important;
+        gap: 20px !important;
+    }
+    
+    .package-header h3 {
+        font-size: 20px;
+    }
+    
+    .package-price {
+        font-size: 28px;
+    }
+}
+
+@media (max-width: 768px) {
+    .packages-grid {
+        grid-template-columns: 1fr !important;
+        max-width: 500px !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+    }
+    
+    .package-item.featured {
+        transform: scale(1) !important;
+    }
+    
+    .package-item.featured:hover {
+        transform: translateY(-5px) scale(1) !important;
+    }
+}
