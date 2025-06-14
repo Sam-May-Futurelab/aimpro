@@ -400,21 +400,21 @@ get_header(); ?>
                     </div>
                 </div>
             </div>
-        </section>
-
-        <!-- CTA Section -->
-        <section class="technical-seo-cta">
-            <div class="section-content">
-                <h2>Ready to Fix Your Technical SEO Issues?</h2>
-                <p>Let's optimize your website's technical foundation for better search performance and user experience.</p>
-                <div class="cta-buttons">
-                    <a href="<?php echo home_url('/contact'); ?>" class="btn btn-primary">Get Free Technical Audit</a>
-                    <a href="<?php echo home_url('/case-studies'); ?>" class="btn btn-secondary">View Technical SEO Results</a>
-                </div>
-                <div class="cta-benefits">
-                    <span class="benefit">✓ Technical SEO audit included</span>
-                    <span class="benefit">✓ Core Web Vitals optimization</span>
-                    <span class="benefit">✓ Site speed improvements</span>
+        </section>        <!-- CTA Section -->
+        <section id="contact" class="cta-section">
+            <div class="container">
+                <div class="cta-content">
+                    <h2>Ready to Fix Your Technical SEO Issues?</h2>
+                    <p>Let's optimize your website's technical foundation for better search performance and user experience.</p>
+                    <div class="cta-buttons">
+                        <a href="<?php echo home_url('/contact'); ?>" class="btn-primary">Get Free Technical Audit</a>
+                        <a href="<?php echo home_url('/case-studies'); ?>" class="btn-outline">View Technical SEO Results</a>
+                    </div>
+                    <div class="cta-features">
+                        <span class="feature-check">✓ Technical SEO audit included</span>
+                        <span class="feature-check">✓ Core Web Vitals optimization</span>
+                        <span class="feature-check">✓ Site speed improvements</span>
+                    </div>
                 </div>
             </div>
         </section>
