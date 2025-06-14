@@ -2432,3 +2432,148 @@
     margin: 0;
     font-size: 15px;
 }
+
+/* Industries Page Styling */
+.industries-page {
+    --primary-orange: #F15A25;
+}
+
+/* Success Stats Section */
+.industries-page .success-stats {
+    display: grid !important;
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 40px !important;
+    margin-top: 40px !important;
+    text-align: center;
+}
+
+@media (max-width: 768px) {
+    .industries-page .success-stats {
+        grid-template-columns: 1fr !important;
+        gap: 30px !important;
+    }
+}
+
+.industries-page .stat-item {
+    background: white !important;
+    padding: 40px 20px !important;
+    border-radius: 16px !important;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05) !important;
+    transition: transform 0.3s ease, box-shadow 0.3s ease !important;
+    border: 1px solid rgba(241, 90, 37, 0.1) !important;
+}
+
+.industries-page .stat-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+}
+
+.industries-page .stat-number {
+    font-size: 48px !important;
+    font-weight: 700 !important;
+    color: var(--primary-orange, #F15A25) !important;
+    margin-bottom: 10px !important;
+    line-height: 1;
+}
+
+.industries-page .stat-label {
+    font-size: 16px !important;
+    color: var(--text-secondary, #64748b) !important;
+    font-weight: 500;
+    line-height: 1.4;
+}
+
+/* Service items with emoji icons enhancement */
+.industries-page .service-item .service-icon span {
+    font-size: 32px;
+    display: block;
+    text-align: center;
+}
+
+/* Industry Testimonials Enhancement */
+.industries-page .industry-testimonials {
+    padding: 80px 0;
+    background: #f8fafc;
+}
+
+.industries-page .industry-testimonials h2 {
+    text-align: center;
+    margin-bottom: 50px;
+    font-size: 36px;
+    color: var(--text-primary, #1a1a1a);
+}
+
+.industries-page .testimonials-grid {
+    display: grid !important;
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 30px !important;
+}
+
+@media (max-width: 1024px) {
+    .industries-page .testimonials-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+    }
+}
+
+@media (max-width: 768px) {
+    .industries-page .testimonials-grid {
+        grid-template-columns: 1fr !important;
+    }
+}
+
+.industries-page .testimonial-card {
+    background: white !important;
+    padding: 30px !important;
+    border-radius: 16px !important;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05) !important;
+    transition: transform 0.3s ease, box-shadow 0.3s ease !important;
+}
+
+.industries-page .testimonial-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+}
+
+.industries-page .testimonial-content p {
+    font-style: italic;
+    color: var(--text-secondary, #64748b);
+    line-height: 1.6;
+    margin-bottom: 25px;
+    font-size: 16px;
+}
+
+.industries-page .testimonial-author {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.industries-page .testimonial-author img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.industries-page .author-info h4 {
+    font-size: 18px;
+    color: var(--text-primary, #1a1a1a);
+    margin-bottom: 5px;
+}
+
+.industries-page .author-info span {
+    font-size: 14px;
+    color: var(--text-secondary, #64748b);
+    display: block;
+    margin-bottom: 5px;
+}
+
+.industries-page .industry-tag {
+    display: inline-block;
+    background: rgba(241, 90, 37, 0.1);
+    color: var(--primary-orange, #F15A25);
+    padding: 4px 8px;
+    border-radius: 12px;
+    font-size: 12px;
+    font-weight: 500;
+}

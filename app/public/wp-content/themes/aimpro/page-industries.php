@@ -39,241 +39,185 @@ get_header(); ?>
                     </div>
                 </div>
             </div>
-        </section>
-
-        <!-- Industries Grid -->
-        <section class="industries-grid">
-            <div class="section-content">
-                <h2>Our Industry Expertise</h2>
-                <div class="industry-categories">
-                    
-                    <!-- Automotive -->
-                    <div class="industry-card">
-                        <div class="industry-icon">
-                            <svg width="64" height="64" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M7 17C8.10457 17 9 16.1046 9 15C9 13.8954 8.10457 13 7 13C5.89543 13 5 13.8954 5 15C5 16.1046 5.89543 17 7 17Z" stroke="currentColor" stroke-width="2"/>
-                                <path d="M17 17C18.1046 17 19 16.1046 19 15C19 13.8954 18.1046 13 17 13C15.8954 13 15 13.8954 15 15C15 16.1046 15.8954 17 17 17Z" stroke="currentColor" stroke-width="2"/>
-                                <path d="M5 15H15M19 15H20.5C21.3284 15 22 14.3284 22 13.5V11L19.5 8.5H16.5L15 11V15M5 15V11L6.5 8.5H9.5L11 11V15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                            </svg>
+        </section>        <!-- Industries Grid -->
+        <section class="service-overview">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Our Industry Expertise</h2>
+                    <p>Specialized digital marketing solutions tailored to your industry's unique challenges and opportunities.</p>
+                </div>
+                <div class="services-grid">
+                      <!-- Automotive -->
+                    <div class="service-item">
+                        <div class="service-icon">
+                            <i class="fas fa-car"></i>
                         </div>
-                        <div class="industry-content">
-                            <h3>Automotive</h3>
-                            <p>Drive qualified leads to your dealership or automotive service center with targeted digital strategies that reach car buyers at every stage of their journey.</p>
-                            <ul class="industry-highlights">
-                                <li>Vehicle inventory marketing</li>
-                                <li>Service department promotion</li>
-                                <li>Local SEO for dealerships</li>
-                                <li>Lead generation campaigns</li>
-                            </ul>
-                            <div class="industry-results">
-                                <span class="result-stat">↗ 180% more qualified leads</span>
-                            </div>
-                            <a href="<?php echo home_url('/automotive'); ?>" class="industry-cta">Learn More</a>
-                        </div>
-                    </div>
+                        <h3>Automotive</h3>
+                        <p>Drive qualified leads to your dealership or automotive service center with targeted digital strategies that reach car buyers at every stage of their journey.</p>
+                        <ul class="service-features">
+                            <li>Vehicle inventory marketing</li>
+                            <li>Service department promotion</li>
+                            <li>Local SEO for dealerships</li>
+                            <li>Lead generation campaigns</li>
+                        </ul>
+                        <a href="<?php echo home_url('/automotive'); ?>" class="service-link">Learn More</a>                    </div>
 
                     <!-- Home & Garden -->
-                    <div class="industry-card">
-                        <div class="industry-icon">
-                            <svg width="64" height="64" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M3 21L12 12L21 21H3Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                <path d="M9 21V16C9 15.4477 9.44772 15 10 15H14C14.5523 15 15 15.4477 15 16V21" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                <path d="M12 3V12M8 7L12 3L16 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                            </svg>
+                    <div class="service-item">
+                        <div class="service-icon">
+                            <i class="fas fa-home"></i>
                         </div>
-                        <div class="industry-content">
-                            <h3>Home & Garden</h3>
-                            <p>Grow your home improvement, landscaping, or garden center business with seasonal campaigns and local marketing strategies that capture homeowner intent.</p>
-                            <ul class="industry-highlights">
-                                <li>Seasonal campaign optimization</li>
-                                <li>Before/after showcase content</li>
-                                <li>Local service area targeting</li>
-                                <li>Pinterest and visual marketing</li>
-                            </ul>
-                            <div class="industry-results">
-                                <span class="result-stat">↗ 220% seasonal revenue boost</span>
-                            </div>
-                            <a href="<?php echo home_url('/home-garden'); ?>" class="industry-cta">Learn More</a>
-                        </div>
+                        <h3>Home & Garden</h3>
+                        <p>Grow your home improvement, landscaping, or garden center business with seasonal campaigns and local marketing strategies that capture homeowner intent.</p>
+                        <ul class="service-features">
+                            <li>Seasonal campaign optimization</li>
+                            <li>Before/after showcase content</li>
+                            <li>Local service area targeting</li>
+                            <li>Pinterest and visual marketing</li>
+                        </ul>
+                        <a href="<?php echo home_url('/home-garden'); ?>" class="service-link">Learn More</a>
                     </div>
 
                     <!-- Finance -->
-                    <div class="industry-card">
-                        <div class="industry-icon">
-                            <svg width="64" height="64" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                <path d="M2 17L12 22L22 17" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                <path d="M2 12L12 17L22 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                            </svg>
+                    <div class="service-item">
+                        <div class="service-icon">
+                            <i class="fas fa-chart-line"></i>
                         </div>
-                        <div class="industry-content">
-                            <h3>Finance</h3>
-                            <p>Build trust and generate high-value leads for financial services with compliant, educational content marketing and targeted advertising strategies.</p>
-                            <ul class="industry-highlights">
-                                <li>Regulatory compliant campaigns</li>
-                                <li>Educational content marketing</li>
-                                <li>Trust-building strategies</li>
-                                <li>High-value lead generation</li>
-                            </ul>
-                            <div class="industry-results">
-                                <span class="result-stat">↗ 150% qualified leads increase</span>
-                            </div>
-                            <a href="<?php echo home_url('/finance'); ?>" class="industry-cta">Learn More</a>
-                        </div>
+                        <h3>Finance</h3>
+                        <p>Build trust and generate high-value leads for financial services with compliant, educational content marketing and targeted advertising strategies.</p>
+                        <ul class="service-features">
+                            <li>Regulatory compliant campaigns</li>
+                            <li>Educational content marketing</li>
+                            <li>Trust-building strategies</li>
+                            <li>High-value lead generation</li>
+                        </ul>
+                        <a href="<?php echo home_url('/finance'); ?>" class="service-link">Learn More</a>
+                    </div><div class="service-item">
+                    <div class="service-icon">
+                        <svg width="64" height="64" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M20 21V19C20 17.9391 19.5786 16.9217 18.8284 16.1716C18.0783 15.4214 17.0609 15 16 15H8C6.93913 15 5.92172 15.4214 5.17157 16.1716C4.42143 16.9217 4 17.9391 4 19V21" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M12 11C14.2091 11 16 9.20914 16 7C16 4.79086 14.2091 3 12 3C9.79086 3 8 4.79086 8 7C8 9.20914 9.79086 11 12 11Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
                     </div>
-
-                    <!-- Professional Services -->
-                    <div class="industry-card">
-                        <div class="industry-icon">
-                            <svg width="64" height="64" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M20 21V19C20 17.9391 19.5786 16.9217 18.8284 16.1716C18.0783 15.4214 17.0609 15 16 15H8C6.93913 15 5.92172 15.4214 5.17157 16.1716C4.42143 16.9217 4 17.9391 4 19V21" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                <path d="M12 11C14.2091 11 16 9.20914 16 7C16 4.79086 14.2091 3 12 3C9.79086 3 8 4.79086 8 7C8 9.20914 9.79086 11 12 11Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                            </svg>
-                        </div>
-                        <div class="industry-content">
-                            <h3>Professional Services</h3>
-                            <p>Establish thought leadership and attract ideal clients for your law firm, accounting practice, or consulting business with strategic content and SEO.</p>
-                            <ul class="industry-highlights">
-                                <li>Thought leadership content</li>
-                                <li>Professional networking</li>
-                                <li>Expertise-based SEO</li>
-                                <li>Client testimonial campaigns</li>
-                            </ul>
-                            <div class="industry-results">
-                                <span class="result-stat">↗ 200% consultation bookings</span>
-                            </div>
-                            <a href="<?php echo home_url('/professional-services'); ?>" class="industry-cta">Learn More</a>
-                        </div>
+                    <h3>Professional Services</h3>
+                    <p>Establish thought leadership and attract ideal clients for your law firm, accounting practice, or consulting business with strategic content and SEO.</p>
+                    <ul class="service-features">
+                        <li>Thought leadership content</li>
+                        <li>Professional networking</li>
+                        <li>Expertise-based SEO</li>
+                        <li>Client testimonial campaigns</li>
+                    </ul>
+                    <a href="<?php echo home_url('/professional-services'); ?>" class="service-link">Learn More</a>
+                </div>                <div class="service-item">
+                    <div class="service-icon">
+                        <svg width="64" height="64" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M3 9L12 2L21 9V20C21 20.5304 20.7893 21.0391 20.4142 21.4142C20.0391 21.7893 19.5304 22 19 22H5C4.46957 22 3.96086 21.7893 3.58579 21.4142C3.21071 21.0391 3 20.5304 3 20V9Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M9 22V12H15V22" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
                     </div>
-
-                    <!-- Estate Agents -->
-                    <div class="industry-card">
-                        <div class="industry-icon">
-                            <svg width="64" height="64" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M3 9L12 2L21 9V20C21 20.5304 20.7893 21.0391 20.4142 21.4142C20.0391 21.7893 19.5304 22 19 22H5C4.46957 22 3.96086 21.7893 3.58579 21.4142C3.21071 21.0391 3 20.5304 3 20V9Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                <path d="M9 22V12H15V22" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                            </svg>
-                        </div>
-                        <div class="industry-content">
-                            <h3>Estate Agents</h3>
-                            <p>Dominate your local property market with hyper-local SEO, stunning property showcases, and lead generation systems that convert browsers into buyers.</p>
-                            <ul class="industry-highlights">
-                                <li>Hyper-local SEO optimization</li>
-                                <li>Property showcase campaigns</li>
-                                <li>Virtual tour integration</li>
-                                <li>Buyer/seller lead generation</li>
-                            </ul>
-                            <div class="industry-results">
-                                <span class="result-stat">↗ 160% property inquiries</span>
-                            </div>
-                            <a href="<?php echo home_url('/estate-agents'); ?>" class="industry-cta">Learn More</a>
-                        </div>
+                    <h3>Estate Agents</h3>
+                    <p>Dominate your local property market with hyper-local SEO, stunning property showcases, and lead generation systems that convert browsers into buyers.</p>
+                    <ul class="service-features">
+                        <li>Hyper-local SEO optimization</li>
+                        <li>Property showcase campaigns</li>
+                        <li>Virtual tour integration</li>
+                        <li>Buyer/seller lead generation</li>
+                    </ul>
+                    <a href="<?php echo home_url('/estate-agents'); ?>" class="service-link">Learn More</a>
+                </div>                <div class="service-item">
+                    <div class="service-icon">
+                        <svg width="64" height="64" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M17 20H22V18C22 16.3431 20.6569 15 19 15C18.0444 15 17.1931 15.4468 16.6438 16.1429" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M9 12C11.2091 12 13 10.2091 13 8C13 5.79086 11.2091 4 9 4C6.79086 4 5 5.79086 5 8C5 10.2091 6.79086 12 9 12Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M15 8C15 9.65685 13.6569 11 12 11C10.3431 11 9 9.65685 9 8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M2 20H14V18C14 16.3431 12.6569 15 11 15H5C3.34315 15 2 16.3431 2 18V20Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
                     </div>
-
-                    <!-- Coaches & Consultants -->
-                    <div class="industry-card">
-                        <div class="industry-icon">
-                            <svg width="64" height="64" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M17 20H22V18C22 16.3431 20.6569 15 19 15C18.0444 15 17.1931 15.4468 16.6438 16.1429" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                <path d="M9 12C11.2091 12 13 10.2091 13 8C13 5.79086 11.2091 4 9 4C6.79086 4 5 5.79086 5 8C5 10.2091 6.79086 12 9 12Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                <path d="M15 8C15 9.65685 13.6569 11 12 11C10.3431 11 9 9.65685 9 8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                <path d="M2 20H14V18C14 16.3431 12.6569 15 11 15H5C3.34315 15 2 16.3431 2 18V20Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                            </svg>
-                        </div>
-                        <div class="industry-content">
-                            <h3>Coaches & Consultants</h3>
-                            <p>Build your personal brand and attract high-value clients with strategic content marketing, thought leadership, and conversion-optimized funnels.</p>
-                            <ul class="industry-highlights">
-                                <li>Personal brand development</li>
-                                <li>Content marketing funnels</li>
-                                <li>Speaking engagement promotion</li>
-                                <li>High-ticket service marketing</li>
-                            </ul>
-                            <div class="industry-results">
-                                <span class="result-stat">↗ 250% client acquisition</span>
-                            </div>
-                            <a href="<?php echo home_url('/coaches-consultants'); ?>" class="industry-cta">Learn More</a>
-                        </div>
+                    <h3>Coaches & Consultants</h3>
+                    <p>Build your personal brand and attract high-value clients with strategic content marketing, thought leadership, and conversion-optimized funnels.</p>
+                    <ul class="service-features">
+                        <li>Personal brand development</li>
+                        <li>Content marketing funnels</li>
+                        <li>Speaking engagement promotion</li>
+                        <li>High-ticket service marketing</li>
+                    </ul>
+                    <a href="<?php echo home_url('/coaches-consultants'); ?>" class="service-link">Learn More</a>
+                </div>                <div class="service-item">
+                    <div class="service-icon">
+                        <svg width="64" height="64" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M3 3H5L5.4 5M7 13H17L21 5H5.4M7 13L5.4 5M7 13L4.7 15.3C4.3 15.7 4.6 16.4 5.1 16.4H17M17 13V16.4M9 19.5C9.82843 19.5 10.5 20.1716 10.5 21C10.5 21.8284 9.82843 22.5 9 22.5C8.17157 22.5 7.5 21.8284 7.5 21C7.5 20.1716 8.17157 19.5 9 19.5Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M20 19.5C20.8284 19.5 21.5 20.1716 21.5 21C21.5 21.8284 20.8284 22.5 20 22.5C19.1716 22.5 18.5 21.8284 18.5 21C18.5 20.1716 19.1716 19.5 20 19.5Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
                     </div>
-
-                    <!-- E-commerce -->
-                    <div class="industry-card">
-                        <div class="industry-icon">
-                            <svg width="64" height="64" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M3 3H5L5.4 5M7 13H17L21 5H5.4M7 13L5.4 5M7 13L4.7 15.3C4.3 15.7 4.6 16.4 5.1 16.4H17M17 13V16.4M9 19.5C9.82843 19.5 10.5 20.1716 10.5 21C10.5 21.8284 9.82843 22.5 9 22.5C8.17157 22.5 7.5 21.8284 7.5 21C7.5 20.1716 8.17157 19.5 9 19.5Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                <path d="M20 19.5C20.8284 19.5 21.5 20.1716 21.5 21C21.5 21.8284 20.8284 22.5 20 22.5C19.1716 22.5 18.5 21.8284 18.5 21C18.5 20.1716 19.1716 19.5 20 19.5Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                            </svg>
-                        </div>
-                        <div class="industry-content">
-                            <h3>E-commerce</h3>
-                            <p>Maximize online sales and customer lifetime value with comprehensive e-commerce marketing including product feed optimization, remarketing, and conversion rate optimization.</p>
-                            <ul class="industry-highlights">
-                                <li>Shopping campaign optimization</li>
-                                <li>Product feed management</li>
-                                <li>Cart abandonment recovery</li>
-                                <li>Customer retention strategies</li>
-                            </ul>
-                            <div class="industry-results">
-                                <span class="result-stat">↗ 300% online revenue growth</span>
-                            </div>
-                            <a href="<?php echo home_url('/ecommerce'); ?>" class="industry-cta">Learn More</a>
-                        </div>
-                    </div>
-
+                    <h3>E-commerce</h3>
+                    <p>Maximize online sales and customer lifetime value with comprehensive e-commerce marketing including product feed optimization, remarketing, and conversion rate optimization.</p>
+                    <ul class="service-features">
+                        <li>Shopping campaign optimization</li>
+                        <li>Product feed management</li>
+                        <li>Cart abandonment recovery</li>
+                        <li>Customer retention strategies</li>
+                    </ul>
+                    <a href="<?php echo home_url('/ecommerce'); ?>" class="service-link">Learn More</a>
                 </div>
             </div>
-        </section>
-
-        <!-- Industry Success Stories -->
-        <section class="industry-success">
-            <div class="section-content">
-                <h2>Cross-Industry Success</h2>
-                <div class="success-showcase">
-                    <div class="success-item">
-                        <div class="success-number">400%</div>
-                        <div class="success-label">Average ROI increase across all industries</div>
+        </div>
+    </section>        <!-- Industry Success Stories -->
+        <section class="service-overview">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Cross-Industry Success</h2>
+                    <p>Delivering exceptional results across diverse industries and business sectors.</p>
+                </div>
+                <div class="success-stats">
+                    <div class="stat-item">
+                        <div class="stat-number">400%</div>
+                        <div class="stat-label">Average ROI increase across all industries</div>
                     </div>
-                    <div class="success-item">
-                        <div class="success-number">95%</div>
-                        <div class="success-label">Client retention rate</div>
+                    <div class="stat-item">
+                        <div class="stat-number">95%</div>
+                        <div class="stat-label">Client retention rate</div>
                     </div>
-                    <div class="success-item">
-                        <div class="success-number">£2.8M+</div>
-                        <div class="success-label">Revenue generated for clients</div>
+                    <div class="stat-item">
+                        <div class="stat-number">£2.8M+</div>
+                        <div class="stat-label">Revenue generated for clients</div>
                     </div>
                 </div>
             </div>
-        </section>
-
-        <!-- Why Industry Expertise Matters -->
-        <section class="industry-expertise">
-            <div class="section-content">
-                <div class="expertise-content">
-                    <div class="expertise-text">
-                        <h2>Why Industry Expertise Matters</h2>
-                        <p>Generic marketing approaches fail because they don't account for industry-specific customer behaviors, seasonal patterns, and regulatory requirements. Our deep industry knowledge enables us to:</p>
-                        
-                        <div class="expertise-benefits">
-                            <div class="benefit-item">
-                                <h3>🎯 Target the Right Audience</h3>
-                                <p>We understand your customer's journey, pain points, and decision-making process.</p>
-                            </div>
-                            <div class="benefit-item">
-                                <h3>📊 Leverage Industry Data</h3>
-                                <p>Access to sector-specific benchmarks, trends, and performance metrics.</p>
-                            </div>
-                            <div class="benefit-item">
-                                <h3>⚡ Faster Results</h3>
-                                <p>Pre-tested strategies and proven tactics that work in your specific market.</p>
-                            </div>
-                            <div class="benefit-item">
-                                <h3>🔒 Ensure Compliance</h3>
-                                <p>Navigate industry regulations and advertising guidelines with confidence.</p>
-                            </div>
+        </section>        <!-- Why Industry Expertise Matters -->
+        <section class="service-overview">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Why Industry Expertise Matters</h2>
+                    <p>Generic marketing approaches fail because they don't account for industry-specific customer behaviors, seasonal patterns, and regulatory requirements. Our deep industry knowledge enables us to:</p>
+                </div>
+                <div class="services-grid">
+                    <div class="service-item">
+                        <div class="service-icon">
+                            <span>🎯</span>
                         </div>
+                        <h3>Target the Right Audience</h3>
+                        <p>We understand your customer's journey, pain points, and decision-making process.</p>
                     </div>
-                    <div class="expertise-image">
-                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/industries/expertise-overview.jpg" alt="Industry Expertise" />
+                    <div class="service-item">
+                        <div class="service-icon">
+                            <span>📊</span>
+                        </div>
+                        <h3>Leverage Industry Data</h3>
+                        <p>Access to sector-specific benchmarks, trends, and performance metrics.</p>
+                    </div>
+                    <div class="service-item">
+                        <div class="service-icon">
+                            <span>⚡</span>
+                        </div>
+                        <h3>Faster Results</h3>
+                        <p>Pre-tested strategies and proven tactics that work in your specific market.</p>
+                    </div>
+                    <div class="service-item">
+                        <div class="service-icon">
+                            <span>🔒</span>
+                        </div>
+                        <h3>Ensure Compliance</h3>
+                        <p>Navigate industry regulations and advertising guidelines with confidence.</p>
                     </div>
                 </div>
             </div>
@@ -329,16 +273,16 @@ get_header(); ?>
 
                 </div>
             </div>
-        </section>
-
-        <!-- CTA Section -->
-        <section class="industries-cta">
-            <div class="section-content">
-                <h2>Ready to Dominate Your Industry?</h2>
-                <p>Let's discuss how our industry-specific expertise can accelerate your business growth.</p>
-                <div class="cta-buttons">
-                    <a href="<?php echo home_url('/contact'); ?>" class="btn btn-primary">Get Industry Analysis</a>
-                    <a href="<?php echo home_url('/case-studies'); ?>" class="btn btn-secondary">View Success Stories</a>
+        </section>        <!-- CTA Section -->
+        <section id="contact" class="cta-section">
+            <div class="container">
+                <div class="cta-content">
+                    <h2>Ready to Dominate Your Industry?</h2>
+                    <p>Let's discuss how our industry-specific expertise can accelerate your business growth.</p>
+                    <div class="cta-buttons">
+                        <a href="<?php echo home_url('/contact'); ?>" class="btn-primary">Get Industry Analysis</a>
+                        <a href="<?php echo home_url('/case-studies'); ?>" class="btn-outline">View Success Stories</a>
+                    </div>
                 </div>
             </div>
         </section>

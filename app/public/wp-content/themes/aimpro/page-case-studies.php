@@ -274,16 +274,16 @@ get_header(); ?>
                     </div>
                 </div>
             </div>
-        </section>
-
-        <!-- CTA Section -->
-        <section class="case-studies-cta">
-            <div class="section-content">
-                <h2>Ready to Be Our Next Success Story?</h2>
-                <p>Let's discuss how we can help you achieve similar results for your business.</p>
-                <div class="cta-buttons">
-                    <a href="<?php echo home_url('/contact'); ?>" class="btn btn-primary">Start Your Project</a>
-                    <a href="<?php echo home_url('/about'); ?>" class="btn btn-secondary">Learn About Our Process</a>
+        </section>        <!-- CTA Section -->
+        <section id="contact" class="cta-section">
+            <div class="container">
+                <div class="cta-content">
+                    <h2>Ready to Be Our Next Success Story?</h2>
+                    <p>Let's discuss how we can help you achieve similar results for your business.</p>
+                    <div class="cta-buttons">
+                        <a href="<?php echo home_url('/contact'); ?>" class="btn-primary">Start Your Project</a>
+                        <a href="<?php echo home_url('/about'); ?>" class="btn-outline">Learn About Our Process</a>
+                    </div>
                 </div>
             </div>
         </section>
