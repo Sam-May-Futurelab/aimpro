@@ -390,21 +390,21 @@ get_header(); ?>
                     </div>
                 </div>
             </div>
-        </section>
-
-        <!-- CTA Section -->
-        <section class="seo-cta">
-            <div class="section-content">
-                <h2>Ready to Dominate Search Results?</h2>
-                <p>Let's discuss how our SEO services can increase your organic visibility and drive qualified traffic to your business.</p>
-                <div class="cta-buttons">
-                    <a href="<?php echo home_url('/contact'); ?>" class="btn btn-primary">Get Free SEO Audit</a>
-                    <a href="<?php echo home_url('/case-studies'); ?>" class="btn btn-secondary">View SEO Results</a>
-                </div>
-                <div class="cta-benefits">
-                    <span class="benefit">✓ Comprehensive SEO audit included</span>
-                    <span class="benefit">✓ Custom strategy recommendations</span>
-                    <span class="benefit">✓ No long-term contracts required</span>
+        </section>        <!-- CTA Section -->
+        <section class="cta-section">
+            <div class="container">
+                <div class="cta-content">
+                    <h2>Ready to Dominate Search Results?</h2>
+                    <p>Let's discuss how our SEO services can increase your organic visibility and drive qualified traffic to your business.</p>
+                    <div class="cta-buttons">
+                        <a href="<?php echo home_url('/contact'); ?>" class="btn-primary">Get Free SEO Audit</a>
+                        <a href="<?php echo home_url('/case-studies'); ?>" class="btn-outline">View SEO Results</a>
+                    </div>
+                    <div class="cta-features">
+                        <span class="feature-check">✓ Comprehensive SEO audit included</span>
+                        <span class="feature-check">✓ Custom strategy recommendations</span>
+                        <span class="feature-check">✓ No long-term contracts required</span>
+                    </div>
                 </div>
             </div>
         </section>
