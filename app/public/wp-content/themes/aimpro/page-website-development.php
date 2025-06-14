@@ -145,16 +145,20 @@ get_header(); ?>
                     </div>
                 </div>
             </div>
-        </section>
-
-        <!-- Technologies We Use -->
-        <section class="technologies-section">
-            <div class="section-content">
-                <h2>Technologies & Platforms We Use</h2>
-                <div class="tech-grid">
-                    <div class="tech-category">
+        </section>        <!-- Technologies We Use -->
+        <section class="service-overview">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Technologies & Platforms We Use</h2>
+                    <p>We leverage cutting-edge technologies and platforms to build robust, scalable websites that deliver exceptional performance.</p>
+                </div>
+                <div class="services-grid">
+                    <div class="service-item">
+                        <div class="service-icon">
+                            <i class="fas fa-cog"></i>
+                        </div>
                         <h3>Content Management</h3>
-                        <ul>
+                        <ul class="service-features">
                             <li>WordPress</li>
                             <li>Webflow</li>
                             <li>Shopify</li>
@@ -162,9 +166,12 @@ get_header(); ?>
                             <li>Drupal</li>
                         </ul>
                     </div>
-                    <div class="tech-category">
+                    <div class="service-item">
+                        <div class="service-icon">
+                            <i class="fas fa-code"></i>
+                        </div>
                         <h3>Frontend Technologies</h3>
-                        <ul>
+                        <ul class="service-features">
                             <li>HTML5 & CSS3</li>
                             <li>JavaScript (ES6+)</li>
                             <li>React.js</li>
@@ -172,9 +179,12 @@ get_header(); ?>
                             <li>Bootstrap & Tailwind</li>
                         </ul>
                     </div>
-                    <div class="tech-category">
+                    <div class="service-item">
+                        <div class="service-icon">
+                            <i class="fas fa-database"></i>
+                        </div>
                         <h3>Backend Development</h3>
-                        <ul>
+                        <ul class="service-features">
                             <li>PHP</li>
                             <li>Node.js</li>
                             <li>Python</li>
@@ -182,9 +192,12 @@ get_header(); ?>
                             <li>PostgreSQL</li>
                         </ul>
                     </div>
-                    <div class="tech-category">
+                    <div class="service-item">
+                        <div class="service-icon">
+                            <i class="fas fa-tachometer-alt"></i>
+                        </div>
                         <h3>Performance & SEO</h3>
-                        <ul>
+                        <ul class="service-features">
                             <li>Google PageSpeed Optimization</li>
                             <li>Core Web Vitals</li>
                             <li>Schema.org Markup</li>
@@ -194,40 +207,52 @@ get_header(); ?>
                     </div>
                 </div>
             </div>
-        </section>
-
-        <!-- Website Features -->
-        <section class="website-features">
-            <div class="section-content">
-                <h2>Standard Features Included</h2>
-                <div class="features-grid">
-                    <div class="feature-item">
-                        <div class="feature-icon">📱</div>
+        </section><!-- Website Features -->
+        <section class="service-overview">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Standard Features Included</h2>
+                    <p>Every website we build includes these essential features to ensure optimal performance and user experience.</p>
+                </div>                <div class="services-grid">
+                    <div class="service-item">
+                        <div class="service-icon">
+                            <i class="fas fa-mobile-alt"></i>
+                        </div>
                         <h3>Mobile-First Design</h3>
                         <p>Responsive design that looks and works perfectly on all devices, with mobile optimization as a priority.</p>
                     </div>
-                    <div class="feature-item">
-                        <div class="feature-icon">⚡</div>
+                    <div class="service-item">
+                        <div class="service-icon">
+                            <i class="fas fa-bolt"></i>
+                        </div>
                         <h3>Lightning-Fast Performance</h3>
                         <p>Optimized for speed with sub-3 second load times, improving user experience and search rankings.</p>
                     </div>
-                    <div class="feature-item">
-                        <div class="feature-icon">🔍</div>
+                    <div class="service-item">
+                        <div class="service-icon">
+                            <i class="fas fa-search"></i>
+                        </div>
                         <h3>SEO-Optimized</h3>
                         <p>Built with SEO best practices, including proper structure, meta tags, and schema markup for better visibility.</p>
                     </div>
-                    <div class="feature-item">
-                        <div class="feature-icon">🔒</div>
+                    <div class="service-item">
+                        <div class="service-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
                         <h3>Security & SSL</h3>
                         <p>Secure hosting, SSL certificates, and security best practices to protect your website and user data.</p>
                     </div>
-                    <div class="feature-item">
-                        <div class="feature-icon">📊</div>
+                    <div class="service-item">
+                        <div class="service-icon">
+                            <i class="fas fa-chart-bar"></i>
+                        </div>
                         <h3>Analytics Integration</h3>
                         <p>Google Analytics, conversion tracking, and performance monitoring setup for data-driven insights.</p>
                     </div>
-                    <div class="feature-item">
-                        <div class="feature-icon">🎨</div>
+                    <div class="service-item">
+                        <div class="service-icon">
+                            <i class="fas fa-palette"></i>
+                        </div>
                         <h3>Brand Consistency</h3>
                         <p>Design that reflects your brand identity with consistent colors, fonts, and messaging throughout.</p>
                     </div>

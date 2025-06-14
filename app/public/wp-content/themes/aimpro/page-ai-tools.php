@@ -282,90 +282,93 @@ get_header(); ?>
                 </div>
             </div>
         </div>
-    </section>
-
-    <!-- Use Cases Section -->
-    <section class="use-cases-section">
+    </section>    <!-- Use Cases Section -->
+    <section class="service-overview">
         <div class="container">
-            <h2>AI Marketing Use Cases</h2>
-            <div class="use-cases-grid">
-                <div class="use-case-item">
-                    <div class="use-case-icon">
+            <div class="section-header">
+                <h2>AI Marketing Use Cases</h2>
+                <p>Discover how AI transforms marketing operations and delivers measurable business results.</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-item">
+                    <div class="service-icon">
                         <i class="fas fa-pen"></i>
                     </div>
                     <h3>Automated Content Creation</h3>
                     <p>Generate blog posts, social media content, and ad copy at scale while maintaining brand voice and quality.</p>
-                    <div class="use-case-benefit">
+                    <div class="service-metric">
                         <span>Save 20+ hours per week</span>
                     </div>
                 </div>
                 
-                <div class="use-case-item">
-                    <div class="use-case-icon">
+                <div class="service-item">
+                    <div class="service-icon">
                         <i class="fas fa-user-tag"></i>
                     </div>
                     <h3>Dynamic Personalization</h3>
                     <p>Deliver personalized website experiences, email content, and product recommendations based on user behavior.</p>
-                    <div class="use-case-benefit">
+                    <div class="service-metric">
                         <span>Increase conversions by 40%</span>
                     </div>
                 </div>
                 
-                <div class="use-case-item">
-                    <div class="use-case-icon">
+                <div class="service-item">
+                    <div class="service-icon">
                         <i class="fas fa-crystal-ball"></i>
                     </div>
                     <h3>Predictive Customer Analytics</h3>
                     <p>Predict customer lifetime value, churn probability, and optimal engagement timing for strategic planning.</p>
-                    <div class="use-case-benefit">
+                    <div class="service-metric">
                         <span>Improve retention by 35%</span>
                     </div>
                 </div>
                 
-                <div class="use-case-item">
-                    <div class="use-case-icon">
+                <div class="service-item">
+                    <div class="service-icon">
                         <i class="fas fa-chart-line"></i>
                     </div>
                     <h3>Intelligent Campaign Optimization</h3>
                     <p>Automatically optimize ad spend, targeting, and creative elements for maximum ROI across all channels.</p>
-                    <div class="use-case-benefit">
+                    <div class="service-metric">
                         <span>Reduce costs by 30%</span>
                     </div>
                 </div>
-            </div>        </div>
-    </section>
-
-    <!-- Benefits Section -->
-    <section class="benefits-section">
+            </div>
+        </div>
+    </section>    <!-- Benefits Section -->
+    <section class="service-overview">
         <div class="container">
-            <h2>Why Implement AI in Your Marketing?</h2>
-            <div class="benefits-grid">
-                <div class="benefit-item">
-                    <div class="benefit-icon">
+            <div class="section-header">
+                <h2>Why Implement AI in Your Marketing?</h2>
+                <p>Transform your marketing operations with AI-powered solutions that deliver superior results and efficiency.</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-item">
+                    <div class="service-icon">
                         <i class="fas fa-clock"></i>
                     </div>
                     <h3>Massive Time Savings</h3>
                     <p>Automate repetitive tasks and free up your team to focus on strategy and creative work.</p>
                 </div>
                 
-                <div class="benefit-item">
-                    <div class="benefit-icon">
+                <div class="service-item">
+                    <div class="service-icon">
                         <i class="fas fa-chart-line"></i>
                     </div>
                     <h3>Improved Performance</h3>
                     <p>AI optimizes campaigns in real-time, delivering better results than manual management.</p>
                 </div>
                 
-                <div class="benefit-item">
-                    <div class="benefit-icon">
+                <div class="service-item">
+                    <div class="service-icon">
                         <i class="fas fa-expand-arrows-alt"></i>
                     </div>
                     <h3>Unlimited Scalability</h3>
                     <p>Scale your marketing efforts without proportionally increasing headcount or costs.</p>
                 </div>
                 
-                <div class="benefit-item">
-                    <div class="benefit-icon">
+                <div class="service-item">
+                    <div class="service-icon">
                         <i class="fas fa-user-friends"></i>
                     </div>
                     <h3>Personalization at Scale</h3>
