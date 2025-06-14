@@ -31,11 +31,7 @@ get_header(); ?>
                             </div>
                             <blockquote>
                                 "Aimpro Digital transformed our online presence completely. Within 6 months, our website traffic increased by 300% and our lead generation improved by 250%. Their team's expertise in SEO and PPC advertising delivered results beyond our expectations."
-                            </blockquote>
-                            <div class="testimonial-author">
-                                <div class="author-image">
-                                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/testimonials/sarah-ceo.jpg" alt="Sarah Williams - CEO" />
-                                </div>
+                            </blockquote>                            <div class="testimonial-author">
                                 <div class="author-info">
                                     <h4>Sarah Williams</h4>
                                     <p>CEO, TechStart Solutions</p>
@@ -71,11 +67,7 @@ get_header(); ?>
                             </div>
                             <blockquote>
                                 "Working with Aimpro Digital has been a game-changer for our e-commerce business. Their strategic approach to Google Ads and Facebook advertising helped us achieve a 400% return on ad spend. The team is professional, responsive, and truly understands our industry."
-                            </blockquote>
-                            <div class="testimonial-author">
-                                <div class="author-image">
-                                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/testimonials/michael-founder.jpg" alt="Michael Chen - Founder" />
-                                </div>
+                            </blockquote>                            <div class="testimonial-author">
                                 <div class="author-info">
                                     <h4>Michael Chen</h4>
                                     <p>Founder, Elite Fitness Gear</p>
