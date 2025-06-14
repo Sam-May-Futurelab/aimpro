@@ -3,6 +3,45 @@
  * Clean, modern styling for solution pages including lead generation
  */
 
+/* Global CTA Section Text Color Fix for Solutions Pages */
+.cta-section .cta-content h2,
+#contact.cta-section .cta-content h2,
+.cta-section h2 {
+    color: white !important;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.cta-section .cta-content p,
+#contact.cta-section .cta-content p,
+.cta-section p {
+    color: rgba(255, 255, 255, 0.95) !important;
+}
+
+/* Ensure CTA buttons have proper contrast */
+.cta-section .btn-secondary,
+.cta-section .btn.btn-secondary {
+    background: rgba(255, 255, 255, 0.2);
+    color: white !important;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+.cta-section .btn-secondary:hover,
+.cta-section .btn.btn-secondary:hover {
+    background: rgba(255, 255, 255, 0.3);
+    color: white !important;
+}
+
+/* Override any light-theme conflicts for CTA sections */
+.light-theme .cta-section .cta-content h2,
+.light-theme .cta-section h2 {
+    color: white !important;
+}
+
+.light-theme .cta-section .cta-content p,
+.light-theme .cta-section p {
+    color: rgba(255, 255, 255, 0.95) !important;
+}
+
 /* ===== PAGE STRUCTURE ===== */
 
 /* Global container width */

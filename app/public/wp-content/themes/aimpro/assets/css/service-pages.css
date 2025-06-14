@@ -1637,3 +1637,126 @@
         grid-template-columns: 1fr;
     }
 }
+
+/* Global CTA Section Text Color Fix - Ensure all CTA sections have white text */
+.cta-section .cta-content h2,
+#contact.cta-section .cta-content h2,
+.cta-section h2 {
+    color: white !important;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.cta-section .cta-content p,
+#contact.cta-section .cta-content p,
+.cta-section p {
+    color: rgba(255, 255, 255, 0.95) !important;
+}
+
+/* Ensure CTA buttons have proper contrast */
+.cta-section .btn-secondary,
+.cta-section .btn.btn-secondary {
+    background: rgba(255, 255, 255, 0.2);
+    color: white !important;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+.cta-section .btn-secondary:hover,
+.cta-section .btn.btn-secondary:hover {
+    background: rgba(255, 255, 255, 0.3);
+    color: white !important;
+}
+
+/* Override any light-theme conflicts for CTA sections */
+.light-theme .cta-section .cta-content h2,
+.light-theme .cta-section h2 {
+    color: white !important;
+}
+
+.light-theme .cta-section .cta-content p,
+.light-theme .cta-section p {
+    color: rgba(255, 255, 255, 0.95) !important;
+}
+
+/* AI CRM Page Specific Styles */
+.ai-crm-page .service-overview {
+    background: var(--bg-light, #f8f9fa);
+    padding: 80px 0;
+}
+
+.ai-crm-page .section-header {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto 60px;
+}
+
+.ai-crm-page .section-header h2 {
+    font-size: 36px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    color: var(--text-primary, #1a1a1a) !important;
+}
+
+.ai-crm-page .section-header p {
+    font-size: 18px;
+    line-height: 1.6;
+    color: var(--text-secondary, #64748b) !important;
+}
+
+/* AI CRM features grid - 4 columns */
+.ai-crm-page .features-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+@media (max-width: 1024px) {
+    .ai-crm-page .features-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 25px;
+    }
+}
+
+@media (max-width: 768px) {
+    .ai-crm-page .features-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+}
+
+/* AI CRM feature items - smaller and more compact */
+.ai-crm-page .feature-item {
+    background: white;
+    padding: 25px 20px;
+    border-radius: 12px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 2px solid transparent;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.ai-crm-page .feature-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(241, 90, 37, 0.1);
+    border-color: var(--primary-orange, #F15A25);
+}
+
+.ai-crm-page .feature-icon {
+    color: var(--primary-orange, #F15A25);
+    font-size: 36px;
+    margin-bottom: 15px;
+    display: block;
+}
+
+.ai-crm-page .feature-item h3 {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 12px;
+    color: var(--text-primary, #1a1a1a) !important;
+}
+
+.ai-crm-page .feature-item p {
+    color: var(--text-secondary, #64748b) !important;
+    line-height: 1.5;
+    margin: 0;
+    font-size: 14px;
+}

@@ -214,7 +214,7 @@ get_header(); ?>
                 <h2>AI-Powered CRM Features</h2>
             </div>
             <div class="features-grid">
-                <div class="feature-card">
+                <div class="feature-item">
                     <div class="feature-icon">
                         <i class="fas fa-robot"></i>
                     </div>
@@ -222,7 +222,7 @@ get_header(); ?>
                     <p>AI algorithms analyze 50+ data points to score leads and predict conversion probability in real-time.</p>
                 </div>
                 
-                <div class="feature-card">
+                <div class="feature-item">
                     <div class="feature-icon">
                         <i class="fas fa-chart-line"></i>
                     </div>
@@ -230,7 +230,7 @@ get_header(); ?>
                     <p>Machine learning models predict sales outcomes, revenue forecasts, and optimal deal closure timing.</p>
                 </div>
                 
-                <div class="feature-card">
+                <div class="feature-item">
                     <div class="feature-icon">
                         <i class="fas fa-bullseye"></i>
                     </div>
@@ -238,7 +238,7 @@ get_header(); ?>
                     <p>AI tracks customer behavior patterns to trigger personalized engagement at optimal moments.</p>
                 </div>
                 
-                <div class="feature-card">
+                <div class="feature-item">
                     <div class="feature-icon">
                         <i class="fas fa-chart-bar"></i>
                     </div>
@@ -247,123 +247,109 @@ get_header(); ?>
                 </div>
             </div>
         </div>
-    </section>
-
-    <!-- Packages Section -->
-    <section id="packages" class="packages-section">
+    </section>    <!-- Packages Section -->
+    <section id="packages" class="pricing-section">
         <div class="container">
-            <h2>AI CRM Setup Packages</h2>
-            <div class="packages-grid">
-                <div class="package-item">
-                    <div class="package-header">
+            <div class="section-header">
+                <h2>AI CRM Setup Packages</h2>
+                <p>Transform your customer relationship management with data-driven optimization strategies.</p>
+            </div>
+            
+            <div class="pricing-grid">
+                <div class="pricing-card">
+                    <div class="pricing-header">
                         <h3>Essential AI CRM</h3>
-                        <div class="package-price">£2,497</div>
+                        <div class="price">£2,497</div>
+                        <p>Basic AI implementation</p>
                     </div>
-                    <div class="package-features">
-                        <ul>
-                            <li>CRM platform setup (HubSpot/Salesforce)</li>
-                            <li>Basic AI lead scoring</li>
-                            <li>Contact data migration</li>
-                            <li>Essential workflow automation</li>
-                            <li>Team training (2 sessions)</li>
-                            <li>30-day support</li>
-                            <li>Performance reporting</li>
-                        </ul>
-                    </div>
-                    <div class="package-cta">
-                        <a href="#contact" class="btn-outline">Get Started</a>
-                    </div>
+                    <ul class="pricing-features">
+                        <li>CRM platform setup (HubSpot/Salesforce)</li>
+                        <li>Basic AI lead scoring</li>
+                        <li>Contact data migration</li>
+                        <li>Essential workflow automation</li>
+                        <li>Team training (2 sessions)</li>
+                        <li>30-day support</li>
+                        <li>Performance reporting</li>
+                    </ul>
+                    <a href="#contact" class="btn-outline">Get Started</a>
                 </div>
                 
-                <div class="package-item featured">
-                    <div class="package-badge">Most Popular</div>
-                    <div class="package-header">
+                <div class="pricing-card featured">
+                    <div class="pricing-badge">Most Popular</div>
+                    <div class="pricing-header">
                         <h3>Advanced AI CRM</h3>
-                        <div class="package-price">£4,997</div>
+                        <div class="price">£4,997</div>
+                        <p>Complete AI implementation</p>
                     </div>
-                    <div class="package-features">
-                        <ul>
-                            <li>Full CRM implementation</li>
-                            <li>Advanced AI lead scoring & prediction</li>
-                            <li>Omnichannel integration</li>
-                            <li>Intelligent workflow automation</li>
-                            <li>Custom dashboards & reporting</li>
-                            <li>Comprehensive team training</li>
-                            <li>90-day optimization support</li>
-                        </ul>
-                    </div>
-                    <div class="package-cta">
-                        <a href="#contact" class="btn-primary">Get Started</a>
-                    </div>
+                    <ul class="pricing-features">
+                        <li>Full CRM implementation</li>
+                        <li>Advanced AI lead scoring & prediction</li>
+                        <li>Omnichannel integration</li>
+                        <li>Intelligent workflow automation</li>
+                        <li>Custom dashboards & reporting</li>
+                        <li>Comprehensive team training</li>
+                        <li>90-day optimization support</li>
+                    </ul>
+                    <a href="#contact" class="btn-primary">Get Started</a>
                 </div>
                 
-                <div class="package-item">
-                    <div class="package-header">
+                <div class="pricing-card">
+                    <div class="pricing-header">
                         <h3>Enterprise AI CRM</h3>
-                        <div class="package-price">£9,997</div>
+                        <div class="price">£9,997</div>
+                        <p>Full enterprise transformation</p>
                     </div>
-                    <div class="package-features">
-                        <ul>
-                            <li>Enterprise CRM architecture</li>
-                            <li>Custom AI model development</li>
-                            <li>Advanced predictive analytics</li>
-                            <li>Multi-system integrations</li>
-                            <li>White-glove implementation</li>
-                            <li>Dedicated project manager</li>
-                            <li>6-month ongoing optimization</li>
-                        </ul>
-                    </div>
-                    <div class="package-cta">
-                        <a href="#contact" class="btn-outline">Get Started</a>
-                    </div>
+                    <ul class="pricing-features">
+                        <li>Enterprise CRM architecture</li>
+                        <li>Custom AI model development</li>
+                        <li>Advanced predictive analytics</li>
+                        <li>Multi-system integrations</li>
+                        <li>White-glove implementation</li>
+                        <li>Dedicated project manager</li>
+                        <li>6-month ongoing optimization</li>
+                    </ul>
+                    <a href="#contact" class="btn-outline">Get Started</a>
                 </div>
             </div>
         </div>
     </section>    <!-- CRM Platforms Section -->
-    <section class="whitelabel-services">
+    <section class="service-overview">
         <div class="container">
             <div class="section-header">
                 <h2>Supported CRM Platforms</h2>
+                <p>We work with leading CRM platforms to implement AI-powered solutions that transform your customer management.</p>
             </div>
-            <div class="whitelabel-services-grid">
-                <div class="whitelabel-service-card">
+            <div class="services-grid">
+                <div class="service-item">
                     <div class="service-icon">
                         <i class="fab fa-hubspot"></i>
                     </div>
-                    <div class="service-content">
-                        <h3>HubSpot CRM</h3>
-                        <p>Complete inbound marketing platform with powerful AI automation and lead nurturing capabilities.</p>
-                    </div>
+                    <h3>HubSpot CRM</h3>
+                    <p>Complete inbound marketing platform with powerful AI automation and lead nurturing capabilities.</p>
                 </div>
                 
-                <div class="whitelabel-service-card">
+                <div class="service-item">
                     <div class="service-icon">
                         <i class="fab fa-salesforce"></i>
                     </div>
-                    <div class="service-content">
-                        <h3>Salesforce</h3>
-                        <p>Enterprise-grade CRM with Einstein AI for advanced predictive analytics and automation.</p>
-                    </div>
+                    <h3>Salesforce</h3>
+                    <p>Enterprise-grade CRM with Einstein AI for advanced predictive analytics and automation.</p>
                 </div>
                 
-                <div class="whitelabel-service-card">
+                <div class="service-item">
                     <div class="service-icon">
                         <i class="fas fa-chart-pie"></i>
                     </div>
-                    <div class="service-content">
-                        <h3>Pipedrive</h3>
-                        <p>Sales-focused CRM with AI-powered sales assistant and intelligent deal recommendations.</p>
-                    </div>
+                    <h3>Pipedrive</h3>
+                    <p>Sales-focused CRM with AI-powered sales assistant and intelligent deal recommendations.</p>
                 </div>
                 
-                <div class="whitelabel-service-card">
+                <div class="service-item">
                     <div class="service-icon">
                         <i class="fas fa-envelope-open-text"></i>
                     </div>
-                    <div class="service-content">
-                        <h3>ActiveCampaign</h3>
-                        <p>Customer experience automation platform combining CRM, email marketing, and AI predictions.</p>
-                    </div>
+                    <h3>ActiveCampaign</h3>
+                    <p>Customer experience automation platform combining CRM, email marketing, and AI predictions.</p>
                 </div>
             </div>
         </div>
