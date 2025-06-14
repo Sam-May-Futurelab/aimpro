@@ -272,15 +272,16 @@ get_header(); ?>
             <div class="section-content">
                 <h2>Most Popular Resources</h2>
                 <div class="featured-list">
-                    
-                    <div class="featured-resource">
+                      <div class="featured-resource">
                         <div class="resource-icon">📋</div>
                         <div class="resource-info">
                             <h3>Complete SEO Audit Checklist</h3>
                             <p>Our most comprehensive SEO audit checklist with 50+ optimization points.</p>
                             <span class="download-count">2,540 downloads</span>
                         </div>
-                        <a href="#" class="resource-download">Download</a>
+                        <div class="resource-actions">
+                            <a href="#" class="resource-download">Download</a>
+                        </div>
                     </div>
 
                     <div class="featured-resource">
@@ -290,17 +291,20 @@ get_header(); ?>
                             <p>12-month content planning template used by 1000+ marketers.</p>
                             <span class="download-count">4,120 downloads</span>
                         </div>
-                        <a href="#" class="resource-download">Download</a>
+                        <div class="resource-actions">
+                            <a href="#" class="resource-download">Download</a>
+                        </div>
                     </div>
 
-                    <div class="featured-resource">
-                        <div class="resource-icon">🎯</div>
+                    <div class="featured-resource">                        <div class="resource-icon">🎯</div>
                         <div class="resource-info">
                             <h3>PPC Campaign Planner</h3>
                             <p>Strategic planning template for Google Ads and Facebook campaigns.</p>
                             <span class="download-count">1,670 downloads</span>
                         </div>
-                        <a href="#" class="resource-download">Download</a>
+                        <div class="resource-actions">
+                            <a href="#" class="resource-download">Download</a>
+                        </div>
                     </div>
 
                 </div>
