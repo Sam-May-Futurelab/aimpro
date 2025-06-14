@@ -47,36 +47,34 @@ get_header(); ?>
                     </div>
                 </div>
             </div>
-        </section>
-
-        <!-- Services Grid -->
-        <section class="services-grid">
-            <div class="section-content">
-                <h2>Our Advertising & PPC Services</h2>
-                <div class="services-list">
-                    
-                    <div class="service-card">
+        </section>        <!-- Services Grid -->
+        <section class="service-overview">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Our Advertising & PPC Services</h2>
+                    <p>Comprehensive pay-per-click advertising solutions designed to maximize your return on investment across all major platforms.</p>
+                </div>
+                <div class="services-grid">                    
+                    <div class="service-item">
                         <div class="service-icon">
                             <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"/>
                                 <polygon points="10,8 16,12 10,16 10,8" fill="currentColor"/>
                             </svg>
                         </div>
-                        <div class="service-content">
-                            <h3>Google Ads Management</h3>
-                            <p>Comprehensive Google Ads campaigns including Search, Display, Shopping, and YouTube advertising for maximum reach and ROI.</p>
-                            <ul class="service-features">
-                                <li>Search campaign optimization</li>
-                                <li>Display and remarketing campaigns</li>
-                                <li>Shopping ads for e-commerce</li>
-                                <li>YouTube advertising</li>
-                                <li>Performance Max campaigns</li>
-                            </ul>
-                            <div class="service-results">
-                                <span>Average: 280% increase in conversions</span>
-                            </div>
-                            <a href="<?php echo home_url('/google-ads'); ?>" class="service-cta">Learn More</a>
+                        <h3>Google Ads Management</h3>
+                        <p>Comprehensive Google Ads campaigns including Search, Display, Shopping, and YouTube advertising for maximum reach and ROI.</p>
+                        <ul class="service-features">
+                            <li>Search campaign optimization</li>
+                            <li>Display and remarketing campaigns</li>
+                            <li>Shopping ads for e-commerce</li>
+                            <li>YouTube advertising</li>
+                            <li>Performance Max campaigns</li>
+                        </ul>
+                        <div class="service-metric">
+                            <span>Average: 280% increase in conversions</span>
                         </div>
+                        <a href="<?php echo home_url('/google-ads'); ?>" class="service-link">Learn More</a>
                     </div>
 
                     <div class="service-card">

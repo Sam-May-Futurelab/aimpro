@@ -47,35 +47,29 @@ get_header(); ?>
                     </div>
                 </div>
             </div>
-        </section>
-
-        <!-- Services Grid -->
-        <section class="services-grid">
-            <div class="section-content">
-                <h2>Our Marketing Automation Services</h2>
-                <div class="services-list">
-                    
-                    <div class="service-card">
+        </section>        <!-- Services Grid -->
+        <section class="service-overview">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Our Marketing Automation Services</h2>
+                    <p>Streamline your marketing processes with intelligent automation solutions that nurture leads and drive conversions.</p>
+                </div>
+                <div class="services-grid">
+                      <div class="service-item">
                         <div class="service-icon">
-                            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M12 2L13.09 8.26L22 9L13.09 9.74L12 16L10.91 9.74L2 9L10.91 8.26L12 2Z" stroke="currentColor" stroke-width="2"/>
-                            </svg>
+                            <i class="fas fa-robot"></i>
                         </div>
-                        <div class="service-content">
-                            <h3>AI CRM Setup & Integration</h3>
-                            <p>Implement and configure advanced CRM systems with AI capabilities to manage leads, track customer interactions, and automate sales processes.</p>
-                            <ul class="service-features">
-                                <li>CRM platform selection and setup</li>
-                                <li>AI lead scoring implementation</li>
-                                <li>Sales pipeline automation</li>
-                                <li>Custom field and workflow creation</li>
-                                <li>Third-party integrations</li>
-                            </ul>
-                            <div class="service-results">
-                                <span>Average: 50% increase in sales efficiency</span>
-                            </div>
-                            <a href="<?php echo home_url('/ai-crm-setup'); ?>" class="service-cta">Learn More</a>
-                        </div>
+                        <h3>AI CRM Setup & Integration</h3>
+                        <p>Implement and configure advanced CRM systems with AI capabilities to manage leads, track customer interactions, and automate sales processes.</p>
+                        <ul class="service-features">
+                            <li>CRM platform selection and setup</li>
+                            <li>AI lead scoring implementation</li>
+                            <li>Sales pipeline automation</li>
+                            <li>Custom field and workflow creation</li>
+                            <li>Third-party integrations</li>
+                        </ul>
+                        <div class="service-metric">Average: 50% increase in sales efficiency</div>
+                        <a href="<?php echo home_url('/ai-crm-setup'); ?>" class="service-link">Learn More</a>
                     </div>
 
                     <div class="service-card">
