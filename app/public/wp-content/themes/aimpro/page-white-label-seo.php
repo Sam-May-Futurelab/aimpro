@@ -396,50 +396,6 @@ get_header(); ?>
                     </div>
                 </div>
             </div>
-        </section>
-
-        <!-- Partner Process -->
-        <section class="partner-process">
-            <div class="section-content">
-                <h2>How Our Partnership Works</h2>
-                <div class="process-steps">
-                    <div class="process-step">
-                        <div class="step-number">1</div>
-                        <div class="step-content">
-                            <h3>Initial Consultation</h3>
-                            <p>We discuss your agency's needs, client base, and goals to create a customized white label solution.</p>
-                        </div>
-                    </div>
-                    <div class="process-step">
-                        <div class="step-number">2</div>
-                        <div class="step-content">
-                            <h3>Onboarding & Setup</h3>
-                            <p>We set up your branded reporting templates, communication protocols, and project management systems.</p>
-                        </div>
-                    </div>
-                    <div class="process-step">
-                        <div class="step-number">3</div>
-                        <div class="step-content">
-                            <h3>Client Project Launch</h3>
-                            <p>You introduce the SEO services to your clients while we handle all the technical implementation behind the scenes.</p>
-                        </div>
-                    </div>
-                    <div class="process-step">
-                        <div class="step-number">4</div>
-                        <div class="step-content">
-                            <h3>Ongoing Delivery</h3>
-                            <p>We provide regular updates, reports, and results while you maintain the client relationship and collect payments.</p>
-                        </div>
-                    </div>
-                    <div class="process-step">
-                        <div class="step-number">5</div>
-                        <div class="step-content">
-                            <h3>Scale & Grow</h3>
-                            <p>As your SEO business grows, we scale our services to match your increasing client demands.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
         </section>        <!-- What's Included -->
         <section class="whitelabel-benefits">
             <div class="section-content">
@@ -552,10 +508,8 @@ get_header(); ?>
             <div class="section-content">
                 <div class="simple-cta-content">
                     <h2>Ready to Scale Your Agency with SEO?</h2>
-                    <p>Join over 150 successful agency partners who trust us to deliver exceptional SEO results under their brand. Schedule a consultation to learn how our white label services can help you grow.</p>
-                    <div class="simple-cta-buttons">
+                    <p>Join over 150 successful agency partners who trust us to deliver exceptional SEO results under their brand. Schedule a consultation to learn how our white label services can help you grow.</p>                    <div class="simple-cta-buttons">
                         <a href="<?php echo home_url('/contact'); ?>" class="btn btn-primary">Schedule Partnership Call</a>
-                        <a href="tel:+44-123-456-7890" class="btn btn-secondary">Call: +44 123 456 7890</a>
                     </div>
                     <div class="simple-cta-features">
                         <span>No setup fees</span>
