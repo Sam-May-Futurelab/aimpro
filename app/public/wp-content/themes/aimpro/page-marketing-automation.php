@@ -436,14 +436,12 @@ get_header(); ?>
                     </div>
                 </div>
             </div>
-        </section>
-
-        <!-- CTA Section -->
-        <section class="service-cta">
+        </section>        <!-- CTA Section -->
+        <section class="cta-section">
             <div class="section-content">
                 <div class="cta-content">
                     <h2>Ready to Automate Your Marketing?</h2>
-                    <p>Schedule a free consultation to discover how marketing automation can transform your business processes and accelerate growth.</p>
+                    <p>Let's create a custom automation strategy that saves you time while improving your marketing results.</p>
                     <div class="cta-buttons">
                         <a href="<?php echo home_url('/contact'); ?>" class="btn btn-primary">Get Free Automation Audit</a>
                         <a href="<?php echo home_url('/services'); ?>" class="btn btn-secondary">View All Services</a>

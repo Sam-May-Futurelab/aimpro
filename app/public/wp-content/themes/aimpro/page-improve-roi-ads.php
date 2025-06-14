@@ -371,21 +371,21 @@ get_header(); ?>
                     </div>
                 </div>
             </div>
-        </section>
-
-        <!-- CTA Section -->
-        <section class="roi-cta">
+        </section>        <!-- CTA Section -->
+        <section class="cta-section">
             <div class="section-content">
-                <h2>Ready to Maximize Your Ad ROI?</h2>
-                <p>Let's analyze your current ad performance and create a strategy to dramatically improve your return on investment.</p>
-                <div class="cta-buttons">
-                    <a href="<?php echo home_url('/contact'); ?>" class="btn btn-primary">Get Free Ad Account Audit</a>
-                    <a href="<?php echo home_url('/case-studies'); ?>" class="btn btn-secondary">View ROI Success Stories</a>
-                </div>
-                <div class="cta-benefits">
-                    <span class="benefit">✓ Complete performance analysis</span>
-                    <span class="benefit">✓ ROI improvement roadmap</span>
-                    <span class="benefit">✓ Custom optimization strategy</span>
+                <div class="cta-content">
+                    <h2>Ready to Maximize Your Ad ROI?</h2>
+                    <p>Let's analyze your current ad performance and create a strategy to dramatically improve your return on investment.</p>
+                    <div class="cta-buttons">
+                        <a href="<?php echo home_url('/contact'); ?>" class="btn btn-primary">Get Free Ad Account Audit</a>
+                        <a href="<?php echo home_url('/case-studies'); ?>" class="btn btn-secondary">View ROI Success Stories</a>
+                    </div>
+                    <div class="cta-features">
+                        <span>✓ Complete performance analysis</span>
+                        <span>✓ ROI improvement roadmap</span>
+                        <span>✓ Custom optimization strategy</span>
+                    </div>
                 </div>
             </div>
         </section>
