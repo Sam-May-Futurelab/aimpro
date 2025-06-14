@@ -9,7 +9,7 @@
 
 get_header(); ?>
 
-<main id="primary" class="landing-pages-page">
+<main id="primary" class="service-page landing-pages-page">
     <!-- Breadcrumbs -->
     <div class="breadcrumbs-container">
         <div class="container">
@@ -23,36 +23,29 @@ get_header(); ?>
                 <span class="current">Landing Pages</span>
             </nav>
         </div>
-    </div>
-
-    <!-- Hero Section -->
-    <section class="service-hero">
+    </div>    <!-- Hero Section -->
+    <section class="page-hero service-hero">
         <div class="container">
-            <div class="service-hero-content">
-                <div class="hero-text">
-                    <h1>High-Converting Landing Pages</h1>
-                    <p class="hero-subtitle">Purpose-built landing pages that turn visitors into customers with laser-focused messaging and conversion optimization.</p>
-                    <div class="hero-stats">
-                        <div class="stat-item">
-                            <span class="stat-number">340%</span>
-                            <span class="stat-label">Average Conversion Increase</span>
-                        </div>
-                        <div class="stat-item">
-                            <span class="stat-number">7 Days</span>
-                            <span class="stat-label">Average Delivery Time</span>
-                        </div>
-                        <div class="stat-item">
-                            <span class="stat-number">23%</span>
-                            <span class="stat-label">Average Conversion Rate</span>
-                        </div>
+            <div class="hero-content">
+                <h1>High-Converting Landing Pages</h1>
+                <p class="hero-subtitle">Purpose-built landing pages that turn visitors into customers with laser-focused messaging and conversion optimization.</p>
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <div class="stat-number">340%</div>
+                        <div class="stat-label">Average Conversion Increase</div>
                     </div>
-                    <div class="hero-cta">
-                        <a href="#contact" class="btn-primary">Get Landing Page Quote</a>
-                        <a href="#case-study" class="btn-outline">View Case Study</a>
+                    <div class="stat-item">
+                        <div class="stat-number">7 Days</div>
+                        <div class="stat-label">Average Delivery Time</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">23%</div>
+                        <div class="stat-label">Average Conversion Rate</div>
                     </div>
                 </div>
-                <div class="hero-image">
-                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/landing-pages-hero.jpg" alt="High-Converting Landing Pages" />
+                <div class="hero-ctas">
+                    <a href="#contact" class="btn-primary streamlined">Get Landing Page Quote</a>
+                    <a href="#case-study" class="btn-outline streamlined">View Case Study</a>
                 </div>
             </div>
         </div>

@@ -9,7 +9,7 @@
 
 get_header(); ?>
 
-<main id="primary" class="website-design-page">
+<main id="primary" class="service-page website-design-page">
     <!-- Breadcrumbs -->
     <div class="breadcrumbs-container">
         <div class="container">
@@ -23,36 +23,29 @@ get_header(); ?>
                 <span class="current">Custom Website Design</span>
             </nav>
         </div>
-    </div>
-
-    <!-- Hero Section -->
-    <section class="service-hero">
+    </div>    <!-- Hero Section -->
+    <section class="page-hero service-hero">
         <div class="container">
-            <div class="service-hero-content">
-                <div class="hero-text">
-                    <h1>Custom Website Design</h1>
-                    <p class="hero-subtitle">Beautiful, conversion-focused websites that perfectly represent your brand and drive measurable business results.</p>
-                    <div class="hero-stats">
-                        <div class="stat-item">
-                            <span class="stat-number">285%</span>
-                            <span class="stat-label">Average Engagement Increase</span>
-                        </div>
-                        <div class="stat-item">
-                            <span class="stat-number">95%</span>
-                            <span class="stat-label">Client Satisfaction Rate</span>
-                        </div>
-                        <div class="stat-item">
-                            <span class="stat-number">2.1s</span>
-                            <span class="stat-label">Average Load Time</span>
-                        </div>
+            <div class="hero-content">
+                <h1>Custom Website Design</h1>
+                <p class="hero-subtitle">Beautiful, conversion-focused websites that perfectly represent your brand and drive measurable business results.</p>
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <div class="stat-number">285%</div>
+                        <div class="stat-label">Average Engagement Increase</div>
                     </div>
-                    <div class="hero-cta">
-                        <a href="#contact" class="btn-primary">Get Design Quote</a>
-                        <a href="#portfolio" class="btn-outline">View Portfolio</a>
+                    <div class="stat-item">
+                        <div class="stat-number">95%</div>
+                        <div class="stat-label">Client Satisfaction Rate</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">2.1s</div>
+                        <div class="stat-label">Average Load Time</div>
                     </div>
                 </div>
-                <div class="hero-image">
-                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/website-design-hero.jpg" alt="Custom Website Design" />
+                <div class="hero-ctas">
+                    <a href="#contact" class="btn-primary streamlined">Get Design Quote</a>
+                    <a href="#portfolio" class="btn-outline streamlined">View Portfolio</a>
                 </div>
             </div>
         </div>

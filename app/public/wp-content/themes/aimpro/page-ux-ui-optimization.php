@@ -9,7 +9,7 @@
 
 get_header(); ?>
 
-<main id="primary" class="ux-ui-optimization-page">
+<main id="primary" class="service-page ux-ui-optimization-page">
     <!-- Breadcrumbs -->
     <div class="breadcrumbs-container">
         <div class="container">
@@ -23,36 +23,29 @@ get_header(); ?>
                 <span class="current">UX/UI Optimization</span>
             </nav>
         </div>
-    </div>
-
-    <!-- Hero Section -->
-    <section class="service-hero">
+    </div>    <!-- Hero Section -->
+    <section class="page-hero service-hero">
         <div class="container">
-            <div class="service-hero-content">
-                <div class="hero-text">
-                    <h1>UX/UI Optimization</h1>
-                    <p class="hero-subtitle">Transform your existing website into a conversion machine through data-driven user experience optimization and interface improvements.</p>
-                    <div class="hero-stats">
-                        <div class="stat-item">
-                            <span class="stat-number">275%</span>
-                            <span class="stat-label">Average Conversion Improvement</span>
-                        </div>
-                        <div class="stat-item">
-                            <span class="stat-number">85%</span>
-                            <span class="stat-label">User Satisfaction Increase</span>
-                        </div>
-                        <div class="stat-item">
-                            <span class="stat-number">65%</span>
-                            <span class="stat-label">Bounce Rate Reduction</span>
-                        </div>
+            <div class="hero-content">
+                <h1>UX/UI Optimization</h1>
+                <p class="hero-subtitle">Transform your existing website into a conversion machine through data-driven user experience optimization and interface improvements.</p>
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <div class="stat-number">275%</div>
+                        <div class="stat-label">Average Conversion Improvement</div>
                     </div>
-                    <div class="hero-cta">
-                        <a href="#contact" class="btn-primary">Get UX Audit</a>
-                        <a href="#case-study" class="btn-outline">View Case Study</a>
+                    <div class="stat-item">
+                        <div class="stat-number">85%</div>
+                        <div class="stat-label">User Satisfaction Increase</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">65%</div>
+                        <div class="stat-label">Bounce Rate Reduction</div>
                     </div>
                 </div>
-                <div class="hero-image">
-                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/ux-ui-optimization-hero.jpg" alt="UX/UI Optimization" />
+                <div class="hero-ctas">
+                    <a href="#contact" class="btn-primary streamlined">Get UX Audit</a>
+                    <a href="#case-study" class="btn-outline streamlined">View Case Study</a>
                 </div>
             </div>
         </div>
@@ -96,10 +89,8 @@ get_header(); ?>
                 </div>
             </div>
         </div>
-    </section>
-
-    <!-- Case Study Section -->
-    <section id="case-study" class="case-study-section">
+    </section>    <!-- Case Study Section -->
+    <section id="case-study" class="case-study-section service-page-case-study">
         <div class="container">
             <div class="case-study-content">
                 <div class="case-study-header">
@@ -423,67 +414,7 @@ get_header(); ?>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
-
-    <!-- Before/After Examples -->
-    <section class="before-after-section">
-        <div class="container">
-            <h2>Optimization Results Examples</h2>
-            <div class="examples-grid">
-                <div class="example-card">
-                    <h3>E-commerce Product Page</h3>
-                    <div class="example-metrics">
-                        <div class="metric">
-                            <span class="metric-label">Conversion Rate</span>
-                            <span class="metric-improvement">2.3% → 8.1% (+252%)</span>
-                        </div>
-                        <div class="metric">
-                            <span class="metric-label">Mobile Experience</span>
-                            <span class="metric-improvement">45% → 92% (+104%)</span>
-                        </div>
-                    </div>
-                    <div class="optimization-details">
-                        <strong>Key Changes:</strong> Simplified checkout, trust badges, mobile optimization
-                    </div>
-                </div>
-                
-                <div class="example-card">
-                    <h3>SaaS Landing Page</h3>
-                    <div class="example-metrics">
-                        <div class="metric">
-                            <span class="metric-label">Trial Signups</span>
-                            <span class="metric-improvement">4.2% → 15.8% (+276%)</span>
-                        </div>
-                        <div class="metric">
-                            <span class="metric-label">Bounce Rate</span>
-                            <span class="metric-improvement">68% → 31% (-54%)</span>
-                        </div>
-                    </div>
-                    <div class="optimization-details">
-                        <strong>Key Changes:</strong> Clearer value proposition, social proof, form optimization
-                    </div>
-                </div>
-                
-                <div class="example-card">
-                    <h3>Professional Services</h3>
-                    <div class="example-metrics">
-                        <div class="metric">
-                            <span class="metric-label">Contact Forms</span>
-                            <span class="metric-improvement">1.8% → 7.2% (+300%)</span>
-                        </div>
-                        <div class="metric">
-                            <span class="metric-label">Page Speed</span>
-                            <span class="metric-improvement">5.2s → 1.6s (-69%)</span>
-                        </div>
-                    </div>
-                    <div class="optimization-details">
-                        <strong>Key Changes:</strong> Trust elements, simplified forms, speed optimization
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+        </div>    </section>
 
     <!-- Testimonials -->
     <section class="testimonials-section">
