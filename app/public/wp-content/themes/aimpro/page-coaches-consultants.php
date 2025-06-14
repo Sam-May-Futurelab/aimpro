@@ -266,51 +266,7 @@ get_header(); ?>
                         <div class="insight-text">
                             <h3>LinkedIn Research</h3>
                             <p>67% of B2B buyers research consultants on LinkedIn before hiring</p>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-        </section>
-
-        <!-- Coaches Consultants Keywords -->
-        <section class="coaches-consultants-keywords">
-            <div class="section-content">
-                <h2>High-Intent Coaching & Consulting Keywords</h2>
-                <div class="keywords-grid">
-                    
-                    <div class="keyword-category">
-                        <h3>Business Coaching</h3>
-                        <ul class="keyword-list">
-                            <li>"Business coach near me"</li>
-                            <li>"Executive coaching services"</li>
-                            <li>"Leadership development coach"</li>
-                            <li>"Business growth consultant"</li>
-                            <li>"Small business advisor"</li>
-                        </ul>
-                    </div>
-
-                    <div class="keyword-category">
-                        <h3>Life Coaching</h3>
-                        <ul class="keyword-list">
-                            <li>"Life coach [Location]"</li>
-                            <li>"Career transition coach"</li>
-                            <li>"Personal development coach"</li>
-                            <li>"Life coaching sessions"</li>
-                            <li>"Confidence coaching"</li>
-                        </ul>
-                    </div>
-
-                    <div class="keyword-category">
-                        <h3>Specialized Consulting</h3>
-                        <ul class="keyword-list">
-                            <li>"Marketing consultant"</li>
-                            <li>"Strategy consulting firm"</li>
-                            <li>"HR consultant"</li>
-                            <li>"Financial advisor"</li>
-                            <li>"Digital transformation consultant"</li>
-                        </ul>
-                    </div>
+                        </div>                    </div>
 
                 </div>
             </div>

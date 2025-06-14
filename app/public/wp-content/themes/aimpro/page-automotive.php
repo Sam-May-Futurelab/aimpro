@@ -266,51 +266,7 @@ get_header(); ?>
                     </div>
 
                 </div>
-            </div>
-        </section>
-
-        <!-- Common Automotive Keywords -->
-        <section class="automotive-keywords">
-            <div class="section-content">
-                <h2>High-Intent Automotive Keywords We Target</h2>
-                <div class="keywords-grid">
-                    
-                    <div class="keyword-category">
-                        <h3>Vehicle Sales</h3>
-                        <ul class="keyword-list">
-                            <li>"[Brand] dealership near me"</li>
-                            <li>"Used cars [Location]"</li>
-                            <li>"New [Model] price"</li>
-                            <li>"Car financing options"</li>
-                            <li>"Trade in value"</li>
-                        </ul>
-                    </div>
-
-                    <div class="keyword-category">
-                        <h3>Service Department</h3>
-                        <ul class="keyword-list">
-                            <li>"Oil change near me"</li>
-                            <li>"Car service [Location]"</li>
-                            <li>"Brake repair"</li>
-                            <li>"Tire installation"</li>
-                            <li>"Auto maintenance"</li>
-                        </ul>
-                    </div>
-
-                    <div class="keyword-category">
-                        <h3>Parts & Accessories</h3>
-                        <ul class="keyword-list">
-                            <li>"[Brand] parts"</li>
-                            <li>"Genuine auto parts"</li>
-                            <li>"Car accessories"</li>
-                            <li>"Replacement parts"</li>
-                            <li>"OEM parts [Location]"</li>
-                        </ul>
-                    </div>
-
-                </div>
-            </div>
-        </section>
+            </div>        </section>
 
         <!-- Automotive Testimonial -->
         <section class="automotive-testimonial">

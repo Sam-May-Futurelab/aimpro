@@ -326,51 +326,7 @@ get_header(); ?>
                     </div>
 
                 </div>
-            </div>
-        </section>
-
-        <!-- Common Home & Garden Keywords -->
-        <section class="home-garden-keywords">
-            <div class="section-content">
-                <h2>High-Intent Home & Garden Keywords We Target</h2>
-                <div class="keywords-grid">
-                    
-                    <div class="keyword-category">
-                        <h3>Landscaping Services</h3>
-                        <ul class="keyword-list">
-                            <li>"Landscaping companies near me"</li>
-                            <li>"Garden design [Location]"</li>
-                            <li>"Lawn care services"</li>
-                            <li>"Landscape installation"</li>
-                            <li>"Outdoor living spaces"</li>
-                        </ul>
-                    </div>
-
-                    <div class="keyword-category">
-                        <h3>Seasonal Services</h3>
-                        <ul class="keyword-list">
-                            <li>"Spring cleanup services"</li>
-                            <li>"Fall leaf removal"</li>
-                            <li>"Snow removal [Location]"</li>
-                            <li>"Seasonal planting"</li>
-                            <li>"Holiday decorating service"</li>
-                        </ul>
-                    </div>
-
-                    <div class="keyword-category">
-                        <h3>Products & Plants</h3>
-                        <ul class="keyword-list">
-                            <li>"Garden center near me"</li>
-                            <li>"Native plants [Location]"</li>
-                            <li>"Mulch delivery"</li>
-                            <li>"Garden supplies"</li>
-                            <li>"Landscaping materials"</li>
-                        </ul>
-                    </div>
-
-                </div>
-            </div>
-        </section>
+            </div>        </section>
 
         <!-- Home & Garden Testimonial -->
         <section class="home-garden-testimonial">

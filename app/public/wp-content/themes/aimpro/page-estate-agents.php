@@ -267,52 +267,7 @@ get_header(); ?>
                             <h3>Mobile Property Search</h3>
                             <p>67% of property searches happen on mobile devices</p>
                         </div>
-                    </div>
-
-                </div>
-            </div>
-        </section>
-
-        <!-- Estate Agent Keywords -->
-        <section class="estate-agent-keywords">
-            <div class="section-content">
-                <h2>High-Intent Estate Agent Keywords</h2>
-                <div class="keywords-grid">
-                    
-                    <div class="keyword-category">
-                        <h3>Vendor Services</h3>
-                        <ul class="keyword-list">
-                            <li>"Estate agent near me"</li>
-                            <li>"House valuation [Location]"</li>
-                            <li>"Sell my house fast"</li>
-                            <li>"Property valuation"</li>
-                            <li>"Best estate agent [Area]"</li>
-                        </ul>
-                    </div>
-
-                    <div class="keyword-category">
-                        <h3>Buyer Services</h3>
-                        <ul class="keyword-list">
-                            <li>"Houses for sale [Location]"</li>
-                            <li>"Property search [Area]"</li>
-                            <li>"Buy property [Location]"</li>
-                            <li>"Property viewing"</li>
-                            <li>"First time buyer advice"</li>
-                        </ul>
-                    </div>
-
-                    <div class="keyword-category">
-                        <h3>Area Specific</h3>
-                        <ul class="keyword-list">
-                            <li>"[Area] property prices"</li>
-                            <li>"[Location] property market"</li>
-                            <li>"Houses in [Postcode]"</li>
-                            <li>"[Area] estate agents"</li>
-                            <li>"Property market [Location]"</li>
-                        </ul>
-                    </div>
-
-                </div>
+                    </div>                </div>
             </div>
         </section>
 

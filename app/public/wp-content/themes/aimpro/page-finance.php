@@ -340,52 +340,7 @@ get_header(); ?>
                                 <span class="tactic">Qualification questions</span>
                             </div>
                         </div>
-                    </div>
-
-                </div>
-            </div>
-        </section>
-
-        <!-- Common Finance Keywords -->
-        <section class="finance-keywords">
-            <div class="section-content">
-                <h2>High-Intent Financial Services Keywords We Target</h2>
-                <div class="keywords-grid">
-                    
-                    <div class="keyword-category">
-                        <h3>Financial Planning</h3>
-                        <ul class="keyword-list">
-                            <li>"Financial advisor near me"</li>
-                            <li>"Retirement planning [Location]"</li>
-                            <li>"Investment advice"</li>
-                            <li>"Financial planning consultant"</li>
-                            <li>"Wealth management services"</li>
-                        </ul>
-                    </div>
-
-                    <div class="keyword-category">
-                        <h3>Insurance Services</h3>
-                        <ul class="keyword-list">
-                            <li>"Life insurance quotes"</li>
-                            <li>"Health insurance broker"</li>
-                            <li>"Business insurance [Location]"</li>
-                            <li>"Insurance comparison"</li>
-                            <li>"Best insurance rates"</li>
-                        </ul>
-                    </div>
-
-                    <div class="keyword-category">
-                        <h3>Banking & Loans</h3>
-                        <ul class="keyword-list">
-                            <li>"Mortgage broker near me"</li>
-                            <li>"Business loans [Location]"</li>
-                            <li>"Personal loan rates"</li>
-                            <li>"Commercial banking"</li>
-                            <li>"Credit repair services"</li>
-                        </ul>
-                    </div>
-
-                </div>
+                    </div>                </div>
             </div>
         </section>
 

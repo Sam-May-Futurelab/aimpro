@@ -265,52 +265,7 @@ get_header(); ?>
                             <h3>Content Influence</h3>
                             <p>92% of buyers are influenced by educational content during research</p>
                         </div>
-                    </div>
-
-                </div>
-            </div>
-        </section>
-
-        <!-- Professional Services Keywords -->
-        <section class="professional-keywords">
-            <div class="section-content">
-                <h2>High-Intent Professional Services Keywords</h2>
-                <div class="keywords-grid">
-                    
-                    <div class="keyword-category">
-                        <h3>Legal Services</h3>
-                        <ul class="keyword-list">
-                            <li>"Personal injury lawyer near me"</li>
-                            <li>"Business attorney [Location]"</li>
-                            <li>"Employment law consultation"</li>
-                            <li>"Criminal defense lawyer"</li>
-                            <li>"Estate planning attorney"</li>
-                        </ul>
-                    </div>
-
-                    <div class="keyword-category">
-                        <h3>Financial Services</h3>
-                        <ul class="keyword-list">
-                            <li>"Financial advisor near me"</li>
-                            <li>"Tax preparation services"</li>
-                            <li>"Investment planning"</li>
-                            <li>"Retirement planning advisor"</li>
-                            <li>"Business tax accountant"</li>
-                        </ul>
-                    </div>
-
-                    <div class="keyword-category">
-                        <h3>Consulting Services</h3>
-                        <ul class="keyword-list">
-                            <li>"Business consultant"</li>
-                            <li>"Management consulting firm"</li>
-                            <li>"Strategic planning consultant"</li>
-                            <li>"HR consulting services"</li>
-                            <li>"IT consulting company"</li>
-                        </ul>
-                    </div>
-
-                </div>
+                    </div>                </div>
             </div>
         </section>
 

@@ -264,52 +264,7 @@ get_header(); ?>
                             <h3>Visual Influence</h3>
                             <p>92% of consumers make purchasing decisions based on visual content</p>
                         </div>
-                    </div>
-
-                </div>
-            </div>
-        </section>
-
-        <!-- E-commerce Keywords -->
-        <section class="ecommerce-keywords">
-            <div class="section-content">
-                <h2>High-Converting E-commerce Keywords</h2>
-                <div class="keywords-grid">
-                    
-                    <div class="keyword-category">
-                        <h3>Product Searches</h3>
-                        <ul class="keyword-list">
-                            <li>"Buy [product] online"</li>
-                            <li>"Best [product] 2024"</li>
-                            <li>"[Product] reviews"</li>
-                            <li>"[Product] sale"</li>
-                            <li>"Cheap [product]"</li>
-                        </ul>
-                    </div>
-
-                    <div class="keyword-category">
-                        <h3>Commercial Intent</h3>
-                        <ul class="keyword-list">
-                            <li>"[Product] price"</li>
-                            <li>"[Product] deals"</li>
-                            <li>"Where to buy [product]"</li>
-                            <li>"[Product] discount"</li>
-                            <li>"[Product] free shipping"</li>
-                        </ul>
-                    </div>
-
-                    <div class="keyword-category">
-                        <h3>Brand & Category</h3>
-                        <ul class="keyword-list">
-                            <li>"[Brand] official store"</li>
-                            <li>"[Category] online shop"</li>
-                            <li>"[Brand] vs [competitor]"</li>
-                            <li>"[Category] buying guide"</li>
-                            <li>"Best [category] brands"</li>
-                        </ul>
-                    </div>
-
-                </div>
+                    </div>                </div>
             </div>
         </section>
 
