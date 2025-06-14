@@ -274,8 +274,7 @@ get_header(); ?>
             <div class="section-content">
                 <h2>Local SEO by Industry</h2>
                 <div class="industries-grid">
-                    
-                    <div class="industry-card">
+                      <div class="industry-card">
                         <h3>Healthcare & Medical</h3>
                         <ul class="industry-features">
                             <li>Medical practice optimization</li>
@@ -283,9 +282,6 @@ get_header(); ?>
                             <li>Local health directory listings</li>
                             <li>Service area targeting</li>
                         </ul>
-                        <div class="industry-results">
-                            <span>Average: 400% increase in patient inquiries</span>
-                        </div>
                     </div>
 
                     <div class="industry-card">
@@ -296,9 +292,6 @@ get_header(); ?>
                             <li>Practice area targeting</li>
                             <li>Professional review management</li>
                         </ul>
-                        <div class="industry-results">
-                            <span>Average: 350% increase in consultations</span>
-                        </div>
                     </div>
 
                     <div class="industry-card">
@@ -309,9 +302,6 @@ get_header(); ?>
                             <li>Local contractor listings</li>
                             <li>Seasonal campaign management</li>
                         </ul>
-                        <div class="industry-results">
-                            <span>Average: 300% increase in service calls</span>
-                        </div>
                     </div>
 
                     <div class="industry-card">
@@ -322,9 +312,6 @@ get_header(); ?>
                             <li>Event and promotion management</li>
                             <li>Multi-location SEO</li>
                         </ul>
-                        <div class="industry-results">
-                            <span>Average: 250% increase in foot traffic</span>
-                        </div>
                     </div>
 
                 </div>
