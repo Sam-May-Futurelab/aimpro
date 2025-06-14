@@ -115,7 +115,12 @@ function aimpro_enqueue_assets() {
       // Enqueue ebook/lead magnet styles
     wp_enqueue_style('aimpro-ebook', get_template_directory_uri() . '/assets/css/ebook.css', array('aimpro-base'), $theme_version . '-' . time());    // Enqueue insights styles
     wp_enqueue_style('aimpro-insights', get_template_directory_uri() . '/assets/css/insights.css', array('aimpro-base'), $theme_version . '-' . time());      // Enqueue blog styles
-    wp_enqueue_style('aimpro-blog', get_template_directory_uri() . '/assets/css/blog.css', array('aimpro-base'), $theme_version . '-' . time());    // Enqueue service pages styles with forced refresh
+    wp_enqueue_style('aimpro-blog', get_template_directory_uri() . '/assets/css/blog.css', array('aimpro-base'), $theme_version . '-' . time());
+    
+    // Enqueue blog post template styles (for single posts only)
+    if (is_single()) {
+        wp_enqueue_style('aimpro-blog-post', get_template_directory_uri() . '/assets/css/blog-post.css', array('aimpro-base'), $theme_version . '-' . time());
+    }// Enqueue service pages styles with forced refresh
     wp_enqueue_style('aimpro-service-pages', get_template_directory_uri() . '/assets/css/service-pages.css', array('aimpro-base'), $theme_version . '-' . time() . rand(100, 999));
 
     // Enqueue solutions pages styles
@@ -1627,7 +1632,8 @@ function aimpro_handle_lead_magnet_form() {
         // Send auto-response to user
         $user_subject = 'Your Free Digital Marketing Guide - ' . get_bloginfo('name');
         $user_message = "Hi {$name},\n\n";
-        $user_message .= "Thank you for requesting our Digital Marketing Guide!\n\n";        $user_message .= "We'll be sending you the guide shortly along with some exclusive insights.\n\n";
+        $user_message .= "Thank you for requesting our Digital Marketing Guide!\n\n";
+        $user_message .= "We'll be sending you the guide shortly along with some exclusive insights.\n\n";
         $user_message .= "Our team will also be in touch within 24 hours to schedule your free consultation.\n\n";
         $user_message .= "Best regards,\n";
         $user_message .= "The Aimpro Team\n";
@@ -2267,4 +2273,13 @@ function aimpro_display_about_video() {
     $output .= '</div>';
     
     return $output;
+}
+
+/**
+ * Calculate estimated reading time for content
+ */
+function aimpro_estimated_reading_time($content) {
+    $word_count = str_word_count(strip_tags($content));
+    $reading_time = ceil($word_count / 200); // 200 words per minute average
+    return max(1, $reading_time); // Minimum 1 minute
 }
