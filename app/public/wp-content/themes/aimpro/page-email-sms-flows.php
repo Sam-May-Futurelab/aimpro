@@ -151,86 +151,83 @@ get_header(); ?>
                         <div class="result-item">
                             <div class="result-number">45%</div>
                             <div class="result-label">SMS Open Rate</div>
-                        </div>
-                        <div class="result-item">
+                        </div>                        <div class="result-item">
                             <div class="result-number">£185K</div>
                             <div class="result-label">Additional Monthly Revenue</div>
                         </div>
                     </div>
-                    <p class="results-summary">Within 4 months, email and SMS automation became their highest-ROI marketing channel, generating £185K in additional monthly revenue.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Flow Types Section -->
-    <section class="flow-types-section">
-        <div class="container">
+    <!-- Flow Types Section -->    <section class="whitelabel-services">
+        <div class="section-content">
             <h2>Types of Automation Flows We Build</h2>
-            <div class="flow-types-grid">
-                <div class="flow-type-item">
-                    <div class="flow-icon">
+            <div class="whitelabel-services-grid">
+                <div class="whitelabel-service-card">
+                    <div class="service-icon">
                         <i class="fas fa-play"></i>
                     </div>
                     <h3>Welcome & Onboarding</h3>
                     <p>Multi-touch sequences that introduce your brand, build trust, and guide new subscribers toward their first purchase.</p>
-                    <div class="flow-metrics">
-                        <span>Average: 4x higher engagement</span>
+                    <div class="service-metric">
+                        <strong>Average: 4x higher engagement</strong>
                     </div>
                 </div>
                 
-                <div class="flow-type-item">
-                    <div class="flow-icon">
+                <div class="whitelabel-service-card">
+                    <div class="service-icon">
                         <i class="fas fa-undo"></i>
                     </div>
                     <h3>Abandonment Recovery</h3>
                     <p>Cart, browse, and checkout abandonment flows with strategic timing and personalized product recommendations.</p>
-                    <div class="flow-metrics">
-                        <span>Average: 25% cart recovery rate</span>
+                    <div class="service-metric">
+                        <strong>Average: 25% cart recovery rate</strong>
                     </div>
                 </div>
                 
-                <div class="flow-type-item">
-                    <div class="flow-icon">
+                <div class="whitelabel-service-card">
+                    <div class="service-icon">
                         <i class="fas fa-graduation-cap"></i>
                     </div>
                     <h3>Educational Nurturing</h3>
                     <p>Value-driven content sequences that educate prospects and position your brand as the trusted solution.</p>
-                    <div class="flow-metrics">
-                        <span>Average: 65% lead-to-customer rate</span>
+                    <div class="service-metric">
+                        <strong>Average: 65% lead-to-customer rate</strong>
                     </div>
                 </div>
                 
-                <div class="flow-type-item">
-                    <div class="flow-icon">
+                <div class="whitelabel-service-card">
+                    <div class="service-icon">
                         <i class="fas fa-birthday-cake"></i>
                     </div>
                     <h3>Lifecycle & Milestone</h3>
                     <p>Birthday, anniversary, and customer milestone campaigns that strengthen relationships and drive repeat purchases.</p>
-                    <div class="flow-metrics">
-                        <span>Average: 8x higher CTR</span>
+                    <div class="service-metric">
+                        <strong>Average: 8x higher CTR</strong>
                     </div>
                 </div>
                 
-                <div class="flow-type-item">
-                    <div class="flow-icon">
+                <div class="whitelabel-service-card">
+                    <div class="service-icon">
                         <i class="fas fa-heart"></i>
                     </div>
                     <h3>Win-Back Campaigns</h3>
                     <p>Re-engagement flows for inactive subscribers and lapsed customers with compelling comeback offers.</p>
-                    <div class="flow-metrics">
-                        <span>Average: 12% reactivation rate</span>
+                    <div class="service-metric">
+                        <strong>Average: 12% reactivation rate</strong>
                     </div>
                 </div>
                 
-                <div class="flow-type-item">
-                    <div class="flow-icon">
+                <div class="whitelabel-service-card">
+                    <div class="service-icon">
                         <i class="fas fa-star"></i>
                     </div>
                     <h3>Review & Referral</h3>
                     <p>Post-purchase sequences that encourage reviews, referrals, and social sharing to drive organic growth.</p>
-                    <div class="flow-metrics">
-                        <span>Average: 35% review generation rate</span>
+                    <div class="service-metric">
+                        <strong>Average: 35% review generation rate</strong>
                     </div>
                 </div>
             </div>
@@ -355,54 +352,51 @@ get_header(); ?>
                 </div>
             </div>
         </div>
-    </section>
-
-    <!-- Tools & Platforms -->
-    <section class="tools-section">
-        <div class="container">
+    </section>    <!-- Tools & Platforms -->
+    <section class="whitelabel-benefits">
+        <div class="section-content">
             <h2>Platforms We Use</h2>
-            <div class="tools-grid">
-                <div class="tool-item">
-                    <div class="tool-icon">
+            <div class="benefits-grid benefits-grid-4">
+                <div class="benefit-card">
+                    <div class="benefit-icon">
                         <i class="fas fa-envelope"></i>
                     </div>
                     <h3>Klaviyo</h3>
                     <p>Advanced e-commerce email and SMS automation with powerful segmentation and predictive analytics.</p>
                 </div>
                 
-                <div class="tool-item">
-                    <div class="tool-icon">
+                <div class="benefit-card">
+                    <div class="benefit-icon">
                         <i class="fab fa-mailchimp"></i>
                     </div>
                     <h3>Mailchimp</h3>
                     <p>User-friendly email marketing platform with automation workflows and basic SMS capabilities.</p>
                 </div>
                 
-                <div class="tool-item">
-                    <div class="tool-icon">
+                <div class="benefit-card">
+                    <div class="benefit-icon">
                         <i class="fas fa-rocket"></i>
                     </div>
                     <h3>ActiveCampaign</h3>
                     <p>Comprehensive marketing automation with CRM integration and advanced behavioral targeting.</p>
                 </div>
                 
-                <div class="tool-item">
-                    <div class="tool-icon">
+                <div class="benefit-card">                    <div class="benefit-icon">
                         <i class="fab fa-hubspot"></i>
                     </div>
                     <h3>HubSpot</h3>
-                    <p>Full-featured marketing hub with email automation, SMS, and comprehensive analytics.</p>
+                    <p>Full-featured marketing hub with email automation, SMS, and comprehensive customer journey mapping.</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Benefits Section -->
-    <section class="benefits-section">
-        <div class="container">
+    <section class="whitelabel-benefits">
+        <div class="section-content">
             <h2>Why Email & SMS Automation Works</h2>
-            <div class="benefits-grid">
-                <div class="benefit-item">
+            <div class="benefits-grid benefits-grid-4">
+                <div class="benefit-card">
                     <div class="benefit-icon">
                         <i class="fas fa-clock"></i>
                     </div>
@@ -410,7 +404,7 @@ get_header(); ?>
                     <p>Reach customers at the optimal moment based on their behavior and engagement patterns.</p>
                 </div>
                 
-                <div class="benefit-item">
+                <div class="benefit-card">
                     <div class="benefit-icon">
                         <i class="fas fa-user"></i>
                     </div>
@@ -418,7 +412,7 @@ get_header(); ?>
                     <p>Deliver highly relevant messages based on purchase history, preferences, and behavior data.</p>
                 </div>
                 
-                <div class="benefit-item">
+                <div class="benefit-card">
                     <div class="benefit-icon">
                         <i class="fas fa-chart-line"></i>
                     </div>
@@ -426,7 +420,7 @@ get_header(); ?>
                     <p>Automate personal communication at scale without increasing manual workload.</p>
                 </div>
                 
-                <div class="benefit-item">
+                <div class="benefit-card">
                     <div class="benefit-icon">
                         <i class="fas fa-dollar-sign"></i>
                     </div>
@@ -456,11 +450,9 @@ get_header(); ?>
     <section id="contact" class="cta-section">
         <div class="container">
             <div class="cta-content">
-                <h2>Ready to Build Revenue-Generating Automation Flows?</h2>
-                <p>Stop leaving money on the table with basic email marketing. Our sophisticated email and SMS automation flows will turn your subscriber list into a predictable revenue engine that works 24/7.</p>
+                <h2>Ready to Build Revenue-Generating Automation Flows?</h2>                <p>Stop leaving money on the table with basic email marketing. Our sophisticated email and SMS automation flows will turn your subscriber list into a predictable revenue engine that works 24/7.</p>
                 <div class="cta-buttons">
                     <a href="<?php echo home_url('/contact'); ?>" class="btn-primary">Build Your Flows</a>
-                    <a href="tel:+441234567890" class="btn-secondary">Call Now: 01234 567 890</a>
                 </div>
             </div>
         </div>

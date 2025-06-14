@@ -541,12 +541,10 @@ get_header(); ?>
     <!-- CTA Section -->
     <section id="contact" class="cta-section">
         <div class="container">
-            <div class="cta-content">
-                <h2>Ready to Revolutionize Your Marketing with AI?</h2>
+            <div class="cta-content">                <h2>Ready to Revolutionize Your Marketing with AI?</h2>
                 <p>Don't get left behind in the AI revolution. Our expert team will implement cutting-edge AI tools that automate your marketing, increase efficiency, and drive unprecedented growth for your business.</p>
                 <div class="cta-buttons">
                     <a href="<?php echo home_url('/contact'); ?>" class="btn-primary">Start AI Implementation</a>
-                    <a href="tel:+441234567890" class="btn-secondary">Call Now: 01234 567 890</a>
                 </div>
             </div>
         </div>

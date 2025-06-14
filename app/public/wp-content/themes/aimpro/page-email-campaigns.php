@@ -151,13 +151,11 @@ get_header(); ?>
                         <div class="result-item">
                             <div class="result-number">280%</div>
                             <div class="result-label">Click-Through Rate Increase</div>
-                        </div>
-                        <div class="result-item">
+                        </div>                        <div class="result-item">
                             <div class="result-number">£350K</div>
                             <div class="result-label">Additional Annual Revenue</div>
                         </div>
                     </div>
-                    <p class="results-summary">Within 6 months, email marketing became their second-highest revenue channel, generating £350K in additional annual revenue while reducing customer acquisition costs by 45%.</p>
                 </div>
             </div>
         </div>
@@ -488,12 +486,10 @@ get_header(); ?>
     <!-- CTA Section -->
     <section id="contact" class="cta-section">
         <div class="container">
-            <div class="cta-content">
-                <h2>Ready to Transform Your Email Marketing?</h2>
+            <div class="cta-content">                <h2>Ready to Transform Your Email Marketing?</h2>
                 <p>Stop sending emails that get ignored. Our strategic email campaigns are designed to cut through inbox clutter and drive real business results. Let's turn your email list into a revenue-generating machine.</p>
                 <div class="cta-buttons">
                     <a href="<?php echo home_url('/contact'); ?>" class="btn-primary">Launch Campaigns</a>
-                    <a href="tel:+441234567890" class="btn-secondary">Call Now: 01234 567 890</a>
                 </div>
             </div>
         </div>

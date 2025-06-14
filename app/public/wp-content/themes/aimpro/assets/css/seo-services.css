@@ -17,6 +17,21 @@
     width: 100%;
 }
 
+/* Service metrics styling for automation flows */
+.service-metric {
+    margin-top: 1rem;
+    padding: 0.75rem;
+    background: rgba(255, 107, 107, 0.1);
+    border-left: 3px solid var(--primary-orange);
+    border-radius: 4px;
+}
+
+.service-metric strong {
+    color: var(--primary-orange);
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
 /* Service icon styling for service grids */
 .service-item .service-icon i,
 .whitelabel-service-card .service-icon i {

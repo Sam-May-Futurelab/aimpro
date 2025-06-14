@@ -416,10 +416,8 @@ get_header(); ?>
         <div class="container">
             <div class="cta-content">
                 <h2>Ready to Transform Your CRM with AI?</h2>
-                <p>Stop losing leads to poor follow-up and manual processes. Our AI-powered CRM implementation will revolutionize how you manage customers and drive predictable revenue growth.</p>
-                <div class="cta-buttons">
+                <p>Stop losing leads to poor follow-up and manual processes. Our AI-powered CRM implementation will revolutionize how you manage customers and drive predictable revenue growth.</p>                <div class="cta-buttons">
                     <a href="<?php echo home_url('/contact'); ?>" class="btn-primary">Start Your AI CRM</a>
-                    <a href="tel:+441234567890" class="btn-secondary">Call Now: 01234 567 890</a>
                 </div>
             </div>
         </div>

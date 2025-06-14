@@ -506,10 +506,8 @@ get_header(); ?>
         <div class="container">
             <div class="cta-content">
                 <h2>Ready to Engage Visitors 24/7?</h2>
-                <p>Stop losing leads to slow response times and missed opportunities. Our intelligent chatbots provide instant engagement and qualification, turning your website into a lead-generating machine that works around the clock.</p>
-                <div class="cta-buttons">
+                <p>Stop losing leads to slow response times and missed opportunities. Our intelligent chatbots provide instant engagement and qualification, turning your website into a lead-generating machine that works around the clock.</p>                <div class="cta-buttons">
                     <a href="<?php echo home_url('/contact'); ?>" class="btn-primary">Build Your Chatbot</a>
-                    <a href="tel:+441234567890" class="btn-secondary">Call Now: 01234 567 890</a>
                 </div>
             </div>
         </div>

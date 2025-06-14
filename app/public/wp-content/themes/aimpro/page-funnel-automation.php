@@ -506,10 +506,8 @@ get_header(); ?>
         <div class="container">
             <div class="cta-content">
                 <h2>Ready to Automate Your Sales Process?</h2>
-                <p>Stop chasing leads manually and start converting prospects automatically. Our intelligent funnel automation will free up your time while consistently generating qualified leads and sales for your business.</p>
-                <div class="cta-buttons">
+                <p>Stop chasing leads manually and start converting prospects automatically. Our intelligent funnel automation will free up your time while consistently generating qualified leads and sales for your business.</p>                <div class="cta-buttons">
                     <a href="<?php echo home_url('/contact'); ?>" class="btn-primary">Build Your Funnel</a>
-                    <a href="tel:+441234567890" class="btn-secondary">Call Now: 01234 567 890</a>
                 </div>
             </div>
         </div>
