@@ -349,48 +349,72 @@ get_header(); ?>
                 </div>
             </div>
         </div>
-    </section>
-
-    <!-- Conversion Elements -->
-    <section class="conversion-elements">
+    </section>    <!-- Conversion Elements -->
+    <section class="whitelabel-services">
         <div class="container">
-            <h2>Essential Conversion Elements We Include</h2>
+            <div class="section-header">
+                <h2>Essential Conversion Elements We Include</h2>
+            </div>
             
-            <div class="elements-grid">
-                <div class="element-item">
-                    <i class="fas fa-bullhorn"></i>
-                    <h3>Compelling Headlines</h3>
-                    <p>Attention-grabbing headlines that clearly communicate value and capture interest immediately.</p>
+            <div class="whitelabel-services-grid">
+                <div class="whitelabel-service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-bullhorn"></i>
+                    </div>
+                    <div class="service-content">
+                        <h3>Compelling Headlines</h3>
+                        <p>Attention-grabbing headlines that clearly communicate value and capture interest immediately.</p>
+                    </div>
                 </div>
                 
-                <div class="element-item">
-                    <i class="fas fa-star"></i>
-                    <h3>Social Proof</h3>
-                    <p>Testimonials, reviews, trust badges, and customer logos that build credibility and trust.</p>
+                <div class="whitelabel-service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <div class="service-content">
+                        <h3>Social Proof</h3>
+                        <p>Testimonials, reviews, trust badges, and customer logos that build credibility and trust.</p>
+                    </div>
                 </div>
                 
-                <div class="element-item">
-                    <i class="fas fa-mouse-pointer"></i>
-                    <h3>Clear CTAs</h3>
-                    <p>Strategic call-to-action buttons that stand out and guide visitors toward conversion.</p>
+                <div class="whitelabel-service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-mouse-pointer"></i>
+                    </div>
+                    <div class="service-content">
+                        <h3>Clear CTAs</h3>
+                        <p>Strategic call-to-action buttons that stand out and guide visitors toward conversion.</p>
+                    </div>
                 </div>
                 
-                <div class="element-item">
-                    <i class="fas fa-clock"></i>
-                    <h3>Urgency & Scarcity</h3>
-                    <p>Time-sensitive offers and limited availability messaging that motivates immediate action.</p>
+                <div class="whitelabel-service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <div class="service-content">
+                        <h3>Urgency & Scarcity</h3>
+                        <p>Time-sensitive offers and limited availability messaging that motivates immediate action.</p>
+                    </div>
                 </div>
                 
-                <div class="element-item">
-                    <i class="fas fa-shield-alt"></i>
-                    <h3>Risk Reversal</h3>
-                    <p>Money-back guarantees and risk-free offers that remove barriers to conversion.</p>
+                <div class="whitelabel-service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <div class="service-content">
+                        <h3>Risk Reversal</h3>
+                        <p>Money-back guarantees and risk-free offers that remove barriers to conversion.</p>
+                    </div>
                 </div>
                 
-                <div class="element-item">
-                    <i class="fas fa-chart-line"></i>
-                    <h3>Benefit-Focused Copy</h3>
-                    <p>Persuasive copy that focuses on benefits and outcomes rather than features.</p>
+                <div class="whitelabel-service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <div class="service-content">
+                        <h3>Benefit-Focused Copy</h3>
+                        <p>Persuasive copy that focuses on benefits and outcomes rather than features.</p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -469,36 +493,46 @@ get_header(); ?>
                 </div>
             </div>
         </div>
-    </section>
-
-    <!-- FAQ Section -->
-    <section class="faq-section">
+    </section>    <!-- FAQ Section -->
+    <section class="seo-faqs">
         <div class="container">
             <h2>Frequently Asked Questions</h2>
-            <div class="faq-grid">
+            <div class="faq-list">
                 <div class="faq-item">
-                    <h3>How quickly can you deliver a landing page?</h3>
-                    <p>Single landing pages can be delivered in 7 days, while more complex funnels take 10-14 days. Rush delivery is available for urgent campaigns.</p>
+                    <button class="faq-question">How quickly can you deliver a landing page?</button>
+                    <div class="faq-answer">
+                        <p>Single landing pages can be delivered in 7 days, while more complex funnels take 10-14 days. Rush delivery is available for urgent campaigns.</p>
+                    </div>
                 </div>
                 <div class="faq-item">
-                    <h3>Do you write the copy for landing pages?</h3>
-                    <p>Yes, our packages include conversion-optimized copywriting. We can also work with your existing copy if you prefer.</p>
+                    <button class="faq-question">Do you write the copy for landing pages?</button>
+                    <div class="faq-answer">
+                        <p>Yes, our packages include conversion-optimized copywriting. We can also work with your existing copy if you prefer.</p>
+                    </div>
                 </div>
                 <div class="faq-item">
-                    <h3>Can you integrate with my CRM or email platform?</h3>
-                    <p>Absolutely! We integrate with all major CRMs, email platforms, and marketing automation tools to ensure seamless lead capture.</p>
+                    <button class="faq-question">Can you integrate with my CRM or email platform?</button>
+                    <div class="faq-answer">
+                        <p>Absolutely! We integrate with all major CRMs, email platforms, and marketing automation tools to ensure seamless lead capture.</p>
+                    </div>
                 </div>
                 <div class="faq-item">
-                    <h3>Do you provide A/B testing setup?</h3>
-                    <p>Yes, our Professional and Funnel packages include A/B testing setup to help you continuously optimize conversion rates.</p>
+                    <button class="faq-question">Do you provide A/B testing setup?</button>
+                    <div class="faq-answer">
+                        <p>Yes, our Professional and Funnel packages include A/B testing setup to help you continuously optimize conversion rates.</p>
+                    </div>
                 </div>
                 <div class="faq-item">
-                    <h3>What if my landing page doesn't convert well?</h3>
-                    <p>We provide ongoing optimization support and can make data-driven improvements to enhance performance based on actual results.</p>
+                    <button class="faq-question">What if my landing page doesn't convert well?</button>
+                    <div class="faq-answer">
+                        <p>We provide ongoing optimization support and can make data-driven improvements to enhance performance based on actual results.</p>
+                    </div>
                 </div>
                 <div class="faq-item">
-                    <h3>Can I make changes after the page is live?</h3>
-                    <p>Yes, all packages include support periods for changes. We also offer maintenance packages for ongoing updates and optimization.</p>
+                    <button class="faq-question">Can I make changes after the page is live?</button>
+                    <div class="faq-answer">
+                        <p>Yes, all packages include support periods for changes. We also offer maintenance packages for ongoing updates and optimization.</p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -509,10 +543,8 @@ get_header(); ?>
         <div class="container">
             <div class="cta-content">
                 <h2>Ready to Build Landing Pages That Convert?</h2>
-                <p>Get a free consultation and discover how high-converting landing pages can transform your marketing campaigns.</p>
-                <div class="cta-buttons">
+                <p>Get a free consultation and discover how high-converting landing pages can transform your marketing campaigns.</p>                <div class="cta-buttons">
                     <a href="<?php echo home_url('/contact'); ?>" class="btn-primary">Get Free Quote</a>
-                    <a href="tel:+441234567890" class="btn-outline">Call Now: +44 123 456 7890</a>
                 </div>
             </div>
         </div>

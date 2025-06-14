@@ -564,10 +564,8 @@ get_header(); ?>
         <div class="container">
             <div class="cta-content">
                 <h2>Ready to Build a Sales Funnel That Converts?</h2>
-                <p>Get a free funnel strategy session and discover how a properly designed sales funnel can transform your business.</p>
-                <div class="cta-buttons">
+                <p>Get a free funnel strategy session and discover how a properly designed sales funnel can transform your business.</p>                <div class="cta-buttons">
                     <a href="<?php echo home_url('/contact'); ?>" class="btn-primary">Get Free Strategy Session</a>
-                    <a href="tel:+441234567890" class="btn-outline">Call Now: +44 123 456 7890</a>
                 </div>
             </div>
         </div>

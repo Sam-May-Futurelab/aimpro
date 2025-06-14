@@ -560,10 +560,8 @@ get_header(); ?>
         <div class="container">
             <div class="cta-content">
                 <h2>Ready to Optimize Your Website for Better Results?</h2>
-                <p>Get a free UX audit and discover exactly how to improve your website's performance and conversions.</p>
-                <div class="cta-buttons">
+                <p>Get a free UX audit and discover exactly how to improve your website's performance and conversions.</p>                <div class="cta-buttons">
                     <a href="<?php echo home_url('/contact'); ?>" class="btn-primary">Get Free UX Audit</a>
-                    <a href="tel:+441234567890" class="btn-outline">Call Now: +44 123 456 7890</a>
                 </div>
             </div>
         </div>

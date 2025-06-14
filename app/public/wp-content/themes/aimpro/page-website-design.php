@@ -447,10 +447,8 @@ get_header(); ?>
         <div class="container">
             <div class="cta-content">
                 <h2>Ready to Transform Your Online Presence?</h2>
-                <p>Get a free consultation and discover how a custom website can drive more leads and sales for your business.</p>
-                <div class="cta-buttons">
+                <p>Get a free consultation and discover how a custom website can drive more leads and sales for your business.</p>                <div class="cta-buttons">
                     <a href="<?php echo home_url('/contact'); ?>" class="btn-primary">Get Free Quote</a>
-                    <a href="tel:+441234567890" class="btn-outline">Call Now: +44 123 456 7890</a>
                 </div>
             </div>
         </div>

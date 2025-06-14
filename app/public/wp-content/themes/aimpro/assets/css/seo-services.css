@@ -1943,28 +1943,7 @@ body.page-template-page-templates-tools .featured-resource .tool-meta ul li::bef
     margin-bottom: 25px;
     color: #1e293b;
     position: relative;
-    display: flex;
-    align-items: center;
-    gap: 15px;
 }
-
-.industry-card h3::before {
-    content: '';
-    width: 50px;
-    height: 50px;
-    background: linear-gradient(135deg, rgba(241, 90, 37, 0.1), rgba(241, 90, 37, 0.2));
-    border-radius: 15px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-shrink: 0;
-    border: 2px solid rgba(241, 90, 37, 0.2);
-}
-
-.industry-card:nth-child(1) h3::before { content: '🏥'; font-size: 24px; }
-.industry-card:nth-child(2) h3::before { content: '⚖️'; font-size: 24px; }
-.industry-card:nth-child(3) h3::before { content: '🔧'; font-size: 24px; }
-.industry-card:nth-child(4) h3::before { content: '🍽️'; font-size: 24px; }
 
 .industry-features {
     list-style: none;

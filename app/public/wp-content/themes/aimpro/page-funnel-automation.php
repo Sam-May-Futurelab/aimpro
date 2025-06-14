@@ -151,86 +151,80 @@ get_header(); ?>
                         <div class="result-item">
                             <div class="result-number">180%</div>
                             <div class="result-label">Revenue Growth</div>
-                        </div>
-                        <div class="result-item">
+                        </div>                        <div class="result-item">
                             <div class="result-number">£1.2M</div>
                             <div class="result-label">Additional Annual Revenue</div>
                         </div>
                     </div>
-                    <p class="results-summary">The automated funnel now generates £1.2M annually while freeing up 45 hours per week, allowing the coach to focus on high-value activities and scale the business.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Funnel Types Section -->
-    <section class="funnel-types-section">
+    <!-- Funnel Types Section -->    <!-- Funnel Types -->
+    <section class="local-seo-industries">
         <div class="container">
-            <h2>Types of Funnels We Build</h2>
-            <div class="funnel-types-grid">
-                <div class="funnel-type-item">
-                    <div class="funnel-icon">
-                        <i class="fas fa-play"></i>
+            <div class="section-header">
+                <h2>Types of Funnels We Build</h2>
+            </div>
+            <div class="industries-grid">
+                <div class="industry-card">
+                    <div class="service-icon">
+                        <i class="fas fa-magnet"></i>
                     </div>
-                    <h3>Lead Generation Funnel</h3>
-                    <p>Attract qualified prospects with valuable lead magnets and nurture them through educational content toward a sales conversation.</p>
-                    <div class="funnel-metrics">
-                        <span>Average: 25% opt-in rate</span>
+                    <div class="service-content">
+                        <h3>Lead Generation Funnel</h3>
+                        <p>Attract qualified prospects with valuable lead magnets and nurture them through educational content toward a sales conversation.</p>
                     </div>
                 </div>
                 
-                <div class="funnel-type-item">
-                    <div class="funnel-icon">
+                <div class="industry-card">
+                    <div class="service-icon">
                         <i class="fas fa-shopping-cart"></i>
                     </div>
-                    <h3>E-commerce Sales Funnel</h3>
-                    <p>Guide visitors from product discovery to purchase with optimized product pages, cart recovery, and upsell sequences.</p>
-                    <div class="funnel-metrics">
-                        <span>Average: 15% conversion rate</span>
+                    <div class="service-content">
+                        <h3>E-commerce Sales Funnel</h3>
+                        <p>Guide visitors from product discovery to purchase with optimized product pages, cart recovery, and upsell sequences.</p>
                     </div>
                 </div>
                 
-                <div class="funnel-type-item">
-                    <div class="funnel-icon">
+                <div class="industry-card">
+                    <div class="service-icon">
                         <i class="fas fa-video"></i>
                     </div>
-                    <h3>Webinar Funnel</h3>
-                    <p>Drive webinar registrations, maximize attendance, and convert attendees into customers with automated follow-up sequences.</p>
-                    <div class="funnel-metrics">
-                        <span>Average: 35% attendance rate</span>
+                    <div class="service-content">
+                        <h3>Webinar Funnel</h3>
+                        <p>Drive webinar registrations, maximize attendance, and convert attendees into customers with automated follow-up sequences.</p>
                     </div>
                 </div>
                 
-                <div class="funnel-type-item">
-                    <div class="funnel-icon">
-                        <i class="fas fa-download"></i>
+                <div class="industry-card">
+                    <div class="service-icon">
+                        <i class="fas fa-rocket"></i>
                     </div>
-                    <h3>Product Launch Funnel</h3>
-                    <p>Build anticipation and drive sales for new products with pre-launch sequences and scarcity-driven campaigns.</p>
-                    <div class="funnel-metrics">
-                        <span>Average: 40% higher launch sales</span>
+                    <div class="service-content">
+                        <h3>Product Launch Funnel</h3>
+                        <p>Build anticipation and drive sales for new products with pre-launch sequences and scarcity-driven campaigns.</p>
                     </div>
                 </div>
                 
-                <div class="funnel-type-item">
-                    <div class="funnel-icon">
+                <div class="industry-card">
+                    <div class="service-icon">
                         <i class="fas fa-graduation-cap"></i>
                     </div>
-                    <h3>Course/Membership Funnel</h3>
-                    <p>Convert prospects into course students or members with value-driven content and social proof.</p>
-                    <div class="funnel-metrics">
-                        <span>Average: 18% conversion rate</span>
+                    <div class="service-content">
+                        <h3>Course/Membership Funnel</h3>
+                        <p>Convert prospects into course students or members with value-driven content and social proof.</p>
                     </div>
                 </div>
                 
-                <div class="funnel-type-item">
-                    <div class="funnel-icon">
+                <div class="industry-card">
+                    <div class="service-icon">
                         <i class="fas fa-handshake"></i>
                     </div>
-                    <h3>B2B Sales Funnel</h3>
-                    <p>Nurture business prospects through complex sales cycles with targeted content and automated follow-up.</p>
-                    <div class="funnel-metrics">
-                        <span>Average: 28% qualified lead rate</span>
+                    <div class="service-content">
+                        <h3>B2B Sales Funnel</h3>
+                        <p>Nurture business prospects through complex sales cycles with targeted content and automated follow-up.</p>
                     </div>
                 </div>
             </div>
