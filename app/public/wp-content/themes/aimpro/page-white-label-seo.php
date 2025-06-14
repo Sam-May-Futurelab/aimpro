@@ -285,16 +285,15 @@ get_header(); ?>
                                 <span class="price">£497</span>
                                 <span class="period">per month</span>
                             </div>
-                        </div>
-                        <div class="package-features">
+                        </div>                        <div class="package-features">
                             <ul>
-                                <li>✓ Up to 5 target keywords</li>
-                                <li>✓ Monthly SEO audit</li>
-                                <li>✓ On-page optimization</li>
-                                <li>✓ Basic link building (5 links/month)</li>
-                                <li>✓ Monthly branded report</li>
-                                <li>✓ Google Business Profile optimization</li>
-                                <li>✓ Technical SEO monitoring</li>
+                                <li>Up to 5 target keywords</li>
+                                <li>Monthly SEO audit</li>
+                                <li>On-page optimization</li>
+                                <li>Basic link building (5 links/month)</li>
+                                <li>Monthly branded report</li>
+                                <li>Google Business Profile optimization</li>
+                                <li>Technical SEO monitoring</li>
                             </ul>
                         </div>
                         <div class="package-cta">
@@ -310,18 +309,17 @@ get_header(); ?>
                                 <span class="price">£997</span>
                                 <span class="period">per month</span>
                             </div>
-                        </div>
-                        <div class="package-features">
+                        </div>                        <div class="package-features">
                             <ul>
-                                <li>✓ Up to 15 target keywords</li>
-                                <li>✓ Bi-weekly SEO audits</li>
-                                <li>✓ Advanced on-page optimization</li>
-                                <li>✓ Premium link building (15 links/month)</li>
-                                <li>✓ Weekly branded reports</li>
-                                <li>✓ Local SEO optimization</li>
-                                <li>✓ Content optimization</li>
-                                <li>✓ Competitor analysis</li>
-                                <li>✓ Priority support</li>
+                                <li>Up to 15 target keywords</li>
+                                <li>Bi-weekly SEO audits</li>
+                                <li>Advanced on-page optimization</li>
+                                <li>Premium link building (15 links/month)</li>
+                                <li>Weekly branded reports</li>
+                                <li>Local SEO optimization</li>
+                                <li>Content optimization</li>
+                                <li>Competitor analysis</li>
+                                <li>Priority support</li>
                             </ul>
                         </div>
                         <div class="package-cta">
@@ -336,19 +334,18 @@ get_header(); ?>
                                 <span class="price">£1,997</span>
                                 <span class="period">per month</span>
                             </div>
-                        </div>
-                        <div class="package-features">
+                        </div>                        <div class="package-features">
                             <ul>
-                                <li>✓ Unlimited keywords</li>
-                                <li>✓ Weekly SEO audits</li>
-                                <li>✓ Complete on-page optimization</li>
-                                <li>✓ Premium link building (30+ links/month)</li>
-                                <li>✓ Custom reporting schedule</li>
-                                <li>✓ Multi-location SEO</li>
-                                <li>✓ Content creation included</li>
-                                <li>✓ Advanced technical SEO</li>
-                                <li>✓ Dedicated account manager</li>
-                                <li>✓ White-glove support</li>
+                                <li>Unlimited keywords</li>
+                                <li>Weekly SEO audits</li>
+                                <li>Complete on-page optimization</li>
+                                <li>Premium link building (30+ links/month)</li>
+                                <li>Custom reporting schedule</li>
+                                <li>Multi-location SEO</li>
+                                <li>Content creation included</li>
+                                <li>Advanced technical SEO</li>
+                                <li>Dedicated account manager</li>
+                                <li>White-glove support</li>
                             </ul>
                         </div>
                         <div class="package-cta">

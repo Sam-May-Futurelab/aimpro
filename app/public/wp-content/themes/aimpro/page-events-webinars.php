@@ -299,16 +299,19 @@ get_header(); ?>
             <div class="section-content">
                 <h2>Event Types</h2>
                 <div class="categories-grid">
-                    
-                    <div class="category-card">
-                        <div class="category-icon">🎯</div>
+                      <div class="category-card">
+                        <div class="category-icon">
+                            <i class="fas fa-crosshairs"></i>
+                        </div>
                         <h3>Strategy Webinars</h3>
                         <p>High-level strategic discussions about digital marketing trends, best practices, and industry insights.</p>
                         <span class="category-frequency">Monthly</span>
                     </div>
 
                     <div class="category-card">
-                        <div class="category-icon">🛠️</div>
+                        <div class="category-icon">
+                            <i class="fas fa-tools"></i>
+                        </div>
                         <h3>Technical Workshops</h3>
                         <p>Hands-on sessions focusing on specific tools, platforms, and technical implementation guides.</p>
                         <span class="category-frequency">Bi-weekly</span>

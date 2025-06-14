@@ -303,10 +303,12 @@ get_header(); ?>
         <!-- Platforms We Manage -->
         <section class="platforms-section">
             <div class="section-content">
-                <h2>Advertising Platforms We Manage</h2>
-                <div class="platforms-grid">
+                <h2>Advertising Platforms We Manage</h2>                <div class="platforms-grid">
                     <div class="platform-card">
-                        <h3>🔍 Search Advertising</h3>
+                        <div class="platform-icon">
+                            <i class="fas fa-search"></i>
+                        </div>
+                        <h3>Search Advertising</h3>
                         <ul>
                             <li>Google Ads Search Campaigns</li>
                             <li>Microsoft Ads (Bing)</li>
@@ -315,7 +317,10 @@ get_header(); ?>
                         </ul>
                     </div>
                     <div class="platform-card">
-                        <h3>📱 Social Media Advertising</h3>
+                        <div class="platform-icon">
+                            <i class="fas fa-mobile-alt"></i>
+                        </div>
+                        <h3>Social Media Advertising</h3>
                         <ul>
                             <li>Facebook Advertising</li>
                             <li>Instagram Advertising</li>

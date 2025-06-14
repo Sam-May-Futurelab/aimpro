@@ -11,10 +11,11 @@ get_header(); ?>
 <main class="contact-page">
     <!-- Hero Section -->
     <section class="contact-hero">
-        <div class="container">
-            <div class="hero-content">
+        <div class="container">            <div class="hero-content">
                 <div class="hero-badge">
-                    <span class="badge-icon">📍</span>
+                    <span class="badge-icon">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </span>
                     <span>LOCATED IN BIRMINGHAM'S BUSINESS DISTRICT</span>
                 </div>
                 <h1>Get In Touch with <span class="text-gradient">Digital Marketing Experts</span></h1>
@@ -23,21 +24,27 @@ get_header(); ?>
                 <!-- Quick Contact Options -->
                 <div class="quick-contact-grid">
                     <a href="tel:+441212858490" class="quick-contact-item">
-                        <div class="contact-icon">📞</div>
+                        <div class="contact-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
                         <div class="contact-details">
                             <span class="contact-label">Call Us Now</span>
                             <span class="contact-value">+44 121 285 8490</span>
                         </div>
                     </a>
                     <a href="mailto:hello@aimpro.co.uk" class="quick-contact-item">
-                        <div class="contact-icon">✉️</div>
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
                         <div class="contact-details">
                             <span class="contact-label">Email Us</span>
                             <span class="contact-value">hello@aimpro.co.uk</span>
                         </div>
                     </a>
                     <div class="quick-contact-item">
-                        <div class="contact-icon">⏰</div>
+                        <div class="contact-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
                         <div class="contact-details">
                             <span class="contact-label">Business Hours</span>
                             <span class="contact-value">Mon-Fri: 9AM-6PM</span>
@@ -139,9 +146,10 @@ get_header(); ?>
                         <!-- Direct Contact Methods -->
                         <div class="contact-info-card">
                             <h3>Direct Contact</h3>
-                            <div class="contact-methods">
-                                <div class="contact-method">
-                                    <div class="method-icon">📞</div>
+                            <div class="contact-methods">                                <div class="contact-method">
+                                    <div class="method-icon">
+                                        <i class="fas fa-phone"></i>
+                                    </div>
                                     <div class="method-content">
                                         <span class="method-label">Phone</span>
                                         <a href="tel:+441212858490" class="method-value">+44 121 285 8490</a>
@@ -150,16 +158,19 @@ get_header(); ?>
                                 </div>
                                 
                                 <div class="contact-method">
-                                    <div class="method-icon">✉️</div>
+                                    <div class="method-icon">
+                                        <i class="fas fa-envelope"></i>
+                                    </div>
                                     <div class="method-content">
                                         <span class="method-label">Email</span>
                                         <a href="mailto:hello@aimpro.co.uk" class="method-value">hello@aimpro.co.uk</a>
                                         <span class="method-note">We respond within 24 hours</span>
                                     </div>
-                                </div>
-                                
+                                </div>                                
                                 <div class="contact-method">
-                                    <div class="method-icon">💬</div>
+                                    <div class="method-icon">
+                                        <i class="fab fa-whatsapp"></i>
+                                    </div>
                                     <div class="method-content">
                                         <span class="method-label">WhatsApp</span>
                                         <a href="https://wa.me/441212858490" class="method-value">+44 121 285 8490</a>
@@ -174,22 +185,29 @@ get_header(); ?>
                             <h3>Looking for Specific Services?</h3>
                             <div class="service-quick-links">
                                 <a href="<?php echo home_url('/seo-services'); ?>" class="service-link">
-                                    <span class="service-icon">🔍</span>
+                                    <span class="service-icon">
+                                        <i class="fas fa-search"></i>
+                                    </span>
                                     <span class="service-name">SEO Services</span>
                                     <span class="service-arrow">→</span>
                                 </a>
                                 <a href="<?php echo home_url('/google-ads'); ?>" class="service-link">
-                                    <span class="service-icon">📊</span>
+                                    <span class="service-icon">
+                                        <i class="fas fa-chart-bar"></i>
+                                    </span>
                                     <span class="service-name">Google Ads</span>
                                     <span class="service-arrow">→</span>
-                                </a>
-                                <a href="<?php echo home_url('/website-development'); ?>" class="service-link">
-                                    <span class="service-icon">💻</span>
+                                </a>                                <a href="<?php echo home_url('/website-development'); ?>" class="service-link">
+                                    <span class="service-icon">
+                                        <i class="fas fa-laptop"></i>
+                                    </span>
                                     <span class="service-name">Web Development</span>
                                     <span class="service-arrow">→</span>
                                 </a>
                                 <a href="<?php echo home_url('/marketing-automation'); ?>" class="service-link">
-                                    <span class="service-icon">🤖</span>
+                                    <span class="service-icon">
+                                        <i class="fas fa-robot"></i>
+                                    </span>
                                     <span class="service-name">Marketing Automation</span>
                                     <span class="service-arrow">→</span>
                                 </a>

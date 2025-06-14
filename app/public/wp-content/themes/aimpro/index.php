@@ -158,11 +158,10 @@ get_header(); ?>
                         <h3>SEO Services</h3>
                     </div>
                     <div class="service-description">
-                        <p>Dominate search results with comprehensive SEO strategies including local SEO, technical optimization, and on-page excellence that drive organic traffic and qualified leads.</p>
-                        <div class="service-features">
-                            <span class="feature-tag">✓ Local SEO</span>
-                            <span class="feature-tag">✓ Technical SEO</span>
-                            <span class="feature-tag">✓ SEO Audits</span>
+                        <p>Dominate search results with comprehensive SEO strategies including local SEO, technical optimization, and on-page excellence that drive organic traffic and qualified leads.</p>                        <div class="service-features">
+                            <span class="feature-tag">Local SEO</span>
+                            <span class="feature-tag">Technical SEO</span>
+                            <span class="feature-tag">SEO Audits</span>
                         </div>
                     </div>
                     <div class="service-action">
@@ -199,11 +198,10 @@ get_header(); ?>
                         <h3>Google Ads Management</h3>
                     </div>
                     <div class="service-description">
-                        <p>Dominate search results with expertly crafted Google Ads campaigns that capture high-intent traffic and convert clicks into customers with surgical precision and maximum ROI.</p>
-                        <div class="service-features">
-                            <span class="feature-tag">✓ ROI Optimization</span>
-                            <span class="feature-tag">✓ Keyword Research</span>
-                            <span class="feature-tag">✓ A/B Testing</span>
+                        <p>Dominate search results with expertly crafted Google Ads campaigns that capture high-intent traffic and convert clicks into customers with surgical precision and maximum ROI.</p>                        <div class="service-features">
+                            <span class="feature-tag">ROI Optimization</span>
+                            <span class="feature-tag">Keyword Research</span>
+                            <span class="feature-tag">A/B Testing</span>
                         </div>
                     </div>
                     <div class="service-action">
@@ -243,10 +241,9 @@ get_header(); ?>
                     </div>
                     <div class="service-description">
                         <p>Engineer premium, conversion-optimized websites that captivate visitors and transform them into customers through strategic design and seamless user experiences.</p>
-                        <div class="service-features">
-                            <span class="feature-tag">✓ Mobile First</span>
-                            <span class="feature-tag">✓ SEO Ready</span>
-                            <span class="feature-tag">✓ Fast Loading</span>
+                        <div class="service-features">                            <span class="feature-tag">Mobile First</span>
+                            <span class="feature-tag">SEO Ready</span>
+                            <span class="feature-tag">Fast Loading</span>
                         </div>
                     </div>
                     <div class="service-action">

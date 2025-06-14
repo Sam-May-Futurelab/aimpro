@@ -236,9 +236,10 @@ get_header(); ?>
             <div class="section-content">
                 <h2>Marketing Automation Benefits</h2>
                 <div class="benefits-grid">
-                    
-                    <div class="benefit-card">
-                        <div class="benefit-icon">⏱️</div>
+                      <div class="benefit-card">
+                        <div class="benefit-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
                         <div class="benefit-content">
                             <h3>Time Savings</h3>
                             <p>Save 40+ hours per week by automating repetitive marketing tasks and workflows.</p>
@@ -247,7 +248,9 @@ get_header(); ?>
                     </div>
 
                     <div class="benefit-card">
-                        <div class="benefit-icon">🎯</div>
+                        <div class="benefit-icon">
+                            <i class="fas fa-crosshairs"></i>
+                        </div>
                         <div class="benefit-content">
                             <h3>Better Lead Quality</h3>
                             <p>Improve lead scoring and qualification to focus sales efforts on highest-value prospects.</p>
@@ -256,7 +259,9 @@ get_header(); ?>
                     </div>
 
                     <div class="benefit-card">
-                        <div class="benefit-icon">📈</div>
+                        <div class="benefit-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
                         <div class="benefit-content">
                             <h3>Increased Conversions</h3>
                             <p>Nurture leads more effectively with personalized, timely communications that drive action.</p>

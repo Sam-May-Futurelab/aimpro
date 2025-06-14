@@ -145,14 +145,28 @@
 
 .method-card h3::before,
 .tool-card h3::before {
-    content: "🎯";
-    font-size: 1.25rem;
+    content: "";
+    width: 20px;
+    height: 20px;
+    background-image: url('../images/aimpro-target.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    display: inline-block;
+    margin-right: 8px;
 }
 
 /* Tool category icons */
 .tool-category h3::before {
-    content: "🔧";
-    font-size: 1.25rem;
+    content: "";
+    width: 20px;
+    height: 20px;
+    background-image: url('../images/aimpro-target.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    display: inline-block;
+    margin-right: 8px;
 }
 
 /* Method Description */
@@ -433,8 +447,15 @@
 
 /* Generic icon for strategy cards */
 .strategy-card h3::before {
-    content: "🎯";
-    font-size: 1.25rem;
+    content: "";
+    width: 20px;
+    height: 20px;
+    background-image: url('../images/aimpro-target.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    display: inline-block;
+    margin-right: 8px;
 }
 
 /* Strategy Lists */

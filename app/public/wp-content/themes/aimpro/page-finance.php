@@ -189,9 +189,10 @@ get_header(); ?>
             <div class="section-content">
                 <h2>Financial Services We Specialize In</h2>
                 <div class="types-grid">
-                    
-                    <div class="type-card">
-                        <div class="type-icon">💼</div>
+                      <div class="type-card">
+                        <div class="type-icon">
+                            <i class="fas fa-briefcase"></i>
+                        </div>
                         <h3>Financial Advisory</h3>
                         <ul>
                             <li>Independent financial advisors</li>
@@ -202,7 +203,9 @@ get_header(); ?>
                     </div>
 
                     <div class="type-card">
-                        <div class="type-icon">🏦</div>
+                        <div class="type-icon">
+                            <i class="fas fa-university"></i>
+                        </div>
                         <h3>Banking & Credit</h3>
                         <ul>
                             <li>Community banks</li>
@@ -213,7 +216,9 @@ get_header(); ?>
                     </div>
 
                     <div class="type-card">
-                        <div class="type-icon">🛡️</div>
+                        <div class="type-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
                         <h3>Insurance Services</h3>
                         <ul>
                             <li>Life insurance agents</li>
@@ -224,7 +229,9 @@ get_header(); ?>
                     </div>
 
                     <div class="type-card">
-                        <div class="type-icon">📱</div>
+                        <div class="type-icon">
+                            <i class="fas fa-mobile-alt"></i>
+                        </div>
                         <h3>Fintech & Innovation</h3>
                         <ul>
                             <li>Financial apps & platforms</li>

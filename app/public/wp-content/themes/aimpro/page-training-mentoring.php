@@ -86,20 +86,25 @@ get_header(); ?>
                 <div class="intro-content">
                     <h2>Invest in Your Digital Marketing Future</h2>
                     <p>Whether you're looking to upskill your team, advance your career, or master specific digital marketing disciplines, our training and mentoring programs provide the personalized guidance you need to achieve your goals faster.</p>
-                </div>
-                <div class="training-benefits">
+                </div>                <div class="training-benefits">
                     <div class="benefit-item">
-                        <div class="benefit-icon">🎯</div>
+                        <div class="benefit-icon">
+                            <i class="fas fa-crosshairs"></i>
+                        </div>
                         <h3>Personalized Approach</h3>
                         <p>Tailored programs based on your current skills and specific goals</p>
                     </div>
                     <div class="benefit-item">
-                        <div class="benefit-icon">⚡</div>
+                        <div class="benefit-icon">
+                            <i class="fas fa-bolt"></i>
+                        </div>
                         <h3>Accelerated Learning</h3>
                         <p>Learn from industry experts with real-world experience</p>
                     </div>
                     <div class="benefit-item">
-                        <div class="benefit-icon">📈</div>
+                        <div class="benefit-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
                         <h3>Measurable Results</h3>
                         <p>Track your progress with actionable assignments and projects</p>
                     </div>

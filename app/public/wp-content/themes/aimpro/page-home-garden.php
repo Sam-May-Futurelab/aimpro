@@ -208,11 +208,9 @@ get_header(); ?>
                                 <span class="tactic">Social media inspiration content</span>
                             </div>
                         </div>
-                    </div>
-
-                    <div class="season-card summer">
+                    </div>                    <div class="season-card summer">
                         <div class="season-header">
-                            <h3>☀️ Summer (June - August)</h3>
+                            <h3><i class="fas fa-sun"></i> Summer (June - August)</h3>
                             <span class="season-revenue">Maintenance Season</span>
                         </div>
                         <div class="season-content">
@@ -250,11 +248,9 @@ get_header(); ?>
                                 <span class="tactic">Next year planning</span>
                             </div>
                         </div>
-                    </div>
-
-                    <div class="season-card winter">
+                    </div>                    <div class="season-card winter">
                         <div class="season-header">
-                            <h3>❄️ Winter (December - February)</h3>
+                            <h3><i class="fas fa-snowflake"></i> Winter (December - February)</h3>
                             <span class="season-revenue">Planning Season</span>
                         </div>
                         <div class="season-content">

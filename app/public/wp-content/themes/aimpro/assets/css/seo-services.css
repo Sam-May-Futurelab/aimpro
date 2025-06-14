@@ -1759,3 +1759,74 @@
         gap: 15px;
     }
 }
+
+/* Replace checkmark emoji bullets with target image - BULLET POINTS ONLY */
+.package-features li,
+.feature-tag {
+    list-style: none !important;
+}
+
+.package-features li::before,
+.feature-tag::before {
+    content: '';
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    background-image: url('../images/aimpro-target.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin-right: 8px;
+    vertical-align: middle;
+}
+
+/* For package features */
+.package-features li {
+    position: relative;
+    padding-left: 24px;
+    list-style: none;
+}
+
+.package-features li::before {
+    position: absolute;
+    left: 0;
+    top: 2px;
+}
+
+/* For feature tags */
+.feature-tag {
+    position: relative;
+    padding-left: 24px !important;
+}
+
+.feature-tag::before {
+    position: absolute;
+    left: 4px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+/* TARGET BULLET POINTS FOR TEMPLATES TOOLS PAGE BULLET LISTS ONLY - NOT MAIN ICONS */
+body.page-template-page-templates-tools .tool-content ul li,
+body.page-template-page-templates-tools .resource-content ul li,
+body.page-template-page-templates-tools .featured-resource .tool-meta ul li {
+    list-style: none !important;
+    position: relative;
+    padding-left: 24px;
+    margin-bottom: 8px;
+}
+
+body.page-template-page-templates-tools .tool-content ul li::before,
+body.page-template-page-templates-tools .resource-content ul li::before,
+body.page-template-page-templates-tools .featured-resource .tool-meta ul li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 2px;
+    width: 16px;
+    height: 16px;
+    background-image: url('../images/aimpro-target.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
