@@ -307,51 +307,61 @@
     margin: 0;
 }
 
-/* Audit Process Steps */
+/* Clean Process Steps - Unified Styling */
+.process-section {
+    padding: 80px 0;
+    background: #ffffff;
+}
+
+.process-section h2 {
+    text-align: center;
+    font-size: 36px;
+    font-weight: 800;
+    color: #1e293b;
+    margin-bottom: 60px;
+}
+
 .process-steps {
-    margin-top: 50px;
+    max-width: 900px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
     position: relative;
 }
 
 .process-step {
     display: flex;
+    align-items: flex-start;
     gap: 30px;
-    margin-bottom: 40px;
     position: relative;
+    padding: 30px;
+    background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+    border-radius: 16px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.06);
+    transition: all 0.3s ease;
+    border: 1px solid rgba(241, 90, 37, 0.1);
 }
 
-.process-step:last-child {
-    margin-bottom: 0;
-}
-
-.process-step::after {
-    content: '';
-    position: absolute;
-    top: 50px;
-    left: 20px;
-    bottom: -40px;
-    width: 2px;
-    background: rgba(241, 90, 37, 0.2);
-}
-
-.process-step:last-child::after {
-    display: none;
+.process-step:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(241, 90, 37, 0.1);
+    border-color: rgba(241, 90, 37, 0.2);
 }
 
 .step-number {
-    width: 40px;
-    height: 40px;
-    background: #F15A25;
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, #F15A25, #e44c1c);
     border-radius: 50%;
     color: white;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-weight: 700;
-    font-size: 18px;
+    font-weight: 800;
+    font-size: 24px;
     flex-shrink: 0;
-    position: relative;
-    z-index: 2;
+    box-shadow: 0 4px 15px rgba(241, 90, 37, 0.3);
 }
 
 .step-content {
@@ -359,9 +369,9 @@
 }
 
 .step-content h3 {
-    font-size: 20px;
+    font-size: 24px;
     font-weight: 700;
-    margin-bottom: 10px;
+    margin-bottom: 12px;
     color: #1e293b;
 }
 
@@ -369,17 +379,28 @@
     font-size: 16px;
     line-height: 1.6;
     color: #64748b;
-    margin-bottom: 10px;
+    margin: 0;
 }
 
-.step-duration {
-    display: inline-block;
-    padding: 5px 12px;
-    background: rgba(241, 90, 37, 0.1);
-    color: #F15A25;
-    border-radius: 20px;
-    font-size: 14px;
-    font-weight: 600;
+/* Responsive Process Steps */
+@media (max-width: 768px) {
+    .process-step {
+        flex-direction: column;
+        text-align: center;
+        gap: 20px;
+        padding: 25px 20px;
+    }
+    
+    .step-number {
+        margin: 0 auto;
+        width: 50px;
+        height: 50px;
+        font-size: 20px;
+    }
+    
+    .step-content h3 {
+        font-size: 20px;
+    }
 }
 
 /* Audit Case Study Section */
@@ -1607,59 +1628,6 @@
     .service-links-container {
         grid-template-columns: 1fr;
     }
-}
-
-/* Service Process Steps */
-.services-process {
-    padding: 60px 0;
-    background: #ffffff;
-}
-
-.process-steps {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 30px;
-    margin-top: 40px;
-}
-
-.process-step {
-    text-align: center;
-    padding: 30px 20px;
-    background: #f8fafc;
-    border-radius: 12px;
-    transition: transform 0.3s ease;
-}
-
-.process-step:hover {
-    transform: translateY(-5px);
-}
-
-.step-number {
-    width: 60px;
-    height: 60px;
-    background: #F15A25;
-    color: white;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 24px;
-    font-weight: 700;
-    margin: 0 auto 20px;
-}
-
-.step-content h3 {
-    font-size: 20px;
-    font-weight: 600;
-    color: #1e293b;
-    margin-bottom: 15px;
-}
-
-.step-content p {
-    font-size: 16px;
-    color: #64748b;
-    line-height: 1.6;
-    margin: 0;
 }
 
 /* Services CTA */

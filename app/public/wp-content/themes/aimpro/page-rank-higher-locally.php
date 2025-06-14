@@ -42,25 +42,20 @@ get_header(); ?>
                     </div>
                 </div>
             </div>
-        </section>
-
-        <!-- Local SEO Services -->
+        </section>        <!-- Local SEO Services -->
         <section class="local-seo-services">
             <div class="section-content">
                 <h2>Our Local SEO Services</h2>
-                <div name="services-grid">
+                <div class="benefits-grid-2x2">
                     
-                    <div class="service-card">
-                        <div class="service-icon">
-                            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M21 10C21 17 12 23 12 23C12 23 3 17 3 10C3 6.13401 6.13401 3 10 3C13.866 3 17 6.13401 17 10Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                <circle cx="12" cy="10" r="3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                            </svg>
+                    <div class="benefit-card">
+                        <div class="benefit-icon">
+                            <i class="fab fa-google"></i>
                         </div>
-                        <div class="service-content">
+                        <div class="benefit-content">
                             <h3>Google My Business Optimization</h3>
                             <p>Maximize your Google My Business profile to appear prominently in local search results and Google Maps.</p>
-                            <ul class="service-features">
+                            <ul class="feature-list">
                                 <li>Complete profile optimization</li>
                                 <li>Regular posting and updates</li>
                                 <li>Photo and video optimization</li>
@@ -69,18 +64,14 @@ get_header(); ?>
                         </div>
                     </div>
 
-                    <div class="service-card">
-                        <div class="service-icon">
-                            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                <path d="M2 17L12 22L22 17" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                <path d="M2 12L12 17L22 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                            </svg>
+                    <div class="benefit-card">
+                        <div class="benefit-icon">
+                            <i class="fas fa-building"></i>
                         </div>
-                        <div class="service-content">
+                        <div class="benefit-content">
                             <h3>Local Citation Building</h3>
                             <p>Build consistent business listings across local directories to improve search visibility and credibility.</p>
-                            <ul class="service-features">
+                            <ul class="feature-list">
                                 <li>Directory submission campaigns</li>
                                 <li>NAP consistency monitoring</li>
                                 <li>Industry-specific citations</li>
@@ -89,16 +80,14 @@ get_header(); ?>
                         </div>
                     </div>
 
-                    <div class="service-card">
-                        <div class="service-icon">
-                            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M9 12L11 14L15 10M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                            </svg>
+                    <div class="benefit-card">
+                        <div class="benefit-icon">
+                            <i class="fas fa-star"></i>
                         </div>
-                        <div class="service-content">
+                        <div class="benefit-content">
                             <h3>Review Management</h3>
                             <p>Generate positive reviews and manage your online reputation to build trust with potential customers.</p>
-                            <ul class="service-features">
+                            <ul class="feature-list">
                                 <li>Review generation campaigns</li>
                                 <li>Review response management</li>
                                 <li>Reputation monitoring</li>
@@ -107,16 +96,14 @@ get_header(); ?>
                         </div>
                     </div>
 
-                    <div class="service-card">
-                        <div class="service-icon">
-                            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M21 21L16.514 16.506M19 10.5C19 15.194 15.194 19 10.5 19C5.806 19 2 15.194 2 10.5C2 5.806 5.806 2 10.5 2C15.194 2 19 5.806 19 10.5Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                            </svg>
+                    <div class="benefit-card">
+                        <div class="benefit-icon">
+                            <i class="fas fa-search-location"></i>
                         </div>
-                        <div class="service-content">
+                        <div class="benefit-content">
                             <h3>Local Keyword Optimization</h3>
                             <p>Target location-specific keywords that drive local traffic and qualified leads to your business.</p>
-                            <ul class="service-features">
+                            <ul class="feature-list">
                                 <li>Local keyword research</li>
                                 <li>Location page creation</li>
                                 <li>Service area optimization</li>
@@ -279,42 +266,30 @@ get_header(); ?>
                 <div class="industries-grid">
                     
                     <div class="industry-card">
-                        <h3>Healthcare & Medical</h3>
-                        <ul class="industry-features">
+                        <h3>Healthcare & Medical</h3>                        <ul class="industry-features">
                             <li>Medical practice optimization</li>
                             <li>HIPAA-compliant review management</li>
                             <li>Health-focused content creation</li>
                             <li>Medical directory submissions</li>
                         </ul>
-                        <div class="industry-results">
-                            <span>Average: 350% patient inquiry increase</span>
-                        </div>
                     </div>
 
                     <div class="industry-card">
-                        <h3>Professional Services</h3>
-                        <ul class="industry-features">
+                        <h3>Professional Services</h3>                        <ul class="industry-features">
                             <li>Law firm local optimization</li>
                             <li>Financial advisor visibility</li>
                             <li>Professional certification highlighting</li>
                             <li>Service area expansion</li>
                         </ul>
-                        <div class="industry-results">
-                            <span>Average: 280% consultation requests</span>
-                        </div>
                     </div>
 
                     <div class="industry-card">
-                        <h3>Home Services</h3>
-                        <ul class="industry-features">
+                        <h3>Home Services</h3>                        <ul class="industry-features">
                             <li>Contractor local optimization</li>
                             <li>Emergency service visibility</li>
                             <li>Service area mapping</li>
                             <li>Before/after photo optimization</li>
                         </ul>
-                        <div class="industry-results">
-                            <span>Average: 450% service calls increase</span>
-                        </div>
                     </div>
 
                 </div>

@@ -231,11 +231,10 @@ get_header(); ?>
             </div>
         </section>
 
-        <!-- Automation Benefits -->
-        <section class="automation-benefits">
+        <!-- Automation Benefits -->        <section class="automation-benefits">
             <div class="section-content">
                 <h2>Marketing Automation Benefits</h2>
-                <div class="benefits-grid">
+                <div class="benefits-grid-4">
                       <div class="benefit-card">
                         <div class="benefit-icon">
                             <i class="fas fa-clock"></i>
@@ -243,7 +242,6 @@ get_header(); ?>
                         <div class="benefit-content">
                             <h3>Time Savings</h3>
                             <p>Save 40+ hours per week by automating repetitive marketing tasks and workflows.</p>
-                            <span class="benefit-metric">Average: 60% time reduction</span>
                         </div>
                     </div>
 
@@ -254,7 +252,6 @@ get_header(); ?>
                         <div class="benefit-content">
                             <h3>Better Lead Quality</h3>
                             <p>Improve lead scoring and qualification to focus sales efforts on highest-value prospects.</p>
-                            <span class="benefit-metric">Average: 85% lead quality improvement</span>
                         </div>
                     </div>
 
@@ -265,16 +262,16 @@ get_header(); ?>
                         <div class="benefit-content">
                             <h3>Increased Conversions</h3>
                             <p>Nurture leads more effectively with personalized, timely communications that drive action.</p>
-                            <span class="benefit-metric">Average: 250% conversion increase</span>
                         </div>
                     </div>
 
                     <div class="benefit-card">
-                        <div class="benefit-icon">🔄</div>
+                        <div class="benefit-icon">
+                            <i class="fas fa-sync-alt"></i>
+                        </div>
                         <div class="benefit-content">
                             <h3>Consistent Execution</h3>
                             <p>Ensure every lead receives consistent, professional follow-up regardless of team capacity.</p>
-                            <span class="benefit-metric">99% follow-up consistency</span>
                         </div>
                     </div>
 

@@ -255,42 +255,70 @@ get_header(); ?>
 
                 </div>
             </div>
-        </section>
-
-        <!-- Lead Generation Tools -->
+        </section>        <!-- Lead Generation Tools -->
         <section class="lead-generation-tools">
             <div class="section-content">
                 <h2>Lead Generation Tools & Technologies</h2>
-                <div class="tools-grid">
+                <div class="benefits-grid-4">
                     
-                    <div class="tool-category">
-                        <h3>Analytics & Tracking</h3>
-                        <ul class="tool-list">
-                            <li>Google Analytics 4 setup</li>
-                            <li>Conversion tracking implementation</li>
-                            <li>Lead source attribution</li>
-                            <li>ROI measurement dashboards</li>
-                        </ul>
+                    <div class="benefit-card">
+                        <div class="benefit-icon">
+                            <i class="fas fa-chart-bar"></i>
+                        </div>
+                        <div class="benefit-content">
+                            <h3>Analytics & Tracking</h3>
+                            <ul class="feature-list">
+                                <li>Google Analytics 4 setup</li>
+                                <li>Conversion tracking implementation</li>
+                                <li>Lead source attribution</li>
+                                <li>ROI measurement dashboards</li>
+                            </ul>
+                        </div>
                     </div>
 
-                    <div class="tool-category">
-                        <h3>CRM Integration</h3>
-                        <ul class="tool-list">
-                            <li>HubSpot integration</li>
-                            <li>Salesforce automation</li>
-                            <li>Pipedrive setup</li>
-                            <li>Custom CRM solutions</li>
-                        </ul>
+                    <div class="benefit-card">
+                        <div class="benefit-icon">
+                            <i class="fas fa-database"></i>
+                        </div>
+                        <div class="benefit-content">
+                            <h3>CRM Integration</h3>
+                            <ul class="feature-list">
+                                <li>HubSpot integration</li>
+                                <li>Salesforce automation</li>
+                                <li>Pipedrive setup</li>
+                                <li>Custom CRM solutions</li>
+                            </ul>
+                        </div>
                     </div>
 
-                    <div class="tool-category">
-                        <h3>Landing Page Optimization</h3>
-                        <ul class="tool-list">
-                            <li>A/B testing frameworks</li>
-                            <li>Heat mapping analysis</li>
-                            <li>Form optimization</li>
-                            <li>Mobile responsiveness</li>
-                        </ul>
+                    <div class="benefit-card">
+                        <div class="benefit-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <div class="benefit-content">
+                            <h3>Landing Page Optimization</h3>
+                            <ul class="feature-list">
+                                <li>A/B testing frameworks</li>
+                                <li>Heat mapping analysis</li>
+                                <li>Form optimization</li>
+                                <li>Mobile responsiveness</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="benefit-card">
+                        <div class="benefit-icon">
+                            <i class="fas fa-envelope-open-text"></i>
+                        </div>
+                        <div class="benefit-content">
+                            <h3>Email Marketing</h3>
+                            <ul class="feature-list">
+                                <li>Automated email sequences</li>
+                                <li>Lead nurturing campaigns</li>
+                                <li>Behavioral email triggers</li>
+                                <li>Performance analytics</li>
+                            </ul>
+                        </div>
                     </div>
 
                 </div>

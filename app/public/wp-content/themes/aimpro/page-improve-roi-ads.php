@@ -281,43 +281,73 @@ get_header(); ?>
             </div>
         </section>
 
-        <!-- ROI Metrics -->
-        <section class="roi-metrics">
+        <!-- ROI Metrics -->        <section class="roi-metrics">
             <div class="section-content">
                 <h2>Key ROI Metrics We Track & Optimize</h2>
-                <div class="metrics-grid">
+                <div class="benefits-grid-4">
                     
-                    <div class="metric-category">
-                        <h3>Performance Metrics</h3>
-                        <ul class="metric-list">
-                            <li>Return on Ad Spend (ROAS)</li>
-                            <li>Cost Per Acquisition (CPA)</li>
-                            <li>Click-Through Rate (CTR)</li>
-                            <li>Conversion Rate</li>
-                            <li>Quality Score</li>
-                        </ul>
+                    <div class="benefit-card">
+                        <div class="benefit-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <div class="benefit-content">
+                            <h3>Performance Metrics</h3>
+                            <ul class="feature-list">
+                                <li>Return on Ad Spend (ROAS)</li>
+                                <li>Cost Per Acquisition (CPA)</li>
+                                <li>Click-Through Rate (CTR)</li>
+                                <li>Conversion Rate</li>
+                                <li>Quality Score</li>
+                            </ul>
+                        </div>
                     </div>
 
-                    <div class="metric-category">
-                        <h3>Business Metrics</h3>
-                        <ul class="metric-list">
-                            <li>Customer Lifetime Value (CLV)</li>
-                            <li>Revenue Per Click</li>
-                            <li>Profit Margin Per Campaign</li>
-                            <li>Payback Period</li>
-                            <li>Customer Acquisition Cost</li>
-                        </ul>
+                    <div class="benefit-card">
+                        <div class="benefit-icon">
+                            <i class="fas fa-dollar-sign"></i>
+                        </div>
+                        <div class="benefit-content">
+                            <h3>Business Metrics</h3>
+                            <ul class="feature-list">
+                                <li>Customer Lifetime Value (CLV)</li>
+                                <li>Revenue Per Click</li>
+                                <li>Profit Margin Per Campaign</li>
+                                <li>Payback Period</li>
+                                <li>Customer Acquisition Cost</li>
+                            </ul>
+                        </div>
                     </div>
 
-                    <div class="metric-category">
-                        <h3>Efficiency Metrics</h3>
-                        <ul class="metric-list">
-                            <li>Impression Share</li>
-                            <li>Search Lost IS (Budget)</li>
-                            <li>Search Lost IS (Rank)</li>
-                            <li>Cost Per Thousand (CPM)</li>
-                            <li>Average Position</li>
-                        </ul>
+                    <div class="benefit-card">
+                        <div class="benefit-icon">
+                            <i class="fas fa-tachometer-alt"></i>
+                        </div>
+                        <div class="benefit-content">
+                            <h3>Efficiency Metrics</h3>
+                            <ul class="feature-list">
+                                <li>Impression Share</li>
+                                <li>Search Lost IS (Budget)</li>
+                                <li>Search Lost IS (Rank)</li>
+                                <li>Cost Per Thousand (CPM)</li>
+                                <li>Average Position</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="benefit-card">
+                        <div class="benefit-icon">
+                            <i class="fas fa-bullseye"></i>
+                        </div>
+                        <div class="benefit-content">
+                            <h3>Targeting Metrics</h3>
+                            <ul class="feature-list">
+                                <li>Audience Overlap</li>
+                                <li>Demographic Performance</li>
+                                <li>Geographic Efficiency</li>
+                                <li>Device Performance</li>
+                                <li>Time of Day Optimization</li>
+                            </ul>
+                        </div>
                     </div>
 
                 </div>

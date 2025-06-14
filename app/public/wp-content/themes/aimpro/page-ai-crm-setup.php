@@ -151,13 +151,11 @@ get_header(); ?>
                         <div class="result-item">
                             <div class="result-number">60%</div>
                             <div class="result-label">Sales Cycle Reduction</div>
-                        </div>
-                        <div class="result-item">
+                        </div>                        <div class="result-item">
                             <div class="result-number">£2.1M</div>
                             <div class="result-label">Additional Annual Revenue</div>
                         </div>
                     </div>
-                    <p class="results-summary">Within 6 months, the AI-powered CRM became their competitive advantage, generating £2.1M in additional revenue while reducing sales team workload by 45%.</p>
                 </div>
             </div>
         </div>
@@ -209,14 +207,14 @@ get_header(); ?>
                 </div>
             </div>
         </div>
-    </section>
-
-    <!-- AI Features Section -->
-    <section class="ai-features-section">
+    </section>    <!-- AI Features Section -->
+    <section class="service-overview">
         <div class="container">
-            <h2>AI-Powered CRM Features</h2>
+            <div class="section-header">
+                <h2>AI-Powered CRM Features</h2>
+            </div>
             <div class="features-grid">
-                <div class="feature-item">
+                <div class="feature-card">
                     <div class="feature-icon">
                         <i class="fas fa-robot"></i>
                     </div>
@@ -224,15 +222,15 @@ get_header(); ?>
                     <p>AI algorithms analyze 50+ data points to score leads and predict conversion probability in real-time.</p>
                 </div>
                 
-                <div class="feature-item">
+                <div class="feature-card">
                     <div class="feature-icon">
-                        <i class="fas fa-crystal-ball"></i>
+                        <i class="fas fa-chart-line"></i>
                     </div>
                     <h3>Predictive Forecasting</h3>
                     <p>Machine learning models predict sales outcomes, revenue forecasts, and optimal deal closure timing.</p>
                 </div>
                 
-                <div class="feature-item">
+                <div class="feature-card">
                     <div class="feature-icon">
                         <i class="fas fa-bullseye"></i>
                     </div>
@@ -240,7 +238,7 @@ get_header(); ?>
                     <p>AI tracks customer behavior patterns to trigger personalized engagement at optimal moments.</p>
                 </div>
                 
-                <div class="feature-item">
+                <div class="feature-card">
                     <div class="feature-icon">
                         <i class="fas fa-chart-bar"></i>
                     </div>
@@ -321,43 +319,51 @@ get_header(); ?>
                 </div>
             </div>
         </div>
-    </section>
-
-    <!-- CRM Platforms Section -->
-    <section class="platforms-section">
+    </section>    <!-- CRM Platforms Section -->
+    <section class="whitelabel-services">
         <div class="container">
-            <h2>Supported CRM Platforms</h2>
-            <div class="platforms-grid">
-                <div class="platform-item">
-                    <div class="platform-icon">
+            <div class="section-header">
+                <h2>Supported CRM Platforms</h2>
+            </div>
+            <div class="whitelabel-services-grid">
+                <div class="whitelabel-service-card">
+                    <div class="service-icon">
                         <i class="fab fa-hubspot"></i>
                     </div>
-                    <h3>HubSpot CRM</h3>
-                    <p>Complete inbound marketing platform with powerful AI automation and lead nurturing capabilities.</p>
+                    <div class="service-content">
+                        <h3>HubSpot CRM</h3>
+                        <p>Complete inbound marketing platform with powerful AI automation and lead nurturing capabilities.</p>
+                    </div>
                 </div>
                 
-                <div class="platform-item">
-                    <div class="platform-icon">
+                <div class="whitelabel-service-card">
+                    <div class="service-icon">
                         <i class="fab fa-salesforce"></i>
                     </div>
-                    <h3>Salesforce</h3>
-                    <p>Enterprise-grade CRM with Einstein AI for advanced predictive analytics and automation.</p>
+                    <div class="service-content">
+                        <h3>Salesforce</h3>
+                        <p>Enterprise-grade CRM with Einstein AI for advanced predictive analytics and automation.</p>
+                    </div>
                 </div>
                 
-                <div class="platform-item">
-                    <div class="platform-icon">
-                        <i class="fas fa-cloud"></i>
+                <div class="whitelabel-service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-chart-pie"></i>
                     </div>
-                    <h3>Pipedrive</h3>
-                    <p>Sales-focused CRM with AI-powered sales assistant and intelligent deal recommendations.</p>
+                    <div class="service-content">
+                        <h3>Pipedrive</h3>
+                        <p>Sales-focused CRM with AI-powered sales assistant and intelligent deal recommendations.</p>
+                    </div>
                 </div>
                 
-                <div class="platform-item">
-                    <div class="platform-icon">
-                        <i class="fas fa-users"></i>
+                <div class="whitelabel-service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-envelope-open-text"></i>
                     </div>
-                    <h3>ActiveCampaign</h3>
-                    <p>Customer experience automation platform combining CRM, email marketing, and AI predictions.</p>
+                    <div class="service-content">
+                        <h3>ActiveCampaign</h3>
+                        <p>Customer experience automation platform combining CRM, email marketing, and AI predictions.</p>
+                    </div>
                 </div>
             </div>
         </div>

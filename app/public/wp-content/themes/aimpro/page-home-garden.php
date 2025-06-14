@@ -41,24 +41,19 @@ get_header(); ?>
                     </div>
                 </div>
             </div>
-        </section>
-
-        <!-- Home & Garden Services -->
+        </section>        <!-- Home & Garden Services -->
         <section class="home-garden-services">
             <div class="section-content">
                 <h2>Our Home & Garden Marketing Services</h2>
-                <div class="services-grid">
-                    
-                    <div class="service-card">
-                        <div class="service-icon">
-                            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M8 2V6M16 2V6M3 10H21M5 4H19C20.1046 4 21 4.89543 21 6V20C21 21.1046 20.1046 22 19 22H5C3.89543 22 3 21.1046 3 20V6C3 4.89543 3.89543 4 5 4Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                            </svg>
+                <div class="benefits-grid-2x2">
+                      <div class="benefit-card">
+                        <div class="benefit-icon">
+                            <i class="fas fa-calendar-alt"></i>
                         </div>
-                        <div class="service-content">
+                        <div class="benefit-content">
                             <h3>Seasonal Campaign Optimization</h3>
                             <p>Maximize revenue during peak seasons with strategically planned campaigns that target homeowners when they're ready to invest in their properties.</p>
-                            <ul class="service-features">
+                            <ul class="feature-list">
                                 <li>Spring landscaping campaigns</li>
                                 <li>Summer maintenance promotions</li>
                                 <li>Fall cleanup and preparation</li>
@@ -67,17 +62,14 @@ get_header(); ?>
                         </div>
                     </div>
 
-                    <div class="service-card">
-                        <div class="service-icon">
-                            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M23 7L16 12L23 17V7Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                <path d="M14 5H3C1.89543 5 1 5.89543 1 7V17C1 18.1046 1.89543 19 3 19H14C15.1046 19 16 18.1046 16 17V7C16 5.89543 15.1046 5 14 5Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                            </svg>
+                    <div class="benefit-card">
+                        <div class="benefit-icon">
+                            <i class="fas fa-camera"></i>
                         </div>
-                        <div class="service-content">
+                        <div class="benefit-content">
                             <h3>Visual Content Marketing</h3>
                             <p>Showcase stunning transformations with before/after content that demonstrates your expertise and builds trust with potential customers.</p>
-                            <ul class="service-features">
+                            <ul class="feature-list">
                                 <li>Before/after transformation showcases</li>
                                 <li>Time-lapse project videos</li>
                                 <li>Pinterest optimization for inspiration</li>
@@ -86,17 +78,14 @@ get_header(); ?>
                         </div>
                     </div>
 
-                    <div class="service-card">
-                        <div class="service-icon">
-                            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M21 10C21 17 12 23 12 23S3 17 3 10C3 7.61305 3.94821 5.32387 5.63604 3.63604C7.32387 1.94821 9.61305 1 12 1C14.3869 1 16.6761 1.94821 18.3639 3.63604C20.0518 5.32387 21 7.61305 21 10Z" stroke="currentColor" stroke-width="2"/>
-                                <path d="M12 13C13.6569 13 15 11.6569 15 10C15 8.34315 13.6569 7 12 7C10.3431 7 9 8.34315 9 10C9 11.6569 10.3431 13 12 13Z" stroke="currentColor" stroke-width="2"/>
-                            </svg>
+                    <div class="benefit-card">
+                        <div class="benefit-icon">
+                            <i class="fas fa-map-marker-alt"></i>
                         </div>
-                        <div class="service-content">
+                        <div class="benefit-content">
                             <h3>Local Service Area Marketing</h3>
                             <p>Dominate your local service areas with geo-targeted campaigns that reach homeowners exactly when they need your services.</p>
-                            <ul class="service-features">
+                            <ul class="feature-list">
                                 <li>Hyper-local SEO optimization</li>
                                 <li>Google My Business management</li>
                                 <li>Location-based PPC campaigns</li>
@@ -105,17 +94,14 @@ get_header(); ?>
                         </div>
                     </div>
 
-                    <div class="service-card">
-                        <div class="service-icon">
-                            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M14.7 6.3C15.1 6.1 15.4 5.7 15.4 5.2V4C15.4 3.4 14.9 3 14.3 3H9.7C9.1 3 8.6 3.4 8.6 4V5.2C8.6 5.7 8.9 6.1 9.3 6.3L10.6 7L9.3 7.7C8.9 7.9 8.6 8.3 8.6 8.8V10C8.6 10.6 9.1 11 9.7 11H14.3C14.9 11 15.4 10.6 15.4 10V8.8C15.4 8.3 15.1 7.9 14.7 7.7L13.4 7L14.7 6.3Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                <path d="M12 11V21M9 18H15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                            </svg>
+                    <div class="benefit-card">
+                        <div class="benefit-icon">
+                            <i class="fas fa-chart-line"></i>
                         </div>
-                        <div class="service-content">
+                        <div class="benefit-content">
                             <h3>Lead Generation & Conversion</h3>
                             <p>Convert website visitors into paying customers with optimized landing pages, quote request forms, and follow-up automation.</p>
-                            <ul class="service-features">
+                            <ul class="feature-list">
                                 <li>Quote request optimization</li>
                                 <li>Consultation booking systems</li>
                                 <li>Follow-up automation</li>
@@ -341,10 +327,8 @@ get_header(); ?>
                     </div>
                 </div>
             </div>
-        </section>
-
-        <!-- CTA Section -->
-        <section class="home-garden-cta">
+        </section>        <!-- CTA Section -->
+        <section class="home-garden-cta text-center">
             <div class="section-content">
                 <h2>Ready to Grow Your Home & Garden Business?</h2>
                 <p>Let's create a seasonal marketing strategy that maximizes your peak seasons and builds year-round revenue.</p>
