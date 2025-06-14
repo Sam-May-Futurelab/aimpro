@@ -582,6 +582,144 @@
     padding-top: 1rem;
 }
 
+/* Stats and Results Grids - Force Horizontal Layout - Increased Specificity */
+body .case-study-results,
+body .stats-grid,
+body .results-grid,
+body .metrics-grid,
+body.page-template-page-company .case-study-results,
+body.page-template-page-testimonials .case-study-results,
+.page-become-a-partner .case-study-results,
+body.page-template-page-company .stats-grid,
+body.page-template-page-testimonials .stats-grid,
+.page-become-a-partner .stats-grid,
+body.page-template-page-company .results-grid,
+body.page-template-page-testimonials .results-grid,
+.page-become-a-partner .results-grid,
+body.page-template-page-company .metrics-grid,
+body.page-template-page-testimonials .metrics-grid,
+.page-become-a-partner .metrics-grid {
+    display: grid !important;
+    grid-template-columns: repeat(4, 1fr) !important;
+    gap: 20px !important;
+    margin: 30px 0 !important;
+}
+
+body .result-item,
+body .stat-item,
+body .metric-item,
+body.page-template-page-company .result-item,
+body.page-template-page-testimonials .result-item,
+.page-become-a-partner .result-item,
+body.page-template-page-company .stat-item,
+body.page-template-page-testimonials .stat-item,
+.page-become-a-partner .stat-item,
+body.page-template-page-company .metric-item,
+body.page-template-page-testimonials .metric-item,
+.page-become-a-partner .metric-item {
+    background: white !important;
+    padding: 20px !important;
+    border-radius: 10px !important;
+    text-align: center !important;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05) !important;
+    transition: transform 0.3s ease !important;
+}
+
+body .result-item:hover,
+body .stat-item:hover,
+body .metric-item:hover,
+body.page-template-page-company .result-item:hover,
+body.page-template-page-testimonials .result-item:hover,
+.page-become-a-partner .result-item:hover,
+body.page-template-page-company .stat-item:hover,
+body.page-template-page-testimonials .stat-item:hover,
+.page-become-a-partner .stat-item:hover,
+body.page-template-page-company .metric-item:hover,
+body.page-template-page-testimonials .metric-item:hover,
+.page-become-a-partner .metric-item:hover {
+    transform: translateY(-5px) !important;
+}
+
+body .result-number,
+body .stat-number,
+body .metric-number,
+body.page-template-page-company .result-number,
+body.page-template-page-testimonials .result-number,
+.page-become-a-partner .result-number,
+body.page-template-page-company .stat-number,
+body.page-template-page-testimonials .stat-number,
+.page-become-a-partner .stat-number,
+body.page-template-page-company .metric-number,
+body.page-template-page-testimonials .metric-number,
+.page-become-a-partner .metric-number {
+    display: block !important;
+    font-size: 36px !important;
+    font-weight: 800 !important;
+    color: var(--primary-orange, #F15A25) !important;
+    margin-bottom: 10px !important;
+    line-height: 1 !important;
+}
+
+body .result-label,
+body .stat-label,
+body .metric-label,
+body.page-template-page-company .result-label,
+body.page-template-page-testimonials .result-label,
+.page-become-a-partner .result-label,
+body.page-template-page-company .stat-label,
+body.page-template-page-testimonials .stat-label,
+.page-become-a-partner .stat-label,
+body.page-template-page-company .metric-label,
+body.page-template-page-testimonials .metric-label,
+.page-become-a-partner .metric-label {
+    display: block !important;
+    font-size: 16px !important;
+    color: var(--text-secondary, #64748b) !important;
+    line-height: 1.4 !important;
+    margin: 0 !important;
+}
+
+/* Responsive adjustments for stats */
+@media (max-width: 992px) {
+    .case-study-results,
+    .stats-grid,
+    .results-grid,
+    .metrics-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+    }
+}
+
+@media (max-width: 768px) {
+    .case-study-results,
+    .stats-grid,
+    .results-grid,
+    .metrics-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 15px !important;
+    }
+    
+    .result-number,
+    .stat-number,
+    .metric-number {
+        font-size: 28px !important;
+    }
+    
+    .result-label,
+    .stat-label,
+    .metric-label {
+        font-size: 14px !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .case-study-results,
+    .stats-grid,
+    .results-grid,
+    .metrics-grid {
+        grid-template-columns: 1fr !important;
+    }
+}
+
 @media (max-width: 768px) {
     .content-grid {
         flex-direction: column;
@@ -663,4 +801,108 @@
     .timeline-content {
         width: 45%;
     }
+}
+
+/* Case Study Section Styling */
+.case-study-section {
+    margin: 3rem 0;
+}
+
+.case-study-header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.case-study-header h3,
+.case-study-results-title {
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: var(--color-primary, #2c3e50);
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+/* Case Study Button - Smaller and Cleaner - Increased Specificity */
+body .case-study-cta,
+body .btn.case-study-btn,
+body a[href*="case-study"],
+body .read-case-study-btn,
+body.page-template-page-company .case-study-cta,
+body.page-template-page-testimonials .case-study-cta,
+.page-become-a-partner .case-study-cta,
+body.page-template-page-company .btn.case-study-btn,
+body.page-template-page-testimonials .btn.case-study-btn,
+.page-become-a-partner .btn.case-study-btn,
+body.page-template-page-company a[href*="case-study"],
+body.page-template-page-testimonials a[href*="case-study"],
+.page-become-a-partner a[href*="case-study"],
+body.page-template-page-company .read-case-study-btn,
+body.page-template-page-testimonials .read-case-study-btn,
+.page-become-a-partner .read-case-study-btn {
+    display: inline-block !important;
+    background: var(--primary-orange, #F15A25) !important;
+    color: white !important;
+    padding: 8px 16px !important;
+    border-radius: 6px !important;
+    font-size: 14px !important;
+    font-weight: 600 !important;
+    text-decoration: none !important;
+    transition: all 0.3s ease !important;
+    margin-top: 1rem !important;
+    text-align: center !important;
+    border: none !important;
+    cursor: pointer !important;
+    width: auto !important;
+    max-width: 200px !important;
+}
+
+body .case-study-cta:hover,
+body .btn.case-study-btn:hover,
+body a[href*="case-study"]:hover,
+body .read-case-study-btn:hover,
+body.page-template-page-company .case-study-cta:hover,
+body.page-template-page-testimonials .case-study-cta:hover,
+.page-become-a-partner .case-study-cta:hover,
+body.page-template-page-company .btn.case-study-btn:hover,
+body.page-template-page-testimonials .btn.case-study-btn:hover,
+.page-become-a-partner .btn.case-study-btn:hover,
+body.page-template-page-company a[href*="case-study"]:hover,
+body.page-template-page-testimonials a[href*="case-study"]:hover,
+.page-become-a-partner a[href*="case-study"]:hover,
+body.page-template-page-company .read-case-study-btn:hover,
+body.page-template-page-testimonials .read-case-study-btn:hover,
+.page-become-a-partner .read-case-study-btn:hover {
+    background: #d14518 !important;
+    transform: translateY(-2px) !important;
+    box-shadow: 0 4px 8px rgba(241, 90, 37, 0.3) !important;
+}
+
+/* Ensure stats title appears above the grid - Increased Specificity */
+body .case-study-results-wrapper,
+body.page-template-page-company .case-study-results-wrapper,
+body.page-template-page-testimonials .case-study-results-wrapper,
+.page-become-a-partner .case-study-results-wrapper {
+    text-align: center !important;
+    margin: 2rem 0 !important;
+}
+
+body .case-study-results-wrapper h3,
+body .case-study-results-wrapper h4,
+body.page-template-page-company .case-study-results-wrapper h3,
+body.page-template-page-company .case-study-results-wrapper h4,
+body.page-template-page-testimonials .case-study-results-wrapper h3,
+body.page-template-page-testimonials .case-study-results-wrapper h4,
+.page-become-a-partner .case-study-results-wrapper h3,
+.page-become-a-partner .case-study-results-wrapper h4 {
+    margin-bottom: 1.5rem !important;
+    font-size: 1.6rem !important;
+    color: var(--color-primary, #2c3e50) !important;
+    display: block !important;
+}
+
+body .case-study-results-wrapper .case-study-results,
+body.page-template-page-company .case-study-results-wrapper .case-study-results,
+body.page-template-page-testimonials .case-study-results-wrapper .case-study-results,
+.page-become-a-partner .case-study-results-wrapper .case-study-results {
+    margin-top: 0 !important;
 }

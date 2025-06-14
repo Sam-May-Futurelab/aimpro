@@ -164,28 +164,6 @@ get_header(); ?>
                             </ul>
                         </div>
                     </div>
-                    <div class="case-study-results">
-                        <h3>Results After 4 Months</h3>
-                        <div class="results-grid">
-                            <div class="result-item">
-                                <div class="result-number">280%</div>
-                                <div class="result-label">Conversion Rate Increase</div>
-                            </div>
-                            <div class="result-item">
-                                <div class="result-number">55%</div>
-                                <div class="result-label">Cart Abandonment Reduction</div>
-                            </div>
-                            <div class="result-item">
-                                <div class="result-number">65%</div>
-                                <div class="result-label">Mobile Conversions Increase</div>
-                            </div>
-                            <div class="result-item">
-                                <div class="result-number">40%</div>
-                                <div class="result-label">Page Speed Improvement</div>
-                            </div>
-                        </div>
-                        <a href="<?php echo home_url('/case-studies'); ?>" class="case-study-link">Read Full Case Study</a>
-                    </div>
                 </div>
             </div>
         </section>
