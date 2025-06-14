@@ -123,6 +123,9 @@ function aimpro_enqueue_assets() {
       // Enqueue resource pages styles
     wp_enqueue_style('aimpro-resource-pages', get_template_directory_uri() . '/assets/css/resource-pages.css', array('aimpro-base', 'aimpro-variables'), $theme_version . '-' . time() . rand(100, 999));
     
+    // Enqueue about/company pages styles
+    wp_enqueue_style('aimpro-about-pages', get_template_directory_uri() . '/assets/css/about-pages.css', array('aimpro-base', 'aimpro-variables'), $theme_version . '-' . time() . rand(100, 999));
+    
     // Enqueue page template styles AFTER insights to ensure proper override
     wp_enqueue_style('aimpro-page-templates', get_template_directory_uri() . '/assets/css/page-templates.css', array('aimpro-base', 'aimpro-insights'), $theme_version . '-' . time());
     
@@ -1288,6 +1291,11 @@ function aimpro_landing_page_admin() {
                         <tr>
                             <th scope="row">Description</th>
                             <td>
+                                <textarea name="final_cta_description" rows="3" class="large-text"><?php echo esc_textarea(get_option('final_cta_description', 'Request a marketing review today. We\'ll send you a detailed analysis of your website and marketing, breaking down your next steps to success.')); ?></textarea>
+                                <p class="description">Description text for the final CTA section</p>
+                            </td>
+                        </tr>
+                    </table>
                 </div>
                 
                 <!-- Office Section -->

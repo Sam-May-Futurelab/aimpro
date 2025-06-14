@@ -25,9 +25,8 @@ get_header(); ?>
                         <h2>About Aimpro Digital</h2>
                         <p>Founded in 2020, Aimpro Digital has grown from a small startup to a leading digital marketing agency serving clients across the globe. Our passion for innovation and commitment to results has driven us to become a trusted partner for businesses of all sizes.</p>
                         <p>We specialize in comprehensive digital marketing solutions that drive real business growth. From strategic planning to execution, we're dedicated to helping our clients achieve their goals through cutting-edge digital marketing strategies.</p>
-                    </div>
-                    <div class="content-image">
-                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/company-building.jpg" alt="Aimpro Digital Office" />
+                    </div>                    <div class="content-image">
+                        <img src="https://images.unsplash.com/photo-1604328698692-f76ea9498e76?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="55 Colmore Row Birmingham Office - Aimpro Digital" />
                     </div>
                 </div>
             </div>

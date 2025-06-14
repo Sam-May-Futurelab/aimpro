@@ -1,0 +1,298 @@
+/* 
+ * About Pages Styles
+ * Styling for about pages including company, team, etc.
+ */
+
+/* Page Header */
+.page-header {
+    margin-bottom: 3rem;
+    text-align: center;
+    padding: 2rem 0;
+}
+
+.page-header h1 {
+    font-size: 2.8rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    color: var(--color-primary, #2c3e50);
+}
+
+.page-subtitle {
+    font-size: 1.2rem;
+    color: var(--color-text-light, #666);
+}
+
+/* Company Overview Section */
+.company-overview {
+    margin-bottom: 4rem;
+}
+
+.content-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    align-items: center;
+}
+
+.content-text {
+    flex: 1;
+    min-width: 300px;
+}
+
+.content-image {
+    flex: 1;
+    min-width: 300px;
+}
+
+.content-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+/* Company Timeline Section */
+.company-history {
+    margin-bottom: 4rem;
+}
+
+.timeline {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin-top: 2rem;
+    position: relative;
+}
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 2rem;
+    width: 3px;
+    background-color: var(--color-primary, #2c3e50);
+}
+
+.timeline-item {
+    display: flex;
+    gap: 2rem;
+    position: relative;
+    padding-left: 4rem;
+}
+
+.timeline-item:last-child {
+    padding-bottom: 0;
+}
+
+.timeline-year {
+    position: absolute;
+    left: 0;
+    background-color: var(--color-primary, #2c3e50);
+    color: white;
+    font-weight: 700;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    min-width: 4rem;
+    text-align: center;
+}
+
+.timeline-content {
+    background-color: var(--color-light-bg, #f8f9fa);
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    flex: 1;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.timeline-content:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+.timeline-content h3 {
+    margin-top: 0;
+    color: var(--color-primary, #2c3e50);
+    font-size: 1.4rem;
+    margin-bottom: 0.5rem;
+}
+
+.timeline-content p {
+    margin-bottom: 0;
+    color: var(--color-text, #333);
+}
+
+/* Foundation Section */
+.company-values {
+    margin-bottom: 4rem;
+}
+
+.values-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.value-card {
+    background-color: var(--color-light-bg, #f8f9fa);
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.value-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+.value-icon {
+    color: var(--color-primary, #2c3e50);
+    margin-bottom: 1rem;
+}
+
+.value-card h3 {
+    margin-top: 0;
+    font-size: 1.6rem;
+    color: var(--color-primary, #2c3e50);
+    margin-bottom: 1rem;
+    border-bottom: 2px solid var(--color-accent, #3498db);
+    padding-bottom: 0.5rem;
+}
+
+.value-card p {
+    margin-bottom: 0;
+}
+
+.value-card ul {
+    padding-left: 1.5rem;
+    margin-bottom: 0;
+}
+
+.value-card li {
+    margin-bottom: 0.5rem;
+}
+
+.value-card li strong {
+    color: var(--color-primary, #2c3e50);
+}
+
+/* Company Stats Section */
+.company-stats {
+    margin-bottom: 4rem;
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.stat-card {
+    background-color: var(--color-light-bg, #f8f9fa);
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.stat-card:hover {
+    transform: translateY(-5px);
+}
+
+.stat-number {
+    display: block;
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: var(--color-primary, #2c3e50);
+    margin-bottom: 0.5rem;
+}
+
+.stat-label {
+    display: block;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--color-secondary, #34495e);
+    margin-bottom: 0.5rem;
+}
+
+.stat-description {
+    display: block;
+    font-size: 0.9rem;
+    color: var(--color-text-light, #666);
+}
+
+/* CTA Section */
+.company-cta {
+    margin-bottom: 4rem;
+    background-color: var(--color-light-bg, #f8f9fa);
+    padding: 3rem;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.cta-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .content-grid {
+        flex-direction: column;
+    }
+    
+    .timeline-item {
+        padding-left: 5rem;
+    }
+    
+    .values-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .stats-grid {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    }
+    
+    .cta-buttons {
+        flex-direction: column;
+    }
+}
+
+@media (min-width: 992px) {
+    .timeline::before {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    
+    .timeline-item {
+        padding-left: 0;
+        justify-content: center;
+    }
+    
+    .timeline-item:nth-child(odd) {
+        flex-direction: row-reverse;
+    }
+    
+    .timeline-item:nth-child(odd) .timeline-year {
+        right: 50%;
+        left: auto;
+        margin-right: 2rem;
+    }
+    
+    .timeline-item:nth-child(even) .timeline-year {
+        left: 50%;
+        margin-left: 2rem;
+    }
+    
+    .timeline-content {
+        width: 45%;
+    }
+}
