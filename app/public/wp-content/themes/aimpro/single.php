@@ -209,16 +209,9 @@ get_header(); ?>
                         <li>✓ SEO opportunity analysis</li>
                         <li>✓ Competitor comparison</li>
                         <li>✓ Custom improvement plan</li>
-                    </ul>
-                    <a href="<?php echo home_url('/contact'); ?>" class="btn-primary magnet-cta">Get Free Audit</a>
+                    </ul>                    <a href="<?php echo home_url('/contact'); ?>" class="btn-primary magnet-cta">Get Free Audit</a>
                     <div class="social-proof">
-                        <div class="proof-avatars">
-                            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/testimonials/client-1.jpg" alt="Client">
-                            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/testimonials/client-2.jpg" alt="Client">
-                            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/testimonials/client-3.jpg" alt="Client">
-                            <span class="more-count">+50</span>
-                        </div>
-                        <p>Join 500+ businesses that improved their ROI</p>
+                        <p><strong>500+</strong> businesses improved their ROI</p>
                     </div>
                 </div>
 

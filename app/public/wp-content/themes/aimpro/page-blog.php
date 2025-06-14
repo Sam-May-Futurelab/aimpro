@@ -241,22 +241,21 @@ get_header(); ?>
                                     'order' => 'DESC',
                                     'hide_empty' => false
                                 ));
-                                
-                                if (!empty($categories)) :
+                                  if (!empty($categories)) :
                                     foreach ($categories as $category) : ?>
                                         <li>
-                                            <a href="<?php echo get_category_link($category->term_id); ?>">
+                                            <span class="category-name">
                                                 <?php echo $category->name; ?>
                                                 <span class="post-count">(<?php echo $category->count; ?>)</span>
-                                            </a>
+                                            </span>
                                         </li>
                                     <?php endforeach;
                                 else : ?>
-                                    <li><a href="#">SEO <span class="post-count">(12)</span></a></li>
-                                    <li><a href="#">PPC <span class="post-count">(8)</span></a></li>
-                                    <li><a href="#">Content Marketing <span class="post-count">(15)</span></a></li>
-                                    <li><a href="#">Social Media <span class="post-count">(6)</span></a></li>
-                                    <li><a href="#">Web Development <span class="post-count">(9)</span></a></li>
+                                    <li><span class="category-name">SEO <span class="post-count">(12)</span></span></li>
+                                    <li><span class="category-name">PPC <span class="post-count">(8)</span></span></li>
+                                    <li><span class="category-name">Content Marketing <span class="post-count">(15)</span></span></li>
+                                    <li><span class="category-name">Social Media <span class="post-count">(6)</span></span></li>
+                                    <li><span class="category-name">Web Development <span class="post-count">(9)</span></span></li>
                                 <?php endif; ?>
                             </ul>
                         </div>
