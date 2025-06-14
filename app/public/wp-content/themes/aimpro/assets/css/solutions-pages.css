@@ -5,6 +5,13 @@
 
 /* ===== PAGE STRUCTURE ===== */
 
+/* Global container width */
+.solutions-section .section-content {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
 /* Solution Overview Section */
 .solution-overview {
     padding: 4rem 0;
@@ -1283,6 +1290,93 @@
     left: 0;
     top: 0.75rem;
     font-size: 0.9rem;
+}
+
+/* Solutions Grid Layout - 3x2 Grid */
+.solutions-main-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    margin-top: 3rem;
+    width: 100%;
+}
+
+.solution-card {
+    background: white;
+    border-radius: 16px;
+    padding: 2.5rem;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+    border: 1px solid #e2e8f0;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.solution-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #667eea, #764ba2);
+}
+
+.solution-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
+}
+
+.solutions-main-grid .solution-card {
+    display: flex;
+    flex-direction: column;
+}
+
+.solutions-main-grid .solution-card p {
+    flex-grow: 1;
+}
+
+/* Solution Results Stats */
+.solution-results {
+    background: rgba(102, 126, 234, 0.08);
+    padding: 1rem;
+    border-radius: 8px;
+    margin: 1.5rem 0;
+    font-weight: 600;
+    color: #667eea;
+    text-align: center;
+    border-left: 3px solid #667eea;
+}
+
+/* Solution CTA Link */
+.solution-cta {
+    display: inline-block;
+    background: linear-gradient(45deg, #667eea, #764ba2);
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    text-align: center;
+}
+
+.solution-cta:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+}
+
+/* Responsive Grid */
+@media (max-width: 1200px) {
+    .solutions-main-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .solutions-main-grid {
+        grid-template-columns: 1fr;
+    }
 }
 
 /* Responsive Design for Platform and Metrics Sections */

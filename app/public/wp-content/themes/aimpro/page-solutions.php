@@ -39,164 +39,97 @@ get_header(); ?>
                     </div>
                 </div>
             </div>
-        </section>
-
-        <!-- Solutions Grid -->
-        <section class="solutions-grid">
-            <div class="section-content">
+        </section>        <!-- Solutions Grid -->
+        <section class="solutions-section">
+            <div class="container">
                 <h2>Our Digital Marketing Solutions</h2>
-                <div class="solution-categories">
+                <div class="solutions-main-grid">
                     
                     <!-- Lead Generation -->
-                    <div class="solution-category">
-                        <div class="category-icon">
-                            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M17 21V19C17 17.9391 16.5786 16.9217 15.8284 16.1716C15.0783 15.4214 14.0609 15 13 15H5C3.93913 15 2.92172 15.4214 2.17157 16.1716C1.42143 16.9217 1 17.9391 1 19V21" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                <circle cx="9" cy="7" r="4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                <path d="M23 21V19C23 18.1645 22.7045 17.3541 22.1679 16.7116C21.6313 16.0691 20.8902 15.6316 20.07 15.4662" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                <path d="M16 3.13281C16.8902 3.29814 17.6313 3.73574 18.1679 4.37823C18.7045 5.02072 19 5.83115 19 6.66656C19 7.50197 18.7045 8.3124 18.1679 8.95489C17.6313 9.59738 16.8902 10.035 16 10.2003" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                            </svg>
+                    <div class="solution-card">
+                        <h3>Lead Generation (B2B/B2C)</h3>
+                        <p>Generate high-quality leads that convert into customers through targeted campaigns and proven funnels.</p>
+                        <ul class="solution-features">
+                            <li>Targeted PPC campaigns</li>
+                            <li>Lead magnet creation</li>
+                            <li>Landing page optimization</li>
+                            <li>CRM integration & nurturing</li>
+                        </ul>
+                        <div class="solution-results">
+                            Average: 250% lead increase
                         </div>
-                        <div class="category-content">
-                            <h3>Lead Generation (B2B/B2C)</h3>
-                            <p>Generate high-quality leads that convert into customers through targeted campaigns and proven funnels.</p>
-                            <ul class="category-highlights">
-                                <li>Targeted PPC campaigns</li>
-                                <li>Lead magnet creation</li>
-                                <li>Landing page optimization</li>
-                                <li>CRM integration & nurturing</li>
-                            </ul>
-                            <div class="category-results">
-                                <span class="result-metric">Average: 250% lead increase</span>
-                            </div>
-                            <a href="<?php echo home_url('/lead-generation'); ?>" class="solution-cta">Explore Lead Generation</a>
+                        <a href="<?php echo home_url('/lead-generation'); ?>" class="solution-cta">Explore Lead Generation</a>
+                    </div>                    <!-- Marketing Automation -->
+                    <div class="solution-card">
+                        <h3>Automate Marketing</h3>
+                        <p>Streamline your marketing processes with intelligent automation that nurtures leads and drives conversions 24/7.</p>
+                        <ul class="solution-features">
+                            <li>Email marketing automation</li>
+                            <li>Lead scoring & segmentation</li>
+                            <li>Behavioral trigger campaigns</li>
+                            <li>Multi-channel workflows</li>
+                        </ul>
+                        <div class="solution-results">
+                            Average: 40% time savings
                         </div>
+                        <a href="<?php echo home_url('/automate-marketing'); ?>" class="solution-cta">Discover Automation</a>
+                    </div>                    <!-- ROI from Ads -->
+                    <div class="solution-card">
+                        <h3>Improve ROI from Ads</h3>
+                        <p>Maximize your advertising spend with data-driven optimization strategies that deliver measurable results.</p>
+                        <ul class="solution-features">
+                            <li>PPC campaign optimization</li>
+                            <li>Conversion tracking setup</li>
+                            <li>Audience refinement</li>
+                            <li>Bid strategy optimization</li>
+                        </ul>
+                        <div class="solution-results">
+                            Average: 180% ROI improvement
+                        </div>
+                        <a href="<?php echo home_url('/improve-roi-ads'); ?>" class="solution-cta">Boost Ad Performance</a>
+                    </div>                    <!-- Local SEO -->
+                    <div class="solution-card">
+                        <h3>Rank Higher Locally</h3>
+                        <p>Dominate local search results and attract customers in your area with comprehensive local SEO strategies.</p>
+                        <ul class="solution-features">
+                            <li>Google My Business optimization</li>
+                            <li>Local citation building</li>
+                            <li>Review management</li>
+                            <li>Local keyword targeting</li>
+                        </ul>
+                        <div class="solution-results">
+                            Average: 300% local visibility boost
+                        </div>
+                        <a href="<?php echo home_url('/rank-higher-locally'); ?>" class="solution-cta">Dominate Local Search</a>
+                    </div>                    <!-- High-Converting Website -->
+                    <div class="solution-card">
+                        <h3>Build a High-Converting Website</h3>
+                        <p>Create a website that turns visitors into customers with conversion-focused design and optimization.</p>
+                        <ul class="solution-features">
+                            <li>Conversion rate optimization</li>
+                            <li>User experience design</li>
+                            <li>A/B testing implementation</li>
+                            <li>Mobile optimization</li>
+                        </ul>
+                        <div class="solution-results">
+                            Average: 150% conversion increase
+                        </div>
+                        <a href="<?php echo home_url('/high-converting-website'); ?>" class="solution-cta">Build Better Websites</a>
+                    </div>                    <!-- Sales Funnel -->
+                    <div class="solution-card">
+                        <h3>Streamline Your Sales Funnel</h3>
+                        <p>Optimize every stage of your customer journey to reduce friction and increase conversion rates.</p>
+                        <ul class="solution-features">
+                            <li>Funnel analysis & optimization</li>
+                            <li>Customer journey mapping</li>
+                            <li>Conversion bottleneck removal</li>
+                            <li>Multi-step campaign design</li>
+                        </ul>
+                        <div class="solution-results">
+                            Average: 200% funnel efficiency gain
+                        </div>
+                        <a href="<?php echo home_url('/streamline-sales-funnel'); ?>" class="solution-cta">Optimize Your Funnel</a>
                     </div>
-
-                    <!-- Marketing Automation -->
-                    <div class="solution-category">
-                        <div class="category-icon">
-                            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                <path d="M2 17L12 22L22 17" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                <path d="M2 12L12 17L22 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                            </svg>
-                        </div>
-                        <div class="category-content">
-                            <h3>Automate Marketing</h3>
-                            <p>Streamline your marketing processes with intelligent automation that nurtures leads and drives conversions 24/7.</p>
-                            <ul class="category-highlights">
-                                <li>Email marketing automation</li>
-                                <li>Lead scoring & segmentation</li>
-                                <li>Behavioral trigger campaigns</li>
-                                <li>Multi-channel workflows</li>
-                            </ul>
-                            <div class="category-results">
-                                <span class="result-metric">Average: 40% time savings</span>
-                            </div>
-                            <a href="<?php echo home_url('/automate-marketing'); ?>" class="solution-cta">Discover Automation</a>
-                        </div>
-                    </div>
-
-                    <!-- ROI from Ads -->
-                    <div class="solution-category">
-                        <div class="category-icon">
-                            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M18 20V10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                <path d="M12 20V4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                <path d="M6 20V14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                            </svg>
-                        </div>
-                        <div class="category-content">
-                            <h3>Improve ROI from Ads</h3>
-                            <p>Maximize your advertising spend with data-driven optimization strategies that deliver measurable results.</p>
-                            <ul class="category-highlights">
-                                <li>PPC campaign optimization</li>
-                                <li>Conversion tracking setup</li>
-                                <li>Audience refinement</li>
-                                <li>Bid strategy optimization</li>
-                            </ul>
-                            <div class="category-results">
-                                <span class="result-metric">Average: 180% ROI improvement</span>
-                            </div>
-                            <a href="<?php echo home_url('/improve-roi-ads'); ?>" class="solution-cta">Boost Ad Performance</a>
-                        </div>
-                    </div>
-
-                    <!-- Local SEO -->
-                    <div class="solution-category">
-                        <div class="category-icon">
-                            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M21 10C21 17 12 23 12 23C12 23 3 17 3 10C3 6.13401 6.13401 3 10 3C13.866 3 17 6.13401 17 10Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                <circle cx="12" cy="10" r="3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                            </svg>
-                        </div>
-                        <div class="category-content">
-                            <h3>Rank Higher Locally</h3>
-                            <p>Dominate local search results and attract customers in your area with comprehensive local SEO strategies.</p>
-                            <ul class="category-highlights">
-                                <li>Google My Business optimization</li>
-                                <li>Local citation building</li>
-                                <li>Review management</li>
-                                <li>Local keyword targeting</li>
-                            </ul>
-                            <div class="category-results">
-                                <span class="result-metric">Average: 300% local visibility boost</span>
-                            </div>
-                            <a href="<?php echo home_url('/rank-higher-locally'); ?>" class="solution-cta">Dominate Local Search</a>
-                        </div>
-                    </div>
-
-                    <!-- High-Converting Website -->
-                    <div class="solution-category">
-                        <div class="category-icon">
-                            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <rect x="2" y="3" width="20" height="14" rx="2" ry="2" stroke="currentColor" stroke-width="2"/>
-                                <line x1="8" y1="21" x2="16" y2="21" stroke="currentColor" stroke-width="2"/>
-                                <line x1="12" y1="17" x2="12" y2="21" stroke="currentColor" stroke-width="2"/>
-                            </svg>
-                        </div>
-                        <div class="category-content">
-                            <h3>Build a High-Converting Website</h3>
-                            <p>Create a website that turns visitors into customers with conversion-focused design and optimization.</p>
-                            <ul class="category-highlights">
-                                <li>Conversion rate optimization</li>
-                                <li>User experience design</li>
-                                <li>A/B testing implementation</li>
-                                <li>Mobile optimization</li>
-                            </ul>
-                            <div class="category-results">
-                                <span class="result-metric">Average: 150% conversion increase</span>
-                            </div>
-                            <a href="<?php echo home_url('/high-converting-website'); ?>" class="solution-cta">Build Better Websites</a>
-                        </div>
-                    </div>
-
-                    <!-- Sales Funnel -->
-                    <div class="solution-category">
-                        <div class="category-icon">
-                            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                <path d="M2 17L12 22L22 17" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                <path d="M2 12L12 17L22 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                            </svg>
-                        </div>
-                        <div class="category-content">
-                            <h3>Streamline Your Sales Funnel</h3>
-                            <p>Optimize every stage of your customer journey to reduce friction and increase conversion rates.</p>
-                            <ul class="category-highlights">
-                                <li>Funnel analysis & optimization</li>
-                                <li>Customer journey mapping</li>
-                                <li>Conversion bottleneck removal</li>
-                                <li>Multi-step campaign design</li>
-                            </ul>
-                            <div class="category-results">
-                                <span class="result-metric">Average: 200% funnel efficiency gain</span>
-                            </div>
-                            <a href="<?php echo home_url('/streamline-sales-funnel'); ?>" class="solution-cta">Optimize Your Funnel</a>
-                        </div>
-                    </div>
-
                 </div>
             </div>
         </section>
@@ -306,9 +239,7 @@ get_header(); ?>
                     </div>
                 </div>
             </div>
-        </section>
-
-    </div>
+        </section>    </div>
 </main>
 
 <?php get_footer(); ?>
