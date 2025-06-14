@@ -23,8 +23,7 @@ get_header(); ?>
                 <div class="intro-content">
                     <h2>Award-Winning Digital Marketing Services</h2>
                     <p>From SEO and PPC to website development and marketing automation, our comprehensive suite of services is designed to accelerate your business growth. Each service is delivered by certified experts using proven methodologies and cutting-edge technology.</p>
-                </div>
-                <div class="services-stats">
+                </div>                <div class="services-stats">
                     <div class="stat-item">
                         <div class="stat-number">15+</div>
                         <div class="stat-label">Service Categories</div>
@@ -38,7 +37,8 @@ get_header(); ?>
                         <div class="stat-label">Client Satisfaction</div>
                     </div>
                 </div>
-            </div>        </section>
+            </div>
+        </section>
 
         <!-- Service Links Grid -->
         <section class="service-links-grid">
@@ -386,14 +386,13 @@ get_header(); ?>
                     </div>
                 </div>
 
-            </div>
-        </section>
+            </div>        </section>
 
         <!-- Why Choose Our Services -->
-        <section class="services-benefits">
+        <section class="services-benefits services-why-choose">
             <div class="section-content">
                 <h2>Why Choose Aimpro Digital Services?</h2>
-                <div class="benefits-grid">
+                <div class="benefits-grid benefits-grid-4">
                     
                     <div class="benefit-card">
                         <div class="benefit-icon">
