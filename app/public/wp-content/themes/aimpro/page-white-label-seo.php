@@ -8,8 +8,7 @@ get_header(); ?>
 
 <main id="main" class="main-content seo-service-page">
     <div class="container">
-        
-        <!-- Page Header -->
+          <!-- Page Header -->
         <section class="page-header">
             <div class="page-header-content">
                 <h1>White Label SEO Services</h1>
@@ -47,46 +46,24 @@ get_header(); ?>
                     </div>
                 </div>
             </div>
-        </section>
-
-        <!-- Why Choose White Label -->
-        <section class="why-white-label">
+        </section>        <!-- Why Choose White Label -->
+        <section class="whitelabel-benefits">
             <div class="section-content">
                 <h2>Why Choose White Label SEO?</h2>
-                <div class="benefits-grid">
-                    <div class="benefit-item">
-                        <div class="benefit-icon">
-                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M13 2L3 14H12L11 22L21 10H12L13 2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                            </svg>
-                        </div>
+                <div class="benefits-grid benefits-grid-4">
+                    <div class="benefit-card">
                         <h3>Scale Rapidly</h3>
                         <p>Expand your service offerings and take on more clients without hiring additional staff or investing in expensive SEO tools.</p>
                     </div>
-                    <div class="benefit-item">
-                        <div class="benefit-icon">
-                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M12 2L13.09 8.26L22 9L13.09 9.74L12 16L10.91 9.74L2 9L10.91 8.26L12 2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                            </svg>
-                        </div>
+                    <div class="benefit-card">
                         <h3>Expert Delivery</h3>
                         <p>Leverage our team of certified SEO specialists and access to premium tools without the overhead costs.</p>
                     </div>
-                    <div class="benefit-item">
-                        <div class="benefit-icon">
-                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M12 2C13.1 2 14 2.9 14 4C14 5.1 13.1 6 12 6C10.9 6 10 5.1 10 4C10 2.9 10.9 2 12 2ZM21 9V7L15 3.5C14.1 3.1 13 3.4 12.6 4.3L11.1 7.4L10 6L8 8L10.9 10.9L12.4 7.8C12.8 6.9 13.9 6.6 14.8 7L21 9ZM18 12L12 15L6 12V22H18V12Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                            </svg>
-                        </div>
+                    <div class="benefit-card">
                         <h3>Higher Margins</h3>
                         <p>Increase your profit margins by offering SEO services at competitive rates while reducing operational costs.</p>
                     </div>
-                    <div class="benefit-item">
-                        <div class="benefit-icon">
-                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M9 12L11 14L15 10M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                            </svg>
-                        </div>
+                    <div class="benefit-card">
                         <h3>Your Brand</h3>
                         <p>All deliverables are fully branded with your company's logo, colors, and messaging. Your clients never know we exist.</p>
                     </div>
@@ -95,10 +72,76 @@ get_header(); ?>
         </section>
 
         <!-- Services Grid -->
-        <section class="services-grid">
+        <section class="whitelabel-services">
             <div class="section-content">
                 <h2>White Label SEO Services We Provide</h2>
-                <div class="services-list">
+                <div class="whitelabel-services-grid">
+                    
+                    <div class="whitelabel-service-card">
+                        <h3>SEO Audits & Analysis</h3>
+                        <p>Comprehensive website audits with detailed reports, recommendations, and action plans - all under your branding.</p>
+                        <ul class="service-features-list">
+                            <li>Technical SEO audits</li>
+                            <li>Content gap analysis</li>
+                            <li>Competitor research</li>
+                            <li>Keyword opportunity mapping</li>
+                        </ul>
+                    </div>
+
+                    <div class="whitelabel-service-card">
+                        <h3>On-Page Optimization</h3>
+                        <p>Complete on-page SEO optimization including content, meta tags, and technical elements for improved rankings.</p>
+                        <ul class="service-features-list">
+                            <li>Title tag & meta optimization</li>
+                            <li>Content optimization</li>
+                            <li>Schema markup implementation</li>
+                            <li>Internal linking strategy</li>
+                        </ul>
+                    </div>
+
+                    <div class="whitelabel-service-card">
+                        <h3>Local SEO Services</h3>
+                        <p>Comprehensive local SEO optimization to help your clients dominate local search results and attract nearby customers.</p>
+                        <ul class="service-features-list">
+                            <li>Google Business Profile optimization</li>
+                            <li>Local citation building</li>
+                            <li>Review management setup</li>
+                            <li>Local content creation</li>
+                        </ul>
+                    </div>
+
+                    <div class="whitelabel-service-card">
+                        <h3>Technical SEO</h3>
+                        <p>Advanced technical optimization to improve site performance, crawlability, and search engine understanding.</p>
+                        <ul class="service-features-list">
+                            <li>Site speed optimization</li>
+                            <li>Core Web Vitals improvement</li>
+                            <li>Mobile optimization</li>
+                            <li>Crawl error resolution</li>
+                        </ul>
+                    </div>
+
+                    <div class="whitelabel-service-card">
+                        <h3>Link Building</h3>
+                        <p>High-quality, white-hat link building campaigns to improve domain authority and search rankings.</p>
+                        <ul class="service-features-list">
+                            <li>Guest posting campaigns</li>
+                            <li>Business directory submissions</li>
+                            <li>Resource page link building</li>
+                            <li>Digital PR outreach</li>
+                        </ul>
+                    </div>
+
+                    <div class="whitelabel-service-card">
+                        <h3>Monthly Reporting</h3>
+                        <p>Comprehensive monthly reports with your branding, showing progress, insights, and recommendations.</p>
+                        <ul class="service-features-list">
+                            <li>Ranking tracking reports</li>
+                            <li>Traffic & conversion analysis</li>
+                            <li>Competitive intelligence</li>
+                            <li>Custom branded dashboards</li>
+                        </ul>
+                    </div>
                     
                     <div class="service-item">
                         <div class="service-icon">
@@ -299,12 +342,7 @@ get_header(); ?>
                         <div class="package-cta">
                             <a href="<?php echo home_url('/contact'); ?>" class="btn btn-secondary">Get Started</a>
                         </div>
-                    </div>
-
-                </div>
-                <div class="pricing-note">
-                    <p><strong>Custom Packages Available:</strong> Need something different? We can create custom white label packages tailored to your specific needs and client requirements.</p>
-                </div>
+                    </div>                </div>
             </div>
         </section>
 
@@ -402,69 +440,89 @@ get_header(); ?>
                     </div>
                 </div>
             </div>
-        </section>
-
-        <!-- What's Included -->
-        <section class="whats-included">
+        </section>        <!-- What's Included -->
+        <section class="whitelabel-benefits">
             <div class="section-content">
                 <h2>What's Included in Every Partnership</h2>
-                <div class="included-grid">
-                    <div class="included-item">
+                <div class="benefits-grid">
+                    <div class="benefit-card">
                         <h3>🎨 Full Branding</h3>
                         <p>All reports, dashboards, and communications use your company branding, colors, and logo.</p>
                     </div>
-                    <div class="included-item">
+                    <div class="benefit-card">
                         <h3>📞 Direct Communication</h3>
                         <p>Dedicated account manager and direct access to our SEO team for questions and updates.</p>
                     </div>
-                    <div class="included-item">
+                    <div class="benefit-card">
                         <h3>📊 Transparent Reporting</h3>
                         <p>Real-time access to all campaign data, metrics, and progress through branded dashboards.</p>
                     </div>
-                    <div class="included-item">
+                    <div class="benefit-card">
                         <h3>🔧 Premium Tools</h3>
                         <p>Access to enterprise-level SEO tools and software at no additional cost to you.</p>
                     </div>
-                    <div class="included-item">
+                    <div class="benefit-card">
                         <h3>📈 Growth Support</h3>
                         <p>Marketing materials, sales support, and training to help you sell SEO services effectively.</p>
                     </div>
-                    <div class="included-item">
+                    <div class="benefit-card">
                         <h3>🛡️ Quality Guarantee</h3>
                         <p>100% satisfaction guarantee with full refund if you're not completely satisfied with our services.</p>
                     </div>
                 </div>
             </div>
-        </section>
-
-        <!-- FAQ Section -->
+        </section><!-- FAQ Section -->
         <section class="faq-section">
             <div class="section-content">
                 <h2>Frequently Asked Questions</h2>
-                <div class="faq-grid">
+                <div class="faq-list">
                     <div class="faq-item">
-                        <h3>Will my clients know you're providing the SEO services?</h3>
-                        <p>No, absolutely not. All communications, reports, and deliverables are fully branded with your company information. We remain completely invisible to your clients.</p>
+                        <div class="faq-question">
+                            <h3>Will my clients know you're providing the SEO services?</h3>
+                        </div>
+                        <div class="faq-answer">
+                            <p>No, absolutely not. All communications, reports, and deliverables are fully branded with your company information. We remain completely invisible to your clients.</p>
+                        </div>
                     </div>
                     <div class="faq-item">
-                        <h3>What's the minimum commitment for white label services?</h3>
-                        <p>We require a minimum 6-month commitment to ensure we can deliver meaningful results. This also allows time to build strong processes and see significant improvements.</p>
+                        <div class="faq-question">
+                            <h3>What's the minimum commitment for white label services?</h3>
+                        </div>
+                        <div class="faq-answer">
+                            <p>We require a minimum 6-month commitment to ensure we can deliver meaningful results. This also allows time to build strong processes and see significant improvements.</p>
+                        </div>
                     </div>
                     <div class="faq-item">
-                        <h3>How do you handle client communications?</h3>
-                        <p>You maintain all client relationships. We provide you with regular updates and reports that you can share with your clients under your branding.</p>
+                        <div class="faq-question">
+                            <h3>How do you handle client communications?</h3>
+                        </div>
+                        <div class="faq-answer">
+                            <p>You maintain all client relationships. We provide you with regular updates and reports that you can share with your clients under your branding.</p>
+                        </div>
                     </div>
                     <div class="faq-item">
-                        <h3>Can I customize the services for different clients?</h3>
-                        <p>Yes, we offer flexible service packages that can be customized based on each client's specific needs, budget, and goals.</p>
+                        <div class="faq-question">
+                            <h3>Can I customize the services for different clients?</h3>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Yes, we offer flexible service packages that can be customized based on each client's specific needs, budget, and goals.</p>
+                        </div>
                     </div>
                     <div class="faq-item">
-                        <h3>What kind of training and support do you provide?</h3>
-                        <p>We provide comprehensive onboarding, sales training materials, and ongoing support to help you successfully sell and manage SEO services.</p>
+                        <div class="faq-question">
+                            <h3>What kind of training and support do you provide?</h3>
+                        </div>
+                        <div class="faq-answer">
+                            <p>We provide comprehensive onboarding, sales training materials, and ongoing support to help you successfully sell and manage SEO services.</p>
+                        </div>
                     </div>
                     <div class="faq-item">
-                        <h3>How quickly can we get started?</h3>
-                        <p>After our initial consultation and agreement, we can typically have your white label SEO services up and running within 1-2 weeks.</p>
+                        <div class="faq-question">
+                            <h3>How quickly can we get started?</h3>
+                        </div>
+                        <div class="faq-answer">
+                            <p>After our initial consultation and agreement, we can typically have your white label SEO services up and running within 1-2 weeks.</p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -489,22 +547,20 @@ get_header(); ?>
                     </div>
                 </div>
             </div>
-        </section>
-
-        <!-- CTA Section -->
-        <section class="service-cta">
+        </section>        <!-- CTA Section -->
+        <section class="simple-cta-section">
             <div class="section-content">
-                <div class="cta-content">
+                <div class="simple-cta-content">
                     <h2>Ready to Scale Your Agency with SEO?</h2>
                     <p>Join over 150 successful agency partners who trust us to deliver exceptional SEO results under their brand. Schedule a consultation to learn how our white label services can help you grow.</p>
-                    <div class="cta-buttons">
+                    <div class="simple-cta-buttons">
                         <a href="<?php echo home_url('/contact'); ?>" class="btn btn-primary">Schedule Partnership Call</a>
                         <a href="tel:+44-123-456-7890" class="btn btn-secondary">Call: +44 123 456 7890</a>
                     </div>
-                    <div class="cta-features">
-                        <span>✓ No setup fees</span>
-                        <span>✓ 6-month minimum commitment</span>
-                        <span>✓ 100% satisfaction guarantee</span>
+                    <div class="simple-cta-features">
+                        <span>No setup fees</span>
+                        <span>6-month minimum commitment</span>
+                        <span>100% satisfaction guarantee</span>
                     </div>
                 </div>
             </div>

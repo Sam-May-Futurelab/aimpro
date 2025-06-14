@@ -208,6 +208,44 @@ document.addEventListener('DOMContentLoaded', function() {
     // Clean up on page unload
     window.addEventListener('beforeunload', function() {
         particleSystem.destroy();
+    });    // FAQ Toggle Functionality
+    const faqItems = document.querySelectorAll('.faq-item');
+    faqItems.forEach(item => {
+        // Check for both structures: .faq-question/.faq-answer and direct h3/p
+        const question = item.querySelector('.faq-question') || item.querySelector('h3');
+        const answer = item.querySelector('.faq-answer') || item.querySelector('p');
+        
+        if (question && answer) {
+            question.addEventListener('click', function() {
+                const isOpen = item.classList.contains('active');
+                
+                // Close all other FAQs
+                faqItems.forEach(otherItem => {
+                    if (otherItem !== item) {
+                        otherItem.classList.remove('active');
+                        const otherAnswer = otherItem.querySelector('.faq-answer') || otherItem.querySelector('p');
+                        if (otherAnswer) {
+                            if (otherAnswer.style) {
+                                otherAnswer.style.maxHeight = '0';
+                            }
+                        }
+                    }
+                });
+                
+                // Toggle current FAQ
+                if (isOpen) {
+                    item.classList.remove('active');
+                    if (answer.style) {
+                        answer.style.maxHeight = '0';
+                    }
+                } else {
+                    item.classList.add('active');
+                    if (answer.style) {
+                        answer.style.maxHeight = answer.scrollHeight + 'px';
+                    }
+                }
+            });
+        }
     });
 
     // Enhanced Error Handling

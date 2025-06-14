@@ -325,19 +325,17 @@ get_header(); ?>
 
                 </div>
             </div>
-        </section>
-
-        <!-- Common Technical Issues -->
-        <section class="technical-issues">
+        </section>        <!-- Common Technical Issues -->
+        <section class="technical-issues-section">
             <div class="section-content">
                 <h2>Common Technical SEO Issues We Fix</h2>
                 <div class="issues-grid">
                     
-                    <div class="issue-card">
-                        <div class="issue-severity high">High Priority</div>
+                    <div class="issue-card high-priority">
+                        <div class="issue-priority high">High Priority</div>
                         <h3>Site Speed Issues</h3>
                         <p>Slow loading pages that hurt user experience and rankings.</p>
-                        <ul class="issue-symptoms">
+                        <ul class="issue-list">
                             <li>Large, unoptimized images</li>
                             <li>Excessive HTTP requests</li>
                             <li>Unminified CSS and JavaScript</li>
@@ -345,11 +343,11 @@ get_header(); ?>
                         </ul>
                     </div>
 
-                    <div class="issue-card">
-                        <div class="issue-severity high">High Priority</div>
+                    <div class="issue-card high-priority">
+                        <div class="issue-priority high">High Priority</div>
                         <h3>Crawl Errors</h3>
                         <p>Issues preventing search engines from accessing your content.</p>
-                        <ul class="issue-symptoms">
+                        <ul class="issue-list">
                             <li>404 errors and broken links</li>
                             <li>Blocked resources in robots.txt</li>
                             <li>Server errors (5xx codes)</li>
@@ -357,11 +355,11 @@ get_header(); ?>
                         </ul>
                     </div>
 
-                    <div class="issue-card">
-                        <div class="issue-severity medium">Medium Priority</div>
+                    <div class="issue-card medium-priority">
+                        <div class="issue-priority medium">Medium Priority</div>
                         <h3>Mobile Issues</h3>
                         <p>Poor mobile experience affecting mobile rankings.</p>
-                        <ul class="issue-symptoms">
+                        <ul class="issue-list">
                             <li>Non-responsive design</li>
                             <li>Touch elements too close</li>
                             <li>Viewport not configured</li>
@@ -369,11 +367,11 @@ get_header(); ?>
                         </ul>
                     </div>
 
-                    <div class="issue-card">
-                        <div class="issue-severity medium">Medium Priority</div>
+                    <div class="issue-card medium-priority">
+                        <div class="issue-priority medium">Medium Priority</div>
                         <h3>Duplicate Content</h3>
                         <p>Content duplication issues confusing search engines.</p>
-                        <ul class="issue-symptoms">
+                        <ul class="issue-list">
                             <li>Multiple URLs for same content</li>
                             <li>Missing canonical tags</li>
                             <li>Parameter-based duplicates</li>
