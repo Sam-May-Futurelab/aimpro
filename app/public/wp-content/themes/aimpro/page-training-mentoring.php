@@ -6,6 +6,69 @@
 
 get_header(); ?>
 
+<!-- Inline critical CSS to ensure proper rendering -->
+<style>
+/* Critical CSS for path steps - this will override any conflicting styles */
+.path-steps {
+    margin: 0 0 1.5rem 0 !important;
+    padding: 0 !important;
+    display: block !important;
+    width: 100% !important;
+    text-align: left !important;
+}
+.step {
+    margin: 0 0 0.75rem 0 !important;
+    padding: 0 !important;
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: flex-start !important;
+    justify-content: flex-start !important;
+    width: 100% !important;
+    text-align: left !important;
+    position: relative !important;
+}
+.step-number {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 24px !important;
+    height: 24px !important;
+    min-width: 24px !important;
+    min-height: 24px !important;
+    margin: 0 0.75rem 0 0 !important;
+    padding: 0 !important;
+    background-color: #f15a25 !important;
+    color: white !important;
+    border-radius: 50% !important;
+    font-size: 14px !important;
+    font-weight: 700 !important;
+    line-height: 1 !important;
+    position: relative !important;
+    top: 0 !important;
+    left: 0 !important;
+    text-align: center !important;
+    flex-shrink: 0 !important;
+}
+.step-title {
+    display: block !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    width: auto !important;
+    flex: 1 !important;
+    color: #5a6a7e !important;
+    font-size: 15px !important;
+    font-weight: 400 !important;
+    line-height: 1.5 !important;
+    text-align: left !important;
+    position: relative !important;
+    top: 3px !important;
+}
+/* Hide mentor images completely */
+.mentor-image {
+    display: none !important;
+}
+</style>
+
 <main id="main" class="main-content">
     <div class="container">
         
@@ -247,23 +310,22 @@ get_header(); ?>
                             <span class="path-duration">3-6 months</span>
                         </div>
                         <div class="path-content">
-                            <p>Perfect for marketing newcomers or those switching from traditional marketing to digital.</p>
-                            <div class="path-steps">
+                            <p>Perfect for marketing newcomers or those switching from traditional marketing to digital.</p>                            <div class="path-steps">
                                 <div class="step">
-                                    <span class="step-number">1</span>
-                                    <span class="step-title">Digital Marketing Fundamentals</span>
+                                    <div class="step-number">1</div>
+                                    <div class="step-title">Digital Marketing Fundamentals</div>
                                 </div>
                                 <div class="step">
-                                    <span class="step-number">2</span>
-                                    <span class="step-title">SEO & Content Basics</span>
+                                    <div class="step-number">2</div>
+                                    <div class="step-title">SEO & Content Basics</div>
                                 </div>
                                 <div class="step">
-                                    <span class="step-number">3</span>
-                                    <span class="step-title">PPC Campaign Management</span>
+                                    <div class="step-number">3</div>
+                                    <div class="step-title">PPC Campaign Management</div>
                                 </div>
                                 <div class="step">
-                                    <span class="step-number">4</span>
-                                    <span class="step-title">Analytics & Reporting</span>
+                                    <div class="step-number">4</div>
+                                    <div class="step-title">Analytics & Reporting</div>
                                 </div>
                             </div>
                             <a href="#" class="path-cta">Start Learning Path</a>
@@ -276,23 +338,22 @@ get_header(); ?>
                             <span class="path-duration">2-4 months</span>
                         </div>
                         <div class="path-content">
-                            <p>For experienced marketers looking to master advanced strategies and become industry experts.</p>
-                            <div class="path-steps">
+                            <p>For experienced marketers looking to master advanced strategies and become industry experts.</p>                            <div class="path-steps">
                                 <div class="step">
-                                    <span class="step-number">1</span>
-                                    <span class="step-title">Advanced Strategy Development</span>
+                                    <div class="step-number">1</div>
+                                    <div class="step-title">Advanced Strategy Development</div>
                                 </div>
                                 <div class="step">
-                                    <span class="step-number">2</span>
-                                    <span class="step-title">Marketing Automation</span>
+                                    <div class="step-number">2</div>
+                                    <div class="step-title">Marketing Automation</div>
                                 </div>
                                 <div class="step">
-                                    <span class="step-number">3</span>
-                                    <span class="step-title">Advanced Analytics</span>
+                                    <div class="step-number">3</div>
+                                    <div class="step-title">Advanced Analytics</div>
                                 </div>
                                 <div class="step">
-                                    <span class="step-number">4</span>
-                                    <span class="step-title">Team Leadership</span>
+                                    <div class="step-number">4</div>
+                                    <div class="step-title">Team Leadership</div>
                                 </div>
                             </div>
                             <a href="#" class="path-cta">Start Learning Path</a>
@@ -305,23 +366,22 @@ get_header(); ?>
                             <span class="path-duration">4-8 months</span>
                         </div>
                         <div class="path-content">
-                            <p>Comprehensive training for business owners and entrepreneurs to master their own marketing.</p>
-                            <div class="path-steps">
+                            <p>Comprehensive training for business owners and entrepreneurs to master their own marketing.</p>                            <div class="path-steps">
                                 <div class="step">
-                                    <span class="step-number">1</span>
-                                    <span class="step-title">Business Marketing Strategy</span>
+                                    <div class="step-number">1</div>
+                                    <div class="step-title">Business Marketing Strategy</div>
                                 </div>
                                 <div class="step">
-                                    <span class="step-number">2</span>
-                                    <span class="step-title">Cost-Effective Tactics</span>
+                                    <div class="step-number">2</div>
+                                    <div class="step-title">Cost-Effective Tactics</div>
                                 </div>
                                 <div class="step">
-                                    <span class="step-number">3</span>
-                                    <span class="step-title">Conversion Optimization</span>
+                                    <div class="step-number">3</div>
+                                    <div class="step-title">Conversion Optimization</div>
                                 </div>
                                 <div class="step">
-                                    <span class="step-number">4</span>
-                                    <span class="step-title">Growth Scaling</span>
+                                    <div class="step-number">4</div>
+                                    <div class="step-title">Growth Scaling</div>
                                 </div>
                             </div>
                             <a href="#" class="path-cta">Start Learning Path</a>
@@ -337,31 +397,21 @@ get_header(); ?>
             <div class="section-content">
                 <h2>Meet Your Mentors</h2>
                 <div class="mentors-grid">
-                    
-                    <div class="mentor-card">
-                        <div class="mentor-image">
-                            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/mentors/john-smith.jpg" alt="John Smith - SEO Expert" />
-                        </div>
+                      <div class="mentor-card">
                         <div class="mentor-info">
                             <h3>John Smith</h3>
                             <h4>SEO & Content Strategy Expert</h4>
-                            <p>15+ years in digital marketing with expertise in enterprise SEO and content strategy. Former head of SEO at major UK e-commerce companies.</p>
-                            <div class="mentor-specialties">
-                                <span class="specialty">Technical SEO</span>
-                                <span class="specialty">Content Strategy</span>
-                                <span class="specialty">Enterprise SEO</span>
+                            <p>15+ years in digital marketing with expertise in enterprise SEO and content strategy. Former head of SEO at major UK e-commerce companies.</p>                            <div class="mentor-specialties">
+                                <div class="specialty">Technical SEO</div>
+                                <div class="specialty">Content Strategy</div>
+                                <div class="specialty">Enterprise SEO</div>
                             </div>
                             <div class="mentor-stats">
                                 <span class="stat">50+ mentees</span>
                                 <span class="stat">★★★★★ 4.9</span>
                             </div>
                         </div>
-                    </div>
-
-                    <div class="mentor-card">
-                        <div class="mentor-image">
-                            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/mentors/sarah-johnson.jpg" alt="Sarah Johnson - PPC Expert" />
-                        </div>
+                    </div>                    <div class="mentor-card">
                         <div class="mentor-info">
                             <h3>Sarah Johnson</h3>
                             <h4>PPC & Paid Media Specialist</h4>
@@ -376,12 +426,7 @@ get_header(); ?>
                                 <span class="stat">★★★★★ 4.8</span>
                             </div>
                         </div>
-                    </div>
-
-                    <div class="mentor-card">
-                        <div class="mentor-image">
-                            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/mentors/mike-chen.jpg" alt="Mike Chen - Analytics Expert" />
-                        </div>
+                    </div>                    <div class="mentor-card">
                         <div class="mentor-info">
                             <h3>Mike Chen</h3>
                             <h4>Analytics & Data Strategy Expert</h4>

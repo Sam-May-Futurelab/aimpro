@@ -129,6 +129,11 @@ function aimpro_enqueue_assets() {
     // Enqueue About page fix CSS - HIGHEST PRIORITY
     wp_enqueue_style('aimpro-about-fix', get_template_directory_uri() . '/assets/css/about-page-fix.css', array('aimpro-variables', 'aimpro-base', 'aimpro-page-templates'), $theme_version . '-' . time());
     
+    // Enqueue Training and Mentoring page styles
+    if (is_page('training-mentoring')) {
+        wp_enqueue_style('aimpro-training-mentoring', get_template_directory_uri() . '/assets/css/training-mentoring.css', array('aimpro-variables', 'aimpro-base'), $theme_version . '-' . time() . rand(100, 999));
+    }
+    
     // Enqueue main style.css for backwards compatibility and WordPress theme recognition
     wp_enqueue_style('aimpro-style', get_stylesheet_uri(), array('aimpro-variables', 'aimpro-base'), $theme_version);
     
@@ -1283,11 +1288,6 @@ function aimpro_landing_page_admin() {
                         <tr>
                             <th scope="row">Description</th>
                             <td>
-                                <textarea name="final_cta_description" rows="3" class="large-text"><?php echo esc_textarea(get_option('final_cta_description', 'Request a marketing review today. We\'ll send you a detailed analysis of your website and marketing, breaking down your next steps to success.')); ?></textarea>
-                                <p class="description">Final CTA description text</p>
-                            </td>
-                        </tr>
-                    </table>
                 </div>
                 
                 <!-- Office Section -->
