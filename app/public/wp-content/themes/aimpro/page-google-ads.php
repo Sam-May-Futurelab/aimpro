@@ -462,22 +462,23 @@ get_header();
                 </div>
             </div>
         </div>
-    </section>
-
-    <!-- CTA Section -->
-    <section id="contact" class="cta-section">
-        <div class="container">
-            <div class="cta-content">
+    </section>    <!-- CTA Section -->
+    <section class="simple-cta-section">
+        <div class="section-content">
+            <div class="simple-cta-content">
                 <h2>Ready to Dominate Google Search?</h2>
                 <p>Get a free Google Ads audit and strategy session. We'll analyze your current performance and show you exactly how to improve your ROI.</p>
-                <div class="cta-buttons">
-                    <a href="#contact-form" class="btn-primary large">Get Free Google Ads Audit</a>
-                    <a href="tel:+441212858490" class="btn-outline large">Call (0121) 285 8490</a>
+                <div class="simple-cta-buttons">
+                    <a href="#contact-form" class="btn btn-primary">Get Free Google Ads Audit</a>
                 </div>
-                <div class="cta-features">
-                    <span>✓ Free account analysis</span>
-                    <span>✓ Competitor research</span>
-                    <span>✓ Performance improvement plan</span>
+                <div class="simple-cta-features">
+                    <span>Free account analysis</span>
+                    <span>Competitor research</span>
+                    <span>Performance improvement plan</span>
+                </div>
+            </div>
+        </div>
+    </section>
                 </div>
             </div>
         </div>

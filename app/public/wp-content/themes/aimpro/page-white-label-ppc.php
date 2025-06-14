@@ -196,12 +196,10 @@ get_header(); ?>
                             <div class="result-number">98%</div>
                             <div class="result-label">Client Retention Rate</div>
                         </div>
-                    </div>
-                    <p class="results-summary">Within 8 months, PPC services became their fastest-growing revenue stream, accounting for 45% of total agency income with zero additional overhead.</p>
+                    </div>                    </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
     <!-- Process Section -->
     <section class="process-section">
@@ -321,39 +319,37 @@ get_header(); ?>
                 </div>
             </div>
         </div>
-    </section>
-
-    <!-- What's Included Section -->
-    <section class="included-section">
-        <div class="container">
+    </section>    <!-- What's Included Section -->
+    <section class="whitelabel-benefits">
+        <div class="section-content">
             <h2>What's Included in Every Partnership</h2>
-            <div class="included-grid">
-                <div class="included-item">
-                    <div class="included-icon">
-                        <i class="fas fa-cog"></i>
+            <div class="benefits-grid benefits-grid-2x2">
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-cogs"></i>
                     </div>
                     <h3>Campaign Setup & Management</h3>
                     <p>Complete campaign architecture, keyword research, ad creation, and ongoing optimization across all platforms.</p>
                 </div>
                 
-                <div class="included-item">
-                    <div class="included-icon">
-                        <i class="fas fa-file-alt"></i>
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-chart-bar"></i>
                     </div>
                     <h3>Branded Reporting</h3>
                     <p>Monthly performance reports featuring your agency's branding, delivered directly to your clients or to you for forwarding.</p>
                 </div>
                 
-                <div class="included-item">
-                    <div class="included-icon">
+                <div class="benefit-card">
+                    <div class="benefit-icon">
                         <i class="fas fa-phone"></i>
                     </div>
                     <h3>Client Call Support</h3>
                     <p>We can join client calls as your "PPC specialist" or provide talking points and strategy for your team to present.</p>
                 </div>
                 
-                <div class="included-item">
-                    <div class="included-icon">
+                <div class="benefit-card">
+                    <div class="benefit-icon">
                         <i class="fas fa-shield-alt"></i>
                     </div>
                     <h3>Performance Guarantee</h3>
@@ -409,17 +405,14 @@ get_header(); ?>
                 </cite>
             </div>
         </div>
-    </section>
-
-    <!-- CTA Section -->
-    <section id="contact" class="cta-section">
-        <div class="container">
-            <div class="cta-content">
+    </section>    <!-- CTA Section -->
+    <section class="simple-cta-section">
+        <div class="section-content">
+            <div class="simple-cta-content">
                 <h2>Ready to Scale Your Agency's PPC Services?</h2>
                 <p>Stop turning down PPC opportunities. Partner with us to offer world-class PPC management under your brand and start growing your revenue immediately. No hiring, no training, no overhead.</p>
-                <div class="cta-buttons">
-                    <a href="<?php echo home_url('/contact'); ?>" class="btn-primary">Start Partnership</a>
-                    <a href="tel:+441234567890" class="btn-secondary">Call Now: 01234 567 890</a>
+                <div class="simple-cta-buttons">
+                    <a href="<?php echo home_url('/contact'); ?>" class="btn btn-primary">Start Partnership</a>
                 </div>
             </div>
         </div>

@@ -155,12 +155,10 @@ get_header(); ?>
                             <div class="result-number">235%</div>
                             <div class="result-label">Return on Ad Spend</div>
                         </div>
-                    </div>
-                    <p class="results-summary">Within 3 months, retargeting became their highest-converting channel, generating 40% of total e-commerce revenue at their lowest cost per acquisition.</p>
+                    </div>                    </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
     <!-- Process Section -->
     <section class="process-section">
@@ -424,17 +422,14 @@ get_header(); ?>
                 </cite>
             </div>
         </div>
-    </section>
-
-    <!-- CTA Section -->
-    <section id="contact" class="cta-section">
-        <div class="container">
-            <div class="cta-content">
+    </section>    <!-- CTA Section -->
+    <section class="simple-cta-section">
+        <div class="section-content">
+            <div class="simple-cta-content">
                 <h2>Ready to Re-Engage Your Lost Prospects?</h2>
                 <p>Stop losing potential customers forever. Our retargeting experts will help you build campaigns that bring visitors back and convert them into loyal customers. Start recovering lost revenue today.</p>
-                <div class="cta-buttons">
-                    <a href="<?php echo home_url('/contact'); ?>" class="btn-primary">Start Retargeting</a>
-                    <a href="tel:+441234567890" class="btn-secondary">Call Now: 01234 567 890</a>
+                <div class="simple-cta-buttons">
+                    <a href="<?php echo home_url('/contact'); ?>" class="btn btn-primary">Start Retargeting</a>
                 </div>
             </div>
         </div>

@@ -3,6 +3,27 @@
  * For Aimpro Digital Theme - Covers Local SEO, SEO Audit, Technical SEO, On-page SEO, and White Label SEO
  */
 
+/* FontAwesome Icon Styling for Benefit Cards */
+.benefit-card .benefit-icon {
+    font-size: 2.5rem;
+    color: var(--primary-orange);
+    margin-bottom: 1.5rem;
+    display: block;
+    text-align: left;
+}
+
+.benefit-card .benefit-icon i {
+    display: block;
+    width: 100%;
+}
+
+/* Service icon styling for service grids */
+.service-item .service-icon i,
+.whitelabel-service-card .service-icon i {
+    font-size: 2rem;
+    color: var(--primary-orange);
+}
+
 /* Common section styling for SEO service pages */
 .seo-service-page section,
 .audit-components,
@@ -121,6 +142,12 @@
 .benefits-grid-4 {
     grid-template-columns: repeat(4, 1fr) !important;
     gap: 20px;
+}
+
+/* 2x2 benefits grid */
+.benefits-grid-2x2 {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 30px;
 }
 
 /* SEO Audit Components Grid */

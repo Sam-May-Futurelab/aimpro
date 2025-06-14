@@ -157,12 +157,10 @@ get_header(); ?>
                             <div class="result-number">25%</div>
                             <div class="result-label">Additional Market Coverage</div>
                         </div>
-                    </div>
-                    <p class="results-summary">Within 4 months, Bing Ads became their second-highest performing channel, providing 25% of total qualified leads at 45% lower cost per acquisition.</p>
+                    </div>                    </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
     <!-- Process Section -->
     <section class="process-section">
@@ -322,14 +320,11 @@ get_header(); ?>
                 </div>
             </div>
         </div>
-    </section>
-
-    <!-- Why Bing Ads Section -->
-    <section class="why-bing-section">
-        <div class="container">
+    </section>    <!-- Why Bing Ads Section -->
+    <section class="whitelabel-benefits">        <div class="container">
             <h2>Why Choose Microsoft/Bing Ads?</h2>
-            <div class="benefits-grid">
-                <div class="benefit-item">
+            <div class="benefits-grid benefits-grid-2x2">
+                <div class="benefit-card">
                     <div class="benefit-icon">
                         <i class="fas fa-dollar-sign"></i>
                     </div>
@@ -337,7 +332,7 @@ get_header(); ?>
                     <p>Achieve better ad positions and lower costs per click due to reduced advertiser competition.</p>
                 </div>
                 
-                <div class="benefit-item">
+                <div class="benefit-card">
                     <div class="benefit-icon">
                         <i class="fas fa-users"></i>
                     </div>
@@ -345,7 +340,7 @@ get_header(); ?>
                     <p>Reach an audience with higher average income and education levels, particularly valuable for B2B.</p>
                 </div>
                 
-                <div class="benefit-item">
+                <div class="benefit-card">
                     <div class="benefit-icon">
                         <i class="fas fa-chart-line"></i>
                     </div>
@@ -353,9 +348,9 @@ get_header(); ?>
                     <p>Often achieve higher conversion rates due to less competitive landscape and focused user intent.</p>
                 </div>
                 
-                <div class="benefit-item">
+                <div class="benefit-card">
                     <div class="benefit-icon">
-                        <i class="fas fa-expand"></i>
+                        <i class="fas fa-globe"></i>
                     </div>
                     <h3>Extended Reach</h3>
                     <p>Access additional market share through Yahoo, AOL, and other partner network integrations.</p>
@@ -377,17 +372,14 @@ get_header(); ?>
                 </cite>
             </div>
         </div>
-    </section>
-
-    <!-- CTA Section -->
-    <section id="contact" class="cta-section">
-        <div class="container">
-            <div class="cta-content">
+    </section>    <!-- CTA Section -->
+    <section class="simple-cta-section">
+        <div class="section-content">
+            <div class="simple-cta-content">
                 <h2>Ready to Expand Beyond Google?</h2>
                 <p>Discover the untapped potential of Microsoft/Bing Ads for your business. Get started with a free competitive analysis and see how much market share you're missing.</p>
-                <div class="cta-buttons">
-                    <a href="<?php echo home_url('/contact'); ?>" class="btn-primary">Start Bing Campaigns</a>
-                    <a href="tel:+441234567890" class="btn-secondary">Call Now: 01234 567 890</a>
+                <div class="simple-cta-buttons">
+                    <a href="<?php echo home_url('/contact'); ?>" class="btn btn-primary">Start Bing Campaigns</a>
                 </div>
             </div>
         </div>

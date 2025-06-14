@@ -372,17 +372,14 @@ get_header(); ?>
                 </cite>
             </div>
         </div>
-    </section>
-
-    <!-- CTA Section -->
-    <section id="contact" class="cta-section">
-        <div class="container">
-            <div class="cta-content">
+    </section>    <!-- CTA Section -->
+    <section class="simple-cta-section">
+        <div class="section-content">
+            <div class="simple-cta-content">
                 <h2>Ready to Maximize Your Meta Advertising ROI?</h2>
                 <p>Let our Meta Ads specialists create campaigns that connect with your ideal customers and drive measurable results. Get started with a free strategy consultation.</p>
-                <div class="cta-buttons">
-                    <a href="<?php echo home_url('/contact'); ?>" class="btn-primary">Start Your Campaign</a>
-                    <a href="tel:+441234567890" class="btn-secondary">Call Now: 01234 567 890</a>
+                <div class="simple-cta-buttons">
+                    <a href="<?php echo home_url('/contact'); ?>" class="btn btn-primary">Start Your Campaign</a>
                 </div>
             </div>
         </div>

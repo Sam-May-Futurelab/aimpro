@@ -52,18 +52,30 @@ get_header(); ?>
                 <h2>Why Choose White Label SEO?</h2>
                 <div class="benefits-grid benefits-grid-4">
                     <div class="benefit-card">
+                        <div class="benefit-icon">
+                            <i class="fas fa-rocket"></i>
+                        </div>
                         <h3>Scale Rapidly</h3>
                         <p>Expand your service offerings and take on more clients without hiring additional staff or investing in expensive SEO tools.</p>
                     </div>
                     <div class="benefit-card">
+                        <div class="benefit-icon">
+                            <i class="fas fa-user-graduate"></i>
+                        </div>
                         <h3>Expert Delivery</h3>
                         <p>Leverage our team of certified SEO specialists and access to premium tools without the overhead costs.</p>
                     </div>
                     <div class="benefit-card">
+                        <div class="benefit-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
                         <h3>Higher Margins</h3>
                         <p>Increase your profit margins by offering SEO services at competitive rates while reducing operational costs.</p>
                     </div>
                     <div class="benefit-card">
+                        <div class="benefit-icon">
+                            <i class="fas fa-palette"></i>
+                        </div>
                         <h3>Your Brand</h3>
                         <p>All deliverables are fully branded with your company's logo, colors, and messaging. Your clients never know we exist.</p>
                     </div>
@@ -402,27 +414,45 @@ get_header(); ?>
                 <h2>What's Included in Every Partnership</h2>
                 <div class="benefits-grid">
                     <div class="benefit-card">
-                        <h3>🎨 Full Branding</h3>
+                        <div class="benefit-icon">
+                            <i class="fas fa-palette"></i>
+                        </div>
+                        <h3>Full Branding</h3>
                         <p>All reports, dashboards, and communications use your company branding, colors, and logo.</p>
                     </div>
                     <div class="benefit-card">
-                        <h3>📞 Direct Communication</h3>
+                        <div class="benefit-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <h3>Direct Communication</h3>
                         <p>Dedicated account manager and direct access to our SEO team for questions and updates.</p>
                     </div>
                     <div class="benefit-card">
-                        <h3>📊 Transparent Reporting</h3>
+                        <div class="benefit-icon">
+                            <i class="fas fa-chart-bar"></i>
+                        </div>
+                        <h3>Transparent Reporting</h3>
                         <p>Real-time access to all campaign data, metrics, and progress through branded dashboards.</p>
                     </div>
                     <div class="benefit-card">
-                        <h3>🔧 Premium Tools</h3>
+                        <div class="benefit-icon">
+                            <i class="fas fa-tools"></i>
+                        </div>
+                        <h3>Premium Tools</h3>
                         <p>Access to enterprise-level SEO tools and software at no additional cost to you.</p>
                     </div>
                     <div class="benefit-card">
-                        <h3>📈 Growth Support</h3>
+                        <div class="benefit-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <h3>Growth Support</h3>
                         <p>Marketing materials, sales support, and training to help you sell SEO services effectively.</p>
                     </div>
                     <div class="benefit-card">
-                        <h3>🛡️ Quality Guarantee</h3>
+                        <div class="benefit-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <h3>Quality Guarantee</h3>
                         <p>100% satisfaction guarantee with full refund if you're not completely satisfied with our services.</p>
                     </div>
                 </div>

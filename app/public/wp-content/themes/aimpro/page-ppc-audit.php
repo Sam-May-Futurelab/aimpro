@@ -110,19 +110,17 @@ get_header(); ?>
                 </div>
             </div>
         </div>
-    </section>
-
-    <!-- Audit Process Section -->
-    <section class="audit-process-section">
-        <div class="container">
+    </section>    <!-- Audit Process Section -->
+    <section class="whitelabel-benefits">
+        <div class="section-content">
             <h2>Our 50-Point PPC Audit Process</h2>
-            <div class="audit-categories">
-                <div class="audit-category">
-                    <div class="category-header">
-                        <h3>Account Foundation (10 Points)</h3>
-                        <span class="category-icon"><i class="fas fa-foundation"></i></span>
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-building"></i>
                     </div>
-                    <ul class="audit-checklist">
+                    <h3>Account Foundation (10 Points)</h3>
+                    <ul class="service-features-list">
                         <li>Account structure optimization</li>
                         <li>Campaign organization review</li>
                         <li>Conversion tracking validation</li>
@@ -131,12 +129,12 @@ get_header(); ?>
                     </ul>
                 </div>
                 
-                <div class="audit-category">
-                    <div class="category-header">
-                        <h3>Keyword Strategy (12 Points)</h3>
-                        <span class="category-icon"><i class="fas fa-key"></i></span>
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-key"></i>
                     </div>
-                    <ul class="audit-checklist">
+                    <h3>Keyword Strategy (12 Points)</h3>
+                    <ul class="service-features-list">
                         <li>Keyword relevance scoring</li>
                         <li>Match type optimization</li>
                         <li>Search query analysis</li>
@@ -145,12 +143,12 @@ get_header(); ?>
                     </ul>
                 </div>
                 
-                <div class="audit-category">
-                    <div class="category-header">
-                        <h3>Ad Performance (10 Points)</h3>
-                        <span class="category-icon"><i class="fas fa-ad"></i></span>
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-bullhorn"></i>
                     </div>
-                    <ul class="audit-checklist">
+                    <h3>Ad Performance (10 Points)</h3>
+                    <ul class="service-features-list">
                         <li>Ad copy effectiveness</li>
                         <li>Extension utilization</li>
                         <li>Creative testing strategy</li>
@@ -159,12 +157,12 @@ get_header(); ?>
                     </ul>
                 </div>
                 
-                <div class="audit-category">
-                    <div class="category-header">
-                        <h3>Landing Pages (8 Points)</h3>
-                        <span class="category-icon"><i class="fas fa-mouse-pointer"></i></span>
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-crosshairs"></i>
                     </div>
-                    <ul class="audit-checklist">
+                    <h3>Landing Pages (8 Points)</h3>
+                    <ul class="service-features-list">
                         <li>Relevance and alignment</li>
                         <li>Conversion optimization</li>
                         <li>Page speed analysis</li>
@@ -172,12 +170,12 @@ get_header(); ?>
                     </ul>
                 </div>
                 
-                <div class="audit-category">
-                    <div class="category-header">
-                        <h3>Targeting & Audiences (10 Points)</h3>
-                        <span class="category-icon"><i class="fas fa-crosshairs"></i></span>
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-users"></i>
                     </div>
-                    <ul class="audit-checklist">
+                    <h3>Targeting & Audiences (10 Points)</h3>
+                    <ul class="service-features-list">
                         <li>Geographic targeting precision</li>
                         <li>Demographic optimization</li>
                         <li>Audience segmentation</li>
@@ -231,62 +229,59 @@ get_header(); ?>
                         </div>
                         <div class="result-item">
                             <div class="result-number">340%</div>
-                            <div class="result-label">ROI Improvement</div>
-                        </div>
+                            <div class="result-label">ROI Improvement</div>                        </div>
                     </div>
-                    <p class="results-summary">The audit identified £47,000 in annual waste and provided a clear roadmap that increased performance by 340% within 6 months.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- What You Get Section -->
-    <section class="deliverables-section">
-        <div class="container">
+    <!-- What You Get Section -->    <section class="whitelabel-benefits">
+        <div class="section-content">
             <h2>What You Receive</h2>
-            <div class="deliverables-grid">
-                <div class="deliverable-item">
-                    <div class="deliverable-icon">
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <div class="benefit-icon">
                         <i class="fas fa-file-alt"></i>
                     </div>
                     <h3>Comprehensive Report</h3>
                     <p>Detailed 25+ page analysis with specific findings, scores, and prioritized recommendations for each area of your account.</p>
                 </div>
                 
-                <div class="deliverable-item">
-                    <div class="deliverable-icon">
-                        <i class="fas fa-list-ol"></i>
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-clipboard-list"></i>
                     </div>
                     <h3>Action Plan</h3>
                     <p>Step-by-step implementation guide with timelines and expected impact for each recommended change.</p>
                 </div>
                 
-                <div class="deliverable-item">
-                    <div class="deliverable-icon">
-                        <i class="fas fa-calculator"></i>
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-piggy-bank"></i>
                     </div>
                     <h3>Cost Savings Analysis</h3>
                     <p>Identification of wasted spend and projected savings from implementing our recommendations.</p>
                 </div>
                 
-                <div class="deliverable-item">
-                    <div class="deliverable-icon">
+                <div class="benefit-card">
+                    <div class="benefit-icon">
                         <i class="fas fa-chart-bar"></i>
                     </div>
                     <h3>Performance Benchmarks</h3>
                     <p>Industry comparison data and realistic performance targets for your campaigns.</p>
                 </div>
                 
-                <div class="deliverable-item">
-                    <div class="deliverable-icon">
+                <div class="benefit-card">
+                    <div class="benefit-icon">
                         <i class="fas fa-video"></i>
                     </div>
                     <h3>Strategy Presentation</h3>
                     <p>60-minute screen-share session explaining findings and answering questions about the recommendations.</p>
                 </div>
                 
-                <div class="deliverable-item">
-                    <div class="deliverable-icon">
+                <div class="benefit-card">
+                    <div class="benefit-icon">
                         <i class="fas fa-tools"></i>
                     </div>
                     <h3>Implementation Support</h3>
@@ -368,37 +363,37 @@ get_header(); ?>
         </div>
     </section>
 
-    <!-- Why Audit Section -->
-    <section class="why-audit-section">
-        <div class="container">
+    <!-- Why Audit Section -->    <!-- Why You Need a PPC Audit -->
+    <section class="whitelabel-benefits">
+        <div class="section-content">
             <h2>Why You Need a PPC Audit</h2>
-            <div class="reasons-grid">
-                <div class="reason-item">
-                    <div class="reason-icon">
-                        <i class="fas fa-dollar-sign"></i>
+            <div class="benefits-grid benefits-grid-2x2">
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-money-bill-wave"></i>
                     </div>
                     <h3>Stop Wasting Money</h3>
                     <p>The average audit uncovers £3,000+ in monthly waste from irrelevant keywords, poor targeting, and inefficient bidding.</p>
                 </div>
                 
-                <div class="reason-item">
-                    <div class="reason-icon">
-                        <i class="fas fa-search"></i>
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-search-plus"></i>
                     </div>
                     <h3>Find Hidden Opportunities</h3>
                     <p>Discover untapped keywords, audience segments, and campaign types that could drive additional qualified traffic.</p>
                 </div>
                 
-                <div class="reason-item">
-                    <div class="reason-icon">
+                <div class="benefit-card">
+                    <div class="benefit-icon">
                         <i class="fas fa-chart-line"></i>
                     </div>
                     <h3>Improve Performance</h3>
                     <p>Get specific recommendations to increase click-through rates, Quality Scores, and conversion rates.</p>
                 </div>
                 
-                <div class="reason-item">
-                    <div class="reason-icon">
+                <div class="benefit-card">
+                    <div class="benefit-icon">
                         <i class="fas fa-eye"></i>
                     </div>
                     <h3>Gain Fresh Perspective</h3>
@@ -421,17 +416,14 @@ get_header(); ?>
                 </cite>
             </div>
         </div>
-    </section>
-
-    <!-- CTA Section -->
-    <section id="contact" class="cta-section">
-        <div class="container">
-            <div class="cta-content">
+    </section>    <!-- CTA Section -->
+    <section class="simple-cta-section">
+        <div class="section-content">
+            <div class="simple-cta-content">
                 <h2>Ready to Uncover What's Holding Back Your PPC?</h2>
                 <p>Stop guessing and get definitive answers about your PPC performance. Our comprehensive audit will show you exactly where money is being wasted and how to fix it. Get started today.</p>
-                <div class="cta-buttons">
-                    <a href="<?php echo home_url('/contact'); ?>" class="btn-primary">Order Your Audit</a>
-                    <a href="tel:+441234567890" class="btn-secondary">Call Now: 01234 567 890</a>
+                <div class="simple-cta-buttons">
+                    <a href="<?php echo home_url('/contact'); ?>" class="btn btn-primary">Order Your Audit</a>
                 </div>
             </div>
         </div>
