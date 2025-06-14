@@ -65,30 +65,29 @@ get_header(); ?>
                 <h2>Optimize Your Website for Maximum Performance</h2>
                 <p>Our UX/UI optimization service transforms underperforming websites into conversion powerhouses through systematic analysis, strategic improvements, and data-driven testing. We focus on enhancing user experience while dramatically improving your business metrics.</p>
             </div>
-            
-            <div class="features-grid">
-                <div class="feature-card">
+              <div class="features-grid">
+                <div class="feature-item">
                     <div class="feature-icon">
                         <i class="fas fa-search-plus"></i>
                     </div>
                     <h3>Comprehensive UX Audit</h3>
                     <p>Deep analysis of user behavior, conversion barriers, and optimization opportunities using advanced analytics.</p>
                 </div>
-                <div class="feature-card">
+                <div class="feature-item">
                     <div class="feature-icon">
                         <i class="fas fa-chart-line"></i>
                     </div>
                     <h3>Conversion Rate Optimization</h3>
                     <p>Strategic improvements to forms, CTAs, and user flow to maximize conversions and revenue.</p>
                 </div>
-                <div class="feature-card">
+                <div class="feature-item">
                     <div class="feature-icon">
                         <i class="fas fa-mobile-alt"></i>
                     </div>
                     <h3>Mobile Experience Enhancement</h3>
                     <p>Optimize mobile user experience for the majority of your traffic with responsive design improvements.</p>
                 </div>
-                <div class="feature-card">
+                <div class="feature-item">
                     <div class="feature-icon">
                         <i class="fas fa-tachometer-alt"></i>
                     </div>

@@ -65,30 +65,29 @@ get_header(); ?>
                 <h2>Landing Pages That Convert Like Crazy</h2>
                 <p>Our high-converting landing pages are meticulously crafted to achieve one goal: turn your traffic into leads and sales. Every element is strategically designed and tested to maximize conversions for your specific audience and offer.</p>
             </div>
-            
-            <div class="features-grid">
-                <div class="feature-card">
+              <div class="features-grid">
+                <div class="feature-item">
                     <div class="feature-icon">
                         <i class="fas fa-bullseye"></i>
                     </div>
                     <h3>Conversion-Focused Design</h3>
                     <p>Every element designed with one goal: converting visitors into customers through strategic placement and messaging.</p>
                 </div>
-                <div class="feature-card">
+                <div class="feature-item">
                     <div class="feature-icon">
                         <i class="fas fa-flask"></i>
                     </div>
                     <h3>A/B Testing Ready</h3>
                     <p>Built-in testing capabilities to continuously optimize performance and improve conversion rates.</p>
                 </div>
-                <div class="feature-card">
+                <div class="feature-item">
                     <div class="feature-icon">
                         <i class="fas fa-rocket"></i>
                     </div>
                     <h3>Lightning Fast Loading</h3>
                     <p>Optimized for speed with under 2-second load times to minimize bounce rates and maximize conversions.</p>
                 </div>
-                <div class="feature-card">
+                <div class="feature-item">
                     <div class="feature-icon">
                         <i class="fas fa-chart-bar"></i>
                     </div>
@@ -350,68 +349,68 @@ get_header(); ?>
             </div>
         </div>
     </section>    <!-- Conversion Elements -->
-    <section class="whitelabel-services">
+    <section class="lead-generation-methods">
         <div class="container">
-            <div class="section-header">
+            <div class="section-content">
                 <h2>Essential Conversion Elements We Include</h2>
             </div>
             
-            <div class="whitelabel-services-grid">
-                <div class="whitelabel-service-card">
-                    <div class="service-icon">
+            <div class="methods-grid">
+                <div class="method-card">
+                    <div class="method-icon">
                         <i class="fas fa-bullhorn"></i>
                     </div>
-                    <div class="service-content">
+                    <div class="method-content">
                         <h3>Compelling Headlines</h3>
                         <p>Attention-grabbing headlines that clearly communicate value and capture interest immediately.</p>
                     </div>
                 </div>
                 
-                <div class="whitelabel-service-card">
-                    <div class="service-icon">
+                <div class="method-card">
+                    <div class="method-icon">
                         <i class="fas fa-star"></i>
                     </div>
-                    <div class="service-content">
+                    <div class="method-content">
                         <h3>Social Proof</h3>
                         <p>Testimonials, reviews, trust badges, and customer logos that build credibility and trust.</p>
                     </div>
                 </div>
                 
-                <div class="whitelabel-service-card">
-                    <div class="service-icon">
+                <div class="method-card">
+                    <div class="method-icon">
                         <i class="fas fa-mouse-pointer"></i>
                     </div>
-                    <div class="service-content">
+                    <div class="method-content">
                         <h3>Clear CTAs</h3>
                         <p>Strategic call-to-action buttons that stand out and guide visitors toward conversion.</p>
                     </div>
                 </div>
                 
-                <div class="whitelabel-service-card">
-                    <div class="service-icon">
+                <div class="method-card">
+                    <div class="method-icon">
                         <i class="fas fa-clock"></i>
                     </div>
-                    <div class="service-content">
+                    <div class="method-content">
                         <h3>Urgency & Scarcity</h3>
                         <p>Time-sensitive offers and limited availability messaging that motivates immediate action.</p>
                     </div>
                 </div>
                 
-                <div class="whitelabel-service-card">
-                    <div class="service-icon">
+                <div class="method-card">
+                    <div class="method-icon">
                         <i class="fas fa-shield-alt"></i>
                     </div>
-                    <div class="service-content">
+                    <div class="method-content">
                         <h3>Risk Reversal</h3>
                         <p>Money-back guarantees and risk-free offers that remove barriers to conversion.</p>
                     </div>
                 </div>
                 
-                <div class="whitelabel-service-card">
-                    <div class="service-icon">
+                <div class="method-card">
+                    <div class="method-icon">
                         <i class="fas fa-chart-line"></i>
                     </div>
-                    <div class="service-content">
+                    <div class="method-content">
                         <h3>Benefit-Focused Copy</h3>
                         <p>Persuasive copy that focuses on benefits and outcomes rather than features.</p>
                     </div>

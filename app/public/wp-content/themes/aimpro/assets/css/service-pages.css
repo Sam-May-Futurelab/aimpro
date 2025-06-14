@@ -1122,166 +1122,170 @@
     font-size: 1rem;
 }
 
-/* Website Development Services - 2x2 Grid Layout */
-.services-grid .services-list {
-    display: grid !important;
-    grid-template-columns: 1fr 1fr !important;
-    grid-template-rows: 1fr 1fr !important;
-    gap: 30px !important;
-    margin: 40px 0;
-}
-
-.services-grid .service-card {
-    background: var(--bg-card, #ffffff);
-    padding: 30px;
-    border-radius: 12px;
-    box-shadow: var(--shadow-card, 0 4px 12px rgba(0, 0, 0, 0.08));
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    display: flex;
-    flex-direction: column;
-}
-
-.services-grid .service-card:hover {
-    transform: translateY(-5px);
-    box-shadow: var(--shadow-card-hover, 0 10px 25px rgba(0, 0, 0, 0.12));
-}
-
-/* Technologies & Platforms Section */
-.technologies-section {
-    padding: 60px 0;
+/* Website Design Page Specific Styles */
+.website-design-page .service-overview {
     background: var(--bg-light, #f8f9fa);
-}
-
-.technologies-section h2 {
-    text-align: center;
-    font-size: 36px;
-    font-weight: 700;
-    margin-bottom: 50px;
-    color: var(--text-primary, #1a1a1a);
-}
-
-.tech-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 40px;
-    margin-bottom: 60px;
-}
-
-.tech-category {
-    background: white;
-    padding: 30px;
-    border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.tech-category:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
-}
-
-.tech-category h3 {
-    font-size: 20px;
-    font-weight: 600;
-    margin-bottom: 20px;
-    color: var(--primary-orange, #F15A25);
-    border-bottom: 2px solid var(--primary-orange, #F15A25);
-    padding-bottom: 10px;
-}
-
-.tech-list {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-
-.tech-list li {
-    padding: 8px 0;
-    color: var(--text-secondary, #64748b);
-    font-weight: 500;
-    position: relative;
-    padding-left: 20px;
-}
-
-.tech-list li::before {
-    content: "▶";
-    position: absolute;
-    left: 0;
-    color: var(--primary-orange, #F15A25);
-    font-size: 12px;
-    top: 50%;
-    transform: translateY(-50%);
-}
-
-/* Standard Features Section */
-.features-section {
     padding: 80px 0;
-    background: white;
 }
 
-.features-section h2 {
+.website-design-page .section-header {
     text-align: center;
+    max-width: 800px;
+    margin: 0 auto 60px;
+}
+
+.website-design-page .section-header h2 {
     font-size: 36px;
     font-weight: 700;
-    margin-bottom: 50px;
-    color: var(--text-primary, #1a1a1a);
+    margin-bottom: 20px;
+    color: var(--text-primary, #1a1a1a) !important;
 }
 
-.features-grid {
+.website-design-page .section-header p {
+    font-size: 18px;
+    line-height: 1.6;
+    color: var(--text-secondary, #64748b) !important;
+}
+
+/* Website design features grid - 4 columns */
+.website-design-page .features-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: 30px;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
 }
 
-.feature-item {
+@media (max-width: 1024px) {
+    .website-design-page .features-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 25px;
+    }
+}
+
+@media (max-width: 768px) {
+    .website-design-page .features-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+}
+
+/* Website design feature items - smaller and more compact */
+.website-design-page .feature-item {
     background: var(--bg-light, #f8f9fa);
-    padding: 30px;
+    padding: 20px 15px;
     border-radius: 12px;
     text-align: center;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     border: 2px solid transparent;
 }
 
-.feature-item:hover {
+.website-design-page .feature-item:hover {
     transform: translateY(-5px);
     box-shadow: 0 10px 25px rgba(241, 90, 37, 0.1);
     border-color: var(--primary-orange, #F15A25);
     background: white;
 }
 
-.feature-icon {
-    font-size: 48px;
-    margin-bottom: 20px;
+.website-design-page .feature-icon {
+    color: var(--primary-orange, #F15A25);
+    font-size: 36px;
+    margin-bottom: 15px;
     display: block;
 }
 
-.feature-item h3 {
-    font-size: 20px;
+.website-design-page .feature-item h3 {
+    font-size: 16px;
     font-weight: 600;
-    margin-bottom: 15px;
-    color: var(--text-primary, #1a1a1a);
+    margin-bottom: 10px;
+    color: var(--text-primary, #1a1a1a) !important;
 }
 
-.feature-item p {
-    color: var(--text-secondary, #64748b);
-    line-height: 1.6;
+.website-design-page .feature-item p {
+    color: var(--text-secondary, #64748b) !important;
+    line-height: 1.5;
     margin: 0;
+    font-size: 14px;
 }
 
-/* Ensure CTA heading is white */
-.cta-section .cta-content h2 {
-    color: white !important;
-    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+/* UX/UI Optimization Page Specific Styles */
+.ux-ui-optimization-page .service-overview {
+    background: var(--bg-light, #f8f9fa);
+    padding: 80px 0;
 }
 
-/* Ensure secondary button text is white in CTA sections */
-.cta-section .btn-secondary {
-    color: white !important;
-    border: 2px solid white;
-    background-color: transparent;
+.ux-ui-optimization-page .section-header {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto 60px;
 }
 
-.cta-section .btn-secondary:hover {
-    background-color: rgba(255, 255, 255, 0.15);
-    color: white !important;
+.ux-ui-optimization-page .section-header h2 {
+    font-size: 36px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    color: var(--text-primary, #1a1a1a) !important;
+}
+
+.ux-ui-optimization-page .section-header p {
+    font-size: 18px;
+    line-height: 1.6;
+    color: var(--text-secondary, #64748b) !important;
+}
+
+/* UX/UI optimization features grid - 4 columns */
+.ux-ui-optimization-page .features-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+@media (max-width: 1024px) {
+    .ux-ui-optimization-page .features-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 25px;
+    }
+}
+
+@media (max-width: 768px) {
+    .ux-ui-optimization-page .features-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+}
+
+/* UX/UI optimization feature items - smaller and more compact */
+.ux-ui-optimization-page .feature-item {
+    background: var(--bg-light, #f8f9fa);
+    padding: 20px 15px;
+    border-radius: 12px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 2px solid transparent;
+}
+
+.ux-ui-optimization-page .feature-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(241, 90, 37, 0.1);
+    border-color: var(--primary-orange, #F15A25);
+    background: white;
+}
+
+.ux-ui-optimization-page .feature-icon {
+    color: var(--primary-orange, #F15A25);
+    font-size: 36px;
+    margin-bottom: 15px;
+    display: block;
+}
+
+.ux-ui-optimization-page .feature-item h3 {
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 10px;
+    color: var(--text-primary, #1a1a1a) !important;
+}
+
+.ux-ui-optimization-page .feature-item p {
+    color: var(--text-secondary, #64748b) !important;
+    line-height: 1.5;
+    margin: 0;
+    font-size: 14px;
 }

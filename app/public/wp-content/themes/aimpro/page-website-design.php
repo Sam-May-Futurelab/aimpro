@@ -65,30 +65,29 @@ get_header(); ?>
                 <h2>Websites That Work As Hard As You Do</h2>
                 <p>Our custom website design service creates powerful digital experiences that not only look stunning but convert visitors into customers. Every design decision is backed by user experience research and conversion optimization principles.</p>
             </div>
-            
-            <div class="features-grid">
-                <div class="feature-card">
+              <div class="features-grid">
+                <div class="feature-item">
                     <div class="feature-icon">
                         <i class="fas fa-palette"></i>
                     </div>
                     <h3>Brand-Aligned Design</h3>
                     <p>Custom designs that perfectly reflect your brand identity and values across every element.</p>
                 </div>
-                <div class="feature-card">
+                <div class="feature-item">
                     <div class="feature-icon">
                         <i class="fas fa-mobile-alt"></i>
                     </div>
                     <h3>Mobile-First Approach</h3>
                     <p>Responsive designs optimized for all devices with emphasis on mobile user experience.</p>
                 </div>
-                <div class="feature-card">
+                <div class="feature-item">
                     <div class="feature-icon">
                         <i class="fas fa-chart-line"></i>
                     </div>
                     <h3>Conversion Optimization</h3>
                     <p>Every element designed to guide visitors toward your desired actions and business goals.</p>
                 </div>
-                <div class="feature-card">
+                <div class="feature-item">
                     <div class="feature-icon">
                         <i class="fas fa-search"></i>
                     </div>
