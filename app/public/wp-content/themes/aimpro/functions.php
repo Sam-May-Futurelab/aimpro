@@ -1298,7 +1298,7 @@ function aimpro_landing_page_admin() {
                             <td>
                                 <input type="text" name="contact_form_submit_text" value="<?php echo esc_attr(get_option('contact_form_submit_text', 'Submit')); ?>" class="regular-text" />
                                 <p class="description">Text for the form submit button.</p>
-                            </td>
+                                                       </td>
                         </tr>                    </table>
                 </div>
                 
