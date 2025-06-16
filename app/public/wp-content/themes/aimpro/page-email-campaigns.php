@@ -23,41 +23,38 @@ get_header(); ?>
                 <span class="current">Email Campaigns</span>
             </nav>
         </div>
-    </div>
-
-    <!-- Hero Section -->
+    </div>    <!-- Hero Section -->
     <section class="page-hero service-hero">
         <div class="container">
-            <div class="hero-content">                <h1>Strategic Email Marketing Campaigns</h1>
-                <p class="hero-subtitle">Drive engagement, nurture relationships, and boost sales with expertly crafted email campaigns that cut through inbox clutter and deliver measurable results for your business.</p>
+            <div class="hero-content">
+                <h1><?php echo esc_html(get_post_meta(get_the_ID(), 'email_campaigns_hero_title', true) ?: 'Strategic Email Marketing Campaigns'); ?></h1>
+                <p class="hero-subtitle"><?php echo esc_html(get_post_meta(get_the_ID(), 'email_campaigns_hero_subtitle', true) ?: 'Drive engagement, nurture relationships, and boost sales with expertly crafted email campaigns that cut through inbox clutter and deliver measurable results for your business.'); ?></p>
                 <div class="hero-stats">
                     <div class="stat-item">
-                        <div class="stat-number">4,200%</div>
-                        <div class="stat-label">Average ROI</div>
+                        <div class="stat-number"><?php echo esc_html(get_post_meta(get_the_ID(), 'email_campaigns_hero_stat_1_number', true) ?: '4,200%'); ?></div>
+                        <div class="stat-label"><?php echo esc_html(get_post_meta(get_the_ID(), 'email_campaigns_hero_stat_1_label', true) ?: 'Average ROI'); ?></div>
                     </div>
                     <div class="stat-item">
-                        <div class="stat-number">35%</div>
-                        <div class="stat-label">Higher Open Rates</div>
+                        <div class="stat-number"><?php echo esc_html(get_post_meta(get_the_ID(), 'email_campaigns_hero_stat_2_number', true) ?: '35%'); ?></div>
+                        <div class="stat-label"><?php echo esc_html(get_post_meta(get_the_ID(), 'email_campaigns_hero_stat_2_label', true) ?: 'Higher Open Rates'); ?></div>
                     </div>
                     <div class="stat-item">
-                        <div class="stat-number">280%</div>
-                        <div class="stat-label">Click-Through Improvement</div>
+                        <div class="stat-number"><?php echo esc_html(get_post_meta(get_the_ID(), 'email_campaigns_hero_stat_3_number', true) ?: '280%'); ?></div>
+                        <div class="stat-label"><?php echo esc_html(get_post_meta(get_the_ID(), 'email_campaigns_hero_stat_3_label', true) ?: 'Click-Through Improvement'); ?></div>
                     </div>
                 </div>
                 <div class="hero-ctas">
-                    <a href="#contact" class="btn-primary streamlined">Launch Campaigns</a>
-                    <a href="#packages" class="btn-outline streamlined">View Packages</a>
+                    <a href="#contact" class="btn-primary streamlined"><?php echo esc_html(get_post_meta(get_the_ID(), 'email_campaigns_hero_primary_btn', true) ?: 'Launch Campaigns'); ?></a>
+                    <a href="#packages" class="btn-outline streamlined"><?php echo esc_html(get_post_meta(get_the_ID(), 'email_campaigns_hero_secondary_btn', true) ?: 'View Packages'); ?></a>
                 </div>
             </div>
         </div>
-    </section>
-
-    <!-- Service Overview -->
+    </section>    <!-- Service Overview -->
     <section class="service-overview">
         <div class="container">
             <div class="overview-content">
-                <h2>Professional Email Campaign Management</h2>
-                <p>Email marketing remains one of the highest-ROI marketing channels when executed strategically. Our comprehensive email campaign services combine compelling design, persuasive copywriting, and advanced segmentation to deliver campaigns that your audience actually wants to read.</p>
+                <h2><?php echo esc_html(get_post_meta(get_the_ID(), 'email_campaigns_overview_title', true) ?: 'Professional Email Campaign Management'); ?></h2>
+                <p><?php echo esc_html(get_post_meta(get_the_ID(), 'email_campaigns_overview_description', true) ?: 'Email marketing remains one of the highest-ROI marketing channels when executed strategically. Our comprehensive email campaign services combine compelling design, persuasive copywriting, and advanced segmentation to deliver campaigns that your audience actually wants to read.'); ?></p>
             </div>
             
             <div class="services-grid">
@@ -65,39 +62,52 @@ get_header(); ?>
                     <div class="service-icon">
                         <i class="fas fa-bullseye"></i>
                     </div>
-                    <h3>Strategic Campaign Planning</h3>
-                    <p>Data-driven campaign strategies aligned with your business goals and customer journey stages.</p>
+                    <h3><?php echo esc_html(get_post_meta(get_the_ID(), 'email_campaigns_service_1_title', true) ?: 'Strategic Campaign Planning'); ?></h3>
+                    <p><?php echo esc_html(get_post_meta(get_the_ID(), 'email_campaigns_service_1_desc', true) ?: 'Data-driven campaign strategies aligned with your business goals and customer journey stages.'); ?></p>
                 </div>
                 
                 <div class="service-item">
                     <div class="service-icon">
                         <i class="fas fa-palette"></i>
                     </div>
-                    <h3>Professional Email Design</h3>
-                    <p>Mobile-responsive, brand-aligned email templates that look stunning across all devices and email clients.</p>
+                    <h3><?php echo esc_html(get_post_meta(get_the_ID(), 'email_campaigns_service_2_title', true) ?: 'Professional Email Design'); ?></h3>
+                    <p><?php echo esc_html(get_post_meta(get_the_ID(), 'email_campaigns_service_2_desc', true) ?: 'Mobile-responsive, brand-aligned email templates that look stunning across all devices and email clients.'); ?></p>
                 </div>
                 
                 <div class="service-item">
                     <div class="service-icon">
                         <i class="fas fa-pen-fancy"></i>
                     </div>
-                    <h3>Conversion-Focused Copy</h3>
-                    <p>Compelling subject lines and email content that drives opens, clicks, and conversions.</p>
+                    <h3><?php echo esc_html(get_post_meta(get_the_ID(), 'email_campaigns_service_3_title', true) ?: 'Conversion-Focused Copy'); ?></h3>
+                    <p><?php echo esc_html(get_post_meta(get_the_ID(), 'email_campaigns_service_3_desc', true) ?: 'Compelling subject lines and email content that drives opens, clicks, and conversions.'); ?></p>
                 </div>
                 
                 <div class="service-item">
                     <div class="service-icon">
                         <i class="fas fa-users"></i>
                     </div>
-                    <h3>Advanced Segmentation</h3>
-                    <p>Precise audience targeting based on behavior, demographics, and purchase history for maximum relevance.</p>
+                    <h3><?php echo esc_html(get_post_meta(get_the_ID(), 'email_campaigns_service_4_title', true) ?: 'Advanced Segmentation'); ?></h3>
+                    <p><?php echo esc_html(get_post_meta(get_the_ID(), 'email_campaigns_service_4_desc', true) ?: 'Precise audience targeting based on behavior, demographics, and purchase history for maximum relevance.'); ?></p>
                 </div>
                 
                 <div class="service-item">
                     <div class="service-icon">
                         <i class="fas fa-chart-line"></i>
                     </div>
-                    <h3>Performance Optimization</h3>
+                    <h3><?php echo esc_html(get_post_meta(get_the_ID(), 'email_campaigns_service_5_title', true) ?: 'Performance Optimization'); ?></h3>
+                    <p><?php echo esc_html(get_post_meta(get_the_ID(), 'email_campaigns_service_5_desc', true) ?: 'Continuous A/B testing and optimization to improve open rates, click-through rates, and conversions.'); ?></p>
+                </div>
+                
+                <div class="service-item">
+                    <div class="service-icon">
+                        <i class="fas fa-calendar-alt"></i>
+                    </div>
+                    <h3><?php echo esc_html(get_post_meta(get_the_ID(), 'email_campaigns_service_6_title', true) ?: 'Campaign Scheduling'); ?></h3>
+                    <p><?php echo esc_html(get_post_meta(get_the_ID(), 'email_campaigns_service_6_desc', true) ?: 'Strategic timing and frequency optimization to maximize engagement while avoiding subscriber fatigue.'); ?></p>
+                </div>
+            </div>
+        </div>
+    </section>
                     <p>Continuous A/B testing and optimization to improve open rates, click-through rates, and conversions.</p>
                 </div>
                 
@@ -110,29 +120,31 @@ get_header(); ?>
                 </div>
             </div>
         </div>
-    </section>
-
-    <!-- Case Study Section -->
+    </section>    <!-- Case Study Section -->
     <section class="case-study-section">
         <div class="container">
             <div class="case-study-content">
                 <div class="case-study-text">
-                    <h2>Case Study: B2B Software Success</h2>
-                    <p class="case-study-intro">How we helped a B2B software company increase their email marketing ROI by 4,200% and generate £350K in additional revenue through strategic campaign optimization.</p>
+                    <h2><?php echo esc_html(get_post_meta(get_the_ID(), 'email_campaigns_case_title', true) ?: 'Case Study: B2B Software Success'); ?></h2>
+                    <p class="case-study-intro"><?php echo esc_html(get_post_meta(get_the_ID(), 'email_campaigns_case_intro', true) ?: 'How we helped a B2B software company increase their email marketing ROI by 4,200% and generate £350K in additional revenue through strategic campaign optimization.'); ?></p>
                     
                     <div class="case-study-challenge">
                         <h3>The Challenge</h3>
-                        <p>A growing B2B software company had a large email list but poor engagement rates. Their generic newsletters generated minimal revenue, open rates were below 15%, and they were struggling to convert trial users into paying customers through email.</p>
+                        <p><?php echo esc_html(get_post_meta(get_the_ID(), 'email_campaigns_case_challenge', true) ?: 'A growing B2B software company had a large email list but poor engagement rates. Their generic newsletters generated minimal revenue, open rates were below 15%, and they were struggling to convert trial users into paying customers through email.'); ?></p>
                     </div>
                     
                     <div class="case-study-solution">
                         <h3>Our Campaign Strategy</h3>
                         <ul>
-                            <li>Segmented list into 8 distinct audience groups based on user behavior</li>
-                            <li>Created targeted campaign series for each segment and buyer journey stage</li>
-                            <li>Redesigned email templates with mobile-first, conversion-focused approach</li>
-                            <li>Implemented advanced personalization using behavioral data</li>
-                            <li>Developed product-specific campaigns with case studies and social proof</li>
+                            <?php 
+                            $solution_points = get_post_meta(get_the_ID(), 'email_campaigns_case_solution', true) ?: "Segmented list into 8 distinct audience groups based on user behavior\nCreated targeted campaign series for each segment and buyer journey stage\nRedesigned email templates with mobile-first, conversion-focused approach\nImplemented advanced personalization using behavioral data\nDeveloped product-specific campaigns with case studies and social proof";
+                            $points = explode("\n", $solution_points);
+                            foreach ($points as $point) {
+                                if (trim($point)) {
+                                    echo '<li>' . esc_html(trim($point)) . '</li>';
+                                }
+                            }
+                            ?>
                         </ul>
                     </div>
                 </div>
@@ -141,25 +153,26 @@ get_header(); ?>
                     <h3>The Results</h3>
                     <div class="results-grid">
                         <div class="result-item">
-                            <div class="result-number">4,200%</div>
-                            <div class="result-label">ROI Increase</div>
+                            <div class="result-number"><?php echo esc_html(get_post_meta(get_the_ID(), 'email_campaigns_result_1_number', true) ?: '4,200%'); ?></div>
+                            <div class="result-label"><?php echo esc_html(get_post_meta(get_the_ID(), 'email_campaigns_result_1_label', true) ?: 'ROI Increase'); ?></div>
                         </div>
                         <div class="result-item">
-                            <div class="result-number">58%</div>
-                            <div class="result-label">Open Rate Improvement</div>
+                            <div class="result-number"><?php echo esc_html(get_post_meta(get_the_ID(), 'email_campaigns_result_2_number', true) ?: '58%'); ?></div>
+                            <div class="result-label"><?php echo esc_html(get_post_meta(get_the_ID(), 'email_campaigns_result_2_label', true) ?: 'Open Rate Improvement'); ?></div>
                         </div>
                         <div class="result-item">
-                            <div class="result-number">280%</div>
-                            <div class="result-label">Click-Through Rate Increase</div>
-                        </div>                        <div class="result-item">
-                            <div class="result-number">£350K</div>
-                            <div class="result-label">Additional Annual Revenue</div>
+                            <div class="result-number"><?php echo esc_html(get_post_meta(get_the_ID(), 'email_campaigns_result_3_number', true) ?: '280%'); ?></div>
+                            <div class="result-label"><?php echo esc_html(get_post_meta(get_the_ID(), 'email_campaigns_result_3_label', true) ?: 'Click-Through Rate Increase'); ?></div>
+                        </div>
+                        <div class="result-item">
+                            <div class="result-number"><?php echo esc_html(get_post_meta(get_the_ID(), 'email_campaigns_result_4_number', true) ?: '£350K'); ?></div>
+                            <div class="result-label"><?php echo esc_html(get_post_meta(get_the_ID(), 'email_campaigns_result_4_label', true) ?: 'Additional Annual Revenue'); ?></div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </section>    <!-- Campaign Types Section -->
+    </section><!-- Campaign Types Section -->
     <section class="service-overview">
         <div class="container">
             <div class="section-header">
@@ -234,54 +247,53 @@ get_header(); ?>
                 </div>
             </div>
         </div>
-    </section>
-
-    <!-- Process Section -->
+    </section>    <!-- Process Section -->
     <section class="process-section">
         <div class="container">
-            <h2>Our Email Campaign Process</h2>
+            <h2><?php echo esc_html(get_post_meta(get_the_ID(), 'email_campaigns_process_title', true) ?: 'Our Email Campaign Process'); ?></h2>
             <div class="process-steps">
                 <div class="process-step">
                     <div class="step-number">1</div>
                     <div class="step-content">
-                        <h3>Strategy & Planning</h3>
-                        <p>Define campaign objectives, target audiences, and key performance indicators aligned with your business goals.</p>
+                        <h3><?php echo esc_html(get_post_meta(get_the_ID(), 'email_campaigns_step_1_title', true) ?: 'Strategy & Planning'); ?></h3>
+                        <p><?php echo esc_html(get_post_meta(get_the_ID(), 'email_campaigns_step_1_desc', true) ?: 'Define campaign objectives, target audiences, and key performance indicators aligned with your business goals.'); ?></p>
                     </div>
                 </div>
                 
                 <div class="process-step">
                     <div class="step-number">2</div>
                     <div class="step-content">
-                        <h3>Audience Segmentation</h3>
-                        <p>Analyze your email list and create targeted segments based on behavior, demographics, and engagement history.</p>
+                        <h3><?php echo esc_html(get_post_meta(get_the_ID(), 'email_campaigns_step_2_title', true) ?: 'Audience Segmentation'); ?></h3>
+                        <p><?php echo esc_html(get_post_meta(get_the_ID(), 'email_campaigns_step_2_desc', true) ?: 'Analyze your email list and create targeted segments based on behavior, demographics, and engagement history.'); ?></p>
                     </div>
                 </div>
                 
                 <div class="process-step">
                     <div class="step-number">3</div>
                     <div class="step-content">
-                        <h3>Content Creation</h3>
-                        <p>Develop compelling copy and design mobile-responsive templates that align with your brand and campaign goals.</p>
+                        <h3><?php echo esc_html(get_post_meta(get_the_ID(), 'email_campaigns_step_3_title', true) ?: 'Content Creation'); ?></h3>
+                        <p><?php echo esc_html(get_post_meta(get_the_ID(), 'email_campaigns_step_3_desc', true) ?: 'Develop compelling copy and design mobile-responsive templates that align with your brand and campaign goals.'); ?></p>
                     </div>
                 </div>
                 
                 <div class="process-step">
                     <div class="step-number">4</div>
                     <div class="step-content">
-                        <h3>Testing & Launch</h3>
-                        <p>A/B test subject lines, content, and send times before launching to optimize campaign performance.</p>
+                        <h3><?php echo esc_html(get_post_meta(get_the_ID(), 'email_campaigns_step_4_title', true) ?: 'Testing & Launch'); ?></h3>
+                        <p><?php echo esc_html(get_post_meta(get_the_ID(), 'email_campaigns_step_4_desc', true) ?: 'A/B test subject lines, content, and send times before launching to optimize campaign performance.'); ?></p>
                     </div>
                 </div>
                 
                 <div class="process-step">
                     <div class="step-number">5</div>
                     <div class="step-content">
-                        <h3>Analysis & Optimization</h3>
-                        <p>Monitor performance metrics and continuously optimize future campaigns based on data insights.</p>
+                        <h3><?php echo esc_html(get_post_meta(get_the_ID(), 'email_campaigns_step_5_title', true) ?: 'Analysis & Optimization'); ?></h3>
+                        <p><?php echo esc_html(get_post_meta(get_the_ID(), 'email_campaigns_step_5_desc', true) ?: 'Monitor performance metrics and continuously optimize future campaigns based on data insights.'); ?></p>
                     </div>
                 </div>
-            </div>        </div>
-    </section>    <!-- Best Practices Section -->
+            </div>
+        </div>
+    </section><!-- Best Practices Section -->
     <section class="service-overview">
         <div class="container">
             <div class="section-header">
@@ -395,18 +407,16 @@ get_header(); ?>
                 </div>
             </div>
         </div>
-    </section>
-
-    <!-- Testimonial Section -->
+    </section>    <!-- Testimonial Section -->
     <section class="testimonial-section">
         <div class="container">
             <div class="testimonial-content">
                 <blockquote>
-                    "Aimpro transformed our email marketing from an afterthought to our most profitable channel. Our ROI increased by 4,200% and we're generating £350K more revenue annually. Their strategic approach is unmatched."
+                    "<?php echo esc_html(get_post_meta(get_the_ID(), 'email_campaigns_testimonial_quote', true) ?: 'Aimpro transformed our email marketing from an afterthought to our most profitable channel. Our ROI increased by 4,200% and we\'re generating £350K more revenue annually. Their strategic approach is unmatched.'); ?>"
                 </blockquote>
                 <cite>
-                    <strong>Michael Roberts</strong><br>
-                    CEO, TechFlow Solutions
+                    <strong><?php echo esc_html(get_post_meta(get_the_ID(), 'email_campaigns_testimonial_author', true) ?: 'Michael Roberts'); ?></strong><br>
+                    <?php echo esc_html(get_post_meta(get_the_ID(), 'email_campaigns_testimonial_position', true) ?: 'CEO, TechFlow Solutions'); ?>
                 </cite>
             </div>
         </div>
@@ -415,10 +425,11 @@ get_header(); ?>
     <!-- CTA Section -->
     <section id="contact" class="cta-section">
         <div class="container">
-            <div class="cta-content">                <h2>Ready to Transform Your Email Marketing?</h2>
-                <p>Stop sending emails that get ignored. Our strategic email campaigns are designed to cut through inbox clutter and drive real business results. Let's turn your email list into a revenue-generating machine.</p>
+            <div class="cta-content">
+                <h2><?php echo esc_html(get_post_meta(get_the_ID(), 'email_campaigns_cta_title', true) ?: 'Ready to Transform Your Email Marketing?'); ?></h2>
+                <p><?php echo esc_html(get_post_meta(get_the_ID(), 'email_campaigns_cta_description', true) ?: 'Stop sending emails that get ignored. Our strategic email campaigns are designed to cut through inbox clutter and drive real business results. Let\'s turn your email list into a revenue-generating machine.'); ?></p>
                 <div class="cta-buttons">
-                    <a href="<?php echo home_url('/contact'); ?>" class="btn-primary">Launch Campaigns</a>
+                    <a href="<?php echo home_url('/contact'); ?>" class="btn-primary"><?php echo esc_html(get_post_meta(get_the_ID(), 'email_campaigns_cta_button', true) ?: 'Launch Campaigns'); ?></a>
                 </div>
             </div>
         </div>
