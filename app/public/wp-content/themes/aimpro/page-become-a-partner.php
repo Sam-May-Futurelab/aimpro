@@ -23,19 +23,18 @@ get_header(); ?>
                         <?php 
                         $intro_text = get_post_meta(get_the_ID(), 'partner_intro_text', true) ?: 'We believe in the power of collaboration. Our partnership program is designed to create mutually beneficial relationships that help both parties grow and succeed in the digital marketing landscape.\n\nWhether you\'re a complementary service provider, technology vendor, or strategic ally, we offer various partnership opportunities that can expand your reach while providing additional value to our clients.';
                         echo wp_kses_post(wpautop($intro_text));
-                        ?>
-                        <div class="partnership-highlights">
+                        ?>                        <div class="partnership-highlights">
                             <div class="highlight-item">
-                                <span class="highlight-number">50+</span>
-                                <span class="highlight-label">Active Partners</span>
+                                <span class="highlight-number"><?php echo esc_html(get_post_meta(get_the_ID(), 'partner_stats_value1', true) ?: '50+'); ?></span>
+                                <span class="highlight-label"><?php echo esc_html(get_post_meta(get_the_ID(), 'partner_stats_label1', true) ?: 'Active Partners'); ?></span>
                             </div>
                             <div class="highlight-item">
-                                <span class="highlight-number">200%</span>
-                                <span class="highlight-label">Average Partner Growth</span>
+                                <span class="highlight-number"><?php echo esc_html(get_post_meta(get_the_ID(), 'partner_stats_value2', true) ?: '200%'); ?></span>
+                                <span class="highlight-label"><?php echo esc_html(get_post_meta(get_the_ID(), 'partner_stats_label2', true) ?: 'Average Partner Growth'); ?></span>
                             </div>
                             <div class="highlight-item">
-                                <span class="highlight-number">$5M+</span>
-                                <span class="highlight-label">Partner Revenue Generated</span>
+                                <span class="highlight-number"><?php echo esc_html(get_post_meta(get_the_ID(), 'partner_stats_value3', true) ?: '$5M+'); ?></span>
+                                <span class="highlight-label"><?php echo esc_html(get_post_meta(get_the_ID(), 'partner_stats_label3', true) ?: 'Partner Revenue Generated'); ?></span>
                             </div>
                         </div>
                     </div>
@@ -49,8 +48,7 @@ get_header(); ?>
             <div class="section-content">
                 <h2><?php echo esc_html(get_post_meta(get_the_ID(), 'partner_opportunities_heading', true) ?: 'Partnership Opportunities'); ?></h2>
                 <div class="partnership-grid">
-                    
-                    <!-- Referral Partners -->
+                      <!-- Referral Partners -->
                     <div class="partnership-card">
                         <div class="partnership-icon">
                             <svg width="60" height="60" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -60,19 +58,22 @@ get_header(); ?>
                                 <path d="M19 8h-7" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
                             </svg>
                         </div>
-                        <h3>Referral Partners</h3>
-                        <p>Earn generous commissions by referring clients to our digital marketing services. Perfect for consultants, web developers, and business advisors.</p>
+                        <h3><?php echo esc_html(get_post_meta(get_the_ID(), 'partner_referral_title', true) ?: 'Referral Partners'); ?></h3>
+                        <p><?php echo esc_html(get_post_meta(get_the_ID(), 'partner_referral_description', true) ?: 'Earn generous commissions by referring clients to our digital marketing services. Perfect for consultants, web developers, and business advisors.'); ?></p>
                         <div class="partnership-benefits">
                             <ul>
-                                <li>Up to 20% commission on referred business</li>
-                                <li>Dedicated partner support team</li>
-                                <li>Marketing materials and resources</li>
-                                <li>Regular training and updates</li>
+                                <?php 
+                                $benefits = get_post_meta(get_the_ID(), 'partner_referral_benefits', true) ?: "Up to 20% commission on referred business\nDedicated partner support team\nMarketing materials and resources\nRegular training and updates";
+                                $benefits_array = explode("\n", $benefits);
+                                foreach ($benefits_array as $benefit) {
+                                    echo '<li>' . esc_html(trim($benefit)) . '</li>';
+                                }
+                                ?>
                             </ul>
                         </div>
                         <div class="partnership-requirements">
                             <h4>Ideal For:</h4>
-                            <p>Business consultants, web developers, graphic designers, and other service providers who work with businesses needing digital marketing.</p>
+                            <p><?php echo esc_html(get_post_meta(get_the_ID(), 'partner_referral_ideal', true) ?: 'Business consultants, web developers, graphic designers, and other service providers who work with businesses needing digital marketing.'); ?></p>
                         </div>
                     </div>
 
@@ -88,23 +89,29 @@ get_header(); ?>
                                 <path d="M16 7v6" stroke="currentColor" stroke-width="2"/>
                             </svg>
                         </div>
-                        <h3>Technology Partners</h3>
-                        <p>Integrate your software or tools with our marketing stack to provide enhanced solutions for our mutual clients.</p>
+                        <h3><?php echo esc_html(get_post_meta(get_the_ID(), 'partner_tech_title', true) ?: 'Technology Partners'); ?></h3>
+                        <p><?php echo esc_html(get_post_meta(get_the_ID(), 'partner_tech_description', true) ?: 'Integrate your software or tools with our marketing stack to provide enhanced solutions for our mutual clients.'); ?></p>
                         <div class="partnership-benefits">
                             <ul>
-                                <li>Technical integration and API access</li>
-                                <li>Joint marketing opportunities</li>
-                                <li>Co-branded solution development</li>
-                                <li>Shared client success stories</li>
+                                <?php 
+                                $benefits = get_post_meta(get_the_ID(), 'partner_tech_benefits', true) ?: "Technical integration and API access\nJoint marketing opportunities\nCo-branded solution development\nShared client success stories";
+                                $benefits_array = explode("\n", $benefits);
+                                foreach ($benefits_array as $benefit) {
+                                    echo '<li>' . esc_html(trim($benefit)) . '</li>';
+                                }
+                                ?>
                             </ul>
                         </div>
                         <div class="partnership-requirements">
                             <h4>Ideal For:</h4>
-                            <p>SaaS platforms, marketing tools, CRM providers, analytics platforms, and other technology solutions that complement digital marketing.</p>
+                            <p><?php echo esc_html(get_post_meta(get_the_ID(), 'partner_tech_ideal', true) ?: 'SaaS platforms, marketing tools, CRM providers, analytics platforms, and other technology solutions that complement digital marketing.'); ?></p>
                         </div>
                     </div>
-
-                    <!-- Agency Partners -->
+                        <div class="partnership-requirements">
+                            <h4>Ideal For:</h4>
+                            <p>SaaS platforms, marketing tools, CRM providers, analytics platforms, and other technology solutions that complement digital marketing.</p>
+                        </div>
+                    </div>                    <!-- Agency Partners -->
                     <div class="partnership-card">
                         <div class="partnership-icon">
                             <svg width="60" height="60" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -116,19 +123,22 @@ get_header(); ?>
                                 <path d="m3 7 3 5-3 5" stroke="currentColor" stroke-width="2"/>
                             </svg>
                         </div>
-                        <h3>Agency Partners</h3>
-                        <p>White-label our services or collaborate on larger projects that require specialized expertise in digital marketing.</p>
+                        <h3><?php echo esc_html(get_post_meta(get_the_ID(), 'partner_agency_title', true) ?: 'Agency Partners'); ?></h3>
+                        <p><?php echo esc_html(get_post_meta(get_the_ID(), 'partner_agency_description', true) ?: 'White-label our services or collaborate on larger projects that require specialized expertise in digital marketing.'); ?></p>
                         <div class="partnership-benefits">
                             <ul>
-                                <li>White-label service delivery</li>
-                                <li>Shared project management</li>
-                                <li>Collaborative proposal development</li>
-                                <li>Resource and expertise sharing</li>
+                                <?php 
+                                $benefits = get_post_meta(get_the_ID(), 'partner_agency_benefits', true) ?: "White-label service delivery\nShared project management\nCollaborative proposal development\nResource and expertise sharing";
+                                $benefits_array = explode("\n", $benefits);
+                                foreach ($benefits_array as $benefit) {
+                                    echo '<li>' . esc_html(trim($benefit)) . '</li>';
+                                }
+                                ?>
                             </ul>
                         </div>
                         <div class="partnership-requirements">
                             <h4>Ideal For:</h4>
-                            <p>Creative agencies, PR firms, web development agencies, and other marketing service providers looking to expand their digital capabilities.</p>
+                            <p><?php echo esc_html(get_post_meta(get_the_ID(), 'partner_agency_ideal', true) ?: 'Creative agencies, PR firms, web development agencies, and other marketing service providers looking to expand their digital capabilities.'); ?></p>
                         </div>
                     </div>
 
@@ -141,19 +151,21 @@ get_header(); ?>
                                 <path d="M18 12a2 2 0 0 0 0 4h4v-4z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                             </svg>
                         </div>
-                        <h3>Reseller Partners</h3>
-                        <p>Resell our digital marketing services under your own brand with full support and training from our team.</p>
+                        <h3><?php echo esc_html(get_post_meta(get_the_ID(), 'partner_reseller_title', true) ?: 'Reseller Partners'); ?></h3>
+                        <p><?php echo esc_html(get_post_meta(get_the_ID(), 'partner_reseller_description', true) ?: 'Resell our digital marketing services under your own brand with full support and training from our team.'); ?></p>
                         <div class="partnership-benefits">
                             <ul>
-                                <li>Competitive wholesale pricing</li>
-                                <li>Complete sales and marketing training</li>
-                                <li>Dedicated account management</li>
-                                <li>Ongoing technical support</li>
+                                <?php 
+                                $benefits = get_post_meta(get_the_ID(), 'partner_reseller_benefits', true) ?: "Competitive wholesale pricing\nComplete sales and marketing training\nDedicated account management\nOngoing technical support";
+                                $benefits_array = explode("\n", $benefits);
+                                foreach ($benefits_array as $benefit) {
+                                    echo '<li>' . esc_html(trim($benefit)) . '</li>';
+                                }
+                                ?>
                             </ul>
-                        </div>
-                        <div class="partnership-requirements">
+                        </div>                        <div class="partnership-requirements">
                             <h4>Ideal For:</h4>
-                            <p>Established businesses with existing client relationships who want to add digital marketing services to their portfolio.</p>
+                            <p><?php echo esc_html(get_post_meta(get_the_ID(), 'partner_reseller_ideal', true) ?: 'Established businesses with existing client relationships who want to add digital marketing services to their portfolio.'); ?></p>
                         </div>
                     </div>
                 </div>
@@ -164,28 +176,27 @@ get_header(); ?>
                 <h2><?php echo esc_html(get_post_meta(get_the_ID(), 'partner_why_heading', true) ?: 'Why Partner with Aimpro Digital?'); ?></h2>
                 <div class="benefits-grid">
                     <div class="benefit-item">
-                        <h3>Proven Track Record</h3>
-                        <p>With 500+ successful client campaigns and a 99% retention rate, you can trust in our ability to deliver results.</p>
+                        <h3><?php echo esc_html(get_post_meta(get_the_ID(), 'partner_why_benefit1_title', true) ?: 'Proven Track Record'); ?></h3>
+                        <p><?php echo esc_html(get_post_meta(get_the_ID(), 'partner_why_benefit1_text', true) ?: 'With 500+ successful client campaigns and a 99% retention rate, you can trust in our ability to deliver results.'); ?></p>
                     </div>
                     <div class="benefit-item">
-                        <h3>Comprehensive Support</h3>
-                        <p>From initial onboarding to ongoing support, we provide the resources and training you need to succeed.</p>
+                        <h3><?php echo esc_html(get_post_meta(get_the_ID(), 'partner_why_benefit2_title', true) ?: 'Comprehensive Support'); ?></h3>
+                        <p><?php echo esc_html(get_post_meta(get_the_ID(), 'partner_why_benefit2_text', true) ?: 'From initial onboarding to ongoing support, we provide the resources and training you need to succeed.'); ?></p>
                     </div>
                     <div class="benefit-item">
-                        <h3>Competitive Compensation</h3>
-                        <p>Our partnership terms are designed to be mutually beneficial with competitive commissions and incentives.</p>
+                        <h3><?php echo esc_html(get_post_meta(get_the_ID(), 'partner_why_benefit3_title', true) ?: 'Competitive Compensation'); ?></h3>
+                        <p><?php echo esc_html(get_post_meta(get_the_ID(), 'partner_why_benefit3_text', true) ?: 'Our partnership terms are designed to be mutually beneficial with competitive commissions and incentives.'); ?></p>
                     </div>
                     <div class="benefit-item">
-                        <h3>Expert Team</h3>
-                        <p>Partner with certified specialists in SEO, PPC, content marketing, and web development.</p>
+                        <h3><?php echo esc_html(get_post_meta(get_the_ID(), 'partner_why_benefit4_title', true) ?: 'Expert Team'); ?></h3>
+                        <p><?php echo esc_html(get_post_meta(get_the_ID(), 'partner_why_benefit4_text', true) ?: 'Partner with certified specialists in SEO, PPC, content marketing, and web development.'); ?></p>
+                    </div>                    <div class="benefit-item">
+                        <h3><?php echo esc_html(get_post_meta(get_the_ID(), 'partner_why_benefit5_title', true) ?: 'Cutting-Edge Tools'); ?></h3>
+                        <p><?php echo esc_html(get_post_meta(get_the_ID(), 'partner_why_benefit5_text', true) ?: 'Access to premium marketing tools and technologies that enhance service delivery and results.'); ?></p>
                     </div>
                     <div class="benefit-item">
-                        <h3>Cutting-Edge Tools</h3>
-                        <p>Access to premium marketing tools and technologies that enhance service delivery and results.</p>
-                    </div>
-                    <div class="benefit-item">
-                        <h3>Flexible Arrangements</h3>
-                        <p>We work with you to create partnership arrangements that fit your business model and goals.</p>
+                        <h3><?php echo esc_html(get_post_meta(get_the_ID(), 'partner_why_benefit6_title', true) ?: 'Flexible Arrangements'); ?></h3>
+                        <p><?php echo esc_html(get_post_meta(get_the_ID(), 'partner_why_benefit6_text', true) ?: 'We work with you to create partnership arrangements that fit your business model and goals.'); ?></p>
                     </div>
                 </div>
             </div>
@@ -193,37 +204,36 @@ get_header(); ?>
         <section class="partner-testimonials">
             <div class="section-content">
                 <h2><?php echo esc_html(get_post_meta(get_the_ID(), 'partner_stories_heading', true) ?: 'Partner Success Stories'); ?></h2>
-                <div class="testimonials-grid">
-                    <div class="testimonial-card">
+                <div class="testimonials-grid">                    <div class="testimonial-card">
                         <blockquote>
-                            "Partnering with Aimpro Digital has allowed us to offer comprehensive digital marketing services to our clients without having to build that expertise in-house. The results have been outstanding."
+                            "<?php echo esc_html(get_post_meta(get_the_ID(), 'partner_testimonial1_quote', true) ?: 'Partnering with Aimpro Digital has allowed us to offer comprehensive digital marketing services to our clients without having to build that expertise in-house. The results have been outstanding.'); ?>"
                         </blockquote>
                         <div class="testimonial-author">
-                            <h4>Mark Johnson</h4>
-                            <p>Founder, Creative Solutions Agency</p>
-                            <span class="partnership-type">Agency Partner</span>
+                            <h4><?php echo esc_html(get_post_meta(get_the_ID(), 'partner_testimonial1_name', true) ?: 'Mark Johnson'); ?></h4>
+                            <p><?php echo esc_html(get_post_meta(get_the_ID(), 'partner_testimonial1_title', true) ?: 'Founder, Creative Solutions Agency'); ?></p>
+                            <span class="partnership-type"><?php echo esc_html(get_post_meta(get_the_ID(), 'partner_testimonial1_type', true) ?: 'Agency Partner'); ?></span>
                         </div>
                     </div>
                     
                     <div class="testimonial-card">
                         <blockquote>
-                            "The referral program has been incredibly lucrative for our business. We've earned over $50,000 in commissions while providing valuable services to our clients."
+                            "<?php echo esc_html(get_post_meta(get_the_ID(), 'partner_testimonial2_quote', true) ?: 'The referral program has been incredibly lucrative for our business. We\'ve earned over $50,000 in commissions while providing valuable services to our clients.'); ?>"
                         </blockquote>
                         <div class="testimonial-author">
-                            <h4>Lisa Rodriguez</h4>
-                            <p>Business Consultant</p>
-                            <span class="partnership-type">Referral Partner</span>
+                            <h4><?php echo esc_html(get_post_meta(get_the_ID(), 'partner_testimonial2_name', true) ?: 'Lisa Rodriguez'); ?></h4>
+                            <p><?php echo esc_html(get_post_meta(get_the_ID(), 'partner_testimonial2_title', true) ?: 'Business Consultant'); ?></p>
+                            <span class="partnership-type"><?php echo esc_html(get_post_meta(get_the_ID(), 'partner_testimonial2_type', true) ?: 'Referral Partner'); ?></span>
                         </div>
                     </div>
                     
                     <div class="testimonial-card">
                         <blockquote>
-                            "The technical integration was seamless, and the collaborative approach has led to innovative solutions that neither of us could have developed alone."
+                            "<?php echo esc_html(get_post_meta(get_the_ID(), 'partner_testimonial3_quote', true) ?: 'The technical integration was seamless, and the collaborative approach has led to innovative solutions that neither of us could have developed alone.'); ?>"
                         </blockquote>
                         <div class="testimonial-author">
-                            <h4>David Chen</h4>
-                            <p>CTO, MarketingTech Pro</p>
-                            <span class="partnership-type">Technology Partner</span>
+                            <h4><?php echo esc_html(get_post_meta(get_the_ID(), 'partner_testimonial3_name', true) ?: 'David Chen'); ?></h4>
+                            <p><?php echo esc_html(get_post_meta(get_the_ID(), 'partner_testimonial3_title', true) ?: 'CTO, MarketingTech Pro'); ?></p>
+                            <span class="partnership-type"><?php echo esc_html(get_post_meta(get_the_ID(), 'partner_testimonial3_type', true) ?: 'Technology Partner'); ?></span>
                         </div>
                     </div>
                 </div>
@@ -231,41 +241,40 @@ get_header(); ?>
         </section>        <!-- Partnership Process -->
         <section class="partnership-process">
             <div class="section-content">
-                <h2><?php echo esc_html(get_post_meta(get_the_ID(), 'partner_process_heading', true) ?: 'How to Become a Partner'); ?></h2>
-                <div class="process-steps">
+                <h2><?php echo esc_html(get_post_meta(get_the_ID(), 'partner_process_heading', true) ?: 'How to Become a Partner'); ?></h2>                <div class="process-steps">
                     <div class="step">
-                        <div class="step-number">1</div>
+                        <div class="step-number"><?php echo esc_html(get_post_meta(get_the_ID(), 'partner_process_step1_number', true) ?: '1'); ?></div>
                         <div class="step-content">
-                            <h3>Initial Inquiry</h3>
-                            <p>Submit your partnership application with details about your business and partnership interests.</p>
+                            <h3><?php echo esc_html(get_post_meta(get_the_ID(), 'partner_process_step1_title', true) ?: 'Initial Inquiry'); ?></h3>
+                            <p><?php echo esc_html(get_post_meta(get_the_ID(), 'partner_process_step1_text', true) ?: 'Submit your partnership application with details about your business and partnership interests.'); ?></p>
                         </div>
                     </div>
                     <div class="step">
-                        <div class="step-number">2</div>
+                        <div class="step-number"><?php echo esc_html(get_post_meta(get_the_ID(), 'partner_process_step2_number', true) ?: '2'); ?></div>
                         <div class="step-content">
-                            <h3>Discovery Call</h3>
-                            <p>We'll schedule a call to discuss your needs, goals, and how we can work together effectively.</p>
+                            <h3><?php echo esc_html(get_post_meta(get_the_ID(), 'partner_process_step2_title', true) ?: 'Discovery Call'); ?></h3>
+                            <p><?php echo esc_html(get_post_meta(get_the_ID(), 'partner_process_step2_text', true) ?: 'We\'ll schedule a call to discuss your needs, goals, and how we can work together effectively.'); ?></p>
                         </div>
                     </div>
                     <div class="step">
-                        <div class="step-number">3</div>
+                        <div class="step-number"><?php echo esc_html(get_post_meta(get_the_ID(), 'partner_process_step3_number', true) ?: '3'); ?></div>
                         <div class="step-content">
-                            <h3>Partnership Proposal</h3>
-                            <p>Based on our discussion, we'll create a customized partnership proposal that outlines terms and benefits.</p>
+                            <h3><?php echo esc_html(get_post_meta(get_the_ID(), 'partner_process_step3_title', true) ?: 'Partnership Proposal'); ?></h3>
+                            <p><?php echo esc_html(get_post_meta(get_the_ID(), 'partner_process_step3_text', true) ?: 'Based on our discussion, we\'ll create a customized partnership proposal that outlines terms and benefits.'); ?></p>
                         </div>
                     </div>
                     <div class="step">
-                        <div class="step-number">4</div>
+                        <div class="step-number"><?php echo esc_html(get_post_meta(get_the_ID(), 'partner_process_step4_number', true) ?: '4'); ?></div>
                         <div class="step-content">
-                            <h3>Agreement & Onboarding</h3>
-                            <p>Once agreed, we'll formalize the partnership and begin the onboarding process with training and resources.</p>
+                            <h3><?php echo esc_html(get_post_meta(get_the_ID(), 'partner_process_step4_title', true) ?: 'Agreement & Onboarding'); ?></h3>
+                            <p><?php echo esc_html(get_post_meta(get_the_ID(), 'partner_process_step4_text', true) ?: 'Once agreed, we\'ll formalize the partnership and begin the onboarding process with training and resources.'); ?></p>
                         </div>
                     </div>
                     <div class="step">
-                        <div class="step-number">5</div>
+                        <div class="step-number"><?php echo esc_html(get_post_meta(get_the_ID(), 'partner_process_step5_number', true) ?: '5'); ?></div>
                         <div class="step-content">
-                            <h3>Launch & Support</h3>
-                            <p>Begin our partnership with ongoing support and regular check-ins to ensure mutual success.</p>
+                            <h3><?php echo esc_html(get_post_meta(get_the_ID(), 'partner_process_step5_title', true) ?: 'Launch & Support'); ?></h3>
+                            <p><?php echo esc_html(get_post_meta(get_the_ID(), 'partner_process_step5_text', true) ?: 'Begin our partnership with ongoing support and regular check-ins to ensure mutual success.'); ?></p>
                         </div>
                     </div>
                 </div>
