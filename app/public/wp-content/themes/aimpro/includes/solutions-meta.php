@@ -3,9 +3,13 @@
 
 function add_solutions_meta_boxes() {
     global $post;
+    if (empty($post)) return;
     
-    // Only add to pages
-    if (isset($post) && get_post_type($post) === 'page') {
+    $page_template = get_page_template_slug($post->ID);
+    $page_slug = $post->post_name;
+    
+    // Only add to pages using the Solutions template or with 'solutions' slug
+    if ($page_template === 'page-solutions.php' || $page_slug === 'solutions') {
         add_meta_box(
             'solutions_meta_box',
             'Solutions Page Content',

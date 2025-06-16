@@ -2,14 +2,19 @@
 // Automotive Page Meta Fields
 
 function add_automotive_meta_boxes() {
-    $automotive_screens = array('page');
+    global $post;
+    if (empty($post)) return;
     
-    foreach ($automotive_screens as $screen) {
+    $page_template = get_page_template_slug($post->ID);
+    $page_slug = $post->post_name;
+    
+    // Only add to pages using the Automotive template or with 'automotive' slug
+    if ($page_template === 'page-automotive.php' || $page_slug === 'automotive') {
         add_meta_box(
             'automotive_meta_box',
             'Automotive Page Content',
             'automotive_meta_box_callback',
-            $screen,
+            'page',
             'normal',
             'high'
         );
@@ -18,13 +23,6 @@ function add_automotive_meta_boxes() {
 add_action('add_meta_boxes', 'add_automotive_meta_boxes');
 
 function automotive_meta_box_callback($post) {
-    // Only show on automotive page template
-    $page_template = get_page_template_slug($post->ID);
-    if ($page_template !== 'page-automotive.php') {
-        echo '<p>This meta box only appears when using the "Automotive Industry Page" template.</p>';
-        return;
-    }
-
     wp_nonce_field('automotive_meta_box', 'automotive_meta_box_nonce');
 
     // Get existing values

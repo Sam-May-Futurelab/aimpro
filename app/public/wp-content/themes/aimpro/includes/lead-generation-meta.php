@@ -4,16 +4,22 @@
 function add_lead_generation_meta_boxes() {
     global $post;
     
-    // Only add to pages
+    // Only add to pages with the correct template or slug
     if (isset($post) && get_post_type($post) === 'page') {
-        add_meta_box(
-            'lead_generation_meta_box',
-            'Lead Generation Page Content',
-            'lead_generation_meta_box_callback',
-            'page',
-            'normal',
-            'high'
-        );
+        $page_template = get_page_template_slug($post->ID);
+        $page_slug = $post->post_name;
+        
+        // Only show meta box if this is the lead generation page
+        if ($page_template === 'page-lead-generation.php' || $page_slug === 'lead-generation') {
+            add_meta_box(
+                'lead_generation_meta_box',
+                'Lead Generation Page Content',
+                'lead_generation_meta_box_callback',
+                'page',
+                'normal',
+                'high'
+            );
+        }
     }
 }
 add_action('add_meta_boxes', 'add_lead_generation_meta_boxes', 11);
