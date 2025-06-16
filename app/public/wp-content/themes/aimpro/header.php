@@ -20,9 +20,42 @@
     <link rel="preload" href="<?php echo get_template_directory_uri(); ?>/assets/images/stats.json" as="fetch" crossorigin>
     <link rel="preload" href="<?php echo get_template_directory_uri(); ?>/assets/js/main.js" as="script">
     <link rel="preload" href="<?php echo get_template_directory_uri(); ?>/style.css" as="style">
-    
-    <!-- Google Fonts - Inter with performance optimizations -->
+      <!-- Google Fonts - Inter with performance optimizations -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+      <!-- Prevent theme flash - set light theme as default immediately -->
+    <style>
+        :root { 
+            --primary-black: #ffffff !important;
+            --primary-black-light: #f8fafc !important;
+            --bg-primary: #ffffff !important;
+            --bg-secondary: #fefefe !important;
+            --text-primary: #1a202c !important;
+            --text-secondary: #2d3748 !important;
+            --text-muted: #4a5568 !important;
+        }
+        html, body { 
+            background-color: #ffffff !important;
+            color: #1a202c !important;
+        }
+        .light-theme-default { 
+            background: #ffffff !important;
+            color: #1a202c !important;
+        }
+    </style>
+    
+    <!-- Critical theme script - executes immediately -->
+    <script>
+        (function() {
+            // Check for saved dark theme preference
+            const isDarkTheme = localStorage.getItem('darkTheme') === 'true';
+            
+            if (!isDarkTheme) {
+                // Apply light theme classes immediately
+                document.documentElement.classList.add('light-theme');
+                document.body.classList.add('light-theme');
+            }
+        })();
+    </script>
     
     <!-- GSAP for Premium Animations -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>

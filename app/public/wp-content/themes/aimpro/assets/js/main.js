@@ -1366,17 +1366,35 @@ document.addEventListener('DOMContentLoaded', function() {
         preloadAnimationData();
     }
       // Theme Toggle Functionality
-    const themeToggle = document.querySelector('.theme-toggle');
-    const sunIcon = document.querySelector('.sun-icon');
+    const themeToggle = document.querySelector('.theme-toggle');    const sunIcon = document.querySelector('.sun-icon');
     const moonIcon = document.querySelector('.moon-icon');
-      if (themeToggle) {
-        // Initialize theme state (now starting with light theme)
-        let isDarkTheme = false;
+    
+    if (themeToggle) {
+        // Initialize light theme immediately (no flash)
+        let isDarkTheme = localStorage.getItem('darkTheme') === 'true';
+        
+        // Apply saved theme preference immediately
+        if (isDarkTheme) {
+            document.body.classList.remove('light-theme');
+            document.documentElement.classList.remove('light-theme');
+            sunIcon.style.opacity = '0';
+            moonIcon.style.opacity = '1';
+            themeToggle.setAttribute('aria-label', 'Switch to light theme');
+        } else {
+            document.body.classList.add('light-theme');
+            document.documentElement.classList.add('light-theme');
+            sunIcon.style.opacity = '1';
+            moonIcon.style.opacity = '0';
+            themeToggle.setAttribute('aria-label', 'Switch to dark theme');
+        }
         
         // Toggle button click handler
         themeToggle.addEventListener('click', function() {
             // Toggle theme state
             isDarkTheme = !isDarkTheme;
+            
+            // Save preference
+            localStorage.setItem('darkTheme', isDarkTheme);
             
             // Apply theme to body element
             if (isDarkTheme) {
@@ -1407,13 +1425,6 @@ document.addEventListener('DOMContentLoaded', function() {
                 themeToggle.style.transform = 'scale(1)';
             }, 150);
         });
-        
-        // Initialize with light theme as default
-        document.body.classList.add('light-theme');
-        document.documentElement.classList.add('light-theme');
-        sunIcon.style.opacity = '1';
-        moonIcon.style.opacity = '0';
-        themeToggle.setAttribute('aria-label', 'Switch to dark theme');
         
         console.log('Theme toggle initialized successfully');
     } else {
