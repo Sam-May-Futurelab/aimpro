@@ -57,6 +57,7 @@ require_once get_template_directory() . '/includes/blog-meta.php';
 require_once get_template_directory() . '/includes/case-studies-meta.php';
 require_once get_template_directory() . '/includes/templates-tools-meta.php';
 require_once get_template_directory() . '/includes/events-webinars-meta.php';
+require_once get_template_directory() . '/includes/training-mentoring-meta.php';
 
 // Include helper functions
 require_once get_template_directory() . '/includes/helpers.php';
