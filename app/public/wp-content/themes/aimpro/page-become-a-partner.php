@@ -8,23 +8,22 @@ get_header(); ?>
 
 <main id="main" class="main-content">
     <div class="container">
-        
-        <!-- Page Header -->
+          <!-- Page Header -->
         <section class="page-header">
             <div class="page-header-content">
-                <h1>Become a Partner</h1>
-                <p class="page-subtitle">Join our network of strategic partners and grow together</p>
+                <h1><?php echo esc_html(get_post_meta(get_the_ID(), 'partner_header_title', true) ?: 'Become a Partner'); ?></h1>
+                <p class="page-subtitle"><?php echo esc_html(get_post_meta(get_the_ID(), 'partner_header_subtitle', true) ?: 'Join our network of strategic partners and grow together'); ?></p>
             </div>
-        </section>
-
-        <!-- Partnership Overview -->
+        </section>        <!-- Partnership Overview -->
         <section class="partnership-overview">
             <div class="section-content">
                 <div class="overview-grid">
                     <div class="overview-content">
-                        <h2>Partner with Aimpro Digital</h2>
-                        <p>We believe in the power of collaboration. Our partnership program is designed to create mutually beneficial relationships that help both parties grow and succeed in the digital marketing landscape.</p>
-                        <p>Whether you're a complementary service provider, technology vendor, or strategic ally, we offer various partnership opportunities that can expand your reach while providing additional value to our clients.</p>
+                        <h2><?php echo esc_html(get_post_meta(get_the_ID(), 'partner_intro_heading', true) ?: 'Partner with Aimpro Digital'); ?></h2>
+                        <?php 
+                        $intro_text = get_post_meta(get_the_ID(), 'partner_intro_text', true) ?: 'We believe in the power of collaboration. Our partnership program is designed to create mutually beneficial relationships that help both parties grow and succeed in the digital marketing landscape.\n\nWhether you\'re a complementary service provider, technology vendor, or strategic ally, we offer various partnership opportunities that can expand your reach while providing additional value to our clients.';
+                        echo wp_kses_post(wpautop($intro_text));
+                        ?>
                         <div class="partnership-highlights">
                             <div class="highlight-item">
                                 <span class="highlight-number">50+</span>
@@ -41,16 +40,14 @@ get_header(); ?>
                         </div>
                     </div>
                     <div class="overview-image">
-                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/partnership-handshake.jpg" alt="Partnership Opportunity" />
+                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/partnership-handshake.jpg" alt="<?php echo esc_attr(get_post_meta(get_the_ID(), 'partner_stats_heading', true) ?: 'Partnership Opportunity'); ?>" />
                     </div>
                 </div>
             </div>
-        </section>
-
-        <!-- Partnership Types -->
+        </section>        <!-- Partnership Types -->
         <section class="partnership-types">
             <div class="section-content">
-                <h2>Partnership Opportunities</h2>
+                <h2><?php echo esc_html(get_post_meta(get_the_ID(), 'partner_opportunities_heading', true) ?: 'Partnership Opportunities'); ?></h2>
                 <div class="partnership-grid">
                     
                     <!-- Referral Partners -->
@@ -161,12 +158,10 @@ get_header(); ?>
                     </div>
                 </div>
             </div>
-        </section>
-
-        <!-- Partner Benefits -->
+        </section>        <!-- Partner Benefits -->
         <section class="partner-benefits">
             <div class="section-content">
-                <h2>Why Partner with Aimpro Digital?</h2>
+                <h2><?php echo esc_html(get_post_meta(get_the_ID(), 'partner_why_heading', true) ?: 'Why Partner with Aimpro Digital?'); ?></h2>
                 <div class="benefits-grid">
                     <div class="benefit-item">
                         <h3>Proven Track Record</h3>
@@ -194,12 +189,10 @@ get_header(); ?>
                     </div>
                 </div>
             </div>
-        </section>
-
-        <!-- Partner Success Stories -->
+        </section>        <!-- Partner Success Stories -->
         <section class="partner-testimonials">
             <div class="section-content">
-                <h2>Partner Success Stories</h2>
+                <h2><?php echo esc_html(get_post_meta(get_the_ID(), 'partner_stories_heading', true) ?: 'Partner Success Stories'); ?></h2>
                 <div class="testimonials-grid">
                     <div class="testimonial-card">
                         <blockquote>
@@ -235,12 +228,10 @@ get_header(); ?>
                     </div>
                 </div>
             </div>
-        </section>
-
-        <!-- Partnership Process -->
+        </section>        <!-- Partnership Process -->
         <section class="partnership-process">
             <div class="section-content">
-                <h2>How to Become a Partner</h2>
+                <h2><?php echo esc_html(get_post_meta(get_the_ID(), 'partner_process_heading', true) ?: 'How to Become a Partner'); ?></h2>
                 <div class="process-steps">
                     <div class="step">
                         <div class="step-number">1</div>
@@ -279,15 +270,24 @@ get_header(); ?>
                     </div>
                 </div>
             </div>
-        </section>
-
-        <!-- Partnership Application Form -->
-        <section class="partnership-application">
-            <div class="section-content">
-                <h2>Apply to Become a Partner</h2>
-                <p>Ready to explore partnership opportunities? Fill out the form below and we'll get back to you within 24 hours.</p>
+        </section>        <!-- Partnership Application Form -->
+        <section class="partnership-application">            <div class="section-content">
+                <h2><?php echo esc_html(get_post_meta(get_the_ID(), 'partner_form_heading', true) ?: 'Apply to Become a Partner'); ?></h2>
+                <p><?php echo esc_html(get_post_meta(get_the_ID(), 'partner_form_description', true) ?: 'Ready to explore partnership opportunities? Fill out the form below and we\'ll get back to you within 24 hours.'); ?></p>
                 
-                <form class="partnership-form">
+                <?php if (isset($_GET['partnership_success'])): ?>
+                    <div class="form-message success">
+                        <p><strong>Thank you!</strong> Your partnership application has been submitted successfully. Our team will review your application and get back to you within 2-3 business days.</p>
+                    </div>
+                <?php elseif (isset($_GET['partnership_error'])): ?>
+                    <div class="form-message error">
+                        <p><strong>Error:</strong> There was a problem submitting your application. Please try again or contact us directly at hello@aimpro.co.uk.</p>
+                    </div>
+                <?php endif; ?>
+                  <form class="partnership-form" id="partnership-form" method="post" action="<?php echo admin_url('admin-post.php'); ?>" novalidate>
+                    <?php wp_nonce_field('partnership_form_nonce', 'partnership_form_nonce'); ?>
+                    <input type="hidden" name="action" value="partnership_form">
+                    <input type="hidden" name="_wp_http_referer" value="<?php echo esc_url($_SERVER['REQUEST_URI']); ?>">
                     <div class="form-grid">
                         <div class="form-group">
                             <label for="company_name">Company Name *</label>
@@ -358,26 +358,20 @@ get_header(); ?>
                     </div>
                 </form>
             </div>
-        </section>
-
-        <!-- Contact Partnership Team -->
-        <section class="partnership-contact">
+        </section>        <!-- Contact Partnership Team -->
+        <section class="contact-hr">
             <div class="section-content">
-                <h2>Questions About Partnerships?</h2>
-                <p>Our partnership team is here to answer any questions and help you find the right partnership opportunity</p>
+                <h2><?php echo esc_html(get_post_meta(get_the_ID(), 'partner_contact_heading', true) ?: 'Questions About Partnerships?'); ?></h2>
+                <p><?php echo esc_html(get_post_meta(get_the_ID(), 'partner_contact_description', true) ?: 'Our partnership team is here to answer any questions and help you find the right partnership opportunity'); ?></p>
                 <div class="contact-info">
                     <div class="contact-item">
-                        <strong>Email:</strong> partnerships@aimprodigital.com
+                        <strong>Email:</strong>
+                        <a href="mailto:<?php echo esc_attr(get_post_meta(get_the_ID(), 'partner_contact_email', true) ?: 'hello@aimpro.co.uk'); ?>"><?php echo esc_html(get_post_meta(get_the_ID(), 'partner_contact_email', true) ?: 'hello@aimpro.co.uk'); ?></a>
                     </div>
                     <div class="contact-item">
-                        <strong>Phone:</strong> (555) 123-4567 ext. 201
+                        <strong>Phone:</strong>
+                        <a href="tel:<?php echo esc_attr(str_replace([' ', '-', '(', ')'], '', get_post_meta(get_the_ID(), 'partner_contact_phone', true) ?: '+441212858490')); ?>"><?php echo esc_html(get_post_meta(get_the_ID(), 'partner_contact_phone', true) ?: '+44 121 285 8490'); ?></a>
                     </div>
-                    <div class="contact-item">
-                        <strong>Schedule a Call:</strong> <a href="#" class="inline-link">Book a Partnership Discovery Call</a>
-                    </div>
-                </div>
-                <div class="contact-actions">
-                    <a href="<?php echo home_url('/contact'); ?>" class="btn btn-secondary">Contact Partnership Team</a>
                 </div>
             </div>
         </section>

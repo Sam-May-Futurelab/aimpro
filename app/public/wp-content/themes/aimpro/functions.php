@@ -51,6 +51,7 @@ require_once get_template_directory() . '/includes/team-meta.php';
 // Include testimonials page meta functionality
 require_once get_template_directory() . '/includes/testimonials-meta.php';
 require_once get_template_directory() . '/includes/careers-meta.php';
+require_once get_template_directory() . '/includes/partner-meta.php';
 
 // Include helper functions
 require_once get_template_directory() . '/includes/helpers.php';
@@ -479,6 +480,109 @@ function aimpro_handle_contact_form() {
 }
 add_action('admin_post_contact_form', 'aimpro_handle_contact_form');
 add_action('admin_post_nopriv_contact_form', 'aimpro_handle_contact_form');
+
+// Handle Partnership Application Form
+function aimpro_handle_partnership_form() {
+    if (!isset($_POST['partnership_form_nonce']) || !wp_verify_nonce($_POST['partnership_form_nonce'], 'partnership_form_nonce')) {
+        wp_die('Security check failed. Please try again.');
+    }
+    
+    // Sanitize and validate input
+    $company_name = sanitize_text_field($_POST['company_name']);
+    $contact_name = sanitize_text_field($_POST['contact_name']);
+    $email = sanitize_email($_POST['email']);
+    $phone = sanitize_text_field($_POST['phone']);
+    $website = esc_url_raw($_POST['website']);
+    $company_size = sanitize_text_field($_POST['company_size']);
+    $partnership_type = sanitize_text_field($_POST['partnership_type']);
+    $business_description = sanitize_textarea_field($_POST['business_description']);
+    $partnership_goals = sanitize_textarea_field($_POST['partnership_goals']);
+    $current_clients = sanitize_textarea_field($_POST['current_clients']);
+    
+    // Validate required fields
+    if (empty($company_name) || empty($contact_name) || empty($email) || empty($phone) || 
+        empty($partnership_type) || empty($business_description) || empty($partnership_goals) || 
+        !is_email($email)) {
+        wp_redirect(add_query_arg('partnership_error', '1', $_POST['_wp_http_referer']));
+        exit;
+    }
+    
+    global $wpdb;
+    $table_name = $wpdb->prefix . 'aimpro_submissions';
+    
+    // Store in database
+    $result = $wpdb->insert(
+        $table_name,
+        array(
+            'form_type' => 'partnership',
+            'name' => $contact_name,
+            'email' => $email,
+            'phone' => $phone,
+            'company' => $company_name,
+            'message' => "Partnership Type: {$partnership_type}\n\n" .
+                        "Company Size: {$company_size}\n\n" .
+                        "Website: {$website}\n\n" .
+                        "Business Description: {$business_description}\n\n" .
+                        "Partnership Goals: {$partnership_goals}\n\n" .
+                        "Current Clients: {$current_clients}",
+            'ip_address' => $_SERVER['REMOTE_ADDR'],
+            'user_agent' => $_SERVER['HTTP_USER_AGENT']
+        ),
+        array('%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s')
+    );
+    
+    if ($result) {
+        // Send email notification to admin
+        $to = 'hello@aimpro.co.uk';
+        $subject = 'New Partnership Application - ' . get_bloginfo('name');
+        $message_body = "New partnership application submission:\n\n";
+        $message_body .= "Company: {$company_name}\n";
+        $message_body .= "Contact: {$contact_name}\n";
+        $message_body .= "Email: {$email}\n";
+        $message_body .= "Phone: {$phone}\n";
+        $message_body .= "Website: {$website}\n";
+        $message_body .= "Company Size: {$company_size}\n";
+        $message_body .= "Partnership Type: {$partnership_type}\n\n";
+        $message_body .= "Business Description:\n{$business_description}\n\n";
+        $message_body .= "Partnership Goals:\n{$partnership_goals}\n\n";
+        $message_body .= "Current Clients:\n{$current_clients}\n\n";
+        $message_body .= "IP Address: {$_SERVER['REMOTE_ADDR']}\n";
+        $message_body .= "Date: " . current_time('mysql') . "\n";
+        
+        $headers = array(
+            'Content-Type: text/plain; charset=UTF-8',
+            'From: ' . get_bloginfo('name') . ' <noreply@' . parse_url(home_url(), PHP_URL_HOST) . '>',
+            'Reply-To: ' . $email
+        );
+        
+        wp_mail($to, $subject, $message_body, $headers);
+        
+        // Send auto-response to user
+        $user_subject = 'Thank you for your partnership application - ' . get_bloginfo('name');
+        $user_message = "Hi {$contact_name},\n\n";
+        $user_message .= "Thank you for your interest in partnering with us!\n\n";
+        $user_message .= "We've received your partnership application for {$company_name} and our partnership team will review your submission within 2-3 business days.\n\n";
+        $user_message .= "We're excited about the potential opportunities to collaborate and will be in touch to discuss next steps.\n\n";
+        $user_message .= "Best regards,\n";
+        $user_message .= "The Aimpro Team\n";
+        $user_message .= "hello@aimpro.co.uk\n";
+        $user_message .= "Phone: +44 121 285 8490";
+        
+        $user_headers = array(
+            'Content-Type: text/plain; charset=UTF-8',
+            'From: Aimpro Digital <hello@aimpro.co.uk>'
+        );
+        
+        wp_mail($email, $user_subject, $user_message, $user_headers);
+        
+        wp_redirect(add_query_arg('partnership_success', '1', $_POST['_wp_http_referer']));
+    } else {
+        wp_redirect(add_query_arg('partnership_error', '1', $_POST['_wp_http_referer']));
+    }
+    exit;
+}
+add_action('admin_post_partnership_form', 'aimpro_handle_partnership_form');
+add_action('admin_post_nopriv_partnership_form', 'aimpro_handle_partnership_form');
 
 // Add Open Graph meta tags
 function aimpro_add_og_meta() {
