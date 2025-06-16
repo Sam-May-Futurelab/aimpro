@@ -12,338 +12,325 @@ get_header(); ?>
         <!-- Page Header -->
         <section class="page-header">
             <div class="page-header-content">
-                <h1>Finance Digital Marketing</h1>
-                <p class="page-subtitle">Build trust and generate high-value leads with compliant financial services marketing</p>
+                <h1><?php echo esc_html(get_post_meta(get_the_ID(), '_finance_header_title', true) ?: 'Finance Digital Marketing'); ?></h1>
+                <p class="page-subtitle"><?php echo esc_html(get_post_meta(get_the_ID(), '_finance_header_subtitle', true) ?: 'Build trust and generate high-value leads with compliant financial services marketing'); ?></p>
             </div>
-        </section>
-
-        <!-- Industry Overview -->
+        </section>        <!-- Industry Overview -->
         <section class="industry-overview">
             <div class="section-content">
                 <div class="overview-content">
                     <div class="overview-text">
-                        <h2>Navigate Financial Services Marketing with Confidence</h2>
-                        <p>Financial services marketing requires a delicate balance of trust-building, compliance, and results. Our specialized approach helps financial advisors, banks, insurance companies, and fintech startups generate qualified leads while maintaining regulatory compliance.</p>
+                        <h2><?php echo esc_html(get_post_meta(get_the_ID(), '_finance_overview_title', true) ?: 'Navigate Financial Services Marketing with Confidence'); ?></h2>
+                        <p><?php echo esc_html(get_post_meta(get_the_ID(), '_finance_overview_content', true) ?: 'Financial services marketing requires a delicate balance of trust-building, compliance, and results. Our specialized approach helps financial advisors, banks, insurance companies, and fintech startups generate qualified leads while maintaining regulatory compliance.'); ?></p>
                         
                         <div class="industry-challenges">
-                            <h3>Financial Marketing Challenges We Solve:</h3>
+                            <h3><?php echo esc_html(get_post_meta(get_the_ID(), '_finance_challenges_title', true) ?: 'Financial Marketing Challenges We Solve:'); ?></h3>
                             <ul>
-                                <li>Strict regulatory compliance requirements (FCA, GDPR)</li>
-                                <li>Building trust in a skeptical market</li>
-                                <li>Long sales cycles and complex decision processes</li>
-                                <li>Educating prospects on complex financial products</li>
-                                <li>Generating high-value, qualified leads</li>
+                                <?php 
+                                $challenges = get_post_meta(get_the_ID(), '_finance_challenges', true);
+                                if (empty($challenges)) {
+                                    $challenges = array(
+                                        'Strict regulatory compliance requirements (FCA, GDPR)',
+                                        'Building trust in a skeptical market',
+                                        'Long sales cycles and complex decision processes',
+                                        'Educating prospects on complex financial products',
+                                        'Generating high-value, qualified leads'
+                                    );
+                                }
+                                foreach ($challenges as $challenge): ?>
+                                    <li><?php echo esc_html($challenge); ?></li>
+                                <?php endforeach; ?>
                             </ul>
                         </div>
                     </div>
                     <div class="overview-image">
-                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/industries/finance-overview.jpg" alt="Finance Digital Marketing" />
+                        <?php 
+                        $overview_image = get_post_meta(get_the_ID(), '_finance_overview_image', true);
+                        if ($overview_image): ?>
+                            <img src="<?php echo esc_url($overview_image); ?>" alt="Finance Digital Marketing" />
+                        <?php else: ?>
+                            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/industries/finance-overview.jpg" alt="Finance Digital Marketing" />
+                        <?php endif; ?>
                     </div>
                 </div>
             </div>
-        </section>
-
-        <!-- Finance Services -->
+        </section>        <!-- Finance Services (2x2 Grid) -->
         <section class="finance-services">
             <div class="section-content">
-                <h2>Our Financial Services Marketing Solutions</h2>
-                <div class="services-grid">
-                    
-                    <div class="service-card">
-                        <div class="service-icon">
-                            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M9 12L11 14L15 10M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                            </svg>
+                <h2><?php echo esc_html(get_post_meta(get_the_ID(), '_finance_solutions_title', true) ?: 'Our Financial Services Marketing Solutions'); ?></h2>
+                <div class="services-grid services-grid-2x2">
+                    <?php 
+                    $solutions = get_post_meta(get_the_ID(), '_finance_solutions', true);
+                    if (empty($solutions)) {
+                        $solutions = array(
+                            array(
+                                'icon' => 'fas fa-check-circle',
+                                'title' => 'Regulatory Compliant Campaigns',
+                                'description' => 'Navigate FCA regulations and industry compliance requirements with campaigns designed specifically for financial services.',
+                                'features' => array('FCA-compliant ad copy and disclaimers', 'GDPR-compliant lead generation', 'Risk warning implementation', 'Regulatory review processes')
+                            ),
+                            array(
+                                'icon' => 'fas fa-book',
+                                'title' => 'Educational Content Marketing',
+                                'description' => 'Build trust and authority with educational content that helps prospects understand complex financial concepts and services.',
+                                'features' => array('Financial education blog content', 'Explainer videos and guides', 'Webinar and workshop promotion', 'Thought leadership positioning')
+                            ),
+                            array(
+                                'icon' => 'fas fa-user-plus',
+                                'title' => 'Trust-Building Strategies',
+                                'description' => 'Establish credibility and trust through strategic reputation management, client testimonials, and authority positioning.',
+                                'features' => array('Online reputation management', 'Client success story promotion', 'Professional qualification highlighting', 'Trust signal optimization')
+                            ),
+                            array(
+                                'icon' => 'fas fa-chart-line',
+                                'title' => 'High-Value Lead Generation',
+                                'description' => 'Generate qualified leads for financial consultations, insurance quotes, and investment planning services.',
+                                'features' => array('Consultation booking optimization', 'Financial calculator tools', 'Qualification-based lead scoring', 'Nurture sequence automation')
+                            )
+                        );
+                    }
+                    foreach ($solutions as $solution): ?>
+                        <div class="service-card">
+                            <div class="service-icon">
+                                <i class="<?php echo esc_attr($solution['icon']); ?>"></i>
+                            </div>
+                            <div class="service-content">
+                                <h3><?php echo esc_html($solution['title']); ?></h3>
+                                <p><?php echo esc_html($solution['description']); ?></p>
+                                <ul class="service-features">
+                                    <?php foreach ($solution['features'] as $feature): ?>
+                                        <li><?php echo esc_html($feature); ?></li>
+                                    <?php endforeach; ?>
+                                </ul>
+                            </div>
                         </div>
-                        <div class="service-content">
-                            <h3>Regulatory Compliant Campaigns</h3>
-                            <p>Navigate FCA regulations and industry compliance requirements with campaigns designed specifically for financial services.</p>
-                            <ul class="service-features">
-                                <li>FCA-compliant ad copy and disclaimers</li>
-                                <li>GDPR-compliant lead generation</li>
-                                <li>Risk warning implementation</li>
-                                <li>Regulatory review processes</li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <div class="service-card">
-                        <div class="service-icon">
-                            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M12 6.25278V19.2528M12 6.25278C10.8321 5.47686 9.24649 5 7.5 5C5.75351 5 4.16789 5.47686 3 6.25278V19.2528C4.16789 18.4769 5.75351 18 7.5 18C9.24649 18 10.8321 18.4769 12 19.2528M12 6.25278C13.1679 5.47686 14.7535 5 16.5 5C18.2465 5 19.8321 5.47686 21 6.25278V19.2528C19.8321 18.4769 18.2465 18 16.5 18C14.7535 18 13.1679 18.4769 12 19.2528" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                            </svg>
-                        </div>
-                        <div class="service-content">
-                            <h3>Educational Content Marketing</h3>
-                            <p>Build trust and authority with educational content that helps prospects understand complex financial concepts and services.</p>
-                            <ul class="service-features">
-                                <li>Financial education blog content</li>
-                                <li>Explainer videos and guides</li>
-                                <li>Webinar and workshop promotion</li>
-                                <li>Thought leadership positioning</li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <div class="service-card">
-                        <div class="service-icon">
-                            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M16 21V19C16 17.9391 15.5786 16.9217 14.8284 16.1716C14.0783 15.4214 13.0609 15.8 12 15.8H5C3.93913 15.8 2.92172 16.2214 2.17157 16.9716C1.42143 17.7217 1 18.7391 1 19.8V21.8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                <path d="M8.5 11C10.7091 11 12.5 9.20914 12.5 7C12.5 4.79086 10.7091 3 8.5 3C6.29086 3 4.5 4.79086 4.5 7C4.5 9.20914 6.29086 11 8.5 11Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                <path d="M20 8V14M23 11H17" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                            </svg>
-                        </div>
-                        <div class="service-content">
-                            <h3>Trust-Building Strategies</h3>
-                            <p>Establish credibility and trust through strategic reputation management, client testimonials, and authority positioning.</p>
-                            <ul class="service-features">
-                                <li>Online reputation management</li>
-                                <li>Client success story promotion</li>
-                                <li>Professional qualification highlighting</li>
-                                <li>Trust signal optimization</li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <div class="service-card">
-                        <div class="service-icon">
-                            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                <path d="M2 17L12 22L22 17" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                <path d="M2 12L12 17L22 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                            </svg>
-                        </div>
-                        <div class="service-content">
-                            <h3>High-Value Lead Generation</h3>
-                            <p>Generate qualified leads for financial consultations, insurance quotes, and investment planning services.</p>
-                            <ul class="service-features">
-                                <li>Consultation booking optimization</li>
-                                <li>Financial calculator tools</li>
-                                <li>Qualification-based lead scoring</li>
-                                <li>Nurture sequence automation</li>
-                            </ul>
-                        </div>
-                    </div>
-
+                    <?php endforeach; ?>
                 </div>
             </div>
-        </section>
-
-        <!-- Finance Success Story -->
+        </section>        <!-- Finance Success Story -->
         <section class="finance-case-study">
             <div class="section-content">
                 <div class="case-study-content">
                     <div class="case-study-text">
-                        <span class="case-study-label">Success Story</span>
-                        <h2>WealthWise Financial: 150% Increase in Qualified Leads</h2>
-                        <p>WealthWise Financial, an independent financial advisory firm, needed to build their client base while maintaining strict compliance with FCA regulations.</p>
+                        <span class="case-study-label"><?php echo esc_html(get_post_meta(get_the_ID(), '_finance_case_study_label', true) ?: 'Success Story'); ?></span>
+                        <h2><?php echo esc_html(get_post_meta(get_the_ID(), '_finance_case_study_title', true) ?: 'WealthWise Financial: 150% Increase in Qualified Leads'); ?></h2>
+                        <p><?php echo esc_html(get_post_meta(get_the_ID(), '_finance_case_study_content', true) ?: 'WealthWise Financial, an independent financial advisory firm, needed to build their client base while maintaining strict compliance with FCA regulations.'); ?></p>
                         
                         <div class="case-study-challenge">
-                            <h3>The Challenge</h3>
+                            <h3><?php echo esc_html(get_post_meta(get_the_ID(), '_finance_case_study_challenge_title', true) ?: 'The Challenge'); ?></h3>
                             <ul>
-                                <li>Strict FCA compliance requirements</li>
-                                <li>Difficulty explaining complex services</li>
-                                <li>Long sales cycles and high-touch process</li>
-                                <li>Competition from larger financial institutions</li>
+                                <?php 
+                                $case_study_challenges = get_post_meta(get_the_ID(), '_finance_case_study_challenges', true);
+                                if (empty($case_study_challenges)) {
+                                    $case_study_challenges = array(
+                                        'Strict FCA compliance requirements',
+                                        'Difficulty explaining complex services',
+                                        'Long sales cycles and high-touch process',
+                                        'Competition from larger financial institutions'
+                                    );
+                                }
+                                foreach ($case_study_challenges as $challenge): ?>
+                                    <li><?php echo esc_html($challenge); ?></li>
+                                <?php endforeach; ?>
                             </ul>
                         </div>
 
                         <div class="case-study-solution">
-                            <h3>Our Solution</h3>
+                            <h3><?php echo esc_html(get_post_meta(get_the_ID(), '_finance_case_study_solution_title', true) ?: 'Our Solution'); ?></h3>
                             <ul>
-                                <li>Educational content strategy</li>
-                                <li>Compliant Google Ads campaigns</li>
-                                <li>Financial calculator lead magnets</li>
-                                <li>LinkedIn thought leadership campaigns</li>
+                                <?php 
+                                $case_study_solutions = get_post_meta(get_the_ID(), '_finance_case_study_solutions', true);
+                                if (empty($case_study_solutions)) {
+                                    $case_study_solutions = array(
+                                        'Educational content strategy',
+                                        'Compliant Google Ads campaigns',
+                                        'Financial calculator lead magnets',
+                                        'LinkedIn thought leadership campaigns'
+                                    );
+                                }
+                                foreach ($case_study_solutions as $solution): ?>
+                                    <li><?php echo esc_html($solution); ?></li>
+                                <?php endforeach; ?>
                             </ul>
                         </div>
                     </div>
                     <div class="case-study-results">
-                        <h3>Results After 8 Months</h3>
+                        <h3><?php echo esc_html(get_post_meta(get_the_ID(), '_finance_case_study_results_title', true) ?: 'Results After 8 Months'); ?></h3>
                         <div class="results-grid">
-                            <div class="result-item">
-                                <div class="result-number">150%</div>
-                                <div class="result-label">Qualified Leads Increase</div>
-                            </div>
-                            <div class="result-item">
-                                <div class="result-number">85%</div>
-                                <div class="result-label">Reduction in Cost per Lead</div>
-                            </div>
-                            <div class="result-item">
-                                <div class="result-number">220%</div>
-                                <div class="result-label">Website Organic Traffic</div>
-                            </div>
-                            <div class="result-item">
-                                <div class="result-number">40%</div>
-                                <div class="result-label">Consultation Conversion Rate</div>
-                            </div>
+                            <?php 
+                            $case_study_results = get_post_meta(get_the_ID(), '_finance_case_study_results', true);
+                            if (empty($case_study_results)) {
+                                $case_study_results = array(
+                                    array('number' => '150%', 'label' => 'Qualified Leads Increase'),
+                                    array('number' => '85%', 'label' => 'Reduction in Cost per Lead'),
+                                    array('number' => '220%', 'label' => 'Website Organic Traffic'),
+                                    array('number' => '40%', 'label' => 'Consultation Conversion Rate')
+                                );
+                            }
+                            foreach ($case_study_results as $result): ?>
+                                <div class="result-item">
+                                    <div class="result-number"><?php echo esc_html($result['number']); ?></div>
+                                    <div class="result-label"><?php echo esc_html($result['label']); ?></div>
+                                </div>
+                            <?php endforeach; ?>
                         </div>
-                        <a href="<?php echo home_url('/case-studies'); ?>" class="case-study-link">Read Full Case Study</a>
+                        <a href="<?php echo esc_url(get_post_meta(get_the_ID(), '_finance_case_study_link_url', true) ?: home_url('/case-studies')); ?>" class="case-study-link"><?php echo esc_html(get_post_meta(get_the_ID(), '_finance_case_study_link_text', true) ?: 'Read Full Case Study'); ?></a>
                     </div>
                 </div>
             </div>
-        </section>
-
-        <!-- Financial Services Types -->
+        </section>        <!-- Financial Services Types (4x1 Grid) -->
         <section class="finance-types">
             <div class="section-content">
-                <h2>Financial Services We Specialize In</h2>
-                <div class="types-grid">
-                      <div class="type-card">
-                        <div class="type-icon">
-                            <i class="fas fa-briefcase"></i>
+                <h2><?php echo esc_html(get_post_meta(get_the_ID(), '_finance_types_title', true) ?: 'Financial Services We Specialize In'); ?></h2>
+                <div class="types-grid types-grid-4x1">
+                    <?php 
+                    $types = get_post_meta(get_the_ID(), '_finance_types', true);
+                    if (empty($types)) {
+                        $types = array(
+                            array(
+                                'icon' => 'fas fa-briefcase',
+                                'title' => 'Financial Advisory',
+                                'services' => array('Independent financial advisors', 'Wealth management firms', 'Investment consultants', 'Retirement planning specialists')
+                            ),
+                            array(
+                                'icon' => 'fas fa-university',
+                                'title' => 'Banking & Credit',
+                                'services' => array('Community banks', 'Credit unions', 'Mortgage brokers', 'Alternative lending')
+                            ),
+                            array(
+                                'icon' => 'fas fa-shield-alt',
+                                'title' => 'Insurance Services',
+                                'services' => array('Life insurance agents', 'Health insurance brokers', 'Property & casualty', 'Commercial insurance')
+                            ),
+                            array(
+                                'icon' => 'fas fa-mobile-alt',
+                                'title' => 'Fintech & Innovation',
+                                'services' => array('Financial apps & platforms', 'Payment processors', 'Cryptocurrency services', 'Investment platforms')
+                            )
+                        );
+                    }
+                    foreach ($types as $type): ?>
+                        <div class="type-card">
+                            <div class="type-icon">
+                                <i class="<?php echo esc_attr($type['icon']); ?>"></i>
+                            </div>
+                            <h3><?php echo esc_html($type['title']); ?></h3>
+                            <ul>
+                                <?php foreach ($type['services'] as $service): ?>
+                                    <li><?php echo esc_html($service); ?></li>
+                                <?php endforeach; ?>
+                            </ul>
                         </div>
-                        <h3>Financial Advisory</h3>
-                        <ul>
-                            <li>Independent financial advisors</li>
-                            <li>Wealth management firms</li>
-                            <li>Investment consultants</li>
-                            <li>Retirement planning specialists</li>
-                        </ul>
-                    </div>
-
-                    <div class="type-card">
-                        <div class="type-icon">
-                            <i class="fas fa-university"></i>
-                        </div>
-                        <h3>Banking & Credit</h3>
-                        <ul>
-                            <li>Community banks</li>
-                            <li>Credit unions</li>
-                            <li>Mortgage brokers</li>
-                            <li>Alternative lending</li>
-                        </ul>
-                    </div>
-
-                    <div class="type-card">
-                        <div class="type-icon">
-                            <i class="fas fa-shield-alt"></i>
-                        </div>
-                        <h3>Insurance Services</h3>
-                        <ul>
-                            <li>Life insurance agents</li>
-                            <li>Health insurance brokers</li>
-                            <li>Property & casualty</li>
-                            <li>Commercial insurance</li>
-                        </ul>
-                    </div>
-
-                    <div class="type-card">
-                        <div class="type-icon">
-                            <i class="fas fa-mobile-alt"></i>
-                        </div>
-                        <h3>Fintech & Innovation</h3>
-                        <ul>
-                            <li>Financial apps & platforms</li>
-                            <li>Payment processors</li>
-                            <li>Cryptocurrency services</li>
-                            <li>Investment platforms</li>
-                        </ul>
-                    </div>
-
+                    <?php endforeach; ?>
                 </div>
             </div>
         </section>        <!-- Compliance Framework -->
         <section class="compliance-framework">
             <div class="section-content">
-                <h2>Our Financial Marketing Compliance Framework</h2>
+                <h2><?php echo esc_html(get_post_meta(get_the_ID(), '_finance_compliance_title', true) ?: 'Our Financial Marketing Compliance Framework'); ?></h2>
                 <div class="compliance-list-container">
                     <ul class="feature-list compliance-list">
-                        <li>
-                            <strong>FCA Regulation Compliance</strong> - All campaigns reviewed for FCA compliance including appropriate risk warnings, disclaimers, and promotional guidelines.
-                        </li>
-                        <li>
-                            <strong>GDPR Data Protection</strong> - Strict data handling procedures ensuring all lead generation and customer data processing meets GDPR requirements.
-                        </li>
-                        <li>
-                            <strong>Platform Policy Adherence</strong> - Expert knowledge of Google Ads, Facebook, and LinkedIn financial services policies to ensure campaign approval.
-                        </li>
-                        <li>
-                            <strong>Risk Warning Implementation</strong> - Proper implementation of required risk warnings and disclaimers across all marketing materials and channels.
-                        </li>
-                        <li>
-                            <strong>Documentation & Audit Trail</strong> - Complete documentation of all campaigns and communications for regulatory audit requirements.
-                        </li>
-                        <li>
-                            <strong>Ongoing Compliance Monitoring</strong> - Regular review and updates to ensure ongoing compliance with evolving financial services regulations.
-                        </li>
+                        <?php 
+                        $compliance_points = get_post_meta(get_the_ID(), '_finance_compliance_points', true);
+                        if (empty($compliance_points)) {
+                            $compliance_points = array(
+                                array(
+                                    'title' => 'FCA Regulation Compliance',
+                                    'description' => 'All campaigns reviewed for FCA compliance including appropriate risk warnings, disclaimers, and promotional guidelines.'
+                                ),
+                                array(
+                                    'title' => 'GDPR Data Protection',
+                                    'description' => 'Strict data handling procedures ensuring all lead generation and customer data processing meets GDPR requirements.'
+                                ),
+                                array(
+                                    'title' => 'Platform Policy Adherence',
+                                    'description' => 'Expert knowledge of Google Ads, Facebook, and LinkedIn financial services policies to ensure campaign approval.'
+                                ),
+                                array(
+                                    'title' => 'Risk Warning Implementation',
+                                    'description' => 'Proper implementation of required risk warnings and disclaimers across all marketing materials and channels.'
+                                ),
+                                array(
+                                    'title' => 'Documentation & Audit Trail',
+                                    'description' => 'Complete documentation of all campaigns and communications for regulatory audit requirements.'
+                                ),
+                                array(
+                                    'title' => 'Ongoing Compliance Monitoring',
+                                    'description' => 'Regular review and updates to ensure ongoing compliance with evolving financial services regulations.'
+                                )
+                            );
+                        }
+                        foreach ($compliance_points as $point): ?>
+                            <li>
+                                <strong><?php echo esc_html($point['title']); ?></strong> - <?php echo esc_html($point['description']); ?>
+                            </li>
+                        <?php endforeach; ?>
                     </ul>
                 </div>
             </div>
         </section>        <!-- Financial Marketing Funnel -->
         <section class="optimization-process">
             <div class="container">
-                <h2>The Financial Services Marketing Funnel</h2>
+                <h2><?php echo esc_html(get_post_meta(get_the_ID(), '_finance_funnel_title', true) ?: 'The Financial Services Marketing Funnel'); ?></h2>
                 
                 <div class="process-timeline">
-                    <div class="process-step">
-                        <div class="step-number">1</div>
-                        <div class="step-content">
-                            <h3>Awareness: Educational Content</h3>
-                            <p>Attract prospects with educational content about financial planning, investment strategies, and market insights.</p>
-                            <ul class="step-tactics">
-                                <li>Financial education blog posts</li>
-                                <li>Market analysis videos</li>
-                                <li>Social media insights</li>
-                            </ul>
+                    <?php 
+                    $funnel_steps = get_post_meta(get_the_ID(), '_finance_funnel_steps', true);
+                    if (empty($funnel_steps)) {
+                        $funnel_steps = array(
+                            array(
+                                'title' => 'Awareness: Educational Content',
+                                'description' => 'Attract prospects with educational content about financial planning, investment strategies, and market insights.',
+                                'tactics' => array('Financial education blog posts', 'Market analysis videos', 'Social media insights')
+                            ),
+                            array(
+                                'title' => 'Interest: Value-Added Tools',
+                                'description' => 'Engage prospects with calculators, guides, and resources that provide immediate value and capture contact information.',
+                                'tactics' => array('Financial calculators', 'Planning guides', 'Webinar registration')
+                            ),
+                            array(
+                                'title' => 'Consideration: Trust Building',
+                                'description' => 'Build trust through case studies, testimonials, and demonstrations of expertise and qualifications.',
+                                'tactics' => array('Client success stories', 'Professional credentials', 'Regulatory compliance')
+                            ),
+                            array(
+                                'title' => 'Conversion: Consultation Booking',
+                                'description' => 'Convert qualified prospects into consultations with clear value propositions and easy booking processes.',
+                                'tactics' => array('Free consultation offers', 'Online booking systems', 'Qualification questions')
+                            )
+                        );
+                    }
+                    $step_number = 1;
+                    foreach ($funnel_steps as $step): ?>
+                        <div class="process-step">
+                            <div class="step-number"><?php echo $step_number; ?></div>
+                            <div class="step-content">
+                                <h3><?php echo esc_html($step['title']); ?></h3>
+                                <p><?php echo esc_html($step['description']); ?></p>
+                                <ul class="step-tactics">
+                                    <?php foreach ($step['tactics'] as $tactic): ?>
+                                        <li><?php echo esc_html($tactic); ?></li>
+                                    <?php endforeach; ?>
+                                </ul>
+                            </div>
                         </div>
-                    </div>
-
-                    <div class="process-step">
-                        <div class="step-number">2</div>
-                        <div class="step-content">
-                            <h3>Interest: Value-Added Tools</h3>
-                            <p>Engage prospects with calculators, guides, and resources that provide immediate value and capture contact information.</p>
-                            <ul class="step-tactics">
-                                <li>Financial calculators</li>
-                                <li>Planning guides</li>
-                                <li>Webinar registration</li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <div class="process-step">
-                        <div class="step-number">3</div>
-                        <div class="step-content">
-                            <h3>Consideration: Trust Building</h3>
-                            <p>Build trust through case studies, testimonials, and demonstrations of expertise and qualifications.</p>
-                            <ul class="step-tactics">
-                                <li>Client success stories</li>
-                                <li>Professional credentials</li>
-                                <li>Regulatory compliance</li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <div class="process-step">
-                        <div class="step-number">4</div>
-                        <div class="step-content">
-                            <h3>Conversion: Consultation Booking</h3>
-                            <p>Convert qualified prospects into consultations with clear value propositions and easy booking processes.</p>
-                            <ul class="step-tactics">
-                                <li>Free consultation offers</li>
-                                <li>Online booking systems</li>
-                                <li>Qualification questions</li>
-                            </ul>
-                        </div>
-                    </div>
+                    <?php 
+                    $step_number++;
+                    endforeach; ?>
                 </div>
             </div>
-        </section>
-
-        <!-- Finance Testimonial -->
+        </section>        <!-- Finance Testimonial (without image) -->
         <section class="finance-testimonial">
             <div class="section-content">
                 <div class="testimonial-content">
                     <blockquote>
-                        "Aimpro Digital's understanding of financial services compliance is exceptional. They helped us navigate FCA regulations while generating 150% more qualified leads. Their educational content strategy positions us as thought leaders in our market, and the lead quality has improved dramatically. We finally have a marketing partner that understands our industry."
+                        "<?php echo esc_html(get_post_meta(get_the_ID(), '_finance_testimonial_quote', true) ?: 'Aimpro Digital\'s understanding of financial services compliance is exceptional. They helped us navigate FCA regulations while generating 150% more qualified leads. Their educational content strategy positions us as thought leaders in our market, and the lead quality has improved dramatically. We finally have a marketing partner that understands our industry.'); ?>"
                     </blockquote>
                     <div class="testimonial-author">
-                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/testimonials/finance-david.jpg" alt="David Wilson" />
                         <div class="author-info">
-                            <h4>David Wilson</h4>
-                            <span>Director, WealthWise Financial</span>
-                            <div class="author-company">Independent Financial Advisory Firm</div>
+                            <h4><?php echo esc_html(get_post_meta(get_the_ID(), '_finance_testimonial_name', true) ?: 'David Wilson'); ?></h4>
+                            <span><?php echo esc_html(get_post_meta(get_the_ID(), '_finance_testimonial_position', true) ?: 'Director, WealthWise Financial'); ?></span>
+                            <div class="author-company"><?php echo esc_html(get_post_meta(get_the_ID(), '_finance_testimonial_company', true) ?: 'Independent Financial Advisory Firm'); ?></div>
                         </div>
                     </div>
                 </div>
@@ -351,16 +338,25 @@ get_header(); ?>
         </section>        <!-- CTA Section -->
         <section class="finance-cta text-center">
             <div class="section-content">
-                <h2>Ready to Grow Your Financial Services Business?</h2>
-                <p>Let's create a compliant, trust-building marketing strategy that generates high-value leads for your financial services.</p>
+                <h2><?php echo esc_html(get_post_meta(get_the_ID(), '_finance_cta_title', true) ?: 'Ready to Grow Your Financial Services Business?'); ?></h2>
+                <p><?php echo esc_html(get_post_meta(get_the_ID(), '_finance_cta_subtitle', true) ?: 'Let\'s create a compliant, trust-building marketing strategy that generates high-value leads for your financial services.'); ?></p>
                 <div class="cta-buttons">
-                    <a href="<?php echo home_url('/contact'); ?>" class="btn btn-primary">Get Compliance Audit</a>
-                    <a href="<?php echo home_url('/case-studies'); ?>" class="btn btn-secondary">View Finance Success Stories</a>
+                    <a href="<?php echo esc_url(get_post_meta(get_the_ID(), '_finance_cta_primary_url', true) ?: home_url('/contact')); ?>" class="btn btn-primary"><?php echo esc_html(get_post_meta(get_the_ID(), '_finance_cta_primary_text', true) ?: 'Get Compliance Audit'); ?></a>
+                    <a href="<?php echo esc_url(get_post_meta(get_the_ID(), '_finance_cta_secondary_url', true) ?: home_url('/case-studies')); ?>" class="btn btn-secondary"><?php echo esc_html(get_post_meta(get_the_ID(), '_finance_cta_secondary_text', true) ?: 'View Finance Success Stories'); ?></a>
                 </div>
                 <div class="cta-benefits">
-                    <span class="benefit">✓ Free compliance review</span>
-                    <span class="benefit">✓ FCA-compliant strategy</span>
-                    <span class="benefit">✓ Trust-building approach</span>
+                    <?php 
+                    $cta_benefits = get_post_meta(get_the_ID(), '_finance_cta_benefits', true);
+                    if (empty($cta_benefits)) {
+                        $cta_benefits = array(
+                            '✓ Free compliance review',
+                            '✓ FCA-compliant strategy',
+                            '✓ Trust-building approach'
+                        );
+                    }
+                    foreach ($cta_benefits as $benefit): ?>
+                        <span class="benefit"><?php echo esc_html($benefit); ?></span>
+                    <?php endforeach; ?>
                 </div>
             </div>
         </section>

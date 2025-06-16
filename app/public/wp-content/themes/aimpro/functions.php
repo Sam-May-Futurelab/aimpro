@@ -61,6 +61,7 @@ require_once get_template_directory() . '/includes/training-mentoring-meta.php';
 require_once get_template_directory() . '/includes/industries-meta.php';
 require_once get_template_directory() . '/includes/automotive-meta.php';
 require_once get_template_directory() . '/includes/home-garden-meta.php';
+require_once get_template_directory() . '/includes/finance-meta.php';
 
 // Include helper functions
 require_once get_template_directory() . '/includes/helpers.php';
