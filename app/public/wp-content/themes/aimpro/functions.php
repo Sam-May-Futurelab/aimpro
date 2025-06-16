@@ -2352,6 +2352,7 @@ function aimpro_save_about_video_meta_box($post_id) {
 }
 add_action('save_post', 'aimpro_save_about_video_meta_box');
 
+
 // Function to get about page video
 function aimpro_get_about_video() {
     $about_page = get_page_by_path('about');
@@ -2447,3 +2448,6 @@ function aimpro_estimated_reading_time($content) {
     $reading_time = ceil($word_count / 200); // 200 words per minute average
     return max(1, $reading_time); // Minimum 1 minute
 }
+
+// Include streamline sales funnel meta functionality
+require_once get_template_directory() . '/includes/streamline-sales-funnel-meta.php';
