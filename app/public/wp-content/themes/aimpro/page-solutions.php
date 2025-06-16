@@ -8,12 +8,11 @@ get_header(); ?>
 
 <main id="main" class="main-content">
     <div class="container">
-        
-        <!-- Page Header -->
+          <!-- Page Header -->
         <section class="page-header">
             <div class="page-header-content">
-                <h1>Solutions</h1>
-                <p class="page-subtitle">Proven digital marketing solutions that drive real business results</p>
+                <h1><?php echo esc_html(get_post_meta(get_the_ID(), '_solutions_header_title', true) ?: 'Solutions'); ?></h1>
+                <p class="page-subtitle"><?php echo esc_html(get_post_meta(get_the_ID(), '_solutions_header_subtitle', true) ?: 'Proven digital marketing solutions that drive real business results'); ?></p>
             </div>
         </section>
 
@@ -21,226 +20,269 @@ get_header(); ?>
         <section class="solutions-intro">
             <div class="section-content">
                 <div class="intro-content">
-                    <h2>Transform Your Business with Strategic Digital Solutions</h2>
-                    <p>Every business faces unique challenges in today's digital landscape. Our comprehensive solutions are designed to address your most pressing needs, from generating quality leads to maximizing ROI from your marketing investments. Discover how our proven methodologies can accelerate your growth.</p>
+                    <h2><?php echo esc_html(get_post_meta(get_the_ID(), '_solutions_intro_title', true) ?: 'Transform Your Business with Strategic Digital Solutions'); ?></h2>
+                    <p><?php echo esc_html(get_post_meta(get_the_ID(), '_solutions_intro_content', true) ?: 'Every business faces unique challenges in today\'s digital landscape. Our comprehensive solutions are designed to address your most pressing needs, from generating quality leads to maximizing ROI from your marketing investments. Discover how our proven methodologies can accelerate your growth.'); ?></p>
+                </div>                <div class="solution-stats">
+                    <?php 
+                    $solution_stats = get_post_meta(get_the_ID(), '_solutions_stats', true);
+                    if (empty($solution_stats)) {
+                        $solution_stats = array(
+                            array('number' => '6', 'label' => 'Core Solutions'),
+                            array('number' => '300%', 'label' => 'Average ROI Increase'),
+                            array('number' => '500+', 'label' => 'Successful Projects')
+                        );
+                    }
+                    
+                    foreach ($solution_stats as $stat) {
+                        ?>
+                        <div class="stat-item">
+                            <div class="stat-number"><?php echo esc_html($stat['number']); ?></div>
+                            <div class="stat-label"><?php echo esc_html($stat['label']); ?></div>
+                        </div>
+                        <?php
+                    }
+                    ?>
                 </div>
-                <div class="solution-stats">
-                    <div class="stat-item">
-                        <div class="stat-number">6</div>
-                        <div class="stat-label">Core Solutions</div>
-                    </div>
-                    <div class="stat-item">
-                        <div class="stat-number">300%</div>
-                        <div class="stat-label">Average ROI Increase</div>
-                    </div>
-                    <div class="stat-item">
-                        <div class="stat-number">500+</div>
-                        <div class="stat-label">Successful Projects</div>
-                    </div>
-                </div>
-            </div>        </section>
-
-        <!-- Solutions Grid -->
+            </div>
+        </section>        <!-- Solutions Grid -->
         <section class="solutions-section">
             <div class="section-content">
-                <h2>Our Digital Marketing Solutions</h2>
+                <h2><?php echo esc_html(get_post_meta(get_the_ID(), '_solutions_grid_title', true) ?: 'Our Digital Marketing Solutions'); ?></h2>
                 <div class="solutions-main-grid">
+                    <?php 
+                    $solutions_cards = get_post_meta(get_the_ID(), '_solutions_cards', true);
+                    if (empty($solutions_cards)) {
+                        $solutions_cards = array(
+                            array(
+                                'title' => 'Lead Generation (B2B/B2C)',
+                                'description' => 'Generate high-quality leads that convert into customers through targeted campaigns and proven funnels.',
+                                'features' => array(
+                                    'Targeted PPC campaigns',
+                                    'Lead magnet creation',
+                                    'Landing page optimization',
+                                    'CRM integration & nurturing'
+                                ),
+                                'results' => 'Average: 250% lead increase',
+                                'cta_text' => 'Explore Lead Generation',
+                                'cta_url' => '/lead-generation'
+                            ),
+                            array(
+                                'title' => 'Automate Marketing',
+                                'description' => 'Streamline your marketing processes with intelligent automation that nurtures leads and drives conversions 24/7.',
+                                'features' => array(
+                                    'Email marketing automation',
+                                    'Lead scoring & segmentation',
+                                    'Behavioral trigger campaigns',
+                                    'Multi-channel workflows'
+                                ),
+                                'results' => 'Average: 40% time savings',
+                                'cta_text' => 'Discover Automation',
+                                'cta_url' => '/automate-marketing'
+                            ),
+                            array(
+                                'title' => 'Improve ROI from Ads',
+                                'description' => 'Maximize your advertising spend with data-driven optimization strategies that deliver measurable results.',
+                                'features' => array(
+                                    'PPC campaign optimization',
+                                    'Conversion tracking setup',
+                                    'Audience refinement',
+                                    'Bid strategy optimization'
+                                ),
+                                'results' => 'Average: 180% ROI improvement',
+                                'cta_text' => 'Boost Ad Performance',
+                                'cta_url' => '/improve-roi-ads'
+                            ),
+                            array(
+                                'title' => 'Rank Higher Locally',
+                                'description' => 'Dominate local search results and attract customers in your area with comprehensive local SEO strategies.',
+                                'features' => array(
+                                    'Google My Business optimization',
+                                    'Local citation building',
+                                    'Review management',
+                                    'Local keyword targeting'
+                                ),
+                                'results' => 'Average: 300% local visibility boost',
+                                'cta_text' => 'Dominate Local Search',
+                                'cta_url' => '/rank-higher-locally'
+                            ),
+                            array(
+                                'title' => 'Build a High-Converting Website',
+                                'description' => 'Create a website that turns visitors into customers with conversion-focused design and optimization.',
+                                'features' => array(
+                                    'Conversion rate optimization',
+                                    'User experience design',
+                                    'A/B testing implementation',
+                                    'Mobile optimization'
+                                ),
+                                'results' => 'Average: 150% conversion increase',
+                                'cta_text' => 'Build Better Websites',
+                                'cta_url' => '/high-converting-website'
+                            ),
+                            array(
+                                'title' => 'Streamline Your Sales Funnel',
+                                'description' => 'Optimize every stage of your customer journey to reduce friction and increase conversion rates.',
+                                'features' => array(
+                                    'Funnel analysis & optimization',
+                                    'Customer journey mapping',
+                                    'Conversion bottleneck removal',
+                                    'Multi-step campaign design'
+                                ),
+                                'results' => 'Average: 200% funnel efficiency gain',
+                                'cta_text' => 'Optimize Your Funnel',
+                                'cta_url' => '/streamline-sales-funnel'
+                            )
+                        );
+                    }
                     
-                    <!-- Lead Generation -->
-                    <div class="solution-card">
-                        <h3>Lead Generation (B2B/B2C)</h3>
-                        <p>Generate high-quality leads that convert into customers through targeted campaigns and proven funnels.</p>
-                        <ul class="solution-features">
-                            <li>Targeted PPC campaigns</li>
-                            <li>Lead magnet creation</li>
-                            <li>Landing page optimization</li>
-                            <li>CRM integration & nurturing</li>
-                        </ul>
-                        <div class="solution-results">
-                            Average: 250% lead increase
+                    foreach ($solutions_cards as $card) {
+                        ?>
+                        <div class="solution-card">
+                            <h3><?php echo esc_html($card['title']); ?></h3>
+                            <p><?php echo esc_html($card['description']); ?></p>
+                            <?php if (!empty($card['features'])) { ?>
+                                <ul class="solution-features">
+                                    <?php foreach ($card['features'] as $feature) { ?>
+                                        <li><?php echo esc_html($feature); ?></li>
+                                    <?php } ?>
+                                </ul>
+                            <?php } ?>
+                            <div class="solution-results">
+                                <?php echo esc_html($card['results']); ?>
+                            </div>
+                            <a href="<?php echo esc_url(home_url($card['cta_url'])); ?>" class="solution-cta"><?php echo esc_html($card['cta_text']); ?></a>
                         </div>
-                        <a href="<?php echo home_url('/lead-generation'); ?>" class="solution-cta">Explore Lead Generation</a>
-                    </div>                    <!-- Marketing Automation -->
-                    <div class="solution-card">
-                        <h3>Automate Marketing</h3>
-                        <p>Streamline your marketing processes with intelligent automation that nurtures leads and drives conversions 24/7.</p>
-                        <ul class="solution-features">
-                            <li>Email marketing automation</li>
-                            <li>Lead scoring & segmentation</li>
-                            <li>Behavioral trigger campaigns</li>
-                            <li>Multi-channel workflows</li>
-                        </ul>
-                        <div class="solution-results">
-                            Average: 40% time savings
-                        </div>
-                        <a href="<?php echo home_url('/automate-marketing'); ?>" class="solution-cta">Discover Automation</a>
-                    </div>                    <!-- ROI from Ads -->
-                    <div class="solution-card">
-                        <h3>Improve ROI from Ads</h3>
-                        <p>Maximize your advertising spend with data-driven optimization strategies that deliver measurable results.</p>
-                        <ul class="solution-features">
-                            <li>PPC campaign optimization</li>
-                            <li>Conversion tracking setup</li>
-                            <li>Audience refinement</li>
-                            <li>Bid strategy optimization</li>
-                        </ul>
-                        <div class="solution-results">
-                            Average: 180% ROI improvement
-                        </div>
-                        <a href="<?php echo home_url('/improve-roi-ads'); ?>" class="solution-cta">Boost Ad Performance</a>
-                    </div>                    <!-- Local SEO -->
-                    <div class="solution-card">
-                        <h3>Rank Higher Locally</h3>
-                        <p>Dominate local search results and attract customers in your area with comprehensive local SEO strategies.</p>
-                        <ul class="solution-features">
-                            <li>Google My Business optimization</li>
-                            <li>Local citation building</li>
-                            <li>Review management</li>
-                            <li>Local keyword targeting</li>
-                        </ul>
-                        <div class="solution-results">
-                            Average: 300% local visibility boost
-                        </div>
-                        <a href="<?php echo home_url('/rank-higher-locally'); ?>" class="solution-cta">Dominate Local Search</a>
-                    </div>                    <!-- High-Converting Website -->
-                    <div class="solution-card">
-                        <h3>Build a High-Converting Website</h3>
-                        <p>Create a website that turns visitors into customers with conversion-focused design and optimization.</p>
-                        <ul class="solution-features">
-                            <li>Conversion rate optimization</li>
-                            <li>User experience design</li>
-                            <li>A/B testing implementation</li>
-                            <li>Mobile optimization</li>
-                        </ul>
-                        <div class="solution-results">
-                            Average: 150% conversion increase
-                        </div>
-                        <a href="<?php echo home_url('/high-converting-website'); ?>" class="solution-cta">Build Better Websites</a>
-                    </div>                    <!-- Sales Funnel -->
-                    <div class="solution-card">
-                        <h3>Streamline Your Sales Funnel</h3>
-                        <p>Optimize every stage of your customer journey to reduce friction and increase conversion rates.</p>
-                        <ul class="solution-features">
-                            <li>Funnel analysis & optimization</li>
-                            <li>Customer journey mapping</li>
-                            <li>Conversion bottleneck removal</li>
-                            <li>Multi-step campaign design</li>
-                        </ul>
-                        <div class="solution-results">
-                            Average: 200% funnel efficiency gain
-                        </div>
-                        <a href="<?php echo home_url('/streamline-sales-funnel'); ?>" class="solution-cta">Optimize Your Funnel</a>
-                    </div>
+                        <?php
+                    }
+                    ?>
                 </div>
             </div>
-        </section>
-
-        <!-- Solution Process -->
+        </section>        <!-- Solution Process -->
         <section class="solution-process">
             <div class="section-content">
-                <h2>Our Solution Implementation Process</h2>
+                <h2><?php echo esc_html(get_post_meta(get_the_ID(), '_solutions_process_title', true) ?: 'Our Solution Implementation Process'); ?></h2>
                 <div class="process-steps">
+                    <?php 
+                    $process_steps = get_post_meta(get_the_ID(), '_solutions_process_steps', true);
+                    if (empty($process_steps)) {
+                        $process_steps = array(
+                            array(
+                                'number' => '1',
+                                'title' => 'Discovery & Analysis',
+                                'description' => 'We analyze your current situation, challenges, and goals to identify the most impactful solutions.'
+                            ),
+                            array(
+                                'number' => '2',
+                                'title' => 'Custom Strategy Development',
+                                'description' => 'Create a tailored strategy that combines the right solutions for your specific business needs.'
+                            ),
+                            array(
+                                'number' => '3',
+                                'title' => 'Implementation & Integration',
+                                'description' => 'Deploy solutions with seamless integration into your existing systems and workflows.'
+                            ),
+                            array(
+                                'number' => '4',
+                                'title' => 'Optimization & Scaling',
+                                'description' => 'Continuously monitor, optimize, and scale solutions based on performance data and results.'
+                            )
+                        );
+                    }
                     
-                    <div class="process-step">
-                        <div class="step-number">1</div>
-                        <div class="step-content">
-                            <h3>Discovery & Analysis</h3>
-                            <p>We analyze your current situation, challenges, and goals to identify the most impactful solutions.</p>
+                    foreach ($process_steps as $step) {
+                        ?>
+                        <div class="process-step">
+                            <div class="step-number"><?php echo esc_html($step['number']); ?></div>
+                            <div class="step-content">
+                                <h3><?php echo esc_html($step['title']); ?></h3>
+                                <p><?php echo esc_html($step['description']); ?></p>
+                            </div>
                         </div>
-                    </div>
-
-                    <div class="process-step">
-                        <div class="step-number">2</div>
-                        <div class="step-content">
-                            <h3>Custom Strategy Development</h3>
-                            <p>Create a tailored strategy that combines the right solutions for your specific business needs.</p>
-                        </div>
-                    </div>
-
-                    <div class="process-step">
-                        <div class="step-number">3</div>
-                        <div class="step-content">
-                            <h3>Implementation & Integration</h3>
-                            <p>Deploy solutions with seamless integration into your existing systems and workflows.</p>
-                        </div>
-                    </div>
-
-                    <div class="process-step">
-                        <div class="step-number">4</div>
-                        <div class="step-content">
-                            <h3>Optimization & Scaling</h3>
-                            <p>Continuously monitor, optimize, and scale solutions based on performance data and results.</p>
-                        </div>
-                    </div>
-
+                        <?php
+                    }
+                    ?>
                 </div>
             </div>
-        </section>
-
-        <!-- Success Stories -->
+        </section>        <!-- Success Stories -->
         <section class="solution-success">
             <div class="section-content">
-                <h2>Solution Success Stories</h2>
+                <h2><?php echo esc_html(get_post_meta(get_the_ID(), '_solutions_success_stories_title', true) ?: 'Solution Success Stories'); ?></h2>
                 <div class="success-grid">
+                    <?php 
+                    $success_stories = get_post_meta(get_the_ID(), '_solutions_success_stories', true);
+                    if (empty($success_stories)) {
+                        $success_stories = array(
+                            array(
+                                'metric_number' => '450%',
+                                'metric_label' => 'Lead Increase',
+                                'title' => 'Manufacturing Company',
+                                'description' => '"Our lead generation solution transformed their B2B marketing, generating 450% more qualified leads within 6 months."',
+                                'solution_used' => 'Lead Generation + Marketing Automation'
+                            ),
+                            array(
+                                'metric_number' => '320%',
+                                'metric_label' => 'ROI Improvement',
+                                'title' => 'E-commerce Retailer',
+                                'description' => '"Ad optimization and funnel streamlining resulted in 320% ROI improvement and 40% lower customer acquisition costs."',
+                                'solution_used' => 'ROI Optimization + Sales Funnel'
+                            ),
+                            array(
+                                'metric_number' => '500%',
+                                'metric_label' => 'Local Visibility',
+                                'title' => 'Professional Services',
+                                'description' => '"Local SEO implementation increased their Google My Business visibility by 500% and doubled client inquiries."',
+                                'solution_used' => 'Local SEO + Website Optimization'
+                            )
+                        );
+                    }
                     
-                    <div class="success-story">
-                        <div class="story-metric">
-                            <span class="metric-number">450%</span>
-                            <span class="metric-label">Lead Increase</span>
+                    foreach ($success_stories as $story) {
+                        ?>
+                        <div class="success-story">
+                            <div class="story-metric">
+                                <span class="metric-number"><?php echo esc_html($story['metric_number']); ?></span>
+                                <span class="metric-label"><?php echo esc_html($story['metric_label']); ?></span>
+                            </div>
+                            <div class="story-content">
+                                <h3><?php echo esc_html($story['title']); ?></h3>
+                                <p><?php echo esc_html($story['description']); ?></p>
+                                <span class="story-solution"><?php echo esc_html($story['solution_used']); ?></span>
+                            </div>
                         </div>
-                        <div class="story-content">
-                            <h3>Manufacturing Company</h3>
-                            <p>"Our lead generation solution transformed their B2B marketing, generating 450% more qualified leads within 6 months."</p>
-                            <span class="story-solution">Lead Generation + Marketing Automation</span>
-                        </div>
-                    </div>
-
-                    <div class="success-story">
-                        <div class="story-metric">
-                            <span class="metric-number">320%</span>
-                            <span class="metric-label">ROI Improvement</span>
-                        </div>
-                        <div class="story-content">
-                            <h3>E-commerce Retailer</h3>
-                            <p>"Ad optimization and funnel streamlining resulted in 320% ROI improvement and 40% lower customer acquisition costs."</p>
-                            <span class="story-solution">ROI Optimization + Sales Funnel</span>
-                        </div>
-                    </div>
-
-                    <div class="success-story">
-                        <div class="story-metric">
-                            <span class="metric-number">500%</span>
-                            <span class="metric-label">Local Visibility</span>
-                        </div>
-                        <div class="story-content">
-                            <h3>Professional Services</h3>
-                            <p>"Local SEO implementation increased their Google My Business visibility by 500% and doubled client inquiries."</p>
-                            <span class="story-solution">Local SEO + Website Optimization</span>
-                        </div>
-                    </div>
-
+                        <?php
+                    }
+                    ?>
                 </div>
             </div>
-        </section>
-
-        <!-- Solution CTA -->
+        </section>        <!-- Solution CTA -->
         <section class="solution-cta-section">
             <div class="section-content">
                 <div class="cta-content">
-                    <h2>Ready to Transform Your Business?</h2>
-                    <p>Let's identify the perfect solution combination for your unique challenges and growth goals.</p>
+                    <h2><?php echo esc_html(get_post_meta(get_the_ID(), '_solutions_cta_title', true) ?: 'Ready to Transform Your Business?'); ?></h2>
+                    <p><?php echo esc_html(get_post_meta(get_the_ID(), '_solutions_cta_subtitle', true) ?: 'Let\'s identify the perfect solution combination for your unique challenges and growth goals.'); ?></p>
                     <div class="cta-buttons">
-                        <a href="<?php echo home_url('/contact'); ?>" class="btn btn-primary">Get Free Strategy Session</a>
-                        <a href="<?php echo home_url('/case-studies'); ?>" class="btn btn-secondary">View All Success Stories</a>
+                        <a href="<?php echo esc_url(home_url(get_post_meta(get_the_ID(), '_solutions_cta_primary_url', true) ?: '/contact')); ?>" class="btn btn-primary"><?php echo esc_html(get_post_meta(get_the_ID(), '_solutions_cta_primary_text', true) ?: 'Get Free Strategy Session'); ?></a>
+                        <a href="<?php echo esc_url(home_url(get_post_meta(get_the_ID(), '_solutions_cta_secondary_url', true) ?: '/case-studies')); ?>" class="btn btn-secondary"><?php echo esc_html(get_post_meta(get_the_ID(), '_solutions_cta_secondary_text', true) ?: 'View All Success Stories'); ?></a>
                     </div>
                     <div class="cta-benefits">
-                        <span class="benefit">✓ Custom solution roadmap</span>
-                        <span class="benefit">✓ ROI projections included</span>
-                        <span class="benefit">✓ No obligation consultation</span>
+                        <?php
+                        $cta_benefits = get_post_meta(get_the_ID(), '_solutions_cta_benefits', true);
+                        if (empty($cta_benefits)) {
+                            $cta_benefits = array(
+                                '✓ Custom solution roadmap',
+                                '✓ ROI projections included',
+                                '✓ No obligation consultation'
+                            );
+                        }
+                        
+                        foreach ($cta_benefits as $benefit) {
+                            echo '<span class="benefit">' . esc_html($benefit) . '</span>';
+                        }
+                        ?>
                     </div>
                 </div>
             </div>
-        </section>    </div>
+        </section>
+    </div>
 </main>
 
 <?php get_footer(); ?>
