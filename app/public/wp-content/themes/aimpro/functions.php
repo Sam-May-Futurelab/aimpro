@@ -63,6 +63,7 @@ require_once get_template_directory() . '/includes/automotive-meta.php';
 require_once get_template_directory() . '/includes/home-garden-meta.php';
 require_once get_template_directory() . '/includes/finance-meta.php';
 require_once get_template_directory() . '/includes/professional-services-meta.php';
+require_once get_template_directory() . '/includes/estate-agents-meta.php';
 require_once get_template_directory() . '/includes/finance-meta.php';
 
 // Include helper functions
