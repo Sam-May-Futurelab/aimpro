@@ -4,7 +4,16 @@
  * Description: Comprehensive SEO services overview
  */
 
-get_header(); ?>
+get_header(); 
+
+// Get default values
+$defaults = get_seo_services_defaults();
+
+// Get meta values with fallbacks
+$header_title = get_post_meta(get_the_ID(), '_seo_header_title', true) ?: $defaults['header_title'];
+$header_subtitle = get_post_meta(get_the_ID(), '_seo_header_subtitle', true) ?: $defaults['header_subtitle'];
+
+?>
 
 <main id="main" class="main-content seo-service-page">
     <div class="container">
@@ -12,165 +21,115 @@ get_header(); ?>
         <!-- Page Header -->
         <section class="page-header">
             <div class="page-header-content">
-                <h1>SEO Services</h1>
-                <p class="page-subtitle">Dominate search results and drive organic traffic with our comprehensive SEO strategies</p>
+                <h1><?php echo esc_html($header_title); ?></h1>
+                <p class="page-subtitle"><?php echo esc_html($header_subtitle); ?></p>
             </div>
-        </section>
-
-        <!-- SEO Overview -->
+        </section>        <!-- SEO Overview -->
         <section class="seo-overview">
             <div class="section-content">
                 <div class="overview-content">
                     <div class="overview-text">
-                        <h2>Expert SEO Services That Drive Results</h2>
-                        <p>Our comprehensive SEO services are designed to improve your search engine rankings, increase organic traffic, and drive qualified leads to your business. With over 25 years of combined experience and proven methodologies, we help businesses of all sizes achieve sustainable growth through search engine optimization.</p>
+                        <?php
+                        $overview_title = get_post_meta(get_the_ID(), '_seo_overview_title', true) ?: $defaults['overview_title'];
+                        $overview_description = get_post_meta(get_the_ID(), '_seo_overview_description', true) ?: $defaults['overview_description'];
+                        $benefits_title = get_post_meta(get_the_ID(), '_seo_overview_benefits_title', true) ?: $defaults['overview_benefits_title'];
+                        $benefits = get_post_meta(get_the_ID(), '_seo_overview_benefits', true) ?: $defaults['overview_benefits'];
+                        ?>
+                        <h2><?php echo esc_html($overview_title); ?></h2>
+                        <p><?php echo esc_html($overview_description); ?></p>
                         
                         <div class="seo-benefits">
-                            <h3>What SEO Can Do for Your Business:</h3>
+                            <h3><?php echo esc_html($benefits_title); ?></h3>
                             <ul>
-                                <li>Increase organic search visibility by up to 300%</li>
-                                <li>Drive qualified traffic that converts into customers</li>
-                                <li>Build long-term, sustainable online presence</li>
-                                <li>Improve brand credibility and trust</li>
-                                <li>Generate cost-effective leads compared to paid advertising</li>
-                                <li>Stay ahead of competitors in search results</li>
+                                <?php foreach ((array)$benefits as $benefit): ?>
+                                    <li><?php echo esc_html($benefit); ?></li>
+                                <?php endforeach; ?>
                             </ul>
                         </div>
                     </div>
                     <div class="overview-image">
-                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/services/seo-overview.jpg" alt="SEO Services Overview" />
+                        <?php
+                        $overview_image = get_post_meta(get_the_ID(), '_seo_overview_image', true) ?: $defaults['overview_image'];
+                        ?>
+                        <img src="<?php echo esc_url($overview_image); ?>" alt="SEO Services Overview" />
                     </div>
                 </div>
             </div>
-        </section>
-
-        <!-- SEO Services Grid -->
+        </section>        <!-- SEO Services Grid -->
         <section class="seo-services-grid">
             <div class="section-content">
-                <h2>Our Complete SEO Service Portfolio</h2>
+                <?php
+                $services_grid_title = get_post_meta(get_the_ID(), '_seo_services_grid_title', true) ?: $defaults['services_grid_title'];
+                ?>
+                <h2><?php echo esc_html($services_grid_title); ?></h2>
                 <div class="services-grid">
                     
-                    <div class="service-card featured">
+                    <?php for ($i = 1; $i <= 5; $i++): 
+                        $service_title = get_post_meta(get_the_ID(), "_seo_service_{$i}_title", true) ?: $defaults["service_{$i}_title"];
+                        $service_description = get_post_meta(get_the_ID(), "_seo_service_{$i}_description", true) ?: $defaults["service_{$i}_description"];
+                        $service_features = get_post_meta(get_the_ID(), "_seo_service_{$i}_features", true) ?: $defaults["service_{$i}_features"];
+                        $service_result = get_post_meta(get_the_ID(), "_seo_service_{$i}_result", true) ?: $defaults["service_{$i}_result"];
+                        $service_link = get_post_meta(get_the_ID(), "_seo_service_{$i}_link", true) ?: $defaults["service_{$i}_link"];
+                        $service_featured = get_post_meta(get_the_ID(), "_seo_service_{$i}_featured", true) ?: $defaults["service_{$i}_featured"];
+                        
+                        $card_class = $service_featured ? 'service-card featured' : 'service-card';
+                    ?>
+                    
+                    <div class="<?php echo esc_attr($card_class); ?>">
                         <div class="service-icon">
-                            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M21 10C21 17 12 23 12 23C12 23 3 17 3 10C3 6.13401 6.13401 3 10 3C13.866 3 17 6.13401 17 10Z" stroke="currentColor" stroke-width="2"/>
-                                <circle cx="12" cy="10" r="3" stroke="currentColor" stroke-width="2"/>
-                            </svg>
+                            <?php 
+                            // Service icons based on service number
+                            switch($i) {
+                                case 1: // Local SEO
+                                    echo '<svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M21 10C21 17 12 23 12 23C12 23 3 17 3 10C3 6.13401 6.13401 3 10 3C13.866 3 17 6.13401 17 10Z" stroke="currentColor" stroke-width="2"/>
+                                        <circle cx="12" cy="10" r="3" stroke="currentColor" stroke-width="2"/>
+                                    </svg>';
+                                    break;
+                                case 2: // SEO Audit
+                                    echo '<svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M9 12L11 14L15 10M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z" stroke="currentColor" stroke-width="2"/>
+                                    </svg>';
+                                    break;
+                                case 3: // Technical SEO
+                                    echo '<svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M14.7 6.3C15.1 5.9 15.1 5.3 14.7 4.9C14.3 4.5 13.7 4.5 13.3 4.9L12 6.2L10.7 4.9C10.3 4.5 9.7 4.5 9.3 4.9C8.9 5.3 8.9 5.9 9.3 6.3L10.6 7.6L9.3 8.9C8.9 9.3 8.9 9.9 9.3 10.3C9.7 10.7 10.3 10.7 10.7 10.3L12 9L13.3 10.3C13.7 10.7 14.3 10.7 14.7 10.3C15.1 9.9 15.1 9.3 14.7 8.9L13.4 7.6L14.7 6.3Z" stroke="currentColor" stroke-width="2"/>
+                                        <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"/>
+                                    </svg>';
+                                    break;
+                                case 4: // On-Page SEO
+                                    echo '<svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M14 2H6A2 2 0 0 0 4 4V20A2 2 0 0 0 6 22H18A2 2 0 0 0 20 20V8L14 2Z" stroke="currentColor" stroke-width="2"/>
+                                        <polyline points="14,2 14,8 20,8" stroke="currentColor" stroke-width="2"/>
+                                        <line x1="16" y1="13" x2="8" y2="13" stroke="currentColor" stroke-width="2"/>
+                                        <line x1="16" y1="17" x2="8" y2="17" stroke="currentColor" stroke-width="2"/>
+                                    </svg>';
+                                    break;
+                                case 5: // White Label SEO
+                                    echo '<svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M17 21V19C17 17.9391 16.5786 16.9217 15.8284 16.1716C15.0783 15.4214 14.0609 15 13 15H5C3.93913 15 2.92172 15.4214 2.17157 16.1716C1.42143 16.9217 1 17.9391 1 19V21" stroke="currentColor" stroke-width="2"/>
+                                        <circle cx="9" cy="7" r="4" stroke="currentColor" stroke-width="2"/>
+                                        <path d="M23 21V19C23 18.1645 22.7045 17.3541 22.1679 16.7116C21.6313 16.0691 20.8902 15.6316 20.07 15.4662" stroke="currentColor" stroke-width="2"/>
+                                    </svg>';
+                                    break;
+                            }
+                            ?>
                         </div>
                         <div class="service-content">
-                            <h3>Local SEO</h3>
-                            <p>Dominate local search results and attract customers in your geographic area with our comprehensive local SEO strategies.</p>
+                            <h3><?php echo esc_html($service_title); ?></h3>
+                            <p><?php echo esc_html($service_description); ?></p>
                             <ul class="service-features">
-                                <li>Google My Business optimization</li>
-                                <li>Local citation building</li>
-                                <li>Review management and generation</li>
-                                <li>Local keyword targeting</li>
-                                <li>Geographic content optimization</li>
-                            </ul>
+                                <?php foreach ((array)$service_features as $feature): ?>
+                                    <li><?php echo esc_html($feature); ?></li>
+                                <?php endforeach; ?>                            </ul>
                             <div class="service-results">
-                                <span>Average: 400% increase in local visibility</span>
+                                <span><?php echo esc_html($service_result); ?></span>
                             </div>
-                            <a href="<?php echo home_url('/local-seo'); ?>" class="service-cta">Learn More</a>
+                            <a href="<?php echo esc_url($service_link); ?>" class="service-cta">Learn More</a>
                         </div>
                     </div>
 
-                    <div class="service-card">
-                        <div class="service-icon">
-                            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M9 12L11 14L15 10M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z" stroke="currentColor" stroke-width="2"/>
-                            </svg>
-                        </div>
-                        <div class="service-content">
-                            <h3>SEO Audit</h3>
-                            <p>Comprehensive analysis of your website's SEO performance with actionable recommendations for improvement.</p>
-                            <ul class="service-features">
-                                <li>Technical SEO analysis</li>
-                                <li>Content gap identification</li>
-                                <li>Competitor analysis</li>
-                                <li>Keyword opportunity research</li>
-                                <li>Detailed action plan</li>
-                            </ul>
-                            <div class="service-results">
-                                <span>Identify 50+ optimization opportunities</span>
-                            </div>
-                            <a href="<?php echo home_url('/seo-audit'); ?>" class="service-cta">Learn More</a>
-                        </div>
-                    </div>
-
-                    <div class="service-card">
-                        <div class="service-icon">
-                            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M14.7 6.3C15.1 5.9 15.1 5.3 14.7 4.9C14.3 4.5 13.7 4.5 13.3 4.9L12 6.2L10.7 4.9C10.3 4.5 9.7 4.5 9.3 4.9C8.9 5.3 8.9 5.9 9.3 6.3L10.6 7.6L9.3 8.9C8.9 9.3 8.9 9.9 9.3 10.3C9.7 10.7 10.3 10.7 10.7 10.3L12 9L13.3 10.3C13.7 10.7 14.3 10.7 14.7 10.3C15.1 9.9 15.1 9.3 14.7 8.9L13.4 7.6L14.7 6.3Z" stroke="currentColor" stroke-width="2"/>
-                                <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"/>
-                            </svg>
-                        </div>
-                        <div class="service-content">
-                            <h3>Technical SEO</h3>
-                            <p>Optimize your website's technical foundation to improve search engine crawling, indexing, and rankings.</p>
-                            <ul class="service-features">
-                                <li>Site speed optimization</li>
-                                <li>Core Web Vitals improvement</li>
-                                <li>Schema markup implementation</li>
-                                <li>Mobile optimization</li>
-                                <li>Crawl error resolution</li>
-                            </ul>
-                            <div class="service-results">
-                                <span>Average: 60% improvement in site speed</span>
-                            </div>
-                            <a href="<?php echo home_url('/technical-seo'); ?>" class="service-cta">Learn More</a>
-                        </div>
-                    </div>
-
-                    <div class="service-card">
-                        <div class="service-icon">
-                            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M14 2H6A2 2 0 0 0 4 4V20A2 2 0 0 0 6 22H18A2 2 0 0 0 20 20V8L14 2Z" stroke="currentColor" stroke-width="2"/>
-                                <polyline points="14,2 14,8 20,8" stroke="currentColor" stroke-width="2"/>
-                                <line x1="16" y1="13" x2="8" y2="13" stroke="currentColor" stroke-width="2"/>
-                                <line x1="16" y1="17" x2="8" y2="17" stroke="currentColor" stroke-width="2"/>
-                            </svg>
-                        </div>
-                        <div class="service-content">
-                            <h3>On-Page SEO</h3>
-                            <p>Optimize individual pages to rank higher and earn more relevant traffic in search engines.</p>
-                            <ul class="service-features">
-                                <li>Keyword research and optimization</li>
-                                <li>Content optimization</li>
-                                <li>Meta tag optimization</li>
-                                <li>Internal linking strategy</li>
-                                <li>Image optimization</li>
-                            </ul>
-                            <div class="service-results">
-                                <span>Average: 250% increase in organic traffic</span>
-                            </div>
-                            <a href="<?php echo home_url('/on-page-seo'); ?>" class="service-cta">Learn More</a>
-                        </div>
-                    </div>
-
-                    <div class="service-card">
-                        <div class="service-icon">
-                            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M17 21V19C17 17.9391 16.5786 16.9217 15.8284 16.1716C15.0783 15.4214 14.0609 15 13 15H5C3.93913 15 2.92172 15.4214 2.17157 16.1716C1.42143 16.9217 1 17.9391 1 19V21" stroke="currentColor" stroke-width="2"/>
-                                <circle cx="9" cy="7" r="4" stroke="currentColor" stroke-width="2"/>
-                                <path d="M23 21V19C23 18.1645 22.7045 17.3541 22.1679 16.7116C21.6313 16.0691 20.8902 15.6316 20.07 15.4662" stroke="currentColor" stroke-width="2"/>
-                            </svg>
-                        </div>
-                        <div class="service-content">
-                            <h3>White Label SEO</h3>
-                            <p>Professional SEO services for agencies and resellers under your brand with full support.</p>
-                            <ul class="service-features">
-                                <li>Branded SEO reporting</li>
-                                <li>Agency dashboard access</li>
-                                <li>Scalable SEO solutions</li>
-                                <li>Partner support and training</li>
-                                <li>Client communication tools</li>
-                            </ul>
-                            <div class="service-results">
-                                <span>Scale your agency with confidence</span>
-                            </div>
-                            <a href="<?php echo home_url('/white-label-seo'); ?>" class="service-cta">Learn More</a>
-                        </div>
-                    </div>
+                    <?php endfor; ?>
 
                 </div>
             </div>
@@ -181,229 +140,186 @@ get_header(); ?>
             <div class="section-content">
                 <div class="case-study-content">
                     <div class="case-study-text">
-                        <span class="case-study-label">SEO Success Story</span>
-                        <h2>TechFlow Solutions: 450% Organic Traffic Increase</h2>
-                        <p>TechFlow Solutions, a B2B software company, was struggling with poor search visibility and minimal organic traffic despite having quality products and services.</p>
+                        <?php
+                        $case_study_label = get_post_meta(get_the_ID(), '_seo_case_study_label', true) ?: $defaults['case_study_label'];
+                        $case_study_title = get_post_meta(get_the_ID(), '_seo_case_study_title', true) ?: $defaults['case_study_title'];
+                        $case_study_description = get_post_meta(get_the_ID(), '_seo_case_study_description', true) ?: $defaults['case_study_description'];
+                        $challenge_title = get_post_meta(get_the_ID(), '_seo_case_study_challenge_title', true) ?: $defaults['case_study_challenge_title'];
+                        $challenges = get_post_meta(get_the_ID(), '_seo_case_study_challenges', true) ?: $defaults['case_study_challenges'];
+                        $solution_title = get_post_meta(get_the_ID(), '_seo_case_study_solution_title', true) ?: $defaults['case_study_solution_title'];
+                        $solutions = get_post_meta(get_the_ID(), '_seo_case_study_solutions', true) ?: $defaults['case_study_solutions'];
+                        ?>
+                        <span class="case-study-label"><?php echo esc_html($case_study_label); ?></span>
+                        <h2><?php echo esc_html($case_study_title); ?></h2>
+                        <p><?php echo esc_html($case_study_description); ?></p>
                         
                         <div class="case-study-challenge">
-                            <h3>The Challenge</h3>
+                            <h3><?php echo esc_html($challenge_title); ?></h3>
                             <ul>
-                                <li>Low search engine rankings for target keywords</li>
-                                <li>Poor technical SEO foundation</li>
-                                <li>Lack of optimized content strategy</li>
-                                <li>No local SEO presence</li>
+                                <?php foreach ((array)$challenges as $challenge): ?>
+                                    <li><?php echo esc_html($challenge); ?></li>
+                                <?php endforeach; ?>
                             </ul>
                         </div>
 
                         <div class="case-study-solution">
-                            <h3>Our SEO Strategy</h3>
+                            <h3><?php echo esc_html($solution_title); ?></h3>
                             <ul>
-                                <li>Comprehensive technical SEO overhaul</li>
-                                <li>Strategic keyword research and targeting</li>
-                                <li>Content optimization and creation</li>
-                                <li>Local SEO implementation</li>
+                                <?php foreach ((array)$solutions as $solution): ?>
+                                    <li><?php echo esc_html($solution); ?></li>
+                                <?php endforeach; ?>
                             </ul>
                         </div>
                     </div>
                     <div class="case-study-results">
-                        <h3>Results After 8 Months</h3>
+                        <?php
+                        $results_title = get_post_meta(get_the_ID(), '_seo_case_study_results_title', true) ?: $defaults['case_study_results_title'];
+                        $case_study_link = get_post_meta(get_the_ID(), '_seo_case_study_link', true) ?: $defaults['case_study_link'];
+                        $case_study_link_text = get_post_meta(get_the_ID(), '_seo_case_study_link_text', true) ?: $defaults['case_study_link_text'];
+                        ?>
+                        <h3><?php echo esc_html($results_title); ?></h3>
                         <div class="results-grid">
+                            <?php for ($i = 1; $i <= 4; $i++): 
+                                $result_number = get_post_meta(get_the_ID(), "_seo_case_study_result_{$i}_number", true) ?: $defaults["case_study_result_{$i}_number"];
+                                $result_label = get_post_meta(get_the_ID(), "_seo_case_study_result_{$i}_label", true) ?: $defaults["case_study_result_{$i}_label"];
+                            ?>
                             <div class="result-item">
-                                <div class="result-number">450%</div>
-                                <div class="result-label">Organic Traffic Increase</div>
+                                <div class="result-number"><?php echo esc_html($result_number); ?></div>
+                                <div class="result-label"><?php echo esc_html($result_label); ?></div>
                             </div>
-                            <div class="result-item">
-                                <div class="result-number">320%</div>
-                                <div class="result-label">Keyword Rankings Improvement</div>
-                            </div>
-                            <div class="result-item">
-                                <div class="result-number">280%</div>
-                                <div class="result-label">Lead Generation Increase</div>
-                            </div>
-                            <div class="result-item">
-                                <div class="result-number">65%</div>
-                                <div class="result-label">Conversion Rate Boost</div>
-                            </div>
+                            <?php endfor; ?>
                         </div>
-                        <a href="<?php echo home_url('/case-studies'); ?>" class="case-study-link">Read Full Case Study</a>
+                        <a href="<?php echo esc_url($case_study_link); ?>" class="case-study-link"><?php echo esc_html($case_study_link_text); ?></a>
                     </div>
                 </div>
             </div>
-        </section>
-
-        <!-- SEO Process -->
+        </section>        <!-- SEO Process -->
         <section class="seo-process">
             <div class="section-content">
-                <h2>Our Proven SEO Process</h2>
+                <?php
+                $process_title = get_post_meta(get_the_ID(), '_seo_process_title', true) ?: $defaults['process_title'];
+                ?>
+                <h2><?php echo esc_html($process_title); ?></h2>
                 <div class="process-steps">
                     
+                    <?php for ($i = 1; $i <= 4; $i++): 
+                        $step_title = get_post_meta(get_the_ID(), "_seo_process_step_{$i}_title", true) ?: $defaults["process_step_{$i}_title"];
+                        $step_description = get_post_meta(get_the_ID(), "_seo_process_step_{$i}_description", true) ?: $defaults["process_step_{$i}_description"];
+                    ?>
                     <div class="process-step">
-                        <div class="step-number">1</div>
+                        <div class="step-number"><?php echo $i; ?></div>
                         <div class="step-content">
-                            <h3>SEO Audit & Analysis</h3>
-                            <p>Comprehensive analysis of your current SEO performance, technical issues, and opportunities.</p>
+                            <h3><?php echo esc_html($step_title); ?></h3>
+                            <p><?php echo esc_html($step_description); ?></p>
                         </div>
                     </div>
-
-                    <div class="process-step">
-                        <div class="step-number">2</div>
-                        <div class="step-content">
-                            <h3>Strategy Development</h3>
-                            <p>Create a customized SEO strategy based on your business goals and market research.</p>
-                        </div>
-                    </div>
-
-                    <div class="process-step">
-                        <div class="step-number">3</div>
-                        <div class="step-content">
-                            <h3>Implementation</h3>
-                            <p>Execute technical optimizations, content improvements, and link building strategies.</p>
-                        </div>
-                    </div>
-
-                    <div class="process-step">
-                        <div class="step-number">4</div>
-                        <div class="step-content">
-                            <h3>Monitor & Optimize</h3>
-                            <p>Continuous monitoring and optimization based on performance data and algorithm updates.</p>
-                        </div>
-                    </div>
+                    <?php endfor; ?>
 
                 </div>
             </div>
-        </section>
-
-        <!-- SEO Tools & Technologies -->
+        </section>        <!-- SEO Tools & Technologies -->
         <section class="seo-tools">
             <div class="section-content">
-                <h2>Professional SEO Tools & Technologies</h2>
+                <?php
+                $tools_title = get_post_meta(get_the_ID(), '_seo_tools_title', true) ?: $defaults['tools_title'];
+                ?>
+                <h2><?php echo esc_html($tools_title); ?></h2>
                 <div class="tools-grid">
                     
+                    <?php for ($i = 1; $i <= 4; $i++): 
+                        $category_title = get_post_meta(get_the_ID(), "_seo_tools_category_{$i}_title", true) ?: $defaults["tools_category_{$i}_title"];
+                        $tools = get_post_meta(get_the_ID(), "_seo_tools_category_{$i}_tools", true) ?: $defaults["tools_category_{$i}_tools"];
+                    ?>
                     <div class="tool-category">
-                        <h3>Research & Analysis</h3>
+                        <h3><?php echo esc_html($category_title); ?></h3>
                         <ul class="tool-list">
-                            <li>Ahrefs</li>
-                            <li>SEMrush</li>
-                            <li>Moz Pro</li>
-                            <li>Google Search Console</li>
+                            <?php foreach ((array)$tools as $tool): ?>
+                                <li><?php echo esc_html($tool); ?></li>
+                            <?php endforeach; ?>
                         </ul>
                     </div>
-
-                    <div class="tool-category">
-                        <h3>Technical SEO</h3>
-                        <ul class="tool-list">
-                            <li>Screaming Frog</li>
-                            <li>GTmetrix</li>
-                            <li>Google PageSpeed Insights</li>
-                            <li>Schema Markup Validator</li>
-                        </ul>
-                    </div>
-
-                    <div class="tool-category">
-                        <h3>Content Optimization</h3>
-                        <ul class="tool-list">
-                            <li>Surfer SEO</li>
-                            <li>Clearscope</li>
-                            <li>Yoast SEO</li>
-                            <li>Google Analytics 4</li>
-                        </ul>
-                    </div>
-
-                    <div class="tool-category">
-                        <h3>Local SEO</h3>
-                        <ul class="tool-list">
-                            <li>BrightLocal</li>
-                            <li>Google My Business</li>
-                            <li>Whitespark</li>
-                            <li>ReviewTrackers</li>
-                        </ul>
-                    </div>
+                    <?php endfor; ?>
 
                 </div>
             </div>
-        </section>
-
-        <!-- SEO Industries -->
+        </section>        <!-- SEO Industries -->
         <section class="seo-industries">
             <div class="section-content">
-                <h2>SEO Expertise Across Industries</h2>
+                <?php
+                $industries_title = get_post_meta(get_the_ID(), '_seo_industries_title', true) ?: $defaults['industries_title'];
+                ?>
+                <h2><?php echo esc_html($industries_title); ?></h2>
                 <div class="industries-grid">
                     
+                    <?php for ($i = 1; $i <= 4; $i++): 
+                        $industry_title = get_post_meta(get_the_ID(), "_seo_industry_{$i}_title", true) ?: $defaults["industry_{$i}_title"];
+                        $industry_description = get_post_meta(get_the_ID(), "_seo_industry_{$i}_description", true) ?: $defaults["industry_{$i}_description"];
+                        $industry_features = get_post_meta(get_the_ID(), "_seo_industry_{$i}_features", true) ?: $defaults["industry_{$i}_features"];
+                    ?>
                     <div class="industry-card">
-                        <h3>E-commerce</h3>
-                        <p>Product page optimization, category structure, and technical SEO for online stores.</p>
+                        <h3><?php echo esc_html($industry_title); ?></h3>
+                        <p><?php echo esc_html($industry_description); ?></p>
                         <ul class="industry-features">
-                            <li>Product schema markup</li>
-                            <li>Category page optimization</li>
-                            <li>E-commerce technical SEO</li>
+                            <?php foreach ((array)$industry_features as $feature): ?>
+                                <li><?php echo esc_html($feature); ?></li>
+                            <?php endforeach; ?>
                         </ul>
                     </div>
-
-                    <div class="industry-card">
-                        <h3>Professional Services</h3>
-                        <p>Local SEO and authority building for lawyers, accountants, consultants, and other professionals.</p>
-                        <ul class="industry-features">
-                            <li>Local search optimization</li>
-                            <li>Professional authority building</li>
-                            <li>Service page optimization</li>
-                        </ul>
-                    </div>
-
-                    <div class="industry-card">
-                        <h3>Healthcare</h3>
-                        <p>Medical SEO with compliance focus for hospitals, clinics, and healthcare providers.</p>
-                        <ul class="industry-features">
-                            <li>Medical content optimization</li>
-                            <li>Local medical SEO</li>
-                            <li>HIPAA-compliant strategies</li>
-                        </ul>
-                    </div>
-
-                    <div class="industry-card">
-                        <h3>Real Estate</h3>
-                        <p>Property listing optimization and local market dominance for real estate professionals.</p>
-                        <ul class="industry-features">
-                            <li>Property listing optimization</li>
-                            <li>Local market SEO</li>
-                            <li>Real estate schema markup</li>
-                        </ul>
-                    </div>
+                    <?php endfor; ?>
 
                 </div>
             </div>
-        </section>
-
-        <!-- SEO Testimonial -->
+        </section>        <!-- SEO Testimonial -->
         <section class="seo-testimonial">
             <div class="section-content">
                 <div class="testimonial-content">
+                    <?php
+                    $testimonial_quote = get_post_meta(get_the_ID(), '_seo_testimonial_quote', true) ?: $defaults['testimonial_quote'];
+                    $testimonial_image = get_post_meta(get_the_ID(), '_seo_testimonial_image', true) ?: $defaults['testimonial_image'];
+                    $testimonial_name = get_post_meta(get_the_ID(), '_seo_testimonial_name', true) ?: $defaults['testimonial_name'];
+                    $testimonial_title = get_post_meta(get_the_ID(), '_seo_testimonial_title', true) ?: $defaults['testimonial_title'];
+                    $testimonial_company = get_post_meta(get_the_ID(), '_seo_testimonial_company', true) ?: $defaults['testimonial_company'];
+                    ?>
                     <blockquote>
-                        "Aimpro Digital's SEO services have completely transformed our online presence. We went from page 3 to ranking #1 for our most important keywords, and our organic traffic has increased by over 400%. The team's expertise and dedication are unmatched."
+                        <?php echo esc_html($testimonial_quote); ?>
                     </blockquote>
                     <div class="testimonial-author">
-                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/testimonials/seo-david.jpg" alt="David Mitchell" />
+                        <?php if (!empty($testimonial_image)): ?>
+                            <img src="<?php echo esc_url($testimonial_image); ?>" alt="<?php echo esc_attr($testimonial_name); ?>" />
+                        <?php endif; ?>
                         <div class="author-info">
-                            <h4>David Mitchell</h4>
-                            <span>Managing Director, TechFlow Solutions</span>
-                            <div class="author-company">B2B Software Company</div>
+                            <h4><?php echo esc_html($testimonial_name); ?></h4>
+                            <span><?php echo esc_html($testimonial_title); ?></span>
+                            <div class="author-company"><?php echo esc_html($testimonial_company); ?></div>
                         </div>
                     </div>
                 </div>
             </div>
-        </section>        <!-- CTA Section -->
+        </section>
+
+        <!-- CTA Section -->
         <section class="cta-section">
             <div class="container">
                 <div class="cta-content">
-                    <h2>Ready to Dominate Search Results?</h2>
-                    <p>Let's discuss how our SEO services can increase your organic visibility and drive qualified traffic to your business.</p>
+                    <?php
+                    $cta_title = get_post_meta(get_the_ID(), '_seo_cta_title', true) ?: $defaults['cta_title'];
+                    $cta_description = get_post_meta(get_the_ID(), '_seo_cta_description', true) ?: $defaults['cta_description'];
+                    $cta_primary_text = get_post_meta(get_the_ID(), '_seo_cta_primary_text', true) ?: $defaults['cta_primary_text'];
+                    $cta_primary_link = get_post_meta(get_the_ID(), '_seo_cta_primary_link', true) ?: $defaults['cta_primary_link'];
+                    $cta_secondary_text = get_post_meta(get_the_ID(), '_seo_cta_secondary_text', true) ?: $defaults['cta_secondary_text'];
+                    $cta_secondary_link = get_post_meta(get_the_ID(), '_seo_cta_secondary_link', true) ?: $defaults['cta_secondary_link'];
+                    $cta_features = get_post_meta(get_the_ID(), '_seo_cta_features', true) ?: $defaults['cta_features'];
+                    ?>
+                    <h2><?php echo esc_html($cta_title); ?></h2>
+                    <p><?php echo esc_html($cta_description); ?></p>
                     <div class="cta-buttons">
-                        <a href="<?php echo home_url('/contact'); ?>" class="btn-primary">Get Free SEO Audit</a>
-                        <a href="<?php echo home_url('/case-studies'); ?>" class="btn-outline">View SEO Results</a>
+                        <a href="<?php echo esc_url($cta_primary_link); ?>" class="btn-primary"><?php echo esc_html($cta_primary_text); ?></a>
+                        <a href="<?php echo esc_url($cta_secondary_link); ?>" class="btn-outline"><?php echo esc_html($cta_secondary_text); ?></a>
                     </div>
                     <div class="cta-features">
-                        <span class="feature-check">✓ Comprehensive SEO audit included</span>
-                        <span class="feature-check">✓ Custom strategy recommendations</span>
-                        <span class="feature-check">✓ No long-term contracts required</span>
+                        <?php foreach ((array)$cta_features as $feature): ?>
+                            <span class="feature-check">✓ <?php echo esc_html($feature); ?></span>
+                        <?php endforeach; ?>
                     </div>
                 </div>
             </div>
