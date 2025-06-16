@@ -67,6 +67,7 @@ require_once get_template_directory() . '/includes/estate-agents-meta.php';
 require_once get_template_directory() . '/includes/coaches-consultants-meta.php';
 require_once get_template_directory() . '/includes/ecommerce-meta.php';
 require_once get_template_directory() . '/includes/solutions-meta.php';
+require_once get_template_directory() . '/includes/lead-generation-meta.php';
 require_once get_template_directory() . '/includes/finance-meta.php';
 
 // Include helper functions
