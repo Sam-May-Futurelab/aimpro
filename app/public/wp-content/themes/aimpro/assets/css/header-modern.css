@@ -794,3 +794,20 @@ html body .sticky-header .main-nav .nav-item-mega .mega-menu .mega-menu-containe
     grid-template-columns: repeat(4, 1fr) !important;
     gap: 2rem !important;
 }
+
+/* ============================================
+   SIMPLE HEADER ALIGNMENT FIX
+   ============================================ */
+
+/* Force all mega menu column headers to be uniform - PROPER FIX */
+html body .sticky-header .main-nav .nav-item-mega .mega-menu .mega-menu-column h4 {
+    height: 60px !important; /* Taller to fit wrapped text */
+    margin: 0 !important;
+    padding: 8px 0 12px 0 !important; /* More bottom padding for underline spacing */
+    line-height: 1.3 !important;
+    display: flex !important;
+    align-items: flex-start !important;
+    margin-bottom: 0.75rem !important;
+    box-sizing: border-box !important;
+    white-space: normal !important; /* Allow text wrapping */
+}
