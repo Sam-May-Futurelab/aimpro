@@ -8,12 +8,11 @@ get_header(); ?>
 
 <main id="main" class="main-content">
     <div class="container">
-        
-        <!-- Page Header -->
+          <!-- Page Header -->
         <section class="page-header">
             <div class="page-header-content">
-                <h1>E-commerce Digital Marketing</h1>
-                <p class="page-subtitle">Drive more traffic, increase conversions, and maximize revenue for your online store</p>
+                <h1><?php echo esc_html(get_post_meta(get_the_ID(), '_ecommerce_header_title', true) ?: "E-commerce Digital Marketing"); ?></h1>
+                <p class="page-subtitle"><?php echo esc_html(get_post_meta(get_the_ID(), '_ecommerce_header_subtitle', true) ?: "Drive more traffic, increase conversions, and maximize revenue for your online store"); ?></p>
             </div>
         </section>
 
@@ -22,23 +21,39 @@ get_header(); ?>
             <div class="section-content">
                 <div class="overview-content">
                     <div class="overview-text">
-                        <h2>Accelerate Your E-commerce Growth</h2>
-                        <p>The e-commerce landscape is more competitive than ever. Our specialized e-commerce marketing strategies help online retailers increase traffic, improve conversion rates, and maximize customer lifetime value through data-driven digital marketing.</p>
+                        <h2><?php echo esc_html(get_post_meta(get_the_ID(), '_ecommerce_overview_title', true) ?: "Accelerate Your E-commerce Growth"); ?></h2>
+                        <p><?php echo esc_html(get_post_meta(get_the_ID(), '_ecommerce_overview_content', true) ?: "The e-commerce landscape is more competitive than ever. Our specialized e-commerce marketing strategies help online retailers increase traffic, improve conversion rates, and maximize customer lifetime value through data-driven digital marketing."); ?></p>
                         
                         <div class="industry-challenges">
-                            <h3>E-commerce Marketing Challenges We Solve:</h3>
+                            <h3><?php echo esc_html(get_post_meta(get_the_ID(), '_ecommerce_challenges_title', true) ?: "E-commerce Marketing Challenges We Solve:"); ?></h3>
                             <ul>
-                                <li>High customer acquisition costs</li>
-                                <li>Intense competition from marketplaces</li>
-                                <li>Cart abandonment and low conversion rates</li>
-                                <li>Seasonal sales fluctuations</li>
-                                <li>Customer retention and loyalty</li>
-                                <li>Product visibility and discovery</li>
+                                <?php
+                                $challenges = get_post_meta(get_the_ID(), '_ecommerce_challenges', true);
+                                if (empty($challenges)) {
+                                    $challenges = array(
+                                        'High customer acquisition costs',
+                                        'Intense competition from marketplaces',
+                                        'Cart abandonment and low conversion rates',
+                                        'Seasonal sales fluctuations',
+                                        'Customer retention and loyalty',
+                                        'Product visibility and discovery'
+                                    );
+                                }
+                                foreach ($challenges as $challenge) {
+                                    echo '<li>' . esc_html($challenge) . '</li>';
+                                }
+                                ?>
                             </ul>
                         </div>
                     </div>
                     <div class="overview-image">
-                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/industries/ecommerce-overview.jpg" alt="E-commerce Digital Marketing" />
+                        <?php 
+                        $image_url = get_post_meta(get_the_ID(), '_ecommerce_overview_image', true);
+                        if (empty($image_url)) {
+                            $image_url = get_template_directory_uri() . '/assets/images/industries/ecommerce-overview.jpg';
+                        }
+                        ?>
+                        <img src="<?php echo esc_url($image_url); ?>" alt="E-commerce Digital Marketing" />
                     </div>
                 </div>
             </div>
@@ -266,40 +281,45 @@ get_header(); ?>
                         </div>
                     </div>                </div>
             </div>
-        </section>
-
-        <!-- E-commerce Testimonial -->
+        </section>        <!-- E-commerce Testimonial -->
         <section class="ecommerce-testimonial">
             <div class="section-content">
                 <div class="testimonial-content">
                     <blockquote>
-                        "Aimpro Digital transformed our e-commerce business. Their comprehensive approach to Google Shopping, SEO, and email marketing increased our revenue by 320%. The team's expertise in e-commerce marketing is outstanding."
+                        <?php echo esc_html(get_post_meta(get_the_ID(), '_ecommerce_testimonial_quote', true) ?: "Aimpro Digital transformed our e-commerce business. Their comprehensive approach to Google Shopping, SEO, and email marketing increased our revenue by 320%. The team's expertise in e-commerce marketing is outstanding."); ?>
                     </blockquote>
                     <div class="testimonial-author">
-                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/testimonials/ecommerce-james.jpg" alt="James Wilson" />
                         <div class="author-info">
-                            <h4>James Wilson</h4>
-                            <span>Marketing Director, Sports Equipment Plus</span>
-                            <div class="author-company">Online sports equipment retailer</div>
+                            <h4><?php echo esc_html(get_post_meta(get_the_ID(), '_ecommerce_testimonial_name', true) ?: "James Wilson"); ?></h4>
+                            <span><?php echo esc_html(get_post_meta(get_the_ID(), '_ecommerce_testimonial_position', true) ?: "Marketing Director, Sports Equipment Plus"); ?></span>
+                            <div class="author-company"><?php echo esc_html(get_post_meta(get_the_ID(), '_ecommerce_testimonial_company', true) ?: "Online sports equipment retailer"); ?></div>
                         </div>
                     </div>
                 </div>
             </div>
-        </section>
-
-        <!-- CTA Section -->
-        <section class="ecommerce-cta">
+        </section>        <!-- CTA Section -->
+        <section class="ecommerce-cta text-center">
             <div class="section-content">
-                <h2>Ready to Scale Your E-commerce Business?</h2>
-                <p>Let's discuss how our e-commerce marketing expertise can drive more traffic, conversions, and revenue for your online store.</p>
+                <h2><?php echo esc_html(get_post_meta(get_the_ID(), '_ecommerce_cta_title', true) ?: "Ready to Scale Your E-commerce Business?"); ?></h2>
+                <p><?php echo esc_html(get_post_meta(get_the_ID(), '_ecommerce_cta_subtitle', true) ?: "Let's discuss how our e-commerce marketing expertise can drive more traffic, conversions, and revenue for your online store."); ?></p>
                 <div class="cta-buttons">
-                    <a href="<?php echo home_url('/contact'); ?>" class="btn btn-primary">Get Free E-commerce Audit</a>
-                    <a href="<?php echo home_url('/case-studies'); ?>" class="btn btn-secondary">View E-commerce Success Stories</a>
+                    <a href="<?php echo esc_url(get_post_meta(get_the_ID(), '_ecommerce_cta_primary_url', true) ?: home_url('/contact')); ?>" class="btn btn-primary"><?php echo esc_html(get_post_meta(get_the_ID(), '_ecommerce_cta_primary_text', true) ?: "Get Free E-commerce Audit"); ?></a>
+                    <a href="<?php echo esc_url(get_post_meta(get_the_ID(), '_ecommerce_cta_secondary_url', true) ?: home_url('/case-studies')); ?>" class="btn btn-secondary"><?php echo esc_html(get_post_meta(get_the_ID(), '_ecommerce_cta_secondary_text', true) ?: "View E-commerce Success Stories"); ?></a>
                 </div>
                 <div class="cta-benefits">
-                    <span class="benefit">✓ Conversion rate optimization</span>
-                    <span class="benefit">✓ Multi-channel strategies</span>
-                    <span class="benefit">✓ ROI-focused campaigns</span>
+                    <?php 
+                    $benefits = get_post_meta(get_the_ID(), '_ecommerce_cta_benefits', true);
+                    if (empty($benefits)) {
+                        $benefits = array(
+                            '✓ Conversion rate optimization',
+                            '✓ Multi-channel strategies',
+                            '✓ ROI-focused campaigns'
+                        );
+                    }
+                    foreach ($benefits as $benefit) {
+                        echo '<span class="benefit">' . esc_html($benefit) . '</span>';
+                    }
+                    ?>
                 </div>
             </div>
         </section>
