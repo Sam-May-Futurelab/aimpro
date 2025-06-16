@@ -59,6 +59,47 @@ get_header();
     flex-wrap: wrap !important;
 }
 
+/* Ensure industries section has proper styling */
+#primary.google-ads-page .industries-section {
+    background: #f8fafc !important;
+    padding: 80px 0 !important;
+}
+
+#primary.google-ads-page .industries-grid {
+    display: grid !important;
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 30px !important;
+    margin-top: 40px !important;
+}
+
+#primary.google-ads-page .industry-item {
+    background: white !important;
+    padding: 30px !important;
+    border-radius: 12px !important;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05) !important;
+    transition: transform 0.3s ease, box-shadow 0.3s ease !important;
+    text-align: left !important;
+}
+
+#primary.google-ads-page .industry-item:hover {
+    transform: translateY(-5px) !important;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1) !important;
+}
+
+#primary.google-ads-page .industry-item h4 {
+    font-size: 20px !important;
+    color: #F15A25 !important;
+    margin-bottom: 10px !important;
+    font-weight: 600 !important;
+}
+
+#primary.google-ads-page .industry-item p {
+    color: #64748b !important;
+    line-height: 1.6 !important;
+    margin: 0 !important;
+    font-size: 15px !important;
+}
+
 #primary.google-ads-page #contact.cta-section .cta-features span {
     color: white !important;
     font-size: 16px !important;
@@ -361,28 +402,12 @@ get_header();
                 <div class="industry-item">
                     <h4><?php echo esc_html($industry_name); ?></h4>
                     <p><?php echo esc_html($industry_description); ?></p>
-                </div>
-                <?php endfor; ?>
+                </div>                <?php endfor; ?>
             </div>
         </div>
     </section>
-                    <p>Online stores, shopping campaigns, and product advertising optimization.</p>
-                </div>
-                <div class="industry-item">
-                    <h4>Home Services</h4>
-                    <p>Plumbers, electricians, HVAC, roofing, and local service providers.</p>
-                </div>
-                <div class="industry-item">
-                    <h4>Financial Services</h4>
-                    <p>Insurance, mortgages, financial planning, and investment services.</p>
-                </div>
-                <div class="industry-item">
-                    <h4>B2B Services</h4>
-                    <p>Professional services, consulting, software, and business solutions.</p>
-                </div>
-            </div>
-        </div>
-    </section>    <!-- Pricing Section -->
+
+    <!-- Pricing Section -->
     <section class="pricing-section">
         <?php
         // Get pricing data
