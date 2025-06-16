@@ -94,285 +94,277 @@ get_header();
                 <span class="current">Google Ads Management</span>
             </nav>
         </div>
-    </div>
-
-    <!-- Hero Section -->
+    </div>    <!-- Hero Section -->
     <section class="page-hero services-hero google-ads-hero">
+        <?php
+        // Get meta values with fallbacks to defaults
+        $defaults = aimpro_get_google_ads_default_values();
+        
+        $hero_badge = get_post_meta(get_the_ID(), '_google_ads_hero_badge', true);
+        if (empty($hero_badge)) $hero_badge = $defaults['hero_badge'];
+        
+        $hero_title = get_post_meta(get_the_ID(), '_google_ads_hero_title', true);
+        if (empty($hero_title)) $hero_title = $defaults['hero_title'];
+        
+        $hero_subtitle = get_post_meta(get_the_ID(), '_google_ads_hero_subtitle', true);
+        if (empty($hero_subtitle)) $hero_subtitle = $defaults['hero_subtitle'];
+        
+        // Hero stats
+        $hero_stat1_number = get_post_meta(get_the_ID(), '_google_ads_hero_stat1_number', true);
+        if (empty($hero_stat1_number)) $hero_stat1_number = $defaults['hero_stat1_number'];
+        
+        $hero_stat1_label = get_post_meta(get_the_ID(), '_google_ads_hero_stat1_label', true);
+        if (empty($hero_stat1_label)) $hero_stat1_label = $defaults['hero_stat1_label'];
+        
+        $hero_stat2_number = get_post_meta(get_the_ID(), '_google_ads_hero_stat2_number', true);
+        if (empty($hero_stat2_number)) $hero_stat2_number = $defaults['hero_stat2_number'];
+        
+        $hero_stat2_label = get_post_meta(get_the_ID(), '_google_ads_hero_stat2_label', true);
+        if (empty($hero_stat2_label)) $hero_stat2_label = $defaults['hero_stat2_label'];
+        
+        $hero_stat3_number = get_post_meta(get_the_ID(), '_google_ads_hero_stat3_number', true);
+        if (empty($hero_stat3_number)) $hero_stat3_number = $defaults['hero_stat3_number'];
+        
+        $hero_stat3_label = get_post_meta(get_the_ID(), '_google_ads_hero_stat3_label', true);
+        if (empty($hero_stat3_label)) $hero_stat3_label = $defaults['hero_stat3_label'];
+        
+        // Hero CTAs
+        $hero_cta1_text = get_post_meta(get_the_ID(), '_google_ads_hero_cta1_text', true);
+        if (empty($hero_cta1_text)) $hero_cta1_text = $defaults['hero_cta1_text'];
+        
+        $hero_cta2_text = get_post_meta(get_the_ID(), '_google_ads_hero_cta2_text', true);
+        if (empty($hero_cta2_text)) $hero_cta2_text = $defaults['hero_cta2_text'];
+        ?>
         <div class="hero-background">
             <div class="hero-pattern"></div>
         </div>
         <div class="container">
-            <div class="hero-content">                <div class="hero-badge">
-                    <span>Google Premier Partner</span>
+            <div class="hero-content">
+                <div class="hero-badge">
+                    <span><?php echo esc_html($hero_badge); ?></span>
                 </div>
-                <h1>Google Ads Management That <span class="highlight">DOMINATES SEARCH</span></h1>
-                <p class="hero-subtitle">Stop losing money on Google Ads. Our certified experts create high-converting campaigns that turn search traffic into paying customers with <strong>199% increase in conversion rates</strong>.</p><div class="hero-stats">
+                <h1><?php echo wp_kses_post($hero_title); ?></h1>
+                <p class="hero-subtitle"><?php echo wp_kses_post($hero_subtitle); ?></p>
+                <div class="hero-stats">
                     <div class="stat-item">
-                        <span class="stat-number">199%</span>
-                        <span class="stat-label">Increase in Conversion Rates</span>
+                        <span class="stat-number"><?php echo esc_html($hero_stat1_number); ?></span>
+                        <span class="stat-label"><?php echo esc_html($hero_stat1_label); ?></span>
                     </div>
                     <div class="stat-item">
-                        <span class="stat-number">67%</span>
-                        <span class="stat-label">Lower Cost Per Click</span>
+                        <span class="stat-number"><?php echo esc_html($hero_stat2_number); ?></span>
+                        <span class="stat-label"><?php echo esc_html($hero_stat2_label); ?></span>
                     </div>
                     <div class="stat-item">
-                        <span class="stat-number">£1.8M+</span>
-                        <span class="stat-label">Google Ads Managed</span>
+                        <span class="stat-number"><?php echo esc_html($hero_stat3_number); ?></span>
+                        <span class="stat-label"><?php echo esc_html($hero_stat3_label); ?></span>
                     </div>
-                </div>                <div class="hero-ctas">
-                    <a href="#contact" class="btn-primary streamlined">Get Free Google Ads Audit</a>
-                    <a href="#services" class="btn-outline streamlined">View Google Ads Services</a>
+                </div>
+                <div class="hero-ctas">
+                    <a href="#contact" class="btn-primary streamlined"><?php echo esc_html($hero_cta1_text); ?></a>
+                    <a href="#services" class="btn-outline streamlined"><?php echo esc_html($hero_cta2_text); ?></a>
                 </div>
             </div>
         </div>
-    </section>
-
-    <!-- Services Section -->
+    </section>    <!-- Services Section -->
     <section id="services" class="services-overview-section">
+        <?php
+        // Get services data
+        $services_title = get_post_meta(get_the_ID(), '_google_ads_services_title', true);
+        if (empty($services_title)) $services_title = $defaults['services_title'];
+        
+        $services_subtitle = get_post_meta(get_the_ID(), '_google_ads_services_subtitle', true);
+        if (empty($services_subtitle)) $services_subtitle = $defaults['services_subtitle'];
+        ?>
         <div class="container">
             <div class="section-header">
-                <h2>Complete Google Ads Solutions</h2>
-                <p>From search campaigns to YouTube advertising, we manage every aspect of your Google Ads presence for maximum impact and ROI.</p>
+                <h2><?php echo esc_html($services_title); ?></h2>
+                <p><?php echo esc_html($services_subtitle); ?></p>
             </div>
 
             <div class="services-grid">
+                <?php for ($i = 1; $i <= 6; $i++):
+                    $service_title = get_post_meta(get_the_ID(), "_google_ads_service_title_{$i}", true);
+                    if (empty($service_title)) $service_title = $defaults["service_title_{$i}"];
+                    
+                    $service_content = get_post_meta(get_the_ID(), "_google_ads_service_content_{$i}", true);
+                    if (empty($service_content)) $service_content = $defaults["service_content_{$i}"];
+                    
+                    $service_features = get_post_meta(get_the_ID(), "_google_ads_service_features_{$i}", true);
+                    if (empty($service_features)) $service_features = $defaults["service_features_{$i}"];
+                    
+                    // Convert features to array
+                    $features_array = explode("\n", $service_features);
+                    
+                    // Service icons array
+                    $service_icons = [
+                        1 => '<circle cx="11" cy="11" r="8"></circle><path d="21 21l-4.35-4.35"></path>',
+                        2 => '<rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><circle cx="9" cy="9" r="2"></circle><path d="21 15l-3.086-3.086a2 2 0 0 0-2.828 0L6 21"></path>',
+                        3 => '<rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line>',
+                        4 => '<polygon points="23 7 16 12 23 17 23 7"></polygon><rect x="1" y="5" width="15" height="14" rx="2" ry="2"></rect>',
+                        5 => '<path d="M22 12h-4l-3 9L9 3l-3 9H2"></path>',
+                        6 => '<path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle>'
+                    ];
+                ?>
                 <div class="service-card">
                     <div class="service-icon">
                         <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <circle cx="11" cy="11" r="8"></circle>
-                            <path d="21 21l-4.35-4.35"></path>
+                            <?php echo $service_icons[$i]; ?>
                         </svg>
                     </div>
-                    <h3>Search Campaigns</h3>
-                    <p>Target high-intent keywords when customers are actively searching for your products or services.</p>
+                    <h3><?php echo esc_html($service_title); ?></h3>
+                    <p><?php echo esc_html($service_content); ?></p>
                     <ul class="service-features">
-                        <li>Keyword research & strategy</li>
-                        <li>Ad copy testing & optimization</li>
-                        <li>Bid management</li>
-                        <li>Landing page optimization</li>
+                        <?php foreach ($features_array as $feature): ?>
+                            <li><?php echo esc_html(trim($feature)); ?></li>
+                        <?php endforeach; ?>
                     </ul>
                 </div>
-
-                <div class="service-card">
-                    <div class="service-icon">
-                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
-                            <circle cx="9" cy="9" r="2"></circle>
-                            <path d="21 15l-3.086-3.086a2 2 0 0 0-2.828 0L6 21"></path>
-                        </svg>
-                    </div>
-                    <h3>Display Campaigns</h3>
-                    <p>Reach potential customers across millions of websites with compelling visual advertisements.</p>
-                    <ul class="service-features">
-                        <li>Responsive display ads</li>
-                        <li>Audience targeting</li>
-                        <li>Remarketing campaigns</li>
-                        <li>Creative optimization</li>
-                    </ul>
-                </div>
-
-                <div class="service-card">
-                    <div class="service-icon">
-                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
-                            <line x1="8" y1="21" x2="16" y2="21"></line>
-                            <line x1="12" y1="17" x2="12" y2="21"></line>
-                        </svg>
-                    </div>
-                    <h3>Shopping Campaigns</h3>
-                    <p>Showcase your products directly in Google search results with optimized shopping ads.</p>
-                    <ul class="service-features">
-                        <li>Product feed optimization</li>
-                        <li>Smart shopping campaigns</li>
-                        <li>Merchant Center setup</li>
-                        <li>Performance monitoring</li>
-                    </ul>
-                </div>
-
-                <div class="service-card">
-                    <div class="service-icon">
-                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <polygon points="23 7 16 12 23 17 23 7"></polygon>
-                            <rect x="1" y="5" width="15" height="14" rx="2" ry="2"></rect>
-                        </svg>
-                    </div>
-                    <h3>YouTube Advertising</h3>
-                    <p>Engage audiences with video advertising on the world's largest video platform.</p>
-                    <ul class="service-features">
-                        <li>Video ad creation</li>
-                        <li>Audience targeting</li>
-                        <li>Campaign optimization</li>
-                        <li>Performance tracking</li>
-                    </ul>
-                </div>
-
-                <div class="service-card">
-                    <div class="service-icon">
-                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <circle cx="12" cy="12" r="3"></circle>
-                            <path d="M12 1v6m0 6v6m11-7h-6m-6 0H1"></path>
-                        </svg>
-                    </div>
-                    <h3>Performance Max</h3>
-                    <p>Leverage Google's AI to maximize performance across all Google Ads inventory.</p>
-                    <ul class="service-features">
-                        <li>Automated bidding</li>
-                        <li>Cross-network reach</li>
-                        <li>Asset optimization</li>
-                        <li>Conversion tracking</li>
-                    </ul>
-                </div>
-
-                <div class="service-card">
-                    <div class="service-icon">
-                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path>
-                            <polyline points="7.5 4.21 12 6.81 16.5 4.21"></polyline>
-                            <polyline points="7.5 19.79 7.5 14.6 3 12"></polyline>
-                            <polyline points="21 12 16.5 14.6 16.5 19.79"></polyline>
-                        </svg>
-                    </div>
-                    <h3>Local Campaigns</h3>
-                    <p>Drive foot traffic and local actions with location-based advertising campaigns.</p>
-                    <ul class="service-features">
-                        <li>Local store visits</li>
-                        <li>Location extensions</li>
-                        <li>Store sales tracking</li>
-                        <li>Radius targeting</li>
-                    </ul>
-                </div>
+                <?php endfor; ?>
             </div>
         </div>
-    </section>
-
-    <!-- Case Study Section -->
+    </section>    <!-- Case Study Section -->
     <section class="case-study-section">
+        <?php
+        // Get case study data
+        $case_study_label = get_post_meta(get_the_ID(), '_google_ads_case_study_label', true);
+        if (empty($case_study_label)) $case_study_label = $defaults['case_study_label'];
+        
+        $case_study_title = get_post_meta(get_the_ID(), '_google_ads_case_study_title', true);
+        if (empty($case_study_title)) $case_study_title = $defaults['case_study_title'];
+        
+        $case_study_challenge = get_post_meta(get_the_ID(), '_google_ads_case_study_challenge', true);
+        if (empty($case_study_challenge)) $case_study_challenge = $defaults['case_study_challenge'];
+        
+        $case_study_solution = get_post_meta(get_the_ID(), '_google_ads_case_study_solution', true);
+        if (empty($case_study_solution)) $case_study_solution = $defaults['case_study_solution'];
+        
+        $case_study_results_intro = get_post_meta(get_the_ID(), '_google_ads_case_study_results_intro', true);
+        if (empty($case_study_results_intro)) $case_study_results_intro = $defaults['case_study_results_intro'];
+        ?>
         <div class="container">
             <div class="case-study-card">
                 <div class="case-study-content">
                     <div class="case-study-header">
-                        <span class="case-study-label">Google Ads Success Story</span>
-                        <h2>Law Firm Increases Qualified Leads by 340% with Strategic Google Ads</h2>
+                        <span class="case-study-label"><?php echo esc_html($case_study_label); ?></span>
+                        <h2><?php echo esc_html($case_study_title); ?></h2>
                     </div>
                     <div class="case-study-story">
-                        <p><strong>The Challenge:</strong> A Manchester-based law firm was struggling with expensive Google Ads campaigns that generated low-quality leads, wasting £5,000+ monthly budget.</p>
-                        <p><strong>Our Solution:</strong> We restructured their campaigns with precise keyword targeting, created compelling ad copy focused on legal expertise, and implemented advanced conversion tracking.</p>
-                        <p><strong>The Results:</strong> Within 120 days, we transformed their Google Ads performance completely.</p>
+                        <p><strong>The Challenge:</strong> <?php echo esc_html($case_study_challenge); ?></p>
+                        <p><strong>Our Solution:</strong> <?php echo esc_html($case_study_solution); ?></p>
+                        <p><strong>The Results:</strong> <?php echo esc_html($case_study_results_intro); ?></p>
                     </div>
                     <div class="case-study-results">
+                        <?php for ($i = 1; $i <= 4; $i++):
+                            $case_result_number = get_post_meta(get_the_ID(), "_google_ads_case_result_{$i}_number", true);
+                            if (empty($case_result_number)) $case_result_number = $defaults["case_result_{$i}_number"];
+                            
+                            $case_result_label = get_post_meta(get_the_ID(), "_google_ads_case_result_{$i}_label", true);
+                            if (empty($case_result_label)) $case_result_label = $defaults["case_result_{$i}_label"];
+                        ?>
                         <div class="result-item">
-                            <span class="result-number">340%</span>
-                            <span class="result-label">Increase in Qualified Leads</span>
+                            <span class="result-number"><?php echo esc_html($case_result_number); ?></span>
+                            <span class="result-label"><?php echo esc_html($case_result_label); ?></span>
                         </div>
-                        <div class="result-item">
-                            <span class="result-number">58%</span>
-                            <span class="result-label">Lower Cost Per Lead</span>
-                        </div>
-                        <div class="result-item">
-                            <span class="result-number">720%</span>
-                            <span class="result-label">Return on Ad Spend</span>
-                        </div>
-                        <div class="result-item">
-                            <span class="result-number">£85,000</span>
-                            <span class="result-label">Monthly Revenue Generated</span>
-                        </div>
+                        <?php endfor; ?>
                     </div>
                 </div>
             </div>
         </div>
-    </section>
-
-    <!-- Process Section -->
+    </section>    <!-- Process Section -->
     <section class="process-section">
+        <?php
+        // Get process data
+        $process_title = get_post_meta(get_the_ID(), '_google_ads_process_title', true);
+        if (empty($process_title)) $process_title = $defaults['process_title'];
+        
+        $process_subtitle = get_post_meta(get_the_ID(), '_google_ads_process_subtitle', true);
+        if (empty($process_subtitle)) $process_subtitle = $defaults['process_subtitle'];
+        ?>
         <div class="container">
             <div class="section-header">
-                <h2>Our Google Ads Management Process</h2>
-                <p>We follow a proven methodology that consistently delivers exceptional results for our clients.</p>
+                <h2><?php echo esc_html($process_title); ?></h2>
+                <p><?php echo esc_html($process_subtitle); ?></p>
             </div>
             <div class="process-steps">
+                <?php for ($i = 1; $i <= 5; $i++):
+                    $step_number = get_post_meta(get_the_ID(), "_google_ads_process_step_number_{$i}", true);
+                    if (empty($step_number)) $step_number = $defaults["process_step_number_{$i}"];
+                    
+                    $step_title = get_post_meta(get_the_ID(), "_google_ads_process_step_title_{$i}", true);
+                    if (empty($step_title)) $step_title = $defaults["process_step_title_{$i}"];
+                    
+                    $step_content = get_post_meta(get_the_ID(), "_google_ads_process_step_content_{$i}", true);
+                    if (empty($step_content)) $step_content = $defaults["process_step_content_{$i}"];
+                ?>
                 <div class="process-step">
-                    <div class="step-number">01</div>
-                    <h3>Account Audit</h3>
-                    <p>Comprehensive analysis of your current Google Ads performance and opportunities.</p>
+                    <div class="step-number"><?php echo esc_html($step_number); ?></div>
+                    <h3><?php echo esc_html($step_title); ?></h3>
+                    <p><?php echo esc_html($step_content); ?></p>
                 </div>
-                <div class="process-step">
-                    <div class="step-number">02</div>
-                    <h3>Strategy Development</h3>
-                    <p>Create a custom strategy based on your goals, industry, and target audience.</p>
-                </div>
-                <div class="process-step">
-                    <div class="step-number">03</div>
-                    <h3>Campaign Build</h3>
-                    <p>Build optimized campaigns with proper structure, keywords, and tracking setup.</p>
-                </div>
-                <div class="process-step">
-                    <div class="step-number">04</div>
-                    <h3>Launch & Monitor</h3>
-                    <p>Launch campaigns and closely monitor performance during the critical first weeks.</p>
-                </div>
-                <div class="process-step">
-                    <div class="step-number">05</div>
-                    <h3>Optimize & Scale</h3>
-                    <p>Continuously optimize based on performance data and scale successful campaigns.</p>
-                </div>
+                <?php endfor; ?>
             </div>
         </div>
-    </section>
-
-    <!-- Tools & Technologies -->
+    </section>    <!-- Tools & Technologies -->
     <section class="tools-section">
+        <?php
+        // Get tools data
+        $tools_title = get_post_meta(get_the_ID(), '_google_ads_tools_title', true);
+        if (empty($tools_title)) $tools_title = $defaults['tools_title'];
+        
+        $tools_subtitle = get_post_meta(get_the_ID(), '_google_ads_tools_subtitle', true);
+        if (empty($tools_subtitle)) $tools_subtitle = $defaults['tools_subtitle'];
+        ?>
         <div class="container">
             <div class="section-header">
-                <h2>Advanced Tools & Technologies</h2>
-                <p>We use cutting-edge tools and technologies to maximize your Google Ads performance.</p>
+                <h2><?php echo esc_html($tools_title); ?></h2>
+                <p><?php echo esc_html($tools_subtitle); ?></p>
             </div>
             <div class="tools-grid">
+                <?php for ($i = 1; $i <= 6; $i++):
+                    $tool_name = get_post_meta(get_the_ID(), "_google_ads_tool_name_{$i}", true);
+                    if (empty($tool_name)) $tool_name = $defaults["tool_name_{$i}"];
+                    
+                    $tool_description = get_post_meta(get_the_ID(), "_google_ads_tool_description_{$i}", true);
+                    if (empty($tool_description)) $tool_description = $defaults["tool_description_{$i}"];
+                ?>
                 <div class="tool-item">
-                    <h4>Google Ads Editor</h4>
-                    <p>Bulk campaign management and optimization</p>
+                    <h4><?php echo esc_html($tool_name); ?></h4>
+                    <p><?php echo esc_html($tool_description); ?></p>
                 </div>
-                <div class="tool-item">
-                    <h4>Google Analytics 4</h4>
-                    <p>Advanced conversion tracking and attribution</p>
+                <?php endfor; ?>
+            </div>
+        </div>
+    </section>    <!-- Industry Focus -->
+    <section class="industries-section">
+        <?php
+        // Get industries data
+        $industries_title = get_post_meta(get_the_ID(), '_google_ads_industries_title', true);
+        if (empty($industries_title)) $industries_title = $defaults['industries_title'];
+        
+        $industries_subtitle = get_post_meta(get_the_ID(), '_google_ads_industries_subtitle', true);
+        if (empty($industries_subtitle)) $industries_subtitle = $defaults['industries_subtitle'];
+        ?>
+        <div class="container">
+            <div class="section-header">
+                <h2><?php echo esc_html($industries_title); ?></h2>
+                <p><?php echo esc_html($industries_subtitle); ?></p>
+            </div>
+            <div class="industries-grid">
+                <?php for ($i = 1; $i <= 6; $i++):
+                    $industry_name = get_post_meta(get_the_ID(), "_google_ads_industry_name_{$i}", true);
+                    if (empty($industry_name)) $industry_name = $defaults["industry_name_{$i}"];
+                    
+                    $industry_description = get_post_meta(get_the_ID(), "_google_ads_industry_description_{$i}", true);
+                    if (empty($industry_description)) $industry_description = $defaults["industry_description_{$i}"];
+                ?>
+                <div class="industry-item">
+                    <h4><?php echo esc_html($industry_name); ?></h4>
+                    <p><?php echo esc_html($industry_description); ?></p>
                 </div>
-                <div class="tool-item">
-                    <h4>Google Tag Manager</h4>
-                    <p>Precise tracking implementation</p>
-                </div>
-                <div class="tool-item">
-                    <h4>Keyword Planner</h4>
-                    <p>Keyword research and forecasting</p>
-                </div>
-                <div class="tool-item">
-                    <h4>SEMrush/Ahrefs</h4>
-                    <p>Competitor analysis and keyword insights</p>
-                </div>
-                <div class="tool-item">
-                    <h4>Google Optimize</h4>
-                    <p>Landing page testing and optimization</p>
-                </div>
+                <?php endfor; ?>
             </div>
         </div>
     </section>
-
-    <!-- Industry Focus -->
-    <section class="industries-section">
-        <div class="container">
-            <div class="section-header">
-                <h2>Industries We Specialize In</h2>
-                <p>Our Google Ads expertise spans across multiple industries with proven success.</p>
-            </div>
-            <div class="industries-grid">
-                <div class="industry-item">
-                    <h4>Legal Services</h4>
-                    <p>Personal injury, family law, criminal defense, and corporate legal services.</p>
-                </div>
-                <div class="industry-item">
-                    <h4>Healthcare & Medical</h4>
-                    <p>Private practices, dental clinics, cosmetic surgery, and healthcare services.</p>
-                </div>
-                <div class="industry-item">
-                    <h4>E-commerce & Retail</h4>
                     <p>Online stores, shopping campaigns, and product advertising optimization.</p>
                 </div>
                 <div class="industry-item">
@@ -389,92 +381,126 @@ get_header();
                 </div>
             </div>
         </div>
-    </section>
-
-    <!-- Pricing Section -->
+    </section>    <!-- Pricing Section -->
     <section class="pricing-section">
+        <?php
+        // Get pricing data
+        $pricing_title = get_post_meta(get_the_ID(), '_google_ads_pricing_title', true);
+        if (empty($pricing_title)) $pricing_title = $defaults['pricing_title'];
+        
+        $pricing_subtitle = get_post_meta(get_the_ID(), '_google_ads_pricing_subtitle', true);
+        if (empty($pricing_subtitle)) $pricing_subtitle = $defaults['pricing_subtitle'];
+        ?>
         <div class="container">
             <div class="section-header">
-                <h2>Google Ads Management Packages</h2>
-                <p>Transparent pricing with no hidden fees. Choose the package that fits your business needs.</p>
+                <h2><?php echo esc_html($pricing_title); ?></h2>
+                <p><?php echo esc_html($pricing_subtitle); ?></p>
             </div>
             <div class="pricing-grid">
-                <div class="pricing-card">
+                <?php for ($i = 1; $i <= 3; $i++):
+                    $package_name = get_post_meta(get_the_ID(), "_google_ads_pricing_package_{$i}_name", true);
+                    if (empty($package_name)) $package_name = $defaults["pricing_package_{$i}_name"];
+                    
+                    $package_price = get_post_meta(get_the_ID(), "_google_ads_pricing_package_{$i}_price", true);
+                    if (empty($package_price)) $package_price = $defaults["pricing_package_{$i}_price"];
+                    
+                    $package_period = get_post_meta(get_the_ID(), "_google_ads_pricing_package_{$i}_period", true);
+                    if (empty($package_period)) $package_period = $defaults["pricing_package_{$i}_period"];
+                    
+                    $package_features = get_post_meta(get_the_ID(), "_google_ads_pricing_package_{$i}_features", true);
+                    if (empty($package_features)) $package_features = $defaults["pricing_package_{$i}_features"];
+                    
+                    $package_button_text = get_post_meta(get_the_ID(), "_google_ads_pricing_package_{$i}_button_text", true);
+                    if (empty($package_button_text)) $package_button_text = $defaults["pricing_package_{$i}_button_text"];
+                    
+                    // Optional fields for package 2
+                    $package_badge = '';
+                    $package_featured = false;
+                    if ($i == 2) {
+                        $package_badge = get_post_meta(get_the_ID(), "_google_ads_pricing_package_{$i}_badge", true);
+                        if (empty($package_badge) && isset($defaults["pricing_package_{$i}_badge"])) {
+                            $package_badge = $defaults["pricing_package_{$i}_badge"];
+                        }
+                        
+                        $package_featured = get_post_meta(get_the_ID(), "_google_ads_pricing_package_{$i}_featured", true);
+                        if (empty($package_featured) && isset($defaults["pricing_package_{$i}_featured"])) {
+                            $package_featured = $defaults["pricing_package_{$i}_featured"];
+                        }
+                    }
+                    
+                    // Convert features to array
+                    $features_array = explode("\n", $package_features);
+                ?>
+                <div class="pricing-card <?php echo ($package_featured) ? 'featured' : ''; ?>">
                     <div class="pricing-header">
-                        <h3>Starter</h3>
-                        <div class="price">£497<span>/month</span></div>
+                        <h3><?php echo esc_html($package_name); ?></h3>
+                        <div class="price"><?php echo esc_html($package_price); ?><span><?php echo esc_html($package_period); ?></span></div>
+                        <?php if (!empty($package_badge)): ?>
+                        <span class="popular-badge"><?php echo esc_html($package_badge); ?></span>
+                        <?php endif; ?>
                     </div>
                     <ul class="pricing-features">
-                        <li>Up to £2,000 ad spend</li>
-                        <li>2 campaign types</li>
-                        <li>Basic conversion tracking</li>
-                        <li>Monthly reporting</li>
-                        <li>Email support</li>
+                        <?php foreach ($features_array as $feature): ?>
+                            <li><?php echo esc_html(trim($feature)); ?></li>
+                        <?php endforeach; ?>
                     </ul>
-                    <a href="#contact" class="btn-outline">Get Started</a>
+                    <a href="#contact" class="btn-<?php echo ($package_featured) ? 'primary' : 'outline'; ?>"><?php echo esc_html($package_button_text); ?></a>
                 </div>
-                <div class="pricing-card featured">
-                    <div class="pricing-header">
-                        <h3>Professional</h3>
-                        <div class="price">£897<span>/month</span></div>
-                        <span class="popular-badge">Most Popular</span>
-                    </div>
-                    <ul class="pricing-features">
-                        <li>Up to £5,000 ad spend</li>
-                        <li>All campaign types</li>
-                        <li>Advanced conversion tracking</li>
-                        <li>Bi-weekly optimization</li>
-                        <li>Monthly strategy calls</li>
-                        <li>Priority support</li>
-                    </ul>
-                    <a href="#contact" class="btn-primary">Get Started</a>
-                </div>
-                <div class="pricing-card">
-                    <div class="pricing-header">
-                        <h3>Enterprise</h3>
-                        <div class="price">£1,497<span>/month</span></div>
-                    </div>
-                    <ul class="pricing-features">
-                        <li>£5,000+ ad spend</li>
-                        <li>Full campaign suite</li>
-                        <li>Advanced attribution</li>
-                        <li>Weekly optimization</li>
-                        <li>Dedicated account manager</li>
-                        <li>24/7 support</li>
-                    </ul>
-                    <a href="#contact" class="btn-outline">Get Started</a>
-                </div>
+                <?php endfor; ?>
             </div>
         </div>
-    </section>
-
-    <!-- Testimonial Section -->
+    </section>    <!-- Testimonial Section -->
     <section class="testimonial-section">
+        <?php
+        // Get testimonial data
+        $testimonial_quote = get_post_meta(get_the_ID(), '_google_ads_testimonial_quote', true);
+        if (empty($testimonial_quote)) $testimonial_quote = $defaults['testimonial_quote'];
+        
+        $testimonial_name = get_post_meta(get_the_ID(), '_google_ads_testimonial_name', true);
+        if (empty($testimonial_name)) $testimonial_name = $defaults['testimonial_name'];
+        
+        $testimonial_title = get_post_meta(get_the_ID(), '_google_ads_testimonial_title', true);
+        if (empty($testimonial_title)) $testimonial_title = $defaults['testimonial_title'];
+        ?>
         <div class="container">
             <div class="testimonial-card">
                 <div class="testimonial-content">
                     <div class="quote-mark">"</div>
-                    <p>"The results speak for themselves. Our Google Ads performance improved dramatically within the first month. Cost per lead dropped by 60% while lead quality increased significantly. Couldn't be happier with the service."</p>
+                    <p>"<?php echo esc_html($testimonial_quote); ?>"</p>
                     <div class="testimonial-author">
-                        <strong>James Richardson</strong>
-                        <span>Managing Director, Richardson Legal Services</span>
+                        <strong><?php echo esc_html($testimonial_name); ?></strong>
+                        <span><?php echo esc_html($testimonial_title); ?></span>
                     </div>
                 </div>
             </div>
         </div>
     </section>    <!-- CTA Section -->
     <section class="simple-cta-section">
+        <?php
+        // Get simple CTA data
+        $simple_cta_title = get_post_meta(get_the_ID(), '_google_ads_simple_cta_title', true);
+        if (empty($simple_cta_title)) $simple_cta_title = $defaults['simple_cta_title'];
+        
+        $simple_cta_content = get_post_meta(get_the_ID(), '_google_ads_simple_cta_content', true);
+        if (empty($simple_cta_content)) $simple_cta_content = $defaults['simple_cta_content'];
+        
+        $simple_cta_button_text = get_post_meta(get_the_ID(), '_google_ads_simple_cta_button_text', true);
+        if (empty($simple_cta_button_text)) $simple_cta_button_text = $defaults['simple_cta_button_text'];
+        ?>
         <div class="section-content">
             <div class="simple-cta-content">
-                <h2>Ready to Dominate Google Search?</h2>
-                <p>Get a free Google Ads audit and strategy session. We'll analyze your current performance and show you exactly how to improve your ROI.</p>
+                <h2><?php echo esc_html($simple_cta_title); ?></h2>
+                <p><?php echo esc_html($simple_cta_content); ?></p>
                 <div class="simple-cta-buttons">
-                    <a href="#contact-form" class="btn btn-primary">Get Free Google Ads Audit</a>
+                    <a href="#contact-form" class="btn btn-primary"><?php echo esc_html($simple_cta_button_text); ?></a>
                 </div>
                 <div class="simple-cta-features">
-                    <span>Free account analysis</span>
-                    <span>Competitor research</span>
-                    <span>Performance improvement plan</span>
+                    <?php for ($i = 1; $i <= 3; $i++):
+                        $simple_cta_feature = get_post_meta(get_the_ID(), "_google_ads_simple_cta_feature_{$i}", true);
+                        if (empty($simple_cta_feature)) $simple_cta_feature = $defaults["simple_cta_feature_{$i}"];
+                    ?>
+                    <span><?php echo esc_html($simple_cta_feature); ?></span>
+                    <?php endfor; ?>
                 </div>
             </div>
         </div>
