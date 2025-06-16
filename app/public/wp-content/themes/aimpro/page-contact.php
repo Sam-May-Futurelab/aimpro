@@ -20,10 +20,9 @@ get_header(); ?>
                 </div>
                 <h1>Get In Touch with <span class="text-gradient">Digital Marketing Experts</span></h1>
                 <p class="hero-description">Ready to transform your business? Let's discuss your digital marketing goals and create a strategy that delivers measurable results.</p>
-                
-                <!-- Quick Contact Options -->
+                  <!-- Quick Contact Options -->
                 <div class="quick-contact-grid">
-                    <a href="tel:+441212858490" class="quick-contact-item">
+                    <div class="quick-contact-item">
                         <div class="contact-icon">
                             <i class="fas fa-phone"></i>
                         </div>
@@ -31,8 +30,8 @@ get_header(); ?>
                             <span class="contact-label">Call Us Now</span>
                             <span class="contact-value">+44 121 285 8490</span>
                         </div>
-                    </a>
-                    <a href="mailto:hello@aimpro.co.uk" class="quick-contact-item">
+                    </div>
+                    <div class="quick-contact-item">
                         <div class="contact-icon">
                             <i class="fas fa-envelope"></i>
                         </div>
@@ -40,7 +39,7 @@ get_header(); ?>
                             <span class="contact-label">Email Us</span>
                             <span class="contact-value">hello@aimpro.co.uk</span>
                         </div>
-                    </a>
+                    </div>
                     <div class="quick-contact-item">
                         <div class="contact-icon">
                             <i class="fas fa-clock"></i>
@@ -53,12 +52,10 @@ get_header(); ?>
                 </div>
             </div>
         </div>
-    </section>
-
-    <!-- Main Content -->
+    </section>    <!-- Main Content -->
     <div class="contact-main-content">
         <div class="container">
-            <div class="contact-layout">
+            <div class="contact-layout-centered">
                 
                 <!-- Contact Form Section -->
                 <div class="contact-form-section">
@@ -339,6 +336,7 @@ get_header(); ?>
     border-radius: 15px;
     text-decoration: none;
     transition: all 0.3s ease;
+    cursor: default;
 }
 
 .quick-contact-item:hover {
@@ -351,12 +349,19 @@ get_header(); ?>
     font-size: 2rem;
     width: 60px;
     height: 60px;
-    background: var(--gradient-orange);
+    background: #000000;
     border-radius: 12px;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-shrink: 0;
+    color: #ffffff;
+}
+
+/* Light theme icon styling - keep them black */
+.light-theme .contact-icon {
+    background: #000000;
+    color: #ffffff;
 }
 
 .contact-details {
@@ -388,6 +393,18 @@ get_header(); ?>
     grid-template-columns: 2fr 1fr;
     gap: 4rem;
     align-items: start;
+}
+
+.contact-layout-centered {
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    width: 100%;
+}
+
+.contact-layout-centered .contact-form-section {
+    width: 100%;
+    max-width: 900px;
 }
 
 .contact-form-section .section-header {
@@ -765,6 +782,10 @@ get_header(); ?>
     .contact-layout {
         grid-template-columns: 1fr;
         gap: 3rem;
+    }
+    
+    .contact-layout-centered {
+        display: block;
     }
     
     .contact-hero h1 {
