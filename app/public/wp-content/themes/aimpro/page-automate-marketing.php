@@ -12,8 +12,8 @@ get_header(); ?>
         <!-- Page Header -->
         <section class="page-header">
             <div class="page-header-content">
-                <h1>Automate Marketing</h1>
-                <p class="page-subtitle">Streamline your marketing processes with intelligent automation that works 24/7</p>
+                <h1><?php echo esc_html(get_post_meta(get_the_ID(), '_automate_marketing_header_title', true) ?: 'Automate Marketing'); ?></h1>
+                <p class="page-subtitle"><?php echo esc_html(get_post_meta(get_the_ID(), '_automate_marketing_header_subtitle', true) ?: 'Streamline your marketing processes with intelligent automation that works 24/7'); ?></p>
             </div>
         </section>
 
@@ -22,18 +22,28 @@ get_header(); ?>
             <div class="section-content">
                 <div class="overview-content">
                     <div class="overview-text">
-                        <h2>Transform Manual Tasks Into Automated Success</h2>
-                        <p>Marketing automation eliminates repetitive tasks while delivering personalized experiences at scale. Our comprehensive automation strategies help you nurture leads, engage customers, and drive conversions without constant manual intervention, freeing your team to focus on strategy and growth.</p>
+                        <h2><?php echo esc_html(get_post_meta(get_the_ID(), '_automate_marketing_overview_title', true) ?: 'Transform Manual Tasks Into Automated Success'); ?></h2>
+                        <p><?php echo esc_html(get_post_meta(get_the_ID(), '_automate_marketing_overview_content', true) ?: 'Marketing automation eliminates repetitive tasks while delivering personalized experiences at scale. Our comprehensive automation strategies help you nurture leads, engage customers, and drive conversions without constant manual intervention, freeing your team to focus on strategy and growth.'); ?></p>
                         
                         <div class="solution-challenges">
-                            <h3>Marketing Automation Challenges We Solve:</h3>
+                            <h3><?php echo esc_html(get_post_meta(get_the_ID(), '_automate_marketing_challenges_title', true) ?: 'Marketing Automation Challenges We Solve:'); ?></h3>
                             <ul>
-                                <li>Time-consuming manual marketing tasks</li>
-                                <li>Inconsistent lead follow-up</li>
-                                <li>Difficulty scaling personalized campaigns</li>
-                                <li>Poor lead scoring and qualification</li>
-                                <li>Disconnected marketing and sales processes</li>
-                                <li>Lack of behavioral trigger campaigns</li>
+                                <?php
+                                $challenges = get_post_meta(get_the_ID(), '_automate_marketing_challenges', true);
+                                if (empty($challenges)) {
+                                    $challenges = array(
+                                        'Time-consuming manual marketing tasks',
+                                        'Inconsistent lead follow-up',
+                                        'Difficulty scaling personalized campaigns',
+                                        'Poor lead scoring and qualification',
+                                        'Disconnected marketing and sales processes',
+                                        'Lack of behavioral trigger campaigns'
+                                    );
+                                }
+                                foreach ($challenges as $challenge) {
+                                    echo '<li>' . esc_html($challenge) . '</li>';
+                                }
+                                ?>
                             </ul>
                         </div>
                     </div>
@@ -47,88 +57,97 @@ get_header(); ?>
         <!-- Automation Solutions -->
         <section class="automation-solutions">
             <div class="section-content">
-                <h2>Our Marketing Automation Solutions</h2>
+                <h2><?php echo esc_html(get_post_meta(get_the_ID(), '_automate_marketing_solutions_title', true) ?: 'Our Marketing Automation Solutions'); ?></h2>
                 <div class="solutions-grid">
                     
-                    <div class="solution-card">
-                        <div class="solution-icon">
-                            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M4 4H20C21.1 4 22 4.9 22 6V18C22 19.1 21.1 20 20 20H4C2.9 20 2 19.1 2 18V6C2 4.9 2.9 4 4 4Z" stroke="currentColor" stroke-width="2"/>
-                                <polyline points="22,6 12,13 2,6" stroke="currentColor" stroke-width="2"/>
-                            </svg>
-                        </div>
-                        <div class="solution-content">
-                            <h3>Email Marketing Automation</h3>
-                            <p>Create sophisticated email workflows that nurture leads and customers through personalized journeys.</p>
-                            <ul class="solution-features">
-                                <li>Welcome email sequences</li>
-                                <li>Abandoned cart recovery</li>
-                                <li>Behavioral trigger campaigns</li>
-                                <li>Re-engagement workflows</li>
-                            </ul>
-                        </div>
-                    </div>
+                    <?php
+                    $solutions = get_post_meta(get_the_ID(), '_automate_marketing_solutions', true);
+                    if (empty($solutions)) {
+                        $solutions = array(
+                            array(
+                                'title' => 'Email Marketing Automation',
+                                'description' => 'Create sophisticated email workflows that nurture leads and customers through personalized journeys.',
+                                'features' => array(
+                                    'Welcome email sequences',
+                                    'Abandoned cart recovery',
+                                    'Behavioral trigger campaigns',
+                                    'Re-engagement workflows'
+                                )
+                            ),
+                            array(
+                                'title' => 'Lead Scoring & Nurturing',
+                                'description' => 'Automatically score and segment leads based on behavior, demographics, and engagement levels.',
+                                'features' => array(
+                                    'Dynamic lead scoring models',
+                                    'Progressive profiling',
+                                    'Automated list segmentation',
+                                    'Sales-ready lead alerts'
+                                )
+                            ),
+                            array(
+                                'title' => 'Social Media Automation',
+                                'description' => 'Schedule, publish, and optimize social media content across multiple platforms automatically.',
+                                'features' => array(
+                                    'Content scheduling & publishing',
+                                    'Social listening automation',
+                                    'Automated response systems',
+                                    'Cross-platform campaigns'
+                                )
+                            ),
+                            array(
+                                'title' => 'CRM Integration & Workflows',
+                                'description' => 'Connect your marketing tools with sales systems for seamless lead handoffs and follow-up.',
+                                'features' => array(
+                                    'CRM data synchronization',
+                                    'Sales notification triggers',
+                                    'Pipeline automation',
+                                    'Customer lifecycle tracking'
+                                )
+                            )
+                        );
+                    }
 
-                    <div class="solution-card">
-                        <div class="solution-icon">
-                            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M17 21V19C17 17.9391 16.5786 16.9217 15.8284 16.1716C15.0783 15.4214 14.0609 15 13 15H5C3.93913 15 2.92172 15.4214 2.17157 16.1716C1.42143 16.9217 1 17.9391 1 19V21" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                <circle cx="9" cy="7" r="4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                <path d="M23 21V19C23 18.1645 22.7045 17.3541 22.1679 16.7116C21.6313 16.0691 20.8902 15.6316 20.07 15.4662" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                <path d="M16 3.13281C16.8902 3.29814 17.6313 3.73574 18.1679 4.37823C18.7045 5.02072 19 5.83115 19 6.66656C19 7.50197 18.7045 8.3124 18.1679 8.95489C17.6313 9.59738 16.8902 10.035 16 10.2003" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                            </svg>
-                        </div>
-                        <div class="solution-content">
-                            <h3>Lead Scoring & Nurturing</h3>
-                            <p>Automatically score and segment leads based on behavior, demographics, and engagement levels.</p>
-                            <ul class="solution-features">
-                                <li>Dynamic lead scoring models</li>
-                                <li>Progressive profiling</li>
-                                <li>Automated list segmentation</li>
-                                <li>Sales-ready lead alerts</li>
-                            </ul>
-                        </div>
-                    </div>
+                    $solution_icons = array(
+                        '<svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M4 4H20C21.1 4 22 4.9 22 6V18C22 19.1 21.1 20 20 20H4C2.9 20 2 19.1 2 18V6C2 4.9 2.9 4 4 4Z" stroke="currentColor" stroke-width="2"/>
+                            <polyline points="22,6 12,13 2,6" stroke="currentColor" stroke-width="2"/>
+                        </svg>',
+                        '<svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M17 21V19C17 17.9391 16.5786 16.9217 15.8284 16.1716C15.0783 15.4214 14.0609 15 13 15H5C3.93913 15 2.92172 15.4214 2.17157 16.1716C1.42143 16.9217 1 17.9391 1 19V21" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <circle cx="9" cy="7" r="4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M23 21V19C23 18.1645 22.7045 17.3541 22.1679 16.7116C21.6313 16.0691 20.8902 15.6316 20.07 15.4662" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M16 3.13281C16.8902 3.29814 17.6313 3.73574 18.1679 4.37823C18.7045 5.02072 19 5.83115 19 6.66656C19 7.50197 18.7045 8.3124 18.1679 8.95489C17.6313 9.59738 16.8902 10.035 16 10.2003" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>',
+                        '<svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M18 20V10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M12 20V4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M6 20V14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>',
+                        '<svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M2 17L12 22L22 17" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M2 12L12 17L22 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>'
+                    );
 
+                    foreach ($solutions as $index => $solution) :
+                        $icon_index = $index % count($solution_icons);
+                    ?>
                     <div class="solution-card">
                         <div class="solution-icon">
-                            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M18 20V10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                <path d="M12 20V4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                <path d="M6 20V14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                            </svg>
+                            <?php echo $solution_icons[$icon_index]; ?>
                         </div>
                         <div class="solution-content">
-                            <h3>Social Media Automation</h3>
-                            <p>Schedule, publish, and optimize social media content across multiple platforms automatically.</p>
+                            <h3><?php echo esc_html($solution['title']); ?></h3>
+                            <p><?php echo esc_html($solution['description']); ?></p>
                             <ul class="solution-features">
-                                <li>Content scheduling & publishing</li>
-                                <li>Social listening automation</li>
-                                <li>Automated response systems</li>
-                                <li>Cross-platform campaigns</li>
+                                <?php foreach ($solution['features'] as $feature) : ?>
+                                    <li><?php echo esc_html($feature); ?></li>
+                                <?php endforeach; ?>
                             </ul>
                         </div>
                     </div>
-
-                    <div class="solution-card">
-                        <div class="solution-icon">
-                            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                <path d="M2 17L12 22L22 17" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                <path d="M2 12L12 17L22 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                            </svg>
-                        </div>
-                        <div class="solution-content">
-                            <h3>CRM Integration & Workflows</h3>
-                            <p>Connect your marketing tools with sales systems for seamless lead handoffs and follow-up.</p>
-                            <ul class="solution-features">
-                                <li>CRM data synchronization</li>
-                                <li>Sales notification triggers</li>
-                                <li>Pipeline automation</li>
-                                <li>Customer lifecycle tracking</li>
-                            </ul>
-                        </div>
-                    </div>
+                    <?php endforeach; ?>
 
                 </div>
             </div>
@@ -139,51 +158,85 @@ get_header(); ?>
             <div class="section-content">
                 <div class="case-study-content">
                     <div class="case-study-text">
-                        <span class="case-study-label">Success Story</span>
-                        <h2>GrowthTech: 60% Time Savings + 300% Lead Conversion</h2>
-                        <p>GrowthTech, a SaaS company, was spending 40+ hours per week on manual marketing tasks and struggling with inconsistent lead follow-up.</p>
+                        <span class="case-study-label"><?php echo esc_html(get_post_meta(get_the_ID(), '_automate_marketing_case_study_label', true) ?: 'Success Story'); ?></span>
+                        <h2><?php echo esc_html(get_post_meta(get_the_ID(), '_automate_marketing_case_study_title', true) ?: 'GrowthTech: 60% Time Savings + 300% Lead Conversion'); ?></h2>
+                        <p><?php echo esc_html(get_post_meta(get_the_ID(), '_automate_marketing_case_study_content', true) ?: 'GrowthTech, a SaaS company, was spending 40+ hours per week on manual marketing tasks and struggling with inconsistent lead follow-up.'); ?></p>
                         
                         <div class="case-study-challenge">
-                            <h3>The Challenge</h3>
+                            <h3><?php echo esc_html(get_post_meta(get_the_ID(), '_automate_marketing_case_study_challenge_title', true) ?: 'The Challenge'); ?></h3>
                             <ul>
-                                <li>40+ hours weekly on manual marketing tasks</li>
-                                <li>Inconsistent lead follow-up processes</li>
-                                <li>Poor lead qualification and scoring</li>
-                                <li>Disconnected marketing and sales teams</li>
+                                <?php
+                                $case_challenges = get_post_meta(get_the_ID(), '_automate_marketing_case_study_challenges', true);
+                                if (empty($case_challenges)) {
+                                    $case_challenges = array(
+                                        '40+ hours weekly on manual marketing tasks',
+                                        'Inconsistent lead follow-up processes',
+                                        'Poor lead qualification and scoring',
+                                        'Disconnected marketing and sales teams'
+                                    );
+                                }
+                                foreach ($case_challenges as $challenge) {
+                                    echo '<li>' . esc_html($challenge) . '</li>';
+                                }
+                                ?>
                             </ul>
                         </div>
 
                         <div class="case-study-solution">
-                            <h3>Our Solution</h3>
+                            <h3><?php echo esc_html(get_post_meta(get_the_ID(), '_automate_marketing_case_study_solution_title', true) ?: 'Our Solution'); ?></h3>
                             <ul>
-                                <li>Complete marketing automation setup</li>
-                                <li>Lead scoring and nurturing workflows</li>
-                                <li>CRM integration and sales automation</li>
-                                <li>Behavioral trigger campaign implementation</li>
+                                <?php
+                                $case_solutions = get_post_meta(get_the_ID(), '_automate_marketing_case_study_solutions', true);
+                                if (empty($case_solutions)) {
+                                    $case_solutions = array(
+                                        'Complete marketing automation setup',
+                                        'Lead scoring and nurturing workflows',
+                                        'CRM integration and sales automation',
+                                        'Behavioral trigger campaign implementation'
+                                    );
+                                }
+                                foreach ($case_solutions as $solution) {
+                                    echo '<li>' . esc_html($solution) . '</li>';
+                                }
+                                ?>
                             </ul>
                         </div>
                     </div>
                     <div class="case-study-results">
-                        <h3>Results After 3 Months</h3>
+                        <h3><?php echo esc_html(get_post_meta(get_the_ID(), '_automate_marketing_results_title', true) ?: 'Results After 3 Months'); ?></h3>
                         <div class="results-grid">
+                            <?php
+                            $results = get_post_meta(get_the_ID(), '_automate_marketing_results', true);
+                            if (empty($results)) {
+                                $results = array(
+                                    array(
+                                        'number' => '60%',
+                                        'label' => 'Time Savings'
+                                    ),
+                                    array(
+                                        'number' => '300%',
+                                        'label' => 'Lead Conversion Increase'
+                                    ),
+                                    array(
+                                        'number' => '85%',
+                                        'label' => 'Email Open Rate'
+                                    ),
+                                    array(
+                                        'number' => '45%',
+                                        'label' => 'Sales Cycle Reduction'
+                                    )
+                                );
+                            }
+                            
+                            foreach ($results as $result) :
+                            ?>
                             <div class="result-item">
-                                <div class="result-number">60%</div>
-                                <div class="result-label">Time Savings</div>
+                                <div class="result-number"><?php echo esc_html($result['number']); ?></div>
+                                <div class="result-label"><?php echo esc_html($result['label']); ?></div>
                             </div>
-                            <div class="result-item">
-                                <div class="result-number">300%</div>
-                                <div class="result-label">Lead Conversion Increase</div>
-                            </div>
-                            <div class="result-item">
-                                <div class="result-number">85%</div>
-                                <div class="result-label">Email Open Rate</div>
-                            </div>
-                            <div class="result-item">
-                                <div class="result-number">45%</div>
-                                <div class="result-label">Sales Cycle Reduction</div>
-                            </div>
+                            <?php endforeach; ?>
                         </div>
-                        <a href="<?php echo home_url('/case-studies'); ?>" class="case-study-link">Read Full Case Study</a>
+                        <a href="<?php echo home_url(get_post_meta(get_the_ID(), '_automate_marketing_case_study_link_url', true) ?: '/case-studies'); ?>" class="case-study-link"><?php echo esc_html(get_post_meta(get_the_ID(), '_automate_marketing_case_study_link_text', true) ?: 'Read Full Case Study'); ?></a>
                     </div>
                 </div>
             </div>
@@ -192,89 +245,95 @@ get_header(); ?>
         <!-- Automation Process -->
         <section class="automation-process">
             <div class="section-content">
-                <h2>Our Marketing Automation Process</h2>
+                <h2><?php echo esc_html(get_post_meta(get_the_ID(), '_automate_marketing_process_title', true) ?: 'Our Marketing Automation Process'); ?></h2>
                 <div class="process-steps">
                     
-                    <div class="process-step">
-                        <div class="step-number">1</div>
-                        <div class="step-content">
-                            <h3>Current State Analysis</h3>
-                            <p>Audit your existing marketing processes to identify automation opportunities and pain points.</p>
-                        </div>
-                    </div>
+                    <?php
+                    $process_steps = get_post_meta(get_the_ID(), '_automate_marketing_process_steps', true);
+                    if (empty($process_steps)) {
+                        $process_steps = array(
+                            array(
+                                'number' => '1',
+                                'title' => 'Current State Analysis',
+                                'description' => 'Audit your existing marketing processes to identify automation opportunities and pain points.'
+                            ),
+                            array(
+                                'number' => '2',
+                                'title' => 'Workflow Design & Mapping',
+                                'description' => 'Create comprehensive automation workflows that align with your customer journey and business goals.'
+                            ),
+                            array(
+                                'number' => '3',
+                                'title' => 'Platform Setup & Integration',
+                                'description' => 'Configure automation tools, integrate systems, and set up tracking for optimal performance.'
+                            ),
+                            array(
+                                'number' => '4',
+                                'title' => 'Testing & Optimization',
+                                'description' => 'Monitor performance, A/B test workflows, and continuously optimize for better results.'
+                            )
+                        );
+                    }
 
+                    foreach ($process_steps as $step) :
+                    ?>
                     <div class="process-step">
-                        <div class="step-number">2</div>
+                        <div class="step-number"><?php echo esc_html($step['number']); ?></div>
                         <div class="step-content">
-                            <h3>Workflow Design & Mapping</h3>
-                            <p>Create comprehensive automation workflows that align with your customer journey and business goals.</p>
+                            <h3><?php echo esc_html($step['title']); ?></h3>
+                            <p><?php echo esc_html($step['description']); ?></p>
                         </div>
                     </div>
-
-                    <div class="process-step">
-                        <div class="step-number">3</div>
-                        <div class="step-content">
-                            <h3>Platform Setup & Integration</h3>
-                            <p>Configure automation tools, integrate systems, and set up tracking for optimal performance.</p>
-                        </div>
-                    </div>
-
-                    <div class="process-step">
-                        <div class="step-number">4</div>
-                        <div class="step-content">
-                            <h3>Testing & Optimization</h3>
-                            <p>Monitor performance, A/B test workflows, and continuously optimize for better results.</p>
-                        </div>
-                    </div>
+                    <?php endforeach; ?>
 
                 </div>
             </div>
         </section>
 
-        <!-- Automation Benefits -->        <section class="automation-benefits">
+        <!-- Automation Benefits -->
+        <section class="automation-benefits">
             <div class="section-content">
-                <h2>Marketing Automation Benefits</h2>
+                <h2><?php echo esc_html(get_post_meta(get_the_ID(), '_automate_marketing_benefits_title', true) ?: 'Marketing Automation Benefits'); ?></h2>
                 <div class="benefits-grid-4">
-                      <div class="benefit-card">
-                        <div class="benefit-icon">
-                            <i class="fas fa-clock"></i>
-                        </div>
-                        <div class="benefit-content">
-                            <h3>Time Savings</h3>
-                            <p>Save 40+ hours per week by automating repetitive marketing tasks and workflows.</p>
-                        </div>
-                    </div>
+                    <?php
+                    $benefits = get_post_meta(get_the_ID(), '_automate_marketing_benefits', true);
+                    if (empty($benefits)) {
+                        $benefits = array(
+                            array(
+                                'title' => 'Time Savings',
+                                'description' => 'Save 40+ hours per week by automating repetitive marketing tasks and workflows.',
+                                'icon_class' => 'fas fa-clock'
+                            ),
+                            array(
+                                'title' => 'Better Lead Quality',
+                                'description' => 'Improve lead scoring and qualification to focus sales efforts on highest-value prospects.',
+                                'icon_class' => 'fas fa-crosshairs'
+                            ),
+                            array(
+                                'title' => 'Increased Conversions',
+                                'description' => 'Nurture leads more effectively with personalized, timely communications that drive action.',
+                                'icon_class' => 'fas fa-chart-line'
+                            ),
+                            array(
+                                'title' => 'Consistent Execution',
+                                'description' => 'Ensure every lead receives consistent, professional follow-up regardless of team capacity.',
+                                'icon_class' => 'fas fa-sync-alt'
+                            )
+                        );
+                    }
 
+                    foreach ($benefits as $benefit) :
+                    ?>
                     <div class="benefit-card">
                         <div class="benefit-icon">
-                            <i class="fas fa-crosshairs"></i>
+                            <i class="<?php echo esc_attr($benefit['icon_class']); ?>"></i>
                         </div>
                         <div class="benefit-content">
-                            <h3>Better Lead Quality</h3>
-                            <p>Improve lead scoring and qualification to focus sales efforts on highest-value prospects.</p>
+                            <h3><?php echo esc_html($benefit['title']); ?></h3>
+                            <p><?php echo esc_html($benefit['description']); ?></p>
                         </div>
                     </div>
-
-                    <div class="benefit-card">
-                        <div class="benefit-icon">
-                            <i class="fas fa-chart-line"></i>
-                        </div>
-                        <div class="benefit-content">
-                            <h3>Increased Conversions</h3>
-                            <p>Nurture leads more effectively with personalized, timely communications that drive action.</p>
-                        </div>
-                    </div>
-
-                    <div class="benefit-card">
-                        <div class="benefit-icon">
-                            <i class="fas fa-sync-alt"></i>
-                        </div>
-                        <div class="benefit-content">
-                            <h3>Consistent Execution</h3>
-                            <p>Ensure every lead receives consistent, professional follow-up regardless of team capacity.</p>
-                        </div>
-                    </div>
-
+                    <?php endforeach; ?>
                 </div>
             </div>
         </section>
@@ -282,84 +341,109 @@ get_header(); ?>
         <!-- Automation Tools -->
         <section class="automation-tools">
             <div class="section-content">
-                <h2>Marketing Automation Platforms We Use</h2>
+                <h2><?php echo esc_html(get_post_meta(get_the_ID(), '_automate_marketing_tools_title', true) ?: 'Marketing Automation Platforms We Use'); ?></h2>
                 <div class="tools-grid">
                     
+                    <?php
+                    $tools_categories = get_post_meta(get_the_ID(), '_automate_marketing_tools_categories', true);
+                    if (empty($tools_categories)) {
+                        $tools_categories = array(
+                            array(
+                                'title' => 'Email Automation',
+                                'tools' => array(
+                                    'HubSpot Marketing Hub',
+                                    'Mailchimp Automation',
+                                    'ActiveCampaign',
+                                    'ConvertKit'
+                                )
+                            ),
+                            array(
+                                'title' => 'CRM Integration',
+                                'tools' => array(
+                                    'Salesforce Automation',
+                                    'HubSpot CRM',
+                                    'Pipedrive Workflows',
+                                    'Zoho CRM Plus'
+                                )
+                            ),
+                            array(
+                                'title' => 'Social Media Automation',
+                                'tools' => array(
+                                    'Hootsuite Scheduling',
+                                    'Buffer Automation',
+                                    'Sprout Social',
+                                    'Later Scheduling'
+                                )
+                            ),
+                            array(
+                                'title' => 'Analytics & Reporting',
+                                'tools' => array(
+                                    'Google Analytics 4',
+                                    'HubSpot Analytics',
+                                    'Mixpanel Events',
+                                    'Custom Dashboards'
+                                )
+                            )
+                        );
+                    }
+
+                    foreach ($tools_categories as $category) :
+                    ?>
                     <div class="tool-category">
-                        <h3>Email Automation</h3>
+                        <h3><?php echo esc_html($category['title']); ?></h3>
                         <ul class="tool-list">
-                            <li>HubSpot Marketing Hub</li>
-                            <li>Mailchimp Automation</li>
-                            <li>ActiveCampaign</li>
-                            <li>ConvertKit</li>
+                            <?php foreach ($category['tools'] as $tool) : ?>
+                                <li><?php echo esc_html($tool); ?></li>
+                            <?php endforeach; ?>
                         </ul>
                     </div>
-
-                    <div class="tool-category">
-                        <h3>CRM Integration</h3>
-                        <ul class="tool-list">
-                            <li>Salesforce Automation</li>
-                            <li>HubSpot CRM</li>
-                            <li>Pipedrive Workflows</li>
-                            <li>Zoho CRM Plus</li>
-                        </ul>
-                    </div>
-
-                    <div class="tool-category">
-                        <h3>Social Media Automation</h3>
-                        <ul class="tool-list">
-                            <li>Hootsuite Scheduling</li>
-                            <li>Buffer Automation</li>
-                            <li>Sprout Social</li>
-                            <li>Later Scheduling</li>
-                        </ul>
-                    </div>
-
-                    <div class="tool-category">
-                        <h3>Analytics & Reporting</h3>
-                        <ul class="tool-list">
-                            <li>Google Analytics 4</li>
-                            <li>HubSpot Analytics</li>
-                            <li>Mixpanel Events</li>
-                            <li>Custom Dashboards</li>
-                        </ul>
-                    </div>
-
+                    <?php endforeach; ?>
                 </div>
             </div>
         </section>
 
-        <!-- Automation Testimonial -->
+        <!-- Automation Testimonial (No Image) -->
         <section class="automation-testimonial">
             <div class="section-content">
                 <div class="testimonial-content">
                     <blockquote>
-                        "The marketing automation system Aimpro Digital implemented has been a game-changer. We've saved 25 hours per week on manual tasks and our lead conversion rate has tripled. The ROI has been incredible."
+                        "<?php echo esc_html(get_post_meta(get_the_ID(), '_automate_marketing_testimonial_quote', true) ?: 'The marketing automation system Aimpro Digital implemented has been a game-changer. We\'ve saved 25 hours per week on manual tasks and our lead conversion rate has tripled. The ROI has been incredible.'); ?>"
                     </blockquote>
                     <div class="testimonial-author">
-                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/testimonials/automation-david.jpg" alt="David Chen" />
                         <div class="author-info">
-                            <h4>David Chen</h4>
-                            <span>VP of Marketing, GrowthTech</span>
-                            <div class="author-company">SaaS Platform Company</div>
+                            <h4><?php echo esc_html(get_post_meta(get_the_ID(), '_automate_marketing_testimonial_name', true) ?: 'David Chen'); ?></h4>
+                            <span><?php echo esc_html(get_post_meta(get_the_ID(), '_automate_marketing_testimonial_position', true) ?: 'VP of Marketing, GrowthTech'); ?></span>
+                            <div class="author-company"><?php echo esc_html(get_post_meta(get_the_ID(), '_automate_marketing_testimonial_company', true) ?: 'SaaS Platform Company'); ?></div>
                         </div>
                     </div>
                 </div>
             </div>
-        </section>        <!-- CTA Section -->
+        </section>
+        
+        <!-- CTA Section -->
         <section class="cta-section">
             <div class="section-content">
                 <div class="cta-content">
-                    <h2>Ready to Automate Your Marketing?</h2>
-                    <p>Let's create a custom automation strategy that saves you time while improving your marketing results.</p>
+                    <h2><?php echo esc_html(get_post_meta(get_the_ID(), '_automate_marketing_cta_title', true) ?: 'Ready to Automate Your Marketing?'); ?></h2>
+                    <p><?php echo esc_html(get_post_meta(get_the_ID(), '_automate_marketing_cta_subtitle', true) ?: 'Let\'s create a custom automation strategy that saves you time while improving your marketing results.'); ?></p>
                     <div class="cta-buttons">
-                        <a href="<?php echo home_url('/contact'); ?>" class="btn btn-primary">Get Free Automation Audit</a>
-                        <a href="<?php echo home_url('/case-studies'); ?>" class="btn btn-secondary">View Automation Success Stories</a>
+                        <a href="<?php echo esc_url(home_url(get_post_meta(get_the_ID(), '_automate_marketing_cta_primary_url', true) ?: '/contact')); ?>" class="btn btn-primary"><?php echo esc_html(get_post_meta(get_the_ID(), '_automate_marketing_cta_primary_text', true) ?: 'Get Free Automation Audit'); ?></a>
+                        <a href="<?php echo esc_url(home_url(get_post_meta(get_the_ID(), '_automate_marketing_cta_secondary_url', true) ?: '/case-studies')); ?>" class="btn btn-secondary"><?php echo esc_html(get_post_meta(get_the_ID(), '_automate_marketing_cta_secondary_text', true) ?: 'View Automation Success Stories'); ?></a>
                     </div>
                     <div class="cta-features">
-                        <span>✓ Custom workflow design</span>
-                        <span>✓ Full platform integration</span>
-                        <span>✓ Ongoing optimization</span>
+                        <?php
+                        $features = get_post_meta(get_the_ID(), '_automate_marketing_cta_features', true);
+                        if (empty($features)) {
+                            $features = array(
+                                '✓ Custom workflow design',
+                                '✓ Full platform integration',
+                                '✓ Ongoing optimization'
+                            );
+                        }
+                        foreach ($features as $feature) {
+                            echo '<span>' . esc_html($feature) . '</span>';
+                        }
+                        ?>
                     </div>
                 </div>
             </div>
