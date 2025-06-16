@@ -45,6 +45,9 @@ require_once get_template_directory() . '/includes/about-meta.php';
 // Include company page meta functionality
 require_once get_template_directory() . '/includes/company-meta.php';
 
+// Include team page meta functionality
+require_once get_template_directory() . '/includes/team-meta.php';
+
 // Include helper functions
 require_once get_template_directory() . '/includes/helpers.php';
 
