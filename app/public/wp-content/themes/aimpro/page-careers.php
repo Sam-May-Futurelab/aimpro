@@ -8,85 +8,49 @@ get_header(); ?>
 
 <main id="main" class="main-content">
     <div class="container">
-        
-        <!-- Page Header -->
+          <!-- Page Header -->
         <section class="page-header">
             <div class="page-header-content">
-                <h1>Careers at Aimpro Digital</h1>
-                <p class="page-subtitle">Join our team of digital marketing experts and help businesses grow</p>
+                <h1><?php echo esc_html(get_post_meta(get_the_ID(), 'careers_header_title', true) ?: 'Careers at Aimpro Digital'); ?></h1>
+                <p class="page-subtitle"><?php echo esc_html(get_post_meta(get_the_ID(), 'careers_header_subtitle', true) ?: 'Join our team of digital marketing experts and help businesses grow'); ?></p>
             </div>
-        </section>
-
-        <!-- Why Work With Us -->
+        </section>        <!-- Why Work With Us -->
         <section class="why-work-with-us">
             <div class="section-content">
-                <h2>Why Choose Aimpro Digital?</h2>
-                <div class="benefits-grid">
-                    <div class="benefit-card">
-                        <div class="benefit-icon">
-                            <svg width="60" height="60" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                <circle cx="9" cy="7" r="4" stroke="currentColor" stroke-width="2"/>
-                                <path d="m22 21-3-3m0 0a2 2 0 1 1-4 0 2 2 0 0 1 4 0" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                            </svg>
-                        </div>
-                        <h3>Growth Opportunities</h3>
-                        <p>We invest in our team's professional development with training, certifications, and career advancement opportunities.</p>
-                    </div>
+                <h2><?php echo esc_html(get_post_meta(get_the_ID(), 'careers_why_heading', true) ?: 'Why Choose Aimpro Digital?'); ?></h2>                <div class="benefits-grid">
+                    <?php 
+                    $benefit_icons = array(
+                        1 => '<path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="9" cy="7" r="4" stroke="currentColor" stroke-width="2"/><path d="m22 21-3-3m0 0a2 2 0 1 1-4 0 2 2 0 0 1 4 0" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>',
+                        2 => '<path d="M12 2v6.5l3 1.5-3 1.5V18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M6 12c0 4 2.5 8 6 8s6-4 6-8-2.5-8-6-8-6 4-6 8z" stroke="currentColor" stroke-width="2"/>',
+                        3 => '<rect x="2" y="3" width="20" height="14" rx="2" ry="2" stroke="currentColor" stroke-width="2"/><line x1="8" y1="21" x2="16" y2="21" stroke="currentColor" stroke-width="2"/><line x1="12" y1="17" x2="12" y2="21" stroke="currentColor" stroke-width="2"/>',
+                        4 => '<circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"/><polyline points="12,6 12,12 16,14" stroke="currentColor" stroke-width="2"/>',
+                        5 => '<path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>',
+                        6 => '<path d="M22 12h-4l-3 9L9 3l-3 9H2" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>'
+                    );
                     
-                    <div class="benefit-card">
-                        <div class="benefit-icon">
-                            <svg width="60" height="60" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M12 2v6.5l3 1.5-3 1.5V18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                <path d="M6 12c0 4 2.5 8 6 8s6-4 6-8-2.5-8-6-8-6 4-6 8z" stroke="currentColor" stroke-width="2"/>
-                            </svg>
-                        </div>
-                        <h3>Work-Life Balance</h3>
-                        <p>Flexible schedules, remote work options, and unlimited PTO to help you maintain a healthy work-life balance.</p>
-                    </div>
+                    $benefit_defaults = array(
+                        1 => array('title' => 'Growth Opportunities', 'desc' => 'We invest in our team\'s professional development with training, certifications, and career advancement opportunities.'),
+                        2 => array('title' => 'Work-Life Balance', 'desc' => 'Flexible schedules, remote work options, and unlimited PTO to help you maintain a healthy work-life balance.'),
+                        3 => array('title' => 'Cutting-Edge Tools', 'desc' => 'Work with the latest digital marketing tools and technologies to deliver exceptional results for our clients.'),
+                        4 => array('title' => 'Collaborative Culture', 'desc' => 'Join a supportive team environment where collaboration, creativity, and innovation are valued and encouraged.'),
+                        5 => array('title' => 'Competitive Benefits', 'desc' => 'Comprehensive health insurance, retirement plans, performance bonuses, and other competitive benefits.'),
+                        6 => array('title' => 'Impactful Work', 'desc' => 'Help businesses grow and succeed while working on challenging and meaningful digital marketing projects.')
+                    );
                     
+                    for ($i = 1; $i <= 6; $i++):
+                        $title = get_post_meta(get_the_ID(), "careers_benefit{$i}_title", true) ?: $benefit_defaults[$i]['title'];
+                        $desc = get_post_meta(get_the_ID(), "careers_benefit{$i}_desc", true) ?: $benefit_defaults[$i]['desc'];
+                    ?>
                     <div class="benefit-card">
                         <div class="benefit-icon">
                             <svg width="60" height="60" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <rect x="2" y="3" width="20" height="14" rx="2" ry="2" stroke="currentColor" stroke-width="2"/>
-                                <line x1="8" y1="21" x2="16" y2="21" stroke="currentColor" stroke-width="2"/>
-                                <line x1="12" y1="17" x2="12" y2="21" stroke="currentColor" stroke-width="2"/>
+                                <?php echo $benefit_icons[$i]; ?>
                             </svg>
                         </div>
-                        <h3>Cutting-Edge Tools</h3>
-                        <p>Work with the latest digital marketing tools and technologies to deliver exceptional results for our clients.</p>
+                        <h3><?php echo esc_html($title); ?></h3>
+                        <p><?php echo esc_html($desc); ?></p>
                     </div>
-                    
-                    <div class="benefit-card">
-                        <div class="benefit-icon">
-                            <svg width="60" height="60" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"/>
-                                <polyline points="12,6 12,12 16,14" stroke="currentColor" stroke-width="2"/>
-                            </svg>
-                        </div>
-                        <h3>Collaborative Culture</h3>
-                        <p>Join a supportive team environment where collaboration, creativity, and innovation are valued and encouraged.</p>
-                    </div>
-                    
-                    <div class="benefit-card">
-                        <div class="benefit-icon">
-                            <svg width="60" height="60" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                            </svg>
-                        </div>
-                        <h3>Competitive Benefits</h3>
-                        <p>Comprehensive health insurance, retirement plans, performance bonuses, and other competitive benefits.</p>
-                    </div>
-                    
-                    <div class="benefit-card">
-                        <div class="benefit-icon">
-                            <svg width="60" height="60" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M22 12h-4l-3 9L9 3l-3 9H2" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                            </svg>
-                        </div>
-                        <h3>Impactful Work</h3>
-                        <p>Help businesses grow and succeed while working on challenging and meaningful digital marketing projects.</p>
-                    </div>
+                    <?php endfor; ?>
                 </div>
             </div>
         </section>
@@ -94,7 +58,7 @@ get_header(); ?>
         <!-- Open Positions -->
         <section class="open-positions">
             <div class="section-content">
-                <h2>Current Openings</h2>
+                <h2><?php echo esc_html(get_post_meta(get_the_ID(), 'careers_openings_heading', true) ?: 'Current Openings'); ?></h2>
                 <div class="positions-grid">
                     
                     <!-- SEO Specialist -->
@@ -271,7 +235,7 @@ get_header(); ?>
         <!-- Application Process -->
         <section class="application-process">
             <div class="section-content">
-                <h2>Our Hiring Process</h2>
+                <h2><?php echo esc_html(get_post_meta(get_the_ID(), 'careers_process_heading', true) ?: 'Our Hiring Process'); ?></h2>
                 <div class="process-steps">
                     <div class="step">
                         <div class="step-number">1</div>
@@ -315,7 +279,7 @@ get_header(); ?>
         <!-- Employee Testimonials -->
         <section class="employee-testimonials">
             <div class="section-content">
-                <h2>What Our Team Says</h2>
+                <h2><?php echo esc_html(get_post_meta(get_the_ID(), 'careers_team_testimonials_heading', true) ?: 'What Our Team Says'); ?></h2>
                 <div class="testimonials-grid">
                     <div class="testimonial-card">
                         <blockquote>
@@ -348,13 +312,11 @@ get_header(); ?>
                     </div>
                 </div>
             </div>
-        </section>
-
-        <!-- Application Form -->
+        </section>        <!-- Application Form -->
         <section class="application-form">
             <div class="section-content">
-                <h2>Ready to Apply?</h2>
-                <p>Don't see a position that fits? We're always looking for talented individuals to join our team.</p>
+                <h2><?php echo esc_html(get_post_meta(get_the_ID(), 'careers_form_heading', true) ?: 'Ready to Apply?'); ?></h2>
+                <p><?php echo esc_html(get_post_meta(get_the_ID(), 'careers_form_description', true) ?: 'Don\'t see a position that fits? We\'re always looking for talented individuals to join our team.'); ?></p>
                 
                 <form class="career-application-form">
                     <div class="form-grid">
@@ -414,19 +376,18 @@ get_header(); ?>
                     </div>
                 </form>
             </div>
-        </section>        <!-- Contact HR -->
-        <section class="contact-hr">
+        </section>        <!-- Contact HR -->        <section class="contact-hr">
             <div class="section-content">
-                <h2>Questions About Careers?</h2>
-                <p>Our HR team is here to help answer any questions about working at Aimpro Digital</p>
+                <h2><?php echo esc_html(get_post_meta(get_the_ID(), 'careers_contact_heading', true) ?: 'Questions About Careers?'); ?></h2>
+                <p><?php echo esc_html(get_post_meta(get_the_ID(), 'careers_contact_description', true) ?: 'Our HR team is here to help answer any questions about working at Aimpro Digital'); ?></p>
                 <div class="contact-info">
                     <div class="contact-item">
                         <strong>Email:</strong>
-                        <a href="mailto:careers@aimpro.co.uk">careers@aimpro.co.uk</a>
+                        <a href="mailto:<?php echo esc_attr(get_post_meta(get_the_ID(), 'careers_contact_email', true) ?: 'careers@aimpro.co.uk'); ?>"><?php echo esc_html(get_post_meta(get_the_ID(), 'careers_contact_email', true) ?: 'careers@aimpro.co.uk'); ?></a>
                     </div>
                     <div class="contact-item">
                         <strong>Phone:</strong>
-                        <a href="tel:+441212858490">+44 121 285 8490</a>
+                        <a href="tel:<?php echo str_replace(' ', '', get_post_meta(get_the_ID(), 'careers_contact_phone', true) ?: '+44 121 285 8490'); ?>"><?php echo esc_html(get_post_meta(get_the_ID(), 'careers_contact_phone', true) ?: '+44 121 285 8490'); ?></a>
                     </div>
                 </div>
             </div>

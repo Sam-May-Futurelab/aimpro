@@ -50,6 +50,7 @@ require_once get_template_directory() . '/includes/team-meta.php';
 
 // Include testimonials page meta functionality
 require_once get_template_directory() . '/includes/testimonials-meta.php';
+require_once get_template_directory() . '/includes/careers-meta.php';
 
 // Include helper functions
 require_once get_template_directory() . '/includes/helpers.php';
