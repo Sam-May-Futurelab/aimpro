@@ -181,14 +181,15 @@ function get_microsoft_ads_meta($key, $post_id, $defaults, $prefix = '_microsoft
                 </cite>
             </div>
         </div>
-    </section><!-- CTA Section -->
+    </section>    <!-- CTA Section -->
     <section class="simple-cta-section">
         <div class="section-content">
             <div class="simple-cta-content">
-                <h2>Ready to Expand Beyond Google?</h2>
-                <p>Discover the untapped potential of Microsoft/Bing Ads for your business. Get started with a free competitive analysis and see how much market share you're missing.</p>
+                <h2><?php echo esc_html(get_microsoft_ads_meta('cta_title', $post_id, $defaults)); ?></h2>
+                <p><?php echo esc_html(get_microsoft_ads_meta('cta_content', $post_id, $defaults)); ?></p>
                 <div class="simple-cta-buttons">
-                    <a href="<?php echo home_url('/contact'); ?>" class="btn btn-primary">Start Bing Campaigns</a>
+                    <a href="<?php echo home_url('/contact'); ?>" class="btn btn-primary"><?php echo esc_html(get_microsoft_ads_meta('cta_button_1_text', $post_id, $defaults)); ?></a>
+                    <a href="<?php echo home_url('/services'); ?>" class="btn btn-secondary"><?php echo esc_html(get_microsoft_ads_meta('cta_button_2_text', $post_id, $defaults)); ?></a>
                 </div>
             </div>
         </div>

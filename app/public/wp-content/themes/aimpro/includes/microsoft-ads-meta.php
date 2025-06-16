@@ -52,20 +52,18 @@ function aimpro_get_microsoft_ads_default_values() {
         'service_title_4' => 'Campaign Optimization',
         'service_content_4' => 'Continuous improvement through automated bidding, ad testing, and performance analysis specific to Bing\'s algorithm.',
         'service_icon_4' => 'fas fa-sync-alt',
-        
-        'service_title_5' => 'Conversion Tracking',
-        'service_content_5' => 'Advanced analytics and conversion tracking to maximize ROI and identify the most profitable traffic sources.',
+          'service_title_5' => 'Conversion Tracking',
+        'service_content_5' => 'Comprehensive reporting and insights comparing Bing performance to other platforms for optimal budget allocation.',
         'service_icon_5' => 'fas fa-chart-line',
         
-        'service_title_6' => 'LinkedIn Integration',
-        'service_content_6' => 'Unique B2B targeting capabilities through Microsoft\'s integration with LinkedIn professional data.',
-        'service_icon_6' => 'fab fa-linkedin',
+        'service_title_6' => 'Google Ads Import',
+        'service_content_6' => 'Seamless migration and optimization of existing Google Ads campaigns to maximize Bing network potential.',
+        'service_icon_6' => 'fas fa-download',
         
         // Case Study Section
-        'case_study_title' => 'Case Study: B2B Software Success',
-        'case_study_intro' => 'How we helped a B2B software company achieve 320% ROI improvement by leveraging Bing\'s professional audience and lower competition.',
-        'case_study_challenge' => 'A B2B software company was struggling with high costs and intense competition on Google Ads. Their target audience of business professionals was expensive to reach, and their campaigns were being outbid by larger competitors with bigger budgets.',
-        'case_study_solution' => "Launched comprehensive Microsoft Ads campaigns targeting business professionals\nUtilized LinkedIn demographic data for precise B2B targeting\nImplemented Bing Shopping ads for software products\nOptimized for Bing\'s unique algorithm and bidding strategies\nCreated Bing-specific ad copy and landing pages",
+        'case_study_title' => 'Case Study: B2B Software Success',        'case_study_intro' => 'How we helped a B2B software company achieve 320% ROI improvement by expanding to Microsoft/Bing Ads alongside their existing Google campaigns.',
+        'case_study_challenge' => 'A growing B2B software company was experiencing rising costs and increased competition on Google Ads. They needed to diversify their paid search strategy to maintain growth while controlling customer acquisition costs in their competitive market.',
+        'case_study_solution' => "Migrated and optimized existing Google campaigns for Bing's unique algorithm\nImplemented LinkedIn profile targeting for B2B prospect reach\nCreated Bing-specific ad copy optimized for lower competition keywords\nEstablished Microsoft Shopping campaigns for product visibility\nDeveloped cross-platform attribution and budget optimization strategy",
         
         // Case Study Results
         'case_result_1_number' => '320%',

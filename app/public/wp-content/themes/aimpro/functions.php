@@ -81,6 +81,7 @@ require_once get_template_directory() . '/includes/advertising-ppc-meta.php';
 require_once get_template_directory() . '/includes/google-ads-meta.php';
 require_once get_template_directory() . '/includes/meta-ads-meta.php';
 require_once get_template_directory() . '/includes/microsoft-ads-meta.php';
+require_once get_template_directory() . '/includes/retargeting-display-meta.php';
 
 // Include helper functions
 require_once get_template_directory() . '/includes/helpers.php';
