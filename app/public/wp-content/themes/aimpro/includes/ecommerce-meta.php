@@ -2,17 +2,24 @@
 // E-commerce Page Meta Fields
 
 function add_ecommerce_meta_boxes() {
-    $ecommerce_screens = array('page');
+    global $post;
     
-    foreach ($ecommerce_screens as $screen) {
-        add_meta_box(
-            'ecommerce_meta_box',
-            'E-commerce Page Content',
-            'ecommerce_meta_box_callback',
-            $screen,
-            'normal',
-            'high'
-        );
+    // Only add to pages with the correct template or slug
+    if (isset($post) && get_post_type($post) === 'page') {
+        $page_template = get_page_template_slug($post->ID);
+        $page_slug = $post->post_name;
+        
+        // Only show meta box if this is the ecommerce page
+        if ($page_template === 'page-ecommerce.php' || $page_slug === 'ecommerce' || $page_slug === 'e-commerce') {
+            add_meta_box(
+                'ecommerce_meta_box',
+                'E-commerce Page Content',
+                'ecommerce_meta_box_callback',
+                'page',
+                'normal',
+                'high'
+            );
+        }
     }
 }
 add_action('add_meta_boxes', 'add_ecommerce_meta_boxes', 11);
