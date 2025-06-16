@@ -44,60 +44,60 @@
                 </a>
             </div>            <nav class="main-nav">
                 <ul>
-                    <li><a href="<?php echo home_url(); ?>" class="nav-link">Home</a></li>
-                    <li class="nav-item-dropdown nav-item-multilevel">
+                    <li><a href="<?php echo home_url(); ?>" class="nav-link">Home</a></li>                    <li class="nav-item-mega">
                         <a href="<?php echo home_url('/services'); ?>" class="nav-link">Services <span class="nav-arrow">
                             <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                 <polyline points="6 9 12 15 18 9"></polyline>
                             </svg>
                         </span></a>
-                        <div class="dropdown-menu">
-                            <ul>
-                                <li class="dropdown-submenu">
-                                    <a href="<?php echo home_url('/seo-services'); ?>">SEO Services <span class="submenu-arrow">›</span></a>
-                                    <div class="submenu">
-                                        <ul>                                            <li><a href="<?php echo home_url('/local-seo'); ?>">Local SEO</a></li>
+                        <div class="mega-menu">
+                            <div class="mega-menu-container">
+                                <div class="mega-menu-grid">
+                                    <div class="mega-menu-column">
+                                        <h4>SEO Services</h4>
+                                        <ul class="mega-menu-list">
+                                            <li><a href="<?php echo home_url('/seo-services'); ?>">SEO Overview</a></li>
+                                            <li><a href="<?php echo home_url('/local-seo'); ?>">Local SEO</a></li>
                                             <li><a href="<?php echo home_url('/seo-audit'); ?>">SEO Audit</a></li>
                                             <li><a href="<?php echo home_url('/technical-seo'); ?>">Technical SEO</a></li>
                                             <li><a href="<?php echo home_url('/on-page-seo'); ?>">On-Page SEO</a></li>
                                             <li><a href="<?php echo home_url('/white-label-seo'); ?>">White Label SEO</a></li>
                                         </ul>
                                     </div>
-                                </li>
-                                <li class="dropdown-submenu">
-                                    <a href="<?php echo home_url('/advertising-ppc'); ?>">Advertising & PPC <span class="submenu-arrow">›</span></a>
-                                    <div class="submenu">
-                                        <ul>                                            <li><a href="<?php echo home_url('/google-ads'); ?>">Google Ads</a></li>
-                                            <li><a href="<?php echo home_url('/meta-ads'); ?>">Meta Ads (FB/Instagram)</a></li>
-                                            <li><a href="<?php echo home_url('/microsoft-ads'); ?>">Microsoft/Bing Ads</a></li>
-                                            <li><a href="<?php echo home_url('/retargeting-display'); ?>">Retargeting & Display</a></li>
+                                    <div class="mega-menu-column">
+                                        <h4>Advertising & PPC</h4>
+                                        <ul class="mega-menu-list">
+                                            <li><a href="<?php echo home_url('/advertising-ppc'); ?>">PPC Overview</a></li>
+                                            <li><a href="<?php echo home_url('/google-ads'); ?>">Google Ads</a></li>
+                                            <li><a href="<?php echo home_url('/meta-ads'); ?>">Meta Ads</a></li>
+                                            <li><a href="<?php echo home_url('/microsoft-ads'); ?>">Microsoft Ads</a></li>
+                                            <li><a href="<?php echo home_url('/retargeting-display'); ?>">Retargeting</a></li>
                                             <li><a href="<?php echo home_url('/ppc-audit'); ?>">PPC Audit</a></li>
-                                            <li><a href="<?php echo home_url('/white-label-ppc'); ?>">White Label PPC</a></li>
                                         </ul>
                                     </div>
-                                </li>
-                                <li class="dropdown-submenu">
-                                    <a href="<?php echo home_url('/marketing-automation'); ?>">Marketing Automation <span class="submenu-arrow">›</span></a>
-                                    <div class="submenu">
-                                        <ul>                                            <li><a href="<?php echo home_url('/ai-crm-setup'); ?>">AI CRM Setup</a></li>
-                                            <li><a href="<?php echo home_url('/email-sms-flows'); ?>">Email & SMS Flows</a></li>
+                                    <div class="mega-menu-column">
+                                        <h4>Marketing Automation</h4>
+                                        <ul class="mega-menu-list">
+                                            <li><a href="<?php echo home_url('/marketing-automation'); ?>">Automation</a></li>
+                                            <li><a href="<?php echo home_url('/ai-crm-setup'); ?>">AI CRM Setup</a></li>
+                                            <li><a href="<?php echo home_url('/email-sms-flows'); ?>">Email & SMS</a></li>
                                             <li><a href="<?php echo home_url('/email-campaigns'); ?>">Email Campaigns</a></li>
-                                            <li><a href="<?php echo home_url('/funnel-automation'); ?>">Funnel Automation</a></li>
+                                            <li><a href="<?php echo home_url('/funnel-automation'); ?>">Funnels</a></li>
                                             <li><a href="<?php echo home_url('/chatbots'); ?>">Chatbots</a></li>
-                                            <li><a href="<?php echo home_url('/ai-tools'); ?>">AI Tools</a></li>
                                         </ul>
                                     </div>
-                                </li>
-                                <li class="dropdown-submenu">
-                                    <a href="<?php echo home_url('/website-development'); ?>">Website Development <span class="submenu-arrow">›</span></a>
-                                    <div class="submenu">
-                                        <ul>                                            <li><a href="<?php echo home_url('/website-design'); ?>">Website Design</a></li>
+                                    <div class="mega-menu-column">
+                                        <h4>Web Development</h4>
+                                        <ul class="mega-menu-list">
+                                            <li><a href="<?php echo home_url('/website-development'); ?>">Development</a></li>
+                                            <li><a href="<?php echo home_url('/website-design'); ?>">Website Design</a></li>
                                             <li><a href="<?php echo home_url('/landing-pages'); ?>">Landing Pages</a></li>
                                             <li><a href="<?php echo home_url('/funnel-builds'); ?>">Funnel Builds</a></li>
-                                            <li><a href="<?php echo home_url('/ux-ui-optimization'); ?>">UX/UI Optimization</a></li>                                        </ul>
+                                            <li><a href="<?php echo home_url('/ux-ui-optimization'); ?>">UX/UI Design</a></li>
+                                        </ul>
                                     </div>
-                                </li>
-                            </ul>
+                                </div>
+                            </div>
                         </div>
                     </li><li class="nav-item-dropdown">
                         <a href="<?php echo home_url('/solutions'); ?>" class="nav-link">Solutions <span class="nav-arrow">
@@ -115,12 +115,13 @@
                                 <li><a href="<?php echo home_url('/streamline-sales-funnel'); ?>">Streamline Your Sales Funnel</a></li>
                             </ul>
                         </div>
-                    </li><li class="nav-item-dropdown">
+                    </li>                    <li class="nav-item-dropdown">
                         <a href="<?php echo home_url('/industries'); ?>" class="nav-link">Industries <span class="nav-arrow">
                             <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                 <polyline points="6 9 12 15 18 9"></polyline>
                             </svg>
-                        </span></a>                        <div class="dropdown-menu">
+                        </span></a>
+                        <div class="dropdown-menu">
                             <ul>
                                 <li><a href="<?php echo home_url('/automotive'); ?>">Automotive</a></li>
                                 <li><a href="<?php echo home_url('/home-garden'); ?>">Home and Garden</a></li>
@@ -146,8 +147,7 @@
                                 <li><a href="<?php echo home_url('/training-mentoring'); ?>">Training & Mentoring</a></li>
                             </ul>
                         </div>
-                    </li>
-                    <li class="nav-item-dropdown">
+                    </li>                    <li class="nav-item-dropdown">
                         <a href="<?php echo home_url('/about'); ?>" class="nav-link">About <span class="nav-arrow">
                             <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                 <polyline points="6 9 12 15 18 9"></polyline>
@@ -162,7 +162,7 @@
                                 <li><a href="<?php echo home_url('/become-a-partner'); ?>">Become a Partner</a></li>
                             </ul>
                         </div>
-                    </li>                    <li><a href="<?php echo home_url('/contact'); ?>" class="nav-link">Contact</a></li>
+                    </li><li><a href="<?php echo home_url('/contact'); ?>" class="nav-link">Contact</a></li>
                 </ul>
             </nav>
             <div class="header-ctas">
