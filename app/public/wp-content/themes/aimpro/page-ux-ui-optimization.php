@@ -87,28 +87,28 @@ get_header(); ?>
                 </div>
             </div>
         </div>
-    </section><!-- Case Study Section -->
+    </section>    <!-- Case Study Section -->
     <section id="case-study" class="case-study-section service-page-case-study">
         <div class="container">
             <div class="case-study-content">
                 <div class="case-study-header">
                     <span class="case-study-label">Case Study</span>
-                    <h2>How LegalAdvice Pro Increased Consultation Bookings by 390% Through UX Optimization</h2>
+                    <h2><?php echo get_post_meta(get_the_ID(), 'uxui_case_study_title', true) ?: 'How LegalAdvice Pro Increased Consultation Bookings by 390% Through UX Optimization'; ?></h2>
                 </div>
                 
                 <div class="case-study-grid">
                     <div class="case-study-challenge">
                         <h3>The Challenge</h3>
-                        <p>LegalAdvice Pro had a professional-looking website but was struggling with a 73% bounce rate and only 2.1% of visitors booking consultations. Users were leaving without engaging, despite high-quality traffic from SEO and PPC campaigns.</p>
+                        <p><?php echo get_post_meta(get_the_ID(), 'uxui_case_study_challenge', true) ?: 'LegalAdvice Pro had a professional-looking website but was struggling with a 73% bounce rate and only 2.1% of visitors booking consultations. Users were leaving without engaging, despite high-quality traffic from SEO and PPC campaigns.'; ?></p>
                         
                         <div class="challenge-metrics">
                             <div class="metric">
-                                <span class="metric-value">73%</span>
-                                <span class="metric-label">Bounce Rate</span>
+                                <span class="metric-value"><?php echo get_post_meta(get_the_ID(), 'uxui_case_study_before_metric1_value', true) ?: '73%'; ?></span>
+                                <span class="metric-label"><?php echo get_post_meta(get_the_ID(), 'uxui_case_study_before_metric1_label', true) ?: 'Bounce Rate'; ?></span>
                             </div>
                             <div class="metric">
-                                <span class="metric-value">2.1%</span>
-                                <span class="metric-label">Consultation Booking Rate</span>
+                                <span class="metric-value"><?php echo get_post_meta(get_the_ID(), 'uxui_case_study_before_metric2_value', true) ?: '2.1%'; ?></span>
+                                <span class="metric-label"><?php echo get_post_meta(get_the_ID(), 'uxui_case_study_before_metric2_label', true) ?: 'Consultation Booking Rate'; ?></span>
                             </div>
                         </div>
                     </div>
@@ -116,11 +116,11 @@ get_header(); ?>
                     <div class="case-study-solution">
                         <h3>Our Solution</h3>
                         <ul>
-                            <li><strong>User Journey Optimization:</strong> Streamlined navigation and clear conversion paths</li>
-                            <li><strong>Trust Building Elements:</strong> Added lawyer credentials, testimonials, and case results</li>
-                            <li><strong>Form Optimization:</strong> Simplified booking process from 7 fields to 3</li>
-                            <li><strong>Mobile-First Redesign:</strong> Optimized for mobile users (68% of traffic)</li>
-                            <li><strong>Speed Optimization:</strong> Reduced load time from 6.2s to 1.8s</li>
+                            <li><strong>User Journey Optimization:</strong> <?php echo get_post_meta(get_the_ID(), 'uxui_case_study_solution1', true) ?: 'Streamlined navigation and clear conversion paths'; ?></li>
+                            <li><strong>Trust Building Elements:</strong> <?php echo get_post_meta(get_the_ID(), 'uxui_case_study_solution2', true) ?: 'Added lawyer credentials, testimonials, and case results'; ?></li>
+                            <li><strong>Form Optimization:</strong> <?php echo get_post_meta(get_the_ID(), 'uxui_case_study_solution3', true) ?: 'Simplified booking process from 7 fields to 3'; ?></li>
+                            <li><strong>Mobile-First Redesign:</strong> <?php echo get_post_meta(get_the_ID(), 'uxui_case_study_solution4', true) ?: 'Optimized for mobile users (68% of traffic)'; ?></li>
+                            <li><strong>Speed Optimization:</strong> <?php echo get_post_meta(get_the_ID(), 'uxui_case_study_solution5', true) ?: 'Reduced load time from 6.2s to 1.8s'; ?></li>
                         </ul>
                     </div>
                 </div>
@@ -129,20 +129,20 @@ get_header(); ?>
                     <h3>The Results</h3>
                     <div class="results-grid">
                         <div class="result-item">
-                            <span class="result-number">390%</span>
-                            <span class="result-label">Increase in Consultation Bookings</span>
+                            <span class="result-number"><?php echo get_post_meta(get_the_ID(), 'uxui_case_study_result1_value', true) ?: '390%'; ?></span>
+                            <span class="result-label"><?php echo get_post_meta(get_the_ID(), 'uxui_case_study_result1_label', true) ?: 'Increase in Consultation Bookings'; ?></span>
                         </div>
                         <div class="result-item">
-                            <span class="result-number">58%</span>
-                            <span class="result-label">Reduction in Bounce Rate</span>
+                            <span class="result-number"><?php echo get_post_meta(get_the_ID(), 'uxui_case_study_result2_value', true) ?: '58%'; ?></span>
+                            <span class="result-label"><?php echo get_post_meta(get_the_ID(), 'uxui_case_study_result2_label', true) ?: 'Reduction in Bounce Rate'; ?></span>
                         </div>
                         <div class="result-item">
-                            <span class="result-number">245%</span>
-                            <span class="result-label">Increase in Session Duration</span>
+                            <span class="result-number"><?php echo get_post_meta(get_the_ID(), 'uxui_case_study_result3_value', true) ?: '245%'; ?></span>
+                            <span class="result-label"><?php echo get_post_meta(get_the_ID(), 'uxui_case_study_result3_label', true) ?: 'Increase in Session Duration'; ?></span>
                         </div>
                         <div class="result-item">
-                            <span class="result-number">£285K</span>
-                            <span class="result-label">Additional Annual Revenue</span>
+                            <span class="result-number"><?php echo get_post_meta(get_the_ID(), 'uxui_case_study_result4_value', true) ?: '£285K'; ?></span>
+                            <span class="result-label"><?php echo get_post_meta(get_the_ID(), 'uxui_case_study_result4_label', true) ?: 'Additional Annual Revenue'; ?></span>
                         </div>
                     </div>
                 </div>
@@ -241,84 +241,92 @@ get_header(); ?>
                 </div>
             </div>
         </div>
-    </section>
-
-    <!-- Optimization Process -->
+    </section>    <!-- Optimization Process -->
     <section class="optimization-process">
         <div class="container">
-            <h2>Our UX/UI Optimization Process</h2>
+            <h2><?php echo get_post_meta(get_the_ID(), 'uxui_process_title', true) ?: 'Our UX/UI Optimization Process'; ?></h2>
             
             <div class="process-timeline">
                 <div class="process-step">
                     <div class="step-number">1</div>
                     <div class="step-content">
-                        <h3>Comprehensive UX Audit</h3>
-                        <p>Analyze current performance, user behavior, and identify optimization opportunities using advanced analytics tools.</p>
+                        <h3><?php echo get_post_meta(get_the_ID(), 'uxui_process_step1_title', true) ?: 'Comprehensive UX Audit'; ?></h3>
+                        <p><?php echo get_post_meta(get_the_ID(), 'uxui_process_step1_description', true) ?: 'Analyze current performance, user behavior, and identify optimization opportunities using advanced analytics tools.'; ?></p>
                     </div>
                 </div>
                 <div class="process-step">
                     <div class="step-number">2</div>
                     <div class="step-content">
-                        <h3>User Research & Testing</h3>
-                        <p>Conduct user testing, heatmap analysis, and behavioral research to understand user pain points.</p>
+                        <h3><?php echo get_post_meta(get_the_ID(), 'uxui_process_step2_title', true) ?: 'User Research & Testing'; ?></h3>
+                        <p><?php echo get_post_meta(get_the_ID(), 'uxui_process_step2_description', true) ?: 'Conduct user testing, heatmap analysis, and behavioral research to understand user pain points.'; ?></p>
                     </div>
                 </div>
                 <div class="process-step">
                     <div class="step-number">3</div>
                     <div class="step-content">
-                        <h3>Strategy Development</h3>
-                        <p>Create detailed optimization strategy with prioritized improvements based on impact and effort.</p>
+                        <h3><?php echo get_post_meta(get_the_ID(), 'uxui_process_step3_title', true) ?: 'Strategy Development'; ?></h3>
+                        <p><?php echo get_post_meta(get_the_ID(), 'uxui_process_step3_description', true) ?: 'Create detailed optimization strategy with prioritized improvements based on impact and effort.'; ?></p>
                     </div>
                 </div>
                 <div class="process-step">
                     <div class="step-number">4</div>
                     <div class="step-content">
-                        <h3>Design & Implementation</h3>
-                        <p>Implement strategic improvements with focus on user experience and conversion optimization.</p>
+                        <h3><?php echo get_post_meta(get_the_ID(), 'uxui_process_step4_title', true) ?: 'Design & Implementation'; ?></h3>
+                        <p><?php echo get_post_meta(get_the_ID(), 'uxui_process_step4_description', true) ?: 'Implement strategic improvements with focus on user experience and conversion optimization.'; ?></p>
                     </div>
                 </div>
                 <div class="process-step">
                     <div class="step-number">5</div>
                     <div class="step-content">
-                        <h3>A/B Testing</h3>
-                        <p>Test variations to ensure improvements deliver measurable results and optimal performance.</p>
+                        <h3><?php echo get_post_meta(get_the_ID(), 'uxui_process_step5_title', true) ?: 'A/B Testing'; ?></h3>
+                        <p><?php echo get_post_meta(get_the_ID(), 'uxui_process_step5_description', true) ?: 'Test variations to ensure improvements deliver measurable results and optimal performance.'; ?></p>
                     </div>
                 </div>
                 <div class="process-step">
                     <div class="step-number">6</div>
                     <div class="step-content">
-                        <h3>Monitor & Iterate</h3>
-                        <p>Continuous monitoring and iterative improvements based on real user data and performance metrics.</p>
+                        <h3><?php echo get_post_meta(get_the_ID(), 'uxui_process_step6_title', true) ?: 'Monitor & Iterate'; ?></h3>
+                        <p><?php echo get_post_meta(get_the_ID(), 'uxui_process_step6_description', true) ?: 'Continuous monitoring and iterative improvements based on real user data and performance metrics.'; ?></p>
                     </div>
                 </div>
             </div>
         </div>
-    </section>
-
-    <!-- Pricing Section -->
+    </section>    <!-- Pricing Section -->
     <section class="pricing-section">
         <div class="container">
             <div class="section-header">
-                <h2>UX/UI Optimization Packages</h2>
-                <p>Transform your website performance with data-driven optimization strategies.</p>
+                <h2><?php echo get_post_meta(get_the_ID(), 'uxui_packages_title', true) ?: 'UX/UI Optimization Packages'; ?></h2>
+                <p><?php echo get_post_meta(get_the_ID(), 'uxui_packages_subtitle', true) ?: 'Transform your website performance with data-driven optimization strategies.'; ?></p>
             </div>
-            
-            <div class="pricing-grid">
+              <div class="pricing-grid">
                 <div class="pricing-card">
                     <div class="pricing-header">
-                        <h3>UX Audit & Report</h3>
-                        <div class="price">£1,497</div>
-                        <p>Comprehensive analysis & recommendations</p>
+                        <h3><?php echo get_post_meta(get_the_ID(), 'uxui_package1_name', true) ?: 'UX Audit & Report'; ?></h3>
+                        <div class="price"><?php echo get_post_meta(get_the_ID(), 'uxui_package1_price', true) ?: '£1,497'; ?></div>
+                        <p><?php echo get_post_meta(get_the_ID(), 'uxui_package1_description', true) ?: 'Comprehensive analysis & recommendations'; ?></p>
                     </div>
                     <ul class="pricing-features">
-                        <li>Complete UX audit</li>
-                        <li>User behavior analysis</li>
-                        <li>Conversion barrier identification</li>
-                        <li>Mobile optimization review</li>
-                        <li>Performance analysis</li>
-                        <li>Detailed improvement roadmap</li>
-                        <li>Priority action items</li>
-                        <li>2-week delivery</li>
+                        <?php 
+                        $features1 = get_post_meta(get_the_ID(), 'uxui_package1_features', true);
+                        if ($features1) {
+                            $features_array = explode("\n", $features1);
+                            foreach ($features_array as $feature) {
+                                if (trim($feature)) {
+                                    echo '<li>' . esc_html(trim($feature)) . '</li>';
+                                }
+                            }
+                        } else {
+                            // Default features
+                            echo '<li>Complete UX audit</li>';
+                            echo '<li>User behavior analysis</li>';
+                            echo '<li>Conversion barrier identification</li>';
+                            echo '<li>Mobile optimization review</li>';
+                            echo '<li>Performance analysis</li>';
+                            echo '<li>Detailed improvement roadmap</li>';
+                            echo '<li>Priority action items</li>';
+                            echo '<li>2-week delivery</li>';
+                        }
+                        ?>
                     </ul>
                     <a href="#contact" class="btn-outline">Get Started</a>
                 </div>
@@ -326,43 +334,69 @@ get_header(); ?>
                 <div class="pricing-card featured">
                     <div class="pricing-badge">Most Popular</div>
                     <div class="pricing-header">
-                        <h3>UX Optimization</h3>
-                        <div class="price">£4,997</div>
-                        <p>Complete optimization implementation</p>
+                        <h3><?php echo get_post_meta(get_the_ID(), 'uxui_package2_name', true) ?: 'UX Optimization'; ?></h3>
+                        <div class="price"><?php echo get_post_meta(get_the_ID(), 'uxui_package2_price', true) ?: '£4,997'; ?></div>
+                        <p><?php echo get_post_meta(get_the_ID(), 'uxui_package2_description', true) ?: 'Complete optimization implementation'; ?></p>
                     </div>
                     <ul class="pricing-features">
-                        <li>Comprehensive UX audit</li>
-                        <li>Strategic optimization plan</li>
-                        <li>Design & development implementation</li>
-                        <li>Mobile experience optimization</li>
-                        <li>Conversion element optimization</li>
-                        <li>Performance improvements</li>
-                        <li>A/B testing setup</li>
-                        <li>Analytics configuration</li>
-                        <li>4-week delivery</li>
-                        <li>30 days support</li>
+                        <?php 
+                        $features2 = get_post_meta(get_the_ID(), 'uxui_package2_features', true);
+                        if ($features2) {
+                            $features_array = explode("\n", $features2);
+                            foreach ($features_array as $feature) {
+                                if (trim($feature)) {
+                                    echo '<li>' . esc_html(trim($feature)) . '</li>';
+                                }
+                            }
+                        } else {
+                            // Default features
+                            echo '<li>Comprehensive UX audit</li>';
+                            echo '<li>Strategic optimization plan</li>';
+                            echo '<li>Design & development implementation</li>';
+                            echo '<li>Mobile experience optimization</li>';
+                            echo '<li>Conversion element optimization</li>';
+                            echo '<li>Performance improvements</li>';
+                            echo '<li>A/B testing setup</li>';
+                            echo '<li>Analytics configuration</li>';
+                            echo '<li>4-week delivery</li>';
+                            echo '<li>30 days support</li>';
+                        }
+                        ?>
                     </ul>
                     <a href="#contact" class="btn-primary">Get Started</a>
                 </div>
                 
                 <div class="pricing-card">
                     <div class="pricing-header">
-                        <h3>Complete UX Overhaul</h3>
-                        <div class="price">£9,997</div>
-                        <p>Full website transformation</p>
+                        <h3><?php echo get_post_meta(get_the_ID(), 'uxui_package3_name', true) ?: 'Complete UX Overhaul'; ?></h3>
+                        <div class="price"><?php echo get_post_meta(get_the_ID(), 'uxui_package3_price', true) ?: '£9,997'; ?></div>
+                        <p><?php echo get_post_meta(get_the_ID(), 'uxui_package3_description', true) ?: 'Full website transformation'; ?></p>
                     </div>
                     <ul class="pricing-features">
-                        <li>Complete UX research & analysis</li>
-                        <li>User testing & interviews</li>
-                        <li>Information architecture redesign</li>
-                        <li>Visual design optimization</li>
-                        <li>Advanced functionality improvements</li>
-                        <li>Comprehensive performance optimization</li>
-                        <li>Multi-variant testing</li>
-                        <li>Ongoing optimization</li>
-                        <li>6-week delivery</li>
-                        <li>60 days support</li>
-                        <li>Monthly optimization reviews</li>
+                        <?php 
+                        $features3 = get_post_meta(get_the_ID(), 'uxui_package3_features', true);
+                        if ($features3) {
+                            $features_array = explode("\n", $features3);
+                            foreach ($features_array as $feature) {
+                                if (trim($feature)) {
+                                    echo '<li>' . esc_html(trim($feature)) . '</li>';
+                                }
+                            }
+                        } else {
+                            // Default features
+                            echo '<li>Complete UX research & analysis</li>';
+                            echo '<li>User testing & interviews</li>';
+                            echo '<li>Information architecture redesign</li>';
+                            echo '<li>Visual design optimization</li>';
+                            echo '<li>Advanced functionality improvements</li>';
+                            echo '<li>Comprehensive performance optimization</li>';
+                            echo '<li>Multi-variant testing</li>';
+                            echo '<li>Ongoing optimization</li>';
+                            echo '<li>6-week delivery</li>';
+                            echo '<li>60 days support</li>';
+                            echo '<li>Monthly optimization reviews</li>';
+                        }
+                        ?>
                     </ul>
                     <a href="#contact" class="btn-outline">Get Started</a>
                 </div>
@@ -412,84 +446,78 @@ get_header(); ?>
                     </div>
                 </div>
             </div>
-        </div>    </section>
-
-    <!-- Testimonials -->
+        </div>    </section>    <!-- Testimonials -->
     <section class="testimonials-section">
         <div class="container">
-            <h2>What Our Clients Say</h2>
+            <h2><?php echo get_post_meta(get_the_ID(), 'uxui_testimonials_title', true) ?: 'What Our Clients Say'; ?></h2>
             <div class="testimonials-grid">
                 <div class="testimonial-card">
                     <div class="testimonial-content">
-                        <p>"The UX optimization increased our consultation bookings by 390%. The data-driven approach was exactly what we needed."</p>
+                        <p>"<?php echo get_post_meta(get_the_ID(), 'uxui_testimonial1_content', true) ?: 'The UX optimization increased our consultation bookings by 390%. The data-driven approach was exactly what we needed.'; ?>"</p>
                     </div>
                     <div class="testimonial-author">
-                        <strong>Patricia Johnson</strong>
-                        <span>Managing Partner, LegalAdvice Pro</span>
+                        <strong><?php echo get_post_meta(get_the_ID(), 'uxui_testimonial1_author', true) ?: 'Patricia Johnson'; ?></strong>
+                        <span><?php echo get_post_meta(get_the_ID(), 'uxui_testimonial1_position', true) ?: 'Managing Partner, LegalAdvice Pro'; ?></span>
                     </div>
                 </div>
                 <div class="testimonial-card">
                     <div class="testimonial-content">
-                        <p>"Our bounce rate dropped from 73% to 31% and conversions tripled. The investment paid for itself in the first month."</p>
+                        <p>"<?php echo get_post_meta(get_the_ID(), 'uxui_testimonial2_content', true) ?: 'Our bounce rate dropped from 73% to 31% and conversions tripled. The investment paid for itself in the first month.'; ?>"</p>
                     </div>
                     <div class="testimonial-author">
-                        <strong>Andrew Wilson</strong>
-                        <span>CEO, TechFlow Solutions</span>
+                        <strong><?php echo get_post_meta(get_the_ID(), 'uxui_testimonial2_author', true) ?: 'Andrew Wilson'; ?></strong>
+                        <span><?php echo get_post_meta(get_the_ID(), 'uxui_testimonial2_position', true) ?: 'CEO, TechFlow Solutions'; ?></span>
                     </div>
                 </div>
                 <div class="testimonial-card">
                     <div class="testimonial-content">
-                        <p>"The mobile optimization alone increased our mobile conversions by 280%. Outstanding attention to detail."</p>
+                        <p>"<?php echo get_post_meta(get_the_ID(), 'uxui_testimonial3_content', true) ?: 'The mobile optimization alone increased our mobile conversions by 280%. Outstanding attention to detail.'; ?>"</p>
                     </div>
                     <div class="testimonial-author">
-                        <strong>Rachel Martinez</strong>
-                        <span>Marketing Director, InnovateCorps</span>
+                        <strong><?php echo get_post_meta(get_the_ID(), 'uxui_testimonial3_author', true) ?: 'Rachel Martinez'; ?></strong>
+                        <span><?php echo get_post_meta(get_the_ID(), 'uxui_testimonial3_position', true) ?: 'Marketing Director, InnovateCorps'; ?></span>
                     </div>
                 </div>
             </div>
         </div>
-    </section>
-
-    <!-- FAQ Section -->
+    </section>    <!-- FAQ Section -->
     <section class="faq-section">
         <div class="container">
-            <h2>Frequently Asked Questions</h2>
+            <h2><?php echo get_post_meta(get_the_ID(), 'uxui_faq_title', true) ?: 'Frequently Asked Questions'; ?></h2>
             <div class="faq-grid">
                 <div class="faq-item">
-                    <h3>How do you measure UX optimization success?</h3>
-                    <p>We track key metrics including conversion rates, bounce rates, session duration, and user satisfaction scores. We provide detailed before/after analytics reports.</p>
+                    <h3><?php echo get_post_meta(get_the_ID(), 'uxui_faq1_question', true) ?: 'How do you measure UX optimization success?'; ?></h3>
+                    <p><?php echo get_post_meta(get_the_ID(), 'uxui_faq1_answer', true) ?: 'We track key metrics including conversion rates, bounce rates, session duration, and user satisfaction scores. We provide detailed before/after analytics reports.'; ?></p>
                 </div>
                 <div class="faq-item">
-                    <h3>Will you need to rebuild our entire website?</h3>
-                    <p>Not necessarily. Many optimizations can be implemented within your existing framework. We focus on strategic improvements that deliver maximum impact.</p>
+                    <h3><?php echo get_post_meta(get_the_ID(), 'uxui_faq2_question', true) ?: 'Will you need to rebuild our entire website?'; ?></h3>
+                    <p><?php echo get_post_meta(get_the_ID(), 'uxui_faq2_answer', true) ?: 'Not necessarily. Many optimizations can be implemented within your existing framework. We focus on strategic improvements that deliver maximum impact.'; ?></p>
                 </div>
                 <div class="faq-item">
-                    <h3>How long do optimization projects take?</h3>
-                    <p>Timeline varies by scope: 2 weeks for audits, 4 weeks for standard optimization, and 6 weeks for complete overhauls. We provide detailed timelines during consultation.</p>
+                    <h3><?php echo get_post_meta(get_the_ID(), 'uxui_faq3_question', true) ?: 'How long do optimization projects take?'; ?></h3>
+                    <p><?php echo get_post_meta(get_the_ID(), 'uxui_faq3_answer', true) ?: 'Timeline varies by scope: 2 weeks for audits, 4 weeks for standard optimization, and 6 weeks for complete overhauls. We provide detailed timelines during consultation.'; ?></p>
                 </div>
                 <div class="faq-item">
-                    <h3>Do you test changes before implementing them?</h3>
-                    <p>Yes, we use A/B testing and staged rollouts to ensure improvements deliver measurable results before full implementation.</p>
+                    <h3><?php echo get_post_meta(get_the_ID(), 'uxui_faq4_question', true) ?: 'Do you test changes before implementing them?'; ?></h3>
+                    <p><?php echo get_post_meta(get_the_ID(), 'uxui_faq4_answer', true) ?: 'Yes, we use A/B testing and staged rollouts to ensure improvements deliver measurable results before full implementation.'; ?></p>
                 </div>
                 <div class="faq-item">
-                    <h3>Can you optimize mobile experience separately?</h3>
-                    <p>Absolutely! Mobile optimization can be done as a standalone project, though we recommend comprehensive optimization for best results.</p>
+                    <h3><?php echo get_post_meta(get_the_ID(), 'uxui_faq5_question', true) ?: 'Can you optimize mobile experience separately?'; ?></h3>
+                    <p><?php echo get_post_meta(get_the_ID(), 'uxui_faq5_answer', true) ?: 'Absolutely! Mobile optimization can be done as a standalone project, though we recommend comprehensive optimization for best results.'; ?></p>
                 </div>
                 <div class="faq-item">
-                    <h3>What if the optimizations don't improve performance?</h3>
-                    <p>Our optimizations are data-driven and tested. If results don't meet expectations, we provide additional optimization rounds at no extra cost.</p>
+                    <h3><?php echo get_post_meta(get_the_ID(), 'uxui_faq6_question', true) ?: 'What if the optimizations don\'t improve performance?'; ?></h3>
+                    <p><?php echo get_post_meta(get_the_ID(), 'uxui_faq6_answer', true) ?: 'Our optimizations are data-driven and tested. If results don\'t meet expectations, we provide additional optimization rounds at no extra cost.'; ?></p>
                 </div>
             </div>
         </div>
-    </section>
-
-    <!-- CTA Section -->
+    </section>    <!-- CTA Section -->
     <section id="contact" class="cta-section">
         <div class="container">
             <div class="cta-content">
-                <h2>Ready to Optimize Your Website for Better Results?</h2>
-                <p>Get a free UX audit and discover exactly how to improve your website's performance and conversions.</p>                <div class="cta-buttons">
-                    <a href="<?php echo home_url('/contact'); ?>" class="btn-primary">Get Free UX Audit</a>
+                <h2><?php echo get_post_meta(get_the_ID(), 'uxui_cta_title', true) ?: 'Ready to Optimize Your Website for Better Results?'; ?></h2>
+                <p><?php echo get_post_meta(get_the_ID(), 'uxui_cta_description', true) ?: 'Get a free UX audit and discover exactly how to improve your website\'s performance and conversions.'; ?></p>                <div class="cta-buttons">
+                    <a href="<?php echo home_url('/contact'); ?>" class="btn-primary"><?php echo get_post_meta(get_the_ID(), 'uxui_cta_button_text', true) ?: 'Get Free UX Audit'; ?></a>
                 </div>
             </div>
         </div>
