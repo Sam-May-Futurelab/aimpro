@@ -36,6 +36,9 @@ function aimpro_theme_setup() {
 }
 add_action('after_setup_theme', 'aimpro_theme_setup');
 
+// Include contact page meta functionality
+require_once get_template_directory() . '/includes/contact-meta.php';
+
 /**
  * Add custom image sizes for blog thumbnails
  */
@@ -715,8 +718,48 @@ function aimpro_save_meta_box_data($post_id) {
 // Helper function to get custom field with fallback
 /**
  * Helper function to get landing page field values from options
+ * Enhanced to also check post meta for contact page fields
  */
-function aimpro_get_field($field_name, $default = '') {
+function aimpro_get_field($field_name, $default = '') {    // List of contact fields that should check post meta first
+    $contact_fields = array(
+        'contact_hero_heading',
+        'contact_hero_subtitle',
+        'contact_hero_badge',
+        'contact_phone',
+        'contact_phone_label',
+        'contact_email',
+        'contact_email_label',
+        'contact_hours',
+        'contact_hours_label',
+        'contact_form_title',
+        'contact_form_subtitle',
+        'contact_form_submit_text',
+        'contact_office_heading',
+        'contact_office_description',
+        'contact_office_address',
+        'contact_office_cta_text',
+        'contact_faq_heading',
+        'contact_faq_subtitle',
+        'contact_final_cta_heading',
+        'contact_final_cta_description',
+        'contact_final_cta_phone_text',
+        'contact_final_cta_email_text'
+    );
+    
+    // For contact fields, check post meta first
+    if (in_array($field_name, $contact_fields)) {
+        global $post;
+        $post_id = $post ? $post->ID : get_the_ID();
+        
+        if ($post_id) {
+            $post_meta_value = get_post_meta($post_id, $field_name, true);
+            if (!empty($post_meta_value)) {
+                return $post_meta_value;
+            }
+        }
+    }
+    
+    // Fall back to original behavior (check options)
     $value = get_option($field_name, $default);
     return $value ? $value : $default;
 }

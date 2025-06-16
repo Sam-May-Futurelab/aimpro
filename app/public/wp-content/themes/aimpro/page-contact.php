@@ -11,15 +11,14 @@ get_header(); ?>
 <main class="contact-page">
     <!-- Hero Section -->
     <section class="contact-hero">
-        <div class="container">            <div class="hero-content">
-                <div class="hero-badge">
+        <div class="container">            <div class="hero-content">                <div class="hero-badge">
                     <span class="badge-icon">
                         <i class="fas fa-map-marker-alt"></i>
                     </span>
-                    <span>LOCATED IN BIRMINGHAM'S BUSINESS DISTRICT</span>
+                    <span><?php echo aimpro_get_field('contact_hero_badge', 'LOCATED IN BIRMINGHAM\'S BUSINESS DISTRICT'); ?></span>
                 </div>
-                <h1>Get In Touch with <span class="text-gradient">Digital Marketing Experts</span></h1>
-                <p class="hero-description">Ready to transform your business? Let's discuss your digital marketing goals and create a strategy that delivers measurable results.</p>
+                <h1><?php echo aimpro_get_field('contact_hero_heading', 'Get In Touch with <span class="text-gradient">Digital Marketing Experts</span>'); ?></h1>
+                <p class="hero-description"><?php echo aimpro_get_field('contact_hero_subtitle', 'Ready to transform your business? Let\'s discuss your digital marketing goals and create a strategy that delivers measurable results.'); ?></p>
                   <!-- Quick Contact Options -->
                 <div class="quick-contact-grid">
                     <div class="quick-contact-item">
