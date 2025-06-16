@@ -69,6 +69,7 @@ require_once get_template_directory() . '/includes/ecommerce-meta.php';
 require_once get_template_directory() . '/includes/solutions-meta.php';
 require_once get_template_directory() . '/includes/lead-generation-meta.php';
 require_once get_template_directory() . '/includes/improve-roi-ads-meta.php';
+require_once get_template_directory() . '/includes/rank-higher-locally-meta.php';
 require_once get_template_directory() . '/includes/automate-marketing-meta.php';
 require_once get_template_directory() . '/includes/finance-meta.php';
 
