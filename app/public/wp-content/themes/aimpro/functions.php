@@ -42,6 +42,9 @@ require_once get_template_directory() . '/includes/contact-meta.php';
 // Include about page meta functionality
 require_once get_template_directory() . '/includes/about-meta.php';
 
+// Include company page meta functionality
+require_once get_template_directory() . '/includes/company-meta.php';
+
 // Include helper functions
 require_once get_template_directory() . '/includes/helpers.php';
 
@@ -538,9 +541,34 @@ function aimpro_add_custom_fields_support() {
 // Add meta boxes for landing page content
 add_action('add_meta_boxes', 'aimpro_add_landing_page_meta_boxes');
 function aimpro_add_landing_page_meta_boxes() {
-    // Only show on front page or pages with landing page template
-    $screen = get_current_screen();
-    if ($screen->post_type == 'page') {
+    global $post;
+    if (empty($post)) return;
+    
+    // Check if this is the front page, a landing page template, or specific pages that should have these meta boxes
+    $is_landing_page = false;
+    $page_template = get_page_template_slug($post->ID);
+    $page_slug = $post->post_name;
+    
+    // List of templates and slugs that should have these meta boxes
+    $landing_templates = array('page-landing.php', 'page-home.php', 'front-page.php');
+    $landing_slugs = array('home', 'landing', 'homepage');
+    
+    // Check if this is the front page
+    if (get_option('page_on_front') == $post->ID) {
+        $is_landing_page = true;
+    }
+    
+    // Check if using a landing page template
+    if (in_array($page_template, $landing_templates)) {
+        $is_landing_page = true;
+    }
+    
+    // Check if has a landing page slug
+    if (in_array($page_slug, $landing_slugs)) {
+        $is_landing_page = true;
+    }
+    
+    if ($is_landing_page) {
         add_meta_box(
             'aimpro_hero_section',
             'Hero Section Content',
@@ -1931,25 +1959,28 @@ function aimpro_breadcrumbs() {
 
 // Add meta box for About page video
 function aimpro_add_about_video_meta_box() {
-    add_meta_box(
-        'about_page_video',
-        'About Page Video',
-        'aimpro_about_video_meta_box_callback',
-        'page',
-        'normal',
-        'high'
-    );
+    global $post;
+    if (empty($post)) return;
+    
+    $page_template = get_page_template_slug($post->ID);
+    $page_slug = $post->post_name;
+    
+    // Only add to the About page or pages using the About template
+    if ($page_slug === 'about' || $page_template === 'page-about.php' || $post->ID === get_option('aimpro_about_page_id')) {
+        add_meta_box(
+            'about_page_video',
+            'About Page Video',
+            'aimpro_about_video_meta_box_callback',
+            'page',
+            'normal',
+            'high'
+        );
+    }
 }
 add_action('add_meta_boxes', 'aimpro_add_about_video_meta_box');
 
 // Meta box callback function
 function aimpro_about_video_meta_box_callback($post) {
-    // Only show on About page
-    if ($post->post_name !== 'about' && $post->ID !== get_option('aimpro_about_page_id')) {
-        echo '<p>This video section is only available for the About page.</p>';
-        return;
-    }
-    
     wp_nonce_field('aimpro_about_video_nonce', 'aimpro_about_video_nonce');
     
     $video_url = get_post_meta($post->ID, '_about_page_video', true);

@@ -14,9 +14,14 @@ if (!defined('ABSPATH')) {
  */
 add_action('add_meta_boxes', 'aimpro_add_about_meta_box');
 function aimpro_add_about_meta_box() {
-    // Only add to pages using the About Page template
-    $screen = get_current_screen();
-    if ($screen->post_type === 'page') {
+    // Only add to pages using the About Page template or with 'about' slug
+    global $post;
+    if (empty($post)) return;
+    
+    $page_template = get_page_template_slug($post->ID);
+    $page_slug = $post->post_name;
+    
+    if ($page_template === 'page-about.php' || $page_slug === 'about') {
         add_meta_box(
             'aimpro_about_settings',
             'About Page Settings',
