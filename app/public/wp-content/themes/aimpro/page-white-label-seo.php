@@ -69,10 +69,10 @@ get_header(); ?>
                 </div>
             </div>
         </section>        <!-- Services Grid -->
-        <section class="whitelabel-services">
+        <section class="seo-services-grid">
             <div class="section-content">
                 <h2><?php echo esc_html(get_post_meta(get_the_ID(), 'white_label_seo_services_title', true) ?: 'White Label SEO Services We Provide'); ?></h2>
-                <div class="whitelabel-services-grid">
+                <div class="services-grid">
                     <?php 
                     $services = get_post_meta(get_the_ID(), 'white_label_seo_services', true) ?: [
                         [
@@ -107,23 +107,25 @@ get_header(); ?>
                         ]
                     ];
                     foreach ($services as $service): ?>
-                        <div class="whitelabel-service-card">
-                            <h3><?php echo esc_html($service['title']); ?></h3>
-                            <p><?php echo esc_html($service['description']); ?></p>
-                            <ul class="service-features-list">
-                                <?php foreach ($service['features'] as $feature): ?>
-                                    <li><?php echo esc_html($feature); ?></li>
-                                <?php endforeach; ?>
-                            </ul>
+                        <div class="service-card">
+                            <div class="service-content">
+                                <h3><?php echo esc_html($service['title']); ?></h3>
+                                <p><?php echo esc_html($service['description']); ?></p>
+                                <ul class="service-features-list">
+                                    <?php foreach ($service['features'] as $feature): ?>
+                                        <li><?php echo esc_html($feature); ?></li>
+                                    <?php endforeach; ?>
+                                </ul>
+                            </div>
                         </div>
                     <?php endforeach; ?>
                 </div>
             </div>
         </section>        <!-- Pricing Packages -->
-        <section class="pricing-packages">
+        <section class="pricing-section">
             <div class="section-content">
                 <h2><?php echo esc_html(get_post_meta(get_the_ID(), 'white_label_seo_packages_title', true) ?: 'White Label SEO Packages'); ?></h2>
-                <div class="packages-grid">
+                <div class="pricing-grid">
                     <?php 
                     $packages = get_post_meta(get_the_ID(), 'white_label_seo_packages', true) ?: [
                         [
@@ -181,32 +183,25 @@ get_header(); ?>
                         ]
                     ];
                     foreach ($packages as $package): ?>
-                        <div class="package-card<?php echo $package['featured'] ? ' featured' : ''; ?>">
+                        <div class="pricing-card<?php echo $package['featured'] ? ' featured' : ''; ?>">
                             <?php if ($package['badge']): ?>
-                                <div class="package-badge"><?php echo esc_html($package['badge']); ?></div>
+                                <span class="popular-badge"><?php echo esc_html($package['badge']); ?></span>
                             <?php endif; ?>
-                            <div class="package-header">
+                            <div class="pricing-header">
                                 <h3><?php echo esc_html($package['name']); ?></h3>
-                                <div class="package-price">
-                                    <span class="price"><?php echo esc_html($package['price']); ?></span>
-                                    <span class="period"><?php echo esc_html($package['period']); ?></span>
-                                </div>
+                                <div class="price"><?php echo esc_html($package['price']); ?><span><?php echo esc_html($package['period']); ?></span></div>
                             </div>
-                            <div class="package-features">
-                                <ul>
-                                    <?php foreach ($package['features'] as $feature): ?>
-                                        <li><?php echo esc_html($feature); ?></li>
-                                    <?php endforeach; ?>
-                                </ul>
-                            </div>
-                            <div class="package-cta">
-                                <a href="<?php echo home_url('/contact'); ?>" class="btn <?php echo $package['featured'] ? 'btn-primary' : 'btn-secondary'; ?>">Get Started</a>
-                            </div>
+                            <ul class="pricing-features">
+                                <?php foreach ($package['features'] as $feature): ?>
+                                    <li><?php echo esc_html($feature); ?></li>
+                                <?php endforeach; ?>
+                            </ul>
+                            <a href="<?php echo home_url('/contact'); ?>" class="<?php echo $package['featured'] ? 'btn-primary' : 'btn-outline'; ?>">Get Started</a>
                         </div>
                     <?php endforeach; ?>
                 </div>
             </div>
-        </section>        <!-- Case Study -->
+        </section><!-- Case Study -->
         <section class="case-study">
             <div class="section-content">
                 <div class="case-study-content">
