@@ -48,6 +48,9 @@ require_once get_template_directory() . '/includes/company-meta.php';
 // Include team page meta functionality
 require_once get_template_directory() . '/includes/team-meta.php';
 
+// Include landing pages meta functionality
+require_once get_template_directory() . '/includes/landing-pages-meta.php';
+
 // Include testimonials page meta functionality
 require_once get_template_directory() . '/includes/testimonials-meta.php';
 require_once get_template_directory() . '/includes/careers-meta.php';

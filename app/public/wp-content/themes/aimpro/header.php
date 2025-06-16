@@ -52,44 +52,36 @@
                         </span></a>
                         <div class="mega-menu">
                             <div class="mega-menu-container">
-                                <div class="mega-menu-grid">
-                                    <div class="mega-menu-column">
-                                        <h4>SEO Services</h4>
+                                <div class="mega-menu-grid">                                    <div class="mega-menu-column">
+                                        <h4><a href="<?php echo home_url('/seo-services'); ?>">SEO Services</a></h4>
                                         <ul class="mega-menu-list">
-                                            <li><a href="<?php echo home_url('/seo-services'); ?>">SEO Overview</a></li>
                                             <li><a href="<?php echo home_url('/local-seo'); ?>">Local SEO</a></li>
                                             <li><a href="<?php echo home_url('/seo-audit'); ?>">SEO Audit</a></li>
                                             <li><a href="<?php echo home_url('/technical-seo'); ?>">Technical SEO</a></li>
                                             <li><a href="<?php echo home_url('/on-page-seo'); ?>">On-Page SEO</a></li>
                                             <li><a href="<?php echo home_url('/white-label-seo'); ?>">White Label SEO</a></li>
                                         </ul>
-                                    </div>
-                                    <div class="mega-menu-column">
-                                        <h4>Advertising & PPC</h4>
+                                    </div>                                    <div class="mega-menu-column">
+                                        <h4><a href="<?php echo home_url('/advertising-ppc'); ?>">Advertising & PPC</a></h4>
                                         <ul class="mega-menu-list">
-                                            <li><a href="<?php echo home_url('/advertising-ppc'); ?>">PPC Overview</a></li>
                                             <li><a href="<?php echo home_url('/google-ads'); ?>">Google Ads</a></li>
                                             <li><a href="<?php echo home_url('/meta-ads'); ?>">Meta Ads</a></li>
                                             <li><a href="<?php echo home_url('/microsoft-ads'); ?>">Microsoft Ads</a></li>
                                             <li><a href="<?php echo home_url('/retargeting-display'); ?>">Retargeting</a></li>
                                             <li><a href="<?php echo home_url('/ppc-audit'); ?>">PPC Audit</a></li>
                                         </ul>
-                                    </div>
-                                    <div class="mega-menu-column">
-                                        <h4>Marketing Automation</h4>
+                                    </div>                                    <div class="mega-menu-column">
+                                        <h4><a href="<?php echo home_url('/marketing-automation'); ?>">Marketing Automation</a></h4>
                                         <ul class="mega-menu-list">
-                                            <li><a href="<?php echo home_url('/marketing-automation'); ?>">Automation</a></li>
                                             <li><a href="<?php echo home_url('/ai-crm-setup'); ?>">AI CRM Setup</a></li>
                                             <li><a href="<?php echo home_url('/email-sms-flows'); ?>">Email & SMS</a></li>
                                             <li><a href="<?php echo home_url('/email-campaigns'); ?>">Email Campaigns</a></li>
                                             <li><a href="<?php echo home_url('/funnel-automation'); ?>">Funnels</a></li>
                                             <li><a href="<?php echo home_url('/chatbots'); ?>">Chatbots</a></li>
                                         </ul>
-                                    </div>
-                                    <div class="mega-menu-column">
-                                        <h4>Web Development</h4>
+                                    </div>                                    <div class="mega-menu-column">
+                                        <h4><a href="<?php echo home_url('/website-development'); ?>">Web Development</a></h4>
                                         <ul class="mega-menu-list">
-                                            <li><a href="<?php echo home_url('/website-development'); ?>">Development</a></li>
                                             <li><a href="<?php echo home_url('/website-design'); ?>">Website Design</a></li>
                                             <li><a href="<?php echo home_url('/landing-pages'); ?>">Landing Pages</a></li>
                                             <li><a href="<?php echo home_url('/funnel-builds'); ?>">Funnel Builds</a></li>
