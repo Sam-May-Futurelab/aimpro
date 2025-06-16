@@ -24,10 +24,9 @@ get_header(); ?>
                     <div class="quick-contact-item">
                         <div class="contact-icon">
                             <i class="fas fa-phone"></i>
-                        </div>
-                        <div class="contact-details">
-                            <span class="contact-label">Call Us Now</span>
-                            <span class="contact-value">+44 121 285 8490</span>
+                        </div>                        <div class="contact-details">
+                            <span class="contact-label"><?php echo aimpro_get_field('contact_phone_label', 'Call Us Now'); ?></span>
+                            <span class="contact-value"><?php echo aimpro_get_field('contact_phone', '+44 121 285 8490'); ?></span>
                         </div>
                     </div>
                     <div class="quick-contact-item">
@@ -35,8 +34,8 @@ get_header(); ?>
                             <i class="fas fa-envelope"></i>
                         </div>
                         <div class="contact-details">
-                            <span class="contact-label">Email Us</span>
-                            <span class="contact-value">hello@aimpro.co.uk</span>
+                            <span class="contact-label"><?php echo aimpro_get_field('contact_email_label', 'Email Us'); ?></span>
+                            <span class="contact-value"><?php echo aimpro_get_field('contact_email', 'hello@aimpro.co.uk'); ?></span>
                         </div>
                     </div>
                     <div class="quick-contact-item">
@@ -44,8 +43,8 @@ get_header(); ?>
                             <i class="fas fa-clock"></i>
                         </div>
                         <div class="contact-details">
-                            <span class="contact-label">Business Hours</span>
-                            <span class="contact-value">Mon-Fri: 9AM-6PM</span>
+                            <span class="contact-label"><?php echo aimpro_get_field('contact_hours_label', 'Business Hours'); ?></span>
+                            <span class="contact-value"><?php echo aimpro_get_field('contact_hours', 'Mon-Fri: 9AM-6PM'); ?></span>
                         </div>
                     </div>
                 </div>
