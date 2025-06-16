@@ -79,6 +79,7 @@ require_once get_template_directory() . '/includes/high-converting-website-meta.
 require_once get_template_directory() . '/includes/chatbots-meta.php';
 require_once get_template_directory() . '/includes/advertising-ppc-meta.php';
 require_once get_template_directory() . '/includes/google-ads-meta.php';
+require_once get_template_directory() . '/includes/meta-ads-meta.php';
 
 // Include helper functions
 require_once get_template_directory() . '/includes/helpers.php';

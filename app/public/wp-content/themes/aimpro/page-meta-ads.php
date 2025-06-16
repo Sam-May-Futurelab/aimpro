@@ -7,7 +7,18 @@
  * @package Aimpro
  */
 
-get_header(); ?>
+get_header(); 
+
+// Get post ID and defaults
+$post_id = get_the_ID();
+$defaults = aimpro_get_meta_ads_default_values();
+
+// Helper function to get meta value with fallback
+function get_meta_ads_meta($key, $post_id, $defaults, $prefix = '_meta_ads_') {
+    $value = get_post_meta($post_id, $prefix . $key, true);
+    return !empty($value) ? $value : (isset($defaults[$key]) ? $defaults[$key] : '');
+}
+?>
 
 <main id="primary" class="service-page meta-ads-page">
     <!-- Breadcrumbs -->
@@ -23,117 +34,76 @@ get_header(); ?>
                 <span class="current">Meta Ads (Facebook/Instagram)</span>
             </nav>
         </div>
-    </div>
-
-    <!-- Hero Section -->
+    </div>    <!-- Hero Section -->
     <section class="page-hero service-hero">
-        <div class="container">            <div class="hero-content">
-                <h1>Meta Ads (Facebook/Instagram) Management</h1>
-                <p class="hero-subtitle">Drive targeted traffic and conversions with expertly managed Facebook and Instagram advertising campaigns that reach your ideal customers where they spend their time.</p>
+        <div class="container">
+            <div class="hero-content">
+                <h1><?php echo esc_html(get_meta_ads_meta('hero_title', $post_id, $defaults)); ?></h1>
+                <p class="hero-subtitle"><?php echo esc_html(get_meta_ads_meta('hero_subtitle', $post_id, $defaults)); ?></p>
                 <div class="hero-stats">
                     <div class="stat-item">
-                        <div class="stat-number">285%</div>
-                        <div class="stat-label">Average ROAS Increase</div>
+                        <div class="stat-number"><?php echo esc_html(get_meta_ads_meta('hero_stat1_number', $post_id, $defaults)); ?></div>
+                        <div class="stat-label"><?php echo esc_html(get_meta_ads_meta('hero_stat1_label', $post_id, $defaults)); ?></div>
                     </div>
                     <div class="stat-item">
-                        <div class="stat-number">65%</div>
-                        <div class="stat-label">Lower Cost Per Lead</div>
+                        <div class="stat-number"><?php echo esc_html(get_meta_ads_meta('hero_stat2_number', $post_id, $defaults)); ?></div>
+                        <div class="stat-label"><?php echo esc_html(get_meta_ads_meta('hero_stat2_label', $post_id, $defaults)); ?></div>
                     </div>
                     <div class="stat-item">
-                        <div class="stat-number">450%</div>
-                        <div class="stat-label">Reach Expansion</div>
+                        <div class="stat-number"><?php echo esc_html(get_meta_ads_meta('hero_stat3_number', $post_id, $defaults)); ?></div>
+                        <div class="stat-label"><?php echo esc_html(get_meta_ads_meta('hero_stat3_label', $post_id, $defaults)); ?></div>
                     </div>
                 </div>
                 <div class="hero-ctas">
-                    <a href="#contact" class="btn-primary streamlined">Start Your Meta Campaign</a>
-                    <a href="#packages" class="btn-outline streamlined">View Packages</a>
+                    <a href="#contact" class="btn-primary streamlined"><?php echo esc_html(get_meta_ads_meta('hero_cta1_text', $post_id, $defaults)); ?></a>
+                    <a href="#packages" class="btn-outline streamlined"><?php echo esc_html(get_meta_ads_meta('hero_cta2_text', $post_id, $defaults)); ?></a>
                 </div>
             </div>
-            </div>
         </div>
-    </section>
-
-    <!-- Service Overview -->
+    </section>    <!-- Service Overview -->
     <section class="service-overview">
         <div class="container">
             <div class="overview-content">
-                <h2>Comprehensive Meta Ads Management</h2>
-                <p>Facebook and Instagram advertising offers unparalleled targeting capabilities and massive reach. Our Meta Ads specialists create data-driven campaigns that connect your brand with highly qualified prospects across the world's largest social platforms.</p>
+                <h2><?php echo esc_html(get_meta_ads_meta('overview_title', $post_id, $defaults)); ?></h2>
+                <p><?php echo esc_html(get_meta_ads_meta('overview_content', $post_id, $defaults)); ?></p>
             </div>
             
             <div class="services-grid">
+                <?php for($i = 1; $i <= 6; $i++) : ?>
                 <div class="service-item">
                     <div class="service-icon">
-                        <i class="fab fa-facebook"></i>
+                        <i class="<?php echo esc_attr(get_meta_ads_meta("service_icon_{$i}", $post_id, $defaults)); ?>"></i>
                     </div>
-                    <h3>Facebook Ads Management</h3>
-                    <p>Strategic Facebook advertising campaigns targeting specific demographics, interests, and behaviors to maximize reach and conversions.</p>
+                    <h3><?php echo esc_html(get_meta_ads_meta("service_title_{$i}", $post_id, $defaults)); ?></h3>
+                    <p><?php echo esc_html(get_meta_ads_meta("service_content_{$i}", $post_id, $defaults)); ?></p>
                 </div>
-                
-                <div class="service-item">
-                    <div class="service-icon">
-                        <i class="fab fa-instagram"></i>
-                    </div>
-                    <h3>Instagram Ads Optimization</h3>
-                    <p>Visual storytelling through Instagram ads that capture attention and drive engagement with compelling creative and precise targeting.</p>
-                </div>
-                
-                <div class="service-item">
-                    <div class="service-icon">
-                        <i class="fas fa-bullseye"></i>
-                    </div>
-                    <h3>Advanced Audience Targeting</h3>
-                    <p>Leverage Meta's sophisticated targeting options including lookalike audiences, custom audiences, and detailed demographic targeting.</p>
-                </div>
-                
-                <div class="service-item">
-                    <div class="service-icon">
-                        <i class="fas fa-sync-alt"></i>
-                    </div>
-                    <h3>Campaign Optimization</h3>
-                    <p>Continuous A/B testing of ad creative, copy, and targeting to improve performance and reduce costs over time.</p>
-                </div>
-                
-                <div class="service-item">
-                    <div class="service-icon">
-                        <i class="fas fa-chart-line"></i>
-                    </div>
-                    <h3>Performance Analytics</h3>
-                    <p>Detailed reporting and analysis of campaign performance with actionable insights for continuous improvement.</p>
-                </div>
-                
-                <div class="service-item">
-                    <div class="service-icon">
-                        <i class="fas fa-shopping-cart"></i>
-                    </div>
-                    <h3>E-commerce Integration</h3>
-                    <p>Seamless integration with e-commerce platforms for dynamic product ads and conversion tracking.</p>
-                </div>
+                <?php endfor; ?>
             </div>
         </div>
-    </section>
-
-    <!-- Case Study Section -->
+    </section>    <!-- Case Study Section -->
     <section class="case-study-section">
         <div class="container">
             <div class="case-study-content">
                 <div class="case-study-text">
-                    <h2>Case Study: E-commerce Success</h2>
-                    <p class="case-study-intro">How we helped an online retailer achieve a 380% increase in sales through strategic Meta advertising campaigns.</p>
+                    <h2><?php echo esc_html(get_meta_ads_meta('case_study_title', $post_id, $defaults)); ?></h2>
+                    <p class="case-study-intro"><?php echo esc_html(get_meta_ads_meta('case_study_intro', $post_id, $defaults)); ?></p>
                     
                     <div class="case-study-challenge">
                         <h3>The Challenge</h3>
-                        <p>An established e-commerce retailer was struggling with high customer acquisition costs and declining ROAS from their existing Meta ads campaigns. Their broad targeting approach wasn't delivering qualified traffic, and their ad creative wasn't resonating with their target audience.</p>
+                        <p><?php echo esc_html(get_meta_ads_meta('case_study_challenge', $post_id, $defaults)); ?></p>
                     </div>
                     
                     <div class="case-study-solution">
                         <h3>Our Solution</h3>
                         <ul>
-                            <li>Implemented advanced audience segmentation and lookalike modeling</li>
-                            <li>Created platform-specific creative optimized for Facebook and Instagram feeds</li>
-                            <li>Launched retargeting campaigns for abandoned cart recovery</li>
-                            <li>Established dynamic product ads for catalog promotion</li>
-                            <li>Implemented conversion tracking and attribution modeling</li>
+                            <?php 
+                            $solution_items = explode("\n", get_meta_ads_meta('case_study_solution', $post_id, $defaults));
+                            foreach($solution_items as $item) {
+                                if (!empty(trim($item))) {
+                                    echo '<li>' . esc_html(trim($item)) . '</li>';
+                                }
+                            }
+                            ?>
                         </ul>
                     </div>
                 </div>
@@ -141,241 +111,128 @@ get_header(); ?>
                 <div class="case-study-results">
                     <h3>The Results</h3>
                     <div class="results-grid">
+                        <?php for($i = 1; $i <= 4; $i++) : ?>
                         <div class="result-item">
-                            <div class="result-number">380%</div>
-                            <div class="result-label">Sales Increase</div>
+                            <div class="result-number"><?php echo esc_html(get_meta_ads_meta("case_result_{$i}_number", $post_id, $defaults)); ?></div>
+                            <div class="result-label"><?php echo esc_html(get_meta_ads_meta("case_result_{$i}_label", $post_id, $defaults)); ?></div>
                         </div>
-                        <div class="result-item">
-                            <div class="result-number">285%</div>
-                            <div class="result-label">ROAS Improvement</div>
-                        </div>
-                        <div class="result-item">
-                            <div class="result-number">65%</div>
-                            <div class="result-label">Cost Per Acquisition Reduction</div>
-                        </div>
-                        <div class="result-item">
-                            <div class="result-number">450%</div>
-                            <div class="result-label">Qualified Traffic Increase</div>                        </div>
+                        <?php endfor; ?>
                     </div>
                 </div>
             </div>
         </div>
-    </section>
-
-    <!-- Process Section -->
+    </section>    <!-- Process Section -->
     <section class="process-section">
         <div class="container">
-            <h2>Our Meta Ads Process</h2>
+            <h2><?php echo esc_html(get_meta_ads_meta('process_title', $post_id, $defaults)); ?></h2>
             <div class="process-steps">
+                <?php for($i = 1; $i <= 5; $i++) : ?>
                 <div class="process-step">
-                    <div class="step-number">1</div>
+                    <div class="step-number"><?php echo esc_html(get_meta_ads_meta("process_step_number_{$i}", $post_id, $defaults)); ?></div>
                     <div class="step-content">
-                        <h3>Audience Research & Strategy</h3>
-                        <p>Deep dive into your target audience demographics, interests, and behaviors to create detailed buyer personas and targeting strategies.</p>
+                        <h3><?php echo esc_html(get_meta_ads_meta("process_step_title_{$i}", $post_id, $defaults)); ?></h3>
+                        <p><?php echo esc_html(get_meta_ads_meta("process_step_content_{$i}", $post_id, $defaults)); ?></p>
                     </div>
                 </div>
-                
-                <div class="process-step">
-                    <div class="step-number">2</div>
-                    <div class="step-content">
-                        <h3>Campaign Setup & Structure</h3>
-                        <p>Build optimized campaign architecture with proper audience segmentation, budget allocation, and conversion tracking implementation.</p>
-                    </div>
-                </div>
-                
-                <div class="process-step">
-                    <div class="step-number">3</div>
-                    <div class="step-content">
-                        <h3>Creative Development</h3>
-                        <p>Design compelling ad creative including images, videos, and copy optimized for Facebook and Instagram placements.</p>
-                    </div>
-                </div>
-                
-                <div class="process-step">
-                    <div class="step-number">4</div>
-                    <div class="step-content">
-                        <h3>Launch & Optimization</h3>
-                        <p>Deploy campaigns with continuous monitoring and optimization based on performance data and audience insights.</p>
-                    </div>
-                </div>
-                
-                <div class="process-step">
-                    <div class="step-number">5</div>
-                    <div class="step-content">
-                        <h3>Reporting & Scaling</h3>
-                        <p>Provide detailed performance reports and scale successful campaigns while testing new audiences and creative variations.</p>
-                    </div>
-                </div>
+                <?php endfor; ?>
             </div>
         </div>
     </section>    <!-- Packages Section -->
     <section id="packages" class="pricing-section">
         <div class="container">
             <div class="section-header">
-                <h2>Meta Ads Management Packages</h2>
-                <p>Professional Meta advertising management that drives real results for your business.</p>
+                <h2><?php echo esc_html(get_meta_ads_meta('pricing_title', $post_id, $defaults)); ?></h2>
+                <p><?php echo esc_html(get_meta_ads_meta('pricing_subtitle', $post_id, $defaults)); ?></p>
             </div>
             
             <div class="pricing-grid">
-                <div class="pricing-card">
+                <?php for($i = 1; $i <= 3; $i++) : 
+                    $is_featured = ($i == 2) && get_meta_ads_meta("pricing_package_{$i}_featured", $post_id, $defaults);
+                    $badge = get_meta_ads_meta("pricing_package_{$i}_badge", $post_id, $defaults);
+                ?>
+                <div class="pricing-card <?php echo $is_featured ? 'featured' : ''; ?>">
+                    <?php if($badge) : ?>
+                    <div class="pricing-badge"><?php echo esc_html($badge); ?></div>
+                    <?php endif; ?>
                     <div class="pricing-header">
-                        <h3>Starter</h3>
-                        <div class="price">£697<span>/month</span></div>
-                        <p>Perfect for small businesses</p>
+                        <h3><?php echo esc_html(get_meta_ads_meta("pricing_package_{$i}_name", $post_id, $defaults)); ?></h3>
+                        <div class="price"><?php echo esc_html(get_meta_ads_meta("pricing_package_{$i}_price", $post_id, $defaults)); ?><span><?php echo esc_html(get_meta_ads_meta("pricing_package_{$i}_period", $post_id, $defaults)); ?></span></div>
+                        <p><?php echo esc_html(get_meta_ads_meta("pricing_package_{$i}_description", $post_id, $defaults)); ?></p>
                     </div>
                     <ul class="pricing-features">
-                        <li>Up to £2,000 ad spend management</li>
-                        <li>Facebook & Instagram campaigns</li>
-                        <li>Basic audience targeting</li>
-                        <li>3 ad creative variations</li>
-                        <li>Weekly performance reports</li>
-                        <li>Conversion tracking setup</li>
-                        <li>Monthly strategy calls</li>
+                        <?php 
+                        $features = explode("\n", get_meta_ads_meta("pricing_package_{$i}_features", $post_id, $defaults));
+                        foreach($features as $feature) {
+                            if (!empty(trim($feature))) {
+                                echo '<li>' . esc_html(trim($feature)) . '</li>';
+                            }
+                        }
+                        ?>
                     </ul>
-                    <a href="#contact" class="btn-outline">Get Started</a>
+                    <a href="#contact" class="<?php echo $is_featured ? 'btn-primary' : 'btn-outline'; ?>"><?php echo esc_html(get_meta_ads_meta("pricing_package_{$i}_button_text", $post_id, $defaults)); ?></a>
                 </div>
-                
-                <div class="pricing-card featured">
-                    <div class="pricing-badge">Most Popular</div>
-                    <div class="pricing-header">
-                        <h3>Professional</h3>
-                        <div class="price">£1,197<span>/month</span></div>
-                        <p>Comprehensive Meta advertising</p>
-                    </div>
-                    <ul class="pricing-features">
-                        <li>Up to £5,000 ad spend management</li>
-                        <li>Full Meta platform coverage</li>
-                        <li>Advanced audience targeting</li>
-                        <li>Unlimited ad creative testing</li>
-                        <li>Bi-weekly optimization reports</li>
-                        <li>Retargeting campaigns</li>
-                        <li>Lookalike audience creation</li>
-                        <li>Priority support</li>
-                    </ul>
-                    <a href="#contact" class="btn-primary">Get Started</a>
-                </div>
-                
-                <div class="pricing-card">
-                    <div class="pricing-header">
-                        <h3>Enterprise</h3>
-                        <div class="price">£1,997<span>/month</span></div>
-                        <p>Full-service enterprise solution</p>
-                    </div>
-                    <ul class="pricing-features">
-                        <li>Unlimited ad spend management</li>
-                        <li>Multi-platform integration</li>
-                        <li>Custom audience development</li>
-                        <li>Video ad production</li>
-                        <li>Daily performance monitoring</li>
-                        <li>Advanced attribution modeling</li>
-                        <li>Dedicated account manager</li>
-                        <li>24/7 priority support</li>
-                    </ul>
-                    <a href="#contact" class="btn-outline">Get Started</a>
-                </div>
+                <?php endfor; ?>
             </div>
         </div>
-    </section>
-
-    <!-- Tools & Technologies -->
+    </section>    <!-- Tools & Technologies -->
     <section class="tools-section">
         <div class="container">
-            <h2>Tools & Technologies We Use</h2>
+            <h2><?php echo esc_html(get_meta_ads_meta('tools_title', $post_id, $defaults)); ?></h2>
             <div class="tools-grid">
+                <?php for($i = 1; $i <= 4; $i++) : ?>
                 <div class="tool-item">
                     <div class="tool-icon">
-                        <i class="fab fa-facebook"></i>
+                        <i class="<?php echo esc_attr(get_meta_ads_meta("tool_icon_{$i}", $post_id, $defaults)); ?>"></i>
                     </div>
-                    <h3>Meta Business Manager</h3>
-                    <p>Advanced campaign management and optimization through Meta's professional advertising platform.</p>
+                    <h3><?php echo esc_html(get_meta_ads_meta("tool_title_{$i}", $post_id, $defaults)); ?></h3>
+                    <p><?php echo esc_html(get_meta_ads_meta("tool_content_{$i}", $post_id, $defaults)); ?></p>
                 </div>
-                
-                <div class="tool-item">
-                    <div class="tool-icon">
-                        <i class="fas fa-chart-bar"></i>
-                    </div>
-                    <h3>Meta Analytics</h3>
-                    <p>Comprehensive performance tracking and audience insights for data-driven optimization.</p>
+                <?php endfor; ?>
+            </div>
+        </div>
+    </section>    <!-- Industries Section -->
+    <section class="industries-section">
+        <div class="container">
+            <h2><?php echo esc_html(get_meta_ads_meta('industries_title', $post_id, $defaults)); ?></h2>
+            <div class="industries-grid">
+                <?php for($i = 1; $i <= 6; $i++) : ?>
+                <div class="industry-item">
+                    <h3><?php echo esc_html(get_meta_ads_meta("industry_title_{$i}", $post_id, $defaults)); ?></h3>
+                    <p><?php echo esc_html(get_meta_ads_meta("industry_content_{$i}", $post_id, $defaults)); ?></p>
                 </div>
-                
-                <div class="tool-item">
-                    <div class="tool-icon">
-                        <i class="fas fa-users"></i>
-                    </div>
-                    <h3>Audience Insights</h3>
-                    <p>Advanced audience research and targeting capabilities for precise customer reach.</p>
-                </div>
-                
-                <div class="tool-item">
-                    <div class="tool-icon">
-                        <i class="fas fa-palette"></i>
-                    </div>
-                    <h3>Creative Hub</h3>
-                    <p>Professional ad creative development and testing platform for optimal performance.</p>
-                </div>
+                <?php endfor; ?>
             </div>
         </div>
     </section>
 
-    <!-- Industries Section -->
-    <section class="industries-section">
-        <div class="container">
-            <h2>Industries We Serve</h2>
-            <div class="industries-grid">
-                <div class="industry-item">
-                    <h3>E-commerce & Retail</h3>
-                    <p>Drive product sales with dynamic ads and strategic retargeting campaigns.</p>
-                </div>
-                <div class="industry-item">
-                    <h3>Professional Services</h3>
-                    <p>Generate qualified leads for consultancies, agencies, and service providers.</p>
-                </div>
-                <div class="industry-item">
-                    <h3>Healthcare & Wellness</h3>
-                    <p>Compliant advertising strategies for medical practices and wellness brands.</p>
-                </div>
-                <div class="industry-item">
-                    <h3>Real Estate</h3>
-                    <p>Connect property buyers and sellers through targeted local advertising.</p>
-                </div>
-                <div class="industry-item">
-                    <h3>Education & Training</h3>
-                    <p>Reach students and professionals with educational content and course promotion.</p>
-                </div>
-                <div class="industry-item">
-                    <h3>Technology & SaaS</h3>
-                    <p>Drive software adoption and user acquisition through targeted campaigns.</p>
-                </div>
-            </div>
-        </div>
-    </section>    <!-- Testimonial Section -->
+    <!-- Testimonial Section -->
     <section class="testimonial-section">
         <div class="container">
             <div class="testimonial-content">
                 <blockquote>
-                    "Aimpro transformed our Meta advertising from a cost center to our most profitable marketing channel. Their strategic approach and creative optimization delivered a 285% increase in ROAS within just 4 months."
+                    "<?php echo esc_html(get_meta_ads_meta('testimonial_quote', $post_id, $defaults)); ?>"
                 </blockquote>
                 <cite>
-                    <strong>Sarah Mitchell</strong><br>
-                    Marketing Director, RetailPlus
+                    <strong><?php echo esc_html(get_meta_ads_meta('testimonial_name', $post_id, $defaults)); ?></strong><br>
+                    <?php echo esc_html(get_meta_ads_meta('testimonial_title', $post_id, $defaults)); ?>
                 </cite>
             </div>
         </div>
-    </section>    
+    </section>
     
     <!-- CTA Section -->
     <section class="meta-ads-cta text-center">
         <div class="section-content">
-            <h2>Ready to Build Your High-Converting Website?</h2>
-            <p>Get a free website audit and consultation. We'll analyze your current site and show you exactly how to improve conversions and performance.</p>
+            <h2><?php echo esc_html(get_meta_ads_meta('cta_title', $post_id, $defaults)); ?></h2>
+            <p><?php echo esc_html(get_meta_ads_meta('cta_content', $post_id, $defaults)); ?></p>
             <div class="cta-buttons">
-                <a href="<?php echo home_url('/contact'); ?>" class="btn btn-primary">Get Free Website Audit</a>
-                <a href="<?php echo home_url('/services'); ?>" class="btn btn-secondary">View All Services</a>
+                <a href="<?php echo home_url('/contact'); ?>" class="btn btn-primary"><?php echo esc_html(get_meta_ads_meta('cta_button_1_text', $post_id, $defaults)); ?></a>
+                <a href="<?php echo home_url('/services'); ?>" class="btn btn-secondary"><?php echo esc_html(get_meta_ads_meta('cta_button_2_text', $post_id, $defaults)); ?></a>
             </div>
             <div class="cta-benefits">
-                <span class="benefit">✓ Free design consultation</span>
-                <span class="benefit">✓ Performance analysis included</span>
-                <span class="benefit">✓ No obligation quote</span>
+                <?php for($i = 1; $i <= 3; $i++) : ?>
+                <span class="benefit">✓ <?php echo esc_html(get_meta_ads_meta("cta_benefit_{$i}", $post_id, $defaults)); ?></span>
+                <?php endfor; ?>
             </div>
         </div>
     </section>

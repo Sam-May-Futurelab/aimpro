@@ -301,10 +301,11 @@ get_header();
                     <h3><?php echo esc_html($step_title); ?></h3>
                     <p><?php echo esc_html($step_content); ?></p>
                 </div>
-                <?php endfor; ?>
-            </div>
+                <?php endfor; ?>            </div>
         </div>
-    </section>    <!-- Tools & Technologies -->
+    </section>
+
+    <!-- Tools & Technologies -->
     <section class="tools-section">
         <?php
         // Get tools data
@@ -496,15 +497,10 @@ get_header();
                 </div>
                 <div class="simple-cta-features">
                     <?php for ($i = 1; $i <= 3; $i++):
-                        $simple_cta_feature = get_post_meta(get_the_ID(), "_google_ads_simple_cta_feature_{$i}", true);
-                        if (empty($simple_cta_feature)) $simple_cta_feature = $defaults["simple_cta_feature_{$i}"];
+                        $simple_cta_feature = get_post_meta(get_the_ID(), "_google_ads_simple_cta_feature_{$i}", true);                        if (empty($simple_cta_feature)) $simple_cta_feature = $defaults["simple_cta_feature_{$i}"];
                     ?>
                     <span><?php echo esc_html($simple_cta_feature); ?></span>
                     <?php endfor; ?>
-                </div>
-            </div>
-        </div>
-    </section>
                 </div>
             </div>
         </div>
