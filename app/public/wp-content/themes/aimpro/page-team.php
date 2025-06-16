@@ -148,10 +148,8 @@ Innovation: We embrace new technologies and creative approaches to solve complex
                     ?>
                 </div>
             </div>
-        </section>
-
-        <!-- Join Our Team CTA -->
-        <section class="team-cta">
+        </section>        <!-- Join Our Team CTA -->
+        <section class="testimonials-cta team-cta">
             <div class="section-content">
                 <h2><?php echo esc_html(get_post_meta(get_the_ID(), 'team_cta_heading', true) ?: 'Want to Join Our Team?'); ?></h2>
                 <p><?php echo esc_html(get_post_meta(get_the_ID(), 'team_cta_desc', true) ?: 'We\'re always looking for talented individuals who share our passion for digital marketing excellence'); ?></p>

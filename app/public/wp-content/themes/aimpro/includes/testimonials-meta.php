@@ -149,6 +149,94 @@ function aimpro_testimonials_meta_box_callback($post) {
           <?php endfor; ?>
         
         <tr>
+          <th colspan="2"><h3>Industry Testimonials Section</h3></th>
+        </tr>
+        <tr>
+            <th><label for="testimonials_industry_heading">Industry Section Heading</label></th>
+            <td><input type="text" id="testimonials_industry_heading" name="testimonials_industry_heading" value="<?php echo esc_attr(get_post_meta($post->ID, 'testimonials_industry_heading', true) ?: 'Testimonials by Industry'); ?>" class="regular-text" /></td>
+        </tr>
+        
+        <?php 
+        $industries = array(
+            1 => array('name' => 'Technology & SaaS', 'key' => 'tech'),
+            2 => array('name' => 'Healthcare & Medical', 'key' => 'healthcare'), 
+            3 => array('name' => 'Retail & E-commerce', 'key' => 'retail'),
+            4 => array('name' => 'Professional Services', 'key' => 'professional')
+        );
+        
+        foreach ($industries as $ind_num => $industry):
+            $industry_title = get_post_meta($post->ID, "industry{$ind_num}_title", true) ?: $industry['name'];
+        ?>
+        
+        <tr>
+          <th colspan="2"><h4>Industry <?php echo $ind_num; ?>: <?php echo $industry['name']; ?></h4></th>
+        </tr>
+        <tr>
+            <th><label for="industry<?php echo $ind_num; ?>_title">Industry Title</label></th>
+            <td><input type="text" id="industry<?php echo $ind_num; ?>_title" name="industry<?php echo $ind_num; ?>_title" value="<?php echo esc_attr($industry_title); ?>" class="regular-text" /></td>
+        </tr>
+        
+        <?php for ($t = 1; $t <= 2; $t++): 
+            $testimonial_quote = get_post_meta($post->ID, "industry{$ind_num}_testimonial{$t}_quote", true);
+            $testimonial_author = get_post_meta($post->ID, "industry{$ind_num}_testimonial{$t}_author", true);
+            $testimonial_title = get_post_meta($post->ID, "industry{$ind_num}_testimonial{$t}_title", true);
+            
+            // Default values for each industry
+            if ($ind_num == 1 && $t == 1 && !$testimonial_quote) {
+                $testimonial_quote = 'Aimpro Digital\'s content marketing strategy helped us establish thought leadership in our space. Our blog traffic increased by 500% and we\'re now recognized as industry experts.';
+                $testimonial_author = 'Jennifer Martinez';
+                $testimonial_title = 'CMO, CloudSync Pro';
+            } elseif ($ind_num == 1 && $t == 2 && !$testimonial_quote) {
+                $testimonial_quote = 'Their technical SEO expertise was exactly what we needed. Our SaaS platform now ranks #1 for our primary keywords, resulting in 40% of our new customers coming from organic search.';
+                $testimonial_author = 'David Kim';
+                $testimonial_title = 'CEO, DataFlow Analytics';
+            } elseif ($ind_num == 2 && $t == 1 && !$testimonial_quote) {
+                $testimonial_quote = 'Our medical practice saw a 200% increase in new patient appointments after implementing Aimpro Digital\'s local SEO strategy. Their understanding of healthcare marketing compliance is exceptional.';
+                $testimonial_author = 'Dr. Amanda Foster';
+                $testimonial_title = 'Medical Director, Foster Family Medicine';
+            } elseif ($ind_num == 2 && $t == 2 && !$testimonial_quote) {
+                $testimonial_quote = 'The team helped us navigate complex healthcare advertising regulations while still achieving outstanding results. Our patient acquisition cost decreased by 60%.';
+                $testimonial_author = 'Robert Taylor';
+                $testimonial_title = 'Administrator, Wellness Center Group';
+            } elseif ($ind_num == 3 && $t == 1 && !$testimonial_quote) {
+                $testimonial_quote = 'Our online sales tripled within the first year of working with Aimpro Digital. Their e-commerce expertise and data-driven approach made all the difference.';
+                $testimonial_author = 'Lisa Thompson';
+                $testimonial_title = 'Owner, Artisan Home Decor';
+            } elseif ($ind_num == 3 && $t == 2 && !$testimonial_quote) {
+                $testimonial_quote = 'The shopping campaign optimization they implemented for our Google Ads resulted in a 250% increase in qualified traffic and 180% boost in conversions.';
+                $testimonial_author = 'James Wilson';
+                $testimonial_title = 'Marketing Director, Sports Equipment Plus';
+            } elseif ($ind_num == 4 && $t == 1 && !$testimonial_quote) {
+                $testimonial_quote = 'As a law firm, we needed a marketing partner who understood our industry\'s unique challenges. Aimpro Digital delivered targeted strategies that increased our qualified leads by 300%.';
+                $testimonial_author = 'Patricia Rodriguez';
+                $testimonial_title = 'Managing Partner, Rodriguez & Associates';
+            } elseif ($ind_num == 4 && $t == 2 && !$testimonial_quote) {
+                $testimonial_quote = 'Their LinkedIn advertising strategy for our B2B consulting firm generated high-quality leads that converted at 3x our previous rate. Exceptional work and great communication.';
+                $testimonial_author = 'Mark Anderson';
+                $testimonial_title = 'Principal, Strategic Business Solutions';
+            }
+        ?>
+        
+        <tr>
+          <th colspan="2"><strong>Testimonial <?php echo $t; ?></strong></th>
+        </tr>
+        <tr>
+            <th><label for="industry<?php echo $ind_num; ?>_testimonial<?php echo $t; ?>_quote">Quote</label></th>
+            <td><textarea id="industry<?php echo $ind_num; ?>_testimonial<?php echo $t; ?>_quote" name="industry<?php echo $ind_num; ?>_testimonial<?php echo $t; ?>_quote" rows="3" class="large-text"><?php echo esc_textarea($testimonial_quote); ?></textarea></td>
+        </tr>
+        <tr>
+            <th><label for="industry<?php echo $ind_num; ?>_testimonial<?php echo $t; ?>_author">Author Name</label></th>
+            <td><input type="text" id="industry<?php echo $ind_num; ?>_testimonial<?php echo $t; ?>_author" name="industry<?php echo $ind_num; ?>_testimonial<?php echo $t; ?>_author" value="<?php echo esc_attr($testimonial_author); ?>" class="regular-text" /></td>
+        </tr>
+        <tr>
+            <th><label for="industry<?php echo $ind_num; ?>_testimonial<?php echo $t; ?>_title">Author Title</label></th>
+            <td><input type="text" id="industry<?php echo $ind_num; ?>_testimonial<?php echo $t; ?>_title" name="industry<?php echo $ind_num; ?>_testimonial<?php echo $t; ?>_title" value="<?php echo esc_attr($testimonial_title); ?>" class="regular-text" /></td>
+        </tr>
+        
+        <?php endfor; ?>
+        <?php endforeach; ?>
+        
+        <tr>
           <th colspan="2"><h3>Metrics Section</h3></th>
         </tr>
         <tr>
@@ -222,10 +310,35 @@ function aimpro_save_testimonials_meta($post_id) {
         'testimonials_cta_button2_text' => 'sanitize_text_field',
         'testimonials_cta_button2_url' => 'sanitize_text_field'
     );
-    
-    foreach ($additional_fields as $field => $sanitize_func) {
+      foreach ($additional_fields as $field => $sanitize_func) {
         if (isset($_POST[$field])) {
             update_post_meta($post_id, $field, $sanitize_func($_POST[$field]));
+        }
+    }
+    
+    // Save industry testimonials section
+    if (isset($_POST['testimonials_industry_heading'])) {
+        update_post_meta($post_id, 'testimonials_industry_heading', sanitize_text_field($_POST['testimonials_industry_heading']));
+    }
+    
+    // Save industry testimonial fields
+    for ($ind = 1; $ind <= 4; $ind++) {
+        if (isset($_POST["industry{$ind}_title"])) {
+            update_post_meta($post_id, "industry{$ind}_title", sanitize_text_field($_POST["industry{$ind}_title"]));
+        }
+        
+        for ($t = 1; $t <= 2; $t++) {
+            $industry_fields = array(
+                "industry{$ind}_testimonial{$t}_quote" => 'sanitize_textarea_field',
+                "industry{$ind}_testimonial{$t}_author" => 'sanitize_text_field',
+                "industry{$ind}_testimonial{$t}_title" => 'sanitize_text_field'
+            );
+            
+            foreach ($industry_fields as $field => $sanitize_func) {
+                if (isset($_POST[$field])) {
+                    update_post_meta($post_id, $field, $sanitize_func($_POST[$field]));
+                }
+            }
         }
     }
     

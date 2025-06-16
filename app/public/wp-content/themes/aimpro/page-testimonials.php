@@ -92,116 +92,68 @@ get_header(); ?>
                     <?php endfor; ?>
                 </div>
             </div>
-        </section>
-
-        <!-- Industry Testimonials -->
+        </section>        <!-- Industry Testimonials -->
         <section class="industry-testimonials">
             <div class="section-content">
-                <h2>Testimonials by Industry</h2>
+                <h2><?php echo esc_html(get_post_meta(get_the_ID(), 'testimonials_industry_heading', true) ?: 'Testimonials by Industry'); ?></h2>
                 
-                <!-- Technology Sector -->
+                <?php for ($ind = 1; $ind <= 4; $ind++): 
+                    $industry_title = get_post_meta(get_the_ID(), "industry{$ind}_title", true);
+                    
+                    // Default industry titles
+                    if (!$industry_title) {
+                        $default_titles = array(
+                            1 => 'Technology & SaaS',
+                            2 => 'Healthcare & Medical', 
+                            3 => 'Retail & E-commerce',
+                            4 => 'Professional Services'
+                        );
+                        $industry_title = $default_titles[$ind];
+                    }
+                ?>
+                <!-- Industry <?php echo $ind; ?> -->
                 <div class="industry-group">
-                    <h3>Technology & SaaS</h3>
+                    <h3><?php echo esc_html($industry_title); ?></h3>
                     <div class="testimonials-row">
+                        <?php for ($t = 1; $t <= 2; $t++): 
+                            $quote = get_post_meta(get_the_ID(), "industry{$ind}_testimonial{$t}_quote", true);
+                            $author = get_post_meta(get_the_ID(), "industry{$ind}_testimonial{$t}_author", true);
+                            $title = get_post_meta(get_the_ID(), "industry{$ind}_testimonial{$t}_title", true);
+                            
+                            // Default values if not set
+                            if (!$quote) {
+                                $defaults = array(
+                                    '1_1' => array('quote' => 'Aimpro Digital\'s content marketing strategy helped us establish thought leadership in our space. Our blog traffic increased by 500% and we\'re now recognized as industry experts.', 'author' => 'Jennifer Martinez', 'title' => 'CMO, CloudSync Pro'),
+                                    '1_2' => array('quote' => 'Their technical SEO expertise was exactly what we needed. Our SaaS platform now ranks #1 for our primary keywords, resulting in 40% of our new customers coming from organic search.', 'author' => 'David Kim', 'title' => 'CEO, DataFlow Analytics'),
+                                    '2_1' => array('quote' => 'Our medical practice saw a 200% increase in new patient appointments after implementing Aimpro Digital\'s local SEO strategy. Their understanding of healthcare marketing compliance is exceptional.', 'author' => 'Dr. Amanda Foster', 'title' => 'Medical Director, Foster Family Medicine'),
+                                    '2_2' => array('quote' => 'The team helped us navigate complex healthcare advertising regulations while still achieving outstanding results. Our patient acquisition cost decreased by 60%.', 'author' => 'Robert Taylor', 'title' => 'Administrator, Wellness Center Group'),
+                                    '3_1' => array('quote' => 'Our online sales tripled within the first year of working with Aimpro Digital. Their e-commerce expertise and data-driven approach made all the difference.', 'author' => 'Lisa Thompson', 'title' => 'Owner, Artisan Home Decor'),
+                                    '3_2' => array('quote' => 'The shopping campaign optimization they implemented for our Google Ads resulted in a 250% increase in qualified traffic and 180% boost in conversions.', 'author' => 'James Wilson', 'title' => 'Marketing Director, Sports Equipment Plus'),
+                                    '4_1' => array('quote' => 'As a law firm, we needed a marketing partner who understood our industry\'s unique challenges. Aimpro Digital delivered targeted strategies that increased our qualified leads by 300%.', 'author' => 'Patricia Rodriguez', 'title' => 'Managing Partner, Rodriguez & Associates'),
+                                    '4_2' => array('quote' => 'Their LinkedIn advertising strategy for our B2B consulting firm generated high-quality leads that converted at 3x our previous rate. Exceptional work and great communication.', 'author' => 'Mark Anderson', 'title' => 'Principal, Strategic Business Solutions')
+                                );
+                                
+                                $key = "{$ind}_{$t}";
+                                if (isset($defaults[$key])) {
+                                    $quote = $defaults[$key]['quote'];
+                                    $author = $defaults[$key]['author'];
+                                    $title = $defaults[$key]['title'];
+                                }
+                            }
+                        ?>
                         <div class="testimonial-card">
                             <blockquote>
-                                "Aimpro Digital's content marketing strategy helped us establish thought leadership in our space. Our blog traffic increased by 500% and we're now recognized as industry experts."
+                                "<?php echo esc_html($quote); ?>"
                             </blockquote>
                             <div class="testimonial-author">
-                                <h4>Jennifer Martinez</h4>
-                                <p>CMO, CloudSync Pro</p>
+                                <h4><?php echo esc_html($author); ?></h4>
+                                <p><?php echo esc_html($title); ?></p>
                             </div>
                         </div>
-                        
-                        <div class="testimonial-card">
-                            <blockquote>
-                                "Their technical SEO expertise was exactly what we needed. Our SaaS platform now ranks #1 for our primary keywords, resulting in 40% of our new customers coming from organic search."
-                            </blockquote>
-                            <div class="testimonial-author">
-                                <h4>David Kim</h4>
-                                <p>CEO, DataFlow Analytics</p>
-                            </div>
-                        </div>
+                        <?php endfor; ?>
                     </div>
                 </div>
-
-                <!-- Healthcare Sector -->
-                <div class="industry-group">
-                    <h3>Healthcare & Medical</h3>
-                    <div class="testimonials-row">
-                        <div class="testimonial-card">
-                            <blockquote>
-                                "Our medical practice saw a 200% increase in new patient appointments after implementing Aimpro Digital's local SEO strategy. Their understanding of healthcare marketing compliance is exceptional."
-                            </blockquote>
-                            <div class="testimonial-author">
-                                <h4>Dr. Amanda Foster</h4>
-                                <p>Medical Director, Foster Family Medicine</p>
-                            </div>
-                        </div>
-                        
-                        <div class="testimonial-card">
-                            <blockquote>
-                                "The team helped us navigate complex healthcare advertising regulations while still achieving outstanding results. Our patient acquisition cost decreased by 60%."
-                            </blockquote>
-                            <div class="testimonial-author">
-                                <h4>Robert Taylor</h4>
-                                <p>Administrator, Wellness Center Group</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Retail & E-commerce -->
-                <div class="industry-group">
-                    <h3>Retail & E-commerce</h3>
-                    <div class="testimonials-row">
-                        <div class="testimonial-card">
-                            <blockquote>
-                                "Our online sales tripled within the first year of working with Aimpro Digital. Their e-commerce expertise and data-driven approach made all the difference."
-                            </blockquote>
-                            <div class="testimonial-author">
-                                <h4>Lisa Thompson</h4>
-                                <p>Owner, Artisan Home Decor</p>
-                            </div>
-                        </div>
-                        
-                        <div class="testimonial-card">
-                            <blockquote>
-                                "The shopping campaign optimization they implemented for our Google Ads resulted in a 250% increase in qualified traffic and 180% boost in conversions."
-                            </blockquote>
-                            <div class="testimonial-author">
-                                <h4>James Wilson</h4>
-                                <p>Marketing Director, Sports Equipment Plus</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Professional Services -->
-                <div class="industry-group">
-                    <h3>Professional Services</h3>
-                    <div class="testimonials-row">
-                        <div class="testimonial-card">
-                            <blockquote>
-                                "As a law firm, we needed a marketing partner who understood our industry's unique challenges. Aimpro Digital delivered targeted strategies that increased our qualified leads by 300%."
-                            </blockquote>
-                            <div class="testimonial-author">
-                                <h4>Patricia Rodriguez</h4>
-                                <p>Managing Partner, Rodriguez & Associates</p>
-                            </div>
-                        </div>
-                        
-                        <div class="testimonial-card">
-                            <blockquote>
-                                "Their LinkedIn advertising strategy for our B2B consulting firm generated high-quality leads that converted at 3x our previous rate. Exceptional work and great communication."
-                            </blockquote>
-                            <div class="testimonial-author">
-                                <h4>Mark Anderson</h4>
-                                <p>Principal, Strategic Business Solutions</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                <?php endfor; ?>
             </div>
         </section>        <!-- Metrics & Results -->
         <section class="testimonial-metrics">
@@ -226,76 +178,12 @@ get_header(); ?>
                     <div class="metric-card">
                         <span class="metric-number">$50M+</span>
                         <span class="metric-label">Revenue Generated</span>
-                        <p>For our clients collectively</p>
-                    </div>
+                        <p>For our clients collectively</p>                    </div>
                 </div>
             </div>
         </section>
 
-        <!-- Video Testimonials -->
-        <section class="video-testimonials">
-            <div class="section-content">
-                <h2>Video Testimonials</h2>
-                <div class="video-grid">
-                    <div class="video-testimonial">
-                        <div class="video-placeholder">
-                            <div class="play-button">
-                                <svg width="60" height="60" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M8 5v14l11-7z" fill="currentColor"/>
-                                </svg>
-                            </div>
-                            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/video-thumbnails/testimonial-1.jpg" alt="Video Testimonial - TechStart Solutions" />
-                        </div>
-                        <div class="video-info">
-                            <h4>TechStart Solutions Success Story</h4>
-                            <p>How we helped a tech startup scale from 0 to $1M in revenue</p>
-                        </div>
-                    </div>
-                    
-                    <div class="video-testimonial">
-                        <div class="video-placeholder">
-                            <div class="play-button">
-                                <svg width="60" height="60" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M8 5v14l11-7z" fill="currentColor"/>
-                                </svg>
-                            </div>
-                            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/video-thumbnails/testimonial-2.jpg" alt="Video Testimonial - Elite Fitness Gear" />
-                        </div>
-                        <div class="video-info">
-                            <h4>Elite Fitness Gear Transformation</h4>
-                            <p>E-commerce success through strategic PPC campaigns</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Client Logos -->
-        <section class="client-logos">
-            <div class="section-content">
-                <h2>Trusted by Leading Brands</h2>
-                <div class="logos-grid">
-                    <div class="logo-item">
-                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/client-logos/techstart.svg" alt="TechStart Solutions" />
-                    </div>
-                    <div class="logo-item">
-                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/client-logos/elite-fitness.svg" alt="Elite Fitness Gear" />
-                    </div>
-                    <div class="logo-item">
-                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/client-logos/cloudsync.svg" alt="CloudSync Pro" />
-                    </div>
-                    <div class="logo-item">
-                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/client-logos/foster-medical.svg" alt="Foster Family Medicine" />
-                    </div>
-                    <div class="logo-item">
-                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/client-logos/artisan-home.svg" alt="Artisan Home Decor" />
-                    </div>
-                    <div class="logo-item">
-                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/client-logos/dataflow.svg" alt="DataFlow Analytics" />
-                    </div>
-                </div>
-            </div>
-        </section>        <!-- CTA Section -->
+        <!-- CTA Section -->
         <section class="testimonials-cta">
             <div class="section-content">
                 <h2><?php echo esc_html(get_post_meta(get_the_ID(), 'testimonials_cta_heading', true) ?: 'Ready to Join Our Success Stories?'); ?></h2>
