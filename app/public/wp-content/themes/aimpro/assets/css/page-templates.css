@@ -959,11 +959,6 @@
     flex-grow: 1;
 }
 
-.subcategory-card .service-link {
-    margin-top: auto;
-    align-self: flex-start;
-}
-
 /* Categories Grid Layouts */
 .categories-grid,
 .ai-categories-grid {
@@ -973,21 +968,24 @@
     margin: 2rem 0 3rem;
 }
 
-.category-grid-item {
-    background: var(--glass-bg);
-    border-radius: 12px;
-    padding: 2rem;
-    border: 1px solid var(--glass-border);
-    backdrop-filter: blur(10px);
-    transition: all 0.3s ease;
+/* 4-column categories grid for events */
+.categories-grid-four {
+    grid-template-columns: repeat(4, 1fr) !important;
 }
 
-.category-grid-item:hover {
-    transform: translateY(-5px);
-    box-shadow: var(--shadow-lg);
-    border-color: var(--glass-orange-border);
+/* Video placeholder for on-demand webinars */
+.video-placeholder {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--gradient-dark);
+    color: var(--text-primary);
+    font-size: 2rem;
+    height: 200px;
+    border-radius: 8px;
 }
 
+/* Responsive Design */
 @media (max-width: 992px) {
     .service-subcategories {
         grid-template-columns: repeat(2, 1fr);
@@ -996,6 +994,10 @@
     .categories-grid,
     .ai-categories-grid {
         grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .categories-grid-four {
+        grid-template-columns: repeat(2, 1fr) !important;
     }
 }
 
@@ -1007,6 +1009,10 @@
     .categories-grid,
     .ai-categories-grid {
         grid-template-columns: 1fr;
+    }
+    
+    .categories-grid-four {
+        grid-template-columns: 1fr !important;
     }
 }
 
@@ -1990,13 +1996,6 @@
     max-width: 600px;
     margin-left: auto;
     margin-right: auto;
-}
-
-.about-page .cta-buttons {
-    display: flex;
-    gap: 20px;
-    justify-content: center;
-    flex-wrap: wrap;
 }
 
 /* ============================================

@@ -168,16 +168,16 @@
 }
 
 .category-icon {
-    width: 48px;
-    height: 48px;
-    background: var(--gradient-orange, linear-gradient(45deg, #f15a25, #ff6b35));
-    border-radius: 12px;
+    font-size: 3rem;
+    margin-bottom: 1.5rem;
+    color: var(--primary-color, #0073aa);
     display: flex;
-    align-items: center;
     justify-content: center;
-    margin-bottom: 1rem;
-    color: white;
-    font-size: 1.5rem;
+    align-items: center;
+}
+
+.category-icon i {
+    display: block;
 }
 
 .category-content {
@@ -1457,6 +1457,14 @@
 .category-icon {
     font-size: 3rem;
     margin-bottom: 1.5rem;
+    color: var(--primary-color, #0073aa);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.category-icon i {
+    display: block;
 }
 
 .category-card h3 {
@@ -1618,16 +1626,16 @@
 }
 
 .category-icon {
-    width: 48px;
-    height: 48px;
-    background: var(--gradient-orange, linear-gradient(45deg, #f15a25, #ff6b35));
-    border-radius: 12px;
+    font-size: 3rem;
+    margin-bottom: 1.5rem;
+    color: var(--primary-color, #0073aa);
     display: flex;
-    align-items: center;
     justify-content: center;
-    margin-bottom: 1rem;
-    color: white;
-    font-size: 1.5rem;
+    align-items: center;
+}
+
+.category-icon i {
+    display: block;
 }
 
 .category-content h3 {

@@ -4,7 +4,160 @@
  * Description: Upcoming events, webinars, and workshops
  */
 
-get_header(); ?>
+get_header();
+
+// Get meta values
+$header_title = get_post_meta(get_the_ID(), '_events_webinars_header_title', true) ?: 'Events & Webinars';
+$header_subtitle = get_post_meta(get_the_ID(), '_events_webinars_header_subtitle', true) ?: 'Join industry experts and expand your digital marketing knowledge';
+$intro_title = get_post_meta(get_the_ID(), '_events_webinars_intro_title', true) ?: 'Learn from Industry Leaders';
+$intro_content = get_post_meta(get_the_ID(), '_events_webinars_intro_content', true) ?: 'Stay ahead of the curve with our regular webinars, workshops, and industry events. Learn the latest strategies, network with peers, and get your questions answered by digital marketing experts.';
+
+$stats = get_post_meta(get_the_ID(), '_events_webinars_stats', true);
+if (empty($stats)) {
+    $stats = array(
+        array('number' => '50+', 'label' => 'Events Hosted'),
+        array('number' => '5,000+', 'label' => 'Attendees'),
+        array('number' => '25+', 'label' => 'Expert Speakers')
+    );
+}
+
+$featured_event = get_post_meta(get_the_ID(), '_events_webinars_featured_event', true);
+if (empty($featured_event)) {
+    $featured_event = array(
+        'badge' => 'Next Event',
+        'date' => 'June 25, 2025',
+        'time' => '2:00 PM - 3:30 PM GMT',
+        'type' => 'Live Webinar',
+        'title' => 'Digital Marketing Trends 2025: What\'s Coming Next',
+        'description' => 'Join our panel of industry experts as they reveal the biggest digital marketing trends for the second half of 2025. Learn about emerging technologies, changing consumer behaviors, and the strategies that will define successful marketing campaigns.',
+        'speakers' => array(
+            array('name' => 'Sarah Johnson', 'title' => 'CMO, Aimpro Digital'),
+            array('name' => 'Alex Chen', 'title' => 'Digital Strategy Consultant'),
+            array('name' => 'Emma Davis', 'title' => 'Analytics Expert, Google')
+        ),
+        'agenda' => array(
+            'AI and machine learning in marketing automation',
+            'Privacy-first marketing strategies',
+            'Voice search optimization techniques',
+            'Video marketing trends and best practices',
+            'Cross-platform attribution modeling'
+        ),
+        'price' => 'Free Event',
+        'seats' => '42 seats remaining',
+        'register_url' => '#'
+    );
+}
+
+$upcoming_events = get_post_meta(get_the_ID(), '_events_webinars_upcoming_events', true);
+if (empty($upcoming_events)) {
+    $upcoming_events = array(
+        array(
+            'month' => 'Jul', 'day' => '15', 'time' => '10:00 AM - 11:30 AM', 'format' => 'Workshop',
+            'title' => 'Advanced Google Ads Optimization',
+            'description' => 'Hands-on workshop covering advanced Google Ads strategies, including Smart Bidding, audience optimization, and campaign automation.',
+            'attendees' => '156 registered', 'price' => '£49', 'register_url' => '#'
+        ),
+        array(
+            'month' => 'Jul', 'day' => '28', 'time' => '2:00 PM - 3:00 PM', 'format' => 'Webinar',
+            'title' => 'Local SEO for Small Businesses',
+            'description' => 'Essential local SEO strategies to help small businesses dominate local search results and attract more customers.',
+            'attendees' => '89 registered', 'price' => 'Free', 'register_url' => '#'
+        ),
+        array(
+            'month' => 'Aug', 'day' => '12', 'time' => '1:00 PM - 4:00 PM', 'format' => 'Masterclass',
+            'title' => 'Content Marketing Masterclass',
+            'description' => 'Comprehensive masterclass covering content strategy, creation, distribution, and performance measurement for maximum ROI.',
+            'attendees' => '12 spots left', 'price' => '£149', 'register_url' => '#'
+        ),
+        array(
+            'month' => 'Aug', 'day' => '25', 'time' => '11:00 AM - 12:00 PM', 'format' => 'Webinar',
+            'title' => 'E-commerce Marketing Automation',
+            'description' => 'Learn how to set up automated marketing funnels that increase sales, improve customer retention, and save time.',
+            'attendees' => 'Early bird', 'price' => 'Free', 'register_url' => '#'
+        ),
+        array(
+            'month' => 'Sep', 'day' => '08', 'time' => '9:00 AM - 5:00 PM', 'format' => 'Conference',
+            'title' => 'Digital Marketing Summit 2025',
+            'description' => 'Full-day conference featuring 12 speakers, networking sessions, and hands-on workshops covering all aspects of digital marketing.',
+            'attendees' => '250 expected', 'price' => '£299', 'register_url' => '#'
+        ),
+        array(
+            'month' => 'Sep', 'day' => '22', 'time' => '3:00 PM - 4:30 PM', 'format' => 'Panel Discussion',
+            'title' => 'The Future of Social Media Marketing',
+            'description' => 'Panel discussion with social media experts discussing emerging platforms, algorithm changes, and content strategies.',
+            'attendees' => 'Coming soon', 'price' => 'Free', 'register_url' => '#'
+        )
+    );
+}
+
+$ondemand_title = get_post_meta(get_the_ID(), '_events_webinars_ondemand_title', true) ?: 'On-Demand Webinars';
+$ondemand_subtitle = get_post_meta(get_the_ID(), '_events_webinars_ondemand_subtitle', true) ?: 'Missed a live event? Watch our recorded sessions at your convenience.';
+$ondemand_webinars = get_post_meta(get_the_ID(), '_events_webinars_ondemand_webinars', true);
+if (empty($ondemand_webinars)) {
+    $ondemand_webinars = array(
+        array(
+            'title' => 'SEO Fundamentals for 2025',
+            'description' => 'Complete guide to search engine optimization, covering technical SEO, content optimization, and link building strategies.',
+            'duration' => '52 min',
+            'views' => '1,240 views',
+            'rating' => '★★★★★ 4.8',
+            'video_url' => '',
+            'thumbnail_url' => ''
+        ),
+        array(
+            'title' => 'Facebook Ads Mastery Workshop',
+            'description' => 'Advanced Facebook advertising strategies including audience targeting, creative optimization, and campaign scaling techniques.',
+            'duration' => '1h 15m',
+            'views' => '890 views',
+            'rating' => '★★★★★ 4.9',
+            'video_url' => '',
+            'thumbnail_url' => ''
+        ),
+        array(
+            'title' => 'Google Analytics 4 Deep Dive',
+            'description' => 'Comprehensive walkthrough of GA4 setup, configuration, and advanced reporting for better marketing insights.',
+            'duration' => '38 min',
+            'views' => '2,100 views',
+            'rating' => '★★★★☆ 4.6',
+            'video_url' => '',
+            'thumbnail_url' => ''
+        )
+    );
+}
+
+$categories_title = get_post_meta(get_the_ID(), '_events_webinars_categories_title', true) ?: 'Event Types';
+$event_categories = get_post_meta(get_the_ID(), '_events_webinars_categories', true);
+if (empty($event_categories)) {
+    $event_categories = array(
+        array(
+            'icon' => 'fas fa-crosshairs',
+            'title' => 'Strategy Webinars',
+            'description' => 'High-level strategic discussions about digital marketing trends, best practices, and industry insights.',
+            'frequency' => 'Monthly'
+        ),
+        array(
+            'icon' => 'fas fa-tools',
+            'title' => 'Technical Workshops',
+            'description' => 'Hands-on sessions focusing on specific tools, platforms, and technical implementation guides.',
+            'frequency' => 'Bi-weekly'
+        ),        array(
+            'icon' => 'fas fa-users',
+            'title' => 'Panel Discussions',
+            'description' => 'Expert panels featuring industry leaders discussing current challenges and opportunities.',
+            'frequency' => 'Quarterly'
+        ),
+        array(
+            'icon' => 'fas fa-graduation-cap',
+            'title' => 'Masterclasses',
+            'description' => 'In-depth training sessions covering comprehensive topics with practical exercises and Q&A.',
+            'frequency' => 'Monthly'
+        )
+    );
+}
+
+$newsletter_title = get_post_meta(get_the_ID(), '_events_webinars_newsletter_title', true) ?: 'Never Miss an Event';
+$newsletter_content = get_post_meta(get_the_ID(), '_events_webinars_newsletter_content', true) ?: 'Get notified about upcoming webinars, workshops, and exclusive invitations to premium events.';
+?>
 
 <main id="main" class="main-content">
     <div class="container">
@@ -12,8 +165,8 @@ get_header(); ?>
         <!-- Page Header -->
         <section class="page-header">
             <div class="page-header-content">
-                <h1>Events & Webinars</h1>
-                <p class="page-subtitle">Join industry experts and expand your digital marketing knowledge</p>
+                <h1><?php echo esc_html($header_title); ?></h1>
+                <p class="page-subtitle"><?php echo esc_html($header_subtitle); ?></p>
             </div>
         </section>
 
@@ -21,83 +174,67 @@ get_header(); ?>
         <section class="events-intro">
             <div class="section-content">
                 <div class="intro-content">
-                    <h2>Learn from Industry Leaders</h2>
-                    <p>Stay ahead of the curve with our regular webinars, workshops, and industry events. Learn the latest strategies, network with peers, and get your questions answered by digital marketing experts.</p>
+                    <h2><?php echo esc_html($intro_title); ?></h2>
+                    <p><?php echo esc_html($intro_content); ?></p>
                 </div>
                 <div class="event-stats">
-                    <div class="stat-item">
-                        <div class="stat-number">50+</div>
-                        <div class="stat-label">Events Hosted</div>
-                    </div>
-                    <div class="stat-item">
-                        <div class="stat-number">5,000+</div>
-                        <div class="stat-label">Attendees</div>
-                    </div>
-                    <div class="stat-item">
-                        <div class="stat-number">25+</div>
-                        <div class="stat-label">Expert Speakers</div>
-                    </div>
+                    <?php foreach ($stats as $stat): ?>
+                        <div class="stat-item">
+                            <div class="stat-number"><?php echo esc_html($stat['number']); ?></div>
+                            <div class="stat-label"><?php echo esc_html($stat['label']); ?></div>
+                        </div>
+                    <?php endforeach; ?>
                 </div>
             </div>
         </section>
 
         <!-- Featured Upcoming Event -->
         <section class="featured-event">
-            <div class="section-content">                <div class="event-featured">
-                    <div class="event-badge">Next Event</div>
+            <div class="section-content">
+                <div class="event-featured">
+                    <div class="event-badge"><?php echo esc_html($featured_event['badge']); ?></div>
                     <div class="event-content">
                         <div class="event-meta">
-                            <span class="event-date">June 25, 2025</span>
-                            <span class="event-time">2:00 PM - 3:30 PM GMT</span>
-                            <span class="event-type">Live Webinar</span>
+                            <span class="event-date"><?php echo esc_html($featured_event['date']); ?></span>
+                            <span class="event-time"><?php echo esc_html($featured_event['time']); ?></span>
+                            <span class="event-type"><?php echo esc_html($featured_event['type']); ?></span>
                         </div>
-                        <h2>Digital Marketing Trends 2025: What's Coming Next</h2>
-                        <p class="event-description">Join our panel of industry experts as they reveal the biggest digital marketing trends for the second half of 2025. Learn about emerging technologies, changing consumer behaviors, and the strategies that will define successful marketing campaigns.</p>
+                        <h2><?php echo esc_html($featured_event['title']); ?></h2>
+                        <p class="event-description"><?php echo esc_html($featured_event['description']); ?></p>
                         
+                        <?php if (!empty($featured_event['speakers'])): ?>
                         <div class="event-speakers">
                             <h3>Featured Speakers</h3>
                             <div class="speakers-list">
-                                <div class="speaker">
-                                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/speakers/sarah-marketing.jpg" alt="Sarah Johnson" />
-                                    <div class="speaker-info">
-                                        <h4>Sarah Johnson</h4>
-                                        <span>CMO, Aimpro Digital</span>
+                                <?php foreach ($featured_event['speakers'] as $speaker): ?>
+                                    <div class="speaker">
+                                        <div class="speaker-info">
+                                            <h4><?php echo esc_html($speaker['name']); ?></h4>
+                                            <span><?php echo esc_html($speaker['title']); ?></span>
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="speaker">
-                                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/speakers/alex-strategy.jpg" alt="Alex Chen" />
-                                    <div class="speaker-info">
-                                        <h4>Alex Chen</h4>
-                                        <span>Digital Strategy Consultant</span>
-                                    </div>
-                                </div>
-                                <div class="speaker">
-                                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/speakers/emma-analytics.jpg" alt="Emma Davis" />
-                                    <div class="speaker-info">
-                                        <h4>Emma Davis</h4>
-                                        <span>Analytics Expert, Google</span>
-                                    </div>
-                                </div>
+                                <?php endforeach; ?>
                             </div>
                         </div>
+                        <?php endif; ?>
 
+                        <?php if (!empty($featured_event['agenda'])): ?>
                         <div class="event-agenda">
                             <h3>What You'll Learn</h3>
                             <ul>
-                                <li>AI and machine learning in marketing automation</li>
-                                <li>Privacy-first marketing strategies</li>
-                                <li>Voice search optimization techniques</li>
-                                <li>Video marketing trends and best practices</li>
-                                <li>Cross-platform attribution modeling</li>
+                                <?php foreach ($featured_event['agenda'] as $item): ?>
+                                    <li><?php echo esc_html($item); ?></li>
+                                <?php endforeach; ?>
                             </ul>
                         </div>
+                        <?php endif; ?>
 
                         <div class="event-registration">
                             <div class="registration-info">
-                                <span class="price">Free Event</span>
-                                <span class="seats">42 seats remaining</span>
+                                <span class="price"><?php echo esc_html($featured_event['price']); ?></span>
+                                <span class="seats"><?php echo esc_html($featured_event['seats']); ?></span>
                             </div>
-                            <a href="#" class="register-btn">Register Now</a>
+                            <a href="<?php echo esc_url($featured_event['register_url']); ?>" class="register-btn">Register Now</a>
                         </div>
                     </div>
                 </div>
@@ -105,199 +242,116 @@ get_header(); ?>
         </section>
 
         <!-- Upcoming Events -->
+        <?php if (!empty($upcoming_events)): ?>
         <section class="upcoming-events">
             <div class="section-content">
                 <h2>Upcoming Events</h2>
                 <div class="events-grid">
-                    
-                    <div class="event-card">
-                        <div class="event-date-badge">
-                            <div class="month">Jul</div>
-                            <div class="day">15</div>
-                        </div>
-                        <div class="event-content">
-                            <div class="event-meta">
-                                <span class="event-time">10:00 AM - 11:30 AM</span>
-                                <span class="event-format">Workshop</span>
+                    <?php foreach ($upcoming_events as $event): ?>
+                        <div class="event-card">
+                            <div class="event-date-badge">
+                                <div class="month"><?php echo esc_html($event['month']); ?></div>
+                                <div class="day"><?php echo esc_html($event['day']); ?></div>
                             </div>
-                            <h3>Advanced Google Ads Optimization</h3>
-                            <p>Hands-on workshop covering advanced Google Ads strategies, including Smart Bidding, audience optimization, and campaign automation.</p>
-                            <div class="event-details">
-                                <span class="attendees">156 registered</span>
-                                <span class="price">£49</span>
+                            <div class="event-content">
+                                <div class="event-meta">
+                                    <span class="event-time"><?php echo esc_html($event['time']); ?></span>
+                                    <span class="event-format"><?php echo esc_html($event['format']); ?></span>
+                                </div>
+                                <h3><?php echo esc_html($event['title']); ?></h3>
+                                <p><?php echo esc_html($event['description']); ?></p>
+                                <div class="event-details">
+                                    <span class="attendees"><?php echo esc_html($event['attendees']); ?></span>
+                                    <span class="price"><?php echo esc_html($event['price']); ?></span>
+                                </div>
+                                <a href="<?php echo esc_url($event['register_url']); ?>" class="event-register">Register</a>
                             </div>
-                            <a href="#" class="event-register">Register</a>
                         </div>
-                    </div>
-
-                    <div class="event-card">
-                        <div class="event-date-badge">
-                            <div class="month">Jul</div>
-                            <div class="day">28</div>
-                        </div>
-                        <div class="event-content">
-                            <div class="event-meta">
-                                <span class="event-time">2:00 PM - 3:00 PM</span>
-                                <span class="event-format">Webinar</span>
-                            </div>
-                            <h3>Local SEO for Small Businesses</h3>
-                            <p>Essential local SEO strategies to help small businesses dominate local search results and attract more customers.</p>
-                            <div class="event-details">
-                                <span class="attendees">89 registered</span>
-                                <span class="price">Free</span>
-                            </div>
-                            <a href="#" class="event-register">Register</a>
-                        </div>
-                    </div>
-
-                    <div class="event-card">
-                        <div class="event-date-badge">
-                            <div class="month">Aug</div>
-                            <div class="day">12</div>
-                        </div>
-                        <div class="event-content">
-                            <div class="event-meta">
-                                <span class="event-time">1:00 PM - 4:00 PM</span>
-                                <span class="event-format">Masterclass</span>
-                            </div>
-                            <h3>Content Marketing Masterclass</h3>
-                            <p>Comprehensive masterclass covering content strategy, creation, distribution, and performance measurement for maximum ROI.</p>
-                            <div class="event-details">
-                                <span class="attendees">12 spots left</span>
-                                <span class="price">£149</span>
-                            </div>
-                            <a href="#" class="event-register">Register</a>
-                        </div>
-                    </div>
-
-                    <div class="event-card">
-                        <div class="event-date-badge">
-                            <div class="month">Aug</div>
-                            <div class="day">25</div>
-                        </div>
-                        <div class="event-content">
-                            <div class="event-meta">
-                                <span class="event-time">11:00 AM - 12:00 PM</span>
-                                <span class="event-format">Webinar</span>
-                            </div>
-                            <h3>E-commerce Marketing Automation</h3>
-                            <p>Learn how to set up automated marketing funnels that increase sales, improve customer retention, and save time.</p>
-                            <div class="event-details">
-                                <span class="attendees">Early bird</span>
-                                <span class="price">Free</span>
-                            </div>
-                            <a href="#" class="event-register">Register</a>
-                        </div>
-                    </div>
-
-                    <div class="event-card">
-                        <div class="event-date-badge">
-                            <div class="month">Sep</div>
-                            <div class="day">08</div>
-                        </div>
-                        <div class="event-content">
-                            <div class="event-meta">
-                                <span class="event-time">9:00 AM - 5:00 PM</span>
-                                <span class="event-format">Conference</span>
-                            </div>
-                            <h3>Digital Marketing Summit 2025</h3>
-                            <p>Full-day conference featuring 12 speakers, networking sessions, and hands-on workshops covering all aspects of digital marketing.</p>
-                            <div class="event-details">
-                                <span class="attendees">250 expected</span>
-                                <span class="price">£299</span>
-                            </div>
-                            <a href="#" class="event-register">Register</a>
-                        </div>
-                    </div>
-
-                    <div class="event-card">
-                        <div class="event-date-badge">
-                            <div class="month">Sep</div>
-                            <div class="day">22</div>
-                        </div>
-                        <div class="event-content">
-                            <div class="event-meta">
-                                <span class="event-time">3:00 PM - 4:30 PM</span>
-                                <span class="event-format">Panel Discussion</span>
-                            </div>
-                            <h3>The Future of Social Media Marketing</h3>
-                            <p>Panel discussion with social media experts discussing emerging platforms, algorithm changes, and content strategies.</p>
-                            <div class="event-details">
-                                <span class="attendees">Coming soon</span>
-                                <span class="price">Free</span>
-                            </div>
-                            <a href="#" class="event-register">Notify Me</a>
-                        </div>
-                    </div>
-
+                    <?php endforeach; ?>
                 </div>
             </div>
         </section>
+        <?php endif; ?>
 
         <!-- Past Events / On-Demand -->
+        <?php if (!empty($ondemand_webinars)): ?>
         <section class="past-events">
             <div class="section-content">
-                <h2>On-Demand Webinars</h2>
-                <p class="section-subtitle">Missed a live event? Watch our recorded sessions at your convenience.</p>
+                <h2><?php echo esc_html($ondemand_title); ?></h2>
+                <p class="section-subtitle"><?php echo esc_html($ondemand_subtitle); ?></p>
                 
                 <div class="on-demand-grid">
-                    
-                    <div class="on-demand-event">
-                        <div class="event-thumbnail">
-                            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/events/seo-fundamentals.jpg" alt="SEO Fundamentals" />
-                            <div class="play-button">▶</div>
-                            <div class="duration">52 min</div>
-                        </div>                        <div class="event-info">
-                            <h3>SEO Fundamentals for 2025</h3>
-                            <p>Complete guide to search engine optimization, covering technical SEO, content optimization, and link building strategies.</p>
-                            <div class="on-demand-event-stats">
-                                <span class="views">1,240 views</span>
-                                <span class="rating">★★★★★ 4.8</span>
+                    <?php foreach ($ondemand_webinars as $webinar): ?>
+                        <div class="on-demand-event">
+                            <div class="event-thumbnail">
+                                <?php if (!empty($webinar['thumbnail_url'])): ?>
+                                    <img src="<?php echo esc_url($webinar['thumbnail_url']); ?>" alt="<?php echo esc_attr($webinar['title']); ?>" />
+                                <?php else: ?>
+                                    <div class="video-placeholder">
+                                        <i class="fas fa-video"></i>
+                                    </div>
+                                <?php endif; ?>
+                                <div class="play-button">▶</div>
+                                <div class="duration"><?php echo esc_html($webinar['duration']); ?></div>
                             </div>
-                            <a href="#" class="watch-btn">Watch Now</a>
-                        </div>
-                    </div>
-
-                    <div class="on-demand-event">
-                        <div class="event-thumbnail">
-                            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/events/facebook-ads-mastery.jpg" alt="Facebook Ads Mastery" />
-                            <div class="play-button">▶</div>
-                            <div class="duration">1h 15m</div>
-                        </div>                        <div class="event-info">
-                            <h3>Facebook Ads Mastery Workshop</h3>
-                            <p>Advanced Facebook advertising strategies including audience targeting, creative optimization, and campaign scaling techniques.</p>
-                            <div class="on-demand-event-stats">
-                                <span class="views">890 views</span>
-                                <span class="rating">★★★★★ 4.9</span>
+                            <div class="event-info">
+                                <h3><?php echo esc_html($webinar['title']); ?></h3>
+                                <p><?php echo esc_html($webinar['description']); ?></p>
+                                <div class="on-demand-event-stats">
+                                    <span class="views"><?php echo esc_html($webinar['views']); ?></span>
+                                    <span class="rating"><?php echo esc_html($webinar['rating']); ?></span>
+                                </div>
+                                <?php if (!empty($webinar['video_url'])): ?>
+                                    <a href="<?php echo esc_url($webinar['video_url']); ?>" class="watch-btn" target="_blank">Watch Now</a>
+                                <?php else: ?>
+                                    <a href="#" class="watch-btn" onclick="alert('Video not available'); return false;">Watch Now</a>
+                                <?php endif; ?>
                             </div>
-                            <a href="#" class="watch-btn">Watch Now</a>
                         </div>
-                    </div>
-
-                    <div class="on-demand-event">
-                        <div class="event-thumbnail">
-                            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/events/analytics-deep-dive.jpg" alt="Analytics Deep Dive" />
-                            <div class="play-button">▶</div>
-                            <div class="duration">38 min</div>
-                        </div>                        <div class="event-info">
-                            <h3>Google Analytics 4 Deep Dive</h3>
-                            <p>Comprehensive walkthrough of GA4 setup, configuration, and advanced reporting for better marketing insights.</p>
-                            <div class="on-demand-event-stats">
-                                <span class="views">2,100 views</span>
-                                <span class="rating">★★★★☆ 4.6</span>
-                            </div>
-                            <a href="#" class="watch-btn">Watch Now</a>
-                        </div>
-                    </div>
-
+                    <?php endforeach; ?>
                 </div>
             </div>
         </section>
+        <?php endif; ?>
 
-        <!-- Event Categories -->
+        <!-- Event Categories - 4 in a row styling -->
+        <?php if (!empty($event_categories)): ?>
         <section class="event-categories">
             <div class="section-content">
-                <h2>Event Types</h2>
+                <h2><?php echo esc_html($categories_title); ?></h2>
+                <div class="categories-grid categories-grid-four">                    <?php foreach ($event_categories as $category): ?>
+                        <div class="category-card">
+                            <div class="category-icon">
+                                <i class="<?php echo esc_attr($category['icon']); ?>"></i>
+                            </div>
+                            <h3><?php echo esc_html($category['title']); ?></h3>
+                            <p><?php echo esc_html($category['description']); ?></p>
+                            <span class="category-frequency"><?php echo esc_html($category['frequency']); ?></span>
+                        </div>
+                    <?php endforeach; ?>
+                </div>
+            </div>
+        </section>
+        <?php endif; ?>
+
+        <!-- Newsletter & Updates -->
+        <section class="events-newsletter">
+            <div class="section-content">
+                <h2><?php echo esc_html($newsletter_title); ?></h2>
+                <p><?php echo esc_html($newsletter_content); ?></p>
+                <form class="newsletter-form" action="#" method="post">
+                    <div class="form-group">
+                        <input type="email" name="email" placeholder="Enter your email address" required>
+                        <button type="submit" class="btn btn-primary">Get Event Updates</button>
+                    </div>
+                </form>
+            </div>
+        </section>
+
+    </div>
+</main>
+
+<?php get_footer(); ?>
                 <div class="categories-grid">
                       <div class="category-card">
                         <div class="category-icon">
