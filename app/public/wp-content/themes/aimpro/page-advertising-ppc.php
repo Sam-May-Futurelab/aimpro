@@ -4,7 +4,37 @@
  * Description: Comprehensive advertising and PPC services overview
  */
 
-get_header(); ?>
+get_header(); 
+
+// Get default values for meta fields
+function get_advertising_ppc_defaults() {
+    if (function_exists('aimpro_get_advertising_ppc_default_values')) {
+        return aimpro_get_advertising_ppc_default_values();
+    }
+    
+    // Fallback if function doesn't exist
+    return array();
+}
+
+// Get default value or meta field with fallback
+function get_advertising_ppc_field($field_key, $post_id = null) {
+    if (!$post_id) {
+        $post_id = get_the_ID();
+    }
+    
+    $defaults = get_advertising_ppc_defaults();
+    $meta_key = '_advertising_ppc_' . $field_key;
+    
+    $value = get_post_meta($post_id, $meta_key, true);
+    
+    // If empty and we have a default, use it
+    if (empty($value) && isset($defaults[$field_key])) {
+        return $defaults[$field_key];
+    }
+    
+    return $value;
+}
+?>
 
 <main id="main" class="main-content">
     <div class="container">
@@ -12,12 +42,12 @@ get_header(); ?>
         <!-- Page Header -->
         <section class="page-header">
             <div class="page-header-content">
-                <h1>Advertising & PPC Services</h1>
-                <p class="page-subtitle">Drive immediate results with data-driven paid advertising campaigns</p>
+                <h1><?php echo esc_html(get_advertising_ppc_field('header_title')); ?></h1>
+                <p class="page-subtitle"><?php echo esc_html(get_advertising_ppc_field('header_subtitle')); ?></p>
                 <div class="header-badges">
-                    <span class="badge">Google Certified</span>
-                    <span class="badge">Meta Partner</span>
-                    <span class="badge">Microsoft Certified</span>
+                    <span class="badge"><?php echo esc_html(get_advertising_ppc_field('header_badge_1')); ?></span>
+                    <span class="badge"><?php echo esc_html(get_advertising_ppc_field('header_badge_2')); ?></span>
+                    <span class="badge"><?php echo esc_html(get_advertising_ppc_field('header_badge_3')); ?></span>
                 </div>
             </div>
         </section>
@@ -27,27 +57,27 @@ get_header(); ?>
             <div class="section-content">
                 <div class="overview-content">
                     <div class="overview-text">
-                        <h2>Maximize Your Advertising ROI</h2>
-                        <p>Our comprehensive PPC and advertising services help you reach your target audience at the exact moment they're searching for your products or services. From Google Ads to social media advertising, we create and manage campaigns that deliver measurable results and maximize your return on investment.</p>
-                        <p>With certified experts across all major advertising platforms, we ensure your campaigns are optimized for performance, cost-efficiency, and sustainable growth.</p>
+                        <h2><?php echo esc_html(get_advertising_ppc_field('overview_title')); ?></h2>
+                        <p><?php echo esc_html(get_advertising_ppc_field('overview_content_1')); ?></p>
+                        <p><?php echo esc_html(get_advertising_ppc_field('overview_content_2')); ?></p>
                     </div>
                     <div class="overview-stats">
                         <div class="stat-item">
-                            <span class="stat-number">320%</span>
-                            <span class="stat-label">Average ROI improvement</span>
+                            <span class="stat-number"><?php echo esc_html(get_advertising_ppc_field('overview_stat1_number')); ?></span>
+                            <span class="stat-label"><?php echo esc_html(get_advertising_ppc_field('overview_stat1_label')); ?></span>
                         </div>
                         <div class="stat-item">
-                            <span class="stat-number">45%</span>
-                            <span class="stat-label">Reduction in cost per lead</span>
+                            <span class="stat-number"><?php echo esc_html(get_advertising_ppc_field('overview_stat2_number')); ?></span>
+                            <span class="stat-label"><?php echo esc_html(get_advertising_ppc_field('overview_stat2_label')); ?></span>
                         </div>
                         <div class="stat-item">
-                            <span class="stat-number">£2.5M+</span>
-                            <span class="stat-label">Ad spend managed annually</span>
+                            <span class="stat-number"><?php echo esc_html(get_advertising_ppc_field('overview_stat3_number')); ?></span>
+                            <span class="stat-label"><?php echo esc_html(get_advertising_ppc_field('overview_stat3_label')); ?></span>
                         </div>
                     </div>
                 </div>
             </div>
-        </section>        <!-- Services Grid -->
+        </section><!-- Services Grid -->
         <section class="service-overview">
             <div class="container">
                 <div class="section-header">
