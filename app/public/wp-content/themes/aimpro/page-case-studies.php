@@ -8,67 +8,62 @@ get_header(); ?>
 
 <main id="main" class="main-content">
     <div class="container">
-        
-        <!-- Page Header -->
+          <!-- Page Header -->
         <section class="page-header">
             <div class="page-header-content">
-                <h1>Case Studies</h1>
-                <p class="page-subtitle">Real results from real clients across diverse industries</p>
+                <h1><?php echo esc_html(get_post_meta(get_the_ID(), 'cs_header_title', true) ?: 'Case Studies'); ?></h1>
+                <p class="page-subtitle"><?php echo esc_html(get_post_meta(get_the_ID(), 'cs_header_subtitle', true) ?: 'Real results from real clients across diverse industries'); ?></p>
             </div>
-        </section>
-
-        <!-- Case Studies Introduction -->
+        </section>        <!-- Case Studies Introduction -->
         <section class="case-studies-intro">
             <div class="section-content">
                 <div class="intro-content">
-                    <h2>Proven Success Stories</h2>
-                    <p>Discover how we've helped businesses like yours achieve remarkable growth through strategic digital marketing. Each case study showcases real challenges, innovative solutions, and measurable results that demonstrate our commitment to client success.</p>
+                    <h2><?php echo esc_html(get_post_meta(get_the_ID(), 'cs_intro_title', true) ?: 'Proven Success Stories'); ?></h2>
+                    <p><?php echo esc_html(get_post_meta(get_the_ID(), 'cs_intro_description', true) ?: 'Discover how we\'ve helped businesses like yours achieve remarkable growth through strategic digital marketing. Each case study showcases real challenges, innovative solutions, and measurable results that demonstrate our commitment to client success.'); ?></p>
                 </div>
                 <div class="results-overview">
                     <div class="result-stat">
-                        <div class="stat-number">250%</div>
-                        <div class="stat-label">Average ROI Increase</div>
+                        <div class="stat-number"><?php echo esc_html(get_post_meta(get_the_ID(), 'cs_stat1_number', true) ?: '250%'); ?></div>
+                        <div class="stat-label"><?php echo esc_html(get_post_meta(get_the_ID(), 'cs_stat1_label', true) ?: 'Average ROI Increase'); ?></div>
                     </div>
                     <div class="result-stat">
-                        <div class="stat-number">150+</div>
-                        <div class="stat-label">Successful Projects</div>
+                        <div class="stat-number"><?php echo esc_html(get_post_meta(get_the_ID(), 'cs_stat2_number', true) ?: '150+'); ?></div>
+                        <div class="stat-label"><?php echo esc_html(get_post_meta(get_the_ID(), 'cs_stat2_label', true) ?: 'Successful Projects'); ?></div>
                     </div>
                     <div class="result-stat">
-                        <div class="stat-number">£2.5M+</div>
-                        <div class="stat-label">Revenue Generated</div>
+                        <div class="stat-number"><?php echo esc_html(get_post_meta(get_the_ID(), 'cs_stat3_number', true) ?: '£2.5M+'); ?></div>
+                        <div class="stat-label"><?php echo esc_html(get_post_meta(get_the_ID(), 'cs_stat3_label', true) ?: 'Revenue Generated'); ?></div>
                     </div>
                 </div>
             </div>
-        </section>
-
-        <!-- Featured Case Study -->
+        </section>        <!-- Featured Case Study -->
         <section class="featured-case-study">
             <div class="section-content">
                 <div class="featured-study">
                     <div class="study-content">
-                        <span class="study-category">E-commerce</span>
-                        <h2>TechGear UK: 400% Revenue Growth in 12 Months</h2>
-                        <p class="study-summary">How we transformed a struggling online electronics retailer into a market leader through comprehensive SEO and PPC strategies.</p>
+                        <span class="study-category"><?php echo esc_html(get_post_meta(get_the_ID(), 'cs_featured_category', true) ?: 'E-commerce'); ?></span>
+                        <h2><?php echo esc_html(get_post_meta(get_the_ID(), 'cs_featured_title', true) ?: 'TechGear UK: 400% Revenue Growth in 12 Months'); ?></h2>
+                        <p class="study-summary"><?php echo esc_html(get_post_meta(get_the_ID(), 'cs_featured_summary', true) ?: 'How we transformed a struggling online electronics retailer into a market leader through comprehensive SEO and PPC strategies.'); ?></p>
                         
                         <div class="study-highlights">
                             <div class="highlight-item">
-                                <div class="highlight-number">400%</div>
-                                <div class="highlight-label">Revenue Increase</div>
+                                <div class="highlight-number"><?php echo esc_html(get_post_meta(get_the_ID(), 'cs_featured_highlight1_number', true) ?: '400%'); ?></div>
+                                <div class="highlight-label"><?php echo esc_html(get_post_meta(get_the_ID(), 'cs_featured_highlight1_label', true) ?: 'Revenue Increase'); ?></div>
                             </div>
                             <div class="highlight-item">
-                                <div class="highlight-number">350%</div>
-                                <div class="highlight-label">Organic Traffic Growth</div>
+                                <div class="highlight-number"><?php echo esc_html(get_post_meta(get_the_ID(), 'cs_featured_highlight2_number', true) ?: '350%'); ?></div>
+                                <div class="highlight-label"><?php echo esc_html(get_post_meta(get_the_ID(), 'cs_featured_highlight2_label', true) ?: 'Organic Traffic Growth'); ?></div>
                             </div>
                             <div class="highlight-item">
-                                <div class="highlight-number">180%</div>
-                                <div class="highlight-label">Conversion Rate Improvement</div>
+                                <div class="highlight-number"><?php echo esc_html(get_post_meta(get_the_ID(), 'cs_featured_highlight3_number', true) ?: '180%'); ?></div>
+                                <div class="highlight-label"><?php echo esc_html(get_post_meta(get_the_ID(), 'cs_featured_highlight3_label', true) ?: 'Conversion Rate Improvement'); ?></div>
                             </div>
                         </div>
                         
-                        <a href="#" class="study-cta">Read Full Case Study</a>
+                        <a href="<?php echo esc_url(get_post_meta(get_the_ID(), 'cs_featured_cta_url', true) ?: '#'); ?>" class="study-cta"><?php echo esc_html(get_post_meta(get_the_ID(), 'cs_featured_cta_text', true) ?: 'Read Full Case Study'); ?></a>
                     </div>
                     <div class="study-image">
-                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/case-studies/techgear-featured.jpg" alt="TechGear UK Case Study" />
+                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/case-studies/techgear-featured.jpg" alt="<?php echo esc_attr(get_post_meta(get_the_ID(), 'cs_featured_title', true) ?: 'TechGear UK Case Study'); ?>" />
                     </div>
                 </div>
             </div>
@@ -240,35 +235,31 @@ get_header(); ?>
 
                 </div>
             </div>
-        </section>
-
-        <!-- Client Testimonials -->
+        </section>        <!-- Client Testimonials -->
         <section class="case-study-testimonials">
             <div class="section-content">
-                <h2>What Our Clients Say</h2>
+                <h2><?php echo esc_html(get_post_meta(get_the_ID(), 'cs_testimonials_title', true) ?: 'What Our Clients Say'); ?></h2>
                 <div class="testimonials-grid">
                     <div class="testimonial-card">
                         <div class="testimonial-content">
-                            <p>"Aimpro Digital completely transformed our online presence. Their strategic approach to SEO and PPC delivered results beyond our expectations."</p>
+                            <p>"<?php echo esc_html(get_post_meta(get_the_ID(), 'cs_testimonial1_content', true) ?: 'Aimpro Digital completely transformed our online presence. Their strategic approach to SEO and PPC delivered results beyond our expectations.'); ?>"</p>
                         </div>
                         <div class="testimonial-author">
-                            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/testimonials/sarah-tech.jpg" alt="Sarah Johnson" />
                             <div class="author-info">
-                                <h4>Sarah Johnson</h4>
-                                <span>CEO, TechGear UK</span>
+                                <h4><?php echo esc_html(get_post_meta(get_the_ID(), 'cs_testimonial1_author_name', true) ?: 'Sarah Johnson'); ?></h4>
+                                <span><?php echo esc_html(get_post_meta(get_the_ID(), 'cs_testimonial1_author_title', true) ?: 'CEO, TechGear UK'); ?></span>
                             </div>
                         </div>
                     </div>
                     
                     <div class="testimonial-card">
                         <div class="testimonial-content">
-                            <p>"The team's expertise in healthcare marketing is exceptional. We've seen a 300% increase in new patient bookings since working with them."</p>
+                            <p>"<?php echo esc_html(get_post_meta(get_the_ID(), 'cs_testimonial2_content', true) ?: 'The team\'s expertise in healthcare marketing is exceptional. We\'ve seen a 300% increase in new patient bookings since working with them.'); ?>"</p>
                         </div>
                         <div class="testimonial-author">
-                            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/testimonials/dr-smith.jpg" alt="Dr. Michael Smith" />
                             <div class="author-info">
-                                <h4>Dr. Michael Smith</h4>
-                                <span>Practice Owner, Premier Dental</span>
+                                <h4><?php echo esc_html(get_post_meta(get_the_ID(), 'cs_testimonial2_author_name', true) ?: 'Dr. Michael Smith'); ?></h4>
+                                <span><?php echo esc_html(get_post_meta(get_the_ID(), 'cs_testimonial2_author_title', true) ?: 'Practice Owner, Premier Dental'); ?></span>
                             </div>
                         </div>
                     </div>
@@ -278,11 +269,11 @@ get_header(); ?>
         <section id="contact" class="cta-section">
             <div class="container">
                 <div class="cta-content">
-                    <h2>Ready to Be Our Next Success Story?</h2>
-                    <p>Let's discuss how we can help you achieve similar results for your business.</p>
+                    <h2><?php echo esc_html(get_post_meta(get_the_ID(), 'cs_cta_title', true) ?: 'Ready to Be Our Next Success Story?'); ?></h2>
+                    <p><?php echo esc_html(get_post_meta(get_the_ID(), 'cs_cta_description', true) ?: 'Let\'s discuss how we can help you achieve similar results for your business.'); ?></p>
                     <div class="cta-buttons">
-                        <a href="<?php echo home_url('/contact'); ?>" class="btn-primary">Start Your Project</a>
-                        <a href="<?php echo home_url('/about'); ?>" class="btn-outline">Learn About Our Process</a>
+                        <a href="<?php echo esc_url(home_url(get_post_meta(get_the_ID(), 'cs_cta_button1_url', true) ?: '/contact')); ?>" class="btn-primary"><?php echo esc_html(get_post_meta(get_the_ID(), 'cs_cta_button1_text', true) ?: 'Start Your Project'); ?></a>
+                        <a href="<?php echo esc_url(home_url(get_post_meta(get_the_ID(), 'cs_cta_button2_url', true) ?: '/about')); ?>" class="btn-outline"><?php echo esc_html(get_post_meta(get_the_ID(), 'cs_cta_button2_text', true) ?: 'Learn About Our Process'); ?></a>
                     </div>
                 </div>
             </div>
