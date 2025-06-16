@@ -8,281 +8,297 @@ get_header(); ?>
 
 <main id="main" class="main-content">
     <div class="container">
-        
-        <!-- Page Header -->
+          <!-- Page Header -->
         <section class="page-header">
             <div class="page-header-content">
-                <h1>Professional Services Digital Marketing</h1>
-                <p class="page-subtitle">Build trust, establish authority, and generate high-quality leads for your professional practice</p>
+                <h1><?php echo esc_html(get_post_meta(get_the_ID(), '_professional_services_header_title', true) ?: 'Professional Services Digital Marketing'); ?></h1>
+                <p class="page-subtitle"><?php echo esc_html(get_post_meta(get_the_ID(), '_professional_services_header_subtitle', true) ?: 'Build trust, establish authority, and generate high-quality leads for your professional practice'); ?></p>
             </div>
-        </section>
-
-        <!-- Industry Overview -->
+        </section>        <!-- Industry Overview -->
         <section class="industry-overview">
             <div class="section-content">
                 <div class="overview-content">
                     <div class="overview-text">
-                        <h2>Elevate Your Professional Practice</h2>
-                        <p>Professional services clients expect expertise, trust, and results. Our specialized marketing strategies help law firms, accounting practices, consulting agencies, and other professional services establish authority and attract qualified prospects.</p>
+                        <h2><?php echo esc_html(get_post_meta(get_the_ID(), '_professional_services_overview_title', true) ?: 'Elevate Your Professional Practice'); ?></h2>
+                        <p><?php echo esc_html(get_post_meta(get_the_ID(), '_professional_services_overview_content', true) ?: 'Professional services clients expect expertise, trust, and results. Our specialized marketing strategies help law firms, accounting practices, consulting agencies, and other professional services establish authority and attract qualified prospects.'); ?></p>
                         
                         <div class="industry-challenges">
-                            <h3>Professional Services Marketing Challenges We Solve:</h3>
+                            <h3><?php echo esc_html(get_post_meta(get_the_ID(), '_professional_services_challenges_title', true) ?: 'Professional Services Marketing Challenges We Solve:'); ?></h3>
                             <ul>
-                                <li>Building trust and credibility online</li>
-                                <li>Complex, long sales cycles</li>
-                                <li>Compliance and ethical advertising constraints</li>
-                                <li>High-value client acquisition costs</li>
-                                <li>Demonstrating expertise and thought leadership</li>
-                                <li>Differentiating from established competitors</li>
+                                <?php 
+                                $challenges = get_post_meta(get_the_ID(), '_professional_services_challenges', true);
+                                if (empty($challenges)) {
+                                    $challenges = array(
+                                        'Building trust and credibility online',
+                                        'Complex, long sales cycles',
+                                        'Compliance and ethical advertising constraints',
+                                        'High-value client acquisition costs',
+                                        'Demonstrating expertise and thought leadership',
+                                        'Differentiating from established competitors'
+                                    );
+                                }
+                                foreach ($challenges as $challenge): ?>
+                                    <li><?php echo esc_html($challenge); ?></li>
+                                <?php endforeach; ?>
                             </ul>
                         </div>
                     </div>
                     <div class="overview-image">
-                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/industries/professional-services-overview.jpg" alt="Professional Services Digital Marketing" />
+                        <?php 
+                        $overview_image = get_post_meta(get_the_ID(), '_professional_services_overview_image', true);
+                        if ($overview_image): ?>
+                            <img src="<?php echo esc_url($overview_image); ?>" alt="Professional Services Digital Marketing" />
+                        <?php else: ?>
+                            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/industries/professional-services-overview.jpg" alt="Professional Services Digital Marketing" />
+                        <?php endif; ?>
                     </div>
                 </div>
             </div>
-        </section>        <!-- Professional Services -->
+        </section>        <!-- Professional Services (2x2 Grid) -->
         <section class="professional-services">
             <div class="section-content">
-                <h2>Our Professional Services Marketing Solutions</h2>
+                <h2><?php echo esc_html(get_post_meta(get_the_ID(), '_professional_services_solutions_title', true) ?: 'Our Professional Services Marketing Solutions'); ?></h2>
                 <div class="benefits-grid-2x2">
-                      <div class="benefit-card">
-                        <div class="benefit-icon">
-                            <i class="fas fa-search"></i>
+                    <?php 
+                    $solutions = get_post_meta(get_the_ID(), '_professional_services_solutions', true);
+                    if (empty($solutions)) {
+                        $solutions = array(
+                            array(
+                                'icon' => 'fas fa-search',
+                                'title' => 'Local SEO for Professional Services',
+                                'description' => 'Dominate local search results when potential clients search for legal, accounting, or consulting services in your area.',
+                                'features' => array('Google My Business optimization', 'Local citation building', 'Practice area keyword targeting', 'Review management and reputation')
+                            ),
+                            array(
+                                'icon' => 'fas fa-file-alt',
+                                'title' => 'Content Marketing & Thought Leadership',
+                                'description' => 'Establish your expertise through strategic content that demonstrates knowledge and builds trust with potential clients.',
+                                'features' => array('Legal/industry blog writing', 'Case study development', 'White paper creation', 'Video content strategy')
+                            ),
+                            array(
+                                'icon' => 'fab fa-linkedin',
+                                'title' => 'LinkedIn Marketing for B2B',
+                                'description' => 'Build professional networks and generate high-value leads through strategic LinkedIn advertising and organic engagement.',
+                                'features' => array('LinkedIn profile optimization', 'Sponsored content campaigns', 'Lead generation forms', 'Professional networking strategy')
+                            ),
+                            array(
+                                'icon' => 'fas fa-gavel',
+                                'title' => 'Compliance-Focused PPC',
+                                'description' => 'Drive qualified leads while maintaining strict adherence to professional advertising regulations and ethical guidelines.',
+                                'features' => array('Google Ads for legal/professional', 'Compliance monitoring', 'High-intent keyword targeting', 'Landing page optimization')
+                            )
+                        );
+                    }
+                    foreach ($solutions as $solution): ?>
+                        <div class="benefit-card">
+                            <div class="benefit-icon">
+                                <i class="<?php echo esc_attr($solution['icon']); ?>"></i>
+                            </div>
+                            <div class="benefit-content">
+                                <h3><?php echo esc_html($solution['title']); ?></h3>
+                                <p><?php echo esc_html($solution['description']); ?></p>
+                                <ul class="feature-list">
+                                    <?php foreach ($solution['features'] as $feature): ?>
+                                        <li><?php echo esc_html($feature); ?></li>
+                                    <?php endforeach; ?>
+                                </ul>
+                            </div>
                         </div>
-                        <div class="benefit-content">
-                            <h3>Local SEO for Professional Services</h3>
-                            <p>Dominate local search results when potential clients search for legal, accounting, or consulting services in your area.</p>
-                            <ul class="feature-list">
-                                <li>Google My Business optimization</li>
-                                <li>Local citation building</li>
-                                <li>Practice area keyword targeting</li>
-                                <li>Review management and reputation</li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <div class="benefit-card">
-                        <div class="benefit-icon">
-                            <i class="fas fa-file-alt"></i>
-                        </div>
-                        <div class="benefit-content">
-                            <h3>Content Marketing & Thought Leadership</h3>
-                            <p>Establish your expertise through strategic content that demonstrates knowledge and builds trust with potential clients.</p>
-                            <ul class="feature-list">
-                                <li>Legal/industry blog writing</li>
-                                <li>Case study development</li>
-                                <li>White paper creation</li>
-                                <li>Video content strategy</li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <div class="benefit-card">
-                        <div class="benefit-icon">
-                            <i class="fab fa-linkedin"></i>
-                        </div>
-                        <div class="benefit-content">
-                            <h3>LinkedIn Marketing for B2B</h3>
-                            <p>Build professional networks and generate high-value leads through strategic LinkedIn advertising and organic engagement.</p>
-                            <ul class="feature-list">
-                                <li>LinkedIn profile optimization</li>
-                                <li>Sponsored content campaigns</li>
-                                <li>Lead generation forms</li>
-                                <li>Professional networking strategy</li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <div class="benefit-card">
-                        <div class="benefit-icon">
-                            <i class="fas fa-gavel"></i>
-                        </div>
-                        <div class="benefit-content">
-                            <h3>Compliance-Focused PPC</h3>
-                            <p>Drive qualified leads while maintaining strict adherence to professional advertising regulations and ethical guidelines.</p>
-                            <ul class="feature-list">
-                                <li>Google Ads for legal/professional</li>
-                                <li>Compliance monitoring</li>
-                                <li>High-intent keyword targeting</li>
-                                <li>Landing page optimization</li>
-                            </ul>
-                        </div>
-                    </div>
-
+                    <?php endforeach; ?>
                 </div>
             </div>
-        </section>
-
-        <!-- Professional Services Success Story -->
+        </section>        <!-- Professional Services Success Story -->
         <section class="professional-case-study">
             <div class="section-content">
                 <div class="case-study-content">
                     <div class="case-study-text">
-                        <span class="case-study-label">Success Story</span>
-                        <h2>WealthWise Advisors: 300% Lead Quality Improvement</h2>
-                        <p>WealthWise Advisors, a financial planning firm, needed to generate high-quality leads while maintaining professional standards and regulatory compliance.</p>
+                        <span class="case-study-label"><?php echo esc_html(get_post_meta(get_the_ID(), '_professional_services_case_study_label', true) ?: 'Success Story'); ?></span>
+                        <h2><?php echo esc_html(get_post_meta(get_the_ID(), '_professional_services_case_study_title', true) ?: 'WealthWise Advisors: 300% Lead Quality Improvement'); ?></h2>
+                        <p><?php echo esc_html(get_post_meta(get_the_ID(), '_professional_services_case_study_content', true) ?: 'WealthWise Advisors, a financial planning firm, needed to generate high-quality leads while maintaining professional standards and regulatory compliance.'); ?></p>
                         
                         <div class="case-study-challenge">
-                            <h3>The Challenge</h3>
+                            <h3><?php echo esc_html(get_post_meta(get_the_ID(), '_professional_services_case_study_challenge_title', true) ?: 'The Challenge'); ?></h3>
                             <ul>
-                                <li>Low-quality leads from generic campaigns</li>
-                                <li>Strict compliance requirements</li>
-                                <li>Long sales cycles and high client lifetime value</li>
-                                <li>Competitive landscape with established firms</li>
+                                <?php 
+                                $case_study_challenges = get_post_meta(get_the_ID(), '_professional_services_case_study_challenges', true);
+                                if (empty($case_study_challenges)) {
+                                    $case_study_challenges = array(
+                                        'Low-quality leads from generic campaigns',
+                                        'Strict compliance requirements',
+                                        'Long sales cycles and high client lifetime value',
+                                        'Competitive landscape with established firms'
+                                    );
+                                }
+                                foreach ($case_study_challenges as $challenge): ?>
+                                    <li><?php echo esc_html($challenge); ?></li>
+                                <?php endforeach; ?>
                             </ul>
                         </div>
 
                         <div class="case-study-solution">
-                            <h3>Our Solution</h3>
+                            <h3><?php echo esc_html(get_post_meta(get_the_ID(), '_professional_services_case_study_solution_title', true) ?: 'Our Solution'); ?></h3>
                             <ul>
-                                <li>Compliance-focused content marketing</li>
-                                <li>LinkedIn thought leadership campaigns</li>
-                                <li>Educational webinar funnels</li>
-                                <li>High-intent keyword targeting</li>
+                                <?php 
+                                $case_study_solutions = get_post_meta(get_the_ID(), '_professional_services_case_study_solutions', true);
+                                if (empty($case_study_solutions)) {
+                                    $case_study_solutions = array(
+                                        'Compliance-focused content marketing',
+                                        'LinkedIn thought leadership campaigns',
+                                        'Educational webinar funnels',
+                                        'High-intent keyword targeting'
+                                    );
+                                }
+                                foreach ($case_study_solutions as $solution): ?>
+                                    <li><?php echo esc_html($solution); ?></li>
+                                <?php endforeach; ?>
                             </ul>
                         </div>
                     </div>
                     <div class="case-study-results">
-                        <h3>Results After 8 Months</h3>
+                        <h3><?php echo esc_html(get_post_meta(get_the_ID(), '_professional_services_case_study_results_title', true) ?: 'Results After 8 Months'); ?></h3>
                         <div class="results-grid">
-                            <div class="result-item">
-                                <div class="result-number">300%</div>
-                                <div class="result-label">Lead Quality Improvement</div>
-                            </div>
-                            <div class="result-item">
-                                <div class="result-number">220%</div>
-                                <div class="result-label">Qualified Consultation Requests</div>
-                            </div>
-                            <div class="result-item">
-                                <div class="result-number">185%</div>
-                                <div class="result-label">Organic Search Traffic</div>
-                            </div>
-                            <div class="result-item">
-                                <div class="result-number">450%</div>
-                                <div class="result-label">LinkedIn Engagement</div>
-                            </div>
+                            <?php 
+                            $case_study_results = get_post_meta(get_the_ID(), '_professional_services_case_study_results', true);
+                            if (empty($case_study_results)) {
+                                $case_study_results = array(
+                                    array('number' => '300%', 'label' => 'Lead Quality Improvement'),
+                                    array('number' => '220%', 'label' => 'Qualified Consultation Requests'),
+                                    array('number' => '185%', 'label' => 'Organic Search Traffic'),
+                                    array('number' => '450%', 'label' => 'LinkedIn Engagement')
+                                );
+                            }
+                            foreach ($case_study_results as $result): ?>
+                                <div class="result-item">
+                                    <div class="result-number"><?php echo esc_html($result['number']); ?></div>
+                                    <div class="result-label"><?php echo esc_html($result['label']); ?></div>
+                                </div>
+                            <?php endforeach; ?>
                         </div>
-                        <a href="<?php echo home_url('/case-studies'); ?>" class="case-study-link">Read Full Case Study</a>
+                        <a href="<?php echo esc_url(get_post_meta(get_the_ID(), '_professional_services_case_study_link_url', true) ?: home_url('/case-studies')); ?>" class="case-study-link"><?php echo esc_html(get_post_meta(get_the_ID(), '_professional_services_case_study_link_text', true) ?: 'Read Full Case Study'); ?></a>
                     </div>
                 </div>
             </div>
-        </section>
-
-        <!-- Professional Services Process -->
+        </section>        <!-- Professional Services Process -->
         <section class="professional-process">
             <div class="section-content">
-                <h2>Our Professional Services Marketing Process</h2>
+                <h2><?php echo esc_html(get_post_meta(get_the_ID(), '_professional_services_process_title', true) ?: 'Our Professional Services Marketing Process'); ?></h2>
                 <div class="process-steps">
-                    
-                    <div class="process-step">
-                        <div class="step-number">1</div>
-                        <div class="step-content">
-                            <h3>Compliance Audit</h3>
-                            <p>Review all regulatory requirements and ethical guidelines for your profession and jurisdiction.</p>
+                    <?php 
+                    $process_steps = get_post_meta(get_the_ID(), '_professional_services_process_steps', true);
+                    if (empty($process_steps)) {
+                        $process_steps = array(
+                            array(
+                                'title' => 'Compliance Audit',
+                                'description' => 'Review all regulatory requirements and ethical guidelines for your profession and jurisdiction.'
+                            ),
+                            array(
+                                'title' => 'Authority Strategy',
+                                'description' => 'Develop content and positioning strategy to establish your firm as a trusted authority in your practice area.'
+                            ),
+                            array(
+                                'title' => 'Multi-Channel Implementation',
+                                'description' => 'Deploy integrated campaigns across search, social, and content channels with compliance monitoring.'
+                            ),
+                            array(
+                                'title' => 'Lead Nurturing',
+                                'description' => 'Implement sophisticated nurturing sequences designed for long sales cycles and high-value clients.'
+                            )
+                        );
+                    }
+                    $step_number = 1;
+                    foreach ($process_steps as $step): ?>
+                        <div class="process-step">
+                            <div class="step-number"><?php echo $step_number; ?></div>
+                            <div class="step-content">
+                                <h3><?php echo esc_html($step['title']); ?></h3>
+                                <p><?php echo esc_html($step['description']); ?></p>
+                            </div>
                         </div>
-                    </div>
-
-                    <div class="process-step">
-                        <div class="step-number">2</div>
-                        <div class="step-content">
-                            <h3>Authority Strategy</h3>
-                            <p>Develop content and positioning strategy to establish your firm as a trusted authority in your practice area.</p>
-                        </div>
-                    </div>
-
-                    <div class="process-step">
-                        <div class="step-number">3</div>
-                        <div class="step-content">
-                            <h3>Multi-Channel Implementation</h3>
-                            <p>Deploy integrated campaigns across search, social, and content channels with compliance monitoring.</p>
-                        </div>
-                    </div>
-
-                    <div class="process-step">
-                        <div class="step-number">4</div>
-                        <div class="step-content">
-                            <h3>Lead Nurturing</h3>
-                            <p>Implement sophisticated nurturing sequences designed for long sales cycles and high-value clients.</p>
-                        </div>
-                    </div>
-
+                    <?php 
+                    $step_number++;
+                    endforeach; ?>
                 </div>
             </div>
-        </section>
-
-        <!-- Professional Services Insights -->
+        </section>        <!-- Professional Services Insights -->
         <section class="professional-insights">
             <div class="section-content">
-                <h2>Professional Services Industry Insights</h2>
+                <h2><?php echo esc_html(get_post_meta(get_the_ID(), '_professional_services_insights_title', true) ?: 'Professional Services Industry Insights'); ?></h2>
                 <div class="insights-grid">
-                    
-                    <div class="insight-card">
-                        <div class="insight-stat">78%</div>
-                        <div class="insight-text">
-                            <h3>Research Before Contact</h3>
-                            <p>78% of clients research professional services extensively before making contact</p>
+                    <?php 
+                    $insights = get_post_meta(get_the_ID(), '_professional_services_insights', true);
+                    if (empty($insights)) {
+                        $insights = array(
+                            array(
+                                'stat' => '78%',
+                                'title' => 'Research Before Contact',
+                                'description' => '78% of clients research professional services extensively before making contact'
+                            ),
+                            array(
+                                'stat' => '65%',
+                                'title' => 'Trust Factor',
+                                'description' => '65% of clients choose professionals based on online reputation and reviews'
+                            ),
+                            array(
+                                'stat' => '89%',
+                                'title' => 'Local Search',
+                                'description' => '89% of professional service searches include local intent'
+                            ),
+                            array(
+                                'stat' => '92%',
+                                'title' => 'Content Influence',
+                                'description' => '92% of buyers are influenced by educational content during research'
+                            )
+                        );
+                    }
+                    foreach ($insights as $insight): ?>
+                        <div class="insight-card">
+                            <div class="insight-stat"><?php echo esc_html($insight['stat']); ?></div>
+                            <div class="insight-text">
+                                <h3><?php echo esc_html($insight['title']); ?></h3>
+                                <p><?php echo esc_html($insight['description']); ?></p>
+                            </div>
                         </div>
-                    </div>
-
-                    <div class="insight-card">
-                        <div class="insight-stat">65%</div>
-                        <div class="insight-text">
-                            <h3>Trust Factor</h3>
-                            <p>65% of clients choose professionals based on online reputation and reviews</p>
-                        </div>
-                    </div>
-
-                    <div class="insight-card">
-                        <div class="insight-stat">89%</div>
-                        <div class="insight-text">
-                            <h3>Local Search</h3>
-                            <p>89% of professional service searches include local intent</p>
-                        </div>
-                    </div>
-
-                    <div class="insight-card">
-                        <div class="insight-stat">92%</div>
-                        <div class="insight-text">
-                            <h3>Content Influence</h3>
-                            <p>92% of buyers are influenced by educational content during research</p>
-                        </div>
-                    </div>                </div>
+                    <?php endforeach; ?>
+                </div>
             </div>
-        </section>
-
-        <!-- Professional Services Testimonial -->
+        </section>        <!-- Professional Services Testimonial (without image) -->
         <section class="professional-testimonial">
             <div class="section-content">
                 <div class="testimonial-content">
                     <blockquote>
-                        "Aimpro Digital's understanding of professional services marketing is exceptional. They helped us maintain compliance while dramatically improving our lead quality. The team's strategic approach to long sales cycles and high-value clients made all the difference."
+                        "<?php echo esc_html(get_post_meta(get_the_ID(), '_professional_services_testimonial_quote', true) ?: 'Aimpro Digital\'s understanding of professional services marketing is exceptional. They helped us maintain compliance while dramatically improving our lead quality. The team\'s strategic approach to long sales cycles and high-value clients made all the difference.'); ?>"
                     </blockquote>
                     <div class="testimonial-author">
-                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/testimonials/professional-elizabeth.jpg" alt="Elizabeth Brown" />
                         <div class="author-info">
-                            <h4>Elizabeth Brown</h4>
-                            <span>Managing Partner, Brown & Associates Law</span>
-                            <div class="author-company">Multi-practice law firm with 15 attorneys</div>
+                            <h4><?php echo esc_html(get_post_meta(get_the_ID(), '_professional_services_testimonial_name', true) ?: 'Elizabeth Brown'); ?></h4>
+                            <span><?php echo esc_html(get_post_meta(get_the_ID(), '_professional_services_testimonial_position', true) ?: 'Managing Partner, Brown & Associates Law'); ?></span>
+                            <div class="author-company"><?php echo esc_html(get_post_meta(get_the_ID(), '_professional_services_testimonial_company', true) ?: 'Multi-practice law firm with 15 attorneys'); ?></div>
                         </div>
                     </div>
                 </div>
             </div>
-        </section>
-
-        <!-- CTA Section -->        <section class="professional-cta text-center">
+        </section>        <!-- CTA Section -->        
+        <section class="professional-cta text-center">
             <div class="section-content">
-                <h2>Ready to Elevate Your Professional Practice?</h2>
-                <p>Let's discuss how our professional services marketing expertise can generate high-quality leads for your firm.</p>
+                <h2><?php echo esc_html(get_post_meta(get_the_ID(), '_professional_services_cta_title', true) ?: 'Ready to Elevate Your Professional Practice?'); ?></h2>
+                <p><?php echo esc_html(get_post_meta(get_the_ID(), '_professional_services_cta_subtitle', true) ?: 'Let\'s discuss how our professional services marketing expertise can generate high-quality leads for your firm.'); ?></p>
                 <div class="cta-buttons">
-                    <a href="<?php echo home_url('/contact'); ?>" class="btn btn-primary">Get Free Practice Audit</a>
-                    <a href="<?php echo home_url('/case-studies'); ?>" class="btn btn-secondary">View More Success Stories</a>
+                    <a href="<?php echo esc_url(get_post_meta(get_the_ID(), '_professional_services_cta_primary_url', true) ?: home_url('/contact')); ?>" class="btn btn-primary"><?php echo esc_html(get_post_meta(get_the_ID(), '_professional_services_cta_primary_text', true) ?: 'Get Free Practice Audit'); ?></a>
+                    <a href="<?php echo esc_url(get_post_meta(get_the_ID(), '_professional_services_cta_secondary_url', true) ?: home_url('/case-studies')); ?>" class="btn btn-secondary"><?php echo esc_html(get_post_meta(get_the_ID(), '_professional_services_cta_secondary_text', true) ?: 'View More Success Stories'); ?></a>
                 </div>
                 <div class="cta-benefits">
-                    <span class="benefit">✓ Compliance-focused strategies</span>
-                    <span class="benefit">✓ Industry-specific expertise</span>
-                    <span class="benefit">✓ Confidential consultation</span>
+                    <?php 
+                    $cta_benefits = get_post_meta(get_the_ID(), '_professional_services_cta_benefits', true);
+                    if (empty($cta_benefits)) {
+                        $cta_benefits = array(
+                            '✓ Compliance-focused strategies',
+                            '✓ Industry-specific expertise',
+                            '✓ Confidential consultation'
+                        );
+                    }
+                    foreach ($cta_benefits as $benefit): ?>
+                        <span class="benefit"><?php echo esc_html($benefit); ?></span>
+                    <?php endforeach; ?>
                 </div>
             </div>
         </section>
