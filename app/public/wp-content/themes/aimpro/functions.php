@@ -85,6 +85,8 @@ require_once get_template_directory() . '/includes/retargeting-display-meta.php'
 require_once get_template_directory() . '/includes/ppc-audit-meta.php';
 require_once get_template_directory() . '/includes/seo-services-meta.php';
 require_once get_template_directory() . '/includes/local-seo-meta.php';
+require_once get_template_directory() . '/includes/seo-audit-meta.php';
+require_once get_template_directory() . '/includes/technical-seo-meta.php';
 
 // Include helper functions
 require_once get_template_directory() . '/includes/helpers.php';
