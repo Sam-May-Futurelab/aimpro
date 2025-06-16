@@ -104,23 +104,11 @@ get_header(); ?>
                     </div>
                     <h3><?php echo esc_html(get_post_meta(get_the_ID(), 'ai_service_6_title', true) ?: 'Omnichannel Integration'); ?></h3>
                     <p><?php echo esc_html(get_post_meta(get_the_ID(), 'ai_service_6_desc', true) ?: 'Unified customer view across all touchpoints with AI-powered attribution and engagement tracking.'); ?></p>
-                </div>
-            </div>
+                </div>            </div>
         </div>
     </section>
-                    <p>Deep customer profiling using AI to understand preferences, behavior patterns, and optimal communication strategies.</p>
-                </div>
-                
-                <div class="service-item">
-                    <div class="service-icon">
-                        <i class="fas fa-mobile-alt"></i>
-                    </div>
-                    <h3>Omnichannel Integration</h3>
-                    <p>Unified customer view across all touchpoints with AI-powered attribution and engagement tracking.</p>
-                </div>
-            </div>
-        </div>
-    </section>    <!-- Case Study Section -->
+
+    <!-- Case Study Section -->
     <section class="case-study-section">
         <div class="container">
             <div class="case-study-content">
