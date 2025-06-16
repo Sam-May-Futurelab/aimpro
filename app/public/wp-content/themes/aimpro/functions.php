@@ -76,6 +76,7 @@ require_once get_template_directory() . '/includes/rank-higher-locally-meta.php'
 require_once get_template_directory() . '/includes/automate-marketing-meta.php';
 require_once get_template_directory() . '/includes/finance-meta.php';
 require_once get_template_directory() . '/includes/high-converting-website-meta.php';
+require_once get_template_directory() . '/includes/chatbots-meta.php';
 
 // Include helper functions
 require_once get_template_directory() . '/includes/helpers.php';
