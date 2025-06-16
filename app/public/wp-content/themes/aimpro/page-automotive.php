@@ -4,7 +4,25 @@
  * Description: Digital marketing for automotive businesses
  */
 
-get_header(); ?>
+get_header(); 
+
+// Get meta fields
+$header_title = get_post_meta(get_the_ID(), '_automotive_header_title', true) ?: 'Automotive Digital Marketing';
+$header_subtitle = get_post_meta(get_the_ID(), '_automotive_header_subtitle', true) ?: 'Drive more qualified leads to your dealership with proven automotive marketing strategies';
+$overview_title = get_post_meta(get_the_ID(), '_automotive_overview_title', true) ?: 'Accelerate Your Automotive Business';
+$overview_content = get_post_meta(get_the_ID(), '_automotive_overview_content', true) ?: 'The automotive industry has evolved dramatically. Today\'s car buyers research extensively online before stepping foot on a lot. Our specialized automotive marketing strategies ensure you\'re visible throughout their entire buyer journey.';
+$overview_image = get_post_meta(get_the_ID(), '_automotive_overview_image', true);
+$challenges_title = get_post_meta(get_the_ID(), '_automotive_challenges_title', true) ?: 'Automotive Marketing Challenges We Solve:';
+$challenges = get_post_meta(get_the_ID(), '_automotive_challenges', true) ?: array(
+    'Intense local competition from other dealerships',
+    'Long sales cycles and multiple touchpoints',
+    'Inventory-based marketing requirements',
+    'Service department visibility and bookings',
+    'Managing online reputation and reviews'
+);
+$services_title = get_post_meta(get_the_ID(), '_automotive_services_title', true) ?: 'Our Automotive Marketing Services';
+$services = get_post_meta(get_the_ID(), '_automotive_services', true) ?: array();
+?>
 
 <main id="main" class="main-content">
     <div class="container">
@@ -12,259 +30,258 @@ get_header(); ?>
         <!-- Page Header -->
         <section class="page-header">
             <div class="page-header-content">
-                <h1>Automotive Digital Marketing</h1>
-                <p class="page-subtitle">Drive more qualified leads to your dealership with proven automotive marketing strategies</p>
+                <h1><?php echo esc_html($header_title); ?></h1>
+                <p class="page-subtitle"><?php echo esc_html($header_subtitle); ?></p>
             </div>
-        </section>
-
-        <!-- Industry Overview -->
+        </section>        <!-- Industry Overview -->
         <section class="industry-overview">
             <div class="section-content">
                 <div class="overview-content">
                     <div class="overview-text">
-                        <h2>Accelerate Your Automotive Business</h2>
-                        <p>The automotive industry has evolved dramatically. Today's car buyers research extensively online before stepping foot on a lot. Our specialized automotive marketing strategies ensure you're visible throughout their entire buyer journey.</p>
+                        <h2><?php echo esc_html($overview_title); ?></h2>
+                        <p><?php echo esc_html($overview_content); ?></p>
                         
                         <div class="industry-challenges">
-                            <h3>Automotive Marketing Challenges We Solve:</h3>
+                            <h3><?php echo esc_html($challenges_title); ?></h3>
                             <ul>
-                                <li>Intense local competition from other dealerships</li>
-                                <li>Long sales cycles and multiple touchpoints</li>
-                                <li>Inventory-based marketing requirements</li>
-                                <li>Service department visibility and bookings</li>
-                                <li>Managing online reputation and reviews</li>
+                                <?php foreach ($challenges as $challenge): ?>
+                                    <li><?php echo esc_html($challenge); ?></li>
+                                <?php endforeach; ?>
                             </ul>
                         </div>
                     </div>
                     <div class="overview-image">
-                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/industries/automotive-overview.jpg" alt="Automotive Digital Marketing" />
+                        <?php if ($overview_image): ?>
+                            <img src="<?php echo esc_url($overview_image); ?>" alt="<?php echo esc_attr($overview_title); ?>" />
+                        <?php else: ?>
+                            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/industries/automotive-overview.jpg" alt="Automotive Digital Marketing" />
+                        <?php endif; ?>
                     </div>
                 </div>
             </div>
         </section>        <!-- Automotive Services -->
         <section class="automotive-services">
             <div class="section-content">
-                <h2>Our Automotive Marketing Services</h2>
+                <h2><?php echo esc_html($services_title); ?></h2>
                 <div class="benefits-grid-2x2">
+                    <?php 
+                    // Default services if none set
+                    if (empty($services)) {
+                        $services = array(
+                            array(
+                                'icon' => 'fas fa-map-marker-alt',
+                                'title' => 'Local SEO for Dealerships',
+                                'description' => 'Dominate local search results when customers search for "car dealerships near me" or specific vehicle models in your area.',
+                                'features' => array('Google My Business optimization', 'Local directory listings', 'Location-based keyword targeting', 'Review management and reputation')
+                            ),
+                            array(
+                                'icon' => 'fas fa-car',
+                                'title' => 'Vehicle Inventory Marketing',
+                                'description' => 'Showcase your inventory with dynamic advertising that automatically promotes your available vehicles to interested buyers.',
+                                'features' => array('Dynamic vehicle ads on Google', 'Facebook vehicle showcase campaigns', 'Inventory-based remarketing', 'VDP (Vehicle Detail Page) optimization')
+                            ),
+                            array(
+                                'icon' => 'fas fa-wrench',
+                                'title' => 'Service Department Marketing',
+                                'description' => 'Drive consistent revenue with targeted campaigns for oil changes, tire rotations, and major automotive services.',
+                                'features' => array('Service appointment booking campaigns', 'Maintenance reminder automation', 'Seasonal service promotions', 'Customer retention programs')
+                            ),
+                            array(
+                                'icon' => 'fas fa-chart-line',
+                                'title' => 'Lead Generation Campaigns',
+                                'description' => 'Generate high-quality leads for sales and service departments with targeted PPC campaigns and conversion optimization.',
+                                'features' => array('Google Ads for automotive', 'Facebook lead generation', 'Trade-in value campaigns', 'Test drive scheduling')
+                            )
+                        );
+                    }
+                    
+                    foreach ($services as $service): ?>
                       <div class="benefit-card">
                         <div class="benefit-icon">
-                            <i class="fas fa-map-marker-alt"></i>
+                            <i class="<?php echo esc_attr($service['icon']); ?>"></i>
                         </div>
                         <div class="benefit-content">
-                            <h3>Local SEO for Dealerships</h3>
-                            <p>Dominate local search results when customers search for "car dealerships near me" or specific vehicle models in your area.</p>
+                            <h3><?php echo esc_html($service['title']); ?></h3>
+                            <p><?php echo esc_html($service['description']); ?></p>
+                            <?php if (!empty($service['features'])): ?>
                             <ul class="feature-list">
-                                <li>Google My Business optimization</li>
-                                <li>Local directory listings</li>
-                                <li>Location-based keyword targeting</li>
-                                <li>Review management and reputation</li>
+                                <?php foreach ($service['features'] as $feature): ?>
+                                    <li><?php echo esc_html($feature); ?></li>
+                                <?php endforeach; ?>
                             </ul>
+                            <?php endif; ?>
                         </div>
                     </div>
-
-                    <div class="benefit-card">
-                        <div class="benefit-icon">
-                            <i class="fas fa-car"></i>
-                        </div>
-                        <div class="benefit-content">
-                            <h3>Vehicle Inventory Marketing</h3>
-                            <p>Showcase your inventory with dynamic advertising that automatically promotes your available vehicles to interested buyers.</p>
-                            <ul class="feature-list">
-                                <li>Dynamic vehicle ads on Google</li>
-                                <li>Facebook vehicle showcase campaigns</li>
-                                <li>Inventory-based remarketing</li>
-                                <li>VDP (Vehicle Detail Page) optimization</li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <div class="benefit-card">
-                        <div class="benefit-icon">
-                            <i class="fas fa-wrench"></i>
-                        </div>
-                        <div class="benefit-content">
-                            <h3>Service Department Marketing</h3>
-                            <p>Drive consistent revenue with targeted campaigns for oil changes, tire rotations, and major automotive services.</p>
-                            <ul class="feature-list">
-                                <li>Service appointment booking campaigns</li>
-                                <li>Maintenance reminder automation</li>
-                                <li>Seasonal service promotions</li>
-                                <li>Customer retention programs</li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <div class="benefit-card">
-                        <div class="benefit-icon">
-                            <i class="fas fa-chart-line"></i>
-                        </div>
-                        <div class="benefit-content">
-                            <h3>Lead Generation Campaigns</h3>
-                            <p>Generate high-quality leads for sales and service departments with targeted PPC campaigns and conversion optimization.</p>
-                            <ul class="feature-list">
-                                <li>Google Ads for automotive</li>
-                                <li>Facebook lead generation</li>
-                                <li>Trade-in value campaigns</li>
-                                <li>Test drive scheduling</li>
-                            </ul>
-                        </div>
-                    </div>
-
+                    <?php endforeach; ?>
                 </div>
             </div>
-        </section>
-
-        <!-- Automotive Success Story -->
+        </section>        <!-- Automotive Success Story -->
         <section class="automotive-case-study">
             <div class="section-content">
                 <div class="case-study-content">
                     <div class="case-study-text">
-                        <span class="case-study-label">Success Story</span>
-                        <h2>Premier Motors: 180% Increase in Qualified Leads</h2>
-                        <p>Premier Motors, a multi-brand dealership, was struggling with online visibility and lead quality. Our comprehensive automotive marketing strategy transformed their digital presence.</p>
+                        <?php 
+                        $case_study_label = get_post_meta(get_the_ID(), '_automotive_case_study_label', true) ?: 'Success Story';
+                        $case_study_title = get_post_meta(get_the_ID(), '_automotive_case_study_title', true) ?: 'Premier Motors: 180% Increase in Qualified Leads';
+                        $case_study_content = get_post_meta(get_the_ID(), '_automotive_case_study_content', true) ?: 'Premier Motors, a multi-brand dealership, was struggling with online visibility and lead quality. Our comprehensive automotive marketing strategy transformed their digital presence.';
+                        $case_study_challenge_title = get_post_meta(get_the_ID(), '_automotive_case_study_challenge_title', true) ?: 'The Challenge';
+                        $case_study_challenges = get_post_meta(get_the_ID(), '_automotive_case_study_challenges', true) ?: array(
+                            'Low local search visibility',
+                            'Poor quality leads from generic campaigns',
+                            'Service department underperforming',
+                            'Inconsistent online presence across locations'
+                        );
+                        $case_study_solution_title = get_post_meta(get_the_ID(), '_automotive_case_study_solution_title', true) ?: 'Our Solution';
+                        $case_study_solutions = get_post_meta(get_the_ID(), '_automotive_case_study_solutions', true) ?: array(
+                            'Comprehensive local SEO optimization',
+                            'Dynamic vehicle inventory advertising',
+                            'Service-focused PPC campaigns',
+                            'Review management and reputation building'
+                        );
+                        ?>
+                        <span class="case-study-label"><?php echo esc_html($case_study_label); ?></span>
+                        <h2><?php echo esc_html($case_study_title); ?></h2>
+                        <p><?php echo esc_html($case_study_content); ?></p>
                         
                         <div class="case-study-challenge">
-                            <h3>The Challenge</h3>
+                            <h3><?php echo esc_html($case_study_challenge_title); ?></h3>
                             <ul>
-                                <li>Low local search visibility</li>
-                                <li>Poor quality leads from generic campaigns</li>
-                                <li>Service department underperforming</li>
-                                <li>Inconsistent online presence across locations</li>
+                                <?php foreach ($case_study_challenges as $challenge): ?>
+                                    <li><?php echo esc_html($challenge); ?></li>
+                                <?php endforeach; ?>
                             </ul>
                         </div>
 
                         <div class="case-study-solution">
-                            <h3>Our Solution</h3>
+                            <h3><?php echo esc_html($case_study_solution_title); ?></h3>
                             <ul>
-                                <li>Comprehensive local SEO optimization</li>
-                                <li>Dynamic vehicle inventory advertising</li>
-                                <li>Service-focused PPC campaigns</li>
-                                <li>Review management and reputation building</li>
+                                <?php foreach ($case_study_solutions as $solution): ?>
+                                    <li><?php echo esc_html($solution); ?></li>
+                                <?php endforeach; ?>
                             </ul>
                         </div>
                     </div>
                     <div class="case-study-results">
-                        <h3>Results After 6 Months</h3>
+                        <?php 
+                        $case_study_results_title = get_post_meta(get_the_ID(), '_automotive_case_study_results_title', true) ?: 'Results After 6 Months';
+                        $case_study_results = get_post_meta(get_the_ID(), '_automotive_case_study_results', true) ?: array(
+                            array('number' => '180%', 'label' => 'Increase in Qualified Leads'),
+                            array('number' => '250%', 'label' => 'Service Bookings Growth'),
+                            array('number' => '320%', 'label' => 'Local Search Visibility'),
+                            array('number' => '4.8★', 'label' => 'Average Review Rating')
+                        );
+                        $case_study_link_text = get_post_meta(get_the_ID(), '_automotive_case_study_link_text', true) ?: 'Read Full Case Study';
+                        $case_study_link_url = get_post_meta(get_the_ID(), '_automotive_case_study_link_url', true) ?: home_url('/case-studies');
+                        ?>
+                        <h3><?php echo esc_html($case_study_results_title); ?></h3>
                         <div class="results-grid">
+                            <?php foreach ($case_study_results as $result): ?>
                             <div class="result-item">
-                                <div class="result-number">180%</div>
-                                <div class="result-label">Increase in Qualified Leads</div>
+                                <div class="result-number"><?php echo esc_html($result['number']); ?></div>
+                                <div class="result-label"><?php echo esc_html($result['label']); ?></div>
                             </div>
-                            <div class="result-item">
-                                <div class="result-number">250%</div>
-                                <div class="result-label">Service Bookings Growth</div>
-                            </div>
-                            <div class="result-item">
-                                <div class="result-number">320%</div>
-                                <div class="result-label">Local Search Visibility</div>
-                            </div>
-                            <div class="result-item">
-                                <div class="result-number">4.8★</div>
-                                <div class="result-label">Average Review Rating</div>
-                            </div>
+                            <?php endforeach; ?>
                         </div>
-                        <a href="<?php echo home_url('/case-studies'); ?>" class="case-study-link">Read Full Case Study</a>
+                        <a href="<?php echo esc_url($case_study_link_url); ?>" class="case-study-link"><?php echo esc_html($case_study_link_text); ?></a>
                     </div>
                 </div>
             </div>
-        </section>
-
-        <!-- Automotive Marketing Process -->
+        </section>        <!-- Automotive Marketing Process -->
         <section class="automotive-process">
             <div class="section-content">
-                <h2>Our Automotive Marketing Process</h2>
+                <?php 
+                $process_title = get_post_meta(get_the_ID(), '_automotive_process_title', true) ?: 'Our Automotive Marketing Process';
+                $process_steps = get_post_meta(get_the_ID(), '_automotive_process_steps', true) ?: array(
+                    array(
+                        'title' => 'Market Analysis',
+                        'description' => 'We analyze your local automotive market, competitor strategies, and customer behavior patterns.'
+                    ),
+                    array(
+                        'title' => 'Strategy Development',
+                        'description' => 'Create a customized marketing strategy that aligns with your inventory, services, and business goals.'
+                    ),
+                    array(
+                        'title' => 'Campaign Implementation',
+                        'description' => 'Launch targeted campaigns across multiple channels, optimized for automotive customer journeys.'
+                    ),
+                    array(
+                        'title' => 'Performance Optimization',
+                        'description' => 'Continuously monitor and optimize campaigns based on lead quality, cost per acquisition, and ROI.'
+                    )
+                );
+                ?>
+                <h2><?php echo esc_html($process_title); ?></h2>
                 <div class="process-steps">
-                    
+                    <?php foreach ($process_steps as $index => $step): ?>
                     <div class="process-step">
-                        <div class="step-number">1</div>
+                        <div class="step-number"><?php echo $index + 1; ?></div>
                         <div class="step-content">
-                            <h3>Market Analysis</h3>
-                            <p>We analyze your local automotive market, competitor strategies, and customer behavior patterns.</p>
+                            <h3><?php echo esc_html($step['title']); ?></h3>
+                            <p><?php echo esc_html($step['description']); ?></p>
                         </div>
                     </div>
-
-                    <div class="process-step">
-                        <div class="step-number">2</div>
-                        <div class="step-content">
-                            <h3>Strategy Development</h3>
-                            <p>Create a customized marketing strategy that aligns with your inventory, services, and business goals.</p>
-                        </div>
-                    </div>
-
-                    <div class="process-step">
-                        <div class="step-number">3</div>
-                        <div class="step-content">
-                            <h3>Campaign Implementation</h3>
-                            <p>Launch targeted campaigns across multiple channels, optimized for automotive customer journeys.</p>
-                        </div>
-                    </div>
-
-                    <div class="process-step">
-                        <div class="step-number">4</div>
-                        <div class="step-content">
-                            <h3>Performance Optimization</h3>
-                            <p>Continuously monitor and optimize campaigns based on lead quality, cost per acquisition, and ROI.</p>
-                        </div>
-                    </div>
-
+                    <?php endforeach; ?>
                 </div>
             </div>
-        </section>
-
-        <!-- Automotive Industry Insights -->
+        </section>        <!-- Automotive Industry Insights -->
         <section class="automotive-insights">
             <div class="section-content">
-                <h2>Automotive Industry Insights</h2>
+                <?php 
+                $insights_title = get_post_meta(get_the_ID(), '_automotive_insights_title', true) ?: 'Automotive Industry Insights';
+                $insights = get_post_meta(get_the_ID(), '_automotive_insights', true) ?: array(
+                    array(
+                        'stat' => '95%',
+                        'title' => 'Research Online First',
+                        'description' => '95% of car buyers research vehicles online before visiting a dealership'
+                    ),
+                    array(
+                        'stat' => '13',
+                        'title' => 'Digital Touchpoints',
+                        'description' => 'Average customer visits 13 digital touchpoints during their car buying journey'
+                    ),
+                    array(
+                        'stat' => '60%',
+                        'title' => 'Mobile Research',
+                        'description' => '60% of automotive research happens on mobile devices'
+                    ),
+                    array(
+                        'stat' => '89%',
+                        'title' => 'Service Revenue',
+                        'description' => 'Service departments generate 89% of dealership profits'
+                    )
+                );
+                ?>
+                <h2><?php echo esc_html($insights_title); ?></h2>
                 <div class="insights-grid">
-                    
+                    <?php foreach ($insights as $insight): ?>
                     <div class="insight-card">
-                        <div class="insight-stat">95%</div>
+                        <div class="insight-stat"><?php echo esc_html($insight['stat']); ?></div>
                         <div class="insight-text">
-                            <h3>Research Online First</h3>
-                            <p>95% of car buyers research vehicles online before visiting a dealership</p>
+                            <h3><?php echo esc_html($insight['title']); ?></h3>
+                            <p><?php echo esc_html($insight['description']); ?></p>
                         </div>
                     </div>
-
-                    <div class="insight-card">
-                        <div class="insight-stat">13</div>
-                        <div class="insight-text">
-                            <h3>Digital Touchpoints</h3>
-                            <p>Average customer visits 13 digital touchpoints during their car buying journey</p>
-                        </div>
-                    </div>
-
-                    <div class="insight-card">
-                        <div class="insight-stat">60%</div>
-                        <div class="insight-text">
-                            <h3>Mobile Research</h3>
-                            <p>60% of automotive research happens on mobile devices</p>
-                        </div>
-                    </div>
-
-                    <div class="insight-card">
-                        <div class="insight-stat">89%</div>
-                        <div class="insight-text">
-                            <h3>Service Revenue</h3>
-                            <p>Service departments generate 89% of dealership profits</p>
-                        </div>
-                    </div>
-
+                    <?php endforeach; ?>
                 </div>
-            </div>        </section>
-
-        <!-- Automotive Testimonial -->
+            </div>
+        </section>        <!-- Automotive Testimonial -->
         <section class="automotive-testimonial">
             <div class="section-content">
                 <div class="testimonial-content">
+                    <?php 
+                    $testimonial_quote = get_post_meta(get_the_ID(), '_automotive_testimonial_quote', true) ?: '"Aimpro Digital completely transformed our online presence. Their understanding of the automotive market helped us generate 180% more qualified leads and significantly improved our service department bookings. The team\'s expertise in automotive marketing is unmatched."';
+                    $testimonial_name = get_post_meta(get_the_ID(), '_automotive_testimonial_name', true) ?: 'Mark Thompson';
+                    $testimonial_position = get_post_meta(get_the_ID(), '_automotive_testimonial_position', true) ?: 'General Manager, Premier Motors';
+                    $testimonial_company = get_post_meta(get_the_ID(), '_automotive_testimonial_company', true) ?: 'Multi-brand dealership with 3 locations';
+                    ?>
                     <blockquote>
-                        "Aimpro Digital completely transformed our online presence. Their understanding of the automotive market helped us generate 180% more qualified leads and significantly improved our service department bookings. The team's expertise in automotive marketing is unmatched."
+                        <?php echo esc_html($testimonial_quote); ?>
                     </blockquote>
                     <div class="testimonial-author">
-                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/testimonials/automotive-mark.jpg" alt="Mark Thompson" />
                         <div class="author-info">
-                            <h4>Mark Thompson</h4>
-                            <span>General Manager, Premier Motors</span>
-                            <div class="author-company">Multi-brand dealership with 3 locations</div>
+                            <h4><?php echo esc_html($testimonial_name); ?></h4>
+                            <span><?php echo esc_html($testimonial_position); ?></span>
+                            <div class="author-company"><?php echo esc_html($testimonial_company); ?></div>
                         </div>
                     </div>
                 </div>
@@ -272,16 +289,29 @@ get_header(); ?>
         </section>        <!-- CTA Section -->
         <section class="automotive-cta text-center">
             <div class="section-content">
-                <h2>Ready to Accelerate Your Automotive Marketing?</h2>
-                <p>Let's discuss how our automotive marketing expertise can drive more qualified leads to your dealership.</p>
+                <?php 
+                $cta_title = get_post_meta(get_the_ID(), '_automotive_cta_title', true) ?: 'Ready to Accelerate Your Automotive Marketing?';
+                $cta_subtitle = get_post_meta(get_the_ID(), '_automotive_cta_subtitle', true) ?: 'Let\'s discuss how our automotive marketing expertise can drive more qualified leads to your dealership.';
+                $cta_primary_text = get_post_meta(get_the_ID(), '_automotive_cta_primary_text', true) ?: 'Get Free Automotive Audit';
+                $cta_primary_url = get_post_meta(get_the_ID(), '_automotive_cta_primary_url', true) ?: home_url('/contact');
+                $cta_secondary_text = get_post_meta(get_the_ID(), '_automotive_cta_secondary_text', true) ?: 'View More Success Stories';
+                $cta_secondary_url = get_post_meta(get_the_ID(), '_automotive_cta_secondary_url', true) ?: home_url('/case-studies');
+                $cta_benefits = get_post_meta(get_the_ID(), '_automotive_cta_benefits', true) ?: array(
+                    '✓ Free competitive analysis',
+                    '✓ Custom strategy recommendations',
+                    '✓ No obligation consultation'
+                );
+                ?>
+                <h2><?php echo esc_html($cta_title); ?></h2>
+                <p><?php echo esc_html($cta_subtitle); ?></p>
                 <div class="cta-buttons">
-                    <a href="<?php echo home_url('/contact'); ?>" class="btn btn-primary">Get Free Automotive Audit</a>
-                    <a href="<?php echo home_url('/case-studies'); ?>" class="btn btn-secondary">View More Success Stories</a>
+                    <a href="<?php echo esc_url($cta_primary_url); ?>" class="btn btn-primary"><?php echo esc_html($cta_primary_text); ?></a>
+                    <a href="<?php echo esc_url($cta_secondary_url); ?>" class="btn btn-secondary"><?php echo esc_html($cta_secondary_text); ?></a>
                 </div>
                 <div class="cta-benefits">
-                    <span class="benefit">✓ Free competitive analysis</span>
-                    <span class="benefit">✓ Custom strategy recommendations</span>
-                    <span class="benefit">✓ No obligation consultation</span>
+                    <?php foreach ($cta_benefits as $benefit): ?>
+                        <span class="benefit"><?php echo esc_html($benefit); ?></span>
+                    <?php endforeach; ?>
                 </div>
             </div>
         </section>
