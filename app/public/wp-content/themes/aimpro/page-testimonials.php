@@ -8,20 +8,53 @@ get_header(); ?>
 
 <main id="main" class="main-content">
     <div class="container">
-        
-        <!-- Page Header -->
+          <!-- Page Header -->
         <section class="page-header">
             <div class="page-header-content">
-                <h1>Client Testimonials</h1>
-                <p class="page-subtitle">See what our clients have to say about working with Aimpro Digital</p>
+                <h1><?php echo esc_html(get_post_meta(get_the_ID(), 'testimonials_header_title', true) ?: 'Client Testimonials'); ?></h1>
+                <p class="page-subtitle"><?php echo esc_html(get_post_meta(get_the_ID(), 'testimonials_header_subtitle', true) ?: 'See what our clients have to say about working with Aimpro Digital'); ?></p>
             </div>
         </section>
 
         <!-- Featured Testimonials -->
         <section class="featured-testimonials">
             <div class="section-content">
-                <h2>Success Stories</h2>
+                <h2><?php echo esc_html(get_post_meta(get_the_ID(), 'testimonials_featured_heading', true) ?: 'Success Stories'); ?></h2>
                 <div class="testimonials-grid">
+                    <?php for ($i = 1; $i <= 2; $i++): 
+                        $quote = get_post_meta(get_the_ID(), "testimonial{$i}_quote", true);
+                        $author = get_post_meta(get_the_ID(), "testimonial{$i}_author", true);
+                        $title = get_post_meta(get_the_ID(), "testimonial{$i}_title", true);
+                        $company = get_post_meta(get_the_ID(), "testimonial{$i}_company", true);
+                        $industry = get_post_meta(get_the_ID(), "testimonial{$i}_industry", true);
+                        $result1 = get_post_meta(get_the_ID(), "testimonial{$i}_result1", true);
+                        $result1_label = get_post_meta(get_the_ID(), "testimonial{$i}_result1_label", true);
+                        $result2 = get_post_meta(get_the_ID(), "testimonial{$i}_result2", true);
+                        $result2_label = get_post_meta(get_the_ID(), "testimonial{$i}_result2_label", true);
+                        $result3 = get_post_meta(get_the_ID(), "testimonial{$i}_result3", true);
+                        $result3_label = get_post_meta(get_the_ID(), "testimonial{$i}_result3_label", true);
+                        
+                        // Defaults
+                        if ($i == 1 && !$quote) {
+                            $quote = 'Aimpro Digital transformed our online presence completely. Within 6 months, our website traffic increased by 300% and our lead generation improved by 250%. Their team\'s expertise in SEO and PPC advertising delivered results beyond our expectations.';
+                            $author = 'Sarah Williams';
+                            $title = 'CEO, TechStart Solutions';
+                            $company = 'TechStart Solutions';
+                            $industry = 'Technology Consulting';
+                            $result1 = '300%'; $result1_label = 'Traffic Increase';
+                            $result2 = '250%'; $result2_label = 'More Leads';
+                            $result3 = '6'; $result3_label = 'Months to Results';
+                        } elseif ($i == 2 && !$quote) {
+                            $quote = 'Working with Aimpro Digital has been a game-changer for our e-commerce business. Their strategic approach to Google Ads and Facebook advertising helped us achieve a 400% return on ad spend. The team is professional, responsive, and truly understands our industry.';
+                            $author = 'Michael Chen';
+                            $title = 'Founder, Elite Fitness Gear';
+                            $company = 'Elite Fitness Gear';
+                            $industry = 'E-commerce';
+                            $result1 = '400%'; $result1_label = 'ROAS';
+                            $result2 = '180%'; $result2_label = 'Sales Growth';
+                            $result3 = '90'; $result3_label = 'Days to ROI';
+                        }
+                    ?>
                     <div class="testimonial-card featured">
                         <div class="testimonial-content">
                             <div class="quote-icon">
@@ -29,70 +62,34 @@ get_header(); ?>
                                     <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" fill="currentColor"/>
                                 </svg>
                             </div>
-                            <blockquote>
-                                "Aimpro Digital transformed our online presence completely. Within 6 months, our website traffic increased by 300% and our lead generation improved by 250%. Their team's expertise in SEO and PPC advertising delivered results beyond our expectations."
-                            </blockquote>                            <div class="testimonial-author">
+                            <blockquote><?php echo esc_html($quote); ?></blockquote>
+                            <div class="testimonial-author">
                                 <div class="author-info">
-                                    <h4>Sarah Williams</h4>
-                                    <p>CEO, TechStart Solutions</p>
+                                    <h4><?php echo esc_html($author); ?></h4>
+                                    <p><?php echo esc_html($title); ?></p>
                                     <div class="company-info">
-                                        <span>Technology Consulting</span>
-                                        <span>50+ Employees</span>
+                                        <span><?php echo esc_html($industry); ?></span>
+                                        <span><?php echo esc_html($company); ?></span>
                                     </div>
                                 </div>
                             </div>
                             <div class="results-summary">
                                 <div class="result-item">
-                                    <span class="result-number">300%</span>
-                                    <span class="result-label">Traffic Increase</span>
+                                    <span class="result-number"><?php echo esc_html($result1); ?></span>
+                                    <span class="result-label"><?php echo esc_html($result1_label); ?></span>
                                 </div>
                                 <div class="result-item">
-                                    <span class="result-number">250%</span>
-                                    <span class="result-label">More Leads</span>
+                                    <span class="result-number"><?php echo esc_html($result2); ?></span>
+                                    <span class="result-label"><?php echo esc_html($result2_label); ?></span>
                                 </div>
                                 <div class="result-item">
-                                    <span class="result-number">6</span>
-                                    <span class="result-label">Months to Results</span>
+                                    <span class="result-number"><?php echo esc_html($result3); ?></span>
+                                    <span class="result-label"><?php echo esc_html($result3_label); ?></span>
                                 </div>
                             </div>
                         </div>
                     </div>
-
-                    <div class="testimonial-card featured">
-                        <div class="testimonial-content">
-                            <div class="quote-icon">
-                                <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" fill="currentColor"/>
-                                </svg>
-                            </div>
-                            <blockquote>
-                                "Working with Aimpro Digital has been a game-changer for our e-commerce business. Their strategic approach to Google Ads and Facebook advertising helped us achieve a 400% return on ad spend. The team is professional, responsive, and truly understands our industry."
-                            </blockquote>                            <div class="testimonial-author">
-                                <div class="author-info">
-                                    <h4>Michael Chen</h4>
-                                    <p>Founder, Elite Fitness Gear</p>
-                                    <div class="company-info">
-                                        <span>E-commerce</span>
-                                        <span>$2M+ Annual Revenue</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="results-summary">
-                                <div class="result-item">
-                                    <span class="result-number">400%</span>
-                                    <span class="result-label">ROAS</span>
-                                </div>
-                                <div class="result-item">
-                                    <span class="result-number">180%</span>
-                                    <span class="result-label">Sales Growth</span>
-                                </div>
-                                <div class="result-item">
-                                    <span class="result-number">90</span>
-                                    <span class="result-label">Days to ROI</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    <?php endfor; ?>
                 </div>
             </div>
         </section>
@@ -206,12 +203,10 @@ get_header(); ?>
                     </div>
                 </div>
             </div>
-        </section>
-
-        <!-- Metrics & Results -->
+        </section>        <!-- Metrics & Results -->
         <section class="testimonial-metrics">
             <div class="section-content">
-                <h2>Client Results by the Numbers</h2>
+                <h2><?php echo esc_html(get_post_meta(get_the_ID(), 'testimonials_metrics_heading', true) ?: 'Client Results by the Numbers'); ?></h2>
                 <div class="metrics-grid">
                     <div class="metric-card">
                         <span class="metric-number">500+</span>
@@ -300,19 +295,17 @@ get_header(); ?>
                     </div>
                 </div>
             </div>
-        </section>
-
-        <!-- CTA Section -->
+        </section>        <!-- CTA Section -->
         <section class="testimonials-cta">
             <div class="section-content">
-                <h2>Ready to Join Our Success Stories?</h2>
-                <p>Let's discuss how we can help your business achieve similar results</p>
+                <h2><?php echo esc_html(get_post_meta(get_the_ID(), 'testimonials_cta_heading', true) ?: 'Ready to Join Our Success Stories?'); ?></h2>
+                <p><?php echo esc_html(get_post_meta(get_the_ID(), 'testimonials_cta_text', true) ?: 'Let\'s discuss how we can help your business achieve similar results'); ?></p>
                 <div class="cta-buttons">
-                    <a href="<?php echo home_url('/contact'); ?>" class="btn btn-primary">Start Your Success Story</a>
-                    <a href="<?php echo home_url('/case-studies'); ?>" class="btn btn-secondary">View Case Studies</a>
+                    <a href="<?php echo home_url(get_post_meta(get_the_ID(), 'testimonials_cta_button1_url', true) ?: '/contact'); ?>" class="btn btn-primary"><?php echo esc_html(get_post_meta(get_the_ID(), 'testimonials_cta_button1_text', true) ?: 'Start Your Success Story'); ?></a>
+                    <a href="<?php echo home_url(get_post_meta(get_the_ID(), 'testimonials_cta_button2_url', true) ?: '/case-studies'); ?>" class="btn btn-secondary"><?php echo esc_html(get_post_meta(get_the_ID(), 'testimonials_cta_button2_text', true) ?: 'View Case Studies'); ?></a>
                 </div>
             </div>
-        </section>    </div>
+        </section></div>
 </main>
 
 <?php get_footer(); ?>
