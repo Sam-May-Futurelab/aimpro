@@ -2454,3 +2454,6 @@ function aimpro_estimated_reading_time($content) {
 
 // Include streamline sales funnel meta functionality
 require_once get_template_directory() . '/includes/streamline-sales-funnel-meta.php';
+
+// Include funnel builds meta functionality
+require_once get_template_directory() . '/includes/funnel-builds-meta.php';

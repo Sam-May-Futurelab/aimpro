@@ -3,7 +3,8 @@
 add_action('add_meta_boxes', function() {
     global $post;
     $template = get_page_template_slug($post->ID);
-    if ($template === 'page-streamline-sales-funnel.php' || get_post_field('post_name', $post->ID) === 'streamline-sales-funnel') {
+    $slug = get_post_field('post_name', $post->ID);
+    if ($template === 'page-streamline-sales-funnel.php' || $slug === 'streamline-sales-funnel' || $slug === 'funnel-builds') {
         add_meta_box('streamline_sales_funnel_meta', 'Sales Funnel Page Content', 'streamline_sales_funnel_meta_callback', 'page', 'normal', 'high');
     }
 });
@@ -11,6 +12,28 @@ add_action('add_meta_boxes', function() {
 function streamline_sales_funnel_meta_callback($post) {
     // Use nonce for verification
     wp_nonce_field('streamline_sales_funnel_meta', 'streamline_sales_funnel_meta_nonce');
+    
+    // If this is the funnel-builds page, populate empty fields from the fb_ prefixed fields if they exist
+    $slug = get_post_field('post_name', $post->ID);
+    if ($slug === 'funnel-builds') {
+        $fb_fields = array(
+            'streamline_sales_funnel_header_title' => 'fb_hero_title',
+            'streamline_sales_funnel_header_subtitle' => 'fb_hero_subtitle',
+            'streamline_sales_funnel_overview_title' => 'fb_intro_title',
+            'streamline_sales_funnel_overview_description' => 'fb_intro_description',
+            // Add more mappings as needed
+        );
+        
+        foreach ($fb_fields as $streamline_field => $fb_field) {
+            $streamline_value = get_post_meta($post->ID, $streamline_field, true);
+            if (empty($streamline_value)) {
+                $fb_value = get_post_meta($post->ID, $fb_field, true);
+                if (!empty($fb_value)) {
+                    update_post_meta($post->ID, $streamline_field, $fb_value);
+                }
+            }
+        }
+    }
     ?>
     <div style="margin-bottom:20px;">
         <label><strong>Header Title</strong></label><br>

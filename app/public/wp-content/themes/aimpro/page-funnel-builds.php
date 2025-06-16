@@ -28,26 +28,25 @@ get_header(); ?>
     <!-- Hero Section -->
     <section class="service-hero">
         <div class="container">
-            <div class="service-hero-content">
-                <div class="hero-text">
-                    <h1>Sales Funnel Development</h1>
-                    <p class="hero-subtitle">Complete sales funnel systems that guide prospects through your customer journey, maximizing conversions at every step.</p>
+            <div class="service-hero-content">                <div class="hero-text">
+                    <h1><?php echo get_post_meta(get_the_ID(), 'fb_hero_title', true) ?: 'Sales Funnel Development'; ?></h1>
+                    <p class="hero-subtitle"><?php echo get_post_meta(get_the_ID(), 'fb_hero_subtitle', true) ?: 'Complete sales funnel systems that guide prospects through your customer journey, maximizing conversions at every step.'; ?></p>
                     <div class="hero-stats">
                         <div class="stat-item">
-                            <span class="stat-number">420%</span>
-                            <span class="stat-label">Average Sales Velocity Increase</span>
+                            <span class="stat-number"><?php echo get_post_meta(get_the_ID(), 'fb_stat1_number', true) ?: '420%'; ?></span>
+                            <span class="stat-label"><?php echo get_post_meta(get_the_ID(), 'fb_stat1_label', true) ?: 'Average Sales Velocity Increase'; ?></span>
                         </div>
                         <div class="stat-item">
-                            <span class="stat-number">68%</span>
-                            <span class="stat-label">Lead-to-Customer Rate</span>
+                            <span class="stat-number"><?php echo get_post_meta(get_the_ID(), 'fb_stat2_number', true) ?: '68%'; ?></span>
+                            <span class="stat-label"><?php echo get_post_meta(get_the_ID(), 'fb_stat2_label', true) ?: 'Lead-to-Customer Rate'; ?></span>
                         </div>
                         <div class="stat-item">
-                            <span class="stat-number">3.2x</span>
-                            <span class="stat-label">Average Revenue Per Visitor</span>
+                            <span class="stat-number"><?php echo get_post_meta(get_the_ID(), 'fb_stat3_number', true) ?: '3.2x'; ?></span>
+                            <span class="stat-label"><?php echo get_post_meta(get_the_ID(), 'fb_stat3_label', true) ?: 'Average Revenue Per Visitor'; ?></span>
                         </div>
                     </div>
                     <div class="hero-cta">
-                        <a href="#contact" class="btn-primary">Get Funnel Strategy</a>
+                        <a href="#contact" class="btn-primary"><?php echo get_post_meta(get_the_ID(), 'fb_cta_primary', true) ?: 'Get Funnel Strategy'; ?></a>
                         <a href="#case-study" class="btn-outline">View Case Study</a>
                     </div>
                 </div>
@@ -56,14 +55,12 @@ get_header(); ?>
                 </div>
             </div>
         </div>
-    </section>
-
-    <!-- Service Overview -->
+    </section>    <!-- Service Overview -->
     <section class="service-overview">
         <div class="container">
             <div class="section-header">
-                <h2>Sales Funnels That Actually Convert</h2>
-                <p>Our sales funnel development service creates systematic customer journeys that guide prospects from initial awareness to loyal customers. Every funnel is strategically designed to maximize conversions, increase average order value, and build long-term customer relationships.</p>
+                <h2><?php echo get_post_meta(get_the_ID(), 'fb_intro_title', true) ?: 'Sales Funnels That Actually Convert'; ?></h2>
+                <p><?php echo get_post_meta(get_the_ID(), 'fb_intro_description', true) ?: 'Our sales funnel development service creates systematic customer journeys that guide prospects from initial awareness to loyal customers. Every funnel is strategically designed to maximize conversions, increase average order value, and build long-term customer relationships.'; ?></p>
             </div>
             
             <div class="features-grid">
@@ -71,29 +68,29 @@ get_header(); ?>
                     <div class="feature-icon">
                         <i class="fas fa-route"></i>
                     </div>
-                    <h3>Strategic Customer Journey</h3>
-                    <p>Carefully mapped customer journeys that guide prospects through awareness, consideration, and purchase stages.</p>
+                    <h3><?php echo get_post_meta(get_the_ID(), 'fb_feature1_title', true) ?: 'Strategic Customer Journey'; ?></h3>
+                    <p><?php echo get_post_meta(get_the_ID(), 'fb_feature1_description', true) ?: 'Carefully mapped customer journeys that guide prospects through awareness, consideration, and purchase stages.'; ?></p>
                 </div>
                 <div class="feature-card">
                     <div class="feature-icon">
                         <i class="fas fa-layer-group"></i>
                     </div>
-                    <h3>Multi-Step Conversion</h3>
-                    <p>Sophisticated multi-step funnels that build trust and value before asking for the sale.</p>
+                    <h3><?php echo get_post_meta(get_the_ID(), 'fb_feature2_title', true) ?: 'Multi-Step Conversion'; ?></h3>
+                    <p><?php echo get_post_meta(get_the_ID(), 'fb_feature2_description', true) ?: 'Sophisticated multi-step funnels that build trust and value before asking for the sale.'; ?></p>
                 </div>
                 <div class="feature-card">
                     <div class="feature-icon">
                         <i class="fas fa-chart-pie"></i>
                     </div>
-                    <h3>Revenue Optimization</h3>
-                    <p>Funnels designed to maximize customer lifetime value through upsells, cross-sells, and retention strategies.</p>
+                    <h3><?php echo get_post_meta(get_the_ID(), 'fb_feature3_title', true) ?: 'Revenue Optimization'; ?></h3>
+                    <p><?php echo get_post_meta(get_the_ID(), 'fb_feature3_description', true) ?: 'Funnels designed to maximize customer lifetime value through upsells, cross-sells, and retention strategies.'; ?></p>
                 </div>
                 <div class="feature-card">
                     <div class="feature-icon">
                         <i class="fas fa-sync-alt"></i>
                     </div>
-                    <h3>Automated Systems</h3>
-                    <p>Fully automated funnel systems that work 24/7 to generate leads and sales without manual intervention.</p>
+                    <h3><?php echo get_post_meta(get_the_ID(), 'fb_feature4_title', true) ?: 'Automated Systems'; ?></h3>
+                    <p><?php echo get_post_meta(get_the_ID(), 'fb_feature4_description', true) ?: 'Fully automated funnel systems that work 24/7 to generate leads and sales without manual intervention.'; ?></p>
                 </div>
             </div>
         </div>
@@ -102,53 +99,70 @@ get_header(); ?>
     <!-- Case Study Section -->
     <section id="case-study" class="case-study-section">
         <div class="container">
-            <div class="case-study-content">
-                <div class="case-study-header">
-                    <span class="case-study-label">Case Study</span>
-                    <h2>How DigitalCourse Pro Generated £540K in 90 Days with a Strategic Sales Funnel</h2>
+            <div class="case-study-content">                <div class="case-study-header">
+                    <span class="case-study-label"><?php echo get_post_meta(get_the_ID(), 'fb_case_study_subtitle', true) ?: 'Case Study'; ?></span>
+                    <h2><?php echo get_post_meta(get_the_ID(), 'fb_case_study_title', true) ?: 'How DigitalCourse Pro Generated £540K in 90 Days with a Strategic Sales Funnel'; ?></h2>
                 </div>
                 
                 <div class="case-study-grid">
                     <div class="case-study-challenge">
                         <h3>The Challenge</h3>
-                        <p>DigitalCourse Pro was struggling to convert their high-quality traffic into course sales. They had a single sales page that wasn't building enough trust or demonstrating value before asking for a £2,000 course purchase.</p>
+                        <p><?php echo get_post_meta(get_the_ID(), 'fb_case_study_challenge', true) ?: 'DigitalCourse Pro was struggling to convert their high-quality traffic into course sales. They had a single sales page that wasn\'t building enough trust or demonstrating value before asking for a £2,000 course purchase.'; ?></p>
                         
                         <div class="challenge-metrics">
                             <div class="metric">
-                                <span class="metric-value">1.8%</span>
-                                <span class="metric-label">Conversion Rate</span>
+                                <span class="metric-value"><?php echo get_post_meta(get_the_ID(), 'fb_case_study_stat1_number', true) ?: '1.8%'; ?></span>
+                                <span class="metric-label"><?php echo get_post_meta(get_the_ID(), 'fb_case_study_stat1_label', true) ?: 'Conversion Rate'; ?></span>
                             </div>
                             <div class="metric">
-                                <span class="metric-value">£890</span>
-                                <span class="metric-label">Monthly Revenue</span>
+                                <span class="metric-value"><?php echo get_post_meta(get_the_ID(), 'fb_case_study_stat2_number', true) ?: '£890'; ?></span>
+                                <span class="metric-label"><?php echo get_post_meta(get_the_ID(), 'fb_case_study_stat2_label', true) ?: 'Monthly Revenue'; ?></span>
                             </div>
                         </div>
                     </div>
                     
                     <div class="case-study-solution">
-                        <h3>Our Solution</h3>
+                        <h3><?php echo get_post_meta(get_the_ID(), 'fb_case_study_solution_title', true) ?: 'Our Solution'; ?></h3>
                         <ul>
-                            <li><strong>Lead Magnet Funnel:</strong> Created valuable free course to capture email addresses</li>
-                            <li><strong>Nurture Sequence:</strong> 7-day email series building trust and demonstrating expertise</li>
-                            <li><strong>Webinar Funnel:</strong> Live training sessions showcasing course value</li>
-                            <li><strong>Sales Page Optimization:</strong> High-converting sales page with social proof</li>
-                            <li><strong>Upsell System:</strong> Additional products and coaching offers post-purchase</li>
+                            <?php 
+                            $solutions = get_post_meta(get_the_ID(), 'fb_case_study_solution', true);
+                            if (!empty($solutions)) {
+                                $solution_lines = explode("\n", $solutions);
+                                foreach ($solution_lines as $line) {
+                                    if (!empty(trim($line))) {
+                                        echo '<li>' . esc_html(trim($line)) . '</li>';
+                                    }
+                                }
+                            } else {
+                                echo '<li><strong>Lead Magnet Funnel:</strong> Created valuable free course to capture email addresses</li>';
+                                echo '<li><strong>Nurture Sequence:</strong> 7-day email series building trust and demonstrating expertise</li>';
+                                echo '<li><strong>Webinar Funnel:</strong> Live training sessions showcasing course value</li>';
+                                echo '<li><strong>Sales Page Optimization:</strong> High-converting sales page with social proof</li>';
+                                echo '<li><strong>Upsell System:</strong> Additional products and coaching offers post-purchase</li>';
+                            }
+                            ?>
                         </ul>
                     </div>
                 </div>
-                
-                <div class="case-study-results">
-                    <h3>The Results</h3>
+                  <div class="case-study-results">
+                    <h3><?php echo get_post_meta(get_the_ID(), 'fb_case_study_results_title', true) ?: 'The Results'; ?></h3>
                     <div class="results-grid">
                         <div class="result-item">
-                            <span class="result-number">£540K</span>
-                            <span class="result-label">Revenue in 90 Days</span>
+                            <span class="result-number"><?php echo get_post_meta(get_the_ID(), 'fb_case_study_result1_number', true) ?: '£540K'; ?></span>
+                            <span class="result-label"><?php echo get_post_meta(get_the_ID(), 'fb_case_study_result1_label', true) ?: 'Revenue in 90 Days'; ?></span>
                         </div>
                         <div class="result-item">
-                            <span class="result-number">23.5%</span>
-                            <span class="result-label">Funnel Conversion Rate</span>
+                            <span class="result-number"><?php echo get_post_meta(get_the_ID(), 'fb_case_study_result2_number', true) ?: '23.5%'; ?></span>
+                            <span class="result-label"><?php echo get_post_meta(get_the_ID(), 'fb_case_study_result2_label', true) ?: 'Funnel Conversion Rate'; ?></span>
                         </div>
                         <div class="result-item">
+                            <span class="result-number"><?php echo get_post_meta(get_the_ID(), 'fb_case_study_result3_number', true) ?: '£3,800'; ?></span>
+                            <span class="result-label"><?php echo get_post_meta(get_the_ID(), 'fb_case_study_result3_label', true) ?: 'Average Order Value'; ?></span>
+                        </div>
+                        <div class="result-item">
+                            <span class="result-number"><?php echo get_post_meta(get_the_ID(), 'fb_case_study_result4_number', true) ?: '6.2x'; ?></span>
+                            <span class="result-label"><?php echo get_post_meta(get_the_ID(), 'fb_case_study_result4_label', true) ?: 'ROI in First Quarter'; ?></span>
+                        </div>
                             <span class="result-number">3,200+</span>
                             <span class="result-label">New Email Subscribers</span>
                         </div>
