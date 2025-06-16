@@ -23,41 +23,38 @@ get_header(); ?>
                 <span class="current">AI CRM Setup</span>
             </nav>
         </div>
-    </div>
-
-    <!-- Hero Section -->
+    </div>    <!-- Hero Section -->
     <section class="page-hero service-hero">
         <div class="container">
-            <div class="hero-content">                <h1>AI-Powered CRM Setup & Implementation</h1>
-                <p class="hero-subtitle">Transform your customer relationship management with AI-driven CRM systems that automate lead scoring, predict customer behavior, and optimize your entire sales funnel for maximum conversion.</p>
+            <div class="hero-content">
+                <h1><?php echo esc_html(get_post_meta(get_the_ID(), 'ai_hero_title', true) ?: 'AI-Powered CRM Setup & Implementation'); ?></h1>
+                <p class="hero-subtitle"><?php echo esc_html(get_post_meta(get_the_ID(), 'ai_hero_subtitle', true) ?: 'Transform your customer relationship management with AI-driven CRM systems that automate lead scoring, predict customer behavior, and optimize your entire sales funnel for maximum conversion.'); ?></p>
                 <div class="hero-stats">
                     <div class="stat-item">
-                        <div class="stat-number">340%</div>
-                        <div class="stat-label">Lead Conversion Increase</div>
+                        <div class="stat-number"><?php echo esc_html(get_post_meta(get_the_ID(), 'ai_hero_stat_1_number', true) ?: '340%'); ?></div>
+                        <div class="stat-label"><?php echo esc_html(get_post_meta(get_the_ID(), 'ai_hero_stat_1_label', true) ?: 'Lead Conversion Increase'); ?></div>
                     </div>
                     <div class="stat-item">
-                        <div class="stat-number">85%</div>
-                        <div class="stat-label">Faster Lead Response</div>
+                        <div class="stat-number"><?php echo esc_html(get_post_meta(get_the_ID(), 'ai_hero_stat_2_number', true) ?: '85%'); ?></div>
+                        <div class="stat-label"><?php echo esc_html(get_post_meta(get_the_ID(), 'ai_hero_stat_2_label', true) ?: 'Faster Lead Response'); ?></div>
                     </div>
                     <div class="stat-item">
-                        <div class="stat-number">60%</div>
-                        <div class="stat-label">Sales Cycle Reduction</div>
+                        <div class="stat-number"><?php echo esc_html(get_post_meta(get_the_ID(), 'ai_hero_stat_3_number', true) ?: '60%'); ?></div>
+                        <div class="stat-label"><?php echo esc_html(get_post_meta(get_the_ID(), 'ai_hero_stat_3_label', true) ?: 'Sales Cycle Reduction'); ?></div>
                     </div>
                 </div>
                 <div class="hero-ctas">
-                    <a href="#contact" class="btn-primary streamlined">Start CRM Setup</a>
-                    <a href="#packages" class="btn-outline streamlined">View Packages</a>
+                    <a href="#contact" class="btn-primary streamlined"><?php echo esc_html(get_post_meta(get_the_ID(), 'ai_hero_primary_btn', true) ?: 'Start CRM Setup'); ?></a>
+                    <a href="#packages" class="btn-outline streamlined"><?php echo esc_html(get_post_meta(get_the_ID(), 'ai_hero_secondary_btn', true) ?: 'View Packages'); ?></a>
                 </div>
             </div>
         </div>
-    </section>
-
-    <!-- Service Overview -->
+    </section>    <!-- Service Overview -->
     <section class="service-overview">
         <div class="container">
             <div class="overview-content">
-                <h2>Intelligent CRM Implementation</h2>
-                <p>Modern businesses need more than basic contact management. Our AI-powered CRM implementations leverage machine learning, predictive analytics, and intelligent automation to transform how you manage customer relationships and drive revenue growth.</p>
+                <h2><?php echo esc_html(get_post_meta(get_the_ID(), 'ai_overview_title', true) ?: 'Intelligent CRM Implementation'); ?></h2>
+                <p><?php echo esc_html(get_post_meta(get_the_ID(), 'ai_overview_description', true) ?: 'Modern businesses need more than basic contact management. Our AI-powered CRM implementations leverage machine learning, predictive analytics, and intelligent automation to transform how you manage customer relationships and drive revenue growth.'); ?></p>
             </div>
             
             <div class="services-grid">
@@ -65,39 +62,52 @@ get_header(); ?>
                     <div class="service-icon">
                         <i class="fas fa-brain"></i>
                     </div>
-                    <h3>AI Lead Scoring</h3>
-                    <p>Automatically score and prioritize leads based on behavior, demographics, and engagement patterns using machine learning algorithms.</p>
+                    <h3><?php echo esc_html(get_post_meta(get_the_ID(), 'ai_service_1_title', true) ?: 'AI Lead Scoring'); ?></h3>
+                    <p><?php echo esc_html(get_post_meta(get_the_ID(), 'ai_service_1_desc', true) ?: 'Automatically score and prioritize leads based on behavior, demographics, and engagement patterns using machine learning algorithms.'); ?></p>
                 </div>
                 
                 <div class="service-item">
                     <div class="service-icon">
                         <i class="fas fa-chart-line"></i>
                     </div>
-                    <h3>Predictive Analytics</h3>
-                    <p>Forecast customer lifetime value, churn probability, and optimal engagement timing with advanced AI models.</p>
+                    <h3><?php echo esc_html(get_post_meta(get_the_ID(), 'ai_service_2_title', true) ?: 'Predictive Analytics'); ?></h3>
+                    <p><?php echo esc_html(get_post_meta(get_the_ID(), 'ai_service_2_desc', true) ?: 'Forecast customer lifetime value, churn probability, and optimal engagement timing with advanced AI models.'); ?></p>
                 </div>
                 
                 <div class="service-item">
                     <div class="service-icon">
                         <i class="fas fa-sync-alt"></i>
                     </div>
-                    <h3>Workflow Automation</h3>
-                    <p>Create intelligent workflows that adapt based on customer behavior and automatically trigger the right actions at the right time.</p>
+                    <h3><?php echo esc_html(get_post_meta(get_the_ID(), 'ai_service_3_title', true) ?: 'Workflow Automation'); ?></h3>
+                    <p><?php echo esc_html(get_post_meta(get_the_ID(), 'ai_service_3_desc', true) ?: 'Create intelligent workflows that adapt based on customer behavior and automatically trigger the right actions at the right time.'); ?></p>
                 </div>
                 
                 <div class="service-item">
                     <div class="service-icon">
                         <i class="fas fa-user-tie"></i>
                     </div>
-                    <h3>Sales Pipeline Optimization</h3>
-                    <p>AI-driven pipeline management that identifies bottlenecks and suggests optimal next actions for each prospect.</p>
+                    <h3><?php echo esc_html(get_post_meta(get_the_ID(), 'ai_service_4_title', true) ?: 'Sales Pipeline Optimization'); ?></h3>
+                    <p><?php echo esc_html(get_post_meta(get_the_ID(), 'ai_service_4_desc', true) ?: 'AI-driven pipeline management that identifies bottlenecks and suggests optimal next actions for each prospect.'); ?></p>
                 </div>
                 
                 <div class="service-item">
                     <div class="service-icon">
                         <i class="fas fa-comments"></i>
                     </div>
-                    <h3>Intelligent Customer Insights</h3>
+                    <h3><?php echo esc_html(get_post_meta(get_the_ID(), 'ai_service_5_title', true) ?: 'Intelligent Customer Insights'); ?></h3>
+                    <p><?php echo esc_html(get_post_meta(get_the_ID(), 'ai_service_5_desc', true) ?: 'Deep customer profiling using AI to understand preferences, behavior patterns, and optimal communication strategies.'); ?></p>
+                </div>
+                
+                <div class="service-item">
+                    <div class="service-icon">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <h3><?php echo esc_html(get_post_meta(get_the_ID(), 'ai_service_6_title', true) ?: 'Omnichannel Integration'); ?></h3>
+                    <p><?php echo esc_html(get_post_meta(get_the_ID(), 'ai_service_6_desc', true) ?: 'Unified customer view across all touchpoints with AI-powered attribution and engagement tracking.'); ?></p>
+                </div>
+            </div>
+        </div>
+    </section>
                     <p>Deep customer profiling using AI to understand preferences, behavior patterns, and optimal communication strategies.</p>
                 </div>
                 
@@ -110,29 +120,31 @@ get_header(); ?>
                 </div>
             </div>
         </div>
-    </section>
-
-    <!-- Case Study Section -->
+    </section>    <!-- Case Study Section -->
     <section class="case-study-section">
         <div class="container">
             <div class="case-study-content">
                 <div class="case-study-text">
-                    <h2>Case Study: SaaS Company Transformation</h2>
-                    <p class="case-study-intro">How we helped a growing SaaS company increase lead conversion by 340% and reduce sales cycle time by 60% through intelligent CRM implementation.</p>
+                    <h2><?php echo esc_html(get_post_meta(get_the_ID(), 'ai_case_title', true) ?: 'Case Study: SaaS Company Transformation'); ?></h2>
+                    <p class="case-study-intro"><?php echo esc_html(get_post_meta(get_the_ID(), 'ai_case_intro', true) ?: 'How we helped a growing SaaS company increase lead conversion by 340% and reduce sales cycle time by 60% through intelligent CRM implementation.'); ?></p>
                     
                     <div class="case-study-challenge">
                         <h3>The Challenge</h3>
-                        <p>A rapidly growing SaaS company was struggling with manual lead management, inconsistent follow-up, and inability to identify high-value prospects. Their sales team was spending 70% of time on administrative tasks instead of selling, and lead response times averaged 4+ hours.</p>
+                        <p><?php echo esc_html(get_post_meta(get_the_ID(), 'ai_case_challenge', true) ?: 'A rapidly growing SaaS company was struggling with manual lead management, inconsistent follow-up, and inability to identify high-value prospects. Their sales team was spending 70% of time on administrative tasks instead of selling, and lead response times averaged 4+ hours.'); ?></p>
                     </div>
                     
                     <div class="case-study-solution">
                         <h3>Our AI CRM Solution</h3>
                         <ul>
-                            <li>Implemented HubSpot CRM with custom AI lead scoring model</li>
-                            <li>Built predictive analytics dashboard for customer lifetime value</li>
-                            <li>Created intelligent workflow automation for lead nurturing</li>
-                            <li>Integrated omnichannel communication tracking</li>
-                            <li>Deployed AI chatbot for initial lead qualification</li>
+                            <?php 
+                            $solution_points = get_post_meta(get_the_ID(), 'ai_case_solution', true) ?: "Implemented HubSpot CRM with custom AI lead scoring model\nBuilt predictive analytics dashboard for customer lifetime value\nCreated intelligent workflow automation for lead nurturing\nIntegrated omnichannel communication tracking\nDeployed AI chatbot for initial lead qualification";
+                            $points = explode("\n", $solution_points);
+                            foreach ($points as $point) {
+                                if (trim($point)) {
+                                    echo '<li>' . esc_html(trim($point)) . '</li>';
+                                }
+                            }
+                            ?>
                         </ul>
                     </div>
                 </div>
@@ -141,73 +153,72 @@ get_header(); ?>
                     <h3>The Results</h3>
                     <div class="results-grid">
                         <div class="result-item">
-                            <div class="result-number">340%</div>
-                            <div class="result-label">Lead Conversion Increase</div>
+                            <div class="result-number"><?php echo esc_html(get_post_meta(get_the_ID(), 'ai_result_1_number', true) ?: '340%'); ?></div>
+                            <div class="result-label"><?php echo esc_html(get_post_meta(get_the_ID(), 'ai_result_1_label', true) ?: 'Lead Conversion Increase'); ?></div>
                         </div>
                         <div class="result-item">
-                            <div class="result-number">85%</div>
-                            <div class="result-label">Faster Lead Response</div>
+                            <div class="result-number"><?php echo esc_html(get_post_meta(get_the_ID(), 'ai_result_2_number', true) ?: '85%'); ?></div>
+                            <div class="result-label"><?php echo esc_html(get_post_meta(get_the_ID(), 'ai_result_2_label', true) ?: 'Faster Lead Response'); ?></div>
                         </div>
                         <div class="result-item">
-                            <div class="result-number">60%</div>
-                            <div class="result-label">Sales Cycle Reduction</div>
-                        </div>                        <div class="result-item">
-                            <div class="result-number">£2.1M</div>
-                            <div class="result-label">Additional Annual Revenue</div>
+                            <div class="result-number"><?php echo esc_html(get_post_meta(get_the_ID(), 'ai_result_3_number', true) ?: '60%'); ?></div>
+                            <div class="result-label"><?php echo esc_html(get_post_meta(get_the_ID(), 'ai_result_3_label', true) ?: 'Sales Cycle Reduction'); ?></div>
+                        </div>
+                        <div class="result-item">
+                            <div class="result-number"><?php echo esc_html(get_post_meta(get_the_ID(), 'ai_result_4_number', true) ?: '£2.1M'); ?></div>
+                            <div class="result-label"><?php echo esc_html(get_post_meta(get_the_ID(), 'ai_result_4_label', true) ?: 'Additional Annual Revenue'); ?></div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </section>
-
-    <!-- Process Section -->
+    </section>    <!-- Process Section -->
     <section class="process-section">
         <div class="container">
-            <h2>Our AI CRM Implementation Process</h2>
+            <h2><?php echo esc_html(get_post_meta(get_the_ID(), 'ai_process_title', true) ?: 'Our AI CRM Implementation Process'); ?></h2>
             <div class="process-steps">
                 <div class="process-step">
                     <div class="step-number">1</div>
                     <div class="step-content">
-                        <h3>Discovery & Analysis</h3>
-                        <p>Comprehensive audit of current CRM processes, data quality assessment, and identification of AI automation opportunities.</p>
+                        <h3><?php echo esc_html(get_post_meta(get_the_ID(), 'ai_step_1_title', true) ?: 'Discovery & Analysis'); ?></h3>
+                        <p><?php echo esc_html(get_post_meta(get_the_ID(), 'ai_step_1_desc', true) ?: 'Comprehensive audit of current CRM processes, data quality assessment, and identification of AI automation opportunities.'); ?></p>
                     </div>
                 </div>
                 
                 <div class="process-step">
                     <div class="step-number">2</div>
                     <div class="step-content">
-                        <h3>Platform Selection & Design</h3>
-                        <p>Choose optimal CRM platform and design AI-powered workflows tailored to your sales process and customer journey.</p>
+                        <h3><?php echo esc_html(get_post_meta(get_the_ID(), 'ai_step_2_title', true) ?: 'Platform Selection & Design'); ?></h3>
+                        <p><?php echo esc_html(get_post_meta(get_the_ID(), 'ai_step_2_desc', true) ?: 'Choose optimal CRM platform and design AI-powered workflows tailored to your sales process and customer journey.'); ?></p>
                     </div>
                 </div>
                 
                 <div class="process-step">
                     <div class="step-number">3</div>
                     <div class="step-content">
-                        <h3>Data Migration & Cleansing</h3>
-                        <p>Migrate existing data with AI-powered cleansing and enrichment to ensure high-quality, actionable customer information.</p>
+                        <h3><?php echo esc_html(get_post_meta(get_the_ID(), 'ai_step_3_title', true) ?: 'Data Migration & Cleansing'); ?></h3>
+                        <p><?php echo esc_html(get_post_meta(get_the_ID(), 'ai_step_3_desc', true) ?: 'Migrate existing data with AI-powered cleansing and enrichment to ensure high-quality, actionable customer information.'); ?></p>
                     </div>
                 </div>
                 
                 <div class="process-step">
                     <div class="step-number">4</div>
                     <div class="step-content">
-                        <h3>AI Configuration & Training</h3>
-                        <p>Configure machine learning models, set up predictive analytics, and train AI systems on your specific business patterns.</p>
+                        <h3><?php echo esc_html(get_post_meta(get_the_ID(), 'ai_step_4_title', true) ?: 'AI Configuration & Training'); ?></h3>
+                        <p><?php echo esc_html(get_post_meta(get_the_ID(), 'ai_step_4_desc', true) ?: 'Configure machine learning models, set up predictive analytics, and train AI systems on your specific business patterns.'); ?></p>
                     </div>
                 </div>
                 
                 <div class="process-step">
                     <div class="step-number">5</div>
                     <div class="step-content">
-                        <h3>Testing & Optimization</h3>
-                        <p>Comprehensive testing of AI workflows, user training, and continuous optimization based on performance data.</p>
+                        <h3><?php echo esc_html(get_post_meta(get_the_ID(), 'ai_step_5_title', true) ?: 'Testing & Optimization'); ?></h3>
+                        <p><?php echo esc_html(get_post_meta(get_the_ID(), 'ai_step_5_desc', true) ?: 'Comprehensive testing of AI workflows, user training, and continuous optimization based on performance data.'); ?></p>
                     </div>
                 </div>
             </div>
         </div>
-    </section>    <!-- AI Features Section -->
+    </section><!-- AI Features Section -->
     <section class="service-overview">
         <div class="container">
             <div class="section-header">
@@ -386,30 +397,27 @@ get_header(); ?>
                 </div>
             </div>
         </div>
-    </section>
-
-    <!-- Testimonial Section -->
+    </section>    <!-- Testimonial Section -->
     <section class="testimonial-section">
         <div class="container">
             <div class="testimonial-content">
                 <blockquote>
-                    "The AI CRM implementation by Aimpro completely transformed our sales process. We're now converting 340% more leads and our sales cycle is 60% shorter. The predictive analytics help us focus on the right prospects at the right time."
+                    "<?php echo esc_html(get_post_meta(get_the_ID(), 'ai_testimonial_quote', true) ?: 'The AI CRM implementation by Aimpro completely transformed our sales process. We\'re now converting 340% more leads and our sales cycle is 60% shorter. The predictive analytics help us focus on the right prospects at the right time.'); ?>"
                 </blockquote>
                 <cite>
-                    <strong>James Richardson</strong><br>
-                    VP Sales, TechFlow Solutions
+                    <strong><?php echo esc_html(get_post_meta(get_the_ID(), 'ai_testimonial_author', true) ?: 'James Richardson'); ?></strong><br>
+                    <?php echo esc_html(get_post_meta(get_the_ID(), 'ai_testimonial_position', true) ?: 'VP Sales, TechFlow Solutions'); ?>
                 </cite>
             </div>
         </div>
-    </section>
-
-    <!-- CTA Section -->
+    </section>    <!-- CTA Section -->
     <section id="contact" class="cta-section">
         <div class="container">
             <div class="cta-content">
-                <h2>Ready to Transform Your CRM with AI?</h2>
-                <p>Stop losing leads to poor follow-up and manual processes. Our AI-powered CRM implementation will revolutionize how you manage customers and drive predictable revenue growth.</p>                <div class="cta-buttons">
-                    <a href="<?php echo home_url('/contact'); ?>" class="btn-primary">Start Your AI CRM</a>
+                <h2><?php echo esc_html(get_post_meta(get_the_ID(), 'ai_cta_title', true) ?: 'Ready to Transform Your CRM with AI?'); ?></h2>
+                <p><?php echo esc_html(get_post_meta(get_the_ID(), 'ai_cta_description', true) ?: 'Stop losing leads to poor follow-up and manual processes. Our AI-powered CRM implementation will revolutionize how you manage customers and drive predictable revenue growth.'); ?></p>
+                <div class="cta-buttons">
+                    <a href="<?php echo home_url('/contact'); ?>" class="btn-primary"><?php echo esc_html(get_post_meta(get_the_ID(), 'ai_cta_button', true) ?: 'Start Your AI CRM'); ?></a>
                 </div>
             </div>
         </div>
