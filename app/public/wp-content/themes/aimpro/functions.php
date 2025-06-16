@@ -1298,7 +1298,7 @@ function aimpro_landing_page_admin() {
                             <td>
                                 <input type="text" name="contact_form_submit_text" value="<?php echo esc_attr(get_option('contact_form_submit_text', 'Submit')); ?>" class="regular-text" />
                                 <p class="description">Text for the form submit button.</p>
-                                                       </td>
+                                                                                                             </td>
                         </tr>                    </table>
                 </div>
                 
@@ -2463,3 +2463,6 @@ require_once get_template_directory() . '/includes/ux-ui-optimization-meta.php';
 
 // Include email campaigns meta functionality
 require_once get_template_directory() . '/includes/email-campaigns-meta.php';
+
+// Include funnel automation meta functionality
+require_once get_template_directory() . '/includes/funnel-automation-meta.php';

@@ -23,41 +23,38 @@ get_header(); ?>
                 <span class="current">Funnel Automation</span>
             </nav>
         </div>
-    </div>
-
-    <!-- Hero Section -->
+    </div>    <!-- Hero Section -->
     <section class="page-hero service-hero">
         <div class="container">
-            <div class="hero-content">                <h1>Sales Funnel Automation</h1>
-                <p class="hero-subtitle">Build intelligent sales funnels that automatically guide prospects from awareness to purchase, nurturing leads at every stage while you focus on growing your business.</p>
+            <div class="hero-content">
+                <h1><?php echo esc_html(get_post_meta(get_the_ID(), 'funnel_automation_hero_title', true) ?: 'Sales Funnel Automation'); ?></h1>
+                <p class="hero-subtitle"><?php echo esc_html(get_post_meta(get_the_ID(), 'funnel_automation_hero_subtitle', true) ?: 'Build intelligent sales funnels that automatically guide prospects from awareness to purchase, nurturing leads at every stage while you focus on growing your business.'); ?></p>
                 <div class="hero-stats">
                     <div class="stat-item">
-                        <div class="stat-number">420%</div>
-                        <div class="stat-label">Conversion Rate Increase</div>
+                        <div class="stat-number"><?php echo esc_html(get_post_meta(get_the_ID(), 'funnel_automation_hero_stat_1_number', true) ?: '420%'); ?></div>
+                        <div class="stat-label"><?php echo esc_html(get_post_meta(get_the_ID(), 'funnel_automation_hero_stat_1_label', true) ?: 'Conversion Rate Increase'); ?></div>
                     </div>
                     <div class="stat-item">
-                        <div class="stat-number">75%</div>
-                        <div class="stat-label">Less Manual Work</div>
+                        <div class="stat-number"><?php echo esc_html(get_post_meta(get_the_ID(), 'funnel_automation_hero_stat_2_number', true) ?: '75%'); ?></div>
+                        <div class="stat-label"><?php echo esc_html(get_post_meta(get_the_ID(), 'funnel_automation_hero_stat_2_label', true) ?: 'Less Manual Work'); ?></div>
                     </div>
                     <div class="stat-item">
-                        <div class="stat-number">180%</div>
-                        <div class="stat-label">Revenue Growth</div>
+                        <div class="stat-number"><?php echo esc_html(get_post_meta(get_the_ID(), 'funnel_automation_hero_stat_3_number', true) ?: '180%'); ?></div>
+                        <div class="stat-label"><?php echo esc_html(get_post_meta(get_the_ID(), 'funnel_automation_hero_stat_3_label', true) ?: 'Revenue Growth'); ?></div>
                     </div>
                 </div>
                 <div class="hero-ctas">
-                    <a href="#contact" class="btn-primary streamlined">Build Your Funnel</a>
-                    <a href="#packages" class="btn-outline streamlined">View Packages</a>
+                    <a href="#contact" class="btn-primary streamlined"><?php echo esc_html(get_post_meta(get_the_ID(), 'funnel_automation_hero_primary_btn', true) ?: 'Build Your Funnel'); ?></a>
+                    <a href="#packages" class="btn-outline streamlined"><?php echo esc_html(get_post_meta(get_the_ID(), 'funnel_automation_hero_secondary_btn', true) ?: 'View Packages'); ?></a>
                 </div>
             </div>
         </div>
-    </section>
-
-    <!-- Service Overview -->
+    </section>    <!-- Service Overview -->
     <section class="service-overview">
         <div class="container">
             <div class="overview-content">
-                <h2>Intelligent Sales Funnel Design & Automation</h2>
-                <p>Transform your scattered marketing efforts into a cohesive, automated system that consistently converts prospects into customers. Our funnel automation strategies eliminate manual bottlenecks and ensure no lead falls through the cracks.</p>
+                <h2><?php echo esc_html(get_post_meta(get_the_ID(), 'funnel_automation_overview_title', true) ?: 'Intelligent Sales Funnel Design & Automation'); ?></h2>
+                <p><?php echo esc_html(get_post_meta(get_the_ID(), 'funnel_automation_overview_description', true) ?: 'Transform your scattered marketing efforts into a cohesive, automated system that consistently converts prospects into customers. Our funnel automation strategies eliminate manual bottlenecks and ensure no lead falls through the cracks.'); ?></p>
             </div>
             
             <div class="services-grid">
@@ -65,74 +62,75 @@ get_header(); ?>
                     <div class="service-icon">
                         <i class="fas fa-sitemap"></i>
                     </div>
-                    <h3>Funnel Strategy & Design</h3>
-                    <p>Custom funnel architecture tailored to your customer journey with optimized touchpoints and conversion paths.</p>
+                    <h3><?php echo esc_html(get_post_meta(get_the_ID(), 'funnel_automation_service_1_title', true) ?: 'Funnel Strategy & Design'); ?></h3>
+                    <p><?php echo esc_html(get_post_meta(get_the_ID(), 'funnel_automation_service_1_desc', true) ?: 'Custom funnel architecture tailored to your customer journey with optimized touchpoints and conversion paths.'); ?></p>
                 </div>
                 
                 <div class="service-item">
                     <div class="service-icon">
                         <i class="fas fa-magnet"></i>
                     </div>
-                    <h3>Lead Magnet Creation</h3>
-                    <p>Compelling lead magnets and opt-in offers that attract your ideal prospects and start the nurturing process.</p>
+                    <h3><?php echo esc_html(get_post_meta(get_the_ID(), 'funnel_automation_service_2_title', true) ?: 'Lead Magnet Creation'); ?></h3>
+                    <p><?php echo esc_html(get_post_meta(get_the_ID(), 'funnel_automation_service_2_desc', true) ?: 'Compelling lead magnets and opt-in offers that attract your ideal prospects and start the nurturing process.'); ?></p>
                 </div>
                 
                 <div class="service-item">
                     <div class="service-icon">
                         <i class="fas fa-mouse-pointer"></i>
                     </div>
-                    <h3>Landing Page Optimization</h3>
-                    <p>High-converting landing pages designed specifically for each funnel stage with focused messaging and clear CTAs.</p>
+                    <h3><?php echo esc_html(get_post_meta(get_the_ID(), 'funnel_automation_service_3_title', true) ?: 'Landing Page Optimization'); ?></h3>
+                    <p><?php echo esc_html(get_post_meta(get_the_ID(), 'funnel_automation_service_3_desc', true) ?: 'High-converting landing pages designed specifically for each funnel stage with focused messaging and clear CTAs.'); ?></p>
                 </div>
                 
                 <div class="service-item">
                     <div class="service-icon">
                         <i class="fas fa-route"></i>
                     </div>
-                    <h3>Multi-Step Sequences</h3>
-                    <p>Automated email and SMS sequences that nurture leads through each stage of the buying journey.</p>
+                    <h3><?php echo esc_html(get_post_meta(get_the_ID(), 'funnel_automation_service_4_title', true) ?: 'Multi-Step Sequences'); ?></h3>
+                    <p><?php echo esc_html(get_post_meta(get_the_ID(), 'funnel_automation_service_4_desc', true) ?: 'Automated email and SMS sequences that nurture leads through each stage of the buying journey.'); ?></p>
                 </div>
                 
                 <div class="service-item">
                     <div class="service-icon">
                         <i class="fas fa-chart-line"></i>
                     </div>
-                    <h3>Conversion Tracking</h3>
-                    <p>Comprehensive analytics and tracking to measure funnel performance and identify optimization opportunities.</p>
+                    <h3><?php echo esc_html(get_post_meta(get_the_ID(), 'funnel_automation_service_5_title', true) ?: 'Conversion Tracking'); ?></h3>
+                    <p><?php echo esc_html(get_post_meta(get_the_ID(), 'funnel_automation_service_5_desc', true) ?: 'Comprehensive analytics and tracking to measure funnel performance and identify optimization opportunities.'); ?></p>
                 </div>
                 
                 <div class="service-item">
                     <div class="service-icon">
                         <i class="fas fa-sync-alt"></i>
                     </div>
-                    <h3>Continuous Optimization</h3>
-                    <p>Data-driven improvements and A/B testing to maximize conversion rates at every funnel stage.</p>
-                </div>
-            </div>
+                    <h3><?php echo esc_html(get_post_meta(get_the_ID(), 'funnel_automation_service_6_title', true) ?: 'Continuous Optimization'); ?></h3>
+                    <p><?php echo esc_html(get_post_meta(get_the_ID(), 'funnel_automation_service_6_desc', true) ?: 'Data-driven improvements and A/B testing to maximize conversion rates at every funnel stage.'); ?></p>
+                </div>            </div>
         </div>
-    </section>
-
-    <!-- Case Study Section -->
+    </section><!-- Case Study Section -->
     <section class="case-study-section">
         <div class="container">
             <div class="case-study-content">
                 <div class="case-study-text">
-                    <h2>Case Study: Coaching Business Transformation</h2>
-                    <p class="case-study-intro">How we helped a business coach increase conversions by 420% and automate 75% of their sales process through intelligent funnel automation, generating £1.2M in additional revenue.</p>
+                    <h2><?php echo esc_html(get_post_meta(get_the_ID(), 'funnel_automation_case_title', true) ?: 'Case Study: Coaching Business Transformation'); ?></h2>
+                    <p class="case-study-intro"><?php echo esc_html(get_post_meta(get_the_ID(), 'funnel_automation_case_intro', true) ?: 'How we helped a business coach increase conversions by 420% and automate 75% of their sales process through intelligent funnel automation, generating £1.2M in additional revenue.'); ?></p>
                     
                     <div class="case-study-challenge">
                         <h3>The Challenge</h3>
-                        <p>A successful business coach was spending 60+ hours per week manually following up with leads, conducting discovery calls, and nurturing prospects. Despite high expertise, their conversion rate was only 8% and they couldn't scale beyond their time limitations.</p>
+                        <p><?php echo esc_html(get_post_meta(get_the_ID(), 'funnel_automation_case_challenge', true) ?: 'A successful business coach was spending 60+ hours per week manually following up with leads, conducting discovery calls, and nurturing prospects. Despite high expertise, their conversion rate was only 8% and they couldn\'t scale beyond their time limitations.'); ?></p>
                     </div>
                     
                     <div class="case-study-solution">
                         <h3>Our Funnel Solution</h3>
                         <ul>
-                            <li>Designed 5-stage automated funnel with strategic touchpoints</li>
-                            <li>Created high-value lead magnet (business assessment tool)</li>
-                            <li>Built conversion-optimized landing pages for each funnel stage</li>
-                            <li>Implemented automated email sequences with personalized video messages</li>
-                            <li>Set up automated booking system with pre-qualification questions</li>
+                            <?php 
+                            $solution_points = get_post_meta(get_the_ID(), 'funnel_automation_case_solution', true) ?: "Designed 5-stage automated funnel with strategic touchpoints\nCreated high-value lead magnet (business assessment tool)\nBuilt conversion-optimized landing pages for each funnel stage\nImplemented automated email sequences with personalized video messages\nSet up automated booking system with pre-qualification questions";
+                            $points = explode("\n", $solution_points);
+                            foreach ($points as $point) {
+                                if (trim($point)) {
+                                    echo '<li>' . esc_html(trim($point)) . '</li>';
+                                }
+                            }
+                            ?>
                         </ul>
                     </div>
                 </div>
@@ -141,19 +139,30 @@ get_header(); ?>
                     <h3>The Results</h3>
                     <div class="results-grid">
                         <div class="result-item">
-                            <div class="result-number">420%</div>
-                            <div class="result-label">Conversion Rate Increase</div>
+                            <div class="result-number"><?php echo esc_html(get_post_meta(get_the_ID(), 'funnel_automation_result_1_number', true) ?: '420%'); ?></div>
+                            <div class="result-label"><?php echo esc_html(get_post_meta(get_the_ID(), 'funnel_automation_result_1_label', true) ?: 'Conversion Rate Increase'); ?></div>
                         </div>
                         <div class="result-item">
-                            <div class="result-number">75%</div>
-                            <div class="result-label">Process Automation</div>
+                            <div class="result-number"><?php echo esc_html(get_post_meta(get_the_ID(), 'funnel_automation_result_2_number', true) ?: '75%'); ?></div>
+                            <div class="result-label"><?php echo esc_html(get_post_meta(get_the_ID(), 'funnel_automation_result_2_label', true) ?: 'Process Automation'); ?></div>
                         </div>
                         <div class="result-item">
-                            <div class="result-number">180%</div>
-                            <div class="result-label">Revenue Growth</div>
+                            <div class="result-number"><?php echo esc_html(get_post_meta(get_the_ID(), 'funnel_automation_result_3_number', true) ?: '180%'); ?></div>
+                            <div class="result-label"><?php echo esc_html(get_post_meta(get_the_ID(), 'funnel_automation_result_3_label', true) ?: 'Revenue Growth'); ?></div>
+                        </div>
+                        <div class="result-item">
+                            <div class="result-number"><?php echo esc_html(get_post_meta(get_the_ID(), 'funnel_automation_result_4_number', true) ?: '£1.2M'); ?></div>
+                            <div class="result-label"><?php echo esc_html(get_post_meta(get_the_ID(), 'funnel_automation_result_4_label', true) ?: 'Additional Annual Revenue'); ?></div>
+                        </div>
+                    </div>                </div>
+            </div>
+        </div>
+    </section>
+                            <div class="result-number"><?php echo esc_html(get_post_meta(get_the_ID(), 'funnel_automation_result_3_number', true) ?: '180%'); ?></div>
+                            <div class="result-label"><?php echo esc_html(get_post_meta(get_the_ID(), 'funnel_automation_result_3_label', true) ?: 'Revenue Growth'); ?></div>
                         </div>                        <div class="result-item">
-                            <div class="result-number">£1.2M</div>
-                            <div class="result-label">Additional Annual Revenue</div>
+                            <div class="result-number"><?php echo esc_html(get_post_meta(get_the_ID(), 'funnel_automation_result_4_number', true) ?: '£1.2M'); ?></div>
+                            <div class="result-label"><?php echo esc_html(get_post_meta(get_the_ID(), 'funnel_automation_result_4_label', true) ?: 'Additional Annual Revenue'); ?></div>
                         </div>
                     </div>
                 </div>
@@ -229,50 +238,48 @@ get_header(); ?>
                 </div>
             </div>
         </div>
-    </section>
-
-    <!-- Process Section -->
+    </section>    <!-- Process Section -->
     <section class="process-section">
         <div class="container">
-            <h2>Our Funnel Development Process</h2>
+            <h2><?php echo esc_html(get_post_meta(get_the_ID(), 'funnel_automation_process_title', true) ?: 'Our Funnel Development Process'); ?></h2>
             <div class="process-steps">
                 <div class="process-step">
                     <div class="step-number">1</div>
                     <div class="step-content">
-                        <h3>Customer Journey Analysis</h3>
-                        <p>Map your customer's buying journey and identify key touchpoints where automation can improve conversions.</p>
+                        <h3><?php echo esc_html(get_post_meta(get_the_ID(), 'funnel_automation_step_1_title', true) ?: 'Customer Journey Analysis'); ?></h3>
+                        <p><?php echo esc_html(get_post_meta(get_the_ID(), 'funnel_automation_step_1_desc', true) ?: 'Map your customer\'s buying journey and identify key touchpoints where automation can improve conversions.'); ?></p>
                     </div>
                 </div>
                 
                 <div class="process-step">
                     <div class="step-number">2</div>
                     <div class="step-content">
-                        <h3>Funnel Strategy Design</h3>
-                        <p>Create comprehensive funnel blueprint with conversion goals, messaging strategy, and automation triggers.</p>
+                        <h3><?php echo esc_html(get_post_meta(get_the_ID(), 'funnel_automation_step_2_title', true) ?: 'Funnel Strategy Design'); ?></h3>
+                        <p><?php echo esc_html(get_post_meta(get_the_ID(), 'funnel_automation_step_2_desc', true) ?: 'Create comprehensive funnel blueprint with conversion goals, messaging strategy, and automation triggers.'); ?></p>
                     </div>
                 </div>
                 
                 <div class="process-step">
                     <div class="step-number">3</div>
                     <div class="step-content">
-                        <h3>Asset Creation</h3>
-                        <p>Develop lead magnets, landing pages, email sequences, and all creative assets needed for the funnel.</p>
+                        <h3><?php echo esc_html(get_post_meta(get_the_ID(), 'funnel_automation_step_3_title', true) ?: 'Asset Creation'); ?></h3>
+                        <p><?php echo esc_html(get_post_meta(get_the_ID(), 'funnel_automation_step_3_desc', true) ?: 'Develop lead magnets, landing pages, email sequences, and all creative assets needed for the funnel.'); ?></p>
                     </div>
                 </div>
                 
                 <div class="process-step">
                     <div class="step-number">4</div>
                     <div class="step-content">
-                        <h3>Technical Implementation</h3>
-                        <p>Build and configure all automation workflows, tracking systems, and integration connections.</p>
+                        <h3><?php echo esc_html(get_post_meta(get_the_ID(), 'funnel_automation_step_4_title', true) ?: 'Technical Implementation'); ?></h3>
+                        <p><?php echo esc_html(get_post_meta(get_the_ID(), 'funnel_automation_step_4_desc', true) ?: 'Build and configure all automation workflows, tracking systems, and integration connections.'); ?></p>
                     </div>
                 </div>
                 
                 <div class="process-step">
                     <div class="step-number">5</div>
                     <div class="step-content">
-                        <h3>Testing & Optimization</h3>
-                        <p>Launch with careful monitoring and continuous optimization based on performance data and user behavior.</p>
+                        <h3><?php echo esc_html(get_post_meta(get_the_ID(), 'funnel_automation_step_5_title', true) ?: 'Testing & Optimization'); ?></h3>
+                        <p><?php echo esc_html(get_post_meta(get_the_ID(), 'funnel_automation_step_5_desc', true) ?: 'Launch with careful monitoring and continuous optimization based on performance data and user behavior.'); ?></p>
                     </div>
                 </div>
             </div>
@@ -471,30 +478,26 @@ get_header(); ?>
                 </div>
             </div>
         </div>
-    </section>
-
-    <!-- Testimonial Section -->
+    </section>    <!-- Testimonial Section -->
     <section class="testimonial-section">
         <div class="container">
             <div class="testimonial-content">
                 <blockquote>
-                    "The funnel automation Aimpro built transformed my business completely. I went from working 60+ hours a week chasing leads to having a system that generates £1.2M annually while I focus on what I love most - coaching."
+                    "<?php echo esc_html(get_post_meta(get_the_ID(), 'funnel_automation_testimonial_quote', true) ?: 'The funnel automation Aimpro built transformed my business completely. I went from working 60+ hours a week chasing leads to having a system that generates £1.2M annually while I focus on what I love most - coaching.'); ?>"
                 </blockquote>
                 <cite>
-                    <strong>Patricia Williams</strong><br>
-                    Business Coach & Consultant
+                    <strong><?php echo esc_html(get_post_meta(get_the_ID(), 'funnel_automation_testimonial_author', true) ?: 'Patricia Williams'); ?></strong><br>
+                    <?php echo esc_html(get_post_meta(get_the_ID(), 'funnel_automation_testimonial_position', true) ?: 'Business Coach & Consultant'); ?>
                 </cite>
             </div>
         </div>
-    </section>
-
-    <!-- CTA Section -->
+    </section>    <!-- CTA Section -->
     <section id="contact" class="cta-section">
         <div class="container">
             <div class="cta-content">
-                <h2>Ready to Automate Your Sales Process?</h2>
-                <p>Stop chasing leads manually and start converting prospects automatically. Our intelligent funnel automation will free up your time while consistently generating qualified leads and sales for your business.</p>                <div class="cta-buttons">
-                    <a href="<?php echo home_url('/contact'); ?>" class="btn-primary">Build Your Funnel</a>
+                <h2><?php echo esc_html(get_post_meta(get_the_ID(), 'funnel_automation_cta_title', true) ?: 'Ready to Automate Your Sales Funnel?'); ?></h2>
+                <p><?php echo esc_html(get_post_meta(get_the_ID(), 'funnel_automation_cta_description', true) ?: 'Stop losing leads to manual processes and inconsistent follow-up. Our intelligent funnel automation will transform your sales process and free up your time to focus on growing your business.'); ?></p>                <div class="cta-buttons">
+                    <a href="<?php echo home_url('/contact'); ?>" class="btn-primary"><?php echo esc_html(get_post_meta(get_the_ID(), 'funnel_automation_cta_button', true) ?: 'Build Your Funnel'); ?></a>
                 </div>
             </div>
         </div>
