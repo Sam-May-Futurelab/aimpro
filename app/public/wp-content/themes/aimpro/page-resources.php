@@ -213,10 +213,9 @@ get_header(); ?>
         <div class="container section-content">
             <div class="cta-content newsletter-content">
                 <h2><?php echo esc_html(get_post_meta(get_the_ID(), 'resources_newsletter_title', true) ?: 'Stay Updated'); ?></h2>
-                <p><?php echo esc_html(get_post_meta(get_the_ID(), 'resources_newsletter_description', true) ?: 'Get the latest resources, insights, and industry updates delivered directly to your inbox.'); ?></p>
-                <form class="newsletter-form" action="#" method="post">
+                <p><?php echo esc_html(get_post_meta(get_the_ID(), 'resources_newsletter_description', true) ?: 'Get the latest resources, insights, and industry updates delivered directly to your inbox.'); ?></p>                <form class="newsletter-form" action="#" method="post">
                     <div class="form-group">
-                        <input type="email" name="email" placeholder="Enter your email address" required>
+                        <input type="email" name="email" placeholder="Email" required>
                         <button type="submit" class="btn btn-primary">Subscribe</button>
                     </div>
                 </form>

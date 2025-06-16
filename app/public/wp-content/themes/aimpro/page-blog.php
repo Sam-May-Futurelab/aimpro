@@ -8,12 +8,11 @@ get_header(); ?>
 
 <main id="main" class="main-content">
     <div class="container">
-        
-        <!-- Page Header -->
+          <!-- Page Header -->
         <section class="page-header">
             <div class="page-header-content">
-                <h1>Blog & Insights</h1>
-                <p class="page-subtitle">Stay ahead with the latest digital marketing insights and strategies</p>
+                <h1><?php echo esc_html(get_post_meta(get_the_ID(), 'blog_header_title', true) ?: 'Blog & Insights'); ?></h1>
+                <p class="page-subtitle"><?php echo esc_html(get_post_meta(get_the_ID(), 'blog_header_subtitle', true) ?: 'Stay ahead with the latest digital marketing insights and strategies'); ?></p>
             </div>
         </section>
 
@@ -79,11 +78,9 @@ get_header(); ?>
                                     </article>
                                 <?php endwhile; ?>
                             </div>
-                        <?php endif; wp_reset_postdata(); ?>
-
-                        <!-- Blog Posts Grid -->
+                        <?php endif; wp_reset_postdata(); ?>                        <!-- Blog Posts Grid -->
                         <div class="blog-posts">
-                            <h2 class="section-title">Latest Articles</h2>
+                            <h2 class="section-title"><?php echo esc_html(get_post_meta(get_the_ID(), 'blog_latest_title', true) ?: 'Latest Articles'); ?></h2>
                             
                             <div class="posts-grid">
                                 <?php
@@ -230,10 +227,9 @@ get_header(); ?>
 
                     <!-- Sidebar -->
                     <aside class="blog-sidebar">
-                        
-                        <!-- Categories -->
+                          <!-- Categories -->
                         <div class="sidebar-widget">
-                            <h3 class="widget-title">Categories</h3>
+                            <h3 class="widget-title"><?php echo esc_html(get_post_meta(get_the_ID(), 'blog_categories_title', true) ?: 'Categories'); ?></h3>
                             <ul class="category-list">
                                 <?php
                                 $categories = get_categories(array(
@@ -258,11 +254,9 @@ get_header(); ?>
                                     <li><span class="category-name">Web Development <span class="post-count">(9)</span></span></li>
                                 <?php endif; ?>
                             </ul>
-                        </div>
-
-                        <!-- Recent Posts -->
+                        </div>                        <!-- Recent Posts -->
                         <div class="sidebar-widget">
-                            <h3 class="widget-title">Recent Posts</h3>
+                            <h3 class="widget-title"><?php echo esc_html(get_post_meta(get_the_ID(), 'blog_recent_posts_title', true) ?: 'Recent Posts'); ?></h3>
                             <div class="recent-posts">
                                 <?php
                                 $recent_args = array(
@@ -312,15 +306,12 @@ get_header(); ?>
                                     </div>
                                 <?php endif; ?>
                             </div>
-                        </div>
-
-                        <!-- Newsletter Signup -->
-                        <div class="sidebar-widget newsletter-widget">
-                            <h3 class="widget-title">Stay Updated</h3>
-                            <p>Get weekly insights delivered to your inbox.</p>
+                        </div>                        <!-- Newsletter Signup -->
+                        <div class="sidebar-widget newsletter-widget">                            <h3 class="widget-title"><?php echo esc_html(get_post_meta(get_the_ID(), 'blog_newsletter_title', true) ?: 'Stay Updated'); ?></h3>
+                            <p><?php echo esc_html(get_post_meta(get_the_ID(), 'blog_newsletter_subtitle', true) ?: 'Get weekly insights delivered to your inbox.'); ?></p>
                             <form class="newsletter-form" action="#" method="post">
-                                <input type="email" name="email" placeholder="Your email address" required>
-                                <button type="submit" class="btn btn-primary">Subscribe</button>
+                                <input type="email" name="email" placeholder="Email" required>
+                                <button type="submit" class="btn btn-primary"><?php echo esc_html(get_post_meta(get_the_ID(), 'blog_newsletter_button_text', true) ?: 'Subscribe'); ?></button>
                             </form>
                         </div>
 
