@@ -441,14 +441,245 @@ function aimpro_contact_meta_box_callback($post) {
                         <input type="text" id="contact_faq_heading" name="contact_faq_heading" value="<?php echo esc_attr($contact_faq_heading); ?>" />
                         <p class="description">Main heading for the FAQ section.</p>
                     </td>
-                </tr>
-                <tr>
+                </tr>                <tr>
                     <th scope="row">
                         <label for="contact_faq_subtitle">FAQ Subtitle</label>
                     </th>
                     <td>
                         <textarea id="contact_faq_subtitle" name="contact_faq_subtitle" rows="2"><?php echo esc_textarea($contact_faq_subtitle); ?></textarea>
                         <p class="description">Description text below the FAQ heading.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row">
+                        <label for="contact_faq_1_question">FAQ 1 - Question</label>
+                    </th>
+                    <td>
+                        <input type="text" id="contact_faq_1_question" name="contact_faq_1_question" value="<?php echo esc_attr(get_post_meta($post->ID, 'contact_faq_1_question', true) ?: 'How quickly can you start working on my project?'); ?>" />
+                        <p class="description">First FAQ question.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row">
+                        <label for="contact_faq_1_answer">FAQ 1 - Answer</label>
+                    </th>
+                    <td>
+                        <textarea id="contact_faq_1_answer" name="contact_faq_1_answer" rows="3"><?php echo esc_textarea(get_post_meta($post->ID, 'contact_faq_1_answer', true) ?: 'We can typically begin new projects within 1-2 weeks of our initial consultation. For urgent requirements, we offer expedited onboarding within 48-72 hours.'); ?></textarea>
+                        <p class="description">First FAQ answer.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row">
+                        <label for="contact_faq_2_question">FAQ 2 - Question</label>
+                    </th>
+                    <td>
+                        <input type="text" id="contact_faq_2_question" name="contact_faq_2_question" value="<?php echo esc_attr(get_post_meta($post->ID, 'contact_faq_2_question', true) ?: 'Do you work with businesses outside Birmingham?'); ?>" />
+                        <p class="description">Second FAQ question.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row">
+                        <label for="contact_faq_2_answer">FAQ 2 - Answer</label>
+                    </th>
+                    <td>
+                        <textarea id="contact_faq_2_answer" name="contact_faq_2_answer" rows="3"><?php echo esc_textarea(get_post_meta($post->ID, 'contact_faq_2_answer', true) ?: 'Absolutely! While we\'re based in Birmingham, we work with clients across the UK and internationally. Most of our services are delivered remotely with regular video calls and reports.'); ?></textarea>
+                        <p class="description">Second FAQ answer.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row">
+                        <label for="contact_faq_3_question">FAQ 3 - Question</label>
+                    </th>
+                    <td>
+                        <input type="text" id="contact_faq_3_question" name="contact_faq_3_question" value="<?php echo esc_attr(get_post_meta($post->ID, 'contact_faq_3_question', true) ?: 'What\'s included in your free consultation?'); ?>" />
+                        <p class="description">Third FAQ question.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row">
+                        <label for="contact_faq_3_answer">FAQ 3 - Answer</label>
+                    </th>
+                    <td>
+                        <textarea id="contact_faq_3_answer" name="contact_faq_3_answer" rows="3"><?php echo esc_textarea(get_post_meta($post->ID, 'contact_faq_3_answer', true) ?: 'Our free consultation includes a comprehensive audit of your current digital marketing, competitive analysis, and a customized strategy recommendation with projected ROI.'); ?></textarea>
+                        <p class="description">Third FAQ answer.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row">
+                        <label for="contact_faq_4_question">FAQ 4 - Question</label>
+                    </th>
+                    <td>
+                        <input type="text" id="contact_faq_4_question" name="contact_faq_4_question" value="<?php echo esc_attr(get_post_meta($post->ID, 'contact_faq_4_question', true) ?: 'Do you require long-term contracts?'); ?>" />
+                        <p class="description">Fourth FAQ question.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row">
+                        <label for="contact_faq_4_answer">FAQ 4 - Answer</label>
+                    </th>
+                    <td>
+                        <textarea id="contact_faq_4_answer" name="contact_faq_4_answer" rows="3"><?php echo esc_textarea(get_post_meta($post->ID, 'contact_faq_4_answer', true) ?: 'We prefer to work on monthly rolling contracts for most services, with a minimum 3-month commitment to ensure we can deliver meaningful results. No lengthy lock-ins required.'); ?></textarea>
+                        <p class="description">Fourth FAQ answer.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row">
+                        <label for="contact_faq_5_question">FAQ 5 - Question</label>
+                    </th>
+                    <td>
+                        <input type="text" id="contact_faq_5_question" name="contact_faq_5_question" value="<?php echo esc_attr(get_post_meta($post->ID, 'contact_faq_5_question', true) ?: 'Can you help with both B2B and B2C marketing?'); ?>" />
+                        <p class="description">Fifth FAQ question.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row">
+                        <label for="contact_faq_5_answer">FAQ 5 - Answer</label>
+                    </th>
+                    <td>
+                        <textarea id="contact_faq_5_answer" name="contact_faq_5_answer" rows="3"><?php echo esc_textarea(get_post_meta($post->ID, 'contact_faq_5_answer', true) ?: 'Yes! Our team has extensive experience in both B2B and B2C marketing across various industries including SaaS, e-commerce, professional services, and retail.'); ?></textarea>
+                        <p class="description">Fifth FAQ answer.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row">
+                        <label for="contact_faq_6_question">FAQ 6 - Question</label>
+                    </th>
+                    <td>
+                        <input type="text" id="contact_faq_6_question" name="contact_faq_6_question" value="<?php echo esc_attr(get_post_meta($post->ID, 'contact_faq_6_question', true) ?: 'What results can I expect and how quickly?'); ?>" />
+                        <p class="description">Sixth FAQ question.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row">
+                        <label for="contact_faq_6_answer">FAQ 6 - Answer</label>
+                    </th>
+                    <td>
+                        <textarea id="contact_faq_6_answer" name="contact_faq_6_answer" rows="3"><?php echo esc_textarea(get_post_meta($post->ID, 'contact_faq_6_answer', true) ?: 'Most clients see initial improvements within 30-60 days, with significant results typically achieved within 3-6 months. We provide detailed monthly reports showing your progress and ROI.'); ?></textarea>
+                        <p class="description">Sixth FAQ answer.</p>
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- Social Proof Section -->
+        <div class="aimpro-contact-section">
+            <h4>🏆 Social Proof Section</h4>
+            <table class="form-table">
+                <tr>
+                    <th scope="row">
+                        <label for="contact_social_proof_heading">Social Proof Heading</label>
+                    </th>
+                    <td>
+                        <input type="text" id="contact_social_proof_heading" name="contact_social_proof_heading" value="<?php echo esc_attr($contact_social_proof_heading); ?>" />
+                        <p class="description">Main heading for the social proof section.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row">
+                        <label for="contact_social_proof_subtitle">Social Proof Subtitle</label>
+                    </th>
+                    <td>
+                        <textarea id="contact_social_proof_subtitle" name="contact_social_proof_subtitle" rows="2"><?php echo esc_textarea($contact_social_proof_subtitle); ?></textarea>
+                        <p class="description">Description text for the social proof section.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row">
+                        <label for="contact_stat_1_number">Stat 1 - Number</label>
+                    </th>
+                    <td>
+                        <input type="text" id="contact_stat_1_number" name="contact_stat_1_number" value="<?php echo esc_attr($contact_stat_1_number); ?>" />
+                        <p class="description">First statistic number (e.g., "500%").</p>
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row">
+                        <label for="contact_stat_1_label">Stat 1 - Label</label>
+                    </th>
+                    <td>
+                        <input type="text" id="contact_stat_1_label" name="contact_stat_1_label" value="<?php echo esc_attr($contact_stat_1_label); ?>" />
+                        <p class="description">First statistic description.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row">
+                        <label for="contact_stat_2_number">Stat 2 - Number</label>
+                    </th>
+                    <td>
+                        <input type="text" id="contact_stat_2_number" name="contact_stat_2_number" value="<?php echo esc_attr($contact_stat_2_number); ?>" />
+                        <p class="description">Second statistic number (e.g., "£2.4M+").</p>
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row">
+                        <label for="contact_stat_2_label">Stat 2 - Label</label>
+                    </th>
+                    <td>
+                        <input type="text" id="contact_stat_2_label" name="contact_stat_2_label" value="<?php echo esc_attr($contact_stat_2_label); ?>" />
+                        <p class="description">Second statistic description.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row">
+                        <label for="contact_stat_3_number">Stat 3 - Number</label>
+                    </th>
+                    <td>
+                        <input type="text" id="contact_stat_3_number" name="contact_stat_3_number" value="<?php echo esc_attr($contact_stat_3_number); ?>" />
+                        <p class="description">Third statistic number (e.g., "98%").</p>
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row">
+                        <label for="contact_stat_3_label">Stat 3 - Label</label>
+                    </th>
+                    <td>
+                        <input type="text" id="contact_stat_3_label" name="contact_stat_3_label" value="<?php echo esc_attr($contact_stat_3_label); ?>" />
+                        <p class="description">Third statistic description.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row">
+                        <label for="contact_stat_4_number">Stat 4 - Number</label>
+                    </th>
+                    <td>
+                        <input type="text" id="contact_stat_4_number" name="contact_stat_4_number" value="<?php echo esc_attr($contact_stat_4_number); ?>" />
+                        <p class="description">Fourth statistic number (e.g., "24hr").</p>
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row">
+                        <label for="contact_stat_4_label">Stat 4 - Label</label>
+                    </th>
+                    <td>
+                        <input type="text" id="contact_stat_4_label" name="contact_stat_4_label" value="<?php echo esc_attr($contact_stat_4_label); ?>" />
+                        <p class="description">Fourth statistic description.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row">
+                        <label for="contact_testimonial_quote">Testimonial Quote</label>
+                    </th>
+                    <td>
+                        <textarea id="contact_testimonial_quote" name="contact_testimonial_quote" rows="4"><?php echo esc_textarea($contact_testimonial_quote); ?></textarea>
+                        <p class="description">Client testimonial quote text.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row">
+                        <label for="contact_testimonial_author">Testimonial Author</label>
+                    </th>
+                    <td>
+                        <input type="text" id="contact_testimonial_author" name="contact_testimonial_author" value="<?php echo esc_attr($contact_testimonial_author); ?>" />
+                        <p class="description">Name of the person giving the testimonial.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row">
+                        <label for="contact_testimonial_position">Testimonial Position</label>
+                    </th>
+                    <td>
+                        <input type="text" id="contact_testimonial_position" name="contact_testimonial_position" value="<?php echo esc_attr($contact_testimonial_position); ?>" />
+                        <p class="description">Job title and company of testimonial author.</p>
                     </td>
                 </tr>
             </table>
@@ -529,8 +760,7 @@ function aimpro_save_contact_meta_fields($post_id) {
     // Only save for pages
     if (get_post_type($post_id) !== 'page') {
         return;
-    }
-      // Define the fields to save
+    }    // Define the fields to save
     $contact_fields = array(
         'contact_hero_heading',
         'contact_hero_subtitle',
@@ -544,25 +774,62 @@ function aimpro_save_contact_meta_fields($post_id) {
         'contact_form_title',
         'contact_form_subtitle',
         'contact_form_submit_text',
+        'contact_form_name_label',
+        'contact_form_email_label',
+        'contact_form_phone_label',
+        'contact_form_referral_label',
+        'contact_form_query_label',
+        'contact_form_query_placeholder',
         'contact_office_heading',
         'contact_office_description',
+        'contact_office_location',
+        'contact_office_building',
         'contact_office_address',
+        'contact_office_district',
         'contact_office_cta_text',
         'contact_faq_heading',
         'contact_faq_subtitle',
+        'contact_faq_1_question',
+        'contact_faq_1_answer',
+        'contact_faq_2_question',
+        'contact_faq_2_answer',
+        'contact_faq_3_question',
+        'contact_faq_3_answer',
+        'contact_faq_4_question',
+        'contact_faq_4_answer',
+        'contact_faq_5_question',
+        'contact_faq_5_answer',
+        'contact_faq_6_question',
+        'contact_faq_6_answer',
+        'contact_social_proof_heading',
+        'contact_social_proof_subtitle',
+        'contact_stat_1_number',
+        'contact_stat_1_label',
+        'contact_stat_2_number',
+        'contact_stat_2_label',
+        'contact_stat_3_number',
+        'contact_stat_3_label',
+        'contact_stat_4_number',
+        'contact_stat_4_label',
+        'contact_testimonial_quote',
+        'contact_testimonial_author',
+        'contact_testimonial_position',
         'contact_final_cta_heading',
         'contact_final_cta_description',
         'contact_final_cta_phone_text',
-        'contact_final_cta_email_text'
+        'contact_final_cta_email_text',
+        'contact_final_cta_guarantee'
     );
     
     // Save each field
     foreach ($contact_fields as $field) {
         if (isset($_POST[$field])) {
-            $value = $_POST[$field];
-              // Sanitize based on field type
-            if (in_array($field, array('contact_hero_heading', 'contact_hero_subtitle', 'contact_form_subtitle', 'contact_office_heading', 'contact_office_description', 'contact_final_cta_heading', 'contact_final_cta_description'))) {
+            $value = $_POST[$field];            // Sanitize based on field type
+            if (in_array($field, array('contact_hero_heading', 'contact_hero_subtitle', 'contact_form_subtitle', 'contact_office_heading', 'contact_office_description', 'contact_final_cta_heading', 'contact_final_cta_description', 'contact_faq_subtitle', 'contact_social_proof_subtitle', 'contact_testimonial_quote'))) {
                 // Allow HTML for certain fields
+                $value = wp_kses_post($value);
+            } elseif (in_array($field, array('contact_faq_1_answer', 'contact_faq_2_answer', 'contact_faq_3_answer', 'contact_faq_4_answer', 'contact_faq_5_answer', 'contact_faq_6_answer'))) {
+                // FAQ answers - allow basic HTML
                 $value = wp_kses_post($value);
             } elseif ($field === 'contact_email') {
                 // Sanitize email

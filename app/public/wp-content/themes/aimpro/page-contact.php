@@ -158,99 +158,93 @@ get_header(); ?>
 
     <!-- FAQ Section -->
     <section class="contact-faq">
-        <div class="container">
-            <div class="section-header">
-                <h2>Frequently Asked Questions</h2>
-                <p>Quick answers to common questions about working with our digital marketing agency.</p>
+        <div class="container">            <div class="section-header">
+                <h2><?php echo aimpro_get_field('contact_faq_heading', 'Frequently Asked Questions'); ?></h2>
+                <p><?php echo aimpro_get_field('contact_faq_subtitle', 'Quick answers to common questions about working with our digital marketing agency.'); ?></p>
             </div>
             
             <div class="faq-grid">
                 <div class="faq-item">
-                    <h3>How quickly can you start working on my project?</h3>
-                    <p>We can typically begin new projects within 1-2 weeks of our initial consultation. For urgent requirements, we offer expedited onboarding within 48-72 hours.</p>
+                    <h3><?php echo aimpro_get_field('contact_faq_1_question', 'How quickly can you start working on my project?'); ?></h3>
+                    <p><?php echo aimpro_get_field('contact_faq_1_answer', 'We can typically begin new projects within 1-2 weeks of our initial consultation. For urgent requirements, we offer expedited onboarding within 48-72 hours.'); ?></p>
                 </div>
                 
                 <div class="faq-item">
-                    <h3>Do you work with businesses outside Birmingham?</h3>
-                    <p>Absolutely! While we're based in Birmingham, we work with clients across the UK and internationally. Most of our services are delivered remotely with regular video calls and reports.</p>
+                    <h3><?php echo aimpro_get_field('contact_faq_2_question', 'Do you work with businesses outside Birmingham?'); ?></h3>
+                    <p><?php echo aimpro_get_field('contact_faq_2_answer', 'Absolutely! While we\'re based in Birmingham, we work with clients across the UK and internationally. Most of our services are delivered remotely with regular video calls and reports.'); ?></p>
                 </div>
                 
                 <div class="faq-item">
-                    <h3>What's included in your free consultation?</h3>
-                    <p>Our free consultation includes a comprehensive audit of your current digital marketing, competitive analysis, and a customized strategy recommendation with projected ROI.</p>
+                    <h3><?php echo aimpro_get_field('contact_faq_3_question', 'What\'s included in your free consultation?'); ?></h3>
+                    <p><?php echo aimpro_get_field('contact_faq_3_answer', 'Our free consultation includes a comprehensive audit of your current digital marketing, competitive analysis, and a customized strategy recommendation with projected ROI.'); ?></p>
                 </div>
                 
                 <div class="faq-item">
-                    <h3>Do you require long-term contracts?</h3>
-                    <p>We prefer to work on monthly rolling contracts for most services, with a minimum 3-month commitment to ensure we can deliver meaningful results. No lengthy lock-ins required.</p>
+                    <h3><?php echo aimpro_get_field('contact_faq_4_question', 'Do you require long-term contracts?'); ?></h3>
+                    <p><?php echo aimpro_get_field('contact_faq_4_answer', 'We prefer to work on monthly rolling contracts for most services, with a minimum 3-month commitment to ensure we can deliver meaningful results. No lengthy lock-ins required.'); ?></p>
                 </div>
                 
                 <div class="faq-item">
-                    <h3>Can you help with both B2B and B2C marketing?</h3>
-                    <p>Yes! Our team has extensive experience in both B2B and B2C marketing across various industries including SaaS, e-commerce, professional services, and retail.</p>
+                    <h3><?php echo aimpro_get_field('contact_faq_5_question', 'Can you help with both B2B and B2C marketing?'); ?></h3>
+                    <p><?php echo aimpro_get_field('contact_faq_5_answer', 'Yes! Our team has extensive experience in both B2B and B2C marketing across various industries including SaaS, e-commerce, professional services, and retail.'); ?></p>
                 </div>
                 
                 <div class="faq-item">
-                    <h3>What makes you different from other agencies?</h3>
-                    <p>We focus on measurable results with transparent reporting, offer genuine partnership rather than just service delivery, and use AI-powered tools to maximize efficiency and ROI.</p>
+                    <h3><?php echo aimpro_get_field('contact_faq_6_question', 'What makes you different from other agencies?'); ?></h3>
+                    <p><?php echo aimpro_get_field('contact_faq_6_answer', 'We focus on measurable results with transparent reporting, offer genuine partnership rather than just service delivery, and use AI-powered tools to maximize efficiency and ROI.'); ?></p>
                 </div>
             </div>
         </div>
-    </section>
-
-    <!-- Social Proof Section -->
+    </section>    <!-- Social Proof Section -->
     <section class="contact-social-proof">
         <div class="container">
             <div class="social-proof-content">
-                <h2>Join 200+ Businesses That Trust Aimpro</h2>
-                <p>From startups to established enterprises, we've helped businesses across industries achieve their digital marketing goals.</p>
+                <h2><?php echo aimpro_get_field('contact_social_proof_heading', 'Join 200+ Businesses That Trust Aimpro'); ?></h2>
+                <p><?php echo aimpro_get_field('contact_social_proof_subtitle', 'From startups to established enterprises, we\'ve helped businesses across industries achieve their digital marketing goals.'); ?></p>
                 
                 <div class="proof-stats">
                     <div class="proof-stat">
-                        <span class="stat-number">500%</span>
-                        <span class="stat-label">Average Lead Increase</span>
+                        <span class="stat-number"><?php echo aimpro_get_field('contact_stat_1_number', '500%'); ?></span>
+                        <span class="stat-label"><?php echo aimpro_get_field('contact_stat_1_label', 'Average Lead Increase'); ?></span>
                     </div>
                     <div class="proof-stat">
-                        <span class="stat-number">£2.4M+</span>
-                        <span class="stat-label">Revenue Generated</span>
+                        <span class="stat-number"><?php echo aimpro_get_field('contact_stat_2_number', '£2.4M+'); ?></span>
+                        <span class="stat-label"><?php echo aimpro_get_field('contact_stat_2_label', 'Revenue Generated'); ?></span>
                     </div>
                     <div class="proof-stat">
-                        <span class="stat-number">98%</span>
-                        <span class="stat-label">Client Satisfaction</span>
+                        <span class="stat-number"><?php echo aimpro_get_field('contact_stat_3_number', '98%'); ?></span>
+                        <span class="stat-label"><?php echo aimpro_get_field('contact_stat_3_label', 'Client Satisfaction'); ?></span>
                     </div>
                     <div class="proof-stat">
-                        <span class="stat-number">24hr</span>
-                        <span class="stat-label">Response Time</span>
+                        <span class="stat-number"><?php echo aimpro_get_field('contact_stat_4_number', '24hr'); ?></span>
+                        <span class="stat-label"><?php echo aimpro_get_field('contact_stat_4_label', 'Response Time'); ?></span>
                     </div>
                 </div>
                 
                 <div class="testimonial-highlight">
                     <blockquote>
-                        "Aimpro transformed our digital presence completely. Within 6 months, we saw a 340% increase in qualified leads and our revenue doubled. Their team truly understands both the technical and strategic aspects of digital marketing."
+                        "<?php echo aimpro_get_field('contact_testimonial_quote', 'Aimpro transformed our digital presence completely. Within 6 months, we saw a 340% increase in qualified leads and our revenue doubled. Their team truly understands both the technical and strategic aspects of digital marketing.'); ?>"
                     </blockquote>
                     <cite>
-                        <strong>Sarah Johnson</strong><br>
-                        <span>Marketing Director, TechFlow Solutions</span>
+                        <strong><?php echo aimpro_get_field('contact_testimonial_author', 'Sarah Johnson'); ?></strong><br>
+                        <span><?php echo aimpro_get_field('contact_testimonial_position', 'Marketing Director, TechFlow Solutions'); ?></span>
                     </cite>
                 </div>
             </div>
         </div>
-    </section>
-
-    <!-- Final CTA -->
+    </section>    <!-- Final CTA -->
     <section class="contact-final-cta">
         <div class="container">
             <div class="final-cta-content">
-                <h2>Ready to <span class="text-gradient">Transform Your Digital Marketing?</span></h2>
-                <p>Don't let your competitors get ahead. Schedule a free consultation today and discover how we can help you achieve your business goals with proven digital marketing strategies.</p>
-                
-                <div class="cta-actions">
-                    <a href="tel:+441212858490" class="btn btn-primary large">Call Now: +44 121 285 8490</a>
-                    <a href="mailto:hello@aimpro.co.uk" class="btn btn-secondary large">Send Email</a>
+                <h2><?php echo aimpro_get_field('contact_final_cta_heading', 'Ready to <span class="text-gradient">Transform Your Digital Marketing?</span>'); ?></h2>
+                <p><?php echo aimpro_get_field('contact_final_cta_description', 'Don\'t let your competitors get ahead. Schedule a free consultation today and discover how we can help you achieve your business goals with proven digital marketing strategies.'); ?></p>
+                  <div class="cta-actions">
+                    <a href="tel:<?php echo aimpro_sanitize_phone(aimpro_get_field('contact_phone', '+441212858490')); ?>" class="btn btn-primary large"><?php echo aimpro_get_field('contact_final_cta_phone_text', 'Call Now: +44 121 285 8490'); ?></a>
+                    <a href="mailto:<?php echo aimpro_get_field('contact_email', 'hello@aimpro.co.uk'); ?>" class="btn btn-secondary large"><?php echo aimpro_get_field('contact_final_cta_email_text', 'Send Email'); ?></a>
                 </div>
                 
                 <div class="cta-guarantee">
-                    <p><strong>Free Consultation • No Obligation • Immediate Value</strong></p>
+                    <p><strong><?php echo aimpro_get_field('contact_final_cta_guarantee', 'Free Consultation • No Obligation • Immediate Value'); ?></strong></p>
                 </div>
             </div>
         </div>
