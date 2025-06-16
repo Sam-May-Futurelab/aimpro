@@ -4,7 +4,16 @@
  * Description: Local SEO services for businesses targeting local customers
  */
 
-get_header(); ?>
+get_header(); 
+
+// Get default values
+$defaults = get_local_seo_defaults();
+
+// Get meta values with fallbacks
+$header_title = get_post_meta(get_the_ID(), '_local_seo_header_title', true) ?: $defaults['header_title'];
+$header_subtitle = get_post_meta(get_the_ID(), '_local_seo_header_subtitle', true) ?: $defaults['header_subtitle'];
+
+?>
 
 <main id="main" class="main-content seo-service-page">
     <div class="container">
@@ -12,8 +21,8 @@ get_header(); ?>
         <!-- Page Header -->
         <section class="page-header">
             <div class="page-header-content">
-                <h1>Local SEO Services</h1>
-                <p class="page-subtitle">Dominate local search results and attract customers in your area</p>
+                <h1><?php echo esc_html($header_title); ?></h1>
+                <p class="page-subtitle"><?php echo esc_html($header_subtitle); ?></p>
             </div>
         </section>
 
@@ -22,297 +31,207 @@ get_header(); ?>
             <div class="section-content">
                 <div class="overview-content">
                     <div class="overview-text">
-                        <h2>Become the #1 Choice in Your Local Market</h2>
-                        <p>Local SEO is crucial for businesses that serve customers in specific geographic areas. Our comprehensive local SEO strategies help you appear prominently in local search results, Google Maps, and voice searches, driving more foot traffic and local customers to your business.</p>
+                        <?php
+                        $overview_title = get_post_meta(get_the_ID(), '_local_seo_overview_title', true) ?: $defaults['overview_title'];
+                        $overview_description = get_post_meta(get_the_ID(), '_local_seo_overview_description', true) ?: $defaults['overview_description'];
+                        $benefits_title = get_post_meta(get_the_ID(), '_local_seo_overview_benefits_title', true) ?: $defaults['overview_benefits_title'];
+                        $benefits = get_post_meta(get_the_ID(), '_local_seo_overview_benefits', true) ?: $defaults['overview_benefits'];
+                        ?>
+                        <h2><?php echo esc_html($overview_title); ?></h2>
+                        <p><?php echo esc_html($overview_description); ?></p>
                         
                         <div class="local-seo-benefits">
-                            <h3>Why Local SEO Matters:</h3>
+                            <h3><?php echo esc_html($benefits_title); ?></h3>
                             <ul>
-                                <li>76% of people search for local businesses daily</li>
-                                <li>28% of local searches result in a purchase</li>
-                                <li>Local searches have a 50% higher conversion rate</li>
-                                <li>Google My Business listings get 5x more views than websites</li>
-                                <li>88% of consumers trust online reviews as much as personal recommendations</li>
+                                <?php foreach ((array)$benefits as $benefit): ?>
+                                    <li><?php echo esc_html($benefit); ?></li>
+                                <?php endforeach; ?>
                             </ul>
                         </div>
                     </div>
                     <div class="overview-image">
-                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/services/local-seo-overview.jpg" alt="Local SEO Services" />
+                        <?php
+                        $overview_image = get_post_meta(get_the_ID(), '_local_seo_overview_image', true) ?: $defaults['overview_image'];
+                        ?>
+                        <img src="<?php echo esc_url($overview_image); ?>" alt="Local SEO Services" />
                     </div>
                 </div>
             </div>
-        </section>
-
-        <!-- Local SEO Services -->
+        </section>        <!-- Local SEO Services -->
         <section class="local-seo-services">
             <div class="section-content">
-                <h2>Complete Local SEO Services</h2>
+                <?php
+                $services_title = get_post_meta(get_the_ID(), '_local_seo_services_title', true) ?: $defaults['services_title'];
+                ?>
+                <h2><?php echo esc_html($services_title); ?></h2>
                 <div class="services-grid">
+                    
+                    <?php for ($i = 1; $i <= 6; $i++): 
+                        $service_title = get_post_meta(get_the_ID(), "_local_seo_service_{$i}_title", true) ?: $defaults["service_{$i}_title"];
+                        $service_description = get_post_meta(get_the_ID(), "_local_seo_service_{$i}_description", true) ?: $defaults["service_{$i}_description"];
+                        $service_features = get_post_meta(get_the_ID(), "_local_seo_service_{$i}_features", true) ?: $defaults["service_{$i}_features"];
+                    ?>
                     
                     <div class="service-card">
                         <div class="service-icon">
-                            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M21 10C21 17 12 23 12 23C12 23 3 17 3 10C3 6.13401 6.13401 3 10 3C13.866 3 17 6.13401 17 10Z" stroke="currentColor" stroke-width="2"/>
-                                <circle cx="12" cy="10" r="3" stroke="currentColor" stroke-width="2"/>
-                            </svg>
+                            <?php 
+                            // Service icons based on service number
+                            switch($i) {
+                                case 1: // Google My Business
+                                    echo '<svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M21 10C21 17 12 23 12 23C12 23 3 17 3 10C3 6.13401 6.13401 3 10 3C13.866 3 17 6.13401 17 10Z" stroke="currentColor" stroke-width="2"/>
+                                        <circle cx="12" cy="10" r="3" stroke="currentColor" stroke-width="2"/>
+                                    </svg>';
+                                    break;
+                                case 2: // Local Citation Building
+                                    echo '<svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M4 6H20M4 12H20M4 18H20" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                                    </svg>';
+                                    break;
+                                case 3: // Review Management
+                                    echo '<svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M11.049 2.927C11.3102 2.00407 12.6898 2.00407 12.951 2.927L14.4697 7.60081C14.6035 8.01284 14.9875 8.29155 15.4207 8.29155H20.4329C21.4016 8.29155 21.8044 9.60081 21.0207 10.1008L17.0429 12.9492C16.6932 13.2016 16.5479 13.6463 16.6817 14.0583L18.2004 18.7321C18.4616 19.6551 17.3537 20.4282 16.5699 19.9282L12.5921 17.0798C12.2424 16.8274 11.7576 16.8274 11.4079 17.0798L7.43013 19.9282C6.64635 20.4282 5.53841 19.6551 5.79963 18.7321L7.31829 14.0583C7.45208 13.6463 7.30679 13.2016 6.95711 12.9492L2.97933 10.1008C2.19555 9.60081 2.59844 8.29155 3.56712 8.29155H8.57929C9.01252 8.29155 9.39647 8.01284 9.53026 7.60081L11.049 2.927Z" stroke="currentColor" stroke-width="2"/>
+                                    </svg>';
+                                    break;
+                                case 4: // Local Keyword Optimization
+                                    echo '<svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <circle cx="11" cy="11" r="8" stroke="currentColor" stroke-width="2"/>
+                                        <path d="M21 21L16.65 16.65" stroke="currentColor" stroke-width="2"/>
+                                    </svg>';
+                                    break;
+                                case 5: // Local Link Building
+                                    echo '<svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="currentColor" stroke-width="2"/>
+                                        <path d="M2 17L12 22L22 17" stroke="currentColor" stroke-width="2"/>
+                                    </svg>';
+                                    break;
+                                case 6: // Local Website Optimization
+                                    echo '<svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <rect x="2" y="3" width="20" height="14" rx="2" ry="2" stroke="currentColor" stroke-width="2"/>
+                                        <line x1="8" y1="21" x2="16" y2="21" stroke="currentColor" stroke-width="2"/>
+                                        <line x1="12" y1="17" x2="12" y2="21" stroke="currentColor" stroke-width="2"/>
+                                    </svg>';
+                                    break;
+                            }
+                            ?>
                         </div>
                         <div class="service-content">
-                            <h3>Google My Business Optimization</h3>
-                            <p>Complete optimization of your Google My Business profile to maximize local visibility and engagement.</p>
+                            <h3><?php echo esc_html($service_title); ?></h3>
+                            <p><?php echo esc_html($service_description); ?></p>
                             <ul class="service-features">
-                                <li>Profile setup and verification</li>
-                                <li>Business information optimization</li>
-                                <li>Photo and video optimization</li>
-                                <li>Google Posts management</li>
-                                <li>Q&A management</li>
+                                <?php foreach ((array)$service_features as $feature): ?>
+                                    <li><?php echo esc_html($feature); ?></li>
+                                <?php endforeach; ?>
                             </ul>
                         </div>
                     </div>
 
-                    <div class="service-card">
-                        <div class="service-icon">
-                            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M4 6H20M4 12H20M4 18H20" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-                            </svg>
-                        </div>
-                        <div class="service-content">
-                            <h3>Local Citation Building</h3>
-                            <p>Build consistent business citations across high-authority local directories and platforms.</p>
-                            <ul class="service-features">
-                                <li>Directory submission</li>
-                                <li>NAP consistency management</li>
-                                <li>Industry-specific citations</li>
-                                <li>Citation cleanup and correction</li>
-                                <li>Local partnership building</li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <div class="service-card">
-                        <div class="service-icon">
-                            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M11.049 2.927C11.3102 2.00407 12.6898 2.00407 12.951 2.927L14.4697 7.60081C14.6035 8.01284 14.9875 8.29155 15.4207 8.29155H20.4329C21.4016 8.29155 21.8044 9.60081 21.0207 10.1008L17.0429 12.9492C16.6932 13.2016 16.5479 13.6463 16.6817 14.0583L18.2004 18.7321C18.4616 19.6551 17.3537 20.4282 16.5699 19.9282L12.5921 17.0798C12.2424 16.8274 11.7576 16.8274 11.4079 17.0798L7.43013 19.9282C6.64635 20.4282 5.53841 19.6551 5.79963 18.7321L7.31829 14.0583C7.45208 13.6463 7.30679 13.2016 6.95711 12.9492L2.97933 10.1008C2.19555 9.60081 2.59844 8.29155 3.56712 8.29155H8.57929C9.01252 8.29155 9.39647 8.01284 9.53026 7.60081L11.049 2.927Z" stroke="currentColor" stroke-width="2"/>
-                            </svg>
-                        </div>
-                        <div class="service-content">
-                            <h3>Review Management</h3>
-                            <p>Generate more positive reviews and manage your online reputation across all platforms.</p>
-                            <ul class="service-features">
-                                <li>Review generation campaigns</li>
-                                <li>Review response management</li>
-                                <li>Reputation monitoring</li>
-                                <li>Review platform optimization</li>
-                                <li>Crisis management</li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <div class="service-card">
-                        <div class="service-icon">
-                            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <circle cx="11" cy="11" r="8" stroke="currentColor" stroke-width="2"/>
-                                <path d="M21 21L16.65 16.65" stroke="currentColor" stroke-width="2"/>
-                            </svg>
-                        </div>
-                        <div class="service-content">
-                            <h3>Local Keyword Optimization</h3>
-                            <p>Target location-specific keywords to capture local search traffic and qualified leads.</p>
-                            <ul class="service-features">
-                                <li>Local keyword research</li>
-                                <li>Geographic content optimization</li>
-                                <li>Location landing pages</li>
-                                <li>Service area optimization</li>
-                                <li>Local search intent targeting</li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <div class="service-card">
-                        <div class="service-icon">
-                            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="currentColor" stroke-width="2"/>
-                                <path d="M2 17L12 22L22 17" stroke="currentColor" stroke-width="2"/>
-                            </svg>
-                        </div>
-                        <div class="service-content">
-                            <h3>Local Link Building</h3>
-                            <p>Build high-quality local backlinks to boost your authority and local search rankings.</p>
-                            <ul class="service-features">
-                                <li>Local business partnerships</li>
-                                <li>Community event participation</li>
-                                <li>Local news and PR</li>
-                                <li>Chamber of Commerce listings</li>
-                                <li>Industry association links</li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <div class="service-card">
-                        <div class="service-icon">
-                            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <rect x="2" y="3" width="20" height="14" rx="2" ry="2" stroke="currentColor" stroke-width="2"/>
-                                <line x1="8" y1="21" x2="16" y2="21" stroke="currentColor" stroke-width="2"/>
-                                <line x1="12" y1="17" x2="12" y2="21" stroke="currentColor" stroke-width="2"/>
-                            </svg>
-                        </div>
-                        <div class="service-content">
-                            <h3>Local Website Optimization</h3>
-                            <p>Optimize your website structure and content for local search visibility and conversions.</p>
-                            <ul class="service-features">
-                                <li>Local schema markup</li>
-                                <li>Contact page optimization</li>
-                                <li>Location-specific content</li>
-                                <li>Mobile optimization</li>
-                                <li>Local conversion optimization</li>
-                            </ul>
-                        </div>
-                    </div>
+                    <?php endfor; ?>
 
                 </div>
             </div>
-        </section>
-
-        <!-- Local SEO Success Story -->
+        </section>        <!-- Local SEO Success Story -->
         <section class="local-seo-case-study">
             <div class="section-content">
                 <div class="case-study-content">
                     <div class="case-study-text">
-                        <span class="case-study-label">Local SEO Success Story</span>
-                        <h2>Birmingham Dental Practice: 500% Local Visibility Increase</h2>
-                        <p>A local dental practice in Birmingham was struggling to attract new patients despite providing excellent service. They were invisible in local search results and losing potential patients to competitors.</p>
+                        <?php
+                        $case_study_label = get_post_meta(get_the_ID(), '_local_seo_case_study_label', true) ?: $defaults['case_study_label'];
+                        $case_study_title = get_post_meta(get_the_ID(), '_local_seo_case_study_title', true) ?: $defaults['case_study_title'];
+                        $case_study_description = get_post_meta(get_the_ID(), '_local_seo_case_study_description', true) ?: $defaults['case_study_description'];
+                        $case_study_challenge_title = get_post_meta(get_the_ID(), '_local_seo_case_study_challenge_title', true) ?: $defaults['case_study_challenge_title'];
+                        $case_study_challenges = get_post_meta(get_the_ID(), '_local_seo_case_study_challenges', true) ?: $defaults['case_study_challenges'];
+                        $case_study_solution_title = get_post_meta(get_the_ID(), '_local_seo_case_study_solution_title', true) ?: $defaults['case_study_solution_title'];
+                        $case_study_solutions = get_post_meta(get_the_ID(), '_local_seo_case_study_solutions', true) ?: $defaults['case_study_solutions'];
+                        ?>
+                        <span class="case-study-label"><?php echo esc_html($case_study_label); ?></span>
+                        <h2><?php echo esc_html($case_study_title); ?></h2>
+                        <p><?php echo esc_html($case_study_description); ?></p>
                         
                         <div class="case-study-challenge">
-                            <h3>The Challenge</h3>
+                            <h3><?php echo esc_html($case_study_challenge_title); ?></h3>
                             <ul>
-                                <li>No Google My Business optimization</li>
-                                <li>Inconsistent business information online</li>
-                                <li>Very few online reviews</li>
-                                <li>Poor local search rankings</li>
+                                <?php foreach ((array)$case_study_challenges as $challenge): ?>
+                                    <li><?php echo esc_html($challenge); ?></li>
+                                <?php endforeach; ?>
                             </ul>
                         </div>
 
                         <div class="case-study-solution">
-                            <h3>Our Local SEO Strategy</h3>
+                            <h3><?php echo esc_html($case_study_solution_title); ?></h3>
                             <ul>
-                                <li>Complete Google My Business optimization</li>
-                                <li>Local citation building and cleanup</li>
-                                <li>Review generation campaign</li>
-                                <li>Local content optimization</li>
+                                <?php foreach ((array)$case_study_solutions as $solution): ?>
+                                    <li><?php echo esc_html($solution); ?></li>
+                                <?php endforeach; ?>
                             </ul>
                         </div>
                     </div>
                     <div class="case-study-results">
-                        <h3>Results After 6 Months</h3>
+                        <?php
+                        $case_study_results_title = get_post_meta(get_the_ID(), '_local_seo_case_study_results_title', true) ?: $defaults['case_study_results_title'];
+                        $case_study_results = get_post_meta(get_the_ID(), '_local_seo_case_study_results', true) ?: $defaults['case_study_results'];
+                        $case_study_link_text = get_post_meta(get_the_ID(), '_local_seo_case_study_link_text', true) ?: $defaults['case_study_link_text'];
+                        $case_study_link_url = get_post_meta(get_the_ID(), '_local_seo_case_study_link_url', true) ?: $defaults['case_study_link_url'];
+                        ?>
+                        <h3><?php echo esc_html($case_study_results_title); ?></h3>
                         <div class="results-grid">
-                            <div class="result-item">
-                                <div class="result-number">500%</div>
-                                <div class="result-label">Local Visibility Increase</div>
-                            </div>
-                            <div class="result-item">
-                                <div class="result-number">350%</div>
-                                <div class="result-label">More Phone Calls</div>
-                            </div>
-                            <div class="result-item">
-                                <div class="result-number">80+</div>
-                                <div class="result-label">New Patient Reviews</div>
-                            </div>
-                            <div class="result-item">
-                                <div class="result-number">65%</div>
-                                <div class="result-label">Increase in New Patients</div>
-                            </div>
+                            <?php foreach ((array)$case_study_results as $result): ?>
+                                <div class="result-item">
+                                    <div class="result-number"><?php echo esc_html($result['number']); ?></div>
+                                    <div class="result-label"><?php echo esc_html($result['label']); ?></div>
+                                </div>
+                            <?php endforeach; ?>
                         </div>
-                        <a href="<?php echo home_url('/case-studies'); ?>" class="case-study-link">Read Full Case Study</a>
+                        <a href="<?php echo esc_url($case_study_link_url); ?>" class="case-study-link"><?php echo esc_html($case_study_link_text); ?></a>
                     </div>
                 </div>
             </div>
-        </section>
-
-        <!-- Local SEO Process -->
+        </section>        <!-- Local SEO Process -->
         <section class="local-seo-process">
             <div class="section-content">
-                <h2>Our Local SEO Process</h2>
+                <?php
+                $process_title = get_post_meta(get_the_ID(), '_local_seo_process_title', true) ?: $defaults['process_title'];
+                ?>
+                <h2><?php echo esc_html($process_title); ?></h2>
                 <div class="process-steps">
                     
+                    <?php for ($i = 1; $i <= 4; $i++): 
+                        $step_title = get_post_meta(get_the_ID(), "_local_seo_process_step_{$i}_title", true) ?: $defaults["process_step_{$i}_title"];
+                        $step_description = get_post_meta(get_the_ID(), "_local_seo_process_step_{$i}_description", true) ?: $defaults["process_step_{$i}_description"];
+                    ?>
                     <div class="process-step">
-                        <div class="step-number">1</div>
+                        <div class="step-number"><?php echo $i; ?></div>
                         <div class="step-content">
-                            <h3>Local Market Analysis</h3>
-                            <p>Analyze your local market, competitors, and opportunities for maximum impact.</p>
+                            <h3><?php echo esc_html($step_title); ?></h3>
+                            <p><?php echo esc_html($step_description); ?></p>
                         </div>
                     </div>
-
-                    <div class="process-step">
-                        <div class="step-number">2</div>
-                        <div class="step-content">
-                            <h3>Google My Business Setup</h3>
-                            <p>Optimize and verify your Google My Business profile for maximum visibility.</p>
-                        </div>
-                    </div>
-
-                    <div class="process-step">
-                        <div class="step-number">3</div>
-                        <div class="step-content">
-                            <h3>Citation Building</h3>
-                            <p>Build consistent citations across relevant local directories and platforms.</p>
-                        </div>
-                    </div>
-
-                    <div class="process-step">
-                        <div class="step-number">4</div>
-                        <div class="step-content">
-                            <h3>Monitor & Optimize</h3>
-                            <p>Continuously monitor performance and optimize for better local search results.</p>
-                        </div>
-                    </div>
+                    <?php endfor; ?>
 
                 </div>
             </div>
-        </section>
-
-        <!-- Local SEO Industries -->
+        </section>        <!-- Local SEO Industries -->
         <section class="local-seo-industries">
             <div class="section-content">
-                <h2>Local SEO by Industry</h2>
+                <?php
+                $industries_title = get_post_meta(get_the_ID(), '_local_seo_industries_title', true) ?: $defaults['industries_title'];
+                ?>
+                <h2><?php echo esc_html($industries_title); ?></h2>
                 <div class="industries-grid">
-                      <div class="industry-card">
-                        <h3>Healthcare & Medical</h3>
-                        <ul class="industry-features">
-                            <li>Medical practice optimization</li>
-                            <li>Patient review management</li>
-                            <li>Local health directory listings</li>
-                            <li>Service area targeting</li>
-                        </ul>
-                    </div>
-
+                    
+                    <?php for ($i = 1; $i <= 4; $i++): 
+                        $industry_title = get_post_meta(get_the_ID(), "_local_seo_industry_{$i}_title", true) ?: $defaults["industry_{$i}_title"];
+                        $industry_features = get_post_meta(get_the_ID(), "_local_seo_industry_{$i}_features", true) ?: $defaults["industry_{$i}_features"];
+                    ?>
                     <div class="industry-card">
-                        <h3>Legal Services</h3>
+                        <h3><?php echo esc_html($industry_title); ?></h3>
                         <ul class="industry-features">
-                            <li>Law firm local optimization</li>
-                            <li>Legal directory submissions</li>
-                            <li>Practice area targeting</li>
-                            <li>Professional review management</li>
+                            <?php foreach ((array)$industry_features as $feature): ?>
+                                <li><?php echo esc_html($feature); ?></li>
+                            <?php endforeach; ?>
                         </ul>
                     </div>
-
-                    <div class="industry-card">
-                        <h3>Home Services</h3>
-                        <ul class="industry-features">
-                            <li>Service area optimization</li>
-                            <li>Emergency service targeting</li>
-                            <li>Local contractor listings</li>
-                            <li>Seasonal campaign management</li>
-                        </ul>
-                    </div>
-
-                    <div class="industry-card">
-                        <h3>Retail & Restaurants</h3>
-                        <ul class="industry-features">
-                            <li>Location-based optimization</li>
-                            <li>Menu and product showcasing</li>
-                            <li>Event and promotion management</li>
-                            <li>Multi-location SEO</li>
-                        </ul>
-                    </div>
+                    <?php endfor; ?>
 
                 </div>
             </div>
