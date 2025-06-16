@@ -27,69 +27,67 @@ get_header(); ?>
     <section class="page-hero service-hero">
         <div class="container">
             <div class="hero-content">
-                <h1>UX/UI Optimization</h1>
-                <p class="hero-subtitle">Transform your existing website into a conversion machine through data-driven user experience optimization and interface improvements.</p>
+                <h1><?php echo get_post_meta(get_the_ID(), 'uxui_hero_title', true) ?: 'UX/UI Optimization'; ?></h1>
+                <p class="hero-subtitle"><?php echo get_post_meta(get_the_ID(), 'uxui_hero_subtitle', true) ?: 'Transform your existing website into a conversion machine through data-driven user experience optimization and interface improvements.'; ?></p>
                 <div class="hero-stats">
                     <div class="stat-item">
-                        <div class="stat-number">275%</div>
-                        <div class="stat-label">Average Conversion Improvement</div>
+                        <div class="stat-number"><?php echo get_post_meta(get_the_ID(), 'uxui_hero_stat1_number', true) ?: '275%'; ?></div>
+                        <div class="stat-label"><?php echo get_post_meta(get_the_ID(), 'uxui_hero_stat1_label', true) ?: 'Average Conversion Improvement'; ?></div>
                     </div>
                     <div class="stat-item">
-                        <div class="stat-number">85%</div>
-                        <div class="stat-label">User Satisfaction Increase</div>
+                        <div class="stat-number"><?php echo get_post_meta(get_the_ID(), 'uxui_hero_stat2_number', true) ?: '85%'; ?></div>
+                        <div class="stat-label"><?php echo get_post_meta(get_the_ID(), 'uxui_hero_stat2_label', true) ?: 'User Satisfaction Increase'; ?></div>
                     </div>
                     <div class="stat-item">
-                        <div class="stat-number">65%</div>
-                        <div class="stat-label">Bounce Rate Reduction</div>
+                        <div class="stat-number"><?php echo get_post_meta(get_the_ID(), 'uxui_hero_stat3_number', true) ?: '65%'; ?></div>
+                        <div class="stat-label"><?php echo get_post_meta(get_the_ID(), 'uxui_hero_stat3_label', true) ?: 'Bounce Rate Reduction'; ?></div>
                     </div>
                 </div>
                 <div class="hero-ctas">
-                    <a href="#contact" class="btn-primary streamlined">Get UX Audit</a>
-                    <a href="#case-study" class="btn-outline streamlined">View Case Study</a>
+                    <a href="#contact" class="btn-primary streamlined"><?php echo get_post_meta(get_the_ID(), 'uxui_hero_primary_button_text', true) ?: 'Get UX Audit'; ?></a>
+                    <a href="#case-study" class="btn-outline streamlined"><?php echo get_post_meta(get_the_ID(), 'uxui_hero_secondary_button_text', true) ?: 'View Case Study'; ?></a>
                 </div>
             </div>
         </div>
-    </section>
-
-    <!-- Service Overview -->
+    </section>    <!-- Service Overview -->
     <section class="service-overview">
         <div class="container">
             <div class="section-header">
-                <h2>Optimize Your Website for Maximum Performance</h2>
-                <p>Our UX/UI optimization service transforms underperforming websites into conversion powerhouses through systematic analysis, strategic improvements, and data-driven testing. We focus on enhancing user experience while dramatically improving your business metrics.</p>
+                <h2><?php echo get_post_meta(get_the_ID(), 'uxui_intro_title', true) ?: 'Optimize Your Website for Maximum Performance'; ?></h2>
+                <p><?php echo get_post_meta(get_the_ID(), 'uxui_intro_description', true) ?: 'Our UX/UI optimization service transforms underperforming websites into conversion powerhouses through systematic analysis, strategic improvements, and data-driven testing. We focus on enhancing user experience while dramatically improving your business metrics.'; ?></p>
             </div>
               <div class="features-grid">
                 <div class="feature-item">
                     <div class="feature-icon">
                         <i class="fas fa-search-plus"></i>
                     </div>
-                    <h3>Comprehensive UX Audit</h3>
-                    <p>Deep analysis of user behavior, conversion barriers, and optimization opportunities using advanced analytics.</p>
+                    <h3><?php echo get_post_meta(get_the_ID(), 'uxui_feature1_title', true) ?: 'Comprehensive UX Audit'; ?></h3>
+                    <p><?php echo get_post_meta(get_the_ID(), 'uxui_feature1_description', true) ?: 'Deep analysis of user behavior, conversion barriers, and optimization opportunities using advanced analytics.'; ?></p>
                 </div>
                 <div class="feature-item">
                     <div class="feature-icon">
                         <i class="fas fa-chart-line"></i>
                     </div>
-                    <h3>Conversion Rate Optimization</h3>
-                    <p>Strategic improvements to forms, CTAs, and user flow to maximize conversions and revenue.</p>
+                    <h3><?php echo get_post_meta(get_the_ID(), 'uxui_feature2_title', true) ?: 'Conversion Rate Optimization'; ?></h3>
+                    <p><?php echo get_post_meta(get_the_ID(), 'uxui_feature2_description', true) ?: 'Strategic improvements to forms, CTAs, and user flow to maximize conversions and revenue.'; ?></p>
                 </div>
                 <div class="feature-item">
                     <div class="feature-icon">
                         <i class="fas fa-mobile-alt"></i>
                     </div>
-                    <h3>Mobile Experience Enhancement</h3>
-                    <p>Optimize mobile user experience for the majority of your traffic with responsive design improvements.</p>
+                    <h3><?php echo get_post_meta(get_the_ID(), 'uxui_feature3_title', true) ?: 'Mobile Experience Enhancement'; ?></h3>
+                    <p><?php echo get_post_meta(get_the_ID(), 'uxui_feature3_description', true) ?: 'Optimize mobile user experience for the majority of your traffic with responsive design improvements.'; ?></p>
                 </div>
                 <div class="feature-item">
                     <div class="feature-icon">
                         <i class="fas fa-tachometer-alt"></i>
                     </div>
-                    <h3>Performance Optimization</h3>
-                    <p>Speed optimization and Core Web Vitals improvements for better user experience and SEO rankings.</p>
+                    <h3><?php echo get_post_meta(get_the_ID(), 'uxui_feature4_title', true) ?: 'Performance Optimization'; ?></h3>
+                    <p><?php echo get_post_meta(get_the_ID(), 'uxui_feature4_description', true) ?: 'Speed optimization and Core Web Vitals improvements for better user experience and SEO rankings.'; ?></p>
                 </div>
             </div>
         </div>
-    </section>    <!-- Case Study Section -->
+    </section><!-- Case Study Section -->
     <section id="case-study" class="case-study-section service-page-case-study">
         <div class="container">
             <div class="case-study-content">
