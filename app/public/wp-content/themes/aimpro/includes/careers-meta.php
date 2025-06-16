@@ -136,13 +136,25 @@ function aimpro_careers_meta_box_callback($post) {
         foreach ($jobs as $num => $job):
             $job_title = get_post_meta($post->ID, "careers_job{$num}_title", true) ?: $job['title'];
             $job_team = get_post_meta($post->ID, "careers_job{$num}_team", true) ?: $job['team'];
-            $job_type = get_post_meta($post->ID, "careers_job{$num}_type", true) ?: $job['type'];
-            $job_location = get_post_meta($post->ID, "careers_job{$num}_location", true) ?: $job['location'];
+            $job_type = get_post_meta($post->ID, "careers_job{$num}_type", true) ?: $job['type'];            $job_location = get_post_meta($post->ID, "careers_job{$num}_location", true) ?: $job['location'];
             $job_desc = get_post_meta($post->ID, "careers_job{$num}_desc", true) ?: $job['desc'];
             $job_requirements = get_post_meta($post->ID, "careers_job{$num}_requirements", true) ?: $job['requirements'];
+            $job_show = get_post_meta($post->ID, "careers_job{$num}_show", true);
+            
+            // Default to showing job if not set
+            if ($job_show === '') {
+                $job_show = '1';
+            }
         ?>
         <tr>
           <th colspan="2"><h4>Job <?php echo $num; ?>: <?php echo $job['title']; ?></h4></th>
+        </tr>
+        <tr>
+            <th><label for="careers_job<?php echo $num; ?>_show">Show This Job</label></th>
+            <td>
+                <input type="checkbox" id="careers_job<?php echo $num; ?>_show" name="careers_job<?php echo $num; ?>_show" value="1" <?php checked($job_show, '1'); ?> />
+                <label for="careers_job<?php echo $num; ?>_show">Display this job on the careers page</label>
+            </td>
         </tr>
         <tr>
             <th><label for="careers_job<?php echo $num; ?>_title">Job Title</label></th>
@@ -346,13 +358,37 @@ function aimpro_save_careers_meta($post_id) {
         $testimonial_fields = array(
             "careers_testimonial{$i}_quote" => 'sanitize_textarea_field',
             "careers_testimonial{$i}_author" => 'sanitize_text_field',
-            "careers_testimonial{$i}_title" => 'sanitize_text_field'
-        );
+            "careers_testimonial{$i}_title" => 'sanitize_text_field'        );
         
         foreach ($testimonial_fields as $field => $sanitize_func) {
             if (isset($_POST[$field])) {
                 update_post_meta($post_id, $field, $sanitize_func($_POST[$field]));
             }
+        }
+    }
+      // Save job opening fields
+    for ($i = 1; $i <= 6; $i++) {
+        $job_fields = array(
+            "careers_job{$i}_title" => 'sanitize_text_field',
+            "careers_job{$i}_team" => 'sanitize_text_field',
+            "careers_job{$i}_type" => 'sanitize_text_field',
+            "careers_job{$i}_location" => 'sanitize_text_field',
+            "careers_job{$i}_desc" => 'sanitize_textarea_field',
+            "careers_job{$i}_requirements" => 'sanitize_textarea_field'
+        );
+        
+        foreach ($job_fields as $field => $sanitize_func) {
+            if (isset($_POST[$field])) {
+                update_post_meta($post_id, $field, $sanitize_func($_POST[$field]));
+            }
+        }
+        
+        // Handle show/hide checkbox
+        $show_field = "careers_job{$i}_show";
+        if (isset($_POST[$show_field])) {
+            update_post_meta($post_id, $show_field, '1');
+        } else {
+            update_post_meta($post_id, $show_field, '0');
         }
     }
 }
