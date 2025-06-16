@@ -72,6 +72,7 @@ require_once get_template_directory() . '/includes/improve-roi-ads-meta.php';
 require_once get_template_directory() . '/includes/rank-higher-locally-meta.php';
 require_once get_template_directory() . '/includes/automate-marketing-meta.php';
 require_once get_template_directory() . '/includes/finance-meta.php';
+require_once get_template_directory() . '/includes/high-converting-website-meta.php';
 
 // Include helper functions
 require_once get_template_directory() . '/includes/helpers.php';
@@ -2088,7 +2089,7 @@ function aimpro_breadcrumbs() {
  * Add custom meta box for video upload in WordPress admin
  */
 
-// Add meta box for About page video
+ // Add meta box for About page video
 function aimpro_add_about_video_meta_box() {
     global $post;
     if (empty($post)) return;
