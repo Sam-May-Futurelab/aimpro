@@ -1169,24 +1169,33 @@
     margin-top: 40px;
 }
 
-/* Override page-templates.css with more specific selectors */
+/* BENEFIT CARDS - COMPREHENSIVE ROOT STYLING */
+/* This affects all benefit cards across all pages */
 .benefits-grid .benefit-card,
 .benefits-grid-2x2 .benefit-card,
 .benefits-grid-4 .benefit-card,
+.benefits-section .benefit-card,
 .whitelabel-services .benefit-card,
 .local-seo-industries .benefit-card,
-.local-seo-tools .benefit-card {
+.local-seo-tools .benefit-card,
+.automotive-services .benefit-card,
+.professional-services .benefit-card,
+.coaches-consultants-services .benefit-card,
+.home-garden-services .benefit-card {
     background: #ffffff !important;
-    border-radius: 12px;
-    padding: 20px !important;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    border-top: 3px solid #F15A25;
+    border-radius: 8px;
+    padding: 12px !important;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.06);
+    transition: all 0.3s ease;
+    border-top: 2px solid #F15A25;
     border: 1px solid #e5e7eb;
     height: 100%;
     display: flex;
     flex-direction: column;
     backdrop-filter: none;
+    position: relative;
+    overflow: hidden;
+    text-align: center;
 }
 
 .benefits-grid .benefit-card:hover,
@@ -1194,49 +1203,23 @@
 .benefits-grid-4 .benefit-card:hover,
 .whitelabel-services .benefit-card:hover,
 .local-seo-industries .benefit-card:hover,
-.local-seo-tools .benefit-card:hover {
+.local-seo-tools .benefit-card:hover,
+.automotive-services .benefit-card:hover {
     transform: translateY(-3px);
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    border-color: #F15A25;
 }
 
-.benefits-grid .benefit-card h3,
-.benefits-grid-2x2 .benefit-card h3,
-.benefits-grid-4 .benefit-card h3,
-.whitelabel-services .benefit-card h3,
-.local-seo-industries .benefit-card h3,
-.local-seo-tools .benefit-card h3 {
-    font-size: 18px !important;
-    font-weight: 700;
-    margin-bottom: 12px !important;
-    color: #1e293b;
-}
-
-.benefits-grid .benefit-card p,
-.benefits-grid-2x2 .benefit-card p,
-.benefits-grid-4 .benefit-card p,
-.whitelabel-services .benefit-card p,
-.local-seo-industries .benefit-card p,
-.local-seo-tools .benefit-card p {
-    font-size: 14px !important;
-    line-height: 1.5;
-    color: #64748b;
-    margin-bottom: 12px !important;
-}
-
+/* Benefit Card Icons - Simple FontAwesome */
 .benefits-grid .benefit-card .benefit-icon,
 .benefits-grid-2x2 .benefit-card .benefit-icon,
 .benefits-grid-4 .benefit-card .benefit-icon,
 .whitelabel-services .benefit-card .benefit-icon,
 .local-seo-industries .benefit-card .benefit-icon,
-.local-seo-tools .benefit-card .benefit-icon {
-    width: 50px;
-    height: 50px;
-    background: rgba(241, 90, 37, 0.1);
-    border-radius: 10px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 15px !important;
+.local-seo-tools .benefit-card .benefit-icon,
+.automotive-services .benefit-card .benefit-icon {
+    margin: 0 auto 8px auto;
+    text-align: center;
     flex-shrink: 0;
 }
 
@@ -1245,21 +1228,83 @@
 .benefits-grid-4 .benefit-card .benefit-icon i,
 .whitelabel-services .benefit-card .benefit-icon i,
 .local-seo-industries .benefit-card .benefit-icon i,
-.local-seo-tools .benefit-card .benefit-icon i {
-    font-size: 22px;
+.local-seo-tools .benefit-card .benefit-icon i,
+.automotive-services .benefit-card .benefit-icon i {
+    font-size: 28px;
     color: #F15A25;
+    transition: transform 0.3s ease;
+    display: block;
 }
 
+.benefits-grid .benefit-card:hover .benefit-icon i,
+.benefits-grid-2x2 .benefit-card:hover .benefit-icon i,
+.benefits-grid-4 .benefit-card:hover .benefit-icon i,
+.whitelabel-services .benefit-card:hover .benefit-icon i,
+.local-seo-industries .benefit-card:hover .benefit-icon i,
+.local-seo-tools .benefit-card:hover .benefit-icon i,
+.automotive-services .benefit-card:hover .benefit-icon i {
+    transform: scale(1.1);
+}
+
+/* Benefit Card Content */
+.benefits-grid .benefit-card .benefit-content,
+.benefits-grid-2x2 .benefit-card .benefit-content,
+.benefits-grid-4 .benefit-card .benefit-content,
+.whitelabel-services .benefit-card .benefit-content,
+.local-seo-industries .benefit-card .benefit-content,
+.local-seo-tools .benefit-card .benefit-content,
+.automotive-services .benefit-card .benefit-content {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Benefit Card Headings */
+.benefits-grid .benefit-card h3,
+.benefits-grid-2x2 .benefit-card h3,
+.benefits-grid-4 .benefit-card h3,
+.whitelabel-services .benefit-card h3,
+.local-seo-industries .benefit-card h3,
+.local-seo-tools .benefit-card h3,
+.automotive-services .benefit-card h3 {
+    font-size: 20px !important;
+    font-weight: 700;
+    margin-bottom: 10px !important;
+    margin-top: 8px !important;
+    padding-top: 8px !important;
+    color: #1e293b;
+    line-height: 1.3;
+}
+
+/* Benefit Card Descriptions */
+.benefits-grid .benefit-card p,
+.benefits-grid-2x2 .benefit-card p,
+.benefits-grid-4 .benefit-card p,
+.whitelabel-services .benefit-card p,
+.local-seo-industries .benefit-card p,
+.local-seo-tools .benefit-card p,
+.automotive-services .benefit-card p {
+    font-size: 15px !important;
+    line-height: 1.5;
+    color: #64748b;
+    margin-bottom: 12px !important;
+    flex-grow: 1;
+}
+
+/* Feature Lists */
 .benefits-grid .benefit-card .feature-list,
 .benefits-grid-2x2 .benefit-card .feature-list,
 .benefits-grid-4 .benefit-card .feature-list,
 .whitelabel-services .benefit-card .feature-list,
 .local-seo-industries .benefit-card .feature-list,
-.local-seo-tools .benefit-card .feature-list {
+.local-seo-tools .benefit-card .feature-list,
+.automotive-services .benefit-card .feature-list {
     margin: 0;
     padding: 0;
     list-style: none;
-    flex-grow: 1;
+    margin-top: auto;
+    text-align: left;
+    max-width: 100%;
 }
 
 .benefits-grid .benefit-card .feature-list li,
@@ -1267,13 +1312,16 @@
 .benefits-grid-4 .benefit-card .feature-list li,
 .whitelabel-services .benefit-card .feature-list li,
 .local-seo-industries .benefit-card .feature-list li,
-.local-seo-tools .benefit-card .feature-list li {
-    font-size: 13px;
+.local-seo-tools .benefit-card .feature-list li,
+.automotive-services .benefit-card .feature-list li {
+    font-size: 14px;
     color: #64748b;
-    padding: 3px 0;
-    margin-bottom: 3px;
+    padding: 1px 0;
+    margin-bottom: 1px;
     position: relative;
-    padding-left: 20px;
+    padding-left: 25px;
+    line-height: 1.3;
+    text-align: left;
 }
 
 .benefits-grid .benefit-card .feature-list li:before,
@@ -1281,23 +1329,29 @@
 .benefits-grid-4 .benefit-card .feature-list li:before,
 .whitelabel-services .benefit-card .feature-list li:before,
 .local-seo-industries .benefit-card .feature-list li:before,
-.local-seo-tools .benefit-card .feature-list li:before {
-    content: "•";
-    color: #F15A25;
+.local-seo-tools .benefit-card .feature-list li:before,
+.automotive-services .benefit-card .feature-list li:before {
+    content: "";
+    background-image: url('../../assets/images/aimpro-target.png');
+    background-size: 14px 14px;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 14px;
+    height: 14px;
     position: absolute;
     left: 0;
-    font-weight: bold;
+    top: 2px;
 }
 
-/* Compact benefit cards - even more compact for dense sections */
+/* Compact benefit cards - for dense sections */
 .benefits-grid .benefit-card.compact,
 .benefits-grid-2x2 .benefit-card.compact,
 .benefits-grid-4 .benefit-card.compact,
 .whitelabel-services .benefit-card.compact,
 .local-seo-industries .benefit-card.compact,
-.local-seo-tools .benefit-card.compact {
-    padding: 15px !important;
-    margin-bottom: 10px;
+.local-seo-tools .benefit-card.compact,
+.automotive-services .benefit-card.compact {
+    padding: 10px !important;
 }
 
 .benefits-grid .benefit-card.compact h3,
@@ -1305,7 +1359,8 @@
 .benefits-grid-4 .benefit-card.compact h3,
 .whitelabel-services .benefit-card.compact h3,
 .local-seo-industries .benefit-card.compact h3,
-.local-seo-tools .benefit-card.compact h3 {
+.local-seo-tools .benefit-card.compact h3,
+.automotive-services .benefit-card.compact h3 {
     font-size: 16px !important;
     margin-bottom: 8px !important;
 }
@@ -1315,7 +1370,8 @@
 .benefits-grid-4 .benefit-card.compact p,
 .whitelabel-services .benefit-card.compact p,
 .local-seo-industries .benefit-card.compact p,
-.local-seo-tools .benefit-card.compact p {
+.local-seo-tools .benefit-card.compact p,
+.automotive-services .benefit-card.compact p {
     font-size: 13px !important;
     margin-bottom: 8px !important;
     line-height: 1.4;
