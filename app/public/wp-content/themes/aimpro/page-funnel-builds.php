@@ -57,40 +57,39 @@ get_header(); ?>
         </div>
     </section>    <!-- Service Overview -->
     <section class="service-overview">
-        <div class="container">
-            <div class="section-header">
-                <h2><?php echo get_post_meta(get_the_ID(), 'fb_intro_title', true) ?: 'Sales Funnels That Actually Convert'; ?></h2>
-                <p><?php echo get_post_meta(get_the_ID(), 'fb_intro_description', true) ?: 'Our sales funnel development service creates systematic customer journeys that guide prospects from initial awareness to loyal customers. Every funnel is strategically designed to maximize conversions, increase average order value, and build long-term customer relationships.'; ?></p>
+        <div class="container">            <div class="section-header">
+                <h2>Sales Funnels That Drive Consistent Results</h2>
+                <p>Our high-converting sales funnels are strategically designed to guide your prospects through a seamless journey from awareness to purchase, with carefully crafted touchpoints that overcome objections and build trust at every step.</p>
             </div>
             
             <div class="features-grid">
                 <div class="feature-card">
                     <div class="feature-icon">
-                        <i class="fas fa-route"></i>
+                        <i class="fas fa-map-marked-alt"></i>
                     </div>
-                    <h3><?php echo get_post_meta(get_the_ID(), 'fb_feature1_title', true) ?: 'Strategic Customer Journey'; ?></h3>
-                    <p><?php echo get_post_meta(get_the_ID(), 'fb_feature1_description', true) ?: 'Carefully mapped customer journeys that guide prospects through awareness, consideration, and purchase stages.'; ?></p>
+                    <h3>End-to-End Journey Mapping</h3>
+                    <p>Comprehensive customer journey design that targets each stage of awareness with appropriate messaging and offers.</p>
                 </div>
                 <div class="feature-card">
                     <div class="feature-icon">
-                        <i class="fas fa-layer-group"></i>
+                        <i class="fas fa-robot"></i>
                     </div>
-                    <h3><?php echo get_post_meta(get_the_ID(), 'fb_feature2_title', true) ?: 'Multi-Step Conversion'; ?></h3>
-                    <p><?php echo get_post_meta(get_the_ID(), 'fb_feature2_description', true) ?: 'Sophisticated multi-step funnels that build trust and value before asking for the sale.'; ?></p>
+                    <h3>Behavior-Based Automation</h3>
+                    <p>Intelligent automation that responds to user behavior and personalizes the experience to increase conversion rates.</p>
                 </div>
                 <div class="feature-card">
                     <div class="feature-icon">
-                        <i class="fas fa-chart-pie"></i>
+                        <i class="fas fa-project-diagram"></i>
                     </div>
-                    <h3><?php echo get_post_meta(get_the_ID(), 'fb_feature3_title', true) ?: 'Revenue Optimization'; ?></h3>
-                    <p><?php echo get_post_meta(get_the_ID(), 'fb_feature3_description', true) ?: 'Funnels designed to maximize customer lifetime value through upsells, cross-sells, and retention strategies.'; ?></p>
+                    <h3>Multi-Channel Integration</h3>
+                    <p>Seamless integration across email, SMS, and retargeting to maintain engagement throughout the sales process.</p>
                 </div>
                 <div class="feature-card">
                     <div class="feature-icon">
-                        <i class="fas fa-sync-alt"></i>
+                        <i class="fas fa-chart-line"></i>
                     </div>
-                    <h3><?php echo get_post_meta(get_the_ID(), 'fb_feature4_title', true) ?: 'Automated Systems'; ?></h3>
-                    <p><?php echo get_post_meta(get_the_ID(), 'fb_feature4_description', true) ?: 'Fully automated funnel systems that work 24/7 to generate leads and sales without manual intervention.'; ?></p>
+                    <h3>Conversion Optimization</h3>
+                    <p>Continuous testing and refinement to maximize conversions at each step of your sales funnel.</p>
                 </div>
             </div>
         </div>

@@ -18,6 +18,19 @@ function add_automate_marketing_meta_boxes() {
 }
 add_action('add_meta_boxes', 'add_automate_marketing_meta_boxes', 11);
 
+// Enqueue media scripts for image uploads
+function enqueue_automate_marketing_admin_scripts($hook) {
+    global $post;
+    
+    if ($hook == 'post-new.php' || $hook == 'post.php') {
+        if (isset($post) && get_post_type($post) === 'page') {
+            wp_enqueue_media();
+            wp_enqueue_script('jquery');
+        }
+    }
+}
+add_action('admin_enqueue_scripts', 'enqueue_automate_marketing_admin_scripts');
+
 function automate_marketing_meta_box_callback($post) {
     // Only show on automate marketing page template
     $page_template = get_page_template_slug($post->ID);
@@ -34,11 +47,10 @@ function automate_marketing_meta_box_callback($post) {
 
     // Get existing values
     $header_title = get_post_meta($post->ID, '_automate_marketing_header_title', true) ?: 'Automate Marketing';
-    $header_subtitle = get_post_meta($post->ID, '_automate_marketing_header_subtitle', true) ?: 'Streamline your marketing processes with intelligent automation that works 24/7';
-
-    // Solution Overview
+    $header_subtitle = get_post_meta($post->ID, '_automate_marketing_header_subtitle', true) ?: 'Streamline your marketing processes with intelligent automation that works 24/7';    // Solution Overview
     $overview_title = get_post_meta($post->ID, '_automate_marketing_overview_title', true) ?: 'Transform Manual Tasks Into Automated Success';
     $overview_content = get_post_meta($post->ID, '_automate_marketing_overview_content', true) ?: 'Marketing automation eliminates repetitive tasks while delivering personalized experiences at scale. Our comprehensive automation strategies help you nurture leads, engage customers, and drive conversions without constant manual intervention, freeing your team to focus on strategy and growth.';
+    $overview_image = get_post_meta($post->ID, '_automate_marketing_overview_image', true);
     
     // Challenges
     $challenges_title = get_post_meta($post->ID, '_automate_marketing_challenges_title', true) ?: 'Marketing Automation Challenges We Solve:';
@@ -307,14 +319,26 @@ function automate_marketing_meta_box_callback($post) {
         }
         .automate-marketing-meta .repeater-field input {
             margin-bottom: 5px;
-        }
-        .automate-marketing-meta h3 {
+        }        .automate-marketing-meta h3 {
             margin-top: 30px;
             margin-bottom: 15px;
             padding: 10px;
             background: #0073aa;
             color: white;
             border-radius: 3px;
+        }
+        .automate-marketing-meta .image-preview {
+            max-width: 200px;
+            height: auto;
+            display: block;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        .automate-marketing-meta .upload-button,
+        .automate-marketing-meta .remove-button {
+            margin-right: 10px;
+            margin-bottom: 10px;
         }
     </style>
 
@@ -355,13 +379,27 @@ function automate_marketing_meta_box_callback($post) {
                            value="<?php echo esc_attr($overview_title); ?>"
                            placeholder="Transform Manual Tasks Into Automated Success" />
                 </td>
-            </tr>
-            <tr>
+            </tr>            <tr>
                 <th><label for="automate_marketing_overview_content">Overview Content</label></th>
                 <td>
                     <textarea id="automate_marketing_overview_content" 
                               name="automate_marketing_overview_content"
                               placeholder="Marketing automation eliminates repetitive tasks..."><?php echo esc_textarea($overview_content); ?></textarea>
+                </td>
+            </tr>            <tr>
+                <th><label for="automate_marketing_overview_image">Overview Image</label></th>
+                <td>
+                    <div class="image-upload-container">
+                        <input type="hidden" 
+                               id="automate_marketing_overview_image" 
+                               name="automate_marketing_overview_image" 
+                               value="<?php echo esc_attr($overview_image); ?>" />
+                        <button type="button" class="button upload-button" data-target="automate_marketing_overview_image">Upload Image</button>
+                        <?php if ($overview_image): ?>
+                            <img src="<?php echo esc_url($overview_image); ?>" class="image-preview" />
+                            <button type="button" class="button remove-button" data-target="automate_marketing_overview_image">Remove</button>
+                        <?php endif; ?>
+                    </div>
                 </td>
             </tr>
         </table>
@@ -937,12 +975,56 @@ function automate_marketing_meta_box_callback($post) {
             var container = $(this).prev('div');
             var newTool = '<input type="text" name="automate_marketing_tools_categories[' + categoryIndex + '][tools][]" placeholder="Tool" />';
             container.append(newTool);
-        });
-
-        // Remove repeater item
+        });        // Remove repeater item
         $(document).on('click', '.remove-repeater-item', function(e) {
             e.preventDefault();
             $(this).closest('.repeater-field').remove();
+        });
+
+        // Image upload functionality
+        $('.automate-marketing-meta .upload-button').click(function(e) {
+            e.preventDefault();
+            var target = $(this).data('target');
+            var container = $(this).closest('.image-upload-container');
+            var frame = wp.media({
+                title: 'Select Image',
+                multiple: false
+            });
+            
+            frame.on('select', function() {
+                var attachment = frame.state().get('selection').first().toJSON();
+                $('#' + target).val(attachment.url);
+                
+                // Update image preview without page refresh
+                if (container.find('.image-preview').length) {
+                    // Update existing preview
+                    container.find('.image-preview').attr('src', attachment.url);
+                } else {
+                    // Add new preview and remove button
+                    container.append('<img src="' + attachment.url + '" class="image-preview" style="max-width: 200px; height: auto; display: block; margin: 10px 0;" />');
+                    container.append('<button type="button" class="button remove-button" data-target="' + target + '">Remove</button>');
+                    
+                    // Add click handler for the new remove button
+                    container.find('.remove-button').on('click', function(e) {
+                        e.preventDefault();
+                        var target = $(this).data('target');
+                        $('#' + target).val('');
+                        $(this).prev('.image-preview').remove();
+                        $(this).remove();
+                    });
+                }
+            });
+            
+            frame.open();
+        });
+
+        // Remove image
+        $('.automate-marketing-meta .remove-button').click(function(e) {
+            e.preventDefault();
+            var target = $(this).data('target');
+            $('#' + target).val('');
+            $(this).prev('.image-preview').remove();
+            $(this).remove();
         });
     });
     </script>
@@ -1000,9 +1082,9 @@ function save_automate_marketing_meta_box_data($post_id) {
     // Save all fields
     $fields = [
         'automate_marketing_header_title',
-        'automate_marketing_header_subtitle',
-        'automate_marketing_overview_title',
+        'automate_marketing_header_subtitle',        'automate_marketing_overview_title',
         'automate_marketing_overview_content',
+        'automate_marketing_overview_image',
         'automate_marketing_challenges_title',
         'automate_marketing_challenges',
         'automate_marketing_solutions_title',

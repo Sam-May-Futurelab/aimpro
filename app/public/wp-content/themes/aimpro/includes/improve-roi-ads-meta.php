@@ -18,6 +18,19 @@ function add_improve_roi_ads_meta_boxes() {
 }
 add_action('add_meta_boxes', 'add_improve_roi_ads_meta_boxes', 11);
 
+// Enqueue media scripts for image uploads
+function enqueue_improve_roi_ads_admin_scripts($hook) {
+    global $post;
+    
+    if ($hook == 'post-new.php' || $hook == 'post.php') {
+        if (isset($post) && get_post_type($post) === 'page') {
+            wp_enqueue_media();
+            wp_enqueue_script('jquery');
+        }
+    }
+}
+add_action('admin_enqueue_scripts', 'enqueue_improve_roi_ads_admin_scripts');
+
 function improve_roi_ads_meta_box_callback($post) {
     // Only show on improve ROI ads page template
     $page_template = get_page_template_slug($post->ID);
@@ -34,11 +47,10 @@ function improve_roi_ads_meta_box_callback($post) {
 
     // Get existing values
     $header_title = get_post_meta($post->ID, '_improve_roi_ads_header_title', true) ?: 'Improve ROI from Ads';
-    $header_subtitle = get_post_meta($post->ID, '_improve_roi_ads_header_subtitle', true) ?: 'Maximize your advertising spend with data-driven optimization strategies that deliver measurable results';
-
-    // Solution Overview
+    $header_subtitle = get_post_meta($post->ID, '_improve_roi_ads_header_subtitle', true) ?: 'Maximize your advertising spend with data-driven optimization strategies that deliver measurable results';    // Solution Overview
     $overview_title = get_post_meta($post->ID, '_improve_roi_ads_overview_title', true) ?: 'Turn Ad Spend Into Profitable Growth';
     $overview_content = get_post_meta($post->ID, '_improve_roi_ads_overview_content', true) ?: 'Every advertising dollar should drive real business results. Our comprehensive ad optimization strategies combine advanced analytics, conversion tracking, and continuous testing to maximize your return on ad spend (ROAS) while reducing customer acquisition costs and improving campaign performance.';
+    $overview_image = get_post_meta($post->ID, '_improve_roi_ads_overview_image', true);
     
     // Challenges
     $challenges_title = get_post_meta($post->ID, '_improve_roi_ads_challenges_title', true) ?: 'Ad ROI Challenges We Solve:';
@@ -324,14 +336,26 @@ function improve_roi_ads_meta_box_callback($post) {
         }
         .improve-roi-ads-meta .repeater-field input {
             margin-bottom: 5px;
-        }
-        .improve-roi-ads-meta h3 {
+        }        .improve-roi-ads-meta h3 {
             margin-top: 30px;
             margin-bottom: 15px;
             padding: 10px;
             background: #0073aa;
             color: white;
             border-radius: 3px;
+        }
+        .improve-roi-ads-meta .image-preview {
+            max-width: 200px;
+            height: auto;
+            display: block;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        .improve-roi-ads-meta .upload-button,
+        .improve-roi-ads-meta .remove-button {
+            margin-right: 10px;
+            margin-bottom: 10px;
         }
     </style>
 
@@ -372,13 +396,28 @@ function improve_roi_ads_meta_box_callback($post) {
                            value="<?php echo esc_attr($overview_title); ?>"
                            placeholder="Turn Ad Spend Into Profitable Growth" />
                 </td>
-            </tr>
-            <tr>
+            </tr>            <tr>
                 <th><label for="improve_roi_ads_overview_content">Overview Content</label></th>
                 <td>
                     <textarea id="improve_roi_ads_overview_content" 
                               name="improve_roi_ads_overview_content"
                               placeholder="Every advertising dollar should drive real business results..."><?php echo esc_textarea($overview_content); ?></textarea>
+                </td>
+            </tr>
+            <tr>
+                <th><label for="improve_roi_ads_overview_image">Overview Image</label></th>
+                <td>
+                    <div class="image-upload-container">
+                        <input type="hidden" 
+                               id="improve_roi_ads_overview_image" 
+                               name="improve_roi_ads_overview_image" 
+                               value="<?php echo esc_attr($overview_image); ?>" />
+                        <button type="button" class="button upload-button" data-target="improve_roi_ads_overview_image">Upload Image</button>
+                        <?php if ($overview_image): ?>
+                            <img src="<?php echo esc_url($overview_image); ?>" class="image-preview" />
+                            <button type="button" class="button remove-button" data-target="improve_roi_ads_overview_image">Remove</button>
+                        <?php endif; ?>
+                    </div>
                 </td>
             </tr>
         </table>
@@ -969,13 +1008,60 @@ function improve_roi_ads_meta_box_callback($post) {
             var container = $(this).prev('div');
             var newItem = '<input type="text" name="improve_roi_ads_metrics[' + metricIndex + '][items][]" placeholder="Metric item" />';
             container.append(newItem);
-        });
-
-        // Remove repeater item
+        });        // Remove repeater item
         $(document).on('click', '.remove-repeater-item', function(e) {
             e.preventDefault();
             $(this).closest('.repeater-field').remove();
         });
+
+        // Image upload functionality
+        $('.upload-button').click(function(e) {
+            e.preventDefault();
+            var target = $(this).data('target');
+            var container = $(this).closest('.image-upload-container');
+            var frame = wp.media({
+                title: 'Select Image',
+                multiple: false
+            });
+            
+            frame.on('select', function() {
+                var attachment = frame.state().get('selection').first().toJSON();
+                $('#' + target).val(attachment.url);
+                
+                // Update image preview without page refresh
+                if (container.find('.image-preview').length) {
+                    // Update existing preview
+                    container.find('.image-preview').attr('src', attachment.url);
+                } else {
+                    // Add new preview and remove button
+                    container.append('<img src="' + attachment.url + '" class="image-preview" />');
+                    container.append('<button type="button" class="button remove-button" data-target="' + target + '">Remove</button>');
+                    
+                    // Add click handler for the new remove button
+                    container.find('.remove-button').on('click', function(e) {
+                        e.preventDefault();
+                        var target = $(this).data('target');
+                        $('#' + target).val('');
+                        $(this).prev('.image-preview').remove();
+                        $(this).remove();
+                    });
+                }
+            });
+            
+            frame.open();
+        });
+
+        // Remove image
+        $('.remove-button').click(function(e) {
+            e.preventDefault();
+            var target = $(this).data('target');
+            $('#' + target).val('');
+            $(this).prev('.image-preview').remove();
+            $(this).remove();
+        });
+
+        // Ensure form has proper enctype for file uploads
+        $('#post').attr('enctype', 'multipart/form-data');
     });
     </script>
     <?php
@@ -1032,9 +1118,9 @@ function save_improve_roi_ads_meta_box_data($post_id) {
     // Save all fields
     $fields = [
         'improve_roi_ads_header_title',
-        'improve_roi_ads_header_subtitle',
-        'improve_roi_ads_overview_title',
+        'improve_roi_ads_header_subtitle',        'improve_roi_ads_overview_title',
         'improve_roi_ads_overview_content',
+        'improve_roi_ads_overview_image',
         'improve_roi_ads_challenges_title',
         'improve_roi_ads_challenges',
         'improve_roi_ads_methods_title',

@@ -46,9 +46,14 @@ get_header(); ?>
                                 ?>
                             </ul>
                         </div>
-                    </div>
-                    <div class="overview-image">
-                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/solutions/ad-roi-overview.jpg" alt="Ad ROI Optimization Strategy" />
+                    </div>                    <div class="overview-image">
+                        <?php 
+                        $overview_image = get_post_meta(get_the_ID(), '_improve_roi_ads_overview_image', true);
+                        if ($overview_image): ?>
+                            <img src="<?php echo esc_url($overview_image); ?>" alt="Ad ROI Optimization Strategy" />
+                        <?php else: ?>
+                            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/solutions/ad-roi-overview.jpg" alt="Ad ROI Optimization Strategy" />
+                        <?php endif; ?>
                     </div>
                 </div>
             </div>
