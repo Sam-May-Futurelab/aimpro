@@ -351,32 +351,25 @@ get_header(); ?>
                     <div class="form-message error">
                         <p><strong>Error:</strong> There was a problem submitting your request. Please try again or contact us directly.</p>
                     </div>
-                <?php endif; ?>
-                  <form class="lead-magnet-form" id="lead-magnet-form" method="post" action="<?php echo admin_url('admin-post.php'); ?>" novalidate>
-                    <?php wp_nonce_field('lead_magnet_submission', 'lead_magnet_nonce'); ?>
-                    <input type="hidden" name="action" value="lead_magnet_form">
-                    <input type="hidden" name="lead_magnet_form" value="1">
-                    
-                    <div class="form-group">
-                        <label for="lead_name"><?php echo aimpro_get_field('lead_magnet_name_label', 'Full Name *'); ?></label>
-                        <input type="text" id="lead_name" name="lead_name" placeholder="Enter your full name" required>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="lead_email"><?php echo aimpro_get_field('lead_magnet_email_label', 'Email Address *'); ?></label>
-                        <input type="email" id="lead_email" name="lead_email" placeholder="Enter your email address" required>
-                    </div>
-                      <div class="form-group">
-                        <label for="lead_phone"><?php echo aimpro_get_field('lead_magnet_phone_label', 'Phone Number *'); ?></label>
-                        <input type="tel" id="lead_phone" name="lead_phone" placeholder="Enter your phone number" required>
-                    </div>
-                    
-                    <button type="submit" class="btn btn-primary large submit-btn">
-                        <?php echo aimpro_get_field('lead_magnet_submit_text', 'GET FREE EBOOK NOW'); ?>
-                    </button>
-                    
-                    <p class="privacy-notice"><?php echo aimpro_get_field('lead_magnet_privacy_text', 'We respect your privacy and will never share your information. <a href="/privacy-policy">Privacy Policy</a>'); ?></p>
-                </form>
+                <?php endif; ?>                <iframe
+                    src="https://api.leadconnectorhq.com/widget/form/urFhaxQ2JKbdOn5YtUxv"
+                    style="width:100%;height:100%;border:none;border-radius:3px"
+                    id="inline-urFhaxQ2JKbdOn5YtUxv" 
+                    data-layout="{'id':'INLINE'}"
+                    data-trigger-type="alwaysShow"
+                    data-trigger-value=""
+                    data-activation-type="alwaysActivated"
+                    data-activation-value=""
+                    data-deactivation-type="neverDeactivate"
+                    data-deactivation-value=""
+                    data-form-name="Digital Marketing Guide - Aimpro Website"
+                    data-height="432"
+                    data-layout-iframe-id="inline-urFhaxQ2JKbdOn5YtUxv"
+                    data-form-id="urFhaxQ2JKbdOn5YtUxv"
+                    title="Digital Marketing Guide - Aimpro Website"
+                        >
+                </iframe>
+                <script src="https://link.msgsndr.com/js/form_embed.js"></script>
             </div>
         </div>
     </div>
