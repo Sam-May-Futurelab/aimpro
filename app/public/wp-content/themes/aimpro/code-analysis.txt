@@ -1,0 +1,31 @@
+# Code Analysis Report - Aimpro Theme
+
+## Analysis Summary
+- Total files analyzed: 170
+- PHP files: ~60
+- CSS files: ~15  
+- JS files: ~8
+
+## Potential Areas for Cleanup:
+
+### 1. UNUSED CSS CLASSES
+Classes that might not be used in templates:
+
+### 2. UNUSED PHP FUNCTIONS  
+Functions that might not be called:
+
+### 3. DUPLICATE CODE
+Similar code patterns that could be consolidated:
+
+### 4. LARGE FILES
+Files that could be optimized:
+
+### 5. UNUSED ASSETS
+Images/resources not referenced:
+
+## Next Steps:
+1. Check CSS class usage across PHP templates
+2. Analyze function calls and dependencies  
+3. Look for code duplication patterns
+4. Identify oversized files
+5. Check for unused media assets

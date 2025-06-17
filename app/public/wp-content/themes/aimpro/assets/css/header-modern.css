@@ -152,12 +152,15 @@
     overflow: visible;
     padding-top: 10px;
     margin-top: 0;
-}
-
-/* Mega menu styling */
-.mega-menu {
+    width: 1000px;
     background-color: #0f172a !important;
     border: 1px solid rgba(241, 90, 37, 0.2);
+}
+
+/* Simple fix: if mega menu would hang off left, move it right */
+.nav-item-mega .mega-menu {
+    left: max(30px, calc(50% - 200px));
+    transform: none;
 }
 
 /* Dropdown menu styling */
@@ -186,12 +189,18 @@ body.light-theme .dropdown-menu {
 }
 
 /* Show menu on hover */
-.nav-item-dropdown:hover .dropdown-menu,
-.nav-item-mega:hover .mega-menu {
+.nav-item-dropdown:hover .dropdown-menu {
     opacity: 1;
     visibility: visible;
     pointer-events: all;
     transform: translateX(-50%) translateY(0);
+}
+
+.nav-item-mega:hover .mega-menu {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: all;
+    transform: none !important;
 }
 
 /* Auto-adjust positioning for edge items */
@@ -282,9 +291,6 @@ body.light-theme .dropdown-menu a:hover {
 
 /* Mega Menu */
 .mega-menu {
-    width: auto;
-    min-width: 250px;
-    max-width: 1200px;
     padding: 1.5rem;
     height: 450px !important; /* FORCE a fixed height that covers all content */
     overflow: visible !important; /* Make sure content shows */
@@ -444,23 +450,51 @@ body.light-theme .mega-menu-list a:hover {
     height: 18px;
     cursor: pointer;
     padding: 4px;
+    border: none;
+    background: transparent;
+    position: relative;
+    z-index: 1001;
 }
 
+.mobile-menu-toggle .hamburger-bar,
 .mobile-menu-toggle span {
     width: 100%;
     height: 2px;
     background: var(--text-primary);
     border-radius: 1px;
     transition: all 0.3s ease;
+    display: block;
 }
 
+.mobile-menu-toggle:hover .hamburger-bar,
 .mobile-menu-toggle:hover span {
     background: var(--primary-orange);
+}
+
+/* Hamburger Animation */
+.mobile-menu-toggle.active .hamburger-bar:nth-child(1) {
+    transform: rotate(45deg) translate(6px, 6px);
+}
+
+.mobile-menu-toggle.active .hamburger-bar:nth-child(2) {
+    opacity: 0;
+    transform: scale(0);
+}
+
+.mobile-menu-toggle.active .hamburger-bar:nth-child(3) {    transform: rotate(-45deg) translate(6px, -6px);
 }
 
 /* ============================================
    RESPONSIVE DESIGN
    ============================================ */
+
+/* Ensure mega menu doesn't get too wide on very large screens */
+@media (min-width: 1400px) {
+    .mega-menu {
+        width: 1200px;
+        max-width: 1200px;
+    }
+}
 
 @media (max-width: 1024px) {
     .header-content {
@@ -468,10 +502,11 @@ body.light-theme .mega-menu-list a:hover {
     }
     
     .mega-menu {
-        width: auto;
-        min-width: 600px;
-        max-width: 800px;
-        padding: 1.5rem;
+        width: 700px;
+    }
+    
+    .nav-item-mega .mega-menu {
+        left: clamp(350px, 50%, calc(100vw - 350px));
     }
     
     .mega-menu-grid {
@@ -486,8 +521,11 @@ body.light-theme .mega-menu-list a:hover {
 
 @media (max-width: 900px) {
     .mega-menu {
-        min-width: 500px;
-        max-width: 600px;
+        width: 600px;
+    }
+    
+    .nav-item-mega .mega-menu {
+        left: clamp(300px, 50%, calc(100vw - 300px));
     }
     
     .mega-menu-grid {
@@ -497,15 +535,6 @@ body.light-theme .mega-menu-list a:hover {
 }
 
 @media (max-width: 768px) {
-    .mobile-menu-toggle {
-        display: flex;
-    }
-    
-    .main-nav,
-    .header-ctas {
-        display: none;
-    }
-    
     .header-content {
         grid-template-columns: auto 1fr auto;
         gap: 1rem;
@@ -514,89 +543,6 @@ body.light-theme .mega-menu-list a:hover {
     .logo-image {
         height: 40px;
         max-width: 180px;
-    }
-    
-    /* Mobile menu styles when active */
-    .main-nav.mobile-active {
-        display: block;
-        position: fixed;
-        top: 70px;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background: rgba(10, 10, 10, 0.98);
-        backdrop-filter: blur(20px);
-        z-index: 999;
-        padding: 2rem 0;
-        overflow-y: auto;
-    }
-    
-    .main-nav.mobile-active ul {
-        flex-direction: column;
-        align-items: stretch;
-        height: auto;
-        gap: 0;
-        padding: 0 2rem;
-    }
-    
-    .main-nav.mobile-active li {
-        height: auto;
-        width: 100%;
-        margin-bottom: 1rem;
-    }
-    
-    .main-nav.mobile-active a {
-        height: 50px;
-        width: 100%;
-        padding: 1rem 1.5rem;
-        font-size: 1.1rem;
-        border-radius: 8px;
-        background: rgba(255, 255, 255, 0.05);
-        border: 1px solid rgba(255, 255, 255, 0.1);
-    }
-    
-    .main-nav.mobile-active a:hover {
-        background: rgba(241, 90, 37, 0.1);
-        border-color: var(--primary-orange);
-    }
-    
-    /* Hide dropdowns on mobile - show inline instead */
-    .mobile-active .dropdown-menu,
-    .mobile-active .mega-menu {
-        position: static;
-        opacity: 1;
-        visibility: visible;
-        pointer-events: all;
-        transform: none;
-        background: transparent;
-        border: none;
-        box-shadow: none;
-        margin-top: 0.5rem;
-        padding: 0;
-        width: 100%;
-    }
-    
-    .mobile-active .dropdown-menu ul,
-    .mobile-active .mega-menu-list {
-        padding-left: 1rem;
-    }
-    
-    .mobile-active .dropdown-menu a,
-    .mobile-active .mega-menu-list a {
-        padding: 0.75rem 1rem;
-        font-size: 1rem;
-        background: rgba(255, 255, 255, 0.03);
-    }
-}
-
-@media (max-width: 480px) {
-    .header-content {
-        padding: 0.75rem 0;
-    }
-    
-    .logo-image {
-        height: 36px;
-        max-width: 150px;
     }
 }
 
@@ -775,6 +721,8 @@ html body .sticky-header .main-nav .nav-item-mega .mega-menu {
     display: block !important;
     overflow: visible !important;
     box-sizing: border-box !important;
+    left: max(30px, calc(50% - 350px)) !important;
+    transform: none !important;
 }
 
 /* Light theme override */
@@ -810,4 +758,12 @@ html body .sticky-header .main-nav .nav-item-mega .mega-menu .mega-menu-column h
     margin-bottom: 0.75rem !important;
     box-sizing: border-box !important;
     white-space: normal !important; /* Allow text wrapping */
+}
+
+/* Ensure mega menu doesn't get too wide on very large screens */
+@media (min-width: 1400px) {
+    .mega-menu {
+        width: 1200px;
+        max-width: 1200px;
+    }
 }

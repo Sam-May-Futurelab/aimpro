@@ -454,6 +454,19 @@ document.addEventListener('DOMContentLoaded', function() {
                 }
             });
         });
+        
+        // Mobile Services submenu accordion functionality
+        const mobileServicesToggle = mainNav.querySelector('.nav-item-mega > a');
+        if (mobileServicesToggle) {
+            mobileServicesToggle.addEventListener('click', function(e) {
+                // Only prevent default and toggle on mobile
+                if (window.innerWidth <= 768 && mainNav.classList.contains('mobile-active')) {
+                    e.preventDefault();
+                    const parentItem = this.parentElement;
+                    parentItem.classList.toggle('active');
+                }
+            });
+        }
     }// Header Scroll Effect
     const header = document.querySelector('.sticky-header');
     let lastScroll = 0;
