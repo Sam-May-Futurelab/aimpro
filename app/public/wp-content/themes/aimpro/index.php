@@ -88,14 +88,11 @@ get_header(); ?>
 <!-- Stats Counter -->
 <section class="stats-section">
     <!-- Target Icons -->
-    <div class="target-icon stats-target-1"></div>
-    <!-- Stats Lottie Animation Background -->
+    <div class="target-icon stats-target-1"></div>    <!-- Stats Lottie Animation Background - OPTIMIZED: Single animation instead of 3 -->
     <div class="stats-animation-bg">
         <div class="animation-layer">
-            <!-- Three optimized Lottie instances for full-width animated coverage -->
-            <div id="lottie-stats-animation-left" class="lottie-stats-instance"></div>
-            <div id="lottie-stats-animation-center" class="lottie-stats-instance"></div>
-            <div id="lottie-stats-animation-right" class="lottie-stats-instance"></div>
+            <!-- Single optimized Lottie instance with CSS-based width coverage -->
+            <div id="lottie-stats-animation" class="lottie-stats-single"></div>
             <!-- CSS fallback animation -->
             <div class="css-wave-animation" style="display: none;"></div>
         </div>
@@ -143,15 +140,9 @@ get_header(); ?>
                     <div class="service-pattern pattern-1"></div>
                 </div>
                 <div class="service-content">
-                    <div class="service-header">
-                        <div class="service-icon-container">
+                    <div class="service-header">                        <div class="service-icon-container">
                             <div class="service-icon-animated">
-                                <svg class="service-svg" viewBox="0 0 100 100">
-                                    <circle cx="40" cy="40" r="20" class="icon-circle" fill="none" stroke="currentColor"/>
-                                    <path d="M56 56 L70 70" class="icon-arrow" stroke="currentColor"/>
-                                    <path d="M35 40 L45 40" class="icon-line" stroke="currentColor"/>
-                                    <path d="M35 45 L50 45" class="icon-line" stroke="currentColor"/>
-                                </svg>
+                                <i class="fas fa-search" style="font-size: 30px; color: #f15a25;"></i>
                             </div>
                             <div class="service-badge">SEO</div>
                         </div>
@@ -184,14 +175,9 @@ get_header(); ?>
                     <div class="service-pattern pattern-2"></div>
                 </div>
                 <div class="service-content">
-                    <div class="service-header">
-                        <div class="service-icon-container">
+                    <div class="service-header">                        <div class="service-icon-container">
                             <div class="service-icon-animated">
-                                <svg class="service-svg" viewBox="0 0 100 100">
-                                    <rect x="20" y="40" width="60" height="20" class="icon-bar"/>
-                                    <rect x="30" y="30" width="40" height="40" class="icon-chart" fill="none" stroke="currentColor"/>
-                                    <path d="M35 50 L45 40 L55 45 L65 35" class="icon-line"/>
-                                </svg>
+                                <i class="fab fa-google" style="font-size: 30px; color: #f15a25;"></i>
                             </div>
                             <div class="service-badge">PPC</div>
                         </div>
@@ -224,16 +210,9 @@ get_header(); ?>
                     <div class="service-pattern pattern-3"></div>
                 </div>
                 <div class="service-content">
-                    <div class="service-header">
-                        <div class="service-icon-container">
+                    <div class="service-header">                        <div class="service-icon-container">
                             <div class="service-icon-animated">
-                                <svg class="service-svg" viewBox="0 0 100 100">
-                                    <rect x="15" y="25" width="70" height="50" class="icon-browser" fill="none" stroke="currentColor"/>
-                                    <rect x="15" y="25" width="70" height="12" class="icon-header"/>
-                                    <circle cx="22" cy="31" r="2" class="icon-dot"/>
-                                    <circle cx="30" cy="31" r="2" class="icon-dot"/>
-                                    <circle cx="38" cy="31" r="2" class="icon-dot"/>
-                                </svg>
+                                <i class="fas fa-palette" style="font-size: 30px; color: #f15a25;"></i>
                             </div>
                             <div class="service-badge">Web</div>
                         </div>
@@ -264,15 +243,9 @@ get_header(); ?>
                     <div class="service-pattern pattern-4"></div>
                 </div>
                 <div class="service-content">
-                    <div class="service-header">
-                        <div class="service-icon-container">
+                    <div class="service-header">                        <div class="service-icon-container">
                             <div class="service-icon-animated">
-                                <svg class="service-svg" viewBox="0 0 100 100">
-                                    <rect x="25" y="25" width="50" height="50" rx="8" class="icon-circle" fill="none" stroke="currentColor"/>
-                                    <circle cx="40" cy="40" r="3" class="icon-dot"/>
-                                    <circle cx="60" cy="40" r="3" class="icon-dot"/>
-                                    <path d="M35 55 Q50 65 65 55" class="icon-line" fill="none" stroke="currentColor"/>
-                                </svg>
+                                <i class="fab fa-meta" style="font-size: 30px; color: #f15a25;"></i>
                             </div>
                             <div class="service-badge">Meta</div>
                         </div>
@@ -306,16 +279,9 @@ get_header(); ?>
                     <div class="service-pattern pattern-5"></div>
                 </div>
                 <div class="service-content">
-                    <div class="service-header">
-                        <div class="service-icon-container">
+                    <div class="service-header">                        <div class="service-icon-container">
                             <div class="service-icon-animated">
-                                <svg class="service-svg" viewBox="0 0 100 100">
-                                    <circle cx="50" cy="50" r="25" class="icon-brain" fill="none" stroke="currentColor"/>
-                                    <path d="M35 45 Q50 35 65 45" class="icon-curve"/>
-                                    <path d="M35 55 Q50 65 65 55" class="icon-curve"/>
-                                    <circle cx="42" cy="45" r="2" class="icon-dot"/>
-                                    <circle cx="58" cy="45" r="2" class="icon-dot"/>
-                                </svg>
+                                <i class="fas fa-robot" style="font-size: 30px; color: #f15a25;"></i>
                             </div>
                             <div class="service-badge">AI</div>
                         </div>
@@ -349,19 +315,9 @@ get_header(); ?>
                     <div class="service-pattern pattern-6"></div>
                 </div>
                 <div class="service-content">
-                    <div class="service-header">
-                        <div class="service-icon-container">
+                    <div class="service-header">                        <div class="service-icon-container">
                             <div class="service-icon-animated">
-                                <svg class="service-svg" viewBox="0 0 100 100">
-                                    <circle cx="25" cy="50" r="8" class="icon-gear"/>
-                                    <circle cx="50" cy="30" r="8" class="icon-gear"/>
-                                    <circle cx="75" cy="50" r="8" class="icon-gear"/>
-                                    <circle cx="50" cy="70" r="8" class="icon-gear"/>
-                                    <path d="M33 50 L42 50" class="icon-connect"/>
-                                    <path d="M58 50 L67 50" class="icon-connect"/>
-                                    <path d="M50 38 L50 42" class="icon-connect"/>
-                                    <path d="M50 58 L50 62" class="icon-connect"/>
-                                </svg>
+                                <i class="fas fa-cogs" style="font-size: 30px; color: #f15a25;"></i>
                             </div>
                             <div class="service-badge">Auto</div>
                         </div>

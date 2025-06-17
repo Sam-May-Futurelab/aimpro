@@ -1094,28 +1094,26 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
       // Initialize Lottie animation after DOM is ready
-    initLottieHeroAnimation();    // Initialize Optimized Triple Lottie Stats Animation with Enhanced Performance
+    initLottieHeroAnimation();    // Initialize Single Optimized Lottie Stats Animation for Enhanced Performance
     function initLottieStatsAnimation() {
-        const animationIds = ['lottie-stats-animation-left', 'lottie-stats-animation-center', 'lottie-stats-animation-right'];
-        const animations = [];
-        let loadedCount = 0;
-        let sharedAnimationData = null;
+        let animation = null;
+        let animationData = null;
         let statsVisible = false;
-        let animationsCreated = false;
+        let animationCreated = false;
         
-        // Intersection Observer for lazy loading animations only when visible
+        // Intersection Observer for lazy loading animation only when visible
         const statsSection = document.querySelector('.stats-section');
         if (!statsSection) {
             console.warn('Stats section not found');
-            return [];
+            return null;
         }
         
         const statsObserver = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
-                if (entry.isIntersecting && !animationsCreated) {
+                if (entry.isIntersecting && !animationCreated) {
                     statsVisible = true;
-                    animationsCreated = true;
-                    loadStatsAnimations();
+                    animationCreated = true;
+                    loadStatsAnimation();
                     statsObserver.unobserve(entry.target);
                 }
             });
@@ -1126,8 +1124,8 @@ document.addEventListener('DOMContentLoaded', function() {
         
         statsObserver.observe(statsSection);
         
-        function loadStatsAnimations() {
-            // Performance optimization: Load animation data once and reuse
+        function loadStatsAnimation() {
+            // Performance optimization: Single animation instance
             if (typeof lottie !== 'undefined') {
                 // Check for reduced motion preference
                 const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -1146,7 +1144,8 @@ document.addEventListener('DOMContentLoaded', function() {
                     console.warn('Animation loading timeout, using CSS fallback');
                     initCSSWaveAnimation();
                 }, 3000); // 3 second timeout
-                  // Add cache busting parameter to ensure fresh content
+                
+                // Add cache busting parameter to ensure fresh content
                 const cacheBuster = Date.now();
                 fetch(aimpro_data.theme_url + '/assets/images/stats.json?v=' + cacheBuster, {
                     signal: abortController.signal,
@@ -1157,98 +1156,74 @@ document.addEventListener('DOMContentLoaded', function() {
                         if (!response.ok) throw new Error('Failed to fetch animation data');
                         return response.json();
                     })
-                    .then(animationData => {
-                        sharedAnimationData = animationData;
+                    .then(data => {
+                        animationData = data;
                         
                         // Reduce animation complexity for better performance
-                        if (sharedAnimationData.layers) {
-                            sharedAnimationData.layers = sharedAnimationData.layers.slice(0, Math.min(5, sharedAnimationData.layers.length));
+                        if (animationData.layers) {
+                            animationData.layers = animationData.layers.slice(0, Math.min(5, animationData.layers.length));
                         }
                         
-                        // Create animations with staggered initialization for performance
-                        animationIds.forEach((id, index) => {
-                            const container = document.getElementById(id);
+                        // Create single animation instance
+                        const container = document.getElementById('lottie-stats-animation');
+                        
+                        if (container) {
+                            container.classList.add('loading');
                             
-                            if (container) {
-                                container.classList.add('loading');
-                                
-                                // Stagger the animation creation to avoid performance spikes
-                                setTimeout(() => {
-                                    try {
-                                        const animation = lottie.loadAnimation({
-                                            container: container,
-                                            renderer: 'canvas', // Use canvas for better performance on complex animations
-                                            loop: true,
-                                            autoplay: statsVisible, // Only autoplay if section is visible
-                                            animationData: sharedAnimationData, // Use shared data
-                                            rendererSettings: {
-                                                progressiveLoad: false, // We already have the data
-                                                hideOnTransparent: true,
-                                                preserveAspectRatio: 'xMidYMid slice',
-                                                context: container.getContext ? container.getContext('2d') : null,
-                                                scaleMode: 'noScale',
-                                                clearCanvas: true
-                                            }
-                                        });
-                                        
-                                        // Performance optimizations
-                                        animation.setSubframe(false);
-                                        animation.setSpeed(0.8); // Slightly slower for smoother performance
-                                        
-                                        // Add slight variation to prevent identical sync
-                                        if (index > 0) {
-                                            animation.addEventListener('DOMLoaded', function() {
-                                                // Add small random offset to avoid perfect sync
-                                                const randomOffset = (Math.random() * 0.3) + (index * 0.15);
-                                                setTimeout(() => {
-                                                    if (animation && animation.totalFrames) {
-                                                        animation.goToAndPlay(randomOffset * animation.totalFrames, true);
-                                                    }
-                                                }, index * 80);
-                                            });
-                                        }
-                                        
-                                        animation.addEventListener('DOMLoaded', function() {
-                                            container.classList.remove('loading');
-                                            loadedCount++;
-                                            
-                                            if (loadedCount === 1) {
-                                                console.log('Stats animations loaded successfully');
-                                            }
-                                        });
-                                        
-                                        animation.addEventListener('error', function(error) {
-                                            container.classList.remove('loading');
-                                            console.warn(`Stats animation error for ${id}:`, error);
-                                        });
-                                        
-                                        // Pause animation when not visible for performance
-                                        const containerObserver = new IntersectionObserver((entries) => {
-                                            entries.forEach(entry => {
-                                                if (entry.isIntersecting) {
-                                                    animation.play();
-                                                } else {
-                                                    animation.pause();
-                                                }
-                                            });
-                                        }, { threshold: 0.1 });
-                                          containerObserver.observe(container);
-                                        animations.push(animation);
-                                        
-                                        // Store animations globally for cleanup
-                                        if (!window.statsAnimations) {
-                                            window.statsAnimations = [];
-                                        }
-                                        window.statsAnimations.push(animation);
-                                        
-                                    } catch (error) {
-                                        container.classList.remove('loading');
-                                        console.warn(`Failed to load stats animation ${id}:`, error);
-                                        initCSSWaveAnimation();
+                            try {
+                                animation = lottie.loadAnimation({
+                                    container: container,
+                                    renderer: 'canvas', // Use canvas for better performance
+                                    loop: true,
+                                    autoplay: statsVisible, // Only autoplay if section is visible
+                                    animationData: animationData,
+                                    rendererSettings: {
+                                        progressiveLoad: false, // We already have the data
+                                        hideOnTransparent: true,
+                                        preserveAspectRatio: 'xMidYMid slice',
+                                        context: container.getContext ? container.getContext('2d') : null,
+                                        scaleMode: 'noScale',
+                                        clearCanvas: true
                                     }
-                                }, index * 120); // Reduced stagger time
+                                });
+                                
+                                // Performance optimizations
+                                animation.setSubframe(false);
+                                animation.setSpeed(0.8); // Slightly slower for smoother performance
+                                
+                                animation.addEventListener('DOMLoaded', function() {
+                                    container.classList.remove('loading');
+                                    console.log('Stats animation loaded successfully');
+                                });
+                                
+                                animation.addEventListener('error', function(error) {
+                                    container.classList.remove('loading');
+                                    console.warn('Stats animation error:', error);
+                                    initCSSWaveAnimation();
+                                });
+                                
+                                // Pause animation when not visible for performance
+                                const containerObserver = new IntersectionObserver((entries) => {
+                                    entries.forEach(entry => {
+                                        if (entry.isIntersecting) {
+                                            animation.play();
+                                        } else {
+                                            animation.pause();
+                                        }
+                                    });
+                                }, { threshold: 0.1 });
+                                
+                                containerObserver.observe(container);
+                                
+                                // Store animation globally for cleanup
+                                window.statsAnimation = animation;
+                                
+                            } catch (error) {
+                                container.classList.remove('loading');
+                                console.warn('Failed to load stats animation:', error);
+                                initCSSWaveAnimation();
                             }
-                        });
+                        }
                     })
                     .catch(error => {
                         clearTimeout(loadTimeout);
@@ -1263,17 +1238,17 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         }
         
-        return animations;
-    }// Fallback CSS Wave Animation
+        return animation;
+    }    // Fallback CSS Wave Animation
     function initCSSWaveAnimation() {
-        const containers = document.querySelectorAll('.lottie-stats-instance');
+        const container = document.getElementById('lottie-stats-animation');
         const fallbackDiv = document.querySelector('.css-wave-animation');
         
-        containers.forEach(container => {
+        if (container) {
             // Remove loading state
             container.classList.remove('loading');
             container.classList.add('css-fallback');
-        });
+        }
         
         // Show CSS animation
         if (fallbackDiv) {
@@ -1282,19 +1257,17 @@ document.addEventListener('DOMContentLoaded', function() {
         }
         
         // Add performance optimization for CSS animation
-        containers.forEach(container => {
+        if (container) {
             container.style.willChange = 'transform, opacity';
-        });
-        
-        // Clean up after animation settles
-        setTimeout(() => {
-            containers.forEach(container => {
+            
+            // Clean up after animation settles
+            setTimeout(() => {
                 if (container) {
                     container.style.willChange = 'auto';
                 }
-            });
-        }, 2000);
-    }      // Initialize stats animation after DOM is ready with performance awareness
+            }, 2000);
+        }
+    }// Initialize stats animation after DOM is ready with performance awareness
     setTimeout(() => {
         initPerformanceAwareAnimations();
     }, 500); // Add delay to ensure everything is loaded
@@ -1366,36 +1339,40 @@ document.addEventListener('DOMContentLoaded', function() {
         
         observer.observe(statsSection);
     }
-    
-    // Auto-optimization function for poor performance
+      // Auto-optimization function for poor performance
     function optimizeAnimationsForPerformance() {
-        const animations = document.querySelectorAll('.lottie-stats-instance');
+        const animation = window.statsAnimation;
+        const container = document.getElementById('lottie-stats-animation');
         const cssWave = document.querySelector('.css-wave-animation');
         
-        console.log('Optimizing animations for better performance...');
+        console.log('Optimizing animation for better performance...');
         
-        // Reduce animation quality and complexity
-        animations.forEach((container, index) => {
-            // Add performance optimization classes
+        if (animation && container) {
+            // Reduce animation quality and complexity
             container.classList.add('performance-optimized');
             
             // Reduce opacity for less visual complexity
-            container.style.opacity = `${0.3 - (index * 0.05)}`;
+            container.style.opacity = '0.6';
             
-            // Apply blur to reduce detail
-            container.style.filter = 'blur(1px)';
+            // Apply slight blur to reduce detail
+            container.style.filter = 'blur(0.5px)';
             
-            // Scale down slightly
+            // Scale down slightly for better performance
             container.style.transform = 'scale(0.95) translateZ(0)';
-        });
+            
+            // Reduce animation speed for smoother performance
+            if (animation.setSpeed) {
+                animation.setSpeed(0.5);
+            }
+        }
         
         // Simplify CSS animation if present
         if (cssWave) {
             cssWave.style.animationDuration = '20s'; // Slower animation
-            cssWave.style.opacity = '0.2'; // Reduced opacity
+            cssWave.style.opacity = '0.3'; // Reduced opacity
         }
         
-        // Clean up unused animations after 5 seconds
+        // Clean up after optimization
         setTimeout(() => {
             if (window.gc && typeof window.gc === 'function') {
                 window.gc(); // Force garbage collection if available
@@ -1405,25 +1382,23 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Memory cleanup function
     function cleanupStatsAnimations() {
-        const animations = window.statsAnimations || [];
+        const animation = window.statsAnimation;
         
-        animations.forEach(animation => {
-            if (animation && typeof animation.destroy === 'function') {
-                animation.destroy();
-            }
-        });
+        if (animation && typeof animation.destroy === 'function') {
+            animation.destroy();
+        }
         
-        // Clear references
-        window.statsAnimations = [];
+        // Clear reference
+        window.statsAnimation = null;
         
         // Force cleanup of any remaining references
-        const containers = document.querySelectorAll('.lottie-stats-instance');
-        containers.forEach(container => {
+        const container = document.getElementById('lottie-stats-animation');
+        if (container) {
             container.innerHTML = '';
             container.style.willChange = 'auto';
-        });
+        }
         
-        console.log('Stats animations cleaned up');
+        console.log('Stats animation cleaned up');
     }
     
     // Cleanup on page unload
