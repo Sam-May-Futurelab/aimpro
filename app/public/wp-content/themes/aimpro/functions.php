@@ -48,6 +48,9 @@ add_action('login_head', 'aimpro_add_favicon');
 // Include contact page meta functionality
 require_once get_template_directory() . '/includes/contact-meta.php';
 
+// Include author settings meta functionality
+require_once get_template_directory() . '/includes/author-settings-meta.php';
+
 // Include about page meta functionality
 require_once get_template_directory() . '/includes/about-meta.php';
 

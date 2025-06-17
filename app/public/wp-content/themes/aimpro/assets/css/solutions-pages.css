@@ -1351,11 +1351,16 @@
 }
 
 .metric-list li::before {
-    content: '📊';
+    content: '';
     position: absolute;
     left: 0;
     top: 0.75rem;
-    font-size: 0.9rem;
+    width: 16px;
+    height: 16px;
+    background-image: url('../images/aimpro-target.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
 }
 
 /* Solutions Grid Layout - 3x2 Grid */

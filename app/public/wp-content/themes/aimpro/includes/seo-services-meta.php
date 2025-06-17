@@ -281,10 +281,9 @@ function get_seo_services_defaults() {
             'Property listing optimization',
             'Local market SEO',
             'Real estate schema markup'
-        ),
-          // Testimonial defaults
+        ),          // Testimonial defaults
         'testimonial_quote' => 'Aimpro Digital\'s SEO services have completely transformed our online presence. We went from page 3 to ranking #1 for our most important keywords, and our organic traffic has increased by over 400%. The team\'s expertise and dedication are unmatched.',
-        'testimonial_image' => '',
+        'testimonial_image' => '', // No image - removed David Mitchell image
         'testimonial_name' => 'David Mitchell',
         'testimonial_title' => 'Managing Director, TechFlow Solutions',
         'testimonial_company' => 'B2B Software Company',

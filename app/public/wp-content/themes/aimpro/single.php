@@ -54,9 +54,7 @@ get_header(); ?>
                                 <?php the_post_thumbnail('large', array('alt' => get_the_title())); ?>
                             </div>
                         <?php endif; ?>
-                    </header>
-
-                    <!-- Blog Content -->
+                    </header>                    <!-- Blog Content -->
                     <div class="blog-body">
                         <?php the_content(); ?>
                     </div>
@@ -71,7 +69,52 @@ get_header(); ?>
                             <p>Get a free digital marketing audit and discover opportunities to boost your results.</p>
                             <a href="<?php echo home_url('/contact'); ?>" class="btn-primary">Get Free Audit</a>
                         </div>
-                    </div>                    <!-- Tags -->
+                    </div>                    <!-- About the Author Section -->
+                    <?php 
+                    // Get author data (global or post-specific)
+                    $author_data = get_author_data(get_the_ID());
+                    ?>
+                    <div class="about-author">
+                        <div class="author-card">                            <div class="author-image">
+                                <img src="<?php echo esc_url($author_data['image_url']); ?>" alt="<?php echo esc_attr($author_data['name']); ?> - Digital Marketing Expert" loading="lazy">
+                            </div>
+                            <div class="author-content">
+                                <h3 class="author-name">About <?php echo esc_html($author_data['name']); ?></h3>
+                                <p class="author-title"><?php echo esc_html($author_data['title']); ?></p>
+                                <p class="author-bio">
+                                    <?php echo wp_kses_post($author_data['bio']); ?>
+                                </p>
+                                <div class="author-achievements">
+                                    <div class="achievement-item">
+                                        <span class="achievement-number"><?php echo esc_html($author_data['businesses_helped']); ?></span>
+                                        <span class="achievement-label">Businesses Helped</span>
+                                    </div>
+                                    <div class="achievement-item">
+                                        <span class="achievement-number"><?php echo esc_html($author_data['revenue_generated']); ?></span>
+                                        <span class="achievement-label">Revenue Generated</span>
+                                    </div>
+                                    <div class="achievement-item">
+                                        <span class="achievement-number"><?php echo esc_html($author_data['years_experience']); ?></span>
+                                        <span class="achievement-label">Years Experience</span>
+                                    </div>
+                                </div>
+                                <div class="author-social">
+                                    <?php if (!empty($author_data['linkedin'])): ?>
+                                    <a href="<?php echo esc_url($author_data['linkedin']); ?>" target="_blank" rel="noopener" class="social-link">
+                                        <i class="fab fa-linkedin"></i>
+                                        <span>Connect on LinkedIn</span>
+                                    </a>
+                                    <?php endif; ?>
+                                    <a href="<?php echo home_url('/contact'); ?>?subject=<?php echo urlencode('Inquiry from blog: ' . get_the_title()); ?>" class="btn-outline btn-small">
+                                        <i class="fas fa-envelope"></i>
+                                        <span>Get in Touch</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Tags -->
                     <?php if (has_tag()) : ?>
                         <div class="blog-tags">
                             <span class="tags-label">Tags:</span>

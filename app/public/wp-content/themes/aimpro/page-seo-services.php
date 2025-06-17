@@ -272,10 +272,9 @@ $header_subtitle = get_post_meta(get_the_ID(), '_seo_header_subtitle', true) ?: 
         </section>        <!-- SEO Testimonial -->
         <section class="seo-testimonial">
             <div class="section-content">
-                <div class="testimonial-content">
-                    <?php
+                <div class="testimonial-content">                    <?php
                     $testimonial_quote = get_post_meta(get_the_ID(), '_seo_testimonial_quote', true) ?: $defaults['testimonial_quote'];
-                    $testimonial_image = get_post_meta(get_the_ID(), '_seo_testimonial_image', true) ?: $defaults['testimonial_image'];
+                    $testimonial_image = ''; // Force no image for David Mitchell testimonial
                     $testimonial_name = get_post_meta(get_the_ID(), '_seo_testimonial_name', true) ?: $defaults['testimonial_name'];
                     $testimonial_title = get_post_meta(get_the_ID(), '_seo_testimonial_title', true) ?: $defaults['testimonial_title'];
                     $testimonial_company = get_post_meta(get_the_ID(), '_seo_testimonial_company', true) ?: $defaults['testimonial_company'];
