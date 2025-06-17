@@ -1,2 +1,7 @@
 
+# Ignore WordPress uploads directory
+wp-content/uploads/
+
+# Ignore specific problem files
 wp-content/uploads/2025/06/Aimpro-social-media-leads-blog.png
+wp-content/uploads/2025/06/Aimpro-Google-ads-leads-blog.png

@@ -547,9 +547,8 @@ get_header(); ?>
 <!-- Latest Blogs -->
 <section class="blog-section">
     <div class="container">
-        <div class="content-center">
-            <h2><?php echo aimpro_get_field('blog_title', 'Latest <span class="highlight curly-underline">BLOGS</span>'); ?></h2>
-            <p class="section-subtitle"><?php echo aimpro_get_field('blog_subtitle', 'Expert insights and industry updates to keep you ahead of the competition'); ?></p>
+        <div class="content-center">            <h2><?php echo aimpro_get_field('blog_title', 'Scale Up Your <span class="highlight curly-underline">MARKETING</span>'); ?></h2>
+            <p class="section-subtitle"><?php echo aimpro_get_field('blog_subtitle', 'Zero secrets. Maximum value. We share proven strategies and insider insights to help ambitious marketers like you accelerate growth, drive traffic, and maximize revenue.'); ?></p>
         </div>
           <div class="blog-grid">
             <?php
