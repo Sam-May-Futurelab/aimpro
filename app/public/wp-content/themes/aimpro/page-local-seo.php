@@ -293,9 +293,7 @@ $header_subtitle = get_post_meta(get_the_ID(), '_local_seo_header_subtitle', tru
                 <div class="testimonial-content">
                     <blockquote>
                         "The local SEO work Aimpro Digital did for our dental practice was phenomenal. We went from being invisible in local search to ranking #1 for 'dentist Birmingham' and have seen a 65% increase in new patients. The team's expertise in local SEO is outstanding."
-                    </blockquote>
-                    <div class="testimonial-author">
-                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/testimonials/local-seo-sarah.jpg" alt="Dr. Sarah Williams" />
+                    </blockquote>                    <div class="testimonial-author">
                         <div class="author-info">
                             <h4>Dr. Sarah Williams</h4>
                             <span>Practice Owner, Birmingham Dental Care</span>

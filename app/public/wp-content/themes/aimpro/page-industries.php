@@ -22,8 +22,7 @@ get_header(); ?>
                 <div class="intro-content">
                     <h2><?php echo esc_html(get_post_meta(get_the_ID(), '_industries_intro_title', true) ?: 'Industry-Specific Digital Marketing Solutions'); ?></h2>
                     <p><?php echo esc_html(get_post_meta(get_the_ID(), '_industries_intro_content', true) ?: 'Every industry has unique challenges, customer behaviors, and marketing opportunities. Our team brings deep sector expertise and proven strategies tailored to your specific market, ensuring maximum ROI and sustainable growth.'); ?></p>
-                </div>
-                <div class="industry-stats">
+                </div>                <div class="industry-stats" style="display: flex !important; justify-content: center !important; align-items: center !important; text-align: center !important; flex-wrap: wrap !important; gap: 2rem !important;">
                     <?php 
                     $industry_stats = get_post_meta(get_the_ID(), '_industries_stats', true);
                     if (empty($industry_stats)) {
@@ -168,29 +167,28 @@ get_header(); ?>
                 <div class="section-header">
                     <h2><?php echo esc_html(get_post_meta(get_the_ID(), '_industries_expertise_matters_title', true) ?: 'Why Industry Expertise Matters'); ?></h2>
                     <p><?php echo esc_html(get_post_meta(get_the_ID(), '_industries_expertise_matters_subtitle', true) ?: 'Generic marketing approaches fail because they don\'t account for industry-specific customer behaviors, seasonal patterns, and regulatory requirements. Our deep industry knowledge enables us to:'); ?></p>
-                </div>
-                <div class="services-grid">
+                </div>                <div class="benefits-grid-2x2">
                     <?php 
                     $expertise_points = get_post_meta(get_the_ID(), '_industries_expertise_points', true);
                     if (empty($expertise_points)) {
                         $expertise_points = array(
                             array(
-                                'icon' => '🎯',
+                                'icon' => 'fas fa-bullseye',
                                 'title' => 'Target the Right Audience',
                                 'description' => 'We understand your customer\'s journey, pain points, and decision-making process.'
                             ),
                             array(
-                                'icon' => '📊',
+                                'icon' => 'fas fa-chart-bar',
                                 'title' => 'Leverage Industry Data',
                                 'description' => 'Access to sector-specific benchmarks, trends, and performance metrics.'
                             ),
                             array(
-                                'icon' => '⚡',
+                                'icon' => 'fas fa-bolt',
                                 'title' => 'Faster Results',
                                 'description' => 'Pre-tested strategies and proven tactics that work in your specific market.'
                             ),
                             array(
-                                'icon' => '🔒',
+                                'icon' => 'fas fa-shield-alt',
                                 'title' => 'Ensure Compliance',
                                 'description' => 'Navigate industry regulations and advertising guidelines with confidence.'
                             )
@@ -198,16 +196,14 @@ get_header(); ?>
                     }
                     
                     foreach ($expertise_points as $point): ?>
-                        <div class="service-item">
-                            <div class="service-icon">
-                                <?php if (strpos($point['icon'], 'fa') === 0): ?>
-                                    <i class="<?php echo esc_attr($point['icon']); ?>"></i>
-                                <?php else: ?>
-                                    <span><?php echo esc_html($point['icon']); ?></span>
-                                <?php endif; ?>
+                        <div class="benefit-card">
+                            <div class="benefit-icon">
+                                <i class="<?php echo esc_attr($point['icon']); ?>"></i>
                             </div>
-                            <h3><?php echo esc_html($point['title']); ?></h3>
-                            <p><?php echo esc_html($point['description']); ?></p>
+                            <div class="benefit-content">
+                                <h3><?php echo esc_html($point['title']); ?></h3>
+                                <p><?php echo esc_html($point['description']); ?></p>
+                            </div>
                         </div>
                     <?php endforeach; ?>
                 </div>

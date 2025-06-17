@@ -379,9 +379,8 @@ get_header(); ?>
     <section id="contact" class="cta-section">
         <div class="container">
             <div class="cta-content">
-                <h2>Ready to Build Revenue-Generating Automation Flows?</h2>                <p>Stop leaving money on the table with basic email marketing. Our sophisticated email and SMS automation flows will turn your subscriber list into a predictable revenue engine that works 24/7.</p>
-                <div class="cta-buttons">
-                    <a href="<?php echo home_url('/contact'); ?>" class="btn-primary">Build Your Flows</a>
+                <h2>Ready to Build Revenue-Generating Automation Flows?</h2>                <p>Stop leaving money on the table with basic email marketing. Our sophisticated email and SMS automation flows will turn your subscriber list into a predictable revenue engine that works 24/7.</p>                <div class="cta-buttons">
+                    <a href="<?php echo home_url('/contact'); ?>" class="btn-outline" style="background-color: white; color: #333; border: 2px solid white;">Build Your Flows</a>
                 </div>
             </div>
         </div>

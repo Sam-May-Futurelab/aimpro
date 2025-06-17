@@ -243,89 +243,80 @@ get_header(); ?>
                 </div>
             </div>
         </div>
-    </section>
-
-    <!-- Funnel Architecture -->
+    </section>    <!-- Funnel Architecture -->
     <section class="funnel-architecture">
         <div class="container">
-            <h2>Complete Funnel Architecture</h2>
-            
-            <div class="architecture-flow">
-                <div class="flow-stage">
-                    <div class="stage-number">1</div>
-                    <div class="stage-content">
-                        <h3>Traffic Sources</h3>
-                        <p>Strategic traffic generation from multiple channels</p>
-                        <ul>
-                            <li>Paid advertising</li>
-                            <li>Social media</li>
-                            <li>SEO & content</li>
-                            <li>Email marketing</li>
-                        </ul>
+            <div class="section-content">
+                <h2>Complete Funnel Architecture</h2>
+                <div class="process-steps">
+                    <div class="process-step">
+                        <div class="step-number">1</div>
+                        <div class="step-content">
+                            <h3>Traffic Sources</h3>
+                            <p>Strategic traffic generation from multiple channels</p>
+                            <ul class="feature-list">
+                                <li>Paid advertising</li>
+                                <li>Social media</li>
+                                <li>SEO & content</li>
+                                <li>Email marketing</li>
+                            </ul>
+                        </div>
                     </div>
-                </div>
-                
-                <div class="flow-arrow">→</div>
-                
-                <div class="flow-stage">
-                    <div class="stage-number">2</div>
-                    <div class="stage-content">
-                        <h3>Lead Capture</h3>
-                        <p>High-converting opt-in pages and lead magnets</p>
-                        <ul>
-                            <li>Landing pages</li>
-                            <li>Pop-ups & forms</li>
-                            <li>Content upgrades</li>
-                            <li>Free tools</li>
-                        </ul>
+                    
+                    <div class="process-step">
+                        <div class="step-number">2</div>
+                        <div class="step-content">
+                            <h3>Lead Capture</h3>
+                            <p>High-converting opt-in pages and lead magnets</p>
+                            <ul class="feature-list">
+                                <li>Landing pages</li>
+                                <li>Pop-ups & forms</li>
+                                <li>Content upgrades</li>
+                                <li>Free tools</li>
+                            </ul>
+                        </div>
                     </div>
-                </div>
-                
-                <div class="flow-arrow">→</div>
-                
-                <div class="flow-stage">
-                    <div class="stage-number">3</div>
-                    <div class="stage-content">
-                        <h3>Nurture Sequence</h3>
-                        <p>Automated email sequences building trust and value</p>
-                        <ul>
-                            <li>Welcome series</li>
-                            <li>Educational content</li>
-                            <li>Social proof</li>
-                            <li>Soft pitches</li>
-                        </ul>
+                    
+                    <div class="process-step">
+                        <div class="step-number">3</div>
+                        <div class="step-content">
+                            <h3>Nurture Sequence</h3>
+                            <p>Automated email sequences building trust and value</p>
+                            <ul class="feature-list">
+                                <li>Welcome series</li>
+                                <li>Educational content</li>
+                                <li>Social proof</li>
+                                <li>Soft pitches</li>
+                            </ul>
+                        </div>
                     </div>
-                </div>
-                
-                <div class="flow-arrow">→</div>
-                
-                <div class="flow-stage">
-                    <div class="stage-number">4</div>
-                    <div class="stage-content">
-                        <h3>Sales Conversion</h3>
-                        <p>Optimized sales pages and conversion systems</p>
-                        <ul>
-                            <li>Sales pages</li>
-                            <li>Webinars</li>
-                            <li>Product demos</li>
-                            <li>Consultations</li>
-                        </ul>
+                    
+                    <div class="process-step">
+                        <div class="step-number">4</div>
+                        <div class="step-content">
+                            <h3>Sales Conversion</h3>
+                            <p>Optimized sales pages and conversion systems</p>
+                            <ul class="feature-list">
+                                <li>Sales pages</li>
+                                <li>Webinars</li>
+                                <li>Product demos</li>
+                                <li>Consultations</li>
+                            </ul>
+                        </div>
                     </div>
-                </div>
-                
-                <div class="flow-arrow">→</div>
-                
-                <div class="flow-stage">
-                    <div class="stage-number">5</div>
-                    <div class="stage-content">
-                        <h3>Maximize Value</h3>
-                        <p>Upsells, cross-sells, and retention strategies</p>
-                        <ul>
-                            <li>Order bumps</li>
-                            <li>Upsell offers</li>
-                            <li>Cross-sell campaigns</li>
-                            <li>Customer retention</li>
-                        </ul>
+                    
+                    <div class="process-step">
+                        <div class="step-number">5</div>
+                        <div class="step-content">
+                            <h3>Maximize Value</h3>
+                            <p>Upsells, cross-sells, and retention strategies</p>
+                            <ul class="feature-list">
+                                <li>Order bumps</li>
+                                <li>Upsell offers</li>
+                                <li>Cross-sell campaigns</li>
+                                <li>Customer retention</li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -538,36 +529,60 @@ get_header(); ?>
                 </div>
             </div>
         </div>
-    </section>
-
-    <!-- FAQ Section -->
+    </section>    <!-- FAQ Section -->
     <section class="faq-section">
         <div class="container">
-            <h2>Frequently Asked Questions</h2>
-            <div class="faq-grid">
-                <div class="faq-item">
-                    <h3>How long does funnel development take?</h3>
-                    <p>Timeline varies by complexity: 3 weeks for Starter, 5 weeks for Professional, and 8 weeks for Enterprise funnels. We provide detailed project timelines during consultation.</p>
-                </div>
-                <div class="faq-item">
-                    <h3>Do you create the lead magnets and content?</h3>
-                    <p>Yes, we create all lead magnets, email sequences, and funnel content. Our team includes copywriters and content creators specialized in conversion optimization.</p>
-                </div>
-                <div class="faq-item">
-                    <h3>Which platforms do you recommend?</h3>
-                    <p>Platform choice depends on your needs and budget. We'll recommend the best solution based on your requirements, from WordPress to dedicated funnel platforms.</p>
-                </div>
-                <div class="faq-item">
-                    <h3>Can you integrate with our existing systems?</h3>
-                    <p>Absolutely! We integrate with all major CRMs, email platforms, payment processors, and business tools to ensure seamless data flow.</p>
-                </div>
-                <div class="faq-item">
-                    <h3>What kind of results can we expect?</h3>
-                    <p>Results vary by industry and implementation, but our clients typically see 200-400% increases in conversion rates and significant improvements in customer lifetime value.</p>
-                </div>
-                <div class="faq-item">
-                    <h3>Do you provide ongoing optimization?</h3>
-                    <p>Yes, we offer ongoing optimization services to continuously improve funnel performance based on real data and testing results.</p>
+            <div class="section-content">
+                <h2 style="text-align: center;">Frequently Asked Questions</h2>
+                <div class="faq-list">
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h3>How long does funnel development take?</h3>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Timeline varies by complexity: 3 weeks for Starter, 5 weeks for Professional, and 8 weeks for Enterprise funnels. We provide detailed project timelines during consultation.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h3>Do you create the lead magnets and content?</h3>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Yes, we create all lead magnets, email sequences, and funnel content. Our team includes copywriters and content creators specialized in conversion optimization.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h3>Which platforms do you recommend?</h3>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Platform choice depends on your needs and budget. We'll recommend the best solution based on your requirements, from WordPress to dedicated funnel platforms.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h3>Can you integrate with our existing systems?</h3>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Absolutely! We integrate with all major CRMs, email platforms, payment processors, and business tools to ensure seamless data flow.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h3>What kind of results can we expect?</h3>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Results vary by industry and implementation, but our clients typically see 200-400% increases in conversion rates and significant improvements in customer lifetime value.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h3>Do you provide ongoing optimization?</h3>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Yes, we offer ongoing optimization services to continuously improve funnel performance based on real data and testing results.</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

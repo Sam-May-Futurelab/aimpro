@@ -41,14 +41,19 @@ get_header(); ?>
                                     );
                                 }
                                 foreach ($challenges as $challenge) {
-                                    echo '<li>' . esc_html($challenge) . '</li>';
-                                }
+                                    echo '<li>' . esc_html($challenge) . '</li>';                                }
                                 ?>
                             </ul>
                         </div>
                     </div>
                     <div class="overview-image">
-                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/solutions/lead-generation-overview.jpg" alt="Lead Generation Strategy" />
+                        <?php 
+                        $image_url = get_post_meta(get_the_ID(), '_lead_generation_overview_image', true);
+                        if (empty($image_url)) {
+                            $image_url = get_template_directory_uri() . '/assets/images/solutions/lead-generation-overview.jpg';
+                        }
+                        ?>
+                        <img src="<?php echo esc_url($image_url); ?>" alt="Lead Generation Strategy" />
                     </div>
                 </div>
             </div>

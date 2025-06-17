@@ -288,7 +288,7 @@ get_header(); ?>
         </section>        <!-- FAQ Section -->
         <section class="faq-section">
             <div class="section-content">
-                <h2><?php echo esc_html(get_post_meta(get_the_ID(), 'white_label_seo_faq_title', true) ?: 'Frequently Asked Questions'); ?></h2>
+                <h2 style="text-align: center;"><?php echo esc_html(get_post_meta(get_the_ID(), 'white_label_seo_faq_title', true) ?: 'Frequently Asked Questions'); ?></h2>
                 <div class="faq-list">
                     <?php 
                     $faqs = get_post_meta(get_the_ID(), 'white_label_seo_faqs', true) ?: [
