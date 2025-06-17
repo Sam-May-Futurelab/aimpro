@@ -551,12 +551,11 @@ get_header(); ?>
             <h2><?php echo aimpro_get_field('blog_title', 'Latest <span class="highlight curly-underline">BLOGS</span>'); ?></h2>
             <p class="section-subtitle"><?php echo aimpro_get_field('blog_subtitle', 'Expert insights and industry updates to keep you ahead of the competition'); ?></p>
         </div>
-        
-        <div class="blog-grid">
+          <div class="blog-grid">
             <?php
-            // Get the 3 most recent posts
+            // Get the 4 most recent posts
             $recent_posts = get_posts(array(
-                'posts_per_page' => 3,
+                'posts_per_page' => 4,
                 'post_status' => 'publish'
             ));
             
@@ -581,7 +580,7 @@ get_header(); ?>
                                 <div class="blog-meta">
                                     <span class="blog-date"><?php echo get_the_date('M j, Y'); ?></span>
                                 </div>
-                                <p class="blog-excerpt"><?php echo wp_trim_words(get_the_excerpt(), 15, '...'); ?></p>
+                                <p class="blog-excerpt"><?php echo wp_trim_words(get_the_excerpt(), 20, '...'); ?></p>
                             </div>
                             <a href="<?php the_permalink(); ?>" class="btn-outline btn-sm">Read More</a>
                         </div>
