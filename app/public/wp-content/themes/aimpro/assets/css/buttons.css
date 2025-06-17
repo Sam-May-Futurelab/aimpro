@@ -756,6 +756,11 @@
     flex-wrap: wrap;
 }
 
+/* Hero CTA specific alignment - left aligned */
+.hero-ctas {
+    justify-content: flex-start;
+}
+
 /* Ensure all buttons in containers have consistent alignment */
 .cta-buttons .btn,
 .hero-ctas .btn,
