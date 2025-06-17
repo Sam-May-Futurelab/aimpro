@@ -71,43 +71,13 @@ get_header(); ?>
                             <p>Get a free digital marketing audit and discover opportunities to boost your results.</p>
                             <a href="<?php echo home_url('/contact'); ?>" class="btn-primary">Get Free Audit</a>
                         </div>
-                    </div>
-
-                    <!-- Tags -->
+                    </div>                    <!-- Tags -->
                     <?php if (has_tag()) : ?>
                         <div class="blog-tags">
                             <span class="tags-label">Tags:</span>
                             <?php the_tags('', '', ''); ?>
                         </div>
-                    <?php endif; ?>
-
-                    <!-- Author Bio -->
-                    <div class="author-bio">
-                        <div class="author-avatar">
-                            <?php echo get_avatar(get_the_author_meta('ID'), 80); ?>
-                        </div>
-                        <div class="author-info">
-                            <h4>About <?php the_author(); ?></h4>
-                            <p><?php echo get_the_author_meta('description') ?: 'Digital marketing expert at Aimpro Digital, specializing in data-driven strategies that deliver measurable results for UK businesses.'; ?></p>
-                            <div class="author-social">
-                                <a href="<?php echo home_url('/about'); ?>" class="author-link">View Profile</a>
-                            </div>
-                        </div>
-                    </div>
-
-                <?php endwhile; ?>
-
-                <!-- Bottom CTA Section -->
-                <section class="blog-bottom-cta">
-                    <div class="cta-content">
-                        <h2>Want More Marketing Insights?</h2>
-                        <p>Subscribe to our newsletter for the latest digital marketing strategies and industry insights delivered weekly.</p>
-                        <div class="cta-buttons">
-                            <a href="<?php echo home_url('/contact'); ?>" class="btn-primary">Subscribe Now</a>
-                            <a href="<?php echo home_url('/services'); ?>" class="btn-outline">Our Services</a>
-                        </div>
-                    </div>
-                </section>
+                    <?php endif; ?>                <?php endwhile; ?>
 
                 <!-- Related Posts -->
                 <?php 
@@ -162,18 +132,20 @@ get_header(); ?>
                         <span class="magnet-badge">Free Guide</span>
                     </div>
                     <h3>Complete SEO Checklist for 2025</h3>
-                    <p>Get our comprehensive 50-point SEO checklist to boost your search rankings and drive more organic traffic.</p>
-                    <ul class="magnet-benefits">
+                    <p>Get our comprehensive 50-point SEO checklist to boost your search rankings and drive more organic traffic.</p>                    <ul class="magnet-benefits">
                         <li>✓ Technical SEO audit points</li>
                         <li>✓ Content optimization tips</li>
                         <li>✓ Local SEO strategies</li>
                     </ul>
-                    <form class="magnet-form" action="#" method="post">
-                        <input type="email" name="email" placeholder="Enter your email" required>
-                        <button type="submit" class="btn-primary">Download Free</button>
-                        <input type="hidden" name="magnet_type" value="seo_checklist">
-                    </form>
-                    <p class="privacy-note">We respect your privacy. Unsubscribe anytime.</p>
+                    <!-- Lead magnet form with inline styles to prevent CSS conflicts -->
+                    <div style="overflow: hidden;">
+                        <form action="#" method="post" style="display: flex; flex-direction: column; gap: 10px;">
+                            <input type="email" name="email" placeholder="Enter your email" required style="width: 100%; box-sizing: border-box; padding: 12px 15px; border-radius: 8px; border: 1px solid #e5e7eb; margin: 0; font-size: 16px;">
+                            <button type="submit" style="width: 100%; box-sizing: border-box; background: linear-gradient(135deg, #f15a25 0%, #f47b51 100%); color: white; border: none; padding: 12px; border-radius: 8px; font-weight: 600; cursor: pointer; font-size: 16px;">Download Free</button>
+                            <input type="hidden" name="magnet_type" value="seo_checklist">
+                        </form>
+                        <p class="privacy-note">We respect your privacy. Unsubscribe anytime.</p>
+                    </div>
                 </div>
 
                 <!-- Lead Magnet 2: PPC Calculator -->
@@ -213,16 +185,18 @@ get_header(); ?>
                     <div class="social-proof">
                         <p><strong>500+</strong> businesses improved their ROI</p>
                     </div>
-                </div>
-
-                <!-- Newsletter Signup -->
-                <div class="sidebar-newsletter">
-                    <h3>Stay Updated</h3>
+                </div>                <!-- Newsletter Signup -->
+                <div class="sidebar-widget" style="overflow: hidden;">
+                    <h3 class="widget-title">Stay Updated</h3>
                     <p>Get weekly marketing insights and strategies delivered to your inbox.</p>
-                    <form class="newsletter-form" action="#" method="post">
-                        <input type="email" name="email" placeholder="Enter your email" required>
-                        <button type="submit" class="btn-primary">Subscribe</button>
-                    </form>
+                    
+                    <!-- Orange background box with inline styles to prevent any CSS conflicts -->
+                    <div style="background: linear-gradient(135deg, #f15a25 0%, #f47b51 100%); padding: 20px; border-radius: 8px; margin-top: 15px; color: white; overflow: hidden;">
+                        <form action="#" method="post" style="display: flex; flex-direction: column; gap: 10px;">
+                            <input type="email" name="email" placeholder="Enter your email" required style="width: 100%; box-sizing: border-box; padding: 12px 15px; border-radius: 8px; border: none; margin: 0; font-size: 16px;">
+                            <button type="submit" style="width: 100%; box-sizing: border-box; background: white; color: #f15a25; border: none; padding: 12px; border-radius: 8px; font-weight: 600; cursor: pointer; font-size: 16px;">Subscribe</button>
+                        </form>
+                    </div>
                 </div>
 
                 <!-- Popular Posts -->

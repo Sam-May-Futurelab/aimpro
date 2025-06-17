@@ -160,16 +160,23 @@
 
 /* Fix for Read More button hover colors */
 .post-card .read-more:hover,
-article .read-more:hover {
-    color: #9d3000; /* Darker orange for better contrast */
+article .read-more:hover,
+.related-post-item .read-more:hover,
+.post-content .read-more:hover,
+.blog-content .read-more:hover {
+    color: #333333 !important; /* Dark gray for maximum contrast */
+    text-decoration: underline !important;
 }
 
-/* Global overrides with maximum specificity */
+/* Global overrides with maximum specificity for Read More buttons */
+html body .read-more:hover,
 html body .main-content .container .section-content .blog-layout .blog-main .post-card .read-more:hover,
 html body .main-content .container .section-content .blog-layout .blog-main article .read-more:hover,
 html body .blog-section .section-content .blog-layout .blog-main .post-card .read-more:hover,
 html body .blog-section .section-content .blog-layout .blog-main article .read-more:hover,
-html body .read-more:hover {
+html body .blog-post-page .related-post-item .read-more:hover,
+html body .blog-post-page .blog-content .read-more:hover,
+html body a.read-more:hover {
     color: #333333 !important;
     text-decoration: underline !important;
 }
@@ -606,5 +613,35 @@ html body .read-more:hover {
 .sidebar-widget form button {
     max-width: 100%;
     display: block;
+    box-sizing: border-box;
+}
+
+/* Blog post subscription forms fix for email overflow */
+.sidebar-newsletter,
+.lead-magnet {
+    overflow: hidden;
+}
+
+.sidebar-newsletter form,
+.lead-magnet form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.sidebar-newsletter input[type="email"],
+.lead-magnet input[type="email"] {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 12px 15px;
+    border-radius: 8px;
+    border: 1px solid #e5e7eb;
+    margin: 0;
+    font-size: 16px;
+}
+
+.sidebar-newsletter button,
+.lead-magnet button {
+    width: 100%;
     box-sizing: border-box;
 }
