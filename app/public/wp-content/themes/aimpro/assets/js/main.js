@@ -433,15 +433,15 @@ document.addEventListener('DOMContentLoaded', function() {
     const mobileToggle = document.querySelector('.mobile-menu-toggle');
     const mainNav = document.querySelector('.main-nav');
 
-    if (mobileToggle && mainNav) {
-        // Create simple mobile dropdowns
+    if (mobileToggle && mainNav) {        // Create simple mobile dropdowns
         function createMobileDropdowns() {
             // Only create once
             if (mainNav.querySelector('.mobile-dropdown-content')) return;
 
-            // Services dropdown
+            // Services dropdown - insert directly after the Services link
             const servicesItem = mainNav.querySelector('.nav-item-mega');
             if (servicesItem) {
+                const servicesLink = servicesItem.querySelector('a');
                 const dropdown = document.createElement('div');
                 dropdown.className = 'mobile-dropdown-content';
                 dropdown.innerHTML = `
@@ -476,14 +476,16 @@ document.addEventListener('DOMContentLoaded', function() {
                     <a href="/funnel-builds">Funnel Builds</a>
                     <a href="/ux-ui-optimization">UX/UI Design</a>
                 `;
-                servicesItem.appendChild(dropdown);
+                // Insert immediately after the Services link
+                servicesLink.insertAdjacentElement('afterend', dropdown);
             }
 
-            // Other dropdowns
+            // Other dropdowns - get all dropdown items
             const dropdownItems = mainNav.querySelectorAll('.nav-item-dropdown');
             
             // Solutions
             if (dropdownItems[0]) {
+                const solutionsLink = dropdownItems[0].querySelector('a');
                 const dropdown = document.createElement('div');
                 dropdown.className = 'mobile-dropdown-content';
                 dropdown.innerHTML = `
@@ -494,11 +496,12 @@ document.addEventListener('DOMContentLoaded', function() {
                     <a href="/high-converting-website">Build a High-Converting Website</a>
                     <a href="/streamline-sales-funnel">Streamline Your Sales Funnel</a>
                 `;
-                dropdownItems[0].appendChild(dropdown);
+                solutionsLink.insertAdjacentElement('afterend', dropdown);
             }
 
             // Industries
             if (dropdownItems[1]) {
+                const industriesLink = dropdownItems[1].querySelector('a');
                 const dropdown = document.createElement('div');
                 dropdown.className = 'mobile-dropdown-content';
                 dropdown.innerHTML = `
@@ -510,11 +513,12 @@ document.addEventListener('DOMContentLoaded', function() {
                     <a href="/coaches-consultants">Coaches & Consultants</a>
                     <a href="/ecommerce">E-commerce</a>
                 `;
-                dropdownItems[1].appendChild(dropdown);
+                industriesLink.insertAdjacentElement('afterend', dropdown);
             }
 
             // Resources
             if (dropdownItems[2]) {
+                const resourcesLink = dropdownItems[2].querySelector('a');
                 const dropdown = document.createElement('div');
                 dropdown.className = 'mobile-dropdown-content';
                 dropdown.innerHTML = `
@@ -524,11 +528,12 @@ document.addEventListener('DOMContentLoaded', function() {
                     <a href="/events-webinars">Events & Webinars</a>
                     <a href="/training-mentoring">Training & Mentoring</a>
                 `;
-                dropdownItems[2].appendChild(dropdown);
+                resourcesLink.insertAdjacentElement('afterend', dropdown);
             }
 
             // About
             if (dropdownItems[3]) {
+                const aboutLink = dropdownItems[3].querySelector('a');
                 const dropdown = document.createElement('div');
                 dropdown.className = 'mobile-dropdown-content';
                 dropdown.innerHTML = `
@@ -538,7 +543,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     <a href="/careers">Careers</a>
                     <a href="/become-a-partner">Become a Partner</a>
                 `;
-                dropdownItems[3].appendChild(dropdown);
+                aboutLink.insertAdjacentElement('afterend', dropdown);
             }
         }
 

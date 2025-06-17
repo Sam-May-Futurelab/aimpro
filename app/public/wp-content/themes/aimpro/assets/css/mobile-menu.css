@@ -97,10 +97,15 @@
     margin: 0 !important;
     padding: 0 !important;
     border-bottom: 1px solid #eee !important;
+    position: relative !important;
 }
 
 .dark-theme .main-nav.mobile-active > ul > li {
     border-bottom-color: #2d3748 !important;
+}
+
+.main-nav.mobile-active > ul > li:last-child {
+    border-bottom: none !important;
 }
 
 /* Mobile Menu Links */
@@ -142,11 +147,13 @@
     transform: rotate(180deg) !important;
 }
 
-/* Mobile Dropdown Content */
+/* Mobile Dropdown Content - Positioned directly under parent */
 .mobile-dropdown-content {
     display: none !important;
     background: #f8f9fa !important;
     border-top: 1px solid #eee !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
 }
 
 .dark-theme .mobile-dropdown-content {

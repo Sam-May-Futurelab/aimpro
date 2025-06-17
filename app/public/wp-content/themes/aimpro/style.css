@@ -2287,14 +2287,13 @@ select:focus {
         font-size: 1.125rem;
         margin-bottom: 2rem;
     }
-    
-    .service-tags-strip {
+      .service-tags-strip {
         padding: 1.5rem 0;
     }
     
     .value-statement {
         padding: 3rem 0;
-    }    
+    }
     
     .stats-section {
         padding: 4rem 0;
@@ -2414,14 +2413,32 @@ select:focus {
     .value-statement {
         padding: 2.5rem 0;
     }
-    
-    .stats-section,
+      .stats-section,
     .services-grid,
     .team-section,
     .testimonials-section,
     .blog-section {
-        padding:      3rem 0;
+        padding: 3rem 0;
     }
+    
+    /* Extra small mobile stats adjustments */
+    .stats-grid {
+        gap: 1rem !important;
+        max-width: 320px !important;
+    }
+    
+    .stat-item {
+        padding: 1.2rem 0.8rem !important;
+        min-height: 110px !important;
+    }
+    
+    .stat-item .stat-number {
+        font-size: 1.6rem !important;
+    }
+      .stat-item .stat-text {
+        font-size: 0.8rem !important;
+    }
+}
     
     .tags-wrapper {
         padding: 1.5rem 0;
@@ -2464,11 +2481,11 @@ select:focus {
         font-size: 0.95rem;
         margin-bottom: 0.1rem;
     }
-    
-    .testimonial-author span {
+      .testimonial-author span {
         font-size: 0.75rem;
     }
-      .testimonials-grid {
+    
+    .testimonials-grid {
         gap: 1.5rem; /* Further reduced from 2rem */
     }
 }

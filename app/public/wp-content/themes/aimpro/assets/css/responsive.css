@@ -107,12 +107,14 @@
     .service-grid {
         grid-template-columns: 1fr;
         gap: 2rem;
+    }    /* Hide stats section on mobile */
+    .stats-section {
+        display: none;
     }
     
-    /* Stats Section */
-    .stats-grid {
-        grid-template-columns: 1fr;
-        gap: 2rem;
+    /* Hide testimonials section on mobile */
+    .testimonials-section {
+        display: none;
     }
     
     /* Team Section */
@@ -180,9 +182,29 @@
     .trust-item {
         margin-bottom: 0.5rem;
     }
-    
-    h2 {
+      h2 {
         font-size: 1.75rem;
+    }
+    
+    /* Stats Section - Even more compact for small screens */
+    .stats-grid {
+        gap: 1rem;
+        max-width: 320px;
+    }
+    
+    .stat-item {
+        padding: 1rem 0.75rem;
+        min-height: 100px;
+    }
+    
+    .stat-item .stat-number {
+        font-size: 1.6rem;
+        margin-bottom: 0.25rem;
+    }
+    
+    .stat-item .stat-text {
+        font-size: 0.75rem;
+        line-height: 1.2;
     }
 }
 
@@ -190,6 +212,27 @@
 @media (max-width: 375px) {
     .hero-content h1 {
         font-size: clamp(1.5rem, 6vw, 2rem);
+    }
+    
+    /* Stats Section - Ultra compact for extra small screens */
+    .stats-grid {
+        gap: 0.75rem;
+        max-width: 280px;
+    }
+    
+    .stat-item {
+        padding: 0.75rem 0.5rem;
+        min-height: 90px;
+    }
+    
+    .stat-item .stat-number {
+        font-size: 1.4rem;
+        margin-bottom: 0.25rem;
+    }
+    
+    .stat-item .stat-text {
+        font-size: 0.7rem;
+        line-height: 1.1;
     }
 }
 
