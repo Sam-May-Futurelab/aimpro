@@ -563,13 +563,14 @@
     font-size: 16px !important;
 }
 
-.btn-primary {
+/* Industry page specific buttons - scoped to avoid global conflicts */
+.industry-page .btn-primary {
     background: white !important;
     color: var(--primary-orange, #F15A25) !important;
     border: none !important;
 }
 
-.btn-primary:hover {
+.industry-page .btn-primary:hover {
     transform: translateY(-3px) !important;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15) !important;
     background: #f8f8f8 !important;
