@@ -1851,3 +1851,158 @@ window.addEventListener('resize', function() {
         });
     }, 250);
 });
+
+// Testimonials Carousel Functionality
+function initTestimonialsCarousel() {
+    const carouselWrapper = document.querySelector('.testimonials-carousel-wrapper');
+    if (!carouselWrapper) return;
+    
+    const carouselTrack = carouselWrapper.querySelector('.testimonials-carousel-track');
+    const testimonialCards = carouselTrack.querySelectorAll('.testimonial-card');
+    const prevButton = document.querySelector('.carousel-prev');
+    const nextButton = document.querySelector('.carousel-next');
+    const dots = document.querySelectorAll('.carousel-dots .dot');
+    
+    if (!carouselTrack || testimonialCards.length === 0) return;
+    
+    let currentIndex = 0;
+    const totalSlides = testimonialCards.length;
+    let isTransitioning = false;
+    
+    // Calculate card width including gap
+    function getCardWidth() {
+        const cardStyle = window.getComputedStyle(testimonialCards[0]);
+        const cardWidth = testimonialCards[0].offsetWidth;
+        const gap = parseInt(window.getComputedStyle(carouselTrack).gap) || 0;
+        return cardWidth + gap;
+    }
+    
+    // Update carousel position
+    function updateCarousel() {
+        if (isTransitioning) return;
+        isTransitioning = true;
+        
+        const cardWidth = getCardWidth();
+        const translateX = -currentIndex * cardWidth;
+        
+        carouselTrack.style.transform = `translateX(${translateX}px)`;
+        
+        // Update dots
+        dots.forEach((dot, index) => {
+            dot.classList.toggle('active', index === currentIndex);
+        });
+        
+        // Update button states
+        if (prevButton) prevButton.disabled = currentIndex === 0;
+        if (nextButton) nextButton.disabled = currentIndex === totalSlides - 1;
+        
+        // Re-enable transitions after animation
+        setTimeout(() => {
+            isTransitioning = false;
+        }, 500);
+    }
+    
+    // Previous slide
+    function goToPrevSlide() {
+        if (currentIndex > 0) {
+            currentIndex--;
+            updateCarousel();
+        }
+    }
+    
+    // Next slide
+    function goToNextSlide() {
+        if (currentIndex < totalSlides - 1) {
+            currentIndex++;
+            updateCarousel();
+        }
+    }
+    
+    // Go to specific slide
+    function goToSlide(index) {
+        if (index >= 0 && index < totalSlides && index !== currentIndex) {
+            currentIndex = index;
+            updateCarousel();
+        }
+    }
+    
+    // Event listeners
+    if (prevButton) {
+        prevButton.addEventListener('click', goToPrevSlide);
+    }
+    
+    if (nextButton) {
+        nextButton.addEventListener('click', goToNextSlide);
+    }
+    
+    // Dot navigation
+    dots.forEach((dot, index) => {
+        dot.addEventListener('click', () => goToSlide(index));
+    });
+    
+    // Keyboard navigation
+    document.addEventListener('keydown', (e) => {
+        if (carouselWrapper.contains(document.activeElement) || e.target.closest('.testimonials-carousel-wrapper')) {
+            if (e.key === 'ArrowLeft') {
+                e.preventDefault();
+                goToPrevSlide();
+            } else if (e.key === 'ArrowRight') {
+                e.preventDefault();
+                goToNextSlide();
+            }
+        }
+    });
+    
+    // Touch/swipe support
+    let startX = 0;
+    let startY = 0;
+    let isDragging = false;
+    
+    carouselWrapper.addEventListener('touchstart', (e) => {
+        startX = e.touches[0].clientX;
+        startY = e.touches[0].clientY;
+        isDragging = true;
+    }, { passive: true });
+    
+    carouselWrapper.addEventListener('touchmove', (e) => {
+        if (!isDragging) return;
+        
+        const currentX = e.touches[0].clientX;
+        const currentY = e.touches[0].clientY;
+        const diffX = startX - currentX;
+        const diffY = startY - currentY;
+        
+        // If horizontal swipe is more significant than vertical, prevent scroll
+        if (Math.abs(diffX) > Math.abs(diffY)) {
+            e.preventDefault();
+        }
+    }, { passive: false });
+    
+    carouselWrapper.addEventListener('touchend', (e) => {
+        if (!isDragging) return;
+        isDragging = false;
+        
+        const endX = e.changedTouches[0].clientX;
+        const diffX = startX - endX;
+        const threshold = 50;
+        
+        if (Math.abs(diffX) > threshold) {
+            if (diffX > 0) {
+                goToNextSlide();
+            } else {
+                goToPrevSlide();
+            }
+        }
+    }, { passive: true });
+    
+    // Initialize carousel
+    updateCarousel();
+    
+    // Handle window resize
+    window.addEventListener('resize', () => {
+        updateCarousel();
+    });
+}
+
+// Initialize testimonials carousel when DOM is ready
+initTestimonialsCarousel();

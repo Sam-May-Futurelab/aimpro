@@ -2488,7 +2488,7 @@ select:focus {
     .testimonials-grid {
         gap: 1.5rem; /* Further reduced from 2rem */
     }
-}
+
 
 /* Ultra Small Mobile - Testimonials Compact Mode */
 @media (max-width: 375px) {

@@ -106,15 +106,21 @@
     /* Services Section */
     .service-grid {
         grid-template-columns: 1fr;
-        gap: 2rem;
-    }    /* Hide stats section on mobile */
+        gap: 2rem;    }    /* Hide stats section on mobile */
     .stats-section {
-        display: none;
+        display: none !important;
     }
     
-    /* Hide testimonials section on mobile */
+    /* Hide testimonials section and carousel on mobile */
     .testimonials-section {
-        display: none;
+        display: none !important;
+    }
+    
+    .carousel-controls,
+    .carousel-prev,
+    .carousel-next,
+    .carousel-dots {
+        display: none !important;
     }
     
     /* Team Section */
