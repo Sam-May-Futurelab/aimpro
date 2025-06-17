@@ -236,9 +236,11 @@ get_header(); ?>
                                     'orderby' => 'count',
                                     'order' => 'DESC',
                                     'hide_empty' => false
-                                ));
-                                  if (!empty($categories)) :
-                                    foreach ($categories as $category) : ?>
+                                ));                                  if (!empty($categories)) :
+                                    foreach ($categories as $category) : 
+                                        // Skip categories with zero posts
+                                        if ($category->count == 0) continue; 
+                                    ?>
                                         <li>
                                             <span class="category-name">
                                                 <?php echo $category->name; ?>
@@ -254,7 +256,9 @@ get_header(); ?>
                                     <li><span class="category-name">Web Development <span class="post-count">(9)</span></span></li>
                                 <?php endif; ?>
                             </ul>
-                        </div>                        <!-- Recent Posts -->
+                        </div>
+                        
+                        <!-- Recent Posts -->
                         <div class="sidebar-widget">
                             <h3 class="widget-title"><?php echo esc_html(get_post_meta(get_the_ID(), 'blog_recent_posts_title', true) ?: 'Recent Posts'); ?></h3>
                             <div class="recent-posts">
@@ -302,17 +306,22 @@ get_header(); ?>
                                         <a href="#" class="recent-post-link">
                                             <h4>Social Media Marketing ROI: How to Measure Success</h4>
                                             <span class="recent-date">June 7, 2025</span>
-                                        </a>
-                                    </div>
-                                <?php endif; ?>
+                                        </a>                                    </div>                                <?php endif; ?>
                             </div>
-                        </div>                        <!-- Newsletter Signup -->
-                        <div class="sidebar-widget newsletter-widget">                            <h3 class="widget-title"><?php echo esc_html(get_post_meta(get_the_ID(), 'blog_newsletter_title', true) ?: 'Stay Updated'); ?></h3>
+                        </div>
+
+                        <!-- Simple Newsletter Widget -->
+                        <div class="sidebar-widget" style="overflow: hidden;">
+                            <h3 class="widget-title"><?php echo esc_html(get_post_meta(get_the_ID(), 'blog_newsletter_title', true) ?: 'Stay Updated'); ?></h3>
                             <p><?php echo esc_html(get_post_meta(get_the_ID(), 'blog_newsletter_subtitle', true) ?: 'Get weekly insights delivered to your inbox.'); ?></p>
-                            <form class="newsletter-form" action="#" method="post">
-                                <input type="email" name="email" placeholder="Email" required>
-                                <button type="submit" class="btn btn-primary"><?php echo esc_html(get_post_meta(get_the_ID(), 'blog_newsletter_button_text', true) ?: 'Subscribe'); ?></button>
-                            </form>
+                            
+                            <!-- Orange background box with inline styles to prevent any CSS conflicts -->
+                            <div style="background: linear-gradient(135deg, #f15a25 0%, #f47b51 100%); padding: 20px; border-radius: 8px; margin-top: 15px; color: white; overflow: hidden;">
+                                <form action="#" method="post" style="display: flex; flex-direction: column; gap: 10px;">
+                                    <input type="email" name="email" placeholder="Email" required style="width: 100%; box-sizing: border-box; padding: 12px 15px; border-radius: 8px; border: none; margin: 0; font-size: 16px;">
+                                    <button type="submit" style="width: 100%; box-sizing: border-box; background: white; color: #f15a25; border: none; padding: 12px; border-radius: 8px; font-weight: 600; cursor: pointer; font-size: 16px;"><?php echo esc_html(get_post_meta(get_the_ID(), 'blog_newsletter_button_text', true) ?: 'Subscribe'); ?></button>
+                                </form>
+                            </div>
                         </div>
 
                     </aside>
