@@ -160,9 +160,8 @@ Version: 1.0
     opacity: 0.95;
 }
 
-/* Enhanced readability for testimonials and insights subtitles */
-.testimonials-section .section-subtitle,
-.insights-section .section-subtitle {
+/* Enhanced readability for testimonials subtitles */
+.testimonials-section .section-subtitle {
     color: #f7fafc !important;
     font-weight: 400;
     opacity: 1;    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
@@ -2632,436 +2631,6 @@ select:focus {
     backface-visibility: hidden;
     perspective: 1000px;
 }
-
-/* ===============================================
-   MAGAZINE-STYLE INSIGHTS SECTION
-   =============================================== */
-
-.insights-section {
-    background: var(--gradient-dark);
-    position: relative;
-    padding: 5rem 0;
-}
-
-.insights-section.magazine-layout {
-    background: var(--gradient-dark);
-    position: relative;
-    overflow: hidden;
-}
-
-.insights-section.magazine-layout::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: 
-        radial-gradient(circle at 20% 20%, rgba(255, 215, 0, 0.05) 0%, transparent 50%),
-        radial-gradient(circle at 80% 80%, rgba(255, 165, 0, 0.03) 0%, transparent 50%);
-    pointer-events: none;
-    z-index: 1;
-}
-
-.insights-section .container {
-    position: relative;
-    z-index: 2;
-}
-
-.insights-section .content-center {
-    text-align: center;
-    margin-bottom: 4rem;
-}
-
-.insights-section .content-center h2 {
-    color: var(--text-primary);
-    font-size: 3.5rem;
-    font-weight: 900;
-    margin-bottom: 2rem;
-    line-height: 1.2;
-}
-
-.insights-section .section-subtitle {
-    color: #f1f5f9 !important;
-    font-weight: 400;
-    opacity: 0.95;
-}
-
-/* Enhanced readability for testimonials and insights subtitles */
-.testimonials-section .section-subtitle,
-.insights-section .section-subtitle {
-    color: #f7fafc !important;
-    font-weight: 500;
-    opacity: 1;
-    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
-}
-
-/* Light Theme Enhanced Testimonials and Insights Readability */
-.light-theme .testimonials-section .section-subtitle,
-.light-theme .insights-section .section-subtitle {
-    color: var(--text-secondary) !important;
-    font-weight: 500;
-    opacity: 1;
-    text-shadow: none;
-}
-
-.insights-grid {
-    display: grid;
-    grid-template-columns: 2fr 1fr;
-    gap: 3rem;
-    margin-bottom: 3rem;
-}
-
-/* Featured Insight */
-.featured-insight {
-    background: var(--glass-bg);
-    border-radius: 20px;
-    overflow: hidden;
-    box-shadow: var(--shadow-dark);
-    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-    position: relative;
-    border: var(--glass-border);
-    backdrop-filter: blur(20px);
-}
-
-.featured-insight:hover {    transform: translateY(-8px);
-    border: var(--glass-orange-border);
-    box-shadow: var(--shadow-orange-hover);
-}
-
-.insight-image {
-    position: relative;
-    height: 300px;
-    overflow: hidden;
-}
-
-.insight-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-/* Fallback styling for missing insight images */
-.insight-image img,
-.insight-image-small img {
-    background: linear-gradient(135deg, #f7fafc 0%, #edf2f7 100%);
-    border: 2px dashed #e2e8f0;
-}
-
-.insight-image img[src*="insight-featured.jpg"]::after,
-.insight-image-small img[src*="insight-1.jpg"]::after,
-.insight-image-small img[src*="insight-2.jpg"]::after,
-.insight-image-small img[src*="insight-3.jpg"]::after {
-    content: "📊 Insight Image";
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    color: #a0aec0;
-    font-size: 1rem;
-    font-weight: 500;
-}
-
-.featured-insight:hover .insight-image img {
-    transform: scale(1.05);
-}
-
-.insight-category {
-    position: absolute;
-    top: 1.5rem;    left: 1.5rem;
-    background: var(--gradient-orange);
-    color: var(--primary-black);
-    padding: 0.5rem 1rem;
-    border-radius: 25px;
-    font-size: 0.85rem;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-    box-shadow: var(--shadow-orange);
-}
-
-.insight-content {
-    padding: 2rem;
-}
-
-.insight-content h3 {
-    font-size: 1.75rem;
-    font-weight: 700;
-    color: var(--text-primary);
-    margin-bottom: 1rem;
-    line-height: 1.3;
-}
-
-.insight-content p {
-    font-size: 1.1rem;
-    color: var(--text-secondary);
-    line-height: 1.6;
-    margin-bottom: 1.5rem;
-}
-
-.insight-meta {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    margin-bottom: 1.5rem;
-    font-size: 0.9rem;
-    color: var(--text-muted);
-}
-
-.insight-meta .read-time,
-.insight-meta .publish-date {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-}
-
-.insight-meta .read-time::before {
-    content: "📖";
-    font-size: 0.8rem;
-}
-
-.insight-meta .publish-date::before {
-    content: "📅";
-    font-size: 0.8rem;
-}
-
-.insight-link {
-    color: var(--primary-orange);
-    font-weight: 600;
-    text-decoration: none;
-    transition: all 0.3s ease;
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
-}
-
-.insight-link:hover {
-    color: var(--primary-orange-light);
-    transform: translateX(5px);
-}
-
-/* Insights Sidebar */
-.insights-sidebar {
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
-}
-
-.insight-card {
-    background: var(--glass-bg);
-    border-radius: 16px;
-    padding: 1.5rem;
-    box-shadow: var(--shadow-dark);
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    border: var(--glass-border);
-    display: flex;
-    gap: 1rem;
-    align-items: flex-start;
-    backdrop-filter: blur(20px);
-}
-
-.insight-card:hover {    transform: translateY(-4px);
-    border: var(--glass-orange-border);
-    box-shadow: var(--shadow-orange-hover);
-}
-
-.insight-image-small {
-    flex-shrink: 0;
-    width: 80px;
-    height: 80px;
-    border-radius: 12px;
-    overflow: hidden;
-}
-
-.insight-image-small img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 0.3s ease;
-}
-
-.insight-card:hover .insight-image-small img {
-    transform: scale(1.1);
-}
-
-.insight-content-small {
-    flex: 1;
-}
-
-.insight-content-small h4 {
-    font-size: 1rem;
-    font-weight: 600;
-    color: var(--text-primary);
-    margin-bottom: 0.5rem;
-    line-height: 1.4;
-}
-
-.insight-content-small p {
-    font-size: 0.9rem;
-    color: var(--text-secondary);
-    line-height: 1.4;
-    margin-bottom: 0.5rem;
-    opacity: 0.9;
-}
-
-.insight-content-small .read-time {
-    font-size: 0.85rem;
-    color: var(--text-muted);
-}
-
-/* Insights CTA */
-.insights-cta {
-    text-align: center;
-    margin-top: 2rem;
-}
-
-.btn-outline.premium-hover {
-    background: transparent;    border: 2px solid var(--primary-orange);
-    color: var(--primary-orange);
-    padding: 1rem 2rem;
-    border-radius: 50px;
-    font-weight: 600;
-    text-decoration: none;
-    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-    position: relative;
-    overflow: hidden;
-}
-
-.btn-outline.premium-hover::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: var(--gradient-orange);
-    transition: left 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-    z-index: -1;
-}
-
-.btn-outline.premium-hover:hover::before {
-    left: 0;
-}
-
-.btn-outline.premium-hover:hover {
-    color: var(--primary-black);
-    border-color: var(--primary-orange-light);
-    transform: translateY(-2px);
-    box-shadow: var(--shadow-orange);
-}
-
-/* Responsive Design for Insights */
-@media (max-width: 968px) {
-    .insights-grid {
-        grid-template-columns: 1fr;
-        gap: 2rem;
-    }
-    
-    .insights-sidebar {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-        gap: 1rem;
-    }
-    
-    .insights-section .content-center h2 {
-        font-size: 2.25rem;
-    }
-    
-    .insight-content h3 {
-        font-size: 1.5rem;
-    }
-}
-
-@media (max-width: 768px) {
-    .insights-section {
-        padding: 3rem 0;
-    }
-    
-    .insights-section .content-center {
-        margin-bottom: 3rem;
-    }
-    
-    .insights-section .content-center h2 {
-        font-size: 2rem;
-    }
-    
-    .insight-image {
-        height: 250px;
-    }
-    
-    .insight-content {
-        padding: 1.5rem;
-    }
-    
-    .insight-content h3 {
-        font-size: 1.35rem;
-    }
-    
-    .insight-content p {
-        font-size: 1rem;
-    }
-    
-    .insights-sidebar {
-        grid-template-columns: 1fr;
-    }
-    
-    .insight-card {
-        padding: 1rem;
-    }
-    
-    .insight-image-small {
-        width: 70px;
-        height: 70px;
-    }
-    
-    .insight-content-small h4 {
-        font-size: 0.9rem;
-    }
-}
-
-@media (max-width: 480px) {
-    .insights-section .content-center h2 {
-        font-size: 1.75rem;
-    }
-    
-    .insight-content h3 {
-        font-size: 1.25rem;
-    }
-    
-    .insight-meta {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 0.5rem;
-    }
-    
-    .insight-image-small {
-        width: 60px;
-        height: 60px;
-    }
-    
-    .insight-card {
-        gap: 0.75rem;
-    }
-}
-
-/* Animation enhancements for insights */
-.featured-insight,
-.insight-card {
-    opacity: 0;
-    transform: translateY(30px);
-    transition: opacity 0.6s ease, transform 0.6s ease;
-}
-
-.featured-insight.visible,
-.insight-card.visible {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-.insight-card:nth-child(1) { animation-delay: 0.1s; }
-.insight-card:nth-child(2) { animation-delay: 0.2s; }
-.insight-card:nth-child(3) { animation-delay: 0.3s; }
 .performance-optimized {
     transform: translateZ(0);
     backface-visibility: hidden;
@@ -3116,28 +2685,6 @@ select:focus {
 .stats-animation-bg {
     backface-visibility: hidden;
     perspective: 1000px;
-}
-
-/* Optimize insights section animations */
-.featured-insight.visible,
-.insight-card.visible {
-    animation: slideInUp 0.6s cubic-bezier(0.4, 0, 0.2, 1) forwards;
-}
-
-/* Optimize for touch devices */
-@media (hover: none) and (pointer: coarse) {
-    .featured-insight:hover,
-    .insight-card:hover,
-    .service-card:hover {
-        transform: none;
-        box-shadow: inherit;
-    }
-    
-    .featured-insight,
-    .insight-card,
-    .service-card {
-        transition-duration: 0.2s;
-    }
 }
 
 /* ===============================================
@@ -3264,47 +2811,6 @@ select:focus {
 
 .light-theme .read-more:hover {
     color: var(--primary-orange) !important;
-}
-
-/* Light Theme Insights Section - Enhanced Readability */
-.light-theme .insights-section {
-    background: #ffffff;
-    color: var(--text-primary);
-}
-
-.light-theme .insights-section h2 {
-    color: var(--text-primary) !important;
-    font-weight: 900;
-}
-
-.light-theme .insights-section .section-subtitle {
-    color: var(--text-secondary) !important;
-    font-weight: 500;
-}
-
-.light-theme .insight-card {
-    background: rgba(255, 255, 255, 0.95) !important;
-    border: 1px solid rgba(0, 0, 0, 0.1);
-    color: var(--text-primary) !important;
-}
-
-.light-theme .insight-card:hover {
-    background: rgba(255, 255, 255, 1) !important;
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
-}
-
-.light-theme .insight-card h3 {
-    color: var(--text-primary) !important;
-    font-weight: 700;
-}
-
-.light-theme .insight-card p {
-    color: var(--text-secondary) !important;
-    font-weight: 400;
-}
-
-.light-theme .insight-meta {
-    color: var(--text-muted) !important;
 }
 
 /* Light Theme Testimonials Section - Enhanced Readability */
@@ -3439,24 +2945,9 @@ select:focus {
 .testimonials-target-1 {
     bottom: 10%;
     right: 8%;
-    width: 40px;
-    height: 40px;
+    width: 40px;    height: 40px;
     opacity: 0.2;
     animation: targetFloat 6.5s ease-in-out infinite;
-}
-
-/* Insights Section Target Icons */
-.insights-section {
-    position: relative;
-}
-
-.insights-target-1 {
-    top: 15%;
-    left: 3%;
-    width: 30px;
-    height: 30px;
-    opacity: 0.3;
-    animation: targetFloat 8s ease-in-out infinite;
 }
 
 /* Contact Section Target Icons */
@@ -3504,12 +2995,10 @@ select:focus {
     .stats-target-1,
     .services-target-1,
     .testimonials-target-1,
-    .insights-target-1,
     .contact-target-1,
     .contact-target-2,
     .floating-target-hero,
-    .floating-target-services,
-    .floating-target-insights {
+    .floating-target-services {
         width: 20px;
         height: 20px;
         opacity: 0.12;
@@ -3527,101 +3016,16 @@ select:focus {
     .stats-target-1,
     .services-target-1,
     .testimonials-target-1,
-    .insights-target-1,
     .contact-target-1,
     .contact-target-2,
     .floating-target-hero,
-    .floating-target-services,
-    .floating-target-insights {
+    .floating-target-services {
         display: none; /* Hide on very small screens to avoid clutter */
     }
 }
 
 /* Light Theme Target Icon Adjustments moved to variables.css */
 /* Light Theme Service Card Hover Styles moved to variables.css */
-
-.insight-card:hover {
-    transform: translateY(-4px);
-    border: var(--glass-orange-border);
-    box-shadow: var(--shadow-orange-hover);
-}
-
-.insight-image-small {
-    flex-shrink: 0;
-    width: 80px;
-    height: 80px;
-    border-radius: 12px;
-    overflow: hidden;
-}
-
-.insight-image-small img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 0.3s ease;
-}
-
-.insight-card:hover .insight-image-small img {
-    transform: scale(1.1);
-}
-
-.insight-content-small {
-    flex: 1;
-}
-
-.insight-content-small h4 {
-    font-size: 1rem;
-    font-weight: 600;
-    color: var(--text-primary);
-    margin-bottom: 0.5rem;
-    line-height: 1.4;
-}
-
-.insight-content-small .read-time {
-    font-size: 0.85rem;
-    color: var(--text-muted);
-}
-
-/* Insights CTA */
-.insights-cta {
-    text-align: center;
-    margin-top: 2rem;
-}
-
-.btn-outline.premium-hover {
-    background: transparent;    border: 2px solid var(--primary-orange);
-    color: var(--primary-orange);
-    padding: 1rem 2rem;
-    border-radius: 50px;
-    font-weight: 600;
-    text-decoration: none;
-    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-    position: relative;
-    overflow: hidden;
-}
-
-.btn-outline.premium-hover::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: var(--gradient-orange);
-    transition: left 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-    z-index: -1;
-}
-
-.btn-outline.premium-hover:hover::before {
-    left: 0;
-}
-
-.btn-outline.premium-hover:hover {
-    color: var(--primary-black);
-    border-color: var(--primary-orange-light);
-    transform: translateY(-2px);
-    box-shadow: var(--shadow-orange);
-}
 
 /* Office Visit Section */
 .office-visit-section {
