@@ -140,14 +140,7 @@
 .blog-card:nth-child(2) { animation-delay: 0.2s; }
 .blog-card:nth-child(3) { animation-delay: 0.3s; }
 
-/* Tag Animation Delays */
-.tag:nth-child(1) { animation-delay: 0.1s; }
-.tag:nth-child(2) { animation-delay: 0.2s; }
-.tag:nth-child(3) { animation-delay: 0.3s; }
-.tag:nth-child(4) { animation-delay: 0.4s; }
-.tag:nth-child(5) { animation-delay: 0.5s; }
-.tag:nth-child(6) { animation-delay: 0.6s; }
-.tag:nth-child(7) { animation-delay: 0.7s; }
+/* Tag Animation Delays - MOVED TO style.css to consolidate tag styles */
 
 /* ========================================
    PREMIUM SCROLL-IN ANIMATIONS
