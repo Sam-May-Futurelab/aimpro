@@ -139,13 +139,12 @@ get_header(); ?>
                 <div class="service-background">
                     <div class="service-pattern pattern-1"></div>
                 </div>
-                <div class="service-content">
-                    <div class="service-header">                        <div class="service-icon-container">
+                <div class="service-content">                    <div class="service-header">                        <div class="service-icon-container">
                             <div class="service-icon-animated">
                                 <i class="fas fa-search" style="font-size: 30px; color: #f15a25;"></i>
                             </div>
-                            <div class="service-badge">SEO</div>
                         </div>
+                        <div class="service-badge">SEO</div>
                         <h3>SEO Services</h3>
                     </div>
                     <div class="service-description">
@@ -154,15 +153,9 @@ get_header(); ?>
                             <span class="feature-tag">Technical SEO</span>
                             <span class="feature-tag">SEO Audits</span>
                         </div>
-                    </div>
-                    <div class="service-action">
-                        <a href="#contact" class="premium-service-cta">
+                    </div>                    <div class="service-action">
+                        <a href="#contact" class="btn-primary">
                             <span>RANK HIGHER</span>
-                            <div class="cta-arrow">
-                                <svg width="20" height="20" viewBox="0 0 24 24">
-                                    <path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2" fill="none"/>
-                                </svg>
-                            </div>
                         </a>
                     </div>
                 </div>
@@ -174,13 +167,12 @@ get_header(); ?>
                 <div class="service-background">
                     <div class="service-pattern pattern-2"></div>
                 </div>
-                <div class="service-content">
-                    <div class="service-header">                        <div class="service-icon-container">
+                <div class="service-content">                    <div class="service-header">                        <div class="service-icon-container">
                             <div class="service-icon-animated">
                                 <i class="fab fa-google" style="font-size: 30px; color: #f15a25;"></i>
                             </div>
-                            <div class="service-badge">PPC</div>
                         </div>
+                        <div class="service-badge">PPC</div>
                         <h3>Google Ads Management</h3>
                     </div>
                     <div class="service-description">
@@ -189,15 +181,9 @@ get_header(); ?>
                             <span class="feature-tag">Keyword Research</span>
                             <span class="feature-tag">A/B Testing</span>
                         </div>
-                    </div>
-                    <div class="service-action">
-                        <a href="#contact" class="premium-service-cta">
+                    </div>                    <div class="service-action">
+                        <a href="#contact" class="btn-primary">
                             <span>MAXIMIZE YOUR ROI</span>
-                            <div class="cta-arrow">
-                                <svg width="20" height="20" viewBox="0 0 24 24">
-                                    <path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2" fill="none"/>
-                                </svg>
-                            </div>
                         </a>
                     </div>
                 </div>
@@ -209,13 +195,12 @@ get_header(); ?>
                 <div class="service-background">
                     <div class="service-pattern pattern-3"></div>
                 </div>
-                <div class="service-content">
-                    <div class="service-header">                        <div class="service-icon-container">
+                <div class="service-content">                    <div class="service-header">                        <div class="service-icon-container">
                             <div class="service-icon-animated">
                                 <i class="fas fa-palette" style="font-size: 30px; color: #f15a25;"></i>
                             </div>
-                            <div class="service-badge">Web</div>
                         </div>
+                        <div class="service-badge">Web</div>
                         <h3>Website Design</h3>
                     </div>
                     <div class="service-description">
@@ -224,15 +209,9 @@ get_header(); ?>
                             <span class="feature-tag">SEO Ready</span>
                             <span class="feature-tag">Fast Loading</span>
                         </div>
-                    </div>
-                    <div class="service-action">
-                        <a href="#contact" class="premium-service-cta">
+                    </div>                    <div class="service-action">
+                        <a href="#contact" class="btn-primary">
                             <span>BUILD BETTER WEBSITE</span>
-                            <div class="cta-arrow">
-                                <svg width="20" height="20" viewBox="0 0 24 24">
-                                    <path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2" fill="none"/>
-                                </svg>
-                            </div>
                         </a>
                     </div>
                 </div>
@@ -258,15 +237,9 @@ get_header(); ?>
                             <span class="feature-tag">✓ Instagram Ads</span>
                             <span class="feature-tag">✓ Retargeting Campaigns</span>
                         </div>
-                    </div>
-                    <div class="service-action">
-                        <a href="#contact" class="premium-service-cta">
+                    </div>                    <div class="service-action">
+                        <a href="#contact" class="btn-primary">
                             <span>SCALE YOUR REACH</span>
-                            <div class="cta-arrow">
-                                <svg width="20" height="20" viewBox="0 0 24 24">
-                                    <path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2" fill="none"/>
-                                </svg>
-                            </div>
                         </a>
                     </div>
                 </div>
@@ -294,15 +267,9 @@ get_header(); ?>
                             <span class="feature-tag">✓ Predictive Analytics</span>
                             <span class="feature-tag">✓ Customer Insights</span>
                         </div>
-                    </div>
-                    <div class="service-action">
-                        <a href="#contact" class="premium-service-cta">
+                    </div>                    <div class="service-action">
+                        <a href="#contact" class="btn-primary">
                             <span>AUTOMATE YOUR CRM</span>
-                            <div class="cta-arrow">
-                                <svg width="20" height="20" viewBox="0 0 24 24">
-                                    <path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2" fill="none"/>
-                                </svg>
-                            </div>
                         </a>
                     </div>
                 </div>
@@ -330,15 +297,9 @@ get_header(); ?>
                             <span class="feature-tag">✓ Lead Nurturing</span>
                             <span class="feature-tag">✓ Performance Tracking</span>
                         </div>
-                    </div>
-                    <div class="service-action">
-                        <a href="#contact" class="premium-service-cta">
+                    </div>                    <div class="service-action">
+                        <a href="#contact" class="btn-primary">
                             <span>AUTOMATE YOUR GROWTH</span>
-                            <div class="cta-arrow">
-                                <svg width="20" height="20" viewBox="0 0 24 24">
-                                    <path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2" fill="none"/>
-                                </svg>
-                            </div>
                         </a>
                     </div>
                 </div>
