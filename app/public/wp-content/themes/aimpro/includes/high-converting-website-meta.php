@@ -18,6 +18,22 @@ function add_high_converting_website_meta_boxes() {
 }
 add_action('add_meta_boxes', 'add_high_converting_website_meta_boxes', 11);
 
+// Enqueue media uploader scripts
+function high_converting_website_admin_enqueue_scripts($hook) {
+    if ($hook == 'post.php' || $hook == 'post-new.php') {
+        global $post;
+        if (isset($post)) {
+            $page_template = get_page_template_slug($post->ID);
+            $page_slug = $post->post_name;
+            
+            if ($page_template === 'page-high-converting-website.php' || $page_slug === 'high-converting-website') {
+                wp_enqueue_media();
+            }
+        }
+    }
+}
+add_action('admin_enqueue_scripts', 'high_converting_website_admin_enqueue_scripts');
+
 function high_converting_website_meta_box_callback($post) {
     // Only show on high converting website page template
     $page_template = get_page_template_slug($post->ID);
@@ -34,11 +50,10 @@ function high_converting_website_meta_box_callback($post) {
 
     // Get existing values
     $header_title = get_post_meta($post->ID, '_high_converting_website_header_title', true) ?: 'Build a High-Converting Website';
-    $header_subtitle = get_post_meta($post->ID, '_high_converting_website_header_subtitle', true) ?: 'Create a website that turns visitors into customers with conversion-focused design and optimization';
-
-    // Solution Overview
+    $header_subtitle = get_post_meta($post->ID, '_high_converting_website_header_subtitle', true) ?: 'Create a website that turns visitors into customers with conversion-focused design and optimization';    // Solution Overview
     $overview_title = get_post_meta($post->ID, '_high_converting_website_overview_title', true) ?: 'Transform Visitors Into Paying Customers';
     $overview_content = get_post_meta($post->ID, '_high_converting_website_overview_content', true) ?: 'Your website is your most powerful sales tool, working 24/7 to convert visitors into customers. Our data-driven approach to website design and optimization focuses on user experience, conversion psychology, and performance to create websites that don\'t just look good—they deliver results.';
+    $overview_image = get_post_meta($post->ID, '_high_converting_website_overview_image', true);
     
     // Challenges
     $challenges_title = get_post_meta($post->ID, '_high_converting_website_challenges_title', true) ?: 'Website Conversion Challenges We Solve:';
@@ -368,11 +383,26 @@ function high_converting_website_meta_box_callback($post) {
             .high-converting-website-meta-box .nested-repeater {
                 margin-left: 20px;
                 margin-top: 10px;
-            }
-            .high-converting-website-meta-box .field-description {
+            }            .high-converting-website-meta-box .field-description {
                 font-style: italic;
                 color: #666;
                 font-size: 0.9em;
+            }
+            .high-converting-website-meta-box .image-upload-container {
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+            }
+            .high-converting-website-meta-box .image-preview {
+                max-width: 200px;
+                max-height: 150px;
+                object-fit: cover;
+                border: 1px solid #ddd;
+                border-radius: 4px;
+            }
+            .high-converting-website-meta-box .upload-button,
+            .high-converting-website-meta-box .remove-button {
+                width: fit-content;
             }
         </style>
 
@@ -404,11 +434,24 @@ function high_converting_website_meta_box_callback($post) {
                     <td>
                         <input type="text" id="high_converting_website_overview_title" name="high_converting_website_overview_title" value="<?php echo esc_attr($overview_title); ?>" />
                     </td>
-                </tr>
-                <tr>
+                </tr>                <tr>
                     <th><label for="high_converting_website_overview_content">Overview Content</label></th>
                     <td>
                         <textarea id="high_converting_website_overview_content" name="high_converting_website_overview_content"><?php echo esc_textarea($overview_content); ?></textarea>
+                    </td>
+                </tr>
+                <tr>
+                    <th><label for="high_converting_website_overview_image">Overview Image</label></th>
+                    <td>
+                        <input type="hidden" 
+                               id="high_converting_website_overview_image" 
+                               name="high_converting_website_overview_image" 
+                               value="<?php echo esc_attr($overview_image); ?>" />
+                        <button type="button" class="button upload-button" data-target="high_converting_website_overview_image">Upload Image</button>
+                        <?php if ($overview_image): ?>
+                            <img src="<?php echo esc_url(wp_get_attachment_url($overview_image)); ?>" class="image-preview" />
+                            <button type="button" class="button remove-button" data-target="high_converting_website_overview_image">Remove</button>
+                        <?php endif; ?>
                     </td>
                 </tr>
                 <tr>
@@ -1119,8 +1162,7 @@ function high_converting_website_meta_box_callback($post) {
             
             $items.last().after($newItem);
         });
-        
-        // Add tool item
+          // Add tool item
         $('.high-converting-website-meta-box').on('click', '.add-tool-item', function() {
             var $nestedRepeater = $(this).closest('.nested-repeater');
             var $lastItem = $nestedRepeater.find('.repeater-item:last');
@@ -1130,6 +1172,50 @@ function high_converting_website_meta_box_callback($post) {
             $newItem.find('input').val('');
             
             $lastItem.after($newItem);
+        });
+        
+        // Image upload functionality
+        var custom_uploader;
+        $('.high-converting-website-meta-box').on('click', '.upload-button', function(e) {
+            e.preventDefault();
+            var $this = $(this);
+            var target = $this.data('target');
+            
+            if (custom_uploader) {
+                custom_uploader.open();
+                return;
+            }
+            
+            custom_uploader = wp.media.frames.file_frame = wp.media({
+                title: 'Choose Image',
+                button: {
+                    text: 'Choose Image'
+                },
+                multiple: false
+            });
+            
+            custom_uploader.on('select', function() {
+                var attachment = custom_uploader.state().get('selection').first().toJSON();
+                $('#' + target).val(attachment.id);
+                
+                // Update preview
+                var $container = $this.closest('td');
+                $container.find('.image-preview').remove();
+                $container.find('.remove-button').remove();
+                $container.append('<img src="' + attachment.url + '" class="image-preview" />');
+                $container.append('<button type="button" class="button remove-button" data-target="' + target + '">Remove</button>');
+            });
+            
+            custom_uploader.open();
+        });
+        
+        // Remove image functionality
+        $('.high-converting-website-meta-box').on('click', '.remove-button', function(e) {
+            e.preventDefault();
+            var target = $(this).data('target');
+            $('#' + target).val('');
+            $(this).siblings('.image-preview').remove();
+            $(this).remove();
         });
     });
     </script>
@@ -1228,14 +1314,13 @@ function save_high_converting_website_meta_box_data($post_id) {
         if (!current_user_can('edit_page', $post_id)) {
             return;
         }
-    }
-
-    // Save all fields
+    }    // Save all fields
     $fields = [
         'high_converting_website_header_title',
         'high_converting_website_header_subtitle',
         'high_converting_website_overview_title',
         'high_converting_website_overview_content',
+        'high_converting_website_overview_image',
         'high_converting_website_challenges_title',
         'high_converting_website_challenges',
         'high_converting_website_services_title',

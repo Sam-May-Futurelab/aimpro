@@ -23,7 +23,7 @@ get_header(); ?>
                 <div class="overview-content">
                     <div class="overview-text">
                         <h2><?php echo get_post_meta(get_the_ID(), 'high_converting_website_overview_title', true) ?: 'Transform Visitors Into Paying Customers'; ?></h2>
-                        <p><?php echo get_post_meta(get_the_ID(), 'high_converting_website_overview_description', true) ?: 'Your website is your most powerful sales tool, working 24/7 to convert visitors into customers. Our data-driven approach to website design and optimization focuses on user experience, conversion psychology, and performance to create websites that don\'t just look good—they deliver results.'; ?></p>
+                        <p><?php echo get_post_meta(get_the_ID(), '_high_converting_website_overview_content', true) ?: 'Your website is your most powerful sales tool, working 24/7 to convert visitors into customers. Our data-driven approach to website design and optimization focuses on user experience, conversion psychology, and performance to create websites that don\'t just look good—they deliver results.'; ?></p>
                         
                         <div class="solution-challenges">
                             <h3><?php echo get_post_meta(get_the_ID(), 'high_converting_website_challenges_title', true) ?: 'Website Conversion Challenges We Solve:'; ?></h3>
@@ -53,9 +53,8 @@ get_header(); ?>
                             </ul>
                         </div>
                     </div>
-                    <div class="overview-image">
-                        <?php 
-                        $overview_image = get_post_meta(get_the_ID(), 'high_converting_website_overview_image', true);
+                    <div class="overview-image">                        <?php 
+                        $overview_image = get_post_meta(get_the_ID(), '_high_converting_website_overview_image', true);
                         if (!empty($overview_image)) {
                             echo wp_get_attachment_image($overview_image, 'full', false, array('alt' => 'High-Converting Website Strategy'));
                         } else {

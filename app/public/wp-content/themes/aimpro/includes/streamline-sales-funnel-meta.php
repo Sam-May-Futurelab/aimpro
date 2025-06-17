@@ -1,5 +1,21 @@
 <?php
 // Meta fields for Streamline Your Sales Funnel page
+
+// Enqueue media uploader scripts
+add_action('admin_enqueue_scripts', function($hook) {
+    if ($hook == 'post.php' || $hook == 'post-new.php') {
+        global $post;
+        if (isset($post)) {
+            $page_template = get_page_template_slug($post->ID);
+            $page_slug = get_post_field('post_name', $post->ID);
+            
+            if ($page_template === 'page-streamline-sales-funnel.php' || $page_slug === 'streamline-sales-funnel' || $page_slug === 'funnel-builds') {
+                wp_enqueue_media();
+            }
+        }
+    }
+});
+
 add_action('add_meta_boxes', function() {
     global $post;
     $template = get_page_template_slug($post->ID);
@@ -46,10 +62,24 @@ function streamline_sales_funnel_meta_callback($post) {
     <div style="margin-bottom:20px;">
         <label><strong>Overview Title</strong></label><br>
         <input type="text" name="streamline_sales_funnel_overview_title" value="<?php echo esc_attr(get_post_meta($post->ID, 'streamline_sales_funnel_overview_title', true)); ?>" style="width:100%;" />
-    </div>
-    <div style="margin-bottom:20px;">
+    </div>    <div style="margin-bottom:20px;">
         <label><strong>Overview Description</strong></label><br>
         <textarea name="streamline_sales_funnel_overview_description" style="width:100%;height:60px;"><?php echo esc_textarea(get_post_meta($post->ID, 'streamline_sales_funnel_overview_description', true)); ?></textarea>
+    </div>
+    <div style="margin-bottom:20px;" class="image-upload-container">
+        <label><strong>Overview Image</strong></label><br>
+        <input type="hidden" 
+               id="streamline_sales_funnel_overview_image" 
+               name="streamline_sales_funnel_overview_image" 
+               value="<?php echo esc_attr(get_post_meta($post->ID, 'streamline_sales_funnel_overview_image', true)); ?>" />
+        <button type="button" class="button upload-button" data-target="streamline_sales_funnel_overview_image">Upload Image</button>
+        <?php 
+        $overview_image_id = get_post_meta($post->ID, 'streamline_sales_funnel_overview_image', true);
+        if ($overview_image_id): 
+        ?>
+            <img src="<?php echo esc_url(wp_get_attachment_url($overview_image_id)); ?>" class="image-preview" />
+            <button type="button" class="button remove-button" data-target="streamline_sales_funnel_overview_image">Remove</button>
+        <?php endif; ?>
     </div>
     <div style="margin-bottom:20px;">
         <label><strong>Problems We Solve (one per line)</strong></label><br>
@@ -73,19 +103,8 @@ function streamline_sales_funnel_meta_callback($post) {
                 <textarea name="streamline_sales_funnel_services[<?php echo $i; ?>][features]" placeholder="Features (one per line)" style="width:100%;height:40px;"><?php echo esc_textarea(implode("\n", (array)($service['features'] ?? []))); ?></textarea>
             </div>
             <?php
-        }
-        ?>
+        }        ?>
         <button type="button" class="button add-service">Add Service</button>
-        <script>
-        jQuery(document).ready(function($){
-            $('.add-service').on('click',function(){
-                var $last = $(this).prevAll('div').last();
-                var $clone = $last.clone();
-                $clone.find('input,textarea').val('');
-                $last.after($clone);
-            });
-        });
-        </script>
     </div>
     <div style="margin-bottom:20px;">
         <label><strong>Case Study Label</strong></label><br>
@@ -303,21 +322,97 @@ function streamline_sales_funnel_meta_callback($post) {
     <div style="margin-bottom:20px;">
         <label><strong>CTA Secondary Button Link</strong></label><br>
         <input type="text" name="streamline_sales_funnel_cta_secondary_link" value="<?php echo esc_attr(get_post_meta($post->ID, 'streamline_sales_funnel_cta_secondary_link', true)); ?>" style="width:100%;" />
-    </div>
-    <div style="margin-bottom:20px;">
+    </div>    <div style="margin-bottom:20px;">
         <label><strong>CTA Benefits (one per line)</strong></label><br>
         <textarea name="streamline_sales_funnel_cta_benefits" style="width:100%;height:40px;"><?php echo esc_textarea(implode("\n", (array)get_post_meta($post->ID, 'streamline_sales_funnel_cta_benefits', true))); ?></textarea>
     </div>
+    
+    <style>
+        .image-upload-container {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        .image-preview {
+            max-width: 200px;
+            max-height: 150px;
+            object-fit: cover;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            margin-top: 10px;
+        }
+        .upload-button,
+        .remove-button {
+            width: fit-content;
+        }
+    </style>
+    
+    <script>
+    jQuery(document).ready(function($) {
+        // Existing add service functionality
+        $('.add-service').on('click', function(){
+            var $last = $(this).prevAll('div').last();
+            var $clone = $last.clone();
+            $clone.find('input,textarea').val('');
+            $last.after($clone);
+        });
+        
+        // Image upload functionality
+        var custom_uploader;
+        $('.upload-button').on('click', function(e) {
+            e.preventDefault();
+            var $this = $(this);
+            var target = $this.data('target');
+            
+            if (custom_uploader) {
+                custom_uploader.open();
+                return;
+            }
+            
+            custom_uploader = wp.media.frames.file_frame = wp.media({
+                title: 'Choose Image',
+                button: {
+                    text: 'Choose Image'
+                },
+                multiple: false
+            });
+            
+            custom_uploader.on('select', function() {
+                var attachment = custom_uploader.state().get('selection').first().toJSON();
+                $('#' + target).val(attachment.id);
+                
+                // Update preview
+                var $container = $this.closest('.image-upload-container');
+                $container.find('.image-preview').remove();
+                $container.find('.remove-button').remove();
+                $container.append('<img src="' + attachment.url + '" class="image-preview" />');
+                $container.append('<button type="button" class="button remove-button" data-target="' + target + '">Remove</button>');
+            });
+            
+            custom_uploader.open();
+        });
+        
+        // Remove image functionality
+        $(document).on('click', '.remove-button', function(e) {
+            e.preventDefault();
+            var target = $(this).data('target');
+            $('#' + target).val('');
+            $(this).siblings('.image-preview').remove();
+            $(this).remove();
+        });
+    });
+    </script>
+    
     <?php
 }
 
 add_action('save_post', function($post_id) {
-    if (!isset($_POST['streamline_sales_funnel_meta_nonce']) || !wp_verify_nonce($_POST['streamline_sales_funnel_meta_nonce'], 'streamline_sales_funnel_meta')) return;
-    $fields = [
+    if (!isset($_POST['streamline_sales_funnel_meta_nonce']) || !wp_verify_nonce($_POST['streamline_sales_funnel_meta_nonce'], 'streamline_sales_funnel_meta')) return;    $fields = [
         'streamline_sales_funnel_header_title',
         'streamline_sales_funnel_header_subtitle',
         'streamline_sales_funnel_overview_title',
         'streamline_sales_funnel_overview_description',
+        'streamline_sales_funnel_overview_image',
         'streamline_sales_funnel_problems',
         'streamline_sales_funnel_strategy_title',
         'streamline_sales_funnel_services',

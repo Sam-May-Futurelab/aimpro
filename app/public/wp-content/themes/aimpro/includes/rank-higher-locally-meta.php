@@ -18,6 +18,19 @@ function add_rank_higher_locally_meta_boxes() {
 }
 add_action('add_meta_boxes', 'add_rank_higher_locally_meta_boxes', 11);
 
+// Enqueue media scripts for image uploads
+function enqueue_rank_higher_locally_admin_scripts($hook) {
+    global $post;
+    
+    if ($hook == 'post-new.php' || $hook == 'post.php') {
+        if (isset($post) && get_post_type($post) === 'page') {
+            wp_enqueue_media();
+            wp_enqueue_script('jquery');
+        }
+    }
+}
+add_action('admin_enqueue_scripts', 'enqueue_rank_higher_locally_admin_scripts');
+
 function rank_higher_locally_meta_box_callback($post) {
     // Only show on rank higher locally page template
     $page_template = get_page_template_slug($post->ID);
@@ -34,11 +47,10 @@ function rank_higher_locally_meta_box_callback($post) {
 
     // Get existing values
     $header_title = get_post_meta($post->ID, '_rank_higher_locally_header_title', true) ?: 'Rank Higher Locally';
-    $header_subtitle = get_post_meta($post->ID, '_rank_higher_locally_header_subtitle', true) ?: 'Dominate local search results and attract customers in your area with comprehensive local SEO strategies';
-
-    // Solution Overview
+    $header_subtitle = get_post_meta($post->ID, '_rank_higher_locally_header_subtitle', true) ?: 'Dominate local search results and attract customers in your area with comprehensive local SEO strategies';    // Solution Overview
     $overview_title = get_post_meta($post->ID, '_rank_higher_locally_overview_title', true) ?: 'Become the Local Leader in Your Industry';
     $overview_content = get_post_meta($post->ID, '_rank_higher_locally_overview_content', true) ?: 'Local search drives immediate action. When potential customers search for services "near me," you want to be the first business they find. Our comprehensive local SEO strategies help you dominate local search results, increase visibility, and attract more qualified customers in your service area.';
+    $overview_image = get_post_meta($post->ID, '_rank_higher_locally_overview_image', true);
     
     // Challenges
     $challenges_title = get_post_meta($post->ID, '_rank_higher_locally_challenges_title', true) ?: 'Local Search Challenges We Solve:';
@@ -271,7 +283,7 @@ function rank_higher_locally_meta_box_callback($post) {
                 width: 80%;
             }
             .rank-higher-locally-meta-box input[type="text"], 
-            .rank-higher-locally-meta-box textarea {
+            .rank-higher_locally-meta-box textarea {
                 width: 100%;
             }
             .rank-higher-locally-meta-box textarea {
@@ -309,10 +321,22 @@ function rank_higher_locally_meta_box_callback($post) {
                 margin-left: 20px;
                 margin-top: 10px;
             }
-            .rank-higher-locally-meta-box .field-description {
-                font-style: italic;
+            .rank-higher-locally-meta-box .field-description {                font-style: italic;
                 color: #666;
                 font-size: 0.9em;
+            }
+            .rank-higher-locally-meta-box .image-preview {
+                max-width: 200px;
+                height: auto;
+                display: block;
+                margin: 10px 0;
+                border: 1px solid #ddd;
+                border-radius: 4px;
+            }
+            .rank-higher-locally-meta-box .upload-button,
+            .rank-higher-locally-meta-box .remove-button {
+                margin-right: 10px;
+                margin-bottom: 10px;
             }
         </style>
 
@@ -344,11 +368,26 @@ function rank_higher_locally_meta_box_callback($post) {
                     <td>
                         <input type="text" id="rank_higher_locally_overview_title" name="rank_higher_locally_overview_title" value="<?php echo esc_attr($overview_title); ?>" />
                     </td>
-                </tr>
-                <tr>
+                </tr>                <tr>
                     <th><label for="rank_higher_locally_overview_content">Overview Content</label></th>
                     <td>
                         <textarea id="rank_higher_locally_overview_content" name="rank_higher_locally_overview_content"><?php echo esc_textarea($overview_content); ?></textarea>
+                    </td>
+                </tr>
+                <tr>
+                    <th><label for="rank_higher_locally_overview_image">Overview Image</label></th>
+                    <td>
+                        <div class="image-upload-container">
+                            <input type="hidden" 
+                                   id="rank_higher_locally_overview_image" 
+                                   name="rank_higher_locally_overview_image" 
+                                   value="<?php echo esc_attr($overview_image); ?>" />
+                            <button type="button" class="button upload-button" data-target="rank_higher_locally_overview_image">Upload Image</button>
+                            <?php if ($overview_image): ?>
+                                <img src="<?php echo esc_url($overview_image); ?>" class="image-preview" />
+                                <button type="button" class="button remove-button" data-target="rank_higher_locally_overview_image">Remove</button>
+                            <?php endif; ?>
+                        </div>
                     </td>
                 </tr>
                 <tr>
@@ -886,7 +925,7 @@ function rank_higher_locally_meta_box_callback($post) {
         });
         
         // Add result item
-        $('.rank-higher-locally-meta-box').on('click', '.add-result-item', function() {
+        $('.rank-higher_locally-meta-box').on('click', '.add-result-item', function() {
             var $repeater = $('#case_results_repeater');
             var $items = $repeater.find('.repeater-item');
             var newIndex = $items.length;
@@ -906,7 +945,7 @@ function rank_higher_locally_meta_box_callback($post) {
         });
         
         // Add process step
-        $('.rank-higher-locally-meta-box').on('click', '.add-process-step', function() {
+        $('.rank-higher_locally-meta-box').on('click', '.add-process-step', function() {
             var $repeater = $('#process_steps_repeater');
             var $items = $repeater.find('.repeater-item');
             var newIndex = $items.length;
@@ -926,7 +965,7 @@ function rank_higher_locally_meta_box_callback($post) {
         });
         
         // Add benefit item
-        $('.rank-higher-locally-meta-box').on('click', '.add-benefit-item', function() {
+        $('.rank-higher_locally-meta-box').on('click', '.add-benefit-item', function() {
             var $repeater = $('#benefits_repeater');
             var $items = $repeater.find('.repeater-item');
             var newIndex = $items.length;
@@ -941,9 +980,57 @@ function rank_higher_locally_meta_box_callback($post) {
                     $(this).attr('name', name).val('');
                 }
             });
-            
-            $items.last().after($newItem);
+              $items.last().after($newItem);
         });
+
+        // Image upload functionality
+        $('.upload-button').click(function(e) {
+            e.preventDefault();
+            var target = $(this).data('target');
+            var container = $(this).closest('.image-upload-container');
+            var frame = wp.media({
+                title: 'Select Image',
+                multiple: false
+            });
+            
+            frame.on('select', function() {
+                var attachment = frame.state().get('selection').first().toJSON();
+                $('#' + target).val(attachment.url);
+                
+                // Update image preview without page refresh
+                if (container.find('.image-preview').length) {
+                    // Update existing preview
+                    container.find('.image-preview').attr('src', attachment.url);
+                } else {
+                    // Add new preview and remove button
+                    container.append('<img src="' + attachment.url + '" class="image-preview" />');
+                    container.append('<button type="button" class="button remove-button" data-target="' + target + '">Remove</button>');
+                    
+                    // Add click handler for the new remove button
+                    container.find('.remove-button').on('click', function(e) {
+                        e.preventDefault();
+                        var target = $(this).data('target');
+                        $('#' + target).val('');
+                        $(this).prev('.image-preview').remove();
+                        $(this).remove();
+                    });
+                }
+            });
+            
+            frame.open();
+        });
+
+        // Remove image
+        $('.remove-button').click(function(e) {
+            e.preventDefault();
+            var target = $(this).data('target');
+            $('#' + target).val('');
+            $(this).prev('.image-preview').remove();
+            $(this).remove();
+        });
+
+        // Ensure form has proper enctype for file uploads
+        $('#post').attr('enctype', 'multipart/form-data');
     });
     </script>
 <?php
@@ -1027,9 +1114,9 @@ function save_rank_higher_locally_meta_box_data($post_id) {
     // Save all fields
     $fields = [
         'rank_higher_locally_header_title',
-        'rank_higher_locally_header_subtitle',
-        'rank_higher_locally_overview_title',
+        'rank_higher_locally_header_subtitle',        'rank_higher_locally_overview_title',
         'rank_higher_locally_overview_content',
+        'rank_higher_locally_overview_image',
         'rank_higher_locally_challenges_title',
         'rank_higher_locally_challenges',
         'rank_higher_locally_services_title',
