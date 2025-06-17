@@ -297,15 +297,13 @@ function ecommerce_meta_box_callback($post) {
                               placeholder="The e-commerce landscape is more competitive than ever..."><?php echo esc_textarea($overview_content); ?></textarea>
                 </td>
             </tr>
-            <tr>
-                <th><label for="ecommerce_overview_image">Overview Image</label></th>
+            <tr>                <th><label for="ecommerce_overview_image">Overview Image</label></th>
                 <td>
                     <div class="image-upload-container">
-                        <input type="url" 
+                        <input type="hidden" 
                                id="ecommerce_overview_image" 
                                name="ecommerce_overview_image" 
-                               value="<?php echo esc_url($overview_image); ?>"
-                               placeholder="Image URL" />
+                               value="<?php echo esc_attr($overview_image); ?>" />
                         <button type="button" class="button upload-button" data-target="ecommerce_overview_image">Upload Image</button>
                         <?php if ($overview_image): ?>
                             <img src="<?php echo esc_url($overview_image); ?>" class="image-preview" />
@@ -733,12 +731,12 @@ function ecommerce_meta_box_callback($post) {
 
     </div>
 
-    <script>
-    jQuery(document).ready(function($) {
+    <script>    jQuery(document).ready(function($) {
         // Image upload functionality
         $('.upload-button').click(function(e) {
             e.preventDefault();
             var target = $(this).data('target');
+            var container = $(this).closest('.image-upload-container');
             var frame = wp.media({
                 title: 'Select Image',
                 multiple: false
@@ -747,8 +745,25 @@ function ecommerce_meta_box_callback($post) {
             frame.on('select', function() {
                 var attachment = frame.state().get('selection').first().toJSON();
                 $('#' + target).val(attachment.url);
-                // Refresh preview
-                location.reload();
+                
+                // Update image preview without page refresh
+                if (container.find('.image-preview').length) {
+                    // Update existing preview
+                    container.find('.image-preview').attr('src', attachment.url);
+                } else {
+                    // Add new preview and remove button
+                    container.append('<img src="' + attachment.url + '" class="image-preview" />');
+                    container.append('<button type="button" class="button remove-button" data-target="' + target + '">Remove</button>');
+                    
+                    // Add click handler for the new remove button
+                    container.find('.remove-button').on('click', function(e) {
+                        e.preventDefault();
+                        var target = $(this).data('target');
+                        $('#' + target).val('');
+                        $(this).prev('.image-preview').remove();
+                        $(this).remove();
+                    });
+                }
             });
             
             frame.open();
@@ -759,7 +774,8 @@ function ecommerce_meta_box_callback($post) {
             e.preventDefault();
             var target = $(this).data('target');
             $('#' + target).val('');
-            location.reload();
+            $(this).prev('.image-preview').remove();
+            $(this).remove();
         });
 
         // Add repeater item
