@@ -6,6 +6,14 @@
 
 get_header(); ?>
 
+<!-- Add this debugging function at the top of the page (right after the get_header() call) -->
+<?php add_action('wp_footer', function() {
+    if (is_page('professional-services')) {
+        $overview_image = get_post_meta(get_the_ID(), '_professional_services_overview_image', true);
+        echo '<!-- Debug: Overview Image Value: ' . esc_html($overview_image) . ' -->';
+    }
+}); ?>
+
 <main id="main" class="main-content">
     <div class="container">
           <!-- Page Header -->
@@ -42,11 +50,10 @@ get_header(); ?>
                                 <?php endforeach; ?>
                             </ul>
                         </div>
-                    </div>
-                    <div class="overview-image">
+                    </div>                    <div class="overview-image">
                         <?php 
                         $overview_image = get_post_meta(get_the_ID(), '_professional_services_overview_image', true);
-                        if ($overview_image): ?>
+                        if (!empty($overview_image)): ?>
                             <img src="<?php echo esc_url($overview_image); ?>" alt="Professional Services Digital Marketing" />
                         <?php else: ?>
                             <img src="<?php echo get_template_directory_uri(); ?>/assets/images/industries/professional-services-overview.jpg" alt="Professional Services Digital Marketing" />

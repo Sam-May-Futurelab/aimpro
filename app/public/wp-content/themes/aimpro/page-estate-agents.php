@@ -42,11 +42,10 @@ get_header(); ?>
                                 <?php endforeach; ?>
                             </ul>
                         </div>
-                    </div>
-                    <div class="overview-image">
+                    </div>                    <div class="overview-image">
                         <?php 
                         $overview_image = get_post_meta(get_the_ID(), '_estate_agents_overview_image', true);
-                        if ($overview_image): ?>
+                        if (!empty($overview_image)): ?>
                             <img src="<?php echo esc_url($overview_image); ?>" alt="Estate Agent Digital Marketing" />
                         <?php else: ?>
                             <img src="<?php echo get_template_directory_uri(); ?>/assets/images/industries/estate-agents-overview.jpg" alt="Estate Agent Digital Marketing" />
@@ -219,47 +218,38 @@ get_header(); ?>
                     endforeach; ?>
                 </div>
             </div>
-        </section>
-
-        <!-- Estate Agent Insights -->
+        </section>        <!-- Estate Agent Insights -->
         <section class="estate-agent-insights">
             <div class="section-content">
                 <h2>Property Market Insights</h2>
-                <div class="insights-grid">
+                <div class="results-grid">
                     
-                    <div class="insight-card">
-                        <div class="insight-stat">92%</div>
-                        <div class="insight-text">
-                            <h3>Online Property Search</h3>
-                            <p>92% of property buyers start their search online</p>
-                        </div>
+                    <div class="result-item">
+                        <div class="result-number">92%</div>
+                        <div class="result-label">Online Property Search</div>
+                        <p>92% of property buyers start their search online</p>
                     </div>
 
-                    <div class="insight-card">
-                        <div class="insight-stat">76%</div>
-                        <div class="insight-text">
-                            <h3>Local Agent Preference</h3>
-                            <p>76% of sellers prefer local estate agents over national chains</p>
-                        </div>
+                    <div class="result-item">
+                        <div class="result-number">76%</div>
+                        <div class="result-label">Local Agent Preference</div>
+                        <p>76% of sellers prefer local estate agents over national chains</p>
                     </div>
 
-                    <div class="insight-card">
-                        <div class="insight-stat">84%</div>
-                        <div class="insight-text">
-                            <h3>Reviews Influence</h3>
-                            <p>84% of clients check online reviews before choosing an agent</p>
-                        </div>
+                    <div class="result-item">
+                        <div class="result-number">84%</div>
+                        <div class="result-label">Reviews Influence</div>
+                        <p>84% of clients check online reviews before choosing an agent</p>
                     </div>
 
-                    <div class="insight-card">
-                        <div class="insight-stat">67%</div>
-                        <div class="insight-text">
-                            <h3>Mobile Property Search</h3>
-                            <p>67% of property searches happen on mobile devices</p>
-                        </div>
-                    </div>                </div>
+                    <div class="result-item">
+                        <div class="result-number">67%</div>
+                        <div class="result-label">Mobile Property Search</div>
+                        <p>67% of property searches happen on mobile devices</p>
+                    </div>
+                </div>
             </div>
-        </section>        <!-- Estate Agent Testimonial -->
+        </section><!-- Estate Agent Testimonial -->
         <section class="estate-agent-testimonial">
             <div class="section-content">
                 <div class="testimonial-content">
@@ -276,27 +266,28 @@ get_header(); ?>
                 </div>
             </div>
         </section>        <!-- CTA Section -->
-        <section class="estate-agent-cta">
-            <div class="section-content">
-                <h2><?php echo esc_html(get_post_meta(get_the_ID(), '_estate_agents_cta_title', true) ?: 'Ready to Dominate Your Local Property Market?'); ?></h2>
-                <p><?php echo esc_html(get_post_meta(get_the_ID(), '_estate_agents_cta_subtitle', true) ?: 'Let\'s discuss how our estate agent marketing expertise can generate more vendor leads and property sales.'); ?></p>
-                <div class="cta-buttons">
-                    <a href="<?php echo esc_url(get_post_meta(get_the_ID(), '_estate_agents_cta_primary_url', true) ?: home_url('/contact')); ?>" class="btn btn-primary"><?php echo esc_html(get_post_meta(get_the_ID(), '_estate_agents_cta_primary_text', true) ?: 'Get Free Marketing Audit'); ?></a>
-                    <a href="<?php echo esc_url(get_post_meta(get_the_ID(), '_estate_agents_cta_secondary_url', true) ?: home_url('/case-studies')); ?>" class="btn btn-secondary"><?php echo esc_html(get_post_meta(get_the_ID(), '_estate_agents_cta_secondary_text', true) ?: 'View Property Success Stories'); ?></a>
-                </div>
-                <div class="cta-benefits">
-                    <?php 
-                    $cta_benefits = get_post_meta(get_the_ID(), '_estate_agents_cta_benefits', true);
-                    if (empty($cta_benefits)) {
-                        $cta_benefits = array(
-                            '✓ Property market expertise',
-                            '✓ Local SEO specialists', 
-                            '✓ Vendor lead generation'
-                        );
-                    }
-                    foreach ($cta_benefits as $benefit): ?>
-                        <span class="benefit"><?php echo esc_html($benefit); ?></span>
-                    <?php endforeach; ?>
+        <section class="cta-section">
+            <div class="container">
+                <div class="cta-content">
+                    <h2><?php echo esc_html(get_post_meta(get_the_ID(), '_estate_agents_cta_title', true) ?: 'Ready to Dominate Your Local Property Market?'); ?></h2>
+                    <p><?php echo esc_html(get_post_meta(get_the_ID(), '_estate_agents_cta_subtitle', true) ?: 'Let\'s discuss how our estate agent marketing expertise can generate more vendor leads and property sales.'); ?></p>
+                    <div class="cta-buttons">
+                        <a href="<?php echo esc_url(get_post_meta(get_the_ID(), '_estate_agents_cta_primary_url', true) ?: home_url('/contact')); ?>" class="btn-primary"><?php echo esc_html(get_post_meta(get_the_ID(), '_estate_agents_cta_primary_text', true) ?: 'Get Free Marketing Audit'); ?></a>
+                        <a href="<?php echo esc_url(get_post_meta(get_the_ID(), '_estate_agents_cta_secondary_url', true) ?: home_url('/case-studies')); ?>" class="btn-outline"><?php echo esc_html(get_post_meta(get_the_ID(), '_estate_agents_cta_secondary_text', true) ?: 'View Property Success Stories'); ?></a>
+                    </div>                    <div class="cta-features">
+                        <?php 
+                        $cta_benefits = get_post_meta(get_the_ID(), '_estate_agents_cta_benefits', true);
+                        if (empty($cta_benefits)) {
+                            $cta_benefits = array(
+                                'Property market expertise',
+                                'Local SEO specialists', 
+                                'Vendor lead generation'
+                            );
+                        }
+                        foreach ($cta_benefits as $benefit): ?>
+                            <span><?php echo esc_html($benefit); ?></span>
+                        <?php endforeach; ?>
+                    </div>
                 </div>
             </div>
         </section>
@@ -305,3 +296,13 @@ get_header(); ?>
 </main>
 
 <?php get_footer(); ?>
+
+<!-- Add debugging function for estate agents page -->
+<?php
+add_action('wp_footer', function() {
+    if (is_page('estate-agents')) {
+        $overview_image = get_post_meta(get_the_ID(), '_estate_agents_overview_image', true);
+        echo '<!-- Debug: Estate Agents Overview Image Value: ' . esc_html($overview_image) . ' -->';
+    }
+});
+?>

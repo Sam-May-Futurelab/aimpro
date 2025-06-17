@@ -241,47 +241,38 @@ get_header(); ?>
 
                 </div>
             </div>
-        </section>
-
-        <!-- E-commerce Insights -->
+        </section>        <!-- E-commerce Insights -->
         <section class="ecommerce-insights">
             <div class="section-content">
                 <h2>E-commerce Industry Insights</h2>
-                <div class="insights-grid">
+                <div class="results-grid">
                     
-                    <div class="insight-card">
-                        <div class="insight-stat">70%</div>
-                        <div class="insight-text">
-                            <h3>Cart Abandonment</h3>
-                            <p>70% of online shopping carts are abandoned before purchase</p>
-                        </div>
+                    <div class="result-item">
+                        <div class="result-number">70%</div>
+                        <div class="result-label">Cart Abandonment</div>
+                        <p>70% of online shopping carts are abandoned before purchase</p>
                     </div>
 
-                    <div class="insight-card">
-                        <div class="insight-stat">86%</div>
-                        <div class="insight-text">
-                            <h3>Product Research</h3>
-                            <p>86% of consumers research products online before buying</p>
-                        </div>
+                    <div class="result-item">
+                        <div class="result-number">86%</div>
+                        <div class="result-label">Product Research</div>
+                        <p>86% of consumers research products online before buying</p>
                     </div>
 
-                    <div class="insight-card">
-                        <div class="insight-stat">73%</div>
-                        <div class="insight-text">
-                            <h3>Mobile Shopping</h3>
-                            <p>73% of e-commerce traffic comes from mobile devices</p>
-                        </div>
+                    <div class="result-item">
+                        <div class="result-number">73%</div>
+                        <div class="result-label">Mobile Shopping</div>
+                        <p>73% of e-commerce traffic comes from mobile devices</p>
                     </div>
 
-                    <div class="insight-card">
-                        <div class="insight-stat">92%</div>
-                        <div class="insight-text">
-                            <h3>Visual Influence</h3>
-                            <p>92% of consumers make purchasing decisions based on visual content</p>
-                        </div>
-                    </div>                </div>
+                    <div class="result-item">
+                        <div class="result-number">92%</div>
+                        <div class="result-label">Visual Influence</div>
+                        <p>92% of consumers make purchasing decisions based on visual content</p>
+                    </div>
+                </div>
             </div>
-        </section>        <!-- E-commerce Testimonial -->
+        </section><!-- E-commerce Testimonial -->
         <section class="ecommerce-testimonial">
             <div class="section-content">
                 <div class="testimonial-content">

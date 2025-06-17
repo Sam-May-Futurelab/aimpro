@@ -210,44 +210,35 @@ get_header(); ?>
 
                 </div>
             </div>
-        </section>
-
-        <!-- Coaches Consultants Insights -->
+        </section>        <!-- Coaches Consultants Insights -->
         <section class="coaches-consultants-insights">
             <div class="section-content">
                 <h2>Coaching & Consulting Industry Insights</h2>
-                <div class="insights-grid">
+                <div class="results-grid">
                     
-                    <div class="insight-card">
-                        <div class="insight-stat">88%</div>
-                        <div class="insight-text">
-                            <h3>Trust Building</h3>
-                            <p>88% of clients hire coaches/consultants based on trust and credibility</p>
-                        </div>
+                    <div class="result-item">
+                        <div class="result-number">88%</div>
+                        <div class="result-label">Trust Building</div>
+                        <p>88% of clients hire coaches/consultants based on trust and credibility</p>
                     </div>
 
-                    <div class="insight-card">
-                        <div class="insight-stat">75%</div>
-                        <div class="insight-text">
-                            <h3>Content Influence</h3>
-                            <p>75% of potential clients consume content before making contact</p>
-                        </div>
+                    <div class="result-item">
+                        <div class="result-number">75%</div>
+                        <div class="result-label">Content Influence</div>
+                        <p>75% of potential clients consume content before making contact</p>
                     </div>
 
-                    <div class="insight-card">
-                        <div class="insight-stat">92%</div>
-                        <div class="insight-text">
-                            <h3>Referral Importance</h3>
-                            <p>92% of successful coaches get clients through referrals and word-of-mouth</p>
-                        </div>
+                    <div class="result-item">
+                        <div class="result-number">92%</div>
+                        <div class="result-label">Referral Importance</div>
+                        <p>92% of successful coaches get clients through referrals and word-of-mouth</p>
                     </div>
 
-                    <div class="insight-card">
-                        <div class="insight-stat">67%</div>
-                        <div class="insight-text">
-                            <h3>LinkedIn Research</h3>
-                            <p>67% of B2B buyers research consultants on LinkedIn before hiring</p>
-                        </div>                    </div>
+                    <div class="result-item">
+                        <div class="result-number">67%</div>
+                        <div class="result-label">LinkedIn Research</div>
+                        <p>67% of B2B buyers research consultants on LinkedIn before hiring</p>
+                    </div>
 
                 </div>
             </div>
@@ -259,9 +250,7 @@ get_header(); ?>
                 <div class="testimonial-content">
                     <blockquote>
                         "Aimpro Digital understood exactly what I needed as a consultant. They helped me build a powerful personal brand and create systems that generate high-quality leads consistently. My business has grown 400% and I can now command premium rates."
-                    </blockquote>
-                    <div class="testimonial-author">
-                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/testimonials/consultant-mark.jpg" alt="Mark Anderson" />
+                    </blockquote>                    <div class="testimonial-author">
                         <div class="author-info">
                             <h4>Mark Anderson</h4>
                             <span>Principal, Strategic Business Solutions</span>

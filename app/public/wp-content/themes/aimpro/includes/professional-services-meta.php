@@ -729,8 +729,7 @@ function professional_services_meta_box_callback($post) {
     </div>
 
     <script>
-    jQuery(document).ready(function($) {
-        // Image upload functionality
+    jQuery(document).ready(function($) {        // Image upload functionality
         $('.upload-button').click(function(e) {
             e.preventDefault();
             var target = $(this).data('target');
@@ -742,19 +741,25 @@ function professional_services_meta_box_callback($post) {
             frame.on('select', function() {
                 var attachment = frame.state().get('selection').first().toJSON();
                 $('#' + target).val(attachment.url);
-                // Refresh preview
-                location.reload();
+                
+                // Add preview image without page reload
+                var previewContainer = $('#' + target).closest('.image-upload-container');
+                if (previewContainer.find('.image-preview').length > 0) {
+                    previewContainer.find('.image-preview').attr('src', attachment.url);
+                } else {
+                    previewContainer.append('<img src="' + attachment.url + '" class="image-preview" />');
+                    previewContainer.append('<button type="button" class="button remove-button" data-target="' + target + '">Remove</button>');
+                }
             });
             
             frame.open();
-        });
-
-        // Remove image
-        $('.remove-button').click(function(e) {
+        });        // Remove image
+        $(document).on('click', '.remove-button', function(e) {
             e.preventDefault();
             var target = $(this).data('target');
             $('#' + target).val('');
-            location.reload();
+            $(this).siblings('.image-preview').remove();
+            $(this).remove();
         });
 
         // Add repeater item
@@ -851,7 +856,7 @@ function sanitize_meta_value($field, $value) {
         }, $value);
     }
     
-    if (strpos($field, '_url') !== false) {
+    if (strpos($field, '_url') !== false || strpos($field, '_image') !== false) {
         return esc_url_raw($value);
     }
     

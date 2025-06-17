@@ -729,8 +729,7 @@ function estate_agents_meta_box_callback($post) {
     </div>
 
     <script>
-    jQuery(document).ready(function($) {
-        // Image upload functionality
+    jQuery(document).ready(function($) {        // Image upload functionality
         $('.upload-button').click(function(e) {
             e.preventDefault();
             var target = $(this).data('target');
@@ -742,19 +741,25 @@ function estate_agents_meta_box_callback($post) {
             frame.on('select', function() {
                 var attachment = frame.state().get('selection').first().toJSON();
                 $('#' + target).val(attachment.url);
-                // Refresh preview
-                location.reload();
+                
+                // Add preview image without page reload
+                var previewContainer = $('#' + target).closest('.image-upload-container');
+                if (previewContainer.find('.image-preview').length > 0) {
+                    previewContainer.find('.image-preview').attr('src', attachment.url);
+                } else {
+                    previewContainer.append('<img src="' + attachment.url + '" class="image-preview" />');
+                    previewContainer.append('<button type="button" class="button remove-button" data-target="' + target + '">Remove</button>');
+                }
             });
             
             frame.open();
-        });
-
-        // Remove image
-        $('.remove-button').click(function(e) {
+        });        // Remove image
+        $(document).on('click', '.remove-button', function(e) {
             e.preventDefault();
             var target = $(this).data('target');
             $('#' + target).val('');
-            location.reload();
+            $(this).siblings('.image-preview').remove();
+            $(this).remove();
         });
 
         // Add repeater item
@@ -776,6 +781,24 @@ function estate_agents_meta_box_callback($post) {
     });
     </script>
     <?php
+}
+
+function estate_agents_sanitize_meta_value($field, $value) {
+    if (is_array($value)) {
+        return array_map(function($item) use ($field) {
+            return estate_agents_sanitize_meta_value($field, $item);
+        }, $value);
+    }
+    
+    if (strpos($field, '_url') !== false || strpos($field, '_image') !== false) {
+        return esc_url_raw($value);
+    }
+    
+    if (strpos($field, '_content') !== false || strpos($field, '_subtitle') !== false || strpos($field, '_quote') !== false) {
+        return sanitize_textarea_field($value);
+    }
+    
+    return sanitize_text_field($value);
 }
 
 function save_estate_agents_meta_box_data($post_id) {
@@ -834,10 +857,8 @@ function save_estate_agents_meta_box_data($post_id) {
         'estate_agents_cta_secondary_text',
         'estate_agents_cta_secondary_url',
         'estate_agents_cta_benefits'
-    ];
-
-    foreach ($fields as $field) {        if (isset($_POST[$field])) {
-            update_post_meta($post_id, '_' . $field, sanitize_meta_value($field, $_POST[$field]));
+    ];    foreach ($fields as $field) {        if (isset($_POST[$field])) {
+            update_post_meta($post_id, '_' . $field, estate_agents_sanitize_meta_value($field, $_POST[$field]));
         }
     }
 }
