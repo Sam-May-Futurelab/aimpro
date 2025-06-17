@@ -5,11 +5,37 @@
 ?>
 <!DOCTYPE html>
 <html <?php language_attributes(); ?>>
-<head>
-    <meta charset="<?php bloginfo('charset'); ?>">
+<head>    <meta charset="<?php bloginfo('charset'); ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="profile" href="https://gmpg.org/xfn/11">
-      <!-- Performance Optimization: Resource Hints -->
+      <!-- Favicon -->
+    <link rel="icon" href="<?php echo get_template_directory_uri(); ?>/assets/images/favicon/favicon.ico" sizes="32x32">
+    <link rel="icon" href="<?php echo get_template_directory_uri(); ?>/assets/images/favicon/favicon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="<?php echo get_template_directory_uri(); ?>/assets/images/favicon/apple-touch-icon.png">
+    <link rel="manifest" href="<?php echo get_template_directory_uri(); ?>/assets/images/favicon/site.webmanifest">
+    
+    <!-- Theme color for mobile browsers -->
+    <meta name="theme-color" content="#f15a25">
+    <meta name="msapplication-TileColor" content="#f15a25">
+    
+    <!-- Additional PWA and Social Media Meta Tags -->
+    <meta name="application-name" content="Aimpro Digital">
+    <meta name="msapplication-TileColor" content="#f15a25">
+    <meta name="msapplication-square70x70logo" content="<?php echo get_template_directory_uri(); ?>/assets/images/favicon/favicon-96x96.png">
+    <meta name="msapplication-square150x150logo" content="<?php echo get_template_directory_uri(); ?>/assets/images/favicon/web-app-manifest-192x192.png">
+    <meta name="msapplication-square310x310logo" content="<?php echo get_template_directory_uri(); ?>/assets/images/favicon/web-app-manifest-512x512.png">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="<?php echo get_template_directory_uri(); ?>/assets/images/favicon/web-app-manifest-512x512.png">
+    <meta property="og:image:width" content="512">
+    <meta property="og:image:height" content="512">
+    
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:image" content="<?php echo get_template_directory_uri(); ?>/assets/images/favicon/web-app-manifest-512x512.png">
+    
+    <!-- Performance Optimization: Resource Hints -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preconnect" href="https://cdnjs.cloudflare.com">

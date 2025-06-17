@@ -36,6 +36,15 @@ function aimpro_theme_setup() {
 }
 add_action('after_setup_theme', 'aimpro_theme_setup');
 
+// Add Favicon Support for Admin Area
+function aimpro_add_favicon() {
+    $favicon_path = get_template_directory_uri() . '/assets/images/favicon/favicon.ico';
+    echo '<link rel="shortcut icon" href="' . esc_url($favicon_path) . '" type="image/x-icon" />' . "\n";
+    echo '<link rel="icon" href="' . esc_url($favicon_path) . '" type="image/x-icon" />' . "\n";
+}
+add_action('admin_head', 'aimpro_add_favicon');
+add_action('login_head', 'aimpro_add_favicon');
+
 // Include contact page meta functionality
 require_once get_template_directory() . '/includes/contact-meta.php';
 
