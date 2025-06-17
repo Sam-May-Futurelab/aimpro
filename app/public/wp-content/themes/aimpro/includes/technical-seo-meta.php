@@ -130,8 +130,7 @@ function technical_seo_header_callback($post) {
 }
 
 // Overview callback
-function technical_seo_overview_callback($post) {
-    $overview_title = get_post_meta($post->ID, 'technical_seo_overview_title', true) ?: 'Build a Solid Technical Foundation for SEO Success';
+function technical_seo_overview_callback($post) {    $overview_title = get_post_meta($post->ID, 'technical_seo_overview_title', true) ?: 'Build a Solid Technical Foundation for SEO Success';
     $overview_description = get_post_meta($post->ID, 'technical_seo_overview_description', true) ?: 'Technical SEO is the backbone of search engine optimization. Our technical SEO services ensure your website is properly crawled, indexed, and understood by search engines. We fix critical technical issues that prevent your site from ranking and implement optimizations that give you a competitive edge.';
     $benefits_title = get_post_meta($post->ID, 'technical_seo_benefits_title', true) ?: 'Technical SEO Impact:';
     $benefits = get_post_meta($post->ID, 'technical_seo_benefits', true) ?: array(
@@ -142,7 +141,7 @@ function technical_seo_overview_callback($post) {
         'Increase search engine trust and authority',
         'Reduce bounce rates and improve engagement'
     );
-    $overview_image = get_post_meta($post->ID, 'technical_seo_overview_image', true) ?: get_template_directory_uri() . '/assets/images/services/technical-seo-overview.jpg';
+    $overview_image_id = get_post_meta($post->ID, 'technical_seo_overview_image_id', true);
     
     echo '<table class="form-table">';
     echo '<tr><th><label for="technical_seo_overview_title">Overview Title</label></th>';
@@ -168,8 +167,19 @@ function technical_seo_overview_callback($post) {
     echo '<button type="button" class="button" id="add-technical-seo-benefit">Add Benefit</button>';
     echo '</td></tr>';
     
-    echo '<tr><th><label for="technical_seo_overview_image">Overview Image URL</label></th>';
-    echo '<td><input type="text" id="technical_seo_overview_image" name="technical_seo_overview_image" value="' . esc_attr($overview_image) . '" style="width: 100%;" /></td></tr>';
+    echo '<tr><th><label for="technical_seo_overview_image_id">Overview Image</label></th>';
+    echo '<td>';
+    echo '<input type="hidden" id="technical_seo_overview_image_id" name="technical_seo_overview_image_id" value="' . esc_attr($overview_image_id) . '" />';
+    echo '<div id="technical_seo_overview_image_preview">';
+    if ($overview_image_id) {
+        echo wp_get_attachment_image($overview_image_id, 'medium');
+    }
+    echo '</div>';
+    echo '<button type="button" class="button" id="technical_seo_overview_image_button">Choose Image</button>';
+    if ($overview_image_id) {
+        echo ' <button type="button" class="button" id="technical_seo_overview_image_remove">Remove Image</button>';
+    }
+    echo '</td></tr>';
     echo '</table>';
 }
 
@@ -647,9 +657,7 @@ function technical_seo_save_meta($post_id) {
 
     if (!current_user_can('edit_post', $post_id)) {
         return;
-    }
-
-    // Save all meta fields
+    }    // Save all meta fields
     $meta_fields = array(
         'technical_seo_header_title',
         'technical_seo_header_subtitle',
@@ -658,7 +666,7 @@ function technical_seo_save_meta($post_id) {
         'technical_seo_overview_description',
         'technical_seo_benefits_title',
         'technical_seo_benefits',
-        'technical_seo_overview_image',
+        'technical_seo_overview_image_id',
         'technical_seo_services_title',
         'technical_seo_services',
         'technical_seo_case_study_label',

@@ -32,8 +32,7 @@ $hero_image = get_post_meta(get_the_ID(), 'technical_seo_hero_image', true);
             <div class="section-content">
                 <div class="overview-content">
                     <div class="overview-text">
-                        <?php 
-                        $overview_title = get_post_meta(get_the_ID(), 'technical_seo_overview_title', true) ?: 'Build a Solid Technical Foundation for SEO Success';
+                        <?php                        $overview_title = get_post_meta(get_the_ID(), 'technical_seo_overview_title', true) ?: 'Build a Solid Technical Foundation for SEO Success';
                         $overview_description = get_post_meta(get_the_ID(), 'technical_seo_overview_description', true) ?: 'Technical SEO is the backbone of search engine optimization. Our technical SEO services ensure your website is properly crawled, indexed, and understood by search engines. We fix critical technical issues that prevent your site from ranking and implement optimizations that give you a competitive edge.';
                         $benefits_title = get_post_meta(get_the_ID(), 'technical_seo_benefits_title', true) ?: 'Technical SEO Impact:';
                         $benefits = get_post_meta(get_the_ID(), 'technical_seo_benefits', true) ?: array(
@@ -44,6 +43,7 @@ $hero_image = get_post_meta(get_the_ID(), 'technical_seo_hero_image', true);
                             'Increase search engine trust and authority',
                             'Reduce bounce rates and improve engagement'
                         );
+                        $overview_image_id = get_post_meta(get_the_ID(), 'technical_seo_overview_image_id', true);
                         $overview_image = get_post_meta(get_the_ID(), 'technical_seo_overview_image', true) ?: get_template_directory_uri() . '/assets/images/services/technical-seo-overview.jpg';
                         ?>
                         <h2><?php echo esc_html($overview_title); ?></h2>
@@ -57,9 +57,12 @@ $hero_image = get_post_meta(get_the_ID(), 'technical_seo_hero_image', true);
                                 <?php endforeach; ?>
                             </ul>
                         </div>
-                    </div>
-                    <div class="overview-image">
-                        <img src="<?php echo esc_url($overview_image); ?>" alt="Technical SEO Services" />
+                    </div>                    <div class="overview-image">
+                        <?php if ($overview_image_id): ?>
+                            <?php echo wp_get_attachment_image($overview_image_id, 'large', false, array('alt' => 'Technical SEO Services')); ?>
+                        <?php else: ?>
+                            <img src="<?php echo esc_url($overview_image); ?>" alt="Technical SEO Services" />
+                        <?php endif; ?>
                     </div>
                 </div>
             </div>

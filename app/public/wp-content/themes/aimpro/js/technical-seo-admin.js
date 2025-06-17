@@ -26,6 +26,34 @@ jQuery(document).ready(function($) {
         $(this).remove();
     });
     
+    // Overview Image Upload
+    $('#technical_seo_overview_image_button').click(function(e) {
+        e.preventDefault();
+        var image = wp.media({
+            title: 'Upload Overview Image',
+            multiple: false,
+            library: {type: 'image'}
+        }).open()
+        .on('select', function(){
+            var uploaded_image = image.state().get('selection').first();
+            var image_id = uploaded_image.toJSON().id;
+            var image_url = uploaded_image.toJSON().url;
+            $('#technical_seo_overview_image_id').val(image_id);
+            $('#technical_seo_overview_image_preview').html('<img src="' + image_url + '" style="max-width: 200px; height: auto;" /><br>');
+            if ($('#technical_seo_overview_image_remove').length === 0) {
+                $('#technical_seo_overview_image_button').after(' <button type="button" class="button" id="technical_seo_overview_image_remove">Remove Image</button>');
+            }
+        });
+    });
+    
+    // Overview Image Remove
+    $(document).on('click', '#technical_seo_overview_image_remove', function(e) {
+        e.preventDefault();
+        $('#technical_seo_overview_image_id').val('');
+        $('#technical_seo_overview_image_preview').html('');
+        $(this).remove();
+    });
+    
     // Testimonial Image Upload
     $('#technical_seo_testimonial_image_button').click(function(e) {
         e.preventDefault();

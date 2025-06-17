@@ -27,8 +27,7 @@ $hero_image = get_post_meta(get_the_ID(), 'seo_audit_hero_image', true);
                     <img src="<?php echo esc_url($hero_image); ?>" alt="<?php echo esc_attr($header_title); ?>" />
                 </div>
             <?php endif; ?>
-        </section>        <!-- SEO Audit Overview -->
-        <section class="seo-audit-overview">
+        </section>        <!-- SEO Audit Overview -->        <section class="seo-audit-overview">
             <div class="section-content">
                 <div class="overview-content">
                     <div class="overview-text">
@@ -44,25 +43,30 @@ $hero_image = get_post_meta(get_the_ID(), 'seo_audit_hero_image', true);
                             'Backlink profile analysis and improvement areas',
                             'Mobile and Core Web Vitals performance'
                         );
-                        $overview_image = get_post_meta(get_the_ID(), 'seo_audit_overview_image', true) ?: get_template_directory_uri() . '/assets/images/services/seo-audit-overview.jpg';
+                        $overview_image = get_post_meta(get_the_ID(), 'seo_audit_overview_image', true);
                         ?>
                         <h2><?php echo esc_html($overview_title); ?></h2>
                         <p><?php echo esc_html($overview_description); ?></p>
-                          <div class="audit-benefits">
-                            <h3><?php echo esc_html($benefits_title); ?></h3>
-                            <ul>
-                                <?php foreach ($benefits as $benefit): ?>
-                                    <li><?php echo esc_html($benefit); ?></li>
-                                <?php endforeach; ?>
-                            </ul>
-                        </div>
                     </div>
                     <div class="overview-image">
-                        <img src="<?php echo esc_url($overview_image); ?>" alt="SEO Audit Services" />
+                        <?php 
+                        if ($overview_image && is_numeric($overview_image)): ?>
+                            <?php echo wp_get_attachment_image($overview_image, 'full', false, array('alt' => 'SEO Audit Services')); ?>
+                        <?php else: ?>
+                            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/services/seo-audit-overview.jpg" alt="SEO Audit Services" />
+                        <?php endif; ?>
                     </div>
                 </div>
+                <div class="audit-benefits">
+                    <h3><?php echo esc_html($benefits_title); ?></h3>
+                    <ul>
+                        <?php foreach ($benefits as $benefit): ?>
+                            <li><?php echo esc_html($benefit); ?></li>
+                        <?php endforeach; ?>
+                    </ul>
+                </div>
             </div>
-        </section>        <!-- Audit Components -->
+        </section><!-- Audit Components -->
         <section class="audit-components">
             <div class="section-content">
                 <?php 
