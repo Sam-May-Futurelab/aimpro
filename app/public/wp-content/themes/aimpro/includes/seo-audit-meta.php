@@ -142,7 +142,7 @@ function seo_audit_overview_callback($post) {
         'Backlink profile analysis and improvement areas',
         'Mobile and Core Web Vitals performance'
     );
-    $overview_image = get_post_meta($post->ID, 'seo_audit_overview_image', true) ?: get_template_directory_uri() . '/assets/images/services/seo-audit-overview.jpg';
+    $overview_image = get_post_meta($post->ID, 'seo_audit_overview_image', true);
     
     echo '<table class="form-table">';
     echo '<tr><th><label for="seo_audit_overview_title">Overview Title</label></th>';
@@ -166,10 +166,17 @@ function seo_audit_overview_callback($post) {
     }
     echo '<div id="seo-audit-benefits-container"></div>';
     echo '<button type="button" class="button" id="add-seo-audit-benefit">Add Benefit</button>';
+    echo '</td></tr>';    echo '<tr><th><label for="seo_audit_overview_image">Overview Image</label></th>';
+    echo '<td>';
+    echo '<input type="hidden" id="seo_audit_overview_image" name="seo_audit_overview_image" value="' . esc_attr($overview_image) . '" />';
+    echo '<div id="seo_audit_overview_image_preview" style="margin-bottom: 10px;">';
+    if ($overview_image) {
+        echo '<img src="' . esc_url(wp_get_attachment_url($overview_image)) . '" style="max-width: 200px; height: auto;" />';
+    }
+    echo '</div>';
+    echo '<button type="button" class="button upload-button" data-target="seo_audit_overview_image">Upload Image</button>';
+    echo '<button type="button" class="button remove-button" data-target="seo_audit_overview_image" style="margin-left: 10px;">Remove Image</button>';
     echo '</td></tr>';
-    
-    echo '<tr><th><label for="seo_audit_overview_image">Overview Image URL</label></th>';
-    echo '<td><input type="text" id="seo_audit_overview_image" name="seo_audit_overview_image" value="' . esc_attr($overview_image) . '" style="width: 100%;" /></td></tr>';
     echo '</table>';
 }
 
