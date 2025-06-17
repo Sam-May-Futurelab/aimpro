@@ -721,58 +721,25 @@ get_header(); ?>
                     <div class="form-message error">
                         <p><strong>Error:</strong> There was a problem sending your message. Please try again or contact us directly.</p>
                     </div>
-                <?php endif; ?>
-
-                <form class="contact-form" id="contact-form" method="post" action="<?php echo admin_url('admin-post.php'); ?>" novalidate>
-                    <?php wp_nonce_field('contact_submission', 'contact_nonce'); ?>
-                    <input type="hidden" name="action" value="contact_form">
-                    <input type="hidden" name="contact_form" value="1">
-                    
-                    <div class="form-header">
-                        <h3><?php echo aimpro_get_field('contact_form_title', 'Get In Touch'); ?></h3>
-                        <p><?php echo aimpro_get_field('contact_form_subtitle', 'We\'d love to hear from you. Send us a message and we\'ll respond as soon as possible.'); ?></p>
-                    </div>
-                    
-                    <div class="form-grid">
-                        <div class="form-group">
-                            <label for="name"><?php echo aimpro_get_field('contact_form_name_label', 'Name *'); ?></label>
-                            <input type="text" id="name" name="name" required>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="email"><?php echo aimpro_get_field('contact_form_email_label', 'Email *'); ?></label>
-                            <input type="email" id="email" name="email" required>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="phone"><?php echo aimpro_get_field('contact_form_phone_label', 'Phone'); ?></label>
-                            <input type="tel" id="phone" name="phone">
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="referral"><?php echo aimpro_get_field('contact_form_referral_label', 'Where did you find us?'); ?></label>
-                            <select id="referral" name="referral">
-                                <option value="">Please select...</option>
-                                <option value="google-search">Google Search</option>
-                                <option value="social-media">Social Media</option>
-                                <option value="referral">Referral</option>
-                                <option value="linkedin">LinkedIn</option>
-                                <option value="facebook">Facebook</option>
-                                <option value="instagram">Instagram</option>
-                                <option value="other">Other</option>
-                            </select>
-                        </div>
-                        
-                        <div class="form-group full-width">
-                            <label for="query"><?php echo aimpro_get_field('contact_form_query_label', 'Query'); ?></label>
-                            <textarea id="query" name="query" rows="4" placeholder="<?php echo esc_attr(aimpro_get_field('contact_form_query_placeholder', 'Tell us about your inquiry...')); ?>"></textarea>
-                        </div>
-                    </div>
-                    
-                    <div class="form-actions">
-                        <button type="submit" class="form-submit-btn"><?php echo aimpro_get_field('contact_form_submit_text', 'Submit'); ?></button>
-                    </div>
-                </form>
+                <?php endif; ?>                <iframe
+                    src="https://api.leadconnectorhq.com/widget/form/lLA80fnC5VJUH545FX37"
+                    style="width:100%;height:100%;border:none;border-radius:3px"
+                    id="inline-lLA80fnC5VJUH545FX37" 
+                    data-layout="{'id':'INLINE'}"
+                    data-trigger-type="alwaysShow"
+                    data-trigger-value=""
+                    data-activation-type="alwaysActivated"
+                    data-activation-value=""
+                    data-deactivation-type="neverDeactivate"
+                    data-deactivation-value=""
+                    data-form-name="Get In Touch - Aimpro Website"
+                    data-height="603"
+                    data-layout-iframe-id="inline-lLA80fnC5VJUH545FX37"
+                    data-form-id="lLA80fnC5VJUH545FX37"
+                    title="Get In Touch - Aimpro Website"
+                        >
+                </iframe>
+                <script src="https://link.msgsndr.com/js/form_embed.js"></script>
             </div>
         </div>
     </div>
