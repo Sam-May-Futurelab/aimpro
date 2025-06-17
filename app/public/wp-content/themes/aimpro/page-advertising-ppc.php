@@ -83,28 +83,25 @@ function get_advertising_ppc_field($field_key, $post_id = null) {
                 <div class="section-header">
                     <h2>Our Advertising & PPC Services</h2>
                     <p>Comprehensive pay-per-click advertising solutions designed to maximize your return on investment across all major platforms.</p>
-                </div>
-                <div class="services-grid">                    
-                    <div class="service-item">
+                </div>                <div class="services-grid">                    
+                    <div class="service-card">
                         <div class="service-icon">
                             <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"/>
                                 <polygon points="10,8 16,12 10,16 10,8" fill="currentColor"/>
                             </svg>
                         </div>
-                        <h3>Google Ads Management</h3>
-                        <p>Comprehensive Google Ads campaigns including Search, Display, Shopping, and YouTube advertising for maximum reach and ROI.</p>
-                        <ul class="service-features">
-                            <li>Search campaign optimization</li>
-                            <li>Display and remarketing campaigns</li>
-                            <li>Shopping ads for e-commerce</li>
-                            <li>YouTube advertising</li>
-                            <li>Performance Max campaigns</li>
-                        </ul>
-                        <div class="service-metric">
-                            <span>Average: 280% increase in conversions</span>
+                        <div class="service-content">
+                            <h3>Google Ads Management</h3>
+                            <p>Comprehensive Google Ads campaigns including Search, Display, Shopping, and YouTube advertising for maximum reach and ROI.</p>
+                            <ul class="service-features">
+                                <li>Search campaign optimization</li>
+                                <li>Display and remarketing campaigns</li>
+                                <li>Shopping ads for e-commerce</li>
+                                <li>YouTube advertising</li>                                <li>Performance Max campaigns</li>
+                            </ul>
+                            <a href="<?php echo home_url('/google-ads'); ?>" class="service-cta">Learn More</a>
                         </div>
-                        <a href="<?php echo home_url('/google-ads'); ?>" class="service-link">Learn More</a>
                     </div>
 
                     <div class="service-card">
@@ -121,12 +118,8 @@ function get_advertising_ppc_field($field_key, $post_id = null) {
                                 <li>Facebook advertising campaigns</li>
                                 <li>Instagram advertising</li>
                                 <li>Audience targeting and lookalikes</li>
-                                <li>Creative optimization</li>
-                                <li>Conversion tracking setup</li>
+                                <li>Creative optimization</li>                                <li>Conversion tracking setup</li>
                             </ul>
-                            <div class="service-results">
-                                <span>Average: 65% lower cost per acquisition</span>
-                            </div>
                             <a href="<?php echo home_url('/meta-ads'); ?>" class="service-cta">Learn More</a>
                         </div>
                     </div>

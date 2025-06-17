@@ -766,13 +766,14 @@ function coaches_consultants_meta_box_callback($post) {
                           '<button type="button" class="button remove-repeater-item">Remove</button>' +
                           '</div>';
             $('#' + target).append(newField);
-        });
-
-        // Remove repeater item
+        });        // Remove repeater item
         $(document).on('click', '.remove-repeater-item', function(e) {
             e.preventDefault();
             $(this).closest('.repeater-field').remove();
         });
+
+        // Ensure form has proper enctype for file uploads
+        $('#post').attr('enctype', 'multipart/form-data');
     });
     </script>
     <?php
@@ -823,6 +824,24 @@ function save_coaches_consultants_meta_box_data($post_id) {
     if (isset($_POST['post_type']) && 'page' == $_POST['post_type']) {
         if (!current_user_can('edit_page', $post_id)) {
             return;
+        }
+    }
+
+    // Handle image uploads
+    if (!empty($_FILES)) {
+        require_once(ABSPATH . 'wp-admin/includes/file.php');
+        require_once(ABSPATH . 'wp-admin/includes/image.php');
+        require_once(ABSPATH . 'wp-admin/includes/media.php');
+
+        $image_fields = ['coaches_consultants_overview_image'];
+        
+        foreach ($image_fields as $field) {
+            if (!empty($_FILES[$field]['name'])) {
+                $uploaded_file = wp_handle_upload($_FILES[$field], array('test_form' => false));
+                if ($uploaded_file && !isset($uploaded_file['error'])) {
+                    update_post_meta($post_id, '_' . $field, esc_url_raw($uploaded_file['url']));
+                }
+            }
         }
     }
 
