@@ -292,15 +292,13 @@ function coaches_consultants_meta_box_callback($post) {
                               placeholder="As a coach or consultant, your expertise is your greatest asset..."><?php echo esc_textarea($overview_content); ?></textarea>
                 </td>
             </tr>
-            <tr>
-                <th><label for="coaches_consultants_overview_image">Overview Image</label></th>
+            <tr>                <th><label for="coaches_consultants_overview_image">Overview Image</label></th>
                 <td>
                     <div class="image-upload-container">
-                        <input type="url" 
+                        <input type="hidden" 
                                id="coaches_consultants_overview_image" 
                                name="coaches_consultants_overview_image" 
-                               value="<?php echo esc_url($overview_image); ?>"
-                               placeholder="Image URL" />
+                               value="<?php echo esc_attr($overview_image); ?>" />
                         <button type="button" class="button upload-button" data-target="coaches_consultants_overview_image">Upload Image</button>
                         <?php if ($overview_image): ?>
                             <img src="<?php echo esc_url($overview_image); ?>" class="image-preview" />
@@ -726,14 +724,13 @@ function coaches_consultants_meta_box_callback($post) {
             </tr>
         </table>
 
-    </div>
-
-    <script>
+    </div>    <script>
     jQuery(document).ready(function($) {
         // Image upload functionality
         $('.upload-button').click(function(e) {
             e.preventDefault();
             var target = $(this).data('target');
+            var container = $(this).closest('.image-upload-container');
             var frame = wp.media({
                 title: 'Select Image',
                 multiple: false
@@ -742,8 +739,25 @@ function coaches_consultants_meta_box_callback($post) {
             frame.on('select', function() {
                 var attachment = frame.state().get('selection').first().toJSON();
                 $('#' + target).val(attachment.url);
-                // Refresh preview
-                location.reload();
+                
+                // Update image preview without page refresh
+                if (container.find('.image-preview').length) {
+                    // Update existing preview
+                    container.find('.image-preview').attr('src', attachment.url);
+                } else {
+                    // Add new preview and remove button
+                    container.append('<img src="' + attachment.url + '" class="image-preview" />');
+                    container.append('<button type="button" class="button remove-button" data-target="' + target + '">Remove</button>');
+                    
+                    // Add click handler for the new remove button
+                    container.find('.remove-button').on('click', function(e) {
+                        e.preventDefault();
+                        var target = $(this).data('target');
+                        $('#' + target).val('');
+                        $(this).prev('.image-preview').remove();
+                        $(this).remove();
+                    });
+                }
             });
             
             frame.open();
@@ -754,7 +768,8 @@ function coaches_consultants_meta_box_callback($post) {
             e.preventDefault();
             var target = $(this).data('target');
             $('#' + target).val('');
-            location.reload();
+            $(this).prev('.image-preview').remove();
+            $(this).remove();
         });
 
         // Add repeater item
@@ -824,24 +839,6 @@ function save_coaches_consultants_meta_box_data($post_id) {
     if (isset($_POST['post_type']) && 'page' == $_POST['post_type']) {
         if (!current_user_can('edit_page', $post_id)) {
             return;
-        }
-    }
-
-    // Handle image uploads
-    if (!empty($_FILES)) {
-        require_once(ABSPATH . 'wp-admin/includes/file.php');
-        require_once(ABSPATH . 'wp-admin/includes/image.php');
-        require_once(ABSPATH . 'wp-admin/includes/media.php');
-
-        $image_fields = ['coaches_consultants_overview_image'];
-        
-        foreach ($image_fields as $field) {
-            if (!empty($_FILES[$field]['name'])) {
-                $uploaded_file = wp_handle_upload($_FILES[$field], array('test_form' => false));
-                if ($uploaded_file && !isset($uploaded_file['error'])) {
-                    update_post_meta($post_id, '_' . $field, esc_url_raw($uploaded_file['url']));
-                }
-            }
         }
     }
 

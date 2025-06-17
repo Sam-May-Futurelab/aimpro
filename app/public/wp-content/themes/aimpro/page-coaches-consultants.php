@@ -4,7 +4,17 @@
  * Description: Digital marketing for coaches and consultants
  */
 
-get_header(); ?>
+get_header(); 
+
+// Get meta values
+$header_title = get_post_meta(get_the_ID(), '_coaches_consultants_header_title', true);
+$header_subtitle = get_post_meta(get_the_ID(), '_coaches_consultants_header_subtitle', true);
+$overview_title = get_post_meta(get_the_ID(), '_coaches_consultants_overview_title', true);
+$overview_content = get_post_meta(get_the_ID(), '_coaches_consultants_overview_content', true);
+$overview_image = get_post_meta(get_the_ID(), '_coaches_consultants_overview_image', true);
+$challenges_title = get_post_meta(get_the_ID(), '_coaches_consultants_challenges_title', true);
+$challenges = get_post_meta(get_the_ID(), '_coaches_consultants_challenges', true);
+?>
 
 <main id="main" class="main-content">
     <div class="container">
@@ -12,8 +22,8 @@ get_header(); ?>
         <!-- Page Header -->
         <section class="page-header">
             <div class="page-header-content">
-                <h1>Coaches & Consultants Digital Marketing</h1>
-                <p class="page-subtitle">Build your personal brand, attract ideal clients, and scale your coaching or consulting business</p>
+                <h1><?php echo esc_html($header_title ?: 'Coaches & Consultants Digital Marketing'); ?></h1>
+                <p class="page-subtitle"><?php echo esc_html($header_subtitle ?: 'Build your personal brand, attract ideal clients, and scale your coaching or consulting business'); ?></p>
             </div>
         </section>
 
@@ -22,23 +32,33 @@ get_header(); ?>
             <div class="section-content">
                 <div class="overview-content">
                     <div class="overview-text">
-                        <h2>Transform Your Expertise Into a Thriving Business</h2>
-                        <p>As a coach or consultant, your expertise is your greatest asset. Our specialized marketing strategies help you build a powerful personal brand, attract high-value clients, and position yourself as the go-to authority in your niche.</p>
+                        <h2><?php echo esc_html($overview_title ?: 'Transform Your Expertise Into a Thriving Business'); ?></h2>
+                        <p><?php echo esc_html($overview_content ?: 'As a coach or consultant, your expertise is your greatest asset. Our specialized marketing strategies help you build a powerful personal brand, attract high-value clients, and position yourself as the go-to authority in your niche.'); ?></p>
                         
                         <div class="industry-challenges">
-                            <h3>Coaching & Consulting Marketing Challenges We Solve:</h3>
+                            <h3><?php echo esc_html($challenges_title ?: 'Coaching & Consulting Marketing Challenges We Solve:'); ?></h3>
                             <ul>
+                                <?php if (!empty($challenges)): ?>
+                                    <?php foreach ($challenges as $challenge): ?>
+                                        <li><?php echo esc_html($challenge); ?></li>
+                                    <?php endforeach; ?>
+                                <?php else: ?>
                                 <li>Building trust and credibility online</li>
                                 <li>Standing out in a crowded marketplace</li>
                                 <li>Generating consistent high-quality leads</li>
                                 <li>Positioning yourself as an industry authority</li>
                                 <li>Converting prospects into paying clients</li>
                                 <li>Scaling beyond one-on-one limitations</li>
+                                <?php endif; ?>
                             </ul>
                         </div>
                     </div>
                     <div class="overview-image">
-                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/industries/coaches-consultants-overview.jpg" alt="Coaches & Consultants Digital Marketing" />
+                        <?php if ($overview_image): ?>
+                            <img src="<?php echo esc_url($overview_image); ?>" alt="<?php echo esc_attr($overview_title); ?>" />
+                        <?php else: ?>
+                            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/industries/coaches-consultants-overview.jpg" alt="Coaches & Consultants Digital Marketing" />
+                        <?php endif; ?>
                     </div>
                 </div>
             </div>
