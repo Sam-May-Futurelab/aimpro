@@ -429,26 +429,120 @@ document.addEventListener('DOMContentLoaded', function() {
     mutationObserver.observe(document.body, {
         childList: true,
         subtree: true
-    });    // Enhanced Mobile Menu Toggle
+    });    // Simple Mobile Menu Toggle
     const mobileToggle = document.querySelector('.mobile-menu-toggle');
     const mainNav = document.querySelector('.main-nav');
-    const headerCtas = document.querySelector('.header-ctas');
 
     if (mobileToggle && mainNav) {
-        // Create mobile CTAs if they don't exist - only for mobile devices
-        let mobileCtas = mainNav.querySelector('.mobile-ctas');
-        if (!mobileCtas) {
-            mobileCtas = document.createElement('div');
-            mobileCtas.className = 'mobile-ctas';
-            mobileCtas.style.display = 'none'; // Hidden by default
-            mobileCtas.innerHTML = `
-                <a href="/contact" class="btn-outline mobile-cta">GET FREE AUDIT</a>
-                <a href="tel:+441212858490" class="btn-primary mobile-cta">TALK TO AN EXPERT</a>
-            `;
-            mainNav.appendChild(mobileCtas);
+        // Create simple mobile dropdowns
+        function createMobileDropdowns() {
+            // Only create once
+            if (mainNav.querySelector('.mobile-dropdown-content')) return;
+
+            // Services dropdown
+            const servicesItem = mainNav.querySelector('.nav-item-mega');
+            if (servicesItem) {
+                const dropdown = document.createElement('div');
+                dropdown.className = 'mobile-dropdown-content';
+                dropdown.innerHTML = `
+                    <div class="mobile-service-category">SEO Services</div>
+                    <a href="/seo-services">SEO Services</a>
+                    <a href="/local-seo">Local SEO</a>
+                    <a href="/seo-audit">SEO Audit</a>
+                    <a href="/technical-seo">Technical SEO</a>
+                    <a href="/on-page-seo">On-Page SEO</a>
+                    <a href="/white-label-seo">White Label SEO</a>
+                    
+                    <div class="mobile-service-category">Advertising & PPC</div>
+                    <a href="/advertising-ppc">Advertising & PPC</a>
+                    <a href="/google-ads">Google Ads</a>
+                    <a href="/meta-ads">Meta Ads</a>
+                    <a href="/microsoft-ads">Microsoft Ads</a>
+                    <a href="/retargeting-display">Retargeting</a>
+                    <a href="/ppc-audit">PPC Audit</a>
+                    
+                    <div class="mobile-service-category">Marketing Automation</div>
+                    <a href="/marketing-automation">Marketing Automation</a>
+                    <a href="/ai-crm-setup">AI CRM Setup</a>
+                    <a href="/email-sms-flows">Email & SMS</a>
+                    <a href="/email-campaigns">Email Campaigns</a>
+                    <a href="/funnel-automation">Funnels</a>
+                    <a href="/chatbots">Chatbots</a>
+                    
+                    <div class="mobile-service-category">Web Development</div>
+                    <a href="/website-development">Web Development</a>
+                    <a href="/website-design">Website Design</a>
+                    <a href="/landing-pages">Landing Pages</a>
+                    <a href="/funnel-builds">Funnel Builds</a>
+                    <a href="/ux-ui-optimization">UX/UI Design</a>
+                `;
+                servicesItem.appendChild(dropdown);
+            }
+
+            // Other dropdowns
+            const dropdownItems = mainNav.querySelectorAll('.nav-item-dropdown');
+            
+            // Solutions
+            if (dropdownItems[0]) {
+                const dropdown = document.createElement('div');
+                dropdown.className = 'mobile-dropdown-content';
+                dropdown.innerHTML = `
+                    <a href="/lead-generation">Lead Generation (B2B/B2C)</a>
+                    <a href="/automate-marketing">Automate Marketing</a>
+                    <a href="/improve-roi-ads">Improve ROI from Ads</a>
+                    <a href="/rank-higher-locally">Rank Higher Locally</a>
+                    <a href="/high-converting-website">Build a High-Converting Website</a>
+                    <a href="/streamline-sales-funnel">Streamline Your Sales Funnel</a>
+                `;
+                dropdownItems[0].appendChild(dropdown);
+            }
+
+            // Industries
+            if (dropdownItems[1]) {
+                const dropdown = document.createElement('div');
+                dropdown.className = 'mobile-dropdown-content';
+                dropdown.innerHTML = `
+                    <a href="/automotive">Automotive</a>
+                    <a href="/home-garden">Home and Garden</a>
+                    <a href="/finance">Finance</a>
+                    <a href="/professional-services">Professional Services</a>
+                    <a href="/estate-agents">Estate Agents</a>
+                    <a href="/coaches-consultants">Coaches & Consultants</a>
+                    <a href="/ecommerce">E-commerce</a>
+                `;
+                dropdownItems[1].appendChild(dropdown);
+            }
+
+            // Resources
+            if (dropdownItems[2]) {
+                const dropdown = document.createElement('div');
+                dropdown.className = 'mobile-dropdown-content';
+                dropdown.innerHTML = `
+                    <a href="/blog">Blog & Insights</a>
+                    <a href="/case-studies">Case Studies</a>
+                    <a href="/templates-tools">Templates & Tools</a>
+                    <a href="/events-webinars">Events & Webinars</a>
+                    <a href="/training-mentoring">Training & Mentoring</a>
+                `;
+                dropdownItems[2].appendChild(dropdown);
+            }
+
+            // About
+            if (dropdownItems[3]) {
+                const dropdown = document.createElement('div');
+                dropdown.className = 'mobile-dropdown-content';
+                dropdown.innerHTML = `
+                    <a href="/company">Company</a>
+                    <a href="/team">Team</a>
+                    <a href="/testimonials">Testimonials</a>
+                    <a href="/careers">Careers</a>
+                    <a href="/become-a-partner">Become a Partner</a>
+                `;
+                dropdownItems[3].appendChild(dropdown);
+            }
         }
 
-        // Mobile menu toggle functionality
+        // Toggle mobile menu
         mobileToggle.addEventListener('click', function(e) {
             e.preventDefault();
             e.stopPropagation();
@@ -456,17 +550,46 @@ document.addEventListener('DOMContentLoaded', function() {
             this.classList.toggle('active');
             mainNav.classList.toggle('mobile-active');
             
-            // Prevent body scroll when menu is open
             if (mainNav.classList.contains('mobile-active')) {
+                createMobileDropdowns();
                 document.body.style.overflow = 'hidden';
-                document.documentElement.style.overflow = 'hidden';
             } else {
                 document.body.style.overflow = '';
-                document.documentElement.style.overflow = '';
             }
         });
 
-        // Close mobile menu when clicking outside
+        // Handle dropdown clicks
+        mainNav.addEventListener('click', function(e) {
+            if (mainNav.classList.contains('mobile-active')) {
+                const link = e.target.closest('a');
+                
+                // If it's a dropdown toggle
+                if (link && (link.closest('.nav-item-mega') || link.closest('.nav-item-dropdown')) && link === link.parentElement.querySelector('a')) {
+                    e.preventDefault();
+                    const parent = link.closest('.nav-item-mega, .nav-item-dropdown');
+                    
+                    // Close all other dropdowns
+                    mainNav.querySelectorAll('.mobile-dropdown-active').forEach(item => {
+                        if (item !== parent) {
+                            item.classList.remove('mobile-dropdown-active');
+                        }
+                    });
+                    
+                    // Toggle this dropdown
+                    parent.classList.toggle('mobile-dropdown-active');
+                }
+                // If it's a dropdown item link, close menu
+                else if (link && link.closest('.mobile-dropdown-content')) {
+                    setTimeout(() => {
+                        mobileToggle.classList.remove('active');
+                        mainNav.classList.remove('mobile-active');
+                        document.body.style.overflow = '';
+                    }, 100);
+                }
+            }
+        });
+
+        // Close menu when clicking outside
         document.addEventListener('click', function(e) {
             if (mainNav.classList.contains('mobile-active') && 
                 !mainNav.contains(e.target) && 
@@ -474,47 +597,15 @@ document.addEventListener('DOMContentLoaded', function() {
                 mobileToggle.classList.remove('active');
                 mainNav.classList.remove('mobile-active');
                 document.body.style.overflow = '';
-                document.documentElement.style.overflow = '';
             }
         });
-        
-        // Close mobile menu when clicking on nav links (except Services)
-        const navLinks = mainNav.querySelectorAll('a:not(.nav-item-mega a)');
-        navLinks.forEach(link => {
-            link.addEventListener('click', function(e) {
-                if (mainNav.classList.contains('mobile-active')) {
-                    // Small delay to ensure link navigation works
-                    setTimeout(() => {
-                        mobileToggle.classList.remove('active');
-                        mainNav.classList.remove('mobile-active');
-                        document.body.style.overflow = '';
-                        document.documentElement.style.overflow = '';
-                    }, 100);
-                }
-            });
-        });
-        
-        // Enhanced Services submenu toggle for mobile
-        const mobileServicesToggle = mainNav.querySelector('.nav-item-mega > a');
-        if (mobileServicesToggle) {
-            mobileServicesToggle.addEventListener('click', function(e) {
-                // Only handle on mobile when menu is active
-                if (window.innerWidth <= 768 && mainNav.classList.contains('mobile-active')) {
-                    e.preventDefault();
-                    e.stopPropagation();
-                    const parentItem = this.parentElement;
-                    parentItem.classList.toggle('active');
-                }
-            });
-        }
 
-        // Close mobile menu on escape key
+        // Close on escape key
         document.addEventListener('keydown', function(e) {
             if (e.key === 'Escape' && mainNav.classList.contains('mobile-active')) {
                 mobileToggle.classList.remove('active');
                 mainNav.classList.remove('mobile-active');
                 document.body.style.overflow = '';
-                document.documentElement.style.overflow = '';
             }
         });
 
@@ -524,10 +615,11 @@ document.addEventListener('DOMContentLoaded', function() {
                 mobileToggle.classList.remove('active');
                 mainNav.classList.remove('mobile-active');
                 document.body.style.overflow = '';
-                document.documentElement.style.overflow = '';
             }
         });
-    }// Header Scroll Effect
+    }
+
+    // Header Scroll Effect
     const header = document.querySelector('.sticky-header');
     let lastScroll = 0;
 
