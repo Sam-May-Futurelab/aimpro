@@ -223,7 +223,7 @@ get_header(); ?>
         <section class="professional-insights">
             <div class="section-content">
                 <h2><?php echo esc_html(get_post_meta(get_the_ID(), '_professional_services_insights_title', true) ?: 'Professional Services Industry Insights'); ?></h2>
-                <div class="insights-grid">
+                <div class="results-grid">
                     <?php 
                     $insights = get_post_meta(get_the_ID(), '_professional_services_insights', true);
                     if (empty($insights)) {
@@ -251,17 +251,15 @@ get_header(); ?>
                         );
                     }
                     foreach ($insights as $insight): ?>
-                        <div class="insight-card">
-                            <div class="insight-stat"><?php echo esc_html($insight['stat']); ?></div>
-                            <div class="insight-text">
-                                <h3><?php echo esc_html($insight['title']); ?></h3>
-                                <p><?php echo esc_html($insight['description']); ?></p>
-                            </div>
+                        <div class="result-item">
+                            <div class="result-number"><?php echo esc_html($insight['stat']); ?></div>
+                            <div class="result-label"><?php echo esc_html($insight['title']); ?></div>
+                            <p><?php echo esc_html($insight['description']); ?></p>
                         </div>
                     <?php endforeach; ?>
                 </div>
             </div>
-        </section>        <!-- Professional Services Testimonial (without image) -->
+        </section><!-- Professional Services Testimonial (without image) -->
         <section class="professional-testimonial">
             <div class="section-content">
                 <div class="testimonial-content">

@@ -461,6 +461,10 @@
     border-radius: 12px;
     padding: 30px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    display: flex !important;
+    flex-direction: column !important;
+    grid-template-columns: unset !important;
+    gap: 0 !important;
 }
 
 .case-study-label {
@@ -536,9 +540,10 @@
 }
 
 .results-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 20px !important;
+    margin-bottom: 20px !important;
 }
 
 .result-item {
@@ -1431,6 +1436,58 @@
     text-decoration: underline;
 }
 
+/* Fix for "Read Full Case Study" button - use standard button styling */
+.case-study-results .case-study-link,
+section .case-study-results .case-study-link,
+.automotive-case-study .case-study-results .case-study-link {
+    display: inline-block !important;
+    margin-top: 1rem !important;
+    margin-bottom: 0 !important;
+    padding: 0.75rem 2rem !important;
+    background: linear-gradient(45deg, #f15a25, #ff7849) !important;
+    color: white !important;
+    border-radius: 25px !important;
+    text-decoration: none !important;
+    font-weight: 600 !important;
+    font-size: 0.9rem !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.5px !important;
+    transition: all 0.3s ease !important;
+    position: relative !important;
+    width: auto !important;
+    /* Fix to prevent button extending too far */
+    bottom: auto !important;
+    left: auto !important;
+    right: auto !important;
+    align-self: flex-start !important;
+}
+
+.case-study-results .case-study-link:hover,
+section .case-study-results .case-study-link:hover,
+.automotive-case-study .case-study-results .case-study-link:hover {
+    transform: translateY(-2px) !important;
+    box-shadow: 0 8px 25px rgba(241, 90, 37, 0.3) !important;
+    color: white !important;
+}
+
+/* Fix case study results container to prevent button position issues */
+.case-study-results,
+section .case-study-results,
+.automotive-case-study .case-study-results {
+    position: relative !important;
+    height: auto !important;
+    display: flex !important;
+    flex-direction: column !important;
+    grid-template-columns: unset !important;
+    gap: 0 !important;
+}
+
+.case-study-results .results-grid,
+section .case-study-results .results-grid,
+.automotive-case-study .case-study-results .results-grid {
+    margin-bottom: 1.5rem !important;
+}
+
 /* Responsive */
 @media (max-width: 1200px) {
     .service-links-container {
@@ -2179,4 +2236,57 @@ body.page-template-page-templates-tools .featured-resource .tool-meta ul li::bef
     max-width: 800px;
     margin-left: auto;
     margin-right: auto;
+}
+
+/* Professional Services Insights */
+.professional-insights {
+    padding: 60px 0;
+    background: #f9fafb;
+}
+
+.professional-insights .section-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.professional-insights h2 {
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 32px;
+    font-weight: 700;
+    color: #1e293b;
+}
+
+.professional-insights .result-item {
+    padding: 30px 20px;
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+}
+
+.professional-insights .result-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.professional-insights .result-number {
+    font-size: 42px;
+    font-weight: 800;
+    color: #F15A25;
+    margin-bottom: 10px;
+}
+
+.professional-insights .result-label {
+    font-size: 18px;
+    font-weight: 700;
+    color: #1e293b;
+    margin-bottom: 12px;
+}
+
+.professional-insights .result-item p {
+    font-size: 15px;
+    color: #64748b;
+    line-height: 1.5;
 }
