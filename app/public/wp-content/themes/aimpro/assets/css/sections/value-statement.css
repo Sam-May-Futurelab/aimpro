@@ -5,7 +5,7 @@
 
 /* Value Statement */
 .value-statement {
-    padding: 4rem 0;
+    padding: 3rem 0; /* Reduced from 4rem for tighter spacing */
     background: var(--gradient-dark);
     position: relative;
     overflow: hidden;
@@ -35,7 +35,7 @@
 }
 
 .value-statement h2 {
-    margin-bottom: 2rem;
+    margin-bottom: 1.5rem; /* Reduced from 2rem for tighter spacing */
     color: var(--text-primary);
     font-size: 3rem;
     font-weight: 800;
@@ -44,5 +44,5 @@
 .value-statement p {
     font-size: 1.25rem;
     color: var(--text-secondary);
-    margin-bottom: 3rem;
+    margin-bottom: 2rem; /* Reduced from 3rem for tighter spacing */
 }

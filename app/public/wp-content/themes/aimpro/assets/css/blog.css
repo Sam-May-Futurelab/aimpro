@@ -4,9 +4,10 @@
  */
 
 /* Blog Page Layout */
-.blog-section {
+/* .blog-section padding moved to style.css to prevent conflicts with index page */
+/* .blog-section {
     padding: 0 0 80px;
-}
+} */
 
 .blog-layout {
     display: grid;

@@ -269,7 +269,7 @@ Version: 1.0
 
 /* Stats Section */
 .stats-section {
-    padding: 5rem 0;
+    padding: 3rem 0; /* Reduced from 5rem for tighter spacing */
     background: linear-gradient(135deg, #1a202c 0%, #2d3748 100%);
     color: white;
     position: relative;
@@ -668,7 +668,7 @@ Version: 1.0
 
 /* Premium Services Section */
 .premium-services-section {
-    padding: 5rem 0;
+    padding: 3rem 0; /* Reduced from 5rem for tighter spacing */
     background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
     position: relative;
     overflow: hidden;
@@ -1541,7 +1541,7 @@ html:root body.light-theme .about-page .page-hero .hero-title {
 
 @media (max-width: 768px) {
     .premium-services-section {
-        padding: 4rem 0;
+        padding: 2rem 0; /* Reduced from 4rem for tighter mobile spacing */
     }
     
     .premium-services-grid {
@@ -1592,7 +1592,7 @@ html:root body.light-theme .about-page .page-hero .hero-title {
 
 /* Luxury Team Section */
 .team-section {
-    padding: 5rem 0;
+    padding: 3rem 0; /* Reduced from 5rem for tighter spacing */
     background: var(--gradient-dark);
     position: relative;
 }
@@ -1733,7 +1733,7 @@ html:root body.light-theme .about-page .page-hero .hero-title {
 
 /* Luxury Testimonials */
 .testimonials-section {
-    padding: 5rem 0;
+    padding: 3rem 0; /* Reduced from 5rem for tighter spacing */
     background: var(--gradient-dark);
     position: relative;
     overflow: visible;
@@ -1958,7 +1958,7 @@ html:root body.light-theme .about-page .page-hero .hero-title {
 /* Blog Section */
 /* Luxury Blog Section */
 .blog-section {
-    padding: 5rem 0;
+    padding: 3rem 0; /* Reduced from 5rem for tighter spacing */
     background: var(--gradient-dark);
 }
 
@@ -2291,13 +2291,11 @@ select:focus {
     }      .service-tags-strip {
         padding: 0.5rem 0; /* Reduced to match desktop and prevent expansion */
     }
-    
-    .value-statement {
-        padding: 3rem 0;
+      .value-statement {
+        padding: 2rem 0; /* Reduced from 3rem - consolidated with sections/value-statement.css */
     }
-    
-    .stats-section {
-        padding: 4rem 0;
+      .stats-section {
+        padding: 2rem 0; /* Reduced from 4rem for tighter mobile spacing */
     }
     
     /* Mobile: Single optimized animation */
@@ -2409,16 +2407,14 @@ select:focus {
       .service-tags-strip {
         padding: 0.5rem 0; /* Reduced to match other breakpoints and prevent expansion */
     }
-    
-    .value-statement {
-        padding: 2.5rem 0;
-    }
-      .stats-section,
+      .value-statement {
+        padding: 1.5rem 0; /* Reduced from 2.5rem - consolidated with sections/value-statement.css */
+    }      .stats-section,
     .services-grid,
     .team-section,
     .testimonials-section,
     .blog-section {
-        padding: 3rem 0;
+        padding: 2rem 0; /* Reduced from 3rem for tighter mobile spacing */
     }
     
     /* Extra small mobile stats adjustments */
