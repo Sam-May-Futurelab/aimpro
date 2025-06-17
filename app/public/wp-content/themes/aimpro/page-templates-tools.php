@@ -16,9 +16,16 @@ get_header(); ?>
         </section>        <!-- Written Content Section -->
         <section class="content-section">
             <div class="content-center">
-                <div class="written-content">
-                    <div class="content-highlight">
-                        <h2 class="section-title">Professional Marketing <span class="highlight curly-underline">RESOURCES</span></h2>
+                <div class="written-content">                    <div class="content-highlight">
+                        <h2 class="section-title" style="text-align: center;">
+                            Professional Marketing <span class="highlight curly-underline">RESOURCES</span>
+                            <style>
+                            .content-section .section-title::after {
+                                left: 50%;
+                                transform: translateX(-50%);
+                            }
+                            </style>
+                        </h2>
                         <p class="section-subtitle">Transform your marketing efforts with our comprehensive collection of professional-grade templates and tools. Whether you're looking to optimize your SEO strategy, plan effective PPC campaigns, or streamline your content marketing process, our expertly crafted resources provide the <strong class="highlight-word">foundation for success</strong>.</p>
                     </div>
                     
@@ -228,9 +235,16 @@ get_header(); ?>
         $featured_title = get_post_meta(get_the_ID(), '_templates_tools_featured_title', true);
         $featured_resources = get_post_meta(get_the_ID(), '_templates_tools_featured_resources', true);
         if (!empty($featured_resources)) : ?>
-            <section class="featured-resources-section">
-                <div class="content-center">
-                    <h2 class="section-title"><?php echo esc_html($featured_title ?: 'Most Popular Resources'); ?></h2>
+            <section class="featured-resources-section">                <div class="content-center">
+                    <h2 class="section-title" style="text-align: center;">
+                        <?php echo esc_html($featured_title ?: 'Most Popular Resources'); ?>
+                        <style>
+                        .featured-resources-section .section-title::after {
+                            left: 50%;
+                            transform: translateX(-50%);
+                        }
+                        </style>
+                    </h2>
                     <div class="featured-resources-grid">
                         <?php foreach ($featured_resources as $resource) : ?>
                             <div class="featured-resource">

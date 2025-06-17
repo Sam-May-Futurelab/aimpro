@@ -226,45 +226,55 @@ $services = get_post_meta(get_the_ID(), '_automotive_services', true) ?: array()
         </section>        <!-- Automotive Industry Insights -->
         <section class="automotive-insights">
             <div class="section-content">
-                <?php 
-                $insights_title = get_post_meta(get_the_ID(), '_automotive_insights_title', true) ?: 'Automotive Industry Insights';
-                $insights = get_post_meta(get_the_ID(), '_automotive_insights', true) ?: array(
-                    array(
-                        'stat' => '95%',
-                        'title' => 'Research Online First',
-                        'description' => '95% of car buyers research vehicles online before visiting a dealership'
-                    ),
-                    array(
-                        'stat' => '13',
-                        'title' => 'Digital Touchpoints',
-                        'description' => 'Average customer visits 13 digital touchpoints during their car buying journey'
-                    ),
-                    array(
-                        'stat' => '60%',
-                        'title' => 'Mobile Research',
-                        'description' => '60% of automotive research happens on mobile devices'
-                    ),
-                    array(
-                        'stat' => '89%',
-                        'title' => 'Service Revenue',
-                        'description' => 'Service departments generate 89% of dealership profits'
-                    )
-                );
-                ?>
-                <h2><?php echo esc_html($insights_title); ?></h2>
-                <div class="insights-grid">
-                    <?php foreach ($insights as $insight): ?>
-                    <div class="insight-card">
-                        <div class="insight-stat"><?php echo esc_html($insight['stat']); ?></div>
-                        <div class="insight-text">
-                            <h3><?php echo esc_html($insight['title']); ?></h3>
-                            <p><?php echo esc_html($insight['description']); ?></p>
+                <div class="content-center">
+                    <?php 
+                    $insights_title = get_post_meta(get_the_ID(), '_automotive_insights_title', true) ?: 'Automotive Industry Insights';
+                    $insights = get_post_meta(get_the_ID(), '_automotive_insights', true) ?: array(
+                        array(
+                            'stat' => '95%',
+                            'title' => 'Research Online First',
+                            'description' => '95% of car buyers research vehicles online before visiting a dealership'
+                        ),
+                        array(
+                            'stat' => '13',
+                            'title' => 'Digital Touchpoints',
+                            'description' => 'Average customer visits 13 digital touchpoints during their car buying journey'
+                        ),
+                        array(
+                            'stat' => '60%',
+                            'title' => 'Mobile Research',
+                            'description' => '60% of automotive research happens on mobile devices'
+                        ),
+                        array(
+                            'stat' => '89%',
+                            'title' => 'Service Revenue',
+                            'description' => 'Service departments generate 89% of dealership profits'
+                        )
+                    );
+                    ?>
+                    <h2 class="section-title" style="text-align: center;">
+                        <?php echo esc_html($insights_title); ?>
+                        <style>
+                        .automotive-insights .section-title::after {
+                            left: 50%;
+                            transform: translateX(-50%);
+                        }
+                        </style>
+                    </h2>
+                    <div class="stats-grid">
+                        <?php foreach ($insights as $insight): ?>
+                        <div class="stat-item">
+                            <div class="stat-number"><?php echo esc_html($insight['stat']); ?></div>
+                            <div class="stat-content">
+                                <h3 class="stat-title"><?php echo esc_html($insight['title']); ?></h3>
+                                <p class="stat-description"><?php echo esc_html($insight['description']); ?></p>
+                            </div>
                         </div>
+                        <?php endforeach; ?>
                     </div>
-                    <?php endforeach; ?>
                 </div>
             </div>
-        </section>        <!-- Automotive Testimonial -->
+        </section><!-- Automotive Testimonial -->
         <section class="automotive-testimonial">
             <div class="section-content">
                 <div class="testimonial-content">
