@@ -922,22 +922,9 @@ document.addEventListener('DOMContentLoaded', function() {
         const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
         const scrolled = (winScroll / height) * 100;
         scrollIndicator.style.setProperty('--scroll-width', scrolled + '%');
-    });    // Note: serviceCards already handled above with magnetic effects
-
-    // Enhanced CTA button tracking effect
-    document.querySelectorAll('.btn-primary, .btn-secondary, .btn-ghost').forEach(button => {
-        button.addEventListener('mousemove', function(e) {
-            const rect = this.getBoundingClientRect();
-            const x = ((e.clientX - rect.left) / rect.width) * 100;
-            const y = ((e.clientY - rect.top) / rect.height) * 100;
-            
-            this.style.background = `radial-gradient(circle at ${x}% ${y}%, rgba(255,255,255,0.2) 0%, transparent 50%), ${this.style.background || 'linear-gradient(135deg, #FFD700 0%, #FFA500 100%)'}`;
-        });
-        
-        button.addEventListener('mouseleave', function() {
-            this.style.background = '';
-        });
-    });
+    });    // Note: serviceCards already handled above with magnetic effects    // Enhanced CTA button tracking effect - REMOVED yellow/white hover effect
+    // The problematic yellow and white hover effect has been removed for better UX
+    // Buttons will now use only their CSS-defined hover states
 
     // Premium loading effect for page
     window.addEventListener('load', function() {
