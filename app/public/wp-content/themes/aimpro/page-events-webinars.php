@@ -346,61 +346,10 @@ $newsletter_content = get_post_meta(get_the_ID(), '_events_webinars_newsletter_c
                     </div>
                 </form>
             </div>
-        </section>
-
-    </div>
+        </section>    </div>
 </main>
 
 <?php get_footer(); ?>
-                <div class="categories-grid">
-                      <div class="category-card">
-                        <div class="category-icon">
-                            <i class="fas fa-crosshairs"></i>
-                        </div>
-                        <h3>Strategy Webinars</h3>
-                        <p>High-level strategic discussions about digital marketing trends, best practices, and industry insights.</p>
-                        <span class="category-frequency">Monthly</span>
-                    </div>
-
-                    <div class="category-card">
-                        <div class="category-icon">
-                            <i class="fas fa-tools"></i>
-                        </div>
-                        <h3>Technical Workshops</h3>
-                        <p>Hands-on sessions focusing on specific tools, platforms, and technical implementation guides.</p>
-                        <span class="category-frequency">Bi-weekly</span>
-                    </div>
-
-                    <div class="category-card">
-                        <div class="category-icon">👥</div>
-                        <h3>Panel Discussions</h3>
-                        <p>Expert panels featuring industry leaders discussing current challenges and opportunities.</p>
-                        <span class="category-frequency">Quarterly</span>
-                    </div>
-
-                    <div class="category-card">
-                        <div class="category-icon">🎓</div>
-                        <h3>Masterclasses</h3>
-                        <p>In-depth training sessions covering comprehensive topics with practical exercises and Q&A.</p>
-                        <span class="category-frequency">Monthly</span>
-                    </div>
-
-                </div>
-            </div>
-        </section>
-
-        <!-- Newsletter & Updates -->
-        <section class="events-newsletter">
-            <div class="section-content">
-                <h2>Never Miss an Event</h2>
-                <p>Get notified about upcoming webinars, workshops, and exclusive invitations to premium events.</p>                <form class="newsletter-form" action="#" method="post">
-                    <div class="form-group">
-                        <input type="email" name="email" placeholder="Enter your email address" required>
-                        <button type="submit" class="btn btn-primary">Get Event Updates</button>
-                    </div>
-                </form>
-            </div>
-        </section>
 
     </div>
 </main>
