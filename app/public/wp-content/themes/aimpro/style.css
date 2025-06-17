@@ -2097,9 +2097,29 @@ html:root body.light-theme .about-page .page-hero .hero-title {
     margin-bottom: 20px;
 }
 
+/* Blog Content Flexbox for Aligned Buttons */
+.blog-content {
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.blog-content > div {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.blog-content .blog-excerpt {
+    flex-grow: 1;
+    margin-bottom: 1.5rem;
+}
+
 /* Additional Blog Card Styling */
 .blog-content .btn-outline.btn-sm {
-    margin-top: 15px;
+    margin-top: auto;
+    align-self: flex-start;
 }
 
 /* Premium Footer - Moved to assets/css/footer.css */
