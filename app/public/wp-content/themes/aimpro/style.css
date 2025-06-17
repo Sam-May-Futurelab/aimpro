@@ -2360,9 +2360,9 @@ select:focus {
     .trust-indicators {
         justify-content: center;
     }
-    
-    .hero-ctas {
+      .hero-ctas {
         align-items: center;
+        margin-top: 1.5rem; /* Add proper spacing from straplines */
     }
     
     /* Medium Mobile - Tag Adjustments */

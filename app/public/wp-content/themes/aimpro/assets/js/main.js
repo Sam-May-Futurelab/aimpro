@@ -33,6 +33,27 @@ document.addEventListener('DOMContentLoaded', function() {
         }, 1000); // Show loading screen for at least 1 second
     });
     
+    // Hero Strapline Rotation
+    const straplines = document.querySelectorAll('.hero-straplines .strapline');
+    let currentStraplineIndex = 0;
+    
+    if (straplines.length > 1) {
+        // Function to show next strapline
+        function rotateStraplines() {
+            // Hide current strapline
+            straplines[currentStraplineIndex].classList.remove('active');
+            
+            // Move to next strapline
+            currentStraplineIndex = (currentStraplineIndex + 1) % straplines.length;
+            
+            // Show next strapline
+            straplines[currentStraplineIndex].classList.add('active');
+        }
+        
+        // Start rotating every 3 seconds
+        setInterval(rotateStraplines, 3000);
+    }
+    
     // Back to Top Button
     const backToTop = document.createElement('button');
     backToTop.className = 'back-to-top';
@@ -408,65 +429,104 @@ document.addEventListener('DOMContentLoaded', function() {
     mutationObserver.observe(document.body, {
         childList: true,
         subtree: true
-    });
-    // Mobile Menu Toggle
+    });    // Enhanced Mobile Menu Toggle
     const mobileToggle = document.querySelector('.mobile-menu-toggle');
     const mainNav = document.querySelector('.main-nav');
     const headerCtas = document.querySelector('.header-ctas');
 
     if (mobileToggle && mainNav) {
-        // Only add mobile CTAs on mobile devices
-        if (window.innerWidth <= 768) {
-            const mobileCtas = document.createElement('div');
+        // Create mobile CTAs if they don't exist - only for mobile devices
+        let mobileCtas = mainNav.querySelector('.mobile-ctas');
+        if (!mobileCtas) {
+            mobileCtas = document.createElement('div');
             mobileCtas.className = 'mobile-ctas';
+            mobileCtas.style.display = 'none'; // Hidden by default
             mobileCtas.innerHTML = `
-                <a href="#contact" class="btn-outline mobile-cta">GET FREE AUDIT</a>
+                <a href="/contact" class="btn-outline mobile-cta">GET FREE AUDIT</a>
                 <a href="tel:+441212858490" class="btn-primary mobile-cta">TALK TO AN EXPERT</a>
             `;
             mainNav.appendChild(mobileCtas);
-        }        mobileToggle.addEventListener('click', function() {
+        }
+
+        // Mobile menu toggle functionality
+        mobileToggle.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            
             this.classList.toggle('active');
             mainNav.classList.toggle('mobile-active');
             
             // Prevent body scroll when menu is open
             if (mainNav.classList.contains('mobile-active')) {
                 document.body.style.overflow = 'hidden';
+                document.documentElement.style.overflow = 'hidden';
             } else {
                 document.body.style.overflow = '';
+                document.documentElement.style.overflow = '';
             }
-            
-            if (headerCtas) {
-                headerCtas.classList.toggle('mobile-active');
+        });
+
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', function(e) {
+            if (mainNav.classList.contains('mobile-active') && 
+                !mainNav.contains(e.target) && 
+                !mobileToggle.contains(e.target)) {
+                mobileToggle.classList.remove('active');
+                mainNav.classList.remove('mobile-active');
+                document.body.style.overflow = '';
+                document.documentElement.style.overflow = '';
             }
         });
         
-        // Close mobile menu when clicking on nav links
-        const navLinks = mainNav.querySelectorAll('a');
+        // Close mobile menu when clicking on nav links (except Services)
+        const navLinks = mainNav.querySelectorAll('a:not(.nav-item-mega a)');
         navLinks.forEach(link => {
-            link.addEventListener('click', function() {
+            link.addEventListener('click', function(e) {
                 if (mainNav.classList.contains('mobile-active')) {
-                    mobileToggle.classList.remove('active');
-                    mainNav.classList.remove('mobile-active');
-                    document.body.style.overflow = '';
-                    if (headerCtas) {
-                        headerCtas.classList.remove('mobile-active');
-                    }
+                    // Small delay to ensure link navigation works
+                    setTimeout(() => {
+                        mobileToggle.classList.remove('active');
+                        mainNav.classList.remove('mobile-active');
+                        document.body.style.overflow = '';
+                        document.documentElement.style.overflow = '';
+                    }, 100);
                 }
             });
         });
         
-        // Mobile Services submenu accordion functionality
+        // Enhanced Services submenu toggle for mobile
         const mobileServicesToggle = mainNav.querySelector('.nav-item-mega > a');
         if (mobileServicesToggle) {
             mobileServicesToggle.addEventListener('click', function(e) {
-                // Only prevent default and toggle on mobile
+                // Only handle on mobile when menu is active
                 if (window.innerWidth <= 768 && mainNav.classList.contains('mobile-active')) {
                     e.preventDefault();
+                    e.stopPropagation();
                     const parentItem = this.parentElement;
                     parentItem.classList.toggle('active');
                 }
             });
         }
+
+        // Close mobile menu on escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape' && mainNav.classList.contains('mobile-active')) {
+                mobileToggle.classList.remove('active');
+                mainNav.classList.remove('mobile-active');
+                document.body.style.overflow = '';
+                document.documentElement.style.overflow = '';
+            }
+        });
+
+        // Handle window resize
+        window.addEventListener('resize', function() {
+            if (window.innerWidth > 768 && mainNav.classList.contains('mobile-active')) {
+                mobileToggle.classList.remove('active');
+                mainNav.classList.remove('mobile-active');
+                document.body.style.overflow = '';
+                document.documentElement.style.overflow = '';
+            }
+        });
     }// Header Scroll Effect
     const header = document.querySelector('.sticky-header');
     let lastScroll = 0;
@@ -1378,7 +1438,8 @@ document.addEventListener('DOMContentLoaded', function() {
     if (typeof aimpro_data !== 'undefined' && aimpro_data.theme_url) {
         preloadAnimationData();
     }
-      // Theme Toggle Functionality
+    
+    // Theme Toggle Functionality
     const themeToggle = document.querySelector('.theme-toggle');    const sunIcon = document.querySelector('.sun-icon');
     const moonIcon = document.querySelector('.moon-icon');
     

@@ -186,8 +186,7 @@
 }
 
 .hero-badge:hover {
-    background: rgba(255, 255, 255, 0.15);
-    transform: translateY(-1px);
+    background: rgba(255, 255, 255, 0.15);    transform: translateY(-1px);
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
@@ -269,14 +268,35 @@
         min-height: auto;
         padding: 5rem 0 3rem;
     }
-    
-    .hero-title {
+      .hero-title {
         font-size: 2.2rem;
     }
     
+    /* Hide award badge on mobile */
     .hero-badge {
-        font-size: 0.75rem;
-        padding: 0.4rem 0.8rem;
+        display: none;
+    }
+    
+    /* Hide subtitle on mobile for cleaner look */
+    .hero-subtitle {
+        display: none;
+    }
+    
+    /* Mobile strapline adjustments */
+    .hero-straplines {
+        height: 25px;
+        margin: 8px 0 25px 0; /* Increased bottom margin from 15px to 25px */
+    }
+    
+    .strapline {
+        font-size: 1.1rem;
+        text-align: center;
+    }
+    
+    /* Mobile CTA spacing fix */
+    .hero-ctas {
+        margin-top: 20px; /* Add top margin to prevent overlap with straplines */
+        padding-top: 10px; /* Add padding for extra safety */
     }
     
     .hero-target-icon {
@@ -287,5 +307,17 @@
     .hero-target-icon img {
         width: 16px;
         height: 16px;
+    }
+}
+
+/* Extra small mobile screens need more separation */
+@media (max-width: 480px) {
+    .hero-straplines {
+        margin-bottom: 30px; /* Even more space on very small screens */
+    }
+    
+    .hero-ctas {
+        margin-top: 25px;
+        padding-top: 15px;
     }
 }
