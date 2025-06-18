@@ -8,60 +8,75 @@
 
 get_header(); ?>
 
-<main class="contact-page">
-    <!-- Hero Section -->
-    <section class="contact-hero">
-        <div class="container">            <div class="hero-content">                <div class="hero-badge">
-                    <span class="badge-icon">
-                        <i class="fas fa-map-marker-alt"></i>
-                    </span>
-                    <span><?php echo aimpro_get_field('contact_hero_badge', 'LOCATED IN BIRMINGHAM\'S BUSINESS DISTRICT'); ?></span>
+<main class="contact-page">    <!-- Contact Information Section -->
+    <section class="company-values" style="padding: 4rem 0; background: #f8f9fa;">
+        <div class="container">
+            <div class="section-content">
+                <div class="content-center">
+                    <h2><?php echo aimpro_get_field('contact_hero_heading', 'Get In Touch with Digital Marketing Experts'); ?></h2>
+                    <div class="curly-underline-accent"></div>
+                    <p style="color: #5a6c7d; font-size: 1.2rem; margin-bottom: 3rem;"><?php echo aimpro_get_field('contact_hero_subtitle', 'Ready to transform your business? Let\'s discuss your digital marketing goals and create a strategy that delivers measurable results.'); ?></p>
                 </div>
-                <h1><?php echo aimpro_get_field('contact_hero_heading', 'Get In Touch with <span class="text-gradient">Digital Marketing Experts</span>'); ?></h1>
-                <p class="hero-description"><?php echo aimpro_get_field('contact_hero_subtitle', 'Ready to transform your business? Let\'s discuss your digital marketing goals and create a strategy that delivers measurable results.'); ?></p>
-                  <!-- Quick Contact Options -->
-                <div class="quick-contact-grid">
-                    <div class="quick-contact-item">
-                        <div class="contact-icon">
-                            <i class="fas fa-phone"></i>
-                        </div>                        <div class="contact-details">
-                            <span class="contact-label"><?php echo aimpro_get_field('contact_phone_label', 'Call Us Now'); ?></span>
-                            <span class="contact-value"><?php echo aimpro_get_field('contact_phone', '+44 121 285 8490'); ?></span>
+                
+                <div class="values-grid">
+                    <div class="value-card">
+                        <div class="value-icon">
+                            <svg width="60" height="60" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
                         </div>
+                        <h3><?php echo aimpro_get_field('contact_phone_label', 'Call Us Now'); ?></h3>
+                        <p><strong><?php echo aimpro_get_field('contact_phone', '+44 121 285 8490'); ?></strong></p>
+                        <p>Speak directly with our digital marketing experts for immediate assistance and consultation.</p>
                     </div>
-                    <div class="quick-contact-item">
-                        <div class="contact-icon">
-                            <i class="fas fa-envelope"></i>
+                    
+                    <div class="value-card">
+                        <div class="value-icon">
+                            <svg width="60" height="60" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                <polyline points="22,6 12,13 2,6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
                         </div>
-                        <div class="contact-details">
-                            <span class="contact-label"><?php echo aimpro_get_field('contact_email_label', 'Email Us'); ?></span>
-                            <span class="contact-value"><?php echo aimpro_get_field('contact_email', 'hello@aimpro.co.uk'); ?></span>
-                        </div>
+                        <h3><?php echo aimpro_get_field('contact_email_label', 'Email Us'); ?></h3>
+                        <p><strong><?php echo aimpro_get_field('contact_email', 'hello@aimpro.co.uk'); ?></strong></p>
+                        <p>Send us your project details and we'll respond within 24 hours with a tailored strategy.</p>
                     </div>
-                    <div class="quick-contact-item">
-                        <div class="contact-icon">
-                            <i class="fas fa-clock"></i>
+                    
+                    <div class="value-card">
+                        <div class="value-icon">
+                            <svg width="60" height="60" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"/>
+                                <polyline points="12,6 12,12 16,14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
                         </div>
-                        <div class="contact-details">
-                            <span class="contact-label"><?php echo aimpro_get_field('contact_hours_label', 'Business Hours'); ?></span>
-                            <span class="contact-value"><?php echo aimpro_get_field('contact_hours', 'Mon-Fri: 9AM-6PM'); ?></span>
-                        </div>
+                        <h3><?php echo aimpro_get_field('contact_hours_label', 'Business Hours'); ?></h3>
+                        <p><strong><?php echo aimpro_get_field('contact_hours', 'Mon-Fri: 9AM-6PM'); ?></strong></p>
+                        <p>Our team is available during business hours to discuss your digital marketing needs.</p>
+                    </div>
+                </div>
+                
+                <!-- Location Badge -->
+                <div style="text-align: center; margin-top: 3rem;">
+                    <div class="service-tags-strip" style="display: inline-block; padding: 0.75rem 2rem; border-radius: 50px;">
+                        <span style="font-weight: 600; letter-spacing: 1px; color: white;">
+                            📍 <?php echo aimpro_get_field('contact_hero_badge', 'LOCATED IN BIRMINGHAM\'S BUSINESS DISTRICT'); ?>
+                        </span>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>    <!-- Main Content -->
-    <div class="contact-main-content">
+        </div>    </section>    <!-- Main Content -->
+    <div class="contact-main-content" style="padding-top: 2rem;">
         <div class="container">
             <div class="contact-layout-centered">
-                
-                <!-- Contact Form Section -->
-                <div class="contact-form-section">
-                    <div class="section-header">
+                  <!-- Contact Form Section -->
+                <div class="contact-form-section" style="margin-top: 0;">
+                    <!-- Contact Form Header -->
+                    <div class="section-content" style="text-align: center; margin-bottom: 3rem;">
                         <h2>Send Us a Message</h2>
-                        <p>Fill out the form below and we'll get back to you within 24 hours with a customized strategy for your business.</p>
+                        <div class="curly-underline-accent"></div>
+                        <p style="color: #5a6c7d; font-size: 1.1rem; margin-top: 1rem;">Fill out the form below and we'll get back to you within 24 hours with a customized strategy for your business.</p>
                     </div>
-
+                    
                     <div class="contact-form-wrapper">
                         <?php if (isset($_GET['contact_success'])): ?>
                             <div class="form-message success">
@@ -71,17 +86,10 @@ get_header(); ?>
                             <div class="form-message error">
                                 <p><strong>Error:</strong> There was a problem sending your message. Please try again or contact us directly.</p>
                             </div>
-                        <?php endif; ?>
-
-                        <form class="contact-form" id="contact-form" method="post" action="<?php echo admin_url('admin-post.php'); ?>" novalidate>
+                        <?php endif; ?>                        <form class="contact-form" id="contact-form" method="post" action="<?php echo admin_url('admin-post.php'); ?>" novalidate>
                             <?php wp_nonce_field('contact_submission', 'contact_nonce'); ?>
                             <input type="hidden" name="action" value="contact_form">
                             <input type="hidden" name="contact_form" value="1">
-                            
-                            <div class="form-header">
-                                <h3><?php echo aimpro_get_field('contact_form_title', 'Get In Touch'); ?></h3>
-                                <p><?php echo aimpro_get_field('contact_form_subtitle', 'We\'d love to hear from you. Send us a message and we\'ll respond as soon as possible.'); ?></p>
-                            </div>
                             
                             <div class="form-grid">
                                 <div class="form-group">
