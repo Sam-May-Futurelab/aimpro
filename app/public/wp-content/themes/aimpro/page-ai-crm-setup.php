@@ -26,10 +26,10 @@ get_header(); ?>
     </div>    <!-- Hero Section -->
     <section class="page-hero service-hero">
         <div class="container">
-            <div class="hero-content">
+            <div class="hero-content animate-on-scroll animate-fade-up">
                 <h1><?php echo esc_html(get_post_meta(get_the_ID(), 'ai_hero_title', true) ?: 'AI-Powered CRM Setup & Implementation'); ?></h1>
                 <p class="hero-subtitle"><?php echo esc_html(get_post_meta(get_the_ID(), 'ai_hero_subtitle', true) ?: 'Transform your customer relationship management with AI-driven CRM systems that automate lead scoring, predict customer behavior, and optimize your entire sales funnel for maximum conversion.'); ?></p>
-                <div class="hero-stats">
+                <div class="hero-stats animate-on-scroll animate-stagger animate-scale-up">
                     <div class="stat-item">
                         <div class="stat-number"><?php echo esc_html(get_post_meta(get_the_ID(), 'ai_hero_stat_1_number', true) ?: '340%'); ?></div>
                         <div class="stat-label"><?php echo esc_html(get_post_meta(get_the_ID(), 'ai_hero_stat_1_label', true) ?: 'Lead Conversion Increase'); ?></div>
@@ -52,12 +52,12 @@ get_header(); ?>
     </section>    <!-- Service Overview -->
     <section class="service-overview">
         <div class="container">
-            <div class="overview-content">
+            <div class="overview-content animate-on-scroll animate-fade-up">
                 <h2><?php echo esc_html(get_post_meta(get_the_ID(), 'ai_overview_title', true) ?: 'Intelligent CRM Implementation'); ?></h2>
                 <p><?php echo esc_html(get_post_meta(get_the_ID(), 'ai_overview_description', true) ?: 'Modern businesses need more than basic contact management. Our AI-powered CRM implementations leverage machine learning, predictive analytics, and intelligent automation to transform how you manage customer relationships and drive revenue growth.'); ?></p>
             </div>
             
-            <div class="services-grid">
+            <div class="services-grid animate-on-scroll animate-stagger animate-scale-up">
                 <div class="service-item">
                     <div class="service-icon">
                         <i class="fas fa-brain"></i>
@@ -106,12 +106,10 @@ get_header(); ?>
                     <p><?php echo esc_html(get_post_meta(get_the_ID(), 'ai_service_6_desc', true) ?: 'Unified customer view across all touchpoints with AI-powered attribution and engagement tracking.'); ?></p>
                 </div>            </div>
         </div>
-    </section>
-
-    <!-- Case Study Section -->
+    </section>    <!-- Case Study Section -->
     <section class="case-study-section">
         <div class="container">
-            <div class="case-study-content">
+            <div class="case-study-content animate-on-scroll animate-fade-up">
                 <div class="case-study-text">
                     <h2><?php echo esc_html(get_post_meta(get_the_ID(), 'ai_case_title', true) ?: 'Case Study: SaaS Company Transformation'); ?></h2>
                     <p class="case-study-intro"><?php echo esc_html(get_post_meta(get_the_ID(), 'ai_case_intro', true) ?: 'How we helped a growing SaaS company increase lead conversion by 340% and reduce sales cycle time by 60% through intelligent CRM implementation.'); ?></p>
@@ -137,9 +135,9 @@ get_header(); ?>
                     </div>
                 </div>
                 
-                <div class="case-study-results">
+                <div class="case-study-results animate-on-scroll animate-fade-up animate-delay-200">
                     <h3>The Results</h3>
-                    <div class="results-grid">
+                    <div class="results-grid animate-on-scroll animate-stagger animate-scale-up">
                         <div class="result-item">
                             <div class="result-number"><?php echo esc_html(get_post_meta(get_the_ID(), 'ai_result_1_number', true) ?: '340%'); ?></div>
                             <div class="result-label"><?php echo esc_html(get_post_meta(get_the_ID(), 'ai_result_1_label', true) ?: 'Lead Conversion Increase'); ?></div>
@@ -163,8 +161,8 @@ get_header(); ?>
     </section>    <!-- Process Section -->
     <section class="process-section">
         <div class="container">
-            <h2><?php echo esc_html(get_post_meta(get_the_ID(), 'ai_process_title', true) ?: 'Our AI CRM Implementation Process'); ?></h2>
-            <div class="process-steps">
+            <h2 class="animate-on-scroll animate-fade-up"><?php echo esc_html(get_post_meta(get_the_ID(), 'ai_process_title', true) ?: 'Our AI CRM Implementation Process'); ?></h2>
+            <div class="process-steps animate-on-scroll animate-stagger animate-fade-up">
                 <div class="process-step">
                     <div class="step-number">1</div>
                     <div class="step-content">
@@ -209,10 +207,10 @@ get_header(); ?>
     </section><!-- AI Features Section -->
     <section class="service-overview">
         <div class="container">
-            <div class="section-header">
+            <div class="section-header animate-on-scroll animate-fade-up">
                 <h2>AI-Powered CRM Features</h2>
             </div>
-            <div class="features-grid">
+            <div class="features-grid animate-on-scroll animate-stagger animate-scale-up">
                 <div class="feature-item">
                     <div class="feature-icon">
                         <i class="fas fa-robot"></i>
@@ -249,12 +247,12 @@ get_header(); ?>
     </section>    <!-- Packages Section -->
     <section id="packages" class="pricing-section">
         <div class="container">
-            <div class="section-header">
+            <div class="section-header animate-on-scroll animate-fade-up">
                 <h2>AI CRM Setup Packages</h2>
                 <p>Transform your customer relationship management with data-driven optimization strategies.</p>
             </div>
             
-            <div class="pricing-grid">
+            <div class="pricing-grid animate-on-scroll animate-stagger animate-scale-up">
                 <div class="pricing-card">
                     <div class="pricing-header">
                         <h3>Essential AI CRM</h3>
@@ -272,9 +270,7 @@ get_header(); ?>
                     </ul>
                     <a href="#contact" class="btn-outline">Get Started</a>
                 </div>
-                
-                <div class="pricing-card featured">
-                    <div class="pricing-badge">Most Popular</div>
+                  <div class="pricing-card featured">
                     <div class="pricing-header">
                         <h3>Advanced AI CRM</h3>
                         <div class="price">£4,997</div>
@@ -314,11 +310,11 @@ get_header(); ?>
     </section>    <!-- CRM Platforms Section -->
     <section class="service-overview">
         <div class="container">
-            <div class="section-header">
+            <div class="section-header animate-on-scroll animate-fade-up">
                 <h2>Supported CRM Platforms</h2>
                 <p>We work with leading CRM platforms to implement AI-powered solutions that transform your customer management.</p>
             </div>
-            <div class="services-grid">
+            <div class="services-grid animate-on-scroll animate-stagger animate-scale-up">
                 <div class="service-item">
                     <div class="service-icon">
                         <i class="fab fa-hubspot"></i>
@@ -352,13 +348,11 @@ get_header(); ?>
                 </div>
             </div>
         </div>
-    </section>
-
-    <!-- Industries Section -->
+    </section>    <!-- Industries Section -->
     <section class="industries-section">
         <div class="container">
-            <h2>Industries We Serve</h2>
-            <div class="industries-grid">
+            <h2 class="animate-on-scroll animate-fade-up">Industries We Serve</h2>
+            <div class="industries-grid animate-on-scroll animate-stagger animate-scale-up">
                 <div class="industry-item">
                     <h3>SaaS & Technology</h3>
                     <p>Optimize trial-to-paid conversions and reduce churn with predictive customer analytics.</p>
@@ -388,7 +382,7 @@ get_header(); ?>
     </section>    <!-- Testimonial Section -->
     <section class="testimonial-section">
         <div class="container">
-            <div class="testimonial-content">
+            <div class="testimonial-content animate-on-scroll animate-fade-up">
                 <blockquote>
                     "<?php echo esc_html(get_post_meta(get_the_ID(), 'ai_testimonial_quote', true) ?: 'The AI CRM implementation by Aimpro completely transformed our sales process. We\'re now converting 340% more leads and our sales cycle is 60% shorter. The predictive analytics help us focus on the right prospects at the right time.'); ?>"
                 </blockquote>
@@ -401,7 +395,7 @@ get_header(); ?>
     </section>    <!-- CTA Section -->
     <section id="contact" class="cta-section">
         <div class="container">
-            <div class="cta-content">                <h2><?php echo esc_html(get_post_meta(get_the_ID(), 'ai_cta_title', true) ?: 'Ready to Transform Your CRM with AI?'); ?></h2>
+            <div class="cta-content animate-on-scroll animate-fade-up"><h2><?php echo esc_html(get_post_meta(get_the_ID(), 'ai_cta_title', true) ?: 'Ready to Transform Your CRM with AI?'); ?></h2>
                 <p><?php echo esc_html(get_post_meta(get_the_ID(), 'ai_cta_description', true) ?: 'Stop losing leads to poor follow-up and manual processes. Our AI-powered CRM implementation will revolutionize how you manage customers and drive predictable revenue growth.'); ?></p>
                 <div class="cta-buttons">
                     <a href="<?php echo home_url('/contact'); ?>" class="btn-outline"><?php echo esc_html(get_post_meta(get_the_ID(), 'ai_cta_button', true) ?: 'Start Your AI CRM'); ?></a>

@@ -101,7 +101,7 @@ get_header(); ?>
                     </div>
                 </div>                <!-- Values Grid -->
                 <div class="values-grid">
-                    <div class="value-item">
+                    <div class="value-item animate-on-scroll animate-stagger animate-fade-up">
                         <div class="value-icon">
                             <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M12 2L13.09 8.26L22 9L13.09 9.74L12 16L10.91 9.74L2 9L10.91 8.26L12 2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
@@ -111,7 +111,7 @@ get_header(); ?>
                         <p><?php echo aimpro_get_field('about_value_1_description', 'Our approach goes beyond the ordinary. We infuse creativity and innovation into every strategy, crafting unique solutions tailored to your brand\'s needs. By blending fresh ideas with strategic insights, we create campaigns that truly connect with your audience.'); ?></p>
                     </div>
                     
-                    <div class="value-item">
+                    <div class="value-item animate-on-scroll animate-stagger animate-fade-up">
                         <div class="value-icon">
                             <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M3 3V21H21" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
@@ -122,7 +122,7 @@ get_header(); ?>
                         <p><?php echo aimpro_get_field('about_value_2_description', 'We believe in the power of data. Every decision we make is backed by in-depth analytics, ensuring that each campaign is optimized to deliver maximum results and ROI. With data at the core, your marketing efforts are not only efficient but also highly effective.'); ?></p>
                     </div>
                     
-                    <div class="value-item">
+                    <div class="value-item animate-on-scroll animate-stagger animate-fade-up">
                         <div class="value-icon">
                             <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M9 12L11 14L15 10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
@@ -133,7 +133,7 @@ get_header(); ?>
                         <p><?php echo aimpro_get_field('about_value_3_description', 'Our results speak for themselves. Across diverse industries, we\'ve consistently delivered growth, enhanced visibility, and high-quality leads, proving our ability to drive real impact for our clients.'); ?></p>
                     </div>
                     
-                    <div class="value-item">
+                    <div class="value-item animate-on-scroll animate-stagger animate-fade-up">
                         <div class="value-icon">
                             <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M17 21V19C17 17.9391 16.5786 16.9217 15.8284 16.1716C15.0783 15.4214 14.0609 15 13 15H5C3.93913 15 2.92172 15.4214 2.17157 16.1716C1.42143 16.9217 1 17.9391 1 19V21" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
@@ -146,7 +146,7 @@ get_header(); ?>
                         <p><?php echo aimpro_get_field('about_value_4_description', 'We\'re more than an agency—we\'re an extension of your team. Through open communication and a collaborative approach, we work closely with you to exceed expectations and achieve your goals together.'); ?></p>
                     </div>
                     
-                    <div class="value-item">
+                    <div class="value-item animate-on-scroll animate-stagger animate-fade-up">
                         <div class="value-icon">
                             <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M12 2L15.09 8.26L22 9L17 14L18.18 21L12 18L5.82 21L7 14L2 9L8.91 8.26L12 2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
@@ -197,7 +197,7 @@ get_header(); ?>
             </div>
         </section>        <!-- CTA Section -->
         <section class="about-cta">
-            <div class="section-content text-center">
+            <div class="section-content text-center animate-on-scroll animate-scale-up">
                 <h2><?php echo aimpro_get_field('about_cta_heading', 'Let\'s Connect!'); ?></h2>
                 <p><?php echo aimpro_get_field('about_cta_description', 'Ready to transform your digital presence? Get in touch with our team today.'); ?></p>
                 <div class="cta-buttons">

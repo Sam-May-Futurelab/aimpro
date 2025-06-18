@@ -52,12 +52,12 @@ get_header(); ?>
     </section>    <!-- Service Overview -->
     <section class="service-overview">
         <div class="container">
-            <div class="overview-content">
+            <div class="overview-content animate-on-scroll animate-fade-up">
                 <h2><?php echo esc_html(get_post_meta(get_the_ID(), 'email_campaigns_overview_title', true) ?: 'Professional Email Campaign Management'); ?></h2>
                 <p><?php echo esc_html(get_post_meta(get_the_ID(), 'email_campaigns_overview_description', true) ?: 'Email marketing remains one of the highest-ROI marketing channels when executed strategically. Our comprehensive email campaign services combine compelling design, persuasive copywriting, and advanced segmentation to deliver campaigns that your audience actually wants to read.'); ?></p>
             </div>
             
-            <div class="services-grid">
+            <div class="services-grid animate-on-scroll animate-stagger animate-scale-up">
                 <div class="service-item">
                     <div class="service-icon">
                         <i class="fas fa-bullseye"></i>
@@ -112,7 +112,7 @@ get_header(); ?>
     </section>    <!-- Case Study Section -->
     <section class="case-study-section">
         <div class="container">
-            <div class="case-study-content">
+            <div class="case-study-content animate-on-scroll animate-fade-up">
                 <div class="case-study-text">
                     <h2><?php echo esc_html(get_post_meta(get_the_ID(), 'email_campaigns_case_title', true) ?: 'Case Study: B2B Software Success'); ?></h2>
                     <p class="case-study-intro"><?php echo esc_html(get_post_meta(get_the_ID(), 'email_campaigns_case_intro', true) ?: 'How we helped a B2B software company increase their email marketing ROI by 4,200% and generate £350K in additional revenue through strategic campaign optimization.'); ?></p>
@@ -138,9 +138,9 @@ get_header(); ?>
                     </div>
                 </div>
                 
-                <div class="case-study-results">
+                <div class="case-study-results animate-on-scroll animate-fade-up animate-delay-200">
                     <h3>The Results</h3>
-                    <div class="results-grid">
+                    <div class="results-grid animate-on-scroll animate-stagger animate-scale-up">
                         <div class="result-item">
                             <div class="result-number"><?php echo esc_html(get_post_meta(get_the_ID(), 'email_campaigns_result_1_number', true) ?: '4,200%'); ?></div>
                             <div class="result-label"><?php echo esc_html(get_post_meta(get_the_ID(), 'email_campaigns_result_1_label', true) ?: 'ROI Increase'); ?></div>
@@ -164,11 +164,11 @@ get_header(); ?>
     </section><!-- Campaign Types Section -->
     <section class="service-overview">
         <div class="container">
-            <div class="section-header">
+            <div class="section-header animate-on-scroll animate-fade-up">
                 <h2>Types of Email Campaigns We Create</h2>
                 <p>Comprehensive email marketing solutions tailored to your specific business objectives and audience needs.</p>
             </div>
-            <div class="services-grid">
+            <div class="services-grid animate-on-scroll animate-stagger animate-scale-up">
                 <div class="service-item">
                     <div class="service-icon">
                         <i class="fas fa-newspaper"></i>
@@ -239,8 +239,8 @@ get_header(); ?>
     </section>    <!-- Process Section -->
     <section class="process-section">
         <div class="container">
-            <h2><?php echo esc_html(get_post_meta(get_the_ID(), 'email_campaigns_process_title', true) ?: 'Our Email Campaign Process'); ?></h2>
-            <div class="process-steps">
+            <h2 class="animate-on-scroll animate-fade-up"><?php echo esc_html(get_post_meta(get_the_ID(), 'email_campaigns_process_title', true) ?: 'Our Email Campaign Process'); ?></h2>
+            <div class="process-steps animate-on-scroll animate-stagger animate-fade-up">
                 <div class="process-step">
                     <div class="step-number">1</div>
                     <div class="step-content">
@@ -285,11 +285,11 @@ get_header(); ?>
     </section><!-- Best Practices Section -->
     <section class="service-overview">
         <div class="container">
-            <div class="section-header">
+            <div class="section-header animate-on-scroll animate-fade-up">
                 <h2>Email Marketing Best Practices We Follow</h2>
                 <p>Our proven strategies ensure your emails deliver maximum impact and engagement.</p>
             </div>
-            <div class="services-grid">
+            <div class="services-grid animate-on-scroll animate-stagger animate-scale-up">
                 <div class="service-item">
                     <div class="service-icon">
                         <i class="fas fa-mobile-alt"></i>
@@ -323,13 +323,11 @@ get_header(); ?>
                 </div>
             </div>
         </div>
-    </section>
-
-    <!-- Tools & Platforms -->
+    </section>    <!-- Tools & Platforms -->
     <section class="tools-section">
         <div class="container">
-            <h2>Email Marketing Platforms We Use</h2>
-            <div class="tools-grid">
+            <h2 class="animate-on-scroll animate-fade-up">Email Marketing Platforms We Use</h2>
+            <div class="tools-grid animate-on-scroll animate-stagger animate-scale-up">
                 <div class="tool-item">
                     <div class="tool-icon">
                         <i class="fab fa-mailchimp"></i>
@@ -363,13 +361,11 @@ get_header(); ?>
                 </div>
             </div>
         </div>
-    </section>
-
-    <!-- Industries Section -->
+    </section>    <!-- Industries Section -->
     <section class="industries-section">
         <div class="container">
-            <h2>Industries We Serve</h2>
-            <div class="industries-grid">
+            <h2 class="animate-on-scroll animate-fade-up">Industries We Serve</h2>
+            <div class="industries-grid animate-on-scroll animate-stagger animate-scale-up">
                 <div class="industry-item">
                     <h3>E-commerce & Retail</h3>
                     <p>Product promotion, abandoned cart recovery, and customer retention campaigns.</p>
@@ -399,7 +395,7 @@ get_header(); ?>
     </section>    <!-- Testimonial Section -->
     <section class="testimonial-section">
         <div class="container">
-            <div class="testimonial-content">
+            <div class="testimonial-content animate-on-scroll animate-fade-up">
                 <blockquote>
                     "<?php echo esc_html(get_post_meta(get_the_ID(), 'email_campaigns_testimonial_quote', true) ?: 'Aimpro transformed our email marketing from an afterthought to our most profitable channel. Our ROI increased by 4,200% and we\'re generating £350K more revenue annually. Their strategic approach is unmatched.'); ?>"
                 </blockquote>
@@ -409,12 +405,10 @@ get_header(); ?>
                 </cite>
             </div>
         </div>
-    </section>
-
-    <!-- CTA Section -->
+    </section>    <!-- CTA Section -->
     <section id="contact" class="cta-section">
         <div class="container">
-            <div class="cta-content">                <h2><?php echo esc_html(get_post_meta(get_the_ID(), 'email_campaigns_cta_title', true) ?: 'Ready to Transform Your Email Marketing?'); ?></h2>
+            <div class="cta-content animate-on-scroll animate-fade-up"><h2><?php echo esc_html(get_post_meta(get_the_ID(), 'email_campaigns_cta_title', true) ?: 'Ready to Transform Your Email Marketing?'); ?></h2>
                 <p><?php echo esc_html(get_post_meta(get_the_ID(), 'email_campaigns_cta_description', true) ?: 'Stop sending emails that get ignored. Our strategic email campaigns are designed to cut through inbox clutter and drive real business results. Let\'s turn your email list into a revenue-generating machine.'); ?></p>
                 <div class="cta-buttons">
                     <a href="<?php echo home_url('/contact'); ?>" class="btn-outline"><?php echo esc_html(get_post_meta(get_the_ID(), 'email_campaigns_cta_button', true) ?: 'Launch Campaigns'); ?></a>

@@ -8,14 +8,13 @@ get_header(); ?>
 
 <main id="main" class="main-content">
     <div class="container">
-        
-        <!-- Page Header -->
+          <!-- Page Header -->
         <section class="page-header">
-            <div class="page-header-content">
+            <div class="page-header-content animate-on-scroll animate-fade-up">
                 <h1><?php echo esc_html(get_post_meta(get_the_ID(), '_lead_generation_header_title', true) ?: 'Lead Generation (B2B/B2C)'); ?></h1>
                 <p class="page-subtitle"><?php echo esc_html(get_post_meta(get_the_ID(), '_lead_generation_header_subtitle', true) ?: 'Generate high-quality leads that convert into customers with proven strategies and targeted campaigns'); ?></p>
             </div>
-        </section>        <!-- Solution Overview -->
+        </section><!-- Solution Overview -->
         <section class="solution-overview">
             <div class="section-content">
                 <div class="overview-content">
@@ -59,13 +58,11 @@ get_header(); ?>
                     </div>
                 </div>
             </div>
-        </section>
-
-        <!-- Lead Generation Methods -->
+        </section>        <!-- Lead Generation Methods -->
         <section class="lead-generation-methods">
             <div class="section-content">
-                <h2><?php echo esc_html(get_post_meta(get_the_ID(), '_lead_generation_methods_title', true) ?: 'Our Lead Generation Methods'); ?></h2>
-                <div class="methods-grid">
+                <h2 class="animate-on-scroll animate-fade-up"><?php echo esc_html(get_post_meta(get_the_ID(), '_lead_generation_methods_title', true) ?: 'Our Lead Generation Methods'); ?></h2>
+                <div class="methods-grid animate-on-scroll animate-stagger animate-scale-up">
                     
                     <?php
                     $methods = get_post_meta(get_the_ID(), '_lead_generation_methods', true);
@@ -153,12 +150,10 @@ get_header(); ?>
 
                 </div>
             </div>
-        </section>
-
-        <!-- Lead Generation Success Story -->
+        </section>        <!-- Lead Generation Success Story -->
         <section class="lead-generation-case-study">
             <div class="section-content">
-                <div class="case-study-content">
+                <div class="case-study-content animate-on-scroll animate-fade-up">
                     <div class="case-study-text">
                         <span class="case-study-label"><?php echo esc_html(get_post_meta(get_the_ID(), '_lead_generation_case_study_label', true) ?: 'Success Story'); ?></span>
                         <h2><?php echo esc_html(get_post_meta(get_the_ID(), '_lead_generation_case_study_title', true) ?: 'TechFlow Solutions: 450% Lead Increase in 4 Months'); ?></h2>
@@ -206,13 +201,11 @@ get_header(); ?>
                     </div>
                 </div>
             </div>
-        </section>
-
-        <!-- Lead Generation Process -->
+        </section>        <!-- Lead Generation Process -->
         <section class="lead-generation-process">
             <div class="section-content">
-                <h2><?php echo esc_html(get_post_meta(get_the_ID(), '_lead_generation_process_title', true) ?: 'Our Lead Generation Process'); ?></h2>
-                <div class="process-steps">
+                <h2 class="animate-on-scroll animate-fade-up"><?php echo esc_html(get_post_meta(get_the_ID(), '_lead_generation_process_title', true) ?: 'Our Lead Generation Process'); ?></h2>
+                <div class="process-steps animate-on-scroll animate-stagger animate-fade-up">
                     
                     <?php
                     $process_steps = get_post_meta(get_the_ID(), '_lead_generation_process_steps', true);
@@ -249,20 +242,16 @@ get_header(); ?>
                             <p><?php echo esc_html($step['description']); ?></p>
                         </div>
                     </div>
-                    <?php endforeach; ?>
-
-                </div>
-                <div class="process-cta">
+                    <?php endforeach; ?>                </div>
+                <div class="process-cta animate-on-scroll animate-fade-up">
                     <a href="<?php echo home_url('/contact'); ?>" class="btn-primary process-cta-btn">Start Generating Leads Today</a>
                 </div>
             </div>
-        </section>
-
-        <!-- Lead Generation Types -->
+        </section>        <!-- Lead Generation Types -->
         <section class="lead-generation-types text-center">
             <div class="section-content">
-                <h2><?php echo esc_html(get_post_meta(get_the_ID(), '_lead_generation_types_title', true) ?: 'Lead Generation Strategies by Business Type'); ?></h2>
-                <div class="types-grid">
+                <h2 class="animate-on-scroll animate-fade-up"><?php echo esc_html(get_post_meta(get_the_ID(), '_lead_generation_types_title', true) ?: 'Lead Generation Strategies by Business Type'); ?></h2>
+                <div class="types-grid animate-on-scroll animate-stagger animate-scale-up">
                     <?php
                     $types = get_post_meta(get_the_ID(), '_lead_generation_types', true);
                     if (empty($types)) {
@@ -314,12 +303,11 @@ get_header(); ?>
                 </div>
             </div>
         </section>
-        
-        <!-- Lead Generation Tools -->
+          <!-- Lead Generation Tools -->
         <section class="lead-generation-tools">
             <div class="section-content">
-                <h2><?php echo esc_html(get_post_meta(get_the_ID(), '_lead_generation_tools_title', true) ?: 'Lead Generation Tools & Technologies'); ?></h2>
-                <div class="tools-grid">
+                <h2 class="animate-on-scroll animate-fade-up"><?php echo esc_html(get_post_meta(get_the_ID(), '_lead_generation_tools_title', true) ?: 'Lead Generation Tools & Technologies'); ?></h2>
+                <div class="tools-grid animate-on-scroll animate-stagger animate-scale-up">
                     
                     <?php
                     $tools = get_post_meta(get_the_ID(), '_lead_generation_tools', true);
@@ -381,12 +369,10 @@ get_header(); ?>
                     
                 </div>
             </div>
-        </section>
-
-        <!-- Lead Generation Testimonial (No Image) -->
+        </section>        <!-- Lead Generation Testimonial (No Image) -->
         <section class="lead-generation-testimonial text-center">
             <div class="section-content">
-                <div class="testimonial-content">
+                <div class="testimonial-content animate-on-scroll animate-fade-up">
                     <blockquote>
                         "<?php echo esc_html(get_post_meta(get_the_ID(), '_lead_generation_testimonial_quote', true) ?: 'Aimpro Digital completely transformed our lead generation. In just 4 months, we went from 20 leads per month to over 100 high-quality leads. Their multi-channel approach and systematic nurturing process has revolutionized our sales pipeline.'); ?>"
                     </blockquote>
@@ -399,18 +385,15 @@ get_header(); ?>
                     </div>
                 </div>
             </div>
-        </section>
-
-        <!-- CTA Section -->
+        </section>        <!-- CTA Section -->
         <section class="lead-generation-cta text-center">
             <div class="section-content">
-                <h2><?php echo esc_html(get_post_meta(get_the_ID(), '_lead_generation_cta_title', true) ?: 'Ready to Generate More Qualified Leads?'); ?></h2>
-                <p><?php echo esc_html(get_post_meta(get_the_ID(), '_lead_generation_cta_subtitle', true) ?: 'Let\'s create a custom lead generation strategy that fills your sales pipeline with high-quality prospects.'); ?></p>
-                <div class="cta-buttons">
+                <h2 class="animate-on-scroll animate-fade-up"><?php echo esc_html(get_post_meta(get_the_ID(), '_lead_generation_cta_title', true) ?: 'Ready to Generate More Qualified Leads?'); ?></h2>
+                <p class="animate-on-scroll animate-fade-up animate-delay-200"><?php echo esc_html(get_post_meta(get_the_ID(), '_lead_generation_cta_subtitle', true) ?: 'Let\'s create a custom lead generation strategy that fills your sales pipeline with high-quality prospects.'); ?></p>
+                <div class="cta-buttons animate-on-scroll animate-scale-up animate-delay-400">
                     <a href="<?php echo esc_url(home_url(get_post_meta(get_the_ID(), '_lead_generation_cta_primary_url', true) ?: '/contact')); ?>" class="btn btn-primary"><?php echo esc_html(get_post_meta(get_the_ID(), '_lead_generation_cta_primary_text', true) ?: 'Get Free Lead Generation Audit'); ?></a>
-                    <a href="<?php echo esc_url(home_url(get_post_meta(get_the_ID(), '_lead_generation_cta_secondary_url', true) ?: '/case-studies')); ?>" class="btn btn-secondary"><?php echo esc_html(get_post_meta(get_the_ID(), '_lead_generation_cta_secondary_text', true) ?: 'View Lead Generation Success Stories'); ?></a>
-                </div>
-                <div class="cta-benefits">
+                    <a href="<?php echo esc_url(home_url(get_post_meta(get_the_ID(), '_lead_generation_cta_secondary_url', true) ?: '/case-studies')); ?>" class="btn btn-secondary"><?php echo esc_html(get_post_meta(get_the_ID(), '_lead_generation_cta_secondary_text', true) ?: 'View Lead Generation Success Stories'); ?></a>                </div>
+                <div class="cta-benefits animate-on-scroll animate-stagger animate-fade-up">
                     <?php
                     $benefits = get_post_meta(get_the_ID(), '_lead_generation_cta_benefits', true);
                     if (empty($benefits)) {                        $benefits = array(

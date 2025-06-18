@@ -53,15 +53,13 @@ function get_chatbot_field($field_key, $post_id = null) {
                 <span class="current">Chatbots</span>
             </nav>
         </div>
-    </div>
-
-    <!-- Hero Section -->
+    </div>    <!-- Hero Section -->
     <section class="page-hero service-hero">
         <div class="container">
-            <div class="hero-content">
+            <div class="hero-content animate-on-scroll animate-fade-up">
                 <h1><?php echo esc_html(get_chatbot_field('hero_title')); ?></h1>
                 <p class="hero-subtitle"><?php echo esc_html(get_chatbot_field('hero_subtitle')); ?></p>
-                <div class="hero-stats">
+                <div class="hero-stats animate-on-scroll animate-stagger animate-scale-up">
                     <div class="stat-item">
                         <div class="stat-number"><?php echo esc_html(get_chatbot_field('hero_stat1_number')); ?></div>
                         <div class="stat-label"><?php echo esc_html(get_chatbot_field('hero_stat1_label')); ?></div>
@@ -84,12 +82,12 @@ function get_chatbot_field($field_key, $post_id = null) {
     </section>    <!-- Service Overview -->
     <section class="service-overview">
         <div class="container">
-            <div class="overview-content">
+            <div class="overview-content animate-on-scroll animate-fade-up">
                 <h2><?php echo esc_html(get_chatbot_field('overview_title')); ?></h2>
                 <p><?php echo esc_html(get_chatbot_field('overview_content')); ?></p>
             </div>
             
-            <div class="services-grid">
+            <div class="services-grid animate-on-scroll animate-stagger animate-scale-up">
                 <?php for ($i = 1; $i <= 6; $i++) : ?>
                 <div class="service-item">
                     <div class="service-icon">
@@ -104,7 +102,7 @@ function get_chatbot_field($field_key, $post_id = null) {
     </section>    <!-- Case Study Section -->
     <section class="case-study-section">
         <div class="container">
-            <div class="case-study-content">
+            <div class="case-study-content animate-on-scroll animate-fade-up">
                 <div class="case-study-text">
                     <h2><?php echo esc_html(get_chatbot_field('case_study_title')); ?></h2>
                     <p class="case-study-intro"><?php echo esc_html(get_chatbot_field('case_study_intro')); ?></p>
@@ -128,9 +126,9 @@ function get_chatbot_field($field_key, $post_id = null) {
                     </div>
                 </div>
                 
-                <div class="case-study-results">
+                <div class="case-study-results animate-on-scroll animate-fade-up animate-delay-200">
                     <h3><?php echo esc_html(get_chatbot_field('results_title')); ?></h3>
-                    <div class="results-grid">
+                    <div class="results-grid animate-on-scroll animate-stagger animate-scale-up">
                         <?php for ($i = 1; $i <= 4; $i++) : ?>
                         <div class="result-item">
                             <div class="result-number"><?php echo esc_html(get_chatbot_field("result_number_{$i}")); ?></div>
@@ -144,11 +142,11 @@ function get_chatbot_field($field_key, $post_id = null) {
     </section>    <!-- Chatbot Types Section -->
     <section class="service-overview">
         <div class="container">
-            <div class="section-header">
+            <div class="section-header animate-on-scroll animate-fade-up">
                 <h2><?php echo esc_html(get_chatbot_field('types_title')); ?></h2>
                 <p><?php echo esc_html(get_chatbot_field('types_subtitle')); ?></p>
             </div>
-            <div class="services-grid">
+            <div class="services-grid animate-on-scroll animate-stagger animate-scale-up">
                 <?php for ($i = 1; $i <= 6; $i++) : ?>
                 <div class="service-item">
                     <div class="service-icon">
@@ -166,8 +164,8 @@ function get_chatbot_field($field_key, $post_id = null) {
     </section>    <!-- Process Section -->
     <section class="process-section">
         <div class="container">
-            <h2><?php echo esc_html(get_chatbot_field('process_title')); ?></h2>
-            <div class="process-steps">
+            <h2 class="animate-on-scroll animate-fade-up"><?php echo esc_html(get_chatbot_field('process_title')); ?></h2>
+            <div class="process-steps animate-on-scroll animate-stagger animate-fade-up">
                 <?php for ($i = 1; $i <= 5; $i++) : ?>
                 <div class="process-step">
                     <div class="step-number"><?php echo $i; ?></div>
@@ -182,11 +180,11 @@ function get_chatbot_field($field_key, $post_id = null) {
     </section>    <!-- Features Section -->
     <section class="service-overview">
         <div class="container">
-            <div class="section-header">
+            <div class="section-header animate-on-scroll animate-fade-up">
                 <h2><?php echo esc_html(get_chatbot_field('features_title')); ?></h2>
                 <p><?php echo esc_html(get_chatbot_field('features_subtitle')); ?></p>
             </div>
-            <div class="features-grid">
+            <div class="features-grid animate-on-scroll animate-stagger animate-scale-up">
                 <?php for ($i = 1; $i <= 6; $i++) : ?>
                 <div class="feature-item">
                     <div class="feature-icon">
@@ -201,8 +199,8 @@ function get_chatbot_field($field_key, $post_id = null) {
     </section>    <!-- Platforms Section -->
     <section class="platforms-section">
         <div class="container">
-            <h2><?php echo esc_html(get_chatbot_field('platforms_title')); ?></h2>
-            <div class="platforms-grid">
+            <h2 class="animate-on-scroll animate-fade-up"><?php echo esc_html(get_chatbot_field('platforms_title')); ?></h2>
+            <div class="platforms-grid animate-on-scroll animate-stagger animate-scale-up">
                 <?php for ($i = 1; $i <= 4; $i++) : ?>
                 <div class="platform-item">
                     <div class="platform-icon">
@@ -217,8 +215,8 @@ function get_chatbot_field($field_key, $post_id = null) {
     </section>    <!-- Industries Section -->
     <section class="industries-section">
         <div class="container">
-            <h2><?php echo esc_html(get_chatbot_field('industries_title')); ?></h2>
-            <div class="industries-grid">
+            <h2 class="animate-on-scroll animate-fade-up"><?php echo esc_html(get_chatbot_field('industries_title')); ?></h2>
+            <div class="industries-grid animate-on-scroll animate-stagger animate-scale-up">
                 <?php for ($i = 1; $i <= 6; $i++) : ?>
                 <div class="industry-item">
                     <h3><?php echo esc_html(get_chatbot_field("industry_title_{$i}")); ?></h3>
@@ -230,7 +228,7 @@ function get_chatbot_field($field_key, $post_id = null) {
     </section>    <!-- Testimonial Section -->
     <section class="testimonial-section">
         <div class="container">
-            <div class="testimonial-content">
+            <div class="testimonial-content animate-on-scroll animate-fade-up">
                 <blockquote>
                     "<?php echo esc_html(get_chatbot_field('testimonial_quote')); ?>"
                 </blockquote>
@@ -243,7 +241,7 @@ function get_chatbot_field($field_key, $post_id = null) {
     </section>    <!-- CTA Section -->
     <section id="contact" class="cta-section">
         <div class="container">
-            <div class="cta-content">                <h2><?php echo esc_html(get_chatbot_field('cta_title')); ?></h2>
+            <div class="cta-content animate-on-scroll animate-fade-up"><h2><?php echo esc_html(get_chatbot_field('cta_title')); ?></h2>
                 <p><?php echo esc_html(get_chatbot_field('cta_content')); ?></p>
                 <div class="cta-buttons">
                     <a href="<?php echo home_url('/contact'); ?>" class="btn-outline"><?php echo esc_html(get_chatbot_field('cta_button_text')); ?></a>
