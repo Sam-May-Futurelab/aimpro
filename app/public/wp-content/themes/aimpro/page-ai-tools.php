@@ -23,12 +23,10 @@ get_header(); ?>
                 <span class="current">AI Tools</span>
             </nav>
         </div>
-    </div>
-
-    <!-- Hero Section -->
+    </div>    <!-- Hero Section -->
     <section class="page-hero service-hero">
         <div class="container">
-            <div class="hero-content">
+            <div class="hero-content animate-on-scroll animate-fade-up">
                 <h1>AI-Powered Marketing Tools & Implementation</h1>
                 <p class="hero-subtitle">Harness the power of artificial intelligence to automate content creation, optimize campaigns, predict customer behavior, and scale your marketing efforts with cutting-edge AI tools and custom implementations.</p>
                 <div class="hero-cta">
@@ -36,7 +34,7 @@ get_header(); ?>
                     <a href="#packages" class="btn-secondary">View Packages</a>
                 </div>
             </div>
-            <div class="hero-stats">
+            <div class="hero-stats animate-on-scroll animate-stagger animate-scale-up">
                 <div class="stat-item">
                     <div class="stat-number">85%</div>
                     <div class="stat-label">Time Savings</div>
@@ -53,16 +51,15 @@ get_header(); ?>
         </div>
     </section>
 
-    <!-- Service Overview -->
-    <section class="service-overview">
+    <!-- Service Overview -->    <section class="service-overview">
         <div class="container">
-            <div class="overview-content">
+            <div class="overview-content animate-on-scroll animate-fade-up">
                 <h2>Transform Your Marketing with AI</h2>
                 <p>Stay ahead of the competition with AI-powered marketing tools that automate repetitive tasks, provide deep insights, and unlock new levels of personalization and efficiency. From content generation to predictive analytics, we implement the AI solutions that will revolutionize your marketing operations.</p>
             </div>
             
             <div class="services-grid">
-                <div class="service-item">
+                <div class="service-item animate-on-scroll animate-stagger animate-fade-up">
                     <div class="service-icon">
                         <i class="fas fa-pen-fancy"></i>
                     </div>
@@ -113,10 +110,9 @@ get_header(); ?>
         </div>
     </section>
 
-    <!-- Case Study Section -->
-    <section class="case-study-section">
+    <!-- Case Study Section -->    <section class="case-study-section">
         <div class="container">
-            <div class="case-study-content">
+            <div class="case-study-content animate-on-scroll animate-slide-left">
                 <div class="case-study-text">
                     <h2>Case Study: E-commerce AI Transformation</h2>
                     <p class="case-study-intro">How we helped an e-commerce company increase content production by 320% and boost campaign performance by 450% through comprehensive AI tool implementation.</p>
@@ -164,10 +160,9 @@ get_header(); ?>
 
     <!-- AI Tools Categories Section -->
     <section class="ai-categories-section">
-        <div class="container">
-            <h2>AI Tools We Implement</h2>
+        <div class="container">            <h2 class="animate-on-scroll animate-fade-up">AI Tools We Implement</h2>
             <div class="ai-categories-grid">
-                <div class="ai-category-item">
+                <div class="ai-category-item animate-on-scroll animate-stagger animate-fade-up">
                     <div class="category-icon">
                         <i class="fas fa-edit"></i>
                     </div>

@@ -7,19 +7,16 @@
 get_header(); ?>
 
 <main id="main" class="main-content">
-    <div class="container">
-          <!-- Page Header -->
+    <div class="container">          <!-- Page Header -->
         <section class="page-header">
-            <div class="page-header-content">
+            <div class="page-header-content animate-on-scroll animate-fade-up">
                 <h1><?php echo esc_html(get_post_meta(get_the_ID(), 'testimonials_header_title', true) ?: 'Client Testimonials'); ?></h1>
                 <p class="page-subtitle"><?php echo esc_html(get_post_meta(get_the_ID(), 'testimonials_header_subtitle', true) ?: 'See what our clients have to say about working with Aimpro Digital'); ?></p>
             </div>
-        </section>
-
-        <!-- Featured Testimonials -->
+        </section>        <!-- Featured Testimonials -->
         <section class="featured-testimonials">
             <div class="section-content">
-                <h2><?php echo esc_html(get_post_meta(get_the_ID(), 'testimonials_featured_heading', true) ?: 'Success Stories'); ?></h2>
+                <h2 class="animate-on-scroll animate-fade-up"><?php echo esc_html(get_post_meta(get_the_ID(), 'testimonials_featured_heading', true) ?: 'Success Stories'); ?></h2>
                 <div class="testimonials-grid">
                     <?php for ($i = 1; $i <= 2; $i++): 
                         $quote = get_post_meta(get_the_ID(), "testimonial{$i}_quote", true);
@@ -55,7 +52,7 @@ get_header(); ?>
                             $result3 = '90'; $result3_label = 'Days to ROI';
                         }
                     ?>
-                    <div class="testimonial-card featured">
+                    <div class="testimonial-card featured animate-on-scroll animate-stagger animate-slide-left">
                         <div class="testimonial-content">
                             <div class="quote-icon">
                                 <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -95,7 +92,7 @@ get_header(); ?>
         </section>        <!-- Industry Testimonials -->
         <section class="industry-testimonials">
             <div class="section-content">
-                <h2><?php echo esc_html(get_post_meta(get_the_ID(), 'testimonials_industry_heading', true) ?: 'Testimonials by Industry'); ?></h2>
+                <h2 class="animate-on-scroll animate-fade-up"><?php echo esc_html(get_post_meta(get_the_ID(), 'testimonials_industry_heading', true) ?: 'Testimonials by Industry'); ?></h2>
                 
                 <?php for ($ind = 1; $ind <= 4; $ind++): 
                     $industry_title = get_post_meta(get_the_ID(), "industry{$ind}_title", true);
@@ -110,9 +107,8 @@ get_header(); ?>
                         );
                         $industry_title = $default_titles[$ind];
                     }
-                ?>
-                <!-- Industry <?php echo $ind; ?> -->
-                <div class="industry-group">
+                ?>                <!-- Industry <?php echo $ind; ?> -->
+                <div class="industry-group animate-on-scroll animate-fade-up">
                     <h3><?php echo esc_html($industry_title); ?></h3>
                     <div class="testimonials-row">
                         <?php for ($t = 1; $t <= 2; $t++): 
@@ -141,7 +137,7 @@ get_header(); ?>
                                 }
                             }
                         ?>
-                        <div class="testimonial-card">
+                        <div class="testimonial-card animate-on-scroll animate-stagger animate-fade-up">
                             <blockquote>
                                 "<?php echo esc_html($quote); ?>"
                             </blockquote>
@@ -158,39 +154,38 @@ get_header(); ?>
         </section>        <!-- Metrics & Results -->
         <section class="testimonial-metrics">
             <div class="section-content">
-                <h2><?php echo esc_html(get_post_meta(get_the_ID(), 'testimonials_metrics_heading', true) ?: 'Client Results by the Numbers'); ?></h2>
+                <h2 class="animate-on-scroll animate-fade-up"><?php echo esc_html(get_post_meta(get_the_ID(), 'testimonials_metrics_heading', true) ?: 'Client Results by the Numbers'); ?></h2>
                 <div class="metrics-grid">
-                    <div class="metric-card">
+                    <div class="metric-card animate-on-scroll animate-stagger animate-scale-up">
                         <span class="metric-number">500+</span>
                         <span class="metric-label">Happy Clients</span>
                         <p>Businesses we've helped grow</p>
-                    </div>
-                    <div class="metric-card">
+                    </div>                    <div class="metric-card animate-on-scroll animate-stagger animate-scale-up">
                         <span class="metric-number">99%</span>
                         <span class="metric-label">Client Retention</span>
                         <p>Long-term partnerships</p>
                     </div>
-                    <div class="metric-card">
+                    <div class="metric-card animate-on-scroll animate-stagger animate-scale-up">
                         <span class="metric-number">250%</span>
                         <span class="metric-label">Average ROI</span>
                         <p>Return on marketing investment</p>
                     </div>
-                    <div class="metric-card">
+                    <div class="metric-card animate-on-scroll animate-stagger animate-scale-up">
                         <span class="metric-number">$50M+</span>
                         <span class="metric-label">Revenue Generated</span>
                         <p>For our clients collectively</p>                    </div>
                 </div>
             </div>
-        </section>
-
-        <!-- CTA Section -->
+        </section>        <!-- CTA Section -->
         <section class="testimonials-cta">
             <div class="section-content">
-                <h2><?php echo esc_html(get_post_meta(get_the_ID(), 'testimonials_cta_heading', true) ?: 'Ready to Join Our Success Stories?'); ?></h2>
-                <p><?php echo esc_html(get_post_meta(get_the_ID(), 'testimonials_cta_text', true) ?: 'Let\'s discuss how we can help your business achieve similar results'); ?></p>
-                <div class="cta-buttons">
-                    <a href="<?php echo home_url(get_post_meta(get_the_ID(), 'testimonials_cta_button1_url', true) ?: '/contact'); ?>" class="btn btn-primary"><?php echo esc_html(get_post_meta(get_the_ID(), 'testimonials_cta_button1_text', true) ?: 'Start Your Success Story'); ?></a>
-                    <a href="<?php echo home_url(get_post_meta(get_the_ID(), 'testimonials_cta_button2_url', true) ?: '/case-studies'); ?>" class="btn btn-secondary"><?php echo esc_html(get_post_meta(get_the_ID(), 'testimonials_cta_button2_text', true) ?: 'View Case Studies'); ?></a>
+                <div class="animate-on-scroll animate-scale-up">
+                    <h2><?php echo esc_html(get_post_meta(get_the_ID(), 'testimonials_cta_heading', true) ?: 'Ready to Join Our Success Stories?'); ?></h2>
+                    <p><?php echo esc_html(get_post_meta(get_the_ID(), 'testimonials_cta_text', true) ?: 'Let\'s discuss how we can help your business achieve similar results'); ?></p>
+                    <div class="cta-buttons">
+                        <a href="<?php echo home_url(get_post_meta(get_the_ID(), 'testimonials_cta_button1_url', true) ?: '/contact'); ?>" class="btn btn-primary"><?php echo esc_html(get_post_meta(get_the_ID(), 'testimonials_cta_button1_text', true) ?: 'Start Your Success Story'); ?></a>
+                        <a href="<?php echo home_url(get_post_meta(get_the_ID(), 'testimonials_cta_button2_url', true) ?: '/case-studies'); ?>" class="btn btn-secondary"><?php echo esc_html(get_post_meta(get_the_ID(), 'testimonials_cta_button2_text', true) ?: 'View Case Studies'); ?></a>
+                    </div>
                 </div>
             </div>
         </section></div>

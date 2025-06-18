@@ -7,22 +7,19 @@
 get_header(); ?>
 
 <main id="main" class="main-content">
-    <div class="container">
-          <!-- Page Header -->
+    <div class="container">          <!-- Page Header -->
         <section class="page-header">
-            <div class="page-header-content">
+            <div class="page-header-content animate-on-scroll animate-fade-up">
                 <h1><?php echo esc_html(get_post_meta(get_the_ID(), '_solutions_header_title', true) ?: 'Solutions'); ?></h1>
                 <p class="page-subtitle"><?php echo esc_html(get_post_meta(get_the_ID(), '_solutions_header_subtitle', true) ?: 'Proven digital marketing solutions that drive real business results'); ?></p>
             </div>
-        </section>
-
-        <!-- Solutions Introduction -->
+        </section>        <!-- Solutions Introduction -->
         <section class="solutions-intro">
             <div class="section-content">
-                <div class="intro-content">
+                <div class="intro-content animate-on-scroll animate-slide-left">
                     <h2><?php echo esc_html(get_post_meta(get_the_ID(), '_solutions_intro_title', true) ?: 'Transform Your Business with Strategic Digital Solutions'); ?></h2>
                     <p><?php echo esc_html(get_post_meta(get_the_ID(), '_solutions_intro_content', true) ?: 'Every business faces unique challenges in today\'s digital landscape. Our comprehensive solutions are designed to address your most pressing needs, from generating quality leads to maximizing ROI from your marketing investments. Discover how our proven methodologies can accelerate your growth.'); ?></p>
-                </div>                <div class="solution-stats">
+                </div>                <div class="solution-stats animate-on-scroll animate-stagger animate-scale-up">
                     <?php 
                     $solution_stats = get_post_meta(get_the_ID(), '_solutions_stats', true);
                     if (empty($solution_stats)) {
@@ -47,7 +44,7 @@ get_header(); ?>
         </section>        <!-- Solutions Grid -->
         <section class="solutions-section">
             <div class="section-content">
-                <h2><?php echo esc_html(get_post_meta(get_the_ID(), '_solutions_grid_title', true) ?: 'Our Digital Marketing Solutions'); ?></h2>
+                <h2 class="animate-on-scroll animate-fade-up"><?php echo esc_html(get_post_meta(get_the_ID(), '_solutions_grid_title', true) ?: 'Our Digital Marketing Solutions'); ?></h2>
                 <div class="solutions-main-grid">
                     <?php 
                     $solutions_cards = get_post_meta(get_the_ID(), '_solutions_cards', true);
@@ -133,10 +130,9 @@ get_header(); ?>
                             )
                         );
                     }
-                    
-                    foreach ($solutions_cards as $card) {
+                      foreach ($solutions_cards as $card) {
                         ?>
-                        <div class="solution-card">
+                        <div class="solution-card animate-on-scroll animate-stagger animate-fade-up">
                             <h3><?php echo esc_html($card['title']); ?></h3>
                             <p><?php echo esc_html($card['description']); ?></p>
                             <?php if (!empty($card['features'])) { ?>
@@ -159,7 +155,7 @@ get_header(); ?>
         </section>        <!-- Solution Process -->
         <section class="solution-process">
             <div class="section-content">
-                <h2><?php echo esc_html(get_post_meta(get_the_ID(), '_solutions_process_title', true) ?: 'Our Solution Implementation Process'); ?></h2>
+                <h2 class="animate-on-scroll animate-fade-up"><?php echo esc_html(get_post_meta(get_the_ID(), '_solutions_process_title', true) ?: 'Our Solution Implementation Process'); ?></h2>
                 <div class="process-steps">
                     <?php 
                     $process_steps = get_post_meta(get_the_ID(), '_solutions_process_steps', true);
@@ -187,10 +183,9 @@ get_header(); ?>
                             )
                         );
                     }
-                    
-                    foreach ($process_steps as $step) {
+                      foreach ($process_steps as $step) {
                         ?>
-                        <div class="process-step">
+                        <div class="process-step animate-on-scroll animate-stagger animate-fade-up">
                             <div class="step-number"><?php echo esc_html($step['number']); ?></div>
                             <div class="step-content">
                                 <h3><?php echo esc_html($step['title']); ?></h3>
@@ -205,7 +200,7 @@ get_header(); ?>
         </section>        <!-- Success Stories -->
         <section class="solution-success">
             <div class="section-content">
-                <h2><?php echo esc_html(get_post_meta(get_the_ID(), '_solutions_success_stories_title', true) ?: 'Solution Success Stories'); ?></h2>
+                <h2 class="animate-on-scroll animate-fade-up"><?php echo esc_html(get_post_meta(get_the_ID(), '_solutions_success_stories_title', true) ?: 'Solution Success Stories'); ?></h2>
                 <div class="success-grid">
                     <?php 
                     $success_stories = get_post_meta(get_the_ID(), '_solutions_success_stories', true);
@@ -234,10 +229,9 @@ get_header(); ?>
                             )
                         );
                     }
-                    
-                    foreach ($success_stories as $story) {
+                      foreach ($success_stories as $story) {
                         ?>
-                        <div class="success-story">
+                        <div class="success-story animate-on-scroll animate-stagger animate-slide-left">
                             <div class="story-metric">
                                 <span class="metric-number"><?php echo esc_html($story['metric_number']); ?></span>
                                 <span class="metric-label"><?php echo esc_html($story['metric_label']); ?></span>
@@ -256,7 +250,7 @@ get_header(); ?>
         </section>        <!-- Solution CTA -->
         <section class="solution-cta-section">
             <div class="section-content">
-                <div class="cta-content">
+                <div class="cta-content animate-on-scroll animate-scale-up">
                     <h2><?php echo esc_html(get_post_meta(get_the_ID(), '_solutions_cta_title', true) ?: 'Ready to Transform Your Business?'); ?></h2>
                     <p><?php echo esc_html(get_post_meta(get_the_ID(), '_solutions_cta_subtitle', true) ?: 'Let\'s identify the perfect solution combination for your unique challenges and growth goals.'); ?></p>
                     <div class="cta-buttons">

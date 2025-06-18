@@ -139,10 +139,8 @@ get_header(); ?>
                             </div>
                             <a href="#" class="study-link">View Details</a>
                         </div>
-                    </div>
-
-                    <!-- Education Case Study -->
-                    <div class="case-study-card" data-category="education">
+                    </div>                    <!-- Education Case Study -->
+                    <div class="case-study-card animate-on-scroll animate-stagger animate-fade-up" data-category="education">
                         <div class="study-image">
                             <img src="<?php echo get_template_directory_uri(); ?>/assets/images/case-studies/online-courses.jpg" alt="Online Education Case Study" />
                             <div class="study-overlay">
@@ -164,10 +162,8 @@ get_header(); ?>
                             </div>
                             <a href="#" class="study-link">View Details</a>
                         </div>
-                    </div>
-
-                    <!-- SaaS Case Study -->
-                    <div class="case-study-card" data-category="saas">
+                    </div>                    <!-- SaaS Case Study -->
+                    <div class="case-study-card animate-on-scroll animate-stagger animate-fade-up" data-category="saas">
                         <div class="study-image">
                             <img src="<?php echo get_template_directory_uri(); ?>/assets/images/case-studies/saas-platform.jpg" alt="SaaS Platform Case Study" />
                             <div class="study-overlay">
@@ -189,10 +185,8 @@ get_header(); ?>
                             </div>
                             <a href="#" class="study-link">View Details</a>
                         </div>
-                    </div>
-
-                    <!-- E-commerce Case Study 2 -->
-                    <div class="case-study-card" data-category="ecommerce">
+                    </div>                    <!-- E-commerce Case Study 2 -->
+                    <div class="case-study-card animate-on-scroll animate-stagger animate-fade-up" data-category="ecommerce">
                         <div class="study-image">
                             <img src="<?php echo get_template_directory_uri(); ?>/assets/images/case-studies/home-decor.jpg" alt="Home Decor Case Study" />
                             <div class="study-overlay">
@@ -221,9 +215,9 @@ get_header(); ?>
         </section>        <!-- Client Testimonials -->
         <section class="case-study-testimonials">
             <div class="section-content">
-                <h2><?php echo esc_html(get_post_meta(get_the_ID(), 'cs_testimonials_title', true) ?: 'What Our Clients Say'); ?></h2>
+                <h2 class="animate-on-scroll animate-fade-up"><?php echo esc_html(get_post_meta(get_the_ID(), 'cs_testimonials_title', true) ?: 'What Our Clients Say'); ?></h2>
                 <div class="testimonials-grid">
-                    <div class="testimonial-card">
+                    <div class="testimonial-card animate-on-scroll animate-stagger animate-slide-left">
                         <div class="testimonial-content">
                             <p>"<?php echo esc_html(get_post_meta(get_the_ID(), 'cs_testimonial1_content', true) ?: 'Aimpro Digital completely transformed our online presence. Their strategic approach to SEO and PPC delivered results beyond our expectations.'); ?>"</p>
                         </div>
@@ -235,7 +229,7 @@ get_header(); ?>
                         </div>
                     </div>
                     
-                    <div class="testimonial-card">
+                    <div class="testimonial-card animate-on-scroll animate-stagger animate-slide-right">
                         <div class="testimonial-content">
                             <p>"<?php echo esc_html(get_post_meta(get_the_ID(), 'cs_testimonial2_content', true) ?: 'The team\'s expertise in healthcare marketing is exceptional. We\'ve seen a 300% increase in new patient bookings since working with them.'); ?>"</p>
                         </div>
@@ -251,9 +245,9 @@ get_header(); ?>
         </section>        <!-- CTA Section -->
         <section id="contact" class="cta-section">
             <div class="container">
-                <div class="cta-content">
+                <div class="cta-content animate-on-scroll animate-scale-up">
                     <h2><?php echo esc_html(get_post_meta(get_the_ID(), 'cs_cta_title', true) ?: 'Ready to Be Our Next Success Story?'); ?></h2>
-                    <p><?php echo esc_html(get_post_meta(get_the_ID(), 'cs_cta_description', true) ?: 'Let\'s discuss how we can help you achieve similar results for your business.'); ?></p>                    <div class="cta-buttons">
+                    <p><?php echo esc_html(get_post_meta(get_the_ID(), 'cs_cta_description', true) ?: 'Let\'s discuss how we can help you achieve similar results for your business.'); ?></p><div class="cta-buttons">
                         <a href="<?php echo esc_url(home_url(get_post_meta(get_the_ID(), 'cs_cta_button1_url', true) ?: '/contact')); ?>" class="btn-outline"><?php echo esc_html(get_post_meta(get_the_ID(), 'cs_cta_button1_text', true) ?: 'Start Your Project'); ?></a>
                         <a href="<?php echo esc_url(home_url(get_post_meta(get_the_ID(), 'cs_cta_button2_url', true) ?: '/about')); ?>" class="btn-secondary"><?php echo esc_html(get_post_meta(get_the_ID(), 'cs_cta_button2_text', true) ?: 'Learn About Our Process'); ?></a>
                     </div>
