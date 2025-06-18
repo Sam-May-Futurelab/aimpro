@@ -236,6 +236,9 @@
 /* Program topics and tags */
 .program-topics {
     text-align: left;
+    margin-bottom: 2rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--border-color);
 }
 
 .program-topics h4 {
@@ -700,6 +703,7 @@
     text-align: center;
     position: relative;
     overflow: hidden;
+    margin-top: 1.5rem;
 }
 
 .program-cta::before,
