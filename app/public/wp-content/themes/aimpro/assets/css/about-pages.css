@@ -10,6 +10,11 @@
     padding: 2rem 0;
 }
 
+.page-header-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
 .page-header h1 {
     font-size: 2.8rem;
     font-weight: 700;
@@ -414,7 +419,6 @@
 .metric-card p {
     margin: 0;
     color: var(--color-text-light, #666);
-    font-size: 0.95rem;
 }
 
 /* Video Testimonials */
@@ -542,7 +546,9 @@
     font-size: 1.1rem;
 }
 
-/* Partnership Opportunities Section - Simple Styling */
+/* ===== PARTNERSHIP PAGE STYLES ===== */
+
+/* Partnership Opportunities Section */
 .partnership-types {
     margin: 3rem 0;
 }
@@ -589,23 +595,452 @@
     padding-top: 1rem;
 }
 
-/* Stats and Results Grids - Force Horizontal Layout - Increased Specificity */
-body .case-study-results,
-body .stats-grid,
-body .results-grid,
-body .metrics-grid,
-body.page-template-page-company .case-study-results,
-body.page-template-page-testimonials .case-study-results,
-.page-become-a-partner .case-study-results,
-body.page-template-page-company .stats-grid,
-body.page-template-page-testimonials .stats-grid,
-.page-become-a-partner .stats-grid,
-body.page-template-page-company .results-grid,
-body.page-template-page-testimonials .results-grid,
-.page-become-a-partner .results-grid,
-body.page-template-page-company .metrics-grid,
-body.page-template-page-testimonials .metrics-grid,
-.page-become-a-partner .metrics-grid {
+/* ===============================================
+   CAREERS PAGE STYLES
+   =============================================== */
+
+/* Base Section Styles */
+.section-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+/* Careers Page Layout */
+.careers-page {
+    background: var(--bg-primary);
+}
+
+.careers-page .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+/* Why Work With Us Section */
+.why-work-with-us {
+    padding: 4rem 0;
+    background: var(--bg-primary);
+}
+
+.why-work-with-us h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 3rem;
+}
+
+.why-work-with-us .benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+    margin: 2rem 0;
+}
+
+.why-work-with-us .benefit-card {
+    text-align: center;
+}
+
+.why-work-with-us .benefit-icon {
+    color: var(--primary-orange);
+    margin-bottom: 1.5rem;
+    display: flex;
+    justify-content: center;
+}
+
+/* Open Positions Section */
+.open-positions {
+    padding: 4rem 0;
+    background: var(--bg-secondary, #f8f9fa);
+}
+
+.open-positions h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 3rem;
+}
+
+.positions-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 2rem;
+    margin: 2rem 0;
+}
+
+/* Position Card Styles */
+.position-card {
+    background: var(--glass-bg, rgba(255, 255, 255, 0.95));
+    border-radius: 12px;
+    padding: 2rem;
+    border: 1px solid var(--glass-border, rgba(255, 255, 255, 0.2));
+    backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.position-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-lg, 0 10px 25px rgba(0, 0, 0, 0.15));
+    border-color: var(--glass-orange-border, rgba(241, 90, 37, 0.3));
+}
+
+/* Position Header */
+.position-header {
+    border-bottom: 1px solid var(--border-light, #e0e0e0);
+    padding-bottom: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.position-header h3 {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 0.8rem;
+    line-height: 1.3;
+}
+
+.position-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    font-size: 0.9rem;
+}
+
+.position-meta span {
+    background: var(--bg-light, #f1f3f4);
+    color: var(--text-secondary);
+    padding: 0.4rem 0.8rem;
+    border-radius: 6px;
+    font-weight: 500;
+}
+
+.position-meta .department {
+    background: var(--primary-orange);
+    color: white;
+}
+
+/* Position Content */
+.position-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.position-content > p {
+    color: var(--text-secondary);
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+    font-size: 1.1rem;
+}
+
+/* Requirements Section */
+.requirements {
+    margin-bottom: 2rem;
+}
+
+.requirements h4 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 1rem;
+}
+
+.requirements ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.requirements li {
+    padding: 0.5rem 0;
+    padding-left: 1.5rem;
+    position: relative;
+    color: var(--text-secondary);
+    line-height: 1.5;
+}
+
+.requirements li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: var(--primary-orange);
+    font-weight: bold;
+}
+
+/* Position Actions */
+.position-actions {
+    margin-top: auto;
+    display: flex;
+    gap: 1rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--border-light, #e0e0e0);
+}
+
+.position-actions .btn {
+    flex: 1;
+    text-align: center;
+    padding: 0.8rem 1.5rem;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
+}
+
+.position-actions .btn-primary {
+    background: var(--gradient-orange, linear-gradient(135deg, #f15a25, #f1783e));
+    color: white;
+}
+
+.position-actions .btn-primary:hover {
+    background: var(--gradient-orange-hover, linear-gradient(135deg, #d14a1f, #d1672f));
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(241, 90, 37, 0.3);
+}
+
+.position-actions .btn-secondary {
+    background: transparent;
+    color: var(--primary-orange);
+    border: 2px solid var(--primary-orange);
+}
+
+.position-actions .btn-secondary:hover {
+    background: var(--primary-orange);
+    color: white;
+    transform: translateY(-2px);
+}
+
+/* Employee Testimonials Section */
+.employee-testimonials {
+    padding: 4rem 0;
+    background: var(--bg-primary);
+}
+
+.employee-testimonials h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 3rem;
+}
+
+.employee-testimonials .testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin: 2rem 0;
+}
+
+.employee-testimonials .testimonial-card {
+    background: var(--glass-bg, rgba(255, 255, 255, 0.95));
+    border-radius: 12px;
+    padding: 2rem;
+    border: 1px solid var(--glass-border, rgba(255, 255, 255, 0.2));
+    backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
+}
+
+.employee-testimonials .testimonial-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-lg, 0 10px 25px rgba(0, 0, 0, 0.15));
+}
+
+.employee-testimonials blockquote {
+    font-style: italic;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: var(--text-secondary);
+    margin: 0 0 1.5rem 0;
+}
+
+.testimonial-author h4 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 0.3rem;
+}
+
+.testimonial-author p {
+    color: var(--text-light);
+    font-size: 0.95rem;
+    margin: 0;
+}
+
+/* Application Form Section */
+.application-form {
+    padding: 4rem 0;
+    background: var(--bg-secondary, #f8f9fa);
+}
+
+.application-form h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 1rem;
+}
+
+.application-form > .section-content > p {
+    text-align: center;
+    font-size: 1.1rem;
+    color: var(--text-secondary);
+    margin-bottom: 3rem;
+}
+
+.career-application-form {
+    max-width: 800px;
+    margin: 0 auto;
+    background: white;
+    padding: 3rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group.full-width {
+    grid-column: 1 / -1;
+}
+
+.form-group label {
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 0.5rem;
+    font-size: 0.95rem;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    padding: 0.8rem;
+    border: 2px solid var(--border-light, #e0e0e0);
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+    background: white;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--primary-orange);
+    box-shadow: 0 0 0 3px rgba(241, 90, 37, 0.1);
+}
+
+.form-group small {
+    color: var(--text-light);
+    font-size: 0.85rem;
+    margin-top: 0.3rem;
+}
+
+.form-actions {
+    margin-top: 2rem;
+    text-align: center;
+}
+
+.form-actions .btn {
+    padding: 1rem 3rem;
+    font-size: 1.1rem;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.form-actions .btn-primary {
+    background: var(--gradient-orange, linear-gradient(135deg, #f15a25, #f1783e));
+    color: white;
+}
+
+.form-actions .btn-primary:hover {
+    background: var(--gradient-orange-hover, linear-gradient(135deg, #d14a1f, #d1672f));
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(241, 90, 37, 0.3);
+}
+
+/* Contact HR Section */
+.contact-hr {
+    padding: 4rem 0;
+    background: var(--bg-primary);
+    text-align: center;
+}
+
+.contact-hr h2 {
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 1rem;
+}
+
+.contact-hr > .section-content > p {
+    font-size: 1.1rem;
+    color: var(--text-secondary);
+    margin-bottom: 2rem;
+}
+
+.contact-info {
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+    flex-wrap: wrap;
+}
+
+.contact-item {
+    background: var(--glass-bg, rgba(255, 255, 255, 0.95));
+    padding: 1.5rem 2rem;
+    border-radius: 12px;
+    border: 1px solid var(--glass-border, rgba(255, 255, 255, 0.2));
+    backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
+}
+
+.contact-item:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-md, 0 6px 20px rgba(0, 0, 0, 0.1));
+}
+
+.contact-item strong {
+    display: block;
+    color: var(--text-primary);
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.contact-item a {
+    color: var(--primary-orange);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.contact-item a:hover {
+    color: var(--primary-orange-dark, #d14a1f);
+    text-decoration: underline;
+}
+
+/* ===== STATS AND METRICS GRIDS ===== */
+
+/* Stats Grid Layout */
+.stats-grid,
+.results-grid,
+.metrics-grid,
+.case-study-results {
     display: grid !important;
     grid-template-columns: repeat(4, 1fr) !important;
     text-align: center !important;
@@ -613,18 +1048,10 @@ body.page-template-page-testimonials .metrics-grid,
     margin: 30px 0 !important;
 }
 
-body .result-item,
-body .stat-item,
-body .metric-item,
-body.page-template-page-company .result-item,
-body.page-template-page-testimonials .result-item,
-.page-become-a-partner .result-item,
-body.page-template-page-company .stat-item,
-body.page-template-page-testimonials .stat-item,
-.page-become-a-partner .stat-item,
-body.page-template-page-company .metric-item,
-body.page-template-page-testimonials .metric-item,
-.page-become-a-partner .metric-item {
+/* Stats Items */
+.result-item,
+.stat-item,
+.metric-item {
     background: white !important;
     padding: 20px !important;
     border-radius: 10px !important;
@@ -633,33 +1060,16 @@ body.page-template-page-testimonials .metric-item,
     transition: transform 0.3s ease !important;
 }
 
-body .result-item:hover,
-body .stat-item:hover,
-body .metric-item:hover,
-body.page-template-page-company .result-item:hover,
-body.page-template-page-testimonials .result-item:hover,
-.page-become-a-partner .result-item:hover,
-body.page-template-page-company .stat-item:hover,
-body.page-template-page-testimonials .stat-item:hover,
-.page-become-a-partner .stat-item:hover,
-body.page-template-page-company .metric-item:hover,
-body.page-template-page-testimonials .metric-item:hover,
-.page-become-a-partner .metric-item:hover {
+.result-item:hover,
+.stat-item:hover,
+.metric-item:hover {
     transform: translateY(-5px) !important;
 }
 
-body .result-number,
-body .stat-number,
-body .metric-number,
-body.page-template-page-company .result-number,
-body.page-template-page-testimonials .result-number,
-.page-become-a-partner .result-number,
-body.page-template-page-company .stat-number,
-body.page-template-page-testimonials .stat-number,
-.page-become-a-partner .stat-number,
-body.page-template-page-company .metric-number,
-body.page-template-page-testimonials .metric-number,
-.page-become-a-partner .metric-number {
+/* Stats Numbers */
+.result-number,
+.stat-number,
+.metric-number {
     display: block !important;
     font-size: 36px !important;
     font-weight: 800 !important;
@@ -668,18 +1078,10 @@ body.page-template-page-testimonials .metric-number,
     line-height: 1 !important;
 }
 
-body .result-label,
-body .stat-label,
-body .metric-label,
-body.page-template-page-company .result-label,
-body.page-template-page-testimonials .result-label,
-.page-become-a-partner .result-label,
-body.page-template-page-company .stat-label,
-body.page-template-page-testimonials .stat-label,
-.page-become-a-partner .stat-label,
-body.page-template-page-company .metric-label,
-body.page-template-page-testimonials .metric-label,
-.page-become-a-partner .metric-label {
+/* Stats Labels */
+.result-label,
+.stat-label,
+.metric-label {
     display: block !important;
     font-size: 16px !important;
     color: var(--text-secondary, #64748b) !important;
@@ -687,16 +1089,19 @@ body.page-template-page-testimonials .metric-label,
     margin: 0 !important;
 }
 
-/* Responsive adjustments for stats */
+/* ===== RESPONSIVE DESIGN ===== */
+
+/* Tablet Layout */
 @media (max-width: 992px) {
-    .case-study-results,
     .stats-grid,
     .results-grid,
-    .metrics-grid {
+    .metrics-grid,
+    .case-study-results {
         grid-template-columns: repeat(2, 1fr) !important;
     }
 }
 
+/* Mobile Layout */
 @media (max-width: 768px) {
     .case-study-results,
     .stats-grid,
@@ -825,6 +1230,8 @@ body.page-template-page-testimonials .metric-label,
 }
 
 .case-study-header h3,
+/* ===== CASE STUDY SECTION STYLES ===== */
+
 .case-study-results-title {
     font-size: 1.8rem;
     font-weight: 600;
@@ -833,23 +1240,11 @@ body.page-template-page-testimonials .metric-label,
     text-align: center;
 }
 
-/* Case Study Button - Smaller and Cleaner - Increased Specificity */
-body .case-study-cta,
-body .btn.case-study-btn,
-body a[href*="case-study"],
-body .read-case-study-btn,
-body.page-template-page-company .case-study-cta,
-body.page-template-page-testimonials .case-study-cta,
-.page-become-a-partner .case-study-cta,
-body.page-template-page-company .btn.case-study-btn,
-body.page-template-page-testimonials .btn.case-study-btn,
-.page-become-a-partner .btn.case-study-btn,
-body.page-template-page-company a[href*="case-study"],
-body.page-template-page-testimonials a[href*="case-study"],
-.page-become-a-partner a[href*="case-study"],
-body.page-template-page-company .read-case-study-btn,
-body.page-template-page-testimonials .read-case-study-btn,
-.page-become-a-partner .read-case-study-btn {
+/* Case Study Buttons */
+.case-study-cta,
+.btn.case-study-btn,
+a[href*="case-study"],
+.read-case-study-btn {
     display: inline-block !important;
     background: var(--primary-orange, #F15A25) !important;
     color: white !important;
@@ -867,22 +1262,10 @@ body.page-template-page-testimonials .read-case-study-btn,
     max-width: 200px !important;
 }
 
-body .case-study-cta:hover,
-body .btn.case-study-btn:hover,
-body a[href*="case-study"]:hover,
-body .read-case-study-btn:hover,
-body.page-template-page-company .case-study-cta:hover,
-body.page-template-page-testimonials .case-study-cta:hover,
-.page-become-a-partner .case-study-cta:hover,
-body.page-template-page-company .btn.case-study-btn:hover,
-body.page-template-page-testimonials .btn.case-study-btn:hover,
-.page-become-a-partner .btn.case-study-btn:hover,
-body.page-template-page-company a[href*="case-study"]:hover,
-body.page-template-page-testimonials a[href*="case-study"]:hover,
-.page-become-a-partner a[href*="case-study"]:hover,
-body.page-template-page-company .read-case-study-btn:hover,
-body.page-template-page-testimonials .read-case-study-btn:hover,
-.page-become-a-partner .read-case-study-btn:hover {
+.case-study-cta:hover,
+.btn.case-study-btn:hover,
+a[href*="case-study"]:hover,
+.read-case-study-btn:hover {
     background: #d14518 !important;
     transform: translateY(-2px) !important;
     box-shadow: 0 4px 8px rgba(241, 90, 37, 0.3) !important;
