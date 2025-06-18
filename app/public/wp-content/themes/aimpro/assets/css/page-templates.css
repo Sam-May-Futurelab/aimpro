@@ -1488,32 +1488,6 @@
     color: var(--text-secondary);
 }
 
-/* Responsive adjustments for contact HR */
-@media (max-width: 768px) {
-    .contact-hr h2 {
-        font-size: 2rem;
-    }
-    
-    .contact-hr > .section-content > p {
-        font-size: 1.1rem;
-    }
-    
-    .contact-item {
-        display: block;
-        margin: 0 0 1rem;
-    }
-}
-
-@media (max-width: 480px) {
-    .contact-hr {
-        padding: 3rem 0;
-    }
-    
-    .contact-hr h2 {
-        font-size: 1.8rem;
-    }
-}
-
 /* Streamlined buttons for service pages */
 .btn-primary.streamlined,
 .btn-outline.streamlined,
@@ -2295,4 +2269,67 @@
         font-size: 0.75rem;
         padding: 0.3rem 0.6rem;
     }
+}
+
+/* Templates & Tools Page - Center curly underline in benefits section */
+.templates-tools-page .benefits-section .section-title {
+    text-align: center;
+}
+
+.templates-tools-page .benefits-section .section-title .curly-underline::after {
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+}
+
+/* Fix for straight line underline in benefits section - center it */
+.templates-tools-page .benefits-section .section-title::after,
+.benefits-section .section-title::after,
+.benefits-section h2::after {
+    content: '' !important;
+    position: absolute !important;
+    bottom: -10px !important;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+    width: 80px !important;
+    height: 4px !important;
+    background: linear-gradient(45deg, #f15a25, #ff7849) !important;
+    border-radius: 2px !important;
+}
+
+/* Alternative: if you want to remove the straight line entirely */
+.templates-tools-page .benefits-section .section-title.no-underline::after,
+.benefits-section .section-title.no-underline::after {
+    display: none !important;
+}
+
+/* Fix for filter buttons alignment - center them */
+.filter-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 3rem;
+    padding-bottom: 2rem;
+    border-bottom: 2px solid #f1f5f9;
+}
+
+/* Fix excessive spacing above tools grid */
+#tools-section {
+    padding-top: 0 !important;
+    margin-top: 0 !important;
+}
+
+.templates-tools-page .tools-grid {
+    margin-top: 0 !important;
+}
+
+/* Reduce spacing from filter section */
+.templates-tools-page .filter-section {
+    margin-bottom: 1rem !important;
+    padding-bottom: 0 !important;
+}
+
+.templates-tools-page .filter-buttons {
+    margin-bottom: 1rem !important;
+    padding-bottom: 1rem !important;
 }
