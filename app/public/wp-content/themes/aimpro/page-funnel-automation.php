@@ -351,11 +351,9 @@ get_header(); ?>
                         <li>Performance tracking</li>
                         <li>30-day optimization</li>
                     </ul>
-                    <a href="#contact" class="btn-outline">Get Started</a>
-                </div>
+                    <a href="#contact" class="btn-outline">Get Started</a>                </div>
                 
                 <div class="pricing-card featured">
-                    <div class="pricing-badge">Most Popular</div>
                     <div class="pricing-header">
                         <h3>Complete Funnel System</h3>
                         <div class="price">£5,997</div>
@@ -481,10 +479,9 @@ get_header(); ?>
     </section>    <!-- CTA Section -->
     <section id="contact" class="cta-section">
         <div class="container">
-            <div class="cta-content">
-                <h2><?php echo esc_html(get_post_meta(get_the_ID(), 'funnel_automation_cta_title', true) ?: 'Ready to Automate Your Sales Funnel?'); ?></h2>
+            <div class="cta-content">                <h2><?php echo esc_html(get_post_meta(get_the_ID(), 'funnel_automation_cta_title', true) ?: 'Ready to Automate Your Sales Funnel?'); ?></h2>
                 <p><?php echo esc_html(get_post_meta(get_the_ID(), 'funnel_automation_cta_description', true) ?: 'Stop losing leads to manual processes and inconsistent follow-up. Our intelligent funnel automation will transform your sales process and free up your time to focus on growing your business.'); ?></p>                <div class="cta-buttons">
-                    <a href="<?php echo home_url('/contact'); ?>" class="btn-primary"><?php echo esc_html(get_post_meta(get_the_ID(), 'funnel_automation_cta_button', true) ?: 'Build Your Funnel'); ?></a>
+                    <a href="<?php echo home_url('/contact'); ?>" class="btn-outline"><?php echo esc_html(get_post_meta(get_the_ID(), 'funnel_automation_cta_button', true) ?: 'Build Your Funnel'); ?></a>
                 </div>
             </div>
         </div>

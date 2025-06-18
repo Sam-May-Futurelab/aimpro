@@ -401,11 +401,10 @@ get_header(); ?>
     </section>    <!-- CTA Section -->
     <section id="contact" class="cta-section">
         <div class="container">
-            <div class="cta-content">
-                <h2><?php echo esc_html(get_post_meta(get_the_ID(), 'ai_cta_title', true) ?: 'Ready to Transform Your CRM with AI?'); ?></h2>
+            <div class="cta-content">                <h2><?php echo esc_html(get_post_meta(get_the_ID(), 'ai_cta_title', true) ?: 'Ready to Transform Your CRM with AI?'); ?></h2>
                 <p><?php echo esc_html(get_post_meta(get_the_ID(), 'ai_cta_description', true) ?: 'Stop losing leads to poor follow-up and manual processes. Our AI-powered CRM implementation will revolutionize how you manage customers and drive predictable revenue growth.'); ?></p>
                 <div class="cta-buttons">
-                    <a href="<?php echo home_url('/contact'); ?>" class="btn-primary"><?php echo esc_html(get_post_meta(get_the_ID(), 'ai_cta_button', true) ?: 'Start Your AI CRM'); ?></a>
+                    <a href="<?php echo home_url('/contact'); ?>" class="btn-outline"><?php echo esc_html(get_post_meta(get_the_ID(), 'ai_cta_button', true) ?: 'Start Your AI CRM'); ?></a>
                 </div>
             </div>
         </div>

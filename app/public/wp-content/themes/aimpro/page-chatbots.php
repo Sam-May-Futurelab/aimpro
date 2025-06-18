@@ -243,11 +243,10 @@ function get_chatbot_field($field_key, $post_id = null) {
     </section>    <!-- CTA Section -->
     <section id="contact" class="cta-section">
         <div class="container">
-            <div class="cta-content">
-                <h2><?php echo esc_html(get_chatbot_field('cta_title')); ?></h2>
+            <div class="cta-content">                <h2><?php echo esc_html(get_chatbot_field('cta_title')); ?></h2>
                 <p><?php echo esc_html(get_chatbot_field('cta_content')); ?></p>
                 <div class="cta-buttons">
-                    <a href="<?php echo home_url('/contact'); ?>" class="btn-primary"><?php echo esc_html(get_chatbot_field('cta_button_text')); ?></a>
+                    <a href="<?php echo home_url('/contact'); ?>" class="btn-outline"><?php echo esc_html(get_chatbot_field('cta_button_text')); ?></a>
                 </div>
             </div>
         </div>
