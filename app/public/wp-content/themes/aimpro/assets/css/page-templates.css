@@ -1728,43 +1728,54 @@
     color: var(--text-readable-secondary) !important;
 }
 
-/* Light Theme Additional Fixes */
+/* Light Theme Fixes - Rebuilt for maintainability and proper color contrast */
+
+/* Hero sections - keep orange headings */
 :root.light-theme .service-page .hero-content h1,
 :root.light-theme .service-page .service-overview h2,
-:root.light-theme .service-page .case-study-section h2,
 :root.light-theme .service-page .packages-section h2 {
     color: var(--primary-orange) !important;
     font-weight: 700;
 }
 
+/* Case study sections - conditional coloring based on background */
+:root.light-theme .service-page .case-study-section h2 {
+    color: var(--primary-orange) !important;
+    font-weight: 700;
+}
+
+/* Override case study headings to white for pages with orange backgrounds */
+:root.light-theme .ux-ui-optimization-page .case-study-section h2,
+:root.light-theme .ux-ui-optimization-page .case-study-section h3,
+:root.light-theme .landing-pages-page .case-study-section h2,
+:root.light-theme .landing-pages-page .case-study-section h3,
+:root.light-theme .website-design-page .case-study-section h2,
+:root.light-theme .website-design-page .case-study-section h3 {
+    color: white !important;
+}
+
+/* Text content styling */
 :root.light-theme .service-page .hero-content .hero-subtitle,
 :root.light-theme .service-page .service-overview p,
-:root.light-theme .service-page .case-study-section p,
-:root.light-theme .service-page .case-study-section h3,
 :root.light-theme .service-page .packages-section h3,
 :root.light-theme .service-page .testimonial-section blockquote {
     color: var(--text-secondary) !important;
 }
 
-/* Universal Fix for Any Missed Elements */
-.service-page * {
-    transition: color 0.3s ease !important;
-}
-
-:root.light-theme .service-page h1:not(.hero-content h1):not(.page-header h1):not(.page-hero h1) {
-    color: var(--primary-orange) !important;
-}
-
-:root.light-theme .service-page h2:not(.cta-section h2):not(.cta-section h3) {
-    color: var(--primary-orange) !important;
-}
-
-:root.light-theme .service-page h3:not(.cta-section h3):not(.package-item h3) {
-    color: var(--text-primary) !important;
-}
-
-:root.light-theme .service-page p:not(.cta-section p) {
+/* Case study paragraph text - conditional coloring */
+:root.light-theme .service-page .case-study-section p {
     color: var(--text-secondary) !important;
+}
+
+:root.light-theme .ux-ui-optimization-page .case-study-section p,
+:root.light-theme .landing-pages-page .case-study-section p,
+:root.light-theme .website-design-page .case-study-section p {
+    color: white !important;
+}
+
+/* Case study h3 styling for non-orange background pages */
+:root.light-theme .service-page .case-study-section h3 {
+    color: var(--text-primary) !important;
 }
 
 /* Contact Page Specific Fixes */
