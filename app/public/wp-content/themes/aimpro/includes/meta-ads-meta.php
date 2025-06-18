@@ -116,10 +116,9 @@ function aimpro_get_meta_ads_default_values() {
         'pricing_package_2_name' => 'Professional',
         'pricing_package_2_price' => '£1,197',
         'pricing_package_2_period' => '/month',
-        'pricing_package_2_description' => 'Comprehensive Meta advertising',
-        'pricing_package_2_features' => "Up to £5,000 ad spend management\nFull Meta platform coverage\nAdvanced audience targeting\nUnlimited ad creative testing\nBi-weekly optimization reports\nRetargeting campaigns\nLookalike audience creation\nPriority support",
+        'pricing_package_2_description' => 'Comprehensive Meta advertising',        'pricing_package_2_features' => "Up to £5,000 ad spend management\nFull Meta platform coverage\nAdvanced audience targeting\nUnlimited ad creative testing\nBi-weekly optimization reports\nRetargeting campaigns\nLookalike audience creation\nPriority support",
         'pricing_package_2_button_text' => 'Get Started',
-        'pricing_package_2_badge' => 'Most Popular',
+        'pricing_package_2_badge' => '',
         'pricing_package_2_featured' => true,
         
         // Pricing Package 3 - Enterprise
@@ -634,9 +633,8 @@ function aimpro_meta_ads_pricing_callback($post) {
         if (empty($package_featured) && isset($defaults["pricing_package_{$i}_featured"])) {
             $package_featured = $defaults["pricing_package_{$i}_featured"];
         }
-    ?>
-    <div style="border: 1px solid #ddd; padding: 15px; margin: 10px 0; <?php echo ($i == 2) ? 'background-color: #f9f9f9;' : ''; ?>">
-        <h5><?php echo sprintf(__('Package %d', 'aimpro'), $i); ?><?php echo ($i == 2) ? ' (Most Popular)' : ''; ?></h5>
+    ?>    <div style="border: 1px solid #ddd; padding: 15px; margin: 10px 0; <?php echo ($i == 2) ? 'background-color: #f9f9f9;' : ''; ?>">
+        <h5><?php echo sprintf(__('Package %d', 'aimpro'), $i); ?></h5>
         <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 15px;">
             <div>
                 <p>

@@ -111,17 +111,19 @@ function get_meta_ads_meta($key, $post_id, $defaults, $prefix = '_meta_ads_') {
                 <div class="case-study-results">
                     <h3>The Results</h3>
                     <div class="results-grid">
-                        <?php for($i = 1; $i <= 4; $i++) : ?>
-                        <div class="result-item">
+                        <?php for($i = 1; $i <= 4; $i++) : ?>                        <div class="result-item">
                             <div class="result-number"><?php echo esc_html(get_meta_ads_meta("case_result_{$i}_number", $post_id, $defaults)); ?></div>
                             <div class="result-label"><?php echo esc_html(get_meta_ads_meta("case_result_{$i}_label", $post_id, $defaults)); ?></div>
                         </div>
                         <?php endfor; ?>
                     </div>
+                    <div class="results-cta">
+                        <a href="<?php echo home_url('/contact'); ?>" class="btn-primary results-cta-btn">Get Similar Results for Your Business</a>
+                    </div>
                 </div>
             </div>
         </div>
-    </section>    <!-- Process Section -->
+    </section><!-- Process Section -->
     <section class="process-section">
         <div class="container">
             <h2><?php echo esc_html(get_meta_ads_meta('process_title', $post_id, $defaults)); ?></h2>
