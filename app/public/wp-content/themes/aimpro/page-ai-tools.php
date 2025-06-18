@@ -280,12 +280,12 @@ get_header(); ?>
     </section>    <!-- Use Cases Section -->
     <section class="service-overview">
         <div class="container">
-            <div class="section-header">
+            <div class="section-header animate-on-scroll animate-fade-up">
                 <h2>AI Marketing Use Cases</h2>
                 <p>Discover how AI transforms marketing operations and delivers measurable business results.</p>
             </div>
             <div class="services-grid">
-                <div class="service-item">
+                <div class="service-item animate-on-scroll animate-stagger animate-fade-up">
                     <div class="service-icon">
                         <i class="fas fa-pen"></i>
                     </div>

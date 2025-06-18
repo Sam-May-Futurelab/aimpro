@@ -26,10 +26,10 @@ get_header(); ?>
     </div>    <!-- Hero Section -->
     <section class="page-hero service-hero">
         <div class="container">
-            <div class="hero-content">
+            <div class="hero-content animate-on-scroll animate-fade-up">
                 <h1><?php echo esc_html(get_post_meta(get_the_ID(), 'funnel_automation_hero_title', true) ?: 'Sales Funnel Automation'); ?></h1>
                 <p class="hero-subtitle"><?php echo esc_html(get_post_meta(get_the_ID(), 'funnel_automation_hero_subtitle', true) ?: 'Build intelligent sales funnels that automatically guide prospects from awareness to purchase, nurturing leads at every stage while you focus on growing your business.'); ?></p>
-                <div class="hero-stats">
+                <div class="hero-stats animate-on-scroll animate-stagger animate-scale-up">
                     <div class="stat-item">
                         <div class="stat-number"><?php echo esc_html(get_post_meta(get_the_ID(), 'funnel_automation_hero_stat_1_number', true) ?: '420%'); ?></div>
                         <div class="stat-label"><?php echo esc_html(get_post_meta(get_the_ID(), 'funnel_automation_hero_stat_1_label', true) ?: 'Conversion Rate Increase'); ?></div>

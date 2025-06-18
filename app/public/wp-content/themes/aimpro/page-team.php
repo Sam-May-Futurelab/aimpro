@@ -8,32 +8,27 @@ get_header(); ?>
 
 <main id="main" class="main-content">
     <div class="container">
-        
-        <!-- Page Header -->
+          <!-- Page Header -->
         <section class="page-header">
-            <div class="page-header-content">
+            <div class="page-header-content animate-on-scroll animate-fade-up">
                 <h1><?php echo esc_html(get_post_meta(get_the_ID(), 'team_header_title', true) ?: 'Our Team'); ?></h1>
                 <p class="page-subtitle"><?php echo esc_html(get_post_meta(get_the_ID(), 'team_header_subtitle', true) ?: 'Meet the experts behind your digital success'); ?></p>
             </div>
-        </section>
-
-        <!-- Team Introduction -->
+        </section>        <!-- Team Introduction -->
         <section class="team-intro">
             <div class="section-content">
-                <div class="intro-content">
+                <div class="intro-content animate-on-scroll animate-fade-up">
                     <h2><?php echo esc_html(get_post_meta(get_the_ID(), 'team_intro_heading', true) ?: 'The People Who Make It Happen'); ?></h2>
                     <p><?php echo esc_html(get_post_meta(get_the_ID(), 'team_intro_desc', true) ?: 'Our diverse team of digital marketing specialists, strategists, and creative professionals work together to deliver exceptional results for our clients. Each team member brings unique expertise and passion to help your business thrive in the digital landscape.'); ?></p>
                 </div>
             </div>
-        </section>
-
-        <!-- Leadership Team -->
+        </section>        <!-- Leadership Team -->
         <section class="leadership-team">
             <div class="section-content">
-                <h2><?php echo esc_html(get_post_meta(get_the_ID(), 'leadership_heading', true) ?: 'Leadership Team'); ?></h2>
+                <h2 class="animate-on-scroll animate-fade-up"><?php echo esc_html(get_post_meta(get_the_ID(), 'leadership_heading', true) ?: 'Leadership Team'); ?></h2>
                 <div class="team-grid">
                     <!-- Ajay Dhunna -->
-                    <div class="team-member">
+                    <div class="team-member animate-on-scroll animate-stagger animate-fade-up">
                         <div class="member-photo">
                             <img src="<?php echo get_template_directory_uri(); ?>/assets/images/ajay-dhunna.png" alt="Ajay Dhunna" />
                             <div class="member-overlay">
@@ -57,10 +52,8 @@ get_header(); ?>
                                 <a href="#" aria-label="Twitter">Twitter</a>
                             </div>
                         </div>
-                    </div>
-
-                    <!-- Dinesh Thapa -->
-                    <div class="team-member">
+                    </div>                    <!-- Dinesh Thapa -->
+                    <div class="team-member animate-on-scroll animate-stagger animate-fade-up">
                         <div class="member-photo">
                             <img src="<?php echo get_template_directory_uri(); ?>/assets/images/dinesh-thapa.png" alt="Dinesh Thapa" />
                             <div class="member-overlay">
@@ -84,10 +77,8 @@ get_header(); ?>
                                 <a href="#" aria-label="Twitter">Twitter</a>
                             </div>
                         </div>
-                    </div>
-
-                    <!-- James Butler -->
-                    <div class="team-member">
+                    </div>                    <!-- James Butler -->
+                    <div class="team-member animate-on-scroll animate-stagger animate-fade-up">
                         <div class="member-photo">
                             <img src="<?php echo get_template_directory_uri(); ?>/assets/images/james-butler.png" alt="James Butler" />
                             <div class="member-overlay">

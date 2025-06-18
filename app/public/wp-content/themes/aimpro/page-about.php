@@ -6,11 +6,10 @@
 
 get_header(); ?>
 
-<main id="main" class="main-content about-page">
-      <!-- Hero Section -->
+<main id="main" class="main-content about-page">      <!-- Hero Section -->
     <section class="page-hero">
         <div class="container">
-            <div class="hero-content">
+            <div class="hero-content animate-on-scroll animate-fade-up">
                 <div class="hero-badge"><?php echo aimpro_get_field('about_hero_badge', 'About Us'); ?></div>
                 <h1 class="hero-title"><?php echo aimpro_get_field('about_hero_heading', 'About Aimpro Digital'); ?></h1>
                 <p class="hero-description"><?php echo aimpro_get_field('about_hero_subtitle', 'Your trusted partner in digital marketing excellence'); ?></p>
@@ -22,7 +21,7 @@ get_header(); ?>
     <div class="container">        <!-- Company Overview -->
         <section class="company-overview">
             <div class="section-content">
-                <div class="content-header text-center">
+                <div class="content-header text-center animate-on-scroll animate-fade-up">
                     <h2><?php echo aimpro_get_field('about_overview_heading', 'Empowering Brands with Data-Driven Growth'); ?></h2>
                     <p class="section-description"><?php echo aimpro_get_field('about_overview_description', 'Welcome to Aimpro Digital, where strategy, creativity, and technology converge to drive exceptional results. We\'re a team of passionate digital experts dedicated to helping UK businesses achieve their full potential. From lead generation to marketing automation, we build powerful, data-backed solutions that fuel your brand\'s success.'); ?></p>
                 </div>
@@ -36,15 +35,14 @@ get_header(); ?>
                 <?php 
                 $video_heading = aimpro_get_field('about_video_heading', '');
                 $video_description = aimpro_get_field('about_video_description', '');
-                if (!empty($video_heading)): ?>
-                <div class="content-header">
+                if (!empty($video_heading)): ?>                <div class="content-header animate-on-scroll animate-fade-up">
                     <h2><?php echo $video_heading; ?></h2>
                     <?php if (!empty($video_description)): ?>
                     <p class="section-description"><?php echo $video_description; ?></p>
                     <?php endif; ?>
                 </div>
                 <?php endif; ?>
-                  <div class="video-container" style="max-width: 800px; margin: 0 auto;">
+                  <div class="video-container animate-on-scroll animate-scale-up" style="max-width: 800px; margin: 0 auto;">
                     <?php
                     // Handle different video types
                     if (strpos($video_url, 'youtube.com') !== false || strpos($video_url, 'youtu.be') !== false) {
@@ -76,13 +74,13 @@ get_header(); ?>
         <?php endif; ?>        <!-- Values Section -->
         <section class="values-section">
             <div class="section-content">
-                <div class="content-header text-center">
+                <div class="content-header text-center animate-on-scroll animate-fade-up">
                     <h2><?php echo aimpro_get_field('about_values_heading', 'Experiences Fueled by<br>Data and Dedication'); ?></h2>
                     <p class="section-description"><?php echo aimpro_get_field('about_values_subtitle', 'At Aimpro Digital, we\'re more than a digital marketing agency.<br>We\'re a team of strategists, creatives, and tech enthusiasts<br>committed to making a meaningful impact for our clients.'); ?></p>
                 </div>
 
                 <!-- Stats Section -->
-                <div class="stats-container">
+                <div class="stats-container animate-on-scroll animate-stagger animate-scale-up">
                     <div class="stats-grid">
                         <div class="stat-item">
                             <div class="stat-number"><?php echo aimpro_get_field('about_stat_1_number', '25'); ?></div>

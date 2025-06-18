@@ -8,20 +8,17 @@ get_header(); ?>
 
 <main id="main" class="main-content">
     <div class="container">
-        
-        <!-- Page Header -->
+          <!-- Page Header -->
         <section class="page-header">
-            <div class="page-header-content">
+            <div class="page-header-content animate-on-scroll animate-fade-up">
                 <h1><?php echo esc_html(get_post_meta(get_the_ID(), '_automate_marketing_header_title', true) ?: 'Automate Marketing'); ?></h1>
                 <p class="page-subtitle"><?php echo esc_html(get_post_meta(get_the_ID(), '_automate_marketing_header_subtitle', true) ?: 'Streamline your marketing processes with intelligent automation that works 24/7'); ?></p>
             </div>
-        </section>
-
-        <!-- Solution Overview -->
+        </section>        <!-- Solution Overview -->
         <section class="solution-overview">
             <div class="section-content">
                 <div class="overview-content">
-                    <div class="overview-text">
+                    <div class="overview-text animate-on-scroll animate-slide-left">
                         <h2><?php echo esc_html(get_post_meta(get_the_ID(), '_automate_marketing_overview_title', true) ?: 'Transform Manual Tasks Into Automated Success'); ?></h2>
                         <p><?php echo esc_html(get_post_meta(get_the_ID(), '_automate_marketing_overview_content', true) ?: 'Marketing automation eliminates repetitive tasks while delivering personalized experiences at scale. Our comprehensive automation strategies help you nurture leads, engage customers, and drive conversions without constant manual intervention, freeing your team to focus on strategy and growth.'); ?></p>
                         
@@ -46,7 +43,7 @@ get_header(); ?>
                                 ?>
                             </ul>
                         </div>
-                    </div>                    <div class="overview-image">
+                    </div>                    <div class="overview-image animate-on-scroll animate-slide-right">
                         <?php 
                         $overview_image = get_post_meta(get_the_ID(), '_automate_marketing_overview_image', true);
                         if ($overview_image): ?>
@@ -64,12 +61,10 @@ get_header(); ?>
                     </div>
                 </div>
             </div>
-        </section>
-
-        <!-- Automation Solutions -->
+        </section>        <!-- Automation Solutions -->
         <section class="automation-solutions">
             <div class="section-content">
-                <h2><?php echo esc_html(get_post_meta(get_the_ID(), '_automate_marketing_solutions_title', true) ?: 'Our Marketing Automation Solutions'); ?></h2>
+                <h2 class="animate-on-scroll animate-fade-up"><?php echo esc_html(get_post_meta(get_the_ID(), '_automate_marketing_solutions_title', true) ?: 'Our Marketing Automation Solutions'); ?></h2>
                 <div class="solutions-grid">
                     
                     <?php

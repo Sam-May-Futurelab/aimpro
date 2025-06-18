@@ -26,10 +26,10 @@ get_header(); ?>
     </div>    <!-- Hero Section -->
     <section class="page-hero service-hero">
         <div class="container">
-            <div class="hero-content">
+            <div class="hero-content animate-on-scroll animate-fade-up">
                 <h1><?php echo esc_html(get_post_meta(get_the_ID(), 'email_campaigns_hero_title', true) ?: 'Strategic Email Marketing Campaigns'); ?></h1>
                 <p class="hero-subtitle"><?php echo esc_html(get_post_meta(get_the_ID(), 'email_campaigns_hero_subtitle', true) ?: 'Drive engagement, nurture relationships, and boost sales with expertly crafted email campaigns that cut through inbox clutter and deliver measurable results for your business.'); ?></p>
-                <div class="hero-stats">
+                <div class="hero-stats animate-on-scroll animate-stagger animate-scale-up">
                     <div class="stat-item">
                         <div class="stat-number"><?php echo esc_html(get_post_meta(get_the_ID(), 'email_campaigns_hero_stat_1_number', true) ?: '4,200%'); ?></div>
                         <div class="stat-label"><?php echo esc_html(get_post_meta(get_the_ID(), 'email_campaigns_hero_stat_1_label', true) ?: 'Average ROI'); ?></div>
