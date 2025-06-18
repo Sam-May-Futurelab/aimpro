@@ -101,7 +101,7 @@ ul, ol {
 
 li {
     margin-bottom: 0.5rem;
-    font-size: 1.125rem;
+    font-size: 1.1rem;
     line-height: 1.6;
 }
 
@@ -121,3 +121,21 @@ li {
 .mt-3 { margin-top: 1.5rem; }
 .mt-4 { margin-top: 2rem; }
 .mt-5 { margin-top: 3rem; }
+
+/* Global content readability improvements */
+.feature-item p,
+.feature-list li,
+.benefit-card .feature-list li,
+.industry-item li,
+.service-features li {
+    font-size: 1.1rem !important;
+    line-height: 1.6 !important;
+}
+
+/* Ensure content areas have readable font sizes */
+.section-content p,
+.section-content li,
+.overview-content p,
+.overview-content li {
+    font-size: 1.125rem;
+}

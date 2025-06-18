@@ -277,7 +277,7 @@
     padding-left: 22px;
     margin-bottom: 10px;
     color: #334155;
-    font-size: 1.125rem;
+    font-size: 1.1rem;
     line-height: 1.5;
 }
 
@@ -520,7 +520,7 @@
     padding-left: 22px;
     margin-bottom: 10px;
     color: #334155;
-    font-size: 1.125rem;
+    font-size: 1.1rem;
     line-height: 1.5;
 }
 
@@ -819,7 +819,7 @@
     padding-left: 22px;
     margin-bottom: 10px;
     color: #334155;
-    font-size: 1.125rem;
+    font-size: 1.1rem;
     line-height: 1.5;
 }
 
@@ -901,7 +901,7 @@
     padding-left: 22px;
     margin-bottom: 10px;
     color: #334155;
-    font-size: 1.125rem;
+    font-size: 1.1rem;
     line-height: 1.5;
 }
 
@@ -1308,7 +1308,8 @@
 .whitelabel-services .benefit-card .feature-list,
 .local-seo-industries .benefit-card .feature-list,
 .local-seo-tools .benefit-card .feature-list,
-.automotive-services .benefit-card .feature-list {
+.automotive-services .benefit-card .feature-list,
+.home-garden-services .benefit-card .feature-list {
     margin: 0;
     padding: 0;
     list-style: none;
@@ -1323,8 +1324,9 @@
 .whitelabel-services .benefit-card .feature-list li,
 .local-seo-industries .benefit-card .feature-list li,
 .local-seo-tools .benefit-card .feature-list li,
-.automotive-services .benefit-card .feature-list li {
-    font-size: 14px;
+.automotive-services .benefit-card .feature-list li,
+.home-garden-services .benefit-card .feature-list li {
+    font-size: 1.125rem;
     color: #64748b;
     padding: 1px 0;
     margin-bottom: 1px;
@@ -1340,7 +1342,8 @@
 .whitelabel-services .benefit-card .feature-list li:before,
 .local-seo-industries .benefit-card .feature-list li:before,
 .local-seo-tools .benefit-card .feature-list li:before,
-.automotive-services .benefit-card .feature-list li:before {
+.automotive-services .benefit-card .feature-list li:before,
+.home-garden-services .benefit-card .feature-list li:before {
     content: "";
     background-image: url('../../assets/images/aimpro-target.png');
     background-size: 14px 14px;

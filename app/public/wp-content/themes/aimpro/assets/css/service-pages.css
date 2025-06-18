@@ -1245,7 +1245,7 @@
     color: var(--text-secondary, #64748b) !important;
     line-height: 1.5;
     margin: 0;
-    font-size: 14px;
+    font-size: 1.125rem;
 }
 
 /* Landing Pages Page Specific Styles */
@@ -1329,7 +1329,7 @@
     color: var(--text-secondary, #64748b) !important;
     line-height: 1.5;
     margin: 0;
-    font-size: 14px;
+    font-size: 1.125rem;
 }
 
 /* UX/UI Optimization Page Specific Styles */
@@ -1414,7 +1414,7 @@
     color: var(--text-secondary, #64748b) !important;
     line-height: 1.5;
     margin: 0;
-    font-size: 14px;
+    font-size: 1.125rem;
 }
 
 /* Rank Higher Locally Page Specific Styles */
@@ -1501,7 +1501,7 @@
     color: var(--text-secondary, #64748b) !important;
     line-height: 1.5;
     margin-bottom: 15px;
-    font-size: 14px;
+    font-size: 1.125rem;
     text-align: center;
 }
 
@@ -2674,7 +2674,7 @@
 .website-design-page .industry-item li {
     padding: 8px 0 !important;
     color: #4a5568 !important;
-    font-size: 14px !important;
+    font-size: 1.1rem !important;
     display: flex;
     align-items: center;
     gap: 10px;
@@ -2721,7 +2721,7 @@
 .conversion-elements .industry-item li {
     padding: 8px 0 !important;
     color: #4a5568 !important;
-    font-size: 14px !important;
+    font-size: 1.1rem !important;
     display: flex;
     align-items: center;
     gap: 10px;
