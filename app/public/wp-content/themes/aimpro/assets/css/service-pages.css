@@ -1563,9 +1563,9 @@
 :root.light-theme .landing-pages-page .case-study-section h2,
 :root.light-theme .landing-pages-page .case-study-section h3,
 :root.light-theme .landing-pages-page .case-study-section .case-study-label,
-:root.light-theme .website-design-page .service-page-case-study h2,
-:root.light-theme .website-design-page .service-page-case-study h3,
-:root.light-theme .website-design-page .service-page-case-study .case-study-label {
+:root.light-theme .website-design-page .case-study-section h2,
+:root.light-theme .website-design-page .case-study-section h3,
+:root.light-theme .website-design-page .case-study-section .case-study-label {
     color: white !important;
 }
 
