@@ -170,7 +170,7 @@
 .category-icon {
     font-size: 3rem;
     margin-bottom: 1.5rem;
-    color: var(--primary-color, #0073aa);
+    color: #f15a25;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -1440,6 +1440,15 @@
     margin: 0 auto;
 }
 
+/* 4-in-a-row grid for events webinars */
+.categories-grid-four {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
 .category-card {
     background: white;
     border-radius: 12px;
@@ -1457,7 +1466,7 @@
 .category-icon {
     font-size: 3rem;
     margin-bottom: 1.5rem;
-    color: var(--primary-color, #0073aa);
+    color: #f15a25;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -1628,7 +1637,7 @@
 .category-icon {
     font-size: 3rem;
     margin-bottom: 1.5rem;
-    color: var(--primary-color, #0073aa);
+    color: #f15a25;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -2611,4 +2620,29 @@
 .register-btn:hover {
     transform: translateY(-2px);
     box-shadow: 0 20px 40px rgba(241, 90, 37, 0.4);
+}
+
+/* Responsive design for event categories grid */
+@media (max-width: 991px) {
+    .categories-grid-four {
+        grid-template-columns: repeat(2, 1fr);
+        max-width: 800px;
+    }
+}
+
+@media (max-width: 768px) {
+    .categories-grid-four {
+        grid-template-columns: 1fr;
+        max-width: 500px;
+        gap: 1.5rem;
+    }
+    
+    .event-categories {
+        padding: 3rem 0;
+    }
+    
+    .event-categories h2 {
+        font-size: 2rem;
+        margin-bottom: 2rem;
+    }
 }

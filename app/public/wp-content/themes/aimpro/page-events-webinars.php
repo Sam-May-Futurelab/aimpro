@@ -112,13 +112,21 @@ if (empty($ondemand_webinars)) {
             'rating' => '★★★★★ 4.9',
             'video_url' => '',
             'thumbnail_url' => ''
-        ),
-        array(
+        ),        array(
             'title' => 'Google Analytics 4 Deep Dive',
             'description' => 'Comprehensive walkthrough of GA4 setup, configuration, and advanced reporting for better marketing insights.',
             'duration' => '38 min',
             'views' => '2,100 views',
             'rating' => '★★★★☆ 4.6',
+            'video_url' => '',
+            'thumbnail_url' => ''
+        ),
+        array(
+            'title' => 'Content Marketing Strategy 2025',
+            'description' => 'Effective content planning, creation, and distribution strategies to engage audiences and drive conversions.',
+            'duration' => '1h 8m',
+            'views' => '1,650 views',
+            'rating' => '★★★★★ 4.7',
             'video_url' => '',
             'thumbnail_url' => ''
         )
