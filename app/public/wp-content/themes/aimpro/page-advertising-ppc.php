@@ -38,39 +38,36 @@ function get_advertising_ppc_field($field_key, $post_id = null) {
 
 <main id="main" class="main-content">
     <div class="container">
-        
-        <!-- Page Header -->
+          <!-- Page Header -->
         <section class="page-header">
-            <div class="page-header-content">
+            <div class="page-header-content animate-on-scroll animate-fade-up">
                 <h1><?php echo esc_html(get_advertising_ppc_field('header_title')); ?></h1>
                 <p class="page-subtitle"><?php echo esc_html(get_advertising_ppc_field('header_subtitle')); ?></p>
-                <div class="header-badges">
+                <div class="header-badges animate-on-scroll animate-stagger animate-fade-up">
                     <span class="badge"><?php echo esc_html(get_advertising_ppc_field('header_badge_1')); ?></span>
                     <span class="badge"><?php echo esc_html(get_advertising_ppc_field('header_badge_2')); ?></span>
                     <span class="badge"><?php echo esc_html(get_advertising_ppc_field('header_badge_3')); ?></span>
                 </div>
             </div>
-        </section>
-
-        <!-- Service Overview -->
+        </section>        <!-- Service Overview -->
         <section class="service-overview">
             <div class="section-content">
                 <div class="overview-content">
-                    <div class="overview-text">
+                    <div class="overview-text animate-on-scroll animate-slide-left">
                         <h2><?php echo esc_html(get_advertising_ppc_field('overview_title')); ?></h2>
                         <p><?php echo esc_html(get_advertising_ppc_field('overview_content_1')); ?></p>
                         <p><?php echo esc_html(get_advertising_ppc_field('overview_content_2')); ?></p>
                     </div>
-                    <div class="overview-stats">
-                        <div class="stat-item">
+                    <div class="overview-stats animate-on-scroll animate-slide-right">
+                        <div class="stat-item animate-on-scroll animate-stagger animate-scale-up">
                             <span class="stat-number"><?php echo esc_html(get_advertising_ppc_field('overview_stat1_number')); ?></span>
                             <span class="stat-label"><?php echo esc_html(get_advertising_ppc_field('overview_stat1_label')); ?></span>
                         </div>
-                        <div class="stat-item">
+                        <div class="stat-item animate-on-scroll animate-stagger animate-scale-up">
                             <span class="stat-number"><?php echo esc_html(get_advertising_ppc_field('overview_stat2_number')); ?></span>
                             <span class="stat-label"><?php echo esc_html(get_advertising_ppc_field('overview_stat2_label')); ?></span>
                         </div>
-                        <div class="stat-item">
+                        <div class="stat-item animate-on-scroll animate-stagger animate-scale-up">
                             <span class="stat-number"><?php echo esc_html(get_advertising_ppc_field('overview_stat3_number')); ?></span>
                             <span class="stat-label"><?php echo esc_html(get_advertising_ppc_field('overview_stat3_label')); ?></span>
                         </div>
@@ -80,11 +77,11 @@ function get_advertising_ppc_field($field_key, $post_id = null) {
         </section><!-- Services Grid -->
         <section class="service-overview">
             <div class="container">
-                <div class="section-header">
+                <div class="section-header animate-on-scroll animate-fade-up">
                     <h2>Our Advertising & PPC Services</h2>
                     <p>Comprehensive pay-per-click advertising solutions designed to maximize your return on investment across all major platforms.</p>
                 </div>                <div class="services-grid">                    
-                    <div class="service-card">
+                    <div class="service-card animate-on-scroll animate-stagger animate-fade-up">
                         <div class="service-icon">
                             <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"/>
@@ -104,7 +101,7 @@ function get_advertising_ppc_field($field_key, $post_id = null) {
                         </div>
                     </div>
 
-                    <div class="service-card">
+                    <div class="service-card animate-on-scroll animate-stagger animate-fade-up">
                         <div class="service-icon">
                             <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M18 2H6C4.89543 2 4 2.89543 4 4V20C4 21.1046 4.89543 22 6 22H18C19.1046 22 20 21.1046 20 20V4C20 2.89543 19.1046 2 18 2Z" stroke="currentColor" stroke-width="2"/>
@@ -124,7 +121,7 @@ function get_advertising_ppc_field($field_key, $post_id = null) {
                         </div>
                     </div>
 
-                    <div class="service-card">
+                    <div class="service-card animate-on-scroll animate-stagger animate-fade-up">
                         <div class="service-icon">
                             <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M21 21L16.514 16.506L21 21ZM18.485 10.74C18.485 15.054 15.054 18.485 10.74 18.485C6.426 18.485 3 15.054 3 10.74C3 6.426 6.426 3 10.74 3C15.054 3 18.485 6.426 18.485 10.74Z" stroke="currentColor" stroke-width="2"/>
@@ -147,7 +144,7 @@ function get_advertising_ppc_field($field_key, $post_id = null) {
                         </div>
                     </div>
 
-                    <div class="service-card">
+                    <div class="service-card animate-on-scroll animate-stagger animate-fade-up">
                         <div class="service-icon">
                             <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M4.5 16.5C4.5 17.9 5.6 19 7 19H17C18.4 19 19.5 17.9 19.5 16.5V7.5C19.5 6.1 18.4 5 17 5H7C5.6 5 4.5 6.1 4.5 7.5V16.5Z" stroke="currentColor" stroke-width="2"/>
@@ -171,7 +168,7 @@ function get_advertising_ppc_field($field_key, $post_id = null) {
                         </div>
                     </div>
 
-                    <div class="service-card">
+                    <div class="service-card animate-on-scroll animate-stagger animate-fade-up">
                         <div class="service-icon">
                             <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M9 12L11 14L15 10M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z" stroke="currentColor" stroke-width="2"/>
@@ -194,7 +191,7 @@ function get_advertising_ppc_field($field_key, $post_id = null) {
                         </div>
                     </div>
 
-                    <div class="service-card">
+                    <div class="service-card animate-on-scroll animate-stagger animate-fade-up">
                         <div class="service-icon">
                             <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M17 21V19C17 17.9391 16.5786 16.9217 15.8284 16.1716C15.0783 15.4214 14.0609 15 13 15H5C3.93913 15 2.92172 15.4214 2.17157 16.1716C1.42143 16.9217 1 17.9391 1 19V21" stroke="currentColor" stroke-width="2"/>
@@ -221,13 +218,11 @@ function get_advertising_ppc_field($field_key, $post_id = null) {
 
                 </div>
             </div>
-        </section>
-
-        <!-- PPC Success Story -->
+        </section>        <!-- PPC Success Story -->
         <section class="ppc-case-study">
             <div class="section-content">
                 <div class="case-study-content">
-                    <div class="case-study-text">
+                    <div class="case-study-text animate-on-scroll animate-slide-left">
                         <h2>Case Study: E-commerce Success Story</h2>
                         <h3>Online Retailer Achieves 520% ROI Improvement</h3>
                         <p>A growing e-commerce business approached us with underperforming Google Ads campaigns and high advertising costs. Our comprehensive PPC optimization strategy transformed their advertising performance and dramatically improved their bottom line.</p>
@@ -255,79 +250,75 @@ function get_advertising_ppc_field($field_key, $post_id = null) {
                             </div>
                         </div>
                     </div>
-                    <div class="case-study-metrics">
-                        <div class="metric-card">
+                    <div class="case-study-metrics animate-on-scroll animate-slide-right">
+                        <div class="metric-card animate-on-scroll animate-stagger animate-scale-up">
                             <div class="metric-number">520%</div>
                             <div class="metric-label">ROI Improvement</div>
                         </div>
-                        <div class="metric-card">
+                        <div class="metric-card animate-on-scroll animate-stagger animate-scale-up">
                             <div class="metric-number">73%</div>
                             <div class="metric-label">Reduction in CPA</div>
                         </div>
-                        <div class="metric-card">
+                        <div class="metric-card animate-on-scroll animate-stagger animate-scale-up">
                             <div class="metric-number">340%</div>
                             <div class="metric-label">Increase in Conversions</div>
                         </div>
-                        <div class="metric-card">
+                        <div class="metric-card animate-on-scroll animate-stagger animate-scale-up">
                             <div class="metric-number">8 Weeks</div>
                             <div class="metric-label">Time to See Results</div>
                         </div>
                     </div>
                 </div>
             </div>
-        </section>
-
-        <!-- PPC Process -->
+        </section>        <!-- PPC Process -->
         <section class="ppc-process">
             <div class="section-content">
-                <h2>Our PPC Management Process</h2>
+                <h2 class="animate-on-scroll animate-fade-up">Our PPC Management Process</h2>
                 <div class="process-steps">
-                    <div class="process-step">
+                    <div class="process-step animate-on-scroll animate-stagger animate-fade-up">
                         <div class="step-number">1</div>
                         <div class="step-content">
                             <h3>Discovery & Strategy</h3>
                             <p>Comprehensive analysis of your business, competitors, and market to develop a winning PPC strategy.</p>
                         </div>
                     </div>
-                    <div class="process-step">
+                    <div class="process-step animate-on-scroll animate-stagger animate-fade-up">
                         <div class="step-number">2</div>
                         <div class="step-content">
                             <h3>Campaign Setup</h3>
                             <p>Expert campaign structure, keyword research, ad creation, and tracking implementation across chosen platforms.</p>
                         </div>
                     </div>
-                    <div class="process-step">
+                    <div class="process-step animate-on-scroll animate-stagger animate-fade-up">
                         <div class="step-number">3</div>
                         <div class="step-content">
                             <h3>Launch & Monitor</h3>
                             <p>Campaign launch with close monitoring of performance metrics and immediate optimizations as needed.</p>
                         </div>
                     </div>
-                    <div class="process-step">
+                    <div class="process-step animate-on-scroll animate-stagger animate-fade-up">
                         <div class="step-number">4</div>
                         <div class="step-content">
                             <h3>Optimize & Scale</h3>
                             <p>Continuous optimization based on data insights, scaling successful campaigns and improving underperformers.</p>
                         </div>
                     </div>
-                    <div class="process-step">
+                    <div class="process-step animate-on-scroll animate-stagger animate-fade-up">
                         <div class="step-number">5</div>
                         <div class="step-content">
                             <h3>Report & Refine</h3>                            <p>Regular reporting with insights and recommendations for ongoing improvement and growth.</p>
                         </div>
                     </div>
                 </div>
-                <div class="process-cta">
+                <div class="process-cta animate-on-scroll animate-fade-up">
                     <a href="<?php echo home_url('/contact'); ?>" class="btn-primary process-cta-btn">Transform Your PPC Strategy</a>
                 </div>
             </div>
-        </section>
-
-        <!-- Platforms We Manage -->
+        </section>        <!-- Platforms We Manage -->
         <section class="platforms-section">
             <div class="section-content">
-                <h2>Advertising Platforms We Manage</h2>                <div class="platforms-grid">
-                    <div class="platform-card">
+                <h2 class="animate-on-scroll animate-fade-up">Advertising Platforms We Manage</h2>                <div class="platforms-grid">
+                    <div class="platform-card animate-on-scroll animate-stagger animate-fade-up">
                         <div class="platform-icon">
                             <i class="fas fa-search"></i>
                         </div>
@@ -341,7 +332,7 @@ function get_advertising_ppc_field($field_key, $post_id = null) {
                             <a href="<?php echo home_url('/contact'); ?>" class="btn-outline platform-cta-btn">Get Search Advertising</a>
                         </div>
                     </div>
-                    <div class="platform-card">
+                    <div class="platform-card animate-on-scroll animate-stagger animate-fade-up">
                         <div class="platform-icon">
                             <i class="fas fa-mobile-alt"></i>
                         </div>
@@ -354,7 +345,7 @@ function get_advertising_ppc_field($field_key, $post_id = null) {
                         <div class="platform-cta">
                             <a href="<?php echo home_url('/contact'); ?>" class="btn-outline platform-cta-btn">Start Social Advertising</a>
                         </div>
-                    </div><div class="platform-card">
+                    </div><div class="platform-card animate-on-scroll animate-stagger animate-fade-up">
                         <h3><i class="fas fa-shopping-cart" aria-hidden="true"></i> E-commerce Advertising</h3>
                         <ul>                            <li>Google Shopping Ads</li>
                             <li>Facebook Shop Ads</li>
@@ -365,7 +356,7 @@ function get_advertising_ppc_field($field_key, $post_id = null) {
                             <a href="<?php echo home_url('/contact'); ?>" class="btn-outline platform-cta-btn">Boost E-commerce Sales</a>
                         </div>
                     </div>
-                    <div class="platform-card">
+                    <div class="platform-card animate-on-scroll animate-stagger animate-fade-up">
                         <h3><i class="fas fa-video" aria-hidden="true"></i> Display & Video</h3>
                         <ul>                            <li>Google Display Network</li>
                             <li>YouTube Video Ads</li>
@@ -376,49 +367,45 @@ function get_advertising_ppc_field($field_key, $post_id = null) {
                         </div>
                     </div>
                 </div>
-                <div class="platforms-cta">
+                <div class="platforms-cta animate-on-scroll animate-fade-up">
                     <a href="<?php echo home_url('/contact'); ?>" class="btn-primary platforms-cta-btn">Talk to an Advertising Expert</a>
                 </div>
             </div>
-        </section>
-
-        <!-- Industry Applications -->
+        </section>        <!-- Industry Applications -->
         <section class="industry-applications">
             <div class="section-content">
-                <h2>PPC Advertising for Your Industry</h2>
+                <h2 class="animate-on-scroll animate-fade-up">PPC Advertising for Your Industry</h2>
                 <div class="industry-grid">
-                    <div class="industry-item">
+                    <div class="industry-item animate-on-scroll animate-stagger animate-fade-up">
                         <h3>E-commerce</h3>
                         <p>Shopping campaigns, dynamic remarketing, and conversion optimization for online retailers and product-based businesses.</p>
                     </div>
-                    <div class="industry-item">
+                    <div class="industry-item animate-on-scroll animate-stagger animate-fade-up">
                         <h3>Professional Services</h3>
                         <p>Lead generation campaigns, local targeting, and conversion tracking for lawyers, accountants, consultants, and agencies.</p>
                     </div>
-                    <div class="industry-item">
+                    <div class="industry-item animate-on-scroll animate-stagger animate-fade-up">
                         <h3>Healthcare</h3>
                         <p>Compliant advertising strategies for healthcare providers, medical practices, and wellness businesses.</p>
                     </div>
-                    <div class="industry-item">
+                    <div class="industry-item animate-on-scroll animate-stagger animate-fade-up">
                         <h3>Real Estate</h3>
                         <p>Local property advertising, lead generation, and audience targeting for real estate agents and property developers.</p>
                     </div>
-                    <div class="industry-item">
+                    <div class="industry-item animate-on-scroll animate-stagger animate-fade-up">
                         <h3>Home & Garden</h3>
                         <p>Seasonal campaigns, local targeting, and conversion optimization for contractors, landscapers, and home improvement businesses.</p>
                     </div>
-                    <div class="industry-item">
+                    <div class="industry-item animate-on-scroll animate-stagger animate-fade-up">
                         <h3>Automotive</h3>
                         <p>Vehicle advertising, local dealership promotion, and service-based campaigns for automotive businesses.</p>
                     </div>
                 </div>
             </div>
-        </section>
-
-        <!-- Client Testimonial -->
+        </section>        <!-- Client Testimonial -->
         <section class="client-testimonial">
             <div class="section-content">
-                <div class="testimonial-content">
+                <div class="testimonial-content animate-on-scroll animate-fade-up">
                     <div class="quote-icon">
                         <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M3 21C3 17.4 5.4 17.4 5.4 17.4H9V21H3Z" stroke="currentColor" stroke-width="2"/>
@@ -437,7 +424,7 @@ function get_advertising_ppc_field($field_key, $post_id = null) {
         </section>        <!-- CTA Section -->
         <section id="contact" class="cta-section">
             <div class="container">
-                <div class="cta-content">
+                <div class="cta-content animate-on-scroll animate-scale-up">
                     <h2>Ready to Maximize Your Advertising ROI?</h2>
                     <p>Get a free PPC audit and strategy session. We'll analyze your current campaigns and show you exactly how to improve performance and reduce costs.</p>
                     <div class="cta-buttons">
