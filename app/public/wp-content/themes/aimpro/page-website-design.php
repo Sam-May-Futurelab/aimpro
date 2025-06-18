@@ -9,6 +9,32 @@
 
 get_header(); ?>
 
+<style>
+.tools-section .tool-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto 15px;
+}
+.tools-section .tool-icon i {
+    font-size: 2.5rem;
+}
+.tools-section .tools-category {
+    margin-top: 50px;
+    margin-bottom: 30px;
+    padding: 20px 0;
+    position: relative;
+    font-size: 1.8rem;
+}
+.tools-section .tools-grid {
+    margin-bottom: 50px;
+}
+.tools-section .section-header {
+    margin-bottom: 50px;
+    padding-top: 20px;
+}
+</style>
+
 <main id="primary" class="service-page website-design-page">
     <!-- Breadcrumbs -->
     <div class="breadcrumbs-container">
@@ -42,10 +68,8 @@ get_header(); ?>
                         <div class="stat-number">2.1s</div>
                         <div class="stat-label">Average Load Time</div>
                     </div>
-                </div>
-                <div class="hero-ctas animate-on-scroll animate-fade-up">
+                </div>                <div class="hero-ctas animate-on-scroll animate-fade-up">
                     <a href="#contact" class="btn-primary streamlined">Get Design Quote</a>
-                    <a href="#portfolio" class="btn-outline streamlined">View Portfolio</a>
                 </div>
             </div>
         </div>    </section>    <!-- Service Overview -->
@@ -78,9 +102,8 @@ get_header(); ?>
                         </div>
                     </div>
                 </div>                <div class="overview-stats animate-on-scroll animate-slide-right">                    <h3 class="stats-heading">Proven Results</h3>
-                    <p class="stats-description">Our designs don't just look good—they deliver measurable business results. Every project is built with conversion and user experience as top priorities.</p>
-                    <div class="target-icon">
-                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/aimpro-target.png" alt="Target Icon">
+                    <p class="stats-description">Our designs don't just look good—they deliver measurable business results. Every project is built with conversion and user experience as top priorities.</p>                    <div class="target-icon" style="max-width: 350px; margin: 0 auto 20px; border-radius: 10px; overflow: hidden; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
+                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/Aimpro-high-ranking-website-blog.png" alt="High Ranking Website" style="width: 100%; height: auto; display: block;">
                     </div>
                     <div class="stat-item animate-on-scroll animate-stagger animate-scale-up">
                         <span class="stat-number">285%</span>
@@ -93,8 +116,7 @@ get_header(); ?>
                     <div class="stat-item animate-on-scroll animate-stagger animate-scale-up">
                         <span class="stat-number">2.1s</span>
                         <span class="stat-label">Average Load Time</span>
-                    </div>
-                    <div class="overview-cta animate-on-scroll animate-fade-up" style="margin-top: 30px;">
+                    </div>                    <div class="overview-cta animate-on-scroll animate-fade-up" style="margin-top: 30px; text-align: center;">
                         <a href="<?php echo home_url('/contact'); ?>" class="btn-primary">Get a Free Design Quote</a>
                     </div>
                 </div>
@@ -280,46 +302,100 @@ get_header(); ?>
                     </ul>
                     <a href="#contact" class="btn-outline">Get Started</a>
                 </div>            </div>
-        </div>
-    </section>    <!-- Technologies -->
-    <section class="technologies-section">        <div class="container">
-            <h2 class="animate-on-scroll animate-fade-up">Design Tools & Technologies</h2>
+        </div>    </section>    <!-- Technologies -->    <section class="tools-section">
+        <div class="container" style="text-align: center;">
+            <div class="section-header animate-on-scroll animate-fade-up">
+                <h2 style="margin-bottom: 20px;">Design Tools & Technologies</h2>
+                <p style="max-width: 800px; margin: 0 auto 30px;">We use industry-leading tools and technologies to create stunning, high-performance websites that deliver results.</p>
+            </div>
             
-            <div class="industries-grid">
-                <div class="industry-item animate-on-scroll animate-stagger animate-fade-up">
-                    <h4><i class="fas fa-palette"></i> Design Tools</h4>
-                    <ul>
-                        <li><i class="fab fa-figma"></i> Figma</li>
-                        <li><i class="fas fa-vector-square"></i> Adobe XD</li>
-                        <li><i class="fas fa-drafting-compass"></i> Sketch</li>
-                        <li><i class="fab fa-adobe"></i> Adobe Creative Suite</li>
-                        <li><i class="fas fa-eye"></i> InVision</li>
-                        <li><i class="fas fa-magic"></i> Principle</li>
-                    </ul>
+            <h3 class="tools-category animate-on-scroll animate-fade-up">Design & UX Tools</h3>
+            <div class="tools-grid animate-on-scroll animate-stagger animate-scale-up" style="justify-content: center;">                <div class="tool-item" style="text-align: center;">
+                    <div class="tool-icon" style="text-align: center; display: flex; justify-content: center;">
+                        <i class="fab fa-figma"></i>
+                    </div>
+                    <h3>Figma</h3>
+                    <p>Collaborative interface design tool for creating wireframes and prototypes</p>
+                </div>                <div class="tool-item" style="text-align: center;">
+                    <div class="tool-icon" style="text-align: center; display: flex; justify-content: center;">
+                        <i class="fab fa-adobe"></i>
+                    </div>
+                    <h3>Adobe Creative Suite</h3>
+                    <p>Complete design package including Photoshop, Illustrator and InDesign</p>
                 </div>
-                
-                <div class="industry-item animate-on-scroll animate-stagger animate-fade-up">
-                    <h4><i class="fas fa-code"></i> Development</h4>
-                    <ul>
-                        <li><i class="fab fa-wordpress"></i> WordPress</li>
-                        <li><i class="fas fa-stream"></i> Webflow</li>
-                        <li><i class="fab fa-react"></i> React.js</li>
-                        <li><i class="fab fa-html5"></i> HTML5/CSS3</li>
-                        <li><i class="fab fa-js-square"></i> JavaScript</li>
-                        <li><i class="fab fa-php"></i> PHP</li>
-                    </ul>
+                  <div class="tool-item" style="text-align: center;">
+                    <div class="tool-icon" style="text-align: center; display: flex; justify-content: center;">
+                        <i class="fas fa-pencil-ruler"></i>
+                    </div>
+                    <h3>Sketch & XD</h3>
+                    <p>Professional design tools for creating responsive user interfaces</p>
                 </div>
-                
-                <div class="industry-item animate-on-scroll animate-stagger animate-fade-up">
-                    <h4><i class="fas fa-chart-line"></i> Optimization</h4>
-                    <ul>
-                        <li><i class="fas fa-tachometer-alt"></i> Google PageSpeed</li>
-                        <li><i class="fas fa-stopwatch"></i> GTmetrix</li>
-                        <li><i class="fas fa-mouse-pointer"></i> Hotjar</li>
-                        <li><i class="fab fa-google"></i> Google Analytics</li>
-                        <li><i class="fas fa-flask"></i> A/B Testing Tools</li>
-                        <li><i class="fas fa-search"></i> SEO Auditing</li>
-                    </ul>
+                  <div class="tool-item" style="text-align: center;">
+                    <div class="tool-icon" style="text-align: center; display: flex; justify-content: center;">
+                        <i class="fas fa-eye"></i>
+                    </div>
+                    <h3>InVision & Principle</h3>
+                    <p>Interactive prototyping tools for testing user flows and animations</p>
+                </div>
+            </div>
+              <h3 class="tools-category animate-on-scroll animate-fade-up">Development Technologies</h3>
+            <div class="tools-grid animate-on-scroll animate-stagger animate-scale-up" style="justify-content: center;">                <div class="tool-item" style="text-align: center;">
+                    <div class="tool-icon" style="text-align: center; display: flex; justify-content: center;">
+                        <i class="fab fa-wordpress"></i>
+                    </div>
+                    <h3>WordPress</h3>
+                    <p>Powerful CMS for scalable, easy-to-manage business websites</p>
+                </div>
+                  <div class="tool-item" style="text-align: center;">
+                    <div class="tool-icon" style="text-align: center; display: flex; justify-content: center;">
+                        <i class="fab fa-react"></i>
+                    </div>
+                    <h3>Modern JavaScript</h3>
+                    <p>React.js and other JavaScript frameworks for interactive experiences</p>
+                </div>
+                  <div class="tool-item" style="text-align: center;">
+                    <div class="tool-icon" style="text-align: center; display: flex; justify-content: center;">
+                        <i class="fab fa-html5"></i>
+                    </div>
+                    <h3>HTML5/CSS3</h3>
+                    <p>Latest web standards for responsive, accessible website development</p>
+                </div>
+                  <div class="tool-item" style="text-align: center;">                    <div class="tool-icon" style="text-align: center; display: flex; justify-content: center;">
+                        <i class="fas fa-stream"></i>
+                    </div>
+                    <h3>Webflow & Shopify</h3>
+                    <p>No-code and e-commerce platforms for specific business needs</p>
+                </div>
+            </div>
+            
+            <h3 class="tools-category animate-on-scroll animate-fade-up">Optimization & Analytics</h3>
+            <div class="tools-grid animate-on-scroll animate-stagger animate-scale-up" style="justify-content: center;">                <div class="tool-item" style="text-align: center;">
+                    <div class="tool-icon" style="text-align: center; display: flex; justify-content: center;">
+                        <i class="fas fa-tachometer-alt"></i>
+                    </div>
+                    <h3>Performance Tools</h3>
+                    <p>Google PageSpeed and GTmetrix for speed optimization</p>
+                </div>
+                  <div class="tool-item" style="text-align: center;">
+                    <div class="tool-icon" style="text-align: center; display: flex; justify-content: center;">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>Analytics Platforms</h3>
+                    <p>Google Analytics and data visualization for tracking results</p>
+                </div>
+                  <div class="tool-item" style="text-align: center;">
+                    <div class="tool-icon" style="text-align: center; display: flex; justify-content: center;">
+                        <i class="fas fa-flask"></i>
+                    </div>
+                    <h3>A/B Testing</h3>
+                    <p>Conversion rate optimization through split testing</p>
+                </div>
+                  <div class="tool-item" style="text-align: center;">
+                    <div class="tool-icon" style="text-align: center; display: flex; justify-content: center;">
+                        <i class="fas fa-mouse-pointer"></i>
+                    </div>
+                    <h3>UX Research Tools</h3>
+                    <p>Hotjar, heatmaps, and user testing for continuous improvement</p>
                 </div>
             </div>
         </div>
