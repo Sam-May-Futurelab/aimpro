@@ -2012,7 +2012,7 @@
 }
 
 .tool-preview:empty:before {
-    content: '⚙️' !important;
+    content: '' !important;
     font-size: 3rem !important;
     color: white !important;
 }

@@ -126,10 +126,9 @@ function industries_meta_box_callback($post) {
     $expertise_matters_title = get_post_meta($post->ID, '_industries_expertise_matters_title', true);
     $expertise_matters_subtitle = get_post_meta($post->ID, '_industries_expertise_matters_subtitle', true);
     $expertise_points = get_post_meta($post->ID, '_industries_expertise_points', true);
-    if (empty($expertise_points)) {
-        $expertise_points = array(
+    if (empty($expertise_points)) {        $expertise_points = array(
             array(
-                'icon' => '🎯',
+                'icon' => '',
                 'title' => 'Target the Right Audience',
                 'description' => 'We understand your customer\'s journey, pain points, and decision-making process.'
             ),
@@ -139,7 +138,7 @@ function industries_meta_box_callback($post) {
                 'description' => 'Access to sector-specific benchmarks, trends, and performance metrics.'
             ),
             array(
-                'icon' => '⚡',
+                'icon' => '',
                 'title' => 'Faster Results',
                 'description' => 'Pre-tested strategies and proven tactics that work in your specific market.'
             ),
@@ -429,7 +428,7 @@ function industries_meta_box_callback($post) {
                             <button type="button" class="remove-item remove-expertise-point">Remove</button>
                             <div class="item-field">
                                 <label>Icon (emoji or FontAwesome):</label>
-                                <input type="text" name="industries_expertise_points[<?php echo $index; ?>][icon]" value="<?php echo esc_attr($point['icon']); ?>" placeholder="🎯" />
+                                <input type="text" name="industries_expertise_points[<?php echo $index; ?>][icon]" value="<?php echo esc_attr($point['icon']); ?>" placeholder="" />
                             </div>
                             <div class="item-field">
                                 <label>Title:</label>
@@ -558,7 +557,7 @@ function industries_meta_box_callback($post) {
             var index = container.find('.repeater-item').length;
             var html = '<div class="repeater-item">' +
                 '<button type="button" class="remove-item remove-expertise-point">Remove</button>' +
-                '<div class="item-field"><label>Icon:</label><input type="text" name="industries_expertise_points[' + index + '][icon]" placeholder="🎯" /></div>' +
+                '<div class="item-field"><label>Icon:</label><input type="text" name="industries_expertise_points[' + index + '][icon]" placeholder="" /></div>' +
                 '<div class="item-field"><label>Title:</label><input type="text" name="industries_expertise_points[' + index + '][title]" placeholder="Target the Right Audience" /></div>' +
                 '<div class="item-field"><label>Description:</label><textarea name="industries_expertise_points[' + index + '][description]" placeholder="We understand your customer\'s journey..."></textarea></div>' +
                 '</div>';

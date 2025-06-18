@@ -262,15 +262,15 @@
 
 /* Different icons for tool categories */
 .tool-card.analytics h3::before {
-    content: "📊";
+    content: "";
 }
 
 .tool-card.crm h3::before {
-    content: "🔗";
+    content: "";
 }
 
 .tool-card.optimization h3::before {
-    content: "⚡";
+    content: "";
 }
 
 /* ===== CTA SECTION ===== */
@@ -475,19 +475,19 @@
 /* Different icons for business types */
 .business-type-card.b2b h3::before,
 .type-card:first-child h3::before {
-    content: "🏢";
+    content: "■";
     font-size: 1.25rem;
 }
 
 .business-type-card.b2c h3::before,
 .type-card:nth-child(2) h3::before {
-    content: "🛍️";
+    content: "●";
     font-size: 1.25rem;
 }
 
 .business-type-card.local h3::before,
 .type-card:nth-child(3) h3::before {
-    content: "📍";
+    content: "▲";
     font-size: 1.25rem;
 }
 
@@ -808,7 +808,7 @@
 .automation-features li::before,
 .solution-automation-features li::before,
 .solution-features li::before {
-    content: "⚡";
+    content: "";
     position: absolute;
     left: 0;
     color: #667eea;
