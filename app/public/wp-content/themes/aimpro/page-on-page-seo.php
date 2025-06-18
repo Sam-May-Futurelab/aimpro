@@ -194,8 +194,7 @@ get_header(); ?>
                                 </ul>
                             </div>
                         </div>
-                    </div>
-                    <div class="case-study-metrics">
+                    </div>                    <div class="case-study-metrics animate-on-scroll animate-slide-right">
                         <?php 
                         $metrics = get_post_meta(get_the_ID(), 'on_page_seo_metrics', true) ?: array(
                             array('number' => '425%', 'label' => 'Increase in Organic Traffic'),
@@ -205,7 +204,7 @@ get_header(); ?>
                         );
                         foreach ($metrics as $metric):
                         ?>
-                            <div class="metric-card">
+                            <div class="metric-card animate-on-scroll animate-stagger animate-scale-up">
                                 <div class="metric-number"><?php echo esc_html($metric['number']); ?></div>
                                 <div class="metric-label"><?php echo esc_html($metric['label']); ?></div>
                             </div>
@@ -240,11 +239,10 @@ get_header(); ?>
                         'description' => 'Ongoing monitoring of performance metrics and continuous refinement of on-page elements based on data and results.'
                     )
                 );
-                ?>
-                <h2><?php echo esc_html($process_title); ?></h2>
+                ?>                <h2 class="animate-on-scroll animate-fade-up"><?php echo esc_html($process_title); ?></h2>
                 <div class="process-steps">
                     <?php foreach ($process_steps as $index => $step): ?>
-                        <div class="process-step">
+                        <div class="process-step animate-on-scroll animate-stagger animate-fade-up">
                             <div class="step-number"><?php echo ($index + 1); ?></div>
                             <div class="step-content">
                                 <h3><?php echo esc_html($step['title']); ?></h3>
@@ -297,11 +295,10 @@ get_header(); ?>
                         )
                     )
                 );
-                ?>
-                <h2><?php echo esc_html($tools_title); ?></h2>
+                ?>                <h2 class="animate-on-scroll animate-fade-up"><?php echo esc_html($tools_title); ?></h2>
                 <div class="tools-grid">
                     <?php foreach ($tool_categories as $category): ?>
-                        <div class="tool-category">
+                        <div class="tool-category animate-on-scroll animate-stagger animate-fade-up">
                             <h3><?php echo esc_html($category['title']); ?></h3>
                             <ul>
                                 <?php foreach ($category['tools'] as $tool): ?>
@@ -335,11 +332,10 @@ get_header(); ?>
                         'description' => 'Property listing optimization, local area content, and schema markup for enhanced search visibility.'
                     )
                 );
-                ?>
-                <h2><?php echo esc_html($industries_title); ?></h2>
+                ?>                <h2 class="animate-on-scroll animate-fade-up"><?php echo esc_html($industries_title); ?></h2>
                 <div class="industry-grid">
                     <?php foreach ($industries as $industry): ?>
-                        <div class="industry-item">
+                        <div class="industry-item animate-on-scroll animate-stagger animate-fade-up">
                             <h3><?php echo esc_html($industry['title']); ?></h3>
                             <p><?php echo esc_html($industry['description']); ?></p>
                         </div>
@@ -369,11 +365,10 @@ get_header(); ?>
                         'answer' => 'We track keyword rankings, organic traffic growth, click-through rates, time on page, and conversions to measure the effectiveness of our on-page optimizations.'
                     )
                 );
-                ?>
-                <h2><?php echo esc_html($faqs_title); ?></h2>
+                ?>                <h2 class="animate-on-scroll animate-fade-up"><?php echo esc_html($faqs_title); ?></h2>
                 <div class="faq-list">
                     <?php foreach ($faqs as $faq): ?>
-                        <div class="faq-item">
+                        <div class="faq-item animate-on-scroll animate-stagger animate-fade-up">
                             <button class="faq-question"><?php echo esc_html($faq['question']); ?></button>
                             <div class="faq-answer">
                                 <p><?php echo esc_html($faq['answer']); ?></p>
@@ -384,8 +379,7 @@ get_header(); ?>
             </div>
         </section>        <!-- Client Testimonial -->
         <section class="client-testimonial">
-            <div class="section-content">
-                <div class="testimonial-content">
+            <div class="section-content">                <div class="testimonial-content animate-on-scroll animate-fade-up">
                     <div class="quote-icon">
                         <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M3 21C3 17.4 5.4 17.4 5.4 17.4H9V21H3Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
@@ -409,8 +403,7 @@ get_header(); ?>
             </div>
         </section>        <!-- CTA Section -->
         <section class="simple-cta-section">
-            <div class="section-content">
-                <div class="simple-cta-content">
+            <div class="section-content">                <div class="simple-cta-content animate-on-scroll animate-fade-up">
                     <?php 
                     $cta_title = get_post_meta(get_the_ID(), 'on_page_seo_cta_title', true) ?: 'Ready to Optimize Your Website Pages?';
                     $cta_description = get_post_meta(get_the_ID(), 'on_page_seo_cta_description', true) ?: 'Get a comprehensive on-page SEO audit and strategy session. We\'ll identify optimization opportunities and show you how to improve your search rankings.';

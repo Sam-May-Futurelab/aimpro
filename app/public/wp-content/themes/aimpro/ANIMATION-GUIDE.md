@@ -214,7 +214,7 @@
   - ✅ rank-higher-locally: Complete animation coverage (hero, overview, services grid, case study, process steps, benefits grid, testimonial, CTA)
 - ✅ **Additional SEO service pages** 
   - ✅ technical-seo: Complete animation coverage (header, overview, services grid, case study, process steps, tools/issues grids, testimonial, CTA)
-  - ✅ on-page-seo: Complete animation coverage (header with badges, overview with stats, components grid, case study)
+  - ✅ on-page-seo: Complete animation coverage (header with badges, overview with stats, components grid, case study, process steps, tools grid, industry applications, FAQ, testimonial, CTA)
   - ✅ white-label-seo: Complete animation coverage (header, overview with stats, benefits grid, services grid, pricing, case study, included items, FAQ, testimonial, CTA)
 - ✅ **Resource and content pages** 
   - ✅ resources: Complete animation coverage (hero, categories grid, featured resources, newsletter signup)
