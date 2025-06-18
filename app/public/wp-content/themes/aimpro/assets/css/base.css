@@ -12,6 +12,7 @@
 
 body {
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    font-size: 1.1rem;
     line-height: 1.6;
     overflow-x: hidden;
     font-weight: 400;
@@ -57,7 +58,7 @@ h2 { font-size: clamp(2rem, 4vw, 3rem); line-height: 1.15; }
 h3 { font-size: clamp(1.25rem, 3vw, 1.75rem); line-height: 1.25; }
 
 p {
-    font-size: 1.125rem;
+    font-size: 1.25rem;
     line-height: 1.65;
     margin-bottom: 1.5rem;
 }
@@ -100,6 +101,8 @@ ul, ol {
 
 li {
     margin-bottom: 0.5rem;
+    font-size: 1.125rem;
+    line-height: 1.6;
 }
 
 /* Utility Classes */
