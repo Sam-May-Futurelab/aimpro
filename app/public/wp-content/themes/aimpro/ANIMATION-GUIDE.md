@@ -54,7 +54,19 @@
 - ✅ **Contact page** (hero section, contact cards, form)
 - ✅ **Partner page** (header, overview, partnership cards)
 - ✅ **Funnel Builds page** (hero section)
-- 🔄 Ready for other service pages and content pages
+- ✅ **Lead Generation page** (hero, services, case study, process, FAQ, CTA)
+- ✅ **Website Development page** (hero, services, case study, process, FAQ, CTA)
+- ✅ **Streamline Sales Funnel page** (hero, overview, services, case study, process, benefits, FAQ, CTA)
+- ✅ **Google Ads page** (hero, services, case study, industries, pricing, testimonial, CTA)
+- ✅ **Services main page** (header, intro, service grid, categories)
+
+### Currently In Progress:
+
+- 🔄 **Marketing Automation pages**
+- 🔄 **Local SEO and SEO services pages**
+- 🔄 **PPC/Advertising pages (Meta Ads, Microsoft Ads)**
+- 🔄 **Industries pages**
+- 🔄 **Solutions pages**
 
 ### Recommended Usage:
 

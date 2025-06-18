@@ -8,10 +8,9 @@ get_header(); ?>
 
 <main id="main" class="main-content">
     <div class="container">
-        
-        <!-- Page Header -->
+          <!-- Page Header -->
         <section class="page-header">
-            <div class="page-header-content">
+            <div class="page-header-content animate-on-scroll animate-fade-up">
                 <h1>Services</h1>
                 <p class="page-subtitle">Comprehensive digital marketing services that drive measurable results</p>
             </div>
@@ -20,10 +19,10 @@ get_header(); ?>
         <!-- Services Introduction -->
         <section class="services-intro">
             <div class="section-content">
-                <div class="intro-content">
+                <div class="intro-content animate-on-scroll animate-slide-left">
                     <h2>Award-Winning Digital Marketing Services</h2>
                     <p>From SEO and PPC to website development and marketing automation, our comprehensive suite of services is designed to accelerate your business growth. Each service is delivered by certified experts using proven methodologies and cutting-edge technology.</p>
-                </div>                <div class="services-stats">
+                </div>                <div class="services-stats animate-on-scroll animate-slide-right">
                     <div class="stat-item">
                         <div class="stat-number">15+</div>
                         <div class="stat-label">Service Categories</div>
@@ -41,23 +40,22 @@ get_header(); ?>
         </section>        <!-- Service Links Grid -->
         <section class="service-links-grid">
             <div class="section-content">
-                <div class="service-links-heading">
+                <div class="service-links-heading animate-on-scroll animate-fade-up">
                     <h2>Our Services</h2>
                     <p>Explore our comprehensive range of services designed to elevate your digital presence</p>
                 </div>
                 
                 <!-- Quick Service Navigation Grid -->
                 <div class="services-grid">
-                    <div class="service-card">
+                    <div class="service-card animate-on-scroll animate-stagger animate-fade-up">
                         <div class="service-icon">
                             <i class="fas fa-search" aria-hidden="true"></i>
                         </div>
                         <h3>SEO Services</h3>
                         <p>Improve search rankings and organic traffic</p>
                         <a href="<?php echo home_url('/seo-services'); ?>" class="service-link">Learn More</a>
-                    </div>
-                    
-                    <div class="service-card">
+                    </div>                    
+                    <div class="service-card animate-on-scroll animate-stagger animate-fade-up">
                         <div class="service-icon">
                             <i class="fas fa-bullhorn" aria-hidden="true"></i>
                         </div>
@@ -66,7 +64,7 @@ get_header(); ?>
                         <a href="<?php echo home_url('/advertising-ppc'); ?>" class="service-link">Learn More</a>
                     </div>
                     
-                    <div class="service-card">
+                    <div class="service-card animate-on-scroll animate-stagger animate-fade-up">
                         <div class="service-icon">
                             <i class="fas fa-paint-brush" aria-hidden="true"></i>
                         </div>
@@ -75,7 +73,7 @@ get_header(); ?>
                         <a href="<?php echo home_url('/website-design'); ?>" class="service-link">Learn More</a>
                     </div>
                     
-                    <div class="service-card">
+                    <div class="service-card animate-on-scroll animate-stagger animate-fade-up">
                         <div class="service-icon">
                             <i class="fas fa-cogs" aria-hidden="true"></i>
                         </div>
@@ -84,7 +82,7 @@ get_header(); ?>
                         <a href="<?php echo home_url('/automate-marketing'); ?>" class="service-link">Learn More</a>
                     </div>
                     
-                    <div class="service-card">
+                    <div class="service-card animate-on-scroll animate-stagger animate-fade-up">
                         <div class="service-icon">
                             <i class="fas fa-chart-line" aria-hidden="true"></i>
                         </div>
@@ -93,7 +91,7 @@ get_header(); ?>
                         <a href="<?php echo home_url('/lead-generation'); ?>" class="service-link">Learn More</a>
                     </div>
                     
-                    <div class="service-card">
+                    <div class="service-card animate-on-scroll animate-stagger animate-fade-up">
                         <div class="service-icon">
                             <i class="fas fa-funnel-dollar" aria-hidden="true"></i>
                         </div>
@@ -108,10 +106,9 @@ get_header(); ?>
         <!-- Services Categories -->
         <section class="services-categories">
             <div class="section-content">
-                
-                <!-- SEO Services -->
+                  <!-- SEO Services -->
                 <div class="service-category-section">
-                    <div class="category-header">
+                    <div class="category-header animate-on-scroll animate-fade-up">
                         <div class="category-icon">
                             <svg width="64" height="64" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <circle cx="11" cy="11" r="8" stroke="currentColor" stroke-width="2"/>
@@ -126,7 +123,7 @@ get_header(); ?>
                     </div>
                     
                     <div class="service-subcategories">
-                        <div class="subcategory-card">
+                        <div class="subcategory-card animate-on-scroll animate-stagger animate-fade-up">
                             <h3>Local SEO</h3>
                             <p>Dominate local search results and attract customers in your area.</p>
                             <ul class="service-features">
@@ -136,9 +133,7 @@ get_header(); ?>
                                 <li>Local keyword targeting</li>
                             </ul>
                             <a href="<?php echo home_url('/local-seo'); ?>" class="service-link">Learn More</a>
-                        </div>
-
-                        <div class="subcategory-card">
+                        </div>                        <div class="subcategory-card animate-on-scroll animate-stagger animate-fade-up">
                             <h3>SEO Audit</h3>
                             <p>Comprehensive analysis of your website's SEO performance and opportunities.</p>
                             <ul class="service-features">
@@ -150,7 +145,7 @@ get_header(); ?>
                             <a href="<?php echo home_url('/seo-audit'); ?>" class="service-link">Learn More</a>
                         </div>
 
-                        <div class="subcategory-card">
+                        <div class="subcategory-card animate-on-scroll animate-stagger animate-fade-up">
                             <h3>Technical SEO</h3>
                             <p>Optimize your website's technical foundation for better search performance.</p>
                             <ul class="service-features">
@@ -162,7 +157,7 @@ get_header(); ?>
                             <a href="<?php echo home_url('/technical-seo'); ?>" class="service-link">Learn More</a>
                         </div>
 
-                        <div class="subcategory-card">
+                        <div class="subcategory-card animate-on-scroll animate-stagger animate-fade-up">
                             <h3>On-Page SEO</h3>
                             <p>Optimize individual pages to rank higher and earn more relevant traffic.</p>
                             <ul class="service-features">
@@ -174,7 +169,7 @@ get_header(); ?>
                             <a href="<?php echo home_url('/on-page-seo'); ?>" class="service-link">Learn More</a>
                         </div>
 
-                        <div class="subcategory-card">
+                        <div class="subcategory-card animate-on-scroll animate-stagger animate-fade-up">
                             <h3>White Label SEO</h3>
                             <p>Professional SEO services for agencies and resellers under your brand.</p>
                             <ul class="service-features">

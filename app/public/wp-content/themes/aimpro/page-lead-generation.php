@@ -15,13 +15,11 @@ get_header(); ?>
                 <h1><?php echo esc_html(get_post_meta(get_the_ID(), '_lead_generation_header_title', true) ?: 'Lead Generation (B2B/B2C)'); ?></h1>
                 <p class="page-subtitle"><?php echo esc_html(get_post_meta(get_the_ID(), '_lead_generation_header_subtitle', true) ?: 'Generate high-quality leads that convert into customers with proven strategies and targeted campaigns'); ?></p>
             </div>
-        </section>
-
-        <!-- Solution Overview -->
+        </section>        <!-- Solution Overview -->
         <section class="solution-overview">
             <div class="section-content">
                 <div class="overview-content">
-                    <div class="overview-text">
+                    <div class="overview-text animate-on-scroll animate-slide-left">
                         <h2><?php echo esc_html(get_post_meta(get_the_ID(), '_lead_generation_overview_title', true) ?: 'Turn Prospects Into Qualified Leads'); ?></h2>
                         <p><?php echo esc_html(get_post_meta(get_the_ID(), '_lead_generation_overview_content', true) ?: 'Lead generation is the lifeblood of any successful business. Our comprehensive lead generation strategies combine multiple touchpoints, compelling offers, and sophisticated targeting to attract and capture high-quality prospects who are ready to engage with your business.'); ?></p>
                         
@@ -45,7 +43,7 @@ get_header(); ?>
                                 ?>
                             </ul>
                         </div>
-                    </div>                    <div class="overview-image">
+                    </div>                    <div class="overview-image animate-on-scroll animate-slide-right">
                         <?php 
                         $image_url = get_post_meta(get_the_ID(), '_lead_generation_overview_image', true);
                         if (empty($image_url)) {
@@ -137,8 +135,7 @@ get_header(); ?>
 
                     foreach ($methods as $index => $method) :
                         $icon_index = $index % count($method_icons);
-                    ?>
-                    <div class="method-card">
+                    ?>                    <div class="method-card animate-on-scroll animate-stagger animate-fade-up">
                         <div class="method-icon">
                             <?php echo $method_icons[$icon_index]; ?>
                         </div>

@@ -7,10 +7,9 @@
 get_header(); ?>
 
 <main id="main" class="main-content">
-    <div class="container">
-          <!-- Page Header -->
+    <div class="container">          <!-- Page Header -->
         <section class="page-header">
-            <div class="page-header-content">
+            <div class="page-header-content animate-on-scroll animate-fade-up">
                 <h1><?php echo esc_html(get_post_meta(get_the_ID(), '_industries_header_title', true) ?: 'Industries We Serve'); ?></h1>
                 <p class="page-subtitle"><?php echo esc_html(get_post_meta(get_the_ID(), '_industries_header_subtitle', true) ?: 'Specialized digital marketing expertise across diverse sectors'); ?></p>
             </div>
@@ -19,10 +18,10 @@ get_header(); ?>
         <!-- Industries Introduction -->
         <section class="industries-intro">
             <div class="section-content">
-                <div class="intro-content">
+                <div class="intro-content animate-on-scroll animate-slide-left">
                     <h2><?php echo esc_html(get_post_meta(get_the_ID(), '_industries_intro_title', true) ?: 'Industry-Specific Digital Marketing Solutions'); ?></h2>
                     <p><?php echo esc_html(get_post_meta(get_the_ID(), '_industries_intro_content', true) ?: 'Every industry has unique challenges, customer behaviors, and marketing opportunities. Our team brings deep sector expertise and proven strategies tailored to your specific market, ensuring maximum ROI and sustainable growth.'); ?></p>
-                </div>                <div class="industry-stats" style="display: flex !important; justify-content: center !important; align-items: center !important; text-align: center !important; flex-wrap: wrap !important; gap: 2rem !important;">
+                </div>                <div class="industry-stats animate-on-scroll animate-slide-right" style="display: flex !important; justify-content: center !important; align-items: center !important; text-align: center !important; flex-wrap: wrap !important; gap: 2rem !important;">
                     <?php 
                     $industry_stats = get_post_meta(get_the_ID(), '_industries_stats', true);
                     if (empty($industry_stats)) {
@@ -44,7 +43,7 @@ get_header(); ?>
         </section>        <!-- Industries Grid -->
         <section class="service-overview">
             <div class="container">
-                <div class="section-header">
+                <div class="section-header animate-on-scroll animate-fade-up">
                     <h2><?php echo esc_html(get_post_meta(get_the_ID(), '_industries_expertise_title', true) ?: 'Our Industry Expertise'); ?></h2>
                     <p><?php echo esc_html(get_post_meta(get_the_ID(), '_industries_expertise_subtitle', true) ?: 'Specialized digital marketing solutions tailored to your industry\'s unique challenges and opportunities.'); ?></p>
                 </div>

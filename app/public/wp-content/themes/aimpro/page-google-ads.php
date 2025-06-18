@@ -178,15 +178,14 @@ get_header();
         ?>
         <div class="hero-background">
             <div class="hero-pattern"></div>
-        </div>
-        <div class="container">
-            <div class="hero-content">
+        </div>        <div class="container">
+            <div class="hero-content animate-on-scroll animate-fade-up">
                 <div class="hero-badge">
                     <span><?php echo esc_html($hero_badge); ?></span>
                 </div>
                 <h1><?php echo wp_kses_post($hero_title); ?></h1>
                 <p class="hero-subtitle"><?php echo wp_kses_post($hero_subtitle); ?></p>
-                <div class="hero-stats">
+                <div class="hero-stats animate-on-scroll animate-fade-up">
                     <div class="stat-item">
                         <span class="stat-number"><?php echo esc_html($hero_stat1_number); ?></span>
                         <span class="stat-label"><?php echo esc_html($hero_stat1_label); ?></span>
@@ -217,7 +216,7 @@ get_header();
         if (empty($services_subtitle)) $services_subtitle = $defaults['services_subtitle'];
         ?>
         <div class="container">
-            <div class="section-header">
+            <div class="section-header animate-on-scroll animate-fade-up">
                 <h2><?php echo esc_html($services_title); ?></h2>
                 <p><?php echo esc_html($services_subtitle); ?></p>
             </div>
@@ -246,7 +245,7 @@ get_header();
                         6 => '<path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle>'
                     ];
                 ?>
-                <div class="service-card">
+                <div class="service-card animate-on-scroll animate-stagger animate-fade-up">
                     <div class="service-icon">
                         <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                             <?php echo $service_icons[$i]; ?>
@@ -285,7 +284,7 @@ get_header();
         if (empty($case_study_results_intro)) $case_study_results_intro = $defaults['case_study_results_intro'];
         ?>
         <div class="container">
-            <div class="case-study-card">
+            <div class="case-study-card animate-on-scroll animate-fade-up">
                 <div class="case-study-content">
                     <div class="case-study-header">
                         <span class="case-study-label"><?php echo esc_html($case_study_label); ?></span>
@@ -296,7 +295,7 @@ get_header();
                         <p><strong>Our Solution:</strong> <?php echo esc_html($case_study_solution); ?></p>
                         <p><strong>The Results:</strong> <?php echo esc_html($case_study_results_intro); ?></p>
                     </div>
-                    <div class="case-study-results">
+                    <div class="case-study-results animate-on-scroll animate-fade-up">
                         <?php for ($i = 1; $i <= 4; $i++):
                             $case_result_number = get_post_meta(get_the_ID(), "_google_ads_case_result_{$i}_number", true);
                             if (empty($case_result_number)) $case_result_number = $defaults["case_result_{$i}_number"];
@@ -402,11 +401,10 @@ get_header();
                     
                     $industry_description = get_post_meta(get_the_ID(), "_google_ads_industry_description_{$i}", true);
                     if (empty($industry_description)) $industry_description = $defaults["industry_description_{$i}"];
-                ?>
-                <div class="industry-item">
+                ?>                <div class="industry-item animate-on-scroll animate-stagger animate-fade-up">
                     <h4><?php echo esc_html($industry_name); ?></h4>
                     <p><?php echo esc_html($industry_description); ?></p>
-                </div>                <?php endfor; ?>
+                </div><?php endfor; ?>
             </div>
         </div>
     </section>
@@ -420,9 +418,8 @@ get_header();
         
         $pricing_subtitle = get_post_meta(get_the_ID(), '_google_ads_pricing_subtitle', true);
         if (empty($pricing_subtitle)) $pricing_subtitle = $defaults['pricing_subtitle'];
-        ?>
-        <div class="container">
-            <div class="section-header">
+        ?>        <div class="container">
+            <div class="section-header animate-on-scroll animate-fade-up">
                 <h2><?php echo esc_html($pricing_title); ?></h2>
                 <p><?php echo esc_html($pricing_subtitle); ?></p>
             </div>
@@ -461,7 +458,7 @@ get_header();
                     // Convert features to array
                     $features_array = explode("\n", $package_features);
                 ?>
-                <div class="pricing-card <?php echo ($package_featured) ? 'featured' : ''; ?>">
+                <div class="pricing-card animate-on-scroll animate-stagger animate-fade-up <?php echo ($package_featured) ? 'featured' : ''; ?>">
                     <div class="pricing-header">
                         <h3><?php echo esc_html($package_name); ?></h3>
                         <div class="price"><?php echo esc_html($package_price); ?><span><?php echo esc_html($package_period); ?></span></div>
@@ -491,9 +488,8 @@ get_header();
         
         $testimonial_title = get_post_meta(get_the_ID(), '_google_ads_testimonial_title', true);
         if (empty($testimonial_title)) $testimonial_title = $defaults['testimonial_title'];
-        ?>
-        <div class="container">
-            <div class="testimonial-card">
+        ?>        <div class="container">
+            <div class="testimonial-card animate-on-scroll animate-fade-up">
                 <div class="testimonial-content">
                     <div class="quote-mark">"</div>
                     <p>"<?php echo esc_html($testimonial_quote); ?>"</p>
@@ -505,7 +501,7 @@ get_header();
             </div>
         </div>
     </section>    <!-- CTA Section -->
-    <section class="simple-cta-section">
+    <section class="simple-cta-section animate-on-scroll animate-scale-up">
         <?php
         // Get simple CTA data
         $simple_cta_title = get_post_meta(get_the_ID(), '_google_ads_simple_cta_title', true);

@@ -17,10 +17,9 @@ $header_subtitle = get_post_meta(get_the_ID(), '_local_seo_header_subtitle', tru
 
 <main id="main" class="main-content seo-service-page">
     <div class="container">
-        
-        <!-- Page Header -->
+          <!-- Page Header -->
         <section class="page-header">
-            <div class="page-header-content">
+            <div class="page-header-content animate-on-scroll animate-fade-up">
                 <h1><?php echo esc_html($header_title); ?></h1>
                 <p class="page-subtitle"><?php echo esc_html($header_subtitle); ?></p>
             </div>
@@ -30,7 +29,7 @@ $header_subtitle = get_post_meta(get_the_ID(), '_local_seo_header_subtitle', tru
         <section class="local-seo-overview">
             <div class="section-content">
                 <div class="overview-content">
-                    <div class="overview-text">
+                    <div class="overview-text animate-on-scroll animate-slide-left">
                         <?php
                         $overview_title = get_post_meta(get_the_ID(), '_local_seo_overview_title', true) ?: $defaults['overview_title'];
                         $overview_description = get_post_meta(get_the_ID(), '_local_seo_overview_description', true) ?: $defaults['overview_description'];
@@ -49,7 +48,7 @@ $header_subtitle = get_post_meta(get_the_ID(), '_local_seo_header_subtitle', tru
                             </ul>
                         </div>
                     </div>
-                    <div class="overview-image">
+                    <div class="overview-image animate-on-scroll animate-slide-right">
                         <?php
                         $overview_image = get_post_meta(get_the_ID(), '_local_seo_overview_image', true) ?: $defaults['overview_image'];
                         ?>
@@ -63,7 +62,7 @@ $header_subtitle = get_post_meta(get_the_ID(), '_local_seo_header_subtitle', tru
                 <?php
                 $services_title = get_post_meta(get_the_ID(), '_local_seo_services_title', true) ?: $defaults['services_title'];
                 ?>
-                <h2><?php echo esc_html($services_title); ?></h2>
+                <h2 class="animate-on-scroll animate-fade-up"><?php echo esc_html($services_title); ?></h2>
                 <div class="services-grid">
                     
                     <?php for ($i = 1; $i <= 6; $i++): 
@@ -72,7 +71,7 @@ $header_subtitle = get_post_meta(get_the_ID(), '_local_seo_header_subtitle', tru
                         $service_features = get_post_meta(get_the_ID(), "_local_seo_service_{$i}_features", true) ?: $defaults["service_{$i}_features"];
                     ?>
                     
-                    <div class="service-card">
+                    <div class="service-card animate-on-scroll animate-stagger animate-fade-up">
                         <div class="service-icon">
                             <?php 
                             // Service icons based on service number

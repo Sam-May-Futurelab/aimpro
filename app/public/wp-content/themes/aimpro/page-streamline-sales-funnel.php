@@ -33,16 +33,14 @@ get_header(); ?>
                 ?>
             </nav>
         </div>
-    </div>
-
-    <!-- Hero Section -->
+    </div>    <!-- Hero Section -->
     <section class="page-hero service-hero">
         <div class="container">
-            <div class="hero-content">
+            <div class="hero-content animate-on-scroll animate-fade-up">
                 <h1><?php echo esc_html(get_post_meta(get_the_ID(), 'streamline_hero_title', true) ?: 'Streamline Your Sales Funnel'); ?></h1>
                 <p class="hero-subtitle"><?php echo esc_html(get_post_meta(get_the_ID(), 'streamline_hero_subtitle', true) ?: 'Transform scattered marketing efforts into a cohesive, high-converting sales system that works around the clock.'); ?></p>
                 
-                <div class="hero-stats">
+                <div class="hero-stats animate-on-scroll animate-fade-up">
                     <div class="stat-item">
                         <div class="stat-number"><?php echo esc_html(get_post_meta(get_the_ID(), 'streamline_hero_stat_1_number', true) ?: '340%'); ?></div>
                         <div class="stat-label"><?php echo esc_html(get_post_meta(get_the_ID(), 'streamline_hero_stat_1_label', true) ?: 'Lead Quality Improvement'); ?></div>
@@ -66,7 +64,7 @@ get_header(); ?>
     </section>    <!-- Service Overview -->    <section class="service-overview">
         <div class="container">
             <div class="overview-content">
-                <div class="overview-text">
+                <div class="overview-text animate-on-scroll animate-slide-left">
                     <h2><?php echo esc_html(get_post_meta(get_the_ID(), 'streamline_overview_title', true) ?: 'Complete Sales Funnel Streamlining Solutions'); ?></h2>
                     <p><?php echo esc_html(get_post_meta(get_the_ID(), 'streamline_overview_description', true) ?: 'Eliminate inefficiencies and gaps in your current sales process with our systematic approach to funnel optimization and automation.'); ?></p>
                     
@@ -81,7 +79,7 @@ get_header(); ?>
                             <li><?php echo esc_html(get_post_meta(get_the_ID(), 'streamline_problem_6', true) ?: 'Manual processes slowing down conversions'); ?></li>
                         </ul>
                     </div>
-                </div>                <div class="overview-image">
+                </div>                <div class="overview-image animate-on-scroll animate-slide-right">
                     <?php 
                     $overview_image = get_post_meta(get_the_ID(), 'streamline_overview_image', true);
                     $default_image = get_template_directory_uri() . '/assets/images/services/streamline-sales-funnel.jpg';
@@ -94,15 +92,14 @@ get_header(); ?>
                     </div>
                 </div>
             </div><div class="services-grid">
-                <div class="service-item">
+                <div class="service-item animate-on-scroll animate-stagger animate-fade-up">
                     <div class="service-icon">
                         <i class="fas fa-search-plus"></i>
                     </div>
                     <h3><?php echo esc_html(get_post_meta(get_the_ID(), 'streamline_service_1_title', true) ?: 'Funnel Analysis & Audit'); ?></h3>
                     <p><?php echo esc_html(get_post_meta(get_the_ID(), 'streamline_service_1_desc', true) ?: 'Comprehensive review of your existing sales process to identify bottlenecks, gaps, and optimization opportunities.'); ?></p>
-                </div>
-                
-                <div class="service-item">
+                </div>                
+                <div class="service-item animate-on-scroll animate-stagger animate-fade-up">
                     <div class="service-icon">
                         <i class="fas fa-project-diagram"></i>
                     </div>
@@ -110,7 +107,7 @@ get_header(); ?>
                     <p><?php echo esc_html(get_post_meta(get_the_ID(), 'streamline_service_2_desc', true) ?: 'Visual mapping of your optimized sales journey with clear touchpoints and decision paths for maximum efficiency.'); ?></p>
                 </div>
                 
-                <div class="service-item">
+                <div class="service-item animate-on-scroll animate-stagger animate-fade-up">
                     <div class="service-icon">
                         <i class="fas fa-user-check"></i>
                     </div>
@@ -118,7 +115,7 @@ get_header(); ?>
                     <p><?php echo esc_html(get_post_meta(get_the_ID(), 'streamline_service_3_desc', true) ?: 'Automated lead scoring and qualification processes that ensure your team focuses on the highest-value prospects.'); ?></p>
                 </div>
                 
-                <div class="service-item">
+                <div class="service-item animate-on-scroll animate-stagger animate-fade-up">
                     <div class="service-icon">
                         <i class="fas fa-envelope-open-text"></i>
                     </div>
@@ -126,7 +123,7 @@ get_header(); ?>
                     <p><?php echo esc_html(get_post_meta(get_the_ID(), 'streamline_service_4_desc', true) ?: 'Refined email and communication sequences that move prospects smoothly through each stage of your funnel.'); ?></p>
                 </div>
                 
-                <div class="service-item">
+                <div class="service-item animate-on-scroll animate-stagger animate-fade-up">
                     <div class="service-icon">
                         <i class="fas fa-bolt"></i>
                     </div>
@@ -134,7 +131,7 @@ get_header(); ?>
                     <p><?php echo esc_html(get_post_meta(get_the_ID(), 'streamline_service_5_desc', true) ?: 'Strategic optimization of key conversion moments to reduce friction and increase completion rates.'); ?></p>
                 </div>
                 
-                <div class="service-item">
+                <div class="service-item animate-on-scroll animate-stagger animate-fade-up">
                     <div class="service-icon">
                         <i class="fas fa-chart-bar"></i>
                     </div>
@@ -147,7 +144,7 @@ get_header(); ?>
     <section class="case-study-section">
         <div class="container">
             <div class="case-study-content">
-                <div class="case-study-text">
+                <div class="case-study-text animate-on-scroll animate-slide-left">
                     <h2><?php echo esc_html(get_post_meta(get_the_ID(), 'streamline_case_title', true) ?: 'Case Study: TechFlow Solutions Results'); ?></h2>
                     <p class="case-study-intro"><?php echo esc_html(get_post_meta(get_the_ID(), 'streamline_case_intro', true) ?: 'A B2B software company struggling with low conversion rates and long sales cycles. We completely redesigned their funnel strategy and implemented automated nurturing sequences.'); ?></p>
                     
@@ -170,24 +167,22 @@ get_header(); ?>
                             ?>
                         </ul>
                     </div>
-                </div>
-                
-                <div class="case-study-results">
+                </div>                
+                <div class="case-study-results animate-on-scroll animate-slide-right">
                     <h3>The Results</h3>
                     <div class="results-grid">
-                        <div class="result-item">
+                        <div class="result-item animate-on-scroll animate-stagger animate-fade-up">
                             <div class="result-number"><?php echo esc_html(get_post_meta(get_the_ID(), 'streamline_result_1_number', true) ?: '340%'); ?></div>
                             <div class="result-label"><?php echo esc_html(get_post_meta(get_the_ID(), 'streamline_result_1_label', true) ?: 'Conversion Rate Increase'); ?></div>
-                        </div>
-                        <div class="result-item">
+                        </div>                        <div class="result-item animate-on-scroll animate-stagger animate-fade-up">
                             <div class="result-number"><?php echo esc_html(get_post_meta(get_the_ID(), 'streamline_result_2_number', true) ?: '45%'); ?></div>
                             <div class="result-label"><?php echo esc_html(get_post_meta(get_the_ID(), 'streamline_result_2_label', true) ?: 'Sales Cycle Reduction'); ?></div>
                         </div>
-                        <div class="result-item">
+                        <div class="result-item animate-on-scroll animate-stagger animate-fade-up">
                             <div class="result-number"><?php echo esc_html(get_post_meta(get_the_ID(), 'streamline_result_3_number', true) ?: '280%'); ?></div>
                             <div class="result-label"><?php echo esc_html(get_post_meta(get_the_ID(), 'streamline_result_3_label', true) ?: 'Lead Quality Improvement'); ?></div>
                         </div>
-                        <div class="result-item">
+                        <div class="result-item animate-on-scroll animate-stagger animate-fade-up">
                             <div class="result-number"><?php echo esc_html(get_post_meta(get_the_ID(), 'streamline_result_4_number', true) ?: '£125K'); ?></div>
                             <div class="result-label"><?php echo esc_html(get_post_meta(get_the_ID(), 'streamline_result_4_label', true) ?: 'Revenue Growth'); ?></div>
                         </div>
@@ -195,21 +190,17 @@ get_header(); ?>
                 </div>
             </div>
         </div>
-    </section>
-
-        <!-- Process Steps -->
+    </section>        <!-- Process Steps -->
         <section class="process-steps-section">
             <div class="container">
-                <h2><?php echo esc_html(get_post_meta(get_the_ID(), 'streamline_process_title', true) ?: 'Our Proven Funnel Optimization Process'); ?></h2>                <div class="process-steps">
-                    <div class="step-item">
+                <h2 class="animate-on-scroll animate-fade-up"><?php echo esc_html(get_post_meta(get_the_ID(), 'streamline_process_title', true) ?: 'Our Proven Funnel Optimization Process'); ?></h2>                <div class="process-steps">
+                    <div class="step-item animate-on-scroll animate-stagger animate-fade-up">
                         <div class="step-number"><span><?php echo esc_html(get_post_meta(get_the_ID(), 'streamline_step_1_number', true) ?: '01'); ?></span></div>
                         <div class="step-content">
                             <h3><?php echo esc_html(get_post_meta(get_the_ID(), 'streamline_step_1_title', true) ?: 'Audit & Analysis'); ?></h3>
                             <p><?php echo esc_html(get_post_meta(get_the_ID(), 'streamline_step_1_desc', true) ?: 'Comprehensive review of your current funnel performance and identification of optimization opportunities.'); ?></p>
                         </div>
-                    </div>
-
-                    <div class="step-item">
+                    </div>                    <div class="step-item animate-on-scroll animate-stagger animate-fade-up">
                         <div class="step-number"><span><?php echo esc_html(get_post_meta(get_the_ID(), 'streamline_step_2_number', true) ?: '02'); ?></span></div>
                         <div class="step-content">
                             <h3><?php echo esc_html(get_post_meta(get_the_ID(), 'streamline_step_2_title', true) ?: 'Strategy Development'); ?></h3>
@@ -217,13 +208,13 @@ get_header(); ?>
                         </div>
                     </div>
 
-                    <div class="step-item">
+                    <div class="step-item animate-on-scroll animate-stagger animate-fade-up">
                         <div class="step-number"><span><?php echo esc_html(get_post_meta(get_the_ID(), 'streamline_step_3_number', true) ?: '03'); ?></span></div>
                         <div class="step-content">
                             <h3><?php echo esc_html(get_post_meta(get_the_ID(), 'streamline_step_3_title', true) ?: 'Implementation'); ?></h3>
                             <p><?php echo esc_html(get_post_meta(get_the_ID(), 'streamline_step_3_desc', true) ?: 'Systematic implementation of optimizations and automation across all funnel touchpoints.'); ?></p>
                         </div>
-                    </div>                    <div class="step-item">
+                    </div>                    <div class="step-item animate-on-scroll animate-stagger animate-fade-up">
                         <div class="step-number"><span><?php echo esc_html(get_post_meta(get_the_ID(), 'streamline_step_4_number', true) ?: '04'); ?></span></div>
                         <div class="step-content">
                             <h3><?php echo esc_html(get_post_meta(get_the_ID(), 'streamline_step_4_title', true) ?: 'Monitor & Optimize'); ?></h3>
@@ -235,22 +226,19 @@ get_header(); ?>
                     <a href="<?php echo home_url('/contact'); ?>" class="btn-primary process-cta-btn">Optimize Your Sales Funnel</a>
                 </div>
             </div>
-        </section>
-
-        <!-- Why Choose Us Section -->
+        </section>        <!-- Why Choose Us Section -->
         <section class="why-choose-section">
             <div class="container">
-                <h2><?php echo esc_html(get_post_meta(get_the_ID(), 'streamline_why_title', true) ?: 'Why Choose AiMPro for Funnel Streamlining?'); ?></h2>
+                <h2 class="animate-on-scroll animate-fade-up"><?php echo esc_html(get_post_meta(get_the_ID(), 'streamline_why_title', true) ?: 'Why Choose AiMPro for Funnel Streamlining?'); ?></h2>
                 <div class="benefits-grid">
-                    <div class="benefit-item">
+                    <div class="benefit-item animate-on-scroll animate-stagger animate-fade-up">
                         <div class="benefit-icon">
                             <i class="fas fa-chart-line"></i>
                         </div>
                         <h3><?php echo esc_html(get_post_meta(get_the_ID(), 'streamline_benefit_1_title', true) ?: 'Data-Driven Approach'); ?></h3>
                         <p><?php echo esc_html(get_post_meta(get_the_ID(), 'streamline_benefit_1_desc', true) ?: 'Every optimization is backed by comprehensive analytics and A/B testing to ensure maximum ROI.'); ?></p>
-                    </div>
-                    
-                    <div class="benefit-item">
+                    </div>                    
+                    <div class="benefit-item animate-on-scroll animate-stagger animate-fade-up">
                         <div class="benefit-icon">
                             <i class="fas fa-trophy"></i>
                         </div>
@@ -258,7 +246,7 @@ get_header(); ?>
                         <p><?php echo esc_html(get_post_meta(get_the_ID(), 'streamline_benefit_2_desc', true) ?: '5+ years optimizing funnels across diverse industries with proven conversion improvements.'); ?></p>
                     </div>
                     
-                    <div class="benefit-item">
+                    <div class="benefit-item animate-on-scroll animate-stagger animate-fade-up">
                         <div class="benefit-icon">
                             <i class="fas fa-hands-helping"></i>
                         </div>
@@ -267,13 +255,11 @@ get_header(); ?>
                     </div>
                 </div>
             </div>
-        </section>
-
-        <!-- FAQ Section -->
+        </section>        <!-- FAQ Section -->
         <section class="faq-section">
             <div class="container">
-                <h2><?php echo esc_html(get_post_meta(get_the_ID(), 'streamline_faq_title', true) ?: 'Frequently Asked Questions'); ?></h2>
-                <div class="faq-container">
+                <h2 class="animate-on-scroll animate-fade-up"><?php echo esc_html(get_post_meta(get_the_ID(), 'streamline_faq_title', true) ?: 'Frequently Asked Questions'); ?></h2>
+                <div class="faq-container animate-on-scroll animate-fade-up">
                     <div class="faq-item">
                         <h3 class="faq-question"><?php echo esc_html(get_post_meta(get_the_ID(), 'streamline_faq_1_question', true) ?: 'How long does it take to see results from funnel optimization?'); ?></h3>
                         <div class="faq-answer">
@@ -297,11 +283,11 @@ get_header(); ?>
                 </div>
             </div>
         </section>        <!-- CTA Section -->
-        <section class="cta-section" id="contact">
+        <section class="cta-section animate-on-scroll animate-scale-up" id="contact">
             <div class="container">
                 <div class="cta-content">
                     <h2><?php echo esc_html(get_post_meta(get_the_ID(), 'streamline_cta_title', true) ?: 'Ready to Streamline Your Sales Funnel?'); ?></h2>
-                    <p><?php echo esc_html(get_post_meta(get_the_ID(), 'streamline_cta_description', true) ?: 'Let\'s analyze your current funnel and create a strategy that converts more prospects into customers.'); ?></p>                    <div class="cta-buttons">
+                    <p><?php echo esc_html(get_post_meta(get_the_ID(), 'streamline_cta_description', true) ?: 'Let\'s analyze your current funnel and create a strategy that converts more prospects into customers.'); ?></p><div class="cta-buttons">
                         <a href="<?php echo home_url('/contact'); ?>" class="btn-secondary streamlined"><?php echo esc_html(get_post_meta(get_the_ID(), 'streamline_cta_button_primary', true) ?: 'Start Your Funnel Audit'); ?></a>
                         <a href="<?php echo home_url('/book-consultation'); ?>" class="btn-outline streamlined"><?php echo esc_html(get_post_meta(get_the_ID(), 'streamline_cta_button_secondary', true) ?: 'Book Free Consultation'); ?></a>
                     </div>
