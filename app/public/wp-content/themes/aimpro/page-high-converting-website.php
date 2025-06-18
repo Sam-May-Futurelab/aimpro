@@ -52,8 +52,9 @@ get_header(); ?>
                                 ?>
                             </ul>
                         </div>
-                    </div>
-                    <div class="overview-image">                        <?php 
+                    </div>                    <div class="overview-image">                        
+                        <div class="image-wrapper">
+                        <?php 
                         $overview_image = get_post_meta(get_the_ID(), '_high_converting_website_overview_image', true);
                         if (!empty($overview_image)) {
                             echo wp_get_attachment_image($overview_image, 'full', false, array('alt' => 'High-Converting Website Strategy'));
@@ -61,6 +62,10 @@ get_header(); ?>
                             echo '<img src="' . get_template_directory_uri() . '/assets/images/solutions/website-conversion-overview.jpg" alt="High-Converting Website Strategy" />';
                         }
                         ?>
+                        </div>
+                        <div class="overview-image-cta">
+                            <a href="<?php echo home_url('/contact'); ?>" class="btn-primary overview-cta-btn">Improve Your Website</a>
+                        </div>
                     </div>
                 </div>
             </div>

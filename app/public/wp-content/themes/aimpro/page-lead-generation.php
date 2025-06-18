@@ -45,15 +45,19 @@ get_header(); ?>
                                 ?>
                             </ul>
                         </div>
-                    </div>
-                    <div class="overview-image">
+                    </div>                    <div class="overview-image">
                         <?php 
                         $image_url = get_post_meta(get_the_ID(), '_lead_generation_overview_image', true);
                         if (empty($image_url)) {
                             $image_url = get_template_directory_uri() . '/assets/images/solutions/lead-generation-overview.jpg';
                         }
                         ?>
-                        <img src="<?php echo esc_url($image_url); ?>" alt="Lead Generation Strategy" />
+                        <div class="image-wrapper">
+                            <img src="<?php echo esc_url($image_url); ?>" alt="Lead Generation Strategy" />
+                        </div>
+                        <div class="overview-image-cta">
+                            <a href="<?php echo home_url('/contact'); ?>" class="btn-primary overview-cta-btn">Generate More Leads</a>
+                        </div>
                     </div>
                 </div>
             </div>

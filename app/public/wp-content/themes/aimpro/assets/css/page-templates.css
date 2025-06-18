@@ -2397,3 +2397,70 @@
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
     border: 1px solid rgba(255, 255, 255, 0.1);
 }
+
+/* Solution Page Overview CTA Buttons */
+.solution-overview .overview-image {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.solution-overview .image-wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+}
+
+.solution-overview .overview-image-cta {
+    text-align: center;
+    margin-top: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.solution-overview .overview-cta-btn {
+    display: inline-block;
+    padding: 14px 28px;
+    background: linear-gradient(135deg, rgba(241, 90, 37, 0.9) 0%, rgba(230, 70, 20, 0.9) 100%);
+    color: #ffffff;
+    font-weight: 700;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    border-radius: 25px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: 
+        0 8px 15px rgba(241, 90, 37, 0.3),
+        inset 0 1px 0 rgba(255, 255, 255, 0.4),
+        inset 0 -1px 0 rgba(0, 0, 0, 0.1);
+    position: relative;
+    overflow: hidden;
+}
+
+.solution-overview .overview-cta-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 
+        0 12px 20px rgba(241, 90, 37, 0.4),
+        inset 0 1px 0 rgba(255, 255, 255, 0.4),
+        inset 0 -1px 0 rgba(0, 0, 0, 0.1);
+    background: linear-gradient(135deg, rgba(230, 70, 20, 0.95) 0%, rgba(210, 50, 10, 0.95) 100%);
+    color: #ffffff;
+    text-decoration: none;
+}
+
+@media (max-width: 991px) {
+    .solution-overview .overview-content {
+        flex-direction: column;
+    }
+    
+    .solution-overview .overview-image {
+        order: -1;
+        margin-bottom: 2rem;
+    }
+    
+    .solution-overview .overview-image-cta {
+        margin-top: 0;
+        margin-bottom: 1rem;
+    }
+}

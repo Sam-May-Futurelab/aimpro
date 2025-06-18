@@ -50,10 +50,17 @@ get_header(); ?>
                         <?php 
                         $overview_image = get_post_meta(get_the_ID(), '_automate_marketing_overview_image', true);
                         if ($overview_image): ?>
-                            <img src="<?php echo esc_url($overview_image); ?>" alt="Marketing Automation Strategy" />
+                            <div class="image-wrapper">
+                                <img src="<?php echo esc_url($overview_image); ?>" alt="Marketing Automation Strategy" />
+                            </div>
                         <?php else: ?>
-                            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/solutions/marketing-automation-overview.jpg" alt="Marketing Automation Strategy" />
+                            <div class="image-wrapper">
+                                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/solutions/marketing-automation-overview.jpg" alt="Marketing Automation Strategy" />
+                            </div>
                         <?php endif; ?>
+                        <div class="overview-image-cta">
+                            <a href="<?php echo home_url('/contact'); ?>" class="btn-primary overview-cta-btn">Automate Your Marketing</a>
+                        </div>
                     </div>
                 </div>
             </div>
