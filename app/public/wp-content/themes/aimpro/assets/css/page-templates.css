@@ -1322,36 +1322,26 @@
     position: relative;
     box-shadow: 0 4px 15px rgba(241, 90, 37, 0.3);
     z-index: 3;
+    text-align: center;
+    line-height: 1;
+    padding: 0;
+    margin: 0;
+}
+
+/* Fix for visual centering of 2-digit numbers */
+.streamline-funnel-page .step-number span {
+    display: inline-block;
+    transform: translateY(1px);
 }
 
 .step-content {
     flex: 1;
-    background: var(--glass-bg);
-    border-radius: 12px;
-    padding: 2rem;
-    border: 1px solid var(--glass-border);
+    background: rgba(255, 255, 255, 0.04);
     backdrop-filter: blur(10px);
-    transition: all 0.3s ease;
-    margin-top: 10px;
-}
-
-.step-content:hover {
-    transform: translateY(-5px);
-    box-shadow: var(--shadow-lg);
-    border-color: var(--glass-orange-border);
-}
-
-.step-content h3 {
-    font-size: 1.5rem;
-    font-weight: 600;
-    color: var(--text-primary);
-    margin-bottom: 1rem;
-}
-
-.step-content p {
-    color: var(--text-secondary);
-    line-height: 1.6;
-    margin: 0;
+    border-radius: 12px;
+    padding: 1.5rem;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 /* Light theme adjustments */
@@ -2271,65 +2261,139 @@
     }
 }
 
-/* Templates & Tools Page - Center curly underline in benefits section */
-.templates-tools-page .benefits-section .section-title {
-    text-align: center;
-}
-
-.templates-tools-page .benefits-section .section-title .curly-underline::after {
-    left: 50% !important;
-    transform: translateX(-50%) !important;
-}
-
-/* Fix for straight line underline in benefits section - center it */
-.templates-tools-page .benefits-section .section-title::after,
-.benefits-section .section-title::after,
-.benefits-section h2::after {
-    content: '' !important;
-    position: absolute !important;
-    bottom: -10px !important;
-    left: 50% !important;
-    transform: translateX(-50%) !important;
-    width: 80px !important;
-    height: 4px !important;
-    background: linear-gradient(45deg, #f15a25, #ff7849) !important;
-    border-radius: 2px !important;
-}
-
-/* Alternative: if you want to remove the straight line entirely */
-.templates-tools-page .benefits-section .section-title.no-underline::after,
-.benefits-section .section-title.no-underline::after {
-    display: none !important;
-}
-
-/* Fix for filter buttons alignment - center them */
-.filter-buttons {
+/* Streamline Sales Funnel - Overview Section */
+.streamline-funnel-page .overview-content {
     display: flex;
-    gap: 1rem;
-    justify-content: center;
     flex-wrap: wrap;
-    margin-bottom: 3rem;
-    padding-bottom: 2rem;
-    border-bottom: 2px solid #f1f5f9;
+    gap: 3rem;
+    align-items: flex-start;
 }
 
-/* Fix excessive spacing above tools grid */
-#tools-section {
-    padding-top: 0 !important;
-    margin-top: 0 !important;
+.streamline-funnel-page .overview-text {
+    flex: 1;
+    min-width: 300px;
 }
 
-.templates-tools-page .tools-grid {
-    margin-top: 0 !important;
+.streamline-funnel-page .overview-image {
+    flex: 1;
+    min-width: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
-/* Reduce spacing from filter section */
-.templates-tools-page .filter-section {
-    margin-bottom: 1rem !important;
-    padding-bottom: 0 !important;
+.streamline-funnel-page .overview-image .image-wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1.5rem;
 }
 
-.templates-tools-page .filter-buttons {
-    margin-bottom: 1rem !important;
-    padding-bottom: 1rem !important;
+.streamline-funnel-page .overview-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.streamline-funnel-page .overview-image img:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+}
+
+.streamline-funnel-page .overview-image-cta {
+    text-align: center;
+    margin-top: 1.5rem;
+}
+
+.streamline-funnel-page .overview-cta-btn {
+    display: inline-block;
+    padding: 14px 28px;
+    background: linear-gradient(135deg, rgba(241, 90, 37, 0.9) 0%, rgba(230, 70, 20, 0.9) 100%);
+    color: #ffffff;
+    font-weight: 700;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    border-radius: 25px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: 
+        0 8px 15px rgba(241, 90, 37, 0.3),
+        inset 0 1px 0 rgba(255, 255, 255, 0.4),
+        inset 0 -1px 0 rgba(0, 0, 0, 0.1);
+    position: relative;
+    overflow: hidden;
+}
+
+.streamline-funnel-page .overview-cta-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 
+        0 12px 20px rgba(241, 90, 37, 0.4),
+        inset 0 1px 0 rgba(255, 255, 255, 0.4),
+        inset 0 -1px 0 rgba(0, 0, 0, 0.1);
+    background: linear-gradient(135deg, rgba(230, 70, 20, 0.95) 0%, rgba(210, 50, 10, 0.95) 100%);
+    color: #ffffff;
+    text-decoration: none;
+}
+
+@media (max-width: 991px) {
+    .streamline-funnel-page .overview-content {
+        flex-direction: column;
+    }
+    
+    .streamline-funnel-page .overview-image {
+        order: -1;
+        margin-bottom: 2rem;
+    }
+    
+    .streamline-funnel-page .overview-image-cta {
+        margin-top: 1rem;
+        margin-bottom: 2rem;
+    }
+}
+
+/* Streamline Sales Funnel - Process Steps Section */
+.streamline-funnel-page .step-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.streamline-funnel-page .step-number {
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, #f15a25 0%, #e64614 100%);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 1.5rem;
+    font-weight: 800;
+    box-shadow: 0 10px 20px rgba(241, 90, 37, 0.3);
+    text-align: center;
+    line-height: 1;
+    padding: 0;
+    margin: 0;
+    position: relative;
+}
+
+/* Fix for visual centering of 2-digit numbers */
+.streamline-funnel-page .step-number span {
+    display: inline-block;
+    transform: translateY(1px);
+}
+
+.streamline-funnel-page .step-content {
+    flex: 1;
+    background: rgba(255, 255, 255, 0.04);
+    backdrop-filter: blur(10px);
+    border-radius: 12px;
+    padding: 1.5rem;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.1);
 }

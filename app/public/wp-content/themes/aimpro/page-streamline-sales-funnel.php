@@ -6,630 +6,302 @@
 
 get_header(); ?>
 
-<main id="main" class="main-content">
-    <div class="container">
-        
-        <!-- Page Header -->
-        <section class="page-header">
-            <div class="page-header-content">
-                <h1><?php echo get_post_meta(get_the_ID(), 'streamline_sales_funnel_header_title', true) ?: 'Streamline Your Sales Funnel'; ?></h1>
-                <p class="page-subtitle"><?php echo get_post_meta(get_the_ID(), 'streamline_sales_funnel_header_subtitle', true) ?: 'Optimize every stage of your sales process to convert more prospects into paying customers'; ?></p>
-            </div>
-        </section>
-
-        <!-- Solution Overview -->
-        <section class="solution-overview">
-            <div class="section-content">
-                <div class="overview-content">
-                    <div class="overview-text">
-                        <h2><?php echo get_post_meta(get_the_ID(), 'streamline_sales_funnel_overview_title', true) ?: 'Turn More Prospects Into Customers'; ?></h2>
-                        <p><?php echo get_post_meta(get_the_ID(), 'streamline_sales_funnel_overview_description', true) ?: 'A well-optimized sales funnel is the difference between business growth and stagnation. Our systematic approach identifies bottlenecks, eliminates friction, and creates a smooth journey that guides prospects from awareness to purchase. We build funnels that work around the clock to grow your business.'; ?></p>
-                        
-                        <div class="solution-challenges">
-                            <h3><?php echo get_post_meta(get_the_ID(), 'streamline_sales_funnel_problems_title', true) ?: 'Sales Funnel Problems We Solve:'; ?></h3>
-                            <ul>
-                                <?php
-                                $problems = get_post_meta(get_the_ID(), 'streamline_sales_funnel_problems', true);
-                                if (!empty($problems) && is_array($problems)) {
-                                    foreach ($problems as $problem) {
-                                        echo '<li>' . esc_html($problem) . '</li>';
-                                    }
-                                } else {
-                                    $default_problems = array(
-                                        'High drop-off rates between stages',
-                                        'Poor lead qualification processes',
-                                        'Inconsistent follow-up sequences',
-                                        'Lack of funnel visibility and tracking',
-                                        'Misaligned marketing and sales efforts',
-                                        'Manual processes slowing conversions'
-                                    );
-                                    foreach ($default_problems as $problem) {
-                                        echo '<li>' . esc_html($problem) . '</li>';
-                                    }
-                                }
-                                ?>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="overview-image">
-                        <?php 
-                        $overview_image = get_post_meta(get_the_ID(), 'streamline_sales_funnel_overview_image', true);
-                        if (!empty($overview_image)) {
-                            echo wp_get_attachment_image($overview_image, 'full', false, array('alt' => 'Sales Funnel Optimization Strategy'));
-                        } else {
-                            echo '<img src="' . get_template_directory_uri() . '/assets/images/solutions/sales-funnel-overview.jpg" alt="Sales Funnel Optimization Strategy" />';
-                        }
-                        ?>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Sales Funnel Services -->
-        <section class="funnel-services">
-            <div class="section-content">
-                <h2><?php echo get_post_meta(get_the_ID(), 'streamline_sales_funnel_strategy_title', true) ?: 'Our Sales Funnel Optimization Services'; ?></h2>
-                <div class="services-grid">
-                    <?php
-                    $services = get_post_meta(get_the_ID(), 'streamline_sales_funnel_services', true);
-                    if (!empty($services) && is_array($services)) {
-                        foreach ($services as $service) {
-                            ?>
-                            <div class="service-card">
-                                <div class="service-icon"><!-- Optionally add icon meta here --></div>
-                                <div class="service-content">
-                                    <h3><?php echo esc_html($service['title']); ?></h3>
-                                    <p><?php echo esc_html($service['description']); ?></p>
-                                    <?php if (!empty($service['features']) && is_array($service['features'])) : ?>
-                                        <ul class="service-features">
-                                            <?php foreach ($service['features'] as $feature) : ?>
-                                                <li><?php echo esc_html($feature); ?></li>
-                                            <?php endforeach; ?>
-                                        </ul>
-                                    <?php endif; ?>
-                                </div>
-                            </div>
-                            <?php
-                        }
+<main id="primary" class="service-page streamline-funnel-page">
+    <!-- Breadcrumbs -->
+    <div class="breadcrumbs-container">
+        <div class="container">
+            <nav class="breadcrumbs">
+                <?php
+                $breadcrumb_path = get_post_meta(get_the_ID(), 'streamline_breadcrumb_path', true) ?: 'Home › Services › Marketing Automation › Streamline Sales Funnel';
+                $parts = explode(' › ', $breadcrumb_path);
+                $urls = array(
+                    'Home' => home_url(),
+                    'Services' => home_url('/services'),
+                    'Marketing Automation' => home_url('/marketing-automation'),
+                    'Streamline Sales Funnel' => ''
+                );
+                
+                foreach ($parts as $index => $part) {
+                    if ($index < count($parts) - 1) {
+                        $url = isset($urls[$part]) ? $urls[$part] : '#';
+                        echo '<a href="' . esc_url($url) . '">' . esc_html($part) . '</a>';
+                        echo '<span class="separator">›</span>';
                     } else {
-                        ?>
-                        <div class="service-card">
-                            <div class="service-icon">
-                                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                    <path d="M2 17L12 22L22 17" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                    <path d="M2 12L12 17L22 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                </svg>
-                            </div>
-                            <div class="service-content">
-                                <h3>Funnel Analysis & Mapping</h3>
-                                <p>Comprehensive audit of your current sales process to identify opportunities and bottlenecks.</p>
-                                <ul class="service-features">
-                                    <li>Customer journey mapping</li>
-                                    <li>Conversion rate analysis</li>
-                                    <li>Drop-off point identification</li>
-                                    <li>Competitor funnel research</li>
-                                </ul>
-                            </div>
-                        </div>
-
-                        <div class="service-card">
-                            <div class="service-icon">
-                                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"/>
-                                    <path d="M12 6V12L16 14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                </svg>
-                            </div>
-                            <div class="service-content">
-                                <h3>Lead Qualification System</h3>
-                                <p>Implement scoring and qualification systems to focus efforts on high-value prospects.</p>
-                                <ul class="service-features">
-                                    <li>Lead scoring model creation</li>
-                                    <li>Qualification criteria development</li>
-                                    <li>Automated lead routing</li>
-                                    <li>Sales-ready lead identification</li>
-                                </ul>
-                            </div>
-                        </div>
-
-                        <div class="service-card">
-                            <div class="service-icon">
-                                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M21 16V8A2 2 0 0 0 19 6H5A2 2 0 0 0 3 8V16A2 2 0 0 0 5 18H19A2 2 0 0 0 21 16Z" stroke="currentColor" stroke-width="2"/>
-                                    <polyline points="7,9 12,13 17,9" stroke="currentColor" stroke-width="2"/>
-                                </svg>
-                            </div>
-                            <div class="service-content">
-                                <h3>Automated Follow-Up Sequences</h3>
-                                <p>Create personalized email sequences that nurture leads through the buying process.</p>
-                                <ul class="service-features">
-                                    <li>Drip campaign development</li>
-                                    <li>Behavioral trigger sequences</li>
-                                    <li>Personalization strategies</li>
-                                    <li>Multi-channel follow-up</li>
-                                </ul>
-                            </div>
-                        </div>
-
-                        <div class="service-card">
-                            <div class="service-icon">
-                                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <rect x="2" y="4" width="20" height="16" rx="2" stroke="currentColor" stroke-width="2"/>
-                                    <path d="M7 15L10 12L13 15L17 9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                </svg>
-                            </div>
-                            <div class="service-content">
-                                <h3>Conversion Optimization</h3>
-                                <p>Optimize each funnel stage to improve conversion rates and reduce friction.</p>
-                                <ul class="service-features">
-                                    <li>Landing page optimization</li>
-                                    <li>Form conversion improvement</li>
-                                    <li>Checkout process streamlining</li>
-                                    <li>A/B testing implementation</li>
-                                </ul>
-                            </div>
-                        </div>
-
-                        <div class="service-card">
-                            <div class="service-icon">
-                                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M14 2H6A2 2 0 0 0 4 4V20A2 2 0 0 0 6 22H18A2 2 0 0 0 20 20V8L14 2Z" stroke="currentColor" stroke-width="2"/>
-                                    <polyline points="14,2 14,8 20,8" stroke="currentColor" stroke-width="2"/>
-                                    <line x1="16" y1="13" x2="8" y2="13" stroke="currentColor" stroke-width="2"/>
-                                    <line x1="16" y1="17" x2="8" y2="17" stroke="currentColor" stroke-width="2"/>
-                                </svg>
-                            </div>
-                            <div class="service-content">
-                                <h3>Sales Process Documentation</h3>
-                                <p>Create clear processes and playbooks for consistent sales performance.</p>
-                                <ul class="service-features">
-                                    <li>Sales playbook creation</li>
-                                    <li>Process documentation</li>
-                                    <li>Training material development</li>
-                                    <li>Performance tracking setup</li>
-                                </ul>
-                            </div>
-                        </div>
-
-                        <div class="service-card">
-                            <div class="service-icon">
-                                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <line x1="12" y1="1" x2="12" y2="23" stroke="currentColor" stroke-width="2"/>
-                                    <path d="M17 5H9.5A3.5 3.5 0 0 0 6 8.5V8.5A3.5 3.5 0 0 0 9.5 12H14.5A3.5 3.5 0 0 1 18 15.5V15.5A3.5 3.5 0 0 1 14.5 19H6" stroke="currentColor" stroke-width="2"/>
-                                </svg>
-                            </div>
-                            <div class="service-content">
-                                <h3>Revenue Tracking & Analytics</h3>
-                                <p>Implement comprehensive tracking to measure and optimize funnel performance.</p>
-                                <ul class="service-features">
-                                    <li>Revenue attribution setup</li>
-                                    <li>Funnel analytics dashboard</li>
-                                    <li>Performance reporting</li>
-                                    <li>ROI measurement tools</li>
-                                </ul>
-                            </div>
-                        </div>
-                        <?php
+                        echo '<span class="current">' . esc_html($part) . '</span>';
                     }
-                    ?>
+                }
+                ?>
+            </nav>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="page-hero service-hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1><?php echo esc_html(get_post_meta(get_the_ID(), 'streamline_hero_title', true) ?: 'Streamline Your Sales Funnel'); ?></h1>
+                <p class="hero-subtitle"><?php echo esc_html(get_post_meta(get_the_ID(), 'streamline_hero_subtitle', true) ?: 'Transform scattered marketing efforts into a cohesive, high-converting sales system that works around the clock.'); ?></p>
+                
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <div class="stat-number"><?php echo esc_html(get_post_meta(get_the_ID(), 'streamline_hero_stat_1_number', true) ?: '340%'); ?></div>
+                        <div class="stat-label"><?php echo esc_html(get_post_meta(get_the_ID(), 'streamline_hero_stat_1_label', true) ?: 'Lead Quality Improvement'); ?></div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number"><?php echo esc_html(get_post_meta(get_the_ID(), 'streamline_hero_stat_2_number', true) ?: '65%'); ?></div>
+                        <div class="stat-label"><?php echo esc_html(get_post_meta(get_the_ID(), 'streamline_hero_stat_2_label', true) ?: 'Faster Sales Cycle'); ?></div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number"><?php echo esc_html(get_post_meta(get_the_ID(), 'streamline_hero_stat_3_number', true) ?: '180%'); ?></div>
+                        <div class="stat-label"><?php echo esc_html(get_post_meta(get_the_ID(), 'streamline_hero_stat_3_label', true) ?: 'Revenue Growth'); ?></div>
+                    </div>
+                </div>
+                
+                <div class="hero-ctas">
+                    <a href="#contact" class="btn-primary streamlined"><?php echo esc_html(get_post_meta(get_the_ID(), 'streamline_hero_primary_btn', true) ?: 'Optimize My Funnel'); ?></a>
+                    <a href="#audit" class="btn-outline streamlined"><?php echo esc_html(get_post_meta(get_the_ID(), 'streamline_hero_secondary_btn', true) ?: 'Free Audit'); ?></a>
                 </div>
             </div>
-        </section>
-
-        <!-- Funnel Success Story -->
-        <section class="funnel-case-study">
-            <div class="section-content">
-                <div class="case-study-content">
-                    <div class="case-study-text">
-                        <span class="case-study-label"><?php echo get_post_meta(get_the_ID(), 'streamline_sales_funnel_case_label', true) ?: 'Success Story'; ?></span>
-                        <h2><?php echo get_post_meta(get_the_ID(), 'streamline_sales_funnel_case_title', true) ?: 'TechFlow Solutions: 400% Sales Velocity Increase'; ?></h2>
-                        <p><?php echo get_post_meta(get_the_ID(), 'streamline_sales_funnel_case_description', true) ?: 'TechFlow Solutions, a B2B software company, had a complex 6-month sales cycle with low conversion rates and high customer acquisition costs.'; ?></p>
-                        <div class="case-study-challenge">
-                            <h3><?php echo get_post_meta(get_the_ID(), 'streamline_sales_funnel_case_challenge_title', true) ?: 'The Challenge'; ?></h3>
-                            <ul>
-                                <?php
-                                $challenges = get_post_meta(get_the_ID(), 'streamline_sales_funnel_case_challenge', true);
-                                if (!empty($challenges) && is_array($challenges)) {
-                                    foreach ($challenges as $challenge) {
-                                        echo '<li>' . esc_html($challenge) . '</li>';
-                                    }
-                                } else {
-                                    $default = array('6-month average sales cycle','12% lead-to-customer conversion rate','$8,500 customer acquisition cost','Poor visibility into funnel performance');
-                                    foreach ($default as $challenge) echo '<li>' . esc_html($challenge) . '</li>';
-                                }
-                                ?>
-                            </ul>
-                        </div>
-                        <div class="case-study-solution">
-                            <h3><?php echo get_post_meta(get_the_ID(), 'streamline_sales_funnel_case_solution_title', true) ?: 'Our Solution'; ?></h3>
-                            <ul>
-                                <?php
-                                $solutions = get_post_meta(get_the_ID(), 'streamline_sales_funnel_case_solution', true);
-                                if (!empty($solutions) && is_array($solutions)) {
-                                    foreach ($solutions as $solution) {
-                                        echo '<li>' . esc_html($solution) . '</li>';
-                                    }
-                                } else {
-                                    $default = array('Complete funnel redesign and optimization','Automated lead qualification system','Multi-touch nurture sequences','Sales process standardization');
-                                    foreach ($default as $solution) echo '<li>' . esc_html($solution) . '</li>';
-                                }
-                                ?>
-                            </ul>
-                        </div>
+        </div>
+    </section>    <!-- Service Overview -->    <section class="service-overview">
+        <div class="container">
+            <div class="overview-content">
+                <div class="overview-text">
+                    <h2><?php echo esc_html(get_post_meta(get_the_ID(), 'streamline_overview_title', true) ?: 'Complete Sales Funnel Streamlining Solutions'); ?></h2>
+                    <p><?php echo esc_html(get_post_meta(get_the_ID(), 'streamline_overview_description', true) ?: 'Eliminate inefficiencies and gaps in your current sales process with our systematic approach to funnel optimization and automation.'); ?></p>
+                    
+                    <div class="solution-challenges">
+                        <h3><?php echo esc_html(get_post_meta(get_the_ID(), 'streamline_problems_title', true) ?: 'Sales Funnel Problems We Solve:'); ?></h3>
+                        <ul>
+                            <li><?php echo esc_html(get_post_meta(get_the_ID(), 'streamline_problem_1', true) ?: 'High drop-off rates between funnel stages'); ?></li>
+                            <li><?php echo esc_html(get_post_meta(get_the_ID(), 'streamline_problem_2', true) ?: 'Poor lead qualification and scoring systems'); ?></li>
+                            <li><?php echo esc_html(get_post_meta(get_the_ID(), 'streamline_problem_3', true) ?: 'Inconsistent follow-up and nurturing sequences'); ?></li>
+                            <li><?php echo esc_html(get_post_meta(get_the_ID(), 'streamline_problem_4', true) ?: 'Lack of funnel visibility and performance tracking'); ?></li>
+                            <li><?php echo esc_html(get_post_meta(get_the_ID(), 'streamline_problem_5', true) ?: 'Misaligned marketing and sales efforts'); ?></li>
+                            <li><?php echo esc_html(get_post_meta(get_the_ID(), 'streamline_problem_6', true) ?: 'Manual processes slowing down conversions'); ?></li>
+                        </ul>
                     </div>
-                    <div class="case-study-results">
-                        <h3><?php echo get_post_meta(get_the_ID(), 'streamline_sales_funnel_case_results_title', true) ?: 'Results After 6 Months'; ?></h3>
-                        <div class="results-grid">
-                            <?php
-                            $results = get_post_meta(get_the_ID(), 'streamline_sales_funnel_case_results', true);
-                            if (!empty($results) && is_array($results)) {
-                                foreach ($results as $result) {
-                                    echo '<div class="result-item"><div class="result-number">' . esc_html($result['value']) . '</div><div class="result-label">' . esc_html($result['label']) . '</div></div>';
+                </div>                <div class="overview-image">
+                    <?php 
+                    $overview_image = get_post_meta(get_the_ID(), 'streamline_overview_image', true);
+                    $default_image = get_template_directory_uri() . '/assets/images/services/streamline-sales-funnel.jpg';
+                    ?>
+                    <div class="image-wrapper">
+                        <img src="<?php echo esc_url($overview_image ?: $default_image); ?>" alt="Sales Funnel Streamlining" />
+                    </div>
+                    <div class="overview-image-cta">
+                        <a href="<?php echo home_url('/contact'); ?>" class="btn-primary overview-cta-btn">Streamline Your Sales Funnel</a>
+                    </div>
+                </div>
+            </div><div class="services-grid">
+                <div class="service-item">
+                    <div class="service-icon">
+                        <i class="fas fa-search-plus"></i>
+                    </div>
+                    <h3><?php echo esc_html(get_post_meta(get_the_ID(), 'streamline_service_1_title', true) ?: 'Funnel Analysis & Audit'); ?></h3>
+                    <p><?php echo esc_html(get_post_meta(get_the_ID(), 'streamline_service_1_desc', true) ?: 'Comprehensive review of your existing sales process to identify bottlenecks, gaps, and optimization opportunities.'); ?></p>
+                </div>
+                
+                <div class="service-item">
+                    <div class="service-icon">
+                        <i class="fas fa-project-diagram"></i>
+                    </div>
+                    <h3><?php echo esc_html(get_post_meta(get_the_ID(), 'streamline_service_2_title', true) ?: 'Process Mapping & Design'); ?></h3>
+                    <p><?php echo esc_html(get_post_meta(get_the_ID(), 'streamline_service_2_desc', true) ?: 'Visual mapping of your optimized sales journey with clear touchpoints and decision paths for maximum efficiency.'); ?></p>
+                </div>
+                
+                <div class="service-item">
+                    <div class="service-icon">
+                        <i class="fas fa-user-check"></i>
+                    </div>
+                    <h3><?php echo esc_html(get_post_meta(get_the_ID(), 'streamline_service_3_title', true) ?: 'Lead Qualification System'); ?></h3>
+                    <p><?php echo esc_html(get_post_meta(get_the_ID(), 'streamline_service_3_desc', true) ?: 'Automated lead scoring and qualification processes that ensure your team focuses on the highest-value prospects.'); ?></p>
+                </div>
+                
+                <div class="service-item">
+                    <div class="service-icon">
+                        <i class="fas fa-envelope-open-text"></i>
+                    </div>
+                    <h3><?php echo esc_html(get_post_meta(get_the_ID(), 'streamline_service_4_title', true) ?: 'Nurture Sequence Optimization'); ?></h3>
+                    <p><?php echo esc_html(get_post_meta(get_the_ID(), 'streamline_service_4_desc', true) ?: 'Refined email and communication sequences that move prospects smoothly through each stage of your funnel.'); ?></p>
+                </div>
+                
+                <div class="service-item">
+                    <div class="service-icon">
+                        <i class="fas fa-bolt"></i>
+                    </div>
+                    <h3><?php echo esc_html(get_post_meta(get_the_ID(), 'streamline_service_5_title', true) ?: 'Conversion Point Enhancement'); ?></h3>
+                    <p><?php echo esc_html(get_post_meta(get_the_ID(), 'streamline_service_5_desc', true) ?: 'Strategic optimization of key conversion moments to reduce friction and increase completion rates.'); ?></p>
+                </div>
+                
+                <div class="service-item">
+                    <div class="service-icon">
+                        <i class="fas fa-chart-bar"></i>
+                    </div>
+                    <h3><?php echo esc_html(get_post_meta(get_the_ID(), 'streamline_service_6_title', true) ?: 'Performance Monitoring'); ?></h3>
+                    <p><?php echo esc_html(get_post_meta(get_the_ID(), 'streamline_service_6_desc', true) ?: 'Ongoing analytics and reporting to track funnel performance and identify continuous improvement opportunities.'); ?></p>
+                </div>
+            </div>
+        </div>
+    </section>    <!-- Case Study Section -->
+    <section class="case-study-section">
+        <div class="container">
+            <div class="case-study-content">
+                <div class="case-study-text">
+                    <h2><?php echo esc_html(get_post_meta(get_the_ID(), 'streamline_case_title', true) ?: 'Case Study: TechFlow Solutions Results'); ?></h2>
+                    <p class="case-study-intro"><?php echo esc_html(get_post_meta(get_the_ID(), 'streamline_case_intro', true) ?: 'A B2B software company struggling with low conversion rates and long sales cycles. We completely redesigned their funnel strategy and implemented automated nurturing sequences.'); ?></p>
+                    
+                    <div class="case-study-challenge">
+                        <h3>The Challenge</h3>
+                        <p><?php echo esc_html(get_post_meta(get_the_ID(), 'streamline_case_challenge', true) ?: 'TechFlow Solutions was struggling with a 12% conversion rate and losing 68% of qualified leads due to poor follow-up processes and a fragmented sales funnel with multiple drop-off points.'); ?></p>
+                    </div>
+                    
+                    <div class="case-study-solution">
+                        <h3>Our Funnel Solution</h3>
+                        <ul>
+                            <?php 
+                            $solution_points = get_post_meta(get_the_ID(), 'streamline_case_solution', true) ?: "Redesigned complete 7-stage funnel with optimized touchpoints\nImplemented automated lead scoring and qualification system\nCreated personalized nurturing sequences based on prospect behavior\nBuilt conversion-optimized landing pages for each funnel stage\nSet up comprehensive analytics and performance tracking\nIntegrated CRM with marketing automation for seamless handoffs";
+                            $points = explode("\n", $solution_points);
+                            foreach ($points as $point) {
+                                if (trim($point)) {
+                                    echo '<li>' . esc_html(trim($point)) . '</li>';
                                 }
-                            } else {
-                                $default = array(
-                                    array('value'=>'400%','label'=>'Sales Velocity Increase'),
-                                    array('value'=>'45%','label'=>'Conversion Rate Improvement'),
-                                    array('value'=>'65%','label'=>'Sales Cycle Reduction'),
-                                    array('value'=>'$3,200','label'=>'Reduced CAC'),
-                                );
-                                foreach ($default as $result) echo '<div class="result-item"><div class="result-number">' . esc_html($result['value']) . '</div><div class="result-label">' . esc_html($result['label']) . '</div></div>';
                             }
                             ?>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="case-study-results">
+                    <h3>The Results</h3>
+                    <div class="results-grid">
+                        <div class="result-item">
+                            <div class="result-number"><?php echo esc_html(get_post_meta(get_the_ID(), 'streamline_result_1_number', true) ?: '340%'); ?></div>
+                            <div class="result-label"><?php echo esc_html(get_post_meta(get_the_ID(), 'streamline_result_1_label', true) ?: 'Conversion Rate Increase'); ?></div>
                         </div>
-                        <a href="<?php echo get_post_meta(get_the_ID(), 'streamline_sales_funnel_case_link', true) ?: home_url('/case-studies'); ?>" class="case-study-link">Read Full Case Study</a>
+                        <div class="result-item">
+                            <div class="result-number"><?php echo esc_html(get_post_meta(get_the_ID(), 'streamline_result_2_number', true) ?: '45%'); ?></div>
+                            <div class="result-label"><?php echo esc_html(get_post_meta(get_the_ID(), 'streamline_result_2_label', true) ?: 'Sales Cycle Reduction'); ?></div>
+                        </div>
+                        <div class="result-item">
+                            <div class="result-number"><?php echo esc_html(get_post_meta(get_the_ID(), 'streamline_result_3_number', true) ?: '280%'); ?></div>
+                            <div class="result-label"><?php echo esc_html(get_post_meta(get_the_ID(), 'streamline_result_3_label', true) ?: 'Lead Quality Improvement'); ?></div>
+                        </div>
+                        <div class="result-item">
+                            <div class="result-number"><?php echo esc_html(get_post_meta(get_the_ID(), 'streamline_result_4_number', true) ?: '£125K'); ?></div>
+                            <div class="result-label"><?php echo esc_html(get_post_meta(get_the_ID(), 'streamline_result_4_label', true) ?: 'Revenue Growth'); ?></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+        <!-- Process Steps -->
+        <section class="process-steps-section">
+            <div class="container">
+                <h2><?php echo esc_html(get_post_meta(get_the_ID(), 'streamline_process_title', true) ?: 'Our Proven Funnel Optimization Process'); ?></h2>                <div class="process-steps">
+                    <div class="step-item">
+                        <div class="step-number"><span><?php echo esc_html(get_post_meta(get_the_ID(), 'streamline_step_1_number', true) ?: '01'); ?></span></div>
+                        <div class="step-content">
+                            <h3><?php echo esc_html(get_post_meta(get_the_ID(), 'streamline_step_1_title', true) ?: 'Audit & Analysis'); ?></h3>
+                            <p><?php echo esc_html(get_post_meta(get_the_ID(), 'streamline_step_1_desc', true) ?: 'Comprehensive review of your current funnel performance and identification of optimization opportunities.'); ?></p>
+                        </div>
+                    </div>
+
+                    <div class="step-item">
+                        <div class="step-number"><span><?php echo esc_html(get_post_meta(get_the_ID(), 'streamline_step_2_number', true) ?: '02'); ?></span></div>
+                        <div class="step-content">
+                            <h3><?php echo esc_html(get_post_meta(get_the_ID(), 'streamline_step_2_title', true) ?: 'Strategy Development'); ?></h3>
+                            <p><?php echo esc_html(get_post_meta(get_the_ID(), 'streamline_step_2_desc', true) ?: 'Custom funnel strategy tailored to your business goals and customer journey requirements.'); ?></p>
+                        </div>
+                    </div>
+
+                    <div class="step-item">
+                        <div class="step-number"><span><?php echo esc_html(get_post_meta(get_the_ID(), 'streamline_step_3_number', true) ?: '03'); ?></span></div>
+                        <div class="step-content">
+                            <h3><?php echo esc_html(get_post_meta(get_the_ID(), 'streamline_step_3_title', true) ?: 'Implementation'); ?></h3>
+                            <p><?php echo esc_html(get_post_meta(get_the_ID(), 'streamline_step_3_desc', true) ?: 'Systematic implementation of optimizations and automation across all funnel touchpoints.'); ?></p>
+                        </div>
+                    </div>                    <div class="step-item">
+                        <div class="step-number"><span><?php echo esc_html(get_post_meta(get_the_ID(), 'streamline_step_4_number', true) ?: '04'); ?></span></div>
+                        <div class="step-content">
+                            <h3><?php echo esc_html(get_post_meta(get_the_ID(), 'streamline_step_4_title', true) ?: 'Monitor & Optimize'); ?></h3>
+                            <p><?php echo esc_html(get_post_meta(get_the_ID(), 'streamline_step_4_desc', true) ?: 'Continuous monitoring and data-driven optimization to maximize funnel performance.'); ?></p>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Sales Funnel Process -->
-        <section class="funnel-process">
-            <div class="section-content">
-                <h2><?php echo get_post_meta(get_the_ID(), 'streamline_sales_funnel_process_title', true) ?: 'Our Sales Funnel Optimization Process'; ?></h2>
-                <div class="process-steps">
-                    <?php
-                    $steps = get_post_meta(get_the_ID(), 'streamline_sales_funnel_process_steps', true);
-                    if (!empty($steps) && is_array($steps)) {
-                        $step_count = 1;
-                        foreach ($steps as $step) {
-                            ?>
-                            <div class="process-step">
-                                <div class="step-number"><?php echo $step_count; ?></div>
-                                <div class="step-content">
-                                    <h3><?php echo esc_html($step['title']); ?></h3>
-                                    <p><?php echo esc_html($step['description']); ?></p>
-                                </div>
-                            </div>
-                            <?php
-                            $step_count++;
-                        }
-                    } else {
-                        ?>
-                        <div class="process-step">
-                            <div class="step-number">1</div>
-                            <div class="step-content">
-                                <h3>Funnel Audit & Analysis</h3>
-                                <p>Comprehensive review of your current sales process, conversion rates, and customer journey.</p>
-                            </div>
+        <!-- Why Choose Us Section -->
+        <section class="why-choose-section">
+            <div class="container">
+                <h2><?php echo esc_html(get_post_meta(get_the_ID(), 'streamline_why_title', true) ?: 'Why Choose AiMPro for Funnel Streamlining?'); ?></h2>
+                <div class="benefits-grid">
+                    <div class="benefit-item">
+                        <div class="benefit-icon">
+                            <i class="fas fa-chart-line"></i>
                         </div>
-
-                        <div class="process-step">
-                            <div class="step-number">2</div>
-                            <div class="step-content">
-                                <h3>Strategy Development</h3>
-                                <p>Create a customized funnel strategy based on your business model and target audience.</p>
-                            </div>
+                        <h3><?php echo esc_html(get_post_meta(get_the_ID(), 'streamline_benefit_1_title', true) ?: 'Data-Driven Approach'); ?></h3>
+                        <p><?php echo esc_html(get_post_meta(get_the_ID(), 'streamline_benefit_1_desc', true) ?: 'Every optimization is backed by comprehensive analytics and A/B testing to ensure maximum ROI.'); ?></p>
+                    </div>
+                    
+                    <div class="benefit-item">
+                        <div class="benefit-icon">
+                            <i class="fas fa-trophy"></i>
                         </div>
-
-                        <div class="process-step">
-                            <div class="step-number">3</div>
-                            <div class="step-content">
-                                <h3>Implementation & Testing</h3>
-                                <p>Build and deploy optimized funnel elements with continuous testing and refinement.</p>
-                            </div>
+                        <h3><?php echo esc_html(get_post_meta(get_the_ID(), 'streamline_benefit_2_title', true) ?: 'Industry Expertise'); ?></h3>
+                        <p><?php echo esc_html(get_post_meta(get_the_ID(), 'streamline_benefit_2_desc', true) ?: '5+ years optimizing funnels across diverse industries with proven conversion improvements.'); ?></p>
+                    </div>
+                    
+                    <div class="benefit-item">
+                        <div class="benefit-icon">
+                            <i class="fas fa-hands-helping"></i>
                         </div>
-
-                        <div class="process-step">
-                            <div class="step-number">4</div>
-                            <div class="step-content">
-                                <h3>Monitor & Optimize</h3>
-                                <p>Track performance metrics and make data-driven improvements for sustained growth.</p>
-                            </div>
-                        </div>
-                        <?php
-                    }
-                    ?>
-                </div>
-            </div>
-        </section>
-
-        <!-- Funnel Stages -->
-        <section class="funnel-stages">
-            <div class="section-content">
-                <h2><?php echo get_post_meta(get_the_ID(), 'streamline_sales_funnel_stages_title', true) ?: 'Sales Funnel Stages We Optimize'; ?></h2>
-                <div class="metrics-grid">
-                    <?php
-                    $stages = get_post_meta(get_the_ID(), 'streamline_sales_funnel_stages', true);
-                    if (!empty($stages) && is_array($stages)) {
-                        $stage_count = 1;
-                        foreach ($stages as $stage) {
-                            ?>
-                            <div class="metric-category">
-                                <div class="stage-number"><?php echo $stage_count; ?></div>
-                                <h3><?php echo esc_html($stage['title']); ?></h3>
-                                <p><?php echo esc_html($stage['description']); ?></p>
-                                <?php if (!empty($stage['features']) && is_array($stage['features'])) : ?>
-                                    <ul class="metric-list">
-                                        <?php foreach ($stage['features'] as $feature) : ?>
-                                            <li><?php echo esc_html($feature); ?></li>
-                                        <?php endforeach; ?>
-                                    </ul>
-                                <?php endif; ?>
-                            </div>
-                            <?php
-                            $stage_count++;
-                        }
-                    } else {
-                        ?>
-                        <div class="metric-category">
-                            <div class="stage-number">1</div>
-                            <h3>Awareness</h3>
-                            <p>Attract potential customers through strategic content and advertising.</p>
-                            <ul class="metric-list">
-                                <li>Content marketing strategy</li>
-                                <li>Social media presence</li>
-                                <li>Paid advertising campaigns</li>
-                                <li>SEO optimization</li>
-                            </ul>
-                        </div>
-
-                        <div class="metric-category">
-                            <div class="stage-number">2</div>
-                            <h3>Interest</h3>
-                            <p>Engage prospects with valuable content and lead magnets.</p>
-                            <ul class="metric-list">
-                                <li>Lead magnet creation</li>
-                                <li>Email opt-in optimization</li>
-                                <li>Educational content delivery</li>
-                                <li>Webinar and demo scheduling</li>
-                            </ul>
-                        </div>
-
-                        <div class="metric-category">
-                            <div class="stage-number">3</div>
-                            <h3>Consideration</h3>
-                            <p>Nurture leads with targeted content that addresses their needs.</p>
-                            <ul class="metric-list">
-                                <li>Email nurture sequences</li>
-                                <li>Case study presentations</li>
-                                <li>Product demonstrations</li>
-                                <li>Consultation scheduling</li>
-                            </ul>
-                        </div>
-
-                        <div class="metric-category">
-                            <div class="stage-number">4</div>
-                            <h3>Decision</h3>
-                            <p>Remove barriers and provide compelling reasons to purchase.</p>
-                            <ul class="metric-list">
-                                <li>Objection handling content</li>
-                                <li>Social proof integration</li>
-                                <li>Risk reversal offers</li>
-                                <li>Limited-time promotions</li>
-                            </ul>
-                        </div>
-
-                        <div class="metric-category">
-                            <div class="stage-number">5</div>
-                            <h3>Action</h3>
-                            <p>Optimize the purchase process for maximum conversions.</p>
-                            <ul class="metric-list">
-                                <li>Checkout optimization</li>
-                                <li>Payment gateway integration</li>
-                                <li>Order confirmation automation</li>
-                                <li>Onboarding sequence setup</li>
-                            </ul>
-                        </div>
-
-                        <div class="metric-category">
-                            <div class="stage-number">6</div>
-                            <h3>Retention</h3>
-                            <p>Keep customers engaged and encourage repeat purchases.</p>
-                            <ul class="metric-list">
-                                <li>Customer onboarding</li>
-                                <li>Upsell and cross-sell campaigns</li>
-                                <li>Loyalty program development</li>
-                                <li>Referral program creation</li>
-                            </ul>
-                        </div>
-                        <?php
-                    }
-                    ?>
-                </div>
-            </div>
-        </section>
-
-        <!-- Funnel Types -->
-        <section class="funnel-types">
-            <div class="section-content">
-                <h2><?php echo get_post_meta(get_the_ID(), 'streamline_sales_funnel_types_title', true) ?: 'Sales Funnel Optimization by Business Type'; ?></h2>
-                <div class="types-grid">
-                    <?php
-                    $types = get_post_meta(get_the_ID(), 'streamline_sales_funnel_types', true);
-                    if (!empty($types) && is_array($types)) {
-                        foreach ($types as $type) {
-                            ?>
-                            <div class="type-card">
-                                <h3><?php echo esc_html($type['title']); ?></h3>
-                                <?php if (!empty($type['features']) && is_array($type['features'])) : ?>
-                                    <ul class="type-features">
-                                        <?php foreach ($type['features'] as $feature) : ?>
-                                            <li><?php echo esc_html($feature); ?></li>
-                                        <?php endforeach; ?>
-                                    </ul>
-                                <?php endif; ?>
-                                <div class="type-results">
-                                    <span><?php echo esc_html($type['result']); ?></span>
-                                </div>
-                            </div>
-                            <?php
-                        }
-                    } else {
-                        ?>
-                        <div class="type-card">
-                            <h3>B2B Sales Funnels</h3>
-                            <ul class="type-features">
-                                <li>Long-cycle nurture sequences</li>
-                                <li>Account-based marketing</li>
-                                <li>Multi-stakeholder targeting</li>
-                                <li>ROI-focused messaging</li>
-                            </ul>
-                            <div class="type-results">
-                                <span>Average: 250% qualified lead increase</span>
-                            </div>
-                        </div>
-
-                        <div class="type-card">
-                            <h3>E-commerce Funnels</h3>
-                            <ul class="type-features">
-                                <li>Product recommendation engines</li>
-                                <li>Cart abandonment recovery</li>
-                                <li>Post-purchase upsells</li>
-                                <li>Customer lifetime value optimization</li>
-                            </ul>
-                            <div class="type-results">
-                                <span>Average: 180% revenue per visitor</span>
-                            </div>
-                        </div>
-
-                        <div class="type-card">
-                            <h3>Service-Based Funnels</h3>
-                            <ul class="type-features">
-                                <li>Consultation booking optimization</li>
-                                <li>Service package presentation</li>
-                                <li>Trust-building content sequences</li>
-                                <li>Client testimonial integration</li>
-                            </ul>
-                            <div class="type-results">
-                                <span>Average: 300% consultation bookings</span>
-                            </div>
-                        </div>
-                        <?php
-                    }
-                    ?>
-                </div>
-            </div>
-        </section>
-
-        <!-- Funnel Tools -->
-        <section class="funnel-tools">
-            <div class="section-content">
-                <h2><?php echo get_post_meta(get_the_ID(), 'streamline_sales_funnel_tech_title', true) ?: 'Sales Funnel Technology Stack'; ?></h2>
-                <div class="tools-grid">
-                    <?php
-                    $tech = get_post_meta(get_the_ID(), 'streamline_sales_funnel_tech', true);
-                    if (!empty($tech) && is_array($tech)) {
-                        foreach ($tech as $cat) {
-                            ?>
-                            <div class="tool-category">
-                                <h3><?php echo esc_html($cat['category']); ?></h3>
-                                <?php if (!empty($cat['tools']) && is_array($cat['tools'])) : ?>
-                                    <ul class="tool-list">
-                                        <?php foreach ($cat['tools'] as $tool) : ?>
-                                            <li><?php echo esc_html($tool); ?></li>
-                                        <?php endforeach; ?>
-                                    </ul>
-                                <?php endif; ?>
-                            </div>
-                            <?php
-                        }
-                    } else {
-                        ?>
-                        <div class="tool-category">
-                            <h3>CRM & Sales Automation</h3>
-                            <ul class="tool-list">
-                                <li>HubSpot CRM</li>
-                                <li>Salesforce automation</li>
-                                <li>Pipedrive optimization</li>
-                                <li>ActiveCampaign setup</li>
-                            </ul>
-                        </div>
-
-                        <div class="tool-category">
-                            <h3>Email Marketing & Nurturing</h3>
-                            <ul class="tool-list">
-                                <li>Mailchimp campaigns</li>
-                                <li>ConvertKit sequences</li>
-                                <li>Klaviyo e-commerce flows</li>
-                                <li>Drip campaign management</li>
-                            </ul>
-                        </div>
-
-                        <div class="tool-category">
-                            <h3>Analytics & Tracking</h3>
-                            <ul class="tool-list">
-                                <li>Google Analytics 4</li>
-                                <li>Facebook Pixel tracking</li>
-                                <li>Custom conversion tracking</li>
-                                <li>Revenue attribution models</li>
-                            </ul>
-                        </div>
-
-                        <div class="tool-category">
-                            <h3>Landing Page & Conversion</h3>
-                            <ul class="tool-list">
-                                <li>Unbounce optimization</li>
-                                <li>Leadpages creation</li>
-                                <li>ClickFunnels management</li>
-                                <li>Custom funnel development</li>
-                            </ul>
-                        </div>
-                        <?php
-                    }
-                    ?>
-                </div>
-            </div>
-        </section>
-
-        <!-- Funnel Testimonial -->
-        <section class="funnel-testimonial">
-            <div class="section-content">
-                <div class="testimonial-content">
-                    <blockquote>
-                        <?php echo get_post_meta(get_the_ID(), 'streamline_sales_funnel_testimonial_quote', true) ?: 'Aimpro Digital transformed our entire sales process. We went from a chaotic, manual system to a streamlined funnel that runs automatically. Our sales velocity increased by 400% and our team is now much more efficient.'; ?>
-                    </blockquote>
-                    <div class="testimonial-author">
-                        <div class="author-info">
-                            <h4><?php echo get_post_meta(get_the_ID(), 'streamline_sales_funnel_testimonial_name', true) ?: 'Michael Rodriguez'; ?></h4>
-                            <span><?php echo get_post_meta(get_the_ID(), 'streamline_sales_funnel_testimonial_position', true) ?: 'CEO, TechFlow Solutions'; ?></span>
-                            <div class="author-company"><?php echo get_post_meta(get_the_ID(), 'streamline_sales_funnel_testimonial_company', true) ?: 'B2B Software Company'; ?></div>
-                        </div>
+                        <h3><?php echo esc_html(get_post_meta(get_the_ID(), 'streamline_benefit_3_title', true) ?: 'Ongoing Support'); ?></h3>
+                        <p><?php echo esc_html(get_post_meta(get_the_ID(), 'streamline_benefit_3_desc', true) ?: 'Continuous monitoring and optimization to maintain peak funnel performance as your business grows.'); ?></p>
                     </div>
                 </div>
             </div>
         </section>
-        <!-- CTA Section -->
-        <section class="website-cta text-center">
-            <div class="section-content">
-                <h2><?php echo get_post_meta(get_the_ID(), 'streamline_sales_funnel_cta_title', true) ?: 'Ready to Streamline Your Sales Funnel?'; ?></h2>
-                <p><?php echo get_post_meta(get_the_ID(), 'streamline_sales_funnel_cta_description', true) ?: 'Let\'s optimize your sales funnel for maximum conversions and business growth.'; ?></p>
-                <div class="cta-buttons">
-                    <a href="<?php echo get_post_meta(get_the_ID(), 'streamline_sales_funnel_cta_primary_link', true) ?: home_url('/contact'); ?>" class="btn btn-primary"><?php echo get_post_meta(get_the_ID(), 'streamline_sales_funnel_cta_primary_text', true) ?: 'Get Free Funnel Audit'; ?></a>
-                    <a href="<?php echo get_post_meta(get_the_ID(), 'streamline_sales_funnel_cta_secondary_link', true) ?: home_url('/case-studies'); ?>" class="btn btn-secondary"><?php echo get_post_meta(get_the_ID(), 'streamline_sales_funnel_cta_secondary_text', true) ?: 'View Success Stories'; ?></a>
+
+        <!-- FAQ Section -->
+        <section class="faq-section">
+            <div class="container">
+                <h2><?php echo esc_html(get_post_meta(get_the_ID(), 'streamline_faq_title', true) ?: 'Frequently Asked Questions'); ?></h2>
+                <div class="faq-container">
+                    <div class="faq-item">
+                        <h3 class="faq-question"><?php echo esc_html(get_post_meta(get_the_ID(), 'streamline_faq_1_question', true) ?: 'How long does it take to see results from funnel optimization?'); ?></h3>
+                        <div class="faq-answer">
+                            <p><?php echo esc_html(get_post_meta(get_the_ID(), 'streamline_faq_1_answer', true) ?: 'Most clients see initial improvements within 2-4 weeks, with significant results typically visible within 6-8 weeks as we test, refine, and optimize the funnel based on real user data.'); ?></p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <h3 class="faq-question"><?php echo esc_html(get_post_meta(get_the_ID(), 'streamline_faq_2_question', true) ?: 'What tools do you use for funnel optimization?'); ?></h3>
+                        <div class="faq-answer">
+                            <p><?php echo esc_html(get_post_meta(get_the_ID(), 'streamline_faq_2_answer', true) ?: 'We use industry-leading tools including HubSpot, Klaviyo, Google Analytics, Hotjar, and custom tracking solutions to analyze user behavior and optimize every touchpoint.'); ?></p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <h3 class="faq-question"><?php echo esc_html(get_post_meta(get_the_ID(), 'streamline_faq_3_question', true) ?: 'Do you work with existing funnels or build from scratch?'); ?></h3>
+                        <div class="faq-answer">
+                            <p><?php echo esc_html(get_post_meta(get_the_ID(), 'streamline_faq_3_answer', true) ?: 'We can optimize your existing funnel or build a completely new one from scratch, depending on your current setup and business needs. We always start with a comprehensive audit.'); ?></p>
+                        </div>
+                    </div>
                 </div>
-                <div class="cta-benefits">
-                    <?php
-                    $benefits = get_post_meta(get_the_ID(), 'streamline_sales_funnel_cta_benefits', true);
-                    if (!empty($benefits) && is_array($benefits)) {
-                        foreach ($benefits as $benefit) {
-                            echo '<span class="benefit">✓ ' . esc_html($benefit) . '</span>';
-                        }
-                    } else {
-                        $default = array('Conversion-focused funnel design','Automated lead nurturing','Comprehensive analytics setup');
-                        foreach ($default as $benefit) echo '<span class="benefit">✓ ' . esc_html($benefit) . '</span>';
-                    }
-                    ?>
+            </div>
+        </section>        <!-- CTA Section -->
+        <section class="cta-section" id="contact">
+            <div class="container">
+                <div class="cta-content">
+                    <h2><?php echo esc_html(get_post_meta(get_the_ID(), 'streamline_cta_title', true) ?: 'Ready to Streamline Your Sales Funnel?'); ?></h2>
+                    <p><?php echo esc_html(get_post_meta(get_the_ID(), 'streamline_cta_description', true) ?: 'Let\'s analyze your current funnel and create a strategy that converts more prospects into customers.'); ?></p>                    <div class="cta-buttons">
+                        <a href="<?php echo home_url('/contact'); ?>" class="btn-secondary streamlined"><?php echo esc_html(get_post_meta(get_the_ID(), 'streamline_cta_button_primary', true) ?: 'Start Your Funnel Audit'); ?></a>
+                        <a href="<?php echo home_url('/book-consultation'); ?>" class="btn-outline streamlined"><?php echo esc_html(get_post_meta(get_the_ID(), 'streamline_cta_button_secondary', true) ?: 'Book Free Consultation'); ?></a>
+                    </div>
                 </div>
             </div>
         </section>
