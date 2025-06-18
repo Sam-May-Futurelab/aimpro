@@ -83,6 +83,26 @@ function streamline_sales_funnel_meta_callback($post) {
             <label>Overview Description</label>
             <textarea name="streamline_overview_description"><?php echo esc_textarea(get_post_meta($post->ID, 'streamline_overview_description', true) ?: 'Eliminate inefficiencies and gaps in your current sales process with our systematic approach to funnel optimization and automation.'); ?></textarea>
         </div>
+        
+        <div class="streamline-meta-field">
+            <label>Overview Image</label>
+            <div style="display: flex; align-items: center; margin-bottom: 10px;">
+                <div id="streamline_overview_image_preview" style="margin-right: 15px; min-width: 150px; min-height: 80px;">
+                    <?php 
+                    $overview_image = get_post_meta($post->ID, 'streamline_overview_image', true);
+                    if ($overview_image) {
+                        echo '<img src="' . esc_url($overview_image) . '" style="max-width: 150px; height: auto;" />';
+                    }
+                    ?>
+                </div>
+                <div>
+                    <input type="hidden" name="streamline_overview_image" id="streamline_overview_image" value="<?php echo esc_attr(get_post_meta($post->ID, 'streamline_overview_image', true)); ?>" />
+                    <button type="button" class="button" id="streamline_overview_image_button">Choose Image</button>
+                    <button type="button" class="button" id="streamline_overview_image_remove" style="margin-left: 10px;">Remove Image</button>
+                    <p class="description">Recommended size: 600x400px</p>
+                </div>
+            </div>
+        </div>
 
         <h4>Service Items</h4>
         <div class="streamline-meta-field">
@@ -407,6 +427,70 @@ Integrated CRM with marketing automation for seamless handoffs'); ?></textarea>
             <textarea name="streamline_faq_3_answer"><?php echo esc_textarea(get_post_meta($post->ID, 'streamline_faq_3_answer', true) ?: 'We can optimize your existing funnel or build a completely new one from scratch, depending on your current setup and business needs. We always start with a comprehensive audit.'); ?></textarea>
         </div>
     </div>
+
+    <div class="streamline-meta-section">
+        <h3>CTA Section</h3>
+        <div class="streamline-meta-field">
+            <label>CTA Title</label>
+            <input type="text" name="streamline_cta_title" value="<?php echo esc_attr(get_post_meta($post->ID, 'streamline_cta_title', true) ?: 'Ready to Streamline Your Sales Funnel?'); ?>" />
+        </div>
+        <div class="streamline-meta-field">
+            <label>CTA Description</label>
+            <textarea name="streamline_cta_description"><?php echo esc_textarea(get_post_meta($post->ID, 'streamline_cta_description', true) ?: 'Let\'s analyze your current funnel and create a strategy that converts more prospects into customers.'); ?></textarea>
+        </div>
+        <div class="streamline-meta-field">
+            <label>Primary Button Text</label>
+            <input type="text" name="streamline_cta_button_primary" value="<?php echo esc_attr(get_post_meta($post->ID, 'streamline_cta_button_primary', true) ?: 'Start Your Funnel Audit'); ?>" />
+        </div>
+        <div class="streamline-meta-field">
+            <label>Secondary Button Text</label>
+            <input type="text" name="streamline_cta_button_secondary" value="<?php echo esc_attr(get_post_meta($post->ID, 'streamline_cta_button_secondary', true) ?: 'Book Free Consultation'); ?>" />
+        </div>
+    </div>
+    
+    <!-- Media Uploader JavaScript -->
+    <script type="text/javascript">
+    jQuery(document).ready(function($) {
+        // Handle Overview Image Upload
+        var overviewMediaUploader;
+        
+        $('#streamline_overview_image_button').click(function(e) {
+            e.preventDefault();
+            
+            // If the uploader object has already been created, reopen the dialog
+            if (overviewMediaUploader) {
+                overviewMediaUploader.open();
+                return;
+            }
+            
+            // Create the media uploader
+            overviewMediaUploader = wp.media.frames.file_frame = wp.media({
+                title: 'Choose Overview Image',
+                button: {
+                    text: 'Select Image'
+                },
+                multiple: false
+            });
+            
+            // When a file is selected, grab the URL and set it as the field value
+            overviewMediaUploader.on('select', function() {
+                var attachment = overviewMediaUploader.state().get('selection').first().toJSON();
+                $('#streamline_overview_image').val(attachment.url);
+                $('#streamline_overview_image_preview').html('<img src="' + attachment.url + '" style="max-width: 150px; height: auto;" />');
+            });
+            
+            // Open the uploader dialog
+            overviewMediaUploader.open();
+        });
+        
+        // Handle Remove Image button
+        $('#streamline_overview_image_remove').click(function(e) {
+            e.preventDefault();
+            $('#streamline_overview_image').val('');
+            $('#streamline_overview_image_preview').html('');
+        });
+    });
+    </script>
     <?php
 }
 
@@ -465,6 +549,9 @@ add_action('save_post', function($post_id) {
     }
     if (isset($_POST['streamline_overview_description'])) {
         update_post_meta($post_id, 'streamline_overview_description', sanitize_textarea_field($_POST['streamline_overview_description']));
+    }
+    if (isset($_POST['streamline_overview_image'])) {
+        update_post_meta($post_id, 'streamline_overview_image', sanitize_text_field($_POST['streamline_overview_image']));
     }
 
     // Save service fields
@@ -552,6 +639,74 @@ add_action('save_post', function($post_id) {
         }
         if (isset($_POST["streamline_faq_{$i}_answer"])) {
             update_post_meta($post_id, "streamline_faq_{$i}_answer", sanitize_textarea_field($_POST["streamline_faq_{$i}_answer"]));
+        }
+    }
+
+    // Save CTA Section
+    if (isset($_POST['streamline_cta_title'])) {
+        update_post_meta($post_id, 'streamline_cta_title', sanitize_text_field($_POST['streamline_cta_title']));
+    }
+    if (isset($_POST['streamline_cta_description'])) {
+        update_post_meta($post_id, 'streamline_cta_description', sanitize_textarea_field($_POST['streamline_cta_description']));
+    }
+    if (isset($_POST['streamline_cta_button_primary'])) {
+        update_post_meta($post_id, 'streamline_cta_button_primary', sanitize_text_field($_POST['streamline_cta_button_primary']));
+    }
+    if (isset($_POST['streamline_cta_button_secondary'])) {
+        update_post_meta($post_id, 'streamline_cta_button_secondary', sanitize_text_field($_POST['streamline_cta_button_secondary']));
+    }
+    
+    // Save Overview Image
+    if (isset($_POST['streamline_overview_image'])) {
+        update_post_meta($post_id, 'streamline_overview_image', esc_url_raw($_POST['streamline_overview_image']));
+    }
+});
+
+// Enqueue media uploader
+add_action('admin_enqueue_scripts', function($hook) {
+    global $post;
+    if (($hook == 'post.php' || $hook == 'post-new.php') && isset($post)) {
+        $template = get_page_template_slug($post->ID);
+        $slug = get_post_field('post_name', $post->ID);
+        if ($template === 'page-streamline-sales-funnel.php' || $slug === 'streamline-sales-funnel') {
+            wp_enqueue_media();
+            
+            // Add the media uploader script
+            ?>
+            <script>
+            jQuery(document).ready(function($) {
+                // Media uploader for overview image
+                var mediaUploader;
+                
+                $('#streamline_overview_image_button').click(function(e) {
+                    e.preventDefault();
+                    if (mediaUploader) {
+                        mediaUploader.open();
+                        return;
+                    }
+                    mediaUploader = wp.media.frames.file_frame = wp.media({
+                        title: 'Choose Overview Image',
+                        button: {
+                            text: 'Select Image'
+                        },
+                        multiple: false
+                    });
+                    mediaUploader.on('select', function() {
+                        var attachment = mediaUploader.state().get('selection').first().toJSON();
+                        $('#streamline_overview_image').val(attachment.url);
+                        $('#streamline_overview_image_preview').html('<img src="' + attachment.url + '" style="max-width: 150px; height: auto;" />');
+                    });
+                    mediaUploader.open();
+                });
+                
+                $('#streamline_overview_image_remove').click(function(e) {
+                    e.preventDefault();
+                    $('#streamline_overview_image').val('');
+                    $('#streamline_overview_image_preview').html('');
+                });
+            });
+            </script>
+            <?php
         }
     }
 });
