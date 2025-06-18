@@ -98,7 +98,7 @@
 
 /* Pricing Section */
 .pricing-section {
-    padding: 80px 0;
+    padding: 50px 0;
     background: var(--bg-alt, #f8fafc);
 }
 
@@ -212,7 +212,7 @@
 .cta-section {
     background: var(--primary-orange, #F15A25);
     color: white;
-    padding: 80px 0;
+    padding: 50px 0;
     margin: 60px 0;
     border-radius: 20px;
     position: relative;
@@ -476,7 +476,7 @@
 
 /* CTA Section Redesign */
 .cta-section {
-    padding: 80px 0;
+    padding: 50px 0;
     position: relative;
     overflow: hidden;
     background: #F15A25;
@@ -1167,7 +1167,7 @@
 /* Website Design Page Specific Styles */
 .website-design-page .service-overview {
     background: var(--bg-light, #f8f9fa);
-    padding: 80px 0;
+    padding: 50px 0;
 }
 
 .website-design-page .section-header {
@@ -1251,7 +1251,7 @@
 /* Landing Pages Page Specific Styles */
 .landing-pages-page .service-overview {
     background: var(--bg-light, #f8f9fa);
-    padding: 80px 0;
+    padding: 50px 0;
 }
 
 .landing-pages-page .section-header {
@@ -1335,7 +1335,7 @@
 /* UX/UI Optimization Page Specific Styles */
 .ux-ui-optimization-page .service-overview {
     background: var(--bg-light, #f8f9fa);
-    padding: 80px 0;
+    padding: 50px 0;
 }
 
 .ux-ui-optimization-page .section-header {
@@ -1420,7 +1420,7 @@
 /* Rank Higher Locally Page Specific Styles */
 .rank-higher-locally-page .service-overview {
     background: var(--bg-light, #f8f9fa);
-    padding: 80px 0;
+    padding: 50px 0;
 }
 
 .rank-higher-locally-page .section-header {
@@ -1581,7 +1581,7 @@
 
 /* FAQ Section Styling for Service Pages */
 .service-page .faq-section {
-    padding: 80px 0;
+    padding: 50px 0;
     background-color: var(--bg-light, #f8fafc);
 }
 
@@ -1710,7 +1710,7 @@
 /* AI CRM Page Specific Styles */
 .ai-crm-page .service-overview {
     background: var(--bg-light, #f8f9fa);
-    padding: 80px 0;
+    padding: 50px 0;
 }
 
 .ai-crm-page .section-header {
@@ -1886,7 +1886,7 @@
 
 /* Platforms Section */
 .chatbots-page .platforms-section {
-    padding: 80px 0;
+    padding: 50px 0;
     background: #f8fafc;
 }
 
@@ -1953,7 +1953,7 @@
 
 /* Industries Section */
 .chatbots-page .industries-section {
-    padding: 80px 0;
+    padding: 50px 0;
     background: white;
 }
 
@@ -2012,7 +2012,7 @@
 
 /* Process Section Enhancement */
 .chatbots-page .process-section {
-    padding: 80px 0;
+    padding: 50px 0;
     background: #f8fafc;
 }
 
@@ -2075,7 +2075,7 @@
 
 /* Case Study Section Enhancements */
 .chatbots-page .case-study-section {
-    padding: 80px 0;
+    padding: 50px 0;
     background: white;
 }
 
@@ -2188,7 +2188,7 @@
 
 /* Testimonial Section */
 .chatbots-page .testimonial-section {
-    padding: 80px 0;
+    padding: 50px 0;
     background: rgba(241, 90, 37, 0.05);
 }
 
@@ -2233,7 +2233,7 @@
 
 /* Packages Section Styling */
 .white-label-ppc-page .packages-section {
-    padding: 80px 0;
+    padding: 50px 0;
     background: #f8fafc;
 }
 
@@ -2396,7 +2396,7 @@
 
 /* Benefits Grid Enhancement */
 .white-label-ppc-page .whitelabel-benefits {
-    padding: 80px 0;
+    padding: 50px 0;
     background: white;
 }
 
@@ -2522,7 +2522,7 @@
 
 /* Industry Testimonials Enhancement */
 .industries-page .industry-testimonials {
-    padding: 80px 0;
+    padding: 50px 0;
     background: #f8fafc;
 }
 
