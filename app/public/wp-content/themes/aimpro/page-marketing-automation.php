@@ -54,25 +54,30 @@ get_header(); ?>
                     <h2><?php echo esc_html(get_post_meta(get_the_ID(), 'ma_services_title', true) ?: 'Our Marketing Automation Services'); ?></h2>
                     <p><?php echo esc_html(get_post_meta(get_the_ID(), 'ma_services_description', true) ?: 'Streamline your marketing processes with intelligent automation solutions that nurture leads and drive conversions.'); ?></p>
                 </div>
-                <div class="services-grid">
-                      <div class="service-item">
+                <div class="services-grid">                      <div class="service-card">
                         <div class="service-icon">
-                            <i class="fas fa-robot"></i>
+                            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M17 21V19C17 17.9391 16.5786 16.9217 15.8284 16.1716C15.0783 15.4214 14.0609 15 13 15H5C3.93913 15 2.92172 15.4214 2.17157 16.1716C1.42143 16.9217 1 17.9391 1 19V21" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                <circle cx="9" cy="7" r="4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M23 21V19C23 18.1645 22.7045 17.3541 22.1679 16.7116C21.6313 16.0691 20.8902 15.6316 20.07 15.4662" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M16 3.13281C16.8902 3.29814 17.6313 3.73574 18.1679 4.37823C18.7045 5.02072 19 5.83115 19 6.66656C19 7.50197 18.7045 8.3124 18.1679 8.95489C17.6313 9.59738 16.8902 10.035 16 10.2003" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
                         </div>
-                        <h3><?php echo esc_html(get_post_meta(get_the_ID(), 'ma_service_1_title', true) ?: 'AI CRM Setup & Integration'); ?></h3>
-                        <p><?php echo esc_html(get_post_meta(get_the_ID(), 'ma_service_1_description', true) ?: 'Implement and configure advanced CRM systems with AI capabilities to manage leads, track customer interactions, and automate sales processes.'); ?></p>
-                        <ul class="service-features">
-                            <?php 
-                            $features = get_post_meta(get_the_ID(), 'ma_service_1_features', true) ?: "CRM platform selection and setup\nAI lead scoring implementation\nSales pipeline automation\nCustom field and workflow creation\nThird-party integrations";
-                            $features_array = array_filter(array_map('trim', explode("\n", $features)));
-                            foreach ($features_array as $feature): 
-                            ?>
-                                <li><?php echo esc_html($feature); ?></li>
-                            <?php endforeach; ?>
-                        </ul>
-                        <div class="service-metric"><?php echo esc_html(get_post_meta(get_the_ID(), 'ma_service_1_metric', true) ?: 'Average: 50% increase in sales efficiency'); ?></div>
-                        <a href="<?php echo esc_url(get_post_meta(get_the_ID(), 'ma_service_1_link', true) ?: home_url('/ai-crm-setup')); ?>" class="service-link">Learn More</a>
-                    </div>                    <div class="service-card">
+                        <div class="service-content">
+                            <h3><?php echo esc_html(get_post_meta(get_the_ID(), 'ma_service_1_title', true) ?: 'AI CRM Setup & Integration'); ?></h3>
+                            <p><?php echo esc_html(get_post_meta(get_the_ID(), 'ma_service_1_description', true) ?: 'Implement and configure advanced CRM systems with AI capabilities to manage leads, track customer interactions, and automate sales processes.'); ?></p>
+                            <ul class="service-features">
+                                <?php 
+                                $features = get_post_meta(get_the_ID(), 'ma_service_1_features', true) ?: "CRM platform selection and setup\nAI lead scoring implementation\nSales pipeline automation\nCustom field and workflow creation\nThird-party integrations";
+                                $features_array = array_filter(array_map('trim', explode("\n", $features)));
+                                foreach ($features_array as $feature): 
+                                ?>
+                                    <li><?php echo esc_html($feature); ?></li>
+                                <?php endforeach; ?>
+                            </ul>
+                            <a href="<?php echo esc_url(get_post_meta(get_the_ID(), 'ma_service_1_link', true) ?: home_url('/ai-crm-setup')); ?>" class="service-cta">Learn More</a>
+                        </div>
+                    </div><div class="service-card">
                         <div class="service-icon">
                             <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M4 4H20C21.1 4 22 4.9 22 6V18C22 19.1 21.1 20 20 20H4C2.9 20 2 19.1 2 18V6C2 4.9 2.9 4 4 4Z" stroke="currentColor" stroke-width="2"/>
@@ -89,11 +94,7 @@ get_header(); ?>
                                 foreach ($features_array as $feature): 
                                 ?>
                                     <li><?php echo esc_html($feature); ?></li>
-                                <?php endforeach; ?>
-                            </ul>
-                            <div class="service-results">
-                                <span><?php echo esc_html(get_post_meta(get_the_ID(), 'ma_service_2_metric', true) ?: 'Average: 25% increase in email revenue'); ?></span>
-                            </div>
+                                <?php endforeach; ?>                            </ul>
                             <a href="<?php echo esc_url(get_post_meta(get_the_ID(), 'ma_service_2_link', true) ?: home_url('/email-sms-flows')); ?>" class="service-cta">Learn More</a>
                         </div>
                     </div>                    <div class="service-card">
@@ -115,11 +116,7 @@ get_header(); ?>
                                 foreach ($features_array as $feature): 
                                 ?>
                                     <li><?php echo esc_html($feature); ?></li>
-                                <?php endforeach; ?>
-                            </ul>
-                            <div class="service-results">
-                                <span><?php echo esc_html(get_post_meta(get_the_ID(), 'ma_service_3_metric', true) ?: 'Average: 35% improvement in open rates'); ?></span>
-                            </div>
+                                <?php endforeach; ?>                            </ul>
                             <a href="<?php echo esc_url(get_post_meta(get_the_ID(), 'ma_service_3_link', true) ?: home_url('/email-campaigns')); ?>" class="service-cta">Learn More</a>
                         </div>
                     </div>                    <div class="service-card">
@@ -139,11 +136,7 @@ get_header(); ?>
                                 foreach ($features_array as $feature): 
                                 ?>
                                     <li><?php echo esc_html($feature); ?></li>
-                                <?php endforeach; ?>
-                            </ul>
-                            <div class="service-results">
-                                <span><?php echo esc_html(get_post_meta(get_the_ID(), 'ma_service_4_metric', true) ?: 'Average: 180% increase in funnel conversions'); ?></span>
-                            </div>
+                                <?php endforeach; ?>                            </ul>
                             <a href="<?php echo esc_url(get_post_meta(get_the_ID(), 'ma_service_4_link', true) ?: home_url('/funnel-automation')); ?>" class="service-cta">Learn More</a>
                         </div>
                     </div>                    <div class="service-card">
@@ -162,11 +155,7 @@ get_header(); ?>
                                 foreach ($features_array as $feature): 
                                 ?>
                                     <li><?php echo esc_html($feature); ?></li>
-                                <?php endforeach; ?>
-                            </ul>
-                            <div class="service-results">
-                                <span><?php echo esc_html(get_post_meta(get_the_ID(), 'ma_service_5_metric', true) ?: 'Average: 40% reduction in response time'); ?></span>
-                            </div>
+                                <?php endforeach; ?>                            </ul>
                             <a href="<?php echo esc_url(get_post_meta(get_the_ID(), 'ma_service_5_link', true) ?: home_url('/chatbots')); ?>" class="service-cta">Learn More</a>
                         </div>
                     </div>                    <div class="service-card">
@@ -185,11 +174,7 @@ get_header(); ?>
                                 foreach ($features_array as $feature): 
                                 ?>
                                     <li><?php echo esc_html($feature); ?></li>
-                                <?php endforeach; ?>
-                            </ul>
-                            <div class="service-results">
-                                <span><?php echo esc_html(get_post_meta(get_the_ID(), 'ma_service_6_metric', true) ?: 'Average: 45% improvement in marketing efficiency'); ?></span>
-                            </div>
+                                <?php endforeach; ?>                            </ul>
                             <a href="<?php echo esc_url(get_post_meta(get_the_ID(), 'ma_service_6_link', true) ?: home_url('/ai-tools')); ?>" class="service-cta">Learn More</a>
                         </div>
                     </div>
