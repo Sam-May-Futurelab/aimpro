@@ -453,11 +453,10 @@ $hero_image = get_post_meta(get_the_ID(), 'technical_seo_hero_image', true);
                     $cta_primary_text = get_post_meta(get_the_ID(), 'technical_seo_cta_primary_text', true) ?: 'Get Free Technical Audit';
                     $cta_primary_url = get_post_meta(get_the_ID(), 'technical_seo_cta_primary_url', true) ?: home_url('/contact');
                     $cta_secondary_text = get_post_meta(get_the_ID(), 'technical_seo_cta_secondary_text', true) ?: 'View Technical SEO Results';
-                    $cta_secondary_url = get_post_meta(get_the_ID(), 'technical_seo_cta_secondary_url', true) ?: home_url('/case-studies');
-                    $cta_benefits = get_post_meta(get_the_ID(), 'technical_seo_cta_benefits', true) ?: array(
-                        '✓ Technical SEO audit included',
-                        '✓ Core Web Vitals optimization',
-                        '✓ Site speed improvements'
+                    $cta_secondary_url = get_post_meta(get_the_ID(), 'technical_seo_cta_secondary_url', true) ?: home_url('/case-studies');                    $cta_benefits = get_post_meta(get_the_ID(), 'technical_seo_cta_benefits', true) ?: array(
+                        '<i class="fas fa-check" aria-hidden="true"></i> Technical SEO audit included',
+                        '<i class="fas fa-check" aria-hidden="true"></i> Core Web Vitals optimization',
+                        '<i class="fas fa-check" aria-hidden="true"></i> Site speed improvements'
                     );
                     ?>
                     <h2><?php echo esc_html($cta_title); ?></h2>

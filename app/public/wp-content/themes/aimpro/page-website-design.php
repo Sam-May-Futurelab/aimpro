@@ -281,45 +281,44 @@ get_header(); ?>
     </section>
 
     <!-- Technologies -->
-    <section class="technologies-section">
-        <div class="container">
+    <section class="technologies-section">        <div class="container">
             <h2>Design Tools & Technologies</h2>
             
-            <div class="tools-grid">
-                <div class="tool-category">
-                    <h3>Design Tools</h3>
-                    <div class="tools-list">
-                        <div class="tool-item">Figma</div>
-                        <div class="tool-item">Adobe XD</div>
-                        <div class="tool-item">Sketch</div>
-                        <div class="tool-item">Adobe Creative Suite</div>
-                        <div class="tool-item">InVision</div>
-                        <div class="tool-item">Principle</div>
-                    </div>
+            <div class="industries-grid">
+                <div class="industry-item">
+                    <h4><i class="fas fa-palette"></i> Design Tools</h4>
+                    <ul>
+                        <li><i class="fab fa-figma"></i> Figma</li>
+                        <li><i class="fas fa-vector-square"></i> Adobe XD</li>
+                        <li><i class="fas fa-drafting-compass"></i> Sketch</li>
+                        <li><i class="fab fa-adobe"></i> Adobe Creative Suite</li>
+                        <li><i class="fas fa-eye"></i> InVision</li>
+                        <li><i class="fas fa-magic"></i> Principle</li>
+                    </ul>
                 </div>
                 
-                <div class="tool-category">
-                    <h3>Development</h3>
-                    <div class="tools-list">
-                        <div class="tool-item">WordPress</div>
-                        <div class="tool-item">Webflow</div>
-                        <div class="tool-item">React.js</div>
-                        <div class="tool-item">HTML5/CSS3</div>
-                        <div class="tool-item">JavaScript</div>
-                        <div class="tool-item">PHP</div>
-                    </div>
+                <div class="industry-item">
+                    <h4><i class="fas fa-code"></i> Development</h4>
+                    <ul>
+                        <li><i class="fab fa-wordpress"></i> WordPress</li>
+                        <li><i class="fas fa-stream"></i> Webflow</li>
+                        <li><i class="fab fa-react"></i> React.js</li>
+                        <li><i class="fab fa-html5"></i> HTML5/CSS3</li>
+                        <li><i class="fab fa-js-square"></i> JavaScript</li>
+                        <li><i class="fab fa-php"></i> PHP</li>
+                    </ul>
                 </div>
                 
-                <div class="tool-category">
-                    <h3>Optimization</h3>
-                    <div class="tools-list">
-                        <div class="tool-item">Google PageSpeed</div>
-                        <div class="tool-item">GTmetrix</div>
-                        <div class="tool-item">Hotjar</div>
-                        <div class="tool-item">Google Analytics</div>
-                        <div class="tool-item">A/B Testing Tools</div>
-                        <div class="tool-item">SEO Auditing</div>
-                    </div>
+                <div class="industry-item">
+                    <h4><i class="fas fa-chart-line"></i> Optimization</h4>
+                    <ul>
+                        <li><i class="fas fa-tachometer-alt"></i> Google PageSpeed</li>
+                        <li><i class="fas fa-stopwatch"></i> GTmetrix</li>
+                        <li><i class="fas fa-mouse-pointer"></i> Hotjar</li>
+                        <li><i class="fab fa-google"></i> Google Analytics</li>
+                        <li><i class="fas fa-flask"></i> A/B Testing Tools</li>
+                        <li><i class="fas fa-search"></i> SEO Auditing</li>
+                    </ul>
                 </div>
             </div>
         </div>

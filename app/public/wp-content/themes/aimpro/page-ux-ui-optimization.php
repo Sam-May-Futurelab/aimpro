@@ -406,42 +406,41 @@ get_header(); ?>
     <section class="tools-section">
         <div class="container">
             <h2>UX/UI Analysis Tools & Technologies</h2>
-            
-            <div class="tools-grid">
-                <div class="tool-category">
-                    <h3>Analytics & Research</h3>
-                    <div class="tools-list">
-                        <div class="tool-item">Google Analytics</div>
-                        <div class="tool-item">Hotjar</div>
-                        <div class="tool-item">Crazy Egg</div>
-                        <div class="tool-item">FullStory</div>
-                        <div class="tool-item">Microsoft Clarity</div>
-                        <div class="tool-item">UserTesting</div>
-                    </div>
+              <div class="industries-grid">
+                <div class="industry-item">
+                    <h4><i class="fas fa-chart-bar"></i> Analytics & Research</h4>
+                    <ul>
+                        <li><i class="fab fa-google"></i> Google Analytics</li>
+                        <li><i class="fas fa-mouse-pointer"></i> Hotjar</li>
+                        <li><i class="fas fa-eye"></i> Crazy Egg</li>
+                        <li><i class="fas fa-video"></i> FullStory</li>
+                        <li><i class="fab fa-microsoft"></i> Microsoft Clarity</li>
+                        <li><i class="fas fa-users"></i> UserTesting</li>
+                    </ul>
                 </div>
                 
-                <div class="tool-category">
-                    <h3>Testing & Optimization</h3>
-                    <div class="tools-list">
-                        <div class="tool-item">Google Optimize</div>
-                        <div class="tool-item">Optimizely</div>
-                        <div class="tool-item">VWO</div>
-                        <div class="tool-item">Unbounce</div>
-                        <div class="tool-item">Convert.com</div>
-                        <div class="tool-item">AB Tasty</div>
-                    </div>
+                <div class="industry-item">
+                    <h4><i class="fas fa-flask"></i> Testing & Optimization</h4>
+                    <ul>
+                        <li><i class="fab fa-google"></i> Google Optimize</li>
+                        <li><i class="fas fa-chart-line"></i> Optimizely</li>
+                        <li><i class="fas fa-bullseye"></i> VWO</li>
+                        <li><i class="fas fa-rocket"></i> Unbounce</li>
+                        <li><i class="fas fa-exchange-alt"></i> Convert.com</li>
+                        <li><i class="fas fa-star"></i> AB Tasty</li>
+                    </ul>
                 </div>
                 
-                <div class="tool-category">
-                    <h3>Performance Tools</h3>
-                    <div class="tools-list">
-                        <div class="tool-item">Google PageSpeed</div>
-                        <div class="tool-item">GTmetrix</div>
-                        <div class="tool-item">Lighthouse</div>
-                        <div class="tool-item">WebPageTest</div>
-                        <div class="tool-item">Pingdom</div>
-                        <div class="tool-item">Core Web Vitals</div>
-                    </div>
+                <div class="industry-item">
+                    <h4><i class="fas fa-tachometer-alt"></i> Performance Tools</h4>
+                    <ul>
+                        <li><i class="fas fa-gauge-high"></i> Google PageSpeed</li>
+                        <li><i class="fas fa-stopwatch"></i> GTmetrix</li>
+                        <li><i class="fas fa-lighthouse"></i> Lighthouse</li>
+                        <li><i class="fas fa-globe"></i> WebPageTest</li>
+                        <li><i class="fas fa-satellite-dish"></i> Pingdom</li>
+                        <li><i class="fas fa-heartbeat"></i> Core Web Vitals</li>
+                    </ul>
                 </div>
             </div>
         </div>    </section>    <!-- Testimonials -->

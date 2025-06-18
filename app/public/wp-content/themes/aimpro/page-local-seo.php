@@ -312,11 +312,10 @@ $header_subtitle = get_post_meta(get_the_ID(), '_local_seo_header_subtitle', tru
                 <div class="cta-buttons">
                     <a href="<?php echo home_url('/contact'); ?>" class="btn btn-primary">Get Free Local SEO Audit</a>
                     <a href="<?php echo home_url('/case-studies'); ?>" class="btn btn-secondary">View Local SEO Results</a>
-                </div>
-                <div class="cta-benefits">
-                    <span class="benefit">✓ Local market analysis included</span>
-                    <span class="benefit">✓ Google My Business optimization</span>
-                    <span class="benefit">✓ Citation audit and cleanup</span>
+                </div>                <div class="cta-benefits">
+                    <span class="benefit"><i class="fas fa-check" aria-hidden="true"></i> Local market analysis included</span>
+                    <span class="benefit"><i class="fas fa-check" aria-hidden="true"></i> Google My Business optimization</span>
+                    <span class="benefit"><i class="fas fa-check" aria-hidden="true"></i> Citation audit and cleanup</span>
                 </div>
             </div>
         </section>

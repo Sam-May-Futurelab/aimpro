@@ -1582,7 +1582,7 @@
 /* FAQ Section Styling for Service Pages */
 .service-page .faq-section {
     padding: 80px 0;
-    background-color: var(--bg-light, #f8f9fa);
+    background-color: var(--bg-light, #f8fafc);
 }
 
 .service-page .faq-section h2 {
@@ -1650,7 +1650,7 @@
 
 /* UX/UI Optimization page FAQ specific styles */
 .ux-ui-optimization-page .faq-section {
-    background-color: var(--bg-light, #f8f9fa);
+    background-color: var(--bg-light, #f8fafc);
 }
 
 .ux-ui-optimization-page .faq-item h3 {
@@ -2621,5 +2621,103 @@
     color: white !important;
     background: rgba(255, 255, 255, 0.2) !important;
     border-color: white !important;
+}
+
+/* Design Tools & Technologies - Compact and Fun Styling - OVERRIDE ALL CONFLICTING RULES */
+.website-design-page .industries-grid,
+.ux-ui-optimization-page .industries-grid {
+    display: grid !important;
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 20px !important;
+    margin-top: 30px !important;
+    /* Force 3 columns even on smaller screens for this specific section */
+}
+
+.website-design-page .industry-item,
+.ux-ui-optimization-page .industry-item {
+    padding: 20px !important;
+    background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%) !important;
+    border: 1px solid #e2e8f0 !important;
+    transition: all 0.3s ease !important;
+}
+
+.website-design-page .industry-item:hover,
+.ux-ui-optimization-page .industry-item:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 15px 35px rgba(241, 90, 37, 0.15);
+    border-color: #F15A25;
+}
+
+.website-design-page .industry-item h4,
+.ux-ui-optimization-page .industry-item h4 {
+    font-size: 18px !important;
+    margin-bottom: 15px !important;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #F15A25 !important;
+    font-weight: 600 !important;
+}
+
+.website-design-page .industry-item h4 i,
+.ux-ui-optimization-page .industry-item h4 i {
+    font-size: 20px;
+    color: #F15A25;
+}
+
+.website-design-page .industry-item ul {
+    list-style: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+.website-design-page .industry-item li {
+    padding: 8px 0 !important;
+    color: #4a5568 !important;
+    font-size: 14px !important;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: all 0.2s ease;
+    border-radius: 6px;
+    padding: 6px 8px !important;
+}
+
+.website-design-page .industry-item li:hover {
+    background-color: rgba(241, 90, 37, 0.05);
+    color: #F15A25 !important;
+    transform: translateX(5px);
+}
+
+.website-design-page .industry-item li i {
+    font-size: 16px;
+    width: 18px;
+    text-align: center;
+    color: #F15A25;
+    transition: all 0.2s ease;
+}
+
+.website-design-page .industry-item li:hover i {
+    transform: scale(1.2);
+}
+
+/* Responsive adjustments - OVERRIDE GLOBAL MEDIA QUERIES */
+@media (max-width: 768px) {
+    .website-design-page .industries-grid {
+        grid-template-columns: 1fr !important;
+        gap: 15px !important;
+    }
+    
+    .website-design-page .industry-item {
+        padding: 15px !important;
+    }
+}
+
+@media (min-width: 769px) {
+    /* Force 3 columns on all screens 769px and above */
+    .website-design-page .industries-grid {
+        grid-template-columns: repeat(3, 1fr) !important;
+        gap: 20px !important;
+    }
 }
 

@@ -556,13 +556,12 @@ get_header(); ?>
                 <div class="cta-buttons">
                     <a href="<?php echo get_post_meta(get_the_ID(), 'high_converting_website_cta_primary_link', true) ?: home_url('/contact'); ?>" class="btn btn-primary"><?php echo get_post_meta(get_the_ID(), 'high_converting_website_cta_primary_text', true) ?: 'Get Free Website Audit'; ?></a>
                     <a href="<?php echo get_post_meta(get_the_ID(), 'high_converting_website_cta_secondary_link', true) ?: home_url('/case-studies'); ?>" class="btn btn-secondary"><?php echo get_post_meta(get_the_ID(), 'high_converting_website_cta_secondary_text', true) ?: 'View Website Success Stories'; ?></a>
-                </div>
-                <div class="cta-benefits">
+                </div>                <div class="cta-benefits">
                     <?php
                     $benefits = get_post_meta(get_the_ID(), 'high_converting_website_cta_benefits', true);
                     if (!empty($benefits) && is_array($benefits)) {
                         foreach ($benefits as $benefit) {
-                            echo '<span class="benefit">✓ ' . esc_html($benefit['benefit']) . '</span>';
+                            echo '<span class="benefit"><i class="fas fa-check" aria-hidden="true"></i> ' . esc_html($benefit['benefit']) . '</span>';
                         }
                     } else {
                         // Default benefits if none are set
@@ -573,7 +572,7 @@ get_header(); ?>
                         );
                         
                         foreach ($default_benefits as $benefit) {
-                            echo '<span class="benefit">✓ ' . esc_html($benefit) . '</span>';
+                            echo '<span class="benefit"><i class="fas fa-check" aria-hidden="true"></i> ' . esc_html($benefit) . '</span>';
                         }
                     }
                     ?>

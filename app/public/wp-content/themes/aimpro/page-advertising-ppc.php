@@ -348,9 +348,8 @@ function get_advertising_ppc_field($field_key, $post_id = null) {
                             <li>LinkedIn Ads</li>
                             <li>Twitter Ads</li>
                         </ul>
-                    </div>
-                    <div class="platform-card">
-                        <h3>🛒 E-commerce Advertising</h3>
+                    </div>                    <div class="platform-card">
+                        <h3><i class="fas fa-shopping-cart" aria-hidden="true"></i> E-commerce Advertising</h3>
                         <ul>
                             <li>Google Shopping Ads</li>
                             <li>Facebook Shop Ads</li>
@@ -359,7 +358,7 @@ function get_advertising_ppc_field($field_key, $post_id = null) {
                         </ul>
                     </div>
                     <div class="platform-card">
-                        <h3>📺 Display & Video</h3>
+                        <h3><i class="fas fa-video" aria-hidden="true"></i> Display & Video</h3>
                         <ul>
                             <li>Google Display Network</li>
                             <li>YouTube Video Ads</li>
@@ -432,11 +431,10 @@ function get_advertising_ppc_field($field_key, $post_id = null) {
                     <div class="cta-buttons">
                         <a href="<?php echo home_url('/contact'); ?>" class="btn-primary">Get Free PPC Audit</a>
                         <a href="<?php echo home_url('/services'); ?>" class="btn-outline">View All Services</a>
-                    </div>
-                    <div class="cta-features">
-                        <span class="feature-check">✓ Free campaign analysis</span>
-                        <span class="feature-check">✓ Performance improvement plan</span>
-                        <span class="feature-check">✓ No obligation consultation</span>
+                    </div>                    <div class="cta-features">
+                        <span class="feature-check"><i class="fas fa-check" aria-hidden="true"></i> Free campaign analysis</span>
+                        <span class="feature-check"><i class="fas fa-check" aria-hidden="true"></i> Performance improvement plan</span>
+                        <span class="feature-check"><i class="fas fa-check" aria-hidden="true"></i> No obligation consultation</span>
                     </div>
                 </div>
             </div>

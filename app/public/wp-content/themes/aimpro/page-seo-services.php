@@ -317,7 +317,7 @@ $header_subtitle = get_post_meta(get_the_ID(), '_seo_header_subtitle', true) ?: 
                     </div>
                     <div class="cta-features">
                         <?php foreach ((array)$cta_features as $feature): ?>
-                            <span class="feature-check">✓ <?php echo esc_html($feature); ?></span>
+                            <span class="feature-check"><i class="fas fa-check" aria-hidden="true"></i> <?php echo esc_html($feature); ?></span>
                         <?php endforeach; ?>
                     </div>
                 </div>

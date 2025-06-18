@@ -38,16 +38,70 @@ get_header(); ?>
                     </div>
                 </div>
             </div>
-        </section>
-
-        <!-- Service Links Grid -->
+        </section>        <!-- Service Links Grid -->
         <section class="service-links-grid">
             <div class="section-content">
                 <div class="service-links-heading">
                     <h2>Our Services</h2>
                     <p>Explore our comprehensive range of services designed to elevate your digital presence</p>
                 </div>
-                <?php include(get_template_directory() . '/service-links.php'); ?>
+                
+                <!-- Quick Service Navigation Grid -->
+                <div class="services-grid">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-search" aria-hidden="true"></i>
+                        </div>
+                        <h3>SEO Services</h3>
+                        <p>Improve search rankings and organic traffic</p>
+                        <a href="<?php echo home_url('/seo-services'); ?>" class="service-link">Learn More</a>
+                    </div>
+                    
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-bullhorn" aria-hidden="true"></i>
+                        </div>
+                        <h3>PPC Advertising</h3>
+                        <p>Maximize ROI with targeted advertising</p>
+                        <a href="<?php echo home_url('/advertising-ppc'); ?>" class="service-link">Learn More</a>
+                    </div>
+                    
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-paint-brush" aria-hidden="true"></i>
+                        </div>
+                        <h3>Website Design</h3>
+                        <p>Beautiful, conversion-focused websites</p>
+                        <a href="<?php echo home_url('/website-design'); ?>" class="service-link">Learn More</a>
+                    </div>
+                    
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-cogs" aria-hidden="true"></i>
+                        </div>
+                        <h3>Marketing Automation</h3>
+                        <p>Streamline and scale your marketing</p>
+                        <a href="<?php echo home_url('/automate-marketing'); ?>" class="service-link">Learn More</a>
+                    </div>
+                    
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-chart-line" aria-hidden="true"></i>
+                        </div>
+                        <h3>Lead Generation</h3>
+                        <p>Convert visitors into qualified leads</p>
+                        <a href="<?php echo home_url('/lead-generation'); ?>" class="service-link">Learn More</a>
+                    </div>
+                    
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-funnel-dollar" aria-hidden="true"></i>
+                        </div>
+                        <h3>Sales Funnels</h3>
+                        <p>Optimize your conversion process</p>
+                        <a href="<?php echo home_url('/streamline-sales-funnel'); ?>" class="service-link">Learn More</a>
+                    </div>
+                </div>
             </div>
         </section>
 
@@ -491,11 +545,10 @@ get_header(); ?>
                 <div class="cta-buttons">
                     <a href="<?php echo home_url('/contact'); ?>" class="btn btn-primary">Get Free Consultation</a>
                     <a href="<?php echo home_url('/case-studies'); ?>" class="btn btn-secondary">View Our Results</a>
-                </div>
-                <div class="cta-benefits">
-                    <span class="benefit">✓ Free strategy session</span>
-                    <span class="benefit">✓ No obligation consultation</span>
-                    <span class="benefit">✓ Custom recommendations</span>
+                </div>                <div class="cta-benefits">
+                    <span class="benefit"><i class="fas fa-check" aria-hidden="true"></i> Free strategy session</span>
+                    <span class="benefit"><i class="fas fa-check" aria-hidden="true"></i> No obligation consultation</span>
+                    <span class="benefit"><i class="fas fa-check" aria-hidden="true"></i> Custom recommendations</span>
                 </div>
             </div>
         </section>

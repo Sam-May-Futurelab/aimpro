@@ -430,11 +430,10 @@ $hero_image = get_post_meta(get_the_ID(), 'seo_audit_hero_image', true);
                     $cta_primary_text = get_post_meta(get_the_ID(), 'seo_audit_cta_primary_text', true) ?: 'Get Your SEO Audit';
                     $cta_primary_url = get_post_meta(get_the_ID(), 'seo_audit_cta_primary_url', true) ?: home_url('/contact');
                     $cta_secondary_text = get_post_meta(get_the_ID(), 'seo_audit_cta_secondary_text', true) ?: 'View Audit Results';
-                    $cta_secondary_url = get_post_meta(get_the_ID(), 'seo_audit_cta_secondary_url', true) ?: home_url('/case-studies');
-                    $cta_benefits = get_post_meta(get_the_ID(), 'seo_audit_cta_benefits', true) ?: array(
-                        '✓ 40+ page detailed report',
-                        '✓ Actionable recommendations',
-                        '✓ Strategy consultation included'
+                    $cta_secondary_url = get_post_meta(get_the_ID(), 'seo_audit_cta_secondary_url', true) ?: home_url('/case-studies');                    $cta_benefits = get_post_meta(get_the_ID(), 'seo_audit_cta_benefits', true) ?: array(
+                        '<i class="fas fa-check" aria-hidden="true"></i> 40+ page detailed report',
+                        '<i class="fas fa-check" aria-hidden="true"></i> Actionable recommendations',
+                        '<i class="fas fa-check" aria-hidden="true"></i> Strategy consultation included'
                     );
                     ?>
                     <h2><?php echo esc_html($cta_title); ?></h2>

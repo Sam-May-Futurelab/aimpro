@@ -163,12 +163,11 @@ $services = get_post_meta(get_the_ID(), '_automotive_services', true) ?: array()
                     </div>
                     <div class="case-study-results">
                         <?php 
-                        $case_study_results_title = get_post_meta(get_the_ID(), '_automotive_case_study_results_title', true) ?: 'Results After 6 Months';
-                        $case_study_results = get_post_meta(get_the_ID(), '_automotive_case_study_results', true) ?: array(
+                        $case_study_results_title = get_post_meta(get_the_ID(), '_automotive_case_study_results_title', true) ?: 'Results After 6 Months';                        $case_study_results = get_post_meta(get_the_ID(), '_automotive_case_study_results', true) ?: array(
                             array('number' => '180%', 'label' => 'Increase in Qualified Leads'),
                             array('number' => '250%', 'label' => 'Service Bookings Growth'),
                             array('number' => '320%', 'label' => 'Local Search Visibility'),
-                            array('number' => '4.8★', 'label' => 'Average Review Rating')
+                            array('number' => '4.8<i class="fas fa-star" aria-hidden="true"></i>', 'label' => 'Average Review Rating')
                         );
                         $case_study_link_text = get_post_meta(get_the_ID(), '_automotive_case_study_link_text', true) ?: 'Read Full Case Study';
                         $case_study_link_url = get_post_meta(get_the_ID(), '_automotive_case_study_link_url', true) ?: home_url('/case-studies');
@@ -305,11 +304,10 @@ $services = get_post_meta(get_the_ID(), '_automotive_services', true) ?: array()
                 $cta_primary_text = get_post_meta(get_the_ID(), '_automotive_cta_primary_text', true) ?: 'Get Free Automotive Audit';
                 $cta_primary_url = get_post_meta(get_the_ID(), '_automotive_cta_primary_url', true) ?: home_url('/contact');
                 $cta_secondary_text = get_post_meta(get_the_ID(), '_automotive_cta_secondary_text', true) ?: 'View More Success Stories';
-                $cta_secondary_url = get_post_meta(get_the_ID(), '_automotive_cta_secondary_url', true) ?: home_url('/case-studies');
-                $cta_benefits = get_post_meta(get_the_ID(), '_automotive_cta_benefits', true) ?: array(
-                    '✓ Free competitive analysis',
-                    '✓ Custom strategy recommendations',
-                    '✓ No obligation consultation'
+                $cta_secondary_url = get_post_meta(get_the_ID(), '_automotive_cta_secondary_url', true) ?: home_url('/case-studies');                $cta_benefits = get_post_meta(get_the_ID(), '_automotive_cta_benefits', true) ?: array(
+                    '<i class="fas fa-check" aria-hidden="true"></i> Free competitive analysis',
+                    '<i class="fas fa-check" aria-hidden="true"></i> Custom strategy recommendations',
+                    '<i class="fas fa-check" aria-hidden="true"></i> No obligation consultation'
                 );
                 ?>
                 <h2><?php echo esc_html($cta_title); ?></h2>

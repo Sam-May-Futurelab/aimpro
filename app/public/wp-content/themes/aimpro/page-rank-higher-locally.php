@@ -201,9 +201,8 @@ get_header(); ?>
                                     array(
                                         'number' => '85+',
                                         'label' => 'New Google Reviews'
-                                    ),
-                                    array(
-                                        'number' => '4.9★',
+                                    ),                                    array(
+                                        'number' => '4.9<i class="fas fa-star" aria-hidden="true"></i>',
                                         'label' => 'Average Review Rating'
                                     )
                                 );

@@ -410,11 +410,10 @@ get_header(); ?>
                 <div class="cta-benefits">
                     <?php
                     $benefits = get_post_meta(get_the_ID(), '_lead_generation_cta_benefits', true);
-                    if (empty($benefits)) {
-                        $benefits = array(
-                            '✓ Custom lead generation strategy',
-                            '✓ Multi-channel campaign setup',
-                            '✓ CRM integration included'
+                    if (empty($benefits)) {                        $benefits = array(
+                            '<i class="fas fa-check" aria-hidden="true"></i> Custom lead generation strategy',
+                            '<i class="fas fa-check" aria-hidden="true"></i> Multi-channel campaign setup',
+                            '<i class="fas fa-check" aria-hidden="true"></i> CRM integration included'
                         );
                     }
                     foreach ($benefits as $benefit) {

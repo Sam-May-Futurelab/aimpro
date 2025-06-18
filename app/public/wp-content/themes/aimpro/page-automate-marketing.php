@@ -438,11 +438,10 @@ get_header(); ?>
                     <div class="cta-features">
                         <?php
                         $features = get_post_meta(get_the_ID(), '_automate_marketing_cta_features', true);
-                        if (empty($features)) {
-                            $features = array(
-                                '✓ Custom workflow design',
-                                '✓ Full platform integration',
-                                '✓ Ongoing optimization'
+                        if (empty($features)) {                            $features = array(
+                                '<i class="fas fa-check" aria-hidden="true"></i> Custom workflow design',
+                                '<i class="fas fa-check" aria-hidden="true"></i> Full platform integration',
+                                '<i class="fas fa-check" aria-hidden="true"></i> Ongoing optimization'
                             );
                         }
                         foreach ($features as $feature) {

@@ -287,11 +287,10 @@ $challenges = get_post_meta(get_the_ID(), '_coaches_consultants_challenges', tru
                 <div class="cta-buttons">
                     <a href="<?php echo home_url('/contact'); ?>" class="btn btn-primary">Get Free Brand Audit</a>
                     <a href="<?php echo home_url('/case-studies'); ?>" class="btn btn-secondary">View Coaching Success Stories</a>
-                </div>
-                <div class="cta-benefits">
-                    <span class="benefit">✓ Personal brand strategy</span>
-                    <span class="benefit">✓ Lead generation systems</span>
-                    <span class="benefit">✓ Authority building expertise</span>
+                </div>                <div class="cta-benefits">
+                    <span class="benefit"><i class="fas fa-check" aria-hidden="true"></i> Personal brand strategy</span>
+                    <span class="benefit"><i class="fas fa-check" aria-hidden="true"></i> Lead generation systems</span>
+                    <span class="benefit"><i class="fas fa-check" aria-hidden="true"></i> Authority building expertise</span>
                 </div>
             </div>
         </section>
