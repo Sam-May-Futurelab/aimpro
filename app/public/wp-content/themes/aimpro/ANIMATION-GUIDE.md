@@ -53,7 +53,7 @@
 - ✅ **Company page** (header, overview, timeline, values, stats)
 - ✅ **Contact page** (hero section, contact cards, form)
 - ✅ **Partner page** (header, overview, partnership cards)
-- ✅ **Funnel Builds page** (hero section)
+- ✅ **Funnel Builds page** (all sections: hero, overview, case study, funnel types, development process, pricing, technologies, testimonials, FAQ, CTA)
 - ✅ **Lead Generation page** (hero, services, case study, process, FAQ, CTA)
 - ✅ **Website Development page** (hero, services, case study, process, FAQ, CTA)
 - ✅ **Streamline Sales Funnel page** (hero, overview, services, case study, process, benefits, FAQ, CTA)
