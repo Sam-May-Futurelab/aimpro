@@ -2619,117 +2619,62 @@
     border-color: white !important;
 }
 
-/* Design Tools & Technologies - Compact and Fun Styling - OVERRIDE ALL CONFLICTING RULES */
-.website-design-page .industries-grid,
-.ux-ui-optimization-page .industries-grid {
-    display: grid !important;
-    grid-template-columns: repeat(3, 1fr) !important;
-    gap: 20px !important;
-    margin-top: 30px !important;
-    /* Force 3 columns even on smaller screens for this specific section */
+/* White button with orange text for CTA sections */
+.cta-section .btn-white {
+    background: white !important;
+    color: #f15a25 !important;
+    border: 2px solid white !important;
+    padding: 14px 28px;
+    font-weight: 700;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    border-radius: 25px;
+    text-decoration: none;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    cursor: pointer;
+    line-height: 1.4;
+    min-width: 180px;
+    text-align: center;
 }
 
-.website-design-page .industry-item,
-.ux-ui-optimization-page .industry-item {
-    padding: 20px !important;
-    background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%) !important;
-    border: 1px solid #e2e8f0 !important;
-    transition: all 0.3s ease !important;
+.cta-section .btn-white:hover {
+    background: #f15a25 !important;
+    color: white !important;
+    border-color: #f15a25 !important;
 }
 
-.website-design-page .industry-item:hover,
-.ux-ui-optimization-page .industry-item:hover {
-    transform: translateY(-8px) scale(1.02);
-    box-shadow: 0 15px 35px rgba(241, 90, 37, 0.15);
-    border-color: #F15A25;
+/* NUCLEAR OVERRIDE - Force correct styling for ALL buttons in CTA sections */
+.cta-section .cta-buttons a,
+.cta-section .cta-buttons .btn,
+.cta-section .cta-buttons .btn-primary,
+.cta-section .cta-buttons .btn-outline,
+.cta-section .cta-buttons .btn-secondary {
+    background: white !important;
+    color: #f15a25 !important;
+    border: 2px solid white !important;
+    padding: 14px 28px !important;
+    font-weight: 700 !important;
+    font-size: 0.9rem !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.5px !important;
+    border-radius: 25px !important;
+    text-decoration: none !important;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1) !important;
+    cursor: pointer !important;
+    line-height: 1.4 !important;
+    min-width: 180px !important;
+    text-align: center !important;
+    display: inline-block !important;
 }
 
-.website-design-page .industry-item h4,
-.ux-ui-optimization-page .industry-item h4 {
-    font-size: 18px !important;
-    margin-bottom: 15px !important;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    color: #F15A25 !important;
-    font-weight: 600 !important;
-}
-
-.website-design-page .industry-item h4 i,
-.ux-ui-optimization-page .industry-item h4 i {
-    font-size: 20px;
-    color: #F15A25;
-}
-
-.website-design-page .industry-item ul {
-    list-style: none !important;
-    padding: 0 !important;
-    margin: 0 !important;
-}
-
-.website-design-page .industry-item li {
-    padding: 8px 0 !important;
-    color: #4a5568 !important;
-    font-size: 1.1rem !important;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
-
-.website-design-page .industry-item li i,
-.ux-ui-optimization-page .industry-item li i {
-    color: #F15A25;
-    font-size: 12px;
-    flex-shrink: 0;
-}
-
-.website-design-page .industry-item li:hover i {
-    transform: scale(1.2);
-}
-
-/* Responsive adjustments - OVERRIDE GLOBAL MEDIA QUERIES */
-@media (max-width: 768px) {
-    .website-design-page .industries-grid {
-        grid-template-columns: 1fr !important;
-        gap: 15px !important;
-    }
-    
-    .website-design-page .industry-item {
-        padding: 15px !important;
-    }
-}
-
-@media (min-width: 769px) {
-    /* Force 3 columns on all screens 769px and above */
-    .website-design-page .industries-grid {
-        grid-template-columns: repeat(3, 1fr) !important;
-        gap: 20px !important;
-    }
-}
-
-/* Conversion Elements Styling - Remove default bullets and style target icons */
-.conversion-elements .industry-item ul {
-    list-style: none !important;
-    padding: 0 !important;
-    margin: 0 !important;
-}
-
-.conversion-elements .industry-item li {
-    padding: 8px 0 !important;
-    color: #4a5568 !important;
-    font-size: 1.1rem !important;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
-
-.conversion-elements .industry-item li i {
-    color: #F15A25;
-    font-size: 12px;
-    flex-shrink: 0;
-}
-
-.conversion-elements .industry-item li:hover i {
-    transform: scale(1.2);
+.cta-section .cta-buttons a:hover,
+.cta-section .cta-buttons .btn:hover,
+.cta-section .cta-buttons .btn-primary:hover,
+.cta-section .cta-buttons .btn-outline:hover,
+.cta-section .cta-buttons .btn-secondary:hover {
+    background: #f15a25 !important;
+    color: white !important;
+    border-color: #f15a25 !important;
 }
 

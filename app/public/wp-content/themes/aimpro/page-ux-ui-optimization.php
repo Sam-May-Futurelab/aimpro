@@ -328,9 +328,7 @@ get_header(); ?>
                     </ul>
                     <a href="#contact" class="btn-outline">Get Started</a>
                 </div>
-                
-                <div class="pricing-card featured">
-                    <div class="pricing-badge">Most Popular</div>
+                  <div class="pricing-card featured">
                     <div class="pricing-header">
                         <h3><?php echo get_post_meta(get_the_ID(), 'uxui_package2_name', true) ?: 'UX Optimization'; ?></h3>
                         <div class="price"><?php echo get_post_meta(get_the_ID(), 'uxui_package2_price', true) ?: '£4,997'; ?></div>
