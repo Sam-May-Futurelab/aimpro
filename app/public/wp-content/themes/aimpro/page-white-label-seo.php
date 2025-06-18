@@ -9,7 +9,7 @@ get_header(); ?>
 <main id="main" class="main-content seo-service-page">
     <div class="container">        <!-- Page Header -->
         <section class="page-header">
-            <div class="page-header-content">
+            <div class="page-header-content animate-on-scroll animate-fade-up">
                 <h1><?php echo esc_html(get_post_meta(get_the_ID(), 'white_label_seo_header_title', true) ?: 'White Label SEO Services'); ?></h1>
                 <p class="page-subtitle"><?php echo esc_html(get_post_meta(get_the_ID(), 'white_label_seo_header_subtitle', true) ?: 'Scale your agency with our comprehensive white label SEO solutions'); ?></p>
                 <div class="header-badges">
@@ -24,12 +24,12 @@ get_header(); ?>
         <section class="service-overview">
             <div class="section-content">
                 <div class="overview-content">
-                    <div class="overview-text">
+                    <div class="overview-text animate-on-scroll animate-slide-left">
                         <h2><?php echo esc_html(get_post_meta(get_the_ID(), 'white_label_seo_overview_title', true) ?: 'Professional SEO Services Under Your Brand'); ?></h2>
                         <p><?php echo esc_html(get_post_meta(get_the_ID(), 'white_label_seo_overview_description_1', true) ?: 'Our white label SEO services allow agencies, consultants, and business owners to offer comprehensive SEO solutions to their clients without the overhead of building an in-house team. We work behind the scenes, delivering exceptional results while you maintain the client relationship.'); ?></p>
                         <p><?php echo esc_html(get_post_meta(get_the_ID(), 'white_label_seo_overview_description_2', true) ?: 'From technical audits to content optimization and link building, our team becomes an extension of your agency, delivering consistent, high-quality SEO services that help you scale your business and increase profitability.'); ?></p>
                     </div>
-                    <div class="overview-stats">
+                    <div class="overview-stats animate-on-scroll animate-slide-right">
                         <?php 
                         $stats = get_post_meta(get_the_ID(), 'white_label_seo_stats', true) ?: [
                             ['number' => '150+', 'label' => 'Agency partners'],
@@ -37,7 +37,7 @@ get_header(); ?>
                             ['number' => '48hr', 'label' => 'Average response time']
                         ];
                         foreach ($stats as $stat): ?>
-                            <div class="stat-item">
+                            <div class="stat-item animate-on-scroll animate-stagger animate-scale-up">
                                 <span class="stat-number"><?php echo esc_html($stat['number']); ?></span>
                                 <span class="stat-label"><?php echo esc_html($stat['label']); ?></span>
                             </div>
@@ -48,7 +48,7 @@ get_header(); ?>
         </section>        <!-- Why Choose White Label -->
         <section class="whitelabel-benefits">
             <div class="section-content">
-                <h2><?php echo esc_html(get_post_meta(get_the_ID(), 'white_label_seo_benefits_title', true) ?: 'Why Choose White Label SEO?'); ?></h2>
+                <h2 class="animate-on-scroll animate-fade-up"><?php echo esc_html(get_post_meta(get_the_ID(), 'white_label_seo_benefits_title', true) ?: 'Why Choose White Label SEO?'); ?></h2>
                 <div class="benefits-grid benefits-grid-4">
                     <?php 
                     $benefits = get_post_meta(get_the_ID(), 'white_label_seo_benefits', true) ?: [
@@ -58,7 +58,7 @@ get_header(); ?>
                         ['icon' => 'fas fa-palette', 'title' => 'Your Brand', 'description' => 'All deliverables are fully branded with your company\'s logo, colors, and messaging. Your clients never know we exist.']
                     ];
                     foreach ($benefits as $benefit): ?>
-                        <div class="benefit-card">
+                        <div class="benefit-card animate-on-scroll animate-stagger animate-fade-up">
                             <div class="benefit-icon">
                                 <i class="<?php echo esc_attr($benefit['icon']); ?>"></i>
                             </div>
@@ -71,7 +71,7 @@ get_header(); ?>
         </section>        <!-- Services Grid -->
         <section class="seo-services-grid">
             <div class="section-content">
-                <h2><?php echo esc_html(get_post_meta(get_the_ID(), 'white_label_seo_services_title', true) ?: 'White Label SEO Services We Provide'); ?></h2>
+                <h2 class="animate-on-scroll animate-fade-up"><?php echo esc_html(get_post_meta(get_the_ID(), 'white_label_seo_services_title', true) ?: 'White Label SEO Services We Provide'); ?></h2>
                 <div class="services-grid">
                     <?php 
                     $services = get_post_meta(get_the_ID(), 'white_label_seo_services', true) ?: [
@@ -107,7 +107,7 @@ get_header(); ?>
                         ]
                     ];
                     foreach ($services as $service): ?>
-                        <div class="service-card">
+                        <div class="service-card animate-on-scroll animate-stagger animate-fade-up">
                             <div class="service-content">
                                 <h3><?php echo esc_html($service['title']); ?></h3>
                                 <p><?php echo esc_html($service['description']); ?></p>
@@ -124,7 +124,7 @@ get_header(); ?>
         </section>        <!-- Pricing Packages -->
         <section class="pricing-section">
             <div class="section-content">
-                <h2><?php echo esc_html(get_post_meta(get_the_ID(), 'white_label_seo_packages_title', true) ?: 'White Label SEO Packages'); ?></h2>
+                <h2 class="animate-on-scroll animate-fade-up"><?php echo esc_html(get_post_meta(get_the_ID(), 'white_label_seo_packages_title', true) ?: 'White Label SEO Packages'); ?></h2>
                 <div class="pricing-grid">
                     <?php 
                     $packages = get_post_meta(get_the_ID(), 'white_label_seo_packages', true) ?: [
@@ -183,7 +183,7 @@ get_header(); ?>
                         ]
                     ];
                     foreach ($packages as $package): ?>
-                        <div class="pricing-card<?php echo $package['featured'] ? ' featured' : ''; ?>">
+                        <div class="pricing-card<?php echo $package['featured'] ? ' featured' : ''; ?> animate-on-scroll animate-stagger animate-fade-up">
                             <?php if ($package['badge']): ?>
                                 <span class="popular-badge"><?php echo esc_html($package['badge']); ?></span>
                             <?php endif; ?>
@@ -205,13 +205,13 @@ get_header(); ?>
         <section class="case-study">
             <div class="section-content">
                 <div class="case-study-content">
-                    <div class="case-study-text">
+                    <div class="case-study-text animate-on-scroll animate-fade-up">
                         <h2><?php echo esc_html(get_post_meta(get_the_ID(), 'white_label_seo_case_study_title', true) ?: 'Partner Success Story'); ?></h2>
                         <h3><?php echo esc_html(get_post_meta(get_the_ID(), 'white_label_seo_case_study_subtitle', true) ?: 'Digital Agency Scales to £50K Monthly Revenue'); ?></h3>
                         <p><?php echo esc_html(get_post_meta(get_the_ID(), 'white_label_seo_case_study_description', true) ?: 'A small digital marketing agency approached us looking to add SEO services to their offering without the overhead of hiring specialists. Our white label partnership helped them transform their business.'); ?></p>
                         
                         <div class="challenge-solution">
-                            <div class="challenge">
+                            <div class="challenge animate-on-scroll animate-slide-left">
                                 <h4>The Challenge</h4>
                                 <ul>
                                     <?php 
@@ -226,7 +226,7 @@ get_header(); ?>
                                     <?php endforeach; ?>
                                 </ul>
                             </div>
-                            <div class="solution">
+                            <div class="solution animate-on-scroll animate-slide-right">
                                 <h4>Our Solution</h4>
                                 <ul>
                                     <?php 
@@ -243,7 +243,7 @@ get_header(); ?>
                             </div>
                         </div>
                     </div>
-                    <div class="case-study-metrics">
+                    <div class="case-study-metrics animate-on-scroll animate-fade-up">
                         <?php 
                         $metrics = get_post_meta(get_the_ID(), 'white_label_seo_case_study_metrics', true) ?: [
                             ['number' => '£50K', 'label' => 'Monthly SEO Revenue'],
@@ -252,7 +252,7 @@ get_header(); ?>
                             ['number' => '18 Months', 'label' => 'Partnership Duration']
                         ];
                         foreach ($metrics as $metric): ?>
-                            <div class="metric-card">
+                            <div class="metric-card animate-on-scroll animate-stagger animate-scale-up">
                                 <div class="metric-number"><?php echo esc_html($metric['number']); ?></div>
                                 <div class="metric-label"><?php echo esc_html($metric['label']); ?></div>
                             </div>
@@ -263,7 +263,7 @@ get_header(); ?>
         </section>        <!-- What's Included -->
         <section class="whitelabel-benefits">
             <div class="section-content">
-                <h2><?php echo esc_html(get_post_meta(get_the_ID(), 'white_label_seo_included_title', true) ?: 'What\'s Included in Every Partnership'); ?></h2>
+                <h2 class="animate-on-scroll animate-fade-up"><?php echo esc_html(get_post_meta(get_the_ID(), 'white_label_seo_included_title', true) ?: 'What\'s Included in Every Partnership'); ?></h2>
                 <div class="benefits-grid">
                     <?php 
                     $included_items = get_post_meta(get_the_ID(), 'white_label_seo_included_items', true) ?: [
@@ -275,7 +275,7 @@ get_header(); ?>
                         ['icon' => 'fas fa-shield-alt', 'title' => 'Quality Guarantee', 'description' => '100% satisfaction guarantee with full refund if you\'re not completely satisfied with our services.']
                     ];
                     foreach ($included_items as $item): ?>
-                        <div class="benefit-card">
+                        <div class="benefit-card animate-on-scroll animate-stagger animate-fade-up">
                             <div class="benefit-icon">
                                 <i class="<?php echo esc_attr($item['icon']); ?>"></i>
                             </div>
@@ -288,7 +288,7 @@ get_header(); ?>
         </section>        <!-- FAQ Section -->
         <section class="faq-section">
             <div class="section-content">
-                <h2 style="text-align: center;"><?php echo esc_html(get_post_meta(get_the_ID(), 'white_label_seo_faq_title', true) ?: 'Frequently Asked Questions'); ?></h2>
+                <h2 class="animate-on-scroll animate-fade-up" style="text-align: center;"><?php echo esc_html(get_post_meta(get_the_ID(), 'white_label_seo_faq_title', true) ?: 'Frequently Asked Questions'); ?></h2>
                 <div class="faq-list">
                     <?php 
                     $faqs = get_post_meta(get_the_ID(), 'white_label_seo_faqs', true) ?: [
@@ -300,7 +300,7 @@ get_header(); ?>
                         ['question' => 'How quickly can we get started?', 'answer' => 'After our initial consultation and agreement, we can typically have your white label SEO services up and running within 1-2 weeks.']
                     ];
                     foreach ($faqs as $faq): ?>
-                        <div class="faq-item">
+                        <div class="faq-item animate-on-scroll animate-stagger animate-fade-up">
                             <div class="faq-question">
                                 <h3><?php echo esc_html($faq['question']); ?></h3>
                             </div>
@@ -314,7 +314,7 @@ get_header(); ?>
         </section>        <!-- Client Testimonial -->
         <section class="client-testimonial">
             <div class="section-content">
-                <div class="testimonial-content">
+                <div class="testimonial-content animate-on-scroll animate-fade-up">
                     <?php 
                     $testimonial_image = get_post_meta(get_the_ID(), 'white_label_seo_testimonial_image', true);
                     if ($testimonial_image): ?>
@@ -341,7 +341,7 @@ get_header(); ?>
         </section>        <!-- CTA Section -->
         <section class="simple-cta-section">
             <div class="section-content">
-                <div class="simple-cta-content">
+                <div class="simple-cta-content animate-on-scroll animate-fade-up">
                     <h2><?php echo esc_html(get_post_meta(get_the_ID(), 'white_label_seo_cta_title', true) ?: 'Ready to Scale Your Agency with SEO?'); ?></h2>
                     <p><?php echo esc_html(get_post_meta(get_the_ID(), 'white_label_seo_cta_description', true) ?: 'Join over 150 successful agency partners who trust us to deliver exceptional SEO results under their brand. Schedule a consultation to learn how our white label services can help you grow.'); ?></p>
                     <div class="simple-cta-buttons">
