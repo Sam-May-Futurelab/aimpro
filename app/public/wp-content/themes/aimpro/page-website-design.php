@@ -33,6 +33,12 @@ get_header(); ?>
     margin-bottom: 50px;
     padding-top: 20px;
 }
+
+/* Rounded corners for case study sections */
+.case-study-challenge, .case-study-solution {
+    border-radius: 12px;
+    overflow: hidden;
+}
 </style>
 
 <main id="primary" class="service-page website-design-page">
@@ -132,9 +138,7 @@ get_header(); ?>
                 </div>
                 
                 <div class="case-study-grid">
-                    <div class="case-study-challenge animate-on-scroll animate-slide-left">
-                        <h3>The Challenge</h3>
-                        <p>Premium Home Services had an outdated website that looked unprofessional and failed to generate quality leads. Their bounce rate was 78%, and they were losing potential customers to competitors with better online presence.</p>
+                    <div class="case-study-challenge animate-on-scroll animate-slide-left">                        <p>Premium Home Services had an outdated website that looked unprofessional and failed to generate quality leads. Their bounce rate was 78%, and they were losing potential customers to competitors with better online presence.</p>
                         
                         <div class="challenge-metrics">
                             <div class="metric animate-on-scroll animate-stagger animate-scale-up">

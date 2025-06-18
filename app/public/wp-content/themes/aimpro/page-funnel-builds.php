@@ -33,6 +33,12 @@ get_header(); ?>
     margin-bottom: 50px;
     padding-top: 20px;
 }
+
+/* Rounded corners for case study sections */
+.case-study-challenge, .case-study-solution {
+    border-radius: 12px;
+    overflow: hidden;
+}
 </style>
 
 <main id="primary" class="funnel-builds-page">
@@ -118,9 +124,7 @@ get_header(); ?>
                 </div>
                 
                 <div class="case-study-grid">
-                    <div class="case-study-challenge animate-on-scroll animate-slide-left">
-                        <h3>The Challenge</h3>
-                        <p><?php echo get_post_meta(get_the_ID(), 'fb_case_study_challenge', true) ?: 'DigitalCourse Pro was struggling to convert their high-quality traffic into course sales. They had a single sales page that wasn\'t building enough trust or demonstrating value before asking for a £2,000 course purchase.'; ?></p>
+                    <div class="case-study-challenge animate-on-scroll animate-slide-left">                        <p><?php echo get_post_meta(get_the_ID(), 'fb_case_study_challenge', true) ?: 'DigitalCourse Pro was struggling to convert their high-quality traffic into course sales. They had a single sales page that wasn\'t building enough trust or demonstrating value before asking for a £2,000 course purchase.'; ?></p>
                         
                         <div class="challenge-metrics">
                             <div class="metric animate-on-scroll animate-stagger animate-scale-up">
