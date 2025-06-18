@@ -76,8 +76,7 @@ get_header(); ?>
         </section>        <!-- Mission, Vision, Values Section -->
         <section class="company-values">
             <div class="section-content">
-                <h2><?php echo esc_html(get_post_meta(get_the_ID(), 'company_foundation_heading', true) ?: 'Our Foundation'); ?></h2>
-                <div class="values-grid">
+                <h2><?php echo esc_html(get_post_meta(get_the_ID(), 'company_foundation_heading', true) ?: 'Our Foundation'); ?></h2>                <div class="values-grid">
                     <div class="value-card">
                         <div class="value-icon">
                             <svg width="60" height="60" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -86,16 +85,6 @@ get_header(); ?>
                         </div>
                         <h3><?php echo esc_html(get_post_meta(get_the_ID(), 'company_mission_title', true) ?: 'Our Mission'); ?></h3>
                         <p><?php echo esc_html(get_post_meta(get_the_ID(), 'company_mission_desc', true) ?: 'To empower businesses with innovative digital marketing strategies that drive sustainable growth and measurable results in an ever-evolving digital landscape.'); ?></p>
-                    </div>
-                    <div class="value-card">
-                        <div class="value-icon">
-                            <svg width="60" height="60" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                <circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="2"/>
-                            </svg>
-                        </div>
-                        <h3><?php echo esc_html(get_post_meta(get_the_ID(), 'company_vision_title', true) ?: 'Our Vision'); ?></h3>
-                        <p><?php echo esc_html(get_post_meta(get_the_ID(), 'company_vision_desc', true) ?: 'To become the world\'s most trusted digital marketing partner, known for delivering exceptional results and fostering long-term client relationships built on trust and transparency.'); ?></p>
                     </div>
                     <div class="value-card">
                         <div class="value-icon">
@@ -127,6 +116,16 @@ Results: We are committed to delivering measurable outcomes';
                             }
                             ?>
                         </ul>
+                    </div>
+                    <div class="value-card">
+                        <div class="value-icon">
+                            <svg width="60" height="60" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                <circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="2"/>
+                            </svg>
+                        </div>
+                        <h3><?php echo esc_html(get_post_meta(get_the_ID(), 'company_vision_title', true) ?: 'Our Vision'); ?></h3>
+                        <p><?php echo esc_html(get_post_meta(get_the_ID(), 'company_vision_desc', true) ?: 'To become the world\'s most trusted digital marketing partner, known for delivering exceptional results and fostering long-term client relationships built on trust and transparency.'); ?></p>
                     </div>
                 </div>
             </div>
