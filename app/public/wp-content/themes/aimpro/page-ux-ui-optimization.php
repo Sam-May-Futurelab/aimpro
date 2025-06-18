@@ -148,19 +148,17 @@ get_header(); ?>
                 </div>
             </div>
         </div>
-    </section>
-
-    <!-- Optimization Areas -->
+    </section>    <!-- Optimization Areas -->
     <section class="optimization-areas">
         <div class="container">
             <h2>Key Areas We Optimize</h2>
             
-            <div class="areas-grid">
-                <div class="area-card">
+            <div class="tools-grid">
+                <div class="tool-item">
                     <div class="area-icon">
                         <i class="fas fa-route"></i>
                     </div>
-                    <h3>User Journey & Navigation</h3>
+                    <h4>User Journey & Navigation</h4>
                     <p>Streamline user paths and improve navigation structure for better user flow and conversions.</p>
                     <ul>
                         <li>Information architecture optimization</li>
@@ -170,11 +168,11 @@ get_header(); ?>
                     </ul>
                 </div>
                 
-                <div class="area-card">
+                <div class="tool-item">
                     <div class="area-icon">
                         <i class="fas fa-mouse-pointer"></i>
                     </div>
-                    <h3>Conversion Elements</h3>
+                    <h4>Conversion Elements</h4>
                     <p>Optimize forms, buttons, and calls-to-action for maximum conversion impact.</p>
                     <ul>
                         <li>CTA button optimization</li>
@@ -184,11 +182,11 @@ get_header(); ?>
                     </ul>
                 </div>
                 
-                <div class="area-card">
+                <div class="tool-item">
                     <div class="area-icon">
                         <i class="fas fa-mobile-alt"></i>
                     </div>
-                    <h3>Mobile Experience</h3>
+                    <h4>Mobile Experience</h4>
                     <p>Enhance mobile usability and performance for the majority of your users.</p>
                     <ul>
                         <li>Touch-friendly interface design</li>
@@ -198,11 +196,11 @@ get_header(); ?>
                     </ul>
                 </div>
                 
-                <div class="area-card">
+                <div class="tool-item">
                     <div class="area-icon">
                         <i class="fas fa-tachometer-alt"></i>
                     </div>
-                    <h3>Page Speed & Performance</h3>
+                    <h4>Page Speed & Performance</h4>
                     <p>Optimize loading times and Core Web Vitals for better user experience and SEO.</p>
                     <ul>
                         <li>Image optimization</li>
@@ -212,11 +210,11 @@ get_header(); ?>
                     </ul>
                 </div>
                 
-                <div class="area-card">
+                <div class="tool-item">
                     <div class="area-icon">
                         <i class="fas fa-eye"></i>
                     </div>
-                    <h3>Visual Hierarchy</h3>
+                    <h4>Visual Hierarchy</h4>
                     <p>Improve content organization and visual flow to guide users toward desired actions.</p>
                     <ul>
                         <li>Content prioritization</li>
@@ -226,11 +224,11 @@ get_header(); ?>
                     </ul>
                 </div>
                 
-                <div class="area-card">
+                <div class="tool-item">
                     <div class="area-icon">
                         <i class="fas fa-shield-alt"></i>
                     </div>
-                    <h3>Trust & Credibility</h3>
+                    <h4>Trust & Credibility</h4>
                     <p>Enhance trust signals and credibility elements to reduce conversion barriers.</p>
                     <ul>
                         <li>Social proof integration</li>
@@ -241,7 +239,7 @@ get_header(); ?>
                 </div>
             </div>
         </div>
-    </section>    <!-- Optimization Process -->
+    </section><!-- Optimization Process -->
     <section class="optimization-process">
         <div class="container">
             <h2><?php echo get_post_meta(get_the_ID(), 'uxui_process_title', true) ?: 'Our UX/UI Optimization Process'; ?></h2>
