@@ -245,8 +245,7 @@ get_header(); ?>
                     }
 
                     foreach ($process_steps as $step) :
-                    ?>
-                    <div class="process-step">
+                    ?>                    <div class="process-step">
                         <div class="step-number"><?php echo esc_html($step['number']); ?></div>
                         <div class="step-content">
                             <h3><?php echo esc_html($step['title']); ?></h3>
@@ -255,6 +254,9 @@ get_header(); ?>
                     </div>
                     <?php endforeach; ?>
 
+                </div>
+                <div class="process-cta">
+                    <a href="<?php echo home_url('/contact'); ?>" class="btn-primary process-cta-btn">Start Generating Leads Today</a>
                 </div>
             </div>
         </section>

@@ -271,6 +271,9 @@ get_header(); ?>
                     </div>
                     <?php endforeach; ?>
                 </div>
+                <div class="process-cta">
+                    <a href="<?php echo home_url('/contact'); ?>" class="btn-primary process-cta-btn">Boost Your Local Rankings</a>
+                </div>
             </div>
         </section>        
         

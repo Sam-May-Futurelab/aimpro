@@ -231,6 +231,9 @@ get_header(); ?>
                         </div>
                     </div>
                 </div>
+                <div class="process-cta">
+                    <a href="<?php echo home_url('/contact'); ?>" class="btn-primary process-cta-btn">Optimize Your Sales Funnel</a>
+                </div>
             </div>
         </section>
 

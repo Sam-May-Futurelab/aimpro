@@ -293,7 +293,9 @@ get_header(); ?>
                         </div>
                     </div>
                     <?php endforeach; ?>
-
+                </div>
+                <div class="process-cta">
+                    <a href="<?php echo home_url('/contact'); ?>" class="btn-primary process-cta-btn">Maximize Your Ad ROI</a>
                 </div>
             </div>
         </section>
