@@ -7,10 +7,9 @@
 get_header(); ?>
 
 <main id="main" class="main-content">
-    <div class="container">
-          <!-- Page Header -->
+    <div class="container">          <!-- Page Header -->
         <section class="page-header">
-            <div class="page-header-content">
+            <div class="page-header-content animate-on-scroll animate-fade-up">
                 <h1><?php echo esc_html(get_post_meta(get_the_ID(), '_ecommerce_header_title', true) ?: "E-commerce Digital Marketing"); ?></h1>
                 <p class="page-subtitle"><?php echo esc_html(get_post_meta(get_the_ID(), '_ecommerce_header_subtitle', true) ?: "Drive more traffic, increase conversions, and maximize revenue for your online store"); ?></p>
             </div>
@@ -20,11 +19,11 @@ get_header(); ?>
         <section class="industry-overview">
             <div class="section-content">
                 <div class="overview-content">
-                    <div class="overview-text">
+                    <div class="overview-text animate-on-scroll animate-slide-left">
                         <h2><?php echo esc_html(get_post_meta(get_the_ID(), '_ecommerce_overview_title', true) ?: "Accelerate Your E-commerce Growth"); ?></h2>
                         <p><?php echo esc_html(get_post_meta(get_the_ID(), '_ecommerce_overview_content', true) ?: "The e-commerce landscape is more competitive than ever. Our specialized e-commerce marketing strategies help online retailers increase traffic, improve conversion rates, and maximize customer lifetime value through data-driven digital marketing."); ?></p>
                         
-                        <div class="industry-challenges">
+                        <div class="industry-challenges animate-on-scroll animate-fade-up">
                             <h3><?php echo esc_html(get_post_meta(get_the_ID(), '_ecommerce_challenges_title', true) ?: "E-commerce Marketing Challenges We Solve:"); ?></h3>
                             <ul>
                                 <?php
@@ -46,8 +45,8 @@ get_header(); ?>
                             </ul>
                         </div>
                     </div>
-                    <div class="overview-image">
-                        <?php 
+                    <div class="overview-image animate-on-scroll animate-slide-right">
+                        <?php
                         $image_url = get_post_meta(get_the_ID(), '_ecommerce_overview_image', true);
                         if (empty($image_url)) {
                             $image_url = get_template_directory_uri() . '/assets/images/industries/ecommerce-overview.jpg';

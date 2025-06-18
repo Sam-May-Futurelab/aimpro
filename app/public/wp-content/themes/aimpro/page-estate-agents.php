@@ -7,10 +7,9 @@
 get_header(); ?>
 
 <main id="main" class="main-content">
-    <div class="container">
-          <!-- Page Header -->
+    <div class="container">          <!-- Page Header -->
         <section class="page-header">
-            <div class="page-header-content">
+            <div class="page-header-content animate-on-scroll animate-fade-up">
                 <h1><?php echo esc_html(get_post_meta(get_the_ID(), '_estate_agents_header_title', true) ?: 'Estate Agent Digital Marketing'); ?></h1>
                 <p class="page-subtitle"><?php echo esc_html(get_post_meta(get_the_ID(), '_estate_agents_header_subtitle', true) ?: 'Generate quality property leads and dominate your local property market'); ?></p>
             </div>
@@ -18,11 +17,11 @@ get_header(); ?>
         <section class="industry-overview">
             <div class="section-content">
                 <div class="overview-content">
-                    <div class="overview-text">
+                    <div class="overview-text animate-on-scroll animate-slide-left">
                         <h2><?php echo esc_html(get_post_meta(get_the_ID(), '_estate_agents_overview_title', true) ?: 'Sell More Properties, Attract More Vendors'); ?></h2>
                         <p><?php echo esc_html(get_post_meta(get_the_ID(), '_estate_agents_overview_content', true) ?: 'The property market is fiercely competitive. Our specialized estate agent marketing strategies help you stand out, generate high-quality vendor and buyer leads, and establish your agency as the go-to property experts in your area.'); ?></p>
                         
-                        <div class="industry-challenges">
+                        <div class="industry-challenges animate-on-scroll animate-fade-up">
                             <h3><?php echo esc_html(get_post_meta(get_the_ID(), '_estate_agents_challenges_title', true) ?: 'Estate Agent Marketing Challenges We Solve:'); ?></h3>
                             <ul>
                                 <?php 
@@ -41,8 +40,7 @@ get_header(); ?>
                                     <li><?php echo esc_html($challenge); ?></li>
                                 <?php endforeach; ?>
                             </ul>
-                        </div>
-                    </div>                    <div class="overview-image">
+                        </div>                    </div>                    <div class="overview-image animate-on-scroll animate-slide-right">
                         <?php 
                         $overview_image = get_post_meta(get_the_ID(), '_estate_agents_overview_image', true);
                         if (!empty($overview_image)): ?>
@@ -56,7 +54,7 @@ get_header(); ?>
         </section>        <!-- Estate Agent Services (2x2 Grid) -->
         <section class="estate-agent-services">
             <div class="section-content">
-                <h2><?php echo esc_html(get_post_meta(get_the_ID(), '_estate_agents_services_title', true) ?: 'Our Estate Agent Marketing Services'); ?></h2>
+                <h2 class="animate-on-scroll animate-fade-up"><?php echo esc_html(get_post_meta(get_the_ID(), '_estate_agents_services_title', true) ?: 'Our Estate Agent Marketing Services'); ?></h2>
                 <div class="services-grid">
                     <?php 
                     $services = get_post_meta(get_the_ID(), '_estate_agents_services', true);
@@ -89,7 +87,7 @@ get_header(); ?>
                         );
                     }
                     foreach ($services as $service): ?>
-                        <div class="service-card">
+                        <div class="service-card animate-on-scroll animate-stagger animate-fade-up">
                             <div class="service-icon">
                                 <i class="<?php echo esc_attr($service['icon']); ?>"></i>
                             </div>
@@ -110,12 +108,12 @@ get_header(); ?>
         <section class="estate-agent-case-study">
             <div class="section-content">
                 <div class="case-study-content">
-                    <div class="case-study-text">
+                    <div class="case-study-text animate-on-scroll animate-slide-left">
                         <span class="case-study-label"><?php echo esc_html(get_post_meta(get_the_ID(), '_estate_agents_case_study_label', true) ?: 'Success Story'); ?></span>
                         <h2><?php echo esc_html(get_post_meta(get_the_ID(), '_estate_agents_case_study_title', true) ?: 'PropertyPro: 280% Increase in Vendor Leads'); ?></h2>
                         <p><?php echo esc_html(get_post_meta(get_the_ID(), '_estate_agents_case_study_content', true) ?: 'PropertyPro, an independent estate agency, needed to compete against national chains and generate more vendor leads in their local market.'); ?></p>
                         
-                        <div class="case-study-challenge">
+                        <div class="case-study-challenge animate-on-scroll animate-fade-up">
                             <h3><?php echo esc_html(get_post_meta(get_the_ID(), '_estate_agents_case_study_challenge_title', true) ?: 'The Challenge'); ?></h3>
                             <ul>
                                 <?php 
@@ -134,7 +132,7 @@ get_header(); ?>
                             </ul>
                         </div>
 
-                        <div class="case-study-solution">
+                        <div class="case-study-solution animate-on-scroll animate-fade-up">
                             <h3><?php echo esc_html(get_post_meta(get_the_ID(), '_estate_agents_case_study_solution_title', true) ?: 'Our Solution'); ?></h3>
                             <ul>
                                 <?php 
@@ -153,7 +151,7 @@ get_header(); ?>
                             </ul>
                         </div>
                     </div>
-                    <div class="case-study-results">
+                    <div class="case-study-results animate-on-scroll animate-slide-right">
                         <h3><?php echo esc_html(get_post_meta(get_the_ID(), '_estate_agents_case_study_results_title', true) ?: 'Results After 6 Months'); ?></h3>
                         <div class="results-grid">
                             <?php 
@@ -167,20 +165,20 @@ get_header(); ?>
                                 );
                             }
                             foreach ($case_study_results as $result): ?>
-                                <div class="result-item">
+                                <div class="result-item animate-on-scroll animate-stagger animate-scale-up">
                                     <div class="result-number"><?php echo esc_html($result['number']); ?></div>
                                     <div class="result-label"><?php echo esc_html($result['label']); ?></div>
                                 </div>
                             <?php endforeach; ?>
                         </div>
-                        <a href="<?php echo esc_url(get_post_meta(get_the_ID(), '_estate_agents_case_study_link_url', true) ?: home_url('/case-studies')); ?>" class="case-study-link"><?php echo esc_html(get_post_meta(get_the_ID(), '_estate_agents_case_study_link_text', true) ?: 'Read Full Case Study'); ?></a>
+                        <a href="<?php echo esc_url(get_post_meta(get_the_ID(), '_estate_agents_case_study_link_url', true) ?: home_url('/case-studies')); ?>" class="case-study-link animate-on-scroll animate-fade-up"><?php echo esc_html(get_post_meta(get_the_ID(), '_estate_agents_case_study_link_text', true) ?: 'Read Full Case Study'); ?></a>
                     </div>
                 </div>
             </div>
         </section>        <!-- Estate Agent Process -->
         <section class="estate-agent-process">
             <div class="section-content">
-                <h2><?php echo esc_html(get_post_meta(get_the_ID(), '_estate_agents_process_title', true) ?: 'Our Estate Agent Marketing Process'); ?></h2>
+                <h2 class="animate-on-scroll animate-fade-up"><?php echo esc_html(get_post_meta(get_the_ID(), '_estate_agents_process_title', true) ?: 'Our Estate Agent Marketing Process'); ?></h2>
                 <div class="process-steps">
                     <?php 
                     $process_steps = get_post_meta(get_the_ID(), '_estate_agents_process_steps', true);
@@ -206,7 +204,7 @@ get_header(); ?>
                     }
                     $step_number = 1;
                     foreach ($process_steps as $step): ?>
-                        <div class="process-step">
+                        <div class="process-step animate-on-scroll animate-stagger animate-slide-up">
                             <div class="step-number"><?php echo $step_number; ?></div>
                             <div class="step-content">
                                 <h3><?php echo esc_html($step['title']); ?></h3>
@@ -221,28 +219,28 @@ get_header(); ?>
         </section>        <!-- Estate Agent Insights -->
         <section class="estate-agent-insights">
             <div class="section-content">
-                <h2>Property Market Insights</h2>
+                <h2 class="animate-on-scroll animate-fade-up">Property Market Insights</h2>
                 <div class="results-grid">
                     
-                    <div class="result-item">
+                    <div class="result-item animate-on-scroll animate-stagger animate-scale-up">
                         <div class="result-number">92%</div>
                         <div class="result-label">Online Property Search</div>
                         <p>92% of property buyers start their search online</p>
                     </div>
 
-                    <div class="result-item">
+                    <div class="result-item animate-on-scroll animate-stagger animate-scale-up">
                         <div class="result-number">76%</div>
                         <div class="result-label">Local Agent Preference</div>
                         <p>76% of sellers prefer local estate agents over national chains</p>
                     </div>
 
-                    <div class="result-item">
+                    <div class="result-item animate-on-scroll animate-stagger animate-scale-up">
                         <div class="result-number">84%</div>
                         <div class="result-label">Reviews Influence</div>
                         <p>84% of clients check online reviews before choosing an agent</p>
                     </div>
 
-                    <div class="result-item">
+                    <div class="result-item animate-on-scroll animate-stagger animate-scale-up">
                         <div class="result-number">67%</div>
                         <div class="result-label">Mobile Property Search</div>
                         <p>67% of property searches happen on mobile devices</p>
@@ -252,11 +250,11 @@ get_header(); ?>
         </section><!-- Estate Agent Testimonial -->
         <section class="estate-agent-testimonial">
             <div class="section-content">
-                <div class="testimonial-content">
+                <div class="testimonial-content animate-on-scroll animate-fade-up">
                     <blockquote>
                         "<?php echo esc_html(get_post_meta(get_the_ID(), '_estate_agents_testimonial_quote', true) ?: 'Aimpro Digital transformed our estate agency\'s online presence. Their understanding of the property market and local SEO expertise helped us generate 280% more vendor leads. We\'re now the leading independent agent in our area.'); ?>"
                     </blockquote>
-                    <div class="testimonial-author">
+                    <div class="testimonial-author animate-on-scroll animate-slide-up">
                         <div class="author-info">
                             <h4><?php echo esc_html(get_post_meta(get_the_ID(), '_estate_agents_testimonial_name', true) ?: 'Sarah Mitchell'); ?></h4>
                             <span><?php echo esc_html(get_post_meta(get_the_ID(), '_estate_agents_testimonial_position', true) ?: 'Director, PropertyPro Estate Agents'); ?></span>
@@ -268,13 +266,13 @@ get_header(); ?>
         </section>        <!-- CTA Section -->
         <section class="cta-section">
             <div class="container">
-                <div class="cta-content">
+                <div class="cta-content animate-on-scroll animate-fade-up">
                     <h2><?php echo esc_html(get_post_meta(get_the_ID(), '_estate_agents_cta_title', true) ?: 'Ready to Dominate Your Local Property Market?'); ?></h2>
                     <p><?php echo esc_html(get_post_meta(get_the_ID(), '_estate_agents_cta_subtitle', true) ?: 'Let\'s discuss how our estate agent marketing expertise can generate more vendor leads and property sales.'); ?></p>
-                    <div class="cta-buttons">
+                    <div class="cta-buttons animate-on-scroll animate-slide-up">
                         <a href="<?php echo esc_url(get_post_meta(get_the_ID(), '_estate_agents_cta_primary_url', true) ?: home_url('/contact')); ?>" class="btn-primary"><?php echo esc_html(get_post_meta(get_the_ID(), '_estate_agents_cta_primary_text', true) ?: 'Get Free Marketing Audit'); ?></a>
                         <a href="<?php echo esc_url(get_post_meta(get_the_ID(), '_estate_agents_cta_secondary_url', true) ?: home_url('/case-studies')); ?>" class="btn-outline"><?php echo esc_html(get_post_meta(get_the_ID(), '_estate_agents_cta_secondary_text', true) ?: 'View Property Success Stories'); ?></a>
-                    </div>                    <div class="cta-features">
+                    </div>                    <div class="cta-features animate-on-scroll animate-fade-up">
                         <?php 
                         $cta_benefits = get_post_meta(get_the_ID(), '_estate_agents_cta_benefits', true);
                         if (empty($cta_benefits)) {

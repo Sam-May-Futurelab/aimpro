@@ -26,10 +26,9 @@ $services = get_post_meta(get_the_ID(), '_automotive_services', true) ?: array()
 
 <main id="main" class="main-content">
     <div class="container">
-        
-        <!-- Page Header -->
+          <!-- Page Header -->
         <section class="page-header">
-            <div class="page-header-content">
+            <div class="page-header-content animate-on-scroll animate-fade-up">
                 <h1><?php echo esc_html($header_title); ?></h1>
                 <p class="page-subtitle"><?php echo esc_html($header_subtitle); ?></p>
             </div>
@@ -37,11 +36,11 @@ $services = get_post_meta(get_the_ID(), '_automotive_services', true) ?: array()
         <section class="industry-overview">
             <div class="section-content">
                 <div class="overview-content">
-                    <div class="overview-text">
+                    <div class="overview-text animate-on-scroll animate-slide-left">
                         <h2><?php echo esc_html($overview_title); ?></h2>
                         <p><?php echo esc_html($overview_content); ?></p>
                         
-                        <div class="industry-challenges">
+                        <div class="industry-challenges animate-on-scroll animate-fade-up">
                             <h3><?php echo esc_html($challenges_title); ?></h3>
                             <ul>
                                 <?php foreach ($challenges as $challenge): ?>
@@ -50,7 +49,7 @@ $services = get_post_meta(get_the_ID(), '_automotive_services', true) ?: array()
                             </ul>
                         </div>
                     </div>
-                    <div class="overview-image">
+                    <div class="overview-image animate-on-scroll animate-slide-right">
                         <?php if ($overview_image): ?>
                             <img src="<?php echo esc_url($overview_image); ?>" alt="<?php echo esc_attr($overview_title); ?>" />
                         <?php else: ?>
@@ -62,7 +61,7 @@ $services = get_post_meta(get_the_ID(), '_automotive_services', true) ?: array()
         </section>        <!-- Automotive Services -->
         <section class="automotive-services">
             <div class="section-content">
-                <h2><?php echo esc_html($services_title); ?></h2>
+                <h2 class="animate-on-scroll animate-fade-up"><?php echo esc_html($services_title); ?></h2>
                 <div class="benefits-grid-2x2">
                     <?php 
                     // Default services if none set
@@ -96,7 +95,7 @@ $services = get_post_meta(get_the_ID(), '_automotive_services', true) ?: array()
                     }
                     
                     foreach ($services as $service): ?>
-                      <div class="benefit-card">
+                      <div class="benefit-card animate-on-scroll animate-stagger animate-fade-up">
                         <div class="benefit-icon">
                             <i class="<?php echo esc_attr($service['icon']); ?>"></i>
                         </div>
@@ -171,11 +170,10 @@ $services = get_post_meta(get_the_ID(), '_automotive_services', true) ?: array()
                         );
                         $case_study_link_text = get_post_meta(get_the_ID(), '_automotive_case_study_link_text', true) ?: 'Read Full Case Study';
                         $case_study_link_url = get_post_meta(get_the_ID(), '_automotive_case_study_link_url', true) ?: home_url('/case-studies');
-                        ?>
-                        <h3><?php echo esc_html($case_study_results_title); ?></h3>
+                        ?>                        <h3><?php echo esc_html($case_study_results_title); ?></h3>
                         <div class="results-grid">
                             <?php foreach ($case_study_results as $result): ?>
-                            <div class="result-item">
+                            <div class="result-item animate-on-scroll animate-stagger animate-scale-up">
                                 <div class="result-number"><?php echo esc_html($result['number']); ?></div>
                                 <div class="result-label"><?php echo esc_html($result['label']); ?></div>
                             </div>

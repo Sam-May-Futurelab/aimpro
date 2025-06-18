@@ -8,10 +8,9 @@ get_header(); ?>
 
 <main id="main" class="main-content">
     <div class="container">
-        
-        <!-- Page Header -->
+          <!-- Page Header -->
         <section class="page-header">
-            <div class="page-header-content">
+            <div class="page-header-content animate-on-scroll animate-fade-up">
                 <h1><?php echo esc_html(get_post_meta(get_the_ID(), '_finance_header_title', true) ?: 'Finance Digital Marketing'); ?></h1>
                 <p class="page-subtitle"><?php echo esc_html(get_post_meta(get_the_ID(), '_finance_header_subtitle', true) ?: 'Build trust and generate high-value leads with compliant financial services marketing'); ?></p>
             </div>
@@ -19,11 +18,11 @@ get_header(); ?>
         <section class="industry-overview">
             <div class="section-content">
                 <div class="overview-content">
-                    <div class="overview-text">
+                    <div class="overview-text animate-on-scroll animate-slide-left">
                         <h2><?php echo esc_html(get_post_meta(get_the_ID(), '_finance_overview_title', true) ?: 'Navigate Financial Services Marketing with Confidence'); ?></h2>
                         <p><?php echo esc_html(get_post_meta(get_the_ID(), '_finance_overview_content', true) ?: 'Financial services marketing requires a delicate balance of trust-building, compliance, and results. Our specialized approach helps financial advisors, banks, insurance companies, and fintech startups generate qualified leads while maintaining regulatory compliance.'); ?></p>
                         
-                        <div class="industry-challenges">
+                        <div class="industry-challenges animate-on-scroll animate-fade-up">
                             <h3><?php echo esc_html(get_post_meta(get_the_ID(), '_finance_challenges_title', true) ?: 'Financial Marketing Challenges We Solve:'); ?></h3>
                             <ul>
                                 <?php 
@@ -43,7 +42,7 @@ get_header(); ?>
                             </ul>
                         </div>
                     </div>
-                    <div class="overview-image">
+                    <div class="overview-image animate-on-scroll animate-slide-right">
                         <?php 
                         $overview_image = get_post_meta(get_the_ID(), '_finance_overview_image', true);
                         if ($overview_image): ?>
@@ -57,7 +56,7 @@ get_header(); ?>
         </section>        <!-- Finance Services (2x2 Grid) -->
         <section class="finance-services">
             <div class="section-content">
-                <h2><?php echo esc_html(get_post_meta(get_the_ID(), '_finance_solutions_title', true) ?: 'Our Financial Services Marketing Solutions'); ?></h2>
+                <h2 class="animate-on-scroll animate-fade-up"><?php echo esc_html(get_post_meta(get_the_ID(), '_finance_solutions_title', true) ?: 'Our Financial Services Marketing Solutions'); ?></h2>
                 <div class="services-grid services-grid-2x2">
                     <?php 
                     $solutions = get_post_meta(get_the_ID(), '_finance_solutions', true);
@@ -90,7 +89,7 @@ get_header(); ?>
                         );
                     }
                     foreach ($solutions as $solution): ?>
-                        <div class="service-card">
+                        <div class="service-card animate-on-scroll animate-stagger animate-fade-up">
                             <div class="service-icon">
                                 <i class="<?php echo esc_attr($solution['icon']); ?>"></i>
                             </div>

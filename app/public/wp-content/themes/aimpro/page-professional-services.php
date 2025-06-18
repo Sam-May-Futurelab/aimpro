@@ -15,10 +15,9 @@ get_header(); ?>
 }); ?>
 
 <main id="main" class="main-content">
-    <div class="container">
-          <!-- Page Header -->
+    <div class="container">          <!-- Page Header -->
         <section class="page-header">
-            <div class="page-header-content">
+            <div class="page-header-content animate-on-scroll animate-fade-up">
                 <h1><?php echo esc_html(get_post_meta(get_the_ID(), '_professional_services_header_title', true) ?: 'Professional Services Digital Marketing'); ?></h1>
                 <p class="page-subtitle"><?php echo esc_html(get_post_meta(get_the_ID(), '_professional_services_header_subtitle', true) ?: 'Build trust, establish authority, and generate high-quality leads for your professional practice'); ?></p>
             </div>
@@ -26,11 +25,11 @@ get_header(); ?>
         <section class="industry-overview">
             <div class="section-content">
                 <div class="overview-content">
-                    <div class="overview-text">
+                    <div class="overview-text animate-on-scroll animate-slide-left">
                         <h2><?php echo esc_html(get_post_meta(get_the_ID(), '_professional_services_overview_title', true) ?: 'Elevate Your Professional Practice'); ?></h2>
                         <p><?php echo esc_html(get_post_meta(get_the_ID(), '_professional_services_overview_content', true) ?: 'Professional services clients expect expertise, trust, and results. Our specialized marketing strategies help law firms, accounting practices, consulting agencies, and other professional services establish authority and attract qualified prospects.'); ?></p>
                         
-                        <div class="industry-challenges">
+                        <div class="industry-challenges animate-on-scroll animate-fade-up">
                             <h3><?php echo esc_html(get_post_meta(get_the_ID(), '_professional_services_challenges_title', true) ?: 'Professional Services Marketing Challenges We Solve:'); ?></h3>
                             <ul>
                                 <?php 
@@ -50,7 +49,7 @@ get_header(); ?>
                                 <?php endforeach; ?>
                             </ul>
                         </div>
-                    </div>                    <div class="overview-image">
+                    </div>                    <div class="overview-image animate-on-scroll animate-slide-right">
                         <?php 
                         $overview_image = get_post_meta(get_the_ID(), '_professional_services_overview_image', true);
                         if (!empty($overview_image)): ?>
@@ -61,7 +60,7 @@ get_header(); ?>
                     </div>
                 </div>
             </div>
-        </section>        <!-- Professional Services (2x2 Grid) -->
+        </section><!-- Professional Services (2x2 Grid) -->
         <section class="professional-services">
             <div class="section-content">
                 <h2><?php echo esc_html(get_post_meta(get_the_ID(), '_professional_services_solutions_title', true) ?: 'Our Professional Services Marketing Solutions'); ?></h2>

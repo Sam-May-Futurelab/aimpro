@@ -8,10 +8,9 @@ get_header(); ?>
 
 <main id="main" class="main-content improve-roi-ads-page">
     <div class="container">
-        
-        <!-- Page Header -->
+          <!-- Page Header -->
         <section class="page-header">
-            <div class="page-header-content">
+            <div class="page-header-content animate-on-scroll animate-fade-up">
                 <h1><?php echo esc_html(get_post_meta(get_the_ID(), '_improve_roi_ads_header_title', true) ?: 'Improve ROI from Ads'); ?></h1>
                 <p class="page-subtitle"><?php echo esc_html(get_post_meta(get_the_ID(), '_improve_roi_ads_header_subtitle', true) ?: 'Maximize your advertising spend with data-driven optimization strategies that deliver measurable results'); ?></p>
             </div>
@@ -21,11 +20,11 @@ get_header(); ?>
         <section class="solution-overview">
             <div class="section-content">
                 <div class="overview-content">
-                    <div class="overview-text">
+                    <div class="overview-text animate-on-scroll animate-slide-left">
                         <h2><?php echo esc_html(get_post_meta(get_the_ID(), '_improve_roi_ads_overview_title', true) ?: 'Turn Ad Spend Into Profitable Growth'); ?></h2>
                         <p><?php echo esc_html(get_post_meta(get_the_ID(), '_improve_roi_ads_overview_content', true) ?: 'Every advertising dollar should drive real business results. Our comprehensive ad optimization strategies combine advanced analytics, conversion tracking, and continuous testing to maximize your return on ad spend (ROAS) while reducing customer acquisition costs and improving campaign performance.'); ?></p>
                         
-                        <div class="solution-challenges">
+                        <div class="solution-challenges animate-on-scroll animate-fade-up">
                             <h3><?php echo esc_html(get_post_meta(get_the_ID(), '_improve_roi_ads_challenges_title', true) ?: 'Ad ROI Challenges We Solve:'); ?></h3>
                             <ul>
                                 <?php
@@ -45,7 +44,7 @@ get_header(); ?>
                                 }
                                 ?>
                             </ul>
-                        </div>                    </div>                    <div class="overview-image">
+                        </div>                    </div>                    <div class="overview-image animate-on-scroll animate-slide-right">
                         <?php 
                         $overview_image = get_post_meta(get_the_ID(), '_improve_roi_ads_overview_image', true);
                         if ($overview_image): ?>
@@ -57,18 +56,16 @@ get_header(); ?>
                                 <img src="<?php echo get_template_directory_uri(); ?>/assets/images/solutions/ad-roi-overview.jpg" alt="Ad ROI Optimization Strategy" />
                             </div>
                         <?php endif; ?>
-                        <div class="overview-image-cta">
+                        <div class="overview-image-cta animate-on-scroll animate-scale-up">
                             <a href="<?php echo home_url('/contact'); ?>" class="btn-primary overview-cta-btn">Improve Your Ad ROI</a>
                         </div>
                     </div>
                 </div>
             </div>
-        </section>
-
-        <!-- ROI Optimization Methods -->
+        </section>        <!-- ROI Optimization Methods -->
         <section class="roi-optimization-methods">
             <div class="section-content">
-                <h2><?php echo esc_html(get_post_meta(get_the_ID(), '_improve_roi_ads_methods_title', true) ?: 'Our Ad ROI Optimization Methods'); ?></h2>
+                <h2 class="animate-on-scroll animate-fade-up"><?php echo esc_html(get_post_meta(get_the_ID(), '_improve_roi_ads_methods_title', true) ?: 'Our Ad ROI Optimization Methods'); ?></h2>
                 <div class="methods-grid">
                     
                     <?php
@@ -142,7 +139,7 @@ get_header(); ?>
                     foreach ($methods as $index => $method) :
                         $icon_index = $index % count($method_icons);
                     ?>
-                    <div class="method-card">
+                    <div class="method-card animate-on-scroll animate-stagger animate-fade-up">
                         <div class="method-icon">
                             <?php echo $method_icons[$icon_index]; ?>
                         </div>
@@ -160,18 +157,16 @@ get_header(); ?>
 
                 </div>
             </div>
-        </section>
-
-        <!-- ROI Success Story -->
+        </section>        <!-- ROI Success Story -->
         <section class="roi-case-study">
             <div class="section-content">
                 <div class="case-study-content">
-                    <div class="case-study-text">
+                    <div class="case-study-text animate-on-scroll animate-slide-left">
                         <span class="case-study-label"><?php echo esc_html(get_post_meta(get_the_ID(), '_improve_roi_ads_case_study_label', true) ?: 'Success Story'); ?></span>
                         <h2><?php echo esc_html(get_post_meta(get_the_ID(), '_improve_roi_ads_case_study_title', true) ?: 'EcoHome Solutions: 320% ROI Improvement'); ?></h2>
                         <p><?php echo esc_html(get_post_meta(get_the_ID(), '_improve_roi_ads_case_study_content', true) ?: 'EcoHome Solutions was spending £15,000/month on Google Ads with poor returns and high cost per acquisition.'); ?></p>
                         
-                        <div class="case-study-challenge">
+                        <div class="case-study-challenge animate-on-scroll animate-fade-up">
                             <h3><?php echo esc_html(get_post_meta(get_the_ID(), '_improve_roi_ads_case_study_challenge_title', true) ?: 'The Challenge'); ?></h3>
                             <ul>
                                 <?php
@@ -191,7 +186,7 @@ get_header(); ?>
                             </ul>
                         </div>
 
-                        <div class="case-study-solution">
+                        <div class="case-study-solution animate-on-scroll animate-fade-up">
                             <h3><?php echo esc_html(get_post_meta(get_the_ID(), '_improve_roi_ads_case_study_solution_title', true) ?: 'Our Solution'); ?></h3>
                             <ul>
                                 <?php
@@ -211,7 +206,7 @@ get_header(); ?>
                             </ul>
                         </div>
                     </div>
-                    <div class="case-study-results">
+                    <div class="case-study-results animate-on-scroll animate-slide-right">
                         <h3><?php echo esc_html(get_post_meta(get_the_ID(), '_improve_roi_ads_case_study_results_title', true) ?: 'Results After 5 Months'); ?></h3>
                         <div class="results-grid">
                             <?php
@@ -238,13 +233,13 @@ get_header(); ?>
                             }
                             foreach ($results as $result) :
                             ?>
-                            <div class="result-item">
+                            <div class="result-item animate-on-scroll animate-stagger animate-scale-up">
                                 <div class="result-number"><?php echo esc_html($result['number']); ?></div>
                                 <div class="result-label"><?php echo esc_html($result['label']); ?></div>
                             </div>
                             <?php endforeach; ?>
                         </div>
-                        <a href="<?php echo esc_url(home_url(get_post_meta(get_the_ID(), '_improve_roi_ads_case_study_link_url', true) ?: '/case-studies')); ?>" class="case-study-link"><?php echo esc_html(get_post_meta(get_the_ID(), '_improve_roi_ads_case_study_link_text', true) ?: 'Read Full Case Study'); ?></a>
+                        <a href="<?php echo esc_url(home_url(get_post_meta(get_the_ID(), '_improve_roi_ads_case_study_link_url', true) ?: '/case-studies')); ?>" class="case-study-link animate-on-scroll animate-fade-up"><?php echo esc_html(get_post_meta(get_the_ID(), '_improve_roi_ads_case_study_link_text', true) ?: 'Read Full Case Study'); ?></a>
                     </div>
                 </div>
             </div>
@@ -253,7 +248,7 @@ get_header(); ?>
         <!-- ROI Process -->
         <section class="roi-process">
             <div class="section-content">
-                <h2><?php echo esc_html(get_post_meta(get_the_ID(), '_improve_roi_ads_process_title', true) ?: 'Our Ad ROI Optimization Process'); ?></h2>
+                <h2 class="animate-on-scroll animate-fade-up"><?php echo esc_html(get_post_meta(get_the_ID(), '_improve_roi_ads_process_title', true) ?: 'Our Ad ROI Optimization Process'); ?></h2>
                 <div class="process-steps">
                     
                     <?php
@@ -285,7 +280,7 @@ get_header(); ?>
 
                     foreach ($process_steps as $step) :
                     ?>
-                    <div class="process-step">
+                    <div class="process-step animate-on-scroll animate-stagger animate-slide-up">
                         <div class="step-number"><?php echo esc_html($step['number']); ?></div>
                         <div class="step-content">
                             <h3><?php echo esc_html($step['title']); ?></h3>
@@ -294,16 +289,14 @@ get_header(); ?>
                     </div>
                     <?php endforeach; ?>
                 </div>
-                <div class="process-cta">
+                <div class="process-cta animate-on-scroll animate-scale-up">
                     <a href="<?php echo home_url('/contact'); ?>" class="btn-primary process-cta-btn">Maximize Your Ad ROI</a>
                 </div>
             </div>
-        </section>
-
-        <!-- Platform Optimization -->
+        </section>        <!-- Platform Optimization -->
         <section class="platform-optimization">
             <div class="section-content">
-                <h2><?php echo esc_html(get_post_meta(get_the_ID(), '_improve_roi_ads_platforms_title', true) ?: 'Platform-Specific ROI Optimization'); ?></h2>
+                <h2 class="animate-on-scroll animate-fade-up"><?php echo esc_html(get_post_meta(get_the_ID(), '_improve_roi_ads_platforms_title', true) ?: 'Platform-Specific ROI Optimization'); ?></h2>
                 <div class="platforms-grid">
                     
                     <?php
@@ -348,7 +341,7 @@ get_header(); ?>
 
                     foreach ($platforms as $platform) :
                     ?>
-                    <div class="platform-card">
+                    <div class="platform-card animate-on-scroll animate-stagger animate-fade-up">
                         <h3><?php echo esc_html($platform['title']); ?></h3>
                         <ul class="platform-features">
                             <?php foreach ($platform['features'] as $feature) : ?>
@@ -368,7 +361,7 @@ get_header(); ?>
         <!-- ROI Metrics -->
         <section class="roi-metrics">
             <div class="section-content">
-                <h2><?php echo esc_html(get_post_meta(get_the_ID(), '_improve_roi_ads_metrics_title', true) ?: 'Key ROI Metrics We Track & Optimize'); ?></h2>
+                <h2 class="animate-on-scroll animate-fade-up"><?php echo esc_html(get_post_meta(get_the_ID(), '_improve_roi_ads_metrics_title', true) ?: 'Key ROI Metrics We Track & Optimize'); ?></h2>
                 <div class="metrics-grid">
                     
                     <?php
@@ -420,7 +413,7 @@ get_header(); ?>
 
                     foreach ($metrics as $metric) :
                     ?>
-                    <div class="metric-category">
+                    <div class="metric-category animate-on-scroll animate-stagger animate-slide-up">
                         <h3><?php echo esc_html($metric['title']); ?></h3>
                         <ul class="metric-list">
                             <?php foreach ($metric['items'] as $item) : ?>
@@ -437,11 +430,11 @@ get_header(); ?>
         <!-- ROI Testimonial (No Image) -->
         <section class="roi-testimonial">
             <div class="section-content">
-                <div class="testimonial-content">
+                <div class="testimonial-content animate-on-scroll animate-fade-up">
                     <blockquote>
                         "<?php echo esc_html(get_post_meta(get_the_ID(), '_improve_roi_ads_testimonial_quote', true) ?: 'Aimpro Digital took our ad performance from break-even to highly profitable. Our ROI improved by 320% and we\'re now getting 4x more leads for the same budget. Their optimization expertise is exceptional.'); ?>"
                     </blockquote>
-                    <div class="testimonial-author">
+                    <div class="testimonial-author animate-on-scroll animate-slide-up">
                         <div class="author-info">
                             <h4><?php echo esc_html(get_post_meta(get_the_ID(), '_improve_roi_ads_testimonial_name', true) ?: 'Michael Thompson'); ?></h4>
                             <span><?php echo esc_html(get_post_meta(get_the_ID(), '_improve_roi_ads_testimonial_position', true) ?: 'Marketing Director, EcoHome Solutions'); ?></span>
@@ -455,14 +448,14 @@ get_header(); ?>
         <!-- CTA Section -->
         <section class="cta-section">
             <div class="section-content">
-                <div class="cta-content">
+                <div class="cta-content animate-on-scroll animate-fade-up">
                     <h2><?php echo esc_html(get_post_meta(get_the_ID(), '_improve_roi_ads_cta_title', true) ?: 'Ready to Maximize Your Ad ROI?'); ?></h2>
                     <p><?php echo esc_html(get_post_meta(get_the_ID(), '_improve_roi_ads_cta_subtitle', true) ?: 'Let\'s analyze your current ad performance and create a strategy to dramatically improve your return on investment.'); ?></p>
-                    <div class="cta-buttons">
+                    <div class="cta-buttons animate-on-scroll animate-slide-up">
                         <a href="<?php echo esc_url(home_url(get_post_meta(get_the_ID(), '_improve_roi_ads_cta_primary_url', true) ?: '/contact')); ?>" class="btn btn-primary"><?php echo esc_html(get_post_meta(get_the_ID(), '_improve_roi_ads_cta_primary_text', true) ?: 'Get Free Ad Account Audit'); ?></a>
                         <a href="<?php echo esc_url(home_url(get_post_meta(get_the_ID(), '_improve_roi_ads_cta_secondary_url', true) ?: '/case-studies')); ?>" class="btn btn-secondary"><?php echo esc_html(get_post_meta(get_the_ID(), '_improve_roi_ads_cta_secondary_text', true) ?: 'View ROI Success Stories'); ?></a>
                     </div>
-                    <div class="cta-features">
+                    <div class="cta-features animate-on-scroll animate-fade-up">
                         <?php
                         $features = get_post_meta(get_the_ID(), '_improve_roi_ads_cta_features', true);
                         if (empty($features)) {

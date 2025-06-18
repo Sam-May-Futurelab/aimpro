@@ -8,10 +8,9 @@ get_header(); ?>
 
 <main id="main" class="main-content rank-higher-locally-page">
     <div class="container">
-        
-        <!-- Page Header -->
+          <!-- Page Header -->
         <section class="page-header">
-            <div class="page-header-content">
+            <div class="page-header-content animate-on-scroll animate-fade-up">
                 <h1><?php echo esc_html(get_post_meta(get_the_ID(), '_rank_higher_locally_header_title', true) ?: 'Rank Higher Locally'); ?></h1>
                 <p class="page-subtitle"><?php echo esc_html(get_post_meta(get_the_ID(), '_rank_higher_locally_header_subtitle', true) ?: 'Dominate local search results and attract customers in your area with comprehensive local SEO strategies'); ?></p>
             </div>
@@ -21,11 +20,11 @@ get_header(); ?>
         <section class="solution-overview">
             <div class="section-content">
                 <div class="overview-content">
-                    <div class="overview-text">
+                    <div class="overview-text animate-on-scroll animate-slide-left">
                         <h2><?php echo esc_html(get_post_meta(get_the_ID(), '_rank_higher_locally_overview_title', true) ?: 'Become the Local Leader in Your Industry'); ?></h2>
                         <p><?php echo esc_html(get_post_meta(get_the_ID(), '_rank_higher_locally_overview_content', true) ?: 'Local search drives immediate action. When potential customers search for services "near me," you want to be the first business they find. Our comprehensive local SEO strategies help you dominate local search results, increase visibility, and attract more qualified customers in your service area.'); ?></p>
                         
-                        <div class="solution-challenges">
+                        <div class="solution-challenges animate-on-scroll animate-fade-up">
                             <h3><?php echo esc_html(get_post_meta(get_the_ID(), '_rank_higher_locally_challenges_title', true) ?: 'Local Search Challenges We Solve:'); ?></h3>
                             <ul>
                                 <?php
@@ -45,7 +44,7 @@ get_header(); ?>
                                 }
                                 ?>
                             </ul>
-                        </div>                    </div>                    <div class="overview-image">
+                        </div>                    </div>                    <div class="overview-image animate-on-scroll animate-slide-right">
                         <?php 
                         $overview_image = get_post_meta(get_the_ID(), '_rank_higher_locally_overview_image', true);
                         if ($overview_image): ?>
@@ -57,7 +56,7 @@ get_header(); ?>
                                 <img src="<?php echo get_template_directory_uri(); ?>/assets/images/solutions/local-seo-overview.jpg" alt="Local SEO Strategy" />
                             </div>
                         <?php endif; ?>
-                        <div class="overview-image-cta">
+                        <div class="overview-image-cta animate-on-scroll animate-scale-up">
                             <a href="<?php echo home_url('/contact'); ?>" class="btn-primary overview-cta-btn">Improve Local Rankings</a>
                         </div>
                     </div>
@@ -66,7 +65,7 @@ get_header(); ?>
         </section>        <!-- Local SEO Services -->
         <section class="service-overview">
             <div class="container">
-                <div class="section-header">
+                <div class="section-header animate-on-scroll animate-fade-up">
                     <h2><?php echo esc_html(get_post_meta(get_the_ID(), '_rank_higher_locally_services_title', true) ?: 'Our Local SEO Services'); ?></h2>
                 </div>                <div class="services-grid">
                     <?php
@@ -122,7 +121,7 @@ get_header(); ?>
                     
                     foreach ($services as $service) :
                     ?>
-                      <div class="service-card">
+                      <div class="service-card animate-on-scroll animate-stagger animate-fade-up">
                         <div class="service-icon">
                             <i class="<?php echo esc_attr($service['icon']); ?>"></i>
                         </div>
@@ -215,8 +214,7 @@ get_header(); ?>
                                 );
                             }
                             foreach ($results as $result) :
-                            ?>
-                            <div class="result-item">
+                            ?>                            <div class="result-item animate-on-scroll animate-stagger animate-scale-up">
                                 <div class="result-number"><?php echo esc_html($result['number']); ?></div>
                                 <div class="result-label"><?php echo esc_html($result['label']); ?></div>
                             </div>
@@ -226,12 +224,10 @@ get_header(); ?>
                     </div>
                 </div>
             </div>
-        </section>
-
-        <!-- Local SEO Process -->
+        </section>        <!-- Local SEO Process -->
         <section class="local-seo-process">
             <div class="section-content">
-                <h2><?php echo esc_html(get_post_meta(get_the_ID(), '_rank_higher_locally_process_title', true) ?: 'Our Local SEO Process'); ?></h2>
+                <h2 class="animate-on-scroll animate-fade-up"><?php echo esc_html(get_post_meta(get_the_ID(), '_rank_higher_locally_process_title', true) ?: 'Our Local SEO Process'); ?></h2>
                 <div class="process-steps">
                     <?php
                     $process_steps = get_post_meta(get_the_ID(), '_rank_higher_locally_process_steps', true);
@@ -262,7 +258,7 @@ get_header(); ?>
 
                     foreach ($process_steps as $step) :
                     ?>
-                    <div class="process-step">
+                    <div class="process-step animate-on-scroll animate-stagger animate-slide-up">
                         <div class="step-number"><?php echo esc_html($step['number']); ?></div>
                         <div class="step-content">
                             <h3><?php echo esc_html($step['title']); ?></h3>
@@ -271,16 +267,15 @@ get_header(); ?>
                     </div>
                     <?php endforeach; ?>
                 </div>
-                <div class="process-cta">
+                <div class="process-cta animate-on-scroll animate-scale-up">
                     <a href="<?php echo home_url('/contact'); ?>" class="btn-primary process-cta-btn">Boost Your Local Rankings</a>
                 </div>
             </div>
-        </section>        
-        
-        <!-- Local SEO Benefits -->        <section class="local-seo-benefits">
+        </section>
+          <!-- Local SEO Benefits -->        <section class="local-seo-benefits">
             <div class="section-content">
-                <h2><?php echo esc_html(get_post_meta(get_the_ID(), '_rank_higher_locally_benefits_title', true) ?: 'Local SEO Benefits for Your Business'); ?></h2>
-                <p class="section-description"><?php echo esc_html(get_post_meta(get_the_ID(), '_rank_higher_locally_benefits_description', true) ?: 'Powerful local search optimization that drives real business results'); ?></p>
+                <h2 class="animate-on-scroll animate-fade-up"><?php echo esc_html(get_post_meta(get_the_ID(), '_rank_higher_locally_benefits_title', true) ?: 'Local SEO Benefits for Your Business'); ?></h2>
+                <p class="section-description animate-on-scroll animate-fade-up"><?php echo esc_html(get_post_meta(get_the_ID(), '_rank_higher_locally_benefits_description', true) ?: 'Powerful local search optimization that drives real business results'); ?></p>
                 <div class="benefits-grid-2x2">
                     <?php
                     $benefits = get_post_meta(get_the_ID(), '_rank_higher_locally_benefits', true);
@@ -311,7 +306,7 @@ get_header(); ?>
 
                     foreach ($benefits as $benefit) :
                     ?>
-                    <div class="benefit-card compact">
+                    <div class="benefit-card compact animate-on-scroll animate-stagger animate-fade-up">
                         <div class="benefit-icon">
                             <i class="<?php echo esc_attr($benefit['icon']); ?>"></i>
                         </div>
@@ -328,11 +323,11 @@ get_header(); ?>
         <!-- Local SEO Testimonial -->
         <section class="local-seo-testimonial">
             <div class="section-content">
-                <div class="testimonial-content">
+                <div class="testimonial-content animate-on-scroll animate-fade-up">
                     <blockquote>
                         "<?php echo esc_html(get_post_meta(get_the_ID(), '_rank_higher_locally_testimonial_quote', true) ?: 'Our local visibility has completely transformed since working with Aimpro Digital. We now rank #1 for all our key local searches and get 300% more phone calls. Our practice has never been busier.'); ?>"
                     </blockquote>
-                    <div class="testimonial-author">
+                    <div class="testimonial-author animate-on-scroll animate-slide-up">
                         <div class="author-info">
                             <h4><?php echo esc_html(get_post_meta(get_the_ID(), '_rank_higher_locally_testimonial_name', true) ?: 'Dr. Patricia Moore'); ?></h4>
                             <span><?php echo esc_html(get_post_meta(get_the_ID(), '_rank_higher_locally_testimonial_position', true) ?: 'Owner, Precision Dental Practice'); ?></span>
@@ -346,13 +341,13 @@ get_header(); ?>
         <!-- CTA Section -->
         <section class="local-seo-cta">
             <div class="section-content">
-                <h2><?php echo esc_html(get_post_meta(get_the_ID(), '_rank_higher_locally_cta_title', true) ?: 'Ready to Dominate Local Search?'); ?></h2>
-                <p><?php echo esc_html(get_post_meta(get_the_ID(), '_rank_higher_locally_cta_subtitle', true) ?: 'Let\'s create a comprehensive local SEO strategy that puts your business at the top of local search results.'); ?></p>
-                <div class="cta-buttons">
+                <h2 class="animate-on-scroll animate-fade-up"><?php echo esc_html(get_post_meta(get_the_ID(), '_rank_higher_locally_cta_title', true) ?: 'Ready to Dominate Local Search?'); ?></h2>
+                <p class="animate-on-scroll animate-fade-up"><?php echo esc_html(get_post_meta(get_the_ID(), '_rank_higher_locally_cta_subtitle', true) ?: 'Let\'s create a comprehensive local SEO strategy that puts your business at the top of local search results.'); ?></p>
+                <div class="cta-buttons animate-on-scroll animate-slide-up">
                     <a href="<?php echo esc_url(home_url(get_post_meta(get_the_ID(), '_rank_higher_locally_cta_primary_url', true) ?: '/contact')); ?>" class="btn btn-primary"><?php echo esc_html(get_post_meta(get_the_ID(), '_rank_higher_locally_cta_primary_text', true) ?: 'Get Free Local SEO Audit'); ?></a>
                     <a href="<?php echo esc_url(home_url(get_post_meta(get_the_ID(), '_rank_higher_locally_cta_secondary_url', true) ?: '/case-studies')); ?>" class="btn btn-secondary"><?php echo esc_html(get_post_meta(get_the_ID(), '_rank_higher_locally_cta_secondary_text', true) ?: 'View Local Success Stories'); ?></a>
                 </div>
-                <div class="cta-benefits">
+                <div class="cta-benefits animate-on-scroll animate-fade-up">
                     <?php
                     $cta_benefits = get_post_meta(get_the_ID(), '_rank_higher_locally_cta_benefits', true);
                     if (empty($cta_benefits)) {
