@@ -7,10 +7,9 @@
 get_header(); ?>
 
 <main id="main" class="main-content seo-service-page">
-    <div class="container">
-          <!-- Page Header -->
+    <div class="container">          <!-- Page Header -->
         <section class="page-header">
-            <div class="page-header-content">
+            <div class="page-header-content animate-on-scroll animate-fade-up">
                 <?php 
                 $header_title = get_post_meta(get_the_ID(), 'on_page_seo_header_title', true) ?: 'On-Page SEO Services';
                 $header_subtitle = get_post_meta(get_the_ID(), 'on_page_seo_header_subtitle', true) ?: 'Optimize every page element to boost search rankings and user experience';
@@ -22,7 +21,7 @@ get_header(); ?>
                 ?>
                 <h1><?php echo esc_html($header_title); ?></h1>
                 <p class="page-subtitle"><?php echo esc_html($header_subtitle); ?></p>
-                <div class="header-badges">
+                <div class="header-badges animate-on-scroll animate-fade-up">
                     <?php foreach ($header_badges as $badge): ?>
                         <span class="badge"><?php echo esc_html($badge); ?></span>
                     <?php endforeach; ?>
@@ -32,7 +31,7 @@ get_header(); ?>
         <section class="service-overview">
             <div class="section-content">
                 <div class="overview-content">
-                    <div class="overview-text">
+                    <div class="overview-text animate-on-scroll animate-slide-left">
                         <?php 
                         $overview_title = get_post_meta(get_the_ID(), 'on_page_seo_overview_title', true) ?: 'Comprehensive On-Page SEO Optimization';
                         $overview_description_1 = get_post_meta(get_the_ID(), 'on_page_seo_overview_description_1', true) ?: 'Our on-page SEO services focus on optimizing individual web pages to rank higher and earn more relevant traffic in search engines. We optimize both the content and HTML source code of a page, ensuring every element contributes to your search visibility and user experience.';
@@ -42,7 +41,7 @@ get_header(); ?>
                         <p><?php echo esc_html($overview_description_1); ?></p>
                         <p><?php echo esc_html($overview_description_2); ?></p>
                     </div>
-                    <div class="overview-stats">
+                    <div class="overview-stats animate-on-scroll animate-slide-right">
                         <?php 
                         $stats = get_post_meta(get_the_ID(), 'on_page_seo_stats', true) ?: array(
                             array('number' => '73%', 'label' => 'Average ranking improvement'),
@@ -51,7 +50,7 @@ get_header(); ?>
                         );
                         foreach ($stats as $stat):
                         ?>
-                            <div class="stat-item">
+                            <div class="stat-item animate-on-scroll animate-stagger animate-scale-up">
                                 <span class="stat-number"><?php echo esc_html($stat['number']); ?></span>
                                 <span class="stat-label"><?php echo esc_html($stat['label']); ?></span>
                             </div>
@@ -59,7 +58,7 @@ get_header(); ?>
                     </div>
                 </div>
             </div>
-        </section>        <!-- Services Grid -->
+        </section><!-- Services Grid -->
         <section class="onpage-seo-services">
             <div class="section-content">
                 <?php 
@@ -127,11 +126,10 @@ get_header(); ?>
                     )
                 );
                 ?>
-                <h2><?php echo esc_html($services_title); ?></h2>
-                <div class="components-grid">
+                <h2 class="animate-on-scroll animate-fade-up"><?php echo esc_html($services_title); ?></h2>                <div class="components-grid">
                     
                     <?php foreach ($services as $service): ?>
-                        <div class="component-card">
+                        <div class="component-card animate-on-scroll animate-stagger animate-fade-up">
                             <div class="component-icon">
                                 <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path d="M14 2H6C4.89543 2 4 2.89543 4 4V20C4 21.1046 4.89543 22 6 22H18C19.1046 22 20 21.1046 20 20V8L14 2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
@@ -156,8 +154,7 @@ get_header(); ?>
             </div>        <!-- Case Study -->
         <section class="case-study">
             <div class="section-content">
-                <div class="case-study-content">
-                    <div class="case-study-text">
+                <div class="case-study-content">                    <div class="case-study-text animate-on-scroll animate-slide-left">
                         <?php 
                         $case_study_title = get_post_meta(get_the_ID(), 'on_page_seo_case_study_title', true) ?: 'Case Study: Professional Services Firm';
                         $case_study_subtitle = get_post_meta(get_the_ID(), 'on_page_seo_case_study_subtitle', true) ?: 'Complete On-Page Optimization Drives 425% Traffic Growth';
@@ -179,7 +176,7 @@ get_header(); ?>
                         <h3><?php echo esc_html($case_study_subtitle); ?></h3>
                         <p><?php echo esc_html($case_study_description); ?></p>
                         
-                        <div class="challenge-solution">
+                        <div class="challenge-solution animate-on-scroll animate-fade-up">
                             <div class="challenge">
                                 <h4>The Challenge</h4>
                                 <ul>

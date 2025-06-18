@@ -15,15 +15,14 @@ $hero_image = get_post_meta(get_the_ID(), 'technical_seo_hero_image', true);
 
 <main id="main" class="main-content seo-service-page">
     <div class="container">
-        
-        <!-- Page Header -->
+          <!-- Page Header -->
         <section class="page-header">
-            <div class="page-header-content">
+            <div class="page-header-content animate-on-scroll animate-fade-up">
                 <h1><?php echo esc_html($header_title); ?></h1>
                 <p class="page-subtitle"><?php echo esc_html($header_subtitle); ?></p>
             </div>
             <?php if ($hero_image): ?>
-                <div class="page-header-image">
+                <div class="page-header-image animate-on-scroll animate-scale-up">
                     <img src="<?php echo esc_url($hero_image); ?>" alt="<?php echo esc_attr($header_title); ?>" />
                 </div>
             <?php endif; ?>
@@ -31,7 +30,7 @@ $hero_image = get_post_meta(get_the_ID(), 'technical_seo_hero_image', true);
         <section class="technical-seo-overview">
             <div class="section-content">
                 <div class="overview-content">
-                    <div class="overview-text">
+                    <div class="overview-text animate-on-scroll animate-slide-left">
                         <?php                        $overview_title = get_post_meta(get_the_ID(), 'technical_seo_overview_title', true) ?: 'Build a Solid Technical Foundation for SEO Success';
                         $overview_description = get_post_meta(get_the_ID(), 'technical_seo_overview_description', true) ?: 'Technical SEO is the backbone of search engine optimization. Our technical SEO services ensure your website is properly crawled, indexed, and understood by search engines. We fix critical technical issues that prevent your site from ranking and implement optimizations that give you a competitive edge.';
                         $benefits_title = get_post_meta(get_the_ID(), 'technical_seo_benefits_title', true) ?: 'Technical SEO Impact:';
@@ -49,7 +48,7 @@ $hero_image = get_post_meta(get_the_ID(), 'technical_seo_hero_image', true);
                         <h2><?php echo esc_html($overview_title); ?></h2>
                         <p><?php echo esc_html($overview_description); ?></p>
                         
-                        <div class="technical-benefits">
+                        <div class="technical-benefits animate-on-scroll animate-fade-up">
                             <h3><?php echo esc_html($benefits_title); ?></h3>
                             <ul>
                                 <?php foreach ($benefits as $benefit): ?>
@@ -57,7 +56,7 @@ $hero_image = get_post_meta(get_the_ID(), 'technical_seo_hero_image', true);
                                 <?php endforeach; ?>
                             </ul>
                         </div>
-                    </div>                    <div class="overview-image">
+                    </div>                    <div class="overview-image animate-on-scroll animate-slide-right">
                         <?php if ($overview_image_id): ?>
                             <?php echo wp_get_attachment_image($overview_image_id, 'large', false, array('alt' => 'Technical SEO Services')); ?>
                         <?php else: ?>
@@ -66,7 +65,7 @@ $hero_image = get_post_meta(get_the_ID(), 'technical_seo_hero_image', true);
                     </div>
                 </div>
             </div>
-        </section>        <!-- Technical SEO Services -->
+        </section><!-- Technical SEO Services -->
         <section class="technical-seo-services">
             <div class="section-content">
                 <?php 
@@ -157,12 +156,11 @@ $hero_image = get_post_meta(get_the_ID(), 'technical_seo_hero_image', true);
                         'featured' => false
                     )
                 );
-                ?>
-                <h2><?php echo esc_html($services_title); ?></h2>
+                ?>                <h2 class="animate-on-scroll animate-fade-up"><?php echo esc_html($services_title); ?></h2>
                 <div class="services-grid">
                     
                     <?php foreach ($services as $service): ?>
-                        <div class="service-card <?php echo (isset($service['featured']) && $service['featured']) ? 'featured' : ''; ?>">
+                        <div class="service-card <?php echo (isset($service['featured']) && $service['featured']) ? 'featured' : ''; ?> animate-on-scroll animate-stagger animate-fade-up">>
                             <div class="service-icon">
                                 <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <?php if (isset($service['featured']) && $service['featured']): ?>
@@ -223,12 +221,11 @@ $hero_image = get_post_meta(get_the_ID(), 'technical_seo_hero_image', true);
                             'Schema markup implementation',
                             'Technical content optimization'
                         );
-                        ?>
-                        <span class="case-study-label"><?php echo esc_html($case_study_label); ?></span>
-                        <h2><?php echo esc_html($case_study_title); ?></h2>
-                        <p><?php echo esc_html($case_study_description); ?></p>
+                        ?>                        <span class="case-study-label animate-on-scroll animate-fade-up"><?php echo esc_html($case_study_label); ?></span>
+                        <h2 class="animate-on-scroll animate-slide-left"><?php echo esc_html($case_study_title); ?></h2>
+                        <p class="animate-on-scroll animate-slide-left"><?php echo esc_html($case_study_description); ?></p>
                         
-                        <div class="case-study-challenge">
+                        <div class="case-study-challenge animate-on-scroll animate-fade-up">
                             <h3><?php echo esc_html($case_study_challenge_title); ?></h3>
                             <ul>
                                 <?php foreach ($case_study_challenges as $challenge): ?>
@@ -237,7 +234,7 @@ $hero_image = get_post_meta(get_the_ID(), 'technical_seo_hero_image', true);
                             </ul>
                         </div>
 
-                        <div class="case-study-solution">
+                        <div class="case-study-solution animate-on-scroll animate-fade-up">
                             <h3><?php echo esc_html($case_study_solution_title); ?></h3>
                             <ul>
                                 <?php foreach ($case_study_solutions as $solution): ?>
@@ -271,12 +268,11 @@ $hero_image = get_post_meta(get_the_ID(), 'technical_seo_hero_image', true);
                         'description' => 'Test implementations and monitor performance improvements continuously.'
                     )
                 );
-                ?>
-                <h2><?php echo esc_html($process_title); ?></h2>
+                ?>                <h2 class="animate-on-scroll animate-fade-up"><?php echo esc_html($process_title); ?></h2>
                 <div class="process-steps">
                     
                     <?php foreach ($process_steps as $index => $step): ?>
-                        <div class="process-step">
+                        <div class="process-step animate-on-scroll animate-stagger animate-slide-up">
                             <div class="step-number"><?php echo ($index + 1); ?></div>
                             <div class="step-content">
                                 <h3><?php echo esc_html($step['title']); ?></h3>
@@ -398,12 +394,11 @@ $hero_image = get_post_meta(get_the_ID(), 'technical_seo_hero_image', true);
                         )
                     )
                 );
-                ?>
-                <h2><?php echo esc_html($issues_title); ?></h2>
+                ?>                <h2 class="animate-on-scroll animate-fade-up"><?php echo esc_html($issues_title); ?></h2>
                 <div class="issues-grid">
                     
                     <?php foreach ($issues as $issue): ?>
-                        <div class="issue-card <?php echo esc_attr($issue['priority']); ?>-priority">
+                        <div class="issue-card <?php echo esc_attr($issue['priority']); ?>-priority animate-on-scroll animate-stagger animate-fade-up">>
                             <div class="issue-priority <?php echo esc_attr($issue['priority']); ?>"><?php echo ucfirst($issue['priority']); ?> Priority</div>
                             <h3><?php echo esc_html($issue['title']); ?></h3>
                             <p><?php echo esc_html($issue['description']); ?></p>
@@ -419,8 +414,7 @@ $hero_image = get_post_meta(get_the_ID(), 'technical_seo_hero_image', true);
             </div>
         </section>        <!-- Technical SEO Testimonial -->
         <section class="technical-seo-testimonial">
-            <div class="section-content">
-                <div class="testimonial-content">
+            <div class="section-content">                <div class="testimonial-content animate-on-scroll animate-fade-up">
                     <?php 
                     $testimonial_quote = get_post_meta(get_the_ID(), 'technical_seo_testimonial_quote', true) ?: 'The technical SEO work from Aimpro Digital was transformational. They improved our site speed by 70% and fixed issues we didn\'t even know existed. Our organic traffic has more than doubled since the technical optimizations were completed.';
                     $testimonial_author_name = get_post_meta(get_the_ID(), 'technical_seo_testimonial_author_name', true) ?: 'Anna Chen';
@@ -431,7 +425,7 @@ $hero_image = get_post_meta(get_the_ID(), 'technical_seo_hero_image', true);
                     <blockquote>
                         <?php echo esc_html($testimonial_quote); ?>
                     </blockquote>
-                    <div class="testimonial-author">
+                    <div class="testimonial-author animate-on-scroll animate-slide-up">
                         <?php if ($testimonial_image): ?>
                             <img src="<?php echo esc_url($testimonial_image); ?>" alt="<?php echo esc_attr($testimonial_author_name); ?>" />
                         <?php endif; ?>
@@ -445,8 +439,7 @@ $hero_image = get_post_meta(get_the_ID(), 'technical_seo_hero_image', true);
             </div>
         </section>        <!-- CTA Section -->
         <section id="contact" class="cta-section">
-            <div class="container">
-                <div class="cta-content">
+            <div class="container">                <div class="cta-content animate-on-scroll animate-fade-up">
                     <?php 
                     $cta_title = get_post_meta(get_the_ID(), 'technical_seo_cta_title', true) ?: 'Ready to Fix Your Technical SEO Issues?';
                     $cta_description = get_post_meta(get_the_ID(), 'technical_seo_cta_description', true) ?: 'Let\'s optimize your website\'s technical foundation for better search performance and user experience.';
@@ -461,11 +454,11 @@ $hero_image = get_post_meta(get_the_ID(), 'technical_seo_hero_image', true);
                     ?>
                     <h2><?php echo esc_html($cta_title); ?></h2>
                     <p><?php echo esc_html($cta_description); ?></p>
-                    <div class="cta-buttons">
+                    <div class="cta-buttons animate-on-scroll animate-slide-up">
                         <a href="<?php echo esc_url($cta_primary_url); ?>" class="btn-primary"><?php echo esc_html($cta_primary_text); ?></a>
                         <a href="<?php echo esc_url($cta_secondary_url); ?>" class="btn-outline"><?php echo esc_html($cta_secondary_text); ?></a>
                     </div>
-                    <div class="cta-features">
+                    <div class="cta-features animate-on-scroll animate-fade-up">
                         <?php foreach ($cta_benefits as $benefit): ?>
                             <span class="feature-check"><?php echo esc_html($benefit); ?></span>
                         <?php endforeach; ?>
