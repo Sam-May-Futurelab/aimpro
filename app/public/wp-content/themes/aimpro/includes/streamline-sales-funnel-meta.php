@@ -63,6 +63,14 @@ function streamline_sales_funnel_meta_callback($post) {
                 <input type="text" name="streamline_hero_stat_3_label" value="<?php echo esc_attr(get_post_meta($post->ID, 'streamline_hero_stat_3_label', true) ?: 'Revenue Growth'); ?>" />
             </div>
         </div>
+        <div class="streamline-meta-field">
+            <label>Hero Primary Button Text</label>
+            <input type="text" name="streamline_hero_primary_btn" value="<?php echo esc_attr(get_post_meta($post->ID, 'streamline_hero_primary_btn', true) ?: 'Optimize My Funnel'); ?>" />
+        </div>
+        <div class="streamline-meta-field">
+            <label>Hero Secondary Button Text</label>
+            <input type="text" name="streamline_hero_secondary_btn" value="<?php echo esc_attr(get_post_meta($post->ID, 'streamline_hero_secondary_btn', true) ?: 'Free Audit'); ?>" />
+        </div>
     </div>
 
     <div class="streamline-meta-section">
@@ -130,6 +138,36 @@ function streamline_sales_funnel_meta_callback($post) {
             <label>Service 6 Description</label>
             <textarea name="streamline_service_6_desc"><?php echo esc_textarea(get_post_meta($post->ID, 'streamline_service_6_desc', true) ?: 'Ongoing analytics and reporting to track funnel performance and identify continuous improvement opportunities.'); ?></textarea>
         </div>
+
+        <h4>Problems We Solve</h4>
+        <div class="streamline-meta-field">
+            <label>Problems Title</label>
+            <input type="text" name="streamline_problems_title" value="<?php echo esc_attr(get_post_meta($post->ID, 'streamline_problems_title', true) ?: 'Sales Funnel Problems We Solve:'); ?>" />
+        </div>
+        <div class="streamline-meta-field">
+            <label>Problem 1</label>
+            <input type="text" name="streamline_problem_1" value="<?php echo esc_attr(get_post_meta($post->ID, 'streamline_problem_1', true) ?: 'High drop-off rates between funnel stages'); ?>" />
+        </div>
+        <div class="streamline-meta-field">
+            <label>Problem 2</label>
+            <input type="text" name="streamline_problem_2" value="<?php echo esc_attr(get_post_meta($post->ID, 'streamline_problem_2', true) ?: 'Poor lead qualification and scoring systems'); ?>" />
+        </div>
+        <div class="streamline-meta-field">
+            <label>Problem 3</label>
+            <input type="text" name="streamline_problem_3" value="<?php echo esc_attr(get_post_meta($post->ID, 'streamline_problem_3', true) ?: 'Inconsistent follow-up and nurturing sequences'); ?>" />
+        </div>
+        <div class="streamline-meta-field">
+            <label>Problem 4</label>
+            <input type="text" name="streamline_problem_4" value="<?php echo esc_attr(get_post_meta($post->ID, 'streamline_problem_4', true) ?: 'Lack of funnel visibility and performance tracking'); ?>" />
+        </div>
+        <div class="streamline-meta-field">
+            <label>Problem 5</label>
+            <input type="text" name="streamline_problem_5" value="<?php echo esc_attr(get_post_meta($post->ID, 'streamline_problem_5', true) ?: 'Misaligned marketing and sales efforts'); ?>" />
+        </div>
+        <div class="streamline-meta-field">
+            <label>Problem 6</label>
+            <input type="text" name="streamline_problem_6" value="<?php echo esc_attr(get_post_meta($post->ID, 'streamline_problem_6', true) ?: 'Manual processes slowing down conversions'); ?>" />
+        </div>
     </div>
 
     <div class="streamline-meta-section">
@@ -183,6 +221,21 @@ function streamline_sales_funnel_meta_callback($post) {
                 <label>Result 4 Label</label>
                 <input type="text" name="streamline_result_4_label" value="<?php echo esc_attr(get_post_meta($post->ID, 'streamline_result_4_label', true) ?: 'Revenue Growth'); ?>" />
             </div>
+        </div>
+
+        <h4>Case Study Challenge & Solution</h4>
+        <div class="streamline-meta-field">
+            <label>Case Study Challenge</label>
+            <textarea name="streamline_case_challenge"><?php echo esc_textarea(get_post_meta($post->ID, 'streamline_case_challenge', true) ?: 'TechFlow Solutions was struggling with a 12% conversion rate and losing 68% of qualified leads due to poor follow-up processes and a fragmented sales funnel with multiple drop-off points.'); ?></textarea>
+        </div>
+        <div class="streamline-meta-field">
+            <label>Case Study Solution (one point per line)</label>
+            <textarea name="streamline_case_solution" rows="8"><?php echo esc_textarea(get_post_meta($post->ID, 'streamline_case_solution', true) ?: 'Redesigned complete 7-stage funnel with optimized touchpoints
+Implemented automated lead scoring and qualification system
+Created personalized nurturing sequences based on prospect behavior
+Built conversion-optimized landing pages for each funnel stage
+Set up comprehensive analytics and performance tracking
+Integrated CRM with marketing automation for seamless handoffs'); ?></textarea>
         </div>
     </div>
 
@@ -246,6 +299,114 @@ function streamline_sales_funnel_meta_callback($post) {
             <textarea name="streamline_step_4_desc"><?php echo esc_textarea(get_post_meta($post->ID, 'streamline_step_4_desc', true) ?: 'Continuous monitoring and data-driven optimization to maximize funnel performance.'); ?></textarea>
         </div>
     </div>
+
+    <div class="streamline-meta-section">
+        <h3>Breadcrumbs & Navigation</h3>
+        <div class="streamline-meta-field">
+            <label>Breadcrumb Path (e.g., Home › Services › Marketing Automation › Streamline Sales Funnel)</label>
+            <input type="text" name="streamline_breadcrumb_path" value="<?php echo esc_attr(get_post_meta($post->ID, 'streamline_breadcrumb_path', true) ?: 'Home › Services › Marketing Automation › Streamline Sales Funnel'); ?>" />
+        </div>
+    </div>
+
+    <div class="streamline-meta-section">
+        <h3>Problems / Challenges</h3>
+        <div class="streamline-meta-field">
+            <label>Common Problems Title</label>
+            <input type="text" name="streamline_problems_title" value="<?php echo esc_attr(get_post_meta($post->ID, 'streamline_problems_title', true) ?: 'Common Problems We Solve'); ?>" />
+        </div>
+        <div class="streamline-meta-field">
+            <label>Problem 1</label>
+            <input type="text" name="streamline_problem_1" value="<?php echo esc_attr(get_post_meta($post->ID, 'streamline_problem_1', true) ?: 'Low Conversion Rates'); ?>" />
+        </div>
+        <div class="streamline-meta-field">
+            <label>Problem 2</label>
+            <input type="text" name="streamline_problem_2" value="<?php echo esc_attr(get_post_meta($post->ID, 'streamline_problem_2', true) ?: 'Inefficient Processes'); ?>" />
+        </div>
+        <div class="streamline-meta-field">
+            <label>Problem 3</label>
+            <input type="text" name="streamline_problem_3" value="<?php echo esc_attr(get_post_meta($post->ID, 'streamline_problem_3', true) ?: 'Lack of Automation'); ?>" />
+        </div>
+        <div class="streamline-meta-field">
+            <label>Problem 4</label>
+            <input type="text" name="streamline_problem_4" value="<?php echo esc_attr(get_post_meta($post->ID, 'streamline_problem_4', true) ?: 'Poor Lead Quality'); ?>" />
+        </div>
+        <div class="streamline-meta-field">
+            <label>Problem 5</label>
+            <input type="text" name="streamline_problem_5" value="<?php echo esc_attr(get_post_meta($post->ID, 'streamline_problem_5', true) ?: 'Unclear Customer Journey'); ?>" />
+        </div>
+    </div>
+
+    <div class="streamline-meta-section">
+        <h3>Why Choose Us Section</h3>
+        <div class="streamline-meta-field">
+            <label>Why Choose Title</label>
+            <input type="text" name="streamline_why_title" value="<?php echo esc_attr(get_post_meta($post->ID, 'streamline_why_title', true) ?: 'Why Choose AiMPro for Funnel Streamlining?'); ?>" />
+        </div>
+        
+        <h4>Benefits</h4>
+        <div class="streamline-meta-field">
+            <label>Benefit 1 Title</label>
+            <input type="text" name="streamline_benefit_1_title" value="<?php echo esc_attr(get_post_meta($post->ID, 'streamline_benefit_1_title', true) ?: 'Data-Driven Approach'); ?>" />
+        </div>
+        <div class="streamline-meta-field">
+            <label>Benefit 1 Description</label>
+            <textarea name="streamline_benefit_1_desc"><?php echo esc_textarea(get_post_meta($post->ID, 'streamline_benefit_1_desc', true) ?: 'Every optimization is backed by comprehensive analytics and A/B testing to ensure maximum ROI.'); ?></textarea>
+        </div>
+
+        <div class="streamline-meta-field">
+            <label>Benefit 2 Title</label>
+            <input type="text" name="streamline_benefit_2_title" value="<?php echo esc_attr(get_post_meta($post->ID, 'streamline_benefit_2_title', true) ?: 'Industry Expertise'); ?>" />
+        </div>
+        <div class="streamline-meta-field">
+            <label>Benefit 2 Description</label>
+            <textarea name="streamline_benefit_2_desc"><?php echo esc_textarea(get_post_meta($post->ID, 'streamline_benefit_2_desc', true) ?: '5+ years optimizing funnels across diverse industries with proven conversion improvements.'); ?></textarea>
+        </div>
+
+        <div class="streamline-meta-field">
+            <label>Benefit 3 Title</label>
+            <input type="text" name="streamline_benefit_3_title" value="<?php echo esc_attr(get_post_meta($post->ID, 'streamline_benefit_3_title', true) ?: 'Ongoing Support'); ?>" />
+        </div>
+        <div class="streamline-meta-field">
+            <label>Benefit 3 Description</label>
+            <textarea name="streamline_benefit_3_desc"><?php echo esc_textarea(get_post_meta($post->ID, 'streamline_benefit_3_desc', true) ?: 'Continuous monitoring and optimization to maintain peak funnel performance as your business grows.'); ?></textarea>
+        </div>
+    </div>
+
+    <div class="streamline-meta-section">
+        <h3>FAQ Section</h3>
+        <div class="streamline-meta-field">
+            <label>FAQ Title</label>
+            <input type="text" name="streamline_faq_title" value="<?php echo esc_attr(get_post_meta($post->ID, 'streamline_faq_title', true) ?: 'Frequently Asked Questions'); ?>" />
+        </div>
+
+        <h4>FAQ Items</h4>
+        <div class="streamline-meta-field">
+            <label>FAQ 1 Question</label>
+            <input type="text" name="streamline_faq_1_question" value="<?php echo esc_attr(get_post_meta($post->ID, 'streamline_faq_1_question', true) ?: 'How long does it take to see results from funnel optimization?'); ?>" />
+        </div>
+        <div class="streamline-meta-field">
+            <label>FAQ 1 Answer</label>
+            <textarea name="streamline_faq_1_answer"><?php echo esc_textarea(get_post_meta($post->ID, 'streamline_faq_1_answer', true) ?: 'Most clients see initial improvements within 2-4 weeks, with significant results typically visible within 6-8 weeks as we test, refine, and optimize the funnel based on real user data.'); ?></textarea>
+        </div>
+
+        <div class="streamline-meta-field">
+            <label>FAQ 2 Question</label>
+            <input type="text" name="streamline_faq_2_question" value="<?php echo esc_attr(get_post_meta($post->ID, 'streamline_faq_2_question', true) ?: 'What tools do you use for funnel optimization?'); ?>" />
+        </div>
+        <div class="streamline-meta-field">
+            <label>FAQ 2 Answer</label>
+            <textarea name="streamline_faq_2_answer"><?php echo esc_textarea(get_post_meta($post->ID, 'streamline_faq_2_answer', true) ?: 'We use industry-leading tools including HubSpot, Klaviyo, Google Analytics, Hotjar, and custom tracking solutions to analyze user behavior and optimize every touchpoint.'); ?></textarea>
+        </div>
+
+        <div class="streamline-meta-field">
+            <label>FAQ 3 Question</label>
+            <input type="text" name="streamline_faq_3_question" value="<?php echo esc_attr(get_post_meta($post->ID, 'streamline_faq_3_question', true) ?: 'Do you work with existing funnels or build from scratch?'); ?>" />
+        </div>
+        <div class="streamline-meta-field">
+            <label>FAQ 3 Answer</label>
+            <textarea name="streamline_faq_3_answer"><?php echo esc_textarea(get_post_meta($post->ID, 'streamline_faq_3_answer', true) ?: 'We can optimize your existing funnel or build a completely new one from scratch, depending on your current setup and business needs. We always start with a comprehensive audit.'); ?></textarea>
+        </div>
+    </div>
     <?php
 }
 
@@ -277,6 +438,15 @@ add_action('save_post', function($post_id) {
     }
     if (isset($_POST['streamline_hero_subtitle'])) {
         update_post_meta($post_id, 'streamline_hero_subtitle', sanitize_textarea_field($_POST['streamline_hero_subtitle']));
+    }
+    if (isset($_POST['streamline_hero_primary_btn'])) {
+        update_post_meta($post_id, 'streamline_hero_primary_btn', sanitize_text_field($_POST['streamline_hero_primary_btn']));
+    }
+    if (isset($_POST['streamline_hero_secondary_btn'])) {
+        update_post_meta($post_id, 'streamline_hero_secondary_btn', sanitize_text_field($_POST['streamline_hero_secondary_btn']));
+    }
+    if (isset($_POST['streamline_breadcrumb_path'])) {
+        update_post_meta($post_id, 'streamline_breadcrumb_path', sanitize_text_field($_POST['streamline_breadcrumb_path']));
     }
     
     // Save hero stats
@@ -314,6 +484,12 @@ add_action('save_post', function($post_id) {
     if (isset($_POST['streamline_case_intro'])) {
         update_post_meta($post_id, 'streamline_case_intro', sanitize_textarea_field($_POST['streamline_case_intro']));
     }
+    if (isset($_POST['streamline_case_challenge'])) {
+        update_post_meta($post_id, 'streamline_case_challenge', sanitize_textarea_field($_POST['streamline_case_challenge']));
+    }
+    if (isset($_POST['streamline_case_solution'])) {
+        update_post_meta($post_id, 'streamline_case_solution', sanitize_textarea_field($_POST['streamline_case_solution']));
+    }
 
     // Save case study results
     for ($i = 1; $i <= 4; $i++) {
@@ -340,6 +516,42 @@ add_action('save_post', function($post_id) {
         }
         if (isset($_POST["streamline_step_{$i}_desc"])) {
             update_post_meta($post_id, "streamline_step_{$i}_desc", sanitize_textarea_field($_POST["streamline_step_{$i}_desc"]));
+        }
+    }
+
+    // Save problems/challenges
+    if (isset($_POST['streamline_problems_title'])) {
+        update_post_meta($post_id, 'streamline_problems_title', sanitize_text_field($_POST['streamline_problems_title']));
+    }
+    for ($i = 1; $i <= 6; $i++) {
+        if (isset($_POST["streamline_problem_{$i}"])) {
+            update_post_meta($post_id, "streamline_problem_{$i}", sanitize_text_field($_POST["streamline_problem_{$i}"]));
+        }
+    }
+
+    // Save benefits
+    if (isset($_POST['streamline_why_title'])) {
+        update_post_meta($post_id, 'streamline_why_title', sanitize_text_field($_POST['streamline_why_title']));
+    }
+    for ($i = 1; $i <= 3; $i++) {
+        if (isset($_POST["streamline_benefit_{$i}_title"])) {
+            update_post_meta($post_id, "streamline_benefit_{$i}_title", sanitize_text_field($_POST["streamline_benefit_{$i}_title"]));
+        }
+        if (isset($_POST["streamline_benefit_{$i}_desc"])) {
+            update_post_meta($post_id, "streamline_benefit_{$i}_desc", sanitize_textarea_field($_POST["streamline_benefit_{$i}_desc"]));
+        }
+    }
+
+    // Save FAQ
+    if (isset($_POST['streamline_faq_title'])) {
+        update_post_meta($post_id, 'streamline_faq_title', sanitize_text_field($_POST['streamline_faq_title']));
+    }
+    for ($i = 1; $i <= 3; $i++) {
+        if (isset($_POST["streamline_faq_{$i}_question"])) {
+            update_post_meta($post_id, "streamline_faq_{$i}_question", sanitize_text_field($_POST["streamline_faq_{$i}_question"]));
+        }
+        if (isset($_POST["streamline_faq_{$i}_answer"])) {
+            update_post_meta($post_id, "streamline_faq_{$i}_answer", sanitize_textarea_field($_POST["streamline_faq_{$i}_answer"]));
         }
     }
 });
