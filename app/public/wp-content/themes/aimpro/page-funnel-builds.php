@@ -30,7 +30,6 @@ get_header(); ?>
         <div class="container">
             <div class="service-hero-content">                <div class="hero-text">
                     <h1><?php echo get_post_meta(get_the_ID(), 'fb_hero_title', true) ?: 'Sales Funnel Development'; ?></h1>
-                    <p class="hero-subtitle"><?php echo get_post_meta(get_the_ID(), 'fb_hero_subtitle', true) ?: 'Complete sales funnel systems that guide prospects through your customer journey, maximizing conversions at every step.'; ?></p>
                     <div class="hero-stats">
                         <div class="stat-item">
                             <span class="stat-number"><?php echo get_post_meta(get_the_ID(), 'fb_stat1_number', true) ?: '420%'; ?></span>
@@ -44,47 +43,40 @@ get_header(); ?>
                             <span class="stat-number"><?php echo get_post_meta(get_the_ID(), 'fb_stat3_number', true) ?: '3.2x'; ?></span>
                             <span class="stat-label"><?php echo get_post_meta(get_the_ID(), 'fb_stat3_label', true) ?: 'Average Revenue Per Visitor'; ?></span>
                         </div>
+                    </div>                    <div class="hero-cta">
+                        <a href="#contact" class="btn-primary">Get Funnel Quote</a>
                     </div>
-                    <div class="hero-cta">
-                        <a href="#contact" class="btn-primary"><?php echo get_post_meta(get_the_ID(), 'fb_cta_primary', true) ?: 'Get Funnel Strategy'; ?></a>
-                        <a href="#case-study" class="btn-outline">View Case Study</a>
-                    </div>
-                </div>
-                <div class="hero-image">
-                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/sales-funnel-hero.jpg" alt="Sales Funnel Development" />
                 </div>
             </div>
         </div>
-    </section>    <!-- Service Overview -->
+    </section><!-- Service Overview -->
     <section class="service-overview">
         <div class="container">            <div class="section-header">
                 <h2>Sales Funnels That Drive Consistent Results</h2>
-                <p>Our high-converting sales funnels are strategically designed to guide your prospects through a seamless journey from awareness to purchase, with carefully crafted touchpoints that overcome objections and build trust at every step.</p>
             </div>
-            
-            <div class="features-grid">
-                <div class="feature-card">
+              <div class="features-grid">
+                <div class="feature-item">
                     <div class="feature-icon">
                         <i class="fas fa-map-marked-alt"></i>
                     </div>
                     <h3>End-to-End Journey Mapping</h3>
                     <p>Comprehensive customer journey design that targets each stage of awareness with appropriate messaging and offers.</p>
                 </div>
-                <div class="feature-card">
+                <div class="feature-item">
                     <div class="feature-icon">
                         <i class="fas fa-robot"></i>
                     </div>
                     <h3>Behavior-Based Automation</h3>
                     <p>Intelligent automation that responds to user behavior and personalizes the experience to increase conversion rates.</p>
                 </div>
-                <div class="feature-card">
+                <div class="feature-item">
                     <div class="feature-icon">
                         <i class="fas fa-project-diagram"></i>
                     </div>
                     <h3>Multi-Channel Integration</h3>
                     <p>Seamless integration across email, SMS, and retargeting to maintain engagement throughout the sales process.</p>
                 </div>
-                <div class="feature-card">
+                <div class="feature-item">
                     <div class="feature-icon">
                         <i class="fas fa-chart-line"></i>
                     </div>
@@ -401,9 +393,7 @@ get_header(); ?>
                     </ul>
                     <a href="#contact" class="btn-outline">Get Started</a>
                 </div>
-                
-                <div class="pricing-card featured">
-                    <div class="pricing-badge">Most Popular</div>
+                  <div class="pricing-card featured">
                     <div class="pricing-header">
                         <h3>Professional Funnel</h3>
                         <div class="price">£7,997</div>

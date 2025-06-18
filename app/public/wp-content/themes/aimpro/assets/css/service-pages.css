@@ -1276,8 +1276,9 @@
 
 .landing-pages-page .section-header p {
     font-size: 18px;
-    line-height: 1.6;
-    color: var(--text-secondary, #64748b) !important;
+    margin-bottom: 30px;
+    color: var(--text-primary, #1a1a1a) !important;
+    line-height: 1.6 !important;
 }
 
 /* Landing pages features grid - 4 columns */
@@ -1361,7 +1362,7 @@
 .ux-ui-optimization-page .section-header p {
     font-size: 18px;
     margin-bottom: 30px;
-    color: rgba(255, 255, 255, 0.95) !important;
+    color: var(--text-primary, #1a1a1a) !important;
     line-height: 1.6 !important;
 }
 
@@ -1735,67 +1736,9 @@
 
 .ai-crm-page .section-header p {
     font-size: 18px;
-    line-height: 1.6;
-    color: var(--text-secondary, #64748b) !important;
-}
-
-/* AI CRM features grid - 4 columns */
-.ai-crm-page .features-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 20px;
-}
-
-@media (max-width: 1024px) {
-    .ai-crm-page .features-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 25px;
-    }
-}
-
-@media (max-width: 768px) {
-    .ai-crm-page .features-grid {
-        grid-template-columns: 1fr;
-        gap: 20px;
-    }
-}
-
-/* AI CRM feature items - smaller and more compact */
-.ai-crm-page .feature-item {
-    background: white;
-    padding: 25px 20px;
-    border-radius: 12px;
-    text-align: center;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    border: 2px solid transparent;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-}
-
-.ai-crm-page .feature-item:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 25px rgba(241, 90, 37, 0.1);
-    border-color: var(--primary-orange, #F15A25);
-}
-
-.ai-crm-page .feature-icon {
-    color: var(--primary-orange, #F15A25);
-    font-size: 36px;
-    margin-bottom: 15px;
-    display: block;
-}
-
-.ai-crm-page .feature-item h3 {
-    font-size: 18px;
-    font-weight: 600;
-    margin-bottom: 12px;
+    margin-bottom: 30px;
     color: var(--text-primary, #1a1a1a) !important;
-}
-
-.ai-crm-page .feature-item p {
-    color: var(--text-secondary, #64748b) !important;
-    line-height: 1.5;
-    margin: 0;
-    font-size: 14px;
+    line-height: 1.6 !important;
 }
 
 /* Chatbots Page Styling */
@@ -2676,5 +2619,41 @@
     background: #f15a25 !important;
     color: white !important;
     border-color: #f15a25 !important;
+}
+
+/* Funnel Builds Page Specific Styles */
+.funnel-builds-page .service-overview {
+    background: var(--bg-light, #f8f9fa);
+    padding: 50px 0;
+}
+
+.funnel-builds-page .section-header {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto 60px;
+}
+
+.funnel-builds-page .section-header h2 {
+    font-size: 36px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    color: var(--text-primary, #1a1a1a) !important;
+}
+
+.funnel-builds-page .section-header p {
+    font-size: 18px;
+    margin-bottom: 30px;
+    color: var(--text-primary, #1a1a1a) !important;
+    line-height: 1.6 !important;
+}
+
+/* Center the hero CTA button */
+.funnel-builds-page .hero-cta {
+    text-align: center !important;
+    justify-content: center !important;
+}
+
+.funnel-builds-page .hero-cta .btn-primary {
+    margin: 0 auto !important;
 }
 
