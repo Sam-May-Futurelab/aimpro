@@ -14,7 +14,7 @@
     color: var(--text-primary) !important;
     padding: 80px 0 50px;
     text-align: center;
-    margin-bottom: 60px;
+    margin-bottom: 40px;
     position: relative;
     border-bottom: 1px solid var(--border-light);
 }
@@ -365,7 +365,7 @@
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 2rem;
-    margin: 3rem 0;
+    margin: 2rem 0;
 }
 
 .service-feature-item {
@@ -399,7 +399,7 @@
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
     gap: 2.5rem;
-    margin: 3rem 0;
+    margin: 2rem 0;
 }
 
 .category-item-card {
@@ -481,7 +481,7 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 2rem;
-    margin: 3rem 0;
+    margin: 2rem 0;
 }
 
 .mission-box,
@@ -498,7 +498,7 @@
     background: var(--glass-bg);
     border-radius: 12px;
     padding: 2.5rem;
-    margin: 3rem 0;
+    margin: 2rem 0;
     border: 1px solid var(--glass-border);
     backdrop-filter: blur(10px);
     display: flex;
@@ -519,7 +519,7 @@
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 2rem;
-    margin: 3rem 0;
+    margin: 2rem 0;
     text-align: center;
 }
 
@@ -625,11 +625,11 @@
     color: var(--text-secondary);
 }
 
-/* Section Layout */
+/* Section Layout - Reduced padding for better spacing */
 .section-content {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 3rem 2rem;
+    padding: 2rem 2rem;
 }
 
 .overview-content {
@@ -637,7 +637,7 @@
     grid-template-columns: 1fr 1fr;
     gap: 3rem;
     align-items: center;
-    margin-bottom: 3rem;
+    margin-bottom: 2rem;
 }
 
 .overview-text h2 {
@@ -796,7 +796,7 @@
     background: var(--bg-secondary);
     padding: 3rem 2rem;
     border-radius: 16px;
-    margin: 3rem 0;
+    margin: 2rem 0;
     border: 1px solid var(--border-light);
 }
 
