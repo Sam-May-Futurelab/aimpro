@@ -7,13 +7,12 @@
 get_header(); ?>
 
 <main id="main" class="main-content">
-    <div class="container">
-          <!-- Page Header -->
+    <div class="container">          <!-- Page Header -->
         <section class="page-header">
-            <div class="page-header-content">
+            <div class="page-header-content animate-on-scroll animate-fade-up">
                 <h1><?php echo esc_html(get_post_meta(get_the_ID(), 'ma_header_title', true) ?: 'Marketing Automation Services'); ?></h1>
                 <p class="page-subtitle"><?php echo esc_html(get_post_meta(get_the_ID(), 'ma_header_subtitle', true) ?: 'Streamline your marketing processes and nurture leads automatically'); ?></p>
-                <div class="header-badges">
+                <div class="header-badges animate-on-scroll animate-fade-up">
                     <?php 
                     $badges = get_post_meta(get_the_ID(), 'ma_header_badges', true) ?: 'AI-Powered,CRM Integration,Multi-Channel';
                     $badge_array = array_map('trim', explode(',', $badges));
@@ -27,12 +26,12 @@ get_header(); ?>
         <section class="service-overview">
             <div class="section-content">
                 <div class="overview-content">
-                    <div class="overview-text">
+                    <div class="overview-text animate-on-scroll animate-slide-left">
                         <h2><?php echo esc_html(get_post_meta(get_the_ID(), 'ma_overview_title', true) ?: 'Automate Your Way to Growth'); ?></h2>
                         <p><?php echo esc_html(get_post_meta(get_the_ID(), 'ma_overview_description_1', true) ?: 'Our marketing automation services help you create sophisticated, personalized customer journeys that nurture leads, increase conversions, and drive revenue growth. From email sequences to AI-powered chatbots, we build automation systems that work 24/7 to grow your business.'); ?></p>
                         <p><?php echo esc_html(get_post_meta(get_the_ID(), 'ma_overview_description_2', true) ?: 'By leveraging cutting-edge automation tools and AI technology, we help you deliver the right message to the right person at the right time, creating meaningful connections that drive long-term customer relationships.'); ?></p>
                     </div>
-                    <div class="overview-stats">
+                    <div class="overview-stats animate-on-scroll animate-slide-right">
                         <div class="stat-item">
                             <span class="stat-number"><?php echo esc_html(get_post_meta(get_the_ID(), 'ma_stat_1_number', true) ?: '60%'); ?></span>
                             <span class="stat-label"><?php echo esc_html(get_post_meta(get_the_ID(), 'ma_stat_1_label', true) ?: 'Time savings on average'); ?></span>
@@ -50,11 +49,11 @@ get_header(); ?>
             </div>
         </section><!-- Services Grid -->        <section class="service-overview">
             <div class="container">
-                <div class="section-header">
+                <div class="section-header animate-on-scroll animate-fade-up">
                     <h2><?php echo esc_html(get_post_meta(get_the_ID(), 'ma_services_title', true) ?: 'Our Marketing Automation Services'); ?></h2>
                     <p><?php echo esc_html(get_post_meta(get_the_ID(), 'ma_services_description', true) ?: 'Streamline your marketing processes with intelligent automation solutions that nurture leads and drive conversions.'); ?></p>
                 </div>
-                <div class="services-grid">                      <div class="service-card">
+                <div class="services-grid">                      <div class="service-card animate-on-scroll animate-stagger animate-fade-up">
                         <div class="service-icon">
                             <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M17 21V19C17 17.9391 16.5786 16.9217 15.8284 16.1716C15.0783 15.4214 14.0609 15 13 15H5C3.93913 15 2.92172 15.4214 2.17157 16.1716C1.42143 16.9217 1 17.9391 1 19V21" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
@@ -76,8 +75,7 @@ get_header(); ?>
                                 <?php endforeach; ?>
                             </ul>
                             <a href="<?php echo esc_url(get_post_meta(get_the_ID(), 'ma_service_1_link', true) ?: home_url('/ai-crm-setup')); ?>" class="service-cta">Learn More</a>
-                        </div>
-                    </div><div class="service-card">
+                        </div>                    </div><div class="service-card animate-on-scroll animate-stagger animate-fade-up">
                         <div class="service-icon">
                             <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M4 4H20C21.1 4 22 4.9 22 6V18C22 19.1 21.1 20 20 20H4C2.9 20 2 19.1 2 18V6C2 4.9 2.9 4 4 4Z" stroke="currentColor" stroke-width="2"/>
@@ -97,7 +95,7 @@ get_header(); ?>
                                 <?php endforeach; ?>                            </ul>
                             <a href="<?php echo esc_url(get_post_meta(get_the_ID(), 'ma_service_2_link', true) ?: home_url('/email-sms-flows')); ?>" class="service-cta">Learn More</a>
                         </div>
-                    </div>                    <div class="service-card">
+                    </div>                    <div class="service-card animate-on-scroll animate-stagger animate-fade-up">
                         <div class="service-icon">
                             <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <rect x="3" y="4" width="18" height="18" rx="2" ry="2" stroke="currentColor" stroke-width="2"/>
@@ -118,8 +116,7 @@ get_header(); ?>
                                     <li><?php echo esc_html($feature); ?></li>
                                 <?php endforeach; ?>                            </ul>
                             <a href="<?php echo esc_url(get_post_meta(get_the_ID(), 'ma_service_3_link', true) ?: home_url('/email-campaigns')); ?>" class="service-cta">Learn More</a>
-                        </div>
-                    </div>                    <div class="service-card">
+                        </div>                    </div>                    <div class="service-card animate-on-scroll animate-stagger animate-fade-up">
                         <div class="service-icon">
                             <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M4.5 16.5C4.5 17.9 5.6 19 7 19H17C18.4 19 19.5 17.9 19.5 16.5V7.5C19.5 6.1 18.4 5 17 5H7C5.6 5 4.5 6.1 4.5 7.5V16.5Z" stroke="currentColor" stroke-width="2"/>
@@ -139,7 +136,7 @@ get_header(); ?>
                                 <?php endforeach; ?>                            </ul>
                             <a href="<?php echo esc_url(get_post_meta(get_the_ID(), 'ma_service_4_link', true) ?: home_url('/funnel-automation')); ?>" class="service-cta">Learn More</a>
                         </div>
-                    </div>                    <div class="service-card">
+                    </div>                    <div class="service-card animate-on-scroll animate-stagger animate-fade-up">
                         <div class="service-icon">
                             <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M21 15C21 15.5304 20.7893 16.0391 20.4142 16.4142C20.0391 16.7893 19.5304 17 19 17H7L3 21V5C3 4.46957 3.21071 3.96086 3.58579 3.58579C3.96086 3.21071 4.46957 3 5 3H19C19.5304 3 20.0391 3.21071 20.4142 3.58579C20.7893 3.96086 21 4.46957 21 5V15Z" stroke="currentColor" stroke-width="2"/>
@@ -158,7 +155,7 @@ get_header(); ?>
                                 <?php endforeach; ?>                            </ul>
                             <a href="<?php echo esc_url(get_post_meta(get_the_ID(), 'ma_service_5_link', true) ?: home_url('/chatbots')); ?>" class="service-cta">Learn More</a>
                         </div>
-                    </div>                    <div class="service-card">
+                    </div>                    <div class="service-card animate-on-scroll animate-stagger animate-fade-up">
                         <div class="service-icon">
                             <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M13 2L3 14H12L11 22L21 10H12L13 2Z" stroke="currentColor" stroke-width="2"/>
@@ -185,12 +182,12 @@ get_header(); ?>
         <section class="automation-case-study">
             <div class="section-content">
                 <div class="case-study-content">
-                    <div class="case-study-text">
+                    <div class="case-study-text animate-on-scroll animate-slide-left">
                         <h2><?php echo esc_html(get_post_meta(get_the_ID(), 'ma_case_study_title', true) ?: 'Case Study: SaaS Company Transformation'); ?></h2>
                         <h3><?php echo esc_html(get_post_meta(get_the_ID(), 'ma_case_study_subtitle', true) ?: 'Complete Marketing Automation Saves 35 Hours Weekly'); ?></h3>
                         <p><?php echo esc_html(get_post_meta(get_the_ID(), 'ma_case_study_description', true) ?: 'A growing SaaS company was struggling with manual lead nurturing and inefficient sales processes. Our comprehensive marketing automation solution transformed their entire customer acquisition system.'); ?></p>
                         
-                        <div class="challenge-solution">
+                        <div class="challenge-solution animate-on-scroll animate-fade-up">
                             <div class="challenge">
                                 <h4>The Challenge</h4>
                                 <ul>
@@ -240,37 +237,37 @@ get_header(); ?>
         </section>        <!-- Automation Process -->
         <section class="automation-process">
             <div class="section-content">
-                <h2><?php echo esc_html(get_post_meta(get_the_ID(), 'ma_process_title', true) ?: 'Our Marketing Automation Process'); ?></h2>
+                <h2 class="animate-on-scroll animate-fade-up"><?php echo esc_html(get_post_meta(get_the_ID(), 'ma_process_title', true) ?: 'Our Marketing Automation Process'); ?></h2>
                 <div class="process-steps">
-                    <div class="process-step">
+                    <div class="process-step animate-on-scroll animate-stagger animate-fade-up">
                         <div class="step-number">1</div>
                         <div class="step-content">
                             <h3><?php echo esc_html(get_post_meta(get_the_ID(), 'ma_process_step_1_title', true) ?: 'Strategy & Planning'); ?></h3>
                             <p><?php echo esc_html(get_post_meta(get_the_ID(), 'ma_process_step_1_description', true) ?: 'Analyze your current processes, identify automation opportunities, and create a comprehensive automation strategy.'); ?></p>
                         </div>
                     </div>
-                    <div class="process-step">
+                    <div class="process-step animate-on-scroll animate-stagger animate-fade-up">
                         <div class="step-number">2</div>
                         <div class="step-content">
                             <h3><?php echo esc_html(get_post_meta(get_the_ID(), 'ma_process_step_2_title', true) ?: 'Platform Selection'); ?></h3>
                             <p><?php echo esc_html(get_post_meta(get_the_ID(), 'ma_process_step_2_description', true) ?: 'Choose the right automation tools and platforms based on your needs, budget, and integration requirements.'); ?></p>
                         </div>
                     </div>
-                    <div class="process-step">
+                    <div class="process-step animate-on-scroll animate-stagger animate-fade-up">
                         <div class="step-number">3</div>
                         <div class="step-content">
                             <h3><?php echo esc_html(get_post_meta(get_the_ID(), 'ma_process_step_3_title', true) ?: 'Setup & Integration'); ?></h3>
                             <p><?php echo esc_html(get_post_meta(get_the_ID(), 'ma_process_step_3_description', true) ?: 'Configure automation platforms, integrate with existing systems, and create custom workflows and sequences.'); ?></p>
                         </div>
                     </div>
-                    <div class="process-step">
+                    <div class="process-step animate-on-scroll animate-stagger animate-fade-up">
                         <div class="step-number">4</div>
                         <div class="step-content">
                             <h3><?php echo esc_html(get_post_meta(get_the_ID(), 'ma_process_step_4_title', true) ?: 'Testing & Launch'); ?></h3>
                             <p><?php echo esc_html(get_post_meta(get_the_ID(), 'ma_process_step_4_description', true) ?: 'Thoroughly test all automation sequences, ensure proper functionality, and launch your automation systems.'); ?></p>
                         </div>
                     </div>
-                    <div class="process-step">
+                    <div class="process-step animate-on-scroll animate-stagger animate-fade-up">
                         <div class="step-number">5</div>
                         <div class="step-content">
                             <h3><?php echo esc_html(get_post_meta(get_the_ID(), 'ma_process_step_5_title', true) ?: 'Monitor & Optimize'); ?></h3>
@@ -282,9 +279,9 @@ get_header(); ?>
         </section>        <!-- Automation Tools -->
         <section class="automation-tools">
             <div class="section-content">
-                <h2><?php echo esc_html(get_post_meta(get_the_ID(), 'ma_tools_title', true) ?: 'Marketing Automation Tools We Use'); ?></h2>
+                <h2 class="animate-on-scroll animate-fade-up"><?php echo esc_html(get_post_meta(get_the_ID(), 'ma_tools_title', true) ?: 'Marketing Automation Tools We Use'); ?></h2>
                 <div class="tools-grid">
-                    <div class="tool-category">
+                    <div class="tool-category animate-on-scroll animate-stagger animate-fade-up">
                         <h3><?php echo esc_html(get_post_meta(get_the_ID(), 'ma_tools_crm_title', true) ?: 'CRM Platforms'); ?></h3>
                         <ul>
                             <?php 
@@ -294,9 +291,8 @@ get_header(); ?>
                             ?>
                                 <li><?php echo esc_html($tool); ?></li>
                             <?php endforeach; ?>
-                        </ul>
-                    </div>
-                    <div class="tool-category">
+                        </ul>                    </div>
+                    <div class="tool-category animate-on-scroll animate-stagger animate-fade-up">
                         <h3><?php echo esc_html(get_post_meta(get_the_ID(), 'ma_tools_email_title', true) ?: 'Email Automation'); ?></h3>
                         <ul>
                             <?php 
@@ -306,9 +302,8 @@ get_header(); ?>
                             ?>
                                 <li><?php echo esc_html($tool); ?></li>
                             <?php endforeach; ?>
-                        </ul>
-                    </div>
-                    <div class="tool-category">
+                        </ul>                    </div>
+                    <div class="tool-category animate-on-scroll animate-stagger animate-fade-up">
                         <h3><?php echo esc_html(get_post_meta(get_the_ID(), 'ma_tools_chatbot_title', true) ?: 'Chatbot Platforms'); ?></h3>
                         <ul>
                             <?php 
@@ -318,9 +313,8 @@ get_header(); ?>
                             ?>
                                 <li><?php echo esc_html($tool); ?></li>
                             <?php endforeach; ?>
-                        </ul>
-                    </div>
-                    <div class="tool-category">
+                        </ul>                    </div>
+                    <div class="tool-category animate-on-scroll animate-stagger animate-fade-up">
                         <h3><?php echo esc_html(get_post_meta(get_the_ID(), 'ma_tools_ai_title', true) ?: 'AI & Analytics'); ?></h3>
                         <ul>
                             <?php 
@@ -337,29 +331,29 @@ get_header(); ?>
         </section>        <!-- Industry Applications -->
         <section class="industry-applications">
             <div class="section-content">
-                <h2><?php echo esc_html(get_post_meta(get_the_ID(), 'ma_industries_title', true) ?: 'Marketing Automation for Your Industry'); ?></h2>
+                <h2 class="animate-on-scroll animate-fade-up"><?php echo esc_html(get_post_meta(get_the_ID(), 'ma_industries_title', true) ?: 'Marketing Automation for Your Industry'); ?></h2>
                 <div class="industry-grid">
-                    <div class="industry-item">
+                    <div class="industry-item animate-on-scroll animate-stagger animate-fade-up">
                         <h3><?php echo esc_html(get_post_meta(get_the_ID(), 'ma_industry_saas_title', true) ?: 'SaaS & Technology'); ?></h3>
                         <p><?php echo esc_html(get_post_meta(get_the_ID(), 'ma_industry_saas_description', true) ?: 'User onboarding automation, trial-to-paid conversions, and customer success workflows for software companies.'); ?></p>
                     </div>
-                    <div class="industry-item">
+                    <div class="industry-item animate-on-scroll animate-stagger animate-fade-up">
                         <h3><?php echo esc_html(get_post_meta(get_the_ID(), 'ma_industry_ecommerce_title', true) ?: 'E-commerce'); ?></h3>
                         <p><?php echo esc_html(get_post_meta(get_the_ID(), 'ma_industry_ecommerce_description', true) ?: 'Abandoned cart recovery, product recommendations, and customer lifecycle automation for online retailers.'); ?></p>
                     </div>
-                    <div class="industry-item">
+                    <div class="industry-item animate-on-scroll animate-stagger animate-fade-up">
                         <h3><?php echo esc_html(get_post_meta(get_the_ID(), 'ma_industry_professional_title', true) ?: 'Professional Services'); ?></h3>
                         <p><?php echo esc_html(get_post_meta(get_the_ID(), 'ma_industry_professional_description', true) ?: 'Lead nurturing, consultation booking, and client onboarding automation for service-based businesses.'); ?></p>
                     </div>
-                    <div class="industry-item">
+                    <div class="industry-item animate-on-scroll animate-stagger animate-fade-up">
                         <h3><?php echo esc_html(get_post_meta(get_the_ID(), 'ma_industry_healthcare_title', true) ?: 'Healthcare'); ?></h3>
                         <p><?php echo esc_html(get_post_meta(get_the_ID(), 'ma_industry_healthcare_description', true) ?: 'Patient communication, appointment reminders, and follow-up care automation for healthcare providers.'); ?></p>
                     </div>
-                    <div class="industry-item">
+                    <div class="industry-item animate-on-scroll animate-stagger animate-fade-up">
                         <h3><?php echo esc_html(get_post_meta(get_the_ID(), 'ma_industry_education_title', true) ?: 'Education'); ?></h3>
                         <p><?php echo esc_html(get_post_meta(get_the_ID(), 'ma_industry_education_description', true) ?: 'Student enrollment, course delivery, and engagement automation for educational institutions and online courses.'); ?></p>
                     </div>
-                    <div class="industry-item">
+                    <div class="industry-item animate-on-scroll animate-stagger animate-fade-up">
                         <h3><?php echo esc_html(get_post_meta(get_the_ID(), 'ma_industry_realestate_title', true) ?: 'Real Estate'); ?></h3>
                         <p><?php echo esc_html(get_post_meta(get_the_ID(), 'ma_industry_realestate_description', true) ?: 'Lead nurturing, property alerts, and client communication automation for real estate professionals.'); ?></p>
                     </div>
@@ -368,30 +362,28 @@ get_header(); ?>
         </section>        <!-- ROI Calculator -->
         <section class="roi-calculator">
             <div class="section-content">
-                <h2><?php echo esc_html(get_post_meta(get_the_ID(), 'ma_roi_title', true) ?: 'Marketing Automation ROI'); ?></h2>
+                <h2 class="animate-on-scroll animate-fade-up"><?php echo esc_html(get_post_meta(get_the_ID(), 'ma_roi_title', true) ?: 'Marketing Automation ROI'); ?></h2>
                 <div class="roi-content">
-                    <div class="roi-benefits">
+                    <div class="roi-benefits animate-on-scroll animate-slide-left">
                         <h3><?php echo esc_html(get_post_meta(get_the_ID(), 'ma_roi_benefits_title', true) ?: 'Average ROI Benefits:'); ?></h3>
                         <div class="benefit-list">
-                            <div class="benefit-item">
+                            <div class="benefit-item animate-on-scroll animate-stagger animate-fade-up">
                                 <span class="benefit-metric"><?php echo esc_html(get_post_meta(get_the_ID(), 'ma_roi_benefit_1_metric', true) ?: '60%'); ?></span>
                                 <span class="benefit-label"><?php echo esc_html(get_post_meta(get_the_ID(), 'ma_roi_benefit_1_label', true) ?: 'Time savings on marketing tasks'); ?></span>
-                            </div>
-                            <div class="benefit-item">
+                            </div>                            <div class="benefit-item animate-on-scroll animate-stagger animate-fade-up">
                                 <span class="benefit-metric"><?php echo esc_html(get_post_meta(get_the_ID(), 'ma_roi_benefit_2_metric', true) ?: '300%'); ?></span>
                                 <span class="benefit-label"><?php echo esc_html(get_post_meta(get_the_ID(), 'ma_roi_benefit_2_label', true) ?: 'Increase in qualified leads'); ?></span>
                             </div>
-                            <div class="benefit-item">
+                            <div class="benefit-item animate-on-scroll animate-stagger animate-fade-up">
                                 <span class="benefit-metric"><?php echo esc_html(get_post_meta(get_the_ID(), 'ma_roi_benefit_3_metric', true) ?: '25%'); ?></span>
                                 <span class="benefit-label"><?php echo esc_html(get_post_meta(get_the_ID(), 'ma_roi_benefit_3_label', true) ?: 'Improvement in sales velocity'); ?></span>
                             </div>
-                            <div class="benefit-item">
+                            <div class="benefit-item animate-on-scroll animate-stagger animate-fade-up">
                                 <span class="benefit-metric"><?php echo esc_html(get_post_meta(get_the_ID(), 'ma_roi_benefit_4_metric', true) ?: '40%'); ?></span>
                                 <span class="benefit-label"><?php echo esc_html(get_post_meta(get_the_ID(), 'ma_roi_benefit_4_label', true) ?: 'Reduction in customer acquisition cost'); ?></span>
                             </div>
-                        </div>
-                    </div>
-                    <div class="roi-cta">
+                        </div>                    </div>
+                    <div class="roi-cta animate-on-scroll animate-slide-right">
                         <h3><?php echo esc_html(get_post_meta(get_the_ID(), 'ma_roi_cta_title', true) ?: 'Calculate Your ROI'); ?></h3>
                         <p><?php echo esc_html(get_post_meta(get_the_ID(), 'ma_roi_cta_description', true) ?: 'See how much time and money marketing automation could save your business with our free ROI calculator.'); ?></p>
                         <a href="<?php echo esc_url(get_post_meta(get_the_ID(), 'ma_roi_cta_button_url', true) ?: home_url('/contact')); ?>" class="btn btn-primary"><?php echo esc_html(get_post_meta(get_the_ID(), 'ma_roi_cta_button_text', true) ?: 'Get ROI Analysis'); ?></a>
@@ -399,7 +391,7 @@ get_header(); ?>
                 </div>
             </div>
         </section>        <!-- Client Testimonial -->
-        <section class="client-testimonial">
+        <section class="client-testimonial animate-on-scroll animate-fade-up">
             <div class="section-content">
                 <div class="testimonial-content">
                     <div class="quote-icon">
