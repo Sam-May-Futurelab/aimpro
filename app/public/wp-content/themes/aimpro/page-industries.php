@@ -109,10 +109,9 @@ get_header(); ?>
                                 'link_url' => '/ecommerce'
                             )
                         );
-                    }
-                    
+                    }                    
                     foreach ($industries as $industry): ?>
-                        <div class="service-item">
+                        <div class="service-item animate-on-scroll animate-stagger animate-fade-up">
                             <div class="service-icon">
                                 <?php if (strpos($industry['icon'], 'fa') === 0): ?>
                                     <i class="<?php echo esc_attr($industry['icon']); ?>"></i>
@@ -194,8 +193,7 @@ get_header(); ?>
                         );
                     }
                     
-                    foreach ($expertise_points as $point): ?>
-                        <div class="benefit-card">
+                    foreach ($expertise_points as $point): ?>                        <div class="benefit-card animate-on-scroll animate-stagger animate-fade-up">
                             <div class="benefit-icon">
                                 <i class="<?php echo esc_attr($point['icon']); ?>"></i>
                             </div>
