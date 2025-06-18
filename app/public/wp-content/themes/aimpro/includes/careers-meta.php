@@ -175,10 +175,23 @@ function aimpro_careers_meta_box_callback($post) {
         <tr>
             <th><label for="careers_job<?php echo $num; ?>_desc">Description</label></th>
             <td><textarea id="careers_job<?php echo $num; ?>_desc" name="careers_job<?php echo $num; ?>_desc" rows="3" class="large-text"><?php echo esc_textarea($job_desc); ?></textarea></td>
-        </tr>
-        <tr>
+        </tr>        <tr>
             <th><label for="careers_job<?php echo $num; ?>_requirements">Requirements (one per line)</label></th>
             <td><textarea id="careers_job<?php echo $num; ?>_requirements" name="careers_job<?php echo $num; ?>_requirements" rows="4" class="large-text"><?php echo esc_textarea($job_requirements); ?></textarea></td>
+        </tr>
+        <tr>
+            <th><label for="careers_job<?php echo $num; ?>_pdf">Job Details PDF</label></th>
+            <td>
+                <?php 
+                $job_pdf = get_post_meta($post->ID, "careers_job{$num}_pdf", true);
+                ?>
+                <input type="url" id="careers_job<?php echo $num; ?>_pdf" name="careers_job<?php echo $num; ?>_pdf" value="<?php echo esc_attr($job_pdf); ?>" class="regular-text" placeholder="https://example.com/job-details.pdf" />
+                <br><small>Enter the URL of the uploaded PDF file for detailed job description. Upload PDF to Media Library and copy the URL here.</small>
+                <br><button type="button" class="button upload-pdf-btn" data-target="careers_job<?php echo $num; ?>_pdf">Upload PDF</button>
+                <?php if (!empty($job_pdf)): ?>
+                    <br><a href="<?php echo esc_url($job_pdf); ?>" target="_blank">View Current PDF</a>
+                <?php endif; ?>
+            </td>
         </tr>
         <?php endforeach; ?>
         
@@ -365,8 +378,7 @@ function aimpro_save_careers_meta($post_id) {
                 update_post_meta($post_id, $field, $sanitize_func($_POST[$field]));
             }
         }
-    }
-      // Save job opening fields
+    }    // Save job opening fields
     for ($i = 1; $i <= 6; $i++) {
         $job_fields = array(
             "careers_job{$i}_title" => 'sanitize_text_field',
@@ -374,21 +386,76 @@ function aimpro_save_careers_meta($post_id) {
             "careers_job{$i}_type" => 'sanitize_text_field',
             "careers_job{$i}_location" => 'sanitize_text_field',
             "careers_job{$i}_desc" => 'sanitize_textarea_field',
-            "careers_job{$i}_requirements" => 'sanitize_textarea_field'
+            "careers_job{$i}_requirements" => 'sanitize_textarea_field',
+            "careers_job{$i}_pdf" => 'esc_url_raw'
         );
         
         foreach ($job_fields as $field => $sanitize_func) {
-            if (isset($_POST[$field])) {
-                update_post_meta($post_id, $field, $sanitize_func($_POST[$field]));
+            if (isset($_POST[$field])) {                update_post_meta($post_id, $field, $sanitize_func($_POST[$field]));
             }
         }
         
         // Handle show/hide checkbox
         $show_field = "careers_job{$i}_show";
         if (isset($_POST[$show_field])) {
-            update_post_meta($post_id, $show_field, '1');
-        } else {
+            update_post_meta($post_id, $show_field, '1');        } else {
             update_post_meta($post_id, $show_field, '0');
         }
+    }
+}
+
+// Add JavaScript for PDF upload functionality
+add_action('admin_enqueue_scripts', 'aimpro_careers_admin_scripts');
+function aimpro_careers_admin_scripts() {
+    global $post;
+    if (empty($post)) return;
+    
+    $page_template = get_page_template_slug($post->ID);
+    $page_slug = $post->post_name;
+    
+    if ($page_template === 'page-careers.php' || $page_slug === 'careers') {
+        wp_enqueue_media();
+    }
+}
+
+add_action('admin_footer', 'aimpro_careers_pdf_upload_js');
+function aimpro_careers_pdf_upload_js() {
+    global $post;
+    if (empty($post)) return;
+    
+    $page_template = get_page_template_slug($post->ID);
+    $page_slug = $post->post_name;
+    
+    if ($page_template === 'page-careers.php' || $page_slug === 'careers') {
+        ?>
+        <script type="text/javascript">
+        jQuery(document).ready(function($) {
+            $('.upload-pdf-btn').click(function(e) {
+                e.preventDefault();
+                
+                var button = $(this);
+                var targetField = button.data('target');
+                
+                var frame = wp.media({
+                    title: 'Select or Upload PDF',
+                    button: {
+                        text: 'Use this PDF'
+                    },
+                    library: {
+                        type: 'application/pdf'
+                    },
+                    multiple: false
+                });
+                
+                frame.on('select', function() {
+                    var attachment = frame.state().get('selection').first().toJSON();
+                    $('#' + targetField).val(attachment.url);
+                });
+                
+                frame.open();
+            });
+        });
+        </script>
+        <?php
     }
 }

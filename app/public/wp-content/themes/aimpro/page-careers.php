@@ -126,10 +126,16 @@ get_header(); ?>
                                     ?>
                                 </ul>
                             </div>
-                            <?php endif; ?>
-                            <div class="position-actions">
+                            <?php endif; ?>                            <div class="position-actions">
                                 <a href="#apply" class="btn btn-primary">Apply Now</a>
-                                <a href="#details" class="btn btn-secondary">View Details</a>
+                                <?php 
+                                $job_pdf = get_post_meta(get_the_ID(), "careers_job{$i}_pdf", true);
+                                if (!empty($job_pdf)): 
+                                ?>
+                                    <a href="<?php echo esc_url($job_pdf); ?>" target="_blank" class="btn btn-secondary">View Details</a>
+                                <?php else: ?>
+                                    <a href="#details" class="btn btn-secondary" style="opacity: 0.6; cursor: not-allowed;">View Details</a>
+                                <?php endif; ?>
                             </div>
                         </div>
                     </div>
