@@ -48,42 +48,55 @@ get_header(); ?>
                     <a href="#portfolio" class="btn-outline streamlined">View Portfolio</a>
                 </div>
             </div>
-        </div>
-    </section>    <!-- Service Overview -->
+        </div>    </section>    <!-- Service Overview -->
     <section class="service-overview">
         <div class="container">
-            <div class="section-header animate-on-scroll animate-fade-up">
-                <h2>Websites That Work As Hard As You Do</h2>
-                <p>Our custom website design service creates powerful digital experiences that not only look stunning but convert visitors into customers. Every design decision is backed by user experience research and conversion optimization principles.</p>
-            </div>
-              <div class="features-grid">
-                <div class="feature-item animate-on-scroll animate-stagger animate-fade-up">
-                    <div class="feature-icon">
-                        <i class="fas fa-palette"></i>
+            <div class="overview-content">                <div class="overview-text animate-on-scroll animate-slide-left">
+                    <h2>Websites That Work As Hard As You Do</h2>
+                    <p class="overview-description">Our custom website design service creates powerful digital experiences that not only look stunning but convert visitors into customers. Every design decision is backed by user experience research and conversion optimization principles.</p>
+                    
+                    <h3 class="features-heading">Key Design Features</h3>
+                    <div class="service-features-list">
+                        <div class="service-feature-item">
+                            <h4><i class="fas fa-palette"></i> Brand-Aligned Design</h4>
+                            <p>Custom designs that perfectly reflect your brand identity and values across every element.</p>
+                        </div>
+                        
+                        <div class="service-feature-item">
+                            <h4><i class="fas fa-mobile-alt"></i> Mobile-First Approach</h4>
+                            <p>Responsive designs optimized for all devices with emphasis on mobile user experience.</p>
+                        </div>
+                        
+                        <div class="service-feature-item">
+                            <h4><i class="fas fa-chart-line"></i> Conversion Optimization</h4>
+                            <p>Every element designed to guide visitors toward your desired actions and business goals.</p>
+                        </div>
+                        
+                        <div class="service-feature-item">
+                            <h4><i class="fas fa-search"></i> SEO Foundation</h4>
+                            <p>Built-in SEO best practices ensuring your website ranks well from day one.</p>
+                        </div>
                     </div>
-                    <h3>Brand-Aligned Design</h3>
-                    <p>Custom designs that perfectly reflect your brand identity and values across every element.</p>
-                </div>
-                <div class="feature-item animate-on-scroll animate-stagger animate-fade-up">
-                    <div class="feature-icon">
-                        <i class="fas fa-mobile-alt"></i>
+                </div>                <div class="overview-stats animate-on-scroll animate-slide-right">                    <h3 class="stats-heading">Proven Results</h3>
+                    <p class="stats-description">Our designs don't just look good—they deliver measurable business results. Every project is built with conversion and user experience as top priorities.</p>
+                    <div class="target-icon">
+                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/aimpro-target.png" alt="Target Icon">
                     </div>
-                    <h3>Mobile-First Approach</h3>
-                    <p>Responsive designs optimized for all devices with emphasis on mobile user experience.</p>
-                </div>
-                <div class="feature-item animate-on-scroll animate-stagger animate-fade-up">
-                    <div class="feature-icon">
-                        <i class="fas fa-chart-line"></i>
+                    <div class="stat-item animate-on-scroll animate-stagger animate-scale-up">
+                        <span class="stat-number">285%</span>
+                        <span class="stat-label">Average Engagement Increase</span>
                     </div>
-                    <h3>Conversion Optimization</h3>
-                    <p>Every element designed to guide visitors toward your desired actions and business goals.</p>
-                </div>
-                <div class="feature-item animate-on-scroll animate-stagger animate-fade-up">
-                    <div class="feature-icon">
-                        <i class="fas fa-search"></i>
+                    <div class="stat-item animate-on-scroll animate-stagger animate-scale-up">
+                        <span class="stat-number">95%</span>
+                        <span class="stat-label">Client Satisfaction Rate</span>
                     </div>
-                    <h3>SEO Foundation</h3>
-                    <p>Built-in SEO best practices ensuring your website ranks well from day one.</p>
+                    <div class="stat-item animate-on-scroll animate-stagger animate-scale-up">
+                        <span class="stat-number">2.1s</span>
+                        <span class="stat-label">Average Load Time</span>
+                    </div>
+                    <div class="overview-cta animate-on-scroll animate-fade-up" style="margin-top: 30px;">
+                        <a href="<?php echo home_url('/contact'); ?>" class="btn-primary">Get a Free Design Quote</a>
+                    </div>
                 </div>
             </div>
         </div>
