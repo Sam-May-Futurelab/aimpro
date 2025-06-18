@@ -105,9 +105,7 @@ get_header(); ?>
                 </div>
             </div>
         </div>
-    </section>
-
-    <!-- Case Study Section -->
+    </section>    <!-- Case Study Section -->
     <section id="case-study" class="case-study-section">
         <div class="container">
             <div class="case-study-content">
@@ -117,23 +115,23 @@ get_header(); ?>
                 </div>
                 
                 <div class="case-study-grid">
-                    <div class="case-study-challenge">
+                    <div class="case-study-challenge animate-on-scroll animate-slide-left">
                         <h3>The Challenge</h3>
                         <p>FitLife Academy was driving traffic to their course sales page but experiencing a disappointing 2.3% conversion rate. Despite quality traffic from Facebook ads, they were losing potential customers due to unclear messaging and poor page structure.</p>
                         
                         <div class="challenge-metrics">
-                            <div class="metric">
+                            <div class="metric animate-on-scroll animate-stagger animate-scale-up">
                                 <span class="metric-value">2.3%</span>
                                 <span class="metric-label">Conversion Rate</span>
                             </div>
-                            <div class="metric">
+                            <div class="metric animate-on-scroll animate-stagger animate-scale-up">
                                 <span class="metric-value">£8.50</span>
                                 <span class="metric-label">Cost per Lead</span>
                             </div>
                         </div>
                     </div>
                     
-                    <div class="case-study-solution">
+                    <div class="case-study-solution animate-on-scroll animate-slide-right">
                         <h3>Our Solution</h3>
                         <ul>
                             <li><strong>Message-Match Optimization:</strong> Aligned landing page copy with ad messaging for consistency</li>
@@ -145,22 +143,22 @@ get_header(); ?>
                     </div>
                 </div>
                 
-                <div class="case-study-results">
+                <div class="case-study-results animate-on-scroll animate-fade-up">
                     <h3>The Results</h3>
                     <div class="results-grid">
-                        <div class="result-item">
+                        <div class="result-item animate-on-scroll animate-stagger animate-scale-up">
                             <span class="result-number">485%</span>
                             <span class="result-label">Increase in Course Sales</span>
                         </div>
-                        <div class="result-item">
+                        <div class="result-item animate-on-scroll animate-stagger animate-scale-up">
                             <span class="result-number">13.4%</span>
                             <span class="result-label">New Conversion Rate</span>
                         </div>
-                        <div class="result-item">
+                        <div class="result-item animate-on-scroll animate-stagger animate-scale-up">
                             <span class="result-number">£2.10</span>
                             <span class="result-label">Reduced Cost per Lead</span>
                         </div>
-                        <div class="result-item">
+                        <div class="result-item animate-on-scroll animate-stagger animate-scale-up">
                             <span class="result-number">£340K</span>
                             <span class="result-label">Additional Annual Revenue</span>
                         </div>
@@ -168,15 +166,13 @@ get_header(); ?>
                 </div>
             </div>
         </div>
-    </section>
-
-    <!-- Landing Page Types -->
+    </section><!-- Landing Page Types -->
     <section class="landing-page-types">
         <div class="container">
-            <h2>Types of Landing Pages We Create</h2>
+            <h2 class="animate-on-scroll animate-fade-up">Types of Landing Pages We Create</h2>
             
             <div class="types-grid">
-                <div class="type-card">
+                <div class="type-card animate-on-scroll animate-stagger animate-fade-up">
                     <div class="type-icon">
                         <i class="fas fa-magnet"></i>
                     </div>
@@ -190,7 +186,7 @@ get_header(); ?>
                     </ul>
                 </div>
                 
-                <div class="type-card">
+                <div class="type-card animate-on-scroll animate-stagger animate-fade-up">
                     <div class="type-icon">
                         <i class="fas fa-shopping-cart"></i>
                     </div>
@@ -204,7 +200,7 @@ get_header(); ?>
                     </ul>
                 </div>
                 
-                <div class="type-card">
+                <div class="type-card animate-on-scroll animate-stagger animate-fade-up">
                     <div class="type-icon">
                         <i class="fas fa-calendar-check"></i>
                     </div>
@@ -218,7 +214,7 @@ get_header(); ?>
                     </ul>
                 </div>
                 
-                <div class="type-card">
+                <div class="type-card animate-on-scroll animate-stagger animate-fade-up">
                     <div class="type-icon">
                         <i class="fas fa-mobile-alt"></i>
                     </div>
@@ -233,50 +229,48 @@ get_header(); ?>
                 </div>
             </div>
         </div>
-    </section>
-
-    <!-- Design Process -->
+    </section>    <!-- Design Process -->
     <section class="design-process">
         <div class="container">
-            <h2>Our Landing Page Creation Process</h2>
+            <h2 class="animate-on-scroll animate-fade-up">Our Landing Page Creation Process</h2>
             
             <div class="process-timeline">
-                <div class="process-step">
+                <div class="process-step animate-on-scroll animate-stagger animate-fade-up">
                     <div class="step-number">1</div>
                     <div class="step-content">
                         <h3>Campaign Analysis</h3>
                         <p>Analyze your traffic source, audience, and campaign goals to create targeted landing page strategy.</p>
                     </div>
                 </div>
-                <div class="process-step">
+                <div class="process-step animate-on-scroll animate-stagger animate-fade-up">
                     <div class="step-number">2</div>
                     <div class="step-content">
                         <h3>Message & Offer Development</h3>
                         <p>Craft compelling headlines, value propositions, and offers that resonate with your target audience.</p>
                     </div>
                 </div>
-                <div class="process-step">
+                <div class="process-step animate-on-scroll animate-stagger animate-fade-up">
                     <div class="step-number">3</div>
                     <div class="step-content">
                         <h3>Conversion-Focused Design</h3>
                         <p>Design pages with proven conversion elements: clear CTAs, social proof, and strategic layout.</p>
                     </div>
                 </div>
-                <div class="process-step">
+                <div class="process-step animate-on-scroll animate-stagger animate-fade-up">
                     <div class="step-number">4</div>
                     <div class="step-content">
                         <h3>Development & Integration</h3>
                         <p>Build fast-loading pages with proper tracking, form integrations, and mobile optimization.</p>
                     </div>
                 </div>
-                <div class="process-step">
+                <div class="process-step animate-on-scroll animate-stagger animate-fade-up">
                     <div class="step-number">5</div>
                     <div class="step-content">
                         <h3>Testing & Optimization</h3>
                         <p>Set up A/B tests and continuous optimization to improve conversion rates over time.</p>
                     </div>
                 </div>
-                <div class="process-step">
+                <div class="process-step animate-on-scroll animate-stagger animate-fade-up">
                     <div class="step-number">6</div>
                     <div class="step-content">
                         <h3>Launch & Monitor</h3>
@@ -285,18 +279,16 @@ get_header(); ?>
                 </div>
             </div>
         </div>
-    </section>
-
-    <!-- Pricing Section -->
+    </section>    <!-- Pricing Section -->
     <section class="pricing-section">
         <div class="container">
-            <div class="section-header">
+            <div class="section-header animate-on-scroll animate-fade-up">
                 <h2>Landing Page Packages</h2>
                 <p>Fast, effective landing pages designed to convert your traffic into customers.</p>
             </div>
             
             <div class="pricing-grid">
-                <div class="pricing-card">
+                <div class="pricing-card animate-on-scroll animate-stagger animate-fade-up">
                     <div class="pricing-header">
                         <h3>Single Landing Page</h3>
                         <div class="price">£997</div>
@@ -311,11 +303,8 @@ get_header(); ?>
                         <li>7-day delivery</li>
                         <li>14 days support</li>
                     </ul>
-                    <a href="#contact" class="btn-outline">Get Started</a>
-                </div>
-                
-                <div class="pricing-card featured">
-                    <div class="pricing-badge">Best Value</div>
+                    <a href="#contact" class="btn-outline">Get Started</a>                </div>
+                  <div class="pricing-card featured animate-on-scroll animate-stagger animate-fade-up">
                     <div class="pricing-header">
                         <h3>Landing Page Bundle</h3>
                         <div class="price">£2,497</div>
@@ -332,10 +321,9 @@ get_header(); ?>
                         <li>10-day delivery</li>
                         <li>30 days support</li>
                     </ul>
-                    <a href="#contact" class="btn-primary">Get Started</a>
-                </div>
+                    <a href="#contact" class="btn-primary">Get Started</a>                </div>
                 
-                <div class="pricing-card">
+                <div class="pricing-card animate-on-scroll animate-stagger animate-fade-up">
                     <div class="pricing-header">
                         <h3>Funnel Series</h3>
                         <div class="price">£4,997</div>
@@ -361,11 +349,11 @@ get_header(); ?>
     <section class="lead-generation-methods">
         <div class="container">
             <div class="section-content">
-                <h2>Essential Conversion Elements We Include</h2>
+                <h2 class="animate-on-scroll animate-fade-up">Essential Conversion Elements We Include</h2>
             </div>
             
             <div class="methods-grid">
-                <div class="method-card">
+                <div class="method-card animate-on-scroll animate-stagger animate-fade-up">
                     <div class="method-icon">
                         <i class="fas fa-bullhorn"></i>
                     </div>
@@ -375,7 +363,7 @@ get_header(); ?>
                     </div>
                 </div>
                 
-                <div class="method-card">
+                <div class="method-card animate-on-scroll animate-stagger animate-fade-up">
                     <div class="method-icon">
                         <i class="fas fa-star"></i>
                     </div>
@@ -385,7 +373,7 @@ get_header(); ?>
                     </div>
                 </div>
                 
-                <div class="method-card">
+                <div class="method-card animate-on-scroll animate-stagger animate-fade-up">
                     <div class="method-icon">
                         <i class="fas fa-mouse-pointer"></i>
                     </div>
@@ -395,7 +383,7 @@ get_header(); ?>
                     </div>
                 </div>
                 
-                <div class="method-card">
+                <div class="method-card animate-on-scroll animate-stagger animate-fade-up">
                     <div class="method-icon">
                         <i class="fas fa-clock"></i>
                     </div>
@@ -405,7 +393,7 @@ get_header(); ?>
                     </div>
                 </div>
                 
-                <div class="method-card">
+                <div class="method-card animate-on-scroll animate-stagger animate-fade-up">
                     <div class="method-icon">
                         <i class="fas fa-shield-alt"></i>
                     </div>
@@ -415,7 +403,7 @@ get_header(); ?>
                     </div>
                 </div>
                 
-                <div class="method-card">
+                <div class="method-card animate-on-scroll animate-stagger animate-fade-up">
                     <div class="method-icon">
                         <i class="fas fa-chart-line"></i>
                     </div>
@@ -426,39 +414,37 @@ get_header(); ?>
                 </div>
             </div>
         </div>
-    </section>
-
-    <!-- Industries -->
+    </section>    <!-- Industries -->
     <section class="industries-section">
         <div class="container">
-            <h2>Industries We Serve</h2>
+            <h2 class="animate-on-scroll animate-fade-up">Industries We Serve</h2>
             <div class="industries-grid">
-                <div class="industry-item">
+                <div class="industry-item animate-on-scroll animate-stagger animate-fade-up">
                     <i class="fas fa-laptop-code"></i>
                     <h3>SaaS & Technology</h3>
                     <p>Free trial pages, demo requests, and software download pages</p>
                 </div>
-                <div class="industry-item">
+                <div class="industry-item animate-on-scroll animate-stagger animate-fade-up">
                     <i class="fas fa-graduation-cap"></i>
                     <h3>Education & Training</h3>
                     <p>Course enrollment, webinar registration, and certification signups</p>
                 </div>
-                <div class="industry-item">
+                <div class="industry-item animate-on-scroll animate-stagger animate-fade-up">
                     <i class="fas fa-dumbbell"></i>
                     <h3>Health & Fitness</h3>
                     <p>Program signups, consultation bookings, and membership sales</p>
                 </div>
-                <div class="industry-item">
+                <div class="industry-item animate-on-scroll animate-stagger animate-fade-up">
                     <i class="fas fa-shopping-bag"></i>
                     <h3>E-commerce</h3>
                     <p>Product launches, promotional campaigns, and seasonal sales</p>
                 </div>
-                <div class="industry-item">
+                <div class="industry-item animate-on-scroll animate-stagger animate-fade-up">
                     <i class="fas fa-briefcase"></i>
                     <h3>Professional Services</h3>
                     <p>Lead generation, consultation bookings, and service inquiries</p>
                 </div>
-                <div class="industry-item">
+                <div class="industry-item animate-on-scroll animate-stagger animate-fade-up">
                     <i class="fas fa-home"></i>
                     <h3>Real Estate</h3>
                     <p>Property listings, buyer/seller leads, and market reports</p>
@@ -470,9 +456,9 @@ get_header(); ?>
     <!-- Testimonials -->
     <section class="testimonials-section">
         <div class="container">
-            <h2>What Our Clients Say</h2>
+            <h2 class="animate-on-scroll animate-fade-up">What Our Clients Say</h2>
             <div class="testimonials-grid">
-                <div class="testimonial-card">
+                <div class="testimonial-card animate-on-scroll animate-stagger animate-fade-up">
                     <div class="testimonial-content">
                         <p>"Our new landing page converted at 13.4% compared to our old page's 2.3%. The ROI was immediate and substantial."</p>
                     </div>
@@ -481,7 +467,7 @@ get_header(); ?>
                         <span>Founder, FitLife Academy</span>
                     </div>
                 </div>
-                <div class="testimonial-card">
+                <div class="testimonial-card animate-on-scroll animate-stagger animate-fade-up">
                     <div class="testimonial-content">
                         <p>"Aimpro's landing pages have been instrumental in scaling our lead generation. We're now getting 5x more qualified leads."</p>
                     </div>
@@ -490,7 +476,7 @@ get_header(); ?>
                         <span>CMO, TechFlow Solutions</span>
                     </div>
                 </div>
-                <div class="testimonial-card">
+                <div class="testimonial-card animate-on-scroll animate-stagger animate-fade-up">
                     <div class="testimonial-content">
                         <p>"The attention to detail and conversion optimization expertise is outstanding. Our webinar attendance increased by 280%."</p>
                     </div>
@@ -504,39 +490,39 @@ get_header(); ?>
     </section>    <!-- FAQ Section -->
     <section class="seo-faqs">
         <div class="container">
-            <h2>Frequently Asked Questions</h2>
+            <h2 class="animate-on-scroll animate-fade-up">Frequently Asked Questions</h2>
             <div class="faq-list">
-                <div class="faq-item">
+                <div class="faq-item animate-on-scroll animate-stagger animate-fade-up">
                     <button class="faq-question">How quickly can you deliver a landing page?</button>
                     <div class="faq-answer">
                         <p>Single landing pages can be delivered in 7 days, while more complex funnels take 10-14 days. Rush delivery is available for urgent campaigns.</p>
                     </div>
                 </div>
-                <div class="faq-item">
+                <div class="faq-item animate-on-scroll animate-stagger animate-fade-up">
                     <button class="faq-question">Do you write the copy for landing pages?</button>
                     <div class="faq-answer">
                         <p>Yes, our packages include conversion-optimized copywriting. We can also work with your existing copy if you prefer.</p>
                     </div>
                 </div>
-                <div class="faq-item">
+                <div class="faq-item animate-on-scroll animate-stagger animate-fade-up">
                     <button class="faq-question">Can you integrate with my CRM or email platform?</button>
                     <div class="faq-answer">
                         <p>Absolutely! We integrate with all major CRMs, email platforms, and marketing automation tools to ensure seamless lead capture.</p>
                     </div>
                 </div>
-                <div class="faq-item">
+                <div class="faq-item animate-on-scroll animate-stagger animate-fade-up">
                     <button class="faq-question">Do you provide A/B testing setup?</button>
                     <div class="faq-answer">
                         <p>Yes, our Professional and Funnel packages include A/B testing setup to help you continuously optimize conversion rates.</p>
                     </div>
                 </div>
-                <div class="faq-item">
+                <div class="faq-item animate-on-scroll animate-stagger animate-fade-up">
                     <button class="faq-question">What if my landing page doesn't convert well?</button>
                     <div class="faq-answer">
                         <p>We provide ongoing optimization support and can make data-driven improvements to enhance performance based on actual results.</p>
                     </div>
                 </div>
-                <div class="faq-item">
+                <div class="faq-item animate-on-scroll animate-stagger animate-fade-up">
                     <button class="faq-question">Can I make changes after the page is live?</button>
                     <div class="faq-answer">
                         <p>Yes, all packages include support periods for changes. We also offer maintenance packages for ongoing updates and optimization.</p>
@@ -544,7 +530,7 @@ get_header(); ?>
                 </div>
             </div>
         </div>
-    </section>    <!-- CTA Section -->
+    </section><!-- CTA Section -->
     <section id="contact" class="cta-section">
         <div class="container">
             <div class="cta-content animate-on-scroll animate-scale-up">
