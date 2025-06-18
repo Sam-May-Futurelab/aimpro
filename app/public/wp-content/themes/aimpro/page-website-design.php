@@ -225,9 +225,7 @@ get_header(); ?>
                     </ul>
                     <a href="#contact" class="btn-outline">Get Started</a>
                 </div>
-                
-                <div class="pricing-card featured animate-on-scroll animate-stagger animate-fade-up">
-                    <div class="pricing-badge">Most Popular</div>
+                  <div class="pricing-card featured animate-on-scroll animate-stagger animate-fade-up">
                     <div class="pricing-header">
                         <h3>Professional Website</h3>
                         <div class="price">£5,997</div>
@@ -350,30 +348,41 @@ get_header(); ?>
     <section class="faq-section">
         <div class="container">
             <h2 class="animate-on-scroll animate-fade-up">Frequently Asked Questions</h2>
-            <div class="faq-grid">
-                <div class="faq-item animate-on-scroll animate-stagger animate-fade-up">
-                    <h3>How long does website design take?</h3>
-                    <p>Timeline varies by complexity: 3 weeks for Business, 4 weeks for Professional, and 6 weeks for Enterprise packages. We provide detailed project timelines during consultation.</p>
+            <div class="faq-grid">                <div class="faq-item animate-on-scroll animate-stagger animate-fade-up">
+                    <button class="faq-question">How long does website design take?</button>
+                    <div class="faq-answer">
+                        <p>Timeline varies by complexity: 3 weeks for Business, 4 weeks for Professional, and 6 weeks for Enterprise packages. We provide detailed project timelines during consultation.</p>
+                    </div>
                 </div>
                 <div class="faq-item animate-on-scroll animate-stagger animate-fade-up">
-                    <h3>Do you provide content writing?</h3>
-                    <p>Yes, we offer professional copywriting services optimized for conversions and SEO. This can be added to any package or purchased separately.</p>
+                    <button class="faq-question">Do you provide content writing?</button>
+                    <div class="faq-answer">
+                        <p>Yes, we offer professional copywriting services optimized for conversions and SEO. This can be added to any package or purchased separately.</p>
+                    </div>
                 </div>
                 <div class="faq-item animate-on-scroll animate-stagger animate-fade-up">
-                    <h3>Will my website be mobile-friendly?</h3>
-                    <p>Absolutely! All our websites are built with a mobile-first approach and are fully responsive across all devices and screen sizes.</p>
+                    <button class="faq-question">Will my website be mobile-friendly?</button>
+                    <div class="faq-answer">
+                        <p>Absolutely! All our websites are built with a mobile-first approach and are fully responsive across all devices and screen sizes.</p>
+                    </div>
                 </div>
                 <div class="faq-item animate-on-scroll animate-stagger animate-fade-up">
-                    <h3>Can you redesign my existing website?</h3>
-                    <p>Yes, we specialize in website redesigns. We can work with your existing content and improve the design, functionality, and performance.</p>
+                    <button class="faq-question">Can you redesign my existing website?</button>
+                    <div class="faq-answer">
+                        <p>Yes, we specialize in website redesigns. We can work with your existing content and improve the design, functionality, and performance.</p>
+                    </div>
                 </div>
                 <div class="faq-item animate-on-scroll animate-stagger animate-fade-up">
-                    <h3>Do you provide ongoing maintenance?</h3>
-                    <p>Yes, we offer maintenance packages for security updates, content changes, and performance optimization. This ensures your website stays current and secure.</p>
+                    <button class="faq-question">Do you provide ongoing maintenance?</button>
+                    <div class="faq-answer">
+                        <p>Yes, we offer maintenance packages for security updates, content changes, and performance optimization. This ensures your website stays current and secure.</p>
+                    </div>
                 </div>
                 <div class="faq-item animate-on-scroll animate-stagger animate-fade-up">
-                    <h3>What if I need changes after launch?</h3>
-                    <p>All packages include a support period for minor changes. For major updates, we offer affordable maintenance packages or project-based updates.</p>
+                    <button class="faq-question">What if I need changes after launch?</button>
+                    <div class="faq-answer">
+                        <p>All packages include a support period for minor changes. For major updates, we offer affordable maintenance packages or project-based updates.</p>
+                    </div>
                 </div>
             </div>
         </div>
