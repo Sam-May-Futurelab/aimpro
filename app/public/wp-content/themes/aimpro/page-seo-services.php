@@ -17,10 +17,9 @@ $header_subtitle = get_post_meta(get_the_ID(), '_seo_header_subtitle', true) ?: 
 
 <main id="main" class="main-content seo-service-page">
     <div class="container">
-        
-        <!-- Page Header -->
+          <!-- Page Header -->
         <section class="page-header">
-            <div class="page-header-content">
+            <div class="page-header-content animate-on-scroll animate-fade-up">
                 <h1><?php echo esc_html($header_title); ?></h1>
                 <p class="page-subtitle"><?php echo esc_html($header_subtitle); ?></p>
             </div>
@@ -28,7 +27,7 @@ $header_subtitle = get_post_meta(get_the_ID(), '_seo_header_subtitle', true) ?: 
         <section class="seo-overview">
             <div class="section-content">
                 <div class="overview-content">
-                    <div class="overview-text">
+                    <div class="overview-text animate-on-scroll animate-slide-left">
                         <?php
                         $overview_title = get_post_meta(get_the_ID(), '_seo_overview_title', true) ?: $defaults['overview_title'];
                         $overview_description = get_post_meta(get_the_ID(), '_seo_overview_description', true) ?: $defaults['overview_description'];
@@ -47,7 +46,7 @@ $header_subtitle = get_post_meta(get_the_ID(), '_seo_header_subtitle', true) ?: 
                             </ul>
                         </div>
                     </div>
-                    <div class="overview-image">
+                    <div class="overview-image animate-on-scroll animate-slide-right">
                         <?php
                         $overview_image = get_post_meta(get_the_ID(), '_seo_overview_image', true) ?: $defaults['overview_image'];
                         ?>
@@ -61,7 +60,7 @@ $header_subtitle = get_post_meta(get_the_ID(), '_seo_header_subtitle', true) ?: 
                 <?php
                 $services_grid_title = get_post_meta(get_the_ID(), '_seo_services_grid_title', true) ?: $defaults['services_grid_title'];
                 ?>
-                <h2><?php echo esc_html($services_grid_title); ?></h2>
+                <h2 class="animate-on-scroll animate-fade-up"><?php echo esc_html($services_grid_title); ?></h2>
                 <div class="services-grid">
                     
                     <?php for ($i = 1; $i <= 5; $i++): 
@@ -72,7 +71,7 @@ $header_subtitle = get_post_meta(get_the_ID(), '_seo_header_subtitle', true) ?: 
                         $service_link = get_post_meta(get_the_ID(), "_seo_service_{$i}_link", true) ?: $defaults["service_{$i}_link"];
                         $service_featured = get_post_meta(get_the_ID(), "_seo_service_{$i}_featured", true) ?: $defaults["service_{$i}_featured"];
                         
-                        $card_class = $service_featured ? 'service-card featured' : 'service-card';
+                        $card_class = $service_featured ? 'service-card featured animate-on-scroll animate-stagger animate-fade-up' : 'service-card animate-on-scroll animate-stagger animate-fade-up';
                     ?>
                     
                     <div class="<?php echo esc_attr($card_class); ?>">
@@ -133,13 +132,11 @@ $header_subtitle = get_post_meta(get_the_ID(), '_seo_header_subtitle', true) ?: 
 
                 </div>
             </div>
-        </section>
-
-        <!-- SEO Success Story -->
+        </section>        <!-- SEO Success Story -->
         <section class="seo-case-study">
             <div class="section-content">
                 <div class="case-study-content">
-                    <div class="case-study-text">
+                    <div class="case-study-text animate-on-scroll animate-slide-left">
                         <?php
                         $case_study_label = get_post_meta(get_the_ID(), '_seo_case_study_label', true) ?: $defaults['case_study_label'];
                         $case_study_title = get_post_meta(get_the_ID(), '_seo_case_study_title', true) ?: $defaults['case_study_title'];
@@ -153,7 +150,7 @@ $header_subtitle = get_post_meta(get_the_ID(), '_seo_header_subtitle', true) ?: 
                         <h2><?php echo esc_html($case_study_title); ?></h2>
                         <p><?php echo esc_html($case_study_description); ?></p>
                         
-                        <div class="case-study-challenge">
+                        <div class="case-study-challenge animate-on-scroll animate-fade-up">
                             <h3><?php echo esc_html($challenge_title); ?></h3>
                             <ul>
                                 <?php foreach ((array)$challenges as $challenge): ?>
@@ -162,7 +159,7 @@ $header_subtitle = get_post_meta(get_the_ID(), '_seo_header_subtitle', true) ?: 
                             </ul>
                         </div>
 
-                        <div class="case-study-solution">
+                        <div class="case-study-solution animate-on-scroll animate-fade-up">
                             <h3><?php echo esc_html($solution_title); ?></h3>
                             <ul>
                                 <?php foreach ((array)$solutions as $solution): ?>
@@ -171,7 +168,7 @@ $header_subtitle = get_post_meta(get_the_ID(), '_seo_header_subtitle', true) ?: 
                             </ul>
                         </div>
                     </div>
-                    <div class="case-study-results">
+                    <div class="case-study-results animate-on-scroll animate-slide-right">
                         <?php
                         $results_title = get_post_meta(get_the_ID(), '_seo_case_study_results_title', true) ?: $defaults['case_study_results_title'];
                         $case_study_link = get_post_meta(get_the_ID(), '_seo_case_study_link', true) ?: $defaults['case_study_link'];
@@ -183,7 +180,7 @@ $header_subtitle = get_post_meta(get_the_ID(), '_seo_header_subtitle', true) ?: 
                                 $result_number = get_post_meta(get_the_ID(), "_seo_case_study_result_{$i}_number", true) ?: $defaults["case_study_result_{$i}_number"];
                                 $result_label = get_post_meta(get_the_ID(), "_seo_case_study_result_{$i}_label", true) ?: $defaults["case_study_result_{$i}_label"];
                             ?>
-                            <div class="result-item">
+                            <div class="result-item animate-on-scroll animate-stagger animate-scale-up">
                                 <div class="result-number"><?php echo esc_html($result_number); ?></div>
                                 <div class="result-label"><?php echo esc_html($result_label); ?></div>
                             </div>
@@ -199,14 +196,14 @@ $header_subtitle = get_post_meta(get_the_ID(), '_seo_header_subtitle', true) ?: 
                 <?php
                 $process_title = get_post_meta(get_the_ID(), '_seo_process_title', true) ?: $defaults['process_title'];
                 ?>
-                <h2><?php echo esc_html($process_title); ?></h2>
+                <h2 class="animate-on-scroll animate-fade-up"><?php echo esc_html($process_title); ?></h2>
                 <div class="process-steps">
                     
                     <?php for ($i = 1; $i <= 4; $i++): 
                         $step_title = get_post_meta(get_the_ID(), "_seo_process_step_{$i}_title", true) ?: $defaults["process_step_{$i}_title"];
                         $step_description = get_post_meta(get_the_ID(), "_seo_process_step_{$i}_description", true) ?: $defaults["process_step_{$i}_description"];
                     ?>
-                    <div class="process-step">
+                    <div class="process-step animate-on-scroll animate-stagger animate-fade-up">
                         <div class="step-number"><?php echo $i; ?></div>
                         <div class="step-content">
                             <h3><?php echo esc_html($step_title); ?></h3>
@@ -223,14 +220,14 @@ $header_subtitle = get_post_meta(get_the_ID(), '_seo_header_subtitle', true) ?: 
                 <?php
                 $tools_title = get_post_meta(get_the_ID(), '_seo_tools_title', true) ?: $defaults['tools_title'];
                 ?>
-                <h2><?php echo esc_html($tools_title); ?></h2>
+                <h2 class="animate-on-scroll animate-fade-up"><?php echo esc_html($tools_title); ?></h2>
                 <div class="tools-grid">
                     
                     <?php for ($i = 1; $i <= 4; $i++): 
                         $category_title = get_post_meta(get_the_ID(), "_seo_tools_category_{$i}_title", true) ?: $defaults["tools_category_{$i}_title"];
                         $tools = get_post_meta(get_the_ID(), "_seo_tools_category_{$i}_tools", true) ?: $defaults["tools_category_{$i}_tools"];
                     ?>
-                    <div class="tool-category">
+                    <div class="tool-category animate-on-scroll animate-stagger animate-fade-up">
                         <h3><?php echo esc_html($category_title); ?></h3>
                         <ul class="tool-list">
                             <?php foreach ((array)$tools as $tool): ?>
@@ -248,7 +245,7 @@ $header_subtitle = get_post_meta(get_the_ID(), '_seo_header_subtitle', true) ?: 
                 <?php
                 $industries_title = get_post_meta(get_the_ID(), '_seo_industries_title', true) ?: $defaults['industries_title'];
                 ?>
-                <h2><?php echo esc_html($industries_title); ?></h2>
+                <h2 class="animate-on-scroll animate-fade-up"><?php echo esc_html($industries_title); ?></h2>
                 <div class="industries-grid">
                     
                     <?php for ($i = 1; $i <= 4; $i++): 
@@ -256,7 +253,7 @@ $header_subtitle = get_post_meta(get_the_ID(), '_seo_header_subtitle', true) ?: 
                         $industry_description = get_post_meta(get_the_ID(), "_seo_industry_{$i}_description", true) ?: $defaults["industry_{$i}_description"];
                         $industry_features = get_post_meta(get_the_ID(), "_seo_industry_{$i}_features", true) ?: $defaults["industry_{$i}_features"];
                     ?>
-                    <div class="industry-card">
+                    <div class="industry-card animate-on-scroll animate-stagger animate-fade-up">
                         <h3><?php echo esc_html($industry_title); ?></h3>
                         <p><?php echo esc_html($industry_description); ?></p>
                         <ul class="industry-features">
@@ -272,7 +269,7 @@ $header_subtitle = get_post_meta(get_the_ID(), '_seo_header_subtitle', true) ?: 
         </section>        <!-- SEO Testimonial -->
         <section class="seo-testimonial">
             <div class="section-content">
-                <div class="testimonial-content">                    <?php
+                <div class="testimonial-content animate-on-scroll animate-fade-up">                    <?php
                     $testimonial_quote = get_post_meta(get_the_ID(), '_seo_testimonial_quote', true) ?: $defaults['testimonial_quote'];
                     $testimonial_image = ''; // Force no image for David Mitchell testimonial
                     $testimonial_name = get_post_meta(get_the_ID(), '_seo_testimonial_name', true) ?: $defaults['testimonial_name'];
@@ -294,12 +291,10 @@ $header_subtitle = get_post_meta(get_the_ID(), '_seo_header_subtitle', true) ?: 
                     </div>
                 </div>
             </div>
-        </section>
-
-        <!-- CTA Section -->
+        </section>        <!-- CTA Section -->
         <section class="cta-section">
             <div class="container">
-                <div class="cta-content">
+                <div class="cta-content animate-on-scroll animate-fade-up">
                     <?php
                     $cta_title = get_post_meta(get_the_ID(), '_seo_cta_title', true) ?: $defaults['cta_title'];
                     $cta_description = get_post_meta(get_the_ID(), '_seo_cta_description', true) ?: $defaults['cta_description'];
