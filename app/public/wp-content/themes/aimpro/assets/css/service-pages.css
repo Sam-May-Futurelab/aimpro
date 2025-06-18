@@ -1556,17 +1556,23 @@
     color: rgba(255, 255, 255, 0.95) !important;
 }
 
-/* UX/UI Optimization Page Case Study Text Color Fix */
-.service-page-case-study h2,
-.service-page-case-study h3,
-.service-page-case-study p,
-.service-page-case-study .case-study-label,
-.service-page-case-study li,
-.service-page-case-study .metric-value,
-.service-page-case-study .metric-label,
-.service-page-case-study .result-number,
-.service-page-case-study .result-label {
+/* UX/UI Optimization, Landing Pages, Website Design - Only headings and labels should be white on orange background */
+:root.light-theme .ux-ui-optimization-page .service-page-case-study h2,
+:root.light-theme .ux-ui-optimization-page .service-page-case-study h3,
+:root.light-theme .ux-ui-optimization-page .service-page-case-study .case-study-label,
+:root.light-theme .landing-pages-page .service-page-case-study h2,
+:root.light-theme .landing-pages-page .service-page-case-study h3,
+:root.light-theme .landing-pages-page .service-page-case-study .case-study-label,
+:root.light-theme .website-design-page .service-page-case-study h2,
+:root.light-theme .website-design-page .service-page-case-study h3,
+:root.light-theme .website-design-page .service-page-case-study .case-study-label {
     color: white !important;
+}
+
+/* Result numbers should be orange for visual emphasis */
+.service-page-case-study .result-number {
+    color: var(--primary-orange, #f15a25) !important;
+    font-weight: 700;
 }
 
 .service-page-case-study .case-study-label {
