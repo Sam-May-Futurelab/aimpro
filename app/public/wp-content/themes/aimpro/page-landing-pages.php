@@ -42,50 +42,66 @@ get_header(); ?>
                         <div class="stat-number">23%</div>
                         <div class="stat-label">Average Conversion Rate</div>
                     </div>
-                </div>
-                <div class="hero-ctas animate-on-scroll animate-scale-up">
+                </div>                <div class="hero-ctas animate-on-scroll animate-scale-up">
                     <a href="#contact" class="btn-primary streamlined">Get Landing Page Quote</a>
-                    <a href="#case-study" class="btn-outline streamlined">View Case Study</a>
                 </div>
             </div>
         </div>
-    </section>
-
-    <!-- Service Overview -->
+    </section>    <!-- Service Overview -->
     <section class="service-overview">
         <div class="container">
-            <div class="section-header animate-on-scroll animate-fade-up">
-                <h2>Landing Pages That Convert Like Crazy</h2>
-                <p>Our high-converting landing pages are meticulously crafted to achieve one goal: turn your traffic into leads and sales. Every element is strategically designed and tested to maximize conversions for your specific audience and offer.</p>
-            </div>
-              <div class="features-grid">
-                <div class="feature-item animate-on-scroll animate-stagger animate-fade-up">
-                    <div class="feature-icon">
-                        <i class="fas fa-bullseye"></i>
+            <div class="overview-content">
+                <div class="overview-text animate-on-scroll animate-slide-left">
+                    <h2>Landing Pages That Convert Like Crazy</h2>
+                    <p class="overview-description">Our high-converting landing pages are meticulously crafted to achieve one goal: turn your traffic into leads and sales. Every element is strategically designed and tested to maximize conversions for your specific audience and offer.</p>
+                    
+                    <h3 class="features-heading">Key Features</h3>
+                    <div class="service-features-list">
+                        <div class="service-feature-item">
+                            <h4><i class="fas fa-bullseye"></i> Conversion-Focused Design</h4>
+                            <p>Every element designed with one goal: converting visitors into customers through strategic placement and messaging.</p>
+                        </div>
+                        
+                        <div class="service-feature-item">
+                            <h4><i class="fas fa-flask"></i> A/B Testing Ready</h4>
+                            <p>Built-in testing capabilities to continuously optimize performance and improve conversion rates.</p>
+                        </div>
+                        
+                        <div class="service-feature-item">
+                            <h4><i class="fas fa-rocket"></i> Lightning Fast Loading</h4>
+                            <p>Optimized for speed with under 2-second load times to minimize bounce rates and maximize conversions.</p>
+                        </div>
+                        
+                        <div class="service-feature-item">
+                            <h4><i class="fas fa-chart-bar"></i> Advanced Analytics</h4>
+                            <p>Comprehensive tracking and analytics to measure performance and identify optimization opportunities.</p>
+                        </div>
                     </div>
-                    <h3>Conversion-Focused Design</h3>
-                    <p>Every element designed with one goal: converting visitors into customers through strategic placement and messaging.</p>
                 </div>
-                <div class="feature-item animate-on-scroll animate-stagger animate-fade-up">
-                    <div class="feature-icon">
-                        <i class="fas fa-flask"></i>
+                
+                <div class="overview-stats animate-on-scroll animate-slide-right">
+                    <h3 class="stats-heading">Proven Results</h3>
+                    <p class="stats-description">Our landing pages don't just look good—they deliver measurable business results. Every element is optimized for maximum conversions.</p>
+                    
+                    <div class="target-icon" style="max-width: 350px; margin: 0 auto 20px; border-radius: 10px; overflow: hidden; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
+                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/Aimpro-high-ranking-website-blog.png" alt="High Converting Landing Page" style="width: 100%; height: auto; display: block;">
                     </div>
-                    <h3>A/B Testing Ready</h3>
-                    <p>Built-in testing capabilities to continuously optimize performance and improve conversion rates.</p>
-                </div>
-                <div class="feature-item animate-on-scroll animate-stagger animate-fade-up">
-                    <div class="feature-icon">
-                        <i class="fas fa-rocket"></i>
+                    
+                    <div class="stat-item animate-on-scroll animate-stagger animate-scale-up">
+                        <span class="stat-number">340%</span>
+                        <span class="stat-label">Average Conversion Increase</span>
                     </div>
-                    <h3>Lightning Fast Loading</h3>
-                    <p>Optimized for speed with under 2-second load times to minimize bounce rates and maximize conversions.</p>
-                </div>
-                <div class="feature-item animate-on-scroll animate-stagger animate-fade-up">
-                    <div class="feature-icon">
-                        <i class="fas fa-chart-bar"></i>
+                    <div class="stat-item animate-on-scroll animate-stagger animate-scale-up">
+                        <span class="stat-number">7 Days</span>
+                        <span class="stat-label">Average Delivery Time</span>
                     </div>
-                    <h3>Advanced Analytics</h3>
-                    <p>Comprehensive tracking and analytics to measure performance and identify optimization opportunities.</p>
+                    <div class="stat-item animate-on-scroll animate-stagger animate-scale-up">
+                        <span class="stat-number">23%</span>
+                        <span class="stat-label">Average Conversion Rate</span>
+                    </div>
+                    <div class="overview-cta animate-on-scroll animate-fade-up" style="margin-top: 30px; text-align: center;">
+                        <a href="<?php echo home_url('/contact'); ?>" class="btn-primary">Get a Free Landing Page Quote</a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -528,14 +544,13 @@ get_header(); ?>
                 </div>
             </div>
         </div>
-    </section>
-
-    <!-- CTA Section -->
+    </section>    <!-- CTA Section -->
     <section id="contact" class="cta-section">
         <div class="container">
-            <div class="cta-content">
-                <h2>Ready to Build Landing Pages That Convert?</h2>
-                <p>Get a free consultation and discover how high-converting landing pages can transform your marketing campaigns.</p>                <div class="cta-buttons">
+            <div class="cta-content animate-on-scroll animate-scale-up">
+                <h2 class="animate-on-scroll animate-fade-up">Ready to Build Landing Pages That Convert?</h2>
+                <p class="animate-on-scroll animate-fade-up">Get a free consultation and discover how high-converting landing pages can transform your marketing campaigns.</p>
+                <div class="cta-buttons animate-on-scroll animate-fade-up">
                     <a href="<?php echo home_url('/contact'); ?>" class="btn-primary">Get Free Quote</a>
                 </div>
             </div>
