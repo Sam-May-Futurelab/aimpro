@@ -19,7 +19,7 @@ get_header(); ?>
     </div>    <!-- Hero Section -->
     <section class="page-hero service-hero">
         <div class="container">
-            <div class="hero-content">
+            <div class="hero-content animate-on-scroll animate-fade-up">
                 <h1><?php echo esc_html(get_post_meta(get_the_ID(), 'resources_hero_title', true) ?: 'Resources'); ?></h1>
                 <p class="hero-subtitle"><?php echo esc_html(get_post_meta(get_the_ID(), 'resources_hero_subtitle', true) ?: 'Your Digital Marketing Knowledge Hub - Everything you need to succeed in digital marketing'); ?></p>
                 <div class="hero-description">
@@ -30,14 +30,14 @@ get_header(); ?>
     </section>    <!-- Resources Grid -->
     <section class="service-overview">
         <div class="container">
-            <div class="section-header">
+            <div class="section-header animate-on-scroll animate-fade-up">
                 <h2><?php echo esc_html(get_post_meta(get_the_ID(), 'resources_categories_title', true) ?: 'Resource Categories'); ?></h2>
                 <p><?php echo esc_html(get_post_meta(get_the_ID(), 'resources_categories_subtitle', true) ?: 'Comprehensive resources to power your digital marketing success across all channels and strategies.'); ?></p>
             </div>
             <div class="services-grid">
                 
                 <!-- Blog -->
-                <div class="service-item">
+                <div class="service-item animate-on-scroll animate-stagger animate-fade-up">
                     <div class="service-icon">
                         <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M4 6H20M4 12H20M4 18H20" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
@@ -63,7 +63,7 @@ get_header(); ?>
                     </ul>
                     <a href="<?php echo esc_url(home_url(get_post_meta(get_the_ID(), 'resources_blog_link_url', true) ?: '/blog')); ?>" class="service-link"><?php echo esc_html(get_post_meta(get_the_ID(), 'resources_blog_link_text', true) ?: 'Read Our Blog'); ?></a>
                 </div>                <!-- Case Studies -->
-                <div class="service-item">
+                <div class="service-item animate-on-scroll animate-stagger animate-fade-up">
                     <div class="service-icon">
                         <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M9 12L11 14L15 10M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
@@ -89,7 +89,7 @@ get_header(); ?>
                     </ul>
                     <a href="<?php echo esc_url(home_url(get_post_meta(get_the_ID(), 'resources_casestudies_link_url', true) ?: '/case-studies')); ?>" class="service-link"><?php echo esc_html(get_post_meta(get_the_ID(), 'resources_casestudies_link_text', true) ?: 'View Case Studies'); ?></a>
                 </div>                <!-- Templates & Tools -->
-                <div class="service-item">
+                <div class="service-item animate-on-scroll animate-stagger animate-fade-up">
                     <div class="service-icon">
                         <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M20 7L9 18L4 13" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
@@ -115,7 +115,7 @@ get_header(); ?>
                     </ul>
                     <a href="<?php echo esc_url(home_url(get_post_meta(get_the_ID(), 'resources_templates_link_url', true) ?: '/templates-tools')); ?>" class="service-link"><?php echo esc_html(get_post_meta(get_the_ID(), 'resources_templates_link_text', true) ?: 'Get Free Tools'); ?></a>
                 </div>                <!-- Events & Webinars -->
-                <div class="service-item">
+                <div class="service-item animate-on-scroll animate-stagger animate-fade-up">
                     <div class="service-icon">
                         <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M8 2V6M16 2V6M3 10H21M5 4H19C20.1046 4 21 4.89543 21 6V20C21 21.1046 20.1046 22 19 22H5C3.89543 22 3 21.1046 3 20V6C3 4.89543 3.89543 4 5 4Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
@@ -141,7 +141,7 @@ get_header(); ?>
                     </ul>
                     <a href="<?php echo esc_url(home_url(get_post_meta(get_the_ID(), 'resources_events_link_url', true) ?: '/events-webinars')); ?>" class="service-link"><?php echo esc_html(get_post_meta(get_the_ID(), 'resources_events_link_text', true) ?: 'View Events'); ?></a>
                 </div>                <!-- Training & Mentoring -->
-                <div class="service-item">
+                <div class="service-item animate-on-scroll animate-stagger animate-fade-up">
                     <div class="service-icon">
                         <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M12 14L9 11L13 15L15 13M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
@@ -173,22 +173,20 @@ get_header(); ?>
     </section>    <!-- Featured Content -->
     <section class="features-section featured-resources">
         <div class="container section-content">
-            <div class="section-header">
+            <div class="section-header animate-on-scroll animate-fade-up">
                 <h2><?php echo esc_html(get_post_meta(get_the_ID(), 'resources_featured_title', true) ?: 'Featured Resources'); ?></h2>
                 <p><?php echo esc_html(get_post_meta(get_the_ID(), 'resources_featured_subtitle', true) ?: 'Hand-picked resources to accelerate your digital marketing success and stay ahead of the competition.'); ?></p>
             </div>
             <div class="features-grid featured-grid">
                 
-                <div class="feature-item featured-item">
+                <div class="feature-item featured-item animate-on-scroll animate-stagger animate-fade-up">
                     <div class="feature-content featured-content">
                         <span class="feature-type featured-type"><?php echo esc_html(get_post_meta(get_the_ID(), 'resources_featured1_type', true) ?: 'Guide'); ?></span>
                         <h3><?php echo esc_html(get_post_meta(get_the_ID(), 'resources_featured1_title', true) ?: 'The Complete SEO Guide for 2025'); ?></h3>
                         <p><?php echo esc_html(get_post_meta(get_the_ID(), 'resources_featured1_description', true) ?: 'Everything you need to know about SEO in 2025, from technical optimization to content strategy.'); ?></p>
                         <a href="<?php echo esc_url(get_post_meta(get_the_ID(), 'resources_featured1_link_url', true) ?: '#'); ?>" class="feature-link featured-link"><?php echo esc_html(get_post_meta(get_the_ID(), 'resources_featured1_link_text', true) ?: 'Download Free Guide'); ?></a>
                     </div>
-                </div>
-
-                <div class="feature-item featured-item">
+                </div>                <div class="feature-item featured-item animate-on-scroll animate-stagger animate-fade-up">
                     <div class="feature-content featured-content">
                         <span class="feature-type featured-type"><?php echo esc_html(get_post_meta(get_the_ID(), 'resources_featured2_type', true) ?: 'Tool'); ?></span>
                         <h3><?php echo esc_html(get_post_meta(get_the_ID(), 'resources_featured2_title', true) ?: 'PPC ROI Calculator'); ?></h3>
@@ -197,7 +195,7 @@ get_header(); ?>
                     </div>
                 </div>
 
-                <div class="feature-item featured-item">
+                <div class="feature-item featured-item animate-on-scroll animate-stagger animate-fade-up">
                     <div class="feature-content featured-content">
                         <span class="feature-type featured-type"><?php echo esc_html(get_post_meta(get_the_ID(), 'resources_featured3_type', true) ?: 'Webinar'); ?></span>
                         <h3><?php echo esc_html(get_post_meta(get_the_ID(), 'resources_featured3_title', true) ?: 'Digital Marketing Trends 2025'); ?></h3>
@@ -211,7 +209,7 @@ get_header(); ?>
     </section><!-- Newsletter Signup -->
     <section id="contact" class="cta-section resources-newsletter">
         <div class="container section-content">
-            <div class="cta-content newsletter-content">
+            <div class="cta-content newsletter-content animate-on-scroll animate-scale-up">
                 <h2><?php echo esc_html(get_post_meta(get_the_ID(), 'resources_newsletter_title', true) ?: 'Stay Updated'); ?></h2>
                 <p><?php echo esc_html(get_post_meta(get_the_ID(), 'resources_newsletter_description', true) ?: 'Get the latest resources, insights, and industry updates delivered directly to your inbox.'); ?></p>                <form class="newsletter-form" action="#" method="post">
                     <div class="form-group">

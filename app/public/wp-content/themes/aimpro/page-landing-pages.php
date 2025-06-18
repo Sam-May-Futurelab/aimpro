@@ -26,10 +26,10 @@ get_header(); ?>
     </div>    <!-- Hero Section -->
     <section class="page-hero service-hero">
         <div class="container">
-            <div class="hero-content">
+            <div class="hero-content animate-on-scroll animate-fade-up">
                 <h1>High-Converting Landing Pages</h1>
                 <p class="hero-subtitle">Purpose-built landing pages that turn visitors into customers with laser-focused messaging and conversion optimization.</p>
-                <div class="hero-stats">
+                <div class="hero-stats animate-on-scroll animate-fade-up">
                     <div class="stat-item">
                         <div class="stat-number">340%</div>
                         <div class="stat-label">Average Conversion Increase</div>
@@ -43,7 +43,7 @@ get_header(); ?>
                         <div class="stat-label">Average Conversion Rate</div>
                     </div>
                 </div>
-                <div class="hero-ctas">
+                <div class="hero-ctas animate-on-scroll animate-scale-up">
                     <a href="#contact" class="btn-primary streamlined">Get Landing Page Quote</a>
                     <a href="#case-study" class="btn-outline streamlined">View Case Study</a>
                 </div>
@@ -54,33 +54,33 @@ get_header(); ?>
     <!-- Service Overview -->
     <section class="service-overview">
         <div class="container">
-            <div class="section-header">
+            <div class="section-header animate-on-scroll animate-fade-up">
                 <h2>Landing Pages That Convert Like Crazy</h2>
                 <p>Our high-converting landing pages are meticulously crafted to achieve one goal: turn your traffic into leads and sales. Every element is strategically designed and tested to maximize conversions for your specific audience and offer.</p>
             </div>
               <div class="features-grid">
-                <div class="feature-item">
+                <div class="feature-item animate-on-scroll animate-stagger animate-fade-up">
                     <div class="feature-icon">
                         <i class="fas fa-bullseye"></i>
                     </div>
                     <h3>Conversion-Focused Design</h3>
                     <p>Every element designed with one goal: converting visitors into customers through strategic placement and messaging.</p>
                 </div>
-                <div class="feature-item">
+                <div class="feature-item animate-on-scroll animate-stagger animate-fade-up">
                     <div class="feature-icon">
                         <i class="fas fa-flask"></i>
                     </div>
                     <h3>A/B Testing Ready</h3>
                     <p>Built-in testing capabilities to continuously optimize performance and improve conversion rates.</p>
                 </div>
-                <div class="feature-item">
+                <div class="feature-item animate-on-scroll animate-stagger animate-fade-up">
                     <div class="feature-icon">
                         <i class="fas fa-rocket"></i>
                     </div>
                     <h3>Lightning Fast Loading</h3>
                     <p>Optimized for speed with under 2-second load times to minimize bounce rates and maximize conversions.</p>
                 </div>
-                <div class="feature-item">
+                <div class="feature-item animate-on-scroll animate-stagger animate-fade-up">
                     <div class="feature-icon">
                         <i class="fas fa-chart-bar"></i>
                     </div>
@@ -95,7 +95,7 @@ get_header(); ?>
     <section id="case-study" class="case-study-section">
         <div class="container">
             <div class="case-study-content">
-                <div class="case-study-header">
+                <div class="case-study-header animate-on-scroll animate-fade-up">
                     <span class="case-study-label">Case Study</span>
                     <h2>How FitLife Academy Increased Course Sales by 485% with Optimized Landing Pages</h2>
                 </div>

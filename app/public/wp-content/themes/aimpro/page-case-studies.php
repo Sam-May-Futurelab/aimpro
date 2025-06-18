@@ -7,21 +7,20 @@
 get_header(); ?>
 
 <main id="main" class="main-content">
-    <div class="container">
-          <!-- Page Header -->
+    <div class="container">          <!-- Page Header -->
         <section class="page-header">
-            <div class="page-header-content">
+            <div class="page-header-content animate-on-scroll animate-fade-up">
                 <h1><?php echo esc_html(get_post_meta(get_the_ID(), 'cs_header_title', true) ?: 'Case Studies'); ?></h1>
                 <p class="page-subtitle"><?php echo esc_html(get_post_meta(get_the_ID(), 'cs_header_subtitle', true) ?: 'Real results from real clients across diverse industries'); ?></p>
             </div>
         </section>        <!-- Case Studies Introduction -->
         <section class="case-studies-intro">
             <div class="section-content">
-                <div class="intro-content">
+                <div class="intro-content animate-on-scroll animate-fade-up">
                     <h2><?php echo esc_html(get_post_meta(get_the_ID(), 'cs_intro_title', true) ?: 'Proven Success Stories'); ?></h2>
                     <p><?php echo esc_html(get_post_meta(get_the_ID(), 'cs_intro_description', true) ?: 'Discover how we\'ve helped businesses like yours achieve remarkable growth through strategic digital marketing. Each case study showcases real challenges, innovative solutions, and measurable results that demonstrate our commitment to client success.'); ?></p>
                 </div>
-                <div class="results-overview">
+                <div class="results-overview animate-on-scroll animate-stagger animate-scale-up">
                     <div class="result-stat">
                         <div class="stat-number"><?php echo esc_html(get_post_meta(get_the_ID(), 'cs_stat1_number', true) ?: '250%'); ?></div>
                         <div class="stat-label"><?php echo esc_html(get_post_meta(get_the_ID(), 'cs_stat1_label', true) ?: 'Average ROI Increase'); ?></div>
@@ -39,7 +38,7 @@ get_header(); ?>
         </section>        <!-- Featured Case Study -->
         <section class="featured-case-study">
             <div class="section-content">
-                <div class="featured-study">
+                <div class="featured-study animate-on-scroll animate-slide-left">
                     <div class="study-content">
                         <span class="study-category"><?php echo esc_html(get_post_meta(get_the_ID(), 'cs_featured_category', true) ?: 'E-commerce'); ?></span>
                         <h2><?php echo esc_html(get_post_meta(get_the_ID(), 'cs_featured_title', true) ?: 'TechGear UK: 400% Revenue Growth in 12 Months'); ?></h2>
@@ -67,14 +66,12 @@ get_header(); ?>
                     </div>
                 </div>
             </div>
-        </section>
-
-        <!-- Case Studies Grid -->        <section class="case-studies-grid">
+        </section>        <!-- Case Studies Grid -->        <section class="case-studies-grid">
             <div class="section-content">
                 <div class="studies-grid">
                     
                     <!-- E-commerce Case Study -->
-                    <div class="case-study-card" data-category="ecommerce">
+                    <div class="case-study-card animate-on-scroll animate-stagger animate-fade-up" data-category="ecommerce">
                         <div class="study-image">
                             <img src="<?php echo get_template_directory_uri(); ?>/assets/images/case-studies/fashion-boutique.jpg" alt="Fashion Boutique Case Study" />
                             <div class="study-overlay">
@@ -96,10 +93,8 @@ get_header(); ?>
                             </div>
                             <a href="#" class="study-link">View Details</a>
                         </div>
-                    </div>
-
-                    <!-- Healthcare Case Study -->
-                    <div class="case-study-card" data-category="healthcare">
+                    </div>                    <!-- Healthcare Case Study -->
+                    <div class="case-study-card animate-on-scroll animate-stagger animate-fade-up" data-category="healthcare">
                         <div class="study-image">
                             <img src="<?php echo get_template_directory_uri(); ?>/assets/images/case-studies/dental-clinic.jpg" alt="Dental Clinic Case Study" />
                             <div class="study-overlay">
@@ -121,10 +116,8 @@ get_header(); ?>
                             </div>
                             <a href="#" class="study-link">View Details</a>
                         </div>
-                    </div>
-
-                    <!-- Finance Case Study -->
-                    <div class="case-study-card" data-category="finance">
+                    </div>                    <!-- Finance Case Study -->
+                    <div class="case-study-card animate-on-scroll animate-stagger animate-fade-up" data-category="finance">
                         <div class="study-image">
                             <img src="<?php echo get_template_directory_uri(); ?>/assets/images/case-studies/financial-advisor.jpg" alt="Financial Advisor Case Study" />
                             <div class="study-overlay">

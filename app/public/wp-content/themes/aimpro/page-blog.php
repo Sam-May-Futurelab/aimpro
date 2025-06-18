@@ -7,10 +7,9 @@
 get_header(); ?>
 
 <main id="main" class="main-content">
-    <div class="container">
-          <!-- Page Header -->
+    <div class="container">          <!-- Page Header -->
         <section class="page-header">
-            <div class="page-header-content">
+            <div class="page-header-content animate-on-scroll animate-fade-up">
                 <h1><?php echo esc_html(get_post_meta(get_the_ID(), 'blog_header_title', true) ?: 'Blog & Insights'); ?></h1>
                 <p class="page-subtitle"><?php echo esc_html(get_post_meta(get_the_ID(), 'blog_header_subtitle', true) ?: 'Stay ahead with the latest digital marketing insights and strategies'); ?></p>
             </div>
@@ -38,9 +37,8 @@ get_header(); ?>
                             )
                         );
                         $featured_query = new WP_Query($featured_args);
-                        
-                        if ($featured_query->have_posts()) : ?>
-                            <div class="featured-post">
+                          if ($featured_query->have_posts()) : ?>
+                            <div class="featured-post animate-on-scroll animate-fade-up">
                                 <?php while ($featured_query->have_posts()) : $featured_query->the_post(); ?>
                                     <article class="post-featured">
                                         <div class="featured-image">
@@ -80,7 +78,7 @@ get_header(); ?>
                             </div>
                         <?php endif; wp_reset_postdata(); ?>                        <!-- Blog Posts Grid -->
                         <div class="blog-posts">
-                            <h2 class="section-title"><?php echo esc_html(get_post_meta(get_the_ID(), 'blog_latest_title', true) ?: 'Latest Articles'); ?></h2>
+                            <h2 class="section-title animate-on-scroll animate-fade-up"><?php echo esc_html(get_post_meta(get_the_ID(), 'blog_latest_title', true) ?: 'Latest Articles'); ?></h2>
                             
                             <div class="posts-grid">
                                 <?php
@@ -102,10 +100,9 @@ get_header(); ?>
                                     )
                                 );
                                 $blog_query = new WP_Query($blog_args);
-                                
-                                if ($blog_query->have_posts()) :
+                                  if ($blog_query->have_posts()) :
                                     while ($blog_query->have_posts()) : $blog_query->the_post(); ?>
-                                        <article class="post-card">
+                                        <article class="post-card animate-on-scroll animate-stagger animate-fade-up">
                                             <div class="post-image">
                                                 <?php if (has_post_thumbnail()) : ?>
                                                     <a href="<?php the_permalink(); ?>">
@@ -144,10 +141,9 @@ get_header(); ?>
                                     <div class="no-posts">
                                         <h3>No posts found</h3>
                                         <p>We're working on adding great content. Check back soon!</p>
-                                        
-                                        <!-- Placeholder Posts for Demo -->
+                                          <!-- Placeholder Posts for Demo -->
                                         <div class="posts-grid">
-                                            <article class="post-card">
+                                            <article class="post-card animate-on-scroll animate-stagger animate-fade-up">
                                                 <div class="post-image">
                                                     <img src="<?php echo get_template_directory_uri(); ?>/assets/images/blog/seo-trends-2025.jpg" alt="SEO Trends 2025" />
                                                 </div>
@@ -164,9 +160,7 @@ get_header(); ?>
                                                     </div>
                                                     <a href="#" class="read-more">Read More</a>
                                                 </div>
-                                            </article>
-
-                                            <article class="post-card">
+                                            </article>                                            <article class="post-card animate-on-scroll animate-stagger animate-fade-up">
                                                 <div class="post-image">
                                                     <img src="<?php echo get_template_directory_uri(); ?>/assets/images/blog/ppc-optimization.jpg" alt="PPC Optimization" />
                                                 </div>
@@ -185,7 +179,7 @@ get_header(); ?>
                                                 </div>
                                             </article>
 
-                                            <article class="post-card">
+                                            <article class="post-card animate-on-scroll animate-stagger animate-fade-up">
                                                 <div class="post-image">
                                                     <img src="<?php echo get_template_directory_uri(); ?>/assets/images/blog/content-marketing.jpg" alt="Content Marketing" />
                                                 </div>
@@ -223,10 +217,8 @@ get_header(); ?>
                                 </div>
                             <?php endif; wp_reset_postdata(); ?>
                         </div>
-                    </div>
-
-                    <!-- Sidebar -->
-                    <aside class="blog-sidebar">
+                    </div>                    <!-- Sidebar -->
+                    <aside class="blog-sidebar animate-on-scroll animate-slide-right">
                           <!-- Categories -->
                         <div class="sidebar-widget">
                             <h3 class="widget-title"><?php echo esc_html(get_post_meta(get_the_ID(), 'blog_categories_title', true) ?: 'Categories'); ?></h3>
