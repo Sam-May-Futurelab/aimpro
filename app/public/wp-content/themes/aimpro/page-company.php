@@ -1,15 +1,27 @@
 <?php
 /**
  * Template Name: Company Page
- * Description: Company information page
+ * Descriptio                    <div class="timeline-item animate-on-scroll animate-stagger animate-fade-up">
+                        <div class="timeline-year">2022</div>
+                        <div class="timeline-content">
+                            <h3>Industry Recognition</h3>
+                            <p>Received multiple industry awards for innovation and client satisfaction in digital marketing.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item animate-on-scroll animate-stagger animate-fade-up">
+                        <div class="timeline-year">2024</div>
+                        <div class="timeline-content">
+                            <h3>Global Expansion</h3>
+                            <p>Expanded our services globally, now serving clients across North America, Europe, and Asia.</p>
+                        </div>
+                    </div>ormation page
  */
 
 get_header(); ?>
 
 <main id="main" class="main-content">
-    <div class="container">
-          <!-- Page Header -->
-        <section class="page-header">
+    <div class="container">          <!-- Page Header -->
+        <section class="page-header animate-on-scroll animate-fade-up">
             <div class="page-header-content">
                 <h1><?php echo esc_html(get_post_meta(get_the_ID(), 'company_header_title', true) ?: 'Our Company'); ?></h1>
                 <p class="page-subtitle"><?php echo esc_html(get_post_meta(get_the_ID(), 'company_header_subtitle', true) ?: 'The story behind Aimpro Digital'); ?></p>
@@ -18,11 +30,11 @@ get_header(); ?>
         <section class="company-overview">
             <div class="section-content">
                 <div class="content-grid">
-                    <div class="content-text">
+                    <div class="content-text animate-on-scroll animate-slide-left">
                         <h2><?php echo esc_html(get_post_meta(get_the_ID(), 'company_overview_heading', true) ?: 'About Aimpro Digital'); ?></h2>
                         <p><?php echo esc_html(get_post_meta(get_the_ID(), 'company_overview_desc1', true) ?: 'Founded in 2020, Aimpro Digital has grown from a small startup to a leading digital marketing agency serving clients across the globe. Our passion for innovation and commitment to results has driven us to become a trusted partner for businesses of all sizes.'); ?></p>
                         <p><?php echo esc_html(get_post_meta(get_the_ID(), 'company_overview_desc2', true) ?: 'We specialize in comprehensive digital marketing solutions that drive real business growth. From strategic planning to execution, we\'re dedicated to helping our clients achieve their goals through cutting-edge digital marketing strategies.'); ?></p>
-                    </div>                    <div class="content-image">
+                    </div>                    <div class="content-image animate-on-scroll animate-slide-right">
                         <?php 
                         $company_image = get_post_meta(get_the_ID(), 'company_overview_image', true);
                         $default_image = 'https://images.unsplash.com/photo-1604328698692-f76ea9498e76?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80';
@@ -34,16 +46,15 @@ get_header(); ?>
         </section>        <!-- Company History Section -->
         <section class="company-history">
             <div class="section-content">
-                <h2><?php echo esc_html(get_post_meta(get_the_ID(), 'company_history_heading', true) ?: 'Our Journey'); ?></h2>
-                <div class="timeline">
-                    <div class="timeline-item">
+                <h2 class="animate-on-scroll animate-fade-up"><?php echo esc_html(get_post_meta(get_the_ID(), 'company_history_heading', true) ?: 'Our Journey'); ?></h2>
+                <div class="timeline">                    <div class="timeline-item animate-on-scroll animate-stagger animate-fade-up">
                         <div class="timeline-year">2020</div>
                         <div class="timeline-content">
                             <h3><?php echo esc_html(get_post_meta(get_the_ID(), 'company_timeline_2020_title', true) ?: 'Company Founded'); ?></h3>
                             <p><?php echo esc_html(get_post_meta(get_the_ID(), 'company_timeline_2020_desc', true) ?: 'Aimpro Digital was established with a vision to revolutionize digital marketing for small and medium businesses.'); ?></p>
                         </div>
                     </div>
-                    <div class="timeline-item">
+                    <div class="timeline-item animate-on-scroll animate-stagger animate-fade-up">
                         <div class="timeline-year">2021</div>
                         <div class="timeline-content">
                             <h3><?php echo esc_html(get_post_meta(get_the_ID(), 'company_timeline_2021_title', true) ?: 'First 100 Clients'); ?></h3>
@@ -76,8 +87,8 @@ get_header(); ?>
         </section>        <!-- Mission, Vision, Values Section -->
         <section class="company-values">
             <div class="section-content">
-                <h2><?php echo esc_html(get_post_meta(get_the_ID(), 'company_foundation_heading', true) ?: 'Our Foundation'); ?></h2>                <div class="values-grid">
-                    <div class="value-card">
+                <h2 class="animate-on-scroll animate-fade-up"><?php echo esc_html(get_post_meta(get_the_ID(), 'company_foundation_heading', true) ?: 'Our Foundation'); ?></h2>                <div class="values-grid">
+                    <div class="value-card animate-on-scroll animate-stagger animate-fade-up">
                         <div class="value-icon">
                             <svg width="60" height="60" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M12 2L15.09 8.26L22 9L17 14L18.18 21L12 17.77L5.82 21L7 14L2 9L8.91 8.26L12 2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
@@ -86,7 +97,7 @@ get_header(); ?>
                         <h3><?php echo esc_html(get_post_meta(get_the_ID(), 'company_mission_title', true) ?: 'Our Mission'); ?></h3>
                         <p><?php echo esc_html(get_post_meta(get_the_ID(), 'company_mission_desc', true) ?: 'To empower businesses with innovative digital marketing strategies that drive sustainable growth and measurable results in an ever-evolving digital landscape.'); ?></p>
                     </div>
-                    <div class="value-card">
+                    <div class="value-card animate-on-scroll animate-stagger animate-fade-up">
                         <div class="value-icon">
                             <svg width="60" height="60" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
@@ -116,8 +127,7 @@ Results: We are committed to delivering measurable outcomes';
                             }
                             ?>
                         </ul>
-                    </div>
-                    <div class="value-card">
+                    </div>                    <div class="value-card animate-on-scroll animate-stagger animate-fade-up">
                         <div class="value-icon">
                             <svg width="60" height="60" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
@@ -132,7 +142,7 @@ Results: We are committed to delivering measurable outcomes';
         </section>        <!-- Company Stats Section -->
         <section class="company-stats">
             <div class="section-content">
-                <h2><?php echo esc_html(get_post_meta(get_the_ID(), 'company_stats_heading', true) ?: 'Our Impact by the Numbers'); ?></h2>
+                <h2 class="animate-on-scroll animate-fade-up"><?php echo esc_html(get_post_meta(get_the_ID(), 'company_stats_heading', true) ?: 'Our Impact by the Numbers'); ?></h2>
                 <div class="stats-grid">
                     <?php
                     // Loop through all 6 stat fields

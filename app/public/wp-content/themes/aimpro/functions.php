@@ -150,9 +150,11 @@ function aimpro_enqueue_assets() {
     
     // Enqueue base styles for typography, resets, and base components
     wp_enqueue_style('aimpro-base', get_template_directory_uri() . '/assets/css/base.css', array('aimpro-variables'), $theme_version);
-    
-    // Enqueue animations
+      // Enqueue animations
     wp_enqueue_style('aimpro-animations', get_template_directory_uri() . '/assets/css/animations.css', array('aimpro-variables'), $theme_version);
+    
+    // Enqueue scroll animations
+    wp_enqueue_style('aimpro-scroll-animations', get_template_directory_uri() . '/assets/css/scroll-animations.css', array('aimpro-variables'), $theme_version);
       // Enqueue components
     wp_enqueue_style('aimpro-components', get_template_directory_uri() . '/assets/css/components.css', array('aimpro-base'), $theme_version);
       // Enqueue UI elements
@@ -224,9 +226,11 @@ function aimpro_enqueue_assets() {
     wp_enqueue_script('lottie-web', 'https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.12.2/lottie.min.js', array(), '5.12.2', true);
     
     // Enqueue Font Awesome
-    wp_enqueue_style('font-awesome', 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css', array(), '6.4.0');
-      // Enqueue scripts with proper dependencies and defer loading
+    wp_enqueue_style('font-awesome', 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css', array(), '6.4.0');      // Enqueue scripts with proper dependencies and defer loading
     wp_enqueue_script('aimpro-main', get_template_directory_uri() . '/assets/js/main.js', array('lottie-web'), $theme_version, true);
+    
+    // Enqueue scroll animations
+    wp_enqueue_script('aimpro-scroll-animations', get_template_directory_uri() . '/assets/js/scroll-animations.js', array(), $theme_version, true);
       // Note: Removed JS-based menu enhancements to use pure CSS solution
     // mega-menu.js removed as it was causing navigation conflicts and isn't needed for current navigation structure
     

@@ -23,12 +23,10 @@ get_header(); ?>
                 <span class="current">Sales Funnel Development</span>
             </nav>
         </div>
-    </div>
-
-    <!-- Hero Section -->
+    </div>    <!-- Hero Section -->
     <section class="service-hero">
         <div class="container">
-            <div class="service-hero-content">                <div class="hero-text">
+            <div class="service-hero-content animate-on-scroll animate-fade-up">                <div class="hero-text">
                     <h1><?php echo get_post_meta(get_the_ID(), 'fb_hero_title', true) ?: 'Sales Funnel Development'; ?></h1>
                     <div class="hero-stats">
                         <div class="stat-item">

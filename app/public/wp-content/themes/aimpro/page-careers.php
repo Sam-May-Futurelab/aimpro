@@ -7,9 +7,8 @@
 get_header(); ?>
 
 <main id="main" class="main-content">
-    <div class="container">
-          <!-- Page Header -->
-        <section class="page-header">
+    <div class="container">        <!-- Page Header -->
+        <section class="page-header animate-on-scroll animate-fade-up">
             <div class="page-header-content">
                 <h1><?php echo esc_html(get_post_meta(get_the_ID(), 'careers_header_title', true) ?: 'Careers at Aimpro Digital'); ?></h1>
                 <p class="page-subtitle"><?php echo esc_html(get_post_meta(get_the_ID(), 'careers_header_subtitle', true) ?: 'Join our team of digital marketing experts and help businesses grow'); ?></p>
@@ -17,7 +16,7 @@ get_header(); ?>
         </section>        <!-- Why Work With Us -->
         <section class="why-work-with-us">
             <div class="section-content">
-                <h2><?php echo esc_html(get_post_meta(get_the_ID(), 'careers_why_heading', true) ?: 'Why Choose Aimpro Digital?'); ?></h2>                <div class="benefits-grid">
+                <h2 class="animate-on-scroll animate-fade-up"><?php echo esc_html(get_post_meta(get_the_ID(), 'careers_why_heading', true) ?: 'Why Choose Aimpro Digital?'); ?></h2>                <div class="benefits-grid">
                     <?php 
                     $benefit_icons = array(
                         1 => '<path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="9" cy="7" r="4" stroke="currentColor" stroke-width="2"/><path d="m22 21-3-3m0 0a2 2 0 1 1-4 0 2 2 0 0 1 4 0" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>',
@@ -40,8 +39,7 @@ get_header(); ?>
                     for ($i = 1; $i <= 6; $i++):
                         $title = get_post_meta(get_the_ID(), "careers_benefit{$i}_title", true) ?: $benefit_defaults[$i]['title'];
                         $desc = get_post_meta(get_the_ID(), "careers_benefit{$i}_desc", true) ?: $benefit_defaults[$i]['desc'];
-                    ?>
-                    <div class="benefit-card">
+                    ?>                    <div class="benefit-card animate-on-scroll animate-stagger animate-fade-up">
                         <div class="benefit-icon">
                             <svg width="60" height="60" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <?php echo $benefit_icons[$i]; ?>
@@ -53,11 +51,9 @@ get_header(); ?>
                     <?php endfor; ?>
                 </div>
             </div>
-        </section>
-
-        <!-- Open Positions -->
+        </section>        <!-- Open Positions -->
         <section class="open-positions">            <div class="section-content">
-                <h2><?php echo esc_html(get_post_meta(get_the_ID(), 'careers_openings_heading', true) ?: 'Current Openings'); ?></h2>
+                <h2 class="animate-on-scroll animate-fade-up"><?php echo esc_html(get_post_meta(get_the_ID(), 'careers_openings_heading', true) ?: 'Current Openings'); ?></h2>
                 <div class="positions-grid">
                     <?php 
                     // Job defaults for initial setup
@@ -98,7 +94,7 @@ get_header(); ?>
                         // Hide job if show is set to 0
                         if ($job_show === '0') continue;
                     ?>
-                    <div class="position-card">
+                    <div class="position-card animate-on-scroll animate-stagger animate-fade-up">
                         <div class="position-header">
                             <h3><?php echo esc_html($job_title); ?></h3>
                             <div class="position-meta">

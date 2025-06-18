@@ -1,0 +1,111 @@
+/* 
+ * Premium Scroll Animations
+ * Lightweight, performance-optimized animations using Intersection Observer
+ */
+
+/* Base animation setup */
+.animate-on-scroll {
+    opacity: 0;
+    transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    will-change: transform, opacity;
+}
+
+.animate-on-scroll.animate-visible {
+    opacity: 1;
+}
+
+/* Fade Up Animation - Subtle upward movement */
+.animate-fade-up {
+    transform: translateY(30px);
+}
+
+.animate-fade-up.animate-visible {
+    transform: translateY(0);
+}
+
+/* Fade In Animation - Simple opacity only */
+.animate-fade-in {
+    opacity: 0;
+}
+
+.animate-fade-in.animate-visible {
+    opacity: 1;
+}
+
+/* Slide Left Animation */
+.animate-slide-left {
+    transform: translateX(-30px);
+}
+
+.animate-slide-left.animate-visible {
+    transform: translateX(0);
+}
+
+/* Slide Right Animation */
+.animate-slide-right {
+    transform: translateX(30px);
+}
+
+.animate-slide-right.animate-visible {
+    transform: translateX(0);
+}
+
+/* Scale Up Animation - Very subtle zoom */
+.animate-scale-up {
+    transform: scale(0.95);
+}
+
+.animate-scale-up.animate-visible {
+    transform: scale(1);
+}
+
+/* Stagger Animation - For grid items */
+.animate-stagger {
+    transition-delay: var(--stagger-delay, 0ms);
+}
+
+/* Reduce motion for accessibility */
+@media (prefers-reduced-motion: reduce) {
+    .animate-on-scroll {
+        transition: opacity 0.3s ease;
+        transform: none !important;
+    }
+    
+    .animate-on-scroll.animate-visible {
+        opacity: 1;
+        transform: none !important;
+    }
+}
+
+/* Performance optimizations */
+.animate-on-scroll {
+    backface-visibility: hidden;
+    perspective: 1000px;
+}
+
+/* Specific component animations */
+.benefit-card.animate-on-scroll,
+.position-card.animate-on-scroll,
+.testimonial-card.animate-on-scroll,
+.value-card.animate-on-scroll,
+.service-card.animate-on-scroll,
+.step.animate-on-scroll {
+    transition-duration: 0.6s;
+}
+
+/* Hero section animations - faster */
+.hero-content.animate-on-scroll {
+    transition-duration: 1s;
+}
+
+/* Section headings */
+h1.animate-on-scroll,
+h2.animate-on-scroll,
+h3.animate-on-scroll {
+    transition-duration: 0.7s;
+}
+
+/* Form animations */
+.form-group.animate-on-scroll {
+    transition-duration: 0.4s;
+}

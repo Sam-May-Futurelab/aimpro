@@ -7,9 +7,8 @@
 get_header(); ?>
 
 <main id="main" class="main-content">
-    <div class="container">
-          <!-- Page Header -->
-        <section class="page-header">
+    <div class="container">          <!-- Page Header -->
+        <section class="page-header animate-on-scroll animate-fade-up">
             <div class="page-header-content">
                 <h1><?php echo esc_html(get_post_meta(get_the_ID(), 'partner_header_title', true) ?: 'Become a Partner'); ?></h1>
                 <p class="page-subtitle"><?php echo esc_html(get_post_meta(get_the_ID(), 'partner_header_subtitle', true) ?: 'Join our network of strategic partners and grow together'); ?></p>
@@ -18,7 +17,7 @@ get_header(); ?>
         <section class="partnership-overview">
             <div class="section-content">
                 <div class="overview-grid">
-                    <div class="overview-content">
+                    <div class="overview-content animate-on-scroll animate-slide-left">
                         <h2><?php echo esc_html(get_post_meta(get_the_ID(), 'partner_intro_heading', true) ?: 'Partner with Aimpro Digital'); ?></h2>
                         <?php 
                         $intro_text = get_post_meta(get_the_ID(), 'partner_intro_text', true) ?: 'We believe in the power of collaboration. Our partnership program is designed to create mutually beneficial relationships that help both parties grow and succeed in the digital marketing landscape.\n\nWhether you\'re a complementary service provider, technology vendor, or strategic ally, we offer various partnership opportunities that can expand your reach while providing additional value to our clients.';
@@ -38,7 +37,7 @@ get_header(); ?>
                             </div>
                         </div>
                     </div>
-                    <div class="overview-image">
+                    <div class="overview-image animate-on-scroll animate-slide-right">
                         <img src="<?php echo get_template_directory_uri(); ?>/assets/images/partnership-handshake.jpg" alt="<?php echo esc_attr(get_post_meta(get_the_ID(), 'partner_stats_heading', true) ?: 'Partnership Opportunity'); ?>" />
                     </div>
                 </div>
@@ -46,10 +45,9 @@ get_header(); ?>
         </section>        <!-- Partnership Types -->
         <section class="partnership-types">
             <div class="section-content">
-                <h2><?php echo esc_html(get_post_meta(get_the_ID(), 'partner_opportunities_heading', true) ?: 'Partnership Opportunities'); ?></h2>
-                <div class="partnership-grid">
-                      <!-- Referral Partners -->
-                    <div class="partnership-card">
+                <h2 class="animate-on-scroll animate-fade-up"><?php echo esc_html(get_post_meta(get_the_ID(), 'partner_opportunities_heading', true) ?: 'Partnership Opportunities'); ?></h2>
+                <div class="partnership-grid">                      <!-- Referral Partners -->
+                    <div class="partnership-card animate-on-scroll animate-stagger animate-fade-up">
                         <div class="partnership-icon">
                             <svg width="60" height="60" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
@@ -78,7 +76,7 @@ get_header(); ?>
                     </div>
 
                     <!-- Technology Partners -->
-                    <div class="partnership-card">
+                    <div class="partnership-card animate-on-scroll animate-stagger animate-fade-up">
                         <div class="partnership-icon">
                             <svg width="60" height="60" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <rect x="2" y="3" width="20" height="14" rx="2" ry="2" stroke="currentColor" stroke-width="2"/>

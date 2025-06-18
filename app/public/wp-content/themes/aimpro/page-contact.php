@@ -9,7 +9,7 @@
 get_header(); ?>
 
 <main class="contact-page">    <!-- Contact Information Section -->
-    <section class="company-values" style="padding: 4rem 0; background: #f8f9fa;">
+    <section class="company-values animate-on-scroll animate-fade-up" style="padding: 4rem 0; background: #f8f9fa;">
         <div class="container">
             <div class="section-content">
                 <div class="content-center">
@@ -19,7 +19,7 @@ get_header(); ?>
                 </div>
                 
                 <div class="values-grid">
-                    <div class="value-card">
+                    <div class="value-card animate-on-scroll animate-stagger animate-fade-up">
                         <div class="value-icon">
                             <svg width="60" height="60" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
@@ -30,7 +30,7 @@ get_header(); ?>
                         <p>Speak directly with our digital marketing experts for immediate assistance and consultation.</p>
                     </div>
                     
-                    <div class="value-card">
+                    <div class="value-card animate-on-scroll animate-stagger animate-fade-up">
                         <div class="value-icon">
                             <svg width="60" height="60" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
@@ -41,8 +41,7 @@ get_header(); ?>
                         <p><strong><?php echo aimpro_get_field('contact_email', 'hello@aimpro.co.uk'); ?></strong></p>
                         <p>Send us your project details and we'll respond within 24 hours with a tailored strategy.</p>
                     </div>
-                    
-                    <div class="value-card">
+                      <div class="value-card animate-on-scroll animate-stagger animate-fade-up">
                         <div class="value-icon">
                             <svg width="60" height="60" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"/>
@@ -67,9 +66,8 @@ get_header(); ?>
         </div>    </section>    <!-- Main Content -->
     <div class="contact-main-content" style="padding-top: 2rem;">
         <div class="container">
-            <div class="contact-layout-centered">
-                  <!-- Contact Form Section -->
-                <div class="contact-form-section" style="margin-top: 0;">
+            <div class="contact-layout-centered">                  <!-- Contact Form Section -->
+                <div class="contact-form-section animate-on-scroll animate-fade-up" style="margin-top: 0;">
                     <!-- Contact Form Header -->
                     <div class="section-content" style="text-align: center; margin-bottom: 3rem;">
                         <h2>Send Us a Message</h2>
