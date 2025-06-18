@@ -302,19 +302,18 @@ get_header(); ?>
         <section class="conversion-elements">
             <div class="section-content">
                 <h2><?php echo get_post_meta(get_the_ID(), 'high_converting_website_elements_title', true) ?: 'Key Conversion Elements We Optimize'; ?></h2>
-                <div class="elements-grid">
+                <div class="industries-grid">
                     <?php
                     $elements = get_post_meta(get_the_ID(), 'high_converting_website_elements', true);
                     if (!empty($elements) && is_array($elements)) {
                         foreach ($elements as $element) {
                             ?>
-                            <div class="element-card">
+                            <div class="industry-item">
                                 <h3><?php echo esc_html($element['title']); ?></h3>
-                                <p><?php echo esc_html($element['description']); ?></p>
-                                <?php if (!empty($element['features']) && is_array($element['features'])) : ?>
-                                    <ul class="element-features">
+                                <p><?php echo esc_html($element['description']); ?></p>                                <?php if (!empty($element['features']) && is_array($element['features'])) : ?>
+                                    <ul>
                                         <?php foreach ($element['features'] as $feature) : ?>
-                                            <li><?php echo esc_html($feature); ?></li>
+                                            <li><i class="fas fa-bullseye"></i><?php echo esc_html($feature); ?></li>
                                         <?php endforeach; ?>
                                     </ul>
                                 <?php endif; ?>
@@ -365,15 +364,14 @@ get_header(); ?>
                                 )
                             )
                         );
-                        
-                        foreach ($default_elements as $element) {
+                          foreach ($default_elements as $element) {
                             ?>
-                            <div class="element-card">
+                            <div class="industry-item">
                                 <h3><?php echo esc_html($element['title']); ?></h3>
                                 <p><?php echo esc_html($element['description']); ?></p>
-                                <ul class="element-features">
+                                <ul>
                                     <?php foreach ($element['features'] as $feature) : ?>
-                                        <li><?php echo esc_html($feature); ?></li>
+                                        <li><i class="fas fa-bullseye"></i><?php echo esc_html($feature); ?></li>
                                     <?php endforeach; ?>
                                 </ul>
                             </div>
@@ -383,7 +381,7 @@ get_header(); ?>
                     ?>
                 </div>
             </div>
-        </section>        <!-- Website Types -->
+        </section><!-- Website Types -->
         <section class="website-types">
             <div class="section-content">
                 <h2><?php echo get_post_meta(get_the_ID(), 'high_converting_website_types_title', true) ?: 'Website Optimization by Type'; ?></h2>

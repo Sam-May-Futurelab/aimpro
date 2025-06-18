@@ -2678,23 +2678,13 @@
     display: flex;
     align-items: center;
     gap: 10px;
-    transition: all 0.2s ease;
-    border-radius: 6px;
-    padding: 6px 8px !important;
 }
 
-.website-design-page .industry-item li:hover {
-    background-color: rgba(241, 90, 37, 0.05);
-    color: #F15A25 !important;
-    transform: translateX(5px);
-}
-
-.website-design-page .industry-item li i {
-    font-size: 16px;
-    width: 18px;
-    text-align: center;
+.website-design-page .industry-item li i,
+.ux-ui-optimization-page .industry-item li i {
     color: #F15A25;
-    transition: all 0.2s ease;
+    font-size: 12px;
+    flex-shrink: 0;
 }
 
 .website-design-page .industry-item li:hover i {
@@ -2719,5 +2709,31 @@
         grid-template-columns: repeat(3, 1fr) !important;
         gap: 20px !important;
     }
+}
+
+/* Conversion Elements Styling - Remove default bullets and style target icons */
+.conversion-elements .industry-item ul {
+    list-style: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+.conversion-elements .industry-item li {
+    padding: 8px 0 !important;
+    color: #4a5568 !important;
+    font-size: 14px !important;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.conversion-elements .industry-item li i {
+    color: #F15A25;
+    font-size: 12px;
+    flex-shrink: 0;
+}
+
+.conversion-elements .industry-item li:hover i {
+    transform: scale(1.2);
 }
 

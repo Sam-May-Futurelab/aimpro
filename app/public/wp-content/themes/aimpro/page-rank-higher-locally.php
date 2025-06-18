@@ -62,8 +62,7 @@ get_header(); ?>
             <div class="container">
                 <div class="section-header">
                     <h2><?php echo esc_html(get_post_meta(get_the_ID(), '_rank_higher_locally_services_title', true) ?: 'Our Local SEO Services'); ?></h2>
-                </div>
-                <div class="features-grid">
+                </div>                <div class="services-grid">
                     <?php
                     $services = get_post_meta(get_the_ID(), '_rank_higher_locally_services', true);
                     if (empty($services)) {
@@ -117,17 +116,19 @@ get_header(); ?>
                     
                     foreach ($services as $service) :
                     ?>
-                      <div class="feature-item">
-                        <div class="feature-icon">
+                      <div class="service-card">
+                        <div class="service-icon">
                             <i class="<?php echo esc_attr($service['icon']); ?>"></i>
                         </div>
-                        <h3><?php echo esc_html($service['title']); ?></h3>
-                        <p><?php echo esc_html($service['description']); ?></p>
-                        <ul class="feature-list">
-                            <?php foreach ($service['features'] as $feature) : ?>
-                                <li><?php echo esc_html($feature); ?></li>
-                            <?php endforeach; ?>
-                        </ul>
+                        <div class="service-content">
+                            <h3><?php echo esc_html($service['title']); ?></h3>
+                            <p><?php echo esc_html($service['description']); ?></p>
+                            <ul class="service-features">
+                                <?php foreach ($service['features'] as $feature) : ?>
+                                    <li><?php echo esc_html($feature); ?></li>
+                                <?php endforeach; ?>
+                            </ul>
+                        </div>
                     </div>
                     <?php endforeach; ?>
                 </div>
