@@ -199,12 +199,8 @@ $hero_image = get_post_meta(get_the_ID(), 'seo_audit_hero_image', true);
                     array('title' => 'Action Plan', 'description' => 'Prioritized recommendations with timelines'),
                     array('title' => 'ROI Projections', 'description' => 'Expected traffic and revenue improvements')
                 );
-                ?>
-                <h2><?php echo esc_html($sample_title); ?></h2>
+                ?>                <h2><?php echo esc_html($sample_title); ?></h2>
                 <div class="sample-content">
-                    <div class="sample-preview">
-                        <img src="<?php echo esc_url($sample_image); ?>" alt="SEO Audit Report Sample" />
-                    </div>
                     <div class="sample-details">
                         <h3><?php echo esc_html($sample_subtitle); ?></h3>
                         <div class="report-sections">
