@@ -229,7 +229,7 @@
 .page-hero h1 {
     font-size: 3rem;
     font-weight: 800;
-    color: var(--text-primary);
+    color: var(--primary-orange);
     margin-bottom: 1.5rem;
     text-align: center;
 }
@@ -248,7 +248,7 @@
 }
 
 .light-theme .page-hero h1 {
-    color: var(--text-primary);
+    color: var(--primary-orange);
 }
 
 .light-theme .page-intro {
@@ -1173,7 +1173,7 @@
     font-size: 48px;
     margin-bottom: 20px;
     font-weight: 800;
-    color: var(--text-primary) !important;
+    color: var(--primary-orange) !important; /* Orange for title */
     text-align: center;
 }
 
@@ -1185,7 +1185,7 @@
     max-width: 800px;
     margin: 0 auto;
     line-height: 1.6;
-    color: white !important;
+    color: var(--text-dark) !important; /* Dark text for subtitle */
     opacity: 1 !important;
     text-align: center;
 }

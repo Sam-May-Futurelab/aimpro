@@ -69,18 +69,8 @@ get_header(); ?>
             </div>
         </section>
 
-        <!-- Case Studies Grid -->
-        <section class="case-studies-grid">
+        <!-- Case Studies Grid -->        <section class="case-studies-grid">
             <div class="section-content">
-                <div class="filter-tabs">
-                    <button class="filter-tab active" data-filter="all">All Industries</button>
-                    <button class="filter-tab" data-filter="ecommerce">E-commerce</button>
-                    <button class="filter-tab" data-filter="healthcare">Healthcare</button>
-                    <button class="filter-tab" data-filter="finance">Finance</button>
-                    <button class="filter-tab" data-filter="education">Education</button>
-                    <button class="filter-tab" data-filter="saas">SaaS</button>
-                </div>
-
                 <div class="studies-grid">
                     
                     <!-- E-commerce Case Study -->
@@ -270,10 +260,9 @@ get_header(); ?>
             <div class="container">
                 <div class="cta-content">
                     <h2><?php echo esc_html(get_post_meta(get_the_ID(), 'cs_cta_title', true) ?: 'Ready to Be Our Next Success Story?'); ?></h2>
-                    <p><?php echo esc_html(get_post_meta(get_the_ID(), 'cs_cta_description', true) ?: 'Let\'s discuss how we can help you achieve similar results for your business.'); ?></p>
-                    <div class="cta-buttons">
-                        <a href="<?php echo esc_url(home_url(get_post_meta(get_the_ID(), 'cs_cta_button1_url', true) ?: '/contact')); ?>" class="btn-primary"><?php echo esc_html(get_post_meta(get_the_ID(), 'cs_cta_button1_text', true) ?: 'Start Your Project'); ?></a>
-                        <a href="<?php echo esc_url(home_url(get_post_meta(get_the_ID(), 'cs_cta_button2_url', true) ?: '/about')); ?>" class="btn-outline"><?php echo esc_html(get_post_meta(get_the_ID(), 'cs_cta_button2_text', true) ?: 'Learn About Our Process'); ?></a>
+                    <p><?php echo esc_html(get_post_meta(get_the_ID(), 'cs_cta_description', true) ?: 'Let\'s discuss how we can help you achieve similar results for your business.'); ?></p>                    <div class="cta-buttons">
+                        <a href="<?php echo esc_url(home_url(get_post_meta(get_the_ID(), 'cs_cta_button1_url', true) ?: '/contact')); ?>" class="btn-outline"><?php echo esc_html(get_post_meta(get_the_ID(), 'cs_cta_button1_text', true) ?: 'Start Your Project'); ?></a>
+                        <a href="<?php echo esc_url(home_url(get_post_meta(get_the_ID(), 'cs_cta_button2_url', true) ?: '/about')); ?>" class="btn-secondary"><?php echo esc_html(get_post_meta(get_the_ID(), 'cs_cta_button2_text', true) ?: 'Learn About Our Process'); ?></a>
                     </div>
                 </div>
             </div>

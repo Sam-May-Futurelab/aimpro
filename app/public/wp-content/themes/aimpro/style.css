@@ -154,7 +154,15 @@ Version: 1.0
 /* Hero content h1 and subtitle - Moved to hero.css */
 
 /* Improved Text Readability for Specific Sections */
-.section-subtitle {
+/* Only update color for non-home pages */
+body:not(.home) .section-subtitle {
+    color: var(--primary-orange) !important;
+    font-weight: 400;
+    opacity: 0.95;
+}
+
+/* Keep home page section subtitle white */
+body.home .section-subtitle {
     color: #f1f5f9 !important;
     font-weight: 400;
     opacity: 0.95;
@@ -1177,9 +1185,20 @@ Version: 1.0
     z-index: 0;
 }
 
-/* White text for light theme hero content - dark background image requires white text */
-.light-theme .hero-content h1,
-.light-theme .hero-title {
+/* Orange text for light theme hero content on subpages only */
+/* Keep home page hero title white */
+body:not(.home) .light-theme .hero-content h1,
+body:not(.home) .light-theme .hero-title,
+.page-hero .hero-title,
+.page-hero h1.hero-title {
+    color: var(--primary-orange) !important;
+    font-weight: 900;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* Keep home page hero white */
+body.home .light-theme .hero-content h1,
+body.home .light-theme .hero-title {
     color: #ffffff !important;
     font-weight: 900;
     text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
