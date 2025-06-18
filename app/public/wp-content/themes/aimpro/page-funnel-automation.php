@@ -150,22 +150,9 @@ get_header(); ?>
                             <div class="result-number"><?php echo esc_html(get_post_meta(get_the_ID(), 'funnel_automation_result_3_number', true) ?: '180%'); ?></div>
                             <div class="result-label"><?php echo esc_html(get_post_meta(get_the_ID(), 'funnel_automation_result_3_label', true) ?: 'Revenue Growth'); ?></div>
                         </div>
-                        <div class="result-item">
-                            <div class="result-number"><?php echo esc_html(get_post_meta(get_the_ID(), 'funnel_automation_result_4_number', true) ?: '£1.2M'); ?></div>
-                            <div class="result-label"><?php echo esc_html(get_post_meta(get_the_ID(), 'funnel_automation_result_4_label', true) ?: 'Additional Annual Revenue'); ?></div>
-                        </div>
+                        <div class="result-item">                            <div class="result-number"><?php echo esc_html(get_post_meta(get_the_ID(), 'funnel_automation_result_4_number', true) ?: '£1.2M'); ?></div>
+                            <div class="result-label"><?php echo esc_html(get_post_meta(get_the_ID(), 'funnel_automation_result_4_label', true) ?: 'Additional Annual Revenue'); ?></div>                        </div>
                     </div>                </div>
-            </div>
-        </div>
-    </section>
-                            <div class="result-number"><?php echo esc_html(get_post_meta(get_the_ID(), 'funnel_automation_result_3_number', true) ?: '180%'); ?></div>
-                            <div class="result-label"><?php echo esc_html(get_post_meta(get_the_ID(), 'funnel_automation_result_3_label', true) ?: 'Revenue Growth'); ?></div>
-                        </div>                        <div class="result-item">
-                            <div class="result-number"><?php echo esc_html(get_post_meta(get_the_ID(), 'funnel_automation_result_4_number', true) ?: '£1.2M'); ?></div>
-                            <div class="result-label"><?php echo esc_html(get_post_meta(get_the_ID(), 'funnel_automation_result_4_label', true) ?: 'Additional Annual Revenue'); ?></div>
-                        </div>
-                    </div>
-                </div>
             </div>
         </div>
     </section>

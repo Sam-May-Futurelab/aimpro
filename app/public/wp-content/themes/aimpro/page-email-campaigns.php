@@ -103,21 +103,10 @@ get_header(); ?>
                         <i class="fas fa-calendar-alt"></i>
                     </div>
                     <h3><?php echo esc_html(get_post_meta(get_the_ID(), 'email_campaigns_service_6_title', true) ?: 'Campaign Scheduling'); ?></h3>
-                    <p><?php echo esc_html(get_post_meta(get_the_ID(), 'email_campaigns_service_6_desc', true) ?: 'Strategic timing and frequency optimization to maximize engagement while avoiding subscriber fatigue.'); ?></p>
-                </div>
+                    <p><?php echo esc_html(get_post_meta(get_the_ID(), 'email_campaigns_service_6_desc', true) ?: 'Strategic timing and frequency optimization to maximize engagement while avoiding subscriber fatigue.'); ?></p>                </div>
             </div>
         </div>
     </section>
-                    <p>Continuous A/B testing and optimization to improve open rates, click-through rates, and conversions.</p>
-                </div>
-                
-                <div class="service-item">
-                    <div class="service-icon">
-                        <i class="fas fa-calendar-alt"></i>
-                    </div>
-                    <h3>Campaign Scheduling</h3>
-                    <p>Strategic timing and frequency optimization to maximize engagement while avoiding subscriber fatigue.</p>
-                </div>
             </div>
         </div>
     </section>    <!-- Case Study Section -->
