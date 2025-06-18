@@ -37,10 +37,10 @@ function get_microsoft_ads_meta($key, $post_id, $defaults, $prefix = '_microsoft
     </div>    <!-- Hero Section -->
     <section class="page-hero service-hero">
         <div class="container">
-            <div class="hero-content">
+            <div class="hero-content animate-on-scroll animate-fade-up">
                 <h1><?php echo esc_html(get_microsoft_ads_meta('hero_title', $post_id, $defaults)); ?></h1>
                 <p class="hero-subtitle"><?php echo esc_html(get_microsoft_ads_meta('hero_subtitle', $post_id, $defaults)); ?></p>
-                <div class="hero-stats">
+                <div class="hero-stats animate-on-scroll animate-stagger animate-scale-up">
                     <div class="stat-item">
                         <div class="stat-number"><?php echo esc_html(get_microsoft_ads_meta('hero_stat1_number', $post_id, $defaults)); ?></div>
                         <div class="stat-label"><?php echo esc_html(get_microsoft_ads_meta('hero_stat1_label', $post_id, $defaults)); ?></div>
@@ -54,7 +54,7 @@ function get_microsoft_ads_meta($key, $post_id, $defaults, $prefix = '_microsoft
                         <div class="stat-label"><?php echo esc_html(get_microsoft_ads_meta('hero_stat3_label', $post_id, $defaults)); ?></div>
                     </div>
                 </div>
-                <div class="hero-ctas">
+                <div class="hero-ctas animate-on-scroll animate-fade-up">
                     <a href="#contact" class="btn-primary streamlined"><?php echo esc_html(get_microsoft_ads_meta('hero_cta1_text', $post_id, $defaults)); ?></a>
                     <a href="#packages" class="btn-outline streamlined"><?php echo esc_html(get_microsoft_ads_meta('hero_cta2_text', $post_id, $defaults)); ?></a>
                 </div>
@@ -63,14 +63,14 @@ function get_microsoft_ads_meta($key, $post_id, $defaults, $prefix = '_microsoft
     </section>    <!-- Service Overview -->
     <section class="service-overview">
         <div class="container">
-            <div class="overview-content">
+            <div class="overview-content animate-on-scroll animate-fade-up">
                 <h2><?php echo esc_html(get_microsoft_ads_meta('overview_title', $post_id, $defaults)); ?></h2>
                 <p><?php echo esc_html(get_microsoft_ads_meta('overview_content', $post_id, $defaults)); ?></p>
             </div>
             
             <div class="services-grid">
                 <?php for($i = 1; $i <= 6; $i++) : ?>
-                <div class="service-item">
+                <div class="service-item animate-on-scroll animate-stagger animate-fade-up">
                     <div class="service-icon">
                         <i class="<?php echo esc_attr(get_microsoft_ads_meta("service_icon_{$i}", $post_id, $defaults)); ?>"></i>
                     </div>
@@ -84,16 +84,16 @@ function get_microsoft_ads_meta($key, $post_id, $defaults, $prefix = '_microsoft
     <section class="case-study-section">
         <div class="container">
             <div class="case-study-content">
-                <div class="case-study-text">
+                <div class="case-study-text animate-on-scroll animate-slide-left">
                     <h2><?php echo esc_html(get_microsoft_ads_meta('case_study_title', $post_id, $defaults)); ?></h2>
                     <p class="case-study-intro"><?php echo esc_html(get_microsoft_ads_meta('case_study_intro', $post_id, $defaults)); ?></p>
                     
-                    <div class="case-study-challenge">
+                    <div class="case-study-challenge animate-on-scroll animate-fade-up">
                         <h3>The Challenge</h3>
                         <p><?php echo esc_html(get_microsoft_ads_meta('case_study_challenge', $post_id, $defaults)); ?></p>
                     </div>
                     
-                    <div class="case-study-solution">
+                    <div class="case-study-solution animate-on-scroll animate-fade-up">
                         <h3>Our Solution</h3>
                         <ul>
                             <?php 
@@ -108,11 +108,11 @@ function get_microsoft_ads_meta($key, $post_id, $defaults, $prefix = '_microsoft
                     </div>
                 </div>
                 
-                <div class="case-study-results">
+                <div class="case-study-results animate-on-scroll animate-slide-right">
                     <h3>The Results</h3>
                     <div class="results-grid">
                         <?php for($i = 1; $i <= 4; $i++) : ?>
-                        <div class="result-item">
+                        <div class="result-item animate-on-scroll animate-stagger animate-scale-up">
                             <div class="result-number"><?php echo esc_html(get_microsoft_ads_meta("case_result_{$i}_number", $post_id, $defaults)); ?></div>
                             <div class="result-label"><?php echo esc_html(get_microsoft_ads_meta("case_result_{$i}_label", $post_id, $defaults)); ?></div>
                         </div>
@@ -121,14 +121,12 @@ function get_microsoft_ads_meta($key, $post_id, $defaults, $prefix = '_microsoft
                 </div>
             </div>
         </div>
-    </section>
-
-    <!-- Process Section -->
+    </section>    <!-- Process Section -->
     <section class="process-section">        <div class="container">
-            <h2><?php echo esc_html(get_microsoft_ads_meta('process_title', $post_id, $defaults)); ?></h2>
+            <h2 class="animate-on-scroll animate-fade-up"><?php echo esc_html(get_microsoft_ads_meta('process_title', $post_id, $defaults)); ?></h2>
             <div class="process-steps">
                 <?php for($i = 1; $i <= 5; $i++) : ?>
-                <div class="process-step">
+                <div class="process-step animate-on-scroll animate-stagger animate-fade-up">
                     <div class="step-number"><?php echo esc_html(get_microsoft_ads_meta("process_step_number_{$i}", $post_id, $defaults)); ?></div>
                     <div class="step-content">
                         <h3><?php echo esc_html(get_microsoft_ads_meta("process_step_title_{$i}", $post_id, $defaults)); ?></h3>
@@ -139,10 +137,10 @@ function get_microsoft_ads_meta($key, $post_id, $defaults, $prefix = '_microsoft
         </div>    </section>    <!-- Tools & Technologies -->
     <section class="tools-section">
         <div class="container">
-            <h2><?php echo esc_html(get_microsoft_ads_meta('tools_title', $post_id, $defaults)); ?></h2>
+            <h2 class="animate-on-scroll animate-fade-up"><?php echo esc_html(get_microsoft_ads_meta('tools_title', $post_id, $defaults)); ?></h2>
             <div class="tools-grid">
                 <?php for($i = 1; $i <= 4; $i++) : ?>
-                <div class="tool-item">
+                <div class="tool-item animate-on-scroll animate-stagger animate-fade-up">
                     <div class="tool-icon">
                         <i class="<?php echo esc_attr(get_microsoft_ads_meta("tool_icon_{$i}", $post_id, $defaults)); ?>"></i>
                     </div>
@@ -155,10 +153,10 @@ function get_microsoft_ads_meta($key, $post_id, $defaults, $prefix = '_microsoft
     </section>    <!-- Why Bing Ads Section -->
     <section class="whitelabel-benefits">
         <div class="container">
-            <h2><?php echo esc_html(get_microsoft_ads_meta('benefits_title', $post_id, $defaults)); ?></h2>
+            <h2 class="animate-on-scroll animate-fade-up"><?php echo esc_html(get_microsoft_ads_meta('benefits_title', $post_id, $defaults)); ?></h2>
             <div class="benefits-grid">
                 <?php for($i = 1; $i <= 6; $i++) : ?>
-                <div class="benefit-card">
+                <div class="benefit-card animate-on-scroll animate-stagger animate-fade-up">
                     <div class="benefit-icon">
                         <i class="<?php echo esc_attr(get_microsoft_ads_meta("benefit_icon_{$i}", $post_id, $defaults)); ?>"></i>
                     </div>
@@ -171,7 +169,7 @@ function get_microsoft_ads_meta($key, $post_id, $defaults, $prefix = '_microsoft
     </section>    <!-- Testimonial Section -->
     <section class="testimonial-section">
         <div class="container">
-            <div class="testimonial-content">
+            <div class="testimonial-content animate-on-scroll animate-fade-up">
                 <blockquote>
                     "<?php echo esc_html(get_microsoft_ads_meta('testimonial_quote', $post_id, $defaults)); ?>"
                 </blockquote>
@@ -182,12 +180,12 @@ function get_microsoft_ads_meta($key, $post_id, $defaults, $prefix = '_microsoft
             </div>
         </div>
     </section>    <!-- CTA Section -->
-    <section class="simple-cta-section">
+    <section class="simple-cta-section animate-on-scroll animate-scale-up">
         <div class="section-content">
-            <div class="simple-cta-content">
+            <div class="simple-cta-content animate-on-scroll animate-fade-up">
                 <h2><?php echo esc_html(get_microsoft_ads_meta('cta_title', $post_id, $defaults)); ?></h2>
                 <p><?php echo esc_html(get_microsoft_ads_meta('cta_content', $post_id, $defaults)); ?></p>
-                <div class="simple-cta-buttons">
+                <div class="simple-cta-buttons animate-on-scroll animate-fade-up">
                     <a href="<?php echo home_url('/contact'); ?>" class="btn btn-primary"><?php echo esc_html(get_microsoft_ads_meta('cta_button_1_text', $post_id, $defaults)); ?></a>
                     <a href="<?php echo home_url('/services'); ?>" class="btn btn-secondary"><?php echo esc_html(get_microsoft_ads_meta('cta_button_2_text', $post_id, $defaults)); ?></a>
                 </div>

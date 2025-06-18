@@ -26,7 +26,7 @@ get_header(); ?>
     </div>    <!-- Hero Section -->
     <section class="page-hero service-hero">
         <div class="container">
-            <div class="hero-content">
+            <div class="hero-content animate-on-scroll animate-fade-up">
                 <?php
                 // Get hero content from meta fields with fallbacks
                 $defaults = aimpro_get_ppc_audit_default_values();
@@ -45,7 +45,7 @@ get_header(); ?>
                 ?>
                 <h1><?php echo esc_html($hero_title); ?></h1>
                 <p class="hero-subtitle"><?php echo esc_html($hero_subtitle); ?></p>
-                <div class="hero-stats">
+                <div class="hero-stats animate-on-scroll animate-stagger animate-scale-up">
                     <?php for ($i = 1; $i <= 3; $i++) : ?>
                         <?php
                         $stat_number = get_post_meta(get_the_ID(), "_ppc_audit_hero_stat{$i}_number", true);
@@ -60,7 +60,7 @@ get_header(); ?>
                         </div>
                     <?php endfor; ?>
                 </div>
-                <div class="hero-ctas">
+                <div class="hero-ctas animate-on-scroll animate-fade-up">
                     <a href="#contact" class="btn-primary streamlined"><?php echo esc_html($hero_cta1_text); ?></a>
                     <a href="#packages" class="btn-outline streamlined"><?php echo esc_html($hero_cta2_text); ?></a>
                 </div>
@@ -69,7 +69,7 @@ get_header(); ?>
     </section>    <!-- Service Overview -->
     <section class="service-overview">
         <div class="container">
-            <div class="overview-content">
+            <div class="overview-content animate-on-scroll animate-fade-up">
                 <?php
                 $overview_title = get_post_meta(get_the_ID(), '_ppc_audit_overview_title', true);
                 if (empty($overview_title)) $overview_title = $defaults['overview_title'];
@@ -93,7 +93,7 @@ get_header(); ?>
                     $service_icon = get_post_meta(get_the_ID(), "_ppc_audit_service_icon_{$i}", true);
                     if (empty($service_icon)) $service_icon = $defaults["service_icon_{$i}"];
                     ?>
-                    <div class="service-item">
+                    <div class="service-item animate-on-scroll animate-stagger animate-fade-up">
                         <div class="service-icon">
                             <i class="<?php echo esc_attr($service_icon); ?>"></i>
                         </div>
@@ -152,7 +152,7 @@ get_header(); ?>
     <section class="case-study-section">
         <div class="container">
             <div class="case-study-content">
-                <div class="case-study-text">
+                <div class="case-study-text animate-on-scroll animate-slide-left">
                     <?php
                     $case_study_title = get_post_meta(get_the_ID(), '_ppc_audit_case_study_title', true);
                     if (empty($case_study_title)) $case_study_title = $defaults['case_study_title'];
@@ -169,12 +169,12 @@ get_header(); ?>
                     <h2><?php echo esc_html($case_study_title); ?></h2>
                     <p class="case-study-intro"><?php echo esc_html($case_study_intro); ?></p>
                     
-                    <div class="case-study-challenge">
+                    <div class="case-study-challenge animate-on-scroll animate-fade-up">
                         <h3>The Challenge</h3>
                         <p><?php echo esc_html($case_study_challenge); ?></p>
                     </div>
                     
-                    <div class="case-study-solution">
+                    <div class="case-study-solution animate-on-scroll animate-fade-up">
                         <h3>Our Audit Findings</h3>
                         <?php
                         // Convert newlines to list items
@@ -195,9 +195,9 @@ get_header(); ?>
                     </div>
                 </div>
                 
-                <div class="case-study-results">
+                <div class="case-study-results animate-on-scroll animate-slide-right">
                     <h3>The Results After Implementation</h3>
-                    <div class="results-grid">
+                    <div class="results-grid">&
                         <?php for ($i = 1; $i <= 4; $i++) : ?>
                             <?php
                             $result_number = get_post_meta(get_the_ID(), "_ppc_audit_case_result_{$i}_number", true);
@@ -280,7 +280,7 @@ get_header(); ?>
     </section>    <!-- Testimonial Section -->
     <section class="testimonial-section">
         <div class="container">
-            <div class="testimonial-content">
+            <div class="testimonial-content animate-on-scroll animate-fade-up">
                 <?php
                 $testimonial_quote = get_post_meta(get_the_ID(), '_ppc_audit_testimonial_quote', true);
                 if (empty($testimonial_quote)) $testimonial_quote = $defaults['testimonial_quote'];
@@ -301,9 +301,9 @@ get_header(); ?>
             </div>
         </div>
     </section>    <!-- CTA Section -->
-    <section class="simple-cta-section">
+    <section class="simple-cta-section animate-on-scroll animate-scale-up">
         <div class="section-content">
-            <div class="simple-cta-content">
+            <div class="simple-cta-content animate-on-scroll animate-fade-up">
                 <?php
                 $cta_title = get_post_meta(get_the_ID(), '_ppc_audit_cta_title', true);
                 if (empty($cta_title)) $cta_title = $defaults['cta_title'];
@@ -316,7 +316,7 @@ get_header(); ?>
                 ?>
                 <h2><?php echo esc_html($cta_title); ?></h2>
                 <p><?php echo esc_html($cta_content); ?></p>
-                <div class="simple-cta-buttons">
+                <div class="simple-cta-buttons animate-on-scroll animate-fade-up">
                     <a href="<?php echo home_url('/contact'); ?>" class="btn btn-primary"><?php echo esc_html($cta_button_text); ?></a>
                 </div>
             </div>

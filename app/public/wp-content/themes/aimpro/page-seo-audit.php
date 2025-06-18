@@ -6,8 +6,11 @@
 
 get_header(); 
 
-// Get meta data with fallbacks
-$header_title = get_post_meta(get_the_ID(), 'seo_audit_header_title', true) ?: 'SEO Audit Services';
+// Get meta data with fallbacks                <h2 class="animate-on-scroll animate-fade-up"><?php echo esc_html($components_title); ?></h2>
+                <div class="components-grid">
+                    
+                    <?php foreach ($components as $component): ?>
+                        <div class="component-card <?php echo (isset($component['featured']) && $component['featured']) ? 'featured' : ''; ?> animate-on-scroll animate-stagger animate-fade-up">der_title = get_post_meta(get_the_ID(), 'seo_audit_header_title', true) ?: 'SEO Audit Services';
 $header_subtitle = get_post_meta(get_the_ID(), 'seo_audit_header_subtitle', true) ?: 'Comprehensive analysis of your website\'s SEO performance and growth opportunities';
 $hero_image = get_post_meta(get_the_ID(), 'seo_audit_hero_image', true);
 
@@ -15,22 +18,21 @@ $hero_image = get_post_meta(get_the_ID(), 'seo_audit_hero_image', true);
 
 <main id="main" class="main-content seo-service-page">
     <div class="container">
-        
-        <!-- Page Header -->
+          <!-- Page Header -->
         <section class="page-header">
-            <div class="page-header-content">
+            <div class="page-header-content animate-on-scroll animate-fade-up">
                 <h1><?php echo esc_html($header_title); ?></h1>
                 <p class="page-subtitle"><?php echo esc_html($header_subtitle); ?></p>
             </div>
             <?php if ($hero_image): ?>
-                <div class="page-header-image">
+                <div class="page-header-image animate-on-scroll animate-slide-right">
                     <img src="<?php echo esc_url($hero_image); ?>" alt="<?php echo esc_attr($header_title); ?>" />
                 </div>
             <?php endif; ?>
         </section>        <!-- SEO Audit Overview -->        <section class="seo-audit-overview">
             <div class="section-content">
                 <div class="overview-content">
-                    <div class="overview-text">
+                    <div class="overview-text animate-on-scroll animate-slide-left">
                         <?php 
                         $overview_title = get_post_meta(get_the_ID(), 'seo_audit_overview_title', true) ?: 'Discover Your Website\'s Hidden SEO Potential';
                         $overview_description = get_post_meta(get_the_ID(), 'seo_audit_overview_description', true) ?: 'Our comprehensive SEO audit provides a detailed analysis of your website\'s current performance, identifies critical issues affecting your rankings, and delivers a prioritized action plan to improve your search visibility. Get the insights you need to outrank your competition and drive more organic traffic.';
@@ -48,7 +50,7 @@ $hero_image = get_post_meta(get_the_ID(), 'seo_audit_hero_image', true);
                         <h2><?php echo esc_html($overview_title); ?></h2>
                         <p><?php echo esc_html($overview_description); ?></p>
                     </div>
-                    <div class="overview-image">
+                    <div class="overview-image animate-on-scroll animate-slide-right">
                         <?php 
                         if ($overview_image && is_numeric($overview_image)): ?>
                             <?php echo wp_get_attachment_image($overview_image, 'full', false, array('alt' => 'SEO Audit Services')); ?>
@@ -57,7 +59,7 @@ $hero_image = get_post_meta(get_the_ID(), 'seo_audit_hero_image', true);
                         <?php endif; ?>
                     </div>
                 </div>
-                <div class="audit-benefits">
+                <div class="audit-benefits animate-on-scroll animate-fade-up">
                     <h3><?php echo esc_html($benefits_title); ?></h3>
                     <ul>
                         <?php foreach ($benefits as $benefit): ?>
@@ -241,12 +243,11 @@ $hero_image = get_post_meta(get_the_ID(), 'seo_audit_hero_image', true);
                         'duration' => '1 Day'
                     )
                 );
-                ?>
-                <h2><?php echo esc_html($process_title); ?></h2>
+                ?>                <h2 class="animate-on-scroll animate-fade-up"><?php echo esc_html($process_title); ?></h2>
                 <div class="process-steps">
                     
                     <?php foreach ($process_steps as $index => $step): ?>
-                        <div class="process-step">
+                        <div class="process-step animate-on-scroll animate-stagger animate-fade-up">
                             <div class="step-number"><?php echo ($index + 1); ?></div>
                             <div class="step-content">
                                 <h3><?php echo esc_html($step['title']); ?></h3>

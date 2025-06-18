@@ -410,15 +410,15 @@ get_header(); ?>
                 </div>
             </div>
         </section>        <!-- CTA Section -->
-        <section class="cta-section">
+        <section class="cta-section animate-on-scroll animate-scale-up">
             <div class="section-content">
-                <div class="cta-content">
+                <div class="cta-content animate-on-scroll animate-fade-up">
                     <h2><?php echo esc_html(get_post_meta(get_the_ID(), 'ma_cta_title', true) ?: 'Ready to Automate Your Marketing?'); ?></h2>
-                    <p><?php echo esc_html(get_post_meta(get_the_ID(), 'ma_cta_description', true) ?: 'Let\'s create a custom automation strategy that saves you time while improving your marketing results.'); ?></p>                    <div class="cta-buttons">
+                    <p><?php echo esc_html(get_post_meta(get_the_ID(), 'ma_cta_description', true) ?: 'Let\'s create a custom automation strategy that saves you time while improving your marketing results.'); ?></p>                    <div class="cta-buttons animate-on-scroll animate-fade-up">
                         <a href="<?php echo esc_url(get_post_meta(get_the_ID(), 'ma_cta_primary_button_url', true) ?: home_url('/contact')); ?>" class="btn-white"><?php echo esc_html(get_post_meta(get_the_ID(), 'ma_cta_primary_button_text', true) ?: 'Get Free Automation Audit'); ?></a>
                         <a href="<?php echo esc_url(get_post_meta(get_the_ID(), 'ma_cta_secondary_button_url', true) ?: home_url('/services')); ?>" class="btn btn-secondary"><?php echo esc_html(get_post_meta(get_the_ID(), 'ma_cta_secondary_button_text', true) ?: 'View All Services'); ?></a>
                     </div>
-                    <div class="cta-features">
+                    <div class="cta-features animate-on-scroll animate-fade-up">
                         <?php 
                         $features = get_post_meta(get_the_ID(), 'ma_cta_features', true) ?: '✓ Free process analysis,✓ Custom automation strategy,✓ ROI projection included';
                         $features_array = array_map('trim', explode(',', $features));
