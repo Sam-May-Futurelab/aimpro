@@ -370,7 +370,7 @@ get_header(); ?>
             <div class="cta-content">
                 <h2>Need Custom Marketing Solutions?</h2>
                 <p>Get personalized marketing tools and strategies tailored to your business needs.</p>
-                <a href="<?php echo home_url('/contact'); ?>" class="btn-primary large">Get Custom Solution</a>
+                <a href="<?php echo home_url('/contact'); ?>" class="btn-secondary">Get Custom Solution</a>
             </div>
         </section>
     </div>
