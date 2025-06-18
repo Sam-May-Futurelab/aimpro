@@ -1251,7 +1251,8 @@
     content: '';
     position: absolute;
     bottom: 0;
-    left: 0;
+    left: 50%;
+    transform: translateX(-50%);
     width: 40px;
     height: 3px;
     background-color: var(--primary-orange);
