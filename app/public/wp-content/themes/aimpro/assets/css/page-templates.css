@@ -1560,3 +1560,41 @@
         margin-bottom: 1rem;
     }
 }
+
+/* Platform Cards CTA Buttons */
+.platform-cta {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.platform-cta-btn {
+    font-size: 16px;
+    padding: 10px 20px;
+    display: inline-block;
+    transition: all 0.3s ease;
+}
+
+.platforms-cta {
+    margin-top: 40px;
+    text-align: center;
+}
+
+.platforms-cta-btn {
+    font-size: 18px;
+    padding: 12px 24px;
+    display: inline-block;
+    transition: all 0.3s ease;
+}
+
+/* Service Cards CTA Buttons */
+.service-cta-wrapper {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.service-cta-btn {
+    font-size: 16px;
+    padding: 10px 20px;
+    display: inline-block;
+    transition: all 0.3s ease;
+}

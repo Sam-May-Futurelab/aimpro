@@ -313,10 +313,12 @@ function get_advertising_ppc_field($field_key, $post_id = null) {
                     <div class="process-step">
                         <div class="step-number">5</div>
                         <div class="step-content">
-                            <h3>Report & Refine</h3>
-                            <p>Regular reporting with insights and recommendations for ongoing improvement and growth.</p>
+                            <h3>Report & Refine</h3>                            <p>Regular reporting with insights and recommendations for ongoing improvement and growth.</p>
                         </div>
                     </div>
+                </div>
+                <div class="process-cta">
+                    <a href="<?php echo home_url('/contact'); ?>" class="btn-primary process-cta-btn">Transform Your PPC Strategy</a>
                 </div>
             </div>
         </section>
@@ -330,42 +332,52 @@ function get_advertising_ppc_field($field_key, $post_id = null) {
                             <i class="fas fa-search"></i>
                         </div>
                         <h3>Search Advertising</h3>
-                        <ul>
-                            <li>Google Ads Search Campaigns</li>
+                        <ul>                            <li>Google Ads Search Campaigns</li>
                             <li>Microsoft Ads (Bing)</li>
                             <li>YouTube Search Ads</li>
                             <li>Amazon Advertising</li>
                         </ul>
+                        <div class="platform-cta">
+                            <a href="<?php echo home_url('/contact'); ?>" class="btn-outline platform-cta-btn">Get Search Advertising</a>
+                        </div>
                     </div>
                     <div class="platform-card">
                         <div class="platform-icon">
                             <i class="fas fa-mobile-alt"></i>
                         </div>
                         <h3>Social Media Advertising</h3>
-                        <ul>
-                            <li>Facebook Advertising</li>
+                        <ul>                            <li>Facebook Advertising</li>
                             <li>Instagram Advertising</li>
                             <li>LinkedIn Ads</li>
                             <li>Twitter Ads</li>
                         </ul>
-                    </div>                    <div class="platform-card">
+                        <div class="platform-cta">
+                            <a href="<?php echo home_url('/contact'); ?>" class="btn-outline platform-cta-btn">Start Social Advertising</a>
+                        </div>
+                    </div><div class="platform-card">
                         <h3><i class="fas fa-shopping-cart" aria-hidden="true"></i> E-commerce Advertising</h3>
-                        <ul>
-                            <li>Google Shopping Ads</li>
+                        <ul>                            <li>Google Shopping Ads</li>
                             <li>Facebook Shop Ads</li>
                             <li>Amazon PPC</li>
                             <li>Product Listing Ads</li>
                         </ul>
+                        <div class="platform-cta">
+                            <a href="<?php echo home_url('/contact'); ?>" class="btn-outline platform-cta-btn">Boost E-commerce Sales</a>
+                        </div>
                     </div>
                     <div class="platform-card">
                         <h3><i class="fas fa-video" aria-hidden="true"></i> Display & Video</h3>
-                        <ul>
-                            <li>Google Display Network</li>
+                        <ul>                            <li>Google Display Network</li>
                             <li>YouTube Video Ads</li>
-                            <li>Programmatic Display</li>
-                            <li>Retargeting Networks</li>
+                            <li>Programmatic Display</li>                            <li>Retargeting Networks</li>
                         </ul>
+                        <div class="platform-cta">
+                            <a href="<?php echo home_url('/contact'); ?>" class="btn-outline platform-cta-btn">Get Display & Video Ads</a>
+                        </div>
                     </div>
+                </div>
+                <div class="platforms-cta">
+                    <a href="<?php echo home_url('/contact'); ?>" class="btn-primary platforms-cta-btn">Talk to an Advertising Expert</a>
                 </div>
             </div>
         </section>

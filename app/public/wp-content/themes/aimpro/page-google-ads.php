@@ -253,12 +253,14 @@ get_header();
                         </svg>
                     </div>
                     <h3><?php echo esc_html($service_title); ?></h3>
-                    <p><?php echo esc_html($service_content); ?></p>
-                    <ul class="service-features">
+                    <p><?php echo esc_html($service_content); ?></p>                    <ul class="service-features">
                         <?php foreach ($features_array as $feature): ?>
                             <li><?php echo esc_html(trim($feature)); ?></li>
                         <?php endforeach; ?>
                     </ul>
+                    <div class="service-cta-wrapper">
+                        <a href="<?php echo home_url('/contact'); ?>" class="btn-outline service-cta-btn">Get Started</a>
+                    </div>
                 </div>
                 <?php endfor; ?>
             </div>
@@ -338,11 +340,13 @@ get_header();
                     if (empty($step_content)) $step_content = $defaults["process_step_content_{$i}"];
                 ?>
                 <div class="process-step">
-                    <div class="step-number"><?php echo esc_html($step_number); ?></div>
-                    <h3><?php echo esc_html($step_title); ?></h3>
+                    <div class="step-number"><?php echo esc_html($step_number); ?></div>                    <h3><?php echo esc_html($step_title); ?></h3>
                     <p><?php echo esc_html($step_content); ?></p>
                 </div>
                 <?php endfor; ?>            </div>
+                <div class="process-cta">
+                    <a href="<?php echo home_url('/contact'); ?>" class="btn-primary process-cta-btn">Launch Your Google Ads Campaign</a>
+                </div>
         </div>
     </section>
 
