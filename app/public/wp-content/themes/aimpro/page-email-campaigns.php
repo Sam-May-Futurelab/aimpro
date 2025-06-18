@@ -414,11 +414,10 @@ get_header(); ?>
     <!-- CTA Section -->
     <section id="contact" class="cta-section">
         <div class="container">
-            <div class="cta-content">
-                <h2><?php echo esc_html(get_post_meta(get_the_ID(), 'email_campaigns_cta_title', true) ?: 'Ready to Transform Your Email Marketing?'); ?></h2>
+            <div class="cta-content">                <h2><?php echo esc_html(get_post_meta(get_the_ID(), 'email_campaigns_cta_title', true) ?: 'Ready to Transform Your Email Marketing?'); ?></h2>
                 <p><?php echo esc_html(get_post_meta(get_the_ID(), 'email_campaigns_cta_description', true) ?: 'Stop sending emails that get ignored. Our strategic email campaigns are designed to cut through inbox clutter and drive real business results. Let\'s turn your email list into a revenue-generating machine.'); ?></p>
                 <div class="cta-buttons">
-                    <a href="<?php echo home_url('/contact'); ?>" class="btn-primary"><?php echo esc_html(get_post_meta(get_the_ID(), 'email_campaigns_cta_button', true) ?: 'Launch Campaigns'); ?></a>
+                    <a href="<?php echo home_url('/contact'); ?>" class="btn-outline"><?php echo esc_html(get_post_meta(get_the_ID(), 'email_campaigns_cta_button', true) ?: 'Launch Campaigns'); ?></a>
                 </div>
             </div>
         </div>
