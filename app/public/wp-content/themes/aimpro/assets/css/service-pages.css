@@ -2144,6 +2144,7 @@
     padding: 40px;
     border-radius: 16px;
     border: 1px solid rgba(241, 90, 37, 0.1);
+    text-align: center;
 }
 
 .chatbots-page .case-study-results h3 {
@@ -2449,19 +2450,7 @@
     font-size: 28px;
 }
 
-.white-label-ppc-page .benefit-card h3 {
-    font-size: 22px;
-    margin-bottom: 15px;
-    color: var(--text-primary, #1a1a1a);
-    font-weight: 600;
-}
-
-.white-label-ppc-page .benefit-card p {
-    color: var(--text-secondary, #64748b);
-    line-height: 1.6;
-    margin: 0;
-    font-size: 15px;
-}
+/* Removed page-specific overrides - now uses global benefit-card styles for consistency */
 
 /* Industries Page Styling */
 .industries-page {

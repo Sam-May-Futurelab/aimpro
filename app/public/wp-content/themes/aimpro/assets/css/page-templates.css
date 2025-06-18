@@ -1236,16 +1236,19 @@
     margin-bottom: 1.5rem;
 }
 
+/* Clean, maintainable benefit card styles */
 .benefit-card h3 {
-    font-size: 1.4rem;
+    font-size: 1.6rem;
     margin-bottom: 1rem;
     color: var(--text-primary);
-    font-weight: 600;
+    font-weight: 700;
+    line-height: 1.3;
 }
 
 .benefit-card p {
     color: var(--text-secondary);
     line-height: 1.6;
+    font-size: 1.125rem;
 }
 
 /* Responsive adjustments for Benefits Grid */

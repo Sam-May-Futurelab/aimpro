@@ -1473,6 +1473,7 @@
     transition: all 0.3s ease;
     text-transform: uppercase;
     letter-spacing: 0.5px;
+    margin: 1.5rem auto 0;
 }
 
 .case-study-link:hover {
