@@ -473,10 +473,10 @@ get_header(); ?>
 <!-- Testimonials Section -->
 <section class="testimonials-section">
     <!-- Target Icons -->
-    <div class="target-icon testimonials-target-1"></div>
-    <div class="container">        <div class="content-center">            <h2><?php echo aimpro_get_field('testimonials_title', 'Don\'t Just Take Our Word for It'); ?></h2>
-            <div class="curly-underline-accent"></div>
-            <p class="section-subtitle"><?php echo aimpro_get_field('testimonials_subtitle', 'Discover how we\'ve transformed businesses across industries with strategies that deliver measurable growth:'); ?></p></div>
+    <div class="target-icon testimonials-target-1"></div>    <div class="container">
+        <div class="content-center animate-on-scroll animate-fade-up">
+            <h2><?php echo aimpro_get_field('testimonials_title', 'Don\'t Just Take Our Word for It'); ?></h2>
+        </div>
         <div class="testimonials-carousel-wrapper">
             <div class="testimonials-carousel-container">
                 <div class="testimonials-carousel-track">                    <div class="testimonial-card slide-up">

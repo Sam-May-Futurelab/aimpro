@@ -27,9 +27,7 @@ get_header(); ?>
                             </style>
                         </h2>
                         <p class="section-subtitle">Transform your marketing efforts with our comprehensive collection of professional-grade templates and tools. Whether you're looking to optimize your SEO strategy, plan effective PPC campaigns, or streamline your content marketing process, our expertly crafted resources provide the <strong class="highlight-word">foundation for success</strong>.</p>
-                    </div>
-                    
-                    <div class="content-grid animate-on-scroll animate-stagger animate-fade-up" style="display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin: 40px 0;">
+                    </div>                    <div class="content-grid animate-on-scroll animate-stagger animate-fade-up" style="display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin: 10px 0 40px 0 !important;">
                         <div class="content-item">
                             <div class="content-icon">
                                 <i class="fas fa-tools"></i>
@@ -47,45 +45,12 @@ get_header(); ?>
                         </div>
                     </div>
                     
-                    <div class="content-cta">
+                    <div class="content-cta" style="margin-bottom: 10px !important;">
                         <a href="#tools-section" class="btn-primary large">Explore Free Tools</a>
                     </div>
                 </div>
-            </div>
-        </section><!-- Introduction Section -->
-        <?php 
-        $intro_title = get_post_meta(get_the_ID(), '_templates_tools_intro_title', true);
-        $intro_content = get_post_meta(get_the_ID(), '_templates_tools_intro_content', true);
-        if ($intro_title || $intro_content) : ?>
-            <section class="intro-section">
-                <div class="content-center">
-                    <?php if ($intro_title) : ?>
-                        <h2 class="section-title"><?php echo esc_html($intro_title); ?></h2>
-                    <?php endif; ?>
-                    <?php if ($intro_content) : ?>
-                        <div class="intro-content">
-                            <?php echo wp_kses_post($intro_content); ?>
-                        </div>
-                    <?php endif; ?>
-                </div>
-            </section>
-        <?php endif; ?>
-
-        <!-- Filter Categories -->
-        <?php
-        $categories = get_post_meta(get_the_ID(), '_templates_tools_categories', true);
-        if (!empty($categories)) : ?>
-            <section class="filter-section">
-                <div class="filter-buttons">
-                    <?php foreach ($categories as $category) : ?>
-                        <button class="filter-btn <?php echo $category['slug'] === 'all' ? 'active' : ''; ?>" data-filter="<?php echo esc_attr($category['slug']); ?>">
-                            <?php echo esc_html($category['name']); ?>
-                        </button>
-                    <?php endforeach; ?>
-                </div>
-            </section>
-        <?php endif; ?>        <!-- Tools & Templates Grid -->
-        <section id="tools-section" class="tools-section">
+            </div>        </section>        <!-- Tools & Templates Grid -->
+        <section id="tools-section" class="tools-section" style="margin-top: 0px !important; padding-top: 5px !important;">
             <?php
             $tools = get_post_meta(get_the_ID(), '_templates_tools_items', true);
             if (!empty($tools)) : ?>
@@ -125,34 +90,8 @@ get_header(); ?>
                         </div>
                     <?php endforeach; ?>
                 </div>
-            <?php else : ?>
-                <!-- Default/Demo Content -->
+            <?php else : ?>                <!-- Default/Demo Content -->
                 <div class="tools-grid">
-                    <!-- SEO Template -->
-                    <div class="tool-card" data-category="seo">
-                        <div class="tool-content">
-                            <div class="tool-header">
-                                <div class="tool-icon">
-                                    <i class="fas fa-search"></i>
-                                </div>
-                                <div class="tool-meta">
-                                    <span class="tool-type">Template</span>
-                                    <span class="tool-category">SEO</span>
-                                </div>
-                            </div>
-                            <h3>SEO Audit Checklist</h3>
-                            <p>Comprehensive 50-point SEO audit checklist to optimize your website for search engines.</p>
-                            <ul class="tool-features">
-                                <li>Technical SEO audit points</li>
-                                <li>Content optimization checklist</li>
-                                <li>Local SEO recommendations</li>
-                            </ul>
-                            <div class="tool-footer">
-                                <a href="#" class="btn-primary">Download Free</a>
-                            </div>
-                        </div>
-                    </div>
-
                     <!-- PPC Calculator -->
                     <div class="tool-card" data-category="ppc">
                         <div class="tool-content">
