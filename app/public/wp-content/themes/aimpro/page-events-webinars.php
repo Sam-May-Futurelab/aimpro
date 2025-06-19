@@ -169,37 +169,32 @@ $newsletter_content = get_post_meta(get_the_ID(), '_events_webinars_newsletter_c
 
 <main id="main" class="main-content">
     <div class="container">
-        
-        <!-- Page Header -->
-        <section class="page-header">
+          <!-- Page Header -->
+        <section class="page-header animate-on-scroll animate-fade-up">
             <div class="page-header-content">
                 <h1><?php echo esc_html($header_title); ?></h1>
                 <p class="page-subtitle"><?php echo esc_html($header_subtitle); ?></p>
             </div>
-        </section>
-
-        <!-- Events Introduction -->
-        <section class="events-intro">
+        </section>        <!-- Events Introduction -->
+        <section class="events-intro animate-on-scroll animate-fade-up">
             <div class="section-content">
-                <div class="intro-content">
+                <div class="intro-content animate-on-scroll animate-slide-left">
                     <h2><?php echo esc_html($intro_title); ?></h2>
                     <p><?php echo esc_html($intro_content); ?></p>
                 </div>
-                <div class="event-stats">
+                <div class="event-stats animate-on-scroll animate-slide-right">
                     <?php foreach ($stats as $stat): ?>
-                        <div class="stat-item">
+                        <div class="stat-item animate-on-scroll animate-stagger animate-scale-up">
                             <div class="stat-number"><?php echo esc_html($stat['number']); ?></div>
                             <div class="stat-label"><?php echo esc_html($stat['label']); ?></div>
                         </div>
                     <?php endforeach; ?>
                 </div>
             </div>
-        </section>
-
-        <!-- Featured Upcoming Event -->
-        <section class="featured-event">
+        </section>        <!-- Featured Upcoming Event -->
+        <section class="featured-event animate-on-scroll animate-fade-up">
             <div class="section-content">
-                <div class="event-featured">
+                <div class="event-featured animate-on-scroll animate-slide-up">
                     <div class="event-badge"><?php echo esc_html($featured_event['badge']); ?></div>
                     <div class="event-content">
                         <div class="event-meta">
@@ -209,9 +204,8 @@ $newsletter_content = get_post_meta(get_the_ID(), '_events_webinars_newsletter_c
                         </div>
                         <h2><?php echo esc_html($featured_event['title']); ?></h2>
                         <p class="event-description"><?php echo esc_html($featured_event['description']); ?></p>
-                        
-                        <?php if (!empty($featured_event['speakers'])): ?>
-                        <div class="event-speakers">
+                          <?php if (!empty($featured_event['speakers'])): ?>
+                        <div class="event-speakers animate-on-scroll animate-fade-up">
                             <h3>Featured Speakers</h3>
                             <div class="speakers-list">
                                 <?php foreach ($featured_event['speakers'] as $speaker): ?>
@@ -227,7 +221,7 @@ $newsletter_content = get_post_meta(get_the_ID(), '_events_webinars_newsletter_c
                         <?php endif; ?>
 
                         <?php if (!empty($featured_event['agenda'])): ?>
-                        <div class="event-agenda">
+                        <div class="event-agenda animate-on-scroll animate-fade-up">
                             <h3>What You'll Learn</h3>
                             <ul>
                                 <?php foreach ($featured_event['agenda'] as $item): ?>
@@ -247,16 +241,14 @@ $newsletter_content = get_post_meta(get_the_ID(), '_events_webinars_newsletter_c
                     </div>
                 </div>
             </div>
-        </section>
-
-        <!-- Upcoming Events -->
+        </section>        <!-- Upcoming Events -->
         <?php if (!empty($upcoming_events)): ?>
-        <section class="upcoming-events">
+        <section class="upcoming-events animate-on-scroll animate-fade-up">
             <div class="section-content">
-                <h2>Upcoming Events</h2>
-                <div class="events-grid">
+                <h2 class="animate-on-scroll animate-fade-up">Upcoming Events</h2>
+                <div class="events-grid animate-on-scroll animate-fade-up">
                     <?php foreach ($upcoming_events as $event): ?>
-                        <div class="event-card">
+                        <div class="event-card animate-on-scroll animate-stagger animate-fade-up">
                             <div class="event-date-badge">
                                 <div class="month"><?php echo esc_html($event['month']); ?></div>
                                 <div class="day"><?php echo esc_html($event['day']); ?></div>
@@ -279,18 +271,16 @@ $newsletter_content = get_post_meta(get_the_ID(), '_events_webinars_newsletter_c
                 </div>
             </div>
         </section>
-        <?php endif; ?>
-
-        <!-- Past Events / On-Demand -->
+        <?php endif; ?>        <!-- Past Events / On-Demand -->
         <?php if (!empty($ondemand_webinars)): ?>
-        <section class="past-events">
+        <section class="past-events animate-on-scroll animate-fade-up">
             <div class="section-content">
-                <h2><?php echo esc_html($ondemand_title); ?></h2>
-                <p class="section-subtitle"><?php echo esc_html($ondemand_subtitle); ?></p>
+                <h2 class="animate-on-scroll animate-fade-up"><?php echo esc_html($ondemand_title); ?></h2>
+                <p class="section-subtitle animate-on-scroll animate-fade-up"><?php echo esc_html($ondemand_subtitle); ?></p>
                 
-                <div class="on-demand-grid">
+                <div class="on-demand-grid animate-on-scroll animate-fade-up">
                     <?php foreach ($ondemand_webinars as $webinar): ?>
-                        <div class="on-demand-event">
+                        <div class="on-demand-event animate-on-scroll animate-stagger animate-fade-up">
                             <div class="event-thumbnail">
                                 <?php if (!empty($webinar['thumbnail_url'])): ?>
                                     <img src="<?php echo esc_url($webinar['thumbnail_url']); ?>" alt="<?php echo esc_attr($webinar['title']); ?>" />
@@ -320,15 +310,13 @@ $newsletter_content = get_post_meta(get_the_ID(), '_events_webinars_newsletter_c
                 </div>
             </div>
         </section>
-        <?php endif; ?>
-
-        <!-- Event Categories - 4 in a row styling -->
+        <?php endif; ?>        <!-- Event Categories - 4 in a row styling -->
         <?php if (!empty($event_categories)): ?>
-        <section class="event-categories">
+        <section class="event-categories animate-on-scroll animate-fade-up">
             <div class="section-content">
-                <h2><?php echo esc_html($categories_title); ?></h2>
-                <div class="categories-grid categories-grid-four">                    <?php foreach ($event_categories as $category): ?>
-                        <div class="category-card">
+                <h2 class="animate-on-scroll animate-fade-up"><?php echo esc_html($categories_title); ?></h2>
+                <div class="categories-grid categories-grid-four animate-on-scroll animate-fade-up">                    <?php foreach ($event_categories as $category): ?>
+                        <div class="category-card animate-on-scroll animate-stagger animate-fade-up">
                             <div class="category-icon">
                                 <i class="<?php echo esc_attr($category['icon']); ?>"></i>
                             </div>
@@ -340,26 +328,18 @@ $newsletter_content = get_post_meta(get_the_ID(), '_events_webinars_newsletter_c
                 </div>
             </div>
         </section>
-        <?php endif; ?>
-
-        <!-- Newsletter & Updates -->
-        <section class="events-newsletter">
+        <?php endif; ?>        <!-- Newsletter & Updates -->
+        <section class="events-newsletter animate-on-scroll animate-fade-up">
             <div class="section-content">
-                <h2><?php echo esc_html($newsletter_title); ?></h2>
-                <p><?php echo esc_html($newsletter_content); ?></p>
-                <form class="newsletter-form" action="#" method="post">
+                <h2 class="animate-on-scroll animate-fade-up"><?php echo esc_html($newsletter_title); ?></h2>
+                <p class="animate-on-scroll animate-fade-up"><?php echo esc_html($newsletter_content); ?></p>
+                <form class="newsletter-form animate-on-scroll animate-fade-up" action="#" method="post">
                     <div class="form-group">
                         <input type="email" name="email" placeholder="Enter your email address" required>
                         <button type="submit" class="btn btn-primary">Get Event Updates</button>
                     </div>
                 </form>
-            </div>
-        </section>    </div>
-</main>
-
-<?php get_footer(); ?>
-
-    </div>
+            </div>        </section>    </div>
 </main>
 
 <?php get_footer(); ?>
