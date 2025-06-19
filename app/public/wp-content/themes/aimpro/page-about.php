@@ -197,23 +197,23 @@ get_header(); ?>
             </div>
         </section>        <!-- CTA Section -->
         <section class="about-cta">
-            <div class="section-content text-center animate-on-scroll animate-scale-up">
-                <h2><?php echo aimpro_get_field('about_cta_heading', 'Let\'s Connect!'); ?></h2>
-                <p><?php echo aimpro_get_field('about_cta_description', 'Ready to transform your digital presence? Get in touch with our team today.'); ?></p>
-                <div class="cta-buttons">
-                    <?php 
-                    $button_1_url = aimpro_get_field('about_cta_button_1_url', '/contact');
-                    $button_1_text = aimpro_get_field('about_cta_button_1_text', 'Get Started Today');
-                    $button_2_url = aimpro_get_field('about_cta_button_2_url', 'tel:01212858490');
-                    $button_2_text = aimpro_get_field('about_cta_button_2_text', 'Call Us Now');
-                    
-                    // Ensure URLs are properly formatted
-                    if (!empty($button_1_url) && $button_1_url[0] === '/') {
-                        $button_1_url = home_url($button_1_url);
-                    }
-                    ?>
-                    <a href="<?php echo esc_url($button_1_url); ?>" class="btn btn-primary"><?php echo esc_html($button_1_text); ?></a>
-                    <a href="<?php echo esc_url($button_2_url); ?>" class="btn btn-secondary"><?php echo esc_html($button_2_text); ?></a>
+            <div class="container">
+                <div class="cta-content text-center animate-on-scroll animate-scale-up">
+                    <h2><?php echo aimpro_get_field('about_cta_heading', 'Ready to Transform Your Digital Presence?'); ?></h2>
+                    <p><?php echo aimpro_get_field('about_cta_description', 'Partner with Aimpro Digital and discover how our data-driven strategies, innovative solutions, and dedicated team can elevate your brand to new heights. Whether you\'re looking to increase leads, boost conversions, or build a stronger online presence, we\'re here to make it happen.'); ?></p>
+                    <p class="cta-sub-text"><?php echo aimpro_get_field('about_cta_sub_text', 'Join the growing number of businesses that trust us to deliver exceptional results. Let\'s start building your digital success story today.'); ?></p>
+                    <div class="cta-buttons">
+                        <?php 
+                        $button_1_url = aimpro_get_field('about_cta_button_1_url', '/contact');
+                        $button_1_text = aimpro_get_field('about_cta_button_1_text', 'Get In Touch');
+                        
+                        // Ensure URLs are properly formatted
+                        if (!empty($button_1_url) && $button_1_url[0] === '/') {
+                            $button_1_url = home_url($button_1_url);
+                        }
+                        ?>
+                        <a href="<?php echo esc_url($button_1_url); ?>" class="btn btn-primary"><?php echo esc_html($button_1_text); ?></a>
+                    </div>
                 </div>
             </div>
         </section>
