@@ -75,7 +75,7 @@ get_header(); ?>
                     </div>
                 </div>
                 <div class="hero-ctas animate-on-scroll animate-fade-up">
-                    <a href="#contact" class="btn-primary streamlined"><?php echo get_post_meta(get_the_ID(), 'uxui_hero_primary_button_text', true) ?: 'Get UX Audit'; ?></a>
+                    <a href="#contact" class="btn-primary streamlined"><?php echo get_post_meta(get_the_ID(), 'uxui_hero_primary_button_text', true) ?: 'Get your FREE UX Audit'; ?></a>
                 </div>
             </div>
         </div>

@@ -9,6 +9,38 @@
 
 get_header(); ?>
 
+<style>
+.tools-section .tool-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto 15px;
+}
+.tools-section .tool-icon i {
+    font-size: 2.5rem;
+}
+.tools-section .tools-category {
+    margin-top: 50px;
+    margin-bottom: 30px;
+    padding: 20px 0;
+    position: relative;
+    font-size: 1.8rem;
+}
+.tools-section .tools-grid {
+    margin-bottom: 50px;
+}
+.tools-section .section-header {
+    margin-bottom: 50px;
+    padding-top: 20px;
+}
+
+/* Rounded corners for case study sections */
+.case-study-challenge, .case-study-solution {
+    border-radius: 12px;
+    overflow: hidden;
+}
+</style>
+
 <main id="primary" class="service-page ai-crm-page">
     <!-- Breadcrumbs -->
     <div class="breadcrumbs-container">
@@ -205,38 +237,40 @@ get_header(); ?>
             </div>
         </div>
     </section><!-- AI Features Section -->
-    <section class="service-overview">
-        <div class="container">
+    <section class="tools-section">
+        <div class="container" style="text-align: center;">
             <div class="section-header animate-on-scroll animate-fade-up">
-                <h2>AI-Powered CRM Features</h2>
+                <h2 style="margin-bottom: 20px;">AI-Powered CRM Features</h2>
+                <p style="max-width: 800px; margin: 0 auto 30px;">Transform your customer relationship management with intelligent features that automate processes and drive better results.</p>
             </div>
-            <div class="features-grid animate-on-scroll animate-stagger animate-scale-up">
-                <div class="feature-item">
-                    <div class="feature-icon">
+            
+            <div class="tools-grid animate-on-scroll animate-stagger animate-scale-up" style="justify-content: center;">
+                <div class="tool-item" style="text-align: center;">
+                    <div class="tool-icon" style="text-align: center; display: flex; justify-content: center;">
                         <i class="fas fa-robot"></i>
                     </div>
                     <h3>Smart Lead Scoring</h3>
                     <p>AI algorithms analyze 50+ data points to score leads and predict conversion probability in real-time.</p>
                 </div>
                 
-                <div class="feature-item">
-                    <div class="feature-icon">
+                <div class="tool-item" style="text-align: center;">
+                    <div class="tool-icon" style="text-align: center; display: flex; justify-content: center;">
                         <i class="fas fa-chart-line"></i>
                     </div>
                     <h3>Predictive Forecasting</h3>
                     <p>Machine learning models predict sales outcomes, revenue forecasts, and optimal deal closure timing.</p>
                 </div>
                 
-                <div class="feature-item">
-                    <div class="feature-icon">
+                <div class="tool-item" style="text-align: center;">
+                    <div class="tool-icon" style="text-align: center; display: flex; justify-content: center;">
                         <i class="fas fa-bullseye"></i>
                     </div>
                     <h3>Behavioral Targeting</h3>
                     <p>AI tracks customer behavior patterns to trigger personalized engagement at optimal moments.</p>
                 </div>
                 
-                <div class="feature-item">
-                    <div class="feature-icon">
+                <div class="tool-item" style="text-align: center;">
+                    <div class="tool-icon" style="text-align: center; display: flex; justify-content: center;">
                         <i class="fas fa-chart-bar"></i>
                     </div>
                     <h3>Intelligent Reporting</h3>
@@ -244,7 +278,7 @@ get_header(); ?>
                 </div>
             </div>
         </div>
-    </section>    <!-- Packages Section -->
+    </section><!-- Packages Section -->
     <section id="packages" class="pricing-section">
         <div class="container">
             <div class="section-header animate-on-scroll animate-fade-up">
