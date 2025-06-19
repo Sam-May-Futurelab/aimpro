@@ -125,8 +125,7 @@ $header_subtitle = get_post_meta(get_the_ID(), '_local_seo_header_subtitle', tru
                         </div>
                     </div>
 
-                    <?php endfor; ?>                </div>
-                <div class="text-center mt-5 mb-3 animate-on-scroll animate-fade-up">
+                    <?php endfor; ?>                </div>                <div class="text-center mt-1 animate-on-scroll animate-fade-up">
                     <a href="/contact/" class="btn btn-primary">Get Your Free Local SEO Consultation</a>
                 </div>
             </div>

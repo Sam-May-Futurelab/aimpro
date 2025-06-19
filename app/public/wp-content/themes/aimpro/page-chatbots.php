@@ -93,8 +93,9 @@ function get_chatbot_field($field_key, $post_id = null) {
                     </div>
                     <h3><?php echo esc_html(get_chatbot_field("service_title_{$i}")); ?></h3>
                     <p><?php echo esc_html(get_chatbot_field("service_content_{$i}")); ?></p>
-                </div>
-                <?php endfor; ?>
+                </div>                <?php endfor; ?>            </div>
+            <div class="text-center mt-1 animate-on-scroll animate-fade-up">
+                <a href="/contact/" class="btn btn-primary">Get Your Custom Chatbot Solution</a>
             </div>
         </div>
     </section>    <!-- Case Study Section -->

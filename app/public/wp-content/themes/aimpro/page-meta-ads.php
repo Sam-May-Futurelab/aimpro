@@ -52,11 +52,9 @@ function get_meta_ads_meta($key, $post_id, $defaults, $prefix = '_meta_ads_') {
                     <div class="stat-item">
                         <div class="stat-number"><?php echo esc_html(get_meta_ads_meta('hero_stat3_number', $post_id, $defaults)); ?></div>
                         <div class="stat-label"><?php echo esc_html(get_meta_ads_meta('hero_stat3_label', $post_id, $defaults)); ?></div>
-                    </div>
-                </div>
+                    </div>                </div>
                 <div class="hero-ctas">
                     <a href="#contact" class="btn-primary streamlined"><?php echo esc_html(get_meta_ads_meta('hero_cta1_text', $post_id, $defaults)); ?></a>
-                    <a href="#packages" class="btn-outline streamlined"><?php echo esc_html(get_meta_ads_meta('hero_cta2_text', $post_id, $defaults)); ?></a>
                 </div>
             </div>
         </div>
@@ -76,9 +74,8 @@ function get_meta_ads_meta($key, $post_id, $defaults, $prefix = '_meta_ads_') {
                     </div>
                     <h3><?php echo esc_html(get_meta_ads_meta("service_title_{$i}", $post_id, $defaults)); ?></h3>
                     <p><?php echo esc_html(get_meta_ads_meta("service_content_{$i}", $post_id, $defaults)); ?></p>
-                </div>                <?php endfor; ?>
-            </div>
-            <div class="text-center mt-5 mb-3 animate-on-scroll animate-fade-up">
+                </div>                <?php endfor; ?>            </div>
+            <div class="text-center mt-1 animate-on-scroll animate-fade-up">
                 <a href="/contact/" class="btn btn-primary">Schedule Your Meta Ads Consultation</a>
             </div>
         </div>

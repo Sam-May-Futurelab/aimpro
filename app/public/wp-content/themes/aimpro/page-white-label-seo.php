@@ -64,8 +64,9 @@ get_header(); ?>
                             </div>
                             <h3><?php echo esc_html($benefit['title']); ?></h3>
                             <p><?php echo esc_html($benefit['description']); ?></p>
-                        </div>
-                    <?php endforeach; ?>
+                        </div>                    <?php endforeach; ?>                </div>
+                <div class="text-center mt-1 animate-on-scroll animate-fade-up">
+                    <a href="/contact/" class="btn btn-primary">Become a White Label Partner</a>
                 </div>
             </div>
         </section>        <!-- Services Grid -->

@@ -52,11 +52,9 @@ function get_microsoft_ads_meta($key, $post_id, $defaults, $prefix = '_microsoft
                     <div class="stat-item">
                         <div class="stat-number"><?php echo esc_html(get_microsoft_ads_meta('hero_stat3_number', $post_id, $defaults)); ?></div>
                         <div class="stat-label"><?php echo esc_html(get_microsoft_ads_meta('hero_stat3_label', $post_id, $defaults)); ?></div>
-                    </div>
-                </div>
+                    </div>                </div>
                 <div class="hero-ctas animate-on-scroll animate-fade-up">
                     <a href="#contact" class="btn-primary streamlined"><?php echo esc_html(get_microsoft_ads_meta('hero_cta1_text', $post_id, $defaults)); ?></a>
-                    <a href="#packages" class="btn-outline streamlined"><?php echo esc_html(get_microsoft_ads_meta('hero_cta2_text', $post_id, $defaults)); ?></a>
                 </div>
             </div>
         </div>

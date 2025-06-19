@@ -147,9 +147,9 @@ get_header(); ?>
                                     </ul>
                                 <?php endif; ?>
                             </div>
-                        </div>
-                    <?php endforeach; ?>
-
+                        </div>                    <?php endforeach; ?>                </div>
+                <div class="text-center mt-1 animate-on-scroll animate-fade-up">
+                    <a href="/contact/" class="btn btn-primary">Request On-Page SEO Analysis</a>
                 </div>
             </div>        <!-- Case Study -->
         <section class="case-study">

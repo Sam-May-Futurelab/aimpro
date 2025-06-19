@@ -56,15 +56,13 @@ get_header(); ?>
                             <div class="stat-number"><?php echo esc_html($stat_number); ?></div>
                             <div class="stat-label"><?php echo esc_html($stat_label); ?></div>
                         </div>
-                    <?php endfor; ?>
-                </div>
+                    <?php endfor; ?>                </div>
                 <div class="hero-ctas">
                     <a href="#contact" class="btn-primary streamlined"><?php echo esc_html($hero_cta1_text); ?></a>
-                    <a href="#packages" class="btn-outline streamlined"><?php echo esc_html($hero_cta2_text); ?></a>
                 </div>
             </div>
         </div>
-    </section>    <!-- Service Overview -->    <section class="service-overview">
+    </section>    <!-- Service Overview --><section class="service-overview">
         <div class="container">
             <div class="overview-content animate-on-scroll animate-fade-up">
                 <?php
@@ -96,11 +94,12 @@ get_header(); ?>
                         </div>
                         <h3><?php echo esc_html($service_title); ?></h3>
                         <p><?php echo esc_html($service_content); ?></p>
-                    </div>
-                <?php endfor; ?>
+                    </div>                <?php endfor; ?>            </div>
+            <div class="text-center mt-1 animate-on-scroll animate-fade-up">
+                <a href="/contact/" class="btn btn-primary">Get Started with Retargeting</a>
             </div>
         </div>
-    </section>    <!-- Case Study Section -->    <section class="case-study-section">
+    </section>    <!-- Case Study Section --><section class="case-study-section">
         <div class="container">
             <div class="case-study-content">
                 <div class="case-study-text animate-on-scroll animate-slide-left">

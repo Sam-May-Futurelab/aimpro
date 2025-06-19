@@ -126,11 +126,9 @@ $header_subtitle = get_post_meta(get_the_ID(), '_seo_header_subtitle', true) ?: 
                             </div>
                             <a href="<?php echo esc_url($service_link); ?>" class="service-cta">Learn More</a>
                         </div>
-                    </div>
-
-                    <?php endfor; ?>                </div>
-                <div class="text-center mt-5 mb-3 animate-on-scroll animate-fade-up">
-                    <a href="/contact/" class="btn btn-primary">Schedule a Free Consultation</a>
+                    </div>                    <?php endfor; ?>                </div>
+                <div style="text-align: center; margin-top: 1px;">
+                    <a href="/contact/" class="btn btn-primary animate-on-scroll animate-fade-up">Schedule a Free Consultation</a>
                 </div>
             </div>
         </section>        <!-- SEO Success Story -->

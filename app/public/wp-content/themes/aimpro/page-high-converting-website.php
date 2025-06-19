@@ -297,9 +297,8 @@ get_header(); ?>
                             $step_count++;
                         }
                     }
-                    ?>
-                </div>
-                <div class="process-cta animate-on-scroll animate-scale-up">
+                    ?>                </div>
+                <div class="process-cta animate-on-scroll animate-scale-up mt-1">
                     <a href="<?php echo home_url('/contact'); ?>" class="btn-primary process-cta-btn">Build Your High-Converting Website</a>
                 </div>
             </div>
