@@ -4,18 +4,12 @@
  * Description: Comprehensive SEO audit services
  */
 
-get_header(); 
+get_header();
 
-// Get meta data with fallbacks                <h2 class="animate-on-scroll animate-fade-up"><?php echo esc_html($components_title); ?></h2>
-                <div class="components-grid">
-                    
-                    <?php foreach ($components as $component): ?>
-                        <div class="component-card <?php echo (isset($component['featured']) && $component['featured']) ? 'featured' : ''; ?> animate-on-scroll animate-stagger animate-fade-up">der_title = get_post_meta(get_the_ID(), 'seo_audit_header_title', true) ?: 'SEO Audit Services';
+$header_title = get_post_meta(get_the_ID(), 'seo_audit_header_title', true) ?: 'SEO Audit Services';
 $header_subtitle = get_post_meta(get_the_ID(), 'seo_audit_header_subtitle', true) ?: 'Comprehensive analysis of your website\'s SEO performance and growth opportunities';
 $hero_image = get_post_meta(get_the_ID(), 'seo_audit_hero_image', true);
-
 ?>
-
 <main id="main" class="main-content seo-service-page">
     <div class="container">
           <!-- Page Header -->
@@ -427,7 +421,9 @@ $hero_image = get_post_meta(get_the_ID(), 'seo_audit_hero_image', true);
                     $cta_primary_text = get_post_meta(get_the_ID(), 'seo_audit_cta_primary_text', true) ?: 'Get Your SEO Audit';
                     $cta_primary_url = get_post_meta(get_the_ID(), 'seo_audit_cta_primary_url', true) ?: home_url('/contact');
                     $cta_secondary_text = get_post_meta(get_the_ID(), 'seo_audit_cta_secondary_text', true) ?: 'View Audit Results';
-                    $cta_secondary_url = get_post_meta(get_the_ID(), 'seo_audit_cta_secondary_url', true) ?: home_url('/case-studies');                    $cta_benefits = get_post_meta(get_the_ID(), 'seo_audit_cta_benefits', true) ?: array(
+                    $cta_secondary_url = get_post_meta(get_the_ID(), 'seo_audit_cta_secondary_url', true) ?: home_url('/case-studies');
+                    
+                    $cta_benefits = get_post_meta(get_the_ID(), 'seo_audit_cta_benefits', true) ?: array(
                         '<i class="fas fa-check" aria-hidden="true"></i> 40+ page detailed report',
                         '<i class="fas fa-check" aria-hidden="true"></i> Actionable recommendations',
                         '<i class="fas fa-check" aria-hidden="true"></i> Strategy consultation included'
