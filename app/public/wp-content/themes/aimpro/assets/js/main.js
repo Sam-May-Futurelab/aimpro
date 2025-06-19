@@ -1,38 +1,6 @@
 // Enhanced JavaScript for Aimpro Digital
 document.addEventListener('DOMContentLoaded', function() {
     
-    // Loading Screen Management
-    const loadingScreen = document.getElementById('loading-screen');
-    const loadingText = document.querySelector('.loading-text');
-    const loadingMessages = [
-        'Crafting your digital success...',
-        'Optimizing for performance...',
-        'Loading premium experience...',
-        'Almost ready...'
-    ];
-    let messageIndex = 0;
-    
-    // Rotate loading messages
-    const messageInterval = setInterval(() => {
-        messageIndex = (messageIndex + 1) % loadingMessages.length;
-        if (loadingText) {
-            loadingText.textContent = loadingMessages[messageIndex];
-        }
-    }, 1500);
-    
-    // Hide loading screen when page is fully loaded
-    window.addEventListener('load', function() {
-        clearInterval(messageInterval);
-        setTimeout(() => {
-            if (loadingScreen) {
-                loadingScreen.classList.add('fade-out');
-                setTimeout(() => {
-                    loadingScreen.style.display = 'none';
-                }, 500);
-            }
-        }, 1000); // Show loading screen for at least 1 second
-    });
-    
     // Hero Strapline Rotation
     const straplines = document.querySelectorAll('.hero-straplines .strapline');
     let currentStraplineIndex = 0;

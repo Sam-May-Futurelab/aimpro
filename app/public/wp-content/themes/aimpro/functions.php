@@ -307,7 +307,6 @@ add_action('wp_head', 'aimpro_add_resource_hints', 1);
 function aimpro_optimize_css_delivery() {
     echo '<style id="critical-css">
         body{font-family:"Inter",sans-serif;margin:0;padding:0;line-height:1.6;color:#1a1a1a}
-        .loading-screen{position:fixed;top:0;left:0;width:100%;height:100vh;background:linear-gradient(135deg,#FFD700 0%,#FFA500 100%);display:flex;align-items:center;justify-content:center;z-index:10000}
         .sticky-header{position:fixed;top:0;width:100%;z-index:1000;transition:all 0.3s ease}
         .hero-section{min-height:100vh;display:flex;align-items:center;background:linear-gradient(135deg,#667eea 0%,#764ba2 100%)}
     </style>';

@@ -10,19 +10,6 @@ get_header(); ?>
 <!-- Skip to main content for accessibility -->
 <a href="#main-content" class="skip-link">Skip to main content</a>
 
-<!-- Loading Screen -->
-<div id="loading-screen" class="loading-screen">
-    <div class="loading-content">
-        <div class="loading-logo">
-            <h2 class="gradient-text">Aimpro</h2>
-        </div>
-        <div class="loading-spinner">
-            <div class="spinner-ring"></div>
-        </div>
-        <p class="loading-text">Crafting your digital success...</p>
-    </div>
-</div>
-
 <!-- Main Content -->
 <main id="main-content" role="main">
 
