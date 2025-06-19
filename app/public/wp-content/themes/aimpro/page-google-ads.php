@@ -184,8 +184,7 @@ get_header();
                     <span><?php echo esc_html($hero_badge); ?></span>
                 </div>
                 <h1><?php echo wp_kses_post($hero_title); ?></h1>
-                <p class="hero-subtitle"><?php echo wp_kses_post($hero_subtitle); ?></p>
-                <div class="hero-stats animate-on-scroll animate-fade-up">
+                <p class="hero-subtitle"><?php echo wp_kses_post($hero_subtitle); ?></p>                <div class="hero-stats animate-on-scroll animate-fade-up" style="display: flex; justify-content: center; gap: 40px; flex-wrap: wrap;">
                     <div class="stat-item">
                         <span class="stat-number"><?php echo esc_html($hero_stat1_number); ?></span>
                         <span class="stat-label"><?php echo esc_html($hero_stat1_label); ?></span>
@@ -198,9 +197,8 @@ get_header();
                         <span class="stat-number"><?php echo esc_html($hero_stat3_number); ?></span>
                         <span class="stat-label"><?php echo esc_html($hero_stat3_label); ?></span>
                     </div>
-                </div>
-                <div class="hero-ctas">
-                    <a href="#contact" class="btn-primary streamlined"><?php echo esc_html($hero_cta1_text); ?></a>
+                </div><div class="hero-ctas">
+                    <a href="<?php echo home_url('/contact'); ?>" class="btn-primary streamlined"><?php echo esc_html($hero_cta1_text); ?></a>
                     <a href="#services" class="btn-outline streamlined"><?php echo esc_html($hero_cta2_text); ?></a>
                 </div>
             </div>
@@ -263,56 +261,44 @@ get_header();
                 </div>
                 <?php endfor; ?>
             </div>
-        </div>
-    </section>    <!-- Case Study Section -->
-    <section class="case-study-section">
-        <?php
-        // Get case study data
-        $case_study_label = get_post_meta(get_the_ID(), '_google_ads_case_study_label', true);
-        if (empty($case_study_label)) $case_study_label = $defaults['case_study_label'];
-        
-        $case_study_title = get_post_meta(get_the_ID(), '_google_ads_case_study_title', true);
-        if (empty($case_study_title)) $case_study_title = $defaults['case_study_title'];
-        
-        $case_study_challenge = get_post_meta(get_the_ID(), '_google_ads_case_study_challenge', true);
-        if (empty($case_study_challenge)) $case_study_challenge = $defaults['case_study_challenge'];
-        
-        $case_study_solution = get_post_meta(get_the_ID(), '_google_ads_case_study_solution', true);
-        if (empty($case_study_solution)) $case_study_solution = $defaults['case_study_solution'];
-        
-        $case_study_results_intro = get_post_meta(get_the_ID(), '_google_ads_case_study_results_intro', true);
-        if (empty($case_study_results_intro)) $case_study_results_intro = $defaults['case_study_results_intro'];
-        ?>
+        </div>    </section>
+
+    <!-- Case Study Section with Better Styling -->
+    <section class="success-metrics-section" style="background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%); padding: 80px 0;">
         <div class="container">
-            <div class="case-study-card animate-on-scroll animate-fade-up">
-                <div class="case-study-content">
-                    <div class="case-study-header">
-                        <span class="case-study-label"><?php echo esc_html($case_study_label); ?></span>
-                        <h2><?php echo esc_html($case_study_title); ?></h2>
+            <div class="section-content">
+                <div class="content-header animate-on-scroll animate-fade-up" style="text-align: center; margin-bottom: 50px;">
+                    <h2 style="font-size: 2.5rem; font-weight: 700; color: #1e293b; margin-bottom: 20px;">Law Firm Increases Qualified Leads by 340% with Strategic Google Ads</h2>
+                    <div style="max-width: 900px; margin: 0 auto;">
+                        <p style="font-size: 1.1rem; line-height: 1.8; color: #64748b; margin-bottom: 15px;"><strong>The Challenge:</strong> A Manchester-based law firm was struggling with expensive Google Ads campaigns that generated low-quality leads, wasting £5,000+ monthly budget.</p>
+                        <p style="font-size: 1.1rem; line-height: 1.8; color: #64748b; margin-bottom: 15px;"><strong>Our Solution:</strong> We restructured their campaigns with precise keyword targeting, created compelling ad copy focused on legal expertise, and implemented advanced conversion tracking.</p>
+                        <p style="font-size: 1.1rem; line-height: 1.8; color: #64748b;"><strong>The Results:</strong> Within 120 days, we transformed their Google Ads performance completely.</p>
                     </div>
-                    <div class="case-study-story">
-                        <p><strong>The Challenge:</strong> <?php echo esc_html($case_study_challenge); ?></p>
-                        <p><strong>Our Solution:</strong> <?php echo esc_html($case_study_solution); ?></p>
-                        <p><strong>The Results:</strong> <?php echo esc_html($case_study_results_intro); ?></p>
+                </div>
+                
+                <div class="stats-grid animate-on-scroll animate-fade-up" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 30px; max-width: 1000px; margin: 0 auto;">
+                    <div class="stat-card" style="background: white; padding: 30px; border-radius: 16px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); text-align: center; border: 1px solid #e2e8f0;">
+                        <span class="stat-number" style="display: block; font-size: 3rem; font-weight: 700; color: #f15a25; margin-bottom: 10px;">340%</span>
+                        <span class="stat-label" style="font-size: 1rem; font-weight: 600; color: #64748b;">Increase in Qualified Leads</span>
                     </div>
-                    <div class="case-study-results animate-on-scroll animate-fade-up">
-                        <?php for ($i = 1; $i <= 4; $i++):
-                            $case_result_number = get_post_meta(get_the_ID(), "_google_ads_case_result_{$i}_number", true);
-                            if (empty($case_result_number)) $case_result_number = $defaults["case_result_{$i}_number"];
-                            
-                            $case_result_label = get_post_meta(get_the_ID(), "_google_ads_case_result_{$i}_label", true);
-                            if (empty($case_result_label)) $case_result_label = $defaults["case_result_{$i}_label"];
-                        ?>
-                        <div class="result-item">
-                            <span class="result-number"><?php echo esc_html($case_result_number); ?></span>
-                            <span class="result-label"><?php echo esc_html($case_result_label); ?></span>
-                        </div>
-                        <?php endfor; ?>
+                    <div class="stat-card" style="background: white; padding: 30px; border-radius: 16px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); text-align: center; border: 1px solid #e2e8f0;">
+                        <span class="stat-number" style="display: block; font-size: 3rem; font-weight: 700; color: #f15a25; margin-bottom: 10px;">58%</span>
+                        <span class="stat-label" style="font-size: 1rem; font-weight: 600; color: #64748b;">Lower Cost Per Lead</span>
+                    </div>
+                    <div class="stat-card" style="background: white; padding: 30px; border-radius: 16px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); text-align: center; border: 1px solid #e2e8f0;">
+                        <span class="stat-number" style="display: block; font-size: 3rem; font-weight: 700; color: #f15a25; margin-bottom: 10px;">720%</span>
+                        <span class="stat-label" style="font-size: 1rem; font-weight: 600; color: #64748b;">Return on Ad Spend</span>
+                    </div>
+                    <div class="stat-card" style="background: white; padding: 30px; border-radius: 16px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); text-align: center; border: 1px solid #e2e8f0;">
+                        <span class="stat-number" style="display: block; font-size: 3rem; font-weight: 700; color: #f15a25; margin-bottom: 10px;">£85,000</span>
+                        <span class="stat-label" style="font-size: 1rem; font-weight: 600; color: #64748b;">Monthly Revenue Generated</span>
                     </div>
                 </div>
             </div>
         </div>
-    </section>    <!-- Process Section -->
+    </section>
+
+    <!-- Process Section -->
     <section class="process-section">
         <?php
         // Get process data
@@ -518,7 +504,7 @@ get_header();
                 <h2><?php echo esc_html($simple_cta_title); ?></h2>
                 <p><?php echo esc_html($simple_cta_content); ?></p>
                 <div class="simple-cta-buttons">
-                    <a href="#contact-form" class="btn btn-primary"><?php echo esc_html($simple_cta_button_text); ?></a>
+                    <a href="<?php echo home_url('/contact'); ?>" class="btn btn-primary"><?php echo esc_html($simple_cta_button_text); ?></a>
                 </div>
                 <div class="simple-cta-features">
                     <?php for ($i = 1; $i <= 3; $i++):
