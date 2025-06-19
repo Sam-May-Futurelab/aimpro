@@ -7,9 +7,6 @@
 
 get_header(); ?>
 
-<!-- Skip to main content for accessibility -->
-<a href="#main-content" class="skip-link">Skip to main content</a>
-
 <!-- Main Content -->
 <main id="main-content" role="main">
 
