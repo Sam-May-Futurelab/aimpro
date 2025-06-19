@@ -72,13 +72,17 @@ function get_microsoft_ads_meta($key, $post_id, $defaults, $prefix = '_microsoft
                     <div class="service-icon">
                         <i class="<?php echo esc_attr(get_microsoft_ads_meta("service_icon_{$i}", $post_id, $defaults)); ?>"></i>
                     </div>
-                    <h3><?php echo esc_html(get_microsoft_ads_meta("service_title_{$i}", $post_id, $defaults)); ?></h3>
-                    <p><?php echo esc_html(get_microsoft_ads_meta("service_content_{$i}", $post_id, $defaults)); ?></p>
+                    <h3><?php echo esc_html(get_microsoft_ads_meta("service_title_{$i}", $post_id, $defaults)); ?></h3>                    <p><?php echo esc_html(get_microsoft_ads_meta("service_content_{$i}", $post_id, $defaults)); ?></p>
                 </div>
                 <?php endfor; ?>
             </div>
+            
+            <!-- CTA after services overview -->
+            <div class="text-center animate-on-scroll animate-fade-up" style="margin-top: 3rem;">
+                <a href="<?php echo home_url('/contact'); ?>" class="btn-primary">Get Your Microsoft Ads Strategy</a>
+            </div>
         </div>
-    </section>    <!-- Case Study Section -->
+    </section><!-- Case Study Section -->
     <section class="case-study-section">
         <div class="container">
             <div class="case-study-content">
@@ -111,13 +115,18 @@ function get_microsoft_ads_meta($key, $post_id, $defaults, $prefix = '_microsoft
                         <div class="result-item animate-on-scroll animate-stagger animate-scale-up">
                             <div class="result-number"><?php echo esc_html(get_microsoft_ads_meta("case_result_{$i}_number", $post_id, $defaults)); ?></div>
                             <div class="result-label"><?php echo esc_html(get_microsoft_ads_meta("case_result_{$i}_label", $post_id, $defaults)); ?></div>
-                        </div>
-                        <?php endfor; ?>
+                        </div>                        <?php endfor; ?>
                     </div>
                 </div>
             </div>
+            
+            <!-- CTA after case study results -->
+            <div class="text-center animate-on-scroll animate-fade-up" style="margin-top: 3rem;">
+                <p style="font-size: 1.1rem; color: #666; margin-bottom: 1.5rem;">Ready to achieve similar results with Microsoft Ads?</p>
+                <a href="<?php echo home_url('/contact'); ?>" class="btn-primary">Start Your Microsoft Ads Campaign</a>
+            </div>
         </div>
-    </section>    <!-- Process Section -->
+    </section><!-- Process Section -->
     <section class="process-section">        <div class="container">
             <h2 class="animate-on-scroll animate-fade-up"><?php echo esc_html(get_microsoft_ads_meta('process_title', $post_id, $defaults)); ?></h2>
             <div class="process-steps">
@@ -127,10 +136,15 @@ function get_microsoft_ads_meta($key, $post_id, $defaults, $prefix = '_microsoft
                     <div class="step-content">
                         <h3><?php echo esc_html(get_microsoft_ads_meta("process_step_title_{$i}", $post_id, $defaults)); ?></h3>
                         <p><?php echo esc_html(get_microsoft_ads_meta("process_step_content_{$i}", $post_id, $defaults)); ?></p>
-                    </div>
-                </div>
+                    </div>                </div>
                 <?php endfor; ?>
-        </div>    </section>    <!-- Tools & Technologies -->
+        </div>
+        
+        <!-- CTA after process section -->
+        <div class="text-center animate-on-scroll animate-fade-up" style="margin-top: 3rem;">
+            <p style="font-size: 1.1rem; color: #666; margin-bottom: 1.5rem;">Let us implement this proven process for your business</p>
+            <a href="<?php echo home_url('/contact'); ?>" class="btn-primary">Get Expert Microsoft Ads Management</a>
+        </div>    </section><!-- Tools & Technologies -->
     <section class="tools-section">
         <div class="container">
             <h2 class="animate-on-scroll animate-fade-up"><?php echo esc_html(get_microsoft_ads_meta('tools_title', $post_id, $defaults)); ?></h2>
@@ -143,7 +157,12 @@ function get_microsoft_ads_meta($key, $post_id, $defaults, $prefix = '_microsoft
                     <h3><?php echo esc_html(get_microsoft_ads_meta("tool_title_{$i}", $post_id, $defaults)); ?></h3>
                     <p><?php echo esc_html(get_microsoft_ads_meta("tool_content_{$i}", $post_id, $defaults)); ?></p>
                 </div>
-                <?php endfor; ?>
+                <?php endfor; ?>            </div>
+            
+            <!-- CTA after tools section -->
+            <div class="text-center animate-on-scroll animate-fade-up" style="margin-top: 3rem;">
+                <p style="font-size: 1.1rem; color: #666; margin-bottom: 1.5rem;">Ready to leverage these powerful tools for your Microsoft Ads campaigns?</p>
+                <a href="<?php echo home_url('/contact'); ?>" class="btn-primary">Start Your Campaign Today</a>
             </div>
         </div>
     </section>    <!-- Why Bing Ads Section -->
@@ -158,8 +177,13 @@ function get_microsoft_ads_meta($key, $post_id, $defaults, $prefix = '_microsoft
                     </div>
                     <h3><?php echo esc_html(get_microsoft_ads_meta("benefit_title_{$i}", $post_id, $defaults)); ?></h3>
                     <p><?php echo esc_html(get_microsoft_ads_meta("benefit_content_{$i}", $post_id, $defaults)); ?></p>
-                </div>
-                <?php endfor; ?>
+                </div>                <?php endfor; ?>
+            </div>
+            
+            <!-- CTA after benefits section -->
+            <div class="text-center animate-on-scroll animate-fade-up" style="margin-top: 3rem;">
+                <p style="font-size: 1.1rem; color: #666; margin-bottom: 1.5rem;">Experience these Microsoft Ads benefits for your business</p>
+                <a href="<?php echo home_url('/contact'); ?>" class="btn-primary">Get Started with Microsoft Ads</a>
             </div>
         </div>
     </section>    <!-- Testimonial Section -->

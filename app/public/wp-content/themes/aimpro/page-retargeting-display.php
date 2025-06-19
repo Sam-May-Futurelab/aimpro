@@ -160,11 +160,18 @@ get_header(); ?>
                                 <div class="result-label"><?php echo esc_html($result_label); ?></div>
                             </div>
                         <?php endfor; ?>
-                    </div>
+                    </div>                </div>
+            </div>
+            
+            <!-- CTA after case study -->
+            <div class="text-center mt-2 animate-on-scroll animate-fade-up">
+                <div class="inline-cta-content">
+                    <p class="cta-text">Ready to achieve similar results for your business?</p>
+                    <a href="/contact/" class="btn btn-primary">Start Your Retargeting Campaign</a>
                 </div>
             </div>
         </div>
-    </section>    <!-- Process Section -->    <section class="process-section">
+    </section>    <!-- Process Section --><section class="process-section">
         <div class="container">
             <?php
             $process_title = get_post_meta(get_the_ID(), '_retargeting_display_process_title', true);
@@ -189,11 +196,18 @@ get_header(); ?>
                             <h3><?php echo esc_html($step_title); ?></h3>
                             <p><?php echo esc_html($step_content); ?></p>
                         </div>
-                    </div>
-                <?php endfor; ?>
+                    </div>                <?php endfor; ?>
+            </div>
+            
+            <!-- CTA after process section -->
+            <div class="text-center mt-2 animate-on-scroll animate-fade-up">
+                <div class="inline-cta-content">
+                    <p class="cta-text">Let our proven process drive your retargeting success</p>
+                    <a href="/contact/" class="btn btn-primary">Get Your Custom Strategy</a>
+                </div>
             </div>
         </div>
-    </section>    <!-- Retargeting Types Section -->    <section class="retargeting-types-section">
+    </section>    <!-- Retargeting Types Section --><section class="retargeting-types-section">
         <div class="container">
             <?php
             $types_title = get_post_meta(get_the_ID(), '_retargeting_display_types_title', true);
@@ -218,11 +232,18 @@ get_header(); ?>
                         </div>
                         <h3><?php echo esc_html($type_title); ?></h3>
                         <p><?php echo esc_html($type_content); ?></p>
-                    </div>
-                <?php endfor; ?>
+                    </div>                <?php endfor; ?>
+            </div>
+            
+            <!-- CTA after retargeting types -->
+            <div class="text-center mt-2 animate-on-scroll animate-fade-up">
+                <div class="inline-cta-content">
+                    <p class="cta-text">Which retargeting strategy is right for your business?</p>
+                    <a href="/contact/" class="btn btn-primary">Get Expert Recommendations</a>
+                </div>
             </div>
         </div>
-    </section>    <!-- Tools & Technologies -->    <section class="tools-section">
+    </section>    <!-- Tools & Technologies --><section class="tools-section">
         <div class="container">
             <?php
             $tools_title = get_post_meta(get_the_ID(), '_retargeting_display_tools_title', true);
@@ -247,11 +268,18 @@ get_header(); ?>
                         </div>
                         <h3><?php echo esc_html($tool_title); ?></h3>
                         <p><?php echo esc_html($tool_content); ?></p>
-                    </div>
-                <?php endfor; ?>
+                    </div>                <?php endfor; ?>
+            </div>
+            
+            <!-- CTA after tools section -->
+            <div class="text-center mt-2 animate-on-scroll animate-fade-up">
+                <div class="inline-cta-content">
+                    <p class="cta-text">Experience the power of our advanced retargeting tools</p>
+                    <a href="/contact/" class="btn btn-primary">Launch Your Campaign Today</a>
+                </div>
             </div>
         </div>
-    </section>    <!-- Industries Section -->    <section class="industries-section">
+    </section>    <!-- Industries Section --><section class="industries-section">
         <div class="container">
             <?php
             $industries_title = get_post_meta(get_the_ID(), '_retargeting_display_industries_title', true);
