@@ -552,7 +552,96 @@ get_header(); ?>
                     </div>
                 </div>
             </div>
-        </section>        <!-- CTA Section -->
+        </section>
+
+        <!-- Free Download Section -->
+        <?php 
+        $pdf_id = get_post_meta(get_the_ID(), '_download_pdf_id', true);
+        $pdf_title = get_post_meta(get_the_ID(), '_download_pdf_title', true);
+        $pdf_description = get_post_meta(get_the_ID(), '_download_pdf_description', true);
+        
+        if ($pdf_id && $pdf_title): ?>
+        <section class="pdf-download-section" style="background: #f8f9fa; padding: 4rem 0;">
+            <div class="container">
+                <div class="download-content" style="max-width: 600px; margin: 0 auto; text-align: center;">
+                    <div class="download-icon" style="margin-bottom: 2rem;">
+                        <i class="fas fa-file-pdf" style="font-size: 4rem; color: #d73502;"></i>
+                    </div>
+                    <h2 style="color: #333; margin-bottom: 1rem;"><?php echo esc_html($pdf_title); ?></h2>
+                    <?php if ($pdf_description): ?>
+                        <p style="color: #666; font-size: 1.1rem; margin-bottom: 2rem;"><?php echo esc_html($pdf_description); ?></p>
+                    <?php endif; ?>
+                    
+                    <form id="pdf-download-form" style="background: white; padding: 2rem; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
+                        <div class="form-group" style="margin-bottom: 1.5rem;">
+                            <input type="email" id="download-email" name="email" placeholder="Enter your email address" required 
+                                   style="width: 100%; padding: 1rem; border: 1px solid #ddd; border-radius: 4px; font-size: 1rem;" />
+                        </div>
+                        <button type="submit" class="btn-primary" style="width: 100%; padding: 1rem 2rem; background: #0066cc; color: white; border: none; border-radius: 4px; font-size: 1.1rem; cursor: pointer;">
+                            <i class="fas fa-download" style="margin-right: 0.5rem;"></i>
+                            Download Free PDF
+                        </button>
+                        <p style="font-size: 0.9rem; color: #666; margin-top: 1rem;">
+                            We respect your privacy. Unsubscribe anytime.
+                        </p>
+                        <?php wp_nonce_field('pdf_download_nonce', 'pdf_nonce'); ?>
+                        <input type="hidden" name="pdf_id" value="<?php echo esc_attr($pdf_id); ?>" />
+                    </form>
+                    
+                    <div id="download-success" style="display: none; text-align: center; margin-top: 2rem;">
+                        <div style="background: #d4edda; color: #155724; padding: 1rem; border-radius: 4px; margin-bottom: 1rem;">
+                            <i class="fas fa-check-circle" style="margin-right: 0.5rem;"></i>
+                            Thank you! Your download will start automatically.
+                        </div>
+                        <a id="download-link" href="#" class="btn-primary" style="display: inline-block; padding: 1rem 2rem; text-decoration: none;">
+                            <i class="fas fa-download" style="margin-right: 0.5rem;"></i>
+                            Click here if download doesn't start
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <script>
+        jQuery(document).ready(function($) {
+            $('#pdf-download-form').on('submit', function(e) {
+                e.preventDefault();
+                
+                var email = $('#download-email').val();
+                var pdfId = $('input[name="pdf_id"]').val();
+                var nonce = $('input[name="pdf_nonce"]').val();
+                
+                $.ajax({
+                    url: '<?php echo admin_url('admin-ajax.php'); ?>',
+                    type: 'POST',
+                    data: {
+                        action: 'pdf_download',
+                        email: email,
+                        pdf_id: pdfId,
+                        nonce: nonce
+                    },
+                    success: function(response) {
+                        if (response.success) {
+                            $('#pdf-download-form').hide();
+                            $('#download-success').show();
+                            $('#download-link').attr('href', response.data.download_url);
+                            
+                            // Auto-start download
+                            window.location.href = response.data.download_url;
+                        } else {
+                            alert('Error: ' + response.data);
+                        }
+                    },
+                    error: function() {
+                        alert('Something went wrong. Please try again.');
+                    }
+                });
+            });
+        });
+        </script>
+        <?php endif; ?>
+
+        <!-- CTA Section -->
         <section class="website-cta text-center">
             <div class="section-content">
                 <h2 class="animate-on-scroll animate-fade-up"><?php echo get_post_meta(get_the_ID(), 'high_converting_website_cta_title', true) ?: 'Ready to Build a High-Converting Website?'; ?></h2>
