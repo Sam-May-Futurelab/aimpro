@@ -153,10 +153,9 @@ get_header(); ?>
                                 )
                             )
                         );
-                        
-                        foreach ($default_services as $service) {
+                          foreach ($default_services as $service) {
                             ?>
-                            <div class="service-card">
+                            <div class="service-card animate-on-scroll animate-stagger animate-fade-up">
                                 <div class="service-icon">
                                     <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <rect x="2" y="3" width="20" height="14" rx="2" ry="2" stroke="currentColor" stroke-width="2"/>
@@ -184,7 +183,7 @@ get_header(); ?>
         <section class="website-case-study">
             <div class="section-content">
                 <div class="case-study-content">
-                    <div class="case-study-text">
+                    <div class="case-study-text animate-on-scroll animate-slide-left">
                         <span class="case-study-label"><?php echo get_post_meta(get_the_ID(), 'high_converting_website_case_study_label', true) ?: 'Success Story'; ?></span>
                         <h2><?php echo get_post_meta(get_the_ID(), 'high_converting_website_case_study_title', true) ?: 'FlexiFit: 280% Conversion Rate Improvement'; ?></h2>
                         <p><?php echo get_post_meta(get_the_ID(), 'high_converting_website_case_study_description', true) ?: 'FlexiFit, an online fitness equipment retailer, had high traffic but poor conversion rates due to a confusing checkout process and weak value propositions.'; ?></p>
@@ -246,15 +245,14 @@ get_header(); ?>
         </section>        <!-- Website Optimization Process -->
         <section class="website-process">
             <div class="section-content">
-                <h2><?php echo get_post_meta(get_the_ID(), 'high_converting_website_process_title', true) ?: 'Our Website Optimization Process'; ?></h2>
-                <div class="process-steps">
-                    <?php
+                <h2 class="animate-on-scroll animate-fade-up"><?php echo get_post_meta(get_the_ID(), 'high_converting_website_process_title', true) ?: 'Our Website Optimization Process'; ?></h2>
+                <div class="process-steps">                    <?php
                     $steps = get_post_meta(get_the_ID(), 'high_converting_website_process_steps', true);
                     if (!empty($steps) && is_array($steps)) {
                         $step_count = 1;
                         foreach ($steps as $step) {
                             ?>
-                            <div class="process-step">
+                            <div class="process-step animate-on-scroll animate-stagger animate-fade-up">
                                 <div class="step-number"><?php echo $step_count; ?></div>
                                 <div class="step-content">
                                     <h3><?php echo esc_html($step['title']); ?></h3>
@@ -288,7 +286,7 @@ get_header(); ?>
                         $step_count = 1;
                         foreach ($default_steps as $step) {
                             ?>
-                            <div class="process-step">
+                            <div class="process-step animate-on-scroll animate-stagger animate-fade-up">
                                 <div class="step-number"><?php echo $step_count; ?></div>
                                 <div class="step-content">
                                     <h3><?php echo esc_html($step['title']); ?></h3>
@@ -301,21 +299,21 @@ get_header(); ?>
                     }
                     ?>
                 </div>
-                <div class="process-cta">
+                <div class="process-cta animate-on-scroll animate-scale-up">
                     <a href="<?php echo home_url('/contact'); ?>" class="btn-primary process-cta-btn">Build Your High-Converting Website</a>
                 </div>
             </div>
         </section>        <!-- Conversion Elements -->
         <section class="conversion-elements tools-section">
             <div class="section-content">
-                <h2><?php echo get_post_meta(get_the_ID(), 'high_converting_website_elements_title', true) ?: 'Key Conversion Elements We Optimize'; ?></h2>
+                <h2 class="animate-on-scroll animate-fade-up"><?php echo get_post_meta(get_the_ID(), 'high_converting_website_elements_title', true) ?: 'Key Conversion Elements We Optimize'; ?></h2>
                 <div class="tools-grid">
                     <?php
                     $elements = get_post_meta(get_the_ID(), 'high_converting_website_elements', true);
                     if (!empty($elements) && is_array($elements)) {
                         foreach ($elements as $element) {
                             ?>
-                            <div class="tools-category">
+                            <div class="tools-category animate-on-scroll animate-stagger animate-fade-up">
                                 <h3><?php echo esc_html($element['title']); ?></h3>
                                 <p><?php echo esc_html($element['description']); ?></p>
                                 <?php if (!empty($element['features']) && is_array($element['features'])) : ?>
@@ -333,7 +331,7 @@ get_header(); ?>
                     } else {
                         // Default elements with new styling
                         ?>
-                        <div class="tools-category">
+                        <div class="tools-category animate-on-scroll animate-stagger animate-fade-up">
                             <h3>Value Propositions</h3>
                             <p>Clear, compelling messaging that communicates your unique value and benefits.</p>
                             <ul class="tools-list">
@@ -352,7 +350,7 @@ get_header(); ?>
                             </ul>
                         </div>
                         
-                        <div class="tools-category">
+                        <div class="tools-category animate-on-scroll animate-stagger animate-fade-up">
                             <h3>Call-to-Action (CTA)</h3>
                             <p>Strategic placement and design of CTAs that guide users toward conversion.</p>
                             <ul class="tools-list">
@@ -371,7 +369,7 @@ get_header(); ?>
                             </ul>
                         </div>
                         
-                        <div class="tools-category">
+                        <div class="tools-category animate-on-scroll animate-stagger animate-fade-up">
                             <h3>Trust Signals</h3>
                             <p>Elements that build credibility and reduce purchase anxiety.</p>
                             <ul class="tools-list">
@@ -390,7 +388,7 @@ get_header(); ?>
                             </ul>
                         </div>
                         
-                        <div class="tools-category">
+                        <div class="tools-category animate-on-scroll animate-stagger animate-fade-up">
                             <h3>User Experience</h3>
                             <p>Smooth, intuitive navigation and user flow optimization.</p>
                             <ul class="tools-list">
@@ -416,14 +414,14 @@ get_header(); ?>
         </section><!-- Website Types -->
         <section class="website-types">
             <div class="section-content">
-                <h2><?php echo get_post_meta(get_the_ID(), 'high_converting_website_types_title', true) ?: 'Website Optimization by Type'; ?></h2>
+                <h2 class="animate-on-scroll animate-fade-up"><?php echo get_post_meta(get_the_ID(), 'high_converting_website_types_title', true) ?: 'Website Optimization by Type'; ?></h2>
                 <div class="types-grid">
                     <?php
                     $types = get_post_meta(get_the_ID(), 'high_converting_website_types', true);
                     if (!empty($types) && is_array($types)) {
                         foreach ($types as $type) {
                             ?>
-                            <div class="type-card">
+                            <div class="type-card animate-on-scroll animate-stagger animate-fade-up">
                                 <h3><?php echo esc_html($type['title']); ?></h3>
                                 <?php if (!empty($type['features']) && is_array($type['features'])) : ?>
                                     <ul class="type-features">
@@ -472,10 +470,9 @@ get_header(); ?>
                                 'result' => 'Average: 180% inquiry increase'
                             )
                         );
-                        
-                        foreach ($default_types as $type) {
+                          foreach ($default_types as $type) {
                             ?>
-                            <div class="type-card">
+                            <div class="type-card animate-on-scroll animate-stagger animate-fade-up">
                                 <h3><?php echo esc_html($type['title']); ?></h3>
                                 <ul class="type-features">
                                     <?php foreach ($type['features'] as $feature) : ?>
@@ -495,14 +492,13 @@ get_header(); ?>
         </section>        <!-- Conversion Tools -->
         <section class="conversion-tools">
             <div class="section-content">
-                <h2><?php echo get_post_meta(get_the_ID(), 'high_converting_website_tools_title', true) ?: 'Conversion Optimization Tools'; ?></h2>
+                <h2 class="animate-on-scroll animate-fade-up"><?php echo get_post_meta(get_the_ID(), 'high_converting_website_tools_title', true) ?: 'Conversion Optimization Tools'; ?></h2>
                 <div class="tools-grid">
-                    <?php
-                    $tools = get_post_meta(get_the_ID(), 'high_converting_website_tools', true);
+                    <?php                    $tools = get_post_meta(get_the_ID(), 'high_converting_website_tools', true);
                     if (!empty($tools) && is_array($tools)) {
                         foreach ($tools as $tool) {
                             ?>
-                            <div class="tool-category">
+                            <div class="tool-category animate-on-scroll animate-stagger animate-fade-up">
                                 <h3><?php echo esc_html($tool['category']); ?></h3>
                                 <?php if (!empty($tool['tools']) && is_array($tool['tools'])) : ?>
                                     <ul class="tool-list">
@@ -548,7 +544,7 @@ get_header(); ?>
                         
                         foreach ($default_tools as $tool) {
                             ?>
-                            <div class="tool-category">
+                            <div class="tool-category animate-on-scroll animate-stagger animate-fade-up">
                                 <h3><?php echo esc_html($tool['category']); ?></h3>
                                 <ul class="tool-list">
                                     <?php foreach ($tool['tools'] as $item) : ?>
@@ -565,7 +561,7 @@ get_header(); ?>
         </section>        <!-- Website Testimonial -->
         <section class="website-testimonial">
             <div class="section-content">
-                <div class="testimonial-content">
+                <div class="testimonial-content animate-on-scroll animate-fade-up">
                     <blockquote>
                         <?php echo get_post_meta(get_the_ID(), 'high_converting_website_testimonial_quote', true) ?: 'The website redesign Aimpro Digital delivered exceeded all expectations. Our conversion rate increased by 280% and our online sales have tripled. The user experience is now seamless and professional.'; ?>
                     </blockquote>
@@ -581,12 +577,12 @@ get_header(); ?>
         </section>        <!-- CTA Section -->
         <section class="website-cta text-center">
             <div class="section-content">
-                <h2><?php echo get_post_meta(get_the_ID(), 'high_converting_website_cta_title', true) ?: 'Ready to Build a High-Converting Website?'; ?></h2>
-                <p><?php echo get_post_meta(get_the_ID(), 'high_converting_website_cta_description', true) ?: 'Let\'s create a website that not only looks great but converts visitors into customers at a higher rate.'; ?></p>
-                <div class="cta-buttons">
+                <h2 class="animate-on-scroll animate-fade-up"><?php echo get_post_meta(get_the_ID(), 'high_converting_website_cta_title', true) ?: 'Ready to Build a High-Converting Website?'; ?></h2>
+                <p class="animate-on-scroll animate-fade-up"><?php echo get_post_meta(get_the_ID(), 'high_converting_website_cta_description', true) ?: 'Let\'s create a website that not only looks great but converts visitors into customers at a higher rate.'; ?></p>
+                <div class="cta-buttons animate-on-scroll animate-scale-up">
                     <a href="<?php echo get_post_meta(get_the_ID(), 'high_converting_website_cta_primary_link', true) ?: home_url('/contact'); ?>" class="btn btn-primary"><?php echo get_post_meta(get_the_ID(), 'high_converting_website_cta_primary_text', true) ?: 'Get Free Website Audit'; ?></a>
                     <a href="<?php echo get_post_meta(get_the_ID(), 'high_converting_website_cta_secondary_link', true) ?: home_url('/case-studies'); ?>" class="btn btn-secondary"><?php echo get_post_meta(get_the_ID(), 'high_converting_website_cta_secondary_text', true) ?: 'View Website Success Stories'; ?></a>
-                </div>                <div class="cta-benefits">
+                </div>                <div class="cta-benefits animate-on-scroll animate-fade-up">
                     <?php
                     $benefits = get_post_meta(get_the_ID(), 'high_converting_website_cta_benefits', true);
                     if (!empty($benefits) && is_array($benefits)) {

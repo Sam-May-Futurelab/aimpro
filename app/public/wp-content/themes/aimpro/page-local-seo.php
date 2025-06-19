@@ -133,7 +133,7 @@ $header_subtitle = get_post_meta(get_the_ID(), '_local_seo_header_subtitle', tru
         <section class="local-seo-case-study">
             <div class="section-content">
                 <div class="case-study-content">
-                    <div class="case-study-text">
+                    <div class="case-study-text animate-on-scroll animate-slide-left">
                         <?php
                         $case_study_label = get_post_meta(get_the_ID(), '_local_seo_case_study_label', true) ?: $defaults['case_study_label'];
                         $case_study_title = get_post_meta(get_the_ID(), '_local_seo_case_study_title', true) ?: $defaults['case_study_title'];
@@ -165,7 +165,7 @@ $header_subtitle = get_post_meta(get_the_ID(), '_local_seo_header_subtitle', tru
                             </ul>
                         </div>
                     </div>
-                    <div class="case-study-results">
+                    <div class="case-study-results animate-on-scroll animate-slide-right">
                         <?php
                         $case_study_results_title = get_post_meta(get_the_ID(), '_local_seo_case_study_results_title', true) ?: $defaults['case_study_results_title'];
                         $case_study_results = get_post_meta(get_the_ID(), '_local_seo_case_study_results', true) ?: $defaults['case_study_results'];
@@ -175,7 +175,7 @@ $header_subtitle = get_post_meta(get_the_ID(), '_local_seo_header_subtitle', tru
                         <h3><?php echo esc_html($case_study_results_title); ?></h3>
                         <div class="results-grid">
                             <?php foreach ((array)$case_study_results as $result): ?>
-                                <div class="result-item">
+                                <div class="result-item animate-on-scroll animate-stagger animate-scale-up">
                                     <div class="result-number"><?php echo esc_html($result['number']); ?></div>
                                     <div class="result-label"><?php echo esc_html($result['label']); ?></div>
                                 </div>
@@ -191,14 +191,14 @@ $header_subtitle = get_post_meta(get_the_ID(), '_local_seo_header_subtitle', tru
                 <?php
                 $process_title = get_post_meta(get_the_ID(), '_local_seo_process_title', true) ?: $defaults['process_title'];
                 ?>
-                <h2><?php echo esc_html($process_title); ?></h2>
+                <h2 class="animate-on-scroll animate-fade-up"><?php echo esc_html($process_title); ?></h2>
                 <div class="process-steps">
                     
                     <?php for ($i = 1; $i <= 4; $i++): 
                         $step_title = get_post_meta(get_the_ID(), "_local_seo_process_step_{$i}_title", true) ?: $defaults["process_step_{$i}_title"];
                         $step_description = get_post_meta(get_the_ID(), "_local_seo_process_step_{$i}_description", true) ?: $defaults["process_step_{$i}_description"];
                     ?>
-                    <div class="process-step">
+                    <div class="process-step animate-on-scroll animate-stagger animate-fade-up">
                         <div class="step-number"><?php echo $i; ?></div>
                         <div class="step-content">
                             <h3><?php echo esc_html($step_title); ?></h3>
@@ -215,14 +215,14 @@ $header_subtitle = get_post_meta(get_the_ID(), '_local_seo_header_subtitle', tru
                 <?php
                 $industries_title = get_post_meta(get_the_ID(), '_local_seo_industries_title', true) ?: $defaults['industries_title'];
                 ?>
-                <h2><?php echo esc_html($industries_title); ?></h2>
+                <h2 class="animate-on-scroll animate-fade-up"><?php echo esc_html($industries_title); ?></h2>
                 <div class="industries-grid">
                     
                     <?php for ($i = 1; $i <= 4; $i++): 
                         $industry_title = get_post_meta(get_the_ID(), "_local_seo_industry_{$i}_title", true) ?: $defaults["industry_{$i}_title"];
                         $industry_features = get_post_meta(get_the_ID(), "_local_seo_industry_{$i}_features", true) ?: $defaults["industry_{$i}_features"];
                     ?>
-                    <div class="industry-card">
+                    <div class="industry-card animate-on-scroll animate-stagger animate-fade-up">
                         <h3><?php echo esc_html($industry_title); ?></h3>
                         <ul class="industry-features">
                             <?php foreach ((array)$industry_features as $feature): ?>
@@ -234,15 +234,13 @@ $header_subtitle = get_post_meta(get_the_ID(), '_local_seo_header_subtitle', tru
 
                 </div>
             </div>
-        </section>
-
-        <!-- Local SEO Tools -->
+        </section>        <!-- Local SEO Tools -->
         <section class="local-seo-tools">
             <div class="section-content">
-                <h2>Local SEO Tools & Platforms</h2>
+                <h2 class="animate-on-scroll animate-fade-up">Local SEO Tools & Platforms</h2>
                 <div class="tools-grid">
                     
-                    <div class="tool-category">
+                    <div class="tool-category animate-on-scroll animate-stagger animate-fade-up">
                         <h3>Google Platforms</h3>
                         <ul class="tool-list">
                             <li>Google My Business</li>
@@ -252,7 +250,7 @@ $header_subtitle = get_post_meta(get_the_ID(), '_local_seo_header_subtitle', tru
                         </ul>
                     </div>
 
-                    <div class="tool-category">
+                    <div class="tool-category animate-on-scroll animate-stagger animate-fade-up">
                         <h3>Local SEO Tools</h3>
                         <ul class="tool-list">
                             <li>BrightLocal</li>
@@ -262,7 +260,7 @@ $header_subtitle = get_post_meta(get_the_ID(), '_local_seo_header_subtitle', tru
                         </ul>
                     </div>
 
-                    <div class="tool-category">
+                    <div class="tool-category animate-on-scroll animate-stagger animate-fade-up">
                         <h3>Review Management</h3>
                         <ul class="tool-list">
                             <li>ReviewTrackers</li>
@@ -272,7 +270,7 @@ $header_subtitle = get_post_meta(get_the_ID(), '_local_seo_header_subtitle', tru
                         </ul>
                     </div>
 
-                    <div class="tool-category">
+                    <div class="tool-category animate-on-scroll animate-stagger animate-fade-up">
                         <h3>Citation Management</h3>
                         <ul class="tool-list">
                             <li>Yext</li>
@@ -284,12 +282,10 @@ $header_subtitle = get_post_meta(get_the_ID(), '_local_seo_header_subtitle', tru
 
                 </div>
             </div>
-        </section>
-
-        <!-- Local SEO Testimonial -->
+        </section>        <!-- Local SEO Testimonial -->
         <section class="local-seo-testimonial">
             <div class="section-content">
-                <div class="testimonial-content">
+                <div class="testimonial-content animate-on-scroll animate-fade-up">
                     <blockquote>
                         "The local SEO work Aimpro Digital did for our dental practice was phenomenal. We went from being invisible in local search to ranking #1 for 'dentist Birmingham' and have seen a 65% increase in new patients. The team's expertise in local SEO is outstanding."
                     </blockquote>                    <div class="testimonial-author">
@@ -306,12 +302,12 @@ $header_subtitle = get_post_meta(get_the_ID(), '_local_seo_header_subtitle', tru
         <!-- CTA Section -->
         <section class="local-seo-cta">
             <div class="section-content">
-                <h2>Ready to Dominate Local Search?</h2>
-                <p>Let's get your business ranking #1 in local search results and attract more customers in your area.</p>
-                <div class="cta-buttons">
+                <h2 class="animate-on-scroll animate-fade-up">Ready to Dominate Local Search?</h2>
+                <p class="animate-on-scroll animate-fade-up">Let's get your business ranking #1 in local search results and attract more customers in your area.</p>
+                <div class="cta-buttons animate-on-scroll animate-scale-up">
                     <a href="<?php echo home_url('/contact'); ?>" class="btn btn-primary">Get Free Local SEO Audit</a>
                     <a href="<?php echo home_url('/case-studies'); ?>" class="btn btn-secondary">View Local SEO Results</a>
-                </div>                <div class="cta-benefits">
+                </div>                <div class="cta-benefits animate-on-scroll animate-fade-up">
                     <span class="benefit"><i class="fas fa-check" aria-hidden="true"></i> Local market analysis included</span>
                     <span class="benefit"><i class="fas fa-check" aria-hidden="true"></i> Google My Business optimization</span>
                     <span class="benefit"><i class="fas fa-check" aria-hidden="true"></i> Citation audit and cleanup</span>
