@@ -29,8 +29,8 @@ get_header(); ?>
 }
 .step-number {
     display: inline-flex !important;
-    align-items: centre !important;
-    justify-content: centre !important;
+    align-items: center !important;
+    justify-content: center !important;
     width: 24px !important;
     height: 24px !important;
     min-width: 24px !important;
@@ -46,7 +46,7 @@ get_header(); ?>
     position: relative !important;
     top: 0 !important;
     left: 0 !important;
-    text-align: centre !important;
+    text-align: center !important;
     flex-shrink: 0 !important;
 }
 .step-title {
@@ -454,3 +454,4 @@ get_header(); ?>
 </main>
 
 <?php get_footer(); ?>
+

@@ -7,12 +7,12 @@
 <html <?php language_attributes(); ?>>
 <head>    <meta charset="<?php bloginfo('charset'); ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="profile" href="https://gmpg.org/xfn/11">
-      <!-- Favicon -->
-    <link rel="icon" href="<?php echo get_template_directory_uri(); ?>/assets/images/favicon/favicon.ico" sizes="32x32">
-    <link rel="icon" href="<?php echo get_template_directory_uri(); ?>/assets/images/favicon/favicon.svg" type="image/svg+xml">
-    <link rel="apple-touch-icon" href="<?php echo get_template_directory_uri(); ?>/assets/images/favicon/apple-touch-icon.png">
-    <link rel="manifest" href="<?php echo get_template_directory_uri(); ?>/assets/images/favicon/site.webmanifest">
+    <link rel="profile" href="https://gmpg.org/xfn/11">    <!-- Favicon -->
+    <link rel="icon" href="<?php echo get_template_directory_uri(); ?>/assets/images/favicon/favicon.ico?v=2" sizes="32x32">
+    <link rel="icon" href="<?php echo get_template_directory_uri(); ?>/assets/images/favicon/favicon.svg?v=2" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="<?php echo get_template_directory_uri(); ?>/assets/images/favicon/apple-touch-icon.png?v=2">
+    <link rel="manifest" href="<?php echo get_template_directory_uri(); ?>/assets/images/favicon/site.webmanifest?v=2">
+    <link rel="shortcut icon" href="<?php echo get_template_directory_uri(); ?>/assets/images/favicon/favicon.ico?v=2" type="image/x-icon">
     
     <!-- Theme colour for mobile browsers -->
     <meta name="theme-colour" content="#f15a25">

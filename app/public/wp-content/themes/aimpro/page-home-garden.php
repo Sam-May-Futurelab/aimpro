@@ -346,7 +346,7 @@ $services = get_post_meta(get_the_ID(), '_home_garden_services', true) ?: array(
                 </div>
             </div>
         </section>        <!-- CTA Section -->
-        <section class="home-garden-cta text-centre animate-on-scroll animate-fade-up">
+        <section class="home-garden-cta text-center animate-on-scroll animate-fade-up">
             <div class="section-content">
                 <?php 
                 $cta_title = get_post_meta(get_the_ID(), '_home_garden_cta_title', true) ?: 'Ready to Grow Your Home & Garden Business?';
@@ -389,3 +389,4 @@ $services = get_post_meta(get_the_ID(), '_home_garden_services', true) ?: array(
 </style>
 
 <?php get_footer(); ?>
+

@@ -78,7 +78,7 @@ function get_microsoft_ads_meta($key, $post_id, $defaults, $prefix = '_microsoft
             </div>
             
             <!-- CTA after services overview -->
-            <div class="text-centre animate-on-scroll animate-fade-up" style="margin-top: 3rem;">
+            <div class="text-center animate-on-scroll animate-fade-up" style="margin-top: 3rem;">
                 <a href="<?php echo home_url('/contact'); ?>" class="btn-primary">Get Your Microsoft Ads Strategy</a>
             </div>
         </div>
@@ -121,7 +121,7 @@ function get_microsoft_ads_meta($key, $post_id, $defaults, $prefix = '_microsoft
             </div>
             
             <!-- CTA after case study results -->
-            <div class="text-centre animate-on-scroll animate-fade-up" style="margin-top: 3rem;">
+            <div class="text-center animate-on-scroll animate-fade-up" style="margin-top: 3rem;">
                 <p style="font-size: 1.1rem; colour: #666; margin-bottom: 1.5rem;">Ready to achieve similar results with Microsoft Ads?</p>
                 <a href="<?php echo home_url('/contact'); ?>" class="btn-primary">Start Your Microsoft Ads Campaign</a>
             </div>
@@ -141,7 +141,7 @@ function get_microsoft_ads_meta($key, $post_id, $defaults, $prefix = '_microsoft
         </div>
         
         <!-- CTA after process section -->
-        <div class="text-centre animate-on-scroll animate-fade-up" style="margin-top: 3rem;">
+        <div class="text-center animate-on-scroll animate-fade-up" style="margin-top: 3rem;">
             <p style="font-size: 1.1rem; colour: #666; margin-bottom: 1.5rem;">Let us implement this proven process for your business</p>
             <a href="<?php echo home_url('/contact'); ?>" class="btn-primary">Get Expert Microsoft Ads Management</a>
         </div>    </section><!-- Tools & Technologies -->
@@ -160,7 +160,7 @@ function get_microsoft_ads_meta($key, $post_id, $defaults, $prefix = '_microsoft
                 <?php endfor; ?>            </div>
             
             <!-- CTA after tools section -->
-            <div class="text-centre animate-on-scroll animate-fade-up" style="margin-top: 3rem;">
+            <div class="text-center animate-on-scroll animate-fade-up" style="margin-top: 3rem;">
                 <p style="font-size: 1.1rem; colour: #666; margin-bottom: 1.5rem;">Ready to leverage these powerful tools for your Microsoft Ads campaigns?</p>
                 <a href="<?php echo home_url('/contact'); ?>" class="btn-primary">Start Your Campaign Today</a>
             </div>
@@ -181,7 +181,7 @@ function get_microsoft_ads_meta($key, $post_id, $defaults, $prefix = '_microsoft
             </div>
             
             <!-- CTA after benefits section -->
-            <div class="text-centre animate-on-scroll animate-fade-up" style="margin-top: 3rem;">
+            <div class="text-center animate-on-scroll animate-fade-up" style="margin-top: 3rem;">
                 <p style="font-size: 1.1rem; colour: #666; margin-bottom: 1.5rem;">Experience these Microsoft Ads benefits for your business</p>
                 <a href="<?php echo home_url('/contact'); ?>" class="btn-primary">Get Started with Microsoft Ads</a>
             </div>
@@ -213,3 +213,4 @@ function get_microsoft_ads_meta($key, $post_id, $defaults, $prefix = '_microsoft
 </main>
 
 <?php get_footer(); ?>
+

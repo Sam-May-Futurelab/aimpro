@@ -587,7 +587,7 @@ get_header(); ?>
             </div>
         </section>
         <!-- CTA Section -->
-        <section class="website-cta text-centre">
+        <section class="website-cta text-center">
             <div class="section-content">
                 <h2><?php echo get_post_meta(get_the_ID(), 'streamline_sales_funnel_cta_title', true) ?: 'Ready to Streamline Your Sales Funnel?'; ?></h2>
                 <p><?php echo get_post_meta(get_the_ID(), 'streamline_sales_funnel_cta_description', true) ?: 'Let\'s optimise your sales funnel for maximum conversions and business growth.'; ?></p>
@@ -615,3 +615,4 @@ get_header(); ?>
 </main>
 
 <?php get_footer(); ?>
+

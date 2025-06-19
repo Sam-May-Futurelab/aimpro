@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 /**
  * Template Name: Professional Services Industry Page
  * Description: Digital marketing for professional services firms
@@ -293,7 +293,7 @@ get_header(); ?>
                 </div>
             </div>
         </section>        <!-- CTA Section -->        
-        <section class="professional-cta text-centre animate-on-scroll animate-fade-up">
+        <section class="professional-cta text-center animate-on-scroll animate-fade-up">
             <div class="section-content">
                 <h2 class="animate-on-scroll animate-fade-up"><?php echo esc_html(get_post_meta(get_the_ID(), '_professional_services_cta_title', true) ?: 'Ready to Elevate Your Professional Practice?'); ?></h2>
                 <p class="animate-on-scroll animate-fade-up"><?php echo esc_html(get_post_meta(get_the_ID(), '_professional_services_cta_subtitle', true) ?: 'Let\'s discuss how our professional services marketing expertise can generate high-quality leads for your firm.'); ?></p>
@@ -321,3 +321,4 @@ get_header(); ?>
 </main>
 
 <?php get_footer(); ?>
+

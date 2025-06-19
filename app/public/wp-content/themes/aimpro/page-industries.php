@@ -32,7 +32,7 @@ get_header(); ?>
                 <div class="intro-content animate-on-scroll animate-slide-left">
                     <h2><?php echo esc_html(get_post_meta(get_the_ID(), '_industries_intro_title', true) ?: 'Industry-Specific Digital Marketing Solutions'); ?></h2>
                     <p><?php echo esc_html(get_post_meta(get_the_ID(), '_industries_intro_content', true) ?: 'Every industry has unique challenges, customer behaviours, and marketing opportunities. Our team brings deep sector expertise and proven strategies tailored to your specific market, ensuring maximum ROI and sustainable growth.'); ?></p>
-                </div>                <div class="industry-stats animate-on-scroll animate-slide-right" style="display: flex !important; justify-content: centre !important; align-items: centre !important; text-align: centre !important; flex-wrap: wrap !important; gap: 2rem !important;">
+                </div>                <div class="industry-stats animate-on-scroll animate-slide-right" style="display: flex !important; justify-content: center !important; align-items: center !important; text-align: center !important; flex-wrap: wrap !important; gap: 2rem !important;">
                     <?php 
                     $industry_stats = get_post_meta(get_the_ID(), '_industries_stats', true);
                     if (empty($industry_stats)) {
@@ -280,3 +280,4 @@ get_header(); ?>
 </main>
 
 <?php get_footer(); ?>
+

@@ -12,8 +12,8 @@ get_header(); ?>
 <style>
 .tools-section .tool-icon {
     display: flex;
-    justify-content: centre;
-    align-items: centre;
+    justify-content: center;
+    align-items: center;
     margin: 0 auto 15px;
 }
 .tools-section .tool-icon i {
@@ -132,7 +132,7 @@ get_header(); ?>
                         <span class="stat-label">Bounce Rate Reduction</span>
                     </div>
                     
-                    <div class="overview-cta animate-on-scroll animate-fade-up" style="margin-top: 30px; text-align: centre;">
+                    <div class="overview-cta animate-on-scroll animate-fade-up" style="margin-top: 30px; text-align: center;">
                         <a href="<?php echo home_url('/contact'); ?>" class="btn-primary">Get a Free UX Audit</a>
                     </div>
                 </div>
@@ -446,37 +446,37 @@ get_header(); ?>
         </div>
     </section>    <!-- Tools & Analytics -->
     <section class="tools-section">
-        <div class="container" style="text-align: centre;">
+        <div class="container" style="text-align: center;">
             <div class="section-header animate-on-scroll animate-fade-up">
                 <h2 style="margin-bottom: 20px;">UX/UI Analysis Tools & Technologies</h2>
                 <p style="max-width: 800px; margin: 0 auto 30px;">We use industry-leading tools and technologies to analyse, test, and optimise your website for maximum performance.</p>
             </div>
             
             <h3 class="tools-category animate-on-scroll animate-fade-up">Analytics & Research</h3>
-            <div class="tools-grid animate-on-scroll animate-stagger animate-scale-up" style="justify-content: centre;">
-                <div class="tool-item" style="text-align: centre;">
-                    <div class="tool-icon" style="text-align: centre; display: flex; justify-content: centre;">
+            <div class="tools-grid animate-on-scroll animate-stagger animate-scale-up" style="justify-content: center;">
+                <div class="tool-item" style="text-align: center;">
+                    <div class="tool-icon" style="text-align: center; display: flex; justify-content: center;">
                         <i class="fab fa-google"></i>
                     </div>
                     <h3>Google Analytics</h3>
                     <p>Comprehensive website analytics platform for tracking user behaviour</p>
                 </div>
-                <div class="tool-item" style="text-align: centre;">
-                    <div class="tool-icon" style="text-align: centre; display: flex; justify-content: centre;">
+                <div class="tool-item" style="text-align: center;">
+                    <div class="tool-icon" style="text-align: center; display: flex; justify-content: center;">
                         <i class="fas fa-mouse-pointer"></i>
                     </div>
                     <h3>Hotjar</h3>
                     <p>Heatmaps, session recordings, and user feedback tools</p>
                 </div>
-                <div class="tool-item" style="text-align: centre;">
-                    <div class="tool-icon" style="text-align: centre; display: flex; justify-content: centre;">
+                <div class="tool-item" style="text-align: center;">
+                    <div class="tool-icon" style="text-align: center; display: flex; justify-content: center;">
                         <i class="fas fa-eye"></i>
                     </div>
                     <h3>Crazy Egg & FullStory</h3>
                     <p>User behaviour visualization and scroll depth tracking</p>
                 </div>
-                <div class="tool-item" style="text-align: centre;">
-                    <div class="tool-icon" style="text-align: centre; display: flex; justify-content: centre;">
+                <div class="tool-item" style="text-align: center;">
+                    <div class="tool-icon" style="text-align: center; display: flex; justify-content: center;">
                         <i class="fas fa-users"></i>
                     </div>
                     <h3>UserTesting & Clarity</h3>
@@ -485,30 +485,30 @@ get_header(); ?>
             </div>
             
             <h3 class="tools-category animate-on-scroll animate-fade-up">Testing & optimisation</h3>
-            <div class="tools-grid animate-on-scroll animate-stagger animate-scale-up" style="justify-content: centre;">
-                <div class="tool-item" style="text-align: centre;">
-                    <div class="tool-icon" style="text-align: centre; display: flex; justify-content: centre;">
+            <div class="tools-grid animate-on-scroll animate-stagger animate-scale-up" style="justify-content: center;">
+                <div class="tool-item" style="text-align: center;">
+                    <div class="tool-icon" style="text-align: center; display: flex; justify-content: center;">
                         <i class="fab fa-google"></i>
                     </div>
                     <h3>Google optimise</h3>
                     <p>Free A/B testing platform with Google Analytics integration</p>
                 </div>
-                <div class="tool-item" style="text-align: centre;">
-                    <div class="tool-icon" style="text-align: centre; display: flex; justify-content: centre;">
+                <div class="tool-item" style="text-align: center;">
+                    <div class="tool-icon" style="text-align: center; display: flex; justify-content: center;">
                         <i class="fas fa-chart-line"></i>
                     </div>
                     <h3>optimisely</h3>
                     <p>Advanced experimentation platform for multivariate testing</p>
                 </div>
-                <div class="tool-item" style="text-align: centre;">
-                    <div class="tool-icon" style="text-align: centre; display: flex; justify-content: centre;">
+                <div class="tool-item" style="text-align: center;">
+                    <div class="tool-icon" style="text-align: center; display: flex; justify-content: center;">
                         <i class="fas fa-bullseye"></i>
                     </div>
                     <h3>VWO & Convert</h3>
                     <p>Visual editor for creating and testing UX optimisations</p>
                 </div>
-                <div class="tool-item" style="text-align: centre;">
-                    <div class="tool-icon" style="text-align: centre; display: flex; justify-content: centre;">
+                <div class="tool-item" style="text-align: center;">
+                    <div class="tool-icon" style="text-align: center; display: flex; justify-content: center;">
                         <i class="fas fa-rocket"></i>
                     </div>
                     <h3>Unbounce & AB Tasty</h3>
@@ -517,30 +517,30 @@ get_header(); ?>
             </div>
             
             <h3 class="tools-category animate-on-scroll animate-fade-up">Performance Tools</h3>
-            <div class="tools-grid animate-on-scroll animate-stagger animate-scale-up" style="justify-content: centre;">
-                <div class="tool-item" style="text-align: centre;">
-                    <div class="tool-icon" style="text-align: centre; display: flex; justify-content: centre;">
+            <div class="tools-grid animate-on-scroll animate-stagger animate-scale-up" style="justify-content: center;">
+                <div class="tool-item" style="text-align: center;">
+                    <div class="tool-icon" style="text-align: center; display: flex; justify-content: center;">
                         <i class="fas fa-tachometer-alt"></i>
                     </div>
                     <h3>Google PageSpeed</h3>
                     <p>Performance analysis and improvement recommendations</p>
                 </div>
-                <div class="tool-item" style="text-align: centre;">
-                    <div class="tool-icon" style="text-align: centre; display: flex; justify-content: centre;">
+                <div class="tool-item" style="text-align: center;">
+                    <div class="tool-icon" style="text-align: center; display: flex; justify-content: center;">
                         <i class="fas fa-stopwatch"></i>
                     </div>
                     <h3>GTmetrix</h3>
                     <p>Detailed performance analysis and optimisation scoring</p>
                 </div>
-                <div class="tool-item" style="text-align: centre;">
-                    <div class="tool-icon" style="text-align: centre; display: flex; justify-content: centre;">
+                <div class="tool-item" style="text-align: center;">
+                    <div class="tool-icon" style="text-align: center; display: flex; justify-content: center;">
                         <i class="fas fa-lightbulb"></i>
                     </div>
                     <h3>Lighthouse</h3>
                     <p>Automated website auditing tool for performance, accessibility, and SEO</p>
                 </div>
-                <div class="tool-item" style="text-align: centre;">
-                    <div class="tool-icon" style="text-align: centre; display: flex; justify-content: centre;">
+                <div class="tool-item" style="text-align: center;">
+                    <div class="tool-icon" style="text-align: center; display: flex; justify-content: center;">
                         <i class="fas fa-heartbeat"></i>
                     </div>
                     <h3>Core Web Vitals</h3>
@@ -585,7 +585,7 @@ get_header(); ?>
     <section class="faq-section">
         <div class="container">
             <div class="section-content">
-                <h2 class="animate-on-scroll animate-fade-up" style="text-align: centre;"><?php echo get_post_meta(get_the_ID(), 'uxui_faq_title', true) ?: 'Frequently Asked Questions'; ?></h2>
+                <h2 class="animate-on-scroll animate-fade-up" style="text-align: center;"><?php echo get_post_meta(get_the_ID(), 'uxui_faq_title', true) ?: 'Frequently Asked Questions'; ?></h2>
                 <div class="faq-list">
                     <div class="faq-item animate-on-scroll animate-stagger animate-fade-up">
                         <div class="faq-question">
@@ -652,3 +652,4 @@ get_header(); ?>
 </main>
 
 <?php get_footer(); ?>
+

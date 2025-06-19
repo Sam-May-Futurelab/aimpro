@@ -12,8 +12,8 @@ get_header(); ?>
 <style>
 .tools-section .tool-icon {
     display: flex;
-    justify-content: centre;
-    align-items: centre;
+    justify-content: center;
+    align-items: center;
     margin: 0 auto 15px;
 }
 .tools-section .tool-icon i {
@@ -138,7 +138,7 @@ get_header(); ?>
                     <p><?php echo esc_html(get_post_meta(get_the_ID(), 'ai_service_6_desc', true) ?: 'Unified customer view across all touchpoints with AI-powered attribution and engagement tracking.'); ?></p>                </div>            </div>
             
             <!-- CTA after services overview -->
-            <div class="text-centre animate-on-scroll animate-fade-up" style="margin-top: 3rem;">
+            <div class="text-center animate-on-scroll animate-fade-up" style="margin-top: 3rem;">
                 <a href="<?php echo home_url('/contact'); ?>" class="btn-primary">Get Your AI CRM Assessment</a>
             </div>
         </div>
@@ -194,7 +194,7 @@ get_header(); ?>
             </div>
             
             <!-- CTA after case study results -->
-            <div class="text-centre animate-on-scroll animate-fade-up" style="margin-top: 3rem;">
+            <div class="text-center animate-on-scroll animate-fade-up" style="margin-top: 3rem;">
                 <p style="font-size: 1.1rem; colour: #666; margin-bottom: 1.5rem;">Ready to transform your CRM with AI?</p>
                 <a href="<?php echo home_url('/contact'); ?>" class="btn-primary">Start Your AI CRM Transformation</a>
             </div>
@@ -247,39 +247,39 @@ get_header(); ?>
         </div>
     </section><!-- AI Features Section -->
     <section class="tools-section">
-        <div class="container" style="text-align: centre;">
+        <div class="container" style="text-align: center;">
             <div class="section-header animate-on-scroll animate-fade-up">
                 <h2 style="margin-bottom: 20px;">AI-Powered CRM Features</h2>
                 <p style="max-width: 800px; margin: 0 auto 30px;">Transform your customer relationship management with intelligent features that automate processes and drive better results.</p>
             </div>
             
-            <div class="tools-grid animate-on-scroll animate-stagger animate-scale-up" style="justify-content: centre;">
-                <div class="tool-item" style="text-align: centre;">
-                    <div class="tool-icon" style="text-align: centre; display: flex; justify-content: centre;">
+            <div class="tools-grid animate-on-scroll animate-stagger animate-scale-up" style="justify-content: center;">
+                <div class="tool-item" style="text-align: center;">
+                    <div class="tool-icon" style="text-align: center; display: flex; justify-content: center;">
                         <i class="fas fa-robot"></i>
                     </div>
                     <h3>Smart Lead Scoring</h3>
                     <p>AI algorithms analyse 50+ data points to score leads and predict conversion probability in real-time.</p>
                 </div>
                 
-                <div class="tool-item" style="text-align: centre;">
-                    <div class="tool-icon" style="text-align: centre; display: flex; justify-content: centre;">
+                <div class="tool-item" style="text-align: center;">
+                    <div class="tool-icon" style="text-align: center; display: flex; justify-content: center;">
                         <i class="fas fa-chart-line"></i>
                     </div>
                     <h3>Predictive Forecasting</h3>
                     <p>Machine learning models predict sales outcomes, revenue forecasts, and optimal deal closure timing.</p>
                 </div>
                 
-                <div class="tool-item" style="text-align: centre;">
-                    <div class="tool-icon" style="text-align: centre; display: flex; justify-content: centre;">
+                <div class="tool-item" style="text-align: center;">
+                    <div class="tool-icon" style="text-align: center; display: flex; justify-content: center;">
                         <i class="fas fa-bullseye"></i>
                     </div>
                     <h3>behavioural Targeting</h3>
                     <p>AI tracks customer behaviour patterns to trigger personalised engagement at optimal moments.</p>
                 </div>
                 
-                <div class="tool-item" style="text-align: centre;">
-                    <div class="tool-icon" style="text-align: centre; display: flex; justify-content: centre;">
+                <div class="tool-item" style="text-align: center;">
+                    <div class="tool-icon" style="text-align: center; display: flex; justify-content: center;">
                         <i class="fas fa-chart-bar"></i>
                     </div>
                     <h3>Intelligent Reporting</h3>
@@ -464,3 +464,4 @@ get_header(); ?>
 </main>
 
 <?php get_footer(); ?>
+

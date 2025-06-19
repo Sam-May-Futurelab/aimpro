@@ -224,7 +224,7 @@ function professional_services_meta_box_callback($post) {
         }
         .professional-services-meta .image-upload-container {
             display: flex;
-            align-items: centre;
+            align-items: center;
             gap: 10px;
         }
         .professional-services-meta .image-preview {
@@ -867,3 +867,4 @@ function sanitize_meta_value($field, $value) {
     return sanitize_text_field($value);
 }
 ?>
+

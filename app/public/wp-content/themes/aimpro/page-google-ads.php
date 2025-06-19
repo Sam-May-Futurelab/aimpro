@@ -35,7 +35,7 @@ get_header();
 
 #primary.google-ads-page #contact.cta-section .cta-buttons {
     display: flex !important;
-    justify-content: centre !important;
+    justify-content: center !important;
     gap: 20px !important;
     margin-bottom: 30px !important;
 }
@@ -54,7 +54,7 @@ get_header();
 
 #primary.google-ads-page #contact.cta-section .cta-features {
     display: flex !important;
-    justify-content: centre !important;
+    justify-content: center !important;
     gap: 40px !important;
     flex-wrap: wrap !important;
 }
@@ -110,12 +110,12 @@ get_header();
 @media (max-width: 768px) {
     #primary.google-ads-page #contact.cta-section .cta-buttons {
         flex-direction: column !important;
-        align-items: centre !important;
+        align-items: center !important;
     }
     
     #primary.google-ads-page #contact.cta-section .cta-features {
         flex-direction: column !important;
-        align-items: centre !important;
+        align-items: center !important;
         gap: 15px !important;
     }
 }
@@ -184,7 +184,7 @@ get_header();
                     <span><?php echo esc_html($hero_badge); ?></span>
                 </div>
                 <h1><?php echo wp_kses_post($hero_title); ?></h1>
-                <p class="hero-subtitle"><?php echo wp_kses_post($hero_subtitle); ?></p>                <div class="hero-stats animate-on-scroll animate-fade-up" style="display: flex; justify-content: centre; gap: 40px; flex-wrap: wrap;">
+                <p class="hero-subtitle"><?php echo wp_kses_post($hero_subtitle); ?></p>                <div class="hero-stats animate-on-scroll animate-fade-up" style="display: flex; justify-content: center; gap: 40px; flex-wrap: wrap;">
                     <div class="stat-item">
                         <span class="stat-number"><?php echo esc_html($hero_stat1_number); ?></span>
                         <span class="stat-label"><?php echo esc_html($hero_stat1_label); ?></span>
@@ -264,7 +264,7 @@ get_header();
     <section class="success-metrics-section" style="background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%); padding: 80px 0;">
         <div class="container">
             <div class="section-content">
-                <div class="content-header animate-on-scroll animate-fade-up" style="text-align: centre; margin-bottom: 50px;">
+                <div class="content-header animate-on-scroll animate-fade-up" style="text-align: center; margin-bottom: 50px;">
                     <h2 style="font-size: 2.5rem; font-weight: 700; colour: #1e293b; margin-bottom: 20px;">Law Firm Increases Qualified Leads by 340% with Strategic Google Ads</h2>
                     <div style="max-width: 900px; margin: 0 auto;">
                         <p style="font-size: 1.1rem; line-height: 1.8; colour: #64748b; margin-bottom: 15px;"><strong>The Challenge:</strong> A Manchester-based law firm was struggling with expensive Google Ads campaigns that generated low-quality leads, wasting £5,000+ monthly budget.</p>
@@ -274,19 +274,19 @@ get_header();
                 </div>
                 
                 <div class="stats-grid animate-on-scroll animate-fade-up" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 30px; max-width: 1000px; margin: 0 auto;">
-                    <div class="stat-card" style="background: white; padding: 30px; border-radius: 16px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); text-align: centre; border: 1px solid #e2e8f0;">
+                    <div class="stat-card" style="background: white; padding: 30px; border-radius: 16px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); text-align: center; border: 1px solid #e2e8f0;">
                         <span class="stat-number" style="display: block; font-size: 3rem; font-weight: 700; colour: #f15a25; margin-bottom: 10px;">340%</span>
                         <span class="stat-label" style="font-size: 1rem; font-weight: 600; colour: #64748b;">Increase in Qualified Leads</span>
                     </div>
-                    <div class="stat-card" style="background: white; padding: 30px; border-radius: 16px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); text-align: centre; border: 1px solid #e2e8f0;">
+                    <div class="stat-card" style="background: white; padding: 30px; border-radius: 16px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); text-align: center; border: 1px solid #e2e8f0;">
                         <span class="stat-number" style="display: block; font-size: 3rem; font-weight: 700; colour: #f15a25; margin-bottom: 10px;">58%</span>
                         <span class="stat-label" style="font-size: 1rem; font-weight: 600; colour: #64748b;">Lower Cost Per Lead</span>
                     </div>
-                    <div class="stat-card" style="background: white; padding: 30px; border-radius: 16px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); text-align: centre; border: 1px solid #e2e8f0;">
+                    <div class="stat-card" style="background: white; padding: 30px; border-radius: 16px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); text-align: center; border: 1px solid #e2e8f0;">
                         <span class="stat-number" style="display: block; font-size: 3rem; font-weight: 700; colour: #f15a25; margin-bottom: 10px;">720%</span>
                         <span class="stat-label" style="font-size: 1rem; font-weight: 600; colour: #64748b;">Return on Ad Spend</span>
                     </div>
-                    <div class="stat-card" style="background: white; padding: 30px; border-radius: 16px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); text-align: centre; border: 1px solid #e2e8f0;">
+                    <div class="stat-card" style="background: white; padding: 30px; border-radius: 16px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); text-align: center; border: 1px solid #e2e8f0;">
                         <span class="stat-number" style="display: block; font-size: 3rem; font-weight: 700; colour: #f15a25; margin-bottom: 10px;">£85,000</span>
                         <span class="stat-label" style="font-size: 1rem; font-weight: 600; colour: #64748b;">Monthly Revenue Generated</span>
                     </div>
@@ -529,3 +529,4 @@ get_header();
 </main>
 
 <?php get_footer(); ?>
+

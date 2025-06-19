@@ -157,7 +157,7 @@ get_header(); ?>
             </div>
             
             <!-- CTA after case study results -->
-            <div class="text-centre animate-on-scroll animate-fade-up" style="margin-top: 3rem;">
+            <div class="text-center animate-on-scroll animate-fade-up" style="margin-top: 3rem;">
                 <p style="font-size: 1.1rem; colour: #666; margin-bottom: 1.5rem;">Ready to achieve similar results for your business?</p>
                 <a href="<?php echo home_url('/contact'); ?>" class="btn-primary">Start Your Funnel Transformation</a>
             </div>
@@ -332,7 +332,7 @@ get_header(); ?>
             </div>
             
             <!-- CTA after funnel components -->
-            <div class="text-centre animate-on-scroll animate-fade-up" style="margin-top: 3rem;">
+            <div class="text-center animate-on-scroll animate-fade-up" style="margin-top: 3rem;">
                 <p style="font-size: 1.1rem; colour: #666; margin-bottom: 1.5rem;">Let us build these components into a high-converting funnel for your business</p>
                 <a href="<?php echo home_url('/contact'); ?>" class="btn-primary">Get Your Funnel Blueprint</a>
             </div>
@@ -438,7 +438,7 @@ get_header(); ?>
             </div>
             
             <!-- CTA after tools section -->
-            <div class="text-centre animate-on-scroll animate-fade-up" style="margin-top: 3rem;">
+            <div class="text-center animate-on-scroll animate-fade-up" style="margin-top: 3rem;">
                 <p style="font-size: 1.1rem; colour: #666; margin-bottom: 1.5rem;">Ready to leverage these powerful tools for your funnel?</p>
                 <a href="<?php echo home_url('/contact'); ?>" class="btn-primary">Get Expert Funnel Setup</a>
             </div>
@@ -502,3 +502,4 @@ get_header(); ?>
 </main>
 
 <?php get_footer(); ?>
+

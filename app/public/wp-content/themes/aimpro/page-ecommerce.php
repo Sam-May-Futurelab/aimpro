@@ -143,7 +143,7 @@ get_header(); ?>
                             </ul>
                         </div>
                     </div>                </div>
-                <div class="text-centre mt-1 animate-on-scroll animate-fade-up">
+                <div class="text-center mt-1 animate-on-scroll animate-fade-up">
                     <a href="/contact/" class="btn btn-primary">Boost Your E-commerce Performance</a>
                 </div>
             </div>
@@ -281,7 +281,7 @@ get_header(); ?>
                 </div>
             </div>
         </section>        <!-- CTA Section -->
-        <section class="ecommerce-cta text-centre animate-on-scroll animate-fade-up">
+        <section class="ecommerce-cta text-center animate-on-scroll animate-fade-up">
             <div class="section-content">
                 <h2 class="animate-on-scroll animate-fade-up"><?php echo esc_html(get_post_meta(get_the_ID(), '_ecommerce_cta_title', true) ?: "Ready to Scale Your E-commerce Business?"); ?></h2>
                 <p class="animate-on-scroll animate-fade-up"><?php echo esc_html(get_post_meta(get_the_ID(), '_ecommerce_cta_subtitle', true) ?: "Let's discuss how our e-commerce marketing expertise can drive more traffic, conversions, and revenue for your online store."); ?></p>
@@ -332,3 +332,4 @@ get_header(); ?>
 </style>
 
 <?php get_footer(); ?>
+

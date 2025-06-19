@@ -86,7 +86,7 @@ function streamline_sales_funnel_meta_callback($post) {
         
         <div class="streamline-meta-field">
             <label>Overview Image</label>
-            <div style="display: flex; align-items: centre; margin-bottom: 10px;">
+            <div style="display: flex; align-items: center; margin-bottom: 10px;">
                 <div id="streamline_overview_image_preview" style="margin-right: 15px; min-width: 150px; min-height: 80px;">
                     <?php 
                     $overview_image = get_post_meta($post->ID, 'streamline_overview_image', true);
@@ -710,3 +710,4 @@ add_action('admin_enqueue_scripts', function($hook) {
         }
     }
 });
+

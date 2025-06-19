@@ -569,7 +569,7 @@ get_header(); ?>
         if ($pdf_id && $pdf_title): ?>
         <section class="pdf-download-section" style="background: #f8f9fa; padding: 4rem 0;">
             <div class="container">
-                <div class="download-content" style="max-width: 600px; margin: 0 auto; text-align: centre;">
+                <div class="download-content" style="max-width: 600px; margin: 0 auto; text-align: center;">
                     <div class="download-icon" style="margin-bottom: 2rem;">
                         <i class="fas fa-file-pdf" style="font-size: 4rem; colour: #d73502;"></i>
                     </div>
@@ -594,7 +594,7 @@ get_header(); ?>
                         <input type="hidden" name="pdf_id" value="<?php echo esc_attr($pdf_id); ?>" />
                     </form>
                     
-                    <div id="download-success" style="display: none; text-align: centre; margin-top: 2rem;">
+                    <div id="download-success" style="display: none; text-align: center; margin-top: 2rem;">
                         <div style="background: #d4edda; colour: #155724; padding: 1rem; border-radius: 4px; margin-bottom: 1rem;">
                             <i class="fas fa-check-circle" style="margin-right: 0.5rem;"></i>
                             Thank you! Your download will start automatically.
@@ -648,7 +648,7 @@ get_header(); ?>
         <?php endif; ?>
 
         <!-- CTA Section -->
-        <section class="website-cta text-centre">
+        <section class="website-cta text-center">
             <div class="section-content">
                 <h2 class="animate-on-scroll animate-fade-up"><?php echo get_post_meta(get_the_ID(), 'high_converting_website_cta_title', true) ?: 'Ready to Build a High-Converting Website?'; ?></h2>
                 <p class="animate-on-scroll animate-fade-up"><?php echo get_post_meta(get_the_ID(), 'high_converting_website_cta_description', true) ?: 'Let\'s create a website that not only looks great but converts visitors into customers at a higher rate.'; ?></p>
@@ -683,3 +683,4 @@ get_header(); ?>
 </main>
 
 <?php get_footer(); ?>
+

@@ -315,7 +315,7 @@ function get_advertising_ppc_field($field_key, $post_id = null) {
                             <li>Amazon Advertising</li>
                             <li>Google Display Network</li>
                         </ul>
-                        <div class="platform-cta" style="text-align: centre;">
+                        <div class="platform-cta" style="text-align: center;">
                             <a href="<?php echo home_url('/contact'); ?>" class="btn-outline platform-cta-btn">Get Search Advertising</a>
                         </div>
                     </div>
@@ -333,7 +333,7 @@ function get_advertising_ppc_field($field_key, $post_id = null) {
                             <li>Programmatic Display</li>
                             <li>Retargeting Networks</li>
                         </ul>
-                        <div class="platform-cta" style="text-align: centre;">
+                        <div class="platform-cta" style="text-align: center;">
                             <a href="<?php echo home_url('/contact'); ?>" class="btn-outline platform-cta-btn">Boost E-commerce Sales</a>
                         </div>
                     </div>
@@ -350,7 +350,7 @@ function get_advertising_ppc_field($field_key, $post_id = null) {
                             <li>Twitter Ads</li>
                             <li>YouTube Video Ads</li>
                         </ul>
-                        <div class="platform-cta" style="text-align: centre;">
+                        <div class="platform-cta" style="text-align: center;">
                             <a href="<?php echo home_url('/contact'); ?>" class="btn-outline platform-cta-btn">Start Social Advertising</a>
                         </div>
                     </div>
@@ -431,3 +431,4 @@ function get_advertising_ppc_field($field_key, $post_id = null) {
 </main>
 
 <?php get_footer(); ?>
+

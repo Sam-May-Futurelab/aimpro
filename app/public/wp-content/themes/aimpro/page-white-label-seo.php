@@ -79,7 +79,7 @@ get_header(); ?>
                             <h3><?php echo esc_html($benefit['title']); ?></h3>
                             <p><?php echo esc_html($benefit['description']); ?></p>
                         </div>                    <?php endforeach; ?>                </div>
-                <div class="text-centre mt-1 animate-on-scroll animate-fade-up">
+                <div class="text-center mt-1 animate-on-scroll animate-fade-up">
                     <a href="/contact/" class="btn btn-primary">Become a White Label Partner</a>
                 </div>
             </div>
@@ -303,7 +303,7 @@ get_header(); ?>
         </section>        <!-- FAQ Section -->
         <section class="faq-section">
             <div class="section-content">
-                <h2 class="animate-on-scroll animate-fade-up" style="text-align: centre;"><?php echo esc_html(get_post_meta(get_the_ID(), 'white_label_seo_faq_title', true) ?: 'Frequently Asked Questions'); ?></h2>
+                <h2 class="animate-on-scroll animate-fade-up" style="text-align: center;"><?php echo esc_html(get_post_meta(get_the_ID(), 'white_label_seo_faq_title', true) ?: 'Frequently Asked Questions'); ?></h2>
                 <div class="faq-list">
                     <?php 
                     $faqs = get_post_meta(get_the_ID(), 'white_label_seo_faqs', true) ?: [
@@ -377,3 +377,4 @@ get_header(); ?>
 </main>
 
 <?php get_footer(); ?>
+

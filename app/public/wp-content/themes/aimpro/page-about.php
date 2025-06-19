@@ -6,7 +6,19 @@
 
 get_header(); ?>
 
-<main id="main" class="main-content about-page">      <!-- Hero Section -->
+<main id="main" class="main-content about-page">      
+    <!-- Breadcrumbs -->
+    <div class="breadcrumbs-container">
+        <div class="container">
+            <nav class="breadcrumbs">
+                <a href="<?php echo home_url(); ?>">Home</a>
+                <span class="separator">›</span>
+                <span class="current">About</span>
+            </nav>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
     <section class="page-hero">
         <div class="container">
             <div class="hero-content animate-on-scroll animate-fade-up">
@@ -21,7 +33,7 @@ get_header(); ?>
     <div class="container">        <!-- Company Overview -->
         <section class="company-overview">
             <div class="section-content">
-                <div class="content-header text-centre animate-on-scroll animate-fade-up">
+                <div class="content-header text-center animate-on-scroll animate-fade-up">
                     <h2><?php echo aimpro_get_field('about_overview_heading', 'Empowering Brands with Data-Driven Growth'); ?></h2>
                     <p class="section-description"><?php echo aimpro_get_field('about_overview_description', 'Welcome to Aimpro Digital, where strategy, creativity, and technology converge to drive exceptional results. We\'re a team of passionate digital experts dedicated to helping UK businesses achieve their full potential. From lead generation to marketing automation, we build powerful, data-backed solutions that fuel your brand\'s success.'); ?></p>
                 </div>
@@ -30,7 +42,7 @@ get_header(); ?>
         <?php 
         $video_url = aimpro_get_field('about_video_url', '');
         if (!empty($video_url)): ?>        <section class="about-video-section">
-            <div class="section-content text-centre" style="text-align: center;">
+            <div class="section-content text-center" style="text-align: center;">
                 <?php 
                 $video_heading = aimpro_get_field('about_video_heading', '');
                 $video_description = aimpro_get_field('about_video_description', '');
@@ -73,7 +85,7 @@ get_header(); ?>
         <?php endif; ?>        <!-- Values Section -->
         <section class="values-section">
             <div class="section-content">
-                <div class="content-header text-centre animate-on-scroll animate-fade-up">
+                <div class="content-header text-center animate-on-scroll animate-fade-up">
                     <h2><?php echo aimpro_get_field('about_values_heading', 'Experiences Fueled by<br>Data and Dedication'); ?></h2>
                     <p class="section-description"><?php echo aimpro_get_field('about_values_subtitle', 'At Aimpro Digital, we\'re more than a digital marketing agency.<br>We\'re a team of strategists, creatives, and tech enthusiasts<br>committed to making a meaningful impact for our clients.'); ?></p>
                 </div>
@@ -152,7 +164,7 @@ get_header(); ?>
 
         <!-- Team Section -->
         <section class="team-section">
-            <div class="container">                <div class="section-header text-centre animate-on-scroll animate-fade-up" style="text-align: center;">
+            <div class="container">                <div class="section-header text-center animate-on-scroll animate-fade-up" style="text-align: center;">
                     <h2 style="text-align: center;">Meet Our Expert Team</h2>
                     <p style="text-align: center;">The passionate professionals driving your digital success</p>
                 </div>
@@ -198,7 +210,7 @@ get_header(); ?>
                     </div>
                 </div>
                   <!-- Team CTA -->
-                <div class="team-cta text-centre animate-on-scroll animate-fade-up" style="text-align: center;">
+                <div class="team-cta text-center animate-on-scroll animate-fade-up" style="text-align: center;">
                     <h3 style="text-align: center;">Ready to Work with Our Expert Team?</h3>
                     <p style="text-align: center;">Let's discuss how our specialists can help transform your digital presence and drive exceptional results for your business.</p>
                     <div class="team-cta-buttons" style="text-align: center;">
@@ -265,7 +277,7 @@ get_header(); ?>
         </section>        <!-- CTA Section -->
         <section class="about-cta">
             <div class="container">
-                <div class="cta-content text-centre animate-on-scroll animate-scale-up">
+                <div class="cta-content text-center animate-on-scroll animate-scale-up">
                     <h2><?php echo aimpro_get_field('about_cta_heading', 'Ready to Transform Your Digital Presence?'); ?></h2>
                     <p><?php echo aimpro_get_field('about_cta_description', 'Partner with Aimpro Digital and discover how our data-driven strategies, innovative solutions, and dedicated team can elevate your brand to new heights. Whether you\'re looking to increase leads, boost conversions, or build a stronger online presence, we\'re here to make it happen.'); ?></p>
                     <p class="cta-sub-text"><?php echo aimpro_get_field('about_cta_sub_text', 'Join the growing number of businesses that trust us to deliver exceptional results. Let\'s start building your digital success story today.'); ?></p>
@@ -289,3 +301,4 @@ get_header(); ?>
 </main>
 
 <?php get_footer(); ?>
+

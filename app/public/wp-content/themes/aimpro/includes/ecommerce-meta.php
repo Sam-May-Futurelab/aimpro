@@ -229,7 +229,7 @@ function ecommerce_meta_box_callback($post) {
         }
         .ecommerce-meta .image-upload-container {
             display: flex;
-            align-items: centre;
+            align-items: center;
             gap: 10px;
         }
         .ecommerce-meta .image-preview {
@@ -893,3 +893,4 @@ function save_ecommerce_meta_box_data($post_id) {
     }
 }
 add_action('save_post', 'save_ecommerce_meta_box_data');
+

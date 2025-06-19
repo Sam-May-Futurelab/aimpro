@@ -201,7 +201,7 @@ $hero_image = get_post_meta(get_the_ID(), 'technical_seo_hero_image', true);
                             </div>
                         </div>
                     <?php endforeach; ?>                </div>
-                <div class="text-centre mt-1 animate-on-scroll animate-fade-up">
+                <div class="text-center mt-1 animate-on-scroll animate-fade-up">
                     <a href="/contact/" class="btn btn-primary">Get Your Technical SEO Audit</a>
                 </div>
             </div>
@@ -509,3 +509,4 @@ $hero_image = get_post_meta(get_the_ID(), 'technical_seo_hero_image', true);
 </main>
 
 <?php get_footer(); ?>
+

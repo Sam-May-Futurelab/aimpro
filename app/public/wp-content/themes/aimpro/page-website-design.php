@@ -12,8 +12,8 @@ get_header(); ?>
 <style>
 .tools-section .tool-icon {
     display: flex;
-    justify-content: centre;
-    align-items: centre;
+    justify-content: center;
+    align-items: center;
     margin: 0 auto 15px;
 }
 .tools-section .tool-icon i {
@@ -332,35 +332,35 @@ get_header(); ?>
                     <a href="#contact" class="btn-outline">Get Started</a>
                 </div>            </div>
         </div>    </section>    <!-- Technologies -->    <section class="tools-section">
-        <div class="container" style="text-align: centre;">
+        <div class="container" style="text-align: center;">
             <div class="section-header animate-on-scroll animate-fade-up">
                 <h2 style="margin-bottom: 20px;">Design Tools & Technologies</h2>
                 <p style="max-width: 800px; margin: 0 auto 30px;">We use industry-leading tools and technologies to create stunning, high-performance websites that deliver results.</p>
             </div>
             
             <h3 class="tools-category animate-on-scroll animate-fade-up">Design & UX Tools</h3>
-            <div class="tools-grid animate-on-scroll animate-stagger animate-scale-up" style="justify-content: centre;">                <div class="tool-item" style="text-align: centre;">
-                    <div class="tool-icon" style="text-align: centre; display: flex; justify-content: centre;">
+            <div class="tools-grid animate-on-scroll animate-stagger animate-scale-up" style="justify-content: center;">                <div class="tool-item" style="text-align: center;">
+                    <div class="tool-icon" style="text-align: center; display: flex; justify-content: center;">
                         <i class="fab fa-figma"></i>
                     </div>
                     <h3>Figma</h3>
                     <p>Collaborative interface design tool for creating wireframes and prototypes</p>
-                </div>                <div class="tool-item" style="text-align: centre;">
-                    <div class="tool-icon" style="text-align: centre; display: flex; justify-content: centre;">
+                </div>                <div class="tool-item" style="text-align: center;">
+                    <div class="tool-icon" style="text-align: center; display: flex; justify-content: center;">
                         <i class="fab fa-adobe"></i>
                     </div>
                     <h3>Adobe Creative Suite</h3>
                     <p>Complete design package including Photoshop, Illustrator and InDesign</p>
                 </div>
-                  <div class="tool-item" style="text-align: centre;">
-                    <div class="tool-icon" style="text-align: centre; display: flex; justify-content: centre;">
+                  <div class="tool-item" style="text-align: center;">
+                    <div class="tool-icon" style="text-align: center; display: flex; justify-content: center;">
                         <i class="fas fa-pencil-ruler"></i>
                     </div>
                     <h3>Sketch & XD</h3>
                     <p>Professional design tools for creating responsive user interfaces</p>
                 </div>
-                  <div class="tool-item" style="text-align: centre;">
-                    <div class="tool-icon" style="text-align: centre; display: flex; justify-content: centre;">
+                  <div class="tool-item" style="text-align: center;">
+                    <div class="tool-icon" style="text-align: center; display: flex; justify-content: center;">
                         <i class="fas fa-eye"></i>
                     </div>
                     <h3>InVision & Principle</h3>
@@ -368,28 +368,28 @@ get_header(); ?>
                 </div>
             </div>
               <h3 class="tools-category animate-on-scroll animate-fade-up">Development Technologies</h3>
-            <div class="tools-grid animate-on-scroll animate-stagger animate-scale-up" style="justify-content: centre;">                <div class="tool-item" style="text-align: centre;">
-                    <div class="tool-icon" style="text-align: centre; display: flex; justify-content: centre;">
+            <div class="tools-grid animate-on-scroll animate-stagger animate-scale-up" style="justify-content: center;">                <div class="tool-item" style="text-align: center;">
+                    <div class="tool-icon" style="text-align: center; display: flex; justify-content: center;">
                         <i class="fab fa-wordpress"></i>
                     </div>
                     <h3>WordPress</h3>
                     <p>Powerful CMS for scalable, easy-to-manage business websites</p>
                 </div>
-                  <div class="tool-item" style="text-align: centre;">
-                    <div class="tool-icon" style="text-align: centre; display: flex; justify-content: centre;">
+                  <div class="tool-item" style="text-align: center;">
+                    <div class="tool-icon" style="text-align: center; display: flex; justify-content: center;">
                         <i class="fab fa-react"></i>
                     </div>
                     <h3>Modern JavaScript</h3>
                     <p>React.js and other JavaScript frameworks for interactive experiences</p>
                 </div>
-                  <div class="tool-item" style="text-align: centre;">
-                    <div class="tool-icon" style="text-align: centre; display: flex; justify-content: centre;">
+                  <div class="tool-item" style="text-align: center;">
+                    <div class="tool-icon" style="text-align: center; display: flex; justify-content: center;">
                         <i class="fab fa-html5"></i>
                     </div>
                     <h3>HTML5/CSS3</h3>
                     <p>Latest web standards for responsive, accessible website development</p>
                 </div>
-                  <div class="tool-item" style="text-align: centre;">                    <div class="tool-icon" style="text-align: centre; display: flex; justify-content: centre;">
+                  <div class="tool-item" style="text-align: center;">                    <div class="tool-icon" style="text-align: center; display: flex; justify-content: center;">
                         <i class="fas fa-stream"></i>
                     </div>
                     <h3>Webflow & Shopify</h3>
@@ -398,29 +398,29 @@ get_header(); ?>
             </div>
             
             <h3 class="tools-category animate-on-scroll animate-fade-up">optimisation & Analytics</h3>
-            <div class="tools-grid animate-on-scroll animate-stagger animate-scale-up" style="justify-content: centre;">                <div class="tool-item" style="text-align: centre;">
-                    <div class="tool-icon" style="text-align: centre; display: flex; justify-content: centre;">
+            <div class="tools-grid animate-on-scroll animate-stagger animate-scale-up" style="justify-content: center;">                <div class="tool-item" style="text-align: center;">
+                    <div class="tool-icon" style="text-align: center; display: flex; justify-content: center;">
                         <i class="fas fa-tachometer-alt"></i>
                     </div>
                     <h3>Performance Tools</h3>
                     <p>Google PageSpeed and GTmetrix for speed optimisation</p>
                 </div>
-                  <div class="tool-item" style="text-align: centre;">
-                    <div class="tool-icon" style="text-align: centre; display: flex; justify-content: centre;">
+                  <div class="tool-item" style="text-align: center;">
+                    <div class="tool-icon" style="text-align: center; display: flex; justify-content: center;">
                         <i class="fas fa-chart-line"></i>
                     </div>
                     <h3>Analytics Platforms</h3>
                     <p>Google Analytics and data visualization for tracking results</p>
                 </div>
-                  <div class="tool-item" style="text-align: centre;">
-                    <div class="tool-icon" style="text-align: centre; display: flex; justify-content: centre;">
+                  <div class="tool-item" style="text-align: center;">
+                    <div class="tool-icon" style="text-align: center; display: flex; justify-content: center;">
                         <i class="fas fa-flask"></i>
                     </div>
                     <h3>A/B Testing</h3>
                     <p>Conversion rate optimisation through split testing</p>
                 </div>
-                  <div class="tool-item" style="text-align: centre;">
-                    <div class="tool-icon" style="text-align: centre; display: flex; justify-content: centre;">
+                  <div class="tool-item" style="text-align: center;">
+                    <div class="tool-icon" style="text-align: center; display: flex; justify-content: center;">
                         <i class="fas fa-mouse-pointer"></i>
                     </div>
                     <h3>UX Research Tools</h3>
@@ -518,3 +518,4 @@ get_header(); ?>
 </main>
 
 <?php get_footer(); ?>
+

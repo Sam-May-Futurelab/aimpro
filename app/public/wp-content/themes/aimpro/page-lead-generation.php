@@ -261,7 +261,7 @@ get_header(); ?>
                 </div>
             </div>
         </section>        <!-- Lead Generation Types -->
-        <section class="lead-generation-types text-centre">
+        <section class="lead-generation-types text-center">
             <div class="section-content">
                 <h2 class="animate-on-scroll animate-fade-up"><?php echo esc_html(get_post_meta(get_the_ID(), '_lead_generation_types_title', true) ?: 'Lead Generation Strategies by Business Type'); ?></h2>
                 <div class="types-grid animate-on-scroll animate-stagger animate-scale-up">
@@ -383,7 +383,7 @@ get_header(); ?>
                 </div>
             </div>
         </section>        <!-- Lead Generation Testimonial (No Image) -->
-        <section class="lead-generation-testimonial text-centre">
+        <section class="lead-generation-testimonial text-center">
             <div class="section-content">
                 <div class="testimonial-content animate-on-scroll animate-fade-up">
                     <blockquote>
@@ -399,7 +399,7 @@ get_header(); ?>
                 </div>
             </div>
         </section>        <!-- CTA Section -->
-        <section class="lead-generation-cta text-centre">
+        <section class="lead-generation-cta text-center">
             <div class="section-content">
                 <h2 class="animate-on-scroll animate-fade-up"><?php echo esc_html(get_post_meta(get_the_ID(), '_lead_generation_cta_title', true) ?: 'Ready to Generate More Qualified Leads?'); ?></h2>
                 <p class="animate-on-scroll animate-fade-up animate-delay-200"><?php echo esc_html(get_post_meta(get_the_ID(), '_lead_generation_cta_subtitle', true) ?: 'Let\'s create a custom lead generation strategy that fills your sales pipeline with high-quality prospects.'); ?></p>
@@ -427,3 +427,4 @@ get_header(); ?>
 </main>
 
 <?php get_footer(); ?>
+

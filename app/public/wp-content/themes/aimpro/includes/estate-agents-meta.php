@@ -224,7 +224,7 @@ function estate_agents_meta_box_callback($post) {
         }
         .estate-agents-meta .image-upload-container {
             display: flex;
-            align-items: centre;
+            align-items: center;
             gap: 10px;
         }
         .estate-agents-meta .image-preview {
@@ -864,3 +864,4 @@ function save_estate_agents_meta_box_data($post_id) {
 }
 add_action('save_post', 'save_estate_agents_meta_box_data');
 ?>
+

@@ -126,7 +126,7 @@ $services = get_post_meta(get_the_ID(), '_automotive_services', true) ?: array()
                     </div>
                     <?php endforeach; ?>                </div>
                   <!-- Added Services CTA -->
-                <div class="services-cta text-centre animate-on-scroll animate-fade-up" style="margin-top: 5px;">
+                <div class="services-cta text-center animate-on-scroll animate-fade-up" style="margin-top: 5px;">
                     <h3>Get Expert Help With Your Automotive Marketing</h3>
                     <p>Ready to boost your dealership's visibility and drive more qualified leads?</p>
                     <div class="cta-buttons" style="margin-top: 5px;">
@@ -216,12 +216,12 @@ $services = get_post_meta(get_the_ID(), '_automotive_services', true) ?: array()
                     padding-top: 0;
                 }
                 /* centre the process title */
-                .automotive-process h2.text-centre {
-                    text-align: centre;
+                .automotive-process h2.text-center {
+                    text-align: center;
                     width: 100%;
                 }
                 /* Add style for the section title's after element (if any) */
-                .automotive-process h2.text-centre::after {
+                .automotive-process h2.text-center::after {
                     left: 50%;
                     transform: translateX(-50%);
                     margin-left: 0;
@@ -248,7 +248,7 @@ $services = get_post_meta(get_the_ID(), '_automotive_services', true) ?: array()
                         'description' => 'Continuously monitor and optimise campaigns based on lead quality, cost per acquisition, and ROI.'                    )
                 );
                 ?>
-                <h2 class="animate-on-scroll animate-fade-up text-centre"><?php echo esc_html($process_title); ?></h2>
+                <h2 class="animate-on-scroll animate-fade-up text-center"><?php echo esc_html($process_title); ?></h2>
                 <div class="process-steps">
                     <?php foreach ($process_steps as $index => $step): ?>
                     <div class="process-step animate-on-scroll animate-stagger animate-slide-up">
@@ -290,7 +290,7 @@ $services = get_post_meta(get_the_ID(), '_automotive_services', true) ?: array()
                         )
                     );
                     ?>
-                    <h2 class="section-title animate-on-scroll animate-fade-up" style="text-align: centre;">
+                    <h2 class="section-title animate-on-scroll animate-fade-up" style="text-align: center;">
                         <?php echo esc_html($insights_title); ?>
                         <style>
                         .automotive-insights .section-title::after {
@@ -335,7 +335,7 @@ $services = get_post_meta(get_the_ID(), '_automotive_services', true) ?: array()
                 </div>
             </div>
         </section>        <!-- CTA Section -->
-        <section class="automotive-cta text-centre animate-on-scroll animate-fade-up">
+        <section class="automotive-cta text-center animate-on-scroll animate-fade-up">
             <div class="section-content">
                 <?php 
                 $cta_title = get_post_meta(get_the_ID(), '_automotive_cta_title', true) ?: 'Ready to Accelerate Your Automotive Marketing?';
@@ -367,3 +367,4 @@ $services = get_post_meta(get_the_ID(), '_automotive_services', true) ?: array()
 </main>
 
 <?php get_footer(); ?>
+

@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 /**
  * Template Name: Finance Industry Page
  * Description: Digital marketing for financial services
@@ -116,7 +116,7 @@ get_header(); ?>
                                 </ul>
                             </div>
                         </div>                    <?php endforeach; ?>                </div>
-                <div class="text-centre mt-1 animate-on-scroll animate-fade-up">
+                <div class="text-center mt-1 animate-on-scroll animate-fade-up">
                     <a href="/contact/" class="btn btn-primary">Schedule Financial Marketing Consultation</a>
                 </div>
             </div>
@@ -348,7 +348,7 @@ get_header(); ?>
                 </div>
             </div>
         </section>        <!-- CTA Section -->
-        <section class="finance-cta text-centre animate-on-scroll animate-fade-up">
+        <section class="finance-cta text-center animate-on-scroll animate-fade-up">
             <div class="section-content">
                 <h2 class="animate-on-scroll animate-fade-up"><?php echo esc_html(get_post_meta(get_the_ID(), '_finance_cta_title', true) ?: 'Ready to Grow Your Financial Services Business?'); ?></h2>
                 <p class="animate-on-scroll animate-fade-up"><?php echo esc_html(get_post_meta(get_the_ID(), '_finance_cta_subtitle', true) ?: 'Let\'s create a compliant, trust-building marketing strategy that generates high-value leads for your financial services.'); ?></p>
@@ -377,3 +377,4 @@ get_header(); ?>
 </main>
 
 <?php get_footer(); ?>
+

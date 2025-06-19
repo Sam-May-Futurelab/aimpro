@@ -12,8 +12,8 @@ get_header(); ?>
 <style>
 .tools-section .tool-icon {
     display: flex;
-    justify-content: centre;
-    align-items: centre;
+    justify-content: center;
+    align-items: center;
     margin: 0 auto 15px;
 }
 .tools-section .tool-icon i {
@@ -381,36 +381,36 @@ get_header(); ?>
         </div>
     </section>    <!-- Technologies -->
     <section class="tools-section">
-        <div class="container" style="text-align: centre;">
+        <div class="container" style="text-align: center;">
             <div class="section-header animate-on-scroll animate-fade-up">
                 <h2 style="margin-bottom: 20px;">Funnel Technologies & Platforms</h2>
                 <p style="max-width: 800px; margin: 0 auto 30px;">We use industry-leading tools and technologies to create high-converting, automated sales funnels that drive consistent results.</p>
             </div>
             
             <h3 class="tools-category animate-on-scroll animate-fade-up">Funnel Platforms</h3>
-            <div class="tools-grid animate-on-scroll animate-stagger animate-scale-up" style="justify-content: centre;">                <div class="tool-item" style="text-align: centre;">
-                    <div class="tool-icon" style="text-align: centre; display: flex; justify-content: centre;">
+            <div class="tools-grid animate-on-scroll animate-stagger animate-scale-up" style="justify-content: center;">                <div class="tool-item" style="text-align: center;">
+                    <div class="tool-icon" style="text-align: center; display: flex; justify-content: center;">
                         <i class="fas fa-funnel-dollar"></i>
                     </div>
                     <h3>ClickFunnels</h3>
                     <p>specialised funnel builder for sales pages and marketing funnels</p>
                 </div>
-                <div class="tool-item" style="text-align: centre;">
-                    <div class="tool-icon" style="text-align: centre; display: flex; justify-content: centre;">
+                <div class="tool-item" style="text-align: center;">
+                    <div class="tool-icon" style="text-align: center; display: flex; justify-content: center;">
                         <i class="fas fa-file-alt"></i>
                     </div>
                     <h3>Leadpages</h3>
                     <p>Landing page platform focused on lead generation and conversions</p>
                 </div>
-                <div class="tool-item" style="text-align: centre;">
-                    <div class="tool-icon" style="text-align: centre; display: flex; justify-content: centre;">
+                <div class="tool-item" style="text-align: center;">
+                    <div class="tool-icon" style="text-align: center; display: flex; justify-content: center;">
                         <i class="fas fa-window-maximise"></i>
                     </div>
                     <h3>Unbounce & Instapage</h3>
                     <p>Advanced landing page platforms with A/B testing capabilities</p>
                 </div>
-                <div class="tool-item" style="text-align: centre;">
-                    <div class="tool-icon" style="text-align: centre; display: flex; justify-content: centre;">
+                <div class="tool-item" style="text-align: center;">
+                    <div class="tool-icon" style="text-align: center; display: flex; justify-content: center;">
                         <i class="fab fa-wordpress"></i>
                     </div>
                     <h3>WordPress</h3>
@@ -419,30 +419,30 @@ get_header(); ?>
             </div>
             
             <h3 class="tools-category animate-on-scroll animate-fade-up">Email Automation</h3>
-            <div class="tools-grid animate-on-scroll animate-stagger animate-scale-up" style="justify-content: centre;">
-                <div class="tool-item" style="text-align: centre;">
-                    <div class="tool-icon" style="text-align: centre; display: flex; justify-content: centre;">
+            <div class="tools-grid animate-on-scroll animate-stagger animate-scale-up" style="justify-content: center;">
+                <div class="tool-item" style="text-align: center;">
+                    <div class="tool-icon" style="text-align: center; display: flex; justify-content: center;">
                         <i class="fas fa-envelope-open-text"></i>
                     </div>
                     <h3>ActiveCampaign</h3>
                     <p>Advanced automation platform with behaviour-based segmentation</p>
                 </div>
-                <div class="tool-item" style="text-align: centre;">
-                    <div class="tool-icon" style="text-align: centre; display: flex; justify-content: centre;">
+                <div class="tool-item" style="text-align: center;">
+                    <div class="tool-icon" style="text-align: center; display: flex; justify-content: center;">
                         <i class="fas fa-paper-plane"></i>
                     </div>
                     <h3>ConvertKit</h3>
                     <p>Creator-focused email platform for content and course creators</p>
                 </div>
-                <div class="tool-item" style="text-align: centre;">
-                    <div class="tool-icon" style="text-align: centre; display: flex; justify-content: centre;">
+                <div class="tool-item" style="text-align: center;">
+                    <div class="tool-icon" style="text-align: center; display: flex; justify-content: center;">
                         <i class="fab fa-mailchimp"></i>
                     </div>
                     <h3>Mailchimp & Klaviyo</h3>
                     <p>Email marketing platforms for newsletters and e-commerce automation</p>
                 </div>
-                <div class="tool-item" style="text-align: centre;">
-                    <div class="tool-icon" style="text-align: centre; display: flex; justify-content: centre;">
+                <div class="tool-item" style="text-align: center;">
+                    <div class="tool-icon" style="text-align: center; display: flex; justify-content: center;">
                         <i class="fas fa-chart-line"></i>
                     </div>
                     <h3>GetResponse & Drip</h3>
@@ -451,29 +451,29 @@ get_header(); ?>
             </div>
             
             <h3 class="tools-category animate-on-scroll animate-fade-up">Payment & CRM Integration</h3>
-            <div class="tools-grid animate-on-scroll animate-stagger animate-scale-up" style="justify-content: centre;">
-                <div class="tool-item" style="text-align: centre;">
-                    <div class="tool-icon" style="text-align: centre; display: flex; justify-content: centre;">
+            <div class="tools-grid animate-on-scroll animate-stagger animate-scale-up" style="justify-content: center;">
+                <div class="tool-item" style="text-align: center;">
+                    <div class="tool-icon" style="text-align: center; display: flex; justify-content: center;">
                         <i class="fab fa-stripe"></i>
                     </div>
                     <h3>Stripe & PayPal</h3>
                     <p>Secure payment processing for one-time and subscription billing</p>
                 </div>
-                <div class="tool-item" style="text-align: centre;">
-                    <div class="tool-icon" style="text-align: centre; display: flex; justify-content: centre;">
+                <div class="tool-item" style="text-align: center;">
+                    <div class="tool-icon" style="text-align: center; display: flex; justify-content: center;">
                         <i class="fab fa-hubspot"></i>
                     </div>
                     <h3>HubSpot</h3>
                     <p>All-in-one marketing platform with CRM and automation capabilities</p>
                 </div>
-                <div class="tool-item" style="text-align: centre;">
-                    <div class="tool-icon" style="text-align: centre; display: flex; justify-content: centre;">
+                <div class="tool-item" style="text-align: center;">
+                    <div class="tool-icon" style="text-align: center; display: flex; justify-content: center;">
                         <i class="fab fa-salesforce"></i>
                     </div>
                     <h3>Salesforce</h3>
                     <p>Enterprise CRM solution for sales team integration and tracking</p>
-                </div>                <div class="tool-item" style="text-align: centre;">
-                    <div class="tool-icon" style="text-align: centre; display: flex; justify-content: centre;">
+                </div>                <div class="tool-item" style="text-align: center;">
+                    <div class="tool-icon" style="text-align: center; display: flex; justify-content: center;">
                         <i class="fas fa-plug"></i>
                     </div>
                     <h3>Zapier & Integrations</h3>
@@ -519,7 +519,7 @@ get_header(); ?>
     <section class="faq-section">
         <div class="container">
             <div class="section-content">
-                <h2 class="animate-on-scroll animate-fade-up" style="text-align: centre;">Frequently Asked Questions</h2>
+                <h2 class="animate-on-scroll animate-fade-up" style="text-align: center;">Frequently Asked Questions</h2>
                 <div class="faq-list">
                     <div class="faq-item animate-on-scroll animate-stagger animate-fade-up">
                         <div class="faq-question">
@@ -589,3 +589,4 @@ get_header(); ?>
 </main>
 
 <?php get_footer(); ?>
+

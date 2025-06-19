@@ -2484,7 +2484,7 @@ require_once get_template_directory() . '/includes/streamline-sales-funnel-meta.
 require_once get_template_directory() . '/includes/funnel-builds-meta.php';
 
 // Include UX/UI optimisation meta functionality
-require_once get_template_directory() . '/includes/ux-ui-optimization-meta.php';
+require_once get_template_directory() . '/includes/ux-ui-optimisation-meta.php';
 
 // Include email campaigns meta functionality
 require_once get_template_directory() . '/includes/email-campaigns-meta.php';

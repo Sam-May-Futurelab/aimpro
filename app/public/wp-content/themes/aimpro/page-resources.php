@@ -111,7 +111,7 @@ get_header(); ?>
         <!-- Knowledge Hub -->
         <section class="tools-section knowledge-hub">
             <div class="container">
-                <div class="section-header text-centre animate-on-scroll animate-fade-up">
+                <div class="section-header text-center animate-on-scroll animate-fade-up">
                     <h2>Digital Marketing Knowledge Hub</h2>
                     <p>Expert insights, guides, and resources to accelerate your digital marketing success</p>
                 </div>
@@ -170,7 +170,7 @@ get_header(); ?>
         </section><!-- Newsletter CTA -->
     <section class="cta-section newsletter-cta">
         <div class="container">
-            <div class="cta-content text-centre animate-on-scroll animate-scale-up">
+            <div class="cta-content text-center animate-on-scroll animate-scale-up">
                 <h2>Stay Updated with the Latest Insights</h2>
                 <p>Get the latest resources, industry updates, and expert tips delivered directly to your inbox every week.</p>                <form class="newsletter-form" action="#" method="post">
                     <div class="form-group">
@@ -186,3 +186,4 @@ get_header(); ?>
 </main>
 
 <?php get_footer(); ?>
+

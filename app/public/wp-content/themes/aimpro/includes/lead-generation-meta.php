@@ -298,7 +298,7 @@ function lead_generation_meta_box_callback($post) {
         }
         .lead-generation-meta .image-upload-container {
             display: flex;
-            align-items: centre;
+            align-items: center;
             gap: 10px;
         }
         .lead-generation-meta .image-preview {
@@ -1046,3 +1046,4 @@ function save_lead_generation_meta_box_data($post_id) {
     }
 }
 add_action('save_post', 'save_lead_generation_meta_box_data');
+

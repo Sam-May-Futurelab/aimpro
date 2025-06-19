@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 /**
  * Template Name: Coaches & Consultants Industry Page
  * Description: Digital marketing for coaches and consultants
@@ -270,7 +270,7 @@ $challenges = get_post_meta(get_the_ID(), '_coaches_consultants_challenges', tru
                 </div>
             </div>
         </section>        <!-- CTA Section -->
-        <section class="coaches-consultants-cta text-centre animate-on-scroll animate-fade-up">
+        <section class="coaches-consultants-cta text-center animate-on-scroll animate-fade-up">
             <div class="section-content">
                 <h2 class="animate-on-scroll animate-fade-up">Ready to Scale Your Coaching or Consulting Business?</h2>
                 <p class="animate-on-scroll animate-fade-up">Let's discuss how our expertise can help you build a powerful personal brand and generate consistent high-value clients.</p>
@@ -289,3 +289,4 @@ $challenges = get_post_meta(get_the_ID(), '_coaches_consultants_challenges', tru
 </main>
 
 <?php get_footer(); ?>
+

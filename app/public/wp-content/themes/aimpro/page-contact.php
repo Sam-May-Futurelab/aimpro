@@ -56,7 +56,7 @@ get_header(); ?>
                 </div>
                 
                 <!-- Location Badge -->
-                <div style="text-align: centre; margin-top: 3rem;">
+                <div style="text-align: center; margin-top: 3rem;">
                     <div class="service-tags-strip" style="display: inline-block; padding: 0.75rem 2rem; border-radius: 50px;">
                         <span style="font-weight: 600; letter-spacing: 1px; colour: white;">
                             📍 <?php echo aimpro_get_field('contact_hero_badge', 'LOCATED IN BIRMINGHAM\'S BUSINESS DISTRICT'); ?>
@@ -280,14 +280,14 @@ get_header(); ?>
 }
 
 .hero-content {
-    text-align: centre;
+    text-align: center;
     position: relative;
     z-index: 2;
 }
 
 .hero-badge {
     display: inline-flex;
-    align-items: centre;
+    align-items: center;
     gap: 0.5rem;
     background: rgba(241, 90, 37, 0.1);
     border: 1px solid rgba(241, 90, 37, 0.3);
@@ -326,7 +326,7 @@ get_header(); ?>
 
 .quick-contact-item {
     display: flex;
-    align-items: centre;
+    align-items: center;
     gap: 1rem;
     background: var(--glass-bg);
     border: var(--glass-border);
@@ -350,8 +350,8 @@ get_header(); ?>
     background: #000000;
     border-radius: 12px;
     display: flex;
-    align-items: centre;
-    justify-content: centre;
+    align-items: center;
+    justify-content: center;
     flex-shrink: 0;
     colour: #ffffff;
 }
@@ -393,20 +393,20 @@ get_header(); ?>
     align-items: start;
 }
 
-.contact-layout-centred {
+.contact-layout-centered {
     display: flex;
-    justify-content: centre;
+    justify-content: center;
     align-items: start;
     width: 100%;
 }
 
-.contact-layout-centred .contact-form-section {
+.contact-layout-centered .contact-form-section {
     width: 100%;
     max-width: 900px;
 }
 
 .contact-form-section .section-header {
-    text-align: centre;
+    text-align: center;
     margin-bottom: 3rem;
 }
 
@@ -477,8 +477,8 @@ get_header(); ?>
     background: var(--gradient-orange);
     border-radius: 10px;
     display: flex;
-    align-items: centre;
-    justify-content: centre;
+    align-items: center;
+    justify-content: center;
     flex-shrink: 0;
 }
 
@@ -496,7 +496,7 @@ get_header(); ?>
     background: rgba(241, 90, 37, 0.1);
     border: 1px solid rgba(241, 90, 37, 0.3);
     border-radius: 12px;
-    text-align: centre;
+    text-align: center;
     margin-bottom: 2rem;
 }
 
@@ -523,8 +523,8 @@ get_header(); ?>
     background: var(--gradient-orange);
     border-radius: 10px;
     display: flex;
-    align-items: centre;
-    justify-content: centre;
+    align-items: center;
+    justify-content: center;
     flex-shrink: 0;
 }
 
@@ -561,7 +561,7 @@ get_header(); ?>
 /* Service Quick Links */
 .service-link {
     display: flex;
-    align-items: centre;
+    align-items: center;
     gap: 1rem;
     padding: 1rem;
     background: rgba(255, 255, 255, 0.03);
@@ -583,8 +583,8 @@ get_header(); ?>
     background: var(--gradient-orange);
     border-radius: 8px;
     display: flex;
-    align-items: centre;
-    justify-content: centre;
+    align-items: center;
+    justify-content: center;
     flex-shrink: 0;
 }
 
@@ -606,7 +606,7 @@ get_header(); ?>
 
 .services-cta {
     margin-top: 1.5rem;
-    text-align: centre;
+    text-align: center;
 }
 
 /* FAQ Section */
@@ -616,7 +616,7 @@ get_header(); ?>
 }
 
 .contact-faq .section-header {
-    text-align: centre;
+    text-align: center;
     margin-bottom: 4rem;
 }
 
@@ -665,7 +665,7 @@ get_header(); ?>
 }
 
 .social-proof-content {
-    text-align: centre;
+    text-align: center;
 }
 
 .contact-social-proof h2 {
@@ -739,7 +739,7 @@ get_header(); ?>
 }
 
 .final-cta-content {
-    text-align: centre;
+    text-align: center;
 }
 
 .contact-final-cta h2 {
@@ -761,7 +761,7 @@ get_header(); ?>
 .cta-actions {
     display: flex;
     gap: 1.5rem;
-    justify-content: centre;
+    justify-content: center;
     margin-bottom: 2rem;
     flex-wrap: wrap;
 }
@@ -782,7 +782,7 @@ get_header(); ?>
         gap: 3rem;
     }
     
-    .contact-layout-centred {
+    .contact-layout-centered {
         display: block;
     }
     
@@ -824,7 +824,7 @@ get_header(); ?>
     
     .cta-actions {
         flex-direction: column;
-        align-items: centre;
+        align-items: center;
     }
     
     .proof-stats {
@@ -859,7 +859,7 @@ get_header(); ?>
 }
 
 .visit-us-content {
-    text-align: centre;
+    text-align: center;
     margin-bottom: 3rem;
 }
 
@@ -890,7 +890,7 @@ get_header(); ?>
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 3rem;
-    align-items: centre;
+    align-items: center;
 }
 
 .office-details h3 {
@@ -937,3 +937,4 @@ get_header(); ?>
 </style>
 
 <?php get_footer(); ?>
+

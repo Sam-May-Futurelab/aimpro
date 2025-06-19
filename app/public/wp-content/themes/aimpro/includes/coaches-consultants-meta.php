@@ -224,7 +224,7 @@ function coaches_consultants_meta_box_callback($post) {
         }
         .coaches-consultants-meta .image-upload-container {
             display: flex;
-            align-items: centre;
+            align-items: center;
             gap: 10px;
         }
         .coaches-consultants-meta .image-preview {
@@ -888,3 +888,4 @@ function save_coaches_consultants_meta_box_data($post_id) {
     }
 }
 add_action('save_post', 'save_coaches_consultants_meta_box_data');
+
