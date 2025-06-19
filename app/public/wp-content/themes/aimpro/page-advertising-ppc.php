@@ -214,12 +214,12 @@ function get_advertising_ppc_field($field_key, $post_id = null) {
                             </div>
                             <a href="<?php echo home_url('/white-label-ppc'); ?>" class="service-cta">Learn More</a>
                         </div>
-                    </div>
-
-                </div>
+                    </div>                </div>
             </div>
-        </section>        <!-- PPC Success Story -->
-        <section class="ppc-case-study">
+        </section>
+
+        <!-- PPC Success Story -->
+        <section class="ppc-case-study" style="padding-top: 5px;">
             <div class="section-content">
                 <div class="case-study-content">
                     <div class="case-study-text animate-on-scroll animate-slide-left">
@@ -323,47 +323,50 @@ function get_advertising_ppc_field($field_key, $post_id = null) {
                             <i class="fas fa-search"></i>
                         </div>
                         <h3>Search Advertising</h3>
-                        <ul>                            <li>Google Ads Search Campaigns</li>
+                        <ul>
+                            <li>Google Ads Search Campaigns</li>
                             <li>Microsoft Ads (Bing)</li>
                             <li>YouTube Search Ads</li>
                             <li>Amazon Advertising</li>
+                            <li>Google Display Network</li>
                         </ul>
-                        <div class="platform-cta">
+                        <div class="platform-cta" style="text-align: center;">
                             <a href="<?php echo home_url('/contact'); ?>" class="btn-outline platform-cta-btn">Get Search Advertising</a>
                         </div>
                     </div>
+                    
+                    <div class="platform-card animate-on-scroll animate-stagger animate-fade-up">
+                        <div class="platform-icon">
+                            <i class="fas fa-shopping-cart"></i>
+                        </div>
+                        <h3>E-commerce Advertising</h3>
+                        <ul>
+                            <li>Google Shopping Ads</li>
+                            <li>Facebook Shop Ads</li>
+                            <li>Amazon PPC</li>
+                            <li>Product Listing Ads</li>
+                            <li>Programmatic Display</li>
+                            <li>Retargeting Networks</li>
+                        </ul>
+                        <div class="platform-cta" style="text-align: center;">
+                            <a href="<?php echo home_url('/contact'); ?>" class="btn-outline platform-cta-btn">Boost E-commerce Sales</a>
+                        </div>
+                    </div>
+                    
                     <div class="platform-card animate-on-scroll animate-stagger animate-fade-up">
                         <div class="platform-icon">
                             <i class="fas fa-mobile-alt"></i>
                         </div>
                         <h3>Social Media Advertising</h3>
-                        <ul>                            <li>Facebook Advertising</li>
+                        <ul>
+                            <li>Facebook Advertising</li>
                             <li>Instagram Advertising</li>
                             <li>LinkedIn Ads</li>
                             <li>Twitter Ads</li>
-                        </ul>
-                        <div class="platform-cta">
-                            <a href="<?php echo home_url('/contact'); ?>" class="btn-outline platform-cta-btn">Start Social Advertising</a>
-                        </div>
-                    </div><div class="platform-card animate-on-scroll animate-stagger animate-fade-up">
-                        <h3><i class="fas fa-shopping-cart" aria-hidden="true"></i> E-commerce Advertising</h3>
-                        <ul>                            <li>Google Shopping Ads</li>
-                            <li>Facebook Shop Ads</li>
-                            <li>Amazon PPC</li>
-                            <li>Product Listing Ads</li>
-                        </ul>
-                        <div class="platform-cta">
-                            <a href="<?php echo home_url('/contact'); ?>" class="btn-outline platform-cta-btn">Boost E-commerce Sales</a>
-                        </div>
-                    </div>
-                    <div class="platform-card animate-on-scroll animate-stagger animate-fade-up">
-                        <h3><i class="fas fa-video" aria-hidden="true"></i> Display & Video</h3>
-                        <ul>                            <li>Google Display Network</li>
                             <li>YouTube Video Ads</li>
-                            <li>Programmatic Display</li>                            <li>Retargeting Networks</li>
                         </ul>
-                        <div class="platform-cta">
-                            <a href="<?php echo home_url('/contact'); ?>" class="btn-outline platform-cta-btn">Get Display & Video Ads</a>
+                        <div class="platform-cta" style="text-align: center;">
+                            <a href="<?php echo home_url('/contact'); ?>" class="btn-outline platform-cta-btn">Start Social Advertising</a>
                         </div>
                     </div>
                 </div>
