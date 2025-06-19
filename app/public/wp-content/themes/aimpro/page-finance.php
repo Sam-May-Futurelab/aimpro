@@ -15,7 +15,7 @@ get_header(); ?>
                 <p class="page-subtitle"><?php echo esc_html(get_post_meta(get_the_ID(), '_finance_header_subtitle', true) ?: 'Build trust and generate high-value leads with compliant financial services marketing'); ?></p>
             </div>
         </section>        <!-- Industry Overview -->
-        <section class="industry-overview">
+        <section class="industry-overview animate-on-scroll animate-fade-up">
             <div class="section-content">
                 <div class="overview-content">
                     <div class="overview-text animate-on-scroll animate-slide-left">
@@ -54,7 +54,7 @@ get_header(); ?>
                 </div>
             </div>
         </section>        <!-- Finance Services (2x2 Grid) -->
-        <section class="finance-services">
+        <section class="finance-services animate-on-scroll animate-fade-up">
             <div class="section-content">
                 <h2 class="animate-on-scroll animate-fade-up"><?php echo esc_html(get_post_meta(get_the_ID(), '_finance_solutions_title', true) ?: 'Our Financial Services Marketing Solutions'); ?></h2>
                 <div class="services-grid services-grid-2x2">
@@ -107,15 +107,15 @@ get_header(); ?>
                 </div>
             </div>
         </section>        <!-- Finance Success Story -->
-        <section class="finance-case-study">
+        <section class="finance-case-study animate-on-scroll animate-fade-up">
             <div class="section-content">
                 <div class="case-study-content">
-                    <div class="case-study-text">
+                    <div class="case-study-text animate-on-scroll animate-slide-left">
                         <span class="case-study-label"><?php echo esc_html(get_post_meta(get_the_ID(), '_finance_case_study_label', true) ?: 'Success Story'); ?></span>
                         <h2><?php echo esc_html(get_post_meta(get_the_ID(), '_finance_case_study_title', true) ?: 'WealthWise Financial: 150% Increase in Qualified Leads'); ?></h2>
                         <p><?php echo esc_html(get_post_meta(get_the_ID(), '_finance_case_study_content', true) ?: 'WealthWise Financial, an independent financial advisory firm, needed to build their client base while maintaining strict compliance with FCA regulations.'); ?></p>
                         
-                        <div class="case-study-challenge">
+                        <div class="case-study-challenge animate-on-scroll animate-fade-up">
                             <h3><?php echo esc_html(get_post_meta(get_the_ID(), '_finance_case_study_challenge_title', true) ?: 'The Challenge'); ?></h3>
                             <ul>
                                 <?php 
@@ -134,7 +134,7 @@ get_header(); ?>
                             </ul>
                         </div>
 
-                        <div class="case-study-solution">
+                        <div class="case-study-solution animate-on-scroll animate-fade-up">
                             <h3><?php echo esc_html(get_post_meta(get_the_ID(), '_finance_case_study_solution_title', true) ?: 'Our Solution'); ?></h3>
                             <ul>
                                 <?php 
@@ -153,7 +153,7 @@ get_header(); ?>
                             </ul>
                         </div>
                     </div>
-                    <div class="case-study-results">
+                    <div class="case-study-results animate-on-scroll animate-slide-right">
                         <h3><?php echo esc_html(get_post_meta(get_the_ID(), '_finance_case_study_results_title', true) ?: 'Results After 8 Months'); ?></h3>
                         <div class="results-grid">
                             <?php 
@@ -167,7 +167,7 @@ get_header(); ?>
                                 );
                             }
                             foreach ($case_study_results as $result): ?>
-                                <div class="result-item">
+                                <div class="result-item animate-on-scroll animate-stagger animate-scale-up">
                                     <div class="result-number"><?php echo esc_html($result['number']); ?></div>
                                     <div class="result-label"><?php echo esc_html($result['label']); ?></div>
                                 </div>
@@ -178,9 +178,9 @@ get_header(); ?>
                 </div>
             </div>
         </section>        <!-- Financial Services Types (4x1 Grid) -->
-        <section class="finance-types">
+        <section class="finance-types animate-on-scroll animate-fade-up">
             <div class="section-content">
-                <h2><?php echo esc_html(get_post_meta(get_the_ID(), '_finance_types_title', true) ?: 'Financial Services We Specialize In'); ?></h2>
+                <h2 class="animate-on-scroll animate-fade-up"><?php echo esc_html(get_post_meta(get_the_ID(), '_finance_types_title', true) ?: 'Financial Services We Specialize In'); ?></h2>
                 <div class="types-grid types-grid-4x1">
                     <?php 
                     $types = get_post_meta(get_the_ID(), '_finance_types', true);
@@ -209,7 +209,7 @@ get_header(); ?>
                         );
                     }
                     foreach ($types as $type): ?>
-                        <div class="type-card">
+                        <div class="type-card animate-on-scroll animate-stagger animate-fade-up">
                             <div class="type-icon">
                                 <i class="<?php echo esc_attr($type['icon']); ?>"></i>
                             </div>
@@ -224,10 +224,10 @@ get_header(); ?>
                 </div>
             </div>
         </section>        <!-- Compliance Framework -->
-        <section class="compliance-framework">
+        <section class="compliance-framework animate-on-scroll animate-fade-up">
             <div class="section-content">
-                <h2><?php echo esc_html(get_post_meta(get_the_ID(), '_finance_compliance_title', true) ?: 'Our Financial Marketing Compliance Framework'); ?></h2>
-                <div class="compliance-list-container">
+                <h2 class="animate-on-scroll animate-fade-up"><?php echo esc_html(get_post_meta(get_the_ID(), '_finance_compliance_title', true) ?: 'Our Financial Marketing Compliance Framework'); ?></h2>
+                <div class="compliance-list-container animate-on-scroll animate-fade-up">
                     <ul class="feature-list compliance-list">
                         <?php 
                         $compliance_points = get_post_meta(get_the_ID(), '_finance_compliance_points', true);
@@ -268,9 +268,9 @@ get_header(); ?>
                 </div>
             </div>
         </section>        <!-- Financial Marketing Funnel -->
-        <section class="optimization-process">
+        <section class="optimization-process animate-on-scroll animate-fade-up">
             <div class="container">
-                <h2><?php echo esc_html(get_post_meta(get_the_ID(), '_finance_funnel_title', true) ?: 'The Financial Services Marketing Funnel'); ?></h2>
+                <h2 class="animate-on-scroll animate-fade-up"><?php echo esc_html(get_post_meta(get_the_ID(), '_finance_funnel_title', true) ?: 'The Financial Services Marketing Funnel'); ?></h2>
                 
                 <div class="process-timeline">
                     <?php 
@@ -301,7 +301,7 @@ get_header(); ?>
                     }
                     $step_number = 1;
                     foreach ($funnel_steps as $step): ?>
-                        <div class="process-step">
+                        <div class="process-step animate-on-scroll animate-stagger animate-slide-up">
                             <div class="step-number"><?php echo $step_number; ?></div>
                             <div class="step-content">
                                 <h3><?php echo esc_html($step['title']); ?></h3>
@@ -319,9 +319,9 @@ get_header(); ?>
                 </div>
             </div>
         </section>        <!-- Finance Testimonial (without image) -->
-        <section class="finance-testimonial">
+        <section class="finance-testimonial animate-on-scroll animate-fade-up">
             <div class="section-content">
-                <div class="testimonial-content">
+                <div class="testimonial-content animate-on-scroll animate-scale-up">
                     <blockquote>
                         "<?php echo esc_html(get_post_meta(get_the_ID(), '_finance_testimonial_quote', true) ?: 'Aimpro Digital\'s understanding of financial services compliance is exceptional. They helped us navigate FCA regulations while generating 150% more qualified leads. Their educational content strategy positions us as thought leaders in our market, and the lead quality has improved dramatically. We finally have a marketing partner that understands our industry.'); ?>"
                     </blockquote>
@@ -335,15 +335,15 @@ get_header(); ?>
                 </div>
             </div>
         </section>        <!-- CTA Section -->
-        <section class="finance-cta text-center">
+        <section class="finance-cta text-center animate-on-scroll animate-fade-up">
             <div class="section-content">
-                <h2><?php echo esc_html(get_post_meta(get_the_ID(), '_finance_cta_title', true) ?: 'Ready to Grow Your Financial Services Business?'); ?></h2>
-                <p><?php echo esc_html(get_post_meta(get_the_ID(), '_finance_cta_subtitle', true) ?: 'Let\'s create a compliant, trust-building marketing strategy that generates high-value leads for your financial services.'); ?></p>
-                <div class="cta-buttons">
+                <h2 class="animate-on-scroll animate-fade-up"><?php echo esc_html(get_post_meta(get_the_ID(), '_finance_cta_title', true) ?: 'Ready to Grow Your Financial Services Business?'); ?></h2>
+                <p class="animate-on-scroll animate-fade-up"><?php echo esc_html(get_post_meta(get_the_ID(), '_finance_cta_subtitle', true) ?: 'Let\'s create a compliant, trust-building marketing strategy that generates high-value leads for your financial services.'); ?></p>
+                <div class="cta-buttons animate-on-scroll animate-scale-up">
                     <a href="<?php echo esc_url(get_post_meta(get_the_ID(), '_finance_cta_primary_url', true) ?: home_url('/contact')); ?>" class="btn btn-primary"><?php echo esc_html(get_post_meta(get_the_ID(), '_finance_cta_primary_text', true) ?: 'Get Compliance Audit'); ?></a>
                     <a href="<?php echo esc_url(get_post_meta(get_the_ID(), '_finance_cta_secondary_url', true) ?: home_url('/case-studies')); ?>" class="btn btn-secondary"><?php echo esc_html(get_post_meta(get_the_ID(), '_finance_cta_secondary_text', true) ?: 'View Finance Success Stories'); ?></a>
                 </div>
-                <div class="cta-benefits">
+                <div class="cta-benefits animate-on-scroll animate-fade-up">
                     <?php 
                     $cta_benefits = get_post_meta(get_the_ID(), '_finance_cta_benefits', true);
                     if (empty($cta_benefits)) {
