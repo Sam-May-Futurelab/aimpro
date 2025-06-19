@@ -22,7 +22,7 @@ get_header(); ?>
                 <p class="page-subtitle"><?php echo esc_html(get_post_meta(get_the_ID(), '_professional_services_header_subtitle', true) ?: 'Build trust, establish authority, and generate high-quality leads for your professional practice'); ?></p>
             </div>
         </section>        <!-- Industry Overview -->
-        <section class="industry-overview">
+        <section class="industry-overview animate-on-scroll animate-fade-up">
             <div class="section-content">
                 <div class="overview-content">
                     <div class="overview-text animate-on-scroll animate-slide-left">
@@ -61,9 +61,9 @@ get_header(); ?>
                 </div>
             </div>
         </section><!-- Professional Services (2x2 Grid) -->
-        <section class="professional-services">
+        <section class="professional-services animate-on-scroll animate-fade-up">
             <div class="section-content">
-                <h2><?php echo esc_html(get_post_meta(get_the_ID(), '_professional_services_solutions_title', true) ?: 'Our Professional Services Marketing Solutions'); ?></h2>
+                <h2 class="animate-on-scroll animate-fade-up"><?php echo esc_html(get_post_meta(get_the_ID(), '_professional_services_solutions_title', true) ?: 'Our Professional Services Marketing Solutions'); ?></h2>
                 <div class="benefits-grid-2x2">
                     <?php 
                     $solutions = get_post_meta(get_the_ID(), '_professional_services_solutions', true);
@@ -96,7 +96,7 @@ get_header(); ?>
                         );
                     }
                     foreach ($solutions as $solution): ?>
-                        <div class="benefit-card">
+                        <div class="benefit-card animate-on-scroll animate-stagger animate-fade-up">
                             <div class="benefit-icon">
                                 <i class="<?php echo esc_attr($solution['icon']); ?>"></i>
                             </div>
@@ -114,15 +114,15 @@ get_header(); ?>
                 </div>
             </div>
         </section>        <!-- Professional Services Success Story -->
-        <section class="professional-case-study">
+        <section class="professional-case-study animate-on-scroll animate-fade-up">
             <div class="section-content">
                 <div class="case-study-content">
-                    <div class="case-study-text">
+                    <div class="case-study-text animate-on-scroll animate-slide-left">
                         <span class="case-study-label"><?php echo esc_html(get_post_meta(get_the_ID(), '_professional_services_case_study_label', true) ?: 'Success Story'); ?></span>
                         <h2><?php echo esc_html(get_post_meta(get_the_ID(), '_professional_services_case_study_title', true) ?: 'WealthWise Advisors: 300% Lead Quality Improvement'); ?></h2>
                         <p><?php echo esc_html(get_post_meta(get_the_ID(), '_professional_services_case_study_content', true) ?: 'WealthWise Advisors, a financial planning firm, needed to generate high-quality leads while maintaining professional standards and regulatory compliance.'); ?></p>
                         
-                        <div class="case-study-challenge">
+                        <div class="case-study-challenge animate-on-scroll animate-fade-up">
                             <h3><?php echo esc_html(get_post_meta(get_the_ID(), '_professional_services_case_study_challenge_title', true) ?: 'The Challenge'); ?></h3>
                             <ul>
                                 <?php 
@@ -141,7 +141,7 @@ get_header(); ?>
                             </ul>
                         </div>
 
-                        <div class="case-study-solution">
+                        <div class="case-study-solution animate-on-scroll animate-fade-up">
                             <h3><?php echo esc_html(get_post_meta(get_the_ID(), '_professional_services_case_study_solution_title', true) ?: 'Our Solution'); ?></h3>
                             <ul>
                                 <?php 
@@ -160,7 +160,7 @@ get_header(); ?>
                             </ul>
                         </div>
                     </div>
-                    <div class="case-study-results">
+                    <div class="case-study-results animate-on-scroll animate-slide-right">
                         <h3><?php echo esc_html(get_post_meta(get_the_ID(), '_professional_services_case_study_results_title', true) ?: 'Results After 8 Months'); ?></h3>
                         <div class="results-grid">
                             <?php 
@@ -174,7 +174,7 @@ get_header(); ?>
                                 );
                             }
                             foreach ($case_study_results as $result): ?>
-                                <div class="result-item">
+                                <div class="result-item animate-on-scroll animate-stagger animate-scale-up">
                                     <div class="result-number"><?php echo esc_html($result['number']); ?></div>
                                     <div class="result-label"><?php echo esc_html($result['label']); ?></div>
                                 </div>
@@ -185,10 +185,10 @@ get_header(); ?>
                 </div>
             </div>
         </section>        <!-- Professional Services Process -->
-        <section class="professional-process">
+        <section class="professional-process animate-on-scroll animate-fade-up">
             <div class="section-content">
-                <h2><?php echo esc_html(get_post_meta(get_the_ID(), '_professional_services_process_title', true) ?: 'Our Professional Services Marketing Process'); ?></h2>
-                <div class="process-steps">
+                <h2 class="animate-on-scroll animate-fade-up"><?php echo esc_html(get_post_meta(get_the_ID(), '_professional_services_process_title', true) ?: 'Our Professional Services Marketing Process'); ?></h2>
+                <div class="process-steps animate-on-scroll animate-fade-up">
                     <?php 
                     $process_steps = get_post_meta(get_the_ID(), '_professional_services_process_steps', true);
                     if (empty($process_steps)) {
@@ -212,8 +212,7 @@ get_header(); ?>
                         );
                     }
                     $step_number = 1;
-                    foreach ($process_steps as $step): ?>
-                        <div class="process-step">
+                    foreach ($process_steps as $step): ?>                        <div class="process-step animate-on-scroll animate-stagger animate-fade-up">
                             <div class="step-number"><?php echo $step_number; ?></div>
                             <div class="step-content">
                                 <h3><?php echo esc_html($step['title']); ?></h3>
@@ -226,10 +225,10 @@ get_header(); ?>
                 </div>
             </div>
         </section>        <!-- Professional Services Insights -->
-        <section class="professional-insights">
+        <section class="professional-insights animate-on-scroll animate-fade-up">
             <div class="section-content">
-                <h2><?php echo esc_html(get_post_meta(get_the_ID(), '_professional_services_insights_title', true) ?: 'Professional Services Industry Insights'); ?></h2>
-                <div class="results-grid">
+                <h2 class="animate-on-scroll animate-fade-up"><?php echo esc_html(get_post_meta(get_the_ID(), '_professional_services_insights_title', true) ?: 'Professional Services Industry Insights'); ?></h2>
+                <div class="results-grid animate-on-scroll animate-fade-up">
                     <?php 
                     $insights = get_post_meta(get_the_ID(), '_professional_services_insights', true);
                     if (empty($insights)) {
@@ -256,8 +255,7 @@ get_header(); ?>
                             )
                         );
                     }
-                    foreach ($insights as $insight): ?>
-                        <div class="result-item">
+                    foreach ($insights as $insight): ?>                        <div class="result-item animate-on-scroll animate-stagger animate-scale-up">
                             <div class="result-number"><?php echo esc_html($insight['stat']); ?></div>
                             <div class="result-label"><?php echo esc_html($insight['title']); ?></div>
                             <p><?php echo esc_html($insight['description']); ?></p>
@@ -265,10 +263,10 @@ get_header(); ?>
                     <?php endforeach; ?>
                 </div>
             </div>
-        </section><!-- Professional Services Testimonial (without image) -->
-        <section class="professional-testimonial">
+        </section>        <!-- Professional Services Testimonial (without image) -->
+        <section class="professional-testimonial animate-on-scroll animate-fade-up">
             <div class="section-content">
-                <div class="testimonial-content">
+                <div class="testimonial-content animate-on-scroll animate-slide-up">
                     <blockquote>
                         "<?php echo esc_html(get_post_meta(get_the_ID(), '_professional_services_testimonial_quote', true) ?: 'Aimpro Digital\'s understanding of professional services marketing is exceptional. They helped us maintain compliance while dramatically improving our lead quality. The team\'s strategic approach to long sales cycles and high-value clients made all the difference.'); ?>"
                     </blockquote>
@@ -282,15 +280,14 @@ get_header(); ?>
                 </div>
             </div>
         </section>        <!-- CTA Section -->        
-        <section class="professional-cta text-center">
+        <section class="professional-cta text-center animate-on-scroll animate-fade-up">
             <div class="section-content">
-                <h2><?php echo esc_html(get_post_meta(get_the_ID(), '_professional_services_cta_title', true) ?: 'Ready to Elevate Your Professional Practice?'); ?></h2>
-                <p><?php echo esc_html(get_post_meta(get_the_ID(), '_professional_services_cta_subtitle', true) ?: 'Let\'s discuss how our professional services marketing expertise can generate high-quality leads for your firm.'); ?></p>
-                <div class="cta-buttons">
+                <h2 class="animate-on-scroll animate-fade-up"><?php echo esc_html(get_post_meta(get_the_ID(), '_professional_services_cta_title', true) ?: 'Ready to Elevate Your Professional Practice?'); ?></h2>
+                <p class="animate-on-scroll animate-fade-up"><?php echo esc_html(get_post_meta(get_the_ID(), '_professional_services_cta_subtitle', true) ?: 'Let\'s discuss how our professional services marketing expertise can generate high-quality leads for your firm.'); ?></p>
+                <div class="cta-buttons animate-on-scroll animate-fade-up">
                     <a href="<?php echo esc_url(get_post_meta(get_the_ID(), '_professional_services_cta_primary_url', true) ?: home_url('/contact')); ?>" class="btn btn-primary"><?php echo esc_html(get_post_meta(get_the_ID(), '_professional_services_cta_primary_text', true) ?: 'Get Free Practice Audit'); ?></a>
                     <a href="<?php echo esc_url(get_post_meta(get_the_ID(), '_professional_services_cta_secondary_url', true) ?: home_url('/case-studies')); ?>" class="btn btn-secondary"><?php echo esc_html(get_post_meta(get_the_ID(), '_professional_services_cta_secondary_text', true) ?: 'View More Success Stories'); ?></a>
-                </div>
-                <div class="cta-benefits">
+                </div>                <div class="cta-benefits animate-on-scroll animate-fade-up">
                     <?php 
                     $cta_benefits = get_post_meta(get_the_ID(), '_professional_services_cta_benefits', true);
                     if (empty($cta_benefits)) {
