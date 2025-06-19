@@ -406,6 +406,18 @@ document.addEventListener('DOMContentLoaded', function() {
             // Only create once
             if (mainNav.querySelector('.mobile-dropdown-content')) return;
 
+            // Add back button at the top of the menu
+            const mainMenuList = mainNav.querySelector('ul');
+            const backButton = document.createElement('div');
+            backButton.className = 'mobile-back-button';
+            backButton.innerHTML = `
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="15 18 9 12 15 6"></polyline>
+                </svg>
+                Back to Main Menu
+            `;
+            mainMenuList.insertBefore(backButton, mainMenuList.firstChild);
+
             // Services dropdown - insert directly after the Services link
             const servicesItem = mainNav.querySelector('.nav-item-mega');
             if (servicesItem) {
@@ -513,9 +525,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 `;
                 aboutLink.insertAdjacentElement('afterend', dropdown);
             }
-        }
-
-        // Toggle mobile menu
+        }        // Toggle mobile menu
         mobileToggle.addEventListener('click', function(e) {
             e.preventDefault();
             e.stopPropagation();
@@ -528,13 +538,28 @@ document.addEventListener('DOMContentLoaded', function() {
                 document.body.style.overflow = 'hidden';
             } else {
                 document.body.style.overflow = '';
+                // Clean up submenu state when closing menu
+                mainNav.classList.remove('submenu-open');
+                mainNav.querySelectorAll('.mobile-dropdown-active').forEach(item => {
+                    item.classList.remove('mobile-dropdown-active');
+                });
             }
-        });
-
-        // Handle dropdown clicks
+        });// Handle dropdown clicks
         mainNav.addEventListener('click', function(e) {
             if (mainNav.classList.contains('mobile-active')) {
                 const link = e.target.closest('a');
+                const backButton = e.target.closest('.mobile-back-button');
+                
+                // Handle back button click
+                if (backButton) {
+                    e.preventDefault();
+                    // Close all dropdowns and return to main menu
+                    mainNav.querySelectorAll('.mobile-dropdown-active').forEach(item => {
+                        item.classList.remove('mobile-dropdown-active');
+                    });
+                    mainNav.classList.remove('submenu-open');
+                    return;
+                }
                 
                 // If it's a dropdown toggle
                 if (link && (link.closest('.nav-item-mega') || link.closest('.nav-item-dropdown')) && link === link.parentElement.querySelector('a')) {
@@ -549,27 +574,42 @@ document.addEventListener('DOMContentLoaded', function() {
                     });
                     
                     // Toggle this dropdown
+                    const wasActive = parent.classList.contains('mobile-dropdown-active');
                     parent.classList.toggle('mobile-dropdown-active');
+                    
+                    // Add submenu-open class to main nav when any submenu is active
+                    const hasActiveDropdown = mainNav.querySelector('.mobile-dropdown-active');
+                    if (hasActiveDropdown && !wasActive) {
+                        mainNav.classList.add('submenu-open');
+                    } else if (!hasActiveDropdown) {
+                        mainNav.classList.remove('submenu-open');
+                    }
                 }
                 // If it's a dropdown item link, close menu
                 else if (link && link.closest('.mobile-dropdown-content')) {
                     setTimeout(() => {
                         mobileToggle.classList.remove('active');
-                        mainNav.classList.remove('mobile-active');
+                        mainNav.classList.remove('mobile-active', 'submenu-open');
                         document.body.style.overflow = '';
+                        // Clean up dropdown states
+                        mainNav.querySelectorAll('.mobile-dropdown-active').forEach(item => {
+                            item.classList.remove('mobile-dropdown-active');
+                        });
                     }, 100);
                 }
             }
-        });
-
-        // Close menu when clicking outside
+        });        // Close menu when clicking outside
         document.addEventListener('click', function(e) {
             if (mainNav.classList.contains('mobile-active') && 
                 !mainNav.contains(e.target) && 
                 !mobileToggle.contains(e.target)) {
                 mobileToggle.classList.remove('active');
-                mainNav.classList.remove('mobile-active');
+                mainNav.classList.remove('mobile-active', 'submenu-open');
                 document.body.style.overflow = '';
+                // Clean up dropdown states
+                mainNav.querySelectorAll('.mobile-dropdown-active').forEach(item => {
+                    item.classList.remove('mobile-dropdown-active');
+                });
             }
         });
 
@@ -577,8 +617,12 @@ document.addEventListener('DOMContentLoaded', function() {
         document.addEventListener('keydown', function(e) {
             if (e.key === 'Escape' && mainNav.classList.contains('mobile-active')) {
                 mobileToggle.classList.remove('active');
-                mainNav.classList.remove('mobile-active');
+                mainNav.classList.remove('mobile-active', 'submenu-open');
                 document.body.style.overflow = '';
+                // Clean up dropdown states
+                mainNav.querySelectorAll('.mobile-dropdown-active').forEach(item => {
+                    item.classList.remove('mobile-dropdown-active');
+                });
             }
         });
 
@@ -586,8 +630,12 @@ document.addEventListener('DOMContentLoaded', function() {
         window.addEventListener('resize', function() {
             if (window.innerWidth > 768 && mainNav.classList.contains('mobile-active')) {
                 mobileToggle.classList.remove('active');
-                mainNav.classList.remove('mobile-active');
+                mainNav.classList.remove('mobile-active', 'submenu-open');
                 document.body.style.overflow = '';
+                // Clean up dropdown states
+                mainNav.querySelectorAll('.mobile-dropdown-active').forEach(item => {
+                    item.classList.remove('mobile-dropdown-active');
+                });
             }
         });
     }
