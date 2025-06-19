@@ -17,6 +17,19 @@ $challenges = get_post_meta(get_the_ID(), '_coaches_consultants_challenges', tru
 ?>
 
 <main id="main" class="main-content">
+    <!-- Breadcrumbs -->
+    <div class="breadcrumbs-container">
+        <div class="container">
+            <nav class="breadcrumbs">
+                <a href="<?php echo home_url(); ?>">Home</a>
+                <span class="separator">›</span>
+                <a href="<?php echo home_url('/industries'); ?>">Industries</a>
+                <span class="separator">›</span>
+                <span class="current">Coaches & Consultants</span>
+            </nav>
+        </div>
+    </div>
+
     <div class="container">
           <!-- Page Header -->
         <section class="page-header">

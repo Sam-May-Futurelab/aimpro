@@ -9,28 +9,12 @@ get_header(); ?>
 <main id="primary" class="service-page streamline-funnel-page">
     <!-- Breadcrumbs -->
     <div class="breadcrumbs-container">
-        <div class="container">
-            <nav class="breadcrumbs">
-                <?php
-                $breadcrumb_path = get_post_meta(get_the_ID(), 'streamline_breadcrumb_path', true) ?: 'Home › Services › Marketing Automation › Streamline Sales Funnel';
-                $parts = explode(' › ', $breadcrumb_path);
-                $urls = array(
-                    'Home' => home_url(),
-                    'Services' => home_url('/services'),
-                    'Marketing Automation' => home_url('/marketing-automation'),
-                    'Streamline Sales Funnel' => ''
-                );
-                
-                foreach ($parts as $index => $part) {
-                    if ($index < count($parts) - 1) {
-                        $url = isset($urls[$part]) ? $urls[$part] : '#';
-                        echo '<a href="' . esc_url($url) . '">' . esc_html($part) . '</a>';
-                        echo '<span class="separator">›</span>';
-                    } else {
-                        echo '<span class="current">' . esc_html($part) . '</span>';
-                    }
-                }
-                ?>
+        <div class="container">            <nav class="breadcrumbs">
+                <a href="<?php echo home_url(); ?>">Home</a>
+                <span class="separator">›</span>
+                <a href="<?php echo home_url('/solutions'); ?>">Solutions</a>
+                <span class="separator">›</span>
+                <span class="current">Streamline Sales Funnel</span>
             </nav>
         </div>
     </div>    <!-- Hero Section -->
