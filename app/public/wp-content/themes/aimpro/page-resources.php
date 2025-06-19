@@ -15,20 +15,18 @@ get_header(); ?>
                 <span class="separator">›</span>
                 <span class="current">Resources</span>
             </nav>
-        </div>
-    </div>    <!-- Hero Section -->
-    <section class="page-hero service-hero">
-        <div class="container">
-            <div class="hero-content animate-on-scroll animate-fade-up">
+        </div>    </div>
+
+    <div class="container">
+        <!-- Page Header -->
+        <section class="page-header">
+            <div class="page-header-content animate-on-scroll animate-fade-up">
                 <h1><?php echo esc_html(get_post_meta(get_the_ID(), 'resources_hero_title', true) ?: 'Resources'); ?></h1>
-                <p class="hero-subtitle"><?php echo esc_html(get_post_meta(get_the_ID(), 'resources_hero_subtitle', true) ?: 'Your Digital Marketing Knowledge Hub - Everything you need to succeed in digital marketing'); ?></p>
-                <div class="hero-description">
-                    <p><?php echo esc_html(get_post_meta(get_the_ID(), 'resources_hero_description', true) ?: 'Explore our comprehensive collection of resources designed to help you stay ahead in the ever-evolving digital landscape. From the latest industry insights to practical tools and expert guidance, we\'ve got everything you need to elevate your marketing strategy.'); ?></p>
-                </div>
-            </div>
-        </div>
-    </section>    <!-- Resources Grid -->
-    <section class="service-overview">
+                <p class="page-subtitle"><?php echo esc_html(get_post_meta(get_the_ID(), 'resources_hero_subtitle', true) ?: 'Your Digital Marketing Knowledge Hub - Everything you need to succeed in digital marketing'); ?></p>
+            </div>        </section>
+
+        <!-- Resources Grid -->
+        <section class="service-overview">
         <div class="container">
             <div class="section-header animate-on-scroll animate-fade-up">
                 <h2><?php echo esc_html(get_post_meta(get_the_ID(), 'resources_categories_title', true) ?: 'Resource Categories'); ?></h2>
@@ -218,9 +216,9 @@ get_header(); ?>
                     </div>
                 </form>
             </div>
-        </div>
-    </section>
+        </div>    </section>
 
+    </div>
 </main>
 
 <?php get_footer(); ?>
