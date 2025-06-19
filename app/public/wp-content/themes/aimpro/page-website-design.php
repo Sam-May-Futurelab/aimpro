@@ -122,7 +122,7 @@ get_header(); ?>
                     <div class="stat-item animate-on-scroll animate-stagger animate-scale-up">
                         <span class="stat-number">2.1s</span>
                         <span class="stat-label">Average Load Time</span>
-                    </div>                    <div class="overview-cta animate-on-scroll animate-fade-up" style="margin-top: 30px; text-align: centre;">
+                    </div>                    <div class="overview-cta animate-on-scroll animate-fade-up" style="margin-top: 30px; text-align: center;">
                         <a href="<?php echo home_url('/contact'); ?>" class="btn-primary">Get a Free Design Quote</a>
                     </div>
                 </div>

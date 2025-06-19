@@ -98,8 +98,7 @@ get_header(); ?>
                     <div class="stat-item animate-on-scroll animate-stagger animate-scale-up">
                         <span class="stat-number">23%</span>
                         <span class="stat-label">Average Conversion Rate</span>
-                    </div>
-                    <div class="overview-cta animate-on-scroll animate-fade-up" style="margin-top: 30px; text-align: centre;">
+                    </div>                    <div class="overview-cta animate-on-scroll animate-fade-up" style="margin-top: 30px; text-align: center;">
                         <a href="<?php echo home_url('/contact'); ?>" class="btn-primary">Get a Free Landing Page Quote</a>
                     </div>
                 </div>
@@ -213,8 +212,7 @@ get_header(); ?>
                         <li>Product launches</li>
                     </ul>
                 </div>
-                
-                <div class="type-card animate-on-scroll animate-stagger animate-fade-up">
+                  <div class="type-card animate-on-scroll animate-stagger animate-fade-up">
                     <div class="type-icon">
                         <i class="fas fa-mobile-alt"></i>
                     </div>
@@ -225,6 +223,34 @@ get_header(); ?>
                         <li>Software downloads</li>
                         <li>Tool installations</li>
                         <li>Game launches</li>
+                    </ul>
+                </div>
+                
+                <div class="type-card animate-on-scroll animate-stagger animate-fade-up">
+                    <div class="type-icon">
+                        <i class="fas fa-gift"></i>
+                    </div>
+                    <h3>Contest & Giveaway Pages</h3>
+                    <p>Boost engagement and grow your audience with exciting contest pages that encourage participation and sharing.</p>
+                    <ul>
+                        <li>Social media contests</li>
+                        <li>Prize giveaways</li>
+                        <li>Viral campaigns</li>
+                        <li>Brand awareness contests</li>
+                    </ul>
+                </div>
+                
+                <div class="type-card animate-on-scroll animate-stagger animate-fade-up">
+                    <div class="type-icon">
+                        <i class="fas fa-handshake"></i>
+                    </div>
+                    <h3>Partner & Affiliate Pages</h3>
+                    <p>Convert visitors into partners and affiliates with dedicated pages that highlight program benefits and opportunities.</p>
+                    <ul>
+                        <li>Affiliate program signups</li>
+                        <li>Partnership applications</li>
+                        <li>Reseller programs</li>
+                        <li>Referral campaigns</li>
                     </ul>
                 </div>
             </div>
@@ -351,12 +377,8 @@ get_header(); ?>
             <div class="section-content">
                 <h2 class="animate-on-scroll animate-fade-up">Essential Conversion Elements We Include</h2>
             </div>
-            
-            <div class="methods-grid">
+              <div class="methods-grid">
                 <div class="method-card animate-on-scroll animate-stagger animate-fade-up">
-                    <div class="method-icon">
-                        <i class="fas fa-bullhorn"></i>
-                    </div>
                     <div class="method-content">
                         <h3>Compelling Headlines</h3>
                         <p>Attention-grabbing headlines that clearly communicate value and capture interest immediately.</p>
@@ -364,9 +386,6 @@ get_header(); ?>
                 </div>
                 
                 <div class="method-card animate-on-scroll animate-stagger animate-fade-up">
-                    <div class="method-icon">
-                        <i class="fas fa-star"></i>
-                    </div>
                     <div class="method-content">
                         <h3>Social Proof</h3>
                         <p>Testimonials, reviews, trust badges, and customer logos that build credibility and trust.</p>
@@ -374,9 +393,6 @@ get_header(); ?>
                 </div>
                 
                 <div class="method-card animate-on-scroll animate-stagger animate-fade-up">
-                    <div class="method-icon">
-                        <i class="fas fa-mouse-pointer"></i>
-                    </div>
                     <div class="method-content">
                         <h3>Clear CTAs</h3>
                         <p>Strategic call-to-action buttons that stand out and guide visitors toward conversion.</p>
@@ -384,9 +400,6 @@ get_header(); ?>
                 </div>
                 
                 <div class="method-card animate-on-scroll animate-stagger animate-fade-up">
-                    <div class="method-icon">
-                        <i class="fas fa-clock"></i>
-                    </div>
                     <div class="method-content">
                         <h3>Urgency & Scarcity</h3>
                         <p>Time-sensitive offers and limited availability messaging that motivates immediate action.</p>
@@ -394,22 +407,29 @@ get_header(); ?>
                 </div>
                 
                 <div class="method-card animate-on-scroll animate-stagger animate-fade-up">
-                    <div class="method-icon">
-                        <i class="fas fa-shield-alt"></i>
-                    </div>
                     <div class="method-content">
                         <h3>Risk Reversal</h3>
                         <p>Money-back guarantees and risk-free offers that remove barriers to conversion.</p>
                     </div>
                 </div>
-                
-                <div class="method-card animate-on-scroll animate-stagger animate-fade-up">
-                    <div class="method-icon">
-                        <i class="fas fa-chart-line"></i>
-                    </div>
+                  <div class="method-card animate-on-scroll animate-stagger animate-fade-up">
                     <div class="method-content">
                         <h3>Benefit-Focused Copy</h3>
                         <p>Persuasive copy that focuses on benefits and outcomes rather than features.</p>
+                    </div>
+                </div>
+                
+                <div class="method-card animate-on-scroll animate-stagger animate-fade-up">
+                    <div class="method-content">
+                        <h3>Visual Hierarchy</h3>
+                        <p>Strategic layout design that guides visitor attention and creates a clear path to conversion.</p>
+                    </div>
+                </div>
+                
+                <div class="method-card animate-on-scroll animate-stagger animate-fade-up">
+                    <div class="method-content">
+                        <h3>Mobile Optimisation</h3>
+                        <p>Responsive design that delivers exceptional user experience across all devices and screen sizes.</p>
                     </div>
                 </div>
             </div>
