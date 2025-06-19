@@ -416,15 +416,15 @@ document.addEventListener('DOMContentLoaded', function() {
                 </svg>
                 Back to Main Menu
             `;
-            mainMenuList.insertBefore(backButton, mainMenuList.firstChild);
-
-            // Services dropdown - insert directly after the Services link
+            mainMenuList.insertBefore(backButton, mainMenuList.firstChild);            // Services dropdown - insert directly after the Services link
             const servicesItem = mainNav.querySelector('.nav-item-mega');
             if (servicesItem) {
                 const servicesLink = servicesItem.querySelector('a');
                 const dropdown = document.createElement('div');
                 dropdown.className = 'mobile-dropdown-content';
                 dropdown.innerHTML = `
+                    <a href="/services" class="mobile-submenu-header">Services</a>
+                    
                     <div class="mobile-service-category">SEO Services</div>
                     <a href="/seo-services">SEO Services</a>
                     <a href="/local-seo">Local SEO</a>
@@ -462,13 +462,13 @@ document.addEventListener('DOMContentLoaded', function() {
 
             // Other dropdowns - get all dropdown items
             const dropdownItems = mainNav.querySelectorAll('.nav-item-dropdown');
-            
-            // Solutions
+              // Solutions
             if (dropdownItems[0]) {
                 const solutionsLink = dropdownItems[0].querySelector('a');
                 const dropdown = document.createElement('div');
                 dropdown.className = 'mobile-dropdown-content';
                 dropdown.innerHTML = `
+                    <a href="/solutions" class="mobile-submenu-header">Solutions</a>
                     <a href="/lead-generation">Lead Generation (B2B/B2C)</a>
                     <a href="/automate-marketing">Automate Marketing</a>
                     <a href="/improve-roi-ads">Improve ROI from Ads</a>
@@ -477,14 +477,13 @@ document.addEventListener('DOMContentLoaded', function() {
                     <a href="/streamline-sales-funnel">Streamline Your Sales Funnel</a>
                 `;
                 solutionsLink.insertAdjacentElement('afterend', dropdown);
-            }
-
-            // Industries
+            }            // Industries
             if (dropdownItems[1]) {
                 const industriesLink = dropdownItems[1].querySelector('a');
                 const dropdown = document.createElement('div');
                 dropdown.className = 'mobile-dropdown-content';
                 dropdown.innerHTML = `
+                    <a href="/industries" class="mobile-submenu-header">Industries</a>
                     <a href="/automotive">Automotive</a>
                     <a href="/home-garden">Home and Garden</a>
                     <a href="/finance">Finance</a>
@@ -494,14 +493,13 @@ document.addEventListener('DOMContentLoaded', function() {
                     <a href="/ecommerce">E-commerce</a>
                 `;
                 industriesLink.insertAdjacentElement('afterend', dropdown);
-            }
-
-            // Resources
+            }            // Resources
             if (dropdownItems[2]) {
                 const resourcesLink = dropdownItems[2].querySelector('a');
                 const dropdown = document.createElement('div');
                 dropdown.className = 'mobile-dropdown-content';
                 dropdown.innerHTML = `
+                    <a href="/resources" class="mobile-submenu-header">Resources</a>
                     <a href="/blog">Blog & Insights</a>
                     <a href="/case-studies">Case Studies</a>
                     <a href="/templates-tools">Templates & Tools</a>
@@ -509,14 +507,13 @@ document.addEventListener('DOMContentLoaded', function() {
                     <a href="/training-mentoring">Training & Mentoring</a>
                 `;
                 resourcesLink.insertAdjacentElement('afterend', dropdown);
-            }
-
-            // About
+            }            // About
             if (dropdownItems[3]) {
                 const aboutLink = dropdownItems[3].querySelector('a');
                 const dropdown = document.createElement('div');
                 dropdown.className = 'mobile-dropdown-content';
                 dropdown.innerHTML = `
+                    <a href="/about" class="mobile-submenu-header">About</a>
                     <a href="/company">Company</a>
                     <a href="/team">Team</a>
                     <a href="/testimonials">Testimonials</a>
