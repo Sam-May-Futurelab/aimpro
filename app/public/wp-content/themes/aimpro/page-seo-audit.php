@@ -325,64 +325,68 @@ $hero_image = get_post_meta(get_the_ID(), 'seo_audit_hero_image', true);
                 </div>
             </div>
         </section>        <!-- Audit Tools -->
-        <section class="audit-tools">
-            <div class="section-content">
-                <?php 
-                $tools_title = get_post_meta(get_the_ID(), 'seo_audit_tools_title', true) ?: 'Professional SEO Audit Tools';
-                $tool_categories = get_post_meta(get_the_ID(), 'seo_audit_tool_categories', true) ?: array(
-                    array(
-                        'title' => 'Technical Analysis',
-                        'tools' => array(
-                            'Screaming Frog SEO Spider',
-                            'Google Search Console',
-                            'GTmetrix & PageSpeed Insights',
-                            'SEMrush Site Audit'
+        <section class="service-overview">
+            <div class="container">
+                <div class="overview-content animate-on-scroll animate-fade-up">
+                    <h2>Professional SEO Audit Tools</h2>
+                    <p>We use industry-leading tools and technologies to provide comprehensive SEO audits that identify opportunities and drive results.</p>
+                </div>
+                
+                <div class="services-grid">
+                    <?php 
+                    $tool_categories = array(
+                        array(
+                            'title' => 'Technical Analysis',
+                            'description' => 'Advanced crawling and technical SEO analysis tools for comprehensive site evaluation.',
+                            'tools' => array(
+                                'Screaming Frog SEO Spider',
+                                'Google Search Console',
+                                'GTmetrix & PageSpeed Insights',
+                                'SEMrush Site Audit'
+                            ),
+                            'icon' => 'fas fa-cogs'
+                        ),
+                        array(
+                            'title' => 'Keyword Research',
+                            'description' => 'Professional keyword research and competitive analysis platforms.',
+                            'tools' => array(
+                                'Ahrefs Keywords Explorer',
+                                'SEMrush Keyword Magic Tool',
+                                'Google Keyword Planner',
+                                'Moz Keyword Explorer'
+                            ),                            'icon' => 'fas fa-search'
+                        ),
+                        array(
+                            'title' => 'Backlink Analysis',
+                            'description' => 'Comprehensive backlink profile analysis and link building opportunity identification.',
+                            'tools' => array(
+                                'Ahrefs Site Explorer',
+                                'Majestic SEO',
+                                'SEMrush Backlink Analytics',
+                                'Moz Link Explorer'
+                            ),
+                            'icon' => 'fas fa-link'
                         )
-                    ),
-                    array(
-                        'title' => 'Keyword Research',
-                        'tools' => array(
-                            'Ahrefs Keywords Explorer',
-                            'SEMrush Keyword Magic Tool',
-                            'Google Keyword Planner',
-                            'Moz Keyword Explorer'
-                        )
-                    ),
-                    array(
-                        'title' => 'Content Analysis',
-                        'tools' => array(
-                            'Surfer SEO',
-                            'Clearscope',
-                            'Siteliner',
-                            'Copyscape'
-                        )
-                    ),
-                    array(
-                        'title' => 'Backlink Analysis',
-                        'tools' => array(
-                            'Ahrefs Site Explorer',
-                            'Majestic SEO',
-                            'SEMrush Backlink Analytics',
-                            'Moz Link Explorer'
-                        )
-                    )
-                );
-                ?>                <h2 class="animate-on-scroll animate-fade-up"><?php echo esc_html($tools_title); ?></h2>
-                <div class="tools-grid">
+                    );
+                    ?>
                     
                     <?php foreach ($tool_categories as $category): ?>
-                        <div class="tool-category animate-on-scroll animate-stagger animate-fade-up">
+                        <div class="service-item animate-on-scroll animate-stagger animate-fade-up">
+                            <div class="service-icon">
+                                <i class="<?php echo esc_attr($category['icon']); ?>"></i>
+                            </div>
                             <h3><?php echo esc_html($category['title']); ?></h3>
-                            <ul class="tool-list">
+                            <p><?php echo esc_html($category['description']); ?></p>
+                            <ul class="service-features">
                                 <?php foreach ($category['tools'] as $tool): ?>
                                     <li><?php echo esc_html($tool); ?></li>
                                 <?php endforeach; ?>
                             </ul>
                         </div>
                     <?php endforeach; ?>
-
                 </div>
-            </div>        </section>        <!-- Audit Testimonial -->        <section class="audit-testimonial">
+            </div>
+        </section><!-- Audit Testimonial -->        <section class="audit-testimonial">
             <div class="section-content">
                 <div class="testimonial-content animate-on-scroll animate-fade-up">
                     <?php 
