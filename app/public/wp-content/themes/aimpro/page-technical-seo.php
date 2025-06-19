@@ -283,68 +283,95 @@ $hero_image = get_post_meta(get_the_ID(), 'technical_seo_hero_image', true);
                     <?php endforeach; ?>
 
                 </div>
-            </div>
-        </section>        <!-- Technical SEO Tools -->
-        <section class="technical-seo-tools">
-            <div class="section-content">
-                <?php 
-                $tools_title = get_post_meta(get_the_ID(), 'technical_seo_tools_title', true) ?: 'Professional Technical SEO Tools';
-                $tool_categories = get_post_meta(get_the_ID(), 'technical_seo_tool_categories', true) ?: array(
-                    array(
-                        'title' => 'Site Speed & Performance',
-                        'tools' => array(
-                            'Google PageSpeed Insights',
-                            'GTmetrix',
-                            'WebPageTest',
-                            'Lighthouse'
-                        )
-                    ),
-                    array(
-                        'title' => 'Crawling & Indexing',
-                        'tools' => array(
-                            'Screaming Frog SEO Spider',
-                            'Google Search Console',
-                            'Bing Webmaster Tools',
-                            'DeepCrawl'
-                        )
-                    ),
-                    array(
-                        'title' => 'Schema & Structured Data',
-                        'tools' => array(
-                            'Google Rich Results Test',
-                            'Schema Markup Validator',
-                            'JSON-LD Generator',
-                            'Structured Data Testing Tool'
-                        )
-                    ),
-                    array(
-                        'title' => 'Mobile & Core Web Vitals',
-                        'tools' => array(
-                            'Google Mobile-Friendly Test',
-                            'Core Web Vitals Report',
-                            'Chrome DevTools',
-                            'Real User Monitoring (RUM)'
-                        )
-                    )
-                );
-                ?>
-                <h2><?php echo esc_html($tools_title); ?></h2>
-                <div class="tools-grid">
-                    
-                    <?php foreach ($tool_categories as $category): ?>
-                        <div class="tool-category">
-                            <h3><?php echo esc_html($category['title']); ?></h3>
-                            <ul class="tool-list">
-                                <?php foreach ($category['tools'] as $tool): ?>
-                                    <li><?php echo esc_html($tool); ?></li>
-                                <?php endforeach; ?>
-                            </ul>
-                        </div>
-                    <?php endforeach; ?>
+            </div>        </section>
 
+        <!-- Technical SEO Tools -->
+        <section class="service-overview">
+            <div class="container">
+                <div class="section-header animate-on-scroll animate-fade-up">
+                    <h2>Professional Technical SEO Tools</h2>
+                    <p>We use cutting-edge tools and technologies to diagnose, analyze, and optimize your website's technical performance.</p>
+                </div>
+                <div class="services-grid animate-on-scroll animate-stagger animate-scale-up">
+                    <div class="service-item">
+                        <div class="service-icon">
+                            <i class="fas fa-tachometer-alt"></i>
+                        </div>
+                        <h3>Site Speed & Performance</h3>
+                        <ul style="text-align: left; color: #666; line-height: 1.8;">
+                            <li>Google PageSpeed Insights</li>
+                            <li>GTmetrix</li>
+                            <li>WebPageTest</li>
+                            <li>Lighthouse</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="service-item">
+                        <div class="service-icon">
+                            <i class="fas fa-spider"></i>
+                        </div>
+                        <h3>Crawling & Indexing</h3>
+                        <ul style="text-align: left; color: #666; line-height: 1.8;">
+                            <li>Screaming Frog SEO Spider</li>
+                            <li>Google Search Console</li>
+                            <li>Bing Webmaster Tools</li>
+                            <li>DeepCrawl</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="service-item">
+                        <div class="service-icon">
+                            <i class="fas fa-code"></i>
+                        </div>
+                        <h3>Schema & Structured Data</h3>
+                        <ul style="text-align: left; color: #666; line-height: 1.8;">
+                            <li>Google Rich Results Test</li>
+                            <li>Schema Markup Validator</li>
+                            <li>JSON-LD Generator</li>
+                            <li>Structured Data Testing Tool</li>
+                        </ul>
+                    </div>
+                      <div class="service-item">
+                        <div class="service-icon">
+                            <i class="fas fa-mobile-alt"></i>
+                        </div>
+                        <h3>Mobile & Core Web Vitals</h3>
+                        <ul style="text-align: left; color: #666; line-height: 1.8;">
+                            <li>Google Mobile-Friendly Test</li>
+                            <li>Core Web Vitals Report</li>
+                            <li>Chrome DevTools</li>
+                            <li>Real User Monitoring (RUM)</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="service-item">
+                        <div class="service-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <h3>Security & HTTPS</h3>
+                        <ul style="text-align: left; color: #666; line-height: 1.8;">
+                            <li>SSL Certificate Testing</li>
+                            <li>Security Headers Check</li>
+                            <li>Mixed Content Detection</li>
+                            <li>Vulnerability Scanning</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="service-item">
+                        <div class="service-icon">
+                            <i class="fas fa-server"></i>
+                        </div>
+                        <h3>Server & Infrastructure</h3>
+                        <ul style="text-align: left; color: #666; line-height: 1.8;">
+                            <li>Server Response Time Testing</li>
+                            <li>CDN Configuration</li>
+                            <li>Robots.txt Validation</li>
+                            <li>XML Sitemap Optimization</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
-        </section>        <!-- Common Technical Issues -->
+        </section><!-- Common Technical Issues -->
         <section class="technical-issues-section">
             <div class="section-content">
                 <?php 
