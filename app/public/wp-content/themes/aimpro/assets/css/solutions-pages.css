@@ -1512,10 +1512,23 @@
         margin-top: 2rem;
     }
     
+    /* Specific fix for tools grid to prevent horizontal scrolling */
+    .tools-grid {
+        grid-template-columns: 1fr !important;
+        gap: 1.5rem;
+        margin-top: 2rem;
+    }
+    
     .automation-card,
     .solution-automation-card,
     .solution-card {
         padding: 2rem;
+    }
+    
+    /* Tools section mobile fixes */
+    .tool-category {
+        padding: 1.5rem;
+        margin-bottom: 1rem;
     }
     
     .solution-icon {
@@ -1550,6 +1563,25 @@
     .solution-card {
         padding: 1.5rem;
         margin-bottom: 1rem;
+    }
+    
+    /* Tools section small mobile fixes */
+    .tool-category {
+        padding: 1.25rem;
+        margin-bottom: 1rem;
+    }
+    
+    .tool-category h3 {
+        font-size: 1.15rem;
+    }
+    
+    .tool-category p {
+        font-size: 0.9rem;
+    }
+    
+    .tool-item {
+        font-size: 0.85rem;
+        padding: 0.4rem 0;
     }
     
     .automation-card h3,

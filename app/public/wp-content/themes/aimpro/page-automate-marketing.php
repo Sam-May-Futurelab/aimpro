@@ -348,62 +348,47 @@ get_header(); ?>
         <section class="automation-tools">
             <div class="section-content">
                 <h2><?php echo esc_html(get_post_meta(get_the_ID(), '_automate_marketing_tools_title', true) ?: 'Marketing Automation Platforms We Use'); ?></h2>
-                <div class="tools-grid">
-                    
-                    <?php
-                    $tools_categories = get_post_meta(get_the_ID(), '_automate_marketing_tools_categories', true);
-                    if (empty($tools_categories)) {
-                        $tools_categories = array(
-                            array(
-                                'title' => 'Email Automation',
-                                'tools' => array(
-                                    'HubSpot Marketing Hub',
-                                    'Mailchimp Automation',
-                                    'ActiveCampaign',
-                                    'ConvertKit'
-                                )
-                            ),
-                            array(
-                                'title' => 'CRM Integration',
-                                'tools' => array(
-                                    'Salesforce Automation',
-                                    'HubSpot CRM',
-                                    'Pipedrive Workflows',
-                                    'Zoho CRM Plus'
-                                )
-                            ),
-                            array(
-                                'title' => 'Social Media Automation',
-                                'tools' => array(
-                                    'Hootsuite Scheduling',
-                                    'Buffer Automation',
-                                    'Sprout Social',
-                                    'Later Scheduling'
-                                )
-                            ),
-                            array(
-                                'title' => 'Analytics & Reporting',
-                                'tools' => array(
-                                    'Google Analytics 4',
-                                    'HubSpot Analytics',
-                                    'Mixpanel Events',
-                                    'Custom Dashboards'
-                                )
-                            )
-                        );
-                    }
-
-                    foreach ($tools_categories as $category) :
-                    ?>
-                    <div class="tool-category">
-                        <h3><?php echo esc_html($category['title']); ?></h3>
-                        <ul class="tool-list">
-                            <?php foreach ($category['tools'] as $tool) : ?>
-                                <li><?php echo esc_html($tool); ?></li>
-                            <?php endforeach; ?>
+                <div class="services-grid animate-on-scroll animate-stagger animate-scale-up">
+                    <div class="service-item">
+                        <div class="service-icon"><i class="fas fa-envelope-open-text"></i></div>
+                        <h3>Email Automation</h3>
+                        <ul style="text-align: left; color: #666; line-height: 1.8;">
+                            <li>HubSpot Marketing Hub</li>
+                            <li>Mailchimp Automation</li>
+                            <li>ActiveCampaign</li>
+                            <li>ConvertKit</li>
                         </ul>
                     </div>
-                    <?php endforeach; ?>
+                    <div class="service-item">
+                        <div class="service-icon"><i class="fas fa-users-cog"></i></div>
+                        <h3>CRM Integration</h3>
+                        <ul style="text-align: left; color: #666; line-height: 1.8;">
+                            <li>Salesforce Automation</li>
+                            <li>HubSpot CRM</li>
+                            <li>Pipedrive Workflows</li>
+                            <li>Zoho CRM Plus</li>
+                        </ul>
+                    </div>
+                    <div class="service-item">
+                        <div class="service-icon"><i class="fas fa-share-alt"></i></div>
+                        <h3>Social Media Automation</h3>
+                        <ul style="text-align: left; color: #666; line-height: 1.8;">
+                            <li>Hootsuite Scheduling</li>
+                            <li>Buffer Automation</li>
+                            <li>Sprout Social</li>
+                            <li>Later Scheduling</li>
+                        </ul>
+                    </div>
+                    <div class="service-item">
+                        <div class="service-icon"><i class="fas fa-chart-bar"></i></div>
+                        <h3>Analytics & Reporting</h3>
+                        <ul style="text-align: left; color: #666; line-height: 1.8;">
+                            <li>Google Analytics 4</li>
+                            <li>HubSpot Analytics</li>
+                            <li>Mixpanel Events</li>
+                            <li>Custom Dashboards</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </section>

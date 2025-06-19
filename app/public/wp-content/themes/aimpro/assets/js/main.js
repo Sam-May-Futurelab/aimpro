@@ -544,7 +544,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     item.classList.remove('mobile-dropdown-active');
                 });
             }
-        });// Handle dropdown clicks
+        });        // Handle dropdown clicks
         mainNav.addEventListener('click', function(e) {
             if (mainNav.classList.contains('mobile-active')) {
                 const link = e.target.closest('a');
@@ -561,32 +561,8 @@ document.addEventListener('DOMContentLoaded', function() {
                     return;
                 }
                 
-                // If it's a dropdown toggle
-                if (link && (link.closest('.nav-item-mega') || link.closest('.nav-item-dropdown')) && link === link.parentElement.querySelector('a')) {
-                    e.preventDefault();
-                    const parent = link.closest('.nav-item-mega, .nav-item-dropdown');
-                    
-                    // Close all other dropdowns
-                    mainNav.querySelectorAll('.mobile-dropdown-active').forEach(item => {
-                        if (item !== parent) {
-                            item.classList.remove('mobile-dropdown-active');
-                        }
-                    });
-                    
-                    // Toggle this dropdown
-                    const wasActive = parent.classList.contains('mobile-dropdown-active');
-                    parent.classList.toggle('mobile-dropdown-active');
-                    
-                    // Add submenu-open class to main nav when any submenu is active
-                    const hasActiveDropdown = mainNav.querySelector('.mobile-dropdown-active');
-                    if (hasActiveDropdown && !wasActive) {
-                        mainNav.classList.add('submenu-open');
-                    } else if (!hasActiveDropdown) {
-                        mainNav.classList.remove('submenu-open');
-                    }
-                }
-                // If it's a dropdown item link, close menu
-                else if (link && link.closest('.mobile-dropdown-content')) {
+                // If it's a dropdown item link (inside mobile-dropdown-content), close menu and allow navigation
+                if (link && link.closest('.mobile-dropdown-content')) {
                     setTimeout(() => {
                         mobileToggle.classList.remove('active');
                         mainNav.classList.remove('mobile-active', 'submenu-open');
@@ -596,6 +572,37 @@ document.addEventListener('DOMContentLoaded', function() {
                             item.classList.remove('mobile-dropdown-active');
                         });
                     }, 100);
+                    return;
+                }
+                
+                // If it's a main dropdown toggle link (the parent category link)
+                if (link && (link.closest('.nav-item-mega') || link.closest('.nav-item-dropdown'))) {
+                    const parent = link.closest('.nav-item-mega, .nav-item-dropdown');
+                    const isDirectChild = link.parentElement === parent;
+                    
+                    // Only prevent default and toggle dropdown if it's the direct child link of the dropdown parent
+                    if (isDirectChild) {
+                        e.preventDefault();
+                        
+                        // Close all other dropdowns
+                        mainNav.querySelectorAll('.mobile-dropdown-active').forEach(item => {
+                            if (item !== parent) {
+                                item.classList.remove('mobile-dropdown-active');
+                            }
+                        });
+                        
+                        // Toggle this dropdown
+                        const wasActive = parent.classList.contains('mobile-dropdown-active');
+                        parent.classList.toggle('mobile-dropdown-active');
+                        
+                        // Add submenu-open class to main nav when any submenu is active
+                        const hasActiveDropdown = mainNav.querySelector('.mobile-dropdown-active');
+                        if (hasActiveDropdown && !wasActive) {
+                            mainNav.classList.add('submenu-open');
+                        } else if (!hasActiveDropdown) {
+                            mainNav.classList.remove('submenu-open');
+                        }
+                    }
                 }
             }
         });        // Close menu when clicking outside

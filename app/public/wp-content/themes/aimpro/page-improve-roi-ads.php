@@ -66,95 +66,51 @@ get_header(); ?>
         <section class="roi-optimization-methods">
             <div class="section-content">
                 <h2 class="animate-on-scroll animate-fade-up"><?php echo esc_html(get_post_meta(get_the_ID(), '_improve_roi_ads_methods_title', true) ?: 'Our Ad ROI Optimization Methods'); ?></h2>
-                <div class="methods-grid">
-                    
-                    <?php
-                    $methods = get_post_meta(get_the_ID(), '_improve_roi_ads_methods', true);
-                    if (empty($methods)) {
-                        $methods = array(
-                            array(
-                                'title' => 'Advanced Conversion Tracking',
-                                'description' => 'Implement comprehensive tracking systems to measure true ROI and optimize for the metrics that matter most.',
-                                'features' => array(
-                                    'Enhanced e-commerce tracking',
-                                    'Offline conversion tracking',
-                                    'Customer lifetime value analysis',
-                                    'Attribution modeling setup'
-                                )
-                            ),
-                            array(
-                                'title' => 'Audience Optimization',
-                                'description' => 'Refine targeting to reach high-value prospects while reducing spend on low-converting audiences.',
-                                'features' => array(
-                                    'Audience segmentation analysis',
-                                    'Lookalike audience creation',
-                                    'Negative audience exclusions',
-                                    'Custom intent audiences'
-                                )
-                            ),
-                            array(
-                                'title' => 'Campaign Structure Optimization',
-                                'description' => 'Restructure campaigns for better performance, clearer data insights, and more efficient budget allocation.',
-                                'features' => array(
-                                    'Single keyword ad groups (SKAGs)',
-                                    'Campaign segmentation strategies',
-                                    'Ad group theme optimization',
-                                    'Budget allocation modeling'
-                                )
-                            ),
-                            array(
-                                'title' => 'Landing Page Optimization',
-                                'description' => 'Improve post-click experience to maximize conversion rates and reduce cost per conversion.',
-                                'features' => array(
-                                    'Landing page A/B testing',
-                                    'Conversion rate optimization',
-                                    'Mobile experience optimization',
-                                    'Page speed improvements'
-                                )
-                            )
-                        );
-                    }
-
-                    $method_icons = array(
-                        '<svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M18 20V10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                            <path d="M12 20V4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                            <path d="M6 20V14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                        </svg>',
-                        '<svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M17 21V19C17 17.9391 16.5786 16.9217 15.8284 16.1716C15.0783 15.4214 14.0609 15 13 15H5C3.93913 15 2.92172 15.4214 2.17157 16.1716C1.42143 16.9217 1 17.9391 1 19V21" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                            <circle cx="9" cy="7" r="4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                            <path d="M23 21V19C23 18.1645 22.7045 17.3541 22.1679 16.7116C21.6313 16.0691 20.8902 15.6316 20.07 15.4662" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                            <path d="M16 3.13281C16.8902 3.29814 17.6313 3.73574 18.1679 4.37823C18.7045 5.02072 19 5.83115 19 6.66656C19 7.50197 18.7045 8.3124 18.1679 8.95489C17.6313 9.59738 16.8902 10.035 16 10.2003" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                        </svg>',
-                        '<svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M9 12L11 14L15 10M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                        </svg>',
-                        '<svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M14 2H6C5.46957 2 4.96086 2.21071 4.58579 2.58579C4.21071 2.96086 4 3.46957 4 4V20C4 20.5304 4.21071 21.0391 4.58579 21.4142C4.96086 21.7893 5.46957 22 6 22H18C18.5304 22 19.0391 21.7893 19.4142 21.4142C19.7893 21.0391 20 20.5304 20 20V8L14 2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                            <polyline points="14,2 14,8 20,8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                        </svg>'
-                    );
-
-                    foreach ($methods as $index => $method) :
-                        $icon_index = $index % count($method_icons);
-                    ?>
-                    <div class="method-card animate-on-scroll animate-stagger animate-fade-up">
-                        <div class="method-icon">
-                            <?php echo $method_icons[$icon_index]; ?>
-                        </div>
-                        <div class="method-content">
-                            <h3><?php echo esc_html($method['title']); ?></h3>
-                            <p><?php echo esc_html($method['description']); ?></p>
-                            <ul class="method-features">
-                                <?php foreach ($method['features'] as $feature) : ?>
-                                    <li><?php echo esc_html($feature); ?></li>
-                                <?php endforeach; ?>
-                            </ul>
-                        </div>
+                <div class="services-grid animate-on-scroll animate-stagger animate-scale-up">
+                    <div class="service-item">
+                        <div class="service-icon"><i class="fas fa-chart-line"></i></div>
+                        <h3>Advanced Conversion Tracking</h3>
+                        <p>Implement comprehensive tracking systems to measure true ROI and optimize for the metrics that matter most.</p>
+                        <ul style="text-align: left; color: #666; line-height: 1.8;">
+                            <li>Enhanced e-commerce tracking</li>
+                            <li>Offline conversion tracking</li>
+                            <li>Customer lifetime value analysis</li>
+                            <li>Attribution modeling setup</li>
+                        </ul>
                     </div>
-                    <?php endforeach; ?>
-
+                    <div class="service-item">
+                        <div class="service-icon"><i class="fas fa-users"></i></div>
+                        <h3>Audience Optimization</h3>
+                        <p>Refine targeting to reach high-value prospects while reducing spend on low-converting audiences.</p>
+                        <ul style="text-align: left; color: #666; line-height: 1.8;">
+                            <li>Audience segmentation analysis</li>
+                            <li>Lookalike audience creation</li>
+                            <li>Negative audience exclusions</li>
+                            <li>Custom intent audiences</li>
+                        </ul>
+                    </div>
+                    <div class="service-item">
+                        <div class="service-icon"><i class="fas fa-layer-group"></i></div>
+                        <h3>Campaign Structure Optimization</h3>
+                        <p>Restructure campaigns for better performance, clearer data insights, and more efficient budget allocation.</p>
+                        <ul style="text-align: left; color: #666; line-height: 1.8;">
+                            <li>Single keyword ad groups (SKAGs)</li>
+                            <li>Campaign segmentation strategies</li>
+                            <li>Ad group theme optimization</li>
+                            <li>Budget allocation modeling</li>
+                        </ul>
+                    </div>
+                    <div class="service-item">
+                        <div class="service-icon"><i class="fas fa-mobile-alt"></i></div>
+                        <h3>Landing Page Optimization</h3>
+                        <p>Improve post-click experience to maximize conversion rates and reduce cost per conversion.</p>
+                        <ul style="text-align: left; color: #666; line-height: 1.8;">
+                            <li>Landing page A/B testing</li>
+                            <li>Conversion rate optimization</li>
+                            <li>Mobile experience optimization</li>
+                            <li>Page speed improvements</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </section>        <!-- ROI Success Story -->
