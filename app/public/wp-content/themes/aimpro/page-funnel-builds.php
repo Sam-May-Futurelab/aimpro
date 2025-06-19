@@ -401,10 +401,9 @@ get_header(); ?>
                     </div>
                     <h3>Leadpages</h3>
                     <p>Landing page platform focused on lead generation and conversions</p>
-                </div>
-                <div class="tool-item" style="text-align: center;">
+                </div>                <div class="tool-item" style="text-align: center;">
                     <div class="tool-icon" style="text-align: center; display: flex; justify-content: center;">
-                        <i class="fas fa-window-maximise"></i>
+                        <i class="fas fa-chart-bar"></i>
                     </div>
                     <h3>Unbounce & Instapage</h3>
                     <p>Advanced landing page platforms with A/B testing capabilities</p>
