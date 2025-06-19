@@ -81,6 +81,16 @@
 .about-page .company-overview .content-header {
     max-width: 900px;
     margin: 0 auto;
+    text-align: center;
+}
+
+.about-page .company-overview .section-description {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #64748b;
+    margin: 0 auto;
+    text-align: center;
+    max-width: 700px;
 }
 
 .about-page .company-overview h2 {
@@ -104,11 +114,13 @@
     border-radius: 2px;
 }
 
-.about-page .section-description {
+.about-page .values-section .section-description {
     font-size: 1.1rem;
     line-height: 1.8;
     color: #64748b;
-    margin: 0;
+    margin: 0 auto;
+    text-align: center;
+    max-width: 700px;
 }
 
 /* Video Section */
@@ -148,6 +160,10 @@
 
 .about-page .values-section .content-header {
     margin-bottom: 60px;
+    text-align: center;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .about-page .values-section h2 {
@@ -174,6 +190,8 @@
 /* Stats Section */
 .about-page .stats-container {
     margin: 40px 0;
+    text-align: center;
+    width: 100%;
 }
 
 .about-page .stats-grid {
@@ -182,6 +200,8 @@
     gap: 40px;
     max-width: 1000px;
     margin: 0 auto;
+    justify-items: center;
+    align-items: center;
 }
 
 .about-page .stat-item {
@@ -192,6 +212,11 @@
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     border: 1px solid rgba(241, 90, 37, 0.1);
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .about-page .stat-item:hover {
@@ -205,12 +230,17 @@
     color: #f15a25;
     margin-bottom: 8px;
     line-height: 1;
+    text-align: center;
+    width: 100%;
 }
 
 .about-page .stat-label {
     font-size: 1rem;
     color: #64748b;
     font-weight: 500;
+    text-align: center;
+    width: 100%;
+    line-height: 1.4;
 }
 
 /* Values Grid */
@@ -262,7 +292,7 @@
     margin: 0;
 }
 
-/* Services Ticker - Improved */
+/* Services Ticker - Fixed Loading Delay */
 .about-page .services-ticker {
     padding: 40px 0;
     background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
@@ -274,12 +304,15 @@
     white-space: nowrap;
     overflow: hidden;
     position: relative;
+    width: 100%;
 }
 
 .about-page .ticker-content {
     display: inline-flex;
-    animation: smoothScroll 60s linear infinite;
+    animation: smoothScroll 45s linear infinite;
     align-items: center;
+    width: max-content;
+    transform: translateX(0);
 }
 
 .about-page .ticker-content span {
@@ -292,6 +325,7 @@
     transition: opacity 0.3s ease, color 0.3s ease;
     white-space: nowrap;
     position: relative;
+    min-width: max-content;
 }
 
 .about-page .ticker-content span::after {
@@ -308,13 +342,13 @@
 }
 
 @keyframes smoothScroll {
-    0% { transform: translateX(100vw); }
-    100% { transform: translateX(-100%); }
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
 }
 
 /* CTA Section - Modern Design */
 .about-page .about-cta {
-    padding: 80px 0;
+    padding: 120px 0 80px;
     background: linear-gradient(135deg, #f8fafc 0%, #ffffff 50%, #f1f5f9 100%);
     position: relative;
     text-align: center;
@@ -1734,4 +1768,31 @@ body.page-template-page-company .case-study-results-wrapper .case-study-results,
 body.page-template-page-testimonials .case-study-results-wrapper .case-study-results,
 .page-become-a-partner .case-study-results-wrapper .case-study-results {
     margin-top: 0 !important;
+}
+
+/* Additional Stats Centering - Force Center */
+.about-page .values-section .stats-container,
+.about-page .values-section .stats-grid {
+    text-align: center !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+}
+
+.about-page .values-section .stat-item {
+    margin: 0 auto !important;
+    text-align: center !important;
+}
+
+.about-page .values-section .stat-number,
+.about-page .values-section .stat-label {
+    text-align: center !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    display: block !important;
+}
+
+/* Override any conflicting grid alignment */
+.about-page .stats-grid {
+    place-items: center !important;
+    justify-content: center !important;
 }
