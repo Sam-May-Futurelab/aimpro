@@ -135,9 +135,8 @@
                                         <h4><a href="<?php echo home_url('/marketing-automation'); ?>">Marketing Automation</a></h4>
                                         <ul class="mega-menu-list">
                                             <li><a href="<?php echo home_url('/ai-crm-setup'); ?>">AI CRM Setup</a></li>
-                                            <li><a href="<?php echo home_url('/email-sms-flows'); ?>">Email & SMS</a></li>
-                                            <li><a href="<?php echo home_url('/email-campaigns'); ?>">Email Campaigns</a></li>
-                                            <li><a href="<?php echo home_url('/funnel-automation'); ?>">Funnels</a></li>
+                                            <li><a href="<?php echo home_url('/email-sms-flows'); ?>">Email & SMS</a></li>                                            <li><a href="<?php echo home_url('/email-campaigns'); ?>">Email Campaigns</a></li>
+                                            <li><a href="<?php echo home_url('/funnel-automation'); ?>">Funnel Automation</a></li>
                                             <li><a href="<?php echo home_url('/chatbots'); ?>">Chatbots</a></li>
                                         </ul>
                                     </div>                                    <div class="mega-menu-column">
