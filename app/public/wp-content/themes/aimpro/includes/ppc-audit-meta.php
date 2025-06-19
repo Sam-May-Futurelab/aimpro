@@ -62,27 +62,30 @@ function aimpro_get_ppc_audit_default_values() {
         'service_icon_6' => 'fas fa-crosshairs',
         
         // Audit Process Section
-        'process_title' => 'Our 50-Point PPC Audit Process',
+        'process_title' => 'Our PPC Audit Process',
         
-        'process_category_title_1' => 'Account Foundation (10 Points)',
+        'process_category_title_1' => 'Account Foundation',
         'process_category_content_1' => "Account structure optimization\nCampaign organization review\nConversion tracking validation\nGoal alignment assessment\nBudget allocation analysis",
         'process_category_icon_1' => 'fas fa-building',
         
-        'process_category_title_2' => 'Keyword Strategy (12 Points)',
+        'process_category_title_2' => 'Keyword Strategy',
         'process_category_content_2' => "Keyword relevance scoring\nMatch type optimization\nSearch query analysis\nNegative keyword gaps\nKeyword bidding efficiency",
         'process_category_icon_2' => 'fas fa-key',
         
-        'process_category_title_3' => 'Ad Performance (10 Points)',
+        'process_category_title_3' => 'Ad Performance',
         'process_category_content_3' => "Ad copy effectiveness\nExtension utilization\nCreative testing strategy\nCall-to-action optimization\nAd rank factors analysis",
         'process_category_icon_3' => 'fas fa-bullhorn',
         
-        'process_category_title_4' => 'Landing Pages (8 Points)',
+        'process_category_title_4' => 'Landing Pages',
         'process_category_content_4' => "Relevance and alignment\nConversion optimization\nPage speed analysis\nMobile experience review",
         'process_category_icon_4' => 'fas fa-crosshairs',
-        
-        'process_category_title_5' => 'Targeting & Audiences (10 Points)',
+          'process_category_title_5' => 'Targeting & Audiences',
         'process_category_content_5' => "Geographic targeting precision\nDemographic optimization\nAudience segmentation\nDevice targeting strategy\nScheduling optimization",
         'process_category_icon_5' => 'fas fa-users',
+        
+        'process_category_title_6' => 'Analytics & Reporting',
+        'process_category_content_6' => "Conversion tracking accuracy\nGoal setup and attribution\nReporting dashboard optimization\nData integration review\nPerformance metrics validation",
+        'process_category_icon_6' => 'fas fa-chart-line',
         
         // Case Study Section
         'case_study_title' => 'Case Study: Manufacturing Company Audit',

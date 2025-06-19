@@ -108,9 +108,8 @@ get_header(); ?>
             $process_title = get_post_meta(get_the_ID(), '_ppc_audit_process_title', true);
             if (empty($process_title)) $process_title = $defaults['process_title'];
             ?>
-            <h2 class="animate-on-scroll animate-fade-up"><?php echo esc_html($process_title); ?></h2>
-            <div class="benefits-grid">
-                <?php for ($i = 1; $i <= 5; $i++) : ?>
+            <h2 class="animate-on-scroll animate-fade-up"><?php echo esc_html($process_title); ?></h2>            <div class="benefits-grid">
+                <?php for ($i = 1; $i <= 6; $i++) : ?>
                     <?php
                     $category_title = get_post_meta(get_the_ID(), "_ppc_audit_process_category_title_{$i}", true);
                     if (empty($category_title)) $category_title = $defaults["process_category_title_{$i}"];
@@ -124,26 +123,32 @@ get_header(); ?>
                     <div class="benefit-card animate-on-scroll animate-stagger animate-fade-up">
                         <div class="benefit-icon">
                             <i class="<?php echo esc_attr($category_icon); ?>"></i>
-                        </div>
-                        <h3><?php echo esc_html($category_title); ?></h3>
+                        </div>                        <h3><?php echo esc_html($category_title); ?></h3>
                         <?php
-                        // Convert newlines to list items
+                        // Convert newlines to line breaks (no bullet points)
                         $content_items = explode("\n", $category_content);
                         if (count($content_items) > 1) {
-                            echo '<ul class="service-features-list">';
+                            echo '<div class="process-checklist">';
                             foreach ($content_items as $item) {
                                 $item = trim($item);
                                 if (!empty($item)) {
-                                    echo '<li>' . esc_html($item) . '</li>';
+                                    echo '<div class="checklist-item">' . esc_html($item) . '</div>';
                                 }
                             }
-                            echo '</ul>';
+                            echo '</div>';
                         } else {
                             echo '<p>' . esc_html($category_content) . '</p>';
                         }
                         ?>
-                    </div>
-                <?php endfor; ?>
+                    </div>                <?php endfor; ?>
+            </div>
+            
+            <!-- CTA after audit process -->
+            <div class="text-center mt-2 animate-on-scroll animate-fade-up">
+                <div class="inline-cta-content">
+                    <p class="cta-text">Ready for a comprehensive analysis of your PPC campaigns?</p>
+                    <a href="/contact/" class="btn btn-primary">Get Your Free Audit</a>
+                </div>
             </div>
         </div>
     </section>    <!-- Case Study Section -->
@@ -191,10 +196,9 @@ get_header(); ?>
                         }
                         ?>
                     </div>
-                </div>
-                  <div class="case-study-results animate-on-scroll animate-slide-right">
+                </div>                  <div class="case-study-results animate-on-scroll animate-slide-right">
                     <h3>The Results After Implementation</h3>
-                    <div class="results-grid">&
+                    <div class="results-grid">
                         <?php for ($i = 1; $i <= 4; $i++) : ?>
                             <?php
                             $result_number = get_post_meta(get_the_ID(), "_ppc_audit_case_result_{$i}_number", true);
@@ -208,11 +212,18 @@ get_header(); ?>
                                 <div class="result-label"><?php echo esc_html($result_label); ?></div>
                             </div>
                         <?php endfor; ?>
-                    </div>
+                    </div></div>
+            </div>
+            
+            <!-- CTA after case study -->
+            <div class="text-center mt-2 animate-on-scroll animate-fade-up">
+                <div class="inline-cta-content">
+                    <p class="cta-text">Want similar results for your PPC campaigns?</p>
+                    <a href="/contact/" class="btn btn-primary">Start Your Audit Today</a>
                 </div>
             </div>
         </div>
-    </section>    <!-- What You Get Section -->    <section class="whitelabel-benefits">
+    </section>    <!-- What You Get Section --><section class="whitelabel-benefits">
         <div class="section-content">
             <?php
             $deliverables_title = get_post_meta(get_the_ID(), '_ppc_audit_deliverables_title', true);
@@ -237,13 +248,20 @@ get_header(); ?>
                         </div>
                         <h3><?php echo esc_html($deliverable_title); ?></h3>
                         <p><?php echo esc_html($deliverable_content); ?></p>
-                    </div>
-                <?php endfor; ?>
+                    </div>                <?php endfor; ?>
+            </div>
+            
+            <!-- CTA after deliverables -->
+            <div class="text-center mt-2 animate-on-scroll animate-fade-up">
+                <div class="inline-cta-content">
+                    <p class="cta-text">Get these comprehensive insights for your campaigns</p>
+                    <a href="/contact/" class="btn btn-primary">Request Your Detailed Audit</a>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Why Audit Section -->    <!-- Why You Need a PPC Audit -->    <section class="whitelabel-benefits">
+    <!-- Why Audit Section --><!-- Why You Need a PPC Audit -->    <section class="whitelabel-benefits">
         <div class="section-content">
             <?php
             $why_audit_title = get_post_meta(get_the_ID(), '_ppc_audit_why_audit_title', true);
@@ -268,8 +286,15 @@ get_header(); ?>
                         </div>
                         <h3><?php echo esc_html($reason_title); ?></h3>
                         <p><?php echo esc_html($reason_content); ?></p>
-                    </div>
-                <?php endfor; ?>
+                    </div>                <?php endfor; ?>
+            </div>
+            
+            <!-- CTA after why audit section -->
+            <div class="text-center mt-2 animate-on-scroll animate-fade-up">
+                <div class="inline-cta-content">
+                    <p class="cta-text">Don't let these issues drain your ad budget any longer</p>
+                    <a href="/contact/" class="btn btn-primary">Schedule Your Free Audit</a>
+                </div>
             </div>
         </div>
     </section>    <!-- Testimonial Section -->
