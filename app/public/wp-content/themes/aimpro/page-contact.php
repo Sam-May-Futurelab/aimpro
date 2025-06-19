@@ -55,11 +55,11 @@ get_header(); ?>
         </div>    </section>    <!-- Main Content -->
     <div class="contact-main-content" style="padding-top: 2rem;">
         <div class="container">
-            <div class="contact-layout-centred">                  <!-- Contact Form Section -->                <div class="contact-form-section animate-on-scroll animate-fade-up" style="margin-top: 0;">
+            <div style="max-width: 1000px; margin: 0 auto;">                  <!-- Contact Form Section -->                <div class="contact-form-section animate-on-scroll animate-fade-up" style="margin-top: 0;">
                     <!-- Contact Form Header -->
                     <div class="section-content" style="text-align: center; margin-bottom: 3rem;">
                         <h2 style="text-align: center;">Send Us a Message</h2>
-                        <div class="curly-underline-accent"></div>
+                        <div class="curly-underline-accent" style="margin: 0 auto;"></div>
                         <p style="color: #5a6c7d; font-size: 1.1rem; margin-top: 1rem; text-align: center;">Fill out the form below and we'll get back to you within 24 hours with a customised strategy for your business.</p>
                     </div>
                     
