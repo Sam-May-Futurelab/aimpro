@@ -100,9 +100,8 @@ get_header(); ?>
                     </div>
                     <h3><?php echo esc_html(get_post_meta(get_the_ID(), 'funnel_automation_service_6_title', true) ?: 'Continuous optimisation'); ?></h3>
                     <p><?php echo esc_html(get_post_meta(get_the_ID(), 'funnel_automation_service_6_desc', true) ?: 'Data-driven improvements and A/B testing to maximise conversion rates at every funnel stage.'); ?></p>                </div>            </div>
-            
-            <!-- CTA after services overview -->
-            <div class="text-centre animate-on-scroll animate-fade-up" style="margin-top: 3rem;">
+              <!-- CTA after services overview -->
+            <div class="text-center animate-on-scroll animate-fade-up" style="margin-top: 3rem;">
                 <a href="<?php echo home_url('/contact'); ?>" class="btn-primary">Get Your Custom Funnel Strategy</a>
             </div>
         </div>

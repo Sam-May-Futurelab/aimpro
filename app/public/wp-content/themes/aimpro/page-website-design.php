@@ -132,62 +132,87 @@ get_header(); ?>
     <section id="case-study" class="case-study-section">
         <div class="container">
             <div class="case-study-content">
-                <div class="case-study-header animate-on-scroll animate-fade-up">
-                    <span class="case-study-label">Case Study</span>
-                    <h2>How Premium Home Services Increased Lead Generation by 420%</h2>
+                <div class="case-study-text animate-on-scroll animate-slide-left">
+                    <h2>Case Study: Premium Home Services Transformation</h2>
+                    <p class="case-study-intro">How we helped a premium home services company increase lead generation by 420% and generate £180K in additional annual revenue through strategic website redesign and optimisation.</p>
+                    
+                    <div class="case-study-challenge">
+                        <h3>The Challenge</h3>
+                        <p>Premium Home Services had been operating successfully for over a decade, but their website was holding them back. The outdated design looked unprofessional and failed to reflect their premium service quality. With a bounce rate of 78% and only 3 leads per month, they were losing potential customers to competitors with stronger online presence.</p>
+                    </div>
+                    
+                    <div class="case-study-solution">
+                        <h3>Our Solution</h3>
+                        <p>We implemented a comprehensive website transformation strategy:</p>
+                        <ul>
+                            <li><i class="fas fa-paint-brush"></i> <strong>Complete Visual Redesign:</strong> Modern, professional design reflecting premium brand positioning</li>
+                            <li><i class="fas fa-images"></i> <strong>Service Showcase:</strong> Comprehensive service pages with before/after galleries</li>
+                            <li><i class="fas fa-shield-alt"></i> <strong>Trust Building:</strong> Testimonials, certifications, and social proof integration</li>
+                            <li><i class="fas fa-magnet"></i> <strong>Lead Capture:</strong> Strategic contact forms and clear call-to-action placement</li>
+                            <li><i class="fas fa-mobile-alt"></i> <strong>Mobile Optimisation:</strong> Seamless experience across all devices</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="case-study-results">
+                        <h3>The Impact</h3>
+                        <p>Within 6 months of launching the new website, Premium Home Services saw remarkable improvements across all key metrics, transforming their digital presence into a powerful lead generation engine.</p>
+                    </div>
                 </div>
                 
-                <div class="case-study-grid">
-                    <div class="case-study-challenge animate-on-scroll animate-slide-left">                        <p>Premium Home Services had an outdated website that looked unprofessional and failed to generate quality leads. Their bounce rate was 78%, and they were losing potential customers to competitors with better online presence.</p>
-                        
-                        <div class="challenge-metrics">
-                            <div class="metric animate-on-scroll animate-stagger animate-scale-up">
-                                <span class="metric-value">78%</span>
-                                <span class="metric-label">Bounce Rate</span>
-                            </div>
-                            <div class="metric animate-on-scroll animate-stagger animate-scale-up">
-                                <span class="metric-value">3</span>
-                                <span class="metric-label">Leads per Month</span>
-                            </div>
+                <div class="case-study-metrics animate-on-scroll animate-slide-right">
+                    <div class="metrics-before">
+                        <h4>Before</h4>
+                        <div class="metric-item">
+                            <span class="metric-number">78%</span>
+                            <span class="metric-label">Bounce Rate</span>
+                        </div>
+                        <div class="metric-item">
+                            <span class="metric-number">3</span>
+                            <span class="metric-label">Leads per Month</span>
+                        </div>
+                        <div class="metric-item">
+                            <span class="metric-number">45s</span>
+                            <span class="metric-label">Average Session</span>
                         </div>
                     </div>
                     
-                    <div class="case-study-solution animate-on-scroll animate-slide-right">
-                        <h3>Our Solution</h3>
-                        <ul>
-                            <li><strong>Complete Visual Redesign:</strong> Modern, professional design reflecting premium brand positioning</li>
-                            <li><strong>Service Showcase:</strong> Comprehensive service pages with before/after galleries</li>
-                            <li><strong>Trust Building:</strong> Testimonials, certifications, and social proof integration</li>
-                            <li><strong>Lead Capture:</strong> Strategic contact forms and clear call-to-action placement</li>
-                            <li><strong>Mobile optimisation:</strong> Seamless experience across all devices</li>
-                        </ul>
+                    <div class="metrics-after">
+                        <h4>After</h4>
+                        <div class="metric-item success">
+                            <span class="metric-number">13%</span>
+                            <span class="metric-label">Bounce Rate</span>
+                            <span class="metric-change">-65%</span>
+                        </div>
+                        <div class="metric-item success">
+                            <span class="metric-number">15+</span>
+                            <span class="metric-label">Leads per Month</span>
+                            <span class="metric-change">+420%</span>
+                        </div>
+                        <div class="metric-item success">
+                            <span class="metric-number">2m 53s</span>
+                            <span class="metric-label">Average Session</span>
+                            <span class="metric-change">+285%</span>
+                        </div>
                     </div>
-                </div>
-                
-                <div class="case-study-results animate-on-scroll animate-fade-up">
-                    <h3>The Results</h3>
-                    <div class="results-grid">
-                        <div class="result-item animate-on-scroll animate-stagger animate-scale-up">
-                            <span class="result-number">420%</span>
-                            <span class="result-label">Increase in Monthly Leads</span>
-                        </div>
-                        <div class="result-item animate-on-scroll animate-stagger animate-scale-up">
-                            <span class="result-number">65%</span>
-                            <span class="result-label">Reduction in Bounce Rate</span>
-                        </div>
-                        <div class="result-item animate-on-scroll animate-stagger animate-scale-up">
-                            <span class="result-number">285%</span>
-                            <span class="result-label">Increase in Session Duration</span>
-                        </div>
-                        <div class="result-item animate-on-scroll animate-stagger animate-scale-up">
-                            <span class="result-number">£180K</span>
-                            <span class="result-label">Additional Annual Revenue</span>
+                    
+                    <div class="revenue-impact">
+                        <div class="revenue-box">
+                            <i class="fas fa-chart-line"></i>
+                            <span class="revenue-amount">£180K</span>
+                            <span class="revenue-label">Additional Annual Revenue</span>
                         </div>
                     </div>
                 </div>
             </div>
+            
+            <!-- CTA after case study -->
+            <div class="text-center animate-on-scroll animate-fade-up" style="margin-top: 3rem;">
+                <h3>Ready to Transform Your Website?</h3>
+                <p>See how our website design expertise can drive similar results for your business.</p>
+                <a href="<?php echo home_url('/contact'); ?>" class="btn-primary">Start Your Website Project</a>
+            </div>
         </div>
-    </section>    <!-- Design Process -->
+    </section><!-- Design Process -->
     <section class="design-process">
         <div class="container">
             <h2 class="animate-on-scroll animate-fade-up">Our Website Design Process</h2>

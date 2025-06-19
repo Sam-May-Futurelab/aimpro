@@ -80,13 +80,9 @@ function get_advertising_ppc_field($field_key, $post_id = null) {
                 <div class="section-header animate-on-scroll animate-fade-up">
                     <h2>Our Advertising & PPC Services</h2>
                     <p>Comprehensive pay-per-click advertising solutions designed to maximise your return on investment across all major platforms.</p>
-                </div>                <div class="services-grid">                    
-                    <div class="service-card animate-on-scroll animate-stagger animate-fade-up">
+                </div>                <div class="services-grid">                      <div class="service-card animate-on-scroll animate-stagger animate-fade-up">
                         <div class="service-icon">
-                            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <circle cx="12" cy="12" r="10" stroke="currentcolour" stroke-width="2"/>
-                                <polygon points="10,8 16,12 10,16 10,8" fill="currentcolour"/>
-                            </svg>
+                            <i class="fab fa-google" style="font-size: 2.5rem;"></i>
                         </div>
                         <div class="service-content">
                             <h3>Google Ads Management</h3>
@@ -99,14 +95,9 @@ function get_advertising_ppc_field($field_key, $post_id = null) {
                             </ul>
                             <a href="<?php echo home_url('/google-ads'); ?>" class="service-cta">Learn More</a>
                         </div>
-                    </div>
-
-                    <div class="service-card animate-on-scroll animate-stagger animate-fade-up">
+                    </div>                    <div class="service-card animate-on-scroll animate-stagger animate-fade-up">
                         <div class="service-icon">
-                            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M18 2H6C4.89543 2 4 2.89543 4 4V20C4 21.1046 4.89543 22 6 22H18C19.1046 22 20 21.1046 20 20V4C20 2.89543 19.1046 2 18 2Z" stroke="currentcolour" stroke-width="2"/>
-                                <path d="M8 6H16M8 10H16M8 14H12" stroke="currentcolour" stroke-width="2"/>
-                            </svg>
+                            <i class="fab fa-facebook" style="font-size: 2.5rem;"></i>
                         </div>
                         <div class="service-content">
                             <h3>Meta Ads (Facebook & Instagram)</h3>
@@ -119,13 +110,9 @@ function get_advertising_ppc_field($field_key, $post_id = null) {
                             </ul>
                             <a href="<?php echo home_url('/meta-ads'); ?>" class="service-cta">Learn More</a>
                         </div>
-                    </div>
-
-                    <div class="service-card animate-on-scroll animate-stagger animate-fade-up">
+                    </div>                    <div class="service-card animate-on-scroll animate-stagger animate-fade-up">
                         <div class="service-icon">
-                            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M21 21L16.514 16.506L21 21ZM18.485 10.74C18.485 15.054 15.054 18.485 10.74 18.485C6.426 18.485 3 15.054 3 10.74C3 6.426 6.426 3 10.74 3C15.054 3 18.485 6.426 18.485 10.74Z" stroke="currentcolour" stroke-width="2"/>
-                            </svg>
+                            <i class="fab fa-microsoft" style="font-size: 2.5rem;"></i>
                         </div>
                         <div class="service-content">
                             <h3>Microsoft Ads (Bing)</h3>
@@ -142,14 +129,9 @@ function get_advertising_ppc_field($field_key, $post_id = null) {
                             </div>
                             <a href="<?php echo home_url('/microsoft-ads'); ?>" class="service-cta">Learn More</a>
                         </div>
-                    </div>
-
-                    <div class="service-card animate-on-scroll animate-stagger animate-fade-up">
+                    </div>                    <div class="service-card animate-on-scroll animate-stagger animate-fade-up">
                         <div class="service-icon">
-                            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M4.5 16.5C4.5 17.9 5.6 19 7 19H17C18.4 19 19.5 17.9 19.5 16.5V7.5C19.5 6.1 18.4 5 17 5H7C5.6 5 4.5 6.1 4.5 7.5V16.5Z" stroke="currentcolour" stroke-width="2"/>
-                                <path d="M12 8V16M8 12H16" stroke="currentcolour" stroke-width="2"/>
-                            </svg>
+                            <i class="fas fa-redo-alt" style="font-size: 2.5rem;"></i>
                         </div>
                         <div class="service-content">
                             <h3>Retargeting & Display Advertising</h3>
@@ -166,13 +148,9 @@ function get_advertising_ppc_field($field_key, $post_id = null) {
                             </div>
                             <a href="<?php echo home_url('/retargeting-display'); ?>" class="service-cta">Learn More</a>
                         </div>
-                    </div>
-
-                    <div class="service-card animate-on-scroll animate-stagger animate-fade-up">
+                    </div>                    <div class="service-card animate-on-scroll animate-stagger animate-fade-up">
                         <div class="service-icon">
-                            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M9 12L11 14L15 10M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z" stroke="currentcolour" stroke-width="2"/>
-                            </svg>
+                            <i class="fas fa-clipboard-check" style="font-size: 2.5rem;"></i>
                         </div>
                         <div class="service-content">
                             <h3>PPC Audit</h3>
@@ -189,15 +167,9 @@ function get_advertising_ppc_field($field_key, $post_id = null) {
                             </div>
                             <a href="<?php echo home_url('/ppc-audit'); ?>" class="service-cta">Learn More</a>
                         </div>
-                    </div>
-
-                    <div class="service-card animate-on-scroll animate-stagger animate-fade-up">
+                    </div>                    <div class="service-card animate-on-scroll animate-stagger animate-fade-up">
                         <div class="service-icon">
-                            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M17 21V19C17 17.9391 16.5786 16.9217 15.8284 16.1716C15.0783 15.4214 14.0609 15 13 15H5C3.93913 15 2.92172 15.4214 2.17157 16.1716C1.42143 16.9217 1 17.9391 1 19V21" stroke="currentcolour" stroke-width="2"/>
-                                <circle cx="9" cy="7" r="4" stroke="currentcolour" stroke-width="2"/>
-                                <path d="M23 21V19C23 18.1645 22.7045 17.3541 22.1679 16.7116C21.6313 16.0691 20.8902 15.6316 20.07 15.4662" stroke="currentcolour" stroke-width="2"/>
-                            </svg>
+                            <i class="fas fa-handshake" style="font-size: 2.5rem;"></i>
                         </div>
                         <div class="service-content">
                             <h3>White Label PPC</h3>

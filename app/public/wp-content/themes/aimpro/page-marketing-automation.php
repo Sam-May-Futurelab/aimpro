@@ -55,12 +55,7 @@ get_header(); ?>
                 </div>
                 <div class="services-grid">                      <div class="service-card animate-on-scroll animate-stagger animate-fade-up">
                         <div class="service-icon">
-                            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M17 21V19C17 17.9391 16.5786 16.9217 15.8284 16.1716C15.0783 15.4214 14.0609 15 13 15H5C3.93913 15 2.92172 15.4214 2.17157 16.1716C1.42143 16.9217 1 17.9391 1 19V21" stroke="currentcolour" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                <circle cx="9" cy="7" r="4" stroke="currentcolour" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                <path d="M23 21V19C23 18.1645 22.7045 17.3541 22.1679 16.7116C21.6313 16.0691 20.8902 15.6316 20.07 15.4662" stroke="currentcolour" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                <path d="M16 3.13281C16.8902 3.29814 17.6313 3.73574 18.1679 4.37823C18.7045 5.02072 19 5.83115 19 6.66656C19 7.50197 18.7045 8.3124 18.1679 8.95489C17.6313 9.59738 16.8902 10.035 16 10.2003" stroke="currentcolour" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                            </svg>
+                            <i class="fas fa-users-cog" style="font-size: 2.5rem;"></i>
                         </div>
                         <div class="service-content">
                             <h3><?php echo esc_html(get_post_meta(get_the_ID(), 'ma_service_1_title', true) ?: 'AI CRM Setup & Integration'); ?></h3>
@@ -75,12 +70,9 @@ get_header(); ?>
                                 <?php endforeach; ?>
                             </ul>
                             <a href="<?php echo esc_url(get_post_meta(get_the_ID(), 'ma_service_1_link', true) ?: home_url('/ai-crm-setup')); ?>" class="service-cta">Learn More</a>
-                        </div>                    </div><div class="service-card animate-on-scroll animate-stagger animate-fade-up">
+                        </div>                    </div>                    <div class="service-card animate-on-scroll animate-stagger animate-fade-up">
                         <div class="service-icon">
-                            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M4 4H20C21.1 4 22 4.9 22 6V18C22 19.1 21.1 20 20 20H4C2.9 20 2 19.1 2 18V6C2 4.9 2.9 4 4 4Z" stroke="currentcolour" stroke-width="2"/>
-                                <polyline points="22,6 12,13 2,6" stroke="currentcolour" stroke-width="2"/>
-                            </svg>
+                            <i class="fas fa-envelope-open-text" style="font-size: 2.5rem;"></i>
                         </div>
                         <div class="service-content">
                             <h3><?php echo esc_html(get_post_meta(get_the_ID(), 'ma_service_2_title', true) ?: 'Email & SMS Automation Flows'); ?></h3>
@@ -97,12 +89,7 @@ get_header(); ?>
                         </div>
                     </div>                    <div class="service-card animate-on-scroll animate-stagger animate-fade-up">
                         <div class="service-icon">
-                            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <rect x="3" y="4" width="18" height="18" rx="2" ry="2" stroke="currentcolour" stroke-width="2"/>
-                                <line x1="16" y1="2" x2="16" y2="6" stroke="currentcolour" stroke-width="2"/>
-                                <line x1="8" y1="2" x2="8" y2="6" stroke="currentcolour" stroke-width="2"/>
-                                <line x1="3" y1="10" x2="21" y2="10" stroke="currentcolour" stroke-width="2"/>
-                            </svg>
+                            <i class="fas fa-calendar-alt" style="font-size: 2.5rem;"></i>
                         </div>
                         <div class="service-content">
                             <h3><?php echo esc_html(get_post_meta(get_the_ID(), 'ma_service_3_title', true) ?: 'Email Marketing Campaigns'); ?></h3>
@@ -118,10 +105,7 @@ get_header(); ?>
                             <a href="<?php echo esc_url(get_post_meta(get_the_ID(), 'ma_service_3_link', true) ?: home_url('/email-campaigns')); ?>" class="service-cta">Learn More</a>
                         </div>                    </div>                    <div class="service-card animate-on-scroll animate-stagger animate-fade-up">
                         <div class="service-icon">
-                            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M4.5 16.5C4.5 17.9 5.6 19 7 19H17C18.4 19 19.5 17.9 19.5 16.5V7.5C19.5 6.1 18.4 5 17 5H7C5.6 5 4.5 6.1 4.5 7.5V16.5Z" stroke="currentcolour" stroke-width="2"/>
-                                <path d="M8 9L12 13L16 9" stroke="currentcolour" stroke-width="2"/>
-                            </svg>
+                            <i class="fas fa-filter" style="font-size: 2.5rem;"></i>
                         </div>
                         <div class="service-content">
                             <h3><?php echo esc_html(get_post_meta(get_the_ID(), 'ma_service_4_title', true) ?: 'Sales Funnel Automation'); ?></h3>
@@ -138,9 +122,7 @@ get_header(); ?>
                         </div>
                     </div>                    <div class="service-card animate-on-scroll animate-stagger animate-fade-up">
                         <div class="service-icon">
-                            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M21 15C21 15.5304 20.7893 16.0391 20.4142 16.4142C20.0391 16.7893 19.5304 17 19 17H7L3 21V5C3 4.46957 3.21071 3.96086 3.58579 3.58579C3.96086 3.21071 4.46957 3 5 3H19C19.5304 3 20.0391 3.21071 20.4142 3.58579C20.7893 3.96086 21 4.46957 21 5V15Z" stroke="currentcolour" stroke-width="2"/>
-                            </svg>
+                            <i class="fas fa-comments" style="font-size: 2.5rem;"></i>
                         </div>
                         <div class="service-content">
                             <h3><?php echo esc_html(get_post_meta(get_the_ID(), 'ma_service_5_title', true) ?: 'Chatbot Development'); ?></h3>
@@ -157,9 +139,7 @@ get_header(); ?>
                         </div>
                     </div>                    <div class="service-card animate-on-scroll animate-stagger animate-fade-up">
                         <div class="service-icon">
-                            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M13 2L3 14H12L11 22L21 10H12L13 2Z" stroke="currentcolour" stroke-width="2"/>
-                            </svg>
+                            <i class="fas fa-robot" style="font-size: 2.5rem;"></i>
                         </div>
                         <div class="service-content">
                             <h3><?php echo esc_html(get_post_meta(get_the_ID(), 'ma_service_6_title', true) ?: 'AI Marketing Tools'); ?></h3>
