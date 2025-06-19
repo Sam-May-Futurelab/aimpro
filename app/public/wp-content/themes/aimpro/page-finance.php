@@ -303,15 +303,14 @@ get_header(); ?>
                     $step_number = 1;
                     foreach ($funnel_steps as $step): ?>
                         <div class="process-step animate-on-scroll animate-stagger animate-slide-up">
-                            <div class="step-number"><?php echo $step_number; ?></div>
-                            <div class="step-content">
+                            <div class="step-number"><?php echo $step_number; ?></div>                            <div class="step-content">
                                 <h3><?php echo esc_html($step['title']); ?></h3>
                                 <p><?php echo esc_html($step['description']); ?></p>
-                                <ul class="step-tactics">
+                                <div class="step-tactics">
                                     <?php foreach ($step['tactics'] as $tactic): ?>
-                                        <li><?php echo esc_html($tactic); ?></li>
+                                        <div class="tactic-item"><?php echo esc_html($tactic); ?></div>
                                     <?php endforeach; ?>
-                                </ul>
+                                </div>
                             </div>
                         </div>
                     <?php 
