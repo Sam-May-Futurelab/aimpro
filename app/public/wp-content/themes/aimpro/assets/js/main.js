@@ -70,7 +70,7 @@ document.addEventListener('DOMContentLoaded', function() {
             const centerX = rect.left + rect.width / 2;
             const centerY = rect.top + rect.height / 2;
             
-            console.log('Creating explosion at:', centerX, centerY); // Debug log
+            // Creating explosion effect
             
             // Create multiple bursts with different colors
             const colors = ['#FFD700', '#FF6B35', '#F59E0B', '#EF4444', '#8B5CF6', '#06B6D4'];
@@ -189,7 +189,7 @@ document.addEventListener('DOMContentLoaded', function() {
     
     serviceTags.forEach(tag => {
         tag.addEventListener('mouseenter', function() {
-            console.log('Tag hovered:', this.textContent); // Debug log
+            // Tag hover effect
             particleSystem.createExplosion(this);
         });
     });
@@ -239,7 +239,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Enhanced Error Handling
     window.addEventListener('error', function(e) {
-        console.error('JavaScript Error:', e.error);
+        // JavaScript error handling
         // Could implement user-friendly error reporting here
     });
     
@@ -249,7 +249,7 @@ document.addEventListener('DOMContentLoaded', function() {
             setTimeout(() => {
                 const perfData = performance.getEntriesByType('navigation')[0];
                 if (perfData && perfData.loadEventEnd - perfData.loadEventStart > 3000) {
-                    console.log('Page load time is high, consider optimizing');
+                    // Page load time optimization needed
                 }
             }, 0);
         });
@@ -296,7 +296,7 @@ document.addEventListener('DOMContentLoaded', function() {
         deferredPrompt = e;
         
         // Could show custom install button here
-        console.log('PWA install prompt available');
+        // PWA install prompt available
     });
     
     // Enhanced analytics tracking (placeholder)
@@ -308,7 +308,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 event_label: label
             });
         }
-        console.log(`Track: ${category} - ${action} - ${label}`);
+        // Analytics tracking
     }
     
     // Track CTA clicks
@@ -1044,21 +1044,21 @@ document.addEventListener('DOMContentLoaded', function() {
                 // Handle successful load
                 animation.addEventListener('DOMLoaded', function() {
                     container.classList.remove('loading');
-                    console.log('Lottie hero animation loaded successfully');
+                    // Lottie hero animation loaded
                 });
                 
                 // Handle error
                 animation.addEventListener('error', function(error) {
                     container.classList.remove('loading');
-                    console.warn('Lottie animation failed to load:', error);
+                    // Lottie animation failed to load
                 });
                 
             } catch (error) {
                 container.classList.remove('loading');
-                console.warn('Failed to initialize Lottie animation:', error);
+                // Failed to initialize Lottie animation
             }
         } else if (container) {
-            console.warn('Lottie library not available or container not found');
+            // Lottie library not available or container not found
         }
     }
       // Initialize Lottie animation after DOM is ready
@@ -1072,7 +1072,7 @@ document.addEventListener('DOMContentLoaded', function() {
         // Intersection Observer for lazy loading animation only when visible
         const statsSection = document.querySelector('.stats-section');
         if (!statsSection) {
-            console.warn('Stats section not found');
+            // Stats section not found
             return null;
         }
         
@@ -1098,7 +1098,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 // Check for reduced motion preference
                 const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
                 if (prefersReducedMotion) {
-                    console.log('Reduced motion detected, using CSS fallback');
+                    // Using CSS fallback for reduced motion
                     initCSSWaveAnimation();
                     return;
                 }
@@ -1109,7 +1109,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 // Set a timeout to fallback if loading takes too long
                 const loadTimeout = setTimeout(() => {
                     abortController.abort();
-                    console.warn('Animation loading timeout, using CSS fallback');
+                    // Animation loading timeout, using CSS fallback
                     initCSSWaveAnimation();
                 }, 3000); // 3 second timeout
                 
@@ -1161,12 +1161,12 @@ document.addEventListener('DOMContentLoaded', function() {
                                 
                                 animation.addEventListener('DOMLoaded', function() {
                                     container.classList.remove('loading');
-                                    console.log('Stats animation loaded successfully');
+                                    // Stats animation loaded
                                 });
                                 
                                 animation.addEventListener('error', function(error) {
                                     container.classList.remove('loading');
-                                    console.warn('Stats animation error:', error);
+                                    // Stats animation error
                                     initCSSWaveAnimation();
                                 });
                                 
@@ -1188,7 +1188,7 @@ document.addEventListener('DOMContentLoaded', function() {
                                 
                             } catch (error) {
                                 container.classList.remove('loading');
-                                console.warn('Failed to load stats animation:', error);
+                                // Failed to load stats animation
                                 initCSSWaveAnimation();
                             }
                         }
@@ -1196,7 +1196,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     .catch(error => {
                         clearTimeout(loadTimeout);
                         if (error.name !== 'AbortError') {
-                            console.warn('Failed to pre-load animation data:', error);
+                            // Failed to pre-load animation data
                         }
                         initCSSWaveAnimation();
                     });
@@ -1221,7 +1221,7 @@ document.addEventListener('DOMContentLoaded', function() {
         // Show CSS animation
         if (fallbackDiv) {
             fallbackDiv.style.display = 'block';
-            console.log('CSS wave animation fallback activated');
+            // CSS wave animation fallback activated
         }
         
         // Add performance optimization for CSS animation
@@ -1277,20 +1277,20 @@ document.addEventListener('DOMContentLoaded', function() {
                             
                             // Performance thresholds
                             if (avgFrameTime > 20) { // Below 50fps
-                                console.warn(`Stats animation performance low: ${fps.toFixed(1)}fps (avg: ${avgFrameTime.toFixed(1)}ms, max: ${maxFrameTime.toFixed(1)}ms)`);
+                                // Performance monitoring
                                 
                                 // Automatically optimize if performance is poor
                                 optimizeAnimationsForPerformance();
                             } else if (avgFrameTime > 16.67) { // Below 60fps
-                                console.log(`Stats animation performance moderate: ${fps.toFixed(1)}fps`);
+                                // Performance moderate
                             } else {
-                                console.log(`Stats animation performance optimal: ${fps.toFixed(1)}fps`);
+                                // Performance optimal
                             }
                             
                             // Memory usage monitoring
                             if (performance.memory) {
                                 const memoryMB = (performance.memory.usedJSHeapSize / 1024 / 1024).toFixed(1);
-                                console.log(`Memory usage: ${memoryMB}MB`);
+                                // Memory usage tracking
                                 
                                 if (performance.memory.usedJSHeapSize > 50 * 1024 * 1024) { // > 50MB
                                     console.warn('High memory usage detected, consider reducing animation complexity');
@@ -1313,7 +1313,7 @@ document.addEventListener('DOMContentLoaded', function() {
         const container = document.getElementById('lottie-stats-animation');
         const cssWave = document.querySelector('.css-wave-animation');
         
-        console.log('Optimizing animation for better performance...');
+        // Optimizing animation for better performance
         
         if (animation && container) {
             // Reduce animation quality and complexity
@@ -1366,7 +1366,7 @@ document.addEventListener('DOMContentLoaded', function() {
             container.style.willChange = 'auto';
         }
         
-        console.log('Stats animation cleaned up');
+        // Stats animation cleaned up
     }
     
     // Cleanup on page unload
@@ -1437,7 +1437,7 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         }
         
-        console.log(`Device performance level: ${performanceLevel}`);
+        // Device performance level determined
         return performanceLevel;
     }
     
@@ -1447,16 +1447,16 @@ document.addEventListener('DOMContentLoaded', function() {
         
         switch (performanceLevel) {
             case 'low':
-                console.log('Low performance device detected, using CSS animations only');
+                // Low performance device, using CSS animations
                 initCSSWaveAnimation();
                 break;
             case 'medium':
-                console.log('Medium performance device detected, using optimized Lottie animations');
+                // Medium performance device, using optimized animations
                 setTimeout(initLottieStatsAnimation, 1000); // Delay for medium devices
                 break;
             case 'high':
             default:
-                console.log('High performance device detected, using full Lottie animations');
+                // High performance device, using full animations
                 initLottieStatsAnimation();
                 break;
         }
@@ -1507,7 +1507,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 sunIcon.style.opacity = '0';
                 moonIcon.style.opacity = '1';
                 themeToggle.setAttribute('aria-label', 'Switch to light theme');
-                console.log('Switched to dark theme');
+                // Switched to dark theme
             } else {
                 // Add light theme class (activate light theme)
                 document.body.classList.add('light-theme');
@@ -1517,7 +1517,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 sunIcon.style.opacity = '1';
                 moonIcon.style.opacity = '0';
                 themeToggle.setAttribute('aria-label', 'Switch to dark theme');
-                console.log('Switched to light theme');
+                // Switched to light theme
             }
             
             // Add feedback animation
@@ -1527,7 +1527,7 @@ document.addEventListener('DOMContentLoaded', function() {
             }, 150);
         });
         
-        console.log('Theme toggle initialized successfully');
+        // Theme toggle initialized
     } else {
         console.warn('Theme toggle button not found');
     }

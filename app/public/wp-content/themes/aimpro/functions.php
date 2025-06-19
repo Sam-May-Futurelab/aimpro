@@ -230,11 +230,12 @@ function aimpro_enqueue_assets() {
     wp_enqueue_script('aimpro-scroll-animations', get_template_directory_uri() . '/assets/js/scroll-animations.js', array(), $theme_version, true);
       // Note: Removed JS-based menu enhancements to use pure CSS solution
     // mega-menu.js removed as it was causing navigation conflicts and isn't needed for current navigation structure
-    
-    // Add inline script for critical path optimization
+      // Add inline script for critical path optimization
     $inline_script = "
-        document.documentElement.classList.add('js');
-        if ('IntersectionObserver' in window) {
+        if (document.documentElement) {
+            document.documentElement.classList.add('js');
+        }
+        if ('IntersectionObserver' in window && document.documentElement) {
             document.documentElement.classList.add('intersection-observer');
         }
     ";
