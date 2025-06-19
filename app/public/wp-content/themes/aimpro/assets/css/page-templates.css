@@ -2064,16 +2064,33 @@
     }
 }
 
-/* Global replacement of all checkmarks with target icon */
+/* High Converting Website Page - Center service item headers */
+.high-converting-website-page .service-item h3,
+.page-template-page-high-converting-website .service-item h3 {
+    text-align: center !important;
+}
+
+/* Global replacement of all checkmarks and list bullets with target icon */
 li:before[content="✓"],
 li::before[content="✓"],
 li:before[content='✓'],
 li::before[content='✓'],
 .service-features li:before,
+.service-features li::before,
 .package-features li:before,
+.package-features li::before,
 .tool-features li:before,
+.tool-features li::before,
 .feature-list li:before,
-ul li:before {
+.feature-list li::before,
+.service-item ul li:before,
+.service-item ul li::before,
+.service-card ul li:before,
+.service-card ul li::before,
+.services-grid ul li:before,
+.services-grid ul li::before,
+ul li:before,
+ul li::before {
     content: "" !important;
     background-image: url('../images/aimpro-target.png') !important;
     background-size: contain !important;
@@ -2082,4 +2099,26 @@ ul li:before {
     width: 16px !important;
     height: 16px !important;
     color: transparent !important;
+    position: absolute !important;
+    left: 0 !important;
+    top: 3px !important;
+}
+
+/* Ensure list items have proper positioning for the target icon */
+.service-item ul li,
+.service-card ul li,
+.services-grid ul li,
+ul li {
+    position: relative !important;
+    padding-left: 24px !important;
+    list-style: none !important;
+}
+
+/* Remove default list styling */
+.service-item ul,
+.service-card ul,
+.services-grid ul,
+ul {
+    list-style-type: none !important;
+    padding-left: 0 !important;
 }
