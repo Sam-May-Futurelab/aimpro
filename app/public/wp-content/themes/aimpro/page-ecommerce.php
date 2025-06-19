@@ -292,9 +292,30 @@ get_header(); ?>
                     ?>
                 </div>
             </div>
-        </section>
-
-    </div>
+        </section>    </div>
 </main>
+
+<style>
+/* Reduce white space above E-commerce Marketing Process section */
+.ecommerce-process {
+    margin-top: 1rem !important; /* Further reduced from 3rem to 1rem */
+    padding-top: 1rem !important; /* Further reduced from 2rem to 1rem */
+}
+
+/* Reduce padding around the case study results section */
+.ecommerce-case-study {
+    padding: 3rem 0 1rem 0 !important; /* Reduced bottom padding to bring next section closer */
+    margin: 2rem 0 0.5rem 0 !important; /* Reduced bottom margin */
+}
+
+.ecommerce-case-study .section-content {
+    padding: 2rem 1rem !important; /* Reduced internal padding */
+}
+
+.case-study-results {
+    padding: 1.5rem !important; /* Reduced padding around results */
+    margin: 1rem 0 !important; /* Reduced margin */
+}
+</style>
 
 <?php get_footer(); ?>
