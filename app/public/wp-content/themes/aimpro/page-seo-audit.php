@@ -148,11 +148,11 @@ $hero_image = get_post_meta(get_the_ID(), 'seo_audit_hero_image', true);
                     )
                 );
                 ?>
-                <h2><?php echo esc_html($components_title); ?></h2>
+                <h2 class="animate-on-scroll animate-fade-up"><?php echo esc_html($components_title); ?></h2>
                 <div class="components-grid">
                     
                     <?php foreach ($components as $component): ?>
-                        <div class="component-card <?php echo (isset($component['featured']) && $component['featured']) ? 'featured' : ''; ?>">
+                        <div class="component-card <?php echo (isset($component['featured']) && $component['featured']) ? 'featured' : ''; ?> animate-on-scroll animate-stagger animate-fade-up">
                             <div class="component-icon">
                                 <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <?php if (isset($component['featured']) && $component['featured']): ?>
@@ -195,19 +195,23 @@ $hero_image = get_post_meta(get_the_ID(), 'seo_audit_hero_image', true);
                     array('title' => 'Action Plan', 'description' => 'Prioritized recommendations with timelines'),
                     array('title' => 'ROI Projections', 'description' => 'Expected traffic and revenue improvements')
                 );
-                ?>                <h2><?php echo esc_html($sample_title); ?></h2>
-                <div class="sample-content">
-                    <div class="sample-details">
+                ?>                <h2 class="animate-on-scroll animate-fade-up"><?php echo esc_html($sample_title); ?></h2>                <div class="sample-content">
+                    <div class="sample-details animate-on-scroll animate-slide-left">
                         <h3><?php echo esc_html($sample_subtitle); ?></h3>
                         <div class="report-sections">
                             <?php foreach ($report_sections as $section): ?>
-                                <div class="report-section">
+                                <div class="report-section animate-on-scroll animate-stagger animate-fade-up">
                                     <h4><?php echo esc_html($section['title']); ?></h4>
                                     <p><?php echo esc_html($section['description']); ?></p>
                                 </div>
                             <?php endforeach; ?>
                         </div>
                     </div>
+                    <?php if ($sample_image): ?>
+                    <div class="sample-image animate-on-scroll animate-slide-right">
+                        <img src="<?php echo esc_url($sample_image); ?>" alt="SEO Audit Sample Report" />
+                    </div>
+                    <?php endif; ?>
                 </div>
             </div>
         </section>        <!-- Audit Process -->
@@ -257,7 +261,7 @@ $hero_image = get_post_meta(get_the_ID(), 'seo_audit_hero_image', true);
         <section class="audit-case-study">
             <div class="section-content">
                 <div class="case-study-content">
-                    <div class="case-study-text">
+                    <div class="case-study-text animate-on-scroll animate-slide-left">
                         <?php 
                         $case_study_label = get_post_meta(get_the_ID(), 'seo_audit_case_study_label', true) ?: 'SEO Audit Success Story';
                         $case_study_title = get_post_meta(get_the_ID(), 'seo_audit_case_study_title', true) ?: 'TechStart Solutions: From Audit to 380% Traffic Growth';
@@ -301,7 +305,7 @@ $hero_image = get_post_meta(get_the_ID(), 'seo_audit_hero_image', true);
                             </ul>
                         </div>
                     </div>
-                    <div class="case-study-results">
+                    <div class="case-study-results animate-on-scroll animate-slide-right">
                         <?php 
                         $case_study_results_title = get_post_meta(get_the_ID(), 'seo_audit_case_study_results_title', true) ?: 'Results After Implementation';
                         $case_study_results = get_post_meta(get_the_ID(), 'seo_audit_case_study_results', true) ?: array(
@@ -316,7 +320,7 @@ $hero_image = get_post_meta(get_the_ID(), 'seo_audit_hero_image', true);
                         <h3><?php echo esc_html($case_study_results_title); ?></h3>
                         <div class="results-grid">
                             <?php foreach ($case_study_results as $result): ?>
-                                <div class="result-item">
+                                <div class="result-item animate-on-scroll animate-stagger animate-scale-up">
                                     <div class="result-number"><?php echo esc_html($result['number']); ?></div>
                                     <div class="result-label"><?php echo esc_html($result['label']); ?></div>
                                 </div>
@@ -369,12 +373,11 @@ $hero_image = get_post_meta(get_the_ID(), 'seo_audit_hero_image', true);
                         )
                     )
                 );
-                ?>
-                <h2><?php echo esc_html($tools_title); ?></h2>
+                ?>                <h2 class="animate-on-scroll animate-fade-up"><?php echo esc_html($tools_title); ?></h2>
                 <div class="tools-grid">
                     
                     <?php foreach ($tool_categories as $category): ?>
-                        <div class="tool-category">
+                        <div class="tool-category animate-on-scroll animate-stagger animate-fade-up">
                             <h3><?php echo esc_html($category['title']); ?></h3>
                             <ul class="tool-list">
                                 <?php foreach ($category['tools'] as $tool): ?>
@@ -385,10 +388,9 @@ $hero_image = get_post_meta(get_the_ID(), 'seo_audit_hero_image', true);
                     <?php endforeach; ?>
 
                 </div>
-            </div>        </section>        <!-- Audit Testimonial -->
-        <section class="audit-testimonial">
+            </div>        </section>        <!-- Audit Testimonial -->        <section class="audit-testimonial">
             <div class="section-content">
-                <div class="testimonial-content">
+                <div class="testimonial-content animate-on-scroll animate-fade-up">
                     <?php 
                     $testimonial_quote = get_post_meta(get_the_ID(), 'seo_audit_testimonial_quote', true) ?: 'The SEO audit from Aimpro Digital was incredibly detailed and actionable. They found issues we never knew existed and provided a clear roadmap to fix them. After implementing their recommendations, our organic traffic increased by 380% in just 6 months.';
                     $testimonial_author_name = get_post_meta(get_the_ID(), 'seo_audit_testimonial_author_name', true) ?: 'Mike Johnson';
@@ -411,10 +413,9 @@ $hero_image = get_post_meta(get_the_ID(), 'seo_audit_hero_image', true);
                     </div>
                 </div>
             </div>
-        </section>        <!-- CTA Section -->
-        <section class="audit-cta">
+        </section>        <!-- CTA Section -->        <section class="audit-cta">
             <div class="container">
-                <div class="cta-content">
+                <div class="cta-content animate-on-scroll animate-fade-up">
                     <?php 
                     $cta_title = get_post_meta(get_the_ID(), 'seo_audit_cta_title', true) ?: 'Ready to Uncover Your SEO Opportunities?';
                     $cta_description = get_post_meta(get_the_ID(), 'seo_audit_cta_description', true) ?: 'Get a comprehensive SEO audit that reveals exactly what\'s holding your website back and how to fix it.';
@@ -429,13 +430,12 @@ $hero_image = get_post_meta(get_the_ID(), 'seo_audit_hero_image', true);
                         '<i class="fas fa-check" aria-hidden="true"></i> Strategy consultation included'
                     );
                     ?>
-                    <h2><?php echo esc_html($cta_title); ?></h2>
+                    <h2 class="animate-on-scroll animate-scale-up"><?php echo esc_html($cta_title); ?></h2>
                     <p><?php echo esc_html($cta_description); ?></p>
                     <div class="cta-buttons">
                         <a href="<?php echo esc_url($cta_primary_url); ?>" class="btn-primary"><?php echo esc_html($cta_primary_text); ?></a>
                         <a href="<?php echo esc_url($cta_secondary_url); ?>" class="btn-outline"><?php echo esc_html($cta_secondary_text); ?></a>
-                    </div>
-                    <div class="cta-features">
+                    </div>                    <div class="cta-features animate-on-scroll animate-stagger animate-fade-up">
                         <?php foreach ($cta_benefits as $benefit): ?>
                             <span class="feature-check"><?php echo esc_html($benefit); ?></span>
                         <?php endforeach; ?>

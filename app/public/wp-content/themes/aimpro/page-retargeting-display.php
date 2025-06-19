@@ -23,10 +23,9 @@ get_header(); ?>
                 <span class="current">Retargeting & Display Ads</span>
             </nav>
         </div>
-    </div>    <!-- Hero Section -->
-    <section class="page-hero service-hero">
+    </div>    <!-- Hero Section -->    <section class="page-hero service-hero">
         <div class="container">
-            <div class="hero-content">
+            <div class="hero-content animate-on-scroll animate-fade-up">
                 <?php
                 // Get hero content from meta fields with fallbacks
                 $defaults = aimpro_get_retargeting_display_default_values();
@@ -42,10 +41,9 @@ get_header(); ?>
                 
                 $hero_cta2_text = get_post_meta(get_the_ID(), '_retargeting_display_hero_cta2_text', true);
                 if (empty($hero_cta2_text)) $hero_cta2_text = $defaults['hero_cta2_text'];
-                ?>
-                <h1><?php echo esc_html($hero_title); ?></h1>
+                ?>                <h1><?php echo esc_html($hero_title); ?></h1>
                 <p class="hero-subtitle"><?php echo esc_html($hero_subtitle); ?></p>
-                <div class="hero-stats">
+                <div class="hero-stats animate-on-scroll animate-fade-up">
                     <?php for ($i = 1; $i <= 3; $i++) : ?>
                         <?php
                         $stat_number = get_post_meta(get_the_ID(), "_retargeting_display_hero_stat{$i}_number", true);
@@ -66,10 +64,9 @@ get_header(); ?>
                 </div>
             </div>
         </div>
-    </section>    <!-- Service Overview -->
-    <section class="service-overview">
+    </section>    <!-- Service Overview -->    <section class="service-overview">
         <div class="container">
-            <div class="overview-content">
+            <div class="overview-content animate-on-scroll animate-fade-up">
                 <?php
                 $overview_title = get_post_meta(get_the_ID(), '_retargeting_display_overview_title', true);
                 if (empty($overview_title)) $overview_title = $defaults['overview_title'];
@@ -93,7 +90,7 @@ get_header(); ?>
                     $service_icon = get_post_meta(get_the_ID(), "_retargeting_display_service_icon_{$i}", true);
                     if (empty($service_icon)) $service_icon = $defaults["service_icon_{$i}"];
                     ?>
-                    <div class="service-item">
+                    <div class="service-item animate-on-scroll animate-stagger animate-fade-up">
                         <div class="service-icon">
                             <i class="<?php echo esc_attr($service_icon); ?>"></i>
                         </div>
@@ -103,11 +100,10 @@ get_header(); ?>
                 <?php endfor; ?>
             </div>
         </div>
-    </section>    <!-- Case Study Section -->
-    <section class="case-study-section">
+    </section>    <!-- Case Study Section -->    <section class="case-study-section">
         <div class="container">
             <div class="case-study-content">
-                <div class="case-study-text">
+                <div class="case-study-text animate-on-scroll animate-slide-left">
                     <?php
                     $case_study_title = get_post_meta(get_the_ID(), '_retargeting_display_case_study_title', true);
                     if (empty($case_study_title)) $case_study_title = $defaults['case_study_title'];
@@ -149,8 +145,7 @@ get_header(); ?>
                         ?>
                     </div>
                 </div>
-                
-                <div class="case-study-results">
+                  <div class="case-study-results animate-on-scroll animate-slide-right">
                     <h3>The Results</h3>
                     <div class="results-grid">
                         <?php for ($i = 1; $i <= 4; $i++) : ?>
@@ -161,7 +156,7 @@ get_header(); ?>
                             $result_label = get_post_meta(get_the_ID(), "_retargeting_display_case_result_{$i}_label", true);
                             if (empty($result_label)) $result_label = $defaults["case_result_{$i}_label"];
                             ?>
-                            <div class="result-item">
+                            <div class="result-item animate-on-scroll animate-stagger animate-scale-up">
                                 <div class="result-number"><?php echo esc_html($result_number); ?></div>
                                 <div class="result-label"><?php echo esc_html($result_label); ?></div>
                             </div>
@@ -170,14 +165,13 @@ get_header(); ?>
                 </div>
             </div>
         </div>
-    </section>    <!-- Process Section -->
-    <section class="process-section">
+    </section>    <!-- Process Section -->    <section class="process-section">
         <div class="container">
             <?php
             $process_title = get_post_meta(get_the_ID(), '_retargeting_display_process_title', true);
             if (empty($process_title)) $process_title = $defaults['process_title'];
             ?>
-            <h2><?php echo esc_html($process_title); ?></h2>
+            <h2 class="animate-on-scroll animate-fade-up"><?php echo esc_html($process_title); ?></h2>
             <div class="process-steps">
                 <?php for ($i = 1; $i <= 5; $i++) : ?>
                     <?php
@@ -190,7 +184,7 @@ get_header(); ?>
                     $step_content = get_post_meta(get_the_ID(), "_retargeting_display_process_step_content_{$i}", true);
                     if (empty($step_content)) $step_content = $defaults["process_step_content_{$i}"];
                     ?>
-                    <div class="process-step">
+                    <div class="process-step animate-on-scroll animate-stagger animate-fade-up">
                         <div class="step-number"><?php echo esc_html($step_number); ?></div>
                         <div class="step-content">
                             <h3><?php echo esc_html($step_title); ?></h3>
@@ -200,14 +194,13 @@ get_header(); ?>
                 <?php endfor; ?>
             </div>
         </div>
-    </section>    <!-- Retargeting Types Section -->
-    <section class="retargeting-types-section">
+    </section>    <!-- Retargeting Types Section -->    <section class="retargeting-types-section">
         <div class="container">
             <?php
             $types_title = get_post_meta(get_the_ID(), '_retargeting_display_types_title', true);
             if (empty($types_title)) $types_title = $defaults['types_title'];
             ?>
-            <h2><?php echo esc_html($types_title); ?></h2>
+            <h2 class="animate-on-scroll animate-fade-up"><?php echo esc_html($types_title); ?></h2>
             <div class="types-grid">
                 <?php for ($i = 1; $i <= 6; $i++) : ?>
                     <?php
@@ -220,7 +213,7 @@ get_header(); ?>
                     $type_icon = get_post_meta(get_the_ID(), "_retargeting_display_type_icon_{$i}", true);
                     if (empty($type_icon)) $type_icon = $defaults["type_icon_{$i}"];
                     ?>
-                    <div class="type-item">
+                    <div class="type-item animate-on-scroll animate-stagger animate-fade-up">
                         <div class="type-icon">
                             <i class="<?php echo esc_attr($type_icon); ?>"></i>
                         </div>
@@ -230,14 +223,13 @@ get_header(); ?>
                 <?php endfor; ?>
             </div>
         </div>
-    </section>    <!-- Tools & Technologies -->
-    <section class="tools-section">
+    </section>    <!-- Tools & Technologies -->    <section class="tools-section">
         <div class="container">
             <?php
             $tools_title = get_post_meta(get_the_ID(), '_retargeting_display_tools_title', true);
             if (empty($tools_title)) $tools_title = $defaults['tools_title'];
             ?>
-            <h2><?php echo esc_html($tools_title); ?></h2>
+            <h2 class="animate-on-scroll animate-fade-up"><?php echo esc_html($tools_title); ?></h2>
             <div class="tools-grid">
                 <?php for ($i = 1; $i <= 4; $i++) : ?>
                     <?php
@@ -250,7 +242,7 @@ get_header(); ?>
                     $tool_icon = get_post_meta(get_the_ID(), "_retargeting_display_tool_icon_{$i}", true);
                     if (empty($tool_icon)) $tool_icon = $defaults["tool_icon_{$i}"];
                     ?>
-                    <div class="tool-item">
+                    <div class="tool-item animate-on-scroll animate-stagger animate-fade-up">
                         <div class="tool-icon">
                             <i class="<?php echo esc_attr($tool_icon); ?>"></i>
                         </div>
@@ -260,14 +252,13 @@ get_header(); ?>
                 <?php endfor; ?>
             </div>
         </div>
-    </section>    <!-- Industries Section -->
-    <section class="industries-section">
+    </section>    <!-- Industries Section -->    <section class="industries-section">
         <div class="container">
             <?php
             $industries_title = get_post_meta(get_the_ID(), '_retargeting_display_industries_title', true);
             if (empty($industries_title)) $industries_title = $defaults['industries_title'];
             ?>
-            <h2><?php echo esc_html($industries_title); ?></h2>
+            <h2 class="animate-on-scroll animate-fade-up"><?php echo esc_html($industries_title); ?></h2>
             <div class="industries-grid">
                 <?php for ($i = 1; $i <= 6; $i++) : ?>
                     <?php
@@ -277,17 +268,16 @@ get_header(); ?>
                     $industry_content = get_post_meta(get_the_ID(), "_retargeting_display_industry_content_{$i}", true);
                     if (empty($industry_content)) $industry_content = $defaults["industry_content_{$i}"];
                     ?>
-                    <div class="industry-item">
+                    <div class="industry-item animate-on-scroll animate-stagger animate-fade-up">
                         <h3><?php echo esc_html($industry_title); ?></h3>
                         <p><?php echo esc_html($industry_content); ?></p>
                     </div>
                 <?php endfor; ?>
             </div>
         </div>
-    </section>    <!-- Testimonial Section -->
-    <section class="testimonial-section">
+    </section>    <!-- Testimonial Section -->    <section class="testimonial-section">
         <div class="container">
-            <div class="testimonial-content">
+            <div class="testimonial-content animate-on-scroll animate-fade-up">
                 <?php
                 $testimonial_quote = get_post_meta(get_the_ID(), '_retargeting_display_testimonial_quote', true);
                 if (empty($testimonial_quote)) $testimonial_quote = $defaults['testimonial_quote'];
@@ -307,10 +297,9 @@ get_header(); ?>
                 </cite>
             </div>
         </div>
-    </section>    <!-- CTA Section -->
-    <section class="simple-cta-section">
+    </section>    <!-- CTA Section -->    <section class="simple-cta-section">
         <div class="section-content">
-            <div class="simple-cta-content">
+            <div class="simple-cta-content animate-on-scroll animate-fade-up">
                 <?php
                 $cta_title = get_post_meta(get_the_ID(), '_retargeting_display_cta_title', true);
                 if (empty($cta_title)) $cta_title = $defaults['cta_title'];
@@ -324,7 +313,7 @@ get_header(); ?>
                 $cta_button_2_text = get_post_meta(get_the_ID(), '_retargeting_display_cta_button_2_text', true);
                 if (empty($cta_button_2_text)) $cta_button_2_text = $defaults['cta_button_2_text'];
                 ?>
-                <h2><?php echo esc_html($cta_title); ?></h2>
+                <h2 class="animate-on-scroll animate-scale-up"><?php echo esc_html($cta_title); ?></h2>
                 <p><?php echo esc_html($cta_content); ?></p>
                 <div class="simple-cta-buttons">
                     <a href="<?php echo home_url('/contact'); ?>" class="btn btn-primary"><?php echo esc_html($cta_button_1_text); ?></a>

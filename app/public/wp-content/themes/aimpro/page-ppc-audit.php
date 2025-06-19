@@ -59,14 +59,12 @@ get_header(); ?>
                             <div class="stat-label"><?php echo esc_html($stat_label); ?></div>
                         </div>
                     <?php endfor; ?>
-                </div>
-                <div class="hero-ctas animate-on-scroll animate-fade-up">
+                </div>                <div class="hero-ctas animate-on-scroll animate-fade-up">
                     <a href="#contact" class="btn-primary streamlined"><?php echo esc_html($hero_cta1_text); ?></a>
-                    <a href="#packages" class="btn-outline streamlined"><?php echo esc_html($hero_cta2_text); ?></a>
                 </div>
             </div>
         </div>
-    </section>    <!-- Service Overview -->
+    </section><!-- Service Overview -->
     <section class="service-overview">
         <div class="container">
             <div class="overview-content animate-on-scroll animate-fade-up">
@@ -103,14 +101,13 @@ get_header(); ?>
                 <?php endfor; ?>
             </div>
         </div>
-    </section>    <!-- Audit Process Section -->
-    <section class="whitelabel-benefits">
+    </section>    <!-- Audit Process Section -->    <section class="whitelabel-benefits">
         <div class="section-content">
             <?php
             $process_title = get_post_meta(get_the_ID(), '_ppc_audit_process_title', true);
             if (empty($process_title)) $process_title = $defaults['process_title'];
             ?>
-            <h2><?php echo esc_html($process_title); ?></h2>
+            <h2 class="animate-on-scroll animate-fade-up"><?php echo esc_html($process_title); ?></h2>
             <div class="benefits-grid">
                 <?php for ($i = 1; $i <= 5; $i++) : ?>
                     <?php
@@ -123,7 +120,7 @@ get_header(); ?>
                     $category_icon = get_post_meta(get_the_ID(), "_ppc_audit_process_category_icon_{$i}", true);
                     if (empty($category_icon)) $category_icon = $defaults["process_category_icon_{$i}"];
                     ?>
-                    <div class="benefit-card">
+                    <div class="benefit-card animate-on-scroll animate-stagger animate-fade-up">
                         <div class="benefit-icon">
                             <i class="<?php echo esc_attr($category_icon); ?>"></i>
                         </div>
@@ -194,8 +191,7 @@ get_header(); ?>
                         ?>
                     </div>
                 </div>
-                
-                <div class="case-study-results animate-on-scroll animate-slide-right">
+                  <div class="case-study-results animate-on-scroll animate-slide-right">
                     <h3>The Results After Implementation</h3>
                     <div class="results-grid">&
                         <?php for ($i = 1; $i <= 4; $i++) : ?>
@@ -206,7 +202,7 @@ get_header(); ?>
                             $result_label = get_post_meta(get_the_ID(), "_ppc_audit_case_result_{$i}_label", true);
                             if (empty($result_label)) $result_label = $defaults["case_result_{$i}_label"];
                             ?>
-                            <div class="result-item">
+                            <div class="result-item animate-on-scroll animate-stagger animate-scale-up">
                                 <div class="result-number"><?php echo esc_html($result_number); ?></div>
                                 <div class="result-label"><?php echo esc_html($result_label); ?></div>
                             </div>
@@ -215,14 +211,13 @@ get_header(); ?>
                 </div>
             </div>
         </div>
-    </section>    <!-- What You Get Section -->
-    <section class="whitelabel-benefits">
+    </section>    <!-- What You Get Section -->    <section class="whitelabel-benefits">
         <div class="section-content">
             <?php
             $deliverables_title = get_post_meta(get_the_ID(), '_ppc_audit_deliverables_title', true);
             if (empty($deliverables_title)) $deliverables_title = $defaults['deliverables_title'];
             ?>
-            <h2><?php echo esc_html($deliverables_title); ?></h2>
+            <h2 class="animate-on-scroll animate-fade-up"><?php echo esc_html($deliverables_title); ?></h2>
             <div class="benefits-grid">
                 <?php for ($i = 1; $i <= 6; $i++) : ?>
                     <?php
@@ -235,7 +230,7 @@ get_header(); ?>
                     $deliverable_icon = get_post_meta(get_the_ID(), "_ppc_audit_deliverable_icon_{$i}", true);
                     if (empty($deliverable_icon)) $deliverable_icon = $defaults["deliverable_icon_{$i}"];
                     ?>
-                    <div class="benefit-card">
+                    <div class="benefit-card animate-on-scroll animate-stagger animate-fade-up">
                         <div class="benefit-icon">
                             <i class="<?php echo esc_attr($deliverable_icon); ?>"></i>
                         </div>
@@ -247,14 +242,13 @@ get_header(); ?>
         </div>
     </section>
 
-    <!-- Why Audit Section -->    <!-- Why You Need a PPC Audit -->
-    <section class="whitelabel-benefits">
+    <!-- Why Audit Section -->    <!-- Why You Need a PPC Audit -->    <section class="whitelabel-benefits">
         <div class="section-content">
             <?php
             $why_audit_title = get_post_meta(get_the_ID(), '_ppc_audit_why_audit_title', true);
             if (empty($why_audit_title)) $why_audit_title = $defaults['why_audit_title'];
             ?>
-            <h2><?php echo esc_html($why_audit_title); ?></h2>
+            <h2 class="animate-on-scroll animate-fade-up"><?php echo esc_html($why_audit_title); ?></h2>
             <div class="benefits-grid benefits-grid-2x2">
                 <?php for ($i = 1; $i <= 4; $i++) : ?>
                     <?php
@@ -267,7 +261,7 @@ get_header(); ?>
                     $reason_icon = get_post_meta(get_the_ID(), "_ppc_audit_why_reason_icon_{$i}", true);
                     if (empty($reason_icon)) $reason_icon = $defaults["why_reason_icon_{$i}"];
                     ?>
-                    <div class="benefit-card">
+                    <div class="benefit-card animate-on-scroll animate-stagger animate-fade-up">
                         <div class="benefit-icon">
                             <i class="<?php echo esc_attr($reason_icon); ?>"></i>
                         </div>

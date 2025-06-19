@@ -107,11 +107,10 @@ function get_meta_ads_meta($key, $post_id, $defaults, $prefix = '_meta_ads_') {
                         </ul>
                     </div>
                 </div>
-                
-                <div class="case-study-results">
+                  <div class="case-study-results animate-on-scroll animate-slide-right">
                     <h3>The Results</h3>
                     <div class="results-grid">
-                        <?php for($i = 1; $i <= 4; $i++) : ?>                        <div class="result-item">
+                        <?php for($i = 1; $i <= 4; $i++) : ?>                        <div class="result-item animate-on-scroll animate-stagger animate-scale-up">
                             <div class="result-number"><?php echo esc_html(get_meta_ads_meta("case_result_{$i}_number", $post_id, $defaults)); ?></div>
                             <div class="result-label"><?php echo esc_html(get_meta_ads_meta("case_result_{$i}_label", $post_id, $defaults)); ?></div>
                         </div>
@@ -126,10 +125,10 @@ function get_meta_ads_meta($key, $post_id, $defaults, $prefix = '_meta_ads_') {
     </section><!-- Process Section -->
     <section class="process-section">
         <div class="container">
-            <h2><?php echo esc_html(get_meta_ads_meta('process_title', $post_id, $defaults)); ?></h2>
+            <h2 class="animate-on-scroll animate-fade-up"><?php echo esc_html(get_meta_ads_meta('process_title', $post_id, $defaults)); ?></h2>
             <div class="process-steps">
                 <?php for($i = 1; $i <= 5; $i++) : ?>
-                <div class="process-step">
+                <div class="process-step animate-on-scroll animate-stagger animate-fade-up">
                     <div class="step-number"><?php echo esc_html(get_meta_ads_meta("process_step_number_{$i}", $post_id, $defaults)); ?></div>
                     <div class="step-content">
                         <h3><?php echo esc_html(get_meta_ads_meta("process_step_title_{$i}", $post_id, $defaults)); ?></h3>
@@ -142,7 +141,7 @@ function get_meta_ads_meta($key, $post_id, $defaults, $prefix = '_meta_ads_') {
     </section>    <!-- Packages Section -->
     <section id="packages" class="pricing-section">
         <div class="container">
-            <div class="section-header">
+            <div class="section-header animate-on-scroll animate-fade-up">
                 <h2><?php echo esc_html(get_meta_ads_meta('pricing_title', $post_id, $defaults)); ?></h2>
                 <p><?php echo esc_html(get_meta_ads_meta('pricing_subtitle', $post_id, $defaults)); ?></p>
             </div>
@@ -152,7 +151,7 @@ function get_meta_ads_meta($key, $post_id, $defaults, $prefix = '_meta_ads_') {
                     $is_featured = ($i == 2) && get_meta_ads_meta("pricing_package_{$i}_featured", $post_id, $defaults);
                     $badge = get_meta_ads_meta("pricing_package_{$i}_badge", $post_id, $defaults);
                 ?>
-                <div class="pricing-card <?php echo $is_featured ? 'featured' : ''; ?>">
+                <div class="pricing-card <?php echo $is_featured ? 'featured' : ''; ?> animate-on-scroll animate-stagger animate-fade-up">
                     <?php if($badge) : ?>
                     <div class="pricing-badge"><?php echo esc_html($badge); ?></div>
                     <?php endif; ?>
@@ -179,10 +178,10 @@ function get_meta_ads_meta($key, $post_id, $defaults, $prefix = '_meta_ads_') {
     </section>    <!-- Tools & Technologies -->
     <section class="tools-section">
         <div class="container">
-            <h2><?php echo esc_html(get_meta_ads_meta('tools_title', $post_id, $defaults)); ?></h2>
+            <h2 class="animate-on-scroll animate-fade-up"><?php echo esc_html(get_meta_ads_meta('tools_title', $post_id, $defaults)); ?></h2>
             <div class="tools-grid">
                 <?php for($i = 1; $i <= 4; $i++) : ?>
-                <div class="tool-item">
+                <div class="tool-item animate-on-scroll animate-stagger animate-fade-up">
                     <div class="tool-icon">
                         <i class="<?php echo esc_attr(get_meta_ads_meta("tool_icon_{$i}", $post_id, $defaults)); ?>"></i>
                     </div>
@@ -195,22 +194,20 @@ function get_meta_ads_meta($key, $post_id, $defaults, $prefix = '_meta_ads_') {
     </section>    <!-- Industries Section -->
     <section class="industries-section">
         <div class="container">
-            <h2><?php echo esc_html(get_meta_ads_meta('industries_title', $post_id, $defaults)); ?></h2>
+            <h2 class="animate-on-scroll animate-fade-up"><?php echo esc_html(get_meta_ads_meta('industries_title', $post_id, $defaults)); ?></h2>
             <div class="industries-grid">
                 <?php for($i = 1; $i <= 6; $i++) : ?>
-                <div class="industry-item">
+                <div class="industry-item animate-on-scroll animate-stagger animate-fade-up">
                     <h3><?php echo esc_html(get_meta_ads_meta("industry_title_{$i}", $post_id, $defaults)); ?></h3>
                     <p><?php echo esc_html(get_meta_ads_meta("industry_content_{$i}", $post_id, $defaults)); ?></p>
                 </div>
                 <?php endfor; ?>
             </div>
         </div>
-    </section>
-
-    <!-- Testimonial Section -->
+    </section>    <!-- Testimonial Section -->
     <section class="testimonial-section">
         <div class="container">
-            <div class="testimonial-content">
+            <div class="testimonial-content animate-on-scroll animate-fade-up">
                 <blockquote>
                     "<?php echo esc_html(get_meta_ads_meta('testimonial_quote', $post_id, $defaults)); ?>"
                 </blockquote>
@@ -221,17 +218,16 @@ function get_meta_ads_meta($key, $post_id, $defaults, $prefix = '_meta_ads_') {
             </div>
         </div>
     </section>
-    
-    <!-- CTA Section -->
+      <!-- CTA Section -->
     <section class="meta-ads-cta text-center">
-        <div class="section-content">
-            <h2><?php echo esc_html(get_meta_ads_meta('cta_title', $post_id, $defaults)); ?></h2>
+        <div class="section-content animate-on-scroll animate-fade-up">
+            <h2 class="animate-on-scroll animate-scale-up"><?php echo esc_html(get_meta_ads_meta('cta_title', $post_id, $defaults)); ?></h2>
             <p><?php echo esc_html(get_meta_ads_meta('cta_content', $post_id, $defaults)); ?></p>
             <div class="cta-buttons">
                 <a href="<?php echo home_url('/contact'); ?>" class="btn btn-primary"><?php echo esc_html(get_meta_ads_meta('cta_button_1_text', $post_id, $defaults)); ?></a>
                 <a href="<?php echo home_url('/services'); ?>" class="btn btn-secondary"><?php echo esc_html(get_meta_ads_meta('cta_button_2_text', $post_id, $defaults)); ?></a>
             </div>
-            <div class="cta-benefits">
+            <div class="cta-benefits animate-on-scroll animate-stagger animate-fade-up">
                 <?php for($i = 1; $i <= 3; $i++) : ?>
                 <span class="benefit">✓ <?php echo esc_html(get_meta_ads_meta("cta_benefit_{$i}", $post_id, $defaults)); ?></span>
                 <?php endfor; ?>
