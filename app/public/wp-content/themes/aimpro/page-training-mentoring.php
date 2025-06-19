@@ -70,24 +70,21 @@ get_header(); ?>
 </style>
 
 <main id="main" class="main-content service-page">
-    <div class="container">
-          <!-- Page Header -->
-        <section class="page-header">
+    <div class="container">          <!-- Page Header -->
+        <section class="page-header animate-on-scroll animate-fade-up">
             <div class="page-header-content">
                 <h1><?php echo esc_html(get_post_meta(get_the_ID(), '_training_mentoring_header_title', true) ?: 'Training & Mentoring'); ?></h1>
                 <p class="page-subtitle"><?php echo esc_html(get_post_meta(get_the_ID(), '_training_mentoring_header_subtitle', true) ?: 'Accelerate your digital marketing expertise with personalized guidance'); ?></p>
             </div>
-        </section>
-
-        <!-- Training Introduction -->
-        <section class="training-intro">
+        </section>        <!-- Training Introduction -->
+        <section class="training-intro animate-on-scroll animate-fade-up">
             <div class="section-content">
-                <div class="intro-content">
+                <div class="intro-content animate-on-scroll animate-slide-left">
                     <h2><?php echo esc_html(get_post_meta(get_the_ID(), '_training_mentoring_intro_title', true) ?: 'Invest in Your Digital Marketing Future'); ?></h2>
                     <p><?php echo esc_html(get_post_meta(get_the_ID(), '_training_mentoring_intro_content', true) ?: 'Whether you\'re looking to upskill your team, advance your career, or master specific digital marketing disciplines, our training and mentoring programs provide the personalized guidance you need to achieve your goals faster.'); ?></p>
                 </div>
 
-                <div class="training-benefits">
+                <div class="training-benefits animate-on-scroll animate-slide-right">
                     <?php 
                     $benefits = get_post_meta(get_the_ID(), '_training_mentoring_benefits', true);
                     if (empty($benefits)) {
@@ -114,9 +111,8 @@ get_header(); ?>
                             )
                         );
                     }
-                    
-                    foreach ($benefits as $benefit): ?>
-                        <div class="benefit-item">
+                      foreach ($benefits as $benefit): ?>
+                        <div class="benefit-item animate-on-scroll animate-stagger animate-fade-up">
                             <div class="benefit-icon">
                                 <i class="<?php echo esc_attr($benefit['icon']); ?>"></i>
                             </div>
@@ -127,10 +123,10 @@ get_header(); ?>
                 </div>
             </div>
         </section>        <!-- Training Programs -->
-        <section class="training-programs">
+        <section class="training-programs animate-on-scroll animate-fade-up">
             <div class="section-content">
-                <h2>Training Programs</h2>
-                <div class="programs-grid">
+                <h2 class="animate-on-scroll animate-fade-up">Training Programs</h2>
+                <div class="programs-grid animate-on-scroll animate-fade-up">
                     <?php 
                     $programs = get_post_meta(get_the_ID(), '_training_mentoring_programs', true);
                     if (empty($programs)) {
@@ -176,9 +172,8 @@ get_header(); ?>
                             )
                         );
                     }
-                    
-                    foreach ($programs as $program): ?>
-                        <div class="program-card <?php echo !empty($program['featured']) ? 'featured' : ''; ?>">
+                      foreach ($programs as $program): ?>
+                        <div class="program-card <?php echo !empty($program['featured']) ? 'featured' : ''; ?> animate-on-scroll animate-stagger animate-fade-up">
                             <?php if (!empty($program['badge'])): ?>
                                 <div class="program-badge"><?php echo esc_html($program['badge']); ?></div>
                             <?php endif; ?>
@@ -218,10 +213,10 @@ get_header(); ?>
                 </div>
             </div>
         </section>        <!-- Mentoring Success Stories -->
-        <section class="mentoring-success">
+        <section class="mentoring-success animate-on-scroll animate-fade-up">
             <div class="section-content">
-                <h2><?php echo esc_html(get_post_meta(get_the_ID(), '_training_mentoring_success_stories_title', true) ?: 'Success Stories'); ?></h2>
-                <div class="success-grid">
+                <h2 class="animate-on-scroll animate-fade-up"><?php echo esc_html(get_post_meta(get_the_ID(), '_training_mentoring_success_stories_title', true) ?: 'Success Stories'); ?></h2>
+                <div class="success-grid animate-on-scroll animate-fade-up">
                     <?php 
                     $success_stories = get_post_meta(get_the_ID(), '_training_mentoring_success_stories', true);
                     if (empty($success_stories)) {
@@ -246,9 +241,8 @@ get_header(); ?>
                             )
                         );
                     }
-                    
-                    foreach ($success_stories as $story): ?>
-                        <div class="success-story">
+                      foreach ($success_stories as $story): ?>
+                        <div class="success-story animate-on-scroll animate-stagger animate-slide-up">
                             <div class="story-content">
                                 <blockquote>
                                     "<?php echo esc_html($story['quote']); ?>"
@@ -270,12 +264,12 @@ get_header(); ?>
                 </div>
             </div>
         </section>        <!-- Learning Paths -->
-        <section class="learning-paths">
+        <section class="learning-paths animate-on-scroll animate-fade-up">
             <div class="section-content">
-                <h2><?php echo esc_html(get_post_meta(get_the_ID(), '_training_mentoring_learning_paths_title', true) ?: 'Learning Paths'); ?></h2>
-                <p class="section-subtitle"><?php echo esc_html(get_post_meta(get_the_ID(), '_training_mentoring_learning_paths_subtitle', true) ?: 'Structured progression routes based on your career goals'); ?></p>
+                <h2 class="animate-on-scroll animate-fade-up"><?php echo esc_html(get_post_meta(get_the_ID(), '_training_mentoring_learning_paths_title', true) ?: 'Learning Paths'); ?></h2>
+                <p class="section-subtitle animate-on-scroll animate-fade-up"><?php echo esc_html(get_post_meta(get_the_ID(), '_training_mentoring_learning_paths_subtitle', true) ?: 'Structured progression routes based on your career goals'); ?></p>
                 
-                <div class="paths-grid">
+                <div class="paths-grid animate-on-scroll animate-fade-up">
                     <?php 
                     $learning_paths = get_post_meta(get_the_ID(), '_training_mentoring_learning_paths', true);
                     if (empty($learning_paths)) {
@@ -306,9 +300,8 @@ get_header(); ?>
                             )
                         );
                     }
-                    
-                    foreach ($learning_paths as $path): ?>
-                        <div class="learning-path">
+                      foreach ($learning_paths as $path): ?>
+                        <div class="learning-path animate-on-scroll animate-stagger animate-fade-up">
                             <div class="path-header">
                                 <h3><?php echo esc_html($path['title']); ?></h3>
                                 <span class="path-duration"><?php echo esc_html($path['duration']); ?></span>
@@ -332,10 +325,10 @@ get_header(); ?>
                 </div>
             </div>
         </section>        <!-- Mentoring Team -->
-        <section class="mentoring-team">
+        <section class="mentoring-team animate-on-scroll animate-fade-up">
             <div class="section-content">
-                <h2><?php echo esc_html(get_post_meta(get_the_ID(), '_training_mentoring_mentors_title', true) ?: 'Meet Your Mentors'); ?></h2>
-                <div class="mentors-grid">
+                <h2 class="animate-on-scroll animate-fade-up"><?php echo esc_html(get_post_meta(get_the_ID(), '_training_mentoring_mentors_title', true) ?: 'Meet Your Mentors'); ?></h2>
+                <div class="mentors-grid animate-on-scroll animate-fade-up">
                     <?php 
                     $mentors = get_post_meta(get_the_ID(), '_training_mentoring_mentors', true);
                     if (empty($mentors)) {
@@ -363,9 +356,8 @@ get_header(); ?>
                             )
                         );
                     }
-                    
-                    foreach ($mentors as $mentor): ?>
-                        <div class="mentor-card">
+                      foreach ($mentors as $mentor): ?>
+                        <div class="mentor-card animate-on-scroll animate-stagger animate-fade-up">
                             <div class="mentor-info">
                                 <h3><?php echo esc_html($mentor['name']); ?></h3>
                                 <h4><?php echo esc_html($mentor['title']); ?></h4>
@@ -390,10 +382,10 @@ get_header(); ?>
                 </div>
             </div>
         </section>        <!-- FAQ Section -->
-        <section class="training-faq faq-section">
+        <section class="training-faq faq-section animate-on-scroll animate-fade-up">
             <div class="section-content">
-                <h2><?php echo esc_html(get_post_meta(get_the_ID(), '_training_mentoring_faq_title', true) ?: 'Frequently Asked Questions'); ?></h2>
-                <div class="faq-grid">
+                <h2 class="animate-on-scroll animate-fade-up"><?php echo esc_html(get_post_meta(get_the_ID(), '_training_mentoring_faq_title', true) ?: 'Frequently Asked Questions'); ?></h2>
+                <div class="faq-grid animate-on-scroll animate-fade-up">
                     <?php 
                     $faqs = get_post_meta(get_the_ID(), '_training_mentoring_faqs', true);
                     if (empty($faqs)) {
@@ -424,9 +416,8 @@ get_header(); ?>
                             )
                         );
                     }
-                    
-                    foreach ($faqs as $faq): ?>
-                        <div class="faq-item">
+                      foreach ($faqs as $faq): ?>
+                        <div class="faq-item animate-on-scroll animate-stagger animate-fade-up">
                             <h3><?php echo esc_html($faq['question']); ?></h3>
                             <p><?php echo esc_html($faq['answer']); ?></p>
                         </div>
@@ -434,15 +425,15 @@ get_header(); ?>
                 </div>
             </div>
         </section>        <!-- CTA Section -->
-        <section class="training-cta">
+        <section class="training-cta animate-on-scroll animate-fade-up">
             <div class="section-content">
-                <h2><?php echo esc_html(get_post_meta(get_the_ID(), '_training_mentoring_cta_title', true) ?: 'Ready to Accelerate Your Marketing Career?'); ?></h2>
-                <p><?php echo esc_html(get_post_meta(get_the_ID(), '_training_mentoring_cta_content', true) ?: 'Book a free consultation to discuss your goals and find the perfect training program for you.'); ?></p>
-                <div class="cta-buttons">
+                <h2 class="animate-on-scroll animate-fade-up"><?php echo esc_html(get_post_meta(get_the_ID(), '_training_mentoring_cta_title', true) ?: 'Ready to Accelerate Your Marketing Career?'); ?></h2>
+                <p class="animate-on-scroll animate-fade-up"><?php echo esc_html(get_post_meta(get_the_ID(), '_training_mentoring_cta_content', true) ?: 'Book a free consultation to discuss your goals and find the perfect training program for you.'); ?></p>
+                <div class="cta-buttons animate-on-scroll animate-fade-up">
                     <a href="<?php echo esc_url(get_post_meta(get_the_ID(), '_training_mentoring_cta_primary_url', true) ?: '#'); ?>" class="btn btn-primary"><?php echo esc_html(get_post_meta(get_the_ID(), '_training_mentoring_cta_primary_text', true) ?: 'Book Free Consultation'); ?></a>
                     <a href="<?php echo esc_url(get_post_meta(get_the_ID(), '_training_mentoring_cta_secondary_url', true) ?: home_url('/contact')); ?>" class="btn btn-secondary"><?php echo esc_html(get_post_meta(get_the_ID(), '_training_mentoring_cta_secondary_text', true) ?: 'Contact Us'); ?></a>
                 </div>
-                <p class="cta-note"><?php echo esc_html(get_post_meta(get_the_ID(), '_training_mentoring_cta_note', true) ?: 'Free 15-minute consultation • No obligation • Personalized recommendations'); ?></p>
+                <p class="cta-note animate-on-scroll animate-fade-up"><?php echo esc_html(get_post_meta(get_the_ID(), '_training_mentoring_cta_note', true) ?: 'Free 15-minute consultation • No obligation • Personalized recommendations'); ?></p>
             </div>
         </section>
 

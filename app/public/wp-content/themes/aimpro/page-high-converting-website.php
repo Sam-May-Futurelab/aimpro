@@ -306,21 +306,24 @@ get_header(); ?>
                 </div>
             </div>
         </section>        <!-- Conversion Elements -->
-        <section class="conversion-elements">
+        <section class="conversion-elements tools-section">
             <div class="section-content">
                 <h2><?php echo get_post_meta(get_the_ID(), 'high_converting_website_elements_title', true) ?: 'Key Conversion Elements We Optimize'; ?></h2>
-                <div class="industries-grid">
+                <div class="tools-grid">
                     <?php
                     $elements = get_post_meta(get_the_ID(), 'high_converting_website_elements', true);
                     if (!empty($elements) && is_array($elements)) {
                         foreach ($elements as $element) {
                             ?>
-                            <div class="industry-item">
+                            <div class="tools-category">
                                 <h3><?php echo esc_html($element['title']); ?></h3>
-                                <p><?php echo esc_html($element['description']); ?></p>                                <?php if (!empty($element['features']) && is_array($element['features'])) : ?>
-                                    <ul>
+                                <p><?php echo esc_html($element['description']); ?></p>
+                                <?php if (!empty($element['features']) && is_array($element['features'])) : ?>
+                                    <ul class="tools-list">
                                         <?php foreach ($element['features'] as $feature) : ?>
-                                            <li><i class="fas fa-bullseye"></i><?php echo esc_html($feature); ?></li>
+                                            <li class="tool-item">
+                                                <span class="tool-name"><?php echo esc_html($feature); ?></span>
+                                            </li>
                                         <?php endforeach; ?>
                                     </ul>
                                 <?php endif; ?>
@@ -328,62 +331,84 @@ get_header(); ?>
                             <?php
                         }
                     } else {
-                        // Default elements if none are set
-                        $default_elements = array(
-                            array(
-                                'title' => 'Value Propositions',
-                                'description' => 'Clear, compelling messaging that communicates your unique value and benefits.',
-                                'features' => array(
-                                    'Headline optimization',
-                                    'Benefit-focused copy',
-                                    'Social proof integration',
-                                    'Risk reversal strategies'
-                                )
-                            ),
-                            array(
-                                'title' => 'Call-to-Action (CTA)',
-                                'description' => 'Strategic placement and design of CTAs that guide users toward conversion.',
-                                'features' => array(
-                                    'CTA button optimization',
-                                    'Action-oriented copy',
-                                    'Strategic placement',
-                                    'Color and contrast testing'
-                                )
-                            ),
-                            array(
-                                'title' => 'Trust Signals',
-                                'description' => 'Elements that build credibility and reduce purchase anxiety.',
-                                'features' => array(
-                                    'Customer testimonials',
-                                    'Security badges',
-                                    'Money-back guarantees',
-                                    'Industry certifications'
-                                )
-                            ),
-                            array(
-                                'title' => 'User Experience',
-                                'description' => 'Smooth, intuitive navigation and user flow optimization.',
-                                'features' => array(
-                                    'Navigation simplification',
-                                    'Form optimization',
-                                    'Page loading speed',
-                                    'Mobile responsiveness'
-                                )
-                            )
-                        );
-                          foreach ($default_elements as $element) {
-                            ?>
-                            <div class="industry-item">
-                                <h3><?php echo esc_html($element['title']); ?></h3>
-                                <p><?php echo esc_html($element['description']); ?></p>
-                                <ul>
-                                    <?php foreach ($element['features'] as $feature) : ?>
-                                        <li><i class="fas fa-bullseye"></i><?php echo esc_html($feature); ?></li>
-                                    <?php endforeach; ?>
-                                </ul>
-                            </div>
-                            <?php
-                        }
+                        // Default elements with new styling
+                        ?>
+                        <div class="tools-category">
+                            <h3>Value Propositions</h3>
+                            <p>Clear, compelling messaging that communicates your unique value and benefits.</p>
+                            <ul class="tools-list">
+                                <li class="tool-item">
+                                    <span class="tool-name">Headline optimization</span>
+                                </li>
+                                <li class="tool-item">
+                                    <span class="tool-name">Benefit-focused copy</span>
+                                </li>
+                                <li class="tool-item">
+                                    <span class="tool-name">Social proof integration</span>
+                                </li>
+                                <li class="tool-item">
+                                    <span class="tool-name">Risk reversal strategies</span>
+                                </li>
+                            </ul>
+                        </div>
+                        
+                        <div class="tools-category">
+                            <h3>Call-to-Action (CTA)</h3>
+                            <p>Strategic placement and design of CTAs that guide users toward conversion.</p>
+                            <ul class="tools-list">
+                                <li class="tool-item">
+                                    <span class="tool-name">CTA button optimization</span>
+                                </li>
+                                <li class="tool-item">
+                                    <span class="tool-name">Action-oriented copy</span>
+                                </li>
+                                <li class="tool-item">
+                                    <span class="tool-name">Strategic placement</span>
+                                </li>
+                                <li class="tool-item">
+                                    <span class="tool-name">Color and contrast testing</span>
+                                </li>
+                            </ul>
+                        </div>
+                        
+                        <div class="tools-category">
+                            <h3>Trust Signals</h3>
+                            <p>Elements that build credibility and reduce purchase anxiety.</p>
+                            <ul class="tools-list">
+                                <li class="tool-item">
+                                    <span class="tool-name">Customer testimonials</span>
+                                </li>
+                                <li class="tool-item">
+                                    <span class="tool-name">Security badges</span>
+                                </li>
+                                <li class="tool-item">
+                                    <span class="tool-name">Money-back guarantees</span>
+                                </li>
+                                <li class="tool-item">
+                                    <span class="tool-name">Industry certifications</span>
+                                </li>
+                            </ul>
+                        </div>
+                        
+                        <div class="tools-category">
+                            <h3>User Experience</h3>
+                            <p>Smooth, intuitive navigation and user flow optimization.</p>
+                            <ul class="tools-list">
+                                <li class="tool-item">
+                                    <span class="tool-name">Navigation simplification</span>
+                                </li>
+                                <li class="tool-item">
+                                    <span class="tool-name">Form optimization</span>
+                                </li>
+                                <li class="tool-item">
+                                    <span class="tool-name">Page loading speed</span>
+                                </li>
+                                <li class="tool-item">
+                                    <span class="tool-name">Mobile responsiveness</span>
+                                </li>
+                            </ul>
+                        </div>
+                    <?php
                     }
                     ?>
                 </div>

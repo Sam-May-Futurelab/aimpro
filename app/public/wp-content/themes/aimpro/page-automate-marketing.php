@@ -15,7 +15,7 @@ get_header(); ?>
                 <p class="page-subtitle"><?php echo esc_html(get_post_meta(get_the_ID(), '_automate_marketing_header_subtitle', true) ?: 'Streamline your marketing processes with intelligent automation that works 24/7'); ?></p>
             </div>
         </section>        <!-- Solution Overview -->
-        <section class="solution-overview">
+        <section class="solution-overview animate-on-scroll animate-fade-up">
             <div class="section-content">
                 <div class="overview-content">
                     <div class="overview-text animate-on-scroll animate-slide-left">
@@ -62,10 +62,10 @@ get_header(); ?>
                 </div>
             </div>
         </section>        <!-- Automation Solutions -->
-        <section class="automation-solutions">
+        <section class="automation-solutions animate-on-scroll animate-fade-up">
             <div class="section-content">
                 <h2 class="animate-on-scroll animate-fade-up"><?php echo esc_html(get_post_meta(get_the_ID(), '_automate_marketing_solutions_title', true) ?: 'Our Marketing Automation Solutions'); ?></h2>
-                <div class="solutions-grid">
+                <div class="solutions-grid animate-on-scroll animate-fade-up">
                     
                     <?php
                     $solutions = get_post_meta(get_the_ID(), '_automate_marketing_solutions', true);
@@ -139,8 +139,7 @@ get_header(); ?>
 
                     foreach ($solutions as $index => $solution) :
                         $icon_index = $index % count($solution_icons);
-                    ?>
-                    <div class="solution-card">
+                    ?>                    <div class="solution-card animate-on-scroll animate-stagger animate-fade-up">
                         <div class="solution-icon">
                             <?php echo $solution_icons[$icon_index]; ?>
                         </div>
@@ -158,18 +157,16 @@ get_header(); ?>
 
                 </div>
             </div>
-        </section>
-
-        <!-- Automation Success Story -->
-        <section class="automation-case-study">
+        </section>        <!-- Automation Success Story -->
+        <section class="automation-case-study animate-on-scroll animate-fade-up">
             <div class="section-content">
                 <div class="case-study-content">
-                    <div class="case-study-text">
+                    <div class="case-study-text animate-on-scroll animate-slide-left">
                         <span class="case-study-label"><?php echo esc_html(get_post_meta(get_the_ID(), '_automate_marketing_case_study_label', true) ?: 'Success Story'); ?></span>
                         <h2><?php echo esc_html(get_post_meta(get_the_ID(), '_automate_marketing_case_study_title', true) ?: 'GrowthTech: 60% Time Savings + 300% Lead Conversion'); ?></h2>
                         <p><?php echo esc_html(get_post_meta(get_the_ID(), '_automate_marketing_case_study_content', true) ?: 'GrowthTech, a SaaS company, was spending 40+ hours per week on manual marketing tasks and struggling with inconsistent lead follow-up.'); ?></p>
                         
-                        <div class="case-study-challenge">
+                        <div class="case-study-challenge animate-on-scroll animate-fade-up">
                             <h3><?php echo esc_html(get_post_meta(get_the_ID(), '_automate_marketing_case_study_challenge_title', true) ?: 'The Challenge'); ?></h3>
                             <ul>
                                 <?php
