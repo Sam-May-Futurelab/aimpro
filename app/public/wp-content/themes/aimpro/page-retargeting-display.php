@@ -94,8 +94,7 @@ get_header(); ?>
                         </div>
                         <h3><?php echo esc_html($service_title); ?></h3>
                         <p><?php echo esc_html($service_content); ?></p>
-                    </div>                <?php endfor; ?>            </div>
-            <div class="text-centre mt-1 animate-on-scroll animate-fade-up">
+                    </div>                <?php endfor; ?>            </div>            <div class="text-center mt-1 animate-on-scroll animate-fade-up">
                 <a href="/contact/" class="btn btn-primary">Get Started with Retargeting</a>
             </div>
         </div>
@@ -162,9 +161,8 @@ get_header(); ?>
                         <?php endfor; ?>
                     </div>                </div>
             </div>
-            
-            <!-- CTA after case study -->
-            <div class="text-centre mt-2 animate-on-scroll animate-fade-up">
+              <!-- CTA after case study -->
+            <div class="text-center mt-2 animate-on-scroll animate-fade-up">
                 <div class="inline-cta-content">
                     <p class="cta-text">Ready to achieve similar results for your business?</p>
                     <a href="/contact/" class="btn btn-primary">Start Your Retargeting Campaign</a>
@@ -177,7 +175,7 @@ get_header(); ?>
             $process_title = get_post_meta(get_the_ID(), '_retargeting_display_process_title', true);
             if (empty($process_title)) $process_title = $defaults['process_title'];
             ?>
-            <h2 class="animate-on-scroll animate-fade-up"><?php echo esc_html($process_title); ?></h2>
+            <h2 class="animate-on-scroll animate-fade-up" style="text-align: center;"><?php echo esc_html($process_title); ?></h2>
             <div class="process-steps">
                 <?php for ($i = 1; $i <= 5; $i++) : ?>
                     <?php
@@ -198,9 +196,8 @@ get_header(); ?>
                         </div>
                     </div>                <?php endfor; ?>
             </div>
-            
-            <!-- CTA after process section -->
-            <div class="text-centre mt-2 animate-on-scroll animate-fade-up">
+              <!-- CTA after process section -->
+            <div class="text-center mt-2 animate-on-scroll animate-fade-up">
                 <div class="inline-cta-content">
                     <p class="cta-text">Let our proven process drive your retargeting success</p>
                     <a href="/contact/" class="btn btn-primary">Get Your Custom Strategy</a>
@@ -213,7 +210,7 @@ get_header(); ?>
             $types_title = get_post_meta(get_the_ID(), '_retargeting_display_types_title', true);
             if (empty($types_title)) $types_title = $defaults['types_title'];
             ?>
-            <h2 class="animate-on-scroll animate-fade-up"><?php echo esc_html($types_title); ?></h2>
+            <h2 class="animate-on-scroll animate-fade-up" style="text-align: center;"><?php echo esc_html($types_title); ?></h2>
             <div class="types-grid">
                 <?php for ($i = 1; $i <= 6; $i++) : ?>
                     <?php
@@ -234,9 +231,8 @@ get_header(); ?>
                         <p><?php echo esc_html($type_content); ?></p>
                     </div>                <?php endfor; ?>
             </div>
-            
-            <!-- CTA after retargeting types -->
-            <div class="text-centre mt-2 animate-on-scroll animate-fade-up">
+              <!-- CTA after retargeting types -->
+            <div class="text-center mt-2 animate-on-scroll animate-fade-up">
                 <div class="inline-cta-content">
                     <p class="cta-text">Which retargeting strategy is right for your business?</p>
                     <a href="/contact/" class="btn btn-primary">Get Expert Recommendations</a>
@@ -249,7 +245,7 @@ get_header(); ?>
             $tools_title = get_post_meta(get_the_ID(), '_retargeting_display_tools_title', true);
             if (empty($tools_title)) $tools_title = $defaults['tools_title'];
             ?>
-            <h2 class="animate-on-scroll animate-fade-up"><?php echo esc_html($tools_title); ?></h2>
+            <h2 class="animate-on-scroll animate-fade-up" style="text-align: center;"><?php echo esc_html($tools_title); ?></h2>
             <div class="tools-grid">
                 <?php for ($i = 1; $i <= 4; $i++) : ?>
                     <?php
@@ -270,9 +266,8 @@ get_header(); ?>
                         <p><?php echo esc_html($tool_content); ?></p>
                     </div>                <?php endfor; ?>
             </div>
-            
-            <!-- CTA after tools section -->
-            <div class="text-centre mt-2 animate-on-scroll animate-fade-up">
+              <!-- CTA after tools section -->
+            <div class="text-center mt-2 animate-on-scroll animate-fade-up">
                 <div class="inline-cta-content">
                     <p class="cta-text">Experience the power of our advanced retargeting tools</p>
                     <a href="/contact/" class="btn btn-primary">Launch Your Campaign Today</a>
@@ -285,7 +280,7 @@ get_header(); ?>
             $industries_title = get_post_meta(get_the_ID(), '_retargeting_display_industries_title', true);
             if (empty($industries_title)) $industries_title = $defaults['industries_title'];
             ?>
-            <h2 class="animate-on-scroll animate-fade-up"><?php echo esc_html($industries_title); ?></h2>
+            <h2 class="animate-on-scroll animate-fade-up" style="text-align: center;"><?php echo esc_html($industries_title); ?></h2>
             <div class="industries-grid">
                 <?php for ($i = 1; $i <= 6; $i++) : ?>
                     <?php

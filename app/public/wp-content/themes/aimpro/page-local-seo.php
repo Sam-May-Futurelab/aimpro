@@ -70,48 +70,20 @@ $header_subtitle = get_post_meta(get_the_ID(), '_local_seo_header_subtitle', tru
                         $service_description = get_post_meta(get_the_ID(), "_local_seo_service_{$i}_description", true) ?: $defaults["service_{$i}_description"];
                         $service_features = get_post_meta(get_the_ID(), "_local_seo_service_{$i}_features", true) ?: $defaults["service_{$i}_features"];
                     ?>
-                    
-                    <div class="service-card animate-on-scroll animate-stagger animate-fade-up">
+                      <div class="service-card animate-on-scroll animate-stagger animate-fade-up">
                         <div class="service-icon">
                             <?php 
-                            // Service icons based on service number
-                            switch($i) {
-                                case 1: // Google My Business
-                                    echo '<svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M21 10C21 17 12 23 12 23C12 23 3 17 3 10C3 6.13401 6.13401 3 10 3C13.866 3 17 6.13401 17 10Z" stroke="currentcolour" stroke-width="2"/>
-                                        <circle cx="12" cy="10" r="3" stroke="currentcolour" stroke-width="2"/>
-                                    </svg>';
-                                    break;
-                                case 2: // Local Citation Building
-                                    echo '<svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M4 6H20M4 12H20M4 18H20" stroke="currentcolour" stroke-width="2" stroke-linecap="round"/>
-                                    </svg>';
-                                    break;
-                                case 3: // Review Management
-                                    echo '<svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M11.049 2.927C11.3102 2.00407 12.6898 2.00407 12.951 2.927L14.4697 7.60081C14.6035 8.01284 14.9875 8.29155 15.4207 8.29155H20.4329C21.4016 8.29155 21.8044 9.60081 21.0207 10.1008L17.0429 12.9492C16.6932 13.2016 16.5479 13.6463 16.6817 14.0583L18.2004 18.7321C18.4616 19.6551 17.3537 20.4282 16.5699 19.9282L12.5921 17.0798C12.2424 16.8274 11.7576 16.8274 11.4079 17.0798L7.43013 19.9282C6.64635 20.4282 5.53841 19.6551 5.79963 18.7321L7.31829 14.0583C7.45208 13.6463 7.30679 13.2016 6.95711 12.9492L2.97933 10.1008C2.19555 9.60081 2.59844 8.29155 3.56712 8.29155H8.57929C9.01252 8.29155 9.39647 8.01284 9.53026 7.60081L11.049 2.927Z" stroke="currentcolour" stroke-width="2"/>
-                                    </svg>';
-                                    break;
-                                case 4: // Local Keyword optimisation
-                                    echo '<svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <circle cx="11" cy="11" r="8" stroke="currentcolour" stroke-width="2"/>
-                                        <path d="M21 21L16.65 16.65" stroke="currentcolour" stroke-width="2"/>
-                                    </svg>';
-                                    break;
-                                case 5: // Local Link Building
-                                    echo '<svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="currentcolour" stroke-width="2"/>
-                                        <path d="M2 17L12 22L22 17" stroke="currentcolour" stroke-width="2"/>
-                                    </svg>';
-                                    break;
-                                case 6: // Local Website optimisation
-                                    echo '<svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <rect x="2" y="3" width="20" height="14" rx="2" ry="2" stroke="currentcolour" stroke-width="2"/>
-                                        <line x1="8" y1="21" x2="16" y2="21" stroke="currentcolour" stroke-width="2"/>
-                                        <line x1="12" y1="17" x2="12" y2="21" stroke="currentcolour" stroke-width="2"/>
-                                    </svg>';
-                                    break;
-                            }
+                            // Service FontAwesome icons based on service number
+                            $service_icons = array(
+                                1 => 'fab fa-google',           // Google My Business Optimisation
+                                2 => 'fas fa-list-ul',          // Local Citation Building
+                                3 => 'fas fa-star',             // Review Management
+                                4 => 'fas fa-map-marked-alt',   // Local Keyword Optimisation
+                                5 => 'fas fa-link',             // Local Link Building
+                                6 => 'fas fa-desktop'           // Local Website Optimisation
+                            );
+                            
+                            echo '<i class="' . esc_attr($service_icons[$i]) . '"></i>';
                             ?>
                         </div>
                         <div class="service-content">
@@ -129,63 +101,136 @@ $header_subtitle = get_post_meta(get_the_ID(), '_local_seo_header_subtitle', tru
                     <a href="/contact/" class="btn btn-primary">Get Your Free Local SEO Consultation</a>
                 </div>
             </div>
-        </section>        <!-- Local SEO Success Story -->
-        <section class="local-seo-case-study">
-            <div class="section-content">
-                <div class="case-study-content">
-                    <div class="case-study-text animate-on-scroll animate-slide-left">
-                        <?php
-                        $case_study_label = get_post_meta(get_the_ID(), '_local_seo_case_study_label', true) ?: $defaults['case_study_label'];
-                        $case_study_title = get_post_meta(get_the_ID(), '_local_seo_case_study_title', true) ?: $defaults['case_study_title'];
-                        $case_study_description = get_post_meta(get_the_ID(), '_local_seo_case_study_description', true) ?: $defaults['case_study_description'];
-                        $case_study_challenge_title = get_post_meta(get_the_ID(), '_local_seo_case_study_challenge_title', true) ?: $defaults['case_study_challenge_title'];
-                        $case_study_challenges = get_post_meta(get_the_ID(), '_local_seo_case_study_challenges', true) ?: $defaults['case_study_challenges'];
-                        $case_study_solution_title = get_post_meta(get_the_ID(), '_local_seo_case_study_solution_title', true) ?: $defaults['case_study_solution_title'];
-                        $case_study_solutions = get_post_meta(get_the_ID(), '_local_seo_case_study_solutions', true) ?: $defaults['case_study_solutions'];
-                        ?>
-                        <span class="case-study-label"><?php echo esc_html($case_study_label); ?></span>
-                        <h2><?php echo esc_html($case_study_title); ?></h2>
-                        <p><?php echo esc_html($case_study_description); ?></p>
-                        
-                        <div class="case-study-challenge">
-                            <h3><?php echo esc_html($case_study_challenge_title); ?></h3>
-                            <ul>
-                                <?php foreach ((array)$case_study_challenges as $challenge): ?>
-                                    <li><?php echo esc_html($challenge); ?></li>
-                                <?php endforeach; ?>
-                            </ul>
+        </section>        <!-- Case Study Section with Better Styling -->
+        <section id="case-study" class="case-study-showcase" style="background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%); padding: 80px 0;">
+            <div class="container">
+                <div class="case-study-wrapper">
+                    <!-- Header -->
+                    <div class="case-study-intro animate-on-scroll animate-fade-up" style="text-align: center; margin-bottom: 60px;">
+                        <div class="case-study-badge" style="display: inline-flex; align-items: center; gap: 8px; background: linear-gradient(135deg, #f15a25 0%, #e04a15 100%); color: white; padding: 8px 16px; border-radius: 50px; margin-bottom: 20px; font-weight: 600;">
+                            <span class="badge-icon">🏥</span>
+                            <span class="badge-text">Local SEO Success Story</span>
+                        </div>
+                        <h2 class="case-study-title" style="font-size: 2.5rem; font-weight: 700; color: #1e293b; margin-bottom: 20px;">Birmingham Dental Practice Achieves <span class="highlight-number" style="color: #f15a25;">500% Local Visibility</span> Increase</h2>
+                        <p class="case-study-subtitle" style="font-size: 1.2rem; color: #64748b; max-width: 700px; margin: 0 auto;">Transforming an invisible local practice into Birmingham's most visible dental clinic</p>
+                    </div>
+
+                    <!-- Story Flow -->
+                    <div class="case-study-flow" style="max-width: 1000px; margin: 0 auto;">
+                        <!-- Challenge -->
+                        <div class="story-section challenge-section animate-on-scroll animate-slide-left" style="background: white; padding: 40px; border-radius: 16px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); margin-bottom: 30px;">
+                            <div class="section-header" style="display: flex; align-items: center; gap: 15px; margin-bottom: 25px;">
+                                <div class="section-icon challenge-icon" style="width: 50px; height: 50px; background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.5rem;">⚡</div>
+                                <h3 style="font-size: 1.5rem; font-weight: 700; color: #1e293b; margin: 0;">The Challenge</h3>
+                            </div>
+                            <div class="section-content">
+                                <p class="story-text" style="font-size: 1.1rem; line-height: 1.8; color: #64748b; margin-bottom: 25px;">A local dental practice in Birmingham was struggling to attract new patients despite providing excellent service. They were invisible in local search results and losing potential patients to competitors who appeared first.</p>
+                                <div class="challenge-list" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px;">
+                                    <div class="challenge-item" style="background: #fee2e2; padding: 15px; border-radius: 10px; border-left: 4px solid #dc2626;">
+                                        <span style="font-weight: 600; color: #dc2626; display: block;">❌ No Google My Business optimisation</span>
+                                    </div>
+                                    <div class="challenge-item" style="background: #fee2e2; padding: 15px; border-radius: 10px; border-left: 4px solid #dc2626;">
+                                        <span style="font-weight: 600; color: #dc2626; display: block;">❌ Inconsistent business information online</span>
+                                    </div>
+                                    <div class="challenge-item" style="background: #fee2e2; padding: 15px; border-radius: 10px; border-left: 4px solid #dc2626;">
+                                        <span style="font-weight: 600; color: #dc2626; display: block;">❌ Very few online reviews</span>
+                                    </div>
+                                    <div class="challenge-item" style="background: #fee2e2; padding: 15px; border-radius: 10px; border-left: 4px solid #dc2626;">
+                                        <span style="font-weight: 600; color: #dc2626; display: block;">❌ Poor local search rankings</span>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
 
-                        <div class="case-study-solution">
-                            <h3><?php echo esc_html($case_study_solution_title); ?></h3>
-                            <ul>
-                                <?php foreach ((array)$case_study_solutions as $solution): ?>
-                                    <li><?php echo esc_html($solution); ?></li>
-                                <?php endforeach; ?>
-                            </ul>
+                        <!-- Arrow -->
+                        <div class="story-arrow animate-on-scroll animate-scale-up" style="text-align: center; margin: 20px 0;">
+                            <div class="arrow-icon" style="width: 60px; height: 60px; background: #f15a25; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; color: white; font-size: 1.5rem; font-weight: bold;">↓</div>
+                            <span class="arrow-text" style="display: block; margin-top: 10px; font-weight: 600; color: #64748b;">Our Local SEO Strategy</span>
+                        </div>
+
+                        <!-- Solution -->
+                        <div class="story-section solution-section animate-on-scroll animate-slide-right" style="background: white; padding: 40px; border-radius: 16px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); margin-bottom: 30px;">
+                            <div class="section-header" style="display: flex; align-items: center; gap: 15px; margin-bottom: 25px;">
+                                <div class="section-icon solution-icon" style="width: 50px; height: 50px; background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.5rem;">🎯</div>
+                                <h3 style="font-size: 1.5rem; font-weight: 700; color: #1e293b; margin: 0;">Strategic Local SEO Transformation</h3>
+                            </div>
+                            <div class="section-content">
+                                <div class="solution-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px;">
+                                    <div class="solution-item" style="padding: 20px; background: #f8fafc; border-radius: 10px; border-left: 4px solid #f15a25;">
+                                        <strong style="display: block; color: #1e293b; margin-bottom: 8px;">Complete Google My Business Optimisation</strong>
+                                        <p style="color: #64748b; margin: 0; font-size: 0.9rem; line-height: 1.6;">Full profile setup, photos, posts, and local SEO optimisation</p>
+                                    </div>
+                                    <div class="solution-item" style="padding: 20px; background: #f8fafc; border-radius: 10px; border-left: 4px solid #f15a25;">
+                                        <strong style="display: block; color: #1e293b; margin-bottom: 8px;">Local Citation Building & Cleanup</strong>
+                                        <p style="color: #64748b; margin: 0; font-size: 0.9rem; line-height: 1.6;">Consistent NAP across all major directories and health platforms</p>
+                                    </div>
+                                    <div class="solution-item" style="padding: 20px; background: #f8fafc; border-radius: 10px; border-left: 4px solid #f15a25;">
+                                        <strong style="display: block; color: #1e293b; margin-bottom: 8px;">Review Generation Campaign</strong>
+                                        <p style="color: #64748b; margin: 0; font-size: 0.9rem; line-height: 1.6;">Systematic approach to generate authentic patient reviews</p>
+                                    </div>
+                                    <div class="solution-item" style="padding: 20px; background: #f8fafc; border-radius: 10px; border-left: 4px solid #f15a25;">
+                                        <strong style="display: block; color: #1e293b; margin-bottom: 8px;">Local Content Optimisation</strong>
+                                        <p style="color: #64748b; margin: 0; font-size: 0.9rem; line-height: 1.6;">Location-specific content targeting Birmingham dental searches</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Arrow -->
+                        <div class="story-arrow animate-on-scroll animate-scale-up" style="text-align: center; margin: 20px 0;">
+                            <div class="arrow-icon" style="width: 60px; height: 60px; background: #f15a25; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; color: white; font-size: 1.5rem; font-weight: bold;">↓</div>
+                            <span class="arrow-text" style="display: block; margin-top: 10px; font-weight: 600; color: #64748b;">The Results</span>
+                        </div>
+
+                        <!-- Results -->
+                        <div class="story-section results-section animate-on-scroll animate-fade-up" style="background: white; padding: 40px; border-radius: 16px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
+                            <div class="section-header" style="display: flex; align-items: center; gap: 15px; margin-bottom: 30px; justify-content: center;">
+                                <div class="section-icon results-icon" style="width: 50px; height: 50px; background: linear-gradient(135deg, #10b981 0%, #059669 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.5rem;">🚀</div>
+                                <h3 style="font-size: 1.5rem; font-weight: 700; color: #1e293b; margin: 0;">Exceptional Results After 6 Months</h3>
+                            </div>
+                            <div class="section-content">
+                                <div class="results-showcase" style="text-align: center;">
+                                    <div class="primary-result" style="margin-bottom: 30px;">
+                                        <span class="big-number" style="display: block; font-size: 4rem; font-weight: 800; background: linear-gradient(135deg, #f15a25 0%, #e04a15 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">500%</span>
+                                        <span class="big-label" style="font-size: 1.2rem; color: #64748b; font-weight: 600;">Local Visibility Increase</span>
+                                    </div>
+                                    <div class="secondary-results" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 25px; max-width: 700px; margin: 0 auto;">
+                                        <div class="result-stat" style="background: #f0fdf4; padding: 20px; border-radius: 12px; border: 1px solid #bbf7d0;">
+                                            <span class="stat-number" style="display: block; font-size: 2rem; font-weight: 700; color: #059669;">350%</span>
+                                            <span class="stat-label" style="font-size: 0.9rem; color: #065f46;">More Phone Calls</span>
+                                        </div>
+                                        <div class="result-stat" style="background: #f0fdf4; padding: 20px; border-radius: 12px; border: 1px solid #bbf7d0;">
+                                            <span class="stat-number" style="display: block; font-size: 2rem; font-weight: 700; color: #059669;">80+</span>
+                                            <span class="stat-label" style="font-size: 0.9rem; color: #065f46;">New Patient Reviews</span>
+                                        </div>
+                                        <div class="result-stat" style="background: #f0fdf4; padding: 20px; border-radius: 12px; border: 1px solid #bbf7d0;">
+                                            <span class="stat-number" style="display: block; font-size: 2rem; font-weight: 700; color: #059669;">65%</span>
+                                            <span class="stat-label" style="font-size: 0.9rem; color: #065f46;">Increase in New Patients</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                    <div class="case-study-results animate-on-scroll animate-slide-right">
-                        <?php
-                        $case_study_results_title = get_post_meta(get_the_ID(), '_local_seo_case_study_results_title', true) ?: $defaults['case_study_results_title'];
-                        $case_study_results = get_post_meta(get_the_ID(), '_local_seo_case_study_results', true) ?: $defaults['case_study_results'];
-                        $case_study_link_text = get_post_meta(get_the_ID(), '_local_seo_case_study_link_text', true) ?: $defaults['case_study_link_text'];
-                        $case_study_link_url = get_post_meta(get_the_ID(), '_local_seo_case_study_link_url', true) ?: $defaults['case_study_link_url'];
-                        ?>
-                        <h3><?php echo esc_html($case_study_results_title); ?></h3>
-                        <div class="results-grid">
-                            <?php foreach ((array)$case_study_results as $result): ?>
-                                <div class="result-item animate-on-scroll animate-stagger animate-scale-up">
-                                    <div class="result-number"><?php echo esc_html($result['number']); ?></div>
-                                    <div class="result-label"><?php echo esc_html($result['label']); ?></div>
-                                </div>
-                            <?php endforeach; ?>
+
+                    <!-- Call to Action -->
+                    <div class="case-study-cta-redesigned animate-on-scroll animate-fade-up" style="margin-top: 40px; background: linear-gradient(135deg, #f15a25 0%, #e04a15 100%); padding: 40px; border-radius: 16px; text-align: center;">
+                        <div class="cta-container" style="display: flex; align-items: center; justify-content: center; gap: 20px; flex-wrap: wrap;">
+                            <div class="cta-icon">
+                                <span class="success-emoji" style="font-size: 2rem;">🏆</span>
+                            </div>
+                            <div class="cta-text-content" style="color: white;">
+                                <h4 class="cta-headline" style="font-size: 1.5rem; font-weight: 700; margin: 0 0 8px 0;">Ready to Dominate Local Search?</h4>
+                                <p class="cta-description" style="margin: 0; opacity: 0.9;">Let's transform your local visibility and attract more customers</p>
+                            </div>
+                            <div class="cta-action">
+                                <a href="<?php echo home_url('/contact'); ?>" class="btn-primary cta-btn-enhanced" style="background: white; color: #f15a25; border: none; padding: 15px 30px; border-radius: 8px; font-weight: 700; text-decoration: none; display: inline-block; transition: all 0.3s ease;">Get Your Free Local SEO Consultation</a>
+                            </div>
                         </div>
-                        <a href="<?php echo esc_url($case_study_link_url); ?>" class="case-study-link"><?php echo esc_html($case_study_link_text); ?></a>
                     </div>
                 </div>
             </div>
-        </section>        <!-- Local SEO Process -->
+        </section><!-- Local SEO Process -->
         <section class="local-seo-process">
             <div class="section-content">
                 <?php

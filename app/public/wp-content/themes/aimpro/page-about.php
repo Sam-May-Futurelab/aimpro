@@ -29,16 +29,15 @@ get_header(); ?>
         </section><!-- Video Section -->
         <?php 
         $video_url = aimpro_get_field('about_video_url', '');
-        if (!empty($video_url)): ?>
-        <section class="about-video-section">
-            <div class="section-content text-centre">
+        if (!empty($video_url)): ?>        <section class="about-video-section">
+            <div class="section-content text-centre" style="text-align: center;">
                 <?php 
                 $video_heading = aimpro_get_field('about_video_heading', '');
                 $video_description = aimpro_get_field('about_video_description', '');
-                if (!empty($video_heading)): ?>                <div class="content-header animate-on-scroll animate-fade-up">
-                    <h2><?php echo $video_heading; ?></h2>
+                if (!empty($video_heading)): ?>                <div class="content-header animate-on-scroll animate-fade-up" style="text-align: center;">
+                    <h2 style="text-align: center;"><?php echo $video_heading; ?></h2>
                     <?php if (!empty($video_description)): ?>
-                    <p class="section-description"><?php echo $video_description; ?></p>
+                    <p class="section-description" style="text-align: center;"><?php echo $video_description; ?></p>
                     <?php endif; ?>
                 </div>
                 <?php endif; ?>
@@ -103,9 +102,7 @@ get_header(); ?>
                 <div class="values-grid">
                     <div class="value-item animate-on-scroll animate-stagger animate-fade-up">
                         <div class="value-icon">
-                            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M12 2L13.09 8.26L22 9L13.09 9.74L12 16L10.91 9.74L2 9L10.91 8.26L12 2Z" stroke="currentcolour" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                            </svg>
+                            <i class="fas fa-lightbulb"></i>
                         </div>
                         <h3><?php echo aimpro_get_field('about_value_1_heading', 'Innovative Solutions'); ?></h3>
                         <p><?php echo aimpro_get_field('about_value_1_description', 'Our approach goes beyond the ordinary. We infuse creativity and innovation into every strategy, crafting unique solutions tailored to your brand\'s needs. By blending fresh ideas with strategic insights, we create campaigns that truly connect with your audience.'); ?></p>
@@ -113,10 +110,7 @@ get_header(); ?>
                     
                     <div class="value-item animate-on-scroll animate-stagger animate-fade-up">
                         <div class="value-icon">
-                            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M3 3V21H21" stroke="currentcolour" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                <path d="M9 9L12 6L16 10L21 5" stroke="currentcolour" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                            </svg>
+                            <i class="fas fa-chart-line"></i>
                         </div>
                         <h3><?php echo aimpro_get_field('about_value_2_heading', 'Data-Driven Strategies'); ?></h3>
                         <p><?php echo aimpro_get_field('about_value_2_description', 'We believe in the power of data. Every decision we make is backed by in-depth analytics, ensuring that each campaign is optimised to deliver maximum results and ROI. With data at the core, your marketing efforts are not only efficient but also highly effective.'); ?></p>
@@ -124,10 +118,7 @@ get_header(); ?>
                     
                     <div class="value-item animate-on-scroll animate-stagger animate-fade-up">
                         <div class="value-icon">
-                            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M9 12L11 14L15 10" stroke="currentcolour" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                <path d="M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z" stroke="currentcolour" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                            </svg>
+                            <i class="fas fa-trophy"></i>
                         </div>
                         <h3><?php echo aimpro_get_field('about_value_3_heading', 'Proven Track Record'); ?></h3>
                         <p><?php echo aimpro_get_field('about_value_3_description', 'Our results speak for themselves. Across diverse industries, we\'ve consistently delivered growth, enhanced visibility, and high-quality leads, proving our ability to drive real impact for our clients.'); ?></p>
@@ -135,12 +126,7 @@ get_header(); ?>
                     
                     <div class="value-item animate-on-scroll animate-stagger animate-fade-up">
                         <div class="value-icon">
-                            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M17 21V19C17 17.9391 16.5786 16.9217 15.8284 16.1716C15.0783 15.4214 14.0609 15 13 15H5C3.93913 15 2.92172 15.4214 2.17157 16.1716C1.42143 16.9217 1 17.9391 1 19V21" stroke="currentcolour" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                <path d="M9 11C11.2091 11 13 9.20914 13 7C13 4.79086 11.2091 3 9 3C6.79086 3 5 4.79086 5 7C5 9.20914 6.79086 11 9 11Z" stroke="currentcolour" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                <path d="M23 21V19C22.9993 18.1137 22.7044 17.2528 22.1614 16.5523C21.6184 15.8519 20.8581 15.3516 20 15.13" stroke="currentcolour" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                <path d="M16 3.13C16.8604 3.35031 17.623 3.85071 18.1676 4.55232C18.7122 5.25392 19.0078 6.11683 19.0078 7.005C19.0078 7.89318 18.7122 8.75608 18.1676 9.45769C17.623 10.1593 16.8604 10.6597 16 10.88" stroke="currentcolour" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                            </svg>
+                            <i class="fas fa-handshake"></i>
                         </div>
                         <h3><?php echo aimpro_get_field('about_value_4_heading', 'Collaborative Partnership'); ?></h3>
                         <p><?php echo aimpro_get_field('about_value_4_description', 'We\'re more than an agency—we\'re an extension of your team. Through open communication and a collaborative approach, we work closely with you to exceed expectations and achieve your goals together.'); ?></p>
@@ -148,9 +134,7 @@ get_header(); ?>
                     
                     <div class="value-item animate-on-scroll animate-stagger animate-fade-up">
                         <div class="value-icon">
-                            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M12 2L15.09 8.26L22 9L17 14L18.18 21L12 18L5.82 21L7 14L2 9L8.91 8.26L12 2Z" stroke="currentcolour" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                            </svg>
+                            <i class="fas fa-star"></i>
                         </div>
                         <h3><?php echo aimpro_get_field('about_value_5_heading', 'Exceptional Customer Service'); ?></h3>
                         <p><?php echo aimpro_get_field('about_value_5_description', 'Client satisfaction is our top priority. From strategy through to execution, our dedicated team provides support at every step, ensuring a smooth and seamless experience tailored to your needs.'); ?></p>
@@ -158,11 +142,7 @@ get_header(); ?>
                     
                     <div class="value-item">
                         <div class="value-icon">
-                            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="currentcolour" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                <path d="M2 17L12 22L22 17" stroke="currentcolour" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                <path d="M2 12L12 17L22 12" stroke="currentcolour" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                            </svg>
+                            <i class="fas fa-rocket"></i>
                         </div>                        <h3><?php echo aimpro_get_field('about_value_6_heading', 'Forward-Thinking Approach'); ?></h3>
                         <p><?php echo aimpro_get_field('about_value_6_description', 'In an ever-changing digital landscape, we keep your brand one step ahead. Our forward-thinking approach enables us to adapt quickly to trends, ensuring your brand stays competitive and relevant in the market.'); ?></p>
                     </div>
@@ -172,10 +152,9 @@ get_header(); ?>
 
         <!-- Team Section -->
         <section class="team-section">
-            <div class="container">
-                <div class="section-header text-centre animate-on-scroll animate-fade-up">
-                    <h2>Meet Our Expert Team</h2>
-                    <p>The passionate professionals driving your digital success</p>
+            <div class="container">                <div class="section-header text-centre animate-on-scroll animate-fade-up" style="text-align: center;">
+                    <h2 style="text-align: center;">Meet Our Expert Team</h2>
+                    <p style="text-align: center;">The passionate professionals driving your digital success</p>
                 </div>
                 
                 <div class="team-grid">                    <div class="team-member animate-on-scroll animate-stagger animate-fade-up">
@@ -218,12 +197,11 @@ get_header(); ?>
                         </div>
                     </div>
                 </div>
-                
-                <!-- Team CTA -->
-                <div class="team-cta text-centre animate-on-scroll animate-fade-up">
-                    <h3>Ready to Work with Our Expert Team?</h3>
-                    <p>Let's discuss how our specialists can help transform your digital presence and drive exceptional results for your business.</p>
-                    <div class="team-cta-buttons">
+                  <!-- Team CTA -->
+                <div class="team-cta text-centre animate-on-scroll animate-fade-up" style="text-align: center;">
+                    <h3 style="text-align: center;">Ready to Work with Our Expert Team?</h3>
+                    <p style="text-align: center;">Let's discuss how our specialists can help transform your digital presence and drive exceptional results for your business.</p>
+                    <div class="team-cta-buttons" style="text-align: center;">
                         <a href="<?php echo home_url('/contact'); ?>" class="btn btn-primary">Get Started Today</a>
                         <a href="<?php echo home_url('/case-studies'); ?>" class="btn btn-secondary">View Our Work</a>
                     </div>

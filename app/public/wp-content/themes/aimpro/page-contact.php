@@ -18,35 +18,24 @@ get_header(); ?>
                     <p style="colour: #5a6c7d; font-size: 1.2rem; margin-bottom: 3rem;"><?php echo aimpro_get_field('contact_hero_subtitle', 'Ready to transform your business? Let\'s discuss your digital marketing goals and create a strategy that delivers measurable results.'); ?></p>
                 </div>
                 
-                <div class="values-grid">
-                    <div class="value-card animate-on-scroll animate-stagger animate-fade-up">
+                <div class="values-grid">                    <div class="value-card animate-on-scroll animate-stagger animate-fade-up">
                         <div class="value-icon">
-                            <svg width="60" height="60" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" stroke="currentcolour" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                            </svg>
+                            <i class="fas fa-phone" style="font-size: 2.5rem;"></i>
                         </div>
                         <h3><?php echo aimpro_get_field('contact_phone_label', 'Call Us Now'); ?></h3>
                         <p><strong><?php echo aimpro_get_field('contact_phone', '+44 121 285 8490'); ?></strong></p>
                         <p>Speak directly with our digital marketing experts for immediate assistance and consultation.</p>
                     </div>
-                    
-                    <div class="value-card animate-on-scroll animate-stagger animate-fade-up">
+                      <div class="value-card animate-on-scroll animate-stagger animate-fade-up">
                         <div class="value-icon">
-                            <svg width="60" height="60" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" stroke="currentcolour" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                <polyline points="22,6 12,13 2,6" stroke="currentcolour" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                            </svg>
+                            <i class="fas fa-envelope" style="font-size: 2.5rem;"></i>
                         </div>
                         <h3><?php echo aimpro_get_field('contact_email_label', 'Email Us'); ?></h3>
                         <p><strong><?php echo aimpro_get_field('contact_email', 'hello@aimpro.co.uk'); ?></strong></p>
                         <p>Send us your project details and we'll respond within 24 hours with a tailored strategy.</p>
-                    </div>
-                      <div class="value-card animate-on-scroll animate-stagger animate-fade-up">
+                    </div>                      <div class="value-card animate-on-scroll animate-stagger animate-fade-up">
                         <div class="value-icon">
-                            <svg width="60" height="60" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <circle cx="12" cy="12" r="10" stroke="currentcolour" stroke-width="2"/>
-                                <polyline points="12,6 12,12 16,14" stroke="currentcolour" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                            </svg>
+                            <i class="fas fa-clock" style="font-size: 2.5rem;"></i>
                         </div>
                         <h3><?php echo aimpro_get_field('contact_hours_label', 'Business Hours'); ?></h3>
                         <p><strong><?php echo aimpro_get_field('contact_hours', 'Mon-Fri: 9AM-6PM'); ?></strong></p>
@@ -66,13 +55,12 @@ get_header(); ?>
         </div>    </section>    <!-- Main Content -->
     <div class="contact-main-content" style="padding-top: 2rem;">
         <div class="container">
-            <div class="contact-layout-centred">                  <!-- Contact Form Section -->
-                <div class="contact-form-section animate-on-scroll animate-fade-up" style="margin-top: 0;">
+            <div class="contact-layout-centred">                  <!-- Contact Form Section -->                <div class="contact-form-section animate-on-scroll animate-fade-up" style="margin-top: 0;">
                     <!-- Contact Form Header -->
-                    <div class="section-content" style="text-align: centre; margin-bottom: 3rem;">
-                        <h2>Send Us a Message</h2>
+                    <div class="section-content" style="text-align: center; margin-bottom: 3rem;">
+                        <h2 style="text-align: center;">Send Us a Message</h2>
                         <div class="curly-underline-accent"></div>
-                        <p style="colour: #5a6c7d; font-size: 1.1rem; margin-top: 1rem;">Fill out the form below and we'll get back to you within 24 hours with a customised strategy for your business.</p>
+                        <p style="color: #5a6c7d; font-size: 1.1rem; margin-top: 1rem; text-align: center;">Fill out the form below and we'll get back to you within 24 hours with a customised strategy for your business.</p>
                     </div>
                     
                     <div class="contact-form-wrapper">

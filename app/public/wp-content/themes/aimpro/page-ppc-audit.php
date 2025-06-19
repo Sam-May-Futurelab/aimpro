@@ -149,75 +149,137 @@ get_header(); ?>
                 </div>
             </div>
         </div>
-    </section>    <!-- Case Study Section -->
-    <section class="case-study-section">
+    </section>    <!-- Case Study Section with Better Styling -->
+    <section id="case-study" class="case-study-showcase" style="background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%); padding: 80px 0;">
         <div class="container">
-            <div class="case-study-content">
-                <div class="case-study-text animate-on-scroll animate-slide-left">
-                    <?php
-                    $case_study_title = get_post_meta(get_the_ID(), '_ppc_audit_case_study_title', true);
-                    if (empty($case_study_title)) $case_study_title = $defaults['case_study_title'];
-                    
-                    $case_study_intro = get_post_meta(get_the_ID(), '_ppc_audit_case_study_intro', true);
-                    if (empty($case_study_intro)) $case_study_intro = $defaults['case_study_intro'];
-                    
-                    $case_study_challenge = get_post_meta(get_the_ID(), '_ppc_audit_case_study_challenge', true);
-                    if (empty($case_study_challenge)) $case_study_challenge = $defaults['case_study_challenge'];
-                    
-                    $case_study_solution = get_post_meta(get_the_ID(), '_ppc_audit_case_study_solution', true);
-                    if (empty($case_study_solution)) $case_study_solution = $defaults['case_study_solution'];
-                    ?>
-                    <h2><?php echo esc_html($case_study_title); ?></h2>
-                    <p class="case-study-intro"><?php echo esc_html($case_study_intro); ?></p>
-                    
-                    <div class="case-study-challenge animate-on-scroll animate-fade-up">
-                        <h3>The Challenge</h3>
-                        <p><?php echo esc_html($case_study_challenge); ?></p>
+            <div class="case-study-wrapper">
+                <!-- Header -->
+                <div class="case-study-intro animate-on-scroll animate-fade-up" style="text-align: center; margin-bottom: 60px;">
+                    <div class="case-study-badge" style="display: inline-flex; align-items: center; gap: 8px; background: linear-gradient(135deg, #f15a25 0%, #e04a15 100%); color: white; padding: 8px 16px; border-radius: 50px; margin-bottom: 20px; font-weight: 600;">
+                        <span class="badge-icon">🏭</span>
+                        <span class="badge-text">PPC Audit Success Story</span>
                     </div>
-                    
-                    <div class="case-study-solution animate-on-scroll animate-fade-up">
-                        <h3>Our Audit Findings</h3>
-                        <?php
-                        // Convert newlines to list items
-                        $solution_items = explode("\n", $case_study_solution);
-                        if (count($solution_items) > 1) {
-                            echo '<ul>';
-                            foreach ($solution_items as $item) {
-                                $item = trim($item);
-                                if (!empty($item)) {
-                                    echo '<li>' . esc_html($item) . '</li>';
-                                }
-                            }
-                            echo '</ul>';
-                        } else {
-                            echo '<p>' . esc_html($case_study_solution) . '</p>';
-                        }
-                        ?>
-                    </div>
-                </div>                  <div class="case-study-results animate-on-scroll animate-slide-right">
-                    <h3>The Results After Implementation</h3>
-                    <div class="results-grid">
-                        <?php for ($i = 1; $i <= 4; $i++) : ?>
-                            <?php
-                            $result_number = get_post_meta(get_the_ID(), "_ppc_audit_case_result_{$i}_number", true);
-                            if (empty($result_number)) $result_number = $defaults["case_result_{$i}_number"];
-                            
-                            $result_label = get_post_meta(get_the_ID(), "_ppc_audit_case_result_{$i}_label", true);
-                            if (empty($result_label)) $result_label = $defaults["case_result_{$i}_label"];
-                            ?>
-                            <div class="result-item animate-on-scroll animate-stagger animate-scale-up">
-                                <div class="result-number"><?php echo esc_html($result_number); ?></div>
-                                <div class="result-label"><?php echo esc_html($result_label); ?></div>
-                            </div>
-                        <?php endfor; ?>
-                    </div></div>
-            </div>
-              <!-- CTA after case study -->
-            <div class="text-center mt-2 animate-on-scroll animate-fade-up">
-                <div class="inline-cta-content">
-                    <p class="cta-text">Want similar results for your PPC campaigns?</p>
-                    <a href="/contact/" class="btn btn-primary">Start Your Audit Today</a>
+                    <h2 class="case-study-title" style="font-size: 2.5rem; font-weight: 700; color: #1e293b; margin-bottom: 20px;">Manufacturing Company Saves <span class="highlight-number" style="color: #f15a25;">£47,000</span> Annually</h2>
+                    <p class="case-study-subtitle" style="font-size: 1.2rem; color: #64748b; max-width: 700px; margin: 0 auto;">Transforming declining PPC performance into exceptional B2B lead generation through comprehensive audit and optimisation</p>
                 </div>
+
+                <!-- Story Flow -->
+                <div class="case-study-flow" style="max-width: 1000px; margin: 0 auto;">
+                    <!-- Challenge -->
+                    <div class="story-section challenge-section animate-on-scroll animate-slide-left" style="background: white; padding: 40px; border-radius: 16px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); margin-bottom: 30px;">
+                        <div class="section-header" style="display: flex; align-items: center; gap: 15px; margin-bottom: 25px;">
+                            <div class="section-icon challenge-icon" style="width: 50px; height: 50px; background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.5rem;">⚡</div>
+                            <h3 style="font-size: 1.5rem; font-weight: 700; color: #1e293b; margin: 0;">The Challenge</h3>
+                        </div>
+                        <div class="section-content">
+                            <p class="story-text" style="font-size: 1.1rem; line-height: 1.8; color: #64748b; margin-bottom: 25px;">A manufacturing company had been running Google Ads for 3 years with steadily declining performance. Their cost-per-lead had increased 150% while lead quality decreased. They needed a thorough analysis to identify what was wrong and how to fix it.</p>
+                            <div class="challenge-metrics" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px;">
+                                <div class="challenge-item" style="background: #fee2e2; padding: 15px; border-radius: 10px; border-left: 4px solid #dc2626;">
+                                    <span style="font-weight: 600; color: #dc2626; display: block;">📉 150% increase in cost-per-lead</span>
+                                </div>
+                                <div class="challenge-item" style="background: #fee2e2; padding: 15px; border-radius: 10px; border-left: 4px solid #dc2626;">
+                                    <span style="font-weight: 600; color: #dc2626; display: block;">📉 Declining lead quality</span>
+                                </div>
+                                <div class="challenge-item" style="background: #fee2e2; padding: 15px; border-radius: 10px; border-left: 4px solid #dc2626;">
+                                    <span style="font-weight: 600; color: #dc2626; display: block;">📉 3 years of declining performance</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Arrow -->
+                    <div class="story-arrow animate-on-scroll animate-scale-up" style="text-align: center; margin: 20px 0;">
+                        <div class="arrow-icon" style="width: 60px; height: 60px; background: #f15a25; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; color: white; font-size: 1.5rem; font-weight: bold;">↓</div>
+                        <span class="arrow-text" style="display: block; margin-top: 10px; font-weight: 600; color: #64748b;">Our Comprehensive Audit</span>
+                    </div>
+
+                    <!-- Solution -->
+                    <div class="story-section solution-section animate-on-scroll animate-slide-right" style="background: white; padding: 40px; border-radius: 16px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); margin-bottom: 30px;">
+                        <div class="section-header" style="display: flex; align-items: center; gap: 15px; margin-bottom: 25px;">
+                            <div class="section-icon solution-icon" style="width: 50px; height: 50px; background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.5rem;">🎯</div>
+                            <h3 style="font-size: 1.5rem; font-weight: 700; color: #1e293b; margin: 0;">Critical Audit Findings</h3>
+                        </div>
+                        <div class="section-content">
+                            <div class="audit-findings" style="display: grid; grid-template-columns: 1fr; gap: 15px;">
+                                <div class="finding-item" style="padding: 20px; background: #f8fafc; border-radius: 10px; border-left: 4px solid #f15a25;">
+                                    <strong style="display: block; color: #1e293b; margin-bottom: 8px;">🔍 Keyword Analysis</strong>
+                                    <p style="color: #64748b; margin: 0; font-size: 0.9rem; line-height: 1.6;">85% of keywords were irrelevant or too broad, wasting £2,100 monthly</p>
+                                </div>
+                                <div class="finding-item" style="padding: 20px; background: #f8fafc; border-radius: 10px; border-left: 4px solid #f15a25;">
+                                    <strong style="display: block; color: #1e293b; margin-bottom: 8px;">🏗️ Campaign Structure</strong>
+                                    <p style="color: #64748b; margin: 0; font-size: 0.9rem; line-height: 1.6;">Poor campaign structure with single keyword ad groups reducing Quality Score</p>
+                                </div>
+                                <div class="finding-item" style="padding: 20px; background: #f8fafc; border-radius: 10px; border-left: 4px solid #f15a25;">
+                                    <strong style="display: block; color: #1e293b; margin-bottom: 8px;">📱 Landing Page Issues</strong>
+                                    <p style="color: #64748b; margin: 0; font-size: 0.9rem; line-height: 1.6;">Landing pages had 12-second load times and poor mobile experience</p>
+                                </div>
+                                <div class="finding-item" style="padding: 20px; background: #f8fafc; border-radius: 10px; border-left: 4px solid #f15a25;">
+                                    <strong style="display: block; color: #1e293b; margin-bottom: 8px;">🚫 Negative Keywords</strong>
+                                    <p style="color: #64748b; margin: 0; font-size: 0.9rem; line-height: 1.6;">No negative keyword strategy, capturing irrelevant traffic</p>
+                                </div>
+                                <div class="finding-item" style="padding: 20px; background: #f8fafc; border-radius: 10px; border-left: 4px solid #f15a25;">
+                                    <strong style="display: block; color: #1e293b; margin-bottom: 8px;">⚔️ Competitive Bidding</strong>
+                                    <p style="color: #64748b; margin: 0; font-size: 0.9rem; line-height: 1.6;">Bidding on competitor terms without competitive advantages</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Arrow -->
+                    <div class="story-arrow animate-on-scroll animate-scale-up" style="text-align: center; margin: 20px 0;">
+                        <div class="arrow-icon" style="width: 60px; height: 60px; background: #f15a25; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; color: white; font-size: 1.5rem; font-weight: bold;">↓</div>
+                        <span class="arrow-text" style="display: block; margin-top: 10px; font-weight: 600; color: #64748b;">The Results</span>
+                    </div>
+
+                    <!-- Results -->
+                    <div class="story-section results-section animate-on-scroll animate-fade-up" style="background: white; padding: 40px; border-radius: 16px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
+                        <div class="section-header" style="display: flex; align-items: center; gap: 15px; margin-bottom: 30px; justify-content: center;">
+                            <div class="section-icon results-icon" style="width: 50px; height: 50px; background: linear-gradient(135deg, #10b981 0%, #059669 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.5rem;">🚀</div>
+                            <h3 style="font-size: 1.5rem; font-weight: 700; color: #1e293b; margin: 0;">Exceptional Results After Implementation</h3>
+                        </div>
+                        <div class="section-content">
+                            <div class="results-showcase" style="text-align: center;">
+                                <div class="primary-result" style="margin-bottom: 30px;">
+                                    <span class="big-number" style="display: block; font-size: 4rem; font-weight: 800; background: linear-gradient(135deg, #f15a25 0%, #e04a15 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">£47K</span>
+                                    <span class="big-label" style="font-size: 1.2rem; color: #64748b; font-weight: 600;">Annual Cost Savings</span>
+                                </div>
+                                <div class="secondary-results" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 25px; max-width: 700px; margin: 0 auto;">
+                                    <div class="result-stat" style="background: #f0fdf4; padding: 20px; border-radius: 12px; border: 1px solid #bbf7d0;">
+                                        <span class="stat-number" style="display: block; font-size: 2rem; font-weight: 700; color: #059669;">280%</span>
+                                        <span class="stat-label" style="font-size: 0.9rem; color: #065f46;">Qualified Lead Increase</span>
+                                    </div>
+                                    <div class="result-stat" style="background: #f0fdf4; padding: 20px; border-radius: 12px; border: 1px solid #bbf7d0;">
+                                        <span class="stat-number" style="display: block; font-size: 2rem; font-weight: 700; color: #059669;">65%</span>
+                                        <span class="stat-label" style="font-size: 0.9rem; color: #065f46;">Cost Per Lead Reduction</span>
+                                    </div>
+                                    <div class="result-stat" style="background: #f0fdf4; padding: 20px; border-radius: 12px; border: 1px solid #bbf7d0;">
+                                        <span class="stat-number" style="display: block; font-size: 2rem; font-weight: 700; color: #059669;">340%</span>
+                                        <span class="stat-label" style="font-size: 0.9rem; color: #065f46;">ROI Improvement</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Call to Action -->
+                <div class="case-study-cta-redesigned animate-on-scroll animate-fade-up" style="margin-top: 40px; background: linear-gradient(135deg, #f15a25 0%, #e04a15 100%); padding: 40px; border-radius: 16px; text-align: center;">
+                    <div class="cta-container" style="display: flex; align-items: center; justify-content: center; gap: 20px; flex-wrap: wrap;">
+                        <div class="cta-icon">
+                            <span class="success-emoji" style="font-size: 2rem;">🔍</span>
+                        </div>
+                        <div class="cta-text-content" style="color: white;">
+                            <h4 class="cta-headline" style="font-size: 1.5rem; font-weight: 700; margin: 0 0 8px 0;">Want Similar Results for Your PPC Campaigns?</h4>
+                            <p class="cta-description" style="margin: 0; opacity: 0.9;">Let's uncover what's holding back your PPC performance</p>
+                        </div>
+                        <div class="cta-action">
+                            <a href="<?php echo home_url('/contact'); ?>" class="btn-primary cta-btn-enhanced" style="background: white; color: #f15a25; border: none; padding: 15px 30px; border-radius: 8px; font-weight: 700; text-decoration: none; display: inline-block; transition: all 0.3s ease;">Start Your Audit Today</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
             </div>
         </div>
     </section>    <!-- What You Get Section --><section class="whitelabel-benefits">
