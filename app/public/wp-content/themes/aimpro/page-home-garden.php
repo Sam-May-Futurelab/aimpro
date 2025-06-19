@@ -32,17 +32,15 @@ $services = get_post_meta(get_the_ID(), '_home_garden_services', true) ?: array(
                 <h1><?php echo esc_html($header_title); ?></h1>
                 <p class="page-subtitle"><?php echo esc_html($header_subtitle); ?></p>
             </div>
-        </section>
-
-        <!-- Industry Overview -->
-        <section class="industry-overview">
+        </section>        <!-- Industry Overview -->
+        <section class="industry-overview animate-on-scroll animate-fade-up">
             <div class="section-content">
                 <div class="overview-content">
-                    <div class="overview-text">
+                    <div class="overview-text animate-on-scroll animate-slide-left">
                         <h2><?php echo esc_html($overview_title); ?></h2>
                         <p><?php echo esc_html($overview_content); ?></p>
                         
-                        <div class="industry-challenges">
+                        <div class="industry-challenges animate-on-scroll animate-fade-up">
                             <h3><?php echo esc_html($challenges_title); ?></h3>
                             <ul>
                                 <?php foreach ($challenges as $challenge): ?>
@@ -51,7 +49,7 @@ $services = get_post_meta(get_the_ID(), '_home_garden_services', true) ?: array(
                             </ul>
                         </div>
                     </div>
-                    <div class="overview-image">
+                    <div class="overview-image animate-on-scroll animate-slide-right">
                         <?php if ($overview_image): ?>
                             <img src="<?php echo esc_url($overview_image); ?>" alt="<?php echo esc_attr($overview_title); ?>" />
                         <?php else: ?>
@@ -61,9 +59,9 @@ $services = get_post_meta(get_the_ID(), '_home_garden_services', true) ?: array(
                 </div>
             </div>
         </section>        <!-- Home & Garden Services -->
-        <section class="home-garden-services">
+        <section class="home-garden-services animate-on-scroll animate-fade-up">
             <div class="section-content">
-                <h2><?php echo esc_html($services_title); ?></h2>
+                <h2 class="animate-on-scroll animate-fade-up"><?php echo esc_html($services_title); ?></h2>
                 <div class="benefits-grid-2x2">
                     <?php 
                     // Default services if none set
@@ -97,7 +95,7 @@ $services = get_post_meta(get_the_ID(), '_home_garden_services', true) ?: array(
                     }
                     
                     foreach ($services as $service): ?>
-                      <div class="benefit-card">
+                      <div class="benefit-card animate-on-scroll animate-stagger animate-fade-up">
                         <div class="benefit-icon">
                             <i class="<?php echo esc_attr($service['icon']); ?>"></i>
                         </div>
@@ -117,10 +115,10 @@ $services = get_post_meta(get_the_ID(), '_home_garden_services', true) ?: array(
                 </div>
             </div>
         </section>        <!-- Home & Garden Success Story -->
-        <section class="home-garden-case-study">
+        <section class="home-garden-case-study animate-on-scroll animate-fade-up">
             <div class="section-content">
                 <div class="case-study-content">
-                    <div class="case-study-text">
+                    <div class="case-study-text animate-on-scroll animate-slide-left">
                         <?php 
                         $case_study_label = get_post_meta(get_the_ID(), '_home_garden_case_study_label', true) ?: 'Success Story';
                         $case_study_title = get_post_meta(get_the_ID(), '_home_garden_case_study_title', true) ?: 'Blooming Gardens: 220% Seasonal Revenue Boost';
@@ -144,7 +142,7 @@ $services = get_post_meta(get_the_ID(), '_home_garden_services', true) ?: array(
                         <h2><?php echo esc_html($case_study_title); ?></h2>
                         <p><?php echo esc_html($case_study_content); ?></p>
                         
-                        <div class="case-study-challenge">
+                        <div class="case-study-challenge animate-on-scroll animate-fade-up">
                             <h3><?php echo esc_html($case_study_challenge_title); ?></h3>
                             <ul>
                                 <?php foreach ($case_study_challenges as $challenge): ?>
@@ -153,7 +151,7 @@ $services = get_post_meta(get_the_ID(), '_home_garden_services', true) ?: array(
                             </ul>
                         </div>
 
-                        <div class="case-study-solution">
+                        <div class="case-study-solution animate-on-scroll animate-fade-up">
                             <h3><?php echo esc_html($case_study_solution_title); ?></h3>
                             <ul>
                                 <?php foreach ($case_study_solutions as $solution): ?>
@@ -162,7 +160,7 @@ $services = get_post_meta(get_the_ID(), '_home_garden_services', true) ?: array(
                             </ul>
                         </div>
                     </div>
-                    <div class="case-study-results">
+                    <div class="case-study-results animate-on-scroll animate-slide-right">
                         <?php 
                         $case_study_results_title = get_post_meta(get_the_ID(), '_home_garden_case_study_results_title', true) ?: 'Results After 12 Months';
                         $case_study_results = get_post_meta(get_the_ID(), '_home_garden_case_study_results', true) ?: array(
@@ -177,7 +175,7 @@ $services = get_post_meta(get_the_ID(), '_home_garden_services', true) ?: array(
                         <h3><?php echo esc_html($case_study_results_title); ?></h3>
                         <div class="results-grid">
                             <?php foreach ($case_study_results as $result): ?>
-                            <div class="result-item">
+                            <div class="result-item animate-on-scroll animate-stagger animate-scale-up">
                                 <div class="result-number"><?php echo esc_html($result['number']); ?></div>
                                 <div class="result-label"><?php echo esc_html($result['label']); ?></div>
                             </div>
@@ -188,7 +186,7 @@ $services = get_post_meta(get_the_ID(), '_home_garden_services', true) ?: array(
                 </div>
             </div>
         </section>        <!-- Seasonal Marketing Calendar -->
-        <section class="seasonal-calendar">
+        <section class="seasonal-calendar animate-on-scroll animate-fade-up">
             <div class="section-content">
                 <?php 
                 $calendar_title = get_post_meta(get_the_ID(), '_home_garden_calendar_title', true) ?: 'Home & Garden Seasonal Marketing Calendar';
@@ -228,7 +226,7 @@ $services = get_post_meta(get_the_ID(), '_home_garden_services', true) ?: array(
                     );
                 }
                 ?>
-                <h2><?php echo esc_html($calendar_title); ?></h2>
+                <h2 class="animate-on-scroll animate-fade-up"><?php echo esc_html($calendar_title); ?></h2>
                 <div class="calendar-grid">
                     <?php foreach ($seasons as $index => $season): 
                         $season_class = '';
@@ -237,7 +235,7 @@ $services = get_post_meta(get_the_ID(), '_home_garden_services', true) ?: array(
                         elseif (strpos(strtolower($season['title']), 'fall') !== false) $season_class = 'fall';
                         elseif (strpos(strtolower($season['title']), 'winter') !== false) $season_class = 'winter';
                     ?>
-                    <div class="season-card <?php echo esc_attr($season_class); ?>">
+                    <div class="season-card <?php echo esc_attr($season_class); ?> animate-on-scroll animate-stagger animate-fade-up">
                         <div class="season-header">
                             <h3><?php echo esc_html($season['title']); ?></h3>
                             <span class="season-revenue"><?php echo esc_html($season['revenue_type']); ?></span>
@@ -260,7 +258,7 @@ $services = get_post_meta(get_the_ID(), '_home_garden_services', true) ?: array(
                 </div>
             </div>
         </section>        <!-- Visual Marketing Examples -->
-        <section class="visual-marketing">
+        <section class="visual-marketing animate-on-scroll animate-fade-up">
             <div class="section-content">
                 <?php 
                 $visual_title = get_post_meta(get_the_ID(), '_home_garden_visual_title', true) ?: 'The Power of Visual Marketing for Home & Garden';
@@ -290,10 +288,10 @@ $services = get_post_meta(get_the_ID(), '_home_garden_services', true) ?: array(
                     );
                 }
                 ?>
-                <h2><?php echo esc_html($visual_title); ?></h2>
+                <h2 class="animate-on-scroll animate-fade-up"><?php echo esc_html($visual_title); ?></h2>
                 <div class="visual-examples">
                     <?php foreach ($visual_examples as $example): ?>
-                    <div class="example-card">
+                    <div class="example-card animate-on-scroll animate-stagger animate-scale-up">
                         <div class="example-image">
                             <?php if (!empty($example['image'])): ?>
                                 <img src="<?php echo esc_url($example['image']); ?>" alt="<?php echo esc_attr($example['title']); ?>" />
@@ -313,9 +311,9 @@ $services = get_post_meta(get_the_ID(), '_home_garden_services', true) ?: array(
                 </div>
             </div>
         </section>        <!-- Home & Garden Testimonial -->
-        <section class="home-garden-testimonial">
+        <section class="home-garden-testimonial animate-on-scroll animate-fade-up">
             <div class="section-content">
-                <div class="testimonial-content">
+                <div class="testimonial-content animate-on-scroll animate-scale-up">
                     <?php 
                     $testimonial_quote = get_post_meta(get_the_ID(), '_home_garden_testimonial_quote', true) ?: '"Working with Aimpro Digital transformed our seasonal business model. Their strategic approach to seasonal campaigns helped us generate 220% more revenue during peak season, and their year-round content strategy keeps customers engaged even in winter. The visual marketing campaigns they created showcase our work beautifully and generate consistent inquiries."';
                     $testimonial_name = get_post_meta(get_the_ID(), '_home_garden_testimonial_name', true) ?: 'Sarah Mitchell';
@@ -335,7 +333,7 @@ $services = get_post_meta(get_the_ID(), '_home_garden_services', true) ?: array(
                 </div>
             </div>
         </section>        <!-- CTA Section -->
-        <section class="home-garden-cta text-center">
+        <section class="home-garden-cta text-center animate-on-scroll animate-fade-up">
             <div class="section-content">
                 <?php 
                 $cta_title = get_post_meta(get_the_ID(), '_home_garden_cta_title', true) ?: 'Ready to Grow Your Home & Garden Business?';
@@ -350,13 +348,13 @@ $services = get_post_meta(get_the_ID(), '_home_garden_services', true) ?: array(
                     '✓ Visual marketing strategy'
                 );
                 ?>
-                <h2><?php echo esc_html($cta_title); ?></h2>
-                <p><?php echo esc_html($cta_subtitle); ?></p>
-                <div class="cta-buttons">
+                <h2 class="animate-on-scroll animate-fade-up"><?php echo esc_html($cta_title); ?></h2>
+                <p class="animate-on-scroll animate-fade-up"><?php echo esc_html($cta_subtitle); ?></p>
+                <div class="cta-buttons animate-on-scroll animate-scale-up">
                     <a href="<?php echo esc_url($cta_primary_url); ?>" class="btn btn-primary"><?php echo esc_html($cta_primary_text); ?></a>
                     <a href="<?php echo esc_url($cta_secondary_url); ?>" class="btn btn-secondary"><?php echo esc_html($cta_secondary_text); ?></a>
                 </div>
-                <div class="cta-benefits">
+                <div class="cta-benefits animate-on-scroll animate-fade-up">
                     <?php foreach ($cta_benefits as $benefit): ?>
                         <span class="benefit"><?php echo esc_html($benefit); ?></span>
                     <?php endforeach; ?>
