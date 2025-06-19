@@ -147,8 +147,7 @@ get_header(); ?>
         $featured_title = get_post_meta(get_the_ID(), '_templates_tools_featured_title', true);
         $featured_resources = get_post_meta(get_the_ID(), '_templates_tools_featured_resources', true);
         if (!empty($featured_resources)) : ?>
-            <section class="featured-resources-section">                <div class="content-centre">
-                    <h2 class="section-title" style="text-align: centre;">
+            <section class="featured-resources-section">                <div class="content-centre">                    <h2 class="section-title" style="text-align: center;">
                         <?php echo esc_html($featured_title ?: 'Most Popular Resources'); ?>
                         <style>
                         .featured-resources-section .section-title::after {
@@ -156,7 +155,7 @@ get_header(); ?>
                             transform: translateX(-50%);
                         }
                         </style>
-                    </h2>                    <div class="services-grid animate-on-scroll animate-stagger animate-fade-up">
+                    </h2><div class="services-grid animate-on-scroll animate-stagger animate-fade-up">
                         <?php foreach ($featured_resources as $resource) : ?>
                             <div class="service-item">
                                 <div class="service-header">
@@ -164,9 +163,8 @@ get_header(); ?>
                                         <div class="service-icon">
                                             <i class="<?php echo esc_attr($resource['icon']); ?>"></i>
                                         </div>
-                                    <?php endif; ?>
-                                    <?php if (!empty($resource['downloads'])) : ?>
-                                        <span class="download-count"><?php echo esc_html($resource['downloads']); ?> downloads</span>
+                                    <?php endif; ?>                                    <?php if (!empty($resource['downloads'])) : ?>
+                                        <span class="download-count"><?php echo esc_html($resource['downloads']); ?></span>
                                     <?php endif; ?>
                                 </div>
                                 <h3><?php echo esc_html($resource['title']); ?></h3>

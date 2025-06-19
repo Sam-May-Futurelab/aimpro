@@ -37,6 +37,19 @@ function get_advertising_ppc_field($field_key, $post_id = null) {
 ?>
 
 <main id="main" class="main-content">
+    <!-- Breadcrumbs -->
+    <div class="breadcrumbs-container">
+        <div class="container">
+            <nav class="breadcrumbs">
+                <a href="<?php echo home_url(); ?>">Home</a>
+                <span class="separator">›</span>
+                <a href="<?php echo home_url('/services'); ?>">Services</a>
+                <span class="separator">›</span>
+                <span class="current">PPC & Advertising</span>
+            </nav>
+        </div>
+    </div>
+
     <div class="container">
           <!-- Page Header -->
         <section class="page-header">

@@ -16,6 +16,21 @@ $header_subtitle = get_post_meta(get_the_ID(), '_local_seo_header_subtitle', tru
 ?>
 
 <main id="main" class="main-content seo-service-page">
+    <!-- Breadcrumbs -->
+    <div class="breadcrumbs-container">
+        <div class="container">
+            <nav class="breadcrumbs">
+                <a href="<?php echo home_url(); ?>">Home</a>
+                <span class="separator">›</span>
+                <a href="<?php echo home_url('/services'); ?>">Services</a>
+                <span class="separator">›</span>
+                <a href="<?php echo home_url('/seo-services'); ?>">SEO Services</a>
+                <span class="separator">›</span>
+                <span class="current">Local SEO</span>
+            </nav>
+        </div>
+    </div>
+
     <div class="container">
           <!-- Page Header -->
         <section class="page-header">
