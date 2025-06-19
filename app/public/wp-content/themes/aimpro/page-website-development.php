@@ -158,7 +158,7 @@ get_header(); ?>
                             <i class="fas fa-cog"></i>
                         </div>
                         <h3>Content Management</h3>
-                        <ul class="service-features">
+                        <ul style="text-align: left; color: #666; line-height: 1.8;">
                             <li>WordPress</li>
                             <li>Webflow</li>
                             <li>Shopify</li>
@@ -166,12 +166,13 @@ get_header(); ?>
                             <li>Drupal</li>
                         </ul>
                     </div>
+                    
                     <div class="service-item">
                         <div class="service-icon">
                             <i class="fas fa-code"></i>
                         </div>
                         <h3>Frontend Technologies</h3>
-                        <ul class="service-features">
+                        <ul style="text-align: left; color: #666; line-height: 1.8;">
                             <li>HTML5 & CSS3</li>
                             <li>JavaScript (ES6+)</li>
                             <li>React.js</li>
@@ -179,12 +180,13 @@ get_header(); ?>
                             <li>Bootstrap & Tailwind</li>
                         </ul>
                     </div>
+                    
                     <div class="service-item">
                         <div class="service-icon">
                             <i class="fas fa-database"></i>
                         </div>
                         <h3>Backend Development</h3>
-                        <ul class="service-features">
+                        <ul style="text-align: left; color: #666; line-height: 1.8;">
                             <li>PHP</li>
                             <li>Node.js</li>
                             <li>Python</li>
@@ -192,17 +194,46 @@ get_header(); ?>
                             <li>PostgreSQL</li>
                         </ul>
                     </div>
+                    
                     <div class="service-item">
                         <div class="service-icon">
                             <i class="fas fa-tachometer-alt"></i>
                         </div>
                         <h3>Performance & SEO</h3>
-                        <ul class="service-features">
+                        <ul style="text-align: left; color: #666; line-height: 1.8;">
                             <li>Google PageSpeed Optimization</li>
                             <li>Core Web Vitals</li>
                             <li>Schema.org Markup</li>
                             <li>CDN Integration</li>
                             <li>Image Optimization</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="service-item">
+                        <div class="service-icon">
+                            <i class="fas fa-cloud"></i>
+                        </div>
+                        <h3>Hosting & Infrastructure</h3>
+                        <ul style="text-align: left; color: #666; line-height: 1.8;">
+                            <li>AWS & Google Cloud</li>
+                            <li>Cloudflare CDN</li>
+                            <li>SSL Certificates</li>
+                            <li>Automated Backups</li>
+                            <li>Load Balancing</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="service-item">
+                        <div class="service-icon">
+                            <i class="fas fa-tools"></i>
+                        </div>
+                        <h3>Development Tools</h3>
+                        <ul style="text-align: left; color: #666; line-height: 1.8;">
+                            <li>Git Version Control</li>
+                            <li>Webpack & Build Tools</li>
+                            <li>API Integrations</li>
+                            <li>Testing Frameworks</li>
+                            <li>CI/CD Pipelines</li>
                         </ul>
                     </div>
                 </div>
