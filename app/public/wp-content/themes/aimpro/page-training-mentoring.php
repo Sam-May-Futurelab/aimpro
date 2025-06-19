@@ -70,6 +70,19 @@ get_header(); ?>
 </style>
 
 <main id="main" class="main-content service-page">
+    <!-- Breadcrumbs -->
+    <div class="breadcrumbs-container">
+        <div class="container">
+            <nav class="breadcrumbs">
+                <a href="<?php echo home_url(); ?>">Home</a>
+                <span class="separator">›</span>
+                <a href="<?php echo home_url('/resources'); ?>">Resources</a>
+                <span class="separator">›</span>
+                <span class="current">Training & Mentoring</span>
+            </nav>
+        </div>
+    </div>
+
     <div class="container">          <!-- Page Header -->
         <section class="page-header animate-on-scroll animate-fade-up">
             <div class="page-header-content">
