@@ -56,14 +56,22 @@
 }
 
 /* Mobile (768px and below) */
-@media (max-width: 768px) {
-    section {
+@media (max-width: 768px) {    section {
         padding: 3rem 0;
     }
       
+    /* Updated hero section padding for better mobile experience */
     .hero-section {
         min-height: 80vh;
-        padding: 12rem 0 2rem; /* Massively increased to 12rem for definite clearance */
+        padding: 6rem 0 2rem; /* Reduced from 12rem to 6rem for better proportions */
+        position: relative;
+        z-index: 1; /* Ensure proper stacking context */
+    }
+    
+    /* Fix for any potential horizontal lines caused by header */
+    .sticky-header {
+        -webkit-transform: translateZ(0); /* Force hardware acceleration */
+        transform: translateZ(0);
     }
     
     /* Ensure hero badge has enough top space */

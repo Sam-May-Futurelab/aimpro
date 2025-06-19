@@ -189,9 +189,31 @@ $services = get_post_meta(get_the_ID(), '_automotive_services', true) ?: array()
                         <a href="<?php echo esc_url($case_study_link_url); ?>" class="case-study-link"><?php echo esc_html($case_study_link_text); ?></a>
                     </div>
                 </div>
-            </div>
-        </section>        <!-- Automotive Marketing Process -->
+            </div>        </section>        <!-- Automotive Marketing Process -->
         <section class="automotive-process animate-on-scroll animate-fade-up">
+            <style>
+                /* Inline styles to reduce white space above the automotive process section */
+                .automotive-process {
+                    margin-top: 20px !important; /* Significantly reduced margin from default 80px/60px */
+                }
+                .automotive-process h2 {
+                    margin-bottom: 25px;
+                }                .automotive-process .process-steps {
+                    margin-top: 0;
+                    padding-top: 0;
+                }
+                /* Center the process title */
+                .automotive-process h2.text-center {
+                    text-align: center;
+                    width: 100%;
+                }
+                /* Add style for the section title's after element (if any) */
+                .automotive-process h2.text-center::after {
+                    left: 50%;
+                    transform: translateX(-50%);
+                    margin-left: 0;
+                }
+            </style>
             <div class="section-content">
                 <?php 
                 $process_title = get_post_meta(get_the_ID(), '_automotive_process_title', true) ?: 'Our Automotive Marketing Process';
@@ -210,11 +232,10 @@ $services = get_post_meta(get_the_ID(), '_automotive_services', true) ?: array()
                     ),
                     array(
                         'title' => 'Performance Optimization',
-                        'description' => 'Continuously monitor and optimize campaigns based on lead quality, cost per acquisition, and ROI.'
-                    )
+                        'description' => 'Continuously monitor and optimize campaigns based on lead quality, cost per acquisition, and ROI.'                    )
                 );
                 ?>
-                <h2 class="animate-on-scroll animate-fade-up"><?php echo esc_html($process_title); ?></h2>
+                <h2 class="animate-on-scroll animate-fade-up text-center"><?php echo esc_html($process_title); ?></h2>
                 <div class="process-steps">
                     <?php foreach ($process_steps as $index => $step): ?>
                     <div class="process-step animate-on-scroll animate-stagger animate-slide-up">

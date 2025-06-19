@@ -1,0 +1,42 @@
+/* 
+ * Global spacing fixes for results sections
+ * Reduces white space around results grids on all service pages
+ */
+
+/* Target case study results sections globally */
+.case-study-results {
+    margin-top: 10px !important;
+    margin-bottom: 10px !important;
+}
+
+/* Target results grid sections globally */
+.results-grid {
+    margin: 15px 0 !important; /* Reduced from 30px */
+    gap: 15px !important; /* Reduced from 20-25px */
+}
+
+/* Compact the result items */
+.result-item {
+    padding: 15px !important; /* Reduced from 20px */
+}
+
+/* Make headings more compact */
+.case-study-results h3 {
+    margin-bottom: 15px !important; /* Reduced margin */
+}
+
+/* Ensure proper spacing in the surrounding layout */
+.case-study-content {
+    gap: 20px !important; /* Reduced from typical 40px */
+}
+
+/* Microsoft Ads specific improvements */
+.page-template-page-microsoft-ads .case-study-results h3 {
+    margin-top: 0 !important;
+    margin-bottom: 10px !important;
+}
+
+/* Reduce margin around process section that follows */
+.process-section {
+    margin-top: 30px !important;
+}

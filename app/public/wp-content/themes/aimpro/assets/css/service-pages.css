@@ -10,6 +10,11 @@
     padding: 0 !important;
 }
 
+/* Global Content Section Spacing */
+.service-page .main-content section:not(.hero-section):not(.premium-hero) {
+    margin: 40px 0;
+}
+
 /* Google Ads Page Specific Styles */
 .google-ads-page {
     --primary-orange: #F15A25;
@@ -1407,7 +1412,7 @@
     font-size: 36px !important;
     font-weight: 700 !important;
     margin-bottom: 20px !important;
-    color: white !important;
+     color: white !important;
 }
 
 #contact.cta-section .cta-content p {
@@ -4611,10 +4616,22 @@
     }
 }
 
-@media (max-width: 768px) {
-    .funnel-builds-page .features-grid {
+@media (max-width: 768px) {    .funnel-builds-page .features-grid {
         grid-template-columns: 1fr;
         gap: 20px;
     }
 }
 
+/* Specific Spacing Improvements */
+.service-page section.results-section,
+.service-page section.process-section,
+.service-page section.whitelabel-benefits {
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+/* Microsoft/Bing Ads specific spacing improvements */
+.bing-ads-page section .container > h2 {
+    text-align: center;
+    margin-bottom: 30px;
+}

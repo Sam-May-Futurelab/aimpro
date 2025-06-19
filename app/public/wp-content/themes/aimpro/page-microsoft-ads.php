@@ -101,10 +101,8 @@ function get_microsoft_ads_meta($key, $post_id, $defaults, $prefix = '_microsoft
                                     echo '<li>' . esc_html(trim($item)) . '</li>';
                                 }
                             }
-                            ?>
-                        </ul>
-                    </div>
-                </div>
+                            ?>                        </ul>
+                    </div>                </div>
                 
                 <div class="case-study-results animate-on-scroll animate-slide-right">
                     <h3>The Results</h3>
@@ -182,10 +180,8 @@ function get_microsoft_ads_meta($key, $post_id, $defaults, $prefix = '_microsoft
         <div class="section-content">
             <div class="simple-cta-content animate-on-scroll animate-fade-up">
                 <h2><?php echo esc_html(get_microsoft_ads_meta('cta_title', $post_id, $defaults)); ?></h2>
-                <p><?php echo esc_html(get_microsoft_ads_meta('cta_content', $post_id, $defaults)); ?></p>
-                <div class="simple-cta-buttons animate-on-scroll animate-fade-up">
+                <p><?php echo esc_html(get_microsoft_ads_meta('cta_content', $post_id, $defaults)); ?></p>                <div class="simple-cta-buttons animate-on-scroll animate-fade-up">
                     <a href="<?php echo home_url('/contact'); ?>" class="btn btn-primary"><?php echo esc_html(get_microsoft_ads_meta('cta_button_1_text', $post_id, $defaults)); ?></a>
-                    <a href="<?php echo home_url('/services'); ?>" class="btn btn-secondary"><?php echo esc_html(get_microsoft_ads_meta('cta_button_2_text', $post_id, $defaults)); ?></a>
                 </div>
             </div>
         </div>

@@ -80,24 +80,9 @@ get_header(); ?>
                             </div>
                             <div class="author-content">
                                 <h3 class="author-name">About <?php echo esc_html($author_data['name']); ?></h3>
-                                <p class="author-title"><?php echo esc_html($author_data['title']); ?></p>
-                                <p class="author-bio">
+                                <p class="author-title"><?php echo esc_html($author_data['title']); ?></p>                                <p class="author-bio">
                                     <?php echo wp_kses_post($author_data['bio']); ?>
                                 </p>
-                                <div class="author-achievements">
-                                    <div class="achievement-item">
-                                        <span class="achievement-number"><?php echo esc_html($author_data['businesses_helped']); ?></span>
-                                        <span class="achievement-label">Businesses Helped</span>
-                                    </div>
-                                    <div class="achievement-item">
-                                        <span class="achievement-number"><?php echo esc_html($author_data['revenue_generated']); ?></span>
-                                        <span class="achievement-label">Revenue Generated</span>
-                                    </div>
-                                    <div class="achievement-item">
-                                        <span class="achievement-number"><?php echo esc_html($author_data['years_experience']); ?></span>
-                                        <span class="achievement-label">Years Experience</span>
-                                    </div>
-                                </div>
                                 <div class="author-social">
                                     <?php if (!empty($author_data['linkedin'])): ?>
                                     <a href="<?php echo esc_url($author_data['linkedin']); ?>" target="_blank" rel="noopener" class="social-link">
