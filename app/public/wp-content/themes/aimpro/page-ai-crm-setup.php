@@ -135,10 +135,14 @@ get_header(); ?>
                         <i class="fas fa-mobile-alt"></i>
                     </div>
                     <h3><?php echo esc_html(get_post_meta(get_the_ID(), 'ai_service_6_title', true) ?: 'Omnichannel Integration'); ?></h3>
-                    <p><?php echo esc_html(get_post_meta(get_the_ID(), 'ai_service_6_desc', true) ?: 'Unified customer view across all touchpoints with AI-powered attribution and engagement tracking.'); ?></p>
-                </div>            </div>
+                    <p><?php echo esc_html(get_post_meta(get_the_ID(), 'ai_service_6_desc', true) ?: 'Unified customer view across all touchpoints with AI-powered attribution and engagement tracking.'); ?></p>                </div>            </div>
+            
+            <!-- CTA after services overview -->
+            <div class="text-center animate-on-scroll animate-fade-up" style="margin-top: 3rem;">
+                <a href="<?php echo home_url('/contact'); ?>" class="btn-primary">Get Your AI CRM Assessment</a>
+            </div>
         </div>
-    </section>    <!-- Case Study Section -->
+    </section><!-- Case Study Section -->
     <section class="case-study-section">
         <div class="container">
             <div class="case-study-content animate-on-scroll animate-fade-up">
@@ -184,13 +188,18 @@ get_header(); ?>
                         </div>
                         <div class="result-item">
                             <div class="result-number"><?php echo esc_html(get_post_meta(get_the_ID(), 'ai_result_4_number', true) ?: '£2.1M'); ?></div>
-                            <div class="result-label"><?php echo esc_html(get_post_meta(get_the_ID(), 'ai_result_4_label', true) ?: 'Additional Annual Revenue'); ?></div>
-                        </div>
+                            <div class="result-label"><?php echo esc_html(get_post_meta(get_the_ID(), 'ai_result_4_label', true) ?: 'Additional Annual Revenue'); ?></div>                        </div>
                     </div>
                 </div>
             </div>
+            
+            <!-- CTA after case study results -->
+            <div class="text-center animate-on-scroll animate-fade-up" style="margin-top: 3rem;">
+                <p style="font-size: 1.1rem; color: #666; margin-bottom: 1.5rem;">Ready to transform your CRM with AI?</p>
+                <a href="<?php echo home_url('/contact'); ?>" class="btn-primary">Start Your AI CRM Transformation</a>
+            </div>
         </div>
-    </section>    <!-- Process Section -->
+    </section><!-- Process Section -->
     <section class="process-section">
         <div class="container">
             <h2 class="animate-on-scroll animate-fade-up"><?php echo esc_html(get_post_meta(get_the_ID(), 'ai_process_title', true) ?: 'Our AI CRM Implementation Process'); ?></h2>

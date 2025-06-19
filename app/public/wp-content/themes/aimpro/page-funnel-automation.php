@@ -99,8 +99,12 @@ get_header(); ?>
                         <i class="fas fa-sync-alt"></i>
                     </div>
                     <h3><?php echo esc_html(get_post_meta(get_the_ID(), 'funnel_automation_service_6_title', true) ?: 'Continuous Optimization'); ?></h3>
-                    <p><?php echo esc_html(get_post_meta(get_the_ID(), 'funnel_automation_service_6_desc', true) ?: 'Data-driven improvements and A/B testing to maximize conversion rates at every funnel stage.'); ?></p>
-                </div>            </div>
+                    <p><?php echo esc_html(get_post_meta(get_the_ID(), 'funnel_automation_service_6_desc', true) ?: 'Data-driven improvements and A/B testing to maximize conversion rates at every funnel stage.'); ?></p>                </div>            </div>
+            
+            <!-- CTA after services overview -->
+            <div class="text-center animate-on-scroll animate-fade-up" style="margin-top: 3rem;">
+                <a href="<?php echo home_url('/contact'); ?>" class="btn-primary">Get Your Custom Funnel Strategy</a>
+            </div>
         </div>
     </section><!-- Case Study Section -->
     <section class="case-study-section">
@@ -148,10 +152,15 @@ get_header(); ?>
                         </div>
                         <div class="result-item animate-on-scroll animate-stagger animate-scale-up">
                             <div class="result-number"><?php echo esc_html(get_post_meta(get_the_ID(), 'funnel_automation_result_4_number', true) ?: '£1.2M'); ?></div>
-                            <div class="result-label"><?php echo esc_html(get_post_meta(get_the_ID(), 'funnel_automation_result_4_label', true) ?: 'Additional Annual Revenue'); ?></div>
-                        </div>
+                            <div class="result-label"><?php echo esc_html(get_post_meta(get_the_ID(), 'funnel_automation_result_4_label', true) ?: 'Additional Annual Revenue'); ?></div>                        </div>
                     </div>
                 </div>
+            </div>
+            
+            <!-- CTA after case study results -->
+            <div class="text-center animate-on-scroll animate-fade-up" style="margin-top: 3rem;">
+                <p style="font-size: 1.1rem; color: #666; margin-bottom: 1.5rem;">Ready to achieve similar results for your business?</p>
+                <a href="<?php echo home_url('/contact'); ?>" class="btn-primary">Start Your Funnel Transformation</a>
             </div>
         </div>
     </section>
@@ -315,16 +324,21 @@ get_header(); ?>
                     <p>Comprehensive measurement of funnel performance and conversion optimization opportunities.</p>
                 </div>
                 
-                <div class="component-item animate-on-scroll animate-stagger animate-fade-up">
-                    <div class="component-icon">
+                <div class="component-item animate-on-scroll animate-stagger animate-fade-up">                    <div class="component-icon">
                         <i class="fas fa-cogs"></i>
                     </div>
                     <h3>Automation Rules</h3>
                     <p>Intelligent triggers and conditions that personalize the experience based on user behavior.</p>
                 </div>
             </div>
+            
+            <!-- CTA after funnel components -->
+            <div class="text-center animate-on-scroll animate-fade-up" style="margin-top: 3rem;">
+                <p style="font-size: 1.1rem; color: #666; margin-bottom: 1.5rem;">Let us build these components into a high-converting funnel for your business</p>
+                <a href="<?php echo home_url('/contact'); ?>" class="btn-primary">Get Your Funnel Blueprint</a>
+            </div>
         </div>
-    </section>    <!-- Packages Section -->
+    </section><!-- Packages Section -->
     <section id="packages" class="pricing-section">
         <div class="container">
             <div class="section-header animate-on-scroll animate-fade-up">
@@ -416,16 +430,21 @@ get_header(); ?>
                     <p>Powerful automation platform with sophisticated behavioral triggers and personalization.</p>
                 </div>
                 
-                <div class="tool-item animate-on-scroll animate-stagger animate-fade-up">
-                    <div class="tool-icon">
+                <div class="tool-item animate-on-scroll animate-stagger animate-fade-up">                    <div class="tool-icon">
                         <i class="fas fa-chart-line"></i>
                     </div>
                     <h3>Leadpages</h3>
                     <p>High-converting landing page builder with integrated analytics and A/B testing capabilities.</p>
                 </div>
             </div>
+            
+            <!-- CTA after tools section -->
+            <div class="text-center animate-on-scroll animate-fade-up" style="margin-top: 3rem;">
+                <p style="font-size: 1.1rem; color: #666; margin-bottom: 1.5rem;">Ready to leverage these powerful tools for your funnel?</p>
+                <a href="<?php echo home_url('/contact'); ?>" class="btn-primary">Get Expert Funnel Setup</a>
+            </div>
         </div>
-    </section>    <!-- Industries Section -->
+    </section><!-- Industries Section -->
     <section class="industries-section">
         <div class="container">
             <h2 class="animate-on-scroll animate-fade-up">Industries We Serve</h2>
