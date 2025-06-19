@@ -1,34 +1,13 @@
-<style>
-.tools-section .tool-icon {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 0 auto 15px;
-}
-.tools-section .tool-icon i {
-    font-size: 2.5rem;
-}
-.tools-section .tools-category {
-    margin-top: 50px;
-    margin-bottom: 30px;
-    padding: 20px 0;
-    position: relative;
-    font-size: 1.8rem;
-}
-.tools-section .tools-grid {
-    margin-bottom: 50px;
-}
-.tools-section .section-header {
-    margin-bottom: 50px;
-    padding-top: 20px;
-}
+<?php
+/**
+ * Template Name: UX/UI Optimization
+ * 
+ * UX/UI Optimization Services
+ *
+ * @package Aimpro
+ */
 
-/* Rounded corners for case study sections */
-.case-study-challenge, .case-study-solution {
-    border-radius: 12px;
-    overflow: hidden;
-}
-</style>
+get_header(); ?>
 
 <main id="primary" class="service-page ux-ui-optimization-page">
     <!-- Breadcrumbs -->
@@ -68,44 +47,66 @@
                 </div>
             </div>
         </div>
-    </section>    <!-- Service Overview -->    <section class="service-overview">
+    </section>    <!-- Service Overview -->
+    <section class="service-overview">
         <div class="container">
-            <div class="section-header animate-on-scroll animate-fade-up">
-                <h2><?php echo get_post_meta(get_the_ID(), 'uxui_intro_title', true) ?: 'Optimize Your Website for Maximum Performance'; ?></h2>
-                <p><?php echo get_post_meta(get_the_ID(), 'uxui_intro_description', true) ?: 'Our UX/UI optimization service transforms underperforming websites into conversion powerhouses through systematic analysis, strategic improvements, and data-driven testing. We focus on enhancing user experience while dramatically improving your business metrics.'; ?></p>
-            </div>
-              <div class="features-grid">
-                <div class="feature-item animate-on-scroll animate-stagger animate-fade-up">
-                    <div class="feature-icon">
-                        <i class="fas fa-search-plus"></i>
+            <div class="overview-content">
+                <div class="overview-text animate-on-scroll animate-slide-left">
+                    <h2><?php echo get_post_meta(get_the_ID(), 'uxui_intro_title', true) ?: 'Optimize Your Website for Maximum Performance'; ?></h2>
+                    <p class="overview-description"><?php echo get_post_meta(get_the_ID(), 'uxui_intro_description', true) ?: 'Our UX/UI optimization service transforms underperforming websites into conversion powerhouses through systematic analysis, strategic improvements, and data-driven testing. We focus on enhancing user experience while dramatically improving your business metrics.'; ?></p>
+                    
+                    <h3 class="features-heading">Key UX/UI Features</h3>
+                    <div class="service-features-list">
+                        <div class="service-feature-item">
+                            <h4><i class="fas fa-search-plus"></i> <?php echo get_post_meta(get_the_ID(), 'uxui_feature1_title', true) ?: 'Comprehensive UX Audit'; ?></h4>
+                            <p><?php echo get_post_meta(get_the_ID(), 'uxui_feature1_description', true) ?: 'Deep analysis of user behavior, conversion barriers, and optimization opportunities using advanced analytics.'; ?></p>
+                        </div>
+                        
+                        <div class="service-feature-item">
+                            <h4><i class="fas fa-chart-line"></i> <?php echo get_post_meta(get_the_ID(), 'uxui_feature2_title', true) ?: 'Conversion Rate Optimization'; ?></h4>
+                            <p><?php echo get_post_meta(get_the_ID(), 'uxui_feature2_description', true) ?: 'Strategic improvements to forms, CTAs, and user flow to maximize conversions and revenue.'; ?></p>
+                        </div>
+                        
+                        <div class="service-feature-item">
+                            <h4><i class="fas fa-mobile-alt"></i> <?php echo get_post_meta(get_the_ID(), 'uxui_feature3_title', true) ?: 'Mobile Experience Enhancement'; ?></h4>
+                            <p><?php echo get_post_meta(get_the_ID(), 'uxui_feature3_description', true) ?: 'Optimize mobile user experience for the majority of your traffic with responsive design improvements.'; ?></p>
+                        </div>
+                        
+                        <div class="service-feature-item">
+                            <h4><i class="fas fa-tachometer-alt"></i> <?php echo get_post_meta(get_the_ID(), 'uxui_feature4_title', true) ?: 'Performance Optimization'; ?></h4>
+                            <p><?php echo get_post_meta(get_the_ID(), 'uxui_feature4_description', true) ?: 'Speed optimization and Core Web Vitals improvements for better user experience and SEO rankings.'; ?></p>
+                        </div>
                     </div>
-                    <h3><?php echo get_post_meta(get_the_ID(), 'uxui_feature1_title', true) ?: 'Comprehensive UX Audit'; ?></h3>
-                    <p><?php echo get_post_meta(get_the_ID(), 'uxui_feature1_description', true) ?: 'Deep analysis of user behavior, conversion barriers, and optimization opportunities using advanced analytics.'; ?></p>
                 </div>
-                <div class="feature-item animate-on-scroll animate-stagger animate-fade-up">
-                    <div class="feature-icon">
-                        <i class="fas fa-chart-line"></i>
+                
+                <div class="overview-stats animate-on-scroll animate-slide-right">
+                    <h3 class="stats-heading">Proven Results</h3>
+                    <p class="stats-description">Our UX/UI optimizations don't just look good—they deliver measurable business results. Every change is backed by data and focused on conversion.</p>
+                    
+                    <div class="target-icon" style="max-width: 350px; margin: 0 auto 20px; border-radius: 10px; overflow: hidden; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
+                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/Aimpro-high-ranking-website-blog.png" alt="UX/UI Optimization" style="width: 100%; height: auto; display: block;">
                     </div>
-                    <h3><?php echo get_post_meta(get_the_ID(), 'uxui_feature2_title', true) ?: 'Conversion Rate Optimization'; ?></h3>
-                    <p><?php echo get_post_meta(get_the_ID(), 'uxui_feature2_description', true) ?: 'Strategic improvements to forms, CTAs, and user flow to maximize conversions and revenue.'; ?></p>
-                </div>
-                <div class="feature-item animate-on-scroll animate-stagger animate-fade-up">
-                    <div class="feature-icon">
-                        <i class="fas fa-mobile-alt"></i>
+                    
+                    <div class="stat-item animate-on-scroll animate-stagger animate-scale-up">
+                        <span class="stat-number">275%</span>
+                        <span class="stat-label">Average Conversion Improvement</span>
                     </div>
-                    <h3><?php echo get_post_meta(get_the_ID(), 'uxui_feature3_title', true) ?: 'Mobile Experience Enhancement'; ?></h3>
-                    <p><?php echo get_post_meta(get_the_ID(), 'uxui_feature3_description', true) ?: 'Optimize mobile user experience for the majority of your traffic with responsive design improvements.'; ?></p>
-                </div>
-                <div class="feature-item animate-on-scroll animate-stagger animate-fade-up">
-                    <div class="feature-icon">
-                        <i class="fas fa-tachometer-alt"></i>
+                    <div class="stat-item animate-on-scroll animate-stagger animate-scale-up">
+                        <span class="stat-number">85%</span>
+                        <span class="stat-label">User Satisfaction Increase</span>
                     </div>
-                    <h3><?php echo get_post_meta(get_the_ID(), 'uxui_feature4_title', true) ?: 'Performance Optimization'; ?></h3>
-                    <p><?php echo get_post_meta(get_the_ID(), 'uxui_feature4_description', true) ?: 'Speed optimization and Core Web Vitals improvements for better user experience and SEO rankings.'; ?></p>
+                    <div class="stat-item animate-on-scroll animate-stagger animate-scale-up">
+                        <span class="stat-number">65%</span>
+                        <span class="stat-label">Bounce Rate Reduction</span>
+                    </div>
+                    
+                    <div class="overview-cta animate-on-scroll animate-fade-up" style="margin-top: 30px; text-align: center;">
+                        <a href="<?php echo home_url('/contact'); ?>" class="btn-primary">Get a Free UX Audit</a>
+                    </div>
                 </div>
             </div>
         </div>
-    </section>    <!-- Case Study Section -->    <section id="case-study" class="case-study-section service-page-case-study">
+    </section><!-- Case Study Section -->    <section id="case-study" class="case-study-section service-page-case-study">
         <div class="container">
             <div class="case-study-content">
                 <div class="case-study-header animate-on-scroll animate-fade-up">
@@ -411,111 +412,111 @@
                 </div>
             </div>
         </div>
-    </section>
-
-    <!-- Tools & Analytics -->    <section class="tools-section">
-        <div class="container" style="text-align: center;">
+    </section>    <!-- Tools & Analytics -->
+    <section class="tools-section">
+        <div class="container">
             <div class="section-header animate-on-scroll animate-fade-up">
-                <h2 style="margin-bottom: 20px;">UX/UI Analysis Tools & Technologies</h2>
-                <p style="max-width: 800px; margin: 0 auto 30px;">We use industry-leading tools and technologies to analyze, test, and optimize your website for maximum performance.</p>
+                <h2>UX/UI Analysis Tools & Technologies</h2>
+                <p>We use industry-leading tools and technologies to analyze, test, and optimize your website for maximum performance.</p>
             </div>
             
             <h3 class="tools-category animate-on-scroll animate-fade-up">Analytics & Research</h3>
-            <div class="tools-grid animate-on-scroll animate-stagger animate-scale-up" style="justify-content: center;">
-                <div class="tool-item" style="text-align: center;">
-                    <div class="tool-icon" style="text-align: center; display: flex; justify-content: center;">
+            <div class="tools-grid animate-on-scroll animate-stagger animate-scale-up">
+                <div class="tool-card">
+                    <div class="tool-icon">
                         <i class="fab fa-google"></i>
                     </div>
-                    <h3>Google Analytics</h3>
+                    <h4>Google Analytics</h4>
                     <p>Comprehensive website analytics platform for tracking user behavior</p>
                 </div>
-                <div class="tool-item" style="text-align: center;">
-                    <div class="tool-icon" style="text-align: center; display: flex; justify-content: center;">
+                <div class="tool-card">
+                    <div class="tool-icon">
                         <i class="fas fa-mouse-pointer"></i>
                     </div>
-                    <h3>Hotjar</h3>
+                    <h4>Hotjar</h4>
                     <p>Heatmaps, session recordings, and user feedback tools</p>
                 </div>
-                <div class="tool-item" style="text-align: center;">
-                    <div class="tool-icon" style="text-align: center; display: flex; justify-content: center;">
+                <div class="tool-card">
+                    <div class="tool-icon">
                         <i class="fas fa-eye"></i>
                     </div>
-                    <h3>Crazy Egg & FullStory</h3>
+                    <h4>Crazy Egg & FullStory</h4>
                     <p>User behavior visualization and scroll depth tracking</p>
                 </div>
-                <div class="tool-item" style="text-align: center;">
-                    <div class="tool-icon" style="text-align: center; display: flex; justify-content: center;">
+                <div class="tool-card">
+                    <div class="tool-icon">
                         <i class="fas fa-users"></i>
                     </div>
-                    <h3>UserTesting & Clarity</h3>
+                    <h4>UserTesting & Clarity</h4>
                     <p>User testing platforms for real user feedback and insight</p>
                 </div>
             </div>
             
             <h3 class="tools-category animate-on-scroll animate-fade-up">Testing & Optimization</h3>
-            <div class="tools-grid animate-on-scroll animate-stagger animate-scale-up" style="justify-content: center;">
-                <div class="tool-item" style="text-align: center;">
-                    <div class="tool-icon" style="text-align: center; display: flex; justify-content: center;">
+            <div class="tools-grid animate-on-scroll animate-stagger animate-scale-up">
+                <div class="tool-card">
+                    <div class="tool-icon">
                         <i class="fab fa-google"></i>
                     </div>
-                    <h3>Google Optimize</h3>
+                    <h4>Google Optimize</h4>
                     <p>Free A/B testing platform with Google Analytics integration</p>
                 </div>
-                <div class="tool-item" style="text-align: center;">
-                    <div class="tool-icon" style="text-align: center; display: flex; justify-content: center;">
+                <div class="tool-card">
+                    <div class="tool-icon">
                         <i class="fas fa-chart-line"></i>
                     </div>
-                    <h3>Optimizely</h3>
+                    <h4>Optimizely</h4>
                     <p>Advanced experimentation platform for multivariate testing</p>
                 </div>
-                <div class="tool-item" style="text-align: center;">
-                    <div class="tool-icon" style="text-align: center; display: flex; justify-content: center;">
+                <div class="tool-card">
+                    <div class="tool-icon">
                         <i class="fas fa-bullseye"></i>
                     </div>
-                    <h3>VWO & Convert</h3>
+                    <h4>VWO & Convert</h4>
                     <p>Visual editor for creating and testing UX optimizations</p>
                 </div>
-                <div class="tool-item" style="text-align: center;">
-                    <div class="tool-icon" style="text-align: center; display: flex; justify-content: center;">
+                <div class="tool-card">
+                    <div class="tool-icon">
                         <i class="fas fa-rocket"></i>
                     </div>
-                    <h3>Unbounce & AB Tasty</h3>
+                    <h4>Unbounce & AB Tasty</h4>
                     <p>Landing page optimization and personalization tools</p>
                 </div>
             </div>
             
             <h3 class="tools-category animate-on-scroll animate-fade-up">Performance Tools</h3>
-            <div class="tools-grid animate-on-scroll animate-stagger animate-scale-up" style="justify-content: center;">
-                <div class="tool-item" style="text-align: center;">
-                    <div class="tool-icon" style="text-align: center; display: flex; justify-content: center;">
+            <div class="tools-grid animate-on-scroll animate-stagger animate-scale-up">
+                <div class="tool-card">
+                    <div class="tool-icon">
                         <i class="fas fa-tachometer-alt"></i>
                     </div>
-                    <h3>Google PageSpeed</h3>
+                    <h4>Google PageSpeed</h4>
                     <p>Performance analysis and improvement recommendations</p>
                 </div>
-                <div class="tool-item" style="text-align: center;">
-                    <div class="tool-icon" style="text-align: center; display: flex; justify-content: center;">
+                <div class="tool-card">
+                    <div class="tool-icon">
                         <i class="fas fa-stopwatch"></i>
                     </div>
-                    <h3>GTmetrix</h3>
+                    <h4>GTmetrix</h4>
                     <p>Detailed performance analysis and optimization scoring</p>
                 </div>
-                <div class="tool-item" style="text-align: center;">
-                    <div class="tool-icon" style="text-align: center; display: flex; justify-content: center;">
+                <div class="tool-card">
+                    <div class="tool-icon">
                         <i class="fas fa-lightbulb"></i>
                     </div>
-                    <h3>Lighthouse</h3>
+                    <h4>Lighthouse</h4>
                     <p>Automated website auditing tool for performance, accessibility, and SEO</p>
                 </div>
-                <div class="tool-item" style="text-align: center;">
-                    <div class="tool-icon" style="text-align: center; display: flex; justify-content: center;">
+                <div class="tool-card">
+                    <div class="tool-icon">
                         <i class="fas fa-heartbeat"></i>
                     </div>
-                    <h3>Core Web Vitals</h3>
+                    <h4>Core Web Vitals</h4>
                     <p>Google's page experience metrics for performance measurement</p>
                 </div>
             </div>
-        </div></section>    <!-- Testimonials -->    <section class="testimonials-section">
+        </div>
+    </section></section>    <!-- Testimonials -->    <section class="testimonials-section">
         <div class="container">
             <h2 class="animate-on-scroll animate-fade-up"><?php echo get_post_meta(get_the_ID(), 'uxui_testimonials_title', true) ?: 'What Our Clients Say'; ?></h2>
             <div class="testimonials-grid">
