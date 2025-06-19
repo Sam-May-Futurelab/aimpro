@@ -24,9 +24,7 @@ get_header(); ?>
                         <h2 style="text-align: center;"><?php echo esc_html(get_post_meta(get_the_ID(), 'company_overview_heading', true) ?: 'About Aimpro Digital'); ?></h2>
                         <p><?php echo esc_html(get_post_meta(get_the_ID(), 'company_overview_desc1', true) ?: 'Founded in 2020, Aimpro Digital has grown from a small startup to a leading digital marketing agency serving clients across the globe. Our passion for innovation and commitment to results has driven us to become a trusted partner for businesses of all sizes.'); ?></p>
                         <p><?php echo esc_html(get_post_meta(get_the_ID(), 'company_overview_desc2', true) ?: 'We specialize in comprehensive digital marketing solutions that drive real business growth. From strategic planning to execution, we\'re dedicated to helping our clients achieve their goals through cutting-edge digital marketing strategies.'); ?></p>
-                    </div>
-                    
-                    <div class="content-image animate-on-scroll animate-slide-right">
+                    </div>                    <div class="content-image animate-on-scroll animate-slide-right" style="text-align: center; padding-top: 40px;">
                         <?php 
                         $company_image = get_post_meta(get_the_ID(), 'company_overview_image', true);
                         $default_image = 'https://images.unsplash.com/photo-1604328698692-f76ea9498e76?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80';
@@ -34,17 +32,15 @@ get_header(); ?>
                         <img src="<?php echo esc_url($company_image ?: $default_image); ?>" alt="55 Colmore Row Birmingham Office - Aimpro Digital" style="max-width: 600px; height: auto; width: 100%;" />
                     </div>
                 </div>
-            </div>
-        </section>
+            </div>        </section>
         
         <!-- Company History Section -->
-        <section class="company-history">
+        <section class="company-history" style="padding-top: 20px;">
             <div class="section-content">
-                <h2 class="animate-on-scroll animate-fade-up"><?php echo esc_html(get_post_meta(get_the_ID(), 'company_history_heading', true) ?: 'Our Journey'); ?></h2>
+                <h2 class="animate-on-scroll animate-fade-up" style="text-align: center;"><?php echo esc_html(get_post_meta(get_the_ID(), 'company_history_heading', true) ?: 'Our Journey'); ?></h2>
                 <div class="timeline">
-                    
-                    <div class="timeline-item animate-on-scroll animate-stagger animate-fade-up">
-                        <div class="timeline-year">2020</div>
+                      <div class="timeline-item animate-on-scroll animate-stagger animate-fade-up">
+                        <div class="timeline-year" style="padding-top: 15px;">2020</div>
                         <div class="timeline-content">
                             <h3><?php echo esc_html(get_post_meta(get_the_ID(), 'company_timeline_2020_title', true) ?: 'Company Founded'); ?></h3>
                             <p><?php echo esc_html(get_post_meta(get_the_ID(), 'company_timeline_2020_desc', true) ?: 'Aimpro Digital was established with a vision to revolutionize digital marketing for small and medium businesses.'); ?></p>
