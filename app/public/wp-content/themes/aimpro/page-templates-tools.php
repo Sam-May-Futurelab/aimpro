@@ -16,8 +16,7 @@ get_header(); ?>
         </section>        <!-- Written Content Section -->
         <section class="content-section">
             <div class="content-centre">
-                <div class="written-content animate-on-scroll animate-fade-up"><div class="content-highlight">
-                        <h2 class="section-title" style="text-align: centre;">
+                <div class="written-content animate-on-scroll animate-fade-up"><div class="content-highlight">                        <h2 class="section-title" style="text-align: center;">
                             Professional Marketing <span class="highlight curly-underline">RESOURCES</span>
                             <style>
                             .content-section .section-title::after {
@@ -44,8 +43,7 @@ get_header(); ?>
                             <p>Join <strong class="highlight-word">thousands of marketers</strong> who have already accelerated their growth using these proven templates. Download instantly and start implementing strategies that drive <strong class="highlight-underline">measurable improvements</strong> to your marketing performance.</p>
                         </div>
                     </div>
-                    
-                    <div class="content-cta" style="margin-bottom: 10px !important;">
+                      <div class="content-cta text-center" style="margin-bottom: 10px !important;">
                         <a href="#tools-section" class="btn-primary large">Explore Free Tools</a>
                     </div>
                 </div>
@@ -158,22 +156,22 @@ get_header(); ?>
                             transform: translateX(-50%);
                         }
                         </style>
-                    </h2>
-                    <div class="featured-resources-grid">
+                    </h2>                    <div class="services-grid animate-on-scroll animate-stagger animate-fade-up">
                         <?php foreach ($featured_resources as $resource) : ?>
-                            <div class="featured-resource">
-                                <div class="resource-header">
+                            <div class="service-item">
+                                <div class="service-header">
                                     <?php if (!empty($resource['icon'])) : ?>
-                                        <div class="resource-icon">
+                                        <div class="service-icon">
                                             <i class="<?php echo esc_attr($resource['icon']); ?>"></i>
                                         </div>
                                     <?php endif; ?>
                                     <?php if (!empty($resource['downloads'])) : ?>
-                                        <span class="download-badge"><?php echo esc_html($resource['downloads']); ?></span>
+                                        <span class="download-count"><?php echo esc_html($resource['downloads']); ?> downloads</span>
                                     <?php endif; ?>
                                 </div>
                                 <h3><?php echo esc_html($resource['title']); ?></h3>
-                                <p><?php echo esc_html($resource['description']); ?></p>                                <div class="resource-footer">
+                                <p><?php echo esc_html($resource['description']); ?></p>
+                                <div class="service-cta">
                                     <?php if (!empty($resource['file_url'])) : ?>
                                         <a href="<?php echo esc_url($resource['file_url']); ?>" class="btn-primary" download>
                                             Download Now
@@ -191,7 +189,14 @@ get_header(); ?>
         <?php endif; ?>        <!-- Benefits Section -->
         <section class="benefits-section">
             <div class="content-centre">
-                <h2 class="section-title">Why Choose Our <span class="highlight curly-underline">TOOLS</span>?</h2>
+                <h2 class="section-title text-center">Why Choose Our <span class="highlight curly-underline">TOOLS</span>?
+                    <style>
+                    .benefits-section .section-title::after {
+                        left: 50%;
+                        transform: translateX(-50%);
+                    }
+                    </style>
+                </h2>
                 <p class="section-subtitle">Professional-grade resources trusted by thousands of marketers worldwide</p>
                 
                 <div class="benefits-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin-top: 40px;">
