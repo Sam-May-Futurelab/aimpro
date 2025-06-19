@@ -31,6 +31,7 @@
     transition: transform 0.3s ease, box-shadow 0.3s ease !important;
     display: flex;
     flex-direction: column;
+    text-align: center !important;
 }
 
 .tool-item:hover {
@@ -39,9 +40,16 @@
 }
 
 .tool-icon {
-    margin-bottom: 1.5rem;
-    font-size: 2.2rem;
-    color: var(--primary-orange);
+    width: 56px !important;
+    height: 56px !important;
+    background: var(--gradient-orange, linear-gradient(45deg, #f15a25, #ff6b35)) !important;
+    border-radius: 14px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    margin: 0 auto 1.5rem auto !important;
+    color: white !important;
+    font-size: 1.75rem !important;
 }
 
 .tool-item h3 {

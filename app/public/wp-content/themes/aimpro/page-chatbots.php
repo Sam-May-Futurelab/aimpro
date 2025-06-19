@@ -72,10 +72,8 @@ function get_chatbot_field($field_key, $post_id = null) {
                         <div class="stat-number"><?php echo esc_html(get_chatbot_field('hero_stat3_number')); ?></div>
                         <div class="stat-label"><?php echo esc_html(get_chatbot_field('hero_stat3_label')); ?></div>
                     </div>
-                </div>
-                <div class="hero-ctas">
+                </div>                <div class="hero-ctas">
                     <a href="#contact" class="btn-primary streamlined"><?php echo esc_html(get_chatbot_field('hero_cta1_text')); ?></a>
-                    <a href="#packages" class="btn-outline streamlined"><?php echo esc_html(get_chatbot_field('hero_cta2_text')); ?></a>
                 </div>
             </div>
         </div>
@@ -178,41 +176,93 @@ function get_chatbot_field($field_key, $post_id = null) {
             </div>
         </div>
     </section>    <!-- Features Section -->
-    <section class="service-overview">
+    <section class="tools-section">
         <div class="container">
             <div class="section-header animate-on-scroll animate-fade-up">
-                <h2><?php echo esc_html(get_chatbot_field('features_title')); ?></h2>
-                <p><?php echo esc_html(get_chatbot_field('features_subtitle')); ?></p>
+                <h2>Advanced Chatbot Features</h2>
+                <p>Cutting-edge AI capabilities that make our chatbots intelligent, responsive, and highly effective.</p>
             </div>
-            <div class="features-grid animate-on-scroll animate-stagger animate-scale-up">
-                <?php for ($i = 1; $i <= 6; $i++) : ?>
-                <div class="feature-item">
-                    <div class="feature-icon">
-                        <i class="<?php echo esc_attr(get_chatbot_field("feature_icon_{$i}")); ?>"></i>
+            <div class="tools-grid">
+                <div class="tool-item animate-on-scroll animate-stagger animate-fade-up">
+                    <div class="tool-icon">
+                        <i class="fas fa-brain"></i>
                     </div>
-                    <h3><?php echo esc_html(get_chatbot_field("feature_title_{$i}")); ?></h3>
-                    <p><?php echo esc_html(get_chatbot_field("feature_content_{$i}")); ?></p>
+                    <h3>Natural Language Processing</h3>
+                    <p>Understanding context, intent, and nuance in human conversation for more natural interactions.</p>
                 </div>
-                <?php endfor; ?>
+                <div class="tool-item animate-on-scroll animate-stagger animate-fade-up">
+                    <div class="tool-icon">
+                        <i class="fas fa-user-cog"></i>
+                    </div>
+                    <h3>Personalization</h3>
+                    <p>Tailored responses based on user behavior, location, and previous interactions for relevant experiences.</p>
+                </div>
+                <div class="tool-item animate-on-scroll animate-stagger animate-fade-up">
+                    <div class="tool-icon">
+                        <i class="fas fa-language"></i>
+                    </div>
+                    <h3>Multi-language Support</h3>
+                    <p>Communicate with global audiences in their preferred language with automatic translation capabilities.</p>
+                </div>
+                <div class="tool-item animate-on-scroll animate-stagger animate-fade-up">
+                    <div class="tool-icon">
+                        <i class="fas fa-comments"></i>
+                    </div>
+                    <h3>Multi-platform Integration</h3>
+                    <p>Deploy across website, Facebook Messenger, WhatsApp, and other messaging platforms seamlessly.</p>
+                </div>
+                <div class="tool-item animate-on-scroll animate-stagger animate-fade-up">
+                    <div class="tool-icon">
+                        <i class="fas fa-user-tie"></i>
+                    </div>
+                    <h3>Human Handoff</h3>
+                    <p>Smart escalation to human agents when conversations require personal attention or complex problem-solving.</p>
+                </div>
+                <div class="tool-item animate-on-scroll animate-stagger animate-fade-up">
+                    <div class="tool-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>Advanced Analytics</h3>
+                    <p>Detailed insights into conversation patterns, user satisfaction, and optimization opportunities.</p>
+                </div>
             </div>
         </div>
     </section>    <!-- Platforms Section -->
-    <section class="platforms-section">
+    <section class="tools-section">
         <div class="container">
-            <h2 class="animate-on-scroll animate-fade-up"><?php echo esc_html(get_chatbot_field('platforms_title')); ?></h2>
-            <div class="platforms-grid animate-on-scroll animate-stagger animate-scale-up">
-                <?php for ($i = 1; $i <= 4; $i++) : ?>
-                <div class="platform-item">
-                    <div class="platform-icon">
-                        <i class="<?php echo esc_attr(get_chatbot_field("platform_icon_{$i}")); ?>"></i>
+            <h2 class="animate-on-scroll animate-fade-up">Chatbot Platforms We Use</h2>
+            <div class="tools-grid">
+                <div class="tool-item animate-on-scroll animate-stagger animate-fade-up">
+                    <div class="tool-icon">
+                        <i class="fas fa-intercom"></i>
                     </div>
-                    <h3><?php echo esc_html(get_chatbot_field("platform_title_{$i}")); ?></h3>
-                    <p><?php echo esc_html(get_chatbot_field("platform_content_{$i}")); ?></p>
+                    <h3>Intercom</h3>
+                    <p>Advanced conversational AI platform with sophisticated automation and customer support integration.</p>
                 </div>
-                <?php endfor; ?>
+                <div class="tool-item animate-on-scroll animate-stagger animate-fade-up">
+                    <div class="tool-icon">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <h3>Chatfuel</h3>
+                    <p>User-friendly bot builder with powerful AI capabilities and multi-platform deployment options.</p>
+                </div>
+                <div class="tool-item animate-on-scroll animate-stagger animate-fade-up">
+                    <div class="tool-icon">
+                        <i class="fab fa-microsoft"></i>
+                    </div>
+                    <h3>Microsoft Bot Framework</h3>
+                    <p>Enterprise-grade development platform for sophisticated, custom chatbot solutions.</p>
+                </div>
+                <div class="tool-item animate-on-scroll animate-stagger animate-fade-up">
+                    <div class="tool-icon">
+                        <i class="fas fa-comment-dots"></i>
+                    </div>
+                    <h3>ManyChat</h3>
+                    <p>Marketing-focused chatbot platform with excellent social media and automation integrations.</p>
+                </div>
             </div>
         </div>
-    </section>    <!-- Industries Section -->
+    </section><!-- Industries Section -->
     <section class="industries-section">
         <div class="container">
             <h2 class="animate-on-scroll animate-fade-up"><?php echo esc_html(get_chatbot_field('industries_title')); ?></h2>
