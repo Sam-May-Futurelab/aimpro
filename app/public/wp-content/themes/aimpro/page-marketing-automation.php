@@ -277,58 +277,98 @@ get_header(); ?>
                 </div>
             </div>
         </section>        <!-- Automation Tools -->
-        <section class="automation-tools">
-            <div class="section-content">
-                <h2 class="animate-on-scroll animate-fade-up"><?php echo esc_html(get_post_meta(get_the_ID(), 'ma_tools_title', true) ?: 'Marketing Automation Tools We Use'); ?></h2>
-                <div class="tools-grid">
-                    <div class="tool-category animate-on-scroll animate-stagger animate-fade-up">
-                        <h3><?php echo esc_html(get_post_meta(get_the_ID(), 'ma_tools_crm_title', true) ?: 'CRM Platforms'); ?></h3>
-                        <ul>
-                            <?php 
-                            $crm_tools = get_post_meta(get_the_ID(), 'ma_tools_crm_list', true) ?: "HubSpot CRM\nSalesforce\nPipedrive\nActiveCampaign\nGoHighLevel";
-                            $crm_tools_array = array_filter(array_map('trim', explode("\n", $crm_tools)));
-                            foreach ($crm_tools_array as $tool): 
-                            ?>
-                                <li><?php echo esc_html($tool); ?></li>
-                            <?php endforeach; ?>
-                        </ul>                    </div>
-                    <div class="tool-category animate-on-scroll animate-stagger animate-fade-up">
-                        <h3><?php echo esc_html(get_post_meta(get_the_ID(), 'ma_tools_email_title', true) ?: 'Email Automation'); ?></h3>
-                        <ul>
-                            <?php 
-                            $email_tools = get_post_meta(get_the_ID(), 'ma_tools_email_list', true) ?: "Mailchimp\nConvertKit\nKlaviyo\nDrip\nGetResponse";
-                            $email_tools_array = array_filter(array_map('trim', explode("\n", $email_tools)));
-                            foreach ($email_tools_array as $tool): 
-                            ?>
-                                <li><?php echo esc_html($tool); ?></li>
-                            <?php endforeach; ?>
-                        </ul>                    </div>
-                    <div class="tool-category animate-on-scroll animate-stagger animate-fade-up">
-                        <h3><?php echo esc_html(get_post_meta(get_the_ID(), 'ma_tools_chatbot_title', true) ?: 'Chatbot Platforms'); ?></h3>
-                        <ul>
-                            <?php 
-                            $chatbot_tools = get_post_meta(get_the_ID(), 'ma_tools_chatbot_list', true) ?: "Intercom\nDrift\nManyChat\nChatfuel\nZendesk Chat";
-                            $chatbot_tools_array = array_filter(array_map('trim', explode("\n", $chatbot_tools)));
-                            foreach ($chatbot_tools_array as $tool): 
-                            ?>
-                                <li><?php echo esc_html($tool); ?></li>
-                            <?php endforeach; ?>
-                        </ul>                    </div>
-                    <div class="tool-category animate-on-scroll animate-stagger animate-fade-up">
-                        <h3><?php echo esc_html(get_post_meta(get_the_ID(), 'ma_tools_ai_title', true) ?: 'AI & Analytics'); ?></h3>
-                        <ul>
-                            <?php 
-                            $ai_tools = get_post_meta(get_the_ID(), 'ma_tools_ai_list', true) ?: "Google Analytics 4\nZapier\nMake (formerly Integromat)\nChatGPT API\nTableau";
-                            $ai_tools_array = array_filter(array_map('trim', explode("\n", $ai_tools)));
-                            foreach ($ai_tools_array as $tool): 
-                            ?>
-                                <li><?php echo esc_html($tool); ?></li>
-                            <?php endforeach; ?>
+        <section class="service-overview">
+            <div class="container">
+                <div class="section-header animate-on-scroll animate-fade-up">
+                    <h2><?php echo esc_html(get_post_meta(get_the_ID(), 'ma_tools_title', true) ?: 'Marketing Automation Tools We Use'); ?></h2>
+                    <p>We leverage cutting-edge marketing automation platforms and AI technologies to deliver powerful, scalable automation solutions.</p>
+                </div>
+                <div class="services-grid">
+                    <div class="service-item">
+                        <div class="service-icon">
+                            <i class="fas fa-users-cog"></i>
+                        </div>
+                        <h3>CRM Platforms</h3>
+                        <ul style="text-align: left; color: #666; line-height: 1.8;">
+                            <li>HubSpot CRM</li>
+                            <li>Salesforce</li>
+                            <li>Pipedrive</li>
+                            <li>ActiveCampaign</li>
+                            <li>GoHighLevel</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="service-item">
+                        <div class="service-icon">
+                            <i class="fas fa-envelope-open-text"></i>
+                        </div>
+                        <h3>Email Automation</h3>
+                        <ul style="text-align: left; color: #666; line-height: 1.8;">
+                            <li>Mailchimp</li>
+                            <li>ConvertKit</li>
+                            <li>Klaviyo</li>
+                            <li>Drip</li>
+                            <li>GetResponse</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="service-item">
+                        <div class="service-icon">
+                            <i class="fas fa-robot"></i>
+                        </div>
+                        <h3>Chatbot Platforms</h3>
+                        <ul style="text-align: left; color: #666; line-height: 1.8;">
+                            <li>Intercom</li>
+                            <li>Drift</li>
+                            <li>ManyChat</li>
+                            <li>Chatfuel</li>
+                            <li>Zendesk Chat</li>
+                        </ul>
+                    </div>
+                      <div class="service-item">
+                        <div class="service-icon">
+                            <i class="fas fa-brain"></i>
+                        </div>
+                        <h3>AI & Analytics</h3>
+                        <ul style="text-align: left; color: #666; line-height: 1.8;">
+                            <li>Google Analytics 4</li>
+                            <li>Zapier</li>
+                            <li>Make (formerly Integromat)</li>
+                            <li>ChatGPT API</li>
+                            <li>Tableau</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="service-item">
+                        <div class="service-icon">
+                            <i class="fas fa-share-alt"></i>
+                        </div>
+                        <h3>Social Media Management</h3>
+                        <ul style="text-align: left; color: #666; line-height: 1.8;">
+                            <li>Hootsuite</li>
+                            <li>Buffer</li>
+                            <li>Sprout Social</li>
+                            <li>Later</li>
+                            <li>SocialBee</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="service-item">
+                        <div class="service-icon">
+                            <i class="fas fa-cogs"></i>
+                        </div>
+                        <h3>Marketing Automation Platforms</h3>
+                        <ul style="text-align: left; color: #666; line-height: 1.8;">
+                            <li>Marketo</li>
+                            <li>Pardot</li>
+                            <li>Autopilot</li>
+                            <li>Ontraport</li>
+                            <li>Infusionsoft</li>
                         </ul>
                     </div>
                 </div>
             </div>
-        </section>        <!-- Industry Applications -->
+        </section><!-- Industry Applications -->
         <section class="industry-applications">
             <div class="section-content">
                 <h2 class="animate-on-scroll animate-fade-up"><?php echo esc_html(get_post_meta(get_the_ID(), 'ma_industries_title', true) ?: 'Marketing Automation for Your Industry'); ?></h2>
@@ -416,7 +456,6 @@ get_header(); ?>
                     <h2><?php echo esc_html(get_post_meta(get_the_ID(), 'ma_cta_title', true) ?: 'Ready to Automate Your Marketing?'); ?></h2>
                     <p><?php echo esc_html(get_post_meta(get_the_ID(), 'ma_cta_description', true) ?: 'Let\'s create a custom automation strategy that saves you time while improving your marketing results.'); ?></p>                    <div class="cta-buttons animate-on-scroll animate-fade-up">
                         <a href="<?php echo esc_url(get_post_meta(get_the_ID(), 'ma_cta_primary_button_url', true) ?: home_url('/contact')); ?>" class="btn-white"><?php echo esc_html(get_post_meta(get_the_ID(), 'ma_cta_primary_button_text', true) ?: 'Get Free Automation Audit'); ?></a>
-                        <a href="<?php echo esc_url(get_post_meta(get_the_ID(), 'ma_cta_secondary_button_url', true) ?: home_url('/services')); ?>" class="btn btn-secondary"><?php echo esc_html(get_post_meta(get_the_ID(), 'ma_cta_secondary_button_text', true) ?: 'View All Services'); ?></a>
                     </div>
                     <div class="cta-features animate-on-scroll animate-fade-up">
                         <?php 
