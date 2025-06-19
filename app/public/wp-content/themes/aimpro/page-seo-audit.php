@@ -204,17 +204,11 @@ $hero_image = get_post_meta(get_the_ID(), 'seo_audit_hero_image', true);
                                     <h4><?php echo esc_html($section['title']); ?></h4>
                                     <p><?php echo esc_html($section['description']); ?></p>
                                 </div>
-                            <?php endforeach; ?>
-                        </div>
+                            <?php endforeach; ?>                        </div>
                     </div>
-                    <?php if ($sample_image): ?>
-                    <div class="sample-image animate-on-scroll animate-slide-right">
-                        <img src="<?php echo esc_url($sample_image); ?>" alt="SEO Audit Sample Report" />
-                    </div>
-                    <?php endif; ?>
                 </div>
             </div>
-        </section>        <!-- Audit Process -->
+        </section><!-- Audit Process -->
         <section class="audit-process">
             <div class="section-content">
                 <?php 
