@@ -1147,12 +1147,6 @@
     gap: 8px;
 }
 
-.simple-cta-features span::before {
-    content: '✓';
-    color: #10b981;
-    font-weight: bold;
-}
-
 /* Override any existing hover effects for simple CTA */
 .simple-cta-section .btn:hover {
     transform: none !important;

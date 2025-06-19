@@ -209,9 +209,11 @@ function aimpro_enqueue_assets() {
     
     // Enqueue page template styles AFTER insights to ensure proper override
     wp_enqueue_style('aimpro-page-templates', get_template_directory_uri() . '/assets/css/page-templates.css', array('aimpro-base', 'aimpro-insights'), $theme_version . '-' . time());
-    
-    // Enqueue About page fix CSS - HIGHEST PRIORITY
+      // Enqueue About page fix CSS - HIGHEST PRIORITY
     wp_enqueue_style('aimpro-about-fix', get_template_directory_uri() . '/assets/css/about-page-fix.css', array('aimpro-variables', 'aimpro-base', 'aimpro-page-templates'), $theme_version . '-' . time());
+    
+    // Enqueue checkmark fix CSS - HIGHEST PRIORITY
+    wp_enqueue_style('aimpro-checkmark-fix', get_template_directory_uri() . '/assets/css/checkmark-fix.css', array('aimpro-variables', 'aimpro-service-pages', 'aimpro-seo-services'), $theme_version . '-' . time() . rand(100, 999));
     
     // Enqueue Training and Mentoring page styles
     if (is_page('training-mentoring')) {
