@@ -65,11 +65,11 @@ $hero_image = get_post_meta(get_the_ID(), 'seo_audit_hero_image', true);
         </section><!-- Audit Components -->
         <section class="audit-components">
             <div class="section-content">
-                <?php 
-                $components_title = get_post_meta(get_the_ID(), 'seo_audit_components_title', true) ?: 'Complete SEO Audit Components';
+                <?php                $components_title = get_post_meta(get_the_ID(), 'seo_audit_components_title', true) ?: 'Complete SEO Audit Components';
                 $components = get_post_meta(get_the_ID(), 'seo_audit_components', true) ?: array(
                     array(
                         'title' => 'Technical SEO Analysis',
+                        'icon' => 'fas fa-cogs',
                         'description' => 'Deep dive into your website\'s technical foundation to identify and fix critical issues.',
                         'features' => array(
                             'Site speed and Core Web Vitals',
@@ -83,6 +83,7 @@ $hero_image = get_post_meta(get_the_ID(), 'seo_audit_hero_image', true);
                     ),
                     array(
                         'title' => 'Keyword Analysis',
+                        'icon' => 'fas fa-search',
                         'description' => 'Comprehensive keyword research and optimisation opportunity identification.',
                         'features' => array(
                             'Current keyword rankings',
@@ -96,6 +97,7 @@ $hero_image = get_post_meta(get_the_ID(), 'seo_audit_hero_image', true);
                     ),
                     array(
                         'title' => 'Content Audit',
+                        'icon' => 'fas fa-file-alt',
                         'description' => 'Evaluate your content quality, optimisation, and identify improvement opportunities.',
                         'features' => array(
                             'Content quality assessment',
@@ -109,6 +111,7 @@ $hero_image = get_post_meta(get_the_ID(), 'seo_audit_hero_image', true);
                     ),
                     array(
                         'title' => 'Competitor Analysis',
+                        'icon' => 'fas fa-users',
                         'description' => 'analyse your top competitors to identify opportunities and benchmark performance.',
                         'features' => array(
                             'Competitor keyword rankings',
@@ -122,6 +125,7 @@ $hero_image = get_post_meta(get_the_ID(), 'seo_audit_hero_image', true);
                     ),
                     array(
                         'title' => 'Backlink Analysis',
+                        'icon' => 'fas fa-link',
                         'description' => 'Comprehensive review of your link profile and link building opportunities.',
                         'features' => array(
                             'Backlink quality assessment',
@@ -135,6 +139,7 @@ $hero_image = get_post_meta(get_the_ID(), 'seo_audit_hero_image', true);
                     ),
                     array(
                         'title' => 'Local SEO Audit',
+                        'icon' => 'fas fa-map-marker-alt',
                         'description' => 'Evaluate your local search presence and optimisation opportunities.',
                         'features' => array(
                             'Google My Business optimisation',
@@ -150,19 +155,10 @@ $hero_image = get_post_meta(get_the_ID(), 'seo_audit_hero_image', true);
                 ?>
                 <h2 class="animate-on-scroll animate-fade-up"><?php echo esc_html($components_title); ?></h2>
                 <div class="components-grid">
-                    
-                    <?php foreach ($components as $component): ?>
+                      <?php foreach ($components as $component): ?>
                         <div class="component-card <?php echo (isset($component['featured']) && $component['featured']) ? 'featured' : ''; ?> animate-on-scroll animate-stagger animate-fade-up">
                             <div class="component-icon">
-                                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <?php if (isset($component['featured']) && $component['featured']): ?>
-                                        <path d="M14.7 6.3C15.1 5.9 15.1 5.3 14.7 4.9C14.3 4.5 13.7 4.5 13.3 4.9L12 6.2L10.7 4.9C10.3 4.5 9.7 4.5 9.3 4.9C8.9 5.3 8.9 5.9 9.3 6.3L10.6 7.6L9.3 8.9C8.9 9.3 8.9 9.9 9.3 10.3C9.7 10.7 10.3 10.7 10.7 10.3L12 9L13.3 10.3C13.7 10.7 14.3 10.7 14.7 10.3C15.1 9.9 15.1 9.3 14.7 8.9L13.4 7.6L14.7 6.3Z" stroke="currentcolour" stroke-width="2"/>
-                                        <circle cx="12" cy="12" r="10" stroke="currentcolour" stroke-width="2"/>
-                                    <?php else: ?>
-                                        <circle cx="11" cy="11" r="8" stroke="currentcolour" stroke-width="2"/>
-                                        <path d="M21 21L16.65 16.65" stroke="currentcolour" stroke-width="2"/>
-                                    <?php endif; ?>
-                                </svg>
+                                <i class="<?php echo esc_attr($component['icon'] ?? 'fas fa-chart-bar'); ?>"></i>
                             </div>
                             <div class="component-content">
                                 <h3><?php echo esc_html($component['title']); ?></h3>

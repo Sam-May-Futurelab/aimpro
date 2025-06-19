@@ -127,14 +127,21 @@ get_header(); ?>
                 );
                 ?>
                 <h2 class="animate-on-scroll animate-fade-up"><?php echo esc_html($services_title); ?></h2>                <div class="components-grid">
+                    <?php 
+                    // Define icons for each service
+                    $service_icons = array(
+                        'Title Tag & Meta Description optimisation' => 'fas fa-tags',
+                        'Content Structure & optimisation' => 'fas fa-sitemap',
+                        'URL Structure & optimisation' => 'fas fa-link',
+                        'Image & Media optimisation' => 'fas fa-image',
+                        'Internal Linking Strategy' => 'fas fa-project-diagram',
+                        'Schema Markup Implementation' => 'fas fa-code'
+                    );
                     
-                    <?php foreach ($services as $service): ?>
+                    foreach ($services as $service): ?>
                         <div class="component-card animate-on-scroll animate-stagger animate-fade-up">
                             <div class="component-icon">
-                                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M14 2H6C4.89543 2 4 2.89543 4 4V20C4 21.1046 4.89543 22 6 22H18C19.1046 22 20 21.1046 20 20V8L14 2Z" stroke="currentcolour" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                    <path d="M14 2V8H20" stroke="currentcolour" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                </svg>
+                                <i class="<?php echo esc_attr($service_icons[$service['title']] ?? 'fas fa-cog'); ?>"></i>
                             </div>
                             <div class="component-content">
                                 <h3><?php echo esc_html($service['title']); ?></h3>

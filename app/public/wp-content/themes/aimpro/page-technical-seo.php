@@ -68,11 +68,11 @@ $hero_image = get_post_meta(get_the_ID(), 'technical_seo_hero_image', true);
         </section><!-- Technical SEO Services -->
         <section class="technical-seo-services">
             <div class="section-content">
-                <?php 
-                $services_title = get_post_meta(get_the_ID(), 'technical_seo_services_title', true) ?: 'Complete Technical SEO Services';
+                <?php                $services_title = get_post_meta(get_the_ID(), 'technical_seo_services_title', true) ?: 'Complete Technical SEO Services';
                 $services = get_post_meta(get_the_ID(), 'technical_seo_services', true) ?: array(
                     array(
                         'title' => 'Site Speed optimisation',
+                        'icon' => 'fas fa-tachometer-alt',
                         'description' => 'Improve your website\'s loading speed for better user experience and search rankings.',
                         'features' => array(
                             'Page speed analysis and optimisation',
@@ -87,6 +87,7 @@ $hero_image = get_post_meta(get_the_ID(), 'technical_seo_hero_image', true);
                     ),
                     array(
                         'title' => 'Core Web Vitals optimisation',
+                        'icon' => 'fas fa-chart-line',
                         'description' => 'optimise your website for Google\'s Core Web Vitals ranking factors.',
                         'features' => array(
                             'Largest Contentful Paint (LCP) optimisation',
@@ -101,6 +102,7 @@ $hero_image = get_post_meta(get_the_ID(), 'technical_seo_hero_image', true);
                     ),
                     array(
                         'title' => 'Crawlability & Indexability',
+                        'icon' => 'fas fa-spider',
                         'description' => 'Ensure search engines can properly crawl and index your website content.',
                         'features' => array(
                             'Robots.txt optimisation',
@@ -115,6 +117,7 @@ $hero_image = get_post_meta(get_the_ID(), 'technical_seo_hero_image', true);
                     ),
                     array(
                         'title' => 'Schema Markup Implementation',
+                        'icon' => 'fas fa-code',
                         'description' => 'Implement structured data to help search engines understand your content.',
                         'features' => array(
                             'Business schema markup',
@@ -129,6 +132,7 @@ $hero_image = get_post_meta(get_the_ID(), 'technical_seo_hero_image', true);
                     ),
                     array(
                         'title' => 'Mobile optimisation',
+                        'icon' => 'fas fa-mobile-alt',
                         'description' => 'Ensure your website provides an excellent mobile user experience.',
                         'features' => array(
                             'Mobile-friendly design implementation',
@@ -143,6 +147,7 @@ $hero_image = get_post_meta(get_the_ID(), 'technical_seo_hero_image', true);
                     ),
                     array(
                         'title' => 'HTTPS & Security',
+                        'icon' => 'fas fa-shield-alt',
                         'description' => 'Implement security measures that protect users and improve search rankings.',
                         'features' => array(
                             'SSL certificate installation',
@@ -158,20 +163,10 @@ $hero_image = get_post_meta(get_the_ID(), 'technical_seo_hero_image', true);
                 );
                 ?>                <h2 class="animate-on-scroll animate-fade-up"><?php echo esc_html($services_title); ?></h2>
                 <div class="services-grid">
-                    
-                    <?php foreach ($services as $service): ?>
-                        <div class="service-card <?php echo (isset($service['featured']) && $service['featured']) ? 'featured' : ''; ?> animate-on-scroll animate-stagger animate-fade-up">>
+                      <?php foreach ($services as $service): ?>
+                        <div class="service-card <?php echo (isset($service['featured']) && $service['featured']) ? 'featured' : ''; ?> animate-on-scroll animate-stagger animate-fade-up">
                             <div class="service-icon">
-                                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <?php if (isset($service['featured']) && $service['featured']): ?>
-                                        <circle cx="12" cy="12" r="3" stroke="currentcolour" stroke-width="2"/>
-                                        <path d="M12 1V3M12 21V23M4.22 4.22L5.64 5.64M18.36 18.36L19.78 19.78M1 12H3M21 12H23M4.22 19.78L5.64 18.36M18.36 5.64L19.78 4.22" stroke="currentcolour" stroke-width="2"/>
-                                    <?php else: ?>
-                                        <rect x="2" y="3" width="20" height="14" rx="2" ry="2" stroke="currentcolour" stroke-width="2"/>
-                                        <line x1="8" y1="21" x2="16" y2="21" stroke="currentcolour" stroke-width="2"/>
-                                        <line x1="12" y1="17" x2="12" y2="21" stroke="currentcolour" stroke-width="2"/>
-                                    <?php endif; ?>
-                                </svg>
+                                <i class="<?php echo esc_attr($service['icon'] ?? 'fas fa-cog'); ?>"></i>
                             </div>
                             <div class="service-content">
                                 <h3><?php echo esc_html($service['title']); ?></h3>

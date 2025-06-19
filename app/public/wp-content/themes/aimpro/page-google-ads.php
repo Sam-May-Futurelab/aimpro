@@ -229,25 +229,22 @@ get_header();
                     
                     $service_features = get_post_meta(get_the_ID(), "_google_ads_service_features_{$i}", true);
                     if (empty($service_features)) $service_features = $defaults["service_features_{$i}"];
-                    
-                    // Convert features to array
+                      // Convert features to array
                     $features_array = explode("\n", $service_features);
                     
-                    // Service icons array
+                    // Service FontAwesome icons array
                     $service_icons = [
-                        1 => '<circle cx="11" cy="11" r="8"></circle><path d="21 21l-4.35-4.35"></path>',
-                        2 => '<rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><circle cx="9" cy="9" r="2"></circle><path d="21 15l-3.086-3.086a2 2 0 0 0-2.828 0L6 21"></path>',
-                        3 => '<rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line>',
-                        4 => '<polygon points="23 7 16 12 23 17 23 7"></polygon><rect x="1" y="5" width="15" height="14" rx="2" ry="2"></rect>',
-                        5 => '<path d="M22 12h-4l-3 9L9 3l-3 9H2"></path>',
-                        6 => '<path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle>'
+                        1 => 'fas fa-search',        // Search Campaigns
+                        2 => 'fas fa-tv',            // Display Campaigns  
+                        3 => 'fas fa-shopping-cart', // Shopping Campaigns
+                        4 => 'fab fa-youtube',       // YouTube Advertising
+                        5 => 'fas fa-chart-line',    // Performance Max
+                        6 => 'fas fa-map-marker-alt' // Local Campaigns
                     ];
                 ?>
                 <div class="service-card animate-on-scroll animate-stagger animate-fade-up">
                     <div class="service-icon">
-                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentcolour" stroke-width="2">
-                            <?php echo $service_icons[$i]; ?>
-                        </svg>
+                        <i class="<?php echo esc_attr($service_icons[$i]); ?>"></i>
                     </div>
                     <h3><?php echo esc_html($service_title); ?></h3>
                     <p><?php echo esc_html($service_content); ?></p>                    <ul class="service-features">
@@ -349,9 +346,19 @@ get_header();
             <div class="section-header">
                 <h2><?php echo esc_html($tools_title); ?></h2>
                 <p><?php echo esc_html($tools_subtitle); ?></p>
-            </div>
-            <div class="tools-grid">
-                <?php for ($i = 1; $i <= 6; $i++):
+            </div>            <div class="tools-grid">
+                <?php 
+                // Define icons for each tool
+                $tool_icons = array(
+                    1 => 'fas fa-edit',           // Google Ads Editor
+                    2 => 'fas fa-chart-line',     // Google Analytics 4
+                    3 => 'fas fa-tags',           // Google Tag Manager
+                    4 => 'fas fa-search',         // Keyword Planner
+                    5 => 'fas fa-chart-bar',      // SEMrush/Ahrefs
+                    6 => 'fas fa-flask'           // Google Optimise
+                );
+                
+                for ($i = 1; $i <= 6; $i++):
                     $tool_name = get_post_meta(get_the_ID(), "_google_ads_tool_name_{$i}", true);
                     if (empty($tool_name)) $tool_name = $defaults["tool_name_{$i}"];
                     
@@ -359,6 +366,9 @@ get_header();
                     if (empty($tool_description)) $tool_description = $defaults["tool_description_{$i}"];
                 ?>
                 <div class="tool-item">
+                    <div class="tool-icon">
+                        <i class="<?php echo esc_attr($tool_icons[$i]); ?>"></i>
+                    </div>
                     <h4><?php echo esc_html($tool_name); ?></h4>
                     <p><?php echo esc_html($tool_description); ?></p>
                 </div>

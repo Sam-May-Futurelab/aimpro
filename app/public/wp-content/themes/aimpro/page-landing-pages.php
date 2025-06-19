@@ -105,61 +105,124 @@ get_header(); ?>
             </div>
         </div>
     </section>    <!-- Case Study Section -->
-    <section id="case-study" class="case-study-section">
+    <section id="case-study" class="case-study-showcase">
         <div class="container">
-            <div class="case-study-content">
-                <div class="case-study-header animate-on-scroll animate-fade-up">
-                    <span class="case-study-label">Case Study</span>
-                    <h2>How FitLife Academy Increased Course Sales by 485% with optimised Landing Pages</h2>
+            <div class="case-study-wrapper">
+                <!-- Header -->
+                <div class="case-study-intro animate-on-scroll animate-fade-up">
+                    <div class="case-study-badge">
+                        <span class="badge-icon">📈</span>
+                        <span class="badge-text">Success Story</span>
+                    </div>
+                    <h2 class="case-study-title">How FitLife Academy Increased Course Sales by <span class="highlight-number">485%</span></h2>
+                    <p class="case-study-subtitle">Transforming a struggling course sales page into a high-converting revenue generator</p>
                 </div>
-                
-                <div class="case-study-grid">
-                    <div class="case-study-challenge animate-on-scroll animate-slide-left">
-                        <h3>The Challenge</h3>
-                        <p>FitLife Academy was driving traffic to their course sales page but experiencing a disappointing 2.3% conversion rate. Despite quality traffic from Facebook ads, they were losing potential customers due to unclear messaging and poor page structure.</p>
-                        
-                        <div class="challenge-metrics">
-                            <div class="metric animate-on-scroll animate-stagger animate-scale-up">
-                                <span class="metric-value">2.3%</span>
-                                <span class="metric-label">Conversion Rate</span>
-                            </div>
-                            <div class="metric animate-on-scroll animate-stagger animate-scale-up">
-                                <span class="metric-value">£8.50</span>
-                                <span class="metric-label">Cost per Lead</span>
+
+                <!-- Story Flow -->
+                <div class="case-study-flow">
+                    <!-- Challenge -->
+                    <div class="story-section challenge-section animate-on-scroll animate-slide-left">
+                        <div class="section-header">
+                            <div class="section-icon challenge-icon">⚡</div>
+                            <h3>The Challenge</h3>
+                        </div>
+                        <div class="section-content">
+                            <p class="story-text">FitLife Academy was driving quality traffic from Facebook ads but experiencing a disappointing 2.3% conversion rate. Despite investing heavily in paid advertising, unclear messaging and poor page structure were causing them to lose potential customers at the final hurdle.</p>
+                            <div class="inline-metrics">
+                                <div class="metric-item">
+                                    <span class="metric-number">2.3%</span>
+                                    <span class="metric-text">Conversion Rate</span>
+                                </div>
+                                <div class="metric-item">
+                                    <span class="metric-number">£8.50</span>
+                                    <span class="metric-text">Cost per Lead</span>
+                                </div>
                             </div>
                         </div>
                     </div>
-                    
-                    <div class="case-study-solution animate-on-scroll animate-slide-right">
-                        <h3>Our Solution</h3>
-                        <ul>
-                            <li><strong>Message-Match optimisation:</strong> Aligned landing page copy with ad messaging for consistency</li>
-                            <li><strong>Clear Value Proposition:</strong> Highlighted unique benefits and transformation outcomes</li>
-                            <li><strong>Social Proof Integration:</strong> Added testimonials, reviews, and success stories</li>
-                            <li><strong>Streamlined Forms:</strong> Reduced form fields and optimised conversion flow</li>
-                            <li><strong>Mobile optimisation:</strong> Enhanced mobile experience for 70% mobile traffic</li>
-                        </ul>
+
+                    <!-- Arrow -->
+                    <div class="story-arrow animate-on-scroll animate-scale-up">
+                        <div class="arrow-icon">↓</div>
+                        <span class="arrow-text">Our Approach</span>
                     </div>
-                </div>
-                
-                <div class="case-study-results animate-on-scroll animate-fade-up">
-                    <h3>The Results</h3>
-                    <div class="results-grid">
-                        <div class="result-item animate-on-scroll animate-stagger animate-scale-up">
-                            <span class="result-number">485%</span>
-                            <span class="result-label">Increase in Course Sales</span>
+
+                    <!-- Solution -->
+                    <div class="story-section solution-section animate-on-scroll animate-slide-right">
+                        <div class="section-header">
+                            <div class="section-icon solution-icon">🎯</div>
+                            <h3>Strategic Transformation</h3>
                         </div>
-                        <div class="result-item animate-on-scroll animate-stagger animate-scale-up">
-                            <span class="result-number">13.4%</span>
-                            <span class="result-label">New Conversion Rate</span>
+                        <div class="section-content">
+                            <div class="solution-grid">
+                                <div class="solution-item">
+                                    <strong>Message-Match Optimisation</strong>
+                                    <p>Aligned landing page copy with ad messaging for seamless user experience</p>
+                                </div>
+                                <div class="solution-item">
+                                    <strong>Clear Value Proposition</strong>
+                                    <p>Highlighted unique benefits and transformation outcomes</p>
+                                </div>
+                                <div class="solution-item">
+                                    <strong>Social Proof Integration</strong>
+                                    <p>Added compelling testimonials and success stories</p>
+                                </div>
+                                <div class="solution-item">
+                                    <strong>Mobile Optimisation</strong>
+                                    <p>Enhanced experience for 70% mobile traffic</p>
+                                </div>
+                            </div>
                         </div>
-                        <div class="result-item animate-on-scroll animate-stagger animate-scale-up">
-                            <span class="result-number">£2.10</span>
-                            <span class="result-label">Reduced Cost per Lead</span>
+                    </div>
+
+                    <!-- Arrow -->
+                    <div class="story-arrow animate-on-scroll animate-scale-up">
+                        <div class="arrow-icon">↓</div>
+                        <span class="arrow-text">The Results</span>
+                    </div>
+
+                    <!-- Results -->
+                    <div class="story-section results-section animate-on-scroll animate-fade-up">
+                        <div class="section-header">
+                            <div class="section-icon results-icon">🚀</div>
+                            <h3>Exceptional Results</h3>
                         </div>
-                        <div class="result-item animate-on-scroll animate-stagger animate-scale-up">
-                            <span class="result-number">£340K</span>
-                            <span class="result-label">Additional Annual Revenue</span>
+                        <div class="section-content">
+                            <div class="results-showcase">
+                                <div class="primary-result">
+                                    <span class="big-number">485%</span>
+                                    <span class="big-label">Increase in Course Sales</span>
+                                </div>
+                                <div class="secondary-results">
+                                    <div class="result-stat">
+                                        <span class="stat-number">13.4%</span>
+                                        <span class="stat-label">New Conversion Rate</span>
+                                    </div>
+                                    <div class="result-stat">
+                                        <span class="stat-number">£2.10</span>
+                                        <span class="stat-label">Reduced Cost per Lead</span>
+                                    </div>
+                                    <div class="result-stat">
+                                        <span class="stat-number">£340K</span>
+                                        <span class="stat-label">Additional Annual Revenue</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>                </div>
+
+                <!-- Call to Action -->
+                <div class="case-study-cta-redesigned animate-on-scroll animate-fade-up">
+                    <div class="cta-container">
+                        <div class="cta-icon">
+                            <span class="success-emoji">🎯</span>
+                        </div>
+                        <div class="cta-text-content">
+                            <h4 class="cta-headline">Ready for Similar Results?</h4>
+                            <p class="cta-description">Let's transform your landing pages into high-converting revenue generators</p>
+                        </div>
+                        <div class="cta-action">
+                            <a href="<?php echo home_url('/contact'); ?>" class="btn-primary cta-btn-enhanced">Get Your Landing Page Strategy</a>
                         </div>
                     </div>
                 </div>
@@ -563,5 +626,386 @@ get_header(); ?>
         </div>
     </section>
 </main>
+
+<style>
+/* Modern Case Study Showcase Styles */
+.case-study-showcase {
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    padding: 4rem 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.case-study-showcase::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="50" cy="50" r="1" fill="%23ffffff" opacity="0.1"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+    pointer-events: none;
+}
+
+.case-study-wrapper {
+    position: relative;
+    z-index: 2;
+}
+
+.case-study-intro {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.case-study-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: rgba(13, 110, 253, 0.1);
+    border: 1px solid rgba(13, 110, 253, 0.2);
+    padding: 0.5rem 1rem;
+    border-radius: 50px;
+    margin-bottom: 1rem;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #0d6efd;
+}
+
+.case-study-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    line-height: 1.2;
+}
+
+.highlight-number {
+    color: #28a745;
+    background: linear-gradient(135deg, #28a745, #20c997);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.case-study-subtitle {
+    font-size: 1.2rem;
+    color: #6c757d;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.case-study-flow {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.story-section {
+    background: white;
+    border-radius: 16px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    border-left: 4px solid transparent;
+}
+
+.challenge-section {
+    border-left-color: #dc3545;
+}
+
+.solution-section {
+    border-left-color: #0d6efd;
+}
+
+.results-section {
+    border-left-color: #28a745;
+}
+
+.section-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.section-icon {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.challenge-icon {
+    background: rgba(220, 53, 69, 0.1);
+    color: #dc3545;
+}
+
+.solution-icon {
+    background: rgba(13, 110, 253, 0.1);
+    color: #0d6efd;
+}
+
+.results-icon {
+    background: rgba(40, 167, 69, 0.1);
+    color: #28a745;
+}
+
+.section-header h3 {
+    margin: 0;
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.story-text {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+}
+
+.inline-metrics {
+    display: flex;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.metric-item {
+    text-align: center;
+}
+
+.metric-number {
+    display: block;
+    font-size: 2rem;
+    font-weight: 700;
+    color: #dc3545;
+}
+
+.metric-text {
+    font-size: 0.9rem;
+    color: #6c757d;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.solution-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+}
+
+.solution-item {
+    background: #f8f9fa;
+    padding: 1.5rem;
+    border-radius: 12px;
+    border-left: 3px solid #0d6efd;
+}
+
+.solution-item strong {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: #0d6efd;
+    font-weight: 600;
+}
+
+.story-arrow {
+    text-align: center;
+    margin: 2rem 0;
+}
+
+.arrow-icon {
+    font-size: 2rem;
+    color: #6c757d;
+    margin-bottom: 0.5rem;
+}
+
+.arrow-text {
+    display: block;
+    font-size: 0.9rem;
+    color: #6c757d;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.results-showcase {
+    text-align: center;
+}
+
+.primary-result {
+    margin-bottom: 2rem;
+}
+
+.big-number {
+    display: block;
+    font-size: 4rem;
+    font-weight: 800;
+    color: #28a745;
+    line-height: 1;
+}
+
+.big-label {
+    font-size: 1.2rem;
+    color: #495057;
+    font-weight: 600;
+}
+
+.secondary-results {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 1.5rem;
+}
+
+.result-stat {
+    background: #f8f9fa;
+    padding: 1.5rem;
+    border-radius: 12px;
+    text-align: center;
+}
+
+.stat-number {
+    display: block;
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #28a745;
+    margin-bottom: 0.5rem;
+}
+
+.stat-label {
+    font-size: 0.9rem;
+    color: #6c757d;
+}
+
+.case-study-cta-redesigned {
+    margin-top: 3rem;
+}
+
+.cta-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: linear-gradient(135deg, #0d6efd 0%, #0056b3 100%);
+    color: white;
+    padding: 2rem 2.5rem;
+    border-radius: 20px;
+    box-shadow: 0 8px 32px rgba(13, 110, 253, 0.3);
+    max-width: 1000px;
+    margin: 0 auto;
+    gap: 2rem;
+}
+
+.cta-icon {
+    flex-shrink: 0;
+}
+
+.success-emoji {
+    font-size: 3rem;
+    display: block;
+    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2));
+}
+
+.cta-text-content {
+    flex: 1;
+    text-align: left;
+}
+
+.cta-headline {
+    font-size: 1.75rem;
+    font-weight: 700;
+    margin: 0 0 0.5rem 0;
+    color: white;
+}
+
+.cta-description {
+    font-size: 1.1rem;
+    margin: 0;
+    opacity: 0.9;
+    line-height: 1.4;
+}
+
+.cta-action {
+    flex-shrink: 0;
+}
+
+.cta-btn-enhanced {
+    background: white;
+    color: #0d6efd;
+    border: none;
+    padding: 1rem 2rem;
+    border-radius: 12px;
+    font-weight: 600;
+    font-size: 1rem;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+    white-space: nowrap;
+}
+
+.cta-btn-enhanced:hover {
+    background: #f8f9fa;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+    color: #0d6efd;
+    text-decoration: none;
+}
+
+/* Remove old CTA styles */
+.case-study-cta {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .cta-container {
+        flex-direction: column;
+        text-align: center;
+        padding: 2rem 1.5rem;
+        gap: 1.5rem;
+    }
+    
+    .cta-text-content {
+        text-align: center;
+    }
+    
+    .cta-headline {
+        font-size: 1.5rem;
+    }
+    
+    .cta-description {
+        font-size: 1rem;
+    }
+    
+    .success-emoji {
+        font-size: 2.5rem;
+    }
+    
+    .cta-btn-enhanced {
+        padding: 1rem 1.5rem;
+        width: 100%;
+        max-width: 280px;
+    }
+}
+
+@media (max-width: 768px) {
+    .case-study-title {
+        font-size: 2rem;
+    }
+    
+    .big-number {
+        font-size: 3rem;
+    }
+    
+    .inline-metrics {
+        justify-content: center;
+    }
+    
+    .story-section {
+        padding: 1.5rem;
+    }
+    
+    .solution-grid {
+        grid-template-columns: 1fr;
+    }
+}
+</style>
 
 <?php get_footer(); ?>
