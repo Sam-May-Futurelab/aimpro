@@ -1115,34 +1115,282 @@
     border-radius: 8px;
 }
 
-/* Responsive Design */
-@media (max-width: 992px) {
-    .service-subcategories {
-        grid-template-columns: repeat(2, 1fr);
-    }
-    
-    .categories-grid,
-    .ai-categories-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-    
-    .categories-grid-four {
-        grid-template-columns: repeat(2, 1fr) !important;
-    }
+/* Resources Page Specific Styles */
+.resources-services-grid .service-card {
+    background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+    border-radius: 16px;
+    padding: 30px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid rgba(241, 90, 37, 0.1);
+    text-align: center;
 }
 
+.resources-services-grid .service-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+}
+
+.resources-services-grid .service-icon {
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(45deg, #f15a25, #ff6b35);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px;
+    color: white;
+    font-size: 2rem;
+}
+
+.resources-services-grid .service-card h3 {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #1e293b;
+    margin-bottom: 16px;
+}
+
+.resources-services-grid .service-card p {
+    color: #64748b;
+    line-height: 1.7;
+    margin-bottom: 25px;
+}
+
+.resources-services-grid .service-links {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.resources-services-grid .btn {
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    font-size: 0.9rem;
+    border: 2px solid transparent;
+}
+
+.resources-services-grid .btn-primary {
+    background: linear-gradient(45deg, #f15a25, #ff6b35);
+    color: white;
+    border-color: #f15a25;
+}
+
+.resources-services-grid .btn-primary:hover {
+    background: linear-gradient(45deg, #d14320, #e55a2b);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(241, 90, 37, 0.3);
+}
+
+.resources-services-grid .btn-outline {
+    background: transparent;
+    color: #1e293b;
+    border-color: #e2e8f0;
+}
+
+.resources-services-grid .btn-outline:hover {
+    background: #1e293b;
+    color: white;
+    border-color: #1e293b;
+    transform: translateY(-2px);
+}
+
+/* Knowledge Hub Styling */
+.knowledge-hub {
+    background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+    padding: 80px 0;
+}
+
+.knowledge-grid .knowledge-card {
+    background: white;
+    border-radius: 16px;
+    padding: 0;
+    overflow: hidden;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid rgba(241, 90, 37, 0.1);
+}
+
+.knowledge-grid .knowledge-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+}
+
+.knowledge-grid .tool-icon {
+    display: none;
+}
+
+.knowledge-grid .tool-info {
+    padding: 30px;
+}
+
+.knowledge-grid .tool-info h3 {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #1e293b;
+    margin-bottom: 16px;
+}
+
+.knowledge-grid .tool-info p {
+    color: #64748b;
+    line-height: 1.7;
+    margin-bottom: 20px;
+}
+
+.knowledge-grid .tool-features {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 25px 0;
+}
+
+.knowledge-grid .tool-features li {
+    color: #64748b;
+    padding: 8px 0;
+    position: relative;
+    padding-left: 20px;
+}
+
+.knowledge-grid .tool-features li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: #f15a25;
+    font-weight: bold;
+}
+
+/* Featured Resources */
+.featured-resources {
+    padding: 80px 0;
+    background: white;
+}
+
+.featured-grid .featured-resource {
+    background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+    border-radius: 16px;
+    padding: 40px 30px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.featured-resource::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(45deg, #f15a25, #ff6b35);
+}
+
+.featured-resource .resource-type {
+    display: inline-block;
+    background: rgba(241, 90, 37, 0.1);
+    color: #f15a25;
+    padding: 6px 16px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.featured-resource h3 {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #1e293b;
+    margin-bottom: 16px;
+}
+
+.featured-resource p {
+    color: #64748b;
+    line-height: 1.7;
+    margin-bottom: 25px;
+}
+
+/* Newsletter CTA */
+.newsletter-cta {
+    background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
+    color: white;
+    padding: 80px 0;
+}
+
+.newsletter-cta h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+    color: white;
+}
+
+.newsletter-cta p {
+    font-size: 1.1rem;
+    color: #cbd5e1;
+    margin-bottom: 40px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.newsletter-form {
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.newsletter-form .form-group {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+.newsletter-form input[type="email"] {
+    flex: 1;
+    padding: 16px 20px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    background: white;
+    color: #1e293b;
+}
+
+.newsletter-form input[type="email"]:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(241, 90, 37, 0.2);
+}
+
+.newsletter-form .btn-primary {
+    padding: 16px 32px;
+    white-space: nowrap;
+}
+
+.newsletter-form .form-note {
+    color: #1e293b;
+    font-size: 0.9rem;
+    margin: 0;
+    text-align: center;
+}
+
+/* Responsive Design */
 @media (max-width: 768px) {
-    .service-subcategories {
-        grid-template-columns: 1fr;
+    .newsletter-form .form-group {
+        flex-direction: column;
     }
     
-    .categories-grid,
-    .ai-categories-grid {
-        grid-template-columns: 1fr;
+    .newsletter-form .btn-primary {
+        width: 100%;
     }
     
-    .categories-grid-four {
-        grid-template-columns: 1fr !important;
+    .resources-services-grid .service-links {
+        flex-direction: column;
+    }
+    
+    .resources-services-grid .btn {
+        width: 100%;
+        text-align: center;
     }
 }
 
