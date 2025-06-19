@@ -163,9 +163,98 @@ get_header(); ?>
                                 <path d="M2 17L12 22L22 17" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                                 <path d="M2 12L12 17L22 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                             </svg>
-                        </div>
-                        <h3><?php echo aimpro_get_field('about_value_6_heading', 'Forward-Thinking Approach'); ?></h3>
+                        </div>                        <h3><?php echo aimpro_get_field('about_value_6_heading', 'Forward-Thinking Approach'); ?></h3>
                         <p><?php echo aimpro_get_field('about_value_6_description', 'In an ever-changing digital landscape, we keep your brand one step ahead. Our forward-thinking approach enables us to adapt quickly to trends, ensuring your brand stays competitive and relevant in the market.'); ?></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Team Section -->
+        <section class="team-section">
+            <div class="container">
+                <div class="section-header text-center animate-on-scroll animate-fade-up">
+                    <h2>Meet Our Expert Team</h2>
+                    <p>The passionate professionals driving your digital success</p>
+                </div>
+                
+                <div class="team-grid">                    <div class="team-member animate-on-scroll animate-stagger animate-fade-up">
+                        <div class="member-image">
+                            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/ajay-dhunna.png" alt="Ajay Dhunna">
+                        </div>
+                        <div class="member-info">
+                            <h3>Ajay Dhunna</h3>
+                            <p class="member-title">Director of Marketing</p>
+                            <div class="member-skills">
+                                <span>Strategic Planning</span>
+                                <span>Business Development</span>
+                                <span>Client Relations</span>
+                            </div>
+                        </div>
+                    </div>                    <div class="team-member animate-on-scroll animate-stagger animate-fade-up">
+                        <div class="member-image">
+                            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/dinesh-thapa.png" alt="Dinesh Thapa">
+                        </div>
+                        <div class="member-info">
+                            <h3>Dinesh Thapa</h3>
+                            <p class="member-title">Business Growth Specialist</p>
+                            <div class="member-skills">
+                                <span>ROI Optimization</span>
+                                <span>Analytics</span>
+                                <span>Business Growth</span>
+                            </div>
+                        </div>
+                    </div>                    <div class="team-member animate-on-scroll animate-stagger animate-fade-up">
+                        <div class="member-image">
+                            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/james-butler.png" alt="James Butler">
+                        </div>
+                        <div class="member-info">
+                            <h3>James Butler</h3>
+                            <p class="member-title">Creative Director</p>
+                            <div class="member-skills">
+                                <span>UX/UI Design</span>
+                                <span>Brand Strategy</span>
+                                <span>Creative Direction</span>                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Team CTA -->
+                <div class="team-cta text-center animate-on-scroll animate-fade-up">
+                    <h3>Ready to Work with Our Expert Team?</h3>
+                    <p>Let's discuss how our specialists can help transform your digital presence and drive exceptional results for your business.</p>
+                    <div class="team-cta-buttons">
+                        <a href="<?php echo home_url('/contact'); ?>" class="btn btn-primary">Get Started Today</a>
+                        <a href="<?php echo home_url('/case-studies'); ?>" class="btn btn-secondary">View Our Work</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About the Author Section -->
+        <section class="author-section">
+            <div class="container">
+                <div class="author-content animate-on-scroll animate-fade-up">                    <div class="author-image">
+                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/ajay-dhunna.png" alt="Ajay Dhunna">
+                    </div>
+                    <div class="author-info">
+                        <div class="author-badge">About the Director</div>
+                        <h2>Ajay Dhunna</h2>
+                        <p class="author-title">Director of Marketing</p>
+                        <div class="author-description">
+                            <p>With over 15 years of experience in digital marketing, Ajay founded Aimpro Digital with a vision to help businesses achieve exceptional growth through data-driven strategies and innovative solutions.</p>
+                            <p>His expertise spans across SEO, PPC, marketing automation, and business development. Ajay has helped hundreds of businesses transform their digital presence and achieve sustainable growth.</p>
+                            <p>When he's not strategizing for clients, Ajay enjoys sharing his knowledge through industry speaking engagements and mentoring the next generation of digital marketers.</p>
+                        </div>
+                        <div class="author-cta">
+                            <a href="https://linkedin.com/in/ajaydhunna" class="btn btn-outline" target="_blank">
+                                <i class="fab fa-linkedin"></i>
+                                Connect on LinkedIn
+                            </a>
+                            <a href="<?php echo home_url('/contact'); ?>" class="btn btn-primary">
+                                Get in Touch
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>

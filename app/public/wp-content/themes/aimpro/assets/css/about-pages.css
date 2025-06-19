@@ -5,7 +5,7 @@
 
 /* Global About Page Styles */
 .about-page {
-    background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+    background: white;
     min-height: 100vh;
 }
 
@@ -1930,4 +1930,388 @@ body.page-template-page-testimonials .case-study-results-wrapper .case-study-res
 .about-page .stats-grid {
     place-items: center !important;
     justify-content: center !important;
+}
+
+/* Team Section */
+.about-page .team-section {
+    padding: 80px 0;
+    background: white;
+}
+
+.about-page .team-section .section-header {
+    margin-bottom: 60px;
+}
+
+.about-page .team-section h2 {
+    font-size: 2.8rem;
+    font-weight: 700;
+    color: #1e293b;
+    margin-bottom: 24px;
+    position: relative;
+    padding-bottom: 20px;
+}
+
+.about-page .team-section h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background: linear-gradient(45deg, #f15a25, #ff6b35);
+    border-radius: 2px;
+}
+
+.about-page .team-section p {
+    font-size: 1.1rem;
+    color: #64748b;
+    margin: 0;
+}
+
+.about-page .team-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+    margin-bottom: 60px;
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.about-page .team-member {
+    background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+    border-radius: 20px;
+    padding: 40px 20px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid rgba(241, 90, 37, 0.1);
+    text-align: center;
+}
+
+.about-page .team-member:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+}
+
+.about-page .member-image {
+    width: 150px;
+    height: 150px;
+    margin: 0 auto 25px;
+    border-radius: 50%;
+    overflow: hidden;
+    position: relative;
+    border: 4px solid #f15a25;
+    box-shadow: 0 8px 20px rgba(241, 90, 37, 0.2);
+}
+
+.about-page .member-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.about-page .team-member:hover .member-image img {
+    transform: scale(1.1);
+}
+
+.about-page .member-info {
+    text-align: center;
+}
+
+.about-page .member-info h3 {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #1e293b;
+    margin-bottom: 8px;
+}
+
+.about-page .member-title {
+    font-size: 1rem;
+    color: #f15a25;
+    font-weight: 600;
+    margin-bottom: 20px;
+    display: block;
+}
+
+.about-page .member-skills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+}
+
+.about-page .member-skills span {
+    background: linear-gradient(45deg, #f15a25, #ff6b35);
+    color: white;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 500;
+}
+
+/* Team CTA Section */
+.about-page .team-cta {
+    background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+    border-radius: 20px;
+    padding: 50px 30px;
+    margin-top: 40px;
+}
+
+.about-page .team-cta h3 {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #1e293b;
+    margin-bottom: 16px;
+}
+
+.about-page .team-cta p {
+    font-size: 1.1rem;
+    color: #64748b;
+    margin-bottom: 30px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.about-page .team-cta-buttons {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.about-page .team-cta .btn {
+    padding: 16px 32px;
+    border-radius: 12px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+    font-size: 1rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.about-page .team-cta .btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.5s;
+}
+
+.about-page .team-cta .btn:hover::before {
+    left: 100%;
+}
+
+.about-page .team-cta .btn-primary {
+    background: linear-gradient(45deg, #f15a25, #ff6b35);
+    color: white;
+    border-color: #f15a25;
+}
+
+.about-page .team-cta .btn-primary:hover {
+    background: linear-gradient(45deg, #d14320, #e55a2b);
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(241, 90, 37, 0.3);
+}
+
+.about-page .team-cta .btn-secondary {
+    background: transparent;
+    color: #1e293b;
+    border-color: #e2e8f0;
+}
+
+.about-page .team-cta .btn-secondary:hover {
+    background: #1e293b;
+    color: white;
+    border-color: #1e293b;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(30, 41, 59, 0.2);
+}
+
+/* Author Section */
+.about-page .author-section {
+    padding: 80px 0;
+    background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+}
+
+.about-page .author-content {
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    gap: 60px;
+    align-items: center;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.about-page .author-image {
+    position: relative;
+}
+
+.about-page .author-image img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 20px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+.about-page .author-badge {
+    display: inline-block;
+    background: rgba(241, 90, 37, 0.2);
+    color: #f15a25;
+    padding: 8px 20px;
+    border-radius: 25px;
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    border: 1px solid rgba(241, 90, 37, 0.3);
+}
+
+.about-page .author-info h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #1e293b;
+    margin-bottom: 8px;
+}
+
+.about-page .author-title {
+    font-size: 1.1rem;
+    color: #f15a25;
+    font-weight: 600;
+    margin-bottom: 24px;
+}
+
+.about-page .author-description p {
+    font-size: 1rem;
+    line-height: 1.7;
+    color: #64748b;
+    margin-bottom: 16px;
+}
+
+.about-page .author-cta {
+    display: flex;
+    gap: 15px;
+    margin-top: 30px;
+    flex-wrap: wrap;
+}
+
+.about-page .author-cta .btn {
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+    font-size: 0.95rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.about-page .author-cta .btn-outline {
+    background: transparent;
+    color: #1e293b;
+    border-color: #e2e8f0;
+}
+
+.about-page .author-cta .btn-outline:hover {
+    background: #1e293b;
+    color: white;
+    border-color: #1e293b;
+    transform: translateY(-2px);
+}
+
+.about-page .author-cta .btn-primary {
+    background: linear-gradient(45deg, #f15a25, #ff6b35);
+    color: white;
+    border-color: #f15a25;
+}
+
+.about-page .author-cta .btn-primary:hover {
+    background: linear-gradient(45deg, #d14320, #e55a2b);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(241, 90, 37, 0.3);
+}
+
+/* Responsive Design for Team and Author */
+@media (max-width: 768px) {
+    .about-page .team-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+        max-width: 400px;
+    }
+    
+    .about-page .team-member {
+        padding: 30px 20px;
+    }
+    
+    .about-page .member-image {
+        width: 120px;
+        height: 120px;
+        margin-bottom: 20px;
+    }
+    
+    .about-page .team-section h2 {
+        font-size: 2.2rem;
+    }
+    
+    .about-page .team-cta {
+        padding: 40px 20px;
+    }
+    
+    .about-page .team-cta h3 {
+        font-size: 1.6rem;
+    }
+    
+    .about-page .team-cta-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .about-page .author-content {
+        grid-template-columns: 1fr;
+        gap: 40px;
+        text-align: center;
+    }
+    
+    .about-page .author-image {
+        max-width: 250px;
+        margin: 0 auto;
+    }
+    
+    .about-page .author-cta {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 992px) and (min-width: 769px) {
+    .about-page .team-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 25px;
+    }
+    
+    .about-page .team-member {
+        padding: 30px 15px;
+    }
+    
+    .about-page .member-image {
+        width: 130px;
+        height: 130px;
+    }
+    
+    .about-page .member-info h3 {
+        font-size: 1.2rem;
+    }
+    
+    .about-page .member-skills span {
+        font-size: 0.8rem;
+        padding: 5px 10px;
+    }
 }
