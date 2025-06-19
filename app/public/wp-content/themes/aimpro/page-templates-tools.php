@@ -91,30 +91,6 @@ get_header(); ?>
                 </div>
             <?php else : ?>                <!-- Default/Demo Content -->
                 <div class="tools-grid">
-                    <!-- PPC Calculator -->
-                    <div class="tool-card" data-category="ppc">
-                        <div class="tool-content">
-                            <div class="tool-header">
-                                <div class="tool-icon">
-                                    <i class="fas fa-calculator"></i>
-                                </div>
-                                <div class="tool-meta">
-                                    <span class="tool-type">Calculator</span>
-                                    <span class="tool-category">PPC</span>
-                                </div>
-                            </div>
-                            <h3>PPC ROI Calculator</h3>
-                            <p>Calculate your pay-per-click advertising return on investment and optimize your ad spend.</p>
-                            <ul class="tool-features">
-                                <li>Instant ROI calculations</li>
-                                <li>Budget optimization tips</li>
-                                <li>Performance benchmarks</li>
-                            </ul>
-                            <div class="tool-footer">
-                                <a href="#" class="btn-primary">Use Calculator</a>
-                            </div>
-                        </div>
-                    </div>
 
                     <!-- Content Calendar -->
                     <div class="tool-card" data-category="content">

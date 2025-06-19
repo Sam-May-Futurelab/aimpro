@@ -176,24 +176,6 @@ get_header(); ?>
                     </div>
                 </div>
 
-                <!-- Lead Magnet 2: PPC Calculator -->
-                <div class="lead-magnet">
-                    <div class="magnet-header">
-                        <div class="magnet-icon">
-                            <i class="fas fa-calculator"></i>
-                        </div>
-                        <span class="magnet-badge">Free Tool</span>
-                    </div>
-                    <h3>PPC ROI Calculator</h3>
-                    <p>Calculate your pay-per-click advertising return on investment and optimize your ad spend for maximum results.</p>
-                    <ul class="magnet-benefits">
-                        <li>✓ Instant ROI calculations</li>
-                        <li>✓ Budget optimization tips</li>
-                        <li>✓ Performance benchmarks</li>
-                    </ul>
-                    <a href="#ppc-calculator" class="btn-primary magnet-cta">Use Calculator</a>
-                </div>
-
                 <!-- Lead Magnet 3: Marketing Audit -->
                 <div class="lead-magnet featured-magnet">
                     <div class="magnet-header">

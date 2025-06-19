@@ -107,9 +107,9 @@ Certification Guidance';
     
     // Featured Resource 2
     $resources_featured2_type = get_post_meta($post->ID, 'resources_featured2_type', true) ?: 'Tool';
-    $resources_featured2_title = get_post_meta($post->ID, 'resources_featured2_title', true) ?: 'PPC ROI Calculator';
-    $resources_featured2_description = get_post_meta($post->ID, 'resources_featured2_description', true) ?: 'Calculate your pay-per-click advertising return on investment with our easy-to-use tool.';
-    $resources_featured2_link_text = get_post_meta($post->ID, 'resources_featured2_link_text', true) ?: 'Use Calculator';
+    $resources_featured2_title = get_post_meta($post->ID, 'resources_featured2_title', true) ?: 'Marketing Tool';
+    $resources_featured2_description = get_post_meta($post->ID, 'resources_featured2_description', true) ?: 'Access our powerful marketing tools to optimize your campaigns and improve performance.';
+    $resources_featured2_link_text = get_post_meta($post->ID, 'resources_featured2_link_text', true) ?: 'Access Tool';
     $resources_featured2_link_url = get_post_meta($post->ID, 'resources_featured2_link_url', true) ?: '#';
     
     // Featured Resource 3
