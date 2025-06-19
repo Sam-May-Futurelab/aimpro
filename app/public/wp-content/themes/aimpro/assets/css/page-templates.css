@@ -2170,3 +2170,29 @@ ul {
     list-style-type: none !important;
     padding-left: 0 !important;
 }
+
+/* SEO Services Page - Force vertical tool lists */
+.service-item .service-features,
+.service-item ul,
+.services-grid .service-features,
+.services-grid ul {
+    display: block !important;
+    columns: none !important;
+    column-count: 1 !important;
+    -webkit-columns: none !important;
+    -moz-columns: none !important;
+}
+
+.service-item .service-features li,
+.service-item ul li,
+.services-grid .service-features li,
+.services-grid ul li {
+    display: block !important;
+    width: 100% !important;
+    float: none !important;
+    clear: both !important;
+    margin-bottom: 8px !important;
+    break-inside: avoid !important;
+    page-break-inside: avoid !important;
+    -webkit-column-break-inside: avoid !important;
+}

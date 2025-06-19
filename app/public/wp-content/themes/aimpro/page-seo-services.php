@@ -214,31 +214,71 @@ $header_subtitle = get_post_meta(get_the_ID(), '_seo_header_subtitle', true) ?: 
                 </div>
             </div>
         </section>        <!-- SEO Tools & Technologies -->
-        <section class="seo-tools">
-            <div class="section-content">
-                <?php
-                $tools_title = get_post_meta(get_the_ID(), '_seo_tools_title', true) ?: $defaults['tools_title'];
-                ?>
-                <h2 class="animate-on-scroll animate-fade-up"><?php echo esc_html($tools_title); ?></h2>
-                <div class="tools-grid">
-                    
-                    <?php for ($i = 1; $i <= 4; $i++): 
-                        $category_title = get_post_meta(get_the_ID(), "_seo_tools_category_{$i}_title", true) ?: $defaults["tools_category_{$i}_title"];
-                        $tools = get_post_meta(get_the_ID(), "_seo_tools_category_{$i}_tools", true) ?: $defaults["tools_category_{$i}_tools"];
+        <section class="service-overview">
+            <div class="container">
+                <div class="overview-content animate-on-scroll animate-fade-up">
+                    <h2>Professional SEO Tools & Technologies</h2>
+                    <p>We leverage industry-leading tools and technologies to deliver comprehensive SEO strategies that drive results.</p>
+                </div>
+                
+                <div class="services-grid">
+                    <?php 
+                    $tool_categories = array(
+                        array(
+                            'title' => 'Research & Analysis',
+                            'description' => 'Advanced keyword research and competitor analysis tools for strategic insights.',
+                            'tools' => array('Ahrefs', 'SEMrush', 'Moz Pro', 'Google Search Console'),
+                            'icon' => 'fas fa-chart-bar'
+                        ),
+                        array(
+                            'title' => 'Technical SEO',
+                            'description' => 'Comprehensive technical analysis and optimization tools for site performance.',
+                            'tools' => array('Screaming Frog', 'GTmetrix', 'Google PageSpeed Insights', 'Schema Markup Validator'),
+                            'icon' => 'fas fa-cogs'
+                        ),
+                        array(
+                            'title' => 'Content Optimization',
+                            'description' => 'Content analysis and optimization tools for improved search rankings.',
+                            'tools' => array('Surfer SEO', 'Clearscope', 'Yoast SEO', 'Google Analytics 4'),
+                            'icon' => 'fas fa-file-alt'
+                        ),                        array(
+                            'title' => 'Local SEO',
+                            'description' => 'Specialized local search optimization and reputation management tools.',
+                            'tools' => array('BrightLocal', 'Google My Business', 'Whitespark', 'ReviewTrackers'),
+                            'icon' => 'fas fa-map-marker-alt'
+                        ),
+                        array(
+                            'title' => 'Link Building',
+                            'description' => 'Advanced backlink analysis and link building strategy tools for authority building.',
+                            'tools' => array('Majestic SEO', 'Ahrefs Backlinks', 'Link Explorer', 'HARO'),
+                            'icon' => 'fas fa-link'
+                        ),
+                        array(
+                            'title' => 'Performance Tracking',
+                            'description' => 'Comprehensive monitoring and reporting tools for SEO performance measurement.',
+                            'tools' => array('Google Analytics 4', 'Search Console', 'Data Studio', 'Rank Tracker'),
+                            'icon' => 'fas fa-chart-line'
+                        )
+                    );
                     ?>
-                    <div class="tool-category animate-on-scroll animate-stagger animate-fade-up">
-                        <h3><?php echo esc_html($category_title); ?></h3>
-                        <ul class="tool-list">
-                            <?php foreach ((array)$tools as $tool): ?>
-                                <li><?php echo esc_html($tool); ?></li>
-                            <?php endforeach; ?>
-                        </ul>
-                    </div>
-                    <?php endfor; ?>
-
+                    
+                    <?php foreach ($tool_categories as $category): ?>
+                        <div class="service-item animate-on-scroll animate-stagger animate-fade-up">
+                            <div class="service-icon">
+                                <i class="<?php echo esc_attr($category['icon']); ?>"></i>
+                            </div>
+                            <h3><?php echo esc_html($category['title']); ?></h3>
+                            <p><?php echo esc_html($category['description']); ?></p>
+                            <ul class="service-features">
+                                <?php foreach ($category['tools'] as $tool): ?>
+                                    <li><?php echo esc_html($tool); ?></li>
+                                <?php endforeach; ?>
+                            </ul>
+                        </div>
+                    <?php endforeach; ?>
                 </div>
             </div>
-        </section>        <!-- SEO Industries -->
+        </section><!-- SEO Industries -->
         <section class="seo-industries">
             <div class="section-content">
                 <?php
