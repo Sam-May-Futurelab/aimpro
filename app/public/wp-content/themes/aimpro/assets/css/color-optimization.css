@@ -1,0 +1,74 @@
+/*
+ * Color Variables Optimization
+ * This file standardizes color usage to use CSS variables consistently
+ */
+
+/* Standardize all primary orange color usage to use CSS variables */
+
+/* SEO Services CSS optimizations */
+.audit-benefits ul li::before,
+.component-features li::before,
+.pricing-features ul li::before,
+.local-seo-services .service-features li::before,
+.technical-seo-services .service-features li::before {
+    color: var(--primary-orange) !important;
+}
+
+.audit-component-card:hover,
+.audit-component-card.highlight {
+    border-top: 4px solid var(--primary-orange) !important;
+}
+
+.pricing-card .pricing-button {
+    background: var(--primary-orange) !important;
+}
+
+.pricing-card .pricing-button:hover {
+    background: var(--primary-orange-dark) !important;
+}
+
+/* Buttons CSS optimizations */
+.btn-primary,
+.btn-orange,
+.cta-button {
+    background: var(--gradient-orange) !important;
+}
+
+.btn-secondary,
+.btn-outline {
+    color: var(--primary-orange) !important;
+    border-color: var(--primary-orange) !important;
+}
+
+.btn-secondary:hover,
+.btn-outline:hover {
+    background: var(--primary-orange) !important;
+}
+
+/* Hero CSS optimizations */
+.hero-highlight,
+.hero-accent {
+    color: var(--primary-orange) !important;
+}
+
+/* Footer CSS optimizations */
+.footer-cta-button,
+.newsletter-submit {
+    background: var(--gradient-orange) !important;
+}
+
+.footer-social-icon:hover,
+.footer-link:hover {
+    color: var(--primary-orange) !important;
+}
+
+/* Industry Pages CSS optimizations */
+.industry-cta .btn-primary,
+.service-card .service-icon {
+    background: var(--primary-orange) !important;
+}
+
+.feature-highlight,
+.benefit-icon {
+    color: var(--primary-orange) !important;
+}

@@ -74,10 +74,9 @@ get_header(); ?>
                                 
                                 <h3><?php echo esc_html($tool['title']); ?></h3>
                                 <p><?php echo esc_html($tool['description']); ?></p>
-                                
-                                <div class="tool-footer">
-                                    <?php if (!empty($tool['file'])) : ?>
-                                        <a href="<?php echo esc_url($tool['file']); ?>" class="btn-primary" download>
+                                  <div class="tool-footer">
+                                    <?php if (!empty($tool['file_url'])) : ?>
+                                        <a href="<?php echo esc_url($tool['file_url']); ?>" class="btn-primary" download>
                                             Download Free
                                         </a>
                                     <?php else : ?>
@@ -198,10 +197,9 @@ get_header(); ?>
                                     <?php endif; ?>
                                 </div>
                                 <h3><?php echo esc_html($resource['title']); ?></h3>
-                                <p><?php echo esc_html($resource['description']); ?></p>
-                                <div class="resource-footer">
-                                    <?php if (!empty($resource['file'])) : ?>
-                                        <a href="<?php echo esc_url($resource['file']); ?>" class="btn-primary" download>
+                                <p><?php echo esc_html($resource['description']); ?></p>                                <div class="resource-footer">
+                                    <?php if (!empty($resource['file_url'])) : ?>
+                                        <a href="<?php echo esc_url($resource['file_url']); ?>" class="btn-primary" download>
                                             Download Now
                                         </a>
                                     <?php else : ?>
