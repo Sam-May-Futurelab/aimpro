@@ -1497,3 +1497,77 @@
         font-size: 1.2rem;
     }
 }
+
+/* ======================================
+   MOBILE RESPONSIVENESS FOR SOLUTIONS GRID
+   ====================================== */
+
+/* Mobile responsiveness for solutions and automation grids */
+@media (max-width: 768px) {
+    .automation-grid,
+    .solutions-automation-grid,
+    .solutions-grid {
+        grid-template-columns: 1fr !important;
+        gap: 1.5rem;
+        margin-top: 2rem;
+    }
+    
+    .automation-card,
+    .solution-automation-card,
+    .solution-card {
+        padding: 2rem;
+    }
+    
+    .solution-icon {
+        width: 56px;
+        height: 56px;
+        margin-bottom: 1.25rem;
+    }
+    
+    .solution-icon svg {
+        width: 28px;
+        height: 28px;
+    }
+    
+    .automation-card h3,
+    .solution-automation-card h3,
+    .solution-card h3 {
+        font-size: 1.25rem;
+        margin-bottom: 0.75rem;
+    }
+    
+    .automation-card p,
+    .solution-automation-card p,
+    .solution-card p {
+        font-size: 0.95rem;
+        margin-bottom: 1.25rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .automation-card,
+    .solution-automation-card,
+    .solution-card {
+        padding: 1.5rem;
+        margin-bottom: 1rem;
+    }
+    
+    .automation-card h3,
+    .solution-automation-card h3,
+    .solution-card h3 {
+        font-size: 1.15rem;
+    }
+    
+    .automation-card p,
+    .solution-automation-card p,
+    .solution-card p {
+        font-size: 0.9rem;
+    }
+    
+    .automation-features li,
+    .solution-automation-features li,
+    .solution-features li {
+        font-size: 0.9rem;
+        padding: 0.5rem 0;
+    }
+}
