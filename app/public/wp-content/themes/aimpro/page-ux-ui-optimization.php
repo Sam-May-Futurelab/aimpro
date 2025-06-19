@@ -9,6 +9,38 @@
 
 get_header(); ?>
 
+<style>
+.tools-section .tool-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto 15px;
+}
+.tools-section .tool-icon i {
+    font-size: 2.5rem;
+}
+.tools-section .tools-category {
+    margin-top: 50px;
+    margin-bottom: 30px;
+    padding: 20px 0;
+    position: relative;
+    font-size: 1.8rem;
+}
+.tools-section .tools-grid {
+    margin-bottom: 50px;
+}
+.tools-section .section-header {
+    margin-bottom: 50px;
+    padding-top: 20px;
+}
+
+/* Rounded corners for case study sections */
+.case-study-challenge, .case-study-solution {
+    border-radius: 12px;
+    overflow: hidden;
+}
+</style>
+
 <main id="primary" class="service-page ux-ui-optimization-page">
     <!-- Breadcrumbs -->
     <div class="breadcrumbs-container">
@@ -414,104 +446,104 @@ get_header(); ?>
         </div>
     </section>    <!-- Tools & Analytics -->
     <section class="tools-section">
-        <div class="container">
+        <div class="container" style="text-align: center;">
             <div class="section-header animate-on-scroll animate-fade-up">
-                <h2>UX/UI Analysis Tools & Technologies</h2>
-                <p>We use industry-leading tools and technologies to analyze, test, and optimize your website for maximum performance.</p>
+                <h2 style="margin-bottom: 20px;">UX/UI Analysis Tools & Technologies</h2>
+                <p style="max-width: 800px; margin: 0 auto 30px;">We use industry-leading tools and technologies to analyze, test, and optimize your website for maximum performance.</p>
             </div>
             
             <h3 class="tools-category animate-on-scroll animate-fade-up">Analytics & Research</h3>
-            <div class="tools-grid animate-on-scroll animate-stagger animate-scale-up">
-                <div class="tool-card">
-                    <div class="tool-icon">
+            <div class="tools-grid animate-on-scroll animate-stagger animate-scale-up" style="justify-content: center;">
+                <div class="tool-item" style="text-align: center;">
+                    <div class="tool-icon" style="text-align: center; display: flex; justify-content: center;">
                         <i class="fab fa-google"></i>
                     </div>
-                    <h4>Google Analytics</h4>
+                    <h3>Google Analytics</h3>
                     <p>Comprehensive website analytics platform for tracking user behavior</p>
                 </div>
-                <div class="tool-card">
-                    <div class="tool-icon">
+                <div class="tool-item" style="text-align: center;">
+                    <div class="tool-icon" style="text-align: center; display: flex; justify-content: center;">
                         <i class="fas fa-mouse-pointer"></i>
                     </div>
-                    <h4>Hotjar</h4>
+                    <h3>Hotjar</h3>
                     <p>Heatmaps, session recordings, and user feedback tools</p>
                 </div>
-                <div class="tool-card">
-                    <div class="tool-icon">
+                <div class="tool-item" style="text-align: center;">
+                    <div class="tool-icon" style="text-align: center; display: flex; justify-content: center;">
                         <i class="fas fa-eye"></i>
                     </div>
-                    <h4>Crazy Egg & FullStory</h4>
+                    <h3>Crazy Egg & FullStory</h3>
                     <p>User behavior visualization and scroll depth tracking</p>
                 </div>
-                <div class="tool-card">
-                    <div class="tool-icon">
+                <div class="tool-item" style="text-align: center;">
+                    <div class="tool-icon" style="text-align: center; display: flex; justify-content: center;">
                         <i class="fas fa-users"></i>
                     </div>
-                    <h4>UserTesting & Clarity</h4>
+                    <h3>UserTesting & Clarity</h3>
                     <p>User testing platforms for real user feedback and insight</p>
                 </div>
             </div>
             
             <h3 class="tools-category animate-on-scroll animate-fade-up">Testing & Optimization</h3>
-            <div class="tools-grid animate-on-scroll animate-stagger animate-scale-up">
-                <div class="tool-card">
-                    <div class="tool-icon">
+            <div class="tools-grid animate-on-scroll animate-stagger animate-scale-up" style="justify-content: center;">
+                <div class="tool-item" style="text-align: center;">
+                    <div class="tool-icon" style="text-align: center; display: flex; justify-content: center;">
                         <i class="fab fa-google"></i>
                     </div>
-                    <h4>Google Optimize</h4>
+                    <h3>Google Optimize</h3>
                     <p>Free A/B testing platform with Google Analytics integration</p>
                 </div>
-                <div class="tool-card">
-                    <div class="tool-icon">
+                <div class="tool-item" style="text-align: center;">
+                    <div class="tool-icon" style="text-align: center; display: flex; justify-content: center;">
                         <i class="fas fa-chart-line"></i>
                     </div>
-                    <h4>Optimizely</h4>
+                    <h3>Optimizely</h3>
                     <p>Advanced experimentation platform for multivariate testing</p>
                 </div>
-                <div class="tool-card">
-                    <div class="tool-icon">
+                <div class="tool-item" style="text-align: center;">
+                    <div class="tool-icon" style="text-align: center; display: flex; justify-content: center;">
                         <i class="fas fa-bullseye"></i>
                     </div>
-                    <h4>VWO & Convert</h4>
+                    <h3>VWO & Convert</h3>
                     <p>Visual editor for creating and testing UX optimizations</p>
                 </div>
-                <div class="tool-card">
-                    <div class="tool-icon">
+                <div class="tool-item" style="text-align: center;">
+                    <div class="tool-icon" style="text-align: center; display: flex; justify-content: center;">
                         <i class="fas fa-rocket"></i>
                     </div>
-                    <h4>Unbounce & AB Tasty</h4>
+                    <h3>Unbounce & AB Tasty</h3>
                     <p>Landing page optimization and personalization tools</p>
                 </div>
             </div>
             
             <h3 class="tools-category animate-on-scroll animate-fade-up">Performance Tools</h3>
-            <div class="tools-grid animate-on-scroll animate-stagger animate-scale-up">
-                <div class="tool-card">
-                    <div class="tool-icon">
+            <div class="tools-grid animate-on-scroll animate-stagger animate-scale-up" style="justify-content: center;">
+                <div class="tool-item" style="text-align: center;">
+                    <div class="tool-icon" style="text-align: center; display: flex; justify-content: center;">
                         <i class="fas fa-tachometer-alt"></i>
                     </div>
-                    <h4>Google PageSpeed</h4>
+                    <h3>Google PageSpeed</h3>
                     <p>Performance analysis and improvement recommendations</p>
                 </div>
-                <div class="tool-card">
-                    <div class="tool-icon">
+                <div class="tool-item" style="text-align: center;">
+                    <div class="tool-icon" style="text-align: center; display: flex; justify-content: center;">
                         <i class="fas fa-stopwatch"></i>
                     </div>
-                    <h4>GTmetrix</h4>
+                    <h3>GTmetrix</h3>
                     <p>Detailed performance analysis and optimization scoring</p>
                 </div>
-                <div class="tool-card">
-                    <div class="tool-icon">
+                <div class="tool-item" style="text-align: center;">
+                    <div class="tool-icon" style="text-align: center; display: flex; justify-content: center;">
                         <i class="fas fa-lightbulb"></i>
                     </div>
-                    <h4>Lighthouse</h4>
+                    <h3>Lighthouse</h3>
                     <p>Automated website auditing tool for performance, accessibility, and SEO</p>
                 </div>
-                <div class="tool-card">
-                    <div class="tool-icon">
+                <div class="tool-item" style="text-align: center;">
+                    <div class="tool-icon" style="text-align: center; display: flex; justify-content: center;">
                         <i class="fas fa-heartbeat"></i>
                     </div>
-                    <h4>Core Web Vitals</h4>
+                    <h3>Core Web Vitals</h3>
                     <p>Google's page experience metrics for performance measurement</p>
                 </div>
             </div>
