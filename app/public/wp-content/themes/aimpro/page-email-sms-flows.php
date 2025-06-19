@@ -102,24 +102,11 @@ get_header(); ?>
                     </div>
                     <h3>VIP Customer Flows</h3>
                     <p>Exclusive communications for high-value customers with special offers and premium experiences.</p>
-                </div>
-            </div>
+                </div>            </div>
         </div>
     </section>
-                    <h3>Re-engagement Campaigns</h3>
-                    <p>Win back inactive subscribers and customers with targeted campaigns designed to rekindle interest.</p>
-                </div>
-                
-                <div class="service-item">
-                    <div class="service-icon">
-                        <i class="fas fa-crown"></i>
-                    </div>
-                    <h3>VIP Customer Flows</h3>
-                    <p>Exclusive communications for high-value customers with special offers and premium experiences.</p>
-                </div>
-            </div>
-        </div>
-    </section>    <!-- Case Study Section -->
+
+    <!-- Case Study Section -->
     <section class="case-study-section">
         <div class="container">
             <div class="case-study-content">
