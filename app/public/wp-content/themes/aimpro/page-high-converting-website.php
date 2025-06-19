@@ -487,77 +487,56 @@ get_header(); ?>
                     }
                     ?>
                 </div>
-            </div>
-        </section>        <!-- Conversion Tools -->
-        <section class="conversion-tools">
-            <div class="section-content">
-                <h2 class="animate-on-scroll animate-fade-up"><?php echo get_post_meta(get_the_ID(), 'high_converting_website_tools_title', true) ?: 'Conversion Optimization Tools'; ?></h2>
-                <div class="tools-grid">
-                    <?php                    $tools = get_post_meta(get_the_ID(), 'high_converting_website_tools', true);
-                    if (!empty($tools) && is_array($tools)) {
-                        foreach ($tools as $tool) {
-                            ?>
-                            <div class="tool-category animate-on-scroll animate-stagger animate-fade-up">
-                                <h3><?php echo esc_html($tool['category']); ?></h3>
-                                <?php if (!empty($tool['tools']) && is_array($tool['tools'])) : ?>
-                                    <ul class="tool-list">
-                                        <?php foreach ($tool['tools'] as $item) : ?>
-                                            <li><?php echo esc_html($item); ?></li>
-                                        <?php endforeach; ?>
-                                    </ul>
-                                <?php endif; ?>
-                            </div>
-                            <?php
-                        }
-                    } else {
-                        // Default conversion tools if none are set
-                        $default_tools = array(
-                            array(
-                                'category' => 'Analytics & Testing',
-                                'tools' => array(
-                                    'Google Analytics 4',
-                                    'Google Optimize',
-                                    'Hotjar heatmaps',
-                                    'Crazy Egg testing'
-                                )
-                            ),
-                            array(
-                                'category' => 'Performance Monitoring',
-                                'tools' => array(
-                                    'PageSpeed Insights',
-                                    'GTmetrix analysis',
-                                    'Core Web Vitals',
-                                    'Mobile-friendly testing'
-                                )
-                            ),
-                            array(
-                                'category' => 'User Experience',
-                                'tools' => array(
-                                    'User session recordings',
-                                    'Click tracking analysis',
-                                    'Form analytics',
-                                    'Conversion funnel analysis'
-                                )
-                            )
-                        );
-                        
-                        foreach ($default_tools as $tool) {
-                            ?>
-                            <div class="tool-category animate-on-scroll animate-stagger animate-fade-up">
-                                <h3><?php echo esc_html($tool['category']); ?></h3>
-                                <ul class="tool-list">
-                                    <?php foreach ($tool['tools'] as $item) : ?>
-                                        <li><?php echo esc_html($item); ?></li>
-                                    <?php endforeach; ?>
-                                </ul>
-                            </div>
-                            <?php
-                        }
-                    }
-                    ?>
+            </div>        </section>
+
+        <!-- Conversion Tools -->
+        <section class="service-overview">
+            <div class="container">
+                <div class="section-header animate-on-scroll animate-fade-up">
+                    <h2>Conversion Optimization Tools</h2>
+                    <p>We use industry-leading tools and technologies to analyze, test, and optimize your website's conversion performance.</p>
+                </div>
+                <div class="services-grid animate-on-scroll animate-stagger animate-scale-up">
+                    <div class="service-item">
+                        <div class="service-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <h3>Analytics & Testing</h3>
+                        <ul style="text-align: left; color: #666; line-height: 1.8;">
+                            <li>Google Analytics 4</li>
+                            <li>Google Optimize</li>
+                            <li>Hotjar Heatmaps</li>
+                            <li>Crazy Egg Testing</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="service-item">
+                        <div class="service-icon">
+                            <i class="fas fa-tachometer-alt"></i>
+                        </div>
+                        <h3>Performance Monitoring</h3>
+                        <ul style="text-align: left; color: #666; line-height: 1.8;">
+                            <li>PageSpeed Insights</li>
+                            <li>GTmetrix Analysis</li>
+                            <li>Core Web Vitals</li>
+                            <li>Mobile-Friendly Testing</li>
+                        </ul>
+                    </div>
+                      <div class="service-item">
+                        <div class="service-icon">
+                            <i class="fas fa-user-check"></i>
+                        </div>
+                        <h3>User Experience</h3>
+                        <ul style="text-align: left; color: #666; line-height: 1.8;">
+                            <li>User Session Recordings</li>
+                            <li>Click Tracking Analysis</li>
+                            <li>Form Analytics</li>
+                            <li>Conversion Funnel Analysis</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
-        </section>        <!-- Website Testimonial -->
+        </section><!-- Website Testimonial -->
         <section class="website-testimonial">
             <div class="section-content">
                 <div class="testimonial-content animate-on-scroll animate-fade-up">

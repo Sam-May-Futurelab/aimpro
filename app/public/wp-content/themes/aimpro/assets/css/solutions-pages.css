@@ -424,6 +424,7 @@
     grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
     gap: 2rem;
     margin-top: 3rem;
+    align-items: stretch;
 }
 
 /* Business Type Card */
@@ -438,6 +439,9 @@
     transition: all 0.3s ease;
     position: relative;
     overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
 }
 
 .business-type-card::before,
@@ -511,6 +515,7 @@
     list-style: none;
     padding: 0;
     margin: 0 0 1.5rem 0;
+    flex-grow: 1;
 }
 
 .strategy-list li,
@@ -546,7 +551,7 @@
     font-weight: 600;
     font-size: 0.9rem;
     text-align: center;
-    margin-top: 1rem;
+    margin-top: auto;
     box-shadow: 0 4px 15px rgba(241, 90, 37, 0.3);
 }
 
