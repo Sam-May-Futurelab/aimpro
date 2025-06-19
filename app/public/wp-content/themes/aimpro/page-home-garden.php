@@ -360,9 +360,19 @@ $services = get_post_meta(get_the_ID(), '_home_garden_services', true) ?: array(
                     <?php endforeach; ?>
                 </div>
             </div>
-        </section>
-
-    </div>
+        </section>    </div>
 </main>
+
+<style>
+/* Improved spacing for Home & Garden benefit cards */
+.home-garden-services .benefit-card .benefit-icon {
+    margin-bottom: 1rem !important; /* Reduced from default 2rem to 1rem for better spacing */
+}
+
+.home-garden-services .benefit-card .benefit-content h3 {
+    margin-top: 0.5rem;
+    margin-bottom: 1rem;
+}
+</style>
 
 <?php get_footer(); ?>
