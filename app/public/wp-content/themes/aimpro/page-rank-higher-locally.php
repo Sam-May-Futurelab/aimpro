@@ -69,30 +69,15 @@ get_header(); ?>
                     <h2><?php echo esc_html(get_post_meta(get_the_ID(), '_rank_higher_locally_services_title', true) ?: 'Our Local SEO Services'); ?></h2>
                 </div>                <div class="services-grid">
                     <?php
-                    $services = get_post_meta(get_the_ID(), '_rank_higher_locally_services', true);
-                    if (empty($services)) {
-                        $services = array(
+                    // Force use of updated hardcoded services array
+                    $services = array(
                             array(
                                 'title' => 'Google My Business Optimization',
-                                'description' => 'Maximize your Google My Business profile to appear prominently in local search results and Google Maps.',
-                                'features' => array(
+                                'description' => 'Maximize your Google My Business profile to appear prominently in local search results and Google Maps.',                                'features' => array(
                                     'Complete profile optimization',
                                     'Regular posting and updates',
-                                    'Photo and video optimization',
-                                    'Q&A management'
-                                ),
-                                'icon' => 'fab fa-google'
-                            ),
-                            array(
-                                'title' => 'Local Citation Building',
-                                'description' => 'Build consistent business listings across local directories to improve search visibility and credibility.',
-                                'features' => array(
-                                    'Directory submission campaigns',
-                                    'NAP consistency monitoring',
-                                    'Industry-specific citations',
-                                    'Citation cleanup & corrections'
-                                ),
-                                'icon' => 'fas fa-building'
+                                    'Photo and video optimization'
+                                ),                                'icon' => 'fab fa-google'
                             ),
                             array(
                                 'title' => 'Review Management',
@@ -113,11 +98,9 @@ get_header(); ?>
                                     'Location page creation',
                                     'Service area optimization',
                                     'Local content strategy'
-                                ),
-                                'icon' => 'fas fa-search-location'
+                                ),                                'icon' => 'fas fa-search-location'
                             )
                         );
-                    }
                     
                     foreach ($services as $service) :
                     ?>
@@ -271,54 +254,61 @@ get_header(); ?>
                     <a href="<?php echo home_url('/contact'); ?>" class="btn-primary process-cta-btn">Boost Your Local Rankings</a>
                 </div>
             </div>
-        </section>
-          <!-- Local SEO Benefits -->        <section class="local-seo-benefits">
-            <div class="section-content">
-                <h2 class="animate-on-scroll animate-fade-up"><?php echo esc_html(get_post_meta(get_the_ID(), '_rank_higher_locally_benefits_title', true) ?: 'Local SEO Benefits for Your Business'); ?></h2>
-                <p class="section-description animate-on-scroll animate-fade-up"><?php echo esc_html(get_post_meta(get_the_ID(), '_rank_higher_locally_benefits_description', true) ?: 'Powerful local search optimization that drives real business results'); ?></p>
-                <div class="benefits-grid-2x2">
+        </section>        <!-- Local SEO Benefits -->        
+        <section class="service-overview">
+            <div class="container">
+                <div class="overview-content animate-on-scroll animate-fade-up">
+                    <h2><?php echo esc_html(get_post_meta(get_the_ID(), '_rank_higher_locally_benefits_title', true) ?: 'Local SEO Benefits for Your Business'); ?></h2>
+                    <p><?php echo esc_html(get_post_meta(get_the_ID(), '_rank_higher_locally_benefits_description', true) ?: 'Powerful local search optimization that drives real business results'); ?></p>
+                </div>
+                
+                <div class="services-grid">
                     <?php
-                    $benefits = get_post_meta(get_the_ID(), '_rank_higher_locally_benefits', true);
-                    if (empty($benefits)) {
-                        $benefits = array(
-                            array(
-                                'title' => 'Increased Local Visibility',
-                                'description' => 'Appear prominently when potential customers search for your services in your area.',
-                                'icon' => 'fas fa-map-marker-alt'
-                            ),
-                            array(
-                                'title' => 'More Phone Calls',
-                                'description' => 'Generate more qualified phone leads from customers ready to book or buy.',
-                                'icon' => 'fas fa-phone'
-                            ),
-                            array(
-                                'title' => 'Increased Foot Traffic',
-                                'description' => 'Drive more customers to your physical location with improved local search presence.',
-                                'icon' => 'fas fa-walking'
-                            ),
-                            array(
-                                'title' => 'Better Online Reputation',
-                                'description' => 'Build trust with positive reviews and professional online presence management.',
-                                'icon' => 'fas fa-star'
-                            )
-                        );
-                    }
+                    $benefits = array(
+                        array(
+                            'title' => 'Increased Local Visibility',
+                            'description' => 'Appear prominently when potential customers search for your services in your area.',
+                            'icon' => 'fas fa-map-marker-alt'
+                        ),
+                        array(
+                            'title' => 'More Phone Calls',
+                            'description' => 'Generate more qualified phone leads from customers ready to book or buy.',
+                            'icon' => 'fas fa-phone'
+                        ),
+                        array(
+                            'title' => 'Increased Foot Traffic',
+                            'description' => 'Drive more customers to your physical location with improved local search presence.',
+                            'icon' => 'fas fa-walking'
+                        ),                        array(
+                            'title' => 'Better Online Reputation',
+                            'description' => 'Build trust with positive reviews and professional online presence management.',
+                            'icon' => 'fas fa-star'
+                        ),
+                        array(
+                            'title' => 'Competitive Advantage',
+                            'description' => 'Outrank competitors in local search results and capture more market share.',
+                            'icon' => 'fas fa-trophy'
+                        ),
+                        array(
+                            'title' => 'Higher Conversion Rates',
+                            'description' => 'Convert more website visitors into customers with local-focused optimization.',
+                            'icon' => 'fas fa-chart-line'
+                        )
+                    );
 
                     foreach ($benefits as $benefit) :
                     ?>
-                    <div class="benefit-card compact animate-on-scroll animate-stagger animate-fade-up">
-                        <div class="benefit-icon">
+                    <div class="service-item animate-on-scroll animate-stagger animate-fade-up">
+                        <div class="service-icon">
                             <i class="<?php echo esc_attr($benefit['icon']); ?>"></i>
                         </div>
-                        <div class="benefit-content">
-                            <h3><?php echo esc_html($benefit['title']); ?></h3>
-                            <p><?php echo esc_html($benefit['description']); ?></p>
-                        </div>
+                        <h3><?php echo esc_html($benefit['title']); ?></h3>
+                        <p><?php echo esc_html($benefit['description']); ?></p>
                     </div>
                     <?php endforeach; ?>
                 </div>
             </div>
-        </section>  
+        </section>
 
         <!-- Local SEO Testimonial -->
         <section class="local-seo-testimonial">
