@@ -33,7 +33,7 @@ $services = get_post_meta(get_the_ID(), '_automotive_services', true) ?: array()
                 <p class="page-subtitle"><?php echo esc_html($header_subtitle); ?></p>
             </div>
         </section>        <!-- Industry Overview -->
-        <section class="industry-overview">
+        <section class="industry-overview animate-on-scroll animate-fade-up">
             <div class="section-content">
                 <div class="overview-content">
                     <div class="overview-text animate-on-scroll animate-slide-left">
@@ -59,7 +59,7 @@ $services = get_post_meta(get_the_ID(), '_automotive_services', true) ?: array()
                 </div>
             </div>
         </section>        <!-- Automotive Services -->
-        <section class="automotive-services">
+        <section class="automotive-services animate-on-scroll animate-fade-up">
             <div class="section-content">
                 <h2 class="animate-on-scroll animate-fade-up"><?php echo esc_html($services_title); ?></h2>
                 <div class="benefits-grid-2x2">
@@ -115,10 +115,10 @@ $services = get_post_meta(get_the_ID(), '_automotive_services', true) ?: array()
                 </div>
             </div>
         </section>        <!-- Automotive Success Story -->
-        <section class="automotive-case-study">
+        <section class="automotive-case-study animate-on-scroll animate-fade-up">
             <div class="section-content">
                 <div class="case-study-content">
-                    <div class="case-study-text">
+                    <div class="case-study-text animate-on-scroll animate-slide-left">
                         <?php 
                         $case_study_label = get_post_meta(get_the_ID(), '_automotive_case_study_label', true) ?: 'Success Story';
                         $case_study_title = get_post_meta(get_the_ID(), '_automotive_case_study_title', true) ?: 'Premier Motors: 180% Increase in Qualified Leads';
@@ -142,7 +142,7 @@ $services = get_post_meta(get_the_ID(), '_automotive_services', true) ?: array()
                         <h2><?php echo esc_html($case_study_title); ?></h2>
                         <p><?php echo esc_html($case_study_content); ?></p>
                         
-                        <div class="case-study-challenge">
+                        <div class="case-study-challenge animate-on-scroll animate-fade-up">
                             <h3><?php echo esc_html($case_study_challenge_title); ?></h3>
                             <ul>
                                 <?php foreach ($case_study_challenges as $challenge): ?>
@@ -151,7 +151,7 @@ $services = get_post_meta(get_the_ID(), '_automotive_services', true) ?: array()
                             </ul>
                         </div>
 
-                        <div class="case-study-solution">
+                        <div class="case-study-solution animate-on-scroll animate-fade-up">
                             <h3><?php echo esc_html($case_study_solution_title); ?></h3>
                             <ul>
                                 <?php foreach ($case_study_solutions as $solution): ?>
@@ -160,9 +160,9 @@ $services = get_post_meta(get_the_ID(), '_automotive_services', true) ?: array()
                             </ul>
                         </div>
                     </div>
-                    <div class="case-study-results">
+                    <div class="case-study-results animate-on-scroll animate-slide-right">
                         <?php 
-                        $case_study_results_title = get_post_meta(get_the_ID(), '_automotive_case_study_results_title', true) ?: 'Results After 6 Months';                        $case_study_results = get_post_meta(get_the_ID(), '_automotive_case_study_results', true) ?: array(
+                        $case_study_results_title = get_post_meta(get_the_ID(), '_automotive_case_study_results_title', true) ?: 'Results After 6 Months';$case_study_results = get_post_meta(get_the_ID(), '_automotive_case_study_results', true) ?: array(
                             array('number' => '180%', 'label' => 'Increase in Qualified Leads'),
                             array('number' => '250%', 'label' => 'Service Bookings Growth'),
                             array('number' => '320%', 'label' => 'Local Search Visibility'),
@@ -184,7 +184,7 @@ $services = get_post_meta(get_the_ID(), '_automotive_services', true) ?: array()
                 </div>
             </div>
         </section>        <!-- Automotive Marketing Process -->
-        <section class="automotive-process">
+        <section class="automotive-process animate-on-scroll animate-fade-up">
             <div class="section-content">
                 <?php 
                 $process_title = get_post_meta(get_the_ID(), '_automotive_process_title', true) ?: 'Our Automotive Marketing Process';
@@ -207,10 +207,10 @@ $services = get_post_meta(get_the_ID(), '_automotive_services', true) ?: array()
                     )
                 );
                 ?>
-                <h2><?php echo esc_html($process_title); ?></h2>
+                <h2 class="animate-on-scroll animate-fade-up"><?php echo esc_html($process_title); ?></h2>
                 <div class="process-steps">
                     <?php foreach ($process_steps as $index => $step): ?>
-                    <div class="process-step">
+                    <div class="process-step animate-on-scroll animate-stagger animate-slide-up">
                         <div class="step-number"><?php echo $index + 1; ?></div>
                         <div class="step-content">
                             <h3><?php echo esc_html($step['title']); ?></h3>
@@ -221,7 +221,7 @@ $services = get_post_meta(get_the_ID(), '_automotive_services', true) ?: array()
                 </div>
             </div>
         </section>        <!-- Automotive Industry Insights -->
-        <section class="automotive-insights">
+        <section class="automotive-insights animate-on-scroll animate-fade-up">
             <div class="section-content">
                 <div class="content-center">
                     <?php 
@@ -249,7 +249,7 @@ $services = get_post_meta(get_the_ID(), '_automotive_services', true) ?: array()
                         )
                     );
                     ?>
-                    <h2 class="section-title" style="text-align: center;">
+                    <h2 class="section-title animate-on-scroll animate-fade-up" style="text-align: center;">
                         <?php echo esc_html($insights_title); ?>
                         <style>
                         .automotive-insights .section-title::after {
@@ -260,7 +260,7 @@ $services = get_post_meta(get_the_ID(), '_automotive_services', true) ?: array()
                     </h2>
                     <div class="stats-grid">
                         <?php foreach ($insights as $insight): ?>
-                        <div class="stat-item">
+                        <div class="stat-item animate-on-scroll animate-stagger animate-scale-up">
                             <div class="stat-number"><?php echo esc_html($insight['stat']); ?></div>
                             <div class="stat-content">
                                 <h3 class="stat-title"><?php echo esc_html($insight['title']); ?></h3>
@@ -272,9 +272,9 @@ $services = get_post_meta(get_the_ID(), '_automotive_services', true) ?: array()
                 </div>
             </div>
         </section><!-- Automotive Testimonial -->
-        <section class="automotive-testimonial">
+        <section class="automotive-testimonial animate-on-scroll animate-fade-up">
             <div class="section-content">
-                <div class="testimonial-content">
+                <div class="testimonial-content animate-on-scroll animate-scale-up">
                     <?php 
                     $testimonial_quote = get_post_meta(get_the_ID(), '_automotive_testimonial_quote', true) ?: '"Aimpro Digital completely transformed our online presence. Their understanding of the automotive market helped us generate 180% more qualified leads and significantly improved our service department bookings. The team\'s expertise in automotive marketing is unmatched."';
                     $testimonial_name = get_post_meta(get_the_ID(), '_automotive_testimonial_name', true) ?: 'Mark Thompson';
@@ -294,7 +294,7 @@ $services = get_post_meta(get_the_ID(), '_automotive_services', true) ?: array()
                 </div>
             </div>
         </section>        <!-- CTA Section -->
-        <section class="automotive-cta text-center">
+        <section class="automotive-cta text-center animate-on-scroll animate-fade-up">
             <div class="section-content">
                 <?php 
                 $cta_title = get_post_meta(get_the_ID(), '_automotive_cta_title', true) ?: 'Ready to Accelerate Your Automotive Marketing?';
@@ -308,13 +308,13 @@ $services = get_post_meta(get_the_ID(), '_automotive_services', true) ?: array()
                     '<i class="fas fa-check" aria-hidden="true"></i> No obligation consultation'
                 );
                 ?>
-                <h2><?php echo esc_html($cta_title); ?></h2>
-                <p><?php echo esc_html($cta_subtitle); ?></p>
-                <div class="cta-buttons">
+                <h2 class="animate-on-scroll animate-fade-up"><?php echo esc_html($cta_title); ?></h2>
+                <p class="animate-on-scroll animate-fade-up"><?php echo esc_html($cta_subtitle); ?></p>
+                <div class="cta-buttons animate-on-scroll animate-scale-up">
                     <a href="<?php echo esc_url($cta_primary_url); ?>" class="btn btn-primary"><?php echo esc_html($cta_primary_text); ?></a>
                     <a href="<?php echo esc_url($cta_secondary_url); ?>" class="btn btn-secondary"><?php echo esc_html($cta_secondary_text); ?></a>
                 </div>
-                <div class="cta-benefits">
+                <div class="cta-benefits animate-on-scroll animate-fade-up">
                     <?php foreach ($cta_benefits as $benefit): ?>
                         <span class="benefit"><?php echo esc_html($benefit); ?></span>
                     <?php endforeach; ?>
