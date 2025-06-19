@@ -431,10 +431,8 @@ get_header(); ?>
             <div class="section-content">
                 <div class="cta-content">
                     <h2><?php echo esc_html(get_post_meta(get_the_ID(), '_automate_marketing_cta_title', true) ?: 'Ready to Automate Your Marketing?'); ?></h2>
-                    <p><?php echo esc_html(get_post_meta(get_the_ID(), '_automate_marketing_cta_subtitle', true) ?: 'Let\'s create a custom automation strategy that saves you time while improving your marketing results.'); ?></p>
-                    <div class="cta-buttons">
+                    <p><?php echo esc_html(get_post_meta(get_the_ID(), '_automate_marketing_cta_subtitle', true) ?: 'Let\'s create a custom automation strategy that saves you time while improving your marketing results.'); ?></p>                    <div class="cta-buttons">
                         <a href="<?php echo esc_url(home_url(get_post_meta(get_the_ID(), '_automate_marketing_cta_primary_url', true) ?: '/contact')); ?>" class="btn btn-primary"><?php echo esc_html(get_post_meta(get_the_ID(), '_automate_marketing_cta_primary_text', true) ?: 'Get Free Automation Audit'); ?></a>
-                        <a href="<?php echo esc_url(home_url(get_post_meta(get_the_ID(), '_automate_marketing_cta_secondary_url', true) ?: '/case-studies')); ?>" class="btn btn-secondary"><?php echo esc_html(get_post_meta(get_the_ID(), '_automate_marketing_cta_secondary_text', true) ?: 'View Automation Success Stories'); ?></a>
                     </div>
                     <div class="cta-features">
                         <?php

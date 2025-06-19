@@ -450,10 +450,8 @@ get_header(); ?>
             <div class="section-content">
                 <div class="cta-content animate-on-scroll animate-fade-up">
                     <h2><?php echo esc_html(get_post_meta(get_the_ID(), '_improve_roi_ads_cta_title', true) ?: 'Ready to Maximize Your Ad ROI?'); ?></h2>
-                    <p><?php echo esc_html(get_post_meta(get_the_ID(), '_improve_roi_ads_cta_subtitle', true) ?: 'Let\'s analyze your current ad performance and create a strategy to dramatically improve your return on investment.'); ?></p>
-                    <div class="cta-buttons animate-on-scroll animate-slide-up">
+                    <p><?php echo esc_html(get_post_meta(get_the_ID(), '_improve_roi_ads_cta_subtitle', true) ?: 'Let\'s analyze your current ad performance and create a strategy to dramatically improve your return on investment.'); ?></p>                    <div class="cta-buttons animate-on-scroll animate-slide-up">
                         <a href="<?php echo esc_url(home_url(get_post_meta(get_the_ID(), '_improve_roi_ads_cta_primary_url', true) ?: '/contact')); ?>" class="btn btn-primary"><?php echo esc_html(get_post_meta(get_the_ID(), '_improve_roi_ads_cta_primary_text', true) ?: 'Get Free Ad Account Audit'); ?></a>
-                        <a href="<?php echo esc_url(home_url(get_post_meta(get_the_ID(), '_improve_roi_ads_cta_secondary_url', true) ?: '/case-studies')); ?>" class="btn btn-secondary"><?php echo esc_html(get_post_meta(get_the_ID(), '_improve_roi_ads_cta_secondary_text', true) ?: 'View ROI Success Stories'); ?></a>
                     </div>
                     <div class="cta-features animate-on-scroll animate-fade-up">
                         <?php
