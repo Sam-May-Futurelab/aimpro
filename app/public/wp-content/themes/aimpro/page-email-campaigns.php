@@ -313,17 +313,32 @@ get_header(); ?>
                     <h3>Optimal Send Times</h3>
                     <p>Use data analytics to determine the best send times for your specific audience and industry.</p>
                 </div>
-                
-                <div class="service-item">
+                  <div class="service-item">
                     <div class="service-icon">
                         <i class="fas fa-shield-alt"></i>
                     </div>
                     <h3>Deliverability Focus</h3>
                     <p>Maintain high sender reputation and inbox placement through proper authentication and list hygiene.</p>
                 </div>
+                
+                <div class="service-item">
+                    <div class="service-icon">
+                        <i class="fas fa-flask"></i>
+                    </div>
+                    <h3>A/B Testing Strategy</h3>
+                    <p>Continuously test subject lines, content, and send times to optimize performance and increase open rates.</p>
+                </div>
+                
+                <div class="service-item">
+                    <div class="service-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3>Advanced Segmentation</h3>
+                    <p>Create targeted campaigns using demographic, behavioral, and engagement data for higher conversion rates.</p>
+                </div>
             </div>
         </div>
-    </section>    <!-- Tools & Platforms -->
+    </section><!-- Tools & Platforms -->
     <section class="tools-section">
         <div class="container">
             <h2 class="animate-on-scroll animate-fade-up">Email Marketing Platforms We Use</h2>
