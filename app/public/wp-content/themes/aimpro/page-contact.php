@@ -8,7 +8,19 @@
 
 get_header(); ?>
 
-<main class="contact-page">    <!-- Contact Information Section -->
+<main class="contact-page">    
+    <!-- Breadcrumbs -->
+    <div class="breadcrumbs-container">
+        <div class="container">
+            <nav class="breadcrumbs">
+                <a href="<?php echo home_url(); ?>">Home</a>
+                <span class="separator">›</span>
+                <span class="current">Contact</span>
+            </nav>
+        </div>
+    </div>
+
+    <!-- Contact Information Section -->
     <section class="company-values animate-on-scroll animate-fade-up" style="padding: 4rem 0; background: #f8f9fa;">
         <div class="container">
             <div class="section-content">
