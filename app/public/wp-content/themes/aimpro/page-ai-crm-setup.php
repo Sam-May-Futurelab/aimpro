@@ -372,17 +372,32 @@ get_header(); ?>
                     <h3>Pipedrive</h3>
                     <p>Sales-focused CRM with AI-powered sales assistant and intelligent deal recommendations.</p>
                 </div>
-                
-                <div class="service-item">
+                  <div class="service-item">
                     <div class="service-icon">
                         <i class="fas fa-envelope-open-text"></i>
                     </div>
                     <h3>ActiveCampaign</h3>
                     <p>Customer experience automation platform combining CRM, email marketing, and AI predictions.</p>
                 </div>
+                
+                <div class="service-item">
+                    <div class="service-icon">
+                        <i class="fas fa-users-cog"></i>
+                    </div>
+                    <h3>Zoho CRM</h3>
+                    <p>Comprehensive business suite with Zia AI assistant for intelligent sales forecasting and customer insights.</p>
+                </div>
+                
+                <div class="service-item">
+                    <div class="service-icon">
+                        <i class="fab fa-microsoft"></i>
+                    </div>
+                    <h3>Microsoft Dynamics 365</h3>
+                    <p>Enterprise CRM platform with built-in AI capabilities for sales acceleration and customer service automation.</p>
+                </div>
             </div>
         </div>
-    </section>    <!-- Industries Section -->
+    </section><!-- Industries Section -->
     <section class="industries-section">
         <div class="container">
             <h2 class="animate-on-scroll animate-fade-up">Industries We Serve</h2>
