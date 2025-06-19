@@ -251,65 +251,95 @@ get_header(); ?>
                         </div>
                     <?php endforeach; ?>
                 </div>
-            </div>
-        </section>        <!-- Tools & Technologies -->
-        <section class="tools-technologies">
-            <div class="section-content">
-                <?php 
-                $tools_title = get_post_meta(get_the_ID(), 'on_page_seo_tools_title', true) ?: 'Tools & Technologies We Use';
-                $tool_categories = get_post_meta(get_the_ID(), 'on_page_seo_tool_categories', true) ?: array(
-                    array(
-                        'title' => 'SEO Analysis Tools',
-                        'tools' => array(
-                            'Screaming Frog SEO Spider',
-                            'Ahrefs Site Audit',
-                            'SEMrush On-Page SEO Checker',
-                            'Google Search Console'
-                        )
-                    ),
-                    array(
-                        'title' => 'Content Optimization',
-                        'tools' => array(
-                            'Surfer SEO Content Editor',
-                            'Clearscope Content Optimization',
-                            'MarketMuse Content Planning',
-                            'Grammarly for Readability'
-                        )
-                    ),
-                    array(
-                        'title' => 'Technical Implementation',
-                        'tools' => array(
-                            'Yoast SEO (WordPress)',
-                            'Schema.org Markup',
-                            'Google Tag Manager',
-                            'Custom HTML/CSS Solutions'
-                        )
-                    ),
-                    array(
-                        'title' => 'Performance Monitoring',
-                        'tools' => array(
-                            'Google Analytics 4',
-                            'Google PageSpeed Insights',
-                            'GTmetrix Performance',
-                            'Core Web Vitals Monitoring'
-                        )
-                    )
-                );
-                ?>                <h2 class="animate-on-scroll animate-fade-up"><?php echo esc_html($tools_title); ?></h2>
-                <div class="tools-grid">
-                    <?php foreach ($tool_categories as $category): ?>
-                        <div class="tool-category animate-on-scroll animate-stagger animate-fade-up">
-                            <h3><?php echo esc_html($category['title']); ?></h3>
-                            <ul>
-                                <?php foreach ($category['tools'] as $tool): ?>
-                                    <li><?php echo esc_html($tool); ?></li>
-                                <?php endforeach; ?>
-                            </ul>
+            </div>        </section>
+
+        <!-- Tools & Technologies -->
+        <section class="service-overview">
+            <div class="container">
+                <div class="section-header animate-on-scroll animate-fade-up">
+                    <h2>Tools & Technologies We Use</h2>
+                    <p>We leverage industry-leading SEO tools and technologies to deliver exceptional on-page optimization results.</p>
+                </div>
+                <div class="services-grid animate-on-scroll animate-stagger animate-scale-up">
+                    <div class="service-item">
+                        <div class="service-icon">
+                            <i class="fas fa-spider"></i>
                         </div>
-                    <?php endforeach; ?>
+                        <h3>SEO Analysis Tools</h3>
+                        <ul style="text-align: left; color: #666; line-height: 1.8;">
+                            <li>Screaming Frog SEO Spider</li>
+                            <li>Ahrefs Site Audit</li>
+                            <li>SEMrush On-Page SEO Checker</li>
+                            <li>Google Search Console</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="service-item">
+                        <div class="service-icon">
+                            <i class="fas fa-edit"></i>
+                        </div>
+                        <h3>Content Optimization</h3>
+                        <ul style="text-align: left; color: #666; line-height: 1.8;">
+                            <li>Surfer SEO Content Editor</li>
+                            <li>Clearscope Content Optimization</li>
+                            <li>MarketMuse Content Planning</li>
+                            <li>Grammarly for Readability</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="service-item">
+                        <div class="service-icon">
+                            <i class="fas fa-code"></i>
+                        </div>
+                        <h3>Technical Implementation</h3>
+                        <ul style="text-align: left; color: #666; line-height: 1.8;">
+                            <li>Yoast SEO (WordPress)</li>
+                            <li>Schema.org Markup</li>
+                            <li>Google Tag Manager</li>
+                            <li>Custom HTML/CSS Solutions</li>
+                        </ul>
+                    </div>
+                      <div class="service-item">
+                        <div class="service-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <h3>Performance Monitoring</h3>
+                        <ul style="text-align: left; color: #666; line-height: 1.8;">
+                            <li>Google Analytics 4</li>
+                            <li>Google PageSpeed Insights</li>
+                            <li>GTmetrix Performance</li>
+                            <li>Core Web Vitals Monitoring</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="service-item">
+                        <div class="service-icon">
+                            <i class="fas fa-search"></i>
+                        </div>
+                        <h3>Keyword Research</h3>
+                        <ul style="text-align: left; color: #666; line-height: 1.8;">
+                            <li>Google Keyword Planner</li>
+                            <li>Ahrefs Keywords Explorer</li>
+                            <li>SEMrush Keyword Magic Tool</li>
+                            <li>Answer The Public</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="service-item">
+                        <div class="service-icon">
+                            <i class="fas fa-tachometer-alt"></i>
+                        </div>
+                        <h3>Site Speed Optimization</h3>
+                        <ul style="text-align: left; color: #666; line-height: 1.8;">
+                            <li>WP Rocket Caching</li>
+                            <li>Cloudflare CDN</li>
+                            <li>Image Compression Tools</li>
+                            <li>Database Optimization</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
-        </section>        <!-- Industry Applications -->
+        </section><!-- Industry Applications -->
         <section class="industry-applications">
             <div class="section-content">
                 <?php 
