@@ -76,8 +76,10 @@ function get_meta_ads_meta($key, $post_id, $defaults, $prefix = '_meta_ads_') {
                     </div>
                     <h3><?php echo esc_html(get_meta_ads_meta("service_title_{$i}", $post_id, $defaults)); ?></h3>
                     <p><?php echo esc_html(get_meta_ads_meta("service_content_{$i}", $post_id, $defaults)); ?></p>
-                </div>
-                <?php endfor; ?>
+                </div>                <?php endfor; ?>
+            </div>
+            <div class="text-center mt-5 mb-3 animate-on-scroll animate-fade-up">
+                <a href="/contact/" class="btn btn-primary">Schedule Your Meta Ads Consultation</a>
             </div>
         </div>
     </section>    <!-- Case Study Section -->

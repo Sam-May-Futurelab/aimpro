@@ -111,7 +111,15 @@ $services = get_post_meta(get_the_ID(), '_automotive_services', true) ?: array()
                             <?php endif; ?>
                         </div>
                     </div>
-                    <?php endforeach; ?>
+                    <?php endforeach; ?>                </div>
+                
+                <!-- Added Services CTA -->
+                <div class="services-cta text-center animate-on-scroll animate-fade-up" style="margin-top: 40px;">
+                    <h3>Get Expert Help With Your Automotive Marketing</h3>
+                    <p>Ready to boost your dealership's visibility and drive more qualified leads?</p>
+                    <div class="cta-buttons" style="margin-top: 20px;">
+                        <a href="<?php echo home_url('/contact'); ?>" class="btn-primary">Schedule a Free Consultation</a>
+                    </div>
                 </div>
             </div>
         </section>        <!-- Automotive Success Story -->

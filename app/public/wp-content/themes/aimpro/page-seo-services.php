@@ -128,8 +128,9 @@ $header_subtitle = get_post_meta(get_the_ID(), '_seo_header_subtitle', true) ?: 
                         </div>
                     </div>
 
-                    <?php endfor; ?>
-
+                    <?php endfor; ?>                </div>
+                <div class="text-center mt-5 mb-3 animate-on-scroll animate-fade-up">
+                    <a href="/contact/" class="btn btn-primary">Schedule a Free Consultation</a>
                 </div>
             </div>
         </section>        <!-- SEO Success Story -->
