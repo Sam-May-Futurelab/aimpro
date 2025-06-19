@@ -13,10 +13,8 @@ get_header(); ?>
                 <h1><?php echo esc_html(get_post_meta(get_the_ID(), '_ecommerce_header_title', true) ?: "E-commerce Digital Marketing"); ?></h1>
                 <p class="page-subtitle"><?php echo esc_html(get_post_meta(get_the_ID(), '_ecommerce_header_subtitle', true) ?: "Drive more traffic, increase conversions, and maximize revenue for your online store"); ?></p>
             </div>
-        </section>
-
-        <!-- Industry Overview -->
-        <section class="industry-overview">
+        </section>        <!-- Industry Overview -->
+        <section class="industry-overview animate-on-scroll animate-fade-up">
             <div class="section-content">
                 <div class="overview-content">
                     <div class="overview-text animate-on-scroll animate-slide-left">
@@ -56,15 +54,13 @@ get_header(); ?>
                     </div>
                 </div>
             </div>
-        </section>
-
-        <!-- E-commerce Services -->
-        <section class="ecommerce-services">
+        </section>        <!-- E-commerce Services -->
+        <section class="ecommerce-services animate-on-scroll animate-fade-up">
             <div class="section-content">
-                <h2>Our E-commerce Marketing Services</h2>
-                <div class="services-grid">
+                <h2 class="animate-on-scroll animate-fade-up">Our E-commerce Marketing Services</h2>
+                <div class="services-grid animate-on-scroll animate-fade-up">
                     
-                    <div class="service-card">
+                    <div class="service-card animate-on-scroll animate-stagger animate-fade-up">
                         <div class="service-icon">
                             <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <circle cx="9" cy="21" r="1" stroke="currentColor" stroke-width="2"/>
@@ -82,9 +78,7 @@ get_header(); ?>
                                 <li>Performance Max campaigns</li>
                             </ul>
                         </div>
-                    </div>
-
-                    <div class="service-card">
+                    </div>                    <div class="service-card animate-on-scroll animate-stagger animate-fade-up">
                         <div class="service-icon">
                             <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M21 21L16.514 16.506M19 10.5C19 15.194 15.194 19 10.5 19C5.806 19 2 15.194 2 10.5C2 5.806 5.806 2 10.5 2C15.194 2 19 5.806 19 10.5Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
@@ -100,9 +94,7 @@ get_header(); ?>
                                 <li>Content marketing for products</li>
                             </ul>
                         </div>
-                    </div>
-
-                    <div class="service-card">
+                    </div>                    <div class="service-card animate-on-scroll animate-stagger animate-fade-up">
                         <div class="service-icon">
                             <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M18 20V10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
@@ -120,9 +112,7 @@ get_header(); ?>
                                 <li>User-generated content campaigns</li>
                             </ul>
                         </div>
-                    </div>
-
-                    <div class="service-card">
+                    </div>                    <div class="service-card animate-on-scroll animate-stagger animate-fade-up">
                         <div class="service-icon">
                             <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M4 4H20C21.1 4 22 4.9 22 6V18C22 19.1 21.1 20 20 20H4C2.9 20 2 19.1 2 18V6C2 4.9 2.9 4 4 4Z" stroke="currentColor" stroke-width="2"/>
@@ -143,18 +133,16 @@ get_header(); ?>
 
                 </div>
             </div>
-        </section>
-
-        <!-- E-commerce Success Story -->
-        <section class="ecommerce-case-study">
+        </section>        <!-- E-commerce Success Story -->
+        <section class="ecommerce-case-study animate-on-scroll animate-fade-up">
             <div class="section-content">
                 <div class="case-study-content">
-                    <div class="case-study-text">
+                    <div class="case-study-text animate-on-scroll animate-slide-left">
                         <span class="case-study-label">Success Story</span>
                         <h2>Sports Equipment Plus: 320% Revenue Growth</h2>
                         <p>Sports Equipment Plus, an online sports retailer, needed to compete against major e-commerce platforms and increase their market share.</p>
                         
-                        <div class="case-study-challenge">
+                        <div class="case-study-challenge animate-on-scroll animate-fade-up">
                             <h3>The Challenge</h3>
                             <ul>
                                 <li>High customer acquisition costs</li>
@@ -162,9 +150,7 @@ get_header(); ?>
                                 <li>Poor product visibility in search</li>
                                 <li>Cart abandonment issues</li>
                             </ul>
-                        </div>
-
-                        <div class="case-study-solution">
+                        </div>                        <div class="case-study-solution animate-on-scroll animate-fade-up">
                             <h3>Our Solution</h3>
                             <ul>
                                 <li>Comprehensive Google Shopping optimization</li>
@@ -174,22 +160,21 @@ get_header(); ?>
                             </ul>
                         </div>
                     </div>
-                    <div class="case-study-results">
-                        <h3>Results After 8 Months</h3>
-                        <div class="results-grid">
-                            <div class="result-item">
+                    <div class="case-study-results animate-on-scroll animate-slide-right">
+                        <h3>Results After 8 Months</h3>                        <div class="results-grid">
+                            <div class="result-item animate-on-scroll animate-stagger animate-scale-up">
                                 <div class="result-number">320%</div>
                                 <div class="result-label">Revenue Growth</div>
                             </div>
-                            <div class="result-item">
+                            <div class="result-item animate-on-scroll animate-stagger animate-scale-up">
                                 <div class="result-number">180%</div>
                                 <div class="result-label">Conversion Rate Increase</div>
                             </div>
-                            <div class="result-item">
+                            <div class="result-item animate-on-scroll animate-stagger animate-scale-up">
                                 <div class="result-number">250%</div>
                                 <div class="result-label">Organic Traffic Growth</div>
                             </div>
-                            <div class="result-item">
+                            <div class="result-item animate-on-scroll animate-stagger animate-scale-up">
                                 <div class="result-number">45%</div>
                                 <div class="result-label">Cart Recovery Rate</div>
                             </div>
@@ -198,23 +183,19 @@ get_header(); ?>
                     </div>
                 </div>
             </div>
-        </section>
-
-        <!-- E-commerce Process -->
-        <section class="ecommerce-process">
+        </section>        <!-- E-commerce Process -->
+        <section class="ecommerce-process animate-on-scroll animate-fade-up">
             <div class="section-content">
-                <h2>Our E-commerce Marketing Process</h2>
-                <div class="process-steps">
+                <h2 class="animate-on-scroll animate-fade-up">Our E-commerce Marketing Process</h2>
+                <div class="process-steps animate-on-scroll animate-fade-up">
                     
-                    <div class="process-step">
+                    <div class="process-step animate-on-scroll animate-stagger animate-fade-up">
                         <div class="step-number">1</div>
                         <div class="step-content">
                             <h3>Store Audit</h3>
                             <p>Comprehensive analysis of your e-commerce platform, user experience, and current marketing performance.</p>
                         </div>
-                    </div>
-
-                    <div class="process-step">
+                    </div>                    <div class="process-step animate-on-scroll animate-stagger animate-fade-up">
                         <div class="step-number">2</div>
                         <div class="step-content">
                             <h3>Conversion Optimization</h3>
@@ -222,7 +203,7 @@ get_header(); ?>
                         </div>
                     </div>
 
-                    <div class="process-step">
+                    <div class="process-step animate-on-scroll animate-stagger animate-fade-up">
                         <div class="step-number">3</div>
                         <div class="step-content">
                             <h3>Multi-Channel Strategy</h3>
@@ -230,7 +211,7 @@ get_header(); ?>
                         </div>
                     </div>
 
-                    <div class="process-step">
+                    <div class="process-step animate-on-scroll animate-stagger animate-fade-up">
                         <div class="step-number">4</div>
                         <div class="step-content">
                             <h3>Performance Scaling</h3>
@@ -241,40 +222,38 @@ get_header(); ?>
                 </div>
             </div>
         </section>        <!-- E-commerce Insights -->
-        <section class="ecommerce-insights">
+        <section class="ecommerce-insights animate-on-scroll animate-fade-up">
             <div class="section-content">
-                <h2>E-commerce Industry Insights</h2>
-                <div class="results-grid">
+                <h2 class="animate-on-scroll animate-fade-up">E-commerce Industry Insights</h2>
+                <div class="results-grid animate-on-scroll animate-fade-up">
                     
-                    <div class="result-item">
+                    <div class="result-item animate-on-scroll animate-stagger animate-scale-up">
                         <div class="result-number">70%</div>
                         <div class="result-label">Cart Abandonment</div>
                         <p>70% of online shopping carts are abandoned before purchase</p>
-                    </div>
-
-                    <div class="result-item">
+                    </div>                    <div class="result-item animate-on-scroll animate-stagger animate-scale-up">
                         <div class="result-number">86%</div>
                         <div class="result-label">Product Research</div>
                         <p>86% of consumers research products online before buying</p>
                     </div>
 
-                    <div class="result-item">
+                    <div class="result-item animate-on-scroll animate-stagger animate-scale-up">
                         <div class="result-number">73%</div>
                         <div class="result-label">Mobile Shopping</div>
                         <p>73% of e-commerce traffic comes from mobile devices</p>
                     </div>
 
-                    <div class="result-item">
+                    <div class="result-item animate-on-scroll animate-stagger animate-scale-up">
                         <div class="result-number">92%</div>
                         <div class="result-label">Visual Influence</div>
                         <p>92% of consumers make purchasing decisions based on visual content</p>
                     </div>
                 </div>
             </div>
-        </section><!-- E-commerce Testimonial -->
-        <section class="ecommerce-testimonial">
+        </section>        <!-- E-commerce Testimonial -->
+        <section class="ecommerce-testimonial animate-on-scroll animate-fade-up">
             <div class="section-content">
-                <div class="testimonial-content">
+                <div class="testimonial-content animate-on-scroll animate-slide-up">
                     <blockquote>
                         <?php echo esc_html(get_post_meta(get_the_ID(), '_ecommerce_testimonial_quote', true) ?: "Aimpro Digital transformed our e-commerce business. Their comprehensive approach to Google Shopping, SEO, and email marketing increased our revenue by 320%. The team's expertise in e-commerce marketing is outstanding."); ?>
                     </blockquote>
@@ -288,15 +267,15 @@ get_header(); ?>
                 </div>
             </div>
         </section>        <!-- CTA Section -->
-        <section class="ecommerce-cta text-center">
+        <section class="ecommerce-cta text-center animate-on-scroll animate-fade-up">
             <div class="section-content">
-                <h2><?php echo esc_html(get_post_meta(get_the_ID(), '_ecommerce_cta_title', true) ?: "Ready to Scale Your E-commerce Business?"); ?></h2>
-                <p><?php echo esc_html(get_post_meta(get_the_ID(), '_ecommerce_cta_subtitle', true) ?: "Let's discuss how our e-commerce marketing expertise can drive more traffic, conversions, and revenue for your online store."); ?></p>
-                <div class="cta-buttons">
+                <h2 class="animate-on-scroll animate-fade-up"><?php echo esc_html(get_post_meta(get_the_ID(), '_ecommerce_cta_title', true) ?: "Ready to Scale Your E-commerce Business?"); ?></h2>
+                <p class="animate-on-scroll animate-fade-up"><?php echo esc_html(get_post_meta(get_the_ID(), '_ecommerce_cta_subtitle', true) ?: "Let's discuss how our e-commerce marketing expertise can drive more traffic, conversions, and revenue for your online store."); ?></p>
+                <div class="cta-buttons animate-on-scroll animate-fade-up">
                     <a href="<?php echo esc_url(get_post_meta(get_the_ID(), '_ecommerce_cta_primary_url', true) ?: home_url('/contact')); ?>" class="btn btn-primary"><?php echo esc_html(get_post_meta(get_the_ID(), '_ecommerce_cta_primary_text', true) ?: "Get Free E-commerce Audit"); ?></a>
                     <a href="<?php echo esc_url(get_post_meta(get_the_ID(), '_ecommerce_cta_secondary_url', true) ?: home_url('/case-studies')); ?>" class="btn btn-secondary"><?php echo esc_html(get_post_meta(get_the_ID(), '_ecommerce_cta_secondary_text', true) ?: "View E-commerce Success Stories"); ?></a>
                 </div>
-                <div class="cta-benefits">
+                <div class="cta-benefits animate-on-scroll animate-fade-up">
                     <?php 
                     $benefits = get_post_meta(get_the_ID(), '_ecommerce_cta_benefits', true);
                     if (empty($benefits)) {
