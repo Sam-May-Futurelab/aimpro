@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 /**
  * Contact Page Meta Fields
  * Adds custom meta box for Contact Page template with editable content fields
@@ -106,7 +106,7 @@ function aimpro_contact_meta_box_callback($post) {
     if (empty($contact_hours)) $contact_hours = 'Mon-Fri: 9AM-6PM';
     if (empty($contact_hours_label)) $contact_hours_label = 'Business Hours';
     if (empty($contact_form_title)) $contact_form_title = 'Send Us a Message';
-    if (empty($contact_form_subtitle)) $contact_form_subtitle = 'Fill out the form below and we\'ll get back to you within 24 hours with a customized strategy for your business.';
+    if (empty($contact_form_subtitle)) $contact_form_subtitle = 'Fill out the form below and we\'ll get back to you within 24 hours with a customised strategy for your business.';
     if (empty($contact_form_submit_text)) $contact_form_submit_text = 'Submit';
     if (empty($contact_form_name_label)) $contact_form_name_label = 'Name *';
     if (empty($contact_form_email_label)) $contact_form_email_label = 'Email *';
@@ -164,7 +164,7 @@ function aimpro_contact_meta_box_callback($post) {
     }
     .aimpro-contact-meta .description {
         font-style: italic;
-        color: #666;
+        colour: #666;
         margin-top: 5px;
     }
     .aimpro-contact-section {
@@ -176,7 +176,7 @@ function aimpro_contact_meta_box_callback($post) {
     .aimpro-contact-section h4 {
         margin: 0 0 15px 0;
         padding: 0;
-        color: #333;
+        colour: #333;
         border-bottom: 2px solid #0073aa;
         padding-bottom: 10px;
     }
@@ -505,7 +505,7 @@ function aimpro_contact_meta_box_callback($post) {
                         <label for="contact_faq_3_answer">FAQ 3 - Answer</label>
                     </th>
                     <td>
-                        <textarea id="contact_faq_3_answer" name="contact_faq_3_answer" rows="3"><?php echo esc_textarea(get_post_meta($post->ID, 'contact_faq_3_answer', true) ?: 'Our free consultation includes a comprehensive audit of your current digital marketing, competitive analysis, and a customized strategy recommendation with projected ROI.'); ?></textarea>
+                        <textarea id="contact_faq_3_answer" name="contact_faq_3_answer" rows="3"><?php echo esc_textarea(get_post_meta($post->ID, 'contact_faq_3_answer', true) ?: 'Our free consultation includes a comprehensive audit of your current digital marketing, competitive analysis, and a customised strategy recommendation with projected ROI.'); ?></textarea>
                         <p class="description">Third FAQ answer.</p>
                     </td>
                 </tr>

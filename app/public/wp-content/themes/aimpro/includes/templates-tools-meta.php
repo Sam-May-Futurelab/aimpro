@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 // Templates & Tools Page Meta Fields
 
 function add_templates_tools_meta_boxes() {
@@ -49,7 +49,7 @@ function templates_tools_meta_box_callback($post) {
         $tools = array(
             array(
                 'title' => 'SEO Audit Checklist',
-                'description' => 'Comprehensive 50-point checklist to audit your website\'s SEO performance and identify optimization opportunities.',
+                'description' => 'Comprehensive 50-point checklist to audit your website\'s SEO performance and identify optimisation opportunities.',
                 'category' => 'seo',
                 'type' => 'PDF Template',
                 'downloads' => '2,540 downloads',
@@ -58,7 +58,7 @@ function templates_tools_meta_box_callback($post) {
             ),
             array(
                 'title' => 'Keyword Research Template',
-                'description' => 'Excel template for organizing keyword research, tracking search volumes, competition, and content opportunities.',
+                'description' => 'Excel template for organising keyword research, tracking search volumes, competition, and content opportunities.',
                 'category' => 'seo',
                 'type' => 'Excel Template',
                 'downloads' => '1,890 downloads',
@@ -76,7 +76,7 @@ function templates_tools_meta_box_callback($post) {
             ),
             array(
                 'title' => 'Content Calendar Template',
-                'description' => '12-month editorial calendar template for planning, organizing, and tracking your content marketing efforts.',
+                'description' => '12-month editorial calendar template for planning, organising, and tracking your content marketing efforts.',
                 'category' => 'content',
                 'type' => 'Excel Template',
                 'downloads' => '4,120 downloads',
@@ -84,8 +84,8 @@ function templates_tools_meta_box_callback($post) {
                 'file_url' => ''
             ),
             array(
-                'title' => 'Blog Post Optimization Guide',
-                'description' => 'Step-by-step checklist for optimizing blog posts for SEO, readability, and conversion potential.',
+                'title' => 'Blog Post optimisation Guide',
+                'description' => 'Step-by-step checklist for optimising blog posts for SEO, readability, and conversion potential.',
                 'category' => 'content',
                 'type' => 'PDF Guide',
                 'downloads' => '2,890 downloads',
@@ -94,7 +94,7 @@ function templates_tools_meta_box_callback($post) {
             ),
             array(
                 'title' => 'Social Media Posting Schedule',
-                'description' => 'Optimal posting times and frequency guide for all major social media platforms to maximize engagement.',
+                'description' => 'Optimal posting times and frequency guide for all major social media platforms to maximise engagement.',
                 'category' => 'social',
                 'type' => 'PDF Guide',
                 'downloads' => '3,450 downloads',
@@ -136,7 +136,7 @@ function templates_tools_meta_box_callback($post) {
         $featured_resources = array(
             array(
                 'title' => 'Complete SEO Audit Checklist',
-                'description' => 'Our most comprehensive SEO audit checklist with 50+ optimization points.',
+                'description' => 'Our most comprehensive SEO audit checklist with 50+ optimisation points.',
                 'downloads' => '2,540 downloads',
                 'icon' => 'fas fa-clipboard-list',
                 'file_url' => ''
@@ -198,7 +198,7 @@ function templates_tools_meta_box_callback($post) {
         }
         .remove-item {
             background: #dc3232;
-            color: white;
+            colour: white;
             border: none;
             padding: 5px 10px;
             cursor: pointer;
@@ -207,7 +207,7 @@ function templates_tools_meta_box_callback($post) {
         }
         .add-item {
             background: #0073aa;
-            color: white;
+            colour: white;
             border: none;
             padding: 8px 16px;
             cursor: pointer;

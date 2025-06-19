@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 /**
  * Template Name: Chatbots
  * 
@@ -94,7 +94,7 @@ function get_chatbot_field($field_key, $post_id = null) {
                     <h3><?php echo esc_html(get_chatbot_field("service_title_{$i}")); ?></h3>
                     <p><?php echo esc_html(get_chatbot_field("service_content_{$i}")); ?></p>
                 </div>                <?php endfor; ?>            </div>
-            <div class="text-center mt-1 animate-on-scroll animate-fade-up">
+            <div class="text-centre mt-1 animate-on-scroll animate-fade-up">
                 <a href="/contact/" class="btn btn-primary">Get Your Custom Chatbot Solution</a>
             </div>
         </div>
@@ -195,8 +195,8 @@ function get_chatbot_field($field_key, $post_id = null) {
                     <div class="tool-icon">
                         <i class="fas fa-user-cog"></i>
                     </div>
-                    <h3>Personalization</h3>
-                    <p>Tailored responses based on user behavior, location, and previous interactions for relevant experiences.</p>
+                    <h3>personalisation</h3>
+                    <p>Tailored responses based on user behaviour, location, and previous interactions for relevant experiences.</p>
                 </div>
                 <div class="tool-item animate-on-scroll animate-stagger animate-fade-up">
                     <div class="tool-icon">
@@ -224,7 +224,7 @@ function get_chatbot_field($field_key, $post_id = null) {
                         <i class="fas fa-chart-line"></i>
                     </div>
                     <h3>Advanced Analytics</h3>
-                    <p>Detailed insights into conversation patterns, user satisfaction, and optimization opportunities.</p>
+                    <p>Detailed insights into conversation patterns, user satisfaction, and optimisation opportunities.</p>
                 </div>
             </div>
         </div>

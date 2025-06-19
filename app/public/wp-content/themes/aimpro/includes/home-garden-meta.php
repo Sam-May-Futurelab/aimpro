@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 // Home & Garden Page Meta Fields
 
 function add_home_garden_meta_boxes() {
@@ -54,7 +54,7 @@ function home_garden_meta_box_callback($post) {
         $services = array(
             array(
                 'icon' => 'fas fa-calendar-alt',
-                'title' => 'Seasonal Campaign Optimization',
+                'title' => 'Seasonal Campaign optimisation',
                 'description' => 'Maximize revenue during peak seasons with strategically planned campaigns that target homeowners when they\'re ready to invest in their properties.',
                 'features' => array('Spring landscaping campaigns', 'Summer maintenance promotions', 'Fall cleanup and preparation', 'Winter planning and indoor projects')
             ),
@@ -62,19 +62,19 @@ function home_garden_meta_box_callback($post) {
                 'icon' => 'fas fa-camera',
                 'title' => 'Visual Content Marketing',
                 'description' => 'Showcase stunning transformations with before/after content that demonstrates your expertise and builds trust with potential customers.',
-                'features' => array('Before/after transformation showcases', 'Time-lapse project videos', 'Pinterest optimization for inspiration', 'Instagram visual storytelling')
+                'features' => array('Before/after transformation showcases', 'Time-lapse project videos', 'Pinterest optimisation for inspiration', 'Instagram visual storytelling')
             ),
             array(
                 'icon' => 'fas fa-map-marker-alt',
                 'title' => 'Local Service Area Marketing',
                 'description' => 'Dominate your local service areas with geo-targeted campaigns that reach homeowners exactly when they need your services.',
-                'features' => array('Hyper-local SEO optimization', 'Google My Business management', 'Location-based PPC campaigns', 'Neighborhood-specific targeting')
+                'features' => array('Hyper-local SEO optimisation', 'Google My Business management', 'Location-based PPC campaigns', 'Neighborhood-specific targeting')
             ),
             array(
                 'icon' => 'fas fa-chart-line',
                 'title' => 'Lead Generation & Conversion',
-                'description' => 'Convert website visitors into paying customers with optimized landing pages, quote request forms, and follow-up automation.',
-                'features' => array('Quote request optimization', 'Consultation booking systems', 'Follow-up automation', 'Seasonal promotion campaigns')
+                'description' => 'Convert website visitors into paying customers with optimised landing pages, quote request forms, and follow-up automation.',
+                'features' => array('Quote request optimisation', 'Consultation booking systems', 'Follow-up automation', 'Seasonal promotion campaigns')
             )
         );
     }
@@ -237,7 +237,7 @@ function home_garden_meta_box_callback($post) {
         }
         .remove-item {
             background: #dc3232;
-            color: white;
+            colour: white;
             border: none;
             padding: 5px 10px;
             cursor: pointer;
@@ -246,7 +246,7 @@ function home_garden_meta_box_callback($post) {
         }
         .add-item {
             background: #0073aa;
-            color: white;
+            colour: white;
             border: none;
             padding: 8px 16px;
             cursor: pointer;
@@ -281,7 +281,7 @@ function home_garden_meta_box_callback($post) {
         }
         .upload-button {
             background: #0073aa;
-            color: white;
+            colour: white;
             border: none;
             padding: 8px 16px;
             cursor: pointer;
@@ -289,7 +289,7 @@ function home_garden_meta_box_callback($post) {
         }
         .remove-image {
             background: #dc3232;
-            color: white;
+            colour: white;
             border: none;
             padding: 8px 16px;
             cursor: pointer;
@@ -309,14 +309,14 @@ function home_garden_meta_box_callback($post) {
         }
         .remove-list-item {
             background: #dc3232;
-            color: white;
+            colour: white;
             border: none;
             padding: 5px 10px;
             cursor: pointer;
         }
         .add-list-item {
             background: #0073aa;
-            color: white;
+            colour: white;
             border: none;
             padding: 5px 10px;
             cursor: pointer;
@@ -400,7 +400,7 @@ function home_garden_meta_box_callback($post) {
                             </div>
                             <div class="item-field">
                                 <label>Title:</label>
-                                <input type="text" name="home_garden_services[<?php echo $index; ?>][title]" value="<?php echo esc_attr($service['title']); ?>" placeholder="Seasonal Campaign Optimization" />
+                                <input type="text" name="home_garden_services[<?php echo $index; ?>][title]" value="<?php echo esc_attr($service['title']); ?>" placeholder="Seasonal Campaign optimisation" />
                             </div>
                             <div class="item-field">
                                 <label>Description:</label>
@@ -430,7 +430,7 @@ function home_garden_meta_box_callback($post) {
                 </tr>
                 <tr>
                     <th><label for="home_garden_case_study_content">Case Study Content</label></th>
-                    <td><textarea id="home_garden_case_study_content" name="home_garden_case_study_content" placeholder="Blooming Gardens, a local garden center..."><?php echo esc_textarea($case_study_content); ?></textarea></td>
+                    <td><textarea id="home_garden_case_study_content" name="home_garden_case_study_content" placeholder="Blooming Gardens, a local garden centre..."><?php echo esc_textarea($case_study_content); ?></textarea></td>
                 </tr>
                 <tr>
                     <th><label for="home_garden_case_study_challenge_title">Challenge Section Title</label></th>
@@ -609,7 +609,7 @@ function home_garden_meta_box_callback($post) {
                 </tr>
                 <tr>
                     <th><label for="home_garden_testimonial_company">Company Description</label></th>
-                    <td><input type="text" id="home_garden_testimonial_company" name="home_garden_testimonial_company" value="<?php echo esc_attr($testimonial_company); ?>" placeholder="Garden Center & Landscaping Services" /></td>
+                    <td><input type="text" id="home_garden_testimonial_company" name="home_garden_testimonial_company" value="<?php echo esc_attr($testimonial_company); ?>" placeholder="Garden centre & Landscaping Services" /></td>
                 </tr>
             </table>
         </div>

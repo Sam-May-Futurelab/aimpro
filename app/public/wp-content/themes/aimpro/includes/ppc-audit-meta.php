@@ -34,11 +34,11 @@ function aimpro_get_ppc_audit_default_values() {
         
         // Service Overview Section
         'overview_title' => 'Professional PPC Campaign Audit',
-        'overview_content' => 'Is your PPC performance plateauing? Are costs rising while conversions decline? Our comprehensive PPC audit examines every aspect of your campaigns to identify opportunities for improvement, cost reduction, and performance optimization across all major advertising platforms.',
+        'overview_content' => 'Is your PPC performance plateauing? Are costs rising while conversions decline? Our comprehensive PPC audit examines every aspect of your campaigns to identify opportunities for improvement, cost reduction, and performance optimisation across all major advertising platforms.',
         
         // Service Items (6 services)
         'service_title_1' => 'Account Structure Analysis',
-        'service_content_1' => 'Comprehensive review of campaign organization, ad groups, and keyword structure for optimal performance and management.',
+        'service_content_1' => 'Comprehensive review of campaign organisation, ad groups, and keyword structure for optimal performance and management.',
         'service_icon_1' => 'fas fa-search',
         
         'service_title_2' => 'Keyword Performance Review',
@@ -50,7 +50,7 @@ function aimpro_get_ppc_audit_default_values() {
         'service_icon_3' => 'fas fa-ad',
         
         'service_title_4' => 'Landing Page Analysis',
-        'service_content_4' => 'Assessment of landing page relevance, user experience, and conversion optimization opportunities.',
+        'service_content_4' => 'Assessment of landing page relevance, user experience, and conversion optimisation opportunities.',
         'service_icon_4' => 'fas fa-mouse-pointer',
         
         'service_title_5' => 'Bidding Strategy Review',
@@ -65,26 +65,26 @@ function aimpro_get_ppc_audit_default_values() {
         'process_title' => 'Our PPC Audit Process',
         
         'process_category_title_1' => 'Account Foundation',
-        'process_category_content_1' => "Account structure optimization\nCampaign organization review\nConversion tracking validation\nGoal alignment assessment\nBudget allocation analysis",
+        'process_category_content_1' => "Account structure optimisation\nCampaign organisation review\nConversion tracking validation\nGoal alignment assessment\nBudget allocation analysis",
         'process_category_icon_1' => 'fas fa-building',
         
         'process_category_title_2' => 'Keyword Strategy',
-        'process_category_content_2' => "Keyword relevance scoring\nMatch type optimization\nSearch query analysis\nNegative keyword gaps\nKeyword bidding efficiency",
+        'process_category_content_2' => "Keyword relevance scoring\nMatch type optimisation\nSearch query analysis\nNegative keyword gaps\nKeyword bidding efficiency",
         'process_category_icon_2' => 'fas fa-key',
         
         'process_category_title_3' => 'Ad Performance',
-        'process_category_content_3' => "Ad copy effectiveness\nExtension utilization\nCreative testing strategy\nCall-to-action optimization\nAd rank factors analysis",
+        'process_category_content_3' => "Ad copy effectiveness\nExtension utilisation\nCreative testing strategy\nCall-to-action optimisation\nAd rank factors analysis",
         'process_category_icon_3' => 'fas fa-bullhorn',
         
         'process_category_title_4' => 'Landing Pages',
-        'process_category_content_4' => "Relevance and alignment\nConversion optimization\nPage speed analysis\nMobile experience review",
+        'process_category_content_4' => "Relevance and alignment\nConversion optimisation\nPage speed analysis\nMobile experience review",
         'process_category_icon_4' => 'fas fa-crosshairs',
           'process_category_title_5' => 'Targeting & Audiences',
-        'process_category_content_5' => "Geographic targeting precision\nDemographic optimization\nAudience segmentation\nDevice targeting strategy\nScheduling optimization",
+        'process_category_content_5' => "Geographic targeting precision\nDemographic optimisation\nAudience segmentation\nDevice targeting strategy\nScheduling optimisation",
         'process_category_icon_5' => 'fas fa-users',
         
         'process_category_title_6' => 'Analytics & Reporting',
-        'process_category_content_6' => "Conversion tracking accuracy\nGoal setup and attribution\nReporting dashboard optimization\nData integration review\nPerformance metrics validation",
+        'process_category_content_6' => "Conversion tracking accuracy\nGoal setup and attribution\nReporting dashboard optimisation\nData integration review\nPerformance metrics validation",
         'process_category_icon_6' => 'fas fa-chart-line',
         
         // Case Study Section
@@ -107,7 +107,7 @@ function aimpro_get_ppc_audit_default_values() {
         'deliverables_title' => 'What You Receive',
         
         'deliverable_title_1' => 'Comprehensive Report',
-        'deliverable_content_1' => 'Detailed 25+ page analysis with specific findings, scores, and prioritized recommendations for each area of your account.',
+        'deliverable_content_1' => 'Detailed 25+ page analysis with specific findings, scores, and prioritised recommendations for each area of your account.',
         'deliverable_icon_1' => 'fas fa-file-alt',
         
         'deliverable_title_2' => 'Action Plan',

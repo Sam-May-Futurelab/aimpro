@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 /**
  * Template Name: Marketing Automation Services
  * Description: Comprehensive marketing automation services overview
@@ -28,7 +28,7 @@ get_header(); ?>
                 <div class="overview-content">
                     <div class="overview-text animate-on-scroll animate-slide-left">
                         <h2><?php echo esc_html(get_post_meta(get_the_ID(), 'ma_overview_title', true) ?: 'Automate Your Way to Growth'); ?></h2>
-                        <p><?php echo esc_html(get_post_meta(get_the_ID(), 'ma_overview_description_1', true) ?: 'Our marketing automation services help you create sophisticated, personalized customer journeys that nurture leads, increase conversions, and drive revenue growth. From email sequences to AI-powered chatbots, we build automation systems that work 24/7 to grow your business.'); ?></p>
+                        <p><?php echo esc_html(get_post_meta(get_the_ID(), 'ma_overview_description_1', true) ?: 'Our marketing automation services help you create sophisticated, personalised customer journeys that nurture leads, increase conversions, and drive revenue growth. From email sequences to AI-powered chatbots, we build automation systems that work 24/7 to grow your business.'); ?></p>
                         <p><?php echo esc_html(get_post_meta(get_the_ID(), 'ma_overview_description_2', true) ?: 'By leveraging cutting-edge automation tools and AI technology, we help you deliver the right message to the right person at the right time, creating meaningful connections that drive long-term customer relationships.'); ?></p>
                     </div>
                     <div class="overview-stats animate-on-scroll animate-slide-right">
@@ -56,10 +56,10 @@ get_header(); ?>
                 <div class="services-grid">                      <div class="service-card animate-on-scroll animate-stagger animate-fade-up">
                         <div class="service-icon">
                             <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M17 21V19C17 17.9391 16.5786 16.9217 15.8284 16.1716C15.0783 15.4214 14.0609 15 13 15H5C3.93913 15 2.92172 15.4214 2.17157 16.1716C1.42143 16.9217 1 17.9391 1 19V21" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                <circle cx="9" cy="7" r="4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                <path d="M23 21V19C23 18.1645 22.7045 17.3541 22.1679 16.7116C21.6313 16.0691 20.8902 15.6316 20.07 15.4662" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                <path d="M16 3.13281C16.8902 3.29814 17.6313 3.73574 18.1679 4.37823C18.7045 5.02072 19 5.83115 19 6.66656C19 7.50197 18.7045 8.3124 18.1679 8.95489C17.6313 9.59738 16.8902 10.035 16 10.2003" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M17 21V19C17 17.9391 16.5786 16.9217 15.8284 16.1716C15.0783 15.4214 14.0609 15 13 15H5C3.93913 15 2.92172 15.4214 2.17157 16.1716C1.42143 16.9217 1 17.9391 1 19V21" stroke="currentcolour" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                <circle cx="9" cy="7" r="4" stroke="currentcolour" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M23 21V19C23 18.1645 22.7045 17.3541 22.1679 16.7116C21.6313 16.0691 20.8902 15.6316 20.07 15.4662" stroke="currentcolour" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M16 3.13281C16.8902 3.29814 17.6313 3.73574 18.1679 4.37823C18.7045 5.02072 19 5.83115 19 6.66656C19 7.50197 18.7045 8.3124 18.1679 8.95489C17.6313 9.59738 16.8902 10.035 16 10.2003" stroke="currentcolour" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                             </svg>
                         </div>
                         <div class="service-content">
@@ -78,8 +78,8 @@ get_header(); ?>
                         </div>                    </div><div class="service-card animate-on-scroll animate-stagger animate-fade-up">
                         <div class="service-icon">
                             <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M4 4H20C21.1 4 22 4.9 22 6V18C22 19.1 21.1 20 20 20H4C2.9 20 2 19.1 2 18V6C2 4.9 2.9 4 4 4Z" stroke="currentColor" stroke-width="2"/>
-                                <polyline points="22,6 12,13 2,6" stroke="currentColor" stroke-width="2"/>
+                                <path d="M4 4H20C21.1 4 22 4.9 22 6V18C22 19.1 21.1 20 20 20H4C2.9 20 2 19.1 2 18V6C2 4.9 2.9 4 4 4Z" stroke="currentcolour" stroke-width="2"/>
+                                <polyline points="22,6 12,13 2,6" stroke="currentcolour" stroke-width="2"/>
                             </svg>
                         </div>
                         <div class="service-content">
@@ -98,18 +98,18 @@ get_header(); ?>
                     </div>                    <div class="service-card animate-on-scroll animate-stagger animate-fade-up">
                         <div class="service-icon">
                             <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <rect x="3" y="4" width="18" height="18" rx="2" ry="2" stroke="currentColor" stroke-width="2"/>
-                                <line x1="16" y1="2" x2="16" y2="6" stroke="currentColor" stroke-width="2"/>
-                                <line x1="8" y1="2" x2="8" y2="6" stroke="currentColor" stroke-width="2"/>
-                                <line x1="3" y1="10" x2="21" y2="10" stroke="currentColor" stroke-width="2"/>
+                                <rect x="3" y="4" width="18" height="18" rx="2" ry="2" stroke="currentcolour" stroke-width="2"/>
+                                <line x1="16" y1="2" x2="16" y2="6" stroke="currentcolour" stroke-width="2"/>
+                                <line x1="8" y1="2" x2="8" y2="6" stroke="currentcolour" stroke-width="2"/>
+                                <line x1="3" y1="10" x2="21" y2="10" stroke="currentcolour" stroke-width="2"/>
                             </svg>
                         </div>
                         <div class="service-content">
                             <h3><?php echo esc_html(get_post_meta(get_the_ID(), 'ma_service_3_title', true) ?: 'Email Marketing Campaigns'); ?></h3>
-                            <p><?php echo esc_html(get_post_meta(get_the_ID(), 'ma_service_3_description', true) ?: 'Design and execute targeted email marketing campaigns that engage your audience and drive conversions with personalized messaging.'); ?></p>
+                            <p><?php echo esc_html(get_post_meta(get_the_ID(), 'ma_service_3_description', true) ?: 'Design and execute targeted email marketing campaigns that engage your audience and drive conversions with personalised messaging.'); ?></p>
                             <ul class="service-features">
                                 <?php 
-                                $features = get_post_meta(get_the_ID(), 'ma_service_3_features', true) ?: "Campaign strategy and planning\nEmail template design\nList segmentation and targeting\nA/B testing and optimization\nPerformance analytics and reporting";
+                                $features = get_post_meta(get_the_ID(), 'ma_service_3_features', true) ?: "Campaign strategy and planning\nEmail template design\nList segmentation and targeting\nA/B testing and optimisation\nPerformance analytics and reporting";
                                 $features_array = array_filter(array_map('trim', explode("\n", $features)));
                                 foreach ($features_array as $feature): 
                                 ?>
@@ -119,16 +119,16 @@ get_header(); ?>
                         </div>                    </div>                    <div class="service-card animate-on-scroll animate-stagger animate-fade-up">
                         <div class="service-icon">
                             <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M4.5 16.5C4.5 17.9 5.6 19 7 19H17C18.4 19 19.5 17.9 19.5 16.5V7.5C19.5 6.1 18.4 5 17 5H7C5.6 5 4.5 6.1 4.5 7.5V16.5Z" stroke="currentColor" stroke-width="2"/>
-                                <path d="M8 9L12 13L16 9" stroke="currentColor" stroke-width="2"/>
+                                <path d="M4.5 16.5C4.5 17.9 5.6 19 7 19H17C18.4 19 19.5 17.9 19.5 16.5V7.5C19.5 6.1 18.4 5 17 5H7C5.6 5 4.5 6.1 4.5 7.5V16.5Z" stroke="currentcolour" stroke-width="2"/>
+                                <path d="M8 9L12 13L16 9" stroke="currentcolour" stroke-width="2"/>
                             </svg>
                         </div>
                         <div class="service-content">
                             <h3><?php echo esc_html(get_post_meta(get_the_ID(), 'ma_service_4_title', true) ?: 'Sales Funnel Automation'); ?></h3>
-                            <p><?php echo esc_html(get_post_meta(get_the_ID(), 'ma_service_4_description', true) ?: 'Build and optimize automated sales funnels that guide prospects through your buying process and maximize conversion rates.'); ?></p>
+                            <p><?php echo esc_html(get_post_meta(get_the_ID(), 'ma_service_4_description', true) ?: 'Build and optimise automated sales funnels that guide prospects through your buying process and maximise conversion rates.'); ?></p>
                             <ul class="service-features">
                                 <?php 
-                                $features = get_post_meta(get_the_ID(), 'ma_service_4_features', true) ?: "Funnel strategy and mapping\nLead magnet creation\nAutomated follow-up sequences\nConversion optimization\nMulti-step campaign setup";
+                                $features = get_post_meta(get_the_ID(), 'ma_service_4_features', true) ?: "Funnel strategy and mapping\nLead magnet creation\nAutomated follow-up sequences\nConversion optimisation\nMulti-step campaign setup";
                                 $features_array = array_filter(array_map('trim', explode("\n", $features)));
                                 foreach ($features_array as $feature): 
                                 ?>
@@ -139,7 +139,7 @@ get_header(); ?>
                     </div>                    <div class="service-card animate-on-scroll animate-stagger animate-fade-up">
                         <div class="service-icon">
                             <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M21 15C21 15.5304 20.7893 16.0391 20.4142 16.4142C20.0391 16.7893 19.5304 17 19 17H7L3 21V5C3 4.46957 3.21071 3.96086 3.58579 3.58579C3.96086 3.21071 4.46957 3 5 3H19C19.5304 3 20.0391 3.21071 20.4142 3.58579C20.7893 3.96086 21 4.46957 21 5V15Z" stroke="currentColor" stroke-width="2"/>
+                                <path d="M21 15C21 15.5304 20.7893 16.0391 20.4142 16.4142C20.0391 16.7893 19.5304 17 19 17H7L3 21V5C3 4.46957 3.21071 3.96086 3.58579 3.58579C3.96086 3.21071 4.46957 3 5 3H19C19.5304 3 20.0391 3.21071 20.4142 3.58579C20.7893 3.96086 21 4.46957 21 5V15Z" stroke="currentcolour" stroke-width="2"/>
                             </svg>
                         </div>
                         <div class="service-content">
@@ -158,15 +158,15 @@ get_header(); ?>
                     </div>                    <div class="service-card animate-on-scroll animate-stagger animate-fade-up">
                         <div class="service-icon">
                             <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M13 2L3 14H12L11 22L21 10H12L13 2Z" stroke="currentColor" stroke-width="2"/>
+                                <path d="M13 2L3 14H12L11 22L21 10H12L13 2Z" stroke="currentcolour" stroke-width="2"/>
                             </svg>
                         </div>
                         <div class="service-content">
                             <h3><?php echo esc_html(get_post_meta(get_the_ID(), 'ma_service_6_title', true) ?: 'AI Marketing Tools'); ?></h3>
-                            <p><?php echo esc_html(get_post_meta(get_the_ID(), 'ma_service_6_description', true) ?: 'Implement cutting-edge AI tools and technologies to optimize your marketing processes and improve decision-making.'); ?></p>
+                            <p><?php echo esc_html(get_post_meta(get_the_ID(), 'ma_service_6_description', true) ?: 'Implement cutting-edge AI tools and technologies to optimise your marketing processes and improve decision-making.'); ?></p>
                             <ul class="service-features">
                                 <?php 
-                                $features = get_post_meta(get_the_ID(), 'ma_service_6_features', true) ?: "AI-powered content creation\nPredictive analytics setup\nAutomated personalization\nMachine learning optimization\nAI tool integration and training";
+                                $features = get_post_meta(get_the_ID(), 'ma_service_6_features', true) ?: "AI-powered content creation\nPredictive analytics setup\nAutomated personalisation\nMachine learning optimisation\nAI tool integration and training";
                                 $features_array = array_filter(array_map('trim', explode("\n", $features)));
                                 foreach ($features_array as $feature): 
                                 ?>
@@ -243,7 +243,7 @@ get_header(); ?>
                         <div class="step-number">1</div>
                         <div class="step-content">
                             <h3><?php echo esc_html(get_post_meta(get_the_ID(), 'ma_process_step_1_title', true) ?: 'Strategy & Planning'); ?></h3>
-                            <p><?php echo esc_html(get_post_meta(get_the_ID(), 'ma_process_step_1_description', true) ?: 'Analyze your current processes, identify automation opportunities, and create a comprehensive automation strategy.'); ?></p>
+                            <p><?php echo esc_html(get_post_meta(get_the_ID(), 'ma_process_step_1_description', true) ?: 'analyse your current processes, identify automation opportunities, and create a comprehensive automation strategy.'); ?></p>
                         </div>
                     </div>
                     <div class="process-step animate-on-scroll animate-stagger animate-fade-up">
@@ -270,8 +270,8 @@ get_header(); ?>
                     <div class="process-step animate-on-scroll animate-stagger animate-fade-up">
                         <div class="step-number">5</div>
                         <div class="step-content">
-                            <h3><?php echo esc_html(get_post_meta(get_the_ID(), 'ma_process_step_5_title', true) ?: 'Monitor & Optimize'); ?></h3>
-                            <p><?php echo esc_html(get_post_meta(get_the_ID(), 'ma_process_step_5_description', true) ?: 'Continuously monitor performance, analyze results, and optimize automation sequences for better results.'); ?></p>
+                            <h3><?php echo esc_html(get_post_meta(get_the_ID(), 'ma_process_step_5_title', true) ?: 'Monitor & optimise'); ?></h3>
+                            <p><?php echo esc_html(get_post_meta(get_the_ID(), 'ma_process_step_5_description', true) ?: 'Continuously monitor performance, analyse results, and optimise automation sequences for better results.'); ?></p>
                         </div>
                     </div>
                 </div>
@@ -289,7 +289,7 @@ get_header(); ?>
                             <i class="fas fa-users-cog"></i>
                         </div>
                         <h3>CRM Platforms</h3>
-                        <ul style="text-align: left; color: #666; line-height: 1.8;">
+                        <ul style="text-align: left; colour: #666; line-height: 1.8;">
                             <li>HubSpot CRM</li>
                             <li>Salesforce</li>
                             <li>Pipedrive</li>
@@ -303,7 +303,7 @@ get_header(); ?>
                             <i class="fas fa-envelope-open-text"></i>
                         </div>
                         <h3>Email Automation</h3>
-                        <ul style="text-align: left; color: #666; line-height: 1.8;">
+                        <ul style="text-align: left; colour: #666; line-height: 1.8;">
                             <li>Mailchimp</li>
                             <li>ConvertKit</li>
                             <li>Klaviyo</li>
@@ -317,7 +317,7 @@ get_header(); ?>
                             <i class="fas fa-robot"></i>
                         </div>
                         <h3>Chatbot Platforms</h3>
-                        <ul style="text-align: left; color: #666; line-height: 1.8;">
+                        <ul style="text-align: left; colour: #666; line-height: 1.8;">
                             <li>Intercom</li>
                             <li>Drift</li>
                             <li>ManyChat</li>
@@ -330,7 +330,7 @@ get_header(); ?>
                             <i class="fas fa-brain"></i>
                         </div>
                         <h3>AI & Analytics</h3>
-                        <ul style="text-align: left; color: #666; line-height: 1.8;">
+                        <ul style="text-align: left; colour: #666; line-height: 1.8;">
                             <li>Google Analytics 4</li>
                             <li>Zapier</li>
                             <li>Make (formerly Integromat)</li>
@@ -344,7 +344,7 @@ get_header(); ?>
                             <i class="fas fa-share-alt"></i>
                         </div>
                         <h3>Social Media Management</h3>
-                        <ul style="text-align: left; color: #666; line-height: 1.8;">
+                        <ul style="text-align: left; colour: #666; line-height: 1.8;">
                             <li>Hootsuite</li>
                             <li>Buffer</li>
                             <li>Sprout Social</li>
@@ -358,7 +358,7 @@ get_header(); ?>
                             <i class="fas fa-cogs"></i>
                         </div>
                         <h3>Marketing Automation Platforms</h3>
-                        <ul style="text-align: left; color: #666; line-height: 1.8;">
+                        <ul style="text-align: left; colour: #666; line-height: 1.8;">
                             <li>Marketo</li>
                             <li>Pardot</li>
                             <li>Autopilot</li>
@@ -436,8 +436,8 @@ get_header(); ?>
                 <div class="testimonial-content">
                     <div class="quote-icon">
                         <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M3 21C3 17.4 5.4 17.4 5.4 17.4H9V21H3Z" stroke="currentColor" stroke-width="2"/>
-                            <path d="M15 21C15 17.4 17.4 17.4 17.4 17.4H21V21H15Z" stroke="currentColor" stroke-width="2"/>
+                            <path d="M3 21C3 17.4 5.4 17.4 5.4 17.4H9V21H3Z" stroke="currentcolour" stroke-width="2"/>
+                            <path d="M15 21C15 17.4 17.4 17.4 17.4 17.4H21V21H15Z" stroke="currentcolour" stroke-width="2"/>
                         </svg>
                     </div>
                     <blockquote>

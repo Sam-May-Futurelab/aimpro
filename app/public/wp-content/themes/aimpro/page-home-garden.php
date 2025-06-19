@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 /**
  * Template Name: Home & Garden Industry Page
  * Description: Digital marketing for home and garden businesses
@@ -10,7 +10,7 @@ get_header();
 $header_title = get_post_meta(get_the_ID(), '_home_garden_header_title', true) ?: 'Home & Garden Digital Marketing';
 $header_subtitle = get_post_meta(get_the_ID(), '_home_garden_header_subtitle', true) ?: 'Grow your home improvement business with seasonal campaigns and local marketing strategies';
 $overview_title = get_post_meta(get_the_ID(), '_home_garden_overview_title', true) ?: 'Cultivate Your Home & Garden Business Growth';
-$overview_content = get_post_meta(get_the_ID(), '_home_garden_overview_content', true) ?: 'The home and garden industry is highly seasonal and location-dependent. Our specialized marketing strategies help landscapers, garden centers, contractors, and home improvement businesses maximize their peak seasons while maintaining steady growth year-round.';
+$overview_content = get_post_meta(get_the_ID(), '_home_garden_overview_content', true) ?: 'The home and garden industry is highly seasonal and location-dependent. Our specialised marketing strategies help landscapers, garden centres, contractors, and home improvement businesses maximise their peak seasons while maintaining steady growth year-round.';
 $overview_image = get_post_meta(get_the_ID(), '_home_garden_overview_image', true);
 $challenges_title = get_post_meta(get_the_ID(), '_home_garden_challenges_title', true) ?: 'Home & Garden Marketing Challenges We Solve:';
 $challenges = get_post_meta(get_the_ID(), '_home_garden_challenges', true) ?: array(
@@ -69,7 +69,7 @@ $services = get_post_meta(get_the_ID(), '_home_garden_services', true) ?: array(
                         $services = array(
                             array(
                                 'icon' => 'fas fa-calendar-alt',
-                                'title' => 'Seasonal Campaign Optimization',
+                                'title' => 'Seasonal Campaign optimisation',
                                 'description' => 'Maximize revenue during peak seasons with strategically planned campaigns that target homeowners when they\'re ready to invest in their properties.',
                                 'features' => array('Spring landscaping campaigns', 'Summer maintenance promotions', 'Fall cleanup and preparation', 'Winter planning and indoor projects')
                             ),
@@ -77,19 +77,19 @@ $services = get_post_meta(get_the_ID(), '_home_garden_services', true) ?: array(
                                 'icon' => 'fas fa-camera',
                                 'title' => 'Visual Content Marketing',
                                 'description' => 'Showcase stunning transformations with before/after content that demonstrates your expertise and builds trust with potential customers.',
-                                'features' => array('Before/after transformation showcases', 'Time-lapse project videos', 'Pinterest optimization for inspiration', 'Instagram visual storytelling')
+                                'features' => array('Before/after transformation showcases', 'Time-lapse project videos', 'Pinterest optimisation for inspiration', 'Instagram visual storytelling')
                             ),
                             array(
                                 'icon' => 'fas fa-map-marker-alt',
                                 'title' => 'Local Service Area Marketing',
                                 'description' => 'Dominate your local service areas with geo-targeted campaigns that reach homeowners exactly when they need your services.',
-                                'features' => array('Hyper-local SEO optimization', 'Google My Business management', 'Location-based PPC campaigns', 'Neighborhood-specific targeting')
+                                'features' => array('Hyper-local SEO optimisation', 'Google My Business management', 'Location-based PPC campaigns', 'Neighborhood-specific targeting')
                             ),
                             array(
                                 'icon' => 'fas fa-chart-line',
                                 'title' => 'Lead Generation & Conversion',
-                                'description' => 'Convert website visitors into paying customers with optimized landing pages, quote request forms, and follow-up automation.',
-                                'features' => array('Quote request optimization', 'Consultation booking systems', 'Follow-up automation', 'Seasonal promotion campaigns')
+                                'description' => 'Convert website visitors into paying customers with optimised landing pages, quote request forms, and follow-up automation.',
+                                'features' => array('Quote request optimisation', 'Consultation booking systems', 'Follow-up automation', 'Seasonal promotion campaigns')
                             )
                         );
                     }
@@ -122,7 +122,7 @@ $services = get_post_meta(get_the_ID(), '_home_garden_services', true) ?: array(
                         <?php 
                         $case_study_label = get_post_meta(get_the_ID(), '_home_garden_case_study_label', true) ?: 'Success Story';
                         $case_study_title = get_post_meta(get_the_ID(), '_home_garden_case_study_title', true) ?: 'Blooming Gardens: 220% Seasonal Revenue Boost';
-                        $case_study_content = get_post_meta(get_the_ID(), '_home_garden_case_study_content', true) ?: 'Blooming Gardens, a local garden center and landscaping company, needed to maximize their peak spring season while building year-round revenue streams.';
+                        $case_study_content = get_post_meta(get_the_ID(), '_home_garden_case_study_content', true) ?: 'Blooming Gardens, a local garden centre and landscaping company, needed to maximise their peak spring season while building year-round revenue streams.';
                         $case_study_challenge_title = get_post_meta(get_the_ID(), '_home_garden_case_study_challenge_title', true) ?: 'The Challenge';
                         $case_study_challenges = get_post_meta(get_the_ID(), '_home_garden_case_study_challenges', true) ?: array(
                             'Heavy dependence on 3-month peak season',
@@ -318,7 +318,7 @@ $services = get_post_meta(get_the_ID(), '_home_garden_services', true) ?: array(
                     $testimonial_quote = get_post_meta(get_the_ID(), '_home_garden_testimonial_quote', true) ?: '"Working with Aimpro Digital transformed our seasonal business model. Their strategic approach to seasonal campaigns helped us generate 220% more revenue during peak season, and their year-round content strategy keeps customers engaged even in winter. The visual marketing campaigns they created showcase our work beautifully and generate consistent inquiries."';
                     $testimonial_name = get_post_meta(get_the_ID(), '_home_garden_testimonial_name', true) ?: 'Sarah Mitchell';
                     $testimonial_position = get_post_meta(get_the_ID(), '_home_garden_testimonial_position', true) ?: 'Owner, Blooming Gardens';
-                    $testimonial_company = get_post_meta(get_the_ID(), '_home_garden_testimonial_company', true) ?: 'Garden Center & Landscaping Services';
+                    $testimonial_company = get_post_meta(get_the_ID(), '_home_garden_testimonial_company', true) ?: 'Garden centre & Landscaping Services';
                     ?>
                     <blockquote>
                         <?php echo esc_html($testimonial_quote); ?>
@@ -333,11 +333,11 @@ $services = get_post_meta(get_the_ID(), '_home_garden_services', true) ?: array(
                 </div>
             </div>
         </section>        <!-- CTA Section -->
-        <section class="home-garden-cta text-center animate-on-scroll animate-fade-up">
+        <section class="home-garden-cta text-centre animate-on-scroll animate-fade-up">
             <div class="section-content">
                 <?php 
                 $cta_title = get_post_meta(get_the_ID(), '_home_garden_cta_title', true) ?: 'Ready to Grow Your Home & Garden Business?';
-                $cta_subtitle = get_post_meta(get_the_ID(), '_home_garden_cta_subtitle', true) ?: 'Let\'s create a seasonal marketing strategy that maximizes your peak seasons and builds year-round revenue.';
+                $cta_subtitle = get_post_meta(get_the_ID(), '_home_garden_cta_subtitle', true) ?: 'Let\'s create a seasonal marketing strategy that maximises your peak seasons and builds year-round revenue.';
                 $cta_primary_text = get_post_meta(get_the_ID(), '_home_garden_cta_primary_text', true) ?: 'Get Seasonal Marketing Plan';
                 $cta_primary_url = get_post_meta(get_the_ID(), '_home_garden_cta_primary_url', true) ?: home_url('/contact');
                 $cta_secondary_text = get_post_meta(get_the_ID(), '_home_garden_cta_secondary_text', true) ?: 'View More Success Stories';

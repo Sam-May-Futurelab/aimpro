@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 /**
  * Template for displaying single blog posts
  * Includes conversion-focused sidebar with lead magnets
@@ -162,14 +162,14 @@ get_header(); ?>
                     <h3>Complete SEO Checklist for 2025</h3>
                     <p>Get our comprehensive 50-point SEO checklist to boost your search rankings and drive more organic traffic.</p>                    <ul class="magnet-benefits">
                         <li>✓ Technical SEO audit points</li>
-                        <li>✓ Content optimization tips</li>
+                        <li>✓ Content optimisation tips</li>
                         <li>✓ Local SEO strategies</li>
                     </ul>
                     <!-- Lead magnet form with inline styles to prevent CSS conflicts -->
                     <div style="overflow: hidden;">
                         <form action="#" method="post" style="display: flex; flex-direction: column; gap: 10px;">
                             <input type="email" name="email" placeholder="Enter your email" required style="width: 100%; box-sizing: border-box; padding: 12px 15px; border-radius: 8px; border: 1px solid #e5e7eb; margin: 0; font-size: 16px;">
-                            <button type="submit" style="width: 100%; box-sizing: border-box; background: linear-gradient(135deg, #f15a25 0%, #f47b51 100%); color: white; border: none; padding: 12px; border-radius: 8px; font-weight: 600; cursor: pointer; font-size: 16px;">Download Free</button>
+                            <button type="submit" style="width: 100%; box-sizing: border-box; background: linear-gradient(135deg, #f15a25 0%, #f47b51 100%); colour: white; border: none; padding: 12px; border-radius: 8px; font-weight: 600; cursor: pointer; font-size: 16px;">Download Free</button>
                             <input type="hidden" name="magnet_type" value="seo_checklist">
                         </form>
                         <p class="privacy-note">We respect your privacy. Unsubscribe anytime.</p>
@@ -201,10 +201,10 @@ get_header(); ?>
                     <p>Get weekly marketing insights and strategies delivered to your inbox.</p>
                     
                     <!-- Orange background box with inline styles to prevent any CSS conflicts -->
-                    <div style="background: linear-gradient(135deg, #f15a25 0%, #f47b51 100%); padding: 20px; border-radius: 8px; margin-top: 15px; color: white; overflow: hidden;">
+                    <div style="background: linear-gradient(135deg, #f15a25 0%, #f47b51 100%); padding: 20px; border-radius: 8px; margin-top: 15px; colour: white; overflow: hidden;">
                         <form action="#" method="post" style="display: flex; flex-direction: column; gap: 10px;">
                             <input type="email" name="email" placeholder="Enter your email" required style="width: 100%; box-sizing: border-box; padding: 12px 15px; border-radius: 8px; border: none; margin: 0; font-size: 16px;">
-                            <button type="submit" style="width: 100%; box-sizing: border-box; background: white; color: #f15a25; border: none; padding: 12px; border-radius: 8px; font-weight: 600; cursor: pointer; font-size: 16px;">Subscribe</button>
+                            <button type="submit" style="width: 100%; box-sizing: border-box; background: white; colour: #f15a25; border: none; padding: 12px; border-radius: 8px; font-weight: 600; cursor: pointer; font-size: 16px;">Subscribe</button>
                         </form>
                     </div>
                 </div>

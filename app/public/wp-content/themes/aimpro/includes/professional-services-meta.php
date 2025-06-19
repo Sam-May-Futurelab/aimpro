@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 // Professional Services Page Meta Fields
 
 function add_professional_services_meta_boxes() {
@@ -57,7 +57,7 @@ function professional_services_meta_box_callback($post) {
                 'icon' => 'fas fa-search',
                 'title' => 'Local SEO for Professional Services',
                 'description' => 'Dominate local search results when potential clients search for legal, accounting, or consulting services in your area.',
-                'features' => array('Google My Business optimization', 'Local citation building', 'Practice area keyword targeting', 'Review management and reputation')
+                'features' => array('Google My Business optimisation', 'Local citation building', 'Practice area keyword targeting', 'Review management and reputation')
             ),
             array(
                 'icon' => 'fas fa-file-alt',
@@ -69,13 +69,13 @@ function professional_services_meta_box_callback($post) {
                 'icon' => 'fab fa-linkedin',
                 'title' => 'LinkedIn Marketing for B2B',
                 'description' => 'Build professional networks and generate high-value leads through strategic LinkedIn advertising and organic engagement.',
-                'features' => array('LinkedIn profile optimization', 'Sponsored content campaigns', 'Lead generation forms', 'Professional networking strategy')
+                'features' => array('LinkedIn profile optimisation', 'Sponsored content campaigns', 'Lead generation forms', 'Professional networking strategy')
             ),
             array(
                 'icon' => 'fas fa-gavel',
                 'title' => 'Compliance-Focused PPC',
                 'description' => 'Drive qualified leads while maintaining strict adherence to professional advertising regulations and ethical guidelines.',
-                'features' => array('Google Ads for legal/professional', 'Compliance monitoring', 'High-intent keyword targeting', 'Landing page optimization')
+                'features' => array('Google Ads for legal/professional', 'Compliance monitoring', 'High-intent keyword targeting', 'Landing page optimisation')
             )
         );
     }
@@ -224,7 +224,7 @@ function professional_services_meta_box_callback($post) {
         }
         .professional-services-meta .image-upload-container {
             display: flex;
-            align-items: center;
+            align-items: centre;
             gap: 10px;
         }
         .professional-services-meta .image-preview {
@@ -241,7 +241,7 @@ function professional_services_meta_box_callback($post) {
             margin-bottom: 15px;
             padding: 10px;
             background: #0073aa;
-            color: white;
+            colour: white;
             border-radius: 3px;
         }
     </style>

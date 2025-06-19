@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 /**
  * Funnel Builds Meta Fields
  * Adds custom meta box for Funnel Builds template with editable content fields
@@ -68,12 +68,12 @@ function aimpro_funnelbuilds_meta_box_callback($post) {
         // Features Section
         'fb_feature1_title' => 'End-to-End Journey Mapping',
         'fb_feature1_description' => 'Comprehensive customer journey design that targets each stage of awareness with appropriate messaging and offers.',
-        'fb_feature2_title' => 'Behavior-Based Automation',
-        'fb_feature2_description' => 'Intelligent automation that responds to user behavior and personalizes the experience to increase conversion rates.',
+        'fb_feature2_title' => 'behaviour-Based Automation',
+        'fb_feature2_description' => 'Intelligent automation that responds to user behaviour and personalises the experience to increase conversion rates.',
         'fb_feature3_title' => 'Multi-Channel Integration',
         'fb_feature3_description' => 'Seamless integration across email, SMS, and retargeting to maintain engagement throughout the sales process.',
-        'fb_feature4_title' => 'Conversion Optimization',
-        'fb_feature4_description' => 'Continuous testing and refinement to maximize conversions at each step of your sales funnel.',
+        'fb_feature4_title' => 'Conversion optimisation',
+        'fb_feature4_description' => 'Continuous testing and refinement to maximise conversions at each step of your sales funnel.',
         
         // Case Study Section
         'fb_case_study_title' => 'How ProCoach Increased Course Sales by 825% with Our Funnel Strategy',
@@ -104,7 +104,7 @@ function aimpro_funnelbuilds_meta_box_callback($post) {
         'fb_type2_description' => 'Convert interested prospects into buyers with persuasive content, objection handling, and irresistible offers.',
         'fb_type2_items' => "Product launch funnels\nLimited-time offer funnels\nUpsell/cross-sell funnels\nHigh-ticket sales funnels",
         'fb_type3_title' => 'Membership & Course Funnels',
-        'fb_type3_description' => 'Drive enrollments to your membership site or online course with specialized funnels that showcase value and overcome hesitations.',
+        'fb_type3_description' => 'Drive enrollments to your membership site or online course with specialised funnels that showcase value and overcome hesitations.',
         'fb_type3_items' => "Free trial funnels\nWebinar-to-course funnels\nMini-course lead-in funnels\nTiered membership funnels",
         'fb_type4_title' => 'Service Business Funnels',
         'fb_type4_description' => 'Generate qualified appointments and consultations for service-based businesses with qualifying sequences and value demonstrations.',
@@ -123,10 +123,10 @@ function aimpro_funnelbuilds_meta_box_callback($post) {
         'fb_process3_description' => 'Create high-converting landing pages, forms, and email sequences with persuasive copy and design.',
         'fb_process4_number' => '4',
         'fb_process4_title' => 'Automation Setup',
-        'fb_process4_description' => 'Implement behavior-based triggers, tagging, and segmentation for personalized user journeys.',
+        'fb_process4_description' => 'Implement behaviour-based triggers, tagging, and segmentation for personalised user journeys.',
         'fb_process5_number' => '5',
-        'fb_process5_title' => 'Testing & Optimization',
-        'fb_process5_description' => 'A/B test funnel elements and refine based on data to maximize conversion rates at each step.',
+        'fb_process5_title' => 'Testing & optimisation',
+        'fb_process5_description' => 'A/B test funnel elements and refine based on data to maximise conversion rates at each step.',
         'fb_process6_number' => '6',
         'fb_process6_title' => 'Launch & Scale',
         'fb_process6_description' => 'Deploy your funnel, monitor performance, and scale traffic once conversion metrics are proven.',
@@ -151,7 +151,7 @@ function aimpro_funnelbuilds_meta_box_callback($post) {
         'fb_package3_title' => 'Complete Funnel System',
         'fb_package3_price' => '£9,997',
         'fb_package3_description' => 'End-to-end marketing and sales ecosystem',
-        'fb_package3_features' => "Full marketing ecosystem\nMultiple interconnected funnels\nWebinar or video series funnel\nComplete email marketing system\nAdvanced segmentation\nFull analytics & reporting\nConversion optimization\nSales integration & training\n30-day delivery\n90 days support\nOngoing optimization",
+        'fb_package3_features' => "Full marketing ecosystem\nMultiple interconnected funnels\nWebinar or video series funnel\nComplete email marketing system\nAdvanced segmentation\nFull analytics & reporting\nConversion optimisation\nSales integration & training\n30-day delivery\n90 days support\nOngoing optimisation",
         'fb_package3_cta' => 'Get Started',
         
         // Technology Section
@@ -191,7 +191,7 @@ function aimpro_funnelbuilds_meta_box_callback($post) {
         'fb_industry4_name' => 'E-commerce',
         'fb_industry4_description' => 'Product launches, subscription services, and direct-to-consumer brands',
         'fb_industry5_name' => 'Professional Services',
-        'fb_industry5_description' => 'Legal, financial, real estate, and specialized B2B services',
+        'fb_industry5_description' => 'Legal, financial, real estate, and specialised B2B services',
         'fb_industry6_name' => 'SaaS & Technology',
         'fb_industry6_description' => 'Free trial conversions, demo bookings, and subscription sign-ups',
         
@@ -210,7 +210,7 @@ function aimpro_funnelbuilds_meta_box_callback($post) {
         // FAQ Section
         'fb_faq_title' => 'Frequently Asked Questions',
         'fb_faq1_question' => 'How long does it take to build a complete sales funnel?',
-        'fb_faq1_answer' => 'Our standard timeline is 14-30 days depending on the complexity of your funnel. Lead generation funnels typically take 14 days, while complete sales systems with multiple paths and integrations can take up to 30 days to ensure everything is properly tested and optimized.',
+        'fb_faq1_answer' => 'Our standard timeline is 14-30 days depending on the complexity of your funnel. Lead generation funnels typically take 14 days, while complete sales systems with multiple paths and integrations can take up to 30 days to ensure everything is properly tested and optimised.',
         'fb_faq2_question' => 'Do you help with the copy and content for the funnel?',
         'fb_faq2_answer' => 'Yes, all our funnel packages include professional copywriting services. Our conversion copywriters craft compelling headlines, sales page copy, email sequences, and other content assets needed for your funnel to convert effectively.',
         'fb_faq3_question' => 'Can you work with my existing CRM or email platform?',
@@ -220,7 +220,7 @@ function aimpro_funnelbuilds_meta_box_callback($post) {
         'fb_faq5_question' => 'How do you measure the success of a funnel?',
         'fb_faq5_answer' => 'We track key metrics at each stage of your funnel, including opt-in rates, email open rates, click-through rates, sales conversion rates, and overall ROI. We provide regular reports and dashboards so you can see exactly how your funnel is performing.',
         'fb_faq6_question' => 'What if the funnel doesn\'t perform as expected?',
-        'fb_faq6_answer' => 'We stand behind our work with a performance guarantee. If your funnel doesn\'t meet the agreed-upon performance benchmarks, we\'ll continue working on optimizations and improvements at no additional cost until it does. Our goal is your success, not just delivery.'
+        'fb_faq6_answer' => 'We stand behind our work with a performance guarantee. If your funnel doesn\'t meet the agreed-upon performance benchmarks, we\'ll continue working on optimisations and improvements at no additional cost until it does. Our goal is your success, not just delivery.'
     );
     
     // Helper function to get value with default
@@ -266,7 +266,7 @@ function aimpro_funnelbuilds_meta_box_callback($post) {
         }
         .meta-description {
             font-style: italic;
-            color: #777;
+            colour: #777;
             margin-bottom: 5px;
         }
         .meta-field input[type="text"], 

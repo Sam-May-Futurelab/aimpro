@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 /**
  * Template Name: Testimonials Page
  * Description: Client testimonials and success stories
@@ -56,7 +56,7 @@ get_header(); ?>
                         <div class="testimonial-content">
                             <div class="quote-icon">
                                 <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" fill="currentColor"/>
+                                    <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" fill="currentcolour"/>
                                 </svg>
                             </div>
                             <blockquote><?php echo esc_html($quote); ?></blockquote>
@@ -119,12 +119,12 @@ get_header(); ?>
                             // Default values if not set
                             if (!$quote) {
                                 $defaults = array(
-                                    '1_1' => array('quote' => 'Aimpro Digital\'s content marketing strategy helped us establish thought leadership in our space. Our blog traffic increased by 500% and we\'re now recognized as industry experts.', 'author' => 'Jennifer Martinez', 'title' => 'CMO, CloudSync Pro'),
+                                    '1_1' => array('quote' => 'Aimpro Digital\'s content marketing strategy helped us establish thought leadership in our space. Our blog traffic increased by 500% and we\'re now recognised as industry experts.', 'author' => 'Jennifer Martinez', 'title' => 'CMO, CloudSync Pro'),
                                     '1_2' => array('quote' => 'Their technical SEO expertise was exactly what we needed. Our SaaS platform now ranks #1 for our primary keywords, resulting in 40% of our new customers coming from organic search.', 'author' => 'David Kim', 'title' => 'CEO, DataFlow Analytics'),
                                     '2_1' => array('quote' => 'Our medical practice saw a 200% increase in new patient appointments after implementing Aimpro Digital\'s local SEO strategy. Their understanding of healthcare marketing compliance is exceptional.', 'author' => 'Dr. Amanda Foster', 'title' => 'Medical Director, Foster Family Medicine'),
-                                    '2_2' => array('quote' => 'The team helped us navigate complex healthcare advertising regulations while still achieving outstanding results. Our patient acquisition cost decreased by 60%.', 'author' => 'Robert Taylor', 'title' => 'Administrator, Wellness Center Group'),
+                                    '2_2' => array('quote' => 'The team helped us navigate complex healthcare advertising regulations while still achieving outstanding results. Our patient acquisition cost decreased by 60%.', 'author' => 'Robert Taylor', 'title' => 'Administrator, Wellness centre Group'),
                                     '3_1' => array('quote' => 'Our online sales tripled within the first year of working with Aimpro Digital. Their e-commerce expertise and data-driven approach made all the difference.', 'author' => 'Lisa Thompson', 'title' => 'Owner, Artisan Home Decor'),
-                                    '3_2' => array('quote' => 'The shopping campaign optimization they implemented for our Google Ads resulted in a 250% increase in qualified traffic and 180% boost in conversions.', 'author' => 'James Wilson', 'title' => 'Marketing Director, Sports Equipment Plus'),
+                                    '3_2' => array('quote' => 'The shopping campaign optimisation they implemented for our Google Ads resulted in a 250% increase in qualified traffic and 180% boost in conversions.', 'author' => 'James Wilson', 'title' => 'Marketing Director, Sports Equipment Plus'),
                                     '4_1' => array('quote' => 'As a law firm, we needed a marketing partner who understood our industry\'s unique challenges. Aimpro Digital delivered targeted strategies that increased our qualified leads by 300%.', 'author' => 'Patricia Rodriguez', 'title' => 'Managing Partner, Rodriguez & Associates'),
                                     '4_2' => array('quote' => 'Their LinkedIn advertising strategy for our B2B consulting firm generated high-quality leads that converted at 3x our previous rate. Exceptional work and great communication.', 'author' => 'Mark Anderson', 'title' => 'Principal, Strategic Business Solutions')
                                 );

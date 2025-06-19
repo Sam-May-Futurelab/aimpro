@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 /**
  * Marketing Automation Meta Boxes
  */
@@ -32,7 +32,7 @@ function marketing_automation_meta_box_callback($post) {
     
     <style>
         .meta-box-section { margin-bottom: 30px; padding: 15px; border: 1px solid #ddd; }
-        .meta-box-section h3 { margin-top: 0; color: #23282d; }
+        .meta-box-section h3 { margin-top: 0; colour: #23282d; }
         .meta-field { margin-bottom: 15px; }
         .meta-field label { display: block; margin-bottom: 5px; font-weight: 600; }
         .meta-field input, .meta-field textarea, .meta-field select { width: 100%; }
@@ -65,7 +65,7 @@ function marketing_automation_meta_box_callback($post) {
         </div>
         <div class="meta-field">
             <label for="ma_overview_description_1">Overview Description (First Paragraph)</label>
-            <textarea id="ma_overview_description_1" name="ma_overview_description_1"><?php echo esc_textarea($values['ma_overview_description_1'][0] ?? 'Our marketing automation services help you create sophisticated, personalized customer journeys that nurture leads, increase conversions, and drive revenue growth. From email sequences to AI-powered chatbots, we build automation systems that work 24/7 to grow your business.'); ?></textarea>
+            <textarea id="ma_overview_description_1" name="ma_overview_description_1"><?php echo esc_textarea($values['ma_overview_description_1'][0] ?? 'Our marketing automation services help you create sophisticated, personalised customer journeys that nurture leads, increase conversions, and drive revenue growth. From email sequences to AI-powered chatbots, we build automation systems that work 24/7 to grow your business.'); ?></textarea>
         </div>
         <div class="meta-field">
             <label for="ma_overview_description_2">Overview Description (Second Paragraph)</label>
@@ -168,11 +168,11 @@ function marketing_automation_meta_box_callback($post) {
             </div>
             <div class="meta-field">
                 <label for="ma_service_3_description">Service 3 Description</label>
-                <textarea id="ma_service_3_description" name="ma_service_3_description"><?php echo esc_textarea($values['ma_service_3_description'][0] ?? 'Design and execute targeted email marketing campaigns that engage your audience and drive conversions with personalized messaging.'); ?></textarea>
+                <textarea id="ma_service_3_description" name="ma_service_3_description"><?php echo esc_textarea($values['ma_service_3_description'][0] ?? 'Design and execute targeted email marketing campaigns that engage your audience and drive conversions with personalised messaging.'); ?></textarea>
             </div>
             <div class="meta-field">
                 <label for="ma_service_3_features">Service 3 Features (one per line)</label>
-                <textarea id="ma_service_3_features" name="ma_service_3_features"><?php echo esc_textarea($values['ma_service_3_features'][0] ?? "Campaign strategy and planning\nEmail template design\nList segmentation and targeting\nA/B testing and optimization\nPerformance analytics and reporting"); ?></textarea>
+                <textarea id="ma_service_3_features" name="ma_service_3_features"><?php echo esc_textarea($values['ma_service_3_features'][0] ?? "Campaign strategy and planning\nEmail template design\nList segmentation and targeting\nA/B testing and optimisation\nPerformance analytics and reporting"); ?></textarea>
             </div>
             <div class="meta-field">
                 <label for="ma_service_3_metric">Service 3 Metric</label>

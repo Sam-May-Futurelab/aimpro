@@ -1,14 +1,14 @@
-<?php
+﻿<?php
 /**
  * Template Name: Technical SEO Page
- * Description: Technical SEO services for website optimization
+ * Description: Technical SEO services for website optimisation
  */
 
 get_header(); 
 
 // Get meta data with fallbacks
 $header_title = get_post_meta(get_the_ID(), 'technical_seo_header_title', true) ?: 'Technical SEO Services';
-$header_subtitle = get_post_meta(get_the_ID(), 'technical_seo_header_subtitle', true) ?: 'Optimize your website\'s technical foundation for better search engine performance';
+$header_subtitle = get_post_meta(get_the_ID(), 'technical_seo_header_subtitle', true) ?: 'optimise your website\'s technical foundation for better search engine performance';
 $hero_image = get_post_meta(get_the_ID(), 'technical_seo_hero_image', true);
 
 ?>
@@ -32,7 +32,7 @@ $hero_image = get_post_meta(get_the_ID(), 'technical_seo_hero_image', true);
                 <div class="overview-content">
                     <div class="overview-text animate-on-scroll animate-slide-left">
                         <?php                        $overview_title = get_post_meta(get_the_ID(), 'technical_seo_overview_title', true) ?: 'Build a Solid Technical Foundation for SEO Success';
-                        $overview_description = get_post_meta(get_the_ID(), 'technical_seo_overview_description', true) ?: 'Technical SEO is the backbone of search engine optimization. Our technical SEO services ensure your website is properly crawled, indexed, and understood by search engines. We fix critical technical issues that prevent your site from ranking and implement optimizations that give you a competitive edge.';
+                        $overview_description = get_post_meta(get_the_ID(), 'technical_seo_overview_description', true) ?: 'Technical SEO is the backbone of search engine optimisation. Our technical SEO services ensure your website is properly crawled, indexed, and understood by search engines. We fix critical technical issues that prevent your site from ranking and implement optimisations that give you a competitive edge.';
                         $benefits_title = get_post_meta(get_the_ID(), 'technical_seo_benefits_title', true) ?: 'Technical SEO Impact:';
                         $benefits = get_post_meta(get_the_ID(), 'technical_seo_benefits', true) ?: array(
                             'Improve site speed by up to 70%',
@@ -72,27 +72,27 @@ $hero_image = get_post_meta(get_the_ID(), 'technical_seo_hero_image', true);
                 $services_title = get_post_meta(get_the_ID(), 'technical_seo_services_title', true) ?: 'Complete Technical SEO Services';
                 $services = get_post_meta(get_the_ID(), 'technical_seo_services', true) ?: array(
                     array(
-                        'title' => 'Site Speed Optimization',
+                        'title' => 'Site Speed optimisation',
                         'description' => 'Improve your website\'s loading speed for better user experience and search rankings.',
                         'features' => array(
-                            'Page speed analysis and optimization',
-                            'Image compression and optimization',
+                            'Page speed analysis and optimisation',
+                            'Image compression and optimisation',
                             'Code minification and compression',
                             'CDN implementation',
-                            'Caching optimization',
-                            'Server response optimization'
+                            'Caching optimisation',
+                            'Server response optimisation'
                         ),
                         'results' => 'Average: 60% speed improvement',
                         'featured' => true
                     ),
                     array(
-                        'title' => 'Core Web Vitals Optimization',
-                        'description' => 'Optimize your website for Google\'s Core Web Vitals ranking factors.',
+                        'title' => 'Core Web Vitals optimisation',
+                        'description' => 'optimise your website for Google\'s Core Web Vitals ranking factors.',
                         'features' => array(
-                            'Largest Contentful Paint (LCP) optimization',
+                            'Largest Contentful Paint (LCP) optimisation',
                             'First Input Delay (FID) improvement',
                             'Cumulative Layout Shift (CLS) reduction',
-                            'First Contentful Paint (FCP) optimization',
+                            'First Contentful Paint (FCP) optimisation',
                             'Time to Interactive (TTI) improvement',
                             'Performance monitoring setup'
                         ),
@@ -103,11 +103,11 @@ $hero_image = get_post_meta(get_the_ID(), 'technical_seo_hero_image', true);
                         'title' => 'Crawlability & Indexability',
                         'description' => 'Ensure search engines can properly crawl and index your website content.',
                         'features' => array(
-                            'Robots.txt optimization',
-                            'XML sitemap creation and optimization',
+                            'Robots.txt optimisation',
+                            'XML sitemap creation and optimisation',
                             'Internal linking structure',
                             'Crawl error identification and fixing',
-                            'URL structure optimization',
+                            'URL structure optimisation',
                             'Redirect chain resolution'
                         ),
                         'results' => '100% crawlable and indexable pages',
@@ -121,20 +121,20 @@ $hero_image = get_post_meta(get_the_ID(), 'technical_seo_hero_image', true);
                             'Product and service schema',
                             'Review and rating schema',
                             'FAQ and How-to schema',
-                            'Event and organization schema',
-                            'Rich snippet optimization'
+                            'Event and organisation schema',
+                            'Rich snippet optimisation'
                         ),
                         'results' => 'Enhanced SERP appearance',
                         'featured' => false
                     ),
                     array(
-                        'title' => 'Mobile Optimization',
+                        'title' => 'Mobile optimisation',
                         'description' => 'Ensure your website provides an excellent mobile user experience.',
                         'features' => array(
                             'Mobile-friendly design implementation',
-                            'Responsive layout optimization',
-                            'Mobile page speed optimization',
-                            'Touch element optimization',
+                            'Responsive layout optimisation',
+                            'Mobile page speed optimisation',
+                            'Touch element optimisation',
                             'Mobile usability improvements',
                             'AMP implementation (if needed)'
                         ),
@@ -147,7 +147,7 @@ $hero_image = get_post_meta(get_the_ID(), 'technical_seo_hero_image', true);
                         'features' => array(
                             'SSL certificate installation',
                             'HTTPS implementation',
-                            'Security header optimization',
+                            'Security header optimisation',
                             'Mixed content resolution',
                             'Security vulnerability assessment',
                             'HSTS implementation'
@@ -164,12 +164,12 @@ $hero_image = get_post_meta(get_the_ID(), 'technical_seo_hero_image', true);
                             <div class="service-icon">
                                 <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <?php if (isset($service['featured']) && $service['featured']): ?>
-                                        <circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="2"/>
-                                        <path d="M12 1V3M12 21V23M4.22 4.22L5.64 5.64M18.36 18.36L19.78 19.78M1 12H3M21 12H23M4.22 19.78L5.64 18.36M18.36 5.64L19.78 4.22" stroke="currentColor" stroke-width="2"/>
+                                        <circle cx="12" cy="12" r="3" stroke="currentcolour" stroke-width="2"/>
+                                        <path d="M12 1V3M12 21V23M4.22 4.22L5.64 5.64M18.36 18.36L19.78 19.78M1 12H3M21 12H23M4.22 19.78L5.64 18.36M18.36 5.64L19.78 4.22" stroke="currentcolour" stroke-width="2"/>
                                     <?php else: ?>
-                                        <rect x="2" y="3" width="20" height="14" rx="2" ry="2" stroke="currentColor" stroke-width="2"/>
-                                        <line x1="8" y1="21" x2="16" y2="21" stroke="currentColor" stroke-width="2"/>
-                                        <line x1="12" y1="17" x2="12" y2="21" stroke="currentColor" stroke-width="2"/>
+                                        <rect x="2" y="3" width="20" height="14" rx="2" ry="2" stroke="currentcolour" stroke-width="2"/>
+                                        <line x1="8" y1="21" x2="16" y2="21" stroke="currentcolour" stroke-width="2"/>
+                                        <line x1="12" y1="17" x2="12" y2="21" stroke="currentcolour" stroke-width="2"/>
                                     <?php endif; ?>
                                 </svg>
                             </div>
@@ -191,7 +191,7 @@ $hero_image = get_post_meta(get_the_ID(), 'technical_seo_hero_image', true);
                             </div>
                         </div>
                     <?php endforeach; ?>                </div>
-                <div class="text-center mt-1 animate-on-scroll animate-fade-up">
+                <div class="text-centre mt-1 animate-on-scroll animate-fade-up">
                     <a href="/contact/" class="btn btn-primary">Get Your Technical SEO Audit</a>
                 </div>
             </div>
@@ -215,12 +215,12 @@ $hero_image = get_post_meta(get_the_ID(), 'technical_seo_hero_image', true);
                         );
                         $case_study_solution_title = get_post_meta(get_the_ID(), 'technical_seo_case_study_solution_title', true) ?: 'Technical SEO Solutions';
                         $case_study_solutions = get_post_meta(get_the_ID(), 'technical_seo_case_study_solutions', true) ?: array(
-                            'Comprehensive site speed optimization',
+                            'Comprehensive site speed optimisation',
                             'Core Web Vitals improvements',
-                            'Mobile optimization implementation',
+                            'Mobile optimisation implementation',
                             'Crawl error resolution',
                             'Schema markup implementation',
-                            'Technical content optimization'
+                            'Technical content optimisation'
                         );
                         ?>                        <span class="case-study-label animate-on-scroll animate-fade-up"><?php echo esc_html($case_study_label); ?></span>
                         <h2 class="animate-on-scroll animate-slide-left"><?php echo esc_html($case_study_title); ?></h2>
@@ -262,7 +262,7 @@ $hero_image = get_post_meta(get_the_ID(), 'technical_seo_hero_image', true);
                     ),
                     array(
                         'title' => 'Implementation',
-                        'description' => 'Execute technical optimizations following best practices and guidelines.'
+                        'description' => 'Execute technical optimisations following best practices and guidelines.'
                     ),
                     array(
                         'title' => 'Testing & Monitoring',
@@ -290,7 +290,7 @@ $hero_image = get_post_meta(get_the_ID(), 'technical_seo_hero_image', true);
             <div class="container">
                 <div class="section-header animate-on-scroll animate-fade-up">
                     <h2>Professional Technical SEO Tools</h2>
-                    <p>We use cutting-edge tools and technologies to diagnose, analyze, and optimize your website's technical performance.</p>
+                    <p>We use cutting-edge tools and technologies to diagnose, analyse, and optimise your website's technical performance.</p>
                 </div>
                 <div class="services-grid animate-on-scroll animate-stagger animate-scale-up">
                     <div class="service-item">
@@ -298,7 +298,7 @@ $hero_image = get_post_meta(get_the_ID(), 'technical_seo_hero_image', true);
                             <i class="fas fa-tachometer-alt"></i>
                         </div>
                         <h3>Site Speed & Performance</h3>
-                        <ul style="text-align: left; color: #666; line-height: 1.8;">
+                        <ul style="text-align: left; colour: #666; line-height: 1.8;">
                             <li>Google PageSpeed Insights</li>
                             <li>GTmetrix</li>
                             <li>WebPageTest</li>
@@ -311,7 +311,7 @@ $hero_image = get_post_meta(get_the_ID(), 'technical_seo_hero_image', true);
                             <i class="fas fa-spider"></i>
                         </div>
                         <h3>Crawling & Indexing</h3>
-                        <ul style="text-align: left; color: #666; line-height: 1.8;">
+                        <ul style="text-align: left; colour: #666; line-height: 1.8;">
                             <li>Screaming Frog SEO Spider</li>
                             <li>Google Search Console</li>
                             <li>Bing Webmaster Tools</li>
@@ -324,7 +324,7 @@ $hero_image = get_post_meta(get_the_ID(), 'technical_seo_hero_image', true);
                             <i class="fas fa-code"></i>
                         </div>
                         <h3>Schema & Structured Data</h3>
-                        <ul style="text-align: left; color: #666; line-height: 1.8;">
+                        <ul style="text-align: left; colour: #666; line-height: 1.8;">
                             <li>Google Rich Results Test</li>
                             <li>Schema Markup Validator</li>
                             <li>JSON-LD Generator</li>
@@ -336,7 +336,7 @@ $hero_image = get_post_meta(get_the_ID(), 'technical_seo_hero_image', true);
                             <i class="fas fa-mobile-alt"></i>
                         </div>
                         <h3>Mobile & Core Web Vitals</h3>
-                        <ul style="text-align: left; color: #666; line-height: 1.8;">
+                        <ul style="text-align: left; colour: #666; line-height: 1.8;">
                             <li>Google Mobile-Friendly Test</li>
                             <li>Core Web Vitals Report</li>
                             <li>Chrome DevTools</li>
@@ -349,7 +349,7 @@ $hero_image = get_post_meta(get_the_ID(), 'technical_seo_hero_image', true);
                             <i class="fas fa-shield-alt"></i>
                         </div>
                         <h3>Security & HTTPS</h3>
-                        <ul style="text-align: left; color: #666; line-height: 1.8;">
+                        <ul style="text-align: left; colour: #666; line-height: 1.8;">
                             <li>SSL Certificate Testing</li>
                             <li>Security Headers Check</li>
                             <li>Mixed Content Detection</li>
@@ -362,11 +362,11 @@ $hero_image = get_post_meta(get_the_ID(), 'technical_seo_hero_image', true);
                             <i class="fas fa-server"></i>
                         </div>
                         <h3>Server & Infrastructure</h3>
-                        <ul style="text-align: left; color: #666; line-height: 1.8;">
+                        <ul style="text-align: left; colour: #666; line-height: 1.8;">
                             <li>Server Response Time Testing</li>
                             <li>CDN Configuration</li>
                             <li>Robots.txt Validation</li>
-                            <li>XML Sitemap Optimization</li>
+                            <li>XML Sitemap optimisation</li>
                         </ul>
                     </div>
                 </div>
@@ -382,7 +382,7 @@ $hero_image = get_post_meta(get_the_ID(), 'technical_seo_hero_image', true);
                         'description' => 'Slow loading pages that hurt user experience and rankings.',
                         'priority' => 'high',
                         'issues' => array(
-                            'Large, unoptimized images',
+                            'Large, unoptimised images',
                             'Excessive HTTP requests',
                             'Unminified CSS and JavaScript',
                             'Poor server response times'
@@ -444,7 +444,7 @@ $hero_image = get_post_meta(get_the_ID(), 'technical_seo_hero_image', true);
         <section class="technical-seo-testimonial">
             <div class="section-content">                <div class="testimonial-content animate-on-scroll animate-fade-up">
                     <?php 
-                    $testimonial_quote = get_post_meta(get_the_ID(), 'technical_seo_testimonial_quote', true) ?: 'The technical SEO work from Aimpro Digital was transformational. They improved our site speed by 70% and fixed issues we didn\'t even know existed. Our organic traffic has more than doubled since the technical optimizations were completed.';
+                    $testimonial_quote = get_post_meta(get_the_ID(), 'technical_seo_testimonial_quote', true) ?: 'The technical SEO work from Aimpro Digital was transformational. They improved our site speed by 70% and fixed issues we didn\'t even know existed. Our organic traffic has more than doubled since the technical optimisations were completed.';
                     $testimonial_author_name = get_post_meta(get_the_ID(), 'technical_seo_testimonial_author_name', true) ?: 'Anna Chen';
                     $testimonial_author_title = get_post_meta(get_the_ID(), 'technical_seo_testimonial_author_title', true) ?: 'E-commerce Manager, StyleHub';
                     $testimonial_author_company = get_post_meta(get_the_ID(), 'technical_seo_testimonial_author_company', true) ?: 'Online Fashion Retailer';
@@ -470,13 +470,13 @@ $hero_image = get_post_meta(get_the_ID(), 'technical_seo_hero_image', true);
             <div class="container">                <div class="cta-content animate-on-scroll animate-fade-up">
                     <?php 
                     $cta_title = get_post_meta(get_the_ID(), 'technical_seo_cta_title', true) ?: 'Ready to Fix Your Technical SEO Issues?';
-                    $cta_description = get_post_meta(get_the_ID(), 'technical_seo_cta_description', true) ?: 'Let\'s optimize your website\'s technical foundation for better search performance and user experience.';
+                    $cta_description = get_post_meta(get_the_ID(), 'technical_seo_cta_description', true) ?: 'Let\'s optimise your website\'s technical foundation for better search performance and user experience.';
                     $cta_primary_text = get_post_meta(get_the_ID(), 'technical_seo_cta_primary_text', true) ?: 'Get Free Technical Audit';
                     $cta_primary_url = get_post_meta(get_the_ID(), 'technical_seo_cta_primary_url', true) ?: home_url('/contact');
                     $cta_secondary_text = get_post_meta(get_the_ID(), 'technical_seo_cta_secondary_text', true) ?: 'View Technical SEO Results';
                     $cta_secondary_url = get_post_meta(get_the_ID(), 'technical_seo_cta_secondary_url', true) ?: home_url('/case-studies');                    $cta_benefits = get_post_meta(get_the_ID(), 'technical_seo_cta_benefits', true) ?: array(
                         '<i class="fas fa-check" aria-hidden="true"></i> Technical SEO audit included',
-                        '<i class="fas fa-check" aria-hidden="true"></i> Core Web Vitals optimization',
+                        '<i class="fas fa-check" aria-hidden="true"></i> Core Web Vitals optimisation',
                         '<i class="fas fa-check" aria-hidden="true"></i> Site speed improvements'
                     );
                     ?>

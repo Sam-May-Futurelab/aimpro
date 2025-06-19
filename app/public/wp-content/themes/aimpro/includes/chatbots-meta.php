@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 /**
  * Chatbots Meta Fields
  *
@@ -30,7 +30,7 @@ function aimpro_get_chatbots_default_values() {
         
         // Overview Section
         'overview_title' => 'Intelligent Chatbot Solutions',
-        'overview_content' => 'Transform your website into an interactive experience that never sleeps. Our AI-powered chatbots handle customer inquiries, qualify leads, book appointments, and guide visitors toward conversion - all while providing personalized, human-like interactions.',
+        'overview_content' => 'Transform your website into an interactive experience that never sleeps. Our AI-powered chatbots handle customer inquiries, qualify leads, book appointments, and guide visitors toward conversion - all while providing personalised, human-like interactions.',
         
         // Service Items
         'service_icon_1' => 'fas fa-robot',
@@ -55,7 +55,7 @@ function aimpro_get_chatbots_default_values() {
         
         'service_icon_6' => 'fas fa-chart-bar',
         'service_title_6' => 'Analytics & Insights',
-        'service_content_6' => 'Detailed conversation analytics and user behavior insights to optimize chatbot performance and identify opportunities.',
+        'service_content_6' => 'Detailed conversation analytics and user behaviour insights to optimise chatbot performance and identify opportunities.',
         
         // Case Study Section
         'case_study_title' => 'Case Study: Legal Firm Lead Generation',
@@ -115,7 +115,7 @@ function aimpro_get_chatbots_default_values() {
         'process_title' => 'Our Chatbot Development Process',
         
         'process_step_title_1' => 'Strategy & Planning',
-        'process_step_content_1' => 'Analyze your customer interactions and define chatbot objectives, conversation flows, and success metrics.',
+        'process_step_content_1' => 'analyse your customer interactions and define chatbot objectives, conversation flows, and success metrics.',
         
         'process_step_title_2' => 'Conversation Design',
         'process_step_content_2' => 'Create natural conversation flows, response scripts, and decision trees that guide users toward desired outcomes.',
@@ -126,7 +126,7 @@ function aimpro_get_chatbots_default_values() {
         'process_step_title_4' => 'Integration & Testing',
         'process_step_content_4' => 'Integrate with your website, CRM, and other systems, then thoroughly test all conversation paths and scenarios.',
         
-        'process_step_title_5' => 'Launch & Optimization',
+        'process_step_title_5' => 'Launch & optimisation',
         'process_step_content_5' => 'Deploy the chatbot with monitoring and continuous improvement based on user interactions and feedback.',
         
         // Features Section
@@ -138,8 +138,8 @@ function aimpro_get_chatbots_default_values() {
         'feature_content_1' => 'Understanding context, intent, and nuance in human conversation for more natural interactions.',
         
         'feature_icon_2' => 'fas fa-user-tag',
-        'feature_title_2' => 'Personalization',
-        'feature_content_2' => 'Tailored responses based on user behavior, location, and previous interactions for relevant experiences.',
+        'feature_title_2' => 'personalisation',
+        'feature_content_2' => 'Tailored responses based on user behaviour, location, and previous interactions for relevant experiences.',
         
         'feature_icon_3' => 'fas fa-globe',
         'feature_title_3' => 'Multi-language Support',
@@ -155,7 +155,7 @@ function aimpro_get_chatbots_default_values() {
         
         'feature_icon_6' => 'fas fa-chart-line',
         'feature_title_6' => 'Advanced Analytics',
-        'feature_content_6' => 'Detailed insights into conversation patterns, user satisfaction, and optimization opportunities.',
+        'feature_content_6' => 'Detailed insights into conversation patterns, user satisfaction, and optimisation opportunities.',
         
         // Platforms Section
         'platforms_title' => 'Chatbot Platforms We Use',

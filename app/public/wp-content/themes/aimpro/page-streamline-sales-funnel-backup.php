@@ -1,7 +1,7 @@
-<?php
+﻿<?php
 /**
  * Template Name: Streamline Sales Funnel Solution Page
- * Description: Sales funnel optimization solution for improved conversions
+ * Description: Sales funnel optimisation solution for improved conversions
  */
 
 get_header(); ?>
@@ -36,7 +36,7 @@ get_header(); ?>
                 <div class="overview-content">
                     <div class="overview-text">
                         <h2><?php echo get_post_meta(get_the_ID(), 'streamline_overview_title', true) ?: 'Complete Sales Funnel Streamlining Solutions'; ?></h2>
-                        <p><?php echo get_post_meta(get_the_ID(), 'streamline_overview_description', true) ?: 'Eliminate inefficiencies and gaps in your current sales process with our systematic approach to funnel optimization and automation.'; ?></p>
+                        <p><?php echo get_post_meta(get_the_ID(), 'streamline_overview_description', true) ?: 'Eliminate inefficiencies and gaps in your current sales process with our systematic approach to funnel optimisation and automation.'; ?></p>
                     </div>
                 </div>
             </div>
@@ -45,7 +45,7 @@ get_header(); ?>
         <!-- Sales Funnel Services -->
         <section class="funnel-services">
             <div class="section-content">
-                <h2><?php echo get_post_meta(get_the_ID(), 'streamline_sales_funnel_strategy_title', true) ?: 'Our Sales Funnel Optimization Services'; ?></h2>
+                <h2><?php echo get_post_meta(get_the_ID(), 'streamline_sales_funnel_strategy_title', true) ?: 'Our Sales Funnel optimisation Services'; ?></h2>
                 <div class="services-grid">
                     <?php
                     $services = get_post_meta(get_the_ID(), 'streamline_sales_funnel_services', true);
@@ -73,9 +73,9 @@ get_header(); ?>
                         <div class="service-card">
                             <div class="service-icon">
                                 <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                    <path d="M2 17L12 22L22 17" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                    <path d="M2 12L12 17L22 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="currentcolour" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M2 17L12 22L22 17" stroke="currentcolour" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M2 12L12 17L22 12" stroke="currentcolour" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                                 </svg>
                             </div>
                             <div class="service-content">
@@ -93,8 +93,8 @@ get_header(); ?>
                         <div class="service-card">
                             <div class="service-icon">
                                 <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"/>
-                                    <path d="M12 6V12L16 14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <circle cx="12" cy="12" r="10" stroke="currentcolour" stroke-width="2"/>
+                                    <path d="M12 6V12L16 14" stroke="currentcolour" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                                 </svg>
                             </div>
                             <div class="service-content">
@@ -112,17 +112,17 @@ get_header(); ?>
                         <div class="service-card">
                             <div class="service-icon">
                                 <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M21 16V8A2 2 0 0 0 19 6H5A2 2 0 0 0 3 8V16A2 2 0 0 0 5 18H19A2 2 0 0 0 21 16Z" stroke="currentColor" stroke-width="2"/>
-                                    <polyline points="7,9 12,13 17,9" stroke="currentColor" stroke-width="2"/>
+                                    <path d="M21 16V8A2 2 0 0 0 19 6H5A2 2 0 0 0 3 8V16A2 2 0 0 0 5 18H19A2 2 0 0 0 21 16Z" stroke="currentcolour" stroke-width="2"/>
+                                    <polyline points="7,9 12,13 17,9" stroke="currentcolour" stroke-width="2"/>
                                 </svg>
                             </div>
                             <div class="service-content">
                                 <h3>Automated Follow-Up Sequences</h3>
-                                <p>Create personalized email sequences that nurture leads through the buying process.</p>
+                                <p>Create personalised email sequences that nurture leads through the buying process.</p>
                                 <ul class="service-features">
                                     <li>Drip campaign development</li>
-                                    <li>Behavioral trigger sequences</li>
-                                    <li>Personalization strategies</li>
+                                    <li>behavioural trigger sequences</li>
+                                    <li>personalisation strategies</li>
                                     <li>Multi-channel follow-up</li>
                                 </ul>
                             </div>
@@ -131,15 +131,15 @@ get_header(); ?>
                         <div class="service-card">
                             <div class="service-icon">
                                 <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <rect x="2" y="4" width="20" height="16" rx="2" stroke="currentColor" stroke-width="2"/>
-                                    <path d="M7 15L10 12L13 15L17 9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <rect x="2" y="4" width="20" height="16" rx="2" stroke="currentcolour" stroke-width="2"/>
+                                    <path d="M7 15L10 12L13 15L17 9" stroke="currentcolour" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                                 </svg>
                             </div>
                             <div class="service-content">
-                                <h3>Conversion Optimization</h3>
-                                <p>Optimize each funnel stage to improve conversion rates and reduce friction.</p>
+                                <h3>Conversion optimisation</h3>
+                                <p>optimise each funnel stage to improve conversion rates and reduce friction.</p>
                                 <ul class="service-features">
-                                    <li>Landing page optimization</li>
+                                    <li>Landing page optimisation</li>
                                     <li>Form conversion improvement</li>
                                     <li>Checkout process streamlining</li>
                                     <li>A/B testing implementation</li>
@@ -150,10 +150,10 @@ get_header(); ?>
                         <div class="service-card">
                             <div class="service-icon">
                                 <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M14 2H6A2 2 0 0 0 4 4V20A2 2 0 0 0 6 22H18A2 2 0 0 0 20 20V8L14 2Z" stroke="currentColor" stroke-width="2"/>
-                                    <polyline points="14,2 14,8 20,8" stroke="currentColor" stroke-width="2"/>
-                                    <line x1="16" y1="13" x2="8" y2="13" stroke="currentColor" stroke-width="2"/>
-                                    <line x1="16" y1="17" x2="8" y2="17" stroke="currentColor" stroke-width="2"/>
+                                    <path d="M14 2H6A2 2 0 0 0 4 4V20A2 2 0 0 0 6 22H18A2 2 0 0 0 20 20V8L14 2Z" stroke="currentcolour" stroke-width="2"/>
+                                    <polyline points="14,2 14,8 20,8" stroke="currentcolour" stroke-width="2"/>
+                                    <line x1="16" y1="13" x2="8" y2="13" stroke="currentcolour" stroke-width="2"/>
+                                    <line x1="16" y1="17" x2="8" y2="17" stroke="currentcolour" stroke-width="2"/>
                                 </svg>
                             </div>
                             <div class="service-content">
@@ -171,13 +171,13 @@ get_header(); ?>
                         <div class="service-card">
                             <div class="service-icon">
                                 <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <line x1="12" y1="1" x2="12" y2="23" stroke="currentColor" stroke-width="2"/>
-                                    <path d="M17 5H9.5A3.5 3.5 0 0 0 6 8.5V8.5A3.5 3.5 0 0 0 9.5 12H14.5A3.5 3.5 0 0 1 18 15.5V15.5A3.5 3.5 0 0 1 14.5 19H6" stroke="currentColor" stroke-width="2"/>
+                                    <line x1="12" y1="1" x2="12" y2="23" stroke="currentcolour" stroke-width="2"/>
+                                    <path d="M17 5H9.5A3.5 3.5 0 0 0 6 8.5V8.5A3.5 3.5 0 0 0 9.5 12H14.5A3.5 3.5 0 0 1 18 15.5V15.5A3.5 3.5 0 0 1 14.5 19H6" stroke="currentcolour" stroke-width="2"/>
                                 </svg>
                             </div>
                             <div class="service-content">
                                 <h3>Revenue Tracking & Analytics</h3>
-                                <p>Implement comprehensive tracking to measure and optimize funnel performance.</p>
+                                <p>Implement comprehensive tracking to measure and optimise funnel performance.</p>
                                 <ul class="service-features">
                                     <li>Revenue attribution setup</li>
                                     <li>Funnel analytics dashboard</li>
@@ -227,7 +227,7 @@ get_header(); ?>
                                         echo '<li>' . esc_html($solution) . '</li>';
                                     }
                                 } else {
-                                    $default = array('Complete funnel redesign and optimization','Automated lead qualification system','Multi-touch nurture sequences','Sales process standardization');
+                                    $default = array('Complete funnel redesign and optimisation','Automated lead qualification system','Multi-touch nurture sequences','Sales process standardization');
                                     foreach ($default as $solution) echo '<li>' . esc_html($solution) . '</li>';
                                 }
                                 ?>
@@ -263,7 +263,7 @@ get_header(); ?>
         <!-- Sales Funnel Process -->
         <section class="funnel-process">
             <div class="section-content">
-                <h2><?php echo get_post_meta(get_the_ID(), 'streamline_sales_funnel_process_title', true) ?: 'Our Sales Funnel Optimization Process'; ?></h2>
+                <h2><?php echo get_post_meta(get_the_ID(), 'streamline_sales_funnel_process_title', true) ?: 'Our Sales Funnel optimisation Process'; ?></h2>
                 <div class="process-steps">
                     <?php
                     $steps = get_post_meta(get_the_ID(), 'streamline_sales_funnel_process_steps', true);
@@ -295,7 +295,7 @@ get_header(); ?>
                             <div class="step-number">2</div>
                             <div class="step-content">
                                 <h3>Strategy Development</h3>
-                                <p>Create a customized funnel strategy based on your business model and target audience.</p>
+                                <p>Create a customised funnel strategy based on your business model and target audience.</p>
                             </div>
                         </div>
 
@@ -303,14 +303,14 @@ get_header(); ?>
                             <div class="step-number">3</div>
                             <div class="step-content">
                                 <h3>Implementation & Testing</h3>
-                                <p>Build and deploy optimized funnel elements with continuous testing and refinement.</p>
+                                <p>Build and deploy optimised funnel elements with continuous testing and refinement.</p>
                             </div>
                         </div>
 
                         <div class="process-step">
                             <div class="step-number">4</div>
                             <div class="step-content">
-                                <h3>Monitor & Optimize</h3>
+                                <h3>Monitor & optimise</h3>
                                 <p>Track performance metrics and make data-driven improvements for sustained growth.</p>
                             </div>
                         </div>
@@ -324,7 +324,7 @@ get_header(); ?>
         <!-- Funnel Stages -->
         <section class="funnel-stages">
             <div class="section-content">
-                <h2><?php echo get_post_meta(get_the_ID(), 'streamline_sales_funnel_stages_title', true) ?: 'Sales Funnel Stages We Optimize'; ?></h2>
+                <h2><?php echo get_post_meta(get_the_ID(), 'streamline_sales_funnel_stages_title', true) ?: 'Sales Funnel Stages We optimise'; ?></h2>
                 <div class="metrics-grid">
                     <?php
                     $stages = get_post_meta(get_the_ID(), 'streamline_sales_funnel_stages', true);
@@ -357,7 +357,7 @@ get_header(); ?>
                                 <li>Content marketing strategy</li>
                                 <li>Social media presence</li>
                                 <li>Paid advertising campaigns</li>
-                                <li>SEO optimization</li>
+                                <li>SEO optimisation</li>
                             </ul>
                         </div>
 
@@ -367,7 +367,7 @@ get_header(); ?>
                             <p>Engage prospects with valuable content and lead magnets.</p>
                             <ul class="metric-list">
                                 <li>Lead magnet creation</li>
-                                <li>Email opt-in optimization</li>
+                                <li>Email opt-in optimisation</li>
                                 <li>Educational content delivery</li>
                                 <li>Webinar and demo scheduling</li>
                             </ul>
@@ -400,9 +400,9 @@ get_header(); ?>
                         <div class="metric-category">
                             <div class="stage-number">5</div>
                             <h3>Action</h3>
-                            <p>Optimize the purchase process for maximum conversions.</p>
+                            <p>optimise the purchase process for maximum conversions.</p>
                             <ul class="metric-list">
-                                <li>Checkout optimization</li>
+                                <li>Checkout optimisation</li>
                                 <li>Payment gateway integration</li>
                                 <li>Order confirmation automation</li>
                                 <li>Onboarding sequence setup</li>
@@ -430,7 +430,7 @@ get_header(); ?>
         <!-- Funnel Types -->
         <section class="funnel-types">
             <div class="section-content">
-                <h2><?php echo get_post_meta(get_the_ID(), 'streamline_sales_funnel_types_title', true) ?: 'Sales Funnel Optimization by Business Type'; ?></h2>
+                <h2><?php echo get_post_meta(get_the_ID(), 'streamline_sales_funnel_types_title', true) ?: 'Sales Funnel optimisation by Business Type'; ?></h2>
                 <div class="types-grid">
                     <?php
                     $types = get_post_meta(get_the_ID(), 'streamline_sales_funnel_types', true);
@@ -473,7 +473,7 @@ get_header(); ?>
                                 <li>Product recommendation engines</li>
                                 <li>Cart abandonment recovery</li>
                                 <li>Post-purchase upsells</li>
-                                <li>Customer lifetime value optimization</li>
+                                <li>Customer lifetime value optimisation</li>
                             </ul>
                             <div class="type-results">
                                 <span>Average: 180% revenue per visitor</span>
@@ -483,7 +483,7 @@ get_header(); ?>
                         <div class="type-card">
                             <h3>Service-Based Funnels</h3>
                             <ul class="type-features">
-                                <li>Consultation booking optimization</li>
+                                <li>Consultation booking optimisation</li>
                                 <li>Service package presentation</li>
                                 <li>Trust-building content sequences</li>
                                 <li>Client testimonial integration</li>
@@ -528,7 +528,7 @@ get_header(); ?>
                             <ul class="tool-list">
                                 <li>HubSpot CRM</li>
                                 <li>Salesforce automation</li>
-                                <li>Pipedrive optimization</li>
+                                <li>Pipedrive optimisation</li>
                                 <li>ActiveCampaign setup</li>
                             </ul>
                         </div>
@@ -556,7 +556,7 @@ get_header(); ?>
                         <div class="tool-category">
                             <h3>Landing Page & Conversion</h3>
                             <ul class="tool-list">
-                                <li>Unbounce optimization</li>
+                                <li>Unbounce optimisation</li>
                                 <li>Leadpages creation</li>
                                 <li>ClickFunnels management</li>
                                 <li>Custom funnel development</li>
@@ -587,10 +587,10 @@ get_header(); ?>
             </div>
         </section>
         <!-- CTA Section -->
-        <section class="website-cta text-center">
+        <section class="website-cta text-centre">
             <div class="section-content">
                 <h2><?php echo get_post_meta(get_the_ID(), 'streamline_sales_funnel_cta_title', true) ?: 'Ready to Streamline Your Sales Funnel?'; ?></h2>
-                <p><?php echo get_post_meta(get_the_ID(), 'streamline_sales_funnel_cta_description', true) ?: 'Let\'s optimize your sales funnel for maximum conversions and business growth.'; ?></p>
+                <p><?php echo get_post_meta(get_the_ID(), 'streamline_sales_funnel_cta_description', true) ?: 'Let\'s optimise your sales funnel for maximum conversions and business growth.'; ?></p>
                 <div class="cta-buttons">
                     <a href="<?php echo get_post_meta(get_the_ID(), 'streamline_sales_funnel_cta_primary_link', true) ?: home_url('/contact'); ?>" class="btn btn-primary"><?php echo get_post_meta(get_the_ID(), 'streamline_sales_funnel_cta_primary_text', true) ?: 'Get Free Funnel Audit'; ?></a>
                     <a href="<?php echo get_post_meta(get_the_ID(), 'streamline_sales_funnel_cta_secondary_link', true) ?: home_url('/case-studies'); ?>" class="btn btn-secondary"><?php echo get_post_meta(get_the_ID(), 'streamline_sales_funnel_cta_secondary_text', true) ?: 'View Success Stories'; ?></a>

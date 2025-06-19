@@ -27,7 +27,7 @@ get_header(); ?>
                 <div class="overview-content">
                     <div class="overview-text animate-on-scroll animate-slide-left">
                         <h2><?php echo esc_html(get_post_meta(get_the_ID(), '_professional_services_overview_title', true) ?: 'Elevate Your Professional Practice'); ?></h2>
-                        <p><?php echo esc_html(get_post_meta(get_the_ID(), '_professional_services_overview_content', true) ?: 'Professional services clients expect expertise, trust, and results. Our specialized marketing strategies help law firms, accounting practices, consulting agencies, and other professional services establish authority and attract qualified prospects.'); ?></p>
+                        <p><?php echo esc_html(get_post_meta(get_the_ID(), '_professional_services_overview_content', true) ?: 'Professional services clients expect expertise, trust, and results. Our specialised marketing strategies help law firms, accounting practices, consulting agencies, and other professional services establish authority and attract qualified prospects.'); ?></p>
                         
                         <div class="industry-challenges animate-on-scroll animate-fade-up">
                             <h3><?php echo esc_html(get_post_meta(get_the_ID(), '_professional_services_challenges_title', true) ?: 'Professional Services Marketing Challenges We Solve:'); ?></h3>
@@ -73,7 +73,7 @@ get_header(); ?>
                                 'icon' => 'fas fa-search',
                                 'title' => 'Local SEO for Professional Services',
                                 'description' => 'Dominate local search results when potential clients search for legal, accounting, or consulting services in your area.',
-                                'features' => array('Google My Business optimization', 'Local citation building', 'Practice area keyword targeting', 'Review management and reputation')
+                                'features' => array('Google My Business optimisation', 'Local citation building', 'Practice area keyword targeting', 'Review management and reputation')
                             ),
                             array(
                                 'icon' => 'fas fa-file-alt',
@@ -85,13 +85,13 @@ get_header(); ?>
                                 'icon' => 'fab fa-linkedin',
                                 'title' => 'LinkedIn Marketing for B2B',
                                 'description' => 'Build professional networks and generate high-value leads through strategic LinkedIn advertising and organic engagement.',
-                                'features' => array('LinkedIn profile optimization', 'Sponsored content campaigns', 'Lead generation forms', 'Professional networking strategy')
+                                'features' => array('LinkedIn profile optimisation', 'Sponsored content campaigns', 'Lead generation forms', 'Professional networking strategy')
                             ),
                             array(
                                 'icon' => 'fas fa-gavel',
                                 'title' => 'Compliance-Focused PPC',
                                 'description' => 'Drive qualified leads while maintaining strict adherence to professional advertising regulations and ethical guidelines.',
-                                'features' => array('Google Ads for legal/professional', 'Compliance monitoring', 'High-intent keyword targeting', 'Landing page optimization')
+                                'features' => array('Google Ads for legal/professional', 'Compliance monitoring', 'High-intent keyword targeting', 'Landing page optimisation')
                             )
                         );
                     }
@@ -280,7 +280,7 @@ get_header(); ?>
                 </div>
             </div>
         </section>        <!-- CTA Section -->        
-        <section class="professional-cta text-center animate-on-scroll animate-fade-up">
+        <section class="professional-cta text-centre animate-on-scroll animate-fade-up">
             <div class="section-content">
                 <h2 class="animate-on-scroll animate-fade-up"><?php echo esc_html(get_post_meta(get_the_ID(), '_professional_services_cta_title', true) ?: 'Ready to Elevate Your Professional Practice?'); ?></h2>
                 <p class="animate-on-scroll animate-fade-up"><?php echo esc_html(get_post_meta(get_the_ID(), '_professional_services_cta_subtitle', true) ?: 'Let\'s discuss how our professional services marketing expertise can generate high-quality leads for your firm.'); ?></p>

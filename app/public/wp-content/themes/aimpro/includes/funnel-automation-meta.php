@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 // Meta fields for Sales Funnel Automation page
 add_action('add_meta_boxes', function() {
     global $post;
@@ -14,7 +14,7 @@ function funnel_automation_meta_callback($post) {
     ?>
     <style>
         .funnel-automation-meta-section { margin-bottom: 25px; padding: 15px; border: 1px solid #ddd; }
-        .funnel-automation-meta-section h3 { margin-top: 0; color: #23282d; }
+        .funnel-automation-meta-section h3 { margin-top: 0; colour: #23282d; }
         .funnel-automation-meta-field { margin-bottom: 15px; }
         .funnel-automation-meta-field label { display: block; margin-bottom: 5px; font-weight: 600; }
         .funnel-automation-meta-field input, .funnel-automation-meta-field textarea { width: 100%; }
@@ -91,7 +91,7 @@ function funnel_automation_meta_callback($post) {
         </div>
         <div class="funnel-automation-meta-field">
             <label>Service 1 Description</label>
-            <textarea name="funnel_automation_service_1_desc"><?php echo esc_textarea(get_post_meta($post->ID, 'funnel_automation_service_1_desc', true) ?: 'Custom funnel architecture tailored to your customer journey with optimized touchpoints and conversion paths.'); ?></textarea>
+            <textarea name="funnel_automation_service_1_desc"><?php echo esc_textarea(get_post_meta($post->ID, 'funnel_automation_service_1_desc', true) ?: 'Custom funnel architecture tailored to your customer journey with optimised touchpoints and conversion paths.'); ?></textarea>
         </div>
 
         <div class="funnel-automation-meta-field">
@@ -105,7 +105,7 @@ function funnel_automation_meta_callback($post) {
 
         <div class="funnel-automation-meta-field">
             <label>Service 3 Title</label>
-            <input type="text" name="funnel_automation_service_3_title" value="<?php echo esc_attr(get_post_meta($post->ID, 'funnel_automation_service_3_title', true) ?: 'Landing Page Optimization'); ?>" />
+            <input type="text" name="funnel_automation_service_3_title" value="<?php echo esc_attr(get_post_meta($post->ID, 'funnel_automation_service_3_title', true) ?: 'Landing Page optimisation'); ?>" />
         </div>
         <div class="funnel-automation-meta-field">
             <label>Service 3 Description</label>
@@ -127,16 +127,16 @@ function funnel_automation_meta_callback($post) {
         </div>
         <div class="funnel-automation-meta-field">
             <label>Service 5 Description</label>
-            <textarea name="funnel_automation_service_5_desc"><?php echo esc_textarea(get_post_meta($post->ID, 'funnel_automation_service_5_desc', true) ?: 'Comprehensive analytics and tracking to measure funnel performance and identify optimization opportunities.'); ?></textarea>
+            <textarea name="funnel_automation_service_5_desc"><?php echo esc_textarea(get_post_meta($post->ID, 'funnel_automation_service_5_desc', true) ?: 'Comprehensive analytics and tracking to measure funnel performance and identify optimisation opportunities.'); ?></textarea>
         </div>
 
         <div class="funnel-automation-meta-field">
             <label>Service 6 Title</label>
-            <input type="text" name="funnel_automation_service_6_title" value="<?php echo esc_attr(get_post_meta($post->ID, 'funnel_automation_service_6_title', true) ?: 'Continuous Optimization'); ?>" />
+            <input type="text" name="funnel_automation_service_6_title" value="<?php echo esc_attr(get_post_meta($post->ID, 'funnel_automation_service_6_title', true) ?: 'Continuous optimisation'); ?>" />
         </div>
         <div class="funnel-automation-meta-field">
             <label>Service 6 Description</label>
-            <textarea name="funnel_automation_service_6_desc"><?php echo esc_textarea(get_post_meta($post->ID, 'funnel_automation_service_6_desc', true) ?: 'Data-driven improvements and A/B testing to maximize conversion rates at every funnel stage.'); ?></textarea>
+            <textarea name="funnel_automation_service_6_desc"><?php echo esc_textarea(get_post_meta($post->ID, 'funnel_automation_service_6_desc', true) ?: 'Data-driven improvements and A/B testing to maximise conversion rates at every funnel stage.'); ?></textarea>
         </div>
     </div>
 
@@ -156,7 +156,7 @@ function funnel_automation_meta_callback($post) {
         </div>
         <div class="funnel-automation-meta-field">
             <label>Solution Points (one per line)</label>
-            <textarea name="funnel_automation_case_solution"><?php echo esc_textarea(get_post_meta($post->ID, 'funnel_automation_case_solution', true) ?: "Designed 5-stage automated funnel with strategic touchpoints\nCreated high-value lead magnet (business assessment tool)\nBuilt conversion-optimized landing pages for each funnel stage\nImplemented automated email sequences with personalized video messages\nSet up automated booking system with pre-qualification questions"); ?></textarea>
+            <textarea name="funnel_automation_case_solution"><?php echo esc_textarea(get_post_meta($post->ID, 'funnel_automation_case_solution', true) ?: "Designed 5-stage automated funnel with strategic touchpoints\nCreated high-value lead magnet (business assessment tool)\nBuilt conversion-optimised landing pages for each funnel stage\nImplemented automated email sequences with personalised video messages\nSet up automated booking system with pre-qualification questions"); ?></textarea>
         </div>
         
         <div class="funnel-automation-stats-row">
@@ -214,14 +214,14 @@ function funnel_automation_meta_callback($post) {
                 2 => 'Funnel Strategy Design', 
                 3 => 'Asset Creation',
                 4 => 'Technical Implementation',
-                5 => 'Testing & Optimization'
+                5 => 'Testing & optimisation'
             ];
             $step_descriptions = [
                 1 => 'Map your customer\'s buying journey and identify key touchpoints where automation can improve conversions.',
                 2 => 'Create comprehensive funnel blueprint with conversion goals, messaging strategy, and automation triggers.',
                 3 => 'Develop lead magnets, landing pages, email sequences, and all creative assets needed for the funnel.',
                 4 => 'Build and configure all automation workflows, tracking systems, and integration connections.',
-                5 => 'Launch with careful monitoring and continuous optimization based on performance data and user behavior.'
+                5 => 'Launch with careful monitoring and continuous optimisation based on performance data and user behaviour.'
             ];
         ?>
         <h4>Step <?php echo $i; ?></h4>

@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 /**
  * Template Name: Lead Generation Solution Page
  * Description: Lead generation solution for B2B and B2C businesses
@@ -70,11 +70,11 @@ get_header(); ?>
                         $methods = array(
                             array(
                                 'title' => 'Search Engine Marketing',
-                                'description' => 'Capture prospects actively searching for your solutions with targeted Google Ads and optimized landing pages.',
+                                'description' => 'Capture prospects actively searching for your solutions with targeted Google Ads and optimised landing pages.',
                                 'features' => array(
                                     'High-intent keyword targeting',
-                                    'Conversion-optimized landing pages',
-                                    'Search ad optimization',
+                                    'Conversion-optimised landing pages',
+                                    'Search ad optimisation',
                                     'Negative keyword refinement'
                                 )
                             ),
@@ -94,7 +94,7 @@ get_header(); ?>
                                 'features' => array(
                                     'High-value lead magnet creation',
                                     'Educational content strategy',
-                                    'Gated resource optimization',
+                                    'Gated resource optimisation',
                                     'Progressive profiling setup'
                                 )
                             ),
@@ -104,7 +104,7 @@ get_header(); ?>
                                 'features' => array(
                                     'Automated drip campaigns',
                                     'Lead scoring implementation',
-                                    'Behavioral trigger emails',
+                                    'behavioural trigger emails',
                                     'CRM integration & tracking'
                                 )
                             )
@@ -113,20 +113,20 @@ get_header(); ?>
 
                     $method_icons = array(
                         '<svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M21 21L16.514 16.506M19 10.5C19 15.194 15.194 19 10.5 19C5.806 19 2 15.194 2 10.5C2 5.806 5.806 2 10.5 2C15.194 2 19 5.806 19 10.5Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M21 21L16.514 16.506M19 10.5C19 15.194 15.194 19 10.5 19C5.806 19 2 15.194 2 10.5C2 5.806 5.806 2 10.5 2C15.194 2 19 5.806 19 10.5Z" stroke="currentcolour" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                         </svg>',
                         '<svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M18 20V10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                            <path d="M12 20V4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                            <path d="M6 20V14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M18 20V10" stroke="currentcolour" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M12 20V4" stroke="currentcolour" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M6 20V14" stroke="currentcolour" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                         </svg>',
                         '<svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M14 2H6C5.46957 2 4.96086 2.21071 4.58579 2.58579C4.21071 2.96086 4 3.46957 4 4V20C4 20.5304 4.21071 21.0391 4.58579 21.4142C4.96086 21.7893 5.46957 22 6 22H18C18.5304 22 19.0391 21.7893 19.4142 21.4142C19.7893 21.0391 20 20.5304 20 20V8L14 2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                            <polyline points="14,2 14,8 20,8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M14 2H6C5.46957 2 4.96086 2.21071 4.58579 2.58579C4.21071 2.96086 4 3.46957 4 4V20C4 20.5304 4.21071 21.0391 4.58579 21.4142C4.96086 21.7893 5.46957 22 6 22H18C18.5304 22 19.0391 21.7893 19.4142 21.4142C19.7893 21.0391 20 20.5304 20 20V8L14 2Z" stroke="currentcolour" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <polyline points="14,2 14,8 20,8" stroke="currentcolour" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                         </svg>',
                         '<svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M4 4H20C21.1 4 22 4.9 22 6V18C22 19.1 21.1 20 20 20H4C2.9 20 2 19.1 2 18V6C2 4.9 2.9 4 4 4Z" stroke="currentColor" stroke-width="2"/>
-                            <polyline points="22,6 12,13 2,6" stroke="currentColor" stroke-width="2"/>
+                            <path d="M4 4H20C21.1 4 22 4.9 22 6V18C22 19.1 21.1 20 20 20H4C2.9 20 2 19.1 2 18V6C2 4.9 2.9 4 4 4Z" stroke="currentcolour" stroke-width="2"/>
+                            <polyline points="22,6 12,13 2,6" stroke="currentcolour" stroke-width="2"/>
                         </svg>'
                     );
 
@@ -248,7 +248,7 @@ get_header(); ?>
                 </div>
             </div>
         </section>        <!-- Lead Generation Types -->
-        <section class="lead-generation-types text-center">
+        <section class="lead-generation-types text-centre">
             <div class="section-content">
                 <h2 class="animate-on-scroll animate-fade-up"><?php echo esc_html(get_post_meta(get_the_ID(), '_lead_generation_types_title', true) ?: 'Lead Generation Strategies by Business Type'); ?></h2>
                 <div class="types-grid animate-on-scroll animate-stagger animate-scale-up">
@@ -263,7 +263,7 @@ get_header(); ?>
                                     'Industry-specific content marketing',
                                     'Webinar and event marketing',
                                     'Account-based marketing (ABM)',
-                                    'Sales-qualified lead (SQL) optimization'
+                                    'Sales-qualified lead (SQL) optimisation'
                                 )
                             ),
                             array(
@@ -279,7 +279,7 @@ get_header(); ?>
                             array(
                                 'title' => 'Local Business Lead Generation',
                                 'features' => array(
-                                    'Google My Business optimization',
+                                    'Google My Business optimisation',
                                     'Local directory submissions',
                                     'Geotargeted advertising',
                                     'Review generation campaigns',
@@ -332,11 +332,11 @@ get_header(); ?>
                                 )
                             ),
                             array(
-                                'title' => 'Landing Page Optimization',
+                                'title' => 'Landing Page optimisation',
                                 'features' => array(
                                     'A/B testing frameworks',
                                     'Heat mapping analysis',
-                                    'Form optimization',
+                                    'Form optimisation',
                                     'Mobile responsiveness'
                                 )
                             ),
@@ -345,14 +345,14 @@ get_header(); ?>
                                 'features' => array(
                                     'Automated email sequences',
                                     'Lead nurturing campaigns',
-                                    'Behavioral email triggers',
+                                    'behavioural email triggers',
                                     'Performance analytics'
                                 )
                             )
                         );
                     }
 
-                    $tool_classes = array('analytics', 'crm', 'optimization', 'automation');
+                    $tool_classes = array('analytics', 'crm', 'optimisation', 'automation');
                     
                     foreach ($tools as $index => $tool) :
                         $class_index = $index % count($tool_classes);
@@ -370,7 +370,7 @@ get_header(); ?>
                 </div>
             </div>
         </section>        <!-- Lead Generation Testimonial (No Image) -->
-        <section class="lead-generation-testimonial text-center">
+        <section class="lead-generation-testimonial text-centre">
             <div class="section-content">
                 <div class="testimonial-content animate-on-scroll animate-fade-up">
                     <blockquote>
@@ -386,7 +386,7 @@ get_header(); ?>
                 </div>
             </div>
         </section>        <!-- CTA Section -->
-        <section class="lead-generation-cta text-center">
+        <section class="lead-generation-cta text-centre">
             <div class="section-content">
                 <h2 class="animate-on-scroll animate-fade-up"><?php echo esc_html(get_post_meta(get_the_ID(), '_lead_generation_cta_title', true) ?: 'Ready to Generate More Qualified Leads?'); ?></h2>
                 <p class="animate-on-scroll animate-fade-up animate-delay-200"><?php echo esc_html(get_post_meta(get_the_ID(), '_lead_generation_cta_subtitle', true) ?: 'Let\'s create a custom lead generation strategy that fills your sales pipeline with high-quality prospects.'); ?></p>

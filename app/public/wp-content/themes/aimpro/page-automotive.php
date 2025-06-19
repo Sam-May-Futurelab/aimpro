@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 /**
  * Template Name: Automotive Industry Page
  * Description: Digital marketing for automotive businesses
@@ -10,7 +10,7 @@ get_header();
 $header_title = get_post_meta(get_the_ID(), '_automotive_header_title', true) ?: 'Automotive Digital Marketing';
 $header_subtitle = get_post_meta(get_the_ID(), '_automotive_header_subtitle', true) ?: 'Drive more qualified leads to your dealership with proven automotive marketing strategies';
 $overview_title = get_post_meta(get_the_ID(), '_automotive_overview_title', true) ?: 'Accelerate Your Automotive Business';
-$overview_content = get_post_meta(get_the_ID(), '_automotive_overview_content', true) ?: 'The automotive industry has evolved dramatically. Today\'s car buyers research extensively online before stepping foot on a lot. Our specialized automotive marketing strategies ensure you\'re visible throughout their entire buyer journey.';
+$overview_content = get_post_meta(get_the_ID(), '_automotive_overview_content', true) ?: 'The automotive industry has evolved dramatically. Today\'s car buyers research extensively online before stepping foot on a lot. Our specialised automotive marketing strategies ensure you\'re visible throughout their entire buyer journey.';
 $overview_image = get_post_meta(get_the_ID(), '_automotive_overview_image', true);
 $challenges_title = get_post_meta(get_the_ID(), '_automotive_challenges_title', true) ?: 'Automotive Marketing Challenges We Solve:';
 $challenges = get_post_meta(get_the_ID(), '_automotive_challenges', true) ?: array(
@@ -71,13 +71,13 @@ $services = get_post_meta(get_the_ID(), '_automotive_services', true) ?: array()
                                 'icon' => 'fas fa-map-marker-alt',
                                 'title' => 'Local SEO for Dealerships',
                                 'description' => 'Dominate local search results when customers search for "car dealerships near me" or specific vehicle models in your area.',
-                                'features' => array('Google My Business optimization', 'Local directory listings', 'Location-based keyword targeting', 'Review management and reputation')
+                                'features' => array('Google My Business optimisation', 'Local directory listings', 'Location-based keyword targeting', 'Review management and reputation')
                             ),
                             array(
                                 'icon' => 'fas fa-car',
                                 'title' => 'Vehicle Inventory Marketing',
                                 'description' => 'Showcase your inventory with dynamic advertising that automatically promotes your available vehicles to interested buyers.',
-                                'features' => array('Dynamic vehicle ads on Google', 'Facebook vehicle showcase campaigns', 'Inventory-based remarketing', 'VDP (Vehicle Detail Page) optimization')
+                                'features' => array('Dynamic vehicle ads on Google', 'Facebook vehicle showcase campaigns', 'Inventory-based remarketing', 'VDP (Vehicle Detail Page) optimisation')
                             ),
                             array(
                                 'icon' => 'fas fa-wrench',
@@ -88,7 +88,7 @@ $services = get_post_meta(get_the_ID(), '_automotive_services', true) ?: array()
                             array(
                                 'icon' => 'fas fa-chart-line',
                                 'title' => 'Lead Generation Campaigns',
-                                'description' => 'Generate high-quality leads for sales and service departments with targeted PPC campaigns and conversion optimization.',
+                                'description' => 'Generate high-quality leads for sales and service departments with targeted PPC campaigns and conversion optimisation.',
                                 'features' => array('Google Ads for automotive', 'Facebook lead generation', 'Trade-in value campaigns', 'Test drive scheduling')
                             )
                         );
@@ -113,7 +113,7 @@ $services = get_post_meta(get_the_ID(), '_automotive_services', true) ?: array()
                     </div>
                     <?php endforeach; ?>                </div>
                   <!-- Added Services CTA -->
-                <div class="services-cta text-center animate-on-scroll animate-fade-up" style="margin-top: 5px;">
+                <div class="services-cta text-centre animate-on-scroll animate-fade-up" style="margin-top: 5px;">
                     <h3>Get Expert Help With Your Automotive Marketing</h3>
                     <p>Ready to boost your dealership's visibility and drive more qualified leads?</p>
                     <div class="cta-buttons" style="margin-top: 5px;">
@@ -139,7 +139,7 @@ $services = get_post_meta(get_the_ID(), '_automotive_services', true) ?: array()
                         );
                         $case_study_solution_title = get_post_meta(get_the_ID(), '_automotive_case_study_solution_title', true) ?: 'Our Solution';
                         $case_study_solutions = get_post_meta(get_the_ID(), '_automotive_case_study_solutions', true) ?: array(
-                            'Comprehensive local SEO optimization',
+                            'Comprehensive local SEO optimisation',
                             'Dynamic vehicle inventory advertising',
                             'Service-focused PPC campaigns',
                             'Review management and reputation building'
@@ -202,13 +202,13 @@ $services = get_post_meta(get_the_ID(), '_automotive_services', true) ?: array()
                     margin-top: 0;
                     padding-top: 0;
                 }
-                /* Center the process title */
-                .automotive-process h2.text-center {
-                    text-align: center;
+                /* centre the process title */
+                .automotive-process h2.text-centre {
+                    text-align: centre;
                     width: 100%;
                 }
                 /* Add style for the section title's after element (if any) */
-                .automotive-process h2.text-center::after {
+                .automotive-process h2.text-centre::after {
                     left: 50%;
                     transform: translateX(-50%);
                     margin-left: 0;
@@ -220,22 +220,22 @@ $services = get_post_meta(get_the_ID(), '_automotive_services', true) ?: array()
                 $process_steps = get_post_meta(get_the_ID(), '_automotive_process_steps', true) ?: array(
                     array(
                         'title' => 'Market Analysis',
-                        'description' => 'We analyze your local automotive market, competitor strategies, and customer behavior patterns.'
+                        'description' => 'We analyse your local automotive market, competitor strategies, and customer behaviour patterns.'
                     ),
                     array(
                         'title' => 'Strategy Development',
-                        'description' => 'Create a customized marketing strategy that aligns with your inventory, services, and business goals.'
+                        'description' => 'Create a customised marketing strategy that aligns with your inventory, services, and business goals.'
                     ),
                     array(
                         'title' => 'Campaign Implementation',
-                        'description' => 'Launch targeted campaigns across multiple channels, optimized for automotive customer journeys.'
+                        'description' => 'Launch targeted campaigns across multiple channels, optimised for automotive customer journeys.'
                     ),
                     array(
-                        'title' => 'Performance Optimization',
-                        'description' => 'Continuously monitor and optimize campaigns based on lead quality, cost per acquisition, and ROI.'                    )
+                        'title' => 'Performance optimisation',
+                        'description' => 'Continuously monitor and optimise campaigns based on lead quality, cost per acquisition, and ROI.'                    )
                 );
                 ?>
-                <h2 class="animate-on-scroll animate-fade-up text-center"><?php echo esc_html($process_title); ?></h2>
+                <h2 class="animate-on-scroll animate-fade-up text-centre"><?php echo esc_html($process_title); ?></h2>
                 <div class="process-steps">
                     <?php foreach ($process_steps as $index => $step): ?>
                     <div class="process-step animate-on-scroll animate-stagger animate-slide-up">
@@ -251,7 +251,7 @@ $services = get_post_meta(get_the_ID(), '_automotive_services', true) ?: array()
         </section>        <!-- Automotive Industry Insights -->
         <section class="automotive-insights animate-on-scroll animate-fade-up">
             <div class="section-content">
-                <div class="content-center">
+                <div class="content-centre">
                     <?php 
                     $insights_title = get_post_meta(get_the_ID(), '_automotive_insights_title', true) ?: 'Automotive Industry Insights';
                     $insights = get_post_meta(get_the_ID(), '_automotive_insights', true) ?: array(
@@ -277,7 +277,7 @@ $services = get_post_meta(get_the_ID(), '_automotive_services', true) ?: array()
                         )
                     );
                     ?>
-                    <h2 class="section-title animate-on-scroll animate-fade-up" style="text-align: center;">
+                    <h2 class="section-title animate-on-scroll animate-fade-up" style="text-align: centre;">
                         <?php echo esc_html($insights_title); ?>
                         <style>
                         .automotive-insights .section-title::after {
@@ -322,7 +322,7 @@ $services = get_post_meta(get_the_ID(), '_automotive_services', true) ?: array()
                 </div>
             </div>
         </section>        <!-- CTA Section -->
-        <section class="automotive-cta text-center animate-on-scroll animate-fade-up">
+        <section class="automotive-cta text-centre animate-on-scroll animate-fade-up">
             <div class="section-content">
                 <?php 
                 $cta_title = get_post_meta(get_the_ID(), '_automotive_cta_title', true) ?: 'Ready to Accelerate Your Automotive Marketing?';

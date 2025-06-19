@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 /**
  * Retargeting & Display Ads Meta Fields
  *
@@ -38,7 +38,7 @@ function aimpro_get_retargeting_display_default_values() {
         
         // Service Items (6 services)
         'service_title_1' => 'Website Retargeting',
-        'service_content_1' => 'Re-engage website visitors with personalized ads based on their browsing behavior and pages visited.',
+        'service_content_1' => 'Re-engage website visitors with personalised ads based on their browsing behaviour and pages visited.',
         'service_icon_1' => 'fas fa-bullseye',
         
         'service_title_2' => 'Abandoned Cart Recovery',
@@ -82,7 +82,7 @@ function aimpro_get_retargeting_display_default_values() {
         
         'process_step_number_1' => '1',
         'process_step_title_1' => 'Audience Segmentation',
-        'process_step_content_1' => 'Analyze website behavior to create detailed audience segments based on pages visited, engagement level, and conversion intent.',
+        'process_step_content_1' => 'analyse website behaviour to create detailed audience segments based on pages visited, engagement level, and conversion intent.',
         
         'process_step_number_2' => '2',
         'process_step_title_2' => 'Pixel Implementation',
@@ -90,21 +90,21 @@ function aimpro_get_retargeting_display_default_values() {
         
         'process_step_number_3' => '3',
         'process_step_title_3' => 'Creative Development',
-        'process_step_content_3' => 'Design compelling ad creative with personalized messaging that addresses specific user behaviors and intent signals.',
+        'process_step_content_3' => 'Design compelling ad creative with personalised messaging that addresses specific user behaviours and intent signals.',
         
         'process_step_number_4' => '4',
         'process_step_title_4' => 'Campaign Launch & Testing',
         'process_step_content_4' => 'Deploy retargeting campaigns with systematic A/B testing of creative, messaging, and frequency caps.',
         
         'process_step_number_5' => '5',
-        'process_step_title_5' => 'Optimization & Scaling',
-        'process_step_content_5' => 'Continuously optimize based on performance data and scale successful campaigns across additional platforms and audiences.',
+        'process_step_title_5' => 'optimisation & Scaling',
+        'process_step_content_5' => 'Continuously optimise based on performance data and scale successful campaigns across additional platforms and audiences.',
         
         // Retargeting Types Section
         'types_title' => 'Types of Retargeting We Implement',
         
         'type_title_1' => 'Pixel-Based Retargeting',
-        'type_content_1' => 'Track anonymous website visitors and serve them relevant ads across the web based on their browsing behavior.',
+        'type_content_1' => 'Track anonymous website visitors and serve them relevant ads across the web based on their browsing behaviour.',
         'type_icon_1' => 'fas fa-mouse-pointer',
         
         'type_title_2' => 'List-Based Retargeting',
@@ -124,7 +124,7 @@ function aimpro_get_retargeting_display_default_values() {
         'type_icon_5' => 'fas fa-share-alt',
         
         'type_title_6' => 'Cross-Device Retargeting',
-        'type_content_6' => 'Follow users across all their devices to maintain consistent messaging and maximize conversion opportunities.',
+        'type_content_6' => 'Follow users across all their devices to maintain consistent messaging and maximise conversion opportunities.',
         'type_icon_6' => 'fas fa-mobile-alt',
         
         // Tools Section
@@ -139,11 +139,11 @@ function aimpro_get_retargeting_display_default_values() {
         'tool_icon_2' => 'fab fa-facebook',
         
         'tool_title_3' => 'Google Analytics',
-        'tool_content_3' => 'Comprehensive audience analysis and behavior tracking for precise retargeting segmentation.',
+        'tool_content_3' => 'Comprehensive audience analysis and behaviour tracking for precise retargeting segmentation.',
         'tool_icon_3' => 'fas fa-chart-bar',
         
         'tool_title_4' => 'Dynamic Creative Tools',
-        'tool_content_4' => 'Automated ad creation and personalization based on user behavior and product interests.',
+        'tool_content_4' => 'Automated ad creation and personalisation based on user behaviour and product interests.',
         'tool_icon_4' => 'fas fa-palette',
         
         // Industries Section

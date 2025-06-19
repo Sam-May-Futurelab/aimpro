@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 // SEO Audit page meta boxes and fields
 
 // Add meta boxes
@@ -132,11 +132,11 @@ function seo_audit_header_callback($post) {
 // Overview callback
 function seo_audit_overview_callback($post) {
     $overview_title = get_post_meta($post->ID, 'seo_audit_overview_title', true) ?: 'Discover Your Website\'s Hidden SEO Potential';
-    $overview_description = get_post_meta($post->ID, 'seo_audit_overview_description', true) ?: 'Our comprehensive SEO audit provides a detailed analysis of your website\'s current performance, identifies critical issues affecting your rankings, and delivers a prioritized action plan to improve your search visibility. Get the insights you need to outrank your competition and drive more organic traffic.';
+    $overview_description = get_post_meta($post->ID, 'seo_audit_overview_description', true) ?: 'Our comprehensive SEO audit provides a detailed analysis of your website\'s current performance, identifies critical issues affecting your rankings, and delivers a prioritised action plan to improve your search visibility. Get the insights you need to outrank your competition and drive more organic traffic.';
     $benefits_title = get_post_meta($post->ID, 'seo_audit_benefits_title', true) ?: 'What Our SEO Audit Reveals:';
     $benefits = get_post_meta($post->ID, 'seo_audit_benefits', true) ?: array(
         'Technical SEO issues preventing good rankings',
-        'Content gaps and optimization opportunities',
+        'Content gaps and optimisation opportunities',
         'Competitor analysis and market positioning',
         'Keyword opportunities you\'re missing',
         'Backlink profile analysis and improvement areas',
@@ -199,7 +199,7 @@ function seo_audit_components_callback($post) {
         ),
         array(
             'title' => 'Keyword Analysis',
-            'description' => 'Comprehensive keyword research and optimization opportunity identification.',
+            'description' => 'Comprehensive keyword research and optimisation opportunity identification.',
             'features' => array(
                 'Current keyword rankings',
                 'Keyword gap analysis',
@@ -212,10 +212,10 @@ function seo_audit_components_callback($post) {
         ),
         array(
             'title' => 'Content Audit',
-            'description' => 'Evaluate your content quality, optimization, and identify improvement opportunities.',
+            'description' => 'Evaluate your content quality, optimisation, and identify improvement opportunities.',
             'features' => array(
                 'Content quality assessment',
-                'On-page optimization review',
+                'On-page optimisation review',
                 'Meta tags and headers analysis',
                 'Content gap identification',
                 'Duplicate content detection',
@@ -225,7 +225,7 @@ function seo_audit_components_callback($post) {
         ),
         array(
             'title' => 'Competitor Analysis',
-            'description' => 'Analyze your top competitors to identify opportunities and benchmark performance.',
+            'description' => 'analyse your top competitors to identify opportunities and benchmark performance.',
             'features' => array(
                 'Competitor keyword rankings',
                 'Content strategy analysis',
@@ -251,9 +251,9 @@ function seo_audit_components_callback($post) {
         ),
         array(
             'title' => 'Local SEO Audit',
-            'description' => 'Evaluate your local search presence and optimization opportunities.',
+            'description' => 'Evaluate your local search presence and optimisation opportunities.',
             'features' => array(
-                'Google My Business optimization',
+                'Google My Business optimisation',
                 'Local citation consistency',
                 'Review profile analysis',
                 'Local keyword rankings',
@@ -305,7 +305,7 @@ function seo_audit_sample_callback($post) {
     $report_sections = get_post_meta($post->ID, 'seo_audit_report_sections', true) ?: array(
         array('title' => 'Executive Summary', 'description' => 'High-level overview of findings and recommendations'),
         array('title' => 'Technical Issues', 'description' => 'Detailed technical problems with priority levels'),
-        array('title' => 'Content Analysis', 'description' => 'Content optimization opportunities and gaps'),
+        array('title' => 'Content Analysis', 'description' => 'Content optimisation opportunities and gaps'),
         array('title' => 'Competitive Landscape', 'description' => 'How you compare to top competitors'),
         array('title' => 'Action Plan', 'description' => 'Prioritized recommendations with timelines'),
         array('title' => 'ROI Projections', 'description' => 'Expected traffic and revenue improvements')
@@ -351,7 +351,7 @@ function seo_audit_process_callback($post) {
         ),
         array(
             'title' => 'Analysis & Report',
-            'description' => 'Analyze data and create detailed report with actionable recommendations.',
+            'description' => 'analyse data and create detailed report with actionable recommendations.',
             'duration' => '5-7 Days'
         ),
         array(

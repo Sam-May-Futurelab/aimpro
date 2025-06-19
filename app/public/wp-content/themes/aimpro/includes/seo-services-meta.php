@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 /**
  * SEO Services Page Meta Boxes
  */
@@ -121,7 +121,7 @@ function get_seo_services_defaults() {
         
         // Overview defaults
         'overview_title' => 'Expert SEO Services That Drive Results',
-        'overview_description' => 'Our comprehensive SEO services are designed to improve your search engine rankings, increase organic traffic, and drive qualified leads to your business. With over 25 years of combined experience and proven methodologies, we help businesses of all sizes achieve sustainable growth through search engine optimization.',
+        'overview_description' => 'Our comprehensive SEO services are designed to improve your search engine rankings, increase organic traffic, and drive qualified leads to your business. With over 25 years of combined experience and proven methodologies, we help businesses of all sizes achieve sustainable growth through search engine optimisation.',
         'overview_benefits_title' => 'What SEO Can Do for Your Business:',
         'overview_benefits' => array(
             'Increase organic search visibility by up to 300%',
@@ -138,13 +138,13 @@ function get_seo_services_defaults() {
         'service_1_title' => 'Local SEO',
         'service_1_description' => 'Dominate local search results and attract customers in your geographic area with our comprehensive local SEO strategies.',
         'service_1_features' => array(
-            'Google My Business optimization',
+            'Google My Business optimisation',
             'Local citation building',
             'Review management and generation',
             'Local keyword targeting',
-            'Geographic content optimization'
+            'Geographic content optimisation'
         ),
-        'service_1_result' => 'Average: 400% increase in local visibility',
+        'service_1_result' => '',
         'service_1_link' => home_url('/local-seo'),
         'service_1_featured' => true,
         
@@ -157,17 +157,17 @@ function get_seo_services_defaults() {
             'Keyword opportunity research',
             'Detailed action plan'
         ),
-        'service_2_result' => 'Identify 50+ optimization opportunities',
+        'service_2_result' => 'Identify 50+ optimisation opportunities',
         'service_2_link' => home_url('/seo-audit'),
         'service_2_featured' => false,
         
         'service_3_title' => 'Technical SEO',
-        'service_3_description' => 'Optimize your website\'s technical foundation to improve search engine crawling, indexing, and rankings.',
+        'service_3_description' => 'optimise your website\'s technical foundation to improve search engine crawling, indexing, and rankings.',
         'service_3_features' => array(
-            'Site speed optimization',
+            'Site speed optimisation',
             'Core Web Vitals improvement',
             'Schema markup implementation',
-            'Mobile optimization',
+            'Mobile optimisation',
             'Crawl error resolution'
         ),
         'service_3_result' => 'Average: 60% improvement in site speed',
@@ -175,15 +175,15 @@ function get_seo_services_defaults() {
         'service_3_featured' => false,
         
         'service_4_title' => 'On-Page SEO',
-        'service_4_description' => 'Optimize individual pages to rank higher and earn more relevant traffic in search engines.',
+        'service_4_description' => 'optimise individual pages to rank higher and earn more relevant traffic in search engines.',
         'service_4_features' => array(
-            'Keyword research and optimization',
-            'Content optimization',
-            'Meta tag optimization',
+            'Keyword research and optimisation',
+            'Content optimisation',
+            'Meta tag optimisation',
             'Internal linking strategy',
-            'Image optimization'
+            'Image optimisation'
         ),
-        'service_4_result' => 'Average: 250% increase in organic traffic',
+        'service_4_result' => '',
         'service_4_link' => home_url('/on-page-seo'),
         'service_4_featured' => false,
         
@@ -196,7 +196,7 @@ function get_seo_services_defaults() {
             'Partner support and training',
             'Client communication tools'
         ),
-        'service_5_result' => 'Scale your agency with confidence',
+        'service_5_result' => '',
         'service_5_link' => home_url('/white-label-seo'),
         'service_5_featured' => false,
         
@@ -208,14 +208,14 @@ function get_seo_services_defaults() {
         'case_study_challenges' => array(
             'Low search engine rankings for target keywords',
             'Poor technical SEO foundation',
-            'Lack of optimized content strategy',
+            'Lack of optimised content strategy',
             'No local SEO presence'
         ),
         'case_study_solution_title' => 'Our SEO Strategy',
         'case_study_solutions' => array(
             'Comprehensive technical SEO overhaul',
             'Strategic keyword research and targeting',
-            'Content optimization and creation',
+            'Content optimisation and creation',
             'Local SEO implementation'
         ),
         'case_study_results_title' => 'Results After 8 Months',
@@ -235,11 +235,11 @@ function get_seo_services_defaults() {
         'process_step_1_title' => 'SEO Audit & Analysis',
         'process_step_1_description' => 'Comprehensive analysis of your current SEO performance, technical issues, and opportunities.',
         'process_step_2_title' => 'Strategy Development',
-        'process_step_2_description' => 'Create a customized SEO strategy based on your business goals and market research.',
+        'process_step_2_description' => 'Create a customised SEO strategy based on your business goals and market research.',
         'process_step_3_title' => 'Implementation',
-        'process_step_3_description' => 'Execute technical optimizations, content improvements, and link building strategies.',
-        'process_step_4_title' => 'Monitor & Optimize',
-        'process_step_4_description' => 'Continuous monitoring and optimization based on performance data and algorithm updates.',
+        'process_step_3_description' => 'Execute technical optimisations, content improvements, and link building strategies.',
+        'process_step_4_title' => 'Monitor & optimise',
+        'process_step_4_description' => 'Continuous monitoring and optimisation based on performance data and algorithm updates.',
         
         // Tools defaults
         'tools_title' => 'Professional SEO Tools & Technologies',
@@ -247,7 +247,7 @@ function get_seo_services_defaults() {
         'tools_category_1_tools' => array('Ahrefs', 'SEMrush', 'Moz Pro', 'Google Search Console'),
         'tools_category_2_title' => 'Technical SEO',
         'tools_category_2_tools' => array('Screaming Frog', 'GTmetrix', 'Google PageSpeed Insights', 'Schema Markup Validator'),
-        'tools_category_3_title' => 'Content Optimization',
+        'tools_category_3_title' => 'Content optimisation',
         'tools_category_3_tools' => array('Surfer SEO', 'Clearscope', 'Yoast SEO', 'Google Analytics 4'),
         'tools_category_4_title' => 'Local SEO',
         'tools_category_4_tools' => array('BrightLocal', 'Google My Business', 'Whitespark', 'ReviewTrackers'),
@@ -255,30 +255,30 @@ function get_seo_services_defaults() {
         // Industries defaults
         'industries_title' => 'SEO Expertise Across Industries',
         'industry_1_title' => 'E-commerce',
-        'industry_1_description' => 'Product page optimization, category structure, and technical SEO for online stores.',
+        'industry_1_description' => 'Product page optimisation, category structure, and technical SEO for online stores.',
         'industry_1_features' => array(
             'Product schema markup',
-            'Category page optimization',
+            'Category page optimisation',
             'E-commerce technical SEO'
         ),
         'industry_2_title' => 'Professional Services',
         'industry_2_description' => 'Local SEO and authority building for lawyers, accountants, consultants, and other professionals.',
         'industry_2_features' => array(
-            'Local search optimization',
+            'Local search optimisation',
             'Professional authority building',
-            'Service page optimization'
+            'Service page optimisation'
         ),
         'industry_3_title' => 'Healthcare',
         'industry_3_description' => 'Medical SEO with compliance focus for hospitals, clinics, and healthcare providers.',
         'industry_3_features' => array(
-            'Medical content optimization',
+            'Medical content optimisation',
             'Local medical SEO',
             'HIPAA-compliant strategies'
         ),
         'industry_4_title' => 'Real Estate',
-        'industry_4_description' => 'Property listing optimization and local market dominance for real estate professionals.',
+        'industry_4_description' => 'Property listing optimisation and local market dominance for real estate professionals.',
         'industry_4_features' => array(
-            'Property listing optimization',
+            'Property listing optimisation',
             'Local market SEO',
             'Real estate schema markup'
         ),          // Testimonial defaults

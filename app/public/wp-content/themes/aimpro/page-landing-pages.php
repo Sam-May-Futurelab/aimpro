@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 /**
  * Template Name: Landing Pages
  * 
@@ -28,7 +28,7 @@ get_header(); ?>
         <div class="container">
             <div class="hero-content animate-on-scroll animate-fade-up">
                 <h1>High-Converting Landing Pages</h1>
-                <p class="hero-subtitle">Purpose-built landing pages that turn visitors into customers with laser-focused messaging and conversion optimization.</p>
+                <p class="hero-subtitle">Purpose-built landing pages that turn visitors into customers with laser-focused messaging and conversion optimisation.</p>
                 <div class="hero-stats animate-on-scroll animate-fade-up">
                     <div class="stat-item">
                         <div class="stat-number">340%</div>
@@ -53,7 +53,7 @@ get_header(); ?>
             <div class="overview-content">
                 <div class="overview-text animate-on-scroll animate-slide-left">
                     <h2>Landing Pages That Convert Like Crazy</h2>
-                    <p class="overview-description">Our high-converting landing pages are meticulously crafted to achieve one goal: turn your traffic into leads and sales. Every element is strategically designed and tested to maximize conversions for your specific audience and offer.</p>
+                    <p class="overview-description">Our high-converting landing pages are meticulously crafted to achieve one goal: turn your traffic into leads and sales. Every element is strategically designed and tested to maximise conversions for your specific audience and offer.</p>
                     
                     <h3 class="features-heading">Key Features</h3>
                     <div class="service-features-list">
@@ -64,24 +64,24 @@ get_header(); ?>
                         
                         <div class="service-feature-item">
                             <h4><i class="fas fa-flask"></i> A/B Testing Ready</h4>
-                            <p>Built-in testing capabilities to continuously optimize performance and improve conversion rates.</p>
+                            <p>Built-in testing capabilities to continuously optimise performance and improve conversion rates.</p>
                         </div>
                         
                         <div class="service-feature-item">
                             <h4><i class="fas fa-rocket"></i> Lightning Fast Loading</h4>
-                            <p>Optimized for speed with under 2-second load times to minimize bounce rates and maximize conversions.</p>
+                            <p>optimised for speed with under 2-second load times to minimise bounce rates and maximise conversions.</p>
                         </div>
                         
                         <div class="service-feature-item">
                             <h4><i class="fas fa-chart-bar"></i> Advanced Analytics</h4>
-                            <p>Comprehensive tracking and analytics to measure performance and identify optimization opportunities.</p>
+                            <p>Comprehensive tracking and analytics to measure performance and identify optimisation opportunities.</p>
                         </div>
                     </div>
                 </div>
                 
                 <div class="overview-stats animate-on-scroll animate-slide-right">
                     <h3 class="stats-heading">Proven Results</h3>
-                    <p class="stats-description">Our landing pages don't just look good—they deliver measurable business results. Every element is optimized for maximum conversions.</p>
+                    <p class="stats-description">Our landing pages don't just look good—they deliver measurable business results. Every element is optimised for maximum conversions.</p>
                     
                     <div class="target-icon" style="max-width: 350px; margin: 0 auto 20px; border-radius: 10px; overflow: hidden; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
                         <img src="<?php echo get_template_directory_uri(); ?>/assets/images/Aimpro-high-ranking-website-blog.png" alt="High Converting Landing Page" style="width: 100%; height: auto; display: block;">
@@ -99,7 +99,7 @@ get_header(); ?>
                         <span class="stat-number">23%</span>
                         <span class="stat-label">Average Conversion Rate</span>
                     </div>
-                    <div class="overview-cta animate-on-scroll animate-fade-up" style="margin-top: 30px; text-align: center;">
+                    <div class="overview-cta animate-on-scroll animate-fade-up" style="margin-top: 30px; text-align: centre;">
                         <a href="<?php echo home_url('/contact'); ?>" class="btn-primary">Get a Free Landing Page Quote</a>
                     </div>
                 </div>
@@ -111,7 +111,7 @@ get_header(); ?>
             <div class="case-study-content">
                 <div class="case-study-header animate-on-scroll animate-fade-up">
                     <span class="case-study-label">Case Study</span>
-                    <h2>How FitLife Academy Increased Course Sales by 485% with Optimized Landing Pages</h2>
+                    <h2>How FitLife Academy Increased Course Sales by 485% with optimised Landing Pages</h2>
                 </div>
                 
                 <div class="case-study-grid">
@@ -134,11 +134,11 @@ get_header(); ?>
                     <div class="case-study-solution animate-on-scroll animate-slide-right">
                         <h3>Our Solution</h3>
                         <ul>
-                            <li><strong>Message-Match Optimization:</strong> Aligned landing page copy with ad messaging for consistency</li>
+                            <li><strong>Message-Match optimisation:</strong> Aligned landing page copy with ad messaging for consistency</li>
                             <li><strong>Clear Value Proposition:</strong> Highlighted unique benefits and transformation outcomes</li>
                             <li><strong>Social Proof Integration:</strong> Added testimonials, reviews, and success stories</li>
-                            <li><strong>Streamlined Forms:</strong> Reduced form fields and optimized conversion flow</li>
-                            <li><strong>Mobile Optimization:</strong> Enhanced mobile experience for 70% mobile traffic</li>
+                            <li><strong>Streamlined Forms:</strong> Reduced form fields and optimised conversion flow</li>
+                            <li><strong>Mobile optimisation:</strong> Enhanced mobile experience for 70% mobile traffic</li>
                         </ul>
                     </div>
                 </div>
@@ -177,7 +177,7 @@ get_header(); ?>
                         <i class="fas fa-magnet"></i>
                     </div>
                     <h3>Lead Generation Pages</h3>
-                    <p>Capture high-quality leads with compelling offers and optimized forms that convert visitors into prospects.</p>
+                    <p>Capture high-quality leads with compelling offers and optimised forms that convert visitors into prospects.</p>
                     <ul>
                         <li>E-book downloads</li>
                         <li>Free trial signups</li>
@@ -239,7 +239,7 @@ get_header(); ?>
                     <div class="step-number">1</div>
                     <div class="step-content">
                         <h3>Campaign Analysis</h3>
-                        <p>Analyze your traffic source, audience, and campaign goals to create targeted landing page strategy.</p>
+                        <p>analyse your traffic source, audience, and campaign goals to create targeted landing page strategy.</p>
                     </div>
                 </div>
                 <div class="process-step animate-on-scroll animate-stagger animate-fade-up">
@@ -260,14 +260,14 @@ get_header(); ?>
                     <div class="step-number">4</div>
                     <div class="step-content">
                         <h3>Development & Integration</h3>
-                        <p>Build fast-loading pages with proper tracking, form integrations, and mobile optimization.</p>
+                        <p>Build fast-loading pages with proper tracking, form integrations, and mobile optimisation.</p>
                     </div>
                 </div>
                 <div class="process-step animate-on-scroll animate-stagger animate-fade-up">
                     <div class="step-number">5</div>
                     <div class="step-content">
-                        <h3>Testing & Optimization</h3>
-                        <p>Set up A/B tests and continuous optimization to improve conversion rates over time.</p>
+                        <h3>Testing & optimisation</h3>
+                        <p>Set up A/B tests and continuous optimisation to improve conversion rates over time.</p>
                     </div>
                 </div>
                 <div class="process-step animate-on-scroll animate-stagger animate-fade-up">
@@ -312,7 +312,7 @@ get_header(); ?>
                     </div>
                     <ul class="pricing-features">
                         <li>3 custom landing pages</li>
-                        <li>Advanced mobile optimization</li>
+                        <li>Advanced mobile optimisation</li>
                         <li>Multi-step forms</li>
                         <li>Conversion tracking setup</li>
                         <li>A/B testing setup</li>
@@ -339,7 +339,7 @@ get_header(); ?>
                         <li>Unlimited revisions</li>
                         <li>14-day delivery</li>
                         <li>60 days support</li>
-                        <li>Ongoing optimization</li>
+                        <li>Ongoing optimisation</li>
                     </ul>
                     <a href="#contact" class="btn-outline">Get Started</a>
                 </div>
@@ -478,7 +478,7 @@ get_header(); ?>
                 </div>
                 <div class="testimonial-card animate-on-scroll animate-stagger animate-fade-up">
                     <div class="testimonial-content">
-                        <p>"The attention to detail and conversion optimization expertise is outstanding. Our webinar attendance increased by 280%."</p>
+                        <p>"The attention to detail and conversion optimisation expertise is outstanding. Our webinar attendance increased by 280%."</p>
                     </div>
                     <div class="testimonial-author">
                         <strong>Amanda Collins</strong>
@@ -501,7 +501,7 @@ get_header(); ?>
                 <div class="faq-item animate-on-scroll animate-stagger animate-fade-up">
                     <button class="faq-question">Do you write the copy for landing pages?</button>
                     <div class="faq-answer">
-                        <p>Yes, our packages include conversion-optimized copywriting. We can also work with your existing copy if you prefer.</p>
+                        <p>Yes, our packages include conversion-optimised copywriting. We can also work with your existing copy if you prefer.</p>
                     </div>
                 </div>
                 <div class="faq-item animate-on-scroll animate-stagger animate-fade-up">
@@ -513,19 +513,19 @@ get_header(); ?>
                 <div class="faq-item animate-on-scroll animate-stagger animate-fade-up">
                     <button class="faq-question">Do you provide A/B testing setup?</button>
                     <div class="faq-answer">
-                        <p>Yes, our Professional and Funnel packages include A/B testing setup to help you continuously optimize conversion rates.</p>
+                        <p>Yes, our Professional and Funnel packages include A/B testing setup to help you continuously optimise conversion rates.</p>
                     </div>
                 </div>
                 <div class="faq-item animate-on-scroll animate-stagger animate-fade-up">
                     <button class="faq-question">What if my landing page doesn't convert well?</button>
                     <div class="faq-answer">
-                        <p>We provide ongoing optimization support and can make data-driven improvements to enhance performance based on actual results.</p>
+                        <p>We provide ongoing optimisation support and can make data-driven improvements to enhance performance based on actual results.</p>
                     </div>
                 </div>
                 <div class="faq-item animate-on-scroll animate-stagger animate-fade-up">
                     <button class="faq-question">Can I make changes after the page is live?</button>
                     <div class="faq-answer">
-                        <p>Yes, all packages include support periods for changes. We also offer maintenance packages for ongoing updates and optimization.</p>
+                        <p>Yes, all packages include support periods for changes. We also offer maintenance packages for ongoing updates and optimisation.</p>
                     </div>
                 </div>
             </div>

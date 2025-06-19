@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 /**
  * Template Name: AI CRM Setup
  * 
@@ -12,8 +12,8 @@ get_header(); ?>
 <style>
 .tools-section .tool-icon {
     display: flex;
-    justify-content: center;
-    align-items: center;
+    justify-content: centre;
+    align-items: centre;
     margin: 0 auto 15px;
 }
 .tools-section .tool-icon i {
@@ -60,7 +60,7 @@ get_header(); ?>
         <div class="container">
             <div class="hero-content animate-on-scroll animate-fade-up">
                 <h1><?php echo esc_html(get_post_meta(get_the_ID(), 'ai_hero_title', true) ?: 'AI-Powered CRM Setup & Implementation'); ?></h1>
-                <p class="hero-subtitle"><?php echo esc_html(get_post_meta(get_the_ID(), 'ai_hero_subtitle', true) ?: 'Transform your customer relationship management with AI-driven CRM systems that automate lead scoring, predict customer behavior, and optimize your entire sales funnel for maximum conversion.'); ?></p>
+                <p class="hero-subtitle"><?php echo esc_html(get_post_meta(get_the_ID(), 'ai_hero_subtitle', true) ?: 'Transform your customer relationship management with AI-driven CRM systems that automate lead scoring, predict customer behaviour, and optimise your entire sales funnel for maximum conversion.'); ?></p>
                 <div class="hero-stats animate-on-scroll animate-stagger animate-scale-up">
                     <div class="stat-item">
                         <div class="stat-number"><?php echo esc_html(get_post_meta(get_the_ID(), 'ai_hero_stat_1_number', true) ?: '340%'); ?></div>
@@ -95,7 +95,7 @@ get_header(); ?>
                         <i class="fas fa-brain"></i>
                     </div>
                     <h3><?php echo esc_html(get_post_meta(get_the_ID(), 'ai_service_1_title', true) ?: 'AI Lead Scoring'); ?></h3>
-                    <p><?php echo esc_html(get_post_meta(get_the_ID(), 'ai_service_1_desc', true) ?: 'Automatically score and prioritize leads based on behavior, demographics, and engagement patterns using machine learning algorithms.'); ?></p>
+                    <p><?php echo esc_html(get_post_meta(get_the_ID(), 'ai_service_1_desc', true) ?: 'Automatically score and prioritise leads based on behaviour, demographics, and engagement patterns using machine learning algorithms.'); ?></p>
                 </div>
                 
                 <div class="service-item">
@@ -111,14 +111,14 @@ get_header(); ?>
                         <i class="fas fa-sync-alt"></i>
                     </div>
                     <h3><?php echo esc_html(get_post_meta(get_the_ID(), 'ai_service_3_title', true) ?: 'Workflow Automation'); ?></h3>
-                    <p><?php echo esc_html(get_post_meta(get_the_ID(), 'ai_service_3_desc', true) ?: 'Create intelligent workflows that adapt based on customer behavior and automatically trigger the right actions at the right time.'); ?></p>
+                    <p><?php echo esc_html(get_post_meta(get_the_ID(), 'ai_service_3_desc', true) ?: 'Create intelligent workflows that adapt based on customer behaviour and automatically trigger the right actions at the right time.'); ?></p>
                 </div>
                 
                 <div class="service-item">
                     <div class="service-icon">
                         <i class="fas fa-user-tie"></i>
                     </div>
-                    <h3><?php echo esc_html(get_post_meta(get_the_ID(), 'ai_service_4_title', true) ?: 'Sales Pipeline Optimization'); ?></h3>
+                    <h3><?php echo esc_html(get_post_meta(get_the_ID(), 'ai_service_4_title', true) ?: 'Sales Pipeline optimisation'); ?></h3>
                     <p><?php echo esc_html(get_post_meta(get_the_ID(), 'ai_service_4_desc', true) ?: 'AI-driven pipeline management that identifies bottlenecks and suggests optimal next actions for each prospect.'); ?></p>
                 </div>
                 
@@ -127,7 +127,7 @@ get_header(); ?>
                         <i class="fas fa-comments"></i>
                     </div>
                     <h3><?php echo esc_html(get_post_meta(get_the_ID(), 'ai_service_5_title', true) ?: 'Intelligent Customer Insights'); ?></h3>
-                    <p><?php echo esc_html(get_post_meta(get_the_ID(), 'ai_service_5_desc', true) ?: 'Deep customer profiling using AI to understand preferences, behavior patterns, and optimal communication strategies.'); ?></p>
+                    <p><?php echo esc_html(get_post_meta(get_the_ID(), 'ai_service_5_desc', true) ?: 'Deep customer profiling using AI to understand preferences, behaviour patterns, and optimal communication strategies.'); ?></p>
                 </div>
                 
                 <div class="service-item">
@@ -138,7 +138,7 @@ get_header(); ?>
                     <p><?php echo esc_html(get_post_meta(get_the_ID(), 'ai_service_6_desc', true) ?: 'Unified customer view across all touchpoints with AI-powered attribution and engagement tracking.'); ?></p>                </div>            </div>
             
             <!-- CTA after services overview -->
-            <div class="text-center animate-on-scroll animate-fade-up" style="margin-top: 3rem;">
+            <div class="text-centre animate-on-scroll animate-fade-up" style="margin-top: 3rem;">
                 <a href="<?php echo home_url('/contact'); ?>" class="btn-primary">Get Your AI CRM Assessment</a>
             </div>
         </div>
@@ -194,8 +194,8 @@ get_header(); ?>
             </div>
             
             <!-- CTA after case study results -->
-            <div class="text-center animate-on-scroll animate-fade-up" style="margin-top: 3rem;">
-                <p style="font-size: 1.1rem; color: #666; margin-bottom: 1.5rem;">Ready to transform your CRM with AI?</p>
+            <div class="text-centre animate-on-scroll animate-fade-up" style="margin-top: 3rem;">
+                <p style="font-size: 1.1rem; colour: #666; margin-bottom: 1.5rem;">Ready to transform your CRM with AI?</p>
                 <a href="<?php echo home_url('/contact'); ?>" class="btn-primary">Start Your AI CRM Transformation</a>
             </div>
         </div>
@@ -239,47 +239,47 @@ get_header(); ?>
                 <div class="process-step">
                     <div class="step-number">5</div>
                     <div class="step-content">
-                        <h3><?php echo esc_html(get_post_meta(get_the_ID(), 'ai_step_5_title', true) ?: 'Testing & Optimization'); ?></h3>
-                        <p><?php echo esc_html(get_post_meta(get_the_ID(), 'ai_step_5_desc', true) ?: 'Comprehensive testing of AI workflows, user training, and continuous optimization based on performance data.'); ?></p>
+                        <h3><?php echo esc_html(get_post_meta(get_the_ID(), 'ai_step_5_title', true) ?: 'Testing & optimisation'); ?></h3>
+                        <p><?php echo esc_html(get_post_meta(get_the_ID(), 'ai_step_5_desc', true) ?: 'Comprehensive testing of AI workflows, user training, and continuous optimisation based on performance data.'); ?></p>
                     </div>
                 </div>
             </div>
         </div>
     </section><!-- AI Features Section -->
     <section class="tools-section">
-        <div class="container" style="text-align: center;">
+        <div class="container" style="text-align: centre;">
             <div class="section-header animate-on-scroll animate-fade-up">
                 <h2 style="margin-bottom: 20px;">AI-Powered CRM Features</h2>
                 <p style="max-width: 800px; margin: 0 auto 30px;">Transform your customer relationship management with intelligent features that automate processes and drive better results.</p>
             </div>
             
-            <div class="tools-grid animate-on-scroll animate-stagger animate-scale-up" style="justify-content: center;">
-                <div class="tool-item" style="text-align: center;">
-                    <div class="tool-icon" style="text-align: center; display: flex; justify-content: center;">
+            <div class="tools-grid animate-on-scroll animate-stagger animate-scale-up" style="justify-content: centre;">
+                <div class="tool-item" style="text-align: centre;">
+                    <div class="tool-icon" style="text-align: centre; display: flex; justify-content: centre;">
                         <i class="fas fa-robot"></i>
                     </div>
                     <h3>Smart Lead Scoring</h3>
-                    <p>AI algorithms analyze 50+ data points to score leads and predict conversion probability in real-time.</p>
+                    <p>AI algorithms analyse 50+ data points to score leads and predict conversion probability in real-time.</p>
                 </div>
                 
-                <div class="tool-item" style="text-align: center;">
-                    <div class="tool-icon" style="text-align: center; display: flex; justify-content: center;">
+                <div class="tool-item" style="text-align: centre;">
+                    <div class="tool-icon" style="text-align: centre; display: flex; justify-content: centre;">
                         <i class="fas fa-chart-line"></i>
                     </div>
                     <h3>Predictive Forecasting</h3>
                     <p>Machine learning models predict sales outcomes, revenue forecasts, and optimal deal closure timing.</p>
                 </div>
                 
-                <div class="tool-item" style="text-align: center;">
-                    <div class="tool-icon" style="text-align: center; display: flex; justify-content: center;">
+                <div class="tool-item" style="text-align: centre;">
+                    <div class="tool-icon" style="text-align: centre; display: flex; justify-content: centre;">
                         <i class="fas fa-bullseye"></i>
                     </div>
-                    <h3>Behavioral Targeting</h3>
-                    <p>AI tracks customer behavior patterns to trigger personalized engagement at optimal moments.</p>
+                    <h3>behavioural Targeting</h3>
+                    <p>AI tracks customer behaviour patterns to trigger personalised engagement at optimal moments.</p>
                 </div>
                 
-                <div class="tool-item" style="text-align: center;">
-                    <div class="tool-icon" style="text-align: center; display: flex; justify-content: center;">
+                <div class="tool-item" style="text-align: centre;">
+                    <div class="tool-icon" style="text-align: centre; display: flex; justify-content: centre;">
                         <i class="fas fa-chart-bar"></i>
                     </div>
                     <h3>Intelligent Reporting</h3>
@@ -292,7 +292,7 @@ get_header(); ?>
         <div class="container">
             <div class="section-header animate-on-scroll animate-fade-up">
                 <h2>AI CRM Setup Packages</h2>
-                <p>Transform your customer relationship management with data-driven optimization strategies.</p>
+                <p>Transform your customer relationship management with data-driven optimisation strategies.</p>
             </div>
             
             <div class="pricing-grid animate-on-scroll animate-stagger animate-scale-up">
@@ -326,7 +326,7 @@ get_header(); ?>
                         <li>Intelligent workflow automation</li>
                         <li>Custom dashboards & reporting</li>
                         <li>Comprehensive team training</li>
-                        <li>90-day optimization support</li>
+                        <li>90-day optimisation support</li>
                     </ul>
                     <a href="#contact" class="btn-primary">Get Started</a>
                 </div>
@@ -344,7 +344,7 @@ get_header(); ?>
                         <li>Multi-system integrations</li>
                         <li>White-glove implementation</li>
                         <li>Dedicated project manager</li>
-                        <li>6-month ongoing optimization</li>
+                        <li>6-month ongoing optimisation</li>
                     </ul>
                     <a href="#contact" class="btn-outline">Get Started</a>
                 </div>
@@ -413,7 +413,7 @@ get_header(); ?>
             <div class="industries-grid animate-on-scroll animate-stagger animate-scale-up">
                 <div class="industry-item">
                     <h3>SaaS & Technology</h3>
-                    <p>Optimize trial-to-paid conversions and reduce churn with predictive customer analytics.</p>
+                    <p>optimise trial-to-paid conversions and reduce churn with predictive customer analytics.</p>
                 </div>
                 <div class="industry-item">
                     <h3>Professional Services</h3>
@@ -421,7 +421,7 @@ get_header(); ?>
                 </div>
                 <div class="industry-item">
                     <h3>E-commerce</h3>
-                    <p>Personalize customer journeys and predict purchase behavior for increased sales.</p>
+                    <p>personalise customer journeys and predict purchase behaviour for increased sales.</p>
                 </div>
                 <div class="industry-item">
                     <h3>Real Estate</h3>
@@ -429,7 +429,7 @@ get_header(); ?>
                 </div>
                 <div class="industry-item">
                     <h3>Manufacturing</h3>
-                    <p>Manage complex B2B relationships and optimize quote-to-cash processes.</p>
+                    <p>Manage complex B2B relationships and optimise quote-to-cash processes.</p>
                 </div>
                 <div class="industry-item">
                     <h3>Healthcare</h3>

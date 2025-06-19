@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 /**
  * Template Name: Contact Page
  * 
@@ -12,17 +12,17 @@ get_header(); ?>
     <section class="company-values animate-on-scroll animate-fade-up" style="padding: 4rem 0; background: #f8f9fa;">
         <div class="container">
             <div class="section-content">
-                <div class="content-center">
+                <div class="content-centre">
                     <h2><?php echo aimpro_get_field('contact_hero_heading', 'Get In Touch with Digital Marketing Experts'); ?></h2>
                     <div class="curly-underline-accent"></div>
-                    <p style="color: #5a6c7d; font-size: 1.2rem; margin-bottom: 3rem;"><?php echo aimpro_get_field('contact_hero_subtitle', 'Ready to transform your business? Let\'s discuss your digital marketing goals and create a strategy that delivers measurable results.'); ?></p>
+                    <p style="colour: #5a6c7d; font-size: 1.2rem; margin-bottom: 3rem;"><?php echo aimpro_get_field('contact_hero_subtitle', 'Ready to transform your business? Let\'s discuss your digital marketing goals and create a strategy that delivers measurable results.'); ?></p>
                 </div>
                 
                 <div class="values-grid">
                     <div class="value-card animate-on-scroll animate-stagger animate-fade-up">
                         <div class="value-icon">
                             <svg width="60" height="60" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" stroke="currentcolour" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                             </svg>
                         </div>
                         <h3><?php echo aimpro_get_field('contact_phone_label', 'Call Us Now'); ?></h3>
@@ -33,8 +33,8 @@ get_header(); ?>
                     <div class="value-card animate-on-scroll animate-stagger animate-fade-up">
                         <div class="value-icon">
                             <svg width="60" height="60" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                <polyline points="22,6 12,13 2,6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" stroke="currentcolour" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                <polyline points="22,6 12,13 2,6" stroke="currentcolour" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                             </svg>
                         </div>
                         <h3><?php echo aimpro_get_field('contact_email_label', 'Email Us'); ?></h3>
@@ -44,8 +44,8 @@ get_header(); ?>
                       <div class="value-card animate-on-scroll animate-stagger animate-fade-up">
                         <div class="value-icon">
                             <svg width="60" height="60" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"/>
-                                <polyline points="12,6 12,12 16,14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                <circle cx="12" cy="12" r="10" stroke="currentcolour" stroke-width="2"/>
+                                <polyline points="12,6 12,12 16,14" stroke="currentcolour" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                             </svg>
                         </div>
                         <h3><?php echo aimpro_get_field('contact_hours_label', 'Business Hours'); ?></h3>
@@ -55,9 +55,9 @@ get_header(); ?>
                 </div>
                 
                 <!-- Location Badge -->
-                <div style="text-align: center; margin-top: 3rem;">
+                <div style="text-align: centre; margin-top: 3rem;">
                     <div class="service-tags-strip" style="display: inline-block; padding: 0.75rem 2rem; border-radius: 50px;">
-                        <span style="font-weight: 600; letter-spacing: 1px; color: white;">
+                        <span style="font-weight: 600; letter-spacing: 1px; colour: white;">
                             📍 <?php echo aimpro_get_field('contact_hero_badge', 'LOCATED IN BIRMINGHAM\'S BUSINESS DISTRICT'); ?>
                         </span>
                     </div>
@@ -66,13 +66,13 @@ get_header(); ?>
         </div>    </section>    <!-- Main Content -->
     <div class="contact-main-content" style="padding-top: 2rem;">
         <div class="container">
-            <div class="contact-layout-centered">                  <!-- Contact Form Section -->
+            <div class="contact-layout-centred">                  <!-- Contact Form Section -->
                 <div class="contact-form-section animate-on-scroll animate-fade-up" style="margin-top: 0;">
                     <!-- Contact Form Header -->
-                    <div class="section-content" style="text-align: center; margin-bottom: 3rem;">
+                    <div class="section-content" style="text-align: centre; margin-bottom: 3rem;">
                         <h2>Send Us a Message</h2>
                         <div class="curly-underline-accent"></div>
-                        <p style="color: #5a6c7d; font-size: 1.1rem; margin-top: 1rem;">Fill out the form below and we'll get back to you within 24 hours with a customized strategy for your business.</p>
+                        <p style="colour: #5a6c7d; font-size: 1.1rem; margin-top: 1rem;">Fill out the form below and we'll get back to you within 24 hours with a customised strategy for your business.</p>
                     </div>
                     
                     <div class="contact-form-wrapper">
@@ -182,7 +182,7 @@ get_header(); ?>
                 
                 <div class="faq-item">
                     <h3><?php echo aimpro_get_field('contact_faq_3_question', 'What\'s included in your free consultation?'); ?></h3>
-                    <p><?php echo aimpro_get_field('contact_faq_3_answer', 'Our free consultation includes a comprehensive audit of your current digital marketing, competitive analysis, and a customized strategy recommendation with projected ROI.'); ?></p>
+                    <p><?php echo aimpro_get_field('contact_faq_3_answer', 'Our free consultation includes a comprehensive audit of your current digital marketing, competitive analysis, and a customised strategy recommendation with projected ROI.'); ?></p>
                 </div>
                 
                 <div class="faq-item">
@@ -197,7 +197,7 @@ get_header(); ?>
                 
                 <div class="faq-item">
                     <h3><?php echo aimpro_get_field('contact_faq_6_question', 'What makes you different from other agencies?'); ?></h3>
-                    <p><?php echo aimpro_get_field('contact_faq_6_answer', 'We focus on measurable results with transparent reporting, offer genuine partnership rather than just service delivery, and use AI-powered tools to maximize efficiency and ROI.'); ?></p>
+                    <p><?php echo aimpro_get_field('contact_faq_6_answer', 'We focus on measurable results with transparent reporting, offer genuine partnership rather than just service delivery, and use AI-powered tools to maximise efficiency and ROI.'); ?></p>
                 </div>
             </div>
         </div>
@@ -275,19 +275,19 @@ get_header(); ?>
     left: 0;
     right: 0;
     bottom: 0;
-    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><radialGradient id="a" cx="0.5" cy="0.5" r="0.5"><stop offset="0%" stop-color="%23f15a25" stop-opacity="0.1"/><stop offset="100%" stop-color="%23f15a25" stop-opacity="0"/></radialGradient></defs><circle cx="20" cy="20" r="2" fill="url(%23a)"/><circle cx="80" cy="40" r="1.5" fill="url(%23a)"/><circle cx="40" cy="80" r="1" fill="url(%23a)"/></svg>') repeat;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><radialGradient id="a" cx="0.5" cy="0.5" r="0.5"><stop offset="0%" stop-colour="%23f15a25" stop-opacity="0.1"/><stop offset="100%" stop-colour="%23f15a25" stop-opacity="0"/></radialGradient></defs><circle cx="20" cy="20" r="2" fill="url(%23a)"/><circle cx="80" cy="40" r="1.5" fill="url(%23a)"/><circle cx="40" cy="80" r="1" fill="url(%23a)"/></svg>') repeat;
     opacity: 0.5;
 }
 
 .hero-content {
-    text-align: center;
+    text-align: centre;
     position: relative;
     z-index: 2;
 }
 
 .hero-badge {
     display: inline-flex;
-    align-items: center;
+    align-items: centre;
     gap: 0.5rem;
     background: rgba(241, 90, 37, 0.1);
     border: 1px solid rgba(241, 90, 37, 0.3);
@@ -295,21 +295,21 @@ get_header(); ?>
     border-radius: 50px;
     font-size: 0.8rem;
     font-weight: 600;
-    color: var(--primary-orange);
+    colour: var(--primary-orange);
     margin-bottom: 2rem;
 }
 
 .contact-hero h1 {
     font-size: 3.5rem;
     font-weight: 700;
-    color: var(--text-primary);
+    colour: var(--text-primary);
     margin-bottom: 1.5rem;
     line-height: 1.2;
 }
 
 .hero-description {
     font-size: 1.2rem;
-    color: var(--text-secondary);
+    colour: var(--text-secondary);
     margin-bottom: 3rem;
     max-width: 600px;
     margin-left: auto;
@@ -326,7 +326,7 @@ get_header(); ?>
 
 .quick-contact-item {
     display: flex;
-    align-items: center;
+    align-items: centre;
     gap: 1rem;
     background: var(--glass-bg);
     border: var(--glass-border);
@@ -340,7 +340,7 @@ get_header(); ?>
 .quick-contact-item:hover {
     transform: translateY(-5px);
     box-shadow: var(--shadow-dark);
-    border-color: var(--primary-orange);
+    border-colour: var(--primary-orange);
 }
 
 .contact-icon {
@@ -350,16 +350,16 @@ get_header(); ?>
     background: #000000;
     border-radius: 12px;
     display: flex;
-    align-items: center;
-    justify-content: center;
+    align-items: centre;
+    justify-content: centre;
     flex-shrink: 0;
-    color: #ffffff;
+    colour: #ffffff;
 }
 
 /* Light theme icon styling - keep them black */
 .light-theme .contact-icon {
     background: #000000;
-    color: #ffffff;
+    colour: #ffffff;
 }
 
 .contact-details {
@@ -370,13 +370,13 @@ get_header(); ?>
 
 .contact-label {
     font-size: 0.9rem;
-    color: var(--text-secondary);
+    colour: var(--text-secondary);
     font-weight: 500;
 }
 
 .contact-value {
     font-size: 1.1rem;
-    color: var(--text-primary);
+    colour: var(--text-primary);
     font-weight: 600;
 }
 
@@ -393,33 +393,33 @@ get_header(); ?>
     align-items: start;
 }
 
-.contact-layout-centered {
+.contact-layout-centred {
     display: flex;
-    justify-content: center;
+    justify-content: centre;
     align-items: start;
     width: 100%;
 }
 
-.contact-layout-centered .contact-form-section {
+.contact-layout-centred .contact-form-section {
     width: 100%;
     max-width: 900px;
 }
 
 .contact-form-section .section-header {
-    text-align: center;
+    text-align: centre;
     margin-bottom: 3rem;
 }
 
 .contact-form-section h2 {
     font-size: 2.5rem;
     font-weight: 700;
-    color: var(--text-primary);
+    colour: var(--text-primary);
     margin-bottom: 1rem;
 }
 
 .contact-form-section p {
     font-size: 1.1rem;
-    color: var(--text-secondary);
+    colour: var(--text-secondary);
     max-width: 600px;
     margin: 0 auto;
 }
@@ -448,11 +448,11 @@ get_header(); ?>
 .contact-info-card h3 {
     font-size: 1.5rem;
     font-weight: 700;
-    color: var(--text-primary);
+    colour: var(--text-primary);
     margin-bottom: 1.5rem;
     background: var(--gradient-orange);
     -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    -webkit-text-fill-colour: transparent;
     background-clip: text;
 }
 
@@ -477,18 +477,18 @@ get_header(); ?>
     background: var(--gradient-orange);
     border-radius: 10px;
     display: flex;
-    align-items: center;
-    justify-content: center;
+    align-items: centre;
+    justify-content: centre;
     flex-shrink: 0;
 }
 
 .office-content {
-    color: var(--text-secondary);
+    colour: var(--text-secondary);
     line-height: 1.5;
 }
 
 .office-content strong {
-    color: var(--text-primary);
+    colour: var(--text-primary);
 }
 
 .office-cta {
@@ -496,7 +496,7 @@ get_header(); ?>
     background: rgba(241, 90, 37, 0.1);
     border: 1px solid rgba(241, 90, 37, 0.3);
     border-radius: 12px;
-    text-align: center;
+    text-align: centre;
     margin-bottom: 2rem;
 }
 
@@ -523,8 +523,8 @@ get_header(); ?>
     background: var(--gradient-orange);
     border-radius: 10px;
     display: flex;
-    align-items: center;
-    justify-content: center;
+    align-items: centre;
+    justify-content: centre;
     flex-shrink: 0;
 }
 
@@ -536,32 +536,32 @@ get_header(); ?>
 
 .method-label {
     font-size: 0.9rem;
-    color: var(--text-secondary);
+    colour: var(--text-secondary);
     font-weight: 500;
 }
 
 .method-value {
     font-size: 1.1rem;
-    color: var(--primary-orange);
+    colour: var(--primary-orange);
     font-weight: 600;
     text-decoration: none;
-    transition: color 0.3s ease;
+    transition: colour 0.3s ease;
 }
 
 .method-value:hover {
-    color: var(--primary-orange-light);
+    colour: var(--primary-orange-light);
 }
 
 .method-note {
     font-size: 0.8rem;
-    color: var(--text-secondary);
+    colour: var(--text-secondary);
     opacity: 0.8;
 }
 
 /* Service Quick Links */
 .service-link {
     display: flex;
-    align-items: center;
+    align-items: centre;
     gap: 1rem;
     padding: 1rem;
     background: rgba(255, 255, 255, 0.03);
@@ -583,19 +583,19 @@ get_header(); ?>
     background: var(--gradient-orange);
     border-radius: 8px;
     display: flex;
-    align-items: center;
-    justify-content: center;
+    align-items: centre;
+    justify-content: centre;
     flex-shrink: 0;
 }
 
 .service-name {
-    color: var(--text-primary);
+    colour: var(--text-primary);
     font-weight: 500;
     flex: 1;
 }
 
 .service-arrow {
-    color: var(--primary-orange);
+    colour: var(--primary-orange);
     font-weight: 600;
     transition: transform 0.3s ease;
 }
@@ -606,7 +606,7 @@ get_header(); ?>
 
 .services-cta {
     margin-top: 1.5rem;
-    text-align: center;
+    text-align: centre;
 }
 
 /* FAQ Section */
@@ -616,14 +616,14 @@ get_header(); ?>
 }
 
 .contact-faq .section-header {
-    text-align: center;
+    text-align: centre;
     margin-bottom: 4rem;
 }
 
 .contact-faq h2 {
     font-size: 2.5rem;
     font-weight: 700;
-    color: var(--text-primary);
+    colour: var(--text-primary);
     margin-bottom: 1rem;
 }
 
@@ -649,12 +649,12 @@ get_header(); ?>
 .faq-item h3 {
     font-size: 1.2rem;
     font-weight: 600;
-    color: var(--text-primary);
+    colour: var(--text-primary);
     margin-bottom: 1rem;
 }
 
 .faq-item p {
-    color: var(--text-secondary);
+    colour: var(--text-secondary);
     line-height: 1.6;
 }
 
@@ -665,19 +665,19 @@ get_header(); ?>
 }
 
 .social-proof-content {
-    text-align: center;
+    text-align: centre;
 }
 
 .contact-social-proof h2 {
     font-size: 2.5rem;
     font-weight: 700;
-    color: var(--text-primary);
+    colour: var(--text-primary);
     margin-bottom: 1rem;
 }
 
 .contact-social-proof p {
     font-size: 1.1rem;
-    color: var(--text-secondary);
+    colour: var(--text-secondary);
     margin-bottom: 3rem;
 }
 
@@ -699,13 +699,13 @@ get_header(); ?>
     font-weight: 700;
     background: var(--gradient-orange);
     -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    -webkit-text-fill-colour: transparent;
     background-clip: text;
 }
 
 .stat-label {
     font-size: 0.9rem;
-    color: var(--text-secondary);
+    colour: var(--text-secondary);
     text-transform: uppercase;
     letter-spacing: 0.5px;
 }
@@ -721,14 +721,14 @@ get_header(); ?>
 
 .testimonial-highlight blockquote {
     font-size: 1.2rem;
-    color: var(--text-primary);
+    colour: var(--text-primary);
     line-height: 1.6;
     margin-bottom: 2rem;
     font-style: italic;
 }
 
 .testimonial-highlight cite {
-    color: var(--text-secondary);
+    colour: var(--text-secondary);
     font-style: normal;
 }
 
@@ -739,19 +739,19 @@ get_header(); ?>
 }
 
 .final-cta-content {
-    text-align: center;
+    text-align: centre;
 }
 
 .contact-final-cta h2 {
     font-size: 3rem;
     font-weight: 700;
-    color: var(--text-primary);
+    colour: var(--text-primary);
     margin-bottom: 1.5rem;
 }
 
 .contact-final-cta p {
     font-size: 1.2rem;
-    color: var(--text-secondary);
+    colour: var(--text-secondary);
     margin-bottom: 3rem;
     max-width: 700px;
     margin-left: auto;
@@ -761,18 +761,18 @@ get_header(); ?>
 .cta-actions {
     display: flex;
     gap: 1.5rem;
-    justify-content: center;
+    justify-content: centre;
     margin-bottom: 2rem;
     flex-wrap: wrap;
 }
 
 .cta-guarantee {
-    color: var(--text-secondary);
+    colour: var(--text-secondary);
     font-size: 0.9rem;
 }
 
 .cta-guarantee strong {
-    color: var(--primary-orange);
+    colour: var(--primary-orange);
 }
 
 /* Responsive Design */
@@ -782,7 +782,7 @@ get_header(); ?>
         gap: 3rem;
     }
     
-    .contact-layout-centered {
+    .contact-layout-centred {
         display: block;
     }
     
@@ -824,7 +824,7 @@ get_header(); ?>
     
     .cta-actions {
         flex-direction: column;
-        align-items: center;
+        align-items: centre;
     }
     
     .proof-stats {
@@ -859,24 +859,24 @@ get_header(); ?>
 }
 
 .visit-us-content {
-    text-align: center;
+    text-align: centre;
     margin-bottom: 3rem;
 }
 
 .visit-us-content h2 {
     font-size: 2.5rem;
     font-weight: 700;
-    color: var(--text-primary);
+    colour: var(--text-primary);
     margin-bottom: 1.5rem;
     background: var(--gradient-orange);
     -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    -webkit-text-fill-colour: transparent;
     background-clip: text;
 }
 
 .visit-us-content p {
     font-size: 1.2rem;
-    color: var(--text-secondary);
+    colour: var(--text-secondary);
     max-width: 700px;
     margin: 0 auto 2rem;
     line-height: 1.6;
@@ -890,19 +890,19 @@ get_header(); ?>
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 3rem;
-    align-items: center;
+    align-items: centre;
 }
 
 .office-details h3 {
     font-size: 1.8rem;
     font-weight: 700;
-    color: var(--text-primary);
+    colour: var(--text-primary);
     margin-bottom: 1.5rem;
 }
 
 .office-details p {
     font-size: 1.1rem;
-    color: var(--text-secondary);
+    colour: var(--text-secondary);
     margin-bottom: 0.75rem;
     line-height: 1.5;
 }

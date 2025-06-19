@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 /**
  * Template Name: Solutions Page
  * Description: Main solutions hub page
@@ -18,7 +18,7 @@ get_header(); ?>
             <div class="section-content">
                 <div class="intro-content animate-on-scroll animate-slide-left">
                     <h2><?php echo esc_html(get_post_meta(get_the_ID(), '_solutions_intro_title', true) ?: 'Transform Your Business with Strategic Digital Solutions'); ?></h2>
-                    <p><?php echo esc_html(get_post_meta(get_the_ID(), '_solutions_intro_content', true) ?: 'Every business faces unique challenges in today\'s digital landscape. Our comprehensive solutions are designed to address your most pressing needs, from generating quality leads to maximizing ROI from your marketing investments. Discover how our proven methodologies can accelerate your growth.'); ?></p>
+                    <p><?php echo esc_html(get_post_meta(get_the_ID(), '_solutions_intro_content', true) ?: 'Every business faces unique challenges in today\'s digital landscape. Our comprehensive solutions are designed to address your most pressing needs, from generating quality leads to maximising ROI from your marketing investments. Discover how our proven methodologies can accelerate your growth.'); ?></p>
                 </div>                <div class="solution-stats animate-on-scroll animate-stagger animate-scale-up">
                     <?php 
                     $solution_stats = get_post_meta(get_the_ID(), '_solutions_stats', true);
@@ -56,7 +56,7 @@ get_header(); ?>
                                 'features' => array(
                                     'Targeted PPC campaigns',
                                     'Lead magnet creation',
-                                    'Landing page optimization',
+                                    'Landing page optimisation',
                                     'CRM integration & nurturing'
                                 ),
                                 'results' => 'Average: 250% lead increase',
@@ -69,7 +69,7 @@ get_header(); ?>
                                 'features' => array(
                                     'Email marketing automation',
                                     'Lead scoring & segmentation',
-                                    'Behavioral trigger campaigns',
+                                    'behavioural trigger campaigns',
                                     'Multi-channel workflows'
                                 ),
                                 'results' => 'Average: 40% time savings',
@@ -78,12 +78,12 @@ get_header(); ?>
                             ),
                             array(
                                 'title' => 'Improve ROI from Ads',
-                                'description' => 'Maximize your advertising spend with data-driven optimization strategies that deliver measurable results.',
+                                'description' => 'Maximize your advertising spend with data-driven optimisation strategies that deliver measurable results.',
                                 'features' => array(
-                                    'PPC campaign optimization',
+                                    'PPC campaign optimisation',
                                     'Conversion tracking setup',
                                     'Audience refinement',
-                                    'Bid strategy optimization'
+                                    'Bid strategy optimisation'
                                 ),
                                 'results' => 'Average: 180% ROI improvement',
                                 'cta_text' => 'Boost Ad Performance',
@@ -93,7 +93,7 @@ get_header(); ?>
                                 'title' => 'Rank Higher Locally',
                                 'description' => 'Dominate local search results and attract customers in your area with comprehensive local SEO strategies.',
                                 'features' => array(
-                                    'Google My Business optimization',
+                                    'Google My Business optimisation',
                                     'Local citation building',
                                     'Review management',
                                     'Local keyword targeting'
@@ -104,12 +104,12 @@ get_header(); ?>
                             ),
                             array(
                                 'title' => 'Build a High-Converting Website',
-                                'description' => 'Create a website that turns visitors into customers with conversion-focused design and optimization.',
+                                'description' => 'Create a website that turns visitors into customers with conversion-focused design and optimisation.',
                                 'features' => array(
-                                    'Conversion rate optimization',
+                                    'Conversion rate optimisation',
                                     'User experience design',
                                     'A/B testing implementation',
-                                    'Mobile optimization'
+                                    'Mobile optimisation'
                                 ),
                                 'results' => 'Average: 150% conversion increase',
                                 'cta_text' => 'Build Better Websites',
@@ -117,15 +117,15 @@ get_header(); ?>
                             ),
                             array(
                                 'title' => 'Streamline Your Sales Funnel',
-                                'description' => 'Optimize every stage of your customer journey to reduce friction and increase conversion rates.',
+                                'description' => 'optimise every stage of your customer journey to reduce friction and increase conversion rates.',
                                 'features' => array(
-                                    'Funnel analysis & optimization',
+                                    'Funnel analysis & optimisation',
                                     'Customer journey mapping',
                                     'Conversion bottleneck removal',
                                     'Multi-step campaign design'
                                 ),
                                 'results' => 'Average: 200% funnel efficiency gain',
-                                'cta_text' => 'Optimize Your Funnel',
+                                'cta_text' => 'optimise Your Funnel',
                                 'cta_url' => '/streamline-sales-funnel'
                             )
                         );
@@ -164,7 +164,7 @@ get_header(); ?>
                             array(
                                 'number' => '1',
                                 'title' => 'Discovery & Analysis',
-                                'description' => 'We analyze your current situation, challenges, and goals to identify the most impactful solutions.'
+                                'description' => 'We analyse your current situation, challenges, and goals to identify the most impactful solutions.'
                             ),
                             array(
                                 'number' => '2',
@@ -178,8 +178,8 @@ get_header(); ?>
                             ),
                             array(
                                 'number' => '4',
-                                'title' => 'Optimization & Scaling',
-                                'description' => 'Continuously monitor, optimize, and scale solutions based on performance data and results.'
+                                'title' => 'optimisation & Scaling',
+                                'description' => 'Continuously monitor, optimise, and scale solutions based on performance data and results.'
                             )
                         );
                     }
@@ -217,15 +217,15 @@ get_header(); ?>
                                 'metric_number' => '320%',
                                 'metric_label' => 'ROI Improvement',
                                 'title' => 'E-commerce Retailer',
-                                'description' => '"Ad optimization and funnel streamlining resulted in 320% ROI improvement and 40% lower customer acquisition costs."',
-                                'solution_used' => 'ROI Optimization + Sales Funnel'
+                                'description' => '"Ad optimisation and funnel streamlining resulted in 320% ROI improvement and 40% lower customer acquisition costs."',
+                                'solution_used' => 'ROI optimisation + Sales Funnel'
                             ),
                             array(
                                 'metric_number' => '500%',
                                 'metric_label' => 'Local Visibility',
                                 'title' => 'Professional Services',
                                 'description' => '"Local SEO implementation increased their Google My Business visibility by 500% and doubled client inquiries."',
-                                'solution_used' => 'Local SEO + Website Optimization'
+                                'solution_used' => 'Local SEO + Website optimisation'
                             )
                         );
                     }

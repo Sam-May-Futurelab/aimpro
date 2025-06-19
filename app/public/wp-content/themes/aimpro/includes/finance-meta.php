@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 // Finance Page Meta Fields
 
 function add_finance_meta_boxes() {
@@ -68,13 +68,13 @@ function finance_meta_box_callback($post) {
                 'icon' => 'fas fa-user-plus',
                 'title' => 'Trust-Building Strategies',
                 'description' => 'Establish credibility and trust through strategic reputation management, client testimonials, and authority positioning.',
-                'features' => array('Online reputation management', 'Client success story promotion', 'Professional qualification highlighting', 'Trust signal optimization')
+                'features' => array('Online reputation management', 'Client success story promotion', 'Professional qualification highlighting', 'Trust signal optimisation')
             ),
             array(
                 'icon' => 'fas fa-chart-line',
                 'title' => 'High-Value Lead Generation',
                 'description' => 'Generate qualified leads for financial consultations, insurance quotes, and investment planning services.',
-                'features' => array('Consultation booking optimization', 'Financial calculator tools', 'Qualification-based lead scoring', 'Nurture sequence automation')
+                'features' => array('Consultation booking optimisation', 'Financial calculator tools', 'Qualification-based lead scoring', 'Nurture sequence automation')
             )
         );
     }
@@ -263,7 +263,7 @@ function finance_meta_box_callback($post) {
         }
         .remove-item {
             background: #dc3232;
-            color: white;
+            colour: white;
             border: none;
             padding: 5px 10px;
             cursor: pointer;
@@ -272,7 +272,7 @@ function finance_meta_box_callback($post) {
         }
         .add-item {
             background: #0073aa;
-            color: white;
+            colour: white;
             border: none;
             padding: 8px 16px;
             cursor: pointer;
@@ -307,7 +307,7 @@ function finance_meta_box_callback($post) {
         }
         .upload-button {
             background: #0073aa;
-            color: white;
+            colour: white;
             border: none;
             padding: 8px 16px;
             cursor: pointer;
@@ -315,7 +315,7 @@ function finance_meta_box_callback($post) {
         }
         .remove-image {
             background: #dc3232;
-            color: white;
+            colour: white;
             border: none;
             padding: 8px 16px;
             cursor: pointer;
@@ -335,14 +335,14 @@ function finance_meta_box_callback($post) {
         }
         .remove-list-item {
             background: #dc3232;
-            color: white;
+            colour: white;
             border: none;
             padding: 5px 10px;
             cursor: pointer;
         }
         .add-list-item {
             background: #0073aa;
-            color: white;
+            colour: white;
             border: none;
             padding: 5px 10px;
             cursor: pointer;
@@ -538,7 +538,7 @@ function finance_meta_box_callback($post) {
             <table class="form-table">
                 <tr>
                     <th><label for="finance_types_title">Types Title</label></th>
-                    <td><input type="text" id="finance_types_title" name="finance_types_title" value="<?php echo esc_attr($types_title); ?>" placeholder="Financial Services We Specialize In" /></td>
+                    <td><input type="text" id="finance_types_title" name="finance_types_title" value="<?php echo esc_attr($types_title); ?>" placeholder="Financial Services We specialise In" /></td>
                 </tr>
             </table>
             <div class="repeater-section">

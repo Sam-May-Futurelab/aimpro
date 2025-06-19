@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 /**
  * Template Name: Services Page
  * Description: Main services hub page
@@ -96,7 +96,7 @@ get_header(); ?>
                             <i class="fas fa-funnel-dollar" aria-hidden="true"></i>
                         </div>
                         <h3>Sales Funnels</h3>
-                        <p>Optimize your conversion process</p>
+                        <p>optimise your conversion process</p>
                         <a href="<?php echo home_url('/streamline-sales-funnel'); ?>" class="service-link">Learn More</a>
                     </div>
                 </div>
@@ -111,8 +111,8 @@ get_header(); ?>
                     <div class="category-header animate-on-scroll animate-fade-up">
                         <div class="category-icon">
                             <svg width="64" height="64" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <circle cx="11" cy="11" r="8" stroke="currentColor" stroke-width="2"/>
-                                <path d="M21 21L16.65 16.65" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                <circle cx="11" cy="11" r="8" stroke="currentcolour" stroke-width="2"/>
+                                <path d="M21 21L16.65 16.65" stroke="currentcolour" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                             </svg>
                         </div>
                         <div class="category-info">
@@ -127,7 +127,7 @@ get_header(); ?>
                             <h3>Local SEO</h3>
                             <p>Dominate local search results and attract customers in your area.</p>
                             <ul class="service-features">
-                                <li>Google My Business optimization</li>
+                                <li>Google My Business optimisation</li>
                                 <li>Local citation building</li>
                                 <li>Review management</li>
                                 <li>Local keyword targeting</li>
@@ -147,23 +147,23 @@ get_header(); ?>
 
                         <div class="subcategory-card animate-on-scroll animate-stagger animate-fade-up">
                             <h3>Technical SEO</h3>
-                            <p>Optimize your website's technical foundation for better search performance.</p>
+                            <p>optimise your website's technical foundation for better search performance.</p>
                             <ul class="service-features">
-                                <li>Site speed optimization</li>
+                                <li>Site speed optimisation</li>
                                 <li>Core Web Vitals improvement</li>
                                 <li>Schema markup implementation</li>
-                                <li>Mobile optimization</li>
+                                <li>Mobile optimisation</li>
                             </ul>
                             <a href="<?php echo home_url('/technical-seo'); ?>" class="service-link">Learn More</a>
                         </div>
 
                         <div class="subcategory-card animate-on-scroll animate-stagger animate-fade-up">
                             <h3>On-Page SEO</h3>
-                            <p>Optimize individual pages to rank higher and earn more relevant traffic.</p>
+                            <p>optimise individual pages to rank higher and earn more relevant traffic.</p>
                             <ul class="service-features">
-                                <li>Keyword optimization</li>
-                                <li>Content optimization</li>
-                                <li>Meta tag optimization</li>
+                                <li>Keyword optimisation</li>
+                                <li>Content optimisation</li>
+                                <li>Meta tag optimisation</li>
                                 <li>Internal linking strategy</li>
                             </ul>
                             <a href="<?php echo home_url('/on-page-seo'); ?>" class="service-link">Learn More</a>
@@ -188,9 +188,9 @@ get_header(); ?>
                     <div class="category-header">
                         <div class="category-icon">
                             <svg width="64" height="64" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M18 20V10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                <path d="M12 20V4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                <path d="M6 20V14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M18 20V10" stroke="currentcolour" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M12 20V4" stroke="currentcolour" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M6 20V14" stroke="currentcolour" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                             </svg>
                         </div>
                         <div class="category-info">
@@ -206,7 +206,7 @@ get_header(); ?>
                             <p>Drive qualified traffic and conversions with expertly managed Google Ads campaigns.</p>
                             <ul class="service-features">
                                 <li>Search campaign management</li>
-                                <li>Shopping ads optimization</li>
+                                <li>Shopping ads optimisation</li>
                                 <li>Display advertising</li>
                                 <li>YouTube advertising</li>
                             </ul>
@@ -220,7 +220,7 @@ get_header(); ?>
                                 <li>Facebook advertising</li>
                                 <li>Instagram advertising</li>
                                 <li>Audience targeting</li>
-                                <li>Creative optimization</li>
+                                <li>Creative optimisation</li>
                             </ul>
                             <a href="<?php echo home_url('/meta-ads'); ?>" class="service-link">Learn More</a>
                         </div>
@@ -232,7 +232,7 @@ get_header(); ?>
                                 <li>Bing search advertising</li>
                                 <li>LinkedIn audience network</li>
                                 <li>Microsoft audience targeting</li>
-                                <li>Cross-platform optimization</li>
+                                <li>Cross-platform optimisation</li>
                             </ul>
                             <a href="<?php echo home_url('/microsoft-ads'); ?>" class="service-link">Learn More</a>
                         </div>
@@ -251,11 +251,11 @@ get_header(); ?>
 
                         <div class="subcategory-card">
                             <h3>PPC Audit</h3>
-                            <p>Comprehensive analysis of your existing PPC campaigns for optimization opportunities.</p>
+                            <p>Comprehensive analysis of your existing PPC campaigns for optimisation opportunities.</p>
                             <ul class="service-features">
                                 <li>Account structure review</li>
                                 <li>Keyword analysis</li>
-                                <li>Ad copy optimization</li>
+                                <li>Ad copy optimisation</li>
                                 <li>Performance recommendations</li>
                             </ul>
                             <a href="<?php echo home_url('/ppc-audit'); ?>" class="service-link">Learn More</a>
@@ -280,9 +280,9 @@ get_header(); ?>
                     <div class="category-header">
                         <div class="category-icon">
                             <svg width="64" height="64" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                <path d="M2 17L12 22L22 17" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                <path d="M2 12L12 17L22 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="currentcolour" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M2 17L12 22L22 17" stroke="currentcolour" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M2 12L12 17L22 12" stroke="currentcolour" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                             </svg>
                         </div>
                         <div class="category-info">
@@ -295,7 +295,7 @@ get_header(); ?>
                     <div class="service-subcategories">
                         <div class="subcategory-card">
                             <h3>AI CRM Setup</h3>
-                            <p>Implement and optimize AI-powered CRM systems for better customer management.</p>
+                            <p>Implement and optimise AI-powered CRM systems for better customer management.</p>
                             <ul class="service-features">
                                 <li>CRM implementation</li>
                                 <li>AI workflow automation</li>
@@ -311,7 +311,7 @@ get_header(); ?>
                             <ul class="service-features">
                                 <li>Email automation</li>
                                 <li>SMS marketing flows</li>
-                                <li>Behavioral triggers</li>
+                                <li>behavioural triggers</li>
                                 <li>Segmentation strategy</li>
                             </ul>
                             <a href="<?php echo home_url('/email-sms-flows'); ?>" class="service-link">Learn More</a>
@@ -324,7 +324,7 @@ get_header(); ?>
                                 <li>Campaign design</li>
                                 <li>List management</li>
                                 <li>A/B testing</li>
-                                <li>Performance optimization</li>
+                                <li>Performance optimisation</li>
                             </ul>
                             <a href="<?php echo home_url('/email-campaigns'); ?>" class="service-link">Learn More</a>
                         </div>
@@ -336,7 +336,7 @@ get_header(); ?>
                                 <li>Funnel design</li>
                                 <li>Automation setup</li>
                                 <li>Lead qualification</li>
-                                <li>Conversion optimization</li>
+                                <li>Conversion optimisation</li>
                             </ul>
                             <a href="<?php echo home_url('/funnel-automation'); ?>" class="service-link">Learn More</a>
                         </div>
@@ -372,9 +372,9 @@ get_header(); ?>
                     <div class="category-header">
                         <div class="category-icon">
                             <svg width="64" height="64" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <rect x="2" y="3" width="20" height="14" rx="2" ry="2" stroke="currentColor" stroke-width="2"/>
-                                <line x1="8" y1="21" x2="16" y2="21" stroke="currentColor" stroke-width="2"/>
-                                <line x1="12" y1="17" x2="12" y2="21" stroke="currentColor" stroke-width="2"/>
+                                <rect x="2" y="3" width="20" height="14" rx="2" ry="2" stroke="currentcolour" stroke-width="2"/>
+                                <line x1="8" y1="21" x2="16" y2="21" stroke="currentcolour" stroke-width="2"/>
+                                <line x1="12" y1="17" x2="12" y2="21" stroke="currentcolour" stroke-width="2"/>
                             </svg>
                         </div>
                         <div class="category-info">
@@ -391,7 +391,7 @@ get_header(); ?>
                             <ul class="service-features">
                                 <li>Custom design</li>
                                 <li>Mobile-first approach</li>
-                                <li>User experience optimization</li>
+                                <li>User experience optimisation</li>
                                 <li>Brand integration</li>
                             </ul>
                             <a href="<?php echo home_url('/website-design'); ?>" class="service-link">Learn More</a>
@@ -399,7 +399,7 @@ get_header(); ?>
 
                         <div class="subcategory-card">
                             <h3>Landing Pages</h3>
-                            <p>High-converting landing pages designed to maximize campaign performance.</p>
+                            <p>High-converting landing pages designed to maximise campaign performance.</p>
                             <ul class="service-features">
                                 <li>Conversion-focused design</li>
                                 <li>A/B testing setup</li>
@@ -414,7 +414,7 @@ get_header(); ?>
                             <p>Complete sales funnel development from lead capture to conversion.</p>
                             <ul class="service-features">
                                 <li>Multi-step funnels</li>
-                                <li>Conversion optimization</li>
+                                <li>Conversion optimisation</li>
                                 <li>Payment integration</li>
                                 <li>Analytics setup</li>
                             </ul>
@@ -422,15 +422,15 @@ get_header(); ?>
                         </div>
 
                         <div class="subcategory-card">
-                            <h3>UX/UI Optimization</h3>
+                            <h3>UX/UI optimisation</h3>
                             <p>Improve user experience and interface design for better conversions.</p>
                             <ul class="service-features">
                                 <li>User experience audit</li>
-                                <li>Interface optimization</li>
+                                <li>Interface optimisation</li>
                                 <li>Usability testing</li>
                                 <li>Conversion improvements</li>
                             </ul>
-                            <a href="<?php echo home_url('/ux-ui-optimization'); ?>" class="service-link">Learn More</a>
+                            <a href="<?php echo home_url('/ux-ui-optimisation'); ?>" class="service-link">Learn More</a>
                         </div>
                     </div>
                 </div>
@@ -446,7 +446,7 @@ get_header(); ?>
                     <div class="benefit-card">
                         <div class="benefit-icon">
                             <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M9 12L11 14L15 10M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z" stroke="currentColor" stroke-width="2"/>
+                                <path d="M9 12L11 14L15 10M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z" stroke="currentcolour" stroke-width="2"/>
                             </svg>
                         </div>
                         <h3>Certified Experts</h3>
@@ -456,9 +456,9 @@ get_header(); ?>
                     <div class="benefit-card">
                         <div class="benefit-icon">
                             <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M18 20V10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                <path d="M12 20V4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                <path d="M6 20V14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M18 20V10" stroke="currentcolour" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M12 20V4" stroke="currentcolour" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M6 20V14" stroke="currentcolour" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                             </svg>
                         </div>
                         <h3>Data-Driven Results</h3>
@@ -468,8 +468,8 @@ get_header(); ?>
                     <div class="benefit-card">
                         <div class="benefit-icon">
                             <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                <path d="M2 17L12 22L22 17" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="currentcolour" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M2 17L12 22L22 17" stroke="currentcolour" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                             </svg>
                         </div>
                         <h3>Integrated Approach</h3>
@@ -479,7 +479,7 @@ get_header(); ?>
                     <div class="benefit-card">
                         <div class="benefit-icon">
                             <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M22 12H18L15 21L9 3L6 12H2" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M22 12H18L15 21L9 3L6 12H2" stroke="currentcolour" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                             </svg>
                         </div>
                         <h3>Transparent Reporting</h3>
@@ -508,7 +508,7 @@ get_header(); ?>
                         <div class="step-number">2</div>
                         <div class="step-content">
                             <h3>Strategy Development</h3>
-                            <p>Create a customized strategy tailored to your specific needs and market opportunities.</p>
+                            <p>Create a customised strategy tailored to your specific needs and market opportunities.</p>
                         </div>
                     </div>
 
@@ -523,8 +523,8 @@ get_header(); ?>
                     <div class="process-step">
                         <div class="step-number">4</div>
                         <div class="step-content">
-                            <h3>Monitor & Optimize</h3>
-                            <p>Continuously track performance and make data-driven optimizations for maximum results.</p>
+                            <h3>Monitor & optimise</h3>
+                            <p>Continuously track performance and make data-driven optimisations for maximum results.</p>
                         </div>
                     </div>
 

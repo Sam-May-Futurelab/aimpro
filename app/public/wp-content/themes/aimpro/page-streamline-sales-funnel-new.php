@@ -1,7 +1,7 @@
-<?php
+﻿<?php
 /**
  * Template Name: Streamline Sales Funnel Solution Page
- * Description: Sales funnel optimization solution for improved conversions
+ * Description: Sales funnel optimisation solution for improved conversions
  */
 
 get_header(); ?>
@@ -39,7 +39,7 @@ get_header(); ?>
                 <div class="overview-content">
                     <div class="overview-text">
                         <h2><?php echo get_post_meta(get_the_ID(), 'streamline_overview_title', true) ?: 'Complete Sales Funnel Streamlining Solutions'; ?></h2>
-                        <p><?php echo get_post_meta(get_the_ID(), 'streamline_overview_description', true) ?: 'Eliminate inefficiencies and gaps in your current sales process with our systematic approach to funnel optimization and automation.'; ?></p>
+                        <p><?php echo get_post_meta(get_the_ID(), 'streamline_overview_description', true) ?: 'Eliminate inefficiencies and gaps in your current sales process with our systematic approach to funnel optimisation and automation.'; ?></p>
                     </div>
                 </div>
             </div>
@@ -52,14 +52,14 @@ get_header(); ?>
                     <div class="service-card">
                         <div class="service-content">
                             <h3><?php echo get_post_meta(get_the_ID(), 'streamline_service_1_title', true) ?: 'Funnel Analysis & Audit'; ?></h3>
-                            <p><?php echo get_post_meta(get_the_ID(), 'streamline_service_1_desc', true) ?: 'Comprehensive review of your existing sales process to identify bottlenecks, gaps, and optimization opportunities.'; ?></p>
+                            <p><?php echo get_post_meta(get_the_ID(), 'streamline_service_1_desc', true) ?: 'Comprehensive review of your existing sales process to identify bottlenecks, gaps, and optimisation opportunities.'; ?></p>
                         </div>
                     </div>
 
                     <div class="service-card">
                         <div class="service-content">
                             <h3><?php echo get_post_meta(get_the_ID(), 'streamline_service_2_title', true) ?: 'Process Mapping & Design'; ?></h3>
-                            <p><?php echo get_post_meta(get_the_ID(), 'streamline_service_2_desc', true) ?: 'Visual mapping of your optimized sales journey with clear touchpoints and decision paths for maximum efficiency.'; ?></p>
+                            <p><?php echo get_post_meta(get_the_ID(), 'streamline_service_2_desc', true) ?: 'Visual mapping of your optimised sales journey with clear touchpoints and decision paths for maximum efficiency.'; ?></p>
                         </div>
                     </div>
 
@@ -72,7 +72,7 @@ get_header(); ?>
 
                     <div class="service-card">
                         <div class="service-content">
-                            <h3><?php echo get_post_meta(get_the_ID(), 'streamline_service_4_title', true) ?: 'Nurture Sequence Optimization'; ?></h3>
+                            <h3><?php echo get_post_meta(get_the_ID(), 'streamline_service_4_title', true) ?: 'Nurture Sequence optimisation'; ?></h3>
                             <p><?php echo get_post_meta(get_the_ID(), 'streamline_service_4_desc', true) ?: 'Refined email and communication sequences that move prospects smoothly through each stage of your funnel.'; ?></p>
                         </div>
                     </div>
@@ -80,7 +80,7 @@ get_header(); ?>
                     <div class="service-card">
                         <div class="service-content">
                             <h3><?php echo get_post_meta(get_the_ID(), 'streamline_service_5_title', true) ?: 'Conversion Point Enhancement'; ?></h3>
-                            <p><?php echo get_post_meta(get_the_ID(), 'streamline_service_5_desc', true) ?: 'Strategic optimization of key conversion moments to reduce friction and increase completion rates.'; ?></p>
+                            <p><?php echo get_post_meta(get_the_ID(), 'streamline_service_5_desc', true) ?: 'Strategic optimisation of key conversion moments to reduce friction and increase completion rates.'; ?></p>
                         </div>
                     </div>
 
@@ -128,13 +128,13 @@ get_header(); ?>
         <!-- Process Steps -->
         <section class="process-steps">
             <div class="section-content">
-                <h2><?php echo get_post_meta(get_the_ID(), 'streamline_process_title', true) ?: 'Our Proven Funnel Optimization Process'; ?></h2>
+                <h2><?php echo get_post_meta(get_the_ID(), 'streamline_process_title', true) ?: 'Our Proven Funnel optimisation Process'; ?></h2>
                 <div class="steps-container">
                     <div class="step-item">
                         <div class="step-number"><?php echo get_post_meta(get_the_ID(), 'streamline_step_1_number', true) ?: '01'; ?></div>
                         <div class="step-content">
                             <h3><?php echo get_post_meta(get_the_ID(), 'streamline_step_1_title', true) ?: 'Audit & Analysis'; ?></h3>
-                            <p><?php echo get_post_meta(get_the_ID(), 'streamline_step_1_desc', true) ?: 'Comprehensive review of your current funnel performance and identification of optimization opportunities.'; ?></p>
+                            <p><?php echo get_post_meta(get_the_ID(), 'streamline_step_1_desc', true) ?: 'Comprehensive review of your current funnel performance and identification of optimisation opportunities.'; ?></p>
                         </div>
                     </div>
 
@@ -150,15 +150,15 @@ get_header(); ?>
                         <div class="step-number"><?php echo get_post_meta(get_the_ID(), 'streamline_step_3_number', true) ?: '03'; ?></div>
                         <div class="step-content">
                             <h3><?php echo get_post_meta(get_the_ID(), 'streamline_step_3_title', true) ?: 'Implementation'; ?></h3>
-                            <p><?php echo get_post_meta(get_the_ID(), 'streamline_step_3_desc', true) ?: 'Systematic implementation of optimizations and automation across all funnel touchpoints.'; ?></p>
+                            <p><?php echo get_post_meta(get_the_ID(), 'streamline_step_3_desc', true) ?: 'Systematic implementation of optimisations and automation across all funnel touchpoints.'; ?></p>
                         </div>
                     </div>
 
                     <div class="step-item">
                         <div class="step-number"><?php echo get_post_meta(get_the_ID(), 'streamline_step_4_number', true) ?: '04'; ?></div>
                         <div class="step-content">
-                            <h3><?php echo get_post_meta(get_the_ID(), 'streamline_step_4_title', true) ?: 'Monitor & Optimize'; ?></h3>
-                            <p><?php echo get_post_meta(get_the_ID(), 'streamline_step_4_desc', true) ?: 'Continuous monitoring and data-driven optimization to maximize funnel performance.'; ?></p>
+                            <h3><?php echo get_post_meta(get_the_ID(), 'streamline_step_4_title', true) ?: 'Monitor & optimise'; ?></h3>
+                            <p><?php echo get_post_meta(get_the_ID(), 'streamline_step_4_desc', true) ?: 'Continuous monitoring and data-driven optimisation to maximise funnel performance.'; ?></p>
                         </div>
                     </div>
                 </div>
@@ -170,7 +170,7 @@ get_header(); ?>
             <div class="section-content">
                 <div class="cta-content">
                     <h2>Ready to Streamline Your Sales Funnel?</h2>
-                    <p>Let's analyze your current funnel and create a strategy that converts more prospects into customers.</p>
+                    <p>Let's analyse your current funnel and create a strategy that converts more prospects into customers.</p>
                     <div class="cta-buttons">
                         <a href="/contact" class="btn btn-primary">Start Your Funnel Audit</a>
                         <a href="/book-consultation" class="btn btn-secondary">Book Free Consultation</a>

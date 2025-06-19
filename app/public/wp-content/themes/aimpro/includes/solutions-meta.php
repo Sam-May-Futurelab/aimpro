@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 // Solutions Page Meta Fields
 
 function add_solutions_meta_boxes() {
@@ -42,7 +42,7 @@ function solutions_meta_box_callback($post) {
 
     // Solutions Introduction
     $intro_title = get_post_meta($post->ID, '_solutions_intro_title', true) ?: 'Transform Your Business with Strategic Digital Solutions';
-    $intro_content = get_post_meta($post->ID, '_solutions_intro_content', true) ?: 'Every business faces unique challenges in today\'s digital landscape. Our comprehensive solutions are designed to address your most pressing needs, from generating quality leads to maximizing ROI from your marketing investments. Discover how our proven methodologies can accelerate your growth.';
+    $intro_content = get_post_meta($post->ID, '_solutions_intro_content', true) ?: 'Every business faces unique challenges in today\'s digital landscape. Our comprehensive solutions are designed to address your most pressing needs, from generating quality leads to maximising ROI from your marketing investments. Discover how our proven methodologies can accelerate your growth.';
     
     // Solutions Stats
     $solution_stats = get_post_meta($post->ID, '_solutions_stats', true);
@@ -74,7 +74,7 @@ function solutions_meta_box_callback($post) {
                 'features' => array(
                     'Targeted PPC campaigns',
                     'Lead magnet creation',
-                    'Landing page optimization',
+                    'Landing page optimisation',
                     'CRM integration & nurturing'
                 ),
                 'results' => 'Average: 250% lead increase',
@@ -87,7 +87,7 @@ function solutions_meta_box_callback($post) {
                 'features' => array(
                     'Email marketing automation',
                     'Lead scoring & segmentation',
-                    'Behavioral trigger campaigns',
+                    'behavioural trigger campaigns',
                     'Multi-channel workflows'
                 ),
                 'results' => 'Average: 40% time savings',
@@ -96,12 +96,12 @@ function solutions_meta_box_callback($post) {
             ),
             array(
                 'title' => 'Improve ROI from Ads',
-                'description' => 'Maximize your advertising spend with data-driven optimization strategies that deliver measurable results.',
+                'description' => 'Maximize your advertising spend with data-driven optimisation strategies that deliver measurable results.',
                 'features' => array(
-                    'PPC campaign optimization',
+                    'PPC campaign optimisation',
                     'Conversion tracking setup',
                     'Audience refinement',
-                    'Bid strategy optimization'
+                    'Bid strategy optimisation'
                 ),
                 'results' => 'Average: 180% ROI improvement',
                 'cta_text' => 'Boost Ad Performance',
@@ -111,7 +111,7 @@ function solutions_meta_box_callback($post) {
                 'title' => 'Rank Higher Locally',
                 'description' => 'Dominate local search results and attract customers in your area with comprehensive local SEO strategies.',
                 'features' => array(
-                    'Google My Business optimization',
+                    'Google My Business optimisation',
                     'Local citation building',
                     'Review management',
                     'Local keyword targeting'
@@ -122,12 +122,12 @@ function solutions_meta_box_callback($post) {
             ),
             array(
                 'title' => 'Build a High-Converting Website',
-                'description' => 'Create a website that turns visitors into customers with conversion-focused design and optimization.',
+                'description' => 'Create a website that turns visitors into customers with conversion-focused design and optimisation.',
                 'features' => array(
-                    'Conversion rate optimization',
+                    'Conversion rate optimisation',
                     'User experience design',
                     'A/B testing implementation',
-                    'Mobile optimization'
+                    'Mobile optimisation'
                 ),
                 'results' => 'Average: 150% conversion increase',
                 'cta_text' => 'Build Better Websites',
@@ -135,15 +135,15 @@ function solutions_meta_box_callback($post) {
             ),
             array(
                 'title' => 'Streamline Your Sales Funnel',
-                'description' => 'Optimize every stage of your customer journey to reduce friction and increase conversion rates.',
+                'description' => 'optimise every stage of your customer journey to reduce friction and increase conversion rates.',
                 'features' => array(
-                    'Funnel analysis & optimization',
+                    'Funnel analysis & optimisation',
                     'Customer journey mapping',
                     'Conversion bottleneck removal',
                     'Multi-step campaign design'
                 ),
                 'results' => 'Average: 200% funnel efficiency gain',
-                'cta_text' => 'Optimize Your Funnel',
+                'cta_text' => 'optimise Your Funnel',
                 'cta_url' => '/streamline-sales-funnel'
             )
         );
@@ -157,7 +157,7 @@ function solutions_meta_box_callback($post) {
             array(
                 'number' => '1',
                 'title' => 'Discovery & Analysis',
-                'description' => 'We analyze your current situation, challenges, and goals to identify the most impactful solutions.'
+                'description' => 'We analyse your current situation, challenges, and goals to identify the most impactful solutions.'
             ),
             array(
                 'number' => '2',
@@ -171,8 +171,8 @@ function solutions_meta_box_callback($post) {
             ),
             array(
                 'number' => '4',
-                'title' => 'Optimization & Scaling',
-                'description' => 'Continuously monitor, optimize, and scale solutions based on performance data and results.'
+                'title' => 'optimisation & Scaling',
+                'description' => 'Continuously monitor, optimise, and scale solutions based on performance data and results.'
             )
         );
     }
@@ -193,15 +193,15 @@ function solutions_meta_box_callback($post) {
                 'metric_number' => '320%',
                 'metric_label' => 'ROI Improvement',
                 'title' => 'E-commerce Retailer',
-                'description' => '"Ad optimization and funnel streamlining resulted in 320% ROI improvement and 40% lower customer acquisition costs."',
-                'solution_used' => 'ROI Optimization + Sales Funnel'
+                'description' => '"Ad optimisation and funnel streamlining resulted in 320% ROI improvement and 40% lower customer acquisition costs."',
+                'solution_used' => 'ROI optimisation + Sales Funnel'
             ),
             array(
                 'metric_number' => '500%',
                 'metric_label' => 'Local Visibility',
                 'title' => 'Professional Services',
                 'description' => '"Local SEO implementation increased their Google My Business visibility by 500% and doubled client inquiries."',
-                'solution_used' => 'Local SEO + Website Optimization'
+                'solution_used' => 'Local SEO + Website optimisation'
             )
         );
     }
@@ -258,7 +258,7 @@ function solutions_meta_box_callback($post) {
             margin-bottom: 15px;
             padding: 10px;
             background: #0073aa;
-            color: white;
+            colour: white;
             border-radius: 3px;
         }
     </style>

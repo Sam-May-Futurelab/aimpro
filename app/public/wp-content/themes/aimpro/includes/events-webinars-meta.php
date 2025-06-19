@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 // Events & Webinars Page Meta Fields
 
 function add_events_webinars_meta_boxes() {
@@ -59,7 +59,7 @@ function events_webinars_meta_box_callback($post) {
             'agenda' => array(
                 'AI and machine learning in marketing automation',
                 'Privacy-first marketing strategies',
-                'Voice search optimization techniques',
+                'Voice search optimisation techniques',
                 'Video marketing trends and best practices',
                 'Cross-platform attribution modeling'
             ),
@@ -83,7 +83,7 @@ function events_webinars_meta_box_callback($post) {
         $ondemand_webinars = array(
             array(
                 'title' => 'SEO Fundamentals for 2025',
-                'description' => 'Complete guide to search engine optimization, covering technical SEO, content optimization, and link building strategies.',
+                'description' => 'Complete guide to search engine optimisation, covering technical SEO, content optimisation, and link building strategies.',
                 'duration' => '52 min',
                 'views' => '1,240 views',
                 'rating' => '★★★★★ 4.8',
@@ -92,7 +92,7 @@ function events_webinars_meta_box_callback($post) {
             ),
             array(
                 'title' => 'Facebook Ads Mastery Workshop',
-                'description' => 'Advanced Facebook advertising strategies including audience targeting, creative optimization, and campaign scaling techniques.',
+                'description' => 'Advanced Facebook advertising strategies including audience targeting, creative optimisation, and campaign scaling techniques.',
                 'duration' => '1h 15m',
                 'views' => '890 views',
                 'rating' => '★★★★★ 4.9',
@@ -183,7 +183,7 @@ function events_webinars_meta_box_callback($post) {
         }
         .remove-item {
             background: #dc3232;
-            color: white;
+            colour: white;
             border: none;
             padding: 5px 10px;
             cursor: pointer;
@@ -192,7 +192,7 @@ function events_webinars_meta_box_callback($post) {
         }
         .add-item {
             background: #0073aa;
-            color: white;
+            colour: white;
             border: none;
             padding: 8px 16px;
             cursor: pointer;
@@ -372,7 +372,7 @@ function events_webinars_meta_box_callback($post) {
                             </div>
                             <div class="item-field">
                                 <label>Title:</label>
-                                <input type="text" name="events_webinars_upcoming_events[<?php echo $index; ?>][title]" value="<?php echo esc_attr($event['title']); ?>" placeholder="Advanced Google Ads Optimization" />
+                                <input type="text" name="events_webinars_upcoming_events[<?php echo $index; ?>][title]" value="<?php echo esc_attr($event['title']); ?>" placeholder="Advanced Google Ads optimisation" />
                             </div>
                             <div class="item-field">
                                 <label>Description:</label>
@@ -421,7 +421,7 @@ function events_webinars_meta_box_callback($post) {
                             </div>
                             <div class="item-field">
                                 <label>Description:</label>
-                                <textarea name="events_webinars_ondemand_webinars[<?php echo $index; ?>][description]" placeholder="Complete guide to search engine optimization..."><?php echo esc_textarea($webinar['description']); ?></textarea>
+                                <textarea name="events_webinars_ondemand_webinars[<?php echo $index; ?>][description]" placeholder="Complete guide to search engine optimisation..."><?php echo esc_textarea($webinar['description']); ?></textarea>
                             </div>
                             <div class="item-field">
                                 <label>Duration:</label>
@@ -577,7 +577,7 @@ function events_webinars_meta_box_callback($post) {
                     '</div>' +
                     '<div class="item-field">' +
                         '<label>Title:</label>' +
-                        '<input type="text" name="events_webinars_upcoming_events[' + index + '][title]" placeholder="Advanced Google Ads Optimization" />' +
+                        '<input type="text" name="events_webinars_upcoming_events[' + index + '][title]" placeholder="Advanced Google Ads optimisation" />' +
                     '</div>' +
                     '<div class="item-field">' +
                         '<label>Description:</label>' +
@@ -611,7 +611,7 @@ function events_webinars_meta_box_callback($post) {
                     '</div>' +
                     '<div class="item-field">' +
                         '<label>Description:</label>' +
-                        '<textarea name="events_webinars_ondemand_webinars[' + index + '][description]" placeholder="Complete guide to search engine optimization..."></textarea>' +
+                        '<textarea name="events_webinars_ondemand_webinars[' + index + '][description]" placeholder="Complete guide to search engine optimisation..."></textarea>' +
                     '</div>' +
                     '<div class="item-field">' +
                         '<label>Duration:</label>' +

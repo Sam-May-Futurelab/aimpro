@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 /**
  * Template Name: Local SEO Page
  * Description: Local SEO services for businesses targeting local customers
@@ -78,37 +78,37 @@ $header_subtitle = get_post_meta(get_the_ID(), '_local_seo_header_subtitle', tru
                             switch($i) {
                                 case 1: // Google My Business
                                     echo '<svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M21 10C21 17 12 23 12 23C12 23 3 17 3 10C3 6.13401 6.13401 3 10 3C13.866 3 17 6.13401 17 10Z" stroke="currentColor" stroke-width="2"/>
-                                        <circle cx="12" cy="10" r="3" stroke="currentColor" stroke-width="2"/>
+                                        <path d="M21 10C21 17 12 23 12 23C12 23 3 17 3 10C3 6.13401 6.13401 3 10 3C13.866 3 17 6.13401 17 10Z" stroke="currentcolour" stroke-width="2"/>
+                                        <circle cx="12" cy="10" r="3" stroke="currentcolour" stroke-width="2"/>
                                     </svg>';
                                     break;
                                 case 2: // Local Citation Building
                                     echo '<svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M4 6H20M4 12H20M4 18H20" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                                        <path d="M4 6H20M4 12H20M4 18H20" stroke="currentcolour" stroke-width="2" stroke-linecap="round"/>
                                     </svg>';
                                     break;
                                 case 3: // Review Management
                                     echo '<svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M11.049 2.927C11.3102 2.00407 12.6898 2.00407 12.951 2.927L14.4697 7.60081C14.6035 8.01284 14.9875 8.29155 15.4207 8.29155H20.4329C21.4016 8.29155 21.8044 9.60081 21.0207 10.1008L17.0429 12.9492C16.6932 13.2016 16.5479 13.6463 16.6817 14.0583L18.2004 18.7321C18.4616 19.6551 17.3537 20.4282 16.5699 19.9282L12.5921 17.0798C12.2424 16.8274 11.7576 16.8274 11.4079 17.0798L7.43013 19.9282C6.64635 20.4282 5.53841 19.6551 5.79963 18.7321L7.31829 14.0583C7.45208 13.6463 7.30679 13.2016 6.95711 12.9492L2.97933 10.1008C2.19555 9.60081 2.59844 8.29155 3.56712 8.29155H8.57929C9.01252 8.29155 9.39647 8.01284 9.53026 7.60081L11.049 2.927Z" stroke="currentColor" stroke-width="2"/>
+                                        <path d="M11.049 2.927C11.3102 2.00407 12.6898 2.00407 12.951 2.927L14.4697 7.60081C14.6035 8.01284 14.9875 8.29155 15.4207 8.29155H20.4329C21.4016 8.29155 21.8044 9.60081 21.0207 10.1008L17.0429 12.9492C16.6932 13.2016 16.5479 13.6463 16.6817 14.0583L18.2004 18.7321C18.4616 19.6551 17.3537 20.4282 16.5699 19.9282L12.5921 17.0798C12.2424 16.8274 11.7576 16.8274 11.4079 17.0798L7.43013 19.9282C6.64635 20.4282 5.53841 19.6551 5.79963 18.7321L7.31829 14.0583C7.45208 13.6463 7.30679 13.2016 6.95711 12.9492L2.97933 10.1008C2.19555 9.60081 2.59844 8.29155 3.56712 8.29155H8.57929C9.01252 8.29155 9.39647 8.01284 9.53026 7.60081L11.049 2.927Z" stroke="currentcolour" stroke-width="2"/>
                                     </svg>';
                                     break;
-                                case 4: // Local Keyword Optimization
+                                case 4: // Local Keyword optimisation
                                     echo '<svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <circle cx="11" cy="11" r="8" stroke="currentColor" stroke-width="2"/>
-                                        <path d="M21 21L16.65 16.65" stroke="currentColor" stroke-width="2"/>
+                                        <circle cx="11" cy="11" r="8" stroke="currentcolour" stroke-width="2"/>
+                                        <path d="M21 21L16.65 16.65" stroke="currentcolour" stroke-width="2"/>
                                     </svg>';
                                     break;
                                 case 5: // Local Link Building
                                     echo '<svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="currentColor" stroke-width="2"/>
-                                        <path d="M2 17L12 22L22 17" stroke="currentColor" stroke-width="2"/>
+                                        <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="currentcolour" stroke-width="2"/>
+                                        <path d="M2 17L12 22L22 17" stroke="currentcolour" stroke-width="2"/>
                                     </svg>';
                                     break;
-                                case 6: // Local Website Optimization
+                                case 6: // Local Website optimisation
                                     echo '<svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <rect x="2" y="3" width="20" height="14" rx="2" ry="2" stroke="currentColor" stroke-width="2"/>
-                                        <line x1="8" y1="21" x2="16" y2="21" stroke="currentColor" stroke-width="2"/>
-                                        <line x1="12" y1="17" x2="12" y2="21" stroke="currentColor" stroke-width="2"/>
+                                        <rect x="2" y="3" width="20" height="14" rx="2" ry="2" stroke="currentcolour" stroke-width="2"/>
+                                        <line x1="8" y1="21" x2="16" y2="21" stroke="currentcolour" stroke-width="2"/>
+                                        <line x1="12" y1="17" x2="12" y2="21" stroke="currentcolour" stroke-width="2"/>
                                     </svg>';
                                     break;
                             }
@@ -125,7 +125,7 @@ $header_subtitle = get_post_meta(get_the_ID(), '_local_seo_header_subtitle', tru
                         </div>
                     </div>
 
-                    <?php endfor; ?>                </div>                <div class="text-center mt-1 animate-on-scroll animate-fade-up">
+                    <?php endfor; ?>                </div>                <div class="text-centre mt-1 animate-on-scroll animate-fade-up">
                     <a href="/contact/" class="btn btn-primary">Get Your Free Local SEO Consultation</a>
                 </div>
             </div>
@@ -309,7 +309,7 @@ $header_subtitle = get_post_meta(get_the_ID(), '_local_seo_header_subtitle', tru
                     <a href="<?php echo home_url('/case-studies'); ?>" class="btn btn-secondary">View Local SEO Results</a>
                 </div>                <div class="cta-benefits animate-on-scroll animate-fade-up">
                     <span class="benefit"><i class="fas fa-check" aria-hidden="true"></i> Local market analysis included</span>
-                    <span class="benefit"><i class="fas fa-check" aria-hidden="true"></i> Google My Business optimization</span>
+                    <span class="benefit"><i class="fas fa-check" aria-hidden="true"></i> Google My Business optimisation</span>
                     <span class="benefit"><i class="fas fa-check" aria-hidden="true"></i> Citation audit and cleanup</span>
                 </div>
             </div>

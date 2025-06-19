@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 /**
  * Header template for Aimpro Digital theme
  */
@@ -14,13 +14,13 @@
     <link rel="apple-touch-icon" href="<?php echo get_template_directory_uri(); ?>/assets/images/favicon/apple-touch-icon.png">
     <link rel="manifest" href="<?php echo get_template_directory_uri(); ?>/assets/images/favicon/site.webmanifest">
     
-    <!-- Theme color for mobile browsers -->
-    <meta name="theme-color" content="#f15a25">
-    <meta name="msapplication-TileColor" content="#f15a25">
+    <!-- Theme colour for mobile browsers -->
+    <meta name="theme-colour" content="#f15a25">
+    <meta name="msapplication-Tilecolour" content="#f15a25">
     
     <!-- Additional PWA and Social Media Meta Tags -->
     <meta name="application-name" content="Aimpro Digital">
-    <meta name="msapplication-TileColor" content="#f15a25">
+    <meta name="msapplication-Tilecolour" content="#f15a25">
     <meta name="msapplication-square70x70logo" content="<?php echo get_template_directory_uri(); ?>/assets/images/favicon/favicon-96x96.png">
     <meta name="msapplication-square150x150logo" content="<?php echo get_template_directory_uri(); ?>/assets/images/favicon/web-app-manifest-192x192.png">
     <meta name="msapplication-square310x310logo" content="<?php echo get_template_directory_uri(); ?>/assets/images/favicon/web-app-manifest-512x512.png">
@@ -35,7 +35,7 @@
     <meta name="twitter:card" content="summary">
     <meta name="twitter:image" content="<?php echo get_template_directory_uri(); ?>/assets/images/favicon/web-app-manifest-512x512.png">
     
-    <!-- Performance Optimization: Resource Hints -->
+    <!-- Performance optimisation: Resource Hints -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preconnect" href="https://cdnjs.cloudflare.com">
@@ -48,7 +48,7 @@
     <link rel="preload" href="<?php echo get_template_directory_uri(); ?>/style.css" as="style">    <!-- FontAwesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer">
     
-    <!-- Google Fonts - Inter with performance optimizations -->
+    <!-- Google Fonts - Inter with performance optimisations -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
       <!-- Prevent theme flash - set light theme as default immediately -->
     <style>
@@ -62,12 +62,12 @@
             --text-muted: #4a5568 !important;
         }
         html, body { 
-            background-color: #ffffff !important;
-            color: #1a202c !important;
+            background-colour: #ffffff !important;
+            colour: #1a202c !important;
         }
         .light-theme-default { 
             background: #ffffff !important;
-            color: #1a202c !important;
+            colour: #1a202c !important;
         }
     </style>
     
@@ -107,7 +107,7 @@
                 <ul>
                     <li><a href="<?php echo home_url(); ?>" class="nav-link">Home</a></li>                    <li class="nav-item-mega">
                         <a href="<?php echo home_url('/services'); ?>" class="nav-link">Services <span class="nav-arrow">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentcolour" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                 <polyline points="6 9 12 15 18 9"></polyline>
                             </svg>
                         </span></a>
@@ -145,7 +145,7 @@
                                             <li><a href="<?php echo home_url('/website-design'); ?>">Website Design</a></li>
                                             <li><a href="<?php echo home_url('/landing-pages'); ?>">Landing Pages</a></li>
                                             <li><a href="<?php echo home_url('/funnel-builds'); ?>">Funnel Builds</a></li>
-                                            <li><a href="<?php echo home_url('/ux-ui-optimization'); ?>">UX/UI Design</a></li>
+                                            <li><a href="<?php echo home_url('/ux-ui-optimisation'); ?>">UX/UI Design</a></li>
                                         </ul>
                                     </div>
                                 </div>
@@ -153,7 +153,7 @@
                         </div>
                     </li><li class="nav-item-dropdown">
                         <a href="<?php echo home_url('/solutions'); ?>" class="nav-link">Solutions <span class="nav-arrow">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentcolour" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                 <polyline points="6 9 12 15 18 9"></polyline>
                             </svg>
                         </span></a>
@@ -169,7 +169,7 @@
                         </div>
                     </li>                    <li class="nav-item-dropdown">
                         <a href="<?php echo home_url('/industries'); ?>" class="nav-link">Industries <span class="nav-arrow">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentcolour" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                 <polyline points="6 9 12 15 18 9"></polyline>
                             </svg>
                         </span></a>
@@ -186,7 +186,7 @@
                         </div>
                     </li>                    <li class="nav-item-dropdown">
                         <a href="<?php echo home_url('/resources'); ?>" class="nav-link">Resources <span class="nav-arrow">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentcolour" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                 <polyline points="6 9 12 15 18 9"></polyline>
                             </svg>
                         </span></a>
@@ -201,7 +201,7 @@
                         </div>
                     </li>                    <li class="nav-item-dropdown">
                         <a href="<?php echo home_url('/about'); ?>" class="nav-link">About <span class="nav-arrow">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentcolour" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                 <polyline points="6 9 12 15 18 9"></polyline>
                             </svg>
                         </span></a>

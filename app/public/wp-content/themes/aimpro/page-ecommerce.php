@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 /**
  * Template Name: E-commerce Industry Page
  * Description: Digital marketing for e-commerce businesses
@@ -11,7 +11,7 @@ get_header(); ?>
         <section class="page-header">
             <div class="page-header-content animate-on-scroll animate-fade-up">
                 <h1><?php echo esc_html(get_post_meta(get_the_ID(), '_ecommerce_header_title', true) ?: "E-commerce Digital Marketing"); ?></h1>
-                <p class="page-subtitle"><?php echo esc_html(get_post_meta(get_the_ID(), '_ecommerce_header_subtitle', true) ?: "Drive more traffic, increase conversions, and maximize revenue for your online store"); ?></p>
+                <p class="page-subtitle"><?php echo esc_html(get_post_meta(get_the_ID(), '_ecommerce_header_subtitle', true) ?: "Drive more traffic, increase conversions, and maximise revenue for your online store"); ?></p>
             </div>
         </section>        <!-- Industry Overview -->
         <section class="industry-overview animate-on-scroll animate-fade-up">
@@ -19,7 +19,7 @@ get_header(); ?>
                 <div class="overview-content">
                     <div class="overview-text animate-on-scroll animate-slide-left">
                         <h2><?php echo esc_html(get_post_meta(get_the_ID(), '_ecommerce_overview_title', true) ?: "Accelerate Your E-commerce Growth"); ?></h2>
-                        <p><?php echo esc_html(get_post_meta(get_the_ID(), '_ecommerce_overview_content', true) ?: "The e-commerce landscape is more competitive than ever. Our specialized e-commerce marketing strategies help online retailers increase traffic, improve conversion rates, and maximize customer lifetime value through data-driven digital marketing."); ?></p>
+                        <p><?php echo esc_html(get_post_meta(get_the_ID(), '_ecommerce_overview_content', true) ?: "The e-commerce landscape is more competitive than ever. Our specialised e-commerce marketing strategies help online retailers increase traffic, improve conversion rates, and maximise customer lifetime value through data-driven digital marketing."); ?></p>
                         
                         <div class="industry-challenges animate-on-scroll animate-fade-up">
                             <h3><?php echo esc_html(get_post_meta(get_the_ID(), '_ecommerce_challenges_title', true) ?: "E-commerce Marketing Challenges We Solve:"); ?></h3>
@@ -63,16 +63,16 @@ get_header(); ?>
                     <div class="service-card animate-on-scroll animate-stagger animate-fade-up">
                         <div class="service-icon">
                             <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <circle cx="9" cy="21" r="1" stroke="currentColor" stroke-width="2"/>
-                                <circle cx="20" cy="21" r="1" stroke="currentColor" stroke-width="2"/>
-                                <path d="M1 1H5L7.68 14.39C7.77144 14.8504 8.02191 15.264 8.38755 15.5583C8.75318 15.8526 9.2107 16.009 9.68 16H19.4C19.8693 16.009 20.3268 15.8526 20.6925 15.5583C21.0581 15.264 21.3086 14.8504 21.4 14.39L23 6H6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                <circle cx="9" cy="21" r="1" stroke="currentcolour" stroke-width="2"/>
+                                <circle cx="20" cy="21" r="1" stroke="currentcolour" stroke-width="2"/>
+                                <path d="M1 1H5L7.68 14.39C7.77144 14.8504 8.02191 15.264 8.38755 15.5583C8.75318 15.8526 9.2107 16.009 9.68 16H19.4C19.8693 16.009 20.3268 15.8526 20.6925 15.5583C21.0581 15.264 21.3086 14.8504 21.4 14.39L23 6H6" stroke="currentcolour" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                             </svg>
                         </div>
                         <div class="service-content">
                             <h3>Google Shopping & Product Ads</h3>
-                            <p>Maximize product visibility with optimized Google Shopping campaigns that drive qualified traffic to your product pages.</p>
+                            <p>Maximize product visibility with optimised Google Shopping campaigns that drive qualified traffic to your product pages.</p>
                             <ul class="service-features">
-                                <li>Google Shopping optimization</li>
+                                <li>Google Shopping optimisation</li>
                                 <li>Product feed management</li>
                                 <li>Dynamic remarketing campaigns</li>
                                 <li>Performance Max campaigns</li>
@@ -81,14 +81,14 @@ get_header(); ?>
                     </div>                    <div class="service-card animate-on-scroll animate-stagger animate-fade-up">
                         <div class="service-icon">
                             <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M21 21L16.514 16.506M19 10.5C19 15.194 15.194 19 10.5 19C5.806 19 2 15.194 2 10.5C2 5.806 5.806 2 10.5 2C15.194 2 19 5.806 19 10.5Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M21 21L16.514 16.506M19 10.5C19 15.194 15.194 19 10.5 19C5.806 19 2 15.194 2 10.5C2 5.806 5.806 2 10.5 2C15.194 2 19 5.806 19 10.5Z" stroke="currentcolour" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                             </svg>
                         </div>
                         <div class="service-content">
                             <h3>E-commerce SEO</h3>
                             <p>Improve organic rankings for product and category pages to drive free, qualified traffic to your online store.</p>
                             <ul class="service-features">
-                                <li>Product page optimization</li>
+                                <li>Product page optimisation</li>
                                 <li>Category page SEO</li>
                                 <li>Technical e-commerce SEO</li>
                                 <li>Content marketing for products</li>
@@ -97,9 +97,9 @@ get_header(); ?>
                     </div>                    <div class="service-card animate-on-scroll animate-stagger animate-fade-up">
                         <div class="service-icon">
                             <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M18 20V10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                <path d="M12 20V4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                <path d="M6 20V14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M18 20V10" stroke="currentcolour" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M12 20V4" stroke="currentcolour" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M6 20V14" stroke="currentcolour" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                             </svg>
                         </div>
                         <div class="service-content">
@@ -115,8 +115,8 @@ get_header(); ?>
                     </div>                    <div class="service-card animate-on-scroll animate-stagger animate-fade-up">
                         <div class="service-icon">
                             <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M4 4H20C21.1 4 22 4.9 22 6V18C22 19.1 21.1 20 20 20H4C2.9 20 2 19.1 2 18V6C2 4.9 2.9 4 4 4Z" stroke="currentColor" stroke-width="2"/>
-                                <polyline points="22,6 12,13 2,6" stroke="currentColor" stroke-width="2"/>
+                                <path d="M4 4H20C21.1 4 22 4.9 22 6V18C22 19.1 21.1 20 20 20H4C2.9 20 2 19.1 2 18V6C2 4.9 2.9 4 4 4Z" stroke="currentcolour" stroke-width="2"/>
+                                <polyline points="22,6 12,13 2,6" stroke="currentcolour" stroke-width="2"/>
                             </svg>
                         </div>
                         <div class="service-content">
@@ -130,7 +130,7 @@ get_header(); ?>
                             </ul>
                         </div>
                     </div>                </div>
-                <div class="text-center mt-1 animate-on-scroll animate-fade-up">
+                <div class="text-centre mt-1 animate-on-scroll animate-fade-up">
                     <a href="/contact/" class="btn btn-primary">Boost Your E-commerce Performance</a>
                 </div>
             </div>
@@ -154,8 +154,8 @@ get_header(); ?>
                         </div>                        <div class="case-study-solution animate-on-scroll animate-fade-up">
                             <h3>Our Solution</h3>
                             <ul>
-                                <li>Comprehensive Google Shopping optimization</li>
-                                <li>Product page SEO and conversion optimization</li>
+                                <li>Comprehensive Google Shopping optimisation</li>
+                                <li>Product page SEO and conversion optimisation</li>
                                 <li>Email marketing automation</li>
                                 <li>Social commerce strategy</li>
                             </ul>
@@ -199,8 +199,8 @@ get_header(); ?>
                     </div>                    <div class="process-step animate-on-scroll animate-stagger animate-fade-up">
                         <div class="step-number">2</div>
                         <div class="step-content">
-                            <h3>Conversion Optimization</h3>
-                            <p>Optimize product pages, checkout process, and user experience to maximize conversion rates.</p>
+                            <h3>Conversion optimisation</h3>
+                            <p>optimise product pages, checkout process, and user experience to maximise conversion rates.</p>
                         </div>
                     </div>
 
@@ -216,7 +216,7 @@ get_header(); ?>
                         <div class="step-number">4</div>
                         <div class="step-content">
                             <h3>Performance Scaling</h3>
-                            <p>Continuously optimize and scale successful campaigns while improving customer lifetime value.</p>
+                            <p>Continuously optimise and scale successful campaigns while improving customer lifetime value.</p>
                         </div>
                     </div>
 
@@ -268,7 +268,7 @@ get_header(); ?>
                 </div>
             </div>
         </section>        <!-- CTA Section -->
-        <section class="ecommerce-cta text-center animate-on-scroll animate-fade-up">
+        <section class="ecommerce-cta text-centre animate-on-scroll animate-fade-up">
             <div class="section-content">
                 <h2 class="animate-on-scroll animate-fade-up"><?php echo esc_html(get_post_meta(get_the_ID(), '_ecommerce_cta_title', true) ?: "Ready to Scale Your E-commerce Business?"); ?></h2>
                 <p class="animate-on-scroll animate-fade-up"><?php echo esc_html(get_post_meta(get_the_ID(), '_ecommerce_cta_subtitle', true) ?: "Let's discuss how our e-commerce marketing expertise can drive more traffic, conversions, and revenue for your online store."); ?></p>
@@ -281,7 +281,7 @@ get_header(); ?>
                     $benefits = get_post_meta(get_the_ID(), '_ecommerce_cta_benefits', true);
                     if (empty($benefits)) {
                         $benefits = array(
-                            '✓ Conversion rate optimization',
+                            '✓ Conversion rate optimisation',
                             '✓ Multi-channel strategies',
                             '✓ ROI-focused campaigns'
                         );

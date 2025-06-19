@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 /**
  * Template Name: Website Development Services
  * Description: Comprehensive website development services overview
@@ -16,7 +16,7 @@ get_header(); ?>
                 <p class="page-subtitle">Create high-converting websites that drive results and grow your business</p>
                 <div class="header-badges">
                     <span class="badge">Mobile-First</span>
-                    <span class="badge">Conversion Optimized</span>
+                    <span class="badge">Conversion optimised</span>
                     <span class="badge">SEO Ready</span>
                 </div>
             </div>
@@ -28,8 +28,8 @@ get_header(); ?>
                 <div class="overview-content">
                     <div class="overview-text">
                         <h2>Build Websites That Convert</h2>
-                        <p>Our website development services focus on creating beautiful, fast, and conversion-optimized websites that not only look great but drive real business results. From custom website design to high-converting landing pages, we build digital experiences that engage visitors and turn them into customers.</p>
-                        <p>Every website we develop is built with performance, user experience, and search engine optimization in mind, ensuring your investment delivers maximum return through increased traffic, leads, and sales.</p>
+                        <p>Our website development services focus on creating beautiful, fast, and conversion-optimised websites that not only look great but drive real business results. From custom website design to high-converting landing pages, we build digital experiences that engage visitors and turn them into customers.</p>
+                        <p>Every website we develop is built with performance, user experience, and search engine optimisation in mind, ensuring your investment delivers maximum return through increased traffic, leads, and sales.</p>
                     </div>
                     <div class="overview-stats">
                         <div class="stat-item">
@@ -56,7 +56,7 @@ get_header(); ?>
                     <div class="case-study-text">
                         <h2>Case Study: E-commerce Website Redesign</h2>
                         <h3>Complete Website Overhaul Generates 380% Revenue Increase</h3>
-                        <p>An established e-commerce business approached us with an outdated website that was hurting their sales. Our comprehensive redesign and optimization strategy transformed their online presence and dramatically improved their bottom line.</p>
+                        <p>An established e-commerce business approached us with an outdated website that was hurting their sales. Our comprehensive redesign and optimisation strategy transformed their online presence and dramatically improved their bottom line.</p>
                         
                         <div class="challenge-solution">
                             <div class="challenge">
@@ -74,8 +74,8 @@ get_header(); ?>
                                 <ul>
                                     <li>Modern, mobile-first responsive design</li>
                                     <li>Streamlined user experience and navigation</li>
-                                    <li>Optimized checkout process (one-click checkout)</li>
-                                    <li>Performance optimization (2.1s load time)</li>
+                                    <li>optimised checkout process (one-click checkout)</li>
+                                    <li>Performance optimisation (2.1s load time)</li>
                                     <li>A/B tested conversion elements</li>
                                 </ul>
                             </div>
@@ -126,7 +126,7 @@ get_header(); ?>
                         <div class="step-number">3</div>
                         <div class="step-content">
                             <h3>Development & Build</h3>
-                            <p>Expert development using modern technologies, best practices, and optimization for performance and SEO.</p>
+                            <p>Expert development using modern technologies, best practices, and optimisation for performance and SEO.</p>
                         </div>
                     </div>
                     <div class="process-step">
@@ -139,8 +139,8 @@ get_header(); ?>
                     <div class="process-step">
                         <div class="step-number">5</div>
                         <div class="step-content">
-                            <h3>Launch & Optimization</h3>
-                            <p>Strategic launch with ongoing monitoring, analytics setup, and continuous optimization for better results.</p>
+                            <h3>Launch & optimisation</h3>
+                            <p>Strategic launch with ongoing monitoring, analytics setup, and continuous optimisation for better results.</p>
                         </div>
                     </div>
                 </div>
@@ -158,7 +158,7 @@ get_header(); ?>
                             <i class="fas fa-cog"></i>
                         </div>
                         <h3>Content Management</h3>
-                        <ul style="text-align: left; color: #666; line-height: 1.8;">
+                        <ul style="text-align: left; colour: #666; line-height: 1.8;">
                             <li>WordPress</li>
                             <li>Webflow</li>
                             <li>Shopify</li>
@@ -172,7 +172,7 @@ get_header(); ?>
                             <i class="fas fa-code"></i>
                         </div>
                         <h3>Frontend Technologies</h3>
-                        <ul style="text-align: left; color: #666; line-height: 1.8;">
+                        <ul style="text-align: left; colour: #666; line-height: 1.8;">
                             <li>HTML5 & CSS3</li>
                             <li>JavaScript (ES6+)</li>
                             <li>React.js</li>
@@ -186,7 +186,7 @@ get_header(); ?>
                             <i class="fas fa-database"></i>
                         </div>
                         <h3>Backend Development</h3>
-                        <ul style="text-align: left; color: #666; line-height: 1.8;">
+                        <ul style="text-align: left; colour: #666; line-height: 1.8;">
                             <li>PHP</li>
                             <li>Node.js</li>
                             <li>Python</li>
@@ -200,12 +200,12 @@ get_header(); ?>
                             <i class="fas fa-tachometer-alt"></i>
                         </div>
                         <h3>Performance & SEO</h3>
-                        <ul style="text-align: left; color: #666; line-height: 1.8;">
-                            <li>Google PageSpeed Optimization</li>
+                        <ul style="text-align: left; colour: #666; line-height: 1.8;">
+                            <li>Google PageSpeed optimisation</li>
                             <li>Core Web Vitals</li>
                             <li>Schema.org Markup</li>
                             <li>CDN Integration</li>
-                            <li>Image Optimization</li>
+                            <li>Image optimisation</li>
                         </ul>
                     </div>
                     
@@ -214,7 +214,7 @@ get_header(); ?>
                             <i class="fas fa-cloud"></i>
                         </div>
                         <h3>Hosting & Infrastructure</h3>
-                        <ul style="text-align: left; color: #666; line-height: 1.8;">
+                        <ul style="text-align: left; colour: #666; line-height: 1.8;">
                             <li>AWS & Google Cloud</li>
                             <li>Cloudflare CDN</li>
                             <li>SSL Certificates</li>
@@ -228,7 +228,7 @@ get_header(); ?>
                             <i class="fas fa-tools"></i>
                         </div>
                         <h3>Development Tools</h3>
-                        <ul style="text-align: left; color: #666; line-height: 1.8;">
+                        <ul style="text-align: left; colour: #666; line-height: 1.8;">
                             <li>Git Version Control</li>
                             <li>Webpack & Build Tools</li>
                             <li>API Integrations</li>
@@ -250,20 +250,20 @@ get_header(); ?>
                             <i class="fas fa-mobile-alt"></i>
                         </div>
                         <h3>Mobile-First Design</h3>
-                        <p>Responsive design that looks and works perfectly on all devices, with mobile optimization as a priority.</p>
+                        <p>Responsive design that looks and works perfectly on all devices, with mobile optimisation as a priority.</p>
                     </div>
                     <div class="service-item">
                         <div class="service-icon">
                             <i class="fas fa-bolt"></i>
                         </div>
                         <h3>Lightning-Fast Performance</h3>
-                        <p>Optimized for speed with sub-3 second load times, improving user experience and search rankings.</p>
+                        <p>optimised for speed with sub-3 second load times, improving user experience and search rankings.</p>
                     </div>
                     <div class="service-item">
                         <div class="service-icon">
                             <i class="fas fa-search"></i>
                         </div>
-                        <h3>SEO-Optimized</h3>
+                        <h3>SEO-optimised</h3>
                         <p>Built with SEO best practices, including proper structure, meta tags, and schema markup for better visibility.</p>
                     </div>
                     <div class="service-item">
@@ -285,7 +285,7 @@ get_header(); ?>
                             <i class="fas fa-palette"></i>
                         </div>
                         <h3>Brand Consistency</h3>
-                        <p>Design that reflects your brand identity with consistent colors, fonts, and messaging throughout.</p>
+                        <p>Design that reflects your brand identity with consistent colours, fonts, and messaging throughout.</p>
                     </div>
                 </div>
             </div>
@@ -298,7 +298,7 @@ get_header(); ?>
                 <div class="industry-grid">
                     <div class="industry-item">
                         <h3>E-commerce</h3>
-                        <p>Online stores with optimized product pages, secure checkout, inventory management, and conversion-focused design.</p>
+                        <p>Online stores with optimised product pages, secure checkout, inventory management, and conversion-focused design.</p>
                     </div>
                     <div class="industry-item">
                         <h3>Professional Services</h3>
@@ -318,7 +318,7 @@ get_header(); ?>
                     </div>
                     <div class="industry-item">
                         <h3>Restaurants & Hospitality</h3>
-                        <p>Visual websites with online ordering, reservation systems, menu displays, and local SEO optimization.</p>
+                        <p>Visual websites with online ordering, reservation systems, menu displays, and local SEO optimisation.</p>
                     </div>
                 </div>
             </div>
@@ -330,8 +330,8 @@ get_header(); ?>
                 <div class="testimonial-content">
                     <div class="quote-icon">
                         <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M3 21C3 17.4 5.4 17.4 5.4 17.4H9V21H3Z" stroke="currentColor" stroke-width="2"/>
-                            <path d="M15 21C15 17.4 17.4 17.4 17.4 17.4H21V21H15Z" stroke="currentColor" stroke-width="2"/>
+                            <path d="M3 21C3 17.4 5.4 17.4 5.4 17.4H9V21H3Z" stroke="currentcolour" stroke-width="2"/>
+                            <path d="M15 21C15 17.4 17.4 17.4 17.4 17.4H21V21H15Z" stroke="currentcolour" stroke-width="2"/>
                         </svg>
                     </div>
                     <blockquote>

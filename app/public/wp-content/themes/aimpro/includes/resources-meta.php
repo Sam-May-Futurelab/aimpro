@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 /**
  * Resources Page Meta Fields
  * Adds custom meta box for Resources Page template with editable content fields
@@ -87,7 +87,7 @@ Workshop Sessions';
     
     // Training & Mentoring Category
     $resources_training_title = get_post_meta($post->ID, 'resources_training_title', true) ?: 'Training & Mentoring';
-    $resources_training_description = get_post_meta($post->ID, 'resources_training_description', true) ?: 'Accelerate your digital marketing skills with our personalized training programs and expert mentoring.';
+    $resources_training_description = get_post_meta($post->ID, 'resources_training_description', true) ?: 'Accelerate your digital marketing skills with our personalised training programs and expert mentoring.';
     $resources_training_features = get_post_meta($post->ID, 'resources_training_features', true) ?: 'One-on-One Mentoring
 Team Training Sessions
 Skill Development Programs
@@ -101,14 +101,14 @@ Certification Guidance';
       // Featured Resource 1
     $resources_featured1_type = get_post_meta($post->ID, 'resources_featured1_type', true) ?: 'Guide';
     $resources_featured1_title = get_post_meta($post->ID, 'resources_featured1_title', true) ?: 'The Complete SEO Guide for 2025';
-    $resources_featured1_description = get_post_meta($post->ID, 'resources_featured1_description', true) ?: 'Everything you need to know about SEO in 2025, from technical optimization to content strategy.';
+    $resources_featured1_description = get_post_meta($post->ID, 'resources_featured1_description', true) ?: 'Everything you need to know about SEO in 2025, from technical optimisation to content strategy.';
     $resources_featured1_link_text = get_post_meta($post->ID, 'resources_featured1_link_text', true) ?: 'Download Free Guide';
     $resources_featured1_link_url = get_post_meta($post->ID, 'resources_featured1_link_url', true) ?: '#';
     
     // Featured Resource 2
     $resources_featured2_type = get_post_meta($post->ID, 'resources_featured2_type', true) ?: 'Tool';
     $resources_featured2_title = get_post_meta($post->ID, 'resources_featured2_title', true) ?: 'Marketing Tool';
-    $resources_featured2_description = get_post_meta($post->ID, 'resources_featured2_description', true) ?: 'Access our powerful marketing tools to optimize your campaigns and improve performance.';
+    $resources_featured2_description = get_post_meta($post->ID, 'resources_featured2_description', true) ?: 'Access our powerful marketing tools to optimise your campaigns and improve performance.';
     $resources_featured2_link_text = get_post_meta($post->ID, 'resources_featured2_link_text', true) ?: 'Access Tool';
     $resources_featured2_link_url = get_post_meta($post->ID, 'resources_featured2_link_url', true) ?: '#';
     

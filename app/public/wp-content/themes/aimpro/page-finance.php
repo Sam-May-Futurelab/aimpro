@@ -20,7 +20,7 @@ get_header(); ?>
                 <div class="overview-content">
                     <div class="overview-text animate-on-scroll animate-slide-left">
                         <h2><?php echo esc_html(get_post_meta(get_the_ID(), '_finance_overview_title', true) ?: 'Navigate Financial Services Marketing with Confidence'); ?></h2>
-                        <p><?php echo esc_html(get_post_meta(get_the_ID(), '_finance_overview_content', true) ?: 'Financial services marketing requires a delicate balance of trust-building, compliance, and results. Our specialized approach helps financial advisors, banks, insurance companies, and fintech startups generate qualified leads while maintaining regulatory compliance.'); ?></p>
+                        <p><?php echo esc_html(get_post_meta(get_the_ID(), '_finance_overview_content', true) ?: 'Financial services marketing requires a delicate balance of trust-building, compliance, and results. Our specialised approach helps financial advisors, banks, insurance companies, and fintech startups generate qualified leads while maintaining regulatory compliance.'); ?></p>
                         
                         <div class="industry-challenges animate-on-scroll animate-fade-up">
                             <h3><?php echo esc_html(get_post_meta(get_the_ID(), '_finance_challenges_title', true) ?: 'Financial Marketing Challenges We Solve:'); ?></h3>
@@ -78,13 +78,13 @@ get_header(); ?>
                                 'icon' => 'fas fa-user-plus',
                                 'title' => 'Trust-Building Strategies',
                                 'description' => 'Establish credibility and trust through strategic reputation management, client testimonials, and authority positioning.',
-                                'features' => array('Online reputation management', 'Client success story promotion', 'Professional qualification highlighting', 'Trust signal optimization')
+                                'features' => array('Online reputation management', 'Client success story promotion', 'Professional qualification highlighting', 'Trust signal optimisation')
                             ),
                             array(
                                 'icon' => 'fas fa-chart-line',
                                 'title' => 'High-Value Lead Generation',
                                 'description' => 'Generate qualified leads for financial consultations, insurance quotes, and investment planning services.',
-                                'features' => array('Consultation booking optimization', 'Financial calculator tools', 'Qualification-based lead scoring', 'Nurture sequence automation')
+                                'features' => array('Consultation booking optimisation', 'Financial calculator tools', 'Qualification-based lead scoring', 'Nurture sequence automation')
                             )
                         );
                     }
@@ -103,7 +103,7 @@ get_header(); ?>
                                 </ul>
                             </div>
                         </div>                    <?php endforeach; ?>                </div>
-                <div class="text-center mt-1 animate-on-scroll animate-fade-up">
+                <div class="text-centre mt-1 animate-on-scroll animate-fade-up">
                     <a href="/contact/" class="btn btn-primary">Schedule Financial Marketing Consultation</a>
                 </div>
             </div>
@@ -181,7 +181,7 @@ get_header(); ?>
         </section>        <!-- Financial Services Types (4x1 Grid) -->
         <section class="finance-types animate-on-scroll animate-fade-up">
             <div class="section-content">
-                <h2 class="animate-on-scroll animate-fade-up"><?php echo esc_html(get_post_meta(get_the_ID(), '_finance_types_title', true) ?: 'Financial Services We Specialize In'); ?></h2>
+                <h2 class="animate-on-scroll animate-fade-up"><?php echo esc_html(get_post_meta(get_the_ID(), '_finance_types_title', true) ?: 'Financial Services We Specialise In'); ?></h2>
                 <div class="types-grid types-grid-4x1">
                     <?php 
                     $types = get_post_meta(get_the_ID(), '_finance_types', true);
@@ -269,7 +269,7 @@ get_header(); ?>
                 </div>
             </div>
         </section>        <!-- Financial Marketing Funnel -->
-        <section class="optimization-process animate-on-scroll animate-fade-up">
+        <section class="optimisation-process animate-on-scroll animate-fade-up">
             <div class="container">
                 <h2 class="animate-on-scroll animate-fade-up"><?php echo esc_html(get_post_meta(get_the_ID(), '_finance_funnel_title', true) ?: 'The Financial Services Marketing Funnel'); ?></h2>
                 
@@ -335,7 +335,7 @@ get_header(); ?>
                 </div>
             </div>
         </section>        <!-- CTA Section -->
-        <section class="finance-cta text-center animate-on-scroll animate-fade-up">
+        <section class="finance-cta text-centre animate-on-scroll animate-fade-up">
             <div class="section-content">
                 <h2 class="animate-on-scroll animate-fade-up"><?php echo esc_html(get_post_meta(get_the_ID(), '_finance_cta_title', true) ?: 'Ready to Grow Your Financial Services Business?'); ?></h2>
                 <p class="animate-on-scroll animate-fade-up"><?php echo esc_html(get_post_meta(get_the_ID(), '_finance_cta_subtitle', true) ?: 'Let\'s create a compliant, trust-building marketing strategy that generates high-value leads for your financial services.'); ?></p>

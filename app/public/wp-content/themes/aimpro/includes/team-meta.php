@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 /**
  * Team Page Meta Fields
  * Adds custom meta box for Team Page template with editable content fields
@@ -48,7 +48,7 @@ function aimpro_team_meta_box_callback($post) {
     $team_member2_name = get_post_meta($post->ID, 'team_member2_name', true) ?: 'Dinesh Thapa';
     $team_member2_title = get_post_meta($post->ID, 'team_member2_title', true) ?: 'Business Growth Specialist';
     $team_member2_bio = get_post_meta($post->ID, 'team_member2_bio', true) ?: 'Dinesh brings innovative growth strategies and deep analytics expertise to our team. He oversees marketing operations and ensures our campaigns deliver measurable results for clients.';
-    $team_member2_specialties = get_post_meta($post->ID, 'team_member2_specialties', true) ?: 'ROI Optimization, Analytics, Business Growth';
+    $team_member2_specialties = get_post_meta($post->ID, 'team_member2_specialties', true) ?: 'ROI optimisation, Analytics, Business Growth';
     
     // Team Member 3
     $team_member3_name = get_post_meta($post->ID, 'team_member3_name', true) ?: 'James Butler';
@@ -143,7 +143,7 @@ Innovation: We embrace new technologies and creative approaches to solve complex
         </tr>
         <tr>
             <th><label for="member2_specialties">Specialties (comma separated)</label></th>
-            <td><input type="text" id="member2_specialties" name="member2_specialties" value="<?php echo esc_attr(get_post_meta($post->ID, 'member2_specialties', true) ?: 'ROI Optimization,Analytics,Business Growth'); ?>" class="regular-text" /></td>
+            <td><input type="text" id="member2_specialties" name="member2_specialties" value="<?php echo esc_attr(get_post_meta($post->ID, 'member2_specialties', true) ?: 'ROI optimisation,Analytics,Business Growth'); ?>" class="regular-text" /></td>
         </tr>
         
         <!-- Team Member 3 - James Butler -->

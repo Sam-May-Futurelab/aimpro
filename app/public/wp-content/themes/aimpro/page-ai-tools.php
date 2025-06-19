@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 /**
  * Template Name: AI Tools
  * 
@@ -28,7 +28,7 @@ get_header(); ?>
         <div class="container">
             <div class="hero-content animate-on-scroll animate-fade-up">
                 <h1>AI-Powered Marketing Tools & Implementation</h1>
-                <p class="hero-subtitle">Harness the power of artificial intelligence to automate content creation, optimize campaigns, predict customer behavior, and scale your marketing efforts with cutting-edge AI tools and custom implementations.</p>
+                <p class="hero-subtitle">Harness the power of artificial intelligence to automate content creation, optimise campaigns, predict customer behaviour, and scale your marketing efforts with cutting-edge AI tools and custom implementations.</p>
                 <div class="hero-cta">
                     <a href="#contact" class="btn-primary">Implement AI Tools</a>
                     <a href="#packages" class="btn-secondary">View Packages</a>
@@ -55,7 +55,7 @@ get_header(); ?>
         <div class="container">
             <div class="overview-content animate-on-scroll animate-fade-up">
                 <h2>Transform Your Marketing with AI</h2>
-                <p>Stay ahead of the competition with AI-powered marketing tools that automate repetitive tasks, provide deep insights, and unlock new levels of personalization and efficiency. From content generation to predictive analytics, we implement the AI solutions that will revolutionize your marketing operations.</p>
+                <p>Stay ahead of the competition with AI-powered marketing tools that automate repetitive tasks, provide deep insights, and unlock new levels of personalisation and efficiency. From content generation to predictive analytics, we implement the AI solutions that will revolutionize your marketing operations.</p>
             </div>
             
             <div class="services-grid">
@@ -72,23 +72,23 @@ get_header(); ?>
                         <i class="fas fa-chart-line"></i>
                     </div>
                     <h3>Predictive Analytics</h3>
-                    <p>AI-powered insights to predict customer behavior, campaign performance, and optimal marketing strategies.</p>
+                    <p>AI-powered insights to predict customer behaviour, campaign performance, and optimal marketing strategies.</p>
                 </div>
                 
                 <div class="service-item">
                     <div class="service-icon">
                         <i class="fas fa-user-cog"></i>
                     </div>
-                    <h3>Personalization Engines</h3>
-                    <p>Dynamic content and experience personalization based on user behavior and machine learning algorithms.</p>
+                    <h3>personalisation Engines</h3>
+                    <p>Dynamic content and experience personalisation based on user behaviour and machine learning algorithms.</p>
                 </div>
                 
                 <div class="service-item">
                     <div class="service-icon">
                         <i class="fas fa-bullseye"></i>
                     </div>
-                    <h3>Campaign Optimization</h3>
-                    <p>AI-driven bid management, audience targeting, and creative optimization for maximum ROI.</p>
+                    <h3>Campaign optimisation</h3>
+                    <p>AI-driven bid management, audience targeting, and creative optimisation for maximum ROI.</p>
                 </div>
                 
                 <div class="service-item">
@@ -96,7 +96,7 @@ get_header(); ?>
                         <i class="fas fa-comments-dollar"></i>
                     </div>
                     <h3>Lead Scoring & Qualification</h3>
-                    <p>Machine learning models that automatically score and qualify leads based on behavior and engagement patterns.</p>
+                    <p>Machine learning models that automatically score and qualify leads based on behaviour and engagement patterns.</p>
                 </div>
                 
                 <div class="service-item">
@@ -119,7 +119,7 @@ get_header(); ?>
                     
                     <div class="case-study-challenge">
                         <h3>The Challenge</h3>
-                        <p>A growing e-commerce retailer was struggling to create enough content for their 500+ products, optimize campaigns across multiple channels, and personalize experiences for 50,000+ monthly visitors. Their small team was overwhelmed with manual tasks and couldn't scale their marketing efforts.</p>
+                        <p>A growing e-commerce retailer was struggling to create enough content for their 500+ products, optimise campaigns across multiple channels, and personalise experiences for 50,000+ monthly visitors. Their small team was overwhelmed with manual tasks and couldn't scale their marketing efforts.</p>
                     </div>
                     
                     <div class="case-study-solution">
@@ -127,9 +127,9 @@ get_header(); ?>
                         <ul>
                             <li>Deployed GPT-powered content generation for product descriptions and blogs</li>
                             <li>Implemented predictive analytics for inventory and demand forecasting</li>
-                            <li>Built AI-driven personalization engine for website and email content</li>
+                            <li>Built AI-driven personalisation engine for website and email content</li>
                             <li>Created automated social media content generation and scheduling</li>
-                            <li>Integrated machine learning for dynamic pricing and campaign optimization</li>
+                            <li>Integrated machine learning for dynamic pricing and campaign optimisation</li>
                         </ul>
                     </div>
                 </div>
@@ -199,8 +199,8 @@ get_header(); ?>
                     <div class="category-icon">
                         <i class="fas fa-bullseye"></i>
                     </div>
-                    <h3>Campaign Optimization AI</h3>
-                    <p>Automated bid management, audience targeting, and creative optimization across platforms.</p>
+                    <h3>Campaign optimisation AI</h3>
+                    <p>Automated bid management, audience targeting, and creative optimisation across platforms.</p>
                     <div class="tools-list">
                         <span>Google AI, Facebook AI, Microsoft AI</span>
                     </div>
@@ -211,7 +211,7 @@ get_header(); ?>
                         <i class="fas fa-user-check"></i>
                     </div>
                     <h3>Customer Intelligence AI</h3>
-                    <p>Lead scoring, customer segmentation, and behavioral prediction for personalized marketing.</p>
+                    <p>Lead scoring, customer segmentation, and behavioural prediction for personalised marketing.</p>
                     <div class="tools-list">
                         <span>Salesforce Einstein, HubSpot AI, Klaviyo AI</span>
                     </div>
@@ -263,8 +263,8 @@ get_header(); ?>
                 <div class="process-step">
                     <div class="step-number">4</div>
                     <div class="step-content">
-                        <h3>Training & Optimization</h3>
-                        <p>Train AI models on your data, optimize performance, and ensure team adoption and proficiency.</p>
+                        <h3>Training & optimisation</h3>
+                        <p>Train AI models on your data, optimise performance, and ensure team adoption and proficiency.</p>
                     </div>
                 </div>
                 
@@ -300,8 +300,8 @@ get_header(); ?>
                     <div class="service-icon">
                         <i class="fas fa-user-tag"></i>
                     </div>
-                    <h3>Dynamic Personalization</h3>
-                    <p>Deliver personalized website experiences, email content, and product recommendations based on user behavior.</p>
+                    <h3>Dynamic personalisation</h3>
+                    <p>Deliver personalised website experiences, email content, and product recommendations based on user behaviour.</p>
                     <div class="service-metric">
                         <span>Increase conversions by 40%</span>
                     </div>
@@ -322,8 +322,8 @@ get_header(); ?>
                     <div class="service-icon">
                         <i class="fas fa-chart-line"></i>
                     </div>
-                    <h3>Intelligent Campaign Optimization</h3>
-                    <p>Automatically optimize ad spend, targeting, and creative elements for maximum ROI across all channels.</p>
+                    <h3>Intelligent Campaign optimisation</h3>
+                    <p>Automatically optimise ad spend, targeting, and creative elements for maximum ROI across all channels.</p>
                     <div class="service-metric">
                         <span>Reduce costs by 30%</span>
                     </div>
@@ -351,7 +351,7 @@ get_header(); ?>
                         <i class="fas fa-chart-line"></i>
                     </div>
                     <h3>Improved Performance</h3>
-                    <p>AI optimizes campaigns in real-time, delivering better results than manual management.</p>
+                    <p>AI optimises campaigns in real-time, delivering better results than manual management.</p>
                 </div>
                 
                 <div class="service-item">
@@ -366,8 +366,8 @@ get_header(); ?>
                     <div class="service-icon">
                         <i class="fas fa-user-friends"></i>
                     </div>
-                    <h3>Personalization at Scale</h3>
-                    <p>Deliver personalized experiences to thousands of customers simultaneously.</p>
+                    <h3>personalisation at Scale</h3>
+                    <p>Deliver personalised experiences to thousands of customers simultaneously.</p>
                 </div>
             </div>
         </div>
@@ -391,7 +391,7 @@ get_header(); ?>
                         <i class="fab fa-google"></i>
                     </div>
                     <h3>Google AI Platform</h3>
-                    <p>Machine learning and AI tools for analytics, automation, and campaign optimization.</p>
+                    <p>Machine learning and AI tools for analytics, automation, and campaign optimisation.</p>
                 </div>
                 
                 <div class="tool-item">
@@ -407,7 +407,7 @@ get_header(); ?>
                         <i class="fab fa-hubspot"></i>
                     </div>
                     <h3>HubSpot AI</h3>
-                    <p>Marketing automation AI with predictive lead scoring and content optimization features.</p>
+                    <p>Marketing automation AI with predictive lead scoring and content optimisation features.</p>
                 </div>
             </div>
         </div>
@@ -424,23 +424,23 @@ get_header(); ?>
                 </div>
                 <div class="industry-item">
                     <h3>SaaS & Technology</h3>
-                    <p>User behavior prediction, churn prevention, and personalized onboarding experiences.</p>
+                    <p>User behaviour prediction, churn prevention, and personalised onboarding experiences.</p>
                 </div>
                 <div class="industry-item">
                     <h3>Professional Services</h3>
-                    <p>Lead scoring automation, content personalization, and client communication optimization.</p>
+                    <p>Lead scoring automation, content personalisation, and client communication optimisation.</p>
                 </div>
                 <div class="industry-item">
                     <h3>Finance & Insurance</h3>
-                    <p>Risk assessment automation, personalized financial advice, and compliance monitoring.</p>
+                    <p>Risk assessment automation, personalised financial advice, and compliance monitoring.</p>
                 </div>
                 <div class="industry-item">
                     <h3>Healthcare</h3>
-                    <p>Patient engagement optimization, appointment scheduling AI, and treatment personalization.</p>
+                    <p>Patient engagement optimisation, appointment scheduling AI, and treatment personalisation.</p>
                 </div>
                 <div class="industry-item">
                     <h3>Education</h3>
-                    <p>Personalized learning paths, automated content creation, and student engagement tracking.</p>
+                    <p>personalised learning paths, automated content creation, and student engagement tracking.</p>
                 </div>
             </div>
         </div>

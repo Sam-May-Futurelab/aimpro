@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 // Meta fields for Streamline Sales Funnel page
 add_action('add_meta_boxes', function() {
     global $post;
@@ -14,7 +14,7 @@ function streamline_sales_funnel_meta_callback($post) {
     ?>
     <style>
         .streamline-meta-section { margin-bottom: 25px; padding: 15px; border: 1px solid #ddd; }
-        .streamline-meta-section h3 { margin-top: 0; color: #23282d; }
+        .streamline-meta-section h3 { margin-top: 0; colour: #23282d; }
         .streamline-meta-field { margin-bottom: 15px; }
         .streamline-meta-field label { display: block; margin-bottom: 5px; font-weight: 600; }
         .streamline-meta-field input, .streamline-meta-field textarea { width: 100%; }
@@ -73,7 +73,7 @@ function streamline_sales_funnel_meta_callback($post) {
         </div>
         <div class="streamline-meta-field">
             <label>Overview Description</label>
-            <textarea name="streamline_overview_description"><?php echo esc_textarea(get_post_meta($post->ID, 'streamline_overview_description', true) ?: 'Eliminate inefficiencies and gaps in your current sales process with our systematic approach to funnel optimization and automation.'); ?></textarea>
+            <textarea name="streamline_overview_description"><?php echo esc_textarea(get_post_meta($post->ID, 'streamline_overview_description', true) ?: 'Eliminate inefficiencies and gaps in your current sales process with our systematic approach to funnel optimisation and automation.'); ?></textarea>
         </div>
 
         <h4>Service Items</h4>
@@ -83,7 +83,7 @@ function streamline_sales_funnel_meta_callback($post) {
         </div>
         <div class="streamline-meta-field">
             <label>Service 1 Description</label>
-            <textarea name="streamline_service_1_desc"><?php echo esc_textarea(get_post_meta($post->ID, 'streamline_service_1_desc', true) ?: 'Comprehensive review of your existing sales process to identify bottlenecks, gaps, and optimization opportunities.'); ?></textarea>
+            <textarea name="streamline_service_1_desc"><?php echo esc_textarea(get_post_meta($post->ID, 'streamline_service_1_desc', true) ?: 'Comprehensive review of your existing sales process to identify bottlenecks, gaps, and optimisation opportunities.'); ?></textarea>
         </div>
 
         <div class="streamline-meta-field">
@@ -92,7 +92,7 @@ function streamline_sales_funnel_meta_callback($post) {
         </div>
         <div class="streamline-meta-field">
             <label>Service 2 Description</label>
-            <textarea name="streamline_service_2_desc"><?php echo esc_textarea(get_post_meta($post->ID, 'streamline_service_2_desc', true) ?: 'Visual mapping of your optimized sales journey with clear touchpoints and decision paths for maximum efficiency.'); ?></textarea>
+            <textarea name="streamline_service_2_desc"><?php echo esc_textarea(get_post_meta($post->ID, 'streamline_service_2_desc', true) ?: 'Visual mapping of your optimised sales journey with clear touchpoints and decision paths for maximum efficiency.'); ?></textarea>
         </div>
 
         <div class="streamline-meta-field">
@@ -106,7 +106,7 @@ function streamline_sales_funnel_meta_callback($post) {
 
         <div class="streamline-meta-field">
             <label>Service 4 Title</label>
-            <input type="text" name="streamline_service_4_title" value="<?php echo esc_attr(get_post_meta($post->ID, 'streamline_service_4_title', true) ?: 'Nurture Sequence Optimization'); ?>" />
+            <input type="text" name="streamline_service_4_title" value="<?php echo esc_attr(get_post_meta($post->ID, 'streamline_service_4_title', true) ?: 'Nurture Sequence optimisation'); ?>" />
         </div>
         <div class="streamline-meta-field">
             <label>Service 4 Description</label>
@@ -119,7 +119,7 @@ function streamline_sales_funnel_meta_callback($post) {
         </div>
         <div class="streamline-meta-field">
             <label>Service 5 Description</label>
-            <textarea name="streamline_service_5_desc"><?php echo esc_textarea(get_post_meta($post->ID, 'streamline_service_5_desc', true) ?: 'Strategic optimization of key conversion moments to reduce friction and increase completion rates.'); ?></textarea>
+            <textarea name="streamline_service_5_desc"><?php echo esc_textarea(get_post_meta($post->ID, 'streamline_service_5_desc', true) ?: 'Strategic optimisation of key conversion moments to reduce friction and increase completion rates.'); ?></textarea>
         </div>
 
         <div class="streamline-meta-field">
@@ -190,7 +190,7 @@ function streamline_sales_funnel_meta_callback($post) {
         <h3>Process Steps</h3>
         <div class="streamline-meta-field">
             <label>Process Title</label>
-            <input type="text" name="streamline_process_title" value="<?php echo esc_attr(get_post_meta($post->ID, 'streamline_process_title', true) ?: 'Our Proven Funnel Optimization Process'); ?>" />
+            <input type="text" name="streamline_process_title" value="<?php echo esc_attr(get_post_meta($post->ID, 'streamline_process_title', true) ?: 'Our Proven Funnel optimisation Process'); ?>" />
         </div>
 
         <h4>Process Steps</h4>
@@ -204,7 +204,7 @@ function streamline_sales_funnel_meta_callback($post) {
         </div>
         <div class="streamline-meta-field">
             <label>Step 1 Description</label>
-            <textarea name="streamline_step_1_desc"><?php echo esc_textarea(get_post_meta($post->ID, 'streamline_step_1_desc', true) ?: 'Comprehensive review of your current funnel performance and identification of optimization opportunities.'); ?></textarea>
+            <textarea name="streamline_step_1_desc"><?php echo esc_textarea(get_post_meta($post->ID, 'streamline_step_1_desc', true) ?: 'Comprehensive review of your current funnel performance and identification of optimisation opportunities.'); ?></textarea>
         </div>
 
         <div class="streamline-meta-field">
@@ -230,7 +230,7 @@ function streamline_sales_funnel_meta_callback($post) {
         </div>
         <div class="streamline-meta-field">
             <label>Step 3 Description</label>
-            <textarea name="streamline_step_3_desc"><?php echo esc_textarea(get_post_meta($post->ID, 'streamline_step_3_desc', true) ?: 'Systematic implementation of optimizations and automation across all funnel touchpoints.'); ?></textarea>
+            <textarea name="streamline_step_3_desc"><?php echo esc_textarea(get_post_meta($post->ID, 'streamline_step_3_desc', true) ?: 'Systematic implementation of optimisations and automation across all funnel touchpoints.'); ?></textarea>
         </div>
 
         <div class="streamline-meta-field">
@@ -239,11 +239,11 @@ function streamline_sales_funnel_meta_callback($post) {
         </div>
         <div class="streamline-meta-field">
             <label>Step 4 Title</label>
-            <input type="text" name="streamline_step_4_title" value="<?php echo esc_attr(get_post_meta($post->ID, 'streamline_step_4_title', true) ?: 'Monitor & Optimize'); ?>" />
+            <input type="text" name="streamline_step_4_title" value="<?php echo esc_attr(get_post_meta($post->ID, 'streamline_step_4_title', true) ?: 'Monitor & optimise'); ?>" />
         </div>
         <div class="streamline-meta-field">
             <label>Step 4 Description</label>
-            <textarea name="streamline_step_4_desc"><?php echo esc_textarea(get_post_meta($post->ID, 'streamline_step_4_desc', true) ?: 'Continuous monitoring and data-driven optimization to maximize funnel performance.'); ?></textarea>
+            <textarea name="streamline_step_4_desc"><?php echo esc_textarea(get_post_meta($post->ID, 'streamline_step_4_desc', true) ?: 'Continuous monitoring and data-driven optimisation to maximise funnel performance.'); ?></textarea>
         </div>
     </div>
     <?php

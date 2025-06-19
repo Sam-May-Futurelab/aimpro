@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 /**
  * Microsoft Ads Meta Fields
  *
@@ -38,7 +38,7 @@ function aimpro_get_microsoft_ads_default_values() {
         
         // Service Items (6 services)
         'service_title_1' => 'Bing Search Campaigns',
-        'service_content_1' => 'Strategic search advertising on Bing, Yahoo, and partner networks with optimized bidding and targeting strategies.',
+        'service_content_1' => 'Strategic search advertising on Bing, Yahoo, and partner networks with optimised bidding and targeting strategies.',
         'service_icon_1' => 'fab fa-microsoft',
         
         'service_title_2' => 'Microsoft Shopping Ads',
@@ -49,7 +49,7 @@ function aimpro_get_microsoft_ads_default_values() {
         'service_content_3' => 'Leverage Microsoft\'s LinkedIn data integration for precise B2B targeting and professional demographic reach.',
         'service_icon_3' => 'fas fa-users',
         
-        'service_title_4' => 'Campaign Optimization',
+        'service_title_4' => 'Campaign optimisation',
         'service_content_4' => 'Continuous improvement through automated bidding, ad testing, and performance analysis specific to Bing\'s algorithm.',
         'service_icon_4' => 'fas fa-sync-alt',
           'service_title_5' => 'Conversion Tracking',
@@ -57,13 +57,13 @@ function aimpro_get_microsoft_ads_default_values() {
         'service_icon_5' => 'fas fa-chart-line',
         
         'service_title_6' => 'Google Ads Import',
-        'service_content_6' => 'Seamless migration and optimization of existing Google Ads campaigns to maximize Bing network potential.',
+        'service_content_6' => 'Seamless migration and optimisation of existing Google Ads campaigns to maximise Bing network potential.',
         'service_icon_6' => 'fas fa-download',
         
         // Case Study Section
         'case_study_title' => 'Case Study: B2B Software Success',        'case_study_intro' => 'How we helped a B2B software company achieve 320% ROI improvement by expanding to Microsoft/Bing Ads alongside their existing Google campaigns.',
         'case_study_challenge' => 'A growing B2B software company was experiencing rising costs and increased competition on Google Ads. They needed to diversify their paid search strategy to maintain growth while controlling customer acquisition costs in their competitive market.',
-        'case_study_solution' => "Migrated and optimized existing Google campaigns for Bing's unique algorithm\nImplemented LinkedIn profile targeting for B2B prospect reach\nCreated Bing-specific ad copy optimized for lower competition keywords\nEstablished Microsoft Shopping campaigns for product visibility\nDeveloped cross-platform attribution and budget optimization strategy",
+        'case_study_solution' => "Migrated and optimised existing Google campaigns for Bing's unique algorithm\nImplemented LinkedIn profile targeting for B2B prospect reach\nCreated Bing-specific ad copy optimised for lower competition keywords\nEstablished Microsoft Shopping campaigns for product visibility\nDeveloped cross-platform attribution and budget optimisation strategy",
         
         // Case Study Results
         'case_result_1_number' => '320%',
@@ -80,11 +80,11 @@ function aimpro_get_microsoft_ads_default_values() {
         
         'process_step_number_1' => '1',
         'process_step_title_1' => 'Platform Analysis & Setup',
-        'process_step_content_1' => 'Analyze your existing search campaigns and set up Microsoft Ads account with proper tracking and conversion goals.',
+        'process_step_content_1' => 'analyse your existing search campaigns and set up Microsoft Ads account with proper tracking and conversion goals.',
         
         'process_step_number_2' => '2',
-        'process_step_title_2' => 'Campaign Migration & Optimization',
-        'process_step_content_2' => 'Import and optimize existing campaigns for Bing\'s unique algorithm and audience characteristics.',
+        'process_step_title_2' => 'Campaign Migration & optimisation',
+        'process_step_content_2' => 'Import and optimise existing campaigns for Bing\'s unique algorithm and audience characteristics.',
         
         'process_step_number_3' => '3',
         'process_step_title_3' => 'Keyword Research & Expansion',
@@ -92,7 +92,7 @@ function aimpro_get_microsoft_ads_default_values() {
         
         'process_step_number_4' => '4',
         'process_step_title_4' => 'Launch & Monitoring',
-        'process_step_content_4' => 'Deploy campaigns with careful monitoring and rapid optimization based on Bing-specific performance patterns.',
+        'process_step_content_4' => 'Deploy campaigns with careful monitoring and rapid optimisation based on Bing-specific performance patterns.',
         
         'process_step_number_5' => '5',
         'process_step_title_5' => 'Reporting & Scaling',
@@ -133,7 +133,7 @@ function aimpro_get_microsoft_ads_default_values() {
         'benefit_icon_3' => 'fas fa-briefcase',
         
         'benefit_title_4' => 'Import from Google',
-        'benefit_content_4' => 'Easy campaign migration from Google Ads with automated optimization for Bing.',
+        'benefit_content_4' => 'Easy campaign migration from Google Ads with automated optimisation for Bing.',
         'benefit_icon_4' => 'fas fa-download',
         
         'benefit_title_5' => 'Lower CPCs',

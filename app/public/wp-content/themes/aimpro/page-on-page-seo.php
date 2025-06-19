@@ -1,7 +1,7 @@
-<?php
+﻿<?php
 /**
  * Template Name: On-Page SEO Services
- * Description: On-page SEO optimization services
+ * Description: On-page SEO optimisation services
  */
 
 get_header(); ?>
@@ -12,9 +12,9 @@ get_header(); ?>
             <div class="page-header-content animate-on-scroll animate-fade-up">
                 <?php 
                 $header_title = get_post_meta(get_the_ID(), 'on_page_seo_header_title', true) ?: 'On-Page SEO Services';
-                $header_subtitle = get_post_meta(get_the_ID(), 'on_page_seo_header_subtitle', true) ?: 'Optimize every page element to boost search rankings and user experience';
+                $header_subtitle = get_post_meta(get_the_ID(), 'on_page_seo_header_subtitle', true) ?: 'optimise every page element to boost search rankings and user experience';
                 $header_badges = get_post_meta(get_the_ID(), 'on_page_seo_header_badges', true) ?: array(
-                    'Content Optimization',
+                    'Content optimisation',
                     'Technical Implementation',
                     'User Experience'
                 );
@@ -33,8 +33,8 @@ get_header(); ?>
                 <div class="overview-content">
                     <div class="overview-text animate-on-scroll animate-slide-left">
                         <?php 
-                        $overview_title = get_post_meta(get_the_ID(), 'on_page_seo_overview_title', true) ?: 'Comprehensive On-Page SEO Optimization';
-                        $overview_description_1 = get_post_meta(get_the_ID(), 'on_page_seo_overview_description_1', true) ?: 'Our on-page SEO services focus on optimizing individual web pages to rank higher and earn more relevant traffic in search engines. We optimize both the content and HTML source code of a page, ensuring every element contributes to your search visibility and user experience.';
+                        $overview_title = get_post_meta(get_the_ID(), 'on_page_seo_overview_title', true) ?: 'Comprehensive On-Page SEO optimisation';
+                        $overview_description_1 = get_post_meta(get_the_ID(), 'on_page_seo_overview_description_1', true) ?: 'Our on-page SEO services focus on optimising individual web pages to rank higher and earn more relevant traffic in search engines. We optimise both the content and HTML source code of a page, ensuring every element contributes to your search visibility and user experience.';
                         $overview_description_2 = get_post_meta(get_the_ID(), 'on_page_seo_overview_description_2', true) ?: 'From title tags and meta descriptions to content structure and internal linking, our systematic approach to on-page SEO ensures your website communicates effectively with both search engines and users.';
                         ?>
                         <h2><?php echo esc_html($overview_title); ?></h2>
@@ -65,28 +65,28 @@ get_header(); ?>
                 $services_title = get_post_meta(get_the_ID(), 'on_page_seo_services_title', true) ?: 'Our On-Page SEO Services';
                 $services = get_post_meta(get_the_ID(), 'on_page_seo_services', true) ?: array(
                     array(
-                        'title' => 'Title Tag & Meta Description Optimization',
+                        'title' => 'Title Tag & Meta Description optimisation',
                         'description' => 'Craft compelling title tags and meta descriptions that improve click-through rates and communicate page relevance to search engines.',
                         'features' => array(
-                            'Keyword-optimized title tags',
+                            'Keyword-optimised title tags',
                             'Compelling meta descriptions',
-                            'SERP preview optimization',
+                            'SERP preview optimisation',
                             'Character limit compliance'
                         )
                     ),
                     array(
-                        'title' => 'Content Structure & Optimization',
-                        'description' => 'Optimize content structure using proper heading hierarchy, keyword placement, and semantic markup for better search visibility.',
+                        'title' => 'Content Structure & optimisation',
+                        'description' => 'optimise content structure using proper heading hierarchy, keyword placement, and semantic markup for better search visibility.',
                         'features' => array(
-                            'H1-H6 heading optimization',
+                            'H1-H6 heading optimisation',
                             'Keyword density analysis',
                             'Content readability improvement',
-                            'Featured snippet optimization'
+                            'Featured snippet optimisation'
                         )
                     ),
                     array(
-                        'title' => 'URL Structure & Optimization',
-                        'description' => 'Create SEO-friendly URL structures that are both user-friendly and search engine optimized for maximum visibility.',
+                        'title' => 'URL Structure & optimisation',
+                        'description' => 'Create SEO-friendly URL structures that are both user-friendly and search engine optimised for maximum visibility.',
                         'features' => array(
                             'Clean URL structure',
                             'Keyword-rich URLs',
@@ -95,10 +95,10 @@ get_header(); ?>
                         )
                     ),
                     array(
-                        'title' => 'Image & Media Optimization',
-                        'description' => 'Optimize images and media files for faster loading times and better search engine understanding of your content.',
+                        'title' => 'Image & Media optimisation',
+                        'description' => 'optimise images and media files for faster loading times and better search engine understanding of your content.',
                         'features' => array(
-                            'Alt text optimization',
+                            'Alt text optimisation',
                             'Image file compression',
                             'Descriptive file names',
                             'WebP format conversion'
@@ -109,7 +109,7 @@ get_header(); ?>
                         'description' => 'Develop strategic internal linking structures that distribute page authority and improve user navigation throughout your site.',
                         'features' => array(
                             'Link architecture planning',
-                            'Anchor text optimization',
+                            'Anchor text optimisation',
                             'Deep linking strategies',
                             'Link equity distribution'
                         )
@@ -118,7 +118,7 @@ get_header(); ?>
                         'title' => 'Schema Markup Implementation',
                         'description' => 'Implement structured data markup to help search engines better understand your content and enable rich snippets.',
                         'features' => array(
-                            'Rich snippet optimization',
+                            'Rich snippet optimisation',
                             'Local business schema',
                             'Product schema markup',
                             'FAQ and How-to schemas'
@@ -132,8 +132,8 @@ get_header(); ?>
                         <div class="component-card animate-on-scroll animate-stagger animate-fade-up">
                             <div class="component-icon">
                                 <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M14 2H6C4.89543 2 4 2.89543 4 4V20C4 21.1046 4.89543 22 6 22H18C19.1046 22 20 21.1046 20 20V8L14 2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                    <path d="M14 2V8H20" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M14 2H6C4.89543 2 4 2.89543 4 4V20C4 21.1046 4.89543 22 6 22H18C19.1046 22 20 21.1046 20 20V8L14 2Z" stroke="currentcolour" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M14 2V8H20" stroke="currentcolour" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                                 </svg>
                             </div>
                             <div class="component-content">
@@ -148,7 +148,7 @@ get_header(); ?>
                                 <?php endif; ?>
                             </div>
                         </div>                    <?php endforeach; ?>                </div>
-                <div class="text-center mt-1 animate-on-scroll animate-fade-up">
+                <div class="text-centre mt-1 animate-on-scroll animate-fade-up">
                     <a href="/contact/" class="btn btn-primary">Request On-Page SEO Analysis</a>
                 </div>
             </div>        <!-- Case Study -->
@@ -157,8 +157,8 @@ get_header(); ?>
                 <div class="case-study-content">                    <div class="case-study-text animate-on-scroll animate-slide-left">
                         <?php 
                         $case_study_title = get_post_meta(get_the_ID(), 'on_page_seo_case_study_title', true) ?: 'Case Study: Professional Services Firm';
-                        $case_study_subtitle = get_post_meta(get_the_ID(), 'on_page_seo_case_study_subtitle', true) ?: 'Complete On-Page Optimization Drives 425% Traffic Growth';
-                        $case_study_description = get_post_meta(get_the_ID(), 'on_page_seo_case_study_description', true) ?: 'A London-based professional services firm approached us with poor search rankings and low organic visibility. Our comprehensive on-page optimization strategy transformed their digital presence.';
+                        $case_study_subtitle = get_post_meta(get_the_ID(), 'on_page_seo_case_study_subtitle', true) ?: 'Complete On-Page optimisation Drives 425% Traffic Growth';
+                        $case_study_description = get_post_meta(get_the_ID(), 'on_page_seo_case_study_description', true) ?: 'A London-based professional services firm approached us with poor search rankings and low organic visibility. Our comprehensive on-page optimisation strategy transformed their digital presence.';
                         $challenges = get_post_meta(get_the_ID(), 'on_page_seo_challenges', true) ?: array(
                             'Pages ranking beyond position 50 for target keywords',
                             'Poor content structure and keyword targeting',
@@ -220,7 +220,7 @@ get_header(); ?>
                 $process_steps = get_post_meta(get_the_ID(), 'on_page_seo_process_steps', true) ?: array(
                     array(
                         'title' => 'Content Audit & Analysis',
-                        'description' => 'Comprehensive review of existing content, identifying optimization opportunities and gaps in your current on-page SEO strategy.'
+                        'description' => 'Comprehensive review of existing content, identifying optimisation opportunities and gaps in your current on-page SEO strategy.'
                     ),
                     array(
                         'title' => 'Keyword Research & Mapping',
@@ -228,11 +228,11 @@ get_header(); ?>
                     ),
                     array(
                         'title' => 'Technical Implementation',
-                        'description' => 'Systematic implementation of on-page optimizations including title tags, meta descriptions, headers, and technical elements.'
+                        'description' => 'Systematic implementation of on-page optimisations including title tags, meta descriptions, headers, and technical elements.'
                     ),
                     array(
-                        'title' => 'Content Optimization',
-                        'description' => 'Optimize content structure, readability, and keyword placement while maintaining natural flow and user value.'
+                        'title' => 'Content optimisation',
+                        'description' => 'optimise content structure, readability, and keyword placement while maintaining natural flow and user value.'
                     ),
                     array(
                         'title' => 'Monitoring & Refinement',
@@ -258,7 +258,7 @@ get_header(); ?>
             <div class="container">
                 <div class="section-header animate-on-scroll animate-fade-up">
                     <h2>Tools & Technologies We Use</h2>
-                    <p>We leverage industry-leading SEO tools and technologies to deliver exceptional on-page optimization results.</p>
+                    <p>We leverage industry-leading SEO tools and technologies to deliver exceptional on-page optimisation results.</p>
                 </div>
                 <div class="services-grid animate-on-scroll animate-stagger animate-scale-up">
                     <div class="service-item">
@@ -266,7 +266,7 @@ get_header(); ?>
                             <i class="fas fa-spider"></i>
                         </div>
                         <h3>SEO Analysis Tools</h3>
-                        <ul style="text-align: left; color: #666; line-height: 1.8;">
+                        <ul style="text-align: left; colour: #666; line-height: 1.8;">
                             <li>Screaming Frog SEO Spider</li>
                             <li>Ahrefs Site Audit</li>
                             <li>SEMrush On-Page SEO Checker</li>
@@ -278,10 +278,10 @@ get_header(); ?>
                         <div class="service-icon">
                             <i class="fas fa-edit"></i>
                         </div>
-                        <h3>Content Optimization</h3>
-                        <ul style="text-align: left; color: #666; line-height: 1.8;">
+                        <h3>Content optimisation</h3>
+                        <ul style="text-align: left; colour: #666; line-height: 1.8;">
                             <li>Surfer SEO Content Editor</li>
-                            <li>Clearscope Content Optimization</li>
+                            <li>Clearscope Content optimisation</li>
                             <li>MarketMuse Content Planning</li>
                             <li>Grammarly for Readability</li>
                         </ul>
@@ -292,7 +292,7 @@ get_header(); ?>
                             <i class="fas fa-code"></i>
                         </div>
                         <h3>Technical Implementation</h3>
-                        <ul style="text-align: left; color: #666; line-height: 1.8;">
+                        <ul style="text-align: left; colour: #666; line-height: 1.8;">
                             <li>Yoast SEO (WordPress)</li>
                             <li>Schema.org Markup</li>
                             <li>Google Tag Manager</li>
@@ -304,7 +304,7 @@ get_header(); ?>
                             <i class="fas fa-chart-line"></i>
                         </div>
                         <h3>Performance Monitoring</h3>
-                        <ul style="text-align: left; color: #666; line-height: 1.8;">
+                        <ul style="text-align: left; colour: #666; line-height: 1.8;">
                             <li>Google Analytics 4</li>
                             <li>Google PageSpeed Insights</li>
                             <li>GTmetrix Performance</li>
@@ -317,7 +317,7 @@ get_header(); ?>
                             <i class="fas fa-search"></i>
                         </div>
                         <h3>Keyword Research</h3>
-                        <ul style="text-align: left; color: #666; line-height: 1.8;">
+                        <ul style="text-align: left; colour: #666; line-height: 1.8;">
                             <li>Google Keyword Planner</li>
                             <li>Ahrefs Keywords Explorer</li>
                             <li>SEMrush Keyword Magic Tool</li>
@@ -329,12 +329,12 @@ get_header(); ?>
                         <div class="service-icon">
                             <i class="fas fa-tachometer-alt"></i>
                         </div>
-                        <h3>Site Speed Optimization</h3>
-                        <ul style="text-align: left; color: #666; line-height: 1.8;">
+                        <h3>Site Speed optimisation</h3>
+                        <ul style="text-align: left; colour: #666; line-height: 1.8;">
                             <li>WP Rocket Caching</li>
                             <li>Cloudflare CDN</li>
                             <li>Image Compression Tools</li>
-                            <li>Database Optimization</li>
+                            <li>Database optimisation</li>
                         </ul>
                     </div>
                 </div>
@@ -347,19 +347,19 @@ get_header(); ?>
                 $industries = get_post_meta(get_the_ID(), 'on_page_seo_industries', true) ?: array(
                     array(
                         'title' => 'E-commerce',
-                        'description' => 'Product page optimization, category structure, and schema markup for enhanced product visibility in search results.'
+                        'description' => 'Product page optimisation, category structure, and schema markup for enhanced product visibility in search results.'
                     ),
                     array(
                         'title' => 'Professional Services',
-                        'description' => 'Service page optimization, local business schema, and content structure to attract high-value clients.'
+                        'description' => 'Service page optimisation, local business schema, and content structure to attract high-value clients.'
                     ),
                     array(
                         'title' => 'Healthcare',
-                        'description' => 'Medical content optimization, YMYL compliance, and structured data for healthcare providers and services.'
+                        'description' => 'Medical content optimisation, YMYL compliance, and structured data for healthcare providers and services.'
                     ),
                     array(
                         'title' => 'Real Estate',
-                        'description' => 'Property listing optimization, local area content, and schema markup for enhanced search visibility.'
+                        'description' => 'Property listing optimisation, local area content, and schema markup for enhanced search visibility.'
                     )
                 );
                 ?>                <h2 class="animate-on-scroll animate-fade-up"><?php echo esc_html($industries_title); ?></h2>
@@ -384,15 +384,15 @@ get_header(); ?>
                     ),
                     array(
                         'question' => 'What\'s the difference between on-page and technical SEO?',
-                        'answer' => 'On-page SEO focuses on optimizing individual page content and HTML elements, while technical SEO addresses site-wide technical issues like crawlability, site speed, and mobile-friendliness.'
+                        'answer' => 'On-page SEO focuses on optimising individual page content and HTML elements, while technical SEO addresses site-wide technical issues like crawlability, site speed, and mobile-friendliness.'
                     ),
                     array(
-                        'question' => 'Do you provide ongoing on-page optimization?',
-                        'answer' => 'Yes, we offer both one-time optimization services and ongoing monthly optimization as part of our comprehensive SEO packages to maintain and improve performance over time.'
+                        'question' => 'Do you provide ongoing on-page optimisation?',
+                        'answer' => 'Yes, we offer both one-time optimisation services and ongoing monthly optimisation as part of our comprehensive SEO packages to maintain and improve performance over time.'
                     ),
                     array(
                         'question' => 'How do you measure on-page SEO success?',
-                        'answer' => 'We track keyword rankings, organic traffic growth, click-through rates, time on page, and conversions to measure the effectiveness of our on-page optimizations.'
+                        'answer' => 'We track keyword rankings, organic traffic growth, click-through rates, time on page, and conversions to measure the effectiveness of our on-page optimisations.'
                     )
                 );
                 ?>                <h2 class="animate-on-scroll animate-fade-up"><?php echo esc_html($faqs_title); ?></h2>
@@ -412,13 +412,13 @@ get_header(); ?>
             <div class="section-content">                <div class="testimonial-content animate-on-scroll animate-fade-up">
                     <div class="quote-icon">
                         <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M3 21C3 17.4 5.4 17.4 5.4 17.4H9V21H3Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                            <path d="M15 21C15 17.4 17.4 17.4 17.4 17.4H21V21H15Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                            <path d="M7.5 9C7.5 5.4 9.9 3 13.5 3S19.5 5.4 19.5 9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M3 21C3 17.4 5.4 17.4 5.4 17.4H9V21H3Z" stroke="currentcolour" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M15 21C15 17.4 17.4 17.4 17.4 17.4H21V21H15Z" stroke="currentcolour" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M7.5 9C7.5 5.4 9.9 3 13.5 3S19.5 5.4 19.5 9" stroke="currentcolour" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                         </svg>
                     </div>
                     <?php 
-                    $testimonial_quote = get_post_meta(get_the_ID(), 'on_page_seo_testimonial_quote', true) ?: 'The on-page optimization work AIM Pro Marketing did for our website was incredible. Within 3 months, we saw our main service pages ranking on the first page of Google. The attention to detail in optimizing every element was impressive.';
+                    $testimonial_quote = get_post_meta(get_the_ID(), 'on_page_seo_testimonial_quote', true) ?: 'The on-page optimisation work AIM Pro Marketing did for our website was incredible. Within 3 months, we saw our main service pages ranking on the first page of Google. The attention to detail in optimising every element was impressive.';
                     $testimonial_author_name = get_post_meta(get_the_ID(), 'on_page_seo_testimonial_author_name', true) ?: 'Sarah Mitchell';
                     $testimonial_author_title = get_post_meta(get_the_ID(), 'on_page_seo_testimonial_author_title', true) ?: 'Marketing Director, Professional Services Ltd';
                     ?>
@@ -435,15 +435,15 @@ get_header(); ?>
         <section class="simple-cta-section">
             <div class="section-content">                <div class="simple-cta-content animate-on-scroll animate-fade-up">
                     <?php 
-                    $cta_title = get_post_meta(get_the_ID(), 'on_page_seo_cta_title', true) ?: 'Ready to Optimize Your Website Pages?';
-                    $cta_description = get_post_meta(get_the_ID(), 'on_page_seo_cta_description', true) ?: 'Get a comprehensive on-page SEO audit and strategy session. We\'ll identify optimization opportunities and show you how to improve your search rankings.';
+                    $cta_title = get_post_meta(get_the_ID(), 'on_page_seo_cta_title', true) ?: 'Ready to optimise Your Website Pages?';
+                    $cta_description = get_post_meta(get_the_ID(), 'on_page_seo_cta_description', true) ?: 'Get a comprehensive on-page SEO audit and strategy session. We\'ll identify optimisation opportunities and show you how to improve your search rankings.';
                     $cta_primary_text = get_post_meta(get_the_ID(), 'on_page_seo_cta_primary_text', true) ?: 'Get Free SEO Audit';
                     $cta_primary_url = get_post_meta(get_the_ID(), 'on_page_seo_cta_primary_url', true) ?: home_url('/contact');
                     $cta_secondary_text = get_post_meta(get_the_ID(), 'on_page_seo_cta_secondary_text', true) ?: 'View All SEO Services';
                     $cta_secondary_url = get_post_meta(get_the_ID(), 'on_page_seo_cta_secondary_url', true) ?: home_url('/seo-services');
                     $cta_features = get_post_meta(get_the_ID(), 'on_page_seo_cta_features', true) ?: array(
                         'Free 30-minute consultation',
-                        'Detailed optimization recommendations',
+                        'Detailed optimisation recommendations',
                         'No obligation quote'
                     );
                     ?>

@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 // Coaches & Consultants Page Meta Fields
 
 function add_coaches_consultants_meta_boxes() {
@@ -63,19 +63,19 @@ function coaches_consultants_meta_box_callback($post) {
                 'icon' => 'fas fa-bullseye',
                 'title' => 'High-Ticket Client Acquisition',
                 'description' => 'Attract premium clients with targeted marketing campaigns designed to generate high-quality discovery calls and consultations.',
-                'features' => array('Ideal client targeting', 'Lead magnet creation', 'Automated nurture sequences', 'Application process optimization')
+                'features' => array('Ideal client targeting', 'Lead magnet creation', 'Automated nurture sequences', 'Application process optimisation')
             ),
             array(
                 'icon' => 'fas fa-chart-line',
                 'title' => 'Authority Content Marketing',
                 'description' => 'Establish your expertise with valuable content that educates prospects while positioning you as the go-to expert in your field.',
-                'features' => array('Thought leadership content', 'Podcast & interview strategy', 'Educational resources', 'SEO-optimized articles')
+                'features' => array('Thought leadership content', 'Podcast & interview strategy', 'Educational resources', 'SEO-optimised articles')
             ),
             array(
                 'icon' => 'fas fa-comment-dollar',
                 'title' => 'Digital Sales Funnels',
                 'description' => 'Convert more prospects into paying clients with proven sales funnels and automation that scale your coaching business.',
-                'features' => array('Webinar & workshop funnels', 'Application & discovery call systems', 'Email sequences', 'Conversion optimization')
+                'features' => array('Webinar & workshop funnels', 'Application & discovery call systems', 'Email sequences', 'Conversion optimisation')
             )
         );
     }
@@ -124,19 +124,19 @@ function coaches_consultants_meta_box_callback($post) {
         $process_steps = array(
             array(
                 'title' => 'Brand & Audience Analysis',
-                'description' => 'We analyze your current brand positioning, audience, and competitor landscape to identify your unique advantage.'
+                'description' => 'We analyse your current brand positioning, audience, and competitor landscape to identify your unique advantage.'
             ),
             array(
                 'title' => 'Authority Strategy Development',
-                'description' => 'We create a customized marketing roadmap to position you as the go-to authority in your niche.'
+                'description' => 'We create a customised marketing roadmap to position you as the go-to authority in your niche.'
             ),
             array(
                 'title' => 'Lead Generation Implementation',
                 'description' => 'We build and launch targeted campaigns designed to attract high-quality coaching prospects.'
             ),
             array(
-                'title' => 'Conversion & Scale Optimization',
-                'description' => 'We optimize your sales process and develop scalable programs to increase revenue while reducing time commitment.'
+                'title' => 'Conversion & Scale optimisation',
+                'description' => 'We optimise your sales process and develop scalable programs to increase revenue while reducing time commitment.'
             )
         );
     }
@@ -224,7 +224,7 @@ function coaches_consultants_meta_box_callback($post) {
         }
         .coaches-consultants-meta .image-upload-container {
             display: flex;
-            align-items: center;
+            align-items: centre;
             gap: 10px;
         }
         .coaches-consultants-meta .image-preview {
@@ -241,7 +241,7 @@ function coaches_consultants_meta_box_callback($post) {
             margin-bottom: 15px;
             padding: 10px;
             background: #0073aa;
-            color: white;
+            colour: white;
             border-radius: 3px;
         }
     </style>

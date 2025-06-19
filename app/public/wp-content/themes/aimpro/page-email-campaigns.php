@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 /**
  * Template Name: Email Campaigns
  * 
@@ -87,15 +87,15 @@ get_header(); ?>
                         <i class="fas fa-users"></i>
                     </div>
                     <h3><?php echo esc_html(get_post_meta(get_the_ID(), 'email_campaigns_service_4_title', true) ?: 'Advanced Segmentation'); ?></h3>
-                    <p><?php echo esc_html(get_post_meta(get_the_ID(), 'email_campaigns_service_4_desc', true) ?: 'Precise audience targeting based on behavior, demographics, and purchase history for maximum relevance.'); ?></p>
+                    <p><?php echo esc_html(get_post_meta(get_the_ID(), 'email_campaigns_service_4_desc', true) ?: 'Precise audience targeting based on behaviour, demographics, and purchase history for maximum relevance.'); ?></p>
                 </div>
                 
                 <div class="service-item">
                     <div class="service-icon">
                         <i class="fas fa-chart-line"></i>
                     </div>
-                    <h3><?php echo esc_html(get_post_meta(get_the_ID(), 'email_campaigns_service_5_title', true) ?: 'Performance Optimization'); ?></h3>
-                    <p><?php echo esc_html(get_post_meta(get_the_ID(), 'email_campaigns_service_5_desc', true) ?: 'Continuous A/B testing and optimization to improve open rates, click-through rates, and conversions.'); ?></p>
+                    <h3><?php echo esc_html(get_post_meta(get_the_ID(), 'email_campaigns_service_5_title', true) ?: 'Performance optimisation'); ?></h3>
+                    <p><?php echo esc_html(get_post_meta(get_the_ID(), 'email_campaigns_service_5_desc', true) ?: 'Continuous A/B testing and optimisation to improve open rates, click-through rates, and conversions.'); ?></p>
                 </div>
                 
                 <div class="service-item">
@@ -103,7 +103,7 @@ get_header(); ?>
                         <i class="fas fa-calendar-alt"></i>
                     </div>
                     <h3><?php echo esc_html(get_post_meta(get_the_ID(), 'email_campaigns_service_6_title', true) ?: 'Campaign Scheduling'); ?></h3>
-                    <p><?php echo esc_html(get_post_meta(get_the_ID(), 'email_campaigns_service_6_desc', true) ?: 'Strategic timing and frequency optimization to maximize engagement while avoiding subscriber fatigue.'); ?></p>                </div>
+                    <p><?php echo esc_html(get_post_meta(get_the_ID(), 'email_campaigns_service_6_desc', true) ?: 'Strategic timing and frequency optimisation to maximise engagement while avoiding subscriber fatigue.'); ?></p>                </div>
             </div>
         </div>
     </section>
@@ -115,7 +115,7 @@ get_header(); ?>
             <div class="case-study-content animate-on-scroll animate-fade-up">
                 <div class="case-study-text">
                     <h2><?php echo esc_html(get_post_meta(get_the_ID(), 'email_campaigns_case_title', true) ?: 'Case Study: B2B Software Success'); ?></h2>
-                    <p class="case-study-intro"><?php echo esc_html(get_post_meta(get_the_ID(), 'email_campaigns_case_intro', true) ?: 'How we helped a B2B software company increase their email marketing ROI by 4,200% and generate £350K in additional revenue through strategic campaign optimization.'); ?></p>
+                    <p class="case-study-intro"><?php echo esc_html(get_post_meta(get_the_ID(), 'email_campaigns_case_intro', true) ?: 'How we helped a B2B software company increase their email marketing ROI by 4,200% and generate £350K in additional revenue through strategic campaign optimisation.'); ?></p>
                     
                     <div class="case-study-challenge">
                         <h3>The Challenge</h3>
@@ -126,7 +126,7 @@ get_header(); ?>
                         <h3>Our Campaign Strategy</h3>
                         <ul>
                             <?php 
-                            $solution_points = get_post_meta(get_the_ID(), 'email_campaigns_case_solution', true) ?: "Segmented list into 8 distinct audience groups based on user behavior\nCreated targeted campaign series for each segment and buyer journey stage\nRedesigned email templates with mobile-first, conversion-focused approach\nImplemented advanced personalization using behavioral data\nDeveloped product-specific campaigns with case studies and social proof";
+                            $solution_points = get_post_meta(get_the_ID(), 'email_campaigns_case_solution', true) ?: "Segmented list into 8 distinct audience groups based on user behaviour\nCreated targeted campaign series for each segment and buyer journey stage\nRedesigned email templates with mobile-first, conversion-focused approach\nImplemented advanced personalisation using behavioural data\nDeveloped product-specific campaigns with case studies and social proof";
                             $points = explode("\n", $solution_points);
                             foreach ($points as $point) {
                                 if (trim($point)) {
@@ -253,7 +253,7 @@ get_header(); ?>
                     <div class="step-number">2</div>
                     <div class="step-content">
                         <h3><?php echo esc_html(get_post_meta(get_the_ID(), 'email_campaigns_step_2_title', true) ?: 'Audience Segmentation'); ?></h3>
-                        <p><?php echo esc_html(get_post_meta(get_the_ID(), 'email_campaigns_step_2_desc', true) ?: 'Analyze your email list and create targeted segments based on behavior, demographics, and engagement history.'); ?></p>
+                        <p><?php echo esc_html(get_post_meta(get_the_ID(), 'email_campaigns_step_2_desc', true) ?: 'analyse your email list and create targeted segments based on behaviour, demographics, and engagement history.'); ?></p>
                     </div>
                 </div>
                 
@@ -269,15 +269,15 @@ get_header(); ?>
                     <div class="step-number">4</div>
                     <div class="step-content">
                         <h3><?php echo esc_html(get_post_meta(get_the_ID(), 'email_campaigns_step_4_title', true) ?: 'Testing & Launch'); ?></h3>
-                        <p><?php echo esc_html(get_post_meta(get_the_ID(), 'email_campaigns_step_4_desc', true) ?: 'A/B test subject lines, content, and send times before launching to optimize campaign performance.'); ?></p>
+                        <p><?php echo esc_html(get_post_meta(get_the_ID(), 'email_campaigns_step_4_desc', true) ?: 'A/B test subject lines, content, and send times before launching to optimise campaign performance.'); ?></p>
                     </div>
                 </div>
                 
                 <div class="process-step">
                     <div class="step-number">5</div>
                     <div class="step-content">
-                        <h3><?php echo esc_html(get_post_meta(get_the_ID(), 'email_campaigns_step_5_title', true) ?: 'Analysis & Optimization'); ?></h3>
-                        <p><?php echo esc_html(get_post_meta(get_the_ID(), 'email_campaigns_step_5_desc', true) ?: 'Monitor performance metrics and continuously optimize future campaigns based on data insights.'); ?></p>
+                        <h3><?php echo esc_html(get_post_meta(get_the_ID(), 'email_campaigns_step_5_title', true) ?: 'Analysis & optimisation'); ?></h3>
+                        <p><?php echo esc_html(get_post_meta(get_the_ID(), 'email_campaigns_step_5_desc', true) ?: 'Monitor performance metrics and continuously optimise future campaigns based on data insights.'); ?></p>
                     </div>
                 </div>
             </div>
@@ -295,15 +295,15 @@ get_header(); ?>
                         <i class="fas fa-mobile-alt"></i>
                     </div>
                     <h3>Mobile-First Design</h3>
-                    <p>Over 60% of emails are opened on mobile devices. Our templates are optimized for perfect mobile experience.</p>
+                    <p>Over 60% of emails are opened on mobile devices. Our templates are optimised for perfect mobile experience.</p>
                 </div>
                 
                 <div class="service-item">
                     <div class="service-icon">
                         <i class="fas fa-user-tag"></i>
                     </div>
-                    <h3>Smart Personalization</h3>
-                    <p>Go beyond "Hi [Name]" with behavioral personalization based on purchase history and engagement patterns.</p>
+                    <h3>Smart personalisation</h3>
+                    <p>Go beyond "Hi [Name]" with behavioural personalisation based on purchase history and engagement patterns.</p>
                 </div>
                 
                 <div class="service-item">
@@ -326,7 +326,7 @@ get_header(); ?>
                         <i class="fas fa-flask"></i>
                     </div>
                     <h3>A/B Testing Strategy</h3>
-                    <p>Continuously test subject lines, content, and send times to optimize performance and increase open rates.</p>
+                    <p>Continuously test subject lines, content, and send times to optimise performance and increase open rates.</p>
                 </div>
                 
                 <div class="service-item">
@@ -334,7 +334,7 @@ get_header(); ?>
                         <i class="fas fa-users"></i>
                     </div>
                     <h3>Advanced Segmentation</h3>
-                    <p>Create targeted campaigns using demographic, behavioral, and engagement data for higher conversion rates.</p>
+                    <p>Create targeted campaigns using demographic, behavioural, and engagement data for higher conversion rates.</p>
                 </div>
             </div>
         </div>
@@ -372,7 +372,7 @@ get_header(); ?>
                         <i class="fas fa-rocket"></i>
                     </div>
                     <h3>ActiveCampaign</h3>
-                    <p>Powerful automation platform with advanced behavioral targeting and machine learning capabilities.</p>
+                    <p>Powerful automation platform with advanced behavioural targeting and machine learning capabilities.</p>
                 </div>
             </div>
         </div>

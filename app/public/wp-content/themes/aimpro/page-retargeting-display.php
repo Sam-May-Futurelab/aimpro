@@ -95,7 +95,7 @@ get_header(); ?>
                         <h3><?php echo esc_html($service_title); ?></h3>
                         <p><?php echo esc_html($service_content); ?></p>
                     </div>                <?php endfor; ?>            </div>
-            <div class="text-center mt-1 animate-on-scroll animate-fade-up">
+            <div class="text-centre mt-1 animate-on-scroll animate-fade-up">
                 <a href="/contact/" class="btn btn-primary">Get Started with Retargeting</a>
             </div>
         </div>
@@ -164,7 +164,7 @@ get_header(); ?>
             </div>
             
             <!-- CTA after case study -->
-            <div class="text-center mt-2 animate-on-scroll animate-fade-up">
+            <div class="text-centre mt-2 animate-on-scroll animate-fade-up">
                 <div class="inline-cta-content">
                     <p class="cta-text">Ready to achieve similar results for your business?</p>
                     <a href="/contact/" class="btn btn-primary">Start Your Retargeting Campaign</a>
@@ -200,7 +200,7 @@ get_header(); ?>
             </div>
             
             <!-- CTA after process section -->
-            <div class="text-center mt-2 animate-on-scroll animate-fade-up">
+            <div class="text-centre mt-2 animate-on-scroll animate-fade-up">
                 <div class="inline-cta-content">
                     <p class="cta-text">Let our proven process drive your retargeting success</p>
                     <a href="/contact/" class="btn btn-primary">Get Your Custom Strategy</a>
@@ -236,7 +236,7 @@ get_header(); ?>
             </div>
             
             <!-- CTA after retargeting types -->
-            <div class="text-center mt-2 animate-on-scroll animate-fade-up">
+            <div class="text-centre mt-2 animate-on-scroll animate-fade-up">
                 <div class="inline-cta-content">
                     <p class="cta-text">Which retargeting strategy is right for your business?</p>
                     <a href="/contact/" class="btn btn-primary">Get Expert Recommendations</a>
@@ -272,7 +272,7 @@ get_header(); ?>
             </div>
             
             <!-- CTA after tools section -->
-            <div class="text-center mt-2 animate-on-scroll animate-fade-up">
+            <div class="text-centre mt-2 animate-on-scroll animate-fade-up">
                 <div class="inline-cta-content">
                     <p class="cta-text">Experience the power of our advanced retargeting tools</p>
                     <a href="/contact/" class="btn btn-primary">Launch Your Campaign Today</a>

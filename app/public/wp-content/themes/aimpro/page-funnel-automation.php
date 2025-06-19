@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 /**
  * Template Name: Funnel Automation
  * 
@@ -60,7 +60,7 @@ get_header(); ?>
                         <i class="fas fa-sitemap"></i>
                     </div>
                     <h3><?php echo esc_html(get_post_meta(get_the_ID(), 'funnel_automation_service_1_title', true) ?: 'Funnel Strategy & Design'); ?></h3>
-                    <p><?php echo esc_html(get_post_meta(get_the_ID(), 'funnel_automation_service_1_desc', true) ?: 'Custom funnel architecture tailored to your customer journey with optimized touchpoints and conversion paths.'); ?></p>
+                    <p><?php echo esc_html(get_post_meta(get_the_ID(), 'funnel_automation_service_1_desc', true) ?: 'Custom funnel architecture tailored to your customer journey with optimised touchpoints and conversion paths.'); ?></p>
                 </div>                
                 <div class="service-item animate-on-scroll animate-stagger animate-fade-up">
                     <div class="service-icon">
@@ -74,7 +74,7 @@ get_header(); ?>
                     <div class="service-icon">
                         <i class="fas fa-mouse-pointer"></i>
                     </div>
-                    <h3><?php echo esc_html(get_post_meta(get_the_ID(), 'funnel_automation_service_3_title', true) ?: 'Landing Page Optimization'); ?></h3>
+                    <h3><?php echo esc_html(get_post_meta(get_the_ID(), 'funnel_automation_service_3_title', true) ?: 'Landing Page optimisation'); ?></h3>
                     <p><?php echo esc_html(get_post_meta(get_the_ID(), 'funnel_automation_service_3_desc', true) ?: 'High-converting landing pages designed specifically for each funnel stage with focused messaging and clear CTAs.'); ?></p>
                 </div>
                 
@@ -91,18 +91,18 @@ get_header(); ?>
                         <i class="fas fa-chart-line"></i>
                     </div>
                     <h3><?php echo esc_html(get_post_meta(get_the_ID(), 'funnel_automation_service_5_title', true) ?: 'Conversion Tracking'); ?></h3>
-                    <p><?php echo esc_html(get_post_meta(get_the_ID(), 'funnel_automation_service_5_desc', true) ?: 'Comprehensive analytics and tracking to measure funnel performance and identify optimization opportunities.'); ?></p>
+                    <p><?php echo esc_html(get_post_meta(get_the_ID(), 'funnel_automation_service_5_desc', true) ?: 'Comprehensive analytics and tracking to measure funnel performance and identify optimisation opportunities.'); ?></p>
                 </div>
                 
                 <div class="service-item animate-on-scroll animate-stagger animate-fade-up">
                     <div class="service-icon">
                         <i class="fas fa-sync-alt"></i>
                     </div>
-                    <h3><?php echo esc_html(get_post_meta(get_the_ID(), 'funnel_automation_service_6_title', true) ?: 'Continuous Optimization'); ?></h3>
-                    <p><?php echo esc_html(get_post_meta(get_the_ID(), 'funnel_automation_service_6_desc', true) ?: 'Data-driven improvements and A/B testing to maximize conversion rates at every funnel stage.'); ?></p>                </div>            </div>
+                    <h3><?php echo esc_html(get_post_meta(get_the_ID(), 'funnel_automation_service_6_title', true) ?: 'Continuous optimisation'); ?></h3>
+                    <p><?php echo esc_html(get_post_meta(get_the_ID(), 'funnel_automation_service_6_desc', true) ?: 'Data-driven improvements and A/B testing to maximise conversion rates at every funnel stage.'); ?></p>                </div>            </div>
             
             <!-- CTA after services overview -->
-            <div class="text-center animate-on-scroll animate-fade-up" style="margin-top: 3rem;">
+            <div class="text-centre animate-on-scroll animate-fade-up" style="margin-top: 3rem;">
                 <a href="<?php echo home_url('/contact'); ?>" class="btn-primary">Get Your Custom Funnel Strategy</a>
             </div>
         </div>
@@ -123,7 +123,7 @@ get_header(); ?>
                         <h3>Our Funnel Solution</h3>
                         <ul>
                             <?php 
-                            $solution_points = get_post_meta(get_the_ID(), 'funnel_automation_case_solution', true) ?: "Designed 5-stage automated funnel with strategic touchpoints\nCreated high-value lead magnet (business assessment tool)\nBuilt conversion-optimized landing pages for each funnel stage\nImplemented automated email sequences with personalized video messages\nSet up automated booking system with pre-qualification questions";
+                            $solution_points = get_post_meta(get_the_ID(), 'funnel_automation_case_solution', true) ?: "Designed 5-stage automated funnel with strategic touchpoints\nCreated high-value lead magnet (business assessment tool)\nBuilt conversion-optimised landing pages for each funnel stage\nImplemented automated email sequences with personalised video messages\nSet up automated booking system with pre-qualification questions";
                             $points = explode("\n", $solution_points);
                             foreach ($points as $point) {
                                 if (trim($point)) {
@@ -158,8 +158,8 @@ get_header(); ?>
             </div>
             
             <!-- CTA after case study results -->
-            <div class="text-center animate-on-scroll animate-fade-up" style="margin-top: 3rem;">
-                <p style="font-size: 1.1rem; color: #666; margin-bottom: 1.5rem;">Ready to achieve similar results for your business?</p>
+            <div class="text-centre animate-on-scroll animate-fade-up" style="margin-top: 3rem;">
+                <p style="font-size: 1.1rem; colour: #666; margin-bottom: 1.5rem;">Ready to achieve similar results for your business?</p>
                 <a href="<?php echo home_url('/contact'); ?>" class="btn-primary">Start Your Funnel Transformation</a>
             </div>
         </div>
@@ -188,7 +188,7 @@ get_header(); ?>
                     </div>
                     <div class="service-content">
                         <h3>E-commerce Sales Funnel</h3>
-                        <p>Guide visitors from product discovery to purchase with optimized product pages, cart recovery, and upsell sequences.</p>
+                        <p>Guide visitors from product discovery to purchase with optimised product pages, cart recovery, and upsell sequences.</p>
                     </div>
                 </div>
                 
@@ -198,7 +198,7 @@ get_header(); ?>
                     </div>
                     <div class="service-content">
                         <h3>Webinar Funnel</h3>
-                        <p>Drive webinar registrations, maximize attendance, and convert attendees into customers with automated follow-up sequences.</p>
+                        <p>Drive webinar registrations, maximise attendance, and convert attendees into customers with automated follow-up sequences.</p>
                     </div>
                 </div>
                 
@@ -273,8 +273,8 @@ get_header(); ?>
                 <div class="process-step animate-on-scroll animate-stagger animate-fade-up">
                     <div class="step-number">5</div>
                     <div class="step-content">
-                        <h3><?php echo esc_html(get_post_meta(get_the_ID(), 'funnel_automation_step_5_title', true) ?: 'Testing & Optimization'); ?></h3>
-                        <p><?php echo esc_html(get_post_meta(get_the_ID(), 'funnel_automation_step_5_desc', true) ?: 'Launch with careful monitoring and continuous optimization based on performance data and user behavior.'); ?></p>
+                        <h3><?php echo esc_html(get_post_meta(get_the_ID(), 'funnel_automation_step_5_title', true) ?: 'Testing & optimisation'); ?></h3>
+                        <p><?php echo esc_html(get_post_meta(get_the_ID(), 'funnel_automation_step_5_desc', true) ?: 'Launch with careful monitoring and continuous optimisation based on performance data and user behaviour.'); ?></p>
                     </div>
                 </div>
             </div>
@@ -297,7 +297,7 @@ get_header(); ?>
                         <i class="fas fa-file-alt"></i>
                     </div>
                     <h3>Landing Pages</h3>
-                    <p>Conversion-optimized pages designed to capture leads and guide visitors toward desired actions.</p>
+                    <p>Conversion-optimised pages designed to capture leads and guide visitors toward desired actions.</p>
                 </div>
                 
                 <div class="component-item animate-on-scroll animate-stagger animate-fade-up">
@@ -321,20 +321,20 @@ get_header(); ?>
                         <i class="fas fa-chart-bar"></i>
                     </div>
                     <h3>Analytics & Tracking</h3>
-                    <p>Comprehensive measurement of funnel performance and conversion optimization opportunities.</p>
+                    <p>Comprehensive measurement of funnel performance and conversion optimisation opportunities.</p>
                 </div>
                 
                 <div class="component-item animate-on-scroll animate-stagger animate-fade-up">                    <div class="component-icon">
                         <i class="fas fa-cogs"></i>
                     </div>
                     <h3>Automation Rules</h3>
-                    <p>Intelligent triggers and conditions that personalize the experience based on user behavior.</p>
+                    <p>Intelligent triggers and conditions that personalise the experience based on user behaviour.</p>
                 </div>
             </div>
             
             <!-- CTA after funnel components -->
-            <div class="text-center animate-on-scroll animate-fade-up" style="margin-top: 3rem;">
-                <p style="font-size: 1.1rem; color: #666; margin-bottom: 1.5rem;">Let us build these components into a high-converting funnel for your business</p>
+            <div class="text-centre animate-on-scroll animate-fade-up" style="margin-top: 3rem;">
+                <p style="font-size: 1.1rem; colour: #666; margin-bottom: 1.5rem;">Let us build these components into a high-converting funnel for your business</p>
                 <a href="<?php echo home_url('/contact'); ?>" class="btn-primary">Get Your Funnel Blueprint</a>
             </div>
         </div>
@@ -360,7 +360,7 @@ get_header(); ?>
                         <li>5-email nurture sequence</li>
                         <li>Basic automation setup</li>
                         <li>Performance tracking</li>
-                        <li>30-day optimization</li>
+                        <li>30-day optimisation</li>
                     </ul>
                     <a href="#contact" class="btn-outline">Get Started</a>
                 </div>
@@ -374,11 +374,11 @@ get_header(); ?>
                     <ul class="pricing-features">
                         <li>5-stage funnel architecture</li>
                         <li>3 lead magnets + resources</li>
-                        <li>5 optimized landing pages</li>
+                        <li>5 optimised landing pages</li>
                         <li>Multi-channel sequences</li>
                         <li>Advanced automation flows</li>
                         <li>A/B testing setup</li>
-                        <li>90-day optimization</li>
+                        <li>90-day optimisation</li>
                     </ul>
                     <a href="#contact" class="btn-primary">Get Started</a>
                 </div>
@@ -396,7 +396,7 @@ get_header(); ?>
                         <li>Predictive automation</li>
                         <li>Custom integrations</li>
                         <li>Dedicated funnel specialist</li>
-                        <li>6-month optimization</li>
+                        <li>6-month optimisation</li>
                     </ul>
                     <a href="#contact" class="btn-outline">Get Started</a>
                 </div>
@@ -427,7 +427,7 @@ get_header(); ?>
                         <i class="fas fa-rocket"></i>
                     </div>
                     <h3>ActiveCampaign</h3>
-                    <p>Powerful automation platform with sophisticated behavioral triggers and personalization.</p>
+                    <p>Powerful automation platform with sophisticated behavioural triggers and personalisation.</p>
                 </div>
                 
                 <div class="tool-item animate-on-scroll animate-stagger animate-fade-up">                    <div class="tool-icon">
@@ -439,8 +439,8 @@ get_header(); ?>
             </div>
             
             <!-- CTA after tools section -->
-            <div class="text-center animate-on-scroll animate-fade-up" style="margin-top: 3rem;">
-                <p style="font-size: 1.1rem; color: #666; margin-bottom: 1.5rem;">Ready to leverage these powerful tools for your funnel?</p>
+            <div class="text-centre animate-on-scroll animate-fade-up" style="margin-top: 3rem;">
+                <p style="font-size: 1.1rem; colour: #666; margin-bottom: 1.5rem;">Ready to leverage these powerful tools for your funnel?</p>
                 <a href="<?php echo home_url('/contact'); ?>" class="btn-primary">Get Expert Funnel Setup</a>
             </div>
         </div>

@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 /**
  * Template Name: Events & Webinars Page
  * Description: Upcoming events, webinars, and workshops
@@ -29,7 +29,7 @@ if (empty($featured_event)) {
         'time' => '2:00 PM - 3:30 PM GMT',
         'type' => 'Live Webinar',
         'title' => 'Digital Marketing Trends 2025: What\'s Coming Next',
-        'description' => 'Join our panel of industry experts as they reveal the biggest digital marketing trends for the second half of 2025. Learn about emerging technologies, changing consumer behaviors, and the strategies that will define successful marketing campaigns.',
+        'description' => 'Join our panel of industry experts as they reveal the biggest digital marketing trends for the second half of 2025. Learn about emerging technologies, changing consumer behaviours, and the strategies that will define successful marketing campaigns.',
         'speakers' => array(
             array('name' => 'Sarah Johnson', 'title' => 'CMO, Aimpro Digital'),
             array('name' => 'Alex Chen', 'title' => 'Digital Strategy Consultant'),
@@ -38,7 +38,7 @@ if (empty($featured_event)) {
         'agenda' => array(
             'AI and machine learning in marketing automation',
             'Privacy-first marketing strategies',
-            'Voice search optimization techniques',
+            'Voice search optimisation techniques',
             'Video marketing trends and best practices',
             'Cross-platform attribution modeling'
         ),
@@ -53,8 +53,8 @@ if (empty($upcoming_events)) {
     $upcoming_events = array(
         array(
             'month' => 'Jul', 'day' => '15', 'time' => '10:00 AM - 11:30 AM', 'format' => 'Workshop',
-            'title' => 'Advanced Google Ads Optimization',
-            'description' => 'Hands-on workshop covering advanced Google Ads strategies, including Smart Bidding, audience optimization, and campaign automation.',
+            'title' => 'Advanced Google Ads optimisation',
+            'description' => 'Hands-on workshop covering advanced Google Ads strategies, including Smart Bidding, audience optimisation, and campaign automation.',
             'attendees' => '156 registered', 'price' => '£49', 'register_url' => '#'
         ),
         array(
@@ -97,7 +97,7 @@ if (empty($ondemand_webinars)) {
     $ondemand_webinars = array(
         array(
             'title' => 'SEO Fundamentals for 2025',
-            'description' => 'Complete guide to search engine optimization, covering technical SEO, content optimization, and link building strategies.',
+            'description' => 'Complete guide to search engine optimisation, covering technical SEO, content optimisation, and link building strategies.',
             'duration' => '52 min',
             'views' => '1,240 views',
             'rating' => '★★★★★ 4.8',
@@ -106,7 +106,7 @@ if (empty($ondemand_webinars)) {
         ),
         array(
             'title' => 'Facebook Ads Mastery Workshop',
-            'description' => 'Advanced Facebook advertising strategies including audience targeting, creative optimization, and campaign scaling techniques.',
+            'description' => 'Advanced Facebook advertising strategies including audience targeting, creative optimisation, and campaign scaling techniques.',
             'duration' => '1h 15m',
             'views' => '890 views',
             'rating' => '★★★★★ 4.9',

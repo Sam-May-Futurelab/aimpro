@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 /**
  * Template Name: Google Ads Management
  * Description: Google Ads management services page
@@ -14,7 +14,7 @@ get_header();
     margin: 60px 0 !important;
     border-radius: 16px !important;
     box-shadow: 0 20px 40px rgba(241, 90, 37, 0.2) !important;
-    color: white !important;
+    colour: white !important;
     position: relative !important;
     overflow: hidden !important;
 }
@@ -23,38 +23,38 @@ get_header();
     font-size: 36px !important;
     font-weight: 700 !important;
     margin-bottom: 20px !important;
-    color: white !important;
+    colour: white !important;
 }
 
 #primary.google-ads-page #contact.cta-section .cta-content p {
     font-size: 18px !important;
     margin-bottom: 30px !important;
-    color: rgba(255, 255, 255, 0.95) !important;
+    colour: rgba(255, 255, 255, 0.95) !important;
     line-height: 1.6 !important;
 }
 
 #primary.google-ads-page #contact.cta-section .cta-buttons {
     display: flex !important;
-    justify-content: center !important;
+    justify-content: centre !important;
     gap: 20px !important;
     margin-bottom: 30px !important;
 }
 
 #primary.google-ads-page #contact.cta-section .btn-primary {
     background: white !important;
-    color: #F15A25 !important;
+    colour: #F15A25 !important;
     border: none !important;
 }
 
 #primary.google-ads-page #contact.cta-section .btn-outline {
     background: transparent !important;
-    color: white !important;
+    colour: white !important;
     border: 2px solid white !important;
 }
 
 #primary.google-ads-page #contact.cta-section .cta-features {
     display: flex !important;
-    justify-content: center !important;
+    justify-content: centre !important;
     gap: 40px !important;
     flex-wrap: wrap !important;
 }
@@ -88,20 +88,20 @@ get_header();
 
 #primary.google-ads-page .industry-item h4 {
     font-size: 20px !important;
-    color: #F15A25 !important;
+    colour: #F15A25 !important;
     margin-bottom: 10px !important;
     font-weight: 600 !important;
 }
 
 #primary.google-ads-page .industry-item p {
-    color: #64748b !important;
+    colour: #64748b !important;
     line-height: 1.6 !important;
     margin: 0 !important;
     font-size: 15px !important;
 }
 
 #primary.google-ads-page #contact.cta-section .cta-features span {
-    color: white !important;
+    colour: white !important;
     font-size: 16px !important;
     font-weight: 500 !important;
 }
@@ -110,12 +110,12 @@ get_header();
 @media (max-width: 768px) {
     #primary.google-ads-page #contact.cta-section .cta-buttons {
         flex-direction: column !important;
-        align-items: center !important;
+        align-items: centre !important;
     }
     
     #primary.google-ads-page #contact.cta-section .cta-features {
         flex-direction: column !important;
-        align-items: center !important;
+        align-items: centre !important;
         gap: 15px !important;
     }
 }
@@ -184,7 +184,7 @@ get_header();
                     <span><?php echo esc_html($hero_badge); ?></span>
                 </div>
                 <h1><?php echo wp_kses_post($hero_title); ?></h1>
-                <p class="hero-subtitle"><?php echo wp_kses_post($hero_subtitle); ?></p>                <div class="hero-stats animate-on-scroll animate-fade-up" style="display: flex; justify-content: center; gap: 40px; flex-wrap: wrap;">
+                <p class="hero-subtitle"><?php echo wp_kses_post($hero_subtitle); ?></p>                <div class="hero-stats animate-on-scroll animate-fade-up" style="display: flex; justify-content: centre; gap: 40px; flex-wrap: wrap;">
                     <div class="stat-item">
                         <span class="stat-number"><?php echo esc_html($hero_stat1_number); ?></span>
                         <span class="stat-label"><?php echo esc_html($hero_stat1_label); ?></span>
@@ -245,7 +245,7 @@ get_header();
                 ?>
                 <div class="service-card animate-on-scroll animate-stagger animate-fade-up">
                     <div class="service-icon">
-                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentcolour" stroke-width="2">
                             <?php echo $service_icons[$i]; ?>
                         </svg>
                     </div>
@@ -267,31 +267,31 @@ get_header();
     <section class="success-metrics-section" style="background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%); padding: 80px 0;">
         <div class="container">
             <div class="section-content">
-                <div class="content-header animate-on-scroll animate-fade-up" style="text-align: center; margin-bottom: 50px;">
-                    <h2 style="font-size: 2.5rem; font-weight: 700; color: #1e293b; margin-bottom: 20px;">Law Firm Increases Qualified Leads by 340% with Strategic Google Ads</h2>
+                <div class="content-header animate-on-scroll animate-fade-up" style="text-align: centre; margin-bottom: 50px;">
+                    <h2 style="font-size: 2.5rem; font-weight: 700; colour: #1e293b; margin-bottom: 20px;">Law Firm Increases Qualified Leads by 340% with Strategic Google Ads</h2>
                     <div style="max-width: 900px; margin: 0 auto;">
-                        <p style="font-size: 1.1rem; line-height: 1.8; color: #64748b; margin-bottom: 15px;"><strong>The Challenge:</strong> A Manchester-based law firm was struggling with expensive Google Ads campaigns that generated low-quality leads, wasting £5,000+ monthly budget.</p>
-                        <p style="font-size: 1.1rem; line-height: 1.8; color: #64748b; margin-bottom: 15px;"><strong>Our Solution:</strong> We restructured their campaigns with precise keyword targeting, created compelling ad copy focused on legal expertise, and implemented advanced conversion tracking.</p>
-                        <p style="font-size: 1.1rem; line-height: 1.8; color: #64748b;"><strong>The Results:</strong> Within 120 days, we transformed their Google Ads performance completely.</p>
+                        <p style="font-size: 1.1rem; line-height: 1.8; colour: #64748b; margin-bottom: 15px;"><strong>The Challenge:</strong> A Manchester-based law firm was struggling with expensive Google Ads campaigns that generated low-quality leads, wasting £5,000+ monthly budget.</p>
+                        <p style="font-size: 1.1rem; line-height: 1.8; colour: #64748b; margin-bottom: 15px;"><strong>Our Solution:</strong> We restructured their campaigns with precise keyword targeting, created compelling ad copy focused on legal expertise, and implemented advanced conversion tracking.</p>
+                        <p style="font-size: 1.1rem; line-height: 1.8; colour: #64748b;"><strong>The Results:</strong> Within 120 days, we transformed their Google Ads performance completely.</p>
                     </div>
                 </div>
                 
                 <div class="stats-grid animate-on-scroll animate-fade-up" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 30px; max-width: 1000px; margin: 0 auto;">
-                    <div class="stat-card" style="background: white; padding: 30px; border-radius: 16px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); text-align: center; border: 1px solid #e2e8f0;">
-                        <span class="stat-number" style="display: block; font-size: 3rem; font-weight: 700; color: #f15a25; margin-bottom: 10px;">340%</span>
-                        <span class="stat-label" style="font-size: 1rem; font-weight: 600; color: #64748b;">Increase in Qualified Leads</span>
+                    <div class="stat-card" style="background: white; padding: 30px; border-radius: 16px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); text-align: centre; border: 1px solid #e2e8f0;">
+                        <span class="stat-number" style="display: block; font-size: 3rem; font-weight: 700; colour: #f15a25; margin-bottom: 10px;">340%</span>
+                        <span class="stat-label" style="font-size: 1rem; font-weight: 600; colour: #64748b;">Increase in Qualified Leads</span>
                     </div>
-                    <div class="stat-card" style="background: white; padding: 30px; border-radius: 16px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); text-align: center; border: 1px solid #e2e8f0;">
-                        <span class="stat-number" style="display: block; font-size: 3rem; font-weight: 700; color: #f15a25; margin-bottom: 10px;">58%</span>
-                        <span class="stat-label" style="font-size: 1rem; font-weight: 600; color: #64748b;">Lower Cost Per Lead</span>
+                    <div class="stat-card" style="background: white; padding: 30px; border-radius: 16px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); text-align: centre; border: 1px solid #e2e8f0;">
+                        <span class="stat-number" style="display: block; font-size: 3rem; font-weight: 700; colour: #f15a25; margin-bottom: 10px;">58%</span>
+                        <span class="stat-label" style="font-size: 1rem; font-weight: 600; colour: #64748b;">Lower Cost Per Lead</span>
                     </div>
-                    <div class="stat-card" style="background: white; padding: 30px; border-radius: 16px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); text-align: center; border: 1px solid #e2e8f0;">
-                        <span class="stat-number" style="display: block; font-size: 3rem; font-weight: 700; color: #f15a25; margin-bottom: 10px;">720%</span>
-                        <span class="stat-label" style="font-size: 1rem; font-weight: 600; color: #64748b;">Return on Ad Spend</span>
+                    <div class="stat-card" style="background: white; padding: 30px; border-radius: 16px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); text-align: centre; border: 1px solid #e2e8f0;">
+                        <span class="stat-number" style="display: block; font-size: 3rem; font-weight: 700; colour: #f15a25; margin-bottom: 10px;">720%</span>
+                        <span class="stat-label" style="font-size: 1rem; font-weight: 600; colour: #64748b;">Return on Ad Spend</span>
                     </div>
-                    <div class="stat-card" style="background: white; padding: 30px; border-radius: 16px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); text-align: center; border: 1px solid #e2e8f0;">
-                        <span class="stat-number" style="display: block; font-size: 3rem; font-weight: 700; color: #f15a25; margin-bottom: 10px;">£85,000</span>
-                        <span class="stat-label" style="font-size: 1rem; font-weight: 600; color: #64748b;">Monthly Revenue Generated</span>
+                    <div class="stat-card" style="background: white; padding: 30px; border-radius: 16px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); text-align: centre; border: 1px solid #e2e8f0;">
+                        <span class="stat-number" style="display: block; font-size: 3rem; font-weight: 700; colour: #f15a25; margin-bottom: 10px;">£85,000</span>
+                        <span class="stat-label" style="font-size: 1rem; font-weight: 600; colour: #64748b;">Monthly Revenue Generated</span>
                     </div>
                 </div>
             </div>

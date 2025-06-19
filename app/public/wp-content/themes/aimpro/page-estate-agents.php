@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 /**
  * Template Name: Estate Agents Industry Page
  * Description: Digital marketing for estate agents and property professionals
@@ -19,7 +19,7 @@ get_header(); ?>
                 <div class="overview-content">
                     <div class="overview-text animate-on-scroll animate-slide-left">
                         <h2><?php echo esc_html(get_post_meta(get_the_ID(), '_estate_agents_overview_title', true) ?: 'Sell More Properties, Attract More Vendors'); ?></h2>
-                        <p><?php echo esc_html(get_post_meta(get_the_ID(), '_estate_agents_overview_content', true) ?: 'The property market is fiercely competitive. Our specialized estate agent marketing strategies help you stand out, generate high-quality vendor and buyer leads, and establish your agency as the go-to property experts in your area.'); ?></p>
+                        <p><?php echo esc_html(get_post_meta(get_the_ID(), '_estate_agents_overview_content', true) ?: 'The property market is fiercely competitive. Our specialised estate agent marketing strategies help you stand out, generate high-quality vendor and buyer leads, and establish your agency as the go-to property experts in your area.'); ?></p>
                         
                         <div class="industry-challenges animate-on-scroll animate-fade-up">
                             <h3><?php echo esc_html(get_post_meta(get_the_ID(), '_estate_agents_challenges_title', true) ?: 'Estate Agent Marketing Challenges We Solve:'); ?></h3>
@@ -64,7 +64,7 @@ get_header(); ?>
                                 'icon' => 'fas fa-home',
                                 'title' => 'Local Property SEO',
                                 'description' => 'Dominate local search results when potential clients search for estate agents, property valuations, and homes for sale in your area.',
-                                'features' => array('Google My Business optimization', 'Local property keyword targeting', 'Area-specific landing pages', 'Property portal profile optimization')
+                                'features' => array('Google My Business optimisation', 'Local property keyword targeting', 'Area-specific landing pages', 'Property portal profile optimisation')
                             ),
                             array(
                                 'icon' => 'fas fa-users',
@@ -186,7 +186,7 @@ get_header(); ?>
                         $process_steps = array(
                             array(
                                 'title' => 'Local Market Analysis',
-                                'description' => 'Analyze your local property market, competitor strategies, and identify opportunities for growth.'
+                                'description' => 'analyse your local property market, competitor strategies, and identify opportunities for growth.'
                             ),
                             array(
                                 'title' => 'Multi-Channel Strategy',

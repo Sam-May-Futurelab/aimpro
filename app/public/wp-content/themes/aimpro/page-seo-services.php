@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 /**
  * Template Name: SEO Services Page
  * Description: Comprehensive SEO services overview
@@ -81,34 +81,34 @@ $header_subtitle = get_post_meta(get_the_ID(), '_seo_header_subtitle', true) ?: 
                             switch($i) {
                                 case 1: // Local SEO
                                     echo '<svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M21 10C21 17 12 23 12 23C12 23 3 17 3 10C3 6.13401 6.13401 3 10 3C13.866 3 17 6.13401 17 10Z" stroke="currentColor" stroke-width="2"/>
-                                        <circle cx="12" cy="10" r="3" stroke="currentColor" stroke-width="2"/>
+                                        <path d="M21 10C21 17 12 23 12 23C12 23 3 17 3 10C3 6.13401 6.13401 3 10 3C13.866 3 17 6.13401 17 10Z" stroke="currentcolour" stroke-width="2"/>
+                                        <circle cx="12" cy="10" r="3" stroke="currentcolour" stroke-width="2"/>
                                     </svg>';
                                     break;
                                 case 2: // SEO Audit
                                     echo '<svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M9 12L11 14L15 10M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z" stroke="currentColor" stroke-width="2"/>
+                                        <path d="M9 12L11 14L15 10M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z" stroke="currentcolour" stroke-width="2"/>
                                     </svg>';
                                     break;
                                 case 3: // Technical SEO
                                     echo '<svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M14.7 6.3C15.1 5.9 15.1 5.3 14.7 4.9C14.3 4.5 13.7 4.5 13.3 4.9L12 6.2L10.7 4.9C10.3 4.5 9.7 4.5 9.3 4.9C8.9 5.3 8.9 5.9 9.3 6.3L10.6 7.6L9.3 8.9C8.9 9.3 8.9 9.9 9.3 10.3C9.7 10.7 10.3 10.7 10.7 10.3L12 9L13.3 10.3C13.7 10.7 14.3 10.7 14.7 10.3C15.1 9.9 15.1 9.3 14.7 8.9L13.4 7.6L14.7 6.3Z" stroke="currentColor" stroke-width="2"/>
-                                        <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"/>
+                                        <path d="M14.7 6.3C15.1 5.9 15.1 5.3 14.7 4.9C14.3 4.5 13.7 4.5 13.3 4.9L12 6.2L10.7 4.9C10.3 4.5 9.7 4.5 9.3 4.9C8.9 5.3 8.9 5.9 9.3 6.3L10.6 7.6L9.3 8.9C8.9 9.3 8.9 9.9 9.3 10.3C9.7 10.7 10.3 10.7 10.7 10.3L12 9L13.3 10.3C13.7 10.7 14.3 10.7 14.7 10.3C15.1 9.9 15.1 9.3 14.7 8.9L13.4 7.6L14.7 6.3Z" stroke="currentcolour" stroke-width="2"/>
+                                        <circle cx="12" cy="12" r="10" stroke="currentcolour" stroke-width="2"/>
                                     </svg>';
                                     break;
                                 case 4: // On-Page SEO
                                     echo '<svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M14 2H6A2 2 0 0 0 4 4V20A2 2 0 0 0 6 22H18A2 2 0 0 0 20 20V8L14 2Z" stroke="currentColor" stroke-width="2"/>
-                                        <polyline points="14,2 14,8 20,8" stroke="currentColor" stroke-width="2"/>
-                                        <line x1="16" y1="13" x2="8" y2="13" stroke="currentColor" stroke-width="2"/>
-                                        <line x1="16" y1="17" x2="8" y2="17" stroke="currentColor" stroke-width="2"/>
+                                        <path d="M14 2H6A2 2 0 0 0 4 4V20A2 2 0 0 0 6 22H18A2 2 0 0 0 20 20V8L14 2Z" stroke="currentcolour" stroke-width="2"/>
+                                        <polyline points="14,2 14,8 20,8" stroke="currentcolour" stroke-width="2"/>
+                                        <line x1="16" y1="13" x2="8" y2="13" stroke="currentcolour" stroke-width="2"/>
+                                        <line x1="16" y1="17" x2="8" y2="17" stroke="currentcolour" stroke-width="2"/>
                                     </svg>';
                                     break;
                                 case 5: // White Label SEO
                                     echo '<svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M17 21V19C17 17.9391 16.5786 16.9217 15.8284 16.1716C15.0783 15.4214 14.0609 15 13 15H5C3.93913 15 2.92172 15.4214 2.17157 16.1716C1.42143 16.9217 1 17.9391 1 19V21" stroke="currentColor" stroke-width="2"/>
-                                        <circle cx="9" cy="7" r="4" stroke="currentColor" stroke-width="2"/>
-                                        <path d="M23 21V19C23 18.1645 22.7045 17.3541 22.1679 16.7116C21.6313 16.0691 20.8902 15.6316 20.07 15.4662" stroke="currentColor" stroke-width="2"/>
+                                        <path d="M17 21V19C17 17.9391 16.5786 16.9217 15.8284 16.1716C15.0783 15.4214 14.0609 15 13 15H5C3.93913 15 2.92172 15.4214 2.17157 16.1716C1.42143 16.9217 1 17.9391 1 19V21" stroke="currentcolour" stroke-width="2"/>
+                                        <circle cx="9" cy="7" r="4" stroke="currentcolour" stroke-width="2"/>
+                                        <path d="M23 21V19C23 18.1645 22.7045 17.3541 22.1679 16.7116C21.6313 16.0691 20.8902 15.6316 20.07 15.4662" stroke="currentcolour" stroke-width="2"/>
                                     </svg>';
                                     break;
                             }
@@ -127,7 +127,7 @@ $header_subtitle = get_post_meta(get_the_ID(), '_seo_header_subtitle', true) ?: 
                             <a href="<?php echo esc_url($service_link); ?>" class="service-cta">Learn More</a>
                         </div>
                     </div>                    <?php endfor; ?>                </div>
-                <div style="text-align: center; margin-top: 1px;">
+                <div style="text-align: centre; margin-top: 1px;">
                     <a href="/contact/" class="btn btn-primary animate-on-scroll animate-fade-up">Schedule a Free Consultation</a>
                 </div>
             </div>
@@ -232,18 +232,18 @@ $header_subtitle = get_post_meta(get_the_ID(), '_seo_header_subtitle', true) ?: 
                         ),
                         array(
                             'title' => 'Technical SEO',
-                            'description' => 'Comprehensive technical analysis and optimization tools for site performance.',
+                            'description' => 'Comprehensive technical analysis and optimisation tools for site performance.',
                             'tools' => array('Screaming Frog', 'GTmetrix', 'Google PageSpeed Insights', 'Schema Markup Validator'),
                             'icon' => 'fas fa-cogs'
                         ),
                         array(
-                            'title' => 'Content Optimization',
-                            'description' => 'Content analysis and optimization tools for improved search rankings.',
+                            'title' => 'Content optimisation',
+                            'description' => 'Content analysis and optimisation tools for improved search rankings.',
                             'tools' => array('Surfer SEO', 'Clearscope', 'Yoast SEO', 'Google Analytics 4'),
                             'icon' => 'fas fa-file-alt'
                         ),                        array(
                             'title' => 'Local SEO',
-                            'description' => 'Specialized local search optimization and reputation management tools.',
+                            'description' => 'specialised local search optimisation and reputation management tools.',
                             'tools' => array('BrightLocal', 'Google My Business', 'Whitespark', 'ReviewTrackers'),
                             'icon' => 'fas fa-map-marker-alt'
                         ),

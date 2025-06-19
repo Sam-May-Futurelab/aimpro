@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 // Author Settings Meta Fields - Global author information for blog posts and about sections
 
 function add_author_settings_meta_boxes() {
@@ -62,7 +62,7 @@ function author_settings_page_callback() {
     // Get current values
     $author_name = get_option('author_name', 'Ajay Dhunna');
     $author_title = get_option('author_title', 'Digital Marketing Expert & Growth Strategist');
-    $author_bio = get_option('author_bio', 'Ajay Dhunna is a seasoned digital marketing expert with over a decade of experience helping businesses accelerate their growth through strategic online marketing. As the founder of AIM Pro, he specializes in SEO, PPC advertising, conversion optimization, and comprehensive digital strategies that deliver measurable results.');
+    $author_bio = get_option('author_bio', 'Ajay Dhunna is a seasoned digital marketing expert with over a decade of experience helping businesses accelerate their growth through strategic online marketing. As the founder of AIM Pro, he specialises in SEO, PPC advertising, conversion optimisation, and comprehensive digital strategies that deliver measurable results.');
     $author_linkedin = get_option('author_linkedin', 'https://linkedin.com/in/ajaydhunna');
     $author_email = get_option('author_email', 'hello@aimpro.co.uk');
     $author_phone = get_option('author_phone', '07866 555 555');
@@ -309,7 +309,7 @@ function get_author_data($post_id = null) {
         // Use global settings
         $data['name'] = get_option('author_name', 'Ajay Dhunna');
         $data['title'] = get_option('author_title', 'Digital Marketing Expert & Growth Strategist');
-        $data['bio'] = get_option('author_bio', 'Ajay Dhunna is a seasoned digital marketing expert with over a decade of experience helping businesses accelerate their growth through strategic online marketing. As the founder of AIM Pro, he specializes in SEO, PPC advertising, conversion optimization, and comprehensive digital strategies that deliver measurable results.');
+        $data['bio'] = get_option('author_bio', 'Ajay Dhunna is a seasoned digital marketing expert with over a decade of experience helping businesses accelerate their growth through strategic online marketing. As the founder of AIM Pro, he specialises in SEO, PPC advertising, conversion optimisation, and comprehensive digital strategies that deliver measurable results.');
         $data['linkedin'] = get_option('author_linkedin', 'https://linkedin.com/in/ajaydhunna');
         $data['email'] = get_option('author_email', 'hello@aimpro.co.uk');
         $data['phone'] = get_option('author_phone', '07866 555 555');
@@ -351,7 +351,7 @@ function author_settings_admin_styles() {
     }
     #custom-author-fields label {
         font-weight: 600;
-        color: #333;
+        colour: #333;
     }
     </style>
     <?php

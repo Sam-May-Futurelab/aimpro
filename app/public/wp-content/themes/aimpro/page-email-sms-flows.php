@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 /**
  * Template Name: Email & SMS Flows
  * 
@@ -52,7 +52,7 @@ get_header(); ?>
         <div class="container">
             <div class="overview-content animate-on-scroll animate-fade-up">
                 <h2>Intelligent Multi-Channel Communication</h2>
-                <p>Transform one-time visitors into loyal customers with strategically designed email and SMS automation flows. Our data-driven approach ensures the right message reaches the right person at the perfect moment, maximizing engagement and conversions.</p>
+                <p>Transform one-time visitors into loyal customers with strategically designed email and SMS automation flows. Our data-driven approach ensures the right message reaches the right person at the perfect moment, maximising engagement and conversions.</p>
             </div>
             
             <div class="services-grid">
@@ -69,7 +69,7 @@ get_header(); ?>
                         <i class="fas fa-shopping-cart"></i>
                     </div>
                     <h3>Abandoned Cart Recovery</h3>
-                    <p>Multi-step email and SMS sequences that recover lost sales with personalized product reminders and incentives.</p>
+                    <p>Multi-step email and SMS sequences that recover lost sales with personalised product reminders and incentives.</p>
                 </div>
                 
                 <div class="service-item animate-on-scroll animate-stagger animate-fade-up">
@@ -175,7 +175,7 @@ get_header(); ?>
                         <i class="fas fa-undo"></i>
                     </div>
                     <h3>Abandonment Recovery</h3>
-                    <p>Cart, browse, and checkout abandonment flows with strategic timing and personalized product recommendations.</p>
+                    <p>Cart, browse, and checkout abandonment flows with strategic timing and personalised product recommendations.</p>
                     <div class="service-metric">
                         <strong>Average: 25% cart recovery rate</strong>
                     </div>
@@ -235,7 +235,7 @@ get_header(); ?>
                     <div class="step-number">1</div>
                     <div class="step-content">
                         <h3>Customer Journey Mapping</h3>
-                        <p>Analyze your customer touchpoints and identify key moments where automation can drive engagement and conversions.</p>
+                        <p>analyse your customer touchpoints and identify key moments where automation can drive engagement and conversions.</p>
                     </div>
                 </div>
                 
@@ -243,7 +243,7 @@ get_header(); ?>
                     <div class="step-number">2</div>
                     <div class="step-content">
                         <h3>Flow Strategy Design</h3>
-                        <p>Create detailed flow maps with timing, triggers, and branching logic based on customer behavior and preferences.</p>
+                        <p>Create detailed flow maps with timing, triggers, and branching logic based on customer behaviour and preferences.</p>
                     </div>
                 </div>
                 
@@ -266,8 +266,8 @@ get_header(); ?>
                 <div class="process-step animate-on-scroll animate-stagger animate-fade-up">
                     <div class="step-number">5</div>
                     <div class="step-content">
-                        <h3>Testing & Optimization</h3>
-                        <p>A/B test flow performance and continuously optimize timing, content, and triggers for maximum effectiveness.</p>
+                        <h3>Testing & optimisation</h3>
+                        <p>A/B test flow performance and continuously optimise timing, content, and triggers for maximum effectiveness.</p>
                     </div>
                 </div>
             </div>
@@ -298,7 +298,7 @@ get_header(); ?>
                         <i class="fas fa-rocket"></i>
                     </div>
                     <h3>ActiveCampaign</h3>
-                    <p>Comprehensive marketing automation with CRM integration and advanced behavioral targeting.</p>
+                    <p>Comprehensive marketing automation with CRM integration and advanced behavioural targeting.</p>
                 </div>
                 
                 <div class="benefit-card animate-on-scroll animate-stagger animate-fade-up">
@@ -320,15 +320,15 @@ get_header(); ?>
                         <i class="fas fa-clock"></i>
                     </div>
                     <h3>Perfect Timing</h3>
-                    <p>Reach customers at the optimal moment based on their behavior and engagement patterns.</p>
+                    <p>Reach customers at the optimal moment based on their behaviour and engagement patterns.</p>
                 </div>
                 
                 <div class="benefit-card animate-on-scroll animate-stagger animate-fade-up">
                     <div class="benefit-icon">
                         <i class="fas fa-user"></i>
                     </div>
-                    <h3>Personalization</h3>
-                    <p>Deliver highly relevant messages based on purchase history, preferences, and behavior data.</p>
+                    <h3>personalisation</h3>
+                    <p>Deliver highly relevant messages based on purchase history, preferences, and behaviour data.</p>
                 </div>
                 
                 <div class="benefit-card animate-on-scroll animate-stagger animate-fade-up">
@@ -370,7 +370,7 @@ get_header(); ?>
                 <h2 class="animate-on-scroll animate-fade-up">Ready to Build Revenue-Generating Automation Flows?</h2>
                 <p class="animate-on-scroll animate-fade-up">Stop leaving money on the table with basic email marketing. Our sophisticated email and SMS automation flows will turn your subscriber list into a predictable revenue engine that works 24/7.</p>
                 <div class="cta-buttons animate-on-scroll animate-fade-up">
-                    <a href="<?php echo home_url('/contact'); ?>" class="btn-outline" style="background-color: white; color: #333; border: 2px solid white;">Build Your Flows</a>
+                    <a href="<?php echo home_url('/contact'); ?>" class="btn-outline" style="background-colour: white; colour: #333; border: 2px solid white;">Build Your Flows</a>
                 </div>
             </div>
         </div>

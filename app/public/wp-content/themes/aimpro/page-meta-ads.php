@@ -75,7 +75,7 @@ function get_meta_ads_meta($key, $post_id, $defaults, $prefix = '_meta_ads_') {
                     <h3><?php echo esc_html(get_meta_ads_meta("service_title_{$i}", $post_id, $defaults)); ?></h3>
                     <p><?php echo esc_html(get_meta_ads_meta("service_content_{$i}", $post_id, $defaults)); ?></p>
                 </div>                <?php endfor; ?>            </div>
-            <div class="text-center mt-1 animate-on-scroll animate-fade-up">
+            <div class="text-centre mt-1 animate-on-scroll animate-fade-up">
                 <a href="/contact/" class="btn btn-primary">Schedule Your Meta Ads Consultation</a>
             </div>
         </div>
@@ -218,7 +218,7 @@ function get_meta_ads_meta($key, $post_id, $defaults, $prefix = '_meta_ads_') {
         </div>
     </section>
       <!-- CTA Section -->
-    <section class="meta-ads-cta text-center">
+    <section class="meta-ads-cta text-centre">
         <div class="section-content animate-on-scroll animate-fade-up">
             <h2 class="animate-on-scroll animate-scale-up"><?php echo esc_html(get_meta_ads_meta('cta_title', $post_id, $defaults)); ?></h2>
             <p><?php echo esc_html(get_meta_ads_meta('cta_content', $post_id, $defaults)); ?></p>

@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 /**
  * Template Name: Careers Page
  * Description: Careers and job opportunities page
@@ -19,12 +19,12 @@ get_header(); ?>
                 <h2 class="animate-on-scroll animate-fade-up"><?php echo esc_html(get_post_meta(get_the_ID(), 'careers_why_heading', true) ?: 'Why Choose Aimpro Digital?'); ?></h2>                <div class="benefits-grid">
                     <?php 
                     $benefit_icons = array(
-                        1 => '<path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="9" cy="7" r="4" stroke="currentColor" stroke-width="2"/><path d="m22 21-3-3m0 0a2 2 0 1 1-4 0 2 2 0 0 1 4 0" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>',
-                        2 => '<path d="M12 2v6.5l3 1.5-3 1.5V18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M6 12c0 4 2.5 8 6 8s6-4 6-8-2.5-8-6-8-6 4-6 8z" stroke="currentColor" stroke-width="2"/>',
-                        3 => '<rect x="2" y="3" width="20" height="14" rx="2" ry="2" stroke="currentColor" stroke-width="2"/><line x1="8" y1="21" x2="16" y2="21" stroke="currentColor" stroke-width="2"/><line x1="12" y1="17" x2="12" y2="21" stroke="currentColor" stroke-width="2"/>',
-                        4 => '<circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"/><polyline points="12,6 12,12 16,14" stroke="currentColor" stroke-width="2"/>',
-                        5 => '<path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>',
-                        6 => '<path d="M22 12h-4l-3 9L9 3l-3 9H2" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>'
+                        1 => '<path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" stroke="currentcolour" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="9" cy="7" r="4" stroke="currentcolour" stroke-width="2"/><path d="m22 21-3-3m0 0a2 2 0 1 1-4 0 2 2 0 0 1 4 0" stroke="currentcolour" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>',
+                        2 => '<path d="M12 2v6.5l3 1.5-3 1.5V18" stroke="currentcolour" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M6 12c0 4 2.5 8 6 8s6-4 6-8-2.5-8-6-8-6 4-6 8z" stroke="currentcolour" stroke-width="2"/>',
+                        3 => '<rect x="2" y="3" width="20" height="14" rx="2" ry="2" stroke="currentcolour" stroke-width="2"/><line x1="8" y1="21" x2="16" y2="21" stroke="currentcolour" stroke-width="2"/><line x1="12" y1="17" x2="12" y2="21" stroke="currentcolour" stroke-width="2"/>',
+                        4 => '<circle cx="12" cy="12" r="10" stroke="currentcolour" stroke-width="2"/><polyline points="12,6 12,12 16,14" stroke="currentcolour" stroke-width="2"/>',
+                        5 => '<path d="M20 6L9 17l-5-5" stroke="currentcolour" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>',
+                        6 => '<path d="M22 12h-4l-3 9L9 3l-3 9H2" stroke="currentcolour" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>'
                     );
                     
                     $benefit_defaults = array(
@@ -62,20 +62,20 @@ get_header(); ?>
                                   'desc' => 'We\'re looking for an experienced SEO specialist to join our growing team. You\'ll lead technical SEO audits, develop content strategies, and help our clients achieve top search rankings.',
                                   'requirements' => "3+ years of SEO experience\nStrong technical SEO skills\nExperience with SEO tools (SEMrush, Ahrefs, etc.)\nGoogle Analytics & Search Console proficiency"),
                         2 => array('title' => 'PPC Campaign Manager', 'team' => 'PPC Team', 'type' => 'Full-time', 'location' => 'Remote/Hybrid',
-                                  'desc' => 'Join our PPC team to manage and optimize paid advertising campaigns across Google Ads, Facebook, and other platforms. Help our clients achieve exceptional ROI on their ad spend.',
-                                  'requirements' => "Google Ads certification required\n2+ years of PPC management experience\nExperience with Facebook Ads Manager\nStrong analytical and optimization skills"),
+                                  'desc' => 'Join our PPC team to manage and optimise paid advertising campaigns across Google Ads, Facebook, and other platforms. Help our clients achieve exceptional ROI on their ad spend.',
+                                  'requirements' => "Google Ads certification required\n2+ years of PPC management experience\nExperience with Facebook Ads Manager\nStrong analytical and optimisation skills"),
                         3 => array('title' => 'Content Marketing Strategist', 'team' => 'Content Team', 'type' => 'Full-time', 'location' => 'Remote/Hybrid',
                                   'desc' => 'Lead content strategy development and execution for our diverse client base. Create compelling content that drives engagement and conversions across multiple channels.',
                                   'requirements' => "3+ years in content marketing\nExcellent writing and editing skills\nExperience with content management systems\nUnderstanding of SEO best practices"),
                         4 => array('title' => 'Digital Marketing Analyst', 'team' => 'Analytics Team', 'type' => 'Full-time', 'location' => 'Remote/Hybrid',
-                                  'desc' => 'Transform marketing data into actionable insights. Work with our team to measure campaign performance, identify optimization opportunities, and report on client results.',
+                                  'desc' => 'Transform marketing data into actionable insights. Work with our team to measure campaign performance, identify optimisation opportunities, and report on client results.',
                                   'requirements' => "Strong analytical and statistical skills\nProficiency in Google Analytics & Data Studio\nExperience with Excel/Google Sheets\nKnowledge of SQL is a plus"),
                         5 => array('title' => 'Client Account Manager', 'team' => 'Client Services', 'type' => 'Full-time', 'location' => 'Remote/Hybrid',
                                   'desc' => 'Build and maintain strong client relationships while ensuring project success. Serve as the primary point of contact for our valued clients and help grow their digital marketing programs.',
                                   'requirements' => "2+ years in account management or client services\nStrong communication and presentation skills\nUnderstanding of digital marketing concepts\nProject management experience preferred"),
                         6 => array('title' => 'Web Developer', 'team' => 'Development Team', 'type' => 'Full-time', 'location' => 'Remote/Hybrid',
-                                  'desc' => 'Join our development team to create and optimize websites that drive conversions. Work on landing pages, e-commerce sites, and marketing technology integrations.',
-                                  'requirements' => "3+ years of web development experience\nProficiency in HTML, CSS, JavaScript\nExperience with WordPress and PHP\nUnderstanding of SEO and conversion optimization")
+                                  'desc' => 'Join our development team to create and optimise websites that drive conversions. Work on landing pages, e-commerce sites, and marketing technology integrations.',
+                                  'requirements' => "3+ years of web development experience\nProficiency in HTML, CSS, JavaScript\nExperience with WordPress and PHP\nUnderstanding of SEO and conversion optimisation")
                     );
                       for ($i = 1; $i <= 6; $i++):
                         $job_title = get_post_meta(get_the_ID(), "careers_job{$i}_title", true) ?: $job_defaults[$i]['title'];

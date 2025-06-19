@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 /**
  * Local SEO Page Meta Boxes
  */
@@ -134,12 +134,12 @@ function get_local_seo_defaults() {
         
         // Services defaults
         'services_title' => 'Complete Local SEO Services',
-        'service_1_title' => 'Google My Business Optimization',
-        'service_1_description' => 'Complete optimization of your Google My Business profile to maximize local visibility and engagement.',
+        'service_1_title' => 'Google My Business optimisation',
+        'service_1_description' => 'Complete optimisation of your Google My Business profile to maximise local visibility and engagement.',
         'service_1_features' => array(
             'Profile setup and verification',
-            'Business information optimization',
-            'Photo and video optimization',
+            'Business information optimisation',
+            'Photo and video optimisation',
             'Google Posts management',
             'Q&A management'
         ),
@@ -160,17 +160,17 @@ function get_local_seo_defaults() {
             'Review generation campaigns',
             'Review response management',
             'Reputation monitoring',
-            'Review platform optimization',
+            'Review platform optimisation',
             'Crisis management'
         ),
         
-        'service_4_title' => 'Local Keyword Optimization',
+        'service_4_title' => 'Local Keyword optimisation',
         'service_4_description' => 'Target location-specific keywords to capture local search traffic and qualified leads.',
         'service_4_features' => array(
             'Local keyword research',
-            'Geographic content optimization',
+            'Geographic content optimisation',
             'Location landing pages',
-            'Service area optimization',
+            'Service area optimisation',
             'Local search intent targeting'
         ),
         
@@ -184,14 +184,14 @@ function get_local_seo_defaults() {
             'Industry association links'
         ),
         
-        'service_6_title' => 'Local Website Optimization',
-        'service_6_description' => 'Optimize your website structure and content for local search visibility and conversions.',
+        'service_6_title' => 'Local Website optimisation',
+        'service_6_description' => 'optimise your website structure and content for local search visibility and conversions.',
         'service_6_features' => array(
             'Local schema markup',
-            'Contact page optimization',
+            'Contact page optimisation',
             'Location-specific content',
-            'Mobile optimization',
-            'Local conversion optimization'
+            'Mobile optimisation',
+            'Local conversion optimisation'
         ),
         
         // Case Study defaults
@@ -200,17 +200,17 @@ function get_local_seo_defaults() {
         'case_study_description' => 'A local dental practice in Birmingham was struggling to attract new patients despite providing excellent service. They were invisible in local search results and losing potential patients to competitors.',
         'case_study_challenge_title' => 'The Challenge',
         'case_study_challenges' => array(
-            'No Google My Business optimization',
+            'No Google My Business optimisation',
             'Inconsistent business information online',
             'Very few online reviews',
             'Poor local search rankings'
         ),
         'case_study_solution_title' => 'Our Local SEO Strategy',
         'case_study_solutions' => array(
-            'Complete Google My Business optimization',
+            'Complete Google My Business optimisation',
             'Local citation building and cleanup',
             'Review generation campaign',
-            'Local content optimization'
+            'Local content optimisation'
         ),        'case_study_results_title' => 'Results After 6 Months',
         'case_study_results' => array(
             array('number' => '500%', 'label' => 'Local Visibility Increase'),
@@ -224,40 +224,40 @@ function get_local_seo_defaults() {
         // Process defaults
         'process_title' => 'Our Local SEO Process',
         'process_step_1_title' => 'Local Market Analysis',
-        'process_step_1_description' => 'Analyze your local market, competitors, and opportunities for maximum impact.',
+        'process_step_1_description' => 'analyse your local market, competitors, and opportunities for maximum impact.',
         'process_step_2_title' => 'Google My Business Setup',
-        'process_step_2_description' => 'Optimize and verify your Google My Business profile for maximum visibility.',
+        'process_step_2_description' => 'optimise and verify your Google My Business profile for maximum visibility.',
         'process_step_3_title' => 'Citation Building',
         'process_step_3_description' => 'Build consistent citations across relevant local directories and platforms.',
-        'process_step_4_title' => 'Monitor & Optimize',
-        'process_step_4_description' => 'Continuously monitor performance and optimize for better local search results.',
+        'process_step_4_title' => 'Monitor & optimise',
+        'process_step_4_description' => 'Continuously monitor performance and optimise for better local search results.',
         
         // Industries defaults
         'industries_title' => 'Local SEO by Industry',
         'industry_1_title' => 'Healthcare & Medical',
         'industry_1_features' => array(
-            'Medical practice optimization',
+            'Medical practice optimisation',
             'Patient review management',
             'Local health directory listings',
             'Service area targeting'
         ),
         'industry_2_title' => 'Legal Services',
         'industry_2_features' => array(
-            'Law firm local optimization',
+            'Law firm local optimisation',
             'Legal directory submissions',
             'Practice area targeting',
             'Professional review management'
         ),
         'industry_3_title' => 'Home Services',
         'industry_3_features' => array(
-            'Service area optimization',
+            'Service area optimisation',
             'Emergency service targeting',
             'Local contractor listings',
             'Seasonal campaign management'
         ),
         'industry_4_title' => 'Retail & Restaurants',
         'industry_4_features' => array(
-            'Location-based optimization',
+            'Location-based optimisation',
             'Menu and product showcasing',
             'Event and promotion management',
             'Multi-location SEO'
@@ -290,7 +290,7 @@ function get_local_seo_defaults() {
         'cta_secondary_link' => home_url('/case-studies'),
         'cta_benefits' => array(
             'Local market analysis included',
-            'Google My Business optimization',
+            'Google My Business optimisation',
             'Citation audit and cleanup'
         )
     );

@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 // Automate Marketing Page Meta Fields
 
 function add_automate_marketing_meta_boxes() {
@@ -49,7 +49,7 @@ function automate_marketing_meta_box_callback($post) {
     $header_title = get_post_meta($post->ID, '_automate_marketing_header_title', true) ?: 'Automate Marketing';
     $header_subtitle = get_post_meta($post->ID, '_automate_marketing_header_subtitle', true) ?: 'Streamline your marketing processes with intelligent automation that works 24/7';    // Solution Overview
     $overview_title = get_post_meta($post->ID, '_automate_marketing_overview_title', true) ?: 'Transform Manual Tasks Into Automated Success';
-    $overview_content = get_post_meta($post->ID, '_automate_marketing_overview_content', true) ?: 'Marketing automation eliminates repetitive tasks while delivering personalized experiences at scale. Our comprehensive automation strategies help you nurture leads, engage customers, and drive conversions without constant manual intervention, freeing your team to focus on strategy and growth.';
+    $overview_content = get_post_meta($post->ID, '_automate_marketing_overview_content', true) ?: 'Marketing automation eliminates repetitive tasks while delivering personalised experiences at scale. Our comprehensive automation strategies help you nurture leads, engage customers, and drive conversions without constant manual intervention, freeing your team to focus on strategy and growth.';
     $overview_image = get_post_meta($post->ID, '_automate_marketing_overview_image', true);
     
     // Challenges
@@ -59,10 +59,10 @@ function automate_marketing_meta_box_callback($post) {
         $challenges = array(
             'Time-consuming manual marketing tasks',
             'Inconsistent lead follow-up',
-            'Difficulty scaling personalized campaigns',
+            'Difficulty scaling personalised campaigns',
             'Poor lead scoring and qualification',
             'Disconnected marketing and sales processes',
-            'Lack of behavioral trigger campaigns'
+            'Lack of behavioural trigger campaigns'
         );
     }
 
@@ -73,17 +73,17 @@ function automate_marketing_meta_box_callback($post) {
         $solutions = array(
             array(
                 'title' => 'Email Marketing Automation',
-                'description' => 'Create sophisticated email workflows that nurture leads and customers through personalized journeys.',
+                'description' => 'Create sophisticated email workflows that nurture leads and customers through personalised journeys.',
                 'features' => array(
                     'Welcome email sequences',
                     'Abandoned cart recovery',
-                    'Behavioral trigger campaigns',
+                    'behavioural trigger campaigns',
                     'Re-engagement workflows'
                 )
             ),
             array(
                 'title' => 'Lead Scoring & Nurturing',
-                'description' => 'Automatically score and segment leads based on behavior, demographics, and engagement levels.',
+                'description' => 'Automatically score and segment leads based on behaviour, demographics, and engagement levels.',
                 'features' => array(
                     'Dynamic lead scoring models',
                     'Progressive profiling',
@@ -93,7 +93,7 @@ function automate_marketing_meta_box_callback($post) {
             ),
             array(
                 'title' => 'Social Media Automation',
-                'description' => 'Schedule, publish, and optimize social media content across multiple platforms automatically.',
+                'description' => 'Schedule, publish, and optimise social media content across multiple platforms automatically.',
                 'features' => array(
                     'Content scheduling & publishing',
                     'Social listening automation',
@@ -137,7 +137,7 @@ function automate_marketing_meta_box_callback($post) {
             'Complete marketing automation setup',
             'Lead scoring and nurturing workflows',
             'CRM integration and sales automation',
-            'Behavioral trigger campaign implementation'
+            'behavioural trigger campaign implementation'
         );
     }
 
@@ -189,8 +189,8 @@ function automate_marketing_meta_box_callback($post) {
             ),
             array(
                 'number' => '4',
-                'title' => 'Testing & Optimization',
-                'description' => 'Monitor performance, A/B test workflows, and continuously optimize for better results.'
+                'title' => 'Testing & optimisation',
+                'description' => 'Monitor performance, A/B test workflows, and continuously optimise for better results.'
             )
         );
     }
@@ -212,7 +212,7 @@ function automate_marketing_meta_box_callback($post) {
             ),
             array(
                 'title' => 'Increased Conversions',
-                'description' => 'Nurture leads more effectively with personalized, timely communications that drive action.',
+                'description' => 'Nurture leads more effectively with personalised, timely communications that drive action.',
                 'icon_class' => 'fas fa-chart-line'
             ),
             array(
@@ -285,7 +285,7 @@ function automate_marketing_meta_box_callback($post) {
         $cta_features = array(
             '✓ Custom workflow design',
             '✓ Full platform integration',
-            '✓ Ongoing optimization'
+            '✓ Ongoing optimisation'
         );
     }
 
@@ -324,7 +324,7 @@ function automate_marketing_meta_box_callback($post) {
             margin-bottom: 15px;
             padding: 10px;
             background: #0073aa;
-            color: white;
+            colour: white;
             border-radius: 3px;
         }
         .automate-marketing-meta .image-preview {

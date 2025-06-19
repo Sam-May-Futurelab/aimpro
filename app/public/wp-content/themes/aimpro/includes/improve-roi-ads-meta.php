@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 // Improve ROI from Ads Page Meta Fields
 
 function add_improve_roi_ads_meta_boxes() {
@@ -47,9 +47,9 @@ function improve_roi_ads_meta_box_callback($post) {
 
     // Get existing values
     $header_title = get_post_meta($post->ID, '_improve_roi_ads_header_title', true) ?: 'Improve ROI from Ads';
-    $header_subtitle = get_post_meta($post->ID, '_improve_roi_ads_header_subtitle', true) ?: 'Maximize your advertising spend with data-driven optimization strategies that deliver measurable results';    // Solution Overview
+    $header_subtitle = get_post_meta($post->ID, '_improve_roi_ads_header_subtitle', true) ?: 'Maximize your advertising spend with data-driven optimisation strategies that deliver measurable results';    // Solution Overview
     $overview_title = get_post_meta($post->ID, '_improve_roi_ads_overview_title', true) ?: 'Turn Ad Spend Into Profitable Growth';
-    $overview_content = get_post_meta($post->ID, '_improve_roi_ads_overview_content', true) ?: 'Every advertising dollar should drive real business results. Our comprehensive ad optimization strategies combine advanced analytics, conversion tracking, and continuous testing to maximize your return on ad spend (ROAS) while reducing customer acquisition costs and improving campaign performance.';
+    $overview_content = get_post_meta($post->ID, '_improve_roi_ads_overview_content', true) ?: 'Every advertising dollar should drive real business results. Our comprehensive ad optimisation strategies combine advanced analytics, conversion tracking, and continuous testing to maximise your return on ad spend (ROAS) while reducing customer acquisition costs and improving campaign performance.';
     $overview_image = get_post_meta($post->ID, '_improve_roi_ads_overview_image', true);
     
     // Challenges
@@ -66,14 +66,14 @@ function improve_roi_ads_meta_box_callback($post) {
         );
     }
 
-    // ROI Optimization Methods
-    $methods_title = get_post_meta($post->ID, '_improve_roi_ads_methods_title', true) ?: 'Our Ad ROI Optimization Methods';
+    // ROI optimisation Methods
+    $methods_title = get_post_meta($post->ID, '_improve_roi_ads_methods_title', true) ?: 'Our Ad ROI optimisation Methods';
     $methods = get_post_meta($post->ID, '_improve_roi_ads_methods', true);
     if (empty($methods)) {
         $methods = array(
             array(
                 'title' => 'Advanced Conversion Tracking',
-                'description' => 'Implement comprehensive tracking systems to measure true ROI and optimize for the metrics that matter most.',
+                'description' => 'Implement comprehensive tracking systems to measure true ROI and optimise for the metrics that matter most.',
                 'features' => array(
                     'Enhanced e-commerce tracking',
                     'Offline conversion tracking',
@@ -82,7 +82,7 @@ function improve_roi_ads_meta_box_callback($post) {
                 )
             ),
             array(
-                'title' => 'Audience Optimization',
+                'title' => 'Audience optimisation',
                 'description' => 'Refine targeting to reach high-value prospects while reducing spend on low-converting audiences.',
                 'features' => array(
                     'Audience segmentation analysis',
@@ -92,22 +92,22 @@ function improve_roi_ads_meta_box_callback($post) {
                 )
             ),
             array(
-                'title' => 'Campaign Structure Optimization',
+                'title' => 'Campaign Structure optimisation',
                 'description' => 'Restructure campaigns for better performance, clearer data insights, and more efficient budget allocation.',
                 'features' => array(
                     'Single keyword ad groups (SKAGs)',
                     'Campaign segmentation strategies',
-                    'Ad group theme optimization',
+                    'Ad group theme optimisation',
                     'Budget allocation modeling'
                 )
             ),
             array(
-                'title' => 'Landing Page Optimization',
-                'description' => 'Improve post-click experience to maximize conversion rates and reduce cost per conversion.',
+                'title' => 'Landing Page optimisation',
+                'description' => 'Improve post-click experience to maximise conversion rates and reduce cost per conversion.',
                 'features' => array(
                     'Landing page A/B testing',
-                    'Conversion rate optimization',
-                    'Mobile experience optimization',
+                    'Conversion rate optimisation',
+                    'Mobile experience optimisation',
                     'Page speed improvements'
                 )
             )
@@ -135,7 +135,7 @@ function improve_roi_ads_meta_box_callback($post) {
     if (empty($case_study_solutions)) {
         $case_study_solutions = array(
             'Complete conversion tracking overhaul',
-            'Campaign restructuring and optimization',
+            'Campaign restructuring and optimisation',
             'Landing page redesign and testing',
             'Advanced bidding strategy implementation'
         );
@@ -168,7 +168,7 @@ function improve_roi_ads_meta_box_callback($post) {
     $case_study_link_url = get_post_meta($post->ID, '_improve_roi_ads_case_study_link_url', true) ?: '/case-studies';
 
     // ROI Process
-    $process_title = get_post_meta($post->ID, '_improve_roi_ads_process_title', true) ?: 'Our Ad ROI Optimization Process';
+    $process_title = get_post_meta($post->ID, '_improve_roi_ads_process_title', true) ?: 'Our Ad ROI optimisation Process';
     $process_steps = get_post_meta($post->ID, '_improve_roi_ads_process_steps', true);
     if (empty($process_steps)) {
         $process_steps = array(
@@ -184,50 +184,50 @@ function improve_roi_ads_meta_box_callback($post) {
             ),
             array(
                 'number' => '3',
-                'title' => 'Campaign Optimization',
-                'description' => 'Restructure campaigns, refine targeting, and optimize bidding strategies for improved performance.'
+                'title' => 'Campaign optimisation',
+                'description' => 'Restructure campaigns, refine targeting, and optimise bidding strategies for improved performance.'
             ),
             array(
                 'number' => '4',
                 'title' => 'Continuous Testing',
-                'description' => 'Ongoing A/B testing and optimization to maintain and improve ROI over time.'
+                'description' => 'Ongoing A/B testing and optimisation to maintain and improve ROI over time.'
             )
         );
     }
 
-    // Platform Optimization
-    $platforms_title = get_post_meta($post->ID, '_improve_roi_ads_platforms_title', true) ?: 'Platform-Specific ROI Optimization';
+    // Platform optimisation
+    $platforms_title = get_post_meta($post->ID, '_improve_roi_ads_platforms_title', true) ?: 'Platform-Specific ROI optimisation';
     $platforms = get_post_meta($post->ID, '_improve_roi_ads_platforms', true);
     if (empty($platforms)) {
         $platforms = array(
             array(
-                'title' => 'Google Ads Optimization',
+                'title' => 'Google Ads optimisation',
                 'features' => array(
                     'Smart bidding strategy implementation',
                     'Quality Score improvements',
                     'Search impression share analysis',
-                    'Shopping campaign optimization',
+                    'Shopping campaign optimisation',
                     'Performance Max campaign setup'
                 ),
                 'results' => 'Average: 250% Google Ads ROI improvement'
             ),
             array(
-                'title' => 'Facebook Ads Optimization',
+                'title' => 'Facebook Ads optimisation',
                 'features' => array(
                     'iOS 14.5+ tracking solutions',
                     'Conversion API implementation',
                     'Creative testing automation',
                     'Audience overlap elimination',
-                    'Campaign budget optimization'
+                    'Campaign budget optimisation'
                 ),
                 'results' => 'Average: 180% Facebook ROI improvement'
             ),
             array(
-                'title' => 'LinkedIn Ads Optimization',
+                'title' => 'LinkedIn Ads optimisation',
                 'features' => array(
                     'B2B audience targeting refinement',
-                    'Lead generation form optimization',
-                    'Sponsored content optimization',
+                    'Lead generation form optimisation',
+                    'Sponsored content optimisation',
                     'Account-based marketing setup',
                     'LinkedIn matched audiences'
                 ),
@@ -237,7 +237,7 @@ function improve_roi_ads_meta_box_callback($post) {
     }
 
     // ROI Metrics
-    $metrics_title = get_post_meta($post->ID, '_improve_roi_ads_metrics_title', true) ?: 'Key ROI Metrics We Track & Optimize';
+    $metrics_title = get_post_meta($post->ID, '_improve_roi_ads_metrics_title', true) ?: 'Key ROI Metrics We Track & optimise';
     $metrics = get_post_meta($post->ID, '_improve_roi_ads_metrics', true);
     if (empty($metrics)) {
         $metrics = array(
@@ -278,21 +278,21 @@ function improve_roi_ads_meta_box_callback($post) {
                     'Demographic Performance',
                     'Geographic Efficiency',
                     'Device Performance',
-                    'Time of Day Optimization'
+                    'Time of Day optimisation'
                 )
             )
         );
     }
 
     // Testimonial (no image)
-    $testimonial_quote = get_post_meta($post->ID, '_improve_roi_ads_testimonial_quote', true) ?: 'Aimpro Digital took our ad performance from break-even to highly profitable. Our ROI improved by 320% and we\'re now getting 4x more leads for the same budget. Their optimization expertise is exceptional.';
+    $testimonial_quote = get_post_meta($post->ID, '_improve_roi_ads_testimonial_quote', true) ?: 'Aimpro Digital took our ad performance from break-even to highly profitable. Our ROI improved by 320% and we\'re now getting 4x more leads for the same budget. Their optimisation expertise is exceptional.';
     $testimonial_name = get_post_meta($post->ID, '_improve_roi_ads_testimonial_name', true) ?: 'Michael Thompson';
     $testimonial_position = get_post_meta($post->ID, '_improve_roi_ads_testimonial_position', true) ?: 'Marketing Director, EcoHome Solutions';
     $testimonial_company = get_post_meta($post->ID, '_improve_roi_ads_testimonial_company', true) ?: 'Green Technology Company';
     
     // CTA section
     $cta_title = get_post_meta($post->ID, '_improve_roi_ads_cta_title', true) ?: 'Ready to Maximize Your Ad ROI?';
-    $cta_subtitle = get_post_meta($post->ID, '_improve_roi_ads_cta_subtitle', true) ?: 'Let\'s analyze your current ad performance and create a strategy to dramatically improve your return on investment.';
+    $cta_subtitle = get_post_meta($post->ID, '_improve_roi_ads_cta_subtitle', true) ?: 'Let\'s analyse your current ad performance and create a strategy to dramatically improve your return on investment.';
     $cta_primary_text = get_post_meta($post->ID, '_improve_roi_ads_cta_primary_text', true) ?: 'Get Free Ad Account Audit';
     $cta_primary_url = get_post_meta($post->ID, '_improve_roi_ads_cta_primary_url', true) ?: '/contact';
     $cta_secondary_text = get_post_meta($post->ID, '_improve_roi_ads_cta_secondary_text', true) ?: 'View ROI Success Stories';
@@ -302,7 +302,7 @@ function improve_roi_ads_meta_box_callback($post) {
         $cta_features = array(
             '✓ Complete performance analysis',
             '✓ ROI improvement roadmap',
-            '✓ Custom optimization strategy'
+            '✓ Custom optimisation strategy'
         );
     }
 
@@ -341,7 +341,7 @@ function improve_roi_ads_meta_box_callback($post) {
             margin-bottom: 15px;
             padding: 10px;
             background: #0073aa;
-            color: white;
+            colour: white;
             border-radius: 3px;
         }
         .improve-roi-ads-meta .image-preview {
@@ -379,7 +379,7 @@ function improve_roi_ads_meta_box_callback($post) {
                 <td>
                     <textarea id="improve_roi_ads_header_subtitle" 
                               name="improve_roi_ads_header_subtitle"
-                              placeholder="Maximize your advertising spend with data-driven optimization strategies that deliver measurable results"><?php echo esc_textarea($header_subtitle); ?></textarea>
+                              placeholder="Maximize your advertising spend with data-driven optimisation strategies that deliver measurable results"><?php echo esc_textarea($header_subtitle); ?></textarea>
                 </td>
             </tr>
         </table>
@@ -456,8 +456,8 @@ function improve_roi_ads_meta_box_callback($post) {
             </tr>
         </table>
 
-        <!-- ROI Optimization Methods Section -->
-        <h3>ROI Optimization Methods Section</h3>
+        <!-- ROI optimisation Methods Section -->
+        <h3>ROI optimisation Methods Section</h3>
         <table class="form-table">
             <tr>
                 <th><label for="improve_roi_ads_methods_title">Methods Title</label></th>
@@ -466,7 +466,7 @@ function improve_roi_ads_meta_box_callback($post) {
                            id="improve_roi_ads_methods_title" 
                            name="improve_roi_ads_methods_title" 
                            value="<?php echo esc_attr($methods_title); ?>"
-                           placeholder="Our Ad ROI Optimization Methods" />
+                           placeholder="Our Ad ROI optimisation Methods" />
                 </td>
             </tr>
         </table>
@@ -653,7 +653,7 @@ function improve_roi_ads_meta_box_callback($post) {
                            id="improve_roi_ads_process_title" 
                            name="improve_roi_ads_process_title" 
                            value="<?php echo esc_attr($process_title); ?>"
-                           placeholder="Our Ad ROI Optimization Process" />
+                           placeholder="Our Ad ROI optimisation Process" />
                 </td>
             </tr>
         </table>
@@ -680,8 +680,8 @@ function improve_roi_ads_meta_box_callback($post) {
         </div>
         <button type="button" class="button add-process-step">Add Process Step</button>
 
-        <!-- Platform Optimization Section -->
-        <h3>Platform Optimization Section</h3>
+        <!-- Platform optimisation Section -->
+        <h3>Platform optimisation Section</h3>
         <table class="form-table">
             <tr>
                 <th><label for="improve_roi_ads_platforms_title">Platforms Title</label></th>
@@ -690,7 +690,7 @@ function improve_roi_ads_meta_box_callback($post) {
                            id="improve_roi_ads_platforms_title" 
                            name="improve_roi_ads_platforms_title" 
                            value="<?php echo esc_attr($platforms_title); ?>"
-                           placeholder="Platform-Specific ROI Optimization" />
+                           placeholder="Platform-Specific ROI optimisation" />
                 </td>
             </tr>
         </table>
@@ -735,7 +735,7 @@ function improve_roi_ads_meta_box_callback($post) {
                            id="improve_roi_ads_metrics_title" 
                            name="improve_roi_ads_metrics_title" 
                            value="<?php echo esc_attr($metrics_title); ?>"
-                           placeholder="Key ROI Metrics We Track & Optimize" />
+                           placeholder="Key ROI Metrics We Track & optimise" />
                 </td>
             </tr>
         </table>
@@ -827,7 +827,7 @@ function improve_roi_ads_meta_box_callback($post) {
                 <td>
                     <textarea id="improve_roi_ads_cta_subtitle" 
                               name="improve_roi_ads_cta_subtitle"
-                              placeholder="Let's analyze your current ad performance and create a strategy to dramatically improve your return on investment."><?php echo esc_textarea($cta_subtitle); ?></textarea>
+                              placeholder="Let's analyse your current ad performance and create a strategy to dramatically improve your return on investment."><?php echo esc_textarea($cta_subtitle); ?></textarea>
                 </td>
             </tr>
             <tr>

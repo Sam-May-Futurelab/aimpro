@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 // Lead Generation Page Meta Fields
 
 function add_lead_generation_meta_boxes() {
@@ -66,11 +66,11 @@ function lead_generation_meta_box_callback($post) {
         $methods = array(
             array(
                 'title' => 'Search Engine Marketing',
-                'description' => 'Capture prospects actively searching for your solutions with targeted Google Ads and optimized landing pages.',
+                'description' => 'Capture prospects actively searching for your solutions with targeted Google Ads and optimised landing pages.',
                 'features' => array(
                     'High-intent keyword targeting',
-                    'Conversion-optimized landing pages',
-                    'Search ad optimization',
+                    'Conversion-optimised landing pages',
+                    'Search ad optimisation',
                     'Negative keyword refinement'
                 )
             ),
@@ -90,7 +90,7 @@ function lead_generation_meta_box_callback($post) {
                 'features' => array(
                     'High-value lead magnet creation',
                     'Educational content strategy',
-                    'Gated resource optimization',
+                    'Gated resource optimisation',
                     'Progressive profiling setup'
                 )
             ),
@@ -100,7 +100,7 @@ function lead_generation_meta_box_callback($post) {
                 'features' => array(
                     'Automated drip campaigns',
                     'Lead scoring implementation',
-                    'Behavioral trigger emails',
+                    'behavioural trigger emails',
                     'CRM integration & tracking'
                 )
             )
@@ -174,7 +174,7 @@ function lead_generation_meta_box_callback($post) {
                     'Industry-specific content marketing',
                     'Webinar and event marketing',
                     'Account-based marketing (ABM)',
-                    'Sales-qualified lead (SQL) optimization'
+                    'Sales-qualified lead (SQL) optimisation'
                 )
             ),
             array(
@@ -190,7 +190,7 @@ function lead_generation_meta_box_callback($post) {
             array(
                 'title' => 'Local Business Lead Generation',
                 'features' => array(
-                    'Google My Business optimization',
+                    'Google My Business optimisation',
                     'Local directory submissions',
                     'Geotargeted advertising',
                     'Review generation campaigns',
@@ -224,11 +224,11 @@ function lead_generation_meta_box_callback($post) {
                 )
             ),
             array(
-                'title' => 'Landing Page Optimization',
+                'title' => 'Landing Page optimisation',
                 'features' => array(
                     'A/B testing frameworks',
                     'Heat mapping analysis',
-                    'Form optimization',
+                    'Form optimisation',
                     'Mobile responsiveness'
                 )
             ),
@@ -237,7 +237,7 @@ function lead_generation_meta_box_callback($post) {
                 'features' => array(
                     'Automated email sequences',
                     'Lead nurturing campaigns',
-                    'Behavioral email triggers',
+                    'behavioural email triggers',
                     'Performance analytics'
                 )
             )
@@ -298,7 +298,7 @@ function lead_generation_meta_box_callback($post) {
         }
         .lead-generation-meta .image-upload-container {
             display: flex;
-            align-items: center;
+            align-items: centre;
             gap: 10px;
         }
         .lead-generation-meta .image-preview {
@@ -315,7 +315,7 @@ function lead_generation_meta_box_callback($post) {
             margin-bottom: 15px;
             padding: 10px;
             background: #0073aa;
-            color: white;
+            colour: white;
             border-radius: 3px;
         }
     </style>

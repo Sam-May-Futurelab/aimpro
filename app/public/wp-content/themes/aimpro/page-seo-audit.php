@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 /**
  * Template Name: SEO Audit Page
  * Description: Comprehensive SEO audit services
@@ -29,11 +29,11 @@ $hero_image = get_post_meta(get_the_ID(), 'seo_audit_hero_image', true);
                     <div class="overview-text animate-on-scroll animate-slide-left">
                         <?php 
                         $overview_title = get_post_meta(get_the_ID(), 'seo_audit_overview_title', true) ?: 'Discover Your Website\'s Hidden SEO Potential';
-                        $overview_description = get_post_meta(get_the_ID(), 'seo_audit_overview_description', true) ?: 'Our comprehensive SEO audit provides a detailed analysis of your website\'s current performance, identifies critical issues affecting your rankings, and delivers a prioritized action plan to improve your search visibility. Get the insights you need to outrank your competition and drive more organic traffic.';
+                        $overview_description = get_post_meta(get_the_ID(), 'seo_audit_overview_description', true) ?: 'Our comprehensive SEO audit provides a detailed analysis of your website\'s current performance, identifies critical issues affecting your rankings, and delivers a prioritised action plan to improve your search visibility. Get the insights you need to outrank your competition and drive more organic traffic.';
                         $benefits_title = get_post_meta(get_the_ID(), 'seo_audit_benefits_title', true) ?: 'What Our SEO Audit Reveals:';
                         $benefits = get_post_meta(get_the_ID(), 'seo_audit_benefits', true) ?: array(
                             'Technical SEO issues preventing good rankings',
-                            'Content gaps and optimization opportunities',
+                            'Content gaps and optimisation opportunities',
                             'Competitor analysis and market positioning',
                             'Keyword opportunities you\'re missing',
                             'Backlink profile analysis and improvement areas',
@@ -83,7 +83,7 @@ $hero_image = get_post_meta(get_the_ID(), 'seo_audit_hero_image', true);
                     ),
                     array(
                         'title' => 'Keyword Analysis',
-                        'description' => 'Comprehensive keyword research and optimization opportunity identification.',
+                        'description' => 'Comprehensive keyword research and optimisation opportunity identification.',
                         'features' => array(
                             'Current keyword rankings',
                             'Keyword gap analysis',
@@ -96,10 +96,10 @@ $hero_image = get_post_meta(get_the_ID(), 'seo_audit_hero_image', true);
                     ),
                     array(
                         'title' => 'Content Audit',
-                        'description' => 'Evaluate your content quality, optimization, and identify improvement opportunities.',
+                        'description' => 'Evaluate your content quality, optimisation, and identify improvement opportunities.',
                         'features' => array(
                             'Content quality assessment',
-                            'On-page optimization review',
+                            'On-page optimisation review',
                             'Meta tags and headers analysis',
                             'Content gap identification',
                             'Duplicate content detection',
@@ -109,7 +109,7 @@ $hero_image = get_post_meta(get_the_ID(), 'seo_audit_hero_image', true);
                     ),
                     array(
                         'title' => 'Competitor Analysis',
-                        'description' => 'Analyze your top competitors to identify opportunities and benchmark performance.',
+                        'description' => 'analyse your top competitors to identify opportunities and benchmark performance.',
                         'features' => array(
                             'Competitor keyword rankings',
                             'Content strategy analysis',
@@ -135,9 +135,9 @@ $hero_image = get_post_meta(get_the_ID(), 'seo_audit_hero_image', true);
                     ),
                     array(
                         'title' => 'Local SEO Audit',
-                        'description' => 'Evaluate your local search presence and optimization opportunities.',
+                        'description' => 'Evaluate your local search presence and optimisation opportunities.',
                         'features' => array(
-                            'Google My Business optimization',
+                            'Google My Business optimisation',
                             'Local citation consistency',
                             'Review profile analysis',
                             'Local keyword rankings',
@@ -156,11 +156,11 @@ $hero_image = get_post_meta(get_the_ID(), 'seo_audit_hero_image', true);
                             <div class="component-icon">
                                 <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <?php if (isset($component['featured']) && $component['featured']): ?>
-                                        <path d="M14.7 6.3C15.1 5.9 15.1 5.3 14.7 4.9C14.3 4.5 13.7 4.5 13.3 4.9L12 6.2L10.7 4.9C10.3 4.5 9.7 4.5 9.3 4.9C8.9 5.3 8.9 5.9 9.3 6.3L10.6 7.6L9.3 8.9C8.9 9.3 8.9 9.9 9.3 10.3C9.7 10.7 10.3 10.7 10.7 10.3L12 9L13.3 10.3C13.7 10.7 14.3 10.7 14.7 10.3C15.1 9.9 15.1 9.3 14.7 8.9L13.4 7.6L14.7 6.3Z" stroke="currentColor" stroke-width="2"/>
-                                        <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"/>
+                                        <path d="M14.7 6.3C15.1 5.9 15.1 5.3 14.7 4.9C14.3 4.5 13.7 4.5 13.3 4.9L12 6.2L10.7 4.9C10.3 4.5 9.7 4.5 9.3 4.9C8.9 5.3 8.9 5.9 9.3 6.3L10.6 7.6L9.3 8.9C8.9 9.3 8.9 9.9 9.3 10.3C9.7 10.7 10.3 10.7 10.7 10.3L12 9L13.3 10.3C13.7 10.7 14.3 10.7 14.7 10.3C15.1 9.9 15.1 9.3 14.7 8.9L13.4 7.6L14.7 6.3Z" stroke="currentcolour" stroke-width="2"/>
+                                        <circle cx="12" cy="12" r="10" stroke="currentcolour" stroke-width="2"/>
                                     <?php else: ?>
-                                        <circle cx="11" cy="11" r="8" stroke="currentColor" stroke-width="2"/>
-                                        <path d="M21 21L16.65 16.65" stroke="currentColor" stroke-width="2"/>
+                                        <circle cx="11" cy="11" r="8" stroke="currentcolour" stroke-width="2"/>
+                                        <path d="M21 21L16.65 16.65" stroke="currentcolour" stroke-width="2"/>
                                     <?php endif; ?>
                                 </svg>
                             </div>
@@ -190,7 +190,7 @@ $hero_image = get_post_meta(get_the_ID(), 'seo_audit_hero_image', true);
                 $report_sections = get_post_meta(get_the_ID(), 'seo_audit_report_sections', true) ?: array(
                     array('title' => 'Executive Summary', 'description' => 'High-level overview of findings and recommendations'),
                     array('title' => 'Technical Issues', 'description' => 'Detailed technical problems with priority levels'),
-                    array('title' => 'Content Analysis', 'description' => 'Content optimization opportunities and gaps'),
+                    array('title' => 'Content Analysis', 'description' => 'Content optimisation opportunities and gaps'),
                     array('title' => 'Competitive Landscape', 'description' => 'How you compare to top competitors'),
                     array('title' => 'Action Plan', 'description' => 'Prioritized recommendations with timelines'),
                     array('title' => 'ROI Projections', 'description' => 'Expected traffic and revenue improvements')
@@ -226,7 +226,7 @@ $hero_image = get_post_meta(get_the_ID(), 'seo_audit_hero_image', true);
                     ),
                     array(
                         'title' => 'Analysis & Report',
-                        'description' => 'Analyze data and create detailed report with actionable recommendations.',
+                        'description' => 'analyse data and create detailed report with actionable recommendations.',
                         'duration' => '5-7 Days'
                     ),
                     array(

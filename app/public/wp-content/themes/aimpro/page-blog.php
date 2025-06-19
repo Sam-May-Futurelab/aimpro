@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 /**
  * Template Name: Blog Page
  * Description: Blog listing page with WordPress posts
@@ -162,7 +162,7 @@ get_header(); ?>
                                                 </div>
                                             </article>                                            <article class="post-card animate-on-scroll animate-stagger animate-fade-up">
                                                 <div class="post-image">
-                                                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/blog/ppc-optimization.jpg" alt="PPC Optimization" />
+                                                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/blog/ppc-optimisation.jpg" alt="PPC optimisation" />
                                                 </div>
                                                 <div class="post-content">
                                                     <div class="post-meta">
@@ -170,10 +170,10 @@ get_header(); ?>
                                                         <span class="post-category">PPC</span>
                                                     </div>
                                                     <h3 class="post-title">
-                                                        <a href="#">5 PPC Optimization Strategies That Actually Work</a>
+                                                        <a href="#">5 PPC optimisation Strategies That Actually Work</a>
                                                     </h3>
                                                     <div class="post-excerpt">
-                                                        Learn proven PPC optimization techniques to improve your ad performance and ROI.
+                                                        Learn proven PPC optimisation techniques to improve your ad performance and ROI.
                                                     </div>
                                                     <a href="#" class="read-more">Read More</a>
                                                 </div>
@@ -308,10 +308,10 @@ get_header(); ?>
                             <p><?php echo esc_html(get_post_meta(get_the_ID(), 'blog_newsletter_subtitle', true) ?: 'Get weekly insights delivered to your inbox.'); ?></p>
                             
                             <!-- Orange background box with inline styles to prevent any CSS conflicts -->
-                            <div style="background: linear-gradient(135deg, #f15a25 0%, #f47b51 100%); padding: 20px; border-radius: 8px; margin-top: 15px; color: white; overflow: hidden;">
+                            <div style="background: linear-gradient(135deg, #f15a25 0%, #f47b51 100%); padding: 20px; border-radius: 8px; margin-top: 15px; colour: white; overflow: hidden;">
                                 <form action="#" method="post" style="display: flex; flex-direction: column; gap: 10px;">
                                     <input type="email" name="email" placeholder="Email" required style="width: 100%; box-sizing: border-box; padding: 12px 15px; border-radius: 8px; border: none; margin: 0; font-size: 16px;">
-                                    <button type="submit" style="width: 100%; box-sizing: border-box; background: white; color: #f15a25; border: none; padding: 12px; border-radius: 8px; font-weight: 600; cursor: pointer; font-size: 16px;"><?php echo esc_html(get_post_meta(get_the_ID(), 'blog_newsletter_button_text', true) ?: 'Subscribe'); ?></button>
+                                    <button type="submit" style="width: 100%; box-sizing: border-box; background: white; colour: #f15a25; border: none; padding: 12px; border-radius: 8px; font-weight: 600; cursor: pointer; font-size: 16px;"><?php echo esc_html(get_post_meta(get_the_ID(), 'blog_newsletter_button_text', true) ?: 'Subscribe'); ?></button>
                                 </form>
                             </div>
                         </div>

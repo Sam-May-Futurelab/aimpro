@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 /**
  * Template Name: Resources Page
  * Description: Main resources hub page
@@ -38,7 +38,7 @@ get_header(); ?>
                             <i class="fas fa-search"></i>
                         </div>
                         <h3>SEO Services</h3>
-                        <p>Boost your search rankings with our comprehensive SEO strategies and optimization techniques.</p>
+                        <p>Boost your search rankings with our comprehensive SEO strategies and optimisation techniques.</p>
                         <div class="service-links">
                             <a href="<?php echo home_url('/services/seo'); ?>" class="btn btn-primary">SEO Services</a>
                             <a href="<?php echo home_url('/seo-audit'); ?>" class="btn btn-outline">Free SEO Audit</a>
@@ -50,7 +50,7 @@ get_header(); ?>
                             <i class="fas fa-bullhorn"></i>
                         </div>
                         <h3>Google Ads & PPC</h3>
-                        <p>Drive targeted traffic and maximize ROI with our expert Google Ads and PPC management.</p>
+                        <p>Drive targeted traffic and maximise ROI with our expert Google Ads and PPC management.</p>
                         <div class="service-links">
                             <a href="<?php echo home_url('/services/google-ads'); ?>" class="btn btn-primary">Google Ads</a>
                             <a href="<?php echo home_url('/services/ppc'); ?>" class="btn btn-outline">PPC Management</a>
@@ -86,7 +86,7 @@ get_header(); ?>
                             <i class="fas fa-envelope"></i>
                         </div>
                         <h3>Email Marketing</h3>
-                        <p>Nurture leads and drive conversions with personalized email marketing campaigns.</p>
+                        <p>Nurture leads and drive conversions with personalised email marketing campaigns.</p>
                         <div class="service-links">
                             <a href="<?php echo home_url('/services/email-marketing'); ?>" class="btn btn-primary">Email Marketing</a>
                             <a href="<?php echo home_url('/services/automation'); ?>" class="btn btn-outline">Automation</a>
@@ -98,10 +98,10 @@ get_header(); ?>
                             <i class="fas fa-chart-line"></i>
                         </div>
                         <h3>Analytics & Reporting</h3>
-                        <p>Track performance and optimize campaigns with detailed analytics and reporting solutions.</p>
+                        <p>Track performance and optimise campaigns with detailed analytics and reporting solutions.</p>
                         <div class="service-links">
                             <a href="<?php echo home_url('/services/analytics'); ?>" class="btn btn-primary">Analytics</a>
-                            <a href="<?php echo home_url('/services/conversion-optimization'); ?>" class="btn btn-outline">CRO</a>
+                            <a href="<?php echo home_url('/services/conversion-optimisation'); ?>" class="btn btn-outline">CRO</a>
                         </div>
                     </div>
                 </div>
@@ -111,7 +111,7 @@ get_header(); ?>
         <!-- Knowledge Hub -->
         <section class="tools-section knowledge-hub">
             <div class="container">
-                <div class="section-header text-center animate-on-scroll animate-fade-up">
+                <div class="section-header text-centre animate-on-scroll animate-fade-up">
                     <h2>Digital Marketing Knowledge Hub</h2>
                     <p>Expert insights, guides, and resources to accelerate your digital marketing success</p>
                 </div>
@@ -155,7 +155,7 @@ get_header(); ?>
                     </div>                    <div class="tool-card knowledge-card animate-on-scroll animate-stagger animate-fade-up">
                         <div class="tool-info">
                             <h3>Training & Mentoring</h3>
-                            <p>Accelerate your skills with personalized training programs and expert mentoring.</p>
+                            <p>Accelerate your skills with personalised training programs and expert mentoring.</p>
                             <ul class="tool-features">
                                 <li>One-on-One Mentoring</li>
                                 <li>Team Training Sessions</li>
@@ -170,7 +170,7 @@ get_header(); ?>
         </section><!-- Newsletter CTA -->
     <section class="cta-section newsletter-cta">
         <div class="container">
-            <div class="cta-content text-center animate-on-scroll animate-scale-up">
+            <div class="cta-content text-centre animate-on-scroll animate-scale-up">
                 <h2>Stay Updated with the Latest Insights</h2>
                 <p>Get the latest resources, industry updates, and expert tips delivered directly to your inbox every week.</p>                <form class="newsletter-form" action="#" method="post">
                     <div class="form-group">

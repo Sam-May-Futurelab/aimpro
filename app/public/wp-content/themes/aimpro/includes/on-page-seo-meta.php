@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 // On-Page SEO page meta boxes and fields
 
 // Add meta boxes
@@ -110,9 +110,9 @@ add_action('add_meta_boxes', function() {
 // Header callback
 function on_page_seo_header_callback($post) {
     $header_title = get_post_meta($post->ID, 'on_page_seo_header_title', true) ?: 'On-Page SEO Services';
-    $header_subtitle = get_post_meta($post->ID, 'on_page_seo_header_subtitle', true) ?: 'Optimize every page element to boost search rankings and user experience';
+    $header_subtitle = get_post_meta($post->ID, 'on_page_seo_header_subtitle', true) ?: 'optimise every page element to boost search rankings and user experience';
     $header_badges = get_post_meta($post->ID, 'on_page_seo_header_badges', true) ?: array(
-        'Content Optimization',
+        'Content optimisation',
         'Technical Implementation',
         'User Experience'
     );
@@ -141,8 +141,8 @@ function on_page_seo_header_callback($post) {
 
 // Overview callback
 function on_page_seo_overview_callback($post) {
-    $overview_title = get_post_meta($post->ID, 'on_page_seo_overview_title', true) ?: 'Comprehensive On-Page SEO Optimization';
-    $overview_description_1 = get_post_meta($post->ID, 'on_page_seo_overview_description_1', true) ?: 'Our on-page SEO services focus on optimizing individual web pages to rank higher and earn more relevant traffic in search engines. We optimize both the content and HTML source code of a page, ensuring every element contributes to your search visibility and user experience.';
+    $overview_title = get_post_meta($post->ID, 'on_page_seo_overview_title', true) ?: 'Comprehensive On-Page SEO optimisation';
+    $overview_description_1 = get_post_meta($post->ID, 'on_page_seo_overview_description_1', true) ?: 'Our on-page SEO services focus on optimising individual web pages to rank higher and earn more relevant traffic in search engines. We optimise both the content and HTML source code of a page, ensuring every element contributes to your search visibility and user experience.';
     $overview_description_2 = get_post_meta($post->ID, 'on_page_seo_overview_description_2', true) ?: 'From title tags and meta descriptions to content structure and internal linking, our systematic approach to on-page SEO ensures your website communicates effectively with both search engines and users.';
     $stats = get_post_meta($post->ID, 'on_page_seo_stats', true) ?: array(
         array('number' => '73%', 'label' => 'Average ranking improvement'),
@@ -181,28 +181,28 @@ function on_page_seo_services_callback($post) {
     $services_title = get_post_meta($post->ID, 'on_page_seo_services_title', true) ?: 'Our On-Page SEO Services';
     $services = get_post_meta($post->ID, 'on_page_seo_services', true) ?: array(
         array(
-            'title' => 'Title Tag & Meta Description Optimization',
+            'title' => 'Title Tag & Meta Description optimisation',
             'description' => 'Craft compelling title tags and meta descriptions that improve click-through rates and communicate page relevance to search engines.',
             'features' => array(
-                'Keyword-optimized title tags',
+                'Keyword-optimised title tags',
                 'Compelling meta descriptions',
-                'SERP preview optimization',
+                'SERP preview optimisation',
                 'Character limit compliance'
             )
         ),
         array(
-            'title' => 'Content Structure & Optimization',
-            'description' => 'Optimize content structure using proper heading hierarchy, keyword placement, and semantic markup for better search visibility.',
+            'title' => 'Content Structure & optimisation',
+            'description' => 'optimise content structure using proper heading hierarchy, keyword placement, and semantic markup for better search visibility.',
             'features' => array(
-                'H1-H6 heading optimization',
+                'H1-H6 heading optimisation',
                 'Keyword density analysis',
                 'Content readability improvement',
-                'Featured snippet optimization'
+                'Featured snippet optimisation'
             )
         ),
         array(
-            'title' => 'URL Structure & Optimization',
-            'description' => 'Create SEO-friendly URL structures that are both user-friendly and search engine optimized for maximum visibility.',
+            'title' => 'URL Structure & optimisation',
+            'description' => 'Create SEO-friendly URL structures that are both user-friendly and search engine optimised for maximum visibility.',
             'features' => array(
                 'Clean URL structure',
                 'Keyword-rich URLs',
@@ -211,10 +211,10 @@ function on_page_seo_services_callback($post) {
             )
         ),
         array(
-            'title' => 'Image & Media Optimization',
-            'description' => 'Optimize images and media files for faster loading times and better search engine understanding of your content.',
+            'title' => 'Image & Media optimisation',
+            'description' => 'optimise images and media files for faster loading times and better search engine understanding of your content.',
             'features' => array(
-                'Alt text optimization',
+                'Alt text optimisation',
                 'Image file compression',
                 'Descriptive file names',
                 'WebP format conversion'
@@ -225,7 +225,7 @@ function on_page_seo_services_callback($post) {
             'description' => 'Develop strategic internal linking structures that distribute page authority and improve user navigation throughout your site.',
             'features' => array(
                 'Link architecture planning',
-                'Anchor text optimization',
+                'Anchor text optimisation',
                 'Deep linking strategies',
                 'Link equity distribution'
             )
@@ -234,7 +234,7 @@ function on_page_seo_services_callback($post) {
             'title' => 'Schema Markup Implementation',
             'description' => 'Implement structured data markup to help search engines better understand your content and enable rich snippets.',
             'features' => array(
-                'Rich snippet optimization',
+                'Rich snippet optimisation',
                 'Local business schema',
                 'Product schema markup',
                 'FAQ and How-to schemas'
@@ -272,8 +272,8 @@ function on_page_seo_services_callback($post) {
 // Case Study callback
 function on_page_seo_case_study_callback($post) {
     $case_study_title = get_post_meta($post->ID, 'on_page_seo_case_study_title', true) ?: 'Case Study: Professional Services Firm';
-    $case_study_subtitle = get_post_meta($post->ID, 'on_page_seo_case_study_subtitle', true) ?: 'Complete On-Page Optimization Drives 425% Traffic Growth';
-    $case_study_description = get_post_meta($post->ID, 'on_page_seo_case_study_description', true) ?: 'A London-based professional services firm approached us with poor search rankings and low organic visibility. Our comprehensive on-page optimization strategy transformed their digital presence.';
+    $case_study_subtitle = get_post_meta($post->ID, 'on_page_seo_case_study_subtitle', true) ?: 'Complete On-Page optimisation Drives 425% Traffic Growth';
+    $case_study_description = get_post_meta($post->ID, 'on_page_seo_case_study_description', true) ?: 'A London-based professional services firm approached us with poor search rankings and low organic visibility. Our comprehensive on-page optimisation strategy transformed their digital presence.';
     $challenges = get_post_meta($post->ID, 'on_page_seo_challenges', true) ?: array(
         'Pages ranking beyond position 50 for target keywords',
         'Poor content structure and keyword targeting',
@@ -347,7 +347,7 @@ function on_page_seo_process_callback($post) {
     $process_steps = get_post_meta($post->ID, 'on_page_seo_process_steps', true) ?: array(
         array(
             'title' => 'Content Audit & Analysis',
-            'description' => 'Comprehensive review of existing content, identifying optimization opportunities and gaps in your current on-page SEO strategy.'
+            'description' => 'Comprehensive review of existing content, identifying optimisation opportunities and gaps in your current on-page SEO strategy.'
         ),
         array(
             'title' => 'Keyword Research & Mapping',
@@ -355,11 +355,11 @@ function on_page_seo_process_callback($post) {
         ),
         array(
             'title' => 'Technical Implementation',
-            'description' => 'Systematic implementation of on-page optimizations including title tags, meta descriptions, headers, and technical elements.'
+            'description' => 'Systematic implementation of on-page optimisations including title tags, meta descriptions, headers, and technical elements.'
         ),
         array(
-            'title' => 'Content Optimization',
-            'description' => 'Optimize content structure, readability, and keyword placement while maintaining natural flow and user value.'
+            'title' => 'Content optimisation',
+            'description' => 'optimise content structure, readability, and keyword placement while maintaining natural flow and user value.'
         ),
         array(
             'title' => 'Monitoring & Refinement',
@@ -401,10 +401,10 @@ function on_page_seo_tools_callback($post) {
             )
         ),
         array(
-            'title' => 'Content Optimization',
+            'title' => 'Content optimisation',
             'tools' => array(
                 'Surfer SEO Content Editor',
-                'Clearscope Content Optimization',
+                'Clearscope Content optimisation',
                 'MarketMuse Content Planning',
                 'Grammarly for Readability'
             )
@@ -459,19 +459,19 @@ function on_page_seo_industries_callback($post) {
     $industries = get_post_meta($post->ID, 'on_page_seo_industries', true) ?: array(
         array(
             'title' => 'E-commerce',
-            'description' => 'Product page optimization, category structure, and schema markup for enhanced product visibility in search results.'
+            'description' => 'Product page optimisation, category structure, and schema markup for enhanced product visibility in search results.'
         ),
         array(
             'title' => 'Professional Services',
-            'description' => 'Service page optimization, local business schema, and content structure to attract high-value clients.'
+            'description' => 'Service page optimisation, local business schema, and content structure to attract high-value clients.'
         ),
         array(
             'title' => 'Healthcare',
-            'description' => 'Medical content optimization, YMYL compliance, and structured data for healthcare providers and services.'
+            'description' => 'Medical content optimisation, YMYL compliance, and structured data for healthcare providers and services.'
         ),
         array(
             'title' => 'Real Estate',
-            'description' => 'Property listing optimization, local area content, and schema markup for enhanced search visibility.'
+            'description' => 'Property listing optimisation, local area content, and schema markup for enhanced search visibility.'
         )
     );
     
@@ -505,15 +505,15 @@ function on_page_seo_faqs_callback($post) {
         ),
         array(
             'question' => 'What\'s the difference between on-page and technical SEO?',
-            'answer' => 'On-page SEO focuses on optimizing individual page content and HTML elements, while technical SEO addresses site-wide technical issues like crawlability, site speed, and mobile-friendliness.'
+            'answer' => 'On-page SEO focuses on optimising individual page content and HTML elements, while technical SEO addresses site-wide technical issues like crawlability, site speed, and mobile-friendliness.'
         ),
         array(
-            'question' => 'Do you provide ongoing on-page optimization?',
-            'answer' => 'Yes, we offer both one-time optimization services and ongoing monthly optimization as part of our comprehensive SEO packages to maintain and improve performance over time.'
+            'question' => 'Do you provide ongoing on-page optimisation?',
+            'answer' => 'Yes, we offer both one-time optimisation services and ongoing monthly optimisation as part of our comprehensive SEO packages to maintain and improve performance over time.'
         ),
         array(
             'question' => 'How do you measure on-page SEO success?',
-            'answer' => 'We track keyword rankings, organic traffic growth, click-through rates, time on page, and conversions to measure the effectiveness of our on-page optimizations.'
+            'answer' => 'We track keyword rankings, organic traffic growth, click-through rates, time on page, and conversions to measure the effectiveness of our on-page optimisations.'
         )
     );
     
@@ -539,7 +539,7 @@ function on_page_seo_faqs_callback($post) {
 
 // Testimonial callback
 function on_page_seo_testimonial_callback($post) {
-    $testimonial_quote = get_post_meta($post->ID, 'on_page_seo_testimonial_quote', true) ?: 'The on-page optimization work AIM Pro Marketing did for our website was incredible. Within 3 months, we saw our main service pages ranking on the first page of Google. The attention to detail in optimizing every element was impressive.';
+    $testimonial_quote = get_post_meta($post->ID, 'on_page_seo_testimonial_quote', true) ?: 'The on-page optimisation work AIM Pro Marketing did for our website was incredible. Within 3 months, we saw our main service pages ranking on the first page of Google. The attention to detail in optimising every element was impressive.';
     $testimonial_author_name = get_post_meta($post->ID, 'on_page_seo_testimonial_author_name', true) ?: 'Sarah Mitchell';
     $testimonial_author_title = get_post_meta($post->ID, 'on_page_seo_testimonial_author_title', true) ?: 'Marketing Director, Professional Services Ltd';
     
@@ -558,15 +558,15 @@ function on_page_seo_testimonial_callback($post) {
 
 // CTA callback
 function on_page_seo_cta_callback($post) {
-    $cta_title = get_post_meta($post->ID, 'on_page_seo_cta_title', true) ?: 'Ready to Optimize Your Website Pages?';
-    $cta_description = get_post_meta($post->ID, 'on_page_seo_cta_description', true) ?: 'Get a comprehensive on-page SEO audit and strategy session. We\'ll identify optimization opportunities and show you how to improve your search rankings.';
+    $cta_title = get_post_meta($post->ID, 'on_page_seo_cta_title', true) ?: 'Ready to optimise Your Website Pages?';
+    $cta_description = get_post_meta($post->ID, 'on_page_seo_cta_description', true) ?: 'Get a comprehensive on-page SEO audit and strategy session. We\'ll identify optimisation opportunities and show you how to improve your search rankings.';
     $cta_primary_text = get_post_meta($post->ID, 'on_page_seo_cta_primary_text', true) ?: 'Get Free SEO Audit';
     $cta_primary_url = get_post_meta($post->ID, 'on_page_seo_cta_primary_url', true) ?: home_url('/contact');
     $cta_secondary_text = get_post_meta($post->ID, 'on_page_seo_cta_secondary_text', true) ?: 'View All SEO Services';
     $cta_secondary_url = get_post_meta($post->ID, 'on_page_seo_cta_secondary_url', true) ?: home_url('/seo-services');
     $cta_features = get_post_meta($post->ID, 'on_page_seo_cta_features', true) ?: array(
         'Free 30-minute consultation',
-        'Detailed optimization recommendations',
+        'Detailed optimisation recommendations',
         'No obligation quote'
     );
     

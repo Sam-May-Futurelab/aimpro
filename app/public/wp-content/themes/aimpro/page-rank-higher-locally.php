@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 /**
  * Template Name: Rank Higher Locally Solution Page
  * Description: Local SEO solution for improved local search visibility
@@ -33,7 +33,7 @@ get_header(); ?>
                                     $challenges = array(
                                         'Poor visibility in local search results',
                                         'Inconsistent business information online',
-                                        'Limited Google My Business optimization',
+                                        'Limited Google My Business optimisation',
                                         'Lack of local customer reviews',
                                         'Competition from national chains',
                                         'Difficulty ranking for location-based keywords'
@@ -72,11 +72,11 @@ get_header(); ?>
                     // Force use of updated hardcoded services array
                     $services = array(
                             array(
-                                'title' => 'Google My Business Optimization',
+                                'title' => 'Google My Business optimisation',
                                 'description' => 'Maximize your Google My Business profile to appear prominently in local search results and Google Maps.',                                'features' => array(
-                                    'Complete profile optimization',
+                                    'Complete profile optimisation',
                                     'Regular posting and updates',
-                                    'Photo and video optimization'
+                                    'Photo and video optimisation'
                                 ),                                'icon' => 'fab fa-google'
                             ),
                             array(
@@ -91,12 +91,12 @@ get_header(); ?>
                                 'icon' => 'fas fa-star'
                             ),
                             array(
-                                'title' => 'Local Keyword Optimization',
+                                'title' => 'Local Keyword optimisation',
                                 'description' => 'Target location-specific keywords that drive local traffic and qualified leads to your business.',
                                 'features' => array(
                                     'Local keyword research',
                                     'Location page creation',
-                                    'Service area optimization',
+                                    'Service area optimisation',
                                     'Local content strategy'
                                 ),                                'icon' => 'fas fa-search-location'
                             )
@@ -159,7 +159,7 @@ get_header(); ?>
                                 $case_solutions = get_post_meta(get_the_ID(), '_rank_higher_locally_case_study_solutions', true);
                                 if (empty($case_solutions)) {
                                     $case_solutions = array(
-                                        'Complete Google My Business optimization',
+                                        'Complete Google My Business optimisation',
                                         'Local citation building campaign',
                                         'Review generation system implementation',
                                         'Location-specific content creation'
@@ -223,8 +223,8 @@ get_header(); ?>
                             ),
                             array(
                                 'number' => '2',
-                                'title' => 'Foundation Optimization',
-                                'description' => 'Optimize Google My Business, fix NAP inconsistencies, and establish local search foundation.'
+                                'title' => 'Foundation optimisation',
+                                'description' => 'optimise Google My Business, fix NAP inconsistencies, and establish local search foundation.'
                             ),
                             array(
                                 'number' => '3',
@@ -233,8 +233,8 @@ get_header(); ?>
                             ),
                             array(
                                 'number' => '4',
-                                'title' => 'Monitoring & Optimization',
-                                'description' => 'Track local rankings, monitor reviews, and continuously optimize for better performance.'
+                                'title' => 'Monitoring & optimisation',
+                                'description' => 'Track local rankings, monitor reviews, and continuously optimise for better performance.'
                             )
                         );
                     }
@@ -259,7 +259,7 @@ get_header(); ?>
             <div class="container">
                 <div class="overview-content animate-on-scroll animate-fade-up">
                     <h2><?php echo esc_html(get_post_meta(get_the_ID(), '_rank_higher_locally_benefits_title', true) ?: 'Local SEO Benefits for Your Business'); ?></h2>
-                    <p><?php echo esc_html(get_post_meta(get_the_ID(), '_rank_higher_locally_benefits_description', true) ?: 'Powerful local search optimization that drives real business results'); ?></p>
+                    <p><?php echo esc_html(get_post_meta(get_the_ID(), '_rank_higher_locally_benefits_description', true) ?: 'Powerful local search optimisation that drives real business results'); ?></p>
                 </div>
                 
                 <div class="services-grid">
@@ -291,7 +291,7 @@ get_header(); ?>
                         ),
                         array(
                             'title' => 'Higher Conversion Rates',
-                            'description' => 'Convert more website visitors into customers with local-focused optimization.',
+                            'description' => 'Convert more website visitors into customers with local-focused optimisation.',
                             'icon' => 'fas fa-chart-line'
                         )
                     );
@@ -344,7 +344,7 @@ get_header(); ?>
                         $cta_benefits = array(
                             '✓ Complete local presence audit',
                             '✓ Competitor analysis included',
-                            '✓ Custom optimization roadmap'
+                            '✓ Custom optimisation roadmap'
                         );
                     }
                     foreach ($cta_benefits as $benefit) {

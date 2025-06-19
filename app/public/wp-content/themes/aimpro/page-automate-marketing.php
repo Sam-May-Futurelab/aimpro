@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 /**
  * Template Name: Automate Marketing Solution Page
  * Description: Marketing automation solution for streamlined campaigns
@@ -20,7 +20,7 @@ get_header(); ?>
                 <div class="overview-content">
                     <div class="overview-text animate-on-scroll animate-slide-left">
                         <h2><?php echo esc_html(get_post_meta(get_the_ID(), '_automate_marketing_overview_title', true) ?: 'Transform Manual Tasks Into Automated Success'); ?></h2>
-                        <p><?php echo esc_html(get_post_meta(get_the_ID(), '_automate_marketing_overview_content', true) ?: 'Marketing automation eliminates repetitive tasks while delivering personalized experiences at scale. Our comprehensive automation strategies help you nurture leads, engage customers, and drive conversions without constant manual intervention, freeing your team to focus on strategy and growth.'); ?></p>
+                        <p><?php echo esc_html(get_post_meta(get_the_ID(), '_automate_marketing_overview_content', true) ?: 'Marketing automation eliminates repetitive tasks while delivering personalised experiences at scale. Our comprehensive automation strategies help you nurture leads, engage customers, and drive conversions without constant manual intervention, freeing your team to focus on strategy and growth.'); ?></p>
                         
                         <div class="solution-challenges">
                             <h3><?php echo esc_html(get_post_meta(get_the_ID(), '_automate_marketing_challenges_title', true) ?: 'Marketing Automation Challenges We Solve:'); ?></h3>
@@ -31,10 +31,10 @@ get_header(); ?>
                                     $challenges = array(
                                         'Time-consuming manual marketing tasks',
                                         'Inconsistent lead follow-up',
-                                        'Difficulty scaling personalized campaigns',
+                                        'Difficulty scaling personalised campaigns',
                                         'Poor lead scoring and qualification',
                                         'Disconnected marketing and sales processes',
-                                        'Lack of behavioral trigger campaigns'
+                                        'Lack of behavioural trigger campaigns'
                                     );
                                 }
                                 foreach ($challenges as $challenge) {
@@ -73,17 +73,17 @@ get_header(); ?>
                         $solutions = array(
                             array(
                                 'title' => 'Email Marketing Automation',
-                                'description' => 'Create sophisticated email workflows that nurture leads and customers through personalized journeys.',
+                                'description' => 'Create sophisticated email workflows that nurture leads and customers through personalised journeys.',
                                 'features' => array(
                                     'Welcome email sequences',
                                     'Abandoned cart recovery',
-                                    'Behavioral trigger campaigns',
+                                    'behavioural trigger campaigns',
                                     'Re-engagement workflows'
                                 )
                             ),
                             array(
                                 'title' => 'Lead Scoring & Nurturing',
-                                'description' => 'Automatically score and segment leads based on behavior, demographics, and engagement levels.',
+                                'description' => 'Automatically score and segment leads based on behaviour, demographics, and engagement levels.',
                                 'features' => array(
                                     'Dynamic lead scoring models',
                                     'Progressive profiling',
@@ -93,7 +93,7 @@ get_header(); ?>
                             ),
                             array(
                                 'title' => 'Social Media Automation',
-                                'description' => 'Schedule, publish, and optimize social media content across multiple platforms automatically.',
+                                'description' => 'Schedule, publish, and optimise social media content across multiple platforms automatically.',
                                 'features' => array(
                                     'Content scheduling & publishing',
                                     'Social listening automation',
@@ -116,24 +116,24 @@ get_header(); ?>
 
                     $solution_icons = array(
                         '<svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M4 4H20C21.1 4 22 4.9 22 6V18C22 19.1 21.1 20 20 20H4C2.9 20 2 19.1 2 18V6C2 4.9 2.9 4 4 4Z" stroke="currentColor" stroke-width="2"/>
-                            <polyline points="22,6 12,13 2,6" stroke="currentColor" stroke-width="2"/>
+                            <path d="M4 4H20C21.1 4 22 4.9 22 6V18C22 19.1 21.1 20 20 20H4C2.9 20 2 19.1 2 18V6C2 4.9 2.9 4 4 4Z" stroke="currentcolour" stroke-width="2"/>
+                            <polyline points="22,6 12,13 2,6" stroke="currentcolour" stroke-width="2"/>
                         </svg>',
                         '<svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M17 21V19C17 17.9391 16.5786 16.9217 15.8284 16.1716C15.0783 15.4214 14.0609 15 13 15H5C3.93913 15 2.92172 15.4214 2.17157 16.1716C1.42143 16.9217 1 17.9391 1 19V21" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                            <circle cx="9" cy="7" r="4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                            <path d="M23 21V19C23 18.1645 22.7045 17.3541 22.1679 16.7116C21.6313 16.0691 20.8902 15.6316 20.07 15.4662" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                            <path d="M16 3.13281C16.8902 3.29814 17.6313 3.73574 18.1679 4.37823C18.7045 5.02072 19 5.83115 19 6.66656C19 7.50197 18.7045 8.3124 18.1679 8.95489C17.6313 9.59738 16.8902 10.035 16 10.2003" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M17 21V19C17 17.9391 16.5786 16.9217 15.8284 16.1716C15.0783 15.4214 14.0609 15 13 15H5C3.93913 15 2.92172 15.4214 2.17157 16.1716C1.42143 16.9217 1 17.9391 1 19V21" stroke="currentcolour" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <circle cx="9" cy="7" r="4" stroke="currentcolour" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M23 21V19C23 18.1645 22.7045 17.3541 22.1679 16.7116C21.6313 16.0691 20.8902 15.6316 20.07 15.4662" stroke="currentcolour" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M16 3.13281C16.8902 3.29814 17.6313 3.73574 18.1679 4.37823C18.7045 5.02072 19 5.83115 19 6.66656C19 7.50197 18.7045 8.3124 18.1679 8.95489C17.6313 9.59738 16.8902 10.035 16 10.2003" stroke="currentcolour" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                         </svg>',
                         '<svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M18 20V10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                            <path d="M12 20V4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                            <path d="M6 20V14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M18 20V10" stroke="currentcolour" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M12 20V4" stroke="currentcolour" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M6 20V14" stroke="currentcolour" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                         </svg>',
                         '<svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                            <path d="M2 17L12 22L22 17" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                            <path d="M2 12L12 17L22 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="currentcolour" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M2 17L12 22L22 17" stroke="currentcolour" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M2 12L12 17L22 12" stroke="currentcolour" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                         </svg>'
                     );
 
@@ -196,7 +196,7 @@ get_header(); ?>
                                         'Complete marketing automation setup',
                                         'Lead scoring and nurturing workflows',
                                         'CRM integration and sales automation',
-                                        'Behavioral trigger campaign implementation'
+                                        'behavioural trigger campaign implementation'
                                     );
                                 }
                                 foreach ($case_solutions as $solution) {
@@ -273,8 +273,8 @@ get_header(); ?>
                             ),
                             array(
                                 'number' => '4',
-                                'title' => 'Testing & Optimization',
-                                'description' => 'Monitor performance, A/B test workflows, and continuously optimize for better results.'
+                                'title' => 'Testing & optimisation',
+                                'description' => 'Monitor performance, A/B test workflows, and continuously optimise for better results.'
                             )
                         );
                     }
@@ -317,7 +317,7 @@ get_header(); ?>
                             ),
                             array(
                                 'title' => 'Increased Conversions',
-                                'description' => 'Nurture leads more effectively with personalized, timely communications that drive action.',
+                                'description' => 'Nurture leads more effectively with personalised, timely communications that drive action.',
                                 'icon_class' => 'fas fa-chart-line'
                             ),
                             array(
@@ -352,7 +352,7 @@ get_header(); ?>
                     <div class="service-item">
                         <div class="service-icon"><i class="fas fa-envelope-open-text"></i></div>
                         <h3>Email Automation</h3>
-                        <ul style="text-align: left; color: #666; line-height: 1.8;">
+                        <ul style="text-align: left; colour: #666; line-height: 1.8;">
                             <li>HubSpot Marketing Hub</li>
                             <li>Mailchimp Automation</li>
                             <li>ActiveCampaign</li>
@@ -362,7 +362,7 @@ get_header(); ?>
                     <div class="service-item">
                         <div class="service-icon"><i class="fas fa-users-cog"></i></div>
                         <h3>CRM Integration</h3>
-                        <ul style="text-align: left; color: #666; line-height: 1.8;">
+                        <ul style="text-align: left; colour: #666; line-height: 1.8;">
                             <li>Salesforce Automation</li>
                             <li>HubSpot CRM</li>
                             <li>Pipedrive Workflows</li>
@@ -372,7 +372,7 @@ get_header(); ?>
                     <div class="service-item">
                         <div class="service-icon"><i class="fas fa-share-alt"></i></div>
                         <h3>Social Media Automation</h3>
-                        <ul style="text-align: left; color: #666; line-height: 1.8;">
+                        <ul style="text-align: left; colour: #666; line-height: 1.8;">
                             <li>Hootsuite Scheduling</li>
                             <li>Buffer Automation</li>
                             <li>Sprout Social</li>
@@ -382,7 +382,7 @@ get_header(); ?>
                     <div class="service-item">
                         <div class="service-icon"><i class="fas fa-chart-bar"></i></div>
                         <h3>Analytics & Reporting</h3>
-                        <ul style="text-align: left; color: #666; line-height: 1.8;">
+                        <ul style="text-align: left; colour: #666; line-height: 1.8;">
                             <li>Google Analytics 4</li>
                             <li>HubSpot Analytics</li>
                             <li>Mixpanel Events</li>
@@ -425,7 +425,7 @@ get_header(); ?>
                         if (empty($features)) {                            $features = array(
                                 '<i class="fas fa-check" aria-hidden="true"></i> Custom workflow design',
                                 '<i class="fas fa-check" aria-hidden="true"></i> Full platform integration',
-                                '<i class="fas fa-check" aria-hidden="true"></i> Ongoing optimization'
+                                '<i class="fas fa-check" aria-hidden="true"></i> Ongoing optimisation'
                             );
                         }
                         foreach ($features as $feature) {

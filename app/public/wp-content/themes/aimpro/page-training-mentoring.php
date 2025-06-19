@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 /**
  * Template Name: Training & Mentoring Page
  * Description: Training programs and mentoring services
@@ -29,16 +29,16 @@ get_header(); ?>
 }
 .step-number {
     display: inline-flex !important;
-    align-items: center !important;
-    justify-content: center !important;
+    align-items: centre !important;
+    justify-content: centre !important;
     width: 24px !important;
     height: 24px !important;
     min-width: 24px !important;
     min-height: 24px !important;
     margin: 0 0.75rem 0 0 !important;
     padding: 0 !important;
-    background-color: #f15a25 !important;
-    color: white !important;
+    background-colour: #f15a25 !important;
+    colour: white !important;
     border-radius: 50% !important;
     font-size: 14px !important;
     font-weight: 700 !important;
@@ -46,7 +46,7 @@ get_header(); ?>
     position: relative !important;
     top: 0 !important;
     left: 0 !important;
-    text-align: center !important;
+    text-align: centre !important;
     flex-shrink: 0 !important;
 }
 .step-title {
@@ -55,7 +55,7 @@ get_header(); ?>
     padding: 0 !important;
     width: auto !important;
     flex: 1 !important;
-    color: #5a6a7e !important;
+    colour: #5a6a7e !important;
     font-size: 15px !important;
     font-weight: 400 !important;
     line-height: 1.5 !important;
@@ -74,14 +74,14 @@ get_header(); ?>
         <section class="page-header animate-on-scroll animate-fade-up">
             <div class="page-header-content">
                 <h1><?php echo esc_html(get_post_meta(get_the_ID(), '_training_mentoring_header_title', true) ?: 'Training & Mentoring'); ?></h1>
-                <p class="page-subtitle"><?php echo esc_html(get_post_meta(get_the_ID(), '_training_mentoring_header_subtitle', true) ?: 'Accelerate your digital marketing expertise with personalized guidance'); ?></p>
+                <p class="page-subtitle"><?php echo esc_html(get_post_meta(get_the_ID(), '_training_mentoring_header_subtitle', true) ?: 'Accelerate your digital marketing expertise with personalised guidance'); ?></p>
             </div>
         </section>        <!-- Training Introduction -->
         <section class="training-intro animate-on-scroll animate-fade-up">
             <div class="section-content">
                 <div class="intro-content animate-on-scroll animate-slide-left">
                     <h2><?php echo esc_html(get_post_meta(get_the_ID(), '_training_mentoring_intro_title', true) ?: 'Invest in Your Digital Marketing Future'); ?></h2>
-                    <p><?php echo esc_html(get_post_meta(get_the_ID(), '_training_mentoring_intro_content', true) ?: 'Whether you\'re looking to upskill your team, advance your career, or master specific digital marketing disciplines, our training and mentoring programs provide the personalized guidance you need to achieve your goals faster.'); ?></p>
+                    <p><?php echo esc_html(get_post_meta(get_the_ID(), '_training_mentoring_intro_content', true) ?: 'Whether you\'re looking to upskill your team, advance your career, or master specific digital marketing disciplines, our training and mentoring programs provide the personalised guidance you need to achieve your goals faster.'); ?></p>
                 </div>
 
                 <div class="training-benefits animate-on-scroll animate-slide-right">
@@ -91,7 +91,7 @@ get_header(); ?>
                         $benefits = array(
                             array(
                                 'icon' => 'fas fa-crosshairs',
-                                'title' => 'Personalized Approach',
+                                'title' => 'personalised Approach',
                                 'description' => 'Tailored programs based on your current skills and specific goals'
                             ),
                             array(
@@ -138,7 +138,7 @@ get_header(); ?>
                                 'price' => '£149',
                                 'period' => 'per session',
                                 'description' => 'One-on-one mentoring sessions with senior digital marketing experts tailored to your specific needs and career goals.',
-                                'features' => array('1-hour intensive sessions', 'Personalized learning plan', 'Homework assignments', 'Progress tracking', 'Email support between sessions', 'Industry certification guidance'),
+                                'features' => array('1-hour intensive sessions', 'personalised learning plan', 'Homework assignments', 'Progress tracking', 'Email support between sessions', 'Industry certification guidance'),
                                 'topics_title' => 'Choose Your Focus Area:',
                                 'topics' => array('SEO Strategy', 'PPC Management', 'Content Marketing', 'Social Media', 'Analytics', 'Strategy'),
                                 'cta_text' => 'Book Session',
@@ -294,7 +294,7 @@ get_header(); ?>
                                 'title' => 'Entrepreneur Track',
                                 'duration' => '4-8 months',
                                 'description' => 'Comprehensive training for business owners and entrepreneurs to master their own marketing.',
-                                'steps' => array('Business Marketing Strategy', 'Cost-Effective Tactics', 'Conversion Optimization', 'Growth Scaling'),
+                                'steps' => array('Business Marketing Strategy', 'Cost-Effective Tactics', 'Conversion optimisation', 'Growth Scaling'),
                                 'cta_text' => 'Start Learning Path',
                                 'cta_url' => '#'
                             )
@@ -344,7 +344,7 @@ get_header(); ?>
                                 'name' => 'Sarah Johnson',
                                 'title' => 'PPC & Paid Media Specialist',
                                 'description' => 'Google Ads certified professional with 12+ years managing multi-million pound advertising budgets across various industries.',
-                                'specialties' => array('Google Ads', 'Facebook Ads', 'Campaign Optimization'),
+                                'specialties' => array('Google Ads', 'Facebook Ads', 'Campaign optimisation'),
                                 'stats' => array('75+ mentees', '★★★★★ 4.8')
                             ),
                             array(
@@ -404,7 +404,7 @@ get_header(); ?>
                             ),
                             array(
                                 'question' => 'Can I get corporate training for my team?',
-                                'answer' => 'Absolutely! We offer customized corporate training programs for teams of any size. Contact us for a tailored proposal and volume discounts.'
+                                'answer' => 'Absolutely! We offer customised corporate training programs for teams of any size. Contact us for a tailored proposal and volume discounts.'
                             ),
                             array(
                                 'question' => 'Are sessions recorded?',
@@ -412,7 +412,7 @@ get_header(); ?>
                             ),
                             array(
                                 'question' => 'What certification do I receive?',
-                                'answer' => 'Our certification program provides an industry-recognized certificate upon completion, plus assistance with pursuing Google, Facebook, and other platform certifications.'
+                                'answer' => 'Our certification program provides an industry-recognised certificate upon completion, plus assistance with pursuing Google, Facebook, and other platform certifications.'
                             )
                         );
                     }
@@ -433,7 +433,7 @@ get_header(); ?>
                     <a href="<?php echo esc_url(get_post_meta(get_the_ID(), '_training_mentoring_cta_primary_url', true) ?: '#'); ?>" class="btn btn-primary"><?php echo esc_html(get_post_meta(get_the_ID(), '_training_mentoring_cta_primary_text', true) ?: 'Book Free Consultation'); ?></a>
                     <a href="<?php echo esc_url(get_post_meta(get_the_ID(), '_training_mentoring_cta_secondary_url', true) ?: home_url('/contact')); ?>" class="btn btn-secondary"><?php echo esc_html(get_post_meta(get_the_ID(), '_training_mentoring_cta_secondary_text', true) ?: 'Contact Us'); ?></a>
                 </div>
-                <p class="cta-note animate-on-scroll animate-fade-up"><?php echo esc_html(get_post_meta(get_the_ID(), '_training_mentoring_cta_note', true) ?: 'Free 15-minute consultation • No obligation • Personalized recommendations'); ?></p>
+                <p class="cta-note animate-on-scroll animate-fade-up"><?php echo esc_html(get_post_meta(get_the_ID(), '_training_mentoring_cta_note', true) ?: 'Free 15-minute consultation • No obligation • personalised recommendations'); ?></p>
             </div>
         </section>
 

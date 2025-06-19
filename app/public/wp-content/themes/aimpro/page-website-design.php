@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 /**
  * Template Name: Custom Website Design
  * 
@@ -12,8 +12,8 @@ get_header(); ?>
 <style>
 .tools-section .tool-icon {
     display: flex;
-    justify-content: center;
-    align-items: center;
+    justify-content: centre;
+    align-items: centre;
     margin: 0 auto 15px;
 }
 .tools-section .tool-icon i {
@@ -83,7 +83,7 @@ get_header(); ?>
         <div class="container">
             <div class="overview-content">                <div class="overview-text animate-on-scroll animate-slide-left">
                     <h2>Websites That Work As Hard As You Do</h2>
-                    <p class="overview-description">Our custom website design service creates powerful digital experiences that not only look stunning but convert visitors into customers. Every design decision is backed by user experience research and conversion optimization principles.</p>
+                    <p class="overview-description">Our custom website design service creates powerful digital experiences that not only look stunning but convert visitors into customers. Every design decision is backed by user experience research and conversion optimisation principles.</p>
                     
                     <h3 class="features-heading">Key Design Features</h3>
                     <div class="service-features-list">
@@ -94,11 +94,11 @@ get_header(); ?>
                         
                         <div class="service-feature-item">
                             <h4><i class="fas fa-mobile-alt"></i> Mobile-First Approach</h4>
-                            <p>Responsive designs optimized for all devices with emphasis on mobile user experience.</p>
+                            <p>Responsive designs optimised for all devices with emphasis on mobile user experience.</p>
                         </div>
                         
                         <div class="service-feature-item">
-                            <h4><i class="fas fa-chart-line"></i> Conversion Optimization</h4>
+                            <h4><i class="fas fa-chart-line"></i> Conversion optimisation</h4>
                             <p>Every element designed to guide visitors toward your desired actions and business goals.</p>
                         </div>
                         
@@ -122,7 +122,7 @@ get_header(); ?>
                     <div class="stat-item animate-on-scroll animate-stagger animate-scale-up">
                         <span class="stat-number">2.1s</span>
                         <span class="stat-label">Average Load Time</span>
-                    </div>                    <div class="overview-cta animate-on-scroll animate-fade-up" style="margin-top: 30px; text-align: center;">
+                    </div>                    <div class="overview-cta animate-on-scroll animate-fade-up" style="margin-top: 30px; text-align: centre;">
                         <a href="<?php echo home_url('/contact'); ?>" class="btn-primary">Get a Free Design Quote</a>
                     </div>
                 </div>
@@ -159,7 +159,7 @@ get_header(); ?>
                             <li><strong>Service Showcase:</strong> Comprehensive service pages with before/after galleries</li>
                             <li><strong>Trust Building:</strong> Testimonials, certifications, and social proof integration</li>
                             <li><strong>Lead Capture:</strong> Strategic contact forms and clear call-to-action placement</li>
-                            <li><strong>Mobile Optimization:</strong> Seamless experience across all devices</li>
+                            <li><strong>Mobile optimisation:</strong> Seamless experience across all devices</li>
                         </ul>
                     </div>
                 </div>
@@ -204,7 +204,7 @@ get_header(); ?>
                     <div class="step-number">2</div>
                     <div class="step-content">
                         <h3>Strategy & Planning</h3>
-                        <p>Create detailed site maps, user journeys, and conversion funnels to optimize user experience.</p>
+                        <p>Create detailed site maps, user journeys, and conversion funnels to optimise user experience.</p>
                     </div>
                 </div>
                 <div class="process-step animate-on-scroll animate-stagger animate-fade-up">
@@ -231,8 +231,8 @@ get_header(); ?>
                 <div class="process-step animate-on-scroll animate-stagger animate-fade-up">
                     <div class="step-number">6</div>
                     <div class="step-content">
-                        <h3>Launch & Optimization</h3>
-                        <p>Strategic launch with performance monitoring and ongoing optimization for better results.</p>
+                        <h3>Launch & optimisation</h3>
+                        <p>Strategic launch with performance monitoring and ongoing optimisation for better results.</p>
                     </div>
                 </div>
             </div>
@@ -256,7 +256,7 @@ get_header(); ?>
                         <li>5-page custom website</li>
                         <li>Mobile-responsive design</li>
                         <li>Contact form integration</li>
-                        <li>Basic SEO optimization</li>
+                        <li>Basic SEO optimisation</li>
                         <li>Google Analytics setup</li>
                         <li>2 rounds of revisions</li>
                         <li>3-week delivery</li>
@@ -272,15 +272,15 @@ get_header(); ?>
                     </div>
                     <ul class="pricing-features">
                         <li>10-page custom website</li>
-                        <li>Advanced mobile optimization</li>
+                        <li>Advanced mobile optimisation</li>
                         <li>Lead generation forms</li>
-                        <li>Advanced SEO optimization</li>
+                        <li>Advanced SEO optimisation</li>
                         <li>Analytics & tracking setup</li>
                         <li>Blog setup & integration</li>
                         <li>3 rounds of revisions</li>
                         <li>4-week delivery</li>
                         <li>60 days support</li>
-                        <li>Performance optimization</li>
+                        <li>Performance optimisation</li>
                     </ul>
                     <a href="#contact" class="btn-primary">Get Started</a>
                 </div>
@@ -289,13 +289,13 @@ get_header(); ?>
                     <div class="pricing-header">
                         <h3>Enterprise Website</h3>
                         <div class="price">£9,997</div>
-                        <p>For large organizations</p>
+                        <p>For large organisations</p>
                     </div>
                     <ul class="pricing-features">
                         <li>Unlimited pages</li>
                         <li>Custom functionality</li>
                         <li>Advanced integrations</li>
-                        <li>Conversion optimization</li>
+                        <li>Conversion optimisation</li>
                         <li>Multi-language support</li>
                         <li>Advanced analytics</li>
                         <li>Unlimited revisions</li>
@@ -307,35 +307,35 @@ get_header(); ?>
                     <a href="#contact" class="btn-outline">Get Started</a>
                 </div>            </div>
         </div>    </section>    <!-- Technologies -->    <section class="tools-section">
-        <div class="container" style="text-align: center;">
+        <div class="container" style="text-align: centre;">
             <div class="section-header animate-on-scroll animate-fade-up">
                 <h2 style="margin-bottom: 20px;">Design Tools & Technologies</h2>
                 <p style="max-width: 800px; margin: 0 auto 30px;">We use industry-leading tools and technologies to create stunning, high-performance websites that deliver results.</p>
             </div>
             
             <h3 class="tools-category animate-on-scroll animate-fade-up">Design & UX Tools</h3>
-            <div class="tools-grid animate-on-scroll animate-stagger animate-scale-up" style="justify-content: center;">                <div class="tool-item" style="text-align: center;">
-                    <div class="tool-icon" style="text-align: center; display: flex; justify-content: center;">
+            <div class="tools-grid animate-on-scroll animate-stagger animate-scale-up" style="justify-content: centre;">                <div class="tool-item" style="text-align: centre;">
+                    <div class="tool-icon" style="text-align: centre; display: flex; justify-content: centre;">
                         <i class="fab fa-figma"></i>
                     </div>
                     <h3>Figma</h3>
                     <p>Collaborative interface design tool for creating wireframes and prototypes</p>
-                </div>                <div class="tool-item" style="text-align: center;">
-                    <div class="tool-icon" style="text-align: center; display: flex; justify-content: center;">
+                </div>                <div class="tool-item" style="text-align: centre;">
+                    <div class="tool-icon" style="text-align: centre; display: flex; justify-content: centre;">
                         <i class="fab fa-adobe"></i>
                     </div>
                     <h3>Adobe Creative Suite</h3>
                     <p>Complete design package including Photoshop, Illustrator and InDesign</p>
                 </div>
-                  <div class="tool-item" style="text-align: center;">
-                    <div class="tool-icon" style="text-align: center; display: flex; justify-content: center;">
+                  <div class="tool-item" style="text-align: centre;">
+                    <div class="tool-icon" style="text-align: centre; display: flex; justify-content: centre;">
                         <i class="fas fa-pencil-ruler"></i>
                     </div>
                     <h3>Sketch & XD</h3>
                     <p>Professional design tools for creating responsive user interfaces</p>
                 </div>
-                  <div class="tool-item" style="text-align: center;">
-                    <div class="tool-icon" style="text-align: center; display: flex; justify-content: center;">
+                  <div class="tool-item" style="text-align: centre;">
+                    <div class="tool-icon" style="text-align: centre; display: flex; justify-content: centre;">
                         <i class="fas fa-eye"></i>
                     </div>
                     <h3>InVision & Principle</h3>
@@ -343,28 +343,28 @@ get_header(); ?>
                 </div>
             </div>
               <h3 class="tools-category animate-on-scroll animate-fade-up">Development Technologies</h3>
-            <div class="tools-grid animate-on-scroll animate-stagger animate-scale-up" style="justify-content: center;">                <div class="tool-item" style="text-align: center;">
-                    <div class="tool-icon" style="text-align: center; display: flex; justify-content: center;">
+            <div class="tools-grid animate-on-scroll animate-stagger animate-scale-up" style="justify-content: centre;">                <div class="tool-item" style="text-align: centre;">
+                    <div class="tool-icon" style="text-align: centre; display: flex; justify-content: centre;">
                         <i class="fab fa-wordpress"></i>
                     </div>
                     <h3>WordPress</h3>
                     <p>Powerful CMS for scalable, easy-to-manage business websites</p>
                 </div>
-                  <div class="tool-item" style="text-align: center;">
-                    <div class="tool-icon" style="text-align: center; display: flex; justify-content: center;">
+                  <div class="tool-item" style="text-align: centre;">
+                    <div class="tool-icon" style="text-align: centre; display: flex; justify-content: centre;">
                         <i class="fab fa-react"></i>
                     </div>
                     <h3>Modern JavaScript</h3>
                     <p>React.js and other JavaScript frameworks for interactive experiences</p>
                 </div>
-                  <div class="tool-item" style="text-align: center;">
-                    <div class="tool-icon" style="text-align: center; display: flex; justify-content: center;">
+                  <div class="tool-item" style="text-align: centre;">
+                    <div class="tool-icon" style="text-align: centre; display: flex; justify-content: centre;">
                         <i class="fab fa-html5"></i>
                     </div>
                     <h3>HTML5/CSS3</h3>
                     <p>Latest web standards for responsive, accessible website development</p>
                 </div>
-                  <div class="tool-item" style="text-align: center;">                    <div class="tool-icon" style="text-align: center; display: flex; justify-content: center;">
+                  <div class="tool-item" style="text-align: centre;">                    <div class="tool-icon" style="text-align: centre; display: flex; justify-content: centre;">
                         <i class="fas fa-stream"></i>
                     </div>
                     <h3>Webflow & Shopify</h3>
@@ -372,30 +372,30 @@ get_header(); ?>
                 </div>
             </div>
             
-            <h3 class="tools-category animate-on-scroll animate-fade-up">Optimization & Analytics</h3>
-            <div class="tools-grid animate-on-scroll animate-stagger animate-scale-up" style="justify-content: center;">                <div class="tool-item" style="text-align: center;">
-                    <div class="tool-icon" style="text-align: center; display: flex; justify-content: center;">
+            <h3 class="tools-category animate-on-scroll animate-fade-up">optimisation & Analytics</h3>
+            <div class="tools-grid animate-on-scroll animate-stagger animate-scale-up" style="justify-content: centre;">                <div class="tool-item" style="text-align: centre;">
+                    <div class="tool-icon" style="text-align: centre; display: flex; justify-content: centre;">
                         <i class="fas fa-tachometer-alt"></i>
                     </div>
                     <h3>Performance Tools</h3>
-                    <p>Google PageSpeed and GTmetrix for speed optimization</p>
+                    <p>Google PageSpeed and GTmetrix for speed optimisation</p>
                 </div>
-                  <div class="tool-item" style="text-align: center;">
-                    <div class="tool-icon" style="text-align: center; display: flex; justify-content: center;">
+                  <div class="tool-item" style="text-align: centre;">
+                    <div class="tool-icon" style="text-align: centre; display: flex; justify-content: centre;">
                         <i class="fas fa-chart-line"></i>
                     </div>
                     <h3>Analytics Platforms</h3>
                     <p>Google Analytics and data visualization for tracking results</p>
                 </div>
-                  <div class="tool-item" style="text-align: center;">
-                    <div class="tool-icon" style="text-align: center; display: flex; justify-content: center;">
+                  <div class="tool-item" style="text-align: centre;">
+                    <div class="tool-icon" style="text-align: centre; display: flex; justify-content: centre;">
                         <i class="fas fa-flask"></i>
                     </div>
                     <h3>A/B Testing</h3>
-                    <p>Conversion rate optimization through split testing</p>
+                    <p>Conversion rate optimisation through split testing</p>
                 </div>
-                  <div class="tool-item" style="text-align: center;">
-                    <div class="tool-icon" style="text-align: center; display: flex; justify-content: center;">
+                  <div class="tool-item" style="text-align: centre;">
+                    <div class="tool-icon" style="text-align: centre; display: flex; justify-content: centre;">
                         <i class="fas fa-mouse-pointer"></i>
                     </div>
                     <h3>UX Research Tools</h3>
@@ -450,7 +450,7 @@ get_header(); ?>
                 <div class="faq-item animate-on-scroll animate-stagger animate-fade-up">
                     <button class="faq-question">Do you provide content writing?</button>
                     <div class="faq-answer">
-                        <p>Yes, we offer professional copywriting services optimized for conversions and SEO. This can be added to any package or purchased separately.</p>
+                        <p>Yes, we offer professional copywriting services optimised for conversions and SEO. This can be added to any package or purchased separately.</p>
                     </div>
                 </div>
                 <div class="faq-item animate-on-scroll animate-stagger animate-fade-up">
@@ -462,13 +462,13 @@ get_header(); ?>
                 <div class="faq-item animate-on-scroll animate-stagger animate-fade-up">
                     <button class="faq-question">Can you redesign my existing website?</button>
                     <div class="faq-answer">
-                        <p>Yes, we specialize in website redesigns. We can work with your existing content and improve the design, functionality, and performance.</p>
+                        <p>Yes, we specialise in website redesigns. We can work with your existing content and improve the design, functionality, and performance.</p>
                     </div>
                 </div>
                 <div class="faq-item animate-on-scroll animate-stagger animate-fade-up">
                     <button class="faq-question">Do you provide ongoing maintenance?</button>
                     <div class="faq-answer">
-                        <p>Yes, we offer maintenance packages for security updates, content changes, and performance optimization. This ensures your website stays current and secure.</p>
+                        <p>Yes, we offer maintenance packages for security updates, content changes, and performance optimisation. This ensures your website stays current and secure.</p>
                     </div>
                 </div>
                 <div class="faq-item animate-on-scroll animate-stagger animate-fade-up">

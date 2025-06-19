@@ -103,7 +103,7 @@ get_header(); ?>
                         </div>
                         <div class="study-content">
                             <h3>Premier Dental: Patient Acquisition Success</h3>
-                            <p>Increased new patient bookings by 300% through local SEO optimization and targeted Google Ads campaigns.</p>
+                            <p>Increased new patient bookings by 300% through local SEO optimisation and targeted Google Ads campaigns.</p>
                             <div class="study-metrics">
                                 <div class="metric">
                                     <span class="metric-value">300%</span>
@@ -172,7 +172,7 @@ get_header(); ?>
                         </div>
                         <div class="study-content">
                             <h3>CloudFlow: B2B Lead Generation Excellence</h3>
-                            <p>Scaled from 50 to 500+ monthly qualified leads through account-based marketing and conversion optimization.</p>
+                            <p>Scaled from 50 to 500+ monthly qualified leads through account-based marketing and conversion optimisation.</p>
                             <div class="study-metrics">
                                 <div class="metric">
                                     <span class="metric-value">900%</span>
@@ -195,7 +195,7 @@ get_header(); ?>
                         </div>
                         <div class="study-content">
                             <h3>Home & Garden Co: Seasonal Success Strategy</h3>
-                            <p>Maximized seasonal sales through strategic PPC campaigns and inventory-based ad optimization.</p>
+                            <p>Maximized seasonal sales through strategic PPC campaigns and inventory-based ad optimisation.</p>
                             <div class="study-metrics">
                                 <div class="metric">
                                     <span class="metric-value">320%</span>

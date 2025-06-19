@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 /**
  * Template Name: Become a Partner Page
  * Description: Partnership opportunities page
@@ -50,10 +50,10 @@ get_header(); ?>
                     <div class="partnership-card animate-on-scroll animate-stagger animate-fade-up">
                         <div class="partnership-icon">
                             <svg width="60" height="60" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                <circle cx="9" cy="7" r="4" stroke="currentColor" stroke-width="2"/>
-                                <path d="M22 11l-3-3 3-3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                <path d="M19 8h-7" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                                <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" stroke="currentcolour" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                <circle cx="9" cy="7" r="4" stroke="currentcolour" stroke-width="2"/>
+                                <path d="M22 11l-3-3 3-3" stroke="currentcolour" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M19 8h-7" stroke="currentcolour" stroke-width="2" stroke-linecap="round"/>
                             </svg>
                         </div>
                         <h3><?php echo esc_html(get_post_meta(get_the_ID(), 'partner_referral_title', true) ?: 'Referral Partners'); ?></h3>
@@ -79,12 +79,12 @@ get_header(); ?>
                     <div class="partnership-card animate-on-scroll animate-stagger animate-fade-up">
                         <div class="partnership-icon">
                             <svg width="60" height="60" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <rect x="2" y="3" width="20" height="14" rx="2" ry="2" stroke="currentColor" stroke-width="2"/>
-                                <line x1="8" y1="21" x2="16" y2="21" stroke="currentColor" stroke-width="2"/>
-                                <line x1="12" y1="17" x2="12" y2="21" stroke="currentColor" stroke-width="2"/>
-                                <path d="M8 7v6" stroke="currentColor" stroke-width="2"/>
-                                <path d="M12 7v6" stroke="currentColor" stroke-width="2"/>
-                                <path d="M16 7v6" stroke="currentColor" stroke-width="2"/>
+                                <rect x="2" y="3" width="20" height="14" rx="2" ry="2" stroke="currentcolour" stroke-width="2"/>
+                                <line x1="8" y1="21" x2="16" y2="21" stroke="currentcolour" stroke-width="2"/>
+                                <line x1="12" y1="17" x2="12" y2="21" stroke="currentcolour" stroke-width="2"/>
+                                <path d="M8 7v6" stroke="currentcolour" stroke-width="2"/>
+                                <path d="M12 7v6" stroke="currentcolour" stroke-width="2"/>
+                                <path d="M16 7v6" stroke="currentcolour" stroke-width="2"/>
                             </svg>
                         </div>
                         <h3><?php echo esc_html(get_post_meta(get_the_ID(), 'partner_tech_title', true) ?: 'Technology Partners'); ?></h3>
@@ -113,16 +113,16 @@ get_header(); ?>
                     <div class="partnership-card">
                         <div class="partnership-icon">
                             <svg width="60" height="60" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="2"/>
-                                <path d="M12 1v6m0 6v6" stroke="currentColor" stroke-width="2"/>
-                                <path d="m21 12-6-3 6-3" stroke="currentColor" stroke-width="2"/>
-                                <path d="m3 12 6 3-6 3" stroke="currentColor" stroke-width="2"/>
-                                <path d="m21 7-3 5 3 5" stroke="currentColor" stroke-width="2"/>
-                                <path d="m3 7 3 5-3 5" stroke="currentColor" stroke-width="2"/>
+                                <circle cx="12" cy="12" r="3" stroke="currentcolour" stroke-width="2"/>
+                                <path d="M12 1v6m0 6v6" stroke="currentcolour" stroke-width="2"/>
+                                <path d="m21 12-6-3 6-3" stroke="currentcolour" stroke-width="2"/>
+                                <path d="m3 12 6 3-6 3" stroke="currentcolour" stroke-width="2"/>
+                                <path d="m21 7-3 5 3 5" stroke="currentcolour" stroke-width="2"/>
+                                <path d="m3 7 3 5-3 5" stroke="currentcolour" stroke-width="2"/>
                             </svg>
                         </div>
                         <h3><?php echo esc_html(get_post_meta(get_the_ID(), 'partner_agency_title', true) ?: 'Agency Partners'); ?></h3>
-                        <p><?php echo esc_html(get_post_meta(get_the_ID(), 'partner_agency_description', true) ?: 'White-label our services or collaborate on larger projects that require specialized expertise in digital marketing.'); ?></p>
+                        <p><?php echo esc_html(get_post_meta(get_the_ID(), 'partner_agency_description', true) ?: 'White-label our services or collaborate on larger projects that require specialised expertise in digital marketing.'); ?></p>
                         <div class="partnership-benefits">
                             <ul>
                                 <?php 
@@ -144,9 +144,9 @@ get_header(); ?>
                     <div class="partnership-card">
                         <div class="partnership-icon">
                             <svg width="60" height="60" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M21 12V7H5a2 2 0 0 1 0-4h14v4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                <path d="M3 5v14a2 2 0 0 0 2 2h16v-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                <path d="M18 12a2 2 0 0 0 0 4h4v-4z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M21 12V7H5a2 2 0 0 1 0-4h14v4" stroke="currentcolour" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M3 5v14a2 2 0 0 0 2 2h16v-5" stroke="currentcolour" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M18 12a2 2 0 0 0 0 4h4v-4z" stroke="currentcolour" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                             </svg>
                         </div>
                         <h3><?php echo esc_html(get_post_meta(get_the_ID(), 'partner_reseller_title', true) ?: 'Reseller Partners'); ?></h3>
@@ -258,7 +258,7 @@ get_header(); ?>
                         <div class="step-number"><?php echo esc_html(get_post_meta(get_the_ID(), 'partner_process_step3_number', true) ?: '3'); ?></div>
                         <div class="step-content">
                             <h3><?php echo esc_html(get_post_meta(get_the_ID(), 'partner_process_step3_title', true) ?: 'Partnership Proposal'); ?></h3>
-                            <p><?php echo esc_html(get_post_meta(get_the_ID(), 'partner_process_step3_text', true) ?: 'Based on our discussion, we\'ll create a customized partnership proposal that outlines terms and benefits.'); ?></p>
+                            <p><?php echo esc_html(get_post_meta(get_the_ID(), 'partner_process_step3_text', true) ?: 'Based on our discussion, we\'ll create a customised partnership proposal that outlines terms and benefits.'); ?></p>
                         </div>
                     </div>
                     <div class="step">

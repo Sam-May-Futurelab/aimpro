@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 // Meta fields for Email Campaigns page
 add_action('add_meta_boxes', function() {
     global $post;
@@ -14,7 +14,7 @@ function email_campaigns_meta_callback($post) {
     ?>
     <style>
         .email-campaigns-meta-section { margin-bottom: 25px; padding: 15px; border: 1px solid #ddd; }
-        .email-campaigns-meta-section h3 { margin-top: 0; color: #23282d; }
+        .email-campaigns-meta-section h3 { margin-top: 0; colour: #23282d; }
         .email-campaigns-meta-field { margin-bottom: 15px; }
         .email-campaigns-meta-field label { display: block; margin-bottom: 5px; font-weight: 600; }
         .email-campaigns-meta-field input, .email-campaigns-meta-field textarea { width: 100%; }
@@ -118,16 +118,16 @@ function email_campaigns_meta_callback($post) {
         </div>
         <div class="email-campaigns-meta-field">
             <label>Service 4 Description</label>
-            <textarea name="email_campaigns_service_4_desc"><?php echo esc_textarea(get_post_meta($post->ID, 'email_campaigns_service_4_desc', true) ?: 'Precise audience targeting based on behavior, demographics, and purchase history for maximum relevance.'); ?></textarea>
+            <textarea name="email_campaigns_service_4_desc"><?php echo esc_textarea(get_post_meta($post->ID, 'email_campaigns_service_4_desc', true) ?: 'Precise audience targeting based on behaviour, demographics, and purchase history for maximum relevance.'); ?></textarea>
         </div>
 
         <div class="email-campaigns-meta-field">
             <label>Service 5 Title</label>
-            <input type="text" name="email_campaigns_service_5_title" value="<?php echo esc_attr(get_post_meta($post->ID, 'email_campaigns_service_5_title', true) ?: 'Performance Optimization'); ?>" />
+            <input type="text" name="email_campaigns_service_5_title" value="<?php echo esc_attr(get_post_meta($post->ID, 'email_campaigns_service_5_title', true) ?: 'Performance optimisation'); ?>" />
         </div>
         <div class="email-campaigns-meta-field">
             <label>Service 5 Description</label>
-            <textarea name="email_campaigns_service_5_desc"><?php echo esc_textarea(get_post_meta($post->ID, 'email_campaigns_service_5_desc', true) ?: 'Continuous A/B testing and optimization to improve open rates, click-through rates, and conversions.'); ?></textarea>
+            <textarea name="email_campaigns_service_5_desc"><?php echo esc_textarea(get_post_meta($post->ID, 'email_campaigns_service_5_desc', true) ?: 'Continuous A/B testing and optimisation to improve open rates, click-through rates, and conversions.'); ?></textarea>
         </div>
 
         <div class="email-campaigns-meta-field">
@@ -136,7 +136,7 @@ function email_campaigns_meta_callback($post) {
         </div>
         <div class="email-campaigns-meta-field">
             <label>Service 6 Description</label>
-            <textarea name="email_campaigns_service_6_desc"><?php echo esc_textarea(get_post_meta($post->ID, 'email_campaigns_service_6_desc', true) ?: 'Strategic timing and frequency optimization to maximize engagement while avoiding subscriber fatigue.'); ?></textarea>
+            <textarea name="email_campaigns_service_6_desc"><?php echo esc_textarea(get_post_meta($post->ID, 'email_campaigns_service_6_desc', true) ?: 'Strategic timing and frequency optimisation to maximise engagement while avoiding subscriber fatigue.'); ?></textarea>
         </div>
     </div>
 
@@ -148,7 +148,7 @@ function email_campaigns_meta_callback($post) {
         </div>
         <div class="email-campaigns-meta-field">
             <label>Case Study Intro</label>
-            <textarea name="email_campaigns_case_intro"><?php echo esc_textarea(get_post_meta($post->ID, 'email_campaigns_case_intro', true) ?: 'How we helped a B2B software company increase their email marketing ROI by 4,200% and generate £350K in additional revenue through strategic campaign optimization.'); ?></textarea>
+            <textarea name="email_campaigns_case_intro"><?php echo esc_textarea(get_post_meta($post->ID, 'email_campaigns_case_intro', true) ?: 'How we helped a B2B software company increase their email marketing ROI by 4,200% and generate £350K in additional revenue through strategic campaign optimisation.'); ?></textarea>
         </div>
         <div class="email-campaigns-meta-field">
             <label>Challenge Description</label>
@@ -156,7 +156,7 @@ function email_campaigns_meta_callback($post) {
         </div>
         <div class="email-campaigns-meta-field">
             <label>Solution Points (one per line)</label>
-            <textarea name="email_campaigns_case_solution"><?php echo esc_textarea(get_post_meta($post->ID, 'email_campaigns_case_solution', true) ?: "Segmented list into 8 distinct audience groups based on user behavior\nCreated targeted campaign series for each segment and buyer journey stage\nRedesigned email templates with mobile-first, conversion-focused approach\nImplemented advanced personalization using behavioral data\nDeveloped product-specific campaigns with case studies and social proof"); ?></textarea>
+            <textarea name="email_campaigns_case_solution"><?php echo esc_textarea(get_post_meta($post->ID, 'email_campaigns_case_solution', true) ?: "Segmented list into 8 distinct audience groups based on user behaviour\nCreated targeted campaign series for each segment and buyer journey stage\nRedesigned email templates with mobile-first, conversion-focused approach\nImplemented advanced personalisation using behavioural data\nDeveloped product-specific campaigns with case studies and social proof"); ?></textarea>
         </div>
         
         <div class="email-campaigns-stats-row">
@@ -214,14 +214,14 @@ function email_campaigns_meta_callback($post) {
                 2 => 'Audience Segmentation', 
                 3 => 'Content Creation',
                 4 => 'Testing & Launch',
-                5 => 'Analysis & Optimization'
+                5 => 'Analysis & optimisation'
             ];
             $step_descriptions = [
                 1 => 'Define campaign objectives, target audiences, and key performance indicators aligned with your business goals.',
-                2 => 'Analyze your email list and create targeted segments based on behavior, demographics, and engagement history.',
+                2 => 'analyse your email list and create targeted segments based on behaviour, demographics, and engagement history.',
                 3 => 'Develop compelling copy and design mobile-responsive templates that align with your brand and campaign goals.',
-                4 => 'A/B test subject lines, content, and send times before launching to optimize campaign performance.',
-                5 => 'Monitor performance metrics and continuously optimize future campaigns based on data insights.'
+                4 => 'A/B test subject lines, content, and send times before launching to optimise campaign performance.',
+                5 => 'Monitor performance metrics and continuously optimise future campaigns based on data insights.'
             ];
         ?>
         <h4>Step <?php echo $i; ?></h4>

@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 // Meta fields for Streamline Your Sales Funnel page
 
 // Enqueue media uploader scripts
@@ -37,7 +37,7 @@ function streamline_sales_funnel_meta_callback($post) {
     
     $header_subtitle = get_post_meta($post->ID, 'streamline_sales_funnel_header_subtitle', true);
     if (empty($header_subtitle)) {
-        update_post_meta($post->ID, 'streamline_sales_funnel_header_subtitle', 'Optimize every stage of your sales process to convert more prospects into paying customers');
+        update_post_meta($post->ID, 'streamline_sales_funnel_header_subtitle', 'optimise every stage of your sales process to convert more prospects into paying customers');
     }
     
     $overview_title = get_post_meta($post->ID, 'streamline_sales_funnel_overview_title', true);
@@ -47,12 +47,12 @@ function streamline_sales_funnel_meta_callback($post) {
     
     $overview_description = get_post_meta($post->ID, 'streamline_sales_funnel_overview_description', true);
     if (empty($overview_description)) {
-        update_post_meta($post->ID, 'streamline_sales_funnel_overview_description', 'A well-optimized sales funnel is the difference between business growth and stagnation. Our systematic approach identifies bottlenecks, eliminates friction, and creates a smooth journey that guides prospects from awareness to purchase. We build funnels that work around the clock to grow your business.');
+        update_post_meta($post->ID, 'streamline_sales_funnel_overview_description', 'A well-optimised sales funnel is the difference between business growth and stagnation. Our systematic approach identifies bottlenecks, eliminates friction, and creates a smooth journey that guides prospects from awareness to purchase. We build funnels that work around the clock to grow your business.');
     }
     
     $strategy_title = get_post_meta($post->ID, 'streamline_sales_funnel_strategy_title', true);
     if (empty($strategy_title)) {
-        update_post_meta($post->ID, 'streamline_sales_funnel_strategy_title', 'Our Sales Funnel Optimization Services');
+        update_post_meta($post->ID, 'streamline_sales_funnel_strategy_title', 'Our Sales Funnel optimisation Services');
     }
     
     // Initialize services array if empty
@@ -61,18 +61,18 @@ function streamline_sales_funnel_meta_callback($post) {
         $default_services = array(
             array(
                 'title' => 'Funnel Analysis & Audit',
-                'description' => 'Comprehensive analysis of your current sales process to identify bottlenecks and optimization opportunities.',
+                'description' => 'Comprehensive analysis of your current sales process to identify bottlenecks and optimisation opportunities.',
                 'features' => array('Customer journey mapping', 'Conversion rate analysis', 'Drop-off point identification', 'Process documentation')
             ),
             array(
                 'title' => 'Lead Scoring & Qualification',
-                'description' => 'Implement intelligent lead scoring systems to prioritize high-value prospects and improve sales efficiency.',
-                'features' => array('Behavioral scoring models', 'Demographic weighting', 'Automated qualification', 'Sales handoff criteria')
+                'description' => 'Implement intelligent lead scoring systems to prioritise high-value prospects and improve sales efficiency.',
+                'features' => array('behavioural scoring models', 'Demographic weighting', 'Automated qualification', 'Sales handoff criteria')
             ),
             array(
                 'title' => 'Automation & Nurturing',
-                'description' => 'Create automated sequences that guide prospects through your funnel with personalized touchpoints.',
-                'features' => array('Email automation sequences', 'Behavioral triggers', 'Follow-up scheduling', 'Personalization engines')
+                'description' => 'Create automated sequences that guide prospects through your funnel with personalised touchpoints.',
+                'features' => array('Email automation sequences', 'behavioural triggers', 'Follow-up scheduling', 'personalisation engines')
             )
         );
         update_post_meta($post->ID, 'streamline_sales_funnel_services', $default_services);
@@ -105,18 +105,18 @@ function streamline_sales_funnel_meta_callback($post) {
     $process_steps = get_post_meta($post->ID, 'streamline_sales_funnel_process_steps', true);
     if (empty($process_steps) || !is_array($process_steps)) {
         $default_steps = array(
-            array('title' => 'Discovery & Analysis', 'description' => 'We analyze your current funnel, identify bottlenecks, and map your customer journey to understand where prospects drop off.'),
-            array('title' => 'Strategy Development', 'description' => 'Create a comprehensive optimization plan with clear conversion goals, lead scoring criteria, and automation workflows.'),
-            array('title' => 'Implementation & Setup', 'description' => 'Build and configure your optimized funnel with automation tools, tracking systems, and conversion optimization elements.'),
+            array('title' => 'Discovery & Analysis', 'description' => 'We analyse your current funnel, identify bottlenecks, and map your customer journey to understand where prospects drop off.'),
+            array('title' => 'Strategy Development', 'description' => 'Create a comprehensive optimisation plan with clear conversion goals, lead scoring criteria, and automation workflows.'),
+            array('title' => 'Implementation & Setup', 'description' => 'Build and configure your optimised funnel with automation tools, tracking systems, and conversion optimisation elements.'),
             array('title' => 'Testing & Refinement', 'description' => 'A/B test different elements, monitor performance metrics, and continuously refine the funnel for maximum effectiveness.'),
-            array('title' => 'Monitoring & Optimization', 'description' => 'Ongoing performance monitoring with regular reporting and strategic adjustments to maintain peak conversion rates.')
+            array('title' => 'Monitoring & optimisation', 'description' => 'Ongoing performance monitoring with regular reporting and strategic adjustments to maintain peak conversion rates.')
         );
         update_post_meta($post->ID, 'streamline_sales_funnel_process_steps', $default_steps);
     }
     
     $process_title = get_post_meta($post->ID, 'streamline_sales_funnel_process_title', true);
     if (empty($process_title)) {
-        update_post_meta($post->ID, 'streamline_sales_funnel_process_title', 'Our 5-Step Funnel Optimization Process');
+        update_post_meta($post->ID, 'streamline_sales_funnel_process_title', 'Our 5-Step Funnel optimisation Process');
     }
     
     // Initialize testimonial
@@ -143,7 +143,7 @@ function streamline_sales_funnel_meta_callback($post) {
     // Initialize CTA
     $cta_title = get_post_meta($post->ID, 'streamline_sales_funnel_cta_title', true);
     if (empty($cta_title)) {
-        update_post_meta($post->ID, 'streamline_sales_funnel_cta_title', 'Ready to Optimize Your Sales Funnel?');
+        update_post_meta($post->ID, 'streamline_sales_funnel_cta_title', 'Ready to optimise Your Sales Funnel?');
     }
     
     $cta_description = get_post_meta($post->ID, 'streamline_sales_funnel_cta_description', true);
@@ -153,7 +153,7 @@ function streamline_sales_funnel_meta_callback($post) {
     
     $cta_primary_text = get_post_meta($post->ID, 'streamline_sales_funnel_cta_primary_text', true);
     if (empty($cta_primary_text)) {
-        update_post_meta($post->ID, 'streamline_sales_funnel_cta_primary_text', 'Start Your Funnel Optimization');
+        update_post_meta($post->ID, 'streamline_sales_funnel_cta_primary_text', 'Start Your Funnel optimisation');
     }
     
     $cta_secondary_text = get_post_meta($post->ID, 'streamline_sales_funnel_cta_secondary_text', true);
@@ -206,18 +206,18 @@ function streamline_sales_funnel_meta_callback($post) {
             $services = array(
                 array(
                     'title' => 'Funnel Analysis & Audit',
-                    'description' => 'Comprehensive analysis of your current sales process to identify bottlenecks and optimization opportunities.',
+                    'description' => 'Comprehensive analysis of your current sales process to identify bottlenecks and optimisation opportunities.',
                     'features' => array('Customer journey mapping', 'Conversion rate analysis', 'Drop-off point identification', 'Process documentation')
                 ),
                 array(
                     'title' => 'Lead Scoring & Qualification', 
-                    'description' => 'Implement intelligent lead scoring systems to prioritize high-value prospects and improve sales efficiency.',
-                    'features' => array('Behavioral scoring models', 'Demographic weighting', 'Automated qualification', 'Sales handoff criteria')
+                    'description' => 'Implement intelligent lead scoring systems to prioritise high-value prospects and improve sales efficiency.',
+                    'features' => array('behavioural scoring models', 'Demographic weighting', 'Automated qualification', 'Sales handoff criteria')
                 ),
                 array(
                     'title' => 'Automation & Nurturing',
-                    'description' => 'Create automated sequences that guide prospects through your funnel with personalized touchpoints.',
-                    'features' => array('Email automation sequences', 'Behavioral triggers', 'Follow-up scheduling', 'Personalization engines')
+                    'description' => 'Create automated sequences that guide prospects through your funnel with personalised touchpoints.',
+                    'features' => array('Email automation sequences', 'behavioural triggers', 'Follow-up scheduling', 'personalisation engines')
                 )
             );
         }
@@ -590,7 +590,7 @@ function marketing_automation_meta_callback($post) {
     ?>
     <style>
         .meta-section { margin-bottom: 30px; padding: 15px; border: 1px solid #ddd; }
-        .meta-section h3 { margin-top: 0; color: #23282d; }
+        .meta-section h3 { margin-top: 0; colour: #23282d; }
         .meta-field { margin-bottom: 15px; }
         .meta-field label { display: block; margin-bottom: 5px; font-weight: 600; }
         .meta-field input, .meta-field textarea { width: 100%; }
@@ -623,7 +623,7 @@ function marketing_automation_meta_callback($post) {
         </div>
         <div class="meta-field">
             <label>Overview Description (First Paragraph)</label>
-            <textarea name="ma_overview_description_1"><?php echo esc_textarea(get_post_meta($post->ID, 'ma_overview_description_1', true) ?: 'Our marketing automation services help you create sophisticated, personalized customer journeys that nurture leads, increase conversions, and drive revenue growth. From email sequences to AI-powered chatbots, we build automation systems that work 24/7 to grow your business.'); ?></textarea>
+            <textarea name="ma_overview_description_1"><?php echo esc_textarea(get_post_meta($post->ID, 'ma_overview_description_1', true) ?: 'Our marketing automation services help you create sophisticated, personalised customer journeys that nurture leads, increase conversions, and drive revenue growth. From email sequences to AI-powered chatbots, we build automation systems that work 24/7 to grow your business.'); ?></textarea>
         </div>
         <div class="meta-field">
             <label>Overview Description (Second Paragraph)</label>
@@ -715,11 +715,11 @@ function marketing_automation_meta_callback($post) {
         </div>
         <div class="meta-field">
             <label>Service 3 Description</label>
-            <textarea name="ma_service_3_description"><?php echo esc_textarea(get_post_meta($post->ID, 'ma_service_3_description', true) ?: 'Design and execute targeted email marketing campaigns that engage your audience and drive conversions with personalized messaging.'); ?></textarea>
+            <textarea name="ma_service_3_description"><?php echo esc_textarea(get_post_meta($post->ID, 'ma_service_3_description', true) ?: 'Design and execute targeted email marketing campaigns that engage your audience and drive conversions with personalised messaging.'); ?></textarea>
         </div>
         <div class="meta-field">
             <label>Service 3 Features (one per line)</label>
-            <textarea name="ma_service_3_features"><?php echo esc_textarea(get_post_meta($post->ID, 'ma_service_3_features', true) ?: "Campaign strategy and planning\nEmail template design\nList segmentation and targeting\nA/B testing and optimization\nPerformance analytics and reporting"); ?></textarea>
+            <textarea name="ma_service_3_features"><?php echo esc_textarea(get_post_meta($post->ID, 'ma_service_3_features', true) ?: "Campaign strategy and planning\nEmail template design\nList segmentation and targeting\nA/B testing and optimisation\nPerformance analytics and reporting"); ?></textarea>
         </div>
         <div class="meta-field">
             <label>Service 3 Metric</label>
@@ -733,11 +733,11 @@ function marketing_automation_meta_callback($post) {
         </div>
         <div class="meta-field">
             <label>Service 4 Description</label>
-            <textarea name="ma_service_4_description"><?php echo esc_textarea(get_post_meta($post->ID, 'ma_service_4_description', true) ?: 'Build and optimize automated sales funnels that guide prospects through your buying process and maximize conversion rates.'); ?></textarea>
+            <textarea name="ma_service_4_description"><?php echo esc_textarea(get_post_meta($post->ID, 'ma_service_4_description', true) ?: 'Build and optimise automated sales funnels that guide prospects through your buying process and maximise conversion rates.'); ?></textarea>
         </div>
         <div class="meta-field">
             <label>Service 4 Features (one per line)</label>
-            <textarea name="ma_service_4_features"><?php echo esc_textarea(get_post_meta($post->ID, 'ma_service_4_features', true) ?: "Funnel strategy and mapping\nLead magnet creation\nAutomated follow-up sequences\nConversion optimization\nMulti-step campaign setup"); ?></textarea>
+            <textarea name="ma_service_4_features"><?php echo esc_textarea(get_post_meta($post->ID, 'ma_service_4_features', true) ?: "Funnel strategy and mapping\nLead magnet creation\nAutomated follow-up sequences\nConversion optimisation\nMulti-step campaign setup"); ?></textarea>
         </div>
         <div class="meta-field">
             <label>Service 4 Metric</label>
@@ -769,11 +769,11 @@ function marketing_automation_meta_callback($post) {
         </div>
         <div class="meta-field">
             <label>Service 6 Description</label>
-            <textarea name="ma_service_6_description"><?php echo esc_textarea(get_post_meta($post->ID, 'ma_service_6_description', true) ?: 'Implement cutting-edge AI tools and technologies to optimize your marketing processes and improve decision-making.'); ?></textarea>
+            <textarea name="ma_service_6_description"><?php echo esc_textarea(get_post_meta($post->ID, 'ma_service_6_description', true) ?: 'Implement cutting-edge AI tools and technologies to optimise your marketing processes and improve decision-making.'); ?></textarea>
         </div>
         <div class="meta-field">
             <label>Service 6 Features (one per line)</label>
-            <textarea name="ma_service_6_features"><?php echo esc_textarea(get_post_meta($post->ID, 'ma_service_6_features', true) ?: "AI-powered content creation\nPredictive analytics setup\nAutomated personalization\nMachine learning optimization\nAI tool integration and training"); ?></textarea>
+            <textarea name="ma_service_6_features"><?php echo esc_textarea(get_post_meta($post->ID, 'ma_service_6_features', true) ?: "AI-powered content creation\nPredictive analytics setup\nAutomated personalisation\nMachine learning optimisation\nAI tool integration and training"); ?></textarea>
         </div>
         <div class="meta-field">
             <label>Service 6 Metric</label>
@@ -950,7 +950,7 @@ function ai_crm_setup_meta_callback($post) {
     ?>
     <style>
         .ai-meta-section { margin-bottom: 25px; padding: 15px; border: 1px solid #ddd; }
-        .ai-meta-section h3 { margin-top: 0; color: #23282d; }
+        .ai-meta-section h3 { margin-top: 0; colour: #23282d; }
         .ai-meta-field { margin-bottom: 15px; }
         .ai-meta-field label { display: block; margin-bottom: 5px; font-weight: 600; }
         .ai-meta-field input, .ai-meta-field textarea { width: 100%; }
@@ -967,7 +967,7 @@ function ai_crm_setup_meta_callback($post) {
         </div>
         <div class="ai-meta-field">
             <label>Hero Subtitle</label>
-            <textarea name="ai_hero_subtitle"><?php echo esc_textarea(get_post_meta($post->ID, 'ai_hero_subtitle', true) ?: 'Transform your customer relationship management with AI-driven CRM systems that automate lead scoring, predict customer behavior, and optimize your entire sales funnel for maximum conversion.'); ?></textarea>
+            <textarea name="ai_hero_subtitle"><?php echo esc_textarea(get_post_meta($post->ID, 'ai_hero_subtitle', true) ?: 'Transform your customer relationship management with AI-driven CRM systems that automate lead scoring, predict customer behaviour, and optimise your entire sales funnel for maximum conversion.'); ?></textarea>
         </div>
         <div class="ai-stats-row">
             <div class="ai-meta-field">
@@ -1027,7 +1027,7 @@ function ai_crm_setup_meta_callback($post) {
         </div>
         <div class="ai-meta-field">
             <label>Service 1 Description</label>
-            <textarea name="ai_service_1_desc"><?php echo esc_textarea(get_post_meta($post->ID, 'ai_service_1_desc', true) ?: 'Automatically score and prioritize leads based on behavior, demographics, and engagement patterns using machine learning algorithms.'); ?></textarea>
+            <textarea name="ai_service_1_desc"><?php echo esc_textarea(get_post_meta($post->ID, 'ai_service_1_desc', true) ?: 'Automatically score and prioritise leads based on behaviour, demographics, and engagement patterns using machine learning algorithms.'); ?></textarea>
         </div>
 
         <div class="ai-meta-field">
@@ -1045,12 +1045,12 @@ function ai_crm_setup_meta_callback($post) {
         </div>
         <div class="ai-meta-field">
             <label>Service 3 Description</label>
-            <textarea name="ai_service_3_desc"><?php echo esc_textarea(get_post_meta($post->ID, 'ai_service_3_desc', true) ?: 'Create intelligent workflows that adapt based on customer behavior and automatically trigger the right actions at the right time.'); ?></textarea>
+            <textarea name="ai_service_3_desc"><?php echo esc_textarea(get_post_meta($post->ID, 'ai_service_3_desc', true) ?: 'Create intelligent workflows that adapt based on customer behaviour and automatically trigger the right actions at the right time.'); ?></textarea>
         </div>
 
         <div class="ai-meta-field">
             <label>Service 4 Title</label>
-            <input type="text" name="ai_service_4_title" value="<?php echo esc_attr(get_post_meta($post->ID, 'ai_service_4_title', true) ?: 'Sales Pipeline Optimization'); ?>" />
+            <input type="text" name="ai_service_4_title" value="<?php echo esc_attr(get_post_meta($post->ID, 'ai_service_4_title', true) ?: 'Sales Pipeline optimisation'); ?>" />
         </div>
         <div class="ai-meta-field">
             <label>Service 4 Description</label>
@@ -1063,7 +1063,7 @@ function ai_crm_setup_meta_callback($post) {
         </div>
         <div class="ai-meta-field">
             <label>Service 5 Description</label>
-            <textarea name="ai_service_5_desc"><?php echo esc_textarea(get_post_meta($post->ID, 'ai_service_5_desc', true) ?: 'Deep customer profiling using AI to understand preferences, behavior patterns, and optimal communication strategies.'); ?></textarea>
+            <textarea name="ai_service_5_desc"><?php echo esc_textarea(get_post_meta($post->ID, 'ai_service_5_desc', true) ?: 'Deep customer profiling using AI to understand preferences, behaviour patterns, and optimal communication strategies.'); ?></textarea>
         </div>
 
         <div class="ai-meta-field">
@@ -1150,14 +1150,14 @@ function ai_crm_setup_meta_callback($post) {
                 2 => 'Platform Selection & Design', 
                 3 => 'Data Migration & Cleansing',
                 4 => 'AI Configuration & Training',
-                5 => 'Testing & Optimization'
+                5 => 'Testing & optimisation'
             ];
             $step_descriptions = [
                 1 => 'Comprehensive audit of current CRM processes, data quality assessment, and identification of AI automation opportunities.',
                 2 => 'Choose optimal CRM platform and design AI-powered workflows tailored to your sales process and customer journey.',
                 3 => 'Migrate existing data with AI-powered cleansing and enrichment to ensure high-quality, actionable customer information.',
                 4 => 'Configure machine learning models, set up predictive analytics, and train AI systems on your specific business patterns.',
-                5 => 'Comprehensive testing of AI workflows, user training, and continuous optimization based on performance data.'
+                5 => 'Comprehensive testing of AI workflows, user training, and continuous optimisation based on performance data.'
             ];
         ?>
         <h4>Step <?php echo $i; ?></h4>
@@ -1265,7 +1265,7 @@ function email_sms_flows_meta_callback($post) {
     ?>
     <style>
         .email-meta-section { margin-bottom: 25px; padding: 15px; border: 1px solid #ddd; }
-        .email-meta-section h3 { margin-top: 0; color: #23282d; }
+        .email-meta-section h3 { margin-top: 0; colour: #23282d; }
         .email-meta-field { margin-bottom: 15px; }
         .email-meta-field label { display: block; margin-bottom: 5px; font-weight: 600; }
         .email-meta-field input, .email-meta-field textarea { width: 100%; }
@@ -1332,7 +1332,7 @@ function email_sms_flows_meta_callback($post) {
         </div>
         <div class="email-meta-field">
             <label>Overview Description</label>
-            <textarea name="email_overview_description"><?php echo esc_textarea(get_post_meta($post->ID, 'email_overview_description', true) ?: 'Transform one-time visitors into loyal customers with strategically designed email and SMS automation flows. Our data-driven approach ensures the right message reaches the right person at the perfect moment, maximizing engagement and conversions.'); ?></textarea>
+            <textarea name="email_overview_description"><?php echo esc_textarea(get_post_meta($post->ID, 'email_overview_description', true) ?: 'Transform one-time visitors into loyal customers with strategically designed email and SMS automation flows. Our data-driven approach ensures the right message reaches the right person at the perfect moment, maximising engagement and conversions.'); ?></textarea>
         </div>
 
         <h4>Service Items</h4>
@@ -1351,7 +1351,7 @@ function email_sms_flows_meta_callback($post) {
         </div>
         <div class="email-meta-field">
             <label>Service 2 Description</label>
-            <textarea name="email_service_2_desc"><?php echo esc_textarea(get_post_meta($post->ID, 'email_service_2_desc', true) ?: 'Multi-step email and SMS sequences that recover lost sales with personalized product reminders and incentives.'); ?></textarea>
+            <textarea name="email_service_2_desc"><?php echo esc_textarea(get_post_meta($post->ID, 'email_service_2_desc', true) ?: 'Multi-step email and SMS sequences that recover lost sales with personalised product reminders and incentives.'); ?></textarea>
         </div>
 
         <div class="email-meta-field">
@@ -1465,14 +1465,14 @@ function email_sms_flows_meta_callback($post) {
                 2 => 'Flow Strategy Design', 
                 3 => 'Content Creation',
                 4 => 'Technical Implementation',
-                5 => 'Testing & Optimization'
+                5 => 'Testing & optimisation'
             ];
             $step_descriptions = [
-                1 => 'Analyze your customer touchpoints and identify key moments where automation can drive engagement and conversions.',
-                2 => 'Create detailed flow maps with timing, triggers, and branching logic based on customer behavior and preferences.',
+                1 => 'analyse your customer touchpoints and identify key moments where automation can drive engagement and conversions.',
+                2 => 'Create detailed flow maps with timing, triggers, and branching logic based on customer behaviour and preferences.',
                 3 => 'Develop compelling email and SMS content with persuasive copy, engaging visuals, and clear calls-to-action.',
                 4 => 'Build and configure automation flows with proper tracking, segmentation, and cross-channel coordination.',
-                5 => 'A/B test flow performance and continuously optimize timing, content, and triggers for maximum effectiveness.'
+                5 => 'A/B test flow performance and continuously optimise timing, content, and triggers for maximum effectiveness.'
             ];
         ?>
         <h4>Step <?php echo $i; ?></h4>

@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 /**
  * Partnership Page Meta Fields
  * Adds custom meta box for Partnership Page template with editable content fields
@@ -63,7 +63,7 @@ function aimpro_partner_meta_box_callback($post) {
     
     // Agency Partners
     $agency_title = get_post_meta($post->ID, 'partner_agency_title', true) ?: 'Agency Partners';
-    $agency_description = get_post_meta($post->ID, 'partner_agency_description', true) ?: 'White-label our services or collaborate on larger projects that require specialized expertise in digital marketing.';
+    $agency_description = get_post_meta($post->ID, 'partner_agency_description', true) ?: 'White-label our services or collaborate on larger projects that require specialised expertise in digital marketing.';
     $agency_benefits = get_post_meta($post->ID, 'partner_agency_benefits', true) ?: "White-label service delivery\nShared project management\nCollaborative proposal development\nResource and expertise sharing";
     $agency_ideal = get_post_meta($post->ID, 'partner_agency_ideal', true) ?: 'Creative agencies, PR firms, web development agencies, and other marketing service providers looking to expand their digital capabilities.';
     
@@ -119,7 +119,7 @@ function aimpro_partner_meta_box_callback($post) {
     $process_step2_text = get_post_meta($post->ID, 'partner_process_step2_text', true) ?: 'We\'ll schedule a call to discuss your needs, goals, and how we can work together effectively.';
     $process_step3_number = get_post_meta($post->ID, 'partner_process_step3_number', true) ?: '3';
     $process_step3_title = get_post_meta($post->ID, 'partner_process_step3_title', true) ?: 'Partnership Proposal';
-    $process_step3_text = get_post_meta($post->ID, 'partner_process_step3_text', true) ?: 'Based on our discussion, we\'ll create a customized partnership proposal that outlines terms and benefits.';
+    $process_step3_text = get_post_meta($post->ID, 'partner_process_step3_text', true) ?: 'Based on our discussion, we\'ll create a customised partnership proposal that outlines terms and benefits.';
     $process_step4_number = get_post_meta($post->ID, 'partner_process_step4_number', true) ?: '4';
     $process_step4_title = get_post_meta($post->ID, 'partner_process_step4_title', true) ?: 'Agreement & Onboarding';
     $process_step4_text = get_post_meta($post->ID, 'partner_process_step4_text', true) ?: 'Once agreed, we\'ll formalize the partnership and begin the onboarding process with training and resources.';

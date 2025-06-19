@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 /**
  * Template Name: Team Page
  * Description: Team members page
@@ -68,7 +68,7 @@ get_header(); ?>
                             <h4>Business Growth Specialist</h4>
                             <p>Dinesh brings innovative growth strategies and deep analytics expertise to our team. He oversees marketing operations and ensures our campaigns deliver measurable results for clients.</p>
                             <div class="member-specialties">
-                                <span class="specialty">ROI Optimization</span>
+                                <span class="specialty">ROI optimisation</span>
                                 <span class="specialty">Analytics</span>
                                 <span class="specialty">Business Growth</span>
                             </div>

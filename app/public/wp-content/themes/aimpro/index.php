@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 /**
  * Template for displaying the homepage
  *
@@ -22,7 +22,7 @@ get_header(); ?>
         <div class="floating-shape shape-1"></div>
         <div class="floating-shape shape-2"></div>
     </div><div class="container">        <div class="hero-wrapper">            <div class="hero-content animate-on-scroll animate-fade-up">                <div class="hero-badge slide-up-delay-1">
-                    <span><?php echo aimpro_get_field('hero_badge_text', 'Award-Winning Digital Agency'); ?></span>                </div><?php echo aimpro_get_field('hero_title', '<h1 class="hero-title">Scale Your Business With <span class="highlight curly-underline">PRECISION</span> Digital <span class="highlight-word" style="color: #f15a25 !important; -webkit-text-fill-color: #f15a25 !important;">Marketing</span></h1>'); ?>                <div class="hero-straplines">
+                    <span><?php echo aimpro_get_field('hero_badge_text', 'Award-Winning Digital Agency'); ?></span>                </div><?php echo aimpro_get_field('hero_title', '<h1 class="hero-title">Scale Your Business With <span class="highlight curly-underline">PRECISION</span> Digital <span class="highlight-word" style="colour: #f15a25 !important; -webkit-text-fill-colour: #f15a25 !important;">Marketing</span></h1>'); ?>                <div class="hero-straplines">
                     <span class="strapline active"><?php echo aimpro_get_field('hero_strapline_1', 'No Fluff. Just Results.'); ?></span>
                     <span class="strapline"><?php echo aimpro_get_field('hero_strapline_2', 'Data-Driven Strategy. Measurable Results.'); ?></span>
                     <span class="strapline"><?php echo aimpro_get_field('hero_strapline_3', 'Grow Your Business With Precision Marketing.'); ?></span>
@@ -61,8 +61,8 @@ get_header(); ?>
 <!-- Agency Value Statement -->
 <section class="value-statement">
     <div class="container">
-        <div class="content-center">            <h2><?php echo aimpro_get_field('value_statement_title', 'A Results-Driven Digital Agency Obsessed With Your <span class="highlight curly-underline">SUCCESS</span>'); ?></h2>
-            <p><?php echo aimpro_get_field('value_statement_description', 'We partner with ambitious businesses to transform their digital presence through intelligent strategies and performance-focused marketing. Our proven methodologies deliver quantifiable results that drive exponential growth and maximize your competitive advantage.'); ?></p>
+        <div class="content-centre">            <h2><?php echo aimpro_get_field('value_statement_title', 'A Results-Driven Digital Agency Obsessed With Your <span class="highlight curly-underline">SUCCESS</span>'); ?></h2>
+            <p><?php echo aimpro_get_field('value_statement_description', 'We partner with ambitious businesses to transform their digital presence through intelligent strategies and performance-focused marketing. Our proven methodologies deliver quantifiable results that drive exponential growth and maximise your competitive advantage.'); ?></p>
             <a href="<?php echo aimpro_get_field('value_statement_cta_url', '#contact'); ?>" class="btn-primary large"><?php echo aimpro_get_field('value_statement_cta_text', 'CLAIM YOUR FREE GROWTH AUDIT'); ?></a>
         </div>
     </div>
@@ -71,10 +71,10 @@ get_header(); ?>
 <!-- Stats Counter -->
 <section class="stats-section">
     <!-- Target Icons -->
-    <div class="target-icon stats-target-1"></div>    <!-- Stats Lottie Animation Background - OPTIMIZED: Single animation instead of 3 -->
+    <div class="target-icon stats-target-1"></div>    <!-- Stats Lottie Animation Background - optimiseD: Single animation instead of 3 -->
     <div class="stats-animation-bg">
         <div class="animation-layer">
-            <!-- Single optimized Lottie instance with CSS-based width coverage -->
+            <!-- Single optimised Lottie instance with CSS-based width coverage -->
             <div id="lottie-stats-animation" class="lottie-stats-single"></div>
             <!-- CSS fallback animation -->
             <div class="css-wave-animation" style="display: none;"></div>
@@ -113,7 +113,7 @@ get_header(); ?>
         <div class="floating-orb orb-3"></div>
     </div>
     
-    <div class="container">        <div class="content-center">            <h2><?php echo aimpro_get_field('services_title', 'Premium Digital Marketing Solutions That <span class="highlight curly-underline">DELIVER</span>'); ?></h2>
+    <div class="container">        <div class="content-centre">            <h2><?php echo aimpro_get_field('services_title', 'Premium Digital Marketing Solutions That <span class="highlight curly-underline">DELIVER</span>'); ?></h2>
             <p class="section-subtitle"><?php echo aimpro_get_field('services_subtitle', 'Zero fluff. Pure performance. Our integrated marketing ecosystem works seamlessly to transform prospects into profits.'); ?></p>
         </div>
         
@@ -124,14 +124,14 @@ get_header(); ?>
                 </div>
                 <div class="service-content">                    <div class="service-header">                        <div class="service-icon-container">
                             <div class="service-icon-animated">
-                                <i class="fas fa-search" style="font-size: 30px; color: #f15a25;"></i>
+                                <i class="fas fa-search" style="font-size: 30px; colour: #f15a25;"></i>
                             </div>
                         </div>
                         <div class="service-badge">SEO</div>
                         <h3>SEO Services</h3>
                     </div>
                     <div class="service-description">
-                        <p>Dominate search results with comprehensive SEO strategies including local SEO, technical optimization, and on-page excellence that drive organic traffic and qualified leads.</p>                        <div class="service-features">
+                        <p>Dominate search results with comprehensive SEO strategies including local SEO, technical optimisation, and on-page excellence that drive organic traffic and qualified leads.</p>                        <div class="service-features">
                             <span class="feature-tag">Local SEO</span>
                             <span class="feature-tag">Technical SEO</span>
                             <span class="feature-tag">SEO Audits</span>
@@ -152,7 +152,7 @@ get_header(); ?>
                 </div>
                 <div class="service-content">                    <div class="service-header">                        <div class="service-icon-container">
                             <div class="service-icon-animated">
-                                <i class="fab fa-google" style="font-size: 30px; color: #f15a25;"></i>
+                                <i class="fab fa-google" style="font-size: 30px; colour: #f15a25;"></i>
                             </div>
                         </div>
                         <div class="service-badge">PPC</div>
@@ -160,7 +160,7 @@ get_header(); ?>
                     </div>
                     <div class="service-description">
                         <p>Dominate search results with expertly crafted Google Ads campaigns that capture high-intent traffic and convert clicks into customers with surgical precision and maximum ROI.</p>                        <div class="service-features">
-                            <span class="feature-tag">ROI Optimization</span>
+                            <span class="feature-tag">ROI Optimisation</span>
                             <span class="feature-tag">Keyword Research</span>
                             <span class="feature-tag">A/B Testing</span>
                         </div>
@@ -180,14 +180,14 @@ get_header(); ?>
                 </div>
                 <div class="service-content">                    <div class="service-header">                        <div class="service-icon-container">
                             <div class="service-icon-animated">
-                                <i class="fas fa-palette" style="font-size: 30px; color: #f15a25;"></i>
+                                <i class="fas fa-palette" style="font-size: 30px; colour: #f15a25;"></i>
                             </div>
                         </div>
                         <div class="service-badge">Web</div>
                         <h3>Website Design</h3>
                     </div>
                     <div class="service-description">
-                        <p>Engineer premium, conversion-optimized websites that captivate visitors and transform them into customers through strategic design and seamless user experiences.</p>
+                        <p>Engineer premium, conversion-optimised websites that captivate visitors and transform them into customers through strategic design and seamless user experiences.</p>
                         <div class="service-features">                            <span class="feature-tag">Mobile First</span>
                             <span class="feature-tag">SEO Ready</span>
                             <span class="feature-tag">Fast Loading</span>
@@ -207,7 +207,7 @@ get_header(); ?>
                 <div class="service-content">
                     <div class="service-header">                        <div class="service-icon-container">
                             <div class="service-icon-animated">
-                                <i class="fab fa-meta" style="font-size: 30px; color: #f15a25;"></i>
+                                <i class="fab fa-meta" style="font-size: 30px; colour: #f15a25;"></i>
                             </div>
                             <div class="service-badge">Meta</div>
                         </div>
@@ -237,7 +237,7 @@ get_header(); ?>
                 <div class="service-content">
                     <div class="service-header">                        <div class="service-icon-container">
                             <div class="service-icon-animated">
-                                <i class="fas fa-robot" style="font-size: 30px; color: #f15a25;"></i>
+                                <i class="fas fa-robot" style="font-size: 30px; colour: #f15a25;"></i>
                             </div>
                             <div class="service-badge">AI</div>
                         </div>
@@ -267,7 +267,7 @@ get_header(); ?>
                 <div class="service-content">
                     <div class="service-header">                        <div class="service-icon-container">
                             <div class="service-icon-animated">
-                                <i class="fas fa-cogs" style="font-size: 30px; color: #f15a25;"></i>
+                                <i class="fas fa-cogs" style="font-size: 30px; colour: #f15a25;"></i>
                             </div>
                             <div class="service-badge">Auto</div>
                         </div>
@@ -297,7 +297,7 @@ get_header(); ?>
 <!-- Lead Magnet Section -->
 <section class="lead-magnet-section">
     <div class="container">
-        <div class="content-center">
+        <div class="content-centre">
             <h2><?php echo aimpro_get_field('lead_magnet_title', 'Get Our Free Digital Marketing <span class="highlight curly-underline">GUIDE</span>'); ?></h2>
             <p class="section-subtitle"><?php echo aimpro_get_field('lead_magnet_subtitle', 'Download our comprehensive digital marketing guide packed with proven strategies to grow your business.'); ?></p>
         </div>
@@ -366,7 +366,7 @@ get_header(); ?>
                 
                 <div class="calendar-booking animate-fade-up" data-delay="0.3">
                     <a href="#" class="btn-primary large calendar-btn">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentcolour" stroke-width="2">
                             <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
                             <line x1="16" y1="2" x2="16" y2="6"></line>
                             <line x1="8" y1="2" x2="8" y2="6"></line>
@@ -404,7 +404,7 @@ get_header(); ?>
 <!-- Team Section -->
 <section id="team" class="team-section premium-team">
     <div class="container">
-        <div class="content-center">            <h2>Meet The Experts Who Make <span class="highlight curly-underline">MAGIC</span> Happen</h2>
+        <div class="content-centre">            <h2>Meet The Experts Who Make <span class="highlight curly-underline">MAGIC</span> Happen</h2>
             <p class="section-subtitle">No faceless agencies here. Our marketing specialists are passionate about client success and personally invested in delivering exceptional results for every business we partner with.</p>
         </div>
         <div class="team-grid">            <div class="team-member premium-card">
@@ -432,7 +432,7 @@ get_header(); ?>
                 </div>
                 <h3>Dinesh Thapa</h3>
                 <p class="member-title">Business Growth Specialist</p>
-                <p class="member-expertise">ROI Optimization • Analytics Expert</p>
+                <p class="member-expertise">ROI Optimisation • Analytics Expert</p>
             </div>            <div class="team-member premium-card">
                 <div class="member-photo">
                     <img src="<?php echo get_template_directory_uri(); ?>/assets/images/james-butler.png" alt="James Butler" />
@@ -458,7 +458,7 @@ get_header(); ?>
 <section class="testimonials-section">
     <!-- Target Icons -->
     <div class="target-icon testimonials-target-1"></div>    <div class="container">
-        <div class="content-center animate-on-scroll animate-fade-up">
+        <div class="content-centre animate-on-scroll animate-fade-up">
             <h2><?php echo aimpro_get_field('testimonials_title', 'Don\'t Just Take Our Word for It'); ?></h2>
         </div>
         <div class="testimonials-carousel-wrapper">
@@ -530,8 +530,8 @@ get_header(); ?>
 <!-- Latest Blogs -->
 <section class="blog-section">
     <div class="container">
-        <div class="content-center">            <h2><?php echo aimpro_get_field('blog_title', 'Scale Up Your <span class="highlight curly-underline">MARKETING</span>'); ?></h2>
-            <p class="section-subtitle"><?php echo aimpro_get_field('blog_subtitle', 'Zero secrets. Maximum value. We share proven strategies and insider insights to help ambitious marketers like you accelerate growth, drive traffic, and maximize revenue.'); ?></p>
+        <div class="content-centre">            <h2><?php echo aimpro_get_field('blog_title', 'Scale Up Your <span class="highlight curly-underline">MARKETING</span>'); ?></h2>
+            <p class="section-subtitle"><?php echo aimpro_get_field('blog_subtitle', 'Zero secrets. Maximum value. We share proven strategies and insider insights to help ambitious marketers like you accelerate growth, drive traffic, and maximise revenue.'); ?></p>
         </div>
           <div class="blog-grid">
             <?php

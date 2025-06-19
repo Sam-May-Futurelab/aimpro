@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 /**
  * Meta Ads Meta Fields
  *
@@ -38,10 +38,10 @@ function aimpro_get_meta_ads_default_values() {
         
         // Service Items (6 services)
         'service_title_1' => 'Facebook Ads Management',
-        'service_content_1' => 'Strategic Facebook advertising campaigns targeting specific demographics, interests, and behaviors to maximize reach and conversions.',
+        'service_content_1' => 'Strategic Facebook advertising campaigns targeting specific demographics, interests, and behaviours to maximise reach and conversions.',
         'service_icon_1' => 'fab fa-facebook',
         
-        'service_title_2' => 'Instagram Ads Optimization',
+        'service_title_2' => 'Instagram Ads optimisation',
         'service_content_2' => 'Visual storytelling through Instagram ads that capture attention and drive engagement with compelling creative and precise targeting.',
         'service_icon_2' => 'fab fa-instagram',
         
@@ -49,7 +49,7 @@ function aimpro_get_meta_ads_default_values() {
         'service_content_3' => 'Leverage Meta\'s sophisticated targeting options including lookalike audiences, custom audiences, and detailed demographic targeting.',
         'service_icon_3' => 'fas fa-bullseye',
         
-        'service_title_4' => 'Campaign Optimization',
+        'service_title_4' => 'Campaign optimisation',
         'service_content_4' => 'Continuous A/B testing of ad creative, copy, and targeting to improve performance and reduce costs over time.',
         'service_icon_4' => 'fas fa-sync-alt',
         
@@ -65,7 +65,7 @@ function aimpro_get_meta_ads_default_values() {
         'case_study_title' => 'Case Study: E-commerce Success',
         'case_study_intro' => 'How we helped an online retailer achieve a 380% increase in sales through strategic Meta advertising campaigns.',
         'case_study_challenge' => 'An established e-commerce retailer was struggling with high customer acquisition costs and declining ROAS from their existing Meta ads campaigns. Their broad targeting approach wasn\'t delivering qualified traffic, and their ad creative wasn\'t resonating with their target audience.',
-        'case_study_solution' => "Implemented advanced audience segmentation and lookalike modeling\nCreated platform-specific creative optimized for Facebook and Instagram feeds\nLaunched retargeting campaigns for abandoned cart recovery\nEstablished dynamic product ads for catalog promotion\nImplemented conversion tracking and attribution modeling",
+        'case_study_solution' => "Implemented advanced audience segmentation and lookalike modeling\nCreated platform-specific creative optimised for Facebook and Instagram feeds\nLaunched retargeting campaigns for abandoned cart recovery\nEstablished dynamic product ads for catalog promotion\nImplemented conversion tracking and attribution modeling",
         
         // Case Study Results
         'case_result_1_number' => '380%',
@@ -82,19 +82,19 @@ function aimpro_get_meta_ads_default_values() {
         
         'process_step_number_1' => '1',
         'process_step_title_1' => 'Audience Research & Strategy',
-        'process_step_content_1' => 'Deep dive into your target audience demographics, interests, and behaviors to create detailed buyer personas and targeting strategies.',
+        'process_step_content_1' => 'Deep dive into your target audience demographics, interests, and behaviours to create detailed buyer personas and targeting strategies.',
         
         'process_step_number_2' => '2',
         'process_step_title_2' => 'Campaign Setup & Structure',
-        'process_step_content_2' => 'Build optimized campaign architecture with proper audience segmentation, budget allocation, and conversion tracking implementation.',
+        'process_step_content_2' => 'Build optimised campaign architecture with proper audience segmentation, budget allocation, and conversion tracking implementation.',
         
         'process_step_number_3' => '3',
         'process_step_title_3' => 'Creative Development',
-        'process_step_content_3' => 'Design compelling ad creative including images, videos, and copy optimized for Facebook and Instagram placements.',
+        'process_step_content_3' => 'Design compelling ad creative including images, videos, and copy optimised for Facebook and Instagram placements.',
         
         'process_step_number_4' => '4',
-        'process_step_title_4' => 'Launch & Optimization',
-        'process_step_content_4' => 'Deploy campaigns with continuous monitoring and optimization based on performance data and audience insights.',
+        'process_step_title_4' => 'Launch & optimisation',
+        'process_step_content_4' => 'Deploy campaigns with continuous monitoring and optimisation based on performance data and audience insights.',
         
         'process_step_number_5' => '5',
         'process_step_title_5' => 'Reporting & Scaling',
@@ -116,7 +116,7 @@ function aimpro_get_meta_ads_default_values() {
         'pricing_package_2_name' => 'Professional',
         'pricing_package_2_price' => '£1,197',
         'pricing_package_2_period' => '/month',
-        'pricing_package_2_description' => 'Comprehensive Meta advertising',        'pricing_package_2_features' => "Up to £5,000 ad spend management\nFull Meta platform coverage\nAdvanced audience targeting\nUnlimited ad creative testing\nBi-weekly optimization reports\nRetargeting campaigns\nLookalike audience creation\nPriority support",
+        'pricing_package_2_description' => 'Comprehensive Meta advertising',        'pricing_package_2_features' => "Up to £5,000 ad spend management\nFull Meta platform coverage\nAdvanced audience targeting\nUnlimited ad creative testing\nBi-weekly optimisation reports\nRetargeting campaigns\nLookalike audience creation\nPriority support",
         'pricing_package_2_button_text' => 'Get Started',
         'pricing_package_2_badge' => '',
         'pricing_package_2_featured' => true,
@@ -133,11 +133,11 @@ function aimpro_get_meta_ads_default_values() {
         'tools_title' => 'Tools & Technologies We Use',
         
         'tool_title_1' => 'Meta Business Manager',
-        'tool_content_1' => 'Advanced campaign management and optimization through Meta\'s professional advertising platform.',
+        'tool_content_1' => 'Advanced campaign management and optimisation through Meta\'s professional advertising platform.',
         'tool_icon_1' => 'fab fa-facebook',
         
         'tool_title_2' => 'Meta Analytics',
-        'tool_content_2' => 'Comprehensive performance tracking and audience insights for data-driven optimization.',
+        'tool_content_2' => 'Comprehensive performance tracking and audience insights for data-driven optimisation.',
         'tool_icon_2' => 'fas fa-chart-bar',
         
         'tool_title_3' => 'Audience Insights',
@@ -170,13 +170,13 @@ function aimpro_get_meta_ads_default_values() {
         'industry_content_6' => 'Drive software adoption and user acquisition through targeted campaigns.',
         
         // Testimonial Section
-        'testimonial_quote' => 'Aimpro transformed our Meta advertising from a cost center to our most profitable marketing channel. Their strategic approach and creative optimization delivered a 285% increase in ROAS within just 4 months.',
+        'testimonial_quote' => 'Aimpro transformed our Meta advertising from a cost centre to our most profitable marketing channel. Their strategic approach and creative optimisation delivered a 285% increase in ROAS within just 4 months.',
         'testimonial_name' => 'Sarah Mitchell',
         'testimonial_title' => 'Marketing Director, RetailPlus',
         
         // CTA Section
         'cta_title' => 'Ready to Build Your High-Converting Website?',
-        'cta_content' => 'Get a free website audit and consultation. We\'ll analyze your current site and show you exactly how to improve conversions and performance.',
+        'cta_content' => 'Get a free website audit and consultation. We\'ll analyse your current site and show you exactly how to improve conversions and performance.',
         'cta_button_1_text' => 'Get Free Website Audit',
         'cta_button_2_text' => 'View All Services',
         'cta_benefit_1' => 'Free design consultation',
@@ -633,7 +633,7 @@ function aimpro_meta_ads_pricing_callback($post) {
         if (empty($package_featured) && isset($defaults["pricing_package_{$i}_featured"])) {
             $package_featured = $defaults["pricing_package_{$i}_featured"];
         }
-    ?>    <div style="border: 1px solid #ddd; padding: 15px; margin: 10px 0; <?php echo ($i == 2) ? 'background-color: #f9f9f9;' : ''; ?>">
+    ?>    <div style="border: 1px solid #ddd; padding: 15px; margin: 10px 0; <?php echo ($i == 2) ? 'background-colour: #f9f9f9;' : ''; ?>">
         <h5><?php echo sprintf(__('Package %d', 'aimpro'), $i); ?></h5>
         <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 15px;">
             <div>

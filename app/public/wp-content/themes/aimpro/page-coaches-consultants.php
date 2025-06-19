@@ -30,7 +30,7 @@ $challenges = get_post_meta(get_the_ID(), '_coaches_consultants_challenges', tru
                 <div class="overview-content">
                     <div class="overview-text animate-on-scroll animate-slide-left">
                         <h2><?php echo esc_html($overview_title ?: 'Transform Your Expertise Into a Thriving Business'); ?></h2>
-                        <p><?php echo esc_html($overview_content ?: 'As a coach or consultant, your expertise is your greatest asset. Our specialized marketing strategies help you build a powerful personal brand, attract high-value clients, and position yourself as the go-to authority in your niche.'); ?></p>
+                        <p><?php echo esc_html($overview_content ?: 'As a coach or consultant, your expertise is your greatest asset. Our specialised marketing strategies help you build a powerful personal brand, attract high-value clients, and position yourself as the go-to authority in your niche.'); ?></p>
                         
                         <div class="industry-challenges animate-on-scroll animate-fade-up">
                             <h3><?php echo esc_html($challenges_title ?: 'Coaching & Consulting Marketing Challenges We Solve:'); ?></h3>
@@ -113,7 +113,7 @@ $challenges = get_post_meta(get_the_ID(), '_coaches_consultants_challenges', tru
                             <h3>LinkedIn & Social Media Strategy</h3>
                             <p>Build your professional network and generate high-value leads through strategic social media engagement.</p>
                             <ul class="feature-list">
-                                <li>LinkedIn profile optimization</li>
+                                <li>LinkedIn profile optimisation</li>
                                 <li>Content distribution strategy</li>
                                 <li>Social media advertising</li>
                                 <li>Community building</li>
@@ -257,7 +257,7 @@ $challenges = get_post_meta(get_the_ID(), '_coaches_consultants_challenges', tru
                 </div>
             </div>
         </section>        <!-- CTA Section -->
-        <section class="coaches-consultants-cta text-center animate-on-scroll animate-fade-up">
+        <section class="coaches-consultants-cta text-centre animate-on-scroll animate-fade-up">
             <div class="section-content">
                 <h2 class="animate-on-scroll animate-fade-up">Ready to Scale Your Coaching or Consulting Business?</h2>
                 <p class="animate-on-scroll animate-fade-up">Let's discuss how our expertise can help you build a powerful personal brand and generate consistent high-value clients.</p>

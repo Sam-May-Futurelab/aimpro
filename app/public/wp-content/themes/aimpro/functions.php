@@ -1,7 +1,7 @@
-<?php
+﻿<?php
 /**
  * Aimpro Digital Theme Functions
- * Enhanced with performance optimizations and SEO features
+ * Enhanced with performance optimisations and SEO features
  */
 
 // Prevent direct access
@@ -136,7 +136,7 @@ function aimpro_filter_post_thumbnail_html($html, $post_id, $post_thumbnail_id, 
 add_filter('post_thumbnail_html', 'aimpro_filter_post_thumbnail_html', 10, 5);
 
 /**
- * Enqueue Scripts and Styles with Performance Optimizations
+ * Enqueue Scripts and Styles with Performance optimisations
  */
 function aimpro_enqueue_assets() {
     $theme_version = wp_get_theme()->get('Version');
@@ -227,7 +227,7 @@ function aimpro_enqueue_assets() {
     wp_enqueue_script('aimpro-scroll-animations', get_template_directory_uri() . '/assets/js/scroll-animations.js', array(), $theme_version, true);
       // Note: Removed JS-based menu enhancements to use pure CSS solution
     // mega-menu.js removed as it was causing navigation conflicts and isn't needed for current navigation structure
-      // Add inline script for critical path optimization
+      // Add inline script for critical path optimisation
     $inline_script = "
         if (document.documentElement) {
             document.documentElement.classList.add('js');
@@ -258,7 +258,7 @@ function aimpro_add_structured_data() {
         '@context' => 'https://schema.org',
         '@type' => 'DigitalMarketingBusiness',
         'name' => 'Aimpro Digital',
-        'description' => 'Premier digital marketing agency specializing in SEO, PPC, social media marketing, and web development.',
+        'description' => 'Premier digital marketing agency specialising in SEO, PPC, social media marketing, and web development.',
         'url' => home_url('/'),
         'logo' => get_template_directory_uri() . '/assets/images/logo.png',
         'sameAs' => array(
@@ -298,15 +298,15 @@ function aimpro_add_resource_hints() {
 }
 add_action('wp_head', 'aimpro_add_resource_hints', 1);
 
-// Optimize CSS delivery
-function aimpro_optimize_css_delivery() {
+// optimise CSS delivery
+function aimpro_optimise_css_delivery() {
     echo '<style id="critical-css">
-        body{font-family:"Inter",sans-serif;margin:0;padding:0;line-height:1.6;color:#1a1a1a}
+        body{font-family:"Inter",sans-serif;margin:0;padding:0;line-height:1.6;colour:#1a1a1a}
         .sticky-header{position:fixed;top:0;width:100%;z-index:1000;transition:all 0.3s ease}
-        .hero-section{min-height:100vh;display:flex;align-items:center;background:linear-gradient(135deg,#667eea 0%,#764ba2 100%)}
+        .hero-section{min-height:100vh;display:flex;align-items:centre;background:linear-gradient(135deg,#667eea 0%,#764ba2 100%)}
     </style>';
 }
-add_action('wp_head', 'aimpro_optimize_css_delivery', 2);
+add_action('wp_head', 'aimpro_optimise_css_delivery', 2);
 
 // Add security headers
 function aimpro_security_headers() {
@@ -319,8 +319,8 @@ function aimpro_security_headers() {
 }
 add_action('send_headers', 'aimpro_security_headers');
 
-// Optimize WordPress for performance
-function aimpro_optimize_wordpress() {
+// optimise WordPress for performance
+function aimpro_optimise_wordpress() {
     // Remove unnecessary WordPress features
     remove_action('wp_head', 'wp_generator');
     remove_action('wp_head', 'wlwmanifest_link');
@@ -343,7 +343,7 @@ function aimpro_optimize_wordpress() {
     }
     add_action('wp_default_scripts', 'remove_jquery_migrate');
 }
-add_action('init', 'aimpro_optimize_wordpress');
+add_action('init', 'aimpro_optimise_wordpress');
 
 // Add custom post type for testimonials (if needed)
 function aimpro_register_post_types() {
@@ -651,39 +651,39 @@ function aimpro_add_og_meta() {
 }
 add_action('wp_head', 'aimpro_add_og_meta');
 
-// Add theme customizer options
-function aimpro_customize_register($wp_customize) {
+// Add theme customiser options
+function aimpro_customise_register($wp_customise) {
     // Add company info section
-    $wp_customize->add_section('aimpro_company_info', array(
+    $wp_customise->add_section('aimpro_company_info', array(
         'title' => 'Company Information',
         'priority' => 30,
     ));
     
     // Add phone number setting
-    $wp_customize->add_setting('company_phone', array(
+    $wp_customise->add_setting('company_phone', array(
         'default' => '+1 (555) 123-4567',
         'sanitize_callback' => 'sanitize_text_field',
     ));
     
-    $wp_customize->add_control('company_phone', array(
+    $wp_customise->add_control('company_phone', array(
         'label' => 'Phone Number',
         'section' => 'aimpro_company_info',
         'type' => 'text',
     ));
     
     // Add email setting
-    $wp_customize->add_setting('company_email', array(
+    $wp_customise->add_setting('company_email', array(
         'default' => 'hello@aimprodigital.com',
         'sanitize_callback' => 'sanitize_email',
     ));
     
-    $wp_customize->add_control('company_email', array(
+    $wp_customise->add_control('company_email', array(
         'label' => 'Email Address',
         'section' => 'aimpro_company_info',
         'type' => 'email',
     ));
 }
-add_action('customize_register', 'aimpro_customize_register');
+add_action('customise_register', 'aimpro_customise_register');
 
 /**
  * ========================================
@@ -818,7 +818,7 @@ function aimpro_stats_section_callback($post) {
 // Services Preview Meta Box
 function aimpro_services_preview_callback($post) {
     $services_title = get_post_meta($post->ID, '_services_title', true) ?: 'Our <span class="highlight">Premium</span> Digital Marketing Services';
-    $services_subtitle = get_post_meta($post->ID, '_services_subtitle', true) ?: 'Comprehensive solutions designed to accelerate your digital growth and maximize ROI across all channels.';
+    $services_subtitle = get_post_meta($post->ID, '_services_subtitle', true) ?: 'Comprehensive solutions designed to accelerate your digital growth and maximise ROI across all channels.';
     
     echo '<table class="form-table">';
     echo '<tr><th><label for="services_title">Services Section Title (HTML allowed)</label></th>';
@@ -917,7 +917,7 @@ function aimpro_theme_activation() {
     // Flush rewrite rules
     flush_rewrite_rules();
     
-    // Set default customizer values
+    // Set default customiser values
     set_theme_mod('company_phone', '+1 (555) 123-4567');
     set_theme_mod('company_email', 'hello@aimprodigital.com');
     
@@ -931,7 +931,7 @@ function aimpro_theme_activation() {
 function aimpro_set_default_landing_page_values() {
     $defaults = array(
         'hero_badge_text' => 'Award-Winning Digital Agency',
-        'hero_title' => '<h1 class="hero-title">Scale Your Business With <span class="highlight curly-underline">PRECISION</span> Digital <span class="highlight-word" style="color: #f15a25 !important; -webkit-text-fill-color: #f15a25 !important;">Marketing</span></h1>',
+        'hero_title' => '<h1 class="hero-title">Scale Your Business With <span class="highlight curly-underline">PRECISION</span> Digital <span class="highlight-word" style="colour: #f15a25 !important; -webkit-text-fill-colour: #f15a25 !important;">Marketing</span></h1>',
         'hero_subtitle' => 'Expert Lead Generation, SEO, PPC & Automation. Data-driven strategies that deliver <strong class="highlight-underline">MEASURABLE RESULTS</strong> and accelerate your <strong class="highlight-word">growth</strong>.',
         'hero_primary_cta_text' => 'CLAIM YOUR FREE GROWTH STRATEGY',
         'hero_primary_cta_url' => '#contact',
@@ -953,11 +953,11 @@ function aimpro_set_default_landing_page_values() {
         'services_subtitle' => 'Zero fluff. Pure performance. Our integrated marketing ecosystem works seamlessly to transform prospects into profits.',
         // Value Statement
         'value_statement_title' => 'A Results-Driven Digital Agency Obsessed With Your <span class="highlight curly-underline">SUCCESS</span>',
-        'value_statement_description' => 'We partner with ambitious businesses to transform their digital presence through intelligent strategies and performance-focused marketing. Our proven methodologies deliver quantifiable results that drive exponential growth and maximize your competitive advantage.',
+        'value_statement_description' => 'We partner with ambitious businesses to transform their digital presence through intelligent strategies and performance-focused marketing. Our proven methodologies deliver quantifiable results that drive exponential growth and maximise your competitive advantage.',
         'value_statement_cta_text' => 'CLAIM YOUR FREE GROWTH AUDIT',
         'value_statement_cta_url' => '#contact',        // Blog Section
         'blog_title' => 'Scale Up Your <span class="highlight curly-underline">MARKETING</span>',
-        'blog_subtitle' => 'Zero secrets. Maximum value. We share proven strategies and insider insights to help ambitious marketers like you accelerate growth, drive traffic, and maximize revenue.',
+        'blog_subtitle' => 'Zero secrets. Maximum value. We share proven strategies and insider insights to help ambitious marketers like you accelerate growth, drive traffic, and maximise revenue.',
         'blog_cta_text' => 'MORE BLOGS',
         'blog_cta_url' => '/blog',// Final CTA Section
         'final_cta_title' => 'You Bring the Ambition, We Drive the <span class="highlight curly-underline">RESULTS</span>',
@@ -1130,7 +1130,7 @@ function aimpro_landing_page_admin() {
                         <tr>
                             <th scope="row">Main Title</th>
                             <td>
-                                <textarea name="hero_title" rows="3" class="large-text"><?php echo esc_textarea(get_option('hero_title', '<h1 class="hero-title">Scale Your Business With <span class="highlight curly-underline">PRECISION</span> Digital <span class="highlight-word" style="color: #f15a25 !important; -webkit-text-fill-color: #f15a25 !important;">Marketing</span></h1>')); ?></textarea>
+                                <textarea name="hero_title" rows="3" class="large-text"><?php echo esc_textarea(get_option('hero_title', '<h1 class="hero-title">Scale Your Business With <span class="highlight curly-underline">PRECISION</span> Digital <span class="highlight-word" style="colour: #f15a25 !important; -webkit-text-fill-colour: #f15a25 !important;">Marketing</span></h1>')); ?></textarea>
                                 <p class="description">Main hero title (HTML allowed for styling)</p>
                             </td>
                         </tr>
@@ -1290,7 +1290,7 @@ function aimpro_landing_page_admin() {
                 <!-- Contact Form Labels -->
                 <div class="aimpro-admin-section">
                     <h2>Contact Form Labels</h2>
-                    <p class="description">Customize the contact form field labels and messages.</p>
+                    <p class="description">customise the contact form field labels and messages.</p>
                     <table class="form-table">
                         <tr>
                             <th scope="row">Form Title</th>
@@ -1315,7 +1315,7 @@ function aimpro_landing_page_admin() {
                                 </div>
                                 <input type="text" name="contact_form_query_label" value="<?php echo esc_attr(get_option('contact_form_query_label', 'Query')); ?>" class="regular-text" placeholder="Query Label" style="margin-bottom: 10px;" />
                                 <input type="text" name="contact_form_query_placeholder" value="<?php echo esc_attr(get_option('contact_form_query_placeholder', 'Tell us about your inquiry...')); ?>" class="regular-text" placeholder="Query Placeholder Text" />
-                                <p class="description">Customize the labels for all form fields.</p>
+                                <p class="description">customise the labels for all form fields.</p>
                             </td>
                         </tr>
                         <tr>
@@ -1330,7 +1330,7 @@ function aimpro_landing_page_admin() {
                 <!-- Lead Magnet Section -->
                 <div class="aimpro-admin-section">
                     <h2>Lead Magnet Section</h2>
-                    <p class="description">Customize the free digital marketing guide lead magnet section.</p>
+                    <p class="description">customise the free digital marketing guide lead magnet section.</p>
                     <table class="form-table">
                         <tr>
                             <th scope="row">Section Title</th>
@@ -1423,7 +1423,7 @@ function aimpro_landing_page_admin() {
                         <tr>
                             <th scope="row">Description</th>
                             <td>
-                                <textarea name="value_statement_description" rows="4" class="large-text"><?php echo esc_textarea(get_option('value_statement_description', 'We partner with ambitious businesses to transform their digital presence through intelligent strategies and performance-focused marketing. Our proven methodologies deliver quantifiable results that drive exponential growth and maximize your competitive advantage.')); ?></textarea>
+                                <textarea name="value_statement_description" rows="4" class="large-text"><?php echo esc_textarea(get_option('value_statement_description', 'We partner with ambitious businesses to transform their digital presence through intelligent strategies and performance-focused marketing. Our proven methodologies deliver quantifiable results that drive exponential growth and maximise your competitive advantage.')); ?></textarea>
                                 <p class="description">Value statement description text</p>
                             </td>
                         </tr>
@@ -1456,7 +1456,7 @@ function aimpro_landing_page_admin() {
                         <tr>
                             <th scope="row">Section Subtitle</th>
                             <td>
-                                <textarea name="blog_subtitle" rows="3" class="large-text"><?php echo esc_textarea(get_option('blog_subtitle', 'Zero secrets. Maximum value. We share proven strategies and insider insights to help ambitious marketers like you accelerate growth, drive traffic, and maximize revenue.')); ?></textarea>
+                                <textarea name="blog_subtitle" rows="3" class="large-text"><?php echo esc_textarea(get_option('blog_subtitle', 'Zero secrets. Maximum value. We share proven strategies and insider insights to help ambitious marketers like you accelerate growth, drive traffic, and maximise revenue.')); ?></textarea>
                                 <p class="description">Blog section subtitle</p>
                             </td>
                         </tr>
@@ -1693,7 +1693,7 @@ function aimpro_landing_page_admin() {
     }
     .aimpro-admin-section h2 {
         margin-top: 0;
-        color: #1d2327;
+        colour: #1d2327;
         font-size: 18px;
         font-weight: 600;
         border-bottom: 1px solid #dcdcde;
@@ -1927,11 +1927,11 @@ function aimpro_submissions_page() {
         }
         .submission-type.lead_magnet {
             background: #e7f3ff;
-            color: #0073aa;
+            colour: #0073aa;
         }
         .submission-type.contact {
             background: #f0f6fc;
-            color: #2c3338;
+            colour: #2c3338;
         }
         </style>
     </div>
@@ -2257,7 +2257,7 @@ function aimpro_about_video_meta_box_callback($post) {
                 var embedCode = getEmbedCode(url, 300, 200);
                 $('#url_video_preview').html('<div style="max-width: 300px;">' + embedCode + '</div>');
             } else {
-                $('#url_video_preview').html('<p style="color: #d63384;">Please enter a valid YouTube or Vimeo URL</p>');
+                $('#url_video_preview').html('<p style="colour: #d63384;">Please enter a valid YouTube or Vimeo URL</p>');
             }
         }
         
@@ -2483,7 +2483,7 @@ require_once get_template_directory() . '/includes/streamline-sales-funnel-meta.
 // Include funnel builds meta functionality
 require_once get_template_directory() . '/includes/funnel-builds-meta.php';
 
-// Include UX/UI optimization meta functionality
+// Include UX/UI optimisation meta functionality
 require_once get_template_directory() . '/includes/ux-ui-optimization-meta.php';
 
 // Include email campaigns meta functionality

@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 /**
  * Template Name: About Page
  *
@@ -42,7 +42,7 @@ get_header();
             <div class="page-main-content about-main-content">
                 <div class="about-story">
                     <h2>Our Story</h2>
-                    <p>Founded in 2020 with a vision to revolutionize digital marketing for businesses of all sizes, Aimpro Digital has grown from a small startup to a leading agency serving clients across the globe. Our founders recognized the need for a more personalized, results-driven approach to digital marketing.</p>
+                    <p>Founded in 2020 with a vision to revolutionize digital marketing for businesses of all sizes, Aimpro Digital has grown from a small startup to a leading agency serving clients across the globe. Our founders recognised the need for a more personalised, results-driven approach to digital marketing.</p>
                     
                     <p>What started as a passion project quickly evolved into a comprehensive digital marketing powerhouse. Today, we're proud to work with over 500 clients, from innovative startups to established enterprises, helping them achieve unprecedented growth through strategic digital marketing initiatives.</p>
                     
@@ -118,7 +118,7 @@ get_header();
                         <div class="team-info">
                             <h3>John Smith</h3>
                             <span class="team-title">Chief Executive Officer</span>
-                            <p class="team-bio">With over 15 years of experience in digital marketing, John leads Aimpro Digital's strategic vision and growth. He's passionate about helping businesses unlock their digital potential and has been recognized as a thought leader in the industry.</p>
+                            <p class="team-bio">With over 15 years of experience in digital marketing, John leads Aimpro Digital's strategic vision and growth. He's passionate about helping businesses unlock their digital potential and has been recognised as a thought leader in the industry.</p>
                         </div>
                     </div>
 
@@ -151,7 +151,7 @@ get_header();
                         <div class="team-info">
                             <h3>Emily Rodriguez</h3>
                             <span class="team-title">SEO Team Lead</span>
-                            <p class="team-bio">Emily leads our SEO initiatives with 8+ years of experience in organic search optimization. She specializes in technical SEO, content strategy, and has helped countless clients achieve top search rankings.</p>
+                            <p class="team-bio">Emily leads our SEO initiatives with 8+ years of experience in organic search optimisation. She specialises in technical SEO, content strategy, and has helped countless clients achieve top search rankings.</p>
                         </div>
                     </div>
 
@@ -162,7 +162,7 @@ get_header();
                         <div class="team-info">
                             <h3>Lisa Thompson</h3>
                             <span class="team-title">PPC Team Lead</span>
-                            <p class="team-bio">Lisa manages our paid advertising campaigns across Google Ads, Facebook, and other platforms. She's a Google Ads certified professional with expertise in campaign optimization and conversion tracking.</p>
+                            <p class="team-bio">Lisa manages our paid advertising campaigns across Google Ads, Facebook, and other platforms. She's a Google Ads certified professional with expertise in campaign optimisation and conversion tracking.</p>
                         </div>
                     </div>
 
@@ -173,7 +173,7 @@ get_header();
                         <div class="team-info">
                             <h3>Maria Gonzalez</h3>
                             <span class="team-title">Content Strategy Lead</span>
-                            <p class="team-bio">Maria develops comprehensive content strategies that engage audiences and drive conversions. She specializes in blog content, social media strategy, and content calendar development across multiple industries.</p>
+                            <p class="team-bio">Maria develops comprehensive content strategies that engage audiences and drive conversions. She specialises in blog content, social media strategy, and content calendar development across multiple industries.</p>
                         </div>
                     </div>
                 </div>
@@ -191,7 +191,7 @@ get_header();
                     <div class="benefit-item">
                         <div class="benefit-icon">
                             <svg width="60" height="60" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" stroke="currentColor" stroke-width="2"/>
+                                <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" stroke="currentcolour" stroke-width="2"/>
                             </svg>
                         </div>
                         <h3>Proven Results</h3>
@@ -201,7 +201,7 @@ get_header();
                     <div class="benefit-item">
                         <div class="benefit-icon">
                             <svg width="60" height="60" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M13 10V3L4 14h7v7l9-11h-7z" stroke="currentColor" stroke-width="2"/>
+                                <path d="M13 10V3L4 14h7v7l9-11h-7z" stroke="currentcolour" stroke-width="2"/>
                             </svg>
                         </div>
                         <h3>Full-Service Approach</h3>
@@ -211,7 +211,7 @@ get_header();
                     <div class="benefit-item">
                         <div class="benefit-icon">
                             <svg width="60" height="60" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" stroke="currentColor" stroke-width="2"/>
+                                <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" stroke="currentcolour" stroke-width="2"/>
                             </svg>
                         </div>
                         <h3>Data-Driven Strategies</h3>
@@ -221,9 +221,9 @@ get_header();
                     <div class="benefit-item">
                         <div class="benefit-icon">
                             <svg width="60" height="60" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" stroke="currentColor" stroke-width="2"/>
-                                <circle cx="9" cy="7" r="4" stroke="currentColor" stroke-width="2"/>
-                                <path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75" stroke="currentColor" stroke-width="2"/>
+                                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" stroke="currentcolour" stroke-width="2"/>
+                                <circle cx="9" cy="7" r="4" stroke="currentcolour" stroke-width="2"/>
+                                <path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75" stroke="currentcolour" stroke-width="2"/>
                             </svg>
                         </div>
                         <h3>Dedicated Support</h3>

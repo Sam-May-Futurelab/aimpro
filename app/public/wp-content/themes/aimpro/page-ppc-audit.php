@@ -98,7 +98,7 @@ get_header(); ?>
                         <h3><?php echo esc_html($service_title); ?></h3>
                         <p><?php echo esc_html($service_content); ?></p>
                     </div>                <?php endfor; ?>            </div>
-            <div class="text-center mt-1 animate-on-scroll animate-fade-up">
+            <div class="text-centre mt-1 animate-on-scroll animate-fade-up">
                 <a href="/contact/" class="btn btn-primary">Request Your Free PPC Audit</a>
             </div>
         </div>
@@ -144,7 +144,7 @@ get_header(); ?>
             </div>
             
             <!-- CTA after audit process -->
-            <div class="text-center mt-2 animate-on-scroll animate-fade-up">
+            <div class="text-centre mt-2 animate-on-scroll animate-fade-up">
                 <div class="inline-cta-content">
                     <p class="cta-text">Ready for a comprehensive analysis of your PPC campaigns?</p>
                     <a href="/contact/" class="btn btn-primary">Get Your Free Audit</a>
@@ -216,7 +216,7 @@ get_header(); ?>
             </div>
             
             <!-- CTA after case study -->
-            <div class="text-center mt-2 animate-on-scroll animate-fade-up">
+            <div class="text-centre mt-2 animate-on-scroll animate-fade-up">
                 <div class="inline-cta-content">
                     <p class="cta-text">Want similar results for your PPC campaigns?</p>
                     <a href="/contact/" class="btn btn-primary">Start Your Audit Today</a>
@@ -252,7 +252,7 @@ get_header(); ?>
             </div>
             
             <!-- CTA after deliverables -->
-            <div class="text-center mt-2 animate-on-scroll animate-fade-up">
+            <div class="text-centre mt-2 animate-on-scroll animate-fade-up">
                 <div class="inline-cta-content">
                     <p class="cta-text">Get these comprehensive insights for your campaigns</p>
                     <a href="/contact/" class="btn btn-primary">Request Your Detailed Audit</a>
@@ -290,7 +290,7 @@ get_header(); ?>
             </div>
             
             <!-- CTA after why audit section -->
-            <div class="text-center mt-2 animate-on-scroll animate-fade-up">
+            <div class="text-centre mt-2 animate-on-scroll animate-fade-up">
                 <div class="inline-cta-content">
                     <p class="cta-text">Don't let these issues drain your ad budget any longer</p>
                     <a href="/contact/" class="btn btn-primary">Schedule Your Free Audit</a>

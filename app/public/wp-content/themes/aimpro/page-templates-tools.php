@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 /**
  * Template Name: Templates & Tools Page
  * Description: Page for displaying marketing templates and tools
@@ -15,9 +15,9 @@ get_header(); ?>
             </div>
         </section>        <!-- Written Content Section -->
         <section class="content-section">
-            <div class="content-center">
+            <div class="content-centre">
                 <div class="written-content animate-on-scroll animate-fade-up"><div class="content-highlight">
-                        <h2 class="section-title" style="text-align: center;">
+                        <h2 class="section-title" style="text-align: centre;">
                             Professional Marketing <span class="highlight curly-underline">RESOURCES</span>
                             <style>
                             .content-section .section-title::after {
@@ -26,7 +26,7 @@ get_header(); ?>
                             }
                             </style>
                         </h2>
-                        <p class="section-subtitle">Transform your marketing efforts with our comprehensive collection of professional-grade templates and tools. Whether you're looking to optimize your SEO strategy, plan effective PPC campaigns, or streamline your content marketing process, our expertly crafted resources provide the <strong class="highlight-word">foundation for success</strong>.</p>
+                        <p class="section-subtitle">Transform your marketing efforts with our comprehensive collection of professional-grade templates and tools. Whether you're looking to optimise your SEO strategy, plan effective PPC campaigns, or streamline your content marketing process, our expertly crafted resources provide the <strong class="highlight-word">foundation for success</strong>.</p>
                     </div>                    <div class="content-grid animate-on-scroll animate-stagger animate-fade-up" style="display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin: 10px 0 40px 0 !important;">
                         <div class="content-item">
                             <div class="content-icon">
@@ -105,7 +105,7 @@ get_header(); ?>
                                 </div>
                             </div>
                             <h3>Content Calendar Template</h3>
-                            <p>Plan and organize your content strategy with this comprehensive calendar template.</p>
+                            <p>Plan and organise your content strategy with this comprehensive calendar template.</p>
                             <ul class="tool-features">
                                 <li>12-month planning template</li>
                                 <li>Content type categorization</li>
@@ -149,8 +149,8 @@ get_header(); ?>
         $featured_title = get_post_meta(get_the_ID(), '_templates_tools_featured_title', true);
         $featured_resources = get_post_meta(get_the_ID(), '_templates_tools_featured_resources', true);
         if (!empty($featured_resources)) : ?>
-            <section class="featured-resources-section">                <div class="content-center">
-                    <h2 class="section-title" style="text-align: center;">
+            <section class="featured-resources-section">                <div class="content-centre">
+                    <h2 class="section-title" style="text-align: centre;">
                         <?php echo esc_html($featured_title ?: 'Most Popular Resources'); ?>
                         <style>
                         .featured-resources-section .section-title::after {
@@ -190,7 +190,7 @@ get_header(); ?>
                 </div>            </section>
         <?php endif; ?>        <!-- Benefits Section -->
         <section class="benefits-section">
-            <div class="content-center">
+            <div class="content-centre">
                 <h2 class="section-title">Why Choose Our <span class="highlight curly-underline">TOOLS</span>?</h2>
                 <p class="section-subtitle">Professional-grade resources trusted by thousands of marketers worldwide</p>
                 
@@ -232,7 +232,7 @@ get_header(); ?>
 
         <!-- Social Proof Section -->
         <section class="social-proof-section">
-            <div class="content-center">
+            <div class="content-centre">
                 <div class="stats-grid">
                     <div class="stat-item">
                         <div class="stat-number">15,000+</div>
@@ -282,7 +282,7 @@ get_header(); ?>
         <section class="cta-section">
             <div class="cta-content">
                 <h2>Need Custom Marketing Solutions?</h2>
-                <p>Get personalized marketing tools and strategies tailored to your business needs.</p>
+                <p>Get personalised marketing tools and strategies tailored to your business needs.</p>
                 <a href="<?php echo home_url('/contact'); ?>" class="btn-secondary">Get Custom Solution</a>
             </div>
         </section>

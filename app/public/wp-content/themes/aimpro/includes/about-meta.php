@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 /**
  * About Page Meta Fields
  * Adds custom meta box for About Page template with editable content fields
@@ -81,7 +81,7 @@ function aimpro_about_meta_box_callback($post) {
     $about_value_1_heading = get_post_meta($post->ID, 'about_value_1_heading', true) ?: 'Innovative Solutions';
     $about_value_1_description = get_post_meta($post->ID, 'about_value_1_description', true) ?: 'Our approach goes beyond the ordinary. We infuse creativity and innovation into every strategy, crafting unique solutions tailored to your brand\'s needs. By blending fresh ideas with strategic insights, we create campaigns that truly connect with your audience.';
     $about_value_2_heading = get_post_meta($post->ID, 'about_value_2_heading', true) ?: 'Data-Driven Strategies';
-    $about_value_2_description = get_post_meta($post->ID, 'about_value_2_description', true) ?: 'We believe in the power of data. Every decision we make is backed by in-depth analytics, ensuring that each campaign is optimized to deliver maximum results and ROI. With data at the core, your marketing efforts are not only efficient but also highly effective.';
+    $about_value_2_description = get_post_meta($post->ID, 'about_value_2_description', true) ?: 'We believe in the power of data. Every decision we make is backed by in-depth analytics, ensuring that each campaign is optimised to deliver maximum results and ROI. With data at the core, your marketing efforts are not only efficient but also highly effective.';
     $about_value_3_heading = get_post_meta($post->ID, 'about_value_3_heading', true) ?: 'Proven Track Record';
     $about_value_3_description = get_post_meta($post->ID, 'about_value_3_description', true) ?: 'Our results speak for themselves. Across diverse industries, we\'ve consistently delivered growth, enhanced visibility, and high-quality leads, proving our ability to drive real impact for our clients.';
     $about_value_4_heading = get_post_meta($post->ID, 'about_value_4_heading', true) ?: 'Collaborative Partnership';
@@ -122,7 +122,7 @@ function aimpro_about_meta_box_callback($post) {
     }
     .aimpro-about-meta .description {
         font-style: italic;
-        color: #666;
+        colour: #666;
         margin-top: 5px;
     }
     .aimpro-about-section {
@@ -134,7 +134,7 @@ function aimpro_about_meta_box_callback($post) {
     .aimpro-about-section h4 {
         margin: 0 0 15px 0;
         padding: 0;
-        color: #333;
+        colour: #333;
         border-bottom: 2px solid #0073aa;
         padding-bottom: 10px;
     }

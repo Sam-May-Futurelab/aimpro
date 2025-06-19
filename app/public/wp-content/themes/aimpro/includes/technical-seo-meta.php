@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 // Technical SEO page meta boxes and fields
 
 // Add meta boxes
@@ -103,7 +103,7 @@ function technical_seo_header_callback($post) {
     wp_nonce_field('technical_seo_meta_nonce', 'technical_seo_meta_nonce');
     
     $title = get_post_meta($post->ID, 'technical_seo_header_title', true) ?: 'Technical SEO Services';
-    $subtitle = get_post_meta($post->ID, 'technical_seo_header_subtitle', true) ?: 'Optimize your website\'s technical foundation for better search engine performance';
+    $subtitle = get_post_meta($post->ID, 'technical_seo_header_subtitle', true) ?: 'optimise your website\'s technical foundation for better search engine performance';
     $hero_image = get_post_meta($post->ID, 'technical_seo_hero_image', true);
     
     echo '<table class="form-table">';
@@ -131,7 +131,7 @@ function technical_seo_header_callback($post) {
 
 // Overview callback
 function technical_seo_overview_callback($post) {    $overview_title = get_post_meta($post->ID, 'technical_seo_overview_title', true) ?: 'Build a Solid Technical Foundation for SEO Success';
-    $overview_description = get_post_meta($post->ID, 'technical_seo_overview_description', true) ?: 'Technical SEO is the backbone of search engine optimization. Our technical SEO services ensure your website is properly crawled, indexed, and understood by search engines. We fix critical technical issues that prevent your site from ranking and implement optimizations that give you a competitive edge.';
+    $overview_description = get_post_meta($post->ID, 'technical_seo_overview_description', true) ?: 'Technical SEO is the backbone of search engine optimisation. Our technical SEO services ensure your website is properly crawled, indexed, and understood by search engines. We fix critical technical issues that prevent your site from ranking and implement optimisations that give you a competitive edge.';
     $benefits_title = get_post_meta($post->ID, 'technical_seo_benefits_title', true) ?: 'Technical SEO Impact:';
     $benefits = get_post_meta($post->ID, 'technical_seo_benefits', true) ?: array(
         'Improve site speed by up to 70%',
@@ -188,27 +188,27 @@ function technical_seo_services_callback($post) {
     $services_title = get_post_meta($post->ID, 'technical_seo_services_title', true) ?: 'Complete Technical SEO Services';
     $services = get_post_meta($post->ID, 'technical_seo_services', true) ?: array(
         array(
-            'title' => 'Site Speed Optimization',
+            'title' => 'Site Speed optimisation',
             'description' => 'Improve your website\'s loading speed for better user experience and search rankings.',
             'features' => array(
-                'Page speed analysis and optimization',
-                'Image compression and optimization',
+                'Page speed analysis and optimisation',
+                'Image compression and optimisation',
                 'Code minification and compression',
                 'CDN implementation',
-                'Caching optimization',
-                'Server response optimization'
+                'Caching optimisation',
+                'Server response optimisation'
             ),
             'results' => 'Average: 60% speed improvement',
             'featured' => true
         ),
         array(
-            'title' => 'Core Web Vitals Optimization',
-            'description' => 'Optimize your website for Google\'s Core Web Vitals ranking factors.',
+            'title' => 'Core Web Vitals optimisation',
+            'description' => 'optimise your website for Google\'s Core Web Vitals ranking factors.',
             'features' => array(
-                'Largest Contentful Paint (LCP) optimization',
+                'Largest Contentful Paint (LCP) optimisation',
                 'First Input Delay (FID) improvement',
                 'Cumulative Layout Shift (CLS) reduction',
-                'First Contentful Paint (FCP) optimization',
+                'First Contentful Paint (FCP) optimisation',
                 'Time to Interactive (TTI) improvement',
                 'Performance monitoring setup'
             ),
@@ -219,11 +219,11 @@ function technical_seo_services_callback($post) {
             'title' => 'Crawlability & Indexability',
             'description' => 'Ensure search engines can properly crawl and index your website content.',
             'features' => array(
-                'Robots.txt optimization',
-                'XML sitemap creation and optimization',
+                'Robots.txt optimisation',
+                'XML sitemap creation and optimisation',
                 'Internal linking structure',
                 'Crawl error identification and fixing',
-                'URL structure optimization',
+                'URL structure optimisation',
                 'Redirect chain resolution'
             ),
             'results' => '100% crawlable and indexable pages',
@@ -237,20 +237,20 @@ function technical_seo_services_callback($post) {
                 'Product and service schema',
                 'Review and rating schema',
                 'FAQ and How-to schema',
-                'Event and organization schema',
-                'Rich snippet optimization'
+                'Event and organisation schema',
+                'Rich snippet optimisation'
             ),
             'results' => 'Enhanced SERP appearance',
             'featured' => false
         ),
         array(
-            'title' => 'Mobile Optimization',
+            'title' => 'Mobile optimisation',
             'description' => 'Ensure your website provides an excellent mobile user experience.',
             'features' => array(
                 'Mobile-friendly design implementation',
-                'Responsive layout optimization',
-                'Mobile page speed optimization',
-                'Touch element optimization',
+                'Responsive layout optimisation',
+                'Mobile page speed optimisation',
+                'Touch element optimisation',
                 'Mobile usability improvements',
                 'AMP implementation (if needed)'
             ),
@@ -263,7 +263,7 @@ function technical_seo_services_callback($post) {
             'features' => array(
                 'SSL certificate installation',
                 'HTTPS implementation',
-                'Security header optimization',
+                'Security header optimisation',
                 'Mixed content resolution',
                 'Security vulnerability assessment',
                 'HSTS implementation'
@@ -325,12 +325,12 @@ function technical_seo_case_study_callback($post) {
     );
     $case_study_solution_title = get_post_meta($post->ID, 'technical_seo_case_study_solution_title', true) ?: 'Technical SEO Solutions';
     $case_study_solutions = get_post_meta($post->ID, 'technical_seo_case_study_solutions', true) ?: array(
-        'Comprehensive site speed optimization',
+        'Comprehensive site speed optimisation',
         'Core Web Vitals improvements',
-        'Mobile optimization implementation',
+        'Mobile optimisation implementation',
         'Crawl error resolution',
         'Schema markup implementation',
-        'Technical content optimization'
+        'Technical content optimisation'
     );
     
     echo '<table class="form-table">';
@@ -387,7 +387,7 @@ function technical_seo_process_callback($post) {
         ),
         array(
             'title' => 'Implementation',
-            'description' => 'Execute technical optimizations following best practices and guidelines.'
+            'description' => 'Execute technical optimisations following best practices and guidelines.'
         ),
         array(
             'title' => 'Testing & Monitoring',
@@ -489,7 +489,7 @@ function technical_seo_issues_callback($post) {
             'description' => 'Slow loading pages that hurt user experience and rankings.',
             'priority' => 'high',
             'issues' => array(
-                'Large, unoptimized images',
+                'Large, unoptimised images',
                 'Excessive HTTP requests',
                 'Unminified CSS and JavaScript',
                 'Poor server response times'
@@ -564,7 +564,7 @@ function technical_seo_issues_callback($post) {
 
 // Testimonial callback
 function technical_seo_testimonial_callback($post) {
-    $testimonial_quote = get_post_meta($post->ID, 'technical_seo_testimonial_quote', true) ?: 'The technical SEO work from Aimpro Digital was transformational. They improved our site speed by 70% and fixed issues we didn\'t even know existed. Our organic traffic has more than doubled since the technical optimizations were completed.';
+    $testimonial_quote = get_post_meta($post->ID, 'technical_seo_testimonial_quote', true) ?: 'The technical SEO work from Aimpro Digital was transformational. They improved our site speed by 70% and fixed issues we didn\'t even know existed. Our organic traffic has more than doubled since the technical optimisations were completed.';
     $testimonial_author_name = get_post_meta($post->ID, 'technical_seo_testimonial_author_name', true) ?: 'Anna Chen';
     $testimonial_author_title = get_post_meta($post->ID, 'technical_seo_testimonial_author_title', true) ?: 'E-commerce Manager, StyleHub';
     $testimonial_author_company = get_post_meta($post->ID, 'technical_seo_testimonial_author_company', true) ?: 'Online Fashion Retailer';
@@ -602,14 +602,14 @@ function technical_seo_testimonial_callback($post) {
 // CTA callback
 function technical_seo_cta_callback($post) {
     $cta_title = get_post_meta($post->ID, 'technical_seo_cta_title', true) ?: 'Ready to Fix Your Technical SEO Issues?';
-    $cta_description = get_post_meta($post->ID, 'technical_seo_cta_description', true) ?: 'Let\'s optimize your website\'s technical foundation for better search performance and user experience.';
+    $cta_description = get_post_meta($post->ID, 'technical_seo_cta_description', true) ?: 'Let\'s optimise your website\'s technical foundation for better search performance and user experience.';
     $cta_primary_text = get_post_meta($post->ID, 'technical_seo_cta_primary_text', true) ?: 'Get Free Technical Audit';
     $cta_primary_url = get_post_meta($post->ID, 'technical_seo_cta_primary_url', true) ?: home_url('/contact');
     $cta_secondary_text = get_post_meta($post->ID, 'technical_seo_cta_secondary_text', true) ?: 'View Technical SEO Results';
     $cta_secondary_url = get_post_meta($post->ID, 'technical_seo_cta_secondary_url', true) ?: home_url('/case-studies');
     $cta_benefits = get_post_meta($post->ID, 'technical_seo_cta_benefits', true) ?: array(
         '✓ Technical SEO audit included',
-        '✓ Core Web Vitals optimization',
+        '✓ Core Web Vitals optimisation',
         '✓ Site speed improvements'
     );
     

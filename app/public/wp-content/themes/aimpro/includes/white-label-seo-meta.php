@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 // White Label SEO page meta boxes and fields
 
 // Add meta boxes
@@ -143,7 +143,7 @@ function white_label_seo_header_callback($post) {
 function white_label_seo_overview_callback($post) {
     $overview_title = get_post_meta($post->ID, 'white_label_seo_overview_title', true) ?: 'Professional SEO Services Under Your Brand';
     $overview_description_1 = get_post_meta($post->ID, 'white_label_seo_overview_description_1', true) ?: 'Our white label SEO services allow agencies, consultants, and business owners to offer comprehensive SEO solutions to their clients without the overhead of building an in-house team. We work behind the scenes, delivering exceptional results while you maintain the client relationship.';
-    $overview_description_2 = get_post_meta($post->ID, 'white_label_seo_overview_description_2', true) ?: 'From technical audits to content optimization and link building, our team becomes an extension of your agency, delivering consistent, high-quality SEO services that help you scale your business and increase profitability.';
+    $overview_description_2 = get_post_meta($post->ID, 'white_label_seo_overview_description_2', true) ?: 'From technical audits to content optimisation and link building, our team becomes an extension of your agency, delivering consistent, high-quality SEO services that help you scale your business and increase profitability.';
     $stats = get_post_meta($post->ID, 'white_label_seo_stats', true) ?: array(
         array('number' => '150+', 'label' => 'Agency partners'),
         array('number' => '95%', 'label' => 'Partner retention rate'),
@@ -194,7 +194,7 @@ function white_label_seo_benefits_callback($post) {
         ),
         array(
             'title' => 'Your Brand',
-            'description' => 'All deliverables are fully branded with your company\'s logo, colors, and messaging. Your clients never know we exist.'
+            'description' => 'All deliverables are fully branded with your company\'s logo, colours, and messaging. Your clients never know we exist.'
         )
     );
     
@@ -233,20 +233,20 @@ function white_label_seo_services_callback($post) {
             )
         ),
         array(
-            'title' => 'On-Page Optimization',
-            'description' => 'Complete on-page SEO optimization including content, meta tags, and technical elements for improved rankings.',
+            'title' => 'On-Page optimisation',
+            'description' => 'Complete on-page SEO optimisation including content, meta tags, and technical elements for improved rankings.',
             'features' => array(
-                'Title tag & meta optimization',
-                'Content optimization',
+                'Title tag & meta optimisation',
+                'Content optimisation',
                 'Schema markup implementation',
                 'Internal linking strategy'
             )
         ),
         array(
             'title' => 'Local SEO Services',
-            'description' => 'Comprehensive local SEO optimization to help your clients dominate local search results and attract nearby customers.',
+            'description' => 'Comprehensive local SEO optimisation to help your clients dominate local search results and attract nearby customers.',
             'features' => array(
-                'Google Business Profile optimization',
+                'Google Business Profile optimisation',
                 'Local citation building',
                 'Review management setup',
                 'Local content creation'
@@ -254,11 +254,11 @@ function white_label_seo_services_callback($post) {
         ),
         array(
             'title' => 'Technical SEO',
-            'description' => 'Advanced technical optimization to improve site performance, crawlability, and search engine understanding.',
+            'description' => 'Advanced technical optimisation to improve site performance, crawlability, and search engine understanding.',
             'features' => array(
-                'Site speed optimization',
+                'Site speed optimisation',
                 'Core Web Vitals improvement',
-                'Mobile optimization',
+                'Mobile optimisation',
                 'Crawl error resolution'
             )
         ),
@@ -322,10 +322,10 @@ function white_label_seo_packages_callback($post) {
             'features' => array(
                 'Up to 5 target keywords',
                 'Monthly SEO audit',
-                'On-page optimization',
+                'On-page optimisation',
                 'Basic link building (5 links/month)',
                 'Monthly branded report',
-                'Google Business Profile optimization',
+                'Google Business Profile optimisation',
                 'Technical SEO monitoring'
             ),
             'featured' => false
@@ -338,11 +338,11 @@ function white_label_seo_packages_callback($post) {
             'features' => array(
                 'Up to 15 target keywords',
                 'Bi-weekly SEO audits',
-                'Advanced on-page optimization',
+                'Advanced on-page optimisation',
                 'Premium link building (15 links/month)',
                 'Weekly branded reports',
-                'Local SEO optimization',
-                'Content optimization',
+                'Local SEO optimisation',
+                'Content optimisation',
                 'Competitor analysis',
                 'Priority support'
             ),
@@ -355,7 +355,7 @@ function white_label_seo_packages_callback($post) {
             'features' => array(
                 'Unlimited keywords',
                 'Weekly SEO audits',
-                'Complete on-page optimization',
+                'Complete on-page optimisation',
                 'Premium link building (30+ links/month)',
                 'Custom reporting schedule',
                 'Multi-location SEO',
@@ -481,7 +481,7 @@ function white_label_seo_included_callback($post) {
     $included_items = get_post_meta($post->ID, 'white_label_seo_included_items', true) ?: array(
         array(
             'title' => 'Full Branding',
-            'description' => 'All reports, dashboards, and communications use your company branding, colors, and logo.'
+            'description' => 'All reports, dashboards, and communications use your company branding, colours, and logo.'
         ),
         array(
             'title' => 'Direct Communication',
@@ -542,8 +542,8 @@ function white_label_seo_faqs_callback($post) {
             'answer' => 'You maintain all client relationships. We provide you with regular updates and reports that you can share with your clients under your branding.'
         ),
         array(
-            'question' => 'Can I customize the services for different clients?',
-            'answer' => 'Yes, we offer flexible service packages that can be customized based on each client\'s specific needs, budget, and goals.'
+            'question' => 'Can I customise the services for different clients?',
+            'answer' => 'Yes, we offer flexible service packages that can be customised based on each client\'s specific needs, budget, and goals.'
         ),
         array(
             'question' => 'What kind of training and support do you provide?',

@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 // Meta fields for Website Development page
 
 // Function to get default values for website development page
@@ -6,9 +6,9 @@ function get_website_development_defaults() {
     return array(
         'header_title' => 'Website Development Services',
         'header_subtitle' => 'Create high-converting websites that drive results and grow your business',
-        'header_tags' => "Mobile-First\nConversion Optimized\nSEO Ready",
+        'header_tags' => "Mobile-First\nConversion optimised\nSEO Ready",
         'overview_title' => 'Build Websites That Convert',
-        'overview_description' => "Our website development services focus on creating beautiful, fast, and conversion-optimized websites that not only look great but drive real business results. From custom website design to high-converting landing pages, we build digital experiences that engage visitors and turn them into customers.\n\nEvery website we develop is built with performance, user experience, and search engine optimization in mind, ensuring your investment delivers maximum return through increased traffic, leads, and sales.",
+        'overview_description' => "Our website development services focus on creating beautiful, fast, and conversion-optimised websites that not only look great but drive real business results. From custom website design to high-converting landing pages, we build digital experiences that engage visitors and turn them into customers.\n\nEvery website we develop is built with performance, user experience, and search engine optimisation in mind, ensuring your investment delivers maximum return through increased traffic, leads, and sales.",
         'stats' => array(
             array('number' => '280%', 'label' => 'Average conversion increase'),
             array('number' => '<3 Sec', 'label' => 'Average load time'),
@@ -16,9 +16,9 @@ function get_website_development_defaults() {
         ),
         'case_title' => 'Case Study: E-commerce Website Redesign',
         'case_subtitle' => 'Complete Website Overhaul Generates 380% Revenue Increase',
-        'case_description' => 'An established e-commerce business approached us with an outdated website that was hurting their sales. Our comprehensive redesign and optimization strategy transformed their online presence and dramatically improved their bottom line.',
+        'case_description' => 'An established e-commerce business approached us with an outdated website that was hurting their sales. Our comprehensive redesign and optimisation strategy transformed their online presence and dramatically improved their bottom line.',
         'case_challenges' => "Outdated design reducing customer trust\nPoor mobile experience (65% mobile traffic)\nSlow loading times (8+ seconds)\nConfusing navigation and checkout process\nLow conversion rate (0.8%)",
-        'case_solutions' => "Modern, mobile-first responsive design\nStreamlined user experience and navigation\nOptimized checkout process (one-click checkout)\nPerformance optimization (2.1s load time)\nA/B tested conversion elements",
+        'case_solutions' => "Modern, mobile-first responsive design\nStreamlined user experience and navigation\noptimised checkout process (one-click checkout)\nPerformance optimisation (2.1s load time)\nA/B tested conversion elements",
         'case_results' => array(
             array('number' => '380%', 'label' => 'Revenue Increase'),
             array('number' => '450%', 'label' => 'Conversion Rate Improvement'),
@@ -29,9 +29,9 @@ function get_website_development_defaults() {
         'process_steps' => array(
             array('title' => 'Discovery & Strategy', 'description' => 'Understanding your business goals, target audience, and requirements to create a strategic development plan.'),
             array('title' => 'Design & Planning', 'description' => 'Creating wireframes, mockups, and detailed design specifications that align with your brand and objectives.'),
-            array('title' => 'Development & Build', 'description' => 'Expert development using modern technologies, best practices, and optimization for performance and SEO.'),
+            array('title' => 'Development & Build', 'description' => 'Expert development using modern technologies, best practices, and optimisation for performance and SEO.'),
             array('title' => 'Testing & Quality Assurance', 'description' => 'Comprehensive testing across devices, browsers, and performance metrics to ensure flawless functionality.'),
-            array('title' => 'Launch & Optimization', 'description' => 'Strategic launch with ongoing monitoring, analytics setup, and continuous optimization for better results.')
+            array('title' => 'Launch & optimisation', 'description' => 'Strategic launch with ongoing monitoring, analytics setup, and continuous optimisation for better results.')
         ),
         'tech_title' => 'Technologies & Platforms We Use',
         'tech_description' => 'We leverage cutting-edge technologies and platforms to build robust, scalable websites that deliver exceptional performance.',
@@ -39,26 +39,26 @@ function get_website_development_defaults() {
             array('category' => 'Content Management', 'tools' => array('WordPress', 'Webflow', 'Shopify', 'WooCommerce', 'Drupal')),
             array('category' => 'Frontend Technologies', 'tools' => array('HTML5 & CSS3', 'JavaScript (ES6+)', 'React.js', 'Vue.js', 'Bootstrap & Tailwind')),
             array('category' => 'Backend Development', 'tools' => array('PHP', 'Node.js', 'Python', 'MySQL', 'PostgreSQL')),
-            array('category' => 'Performance & SEO', 'tools' => array('Google PageSpeed Optimization', 'Core Web Vitals', 'Schema.org Markup', 'CDN Integration', 'Image Optimization'))
+            array('category' => 'Performance & SEO', 'tools' => array('Google PageSpeed optimisation', 'Core Web Vitals', 'Schema.org Markup', 'CDN Integration', 'Image optimisation'))
         ),
         'features_title' => 'Standard Features Included',
         'features_description' => 'Every website we build includes these essential features to ensure optimal performance and user experience.',
         'features' => array(
-            array('title' => 'Mobile-First Design', 'description' => 'Responsive design that looks and works perfectly on all devices, with mobile optimization as a priority.'),
-            array('title' => 'Lightning-Fast Performance', 'description' => 'Optimized for speed with sub-3 second load times, improving user experience and search rankings.'),
-            array('title' => 'SEO-Optimized', 'description' => 'Built with SEO best practices, including proper structure, meta tags, and schema markup for better visibility.'),
+            array('title' => 'Mobile-First Design', 'description' => 'Responsive design that looks and works perfectly on all devices, with mobile optimisation as a priority.'),
+            array('title' => 'Lightning-Fast Performance', 'description' => 'optimised for speed with sub-3 second load times, improving user experience and search rankings.'),
+            array('title' => 'SEO-optimised', 'description' => 'Built with SEO best practices, including proper structure, meta tags, and schema markup for better visibility.'),
             array('title' => 'Security & SSL', 'description' => 'Secure hosting, SSL certificates, and security best practices to protect your website and user data.'),
             array('title' => 'Analytics Integration', 'description' => 'Google Analytics, conversion tracking, and performance monitoring setup for data-driven insights.'),
-            array('title' => 'Brand Consistency', 'description' => 'Design that reflects your brand identity with consistent colors, fonts, and messaging throughout.')
+            array('title' => 'Brand Consistency', 'description' => 'Design that reflects your brand identity with consistent colours, fonts, and messaging throughout.')
         ),
         'industries_title' => 'Website Development for Your Industry',
         'industries' => array(
-            array('title' => 'E-commerce', 'description' => 'Online stores with optimized product pages, secure checkout, inventory management, and conversion-focused design.'),
+            array('title' => 'E-commerce', 'description' => 'Online stores with optimised product pages, secure checkout, inventory management, and conversion-focused design.'),
             array('title' => 'Professional Services', 'description' => 'Professional websites with service showcases, client testimonials, appointment booking, and lead generation forms.'),
             array('title' => 'SaaS & Technology', 'description' => 'Product-focused websites with feature demonstrations, pricing pages, free trial signups, and customer onboarding.'),
             array('title' => 'Healthcare', 'description' => 'HIPAA-compliant websites with patient portals, appointment scheduling, and accessible design for healthcare providers.'),
             array('title' => 'Real Estate', 'description' => 'Property listing websites with search functionality, virtual tours, lead capture, and CRM integration.'),
-            array('title' => 'Restaurants & Hospitality', 'description' => 'Visual websites with online ordering, reservation systems, menu displays, and local SEO optimization.')
+            array('title' => 'Restaurants & Hospitality', 'description' => 'Visual websites with online ordering, reservation systems, menu displays, and local SEO optimisation.')
         ),
         'testimonial_quote' => 'The new website AIM Pro Marketing built for us has exceeded all expectations. Our conversion rate tripled within the first month, and we\'re getting compliments on the design daily. The investment has already paid for itself.',
         'testimonial_name' => 'Rachel Green',

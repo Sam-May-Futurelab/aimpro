@@ -1,24 +1,24 @@
-<?php
+﻿<?php
 /**
- * UX/UI Optimization Meta Fields
- * Adds custom meta box for UX/UI Optimization template with editable content fields
+ * UX/UI optimisation Meta Fields
+ * Adds custom meta box for UX/UI optimisation template with editable content fields
  */
 
 if (!defined('ABSPATH')) exit;
 
 add_action('add_meta_boxes', 'aimpro_add_uxui_meta_box');
 function aimpro_add_uxui_meta_box() {
-    // Only add to pages using the UX/UI Optimization template or with 'ux-ui-optimization' slug
+    // Only add to pages using the UX/UI optimisation template or with 'ux-ui-optimisation' slug
     global $post;
     if (empty($post)) return;
     
     $page_template = get_page_template_slug($post->ID);
     $page_slug = $post->post_name;
     
-    if ($page_template === 'page-ux-ui-optimization.php' || $page_slug === 'ux-ui-optimization') {
+    if ($page_template === 'page-ux-ui-optimisation.php' || $page_slug === 'ux-ui-optimisation') {
         add_meta_box(
             'aimpro_uxui_settings',
-            'UX/UI Optimization Settings',
+            'UX/UI optimisation Settings',
             'aimpro_uxui_meta_box_callback',
             'page',
             'normal',
@@ -36,8 +36,8 @@ function aimpro_uxui_meta_box_callback($post) {
     // Define default values
     $defaults = array(
         // Hero Section
-        'uxui_hero_title' => 'UX/UI Optimization',
-        'uxui_hero_subtitle' => 'Transform your existing website into a conversion machine through data-driven user experience optimization and interface improvements.',
+        'uxui_hero_title' => 'UX/UI optimisation',
+        'uxui_hero_subtitle' => 'Transform your existing website into a conversion machine through data-driven user experience optimisation and interface improvements.',
         
         // Stats Section
         'uxui_stat1_number' => '275%',
@@ -50,21 +50,21 @@ function aimpro_uxui_meta_box_callback($post) {
         'uxui_cta_secondary' => 'View Case Study',
         
         // Introduction Section
-        'uxui_intro_title' => 'Optimize Your Website for Maximum Performance',
-        'uxui_intro_description' => 'Our UX/UI optimization service transforms underperforming websites into conversion powerhouses through systematic analysis, strategic improvements, and data-driven testing. We focus on enhancing user experience while dramatically improving your business metrics.',
+        'uxui_intro_title' => 'optimise Your Website for Maximum Performance',
+        'uxui_intro_description' => 'Our UX/UI optimisation service transforms underperforming websites into conversion powerhouses through systematic analysis, strategic improvements, and data-driven testing. We focus on enhancing user experience while dramatically improving your business metrics.',
         
         // Features Section
         'uxui_feature1_title' => 'Comprehensive UX Audit',
-        'uxui_feature1_description' => 'Deep analysis of user behavior, conversion barriers, and optimization opportunities using advanced analytics.',
-        'uxui_feature2_title' => 'Conversion Rate Optimization',
-        'uxui_feature2_description' => 'Strategic improvements to forms, CTAs, and user flow to maximize conversions and revenue.',
+        'uxui_feature1_description' => 'Deep analysis of user behaviour, conversion barriers, and optimisation opportunities using advanced analytics.',
+        'uxui_feature2_title' => 'Conversion Rate optimisation',
+        'uxui_feature2_description' => 'Strategic improvements to forms, CTAs, and user flow to maximise conversions and revenue.',
         'uxui_feature3_title' => 'Mobile Experience Enhancement',
-        'uxui_feature3_description' => 'Optimize mobile user experience for the majority of your traffic with responsive design improvements.',
-        'uxui_feature4_title' => 'Performance Optimization',
-        'uxui_feature4_description' => 'Speed optimization and Core Web Vitals improvements for better user experience and SEO rankings.',
+        'uxui_feature3_description' => 'optimise mobile user experience for the majority of your traffic with responsive design improvements.',
+        'uxui_feature4_title' => 'Performance optimisation',
+        'uxui_feature4_description' => 'Speed optimisation and Core Web Vitals improvements for better user experience and SEO rankings.',
         
         // Case Study Section
-        'uxui_case_study_title' => 'How LegalAdvice Pro Increased Consultation Bookings by 390% Through UX Optimization',
+        'uxui_case_study_title' => 'How LegalAdvice Pro Increased Consultation Bookings by 390% Through UX optimisation',
         'uxui_case_study_subtitle' => 'Case Study',
         'uxui_case_study_challenge' => 'LegalAdvice Pro had high-quality traffic but a confusing website layout that made it difficult for visitors to understand their services and book consultations.',
         'uxui_case_study_stat1_number' => '2.1%',
@@ -72,7 +72,7 @@ function aimpro_uxui_meta_box_callback($post) {
         'uxui_case_study_stat2_number' => '£4,200',
         'uxui_case_study_stat2_label' => 'Monthly Revenue',
         'uxui_case_study_solution_title' => 'Our Solution',
-        'uxui_case_study_solution' => "User Journey Mapping: Analyzed visitor behavior and identified friction points\nInformation Architecture: Restructured content hierarchy for better navigation\nMobile-First Redesign: Created responsive design prioritizing mobile experience\nConversion Optimization: Optimized forms and call-to-action placement\nA/B Testing: Tested multiple variations to maximize performance",
+        'uxui_case_study_solution' => "User Journey Mapping: analysed visitor behaviour and identified friction points\nInformation Architecture: Restructured content hierarchy for better navigation\nMobile-First Redesign: Created responsive design prioritising mobile experience\nConversion optimisation: optimised forms and call-to-action placement\nA/B Testing: Tested multiple variations to maximise performance",
         'uxui_case_study_results_title' => 'The Results',
         'uxui_case_study_result1_number' => '390%',
         'uxui_case_study_result1_label' => 'Increase in Consultation Bookings',
@@ -84,16 +84,16 @@ function aimpro_uxui_meta_box_callback($post) {
         'uxui_case_study_result4_label' => 'New Monthly Revenue',
         
         // Services Section
-        'uxui_services_title' => 'Our UX/UI Optimization Services',
+        'uxui_services_title' => 'Our UX/UI optimisation Services',
         
         // Process Section
-        'uxui_process_title' => 'Our UX/UI Optimization Process',
+        'uxui_process_title' => 'Our UX/UI optimisation Process',
         'uxui_process1_number' => '1',
         'uxui_process1_title' => 'UX Audit & Analysis',
-        'uxui_process1_description' => 'Comprehensive analysis of your current website performance, user behavior, and conversion barriers.',
+        'uxui_process1_description' => 'Comprehensive analysis of your current website performance, user behaviour, and conversion barriers.',
         'uxui_process2_number' => '2',
         'uxui_process2_title' => 'Strategy Development',
-        'uxui_process2_description' => 'Create optimization strategy based on data insights and industry best practices.',
+        'uxui_process2_description' => 'Create optimisation strategy based on data insights and industry best practices.',
         'uxui_process3_number' => '3',
         'uxui_process3_title' => 'Design & Development',
         'uxui_process3_description' => 'Implement improvements to interface design, user flow, and conversion elements.',
@@ -102,49 +102,49 @@ function aimpro_uxui_meta_box_callback($post) {
         'uxui_process4_description' => 'A/B test changes and validate improvements through data analysis.',
         'uxui_process5_number' => '5',
         'uxui_process5_title' => 'Launch & Monitor',
-        'uxui_process5_description' => 'Deploy optimizations and monitor performance metrics for continued improvement.',
+        'uxui_process5_description' => 'Deploy optimisations and monitor performance metrics for continued improvement.',
         
         // Packages Section
-        'uxui_packages_title' => 'UX/UI Optimization Packages',
-        'uxui_packages_subtitle' => 'Choose the optimization package that fits your needs and budget',
+        'uxui_packages_title' => 'UX/UI optimisation Packages',
+        'uxui_packages_subtitle' => 'Choose the optimisation package that fits your needs and budget',
         
         'uxui_package1_title' => 'UX Audit',
         'uxui_package1_price' => '£1,497',
-        'uxui_package1_description' => 'Perfect for identifying optimization opportunities',
-        'uxui_package1_features' => "Comprehensive UX audit\nUser behavior analysis\nConversion barrier identification\nOptimization recommendations\nPriority action plan\n7-day delivery\n14 days support",
+        'uxui_package1_description' => 'Perfect for identifying optimisation opportunities',
+        'uxui_package1_features' => "Comprehensive UX audit\nUser behaviour analysis\nConversion barrier identification\noptimisation recommendations\nPriority action plan\n7-day delivery\n14 days support",
         'uxui_package1_cta' => 'Get Started',
         
-        'uxui_package2_title' => 'UX/UI Optimization',
+        'uxui_package2_title' => 'UX/UI optimisation',
         'uxui_package2_price' => '£3,997',
-        'uxui_package2_description' => 'Complete optimization implementation',
-        'uxui_package2_features' => "Full UX audit\nInterface improvements\nMobile optimization\nConversion rate optimization\nPerformance improvements\nA/B testing setup\n21-day delivery\n30 days support",
+        'uxui_package2_description' => 'Complete optimisation implementation',
+        'uxui_package2_features' => "Full UX audit\nInterface improvements\nMobile optimisation\nConversion rate optimisation\nPerformance improvements\nA/B testing setup\n21-day delivery\n30 days support",
         'uxui_package2_label' => 'Most Popular',
         'uxui_package2_cta' => 'Get Started',
         
         'uxui_package3_title' => 'Complete UX Transformation',
         'uxui_package3_price' => '£7,997',
         'uxui_package3_description' => 'Full website transformation',
-        'uxui_package3_features' => "Complete website redesign\nUser experience strategy\nAdvanced conversion optimization\nPersonalization features\nOngoing optimization\nComprehensive analytics\n30-day delivery\n90 days support\nMonthly optimization",
+        'uxui_package3_features' => "Complete website redesign\nUser experience strategy\nAdvanced conversion optimisation\npersonalisation features\nOngoing optimisation\nComprehensive analytics\n30-day delivery\n90 days support\nMonthly optimisation",
         'uxui_package3_cta' => 'Get Started',
         
         // Industries Section
-        'uxui_industries_title' => 'Industries We Optimize',
+        'uxui_industries_title' => 'Industries We optimise',
         'uxui_industry1_name' => 'E-commerce',
-        'uxui_industry1_description' => 'Product pages, checkout optimization, and shopping experience improvements',
+        'uxui_industry1_description' => 'Product pages, checkout optimisation, and shopping experience improvements',
         'uxui_industry2_name' => 'Professional Services',
-        'uxui_industry2_description' => 'Lead generation optimization, consultation booking, and trust building',
+        'uxui_industry2_description' => 'Lead generation optimisation, consultation booking, and trust building',
         'uxui_industry3_name' => 'SaaS & Technology',
-        'uxui_industry3_description' => 'Free trial conversions, onboarding optimization, and user retention',
+        'uxui_industry3_description' => 'Free trial conversions, onboarding optimisation, and user retention',
         'uxui_industry4_name' => 'Healthcare',
         'uxui_industry4_description' => 'Appointment booking, patient engagement, and accessibility compliance',
         'uxui_industry5_name' => 'Education',
-        'uxui_industry5_description' => 'Course enrollment, student engagement, and learning platform optimization',
+        'uxui_industry5_description' => 'Course enrollment, student engagement, and learning platform optimisation',
         'uxui_industry6_name' => 'Finance',
-        'uxui_industry6_description' => 'Trust optimization, form completion, and compliance-focused design',
+        'uxui_industry6_description' => 'Trust optimisation, form completion, and compliance-focused design',
         
         // Testimonials Section
         'uxui_testimonials_title' => 'What Our Clients Say',
-        'uxui_testimonial1_text' => 'The UX optimization transformed our website completely. Our consultation bookings increased by 390% within 60 days of launch.',
+        'uxui_testimonial1_text' => 'The UX optimisation transformed our website completely. Our consultation bookings increased by 390% within 60 days of launch.',
         'uxui_testimonial1_name' => 'Sarah Mitchell',
         'uxui_testimonial1_title' => 'Managing Director, LegalAdvice Pro',
         'uxui_testimonial2_text' => 'Amazing attention to detail and clear understanding of user psychology. Our e-commerce conversion rate doubled.',
@@ -156,18 +156,18 @@ function aimpro_uxui_meta_box_callback($post) {
         
         // FAQ Section
         'uxui_faq_title' => 'Frequently Asked Questions',
-        'uxui_faq1_question' => 'How long does UX/UI optimization take?',
-        'uxui_faq1_answer' => 'Projects typically take 2-4 weeks depending on scope. A UX audit takes 1 week, while complete optimization can take up to 4 weeks including testing and refinement.',
-        'uxui_faq2_question' => 'Will optimization affect my website\'s SEO?',
-        'uxui_faq2_answer' => 'Our optimizations actually improve SEO through better user experience signals, faster loading times, and improved Core Web Vitals scores that Google values.',
+        'uxui_faq1_question' => 'How long does UX/UI optimisation take?',
+        'uxui_faq1_answer' => 'Projects typically take 2-4 weeks depending on scope. A UX audit takes 1 week, while complete optimisation can take up to 4 weeks including testing and refinement.',
+        'uxui_faq2_question' => 'Will optimisation affect my website\'s SEO?',
+        'uxui_faq2_answer' => 'Our optimisations actually improve SEO through better user experience signals, faster loading times, and improved Core Web Vitals scores that Google values.',
         'uxui_faq3_question' => 'Do you provide A/B testing?',
         'uxui_faq3_answer' => 'Yes, we set up comprehensive A/B testing to validate improvements and ensure changes deliver measurable results before full implementation.',
-        'uxui_faq4_question' => 'Can you optimize mobile experience?',
-        'uxui_faq4_answer' => 'Absolutely. Mobile optimization is a core part of our service, as mobile users typically represent 60-70% of website traffic.',
-        'uxui_faq5_question' => 'What tools do you use for optimization?',
-        'uxui_faq5_answer' => 'We use Google Analytics, Hotjar, Optimizely, Figma, and other industry-leading tools for analysis, design, and testing.',
-        'uxui_faq6_question' => 'Do you provide ongoing optimization?',
-        'uxui_faq6_answer' => 'Yes, we offer ongoing optimization packages to continuously improve performance based on new data and changing user behavior patterns.'
+        'uxui_faq4_question' => 'Can you optimise mobile experience?',
+        'uxui_faq4_answer' => 'Absolutely. Mobile optimisation is a core part of our service, as mobile users typically represent 60-70% of website traffic.',
+        'uxui_faq5_question' => 'What tools do you use for optimisation?',
+        'uxui_faq5_answer' => 'We use Google Analytics, Hotjar, optimisely, Figma, and other industry-leading tools for analysis, design, and testing.',
+        'uxui_faq6_question' => 'Do you provide ongoing optimisation?',
+        'uxui_faq6_answer' => 'Yes, we offer ongoing optimisation packages to continuously improve performance based on new data and changing user behaviour patterns.'
     );
     
     // Helper function to get value with default
@@ -620,7 +620,7 @@ function aimpro_uxui_meta_box_callback($post) {
 }
 
 /**
- * Save UX/UI Optimization Meta Box
+ * Save UX/UI optimisation Meta Box
  */
 function aimpro_save_uxui_meta($post_id) {
     // Check if our nonce is set and verify it

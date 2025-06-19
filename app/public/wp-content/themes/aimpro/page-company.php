@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 /**
  * Template Name: Company Page
  * Description: Company information page
@@ -21,10 +21,10 @@ get_header(); ?>
         <section class="company-overview">
             <div class="section-content">
                 <div class="content-grid">                    <div class="content-text animate-on-scroll animate-slide-left">
-                        <h2 style="text-align: center;"><?php echo esc_html(get_post_meta(get_the_ID(), 'company_overview_heading', true) ?: 'About Aimpro Digital'); ?></h2>
+                        <h2 style="text-align: centre;"><?php echo esc_html(get_post_meta(get_the_ID(), 'company_overview_heading', true) ?: 'About Aimpro Digital'); ?></h2>
                         <p><?php echo esc_html(get_post_meta(get_the_ID(), 'company_overview_desc1', true) ?: 'Founded in 2020, Aimpro Digital has grown from a small startup to a leading digital marketing agency serving clients across the globe. Our passion for innovation and commitment to results has driven us to become a trusted partner for businesses of all sizes.'); ?></p>
-                        <p><?php echo esc_html(get_post_meta(get_the_ID(), 'company_overview_desc2', true) ?: 'We specialize in comprehensive digital marketing solutions that drive real business growth. From strategic planning to execution, we\'re dedicated to helping our clients achieve their goals through cutting-edge digital marketing strategies.'); ?></p>
-                    </div>                    <div class="content-image animate-on-scroll animate-slide-right" style="text-align: center; padding-top: 40px;">
+                        <p><?php echo esc_html(get_post_meta(get_the_ID(), 'company_overview_desc2', true) ?: 'We specialise in comprehensive digital marketing solutions that drive real business growth. From strategic planning to execution, we\'re dedicated to helping our clients achieve their goals through cutting-edge digital marketing strategies.'); ?></p>
+                    </div>                    <div class="content-image animate-on-scroll animate-slide-right" style="text-align: centre; padding-top: 40px;">
                         <?php 
                         $company_image = get_post_meta(get_the_ID(), 'company_overview_image', true);
                         $default_image = 'https://images.unsplash.com/photo-1604328698692-f76ea9498e76?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80';
@@ -37,7 +37,7 @@ get_header(); ?>
         <!-- Company History Section -->
         <section class="company-history" style="padding-top: 20px;">
             <div class="section-content">
-                <h2 class="animate-on-scroll animate-fade-up" style="text-align: center;"><?php echo esc_html(get_post_meta(get_the_ID(), 'company_history_heading', true) ?: 'Our Journey'); ?></h2>
+                <h2 class="animate-on-scroll animate-fade-up" style="text-align: centre;"><?php echo esc_html(get_post_meta(get_the_ID(), 'company_history_heading', true) ?: 'Our Journey'); ?></h2>
                 <div class="timeline">
                       <div class="timeline-item animate-on-scroll animate-stagger animate-fade-up">
                         <div class="timeline-year" style="padding-top: 15px;">2020</div>
@@ -84,7 +84,7 @@ get_header(); ?>
                     <div class="value-card animate-on-scroll animate-stagger animate-fade-up">
                         <div class="value-icon">
                             <svg width="60" height="60" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M12 2L15.09 8.26L22 9L17 14L18.18 21L12 17.77L5.82 21L7 14L2 9L8.91 8.26L12 2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M12 2L15.09 8.26L22 9L17 14L18.18 21L12 17.77L5.82 21L7 14L2 9L8.91 8.26L12 2Z" stroke="currentcolour" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                             </svg>
                         </div>
                         <h3><?php echo esc_html(get_post_meta(get_the_ID(), 'company_mission_title', true) ?: 'Our Mission'); ?></h3>
@@ -93,7 +93,7 @@ get_header(); ?>
                     <div class="value-card animate-on-scroll animate-stagger animate-fade-up">
                         <div class="value-icon">
                             <svg width="60" height="60" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" stroke="currentcolour" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                             </svg>
                         </div>                        <h3><?php echo esc_html(get_post_meta(get_the_ID(), 'company_values_title', true) ?: 'Our Values'); ?></h3>
                         <ul>
@@ -123,8 +123,8 @@ Results: We are committed to delivering measurable outcomes';
                     </div>                    <div class="value-card animate-on-scroll animate-stagger animate-fade-up">
                         <div class="value-icon">
                             <svg width="60" height="60" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                <circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="2"/>
+                                <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" stroke="currentcolour" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                <circle cx="12" cy="12" r="3" stroke="currentcolour" stroke-width="2"/>
                             </svg>
                         </div>
                         <h3><?php echo esc_html(get_post_meta(get_the_ID(), 'company_vision_title', true) ?: 'Our Vision'); ?></h3>
@@ -134,7 +134,7 @@ Results: We are committed to delivering measurable outcomes';
             </div>
         </section>        <!-- Company Stats Section -->
         <section class="company-stats">            <div class="section-content">
-                <h2 class="animate-on-scroll animate-fade-up" style="text-align: center;"><?php echo esc_html(get_post_meta(get_the_ID(), 'company_stats_heading', true) ?: 'Our Impact by the Numbers'); ?></h2>
+                <h2 class="animate-on-scroll animate-fade-up" style="text-align: centre;"><?php echo esc_html(get_post_meta(get_the_ID(), 'company_stats_heading', true) ?: 'Our Impact by the Numbers'); ?></h2>
                 <div class="stats-grid">
                     <?php                    // Loop through all 4 stat fields
                     for ($i = 1; $i <= 4; $i++) {

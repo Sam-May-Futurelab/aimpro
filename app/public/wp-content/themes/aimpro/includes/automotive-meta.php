@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 // Automotive Page Meta Fields
 
 function add_automotive_meta_boxes() {
@@ -54,13 +54,13 @@ function automotive_meta_box_callback($post) {
                 'icon' => 'fas fa-map-marker-alt',
                 'title' => 'Local SEO for Dealerships',
                 'description' => 'Dominate local search results when customers search for "car dealerships near me" or specific vehicle models in your area.',
-                'features' => array('Google My Business optimization', 'Local directory listings', 'Location-based keyword targeting', 'Review management and reputation')
+                'features' => array('Google My Business optimisation', 'Local directory listings', 'Location-based keyword targeting', 'Review management and reputation')
             ),
             array(
                 'icon' => 'fas fa-car',
                 'title' => 'Vehicle Inventory Marketing',
                 'description' => 'Showcase your inventory with dynamic advertising that automatically promotes your available vehicles to interested buyers.',
-                'features' => array('Dynamic vehicle ads on Google', 'Facebook vehicle showcase campaigns', 'Inventory-based remarketing', 'VDP (Vehicle Detail Page) optimization')
+                'features' => array('Dynamic vehicle ads on Google', 'Facebook vehicle showcase campaigns', 'Inventory-based remarketing', 'VDP (Vehicle Detail Page) optimisation')
             ),
             array(
                 'icon' => 'fas fa-wrench',
@@ -71,7 +71,7 @@ function automotive_meta_box_callback($post) {
             array(
                 'icon' => 'fas fa-chart-line',
                 'title' => 'Lead Generation Campaigns',
-                'description' => 'Generate high-quality leads for sales and service departments with targeted PPC campaigns and conversion optimization.',
+                'description' => 'Generate high-quality leads for sales and service departments with targeted PPC campaigns and conversion optimisation.',
                 'features' => array('Google Ads for automotive', 'Facebook lead generation', 'Trade-in value campaigns', 'Test drive scheduling')
             )
         );
@@ -95,7 +95,7 @@ function automotive_meta_box_callback($post) {
     $case_study_solutions = get_post_meta($post->ID, '_automotive_case_study_solutions', true);
     if (empty($case_study_solutions)) {
         $case_study_solutions = array(
-            'Comprehensive local SEO optimization',
+            'Comprehensive local SEO optimisation',
             'Dynamic vehicle inventory advertising',
             'Service-focused PPC campaigns',
             'Review management and reputation building'
@@ -121,19 +121,19 @@ function automotive_meta_box_callback($post) {
         $process_steps = array(
             array(
                 'title' => 'Market Analysis',
-                'description' => 'We analyze your local automotive market, competitor strategies, and customer behavior patterns.'
+                'description' => 'We analyse your local automotive market, competitor strategies, and customer behaviour patterns.'
             ),
             array(
                 'title' => 'Strategy Development',
-                'description' => 'Create a customized marketing strategy that aligns with your inventory, services, and business goals.'
+                'description' => 'Create a customised marketing strategy that aligns with your inventory, services, and business goals.'
             ),
             array(
                 'title' => 'Campaign Implementation',
-                'description' => 'Launch targeted campaigns across multiple channels, optimized for automotive customer journeys.'
+                'description' => 'Launch targeted campaigns across multiple channels, optimised for automotive customer journeys.'
             ),
             array(
-                'title' => 'Performance Optimization',
-                'description' => 'Continuously monitor and optimize campaigns based on lead quality, cost per acquisition, and ROI.'
+                'title' => 'Performance optimisation',
+                'description' => 'Continuously monitor and optimise campaigns based on lead quality, cost per acquisition, and ROI.'
             )
         );
     }
@@ -225,7 +225,7 @@ function automotive_meta_box_callback($post) {
         }
         .remove-item {
             background: #dc3232;
-            color: white;
+            colour: white;
             border: none;
             padding: 5px 10px;
             cursor: pointer;
@@ -234,7 +234,7 @@ function automotive_meta_box_callback($post) {
         }
         .add-item {
             background: #0073aa;
-            color: white;
+            colour: white;
             border: none;
             padding: 8px 16px;
             cursor: pointer;
@@ -269,7 +269,7 @@ function automotive_meta_box_callback($post) {
         }
         .upload-button {
             background: #0073aa;
-            color: white;
+            colour: white;
             border: none;
             padding: 8px 16px;
             cursor: pointer;
@@ -277,7 +277,7 @@ function automotive_meta_box_callback($post) {
         }
         .remove-image {
             background: #dc3232;
-            color: white;
+            colour: white;
             border: none;
             padding: 8px 16px;
             cursor: pointer;
@@ -297,14 +297,14 @@ function automotive_meta_box_callback($post) {
         }
         .remove-list-item {
             background: #dc3232;
-            color: white;
+            colour: white;
             border: none;
             padding: 5px 10px;
             cursor: pointer;
         }
         .add-list-item {
             background: #0073aa;
-            color: white;
+            colour: white;
             border: none;
             padding: 5px 10px;
             cursor: pointer;
@@ -396,7 +396,7 @@ function automotive_meta_box_callback($post) {
                             </div>
                             <div class="item-field">
                                 <label>Features (one per line):</label>
-                                <textarea name="automotive_services[<?php echo $index; ?>][features]" placeholder="Google My Business optimization&#10;Local directory listings"><?php echo esc_textarea(is_array($service['features']) ? implode("\n", $service['features']) : $service['features']); ?></textarea>
+                                <textarea name="automotive_services[<?php echo $index; ?>][features]" placeholder="Google My Business optimisation&#10;Local directory listings"><?php echo esc_textarea(is_array($service['features']) ? implode("\n", $service['features']) : $service['features']); ?></textarea>
                             </div>
                         </div>
                     <?php endforeach; ?>
@@ -514,7 +514,7 @@ function automotive_meta_box_callback($post) {
                             </div>
                             <div class="item-field">
                                 <label>Step Description:</label>
-                                <textarea name="automotive_process_steps[<?php echo $index; ?>][description]" placeholder="We analyze your local automotive market..."><?php echo esc_textarea($step['description']); ?></textarea>
+                                <textarea name="automotive_process_steps[<?php echo $index; ?>][description]" placeholder="We analyse your local automotive market..."><?php echo esc_textarea($step['description']); ?></textarea>
                             </div>
                         </div>
                     <?php endforeach; ?>

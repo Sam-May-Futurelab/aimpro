@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 // Rank Higher Locally Page Meta Fields
 
 function add_rank_higher_locally_meta_boxes() {
@@ -59,7 +59,7 @@ function rank_higher_locally_meta_box_callback($post) {
         $challenges = array(
             'Poor visibility in local search results',
             'Inconsistent business information online',
-            'Limited Google My Business optimization',
+            'Limited Google My Business optimisation',
             'Lack of local customer reviews',
             'Competition from national chains',
             'Difficulty ranking for location-based keywords'
@@ -72,12 +72,12 @@ function rank_higher_locally_meta_box_callback($post) {
     if (empty($services)) {
         $services = array(
             array(
-                'title' => 'Google My Business Optimization',
+                'title' => 'Google My Business optimisation',
                 'description' => 'Maximize your Google My Business profile to appear prominently in local search results and Google Maps.',
                 'features' => array(
-                    'Complete profile optimization',
+                    'Complete profile optimisation',
                     'Regular posting and updates',
-                    'Photo and video optimization',
+                    'Photo and video optimisation',
                     'Q&A management'
                 ),
                 'icon' => 'fab fa-google'
@@ -105,12 +105,12 @@ function rank_higher_locally_meta_box_callback($post) {
                 'icon' => 'fas fa-star'
             ),
             array(
-                'title' => 'Local Keyword Optimization',
+                'title' => 'Local Keyword optimisation',
                 'description' => 'Target location-specific keywords that drive local traffic and qualified leads to your business.',
                 'features' => array(
                     'Local keyword research',
                     'Location page creation',
-                    'Service area optimization',
+                    'Service area optimisation',
                     'Local content strategy'
                 ),
                 'icon' => 'fas fa-search-location'
@@ -140,7 +140,7 @@ function rank_higher_locally_meta_box_callback($post) {
     $case_solutions = get_post_meta($post->ID, '_rank_higher_locally_case_study_solutions', true);
     if (empty($case_solutions)) {
         $case_solutions = array(
-            'Complete Google My Business optimization',
+            'Complete Google My Business optimisation',
             'Local citation building campaign',
             'Review generation system implementation',
             'Location-specific content creation'
@@ -187,8 +187,8 @@ function rank_higher_locally_meta_box_callback($post) {
             ),
             array(
                 'number' => '2',
-                'title' => 'Foundation Optimization',
-                'description' => 'Optimize Google My Business, fix NAP inconsistencies, and establish local search foundation.'
+                'title' => 'Foundation optimisation',
+                'description' => 'optimise Google My Business, fix NAP inconsistencies, and establish local search foundation.'
             ),
             array(
                 'number' => '3',
@@ -197,15 +197,15 @@ function rank_higher_locally_meta_box_callback($post) {
             ),
             array(
                 'number' => '4',
-                'title' => 'Monitoring & Optimization',
-                'description' => 'Track local rankings, monitor reviews, and continuously optimize for better performance.'
+                'title' => 'Monitoring & optimisation',
+                'description' => 'Track local rankings, monitor reviews, and continuously optimise for better performance.'
             )
         );
     }
 
     // Benefits
     $benefits_title = get_post_meta($post->ID, '_rank_higher_locally_benefits_title', true) ?: 'Local SEO Benefits for Your Business';
-    $benefits_description = get_post_meta($post->ID, '_rank_higher_locally_benefits_description', true) ?: 'Powerful local search optimization that drives real business results';
+    $benefits_description = get_post_meta($post->ID, '_rank_higher_locally_benefits_description', true) ?: 'Powerful local search optimisation that drives real business results';
     $benefits = get_post_meta($post->ID, '_rank_higher_locally_benefits', true);
     if (empty($benefits)) {
         $benefits = array(
@@ -250,7 +250,7 @@ function rank_higher_locally_meta_box_callback($post) {
         $cta_benefits = array(
             '✓ Complete local presence audit',
             '✓ Competitor analysis included',
-            '✓ Custom optimization roadmap'
+            '✓ Custom optimisation roadmap'
         );
     }
     ?>
@@ -265,7 +265,7 @@ function rank_higher_locally_meta_box_callback($post) {
             .rank-higher-locally-meta-box h3 {
                 margin-top: 0;
                 padding: 10px;
-                background-color: #f5f5f5;
+                background-colour: #f5f5f5;
                 border-left: 4px solid #0073aa;
             }
             .rank-higher-locally-meta-box table {
@@ -303,7 +303,7 @@ function rank_higher_locally_meta_box_callback($post) {
                 position: absolute;
                 top: 5px;
                 right: 5px;
-                color: #a00;
+                colour: #a00;
                 cursor: pointer;
             }
             .rank-higher-locally-meta-box .add-item {
@@ -322,7 +322,7 @@ function rank_higher_locally_meta_box_callback($post) {
                 margin-top: 10px;
             }
             .rank-higher-locally-meta-box .field-description {                font-style: italic;
-                color: #666;
+                colour: #666;
                 font-size: 0.9em;
             }
             .rank-higher-locally-meta-box .image-preview {

@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 /**
  * Advertising & PPC Meta Fields
  *
@@ -25,8 +25,8 @@ function aimpro_get_advertising_ppc_default_values() {
         
         // Service Overview
         'overview_title' => 'Maximize Your Advertising ROI',
-        'overview_content_1' => 'Our comprehensive PPC and advertising services help you reach your target audience at the exact moment they\'re searching for your products or services. From Google Ads to social media advertising, we create and manage campaigns that deliver measurable results and maximize your return on investment.',
-        'overview_content_2' => 'With certified experts across all major advertising platforms, we ensure your campaigns are optimized for performance, cost-efficiency, and sustainable growth.',
+        'overview_content_1' => 'Our comprehensive PPC and advertising services help you reach your target audience at the exact moment they\'re searching for your products or services. From Google Ads to social media advertising, we create and manage campaigns that deliver measurable results and maximise your return on investment.',
+        'overview_content_2' => 'With certified experts across all major advertising platforms, we ensure your campaigns are optimised for performance, cost-efficiency, and sustainable growth.',
         
         // Overview Stats
         'overview_stat1_number' => '320%',
@@ -38,18 +38,18 @@ function aimpro_get_advertising_ppc_default_values() {
         
         // Services Section
         'services_title' => 'Our Advertising & PPC Services',
-        'services_subtitle' => 'Comprehensive pay-per-click advertising solutions designed to maximize your return on investment across all major platforms.',
+        'services_subtitle' => 'Comprehensive pay-per-click advertising solutions designed to maximise your return on investment across all major platforms.',
         
         // Service Items (6 services)
         'service_title_1' => 'Google Ads Management',
         'service_content_1' => 'Comprehensive Google Ads campaigns including Search, Display, Shopping, and YouTube advertising for maximum reach and ROI.',
-        'service_features_1' => "Search campaign optimization\nDisplay and remarketing campaigns\nShopping ads for e-commerce\nYouTube advertising\nPerformance Max campaigns",
+        'service_features_1' => "Search campaign optimisation\nDisplay and remarketing campaigns\nShopping ads for e-commerce\nYouTube advertising\nPerformance Max campaigns",
         'service_metric_1' => 'Average: 280% increase in conversions',
         'service_link_1' => '/google-ads',
         
         'service_title_2' => 'Meta Ads (Facebook & Instagram)',
         'service_content_2' => 'Strategic social media advertising campaigns on Facebook and Instagram to reach and engage your target audience effectively.',
-        'service_features_2' => "Facebook advertising campaigns\nInstagram advertising\nAudience targeting and lookalikes\nCreative optimization\nConversion tracking setup",
+        'service_features_2' => "Facebook advertising campaigns\nInstagram advertising\nAudience targeting and lookalikes\nCreative optimisation\nConversion tracking setup",
         'service_metric_2' => 'Average: 65% lower cost per acquisition',
         'service_link_2' => '/meta-ads',
         
@@ -67,8 +67,8 @@ function aimpro_get_advertising_ppc_default_values() {
         
         'service_title_5' => 'PPC Audit',
         'service_content_5' => 'Comprehensive analysis of your existing PPC campaigns with actionable recommendations for immediate improvements.',
-        'service_features_5' => "Account structure analysis\nKeyword performance review\nAd copy effectiveness assessment\nLanding page optimization\nConversion tracking audit",
-        'service_metric_5' => 'Identify 20+ optimization opportunities',
+        'service_features_5' => "Account structure analysis\nKeyword performance review\nAd copy effectiveness assessment\nLanding page optimisation\nConversion tracking audit",
+        'service_metric_5' => 'Identify 20+ optimisation opportunities',
         'service_link_5' => '/ppc-audit',
         
         'service_title_6' => 'White Label PPC',
@@ -80,13 +80,13 @@ function aimpro_get_advertising_ppc_default_values() {
         // Case Study Section
         'case_study_title' => 'Case Study: E-commerce Success Story',
         'case_study_subtitle' => 'Online Retailer Achieves 520% ROI Improvement',
-        'case_study_intro' => 'A growing e-commerce business approached us with underperforming Google Ads campaigns and high advertising costs. Our comprehensive PPC optimization strategy transformed their advertising performance and dramatically improved their bottom line.',
+        'case_study_intro' => 'A growing e-commerce business approached us with underperforming Google Ads campaigns and high advertising costs. Our comprehensive PPC optimisation strategy transformed their advertising performance and dramatically improved their bottom line.',
         
         'challenge_title' => 'The Challenge',
-        'challenge_list' => "High cost per acquisition (£45 average)\nPoor campaign structure and targeting\nLow-quality traffic and conversions\nWasted ad spend on irrelevant keywords\nNo conversion tracking or optimization",
+        'challenge_list' => "High cost per acquisition (£45 average)\nPoor campaign structure and targeting\nLow-quality traffic and conversions\nWasted ad spend on irrelevant keywords\nNo conversion tracking or optimisation",
         
         'solution_title' => 'Our Solution',
-        'solution_list' => "Complete account restructure and keyword optimization\nImplemented advanced audience targeting\nCreated high-converting ad copy variations\nSet up comprehensive conversion tracking\nOptimized landing pages for better conversions",
+        'solution_list' => "Complete account restructure and keyword optimisation\nImplemented advanced audience targeting\nCreated high-converting ad copy variations\nSet up comprehensive conversion tracking\noptimised landing pages for better conversions",
         
         // Case Study Metrics
         'case_metric_1_number' => '520%',
@@ -108,10 +108,10 @@ function aimpro_get_advertising_ppc_default_values() {
         'process_step_content_2' => 'Expert campaign structure, keyword research, ad creation, and tracking implementation across chosen platforms.',
         
         'process_step_title_3' => 'Launch & Monitor',
-        'process_step_content_3' => 'Campaign launch with close monitoring of performance metrics and immediate optimizations as needed.',
+        'process_step_content_3' => 'Campaign launch with close monitoring of performance metrics and immediate optimisations as needed.',
         
-        'process_step_title_4' => 'Optimize & Scale',
-        'process_step_content_4' => 'Continuous optimization based on data insights, scaling successful campaigns and improving underperformers.',
+        'process_step_title_4' => 'optimise & Scale',
+        'process_step_content_4' => 'Continuous optimisation based on data insights, scaling successful campaigns and improving underperformers.',
         
         'process_step_title_5' => 'Report & Refine',
         'process_step_content_5' => 'Regular reporting with insights and recommendations for ongoing improvement and growth.',
@@ -135,7 +135,7 @@ function aimpro_get_advertising_ppc_default_values() {
         'industry_title' => 'PPC Advertising for Your Industry',
         
         'industry_name_1' => 'E-commerce',
-        'industry_content_1' => 'Shopping campaigns, dynamic remarketing, and conversion optimization for online retailers and product-based businesses.',
+        'industry_content_1' => 'Shopping campaigns, dynamic remarketing, and conversion optimisation for online retailers and product-based businesses.',
         
         'industry_name_2' => 'Professional Services',
         'industry_content_2' => 'Lead generation campaigns, local targeting, and conversion tracking for lawyers, accountants, consultants, and agencies.',
@@ -147,7 +147,7 @@ function aimpro_get_advertising_ppc_default_values() {
         'industry_content_4' => 'Local property advertising, lead generation, and audience targeting for real estate agents and property developers.',
         
         'industry_name_5' => 'Home & Garden',
-        'industry_content_5' => 'Seasonal campaigns, local targeting, and conversion optimization for contractors, landscapers, and home improvement businesses.',
+        'industry_content_5' => 'Seasonal campaigns, local targeting, and conversion optimisation for contractors, landscapers, and home improvement businesses.',
         
         'industry_name_6' => 'Automotive',
         'industry_content_6' => 'Vehicle advertising, local dealership promotion, and service-based campaigns for automotive businesses.',
@@ -159,7 +159,7 @@ function aimpro_get_advertising_ppc_default_values() {
         
         // CTA Section
         'cta_title' => 'Ready to Maximize Your Advertising ROI?',
-        'cta_content' => 'Get a free PPC audit and strategy session. We\'ll analyze your current campaigns and show you exactly how to improve performance and reduce costs.',
+        'cta_content' => 'Get a free PPC audit and strategy session. We\'ll analyse your current campaigns and show you exactly how to improve performance and reduce costs.',
         'cta_button_1_text' => 'Get Free PPC Audit',
         'cta_button_2_text' => 'View All Services',
         'cta_feature_1' => 'Free campaign analysis',

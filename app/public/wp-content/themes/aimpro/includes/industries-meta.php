@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 // Industries Page Meta Fields
 
 function add_industries_meta_boxes() {
@@ -54,7 +54,7 @@ function industries_meta_box_callback($post) {
             array(
                 'icon' => 'fas fa-car',
                 'title' => 'Automotive',
-                'description' => 'Drive qualified leads to your dealership or automotive service center with targeted digital strategies that reach car buyers at every stage of their journey.',
+                'description' => 'Drive qualified leads to your dealership or automotive service centre with targeted digital strategies that reach car buyers at every stage of their journey.',
                 'features' => array('Vehicle inventory marketing', 'Service department promotion', 'Local SEO for dealerships', 'Lead generation campaigns'),
                 'link_text' => 'Learn More',
                 'link_url' => '/automotive'
@@ -62,8 +62,8 @@ function industries_meta_box_callback($post) {
             array(
                 'icon' => 'fas fa-home',
                 'title' => 'Home & Garden',
-                'description' => 'Grow your home improvement, landscaping, or garden center business with seasonal campaigns and local marketing strategies that capture homeowner intent.',
-                'features' => array('Seasonal campaign optimization', 'Before/after showcase content', 'Local service area targeting', 'Pinterest and visual marketing'),
+                'description' => 'Grow your home improvement, landscaping, or garden centre business with seasonal campaigns and local marketing strategies that capture homeowner intent.',
+                'features' => array('Seasonal campaign optimisation', 'Before/after showcase content', 'Local service area targeting', 'Pinterest and visual marketing'),
                 'link_text' => 'Learn More',
                 'link_url' => '/home-garden'
             ),
@@ -87,14 +87,14 @@ function industries_meta_box_callback($post) {
                 'icon' => 'fas fa-building',
                 'title' => 'Estate Agents',
                 'description' => 'Dominate your local property market with hyper-local SEO, stunning property showcases, and lead generation systems that convert browsers into buyers.',
-                'features' => array('Hyper-local SEO optimization', 'Property showcase campaigns', 'Virtual tour integration', 'Buyer/seller lead generation'),
+                'features' => array('Hyper-local SEO optimisation', 'Property showcase campaigns', 'Virtual tour integration', 'Buyer/seller lead generation'),
                 'link_text' => 'Learn More',
                 'link_url' => '/estate-agents'
             ),
             array(
                 'icon' => 'fas fa-users',
                 'title' => 'Coaches & Consultants',
-                'description' => 'Build your personal brand and attract high-value clients with strategic content marketing, thought leadership, and conversion-optimized funnels.',
+                'description' => 'Build your personal brand and attract high-value clients with strategic content marketing, thought leadership, and conversion-optimised funnels.',
                 'features' => array('Personal brand development', 'Content marketing funnels', 'Speaking engagement promotion', 'High-ticket service marketing'),
                 'link_text' => 'Learn More',
                 'link_url' => '/coaches-consultants'
@@ -102,8 +102,8 @@ function industries_meta_box_callback($post) {
             array(
                 'icon' => 'fas fa-shopping-cart',
                 'title' => 'E-commerce',
-                'description' => 'Maximize online sales and customer lifetime value with comprehensive e-commerce marketing including product feed optimization, remarketing, and conversion rate optimization.',
-                'features' => array('Shopping campaign optimization', 'Product feed management', 'Cart abandonment recovery', 'Customer retention strategies'),
+                'description' => 'Maximize online sales and customer lifetime value with comprehensive e-commerce marketing including product feed optimisation, remarketing, and conversion rate optimisation.',
+                'features' => array('Shopping campaign optimisation', 'Product feed management', 'Cart abandonment recovery', 'Customer retention strategies'),
                 'link_text' => 'Learn More',
                 'link_url' => '/ecommerce'
             )
@@ -162,7 +162,7 @@ function industries_meta_box_callback($post) {
                 'industry' => 'Automotive'
             ),
             array(
-                'quote' => 'The seasonal campaigns they created for our garden center generated 220% more revenue during peak season. Outstanding results!',
+                'quote' => 'The seasonal campaigns they created for our garden centre generated 220% more revenue during peak season. Outstanding results!',
                 'name' => 'Sarah Mitchell',
                 'position' => 'Owner, Blooming Gardens',
                 'industry' => 'Home & Garden'
@@ -221,7 +221,7 @@ function industries_meta_box_callback($post) {
         }
         .remove-item {
             background: #dc3232;
-            color: white;
+            colour: white;
             border: none;
             padding: 5px 10px;
             cursor: pointer;
@@ -230,7 +230,7 @@ function industries_meta_box_callback($post) {
         }
         .add-item {
             background: #0073aa;
-            color: white;
+            colour: white;
             border: none;
             padding: 8px 16px;
             cursor: pointer;
@@ -268,14 +268,14 @@ function industries_meta_box_callback($post) {
         }
         .remove-list-item {
             background: #dc3232;
-            color: white;
+            colour: white;
             border: none;
             padding: 5px 10px;
             cursor: pointer;
         }
         .add-list-item {
             background: #0073aa;
-            color: white;
+            colour: white;
             border: none;
             padding: 5px 10px;
             cursor: pointer;
@@ -291,7 +291,7 @@ function industries_meta_box_callback($post) {
             </tr>
             <tr>
                 <th><label for="industries_header_subtitle">Page Header Subtitle</label></th>
-                <td><textarea id="industries_header_subtitle" name="industries_header_subtitle" placeholder="Specialized digital marketing expertise across diverse sectors"><?php echo esc_textarea($header_subtitle); ?></textarea></td>
+                <td><textarea id="industries_header_subtitle" name="industries_header_subtitle" placeholder="specialised digital marketing expertise across diverse sectors"><?php echo esc_textarea($header_subtitle); ?></textarea></td>
             </tr>
             <tr>
                 <th><label for="industries_intro_title">Introduction Title</label></th>
@@ -334,7 +334,7 @@ function industries_meta_box_callback($post) {
                 </tr>
                 <tr>
                     <th><label for="industries_expertise_subtitle">Expertise Subtitle</label></th>
-                    <td><textarea id="industries_expertise_subtitle" name="industries_expertise_subtitle" placeholder="Specialized digital marketing solutions..."><?php echo esc_textarea($expertise_subtitle); ?></textarea></td>
+                    <td><textarea id="industries_expertise_subtitle" name="industries_expertise_subtitle" placeholder="specialised digital marketing solutions..."><?php echo esc_textarea($expertise_subtitle); ?></textarea></td>
                 </tr>
             </table>
         </div>

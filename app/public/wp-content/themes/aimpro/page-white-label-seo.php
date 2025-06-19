@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 /**
  * Template Name: White Label SEO Services
  * Description: White label SEO services for agencies
@@ -27,7 +27,7 @@ get_header(); ?>
                     <div class="overview-text animate-on-scroll animate-slide-left">
                         <h2><?php echo esc_html(get_post_meta(get_the_ID(), 'white_label_seo_overview_title', true) ?: 'Professional SEO Services Under Your Brand'); ?></h2>
                         <p><?php echo esc_html(get_post_meta(get_the_ID(), 'white_label_seo_overview_description_1', true) ?: 'Our white label SEO services allow agencies, consultants, and business owners to offer comprehensive SEO solutions to their clients without the overhead of building an in-house team. We work behind the scenes, delivering exceptional results while you maintain the client relationship.'); ?></p>
-                        <p><?php echo esc_html(get_post_meta(get_the_ID(), 'white_label_seo_overview_description_2', true) ?: 'From technical audits to content optimization and link building, our team becomes an extension of your agency, delivering consistent, high-quality SEO services that help you scale your business and increase profitability.'); ?></p>
+                        <p><?php echo esc_html(get_post_meta(get_the_ID(), 'white_label_seo_overview_description_2', true) ?: 'From technical audits to content optimisation and link building, our team becomes an extension of your agency, delivering consistent, high-quality SEO services that help you scale your business and increase profitability.'); ?></p>
                     </div>
                     <div class="overview-stats animate-on-scroll animate-slide-right">
                         <?php 
@@ -55,7 +55,7 @@ get_header(); ?>
                         ['icon' => 'fas fa-rocket', 'title' => 'Scale Rapidly', 'description' => 'Expand your service offerings and take on more clients without hiring additional staff or investing in expensive SEO tools.'],
                         ['icon' => 'fas fa-user-graduate', 'title' => 'Expert Delivery', 'description' => 'Leverage our team of certified SEO specialists and access to premium tools without the overhead costs.'],
                         ['icon' => 'fas fa-chart-line', 'title' => 'Higher Margins', 'description' => 'Increase your profit margins by offering SEO services at competitive rates while reducing operational costs.'],
-                        ['icon' => 'fas fa-palette', 'title' => 'Your Brand', 'description' => 'All deliverables are fully branded with your company\'s logo, colors, and messaging. Your clients never know we exist.']
+                        ['icon' => 'fas fa-palette', 'title' => 'Your Brand', 'description' => 'All deliverables are fully branded with your company\'s logo, colours, and messaging. Your clients never know we exist.']
                     ];
                     foreach ($benefits as $benefit): ?>
                         <div class="benefit-card animate-on-scroll animate-stagger animate-fade-up">
@@ -65,7 +65,7 @@ get_header(); ?>
                             <h3><?php echo esc_html($benefit['title']); ?></h3>
                             <p><?php echo esc_html($benefit['description']); ?></p>
                         </div>                    <?php endforeach; ?>                </div>
-                <div class="text-center mt-1 animate-on-scroll animate-fade-up">
+                <div class="text-centre mt-1 animate-on-scroll animate-fade-up">
                     <a href="/contact/" class="btn btn-primary">Become a White Label Partner</a>
                 </div>
             </div>
@@ -82,19 +82,19 @@ get_header(); ?>
                             'features' => ['Technical SEO audits', 'Content gap analysis', 'Competitor research', 'Keyword opportunity mapping']
                         ],
                         [
-                            'title' => 'On-Page Optimization',
-                            'description' => 'Complete on-page SEO optimization including content, meta tags, and technical elements for improved rankings.',
-                            'features' => ['Title tag & meta optimization', 'Content optimization', 'Schema markup implementation', 'Internal linking strategy']
+                            'title' => 'On-Page optimisation',
+                            'description' => 'Complete on-page SEO optimisation including content, meta tags, and technical elements for improved rankings.',
+                            'features' => ['Title tag & meta optimisation', 'Content optimisation', 'Schema markup implementation', 'Internal linking strategy']
                         ],
                         [
                             'title' => 'Local SEO Services',
-                            'description' => 'Comprehensive local SEO optimization to help your clients dominate local search results and attract nearby customers.',
-                            'features' => ['Google Business Profile optimization', 'Local citation building', 'Review management setup', 'Local content creation']
+                            'description' => 'Comprehensive local SEO optimisation to help your clients dominate local search results and attract nearby customers.',
+                            'features' => ['Google Business Profile optimisation', 'Local citation building', 'Review management setup', 'Local content creation']
                         ],
                         [
                             'title' => 'Technical SEO',
-                            'description' => 'Advanced technical optimization to improve site performance, crawlability, and search engine understanding.',
-                            'features' => ['Site speed optimization', 'Core Web Vitals improvement', 'Mobile optimization', 'Crawl error resolution']
+                            'description' => 'Advanced technical optimisation to improve site performance, crawlability, and search engine understanding.',
+                            'features' => ['Site speed optimisation', 'Core Web Vitals improvement', 'Mobile optimisation', 'Crawl error resolution']
                         ],
                         [
                             'title' => 'Link Building',
@@ -138,10 +138,10 @@ get_header(); ?>
                             'features' => [
                                 'Up to 5 target keywords',
                                 'Monthly SEO audit',
-                                'On-page optimization',
+                                'On-page optimisation',
                                 'Basic link building (5 links/month)',
                                 'Monthly branded report',
-                                'Google Business Profile optimization',
+                                'Google Business Profile optimisation',
                                 'Technical SEO monitoring'
                             ]
                         ],
@@ -154,11 +154,11 @@ get_header(); ?>
                             'features' => [
                                 'Up to 15 target keywords',
                                 'Bi-weekly SEO audits',
-                                'Advanced on-page optimization',
+                                'Advanced on-page optimisation',
                                 'Premium link building (15 links/month)',
                                 'Weekly branded reports',
-                                'Local SEO optimization',
-                                'Content optimization',
+                                'Local SEO optimisation',
+                                'Content optimisation',
                                 'Competitor analysis',
                                 'Priority support'
                             ]
@@ -172,7 +172,7 @@ get_header(); ?>
                             'features' => [
                                 'Unlimited keywords',
                                 'Weekly SEO audits',
-                                'Complete on-page optimization',
+                                'Complete on-page optimisation',
                                 'Premium link building (30+ links/month)',
                                 'Custom reporting schedule',
                                 'Multi-location SEO',
@@ -268,7 +268,7 @@ get_header(); ?>
                 <div class="benefits-grid">
                     <?php 
                     $included_items = get_post_meta(get_the_ID(), 'white_label_seo_included_items', true) ?: [
-                        ['icon' => 'fas fa-palette', 'title' => 'Full Branding', 'description' => 'All reports, dashboards, and communications use your company branding, colors, and logo.'],
+                        ['icon' => 'fas fa-palette', 'title' => 'Full Branding', 'description' => 'All reports, dashboards, and communications use your company branding, colours, and logo.'],
                         ['icon' => 'fas fa-phone', 'title' => 'Direct Communication', 'description' => 'Dedicated account manager and direct access to our SEO team for questions and updates.'],
                         ['icon' => 'fas fa-chart-bar', 'title' => 'Transparent Reporting', 'description' => 'Real-time access to all campaign data, metrics, and progress through branded dashboards.'],
                         ['icon' => 'fas fa-tools', 'title' => 'Premium Tools', 'description' => 'Access to enterprise-level SEO tools and software at no additional cost to you.'],
@@ -289,14 +289,14 @@ get_header(); ?>
         </section>        <!-- FAQ Section -->
         <section class="faq-section">
             <div class="section-content">
-                <h2 class="animate-on-scroll animate-fade-up" style="text-align: center;"><?php echo esc_html(get_post_meta(get_the_ID(), 'white_label_seo_faq_title', true) ?: 'Frequently Asked Questions'); ?></h2>
+                <h2 class="animate-on-scroll animate-fade-up" style="text-align: centre;"><?php echo esc_html(get_post_meta(get_the_ID(), 'white_label_seo_faq_title', true) ?: 'Frequently Asked Questions'); ?></h2>
                 <div class="faq-list">
                     <?php 
                     $faqs = get_post_meta(get_the_ID(), 'white_label_seo_faqs', true) ?: [
                         ['question' => 'Will my clients know you\'re providing the SEO services?', 'answer' => 'No, absolutely not. All communications, reports, and deliverables are fully branded with your company information. We remain completely invisible to your clients.'],
                         ['question' => 'What\'s the minimum commitment for white label services?', 'answer' => 'We require a minimum 6-month commitment to ensure we can deliver meaningful results. This also allows time to build strong processes and see significant improvements.'],
                         ['question' => 'How do you handle client communications?', 'answer' => 'You maintain all client relationships. We provide you with regular updates and reports that you can share with your clients under your branding.'],
-                        ['question' => 'Can I customize the services for different clients?', 'answer' => 'Yes, we offer flexible service packages that can be customized based on each client\'s specific needs, budget, and goals.'],
+                        ['question' => 'Can I customise the services for different clients?', 'answer' => 'Yes, we offer flexible service packages that can be customised based on each client\'s specific needs, budget, and goals.'],
                         ['question' => 'What kind of training and support do you provide?', 'answer' => 'We provide comprehensive onboarding, sales training materials, and ongoing support to help you successfully sell and manage SEO services.'],
                         ['question' => 'How quickly can we get started?', 'answer' => 'After our initial consultation and agreement, we can typically have your white label SEO services up and running within 1-2 weeks.']
                     ];
@@ -325,8 +325,8 @@ get_header(); ?>
                     <?php else: ?>
                         <div class="quote-icon">
                             <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M3 21C3 17.4 5.4 17.4 5.4 17.4H9V21H3Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                <path d="M15 21C15 17.4 17.4 17.4 17.4 17.4H21V21H15Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M3 21C3 17.4 5.4 17.4 5.4 17.4H9V21H3Z" stroke="currentcolour" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M15 21C15 17.4 17.4 17.4 17.4 17.4H21V21H15Z" stroke="currentcolour" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                             </svg>
                         </div>
                     <?php endif; ?>

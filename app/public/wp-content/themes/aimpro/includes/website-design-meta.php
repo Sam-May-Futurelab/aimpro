@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 // Meta fields for Website Design page
 
 // Function to get default values for website design page
@@ -16,11 +16,11 @@ function get_website_design_defaults() {
         'header_cta_secondary_text' => 'View Portfolio',
         'header_cta_secondary_link' => '#portfolio',
         'overview_title' => 'Websites That Work As Hard As You Do',
-        'overview_description' => 'Our custom website design service creates powerful digital experiences that not only look stunning but convert visitors into customers. Every design decision is backed by user experience research and conversion optimization principles.',
+        'overview_description' => 'Our custom website design service creates powerful digital experiences that not only look stunning but convert visitors into customers. Every design decision is backed by user experience research and conversion optimisation principles.',
         'features' => array(
             array('title' => 'Brand-Aligned Design', 'description' => 'Custom designs that perfectly reflect your brand identity and values across every element.'),
-            array('title' => 'Mobile-First Approach', 'description' => 'Responsive designs optimized for all devices with emphasis on mobile user experience.'),
-            array('title' => 'Conversion Optimization', 'description' => 'Every element designed to guide visitors toward your desired actions and business goals.'),
+            array('title' => 'Mobile-First Approach', 'description' => 'Responsive designs optimised for all devices with emphasis on mobile user experience.'),
+            array('title' => 'Conversion optimisation', 'description' => 'Every element designed to guide visitors toward your desired actions and business goals.'),
             array('title' => 'SEO Foundation', 'description' => 'Built-in SEO best practices ensuring your website ranks well from day one.')
         ),        'case_study_title' => 'Case Study',
         'case_study_subtitle' => 'How Premium Home Services Increased Lead Generation by 300%',
@@ -31,7 +31,7 @@ function get_website_design_defaults() {
             array('number' => '3', 'label' => 'Leads per Month')
         ),
         'case_study_solution_title' => 'Our Solution',
-        'case_study_solutions' => "Complete Visual Redesign: Modern, professional design reflecting premium brand positioning\nService Showcase: Comprehensive service pages with before/after galleries\nTrust Building: Testimonials, certifications, and social proof integration\nLead Capture: Strategic contact forms and clear call-to-action placement\nMobile Optimization: Seamless experience across all devices",
+        'case_study_solutions' => "Complete Visual Redesign: Modern, professional design reflecting premium brand positioning\nService Showcase: Comprehensive service pages with before/after galleries\nTrust Building: Testimonials, certifications, and social proof integration\nLead Capture: Strategic contact forms and clear call-to-action placement\nMobile optimisation: Seamless experience across all devices",
         'case_study_results_title' => 'The Results',
         'case_study_results' => array(
             array('number' => '300%', 'label' => 'Increase in Monthly Leads'),
@@ -42,11 +42,11 @@ function get_website_design_defaults() {
         'process_title' => 'Our Website Design Process',
         'process_steps' => array(
             array('title' => 'Discovery & Research', 'description' => 'Deep dive into your business, target audience, competitors, and goals to inform the design strategy.'),
-            array('title' => 'Strategy & Planning', 'description' => 'Create detailed site maps, user journeys, and conversion funnels to optimize user experience.'),
+            array('title' => 'Strategy & Planning', 'description' => 'Create detailed site maps, user journeys, and conversion funnels to optimise user experience.'),
             array('title' => 'Wireframing & UX', 'description' => 'Develop wireframes and user experience architecture focusing on usability and conversion paths.'),
             array('title' => 'Visual Design', 'description' => 'Create stunning visual designs that align with your brand and appeal to your target audience.'),
             array('title' => 'Development & Testing', 'description' => 'Build responsive, fast-loading website with thorough testing across devices and browsers.'),
-            array('title' => 'Launch & Optimization', 'description' => 'Strategic launch with performance monitoring and ongoing optimization for better results.')
+            array('title' => 'Launch & optimisation', 'description' => 'Strategic launch with performance monitoring and ongoing optimisation for better results.')
         ),
         'packages_title' => 'Website Design Packages',
         'packages_subtitle' => 'Choose the perfect package for your business needs and budget.',
@@ -59,7 +59,7 @@ function get_website_design_defaults() {
                     '5-page custom website',
                     'Mobile-responsive design',
                     'Contact form integration',
-                    'Basic SEO optimization',
+                    'Basic SEO optimisation',
                     'Google Analytics setup',
                     '2 rounds of revisions',
                     '3-week delivery',
@@ -74,15 +74,15 @@ function get_website_design_defaults() {
                 'description' => 'Ideal for growing companies',
                 'features' => array(
                     '10-page custom website',
-                    'Advanced mobile optimization',
+                    'Advanced mobile optimisation',
                     'Lead generation forms',
-                    'Advanced SEO optimization',
+                    'Advanced SEO optimisation',
                     'Analytics & tracking setup',
                     'Blog setup & integration',
                     '3 rounds of revisions',
                     '4-week delivery',
                     '60 days support',
-                    'Performance optimization'
+                    'Performance optimisation'
                 ),
                 'cta_text' => 'Get Started',
                 'popular' => true
@@ -90,12 +90,12 @@ function get_website_design_defaults() {
             array(
                 'name' => 'Enterprise Website',
                 'price' => '£9,997',
-                'description' => 'For large organizations',
+                'description' => 'For large organisations',
                 'features' => array(
                     'Unlimited pages',
                     'Custom functionality',
                     'Advanced integrations',
-                    'Conversion optimization',
+                    'Conversion optimisation',
                     'Multi-language support',
                     'Advanced analytics',
                     'Unlimited revisions',
@@ -112,7 +112,7 @@ function get_website_design_defaults() {
         'tools_categories' => array(
             array('category' => 'Design Tools', 'tools' => array('Figma', 'Adobe XD', 'Sketch', 'Adobe Creative Suite', 'InVision', 'Principle')),
             array('category' => 'Development', 'tools' => array('WordPress', 'Webflow', 'React.js', 'HTML5/CSS3', 'JavaScript', 'PHP')),
-            array('category' => 'Optimization', 'tools' => array('Google PageSpeed', 'GTmetrix', 'Hotjar', 'Google Analytics', 'A/B Testing Tools', 'SEO Auditing'))
+            array('category' => 'optimisation', 'tools' => array('Google PageSpeed', 'GTmetrix', 'Hotjar', 'Google Analytics', 'A/B Testing Tools', 'SEO Auditing'))
         ),
         'testimonials_title' => 'What Our Clients Say',
         'testimonials' => array(
@@ -123,10 +123,10 @@ function get_website_design_defaults() {
         'faq_title' => 'Frequently Asked Questions',
         'faqs' => array(
             array('question' => 'How long does website design take?', 'answer' => 'Timeline varies by complexity: 3 weeks for Business, 4 weeks for Professional, and 6 weeks for Enterprise packages. We provide detailed project timelines during consultation.'),
-            array('question' => 'Do you provide content writing?', 'answer' => 'Yes, we offer professional copywriting services optimized for conversions and SEO. This can be added to any package or purchased separately.'),
+            array('question' => 'Do you provide content writing?', 'answer' => 'Yes, we offer professional copywriting services optimised for conversions and SEO. This can be added to any package or purchased separately.'),
             array('question' => 'Will my website be mobile-friendly?', 'answer' => 'Absolutely! All our websites are built with a mobile-first approach and are fully responsive across all devices and screen sizes.'),
-            array('question' => 'Can you redesign my existing website?', 'answer' => 'Yes, we specialize in website redesigns. We can work with your existing content and improve the design, functionality, and performance.'),
-            array('question' => 'Do you provide ongoing maintenance?', 'answer' => 'Yes, we offer maintenance packages for security updates, content changes, and performance optimization. This ensures your website stays current and secure.'),
+            array('question' => 'Can you redesign my existing website?', 'answer' => 'Yes, we specialise in website redesigns. We can work with your existing content and improve the design, functionality, and performance.'),
+            array('question' => 'Do you provide ongoing maintenance?', 'answer' => 'Yes, we offer maintenance packages for security updates, content changes, and performance optimisation. This ensures your website stays current and secure.'),
             array('question' => 'What if I need changes after launch?', 'answer' => 'All packages include a support period for minor changes. For major updates, we offer affordable maintenance packages or project-based updates.')
         )
     );

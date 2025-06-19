@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 // Training & Mentoring Page Meta Fields
 
 function add_training_mentoring_meta_boxes() {
@@ -39,7 +39,7 @@ function training_mentoring_meta_box_callback($post) {
         $benefits = array(
             array(
                 'icon' => 'fas fa-crosshairs',
-                'title' => 'Personalized Approach',
+                'title' => 'personalised Approach',
                 'description' => 'Tailored programs based on your current skills and specific goals'
             ),
             array(
@@ -71,7 +71,7 @@ function training_mentoring_meta_box_callback($post) {
                 'price' => '£149',
                 'period' => 'per session',
                 'description' => 'One-on-one mentoring sessions with senior digital marketing experts tailored to your specific needs and career goals.',
-                'features' => array('1-hour intensive sessions', 'Personalized learning plan', 'Homework assignments', 'Progress tracking', 'Email support between sessions', 'Industry certification guidance'),
+                'features' => array('1-hour intensive sessions', 'personalised learning plan', 'Homework assignments', 'Progress tracking', 'Email support between sessions', 'Industry certification guidance'),
                 'topics_title' => 'Choose Your Focus Area:',
                 'topics' => array('SEO Strategy', 'PPC Management', 'Content Marketing', 'Social Media', 'Analytics', 'Strategy'),
                 'cta_text' => 'Book Session',
@@ -158,7 +158,7 @@ function training_mentoring_meta_box_callback($post) {
                 'title' => 'Entrepreneur Track',
                 'duration' => '4-8 months',
                 'description' => 'Comprehensive training for business owners and entrepreneurs to master their own marketing.',
-                'steps' => array('Business Marketing Strategy', 'Cost-Effective Tactics', 'Conversion Optimization', 'Growth Scaling'),
+                'steps' => array('Business Marketing Strategy', 'Cost-Effective Tactics', 'Conversion optimisation', 'Growth Scaling'),
                 'cta_text' => 'Start Learning Path',
                 'cta_url' => '#'
             )
@@ -181,7 +181,7 @@ function training_mentoring_meta_box_callback($post) {
                 'name' => 'Sarah Johnson',
                 'title' => 'PPC & Paid Media Specialist',
                 'description' => 'Google Ads certified professional with 12+ years managing multi-million pound advertising budgets across various industries.',
-                'specialties' => array('Google Ads', 'Facebook Ads', 'Campaign Optimization'),
+                'specialties' => array('Google Ads', 'Facebook Ads', 'Campaign optimisation'),
                 'stats' => array('75+ mentees', '★★★★★ 4.8')
             ),
             array(
@@ -213,7 +213,7 @@ function training_mentoring_meta_box_callback($post) {
             ),
             array(
                 'question' => 'Can I get corporate training for my team?',
-                'answer' => 'Absolutely! We offer customized corporate training programs for teams of any size. Contact us for a tailored proposal and volume discounts.'
+                'answer' => 'Absolutely! We offer customised corporate training programs for teams of any size. Contact us for a tailored proposal and volume discounts.'
             ),
             array(
                 'question' => 'Are sessions recorded?',
@@ -221,7 +221,7 @@ function training_mentoring_meta_box_callback($post) {
             ),
             array(
                 'question' => 'What certification do I receive?',
-                'answer' => 'Our certification program provides an industry-recognized certificate upon completion, plus assistance with pursuing Google, Facebook, and other platform certifications.'
+                'answer' => 'Our certification program provides an industry-recognised certificate upon completion, plus assistance with pursuing Google, Facebook, and other platform certifications.'
             )
         );
     }
@@ -272,7 +272,7 @@ function training_mentoring_meta_box_callback($post) {
         }
         .remove-item {
             background: #dc3232;
-            color: white;
+            colour: white;
             border: none;
             padding: 5px 10px;
             cursor: pointer;
@@ -281,7 +281,7 @@ function training_mentoring_meta_box_callback($post) {
         }
         .add-item {
             background: #0073aa;
-            color: white;
+            colour: white;
             border: none;
             padding: 8px 16px;
             cursor: pointer;
@@ -319,14 +319,14 @@ function training_mentoring_meta_box_callback($post) {
         }
         .remove-list-item {
             background: #dc3232;
-            color: white;
+            colour: white;
             border: none;
             padding: 5px 10px;
             cursor: pointer;
         }
         .add-list-item {
             background: #0073aa;
-            color: white;
+            colour: white;
             border: none;
             padding: 5px 10px;
             cursor: pointer;
@@ -342,7 +342,7 @@ function training_mentoring_meta_box_callback($post) {
             </tr>
             <tr>
                 <th><label for="training_mentoring_header_subtitle">Page Header Subtitle</label></th>
-                <td><textarea id="training_mentoring_header_subtitle" name="training_mentoring_header_subtitle" placeholder="Accelerate your digital marketing expertise with personalized guidance"><?php echo esc_textarea($header_subtitle); ?></textarea></td>
+                <td><textarea id="training_mentoring_header_subtitle" name="training_mentoring_header_subtitle" placeholder="Accelerate your digital marketing expertise with personalised guidance"><?php echo esc_textarea($header_subtitle); ?></textarea></td>
             </tr>
             <tr>
                 <th><label for="training_mentoring_intro_title">Introduction Title</label></th>
@@ -367,7 +367,7 @@ function training_mentoring_meta_box_callback($post) {
                             </div>
                             <div class="item-field">
                                 <label>Title:</label>
-                                <input type="text" name="training_mentoring_benefits[<?php echo $index; ?>][title]" value="<?php echo esc_attr($benefit['title']); ?>" placeholder="Personalized Approach" />
+                                <input type="text" name="training_mentoring_benefits[<?php echo $index; ?>][title]" value="<?php echo esc_attr($benefit['title']); ?>" placeholder="personalised Approach" />
                             </div>
                             <div class="item-field">
                                 <label>Description:</label>
@@ -695,7 +695,7 @@ function training_mentoring_meta_box_callback($post) {
                 </tr>
                 <tr>
                     <th><label for="training_mentoring_cta_note">CTA Note</label></th>
-                    <td><input type="text" id="training_mentoring_cta_note" name="training_mentoring_cta_note" value="<?php echo esc_attr($cta_note); ?>" placeholder="Free 15-minute consultation • No obligation • Personalized recommendations" /></td>
+                    <td><input type="text" id="training_mentoring_cta_note" name="training_mentoring_cta_note" value="<?php echo esc_attr($cta_note); ?>" placeholder="Free 15-minute consultation • No obligation • personalised recommendations" /></td>
                 </tr>
             </table>
         </div>

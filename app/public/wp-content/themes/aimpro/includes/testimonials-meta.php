@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 /**
  * Testimonials Page Meta Fields
  * Adds custom meta box for Testimonials Page template with editable content fields
@@ -183,7 +183,7 @@ function aimpro_testimonials_meta_box_callback($post) {
             
             // Default values for each industry
             if ($ind_num == 1 && $t == 1 && !$testimonial_quote) {
-                $testimonial_quote = 'Aimpro Digital\'s content marketing strategy helped us establish thought leadership in our space. Our blog traffic increased by 500% and we\'re now recognized as industry experts.';
+                $testimonial_quote = 'Aimpro Digital\'s content marketing strategy helped us establish thought leadership in our space. Our blog traffic increased by 500% and we\'re now recognised as industry experts.';
                 $testimonial_author = 'Jennifer Martinez';
                 $testimonial_title = 'CMO, CloudSync Pro';
             } elseif ($ind_num == 1 && $t == 2 && !$testimonial_quote) {
@@ -197,13 +197,13 @@ function aimpro_testimonials_meta_box_callback($post) {
             } elseif ($ind_num == 2 && $t == 2 && !$testimonial_quote) {
                 $testimonial_quote = 'The team helped us navigate complex healthcare advertising regulations while still achieving outstanding results. Our patient acquisition cost decreased by 60%.';
                 $testimonial_author = 'Robert Taylor';
-                $testimonial_title = 'Administrator, Wellness Center Group';
+                $testimonial_title = 'Administrator, Wellness centre Group';
             } elseif ($ind_num == 3 && $t == 1 && !$testimonial_quote) {
                 $testimonial_quote = 'Our online sales tripled within the first year of working with Aimpro Digital. Their e-commerce expertise and data-driven approach made all the difference.';
                 $testimonial_author = 'Lisa Thompson';
                 $testimonial_title = 'Owner, Artisan Home Decor';
             } elseif ($ind_num == 3 && $t == 2 && !$testimonial_quote) {
-                $testimonial_quote = 'The shopping campaign optimization they implemented for our Google Ads resulted in a 250% increase in qualified traffic and 180% boost in conversions.';
+                $testimonial_quote = 'The shopping campaign optimisation they implemented for our Google Ads resulted in a 250% increase in qualified traffic and 180% boost in conversions.';
                 $testimonial_author = 'James Wilson';
                 $testimonial_title = 'Marketing Director, Sports Equipment Plus';
             } elseif ($ind_num == 4 && $t == 1 && !$testimonial_quote) {

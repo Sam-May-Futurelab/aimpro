@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 /**
  * Template Name: Industries Page
  * Description: Main industries hub page
@@ -11,7 +11,7 @@ get_header(); ?>
         <section class="page-header">
             <div class="page-header-content animate-on-scroll animate-fade-up">
                 <h1><?php echo esc_html(get_post_meta(get_the_ID(), '_industries_header_title', true) ?: 'Industries We Serve'); ?></h1>
-                <p class="page-subtitle"><?php echo esc_html(get_post_meta(get_the_ID(), '_industries_header_subtitle', true) ?: 'Specialized digital marketing expertise across diverse sectors'); ?></p>
+                <p class="page-subtitle"><?php echo esc_html(get_post_meta(get_the_ID(), '_industries_header_subtitle', true) ?: 'specialised digital marketing expertise across diverse sectors'); ?></p>
             </div>
         </section>
 
@@ -20,8 +20,8 @@ get_header(); ?>
             <div class="section-content">
                 <div class="intro-content animate-on-scroll animate-slide-left">
                     <h2><?php echo esc_html(get_post_meta(get_the_ID(), '_industries_intro_title', true) ?: 'Industry-Specific Digital Marketing Solutions'); ?></h2>
-                    <p><?php echo esc_html(get_post_meta(get_the_ID(), '_industries_intro_content', true) ?: 'Every industry has unique challenges, customer behaviors, and marketing opportunities. Our team brings deep sector expertise and proven strategies tailored to your specific market, ensuring maximum ROI and sustainable growth.'); ?></p>
-                </div>                <div class="industry-stats animate-on-scroll animate-slide-right" style="display: flex !important; justify-content: center !important; align-items: center !important; text-align: center !important; flex-wrap: wrap !important; gap: 2rem !important;">
+                    <p><?php echo esc_html(get_post_meta(get_the_ID(), '_industries_intro_content', true) ?: 'Every industry has unique challenges, customer behaviours, and marketing opportunities. Our team brings deep sector expertise and proven strategies tailored to your specific market, ensuring maximum ROI and sustainable growth.'); ?></p>
+                </div>                <div class="industry-stats animate-on-scroll animate-slide-right" style="display: flex !important; justify-content: centre !important; align-items: centre !important; text-align: centre !important; flex-wrap: wrap !important; gap: 2rem !important;">
                     <?php 
                     $industry_stats = get_post_meta(get_the_ID(), '_industries_stats', true);
                     if (empty($industry_stats)) {
@@ -45,7 +45,7 @@ get_header(); ?>
             <div class="container">
                 <div class="section-header animate-on-scroll animate-fade-up">
                     <h2><?php echo esc_html(get_post_meta(get_the_ID(), '_industries_expertise_title', true) ?: 'Our Industry Expertise'); ?></h2>
-                    <p><?php echo esc_html(get_post_meta(get_the_ID(), '_industries_expertise_subtitle', true) ?: 'Specialized digital marketing solutions tailored to your industry\'s unique challenges and opportunities.'); ?></p>
+                    <p><?php echo esc_html(get_post_meta(get_the_ID(), '_industries_expertise_subtitle', true) ?: 'specialised digital marketing solutions tailored to your industry\'s unique challenges and opportunities.'); ?></p>
                 </div>
                 <div class="services-grid">
                     <?php 
@@ -55,7 +55,7 @@ get_header(); ?>
                             array(
                                 'icon' => 'fas fa-car',
                                 'title' => 'Automotive',
-                                'description' => 'Drive qualified leads to your dealership or automotive service center with targeted digital strategies that reach car buyers at every stage of their journey.',
+                                'description' => 'Drive qualified leads to your dealership or automotive service centre with targeted digital strategies that reach car buyers at every stage of their journey.',
                                 'features' => array('Vehicle inventory marketing', 'Service department promotion', 'Local SEO for dealerships', 'Lead generation campaigns'),
                                 'link_text' => 'Learn More',
                                 'link_url' => '/automotive'
@@ -63,8 +63,8 @@ get_header(); ?>
                             array(
                                 'icon' => 'fas fa-home',
                                 'title' => 'Home & Garden',
-                                'description' => 'Grow your home improvement, landscaping, or garden center business with seasonal campaigns and local marketing strategies that capture homeowner intent.',
-                                'features' => array('Seasonal campaign optimization', 'Before/after showcase content', 'Local service area targeting', 'Pinterest and visual marketing'),
+                                'description' => 'Grow your home improvement, landscaping, or garden centre business with seasonal campaigns and local marketing strategies that capture homeowner intent.',
+                                'features' => array('Seasonal campaign optimisation', 'Before/after showcase content', 'Local service area targeting', 'Pinterest and visual marketing'),
                                 'link_text' => 'Learn More',
                                 'link_url' => '/home-garden'
                             ),
@@ -88,14 +88,14 @@ get_header(); ?>
                                 'icon' => 'fas fa-building',
                                 'title' => 'Estate Agents',
                                 'description' => 'Dominate your local property market with hyper-local SEO, stunning property showcases, and lead generation systems that convert browsers into buyers.',
-                                'features' => array('Hyper-local SEO optimization', 'Property showcase campaigns', 'Virtual tour integration', 'Buyer/seller lead generation'),
+                                'features' => array('Hyper-local SEO optimisation', 'Property showcase campaigns', 'Virtual tour integration', 'Buyer/seller lead generation'),
                                 'link_text' => 'Learn More',
                                 'link_url' => '/estate-agents'
                             ),
                             array(
                                 'icon' => 'fas fa-users',
                                 'title' => 'Coaches & Consultants',
-                                'description' => 'Build your personal brand and attract high-value clients with strategic content marketing, thought leadership, and conversion-optimized funnels.',
+                                'description' => 'Build your personal brand and attract high-value clients with strategic content marketing, thought leadership, and conversion-optimised funnels.',
                                 'features' => array('Personal brand development', 'Content marketing funnels', 'Speaking engagement promotion', 'High-ticket service marketing'),
                                 'link_text' => 'Learn More',
                                 'link_url' => '/coaches-consultants'
@@ -103,8 +103,8 @@ get_header(); ?>
                             array(
                                 'icon' => 'fas fa-shopping-cart',
                                 'title' => 'E-commerce',
-                                'description' => 'Maximize online sales and customer lifetime value with comprehensive e-commerce marketing including product feed optimization, remarketing, and conversion rate optimization.',
-                                'features' => array('Shopping campaign optimization', 'Product feed management', 'Cart abandonment recovery', 'Customer retention strategies'),
+                                'description' => 'Maximize online sales and customer lifetime value with comprehensive e-commerce marketing including product feed optimisation, remarketing, and conversion rate optimisation.',
+                                'features' => array('Shopping campaign optimisation', 'Product feed management', 'Cart abandonment recovery', 'Customer retention strategies'),
                                 'link_text' => 'Learn More',
                                 'link_url' => '/ecommerce'
                             )
@@ -164,7 +164,7 @@ get_header(); ?>
             <div class="container">
                 <div class="section-header">
                     <h2><?php echo esc_html(get_post_meta(get_the_ID(), '_industries_expertise_matters_title', true) ?: 'Why Industry Expertise Matters'); ?></h2>
-                    <p><?php echo esc_html(get_post_meta(get_the_ID(), '_industries_expertise_matters_subtitle', true) ?: 'Generic marketing approaches fail because they don\'t account for industry-specific customer behaviors, seasonal patterns, and regulatory requirements. Our deep industry knowledge enables us to:'); ?></p>
+                    <p><?php echo esc_html(get_post_meta(get_the_ID(), '_industries_expertise_matters_subtitle', true) ?: 'Generic marketing approaches fail because they don\'t account for industry-specific customer behaviours, seasonal patterns, and regulatory requirements. Our deep industry knowledge enables us to:'); ?></p>
                 </div>                <div class="benefits-grid-2x2">
                     <?php 
                     $expertise_points = get_post_meta(get_the_ID(), '_industries_expertise_points', true);
@@ -221,7 +221,7 @@ get_header(); ?>
                                 'industry' => 'Automotive'
                             ),
                             array(
-                                'quote' => 'The seasonal campaigns they created for our garden center generated 220% more revenue during peak season. Outstanding results!',
+                                'quote' => 'The seasonal campaigns they created for our garden centre generated 220% more revenue during peak season. Outstanding results!',
                                 'name' => 'Sarah Mitchell',
                                 'position' => 'Owner, Blooming Gardens',
                                 'industry' => 'Home & Garden'

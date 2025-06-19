@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 /**
  * Google Ads Meta Fields
  *
@@ -40,23 +40,23 @@ function aimpro_get_google_ads_default_values() {
         // Service Items (6 services)
         'service_title_1' => 'Search Campaigns',
         'service_content_1' => 'Target high-intent keywords when customers are actively searching for your products or services.',
-        'service_features_1' => "Keyword research & strategy\nAd copy testing & optimization\nBid management\nLanding page optimization",
+        'service_features_1' => "Keyword research & strategy\nAd copy testing & optimisation\nBid management\nLanding page optimisation",
         
         'service_title_2' => 'Display Campaigns',
         'service_content_2' => 'Reach potential customers across millions of websites with compelling visual advertisements.',
-        'service_features_2' => "Responsive display ads\nAudience targeting\nRemarketing campaigns\nCreative optimization",
+        'service_features_2' => "Responsive display ads\nAudience targeting\nRemarketing campaigns\nCreative optimisation",
         
         'service_title_3' => 'Shopping Campaigns',
-        'service_content_3' => 'Showcase your products directly in Google search results with optimized shopping ads.',
-        'service_features_3' => "Product feed optimization\nSmart shopping campaigns\nMerchant Center setup\nPerformance monitoring",
+        'service_content_3' => 'Showcase your products directly in Google search results with optimised shopping ads.',
+        'service_features_3' => "Product feed optimisation\nSmart shopping campaigns\nMerchant centre setup\nPerformance monitoring",
         
         'service_title_4' => 'YouTube Advertising',
         'service_content_4' => 'Engage audiences with video advertising on the world\'s largest video platform.',
-        'service_features_4' => "Video ad creation\nAudience targeting\nCampaign optimization\nPerformance tracking",
+        'service_features_4' => "Video ad creation\nAudience targeting\nCampaign optimisation\nPerformance tracking",
         
         'service_title_5' => 'Performance Max',
-        'service_content_5' => 'Leverage Google\'s AI to maximize performance across all Google Ads inventory.',
-        'service_features_5' => "Automated bidding\nCross-network reach\nAsset optimization\nConversion tracking",
+        'service_content_5' => 'Leverage Google\'s AI to maximise performance across all Google Ads inventory.',
+        'service_features_5' => "Automated bidding\nCross-network reach\nAsset optimisation\nConversion tracking",
         
         'service_title_6' => 'Local Campaigns',
         'service_content_6' => 'Drive foot traffic and local actions with location-based advertising campaigns.',
@@ -93,22 +93,22 @@ function aimpro_get_google_ads_default_values() {
         
         'process_step_number_3' => '03',
         'process_step_title_3' => 'Campaign Build',
-        'process_step_content_3' => 'Build optimized campaigns with proper structure, keywords, and tracking setup.',
+        'process_step_content_3' => 'Build optimised campaigns with proper structure, keywords, and tracking setup.',
         
         'process_step_number_4' => '04',
         'process_step_title_4' => 'Launch & Monitor',
         'process_step_content_4' => 'Launch campaigns and closely monitor performance during the critical first weeks.',
         
         'process_step_number_5' => '05',
-        'process_step_title_5' => 'Optimize & Scale',
-        'process_step_content_5' => 'Continuously optimize based on performance data and scale successful campaigns.',
+        'process_step_title_5' => 'optimise & Scale',
+        'process_step_content_5' => 'Continuously optimise based on performance data and scale successful campaigns.',
         
         // Tools Section
         'tools_title' => 'Advanced Tools & Technologies',
-        'tools_subtitle' => 'We use cutting-edge tools and technologies to maximize your Google Ads performance.',
+        'tools_subtitle' => 'We use cutting-edge tools and technologies to maximise your Google Ads performance.',
         
         'tool_name_1' => 'Google Ads Editor',
-        'tool_description_1' => 'Bulk campaign management and optimization',
+        'tool_description_1' => 'Bulk campaign management and optimisation',
         
         'tool_name_2' => 'Google Analytics 4',
         'tool_description_2' => 'Advanced conversion tracking and attribution',
@@ -122,21 +122,21 @@ function aimpro_get_google_ads_default_values() {
         'tool_name_5' => 'SEMrush/Ahrefs',
         'tool_description_5' => 'Competitor analysis and keyword insights',
         
-        'tool_name_6' => 'Google Optimize',
-        'tool_description_6' => 'Landing page testing and optimization',
+        'tool_name_6' => 'Google optimise',
+        'tool_description_6' => 'Landing page testing and optimisation',
         
         // Industries Section
-        'industries_title' => 'Industries We Specialize In',
+        'industries_title' => 'Industries We specialise In',
         'industries_subtitle' => 'Our Google Ads expertise spans across multiple industries with proven success.',
         
         'industry_name_1' => 'Legal Services',
-        'industry_description_1' => 'Personal injury, family law, criminal defense, and corporate legal services.',
+        'industry_description_1' => 'Personal injury, family law, criminal defence, and corporate legal services.',
         
         'industry_name_2' => 'Healthcare & Medical',
         'industry_description_2' => 'Private practices, dental clinics, cosmetic surgery, and healthcare services.',
         
         'industry_name_3' => 'E-commerce & Retail',
-        'industry_description_3' => 'Online stores, shopping campaigns, and product advertising optimization.',
+        'industry_description_3' => 'Online stores, shopping campaigns, and product advertising optimisation.',
         
         'industry_name_4' => 'Home Services',
         'industry_description_4' => 'Plumbers, electricians, HVAC, roofing, and local service providers.',
@@ -162,7 +162,7 @@ function aimpro_get_google_ads_default_values() {
         'pricing_package_2_name' => 'Professional',
         'pricing_package_2_price' => '£897',
         'pricing_package_2_period' => '/month',
-        'pricing_package_2_features' => "Up to £5,000 ad spend\nAll campaign types\nAdvanced conversion tracking\nBi-weekly optimization\nMonthly strategy calls\nPriority support",
+        'pricing_package_2_features' => "Up to £5,000 ad spend\nAll campaign types\nAdvanced conversion tracking\nBi-weekly optimisation\nMonthly strategy calls\nPriority support",
         'pricing_package_2_button_text' => 'Get Started',
         'pricing_package_2_badge' => 'Most Popular',
         'pricing_package_2_featured' => true,
@@ -171,7 +171,7 @@ function aimpro_get_google_ads_default_values() {
         'pricing_package_3_name' => 'Enterprise',
         'pricing_package_3_price' => '£1,497',
         'pricing_package_3_period' => '/month',
-        'pricing_package_3_features' => "£5,000+ ad spend\nFull campaign suite\nAdvanced attribution\nWeekly optimization\nDedicated account manager\n24/7 support",
+        'pricing_package_3_features' => "£5,000+ ad spend\nFull campaign suite\nAdvanced attribution\nWeekly optimisation\nDedicated account manager\n24/7 support",
         'pricing_package_3_button_text' => 'Get Started',
         
         // Testimonial Section
@@ -181,7 +181,7 @@ function aimpro_get_google_ads_default_values() {
         
         // Simple CTA Section
         'simple_cta_title' => 'Ready to Dominate Google Search?',
-        'simple_cta_content' => 'Get a free Google Ads audit and strategy session. We\'ll analyze your current performance and show you exactly how to improve your ROI.',
+        'simple_cta_content' => 'Get a free Google Ads audit and strategy session. We\'ll analyse your current performance and show you exactly how to improve your ROI.',
         'simple_cta_button_text' => 'Get Free Google Ads Audit',
         'simple_cta_feature_1' => 'Free account analysis',
         'simple_cta_feature_2' => 'Competitor research',
@@ -736,7 +736,7 @@ function aimpro_google_ads_pricing_callback($post) {
             $package_featured = $defaults["pricing_package_{$i}_featured"];
         }
     ?>
-    <div style="border: 1px solid #ddd; padding: 15px; margin: 10px 0; <?php echo ($i == 2) ? 'background-color: #f9f9f9;' : ''; ?>">
+    <div style="border: 1px solid #ddd; padding: 15px; margin: 10px 0; <?php echo ($i == 2) ? 'background-colour: #f9f9f9;' : ''; ?>">
         <h5><?php echo sprintf(__('Package %d', 'aimpro'), $i); ?><?php echo ($i == 2) ? ' (Most Popular)' : ''; ?></h5>
         <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 15px;">
             <div>

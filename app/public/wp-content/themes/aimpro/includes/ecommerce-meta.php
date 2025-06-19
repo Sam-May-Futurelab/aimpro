@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 // E-commerce Page Meta Fields
 
 function add_ecommerce_meta_boxes() {
@@ -64,25 +64,25 @@ function ecommerce_meta_box_callback($post) {
                 'icon' => 'fas fa-search',
                 'title' => 'E-commerce SEO',
                 'description' => 'Increase organic product visibility with e-commerce-specific SEO strategies designed to drive targeted shopping traffic.',
-                'features' => array('Product page optimization', 'Category & collection SEO', 'Schema markup implementation', 'Site structure optimization')
+                'features' => array('Product page optimisation', 'Category & collection SEO', 'Schema markup implementation', 'Site structure optimisation')
             ),
             array(
                 'icon' => 'fas fa-shopping-cart',
-                'title' => 'Conversion Rate Optimization',
+                'title' => 'Conversion Rate optimisation',
                 'description' => 'Transform more browsers into buyers with data-driven CRO strategies that improve the entire customer journey.',
-                'features' => array('Cart abandonment recovery', 'Product page optimization', 'Checkout flow analysis', 'User behavior tracking')
+                'features' => array('Cart abandonment recovery', 'Product page optimisation', 'Checkout flow analysis', 'User behaviour tracking')
             ),
             array(
                 'icon' => 'fas fa-ad',
                 'title' => 'E-commerce PPC & Shopping Ads',
                 'description' => 'Drive qualified traffic to your products with highly-targeted paid campaigns across search, shopping, and display networks.',
-                'features' => array('Google Shopping campaigns', 'Dynamic remarketing', 'Search ads optimization', 'Competitor conquest campaigns')
+                'features' => array('Google Shopping campaigns', 'Dynamic remarketing', 'Search ads optimisation', 'Competitor conquest campaigns')
             ),
             array(
                 'icon' => 'fas fa-envelope',
                 'title' => 'Email & SMS Marketing',
-                'description' => 'Maximize customer lifetime value with personalized email and SMS campaigns that drive repeat purchases and loyalty.',
-                'features' => array('Abandoned cart sequences', 'Post-purchase nurturing', 'Personalized product recommendations', 'Segmentation strategies')
+                'description' => 'Maximize customer lifetime value with personalised email and SMS campaigns that drive repeat purchases and loyalty.',
+                'features' => array('Abandoned cart sequences', 'Post-purchase nurturing', 'personalised product recommendations', 'Segmentation strategies')
             )
         );
     }
@@ -107,7 +107,7 @@ function ecommerce_meta_box_callback($post) {
         $case_study_solutions = array(
             'Comprehensive CRO strategy',
             'Abandoned cart recovery system',
-            'Product page SEO optimization',
+            'Product page SEO optimisation',
             'Restructured PPC campaigns'
         );
     }
@@ -131,19 +131,19 @@ function ecommerce_meta_box_callback($post) {
         $process_steps = array(
             array(
                 'title' => 'Store & Customer Analysis',
-                'description' => 'We analyze your store performance, customer behavior, and identify key optimization opportunities.'
+                'description' => 'We analyse your store performance, customer behaviour, and identify key optimisation opportunities.'
             ),
             array(
                 'title' => 'Multi-Channel Strategy',
                 'description' => 'We develop an integrated marketing approach across organic, paid, and owned channels.'
             ),
             array(
-                'title' => 'Conversion Optimization',
+                'title' => 'Conversion optimisation',
                 'description' => 'We implement targeted improvements to increase your conversion rate at every stage of the funnel.'
             ),
             array(
-                'title' => 'Scaling & Optimization',
-                'description' => 'We continuously refine your marketing mix to maximize return on investment and scale growth.'
+                'title' => 'Scaling & optimisation',
+                'description' => 'We continuously refine your marketing mix to maximise return on investment and scale growth.'
             )
         );
     }
@@ -190,7 +190,7 @@ function ecommerce_meta_box_callback($post) {
     $cta_benefits = get_post_meta($post->ID, '_ecommerce_cta_benefits', true);
     if (empty($cta_benefits)) {
         $cta_benefits = array(
-            '✓ Conversion rate optimization',
+            '✓ Conversion rate optimisation',
             '✓ Multi-channel strategies',
             '✓ ROI-focused campaigns'
         );
@@ -229,7 +229,7 @@ function ecommerce_meta_box_callback($post) {
         }
         .ecommerce-meta .image-upload-container {
             display: flex;
-            align-items: center;
+            align-items: centre;
             gap: 10px;
         }
         .ecommerce-meta .image-preview {
@@ -246,7 +246,7 @@ function ecommerce_meta_box_callback($post) {
             margin-bottom: 15px;
             padding: 10px;
             background: #0073aa;
-            color: white;
+            colour: white;
             border-radius: 3px;
         }
     </style>
@@ -271,7 +271,7 @@ function ecommerce_meta_box_callback($post) {
                 <td>
                     <textarea id="ecommerce_header_subtitle" 
                               name="ecommerce_header_subtitle"
-                              placeholder="Drive more traffic, increase conversions, and maximize revenue for your online store"><?php echo esc_textarea($header_subtitle); ?></textarea>
+                              placeholder="Drive more traffic, increase conversions, and maximise revenue for your online store"><?php echo esc_textarea($header_subtitle); ?></textarea>
                 </td>
             </tr>
         </table>

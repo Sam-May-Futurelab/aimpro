@@ -1,7 +1,7 @@
-<?php
+﻿<?php
 /**
  * Template Name: High-Converting Website Solution Page
- * Description: Website optimization solution for maximum conversions
+ * Description: Website optimisation solution for maximum conversions
  */
 
 get_header(); ?>
@@ -12,7 +12,7 @@ get_header(); ?>
         <section class="page-header">
             <div class="page-header-content animate-on-scroll animate-fade-up">
                 <h1><?php echo get_post_meta(get_the_ID(), 'high_converting_website_header_title', true) ?: 'Build a High-Converting Website'; ?></h1>
-                <p class="page-subtitle"><?php echo get_post_meta(get_the_ID(), 'high_converting_website_header_subtitle', true) ?: 'Create a website that turns visitors into customers with conversion-focused design and optimization'; ?></p>
+                <p class="page-subtitle"><?php echo get_post_meta(get_the_ID(), 'high_converting_website_header_subtitle', true) ?: 'Create a website that turns visitors into customers with conversion-focused design and optimisation'; ?></p>
             </div>
         </section>
 
@@ -22,7 +22,7 @@ get_header(); ?>
                 <div class="overview-content">
                     <div class="overview-text animate-on-scroll animate-slide-left">
                         <h2><?php echo get_post_meta(get_the_ID(), 'high_converting_website_overview_title', true) ?: 'Transform Visitors Into Paying Customers'; ?></h2>
-                        <p><?php echo get_post_meta(get_the_ID(), '_high_converting_website_overview_content', true) ?: 'Your website is your most powerful sales tool, working 24/7 to convert visitors into customers. Our data-driven approach to website design and optimization focuses on user experience, conversion psychology, and performance to create websites that don\'t just look good—they deliver results.'; ?></p>
+                        <p><?php echo get_post_meta(get_the_ID(), '_high_converting_website_overview_content', true) ?: 'Your website is your most powerful sales tool, working 24/7 to convert visitors into customers. Our data-driven approach to website design and optimisation focuses on user experience, conversion psychology, and performance to create websites that don\'t just look good—they deliver results.'; ?></p>
                         
                         <div class="solution-challenges animate-on-scroll animate-fade-up">
                             <h3><?php echo get_post_meta(get_the_ID(), 'high_converting_website_challenges_title', true) ?: 'Website Conversion Challenges We Solve:'; ?></h3>
@@ -68,8 +68,8 @@ get_header(); ?>
                     </div>
                 </div>
             </div>
-        </section>        <!-- Website Optimization Services -->
-        <section class="website-optimization-services">
+        </section>        <!-- Website Optimisation Services -->
+        <section class="website-optimisation-services">
             <div class="section-content">
                 <h2 class="animate-on-scroll animate-fade-up"><?php echo get_post_meta(get_the_ID(), 'high_converting_website_services_title', true) ?: 'Our Website Conversion Services'; ?></h2>
                 <div class="services-grid">
@@ -87,9 +87,9 @@ get_header(); ?>
                                         // Default icon
                                         ?>
                                         <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                            <rect x="2" y="3" width="20" height="14" rx="2" ry="2" stroke="currentColor" stroke-width="2"/>
-                                            <line x1="8" y1="21" x2="16" y2="21" stroke="currentColor" stroke-width="2"/>
-                                            <line x1="12" y1="17" x2="12" y2="21" stroke="currentColor" stroke-width="2"/>
+                                            <rect x="2" y="3" width="20" height="14" rx="2" ry="2" stroke="currentcolour" stroke-width="2"/>
+                                            <line x1="8" y1="21" x2="16" y2="21" stroke="currentcolour" stroke-width="2"/>
+                                            <line x1="12" y1="17" x2="12" y2="21" stroke="currentcolour" stroke-width="2"/>
                                         </svg>
                                         <?php
                                     }
@@ -116,37 +116,33 @@ get_header(); ?>
                                 'title' => 'Conversion-Focused Design',
                                 'description' => 'Design websites with psychology-based elements that guide visitors toward taking action.',
                                 'features' => array(
-                                    'User experience (UX) optimization',
+                                    'User experience (UX) optimisation',
                                     'Conversion psychology implementation',
-                                    'Visual hierarchy optimization',
+                                    'Visual hierarchy optimisation',
                                     'Trust signal integration'
                                 )
                             ),
                             array(
-                                'title' => 'Landing Page Optimization',
-                                'description' => 'Create high-converting landing pages that maximize conversions from your marketing campaigns.',
+                                'title' => 'Landing Page Optimisation',
+                                'description' => 'Create high-converting landing pages that maximise conversions from your marketing campaigns.',
                                 'features' => array(
                                     'Campaign-specific landing pages',
-                                    'A/B testing implementation',
-                                    'Form optimization',
-                                    'Lead capture optimization'
+                                    'A/B testing implementation',                                    'Form optimisation',
+                                    'Lead capture optimisation'
                                 )
                             ),
-                            array(
-                                'title' => 'E-commerce Optimization',
-                                'description' => 'Optimize online stores to increase sales, reduce cart abandonment, and improve customer experience.',
-                                'features' => array(
-                                    'Product page optimization',
+                            array(                                'title' => 'E-commerce Optimisation',
+                                'description' => 'Optimise online stores to increase sales, reduce cart abandonment, and improve customer experience.',                                'features' => array(
+                                    'Product page optimisation',
                                     'Checkout process streamlining',
                                     'Cart abandonment recovery',
-                                    'Cross-sell and upsell optimization'
+                                    'Cross-sell and upsell optimisation'
                                 )
                             ),
-                            array(
-                                'title' => 'Performance Optimization',
+                            array(                                'title' => 'Performance Optimisation',
                                 'description' => 'Improve website speed and technical performance to reduce bounce rates and improve conversions.',
                                 'features' => array(
-                                    'Page speed optimization',
+                                    'Page speed optimisation',
                                     'Mobile responsiveness',
                                     'Core Web Vitals improvement',
                                     'Technical SEO implementation'
@@ -158,9 +154,9 @@ get_header(); ?>
                             <div class="service-card animate-on-scroll animate-stagger animate-fade-up">
                                 <div class="service-icon">
                                     <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <rect x="2" y="3" width="20" height="14" rx="2" ry="2" stroke="currentColor" stroke-width="2"/>
-                                        <line x1="8" y1="21" x2="16" y2="21" stroke="currentColor" stroke-width="2"/>
-                                        <line x1="12" y1="17" x2="12" y2="21" stroke="currentColor" stroke-width="2"/>
+                                        <rect x="2" y="3" width="20" height="14" rx="2" ry="2" stroke="currentcolour" stroke-width="2"/>
+                                        <line x1="8" y1="21" x2="16" y2="21" stroke="currentcolour" stroke-width="2"/>
+                                        <line x1="12" y1="17" x2="12" y2="21" stroke="currentcolour" stroke-width="2"/>
                                     </svg>
                                 </div>
                                 <div class="service-content">
@@ -242,10 +238,10 @@ get_header(); ?>
                     </div>
                 </div>
             </div>
-        </section>        <!-- Website Optimization Process -->
+        </section>        <!-- Website Optimisation Process -->
         <section class="website-process">
             <div class="section-content">
-                <h2 class="animate-on-scroll animate-fade-up"><?php echo get_post_meta(get_the_ID(), 'high_converting_website_process_title', true) ?: 'Our Website Optimization Process'; ?></h2>
+                <h2 class="animate-on-scroll animate-fade-up"><?php echo get_post_meta(get_the_ID(), 'high_converting_website_process_title', true) ?: 'Our Website Optimisation Process'; ?></h2>
                 <div class="process-steps">                    <?php
                     $steps = get_post_meta(get_the_ID(), 'high_converting_website_process_steps', true);
                     if (!empty($steps) && is_array($steps)) {
@@ -267,7 +263,7 @@ get_header(); ?>
                         $default_steps = array(
                             array(
                                 'title' => 'Conversion Audit',
-                                'description' => 'Comprehensive analysis of your website\'s current performance, user behavior, and conversion barriers.'
+                                'description' => 'Comprehensive analysis of your website\'s current performance, user behaviour, and conversion barriers.'
                             ),
                             array(
                                 'title' => 'Strategy & Design',
@@ -275,10 +271,10 @@ get_header(); ?>
                             ),
                             array(
                                 'title' => 'Development & Testing',
-                                'description' => 'Build optimized pages with A/B testing frameworks to validate improvements.'
+                                'description' => 'Build optimised pages with A/B testing frameworks to validate improvements.'
                             ),
                             array(
-                                'title' => 'Monitor & Optimize',
+                                'title' => 'Monitor & Optimise',
                                 'description' => 'Continuously track performance and implement data-driven improvements.'
                             )
                         );
@@ -305,7 +301,7 @@ get_header(); ?>
         </section>        <!-- Conversion Elements -->
         <section class="conversion-elements tools-section">
             <div class="section-content">
-                <h2 class="animate-on-scroll animate-fade-up"><?php echo get_post_meta(get_the_ID(), 'high_converting_website_elements_title', true) ?: 'Key Conversion Elements We Optimize'; ?></h2>
+                <h2 class="animate-on-scroll animate-fade-up"><?php echo get_post_meta(get_the_ID(), 'high_converting_website_elements_title', true) ?: 'Key Conversion Elements We Optimise'; ?></h2>
                 <div class="tools-grid">
                     <?php
                     $elements = get_post_meta(get_the_ID(), 'high_converting_website_elements', true);
@@ -335,7 +331,7 @@ get_header(); ?>
                             <p>Clear, compelling messaging that communicates your unique value and benefits.</p>
                             <ul class="tools-list">
                                 <li class="tool-item">
-                                    <span class="tool-name">Headline optimization</span>
+                                    <span class="tool-name">Headline optimisation</span>
                                 </li>
                                 <li class="tool-item">
                                     <span class="tool-name">Benefit-focused copy</span>
@@ -354,7 +350,7 @@ get_header(); ?>
                             <p>Strategic placement and design of CTAs that guide users toward conversion.</p>
                             <ul class="tools-list">
                                 <li class="tool-item">
-                                    <span class="tool-name">CTA button optimization</span>
+                                    <span class="tool-name">CTA button optimisation</span>
                                 </li>
                                 <li class="tool-item">
                                     <span class="tool-name">Action-oriented copy</span>
@@ -363,7 +359,7 @@ get_header(); ?>
                                     <span class="tool-name">Strategic placement</span>
                                 </li>
                                 <li class="tool-item">
-                                    <span class="tool-name">Color and contrast testing</span>
+                                    <span class="tool-name">Colour and contrast testing</span>
                                 </li>
                             </ul>
                         </div>
@@ -389,13 +385,13 @@ get_header(); ?>
                         
                         <div class="tools-category animate-on-scroll animate-stagger animate-fade-up">
                             <h3>User Experience</h3>
-                            <p>Smooth, intuitive navigation and user flow optimization.</p>
+                            <p>Smooth, intuitive navigation and user flow optimisation.</p>
                             <ul class="tools-list">
                                 <li class="tool-item">
                                     <span class="tool-name">Navigation simplification</span>
                                 </li>
                                 <li class="tool-item">
-                                    <span class="tool-name">Form optimization</span>
+                                    <span class="tool-name">Form optimisation</span>
                                 </li>
                                 <li class="tool-item">
                                     <span class="tool-name">Page loading speed</span>
@@ -413,7 +409,7 @@ get_header(); ?>
         </section><!-- Website Types -->
         <section class="website-types">
             <div class="section-content">
-                <h2 class="animate-on-scroll animate-fade-up"><?php echo get_post_meta(get_the_ID(), 'high_converting_website_types_title', true) ?: 'Website Optimization by Type'; ?></h2>
+                <h2 class="animate-on-scroll animate-fade-up"><?php echo get_post_meta(get_the_ID(), 'high_converting_website_types_title', true) ?: 'Website Optimisation by Type'; ?></h2>
                 <div class="types-grid">
                     <?php
                     $types = get_post_meta(get_the_ID(), 'high_converting_website_types', true);
@@ -440,9 +436,8 @@ get_header(); ?>
                         $default_types = array(
                             array(
                                 'title' => 'Lead Generation Websites',
-                                'features' => array(
-                                    'Lead magnet optimization',
-                                    'Contact form optimization',
+                                'features' => array(                                    'Lead magnet optimisation',
+                                    'Contact form optimisation',
                                     'Landing page creation',
                                     'CRM integration'
                                 ),
@@ -451,9 +446,9 @@ get_header(); ?>
                             array(
                                 'title' => 'E-commerce Websites',
                                 'features' => array(
-                                    'Product page optimization',
+                                    'Product page optimisation',
                                     'Checkout flow improvement',
-                                    'Payment gateway optimization',
+                                    'Payment gateway optimisation',
                                     'Inventory management'
                                 ),
                                 'result' => 'Average: 150% sales increase'
@@ -461,7 +456,7 @@ get_header(); ?>
                             array(
                                 'title' => 'Service-Based Websites',
                                 'features' => array(
-                                    'Service page optimization',
+                                    'Service page optimisation',
                                     'Portfolio showcasing',
                                     'Booking system integration',
                                     'Client testimonials'
@@ -492,9 +487,8 @@ get_header(); ?>
         <!-- Conversion Tools -->
         <section class="service-overview">
             <div class="container">
-                <div class="section-header animate-on-scroll animate-fade-up">
-                    <h2>Conversion Optimization Tools</h2>
-                    <p>We use industry-leading tools and technologies to analyze, test, and optimize your website's conversion performance.</p>
+                <div class="section-header animate-on-scroll animate-fade-up">                    <h2>Conversion Optimisation Tools</h2>
+                    <p>We use industry-leading tools and technologies to analyse, test, and optimise your website's conversion performance.</p>
                 </div>
                 <div class="services-grid animate-on-scroll animate-stagger animate-scale-up">
                     <div class="service-item">
@@ -502,9 +496,9 @@ get_header(); ?>
                             <i class="fas fa-chart-line"></i>
                         </div>
                         <h3>Analytics & Testing</h3>
-                        <ul style="text-align: left; color: #666; line-height: 1.8;">
+                        <ul style="text-align: left; colour: #666; line-height: 1.8;">
                             <li>Google Analytics 4</li>
-                            <li>Google Optimize</li>
+                            <li>Google Optimise</li>
                             <li>Hotjar Heatmaps</li>
                             <li>Crazy Egg Testing</li>
                         </ul>
@@ -515,7 +509,7 @@ get_header(); ?>
                             <i class="fas fa-tachometer-alt"></i>
                         </div>
                         <h3>Performance Monitoring</h3>
-                        <ul style="text-align: left; color: #666; line-height: 1.8;">
+                        <ul style="text-align: left; colour: #666; line-height: 1.8;">
                             <li>PageSpeed Insights</li>
                             <li>GTmetrix Analysis</li>
                             <li>Core Web Vitals</li>
@@ -527,7 +521,7 @@ get_header(); ?>
                             <i class="fas fa-user-check"></i>
                         </div>
                         <h3>User Experience</h3>
-                        <ul style="text-align: left; color: #666; line-height: 1.8;">
+                        <ul style="text-align: left; colour: #666; line-height: 1.8;">
                             <li>User Session Recordings</li>
                             <li>Click Tracking Analysis</li>
                             <li>Form Analytics</li>
@@ -563,13 +557,13 @@ get_header(); ?>
         if ($pdf_id && $pdf_title): ?>
         <section class="pdf-download-section" style="background: #f8f9fa; padding: 4rem 0;">
             <div class="container">
-                <div class="download-content" style="max-width: 600px; margin: 0 auto; text-align: center;">
+                <div class="download-content" style="max-width: 600px; margin: 0 auto; text-align: centre;">
                     <div class="download-icon" style="margin-bottom: 2rem;">
-                        <i class="fas fa-file-pdf" style="font-size: 4rem; color: #d73502;"></i>
+                        <i class="fas fa-file-pdf" style="font-size: 4rem; colour: #d73502;"></i>
                     </div>
-                    <h2 style="color: #333; margin-bottom: 1rem;"><?php echo esc_html($pdf_title); ?></h2>
+                    <h2 style="colour: #333; margin-bottom: 1rem;"><?php echo esc_html($pdf_title); ?></h2>
                     <?php if ($pdf_description): ?>
-                        <p style="color: #666; font-size: 1.1rem; margin-bottom: 2rem;"><?php echo esc_html($pdf_description); ?></p>
+                        <p style="colour: #666; font-size: 1.1rem; margin-bottom: 2rem;"><?php echo esc_html($pdf_description); ?></p>
                     <?php endif; ?>
                     
                     <form id="pdf-download-form" style="background: white; padding: 2rem; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
@@ -577,19 +571,19 @@ get_header(); ?>
                             <input type="email" id="download-email" name="email" placeholder="Enter your email address" required 
                                    style="width: 100%; padding: 1rem; border: 1px solid #ddd; border-radius: 4px; font-size: 1rem;" />
                         </div>
-                        <button type="submit" class="btn-primary" style="width: 100%; padding: 1rem 2rem; background: #0066cc; color: white; border: none; border-radius: 4px; font-size: 1.1rem; cursor: pointer;">
+                        <button type="submit" class="btn-primary" style="width: 100%; padding: 1rem 2rem; background: #0066cc; colour: white; border: none; border-radius: 4px; font-size: 1.1rem; cursor: pointer;">
                             <i class="fas fa-download" style="margin-right: 0.5rem;"></i>
                             Download Free PDF
                         </button>
-                        <p style="font-size: 0.9rem; color: #666; margin-top: 1rem;">
+                        <p style="font-size: 0.9rem; colour: #666; margin-top: 1rem;">
                             We respect your privacy. Unsubscribe anytime.
                         </p>
                         <?php wp_nonce_field('pdf_download_nonce', 'pdf_nonce'); ?>
                         <input type="hidden" name="pdf_id" value="<?php echo esc_attr($pdf_id); ?>" />
                     </form>
                     
-                    <div id="download-success" style="display: none; text-align: center; margin-top: 2rem;">
-                        <div style="background: #d4edda; color: #155724; padding: 1rem; border-radius: 4px; margin-bottom: 1rem;">
+                    <div id="download-success" style="display: none; text-align: centre; margin-top: 2rem;">
+                        <div style="background: #d4edda; colour: #155724; padding: 1rem; border-radius: 4px; margin-bottom: 1rem;">
                             <i class="fas fa-check-circle" style="margin-right: 0.5rem;"></i>
                             Thank you! Your download will start automatically.
                         </div>
@@ -642,7 +636,7 @@ get_header(); ?>
         <?php endif; ?>
 
         <!-- CTA Section -->
-        <section class="website-cta text-center">
+        <section class="website-cta text-centre">
             <div class="section-content">
                 <h2 class="animate-on-scroll animate-fade-up"><?php echo get_post_meta(get_the_ID(), 'high_converting_website_cta_title', true) ?: 'Ready to Build a High-Converting Website?'; ?></h2>
                 <p class="animate-on-scroll animate-fade-up"><?php echo get_post_meta(get_the_ID(), 'high_converting_website_cta_description', true) ?: 'Let\'s create a website that not only looks great but converts visitors into customers at a higher rate.'; ?></p>
@@ -660,7 +654,7 @@ get_header(); ?>
                         // Default benefits if none are set
                         $default_benefits = array(
                             'Conversion-focused design',
-                            'Mobile optimization included',
+                            'Mobile optimisation included',
                             'A/B testing setup'
                         );
                         

@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 /**
  * Template Name: Sales Funnel Development
  * 
@@ -12,8 +12,8 @@ get_header(); ?>
 <style>
 .tools-section .tool-icon {
     display: flex;
-    justify-content: center;
-    align-items: center;
+    justify-content: centre;
+    align-items: centre;
     margin: 0 auto 15px;
 }
 .tools-section .tool-icon i {
@@ -96,8 +96,8 @@ get_header(); ?>
                     <div class="feature-icon">
                         <i class="fas fa-robot"></i>
                     </div>
-                    <h3>Behavior-Based Automation</h3>
-                    <p>Intelligent automation that responds to user behavior and personalizes the experience to increase conversion rates.</p>
+                    <h3>behaviour-Based Automation</h3>
+                    <p>Intelligent automation that responds to user behaviour and personalises the experience to increase conversion rates.</p>
                 </div>
                 <div class="feature-item animate-on-scroll animate-stagger animate-fade-up">
                     <div class="feature-icon">
@@ -110,8 +110,8 @@ get_header(); ?>
                     <div class="feature-icon">
                         <i class="fas fa-chart-line"></i>
                     </div>
-                    <h3>Conversion Optimization</h3>
-                    <p>Continuous testing and refinement to maximize conversions at each step of your sales funnel.</p>
+                    <h3>Conversion optimisation</h3>
+                    <p>Continuous testing and refinement to maximise conversions at each step of your sales funnel.</p>
                 </div>
             </div>
         </div>
@@ -154,7 +154,7 @@ get_header(); ?>
                                 echo '<li><strong>Lead Magnet Funnel:</strong> Created valuable free course to capture email addresses</li>';
                                 echo '<li><strong>Nurture Sequence:</strong> 7-day email series building trust and demonstrating expertise</li>';
                                 echo '<li><strong>Webinar Funnel:</strong> Live training sessions showcasing course value</li>';
-                                echo '<li><strong>Sales Page Optimization:</strong> High-converting sales page with social proof</li>';
+                                echo '<li><strong>Sales Page optimisation:</strong> High-converting sales page with social proof</li>';
                                 echo '<li><strong>Upsell System:</strong> Additional products and coaching offers post-purchase</li>';
                             }
                             ?>
@@ -219,7 +219,7 @@ get_header(); ?>
                     <h3>Webinar Funnels</h3>
                     <p>Build authority and trust through educational webinars that naturally lead to sales.</p>
                     <ul>
-                        <li>Registration page optimization</li>
+                        <li>Registration page optimisation</li>
                         <li>Reminder email sequences</li>
                         <li>Webinar delivery systems</li>
                         <li>Post-webinar sales sequences</li>
@@ -268,7 +268,7 @@ get_header(); ?>
                     <div class="step-number">1</div>
                     <div class="step-content">
                         <h3>Funnel Strategy & Mapping</h3>
-                        <p>Analyze your business model and create detailed funnel strategy with customer journey mapping.</p>
+                        <p>analyse your business model and create detailed funnel strategy with customer journey mapping.</p>
                     </div>
                 </div>
                 <div class="process-step animate-on-scroll animate-stagger animate-fade-up">
@@ -282,7 +282,7 @@ get_header(); ?>
                     <div class="step-number">3</div>
                     <div class="step-content">
                         <h3>Page Development</h3>
-                        <p>Build all funnel pages with conversion-focused design and mobile optimization.</p>
+                        <p>Build all funnel pages with conversion-focused design and mobile optimisation.</p>
                     </div>
                 </div>
                 <div class="process-step animate-on-scroll animate-stagger animate-fade-up">
@@ -302,8 +302,8 @@ get_header(); ?>
                 <div class="process-step animate-on-scroll animate-stagger animate-fade-up">
                     <div class="step-number">6</div>
                     <div class="step-content">
-                        <h3>Launch & Optimization</h3>
-                        <p>Launch funnel with comprehensive analytics and ongoing optimization based on performance data.</p>
+                        <h3>Launch & optimisation</h3>
+                        <p>Launch funnel with comprehensive analytics and ongoing optimisation based on performance data.</p>
                     </div>
                 </div>
             </div>
@@ -313,7 +313,7 @@ get_header(); ?>
         <div class="container">
             <div class="section-header animate-on-scroll animate-fade-up">
                 <h2>Sales Funnel Development Packages</h2>
-                <p>Complete funnel systems designed to maximize your revenue and customer lifetime value.</p>
+                <p>Complete funnel systems designed to maximise your revenue and customer lifetime value.</p>
             </div>
             
             <div class="pricing-grid">
@@ -326,7 +326,7 @@ get_header(); ?>
                     <ul class="pricing-features">
                         <li>3-page funnel system</li>
                         <li>Lead magnet creation</li>
-                        <li>Opt-in page optimization</li>
+                        <li>Opt-in page optimisation</li>
                         <li>Thank you page</li>
                         <li>Basic email automation (5 emails)</li>
                         <li>Analytics setup</li>
@@ -344,7 +344,7 @@ get_header(); ?>
                     <ul class="pricing-features">
                         <li>5-7 page funnel system</li>
                         <li>Advanced lead magnets</li>
-                        <li>Sales page optimization</li>
+                        <li>Sales page optimisation</li>
                         <li>Webinar funnel setup</li>
                         <li>Advanced email automation (15+ emails)</li>
                         <li>Upsell/downsell pages</li>
@@ -370,10 +370,10 @@ get_header(); ?>
                         <li>Comprehensive automation (30+ emails)</li>
                         <li>Customer retention funnels</li>
                         <li>Advanced integrations</li>
-                        <li>Split testing optimization</li>
+                        <li>Split testing optimisation</li>
                         <li>8-week delivery</li>
                         <li>90 days support</li>
-                        <li>Ongoing optimization</li>
+                        <li>Ongoing optimisation</li>
                     </ul>
                     <a href="#contact" class="btn-outline">Get Started</a>
                 </div>
@@ -381,36 +381,36 @@ get_header(); ?>
         </div>
     </section>    <!-- Technologies -->
     <section class="tools-section">
-        <div class="container" style="text-align: center;">
+        <div class="container" style="text-align: centre;">
             <div class="section-header animate-on-scroll animate-fade-up">
                 <h2 style="margin-bottom: 20px;">Funnel Technologies & Platforms</h2>
                 <p style="max-width: 800px; margin: 0 auto 30px;">We use industry-leading tools and technologies to create high-converting, automated sales funnels that drive consistent results.</p>
             </div>
             
             <h3 class="tools-category animate-on-scroll animate-fade-up">Funnel Platforms</h3>
-            <div class="tools-grid animate-on-scroll animate-stagger animate-scale-up" style="justify-content: center;">                <div class="tool-item" style="text-align: center;">
-                    <div class="tool-icon" style="text-align: center; display: flex; justify-content: center;">
+            <div class="tools-grid animate-on-scroll animate-stagger animate-scale-up" style="justify-content: centre;">                <div class="tool-item" style="text-align: centre;">
+                    <div class="tool-icon" style="text-align: centre; display: flex; justify-content: centre;">
                         <i class="fas fa-funnel-dollar"></i>
                     </div>
                     <h3>ClickFunnels</h3>
-                    <p>Specialized funnel builder for sales pages and marketing funnels</p>
+                    <p>specialised funnel builder for sales pages and marketing funnels</p>
                 </div>
-                <div class="tool-item" style="text-align: center;">
-                    <div class="tool-icon" style="text-align: center; display: flex; justify-content: center;">
+                <div class="tool-item" style="text-align: centre;">
+                    <div class="tool-icon" style="text-align: centre; display: flex; justify-content: centre;">
                         <i class="fas fa-file-alt"></i>
                     </div>
                     <h3>Leadpages</h3>
                     <p>Landing page platform focused on lead generation and conversions</p>
                 </div>
-                <div class="tool-item" style="text-align: center;">
-                    <div class="tool-icon" style="text-align: center; display: flex; justify-content: center;">
-                        <i class="fas fa-window-maximize"></i>
+                <div class="tool-item" style="text-align: centre;">
+                    <div class="tool-icon" style="text-align: centre; display: flex; justify-content: centre;">
+                        <i class="fas fa-window-maximise"></i>
                     </div>
                     <h3>Unbounce & Instapage</h3>
                     <p>Advanced landing page platforms with A/B testing capabilities</p>
                 </div>
-                <div class="tool-item" style="text-align: center;">
-                    <div class="tool-icon" style="text-align: center; display: flex; justify-content: center;">
+                <div class="tool-item" style="text-align: centre;">
+                    <div class="tool-icon" style="text-align: centre; display: flex; justify-content: centre;">
                         <i class="fab fa-wordpress"></i>
                     </div>
                     <h3>WordPress</h3>
@@ -419,61 +419,61 @@ get_header(); ?>
             </div>
             
             <h3 class="tools-category animate-on-scroll animate-fade-up">Email Automation</h3>
-            <div class="tools-grid animate-on-scroll animate-stagger animate-scale-up" style="justify-content: center;">
-                <div class="tool-item" style="text-align: center;">
-                    <div class="tool-icon" style="text-align: center; display: flex; justify-content: center;">
+            <div class="tools-grid animate-on-scroll animate-stagger animate-scale-up" style="justify-content: centre;">
+                <div class="tool-item" style="text-align: centre;">
+                    <div class="tool-icon" style="text-align: centre; display: flex; justify-content: centre;">
                         <i class="fas fa-envelope-open-text"></i>
                     </div>
                     <h3>ActiveCampaign</h3>
-                    <p>Advanced automation platform with behavior-based segmentation</p>
+                    <p>Advanced automation platform with behaviour-based segmentation</p>
                 </div>
-                <div class="tool-item" style="text-align: center;">
-                    <div class="tool-icon" style="text-align: center; display: flex; justify-content: center;">
+                <div class="tool-item" style="text-align: centre;">
+                    <div class="tool-icon" style="text-align: centre; display: flex; justify-content: centre;">
                         <i class="fas fa-paper-plane"></i>
                     </div>
                     <h3>ConvertKit</h3>
                     <p>Creator-focused email platform for content and course creators</p>
                 </div>
-                <div class="tool-item" style="text-align: center;">
-                    <div class="tool-icon" style="text-align: center; display: flex; justify-content: center;">
+                <div class="tool-item" style="text-align: centre;">
+                    <div class="tool-icon" style="text-align: centre; display: flex; justify-content: centre;">
                         <i class="fab fa-mailchimp"></i>
                     </div>
                     <h3>Mailchimp & Klaviyo</h3>
                     <p>Email marketing platforms for newsletters and e-commerce automation</p>
                 </div>
-                <div class="tool-item" style="text-align: center;">
-                    <div class="tool-icon" style="text-align: center; display: flex; justify-content: center;">
+                <div class="tool-item" style="text-align: centre;">
+                    <div class="tool-icon" style="text-align: centre; display: flex; justify-content: centre;">
                         <i class="fas fa-chart-line"></i>
                     </div>
                     <h3>GetResponse & Drip</h3>
-                    <p>Specialized automation tools with visual workflow builders</p>
+                    <p>specialised automation tools with visual workflow builders</p>
                 </div>
             </div>
             
             <h3 class="tools-category animate-on-scroll animate-fade-up">Payment & CRM Integration</h3>
-            <div class="tools-grid animate-on-scroll animate-stagger animate-scale-up" style="justify-content: center;">
-                <div class="tool-item" style="text-align: center;">
-                    <div class="tool-icon" style="text-align: center; display: flex; justify-content: center;">
+            <div class="tools-grid animate-on-scroll animate-stagger animate-scale-up" style="justify-content: centre;">
+                <div class="tool-item" style="text-align: centre;">
+                    <div class="tool-icon" style="text-align: centre; display: flex; justify-content: centre;">
                         <i class="fab fa-stripe"></i>
                     </div>
                     <h3>Stripe & PayPal</h3>
                     <p>Secure payment processing for one-time and subscription billing</p>
                 </div>
-                <div class="tool-item" style="text-align: center;">
-                    <div class="tool-icon" style="text-align: center; display: flex; justify-content: center;">
+                <div class="tool-item" style="text-align: centre;">
+                    <div class="tool-icon" style="text-align: centre; display: flex; justify-content: centre;">
                         <i class="fab fa-hubspot"></i>
                     </div>
                     <h3>HubSpot</h3>
                     <p>All-in-one marketing platform with CRM and automation capabilities</p>
                 </div>
-                <div class="tool-item" style="text-align: center;">
-                    <div class="tool-icon" style="text-align: center; display: flex; justify-content: center;">
+                <div class="tool-item" style="text-align: centre;">
+                    <div class="tool-icon" style="text-align: centre; display: flex; justify-content: centre;">
                         <i class="fab fa-salesforce"></i>
                     </div>
                     <h3>Salesforce</h3>
                     <p>Enterprise CRM solution for sales team integration and tracking</p>
-                </div>                <div class="tool-item" style="text-align: center;">
-                    <div class="tool-icon" style="text-align: center; display: flex; justify-content: center;">
+                </div>                <div class="tool-item" style="text-align: centre;">
+                    <div class="tool-icon" style="text-align: centre; display: flex; justify-content: centre;">
                         <i class="fas fa-plug"></i>
                     </div>
                     <h3>Zapier & Integrations</h3>
@@ -519,7 +519,7 @@ get_header(); ?>
     <section class="faq-section">
         <div class="container">
             <div class="section-content">
-                <h2 class="animate-on-scroll animate-fade-up" style="text-align: center;">Frequently Asked Questions</h2>
+                <h2 class="animate-on-scroll animate-fade-up" style="text-align: centre;">Frequently Asked Questions</h2>
                 <div class="faq-list">
                     <div class="faq-item animate-on-scroll animate-stagger animate-fade-up">
                         <div class="faq-question">
@@ -534,7 +534,7 @@ get_header(); ?>
                             <h3>Do you create the lead magnets and content?</h3>
                         </div>
                         <div class="faq-answer">
-                            <p>Yes, we create all lead magnets, email sequences, and funnel content. Our team includes copywriters and content creators specialized in conversion optimization.</p>
+                            <p>Yes, we create all lead magnets, email sequences, and funnel content. Our team includes copywriters and content creators specialised in conversion optimisation.</p>
                         </div>
                     </div>
                     <div class="faq-item animate-on-scroll animate-stagger animate-fade-up">
@@ -563,10 +563,10 @@ get_header(); ?>
                     </div>
                     <div class="faq-item animate-on-scroll animate-stagger animate-fade-up">
                         <div class="faq-question">
-                            <h3>Do you provide ongoing optimization?</h3>
+                            <h3>Do you provide ongoing optimisation?</h3>
                         </div>
                         <div class="faq-answer">
-                            <p>Yes, we offer ongoing optimization services to continuously improve funnel performance based on real data and testing results.</p>
+                            <p>Yes, we offer ongoing optimisation services to continuously improve funnel performance based on real data and testing results.</p>
                         </div>
                     </div>
                 </div>

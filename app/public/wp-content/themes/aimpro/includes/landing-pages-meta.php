@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 /**
  * Landing Pages Meta Fields
  * Adds custom meta box for Landing Pages template with editable content fields
@@ -43,7 +43,7 @@ function aimpro_landingpages_meta_box_callback($post) {
     $defaults = array(
         // Hero Section
         'lp_hero_title' => 'High-Converting Landing Pages',
-        'lp_hero_subtitle' => 'Purpose-built landing pages that turn visitors into customers with laser-focused messaging and conversion optimization.',
+        'lp_hero_subtitle' => 'Purpose-built landing pages that turn visitors into customers with laser-focused messaging and conversion optimisation.',
         
         // Stats Section
         'lp_stat1_number' => '340%',
@@ -57,20 +57,20 @@ function aimpro_landingpages_meta_box_callback($post) {
         
         // Introduction Section
         'lp_intro_title' => 'Landing Pages That Convert Like Crazy',
-        'lp_intro_description' => 'Our high-converting landing pages are meticulously crafted to achieve one goal: turn your traffic into leads and sales. Every element is strategically designed and tested to maximize conversions for your specific audience and offer.',
+        'lp_intro_description' => 'Our high-converting landing pages are meticulously crafted to achieve one goal: turn your traffic into leads and sales. Every element is strategically designed and tested to maximise conversions for your specific audience and offer.',
         
         // Features Section
         'lp_feature1_title' => 'Conversion-Focused Design',
         'lp_feature1_description' => 'Every element designed with one goal: converting visitors into customers through strategic placement and messaging.',
         'lp_feature2_title' => 'A/B Testing Ready',
-        'lp_feature2_description' => 'Built-in testing capabilities to continuously optimize performance and improve conversion rates.',
+        'lp_feature2_description' => 'Built-in testing capabilities to continuously optimise performance and improve conversion rates.',
         'lp_feature3_title' => 'Lightning Fast Loading',
-        'lp_feature3_description' => 'Optimized for speed with under 2-second load times to minimize bounce rates and maximize conversions.',
+        'lp_feature3_description' => 'optimised for speed with under 2-second load times to minimise bounce rates and maximise conversions.',
         'lp_feature4_title' => 'Advanced Analytics',
-        'lp_feature4_description' => 'Comprehensive tracking and analytics to measure performance and identify optimization opportunities.',
+        'lp_feature4_description' => 'Comprehensive tracking and analytics to measure performance and identify optimisation opportunities.',
         
         // Case Study Section
-        'lp_case_study_title' => 'How FitLife Academy Increased Course Sales by 485% with Optimized Landing Pages',
+        'lp_case_study_title' => 'How FitLife Academy Increased Course Sales by 485% with optimised Landing Pages',
         'lp_case_study_subtitle' => 'The Challenge',
         'lp_case_study_challenge' => 'FitLife Academy was driving traffic to their course sales page but experiencing a disappointing 2.3% conversion rate. Despite quality traffic from Facebook ads, they were losing potential customers due to unclear messaging and poor page structure.',
         'lp_case_study_stat1_number' => '2.3%',
@@ -78,7 +78,7 @@ function aimpro_landingpages_meta_box_callback($post) {
         'lp_case_study_stat2_number' => '£8.50',
         'lp_case_study_stat2_label' => 'Cost per Lead',
         'lp_case_study_solution_title' => 'Our Solution',
-        'lp_case_study_solution' => "Message-Match Optimization: Aligned landing page copy with ad messaging for consistency\nClear Value Proposition: Highlighted unique benefits and transformation outcomes\nSocial Proof Integration: Added testimonials, reviews, and success stories\nStreamlined Forms: Reduced form fields and optimized conversion flow\nMobile Optimization: Enhanced mobile experience for 70% mobile traffic",
+        'lp_case_study_solution' => "Message-Match optimisation: Aligned landing page copy with ad messaging for consistency\nClear Value Proposition: Highlighted unique benefits and transformation outcomes\nSocial Proof Integration: Added testimonials, reviews, and success stories\nStreamlined Forms: Reduced form fields and optimised conversion flow\nMobile optimisation: Enhanced mobile experience for 70% mobile traffic",
         'lp_case_study_results_title' => 'The Results',
         'lp_case_study_result1_number' => '485%',
         'lp_case_study_result1_label' => 'Increase in Course Sales',
@@ -92,7 +92,7 @@ function aimpro_landingpages_meta_box_callback($post) {
         // Types of Landing Pages Section
         'lp_types_title' => 'Types of Landing Pages We Create',
         'lp_type1_title' => 'Lead Generation Pages',
-        'lp_type1_description' => 'Capture high-quality leads with compelling offers and optimized forms that convert visitors into prospects.',
+        'lp_type1_description' => 'Capture high-quality leads with compelling offers and optimised forms that convert visitors into prospects.',
         'lp_type1_items' => "E-book downloads\nFree trial signups\nNewsletter subscriptions\nConsultation bookings",
         'lp_type2_title' => 'Sales Pages',
         'lp_type2_description' => 'Drive direct sales with persuasive copy, social proof, and clear purchasing pathways that convert browsers into buyers.',
@@ -108,7 +108,7 @@ function aimpro_landingpages_meta_box_callback($post) {
         'lp_process_title' => 'Our Landing Page Creation Process',
         'lp_process1_number' => '1',
         'lp_process1_title' => 'Campaign Analysis',
-        'lp_process1_description' => 'Analyze your traffic source, audience, and campaign goals to create targeted landing page strategy.',
+        'lp_process1_description' => 'analyse your traffic source, audience, and campaign goals to create targeted landing page strategy.',
         'lp_process2_number' => '2',
         'lp_process2_title' => 'Message & Offer Development',
         'lp_process2_description' => 'Craft compelling headlines, value propositions, and offers that resonate with your target audience.',
@@ -117,10 +117,10 @@ function aimpro_landingpages_meta_box_callback($post) {
         'lp_process3_description' => 'Design pages with proven conversion elements: clear CTAs, social proof, and strategic layout.',
         'lp_process4_number' => '4',
         'lp_process4_title' => 'Development & Integration',
-        'lp_process4_description' => 'Build fast-loading pages with proper tracking, form integrations, and mobile optimization.',
+        'lp_process4_description' => 'Build fast-loading pages with proper tracking, form integrations, and mobile optimisation.',
         'lp_process5_number' => '5',
-        'lp_process5_title' => 'Testing & Optimization',
-        'lp_process5_description' => 'Set up A/B tests and continuous optimization to improve conversion rates over time.',
+        'lp_process5_title' => 'Testing & optimisation',
+        'lp_process5_description' => 'Set up A/B tests and continuous optimisation to improve conversion rates over time.',
         'lp_process6_number' => '6',
         'lp_process6_title' => 'Launch & Monitor',
         'lp_process6_description' => 'Launch with full analytics tracking and provide ongoing performance monitoring and insights.',
@@ -138,14 +138,14 @@ function aimpro_landingpages_meta_box_callback($post) {
         'lp_package2_title' => 'Landing Page Bundle',
         'lp_package2_price' => '£2,497',
         'lp_package2_description' => 'Ideal for multiple campaigns',
-        'lp_package2_features' => "3 custom landing pages\nAdvanced mobile optimization\nMulti-step forms\nConversion tracking setup\nA/B testing setup\nCRM integration\n2 rounds of revisions\n10-day delivery\n30 days support",
+        'lp_package2_features' => "3 custom landing pages\nAdvanced mobile optimisation\nMulti-step forms\nConversion tracking setup\nA/B testing setup\nCRM integration\n2 rounds of revisions\n10-day delivery\n30 days support",
         'lp_package2_label' => 'Best Value',
         'lp_package2_cta' => 'Get Started',
         
         'lp_package3_title' => 'Funnel Series',
         'lp_package3_price' => '£4,997',
         'lp_package3_description' => 'Complete conversion funnel',
-        'lp_package3_features' => "5+ landing pages\nComplete sales funnel\nAdvanced integrations\nEmail automation setup\nPayment processing\nComprehensive analytics\nUnlimited revisions\n14-day delivery\n60 days support\nOngoing optimization",
+        'lp_package3_features' => "5+ landing pages\nComplete sales funnel\nAdvanced integrations\nEmail automation setup\nPayment processing\nComprehensive analytics\nUnlimited revisions\n14-day delivery\n60 days support\nOngoing optimisation",
         'lp_package3_cta' => 'Get Started',
         
         // Conversion Elements Section
@@ -186,7 +186,7 @@ function aimpro_landingpages_meta_box_callback($post) {
         'lp_testimonial2_text' => 'Aimpro\'s landing pages have been instrumental in scaling our lead generation. We\'re now getting 5x more qualified leads.',
         'lp_testimonial2_name' => 'Robert Taylor',
         'lp_testimonial2_title' => 'CMO, TechFlow Solutions',
-        'lp_testimonial3_text' => 'The attention to detail and conversion optimization expertise is outstanding. Our webinar attendance increased by 280%.',
+        'lp_testimonial3_text' => 'The attention to detail and conversion optimisation expertise is outstanding. Our webinar attendance increased by 280%.',
         'lp_testimonial3_name' => 'Amanda Collins',
         'lp_testimonial3_title' => 'Marketing Director, InnovateCorps',
         
@@ -201,7 +201,7 @@ function aimpro_landingpages_meta_box_callback($post) {
         'lp_faq4_question' => 'Do you provide A/B testing setup?',
         'lp_faq4_answer' => 'Yes, our Landing Page Bundle and Funnel Series packages include A/B testing setup. We can create variations of headlines, CTAs, forms, and layouts to test what performs best for your audience.',
         'lp_faq5_question' => 'What if my landing page doesn\'t convert well?',
-        'lp_faq5_answer' => 'We stand by our work. If your landing page doesn\'t perform to expectations, we\'ll analyze the data and make necessary adjustments to improve performance at no additional cost during your support period.',
+        'lp_faq5_answer' => 'We stand by our work. If your landing page doesn\'t perform to expectations, we\'ll analyse the data and make necessary adjustments to improve performance at no additional cost during your support period.',
         'lp_faq6_question' => 'Can I make changes after the page is live?',
         'lp_faq6_answer' => 'Yes, we provide you with access to make content updates yourself, or we can handle changes for you during your support period. Major redesigns may incur additional costs after the initial project is complete.'
     );
@@ -249,7 +249,7 @@ function aimpro_landingpages_meta_box_callback($post) {
         }
         .meta-description {
             font-style: italic;
-            color: #777;
+            colour: #777;
             margin-bottom: 5px;
         }
         .meta-field input[type="text"], 

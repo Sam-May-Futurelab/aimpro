@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 // High-Converting Website Page Meta Fields
 
 function add_high_converting_website_meta_boxes() {
@@ -50,9 +50,9 @@ function high_converting_website_meta_box_callback($post) {
 
     // Get existing values
     $header_title = get_post_meta($post->ID, '_high_converting_website_header_title', true) ?: 'Build a High-Converting Website';
-    $header_subtitle = get_post_meta($post->ID, '_high_converting_website_header_subtitle', true) ?: 'Create a website that turns visitors into customers with conversion-focused design and optimization';    // Solution Overview
+    $header_subtitle = get_post_meta($post->ID, '_high_converting_website_header_subtitle', true) ?: 'Create a website that turns visitors into customers with conversion-focused design and optimisation';    // Solution Overview
     $overview_title = get_post_meta($post->ID, '_high_converting_website_overview_title', true) ?: 'Transform Visitors Into Paying Customers';
-    $overview_content = get_post_meta($post->ID, '_high_converting_website_overview_content', true) ?: 'Your website is your most powerful sales tool, working 24/7 to convert visitors into customers. Our data-driven approach to website design and optimization focuses on user experience, conversion psychology, and performance to create websites that don\'t just look good—they deliver results.';
+    $overview_content = get_post_meta($post->ID, '_high_converting_website_overview_content', true) ?: 'Your website is your most powerful sales tool, working 24/7 to convert visitors into customers. Our data-driven approach to website design and optimisation focuses on user experience, conversion psychology, and performance to create websites that don\'t just look good—they deliver results.';
     $overview_image = get_post_meta($post->ID, '_high_converting_website_overview_image', true);
     
     // Challenges
@@ -78,37 +78,37 @@ function high_converting_website_meta_box_callback($post) {
                 'title' => 'Conversion-Focused Design',
                 'description' => 'Design websites with psychology-based elements that guide visitors toward taking action.',
                 'features' => array(
-                    'User experience (UX) optimization',
+                    'User experience (UX) optimisation',
                     'Conversion psychology implementation',
-                    'Visual hierarchy optimization',
+                    'Visual hierarchy optimisation',
                     'Trust signal integration'
                 )
             ),
             array(
-                'title' => 'Landing Page Optimization',
-                'description' => 'Create high-converting landing pages that maximize conversions from your marketing campaigns.',
+                'title' => 'Landing Page optimisation',
+                'description' => 'Create high-converting landing pages that maximise conversions from your marketing campaigns.',
                 'features' => array(
                     'Campaign-specific landing pages',
                     'A/B testing implementation',
-                    'Form optimization',
-                    'Lead capture optimization'
+                    'Form optimisation',
+                    'Lead capture optimisation'
                 )
             ),
             array(
-                'title' => 'E-commerce Optimization',
-                'description' => 'Optimize online stores to increase sales, reduce cart abandonment, and improve customer experience.',
+                'title' => 'E-commerce optimisation',
+                'description' => 'optimise online stores to increase sales, reduce cart abandonment, and improve customer experience.',
                 'features' => array(
-                    'Product page optimization',
+                    'Product page optimisation',
                     'Checkout process streamlining',
                     'Cart abandonment recovery',
-                    'Cross-sell and upsell optimization'
+                    'Cross-sell and upsell optimisation'
                 )
             ),
             array(
-                'title' => 'Performance Optimization',
+                'title' => 'Performance optimisation',
                 'description' => 'Improve website speed and technical performance to reduce bounce rates and improve conversions.',
                 'features' => array(
-                    'Page speed optimization',
+                    'Page speed optimisation',
                     'Mobile responsiveness',
                     'Core Web Vitals improvement',
                     'Technical SEO implementation'
@@ -147,14 +147,14 @@ function high_converting_website_meta_box_callback($post) {
     }
 
     // Process
-    $process_title = get_post_meta($post->ID, '_high_converting_website_process_title', true) ?: 'Our Website Optimization Process';
+    $process_title = get_post_meta($post->ID, '_high_converting_website_process_title', true) ?: 'Our Website optimisation Process';
     $process_steps = get_post_meta($post->ID, '_high_converting_website_process_steps', true);
     if (empty($process_steps)) {
         $process_steps = array(
             array(
                 'number' => '1',
                 'title' => 'Conversion Audit',
-                'description' => 'Comprehensive analysis of your website\'s current performance, user behavior, and conversion barriers.'
+                'description' => 'Comprehensive analysis of your website\'s current performance, user behaviour, and conversion barriers.'
             ),
             array(
                 'number' => '2',
@@ -164,18 +164,18 @@ function high_converting_website_meta_box_callback($post) {
             array(
                 'number' => '3',
                 'title' => 'Development & Testing',
-                'description' => 'Build optimized pages with A/B testing frameworks to validate improvements.'
+                'description' => 'Build optimised pages with A/B testing frameworks to validate improvements.'
             ),
             array(
                 'number' => '4',
-                'title' => 'Monitor & Optimize',
+                'title' => 'Monitor & optimise',
                 'description' => 'Continuously track performance and implement data-driven improvements.'
             )
         );
     }
 
     // Conversion Elements
-    $elements_title = get_post_meta($post->ID, '_high_converting_website_elements_title', true) ?: 'Key Conversion Elements We Optimize';
+    $elements_title = get_post_meta($post->ID, '_high_converting_website_elements_title', true) ?: 'Key Conversion Elements We optimise';
     $elements = get_post_meta($post->ID, '_high_converting_website_elements', true);
     if (empty($elements)) {
         $elements = array(
@@ -183,7 +183,7 @@ function high_converting_website_meta_box_callback($post) {
                 'title' => 'Value Propositions',
                 'description' => 'Clear, compelling messaging that communicates your unique value and benefits.',
                 'features' => array(
-                    'Headline optimization',
+                    'Headline optimisation',
                     'Benefit-focused copy',
                     'Social proof integration',
                     'Risk reversal strategies'
@@ -193,10 +193,10 @@ function high_converting_website_meta_box_callback($post) {
                 'title' => 'Call-to-Action (CTA)',
                 'description' => 'Strategic placement and design of CTAs that guide users toward conversion.',
                 'features' => array(
-                    'CTA button optimization',
+                    'CTA button optimisation',
                     'Action-oriented copy',
                     'Strategic placement',
-                    'Color and contrast testing'
+                    'colour and contrast testing'
                 )
             ),
             array(
@@ -211,10 +211,10 @@ function high_converting_website_meta_box_callback($post) {
             ),
             array(
                 'title' => 'User Experience',
-                'description' => 'Smooth, intuitive navigation and user flow optimization.',
+                'description' => 'Smooth, intuitive navigation and user flow optimisation.',
                 'features' => array(
                     'Navigation simplification',
-                    'Form optimization',
+                    'Form optimisation',
                     'Page loading speed',
                     'Mobile responsiveness'
                 )
@@ -223,15 +223,15 @@ function high_converting_website_meta_box_callback($post) {
     }
 
     // Website Types
-    $types_title = get_post_meta($post->ID, '_high_converting_website_types_title', true) ?: 'Website Optimization by Type';
+    $types_title = get_post_meta($post->ID, '_high_converting_website_types_title', true) ?: 'Website optimisation by Type';
     $types = get_post_meta($post->ID, '_high_converting_website_types', true);
     if (empty($types)) {
         $types = array(
             array(
                 'title' => 'Lead Generation Websites',
                 'features' => array(
-                    'Lead magnet optimization',
-                    'Contact form optimization',
+                    'Lead magnet optimisation',
+                    'Contact form optimisation',
                     'Landing page creation',
                     'CRM integration'
                 ),
@@ -240,9 +240,9 @@ function high_converting_website_meta_box_callback($post) {
             array(
                 'title' => 'E-commerce Websites',
                 'features' => array(
-                    'Product page optimization',
+                    'Product page optimisation',
                     'Checkout flow improvement',
-                    'Payment gateway optimization',
+                    'Payment gateway optimisation',
                     'Inventory management'
                 ),
                 'results' => 'Average: 150% sales increase'
@@ -250,7 +250,7 @@ function high_converting_website_meta_box_callback($post) {
             array(
                 'title' => 'Service-Based Websites',
                 'features' => array(
-                    'Service page optimization',
+                    'Service page optimisation',
                     'Portfolio showcasing',
                     'Booking system integration',
                     'Client testimonials'
@@ -261,7 +261,7 @@ function high_converting_website_meta_box_callback($post) {
     }
 
     // Conversion Tools
-    $tools_title = get_post_meta($post->ID, '_high_converting_website_tools_title', true) ?: 'Conversion Optimization Tools';
+    $tools_title = get_post_meta($post->ID, '_high_converting_website_tools_title', true) ?: 'Conversion optimisation Tools';
     $tools = get_post_meta($post->ID, '_high_converting_website_tools', true);
     if (empty($tools)) {
         $tools = array(
@@ -269,7 +269,7 @@ function high_converting_website_meta_box_callback($post) {
                 'title' => 'Analytics & Testing',
                 'items' => array(
                     'Google Analytics 4',
-                    'Google Optimize',
+                    'Google optimise',
                     'Hotjar heatmaps',
                     'Crazy Egg testing'
                 )
@@ -312,7 +312,7 @@ function high_converting_website_meta_box_callback($post) {
     if (empty($cta_benefits)) {
         $cta_benefits = array(
             '✓ Conversion-focused design',
-            '✓ Mobile optimization included',
+            '✓ Mobile optimisation included',
             '✓ A/B testing setup'
         );
     }
@@ -328,7 +328,7 @@ function high_converting_website_meta_box_callback($post) {
             .high-converting-website-meta-box h3 {
                 margin-top: 0;
                 padding: 10px;
-                background-color: #f5f5f5;
+                background-colour: #f5f5f5;
                 border-left: 4px solid #0073aa;
             }
             .high-converting-website-meta-box table {
@@ -366,7 +366,7 @@ function high_converting_website_meta_box_callback($post) {
                 position: absolute;
                 top: 5px;
                 right: 5px;
-                color: #a00;
+                colour: #a00;
                 cursor: pointer;
             }
             .high-converting-website-meta-box .add-item {
@@ -385,7 +385,7 @@ function high_converting_website_meta_box_callback($post) {
                 margin-top: 10px;
             }            .high-converting-website-meta-box .field-description {
                 font-style: italic;
-                color: #666;
+                colour: #666;
                 font-size: 0.9em;
             }
             .high-converting-website-meta-box .image-upload-container {

@@ -129,7 +129,7 @@ get_header(); ?>
                     <div class="benefit-number">02</div>
                     <div class="benefit-content">
                         <h3>Complete Transparency</h3>
-                        <p>Full access to campaign data, regular strategy calls, and detailed explanations of all optimizations and decisions.</p>
+                        <p>Full access to campaign data, regular strategy calls, and detailed explanations of all optimisations and decisions.</p>
                     </div>
                 </div>
                 
@@ -234,7 +234,7 @@ get_header(); ?>
                     <div class="step-number">4</div>
                     <div class="step-content">
                         <h3>Ongoing Management</h3>
-                        <p>Daily campaign optimization, weekly performance monitoring, and monthly strategy reviews to ensure optimal results.</p>
+                        <p>Daily campaign optimisation, weekly performance monitoring, and monthly strategy reviews to ensure optimal results.</p>
                     </div>
                 </div>
                 
@@ -329,7 +329,7 @@ get_header(); ?>
                         <i class="fas fa-cogs"></i>
                     </div>
                     <h3>Campaign Setup & Management</h3>
-                    <p>Complete campaign architecture, keyword research, ad creation, and ongoing optimization across all platforms.</p>
+                    <p>Complete campaign architecture, keyword research, ad creation, and ongoing optimisation across all platforms.</p>
                 </div>
                 
                 <div class="benefit-card">
@@ -353,7 +353,7 @@ get_header(); ?>
                         <i class="fas fa-shield-alt"></i>
                     </div>
                     <h3>Performance Guarantee</h3>
-                    <p>We guarantee improved performance within 90 days or provide additional optimization at no charge.</p>
+                    <p>We guarantee improved performance within 90 days or provide additional optimisation at no charge.</p>
                 </div>
             </div>
         </div>
@@ -386,7 +386,7 @@ get_header(); ?>
                 </div>
                 <div class="type-item">
                     <h3>Full-Service Marketing</h3>
-                    <p>Complete your service offerings without the overhead of specialized PPC staff.</p>
+                    <p>Complete your service offerings without the overhead of specialised PPC staff.</p>
                 </div>
             </div>
         </div>

@@ -1,7 +1,7 @@
-<?php
+﻿<?php
 /**
  * Template Name: Improve ROI from Ads Solution Page
- * Description: Ad optimization solution for maximum ROI
+ * Description: Ad optimisation solution for maximum ROI
  */
 
 get_header(); ?>
@@ -12,7 +12,7 @@ get_header(); ?>
         <section class="page-header">
             <div class="page-header-content animate-on-scroll animate-fade-up">
                 <h1><?php echo esc_html(get_post_meta(get_the_ID(), '_improve_roi_ads_header_title', true) ?: 'Improve ROI from Ads'); ?></h1>
-                <p class="page-subtitle"><?php echo esc_html(get_post_meta(get_the_ID(), '_improve_roi_ads_header_subtitle', true) ?: 'Maximize your advertising spend with data-driven optimization strategies that deliver measurable results'); ?></p>
+                <p class="page-subtitle"><?php echo esc_html(get_post_meta(get_the_ID(), '_improve_roi_ads_header_subtitle', true) ?: 'Maximize your advertising spend with data-driven optimisation strategies that deliver measurable results'); ?></p>
             </div>
         </section>
 
@@ -22,7 +22,7 @@ get_header(); ?>
                 <div class="overview-content">
                     <div class="overview-text animate-on-scroll animate-slide-left">
                         <h2><?php echo esc_html(get_post_meta(get_the_ID(), '_improve_roi_ads_overview_title', true) ?: 'Turn Ad Spend Into Profitable Growth'); ?></h2>
-                        <p><?php echo esc_html(get_post_meta(get_the_ID(), '_improve_roi_ads_overview_content', true) ?: 'Every advertising dollar should drive real business results. Our comprehensive ad optimization strategies combine advanced analytics, conversion tracking, and continuous testing to maximize your return on ad spend (ROAS) while reducing customer acquisition costs and improving campaign performance.'); ?></p>
+                        <p><?php echo esc_html(get_post_meta(get_the_ID(), '_improve_roi_ads_overview_content', true) ?: 'Every advertising dollar should drive real business results. Our comprehensive ad optimisation strategies combine advanced analytics, conversion tracking, and continuous testing to maximise your return on ad spend (ROAS) while reducing customer acquisition costs and improving campaign performance.'); ?></p>
                         
                         <div class="solution-challenges animate-on-scroll animate-fade-up">
                             <h3><?php echo esc_html(get_post_meta(get_the_ID(), '_improve_roi_ads_challenges_title', true) ?: 'Ad ROI Challenges We Solve:'); ?></h3>
@@ -49,11 +49,11 @@ get_header(); ?>
                         $overview_image = get_post_meta(get_the_ID(), '_improve_roi_ads_overview_image', true);
                         if ($overview_image): ?>
                             <div class="image-wrapper">
-                                <img src="<?php echo esc_url($overview_image); ?>" alt="Ad ROI Optimization Strategy" />
+                                <img src="<?php echo esc_url($overview_image); ?>" alt="Ad ROI optimisation Strategy" />
                             </div>
                         <?php else: ?>
                             <div class="image-wrapper">
-                                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/solutions/ad-roi-overview.jpg" alt="Ad ROI Optimization Strategy" />
+                                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/solutions/ad-roi-overview.jpg" alt="Ad ROI optimisation Strategy" />
                             </div>
                         <?php endif; ?>
                         <div class="overview-image-cta animate-on-scroll animate-scale-up">
@@ -62,16 +62,16 @@ get_header(); ?>
                     </div>
                 </div>
             </div>
-        </section>        <!-- ROI Optimization Methods -->
-        <section class="roi-optimization-methods">
+        </section>        <!-- ROI optimisation Methods -->
+        <section class="roi-optimisation-methods">
             <div class="section-content">
-                <h2 class="animate-on-scroll animate-fade-up"><?php echo esc_html(get_post_meta(get_the_ID(), '_improve_roi_ads_methods_title', true) ?: 'Our Ad ROI Optimization Methods'); ?></h2>
+                <h2 class="animate-on-scroll animate-fade-up"><?php echo esc_html(get_post_meta(get_the_ID(), '_improve_roi_ads_methods_title', true) ?: 'Our Ad ROI optimisation Methods'); ?></h2>
                 <div class="services-grid animate-on-scroll animate-stagger animate-scale-up">
                     <div class="service-item">
                         <div class="service-icon"><i class="fas fa-chart-line"></i></div>
                         <h3>Advanced Conversion Tracking</h3>
-                        <p>Implement comprehensive tracking systems to measure true ROI and optimize for the metrics that matter most.</p>
-                        <ul style="text-align: left; color: #666; line-height: 1.8;">
+                        <p>Implement comprehensive tracking systems to measure true ROI and optimise for the metrics that matter most.</p>
+                        <ul style="text-align: left; colour: #666; line-height: 1.8;">
                             <li>Enhanced e-commerce tracking</li>
                             <li>Offline conversion tracking</li>
                             <li>Customer lifetime value analysis</li>
@@ -80,9 +80,9 @@ get_header(); ?>
                     </div>
                     <div class="service-item">
                         <div class="service-icon"><i class="fas fa-users"></i></div>
-                        <h3>Audience Optimization</h3>
+                        <h3>Audience optimisation</h3>
                         <p>Refine targeting to reach high-value prospects while reducing spend on low-converting audiences.</p>
-                        <ul style="text-align: left; color: #666; line-height: 1.8;">
+                        <ul style="text-align: left; colour: #666; line-height: 1.8;">
                             <li>Audience segmentation analysis</li>
                             <li>Lookalike audience creation</li>
                             <li>Negative audience exclusions</li>
@@ -91,23 +91,23 @@ get_header(); ?>
                     </div>
                     <div class="service-item">
                         <div class="service-icon"><i class="fas fa-layer-group"></i></div>
-                        <h3>Campaign Structure Optimization</h3>
+                        <h3>Campaign Structure optimisation</h3>
                         <p>Restructure campaigns for better performance, clearer data insights, and more efficient budget allocation.</p>
-                        <ul style="text-align: left; color: #666; line-height: 1.8;">
+                        <ul style="text-align: left; colour: #666; line-height: 1.8;">
                             <li>Single keyword ad groups (SKAGs)</li>
                             <li>Campaign segmentation strategies</li>
-                            <li>Ad group theme optimization</li>
+                            <li>Ad group theme optimisation</li>
                             <li>Budget allocation modeling</li>
                         </ul>
                     </div>
                     <div class="service-item">
                         <div class="service-icon"><i class="fas fa-mobile-alt"></i></div>
-                        <h3>Landing Page Optimization</h3>
-                        <p>Improve post-click experience to maximize conversion rates and reduce cost per conversion.</p>
-                        <ul style="text-align: left; color: #666; line-height: 1.8;">
+                        <h3>Landing Page optimisation</h3>
+                        <p>Improve post-click experience to maximise conversion rates and reduce cost per conversion.</p>
+                        <ul style="text-align: left; colour: #666; line-height: 1.8;">
                             <li>Landing page A/B testing</li>
-                            <li>Conversion rate optimization</li>
-                            <li>Mobile experience optimization</li>
+                            <li>Conversion rate optimisation</li>
+                            <li>Mobile experience optimisation</li>
                             <li>Page speed improvements</li>
                         </ul>
                     </div>
@@ -150,7 +150,7 @@ get_header(); ?>
                                 if (empty($case_solutions)) {
                                     $case_solutions = array(
                                         'Complete conversion tracking overhaul',
-                                        'Campaign restructuring and optimization',
+                                        'Campaign restructuring and optimisation',
                                         'Landing page redesign and testing',
                                         'Advanced bidding strategy implementation'
                                     );
@@ -204,7 +204,7 @@ get_header(); ?>
         <!-- ROI Process -->
         <section class="roi-process">
             <div class="section-content">
-                <h2 class="animate-on-scroll animate-fade-up"><?php echo esc_html(get_post_meta(get_the_ID(), '_improve_roi_ads_process_title', true) ?: 'Our Ad ROI Optimization Process'); ?></h2>
+                <h2 class="animate-on-scroll animate-fade-up"><?php echo esc_html(get_post_meta(get_the_ID(), '_improve_roi_ads_process_title', true) ?: 'Our Ad ROI optimisation Process'); ?></h2>
                 <div class="process-steps">
                     
                     <?php
@@ -223,13 +223,13 @@ get_header(); ?>
                             ),
                             array(
                                 'number' => '3',
-                                'title' => 'Campaign Optimization',
-                                'description' => 'Restructure campaigns, refine targeting, and optimize bidding strategies for improved performance.'
+                                'title' => 'Campaign optimisation',
+                                'description' => 'Restructure campaigns, refine targeting, and optimise bidding strategies for improved performance.'
                             ),
                             array(
                                 'number' => '4',
                                 'title' => 'Continuous Testing',
-                                'description' => 'Ongoing A/B testing and optimization to maintain and improve ROI over time.'
+                                'description' => 'Ongoing A/B testing and optimisation to maintain and improve ROI over time.'
                             )
                         );
                     }
@@ -249,10 +249,10 @@ get_header(); ?>
                     <a href="<?php echo home_url('/contact'); ?>" class="btn-primary process-cta-btn">Maximize Your Ad ROI</a>
                 </div>
             </div>
-        </section>        <!-- Platform Optimization -->
-        <section class="platform-optimization">
+        </section>        <!-- Platform optimisation -->
+        <section class="platform-optimisation">
             <div class="section-content">
-                <h2 class="animate-on-scroll animate-fade-up"><?php echo esc_html(get_post_meta(get_the_ID(), '_improve_roi_ads_platforms_title', true) ?: 'Platform-Specific ROI Optimization'); ?></h2>
+                <h2 class="animate-on-scroll animate-fade-up"><?php echo esc_html(get_post_meta(get_the_ID(), '_improve_roi_ads_platforms_title', true) ?: 'Platform-Specific ROI optimisation'); ?></h2>
                 <div class="platforms-grid">
                     
                     <?php
@@ -260,33 +260,33 @@ get_header(); ?>
                     if (empty($platforms)) {
                         $platforms = array(
                             array(
-                                'title' => 'Google Ads Optimization',
+                                'title' => 'Google Ads optimisation',
                                 'features' => array(
                                     'Smart bidding strategy implementation',
                                     'Quality Score improvements',
                                     'Search impression share analysis',
-                                    'Shopping campaign optimization',
+                                    'Shopping campaign optimisation',
                                     'Performance Max campaign setup'
                                 ),
                                 'results' => 'Average: 250% Google Ads ROI improvement'
                             ),
                             array(
-                                'title' => 'Facebook Ads Optimization',
+                                'title' => 'Facebook Ads optimisation',
                                 'features' => array(
                                     'iOS 14.5+ tracking solutions',
                                     'Conversion API implementation',
                                     'Creative testing automation',
                                     'Audience overlap elimination',
-                                    'Campaign budget optimization'
+                                    'Campaign budget optimisation'
                                 ),
                                 'results' => 'Average: 180% Facebook ROI improvement'
                             ),
                             array(
-                                'title' => 'LinkedIn Ads Optimization',
+                                'title' => 'LinkedIn Ads optimisation',
                                 'features' => array(
                                     'B2B audience targeting refinement',
-                                    'Lead generation form optimization',
-                                    'Sponsored content optimization',
+                                    'Lead generation form optimisation',
+                                    'Sponsored content optimisation',
                                     'Account-based marketing setup',
                                     'LinkedIn matched audiences'
                                 ),
@@ -317,7 +317,7 @@ get_header(); ?>
         <!-- ROI Metrics -->
         <section class="roi-metrics">
             <div class="section-content">
-                <h2 class="animate-on-scroll animate-fade-up"><?php echo esc_html(get_post_meta(get_the_ID(), '_improve_roi_ads_metrics_title', true) ?: 'Key ROI Metrics We Track & Optimize'); ?></h2>
+                <h2 class="animate-on-scroll animate-fade-up"><?php echo esc_html(get_post_meta(get_the_ID(), '_improve_roi_ads_metrics_title', true) ?: 'Key ROI Metrics We Track & optimise'); ?></h2>
                 <div class="metrics-grid">
                     
                     <?php
@@ -361,7 +361,7 @@ get_header(); ?>
                                     'Demographic Performance',
                                     'Geographic Efficiency',
                                     'Device Performance',
-                                    'Time of Day Optimization'
+                                    'Time of Day optimisation'
                                 )
                             )
                         );
@@ -388,7 +388,7 @@ get_header(); ?>
             <div class="section-content">
                 <div class="testimonial-content animate-on-scroll animate-fade-up">
                     <blockquote>
-                        "<?php echo esc_html(get_post_meta(get_the_ID(), '_improve_roi_ads_testimonial_quote', true) ?: 'Aimpro Digital took our ad performance from break-even to highly profitable. Our ROI improved by 320% and we\'re now getting 4x more leads for the same budget. Their optimization expertise is exceptional.'); ?>"
+                        "<?php echo esc_html(get_post_meta(get_the_ID(), '_improve_roi_ads_testimonial_quote', true) ?: 'Aimpro Digital took our ad performance from break-even to highly profitable. Our ROI improved by 320% and we\'re now getting 4x more leads for the same budget. Their optimisation expertise is exceptional.'); ?>"
                     </blockquote>
                     <div class="testimonial-author animate-on-scroll animate-slide-up">
                         <div class="author-info">
@@ -406,7 +406,7 @@ get_header(); ?>
             <div class="section-content">
                 <div class="cta-content animate-on-scroll animate-fade-up">
                     <h2><?php echo esc_html(get_post_meta(get_the_ID(), '_improve_roi_ads_cta_title', true) ?: 'Ready to Maximize Your Ad ROI?'); ?></h2>
-                    <p><?php echo esc_html(get_post_meta(get_the_ID(), '_improve_roi_ads_cta_subtitle', true) ?: 'Let\'s analyze your current ad performance and create a strategy to dramatically improve your return on investment.'); ?></p>                    <div class="cta-buttons animate-on-scroll animate-slide-up">
+                    <p><?php echo esc_html(get_post_meta(get_the_ID(), '_improve_roi_ads_cta_subtitle', true) ?: 'Let\'s analyse your current ad performance and create a strategy to dramatically improve your return on investment.'); ?></p>                    <div class="cta-buttons animate-on-scroll animate-slide-up">
                         <a href="<?php echo esc_url(home_url(get_post_meta(get_the_ID(), '_improve_roi_ads_cta_primary_url', true) ?: '/contact')); ?>" class="btn btn-primary"><?php echo esc_html(get_post_meta(get_the_ID(), '_improve_roi_ads_cta_primary_text', true) ?: 'Get Free Ad Account Audit'); ?></a>
                     </div>
                     <div class="cta-features animate-on-scroll animate-fade-up">
@@ -416,7 +416,7 @@ get_header(); ?>
                             $features = array(
                                 '✓ Complete performance analysis',
                                 '✓ ROI improvement roadmap',
-                                '✓ Custom optimization strategy'
+                                '✓ Custom optimisation strategy'
                             );
                         }
                         foreach ($features as $feature) {

@@ -40,7 +40,7 @@ function aimpro_company_meta_box_callback($post) {
     $company_header_subtitle = get_post_meta($post->ID, 'company_header_subtitle', true) ?: 'The story behind Aimpro Digital';
     $company_overview_heading = get_post_meta($post->ID, 'company_overview_heading', true) ?: 'About Aimpro Digital';
     $company_overview_desc1 = get_post_meta($post->ID, 'company_overview_desc1', true) ?: 'Founded in 2020, Aimpro Digital has grown from a small startup to a leading digital marketing agency serving clients across the globe. Our passion for innovation and commitment to results has driven us to become a trusted partner for businesses of all sizes.';
-    $company_overview_desc2 = get_post_meta($post->ID, 'company_overview_desc2', true) ?: 'We specialize in comprehensive digital marketing solutions that drive real business growth. From strategic planning to execution, we\'re dedicated to helping our clients achieve their goals through cutting-edge digital marketing strategies.';
+    $company_overview_desc2 = get_post_meta($post->ID, 'company_overview_desc2', true) ?: 'We specialise in comprehensive digital marketing solutions that drive real business growth. From strategic planning to execution, we\'re dedicated to helping our clients achieve their goals through cutting-edge digital marketing strategies.';
     $company_overview_image = get_post_meta($post->ID, 'company_overview_image', true) ?: '';
     $company_history_heading = get_post_meta($post->ID, 'company_history_heading', true) ?: 'Our Journey';
     $company_timeline_2020_title = get_post_meta($post->ID, 'company_timeline_2020_title', true) ?: 'Company Founded';
