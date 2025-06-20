@@ -502,29 +502,52 @@ body.light-theme .mega-menu-list a:hover {
     }
 }
 
-/* MacBook and smaller laptop screens */
-@media (max-width: 1366px) {
+/* Large desktop screens */
+@media (max-width: 1400px) {
     .header-content {
-        gap: 1.5rem;
+        gap: 1.75rem;
     }
     
     .main-nav ul {
-        gap: 0.25rem;
+        gap: 0.4rem;
     }
     
     .main-nav a {
-        padding: 0 0.75rem;
-        font-size: 0.9rem;
+        padding: 0 0.9rem;
+        font-size: 0.93rem;
+    }
+    
+    .mega-menu {
+        width: 1000px;
+    }
+}
+
+/* MacBook and smaller laptop screens */
+@media (max-width: 1366px) {
+    .header-content {
+        gap: 1.25rem;
+        padding: 0.75rem 0;
+    }
+    
+    .main-nav ul {
+        gap: 0.2rem;
+    }
+    
+    .main-nav a {
+        padding: 0 0.7rem;
+        font-size: 0.88rem;
     }
     
     .header-ctas {
-        gap: 0.5rem;
+        gap: 0.4rem;
     }
     
     .header-ctas .btn-outline,
     .header-ctas .btn-primary {
-        padding: 0 1.25rem;
-        font-size: 0.85rem;
+        padding: 0 1rem;
+        font-size: 0.82rem;
+        height: 40px;
+        border-radius: 20px;
     }
     
     .mega-menu {
@@ -532,14 +555,72 @@ body.light-theme .mega-menu-list a:hover {
     }
 }
 
-@media (max-width: 1024px) {
+/* Smaller laptops and large tablets */
+@media (max-width: 1200px) {
     .header-content {
         gap: 1rem;
     }
     
-    .mega-menu {        width: 700px;
+    .main-nav ul {
+        gap: 0.15rem;
     }
-      .nav-item-mega .mega-menu {
+    
+    .main-nav a {
+        padding: 0 0.6rem;
+        font-size: 0.85rem;
+    }
+    
+    .header-ctas {
+        gap: 0.3rem;
+    }
+    
+    .header-ctas .btn-outline,
+    .header-ctas .btn-primary {
+        padding: 0 0.8rem;
+        font-size: 0.8rem;
+        height: 38px;
+        border-radius: 19px;
+    }
+    
+    .mega-menu {
+        width: 800px;
+    }
+}
+
+@media (max-width: 1024px) {
+    .header-content {
+        gap: 0.75rem;
+    }
+    
+    .main-nav ul {
+        gap: 0.1rem;
+    }
+    
+    .main-nav a {
+        padding: 0 0.5rem;
+        font-size: 0.8rem;
+    }
+    
+    .header-ctas {
+        gap: 0.2rem;
+    }
+    
+    .header-ctas .btn-outline {
+        display: none; /* Hide "Book a Call" on smaller screens */
+    }
+    
+    .header-ctas .btn-primary {
+        padding: 0 0.8rem;
+        font-size: 0.8rem;
+        height: 38px;
+        border-radius: 19px;
+    }
+    
+    .mega-menu {
+        width: 700px;
+    }
+    
+    .nav-item-mega .mega-menu {
         left: 50%;
         transform: translateX(-25%);
     }

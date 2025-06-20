@@ -27,13 +27,14 @@ Version: 1.0
 
 /* Breadcrumbs Styling */
 .breadcrumbs-container {
-    padding-top: 30px; /* Account for fixed header */
+    margin-top: 50px; /* Account for fixed header height */
+    padding-top: 1rem;
     padding-bottom: 1rem;
     background: rgba(255, 255, 255, 0.95);
     backdrop-filter: blur(10px);
     border-bottom: 1px solid rgba(0, 0, 0, 0.1);
     position: relative;
-    z-index: 100; /* Ensure breadcrumbs appear above header */
+    z-index: 900; /* Below header but above content */
 }
 
 .breadcrumbs {
