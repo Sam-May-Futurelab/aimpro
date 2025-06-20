@@ -113,8 +113,7 @@
                         <div class="mega-menu">
                             <div class="mega-menu-container">
                                 <div class="mega-menu-grid">                                    <div class="mega-menu-column">
-                                        <h4><a href="<?php echo home_url('/seo-services'); ?>">SEO Services</a></h4>
-                                        <ul class="mega-menu-list">
+                                        <h4><a href="<?php echo home_url('/seo-services'); ?>">SEO Services</a></h4>                                        <ul class="mega-menu-list">
                                             <li><a href="<?php echo home_url('/local-seo'); ?>">Local SEO</a></li>
                                             <li><a href="<?php echo home_url('/seo-audit'); ?>">SEO Audit</a></li>
                                             <li><a href="<?php echo home_url('/technical-seo'); ?>">Technical SEO</a></li>
@@ -215,10 +214,8 @@
                         </div>
                     </li><li><a href="<?php echo home_url('/contact'); ?>" class="nav-link">Contact</a></li>
                 </ul>
-            </nav>
-            <div class="header-ctas">
-                <a href="<?php echo home_url('/contact'); ?>" class="btn-outline premium-hover">Get a Free Audit</a>
-                <a href="tel:+441212858490" class="btn-primary shine-effect">Book a Call</a>
+            </nav>            <div class="header-ctas">
+                <a href="<?php echo home_url('/contact'); ?>" class="btn-primary shine-effect header-btn">Get a Free Audit</a>
             </div>
             <button class="mobile-menu-toggle" aria-label="Toggle Mobile Menu">
                 <span class="hamburger-bar"></span>
