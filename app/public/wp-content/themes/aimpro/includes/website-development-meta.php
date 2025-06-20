@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 // Meta fields for Website Development page
 
 // Function to get default values for website development page

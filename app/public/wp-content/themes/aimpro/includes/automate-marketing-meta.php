@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 // Automate Marketing Page Meta Fields
 
 function add_automate_marketing_meta_boxes() {
@@ -283,9 +283,9 @@ function automate_marketing_meta_box_callback($post) {
     $cta_features = get_post_meta($post->ID, '_automate_marketing_cta_features', true);
     if (empty($cta_features)) {
         $cta_features = array(
-            '✓ Custom workflow design',
-            '✓ Full platform integration',
-            '✓ Ongoing optimisation'
+            '? Custom workflow design',
+            '? Full platform integration',
+            '? Ongoing optimisation'
         );
     }
 
@@ -324,7 +324,7 @@ function automate_marketing_meta_box_callback($post) {
             margin-bottom: 15px;
             padding: 10px;
             background: #0073aa;
-            colour: white;
+            color: white;
             border-radius: 3px;
         }
         .automate-marketing-meta .image-preview {
@@ -859,7 +859,7 @@ function automate_marketing_meta_box_callback($post) {
                                     <input type="text" 
                                            name="automate_marketing_cta_features[]" 
                                            value="<?php echo esc_attr($feature); ?>"
-                                           placeholder="✓ Feature item" />
+                                           placeholder="? Feature item" />
                                     <button type="button" class="button remove-repeater-item">Remove</button>
                                 </div>
                             <?php endforeach; ?>

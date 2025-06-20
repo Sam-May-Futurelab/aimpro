@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 /**
  * Testimonials Page Meta Fields
  * Adds custom meta box for Testimonials Page template with editable content fields

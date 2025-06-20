@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 /**
  * Resources Page Meta Fields
  * Adds custom meta box for Resources Page template with editable content fields

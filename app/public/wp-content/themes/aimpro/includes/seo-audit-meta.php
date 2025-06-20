@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 // SEO Audit page meta boxes and fields
 
 // Add meta boxes

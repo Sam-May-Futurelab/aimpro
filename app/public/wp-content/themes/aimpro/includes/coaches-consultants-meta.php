@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 // Coaches & Consultants Page Meta Fields
 
 function add_coaches_consultants_meta_boxes() {
@@ -185,9 +185,9 @@ function coaches_consultants_meta_box_callback($post) {
     $cta_benefits = get_post_meta($post->ID, '_coaches_consultants_cta_benefits', true);
     if (empty($cta_benefits)) {
         $cta_benefits = array(
-            '✓ Expert authority positioning',
-            '✓ Premium client acquisition',
-            '✓ Business scaling strategies'
+            '? Expert authority positioning',
+            '? Premium client acquisition',
+            '? Business scaling strategies'
         );
     }
 
@@ -241,7 +241,7 @@ function coaches_consultants_meta_box_callback($post) {
             margin-bottom: 15px;
             padding: 10px;
             background: #0073aa;
-            colour: white;
+            color: white;
             border-radius: 3px;
         }
     </style>
@@ -713,7 +713,7 @@ function coaches_consultants_meta_box_callback($post) {
                                     <input type="text" 
                                            name="coaches_consultants_cta_benefits[]" 
                                            value="<?php echo esc_attr($benefit); ?>"
-                                           placeholder="✓ Benefit item" />
+                                           placeholder="? Benefit item" />
                                     <button type="button" class="button remove-repeater-item">Remove</button>
                                 </div>
                             <?php endforeach; ?>

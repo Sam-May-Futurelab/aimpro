@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 // White Label SEO page meta boxes and fields
 
 // Add meta boxes

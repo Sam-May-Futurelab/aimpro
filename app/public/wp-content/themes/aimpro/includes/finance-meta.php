@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 // Finance Page Meta Fields
 
 function add_finance_meta_boxes() {
@@ -220,9 +220,9 @@ function finance_meta_box_callback($post) {
     $cta_benefits = get_post_meta($post->ID, '_finance_cta_benefits', true);
     if (empty($cta_benefits)) {
         $cta_benefits = array(
-            '✓ Free compliance review',
-            '✓ FCA-compliant strategy',
-            '✓ Trust-building approach'
+            '? Free compliance review',
+            '? FCA-compliant strategy',
+            '? Trust-building approach'
         );
     }
 
@@ -263,7 +263,7 @@ function finance_meta_box_callback($post) {
         }
         .remove-item {
             background: #dc3232;
-            colour: white;
+            color: white;
             border: none;
             padding: 5px 10px;
             cursor: pointer;
@@ -272,7 +272,7 @@ function finance_meta_box_callback($post) {
         }
         .add-item {
             background: #0073aa;
-            colour: white;
+            color: white;
             border: none;
             padding: 8px 16px;
             cursor: pointer;
@@ -307,7 +307,7 @@ function finance_meta_box_callback($post) {
         }
         .upload-button {
             background: #0073aa;
-            colour: white;
+            color: white;
             border: none;
             padding: 8px 16px;
             cursor: pointer;
@@ -315,7 +315,7 @@ function finance_meta_box_callback($post) {
         }
         .remove-image {
             background: #dc3232;
-            colour: white;
+            color: white;
             border: none;
             padding: 8px 16px;
             cursor: pointer;
@@ -335,14 +335,14 @@ function finance_meta_box_callback($post) {
         }
         .remove-list-item {
             background: #dc3232;
-            colour: white;
+            color: white;
             border: none;
             padding: 5px 10px;
             cursor: pointer;
         }
         .add-list-item {
             background: #0073aa;
-            colour: white;
+            color: white;
             border: none;
             padding: 5px 10px;
             cursor: pointer;
@@ -681,7 +681,7 @@ function finance_meta_box_callback($post) {
                 <div id="cta-benefits-container">
                     <?php foreach ($cta_benefits as $index => $benefit): ?>
                         <div class="list-item">
-                            <input type="text" name="finance_cta_benefits[<?php echo $index; ?>]" value="<?php echo esc_attr($benefit); ?>" placeholder="✓ Benefit..." />
+                            <input type="text" name="finance_cta_benefits[<?php echo $index; ?>]" value="<?php echo esc_attr($benefit); ?>" placeholder="? Benefit..." />
                             <button type="button" class="remove-list-item">Remove</button>
                         </div>
                     <?php endforeach; ?>

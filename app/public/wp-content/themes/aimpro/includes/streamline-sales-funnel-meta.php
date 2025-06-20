@@ -1,4 +1,4 @@
-ï»¿<?php
+<?php
 // Meta fields for Streamline Sales Funnel page
 add_action('add_meta_boxes', function() {
     global $post;
@@ -14,7 +14,7 @@ function streamline_sales_funnel_meta_callback($post) {
     ?>
     <style>
         .streamline-meta-section { margin-bottom: 25px; padding: 15px; border: 1px solid #ddd; }
-        .streamline-meta-section h3 { margin-top: 0; colour: #23282d; }
+        .streamline-meta-section h3 { margin-top: 0; color: #23282d; }
         .streamline-meta-field { margin-bottom: 15px; }
         .streamline-meta-field label { display: block; margin-bottom: 5px; font-weight: 600; }
         .streamline-meta-field input, .streamline-meta-field textarea { width: 100%; }
@@ -235,7 +235,7 @@ function streamline_sales_funnel_meta_callback($post) {
         <div class="streamline-stats-row">
             <div class="streamline-meta-field">
                 <label>Result 4 Number</label>
-                <input type="text" name="streamline_result_4_number" value="<?php echo esc_attr(get_post_meta($post->ID, 'streamline_result_4_number', true) ?: 'Â£125K'); ?>" />
+                <input type="text" name="streamline_result_4_number" value="<?php echo esc_attr(get_post_meta($post->ID, 'streamline_result_4_number', true) ?: '£125K'); ?>" />
             </div>
             <div class="streamline-meta-field">
                 <label>Result 4 Label</label>
@@ -323,8 +323,8 @@ Integrated CRM with marketing automation for seamless handoffs'); ?></textarea>
     <div class="streamline-meta-section">
         <h3>Breadcrumbs & Navigation</h3>
         <div class="streamline-meta-field">
-            <label>Breadcrumb Path (e.g., Home â€º Services â€º Marketing Automation â€º Streamline Sales Funnel)</label>
-            <input type="text" name="streamline_breadcrumb_path" value="<?php echo esc_attr(get_post_meta($post->ID, 'streamline_breadcrumb_path', true) ?: 'Home â€º Services â€º Marketing Automation â€º Streamline Sales Funnel'); ?>" />
+            <label>Breadcrumb Path (e.g., Home › Services › Marketing Automation › Streamline Sales Funnel)</label>
+            <input type="text" name="streamline_breadcrumb_path" value="<?php echo esc_attr(get_post_meta($post->ID, 'streamline_breadcrumb_path', true) ?: 'Home › Services › Marketing Automation › Streamline Sales Funnel'); ?>" />
         </div>
     </div>
 

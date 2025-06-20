@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 /**
  * Microsoft Ads Meta Fields
  *

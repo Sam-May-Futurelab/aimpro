@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 // Events & Webinars Page Meta Fields
 
 function add_events_webinars_meta_boxes() {
@@ -86,7 +86,7 @@ function events_webinars_meta_box_callback($post) {
                 'description' => 'Complete guide to search engine optimisation, covering technical SEO, content optimisation, and link building strategies.',
                 'duration' => '52 min',
                 'views' => '1,240 views',
-                'rating' => '★★★★★ 4.8',
+                'rating' => '????? 4.8',
                 'video_url' => '',
                 'thumbnail_url' => ''
             ),
@@ -95,7 +95,7 @@ function events_webinars_meta_box_callback($post) {
                 'description' => 'Advanced Facebook advertising strategies including audience targeting, creative optimisation, and campaign scaling techniques.',
                 'duration' => '1h 15m',
                 'views' => '890 views',
-                'rating' => '★★★★★ 4.9',
+                'rating' => '????? 4.9',
                 'video_url' => '',
                 'thumbnail_url' => ''
             ),
@@ -104,7 +104,7 @@ function events_webinars_meta_box_callback($post) {
                 'description' => 'Comprehensive walkthrough of GA4 setup, configuration, and advanced reporting for better marketing insights.',
                 'duration' => '38 min',
                 'views' => '2,100 views',
-                'rating' => '★★★★☆ 4.6',
+                'rating' => '????? 4.6',
                 'video_url' => '',
                 'thumbnail_url' => ''
             )
@@ -183,7 +183,7 @@ function events_webinars_meta_box_callback($post) {
         }
         .remove-item {
             background: #dc3232;
-            colour: white;
+            color: white;
             border: none;
             padding: 5px 10px;
             cursor: pointer;
@@ -192,7 +192,7 @@ function events_webinars_meta_box_callback($post) {
         }
         .add-item {
             background: #0073aa;
-            colour: white;
+            color: white;
             border: none;
             padding: 8px 16px;
             cursor: pointer;
@@ -384,7 +384,7 @@ function events_webinars_meta_box_callback($post) {
                             </div>
                             <div class="item-field">
                                 <label>Price:</label>
-                                <input type="text" name="events_webinars_upcoming_events[<?php echo $index; ?>][price]" value="<?php echo esc_attr($event['price']); ?>" placeholder="£49" />
+                                <input type="text" name="events_webinars_upcoming_events[<?php echo $index; ?>][price]" value="<?php echo esc_attr($event['price']); ?>" placeholder="�49" />
                             </div>
                             <div class="item-field">
                                 <label>Registration URL:</label>
@@ -433,7 +433,7 @@ function events_webinars_meta_box_callback($post) {
                             </div>
                             <div class="item-field">
                                 <label>Rating:</label>
-                                <input type="text" name="events_webinars_ondemand_webinars[<?php echo $index; ?>][rating]" value="<?php echo esc_attr($webinar['rating']); ?>" placeholder="★★★★★ 4.8" />
+                                <input type="text" name="events_webinars_ondemand_webinars[<?php echo $index; ?>][rating]" value="<?php echo esc_attr($webinar['rating']); ?>" placeholder="????? 4.8" />
                             </div>
                             <div class="item-field">
                                 <label>Video URL (YouTube, Vimeo, etc.):</label>
@@ -589,7 +589,7 @@ function events_webinars_meta_box_callback($post) {
                     '</div>' +
                     '<div class="item-field">' +
                         '<label>Price:</label>' +
-                        '<input type="text" name="events_webinars_upcoming_events[' + index + '][price]" placeholder="£49" />' +
+                        '<input type="text" name="events_webinars_upcoming_events[' + index + '][price]" placeholder="�49" />' +
                     '</div>' +
                     '<div class="item-field">' +
                         '<label>Registration URL:</label>' +
@@ -623,7 +623,7 @@ function events_webinars_meta_box_callback($post) {
                     '</div>' +
                     '<div class="item-field">' +
                         '<label>Rating:</label>' +
-                        '<input type="text" name="events_webinars_ondemand_webinars[' + index + '][rating]" placeholder="★★★★★ 4.8" />' +
+                        '<input type="text" name="events_webinars_ondemand_webinars[' + index + '][rating]" placeholder="????? 4.8" />' +
                     '</div>' +
                     '<div class="item-field">' +
                         '<label>Video URL (YouTube, Vimeo, etc.):</label>' +

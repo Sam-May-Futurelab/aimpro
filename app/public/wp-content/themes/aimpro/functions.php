@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 /**
  * Aimpro Digital Theme Functions
  * Enhanced with performance optimisations and SEO features
@@ -292,9 +292,9 @@ add_action('wp_head', 'aimpro_add_resource_hints', 1);
 // optimise CSS delivery
 function aimpro_optimise_css_delivery() {
     echo '<style id="critical-css">
-        body{font-family:"Inter",sans-serif;margin:0;padding:0;line-height:1.6;colour:#1a1a1a}
+        body{font-family:"Inter",sans-serif;margin:0;padding:0;line-height:1.6;color:#1a1a1a}
         .sticky-header{position:fixed;top:0;width:100%;z-index:1000;transition:all 0.3s ease}
-        .hero-section{min-height:100vh;display:flex;align-items:centre;background:linear-gradient(135deg,#667eea 0%,#764ba2 100%)}
+        .hero-section{min-height:100vh;display:flex;align-items:center;background:linear-gradient(135deg,#667eea 0%,#764ba2 100%)}
     </style>';
 }
 add_action('wp_head', 'aimpro_optimise_css_delivery', 2);
@@ -391,17 +391,15 @@ function aimpro_insight_meta_box_callback($post) {
     wp_nonce_field('aimpro_save_insight_meta', 'aimpro_insight_meta_nonce');
     $read_time = get_post_meta($post->ID, 'insight_read_time', true);
     $is_featured = get_post_meta($post->ID, 'insight_featured', true);
-    ?>
-    <p>
-        <label for="insight_read_time">Read Time (in minutes):</label>
-        <input type="number" id="insight_read_time" name="insight_read_time" min="1" max="60" value="<?php echo esc_attr($read_time ? $read_time : '5'); ?>">
-    </p>
-    <p>
-        <input type="checkbox" id="insight_featured" name="insight_featured" value="1" <?php checked($is_featured, '1'); ?>>
-        <label for="insight_featured">Feature this insight</label>
-        <span class="description">(Shows in large featured area)</span>
-    </p>
-    <?php
+    echo '<p>';
+    echo '<label for="insight_read_time">Read Time (in minutes):</label>';
+    echo '<input type="number" id="insight_read_time" name="insight_read_time" min="1" max="60" value="' . esc_attr($read_time ? $read_time : '5') . '">';
+    echo '</p>';
+    echo '<p>';
+    echo '<input type="checkbox" id="insight_featured" name="insight_featured" value="1" ' . checked($is_featured, '1', false) . '>';
+    echo '<label for="insight_featured">Feature this insight</label>';
+    echo '<span class="description">(Shows in large featured area)</span>';
+    echo '</p>';
 }
 
 // Save insight meta data
@@ -642,39 +640,39 @@ function aimpro_add_og_meta() {
 }
 add_action('wp_head', 'aimpro_add_og_meta');
 
-// Add theme customiser options
-function aimpro_customise_register($wp_customise) {
+// Add theme customizer options
+function aimpro_customize_register($wp_customize) {
     // Add company info section
-    $wp_customise->add_section('aimpro_company_info', array(
+    $wp_customize->add_section('aimpro_company_info', array(
         'title' => 'Company Information',
         'priority' => 30,
     ));
     
     // Add phone number setting
-    $wp_customise->add_setting('company_phone', array(
+    $wp_customize->add_setting('company_phone', array(
         'default' => '+1 (555) 123-4567',
         'sanitize_callback' => 'sanitize_text_field',
     ));
     
-    $wp_customise->add_control('company_phone', array(
+    $wp_customize->add_control('company_phone', array(
         'label' => 'Phone Number',
         'section' => 'aimpro_company_info',
         'type' => 'text',
     ));
     
     // Add email setting
-    $wp_customise->add_setting('company_email', array(
+    $wp_customize->add_setting('company_email', array(
         'default' => 'hello@aimprodigital.com',
         'sanitize_callback' => 'sanitize_email',
     ));
     
-    $wp_customise->add_control('company_email', array(
+    $wp_customize->add_control('company_email', array(
         'label' => 'Email Address',
         'section' => 'aimpro_company_info',
         'type' => 'email',
     ));
 }
-add_action('customise_register', 'aimpro_customise_register');
+add_action('customize_register', 'aimpro_customize_register');
 
 /**
  * ========================================
@@ -922,7 +920,7 @@ function aimpro_theme_activation() {
 function aimpro_set_default_landing_page_values() {
     $defaults = array(
         'hero_badge_text' => 'Award-Winning Digital Agency',
-        'hero_title' => '<h1 class="hero-title">Scale Your Business With <span class="highlight curly-underline">PRECISION</span> Digital <span class="highlight-word" style="colour: #f15a25 !important; -webkit-text-fill-colour: #f15a25 !important;">Marketing</span></h1>',
+        'hero_title' => '<h1 class="hero-title">Scale Your Business With <span class="highlight curly-underline">PRECISION</span> Digital <span class="highlight-word" style="color: #f15a25 !important; -webkit-text-fill-color: #f15a25 !important;">Marketing</span></h1>',
         'hero_subtitle' => 'Expert Lead Generation, SEO, PPC & Automation. Data-driven strategies that deliver <strong class="highlight-underline">MEASURABLE RESULTS</strong> and accelerate your <strong class="highlight-word">growth</strong>.',
         'hero_primary_cta_text' => 'CLAIM YOUR FREE GROWTH STRATEGY',
         'hero_primary_cta_url' => '#contact',
@@ -1093,8 +1091,12 @@ function aimpro_landing_page_admin() {
                 }
             }
             
-            echo '<div class="notice notice-success"><p>Landing page settings saved successfully!</p></div>';
-        }
+            echo '<div class="notice notice-success"><p>Landing page settings saved successfully!</p></div>';        }
+    }
+    
+    // Only output HTML if we're on the admin page
+    if (!isset($_GET['page']) || $_GET['page'] !== 'aimpro-landing-page') {
+        return;
     }
     
     ?>
@@ -1121,7 +1123,7 @@ function aimpro_landing_page_admin() {
                         <tr>
                             <th scope="row">Main Title</th>
                             <td>
-                                <textarea name="hero_title" rows="3" class="large-text"><?php echo esc_textarea(get_option('hero_title', '<h1 class="hero-title">Scale Your Business With <span class="highlight curly-underline">PRECISION</span> Digital <span class="highlight-word" style="colour: #f15a25 !important; -webkit-text-fill-colour: #f15a25 !important;">Marketing</span></h1>')); ?></textarea>
+                                <textarea name="hero_title" rows="3" class="large-text"><?php echo esc_textarea(get_option('hero_title', '<h1 class="hero-title">Scale Your Business With <span class="highlight curly-underline">PRECISION</span> Digital <span class="highlight-word" style="color: #f15a25 !important; -webkit-text-fill-color: #f15a25 !important;">Marketing</span></h1>')); ?></textarea>
                                 <p class="description">Main hero title (HTML allowed for styling)</p>
                             </td>
                         </tr>
@@ -1684,7 +1686,7 @@ function aimpro_landing_page_admin() {
     }
     .aimpro-admin-section h2 {
         margin-top: 0;
-        colour: #1d2327;
+        color: #1d2327;
         font-size: 18px;
         font-weight: 600;
         border-bottom: 1px solid #dcdcde;
@@ -1918,11 +1920,11 @@ function aimpro_submissions_page() {
         }
         .submission-type.lead_magnet {
             background: #e7f3ff;
-            colour: #0073aa;
+            color: #0073aa;
         }
         .submission-type.contact {
             background: #f0f6fc;
-            colour: #2c3338;
+            color: #2c3338;
         }
         </style>
     </div>
@@ -2248,7 +2250,7 @@ function aimpro_about_video_meta_box_callback($post) {
                 var embedCode = getEmbedCode(url, 300, 200);
                 $('#url_video_preview').html('<div style="max-width: 300px;">' + embedCode + '</div>');
             } else {
-                $('#url_video_preview').html('<p style="colour: #d63384;">Please enter a valid YouTube or Vimeo URL</p>');
+                $('#url_video_preview').html('<p style="color: #d63384;">Please enter a valid YouTube or Vimeo URL</p>');
             }
         }
         

@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 // Improve ROI from Ads Page Meta Fields
 
 function add_improve_roi_ads_meta_boxes() {
@@ -117,14 +117,14 @@ function improve_roi_ads_meta_box_callback($post) {
     // Success Story
     $case_study_label = get_post_meta($post->ID, '_improve_roi_ads_case_study_label', true) ?: 'Success Story';
     $case_study_title = get_post_meta($post->ID, '_improve_roi_ads_case_study_title', true) ?: 'EcoHome Solutions: 320% ROI Improvement';
-    $case_study_content = get_post_meta($post->ID, '_improve_roi_ads_case_study_content', true) ?: 'EcoHome Solutions was spending £15,000/month on Google Ads with poor returns and high cost per acquisition.';
+    $case_study_content = get_post_meta($post->ID, '_improve_roi_ads_case_study_content', true) ?: 'EcoHome Solutions was spending �15,000/month on Google Ads with poor returns and high cost per acquisition.';
     
     $case_study_challenge_title = get_post_meta($post->ID, '_improve_roi_ads_case_study_challenge_title', true) ?: 'The Challenge';
     $case_study_challenges = get_post_meta($post->ID, '_improve_roi_ads_case_study_challenges', true);
     if (empty($case_study_challenges)) {
         $case_study_challenges = array(
-            '£15,000/month ad spend with poor ROI',
-            'Cost per acquisition of £250+ per lead',
+            '�15,000/month ad spend with poor ROI',
+            'Cost per acquisition of �250+ per lead',
             'Low conversion rates (1.2%)',
             'No proper conversion tracking in place'
         );
@@ -300,9 +300,9 @@ function improve_roi_ads_meta_box_callback($post) {
     $cta_features = get_post_meta($post->ID, '_improve_roi_ads_cta_features', true);
     if (empty($cta_features)) {
         $cta_features = array(
-            '✓ Complete performance analysis',
-            '✓ ROI improvement roadmap',
-            '✓ Custom optimisation strategy'
+            '? Complete performance analysis',
+            '? ROI improvement roadmap',
+            '? Custom optimisation strategy'
         );
     }
 
@@ -341,7 +341,7 @@ function improve_roi_ads_meta_box_callback($post) {
             margin-bottom: 15px;
             padding: 10px;
             background: #0073aa;
-            colour: white;
+            color: white;
             border-radius: 3px;
         }
         .improve-roi-ads-meta .image-preview {
@@ -880,7 +880,7 @@ function improve_roi_ads_meta_box_callback($post) {
                                     <input type="text" 
                                            name="improve_roi_ads_cta_features[]" 
                                            value="<?php echo esc_attr($feature); ?>"
-                                           placeholder="✓ Feature item" />
+                                           placeholder="? Feature item" />
                                     <button type="button" class="button remove-repeater-item">Remove</button>
                                 </div>
                             <?php endforeach; ?>

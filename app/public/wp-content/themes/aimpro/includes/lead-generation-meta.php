@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 // Lead Generation Page Meta Fields
 
 function add_lead_generation_meta_boxes() {
@@ -260,9 +260,9 @@ function lead_generation_meta_box_callback($post) {
     $cta_benefits = get_post_meta($post->ID, '_lead_generation_cta_benefits', true);
     if (empty($cta_benefits)) {
         $cta_benefits = array(
-            '✓ Custom lead generation strategy',
-            '✓ Multi-channel campaign setup',
-            '✓ CRM integration included'
+            '? Custom lead generation strategy',
+            '? Multi-channel campaign setup',
+            '? CRM integration included'
         );
     }
 
@@ -315,7 +315,7 @@ function lead_generation_meta_box_callback($post) {
             margin-bottom: 15px;
             padding: 10px;
             background: #0073aa;
-            colour: white;
+            color: white;
             border-radius: 3px;
         }
     </style>
@@ -784,7 +784,7 @@ function lead_generation_meta_box_callback($post) {
                                     <input type="text" 
                                            name="lead_generation_cta_benefits[]" 
                                            value="<?php echo esc_attr($benefit); ?>"
-                                           placeholder="✓ Benefit item" />
+                                           placeholder="? Benefit item" />
                                     <button type="button" class="button remove-repeater-item">Remove</button>
                                 </div>
                             <?php endforeach; ?>

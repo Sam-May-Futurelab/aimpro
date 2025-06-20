@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 // Meta fields for Streamline Your Sales Funnel page
 
 // Enqueue media uploader scripts
@@ -96,7 +96,7 @@ function streamline_sales_funnel_meta_callback($post) {
             array('label' => 'Conversion Rate Increase', 'value' => '340%'),
             array('label' => 'Sales Cycle Reduction', 'value' => '45%'),
             array('label' => 'Lead Quality Improvement', 'value' => '280%'),
-            array('label' => 'Revenue Growth', 'value' => '£125K')
+            array('label' => 'Revenue Growth', 'value' => '�125K')
         );
         update_post_meta($post->ID, 'streamline_sales_funnel_case_results', $default_results);
     }
@@ -259,7 +259,7 @@ function streamline_sales_funnel_meta_callback($post) {
             array('label' => 'Conversion Rate Increase', 'value' => '340%'),
             array('label' => 'Sales Cycle Reduction', 'value' => '45%'),
             array('label' => 'Lead Quality Improvement', 'value' => '280%'),
-            array('label' => 'Revenue Growth', 'value' => '£125K')
+            array('label' => 'Revenue Growth', 'value' => '�125K')
         );
         $results = get_post_meta($post->ID, 'streamline_sales_funnel_case_results', true) ?: $default_results;
         if (!is_array($results)) $results = $default_results;
@@ -590,7 +590,7 @@ function marketing_automation_meta_callback($post) {
     ?>
     <style>
         .meta-section { margin-bottom: 30px; padding: 15px; border: 1px solid #ddd; }
-        .meta-section h3 { margin-top: 0; colour: #23282d; }
+        .meta-section h3 { margin-top: 0; color: #23282d; }
         .meta-field { margin-bottom: 15px; }
         .meta-field label { display: block; margin-bottom: 5px; font-weight: 600; }
         .meta-field input, .meta-field textarea { width: 100%; }
@@ -890,7 +890,7 @@ function marketing_automation_meta_callback($post) {
         </div>
         <div class="meta-field">
             <label>CTA Features (comma-separated)</label>
-            <input type="text" name="ma_cta_features" value="<?php echo esc_attr(get_post_meta($post->ID, 'ma_cta_features', true) ?: '✓ Free process analysis, ✓ Custom automation strategy, ✓ ROI projection included'); ?>" />
+            <input type="text" name="ma_cta_features" value="<?php echo esc_attr(get_post_meta($post->ID, 'ma_cta_features', true) ?: '? Free process analysis, ? Custom automation strategy, ? ROI projection included'); ?>" />
         </div>
     </div>
     <?php
@@ -950,7 +950,7 @@ function ai_crm_setup_meta_callback($post) {
     ?>
     <style>
         .ai-meta-section { margin-bottom: 25px; padding: 15px; border: 1px solid #ddd; }
-        .ai-meta-section h3 { margin-top: 0; colour: #23282d; }
+        .ai-meta-section h3 { margin-top: 0; color: #23282d; }
         .ai-meta-field { margin-bottom: 15px; }
         .ai-meta-field label { display: block; margin-bottom: 5px; font-weight: 600; }
         .ai-meta-field input, .ai-meta-field textarea { width: 100%; }
@@ -1128,7 +1128,7 @@ function ai_crm_setup_meta_callback($post) {
         <div class="ai-stats-row">
             <div class="ai-meta-field">
                 <label>Result 4 Number</label>
-                <input type="text" name="ai_result_4_number" value="<?php echo esc_attr(get_post_meta($post->ID, 'ai_result_4_number', true) ?: '£2.1M'); ?>" />
+                <input type="text" name="ai_result_4_number" value="<?php echo esc_attr(get_post_meta($post->ID, 'ai_result_4_number', true) ?: '�2.1M'); ?>" />
             </div>
             <div class="ai-meta-field">
                 <label>Result 4 Label</label>
@@ -1265,7 +1265,7 @@ function email_sms_flows_meta_callback($post) {
     ?>
     <style>
         .email-meta-section { margin-bottom: 25px; padding: 15px; border: 1px solid #ddd; }
-        .email-meta-section h3 { margin-top: 0; colour: #23282d; }
+        .email-meta-section h3 { margin-top: 0; color: #23282d; }
         .email-meta-field { margin-bottom: 15px; }
         .email-meta-field label { display: block; margin-bottom: 5px; font-weight: 600; }
         .email-meta-field input, .email-meta-field textarea { width: 100%; }
@@ -1443,7 +1443,7 @@ function email_sms_flows_meta_callback($post) {
         <div class="email-stats-row">
             <div class="email-meta-field">
                 <label>Result 4 Number</label>
-                <input type="text" name="email_result_4_number" value="<?php echo esc_attr(get_post_meta($post->ID, 'email_result_4_number', true) ?: '£185K'); ?>" />
+                <input type="text" name="email_result_4_number" value="<?php echo esc_attr(get_post_meta($post->ID, 'email_result_4_number', true) ?: '�185K'); ?>" />
             </div>
             <div class="email-meta-field">
                 <label>Result 4 Label</label>

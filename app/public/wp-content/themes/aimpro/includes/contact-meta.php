@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 /**
  * Contact Page Meta Fields
  * Adds custom meta box for Contact Page template with editable content fields
@@ -127,7 +127,7 @@ function aimpro_contact_meta_box_callback($post) {
     if (empty($contact_social_proof_subtitle)) $contact_social_proof_subtitle = 'From startups to established enterprises, we\'ve helped businesses across industries achieve their digital marketing goals.';
     if (empty($contact_stat_1_number)) $contact_stat_1_number = '500%';
     if (empty($contact_stat_1_label)) $contact_stat_1_label = 'Average Lead Increase';
-    if (empty($contact_stat_2_number)) $contact_stat_2_number = '£2.4M+';
+    if (empty($contact_stat_2_number)) $contact_stat_2_number = '�2.4M+';
     if (empty($contact_stat_2_label)) $contact_stat_2_label = 'Revenue Generated';
     if (empty($contact_stat_3_number)) $contact_stat_3_number = '98%';
     if (empty($contact_stat_3_label)) $contact_stat_3_label = 'Client Satisfaction';
@@ -140,7 +140,7 @@ function aimpro_contact_meta_box_callback($post) {
     if (empty($contact_final_cta_description)) $contact_final_cta_description = 'Don\'t let your competitors get ahead. Schedule a free consultation today and discover how we can help you achieve your business goals with proven digital marketing strategies.';
     if (empty($contact_final_cta_phone_text)) $contact_final_cta_phone_text = 'Call Now: +44 121 285 8490';
     if (empty($contact_final_cta_email_text)) $contact_final_cta_email_text = 'Send Email';
-    if (empty($contact_final_cta_guarantee)) $contact_final_cta_guarantee = 'Free Consultation • No Obligation • Immediate Value';
+    if (empty($contact_final_cta_guarantee)) $contact_final_cta_guarantee = 'Free Consultation � No Obligation � Immediate Value';
     
     ?>
     <style>
@@ -164,7 +164,7 @@ function aimpro_contact_meta_box_callback($post) {
     }
     .aimpro-contact-meta .description {
         font-style: italic;
-        colour: #666;
+        color: #666;
         margin-top: 5px;
     }
     .aimpro-contact-section {
@@ -176,7 +176,7 @@ function aimpro_contact_meta_box_callback($post) {
     .aimpro-contact-section h4 {
         margin: 0 0 15px 0;
         padding: 0;
-        colour: #333;
+        color: #333;
         border-bottom: 2px solid #0073aa;
         padding-bottom: 10px;
     }
@@ -186,7 +186,7 @@ function aimpro_contact_meta_box_callback($post) {
         <p><strong>Edit the content for your Contact page below:</strong></p>
           <!-- Hero Section -->
         <div class="aimpro-contact-section">
-            <h4>🎯 Hero Section</h4>
+            <h4>?? Hero Section</h4>
             <table class="form-table">
                 <tr>
                     <th scope="row">
@@ -220,7 +220,7 @@ function aimpro_contact_meta_box_callback($post) {
         
         <!-- Contact Information -->
         <div class="aimpro-contact-section">
-            <h4>📞 Contact Information Cards</h4>
+            <h4>?? Contact Information Cards</h4>
             <table class="form-table">
                 <tr>
                     <th scope="row">
@@ -280,7 +280,7 @@ function aimpro_contact_meta_box_callback($post) {
         </div>
           <!-- Contact Form -->
         <div class="aimpro-contact-section">
-            <h4>📝 Contact Form Section</h4>
+            <h4>?? Contact Form Section</h4>
             <table class="form-table">
                 <tr>
                     <th scope="row">
@@ -367,7 +367,7 @@ function aimpro_contact_meta_box_callback($post) {
         
         <!-- Office/Visit Section -->
         <div class="aimpro-contact-section">
-            <h4>🏢 Office Visit Section</h4>
+            <h4>?? Office Visit Section</h4>
             <table class="form-table">
                 <tr>
                     <th scope="row">
@@ -436,7 +436,7 @@ function aimpro_contact_meta_box_callback($post) {
         
         <!-- FAQ Section -->
         <div class="aimpro-contact-section">
-            <h4>❓ FAQ Section</h4>
+            <h4>? FAQ Section</h4>
             <table class="form-table">
                 <tr>
                     <th scope="row">
@@ -568,7 +568,7 @@ function aimpro_contact_meta_box_callback($post) {
 
         <!-- Social Proof Section -->
         <div class="aimpro-contact-section">
-            <h4>🏆 Social Proof Section</h4>
+            <h4>?? Social Proof Section</h4>
             <table class="form-table">
                 <tr>
                     <th scope="row">
@@ -612,7 +612,7 @@ function aimpro_contact_meta_box_callback($post) {
                     </th>
                     <td>
                         <input type="text" id="contact_stat_2_number" name="contact_stat_2_number" value="<?php echo esc_attr($contact_stat_2_number); ?>" />
-                        <p class="description">Second statistic number (e.g., "£2.4M+").</p>
+                        <p class="description">Second statistic number (e.g., "�2.4M+").</p>
                     </td>
                 </tr>
                 <tr>
@@ -692,7 +692,7 @@ function aimpro_contact_meta_box_callback($post) {
         
         <!-- Final CTA Section -->
         <div class="aimpro-contact-section">
-            <h4>🎯 Final Call-to-Action</h4>
+            <h4>?? Final Call-to-Action</h4>
             <table class="form-table">
                 <tr>
                     <th scope="row">
@@ -734,7 +734,7 @@ function aimpro_contact_meta_box_callback($post) {
         </div>
         
         <div style="background: #e7f3ff; padding: 15px; border-radius: 5px; margin-top: 20px;">
-            <p><strong>💡 How to use these fields:</strong></p>
+            <p><strong>?? How to use these fields:</strong></p>
             <p>These values are accessed in your template using: <code>&lt;?php echo aimpro_get_field('field_name', 'Fallback Value'); ?&gt;</code></p>
             <p>After saving, the content will appear on your Contact page immediately.</p>
         </div>
@@ -849,7 +849,3 @@ function aimpro_save_contact_meta_fields($post_id) {
         }
     }
 }
-
-// Contact Meta integration complete
-// The enhanced aimpro_get_field() function in functions.php
-// now automatically checks post meta for contact fields

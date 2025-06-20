@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 // Industries Page Meta Fields
 
 function add_industries_meta_boxes() {
@@ -118,7 +118,7 @@ function industries_meta_box_callback($post) {
         $success_stats = array(
             array('number' => '400%', 'label' => 'Average ROI increase across all industries'),
             array('number' => '95%', 'label' => 'Client retention rate'),
-            array('number' => '£2.8M+', 'label' => 'Revenue generated for clients')
+            array('number' => '�2.8M+', 'label' => 'Revenue generated for clients')
         );
     }
 
@@ -133,7 +133,7 @@ function industries_meta_box_callback($post) {
                 'description' => 'We understand your customer\'s journey, pain points, and decision-making process.'
             ),
             array(
-                'icon' => '📊',
+                'icon' => '??',
                 'title' => 'Leverage Industry Data',
                 'description' => 'Access to sector-specific benchmarks, trends, and performance metrics.'
             ),
@@ -143,7 +143,7 @@ function industries_meta_box_callback($post) {
                 'description' => 'Pre-tested strategies and proven tactics that work in your specific market.'
             ),
             array(
-                'icon' => '🔒',
+                'icon' => '??',
                 'title' => 'Ensure Compliance',
                 'description' => 'Navigate industry regulations and advertising guidelines with confidence.'
             )
@@ -221,7 +221,7 @@ function industries_meta_box_callback($post) {
         }
         .remove-item {
             background: #dc3232;
-            colour: white;
+            color: white;
             border: none;
             padding: 5px 10px;
             cursor: pointer;
@@ -230,7 +230,7 @@ function industries_meta_box_callback($post) {
         }
         .add-item {
             background: #0073aa;
-            colour: white;
+            color: white;
             border: none;
             padding: 8px 16px;
             cursor: pointer;
@@ -268,14 +268,14 @@ function industries_meta_box_callback($post) {
         }
         .remove-list-item {
             background: #dc3232;
-            colour: white;
+            color: white;
             border: none;
             padding: 5px 10px;
             cursor: pointer;
         }
         .add-list-item {
             background: #0073aa;
-            colour: white;
+            color: white;
             border: none;
             padding: 5px 10px;
             cursor: pointer;

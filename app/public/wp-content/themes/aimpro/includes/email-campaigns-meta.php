@@ -1,4 +1,4 @@
-ï»¿<?php
+<?php
 // Meta fields for Email Campaigns page
 add_action('add_meta_boxes', function() {
     global $post;
@@ -14,7 +14,7 @@ function email_campaigns_meta_callback($post) {
     ?>
     <style>
         .email-campaigns-meta-section { margin-bottom: 25px; padding: 15px; border: 1px solid #ddd; }
-        .email-campaigns-meta-section h3 { margin-top: 0; colour: #23282d; }
+        .email-campaigns-meta-section h3 { margin-top: 0; color: #23282d; }
         .email-campaigns-meta-field { margin-bottom: 15px; }
         .email-campaigns-meta-field label { display: block; margin-bottom: 5px; font-weight: 600; }
         .email-campaigns-meta-field input, .email-campaigns-meta-field textarea { width: 100%; }
@@ -148,7 +148,7 @@ function email_campaigns_meta_callback($post) {
         </div>
         <div class="email-campaigns-meta-field">
             <label>Case Study Intro</label>
-            <textarea name="email_campaigns_case_intro"><?php echo esc_textarea(get_post_meta($post->ID, 'email_campaigns_case_intro', true) ?: 'How we helped a B2B software company increase their email marketing ROI by 4,200% and generate Â£350K in additional revenue through strategic campaign optimisation.'); ?></textarea>
+            <textarea name="email_campaigns_case_intro"><?php echo esc_textarea(get_post_meta($post->ID, 'email_campaigns_case_intro', true) ?: 'How we helped a B2B software company increase their email marketing ROI by 4,200% and generate £350K in additional revenue through strategic campaign optimisation.'); ?></textarea>
         </div>
         <div class="email-campaigns-meta-field">
             <label>Challenge Description</label>
@@ -192,7 +192,7 @@ function email_campaigns_meta_callback($post) {
         <div class="email-campaigns-stats-row">
             <div class="email-campaigns-meta-field">
                 <label>Result 4 Number</label>
-                <input type="text" name="email_campaigns_result_4_number" value="<?php echo esc_attr(get_post_meta($post->ID, 'email_campaigns_result_4_number', true) ?: 'Â£350K'); ?>" />
+                <input type="text" name="email_campaigns_result_4_number" value="<?php echo esc_attr(get_post_meta($post->ID, 'email_campaigns_result_4_number', true) ?: '£350K'); ?>" />
             </div>
             <div class="email-campaigns-meta-field">
                 <label>Result 4 Label</label>
@@ -240,7 +240,7 @@ function email_campaigns_meta_callback($post) {
         <h3>Testimonial</h3>
         <div class="email-campaigns-meta-field">
             <label>Testimonial Quote</label>
-            <textarea name="email_campaigns_testimonial_quote"><?php echo esc_textarea(get_post_meta($post->ID, 'email_campaigns_testimonial_quote', true) ?: 'Aimpro transformed our email marketing from an afterthought to our most profitable channel. Our ROI increased by 4,200% and we\'re generating Â£350K more revenue annually. Their strategic approach is unmatched.'); ?></textarea>
+            <textarea name="email_campaigns_testimonial_quote"><?php echo esc_textarea(get_post_meta($post->ID, 'email_campaigns_testimonial_quote', true) ?: 'Aimpro transformed our email marketing from an afterthought to our most profitable channel. Our ROI increased by 4,200% and we\'re generating £350K more revenue annually. Their strategic approach is unmatched.'); ?></textarea>
         </div>
         <div class="email-campaigns-meta-field">
             <label>Testimonial Author Name</label>

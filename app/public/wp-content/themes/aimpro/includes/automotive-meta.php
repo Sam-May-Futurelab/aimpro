@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 // Automotive Page Meta Fields
 
 function add_automotive_meta_boxes() {
@@ -108,7 +108,7 @@ function automotive_meta_box_callback($post) {
             array('number' => '180%', 'label' => 'Increase in Qualified Leads'),
             array('number' => '250%', 'label' => 'Service Bookings Growth'),
             array('number' => '320%', 'label' => 'Local Search Visibility'),
-            array('number' => '4.8★', 'label' => 'Average Review Rating')
+            array('number' => '4.8?', 'label' => 'Average Review Rating')
         );
     }
     $case_study_link_text = get_post_meta($post->ID, '_automotive_case_study_link_text', true);
@@ -182,9 +182,9 @@ function automotive_meta_box_callback($post) {
     $cta_benefits = get_post_meta($post->ID, '_automotive_cta_benefits', true);
     if (empty($cta_benefits)) {
         $cta_benefits = array(
-            '✓ Free competitive analysis',
-            '✓ Custom strategy recommendations',
-            '✓ No obligation consultation'
+            '? Free competitive analysis',
+            '? Custom strategy recommendations',
+            '? No obligation consultation'
         );
     }
 
@@ -225,7 +225,7 @@ function automotive_meta_box_callback($post) {
         }
         .remove-item {
             background: #dc3232;
-            colour: white;
+            color: white;
             border: none;
             padding: 5px 10px;
             cursor: pointer;
@@ -234,7 +234,7 @@ function automotive_meta_box_callback($post) {
         }
         .add-item {
             background: #0073aa;
-            colour: white;
+            color: white;
             border: none;
             padding: 8px 16px;
             cursor: pointer;
@@ -269,7 +269,7 @@ function automotive_meta_box_callback($post) {
         }
         .upload-button {
             background: #0073aa;
-            colour: white;
+            color: white;
             border: none;
             padding: 8px 16px;
             cursor: pointer;
@@ -277,7 +277,7 @@ function automotive_meta_box_callback($post) {
         }
         .remove-image {
             background: #dc3232;
-            colour: white;
+            color: white;
             border: none;
             padding: 8px 16px;
             cursor: pointer;
@@ -297,14 +297,14 @@ function automotive_meta_box_callback($post) {
         }
         .remove-list-item {
             background: #dc3232;
-            colour: white;
+            color: white;
             border: none;
             padding: 5px 10px;
             cursor: pointer;
         }
         .add-list-item {
             background: #0073aa;
-            colour: white;
+            color: white;
             border: none;
             padding: 5px 10px;
             cursor: pointer;
@@ -611,7 +611,7 @@ function automotive_meta_box_callback($post) {
                 <div id="cta-benefits-container">
                     <?php foreach ($cta_benefits as $index => $benefit): ?>
                         <div class="list-item">
-                            <input type="text" name="automotive_cta_benefits[<?php echo $index; ?>]" value="<?php echo esc_attr($benefit); ?>" placeholder="✓ Benefit..." />
+                            <input type="text" name="automotive_cta_benefits[<?php echo $index; ?>]" value="<?php echo esc_attr($benefit); ?>" placeholder="? Benefit..." />
                             <button type="button" class="remove-list-item">Remove</button>
                         </div>
                     <?php endforeach; ?>

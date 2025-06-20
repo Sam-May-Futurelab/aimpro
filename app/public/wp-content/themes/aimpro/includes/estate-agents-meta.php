@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 // Estate Agents Page Meta Fields
 
 function add_estate_agents_meta_boxes() {
@@ -179,9 +179,9 @@ function estate_agents_meta_box_callback($post) {
     $cta_benefits = get_post_meta($post->ID, '_estate_agents_cta_benefits', true);
     if (empty($cta_benefits)) {
         $cta_benefits = array(
-            '✓ Property market expertise',
-            '✓ Local SEO specialists',
-            '✓ Vendor lead generation'
+            '? Property market expertise',
+            '? Local SEO specialists',
+            '? Vendor lead generation'
         );
     }
 
@@ -235,7 +235,7 @@ function estate_agents_meta_box_callback($post) {
             margin-bottom: 15px;
             padding: 10px;
             background: #0073aa;
-            colour: white;
+            color: white;
             border-radius: 3px;
         }
     </style>
@@ -709,7 +709,7 @@ function estate_agents_meta_box_callback($post) {
                                     <input type="text" 
                                            name="estate_agents_cta_benefits[]" 
                                            value="<?php echo esc_attr($benefit); ?>"
-                                           placeholder="✓ Benefit item" />
+                                           placeholder="? Benefit item" />
                                     <button type="button" class="button remove-repeater-item">Remove</button>
                                 </div>
                             <?php endforeach; ?>

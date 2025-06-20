@@ -1,4 +1,4 @@
-ï»¿<?php
+<?php
 /**
  * Funnel Builds Meta Fields
  * Adds custom meta box for Funnel Builds template with editable content fields
@@ -81,7 +81,7 @@ function aimpro_funnelbuilds_meta_box_callback($post) {
         'fb_case_study_challenge' => 'ProCoach had a great online course but was struggling with a single-page sales approach that achieved only a 1.8% conversion rate. Despite quality traffic from Facebook ads, they were losing potential customers due to asking for the sale too quickly without sufficient trust-building.',
         'fb_case_study_stat1_number' => '1.8%',
         'fb_case_study_stat1_label' => 'Conversion Rate',
-        'fb_case_study_stat2_number' => 'Â£12.40',
+        'fb_case_study_stat2_number' => '£12.40',
         'fb_case_study_stat2_label' => 'Cost per Lead',
         'fb_case_study_solution_title' => 'Our Solution',
         'fb_case_study_solution' => "Multi-Step Funnel Design: Created a 4-step funnel with micro-commitments instead of direct sales\nValue-First Approach: Delivered free valuable content before asking for the purchase\nWebinar Integration: Added a high-value webinar as a middle-funnel conversion tool\nEmail Nurture Sequence: Developed a 14-day email sequence to warm up cold leads\nRetargeting Strategy: Implemented targeted ads for visitors at different funnel stages",
@@ -90,9 +90,9 @@ function aimpro_funnelbuilds_meta_box_callback($post) {
         'fb_case_study_result1_label' => 'Increase in Course Sales',
         'fb_case_study_result2_number' => '21.6%',
         'fb_case_study_result2_label' => 'Final Conversion Rate',
-        'fb_case_study_result3_number' => 'Â£3.80',
+        'fb_case_study_result3_number' => '£3.80',
         'fb_case_study_result3_label' => 'Reduced Cost per Lead',
-        'fb_case_study_result4_number' => 'Â£520K',
+        'fb_case_study_result4_number' => '£520K',
         'fb_case_study_result4_label' => 'Additional Annual Revenue',
         
         // Types of Funnels Section
@@ -136,20 +136,20 @@ function aimpro_funnelbuilds_meta_box_callback($post) {
         'fb_packages_subtitle' => 'Complete funnel solutions designed to convert your prospects into paying customers',
         
         'fb_package1_title' => 'Lead Generation Funnel',
-        'fb_package1_price' => 'Â£2,497',
+        'fb_package1_price' => '£2,497',
         'fb_package1_description' => 'Perfect for growing your email list',
         'fb_package1_features' => "2-3 step funnel design\nLead magnet creation\nLanding page & thank you page\nEmail integration\n5-part email sequence\nBasic tracking setup\n14-day delivery\n30 days support",
         'fb_package1_cta' => 'Get Started',
         
         'fb_package2_title' => 'Full Sales Funnel',
-        'fb_package2_price' => 'Â£4,997',
+        'fb_package2_price' => '£4,997',
         'fb_package2_description' => 'Complete system to sell products or services',
         'fb_package2_features' => "4-6 step funnel design\nLead magnet & tripwire offer\nSales page & checkout integration\nUpsell/downsell sequences\n10-part email automation\nRetargeting strategy\nA/B testing setup\n21-day delivery\n60 days support",
         'fb_package2_label' => 'Best Value',
         'fb_package2_cta' => 'Get Started',
         
         'fb_package3_title' => 'Complete Funnel System',
-        'fb_package3_price' => 'Â£9,997',
+        'fb_package3_price' => '£9,997',
         'fb_package3_description' => 'End-to-end marketing and sales ecosystem',
         'fb_package3_features' => "Full marketing ecosystem\nMultiple interconnected funnels\nWebinar or video series funnel\nComplete email marketing system\nAdvanced segmentation\nFull analytics & reporting\nConversion optimisation\nSales integration & training\n30-day delivery\n90 days support\nOngoing optimisation",
         'fb_package3_cta' => 'Get Started',
@@ -266,7 +266,7 @@ function aimpro_funnelbuilds_meta_box_callback($post) {
         }
         .meta-description {
             font-style: italic;
-            colour: #777;
+            color: #777;
             margin-bottom: 5px;
         }
         .meta-field input[type="text"], 

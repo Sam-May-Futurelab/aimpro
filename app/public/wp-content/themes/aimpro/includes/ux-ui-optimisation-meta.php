@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 /**
  * UX/UI optimisation Meta Fields
  * Adds custom meta box for UX/UI optimisation template with editable content fields

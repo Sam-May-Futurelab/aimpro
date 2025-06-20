@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 /**
  * Advertising & PPC Meta Fields
  *

@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 /**
  * SEO Services Page Meta Boxes
  */

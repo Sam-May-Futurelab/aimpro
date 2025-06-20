@@ -1,4 +1,4 @@
-ï»¿<?php
+<?php
 /**
  * Landing Pages Meta Fields
  * Adds custom meta box for Landing Pages template with editable content fields
@@ -75,7 +75,7 @@ function aimpro_landingpages_meta_box_callback($post) {
         'lp_case_study_challenge' => 'FitLife Academy was driving traffic to their course sales page but experiencing a disappointing 2.3% conversion rate. Despite quality traffic from Facebook ads, they were losing potential customers due to unclear messaging and poor page structure.',
         'lp_case_study_stat1_number' => '2.3%',
         'lp_case_study_stat1_label' => 'Conversion Rate',
-        'lp_case_study_stat2_number' => 'Â£8.50',
+        'lp_case_study_stat2_number' => '£8.50',
         'lp_case_study_stat2_label' => 'Cost per Lead',
         'lp_case_study_solution_title' => 'Our Solution',
         'lp_case_study_solution' => "Message-Match optimisation: Aligned landing page copy with ad messaging for consistency\nClear Value Proposition: Highlighted unique benefits and transformation outcomes\nSocial Proof Integration: Added testimonials, reviews, and success stories\nStreamlined Forms: Reduced form fields and optimised conversion flow\nMobile optimisation: Enhanced mobile experience for 70% mobile traffic",
@@ -84,9 +84,9 @@ function aimpro_landingpages_meta_box_callback($post) {
         'lp_case_study_result1_label' => 'Increase in Course Sales',
         'lp_case_study_result2_number' => '13.4%',
         'lp_case_study_result2_label' => 'New Conversion Rate',
-        'lp_case_study_result3_number' => 'Â£2.10',
+        'lp_case_study_result3_number' => '£2.10',
         'lp_case_study_result3_label' => 'Reduced Cost per Lead',
-        'lp_case_study_result4_number' => 'Â£340K',
+        'lp_case_study_result4_number' => '£340K',
         'lp_case_study_result4_label' => 'Additional Annual Revenue',
         
         // Types of Landing Pages Section
@@ -130,20 +130,20 @@ function aimpro_landingpages_meta_box_callback($post) {
         'lp_packages_subtitle' => 'Fast, effective landing pages designed to convert your traffic into customers.',
         
         'lp_package1_title' => 'Single Landing Page',
-        'lp_package1_price' => 'Â£997',
+        'lp_package1_price' => '£997',
         'lp_package1_description' => 'Perfect for single campaigns',
         'lp_package1_features' => "1 custom landing page\nMobile-responsive design\nLead capture form\nBasic analytics setup\n1 round of revisions\n7-day delivery\n14 days support",
         'lp_package1_cta' => 'Get Started',
         
         'lp_package2_title' => 'Landing Page Bundle',
-        'lp_package2_price' => 'Â£2,497',
+        'lp_package2_price' => '£2,497',
         'lp_package2_description' => 'Ideal for multiple campaigns',
         'lp_package2_features' => "3 custom landing pages\nAdvanced mobile optimisation\nMulti-step forms\nConversion tracking setup\nA/B testing setup\nCRM integration\n2 rounds of revisions\n10-day delivery\n30 days support",
         'lp_package2_label' => 'Best Value',
         'lp_package2_cta' => 'Get Started',
         
         'lp_package3_title' => 'Funnel Series',
-        'lp_package3_price' => 'Â£4,997',
+        'lp_package3_price' => '£4,997',
         'lp_package3_description' => 'Complete conversion funnel',
         'lp_package3_features' => "5+ landing pages\nComplete sales funnel\nAdvanced integrations\nEmail automation setup\nPayment processing\nComprehensive analytics\nUnlimited revisions\n14-day delivery\n60 days support\nOngoing optimisation",
         'lp_package3_cta' => 'Get Started',
@@ -249,7 +249,7 @@ function aimpro_landingpages_meta_box_callback($post) {
         }
         .meta-description {
             font-style: italic;
-            colour: #777;
+            color: #777;
             margin-bottom: 5px;
         }
         .meta-field input[type="text"], 

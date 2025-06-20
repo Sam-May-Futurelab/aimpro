@@ -1,4 +1,4 @@
-ï»¿<?php
+<?php
 // High-Converting Website Page Meta Fields
 
 function add_high_converting_website_meta_boxes() {
@@ -52,7 +52,7 @@ function high_converting_website_meta_box_callback($post) {
     $header_title = get_post_meta($post->ID, '_high_converting_website_header_title', true) ?: 'Build a High-Converting Website';
     $header_subtitle = get_post_meta($post->ID, '_high_converting_website_header_subtitle', true) ?: 'Create a website that turns visitors into customers with conversion-focused design and optimisation';    // Solution Overview
     $overview_title = get_post_meta($post->ID, '_high_converting_website_overview_title', true) ?: 'Transform Visitors Into Paying Customers';
-    $overview_content = get_post_meta($post->ID, '_high_converting_website_overview_content', true) ?: 'Your website is your most powerful sales tool, working 24/7 to convert visitors into customers. Our data-driven approach to website design and optimisation focuses on user experience, conversion psychology, and performance to create websites that don\'t just look goodâ€”they deliver results.';
+    $overview_content = get_post_meta($post->ID, '_high_converting_website_overview_content', true) ?: 'Your website is your most powerful sales tool, working 24/7 to convert visitors into customers. Our data-driven approach to website design and optimisation focuses on user experience, conversion psychology, and performance to create websites that don\'t just look good—they deliver results.';
     $overview_image = get_post_meta($post->ID, '_high_converting_website_overview_image', true);
     
     // Challenges
@@ -311,9 +311,9 @@ function high_converting_website_meta_box_callback($post) {
     $cta_benefits = get_post_meta($post->ID, '_high_converting_website_cta_benefits', true);
     if (empty($cta_benefits)) {
         $cta_benefits = array(
-            'âœ“ Conversion-focused design',
-            'âœ“ Mobile optimisation included',
-            'âœ“ A/B testing setup'
+            '? Conversion-focused design',
+            '? Mobile optimisation included',
+            '? A/B testing setup'
         );
     }
     ?>
@@ -366,7 +366,7 @@ function high_converting_website_meta_box_callback($post) {
                 position: absolute;
                 top: 5px;
                 right: 5px;
-                colour: #a00;
+                color: #a00;
                 cursor: pointer;
             }
             .high-converting-website-meta-box .add-item {
@@ -385,7 +385,7 @@ function high_converting_website_meta_box_callback($post) {
                 margin-top: 10px;
             }            .high-converting-website-meta-box .field-description {
                 font-style: italic;
-                colour: #666;
+                color: #666;
                 font-size: 0.9em;
             }
             .high-converting-website-meta-box .image-upload-container {
@@ -467,13 +467,13 @@ function high_converting_website_meta_box_callback($post) {
                 <?php if (!empty($challenges)) : ?>
                     <?php foreach ($challenges as $index => $challenge) : ?>
                         <div class="repeater-item">
-                            <span class="remove-item">Ã—</span>
+                            <span class="remove-item">×</span>
                             <input type="text" name="high_converting_website_challenges[]" value="<?php echo esc_attr($challenge); ?>" placeholder="Enter a challenge..." />
                         </div>
                     <?php endforeach; ?>
                 <?php else : ?>
                     <div class="repeater-item">
-                        <span class="remove-item">Ã—</span>
+                        <span class="remove-item">×</span>
                         <input type="text" name="high_converting_website_challenges[]" value="" placeholder="Enter a challenge..." />
                     </div>
                 <?php endif; ?>
@@ -498,7 +498,7 @@ function high_converting_website_meta_box_callback($post) {
                 <?php if (!empty($services)) : ?>
                     <?php foreach ($services as $index => $service) : ?>
                         <div class="repeater-item">
-                            <span class="remove-item">Ã—</span>
+                            <span class="remove-item">×</span>
                             <div class="item-fields">
                                 <p>
                                     <label class="repeater-label">Service Title</label>
@@ -513,7 +513,7 @@ function high_converting_website_meta_box_callback($post) {
                                     <label class="repeater-label">Service Features</label>
                                     <?php foreach ($service['features'] as $feature_index => $feature) : ?>
                                         <div class="repeater-item">
-                                            <span class="remove-item">Ã—</span>
+                                            <span class="remove-item">×</span>
                                             <input type="text" name="high_converting_website_services[<?php echo $index; ?>][features][]" value="<?php echo esc_attr($feature); ?>" placeholder="Feature..." />
                                         </div>
                                     <?php endforeach; ?>
@@ -524,7 +524,7 @@ function high_converting_website_meta_box_callback($post) {
                     <?php endforeach; ?>
                 <?php else : ?>
                     <div class="repeater-item">
-                        <span class="remove-item">Ã—</span>
+                        <span class="remove-item">×</span>
                         <div class="item-fields">
                             <p>
                                 <label class="repeater-label">Service Title</label>
@@ -538,7 +538,7 @@ function high_converting_website_meta_box_callback($post) {
                             <div class="nested-repeater">
                                 <label class="repeater-label">Service Features</label>
                                 <div class="repeater-item">
-                                    <span class="remove-item">Ã—</span>
+                                    <span class="remove-item">×</span>
                                     <input type="text" name="high_converting_website_services[0][features][]" value="" placeholder="Feature..." />
                                 </div>
                                 <button type="button" class="button add-nested-item" data-parent="0">Add Feature</button>
@@ -585,13 +585,13 @@ function high_converting_website_meta_box_callback($post) {
                 <?php if (!empty($case_challenges)) : ?>
                     <?php foreach ($case_challenges as $index => $challenge) : ?>
                         <div class="repeater-item">
-                            <span class="remove-item">Ã—</span>
+                            <span class="remove-item">×</span>
                             <input type="text" name="high_converting_website_case_study_challenges[]" value="<?php echo esc_attr($challenge); ?>" placeholder="Enter a case study challenge..." />
                         </div>
                     <?php endforeach; ?>
                 <?php else : ?>
                     <div class="repeater-item">
-                        <span class="remove-item">Ã—</span>
+                        <span class="remove-item">×</span>
                         <input type="text" name="high_converting_website_case_study_challenges[]" value="" placeholder="Enter a case study challenge..." />
                     </div>
                 <?php endif; ?>
@@ -612,13 +612,13 @@ function high_converting_website_meta_box_callback($post) {
                 <?php if (!empty($case_solutions)) : ?>
                     <?php foreach ($case_solutions as $index => $solution) : ?>
                         <div class="repeater-item">
-                            <span class="remove-item">Ã—</span>
+                            <span class="remove-item">×</span>
                             <input type="text" name="high_converting_website_case_study_solutions[]" value="<?php echo esc_attr($solution); ?>" placeholder="Enter a case study solution..." />
                         </div>
                     <?php endforeach; ?>
                 <?php else : ?>
                     <div class="repeater-item">
-                        <span class="remove-item">Ã—</span>
+                        <span class="remove-item">×</span>
                         <input type="text" name="high_converting_website_case_study_solutions[]" value="" placeholder="Enter a case study solution..." />
                     </div>
                 <?php endif; ?>
@@ -643,7 +643,7 @@ function high_converting_website_meta_box_callback($post) {
                 <?php if (!empty($process_steps)) : ?>
                     <?php foreach ($process_steps as $index => $step) : ?>
                         <div class="repeater-item">
-                            <span class="remove-item">Ã—</span>
+                            <span class="remove-item">×</span>
                             <div class="item-fields">
                                 <p>
                                     <label class="repeater-label">Step Number</label>
@@ -662,7 +662,7 @@ function high_converting_website_meta_box_callback($post) {
                     <?php endforeach; ?>
                 <?php else : ?>
                     <div class="repeater-item">
-                        <span class="remove-item">Ã—</span>
+                        <span class="remove-item">×</span>
                         <div class="item-fields">
                             <p>
                                 <label class="repeater-label">Step Number</label>
@@ -700,7 +700,7 @@ function high_converting_website_meta_box_callback($post) {
                 <?php if (!empty($elements)) : ?>
                     <?php foreach ($elements as $index => $element) : ?>
                         <div class="repeater-item">
-                            <span class="remove-item">Ã—</span>
+                            <span class="remove-item">×</span>
                             <div class="item-fields">
                                 <p>
                                     <label class="repeater-label">Element Title</label>
@@ -715,7 +715,7 @@ function high_converting_website_meta_box_callback($post) {
                                     <label class="repeater-label">Element Features</label>
                                     <?php foreach ($element['features'] as $feature_index => $feature) : ?>
                                         <div class="repeater-item">
-                                            <span class="remove-item">Ã—</span>
+                                            <span class="remove-item">×</span>
                                             <input type="text" name="high_converting_website_elements[<?php echo $index; ?>][features][]" value="<?php echo esc_attr($feature); ?>" placeholder="Feature..." />
                                         </div>
                                     <?php endforeach; ?>
@@ -726,7 +726,7 @@ function high_converting_website_meta_box_callback($post) {
                     <?php endforeach; ?>
                 <?php else : ?>
                     <div class="repeater-item">
-                        <span class="remove-item">Ã—</span>
+                        <span class="remove-item">×</span>
                         <div class="item-fields">
                             <p>
                                 <label class="repeater-label">Element Title</label>
@@ -740,7 +740,7 @@ function high_converting_website_meta_box_callback($post) {
                             <div class="nested-repeater">
                                 <label class="repeater-label">Element Features</label>
                                 <div class="repeater-item">
-                                    <span class="remove-item">Ã—</span>
+                                    <span class="remove-item">×</span>
                                     <input type="text" name="high_converting_website_elements[0][features][]" value="" placeholder="Feature..." />
                                 </div>
                                 <button type="button" class="button add-element-feature" data-parent="0">Add Feature</button>
@@ -769,7 +769,7 @@ function high_converting_website_meta_box_callback($post) {
                 <?php if (!empty($types)) : ?>
                     <?php foreach ($types as $index => $type) : ?>
                         <div class="repeater-item">
-                            <span class="remove-item">Ã—</span>
+                            <span class="remove-item">×</span>
                             <div class="item-fields">
                                 <p>
                                     <label class="repeater-label">Website Type Title</label>
@@ -784,7 +784,7 @@ function high_converting_website_meta_box_callback($post) {
                                     <label class="repeater-label">Type Features</label>
                                     <?php foreach ($type['features'] as $feature_index => $feature) : ?>
                                         <div class="repeater-item">
-                                            <span class="remove-item">Ã—</span>
+                                            <span class="remove-item">×</span>
                                             <input type="text" name="high_converting_website_types[<?php echo $index; ?>][features][]" value="<?php echo esc_attr($feature); ?>" placeholder="Feature..." />
                                         </div>
                                     <?php endforeach; ?>
@@ -795,7 +795,7 @@ function high_converting_website_meta_box_callback($post) {
                     <?php endforeach; ?>
                 <?php else : ?>
                     <div class="repeater-item">
-                        <span class="remove-item">Ã—</span>
+                        <span class="remove-item">×</span>
                         <div class="item-fields">
                             <p>
                                 <label class="repeater-label">Website Type Title</label>
@@ -809,7 +809,7 @@ function high_converting_website_meta_box_callback($post) {
                             <div class="nested-repeater">
                                 <label class="repeater-label">Type Features</label>
                                 <div class="repeater-item">
-                                    <span class="remove-item">Ã—</span>
+                                    <span class="remove-item">×</span>
                                     <input type="text" name="high_converting_website_types[0][features][]" value="" placeholder="Feature..." />
                                 </div>
                                 <button type="button" class="button add-type-feature" data-parent="0">Add Feature</button>
@@ -838,7 +838,7 @@ function high_converting_website_meta_box_callback($post) {
                 <?php if (!empty($tools)) : ?>
                     <?php foreach ($tools as $index => $tool) : ?>
                         <div class="repeater-item">
-                            <span class="remove-item">Ã—</span>
+                            <span class="remove-item">×</span>
                             <div class="item-fields">
                                 <p>
                                     <label class="repeater-label">Tool Category Title</label>
@@ -849,7 +849,7 @@ function high_converting_website_meta_box_callback($post) {
                                     <label class="repeater-label">Tool Items</label>
                                     <?php foreach ($tool['items'] as $item_index => $item) : ?>
                                         <div class="repeater-item">
-                                            <span class="remove-item">Ã—</span>
+                                            <span class="remove-item">×</span>
                                             <input type="text" name="high_converting_website_tools[<?php echo $index; ?>][items][]" value="<?php echo esc_attr($item); ?>" placeholder="Tool item..." />
                                         </div>
                                     <?php endforeach; ?>
@@ -860,7 +860,7 @@ function high_converting_website_meta_box_callback($post) {
                     <?php endforeach; ?>
                 <?php else : ?>
                     <div class="repeater-item">
-                        <span class="remove-item">Ã—</span>
+                        <span class="remove-item">×</span>
                         <div class="item-fields">
                             <p>
                                 <label class="repeater-label">Tool Category Title</label>
@@ -870,7 +870,7 @@ function high_converting_website_meta_box_callback($post) {
                             <div class="nested-repeater">
                                 <label class="repeater-label">Tool Items</label>
                                 <div class="repeater-item">
-                                    <span class="remove-item">Ã—</span>
+                                    <span class="remove-item">×</span>
                                     <input type="text" name="high_converting_website_tools[0][items][]" value="" placeholder="Tool item..." />
                                 </div>
                                 <button type="button" class="button add-tool-item" data-parent="0">Add Item</button>
@@ -976,13 +976,13 @@ function high_converting_website_meta_box_callback($post) {
                 <?php if (!empty($cta_benefits)) : ?>
                     <?php foreach ($cta_benefits as $index => $benefit) : ?>
                         <div class="repeater-item">
-                            <span class="remove-item">Ã—</span>
+                            <span class="remove-item">×</span>
                             <input type="text" name="high_converting_website_cta_benefits[]" value="<?php echo esc_attr($benefit); ?>" placeholder="Enter a CTA benefit..." />
                         </div>
                     <?php endforeach; ?>
                 <?php else : ?>
                     <div class="repeater-item">
-                        <span class="remove-item">Ã—</span>
+                        <span class="remove-item">×</span>
                         <input type="text" name="high_converting_website_cta_benefits[]" value="" placeholder="Enter a CTA benefit..." />
                     </div>
                 <?php endif; ?>

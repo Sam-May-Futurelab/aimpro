@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 /**
  * About Page Meta Fields
  * Adds custom meta box for About Page template with editable content fields
@@ -119,10 +119,9 @@ function aimpro_about_meta_box_callback($post) {
     .aimpro-about-meta textarea {
         min-height: 80px;
         resize: vertical;
-    }
-    .aimpro-about-meta .description {
+    }    .aimpro-about-meta .description {
         font-style: italic;
-        colour: #666;
+        color: #666;
         margin-top: 5px;
     }
     .aimpro-about-section {
@@ -130,11 +129,10 @@ function aimpro_about_meta_box_callback($post) {
         padding: 20px;
         background: #f9f9f9;
         border-radius: 5px;
-    }
-    .aimpro-about-section h4 {
+    }    .aimpro-about-section h4 {
         margin: 0 0 15px 0;
         padding: 0;
-        colour: #333;
+        color: #333;
         border-bottom: 2px solid #0073aa;
         padding-bottom: 10px;
     }
@@ -499,9 +497,6 @@ function aimpro_save_about_meta_fields($post_id) {
             }
             
             // Save to post meta
-            update_post_meta($post_id, $field, $value);
-        }
+            update_post_meta($post_id, $field, $value);        }
     }
 }
-
-// About Meta integration complete

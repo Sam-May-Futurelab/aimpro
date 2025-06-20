@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 // Home & Garden Page Meta Fields
 
 function add_home_garden_meta_boxes() {
@@ -122,28 +122,28 @@ function home_garden_meta_box_callback($post) {
     if (empty($seasons)) {
         $seasons = array(
             array(
-                'title' => '🌱 Spring (March - May)',
+                'title' => '?? Spring (March - May)',
                 'revenue_type' => 'Peak Revenue Season',
                 'focus_title' => 'Key Marketing Focus:',
                 'focus_points' => array('Landscaping design consultations', 'Garden preparation and planting', 'Lawn care service sign-ups', 'Outdoor living space projects'),
                 'tactics' => array('Pre-season email campaigns', 'Early bird promotions', 'Social media inspiration content')
             ),
             array(
-                'title' => '☀️ Summer (June - August)',
+                'title' => '?? Summer (June - August)',
                 'revenue_type' => 'Maintenance Season',
                 'focus_title' => 'Key Marketing Focus:',
                 'focus_points' => array('Irrigation and watering solutions', 'Pest control services', 'Lawn maintenance contracts', 'Outdoor entertainment spaces'),
                 'tactics' => array('Maintenance reminders', 'Drought-resistant solutions', 'Before/after showcases')
             ),
             array(
-                'title' => '🍂 Fall (September - November)',
+                'title' => '?? Fall (September - November)',
                 'revenue_type' => 'Preparation Season',
                 'focus_title' => 'Key Marketing Focus:',
                 'focus_points' => array('Fall cleanup services', 'Winter preparation', 'Tree and shrub care', 'Holiday decoration services'),
                 'tactics' => array('Cleanup service packages', 'Winter prep checklists', 'Next year planning')
             ),
             array(
-                'title' => '❄️ Winter (December - February)',
+                'title' => '?? Winter (December - February)',
                 'revenue_type' => 'Planning Season',
                 'focus_title' => 'Key Marketing Focus:',
                 'focus_points' => array('Holiday decorating services', 'Indoor plant care', 'Next year project planning', 'Design consultations'),
@@ -161,19 +161,19 @@ function home_garden_meta_box_callback($post) {
                 'image' => '',
                 'title' => 'Before/After Transformations',
                 'description' => 'Showcase dramatic transformations that demonstrate your expertise and build trust with potential customers.',
-                'stats' => array('↗ 340% higher engagement', '↗ 85% more inquiries')
+                'stats' => array('? 340% higher engagement', '? 85% more inquiries')
             ),
             array(
                 'image' => '',
                 'title' => 'Time-lapse Project Videos',
                 'description' => 'Document your projects from start to finish with engaging time-lapse videos that showcase your process.',
-                'stats' => array('↗ 250% video completion rate', '↗ 120% social shares')
+                'stats' => array('? 250% video completion rate', '? 120% social shares')
             ),
             array(
                 'image' => '',
                 'title' => 'Seasonal Inspiration Content',
                 'description' => 'Share seasonal tips, plant care guides, and inspiration content that keeps your audience engaged year-round.',
-                'stats' => array('↗ 180% Pinterest traffic', '↗ 95% repeat visitors')
+                'stats' => array('? 180% Pinterest traffic', '? 95% repeat visitors')
             )
         );
     }
@@ -194,9 +194,9 @@ function home_garden_meta_box_callback($post) {
     $cta_benefits = get_post_meta($post->ID, '_home_garden_cta_benefits', true);
     if (empty($cta_benefits)) {
         $cta_benefits = array(
-            '✓ Free seasonal audit',
-            '✓ Custom campaign recommendations',
-            '✓ Visual marketing strategy'
+            '? Free seasonal audit',
+            '? Custom campaign recommendations',
+            '? Visual marketing strategy'
         );
     }
 
@@ -237,7 +237,7 @@ function home_garden_meta_box_callback($post) {
         }
         .remove-item {
             background: #dc3232;
-            colour: white;
+            color: white;
             border: none;
             padding: 5px 10px;
             cursor: pointer;
@@ -246,7 +246,7 @@ function home_garden_meta_box_callback($post) {
         }
         .add-item {
             background: #0073aa;
-            colour: white;
+            color: white;
             border: none;
             padding: 8px 16px;
             cursor: pointer;
@@ -281,7 +281,7 @@ function home_garden_meta_box_callback($post) {
         }
         .upload-button {
             background: #0073aa;
-            colour: white;
+            color: white;
             border: none;
             padding: 8px 16px;
             cursor: pointer;
@@ -289,7 +289,7 @@ function home_garden_meta_box_callback($post) {
         }
         .remove-image {
             background: #dc3232;
-            colour: white;
+            color: white;
             border: none;
             padding: 8px 16px;
             cursor: pointer;
@@ -309,14 +309,14 @@ function home_garden_meta_box_callback($post) {
         }
         .remove-list-item {
             background: #dc3232;
-            colour: white;
+            color: white;
             border: none;
             padding: 5px 10px;
             cursor: pointer;
         }
         .add-list-item {
             background: #0073aa;
-            colour: white;
+            color: white;
             border: none;
             padding: 5px 10px;
             cursor: pointer;
@@ -522,7 +522,7 @@ function home_garden_meta_box_callback($post) {
                             <button type="button" class="remove-item remove-season">Remove</button>
                             <div class="item-field">
                                 <label>Season Title:</label>
-                                <input type="text" name="home_garden_seasons[<?php echo $index; ?>][title]" value="<?php echo esc_attr($season['title']); ?>" placeholder="🌱 Spring (March - May)" />
+                                <input type="text" name="home_garden_seasons[<?php echo $index; ?>][title]" value="<?php echo esc_attr($season['title']); ?>" placeholder="?? Spring (March - May)" />
                             </div>
                             <div class="item-field">
                                 <label>Revenue Type:</label>
@@ -583,7 +583,7 @@ function home_garden_meta_box_callback($post) {
                             </div>
                             <div class="item-field">
                                 <label>Stats (one per line):</label>
-                                <textarea name="home_garden_visual_examples[<?php echo $index; ?>][stats]" placeholder="↗ 340% higher engagement&#10;↗ 85% more inquiries"><?php echo esc_textarea(is_array($example['stats']) ? implode("\n", $example['stats']) : $example['stats']); ?></textarea>
+                                <textarea name="home_garden_visual_examples[<?php echo $index; ?>][stats]" placeholder="? 340% higher engagement&#10;? 85% more inquiries"><?php echo esc_textarea(is_array($example['stats']) ? implode("\n", $example['stats']) : $example['stats']); ?></textarea>
                             </div>
                         </div>
                     <?php endforeach; ?>
@@ -648,7 +648,7 @@ function home_garden_meta_box_callback($post) {
                 <div id="cta-benefits-container">
                     <?php foreach ($cta_benefits as $index => $benefit): ?>
                         <div class="list-item">
-                            <input type="text" name="home_garden_cta_benefits[<?php echo $index; ?>]" value="<?php echo esc_attr($benefit); ?>" placeholder="✓ Benefit..." />
+                            <input type="text" name="home_garden_cta_benefits[<?php echo $index; ?>]" value="<?php echo esc_attr($benefit); ?>" placeholder="? Benefit..." />
                             <button type="button" class="remove-list-item">Remove</button>
                         </div>
                     <?php endforeach; ?>
@@ -742,7 +742,7 @@ function home_garden_meta_box_callback($post) {
                 } else if (config.type === 'season') {
                     html = '<div class="repeater-item">' +
                         '<button type="button" class="remove-item remove-season">Remove</button>' +
-                        '<div class="item-field"><label>Season Title:</label><input type="text" name="' + config.prefix + '[' + index + '][title]" placeholder="🌱 Spring (March - May)" /></div>' +
+                        '<div class="item-field"><label>Season Title:</label><input type="text" name="' + config.prefix + '[' + index + '][title]" placeholder="?? Spring (March - May)" /></div>' +
                         '<div class="item-field"><label>Revenue Type:</label><input type="text" name="' + config.prefix + '[' + index + '][revenue_type]" placeholder="Peak Revenue Season" /></div>' +
                         '<div class="item-field"><label>Focus Title:</label><input type="text" name="' + config.prefix + '[' + index + '][focus_title]" placeholder="Key Marketing Focus:" /></div>' +
                         '<div class="item-field"><label>Focus Points:</label><textarea name="' + config.prefix + '[' + index + '][focus_points]" placeholder="Focus point 1\nFocus point 2"></textarea></div>' +
@@ -754,7 +754,7 @@ function home_garden_meta_box_callback($post) {
                         '<div class="item-field"><label>Example Image:</label><div class="image-upload"><input type="hidden" name="' + config.prefix + '[' + index + '][image]" class="visual-image-field" /><div class="visual-image-preview"></div><button type="button" class="upload-button visual-upload">Choose Image</button><button type="button" class="remove-image visual-remove">Remove Image</button></div></div>' +
                         '<div class="item-field"><label>Title:</label><input type="text" name="' + config.prefix + '[' + index + '][title]" placeholder="Example Title" /></div>' +
                         '<div class="item-field"><label>Description:</label><textarea name="' + config.prefix + '[' + index + '][description]" placeholder="Example description..."></textarea></div>' +
-                        '<div class="item-field"><label>Stats:</label><textarea name="' + config.prefix + '[' + index + '][stats]" placeholder="↗ Stat 1\n↗ Stat 2"></textarea></div>' +
+                        '<div class="item-field"><label>Stats:</label><textarea name="' + config.prefix + '[' + index + '][stats]" placeholder="? Stat 1\n? Stat 2"></textarea></div>' +
                         '</div>';
                 }
                 

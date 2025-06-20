@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 // Templates & Tools Page Meta Fields
 
 function add_templates_tools_meta_boxes() {
@@ -198,7 +198,7 @@ function templates_tools_meta_box_callback($post) {
         }
         .remove-item {
             background: #dc3232;
-            colour: white;
+            color: white;
             border: none;
             padding: 5px 10px;
             cursor: pointer;
@@ -207,7 +207,7 @@ function templates_tools_meta_box_callback($post) {
         }
         .add-item {
             background: #0073aa;
-            colour: white;
+            color: white;
             border: none;
             padding: 8px 16px;
             cursor: pointer;

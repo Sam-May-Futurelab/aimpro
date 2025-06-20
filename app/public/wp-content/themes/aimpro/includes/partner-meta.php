@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 /**
  * Partnership Page Meta Fields
  * Adds custom meta box for Partnership Page template with editable content fields

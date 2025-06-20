@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 /**
  * Marketing Automation Meta Boxes
  */
@@ -32,7 +32,7 @@ function marketing_automation_meta_box_callback($post) {
     
     <style>
         .meta-box-section { margin-bottom: 30px; padding: 15px; border: 1px solid #ddd; }
-        .meta-box-section h3 { margin-top: 0; colour: #23282d; }
+        .meta-box-section h3 { margin-top: 0; color: #23282d; }
         .meta-field { margin-bottom: 15px; }
         .meta-field label { display: block; margin-bottom: 5px; font-weight: 600; }
         .meta-field input, .meta-field textarea, .meta-field select { width: 100%; }

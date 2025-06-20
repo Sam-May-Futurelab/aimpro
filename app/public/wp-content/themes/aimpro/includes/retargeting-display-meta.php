@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 /**
  * Retargeting & Display Ads Meta Fields
  *

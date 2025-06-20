@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 /**
  * Meta Ads Meta Fields
  *

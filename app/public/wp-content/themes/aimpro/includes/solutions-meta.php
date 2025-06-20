@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 // Solutions Page Meta Fields
 
 function add_solutions_meta_boxes() {
@@ -216,9 +216,9 @@ function solutions_meta_box_callback($post) {
     $cta_benefits = get_post_meta($post->ID, '_solutions_cta_benefits', true);
     if (empty($cta_benefits)) {
         $cta_benefits = array(
-            '✓ Custom solution roadmap',
-            '✓ ROI projections included',
-            '✓ No obligation consultation'
+            '? Custom solution roadmap',
+            '? ROI projections included',
+            '? No obligation consultation'
         );
     }
 
@@ -258,7 +258,7 @@ function solutions_meta_box_callback($post) {
             margin-bottom: 15px;
             padding: 10px;
             background: #0073aa;
-            colour: white;
+            color: white;
             border-radius: 3px;
         }
     </style>
@@ -546,7 +546,7 @@ function solutions_meta_box_callback($post) {
                                     <input type="text" 
                                            name="solutions_cta_benefits[]" 
                                            value="<?php echo esc_attr($benefit); ?>"
-                                           placeholder="✓ Benefit item" />
+                                           placeholder="? Benefit item" />
                                     <button type="button" class="button remove-repeater-item">Remove</button>
                                 </div>
                             <?php endforeach; ?>
@@ -650,7 +650,7 @@ function solutions_meta_box_callback($post) {
         $('.add-benefit').click(function(e) {
             e.preventDefault();
             var newField = '<div class="repeater-field">' +
-                          '<input type="text" name="solutions_cta_benefits[]" placeholder="✓ Benefit item" />' +
+                          '<input type="text" name="solutions_cta_benefits[]" placeholder="? Benefit item" />' +
                           '<button type="button" class="button remove-repeater-item">Remove</button>' +
                           '</div>';
             $('#cta-benefits-repeater').append(newField);

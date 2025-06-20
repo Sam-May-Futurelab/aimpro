@@ -1,4 +1,4 @@
-ï»¿<?php
+<?php
 // Author Settings Meta Fields - Global author information for blog posts and about sections
 
 function add_author_settings_meta_boxes() {
@@ -67,7 +67,7 @@ function author_settings_page_callback() {
     $author_email = get_option('author_email', 'hello@aimpro.co.uk');
     $author_phone = get_option('author_phone', '07866 555 555');
     $author_businesses_helped = get_option('author_businesses_helped', '500+');
-    $author_revenue_generated = get_option('author_revenue_generated', 'Â£2M+');
+    $author_revenue_generated = get_option('author_revenue_generated', '£2M+');
     $author_years_experience = get_option('author_years_experience', '10+');
     $author_image_url = get_option('author_image_url', get_template_directory_uri() . '/assets/images/ajay-dhunna.png');
     ?>
@@ -177,7 +177,7 @@ function author_settings_page_callback() {
                     </th>
                     <td>
                         <input type="text" id="author_revenue_generated" name="author_revenue_generated" value="<?php echo esc_attr($author_revenue_generated); ?>" class="regular-text" />
-                        <p class="description">Total revenue generated for clients (e.g., "Â£2M+")</p>
+                        <p class="description">Total revenue generated for clients (e.g., "£2M+")</p>
                     </td>
                 </tr>
                 
@@ -302,7 +302,7 @@ function get_author_data($post_id = null) {
         $data['email'] = get_option('author_email', 'hello@aimpro.co.uk');
         $data['phone'] = get_option('author_phone', '07866 555 555');
         $data['businesses_helped'] = get_option('author_businesses_helped', '500+');
-        $data['revenue_generated'] = get_option('author_revenue_generated', 'Â£2M+');
+        $data['revenue_generated'] = get_option('author_revenue_generated', '£2M+');
         $data['years_experience'] = get_option('author_years_experience', '10+');
         $data['image_url'] = get_option('author_image_url', get_template_directory_uri() . '/assets/images/ajay-dhunna.png');
     } else {
@@ -314,7 +314,7 @@ function get_author_data($post_id = null) {
         $data['email'] = get_option('author_email', 'hello@aimpro.co.uk');
         $data['phone'] = get_option('author_phone', '07866 555 555');
         $data['businesses_helped'] = get_option('author_businesses_helped', '500+');
-        $data['revenue_generated'] = get_option('author_revenue_generated', 'Â£2M+');
+        $data['revenue_generated'] = get_option('author_revenue_generated', '£2M+');
         $data['years_experience'] = get_option('author_years_experience', '10+');
         $data['image_url'] = get_option('author_image_url', get_template_directory_uri() . '/assets/images/ajay-dhunna.png');
     }
@@ -351,7 +351,7 @@ function author_settings_admin_styles() {
     }
     #custom-author-fields label {
         font-weight: 600;
-        colour: #333;
+        color: #333;
     }
     </style>
     <?php

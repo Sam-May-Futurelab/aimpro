@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 // Professional Services Page Meta Fields
 
 function add_professional_services_meta_boxes() {
@@ -185,9 +185,9 @@ function professional_services_meta_box_callback($post) {
     $cta_benefits = get_post_meta($post->ID, '_professional_services_cta_benefits', true);
     if (empty($cta_benefits)) {
         $cta_benefits = array(
-            '✓ Compliance-focused strategies',
-            '✓ Industry-specific expertise',
-            '✓ Confidential consultation'
+            '? Compliance-focused strategies',
+            '? Industry-specific expertise',
+            '? Confidential consultation'
         );
     }
 
@@ -241,7 +241,7 @@ function professional_services_meta_box_callback($post) {
             margin-bottom: 15px;
             padding: 10px;
             background: #0073aa;
-            colour: white;
+            color: white;
             border-radius: 3px;
         }
     </style>
@@ -715,7 +715,7 @@ function professional_services_meta_box_callback($post) {
                                     <input type="text" 
                                            name="professional_services_cta_benefits[]" 
                                            value="<?php echo esc_attr($benefit); ?>"
-                                           placeholder="✓ Benefit item" />
+                                           placeholder="? Benefit item" />
                                     <button type="button" class="button remove-repeater-item">Remove</button>
                                 </div>
                             <?php endforeach; ?>

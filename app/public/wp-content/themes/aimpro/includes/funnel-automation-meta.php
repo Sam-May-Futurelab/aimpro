@@ -1,4 +1,4 @@
-ï»¿<?php
+<?php
 // Meta fields for Sales Funnel Automation page
 add_action('add_meta_boxes', function() {
     global $post;
@@ -14,7 +14,7 @@ function funnel_automation_meta_callback($post) {
     ?>
     <style>
         .funnel-automation-meta-section { margin-bottom: 25px; padding: 15px; border: 1px solid #ddd; }
-        .funnel-automation-meta-section h3 { margin-top: 0; colour: #23282d; }
+        .funnel-automation-meta-section h3 { margin-top: 0; color: #23282d; }
         .funnel-automation-meta-field { margin-bottom: 15px; }
         .funnel-automation-meta-field label { display: block; margin-bottom: 5px; font-weight: 600; }
         .funnel-automation-meta-field input, .funnel-automation-meta-field textarea { width: 100%; }
@@ -148,7 +148,7 @@ function funnel_automation_meta_callback($post) {
         </div>
         <div class="funnel-automation-meta-field">
             <label>Case Study Intro</label>
-            <textarea name="funnel_automation_case_intro"><?php echo esc_textarea(get_post_meta($post->ID, 'funnel_automation_case_intro', true) ?: 'How we helped a business coach increase conversions by 420% and automate 75% of their sales process through intelligent funnel automation, generating Â£1.2M in additional revenue.'); ?></textarea>
+            <textarea name="funnel_automation_case_intro"><?php echo esc_textarea(get_post_meta($post->ID, 'funnel_automation_case_intro', true) ?: 'How we helped a business coach increase conversions by 420% and automate 75% of their sales process through intelligent funnel automation, generating £1.2M in additional revenue.'); ?></textarea>
         </div>
         <div class="funnel-automation-meta-field">
             <label>Challenge Description</label>
@@ -192,7 +192,7 @@ function funnel_automation_meta_callback($post) {
         <div class="funnel-automation-stats-row">
             <div class="funnel-automation-meta-field">
                 <label>Result 4 Number</label>
-                <input type="text" name="funnel_automation_result_4_number" value="<?php echo esc_attr(get_post_meta($post->ID, 'funnel_automation_result_4_number', true) ?: 'Â£1.2M'); ?>" />
+                <input type="text" name="funnel_automation_result_4_number" value="<?php echo esc_attr(get_post_meta($post->ID, 'funnel_automation_result_4_number', true) ?: '£1.2M'); ?>" />
             </div>
             <div class="funnel-automation-meta-field">
                 <label>Result 4 Label</label>
@@ -240,7 +240,7 @@ function funnel_automation_meta_callback($post) {
         <h3>Testimonial</h3>
         <div class="funnel-automation-meta-field">
             <label>Testimonial Quote</label>
-            <textarea name="funnel_automation_testimonial_quote"><?php echo esc_textarea(get_post_meta($post->ID, 'funnel_automation_testimonial_quote', true) ?: 'The funnel automation Aimpro built transformed my business completely. I went from working 60+ hours a week chasing leads to having a system that generates Â£1.2M annually while I focus on what I love most - coaching.'); ?></textarea>
+            <textarea name="funnel_automation_testimonial_quote"><?php echo esc_textarea(get_post_meta($post->ID, 'funnel_automation_testimonial_quote', true) ?: 'The funnel automation Aimpro built transformed my business completely. I went from working 60+ hours a week chasing leads to having a system that generates £1.2M annually while I focus on what I love most - coaching.'); ?></textarea>
         </div>
         <div class="funnel-automation-meta-field">
             <label>Testimonial Author Name</label>

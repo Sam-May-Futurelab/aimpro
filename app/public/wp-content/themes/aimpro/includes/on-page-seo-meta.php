@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 // On-Page SEO page meta boxes and fields
 
 // Add meta boxes
