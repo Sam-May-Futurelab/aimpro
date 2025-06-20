@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 /**
  * AI CRM Setup Page Meta Fields
  * Adds custom meta box for AI CRM Setup Page template with editable content fields
@@ -94,7 +94,7 @@ function aimpro_ai_crm_meta_box_callback($post) {
     $ai_result_2_label = get_post_meta($post->ID, 'ai_result_2_label', true) ?: 'Faster Lead Response';
     $ai_result_3_number = get_post_meta($post->ID, 'ai_result_3_number', true) ?: '60%';
     $ai_result_3_label = get_post_meta($post->ID, 'ai_result_3_label', true) ?: 'Sales Cycle Reduction';
-    $ai_result_4_number = get_post_meta($post->ID, 'ai_result_4_number', true) ?: '£2.1M';
+    $ai_result_4_number = get_post_meta($post->ID, 'ai_result_4_number', true) ?: 'Â£2.1M';
     $ai_result_4_label = get_post_meta($post->ID, 'ai_result_4_label', true) ?: 'Additional Annual Revenue';
 
     // Process Section Fields
