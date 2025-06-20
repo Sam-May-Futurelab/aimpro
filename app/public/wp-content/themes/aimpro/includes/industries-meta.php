@@ -2,17 +2,23 @@
 // Industries Page Meta Fields
 
 function add_industries_meta_boxes() {
-    $industries_screens = array('page');
+    global $post;
     
-    foreach ($industries_screens as $screen) {
-        add_meta_box(
-            'industries_meta_box',
-            'Industries Page Content',
-            'industries_meta_box_callback',
-            $screen,
-            'normal',
-            'high'
-        );
+    // Only add to pages with the industries template
+    if (isset($post) && get_post_type($post) === 'page') {
+        $page_template = get_page_template_slug($post->ID);
+        
+        // Only register this meta box for the industries page
+        if ($page_template === 'page-industries.php') {
+            add_meta_box(
+                'industries_meta_box',
+                'Industries Page Content',
+                'industries_meta_box_callback',
+                'page',
+                'normal',
+                'high'
+            );
+        }
     }
 }
 add_action('add_meta_boxes', 'add_industries_meta_boxes');
@@ -118,7 +124,7 @@ function industries_meta_box_callback($post) {
         $success_stats = array(
             array('number' => '400%', 'label' => 'Average ROI increase across all industries'),
             array('number' => '95%', 'label' => 'Client retention rate'),
-            array('number' => '£2.8M+', 'label' => 'Revenue generated for clients')
+            array('number' => 'ï¿½2.8M+', 'label' => 'Revenue generated for clients')
         );
     }
 

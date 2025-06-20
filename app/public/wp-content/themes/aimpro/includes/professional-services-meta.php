@@ -2,17 +2,23 @@
 // Professional Services Page Meta Fields
 
 function add_professional_services_meta_boxes() {
-    $professional_services_screens = array('page');
+    global $post;
     
-    foreach ($professional_services_screens as $screen) {
-        add_meta_box(
-            'professional_services_meta_box',
-            'Professional Services Page Content',
-            'professional_services_meta_box_callback',
-            $screen,
-            'normal',
-            'high'
-        );
+    // Only add to pages with the professional-services template
+    if (isset($post) && get_post_type($post) === 'page') {
+        $page_template = get_page_template_slug($post->ID);
+        
+        // Only register this meta box for the professional-services page
+        if ($page_template === 'page-professional-services.php') {
+            add_meta_box(
+                'professional_services_meta_box',
+                'Professional Services Page Content',
+                'professional_services_meta_box_callback',
+                'page',
+                'normal',
+                'high'
+            );
+        }
     }
 }
 add_action('add_meta_boxes', 'add_professional_services_meta_boxes');

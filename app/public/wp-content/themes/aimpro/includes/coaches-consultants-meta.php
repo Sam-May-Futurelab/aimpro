@@ -2,17 +2,23 @@
 // Coaches & Consultants Page Meta Fields
 
 function add_coaches_consultants_meta_boxes() {
-    $coaches_consultants_screens = array('page');
+    global $post;
     
-    foreach ($coaches_consultants_screens as $screen) {
-        add_meta_box(
-            'coaches_consultants_meta_box',
-            'Coaches & Consultants Page Content',
-            'coaches_consultants_meta_box_callback',
-            $screen,
-            'normal',
-            'high'
-        );
+    // Only add to pages with the coaches-consultants template
+    if (isset($post) && get_post_type($post) === 'page') {
+        $page_template = get_page_template_slug($post->ID);
+        
+        // Only register this meta box for the coaches-consultants page
+        if ($page_template === 'page-coaches-consultants.php') {
+            add_meta_box(
+                'coaches_consultants_meta_box',
+                'Coaches & Consultants Page Content',
+                'coaches_consultants_meta_box_callback',
+                'page',
+                'normal',
+                'high'
+            );
+        }
     }
 }
 add_action('add_meta_boxes', 'add_coaches_consultants_meta_boxes', 11);

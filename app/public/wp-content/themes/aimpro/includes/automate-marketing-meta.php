@@ -4,16 +4,22 @@
 function add_automate_marketing_meta_boxes() {
     global $post;
     
-    // Only add to pages
+    // Only add to pages with the automate-marketing template
     if (isset($post) && get_post_type($post) === 'page') {
-        add_meta_box(
-            'automate_marketing_meta_box',
-            'Automate Marketing Page Content',
-            'automate_marketing_meta_box_callback',
-            'page',
-            'normal',
-            'high'
-        );
+        $page_template = get_page_template_slug($post->ID);
+        $page_slug = $post->post_name;
+        
+        // Only register this meta box for the automate-marketing page
+        if ($page_template === 'page-automate-marketing.php' || $page_slug === 'automate-marketing') {
+            add_meta_box(
+                'automate_marketing_meta_box',
+                'Automate Marketing Page Content',
+                'automate_marketing_meta_box_callback',
+                'page',
+                'normal',
+                'high'
+            );
+        }
     }
 }
 add_action('add_meta_boxes', 'add_automate_marketing_meta_boxes', 11);

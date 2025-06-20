@@ -2,17 +2,23 @@
 // Templates & Tools Page Meta Fields
 
 function add_templates_tools_meta_boxes() {
-    $templates_tools_screens = array('page');
+    global $post;
     
-    foreach ($templates_tools_screens as $screen) {
-        add_meta_box(
-            'templates_tools_meta_box',
-            'Templates & Tools Page Content',
-            'templates_tools_meta_box_callback',
-            $screen,
-            'normal',
-            'high'
-        );
+    // Only add to pages with the templates-tools template
+    if (isset($post) && get_post_type($post) === 'page') {
+        $page_template = get_page_template_slug($post->ID);
+        
+        // Only register this meta box for the templates-tools page
+        if ($page_template === 'page-templates-tools.php') {
+            add_meta_box(
+                'templates_tools_meta_box',
+                'Templates & Tools Page Content',
+                'templates_tools_meta_box_callback',
+                'page',
+                'normal',
+                'high'
+            );
+        }
     }
 }
 add_action('add_meta_boxes', 'add_templates_tools_meta_boxes');

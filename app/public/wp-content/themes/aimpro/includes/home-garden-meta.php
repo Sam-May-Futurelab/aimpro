@@ -2,17 +2,23 @@
 // Home & Garden Page Meta Fields
 
 function add_home_garden_meta_boxes() {
-    $home_garden_screens = array('page');
+    global $post;
     
-    foreach ($home_garden_screens as $screen) {
-        add_meta_box(
-            'home_garden_meta_box',
-            'Home & Garden Page Content',
-            'home_garden_meta_box_callback',
-            $screen,
-            'normal',
-            'high'
-        );
+    // Only add to pages with the home-garden template
+    if (isset($post) && get_post_type($post) === 'page') {
+        $page_template = get_page_template_slug($post->ID);
+        
+        // Only register this meta box for the home-garden page
+        if ($page_template === 'page-home-garden.php') {
+            add_meta_box(
+                'home_garden_meta_box',
+                'Home & Garden Page Content',
+                'home_garden_meta_box_callback',
+                'page',
+                'normal',
+                'high'
+            );
+        }
     }
 }
 add_action('add_meta_boxes', 'add_home_garden_meta_boxes');

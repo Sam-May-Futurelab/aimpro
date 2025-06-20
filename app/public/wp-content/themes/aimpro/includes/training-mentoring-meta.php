@@ -2,17 +2,23 @@
 // Training & Mentoring Page Meta Fields
 
 function add_training_mentoring_meta_boxes() {
-    $training_mentoring_screens = array('page');
+    global $post;
     
-    foreach ($training_mentoring_screens as $screen) {
-        add_meta_box(
-            'training_mentoring_meta_box',
-            'Training & Mentoring Page Content',
-            'training_mentoring_meta_box_callback',
-            $screen,
-            'normal',
-            'high'
-        );
+    // Only add to pages with the training-mentoring template
+    if (isset($post) && get_post_type($post) === 'page') {
+        $page_template = get_page_template_slug($post->ID);
+        
+        // Only register this meta box for the training-mentoring page
+        if ($page_template === 'page-training-mentoring.php') {
+            add_meta_box(
+                'training_mentoring_meta_box',
+                'Training & Mentoring Page Content',
+                'training_mentoring_meta_box_callback',
+                'page',
+                'normal',
+                'high'
+            );
+        }
     }
 }
 add_action('add_meta_boxes', 'add_training_mentoring_meta_boxes');
@@ -68,7 +74,7 @@ function training_mentoring_meta_box_callback($post) {
                 'featured' => true,
                 'badge' => 'Most Popular',
                 'title' => 'Individual Mentoring',
-                'price' => '£149',
+                'price' => 'ï¿½149',
                 'period' => 'per session',
                 'description' => 'One-on-one mentoring sessions with senior digital marketing experts tailored to your specific needs and career goals.',
                 'features' => array('1-hour intensive sessions', 'personalised learning plan', 'Homework assignments', 'Progress tracking', 'Email support between sessions', 'Industry certification guidance'),
@@ -81,7 +87,7 @@ function training_mentoring_meta_box_callback($post) {
                 'featured' => false,
                 'badge' => '',
                 'title' => 'Team Training Workshops',
-                'price' => '£899',
+                'price' => 'ï¿½899',
                 'period' => 'per workshop',
                 'description' => 'Comprehensive team training workshops designed to upskill your entire marketing department with consistent, high-quality education.',
                 'features' => array('Half-day or full-day workshops', 'Up to 12 team members', 'Interactive exercises', 'Custom curriculum', 'Workshop materials included', '30-day follow-up support'),
@@ -94,7 +100,7 @@ function training_mentoring_meta_box_callback($post) {
                 'featured' => false,
                 'badge' => '',
                 'title' => 'Certification Program',
-                'price' => '£1,299',
+                'price' => 'ï¿½1,299',
                 'period' => '3-month program',
                 'description' => 'Comprehensive 3-month certification program covering all aspects of digital marketing with hands-on projects and industry recognition.',
                 'features' => array('12 structured modules', 'Weekly group sessions', 'Real-world projects', 'Industry certification', 'Career guidance', 'Lifetime community access'),
@@ -401,7 +407,7 @@ function training_mentoring_meta_box_callback($post) {
                             </div>
                             <div class="item-field">
                                 <label>Price:</label>
-                                <input type="text" name="training_mentoring_programs[<?php echo $index; ?>][price]" value="<?php echo esc_attr($program['price']); ?>" placeholder="£149" />
+                                <input type="text" name="training_mentoring_programs[<?php echo $index; ?>][price]" value="<?php echo esc_attr($program['price']); ?>" placeholder="ï¿½149" />
                             </div>
                             <div class="item-field">
                                 <label>Period:</label>
@@ -695,7 +701,7 @@ function training_mentoring_meta_box_callback($post) {
                 </tr>
                 <tr>
                     <th><label for="training_mentoring_cta_note">CTA Note</label></th>
-                    <td><input type="text" id="training_mentoring_cta_note" name="training_mentoring_cta_note" value="<?php echo esc_attr($cta_note); ?>" placeholder="Free 15-minute consultation • No obligation • personalised recommendations" /></td>
+                    <td><input type="text" id="training_mentoring_cta_note" name="training_mentoring_cta_note" value="<?php echo esc_attr($cta_note); ?>" placeholder="Free 15-minute consultation ï¿½ No obligation ï¿½ personalised recommendations" /></td>
                 </tr>
             </table>
         </div>

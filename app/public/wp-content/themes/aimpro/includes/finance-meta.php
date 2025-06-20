@@ -2,17 +2,23 @@
 // Finance Page Meta Fields
 
 function add_finance_meta_boxes() {
-    $finance_screens = array('page');
+    global $post;
     
-    foreach ($finance_screens as $screen) {
-        add_meta_box(
-            'finance_meta_box',
-            'Finance Page Content',
-            'finance_meta_box_callback',
-            $screen,
-            'normal',
-            'high'
-        );
+    // Only add to pages with the finance template
+    if (isset($post) && get_post_type($post) === 'page') {
+        $page_template = get_page_template_slug($post->ID);
+        
+        // Only register this meta box for the finance page
+        if ($page_template === 'page-finance.php') {
+            add_meta_box(
+                'finance_meta_box',
+                'Finance Page Content',
+                'finance_meta_box_callback',
+                'page',
+                'normal',
+                'high'
+            );
+        }
     }
 }
 add_action('add_meta_boxes', 'add_finance_meta_boxes');

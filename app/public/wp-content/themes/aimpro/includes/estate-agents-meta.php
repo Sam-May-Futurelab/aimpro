@@ -2,17 +2,23 @@
 // Estate Agents Page Meta Fields
 
 function add_estate_agents_meta_boxes() {
-    $estate_agents_screens = array('page');
+    global $post;
     
-    foreach ($estate_agents_screens as $screen) {
-        add_meta_box(
-            'estate_agents_meta_box',
-            'Estate Agents Page Content',
-            'estate_agents_meta_box_callback',
-            $screen,
-            'normal',
-            'high'
-        );
+    // Only add to pages with the estate-agents template
+    if (isset($post) && get_post_type($post) === 'page') {
+        $page_template = get_page_template_slug($post->ID);
+        
+        // Only register this meta box for the estate-agents page
+        if ($page_template === 'page-estate-agents.php') {
+            add_meta_box(
+                'estate_agents_meta_box',
+                'Estate Agents Page Content',
+                'estate_agents_meta_box_callback',
+                'page',
+                'normal',
+                'high'
+            );
+        }
     }
 }
 add_action('add_meta_boxes', 'add_estate_agents_meta_boxes');

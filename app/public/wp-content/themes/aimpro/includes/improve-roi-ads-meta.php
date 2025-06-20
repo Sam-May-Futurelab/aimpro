@@ -4,16 +4,22 @@
 function add_improve_roi_ads_meta_boxes() {
     global $post;
     
-    // Only add to pages
+    // Only add to pages with the correct template or slug
     if (isset($post) && get_post_type($post) === 'page') {
-        add_meta_box(
-            'improve_roi_ads_meta_box',
-            'Improve ROI from Ads Page Content',
-            'improve_roi_ads_meta_box_callback',
-            'page',
-            'normal',
-            'high'
-        );
+        $page_template = get_page_template_slug($post->ID);
+        $page_slug = $post->post_name;
+        
+        // Only register this meta box for the improve ROI ads page
+        if ($page_template === 'page-improve-roi-ads.php' || $page_slug === 'improve-roi-ads') {
+            add_meta_box(
+                'improve_roi_ads_meta_box',
+                'Improve ROI from Ads Page Content',
+                'improve_roi_ads_meta_box_callback',
+                'page',
+                'normal',
+                'high'
+            );
+        }
     }
 }
 add_action('add_meta_boxes', 'add_improve_roi_ads_meta_boxes', 11);
@@ -32,22 +38,11 @@ function enqueue_improve_roi_ads_admin_scripts($hook) {
 add_action('admin_enqueue_scripts', 'enqueue_improve_roi_ads_admin_scripts');
 
 function improve_roi_ads_meta_box_callback($post) {
-    // Only show on improve ROI ads page template
-    $page_template = get_page_template_slug($post->ID);
-    $page_slug = $post->post_name;
-    
-    if ($page_template !== 'page-improve-roi-ads.php' && $page_slug !== 'improve-roi-ads') {
-        echo '<p>This meta box is designed for the "Improve ROI from Ads Solution Page" template or pages with slug "improve-roi-ads".</p>';
-        echo '<p>Current template: ' . ($page_template ?: 'Default') . '</p>';
-        echo '<p>Current slug: ' . ($page_slug ?: 'Not set yet') . '</p>';
-        return;
-    }
-
     wp_nonce_field('improve_roi_ads_meta_box', 'improve_roi_ads_meta_box_nonce');
 
     // Get existing values
     $header_title = get_post_meta($post->ID, '_improve_roi_ads_header_title', true) ?: 'Improve ROI from Ads';
-    $header_subtitle = get_post_meta($post->ID, '_improve_roi_ads_header_subtitle', true) ?: 'Maximize your advertising spend with data-driven optimisation strategies that deliver measurable results';    // Solution Overview
+    $header_subtitle = get_post_meta($post->ID, '_improve_roi_ads_header_subtitle', true) ?: 'Maximize your advertising spend with data-driven optimisation strategies that deliver measurable results';// Solution Overview
     $overview_title = get_post_meta($post->ID, '_improve_roi_ads_overview_title', true) ?: 'Turn Ad Spend Into Profitable Growth';
     $overview_content = get_post_meta($post->ID, '_improve_roi_ads_overview_content', true) ?: 'Every advertising dollar should drive real business results. Our comprehensive ad optimisation strategies combine advanced analytics, conversion tracking, and continuous testing to maximise your return on ad spend (ROAS) while reducing customer acquisition costs and improving campaign performance.';
     $overview_image = get_post_meta($post->ID, '_improve_roi_ads_overview_image', true);
@@ -117,14 +112,14 @@ function improve_roi_ads_meta_box_callback($post) {
     // Success Story
     $case_study_label = get_post_meta($post->ID, '_improve_roi_ads_case_study_label', true) ?: 'Success Story';
     $case_study_title = get_post_meta($post->ID, '_improve_roi_ads_case_study_title', true) ?: 'EcoHome Solutions: 320% ROI Improvement';
-    $case_study_content = get_post_meta($post->ID, '_improve_roi_ads_case_study_content', true) ?: 'EcoHome Solutions was spending £15,000/month on Google Ads with poor returns and high cost per acquisition.';
+    $case_study_content = get_post_meta($post->ID, '_improve_roi_ads_case_study_content', true) ?: 'EcoHome Solutions was spending ï¿½15,000/month on Google Ads with poor returns and high cost per acquisition.';
     
     $case_study_challenge_title = get_post_meta($post->ID, '_improve_roi_ads_case_study_challenge_title', true) ?: 'The Challenge';
     $case_study_challenges = get_post_meta($post->ID, '_improve_roi_ads_case_study_challenges', true);
     if (empty($case_study_challenges)) {
         $case_study_challenges = array(
-            '£15,000/month ad spend with poor ROI',
-            'Cost per acquisition of £250+ per lead',
+            'ï¿½15,000/month ad spend with poor ROI',
+            'Cost per acquisition of ï¿½250+ per lead',
             'Low conversion rates (1.2%)',
             'No proper conversion tracking in place'
         );

@@ -2,17 +2,23 @@
 // Events & Webinars Page Meta Fields
 
 function add_events_webinars_meta_boxes() {
-    $events_webinars_screens = array('page');
+    global $post;
     
-    foreach ($events_webinars_screens as $screen) {
-        add_meta_box(
-            'events_webinars_meta_box',
-            'Events & Webinars Page Content',
-            'events_webinars_meta_box_callback',
-            $screen,
-            'normal',
-            'high'
-        );
+    // Only add to pages with the events-webinars template
+    if (isset($post) && get_post_type($post) === 'page') {
+        $page_template = get_page_template_slug($post->ID);
+        
+        // Only register this meta box for the events-webinars page
+        if ($page_template === 'page-events-webinars.php') {
+            add_meta_box(
+                'events_webinars_meta_box',
+                'Events & Webinars Page Content',
+                'events_webinars_meta_box_callback',
+                'page',
+                'normal',
+                'high'
+            );
+        }
     }
 }
 add_action('add_meta_boxes', 'add_events_webinars_meta_boxes');
@@ -384,7 +390,7 @@ function events_webinars_meta_box_callback($post) {
                             </div>
                             <div class="item-field">
                                 <label>Price:</label>
-                                <input type="text" name="events_webinars_upcoming_events[<?php echo $index; ?>][price]" value="<?php echo esc_attr($event['price']); ?>" placeholder="£49" />
+                                <input type="text" name="events_webinars_upcoming_events[<?php echo $index; ?>][price]" value="<?php echo esc_attr($event['price']); ?>" placeholder="ï¿½49" />
                             </div>
                             <div class="item-field">
                                 <label>Registration URL:</label>
@@ -589,7 +595,7 @@ function events_webinars_meta_box_callback($post) {
                     '</div>' +
                     '<div class="item-field">' +
                         '<label>Price:</label>' +
-                        '<input type="text" name="events_webinars_upcoming_events[' + index + '][price]" placeholder="£49" />' +
+                        '<input type="text" name="events_webinars_upcoming_events[' + index + '][price]" placeholder="ï¿½49" />' +
                     '</div>' +
                     '<div class="item-field">' +
                         '<label>Registration URL:</label>' +

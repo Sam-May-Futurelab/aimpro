@@ -4,16 +4,22 @@
 function add_rank_higher_locally_meta_boxes() {
     global $post;
     
-    // Only add to pages
+    // Only add to pages with the rank-higher-locally template
     if (isset($post) && get_post_type($post) === 'page') {
-        add_meta_box(
-            'rank_higher_locally_meta_box',
-            'Rank Higher Locally Page Content',
-            'rank_higher_locally_meta_box_callback',
-            'page',
-            'normal',
-            'high'
-        );
+        $page_template = get_page_template_slug($post->ID);
+        $page_slug = $post->post_name;
+        
+        // Only register this meta box for the rank-higher-locally page
+        if ($page_template === 'page-rank-higher-locally.php' || $page_slug === 'rank-higher-locally') {
+            add_meta_box(
+                'rank_higher_locally_meta_box',
+                'Rank Higher Locally Page Content',
+                'rank_higher_locally_meta_box_callback',
+                'page',
+                'normal',
+                'high'
+            );
+        }
     }
 }
 add_action('add_meta_boxes', 'add_rank_higher_locally_meta_boxes', 11);
@@ -403,13 +409,13 @@ function rank_higher_locally_meta_box_callback($post) {
                 <?php if (!empty($challenges)) : ?>
                     <?php foreach ($challenges as $index => $challenge) : ?>
                         <div class="repeater-item">
-                            <span class="remove-item">×</span>
+                            <span class="remove-item">ï¿½</span>
                             <input type="text" name="rank_higher_locally_challenges[]" value="<?php echo esc_attr($challenge); ?>" placeholder="Enter a challenge..." />
                         </div>
                     <?php endforeach; ?>
                 <?php else : ?>
                     <div class="repeater-item">
-                        <span class="remove-item">×</span>
+                        <span class="remove-item">ï¿½</span>
                         <input type="text" name="rank_higher_locally_challenges[]" value="" placeholder="Enter a challenge..." />
                     </div>
                 <?php endif; ?>
@@ -434,7 +440,7 @@ function rank_higher_locally_meta_box_callback($post) {
                 <?php if (!empty($services)) : ?>
                     <?php foreach ($services as $index => $service) : ?>
                         <div class="repeater-item">
-                            <span class="remove-item">×</span>
+                            <span class="remove-item">ï¿½</span>
                             <div class="item-fields">
                                 <p>
                                     <label class="repeater-label">Service Title</label>
@@ -454,7 +460,7 @@ function rank_higher_locally_meta_box_callback($post) {
                                     <label class="repeater-label">Service Features</label>
                                     <?php foreach ($service['features'] as $feature_index => $feature) : ?>
                                         <div class="repeater-item">
-                                            <span class="remove-item">×</span>
+                                            <span class="remove-item">ï¿½</span>
                                             <input type="text" name="rank_higher_locally_services[<?php echo $index; ?>][features][]" value="<?php echo esc_attr($feature); ?>" placeholder="Feature..." />
                                         </div>
                                     <?php endforeach; ?>
@@ -465,7 +471,7 @@ function rank_higher_locally_meta_box_callback($post) {
                     <?php endforeach; ?>
                 <?php else : ?>
                     <div class="repeater-item">
-                        <span class="remove-item">×</span>
+                        <span class="remove-item">ï¿½</span>
                         <div class="item-fields">
                             <p>
                                 <label class="repeater-label">Service Title</label>
@@ -484,7 +490,7 @@ function rank_higher_locally_meta_box_callback($post) {
                             <div class="nested-repeater">
                                 <label class="repeater-label">Service Features</label>
                                 <div class="repeater-item">
-                                    <span class="remove-item">×</span>
+                                    <span class="remove-item">ï¿½</span>
                                     <input type="text" name="rank_higher_locally_services[0][features][]" value="" placeholder="Feature..." />
                                 </div>
                                 <button type="button" class="button add-nested-item" data-parent="0">Add Feature</button>
@@ -531,13 +537,13 @@ function rank_higher_locally_meta_box_callback($post) {
                 <?php if (!empty($case_challenges)) : ?>
                     <?php foreach ($case_challenges as $index => $challenge) : ?>
                         <div class="repeater-item">
-                            <span class="remove-item">×</span>
+                            <span class="remove-item">ï¿½</span>
                             <input type="text" name="rank_higher_locally_case_study_challenges[]" value="<?php echo esc_attr($challenge); ?>" placeholder="Enter a case study challenge..." />
                         </div>
                     <?php endforeach; ?>
                 <?php else : ?>
                     <div class="repeater-item">
-                        <span class="remove-item">×</span>
+                        <span class="remove-item">ï¿½</span>
                         <input type="text" name="rank_higher_locally_case_study_challenges[]" value="" placeholder="Enter a case study challenge..." />
                     </div>
                 <?php endif; ?>
@@ -558,13 +564,13 @@ function rank_higher_locally_meta_box_callback($post) {
                 <?php if (!empty($case_solutions)) : ?>
                     <?php foreach ($case_solutions as $index => $solution) : ?>
                         <div class="repeater-item">
-                            <span class="remove-item">×</span>
+                            <span class="remove-item">ï¿½</span>
                             <input type="text" name="rank_higher_locally_case_study_solutions[]" value="<?php echo esc_attr($solution); ?>" placeholder="Enter a case study solution..." />
                         </div>
                     <?php endforeach; ?>
                 <?php else : ?>
                     <div class="repeater-item">
-                        <span class="remove-item">×</span>
+                        <span class="remove-item">ï¿½</span>
                         <input type="text" name="rank_higher_locally_case_study_solutions[]" value="" placeholder="Enter a case study solution..." />
                     </div>
                 <?php endif; ?>
@@ -585,7 +591,7 @@ function rank_higher_locally_meta_box_callback($post) {
                 <?php if (!empty($case_results)) : ?>
                     <?php foreach ($case_results as $index => $result) : ?>
                         <div class="repeater-item">
-                            <span class="remove-item">×</span>
+                            <span class="remove-item">ï¿½</span>
                             <div class="item-fields">
                                 <p>
                                     <label class="repeater-label">Result Number/Percentage</label>
@@ -600,7 +606,7 @@ function rank_higher_locally_meta_box_callback($post) {
                     <?php endforeach; ?>
                 <?php else : ?>
                     <div class="repeater-item">
-                        <span class="remove-item">×</span>
+                        <span class="remove-item">ï¿½</span>
                         <div class="item-fields">
                             <p>
                                 <label class="repeater-label">Result Number/Percentage</label>
@@ -650,7 +656,7 @@ function rank_higher_locally_meta_box_callback($post) {
                 <?php if (!empty($process_steps)) : ?>
                     <?php foreach ($process_steps as $index => $step) : ?>
                         <div class="repeater-item">
-                            <span class="remove-item">×</span>
+                            <span class="remove-item">ï¿½</span>
                             <div class="item-fields">
                                 <p>
                                     <label class="repeater-label">Step Number</label>
@@ -669,7 +675,7 @@ function rank_higher_locally_meta_box_callback($post) {
                     <?php endforeach; ?>
                 <?php else : ?>
                     <div class="repeater-item">
-                        <span class="remove-item">×</span>
+                        <span class="remove-item">ï¿½</span>
                         <div class="item-fields">
                             <p>
                                 <label class="repeater-label">Step Number</label>
@@ -713,7 +719,7 @@ function rank_higher_locally_meta_box_callback($post) {
                 <?php if (!empty($benefits)) : ?>
                     <?php foreach ($benefits as $index => $benefit) : ?>
                         <div class="repeater-item">
-                            <span class="remove-item">×</span>
+                            <span class="remove-item">ï¿½</span>
                             <div class="item-fields">
                                 <p>
                                     <label class="repeater-label">Benefit Title</label>
@@ -733,7 +739,7 @@ function rank_higher_locally_meta_box_callback($post) {
                     <?php endforeach; ?>
                 <?php else : ?>
                     <div class="repeater-item">
-                        <span class="remove-item">×</span>
+                        <span class="remove-item">ï¿½</span>
                         <div class="item-fields">
                             <p>
                                 <label class="repeater-label">Benefit Title</label>
@@ -849,13 +855,13 @@ function rank_higher_locally_meta_box_callback($post) {
                 <?php if (!empty($cta_benefits)) : ?>
                     <?php foreach ($cta_benefits as $index => $benefit) : ?>
                         <div class="repeater-item">
-                            <span class="remove-item">×</span>
+                            <span class="remove-item">ï¿½</span>
                             <input type="text" name="rank_higher_locally_cta_benefits[]" value="<?php echo esc_attr($benefit); ?>" placeholder="Enter a CTA benefit..." />
                         </div>
                     <?php endforeach; ?>
                 <?php else : ?>
                     <div class="repeater-item">
-                        <span class="remove-item">×</span>
+                        <span class="remove-item">ï¿½</span>
                         <input type="text" name="rank_higher_locally_cta_benefits[]" value="" placeholder="Enter a CTA benefit..." />
                     </div>
                 <?php endif; ?>
