@@ -45,6 +45,9 @@ require_once get_template_directory() . '/includes/author-settings-meta.php';
 // Include about page meta functionality
 require_once get_template_directory() . '/includes/about-meta.php';
 
+// Include AI CRM Setup page meta functionality
+require_once get_template_directory() . '/includes/ai-crm-setup-meta.php';
+
 // Include company page meta functionality
 require_once get_template_directory() . '/includes/company-meta.php';
 
@@ -1300,6 +1303,7 @@ function aimpro_landing_page_admin() {
                         <tr>
                             <th scope="row">Field Labels</th>
                             <td>
+                               
                                 <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 10px;">
                                     <input type="text" name="contact_form_name_label" value="<?php echo esc_attr(get_option('contact_form_name_label', 'Name *')); ?>" class="regular-text" placeholder="Name Label" />
                                     <input type="text" name="contact_form_email_label" value="<?php echo esc_attr(get_option('contact_form_email_label', 'Email *')); ?>" class="regular-text" placeholder="Email Label" />
