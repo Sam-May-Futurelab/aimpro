@@ -71,12 +71,6 @@ function estate_agents_meta_box_callback($post) {
                 'description' => 'Establish your expertise with valuable property content that educates buyers and sellers while building your brand authority.',
                 'features' => array('Market insight blog posts', 'Area property guides', 'Video property tours', 'Market analysis reports')
             ),
-            array(
-                'icon' => 'fas fa-chart-bar',
-                'title' => 'Social Media Property Marketing',
-                'description' => 'Showcase properties and build your brand presence across social platforms to reach potential buyers and sellers.',
-                'features' => array('Facebook property advertising', 'Instagram Stories and Reels', 'LinkedIn professional networking', 'Community engagement strategy')
-            )
         );
     }
 
