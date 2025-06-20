@@ -60,8 +60,7 @@ get_header(); ?>
 
 <!-- Agency Value Statement -->
 <section class="value-statement">
-    <div class="container">
-        <div class="content-centre">            <h2><?php echo aimpro_get_field('value_statement_title', 'A Results-Driven Digital Agency Obsessed With Your <span class="highlight curly-underline">SUCCESS</span>'); ?></h2>
+    <div class="container">        <div class="content-center">            <h2><?php echo aimpro_get_field('value_statement_title', 'A Results-Driven Digital Agency Obsessed With Your <span class="highlight curly-underline">SUCCESS</span>'); ?></h2>
             <p><?php echo aimpro_get_field('value_statement_description', 'We partner with ambitious businesses to transform their digital presence through intelligent strategies and performance-focused marketing. Our proven methodologies deliver quantifiable results that drive exponential growth and maximise your competitive advantage.'); ?></p>
             <a href="<?php echo aimpro_get_field('value_statement_cta_url', '#contact'); ?>" class="btn-primary large"><?php echo aimpro_get_field('value_statement_cta_text', 'CLAIM YOUR FREE GROWTH AUDIT'); ?></a>
         </div>

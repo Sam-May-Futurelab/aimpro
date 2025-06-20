@@ -502,6 +502,36 @@ body.light-theme .mega-menu-list a:hover {
     }
 }
 
+/* MacBook and smaller laptop screens */
+@media (max-width: 1366px) {
+    .header-content {
+        gap: 1.5rem;
+    }
+    
+    .main-nav ul {
+        gap: 0.25rem;
+    }
+    
+    .main-nav a {
+        padding: 0 0.75rem;
+        font-size: 0.9rem;
+    }
+    
+    .header-ctas {
+        gap: 0.5rem;
+    }
+    
+    .header-ctas .btn-outline,
+    .header-ctas .btn-primary {
+        padding: 0 1.25rem;
+        font-size: 0.85rem;
+    }
+    
+    .mega-menu {
+        width: 900px;
+    }
+}
+
 @media (max-width: 1024px) {
     .header-content {
         gap: 1rem;
