@@ -111,8 +111,7 @@ get_header(); ?>
         <div class="floating-orb orb-2"></div>
         <div class="floating-orb orb-3"></div>
     </div>
-    
-    <div class="container">        <div class="content-centre">            <h2><?php echo aimpro_get_field('services_title', 'Premium Digital Marketing Solutions That <span class="highlight curly-underline">DELIVER</span>'); ?></h2>
+      <div class="container">        <div class="content-center">            <h2><?php echo aimpro_get_field('services_title', 'Premium Digital Marketing Solutions That <span class="highlight curly-underline">DELIVER</span>'); ?></h2>
             <p class="section-subtitle"><?php echo aimpro_get_field('services_subtitle', 'Zero fluff. Pure performance. Our integrated marketing ecosystem works seamlessly to transform prospects into profits.'); ?></p>
         </div>
         
@@ -295,8 +294,7 @@ get_header(); ?>
 
 <!-- Lead Magnet Section -->
 <section class="lead-magnet-section">
-    <div class="container">
-        <div class="content-centre">
+    <div class="container">        <div class="content-center">
             <h2><?php echo aimpro_get_field('lead_magnet_title', 'Get Our Free Digital Marketing <span class="highlight curly-underline">GUIDE</span>'); ?></h2>
             <p class="section-subtitle"><?php echo aimpro_get_field('lead_magnet_subtitle', 'Download our comprehensive digital marketing guide packed with proven strategies to grow your business.'); ?></p>
         </div>
