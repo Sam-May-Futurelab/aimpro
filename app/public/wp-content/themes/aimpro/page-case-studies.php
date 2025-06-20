@@ -72,7 +72,7 @@ get_header(); ?>
                             </div>
                         </div>
                         
-                        <a href="<?php echo esc_url(get_post_meta(get_the_ID(), 'cs_featured_cta_url', true) ?: '#'); ?>" class="study-cta"><?php echo esc_html(get_post_meta(get_the_ID(), 'cs_featured_cta_text', true) ?: 'Read Full Case Study'); ?></a>
+                        <a href="<?php echo home_url('/blog'); ?>" class="study-cta"><?php echo esc_html(get_post_meta(get_the_ID(), 'cs_featured_cta_text', true) ?: 'Read Full Case Study'); ?></a>
                     </div>
                     <div class="study-image">
                         <img src="<?php echo get_template_directory_uri(); ?>/assets/images/case-studies/techgear-featured.jpg" alt="<?php echo esc_attr(get_post_meta(get_the_ID(), 'cs_featured_title', true) ?: 'TechGear UK Case Study'); ?>" />
@@ -101,10 +101,9 @@ get_header(); ?>
                                 </div>
                                 <div class="metric">
                                     <span class="metric-value">150%</span>
-                                    <span class="metric-label">Online Sales</span>
-                                </div>
+                                    <span class="metric-label">Online Sales</span>                                </div>
                             </div>
-                            <a href="#" class="study-link">View Details</a>
+                            <a href="<?php echo home_url('/blog'); ?>" class="study-link">View Details</a>
                         </div>
                     </div>                    <!-- Healthcare Case Study -->
                     <div class="case-study-card animate-on-scroll animate-stagger animate-fade-up" data-category="healthcare">
@@ -124,10 +123,9 @@ get_header(); ?>
                                 </div>
                                 <div class="metric">
                                     <span class="metric-value">450%</span>
-                                    <span class="metric-label">Local Visibility</span>
-                                </div>
+                                    <span class="metric-label">Local Visibility</span>                                </div>
                             </div>
-                            <a href="#" class="study-link">View Details</a>
+                            <a href="<?php echo home_url('/blog'); ?>" class="study-link">View Details</a>
                         </div>
                     </div>                    <!-- Finance Case Study -->
                     <div class="case-study-card animate-on-scroll animate-stagger animate-fade-up" data-category="finance">
@@ -147,10 +145,9 @@ get_header(); ?>
                                 </div>
                                 <div class="metric">
                                     <span class="metric-value">85%</span>
-                                    <span class="metric-label">Cost Reduction</span>
-                                </div>
+                                    <span class="metric-label">Cost Reduction</span>                                </div>
                             </div>
-                            <a href="#" class="study-link">View Details</a>
+                            <a href="<?php echo home_url('/blog'); ?>" class="study-link">View Details</a>
                         </div>
                     </div>                    <!-- Education Case Study -->
                     <div class="case-study-card animate-on-scroll animate-stagger animate-fade-up" data-category="education">
@@ -170,10 +167,9 @@ get_header(); ?>
                                 </div>
                                 <div class="metric">
                                     <span class="metric-value">340%</span>
-                                    <span class="metric-label">Email Revenue</span>
-                                </div>
+                                    <span class="metric-label">Email Revenue</span>                                </div>
                             </div>
-                            <a href="#" class="study-link">View Details</a>
+                            <a href="<?php echo home_url('/blog'); ?>" class="study-link">View Details</a>
                         </div>
                     </div>                    <!-- SaaS Case Study -->
                     <div class="case-study-card animate-on-scroll animate-stagger animate-fade-up" data-category="saas">
@@ -193,10 +189,9 @@ get_header(); ?>
                                 </div>
                                 <div class="metric">
                                     <span class="metric-value">275%</span>
-                                    <span class="metric-label">Trial Conversions</span>
-                                </div>
+                                    <span class="metric-label">Trial Conversions</span>                                </div>
                             </div>
-                            <a href="#" class="study-link">View Details</a>
+                            <a href="<?php echo home_url('/blog'); ?>" class="study-link">View Details</a>
                         </div>
                     </div>                    <!-- E-commerce Case Study 2 -->
                     <div class="case-study-card animate-on-scroll animate-stagger animate-fade-up" data-category="ecommerce">
@@ -216,10 +211,9 @@ get_header(); ?>
                                 </div>
                                 <div class="metric">
                                     <span class="metric-value">65%</span>
-                                    <span class="metric-label">Cost per Sale</span>
-                                </div>
+                                    <span class="metric-label">Cost per Sale</span>                                </div>
                             </div>
-                            <a href="#" class="study-link">View Details</a>
+                            <a href="<?php echo home_url('/blog'); ?>" class="study-link">View Details</a>
                         </div>
                     </div>
 
