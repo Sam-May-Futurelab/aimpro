@@ -107,11 +107,13 @@
     text-align: center;
 }
 
-.form-submit-btn {
+.form-submit-btn,
+button.form-submit-btn,
+input[type="submit"].form-submit-btn {
     display: inline-block;
     padding: 14px 36px;
     background: linear-gradient(135deg, var(--primary-orange) 0%, var(--secondary-orange, #ff8c00) 100%);
-    color: #ffffff;
+    color: #ffffff !important;
     font-weight: 600;
     font-size: 1rem;
     text-transform: uppercase;
@@ -125,24 +127,35 @@
         inset 0 1px 0 rgba(255, 255, 255, 0.2);
     position: relative;
     overflow: hidden;
+    font-family: 'Inter', sans-serif;
+    text-decoration: none;
+    outline: none;
 }
 
-.form-submit-btn:hover {
+.form-submit-btn:hover,
+button.form-submit-btn:hover,
+input[type="submit"].form-submit-btn:hover {
     background: linear-gradient(135deg, var(--secondary-orange, #ff8c00) 0%, var(--primary-orange) 100%);
+    color: #ffffff !important;
     box-shadow: 
         0 10px 25px rgba(241, 90, 37, 0.4),
         inset 0 1px 0 rgba(255, 255, 255, 0.3);
     transform: translateY(-2px);
+    text-decoration: none;
 }
 
-.form-submit-btn:active {
+.form-submit-btn:active,
+button.form-submit-btn:active,
+input[type="submit"].form-submit-btn:active {
     transform: translateY(1px);
     box-shadow: 
         0 5px 15px rgba(241, 90, 37, 0.3),
         inset 0 1px 0 rgba(255, 255, 255, 0.2);
 }
 
-.form-submit-btn:focus {
+.form-submit-btn:focus,
+button.form-submit-btn:focus,
+input[type="submit"].form-submit-btn:focus {
     outline: none;
     box-shadow: 
         0 8px 20px rgba(241, 90, 37, 0.3),

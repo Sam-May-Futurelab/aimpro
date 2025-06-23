@@ -169,14 +169,22 @@ function aimpro_enqueue_assets() {
     
     // Enqueue footer components styles (CTA buttons, theme toggle)
     wp_enqueue_style('aimpro-footer-components', get_template_directory_uri() . '/assets/css/footer-components.css', array('aimpro-footer', 'aimpro-buttons'), $theme_version);
+      // Enqueue contact form styles
+    wp_enqueue_style('aimpro-contact-form', get_template_directory_uri() . '/assets/css/contact-form.css', array('aimpro-base'), $theme_version);
     
-    // Enqueue contact form styles    wp_enqueue_style('aimpro-contact-form', get_template_directory_uri() . '/assets/css/contact-form.css', array('aimpro-base'), $theme_version);
-      // Enqueue responsive styles (should be loaded last)
-    wp_enqueue_style('aimpro-responsive', get_template_directory_uri() . '/assets/css/responsive.css', array('aimpro-base'), $theme_version);    // Header overrides disabled - consolidated into header-modern.css
+    // Enqueue responsive styles (should be loaded last)
+    wp_enqueue_style('aimpro-responsive', get_template_directory_uri() . '/assets/css/responsive.css', array('aimpro-base'), $theme_version);
+    
+    // Header overrides disabled - consolidated into header-modern.css
     // wp_enqueue_style('aimpro-header-overrides', get_template_directory_uri() . '/assets/css/header-overrides.css', array('aimpro-header-modern', 'aimpro-buttons'), $theme_version);
-      // Enqueue ebook/lead magnet styles
-    wp_enqueue_style('aimpro-ebook', get_template_directory_uri() . '/assets/css/ebook.css', array('aimpro-base'), $theme_version . '-' . time());    // Enqueue insights styles
-    wp_enqueue_style('aimpro-insights', get_template_directory_uri() . '/assets/css/insights.css', array('aimpro-base'), $theme_version . '-' . time());      // Enqueue blog styles
+    
+    // Enqueue ebook/lead magnet styles
+    wp_enqueue_style('aimpro-ebook', get_template_directory_uri() . '/assets/css/ebook.css', array('aimpro-base'), $theme_version . '-' . time());
+    
+    // Enqueue insights styles
+    wp_enqueue_style('aimpro-insights', get_template_directory_uri() . '/assets/css/insights.css', array('aimpro-base'), $theme_version . '-' . time());
+    
+    // Enqueue blog styles
     wp_enqueue_style('aimpro-blog', get_template_directory_uri() . '/assets/css/blog.css', array('aimpro-base'), $theme_version . '-' . time());
     
     // Enqueue blog post template styles (for single posts only)
@@ -696,34 +704,68 @@ function aimpro_add_landing_page_meta_boxes() {
     global $post;
     if (empty($post)) return;
     
-    // Check if this is the front page, a landing page template, or specific pages that should have these meta boxes
-    $is_landing_page = false;
+    // Only add these meta boxes to the homepage/front page
+    // Template-specific pages should use their own meta files in the includes/ folder
+    $is_front_page = false;
     $page_template = get_page_template_slug($post->ID);
     $page_slug = $post->post_name;
     
-    // List of templates and slugs that should have these meta boxes
-    $landing_templates = array('page-landing.php', 'page-home.php', 'front-page.php');
-    $landing_slugs = array('home', 'landing', 'homepage');
-    
-    // Check if this is the front page
+    // Check if this is the front page/homepage ONLY
     if (get_option('page_on_front') == $post->ID) {
-        $is_landing_page = true;
+        $is_front_page = true;
     }
     
-    // Check if using a landing page template
-    if (in_array($page_template, $landing_templates)) {
-        $is_landing_page = true;
+    // Also allow for pages specifically designed as the main landing page
+    if ($page_template === 'front-page.php' || $page_slug === 'home' || $page_slug === 'homepage') {
+        $is_front_page = true;
+    }
+      // IMPORTANT: Do NOT add these meta boxes to pages that have their own template-specific meta files
+    // Get all pages that have dedicated meta files in the includes/ folder
+    $template_specific_pages = array(
+        'page-about.php', 'page-contact.php', 'page-ai-crm-setup.php', 'page-services.php',
+        'page-finance.php', 'page-estate-agents.php', 'page-professional-services.php',
+        'page-coaches-consultants.php', 'page-improve-roi-ads.php', 'page-rank-higher-locally.php',
+        'page-automate-marketing.php', 'page-high-converting-website.php', 'page-events-webinars.php',
+        'page-training-mentoring.php', 'page-templates-tools.php', 'page-industries.php',
+        'page-home-garden.php', 'page-automotive.php', 'page-ecommerce.php', 'page-solutions.php',
+        'page-lead-generation.php', 'page-chatbots.php', 'page-advertising-ppc.php', 'page-google-ads.php',
+        'page-meta-ads.php', 'page-microsoft-ads.php', 'page-retargeting-display.php', 'page-ppc-audit.php',
+        'page-seo-services.php', 'page-local-seo.php', 'page-seo-audit.php', 'page-technical-seo.php',
+        'page-on-page-seo.php', 'page-white-label-seo.php', 'page-funnel-automation.php', 'page-funnel-builds.php',
+        'page-email-campaigns.php', 'page-email-sms-flows.php', 'page-marketing-automation.php',
+        'page-website-design.php', 'page-website-development.php', 'page-ux-ui-optimisation.php',
+        'page-landing-pages.php', 'page-streamline-sales-funnel.php', 'page-company.php', 'page-team.php',
+        'page-testimonials.php', 'page-careers.php', 'page-become-a-partner.php', 'page-resources.php',
+        'page-blog.php', 'page-case-studies.php'
+    );
+    
+    // Additional check: if the page has ANY template file, don't add global meta boxes
+    // This ensures that ONLY the true homepage gets these meta boxes
+    if (!empty($page_template) || in_array($page_template, $template_specific_pages)) {
+        return;
     }
     
-    // Check if has a landing page slug
-    if (in_array($page_slug, $landing_slugs)) {
-        $is_landing_page = true;
-    }
+    // Extra safety: check page slug for known template-specific pages
+    $template_specific_slugs = array(
+        'about', 'contact', 'ai-crm-setup', 'services', 'finance', 'estate-agents', 
+        'professional-services', 'coaches-consultants', 'improve-roi-ads', 'rank-higher-locally',
+        'automate-marketing', 'high-converting-website', 'events-webinars', 'training-mentoring',
+        'templates-tools', 'industries', 'home-garden', 'automotive', 'ecommerce', 'solutions',
+        'lead-generation', 'chatbots', 'advertising-ppc', 'google-ads', 'meta-ads', 'microsoft-ads',
+        'retargeting-display', 'ppc-audit', 'seo-services', 'local-seo', 'seo-audit', 'technical-seo',
+        'on-page-seo', 'white-label-seo', 'funnel-automation', 'funnel-builds', 'email-campaigns',
+        'email-sms-flows', 'marketing-automation', 'website-design', 'website-development',
+        'ux-ui-optimisation', 'landing-pages', 'streamline-sales-funnel', 'company', 'team',
+        'testimonials', 'careers', 'become-a-partner', 'resources', 'blog', 'case-studies'
+    );
     
-    if ($is_landing_page) {
+    if (in_array($page_slug, $template_specific_slugs)) {
+        return;
+    }    // Only add meta boxes if this is truly the front page and not a template-specific page
+    if ($is_front_page) {
         add_meta_box(
             'aimpro_hero_section',
-            'Hero Section Content',
+            'Homepage Content - Hero Section',
             'aimpro_hero_section_callback',
             'page',
             'normal',
@@ -732,7 +774,7 @@ function aimpro_add_landing_page_meta_boxes() {
         
         add_meta_box(
             'aimpro_stats_section',
-            'Stats Section',
+            'Homepage Content - Stats Section',
             'aimpro_stats_section_callback',
             'page',
             'normal',
@@ -741,7 +783,7 @@ function aimpro_add_landing_page_meta_boxes() {
         
         add_meta_box(
             'aimpro_services_preview',
-            'Services Preview Section',
+            'Homepage Content - Services Preview',
             'aimpro_services_preview_callback',
             'page',
             'normal',
@@ -750,7 +792,7 @@ function aimpro_add_landing_page_meta_boxes() {
         
         add_meta_box(
             'aimpro_office_section',
-            'Office Visit Section',
+            'Homepage Content - Office Visit Section',
             'aimpro_office_section_callback',
             'page',
             'normal',
@@ -762,6 +804,12 @@ function aimpro_add_landing_page_meta_boxes() {
 // Hero Section Meta Box
 function aimpro_hero_section_callback($post) {
     wp_nonce_field('aimpro_save_meta_box_data', 'aimpro_meta_box_nonce');
+    
+    // Add clear indication this is for homepage only
+    echo '<div style="background: #f0f9ff; padding: 15px; margin-bottom: 20px; border-left: 4px solid #0073aa;">';
+    echo '<strong>📍 Homepage Content:</strong> These fields control the content on your website\'s homepage/front page only. ';
+    echo 'Template-specific pages (like About, Services, AI CRM Setup, etc.) have their own dedicated meta boxes.';
+    echo '</div>';
     
     $hero_badge = get_post_meta($post->ID, '_hero_badge', true) ?: '#1 RATED DIGITAL MARKETING AGENCY';
     $hero_title = get_post_meta($post->ID, '_hero_title', true) ?: 'Boost Your Online Presence with <span class="text-gradient">Data-Driven Marketing</span>';

@@ -63,10 +63,9 @@
         </div>        <div class="footer-bottom">
             <div class="copyright">
                 © <?php echo date('Y'); ?> Aimpro Digital. All Rights Reserved.
-            </div>
-            <div class="designer-credit">
+            </div>            <div class="designer-credit">
                 <span class="credit-text">Designed by</span>
-                <a href="https://www.futurelab.solutions/" target="_blank" rel="noopener" class="futurelab-link">Futurelab</a>
+                <a href="<?php echo home_url('/website-development'); ?>" class="aimpro-link">Aimpro</a>
             </div>
             <div class="footer-bottom-links">
                 <a href="<?php echo home_url('/contact'); ?>" class="footer-link">Contact Us</a>
