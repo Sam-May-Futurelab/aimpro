@@ -1209,12 +1209,16 @@
 }
 
 .platform-features li::before {
-    content: '▶';
+    content: '';
     position: absolute;
     left: 0;
-    top: 0.75rem;
-    color: #f15a25;
-    font-size: 0.8rem;
+    top: 0.85rem;
+    width: 12px;
+    height: 12px;
+    background-image: url('../images/aimpro-target.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
 }
 
 .platform-results {
