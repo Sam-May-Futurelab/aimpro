@@ -62,13 +62,15 @@
     font-weight: 700;
     position: relative;
     padding-bottom: 0.5rem;
+    text-align: center;
 }
 
 .footer-column h3::after {    
     content: '';
     position: absolute;
     bottom: 0;
-    left: 0;
+    left: 50%;
+    transform: translateX(-50%);
     width: 30px;
     height: 3px;
     background: linear-gradient(90deg, #f15a25, #ff6b35);

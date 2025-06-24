@@ -335,14 +335,14 @@ body.home .section-subtitle {
 
 /* Stats Section */
 .stats-section {
-    padding: 3rem 0; /* Reduced from 5rem for tighter spacing */
+    padding: 2rem 0 0.5rem 0; /* Further reduced top and bottom padding to minimize gaps */
     background: linear-gradient(135deg, #1a202c 0%, #2d3748 100%);
     color: white;
     position: relative;
     overflow: hidden;
     contain: layout style; /* CSS containment for better performance */
     will-change: scroll-position; /* Optimize for scroll performance */
-    min-height: 400px; /* Ensure enough height for animation visibility */
+    min-height: 350px; /* Reduced minimum height */
 }
 
 /* Stats Animation Background */
@@ -366,12 +366,12 @@ body.home .section-subtitle {
     width: 100%;
     height: 100%;
     position: absolute;
-    top: -25%; /* Move up further but stay within reasonable bounds */
+    top: -20%; /* Adjusted position to reduce space */
     left: 0;
     z-index: 1; /* Reset to positive since parent container is now behind */
     pointer-events: none;
     opacity: 0.8;
-    min-height: 300px;
+    min-height: 270px; /* Reduced minimum height */
     display: flex;
     align-items: flex-start;
     justify-content: center;
@@ -380,7 +380,7 @@ body.home .section-subtitle {
 
 #lottie-stats-animation > * {
     width: 100% !important;
-    height: 165% !important; /* Keep at 120% since that works well */
+    height: 130% !important; /* Further reduced to prevent overflow */
     max-height: none;
     object-fit: contain; /* Change from cover to contain for better control */
     object-position: center top; /* Position the animation content at top */
@@ -398,7 +398,7 @@ body.home .section-subtitle {
     position: relative;
     width: 100%;
     height: 100%;
-    min-height: 200px; /* Ensure minimum height */
+    min-height: 150px; /* Reduced minimum height */
 }
 
 /* Performance Optimized CSS Fallback Wave Animation */
@@ -730,7 +730,7 @@ body.home .section-subtitle {
 
 /* Premium Services Section */
 .premium-services-section {
-    padding: 3rem 0; /* Reduced from 5rem for tighter spacing */
+    padding: 0.5rem 0 3rem 0; /* Reduced top padding to minimize space above the heading */
     background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
     position: relative;
     overflow: hidden;
@@ -1635,7 +1635,7 @@ html:root body.light-theme .about-page .page-hero .hero-title {
 
 @media (max-width: 768px) {
     .premium-services-section {
-        padding: 2rem 0; /* Reduced from 4rem for tighter mobile spacing */
+        padding: 1rem 0 2rem 0; /* Reduced top padding significantly for mobile to close gap */
     }
     
     .premium-services-grid {
@@ -2264,6 +2264,20 @@ html:root body.light-theme .about-page .page-hero .hero-title {
     animation: fadeInScale 0.6s cubic-bezier(0.4, 0, 0.2, 1) forwards;
 }
 
+/* Section spacing adjustments to reduce gaps */
+.stats-section + .premium-services-section {
+    margin-top: -10px; /* Create a slight overlap to remove the gap between sections */
+}
+
+.premium-services-section .content-center {
+    margin-bottom: 1.0rem; /* Reduced margin below the title section */
+}
+
+body.home .section-subtitle {
+    margin-top: 0.5rem; /* Reduced top margin for section subtitles */
+    margin-bottom: 1rem; /* Reduced bottom margin for section subtitles */
+}
+
 /* Stagger animation delays for cards */
 .service-card:nth-child(1) { animation-delay: 0.1s; }
 .service-card:nth-child(2) { animation-delay: 0.2s; }
@@ -2457,9 +2471,8 @@ select:focus {
         padding: 0.5rem 0; /* Reduced to match desktop and prevent expansion */
     }
       .value-statement {
-        padding: 2rem 0; /* Reduced from 3rem - consolidated with sections/value-statement.css */
-    }      .stats-section {
-        padding: 2rem 0; /* Reduced from 4rem for tighter mobile spacing */
+        padding: 2rem 0; /* Reduced from 3rem - consolidated with sections/value-statement.css */    }      .stats-section {
+        padding: 3rem 0 0.5rem 0; /* Reduced bottom padding even more for mobile to close gap */
         min-height: 300px; /* Ensure enough height on mobile */
     }
     
