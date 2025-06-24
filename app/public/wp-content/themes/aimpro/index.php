@@ -380,15 +380,8 @@ get_header(); ?>
     <div class="container">        <div class="office-content-wrapper">            <div class="office-content animate-slide-left">
                 <h2 class="animate-fade-up" data-delay="0.1"><?php echo aimpro_get_field('office_title', 'Come See Us... We\'re a <span class="highlight curly-underline">REAL</span> Company with Real Humans'); ?></h2>
                 <p class="animate-fade-up" data-delay="0.2"><?php echo aimpro_get_field('office_description', 'Let\'s discuss your project over a coffee. Book a time to visit our Birmingham office and meet the team behind your marketing success.'); ?></p>
-                
-                <div class="calendar-booking animate-fade-up" data-delay="0.3">
-                    <a href="#" class="btn-primary large calendar-btn">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentcolour" stroke-width="2">
-                            <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
-                            <line x1="16" y1="2" x2="16" y2="6"></line>
-                            <line x1="8" y1="2" x2="8" y2="6"></line>
-                            <line x1="3" y1="10" x2="21" y2="10"></line>
-                        </svg>
+                  <div class="calendar-booking animate-fade-up" data-delay="0.3">
+                    <a href="#" class="btn-primary large">
                         BOOK A COFFEE MEETING
                     </a>
                 </div>

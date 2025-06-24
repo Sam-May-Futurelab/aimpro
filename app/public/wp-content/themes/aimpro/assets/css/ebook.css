@@ -253,12 +253,16 @@
 }
 
 .ebook-features li::before {
-    content: '✓';
+    content: '';
     position: absolute;
     left: 0;
-    color: var(--primary-orange);
-    font-weight: bold;
-    font-size: 1rem;
+    width: 16px;
+    height: 16px;
+    background-image: url('../images/aimpro-target.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    top: 2px;
 }
 
 /* Lead Capture Form */

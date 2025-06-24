@@ -2580,20 +2580,25 @@ select:focus {
     
     .stat-item .stat-number {
         font-size: 1.6rem !important;
-    }
-      .stat-item .stat-text {
+    }      .stat-item .stat-text {
         font-size: 0.8rem !important;
     }
-}    .tags-wrapper {
-        padding: 1rem 0;
-        gap: 1rem;
-    }
-    
-    .tag {
-        font-size: 0.85rem; /* Increased from 0.75rem */
-        padding: 0.7rem 1.3rem; /* Increased from 0.6rem 1.2rem */
-        letter-spacing: 0.3px;
-    }/* Extra Small Mobile - Further Reduce Testimonials */
+}
+
+/* Tags Styling */
+.tags-wrapper {
+    padding: 1rem 0;
+    gap: 1rem;
+}
+
+.tag {
+    font-size: 0.85rem; /* Increased from 0.75rem */
+    padding: 0.7rem 1.3rem; /* Increased from 0.6rem 1.2rem */
+    letter-spacing: 0.3px;
+}
+
+/* Extra Small Mobile - Further Reduce Testimonials */
+@media (max-width: 480px) {
     .testimonial-card {
         padding: 1.5rem; /* Further reduced from 2rem */
         border-radius: 16px; /* Adjusted from 12px for softer edges */
@@ -3342,34 +3347,20 @@ select:focus {
 
 @media (max-width: 768px) {
     .services-particles-container {
-        opacity: 0.8; /* Increased from 0.3 for better visibility */5% { transform: translate(30px, -25px) scale(1.1); }
-    }50% { transform: translate(0, -50px) scale(1); }
+        opacity: 0.8; /* Increased from 0.3 for better visibility */
+    }
     
-    /* Hide only some particles on mobile for better performance but maintain visibility */e(0, 0) scale(1); }
-    .particle-4, .particle-8 {
+    /* Hide only some particles on mobile for better performance but maintain visibility */
+    .particle-4, .particle-8, 
+    .services-particle[style*="right: 1%"],
+    .services-particle[style*="right: 2%"],
+    .services-particle[style*="right: 3%"],
+    .services-particle[style*="right: 5%"],
+    .services-particle[style*="left: 1%"],
+    .services-particle[style*="left: 2%"],
+    .services-particle[style*="left: 3%"],
+    .services-particle[style*="left: 5%"] {
         display: none;
-    }ptimized particles for mobile devices */
-    
-    /* Optimize animation timings */container {
-    .services-particle {
-        animation-duration: 35s !important; /* Slightly faster than before */
-    }   
-}    /* Hide only some particles on mobile for better performance but maintain visibility */
-    .particle-4, .particle-8 {
-
-
-
-
-
-
-
-
-
-
-
-
-
-}    box-shadow: 0 0 15px rgba(241, 90, 37, 0.3); /* Enhanced glow for edge particles */.services-particle[style*="right: 1%"] {.services-particle[style*="right: 2%"],.services-particle[style*="right: 3%"],.services-particle[style*="right: 5%"],.services-particle[style*="left: 1%"],.services-particle[style*="left: 2%"],.services-particle[style*="left: 3%"],.services-particle[style*="left: 5%"],/* Add edge glow for particles at the edge */        display: none;
     }
     
     /* Optimize animation timings */
