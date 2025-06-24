@@ -1865,7 +1865,8 @@ body.page-template-page-templates-tools .featured-resource .tool-meta ul li::bef
     content: '';
     position: absolute;
     left: 0;
-    top: 4px;
+    top: 50%;
+    transform: translateY(-50%);
     width: 18px;
     height: 18px;
     background-image: url('../images/aimpro-target.png');
