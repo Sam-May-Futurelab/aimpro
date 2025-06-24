@@ -542,48 +542,72 @@ get_header(); ?>
     <div class="container">
         <div class="content-centre">            <h2><?php echo aimpro_get_field('blog_title', 'Scale Up Your <span class="highlight curly-underline">MARKETING</span>'); ?></h2>
             <p class="section-subtitle"><?php echo aimpro_get_field('blog_subtitle', 'Zero secrets. Maximum value. We share proven strategies and insider insights to help ambitious marketers like you accelerate growth, drive traffic, and maximise revenue.'); ?></p>
-        </div>
-          <div class="blog-grid">
-            <?php
-            // Get the 4 most recent posts
-            $recent_posts = get_posts(array(
-                'posts_per_page' => 4,
-                'post_status' => 'publish'
-            ));
-            
-            if (!empty($recent_posts)) {
-                foreach ($recent_posts as $post) {
-                    setup_postdata($post);
-                    $categories = get_the_category();
-                    $category_name = !empty($categories) ? esc_html($categories[0]->name) : 'Uncategorized';
-                    ?>
-                    <article class="blog-card">                        <div class="blog-image">
-                            <a href="<?php the_permalink(); ?>">
-                                <?php if (has_post_thumbnail()): ?>
-                                    <?php the_post_thumbnail('medium_large', array('class' => 'blog-thumbnail', 'alt' => get_the_title())); ?>
-                                <?php else: ?>
-                                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/default-blog.png" alt="<?php the_title_attribute(); ?>" class="blog-thumbnail" />
-                                <?php endif; ?>
-                            </a>
-                            <span class="blog-category"><?php echo $category_name; ?></span>
-                        </div>                          <div class="blog-content">
-                            <div>
-                                <h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
-                                <div class="blog-meta">
-                                    <span class="blog-date"><?php echo get_the_date('M j, Y'); ?></span>
-                                </div>
-                                <p class="blog-excerpt"><?php echo wp_trim_words(get_the_excerpt(), 20, '...'); ?></p>
-                            </div>
-                            <a href="<?php the_permalink(); ?>" class="btn-outline btn-sm">Read More</a>
-                        </div>
-                    </article>
-                    <?php
-                }
-                wp_reset_postdata();
-            } else {
-                echo '<p class="no-posts-found">No blog posts found. Please add some posts in the WordPress admin.</p>';
-            }
-            ?>
+        </div>          <div class="posts-grid">
+            <!-- Social Media Strategy Post -->
+            <article class="post-card animate-on-scroll animate-stagger animate-fade-up">
+                <div class="post-image">
+                    <a href="#">
+                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/blog/social-media-strategy-2025.jpg" alt="Social Media Strategy 2025" />
+                    </a>
+                </div>
+                <div class="post-content">
+                    <div class="post-meta">
+                        <span class="post-date">Jun 17, 2025</span>
+                        <span class="post-category">Social Media</span>
+                    </div>
+                    <h3 class="post-title">
+                        <a href="#">Social Media Strategy That Actually Drives Leads in 2025</a>
+                    </h3>
+                    <div class="post-excerpt">
+                        Posting random content and hoping for results? That doesn't cut it anymore. In 2025, effective social media marketing means strategy,...
+                    </div>
+                    <a href="#" class="read-more">Read More</a>
+                </div>
+            </article>
+
+            <!-- SEO Trends Post -->
+            <article class="post-card animate-on-scroll animate-stagger animate-fade-up">
+                <div class="post-image">
+                    <a href="#">
+                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/blog/seo-trends-2025.jpg" alt="SEO Trends 2025" />
+                    </a>
+                </div>
+                <div class="post-content">
+                    <div class="post-meta">
+                        <span class="post-date">Jun 15, 2025</span>
+                        <span class="post-category">SEO</span>
+                    </div>
+                    <h3 class="post-title">
+                        <a href="#">Top SEO Trends to Watch in 2025</a>
+                    </h3>
+                    <div class="post-excerpt">
+                        Discover the latest SEO trends that will shape search marketing strategies in 2025 and beyond. From AI integration to voice search optimization...
+                    </div>
+                    <a href="#" class="read-more">Read More</a>
+                </div>
+            </article>
+
+            <!-- PPC Optimization Post -->
+            <article class="post-card animate-on-scroll animate-stagger animate-fade-up">
+                <div class="post-image">
+                    <a href="#">
+                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/blog/ppc-optimisation.jpg" alt="PPC Optimisation" />
+                    </a>
+                </div>
+                <div class="post-content">
+                    <div class="post-meta">
+                        <span class="post-date">Jun 12, 2025</span>
+                        <span class="post-category">PPC</span>
+                    </div>
+                    <h3 class="post-title">
+                        <a href="#">5 PPC Optimisation Strategies That Actually Work</a>
+                    </h3>
+                    <div class="post-excerpt">
+                        Learn proven PPC optimisation techniques to improve your ad performance and ROI. These strategies have helped our clients increase conversions by 150%...
+                    </div>
+                    <a href="#" class="read-more">Read More</a>
+                </div>
+            </article>
         </div>
         
         <div class="blog-cta-section">
