@@ -1099,6 +1099,32 @@
     flex-grow: 1;
 }
 
+.subcategory-card .service-features {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 1.5rem;
+}
+
+.subcategory-card .service-features li {
+    color: var(--text-secondary);
+    margin-bottom: 0.5rem;
+    position: relative;
+    padding-left: 1.5rem;
+}
+
+.subcategory-card .service-features li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 2px;
+    width: 16px;
+    height: 16px;
+    background-image: url('../images/aimpro-target.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
 /* Categories Grid Layouts */
 .categories-grid,
 .ai-categories-grid {
