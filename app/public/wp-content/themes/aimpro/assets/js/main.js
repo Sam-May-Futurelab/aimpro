@@ -454,7 +454,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     <a href="/website-design">Website Design</a>
                     <a href="/landing-pages">Landing Pages</a>
                     <a href="/funnel-builds">Funnel Builds</a>
-                    <a href="/ux-ui-optimization">UX/UI Design</a>
+                    <a href="/ux-ui-optimisation">UX/UI Design</a>
                 `;
                 // Insert immediately after the Services link
                 servicesLink.insertAdjacentElement('afterend', dropdown);
