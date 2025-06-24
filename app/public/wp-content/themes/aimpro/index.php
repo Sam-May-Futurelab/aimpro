@@ -22,7 +22,7 @@ get_header(); ?>
         <div class="floating-shape shape-1"></div>
         <div class="floating-shape shape-2"></div>
     </div><div class="container">        <div class="hero-wrapper">            <div class="hero-content animate-on-scroll animate-fade-up">                <div class="hero-badge slide-up-delay-1">
-                    <span><?php echo aimpro_get_field('hero_badge_text', 'Award-Winning Digital Agency'); ?></span>                </div><?php echo aimpro_get_field('hero_title', '<h1 class="hero-title">Scale Your Business With <span class="highlight curly-underline">PRECISION</span> Digital <span class="highlight-word" style="colour: #f15a25 !important; -webkit-text-fill-colour: #f15a25 !important;">Marketing</span></h1>'); ?>                <div class="hero-straplines">
+                    <span><?php echo aimpro_get_field('hero_badge_text', 'Award-Winning Digital Agency'); ?></span>                </div><?php echo aimpro_get_field('hero_title', '<h1 class="hero-title">Scale Your Business With <span class="curly-underline">PRECISION</span> Digital <span class="highlight-word" style="colour: #f15a25 !important; -webkit-text-fill-colour: #f15a25 !important;">Marketing</span></h1>'); ?>                <div class="hero-straplines">
                     <span class="strapline active"><?php echo aimpro_get_field('hero_strapline_1', 'No Fluff. Just Results.'); ?></span>
                     <span class="strapline"><?php echo aimpro_get_field('hero_strapline_2', 'Data-Driven Strategy. Measurable Results.'); ?></span>
                     <span class="strapline"><?php echo aimpro_get_field('hero_strapline_3', 'Grow Your Business With Precision Marketing.'); ?></span>
@@ -89,7 +89,7 @@ get_header(); ?>
                 <div class="stat-label"><?php echo aimpro_get_field('stat_2_label', 'Increase in Client Leads'); ?></div>
             </div>
             <div class="stat-item counter">
-                <div class="stat-number" data-count="<?php echo aimpro_get_field('stat_3_number', '15'); ?>"><?php echo aimpro_get_field('stat_3_number', '0'); ?>+</div>
+                <div class="stat-number" data-count="<?php echo aimpro_get_field('stat_3_number', '25'); ?>"><?php echo aimpro_get_field('stat_3_number', '0'); ?>+</div>
                 <div class="stat-label"><?php echo aimpro_get_field('stat_3_label', 'Industries Transformed'); ?></div>
             </div>
             <div class="stat-item counter">

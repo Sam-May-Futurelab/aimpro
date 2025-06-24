@@ -211,6 +211,14 @@
     background: none !important;
 }
 
+/* Fix curly underline text in hero title - should appear as orange text */
+.hero-title .curly-underline {
+    -webkit-text-fill-color: #f15a25 !important;
+    color: #f15a25 !important;
+    text-shadow: none !important;
+    background: none !important;
+}
+
 /* Hero Straplines */
 .hero-straplines {
     height: 30px;
