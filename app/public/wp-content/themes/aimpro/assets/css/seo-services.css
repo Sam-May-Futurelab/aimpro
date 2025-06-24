@@ -150,18 +150,23 @@
 
 .audit-benefits ul li {
     position: relative;
-    padding-left: 22px;
+    padding-left: 24px;
     color: #334155;
     font-size: 16px;
     line-height: 1.5;
 }
 
 .audit-benefits ul li::before {
-    content: '✓';
+    content: '';
     position: absolute;
     left: 0;
-    color: #F15A25;
-    font-weight: 600;
+    top: 3px;
+    width: 16px;
+    height: 16px;
+    background-image: url('../images/aimpro-target.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
 }
 
 /* 4-column benefits grid */
@@ -274,7 +279,7 @@
 
 .component-features li {
     position: relative;
-    padding-left: 22px;
+    padding-left: 24px;
     margin-bottom: 10px;
     color: #334155;
     font-size: 1.1rem;
@@ -282,11 +287,16 @@
 }
 
 .component-features li::before {
-    content: '✓';
+    content: '';
     position: absolute;
     left: 0;
-    color: #F15A25;
-    font-weight: 600;
+    top: 3px;
+    width: 16px;
+    height: 16px;
+    background-image: url('../images/aimpro-target.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
 }
 
 /* SEO Audit Report Features */
