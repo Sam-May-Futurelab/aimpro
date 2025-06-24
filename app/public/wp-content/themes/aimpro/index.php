@@ -380,7 +380,7 @@ get_header(); ?>
     <div class="container">        <div class="office-content-wrapper">            <div class="office-content animate-slide-left">
                 <h2 class="animate-fade-up" data-delay="0.1"><?php echo aimpro_get_field('office_title', 'Come See Us... We\'re a <span class="highlight curly-underline">REAL</span> Company with Real Humans'); ?></h2>
                 <p class="animate-fade-up" data-delay="0.2"><?php echo aimpro_get_field('office_description', 'Let\'s discuss your project over a coffee. Book a time to visit our Birmingham office and meet the team behind your marketing success.'); ?></p>                  <div class="calendar-booking animate-fade-up" data-delay="0.3">
-                    <a href="#" class="btn-primary large shine-effect">
+                    <a href="<?php echo aimpro_get_field('coffee_meeting_url', '#contact'); ?>" class="btn-primary large shine-effect">
                         BOOK A COFFEE MEETING
                     </a>
                 </div>
@@ -391,15 +391,23 @@ get_header(); ?>
                     Right in the heart of Birmingham\'s business district</p>'); ?>
                 </div>
             </div>              <div class="office-visual animate-slide-right">
-                <div class="office-image-gallery main-image animate-scale-up" data-delay="0.2">
-                    <!-- Original image restored to the top position -->
-                    <img src="https://images.unsplash.com/photo-1604328698692-f76ea9498e76?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="55 Colmore Row Birmingham Office" />
+                <div class="office-image-gallery animate-scale-up" data-delay="0.2">
+                    <!-- Main office image links to about page -->
+                    <a href="<?php echo aimpro_get_field('about_page_url', '/about'); ?>">
+                        <img src="https://images.unsplash.com/photo-1604328698692-f76ea9498e76?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="55 Colmore Row Birmingham Office - Learn About Us" />
+                    </a>
                 </div>
                 <div class="office-image-gallery animate-scale-up" data-delay="0.3">
-                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/meeting-inside-aimpro-digital-marketing.png" alt="Aimpro Digital Marketing Office Interior" />
+                    <!-- Inside meeting image links to team section -->
+                    <a href="<?php echo aimpro_get_field('team_section_url', '#team'); ?>">
+                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/meeting-inside-aimpro-digital-marketing.png" alt="Aimpro Digital Marketing Office Interior - Meet Our Team" />
+                    </a>
                 </div>
                 <div class="office-image-gallery animate-scale-up" data-delay="0.4">
-                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/meeting-outside-aimpro-digital-marketing.png" alt="Aimpro Digital Marketing Office Exterior" />
+                    <!-- Outside meeting image links to company/contact -->
+                    <a href="<?php echo aimpro_get_field('company_page_url', '#contact'); ?>">
+                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/meeting-outside-aimpro-digital-marketing.png" alt="Aimpro Digital Marketing Office Exterior - Contact Our Company" />
+                    </a>
                 </div>
             </div>
         </div>
