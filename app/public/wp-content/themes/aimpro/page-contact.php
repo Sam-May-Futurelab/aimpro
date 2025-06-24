@@ -29,13 +29,12 @@ get_header(); ?>
                     <div class="curly-underline-accent"></div>
                     <p style="colour: #5a6c7d; font-size: 1.2rem; margin-bottom: 3rem;"><?php echo aimpro_get_field('contact_hero_subtitle', 'Ready to transform your business? Let\'s discuss your digital marketing goals and create a strategy that delivers measurable results.'); ?></p>
                 </div>
-                
-                <div class="values-grid">                    <div class="value-card animate-on-scroll animate-stagger animate-fade-up">
+                  <div class="values-grid">                    <div class="value-card animate-on-scroll animate-stagger animate-fade-up">
                         <div class="value-icon">
                             <i class="fas fa-phone" style="font-size: 2.5rem;"></i>
                         </div>
                         <h3><?php echo aimpro_get_field('contact_phone_label', 'Call Us Now'); ?></h3>
-                        <p><strong><?php echo aimpro_get_field('contact_phone', '+44 121 285 8490'); ?></strong></p>
+                        <p><strong><a href="tel:+441212858490" style="color: inherit; text-decoration: none;"><?php echo aimpro_get_field('contact_phone_display', '0121 285 8490'); ?></a></strong></p>
                         <p>Speak directly with our digital marketing experts for immediate assistance and consultation.</p>
                     </div>
                       <div class="value-card animate-on-scroll animate-stagger animate-fade-up">
@@ -43,7 +42,7 @@ get_header(); ?>
                             <i class="fas fa-envelope" style="font-size: 2.5rem;"></i>
                         </div>
                         <h3><?php echo aimpro_get_field('contact_email_label', 'Email Us'); ?></h3>
-                        <p><strong><?php echo aimpro_get_field('contact_email', 'hello@aimpro.co.uk'); ?></strong></p>
+                        <p><strong><a href="mailto:<?php echo aimpro_get_field('contact_email', 'hello@aimpro.co.uk'); ?>" style="color: inherit; text-decoration: none;"><?php echo aimpro_get_field('contact_email', 'hello@aimpro.co.uk'); ?></a></strong></p>
                         <p>Send us your project details and we'll respond within 24 hours with a tailored strategy.</p>
                     </div>                      <div class="value-card animate-on-scroll animate-stagger animate-fade-up">
                         <div class="value-icon">
@@ -244,9 +243,8 @@ get_header(); ?>
         <div class="container">
             <div class="final-cta-content">
                 <h2><?php echo aimpro_get_field('contact_final_cta_heading', 'Ready to <span class="text-gradient">Transform Your Digital Marketing?</span>'); ?></h2>
-                <p><?php echo aimpro_get_field('contact_final_cta_description', 'Don\'t let your competitors get ahead. Schedule a free consultation today and discover how we can help you achieve your business goals with proven digital marketing strategies.'); ?></p>
-                  <div class="cta-actions">
-                    <a href="tel:<?php echo aimpro_sanitize_phone(aimpro_get_field('contact_phone', '+441212858490')); ?>" class="btn btn-primary large"><?php echo aimpro_get_field('contact_final_cta_phone_text', 'Call Now: +44 121 285 8490'); ?></a>
+                <p><?php echo aimpro_get_field('contact_final_cta_description', 'Don\'t let your competitors get ahead. Schedule a free consultation today and discover how we can help you achieve your business goals with proven digital marketing strategies.'); ?></p>                  <div class="cta-actions">
+                    <a href="tel:<?php echo aimpro_sanitize_phone(aimpro_get_field('contact_phone', '+441212858490')); ?>" class="btn btn-primary large"><?php echo aimpro_get_field('contact_final_cta_phone_text', 'Call Now: 0121 285 8490'); ?></a>
                     <a href="mailto:<?php echo aimpro_get_field('contact_email', 'hello@aimpro.co.uk'); ?>" class="btn btn-secondary large"><?php echo aimpro_get_field('contact_final_cta_email_text', 'Send Email'); ?></a>
                 </div>
                 
@@ -984,6 +982,33 @@ get_header(); ?>
             0 8px 32px rgba(0, 0, 0, 0.3),
             inset 0 1px 0 rgba(255, 255, 255, 0.1);
     }
+}
+
+/* Contact Links Styling */
+.value-card a[href^="tel:"],
+.value-card a[href^="mailto:"] {
+    color: inherit !important;
+    text-decoration: none !important;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.value-card a[href^="tel:"]:hover,
+.value-card a[href^="mailto:"]:hover {
+    color: var(--primary-orange) !important;
+    transform: translateY(-1px);
+}
+
+.value-card a[href^="tel:"]:hover::after,
+.value-card a[href^="mailto:"]:hover::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: var(--primary-orange);
+    border-radius: 1px;
 }
 </style>
 
