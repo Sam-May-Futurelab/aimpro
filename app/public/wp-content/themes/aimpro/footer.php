@@ -29,7 +29,7 @@
             </div>            <div class="footer-column footer-contact">
                 <h3>Get in Touch</h3>
                 <span>55 Colmore Row, Birmingham B3 2AA</span>
-                <a href="tel:+441212858490">+44 121 285 8490</a>
+                <a href="tel:+441212858490">0121 285 8490</a>
                 <a href="mailto:hello@aimpro.co.uk">hello@aimpro.co.uk</a>
             </div>
               <div class="footer-column footer-connect">
