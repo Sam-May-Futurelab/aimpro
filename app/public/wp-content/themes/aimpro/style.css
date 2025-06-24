@@ -2203,6 +2203,16 @@ html:root body.light-theme .about-page .page-hero .hero-title {
     color: #ffffff !important;
 }
 
+/* Fix for Read More buttons on homepage blog section */
+.blog-section .read-more:hover,
+.blog-section .post-card .read-more:hover,
+.blog-section .posts-grid .read-more:hover {
+    background: var(--primary-orange) !important;
+    color: #ffffff !important;
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-orange);
+}
+
 /* Premium Footer - Moved to assets/css/footer.css */
 
 @keyframes slideInUp {
