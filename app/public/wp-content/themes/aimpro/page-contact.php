@@ -381,7 +381,7 @@ get_header(); ?>
 
 /* Main Contact Layout */
 .contact-main-content {
-    padding: 6rem 0;
+    padding: 3rem 0;
     background: var(--bg-secondary);
 }
 
@@ -610,7 +610,7 @@ get_header(); ?>
 
 /* FAQ Section */
 .contact-faq {
-    padding: 6rem 0;
+    padding: 4rem 0;
     background: var(--bg-primary);
 }
 
@@ -659,7 +659,7 @@ get_header(); ?>
 
 /* Social Proof Section */
 .contact-social-proof {
-    padding: 6rem 0;
+    padding: 4rem 0;
     background: var(--bg-secondary);
 }
 
@@ -733,7 +733,7 @@ get_header(); ?>
 
 /* Final CTA Section */
 .contact-final-cta {
-    padding: 6rem 0;
+    padding: 4rem 0;
     background: linear-gradient(135deg, var(--primary-black) 0%, var(--primary-black-light) 100%);
 }
 
@@ -810,15 +810,14 @@ get_header(); ?>
     .quick-contact-grid {
         grid-template-columns: 1fr;
     }
-    
-    .contact-main-content {
-        padding: 4rem 0;
+      .contact-main-content {
+        padding: 2rem 0;
     }
     
     .contact-faq,
     .contact-social-proof,
     .contact-final-cta {
-        padding: 4rem 0;
+        padding: 3rem 0;
     }
     
     .cta-actions {
@@ -842,7 +841,7 @@ get_header(); ?>
 
 /* Visit Us Section */
 .visit-us-section {
-    padding: 6rem 0;
+    padding: 4rem 0;
     background: var(--bg-primary);
     border-top: 1px solid var(--border-light);
 }
