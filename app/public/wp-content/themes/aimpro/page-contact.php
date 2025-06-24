@@ -65,7 +65,7 @@ get_header(); ?>
                 </div>
             </div>
         </div>    </section>    <!-- Main Content -->
-    <div class="contact-main-content" style="padding-top: 2rem;">
+    <div class="contact-main-content" style="padding-top: 0.5rem;">
         <div class="container">
             <div style="max-width: 1000px; margin: 0 auto;">                  <!-- Contact Form Section -->                <div class="contact-form-section animate-on-scroll animate-fade-up" style="margin-top: 0;">
                     <!-- Contact Form Header -->
@@ -200,9 +200,8 @@ get_header(); ?>
                     <p><?php echo aimpro_get_field('contact_faq_6_answer', 'We focus on measurable results with transparent reporting, offer genuine partnership rather than just service delivery, and use AI-powered tools to maximise efficiency and ROI.'); ?></p>
                 </div>
             </div>
-        </div>
-    </section>    <!-- Social Proof Section -->
-    <section class="contact-social-proof">
+        </div>    </section>    <!-- Social Proof Section -->
+    <section class="contact-social-proof" style="padding-top: 2rem;">
         <div class="container">
             <div class="social-proof-content">
                 <h2><?php echo aimpro_get_field('contact_social_proof_heading', 'Join 200+ Businesses That Trust Aimpro'); ?></h2>
