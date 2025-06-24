@@ -213,35 +213,42 @@ get_header(); ?>
                     </style>
                 </h2>
                 <p class="section-subtitle">Professional-grade resources trusted by thousands of marketers worldwide</p>
-                
-                <div class="benefits-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin-top: 40px;">
+                  <div class="benefits-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin-top: 40px;">
                     <div class="benefit-item">
-                        <div class="benefit-icon">
-                            <i class="fas fa-rocket"></i>
+                        <div class="service-icon-container">
+                            <div class="service-icon-animated">
+                                <i class="fas fa-rocket"></i>
+                            </div>
                         </div>
                         <h3>Ready to Use</h3>
                         <p>No complex setup required. Download and start using immediately to accelerate your marketing efforts.</p>
                     </div>
                     
                     <div class="benefit-item">
-                        <div class="benefit-icon">
-                            <i class="fas fa-users"></i>
+                        <div class="service-icon-container">
+                            <div class="service-icon-animated">
+                                <i class="fas fa-users"></i>
+                            </div>
                         </div>
                         <h3>Expert Crafted</h3>
                         <p>Created by our team of digital marketing experts with 10+ years of industry experience.</p>
                     </div>
                     
                     <div class="benefit-item">
-                        <div class="benefit-icon">
-                            <i class="fas fa-chart-line"></i>
+                        <div class="service-icon-container">
+                            <div class="service-icon-animated">
+                                <i class="fas fa-chart-line"></i>
+                            </div>
                         </div>
                         <h3>Proven Results</h3>
                         <p>Used by 5,000+ businesses to improve their marketing performance and ROI.</p>
                     </div>
                     
                     <div class="benefit-item">
-                        <div class="benefit-icon">
-                            <i class="fas fa-sync-alt"></i>
+                        <div class="service-icon-container">
+                            <div class="service-icon-animated">
+                                <i class="fas fa-sync-alt"></i>
+                            </div>
                         </div>
                         <h3>Regular Updates</h3>
                         <p>Our templates are regularly updated to reflect the latest marketing trends and best practices.</p>
