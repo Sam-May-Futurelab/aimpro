@@ -148,40 +148,37 @@ get_header(); ?>
                                 'featured' => true,
                                 'badge' => 'Most Popular',
                                 'title' => 'Individual Mentoring',
-                                'price' => '£149',
+                                'price' => '&pound;149',
                                 'period' => 'per session',
                                 'description' => 'One-on-one mentoring sessions with senior digital marketing experts tailored to your specific needs and career goals.',
                                 'features' => array('1-hour intensive sessions', 'personalised learning plan', 'Homework assignments', 'Progress tracking', 'Email support between sessions', 'Industry certification guidance'),
                                 'topics_title' => 'Choose Your Focus Area:',
-                                'topics' => array('SEO Strategy', 'PPC Management', 'Content Marketing', 'Social Media', 'Analytics', 'Strategy'),
-                                'cta_text' => 'Book Session',
-                                'cta_url' => '#'
+                                'topics' => array('SEO Strategy', 'PPC Management', 'Content Marketing', 'Social Media', 'Analytics', 'Strategy'),                                'cta_text' => 'Book Session',
+                                'cta_url' => home_url('/contact')
                             ),
                             array(
                                 'featured' => false,
                                 'badge' => '',
                                 'title' => 'Team Training Workshops',
-                                'price' => '£899',
+                                'price' => '&pound;899',
                                 'period' => 'per workshop',
                                 'description' => 'Comprehensive team training workshops designed to upskill your entire marketing department with consistent, high-quality education.',
                                 'features' => array('Half-day or full-day workshops', 'Up to 12 team members', 'Interactive exercises', 'Custom curriculum', 'Workshop materials included', '30-day follow-up support'),
                                 'topics_title' => 'Popular Workshop Topics:',
-                                'topics' => array('Digital Strategy', 'SEO Fundamentals', 'PPC Best Practices', 'Content Planning', 'Analytics Setup', 'Campaign Management'),
-                                'cta_text' => 'Request Quote',
-                                'cta_url' => '#'
+                                'topics' => array('Digital Strategy', 'SEO Fundamentals', 'PPC Best Practices', 'Content Planning', 'Analytics Setup', 'Campaign Management'),                                'cta_text' => 'Request Quote',
+                                'cta_url' => home_url('/contact')
                             ),
                             array(
                                 'featured' => false,
                                 'badge' => '',
                                 'title' => 'Certification Program',
-                                'price' => '£1,299',
+                                'price' => '&pound;1,299',
                                 'period' => '3-month program',
                                 'description' => 'Comprehensive 3-month certification program covering all aspects of digital marketing with hands-on projects and industry recognition.',
                                 'features' => array('12 structured modules', 'Weekly group sessions', 'Real-world projects', 'Industry certification', 'Career guidance', 'Lifetime community access'),
                                 'topics_title' => 'Curriculum Includes:',
-                                'topics' => array('Marketing Strategy', 'SEO & SEM', 'Content & Social', 'Email Marketing', 'Analytics', 'Campaign Management'),
-                                'cta_text' => 'Apply Now',
-                                'cta_url' => '#'
+                                'topics' => array('Marketing Strategy', 'SEO & SEM', 'Content & Social', 'Email Marketing', 'Analytics', 'Campaign Management'),                                'cta_text' => 'Apply Now',
+                                'cta_url' => home_url('/contact')
                             )
                         );
                     }
@@ -289,27 +286,24 @@ get_header(); ?>
                         $learning_paths = array(
                             array(
                                 'title' => 'Beginner to Professional',
-                                'duration' => '3-6 months',
-                                'description' => 'Perfect for marketing newcomers or those switching from traditional marketing to digital.',
+                                'duration' => '3-6 months',                                'description' => 'Perfect for marketing newcomers or those switching from traditional marketing to digital.',
                                 'steps' => array('Digital Marketing Fundamentals', 'SEO & Content Basics', 'PPC Campaign Management', 'Analytics & Reporting'),
                                 'cta_text' => 'Start Learning Path',
-                                'cta_url' => '#'
+                                'cta_url' => home_url('/contact')
                             ),
                             array(
                                 'title' => 'Specialist to Expert',
-                                'duration' => '2-4 months',
-                                'description' => 'For experienced marketers looking to master advanced strategies and become industry experts.',
+                                'duration' => '2-4 months',                                'description' => 'For experienced marketers looking to master advanced strategies and become industry experts.',
                                 'steps' => array('Advanced Strategy Development', 'Marketing Automation', 'Advanced Analytics', 'Team Leadership'),
                                 'cta_text' => 'Start Learning Path',
-                                'cta_url' => '#'
+                                'cta_url' => home_url('/contact')
                             ),
                             array(
                                 'title' => 'Entrepreneur Track',
-                                'duration' => '4-8 months',
-                                'description' => 'Comprehensive training for business owners and entrepreneurs to master their own marketing.',
+                                'duration' => '4-8 months',                                'description' => 'Comprehensive training for business owners and entrepreneurs to master their own marketing.',
                                 'steps' => array('Business Marketing Strategy', 'Cost-Effective Tactics', 'Conversion optimisation', 'Growth Scaling'),
                                 'cta_text' => 'Start Learning Path',
-                                'cta_url' => '#'
+                                'cta_url' => home_url('/contact')
                             )
                         );
                     }
@@ -351,21 +345,21 @@ get_header(); ?>
                                 'title' => 'SEO & Content Strategy Expert',
                                 'description' => '15+ years in digital marketing with expertise in enterprise SEO and content strategy. Former head of SEO at major UK e-commerce companies.',
                                 'specialties' => array('Technical SEO', 'Content Strategy', 'Enterprise SEO'),
-                                'stats' => array('50+ mentees', '★★★★★ 4.9')
+                                'stats' => array('50+ mentees', '&starf;&starf;&starf;&starf;&starf; 4.9')
                             ),
                             array(
                                 'name' => 'Sarah Johnson',
                                 'title' => 'PPC & Paid Media Specialist',
                                 'description' => 'Google Ads certified professional with 12+ years managing multi-million pound advertising budgets across various industries.',
                                 'specialties' => array('Google Ads', 'Facebook Ads', 'Campaign optimisation'),
-                                'stats' => array('75+ mentees', '★★★★★ 4.8')
+                                'stats' => array('75+ mentees', '&starf;&starf;&starf;&starf;&starf; 4.8')
                             ),
                             array(
                                 'name' => 'Mike Chen',
                                 'title' => 'Analytics & Data Strategy Expert',
                                 'description' => 'Former Google Analytics team member with deep expertise in data analysis, conversion tracking, and marketing attribution.',
                                 'specialties' => array('Google Analytics', 'Data Analysis', 'Attribution Modeling'),
-                                'stats' => array('40+ mentees', '★★★★★ 4.9')
+                                'stats' => array('40+ mentees', '&starf;&starf;&starf;&starf;&starf; 4.9')
                             )
                         );
                     }
@@ -443,7 +437,7 @@ get_header(); ?>
                 <h2 class="animate-on-scroll animate-fade-up"><?php echo esc_html(get_post_meta(get_the_ID(), '_training_mentoring_cta_title', true) ?: 'Ready to Accelerate Your Marketing Career?'); ?></h2>
                 <p class="animate-on-scroll animate-fade-up"><?php echo esc_html(get_post_meta(get_the_ID(), '_training_mentoring_cta_content', true) ?: 'Book a free consultation to discuss your goals and find the perfect training program for you.'); ?></p>
                 <div class="cta-buttons animate-on-scroll animate-fade-up">
-                    <a href="<?php echo esc_url(get_post_meta(get_the_ID(), '_training_mentoring_cta_primary_url', true) ?: '#'); ?>" class="btn btn-primary"><?php echo esc_html(get_post_meta(get_the_ID(), '_training_mentoring_cta_primary_text', true) ?: 'Book Free Consultation'); ?></a>
+                    <a href="<?php echo esc_url(get_post_meta(get_the_ID(), '_training_mentoring_cta_primary_url', true) ?: home_url('/contact')); ?>" class="btn btn-primary"><?php echo esc_html(get_post_meta(get_the_ID(), '_training_mentoring_cta_primary_text', true) ?: 'Book Free Consultation'); ?></a>
                     <a href="<?php echo esc_url(get_post_meta(get_the_ID(), '_training_mentoring_cta_secondary_url', true) ?: home_url('/contact')); ?>" class="btn btn-secondary"><?php echo esc_html(get_post_meta(get_the_ID(), '_training_mentoring_cta_secondary_text', true) ?: 'Contact Us'); ?></a>
                 </div>
                 <p class="cta-note animate-on-scroll animate-fade-up"><?php echo esc_html(get_post_meta(get_the_ID(), '_training_mentoring_cta_note', true) ?: 'Free 15-minute consultation • No obligation • personalised recommendations'); ?></p>

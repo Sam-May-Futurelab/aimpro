@@ -97,6 +97,7 @@
     font-size: 2.5rem;
     margin-bottom: 1rem;
     line-height: 1;
+    color: var(--primary-orange);
 }
 
 .benefit-content h3 {
@@ -133,6 +134,9 @@
     position: relative;
     border: 1px solid var(--border-color);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
 }
 
 .program-card:hover {
@@ -168,6 +172,12 @@
     font-weight: 700;
     margin-bottom: 0.5rem;
     color: var(--text-dark);
+}
+
+.program-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
 }
 
 .program-price {
@@ -584,6 +594,7 @@
     font-size: 2.5rem;
     margin-bottom: 1rem;
     line-height: 1;
+    color: var(--primary-orange);
 }
 
 .benefit-item h3 {
@@ -703,7 +714,7 @@
     text-align: center;
     position: relative;
     overflow: hidden;
-    margin-top: 1.5rem;
+    margin-top: auto;
 }
 
 .program-cta::before,
