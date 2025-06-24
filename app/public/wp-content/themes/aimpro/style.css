@@ -734,6 +734,7 @@ body.home .section-subtitle {
     background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
     position: relative;
     overflow: hidden;
+    contain: layout style; /* Add CSS containment for better performance */
 }
 
 .services-background-gradient {
@@ -743,10 +744,10 @@ body.home .section-subtitle {
     width: 100%;
     height: 100%;
     background: 
-        radial-gradient(circle at 20% 30%, rgba(241, 90, 37, 0.1) 0%, transparent 50%),
-        radial-gradient(circle at 80% 70%, rgba(255, 107, 53, 0.08) 0%, transparent 60%),
-        radial-gradient(circle at 50% 50%, rgba(255, 140, 0, 0.05) 0%, transparent 70%);
+        radial-gradient(circle at 20% 30%, rgba(241, 90, 37, 0.12) 0%, transparent 45%),
+        radial-gradient(circle at 80% 70%, rgba(255, 107, 53, 0.09) 0%, transparent 55%);
     z-index: 0;
+    will-change: opacity;
 }
 
 /* Services CTA Section - Ensure proper layering */
@@ -758,47 +759,7 @@ body.home .section-subtitle {
     pointer-events: auto;
 }
 
-.floating-elements {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    pointer-events: none;
-    z-index: 1;
-}
-
-.floating-orb {
-    position: absolute;
-    border-radius: 50%;
-    background: linear-gradient(45deg, rgba(241, 90, 37, 0.1), rgba(255, 107, 53, 0.05));
-    backdrop-filter: blur(20px);
-    animation: float 8s ease-in-out infinite;
-}
-
-.orb-1 {
-    width: 120px;
-    height: 120px;
-    top: 10%;
-    left: 15%;
-    animation-delay: 0s;
-}
-
-.orb-2 {
-    width: 80px;
-    height: 80px;
-    top: 60%;
-    right: 20%;
-    animation-delay: 3s;
-}
-
-.orb-3 {
-    width: 100px;
-    height: 100px;
-    bottom: 20%;
-    left: 10%;
-    animation-delay: 6s;
-}
+/* Removed floating-elements and floating-orb styles for better performance */
 
 @keyframes float {
     0%, 100% { transform: translateY(0px); }
@@ -825,13 +786,15 @@ body.home .section-subtitle {
     padding: 2rem;
     backdrop-filter: blur(20px);
     border: 1px solid rgba(255, 255, 255, 0.1);
-    transition: all 0.3s ease; /* Simplified and faster transition */
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease; /* Optimized transitions */
     overflow: hidden;
     cursor: pointer;
     min-height: 380px;
     display: flex;
     flex-direction: column;
     transform: translateZ(0); /* Hardware acceleration */
+    will-change: transform; /* Hint for browser optimization */
+    contain: content; /* CSS containment for better performance */
 }
 
 .premium-service-card::before {
@@ -2669,7 +2632,7 @@ select:focus {
     .testimonials-grid {
         gap: 1.5rem; /* Further reduced from 2rem */
     }
-
+}
 
 /* Ultra Small Mobile - Testimonials Compact Mode */
 @media (max-width: 375px) {
@@ -3315,6 +3278,103 @@ select:focus {
     
     .map-container {
         height: 150px;
+    }
+}
+
+/* Particles Background for Services Section */
+.services-particles-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: 1;
+    opacity: 1;
+    pointer-events: none;
+}
+
+.services-particle {
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    background-color: rgba(241, 90, 37, 0.3);
+    border-radius: 50%;
+    pointer-events: none;
+    will-change: transform;
+    box-shadow: 0 0 4px rgba(241, 90, 37, 0.1);
+    transform-origin: center center;
+}
+
+/* Enhanced animation for more movement */
+@keyframes particle-float-v1 {
+    0% { transform: translate(0, 0) scale(1) rotate(0deg); }
+    25% { transform: translate(50px, -30px) scale(1.2) rotate(45deg); }
+    50% { transform: translate(10px, -70px) scale(1) rotate(90deg); }
+    75% { transform: translate(-40px, -20px) scale(0.8) rotate(180deg); }
+    100% { transform: translate(0, 0) scale(1) rotate(360deg); }
+}
+
+@keyframes particle-float-v2 {
+    0% { transform: translate(0, 0) scale(1) rotate(0deg); }
+    33% { transform: translate(-40px, 30px) scale(1.3) rotate(120deg); }
+    66% { transform: translate(30px, 60px) scale(0.9) rotate(240deg); }
+    100% { transform: translate(0, 0) scale(1) rotate(360deg); }
+}
+
+.particle-bright {
+    width: 8px;
+    height: 8px;
+    background-color: rgba(241, 90, 37, 0.5);
+    box-shadow: 0 0 15px rgba(241, 90, 37, 0.4);
+}
+
+/* Optimized particles for mobile devices */
+@media (max-width: 768px) {
+    .services-particles-container {
+        opacity: 0.8;
+    }
+    
+    .services-particle {
+        animation-duration: 25s !important; /* Faster animations on mobile */
+    }
+}
+
+@media (max-width: 768px) {
+    .services-particles-container {
+        opacity: 0.8; /* Increased from 0.3 for better visibility */5% { transform: translate(30px, -25px) scale(1.1); }
+    }50% { transform: translate(0, -50px) scale(1); }
+    
+    /* Hide only some particles on mobile for better performance but maintain visibility */e(0, 0) scale(1); }
+    .particle-4, .particle-8 {
+        display: none;
+    }ptimized particles for mobile devices */
+    
+    /* Optimize animation timings */container {
+    .services-particle {
+        animation-duration: 35s !important; /* Slightly faster than before */
+    }   
+}    /* Hide only some particles on mobile for better performance but maintain visibility */
+    .particle-4, .particle-8 {
+
+
+
+
+
+
+
+
+
+
+
+
+
+}    box-shadow: 0 0 15px rgba(241, 90, 37, 0.3); /* Enhanced glow for edge particles */.services-particle[style*="right: 1%"] {.services-particle[style*="right: 2%"],.services-particle[style*="right: 3%"],.services-particle[style*="right: 5%"],.services-particle[style*="left: 1%"],.services-particle[style*="left: 2%"],.services-particle[style*="left: 3%"],.services-particle[style*="left: 5%"],/* Add edge glow for particles at the edge */        display: none;
+    }
+    
+    /* Optimize animation timings */
+    .services-particle {
+        animation-duration: 35s !important; /* Slightly faster than before */
     }
 }
 

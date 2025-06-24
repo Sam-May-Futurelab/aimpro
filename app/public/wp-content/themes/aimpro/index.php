@@ -119,12 +119,19 @@ get_header(); ?>
     <div class="target-icon services-target-1"></div>
     <!-- Additional floating targets -->
     <div class="target-icon floating-target-services" style="bottom: 25%; left: 12%; width: 28px; height: 28px; opacity: 0.18; animation: targetFloat 7.5s ease-in-out infinite reverse;"></div>
-    <div class="floating-elements">
-        <div class="floating-orb orb-1"></div>
-        <div class="floating-orb orb-2"></div>
-        <div class="floating-orb orb-3"></div>
+    <!-- Services Particles -->
+    <div class="services-particles-container">
+        <!-- Reduced number of particles with enhanced animations -->
+        <div class="services-particle particle-bright" style="top: 5%; left: 5%; animation: particle-float-v1 20s infinite ease-in-out;"></div>
+        <div class="services-particle" style="top: 15%; right: 12%; animation: particle-float-v2 25s infinite ease-in-out; animation-delay: -3s;"></div>
+        <div class="services-particle particle-bright" style="top: 30%; left: 25%; animation: particle-float-v1 22s infinite ease-in-out; animation-delay: -7s;"></div>
+        <div class="services-particle" style="top: 65%; right: 18%; animation: particle-float-v2 28s infinite ease-in-out; animation-delay: -5s;"></div>
+        <div class="services-particle particle-bright" style="top: 85%; left: 15%; animation: particle-float-v1 24s infinite ease-in-out; animation-delay: -9s;"></div>
+        <div class="services-particle" style="top: 45%; left: 50%; animation: particle-float-v2 26s infinite ease-in-out; animation-delay: -12s;"></div>
+        <div class="services-particle particle-bright" style="top: 20%; right: 35%; animation: particle-float-v1 29s infinite ease-in-out; animation-delay: -2s;"></div>
+        <div class="services-particle" style="top: 75%; left: 35%; animation: particle-float-v2 23s infinite ease-in-out; animation-delay: -14s;"></div>
     </div>
-      <div class="container">        <div class="content-center">            <h2><?php echo aimpro_get_field('services_title', 'Premium Digital Marketing Solutions That <span class="highlight curly-underline">DELIVER</span>'); ?></h2>
+      <div class="container"><div class="content-center">            <h2><?php echo aimpro_get_field('services_title', 'Premium Digital Marketing Solutions That <span class="highlight curly-underline">DELIVER</span>'); ?></h2>
             <p class="section-subtitle"><?php echo aimpro_get_field('services_subtitle', 'Zero fluff. Pure performance. Our integrated marketing ecosystem works seamlessly to transform prospects into profits.'); ?></p>
         </div>
         
