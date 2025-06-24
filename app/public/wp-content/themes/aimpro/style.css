@@ -258,13 +258,37 @@ body.home .section-subtitle {
 }
 
 .tags-wrapper {
-    display: flex;
-    gap: 1.4rem; /* Increased from 1.2rem for better spacing with larger tags */
+    display: grid;
+    grid-template-columns: repeat(5, minmax(120px, auto));
+    gap: 1.4rem;
     justify-content: center;
-    flex-wrap: wrap;
-    padding: 1.5rem 0; /* Reduced from 2.5rem to prevent expanding orange section */
+    padding: 1.5rem 0;
     position: relative;
     z-index: 2;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Position the last 3 tags on the second row centered */
+.tag:nth-child(6) {
+    grid-column: 2 / span 1;
+    grid-row: 2;
+}
+
+.tag:nth-child(7) {
+    grid-column: 3 / span 1;
+    grid-row: 2;
+}
+
+.tag:nth-child(8) {
+    grid-column: 4 / span 1;
+    grid-row: 2;
+}
+AI Automation
+CRM
+
+.tag:nth-child(-n+5) {
+    order: 1;
 }
 
 .tag {
@@ -282,6 +306,8 @@ body.home .section-subtitle {
     font-size: 1rem; /* Increased from 0.9rem */
     position: relative;
     cursor: pointer;
+    text-align: center;
+    display: inline-block;
 }
 
 .tag:hover {
@@ -2508,8 +2534,25 @@ select:focus {
         margin-top: 1.5rem; /* Add proper spacing from straplines */
     }    /* Medium Mobile - Tag Adjustments */
     .tags-wrapper {
-        gap: 1.2rem; /* Increased from 1rem */
-        padding: 1.2rem 0; /* Reduced to prevent orange section expansion */
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1.2rem;
+        padding: 1.2rem 0;
+    }
+    
+    /* Reset grid positioning for mobile - let tags flow naturally */
+    .tag:nth-child(6) {
+        grid-column: auto;
+        grid-row: auto;
+    }
+    
+    .tag:nth-child(7) {
+        grid-column: auto;
+        grid-row: auto;
+    }
+    
+    .tag:nth-child(8) {
+        grid-column: auto;
+        grid-row: auto;
     }
     
     .tag {

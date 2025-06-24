@@ -51,9 +51,9 @@ get_header(); ?>
             <a href="<?php echo home_url('/meta-ads'); ?>" class="tag"><?php echo aimpro_get_field('service_tag_3', 'Social Media'); ?></a>
             <a href="<?php echo home_url('/website-design'); ?>" class="tag"><?php echo aimpro_get_field('service_tag_4', 'Website'); ?></a>
             <a href="<?php echo home_url('/retargeting-display'); ?>" class="tag"><?php echo aimpro_get_field('service_tag_5', 'Ads'); ?></a>
-            <a href="<?php echo home_url('/email-campaigns'); ?>" class="tag"><?php echo aimpro_get_field('service_tag_6', 'Email'); ?></a>
             <a href="<?php echo home_url('/ai-tools'); ?>" class="tag"><?php echo aimpro_get_field('service_tag_7', 'AI Automation'); ?></a>
             <a href="<?php echo home_url('/ai-crm-setup'); ?>" class="tag"><?php echo aimpro_get_field('service_tag_8', 'CRM'); ?></a>
+            <a href="<?php echo home_url('/email-campaigns'); ?>" class="tag"><?php echo aimpro_get_field('service_tag_6', 'Email'); ?></a>
         </div>
     </div>
 </section>
