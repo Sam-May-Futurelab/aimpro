@@ -1,0 +1,45 @@
+/* ============================================
+   TARGET ICON BULLET POINTS - CLEAN SOLUTION
+   ============================================ */
+
+/* Remove all existing checkmarks and bullets */
+.service-features li::before,
+.industry-features li::before,
+.ebook-features li::before {
+    content: '' !important;
+    color: transparent !important;
+    font-size: 0 !important;
+    font-weight: normal !important;
+}
+
+/* Add target icon bullets */
+.service-features li::before,
+.industry-features li::before,
+.ebook-features li::before {
+    position: absolute !important;
+    left: 0 !important;
+    top: 3px !important;
+    width: 16px !important;
+    height: 16px !important;
+    background-image: url('../images/aimpro-target.png') !important;
+    background-size: contain !important;
+    background-repeat: no-repeat !important;
+    background-position: center !important;
+}
+
+/* Ensure proper spacing for target icons */
+.service-features li,
+.industry-features li,
+.ebook-features li {
+    position: relative !important;
+    padding-left: 24px !important;
+    list-style: none !important;
+}
+
+/* Ensure parent containers have no default list styling */
+.service-features,
+.industry-features,
+.ebook-features {
+    list-style: none !important;
+    padding-left: 0 !important;
+}

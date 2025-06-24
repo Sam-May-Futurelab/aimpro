@@ -41,16 +41,20 @@ get_header(); ?>
                         <p class="section-subtitle">Transform your marketing efforts with our comprehensive collection of professional-grade templates and tools. Whether you're looking to optimise your SEO strategy, plan effective PPC campaigns, or streamline your content marketing process, our expertly crafted resources provide the <strong class="highlight-word">foundation for success</strong>.</p>
                     </div>                    <div class="content-grid animate-on-scroll animate-stagger animate-fade-up" style="display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin: 10px 0 40px 0 !important;">
                         <div class="content-item">
-                            <div class="content-icon">
-                                <i class="fas fa-tools"></i>
+                            <div class="service-icon-container">
+                                <div class="service-icon-animated">
+                                    <i class="fas fa-tools" style="font-size: 24px; color: #F15A25;"></i>
+                                </div>
                             </div>
                             <h3>Expert Development</h3>
                             <p>Each tool has been developed by our team of <strong class="highlight-underline">digital marketing specialists</strong> who understand the challenges modern businesses face. From detailed audit checklists to strategic planning templates, these resources eliminate guesswork and provide clear, actionable frameworks that deliver results.</p>
                         </div>
                         
                         <div class="content-item">
-                            <div class="content-icon">
-                                <i class="fas fa-rocket"></i>
+                            <div class="service-icon-container">
+                                <div class="service-icon-animated">
+                                    <i class="fas fa-rocket" style="font-size: 24px; color: #F15A25;"></i>
+                                </div>
                             </div>
                             <h3>Proven Success</h3>
                             <p>Join <strong class="highlight-word">thousands of marketers</strong> who have already accelerated their growth using these proven templates. Download instantly and start implementing strategies that drive <strong class="highlight-underline">measurable improvements</strong> to your marketing performance.</p>

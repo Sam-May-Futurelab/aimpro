@@ -817,19 +817,11 @@
 
 .local-seo-services .service-features li {
     position: relative;
-    padding-left: 22px;
+    padding-left: 28px !important;
     margin-bottom: 10px;
     color: #334155;
     font-size: 1.1rem;
     line-height: 1.5;
-}
-
-.local-seo-services .service-features li::before {
-    content: '✓';
-    position: absolute;
-    left: 0;
-    color: #F15A25;
-    font-weight: 600;
 }
 
 /* Technical SEO Services Section */
@@ -899,19 +891,11 @@
 
 .technical-seo-services .service-features li {
     position: relative;
-    padding-left: 22px;
+    padding-left: 28px !important;
     margin-bottom: 10px;
     color: #334155;
     font-size: 1.1rem;
     line-height: 1.5;
-}
-
-.technical-seo-services .service-features li::before {
-    content: '✓';
-    position: absolute;
-    left: 0;
-    color: #F15A25;
-    font-weight: 600;
 }
 
 /* Technical SEO Issues Section */
@@ -1859,21 +1843,6 @@ body.page-template-page-templates-tools .featured-resource .tool-meta ul li::bef
 
 .industry-features li:hover {
     color: #334155;
-}
-
-.industry-features li::before {
-    content: '';
-    position: absolute;
-    left: 0;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 18px;
-    height: 18px;
-    background-image: url('../images/aimpro-target.png');
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
-    filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.1));
 }
 
 .industry-results {
