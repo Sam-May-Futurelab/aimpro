@@ -46,14 +46,27 @@ get_header(); ?>
 <!-- Service Tags Strip -->
 <section class="service-tags-strip">
     <div class="container">        <div class="tags-wrapper slide-up">
-            <a href="<?php echo home_url('/seo-services'); ?>" class="tag"><?php echo aimpro_get_field('service_tag_1', 'SEO'); ?></a>
-            <a href="<?php echo home_url('/google-ads'); ?>" class="tag"><?php echo aimpro_get_field('service_tag_2', 'Google Ads'); ?></a>
-            <a href="<?php echo home_url('/meta-ads'); ?>" class="tag"><?php echo aimpro_get_field('service_tag_3', 'Social Media'); ?></a>
-            <a href="<?php echo home_url('/website-design'); ?>" class="tag"><?php echo aimpro_get_field('service_tag_4', 'Website'); ?></a>
-            <a href="<?php echo home_url('/retargeting-display'); ?>" class="tag"><?php echo aimpro_get_field('service_tag_5', 'Ads'); ?></a>
-            <a href="<?php echo home_url('/ai-tools'); ?>" class="tag"><?php echo aimpro_get_field('service_tag_7', 'AI Automation'); ?></a>
-            <a href="<?php echo home_url('/ai-crm-setup'); ?>" class="tag"><?php echo aimpro_get_field('service_tag_8', 'CRM'); ?></a>
-            <a href="<?php echo home_url('/email-campaigns'); ?>" class="tag"><?php echo aimpro_get_field('service_tag_6', 'Email'); ?></a>
+            <?php 
+            $service_tags = aimpro_get_field('service_tags', array(
+                array('text' => 'SEO', 'url' => '/seo-services'),
+                array('text' => 'Google Ads', 'url' => '/google-ads'),
+                array('text' => 'Social Media', 'url' => '/meta-ads'),
+                array('text' => 'Website', 'url' => '/website-design'),
+                array('text' => 'Ads', 'url' => '/retargeting-display'),
+                array('text' => 'AI Automation', 'url' => '/ai-tools'),
+                array('text' => 'CRM', 'url' => '/ai-crm-setup'),
+                array('text' => 'Email', 'url' => '/email-campaigns'),
+            ));
+            
+            foreach ($service_tags as $tag): 
+                $url = $tag['url'];
+                // Convert relative URLs to absolute
+                if (strpos($url, 'http') !== 0) {
+                    $url = home_url($url);
+                }
+            ?>
+                <a href="<?php echo esc_url($url); ?>" class="tag"><?php echo esc_html($tag['text']); ?></a>
+            <?php endforeach; ?>
         </div>
     </div>
 </section>

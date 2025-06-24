@@ -258,8 +258,8 @@ body.home .section-subtitle {
 }
 
 .tags-wrapper {
-    display: grid;
-    grid-template-columns: repeat(5, minmax(120px, auto));
+    display: flex;
+    flex-wrap: wrap;
     gap: 1.4rem;
     justify-content: center;
     padding: 1.5rem 0;
@@ -267,28 +267,6 @@ body.home .section-subtitle {
     z-index: 2;
     max-width: 1200px;
     margin: 0 auto;
-}
-
-/* Position the last 3 tags on the second row centered */
-.tag:nth-child(6) {
-    grid-column: 2 / span 1;
-    grid-row: 2;
-}
-
-.tag:nth-child(7) {
-    grid-column: 3 / span 1;
-    grid-row: 2;
-}
-
-.tag:nth-child(8) {
-    grid-column: 4 / span 1;
-    grid-row: 2;
-}
-AI Automation
-CRM
-
-.tag:nth-child(-n+5) {
-    order: 1;
 }
 
 .tag {
@@ -2534,25 +2512,8 @@ select:focus {
         margin-top: 1.5rem; /* Add proper spacing from straplines */
     }    /* Medium Mobile - Tag Adjustments */
     .tags-wrapper {
-        grid-template-columns: repeat(3, 1fr);
         gap: 1.2rem;
         padding: 1.2rem 0;
-    }
-    
-    /* Reset grid positioning for mobile - let tags flow naturally */
-    .tag:nth-child(6) {
-        grid-column: auto;
-        grid-row: auto;
-    }
-    
-    .tag:nth-child(7) {
-        grid-column: auto;
-        grid-row: auto;
-    }
-    
-    .tag:nth-child(8) {
-        grid-column: auto;
-        grid-row: auto;
     }
     
     .tag {
@@ -2623,8 +2584,8 @@ select:focus {
         font-size: 0.8rem !important;
     }
 }    .tags-wrapper {
-        padding: 1rem 0; /* Reduced from 1.8rem to prevent orange section expansion */
-        gap: 1rem; /* Increased from 0.9rem */
+        padding: 1rem 0;
+        gap: 1rem;
     }
     
     .tag {

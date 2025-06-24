@@ -1001,16 +1001,17 @@ function aimpro_set_default_landing_page_values() {
         'blog_cta_text' => 'MORE BLOGS',
         'blog_cta_url' => '/blog',// Final CTA Section
         'final_cta_title' => 'You Bring the Ambition, We Drive the <span class="highlight curly-underline">RESULTS</span>',
-        'final_cta_description' => 'Request a marketing review today. We\'ll send you a detailed analysis of your website and marketing, breaking down your next steps to success.',
-        // Service Tags
-        'service_tag_1' => 'SEO',
-        'service_tag_2' => 'Google Ads',
-        'service_tag_3' => 'Social Media',
-        'service_tag_4' => 'Website',
-        'service_tag_5' => 'Ads',
-        'service_tag_6' => 'Email',
-        'service_tag_7' => 'AI Automation',
-        'service_tag_8' => 'CRM',
+        'final_cta_description' => 'Request a marketing review today. We\'ll send you a detailed analysis of your website and marketing, breaking down your next steps to success.',        // Service Tags (Dynamic)
+        'service_tags' => array(
+            array('text' => 'SEO', 'url' => '/seo-services'),
+            array('text' => 'Google Ads', 'url' => '/google-ads'),
+            array('text' => 'Social Media', 'url' => '/meta-ads'),
+            array('text' => 'Website', 'url' => '/website-design'),
+            array('text' => 'Ads', 'url' => '/retargeting-display'),
+            array('text' => 'Email', 'url' => '/email-campaigns'),
+            array('text' => 'AI Automation', 'url' => '/ai-tools'),
+            array('text' => 'CRM', 'url' => '/ai-crm-setup'),
+        ),
         // Header CTA Buttons
         'header_cta_1_text' => 'Get a Free Audit',
         'header_cta_1_url' => '#contact',
@@ -1104,16 +1105,13 @@ add_action('admin_menu', 'aimpro_add_admin_pages');
  */
 function aimpro_landing_page_admin() {
     // Handle form submission
-    if (isset($_POST['submit']) && wp_verify_nonce($_POST['aimpro_landing_page_nonce'], 'aimpro_landing_page_save')) {        if (current_user_can('manage_options')) {
-            // Save all the custom fields
+    if (isset($_POST['submit']) && wp_verify_nonce($_POST['aimpro_landing_page_nonce'], 'aimpro_landing_page_save')) {        if (current_user_can('manage_options')) {            // Save all the custom fields
             $fields = array(
                 'hero_badge_text', 'hero_title', 'hero_subtitle', 'hero_primary_cta_text', 'hero_primary_cta_url',
                 'hero_strapline_1', 'hero_strapline_2', 'hero_strapline_3', 'hero_strapline_4',
                 'stat_1_number', 'stat_1_label', 'stat_2_number', 'stat_2_label',
                 'stat_3_number', 'stat_3_label', 'stat_4_number', 'stat_4_label',
                 'services_title', 'services_subtitle',
-                'service_tag_1', 'service_tag_2', 'service_tag_3', 'service_tag_4', 
-                'service_tag_5', 'service_tag_6', 'service_tag_7', 'service_tag_8',
                 'value_statement_title', 'value_statement_description', 'value_statement_cta_text', 'value_statement_cta_url',
                 'blog_title', 'blog_subtitle', 'blog_cta_text', 'blog_cta_url',
                 'final_cta_title', 'final_cta_description',
@@ -1123,13 +1121,29 @@ function aimpro_landing_page_admin() {
                 'contact_form_query_placeholder', 'contact_form_submit_text',
                 'office_title', 'office_description', 'office_address_title', 'office_address',
                 'testimonials_title', 'testimonials_subtitle',
-                'testimonial_1_content', 'testimonial_1_author', 'testimonial_1_title',                'testimonial_2_content', 'testimonial_2_author', 'testimonial_2_title',
+                'testimonial_1_content', 'testimonial_1_author', 'testimonial_1_title',
+                'testimonial_2_content', 'testimonial_2_author', 'testimonial_2_title',
                 'testimonial_3_content', 'testimonial_3_author', 'testimonial_3_title',
                 'testimonial_4_content', 'testimonial_4_author', 'testimonial_4_title',
                 'testimonial_5_content', 'testimonial_5_author', 'testimonial_5_title',
-                'lead_magnet_title', 'lead_magnet_subtitle', 'lead_magnet_ebook_title', 'lead_magnet_ebook_description',                'lead_magnet_form_title', 'lead_magnet_form_subtitle', 'lead_magnet_name_label', 'lead_magnet_email_label', 'lead_magnet_phone_label',
+                'lead_magnet_title', 'lead_magnet_subtitle', 'lead_magnet_ebook_title', 'lead_magnet_ebook_description',
+                'lead_magnet_form_title', 'lead_magnet_form_subtitle', 'lead_magnet_name_label', 'lead_magnet_email_label', 'lead_magnet_phone_label',
                 'lead_magnet_submit_text', 'lead_magnet_privacy_text'
             );
+            
+            // Handle dynamic service tags
+            if (isset($_POST['service_tags'])) {
+                $service_tags = [];
+                foreach ($_POST['service_tags'] as $tag) {
+                    if (!empty($tag['text'])) {
+                        $service_tags[] = array(
+                            'text' => sanitize_text_field($tag['text']),
+                            'url' => esc_url_raw($tag['url'])
+                        );
+                    }
+                }
+                update_option('service_tags', $service_tags);
+            }
               foreach ($fields as $field) {
                 if (isset($_POST[$field])) {
                     if (in_array($field, array('hero_title', 'office_title', 'office_address', 'value_statement_title', 'blog_title', 'final_cta_title', 'lead_magnet_title'))) {
@@ -1282,29 +1296,98 @@ function aimpro_landing_page_admin() {
                             </td>
                         </tr>                    </table>
                 </div>
-                
-                <!-- Service Tags Section -->
+                  <!-- Service Tags Section -->
                 <div class="aimpro-admin-section">
                     <h2>Service Tags Strip</h2>
-                    <p class="description">These are the scrolling service tags that appear below the hero section.</p>
-                    <table class="form-table">
-                        <tr>
-                            <th scope="row">Service Tags</th>
-                            <td>
-                                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
-                                    <input type="text" name="service_tag_1" value="<?php echo esc_attr(get_option('service_tag_1', 'SEO')); ?>" class="regular-text" placeholder="Tag 1" />
-                                    <input type="text" name="service_tag_2" value="<?php echo esc_attr(get_option('service_tag_2', 'Google Ads')); ?>" class="regular-text" placeholder="Tag 2" />
-                                    <input type="text" name="service_tag_3" value="<?php echo esc_attr(get_option('service_tag_3', 'Social Media')); ?>" class="regular-text" placeholder="Tag 3" />
-                                    <input type="text" name="service_tag_4" value="<?php echo esc_attr(get_option('service_tag_4', 'Website')); ?>" class="regular-text" placeholder="Tag 4" />
-                                    <input type="text" name="service_tag_5" value="<?php echo esc_attr(get_option('service_tag_5', 'Ads')); ?>" class="regular-text" placeholder="Tag 5" />
-                                    <input type="text" name="service_tag_6" value="<?php echo esc_attr(get_option('service_tag_6', 'Email')); ?>" class="regular-text" placeholder="Tag 6" />
-                                    <input type="text" name="service_tag_7" value="<?php echo esc_attr(get_option('service_tag_7', 'AI Automation')); ?>" class="regular-text" placeholder="Tag 7" />
-                                    <input type="text" name="service_tag_8" value="<?php echo esc_attr(get_option('service_tag_8', 'CRM')); ?>" class="regular-text" placeholder="Tag 8" />
-                                </div>
-                                <p class="description">Enter the service offerings you want to highlight in the scrolling tags section.</p>
-                            </td>
-                        </tr>
-                    </table>
+                    <p class="description">These are the service tags that appear below the hero section. You can add, remove, and reorder them.</p>
+                    
+                    <div id="service-tags-container">
+                        <?php 
+                        $service_tags = get_option('service_tags', array(
+                            array('text' => '/seo-services'),
+                            array('text' => 'Google Ads', 'url' => '/google-ads'),
+                            array('text' => 'Social Media', 'url' => '/meta-ads'),
+                            array('text' => 'Website', 'url' => '/website-design'),
+                            array('text' => 'Ads', 'url' => '/retargeting-display'),
+                            array('text' => 'Email', 'url' => '/email-campaigns'),
+                            array('text' => 'AI Automation', 'url' => '/ai-tools'),
+                            array('text' => 'CRM', 'url' => '/ai-crm-setup'),
+                        ));
+                        
+                        foreach ($service_tags as $index => $tag): ?>
+                            <div class="service-tag-row" style="display: flex; margin-bottom: 10px; align-items: center;">
+                                <span class="drag-handle" style="cursor: move; margin-right: 10px;">⋮⋮</span>
+                                <input type="text" name="service_tags[<?php echo $index; ?>][text]" 
+                                       value="<?php echo esc_attr($tag['text']); ?>" 
+                                       placeholder="Tag Name" class="regular-text" style="margin-right: 10px;" />
+                                <input type="text" name="service_tags[<?php echo $index; ?>][url]" 
+                                       value="<?php echo esc_attr($tag['url']); ?>" 
+                                       placeholder="/page-url or full URL" class="regular-text" style="margin-right: 10px;" />
+                                <button type="button" class="button remove-tag" onclick="removeServiceTag(this)">Remove</button>
+                            </div>
+                        <?php endforeach; ?>
+                    </div>
+                    
+                    <button type="button" class="button button-secondary" onclick="addServiceTag()">Add New Tag</button>
+                    <p class="description">Enter the service offerings you want to highlight. Use relative URLs (e.g., /seo-services) or full URLs.</p>
+                    
+                    <script>
+                    let tagIndex = <?php echo count($service_tags); ?>;
+                    
+                    function addServiceTag() {
+                        const container = document.getElementById('service-tags-container');
+                        const newRow = document.createElement('div');
+                        newRow.className = 'service-tag-row';
+                        newRow.style.cssText = 'display: flex; margin-bottom: 10px; align-items: center;';
+                        newRow.innerHTML = `
+                            <span class="drag-handle" style="cursor: move; margin-right: 10px;">⋮⋮</span>
+                            <input type="text" name="service_tags[${tagIndex}][text]" placeholder="Tag Name" class="regular-text" style="margin-right: 10px;" />
+                            <input type="text" name="service_tags[${tagIndex}][url]" placeholder="/page-url or full URL" class="regular-text" style="margin-right: 10px;" />
+                            <button type="button" class="button remove-tag" onclick="removeServiceTag(this)">Remove</button>
+                        `;
+                        container.appendChild(newRow);
+                        tagIndex++;
+                    }
+                    
+                    function removeServiceTag(button) {
+                        if (confirm('Are you sure you want to remove this tag?')) {
+                            button.parentElement.remove();
+                        }
+                    }
+                    
+                    // Make tags sortable (basic drag and drop)
+                    document.addEventListener('DOMContentLoaded', function() {
+                        const container = document.getElementById('service-tags-container');
+                        let draggedElement = null;
+                        
+                        container.addEventListener('dragstart', function(e) {
+                            if (e.target.classList.contains('drag-handle')) {
+                                draggedElement = e.target.parentElement;
+                                e.dataTransfer.effectAllowed = 'move';
+                            }
+                        });
+                        
+                        container.addEventListener('dragover', function(e) {
+                            e.preventDefault();
+                            e.dataTransfer.dropEffect = 'move';
+                        });
+                        
+                        container.addEventListener('drop', function(e) {
+                            e.preventDefault();
+                            if (draggedElement && e.target.closest('.service-tag-row')) {
+                                const targetRow = e.target.closest('.service-tag-row');
+                                if (targetRow !== draggedElement) {
+                                    container.insertBefore(draggedElement, targetRow.nextSibling);
+                                }
+                            }
+                        });
+                        
+                        // Make drag handles draggable
+                        container.querySelectorAll('.drag-handle').forEach(handle => {
+                            handle.draggable = true;
+                        });
+                    });
+                    </script>
                 </div>
                 
                 <!-- Header CTA Buttons -->
@@ -1753,9 +1836,52 @@ function aimpro_landing_page_admin() {
 }
 
 /**
- * Clean up escaped quotes in database values
- * Run this once to fix existing data
+ * Migrate old service tags to new dynamic format
  */
+function aimpro_migrate_service_tags() {
+    // Check if migration is needed
+    if (get_option('service_tags_migrated', false)) {
+        return;
+    }
+    
+    // Get old service tags
+    $old_tags = array();
+    for ($i = 1; $i <= 8; $i++) {
+        $tag_text = get_option("service_tag_$i", '');
+        if (!empty($tag_text)) {
+            // Map old tags to their likely URLs
+            $url_mapping = array(
+                'SEO' => '/seo-services',
+                'Google Ads' => '/google-ads',
+                'Social Media' => '/meta-ads',
+                'Website' => '/website-design',
+                'Ads' => '/retargeting-display',
+                'Email' => '/email-campaigns',
+                'AI Automation' => '/ai-tools',
+                'CRM' => '/ai-crm-setup',
+            );
+            
+            $url = isset($url_mapping[$tag_text]) ? $url_mapping[$tag_text] : '/';
+            
+            $old_tags[] = array(
+                'text' => $tag_text,
+                'url' => $url
+            );
+        }
+    }
+    
+    // Only migrate if we found old tags and new format doesn't exist
+    if (!empty($old_tags) && !get_option('service_tags', false)) {
+        update_option('service_tags', $old_tags);
+    }
+    
+    // Mark migration as complete
+    update_option('service_tags_migrated', true);
+}
+add_action('init', 'aimpro_migrate_service_tags');
+
+// Clean up escaped quotes in database values
+// Run this once to fix existing data
 function aimpro_cleanup_escaped_quotes() {    $fields_to_clean = array(
         'testimonials_title', 'testimonials_subtitle',
         'testimonial_1_content', 'testimonial_2_content', 'testimonial_3_content', 
