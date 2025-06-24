@@ -245,7 +245,7 @@ get_header(); ?>
                 <h2><?php echo aimpro_get_field('contact_final_cta_heading', 'Ready to <span class="text-gradient">Transform Your Digital Marketing?</span>'); ?></h2>
                 <p><?php echo aimpro_get_field('contact_final_cta_description', 'Don\'t let your competitors get ahead. Schedule a free consultation today and discover how we can help you achieve your business goals with proven digital marketing strategies.'); ?></p>                  <div class="cta-actions">
                     <a href="tel:<?php echo aimpro_sanitize_phone(aimpro_get_field('contact_phone', '+441212858490')); ?>" class="btn btn-primary large"><?php echo aimpro_get_field('contact_final_cta_phone_text', 'Call Now: 0121 285 8490'); ?></a>
-                    <a href="mailto:<?php echo aimpro_get_field('contact_email', 'hello@aimpro.co.uk'); ?>" class="btn btn-secondary large"><?php echo aimpro_get_field('contact_final_cta_email_text', 'Send Email'); ?></a>
+                    <a href="mailto:<?php echo aimpro_get_field('contact_email', 'hello@aimpro.co.uk'); ?>" class="btn btn-outline large"><?php echo aimpro_get_field('contact_final_cta_email_text', 'Send Email'); ?></a>
                 </div>
                 
                 <div class="cta-guarantee">
