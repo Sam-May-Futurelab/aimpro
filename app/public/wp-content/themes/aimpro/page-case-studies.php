@@ -222,7 +222,7 @@ get_header(); ?>
         </section>        <!-- Client Testimonials -->
         <section class="case-study-testimonials">
             <div class="section-content">
-                <h2 class="animate-on-scroll animate-fade-up"><?php echo esc_html(get_post_meta(get_the_ID(), 'cs_testimonials_title', true) ?: 'What Our Clients Say'); ?></h2>
+                <h2 class="animate-on-scroll animate-fade-up" style="text-align: center;"><?php echo esc_html(get_post_meta(get_the_ID(), 'cs_testimonials_title', true) ?: 'What Our Clients Say'); ?></h2>
                 <div class="testimonials-grid">
                     <div class="testimonial-card animate-on-scroll animate-stagger animate-slide-left">
                         <div class="testimonial-content">
