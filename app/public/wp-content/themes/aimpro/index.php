@@ -543,71 +543,55 @@ get_header(); ?>
         <div class="content-centre">            <h2><?php echo aimpro_get_field('blog_title', 'Scale Up Your <span class="highlight curly-underline">MARKETING</span>'); ?></h2>
             <p class="section-subtitle"><?php echo aimpro_get_field('blog_subtitle', 'Zero secrets. Maximum value. We share proven strategies and insider insights to help ambitious marketers like you accelerate growth, drive traffic, and maximise revenue.'); ?></p>
         </div>          <div class="posts-grid">
-            <!-- Social Media Strategy Post -->
-            <article class="post-card animate-on-scroll animate-stagger animate-fade-up">
-                <div class="post-image">
-                    <a href="#">
-                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/blog/social-media-strategy-2025.jpg" alt="Social Media Strategy 2025" />
-                    </a>
-                </div>
-                <div class="post-content">
-                    <div class="post-meta">
-                        <span class="post-date">Jun 17, 2025</span>
-                        <span class="post-category">Social Media</span>
-                    </div>
-                    <h3 class="post-title">
-                        <a href="#">Social Media Strategy That Actually Drives Leads in 2025</a>
-                    </h3>
-                    <div class="post-excerpt">
-                        Posting random content and hoping for results? That doesn't cut it anymore. In 2025, effective social media marketing means strategy,...
-                    </div>
-                    <a href="#" class="read-more">Read More</a>
-                </div>
-            </article>
+            <?php            // Get homepage blog posts from admin settings
+            $homepage_blog_posts = array(
+                array(
+                    'image' => aimpro_get_field('homepage_blog_1_image', get_template_directory_uri() . '/assets/images/Aimpro-high-ranking-website-blog.png'),
+                    'date' => aimpro_get_field('homepage_blog_1_date', 'Jun 17, 2025'),
+                    'category' => aimpro_get_field('homepage_blog_1_category', 'Social Media'),
+                    'title' => aimpro_get_field('homepage_blog_1_title', 'Social Media Strategy That Actually Drives Leads in 2025'),
+                    'excerpt' => aimpro_get_field('homepage_blog_1_excerpt', 'Posting random content and hoping for results? That doesn\'t cut it anymore. In 2025, effective social media marketing means strategy...'),
+                    'url' => aimpro_get_field('homepage_blog_1_url', '/social-media-strategy-that-actually-drives-leads-in-2025')
+                ),                array(
+                    'image' => aimpro_get_field('homepage_blog_2_image', get_template_directory_uri() . '/assets/images/Aimpro-high-ranking-website-blog.png'),
+                    'date' => aimpro_get_field('homepage_blog_2_date', 'Jun 17, 2025'),
+                    'category' => aimpro_get_field('homepage_blog_2_category', 'PPC'),
+                    'title' => aimpro_get_field('homepage_blog_2_title', 'How to Win With Google Ads in 2025: 4 Strategies That Actually Work'),
+                    'excerpt' => aimpro_get_field('homepage_blog_2_excerpt', 'If you\'re spending money on Google Ads but not seeing results, you\'re not alone. PPC in 2025 is more competitive...'),
+                    'url' => aimpro_get_field('homepage_blog_2_url', '/how-to-win-with-google-ads-in-2025-4-strategies-that-actually-work')
+                ),
+                array(
+                    'image' => aimpro_get_field('homepage_blog_3_image', get_template_directory_uri() . '/assets/images/Aimpro-high-ranking-website-blog.png'),
+                    'date' => aimpro_get_field('homepage_blog_3_date', 'Jun 17, 2025'),
+                    'category' => aimpro_get_field('homepage_blog_3_category', 'SEO'),
+                    'title' => aimpro_get_field('homepage_blog_3_title', '5 Proven Local SEO Strategies to Dominate Your Area in 2025'),
+                    'excerpt' => aimpro_get_field('homepage_blog_3_excerpt', 'Looking to dominate your local market and attract high-quality leads? Local SEO is one of the most cost-effective and high-ROI...'),
+                    'url' => aimpro_get_field('homepage_blog_3_url', '/5-proven-local-seo-strategies-to-dominate-your-area-in-2025')
+                )
+            );
 
-            <!-- SEO Trends Post -->
-            <article class="post-card animate-on-scroll animate-stagger animate-fade-up">
-                <div class="post-image">
-                    <a href="#">
-                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/blog/seo-trends-2025.jpg" alt="SEO Trends 2025" />
-                    </a>
-                </div>
-                <div class="post-content">
-                    <div class="post-meta">
-                        <span class="post-date">Jun 15, 2025</span>
-                        <span class="post-category">SEO</span>
+            foreach ($homepage_blog_posts as $index => $post): ?>
+                <article class="post-card animate-on-scroll animate-stagger animate-fade-up">
+                    <div class="post-image">
+                        <a href="<?php echo esc_url($post['url']); ?>">
+                            <img src="<?php echo esc_url($post['image']); ?>" alt="<?php echo esc_attr($post['title']); ?>" />
+                        </a>
                     </div>
-                    <h3 class="post-title">
-                        <a href="#">Top SEO Trends to Watch in 2025</a>
-                    </h3>
-                    <div class="post-excerpt">
-                        Discover the latest SEO trends that will shape search marketing strategies in 2025 and beyond. From AI integration to voice search optimization...
+                    <div class="post-content">
+                        <div class="post-meta">
+                            <span class="post-date"><?php echo esc_html($post['date']); ?></span>
+                            <span class="post-category"><?php echo esc_html($post['category']); ?></span>
+                        </div>
+                        <h3 class="post-title">
+                            <a href="<?php echo esc_url($post['url']); ?>"><?php echo esc_html($post['title']); ?></a>
+                        </h3>
+                        <div class="post-excerpt">
+                            <?php echo esc_html($post['excerpt']); ?>
+                        </div>
+                        <a href="<?php echo esc_url($post['url']); ?>" class="read-more">Read More</a>
                     </div>
-                    <a href="#" class="read-more">Read More</a>
-                </div>
-            </article>
-
-            <!-- PPC Optimization Post -->
-            <article class="post-card animate-on-scroll animate-stagger animate-fade-up">
-                <div class="post-image">
-                    <a href="#">
-                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/blog/ppc-optimisation.jpg" alt="PPC Optimisation" />
-                    </a>
-                </div>
-                <div class="post-content">
-                    <div class="post-meta">
-                        <span class="post-date">Jun 12, 2025</span>
-                        <span class="post-category">PPC</span>
-                    </div>
-                    <h3 class="post-title">
-                        <a href="#">5 PPC Optimisation Strategies That Actually Work</a>
-                    </h3>
-                    <div class="post-excerpt">
-                        Learn proven PPC optimisation techniques to improve your ad performance and ROI. These strategies have helped our clients increase conversions by 150%...
-                    </div>
-                    <a href="#" class="read-more">Read More</a>
-                </div>
-            </article>
+                </article>
+            <?php endforeach; ?>
         </div>
         
         <div class="blog-cta-section">

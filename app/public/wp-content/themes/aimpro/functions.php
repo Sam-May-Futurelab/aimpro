@@ -1114,6 +1114,9 @@ function aimpro_landing_page_admin() {
                 'services_title', 'services_subtitle',
                 'value_statement_title', 'value_statement_description', 'value_statement_cta_text', 'value_statement_cta_url',
                 'blog_title', 'blog_subtitle', 'blog_cta_text', 'blog_cta_url',
+                'homepage_blog_1_image', 'homepage_blog_1_date', 'homepage_blog_1_category', 'homepage_blog_1_title', 'homepage_blog_1_excerpt', 'homepage_blog_1_url',
+                'homepage_blog_2_image', 'homepage_blog_2_date', 'homepage_blog_2_category', 'homepage_blog_2_title', 'homepage_blog_2_excerpt', 'homepage_blog_2_url',
+                'homepage_blog_3_image', 'homepage_blog_3_date', 'homepage_blog_3_category', 'homepage_blog_3_title', 'homepage_blog_3_excerpt', 'homepage_blog_3_url',
                 'final_cta_title', 'final_cta_description',
                 'header_cta_1_text', 'header_cta_1_url', 'header_cta_2_text', 'header_cta_2_url',
                 'contact_form_title', 'contact_form_subtitle', 'contact_form_name_label', 'contact_form_email_label',
@@ -1143,8 +1146,7 @@ function aimpro_landing_page_admin() {
                     }
                 }
                 update_option('service_tags', $service_tags);
-            }
-              foreach ($fields as $field) {
+            }              foreach ($fields as $field) {
                 if (isset($_POST[$field])) {
                     if (in_array($field, array('hero_title', 'office_title', 'office_address', 'value_statement_title', 'blog_title', 'final_cta_title', 'lead_magnet_title'))) {
                         // Allow HTML for specific fields
@@ -1155,6 +1157,20 @@ function aimpro_landing_page_admin() {
                     }
                 }
             }
+            
+            // Create homepage_blog_posts array from individual fields
+            $homepage_blog_posts = array();
+            for ($i = 1; $i <= 3; $i++) {
+                $homepage_blog_posts[] = array(
+                    'image' => get_option("homepage_blog_{$i}_image", get_template_directory_uri() . '/assets/images/Aimpro-high-ranking-website-blog.png'),
+                    'date' => get_option("homepage_blog_{$i}_date", 'Jun 17, 2025'),
+                    'category' => get_option("homepage_blog_{$i}_category", 'Digital Marketing'),
+                    'title' => get_option("homepage_blog_{$i}_title", 'Blog Post Title'),
+                    'excerpt' => get_option("homepage_blog_{$i}_excerpt", 'Blog post excerpt...'),
+                    'url' => get_option("homepage_blog_{$i}_url", '#')
+                );
+            }
+            update_option('homepage_blog_posts', $homepage_blog_posts);
             
             echo '<div class="notice notice-success"><p>Landing page settings saved successfully!</p></div>';        }
     }
@@ -1569,8 +1585,7 @@ function aimpro_landing_page_admin() {
                         </tr>
                     </table>
                 </div>
-                
-                <!-- Blog Section -->
+                  <!-- Blog Section -->
                 <div class="aimpro-admin-section">
                     <h2>Blog Section</h2>
                     <table class="form-table">
@@ -1591,13 +1606,136 @@ function aimpro_landing_page_admin() {
                         <tr>
                             <th scope="row">CTA Button Text</th>
                             <td>
-                                <input type="text" name="blog_cta_text" value="<?php echo esc_attr(get_option('blog_cta_text', 'READ MORE INSIGHTS')); ?>" class="regular-text" />
+                                <input type="text" name="blog_cta_text" value="<?php echo esc_attr(get_option('blog_cta_text', 'More Blogs')); ?>" class="regular-text" />
                             </td>
                         </tr>
                         <tr>
                             <th scope="row">CTA Button URL</th>
                             <td>
                                 <input type="text" name="blog_cta_url" value="<?php echo esc_attr(get_option('blog_cta_url', '/blog')); ?>" class="regular-text" />
+                            </td>
+                        </tr>
+                    </table>
+                    
+                    <h3>Homepage Featured Blog Posts</h3>
+                    <p>Configure the 3 blog posts that appear on the homepage:</p>
+                    
+                    <!-- Blog Post 1 -->
+                    <h4>Blog Post 1</h4>
+                    <table class="form-table">
+                        <tr>
+                            <th scope="row">Image URL</th>
+                            <td>
+                                <input type="url" name="homepage_blog_1_image" value="<?php echo esc_attr(get_option('homepage_blog_1_image', get_template_directory_uri() . '/assets/images/Aimpro-high-ranking-website-blog.png')); ?>" class="large-text" />
+                                <p class="description">Full URL to the blog post image</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Date</th>
+                            <td>
+                                <input type="text" name="homepage_blog_1_date" value="<?php echo esc_attr(get_option('homepage_blog_1_date', 'Jun 17, 2025')); ?>" class="regular-text" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Category</th>
+                            <td>
+                                <input type="text" name="homepage_blog_1_category" value="<?php echo esc_attr(get_option('homepage_blog_1_category', 'Social Media')); ?>" class="regular-text" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Title</th>
+                            <td>
+                                <input type="text" name="homepage_blog_1_title" value="<?php echo esc_attr(get_option('homepage_blog_1_title', 'Social Media Strategy That Actually Drives Leads in 2025')); ?>" class="large-text" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Excerpt</th>
+                            <td>
+                                <textarea name="homepage_blog_1_excerpt" rows="3" class="large-text"><?php echo esc_textarea(get_option('homepage_blog_1_excerpt', 'Posting random content and hoping for results? That doesn\'t cut it anymore. In 2025, effective social media marketing means strategy...')); ?></textarea>
+                            </td>
+                        </tr>                        <tr>
+                            <th scope="row">URL</th>
+                            <td>
+                                <input type="text" name="homepage_blog_1_url" value="<?php echo esc_attr(get_option('homepage_blog_1_url', '/social-media-strategy-that-actually-drives-leads-in-2025')); ?>" class="large-text" />
+                                <p class="description">Relative URL to the blog post (e.g., /blog-post-slug)</p>
+                            </td>
+                        </tr>
+                    </table>
+                    
+                    <!-- Blog Post 2 -->
+                    <h4>Blog Post 2</h4>
+                    <table class="form-table">
+                        <tr>
+                            <th scope="row">Image URL</th>
+                            <td>
+                                <input type="url" name="homepage_blog_2_image" value="<?php echo esc_attr(get_option('homepage_blog_2_image', get_template_directory_uri() . '/assets/images/Aimpro-high-ranking-website-blog.png')); ?>" class="large-text" />
+                                <p class="description">Full URL to the blog post image</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Date</th>                            <td>
+                                <input type="text" name="homepage_blog_2_date" value="<?php echo esc_attr(get_option('homepage_blog_2_date', 'Jun 17, 2025')); ?>" class="regular-text" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Category</th>                            <td>
+                                <input type="text" name="homepage_blog_2_category" value="<?php echo esc_attr(get_option('homepage_blog_2_category', 'PPC')); ?>" class="regular-text" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Title</th>                            <td>
+                                <input type="text" name="homepage_blog_2_title" value="<?php echo esc_attr(get_option('homepage_blog_2_title', 'How to Win With Google Ads in 2025: 4 Strategies That Actually Work')); ?>" class="large-text" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Excerpt</th>
+                            <td>
+                                <textarea name="homepage_blog_2_excerpt" rows="3" class="large-text"><?php echo esc_textarea(get_option('homepage_blog_2_excerpt', 'If you\'re spending money on Google Ads but not seeing results, you\'re not alone. PPC in 2025 is more competitive...')); ?></textarea>
+                            </td>
+                        </tr>                        <tr>
+                            <th scope="row">URL</th>
+                            <td>
+                                <input type="text" name="homepage_blog_2_url" value="<?php echo esc_attr(get_option('homepage_blog_2_url', '/how-to-win-with-google-ads-in-2025-4-strategies-that-actually-work')); ?>" class="large-text" />
+                                <p class="description">Relative URL to the blog post (e.g., /blog-post-slug)</p>
+                            </td>
+                        </tr>
+                    </table>
+                    
+                    <!-- Blog Post 3 -->
+                    <h4>Blog Post 3</h4>
+                    <table class="form-table">
+                        <tr>
+                            <th scope="row">Image URL</th>
+                            <td>
+                                <input type="url" name="homepage_blog_3_image" value="<?php echo esc_attr(get_option('homepage_blog_3_image', get_template_directory_uri() . '/assets/images/Aimpro-high-ranking-website-blog.png')); ?>" class="large-text" />
+                                <p class="description">Full URL to the blog post image</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Date</th>                            <td>
+                                <input type="text" name="homepage_blog_3_date" value="<?php echo esc_attr(get_option('homepage_blog_3_date', 'Jun 17, 2025')); ?>" class="regular-text" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Category</th>                            <td>
+                                <input type="text" name="homepage_blog_3_category" value="<?php echo esc_attr(get_option('homepage_blog_3_category', 'SEO')); ?>" class="regular-text" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Title</th>                            <td>
+                                <input type="text" name="homepage_blog_3_title" value="<?php echo esc_attr(get_option('homepage_blog_3_title', '5 Proven Local SEO Strategies to Dominate Your Area in 2025')); ?>" class="large-text" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Excerpt</th>
+                            <td>
+                                <textarea name="homepage_blog_3_excerpt" rows="3" class="large-text"><?php echo esc_textarea(get_option('homepage_blog_3_excerpt', 'Looking to dominate your local market and attract high-quality leads? Local SEO is one of the most cost-effective and high-ROI...')); ?></textarea>
+                            </td>
+                        </tr>                        <tr>
+                            <th scope="row">URL</th>
+                            <td>
+                                <input type="text" name="homepage_blog_3_url" value="<?php echo esc_attr(get_option('homepage_blog_3_url', '/5-proven-local-seo-strategies-to-dominate-your-area-in-2025')); ?>" class="large-text" />
+                                <p class="description">Relative URL to the blog post (e.g., /blog-post-slug)</p>
                             </td>
                         </tr>
                     </table>
