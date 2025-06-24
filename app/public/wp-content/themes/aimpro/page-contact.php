@@ -53,13 +53,14 @@ get_header(); ?>
                         <p><strong><?php echo aimpro_get_field('contact_hours', 'Mon-Fri: 9AM-6PM'); ?></strong></p>
                         <p>Our team is available during business hours to discuss your digital marketing needs.</p>
                     </div>
-                </div>
-                
-                <!-- Location Badge -->
+                </div>                  <!-- Location Badge -->
                 <div style="text-align: center; margin-top: 3rem;">
-                    <div class="service-tags-strip" style="display: inline-block; padding: 0.75rem 2rem; border-radius: 50px;">
-                        <span style="font-weight: 600; letter-spacing: 1px; colour: white;">
-                            📍 <?php echo aimpro_get_field('contact_hero_badge', 'LOCATED IN BIRMINGHAM\'S BUSINESS DISTRICT'); ?>
+                    <div class="location-badge-glassmorphic">
+                        <svg class="location-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" fill="currentColor"/>
+                        </svg>
+                        <span class="location-text">
+                            <?php echo strtoupper(aimpro_get_field('contact_hero_badge', 'LOCATED IN BIRMINGHAM\'S BUSINESS DISTRICT')); ?>
                         </span>
                     </div>
                 </div>
@@ -929,9 +930,59 @@ get_header(); ?>
     .visit-us-container {
         padding: 2rem;
     }
-    
-    .visit-us-content h2 {
+      .visit-us-content h2 {
         font-size: 2rem;
+    }
+}
+
+/* Glassmorphic Location Badge */
+.location-badge-glassmorphic {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 1rem 2rem;
+    border-radius: 20px;
+    
+    /* Glassmorphic effect */
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    
+    /* Subtle shadow */
+    box-shadow: 
+        0 8px 32px rgba(0, 0, 0, 0.1),
+        inset 0 1px 0 rgba(255, 255, 255, 0.2);
+    
+    /* Text styling */
+    color: white;
+    font-weight: 600;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    
+    /* Remove any button-like behavior */
+    cursor: default;
+    transition: none;
+}
+
+.location-badge-glassmorphic .location-icon {
+    color: #ff7b00;
+    flex-shrink: 0;
+}
+
+.location-badge-glassmorphic .location-text {
+    white-space: nowrap;
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+    .location-badge-glassmorphic {
+        background: rgba(0, 0, 0, 0.2);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        box-shadow: 
+            0 8px 32px rgba(0, 0, 0, 0.3),
+            inset 0 1px 0 rgba(255, 255, 255, 0.1);
     }
 }
 </style>
