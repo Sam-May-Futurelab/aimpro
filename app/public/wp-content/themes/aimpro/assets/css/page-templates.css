@@ -680,7 +680,7 @@
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 2rem;
-    margin-top: 3rem;
+    margin-top: 0.5rem;
 }
 
 .service-card {
@@ -2289,6 +2289,19 @@ ul {
     color: white;
     transform: translateY(-2px);
     box-shadow: 0 8px 20px rgba(241, 90, 37, 0.3);
+}
+
+/* Service Links Heading - Adjust spacing */
+.service-links-heading {
+    margin-bottom: 0.75rem;
+}
+
+.service-links-heading h2 {
+    margin-bottom: 0.25rem;
+}
+
+.service-links-heading p {
+    margin-bottom: 0.25rem;
 }
 
 /* Services Introduction Section */
