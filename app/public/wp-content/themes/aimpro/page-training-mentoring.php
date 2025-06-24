@@ -188,9 +188,8 @@ get_header(); ?>
                                 <div class="program-badge"><?php echo esc_html($program['badge']); ?></div>
                             <?php endif; ?>
                             <div class="program-header">
-                                <h3><?php echo esc_html($program['title']); ?></h3>
-                                <div class="program-price">
-                                    <span class="price"><?php echo esc_html($program['price']); ?></span>
+                                <h3><?php echo esc_html($program['title']); ?></h3>                                <div class="program-price">
+                                    <span class="price"><?php echo wp_kses($program['price'], array()); ?></span>
                                     <span class="period"><?php echo esc_html($program['period']); ?></span>
                                 </div>
                             </div>
@@ -223,10 +222,10 @@ get_header(); ?>
                 </div>
             </div>
         </section>        <!-- Mentoring Success Stories -->
-        <section class="mentoring-success animate-on-scroll animate-fade-up">
+        <section class="success-stories animate-on-scroll animate-fade-up">
             <div class="section-content">
                 <h2 class="animate-on-scroll animate-fade-up"><?php echo esc_html(get_post_meta(get_the_ID(), '_training_mentoring_success_stories_title', true) ?: 'Success Stories'); ?></h2>
-                <div class="success-grid animate-on-scroll animate-fade-up">
+                <div class="stories-container animate-on-scroll animate-fade-up">
                     <?php 
                     $success_stories = get_post_meta(get_the_ID(), '_training_mentoring_success_stories', true);
                     if (empty($success_stories)) {
@@ -252,28 +251,25 @@ get_header(); ?>
                         );
                     }
                       foreach ($success_stories as $story): ?>
-                        <div class="success-story animate-on-scroll animate-stagger animate-slide-up">
-                            <div class="story-content">
-                                <blockquote>
-                                    "<?php echo esc_html($story['quote']); ?>"
-                                </blockquote>
-                                <div class="story-author">
-                                    <h4><?php echo esc_html($story['name']); ?></h4>
-                                    <span><?php echo esc_html($story['position']); ?></span>
-                                    <?php if (!empty($story['results'])): ?>
-                                        <div class="story-results">
-                                            <?php foreach ($story['results'] as $result): ?>
-                                                <span class="result"><?php echo esc_html($result); ?></span>
-                                            <?php endforeach; ?>
-                                        </div>
-                                    <?php endif; ?>
-                                </div>
+                        <div class="story-card animate-on-scroll animate-fade-up">
+                            <div class="story-quote">
+                                <p>"<?php echo esc_html($story['quote']); ?>"</p>
+                            </div>
+                            <div class="story-author">
+                                <h4><?php echo esc_html($story['name']); ?></h4>
+                                <span><?php echo esc_html($story['position']); ?></span>                                <?php if (!empty($story['results'])): ?>
+                                    <div class="story-results">
+                                        <?php foreach ($story['results'] as $result): ?>
+                                            <span class="result-item"><?php echo esc_html($result); ?></span>
+                                        <?php endforeach; ?>
+                                    </div>
+                                <?php endif; ?>
                             </div>
                         </div>
                     <?php endforeach; ?>
                 </div>
             </div>
-        </section>        <!-- Learning Paths -->
+        </section><!-- Learning Paths -->
         <section class="learning-paths animate-on-scroll animate-fade-up">
             <div class="section-content">
                 <h2 class="animate-on-scroll animate-fade-up"><?php echo esc_html(get_post_meta(get_the_ID(), '_training_mentoring_learning_paths_title', true) ?: 'Learning Paths'); ?></h2>
@@ -376,10 +372,9 @@ get_header(); ?>
                                         <?php endforeach; ?>
                                     </div>
                                 <?php endif; ?>
-                                <?php if (!empty($mentor['stats'])): ?>
-                                    <div class="mentor-stats">
+                                <?php if (!empty($mentor['stats'])): ?>                                    <div class="mentor-stats">
                                         <?php foreach ($mentor['stats'] as $stat): ?>
-                                            <span class="stat"><?php echo esc_html($stat); ?></span>
+                                            <span class="stat"><?php echo wp_kses($stat, array()); ?></span>
                                         <?php endforeach; ?>
                                     </div>
                                 <?php endif; ?>
@@ -435,10 +430,9 @@ get_header(); ?>
         <section class="training-cta animate-on-scroll animate-fade-up">
             <div class="section-content">
                 <h2 class="animate-on-scroll animate-fade-up"><?php echo esc_html(get_post_meta(get_the_ID(), '_training_mentoring_cta_title', true) ?: 'Ready to Accelerate Your Marketing Career?'); ?></h2>
-                <p class="animate-on-scroll animate-fade-up"><?php echo esc_html(get_post_meta(get_the_ID(), '_training_mentoring_cta_content', true) ?: 'Book a free consultation to discuss your goals and find the perfect training program for you.'); ?></p>
-                <div class="cta-buttons animate-on-scroll animate-fade-up">
-                    <a href="<?php echo esc_url(get_post_meta(get_the_ID(), '_training_mentoring_cta_primary_url', true) ?: home_url('/contact')); ?>" class="btn btn-primary"><?php echo esc_html(get_post_meta(get_the_ID(), '_training_mentoring_cta_primary_text', true) ?: 'Book Free Consultation'); ?></a>
-                    <a href="<?php echo esc_url(get_post_meta(get_the_ID(), '_training_mentoring_cta_secondary_url', true) ?: home_url('/contact')); ?>" class="btn btn-secondary"><?php echo esc_html(get_post_meta(get_the_ID(), '_training_mentoring_cta_secondary_text', true) ?: 'Contact Us'); ?></a>
+                <p class="animate-on-scroll animate-fade-up"><?php echo esc_html(get_post_meta(get_the_ID(), '_training_mentoring_cta_content', true) ?: 'Book a free consultation to discuss your goals and find the perfect training program for you.'); ?></p>                <div class="cta-buttons animate-on-scroll animate-fade-up">
+                    <a href="<?php echo esc_url(get_post_meta(get_the_ID(), '_training_mentoring_cta_primary_url', true) ?: home_url('/contact')); ?>" class="cta-button"><?php echo esc_html(get_post_meta(get_the_ID(), '_training_mentoring_cta_primary_text', true) ?: 'Book Free Consultation'); ?></a>
+                    <a href="<?php echo esc_url(get_post_meta(get_the_ID(), '_training_mentoring_cta_secondary_url', true) ?: home_url('/contact')); ?>" class="cta-button"><?php echo esc_html(get_post_meta(get_the_ID(), '_training_mentoring_cta_secondary_text', true) ?: 'Contact Us'); ?></a>
                 </div>
                 <p class="cta-note animate-on-scroll animate-fade-up"><?php echo esc_html(get_post_meta(get_the_ID(), '_training_mentoring_cta_note', true) ?: 'Free 15-minute consultation • No obligation • personalised recommendations'); ?></p>
             </div>
