@@ -151,7 +151,10 @@
 }
 
 .read-more:hover {
-    color: #333333 !important; /* Dark gray for maximum contrast */
+    background: var(--primary-orange);
+    color: #ffffff !important;
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-orange);
 }
 
 .read-more:hover:after {
@@ -164,8 +167,10 @@ article .read-more:hover,
 .related-post-item .read-more:hover,
 .post-content .read-more:hover,
 .blog-content .read-more:hover {
-    color: #333333 !important; /* Dark gray for maximum contrast */
-    text-decoration: underline !important;
+    background: var(--primary-orange) !important;
+    color: #ffffff !important;
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-orange);
 }
 
 /* Global overrides with maximum specificity for Read More buttons */
@@ -177,8 +182,10 @@ html body .blog-section .section-content .blog-layout .blog-main article .read-m
 html body .blog-post-page .related-post-item .read-more:hover,
 html body .blog-post-page .blog-content .read-more:hover,
 html body a.read-more:hover {
-    color: #333333 !important;
-    text-decoration: underline !important;
+    background: var(--primary-orange) !important;
+    color: #ffffff !important;
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-orange);
 }
 
 /* Post Grid */
