@@ -208,14 +208,13 @@ $hero_image = get_post_meta(get_the_ID(), 'seo_audit_hero_image', true);
                 );
                 ?>                <h2 class="animate-on-scroll animate-fade-up"><?php echo esc_html($sample_title); ?></h2>                <div class="sample-content">
                     <div class="sample-details animate-on-scroll animate-slide-left">
-                        <h3><?php echo esc_html($sample_subtitle); ?></h3>
-                        <div class="report-sections">
+                        <h3><?php echo esc_html($sample_subtitle); ?></h3>                        <div class="benefits-grid" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 30px;">
                             <?php foreach ($report_sections as $section): ?>
-                                <div class="report-section animate-on-scroll animate-stagger animate-fade-up">
+                                <div class="benefit-card animate-on-scroll animate-stagger animate-fade-up">
                                     <h4><?php echo esc_html($section['title']); ?></h4>
                                     <p><?php echo esc_html($section['description']); ?></p>
                                 </div>
-                            <?php endforeach; ?>                        </div>
+                            <?php endforeach; ?></div>
                     </div>
                 </div>
             </div>
