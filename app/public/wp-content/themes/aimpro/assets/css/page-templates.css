@@ -2281,6 +2281,7 @@ ul {
     transition: all 0.3s ease;
     border: none;
     cursor: pointer;
+    margin-bottom: 1.5rem;
 }
 
 .category-main-link:hover {
