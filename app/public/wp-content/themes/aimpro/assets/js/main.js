@@ -1849,6 +1849,7 @@ function initTestimonialsCarousel() {
     
     let currentIndex = 0;
     const totalSlides = testimonialCards.length;
+    const maxVisibleSlides = 3; // Limit to 3 slides even if we have more testimonials
     let isTransitioning = false;
     
     // Calculate card width including gap
@@ -1869,14 +1870,14 @@ function initTestimonialsCarousel() {
         
         carouselTrack.style.transform = `translateX(${translateX}px)`;
         
-        // Update dots
+        // Update dots (only show first 3 dots as active)
         dots.forEach((dot, index) => {
             dot.classList.toggle('active', index === currentIndex);
         });
         
-        // Update button states
+        // Update button states - limit to maxVisibleSlides
         if (prevButton) prevButton.disabled = currentIndex === 0;
-        if (nextButton) nextButton.disabled = currentIndex === totalSlides - 1;
+        if (nextButton) nextButton.disabled = currentIndex === maxVisibleSlides - 1;
         
         // Re-enable transitions after animation
         setTimeout(() => {
@@ -1894,15 +1895,17 @@ function initTestimonialsCarousel() {
     
     // Next slide
     function goToNextSlide() {
-        if (currentIndex < totalSlides - 1) {
+        if (currentIndex < maxVisibleSlides - 1) {
             currentIndex++;
-            updateCarousel();
+        } else {
+            currentIndex = 0; // Loop back to first
         }
+        updateCarousel();
     }
     
-    // Go to specific slide
+    // Go to specific slide (limit to maxVisibleSlides)
     function goToSlide(index) {
-        if (index >= 0 && index < totalSlides && index !== currentIndex) {
+        if (index >= 0 && index < maxVisibleSlides && index !== currentIndex) {
             currentIndex = index;
             updateCarousel();
         }

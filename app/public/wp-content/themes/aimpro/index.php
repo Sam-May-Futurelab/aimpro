@@ -642,32 +642,7 @@ get_header(); ?>
                         </div>
                     </div>
 
-                    <!-- Enhanced Testimonial 5 -->
-                    <div class="testimonial-card modern-card">
-                        <div class="testimonial-rating">
-                            <div class="stars">★★★★★</div>
-                            <span class="rating-text">5.0</span>
-                        </div>
-                        <div class="testimonial-content">
-                            <p>"Our online visibility has improved dramatically thanks to Aimpro Digital's SEO expertise. Within months, we went from barely being on the map to ranking on the first page for key terms. The team is knowledgeable, transparent, and always ready with helpful advice."</p>
-                        </div>
-                        <div class="testimonial-author">
-                            <div class="author-info">
-                                <div class="author-avatar">
-                                    <span>JW</span>
-                                </div>
-                                <div class="author-details">
-                                    <strong>James Whitfield</strong>
-                                    <span>Director</span>
-                                    <div class="company-badge">Birmingham Properties</div>
-                                </div>
-                            </div>
-                            <div class="result-metric">
-                                <span class="metric-value">Page 1</span>
-                                <span class="metric-label">Google Rankings</span>
-                            </div>
-                        </div>
-                    </div>
+
                 </div>
             </div>
             
@@ -682,8 +657,6 @@ get_header(); ?>
                     <span class="dot active" data-slide="0"></span>
                     <span class="dot" data-slide="1"></span>
                     <span class="dot" data-slide="2"></span>
-                    <span class="dot" data-slide="3"></span>
-                    <span class="dot" data-slide="4"></span>
                 </div>
                 <button class="carousel-next" id="next-btn" aria-label="Next testimonial">
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
