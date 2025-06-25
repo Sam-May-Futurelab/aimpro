@@ -654,10 +654,23 @@ get_header(); ?>
             <h2><?php echo aimpro_get_field('newsletter_title', 'Stay Updated with the Latest Insights'); ?></h2>
             <p><?php echo aimpro_get_field('newsletter_subtitle', 'Get the latest resources, industry updates, and expert tips delivered directly to your inbox every week.'); ?></p>
             
-            <form class="newsletter-form" action="#" method="post">
+            <?php if (isset($_GET['newsletter_success'])): ?>
+                <div class="form-message success" style="background: #d4edda; color: #155724; padding: 15px; border-radius: 8px; margin-bottom: 20px; border-left: 4px solid #28a745;">
+                    <p style="margin: 0;"><strong>Thank you!</strong> You've been successfully subscribed to our newsletter.</p>
+                </div>
+            <?php elseif (isset($_GET['newsletter_error'])): ?>
+                <div class="form-message error" style="background: #f8d7da; color: #721c24; padding: 15px; border-radius: 8px; margin-bottom: 20px; border-left: 4px solid #dc3545;">
+                    <p style="margin: 0;"><strong>Error:</strong> There was a problem with your subscription. Please try again.</p>
+                </div>
+            <?php endif; ?>
+            
+            <form class="newsletter-form" action="<?php echo esc_url(admin_url('admin-post.php')); ?>" method="post">
+                <input type="hidden" name="action" value="newsletter_signup">
+                <input type="hidden" name="_wp_http_referer" value="<?php echo esc_url(wp_unslash($_SERVER['REQUEST_URI'])); ?>">
+                <?php wp_nonce_field('newsletter_signup', 'newsletter_nonce'); ?>
                 <div class="form-group">
-                    <input type="text" name="name" placeholder="Enter your name" required>
-                    <input type="email" name="email" placeholder="Enter your email address" required>
+                    <input type="text" name="subscriber_name" placeholder="Enter your name" required>
+                    <input type="email" name="subscriber_email" placeholder="Enter your email address" required>
                     <button type="submit" class="btn btn-primary"><?php echo aimpro_get_field('newsletter_button_text', 'Subscribe'); ?></button>
                 </div>
             </form>

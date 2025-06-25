@@ -2154,6 +2154,103 @@ function aimpro_handle_lead_magnet_form() {
 add_action('admin_post_lead_magnet_form', 'aimpro_handle_lead_magnet_form');
 add_action('admin_post_nopriv_lead_magnet_form', 'aimpro_handle_lead_magnet_form');
 
+// Handle Newsletter Signup Form Submission
+function aimpro_handle_newsletter_signup() {
+    // Debug logging
+    error_log('Newsletter signup attempt started');
+    error_log('POST data: ' . print_r($_POST, true));
+    
+    if (!isset($_POST['action']) || $_POST['action'] !== 'newsletter_signup' || !wp_verify_nonce($_POST['newsletter_nonce'], 'newsletter_signup')) {
+        error_log('Newsletter signup failed: nonce or action check failed');
+        wp_redirect(home_url());
+        exit;
+    }
+    
+    // Sanitize and validate input
+    $name = sanitize_text_field($_POST['subscriber_name']);
+    $email = sanitize_email($_POST['subscriber_email']);
+    
+    error_log("Newsletter signup data - Name: $name, Email: $email");
+    
+    if (empty($name) || empty($email) || !is_email($email)) {
+        error_log('Newsletter signup failed: validation failed');
+        $referer = wp_get_referer() ?: home_url();
+        wp_redirect(add_query_arg('newsletter_error', '1', $referer));
+        exit;
+    }
+    
+    global $wpdb;
+    $table_name = $wpdb->prefix . 'aimpro_submissions';
+    
+    // Check if table exists
+    $table_exists = $wpdb->get_var("SHOW TABLES LIKE '$table_name'");
+    if (!$table_exists) {
+        error_log('Newsletter signup failed: table does not exist');
+        $referer = wp_get_referer() ?: home_url();
+        wp_redirect(add_query_arg('newsletter_error', '1', $referer));
+        exit;
+    }
+    
+    // Check if email already exists for newsletter subscriptions
+    $existing = $wpdb->get_var($wpdb->prepare(
+        "SELECT id FROM $table_name WHERE email = %s AND form_type = 'newsletter'",
+        $email
+    ));
+    
+    if ($existing) {
+        error_log('Newsletter signup: email already exists, redirecting to success');
+        $referer = wp_get_referer() ?: home_url();
+        wp_redirect(add_query_arg('newsletter_success', '1', $referer));
+        exit;
+    }
+    
+    // Store in database
+    $result = $wpdb->insert(
+        $table_name,
+        array(
+            'form_type' => 'newsletter',
+            'name' => $name,
+            'email' => $email,
+            'message' => 'Newsletter subscription',
+            'ip_address' => $_SERVER['REMOTE_ADDR'] ?? '',
+            'user_agent' => $_SERVER['HTTP_USER_AGENT'] ?? ''
+        ),
+        array('%s', '%s', '%s', '%s', '%s', '%s')
+    );
+    
+    error_log("Newsletter signup - Insert result: " . ($result ? 'SUCCESS' : 'FAILED'));
+    if (!$result) {
+        error_log("Newsletter signup - Database error: " . $wpdb->last_error);
+    }
+    
+    if ($result) {
+        error_log('Newsletter signup successful, sending email notification');
+        // Send email notification to admin
+        $to = 'sam@futurelab.solutions';
+        $subject = 'New Newsletter Subscription - ' . get_bloginfo('name');
+        $message_body = "New newsletter subscription:\n\n";
+        $message_body .= "Name: $name\n";
+        $message_body .= "Email: $email\n";
+        $message_body .= "Date: " . current_time('mysql') . "\n";
+        $message_body .= "IP Address: " . ($_SERVER['REMOTE_ADDR'] ?? 'Unknown') . "\n\n";
+        $message_body .= "You can view all subscriptions in the WordPress admin under 'Form Submissions'.";
+        
+        $headers = array(
+            'Content-Type: text/plain; charset=UTF-8',
+            'From: ' . get_bloginfo('name') . ' <noreply@' . $_SERVER['HTTP_HOST'] . '>'
+        );
+        
+        wp_mail($to, $subject, $message_body, $headers);
+        
+        wp_redirect(add_query_arg('newsletter_success', '1', $_POST['_wp_http_referer'] ?? home_url()));
+    } else {
+        wp_redirect(add_query_arg('newsletter_error', '1', $_POST['_wp_http_referer'] ?? home_url()));
+    }
+    exit;
+}
+add_action('admin_post_newsletter_signup', 'aimpro_handle_newsletter_signup');
+add_action('admin_post_nopriv_newsletter_signup', 'aimpro_handle_newsletter_signup');
+
 // Add admin menu for viewing form submissions
 function aimpro_add_submissions_menu() {
     add_menu_page(
@@ -2205,7 +2302,20 @@ function aimpro_submissions_page() {
                             <td><?php echo date('M j, Y g:i A', strtotime($submission->submission_date)); ?></td>
                             <td>
                                 <span class="submission-type <?php echo esc_attr($submission->form_type); ?>">
-                                    <?php echo $submission->form_type === 'lead_magnet' ? 'Lead Magnet' : 'Contact Form'; ?>
+                                    <?php 
+                                    switch($submission->form_type) {
+                                        case 'lead_magnet':
+                                            echo 'Lead Magnet';
+                                            break;
+                                        case 'newsletter':
+                                            echo 'Newsletter';
+                                            break;
+                                        case 'contact':
+                                        default:
+                                            echo 'Contact Form';
+                                            break;
+                                    }
+                                    ?>
                                 </span>
                             </td>
                             <td><strong><?php echo esc_html($submission->name); ?></strong></td>
@@ -2241,6 +2351,10 @@ function aimpro_submissions_page() {
         .submission-type.contact {
             background: #f0f6fc;
             color: #2c3338;
+        }
+        .submission-type.newsletter {
+            background: #fff2e1;
+            color: #f15a25;
         }
         </style>
     </div>
