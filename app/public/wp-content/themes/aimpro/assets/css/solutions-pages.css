@@ -1611,3 +1611,32 @@
         padding: 0.5rem 0;
     }
 }
+
+/* Lead Generation Page - Method Icons */
+.method-icon i {
+    color: #f15a25 !important;
+}
+
+/* Funnel Builds Page - Type Icons */
+.type-icon i {
+    color: #f15a25 !important;
+}
+
+/* Remove target icons from method titles - only FontAwesome icons should show */
+.method-content h3::before {
+    display: none !important;
+}
+
+.method-card h3::before {
+    display: none !important;
+}
+
+/* Center the FontAwesome icons properly */
+.method-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 64px;
+    height: 64px;
+    margin-bottom: 1rem;
+}
