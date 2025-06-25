@@ -210,8 +210,8 @@ get_header(); ?>
             $types_title = get_post_meta(get_the_ID(), '_retargeting_display_types_title', true);
             if (empty($types_title)) $types_title = $defaults['types_title'];
             ?>
-            <h2 class="animate-on-scroll animate-fade-up" style="text-align: center;"><?php echo esc_html($types_title); ?></h2>
-            <div class="types-grid">
+            <h2 class="animate-on-scroll animate-fade-up" style="text-align: center; margin-bottom: 2rem;"><?php echo esc_html($types_title); ?></h2>
+            <div class="types-grid" style="margin: 2.5rem 0;">
                 <?php for ($i = 1; $i <= 6; $i++) : ?>
                     <?php
                     $type_title = get_post_meta(get_the_ID(), "_retargeting_display_type_title_{$i}", true);
@@ -224,9 +224,6 @@ get_header(); ?>
                     if (empty($type_icon)) $type_icon = $defaults["type_icon_{$i}"];
                     ?>
                     <div class="type-item animate-on-scroll animate-stagger animate-fade-up">
-                        <div class="type-icon">
-                            <i class="<?php echo esc_attr($type_icon); ?>"></i>
-                        </div>
                         <h3><?php echo esc_html($type_title); ?></h3>
                         <p><?php echo esc_html($type_content); ?></p>
                     </div>                <?php endfor; ?>

@@ -97,7 +97,7 @@ function aimpro_get_retargeting_display_default_values() {
         'process_step_content_4' => 'Deploy retargeting campaigns with systematic A/B testing of creative, messaging, and frequency caps.',
         
         'process_step_number_5' => '5',
-        'process_step_title_5' => 'optimisation & Scaling',
+        'process_step_title_5' => 'Optimisation & Scaling',
         'process_step_content_5' => 'Continuously optimise based on performance data and scale successful campaigns across additional platforms and audiences.',
         
         // Retargeting Types Section

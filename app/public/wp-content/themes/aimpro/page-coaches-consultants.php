@@ -78,12 +78,12 @@ $challenges = get_post_meta(get_the_ID(), '_coaches_consultants_challenges', tru
                 <div class="benefits-grid-2x2 animate-on-scroll animate-fade-up">
                       <div class="benefit-card animate-on-scroll animate-stagger animate-fade-up">
                         <div class="benefit-icon">
-                            <i class="fas fa-user-tie"></i>
+                            <i class="fas fa-bullseye"></i>
                         </div>
                         <div class="benefit-content">
                             <h3>Personal Brand Development</h3>
                             <p>Build a powerful personal brand that establishes your authority and attracts your ideal clients consistently.</p>
-                            <ul class="feature-list">
+                            <ul class="target-list">
                                 <li>Brand positioning strategy</li>
                                 <li>Professional photography & video</li>
                                 <li>Website design for consultants</li>
@@ -92,12 +92,12 @@ $challenges = get_post_meta(get_the_ID(), '_coaches_consultants_challenges', tru
                         </div>
                     </div>                    <div class="benefit-card animate-on-scroll animate-stagger animate-fade-up">
                         <div class="benefit-icon">
-                            <i class="fas fa-pen-fancy"></i>
+                            <i class="fas fa-lightbulb"></i>
                         </div>
                         <div class="benefit-content">
                             <h3>Content Marketing & Thought Leadership</h3>
                             <p>Showcase your expertise through strategic content that demonstrates value and builds trust with potential clients.</p>
-                            <ul class="feature-list">
+                            <ul class="target-list">
                                 <li>Blog writing and strategy</li>
                                 <li>Video content creation</li>
                                 <li>Podcast development</li>
@@ -106,12 +106,12 @@ $challenges = get_post_meta(get_the_ID(), '_coaches_consultants_challenges', tru
                         </div>
                     </div>                    <div class="benefit-card animate-on-scroll animate-stagger animate-fade-up">
                         <div class="benefit-icon">
-                            <i class="fas fa-funnel-dollar"></i>
+                            <i class="fas fa-rocket"></i>
                         </div>
                         <div class="benefit-content">
                             <h3>Lead Generation Funnels</h3>
                             <p>Create sophisticated marketing funnels that attract, nurture, and convert your ideal clients automatically.</p>
-                            <ul class="feature-list">
+                            <ul class="target-list">
                                 <li>Lead magnet development</li>
                                 <li>Email nurture sequences</li>
                                 <li>Webinar funnel creation</li>
@@ -125,7 +125,7 @@ $challenges = get_post_meta(get_the_ID(), '_coaches_consultants_challenges', tru
                         <div class="benefit-content">
                             <h3>LinkedIn & Social Media Strategy</h3>
                             <p>Build your professional network and generate high-value leads through strategic social media engagement.</p>
-                            <ul class="feature-list">
+                            <ul class="target-list">
                                 <li>LinkedIn profile optimisation</li>
                                 <li>Content distribution strategy</li>
                                 <li>Social media advertising</li>

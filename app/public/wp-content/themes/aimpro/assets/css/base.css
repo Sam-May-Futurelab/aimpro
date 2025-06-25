@@ -106,6 +106,46 @@ li {
     line-height: 1.6;
 }
 
+/* Target List Styling for Coaches/Consultants Page */
+.target-list {
+    list-style: none;
+    padding: 0;
+    margin: 1rem 0;
+    text-align: left;
+}
+
+.target-list li {
+    position: relative;
+    padding-left: 2rem;
+    margin-bottom: 0.75rem;
+    line-height: 1.6;
+    text-align: left;
+}
+
+.target-list li:before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0.3rem;
+    width: 16px;
+    height: 16px;
+    background-image: url('../images/aimpro-target.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+/* Ensure proper spacing and alignment */
+.target-list li:last-child {
+    margin-bottom: 0;
+}
+
+/* Override center alignment from benefit cards */
+.benefit-card .target-list,
+.benefit-card .target-list li {
+    text-align: left !important;
+}
+
 /* Utility Classes */
 .text-center { text-align: center; }
 .text-left { text-align: left; }
