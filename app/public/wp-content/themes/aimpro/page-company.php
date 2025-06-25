@@ -96,18 +96,14 @@ get_header(); ?>
                 <div class="values-grid">
                     <div class="value-card animate-on-scroll animate-stagger animate-fade-up">
                         <div class="value-icon">
-                            <svg width="60" height="60" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M12 2L15.09 8.26L22 9L17 14L18.18 21L12 17.77L5.82 21L7 14L2 9L8.91 8.26L12 2Z" stroke="currentcolour" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                            </svg>
+                            <i class="fas fa-bullseye" style="font-size: 3rem; color: #ffffff;"></i>
                         </div>
                         <h3><?php echo esc_html(get_post_meta(get_the_ID(), 'company_mission_title', true) ?: 'Our Mission'); ?></h3>
                         <p><?php echo esc_html(get_post_meta(get_the_ID(), 'company_mission_desc', true) ?: 'To empower businesses with innovative digital marketing strategies that drive sustainable growth and measurable results in an ever-evolving digital landscape.'); ?></p>
                     </div>
                     <div class="value-card animate-on-scroll animate-stagger animate-fade-up">
                         <div class="value-icon">
-                            <svg width="60" height="60" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" stroke="currentcolour" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                            </svg>
+                            <i class="fas fa-heart" style="font-size: 3rem; color: #ffffff;"></i>
                         </div>                        <h3><?php echo esc_html(get_post_meta(get_the_ID(), 'company_values_title', true) ?: 'Our Values'); ?></h3>
                         <ul>
                             <?php 
@@ -135,10 +131,7 @@ Results: We are committed to delivering measurable outcomes';
                         </ul>
                     </div>                    <div class="value-card animate-on-scroll animate-stagger animate-fade-up">
                         <div class="value-icon">
-                            <svg width="60" height="60" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" stroke="currentcolour" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                <circle cx="12" cy="12" r="3" stroke="currentcolour" stroke-width="2"/>
-                            </svg>
+                            <i class="fas fa-eye" style="font-size: 3rem; color: #ffffff;"></i>
                         </div>
                         <h3><?php echo esc_html(get_post_meta(get_the_ID(), 'company_vision_title', true) ?: 'Our Vision'); ?></h3>
                         <p><?php echo esc_html(get_post_meta(get_the_ID(), 'company_vision_desc', true) ?: 'To become the world\'s most trusted digital marketing partner, known for delivering exceptional results and fostering long-term client relationships built on trust and transparency.'); ?></p>
