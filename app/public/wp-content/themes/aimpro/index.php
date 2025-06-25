@@ -462,7 +462,7 @@ get_header(); ?>
             </div>
         </div>
         <div class="team-cta-section">
-            <a href="#contact" class="btn-primary large shine-effect">TALK TO OUR EXPERTS</a>
+            <a href="<?php echo home_url('/contact'); ?>" class="btn-primary large shine-effect">TALK TO OUR EXPERTS</a>
         </div>
     </div>
 </section>
@@ -532,7 +532,7 @@ get_header(); ?>
                 <button class="carousel-next">›</button>
             </div>
         </div>        <div class="testimonials-cta-section">
-            <a href="#contact" class="btn-primary large shine-effect">START YOUR SUCCESS STORY</a>
+            <a href="<?php echo home_url('/contact'); ?>" class="btn-primary large shine-effect">START YOUR SUCCESS STORY</a>
         </div>
     </div>
 </section>
