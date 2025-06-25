@@ -119,17 +119,37 @@ get_header(); ?>
     <div class="target-icon services-target-1"></div>
     <!-- Additional floating targets -->
     <div class="target-icon floating-target-services" style="bottom: 25%; left: 12%; width: 28px; height: 28px; opacity: 0.18; animation: targetFloat 7.5s ease-in-out infinite reverse;"></div>
-    <!-- Services Particles -->
+    <!-- Enhanced Services Particles - Similar to Team Particles -->
     <div class="services-particles-container">
-        <!-- Reduced number of particles with enhanced animations -->
-        <div class="services-particle particle-bright" style="top: 5%; left: 5%; animation: particle-float-v1 20s infinite ease-in-out;"></div>
-        <div class="services-particle" style="top: 15%; right: 12%; animation: particle-float-v2 25s infinite ease-in-out; animation-delay: -3s;"></div>
-        <div class="services-particle particle-bright" style="top: 30%; left: 25%; animation: particle-float-v1 22s infinite ease-in-out; animation-delay: -7s;"></div>
-        <div class="services-particle" style="top: 65%; right: 18%; animation: particle-float-v2 28s infinite ease-in-out; animation-delay: -5s;"></div>
-        <div class="services-particle particle-bright" style="top: 85%; left: 15%; animation: particle-float-v1 24s infinite ease-in-out; animation-delay: -9s;"></div>
-        <div class="services-particle" style="top: 45%; left: 50%; animation: particle-float-v2 26s infinite ease-in-out; animation-delay: -12s;"></div>
-        <div class="services-particle particle-bright" style="top: 20%; right: 35%; animation: particle-float-v1 29s infinite ease-in-out; animation-delay: -2s;"></div>
-        <div class="services-particle" style="top: 75%; left: 35%; animation: particle-float-v2 23s infinite ease-in-out; animation-delay: -14s;"></div>
+        <!-- Edge particles - positioned around the perimeter -->
+        <div class="services-particle particle-bright" style="top: 5%; left: 2%; animation: particle-float-enhanced-v1 15s infinite ease-in-out;"></div>
+        <div class="services-particle" style="top: 8%; right: 3%; animation: particle-float-enhanced-v2 18s infinite ease-in-out; animation-delay: -3s;"></div>
+        <div class="services-particle particle-bright" style="top: 15%; left: 1%; animation: particle-float-enhanced-v1 16s infinite ease-in-out; animation-delay: -6s;"></div>
+        <div class="services-particle" style="top: 25%; right: 2%; animation: particle-float-enhanced-v2 20s infinite ease-in-out; animation-delay: -4s;"></div>
+        <div class="services-particle particle-bright" style="top: 35%; left: 3%; animation: particle-float-enhanced-v1 17s infinite ease-in-out; animation-delay: -8s;"></div>
+        <div class="services-particle" style="top: 45%; right: 1%; animation: particle-float-enhanced-v2 19s infinite ease-in-out; animation-delay: -5s;"></div>
+        
+        <!-- Corner and side particles -->
+        <div class="services-particle particle-small" style="top: 60%; left: 2%; animation: particle-float-enhanced-v1 22s infinite ease-in-out; animation-delay: -7s;"></div>
+        <div class="services-particle particle-small particle-bright" style="top: 70%; right: 4%; animation: particle-float-enhanced-v2 24s infinite ease-in-out; animation-delay: -2s;"></div>
+        <div class="services-particle particle-small" style="top: 80%; left: 1%; animation: particle-float-enhanced-v1 21s infinite ease-in-out; animation-delay: -9s;"></div>
+        <div class="services-particle particle-small" style="top: 90%; right: 3%; animation: particle-float-enhanced-v2 23s infinite ease-in-out; animation-delay: -1s;"></div>
+        
+        <!-- Top edge micro particles -->
+        <div class="services-particle particle-micro" style="top: 2%; left: 15%; animation: particle-float-enhanced-v1 14s infinite ease-in-out; animation-delay: -4s;"></div>
+        <div class="services-particle particle-micro particle-bright" style="top: 3%; right: 20%; animation: particle-float-enhanced-v2 16s infinite ease-in-out; animation-delay: -6s;"></div>
+        <div class="services-particle particle-micro" style="top: 4%; left: 85%; animation: particle-float-enhanced-v1 18s infinite ease-in-out; animation-delay: -2s;"></div>
+        
+        <!-- Bottom edge micro particles -->
+        <div class="services-particle particle-micro" style="top: 95%; right: 15%; animation: particle-float-enhanced-v2 15s infinite ease-in-out; animation-delay: -7s;"></div>
+        <div class="services-particle particle-micro particle-bright" style="top: 96%; left: 20%; animation: particle-float-enhanced-v1 17s infinite ease-in-out; animation-delay: -3s;"></div>
+        <div class="services-particle particle-micro" style="top: 97%; right: 80%; animation: particle-float-enhanced-v2 14s infinite ease-in-out; animation-delay: -5s;"></div>
+        
+        <!-- Additional edge particles for more visibility -->
+        <div class="services-particle particle-bright" style="top: 55%; left: 0.5%; animation: particle-float-enhanced-v1 19s infinite ease-in-out; animation-delay: -10s;"></div>
+        <div class="services-particle" style="top: 75%; right: 0.5%; animation: particle-float-enhanced-v2 21s infinite ease-in-out; animation-delay: -11s;"></div>
+        <div class="services-particle particle-small" style="top: 85%; left: 4%; animation: particle-float-enhanced-v1 18s infinite ease-in-out; animation-delay: -12s;"></div>
+        <div class="services-particle particle-small particle-bright" style="top: 12%; right: 1.5%; animation: particle-float-enhanced-v2 20s infinite ease-in-out; animation-delay: -13s;"></div>
     </div>
       <div class="container"><div class="content-center">            <h2><?php echo aimpro_get_field('services_title', 'Premium Digital Marketing Solutions That <span class="highlight curly-underline">DELIVER</span>'); ?></h2>
             <p class="section-subtitle"><?php echo aimpro_get_field('services_subtitle', 'Zero fluff. Pure performance. Our integrated marketing ecosystem works seamlessly to transform prospects into profits.'); ?></p>
@@ -417,6 +437,38 @@ get_header(); ?>
 <!-- Team Section -->
 <section id="team" class="team-section premium-team">
     <div class="team-background-gradient"></div>
+    <!-- Enhanced Team Particles with increased movement -->
+    <div class="team-particles-container">
+        <!-- Edge particles - positioned around the perimeter -->
+        <div class="team-particle particle-bright" style="top: 5%; left: 2%; animation: particle-float-enhanced-v1 15s infinite ease-in-out;"></div>
+        <div class="team-particle" style="top: 8%; right: 3%; animation: particle-float-enhanced-v2 18s infinite ease-in-out; animation-delay: -3s;"></div>
+        <div class="team-particle particle-bright" style="top: 15%; left: 1%; animation: particle-float-enhanced-v1 16s infinite ease-in-out; animation-delay: -6s;"></div>
+        <div class="team-particle" style="top: 25%; right: 2%; animation: particle-float-enhanced-v2 20s infinite ease-in-out; animation-delay: -4s;"></div>
+        <div class="team-particle particle-bright" style="top: 35%; left: 3%; animation: particle-float-enhanced-v1 17s infinite ease-in-out; animation-delay: -8s;"></div>
+        <div class="team-particle" style="top: 45%; right: 1%; animation: particle-float-enhanced-v2 19s infinite ease-in-out; animation-delay: -5s;"></div>
+        
+        <!-- Corner and side particles -->
+        <div class="team-particle particle-small" style="top: 60%; left: 2%; animation: particle-float-enhanced-v1 22s infinite ease-in-out; animation-delay: -7s;"></div>
+        <div class="team-particle particle-small particle-bright" style="top: 70%; right: 4%; animation: particle-float-enhanced-v2 24s infinite ease-in-out; animation-delay: -2s;"></div>
+        <div class="team-particle particle-small" style="top: 80%; left: 1%; animation: particle-float-enhanced-v1 21s infinite ease-in-out; animation-delay: -9s;"></div>
+        <div class="team-particle particle-small" style="top: 90%; right: 3%; animation: particle-float-enhanced-v2 23s infinite ease-in-out; animation-delay: -1s;"></div>
+        
+        <!-- Top edge micro particles -->
+        <div class="team-particle particle-micro" style="top: 2%; left: 15%; animation: particle-float-enhanced-v1 14s infinite ease-in-out; animation-delay: -4s;"></div>
+        <div class="team-particle particle-micro particle-bright" style="top: 3%; right: 20%; animation: particle-float-enhanced-v2 16s infinite ease-in-out; animation-delay: -6s;"></div>
+        <div class="team-particle particle-micro" style="top: 4%; left: 85%; animation: particle-float-enhanced-v1 18s infinite ease-in-out; animation-delay: -2s;"></div>
+        
+        <!-- Bottom edge micro particles -->
+        <div class="team-particle particle-micro" style="top: 95%; right: 15%; animation: particle-float-enhanced-v2 15s infinite ease-in-out; animation-delay: -7s;"></div>
+        <div class="team-particle particle-micro particle-bright" style="top: 96%; left: 20%; animation: particle-float-enhanced-v1 17s infinite ease-in-out; animation-delay: -3s;"></div>
+        <div class="team-particle particle-micro" style="top: 97%; right: 80%; animation: particle-float-enhanced-v2 14s infinite ease-in-out; animation-delay: -5s;"></div>
+        
+        <!-- Additional edge particles for more visibility -->
+        <div class="team-particle particle-bright" style="top: 55%; left: 0.5%; animation: particle-float-enhanced-v1 19s infinite ease-in-out; animation-delay: -10s;"></div>
+        <div class="team-particle" style="top: 75%; right: 0.5%; animation: particle-float-enhanced-v2 21s infinite ease-in-out; animation-delay: -11s;"></div>
+        <div class="team-particle particle-small" style="top: 85%; left: 4%; animation: particle-float-enhanced-v1 18s infinite ease-in-out; animation-delay: -12s;"></div>
+        <div class="team-particle particle-small particle-bright" style="top: 12%; right: 1.5%; animation: particle-float-enhanced-v2 20s infinite ease-in-out; animation-delay: -13s;"></div>
+    </div>
     <div class="container">
         <div class="content-centre">            <h2>Meet The Experts Who Make <span class="highlight curly-underline">MAGIC</span> Happen</h2>
             <p class="section-subtitle">No faceless agencies here. Our marketing specialists are passionate about client success and personally invested in delivering exceptional results for every business we partner with.</p>
