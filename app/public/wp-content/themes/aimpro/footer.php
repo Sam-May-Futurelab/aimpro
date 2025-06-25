@@ -77,5 +77,168 @@
 </footer>
 
 <?php wp_footer(); ?>
+
+<!-- Enhanced Testimonials Carousel Script -->
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const track = document.getElementById('testimonials-track');
+    const prevBtn = document.getElementById('prev-btn');
+    const nextBtn = document.getElementById('next-btn');
+    const dotsContainer = document.getElementById('dots-container');
+    const dots = dotsContainer.querySelectorAll('.dot');
+    
+    if (!track || !prevBtn || !nextBtn) return;
+    
+    let currentSlide = 0;
+    const totalSlides = track.children.length;
+    let isAutoPlay = true;
+    let autoPlayInterval;
+    
+    // Calculate slide width based on container
+    function getSlideWidth() {
+        const container = track.parentElement;
+        return container.offsetWidth;
+    }
+    
+    // Update carousel position
+    function updateCarousel() {
+        const slideWidth = getSlideWidth();
+        const translateX = -currentSlide * (slideWidth + 40); // 40px gap
+        track.style.transform = `translateX(${translateX}px)`;
+        
+        // Update dots
+        dots.forEach((dot, index) => {
+            dot.classList.toggle('active', index === currentSlide);
+        });
+        
+        // Update button states
+        prevBtn.style.opacity = currentSlide === 0 ? '0.5' : '1';
+        nextBtn.style.opacity = currentSlide === totalSlides - 1 ? '0.5' : '1';
+    }
+    
+    // Go to specific slide
+    function goToSlide(slideIndex) {
+        currentSlide = Math.max(0, Math.min(slideIndex, totalSlides - 1));
+        updateCarousel();
+    }
+    
+    // Next slide
+    function nextSlide() {
+        if (currentSlide < totalSlides - 1) {
+            currentSlide++;
+        } else {
+            currentSlide = 0; // Loop back to first
+        }
+        updateCarousel();
+    }
+    
+    // Previous slide
+    function prevSlide() {
+        if (currentSlide > 0) {
+            currentSlide--;
+        } else {
+            currentSlide = totalSlides - 1; // Loop to last
+        }
+        updateCarousel();
+    }
+    
+    // Auto play functionality
+    function startAutoPlay() {
+        if (isAutoPlay) {
+            autoPlayInterval = setInterval(nextSlide, 5000); // 5 seconds
+        }
+    }
+    
+    function stopAutoPlay() {
+        clearInterval(autoPlayInterval);
+    }
+    
+    // Event listeners
+    nextBtn.addEventListener('click', () => {
+        nextSlide();
+        stopAutoPlay();
+        setTimeout(startAutoPlay, 10000); // Restart after 10 seconds
+    });
+    
+    prevBtn.addEventListener('click', () => {
+        prevSlide();
+        stopAutoPlay();
+        setTimeout(startAutoPlay, 10000); // Restart after 10 seconds
+    });
+    
+    // Dot navigation
+    dots.forEach((dot, index) => {
+        dot.addEventListener('click', () => {
+            goToSlide(index);
+            stopAutoPlay();
+            setTimeout(startAutoPlay, 10000); // Restart after 10 seconds
+        });
+    });
+    
+    // Keyboard navigation
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'ArrowLeft') {
+            prevSlide();
+            stopAutoPlay();
+            setTimeout(startAutoPlay, 10000);
+        } else if (e.key === 'ArrowRight') {
+            nextSlide();
+            stopAutoPlay();
+            setTimeout(startAutoPlay, 10000);
+        }
+    });
+    
+    // Touch/swipe support
+    let startX = 0;
+    let endX = 0;
+    
+    track.addEventListener('touchstart', (e) => {
+        startX = e.touches[0].clientX;
+        stopAutoPlay();
+    });
+    
+    track.addEventListener('touchend', (e) => {
+        endX = e.changedTouches[0].clientX;
+        const difference = startX - endX;
+        
+        if (Math.abs(difference) > 50) { // Minimum swipe distance
+            if (difference > 0) {
+                nextSlide();
+            } else {
+                prevSlide();
+            }
+        }
+        
+        setTimeout(startAutoPlay, 10000);
+    });
+    
+    // Pause on hover
+    track.addEventListener('mouseenter', stopAutoPlay);
+    track.addEventListener('mouseleave', startAutoPlay);
+    
+    // Handle resize
+    window.addEventListener('resize', () => {
+        updateCarousel();
+    });
+    
+    // Initialize
+    updateCarousel();
+    startAutoPlay();
+    
+    // Intersection Observer for performance
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                startAutoPlay();
+            } else {
+                stopAutoPlay();
+            }
+        });
+    });
+    
+    observer.observe(track);
+});
+</script>
+
 </body>
 </html>

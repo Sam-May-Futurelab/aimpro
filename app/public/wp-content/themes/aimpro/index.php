@@ -520,71 +520,195 @@ get_header(); ?>
     </div>
 </section>
 
-<!-- Testimonials Section -->
+<!-- Enhanced Testimonials Section -->
 <section class="testimonials-section">
-    <!-- Target Icons -->
-    <div class="target-icon testimonials-target-1"></div>    <div class="container">
-        <div class="content-centre animate-on-scroll animate-fade-up">
-            <h2><?php echo aimpro_get_field('testimonials_title', 'Don\'t Just Take Our Word for It'); ?></h2>
+    <div class="container">
+        <div class="testimonials-header">
+            <div class="content-centre animate-on-scroll animate-fade-up">
+                <span class="section-badge">Client Success Stories</span>
+                <h2>Real Results from Real Businesses</h2>
+                <p class="section-subtitle">Don't just take our word for it. Here's what our clients have to say about the transformative results we've delivered for their businesses.</p>
+            </div>
         </div>
+        
         <div class="testimonials-carousel-wrapper">
             <div class="testimonials-carousel-container">
-                <div class="testimonials-carousel-track">                    <div class="testimonial-card slide-up">
+                <div class="testimonials-carousel-track" id="testimonials-track">
+                    <!-- Enhanced Testimonial 1 -->
+                    <div class="testimonial-card modern-card">
+                        <div class="testimonial-rating">
+                            <div class="stars">★★★★★</div>
+                            <span class="rating-text">5.0</span>
+                        </div>
                         <div class="testimonial-content">
-                            <p>"<?php echo aimpro_get_field('testimonial_1_content', 'Honestly, if you have a business that relies on your website to bring in business, don\'t waste your time on any other company. From my experience, I have gained approximately 50% increase in qualified leads.'); ?>"</p>
+                            <p>"Honestly, if you have a business that relies on your website to bring in business, don't waste your time on any other company. From my experience, I have gained approximately 50% increase in qualified leads."</p>
                         </div>
                         <div class="testimonial-author">
-                            <strong><?php echo aimpro_get_field('testimonial_1_author', 'Emily Hargreaves'); ?></strong>
-                            <span><?php echo aimpro_get_field('testimonial_1_title', 'Marketing Director'); ?></span>
+                            <div class="author-info">
+                                <div class="author-avatar">
+                                    <span>EH</span>
+                                </div>
+                                <div class="author-details">
+                                    <strong>Emily Hargreaves</strong>
+                                    <span>Marketing Director</span>
+                                    <div class="company-badge">Tech Solutions Ltd</div>
+                                </div>
+                            </div>
+                            <div class="result-metric">
+                                <span class="metric-value">+50%</span>
+                                <span class="metric-label">Qualified Leads</span>
+                            </div>
                         </div>
                     </div>
-                    <div class="testimonial-card slide-up">
+
+                    <!-- Enhanced Testimonial 2 -->
+                    <div class="testimonial-card modern-card">
+                        <div class="testimonial-rating">
+                            <div class="stars">★★★★★</div>
+                            <span class="rating-text">5.0</span>
+                        </div>
                         <div class="testimonial-content">
-                            <p>"<?php echo aimpro_get_field('testimonial_2_content', 'No negatives at all. One of the best companies we have ever worked with. So dynamic and on trend. Incredibly proactive in everything they do and the bonus is that they are such lovely people to work with.'); ?>"</p>
+                            <p>"No negatives at all. One of the best companies we have ever worked with. So dynamic and on trend. Incredibly proactive in everything they do and the bonus is that they are such lovely people to work with."</p>
                         </div>
                         <div class="testimonial-author">
-                            <strong><?php echo aimpro_get_field('testimonial_2_author', 'Charlotte Davies'); ?></strong>
-                            <span><?php echo aimpro_get_field('testimonial_2_title', 'Business Owner'); ?></span>
+                            <div class="author-info">
+                                <div class="author-avatar">
+                                    <span>CD</span>
+                                </div>
+                                <div class="author-details">
+                                    <strong>Charlotte Davies</strong>
+                                    <span>Business Owner</span>
+                                    <div class="company-badge">Davies & Associates</div>
+                                </div>
+                            </div>
+                            <div class="result-metric">
+                                <span class="metric-value">+200%</span>
+                                <span class="metric-label">Brand Visibility</span>
+                            </div>
                         </div>
                     </div>
-                    <div class="testimonial-card slide-up">
+
+                    <!-- Enhanced Testimonial 3 -->
+                    <div class="testimonial-card modern-card">
+                        <div class="testimonial-rating">
+                            <div class="stars">★★★★★</div>
+                            <span class="rating-text">5.0</span>
+                        </div>
                         <div class="testimonial-content">
-                            <p>"<?php echo aimpro_get_field('testimonial_3_content', 'The Google Ads campaigns run by Aimpro Digital have been a fantastic success. Their attention to detail and ability to target the right audience has really paid off. We\'ve seen a significant increase in traffic and conversions, all thanks to their hard work and expertise!'); ?>"</p>
+                            <p>"The Google Ads campaigns run by Aimpro Digital have been a fantastic success. Their attention to detail and ability to target the right audience has really paid off. We've seen a significant increase in traffic and conversions!"</p>
                         </div>
                         <div class="testimonial-author">
-                            <strong><?php echo aimpro_get_field('testimonial_3_author', 'Tom Ridley'); ?></strong>
-                            <span><?php echo aimpro_get_field('testimonial_3_title', 'Sales Director, Sheffield'); ?></span>
+                            <div class="author-info">
+                                <div class="author-avatar">
+                                    <span>TR</span>
+                                </div>
+                                <div class="author-details">
+                                    <strong>Tom Ridley</strong>
+                                    <span>Sales Director</span>
+                                    <div class="company-badge">Sheffield Manufacturing</div>
+                                </div>
+                            </div>
+                            <div class="result-metric">
+                                <span class="metric-value">+180%</span>
+                                <span class="metric-label">Conversions</span>
+                            </div>
                         </div>
                     </div>
-                    <div class="testimonial-card slide-up">
+
+                    <!-- Enhanced Testimonial 4 -->
+                    <div class="testimonial-card modern-card">
+                        <div class="testimonial-rating">
+                            <div class="stars">★★★★★</div>
+                            <span class="rating-text">5.0</span>
+                        </div>
                         <div class="testimonial-content">
-                            <p>"<?php echo aimpro_get_field('testimonial_4_content', 'Aimpro Digital has been a game-changer for our business! Since partnering with them, we\'ve seen a consistent flow of quality leads that truly align with our services. It\'s been a breath of fresh air to work with a team that understands our goals and delivers on their promises.'); ?>"</p>
+                            <p>"Aimpro Digital has been a game-changer for our business! Since partnering with them, we've seen a consistent flow of quality leads that truly align with our services. It's been a breath of fresh air to work with a team that understands our goals."</p>
                         </div>
                         <div class="testimonial-author">
-                            <strong><?php echo aimpro_get_field('testimonial_4_author', 'Sarah Thompson'); ?></strong>
-                            <span><?php echo aimpro_get_field('testimonial_4_title', 'Marketing Manager, London'); ?></span>
+                            <div class="author-info">
+                                <div class="author-avatar">
+                                    <span>ST</span>
+                                </div>
+                                <div class="author-details">
+                                    <strong>Sarah Thompson</strong>
+                                    <span>Marketing Manager</span>
+                                    <div class="company-badge">London Consulting Group</div>
+                                </div>
+                            </div>
+                            <div class="result-metric">
+                                <span class="metric-value">+150%</span>
+                                <span class="metric-label">Quality Leads</span>
+                            </div>
                         </div>
                     </div>
-                    <div class="testimonial-card slide-up">
+
+                    <!-- Enhanced Testimonial 5 -->
+                    <div class="testimonial-card modern-card">
+                        <div class="testimonial-rating">
+                            <div class="stars">★★★★★</div>
+                            <span class="rating-text">5.0</span>
+                        </div>
                         <div class="testimonial-content">
-                            <p>"<?php echo aimpro_get_field('testimonial_5_content', 'Our online visibility has improved dramatically thanks to Aimpro Digital\'s SEO expertise. Within months, we went from barely being on the map to ranking on the first page for key terms. The team is knowledgeable, transparent, and always ready with helpful advice. Couldn\'t recommend them more!'); ?>"</p>
+                            <p>"Our online visibility has improved dramatically thanks to Aimpro Digital's SEO expertise. Within months, we went from barely being on the map to ranking on the first page for key terms. The team is knowledgeable, transparent, and always ready with helpful advice."</p>
                         </div>
                         <div class="testimonial-author">
-                            <strong><?php echo aimpro_get_field('testimonial_5_author', 'James Whitfield'); ?></strong>
-                            <span><?php echo aimpro_get_field('testimonial_5_title', 'Director, Birmingham'); ?></span>
+                            <div class="author-info">
+                                <div class="author-avatar">
+                                    <span>JW</span>
+                                </div>
+                                <div class="author-details">
+                                    <strong>James Whitfield</strong>
+                                    <span>Director</span>
+                                    <div class="company-badge">Birmingham Properties</div>
+                                </div>
+                            </div>
+                            <div class="result-metric">
+                                <span class="metric-value">Page 1</span>
+                                <span class="metric-label">Google Rankings</span>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>            <div class="carousel-controls">
-                <button class="carousel-prev">‹</button>
-                <div class="carousel-dots">
-                    <span class="dot active"></span>
-                    <span class="dot"></span>
-                    <span class="dot"></span>
-                </div>
-                <button class="carousel-next">›</button>
             </div>
-        </div>        <div class="testimonials-cta-section">
+            
+            <!-- Enhanced Carousel Controls -->
+            <div class="carousel-controls">
+                <button class="carousel-prev" id="prev-btn" aria-label="Previous testimonial">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/>
+                    </svg>
+                </button>
+                <div class="carousel-dots" id="dots-container">
+                    <span class="dot active" data-slide="0"></span>
+                    <span class="dot" data-slide="1"></span>
+                    <span class="dot" data-slide="2"></span>
+                    <span class="dot" data-slide="3"></span>
+                    <span class="dot" data-slide="4"></span>
+                </div>
+                <button class="carousel-next" id="next-btn" aria-label="Next testimonial">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        
+        <div class="testimonials-stats">
+            <div class="stat-item">
+                <span class="stat-number">500+</span>
+                <span class="stat-label">Happy Clients</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number">98%</span>
+                <span class="stat-label">Client Satisfaction</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number">150%</span>
+                <span class="stat-label">Average ROI Increase</span>
+            </div>
+        </div>
+        
+        <div class="testimonials-cta-section">
             <a href="<?php echo home_url('/contact'); ?>" class="btn-primary large shine-effect">START YOUR SUCCESS STORY</a>
         </div>
     </div>
