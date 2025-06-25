@@ -2175,6 +2175,8 @@ li::before[content='✓'],
 .service-card ul li::before,
 .services-grid ul li:before,
 .services-grid ul li::before,
+.method-features li:before,
+.method-features li::before,
 ul li:before,
 ul li::before {
     content: "" !important;
@@ -2194,6 +2196,7 @@ ul li::before {
 .service-item ul li,
 .service-card ul li,
 .services-grid ul li,
+.method-features li,
 ul li {
     position: relative !important;
     padding-left: 24px !important;

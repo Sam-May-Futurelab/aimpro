@@ -246,12 +246,16 @@
 .method-features li::before,
 .tool-features li::before,
 .tool-list li::before {
-    content: "✓";
+    content: "";
+    background-image: url('../images/aimpro-target.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 16px;
+    height: 16px;
     position: absolute;
     left: 0;
-    color: #f15a25;
-    font-weight: bold;
-    font-size: 1.1rem;
+    top: 3px;
 }
 
 /* ===== TOOLS & TECHNOLOGIES ===== */
