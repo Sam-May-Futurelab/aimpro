@@ -2567,7 +2567,7 @@
 
 .event-agenda li {
     position: relative;
-    padding-left: 1.5rem;
+    padding-left: 2rem;
     margin-bottom: 0.75rem;
     font-size: 1rem;
     color: var(--text-dark, #1a202c);
@@ -2577,11 +2577,14 @@
     content: '';
     position: absolute;
     left: 0;
-    top: 0.5rem;
-    width: 8px;
-    height: 8px;
-    border-radius: 50%;
-    background: var(--primary-orange, #f15a25);
+    top: 0.6rem;
+    width: 16px;
+    height: 16px;
+    background-image: url('../images/aimpro-target.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    transform: translateY(-50%);
 }
 
 .event-registration {
