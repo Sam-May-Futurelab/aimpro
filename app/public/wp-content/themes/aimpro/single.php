@@ -50,9 +50,17 @@ get_header(); ?>
                         </div>
                         
                         <?php if (has_post_thumbnail()) : ?>
-                            <div class="featured-image">
-                                <?php the_post_thumbnail('large', array('alt' => get_the_title())); ?>
-                            </div>
+                        <div class="featured-image-container" style="width: 100%; max-width: 800px; margin: 2rem auto 1rem auto; overflow: hidden; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.1);">
+                            <?php 
+                            // Get the featured image with clean attributes and proper sizing
+                            the_post_thumbnail('large', array(
+                                'alt' => get_the_title(),
+                                'class' => 'featured-image-clean',
+                                'loading' => 'lazy',
+                                'style' => 'width: 100%; height: auto; max-height: 400px; object-fit: cover; display: block;'
+                            )); 
+                            ?>
+                        </div>
                         <?php endif; ?>
                     </header>                    <!-- Blog Content -->
                     <div class="blog-body">
@@ -140,7 +148,7 @@ get_header(); ?>
                                             <span><?php echo aimpro_estimated_reading_time(get_the_content()); ?> min read</span>
                                         </div>
                                         <p><?php echo wp_trim_words(get_the_excerpt(), 15); ?></p>
-                                        <a href="<?php the_permalink(); ?>" class="read-more">Read More →</a>
+                                        <a href="<?php the_permalink(); ?>" class="read-more">Read More</a>
                                     </div>
                                 </article>
                             <?php endwhile; wp_reset_postdata(); ?>
