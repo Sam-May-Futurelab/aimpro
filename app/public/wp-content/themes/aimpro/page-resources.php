@@ -172,12 +172,29 @@ get_header(); ?>
         <div class="container">
             <div class="cta-content text-center animate-on-scroll animate-scale-up">
                 <h2>Stay Updated with the Latest Insights</h2>
-                <p>Get the latest resources, industry updates, and expert tips delivered directly to your inbox every week.</p>                <form class="newsletter-form" action="#" method="post">
+                <p>Get the latest resources, industry updates, and expert tips delivered directly to your inbox every week.</p>
+                
+                <form class="newsletter-form" id="newsletter-form-resources" method="post">
+                    <input type="hidden" name="action" value="newsletter_signup">
+                    <input type="hidden" name="nonce" value="<?php echo wp_create_nonce('newsletter_signup'); ?>">
                     <div class="form-group">
-                        <input type="email" name="email" placeholder="Enter your email address" required>
-                        <button type="submit" class="btn btn-primary">Subscribe</button>
+                        <input type="text" name="subscriber_name" placeholder="Enter your name" required>
+                        <input type="email" name="subscriber_email" placeholder="Enter your email address" required>
+                        <button type="submit" class="btn btn-primary">
+                            <span class="button-text">Subscribe</span>
+                            <span class="button-spinner" style="display: none;">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                                    <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-dasharray="31.416" stroke-dashoffset="31.416">
+                                        <animate attributeName="stroke-dasharray" dur="2s" values="0 31.416;15.708 15.708;0 31.416" repeatCount="indefinite"/>
+                                        <animate attributeName="stroke-dashoffset" dur="2s" values="0;-15.708;-31.416" repeatCount="indefinite"/>
+                                    </circle>
+                                </svg>
+                            </span>
+                        </button>
                     </div>
                 </form>
+                
+                <?php include get_template_directory() . '/includes/newsletter-popup.php'; ?>
             </div>
         </div>
     </section>

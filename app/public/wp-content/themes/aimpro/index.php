@@ -685,69 +685,6 @@ get_header(); ?>
             </form>
             
             <?php include get_template_directory() . '/includes/newsletter-popup.php'; ?>
-            
-            <script>
-            document.addEventListener('DOMContentLoaded', function() {
-                const form = document.getElementById('newsletter-form');
-                if (!form) return;
-                
-                const button = form.querySelector('button[type="submit"]');
-                const buttonText = button.querySelector('.button-text');
-                const buttonSpinner = button.querySelector('.button-spinner');
-                
-                form.addEventListener('submit', function(e) {
-                    e.preventDefault();
-                    
-                    // Show loading state
-                    button.disabled = true;
-                    buttonText.style.display = 'none';
-                    buttonSpinner.style.display = 'inline-block';
-                    
-                    // Get form data
-                    const formData = new FormData(form);
-                    
-                    // Send AJAX request
-                    fetch('<?php echo admin_url('admin-ajax.php'); ?>', {
-                        method: 'POST',
-                        body: formData
-                    })
-                    .then(response => response.json())
-                    .then(data => {
-                        // Reset button state
-                        button.disabled = false;
-                        buttonText.style.display = 'inline-block';
-                        buttonSpinner.style.display = 'none';
-                        
-                        if (data.success) {
-                            showNewsletterPopup(
-                                'Subscription Successful!', 
-                                data.data || 'Thank you for subscribing! You\'ll receive our latest updates and tips.',
-                                true
-                            );
-                            form.reset(); // Clear the form
-                        } else {
-                            showNewsletterPopup(
-                                'Subscription Failed', 
-                                data.data || 'There was a problem with your subscription. Please try again.',
-                                false
-                            );
-                        }
-                    })
-                    .catch(error => {
-                        // Reset button state
-                        button.disabled = false;
-                        buttonText.style.display = 'inline-block';
-                        buttonSpinner.style.display = 'none';
-                        
-                        showNewsletterPopup(
-                            'Error', 
-                            'There was a problem with your subscription. Please try again.',
-                            false
-                        );
-                    });
-                });
-            });
-            </script>
         </div>
     </div>
 </section>

@@ -144,11 +144,13 @@
     min-width: 80px;
     background: #f15a25; /* Orange brand color */
     border-color: #f15a25;
+    color: white !important; /* White text with !important to override any theme styles */
 }
 
 .popup-footer .btn:hover {
     background: #d14a1f;
     border-color: #d14a1f;
+    color: white !important; /* Ensure white text on hover too */
 }
 </style>
 
@@ -188,5 +190,75 @@ document.addEventListener('keydown', function(e) {
     if (e.key === 'Escape') {
         closeNewsletterPopup();
     }
+});
+
+// Newsletter form AJAX functionality - automatically applies to any newsletter form on the page
+document.addEventListener('DOMContentLoaded', function() {
+    // Find all newsletter forms on the page
+    const forms = document.querySelectorAll('.newsletter-form, #newsletter-form');
+    
+    forms.forEach(function(form) {
+        if (!form) return;
+        
+        const button = form.querySelector('button[type="submit"]');
+        const buttonText = button ? button.querySelector('.button-text') : null;
+        const buttonSpinner = button ? button.querySelector('.button-spinner') : null;
+        
+        if (!button) return; // Skip if no submit button found
+        
+        form.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Show loading state
+            button.disabled = true;
+            if (buttonText) buttonText.style.display = 'none';
+            if (buttonSpinner) buttonSpinner.style.display = 'inline-block';
+            
+            // Get form data
+            const formData = new FormData(form);
+            formData.append('action', 'newsletter_signup');
+            formData.append('nonce', '<?php echo wp_create_nonce('newsletter_signup'); ?>');
+            
+            // Send AJAX request
+            fetch('<?php echo admin_url('admin-ajax.php'); ?>', {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => response.json())
+            .then(data => {
+                // Reset button state
+                button.disabled = false;
+                if (buttonText) buttonText.style.display = 'inline-block';
+                if (buttonSpinner) buttonSpinner.style.display = 'none';
+                
+                if (data.success) {
+                    showNewsletterPopup(
+                        'Subscription Successful!', 
+                        data.data || 'Thank you for subscribing! You\'ll receive our latest updates and tips.',
+                        true
+                    );
+                    form.reset(); // Clear the form
+                } else {
+                    showNewsletterPopup(
+                        'Subscription Failed', 
+                        data.data || 'There was a problem with your subscription. Please try again.',
+                        false
+                    );
+                }
+            })
+            .catch(error => {
+                // Reset button state
+                button.disabled = false;
+                if (buttonText) buttonText.style.display = 'inline-block';
+                if (buttonSpinner) buttonSpinner.style.display = 'none';
+                
+                showNewsletterPopup(
+                    'Error', 
+                    'There was a problem with your subscription. Please try again.',
+                    false
+                );
+            });
+        });
+    });
 });
 </script>
