@@ -2653,3 +2653,129 @@
         margin-bottom: 2rem;
     }
 }
+
+/* Video Modal Styles */
+.video-modal {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    justify-content: center;
+    align-items: center;
+}
+
+.video-modal-content {
+    background-color: white;
+    padding: 20px;
+    border-radius: 12px;
+    max-width: 90%;
+    max-height: 90%;
+    width: 800px;
+    position: relative;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+}
+
+.video-modal-close {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 2rem;
+    font-weight: bold;
+    cursor: pointer;
+    color: #666;
+    z-index: 10001;
+}
+
+.video-modal-close:hover {
+    color: #f15a25;
+}
+
+#videoModalTitle {
+    margin: 0 0 15px 0;
+    font-size: 1.5rem;
+    color: #333;
+    padding-right: 30px;
+}
+
+#videoModalContainer iframe,
+#videoModalContainer video {
+    width: 100%;
+    height: 400px;
+    border-radius: 8px;
+}
+
+/* Make thumbnail and play button clickable */
+.event-thumbnail {
+    position: relative;
+    border-radius: 8px;
+    overflow: hidden;
+    background: #f5f5f5;
+    height: 200px;
+}
+
+.event-thumbnail iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+    border-radius: 8px;
+}
+
+.event-thumbnail .video-placeholder {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    background: #f0f0f0;
+    color: #666;
+    font-size: 2rem;
+}
+
+.event-thumbnail .duration {
+    position: absolute;
+    bottom: 8px;
+    right: 8px;
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 0.75rem;
+    font-weight: 600;
+}
+
+.watch-btn {
+    background: #f15a25;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.watch-btn:hover {
+    background: #d14420;
+    transform: translateY(-2px);
+}
+
+/* Responsive modal */
+@media (max-width: 768px) {
+    .video-modal-content {
+        width: 95%;
+        margin: 0 10px;
+        padding: 15px;
+    }
+    
+    #videoModalContainer iframe,
+    #videoModalContainer video {
+        height: 250px;
+    }
+    
+    #videoModalTitle {
+        font-size: 1.2rem;
+    }
+}

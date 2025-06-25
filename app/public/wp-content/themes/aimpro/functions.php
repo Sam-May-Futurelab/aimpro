@@ -65,7 +65,7 @@ require_once get_template_directory() . '/includes/resources-meta.php';
 require_once get_template_directory() . '/includes/blog-meta.php';
 require_once get_template_directory() . '/includes/case-studies-meta.php';
 require_once get_template_directory() . '/includes/templates-tools-meta.php';
-require_once get_template_directory() . '/includes/events-webinars-meta.php';
+require_once get_template_directory() . '/includes/events-webinars-meta-simple.php';
 require_once get_template_directory() . '/includes/training-mentoring-meta.php';
 require_once get_template_directory() . '/includes/industries-meta.php';
 require_once get_template_directory() . '/includes/automotive-meta.php';

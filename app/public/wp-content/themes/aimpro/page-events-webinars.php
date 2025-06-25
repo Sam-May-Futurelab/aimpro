@@ -6,15 +6,6 @@
 
 get_header();
 
-// Clear any corrupted meta data first
-if (isset($_GET['clear_meta'])) {
-    delete_post_meta(get_the_ID(), '_events_webinars_ondemand_webinars');
-    delete_post_meta(get_the_ID(), '_events_webinars_featured_event');
-    delete_post_meta(get_the_ID(), '_events_webinars_upcoming_events');
-    delete_post_meta(get_the_ID(), '_events_webinars_categories');
-    echo "<div style='padding: 20px; background: #d4edda; border: 1px solid #c3e6cb; margin: 20px;'>All corrupted meta data cleared. <a href='" . remove_query_arg('clear_meta') . "'>Reload page</a></div>";
-}
-
 // Get meta values
 $header_title = get_post_meta(get_the_ID(), '_events_webinars_header_title', true) ?: 'Events & Webinars';
 $header_subtitle = get_post_meta(get_the_ID(), '_events_webinars_header_subtitle', true) ?: 'Join industry experts and expand your digital marketing knowledge';
@@ -303,17 +294,37 @@ $newsletter_content = get_post_meta(get_the_ID(), '_events_webinars_newsletter_c
                 <p class="section-subtitle animate-on-scroll animate-fade-up"><?php echo esc_html($ondemand_subtitle); ?></p>
                 
                 <div class="on-demand-grid animate-on-scroll animate-fade-up">
-                    <?php foreach ($ondemand_webinars as $webinar): ?>
+                    <?php foreach ($ondemand_webinars as $index => $webinar): ?>
                         <div class="on-demand-event animate-on-scroll animate-stagger animate-fade-up">
                             <div class="event-thumbnail">
-                                <?php if (!empty($webinar['thumbnail_url'])): ?>
-                                    <img src="<?php echo esc_url($webinar['thumbnail_url']); ?>" alt="<?php echo esc_attr($webinar['title']); ?>" />
+                                <?php if (!empty($webinar['video_url'])): ?>
+                                    <?php
+                                    // Convert YouTube URL to embed format
+                                    $video_url = $webinar['video_url'];
+                                    $embed_url = '';
+                                    
+                                    if (strpos($video_url, 'youtube.com') !== false || strpos($video_url, 'youtu.be') !== false) {
+                                        preg_match('/(?:youtube\.com\/(?:[^\/]+\/.+\/|(?:v|e(?:mbed)?)\/|.*[?&]v=)|youtu\.be\/)([^"&?\/\s]{11})/', $video_url, $matches);
+                                        if (isset($matches[1])) {
+                                            $embed_url = 'https://www.youtube.com/embed/' . $matches[1];
+                                        }
+                                    } elseif (strpos($video_url, 'vimeo.com') !== false) {
+                                        $video_id = substr(parse_url($video_url, PHP_URL_PATH), 1);
+                                        $embed_url = 'https://player.vimeo.com/video/' . $video_id;
+                                    }
+                                    
+                                    if ($embed_url): ?>
+                                        <iframe width="100%" height="200" src="<?php echo esc_url($embed_url); ?>" frameborder="0" allowfullscreen></iframe>
+                                    <?php else: ?>
+                                        <div class="video-placeholder">
+                                            <i class="fas fa-video"></i>
+                                        </div>
+                                    <?php endif; ?>
                                 <?php else: ?>
                                     <div class="video-placeholder">
                                         <i class="fas fa-video"></i>
                                     </div>
                                 <?php endif; ?>
-                                <div class="play-button">▶</div>
                                 <div class="duration"><?php echo esc_html($webinar['duration']); ?></div>
                             </div>
                             <div class="event-info">
@@ -323,11 +334,6 @@ $newsletter_content = get_post_meta(get_the_ID(), '_events_webinars_newsletter_c
                                     <span class="views"><?php echo esc_html($webinar['views']); ?></span>
                                     <span class="rating"><?php echo esc_html($webinar['rating']); ?></span>
                                 </div>
-                                <?php if (!empty($webinar['video_url'])): ?>
-                                    <a href="<?php echo esc_url($webinar['video_url']); ?>" class="watch-btn" target="_blank">Watch Now</a>
-                                <?php else: ?>
-                                    <a href="#" class="watch-btn" onclick="alert('Video not available'); return false;">Watch Now</a>
-                                <?php endif; ?>
                             </div>
                         </div>
                     <?php endforeach; ?>

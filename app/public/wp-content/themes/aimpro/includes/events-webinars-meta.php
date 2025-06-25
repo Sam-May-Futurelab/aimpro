@@ -24,30 +24,31 @@ function add_events_webinars_meta_boxes() {
 add_action('add_meta_boxes', 'add_events_webinars_meta_boxes');
 
 function events_webinars_meta_box_callback($post) {
-    // Only show on events-webinars page template
-    $page_template = get_page_template_slug($post->ID);
-    if ($page_template !== 'page-events-webinars.php') {
-        echo '<p>This meta box only appears when using the "Events & Webinars Page" template.</p>';
-        return;
-    }
+    try {
+        // Only show on events-webinars page template
+        $page_template = get_page_template_slug($post->ID);
+        if ($page_template !== 'page-events-webinars.php') {
+            echo '<p>This meta box only appears when using the "Events & Webinars Page" template.</p>';
+            return;
+        }
 
-    wp_nonce_field('events_webinars_meta_box', 'events_webinars_meta_box_nonce');
+        wp_nonce_field('events_webinars_meta_box', 'events_webinars_meta_box_nonce');
 
-    // Get existing values
-    $header_title = get_post_meta($post->ID, '_events_webinars_header_title', true);
-    $header_subtitle = get_post_meta($post->ID, '_events_webinars_header_subtitle', true);
-    $intro_title = get_post_meta($post->ID, '_events_webinars_intro_title', true);
-    $intro_content = get_post_meta($post->ID, '_events_webinars_intro_content', true);
+        // Get existing values with error handling
+        $header_title = get_post_meta($post->ID, '_events_webinars_header_title', true);
+        $header_subtitle = get_post_meta($post->ID, '_events_webinars_header_subtitle', true);
+        $intro_title = get_post_meta($post->ID, '_events_webinars_intro_title', true);
+        $intro_content = get_post_meta($post->ID, '_events_webinars_intro_content', true);
 
-    // Event stats
-    $stats = get_post_meta($post->ID, '_events_webinars_stats', true);
-    if (empty($stats)) {
-        $stats = array(
-            array('number' => '50+', 'label' => 'Events Hosted'),
-            array('number' => '5,000+', 'label' => 'Attendees'),
-            array('number' => '25+', 'label' => 'Expert Speakers')
-        );
-    }    // Featured event
+        // Event stats with validation
+        $stats = get_post_meta($post->ID, '_events_webinars_stats', true);
+        if (empty($stats) || !is_array($stats)) {
+            $stats = array(
+                array('number' => '50+', 'label' => 'Events Hosted'),
+                array('number' => '5,000+', 'label' => 'Attendees'),
+                array('number' => '25+', 'label' => 'Expert Speakers')
+            );
+        }    // Featured event
     $featured_event = get_post_meta($post->ID, '_events_webinars_featured_event', true);
     if (empty($featured_event)) {
         $featured_event = array(
@@ -81,10 +82,22 @@ function events_webinars_meta_box_callback($post) {
         $upcoming_events = array();
     }
 
-    // On-demand webinars
+    // On-demand webinars with validation
     $ondemand_title = get_post_meta($post->ID, '_events_webinars_ondemand_title', true);
     $ondemand_subtitle = get_post_meta($post->ID, '_events_webinars_ondemand_subtitle', true);
     $ondemand_webinars = get_post_meta($post->ID, '_events_webinars_ondemand_webinars', true);
+    
+    // Validate and clean ondemand webinars data
+    if (empty($ondemand_webinars) || !is_array($ondemand_webinars)) {
+        $ondemand_webinars = array();
+    } else {
+        // Clean any corrupted entries
+        $ondemand_webinars = array_filter($ondemand_webinars, function($webinar) {
+            return is_array($webinar) && isset($webinar['title']);
+        });
+    }
+    
+    // Add default entries if empty
     if (empty($ondemand_webinars)) {
         $ondemand_webinars = array(
             array(
@@ -92,7 +105,7 @@ function events_webinars_meta_box_callback($post) {
                 'description' => 'Complete guide to search engine optimisation, covering technical SEO, content optimisation, and link building strategies.',
                 'duration' => '52 min',
                 'views' => '1,240 views',
-                'rating' => '????? 4.8',
+                'rating' => '★★★★★ 4.8',
                 'video_url' => '',
                 'thumbnail_url' => ''
             ),
@@ -101,7 +114,7 @@ function events_webinars_meta_box_callback($post) {
                 'description' => 'Advanced Facebook advertising strategies including audience targeting, creative optimisation, and campaign scaling techniques.',
                 'duration' => '1h 15m',
                 'views' => '890 views',
-                'rating' => '????? 4.9',
+                'rating' => '★★★★★ 4.9',
                 'video_url' => '',
                 'thumbnail_url' => ''
             ),
@@ -110,7 +123,7 @@ function events_webinars_meta_box_callback($post) {
                 'description' => 'Comprehensive walkthrough of GA4 setup, configuration, and advanced reporting for better marketing insights.',
                 'duration' => '38 min',
                 'views' => '2,100 views',
-                'rating' => '????? 4.6',
+                'rating' => '★★★★☆ 4.6',
                 'video_url' => '',
                 'thumbnail_url' => ''
             )
@@ -439,7 +452,7 @@ function events_webinars_meta_box_callback($post) {
                             </div>
                             <div class="item-field">
                                 <label>Rating:</label>
-                                <input type="text" name="events_webinars_ondemand_webinars[<?php echo $index; ?>][rating]" value="<?php echo esc_attr($webinar['rating']); ?>" placeholder="????? 4.8" />
+                                <input type="text" name="events_webinars_ondemand_webinars[<?php echo $index; ?>][rating]" value="<?php echo esc_attr($webinar['rating']); ?>" placeholder="★★★★★ 4.8" />
                             </div>
                             <div class="item-field">
                                 <label>Video URL (YouTube, Vimeo, etc.):</label>
@@ -629,7 +642,7 @@ function events_webinars_meta_box_callback($post) {
                     '</div>' +
                     '<div class="item-field">' +
                         '<label>Rating:</label>' +
-                        '<input type="text" name="events_webinars_ondemand_webinars[' + index + '][rating]" placeholder="????? 4.8" />' +
+                        '<input type="text" name="events_webinars_ondemand_webinars[' + index + '][rating]" placeholder="★★★★★ 4.8" />' +
                     '</div>' +
                     '<div class="item-field">' +
                         '<label>Video URL (YouTube, Vimeo, etc.):</label>' +
@@ -670,11 +683,18 @@ function events_webinars_meta_box_callback($post) {
 
             // Remove items
             $(document).on('click', '.remove-item', function() {
-                $(this).closest('.repeater-item').remove();
-            });
-        });
+                $(this).closest('.repeater-item').remove();        });
+    });
     </script>
     <?php
+    } catch (Exception $e) {
+        echo '<div style="padding: 20px; background: #f8d7da; border: 1px solid #f5c6cb; color: #721c24; border-radius: 4px;">';
+        echo '<h3>Error Loading Meta Box</h3>';
+        echo '<p>There was an error loading the meta box data. This usually happens when meta data gets corrupted.</p>';
+        echo '<p><strong>Error:</strong> ' . esc_html($e->getMessage()) . '</p>';
+        echo '<p><a href="' . add_query_arg('clear_meta', '1') . '" onclick="return confirm(\'This will clear all corrupted meta data. Continue?\')">Clear Corrupted Data</a></p>';
+        echo '</div>';
+    }
 }
 
 function save_events_webinars_meta($post_id) {
