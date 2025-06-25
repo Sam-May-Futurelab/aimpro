@@ -486,6 +486,7 @@
     margin-bottom: 12px;
     font-size: 20px;
     color: var(--text-primary, #1e293b);
+    text-align: center;
 }
 
 .service-item p {
