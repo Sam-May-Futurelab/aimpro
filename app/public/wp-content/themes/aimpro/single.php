@@ -177,7 +177,7 @@ get_header(); ?>
                     <div style="overflow: hidden;">
                         <form action="#" method="post" style="display: flex; flex-direction: column; gap: 10px;">
                             <input type="email" name="email" placeholder="Enter your email" required style="width: 100%; box-sizing: border-box; padding: 12px 15px; border-radius: 8px; border: 1px solid #e5e7eb; margin: 0; font-size: 16px;">
-                            <button type="submit" style="width: 100%; box-sizing: border-box; background: linear-gradient(135deg, #f15a25 0%, #f47b51 100%); colour: white; border: none; padding: 12px; border-radius: 8px; font-weight: 600; cursor: pointer; font-size: 16px;">Download Free</button>
+                            <button type="submit" style="width: 100%; box-sizing: border-box; background: linear-gradient(135deg, #f15a25 0%, #f47b51 100%); color: white; border: none; padding: 12px; border-radius: 8px; font-weight: 600; cursor: pointer; font-size: 16px;">Download Free</button>
                             <input type="hidden" name="magnet_type" value="seo_checklist">
                         </form>
                         <p class="privacy-note">We respect your privacy. Unsubscribe anytime.</p>
