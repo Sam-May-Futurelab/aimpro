@@ -127,6 +127,7 @@ get_header(); ?>
                             array(
                                 'title' => 'Conversion-Focused Design',
                                 'description' => 'Design websites with psychology-based elements that guide visitors toward taking action.',
+                                'icon' => '<i class="fas fa-palette" style="font-size: 48px;"></i>',
                                 'features' => array(
                                     'User experience (UX) optimisation',
                                     'Conversion psychology implementation',
@@ -137,6 +138,7 @@ get_header(); ?>
                             array(
                                 'title' => 'Landing Page Optimisation',
                                 'description' => 'Create high-converting landing pages that maximise conversions from your marketing campaigns.',
+                                'icon' => '<i class="fas fa-bullseye" style="font-size: 48px;"></i>',
                                 'features' => array(
                                     'Campaign-specific landing pages',
                                     'A/B testing implementation',                                    'Form optimisation',
@@ -144,7 +146,9 @@ get_header(); ?>
                                 )
                             ),
                             array(                                'title' => 'E-commerce Optimisation',
-                                'description' => 'Optimise online stores to increase sales, reduce cart abandonment, and improve customer experience.',                                'features' => array(
+                                'description' => 'Optimise online stores to increase sales, reduce cart abandonment, and improve customer experience.',
+                                'icon' => '<i class="fas fa-shopping-cart" style="font-size: 48px;"></i>',
+                                'features' => array(
                                     'Product page optimisation',
                                     'Checkout process streamlining',
                                     'Cart abandonment recovery',
@@ -153,6 +157,7 @@ get_header(); ?>
                             ),
                             array(                                'title' => 'Performance Optimisation',
                                 'description' => 'Improve website speed and technical performance to reduce bounce rates and improve conversions.',
+                                'icon' => '<i class="fas fa-tachometer-alt" style="font-size: 48px;"></i>',
                                 'features' => array(
                                     'Page speed optimisation',
                                     'Mobile responsiveness',
@@ -165,11 +170,7 @@ get_header(); ?>
                             ?>
                             <div class="service-card animate-on-scroll animate-stagger animate-fade-up">
                                 <div class="service-icon">
-                                    <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <rect x="2" y="3" width="20" height="14" rx="2" ry="2" stroke="currentcolour" stroke-width="2"/>
-                                        <line x1="8" y1="21" x2="16" y2="21" stroke="currentcolour" stroke-width="2"/>
-                                        <line x1="12" y1="17" x2="12" y2="21" stroke="currentcolour" stroke-width="2"/>
-                                    </svg>
+                                    <?php echo $service['icon']; ?>
                                 </div>
                                 <div class="service-content">
                                     <h3><?php echo esc_html($service['title']); ?></h3>

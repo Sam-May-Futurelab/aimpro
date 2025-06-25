@@ -1640,3 +1640,17 @@
     height: 64px;
     margin-bottom: 1rem;
 }
+
+/* High Converting Website Page - Service Icons */
+.service-icon i {
+    color: #f15a25 !important;
+}
+
+.service-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 64px;
+    height: 64px;
+    margin-bottom: 1rem;
+}
