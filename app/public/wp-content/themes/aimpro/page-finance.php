@@ -195,7 +195,7 @@ get_header(); ?>
         <section class="finance-types animate-on-scroll animate-fade-up">
             <div class="section-content">
                 <h2 class="animate-on-scroll animate-fade-up"><?php echo esc_html(get_post_meta(get_the_ID(), '_finance_types_title', true) ?: 'Financial Services We Specialise In'); ?></h2>
-                <div class="types-grid types-grid-4x1">
+                <div class="services-grid services-grid-2x2">
                     <?php 
                     $types = get_post_meta(get_the_ID(), '_finance_types', true);
                     if (empty($types)) {
@@ -203,36 +203,43 @@ get_header(); ?>
                             array(
                                 'icon' => 'fas fa-briefcase',
                                 'title' => 'Financial Advisory',
+                                'description' => 'Comprehensive marketing solutions for independent financial advisors and wealth management firms.',
                                 'services' => array('Independent financial advisors', 'Wealth management firms', 'Investment consultants', 'Retirement planning specialists')
                             ),
                             array(
                                 'icon' => 'fas fa-university',
                                 'title' => 'Banking & Credit',
+                                'description' => 'Specialized marketing strategies for banking institutions and lending organizations.',
                                 'services' => array('Community banks', 'Credit unions', 'Mortgage brokers', 'Alternative lending')
                             ),
                             array(
                                 'icon' => 'fas fa-shield-alt',
                                 'title' => 'Insurance Services',
+                                'description' => 'Trust-building marketing campaigns for insurance agents and brokers.',
                                 'services' => array('Life insurance agents', 'Health insurance brokers', 'Property & casualty', 'Commercial insurance')
                             ),
                             array(
                                 'icon' => 'fas fa-mobile-alt',
                                 'title' => 'Fintech & Innovation',
+                                'description' => 'Modern marketing approaches for fintech companies and innovative financial platforms.',
                                 'services' => array('Financial apps & platforms', 'Payment processors', 'Cryptocurrency services', 'Investment platforms')
                             )
                         );
                     }
                     foreach ($types as $type): ?>
-                        <div class="type-card animate-on-scroll animate-stagger animate-fade-up">
-                            <div class="type-icon">
+                        <div class="service-card animate-on-scroll animate-stagger animate-fade-up">
+                            <div class="service-icon">
                                 <i class="<?php echo esc_attr($type['icon']); ?>"></i>
                             </div>
-                            <h3><?php echo esc_html($type['title']); ?></h3>
-                            <ul>
-                                <?php foreach ($type['services'] as $service): ?>
-                                    <li><?php echo esc_html($service); ?></li>
-                                <?php endforeach; ?>
-                            </ul>
+                            <div class="service-content">
+                                <h3><?php echo esc_html($type['title']); ?></h3>
+                                <p><?php echo esc_html($type['description']); ?></p>
+                                <ul class="service-features">
+                                    <?php foreach ($type['services'] as $service): ?>
+                                        <li><?php echo esc_html($service); ?></li>
+                                    <?php endforeach; ?>
+                                </ul>
+                            </div>
                         </div>
                     <?php endforeach; ?>
                 </div>
