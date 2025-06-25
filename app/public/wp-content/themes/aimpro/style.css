@@ -648,17 +648,17 @@ body.home .section-subtitle {
     transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
     transform-origin: center;
     background: linear-gradient(145deg, 
-        rgba(255, 215, 0, 0.15) 0%, 
-        rgba(255, 165, 0, 0.1) 50%, 
-        rgba(255, 215, 0, 0.05) 100%);
+        rgba(241, 90, 37, 0.15) 0%, 
+        rgba(241, 90, 37, 0.1) 50%, 
+        rgba(241, 90, 37, 0.05) 100%);
     width: 100px;
     height: 100px;
     border-radius: 28px;
     margin: 0 auto 2rem;
     backdrop-filter: blur(20px);
-    border: 2px solid rgba(255, 215, 0, 0.2);
+    border: 2px solid rgba(241, 90, 37, 0.2);
     box-shadow: 
-        0 8px 24px rgba(255, 215, 0, 0.1),
+        0 8px 24px rgba(241, 90, 37, 0.1),
         inset 0 1px 0 rgba(255, 255, 255, 0.8);
     position: relative;
     z-index: 2;
@@ -669,9 +669,9 @@ body.home .section-subtitle {
     position: absolute;
     inset: -2px;
     background: linear-gradient(135deg, 
-        rgba(255, 215, 0, 0.3) 0%, 
+        rgba(241, 90, 37, 0.3) 0%, 
         transparent 50%, 
-        rgba(255, 165, 0, 0.2) 100%);
+        rgba(241, 90, 37, 0.2) 100%);
     border-radius: 30px;
     z-index: -1;
     opacity: 0;
@@ -682,9 +682,9 @@ body.home .section-subtitle {
     transform: scale(1.15);
     filter: brightness(1.3);
     box-shadow: 
-        0 12px 32px rgba(255, 215, 0, 0.2),
+        0 12px 32px rgba(241, 90, 37, 0.2),
         inset 0 1px 0 rgba(255, 255, 255, 1);
-    border-color: rgba(255, 215, 0, 0.4);
+    border-color: rgba(241, 90, 37, 0.4);
 }
 
 .service-card h3 {
