@@ -281,19 +281,19 @@ $services = get_post_meta(get_the_ID(), '_home_garden_services', true) ?: array(
                 if (empty($visual_examples)) {
                     $visual_examples = array(
                         array(
-                            'image' => get_template_directory_uri() . '/assets/images/industries/before-after-landscape.jpg',
+                            'image' => get_template_directory_uri() . '/assets/images/industries/before-after-landscape.svg',
                             'title' => 'Before/After Transformations',
                             'description' => 'Showcase dramatic transformations that demonstrate your expertise and build trust with potential customers.',
                             'stats' => array('↗ 340% higher engagement', '↗ 85% more inquiries')
                         ),
                         array(
-                            'image' => get_template_directory_uri() . '/assets/images/industries/time-lapse-garden.jpg',
+                            'image' => get_template_directory_uri() . '/assets/images/industries/time-lapse-garden.svg',
                             'title' => 'Time-lapse Project Videos',
                             'description' => 'Document your projects from start to finish with engaging time-lapse videos that showcase your process.',
                             'stats' => array('↗ 250% video completion rate', '↗ 120% social shares')
                         ),
                         array(
-                            'image' => get_template_directory_uri() . '/assets/images/industries/seasonal-inspiration.jpg',
+                            'image' => get_template_directory_uri() . '/assets/images/industries/seasonal-inspiration.svg',
                             'title' => 'Seasonal Inspiration Content',
                             'description' => 'Share seasonal tips, plant care guides, and inspiration content that keeps your audience engaged year-round.',
                             'stats' => array('↗ 180% Pinterest traffic', '↗ 95% repeat visitors')
@@ -305,11 +305,6 @@ $services = get_post_meta(get_the_ID(), '_home_garden_services', true) ?: array(
                 <div class="visual-examples">
                     <?php foreach ($visual_examples as $example): ?>
                     <div class="example-card animate-on-scroll animate-stagger animate-scale-up">
-                        <div class="example-image">
-                            <?php if (!empty($example['image'])): ?>
-                                <img src="<?php echo esc_url($example['image']); ?>" alt="<?php echo esc_attr($example['title']); ?>" />
-                            <?php endif; ?>
-                        </div>
                         <div class="example-content">
                             <h3><?php echo esc_html($example['title']); ?></h3>
                             <p><?php echo esc_html($example['description']); ?></p>
