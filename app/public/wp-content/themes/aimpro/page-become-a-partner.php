@@ -50,9 +50,7 @@ get_header(); ?>
                             </div>
                         </div>
                     </div>
-                    <div class="overview-image animate-on-scroll animate-slide-right">
-                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/partnership-handshake.jpg" alt="<?php echo esc_attr(get_post_meta(get_the_ID(), 'partner_stats_heading', true) ?: 'Partnership Opportunity'); ?>" />
-                    </div>
+
                 </div>
             </div>
         </section>        <!-- Partnership Types -->
@@ -117,13 +115,8 @@ get_header(); ?>
                             <h4>Ideal For:</h4>
                             <p><?php echo esc_html(get_post_meta(get_the_ID(), 'partner_tech_ideal', true) ?: 'SaaS platforms, marketing tools, CRM providers, analytics platforms, and other technology solutions that complement digital marketing.'); ?></p>
                         </div>
-                    </div>
-                        <div class="partnership-requirements">
-                            <h4>Ideal For:</h4>
-                            <p>SaaS platforms, marketing tools, CRM providers, analytics platforms, and other technology solutions that complement digital marketing.</p>
-                        </div>
                     </div>                    <!-- Agency Partners -->
-                    <div class="partnership-card">
+                    <div class="partnership-card animate-on-scroll animate-stagger animate-fade-up">
                         <div class="partnership-icon">
                             <svg width="60" height="60" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <circle cx="12" cy="12" r="3" stroke="currentcolour" stroke-width="2"/>
@@ -154,7 +147,7 @@ get_header(); ?>
                     </div>
 
                     <!-- Reseller Partners -->
-                    <div class="partnership-card">
+                    <div class="partnership-card animate-on-scroll animate-stagger animate-fade-up">
                         <div class="partnership-icon">
                             <svg width="60" height="60" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M21 12V7H5a2 2 0 0 1 0-4h14v4" stroke="currentcolour" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
@@ -383,15 +376,15 @@ get_header(); ?>
             <div class="section-content">
                 <h2><?php echo esc_html(get_post_meta(get_the_ID(), 'partner_contact_heading', true) ?: 'Questions About Partnerships?'); ?></h2>
                 <p><?php echo esc_html(get_post_meta(get_the_ID(), 'partner_contact_description', true) ?: 'Our partnership team is here to answer any questions and help you find the right partnership opportunity'); ?></p>
-                <div class="contact-info">
-                    <div class="contact-item">
-                        <strong>Email:</strong>
-                        <a href="mailto:<?php echo esc_attr(get_post_meta(get_the_ID(), 'partner_contact_email', true) ?: 'hello@aimpro.co.uk'); ?>"><?php echo esc_html(get_post_meta(get_the_ID(), 'partner_contact_email', true) ?: 'hello@aimpro.co.uk'); ?></a>
-                    </div>
-                    <div class="contact-item">
-                        <strong>Phone:</strong>
-                        <a href="tel:<?php echo esc_attr(str_replace([' ', '-', '(', ')'], '', get_post_meta(get_the_ID(), 'partner_contact_phone', true) ?: '+441212858490')); ?>"><?php echo esc_html(get_post_meta(get_the_ID(), 'partner_contact_phone', true) ?: '+44 121 285 8490'); ?></a>
-                    </div>
+                <div class="cta-buttons" style="justify-content: center; margin-top: 2rem;">
+                    <a href="mailto:<?php echo esc_attr(get_post_meta(get_the_ID(), 'partner_contact_email', true) ?: 'hello@aimpro.co.uk'); ?>" class="btn btn-primary">
+                        <i class="fas fa-envelope" style="margin-right: 0.5rem;"></i>
+                        Email Us
+                    </a>
+                    <a href="tel:0121285849" class="btn btn-secondary">
+                        <i class="fas fa-phone" style="margin-right: 0.5rem;"></i>
+                        0121 285 8490
+                    </a>
                 </div>
             </div>
         </section>
