@@ -664,16 +664,90 @@ get_header(); ?>
                 </div>
             <?php endif; ?>
             
-            <form class="newsletter-form" action="<?php echo esc_url(admin_url('admin-post.php')); ?>" method="post">
+            <form class="newsletter-form" id="newsletter-form" method="post">
                 <input type="hidden" name="action" value="newsletter_signup">
-                <input type="hidden" name="_wp_http_referer" value="<?php echo esc_url(wp_unslash($_SERVER['REQUEST_URI'])); ?>">
-                <?php wp_nonce_field('newsletter_signup', 'newsletter_nonce'); ?>
+                <input type="hidden" name="nonce" value="<?php echo wp_create_nonce('newsletter_signup'); ?>">
                 <div class="form-group">
                     <input type="text" name="subscriber_name" placeholder="Enter your name" required>
                     <input type="email" name="subscriber_email" placeholder="Enter your email address" required>
-                    <button type="submit" class="btn btn-primary"><?php echo aimpro_get_field('newsletter_button_text', 'Subscribe'); ?></button>
+                    <button type="submit" class="btn btn-primary">
+                        <span class="button-text"><?php echo aimpro_get_field('newsletter_button_text', 'Subscribe'); ?></span>
+                        <span class="button-spinner" style="display: none;">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                                <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-dasharray="31.416" stroke-dashoffset="31.416">
+                                    <animate attributeName="stroke-dasharray" dur="2s" values="0 31.416;15.708 15.708;0 31.416" repeatCount="indefinite"/>
+                                    <animate attributeName="stroke-dashoffset" dur="2s" values="0;-15.708;-31.416" repeatCount="indefinite"/>
+                                </circle>
+                            </svg>
+                        </span>
+                    </button>
                 </div>
             </form>
+            
+            <?php include get_template_directory() . '/includes/newsletter-popup.php'; ?>
+            
+            <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                const form = document.getElementById('newsletter-form');
+                if (!form) return;
+                
+                const button = form.querySelector('button[type="submit"]');
+                const buttonText = button.querySelector('.button-text');
+                const buttonSpinner = button.querySelector('.button-spinner');
+                
+                form.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    
+                    // Show loading state
+                    button.disabled = true;
+                    buttonText.style.display = 'none';
+                    buttonSpinner.style.display = 'inline-block';
+                    
+                    // Get form data
+                    const formData = new FormData(form);
+                    
+                    // Send AJAX request
+                    fetch('<?php echo admin_url('admin-ajax.php'); ?>', {
+                        method: 'POST',
+                        body: formData
+                    })
+                    .then(response => response.json())
+                    .then(data => {
+                        // Reset button state
+                        button.disabled = false;
+                        buttonText.style.display = 'inline-block';
+                        buttonSpinner.style.display = 'none';
+                        
+                        if (data.success) {
+                            showNewsletterPopup(
+                                'Subscription Successful!', 
+                                data.data || 'Thank you for subscribing! You\'ll receive our latest updates and tips.',
+                                true
+                            );
+                            form.reset(); // Clear the form
+                        } else {
+                            showNewsletterPopup(
+                                'Subscription Failed', 
+                                data.data || 'There was a problem with your subscription. Please try again.',
+                                false
+                            );
+                        }
+                    })
+                    .catch(error => {
+                        // Reset button state
+                        button.disabled = false;
+                        buttonText.style.display = 'inline-block';
+                        buttonSpinner.style.display = 'none';
+                        
+                        showNewsletterPopup(
+                            'Error', 
+                            'There was a problem with your subscription. Please try again.',
+                            false
+                        );
+                    });
+                });
+            });
+            </script>
         </div>
     </div>
 </section>

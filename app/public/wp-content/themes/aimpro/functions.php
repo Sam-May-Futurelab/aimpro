@@ -2248,6 +2248,84 @@ function aimpro_handle_newsletter_signup() {
     }
     exit;
 }
+
+// AJAX handler for newsletter signup
+function aimpro_handle_newsletter_signup_ajax() {
+    // Check nonce
+    if (!isset($_POST['nonce']) || !wp_verify_nonce($_POST['nonce'], 'newsletter_signup')) {
+        wp_send_json_error('Invalid security token');
+        return;
+    }
+    
+    // Sanitize and validate input
+    $name = sanitize_text_field($_POST['subscriber_name'] ?? '');
+    $email = sanitize_email($_POST['subscriber_email'] ?? '');
+    
+    if (empty($name) || empty($email) || !is_email($email)) {
+        wp_send_json_error('Please provide a valid name and email address');
+        return;
+    }
+    
+    global $wpdb;
+    $table_name = $wpdb->prefix . 'aimpro_submissions';
+    
+    // Check if table exists
+    $table_exists = $wpdb->get_var("SHOW TABLES LIKE '$table_name'");
+    if (!$table_exists) {
+        wp_send_json_error('System error. Please try again later.');
+        return;
+    }
+    
+    // Check if email already exists for newsletter subscriptions
+    $existing = $wpdb->get_var($wpdb->prepare(
+        "SELECT id FROM $table_name WHERE email = %s AND form_type = 'newsletter'",
+        $email
+    ));
+    
+    if ($existing) {
+        wp_send_json_success('You are already subscribed to our newsletter!');
+        return;
+    }
+    
+    // Store in database
+    $result = $wpdb->insert(
+        $table_name,
+        array(
+            'form_type' => 'newsletter',
+            'name' => $name,
+            'email' => $email,
+            'message' => 'Newsletter subscription',
+            'ip_address' => $_SERVER['REMOTE_ADDR'] ?? '',
+            'user_agent' => $_SERVER['HTTP_USER_AGENT'] ?? ''
+        ),
+        array('%s', '%s', '%s', '%s', '%s', '%s')
+    );
+    
+    if ($result) {
+        // Send email notification to admin
+        $to = 'sam@futurelab.solutions';
+        $subject = 'New Newsletter Subscription - ' . get_bloginfo('name');
+        $message_body = "New newsletter subscription:\n\n";
+        $message_body .= "Name: $name\n";
+        $message_body .= "Email: $email\n";
+        $message_body .= "Date: " . current_time('mysql') . "\n";
+        $message_body .= "IP Address: " . ($_SERVER['REMOTE_ADDR'] ?? 'Unknown') . "\n\n";
+        $message_body .= "You can view all subscriptions in the WordPress admin under 'Form Submissions'.";
+        
+        $headers = array(
+            'Content-Type: text/plain; charset=UTF-8',
+            'From: ' . get_bloginfo('name') . ' <noreply@' . $_SERVER['HTTP_HOST'] . '>'
+        );
+        
+        wp_mail($to, $subject, $message_body, $headers);
+        
+        wp_send_json_success('Thank you for subscribing! You\'ll receive our latest updates and tips.');
+    } else {
+        wp_send_json_error('Sorry, there was an error processing your subscription. Please try again.');
+    }
+}
+add_action('wp_ajax_newsletter_signup', 'aimpro_handle_newsletter_signup_ajax');
+add_action('wp_ajax_nopriv_newsletter_signup', 'aimpro_handle_newsletter_signup_ajax');
 add_action('admin_post_newsletter_signup', 'aimpro_handle_newsletter_signup');
 add_action('admin_post_nopriv_newsletter_signup', 'aimpro_handle_newsletter_signup');
 
