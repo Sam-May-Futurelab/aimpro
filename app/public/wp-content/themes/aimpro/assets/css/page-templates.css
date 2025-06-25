@@ -2465,42 +2465,32 @@ services-grid ul li {
 .office-image-gallery {
     border: 3px solid rgba(255, 255, 255, 0.8);
     cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+    transform: translateZ(0);
+    will-change: transform, box-shadow, border-color;
 }
 
 .office-image-gallery img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    transition: all 0.4s ease;
+    transition: transform 0.3s ease, filter 0.3s ease;
     filter: brightness(0.95) contrast(1.05);
+    transform: translateZ(0);
+    will-change: transform, filter;
 }
 
-/* Hover Effects */
+/* Simplified Hover Effects for Performance */
 .office-image-gallery:hover {
-    transform: rotate(0deg) scale(1.05);
-    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.25);
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
     border-color: var(--primary-orange);
     z-index: 5;
 }
 
 .office-image-gallery:hover img {
-    transform: scale(1.1);
-    filter: brightness(1.05) contrast(1.1) saturate(1.1);
-}
-
-/* Add subtle glow on hover */
-.office-image-gallery:hover::after {
-    content: '';
-    position: absolute;
-    top: -5px;
-    left: -5px;
-    right: -5px;
-    bottom: -5px;
-    background: linear-gradient(45deg, var(--primary-orange), var(--primary-red));
-    border-radius: 25px;
-    z-index: -1;
-    opacity: 0.3;
-    filter: blur(15px);
+    transform: scale(1.05) translateZ(0);
+    filter: brightness(1) contrast(1.05) saturate(1.05);
 }
 
 .office-content-wrapper {
@@ -2656,11 +2646,12 @@ services-grid ul li {
     left: 0;
     right: 0;
     bottom: 0;
-    background: linear-gradient(135deg, rgba(241, 90, 37, 0.1) 0%, rgba(255, 107, 53, 0.1) 100%);
+    background: linear-gradient(135deg, rgba(241, 90, 37, 0.08) 0%, rgba(255, 107, 53, 0.08) 100%);
     opacity: 0;
     transition: opacity 0.3s ease;
     z-index: 1;
     pointer-events: none;
+    transform: translateZ(0);
 }
 
 .office-image-gallery:hover a::before {
@@ -2673,9 +2664,9 @@ services-grid ul li {
     position: absolute;
     top: 15px;
     right: 15px;
-    width: 30px;
-    height: 30px;
-    background: rgba(255, 255, 255, 0.9);
+    width: 32px;
+    height: 32px;
+    background: rgba(255, 255, 255, 0.95);
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -2684,13 +2675,14 @@ services-grid ul li {
     font-weight: bold;
     color: var(--primary-orange);
     opacity: 0;
-    transform: scale(0.5);
-    transition: all 0.3s ease;
+    transform: scale(0.8) translateZ(0);
+    transition: opacity 0.3s ease, transform 0.3s ease;
     z-index: 2;
+    will-change: opacity, transform;
 }
 
 .office-image-gallery:hover a::after {
     opacity: 1;
-    transform: scale(1);
+    transform: scale(1) translateZ(0);
 }
 
