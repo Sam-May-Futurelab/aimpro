@@ -233,7 +233,7 @@ get_header(); ?>
                             </div>
                             <div class="service-content">
                                 <h3><?php echo esc_html($type['title']); ?></h3>
-                                <p><?php echo esc_html($type['description']); ?></p>
+                                <p><?php echo esc_html($type['description'] ?? ''); ?></p>
                                 <ul class="service-features">
                                     <?php foreach ($type['services'] as $service): ?>
                                         <li><?php echo esc_html($service); ?></li>
