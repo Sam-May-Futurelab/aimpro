@@ -647,6 +647,24 @@ get_header(); ?>
     </div>
 </section>
 
+<!-- Newsletter CTA -->
+<section class="cta-section newsletter-cta">
+    <div class="container">
+        <div class="cta-content text-center animate-on-scroll animate-scale-up">
+            <h2><?php echo aimpro_get_field('newsletter_title', 'Stay Updated with the Latest Insights'); ?></h2>
+            <p><?php echo aimpro_get_field('newsletter_subtitle', 'Get the latest resources, industry updates, and expert tips delivered directly to your inbox every week.'); ?></p>
+            
+            <form class="newsletter-form" action="#" method="post">
+                <div class="form-group">
+                    <input type="text" name="name" placeholder="Enter your name" required>
+                    <input type="email" name="email" placeholder="Enter your email address" required>
+                    <button type="submit" class="btn btn-primary"><?php echo aimpro_get_field('newsletter_button_text', 'Subscribe'); ?></button>
+                </div>
+            </form>
+        </div>
+    </div>
+</section>
+
 </main>
 
 <?php get_footer(); ?>
