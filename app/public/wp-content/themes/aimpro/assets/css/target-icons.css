@@ -22,13 +22,14 @@
 .component-features li::before {
     position: absolute !important;
     left: 0 !important;
-    top: 3px !important;
+    top: 0.6rem !important;
     width: 16px !important;
     height: 16px !important;
     background-image: url('../images/aimpro-target.png') !important;
     background-size: contain !important;
     background-repeat: no-repeat !important;
     background-position: center !important;
+    transform: translateY(-50%) !important;
 }
 
 /* Ensure proper spacing for target icons */
