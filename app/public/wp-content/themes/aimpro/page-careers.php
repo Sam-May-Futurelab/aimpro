@@ -297,19 +297,20 @@ get_header(); ?>
                     </div>
                 </form>
             </div>
-        </section>        <!-- Contact HR -->        <section class="contact-hr">
+        </section>        <!-- Contact HR -->        
+        <section class="contact-hr">
             <div class="section-content">
                 <h2><?php echo esc_html(get_post_meta(get_the_ID(), 'careers_contact_heading', true) ?: 'Questions About Careers?'); ?></h2>
                 <p><?php echo esc_html(get_post_meta(get_the_ID(), 'careers_contact_description', true) ?: 'Our HR team is here to help answer any questions about working at Aimpro Digital'); ?></p>
-                <div class="contact-info">
-                    <div class="contact-item">
-                        <strong>Email:</strong>
-                        <a href="mailto:<?php echo esc_attr(get_post_meta(get_the_ID(), 'careers_contact_email', true) ?: 'careers@aimpro.co.uk'); ?>"><?php echo esc_html(get_post_meta(get_the_ID(), 'careers_contact_email', true) ?: 'careers@aimpro.co.uk'); ?></a>
-                    </div>
-                    <div class="contact-item">
-                        <strong>Phone:</strong>
-                        <a href="tel:<?php echo str_replace(' ', '', get_post_meta(get_the_ID(), 'careers_contact_phone', true) ?: '+44 121 285 8490'); ?>"><?php echo esc_html(get_post_meta(get_the_ID(), 'careers_contact_phone', true) ?: '+44 121 285 8490'); ?></a>
-                    </div>
+                <div class="cta-buttons" style="justify-content: center; margin-top: 2rem;">
+                    <a href="mailto:<?php echo esc_attr(get_post_meta(get_the_ID(), 'careers_contact_email', true) ?: 'careers@aimpro.co.uk'); ?>" class="btn btn-primary">
+                        <i class="fas fa-envelope" style="margin-right: 0.5rem;"></i>
+                        Email Us
+                    </a>
+                    <a href="tel:0121285849" class="btn btn-secondary">
+                        <i class="fas fa-phone" style="margin-right: 0.5rem;"></i>
+                        0121 285 8490
+                    </a>
                 </div>
             </div>
         </section>
