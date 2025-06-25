@@ -134,21 +134,21 @@ get_header(); ?>
                         <h2>Related Articles</h2>
                         <div class="related-posts-grid">
                             <?php while ($related_posts->have_posts()) : $related_posts->the_post(); ?>
-                                <article class="related-post-item">
+                                <article class="related-post-item" style="display: flex; flex-direction: column;">
                                     <div class="post-image">
                                         <a href="<?php the_permalink(); ?>">
                                             <?php the_post_thumbnail('medium', array('alt' => get_the_title())); ?>
                                         </a>
                                     </div>
-                                    <div class="post-content">
+                                    <div class="post-content" style="display: flex; flex-direction: column; height: 100%; flex-grow: 1;">
                                         <h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
                                         <div class="post-meta">
                                             <span><?php echo get_the_date('M j, Y'); ?></span>
                                             <span>•</span>
                                             <span><?php echo aimpro_estimated_reading_time(get_the_content()); ?> min read</span>
                                         </div>
-                                        <p><?php echo wp_trim_words(get_the_excerpt(), 15); ?></p>
-                                        <a href="<?php the_permalink(); ?>" class="read-more">Read More</a>
+                                        <p style="flex-grow: 1; margin-bottom: 0.5rem;"><?php echo wp_trim_words(get_the_excerpt(), 23); ?></p>
+                                        <a href="<?php the_permalink(); ?>" class="read-more" style="margin-top: auto;">Read More</a>
                                     </div>
                                 </article>
                             <?php endwhile; wp_reset_postdata(); ?>
