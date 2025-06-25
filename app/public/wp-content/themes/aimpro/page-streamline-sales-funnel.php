@@ -216,24 +216,15 @@ get_header(); ?>
                 <h2 class="animate-on-scroll animate-fade-up"><?php echo esc_html(get_post_meta(get_the_ID(), 'streamline_why_title', true) ?: 'Why Choose AiMPro for Funnel Streamlining?'); ?></h2>
                 <div class="benefits-grid">
                     <div class="benefit-item animate-on-scroll animate-stagger animate-fade-up">
-                        <div class="benefit-icon">
-                            <i class="fas fa-chart-line"></i>
-                        </div>
                         <h3><?php echo esc_html(get_post_meta(get_the_ID(), 'streamline_benefit_1_title', true) ?: 'Data-Driven Approach'); ?></h3>
                         <p><?php echo esc_html(get_post_meta(get_the_ID(), 'streamline_benefit_1_desc', true) ?: 'Every optimisation is backed by comprehensive analytics and A/B testing to ensure maximum ROI.'); ?></p>
                     </div>                    
                     <div class="benefit-item animate-on-scroll animate-stagger animate-fade-up">
-                        <div class="benefit-icon">
-                            <i class="fas fa-trophy"></i>
-                        </div>
                         <h3><?php echo esc_html(get_post_meta(get_the_ID(), 'streamline_benefit_2_title', true) ?: 'Industry Expertise'); ?></h3>
                         <p><?php echo esc_html(get_post_meta(get_the_ID(), 'streamline_benefit_2_desc', true) ?: '5+ years optimising funnels across diverse industries with proven conversion improvements.'); ?></p>
                     </div>
                     
                     <div class="benefit-item animate-on-scroll animate-stagger animate-fade-up">
-                        <div class="benefit-icon">
-                            <i class="fas fa-hands-helping"></i>
-                        </div>
                         <h3><?php echo esc_html(get_post_meta(get_the_ID(), 'streamline_benefit_3_title', true) ?: 'Ongoing Support'); ?></h3>
                         <p><?php echo esc_html(get_post_meta(get_the_ID(), 'streamline_benefit_3_desc', true) ?: 'Continuous monitoring and optimisation to maintain peak funnel performance as your business grows.'); ?></p>
                     </div>
