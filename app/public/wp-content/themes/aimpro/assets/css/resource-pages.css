@@ -1470,10 +1470,17 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    text-align: center;
+    width: 100%;
+    height: 4rem;
 }
 
 .category-icon i {
     display: block;
+    width: 100%;
+    height: auto;
+    text-align: center;
+    line-height: 1;
 }
 
 .category-card h3 {

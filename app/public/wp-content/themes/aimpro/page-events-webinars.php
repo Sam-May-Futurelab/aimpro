@@ -4,13 +4,7 @@
  * Description: Upcoming events, webinars, and workshops
  */
 
-// Debug: Check if the page is loading at all
-echo "<!-- Debug: Page is loading -->";
-
 get_header();
-
-// Debug: Check if we get past header
-echo "<!-- Debug: Got past header -->";
 
 // Clear any corrupted meta data first
 if (isset($_GET['clear_meta'])) {
@@ -266,7 +260,7 @@ $newsletter_content = get_post_meta(get_the_ID(), '_events_webinars_newsletter_c
                                 <span class="price"><?php echo esc_html($featured_event['price']); ?></span>
                                 <span class="seats"><?php echo esc_html($featured_event['seats']); ?></span>
                             </div>
-                            <a href="<?php echo esc_url($featured_event['register_url']); ?>" class="register-btn">Register Now</a>
+                            <a href="<?php echo home_url('/contact'); ?>" class="register-btn">Register Now</a>
                         </div>
                     </div>
                 </div>
@@ -347,9 +341,6 @@ $newsletter_content = get_post_meta(get_the_ID(), '_events_webinars_newsletter_c
                 <h2 class="animate-on-scroll animate-fade-up"><?php echo esc_html($categories_title); ?></h2>
                 <div class="categories-grid categories-grid-four animate-on-scroll animate-fade-up">                    <?php foreach ($event_categories as $category): ?>
                         <div class="category-card animate-on-scroll animate-stagger animate-fade-up">
-                            <div class="category-icon">
-                                <i class="<?php echo esc_attr($category['icon']); ?>"></i>
-                            </div>
                             <h3><?php echo esc_html($category['title']); ?></h3>
                             <p><?php echo esc_html($category['description']); ?></p>
                             <span class="category-frequency"><?php echo esc_html($category['frequency']); ?></span>
