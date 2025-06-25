@@ -75,11 +75,7 @@ get_header(); ?>
                     
                     <div class="service-card animate-on-scroll animate-stagger animate-fade-up">
                         <div class="service-icon">
-                            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <circle cx="9" cy="21" r="1" stroke="currentcolour" stroke-width="2"/>
-                                <circle cx="20" cy="21" r="1" stroke="currentcolour" stroke-width="2"/>
-                                <path d="M1 1H5L7.68 14.39C7.77144 14.8504 8.02191 15.264 8.38755 15.5583C8.75318 15.8526 9.2107 16.009 9.68 16H19.4C19.8693 16.009 20.3268 15.8526 20.6925 15.5583C21.0581 15.264 21.3086 14.8504 21.4 14.39L23 6H6" stroke="currentcolour" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                            </svg>
+                            <i class="fab fa-google" style="font-size: 48px;"></i>
                         </div>
                         <div class="service-content">
                             <h3>Google Shopping & Product Ads</h3>
@@ -93,9 +89,7 @@ get_header(); ?>
                         </div>
                     </div>                    <div class="service-card animate-on-scroll animate-stagger animate-fade-up">
                         <div class="service-icon">
-                            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M21 21L16.514 16.506M19 10.5C19 15.194 15.194 19 10.5 19C5.806 19 2 15.194 2 10.5C2 5.806 5.806 2 10.5 2C15.194 2 19 5.806 19 10.5Z" stroke="currentcolour" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                            </svg>
+                            <i class="fas fa-search" style="font-size: 48px;"></i>
                         </div>
                         <div class="service-content">
                             <h3>E-commerce SEO</h3>
@@ -109,11 +103,7 @@ get_header(); ?>
                         </div>
                     </div>                    <div class="service-card animate-on-scroll animate-stagger animate-fade-up">
                         <div class="service-icon">
-                            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M18 20V10" stroke="currentcolour" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                <path d="M12 20V4" stroke="currentcolour" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                <path d="M6 20V14" stroke="currentcolour" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                            </svg>
+                            <i class="fab fa-facebook" style="font-size: 48px;"></i>
                         </div>
                         <div class="service-content">
                             <h3>Social Commerce</h3>
@@ -127,10 +117,7 @@ get_header(); ?>
                         </div>
                     </div>                    <div class="service-card animate-on-scroll animate-stagger animate-fade-up">
                         <div class="service-icon">
-                            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M4 4H20C21.1 4 22 4.9 22 6V18C22 19.1 21.1 20 20 20H4C2.9 20 2 19.1 2 18V6C2 4.9 2.9 4 4 4Z" stroke="currentcolour" stroke-width="2"/>
-                                <polyline points="22,6 12,13 2,6" stroke="currentcolour" stroke-width="2"/>
-                            </svg>
+                            <i class="fas fa-envelope" style="font-size: 48px;"></i>
                         </div>
                         <div class="service-content">
                             <h3>Email Marketing & Automation</h3>

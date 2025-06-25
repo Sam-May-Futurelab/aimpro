@@ -213,7 +213,7 @@ get_header(); ?>
         </section>        <!-- Why Choose Us Section -->
         <section class="why-choose-section">
             <div class="container">
-                <h2 class="animate-on-scroll animate-fade-up"><?php echo esc_html(get_post_meta(get_the_ID(), 'streamline_why_title', true) ?: 'Why Choose AiMPro for Funnel Streamlining?'); ?></h2>
+                <h2 class="animate-on-scroll animate-fade-up"><?php echo esc_html(get_post_meta(get_the_ID(), 'streamline_why_title', true) ?: 'Why Choose Aimpro for Funnel Streamlining?'); ?></h2>
                 <div class="benefits-grid">
                     <div class="benefit-item animate-on-scroll animate-stagger animate-fade-up">
                         <h3><?php echo esc_html(get_post_meta(get_the_ID(), 'streamline_benefit_1_title', true) ?: 'Data-Driven Approach'); ?></h3>
