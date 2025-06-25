@@ -734,7 +734,18 @@ function save_events_webinars_meta($post_id) {
                 $sanitized_item = array();
                 foreach ($item as $key => $value) {
                     if ($key === 'video_url' || $key === 'thumbnail_url' || $key === 'register_url') {
-                        $sanitized_item[$key] = esc_url_raw($value);
+                        // Handle URLs more safely
+                        $url = trim($value);
+                        if (empty($url)) {
+                            $sanitized_item[$key] = '';
+                        } else {
+                            // Basic URL validation before sanitization
+                            if (filter_var($url, FILTER_VALIDATE_URL) || preg_match('/^https?:\/\//', $url)) {
+                                $sanitized_item[$key] = esc_url_raw($url);
+                            } else {
+                                $sanitized_item[$key] = ''; // Clear invalid URLs
+                            }
+                        }
                     } else {
                         $sanitized_item[$key] = sanitize_textarea_field($value);
                     }

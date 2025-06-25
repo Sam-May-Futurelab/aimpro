@@ -4,7 +4,22 @@
  * Description: Upcoming events, webinars, and workshops
  */
 
+// Debug: Check if the page is loading at all
+echo "<!-- Debug: Page is loading -->";
+
 get_header();
+
+// Debug: Check if we get past header
+echo "<!-- Debug: Got past header -->";
+
+// Clear any corrupted meta data first
+if (isset($_GET['clear_meta'])) {
+    delete_post_meta(get_the_ID(), '_events_webinars_ondemand_webinars');
+    delete_post_meta(get_the_ID(), '_events_webinars_featured_event');
+    delete_post_meta(get_the_ID(), '_events_webinars_upcoming_events');
+    delete_post_meta(get_the_ID(), '_events_webinars_categories');
+    echo "<div style='padding: 20px; background: #d4edda; border: 1px solid #c3e6cb; margin: 20px;'>All corrupted meta data cleared. <a href='" . remove_query_arg('clear_meta') . "'>Reload page</a></div>";
+}
 
 // Get meta values
 $header_title = get_post_meta(get_the_ID(), '_events_webinars_header_title', true) ?: 'Events & Webinars';
@@ -217,17 +232,19 @@ $newsletter_content = get_post_meta(get_the_ID(), '_events_webinars_newsletter_c
                         </div>
                         <h2><?php echo esc_html($featured_event['title']); ?></h2>
                         <p class="event-description"><?php echo esc_html($featured_event['description']); ?></p>
-                          <?php if (!empty($featured_event['speakers'])): ?>
+                          <?php if (!empty($featured_event['speakers']) && is_array($featured_event['speakers'])): ?>
                         <div class="event-speakers animate-on-scroll animate-fade-up">
                             <h3>Featured Speakers</h3>
                             <div class="speakers-list">
                                 <?php foreach ($featured_event['speakers'] as $speaker): ?>
+                                    <?php if (is_array($speaker) && isset($speaker['name']) && isset($speaker['title'])): ?>
                                     <div class="speaker">
                                         <div class="speaker-info">
                                             <h4><?php echo esc_html($speaker['name']); ?></h4>
                                             <span><?php echo esc_html($speaker['title']); ?></span>
                                         </div>
                                     </div>
+                                    <?php endif; ?>
                                 <?php endforeach; ?>
                             </div>
                         </div>
@@ -277,7 +294,7 @@ $newsletter_content = get_post_meta(get_the_ID(), '_events_webinars_newsletter_c
                                     <span class="attendees"><?php echo esc_html($event['attendees']); ?></span>
                                     <span class="price"><?php echo esc_html($event['price']); ?></span>
                                 </div>
-                                <a href="<?php echo esc_url($event['register_url']); ?>" class="event-register">Register</a>
+                                <a href="<?php echo home_url('/contact'); ?>" class="event-register">Register</a>
                             </div>
                         </div>
                     <?php endforeach; ?>

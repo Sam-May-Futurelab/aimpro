@@ -206,9 +206,6 @@ function aimpro_enqueue_assets() {
       // Enqueue About page fix CSS - HIGHEST PRIORITY
     wp_enqueue_style('aimpro-about-fix', get_template_directory_uri() . '/assets/css/about-page-fix.css', array('aimpro-variables', 'aimpro-base', 'aimpro-page-templates'), $theme_version . '-' . time());
     
-    // Enqueue checkmark fix CSS - HIGHEST PRIORITY
-    wp_enqueue_style('aimpro-checkmark-fix', get_template_directory_uri() . '/assets/css/checkmark-fix.css', array('aimpro-variables', 'aimpro-service-pages', 'aimpro-seo-services'), $theme_version . '-' . time() . rand(100, 999));
-    
     // Enqueue Training and Mentoring page styles
     if (is_page('training-mentoring')) {
         wp_enqueue_style('aimpro-training-mentoring', get_template_directory_uri() . '/assets/css/training-mentoring.css', array('aimpro-variables', 'aimpro-base'), $theme_version . '-' . time() . rand(100, 999));

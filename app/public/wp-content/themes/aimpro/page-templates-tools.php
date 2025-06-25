@@ -294,9 +294,8 @@ get_header(); ?>
                     <!-- Newsletter Signup Form -->
                     <div class="newsletter-form-wrapper">
                         <form class="newsletter-form" method="post">
-                            <input type="hidden" name="action" value="newsletter_signup">
-                            <input type="hidden" name="nonce" value="<?php echo wp_create_nonce('newsletter_signup'); ?>">
                             <div class="form-group">
+                                <input type="text" name="subscriber_name" placeholder="Enter your name" required>
                                 <input type="email" name="subscriber_email" placeholder="Enter your email address" required>
                                 <button type="submit" class="btn-primary">
                                     <span class="button-text">Get Free Tools</span>
