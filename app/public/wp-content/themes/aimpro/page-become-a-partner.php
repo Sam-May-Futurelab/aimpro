@@ -35,7 +35,20 @@ get_header(); ?>
                         <?php 
                         $intro_text = get_post_meta(get_the_ID(), 'partner_intro_text', true) ?: 'We believe in the power of collaboration. Our partnership program is designed to create mutually beneficial relationships that help both parties grow and succeed in the digital marketing landscape.\n\nWhether you\'re a complementary service provider, technology vendor, or strategic ally, we offer various partnership opportunities that can expand your reach while providing additional value to our clients.';
                         echo wp_kses_post(wpautop($intro_text));
-                        ?>                        <div class="partnership-highlights">
+                        ?>
+                        
+                        <div class="partnership-intro-content">
+                            <p>Join a network of successful partners who have expanded their service offerings, increased revenue, and strengthened client relationships through our comprehensive partnership program. From referral commissions to white-label services, we provide the tools, support, and expertise you need to succeed.</p>
+                            
+                            <div class="cta-buttons" style="margin: 2rem 0;">
+                                <a href="#partnership-form" class="btn btn-primary">
+                                    <i class="fas fa-handshake" style="margin-right: 0.5rem;"></i>
+                                    Apply to Partner
+                                </a>
+                            </div>
+                        </div>
+                        
+                        <div class="partnership-highlights">
                             <div class="highlight-item">
                                 <span class="highlight-number"><?php echo esc_html(get_post_meta(get_the_ID(), 'partner_stats_value1', true) ?: '50+'); ?></span>
                                 <span class="highlight-label"><?php echo esc_html(get_post_meta(get_the_ID(), 'partner_stats_label1', true) ?: 'Active Partners'); ?></span>
@@ -54,7 +67,7 @@ get_header(); ?>
                 </div>
             </div>
         </section>        <!-- Partnership Types -->
-        <section class="partnership-types">
+        <section class="partnership-types" id="partnership-opportunities">
             <div class="section-content">
                 <h2 class="animate-on-scroll animate-fade-up"><?php echo esc_html(get_post_meta(get_the_ID(), 'partner_opportunities_heading', true) ?: 'Partnership Opportunities'); ?></h2>
                 <div class="partnership-grid">                      <!-- Referral Partners -->
@@ -284,7 +297,7 @@ get_header(); ?>
                 </div>
             </div>
         </section>        <!-- Partnership Application Form -->
-        <section class="partnership-application">            <div class="section-content">
+        <section class="partnership-application" id="partnership-form">            <div class="section-content">
                 <h2><?php echo esc_html(get_post_meta(get_the_ID(), 'partner_form_heading', true) ?: 'Apply to Become a Partner'); ?></h2>
                 <p><?php echo esc_html(get_post_meta(get_the_ID(), 'partner_form_description', true) ?: 'Ready to explore partnership opportunities? Fill out the form below and we\'ll get back to you within 24 hours.'); ?></p>
                 
