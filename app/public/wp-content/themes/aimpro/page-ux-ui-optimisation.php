@@ -40,6 +40,237 @@ get_header(); ?>
     overflow: hidden;
 }
 
+/* Success Stories Section */
+.success-stories-section {
+    padding: 80px 0;
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    position: relative;
+}
+
+.success-stories-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at 20% 80%, rgba(255, 107, 53, 0.05) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(255, 107, 53, 0.05) 0%, transparent 50%);
+    pointer-events: none;
+}
+
+.success-stories-section .container {
+    position: relative;
+    z-index: 1;
+}
+
+.success-stories-section .section-header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.success-stories-section .section-badge {
+    display: inline-block;
+    background: linear-gradient(135deg, var(--primary-orange), #ff8f65);
+    color: white;
+    padding: 8px 20px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 20px;
+}
+
+.success-stories-section h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 20px;
+    line-height: 1.2;
+}
+
+.success-stories-section .section-subtitle {
+    font-size: 1.1rem;
+    color: var(--text-secondary);
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+.success-stories-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 40px;
+    margin-top: 60px;
+}
+
+.success-story-card.modern-card {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(20px);
+    padding: 40px;
+    border-radius: 24px;
+    box-shadow: 
+        0 20px 40px rgba(0, 0, 0, 0.1),
+        0 8px 24px rgba(255, 107, 53, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    position: relative;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    transform: translateZ(0);
+}
+
+.success-story-card.modern-card:hover {
+    transform: translateY(-12px) scale(1.02);
+    box-shadow: 
+        0 30px 60px rgba(0, 0, 0, 0.15),
+        0 12px 32px rgba(255, 107, 53, 0.15);
+    border-color: rgba(255, 107, 53, 0.3);
+}
+
+.story-rating {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 24px;
+}
+
+.story-rating .stars {
+    color: var(--primary-orange);
+    font-size: 1.2rem;
+    letter-spacing: 2px;
+}
+
+.story-rating .rating-text {
+    background: linear-gradient(135deg, var(--primary-orange), #ff8f65);
+    color: white;
+    padding: 4px 12px;
+    border-radius: 12px;
+    font-size: 0.85rem;
+    font-weight: 700;
+}
+
+.story-content p {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: var(--text-primary);
+    margin-bottom: 32px;
+    font-style: italic;
+    position: relative;
+}
+
+.story-content p::before {
+    content: '"';
+    position: absolute;
+    top: -15px;
+    left: -20px;
+    font-size: 4rem;
+    color: var(--primary-orange);
+    opacity: 0.1;
+    font-family: serif;
+}
+
+.story-author {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 24px;
+    border-top: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.story-author .author-info {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.story-author .author-avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--primary-orange), #ff8f65);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: 700;
+    font-size: 1.1rem;
+    box-shadow: 0 4px 12px rgba(255, 107, 53, 0.3);
+}
+
+.story-author .author-details strong {
+    display: block;
+    color: var(--text-primary);
+    font-size: 1.1rem;
+    margin-bottom: 4px;
+}
+
+.story-author .author-details span {
+    display: block;
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    margin-bottom: 8px;
+}
+
+.story-author .company-badge {
+    display: inline-block;
+    background: rgba(255, 107, 53, 0.1);
+    color: var(--primary-orange);
+    padding: 4px 12px;
+    border-radius: 12px;
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+.story-author .result-metric {
+    text-align: right;
+}
+
+.story-author .result-metric .metric-value {
+    display: block;
+    font-size: 1.8rem;
+    font-weight: 800;
+    color: var(--primary-orange);
+    line-height: 1;
+}
+
+.story-author .result-metric .metric-label {
+    display: block;
+    color: var(--text-secondary);
+    font-size: 0.8rem;
+    margin-top: 4px;
+}
+
+/* Mobile responsiveness for success stories */
+@media (max-width: 768px) {
+    .success-stories-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+    
+    .success-story-card.modern-card {
+        padding: 30px;
+    }
+    
+    .story-author {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 20px;
+    }
+    
+    .story-author .author-info {
+        width: 100%;
+    }
+    
+    .story-author .result-metric {
+        text-align: left;
+        width: 100%;
+    }
+    
+    .success-stories-section h2 {
+        font-size: 2rem;
+    }
+}
+
 /* FAQ Section Styling - Proper font sizes */
 .faq-section {
     padding: 60px 0;
@@ -234,60 +465,90 @@ get_header(); ?>
                 </div>
             </div>
         </div>
-    </section><!-- Case Study Section -->    <section id="case-study" class="case-study-section service-page-case-study">
+    </section><!-- Success Stories Section -->
+    <section id="success-stories" class="success-stories-section">
         <div class="container">
-            <div class="case-study-content">
-                <div class="case-study-header animate-on-scroll animate-fade-up">
-                    <span class="case-study-label">Case Study</span>
-                    <h2><?php echo get_post_meta(get_the_ID(), 'uxui_case_study_title', true) ?: 'How LegalAdvice Pro Increased Consultation Bookings by 390% Through UX optimisation'; ?></h2>
-                </div>
-                
-                <div class="case-study-grid">
-                    <div class="case-study-challenge animate-on-scroll animate-slide-left">
-                        <p><?php echo get_post_meta(get_the_ID(), 'uxui_case_study_challenge', true) ?: 'LegalAdvice Pro had a professional-looking website but was struggling with a 73% bounce rate and only 2.1% of visitors booking consultations. Users were leaving without engaging, despite high-quality traffic from SEO and PPC campaigns.'; ?></p>
-                        
-                        <div class="challenge-metrics">
-                            <div class="metric animate-on-scroll animate-stagger animate-scale-up">
-                                <span class="metric-value"><?php echo get_post_meta(get_the_ID(), 'uxui_case_study_before_metric1_value', true) ?: '73%'; ?></span>
-                                <span class="metric-label"><?php echo get_post_meta(get_the_ID(), 'uxui_case_study_before_metric1_label', true) ?: 'Bounce Rate'; ?></span>
-                            </div>
-                            <div class="metric animate-on-scroll animate-stagger animate-scale-up">
-                                <span class="metric-value"><?php echo get_post_meta(get_the_ID(), 'uxui_case_study_before_metric2_value', true) ?: '2.1%'; ?></span>
-                                <span class="metric-label"><?php echo get_post_meta(get_the_ID(), 'uxui_case_study_before_metric2_label', true) ?: 'Consultation Booking Rate'; ?></span>
-                            </div>
-                        </div>
+            <div class="section-header animate-on-scroll animate-fade-up">
+                <span class="section-badge">Success Stories</span>
+                <h2>Real Results From UX/UI optimisation</h2>
+                <p class="section-subtitle">See how we've transformed businesses through strategic user experience improvements</p>
+            </div>
+            
+            <div class="success-stories-grid">
+                <div class="success-story-card modern-card animate-on-scroll animate-slide-left">
+                    <div class="story-rating">
+                        <div class="stars">★★★★★</div>
+                        <div class="rating-text">5.0 Rating</div>
                     </div>
                     
-                    <div class="case-study-solution animate-on-scroll animate-slide-right">
-                        <h3><?php echo get_post_meta(get_the_ID(), 'uxui_case_study_solution_title', true) ?: 'Our Solution'; ?></h3>
-                        <ul>
-                            <li><strong>User Journey optimisation:</strong> <?php echo get_post_meta(get_the_ID(), 'uxui_case_study_solution1', true) ?: 'Streamlined navigation and clear conversion paths'; ?></li>
-                            <li><strong>Trust Building Elements:</strong> <?php echo get_post_meta(get_the_ID(), 'uxui_case_study_solution2', true) ?: 'Added lawyer credentials, testimonials, and case results'; ?></li>
-                            <li><strong>Form optimisation:</strong> <?php echo get_post_meta(get_the_ID(), 'uxui_case_study_solution3', true) ?: 'Simplified booking process from 7 fields to 3'; ?></li>
-                            <li><strong>Mobile-First Redesign:</strong> <?php echo get_post_meta(get_the_ID(), 'uxui_case_study_solution4', true) ?: 'optimised for mobile users (68% of traffic)'; ?></li>
-                            <li><strong>Speed optimisation:</strong> <?php echo get_post_meta(get_the_ID(), 'uxui_case_study_solution5', true) ?: 'Reduced load time from 6.2s to 1.8s'; ?></li>
-                        </ul>
+                    <div class="story-content">
+                        <p>"LegalAdvice Pro was struggling with a 73% bounce rate and only 2.1% conversion. Through strategic UX optimisation, we streamlined their user journey, simplified forms, and added trust elements."</p>
+                    </div>
+                    
+                    <div class="story-author">
+                        <div class="author-info">
+                            <div class="author-avatar">LP</div>
+                            <div class="author-details">
+                                <strong>Sarah Mitchell</strong>
+                                <span>Managing Director</span>
+                                <div class="company-badge">LegalAdvice Pro</div>
+                            </div>
+                        </div>
+                        <div class="result-metric">
+                            <div class="metric-value">390%</div>
+                            <div class="metric-label">Conversion Increase</div>
+                        </div>
                     </div>
                 </div>
                 
-                <div class="case-study-results animate-on-scroll animate-fade-up">
-                    <h3>The Results</h3>
-                    <div class="results-grid">
-                        <div class="result-item animate-on-scroll animate-stagger animate-scale-up">
-                            <span class="result-number"><?php echo get_post_meta(get_the_ID(), 'uxui_case_study_result1_value', true) ?: '390%'; ?></span>
-                            <span class="result-label"><?php echo get_post_meta(get_the_ID(), 'uxui_case_study_result1_label', true) ?: 'Increase in Consultation Bookings'; ?></span>
+                <div class="success-story-card modern-card animate-on-scroll animate-slide-right">
+                    <div class="story-rating">
+                        <div class="stars">★★★★★</div>
+                        <div class="rating-text">5.0 Rating</div>
+                    </div>
+                    
+                    <div class="story-content">
+                        <p>"TechFlow Solutions needed their B2B platform optimised for better user engagement. We redesigned their dashboard, improved navigation, and enhanced the onboarding process for enterprise clients."</p>
+                    </div>
+                    
+                    <div class="story-author">
+                        <div class="author-info">
+                            <div class="author-avatar">TF</div>
+                            <div class="author-details">
+                                <strong>David Chen</strong>
+                                <span>Head of Product</span>
+                                <div class="company-badge">TechFlow Solutions</div>
+                            </div>
                         </div>
-                        <div class="result-item animate-on-scroll animate-stagger animate-scale-up">
-                            <span class="result-number"><?php echo get_post_meta(get_the_ID(), 'uxui_case_study_result2_value', true) ?: '58%'; ?></span>
-                            <span class="result-label"><?php echo get_post_meta(get_the_ID(), 'uxui_case_study_result2_label', true) ?: 'Reduction in Bounce Rate'; ?></span>
+                        <div class="result-metric">
+                            <div class="metric-value">245%</div>
+                            <div class="metric-label">User Engagement</div>
                         </div>
-                        <div class="result-item animate-on-scroll animate-stagger animate-scale-up">
-                            <span class="result-number"><?php echo get_post_meta(get_the_ID(), 'uxui_case_study_result3_value', true) ?: '245%'; ?></span>
-                            <span class="result-label"><?php echo get_post_meta(get_the_ID(), 'uxui_case_study_result3_label', true) ?: 'Increase in Session Duration'; ?></span>
+                    </div>
+                </div>
+                
+                <div class="success-story-card modern-card animate-on-scroll animate-fade-up">
+                    <div class="story-rating">
+                        <div class="stars">★★★★★</div>
+                        <div class="rating-text">5.0 Rating</div>
+                    </div>
+                    
+                    <div class="story-content">
+                        <p>"EcoShop needed their e-commerce site optimised for mobile users. We redesigned the checkout flow, improved product pages, and enhanced the mobile shopping experience."</p>
+                    </div>
+                    
+                    <div class="story-author">
+                        <div class="author-info">
+                            <div class="author-avatar">ES</div>
+                            <div class="author-details">
+                                <strong>Emma Rodriguez</strong>
+                                <span>E-commerce Manager</span>
+                                <div class="company-badge">EcoShop</div>
+                            </div>
                         </div>
-                        <div class="result-item animate-on-scroll animate-stagger animate-scale-up">
-                            <span class="result-number"><?php echo get_post_meta(get_the_ID(), 'uxui_case_study_result4_value', true) ?: '£285K'; ?></span>
-                            <span class="result-label"><?php echo get_post_meta(get_the_ID(), 'uxui_case_study_result4_label', true) ?: 'Additional Annual Revenue'; ?></span>
+                        <div class="result-metric">
+                            <div class="metric-value">167%</div>
+                            <div class="metric-label">Mobile Sales</div>
                         </div>
                     </div>
                 </div>
@@ -299,9 +560,6 @@ get_header(); ?>
             
             <div class="tools-grid">
                 <div class="tool-item animate-on-scroll animate-stagger animate-fade-up">
-                    <div class="area-icon">
-                        <i class="fas fa-route"></i>
-                    </div>
                     <h4>User Journey & Navigation</h4>
                     <p>Streamline user paths and improve navigation structure for better user flow and conversions.</p>
                     <ul>
@@ -313,9 +571,6 @@ get_header(); ?>
                 </div>
                 
                 <div class="tool-item animate-on-scroll animate-stagger animate-fade-up">
-                    <div class="area-icon">
-                        <i class="fas fa-mouse-pointer"></i>
-                    </div>
                     <h4>Conversion Elements</h4>
                     <p>optimise forms, buttons, and calls-to-action for maximum conversion impact.</p>
                     <ul>
@@ -327,9 +582,6 @@ get_header(); ?>
                 </div>
                 
                 <div class="tool-item animate-on-scroll animate-stagger animate-fade-up">
-                    <div class="area-icon">
-                        <i class="fas fa-mobile-alt"></i>
-                    </div>
                     <h4>Mobile Experience</h4>
                     <p>Enhance mobile usability and performance for the majority of your users.</p>
                     <ul>
@@ -341,9 +593,6 @@ get_header(); ?>
                 </div>
                 
                 <div class="tool-item animate-on-scroll animate-stagger animate-fade-up">
-                    <div class="area-icon">
-                        <i class="fas fa-tachometer-alt"></i>
-                    </div>
                     <h4>Page Speed & Performance</h4>
                     <p>optimise loading times and Core Web Vitals for better user experience and SEO.</p>
                     <ul>
@@ -355,9 +604,6 @@ get_header(); ?>
                 </div>
                 
                 <div class="tool-item animate-on-scroll animate-stagger animate-fade-up">
-                    <div class="area-icon">
-                        <i class="fas fa-eye"></i>
-                    </div>
                     <h4>Visual Hierarchy</h4>
                     <p>Improve content organisation and visual flow to guide users toward desired actions.</p>
                     <ul>
@@ -369,9 +615,6 @@ get_header(); ?>
                 </div>
                 
                 <div class="tool-item animate-on-scroll animate-stagger animate-fade-up">
-                    <div class="area-icon">
-                        <i class="fas fa-shield-alt"></i>
-                    </div>
                     <h4>Trust & Credibility</h4>
                     <p>Enhance trust signals and credibility elements to reduce conversion barriers.</p>
                     <ul>
