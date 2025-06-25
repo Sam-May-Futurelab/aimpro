@@ -416,6 +416,7 @@ get_header(); ?>
 
 <!-- Team Section -->
 <section id="team" class="team-section premium-team">
+    <div class="team-background-gradient"></div>
     <div class="container">
         <div class="content-centre">            <h2>Meet The Experts Who Make <span class="highlight curly-underline">MAGIC</span> Happen</h2>
             <p class="section-subtitle">No faceless agencies here. Our marketing specialists are passionate about client success and personally invested in delivering exceptional results for every business we partner with.</p>

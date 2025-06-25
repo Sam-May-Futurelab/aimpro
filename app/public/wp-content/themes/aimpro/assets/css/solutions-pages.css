@@ -1654,3 +1654,15 @@
     height: 64px;
     margin-bottom: 1rem;
 }
+
+/* Hide office images on mobile for index page */
+@media (max-width: 768px) {
+    .office-visual .office-image-gallery {
+        display: none !important;
+    }
+    
+    /* Optionally, you can also hide the entire office-visual section on mobile */
+    .office-visual {
+        display: none !important;
+    }
+}
