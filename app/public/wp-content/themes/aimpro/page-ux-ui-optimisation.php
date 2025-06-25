@@ -39,6 +39,102 @@ get_header(); ?>
     border-radius: 12px;
     overflow: hidden;
 }
+
+/* FAQ Section Styling - Proper font sizes */
+.faq-section {
+    padding: 60px 0;
+}
+
+.faq-section h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 3rem;
+    color: var(--text-primary);
+}
+
+.faq-list {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.faq-item {
+    border-bottom: 1px solid #e2e8f0;
+    margin-bottom: 0;
+}
+
+.faq-question {
+    width: 100%;
+    padding: 1.5rem 0;
+    border: none;
+    background: none;
+    text-align: left;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: color 0.3s ease;
+}
+
+.faq-question h3 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin: 0;
+    flex: 1;
+    line-height: 1.4;
+}
+
+.faq-question:hover h3 {
+    color: var(--primary-orange);
+}
+
+.faq-question::after {
+    content: '+';
+    font-size: 1.5rem;
+    font-weight: 300;
+    color: #64748b;
+    transition: transform 0.3s ease;
+    margin-left: 1rem;
+    flex-shrink: 0;
+}
+
+.faq-item.active .faq-question::after {
+    transform: rotate(45deg);
+    color: var(--primary-orange);
+}
+
+.faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+}
+
+.faq-answer p {
+    padding: 0 0 1.5rem 0;
+    margin: 0;
+    color: var(--text-secondary);
+    line-height: 1.6;
+    font-size: 1rem;
+}
+
+/* Mobile responsiveness for FAQ */
+@media (max-width: 768px) {
+    .faq-section h2 {
+        font-size: 2rem;
+    }
+    
+    .faq-question h3 {
+        font-size: 1rem;
+    }
+    
+    .faq-question {
+        padding: 1rem 0;
+    }
+    
+    .faq-answer p {
+        font-size: 0.9rem;
+    }
+}
 </style>
 
 <main id="primary" class="service-page ux-ui-optimisation-page">
@@ -589,50 +685,50 @@ get_header(); ?>
                 <div class="faq-list">
                     <div class="faq-item animate-on-scroll animate-stagger animate-fade-up">
                         <div class="faq-question">
-                            <h3><?php echo get_post_meta(get_the_ID(), 'uxui_faq1_question', true) ?: 'How do you measure UX optimisation success?'; ?></h3>
+                            <h3>How long does UX/UI optimisation take?</h3>
                         </div>
                         <div class="faq-answer">
-                            <p><?php echo get_post_meta(get_the_ID(), 'uxui_faq1_answer', true) ?: 'We track key metrics including conversion rates, bounce rates, session duration, and user satisfaction scores. We provide detailed before/after analytics reports.'; ?></p>
+                            <p>Timeline varies by scope: 2-3 weeks for audits, 4-6 weeks for standard optimisation, and 8-12 weeks for complete overhauls. We provide detailed timelines during consultation based on your specific requirements.</p>
                         </div>
                     </div>
                     <div class="faq-item animate-on-scroll animate-stagger animate-fade-up">
                         <div class="faq-question">
-                            <h3><?php echo get_post_meta(get_the_ID(), 'uxui_faq2_question', true) ?: 'Will you need to rebuild our entire website?'; ?></h3>
+                            <h3>Will optimisation affect my website's SEO?</h3>
                         </div>
                         <div class="faq-answer">
-                            <p><?php echo get_post_meta(get_the_ID(), 'uxui_faq2_answer', true) ?: 'Not necessarily. Many optimisations can be implemented within your existing framework. We focus on strategic improvements that deliver maximum impact.'; ?></p>
+                            <p>UX/UI optimisation actually improves SEO! Better user experience leads to lower bounce rates, longer session durations, and improved Core Web Vitals - all positive ranking factors for search engines.</p>
                         </div>
                     </div>
                     <div class="faq-item animate-on-scroll animate-stagger animate-fade-up">
                         <div class="faq-question">
-                            <h3><?php echo get_post_meta(get_the_ID(), 'uxui_faq3_question', true) ?: 'How long do optimisation projects take?'; ?></h3>
+                            <h3>Do you provide A/B testing?</h3>
                         </div>
                         <div class="faq-answer">
-                            <p><?php echo get_post_meta(get_the_ID(), 'uxui_faq3_answer', true) ?: 'Timeline varies by scope: 2 weeks for audits, 4 weeks for standard optimisation, and 6 weeks for complete overhauls. We provide detailed timelines during consultation.'; ?></p>
+                            <p>Yes, A/B testing is a core part of our optimisation process. We test different variations to ensure improvements deliver measurable results before full implementation across your site.</p>
                         </div>
                     </div>
                     <div class="faq-item animate-on-scroll animate-stagger animate-fade-up">
                         <div class="faq-question">
-                            <h3><?php echo get_post_meta(get_the_ID(), 'uxui_faq4_question', true) ?: 'Do you test changes before implementing them?'; ?></h3>
+                            <h3>Can you optimise mobile experience?</h3>
                         </div>
                         <div class="faq-answer">
-                            <p><?php echo get_post_meta(get_the_ID(), 'uxui_faq4_answer', true) ?: 'Yes, we use A/B testing and staged rollouts to ensure improvements deliver measurable results before full implementation.'; ?></p>
+                            <p>Absolutely! Mobile optimisation is essential and can be done as part of overall UX improvements or as a standalone project. We focus on touch-friendly interfaces, loading speed, and mobile-specific user journeys.</p>
                         </div>
                     </div>
                     <div class="faq-item animate-on-scroll animate-stagger animate-fade-up">
                         <div class="faq-question">
-                            <h3><?php echo get_post_meta(get_the_ID(), 'uxui_faq5_question', true) ?: 'Can you optimise mobile experience separately?'; ?></h3>
+                            <h3>What tools do you use for optimisation?</h3>
                         </div>
                         <div class="faq-answer">
-                            <p><?php echo get_post_meta(get_the_ID(), 'uxui_faq5_answer', true) ?: 'Absolutely! Mobile optimisation can be done as a standalone project, though we recommend comprehensive optimisation for best results.'; ?></p>
+                            <p>We use industry-leading tools including Google Analytics, Hotjar for heatmaps, Google Optimize for A/B testing, PageSpeed Insights for performance, and UserTesting for user feedback and behaviour analysis.</p>
                         </div>
                     </div>
                     <div class="faq-item animate-on-scroll animate-stagger animate-fade-up">
                         <div class="faq-question">
-                            <h3><?php echo get_post_meta(get_the_ID(), 'uxui_faq6_question', true) ?: 'What if the optimisations don\'t improve performance?'; ?></h3>
+                            <h3>Do you provide ongoing optimisation?</h3>
                         </div>
                         <div class="faq-answer">
-                            <p><?php echo get_post_meta(get_the_ID(), 'uxui_faq6_answer', true) ?: 'Our optimisations are data-driven and tested. If results don\'t meet expectations, we provide additional optimisation rounds at no extra cost.'; ?></p>
+                            <p>Yes, we offer ongoing optimisation packages with monthly monitoring, continuous testing, and iterative improvements based on user data and performance metrics to ensure sustained results.</p>
                         </div>
                     </div>
                 </div>
