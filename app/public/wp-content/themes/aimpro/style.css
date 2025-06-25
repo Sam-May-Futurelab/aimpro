@@ -2002,13 +2002,13 @@ html:root body.light-theme .about-page .page-hero .hero-title {
 }
 
 .testimonial-rating .stars {
-    color: #ffd700;
+    color: var(--primary-orange);
     font-size: 1.2rem;
     letter-spacing: 2px;
 }
 
 .testimonial-rating .rating-text {
-    background: linear-gradient(135deg, #ffd700, #ffb000);
+    background: linear-gradient(135deg, var(--primary-orange), #ff8f65);
     color: white;
     padding: 4px 12px;
     border-radius: 12px;
