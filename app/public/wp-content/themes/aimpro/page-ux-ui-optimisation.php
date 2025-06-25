@@ -470,7 +470,7 @@ get_header(); ?>
         <div class="container">
             <div class="section-header animate-on-scroll animate-fade-up">
                 <span class="section-badge">Success Stories</span>
-                <h2>Real Results From UX/UI optimisation</h2>
+                <h2>Real Results From UX/UI Optimisation</h2>
                 <p class="section-subtitle">See how we've transformed businesses through strategic user experience improvements</p>
             </div>
             
@@ -556,7 +556,7 @@ get_header(); ?>
         </div>
     </section>    <!-- optimisation Areas -->    <section class="optimisation-areas">
         <div class="container">
-            <h2 class="animate-on-scroll animate-fade-up">Key Areas We optimise</h2>
+            <h2 class="animate-on-scroll animate-fade-up" style="text-align: center;">Key Areas We Optimise</h2>
             
             <div class="tools-grid">
                 <div class="tool-item animate-on-scroll animate-stagger animate-fade-up">
