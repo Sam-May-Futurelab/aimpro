@@ -704,7 +704,7 @@ get_header(); ?>
 <section class="cta-section newsletter-cta">
     <div class="container">
         <div class="cta-content text-center animate-on-scroll animate-scale-up">
-            <h2><?php echo aimpro_get_field('newsletter_title', 'Stay Updated with the Latest Insights'); ?></h2>
+            <h2><?php echo aimpro_get_field('newsletter_title', 'Stay Updated with the <span class="highlight curly-underline">Latest</span> Insights'); ?></h2>
             <p><?php echo aimpro_get_field('newsletter_subtitle', 'Get the latest resources, industry updates, and expert tips delivered directly to your inbox every week.'); ?></p>
             
             <?php if (isset($_GET['newsletter_success'])): ?>

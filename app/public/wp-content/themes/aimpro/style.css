@@ -3231,9 +3231,6 @@ select:focus {
     }
 }
 
-/* Light Theme Target Icon Adjustments moved to variables.css */
-/* Light Theme Service Card Hover Styles moved to variables.css */
-
 /* Office Visit Section */
 .office-visit-section {
     padding: 100px 0;
@@ -3520,5 +3517,36 @@ select:focus {
         transform: translateY(0px) translateX(0px) rotate(360deg) scale(1);
         opacity: 0.5;
     }
+}
+
+/* Newsletter section specific overrides for Latest text */
+.newsletter-cta .highlight {
+    background: none !important;
+    -webkit-background-clip: initial !important;
+    -webkit-text-fill-color: initial !important;
+    background-clip: initial !important;
+    font-weight: inherit !important;
+    animation: none !important;
+    color: #ffffff !important;
+}
+
+.newsletter-cta .curly-underline {
+    color: #ffffff !important;
+    position: relative;
+    display: inline-block;
+}
+
+.newsletter-cta .curly-underline::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 140px;
+    height: 12px;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 140 12'%3E%3Cpath d='M5 8c12-3 20 2 35-1.5c18-4 25 3 40-0.5c15-3.5 22 1 35-1.5c10-2 15 1 20 0' stroke='%23ffffff' stroke-width='2.5' fill='none' stroke-linecap='round' stroke-linejoin='round' opacity='0.9'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
 }
 
