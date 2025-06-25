@@ -601,8 +601,8 @@ body.home .section-subtitle {
     height: 100%;
     background: linear-gradient(90deg, 
         transparent, 
-        rgba(255, 215, 0, 0.15), 
-        rgba(255, 165, 0, 0.1), 
+        rgba(241, 90, 37, 0.15), 
+        rgba(255, 107, 53, 0.1), 
         transparent);
     transition: left 0.8s ease;
     z-index: 1;
@@ -616,8 +616,8 @@ body.home .section-subtitle {
     right: -2px;
     bottom: -2px;
     background: linear-gradient(135deg, 
-        rgba(255, 215, 0, 0.1) 0%, 
-        rgba(255, 165, 0, 0.05) 50%, 
+        rgba(241, 90, 37, 0.1) 0%, 
+        rgba(255, 107, 53, 0.05) 50%, 
         transparent 100%);
     border-radius: 22px;
     z-index: -1;
@@ -928,15 +928,15 @@ body.home .section-subtitle {
     position: absolute;
     top: -0.5rem;
     right: 0;
-    background: linear-gradient(135deg, rgba(255, 215, 0, 0.9), rgba(255, 165, 0, 0.8));
-    color: #000;
+    background: linear-gradient(135deg, rgba(241, 90, 37, 0.9), rgba(255, 107, 53, 0.8));
+    color: #fff;
     padding: 0.3rem 0.8rem;
     border-radius: 12px;
     font-size: 0.75rem;
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 0.5px;
-    box-shadow: 0 4px 8px rgba(255, 215, 0, 0.3);
+    box-shadow: 0 4px 8px rgba(241, 90, 37, 0.3);
 }
 
 /* Simplified service icon effects for better performance */
@@ -967,7 +967,7 @@ body.home .section-subtitle {
     height: 200%;
     background: linear-gradient(45deg,
         transparent 30%,
-        rgba(255, 215, 0, 0.05) 50%, /* Reduced opacity */
+        rgba(241, 90, 37, 0.05) 50%, /* Reduced opacity */
         transparent 70%);
     transition: transform 0.3s ease; /* Faster transition */
 }
@@ -975,8 +975,8 @@ body.home .section-subtitle {
 /* Simplified icon hover effects */
 .premium-service-card:hover .service-icon-animated {
     transform: scale(1.02) translateZ(0); /* Much more subtle scale */
-    box-shadow: 0 3px 8px rgba(255, 215, 0, 0.15); /* Lighter shadow */
-    border-color: rgba(255, 215, 0, 0.25);
+    box-shadow: 0 3px 8px rgba(241, 90, 37, 0.15); /* Lighter shadow */
+    border-color: rgba(241, 90, 37, 0.25);
 }
 
 .premium-service-card:hover .service-icon-animated::before {
@@ -1003,15 +1003,15 @@ body.home .section-subtitle {
 }
 
 .service-badge {
-    background: linear-gradient(135deg, rgba(255, 215, 0, 0.9), rgba(255, 165, 0, 0.8));
-    color: #000;
+    background: linear-gradient(135deg, rgba(241, 90, 37, 0.9), rgba(255, 107, 53, 0.8));
+    color: #fff;
     padding: 0.3rem 0.8rem;
     border-radius: 12px;
     font-size: 0.75rem;
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 0.5px;
-    box-shadow: 0 4px 8px rgba(255, 215, 0, 0.3);
+    box-shadow: 0 4px 8px rgba(241, 90, 37, 0.3);
 }
 
 .service-header h3 {
