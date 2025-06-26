@@ -212,5 +212,356 @@ function get_microsoft_ads_meta($key, $post_id, $defaults, $prefix = '_microsoft
     </section>
 </main>
 
+<style>
+/* Mobile CSS for Microsoft Ads Page */
+@media (max-width: 768px) {
+    /* Hero Section Mobile Optimization */
+    .bing-ads-page .page-hero {
+        padding: 60px 0 !important;
+    }
+    
+    .bing-ads-page .hero-content {
+        text-align: center;
+        max-width: 100%;
+        padding: 0 20px;
+    }
+    
+    .bing-ads-page .page-hero h1 {
+        font-size: 2rem !important;
+        font-weight: 700;
+        color: #1e293b;
+        margin-bottom: 16px;
+        line-height: 1.3;
+    }
+    
+    .bing-ads-page .hero-subtitle {
+        font-size: 1.1rem !important;
+        color: #64748b;
+        line-height: 1.6;
+        margin-bottom: 30px;
+        max-width: 100%;
+    }
+    
+    .bing-ads-page .hero-stats {
+        display: grid !important;
+        grid-template-columns: 1fr !important;
+        gap: 20px !important;
+        margin: 30px 0 !important;
+        max-width: 100%;
+    }
+    
+    .bing-ads-page .stat-item {
+        background: white !important;
+        border: 2px solid #f15a25 !important;
+        border-radius: 12px !important;
+        padding: 20px !important;
+        text-align: center !important;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.1) !important;
+    }
+    
+    .bing-ads-page .stat-number {
+        font-size: 2rem !important;
+        font-weight: 800 !important;
+        color: #f15a25 !important;
+        display: block !important;
+        margin-bottom: 8px !important;
+    }
+    
+    .bing-ads-page .stat-label {
+        color: #64748b !important;
+        font-size: 0.9rem !important;
+        font-weight: 600 !important;
+        line-height: 1.3 !important;
+    }
+    
+    .bing-ads-page .hero-ctas {
+        margin-top: 30px !important;
+    }
+    
+    .bing-ads-page .hero-ctas .btn-primary {
+        background: #f15a25 !important;
+        color: white !important;
+        border: 2px solid #f15a25 !important;
+        padding: 16px 24px !important;
+        border-radius: 8px !important;
+        font-weight: 700 !important;
+        text-decoration: none !important;
+        display: block !important;
+        width: 100% !important;
+        text-align: center !important;
+        font-size: 1rem !important;
+    }
+    
+    /* Service Overview Grid */
+    .bing-ads-page .services-grid {
+        grid-template-columns: 1fr !important;
+        gap: 20px !important;
+    }
+    
+    .bing-ads-page .service-item {
+        background: white !important;
+        border: 1px solid #e2e8f0 !important;
+        border-radius: 12px !important;
+        padding: 24px !important;
+        text-align: center !important;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.1) !important;
+    }
+    
+    .bing-ads-page .service-icon {
+        margin-bottom: 16px !important;
+    }
+    
+    .bing-ads-page .service-icon i {
+        font-size: 2rem !important;
+        color: #f15a25 !important;
+    }
+    
+    .bing-ads-page .service-item h3 {
+        color: #1e293b !important;
+        font-size: 1.3rem !important;
+        font-weight: 700 !important;
+        margin-bottom: 12px !important;
+    }
+    
+    .bing-ads-page .service-item p {
+        color: #64748b !important;
+        font-size: 0.95rem !important;
+        line-height: 1.6 !important;
+        margin: 0 !important;
+    }
+    
+    /* Tools Section Mobile Optimization */
+    .bing-ads-page .tools-section {
+        padding: 60px 0 !important;
+    }
+    
+    .bing-ads-page .tools-section h2 {
+        font-size: 2rem !important;
+        font-weight: 700 !important;
+        color: #1e293b !important;
+        text-align: center !important;
+        margin-bottom: 40px !important;
+        line-height: 1.3 !important;
+    }
+    
+    .bing-ads-page .tools-grid {
+        grid-template-columns: 1fr !important;
+        gap: 20px !important;
+        max-width: 100% !important;
+    }
+    
+    .bing-ads-page .tool-item {
+        background: white !important;
+        border: 1px solid #e2e8f0 !important;
+        border-radius: 12px !important;
+        padding: 24px !important;
+        text-align: center !important;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.1) !important;
+        max-width: 100% !important;
+        word-wrap: break-word !important;
+    }
+    
+    .bing-ads-page .tool-icon {
+        margin-bottom: 16px !important;
+    }
+    
+    .bing-ads-page .tool-icon i {
+        font-size: 2rem !important;
+        color: #f15a25 !important;
+    }
+    
+    .bing-ads-page .tool-item h3 {
+        color: #1e293b !important;
+        font-size: 1.3rem !important;
+        font-weight: 700 !important;
+        margin-bottom: 12px !important;
+        line-height: 1.3 !important;
+    }
+    
+    .bing-ads-page .tool-item p {
+        color: #64748b !important;
+        font-size: 0.95rem !important;
+        line-height: 1.6 !important;
+        margin: 0 !important;
+        hyphens: auto !important;
+        word-wrap: break-word !important;
+    }
+    
+    /* Process Steps */
+    .bing-ads-page .process-steps {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 20px !important;
+    }
+    
+    .bing-ads-page .process-step {
+        background: white !important;
+        border: 1px solid #e2e8f0 !important;
+        border-radius: 12px !important;
+        padding: 24px !important;
+        display: flex !important;
+        align-items: flex-start !important;
+        gap: 16px !important;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.1) !important;
+    }
+    
+    .bing-ads-page .step-number {
+        background: #f15a25 !important;
+        color: white !important;
+        width: 40px !important;
+        height: 40px !important;
+        border-radius: 50% !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        font-weight: 700 !important;
+        font-size: 1.1rem !important;
+        flex-shrink: 0 !important;
+    }
+    
+    .bing-ads-page .step-content h3 {
+        color: #1e293b !important;
+        font-size: 1.2rem !important;
+        font-weight: 700 !important;
+        margin-bottom: 8px !important;
+    }
+    
+    .bing-ads-page .step-content p {
+        color: #64748b !important;
+        font-size: 0.95rem !important;
+        line-height: 1.6 !important;
+        margin: 0 !important;
+    }
+    
+    /* Case Study Results Grid */
+    .bing-ads-page .results-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 15px !important;
+    }
+    
+    .bing-ads-page .result-item {
+        background: white !important;
+        border: 2px solid #f15a25 !important;
+        border-radius: 12px !important;
+        padding: 20px !important;
+        text-align: center !important;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.1) !important;
+    }
+    
+    .bing-ads-page .result-number {
+        font-size: 2rem !important;
+        font-weight: 800 !important;
+        color: #f15a25 !important;
+        display: block !important;
+        margin-bottom: 8px !important;
+    }
+    
+    .bing-ads-page .result-label {
+        color: #64748b !important;
+        font-size: 0.85rem !important;
+        font-weight: 600 !important;
+        line-height: 1.3 !important;
+    }
+    
+    /* Case Study Content */
+    .bing-ads-page .case-study-content {
+        flex-direction: column !important;
+        gap: 30px !important;
+    }
+    
+    .bing-ads-page .case-study-text,
+    .bing-ads-page .case-study-results {
+        max-width: 100% !important;
+    }
+    
+    /* Benefits Grid */
+    .bing-ads-page .benefits-grid {
+        grid-template-columns: 1fr !important;
+        gap: 20px !important;
+    }
+    
+    .bing-ads-page .benefit-card {
+        background: white !important;
+        border: 1px solid #e2e8f0 !important;
+        border-radius: 12px !important;
+        padding: 24px !important;
+        text-align: center !important;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.1) !important;
+    }
+    
+    .bing-ads-page .benefit-icon {
+        margin-bottom: 16px !important;
+    }
+    
+    .bing-ads-page .benefit-icon i {
+        font-size: 2rem !important;
+        color: #f15a25 !important;
+    }
+    
+    .bing-ads-page .benefit-card h3 {
+        color: #1e293b !important;
+        font-size: 1.3rem !important;
+        font-weight: 700 !important;
+        margin-bottom: 12px !important;
+    }
+    
+    .bing-ads-page .benefit-card p {
+        color: #64748b !important;
+        font-size: 0.95rem !important;
+        line-height: 1.6 !important;
+        margin: 0 !important;
+    }
+    
+    /* CTA Buttons */
+    .bing-ads-page .btn-primary {
+        background: #f15a25 !important;
+        color: white !important;
+        border: 2px solid #f15a25 !important;
+        padding: 16px 24px !important;
+        border-radius: 8px !important;
+        font-weight: 700 !important;
+        text-decoration: none !important;
+        text-align: center !important;
+        font-size: 1rem !important;
+        display: block !important;
+        width: 100% !important;
+        max-width: 300px !important;
+        margin: 0 auto !important;
+    }
+    
+    /* Testimonial */
+    .bing-ads-page .testimonial-content {
+        text-align: center !important;
+        padding: 0 20px !important;
+    }
+    
+    .bing-ads-page .testimonial-content blockquote {
+        font-size: 1.1rem !important;
+        line-height: 1.6 !important;
+        margin-bottom: 20px !important;
+    }
+    
+    /* Simple CTA Section */
+    .bing-ads-page .simple-cta-section {
+        padding: 60px 20px !important;
+    }
+    
+    .bing-ads-page .simple-cta-content h2 {
+        font-size: 2rem !important;
+        font-weight: 700 !important;
+        color: #1e293b !important;
+        margin-bottom: 16px !important;
+        line-height: 1.3 !important;
+    }
+    
+    .bing-ads-page .simple-cta-content p {
+        font-size: 1.1rem !important;
+        color: #64748b !important;
+        line-height: 1.6 !important;
+        margin-bottom: 24px !important;
+    }
+}
+</style>
+
 <?php get_footer(); ?>
 
