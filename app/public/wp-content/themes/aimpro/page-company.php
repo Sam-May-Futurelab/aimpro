@@ -24,9 +24,9 @@ get_header(); ?>
         
         <!-- Page Header -->
         <section class="page-header animate-on-scroll animate-fade-up">
-            <div class="page-header-content">
-                <h1><?php echo esc_html(get_post_meta(get_the_ID(), 'company_header_title', true) ?: 'Our Company'); ?></h1>
-                <p class="page-subtitle"><?php echo esc_html(get_post_meta(get_the_ID(), 'company_header_subtitle', true) ?: 'The story behind Aimpro Digital'); ?></p>
+            <div class="page-header-content" style="text-align: center;">
+                <h1 style="text-align: center;"><?php echo esc_html(get_post_meta(get_the_ID(), 'company_header_title', true) ?: 'Our Company'); ?></h1>
+                <p class="page-subtitle" style="text-align: center;"><?php echo esc_html(get_post_meta(get_the_ID(), 'company_header_subtitle', true) ?: 'The story behind Aimpro Digital'); ?></p>
             </div>
         </section>
         
@@ -91,7 +91,7 @@ get_header(); ?>
         <!-- Mission, Vision, Values Section -->
         <section class="company-values">
             <div class="section-content">
-                <h2 class="animate-on-scroll animate-fade-up"><?php echo esc_html(get_post_meta(get_the_ID(), 'company_foundation_heading', true) ?: 'Our Foundation'); ?></h2>
+                <h2 class="animate-on-scroll animate-fade-up" style="text-align: center;"><?php echo esc_html(get_post_meta(get_the_ID(), 'company_foundation_heading', true) ?: 'Our Foundation'); ?></h2>
                 
                 <div class="values-grid">
                     <div class="value-card animate-on-scroll animate-stagger animate-fade-up">
@@ -105,7 +105,7 @@ get_header(); ?>
                         <div class="value-icon">
                             <i class="fas fa-heart" style="font-size: 3rem; color: #ffffff;"></i>
                         </div>                        <h3><?php echo esc_html(get_post_meta(get_the_ID(), 'company_values_title', true) ?: 'Our Values'); ?></h3>
-                        <ul>
+                        <div class="values-list">
                             <?php 
                             $values_list = get_post_meta(get_the_ID(), 'company_values_list', true);
                             if (!$values_list) {
@@ -121,14 +121,14 @@ Results: We are committed to delivering measurable outcomes';
                                 if (!empty($value)) {
                                     $parts = explode(':', $value, 2);
                                     if (count($parts) === 2) {
-                                        echo '<li><strong>' . esc_html(trim($parts[0])) . ':</strong>' . esc_html(trim($parts[1])) . '</li>';
+                                        echo '<p><strong>' . esc_html(trim($parts[0])) . ':</strong> ' . esc_html(trim($parts[1])) . '</p>';
                                     } else {
-                                        echo '<li>' . esc_html($value) . '</li>';
+                                        echo '<p>' . esc_html($value) . '</p>';
                                     }
                                 }
                             }
                             ?>
-                        </ul>
+                        </div>
                     </div>                    <div class="value-card animate-on-scroll animate-stagger animate-fade-up">
                         <div class="value-icon">
                             <i class="fas fa-eye" style="font-size: 3rem; color: #ffffff;"></i>
@@ -173,10 +173,10 @@ Results: We are committed to delivering measurable outcomes';
             </div>
         </section>        <!-- CTA Section -->
         <section class="company-cta">
-            <div class="section-content">
-                <h2><?php echo esc_html(get_post_meta(get_the_ID(), 'company_cta_heading', true) ?: 'Ready to Partner with Us?'); ?></h2>
-                <p><?php echo esc_html(get_post_meta(get_the_ID(), 'company_cta_desc', true) ?: 'Let\'s discuss how Aimpro Digital can help accelerate your business growth'); ?></p>
-                <div class="cta-buttons">
+            <div class="section-content" style="text-align: center;">
+                <h2 style="text-align: center;"><?php echo esc_html(get_post_meta(get_the_ID(), 'company_cta_heading', true) ?: 'Ready to Partner with Us?'); ?></h2>
+                <p style="text-align: center;"><?php echo esc_html(get_post_meta(get_the_ID(), 'company_cta_desc', true) ?: 'Let\'s discuss how Aimpro Digital can help accelerate your business growth'); ?></p>
+                <div class="cta-buttons" style="text-align: center;">
                     <?php 
                     $button1_text = get_post_meta(get_the_ID(), 'company_cta_button1_text', true) ?: 'Contact Us Today';
                     $button1_url = get_post_meta(get_the_ID(), 'company_cta_button1_url', true) ?: home_url('/contact');
