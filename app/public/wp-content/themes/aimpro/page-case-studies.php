@@ -265,4 +265,177 @@ get_header(); ?>
     </div>
 </main>
 
+<!-- Mobile Responsive Styles for Case Studies Page -->
+<style>
+/* Mobile optimizations for case studies intro section */
+@media (max-width: 768px) {
+    .case-studies-intro .section-content {
+        padding: 2rem 1rem !important;
+    }
+    
+    .intro-content {
+        text-align: center !important;
+        margin-bottom: 2rem !important;
+    }
+    
+    .intro-content h2 {
+        font-size: 1.8rem !important;
+        line-height: 1.3 !important;
+        margin-bottom: 1rem !important;
+    }
+    
+    .intro-content p {
+        font-size: 0.95rem !important;
+        line-height: 1.5 !important;
+        max-width: 100% !important;
+        margin: 0 auto !important;
+    }
+    
+    .results-overview {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 1.5rem !important;
+        align-items: center !important;
+        width: 100% !important;
+        margin-top: 2rem !important;
+    }
+    
+    .result-stat {
+        text-align: center !important;
+        padding: 1rem !important;
+        width: 100% !important;
+        max-width: 280px !important;
+        background: rgba(255, 255, 255, 0.05) !important;
+        border-radius: 12px !important;
+        border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    }
+    
+    .result-stat .stat-number {
+        font-size: 2.2rem !important;
+        margin-bottom: 0.5rem !important;
+        display: block !important;
+    }
+    
+    .result-stat .stat-label {
+        font-size: 0.9rem !important;
+        line-height: 1.3 !important;
+        display: block !important;
+    }
+    
+    /* Page header mobile optimization */
+    .page-header-content {
+        text-align: center !important;
+        padding: 1.5rem 1rem !important;
+    }
+    
+    .page-header-content h1 {
+        font-size: 2rem !important;
+        margin-bottom: 1rem !important;
+    }
+    
+    .page-subtitle {
+        font-size: 1rem !important;
+        line-height: 1.4 !important;
+    }
+    
+    /* Featured case study mobile optimization */
+    .featured-study {
+        flex-direction: column !important;
+        gap: 2rem !important;
+    }
+    
+    .study-content {
+        text-align: center !important;
+        order: 2 !important;
+    }
+    
+    .study-image {
+        order: 1 !important;
+        width: 100% !important;
+    }
+    
+    .study-highlights {
+        flex-direction: column !important;
+        gap: 1rem !important;
+        margin: 1.5rem 0 !important;
+    }
+    
+    .highlight-item {
+        text-align: center !important;
+        padding: 1rem !important;
+        background: rgba(255, 255, 255, 0.05) !important;
+        border-radius: 8px !important;
+    }
+    
+    /* Case studies grid mobile optimization */
+    .studies-grid {
+        grid-template-columns: 1fr !important;
+        gap: 1.5rem !important;
+    }
+    
+    .case-study-card {
+        margin-bottom: 1rem !important;
+    }
+    
+    .study-metrics {
+        flex-direction: column !important;
+        gap: 0.75rem !important;
+        margin: 1rem 0 !important;
+    }
+    
+    .metric {
+        text-align: center !important;
+        padding: 0.75rem !important;
+        background: rgba(255, 255, 255, 0.05) !important;
+        border-radius: 6px !important;
+    }
+    
+    /* Testimonials mobile optimization */
+    .testimonials-grid {
+        grid-template-columns: 1fr !important;
+        gap: 1.5rem !important;
+    }
+    
+    .testimonial-card {
+        padding: 1.5rem 1rem !important;
+        text-align: center !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .case-studies-intro .section-content {
+        padding: 1.5rem 0.75rem !important;
+    }
+    
+    .intro-content h2 {
+        font-size: 1.5rem !important;
+    }
+    
+    .intro-content p {
+        font-size: 0.9rem !important;
+    }
+    
+    .result-stat {
+        padding: 0.75rem !important;
+        max-width: 100% !important;
+    }
+    
+    .result-stat .stat-number {
+        font-size: 1.8rem !important;
+    }
+    
+    .result-stat .stat-label {
+        font-size: 0.8rem !important;
+    }
+    
+    .page-header-content {
+        padding: 1rem 0.75rem !important;
+    }
+    
+    .page-header-content h1 {
+        font-size: 1.6rem !important;
+    }
+}
+</style>
+
 <?php get_footer(); ?>
