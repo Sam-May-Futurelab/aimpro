@@ -345,4 +345,401 @@ get_header(); ?>
     </section>
 </main>
 
+<style>
+/* Mobile-specific styles for Retargeting & Display Ads page */
+@media (max-width: 768px) {
+    /* Hero section mobile adjustments */
+    .retargeting-page .page-hero {
+        padding: 80px 0 60px !important;
+        min-height: auto !important;
+        background: #ffffff !important;
+    }
+    
+    .retargeting-page .hero-content {
+        text-align: center !important;
+        max-width: 100% !important;
+        padding: 0 20px !important;
+    }
+    
+    .retargeting-page .hero-content h1 {
+        font-size: 2.2rem !important;
+        font-weight: 800 !important;
+        color: #1e293b !important;
+        margin-bottom: 20px !important;
+        line-height: 1.2 !important;
+        word-wrap: break-word !important;
+    }
+    
+    .retargeting-page .hero-subtitle {
+        font-size: 1.1rem !important;
+        color: #64748b !important;
+        line-height: 1.6 !important;
+        margin-bottom: 30px !important;
+        max-width: 100% !important;
+        word-wrap: break-word !important;
+    }
+    
+    .retargeting-page .hero-stats {
+        display: grid !important;
+        grid-template-columns: 1fr !important;
+        gap: 20px !important;
+        max-width: 100% !important;
+        margin-bottom: 30px !important;
+    }
+    
+    .retargeting-page .hero-stats .stat-item {
+        background: #f8fafc !important;
+        border: 1px solid #e2e8f0 !important;
+        border-radius: 12px !important;
+        padding: 20px !important;
+        text-align: center !important;
+        min-height: auto !important;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.1) !important;
+    }
+    
+    .retargeting-page .hero-stats .stat-number {
+        font-size: 2.5rem !important;
+        font-weight: 800 !important;
+        color: #f15a25 !important;
+        margin-bottom: 8px !important;
+        line-height: 1.1 !important;
+    }
+    
+    .retargeting-page .hero-stats .stat-label {
+        font-size: 0.95rem !important;
+        color: #64748b !important;
+        font-weight: 500 !important;
+        line-height: 1.3 !important;
+        word-wrap: break-word !important;
+    }
+    
+    .retargeting-page .hero-ctas {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 15px !important;
+        width: 100% !important;
+        align-items: stretch !important;
+    }
+    
+    .retargeting-page .hero-ctas .btn-primary {
+        width: 100% !important;
+        padding: 16px 24px !important;
+        font-size: 1.1rem !important;
+        font-weight: 600 !important;
+        text-align: center !important;
+        border-radius: 8px !important;
+        background: #f15a25 !important;
+        color: white !important;
+        border: 2px solid #f15a25 !important;
+        transition: all 0.3s ease !important;
+        text-decoration: none !important;
+    }
+    
+    /* Service overview mobile adjustments */
+    .retargeting-page .service-overview {
+        padding: 60px 0 !important;
+        background: white !important;
+    }
+    
+    .retargeting-page .overview-content {
+        text-align: center !important;
+        max-width: 100% !important;
+        padding: 0 20px !important;
+        margin-bottom: 40px !important;
+    }
+    
+    .retargeting-page .overview-content h2 {
+        font-size: 2rem !important;
+        font-weight: 700 !important;
+        color: #1e293b !important;
+        margin-bottom: 20px !important;
+        line-height: 1.3 !important;
+    }
+    
+    .retargeting-page .overview-content p {
+        font-size: 1.1rem !important;
+        color: #64748b !important;
+        line-height: 1.6 !important;
+        margin-bottom: 0 !important;
+    }
+    
+    .retargeting-page .services-grid {
+        display: grid !important;
+        grid-template-columns: 1fr !important;
+        gap: 20px !important;
+        max-width: 100% !important;
+        padding: 0 20px !important;
+    }
+    
+    .retargeting-page .service-item {
+        background: white !important;
+        border: 1px solid #e2e8f0 !important;
+        border-radius: 12px !important;
+        padding: 24px !important;
+        text-align: center !important;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.1) !important;
+        max-width: 100% !important;
+        word-wrap: break-word !important;
+    }
+    
+    .retargeting-page .service-icon {
+        margin-bottom: 16px !important;
+    }
+    
+    .retargeting-page .service-icon i {
+        font-size: 2rem !important;
+        color: #f15a25 !important;
+    }
+    
+    .retargeting-page .service-item h3 {
+        color: #1e293b !important;
+        font-size: 1.3rem !important;
+        font-weight: 700 !important;
+        margin-bottom: 12px !important;
+        line-height: 1.3 !important;
+    }
+    
+    .retargeting-page .service-item p {
+        color: #64748b !important;
+        font-size: 0.95rem !important;
+        line-height: 1.5 !important;
+        margin-bottom: 0 !important;
+    }
+    
+    /* Tools section mobile adjustments - KEY FIX FOR WIDTH ISSUE */
+    .retargeting-page .tools-section {
+        padding: 60px 0 !important;
+        background: #f8fafc !important;
+        overflow-x: hidden !important;
+    }
+    
+    .retargeting-page .tools-section .container {
+        width: 100% !important;
+        max-width: 100% !important;
+        padding: 0 20px !important;
+        overflow-x: hidden !important;
+    }
+    
+    .retargeting-page .tools-section h2 {
+        font-size: 2rem !important;
+        font-weight: 700 !important;
+        color: #1e293b !important;
+        text-align: center !important;
+        margin-bottom: 40px !important;
+        line-height: 1.3 !important;
+        word-wrap: break-word !important;
+    }
+    
+    .retargeting-page .tools-section .tools-grid {
+        display: grid !important;
+        grid-template-columns: 1fr !important;
+        gap: 20px !important;
+        max-width: 100% !important;
+        width: 100% !important;
+        margin: 0 auto !important;
+        overflow-x: hidden !important;
+    }
+    
+    .retargeting-page .tools-section .tool-item {
+        background: white !important;
+        border: 1px solid #e2e8f0 !important;
+        border-radius: 12px !important;
+        padding: 24px !important;
+        text-align: center !important;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.1) !important;
+        max-width: 100% !important;
+        width: 100% !important;
+        word-wrap: break-word !important;
+        overflow-wrap: break-word !important;
+        hyphens: auto !important;
+    }
+    
+    .retargeting-page .tools-section .tool-icon {
+        margin: 0 auto 16px !important;
+        background: #f15a25 !important;
+        width: 64px !important;
+        height: 64px !important;
+        border-radius: 50% !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+    }
+    
+    .retargeting-page .tools-section .tool-icon i {
+        font-size: 2rem !important;
+        color: white !important;
+    }
+    
+    .retargeting-page .tools-section .tool-item h3 {
+        color: #1e293b !important;
+        font-size: 1.3rem !important;
+        font-weight: 700 !important;
+        margin-bottom: 12px !important;
+        line-height: 1.3 !important;
+        word-wrap: break-word !important;
+    }
+    
+    .retargeting-page .tools-section .tool-item p {
+        color: #64748b !important;
+        font-size: 0.95rem !important;
+        line-height: 1.5 !important;
+        margin: 0 !important;
+        word-wrap: break-word !important;
+        overflow-wrap: break-word !important;
+        hyphens: auto !important;
+    }
+    
+    /* Industries section mobile adjustments */
+    .retargeting-page .industries-section {
+        padding: 60px 0 !important;
+        background: white !important;
+    }
+    
+    .retargeting-page .industries-section h2 {
+        font-size: 2rem !important;
+        font-weight: 700 !important;
+        color: #1e293b !important;
+        text-align: center !important;
+        margin-bottom: 40px !important;
+        line-height: 1.3 !important;
+    }
+    
+    .retargeting-page .industries-grid {
+        display: grid !important;
+        grid-template-columns: 1fr !important;
+        gap: 20px !important;
+        max-width: 100% !important;
+        padding: 0 20px !important;
+    }
+    
+    .retargeting-page .industry-item {
+        background: white !important;
+        border: 1px solid #e2e8f0 !important;
+        border-radius: 12px !important;
+        padding: 24px !important;
+        text-align: center !important;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.1) !important;
+        max-width: 100% !important;
+        word-wrap: break-word !important;
+    }
+    
+    .retargeting-page .industry-item h3 {
+        color: #1e293b !important;
+        font-size: 1.3rem !important;
+        font-weight: 700 !important;
+        margin-bottom: 12px !important;
+        line-height: 1.3 !important;
+    }
+    
+    .retargeting-page .industry-item p {
+        color: #64748b !important;
+        font-size: 0.95rem !important;
+        line-height: 1.5 !important;
+        margin-bottom: 0 !important;
+    }
+    
+    /* CTA sections mobile adjustments */
+    .retargeting-page .cta-section {
+        padding: 60px 0 !important;
+        background: linear-gradient(135deg, #1e293b 0%, #334155 100%) !important;
+    }
+    
+    .retargeting-page .cta-content {
+        text-align: center !important;
+        max-width: 100% !important;
+        padding: 0 20px !important;
+    }
+    
+    .retargeting-page .cta-content h2 {
+        font-size: 2rem !important;
+        font-weight: 700 !important;
+        color: white !important;
+        margin-bottom: 20px !important;
+        line-height: 1.3 !important;
+    }
+    
+    .retargeting-page .cta-content p {
+        font-size: 1.1rem !important;
+        color: #cbd5e1 !important;
+        line-height: 1.6 !important;
+        margin-bottom: 30px !important;
+    }
+    
+    .retargeting-page .simple-cta-buttons {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 15px !important;
+        width: 100% !important;
+        align-items: stretch !important;
+    }
+    
+    .retargeting-page .simple-cta-buttons .btn {
+        width: 100% !important;
+        padding: 16px 24px !important;
+        font-size: 1.1rem !important;
+        font-weight: 600 !important;
+        text-align: center !important;
+        border-radius: 8px !important;
+        transition: all 0.3s ease !important;
+        text-decoration: none !important;
+        display: block !important;
+        margin: 0 !important;
+    }
+    
+    .retargeting-page .simple-cta-buttons .btn-primary {
+        background: #f15a25 !important;
+        color: white !important;
+        border: 2px solid #f15a25 !important;
+    }
+    
+    .retargeting-page .simple-cta-buttons .btn-outline {
+        background: transparent !important;
+        color: white !important;
+        border: 2px solid white !important;
+    }
+    
+    /* Inline CTAs mobile adjustments */
+    .retargeting-page .text-center {
+        padding: 0 20px !important;
+        margin-top: 40px !important;
+    }
+    
+    .retargeting-page .inline-cta-content {
+        max-width: 100% !important;
+        padding: 0 !important;
+        text-align: center !important;
+    }
+    
+    .retargeting-page .inline-cta-content .cta-text {
+        font-size: 1rem !important;
+        line-height: 1.6 !important;
+        margin-bottom: 20px !important;
+        color: #64748b !important;
+    }
+    
+    .retargeting-page .inline-cta-content .btn {
+        width: 100% !important;
+        padding: 16px 24px !important;
+        font-size: 1.1rem !important;
+        font-weight: 600 !important;
+        text-align: center !important;
+        border-radius: 8px !important;
+        background: #f15a25 !important;
+        color: white !important;
+        border: 2px solid #f15a25 !important;
+        transition: all 0.3s ease !important;
+        text-decoration: none !important;
+        display: block !important;
+        margin: 0 !important;
+    }
+    
+    .retargeting-page .inline-cta-content .btn:hover {
+        background: #d14a1f !important;
+        border-color: #d14a1f !important;
+        transform: translateY(-2px) !important;
+        box-shadow: 0 4px 12px rgba(241, 90, 37, 0.3) !important;
+    }
+}
+</style>
+
 <?php get_footer(); ?>

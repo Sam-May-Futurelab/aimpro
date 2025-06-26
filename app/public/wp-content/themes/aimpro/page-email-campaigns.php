@@ -433,4 +433,306 @@ get_header(); ?>
     </section>
 </main>
 
+<style>
+/* Mobile-specific styles for Email Campaigns page */
+@media (max-width: 768px) {
+    /* Hero section mobile adjustments */
+    .email-campaigns-page .hero-stats {
+        grid-template-columns: 1fr !important;
+        gap: 20px !important;
+        max-width: 100% !important;
+    }
+    
+    .email-campaigns-page .hero-stats .stat-item {
+        background: rgba(255, 255, 255, 0.1) !important;
+        backdrop-filter: blur(10px) !important;
+        border-radius: 12px !important;
+        padding: 20px !important;
+        text-align: center !important;
+        min-height: auto !important;
+    }
+    
+    .email-campaigns-page .hero-stats .stat-number {
+        font-size: 2.5rem !important;
+        font-weight: 800 !important;
+        color: #f15a25 !important;
+        margin-bottom: 8px !important;
+        line-height: 1.1 !important;
+    }
+    
+    .email-campaigns-page .hero-stats .stat-label {
+        font-size: 0.95rem !important;
+        color: white !important;
+        font-weight: 500 !important;
+        line-height: 1.3 !important;
+    }
+    
+    .email-campaigns-page .hero-ctas {
+        flex-direction: column !important;
+        gap: 15px !important;
+        width: 100% !important;
+        align-items: stretch !important;
+    }
+    
+    .email-campaigns-page .hero-ctas .btn-primary,
+    .email-campaigns-page .hero-ctas .btn-outline {
+        width: 100% !important;
+        padding: 16px 24px !important;
+        font-size: 1.1rem !important;
+        font-weight: 600 !important;
+        text-align: center !important;
+        border-radius: 8px !important;
+        transition: all 0.3s ease !important;
+    }
+    
+    .email-campaigns-page .hero-ctas .btn-primary {
+        background: #f15a25 !important;
+        color: white !important;
+        border: 2px solid #f15a25 !important;
+    }
+    
+    .email-campaigns-page .hero-ctas .btn-outline {
+        background: transparent !important;
+        color: white !important;
+        border: 2px solid white !important;
+    }
+    
+    /* Service overview mobile adjustments */
+    .email-campaigns-page .services-grid {
+        grid-template-columns: 1fr !important;
+        gap: 20px !important;
+    }
+    
+    .email-campaigns-page .service-item {
+        background: white !important;
+        border: 1px solid #e2e8f0 !important;
+        border-radius: 12px !important;
+        padding: 24px !important;
+        text-align: center !important;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.1) !important;
+    }
+    
+    .email-campaigns-page .service-icon {
+        margin-bottom: 16px !important;
+    }
+    
+    .email-campaigns-page .service-icon i {
+        font-size: 2rem !important;
+        color: #f15a25 !important;
+    }
+    
+    .email-campaigns-page .service-item h3 {
+        color: #1e293b !important;
+        font-size: 1.3rem !important;
+        font-weight: 700 !important;
+        margin-bottom: 12px !important;
+        line-height: 1.3 !important;
+    }
+    
+    .email-campaigns-page .service-item p {
+        color: #64748b !important;
+        font-size: 0.95rem !important;
+        line-height: 1.5 !important;
+        margin-bottom: 0 !important;
+    }
+    
+    /* Tools section mobile adjustments */
+    .email-campaigns-page .tools-section {
+        padding: 60px 0 !important;
+        background: #f8fafc !important;
+    }
+    
+    .email-campaigns-page .tools-section h2 {
+        font-size: 2rem !important;
+        font-weight: 700 !important;
+        color: #1e293b !important;
+        text-align: center !important;
+        margin-bottom: 40px !important;
+        line-height: 1.3 !important;
+    }
+    
+    .email-campaigns-page .tools-grid {
+        grid-template-columns: 1fr !important;
+        gap: 20px !important;
+        max-width: 100% !important;
+    }
+    
+    .email-campaigns-page .tool-item {
+        background: white !important;
+        border: 1px solid #e2e8f0 !important;
+        border-radius: 12px !important;
+        padding: 24px !important;
+        text-align: center !important;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.1) !important;
+        max-width: 100% !important;
+        word-wrap: break-word !important;
+    }
+    
+    .email-campaigns-page .tool-icon {
+        margin-bottom: 16px !important;
+        background: #f15a25 !important;
+        width: 64px !important;
+        height: 64px !important;
+        border-radius: 50% !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        margin: 0 auto 16px !important;
+    }
+    
+    .email-campaigns-page .tool-icon i {
+        font-size: 2rem !important;
+        color: white !important;
+    }
+    
+    .email-campaigns-page .tool-item h3 {
+        color: #1e293b !important;
+        font-size: 1.3rem !important;
+        font-weight: 700 !important;
+        margin-bottom: 12px !important;
+        line-height: 1.3 !important;
+    }
+    
+    .email-campaigns-page .tool-item p {
+        color: #64748b !important;
+        font-size: 0.95rem !important;
+        line-height: 1.5 !important;
+        margin-bottom: 0 !important;
+    }
+    
+    /* Industries section mobile adjustments */
+    .email-campaigns-page .industries-section {
+        padding: 60px 0 !important;
+        background: white !important;
+    }
+    
+    .email-campaigns-page .industries-section h2 {
+        font-size: 2rem !important;
+        font-weight: 700 !important;
+        color: #1e293b !important;
+        text-align: center !important;
+        margin-bottom: 40px !important;
+        line-height: 1.3 !important;
+    }
+    
+    .email-campaigns-page .industries-grid {
+        grid-template-columns: 1fr !important;
+        gap: 20px !important;
+        max-width: 100% !important;
+    }
+    
+    .email-campaigns-page .industry-item {
+        background: white !important;
+        border: 1px solid #e2e8f0 !important;
+        border-radius: 12px !important;
+        padding: 24px !important;
+        text-align: center !important;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.1) !important;
+        max-width: 100% !important;
+        word-wrap: break-word !important;
+    }
+    
+    .email-campaigns-page .industry-item h3 {
+        color: #1e293b !important;
+        font-size: 1.3rem !important;
+        font-weight: 700 !important;
+        margin-bottom: 12px !important;
+        line-height: 1.3 !important;
+    }
+    
+    .email-campaigns-page .industry-item p {
+        color: #64748b !important;
+        font-size: 0.95rem !important;
+        line-height: 1.5 !important;
+        margin-bottom: 0 !important;
+    }
+    
+    /* Testimonial section mobile adjustments */
+    .email-campaigns-page .testimonial-section {
+        padding: 60px 0 !important;
+        background: #f8fafc !important;
+    }
+    
+    .email-campaigns-page .testimonial-content {
+        max-width: 100% !important;
+        text-align: center !important;
+        padding: 0 20px !important;
+    }
+    
+    .email-campaigns-page .testimonial-content blockquote {
+        font-size: 1.1rem !important;
+        line-height: 1.6 !important;
+        color: #1e293b !important;
+        font-style: italic !important;
+        margin-bottom: 24px !important;
+    }
+    
+    .email-campaigns-page .testimonial-content cite {
+        font-size: 0.9rem !important;
+        color: #64748b !important;
+    }
+    
+    .email-campaigns-page .testimonial-content cite strong {
+        color: #1e293b !important;
+        font-weight: 600 !important;
+    }
+    
+    /* CTA section mobile adjustments */
+    .email-campaigns-page .cta-section {
+        padding: 60px 0 !important;
+        background: linear-gradient(135deg, #1e293b 0%, #334155 100%) !important;
+    }
+    
+    .email-campaigns-page .cta-content {
+        text-align: center !important;
+        max-width: 100% !important;
+        padding: 0 20px !important;
+    }
+    
+    .email-campaigns-page .cta-content h2 {
+        font-size: 2rem !important;
+        font-weight: 700 !important;
+        color: white !important;
+        margin-bottom: 20px !important;
+        line-height: 1.3 !important;
+    }
+    
+    .email-campaigns-page .cta-content p {
+        font-size: 1.1rem !important;
+        color: #cbd5e1 !important;
+        line-height: 1.6 !important;
+        margin-bottom: 30px !important;
+    }
+    
+    .email-campaigns-page .cta-buttons {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 15px !important;
+        width: 100% !important;
+        align-items: stretch !important;
+    }
+    
+    .email-campaigns-page .cta-buttons .btn-outline {
+        width: 100% !important;
+        padding: 16px 24px !important;
+        font-size: 1.1rem !important;
+        font-weight: 600 !important;
+        text-align: center !important;
+        border-radius: 8px !important;
+        background: #f15a25 !important;
+        color: white !important;
+        border: 2px solid #f15a25 !important;
+        transition: all 0.3s ease !important;
+        text-decoration: none !important;
+    }
+    
+    .email-campaigns-page .cta-buttons .btn-outline:hover {
+        background: #d14a1f !important;
+        border-color: #d14a1f !important;
+        transform: translateY(-2px) !important;
+        box-shadow: 0 4px 12px rgba(241, 90, 37, 0.3) !important;
+    }
+}
+</style>
+
 <?php get_footer(); ?>

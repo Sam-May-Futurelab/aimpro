@@ -77,7 +77,6 @@ get_header(); ?>
                 </div>
                 <div class="hero-ctas">
                     <a href="#contact" class="btn-primary streamlined"><?php echo esc_html(get_post_meta(get_the_ID(), 'ai_hero_primary_btn', true) ?: 'Start CRM Setup'); ?></a>
-                    <a href="#packages" class="btn-outline streamlined"><?php echo esc_html(get_post_meta(get_the_ID(), 'ai_hero_secondary_btn', true) ?: 'View Packages'); ?></a>
                 </div>
             </div>
         </div>
@@ -462,6 +461,444 @@ get_header(); ?>
         </div>
     </section>
 </main>
+
+<style>
+/* Mobile-specific styles for AI CRM page */
+@media (max-width: 768px) {
+    /* Hero section mobile adjustments */
+    .ai-crm-page .hero-stats {
+        grid-template-columns: 1fr !important;
+        gap: 20px !important;
+        max-width: 100% !important;
+    }
+    
+    .ai-crm-page .hero-stats .stat-item {
+        background: rgba(255, 255, 255, 0.1) !important;
+        backdrop-filter: blur(10px) !important;
+        border-radius: 12px !important;
+        padding: 20px !important;
+        text-align: center !important;
+        min-height: auto !important;
+    }
+    
+    .ai-crm-page .hero-stats .stat-number {
+        font-size: 2.5rem !important;
+        font-weight: 800 !important;
+        color: #f15a25 !important;
+        margin-bottom: 8px !important;
+        line-height: 1.1 !important;
+    }
+    
+    .ai-crm-page .hero-stats .stat-label {
+        font-size: 0.95rem !important;
+        color: white !important;
+        font-weight: 500 !important;
+        line-height: 1.3 !important;
+    }
+    
+    .ai-crm-page .hero-ctas {
+        flex-direction: column !important;
+        gap: 15px !important;
+        width: 100% !important;
+        align-items: stretch !important;
+    }
+    
+    .ai-crm-page .hero-ctas .btn-primary,
+    .ai-crm-page .hero-ctas .btn-outline {
+        width: 100% !important;
+        padding: 16px 24px !important;
+        font-size: 1.1rem !important;
+        font-weight: 600 !important;
+        text-align: center !important;
+        border-radius: 8px !important;
+        transition: all 0.3s ease !important;
+    }
+    
+    .ai-crm-page .hero-ctas .btn-primary {
+        background: #f15a25 !important;
+        color: white !important;
+        border: 2px solid #f15a25 !important;
+    }
+    
+    .ai-crm-page .hero-ctas .btn-outline {
+        background: transparent !important;
+        color: white !important;
+        border: 2px solid white !important;
+    }
+    
+    /* Service overview mobile adjustments */
+    .ai-crm-page .services-grid {
+        grid-template-columns: 1fr !important;
+        gap: 20px !important;
+    }
+    
+    .ai-crm-page .service-item {
+        background: white !important;
+        border: 1px solid #e2e8f0 !important;
+        border-radius: 12px !important;
+        padding: 24px !important;
+        text-align: center !important;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.1) !important;
+    }
+    
+    .ai-crm-page .service-icon {
+        margin-bottom: 16px !important;
+    }
+    
+    .ai-crm-page .service-icon i {
+        font-size: 2rem !important;
+        color: #f15a25 !important;
+    }
+    
+    .ai-crm-page .service-item h3 {
+        color: #1e293b !important;
+        font-size: 1.3rem !important;
+        font-weight: 700 !important;
+        margin-bottom: 12px !important;
+        line-height: 1.3 !important;
+    }
+    
+    .ai-crm-page .service-item p {
+        color: #64748b !important;
+        font-size: 0.95rem !important;
+        line-height: 1.5 !important;
+        margin-bottom: 0 !important;
+    }
+    
+    /* AI Features section mobile adjustments - KEY FIX FOR WIDTH ISSUE */
+    .ai-crm-page .tools-section {
+        padding: 60px 0 !important;
+        background: #f8fafc !important;
+        overflow-x: hidden !important;
+    }
+    
+    .ai-crm-page .tools-section .container {
+        width: 100% !important;
+        max-width: 100% !important;
+        padding: 0 20px !important;
+        overflow-x: hidden !important;
+    }
+    
+    .ai-crm-page .tools-section .section-header h2 {
+        font-size: 2rem !important;
+        font-weight: 700 !important;
+        color: #1e293b !important;
+        text-align: center !important;
+        margin-bottom: 16px !important;
+        line-height: 1.3 !important;
+        word-wrap: break-word !important;
+    }
+    
+    .ai-crm-page .tools-section .section-header p {
+        font-size: 1rem !important;
+        color: #64748b !important;
+        line-height: 1.6 !important;
+        text-align: center !important;
+        margin: 0 auto 40px !important;
+        max-width: 100% !important;
+        padding: 0 10px !important;
+    }
+    
+    .ai-crm-page .tools-section .tools-grid {
+        display: grid !important;
+        grid-template-columns: 1fr !important;
+        gap: 20px !important;
+        max-width: 100% !important;
+        width: 100% !important;
+        margin: 0 auto !important;
+        overflow-x: hidden !important;
+    }
+    
+    .ai-crm-page .tools-section .tool-item {
+        background: white !important;
+        border: 1px solid #e2e8f0 !important;
+        border-radius: 12px !important;
+        padding: 24px !important;
+        text-align: center !important;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.1) !important;
+        max-width: 100% !important;
+        width: 100% !important;
+        word-wrap: break-word !important;
+        overflow-wrap: break-word !important;
+        hyphens: auto !important;
+    }
+    
+    .ai-crm-page .tools-section .tool-icon {
+        margin: 0 auto 16px !important;
+        background: #f15a25 !important;
+        width: 64px !important;
+        height: 64px !important;
+        border-radius: 50% !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+    }
+    
+    .ai-crm-page .tools-section .tool-icon i {
+        font-size: 2rem !important;
+        color: white !important;
+    }
+    
+    .ai-crm-page .tools-section .tool-item h3 {
+        color: #1e293b !important;
+        font-size: 1.3rem !important;
+        font-weight: 700 !important;
+        margin-bottom: 12px !important;
+        line-height: 1.3 !important;
+        word-wrap: break-word !important;
+    }
+    
+    .ai-crm-page .tools-section .tool-item p {
+        color: #64748b !important;
+        font-size: 0.95rem !important;
+        line-height: 1.5 !important;
+        margin: 0 !important;
+        word-wrap: break-word !important;
+        overflow-wrap: break-word !important;
+        hyphens: auto !important;
+    }
+    
+    /* Pricing section mobile adjustments */
+    .ai-crm-page .pricing-section {
+        padding: 60px 0 !important;
+        background: white !important;
+    }
+    
+    .ai-crm-page .pricing-section .section-header h2 {
+        font-size: 2rem !important;
+        font-weight: 700 !important;
+        color: #1e293b !important;
+        text-align: center !important;
+        margin-bottom: 16px !important;
+        line-height: 1.3 !important;
+    }
+    
+    .ai-crm-page .pricing-section .section-header p {
+        font-size: 1rem !important;
+        color: #64748b !important;
+        line-height: 1.6 !important;
+        text-align: center !important;
+        margin: 0 auto 40px !important;
+        max-width: 100% !important;
+    }
+    
+    .ai-crm-page .pricing-grid {
+        grid-template-columns: 1fr !important;
+        gap: 20px !important;
+        max-width: 100% !important;
+    }
+    
+    .ai-crm-page .pricing-card {
+        background: white !important;
+        border: 1px solid #e2e8f0 !important;
+        border-radius: 12px !important;
+        padding: 24px !important;
+        text-align: center !important;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.1) !important;
+        max-width: 100% !important;
+        word-wrap: break-word !important;
+    }
+    
+    .ai-crm-page .pricing-card.featured {
+        border: 2px solid #f15a25 !important;
+        transform: none !important;
+        position: relative !important;
+    }
+    
+    .ai-crm-page .pricing-card .pricing-header h3 {
+        color: #1e293b !important;
+        font-size: 1.4rem !important;
+        font-weight: 700 !important;
+        margin-bottom: 12px !important;
+        line-height: 1.3 !important;
+    }
+    
+    .ai-crm-page .pricing-card .price {
+        font-size: 2.5rem !important;
+        font-weight: 800 !important;
+        color: #f15a25 !important;
+        margin-bottom: 8px !important;
+        line-height: 1.1 !important;
+    }
+    
+    .ai-crm-page .pricing-card .pricing-features {
+        list-style: none !important;
+        padding: 0 !important;
+        margin: 20px 0 !important;
+    }
+    
+    .ai-crm-page .pricing-card .pricing-features li {
+        padding: 8px 0 !important;
+        color: #64748b !important;
+        font-size: 0.95rem !important;
+        line-height: 1.4 !important;
+        border-bottom: 1px solid #f1f5f9 !important;
+    }
+    
+    .ai-crm-page .pricing-card .btn-outline,
+    .ai-crm-page .pricing-card .btn-primary {
+        width: 100% !important;
+        padding: 16px 24px !important;
+        font-size: 1.1rem !important;
+        font-weight: 600 !important;
+        text-align: center !important;
+        border-radius: 8px !important;
+        background: #f15a25 !important;
+        color: white !important;
+        border: 2px solid #f15a25 !important;
+        transition: all 0.3s ease !important;
+        text-decoration: none !important;
+        margin: 20px auto 0 auto !important;
+        display: block !important;
+        max-width: none !important;
+    }
+    
+    .ai-crm-page .pricing-card .btn-outline:hover,
+    .ai-crm-page .pricing-card .btn-primary:hover {
+        background: #d14a1f !important;
+        border-color: #d14a1f !important;
+        transform: translateY(-2px) !important;
+        box-shadow: 0 4px 12px rgba(241, 90, 37, 0.3) !important;
+    }
+    
+    /* Process steps mobile adjustments */
+    .ai-crm-page .process-steps {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 20px !important;
+        max-width: 100% !important;
+    }
+    
+    .ai-crm-page .process-step {
+        display: flex !important;
+        flex-direction: row !important;
+        align-items: flex-start !important;
+        background: white !important;
+        border: 1px solid #e2e8f0 !important;
+        border-radius: 12px !important;
+        padding: 20px !important;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.1) !important;
+        max-width: 100% !important;
+        word-wrap: break-word !important;
+    }
+    
+    .ai-crm-page .step-number {
+        background: #f15a25 !important;
+        color: white !important;
+        width: 40px !important;
+        height: 40px !important;
+        border-radius: 50% !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        font-weight: 700 !important;
+        font-size: 1.1rem !important;
+        margin-right: 16px !important;
+        flex-shrink: 0 !important;
+    }
+    
+    .ai-crm-page .step-content h3 {
+        color: #1e293b !important;
+        font-size: 1.2rem !important;
+        font-weight: 700 !important;
+        margin-bottom: 8px !important;
+        line-height: 1.3 !important;
+    }
+    
+    .ai-crm-page .step-content p {
+        color: #64748b !important;
+        font-size: 0.9rem !important;
+        line-height: 1.5 !important;
+        margin: 0 !important;
+    }
+    
+    /* Testimonial section mobile adjustments */
+    .ai-crm-page .testimonial-section {
+        padding: 60px 0 !important;
+        background: #f8fafc !important;
+    }
+    
+    .ai-crm-page .testimonial-content {
+        max-width: 100% !important;
+        text-align: center !important;
+        padding: 0 20px !important;
+    }
+    
+    .ai-crm-page .testimonial-content blockquote {
+        font-size: 1.1rem !important;
+        line-height: 1.6 !important;
+        color: #1e293b !important;
+        font-style: italic !important;
+        margin-bottom: 24px !important;
+    }
+    
+    .ai-crm-page .testimonial-content cite {
+        font-size: 0.9rem !important;
+        color: #64748b !important;
+    }
+    
+    .ai-crm-page .testimonial-content cite strong {
+        color: #1e293b !important;
+        font-weight: 600 !important;
+    }
+    
+    /* CTA section mobile adjustments */
+    .ai-crm-page .cta-section {
+        padding: 60px 0 !important;
+        background: linear-gradient(135deg, #1e293b 0%, #334155 100%) !important;
+    }
+    
+    .ai-crm-page .cta-content {
+        text-align: center !important;
+        max-width: 100% !important;
+        padding: 0 20px !important;
+    }
+    
+    .ai-crm-page .cta-content h2 {
+        font-size: 2rem !important;
+        font-weight: 700 !important;
+        color: white !important;
+        margin-bottom: 20px !important;
+        line-height: 1.3 !important;
+    }
+    
+    .ai-crm-page .cta-content p {
+        font-size: 1.1rem !important;
+        color: #cbd5e1 !important;
+        line-height: 1.6 !important;
+        margin-bottom: 30px !important;
+    }
+    
+    .ai-crm-page .cta-buttons {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 15px !important;
+        width: 100% !important;
+        align-items: stretch !important;
+    }
+    
+    .ai-crm-page .cta-buttons .btn-outline {
+        width: 100% !important;
+        padding: 16px 24px !important;
+        font-size: 1.1rem !important;
+        font-weight: 600 !important;
+        text-align: center !important;
+        border-radius: 8px !important;
+        background: #f15a25 !important;
+        color: white !important;
+        border: 2px solid #f15a25 !important;
+        transition: all 0.3s ease !important;
+        text-decoration: none !important;
+    }
+    
+    .ai-crm-page .cta-buttons .btn-outline:hover {
+        background: #d14a1f !important;
+        border-color: #d14a1f !important;
+        transform: translateY(-2px) !important;
+        box-shadow: 0 4px 12px rgba(241, 90, 37, 0.3) !important;
+    }
+}
+</style>
 
 <?php get_footer(); ?>
 

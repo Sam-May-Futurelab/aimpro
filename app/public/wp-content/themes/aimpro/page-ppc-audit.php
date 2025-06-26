@@ -426,6 +426,373 @@ get_header(); ?>
     display: inline-block;
     margin: 0 auto;
 }
+
+/* Mobile-specific styles for PPC Audit page */
+@media (max-width: 768px) {
+    /* Hero section mobile adjustments */
+    .ppc-audit-page .page-hero {
+        padding: 80px 0 60px !important;
+        min-height: auto !important;
+        background: #ffffff !important;
+    }
+    
+    .ppc-audit-page .hero-content {
+        text-align: center !important;
+        max-width: 100% !important;
+        padding: 0 20px !important;
+    }
+    
+    .ppc-audit-page .hero-content h1 {
+        font-size: 2.2rem !important;
+        font-weight: 800 !important;
+        color: #1e293b !important;
+        margin-bottom: 20px !important;
+        line-height: 1.2 !important;
+        word-wrap: break-word !important;
+    }
+    
+    .ppc-audit-page .hero-subtitle {
+        font-size: 1.1rem !important;
+        color: #64748b !important;
+        line-height: 1.6 !important;
+        margin-bottom: 30px !important;
+        max-width: 100% !important;
+        word-wrap: break-word !important;
+    }
+    
+    .ppc-audit-page .hero-stats {
+        display: grid !important;
+        grid-template-columns: 1fr !important;
+        gap: 20px !important;
+        max-width: 100% !important;
+        margin-bottom: 30px !important;
+    }
+    
+    .ppc-audit-page .hero-stats .stat-item {
+        background: #f8fafc !important;
+        border: 1px solid #e2e8f0 !important;
+        border-radius: 12px !important;
+        padding: 20px !important;
+        text-align: center !important;
+        min-height: auto !important;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.1) !important;
+    }
+    
+    .ppc-audit-page .hero-stats .stat-number {
+        font-size: 2.5rem !important;
+        font-weight: 800 !important;
+        color: #f15a25 !important;
+        margin-bottom: 8px !important;
+        line-height: 1.1 !important;
+    }
+    
+    .ppc-audit-page .hero-stats .stat-label {
+        font-size: 0.95rem !important;
+        color: #64748b !important;
+        font-weight: 500 !important;
+        line-height: 1.3 !important;
+        word-wrap: break-word !important;
+    }
+    
+    .ppc-audit-page .hero-ctas {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 15px !important;
+        width: 100% !important;
+        align-items: stretch !important;
+    }
+    
+    .ppc-audit-page .hero-ctas .btn-primary {
+        width: 100% !important;
+        padding: 16px 24px !important;
+        font-size: 1.1rem !important;
+        font-weight: 600 !important;
+        text-align: center !important;
+        border-radius: 8px !important;
+        background: #f15a25 !important;
+        color: white !important;
+        border: 2px solid #f15a25 !important;
+        transition: all 0.3s ease !important;
+        text-decoration: none !important;
+    }
+    
+    .ppc-audit-page .hero-ctas .btn-primary:hover {
+        background: #d14a1f !important;
+        border-color: #d14a1f !important;
+        transform: translateY(-2px) !important;
+        box-shadow: 0 4px 12px rgba(241, 90, 37, 0.3) !important;
+    }
+    
+    /* Service overview mobile adjustments */
+    .ppc-audit-page .service-overview {
+        padding: 60px 0 !important;
+        background: white !important;
+    }
+    
+    .ppc-audit-page .overview-content {
+        text-align: center !important;
+        max-width: 100% !important;
+        padding: 0 20px !important;
+        margin-bottom: 40px !important;
+    }
+    
+    .ppc-audit-page .overview-content h2 {
+        font-size: 2rem !important;
+        font-weight: 700 !important;
+        color: #1e293b !important;
+        margin-bottom: 20px !important;
+        line-height: 1.3 !important;
+    }
+    
+    .ppc-audit-page .overview-content p {
+        font-size: 1.1rem !important;
+        color: #64748b !important;
+        line-height: 1.6 !important;
+        margin-bottom: 0 !important;
+    }
+    
+    .ppc-audit-page .services-grid {
+        display: grid !important;
+        grid-template-columns: 1fr !important;
+        gap: 20px !important;
+        max-width: 100% !important;
+        padding: 0 20px !important;
+    }
+    
+    .ppc-audit-page .service-item {
+        background: white !important;
+        border: 1px solid #e2e8f0 !important;
+        border-radius: 12px !important;
+        padding: 24px !important;
+        text-align: center !important;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.1) !important;
+        max-width: 100% !important;
+        word-wrap: break-word !important;
+    }
+    
+    .ppc-audit-page .service-icon {
+        margin-bottom: 16px !important;
+    }
+    
+    .ppc-audit-page .service-icon i {
+        font-size: 2rem !important;
+        color: #f15a25 !important;
+    }
+    
+    .ppc-audit-page .service-item h3 {
+        color: #1e293b !important;
+        font-size: 1.3rem !important;
+        font-weight: 700 !important;
+        margin-bottom: 12px !important;
+        line-height: 1.3 !important;
+    }
+    
+    .ppc-audit-page .service-item p {
+        color: #64748b !important;
+        font-size: 0.95rem !important;
+        line-height: 1.5 !important;
+        margin-bottom: 0 !important;
+    }
+    
+    /* Process section mobile adjustments */
+    .ppc-audit-page .process-steps {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 20px !important;
+        max-width: 100% !important;
+        padding: 0 20px !important;
+    }
+    
+    .ppc-audit-page .process-step {
+        display: flex !important;
+        flex-direction: row !important;
+        align-items: flex-start !important;
+        background: white !important;
+        border: 1px solid #e2e8f0 !important;
+        border-radius: 12px !important;
+        padding: 20px !important;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.1) !important;
+        max-width: 100% !important;
+        word-wrap: break-word !important;
+    }
+    
+    .ppc-audit-page .step-number {
+        background: #f15a25 !important;
+        color: white !important;
+        width: 40px !important;
+        height: 40px !important;
+        border-radius: 50% !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        font-weight: 700 !important;
+        font-size: 1.1rem !important;
+        margin-right: 16px !important;
+        flex-shrink: 0 !important;
+    }
+    
+    .ppc-audit-page .step-content h3 {
+        color: #1e293b !important;
+        font-size: 1.2rem !important;
+        font-weight: 700 !important;
+        margin-bottom: 8px !important;
+        line-height: 1.3 !important;
+    }
+    
+    .ppc-audit-page .step-content p {
+        color: #64748b !important;
+        font-size: 0.9rem !important;
+        line-height: 1.5 !important;
+        margin: 0 !important;
+    }
+    
+    /* Pricing section mobile adjustments */
+    .ppc-audit-page .pricing-section {
+        padding: 60px 0 !important;
+        background: #f8fafc !important;
+    }
+    
+    .ppc-audit-page .pricing-section .section-header h2 {
+        font-size: 2rem !important;
+        font-weight: 700 !important;
+        color: #1e293b !important;
+        text-align: center !important;
+        margin-bottom: 16px !important;
+        line-height: 1.3 !important;
+    }
+    
+    .ppc-audit-page .pricing-section .section-header p {
+        font-size: 1rem !important;
+        color: #64748b !important;
+        line-height: 1.6 !important;
+        text-align: center !important;
+        margin: 0 auto 40px !important;
+        max-width: 100% !important;
+        padding: 0 20px !important;
+    }
+    
+    .ppc-audit-page .pricing-grid {
+        display: grid !important;
+        grid-template-columns: 1fr !important;
+        gap: 20px !important;
+        max-width: 100% !important;
+        padding: 0 20px !important;
+    }
+    
+    .ppc-audit-page .pricing-card {
+        background: white !important;
+        border: 1px solid #e2e8f0 !important;
+        border-radius: 12px !important;
+        padding: 24px !important;
+        text-align: center !important;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.1) !important;
+        max-width: 100% !important;
+        word-wrap: break-word !important;
+    }
+    
+    .ppc-audit-page .pricing-card.featured {
+        border: 2px solid #f15a25 !important;
+        transform: none !important;
+        position: relative !important;
+    }
+    
+    .ppc-audit-page .pricing-card .pricing-header h3 {
+        color: #1e293b !important;
+        font-size: 1.4rem !important;
+        font-weight: 700 !important;
+        margin-bottom: 12px !important;
+        line-height: 1.3 !important;
+    }
+    
+    .ppc-audit-page .pricing-card .price {
+        font-size: 2.5rem !important;
+        font-weight: 800 !important;
+        color: #f15a25 !important;
+        margin-bottom: 8px !important;
+        line-height: 1.1 !important;
+    }
+    
+    /* CTA section mobile adjustments */
+    .ppc-audit-page .cta-section {
+        padding: 60px 0 !important;
+        background: linear-gradient(135deg, #1e293b 0%, #334155 100%) !important;
+    }
+    
+    .ppc-audit-page .cta-content {
+        text-align: center !important;
+        max-width: 100% !important;
+        padding: 0 20px !important;
+    }
+    
+    .ppc-audit-page .cta-content h2 {
+        font-size: 2rem !important;
+        font-weight: 700 !important;
+        color: white !important;
+        margin-bottom: 20px !important;
+        line-height: 1.3 !important;
+    }
+    
+    .ppc-audit-page .cta-content p {
+        font-size: 1.1rem !important;
+        color: #cbd5e1 !important;
+        line-height: 1.6 !important;
+        margin-bottom: 30px !important;
+    }
+    
+    .ppc-audit-page .cta-buttons {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 15px !important;
+        width: 100% !important;
+        align-items: stretch !important;
+    }
+    
+    .ppc-audit-page .cta-buttons .btn-outline {
+        width: 100% !important;
+        padding: 16px 24px !important;
+        font-size: 1.1rem !important;
+        font-weight: 600 !important;
+        text-align: center !important;
+        border-radius: 8px !important;
+        background: #f15a25 !important;
+        color: white !important;
+        border: 2px solid #f15a25 !important;
+        transition: all 0.3s ease !important;
+        text-decoration: none !important;
+    }
+    
+    /* Inline CTAs mobile adjustments */
+    .ppc-audit-page .text-center {
+        padding: 0 20px !important;
+    }
+    
+    .ppc-audit-page .inline-cta-content {
+        max-width: 100% !important;
+        padding: 0 !important;
+    }
+    
+    .ppc-audit-page .inline-cta-content .cta-text {
+        font-size: 1rem !important;
+        line-height: 1.6 !important;
+        margin-bottom: 20px !important;
+    }
+    
+    .ppc-audit-page .simple-cta-buttons .btn {
+        width: 100% !important;
+        padding: 16px 24px !important;
+        font-size: 1.1rem !important;
+        font-weight: 600 !important;
+        text-align: center !important;
+        border-radius: 8px !important;
+        background: #f15a25 !important;
+        color: white !important;
+        border: 2px solid #f15a25 !important;
+        transition: all 0.3s ease !important;
+        text-decoration: none !important;
+        display: block !important;
+        margin: 0 !important;
+    }
+}
 </style>
 
 <?php get_footer(); ?>

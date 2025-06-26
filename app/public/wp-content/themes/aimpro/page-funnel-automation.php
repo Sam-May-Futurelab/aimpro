@@ -564,11 +564,19 @@ get_header(); ?>
     
     .tools-section .tool-icon {
         margin-bottom: 16px !important;
+        background: #f15a25 !important;
+        width: 64px !important;
+        height: 64px !important;
+        border-radius: 50% !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        margin: 0 auto 16px !important;
     }
     
     .tools-section .tool-icon i {
         font-size: 2rem !important;
-        color: #f15a25 !important;
+        color: white !important;
     }
     
     .tools-section .tool-item h3 {
