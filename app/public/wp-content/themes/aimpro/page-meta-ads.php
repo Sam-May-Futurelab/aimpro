@@ -322,5 +322,322 @@ function get_meta_ads_meta($key, $post_id, $defaults, $prefix = '_meta_ads_') {
     </section>
 </main>
 
+<style>
+/* Mobile CSS for Meta Ads Page */
+@media (max-width: 768px) {
+    /* Hero Section Mobile Optimization */
+    .meta-ads-page .page-hero {
+        padding: 60px 0 !important;
+    }
+    
+    .meta-ads-page .hero-content {
+        text-align: center;
+        max-width: 100%;
+        padding: 0 20px;
+    }
+    
+    .meta-ads-page .page-hero h1 {
+        font-size: 2rem !important;
+        font-weight: 700;
+        color: #1e293b;
+        margin-bottom: 16px;
+        line-height: 1.3;
+    }
+    
+    .meta-ads-page .hero-subtitle {
+        font-size: 1.1rem !important;
+        color: #64748b;
+        line-height: 1.6;
+        margin-bottom: 30px;
+        max-width: 100%;
+    }
+    
+    .meta-ads-page .hero-stats {
+        display: grid !important;
+        grid-template-columns: 1fr !important;
+        gap: 20px !important;
+        margin: 30px 0 !important;
+        max-width: 100%;
+    }
+    
+    .meta-ads-page .stat-item {
+        background: white !important;
+        border: 2px solid #f15a25 !important;
+        border-radius: 12px !important;
+        padding: 20px !important;
+        text-align: center !important;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.1) !important;
+    }
+    
+    .meta-ads-page .stat-number {
+        font-size: 2rem !important;
+        font-weight: 800 !important;
+        color: #f15a25 !important;
+        display: block !important;
+        margin-bottom: 8px !important;
+    }
+    
+    .meta-ads-page .stat-label {
+        color: #64748b !important;
+        font-size: 0.9rem !important;
+        font-weight: 600 !important;
+        line-height: 1.3 !important;
+    }
+    
+    .meta-ads-page .hero-ctas {
+        margin-top: 30px !important;
+    }
+    
+    .meta-ads-page .hero-ctas .btn-primary {
+        background: #f15a25 !important;
+        color: white !important;
+        border: 2px solid #f15a25 !important;
+        padding: 16px 24px !important;
+        border-radius: 8px !important;
+        font-weight: 700 !important;
+        text-decoration: none !important;
+        display: block !important;
+        width: 100% !important;
+        text-align: center !important;
+        font-size: 1rem !important;
+    }
+    
+    /* Service Overview Grid */
+    .meta-ads-page .services-grid {
+        grid-template-columns: 1fr !important;
+        gap: 20px !important;
+    }
+    
+    .meta-ads-page .service-item {
+        background: white !important;
+        border: 1px solid #e2e8f0 !important;
+        border-radius: 12px !important;
+        padding: 24px !important;
+        text-align: center !important;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.1) !important;
+    }
+    
+    .meta-ads-page .service-icon {
+        margin-bottom: 16px !important;
+    }
+    
+    .meta-ads-page .service-icon i {
+        font-size: 2rem !important;
+        color: #f15a25 !important;
+    }
+    
+    .meta-ads-page .service-item h3 {
+        color: #1e293b !important;
+        font-size: 1.3rem !important;
+        font-weight: 700 !important;
+        margin-bottom: 12px !important;
+    }
+    
+    .meta-ads-page .service-item p {
+        color: #64748b !important;
+        font-size: 0.95rem !important;
+        line-height: 1.6 !important;
+        margin: 0 !important;
+    }
+    
+    /* Tools Section Mobile Optimization */
+    .meta-ads-page .tools-grid {
+        grid-template-columns: 1fr !important;
+        gap: 20px !important;
+    }
+    
+    .meta-ads-page .tool-item {
+        background: white !important;
+        border: 1px solid #e2e8f0 !important;
+        border-radius: 12px !important;
+        padding: 24px !important;
+        text-align: center !important;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.1) !important;
+    }
+    
+    .meta-ads-page .tool-icon {
+        margin-bottom: 16px !important;
+    }
+    
+    .meta-ads-page .tool-icon i {
+        font-size: 2rem !important;
+        color: #f15a25 !important;
+    }
+    
+    .meta-ads-page .tool-item h3 {
+        color: #1e293b !important;
+        font-size: 1.3rem !important;
+        font-weight: 700 !important;
+        margin-bottom: 12px !important;
+        line-height: 1.3 !important;
+    }
+    
+    .meta-ads-page .tool-item p {
+        color: #64748b !important;
+        font-size: 0.95rem !important;
+        line-height: 1.6 !important;
+        margin: 0 !important;
+    }
+    
+    /* Process Steps */
+    .meta-ads-page .process-steps {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 20px !important;
+    }
+    
+    .meta-ads-page .process-step {
+        background: white !important;
+        border: 1px solid #e2e8f0 !important;
+        border-radius: 12px !important;
+        padding: 24px !important;
+        display: flex !important;
+        align-items: flex-start !important;
+        gap: 16px !important;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.1) !important;
+    }
+    
+    .meta-ads-page .step-number {
+        background: #f15a25 !important;
+        color: white !important;
+        width: 40px !important;
+        height: 40px !important;
+        border-radius: 50% !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        font-weight: 700 !important;
+        font-size: 1.1rem !important;
+        flex-shrink: 0 !important;
+    }
+    
+    .meta-ads-page .step-content h3 {
+        color: #1e293b !important;
+        font-size: 1.2rem !important;
+        font-weight: 700 !important;
+        margin-bottom: 8px !important;
+    }
+    
+    .meta-ads-page .step-content p {
+        color: #64748b !important;
+        font-size: 0.95rem !important;
+        line-height: 1.6 !important;
+        margin: 0 !important;
+    }
+    
+    /* Pricing Grid */
+    .meta-ads-page .pricing-grid {
+        grid-template-columns: 1fr !important;
+        gap: 20px !important;
+    }
+    
+    .meta-ads-page .pricing-card {
+        background: white !important;
+        border: 1px solid #e2e8f0 !important;
+        border-radius: 12px !important;
+        padding: 24px !important;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.1) !important;
+    }
+    
+    .meta-ads-page .pricing-card.featured {
+        border: 2px solid #f15a25 !important;
+        box-shadow: 0 4px 12px rgba(241, 90, 37, 0.2) !important;
+    }
+    
+    /* Industries Grid */
+    .meta-ads-page .industries-grid {
+        grid-template-columns: 1fr !important;
+        gap: 20px !important;
+    }
+    
+    .meta-ads-page .industry-item {
+        background: white !important;
+        border: 1px solid #e2e8f0 !important;
+        border-radius: 12px !important;
+        padding: 24px !important;
+        text-align: center !important;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.1) !important;
+    }
+    
+    .meta-ads-page .industry-item h3 {
+        color: #f15a25 !important;
+        font-size: 1.3rem !important;
+        font-weight: 700 !important;
+        margin-bottom: 12px !important;
+    }
+    
+    .meta-ads-page .industry-item p {
+        color: #64748b !important;
+        font-size: 0.95rem !important;
+        line-height: 1.6 !important;
+        margin: 0 !important;
+    }
+    
+    /* CTA Section */
+    .meta-ads-page .meta-ads-cta .cta-buttons {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 12px !important;
+        margin: 24px 0 !important;
+    }
+    
+    .meta-ads-page .meta-ads-cta .btn {
+        background: #f15a25 !important;
+        color: white !important;
+        border: 2px solid #f15a25 !important;
+        padding: 16px 24px !important;
+        border-radius: 8px !important;
+        font-weight: 700 !important;
+        text-decoration: none !important;
+        text-align: center !important;
+        font-size: 1rem !important;
+        display: block !important;
+        width: 100% !important;
+    }
+    
+    .meta-ads-page .meta-ads-cta .btn-secondary {
+        background: transparent !important;
+        color: #f15a25 !important;
+    }
+    
+    .meta-ads-page .cta-benefits {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 8px !important;
+        text-align: center !important;
+        margin-top: 20px !important;
+    }
+    
+    .meta-ads-page .cta-benefits .benefit {
+        color: #059669 !important;
+        font-size: 0.9rem !important;
+        font-weight: 600 !important;
+    }
+    
+    /* Case Study Results Grid */
+    .meta-ads-page .secondary-results {
+        grid-template-columns: 1fr !important;
+        gap: 15px !important;
+        max-width: 100% !important;
+    }
+    
+    .meta-ads-page .result-stat {
+        padding: 15px !important;
+    }
+    
+    /* Testimonial */
+    .meta-ads-page .testimonial-content {
+        text-align: center !important;
+        padding: 0 20px !important;
+    }
+    
+    .meta-ads-page .testimonial-content blockquote {
+        font-size: 1.1rem !important;
+        line-height: 1.6 !important;
+        margin-bottom: 20px !important;
+    }
+}
+</style>
+
 <?php get_footer(); ?>
 

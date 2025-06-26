@@ -191,18 +191,19 @@ get_header();
     }
     
     #primary.google-ads-page .tool-item {
-        background: white !important;
-        border: 1px solid #e2e8f0 !important;
+        background: linear-gradient(135deg, #f15a25 0%, #e04a15 100%) !important;
+        border: none !important;
         border-radius: 12px !important;
         padding: 24px !important;
-        box-shadow: 0 2px 8px rgba(0,0,0,0.1) !important;
+        box-shadow: 0 2px 8px rgba(241, 90, 37, 0.2) !important;
         text-align: center !important;
         transition: transform 0.3s ease !important;
+        color: white !important;
     }
     
     #primary.google-ads-page .tool-item:hover {
         transform: translateY(-2px) !important;
-        box-shadow: 0 4px 12px rgba(0,0,0,0.15) !important;
+        box-shadow: 0 4px 12px rgba(241, 90, 37, 0.3) !important;
     }
     
     #primary.google-ads-page .tool-item .tool-icon {
@@ -211,19 +212,19 @@ get_header();
     
     #primary.google-ads-page .tool-item .tool-icon i {
         font-size: 2rem !important;
-        color: #f15a25 !important;
+        color: white !important;
     }
     
     #primary.google-ads-page .tool-item h4 {
         font-size: 1.3rem !important;
-        color: #1e293b !important;
+        color: white !important;
         margin-bottom: 12px !important;
         font-weight: 700 !important;
         line-height: 1.3 !important;
     }
     
     #primary.google-ads-page .tool-item p {
-        color: #64748b !important;
+        color: rgba(255, 255, 255, 0.9) !important;
         line-height: 1.6 !important;
         margin: 0 !important;
         font-size: 0.95rem !important;
