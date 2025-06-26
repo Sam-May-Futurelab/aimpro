@@ -329,6 +329,280 @@ get_header(); ?>
     </div>
 </main>
 
+<!-- Mobile Responsive Styles for Templates & Tools Page -->
+<style>
+/* Mobile optimizations for templates and tools page */
+@media (max-width: 768px) {
+    /* Page header mobile optimization */
+    .page-header-content {
+        text-align: center !important;
+        padding: 1.5rem 1rem !important;
+    }
+    
+    .page-header-content h1 {
+        font-size: 2rem !important;
+        margin-bottom: 1rem !important;
+    }
+    
+    .page-subtitle {
+        font-size: 1rem !important;
+        line-height: 1.4 !important;
+    }
+    
+    /* Content section mobile optimization */
+    .content-grid {
+        grid-template-columns: 1fr !important;
+        gap: 1.5rem !important;
+        margin: 1.5rem 0 2rem 0 !important;
+    }
+    
+    .content-item {
+        text-align: center !important;
+        padding: 1rem !important;
+    }
+    
+    .content-item h3 {
+        font-size: 1.2rem !important;
+        margin-bottom: 0.75rem !important;
+    }
+    
+    .content-item p {
+        font-size: 0.9rem !important;
+        line-height: 1.5 !important;
+    }
+    
+    /* Tools grid mobile optimization */
+    .tools-grid {
+        display: grid !important;
+        grid-template-columns: 1fr !important;
+        gap: 1.5rem !important;
+        padding: 1rem !important;
+    }
+    
+    .tool-card {
+        width: 100% !important;
+        margin-bottom: 1rem !important;
+        padding: 0 !important;
+        box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1) !important;
+        border-radius: 12px !important;
+        overflow: hidden !important;
+    }
+    
+    .tool-content {
+        padding: 1.5rem 1rem !important;
+        width: 100% !important;
+    }
+    
+    .tool-header {
+        display: flex !important;
+        justify-content: space-between !important;
+        align-items: flex-start !important;
+        margin-bottom: 1rem !important;
+        flex-wrap: wrap !important;
+        gap: 0.5rem !important;
+    }
+    
+    .tool-icon {
+        font-size: 1.5rem !important;
+        margin-bottom: 0.5rem !important;
+        color: #F15A25 !important;
+    }
+    
+    /* Fix icon visibility on mobile - make icons white on mobile */
+    @media (max-width: 768px) {
+        .tool-icon {
+            color: #ffffff !important;
+        }
+        
+        .tool-icon i {
+            color: #ffffff !important;
+        }
+    }
+    
+    .tool-meta {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: flex-end !important;
+        gap: 0.25rem !important;
+        text-align: right !important;
+    }
+    
+    .tool-type {
+        background: #F15A25 !important;
+        color: white !important;
+        padding: 0.25rem 0.5rem !important;
+        border-radius: 4px !important;
+        font-size: 0.7rem !important;
+        font-weight: 600 !important;
+        text-transform: uppercase !important;
+    }
+    
+    .tool-category {
+        font-size: 0.7rem !important;
+        color: #666 !important;
+        font-weight: 500 !important;
+    }
+    
+    .download-count {
+        font-size: 0.7rem !important;
+        color: #666 !important;
+        font-weight: 500 !important;
+    }
+    
+    .tool-card h3 {
+        font-size: 1.1rem !important;
+        line-height: 1.3 !important;
+        margin-bottom: 0.75rem !important;
+        color: #333 !important;
+        font-weight: 600 !important;
+    }
+    
+    .tool-card p {
+        font-size: 0.9rem !important;
+        line-height: 1.4 !important;
+        color: #666 !important;
+        margin-bottom: 1rem !important;
+    }
+    
+    .tool-features {
+        list-style: none !important;
+        padding: 0 !important;
+        margin: 1rem 0 !important;
+    }
+    
+    .tool-features li {
+        font-size: 0.8rem !important;
+        padding: 0.25rem 0 !important;
+        color: #666 !important;
+        position: relative !important;
+        padding-left: 1rem !important;
+    }
+    
+    .tool-features li:before {
+        content: "✓" !important;
+        position: absolute !important;
+        left: 0 !important;
+        color: #F15A25 !important;
+        font-weight: bold !important;
+    }
+    
+    .tool-footer {
+        margin-top: 1.5rem !important;
+        text-align: center !important;
+    }
+    
+    .tool-footer .btn-primary {
+        width: 100% !important;
+        padding: 0.75rem 1rem !important;
+        font-size: 0.9rem !important;
+        text-align: center !important;
+        display: block !important;
+    }
+    
+    /* Benefits grid mobile optimization */
+    .benefits-grid {
+        grid-template-columns: 1fr !important;
+        gap: 1.5rem !important;
+        margin-top: 2rem !important;
+    }
+    
+    .benefit-item {
+        text-align: center !important;
+        padding: 1rem !important;
+    }
+    
+    .benefit-item h3 {
+        font-size: 1.1rem !important;
+        margin-bottom: 0.75rem !important;
+    }
+    
+    .benefit-item p {
+        font-size: 0.9rem !important;
+        line-height: 1.4 !important;
+    }
+    
+    /* Stats grid mobile optimization */
+    .stats-grid {
+        display: grid !important;
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 1rem !important;
+        margin: 2rem 0 !important;
+    }
+    
+    .stat-item {
+        text-align: center !important;
+        padding: 1rem 0.5rem !important;
+    }
+    
+    .stat-number {
+        font-size: 1.8rem !important;
+        margin-bottom: 0.25rem !important;
+    }
+    
+    .stat-label {
+        font-size: 0.8rem !important;
+    }
+    
+    /* Newsletter form mobile optimization */
+    .newsletter-form .form-group {
+        flex-direction: column !important;
+        gap: 0.75rem !important;
+    }
+    
+    .newsletter-form input {
+        width: 100% !important;
+        margin-bottom: 0.5rem !important;
+    }
+    
+    .newsletter-form button {
+        width: 100% !important;
+        padding: 0.75rem !important;
+    }
+    
+    /* Featured resources mobile optimization */
+    .services-grid {
+        grid-template-columns: 1fr !important;
+        gap: 1.5rem !important;
+    }
+    
+    .service-item {
+        padding: 1.5rem 1rem !important;
+        text-align: center !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .tools-grid {
+        padding: 0.5rem !important;
+    }
+    
+    .tool-content {
+        padding: 1rem 0.75rem !important;
+    }
+    
+    .tool-card h3 {
+        font-size: 1rem !important;
+    }
+    
+    .tool-card p {
+        font-size: 0.85rem !important;
+    }
+    
+    .tool-features li {
+        font-size: 0.75rem !important;
+    }
+    
+    .stats-grid {
+        grid-template-columns: 1fr !important;
+        gap: 1rem !important;
+    }
+    
+    .page-header-content h1 {
+        font-size: 1.6rem !important;
+    }
+}
+</style>
+
 <script>
 // Filter functionality
 document.addEventListener('DOMContentLoaded', function() {

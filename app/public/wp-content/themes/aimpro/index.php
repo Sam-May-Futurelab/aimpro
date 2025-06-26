@@ -172,7 +172,7 @@ get_header(); ?>
                             <span class="feature-tag">SEO Audits</span>
                         </div>
                     </div>                    <div class="service-action">
-                        <a href="#contact" class="btn-primary">
+                        <a href="<?php echo home_url('/seo-services'); ?>" class="btn-primary">
                             <span>RANK HIGHER</span>
                         </a>
                     </div>
@@ -197,7 +197,7 @@ get_header(); ?>
                             <span class="feature-tag">A/B Testing</span>
                         </div>
                     </div>                    <div class="service-action">
-                        <a href="#contact" class="btn-primary">
+                        <a href="<?php echo home_url('/advertising-ppc'); ?>" class="btn-primary">
                             <span>MAXIMIZE YOUR ROI</span>
                         </a>
                     </div>
@@ -222,7 +222,7 @@ get_header(); ?>
                             <span class="feature-tag">Fast Loading</span>
                         </div>
                     </div>                    <div class="service-action">
-                        <a href="#contact" class="btn-primary">
+                        <a href="<?php echo home_url('/website-development'); ?>" class="btn-primary">
                             <span>BUILD BETTER WEBSITE</span>
                         </a>
                     </div>
@@ -247,7 +247,7 @@ get_header(); ?>
                             <span class="feature-tag">✓ Retargeting Campaigns</span>
                         </div>
                     </div>                    <div class="service-action">
-                        <a href="#contact" class="btn-primary">
+                        <a href="<?php echo home_url('/meta-ads'); ?>" class="btn-primary">
                             <span>SCALE YOUR REACH</span>
                         </a>
                     </div>
@@ -274,7 +274,7 @@ get_header(); ?>
                             <span class="feature-tag">✓ Customer Insights</span>
                         </div>
                     </div>                    <div class="service-action">
-                        <a href="#contact" class="btn-primary">
+                        <a href="<?php echo home_url('/ai-crm-setup'); ?>" class="btn-primary">
                             <span>AUTOMATE YOUR CRM</span>
                         </a>
                     </div>
@@ -304,7 +304,7 @@ get_header(); ?>
                             <span class="feature-tag">✓ Performance Tracking</span>
                         </div>
                     </div>                    <div class="service-action">
-                        <a href="#contact" class="btn-primary">
+                        <a href="<?php echo home_url('/marketing-automation'); ?>" class="btn-primary">
                             <span>AUTOMATE YOUR GROWTH</span>
                         </a>
                     </div>
