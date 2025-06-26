@@ -144,7 +144,8 @@ class PremiumCursor {
             '.locations-cta-section',
             '.btn[style*="background"]',
             '.hero-badge',
-            '.section-badge'
+            '.section-badge',
+            '.resources-services-grid .service-icon' // Resources page service icons
         ];
         
         // Check if element or parent matches orange selectors
