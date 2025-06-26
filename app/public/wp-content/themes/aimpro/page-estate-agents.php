@@ -301,6 +301,214 @@ get_header(); ?>
 
 <?php get_footer(); ?>
 
+<style>
+/* Mobile optimizations for estate agents results sections */
+@media (max-width: 768px) {
+    /* Case Study Results Grid - Mobile Layout */
+    .case-study-results .results-grid,
+    .estate-agent-insights .results-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 1rem;
+        margin-top: 1.5rem;
+    }
+    
+    .case-study-results .result-item,
+    .estate-agent-insights .result-item {
+        background: #f8f9fa;
+        border: 1px solid #e9ecef;
+        border-radius: 8px;
+        padding: 1.5rem 1rem;
+        text-align: center;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    }
+    
+    .case-study-results .result-number,
+    .estate-agent-insights .result-number {
+        font-size: 2.5rem;
+        font-weight: 700;
+        color: #007bff;
+        line-height: 1;
+        margin-bottom: 0.5rem;
+    }
+    
+    .case-study-results .result-label,
+    .estate-agent-insights .result-label {
+        font-size: 0.9rem;
+        font-weight: 600;
+        color: #495057;
+        margin-bottom: 0.5rem;
+    }
+    
+    .estate-agent-insights .result-item p {
+        font-size: 0.85rem;
+        color: #6c757d;
+        margin: 0;
+        line-height: 1.4;
+    }
+    
+    /* Case Study Link Button */
+    .case-study-link {
+        display: inline-block;
+        width: 100%;
+        padding: 0.875rem 1.5rem;
+        background: #007bff;
+        color: white !important;
+        text-decoration: none;
+        border-radius: 6px;
+        font-weight: 600;
+        text-align: center;
+        margin-top: 1.5rem;
+        font-size: 0.9rem;
+        transition: background-color 0.3s ease;
+    }
+    
+    .case-study-link:hover {
+        background: #0056b3;
+        color: white !important;
+    }
+    
+    /* Service Cards Grid - Ensure mobile stacking */
+    .services-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .service-card {
+        background: #f8f9fa;
+        border: 1px solid #e9ecef;
+        border-radius: 8px;
+        padding: 1.5rem;
+        text-align: center;
+    }
+    
+    .service-icon {
+        margin-bottom: 1rem;
+    }
+    
+    .service-icon i {
+        font-size: 2.5rem;
+        color: #007bff;
+    }
+    
+    .service-card h3 {
+        font-size: 1.25rem;
+        margin-bottom: 0.75rem;
+        color: #212529;
+    }
+    
+    .service-card p {
+        font-size: 0.9rem;
+        color: #6c757d;
+        line-height: 1.5;
+        margin-bottom: 1rem;
+    }
+    
+    .service-features {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+    
+    .service-features li {
+        font-size: 0.85rem;
+        color: #495057;
+        padding: 0.25rem 0;
+        border-bottom: 1px solid #e9ecef;
+    }
+    
+    .service-features li:last-child {
+        border-bottom: none;
+    }
+    
+    /* CTA Section Mobile */
+    .cta-section .cta-buttons {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        margin: 1.5rem 0;
+    }
+    
+    .cta-section .btn-primary,
+    .cta-section .btn-outline {
+        width: 100%;
+        padding: 0.875rem 1.5rem;
+        text-align: center;
+        font-weight: 600;
+        border-radius: 6px;
+        font-size: 0.9rem;
+        text-decoration: none;
+        transition: all 0.3s ease;
+    }
+    
+    .cta-section .btn-primary {
+        background: #007bff;
+        color: white !important;
+        border: 2px solid #007bff;
+    }
+    
+    .cta-section .btn-primary:hover {
+        background: #0056b3;
+        border-color: #0056b3;
+    }
+    
+    .cta-section .btn-outline {
+        background: transparent;
+        color: #007bff !important;
+        border: 2px solid #007bff;
+    }
+    
+    .cta-section .btn-outline:hover {
+        background: #007bff;
+        color: white !important;
+    }
+    
+    .cta-features {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+        justify-content: center;
+        margin-top: 1rem;
+    }
+    
+    .cta-features span {
+        background: #e9ecef;
+        color: #495057;
+        padding: 0.375rem 0.75rem;
+        border-radius: 4px;
+        font-size: 0.8rem;
+        font-weight: 500;
+    }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+    /* Tablet Layout - 2x2 grid */
+    .case-study-results .results-grid,
+    .estate-agent-insights .results-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+    }
+    
+    .case-study-results .result-item,
+    .estate-agent-insights .result-item {
+        background: #f8f9fa;
+        border: 1px solid #e9ecef;
+        border-radius: 8px;
+        padding: 1.5rem;
+        text-align: center;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    }
+    
+    .services-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+    }
+}
+</style>
+
 <!-- Add debugging function for estate agents page -->
 <?php
 add_action('wp_footer', function() {
