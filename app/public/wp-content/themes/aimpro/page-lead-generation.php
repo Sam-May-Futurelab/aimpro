@@ -519,47 +519,122 @@ get_header(); ?>
     }
     
     /* Lead Generation Tools Grid - Mobile Layout */
-    .tools-grid {
-        display: grid;
-        grid-template-columns: 1fr;
-        gap: 1.5rem;
-        margin-top: 1.5rem;
+    .lead-generation-tools .tools-grid {
+        display: grid !important;
+        grid-template-columns: 1fr !important;
+        gap: 1.5rem !important;
+        margin-top: 1.5rem !important;
     }
     
-    .tool-card {
-        background: #f8f9fa;
-        border: 1px solid #e9ecef;
-        border-radius: 8px;
-        padding: 1.5rem;
+    .lead-generation-tools .tool-card {
+        background: #f8f9fa !important;
+        border: 1px solid #e9ecef !important;
+        border-radius: 8px !important;
+        padding: 1.5rem !important;
+        text-align: center !important;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.05) !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        display: block !important;
+        float: none !important;
+    }
+    
+    .lead-generation-tools .tool-card.analytics,
+    .lead-generation-tools .tool-card.crm,
+    .lead-generation-tools .tool-card.optimisation,
+    .lead-generation-tools .tool-card.automation {
+        background: #f8f9fa !important;
+        border: 1px solid #e9ecef !important;
+        border-radius: 8px !important;
+        padding: 1.5rem !important;
+        text-align: center !important;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.05) !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        display: block !important;
+        float: none !important;
+        margin-bottom: 1.5rem !important;
+    }
+    
+    .lead-generation-tools .tool-card h3 {
+        font-size: 1.25rem !important;
+        margin-bottom: 1rem !important;
+        color: #212529 !important;
+        line-height: 1.3 !important;
+    }
+    
+    .lead-generation-tools .tool-features {
+        list-style: none !important;
+        padding: 0 !important;
+        margin: 0 !important;
+    }
+    
+    .lead-generation-tools .tool-features li {
+        font-size: 0.85rem !important;
+        color: #495057 !important;
+        padding: 0.5rem 0 !important;
+        border-bottom: 1px solid #e9ecef !important;
+        line-height: 1.4 !important;
+        text-align: left !important;
+        position: relative !important;
+    }
+    
+    .lead-generation-tools .tool-features li:before {
+        display: none !important; /* Hide bullet icons on mobile */
+    }
+    
+    .lead-generation-tools .tool-features li:last-child {
+        border-bottom: none !important;
+    }
+    
+    /* Hide any bullet point icons on mobile for all feature lists */
+    .method-features li:before,
+    .type-features li:before,
+    .tool-features li:before {
+        display: none !important;
+    }
+    
+    /* CTA Buttons - Mobile Layout with Orange Theme */
+    .lead-generation-cta .cta-buttons {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        margin: 1.5rem 0;
+    }
+    
+    .lead-generation-cta .btn {
+        width: 100%;
+        padding: 0.875rem 1.5rem;
         text-align: center;
-        box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        font-weight: 600;
+        border-radius: 6px;
+        font-size: 0.9rem;
+        text-decoration: none;
+        transition: all 0.3s ease;
     }
     
-    .tool-card h3 {
-        font-size: 1.25rem;
-        margin-bottom: 1rem;
-        color: #212529;
+    .lead-generation-cta .btn-primary {
+        background: #ff6b35 !important; /* Orange primary button */
+        color: white !important;
+        border: 2px solid #ff6b35 !important;
     }
     
-    .tool-features {
-        list-style: none;
-        padding: 0;
-        margin: 0;
+    .lead-generation-cta .btn-primary:hover {
+        background: #e55a2b !important; /* Darker orange on hover */
+        border-color: #e55a2b !important;
+        color: white !important;
     }
     
-    .tool-features li {
-        font-size: 0.85rem;
-        color: #495057;
-        padding: 0.5rem 0;
-        border-bottom: 1px solid #e9ecef;
-        line-height: 1.4;
+    .lead-generation-cta .btn-secondary {
+        background: transparent !important;
+        color: #ff6b35 !important; /* Orange text */
+        border: 2px solid #ff6b35 !important; /* Orange border */
     }
     
-    .tool-features li:last-child {
-        border-bottom: none;
+    .lead-generation-cta .btn-secondary:hover {
+        background: #ff6b35 !important; /* Orange background on hover */
+        color: white !important;
     }
-    
-    /* Process Steps - Mobile Layout */
     .process-steps {
         display: grid;
         grid-template-columns: 1fr;
@@ -669,7 +744,7 @@ get_header(); ?>
         font-size: 0.7rem;
     }
     
-    /* Overview CTA Buttons - Mobile */
+    /* Overview CTA Buttons - Mobile with Orange Theme */
     .overview-cta-btn,
     .process-cta-btn {
         width: 100%;
@@ -679,9 +754,9 @@ get_header(); ?>
         border-radius: 6px;
         font-size: 0.9rem;
         text-decoration: none;
-        background: #007bff;
+        background: #ff6b35 !important; /* Orange background */
         color: white !important;
-        border: 2px solid #007bff;
+        border: 2px solid #ff6b35 !important;
         transition: all 0.3s ease;
         margin-top: 1rem;
         display: inline-block;
@@ -689,8 +764,8 @@ get_header(); ?>
     
     .overview-cta-btn:hover,
     .process-cta-btn:hover {
-        background: #0056b3;
-        border-color: #0056b3;
+        background: #e55a2b !important; /* Darker orange on hover */
+        border-color: #e55a2b !important;
         color: white !important;
     }
     
