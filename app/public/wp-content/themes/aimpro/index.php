@@ -115,7 +115,7 @@ get_header(); ?>
 
 <!-- Premium Service Showcase -->
 <section id="services" class="premium-services-section">
-    <div class="services-background-gradient"></div>    <!-- Target Icons -->
+    <!-- Target Icons -->
     <div class="target-icon services-target-1"></div>
     <!-- Additional floating targets -->
     <div class="target-icon floating-target-services" style="bottom: 25%; left: 12%; width: 28px; height: 28px; opacity: 0.18; animation: targetFloat 7.5s ease-in-out infinite reverse;"></div>
@@ -157,9 +157,6 @@ get_header(); ?>
         
         <div class="premium-services-grid">            <!-- SEO Services -->
             <div class="premium-service-card" data-service="seo-services">
-                <div class="service-background">
-                    <div class="service-pattern pattern-1"></div>
-                </div>
                 <div class="service-content">                    <div class="service-header">                        <div class="service-icon-container">
                             <div class="service-icon-animated">
                                 <i class="fas fa-search" style="font-size: 30px; colour: #f15a25;"></i>
@@ -185,9 +182,6 @@ get_header(); ?>
 
             <!-- Google Ads Management -->
             <div class="premium-service-card" data-service="google-ads">
-                <div class="service-background">
-                    <div class="service-pattern pattern-2"></div>
-                </div>
                 <div class="service-content">                    <div class="service-header">                        <div class="service-icon-container">
                             <div class="service-icon-animated">
                                 <i class="fab fa-google" style="font-size: 30px; colour: #f15a25;"></i>
@@ -213,9 +207,6 @@ get_header(); ?>
 
             <!-- Website Design -->
             <div class="premium-service-card" data-service="website-design">
-                <div class="service-background">
-                    <div class="service-pattern pattern-3"></div>
-                </div>
                 <div class="service-content">                    <div class="service-header">                        <div class="service-icon-container">
                             <div class="service-icon-animated">
                                 <i class="fas fa-palette" style="font-size: 30px; colour: #f15a25;"></i>
@@ -239,9 +230,6 @@ get_header(); ?>
                 <div class="service-overlay"></div>
             </div>            <!-- Meta Ads (Facebook/Instagram) -->
             <div class="premium-service-card" data-service="meta-ads">
-                <div class="service-background">
-                    <div class="service-pattern pattern-4"></div>
-                </div>
                 <div class="service-content">
                     <div class="service-header">                        <div class="service-icon-container">
                             <div class="service-icon-animated">
@@ -269,9 +257,6 @@ get_header(); ?>
 
             <!-- AI Powered CRM -->
             <div class="premium-service-card" data-service="ai-crm">
-                <div class="service-background">
-                    <div class="service-pattern pattern-5"></div>
-                </div>
                 <div class="service-content">
                     <div class="service-header">                        <div class="service-icon-container">
                             <div class="service-icon-animated">

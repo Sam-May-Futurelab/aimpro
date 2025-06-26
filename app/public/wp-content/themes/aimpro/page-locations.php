@@ -166,7 +166,7 @@ wp_enqueue_style('locations-page-css', get_template_directory_uri() . '/assets/c
             
             <!-- Centered CTA Button -->
             <div class="visit-cta-centered">
-                <a href="tel:+441212858490" class="btn btn-orange btn-large cta-primary">BOOK A COFFEE MEETING</a>
+                <a href="<?php echo home_url('/contact'); ?>" class="btn btn-orange btn-large cta-primary">BOOK A COFFEE MEETING</a>
             </div>
         </div>
     </section>

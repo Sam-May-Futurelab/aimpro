@@ -109,60 +109,59 @@ get_header(); ?>
         </section>
 
         <!-- Knowledge Hub -->
-        <section class="tools-section knowledge-hub">
+        <section class="service-overview knowledge-hub">
             <div class="container">
                 <div class="section-header text-center animate-on-scroll animate-fade-up">
                     <h2>Digital Marketing Knowledge Hub</h2>
                     <p>Expert insights, guides, and resources to accelerate your digital marketing success</p>
                 </div>
                 
-                <div class="tools-grid knowledge-grid">                    <div class="tool-card knowledge-card animate-on-scroll animate-stagger animate-fade-up">
-                        <div class="tool-info">
-                            <h3>Blog & Insights</h3>
-                            <p>Stay updated with the latest digital marketing trends, strategies, and expert insights.</p>
-                            <ul class="tool-features">
-                                <li>SEO Best Practices</li>
-                                <li>PPC Campaign Strategies</li>
-                                <li>Industry Trend Analysis</li>
-                                <li>Expert Interviews</li>
-                            </ul>
+                <div class="services-grid resources-services-grid">
+                    <div class="service-card animate-on-scroll animate-stagger animate-fade-up">
+                        <div class="service-icon">
+                            <i class="fas fa-blog"></i>
+                        </div>
+                        <h3>Blog & Insights</h3>
+                        <p>Stay updated with the latest digital marketing trends, strategies, and expert insights.</p>
+                        <div class="service-links">
                             <a href="<?php echo home_url('/blog'); ?>" class="btn btn-primary">Read Our Blog</a>
+                            <a href="<?php echo home_url('/insights'); ?>" class="btn btn-outline">Expert Insights</a>
                         </div>
-                    </div>                    <div class="tool-card knowledge-card animate-on-scroll animate-stagger animate-fade-up">
-                        <div class="tool-info">
-                            <h3>Case Studies</h3>
-                            <p>Discover real success stories and proven strategies that drive exceptional results.</p>
-                            <ul class="tool-features">
-                                <li>ROI Improvement Stories</li>
-                                <li>Campaign Performance Data</li>
-                                <li>Strategy Implementations</li>
-                                <li>Client Testimonials</li>
-                            </ul>
+                    </div>
+
+                    <div class="service-card animate-on-scroll animate-stagger animate-fade-up">
+                        <div class="service-icon">
+                            <i class="fas fa-chart-bar"></i>
+                        </div>
+                        <h3>Case Studies</h3>
+                        <p>Discover real success stories and proven strategies that drive exceptional results.</p>
+                        <div class="service-links">
                             <a href="<?php echo home_url('/case-studies'); ?>" class="btn btn-primary">View Case Studies</a>
+                            <a href="<?php echo home_url('/success-stories'); ?>" class="btn btn-outline">Success Stories</a>
                         </div>
-                    </div>                    <div class="tool-card knowledge-card animate-on-scroll animate-stagger animate-fade-up">
-                        <div class="tool-info">
-                            <h3>Free Tools & Templates</h3>
-                            <p>Access our collection of free templates, checklists, and tools to streamline your marketing.</p>
-                            <ul class="tool-features">
-                                <li>SEO Audit Checklists</li>
-                                <li>Campaign Planning Templates</li>
-                                <li>Performance Tracking Tools</li>
-                                <li>Content Calendar Templates</li>
-                            </ul>
+                    </div>
+
+                    <div class="service-card animate-on-scroll animate-stagger animate-fade-up">
+                        <div class="service-icon">
+                            <i class="fas fa-tools"></i>
+                        </div>
+                        <h3>Free Tools & Templates</h3>
+                        <p>Access our collection of free templates, checklists, and tools to streamline your marketing.</p>
+                        <div class="service-links">
                             <a href="<?php echo home_url('/free-tools'); ?>" class="btn btn-primary">Get Free Tools</a>
+                            <a href="<?php echo home_url('/templates'); ?>" class="btn btn-outline">Templates</a>
                         </div>
-                    </div>                    <div class="tool-card knowledge-card animate-on-scroll animate-stagger animate-fade-up">
-                        <div class="tool-info">
-                            <h3>Training & Mentoring</h3>
-                            <p>Accelerate your skills with personalised training programs and expert mentoring.</p>
-                            <ul class="tool-features">
-                                <li>One-on-One Mentoring</li>
-                                <li>Team Training Sessions</li>
-                                <li>Skill Development Programs</li>
-                                <li>Certification Guidance</li>
-                            </ul>
+                    </div>
+
+                    <div class="service-card animate-on-scroll animate-stagger animate-fade-up">
+                        <div class="service-icon">
+                            <i class="fas fa-chalkboard-teacher"></i>
+                        </div>
+                        <h3>Training & Mentoring</h3>
+                        <p>Accelerate your skills with personalised training programs and expert mentoring.</p>
+                        <div class="service-links">
                             <a href="<?php echo home_url('/training'); ?>" class="btn btn-primary">Learn More</a>
+                            <a href="<?php echo home_url('/mentoring'); ?>" class="btn btn-outline">Mentoring</a>
                         </div>
                     </div>
                 </div>

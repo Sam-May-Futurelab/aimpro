@@ -176,6 +176,9 @@ function aimpro_enqueue_assets() {
     // Enqueue responsive styles (should be loaded last)
     wp_enqueue_style('aimpro-responsive', get_template_directory_uri() . '/assets/css/responsive.css', array('aimpro-base'), $theme_version);
     
+    // Enqueue premium cursor styles (global)
+    wp_enqueue_style('aimpro-premium-cursor', get_template_directory_uri() . '/assets/css/premium-cursor.css', array('aimpro-variables'), $theme_version);
+    
     // Header overrides disabled - consolidated into header-modern.css
     // wp_enqueue_style('aimpro-header-overrides', get_template_directory_uri() . '/assets/css/header-overrides.css', array('aimpro-header-modern', 'aimpro-buttons'), $theme_version);
     
@@ -225,6 +228,9 @@ function aimpro_enqueue_assets() {
     
     // Enqueue scroll animations
     wp_enqueue_script('aimpro-scroll-animations', get_template_directory_uri() . '/assets/js/scroll-animations.js', array(), $theme_version, true);
+    
+    // Enqueue premium cursor JavaScript (global)
+    wp_enqueue_script('aimpro-premium-cursor', get_template_directory_uri() . '/assets/js/premium-cursor.js', array(), $theme_version, true);
       // Note: Removed JS-based menu enhancements to use pure CSS solution
     // mega-menu.js removed as it was causing navigation conflicts and isn't needed for current navigation structure
       // Add inline script for critical path optimisation
