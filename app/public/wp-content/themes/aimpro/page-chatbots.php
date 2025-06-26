@@ -301,4 +301,152 @@ function get_chatbot_field($field_key, $post_id = null) {
     </section>
 </main>
 
+<style>
+/* Mobile CSS for Chatbots Page */
+@media (max-width: 768px) {
+    /* Advanced Chatbot Features Section */
+    .tools-section .section-header {
+        text-align: center !important;
+        margin-bottom: 40px !important;
+    }
+    
+    .tools-section .section-header h2 {
+        font-size: 2rem !important;
+        font-weight: 700 !important;
+        color: #1e293b !important;
+        margin-bottom: 16px !important;
+        line-height: 1.3 !important;
+    }
+    
+    .tools-section .section-header p {
+        font-size: 1.1rem !important;
+        color: #64748b !important;
+        line-height: 1.6 !important;
+        max-width: 600px !important;
+        margin: 0 auto !important;
+    }
+    
+    /* Tools Grid */
+    .tools-section .tools-grid {
+        grid-template-columns: 1fr !important;
+        gap: 20px !important;
+        max-width: 100% !important;
+    }
+    
+    .tools-section .tool-item {
+        background: linear-gradient(135deg, #f15a25 0%, #e04a15 100%) !important;
+        border: none !important;
+        border-radius: 12px !important;
+        padding: 24px !important;
+        text-align: center !important;
+        box-shadow: 0 2px 8px rgba(241, 90, 37, 0.2) !important;
+        max-width: 100% !important;
+        word-wrap: break-word !important;
+        color: white !important;
+    }
+    
+    .tools-section .tool-icon {
+        margin-bottom: 16px !important;
+    }
+    
+    .tools-section .tool-icon i {
+        font-size: 2rem !important;
+        color: white !important;
+    }
+    
+    .tools-section .tool-item h3 {
+        color: white !important;
+        font-size: 1.3rem !important;
+        font-weight: 700 !important;
+        margin-bottom: 12px !important;
+        line-height: 1.3 !important;
+    }
+    
+    .tools-section .tool-item p {
+        color: rgba(255, 255, 255, 0.9) !important;
+        font-size: 0.95rem !important;
+        line-height: 1.6 !important;
+        margin: 0 !important;
+        hyphens: auto !important;
+        word-wrap: break-word !important;
+    }
+    
+    /* Industries Section */
+    .industries-section {
+        padding: 60px 0 !important;
+    }
+    
+    .industries-section h2 {
+        font-size: 2rem !important;
+        font-weight: 700 !important;
+        color: #1e293b !important;
+        text-align: center !important;
+        margin-bottom: 40px !important;
+        line-height: 1.3 !important;
+    }
+    
+    .industries-grid {
+        grid-template-columns: 1fr !important;
+        gap: 20px !important;
+    }
+    
+    .industry-item {
+        background: white !important;
+        border: 1px solid #e2e8f0 !important;
+        border-radius: 12px !important;
+        padding: 24px !important;
+        text-align: center !important;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.1) !important;
+    }
+    
+    .industry-item h3 {
+        color: #f15a25 !important;
+        font-size: 1.3rem !important;
+        font-weight: 700 !important;
+        margin-bottom: 12px !important;
+        line-height: 1.3 !important;
+    }
+    
+    .industry-item p {
+        color: #64748b !important;
+        font-size: 0.95rem !important;
+        line-height: 1.6 !important;
+        margin: 0 !important;
+    }
+    
+    /* Testimonial Section */
+    .testimonial-section {
+        padding: 60px 20px !important;
+    }
+    
+    .testimonial-section .testimonial-content {
+        text-align: center !important;
+        max-width: 100% !important;
+    }
+    
+    .testimonial-section blockquote {
+        font-size: 1.1rem !important;
+        line-height: 1.6 !important;
+        margin-bottom: 20px !important;
+    }
+    
+    /* CTA Buttons */
+    .btn-primary {
+        background: #f15a25 !important;
+        color: white !important;
+        border: 2px solid #f15a25 !important;
+        padding: 16px 24px !important;
+        border-radius: 8px !important;
+        font-weight: 700 !important;
+        text-decoration: none !important;
+        text-align: center !important;
+        font-size: 1rem !important;
+        display: block !important;
+        width: 100% !important;
+        max-width: 300px !important;
+        margin: 0 auto !important;
+    }
+}
+</style>
+
 <?php get_footer(); ?>

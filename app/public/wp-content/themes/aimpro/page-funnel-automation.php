@@ -501,5 +501,301 @@ get_header(); ?>
     </section>
 </main>
 
+<style>
+/* Mobile CSS for Funnel Automation Page */
+@media (max-width: 768px) {
+    /* Hero Section Mobile Optimization */
+    .page-hero {
+        padding: 60px 0 !important;
+    }
+    
+    .hero-content {
+        text-align: center;
+        max-width: 100%;
+        padding: 0 20px;
+    }
+    
+    .page-hero h1 {
+        font-size: 2rem !important;
+        font-weight: 700;
+        color: #1e293b;
+        margin-bottom: 16px;
+        line-height: 1.3;
+    }
+    
+    .hero-subtitle {
+        font-size: 1.1rem !important;
+        color: #64748b;
+        line-height: 1.6;
+        margin-bottom: 30px;
+        max-width: 100%;
+    }
+    
+    /* Tools Section Mobile Optimization */
+    .tools-section {
+        padding: 60px 0 !important;
+    }
+    
+    .tools-section h2 {
+        font-size: 2rem !important;
+        font-weight: 700 !important;
+        color: #1e293b !important;
+        text-align: center !important;
+        margin-bottom: 40px !important;
+        line-height: 1.3 !important;
+    }
+    
+    .tools-section .tools-grid {
+        grid-template-columns: 1fr !important;
+        gap: 20px !important;
+        max-width: 100% !important;
+    }
+    
+    .tools-section .tool-item {
+        background: white !important;
+        border: 1px solid #e2e8f0 !important;
+        border-radius: 12px !important;
+        padding: 24px !important;
+        text-align: center !important;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.1) !important;
+        max-width: 100% !important;
+        word-wrap: break-word !important;
+    }
+    
+    .tools-section .tool-icon {
+        margin-bottom: 16px !important;
+    }
+    
+    .tools-section .tool-icon i {
+        font-size: 2rem !important;
+        color: #f15a25 !important;
+    }
+    
+    .tools-section .tool-item h3 {
+        color: #1e293b !important;
+        font-size: 1.3rem !important;
+        font-weight: 700 !important;
+        margin-bottom: 12px !important;
+        line-height: 1.3 !important;
+    }
+    
+    .tools-section .tool-item p {
+        color: #64748b !important;
+        font-size: 0.95rem !important;
+        line-height: 1.6 !important;
+        margin: 0 !important;
+        hyphens: auto !important;
+        word-wrap: break-word !important;
+    }
+    
+    /* Service Overview Grid */
+    .services-grid {
+        grid-template-columns: 1fr !important;
+        gap: 20px !important;
+    }
+    
+    .service-item {
+        background: white !important;
+        border: 1px solid #e2e8f0 !important;
+        border-radius: 12px !important;
+        padding: 24px !important;
+        text-align: center !important;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.1) !important;
+    }
+    
+    .service-icon {
+        margin-bottom: 16px !important;
+    }
+    
+    .service-icon i {
+        font-size: 2rem !important;
+        color: #f15a25 !important;
+    }
+    
+    .service-item h3 {
+        color: #1e293b !important;
+        font-size: 1.3rem !important;
+        font-weight: 700 !important;
+        margin-bottom: 12px !important;
+    }
+    
+    .service-item p {
+        color: #64748b !important;
+        font-size: 0.95rem !important;
+        line-height: 1.6 !important;
+        margin: 0 !important;
+    }
+    
+    /* Process Steps */
+    .process-steps {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 20px !important;
+    }
+    
+    .process-step {
+        background: white !important;
+        border: 1px solid #e2e8f0 !important;
+        border-radius: 12px !important;
+        padding: 24px !important;
+        display: flex !important;
+        align-items: flex-start !important;
+        gap: 16px !important;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.1) !important;
+    }
+    
+    .step-number {
+        background: #f15a25 !important;
+        color: white !important;
+        width: 40px !important;
+        height: 40px !important;
+        border-radius: 50% !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        font-weight: 700 !important;
+        font-size: 1.1rem !important;
+        flex-shrink: 0 !important;
+    }
+    
+    .step-content h3 {
+        color: #1e293b !important;
+        font-size: 1.2rem !important;
+        font-weight: 700 !important;
+        margin-bottom: 8px !important;
+    }
+    
+    .step-content p {
+        color: #64748b !important;
+        font-size: 0.95rem !important;
+        line-height: 1.6 !important;
+        margin: 0 !important;
+    }
+    
+    /* Pricing Grid */
+    .pricing-grid {
+        grid-template-columns: 1fr !important;
+        gap: 20px !important;
+    }
+    
+    .pricing-card {
+        background: white !important;
+        border: 1px solid #e2e8f0 !important;
+        border-radius: 12px !important;
+        padding: 24px !important;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.1) !important;
+    }
+    
+    .pricing-card.featured {
+        border: 2px solid #f15a25 !important;
+        box-shadow: 0 4px 12px rgba(241, 90, 37, 0.2) !important;
+    }
+    
+    /* Industries Grid */
+    .industries-grid {
+        grid-template-columns: 1fr !important;
+        gap: 20px !important;
+    }
+    
+    .industry-item {
+        background: white !important;
+        border: 1px solid #e2e8f0 !important;
+        border-radius: 12px !important;
+        padding: 24px !important;
+        text-align: center !important;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.1) !important;
+    }
+    
+    .industry-item h3 {
+        color: #f15a25 !important;
+        font-size: 1.3rem !important;
+        font-weight: 700 !important;
+        margin-bottom: 12px !important;
+    }
+    
+    .industry-item p {
+        color: #64748b !important;
+        font-size: 0.95rem !important;
+        line-height: 1.6 !important;
+        margin: 0 !important;
+    }
+    
+    /* CTA Buttons */
+    .btn-primary {
+        background: #f15a25 !important;
+        color: white !important;
+        border: 2px solid #f15a25 !important;
+        padding: 16px 24px !important;
+        border-radius: 8px !important;
+        font-weight: 700 !important;
+        text-decoration: none !important;
+        text-align: center !important;
+        font-size: 1rem !important;
+        display: block !important;
+        width: 100% !important;
+        max-width: 300px !important;
+        margin: 0 auto !important;
+    }
+    
+    .btn-outline {
+        background: transparent !important;
+        color: #f15a25 !important;
+        border: 2px solid #f15a25 !important;
+        padding: 16px 24px !important;
+        border-radius: 8px !important;
+        font-weight: 700 !important;
+        text-decoration: none !important;
+        text-align: center !important;
+        font-size: 1rem !important;
+        display: block !important;
+        width: 100% !important;
+        max-width: 300px !important;
+        margin: 0 auto !important;
+    }
+    
+    /* Testimonial */
+    .testimonial-content {
+        text-align: center !important;
+        padding: 0 20px !important;
+    }
+    
+    .testimonial-content blockquote {
+        font-size: 1.1rem !important;
+        line-height: 1.6 !important;
+        margin-bottom: 20px !important;
+    }
+    
+    /* Case Study Results Grid */
+    .results-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 15px !important;
+    }
+    
+    .result-item {
+        background: white !important;
+        border: 2px solid #f15a25 !important;
+        border-radius: 12px !important;
+        padding: 20px !important;
+        text-align: center !important;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.1) !important;
+    }
+    
+    .result-number {
+        font-size: 2rem !important;
+        font-weight: 800 !important;
+        color: #f15a25 !important;
+        display: block !important;
+        margin-bottom: 8px !important;
+    }
+    
+    .result-label {
+        color: #64748b !important;
+        font-size: 0.85rem !important;
+        font-weight: 600 !important;
+        line-height: 1.3 !important;
+    }
+}
+</style>
+
 <?php get_footer(); ?>
 
