@@ -133,15 +133,15 @@ wp_enqueue_style('locations-page-css', get_template_directory_uri() . '/assets/c
                     
                     <div class="office-contact-info">
                         <div class="contact-row">
-                            <strong>📞 Phone:</strong>
+                            <strong><i class="fas fa-phone"></i> Phone:</strong>
                             <a href="tel:+441212858490"><?php echo aimpro_get_field('locations_office_phone', '0121 285 8490'); ?></a>
                         </div>
                         <div class="contact-row">
-                            <strong>✉️ Email:</strong>
+                            <strong><i class="fas fa-envelope"></i> Email:</strong>
                             <a href="mailto:<?php echo aimpro_get_field('locations_office_email', 'hello@aimpro.co.uk'); ?>"><?php echo aimpro_get_field('locations_office_email', 'hello@aimpro.co.uk'); ?></a>
                         </div>
                         <div class="contact-row">
-                            <strong>🕒 Hours:</strong>
+                            <strong><i class="fas fa-clock"></i> Hours:</strong>
                             <span><?php echo aimpro_get_field('locations_office_hours', 'Mon-Fri: 9AM-6PM'); ?></span>
                         </div>
                     </div>
