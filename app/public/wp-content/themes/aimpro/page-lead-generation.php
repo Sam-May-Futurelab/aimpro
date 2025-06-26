@@ -416,3 +416,326 @@ get_header(); ?>
 
 <?php get_footer(); ?>
 
+<style>
+/* Mobile optimizations for lead generation page */
+@media (max-width: 768px) {
+    /* Lead Generation Methods Grid - Mobile Layout */
+    .methods-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+        margin-top: 1.5rem;
+    }
+    
+    .method-card {
+        background: #f8f9fa;
+        border: 1px solid #e9ecef;
+        border-radius: 8px;
+        padding: 1.5rem;
+        text-align: center;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    }
+    
+    .method-icon {
+        margin-bottom: 1rem;
+    }
+    
+    .method-icon i {
+        font-size: 2.5rem !important;
+        color: #007bff;
+    }
+    
+    .method-card h3 {
+        font-size: 1.25rem;
+        margin-bottom: 0.75rem;
+        color: #212529;
+        line-height: 1.3;
+    }
+    
+    .method-card p {
+        font-size: 0.9rem;
+        color: #6c757d;
+        line-height: 1.5;
+        margin-bottom: 1rem;
+    }
+    
+    .method-features {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+    
+    .method-features li {
+        font-size: 0.85rem;
+        color: #495057;
+        padding: 0.5rem 0;
+        border-bottom: 1px solid #e9ecef;
+        line-height: 1.4;
+    }
+    
+    .method-features li:last-child {
+        border-bottom: none;
+    }
+    
+    /* Lead Generation Types Grid - Mobile Layout */
+    .types-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+        margin-top: 1.5rem;
+    }
+    
+    .type-card {
+        background: #f8f9fa;
+        border: 1px solid #e9ecef;
+        border-radius: 8px;
+        padding: 1.5rem;
+        text-align: center;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    }
+    
+    .type-card h3 {
+        font-size: 1.25rem;
+        margin-bottom: 1rem;
+        color: #212529;
+    }
+    
+    .type-features {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+    
+    .type-features li {
+        font-size: 0.85rem;
+        color: #495057;
+        padding: 0.5rem 0;
+        border-bottom: 1px solid #e9ecef;
+        line-height: 1.4;
+    }
+    
+    .type-features li:last-child {
+        border-bottom: none;
+    }
+    
+    /* Lead Generation Tools Grid - Mobile Layout */
+    .tools-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+        margin-top: 1.5rem;
+    }
+    
+    .tool-card {
+        background: #f8f9fa;
+        border: 1px solid #e9ecef;
+        border-radius: 8px;
+        padding: 1.5rem;
+        text-align: center;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    }
+    
+    .tool-card h3 {
+        font-size: 1.25rem;
+        margin-bottom: 1rem;
+        color: #212529;
+    }
+    
+    .tool-features {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+    
+    .tool-features li {
+        font-size: 0.85rem;
+        color: #495057;
+        padding: 0.5rem 0;
+        border-bottom: 1px solid #e9ecef;
+        line-height: 1.4;
+    }
+    
+    .tool-features li:last-child {
+        border-bottom: none;
+    }
+    
+    /* Process Steps - Mobile Layout */
+    .process-steps {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .process-step {
+        background: #f8f9fa;
+        border: 1px solid #e9ecef;
+        border-radius: 8px;
+        padding: 1.5rem;
+        display: flex;
+        align-items: flex-start;
+        gap: 1rem;
+    }
+    
+    .step-number {
+        background: #007bff;
+        color: white;
+        width: 2.5rem;
+        height: 2.5rem;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 700;
+        font-size: 1.1rem;
+        flex-shrink: 0;
+    }
+    
+    .step-content h3 {
+        font-size: 1.1rem;
+        margin-bottom: 0.5rem;
+        color: #212529;
+    }
+    
+    .step-content p {
+        font-size: 0.9rem;
+        color: #6c757d;
+        line-height: 1.5;
+        margin: 0;
+    }
+    
+    /* CTA Buttons - Mobile Layout */
+    .lead-generation-cta .cta-buttons {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        margin: 1.5rem 0;
+    }
+    
+    .lead-generation-cta .btn {
+        width: 100%;
+        padding: 0.875rem 1.5rem;
+        text-align: center;
+        font-weight: 600;
+        border-radius: 6px;
+        font-size: 0.9rem;
+        text-decoration: none;
+        transition: all 0.3s ease;
+    }
+    
+    .lead-generation-cta .btn-primary {
+        background: #007bff;
+        color: white !important;
+        border: 2px solid #007bff;
+    }
+    
+    .lead-generation-cta .btn-primary:hover {
+        background: #0056b3;
+        border-color: #0056b3;
+    }
+    
+    .lead-generation-cta .btn-secondary {
+        background: transparent;
+        color: #007bff !important;
+        border: 2px solid #007bff;
+    }
+    
+    .lead-generation-cta .btn-secondary:hover {
+        background: #007bff;
+        color: white !important;
+    }
+    
+    .cta-benefits {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+        justify-content: center;
+        margin-top: 1rem;
+    }
+    
+    .cta-benefits .benefit {
+        background: #e9ecef;
+        color: #495057;
+        padding: 0.375rem 0.75rem;
+        border-radius: 4px;
+        font-size: 0.8rem;
+        font-weight: 500;
+        display: flex;
+        align-items: center;
+        gap: 0.25rem;
+    }
+    
+    .cta-benefits .benefit i {
+        color: #28a745;
+        font-size: 0.7rem;
+    }
+    
+    /* Overview CTA Buttons - Mobile */
+    .overview-cta-btn,
+    .process-cta-btn {
+        width: 100%;
+        padding: 0.875rem 1.5rem;
+        text-align: center;
+        font-weight: 600;
+        border-radius: 6px;
+        font-size: 0.9rem;
+        text-decoration: none;
+        background: #007bff;
+        color: white !important;
+        border: 2px solid #007bff;
+        transition: all 0.3s ease;
+        margin-top: 1rem;
+        display: inline-block;
+    }
+    
+    .overview-cta-btn:hover,
+    .process-cta-btn:hover {
+        background: #0056b3;
+        border-color: #0056b3;
+        color: white !important;
+    }
+    
+    /* Overview Image - Mobile */
+    .overview-image {
+        margin-top: 2rem;
+        text-align: center;
+    }
+    
+    .overview-image .image-wrapper {
+        margin-bottom: 1rem;
+    }
+    
+    .overview-image img {
+        max-width: 100%;
+        height: auto;
+        border-radius: 8px;
+    }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+    /* Tablet Layout - 2x2 grid for most sections */
+    .methods-grid,
+    .tools-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+    }
+    
+    .types-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1.5rem;
+    }
+    
+    .method-card,
+    .type-card,
+    .tool-card {
+        background: #f8f9fa;
+        border: 1px solid #e9ecef;
+        border-radius: 8px;
+        padding: 1.5rem;
+        text-align: center;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    }
+}
+</style>
+
