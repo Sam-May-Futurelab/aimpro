@@ -53,7 +53,7 @@ get_header(); ?>
                 array('text' => 'Social Media', 'url' => '/meta-ads'),
                 array('text' => 'Website', 'url' => '/website-design'),
                 array('text' => 'Ads', 'url' => '/retargeting-display'),
-                array('text' => 'AI Automation', 'url' => '/ai-tools'),
+                array('text' => 'AI Automation', 'url' => '/ai-crm-setup'),
                 array('text' => 'CRM', 'url' => '/ai-crm-setup'),
                 array('text' => 'Email', 'url' => '/email-campaigns'),
             ));

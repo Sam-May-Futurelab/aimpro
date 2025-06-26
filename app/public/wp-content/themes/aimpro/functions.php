@@ -1013,7 +1013,7 @@ function aimpro_set_default_landing_page_values() {
             array('text' => 'Website', 'url' => '/website-design'),
             array('text' => 'Ads', 'url' => '/retargeting-display'),
             array('text' => 'Email', 'url' => '/email-campaigns'),
-            array('text' => 'AI Automation', 'url' => '/ai-tools'),
+            array('text' => 'AI Automation', 'url' => '/ai-crm-setup'),
             array('text' => 'CRM', 'url' => '/ai-crm-setup'),
         ),
         // Header CTA Buttons
@@ -1330,7 +1330,7 @@ function aimpro_landing_page_admin() {
                             array('text' => 'Website', 'url' => '/website-design'),
                             array('text' => 'Ads', 'url' => '/retargeting-display'),
                             array('text' => 'Email', 'url' => '/email-campaigns'),
-                            array('text' => 'AI Automation', 'url' => '/ai-tools'),
+                            array('text' => 'AI Automation', 'url' => '/ai-crm-setup'),
                             array('text' => 'CRM', 'url' => '/ai-crm-setup'),
                         ));
                         
@@ -1999,7 +1999,7 @@ function aimpro_migrate_service_tags() {
                 'Website' => '/website-design',
                 'Ads' => '/retargeting-display',
                 'Email' => '/email-campaigns',
-                'AI Automation' => '/ai-tools',
+                'AI Automation' => '/ai-crm-setup',
                 'CRM' => '/ai-crm-setup',
             );
             
