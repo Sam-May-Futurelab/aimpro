@@ -318,4 +318,155 @@ get_header(); ?>
     </div>
 </main>
 
+<!-- Mobile Responsive Styles for Careers Page -->
+<style>
+/* Mobile optimizations for position cards */
+@media (max-width: 768px) {
+    .positions-grid {
+        grid-template-columns: 1fr !important;
+        gap: 1.5rem !important;
+    }
+    
+    .position-card {
+        padding: 1.5rem 1rem !important;
+        margin-bottom: 1rem;
+    }
+    
+    .position-header h3 {
+        font-size: 1.3rem !important;
+        line-height: 1.3 !important;
+        margin-bottom: 0.75rem !important;
+    }
+    
+    .position-meta {
+        flex-direction: column !important;
+        align-items: flex-start !important;
+        gap: 0.5rem !important;
+    }
+    
+    .position-meta span {
+        font-size: 0.85rem !important;
+        padding: 0.25rem 0.5rem !important;
+        margin-right: 0 !important;
+        margin-bottom: 0.25rem !important;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        max-width: 100%;
+    }
+    
+    .position-content p {
+        font-size: 0.9rem !important;
+        line-height: 1.5 !important;
+        margin-bottom: 1rem !important;
+    }
+    
+    .requirements h4 {
+        font-size: 1rem !important;
+        margin-bottom: 0.5rem !important;
+    }
+    
+    .requirements ul {
+        padding-left: 1rem !important;
+    }
+    
+    .requirements li {
+        font-size: 0.85rem !important;
+        line-height: 1.4 !important;
+        margin-bottom: 0.25rem !important;
+    }
+    
+    .position-actions {
+        flex-direction: column !important;
+        gap: 0.75rem !important;
+        margin-top: 1.5rem !important;
+    }
+    
+    .position-actions .btn {
+        width: 100% !important;
+        text-align: center !important;
+        padding: 0.75rem 1rem !important;
+        font-size: 0.9rem !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .position-card {
+        padding: 1rem 0.75rem !important;
+    }
+    
+    .position-header h3 {
+        font-size: 1.1rem !important;
+    }
+    
+    .position-meta span {
+        font-size: 0.8rem !important;
+    }
+    
+    .position-content p {
+        font-size: 0.85rem !important;
+    }
+    
+    .requirements li {
+        font-size: 0.8rem !important;
+    }
+}
+
+/* Mobile optimizations for other sections */
+@media (max-width: 768px) {
+    .page-header-content {
+        text-align: center !important;
+        padding: 1rem 0 !important;
+    }
+    
+    .page-header-content h1 {
+        font-size: 1.8rem !important;
+        margin-bottom: 1rem !important;
+    }
+    
+    .page-subtitle {
+        font-size: 1rem !important;
+        line-height: 1.4 !important;
+    }
+    
+    .benefits-grid {
+        grid-template-columns: 1fr !important;
+        gap: 1.5rem !important;
+    }
+    
+    .benefit-card {
+        padding: 1.5rem 1rem !important;
+        text-align: center !important;
+    }
+    
+    .benefit-icon {
+        margin-bottom: 1rem !important;
+    }
+    
+    .process-steps {
+        flex-direction: column !important;
+        gap: 1.5rem !important;
+    }
+    
+    .step {
+        text-align: center !important;
+        max-width: 100% !important;
+    }
+    
+    .testimonials-grid {
+        grid-template-columns: 1fr !important;
+        gap: 1.5rem !important;
+    }
+    
+    .career-application-form .form-grid {
+        grid-template-columns: 1fr !important;
+        gap: 1rem !important;
+    }
+    
+    .form-group.full-width {
+        grid-column: 1 !important;
+    }
+}
+</style>
+
 <?php get_footer(); ?>
