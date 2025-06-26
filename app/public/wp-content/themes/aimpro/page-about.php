@@ -221,30 +221,58 @@ get_header(); ?>
             </div>
         </section>
 
-        <!-- About the Author Section -->
-        <section class="author-section">
+        <!-- Director Spotlight Section -->
+        <section class="company-values animate-on-scroll animate-fade-up" style="padding: 4rem 0; background: #f8f9fa;">
             <div class="container">
-                <div class="author-content animate-on-scroll animate-fade-up">                    <div class="author-image">
-                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/ajay-dhunna.png" alt="Ajay Dhunna">
+                <div class="section-content">
+                    <div class="content-centre">
+                        <h2>Leadership That Drives Results</h2>
+                        <div class="curly-underline-accent"></div>
                     </div>
-                    <div class="author-info">
-                        <div class="author-badge">About the Director</div>
-                        <h2>Ajay Dhunna</h2>
-                        <p class="author-title">Director of Marketing</p>
-                        <div class="author-description">
+                    <div class="values-grid">
+                        <div class="value-card animate-on-scroll animate-stagger animate-fade-up">
+                            <div class="value-icon">
+                                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/ajay-dhunna.png" alt="Ajay Dhunna" style="width: 80px; height: 80px; border-radius: 50%; object-fit: cover;">
+                            </div>
+                            <h3>Ajay Dhunna</h3>
+                            <p><strong>Director of Marketing</strong></p>
                             <p>With over 15 years of experience in digital marketing, Ajay founded Aimpro Digital with a vision to help businesses achieve exceptional growth through data-driven strategies and innovative solutions.</p>
-                            <p>His expertise spans across SEO, PPC, marketing automation, and business development. Ajay has helped hundreds of businesses transform their digital presence and achieve sustainable growth.</p>
-                            <p>When he's not strategizing for clients, Ajay enjoys sharing his knowledge through industry speaking engagements and mentoring the next generation of digital marketers.</p>
                         </div>
-                        <div class="author-cta">
-                            <a href="https://linkedin.com/in/ajaydhunna" class="btn btn-outline" target="_blank">
-                                <i class="fab fa-linkedin"></i>
-                                Connect on LinkedIn
-                            </a>
-                            <a href="<?php echo home_url('/contact'); ?>" class="btn btn-primary">
-                                Get in Touch
-                            </a>
+                        
+                        <div class="value-card animate-on-scroll animate-stagger animate-fade-up">
+                            <div class="value-icon">
+                                <i class="fas fa-chart-line" style="font-size: 2.5rem;"></i>
+                            </div>
+                            <h3>Proven Expertise</h3>
+                            <p>Specializing in SEO, PPC, marketing automation, and business development, Ajay has helped hundreds of businesses transform their digital presence and achieve sustainable growth.</p>
                         </div>
+                        
+                        <div class="value-card animate-on-scroll animate-stagger animate-fade-up">
+                            <div class="value-icon">
+                                <i class="fas fa-users" style="font-size: 2.5rem;"></i>
+                            </div>
+                            <h3>Industry Leader</h3>
+                            <p>When not strategizing for clients, Ajay shares his knowledge through industry speaking engagements and mentors the next generation of digital marketers.</p>
+                        </div>
+                        
+                        <div class="value-card animate-on-scroll animate-stagger animate-fade-up">
+                            <div class="value-icon">
+                                <i class="fas fa-handshake" style="font-size: 2.5rem;"></i>
+                            </div>
+                            <h3>Client Partnership</h3>
+                            <p>Building lasting relationships through transparent communication, strategic guidance, and delivering measurable results that exceed expectations for every client partnership.</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Connect CTA -->
+                    <div style="text-align: center; margin-top: 3rem;">
+                        <a href="https://linkedin.com/in/ajaydhunna" class="btn btn-outline" target="_blank" style="margin-right: 1rem;">
+                            <i class="fab fa-linkedin"></i>
+                            Connect on LinkedIn
+                        </a>
+                        <a href="<?php echo home_url('/contact'); ?>" class="btn btn-primary">
+                            Get in Touch
+                        </a>
                     </div>
                 </div>
             </div>

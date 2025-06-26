@@ -938,6 +938,7 @@ get_header(); ?>
     gap: 0.5rem;
     padding: 1rem 2rem;
     border-radius: 20px;
+    max-width: 100%;
     
     /* Glassmorphic effect */
     background: rgba(255, 255, 255, 0.1);
@@ -969,6 +970,52 @@ get_header(); ?>
 
 .location-badge-glassmorphic .location-text {
     white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 100%;
+}
+
+/* Mobile responsive adjustments for location badge */
+@media (max-width: 768px) {
+    .location-badge-glassmorphic {
+        padding: 0.75rem 1.5rem;
+        font-size: 0.7rem;
+        letter-spacing: 0.5px;
+        max-width: 90%;
+        margin: 0 auto;
+        /* Ensure better contrast on mobile */
+        background: rgba(0, 0, 0, 0.7);
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        color: white;
+    }
+    
+    .location-badge-glassmorphic .location-text {
+        white-space: normal;
+        text-align: center;
+        line-height: 1.2;
+        color: white;
+    }
+    
+    .location-badge-glassmorphic .location-icon {
+        color: #ff7b00;
+    }
+}
+
+@media (max-width: 480px) {
+    .location-badge-glassmorphic {
+        padding: 0.5rem 1rem;
+        font-size: 0.6rem;
+        letter-spacing: 0.3px;
+        max-width: 95%;
+        /* Stronger contrast for very small screens */
+        background: rgba(0, 0, 0, 0.8);
+        border: 1px solid rgba(255, 255, 255, 0.4);
+    }
+    
+    .location-badge-glassmorphic .location-text {
+        font-size: 0.6rem;
+        color: white;
+    }
 }
 
 /* Dark mode support */

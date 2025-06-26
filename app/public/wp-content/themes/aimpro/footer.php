@@ -48,17 +48,6 @@
                     <a href="https://www.youtube.com/@AimproDigital/videos" class="social-icon" aria-label="Subscribe to our YouTube channel" target="_blank" rel="noopener">
                         <i class="fab fa-youtube"></i>
                     </a>
-                </div><!-- Theme Toggle Button -->
-                <div class="footer-theme-toggle">
-                    <span class="toggle-label">Theme</span>
-                    <button class="theme-toggle" aria-label="Switch to dark theme" title="Toggle Theme">
-                        <span class="theme-icon sun-icon">
-                            <i class="fas fa-sun"></i>
-                        </span>
-                        <span class="theme-icon moon-icon">
-                            <i class="fas fa-moon"></i>
-                        </span>
-                    </button>
                 </div>
             </div>
         </div>        <div class="footer-bottom">
