@@ -954,6 +954,49 @@ get_header(); ?>
     display: none;
 }
 
+/* Mobile CSS for Conversion Elements Section */
+@media (max-width: 768px) {
+    /* Essential Conversion Elements Section */
+    .methods-grid {
+        grid-template-columns: 1fr !important;
+        gap: 20px !important;
+    }
+    
+    .method-card {
+        background: white !important;
+        border: 1px solid #e2e8f0 !important;
+        border-radius: 12px !important;
+        padding: 24px !important;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.1) !important;
+        text-align: center !important;
+    }
+    
+    .method-content h3 {
+        color: #f15a25 !important;
+        font-size: 1.3rem !important;
+        font-weight: 700 !important;
+        margin-bottom: 12px !important;
+        line-height: 1.3 !important;
+    }
+    
+    .method-content p {
+        color: #64748b !important;
+        font-size: 0.95rem !important;
+        line-height: 1.6 !important;
+        margin: 0 !important;
+    }
+    
+    /* Section header */
+    .section-content h2 {
+        font-size: 2rem !important;
+        font-weight: 700 !important;
+        color: #1e293b !important;
+        text-align: center !important;
+        margin-bottom: 40px !important;
+        line-height: 1.3 !important;
+    }
+}
+
 @media (max-width: 768px) {
     .cta-container {
         flex-direction: column;
