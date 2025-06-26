@@ -274,3 +274,323 @@ get_header(); ?>
 </main>
 
 <?php get_footer(); ?>
+
+<style>
+/* Mobile optimizations for streamline sales funnel page */
+@media (max-width: 768px) {
+    /* Case Study Results Grid - Mobile Layout */
+    .case-study-results .results-grid,
+    .results-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 1rem;
+        margin-top: 1.5rem;
+        width: 100%;
+        max-width: 100%;
+        overflow: hidden;
+    }
+    
+    .case-study-results .result-item,
+    .results-grid .result-item {
+        background: #f8f9fa;
+        border: 1px solid #e9ecef;
+        border-radius: 8px;
+        padding: 1.5rem 1rem;
+        text-align: center;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        width: 100%;
+        max-width: 100%;
+        box-sizing: border-box;
+    }
+    
+    .case-study-results .result-number,
+    .results-grid .result-number {
+        font-size: 2.5rem;
+        font-weight: 700;
+        color: #ff6b35;
+        line-height: 1;
+        margin-bottom: 0.5rem;
+        word-break: break-word;
+    }
+    
+    .case-study-results .result-label,
+    .results-grid .result-label {
+        font-size: 0.9rem;
+        font-weight: 600;
+        color: #495057;
+        margin-bottom: 0.5rem;
+        line-height: 1.3;
+    }
+    
+    /* Hero Stats - Mobile Layout */
+    .hero-stats {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 1rem;
+        margin-top: 1.5rem;
+        width: 100%;
+        max-width: 100%;
+    }
+    
+    .hero-stats .stat-item {
+        background: #f8f9fa;
+        border: 1px solid #e9ecef;
+        border-radius: 8px;
+        padding: 1.5rem 1rem;
+        text-align: center;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        width: 100%;
+        box-sizing: border-box;
+    }
+    
+    .hero-stats .stat-number {
+        font-size: 2.5rem;
+        font-weight: 700;
+        color: #ff6b35;
+        line-height: 1;
+        margin-bottom: 0.5rem;
+    }
+    
+    .hero-stats .stat-label {
+        font-size: 0.9rem;
+        font-weight: 600;
+        color: #495057;
+        line-height: 1.3;
+    }
+    
+    /* Services Grid - Mobile Layout */
+    .services-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+        margin-top: 1.5rem;
+    }
+    
+    .service-item {
+        background: #f8f9fa;
+        border: 1px solid #e9ecef;
+        border-radius: 8px;
+        padding: 1.5rem;
+        text-align: center;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    }
+    
+    .service-icon {
+        margin-bottom: 1rem;
+    }
+    
+    .service-icon i {
+        font-size: 2.5rem;
+        color: #ff6b35;
+    }
+    
+    .service-item h3 {
+        font-size: 1.25rem;
+        margin-bottom: 0.75rem;
+        color: #212529;
+    }
+    
+    .service-item p {
+        font-size: 0.9rem;
+        color: #6c757d;
+        line-height: 1.5;
+        margin: 0;
+    }
+    
+    /* Process Steps - Mobile Layout */
+    .process-steps {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .step-item {
+        background: #f8f9fa;
+        border: 1px solid #e9ecef;
+        border-radius: 8px;
+        padding: 1.5rem;
+        display: flex;
+        align-items: flex-start;
+        gap: 1rem;
+    }
+    
+    .step-number {
+        background: #ff6b35;
+        color: white;
+        width: 2.5rem;
+        height: 2.5rem;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 700;
+        font-size: 1.1rem;
+        flex-shrink: 0;
+    }
+    
+    .step-content h3 {
+        font-size: 1.1rem;
+        margin-bottom: 0.5rem;
+        color: #212529;
+    }
+    
+    .step-content p {
+        font-size: 0.9rem;
+        color: #6c757d;
+        line-height: 1.5;
+        margin: 0;
+    }
+    
+    /* Benefits Grid - Mobile Layout */
+    .benefits-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .benefit-item {
+        background: #f8f9fa;
+        border: 1px solid #e9ecef;
+        border-radius: 8px;
+        padding: 1.5rem;
+        text-align: center;
+    }
+    
+    .benefit-item h3 {
+        font-size: 1.25rem;
+        margin-bottom: 0.75rem;
+        color: #212529;
+    }
+    
+    .benefit-item p {
+        font-size: 0.9rem;
+        color: #6c757d;
+        line-height: 1.5;
+        margin: 0;
+    }
+    
+    /* CTA Buttons - Mobile Layout */
+    .hero-ctas,
+    .cta-buttons {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        margin: 1.5rem 0;
+        width: 100%;
+    }
+    
+    .btn-primary,
+    .btn-outline,
+    .btn-secondary,
+    .overview-cta-btn,
+    .process-cta-btn {
+        width: 100%;
+        padding: 0.875rem 1.5rem;
+        text-align: center;
+        font-weight: 600;
+        border-radius: 6px;
+        font-size: 0.9rem;
+        text-decoration: none;
+        transition: all 0.3s ease;
+        box-sizing: border-box;
+    }
+    
+    .btn-primary,
+    .btn-secondary,
+    .overview-cta-btn,
+    .process-cta-btn {
+        background: #ff6b35;
+        color: white !important;
+        border: 2px solid #ff6b35;
+    }
+    
+    .btn-primary:hover,
+    .btn-secondary:hover,
+    .overview-cta-btn:hover,
+    .process-cta-btn:hover {
+        background: #e55a2b;
+        border-color: #e55a2b;
+        color: white !important;
+    }
+    
+    .btn-outline {
+        background: transparent;
+        color: #ff6b35 !important;
+        border: 2px solid #ff6b35;
+    }
+    
+    .btn-outline:hover {
+        background: #ff6b35;
+        color: white !important;
+    }
+    
+    /* Container and Section Overrides */
+    .container {
+        width: 100%;
+        max-width: 100%;
+        padding-left: 1rem;
+        padding-right: 1rem;
+        box-sizing: border-box;
+    }
+    
+    .case-study-section .container,
+    .service-overview .container,
+    .process-steps-section .container {
+        overflow: hidden;
+    }
+    
+    /* FAQ Section - Mobile */
+    .faq-container {
+        width: 100%;
+    }
+    
+    .faq-item {
+        margin-bottom: 1rem;
+        border: 1px solid #e9ecef;
+        border-radius: 8px;
+        overflow: hidden;
+    }
+    
+    .faq-question {
+        background: #f8f9fa;
+        padding: 1rem;
+        margin: 0;
+        font-size: 1rem;
+        cursor: pointer;
+    }
+    
+    .faq-answer {
+        padding: 1rem;
+        background: white;
+    }
+    
+    .faq-answer p {
+        margin: 0;
+        font-size: 0.9rem;
+        line-height: 1.5;
+        color: #6c757d;
+    }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+    /* Tablet Layout - 2x2 grid */
+    .results-grid,
+    .hero-stats {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+    }
+    
+    .services-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+    }
+    
+    .benefits-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1.5rem;
+    }
+}
+</style>
