@@ -111,10 +111,13 @@ wp_enqueue_style('locations-page-css', get_template_directory_uri() . '/assets/c
                             </div>
                             
                             <div class="connection-lines">
-                                <div class="connection-line line-1"></div>
-                                <div class="connection-line line-2"></div>
-                                <div class="connection-line line-3"></div>
-                                <div class="connection-line line-4"></div>
+                                <svg>
+                                    <!-- Lines from center (50%, 50%) to each city point - 40% shorter total -->
+                                    <line x1="50%" y1="50%" x2="75%" y2="25%"></line> <!-- To London -->
+                                    <line x1="50%" y1="50%" x2="25%" y2="25%"></line> <!-- To Manchester -->
+                                    <line x1="50%" y1="50%" x2="25%" y2="75%"></line> <!-- To Edinburgh -->
+                                    <line x1="50%" y1="50%" x2="75%" y2="75%"></line> <!-- To Cardiff -->
+                                </svg>
                             </div>
                         </div>
                     </div>

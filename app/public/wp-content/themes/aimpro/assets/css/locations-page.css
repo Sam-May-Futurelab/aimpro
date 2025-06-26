@@ -590,7 +590,7 @@
     line-height: 1.5;
 }
 
-/* Connectivity Diagram */
+/* Simple & Clean Connectivity Diagram */
 .connectivity-diagram {
     position: relative;
     width: 100%;
@@ -598,8 +598,14 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    background: #ffffff;
+    border: 1px solid rgba(241, 90, 37, 0.1);
+    border-radius: 16px;
+    padding: 2rem;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.06);
 }
 
+/* Center Hub - Simple Design */
 .center-hub {
     position: absolute;
     top: 50%;
@@ -608,23 +614,30 @@
     background: white;
     border: 3px solid var(--primary-orange);
     border-radius: 50%;
-    width: 120px;
-    height: 120px;
+    width: 100px;
+    height: 100px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    box-shadow: 0 10px 30px rgba(241, 90, 37, 0.2);
+    box-shadow: 0 8px 20px rgba(241, 90, 37, 0.2);
     z-index: 10;
 }
 
-.center-hub span {
-    font-size: 0.75rem;
-    font-weight: 600;
-    color: var(--primary-orange);
-    margin-top: 0.5rem;
+.hub-logo {
+    margin-bottom: 0.25rem;
 }
 
+.center-hub span {
+    font-size: 0.7rem;
+    font-weight: 700;
+    color: var(--primary-orange);
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+    text-align: center;
+}
+
+/* Connection Points - Positioned for Perfect Lines */
 .connection-points {
     position: relative;
     width: 100%;
@@ -637,59 +650,54 @@
     flex-direction: column;
     align-items: center;
     gap: 0.5rem;
+    z-index: 5;
 }
 
+/* Precisely positioned for straight lines to center */
 .connection-point.point-1 {
-    top: 15%;
+    top: 10%;
     right: 10%;
 }
 
 .connection-point.point-2 {
-    top: 25%;
-    left: 5%;
+    top: 10%;
+    left: 10%;
 }
 
 .connection-point.point-3 {
-    bottom: 25%;
-    left: 15%;
+    bottom: 10%;
+    left: 10%;
 }
 
 .connection-point.point-4 {
-    bottom: 15%;
-    right: 20%;
+    bottom: 10%;
+    right: 10%;
 }
 
+/* Simple Point Dots */
 .point-dot {
-    width: 16px;
-    height: 16px;
+    width: 14px;
+    height: 14px;
     background: var(--primary-orange);
     border-radius: 50%;
-    position: relative;
+    border: 2px solid white;
+    box-shadow: 0 2px 8px rgba(241, 90, 37, 0.3);
 }
 
-.point-dot::after {
-    content: '';
-    position: absolute;
-    top: -4px;
-    left: -4px;
-    right: -4px;
-    bottom: -4px;
-    border: 2px solid rgba(241, 90, 37, 0.3);
-    border-radius: 50%;
-    animation: pulse 2s ease-in-out infinite;
-}
-
-@keyframes pulse {
-    0%, 100% { transform: scale(1); opacity: 1; }
-    50% { transform: scale(1.2); opacity: 0.7; }
-}
-
+/* Clean City Labels */
 .connection-point span {
-    font-size: 0.875rem;
+    font-size: 0.8rem;
     font-weight: 600;
-    color: #1a1a1a;
+    color: #333;
+    background: white;
+    padding: 0.4rem 0.8rem;
+    border-radius: 15px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(241, 90, 37, 0.1);
+    white-space: nowrap;
 }
 
+/* Perfect Connection Lines - Using SVG for precise connections */
 .connection-lines {
     position: absolute;
     top: 0;
@@ -699,48 +707,27 @@
     pointer-events: none;
 }
 
-.connection-line {
-    position: absolute;
-    height: 2px;
-    background: linear-gradient(to right, var(--primary-orange), rgba(241, 90, 37, 0.3));
-    animation: connectionPulse 3s ease-in-out infinite;
+.connection-lines svg {
+    width: 100%;
+    height: 100%;
 }
 
-.connection-line.line-1 {
-    top: 32%;
-    right: 15%;
-    width: 25%;
-    transform: rotate(-15deg);
-    animation-delay: 0s;
+.connection-lines svg line {
+    stroke: var(--primary-orange);
+    stroke-width: 2;
+    opacity: 0.8;
+    stroke-dasharray: 0;
 }
 
-.connection-line.line-2 {
-    top: 40%;
-    left: 15%;
-    width: 30%;
-    transform: rotate(25deg);
-    animation-delay: 0.5s;
+.connection-lines svg line.animated {
+    stroke-dasharray: 5,5;
+    animation: dash 2s linear infinite;
 }
 
-.connection-line.line-3 {
-    bottom: 40%;
-    left: 25%;
-    width: 20%;
-    transform: rotate(-35deg);
-    animation-delay: 1s;
-}
-
-.connection-line.line-4 {
-    bottom: 32%;
-    right: 25%;
-    width: 22%;
-    transform: rotate(20deg);
-    animation-delay: 1.5s;
-}
-
-@keyframes connectionPulse {
-    0%, 100% { opacity: 0.6; }
-    50% { opacity: 1; }
+@keyframes dash {
+    to {
+        stroke-dashoffset: -10;
+    }
 }
 
 /* CTA Section */
