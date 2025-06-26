@@ -382,4 +382,312 @@ $newsletter_content = get_post_meta(get_the_ID(), '_events_webinars_newsletter_c
             </div>        </section>    </div>
 </main>
 
+<!-- Mobile Responsive Styles for Events & Webinars Page -->
+<style>
+/* Mobile optimizations for events and webinars page */
+@media (max-width: 768px) {
+    /* Page header mobile optimization */
+    .page-header-content {
+        text-align: center !important;
+        padding: 1.5rem 1rem !important;
+    }
+    
+    .page-header-content h1 {
+        font-size: 2rem !important;
+        margin-bottom: 1rem !important;
+    }
+    
+    .page-subtitle {
+        font-size: 1rem !important;
+        line-height: 1.4 !important;
+    }
+    
+    /* Events grid mobile optimization */
+    .events-grid {
+        display: grid !important;
+        grid-template-columns: 1fr !important;
+        gap: 1.5rem !important;
+        padding: 1rem !important;
+    }
+    
+    .event-card {
+        width: 100% !important;
+        display: flex !important;
+        flex-direction: column !important;
+        background: var(--glass-bg) !important;
+        border: var(--glass-border) !important;
+        border-radius: 15px !important;
+        padding: 0 !important;
+        overflow: hidden !important;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1) !important;
+        margin-bottom: 1rem !important;
+    }
+    
+    .event-date-badge {
+        position: relative !important;
+        top: auto !important;
+        left: auto !important;
+        background: var(--primary-orange) !important;
+        color: white !important;
+        padding: 1rem !important;
+        text-align: center !important;
+        width: 100% !important;
+        border-radius: 0 !important;
+        margin: 0 !important;
+        transform: none !important;
+    }
+    
+    .event-date-badge .month {
+        font-size: 0.9rem !important;
+        font-weight: 600 !important;
+        text-transform: uppercase !important;
+        margin-bottom: 0.25rem !important;
+    }
+    
+    .event-date-badge .day {
+        font-size: 1.8rem !important;
+        font-weight: 700 !important;
+        line-height: 1 !important;
+    }
+    
+    .event-content {
+        padding: 1.5rem 1rem !important;
+        width: 100% !important;
+    }
+    
+    .event-meta {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 0.5rem !important;
+        margin-bottom: 1rem !important;
+        align-items: flex-start !important;
+    }
+    
+    .event-time {
+        font-size: 0.9rem !important;
+        color: var(--text-secondary) !important;
+        font-weight: 500 !important;
+    }
+    
+    .event-format {
+        background: var(--primary-orange) !important;
+        color: white !important;
+        padding: 0.25rem 0.75rem !important;
+        border-radius: 20px !important;
+        font-size: 0.8rem !important;
+        font-weight: 600 !important;
+        text-transform: uppercase !important;
+        align-self: flex-start !important;
+    }
+    
+    .event-card h3 {
+        font-size: 1.2rem !important;
+        line-height: 1.3 !important;
+        margin-bottom: 0.75rem !important;
+        color: var(--text-primary) !important;
+        font-weight: 600 !important;
+    }
+    
+    .event-card p {
+        font-size: 0.9rem !important;
+        line-height: 1.5 !important;
+        color: var(--text-secondary) !important;
+        margin-bottom: 1rem !important;
+    }
+    
+    .event-details {
+        display: flex !important;
+        justify-content: space-between !important;
+        align-items: center !important;
+        margin-bottom: 1.5rem !important;
+        flex-wrap: wrap !important;
+        gap: 0.5rem !important;
+    }
+    
+    .attendees {
+        font-size: 0.8rem !important;
+        color: var(--text-secondary) !important;
+        background: rgba(var(--primary-orange-rgb), 0.1) !important;
+        padding: 0.25rem 0.5rem !important;
+        border-radius: 4px !important;
+    }
+    
+    .event-details .price {
+        font-size: 1rem !important;
+        font-weight: 700 !important;
+        color: var(--primary-orange) !important;
+    }
+    
+    .event-register {
+        width: 100% !important;
+        text-align: center !important;
+        padding: 0.75rem 1rem !important;
+        background: var(--primary-orange) !important;
+        color: white !important;
+        text-decoration: none !important;
+        border-radius: 8px !important;
+        font-weight: 600 !important;
+        font-size: 0.9rem !important;
+        transition: all 0.3s ease !important;
+        display: block !important;
+    }
+    
+    .event-register:hover {
+        background: var(--primary-orange-dark) !important;
+        transform: translateY(-2px) !important;
+    }
+    
+    /* Featured event mobile optimization */
+    .featured-event {
+        flex-direction: column !important;
+        gap: 2rem !important;
+        padding: 1.5rem 1rem !important;
+    }
+    
+    .featured-event-content {
+        text-align: center !important;
+        order: 2 !important;
+    }
+    
+    .featured-event-image {
+        order: 1 !important;
+        width: 100% !important;
+    }
+    
+    /* On-demand grid mobile optimization */
+    .on-demand-grid {
+        grid-template-columns: 1fr !important;
+        gap: 1.5rem !important;
+    }
+    
+    .on-demand-event {
+        padding: 1rem !important;
+    }
+    
+    .event-thumbnail {
+        margin-bottom: 1rem !important;
+    }
+    
+    .event-thumbnail iframe {
+        height: 180px !important;
+    }
+    
+    /* Stats grid mobile optimization */
+    .stats-grid {
+        display: grid !important;
+        grid-template-columns: repeat(3, 1fr) !important;
+        gap: 1rem !important;
+        margin: 2rem 0 !important;
+    }
+    
+    .stat-item {
+        text-align: center !important;
+        padding: 1rem 0.5rem !important;
+    }
+    
+    .stat-number {
+        font-size: 1.5rem !important;
+        margin-bottom: 0.25rem !important;
+    }
+    
+    .stat-label {
+        font-size: 0.8rem !important;
+    }
+    
+    /* Newsletter form mobile optimization */
+    .newsletter-form .form-group {
+        flex-direction: column !important;
+        gap: 0.75rem !important;
+    }
+    
+    .newsletter-form input {
+        width: 100% !important;
+        margin-bottom: 0.5rem !important;
+    }
+    
+    .newsletter-form button {
+        width: 100% !important;
+        padding: 0.75rem !important;
+    }
+    
+    /* Event categories mobile optimization */
+    .event-categories-grid {
+        grid-template-columns: 1fr !important;
+        gap: 1.5rem !important;
+        padding: 1rem !important;
+    }
+    
+    .event-category {
+        padding: 1.5rem 1rem !important;
+        text-align: center !important;
+        background: var(--glass-bg) !important;
+        border: var(--glass-border) !important;
+        border-radius: 15px !important;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1) !important;
+        margin-bottom: 1rem !important;
+        width: 100% !important;
+    }
+    
+    .event-category h3 {
+        font-size: 1.2rem !important;
+        margin-bottom: 0.75rem !important;
+        color: var(--text-primary) !important;
+        font-weight: 600 !important;
+    }
+    
+    .event-category p {
+        font-size: 0.9rem !important;
+        line-height: 1.5 !important;
+        color: var(--text-secondary) !important;
+        margin-bottom: 1rem !important;
+    }
+    
+    .category-frequency {
+        background: var(--primary-orange) !important;
+        color: white !important;
+        padding: 0.4rem 1rem !important;
+        border-radius: 20px !important;
+        font-size: 0.8rem !important;
+        font-weight: 600 !important;
+        text-transform: uppercase !important;
+        display: inline-block !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .events-grid {
+        padding: 0.5rem !important;
+    }
+    
+    .event-content {
+        padding: 1rem 0.75rem !important;
+    }
+    
+    .event-card h3 {
+        font-size: 1.1rem !important;
+    }
+    
+    .event-card p {
+        font-size: 0.85rem !important;
+    }
+    
+    .stats-grid {
+        grid-template-columns: 1fr !important;
+        gap: 1rem !important;
+    }
+    
+    .page-header-content h1 {
+        font-size: 1.6rem !important;
+    }
+    
+    .event-date-badge {
+        padding: 0.75rem !important;
+    }
+    
+    .event-date-badge .day {
+        font-size: 1.5rem !important;
+    }
+}
+</style>
+
 <?php get_footer(); ?>
