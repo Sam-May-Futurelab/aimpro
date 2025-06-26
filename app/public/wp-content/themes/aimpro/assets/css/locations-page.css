@@ -1,0 +1,944 @@
+/* Locations Page Specific Styles */
+.locations-page {
+    background: #ffffff;
+}
+
+/* Hero Section */
+.locations-hero {
+    position: relative;
+    padding: 6rem 0 4rem;
+    background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+    overflow: hidden;
+}
+
+.locations-hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at 20% 50%, rgba(241, 90, 37, 0.03) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(255, 107, 53, 0.02) 0%, transparent 50%);
+    pointer-events: none;
+}
+
+/* Hero Particles */
+.hero-particles {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+.hero-particles .particle {
+    position: absolute;
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 50%;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.4);
+    animation: particlesFloat 12s ease-in-out infinite;
+}
+
+.hero-particles .particle-1 {
+    width: 8px;
+    height: 8px;
+    top: 20%;
+    left: 10%;
+    animation-delay: 0s;
+}
+
+.hero-particles .particle-2 {
+    width: 6px;
+    height: 6px;
+    top: 60%;
+    left: 80%;
+    animation-delay: 2s;
+}
+
+.hero-particles .particle-3 {
+    width: 4px;
+    height: 4px;
+    top: 30%;
+    left: 70%;
+    animation-delay: 4s;
+}
+
+.hero-particles .particle-4 {
+    width: 10px;
+    height: 10px;
+    top: 80%;
+    left: 20%;
+    animation-delay: 1s;
+}
+
+.hero-particles .particle-5 {
+    width: 5px;
+    height: 5px;
+    top: 15%;
+    left: 90%;
+    animation-delay: 3s;
+}
+
+.hero-particles .particle-6 {
+    width: 7px;
+    height: 7px;
+    top: 70%;
+    left: 50%;
+    animation-delay: 5s;
+}
+
+@keyframes particlesFloat {
+    0%, 100% { transform: translateY(0px) translateX(0px) scale(1); opacity: 0.7; }
+    25% { transform: translateY(-20px) translateX(10px) scale(1.1); opacity: 1; }
+    50% { transform: translateY(-10px) translateX(-5px) scale(0.9); opacity: 0.8; }
+    75% { transform: translateY(-30px) translateX(15px) scale(1.05); opacity: 0.9; }
+}
+
+.locations-page .hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: rgba(241, 90, 37, 0.1);
+    border: 1px solid rgba(241, 90, 37, 0.2);
+    color: var(--primary-orange);
+    padding: 0.75rem 1.5rem;
+    border-radius: 50px;
+    font-size: 0.875rem;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    margin-bottom: 1.5rem;
+    backdrop-filter: blur(10px);
+}
+
+.locations-page .hero-badge .location-icon {
+    color: var(--primary-orange);
+}
+
+.locations-hero .hero-title {
+    font-size: 3rem;
+    font-weight: 800;
+    color: var(--text-dark);
+    margin-bottom: 1.5rem;
+    text-align: center;
+    line-height: 1.2;
+}
+
+.locations-hero .hero-subtitle {
+    font-size: 1.25rem;
+    color: var(--text-secondary);
+    line-height: 1.6;
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+/* Office Visit Section */
+.office-visit-section {
+    padding: 4rem 0 2rem 0;
+    background: #ffffff;
+}
+
+.office-visit-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+}
+
+.visit-content h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--text-dark);
+    margin-bottom: 1.5rem;
+    line-height: 1.2;
+}
+
+.visit-content p {
+    font-size: 1.125rem;
+    color: var(--text-secondary);
+    margin-bottom: 2rem;
+    line-height: 1.6;
+}
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 2.5rem;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.contact-item i {
+    width: 24px;
+    height: 24px;
+    color: var(--primary-orange);
+    font-size: 1.5rem;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.contact-item .label {
+    display: block;
+    font-size: 0.875rem;
+    font-weight: 700;
+    color: var(--text-dark);
+    margin-bottom: 0.25rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.contact-item .value,
+.contact-item a.value {
+    display: block;
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #1a1a1a;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.contact-item a.value:hover {
+    color: var(--primary-orange);
+}
+
+.visit-cta-centered {
+    text-align: center;
+    margin-top: 3rem;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(241, 90, 37, 0.1);
+}
+
+.visit-cta-centered .btn {
+    padding: 1rem 2.5rem;
+    font-size: 1.125rem;
+    font-weight: 700;
+    border-radius: 12px;
+}
+
+/* Premium Orange CTA Button */
+.visit-cta-centered .btn-orange,
+.visit-cta-centered .cta-primary {
+    background: linear-gradient(135deg, var(--primary-orange), #e04d1a);
+    color: white;
+    border: none;
+    padding: 1.25rem 3rem;
+    font-size: 1.25rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    border-radius: 12px;
+    box-shadow: 0 8px 25px rgba(241, 90, 37, 0.4);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    animation: gentle-pulse 3s infinite;
+}
+
+@keyframes gentle-pulse {
+    0%, 100% {
+        box-shadow: 0 8px 25px rgba(241, 90, 37, 0.4);
+    }
+    50% {
+        box-shadow: 0 8px 30px rgba(241, 90, 37, 0.6);
+    }
+}
+
+.visit-cta-centered .btn-orange:hover,
+.visit-cta-centered .cta-primary:hover {
+    background: linear-gradient(135deg, #e04d1a, var(--primary-orange));
+    transform: translateY(-3px);
+    box-shadow: 0 12px 35px rgba(241, 90, 37, 0.6);
+    color: white;
+    animation: none; /* Stop pulse on hover */
+}
+
+.visit-cta-centered .btn-orange:active,
+.visit-cta-centered .cta-primary:active {
+    transform: translateY(-1px);
+    box-shadow: 0 6px 20px rgba(241, 90, 37, 0.4);
+}
+
+.office-details-card {
+    background: #ffffff;
+    border: 1px solid rgba(241, 90, 37, 0.1);
+    border-radius: 16px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+.office-details-card h3 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--text-dark);
+    margin-bottom: 1rem;
+}
+
+.office-details-card p {
+    font-size: 1.125rem;
+    color: #2c2c2c;
+    margin-bottom: 0.75rem;
+    line-height: 1.6;
+    font-weight: 500;
+}
+
+.office-details-card p strong {
+    color: var(--primary-orange);
+    font-weight: 700;
+}
+
+.office-details-card p:last-child {
+    margin-bottom: 0;
+}
+
+.office-image-container {
+    margin-top: 2rem;
+}
+
+.office-image-container img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 16px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.office-image-container img:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.18);
+}
+
+.location-icon-wrapper {
+    background: rgba(241, 90, 37, 0.1);
+    border-radius: 12px;
+    padding: 1rem;
+    flex-shrink: 0;
+}
+
+.location-text h3 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #1a1a1a;
+    margin-bottom: 0.5rem;
+}
+
+.location-text .address {
+    font-size: 1.1rem;
+    color: #5a6c7d;
+    line-height: 1.5;
+}
+
+.office-contact-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+}
+
+.locations-page .contact-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
+    background: rgba(248, 249, 250, 0.8);
+    border-radius: 12px;
+    transition: all 0.3s ease;
+}
+
+.locations-page .contact-item:hover {
+    background: rgba(241, 90, 37, 0.05);
+    transform: translateY(-2px);
+}
+
+.locations-page .contact-icon {
+    background: var(--primary-orange);
+    color: white;
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.locations-page .contact-details {
+    flex: 1;
+}
+
+.locations-page .contact-label {
+    display: block;
+    font-size: 0.875rem;
+    color: #5a6c7d;
+    margin-bottom: 0.25rem;
+    font-weight: 500;
+}
+
+.locations-page .contact-value {
+    font-weight: 600;
+    color: #1a1a1a;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.locations-page .contact-value:hover {
+    color: var(--primary-orange);
+}
+
+/* Service Areas Section */
+.service-areas-section {
+    padding: 5rem 0;
+    background: #f8f9fa;
+}
+
+.service-areas-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.locations-page .area-card {
+    background: white;
+    border-radius: 16px;
+    padding: 2.5rem;
+    text-align: center;
+    transition: all 0.3s ease;
+    position: relative;
+    border: 1px solid rgba(241, 90, 37, 0.1);
+}
+
+.locations-page .area-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+}
+
+.locations-page .area-card.primary-area {
+    border: 2px solid var(--primary-orange);
+    background: linear-gradient(135deg, #ffffff 0%, rgba(241, 90, 37, 0.02) 100%);
+}
+
+.locations-page .area-icon {
+    margin-bottom: 1.5rem;
+}
+
+.locations-page .area-card h3 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #1a1a1a;
+    margin-bottom: 1rem;
+}
+
+.locations-page .area-card p {
+    color: #5a6c7d;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+}
+
+.locations-page .area-badge {
+    display: inline-block;
+    background: rgba(241, 90, 37, 0.1);
+    color: var(--primary-orange);
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.875rem;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+}
+
+.locations-page .area-badge.primary {
+    background: var(--primary-orange);
+    color: white;
+}
+
+/* Remote Services Section */
+.remote-services-section {
+    padding: 5rem 0;
+    background: #ffffff;
+}
+
+.remote-services-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+}
+
+.locations-page .section-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: rgba(241, 90, 37, 0.1);
+    border: 1px solid rgba(241, 90, 37, 0.2);
+    color: var(--primary-orange);
+    padding: 0.75rem 1.5rem;
+    border-radius: 50px;
+    font-size: 0.875rem;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    margin-bottom: 1.5rem;
+}
+
+.remote-info h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #1a1a1a;
+    margin-bottom: 1.5rem;
+    line-height: 1.3;
+}
+
+.remote-description {
+    font-size: 1.125rem;
+    color: #5a6c7d;
+    line-height: 1.6;
+    margin-bottom: 2.5rem;
+}
+
+.remote-features {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.locations-page .feature-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+}
+
+.locations-page .feature-icon {
+    background: var(--primary-orange);
+    color: white;
+    width: 50px;
+    height: 50px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    font-size: 1.25rem;
+}
+
+.locations-page .feature-content h4 {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: #1a1a1a;
+    margin-bottom: 0.5rem;
+}
+
+.locations-page .feature-content p {
+    color: #5a6c7d;
+    line-height: 1.5;
+}
+
+/* Connectivity Diagram */
+.connectivity-diagram {
+    position: relative;
+    width: 100%;
+    height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.center-hub {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: white;
+    border: 3px solid var(--primary-orange);
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 10px 30px rgba(241, 90, 37, 0.2);
+    z-index: 10;
+}
+
+.center-hub span {
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--primary-orange);
+    margin-top: 0.5rem;
+}
+
+.connection-points {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.connection-point {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.connection-point.point-1 {
+    top: 15%;
+    right: 10%;
+}
+
+.connection-point.point-2 {
+    top: 25%;
+    left: 5%;
+}
+
+.connection-point.point-3 {
+    bottom: 25%;
+    left: 15%;
+}
+
+.connection-point.point-4 {
+    bottom: 15%;
+    right: 20%;
+}
+
+.point-dot {
+    width: 16px;
+    height: 16px;
+    background: var(--primary-orange);
+    border-radius: 50%;
+    position: relative;
+}
+
+.point-dot::after {
+    content: '';
+    position: absolute;
+    top: -4px;
+    left: -4px;
+    right: -4px;
+    bottom: -4px;
+    border: 2px solid rgba(241, 90, 37, 0.3);
+    border-radius: 50%;
+    animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { transform: scale(1); opacity: 1; }
+    50% { transform: scale(1.2); opacity: 0.7; }
+}
+
+.connection-point span {
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: #1a1a1a;
+}
+
+.connection-lines {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+.connection-line {
+    position: absolute;
+    height: 2px;
+    background: linear-gradient(to right, var(--primary-orange), rgba(241, 90, 37, 0.3));
+    animation: connectionPulse 3s ease-in-out infinite;
+}
+
+.connection-line.line-1 {
+    top: 32%;
+    right: 15%;
+    width: 25%;
+    transform: rotate(-15deg);
+    animation-delay: 0s;
+}
+
+.connection-line.line-2 {
+    top: 40%;
+    left: 15%;
+    width: 30%;
+    transform: rotate(25deg);
+    animation-delay: 0.5s;
+}
+
+.connection-line.line-3 {
+    bottom: 40%;
+    left: 25%;
+    width: 20%;
+    transform: rotate(-35deg);
+    animation-delay: 1s;
+}
+
+.connection-line.line-4 {
+    bottom: 32%;
+    right: 25%;
+    width: 22%;
+    transform: rotate(20deg);
+    animation-delay: 1.5s;
+}
+
+@keyframes connectionPulse {
+    0%, 100% { opacity: 0.6; }
+    50% { opacity: 1; }
+}
+
+/* CTA Section */
+.locations-cta-section {
+    padding: 5rem 0;
+    background: var(--gradient-orange);
+    position: relative;
+    overflow: hidden;
+}
+
+.locations-cta-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="1.5" fill="rgba(255,255,255,0.4)"/><circle cx="75" cy="75" r="1" fill="rgba(255,255,255,0.3)"/><circle cx="50" cy="10" r="1.2" fill="rgba(255,255,255,0.35)"/><circle cx="10" cy="60" r="0.8" fill="rgba(255,255,255,0.25)"/><circle cx="90" cy="40" r="1.1" fill="rgba(255,255,255,0.32)"/><circle cx="30" cy="80" r="0.9" fill="rgba(255,255,255,0.28)"/><circle cx="80" cy="15" r="1.3" fill="rgba(255,255,255,0.38)"/><circle cx="15" cy="30" r="0.7" fill="rgba(255,255,255,0.22)"/><circle cx="65" cy="50" r="1.4" fill="rgba(255,255,255,0.42)"/><circle cx="40" cy="90" r="1" fill="rgba(255,255,255,0.3)"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+    pointer-events: none;
+    animation: particleFloat 8s ease-in-out infinite;
+}
+
+/* Add floating particle animation to the CTA background */
+@keyframes particleFloat {
+    0%, 100% { 
+        transform: translateY(0px) scale(1); 
+        opacity: 0.8; 
+    }
+    50% { 
+        transform: translateY(-10px) scale(1.05); 
+        opacity: 1; 
+    }
+}
+
+.locations-page .cta-content {
+    position: relative;
+    z-index: 2;
+}
+
+.locations-page .cta-icon {
+    margin-bottom: 1.5rem;
+}
+
+.locations-cta-section h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: white !important;
+    margin-bottom: 1.5rem;
+    text-align: center;
+    line-height: 1.2;
+}
+
+.locations-page .cta-description {
+    font-size: 1.125rem;
+    color: #000000;
+    line-height: 1.6;
+    max-width: 800px;
+    margin: 0 auto 2.5rem;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 1.5rem 2rem;
+    border-radius: 12px;
+    backdrop-filter: blur(10px);
+}
+
+.locations-page .cta-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+    align-items: center;
+}
+
+.locations-page .btn-large {
+    padding: 1rem 2rem;
+    font-size: 1.125rem;
+    border-radius: 12px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    text-decoration: none;
+}
+
+.locations-page .btn-primary {
+    background: white;
+    color: var(--primary-orange);
+    border: 2px solid white;
+}
+
+.locations-page .btn-primary:hover {
+    background: transparent;
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.locations-page .btn-secondary {
+    background: transparent;
+    color: white;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+.locations-page .btn-secondary:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: white;
+    transform: translateY(-2px);
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .remote-services-content {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+        text-align: center;
+    }
+    
+    .connectivity-diagram {
+        height: 300px;
+    }
+    
+    .center-hub {
+        width: 100px;
+        height: 100px;
+    }
+}
+
+@media (max-width: 768px) {
+    .locations-hero {
+        padding: 4rem 0 3rem;
+    }
+    
+    .locations-hero .hero-title {
+        font-size: 2.5rem;
+    }
+    
+    .locations-hero .hero-subtitle {
+        font-size: 1.125rem;
+    }
+    
+    .office-visit-container {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
+    
+    .visit-content h2 {
+        font-size: 2rem;
+    }
+    
+    .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+    
+    .office-details-card {
+        padding: 1.5rem;
+    }
+    
+    .office-image-container img {
+        height: 250px;
+    }
+    
+    .office-contact-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .service-areas-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .locations-page .area-card {
+        padding: 2rem;
+    }
+    
+    .remote-info h2 {
+        font-size: 2rem;
+    }
+    
+    .connectivity-diagram {
+        height: 250px;
+    }
+    
+    .connection-point {
+        font-size: 0.75rem;
+    }
+    
+    .locations-cta-section h2 {
+        font-size: 2rem;
+    }
+    
+    .locations-page .cta-buttons {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    
+    .locations-page .btn-large {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .locations-hero .hero-title {
+        font-size: 2rem;
+    }
+    
+    .visit-content h2 {
+        font-size: 1.75rem;
+    }
+    
+    .contact-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+        text-align: center;
+    }
+    
+    .office-details-card {
+        padding: 1rem;
+    }
+    
+    .office-image-container img {
+        height: 200px;
+    }
+    
+    .office-location {
+        flex-direction: column;
+        text-align: center;
+        gap: 1rem;
+    }
+    
+    .locations-page .contact-item {
+        flex-direction: column;
+        text-align: center;
+        gap: 0.75rem;
+    }
+    
+    .connectivity-diagram {
+        height: 200px;
+    }
+    
+    .center-hub {
+        width: 80px;
+        height: 80px;
+    }
+    
+    .center-hub span {
+        font-size: 0.625rem;
+    }
+}

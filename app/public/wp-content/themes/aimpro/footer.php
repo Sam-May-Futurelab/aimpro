@@ -25,6 +25,7 @@
                     <li><a href="<?php echo home_url('/website-development'); ?>">Web Development</a></li>
                     <li><a href="<?php echo home_url('/marketing-automation'); ?>">Marketing Automation</a></li>
                     <li><a href="<?php echo home_url('/services'); ?>">All Services</a></li>
+                    <li><a href="<?php echo home_url('/locations'); ?>">Locations</a></li>
                 </ul>
             </div>            <div class="footer-column footer-contact">
                 <h3>Get in Touch</h3>

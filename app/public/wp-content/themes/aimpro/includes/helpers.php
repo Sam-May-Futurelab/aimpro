@@ -116,8 +116,48 @@ function aimpro_get_field($field_name, $default = '') {
         'about_cta_button_2_url'
     );
     
+    // List of locations fields that should check post meta first
+    $locations_fields = array(
+        'locations_hero_title',
+        'locations_hero_subtitle',
+        'locations_office_badge',
+        'locations_office_city',
+        'locations_office_address_line1',
+        'locations_office_address_line2',
+        'locations_office_country',
+        'locations_office_phone_link',
+        'locations_office_phone_display',
+        'locations_office_email',
+        'locations_office_cta_text',
+        'locations_services_title',
+        'locations_services_list',
+        'locations_areas_title',
+        'locations_areas_subtitle',
+        'locations_area1_title',
+        'locations_area1_cities',
+        'locations_area2_title',
+        'locations_area2_cities',
+        'locations_area3_title',
+        'locations_area3_cities',
+        'locations_area4_title',
+        'locations_area4_cities',
+        'locations_remote_title',
+        'locations_remote_description',
+        'locations_remote_cta_text',
+        'locations_feature1_title',
+        'locations_feature1_description',
+        'locations_feature2_title',
+        'locations_feature2_description',
+        'locations_feature3_title',
+        'locations_feature3_description',
+        'locations_cta_title',
+        'locations_cta_description',
+        'locations_cta_button1_text',
+        'locations_cta_button2_text'
+    );
+    
     // Combine all page-specific fields
-    $page_meta_fields = array_merge($contact_fields, $about_fields);
+    $page_meta_fields = array_merge($contact_fields, $about_fields, $locations_fields);
     
     // For page-specific fields, check post meta first
     if (in_array($field_name, $page_meta_fields)) {
