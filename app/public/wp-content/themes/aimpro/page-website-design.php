@@ -347,7 +347,7 @@ get_header(); ?>
                     <p>Collaborative interface design tool for creating wireframes and prototypes</p>
                 </div>                <div class="tool-item" style="text-align: center;">
                     <div class="tool-icon" style="text-align: center; display: flex; justify-content: center;">
-                        <i class="fab fa-adobe"></i>
+                        <i class="fas fa-paint-brush"></i>
                     </div>
                     <h3>Adobe Creative Suite</h3>
                     <p>Complete design package including Photoshop, Illustrator and InDesign</p>
