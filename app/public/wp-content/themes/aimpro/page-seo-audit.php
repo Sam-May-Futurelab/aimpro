@@ -455,4 +455,320 @@ $hero_image = get_post_meta(get_the_ID(), 'seo_audit_hero_image', true);
     </div>
 </main>
 
+<style>
+/* Mobile CSS for SEO Audit Page */
+@media (max-width: 768px) {
+    /* Audit Sample Section - Report Benefits Grid */
+    .audit-sample .benefits-grid {
+        grid-template-columns: 1fr !important;
+        gap: 15px !important;
+    }
+    
+    .audit-sample .benefit-card {
+        background: #f8fafc;
+        border: 1px solid #e2e8f0;
+        border-radius: 12px;
+        padding: 20px;
+        text-align: center;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+    
+    .audit-sample .benefit-card h4 {
+        color: #f15a25;
+        font-size: 1.1rem;
+        font-weight: 700;
+        margin-bottom: 8px;
+    }
+    
+    .audit-sample .benefit-card p {
+        color: #64748b;
+        font-size: 0.9rem;
+        line-height: 1.5;
+        margin: 0;
+    }
+    
+    /* Audit Components Grid */
+    .audit-components .components-grid {
+        grid-template-columns: 1fr !important;
+        gap: 20px;
+    }
+    
+    .audit-components .component-card {
+        background: white;
+        border: 1px solid #e2e8f0;
+        border-radius: 12px;
+        padding: 24px;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+    
+    .audit-components .component-icon {
+        text-align: center;
+        margin-bottom: 16px;
+    }
+    
+    .audit-components .component-icon i {
+        font-size: 2rem;
+        color: #f15a25;
+    }
+    
+    .audit-components .component-content h3 {
+        color: #1e293b;
+        font-size: 1.3rem;
+        font-weight: 700;
+        margin-bottom: 12px;
+        text-align: center;
+    }
+    
+    .audit-components .component-content p {
+        color: #64748b;
+        font-size: 0.95rem;
+        line-height: 1.6;
+        margin-bottom: 16px;
+        text-align: center;
+    }
+    
+    .audit-components .component-features {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+    
+    .audit-components .component-features li {
+        background: #f8fafc;
+        border-left: 3px solid #f15a25;
+        padding: 10px 15px;
+        margin-bottom: 8px;
+        border-radius: 0 6px 6px 0;
+        color: #475569;
+        font-size: 0.9rem;
+    }
+    
+    .audit-components .component-features li:before {
+        content: "✓ ";
+        color: #f15a25;
+        font-weight: bold;
+        margin-right: 8px;
+    }
+    
+    /* Service Tools Grid - Professional SEO Audit Tools */
+    .service-overview .services-grid {
+        grid-template-columns: 1fr !important;
+        gap: 20px;
+    }
+    
+    .service-overview .service-item {
+        background: white;
+        border: 1px solid #e2e8f0;
+        border-radius: 12px;
+        padding: 24px;
+        text-align: center;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+    
+    .service-overview .service-icon {
+        margin-bottom: 16px;
+    }
+    
+    .service-overview .service-icon i {
+        font-size: 2rem;
+        color: #f15a25;
+    }
+    
+    .service-overview .service-item h3 {
+        color: #1e293b;
+        font-size: 1.3rem;
+        font-weight: 700;
+        margin-bottom: 12px;
+    }
+    
+    .service-overview .service-item p {
+        color: #64748b;
+        font-size: 0.95rem;
+        line-height: 1.6;
+        margin-bottom: 16px;
+    }
+    
+    .service-overview .service-features {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        text-align: left;
+    }
+    
+    .service-overview .service-features li {
+        background: #f8fafc;
+        border-left: 3px solid #f15a25;
+        padding: 10px 15px;
+        margin-bottom: 8px;
+        border-radius: 0 6px 6px 0;
+        color: #475569;
+        font-size: 0.9rem;
+    }
+    
+    .service-overview .service-features li:before {
+        content: "• ";
+        color: #f15a25;
+        font-weight: bold;
+        margin-right: 8px;
+    }
+    
+    /* Case Study Results Grid */
+    .audit-case-study .results-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 15px;
+    }
+    
+    .audit-case-study .result-item {
+        background: white;
+        border: 2px solid #f15a25;
+        border-radius: 12px;
+        padding: 20px;
+        text-align: center;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+    
+    .audit-case-study .result-number {
+        font-size: 2rem;
+        font-weight: 800;
+        color: #f15a25;
+        display: block;
+        margin-bottom: 8px;
+    }
+    
+    .audit-case-study .result-label {
+        color: #64748b;
+        font-size: 0.85rem;
+        font-weight: 600;
+        line-height: 1.3;
+    }
+    
+    /* Process Steps */
+    .audit-process .process-steps {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+    
+    .audit-process .process-step {
+        background: white;
+        border: 1px solid #e2e8f0;
+        border-radius: 12px;
+        padding: 24px;
+        display: flex;
+        align-items: flex-start;
+        gap: 16px;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+    
+    .audit-process .step-number {
+        background: #f15a25;
+        color: white;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 700;
+        font-size: 1.1rem;
+        flex-shrink: 0;
+    }
+    
+    .audit-process .step-content h3 {
+        color: #1e293b;
+        font-size: 1.2rem;
+        font-weight: 700;
+        margin-bottom: 8px;
+    }
+    
+    .audit-process .step-content p {
+        color: #64748b;
+        font-size: 0.95rem;
+        line-height: 1.6;
+        margin-bottom: 8px;
+    }
+    
+    .audit-process .step-duration {
+        background: #fef3f2;
+        color: #f15a25;
+        font-size: 0.8rem;
+        font-weight: 600;
+        padding: 4px 8px;
+        border-radius: 4px;
+        display: inline-block;
+    }
+    
+    /* CTA Section */
+    .audit-cta .cta-buttons {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        margin: 24px 0;
+    }
+    
+    .audit-cta .btn-primary,
+    .audit-cta .btn-outline {
+        background: #f15a25;
+        color: white;
+        border: 2px solid #f15a25;
+        padding: 16px 24px;
+        border-radius: 8px;
+        font-weight: 700;
+        text-decoration: none;
+        text-align: center;
+        font-size: 1rem;
+        transition: all 0.3s ease;
+        display: block;
+        width: 100%;
+    }
+    
+    .audit-cta .btn-outline {
+        background: transparent;
+        color: #f15a25;
+    }
+    
+    .audit-cta .cta-features {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        text-align: center;
+        margin-top: 20px;
+    }
+    
+    .audit-cta .feature-check {
+        color: #059669;
+        font-size: 0.9rem;
+        font-weight: 600;
+    }
+    
+    /* Hide bullet icons on mobile for feature lists */
+    .audit-components .component-features li:before,
+    .service-overview .service-features li:before {
+        display: none;
+    }
+    
+    /* Overview section improvements */
+    .seo-audit-overview .overview-content {
+        flex-direction: column;
+        gap: 30px;
+    }
+    
+    .seo-audit-overview .audit-benefits ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+    
+    .seo-audit-overview .audit-benefits ul li {
+        background: #f8fafc;
+        border-left: 3px solid #f15a25;
+        padding: 12px 16px;
+        margin-bottom: 8px;
+        border-radius: 0 6px 6px 0;
+        color: #475569;
+        font-size: 0.95rem;
+    }
+}
+</style>
+
 <?php get_footer(); ?>

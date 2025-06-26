@@ -508,5 +508,221 @@ $hero_image = get_post_meta(get_the_ID(), 'technical_seo_hero_image', true);
     </div>
 </main>
 
+<style>
+/* Mobile CSS for Technical SEO Page */
+@media (max-width: 768px) {
+    /* Technical Issues Grid */
+    .technical-issues-section .issues-grid {
+        grid-template-columns: 1fr !important;
+        gap: 20px;
+    }
+    
+    .technical-issues-section .issue-card {
+        background: white;
+        border: 1px solid #e2e8f0;
+        border-radius: 12px;
+        padding: 20px;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        margin-bottom: 16px;
+        max-width: 100%;
+        overflow: hidden;
+    }
+    
+    .technical-issues-section .issue-priority {
+        display: inline-block;
+        padding: 6px 12px;
+        border-radius: 20px;
+        font-size: 0.8rem;
+        font-weight: 600;
+        margin-bottom: 12px;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+    }
+    
+    .technical-issues-section .issue-priority.high {
+        background: #fee2e2;
+        color: #dc2626;
+        border: 1px solid #fecaca;
+    }
+    
+    .technical-issues-section .issue-priority.medium {
+        background: #fef3c7;
+        color: #d97706;
+        border: 1px solid #fed7aa;
+    }
+    
+    .technical-issues-section .issue-card h3 {
+        color: #1e293b;
+        font-size: 1.3rem;
+        font-weight: 700;
+        margin-bottom: 10px;
+        line-height: 1.3;
+    }
+    
+    .technical-issues-section .issue-card p {
+        color: #64748b;
+        font-size: 0.95rem;
+        line-height: 1.6;
+        margin-bottom: 16px;
+    }
+    
+    .technical-issues-section .issue-list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+    
+    .technical-issues-section .issue-list li {
+        background: #f8fafc;
+        border-left: 3px solid #f15a25;
+        padding: 10px 15px;
+        margin-bottom: 8px;
+        border-radius: 0 6px 6px 0;
+        color: #475569;
+        font-size: 0.9rem;
+        line-height: 1.5;
+        word-wrap: break-word;
+        hyphens: auto;
+    }
+    
+    .technical-issues-section .issue-list li:before {
+        content: "• ";
+        color: #f15a25;
+        font-weight: bold;
+        margin-right: 8px;
+    }
+    
+    /* Technical SEO Services Grid */
+    .technical-seo-services .services-grid {
+        grid-template-columns: 1fr !important;
+        gap: 20px;
+    }
+    
+    .technical-seo-services .service-card {
+        background: white;
+        border: 1px solid #e2e8f0;
+        border-radius: 12px;
+        padding: 24px;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+    
+    .technical-seo-services .service-icon {
+        text-align: center;
+        margin-bottom: 16px;
+    }
+    
+    .technical-seo-services .service-icon i {
+        font-size: 2rem;
+        color: #f15a25;
+    }
+    
+    .technical-seo-services .service-card h3 {
+        color: #1e293b;
+        font-size: 1.3rem;
+        font-weight: 700;
+        margin-bottom: 12px;
+        text-align: center;
+    }
+    
+    .technical-seo-services .service-card p {
+        color: #64748b;
+        font-size: 0.95rem;
+        line-height: 1.6;
+        margin-bottom: 16px;
+        text-align: center;
+    }
+    
+    .technical-seo-services .service-features {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+    
+    .technical-seo-services .service-features li {
+        background: #f8fafc;
+        border-left: 3px solid #f15a25;
+        padding: 10px 15px;
+        margin-bottom: 8px;
+        border-radius: 0 6px 6px 0;
+        color: #475569;
+        font-size: 0.9rem;
+    }
+    
+    .technical-seo-services .service-features li:before {
+        display: none;
+    }
+    
+    /* Hide bullet points from specific issue lists */
+    .technical-issues-section .issue-list li:before {
+        display: none;
+    }
+    
+    /* CTA Section */
+    .technical-seo-cta .cta-buttons {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        margin: 24px 0;
+    }
+    
+    .technical-seo-cta .btn-primary,
+    .technical-seo-cta .btn-outline {
+        background: #f15a25;
+        color: white;
+        border: 2px solid #f15a25;
+        padding: 16px 24px;
+        border-radius: 8px;
+        font-weight: 700;
+        text-decoration: none;
+        text-align: center;
+        font-size: 1rem;
+        transition: all 0.3s ease;
+        display: block;
+        width: 100%;
+    }
+    
+    .technical-seo-cta .btn-outline {
+        background: transparent;
+        color: #f15a25;
+    }
+    
+    .technical-seo-cta .cta-features {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        text-align: center;
+        margin-top: 20px;
+    }
+    
+    .technical-seo-cta .feature-check {
+        color: #059669;
+        font-size: 0.9rem;
+        font-weight: 600;
+    }
+    
+    /* Overview section improvements */
+    .technical-seo-overview .overview-content {
+        flex-direction: column;
+        gap: 30px;
+    }
+    
+    .technical-seo-overview .technical-benefits ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+    
+    .technical-seo-overview .technical-benefits ul li {
+        background: #f8fafc;
+        border-left: 3px solid #f15a25;
+        padding: 12px 16px;
+        margin-bottom: 8px;
+        border-radius: 0 6px 6px 0;
+        color: #475569;
+        font-size: 0.95rem;
+    }
+}
+</style>
+
 <?php get_footer(); ?>
 
