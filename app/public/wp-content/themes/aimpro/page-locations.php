@@ -131,27 +131,18 @@ wp_enqueue_style('locations-page-css', get_template_directory_uri() . '/assets/c
                     <h2>Come See Us... We're a REAL Company with Real Humans</h2>
                     <p>Let's discuss your project over a coffee. Book a time to visit our Birmingham office and meet the team behind your marketing success.</p>
                     
-                    <div class="contact-grid">
-                        <div class="contact-item">
-                            <i class="fas fa-phone"></i>
-                            <div>
-                                <span class="label">Phone</span>
-                                <a href="tel:+441212858490" class="value"><?php echo aimpro_get_field('locations_office_phone', '0121 285 8490'); ?></a>
-                            </div>
+                    <div class="office-contact-info">
+                        <div class="contact-row">
+                            <strong>📞 Phone:</strong>
+                            <a href="tel:+441212858490"><?php echo aimpro_get_field('locations_office_phone', '0121 285 8490'); ?></a>
                         </div>
-                        <div class="contact-item">
-                            <i class="fas fa-envelope"></i>
-                            <div>
-                                <span class="label">Email</span>
-                                <a href="mailto:<?php echo aimpro_get_field('locations_office_email', 'hello@aimpro.co.uk'); ?>" class="value"><?php echo aimpro_get_field('locations_office_email', 'hello@aimpro.co.uk'); ?></a>
-                            </div>
+                        <div class="contact-row">
+                            <strong>✉️ Email:</strong>
+                            <a href="mailto:<?php echo aimpro_get_field('locations_office_email', 'hello@aimpro.co.uk'); ?>"><?php echo aimpro_get_field('locations_office_email', 'hello@aimpro.co.uk'); ?></a>
                         </div>
-                        <div class="contact-item">
-                            <i class="fas fa-clock"></i>
-                            <div>
-                                <span class="label">Hours</span>
-                                <span class="value"><?php echo aimpro_get_field('locations_office_hours', 'Mon-Fri: 9AM-6PM'); ?></span>
-                            </div>
+                        <div class="contact-row">
+                            <strong>🕒 Hours:</strong>
+                            <span><?php echo aimpro_get_field('locations_office_hours', 'Mon-Fri: 9AM-6PM'); ?></span>
                         </div>
                     </div>
                 </div>
