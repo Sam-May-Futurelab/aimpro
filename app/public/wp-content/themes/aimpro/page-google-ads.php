@@ -118,6 +118,116 @@ get_header();
         align-items: center !important;
         gap: 15px !important;
     }
+    
+    /* Industries Section Mobile Optimization */
+    #primary.google-ads-page .industries-grid {
+        grid-template-columns: 1fr !important;
+        gap: 20px !important;
+        margin-top: 30px !important;
+    }
+    
+    #primary.google-ads-page .industry-item {
+        background: white !important;
+        border: 1px solid #e2e8f0 !important;
+        border-radius: 12px !important;
+        padding: 24px !important;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.1) !important;
+        text-align: center !important;
+        transition: transform 0.3s ease !important;
+    }
+    
+    #primary.google-ads-page .industry-item:hover {
+        transform: translateY(-2px) !important;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.15) !important;
+    }
+    
+    #primary.google-ads-page .industry-item h4 {
+        font-size: 1.3rem !important;
+        color: #f15a25 !important;
+        margin-bottom: 12px !important;
+        font-weight: 700 !important;
+        line-height: 1.3 !important;
+    }
+    
+    #primary.google-ads-page .industry-item p {
+        color: #64748b !important;
+        line-height: 1.6 !important;
+        margin: 0 !important;
+        font-size: 0.95rem !important;
+    }
+    
+    #primary.google-ads-page .industries-section {
+        background: #f8fafc !important;
+        padding: 60px 0 !important;
+    }
+    
+    #primary.google-ads-page .industries-section .section-header {
+        text-align: center !important;
+        margin-bottom: 40px !important;
+    }
+    
+    #primary.google-ads-page .industries-section .section-header h2 {
+        font-size: 2rem !important;
+        font-weight: 700 !important;
+        color: #1e293b !important;
+        margin-bottom: 16px !important;
+        line-height: 1.3 !important;
+    }
+    
+    #primary.google-ads-page .industries-section .section-header p {
+        font-size: 1.1rem !important;
+        color: #64748b !important;
+        line-height: 1.6 !important;
+        max-width: 600px !important;
+        margin: 0 auto !important;
+    }
+    
+    /* Tools Section Mobile Optimization */
+    #primary.google-ads-page .tools-grid {
+        display: grid !important;
+        grid-template-columns: 1fr !important;
+        gap: 20px !important;
+        margin-top: 30px !important;
+    }
+    
+    #primary.google-ads-page .tool-item {
+        background: white !important;
+        border: 1px solid #e2e8f0 !important;
+        border-radius: 12px !important;
+        padding: 24px !important;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.1) !important;
+        text-align: center !important;
+        transition: transform 0.3s ease !important;
+    }
+    
+    #primary.google-ads-page .tool-item:hover {
+        transform: translateY(-2px) !important;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.15) !important;
+    }
+    
+    #primary.google-ads-page .tool-item .tool-icon {
+        margin-bottom: 16px !important;
+    }
+    
+    #primary.google-ads-page .tool-item .tool-icon i {
+        font-size: 2rem !important;
+        color: #f15a25 !important;
+    }
+    
+    #primary.google-ads-page .tool-item h4 {
+        font-size: 1.3rem !important;
+        color: #1e293b !important;
+        margin-bottom: 12px !important;
+        font-weight: 700 !important;
+        line-height: 1.3 !important;
+    }
+    
+    #primary.google-ads-page .tool-item p {
+        color: #64748b !important;
+        line-height: 1.6 !important;
+        margin: 0 !important;
+        font-size: 0.95rem !important;
+    }
 }
 </style>
 
