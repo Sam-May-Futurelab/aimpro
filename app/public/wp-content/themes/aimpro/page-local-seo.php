@@ -342,7 +342,16 @@ $header_subtitle = get_post_meta(get_the_ID(), '_local_seo_header_subtitle', tru
 
                 </div>
             </div>
-        </section>        <!-- Local SEO Testimonial -->
+        </section>
+
+<style>
+/* Hide Local SEO Tools & Platforms section on mobile */
+@media (max-width: 768px) {
+    .local-seo-tools {
+        display: none !important;
+    }
+}
+</style>        <!-- Local SEO Testimonial -->
         <section class="local-seo-testimonial">
             <div class="section-content">
                 <div class="testimonial-content animate-on-scroll animate-fade-up">
