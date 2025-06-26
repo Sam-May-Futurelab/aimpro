@@ -320,5 +320,106 @@ get_header(); ?>
     </div>
 </main>
 
+<!-- Mobile optimization for case study results section -->
+<style>
+@media (max-width: 768px) {
+    .case-study-content {
+        flex-direction: column !important;
+        gap: 2rem !important;
+    }
+    
+    .case-study-overview {
+        order: 1 !important;
+        text-align: center !important;
+    }
+    
+    .case-study-results {
+        order: 2 !important;
+        text-align: center !important;
+        padding: 1.5rem 1rem !important;
+    }
+    
+    .case-study-results h3 {
+        font-size: 1.5rem !important;
+        margin-bottom: 1.5rem !important;
+        text-align: center !important;
+    }
+    
+    .results-grid {
+        display: grid !important;
+        grid-template-columns: 1fr 1fr !important;
+        gap: 1rem !important;
+        margin: 1.5rem 0 !important;
+    }
+    
+    .result-item {
+        background: var(--glass-bg) !important;
+        border: var(--glass-border) !important;
+        border-radius: 12px !important;
+        padding: 1rem 0.75rem !important;
+        text-align: center !important;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1) !important;
+    }
+    
+    .result-number {
+        font-size: 1.8rem !important;
+        font-weight: 700 !important;
+        color: var(--primary-orange) !important;
+        margin-bottom: 0.5rem !important;
+        display: block !important;
+    }
+    
+    .result-label {
+        font-size: 0.8rem !important;
+        line-height: 1.3 !important;
+        color: var(--text-secondary) !important;
+        font-weight: 500 !important;
+    }
+    
+    .case-study-link {
+        display: block !important;
+        width: 100% !important;
+        max-width: 280px !important;
+        margin: 2rem auto 0 !important;
+        padding: 0.75rem 1rem !important;
+        background: var(--primary-orange) !important;
+        color: white !important;
+        text-decoration: none !important;
+        border-radius: 8px !important;
+        font-weight: 600 !important;
+        text-align: center !important;
+        transition: all 0.3s ease !important;
+    }
+    
+    .case-study-link:hover {
+        background: var(--primary-orange-dark) !important;
+        transform: translateY(-2px) !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .results-grid {
+        grid-template-columns: 1fr !important;
+        gap: 1rem !important;
+    }
+    
+    .result-item {
+        padding: 1.25rem 1rem !important;
+    }
+    
+    .result-number {
+        font-size: 2rem !important;
+    }
+    
+    .result-label {
+        font-size: 0.85rem !important;
+    }
+    
+    .case-study-results h3 {
+        font-size: 1.3rem !important;
+    }
+}
+</style>
+
 <?php get_footer(); ?>
 
