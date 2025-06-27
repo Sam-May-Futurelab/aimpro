@@ -170,7 +170,7 @@ get_header(); ?>
                             <i class="fas fa-search-plus"></i>
                         </div>
                         <h3>SEO Guides & Resources</h3>
-                        <p>Comprehensive SEO guides, checklists, and resources to improve your search engine rankings.</p>
+                        <p>Expert SEO guides and resources to improve your search rankings and organic traffic.</p>
                         <div class="service-links">
                             <a href="<?php echo home_url('/seo-guides'); ?>" class="btn btn-primary">SEO Guides</a>
                             <a href="<?php echo home_url('/seo-audit'); ?>" class="btn btn-outline">Free SEO Audit</a>
