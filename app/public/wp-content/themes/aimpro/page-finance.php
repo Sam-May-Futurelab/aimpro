@@ -542,6 +542,16 @@ get_header(); ?>
     }
 }
 
+/* Left align service feature bullet points */
+.service-features {
+    text-align: left !important;
+}
+
+.service-features li {
+    text-align: left !important;
+    margin-bottom: 0.5rem !important;
+}
+
 @media (max-width: 480px) {
     .results-grid {
         grid-template-columns: 1fr !important;
