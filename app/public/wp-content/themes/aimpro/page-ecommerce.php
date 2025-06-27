@@ -317,13 +317,16 @@ get_header(); ?>
 }
 
 .service-features li:before {
-    content: "•";
-    color: #f15a25;
-    position: absolute;
-    left: 0;
-    top: 0.6rem;
-    font-weight: bold;
-    line-height: 1;
+    content: "" !important;
+    background-image: url('../assets/images/aimpro-target.png') !important;
+    background-size: contain !important;
+    background-repeat: no-repeat !important;
+    background-position: center !important;
+    width: 16px !important;
+    height: 16px !important;
+    position: absolute !important;
+    left: 0 !important;
+    top: 0.1em !important;
 }
 
 .service-features li:last-child {
@@ -460,13 +463,16 @@ get_header(); ?>
     }
     
     .service-features li:before {
-        content: "•";
-        color: #f15a25;
-        position: absolute;
-        left: 0;
-        top: 0.45rem;
-        font-weight: bold;
-        line-height: 1;
+        content: "" !important;
+        background-image: url('../assets/images/aimpro-target.png') !important;
+        background-size: contain !important;
+        background-repeat: no-repeat !important;
+        background-position: center !important;
+        width: 16px !important;
+        height: 16px !important;
+        position: absolute !important;
+        left: 0 !important;
+        top: 0.1em !important;
     }
     
     .service-features li:last-child {

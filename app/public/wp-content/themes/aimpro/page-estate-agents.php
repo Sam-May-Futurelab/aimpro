@@ -321,35 +321,42 @@ get_header(); ?>
 
 <?php get_footer(); ?>
 
-<style>
-/* General styles for service features alignment */
-.service-features {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    text-align: left;
-}
+<?php
+// Add custom styles for this page
+add_action('wp_head', function() {
+    if (is_page_template('page-estate-agents.php')) {
+        $target_image_url = get_template_directory_uri() . '/assets/images/aimpro-target.png';
+        echo '<style>
+        /* General styles for service features alignment */
+        .service-features {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            text-align: left;
+        }
 
-.service-features li {
-    font-size: 0.9rem;
-    color: #495057;
-    padding: 0.375rem 0;
-    text-align: left;
-    position: relative;
-    padding-left: 1rem;
-    line-height: 1.4;
-}
+        .service-features li {
+            font-size: 0.9rem;
+            color: #495057;
+            padding: 0.375rem 0;
+            text-align: left;
+            position: relative;
+            padding-left: 1.5rem;
+            line-height: 1.4;
+        }
 
-.service-features li:before {
-    content: "•";
-    color: #f15a25;
-    position: absolute;
-    left: 0;
-    top: 50%;
-    transform: translateY(-50%);
-    font-weight: bold;
-    line-height: 1;
-}
+        .service-features li:before {
+            content: "" !important;
+            background-image: url(\'' . esc_url($target_image_url) . '\') !important;
+            background-size: contain !important;
+            background-repeat: no-repeat !important;
+            background-position: center !important;
+            width: 16px !important;
+            height: 16px !important;
+            position: absolute !important;
+            left: 0 !important;
+            top: 0.1em !important;
+        }
 
 .service-features li:last-child {
     border-bottom: none;
@@ -485,13 +492,16 @@ get_header(); ?>
     }
     
     .service-features li:before {
-        content: "•";
-        color: #f15a25;
-        position: absolute;
-        left: 0;
-        top: 0.45rem;
-        font-weight: bold;
-        line-height: 1;
+        content: "" !important;
+        background-image: url('<?php echo get_template_directory_uri(); ?>/assets/images/aimpro-target.png') !important;
+        background-size: contain !important;
+        background-repeat: no-repeat !important;
+        background-position: center !important;
+        width: 16px !important;
+        height: 16px !important;
+        position: absolute !important;
+        left: 0 !important;
+        top: 0.1em !important;
     }
     
     .service-features li:last-child {
