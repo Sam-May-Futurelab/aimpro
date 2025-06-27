@@ -21,7 +21,39 @@ get_header(); ?>
     </div>
 
     <!-- Contact Information Section -->
-    <section class="company-values animate-on-scroll animate-fade-up" style="padding: 4rem 0; background: #f8f9fa;">
+    <section class="company-values animate-on-scroll animate-fade-up" style="padding: 4rem 0; background: #f8f9fa; position: relative; overflow: hidden;">
+        <!-- Enhanced Contact Hero Particles -->
+        <div class="contact-particles-container">
+            <!-- Edge particles - positioned around the perimeter -->
+            <div class="contact-particle particle-bright" style="top: 5%; left: 2%; animation: particle-float-enhanced-v1 15s infinite ease-in-out;"></div>
+            <div class="contact-particle" style="top: 8%; right: 3%; animation: particle-float-enhanced-v2 18s infinite ease-in-out; animation-delay: -3s;"></div>
+            <div class="contact-particle particle-bright" style="top: 15%; left: 1%; animation: particle-float-enhanced-v1 16s infinite ease-in-out; animation-delay: -6s;"></div>
+            <div class="contact-particle" style="top: 25%; right: 2%; animation: particle-float-enhanced-v2 20s infinite ease-in-out; animation-delay: -4s;"></div>
+            <div class="contact-particle particle-bright" style="top: 35%; left: 3%; animation: particle-float-enhanced-v1 17s infinite ease-in-out; animation-delay: -8s;"></div>
+            <div class="contact-particle" style="top: 45%; right: 1%; animation: particle-float-enhanced-v2 19s infinite ease-in-out; animation-delay: -5s;"></div>
+            
+            <!-- Corner and side particles -->
+            <div class="contact-particle particle-small" style="top: 60%; left: 2%; animation: particle-float-enhanced-v1 22s infinite ease-in-out; animation-delay: -7s;"></div>
+            <div class="contact-particle particle-small particle-bright" style="top: 70%; right: 4%; animation: particle-float-enhanced-v2 24s infinite ease-in-out; animation-delay: -2s;"></div>
+            <div class="contact-particle particle-small" style="top: 80%; left: 1%; animation: particle-float-enhanced-v1 21s infinite ease-in-out; animation-delay: -9s;"></div>
+            <div class="contact-particle particle-small" style="top: 90%; right: 3%; animation: particle-float-enhanced-v2 23s infinite ease-in-out; animation-delay: -1s;"></div>
+            
+            <!-- Top edge micro particles -->
+            <div class="contact-particle particle-micro" style="top: 2%; left: 15%; animation: particle-float-enhanced-v1 14s infinite ease-in-out; animation-delay: -4s;"></div>
+            <div class="contact-particle particle-micro particle-bright" style="top: 3%; right: 20%; animation: particle-float-enhanced-v2 16s infinite ease-in-out; animation-delay: -6s;"></div>
+            <div class="contact-particle particle-micro" style="top: 4%; left: 85%; animation: particle-float-enhanced-v1 18s infinite ease-in-out; animation-delay: -2s;"></div>
+            
+            <!-- Bottom edge micro particles -->
+            <div class="contact-particle particle-micro" style="top: 95%; right: 15%; animation: particle-float-enhanced-v2 15s infinite ease-in-out; animation-delay: -7s;"></div>
+            <div class="contact-particle particle-micro particle-bright" style="top: 96%; left: 20%; animation: particle-float-enhanced-v1 17s infinite ease-in-out; animation-delay: -3s;"></div>
+            <div class="contact-particle particle-micro" style="top: 97%; right: 80%; animation: particle-float-enhanced-v2 14s infinite ease-in-out; animation-delay: -5s;"></div>
+            
+            <!-- Additional edge particles for more visibility -->
+            <div class="contact-particle particle-bright" style="top: 55%; left: 0.5%; animation: particle-float-enhanced-v1 19s infinite ease-in-out; animation-delay: -10s;"></div>
+            <div class="contact-particle" style="top: 75%; right: 0.5%; animation: particle-float-enhanced-v2 21s infinite ease-in-out; animation-delay: -11s;"></div>
+            <div class="contact-particle particle-small" style="top: 85%; left: 4%; animation: particle-float-enhanced-v1 18s infinite ease-in-out; animation-delay: -12s;"></div>
+            <div class="contact-particle particle-small particle-bright" style="top: 12%; right: 1.5%; animation: particle-float-enhanced-v2 20s infinite ease-in-out; animation-delay: -13s;"></div>
+        </div>
         <div class="container">
             <div class="section-content">
                 <div class="content-centre">
@@ -1026,6 +1058,94 @@ get_header(); ?>
         box-shadow: 
             0 8px 32px rgba(0, 0, 0, 0.3),
             inset 0 1px 0 rgba(255, 255, 255, 0.1);
+    }
+}
+
+/* Enhanced Contact Particles */
+.contact-particles-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    pointer-events: none;
+    z-index: 3;
+    overflow: hidden;
+}
+
+.contact-particle {
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    background-color: rgba(241, 90, 37, 0.5);
+    border-radius: 50%;
+    pointer-events: none;
+    will-change: transform;
+    box-shadow: 0 0 6px rgba(241, 90, 37, 0.3), 0 0 12px rgba(241, 90, 37, 0.1);
+    transform-origin: center center;
+    z-index: 3;
+}
+
+.contact-particle.particle-bright {
+    background-color: rgba(241, 90, 37, 0.7);
+    box-shadow: 0 0 8px rgba(241, 90, 37, 0.4), 0 0 16px rgba(241, 90, 37, 0.2);
+    width: 10px;
+    height: 10px;
+}
+
+.contact-particle.particle-small {
+    width: 6px;
+    height: 6px;
+    background-color: rgba(241, 90, 37, 0.4);
+}
+
+.contact-particle.particle-micro {
+    width: 4px;
+    height: 4px;
+    background-color: rgba(241, 90, 37, 0.3);
+    box-shadow: 0 0 3px rgba(241, 90, 37, 0.2);
+}
+
+/* Particle animations - reusing the existing enhanced animations */
+@keyframes particle-float-enhanced-v1 {
+    0%, 100% { 
+        transform: translate(0, 0) scale(1) rotate(0deg); 
+        opacity: 0.6; 
+    }
+    25% { 
+        transform: translate(15px, -25px) scale(1.1) rotate(90deg); 
+        opacity: 1; 
+    }
+    50% { 
+        transform: translate(-10px, -40px) scale(0.9) rotate(180deg); 
+        opacity: 0.8; 
+    }
+    75% { 
+        transform: translate(20px, -15px) scale(1.05) rotate(270deg); 
+        opacity: 0.9; 
+    }
+}
+
+@keyframes particle-float-enhanced-v2 {
+    0%, 100% { 
+        transform: translate(0, 0) scale(1) rotate(0deg); 
+        opacity: 0.7; 
+    }
+    20% { 
+        transform: translate(-20px, -30px) scale(1.15) rotate(72deg); 
+        opacity: 0.9; 
+    }
+    40% { 
+        transform: translate(25px, -45px) scale(0.85) rotate(144deg); 
+        opacity: 1; 
+    }
+    60% { 
+        transform: translate(-15px, -25px) scale(1.2) rotate(216deg); 
+        opacity: 0.8; 
+    }
+    80% { 
+        transform: translate(10px, -35px) scale(0.95) rotate(288deg); 
+        opacity: 0.95; 
     }
 }
 
