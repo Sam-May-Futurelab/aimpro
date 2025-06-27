@@ -92,7 +92,7 @@ get_header(); ?>
                     </div>
                     <div class="service-item">
                         <div class="service-icon"><i class="fas fa-users"></i></div>
-                        <h3>Audience optimisation</h3>
+                        <h3>Audience Optimisation</h3>
                         <p>Refine targeting to reach high-value prospects while reducing spend on low-converting audiences.</p>
                         <ul style="text-align: left; colour: #666; line-height: 1.8;">
                             <li>Audience segmentation analysis</li>
