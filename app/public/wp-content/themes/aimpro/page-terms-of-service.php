@@ -142,7 +142,7 @@ get_header(); ?>
                         <div class="contact-details">
                             <p><strong>Aimpro Digital</strong><br>
                             Email: <?php echo esc_html(get_post_meta(get_the_ID(), '_terms_contact_email', true) ?: 'info@aimprodigital.com'); ?><br>
-                            Phone: <?php echo esc_html(get_post_meta(get_the_ID(), '_terms_contact_phone', true) ?: '+44 121 285 2866'); ?><br>
+                            Phone: <?php echo esc_html(get_post_meta(get_the_ID(), '_terms_contact_phone', true) ?: '0121 285 2866'); ?><br>
                             Address: <?php echo esc_html(get_post_meta(get_the_ID(), '_terms_contact_address', true) ?: 'Birmingham, UK'); ?></p>
                         </div>
                     </div>

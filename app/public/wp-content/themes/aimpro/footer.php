@@ -54,7 +54,7 @@
                 <a href="<?php echo home_url('/contact'); ?>" class="footer-link">Contact Us</a>
                 <a href="<?php echo home_url('/privacy-policy'); ?>" class="footer-link">Privacy Policy</a>
                 <a href="<?php echo home_url('/terms-of-service'); ?>" class="footer-link">Terms of Service</a>
-                <a href="#" class="footer-link">Sitemap</a>
+                <a href="<?php echo home_url('/sitemap'); ?>" class="footer-link">Sitemap</a>
             </div>
         </div></div>
 </footer>

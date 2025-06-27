@@ -1719,3 +1719,4 @@ require_once get_template_directory() . '/includes/funnel-automation-meta.php';
 require_once get_template_directory() . '/includes/single-blog-meta.php';
 require_once get_template_directory() . '/includes/privacy-policy-meta.php';
 require_once get_template_directory() . '/includes/terms-of-service-meta.php';
+require_once get_template_directory() . '/includes/sitemap-meta.php';
