@@ -35,7 +35,7 @@ get_header(); ?>
                     <!-- Main Pages Section -->
                     <div class="sitemap-section animate-on-scroll animate-fade-up">
                         <h2><?php echo esc_html(get_post_meta(get_the_ID(), '_sitemap_main_title', true) ?: 'Main Pages'); ?></h2>
-                        <ul class="sitemap-list">
+                        <div class="sitemap-links">
                             <?php 
                             $main_pages = get_post_meta(get_the_ID(), '_sitemap_main_pages', true);
                             if (empty($main_pages)) {
@@ -43,169 +43,234 @@ get_header(); ?>
                                     array('title' => 'Home', 'url' => home_url()),
                                     array('title' => 'About Us', 'url' => home_url('/about')),
                                     array('title' => 'Services', 'url' => home_url('/services')),
+                                    array('title' => 'Solutions', 'url' => home_url('/solutions')),
+                                    array('title' => 'Industries', 'url' => home_url('/industries')),
                                     array('title' => 'Contact Us', 'url' => home_url('/contact')),
                                     array('title' => 'Blog', 'url' => home_url('/blog')),
                                     array('title' => 'Case Studies', 'url' => home_url('/case-studies'))
                                 );
                             }
                             foreach ($main_pages as $page): ?>
-                                <li><a href="<?php echo esc_url($page['url']); ?>"><?php echo esc_html($page['title']); ?></a></li>
+                                <a href="<?php echo esc_url($page['url']); ?>" class="sitemap-link"><?php echo esc_html($page['title']); ?></a>
                             <?php endforeach; ?>
-                        </ul>
+                        </div>
                     </div>
 
-                    <!-- Services Section -->
+                    <!-- SEO Services Section -->
                     <div class="sitemap-section animate-on-scroll animate-fade-up">
-                        <h2><?php echo esc_html(get_post_meta(get_the_ID(), '_sitemap_services_title', true) ?: 'Our Services'); ?></h2>
-                        <ul class="sitemap-list">
+                        <h2><?php echo esc_html(get_post_meta(get_the_ID(), '_sitemap_seo_title', true) ?: 'SEO Services'); ?></h2>
+                        <div class="sitemap-links">
                             <?php 
-                            $services = get_post_meta(get_the_ID(), '_sitemap_services', true);
-                            if (empty($services)) {
-                                $services = array(
-                                    array('title' => 'Search Engine Optimization (SEO)', 'url' => home_url('/seo-services')),
-                                    array('title' => 'Pay-Per-Click Advertising (PPC)', 'url' => home_url('/ppc-services')),
-                                    array('title' => 'Social Media Marketing', 'url' => home_url('/social-media-marketing')),
-                                    array('title' => 'Content Marketing', 'url' => home_url('/content-marketing')),
-                                    array('title' => 'Web Design & Development', 'url' => home_url('/website-development')),
-                                    array('title' => 'Email Marketing', 'url' => home_url('/email-marketing')),
-                                    array('title' => 'Analytics & Reporting', 'url' => home_url('/analytics-reporting'))
+                            $seo_services = get_post_meta(get_the_ID(), '_sitemap_seo_services', true);
+                            if (empty($seo_services)) {
+                                $seo_services = array(
+                                    array('title' => 'SEO Services', 'url' => home_url('/seo-services')),
+                                    array('title' => 'Local SEO', 'url' => home_url('/local-seo')),
+                                    array('title' => 'SEO Audit', 'url' => home_url('/seo-audit')),
+                                    array('title' => 'Technical SEO', 'url' => home_url('/technical-seo')),
+                                    array('title' => 'On-Page SEO', 'url' => home_url('/on-page-seo')),
+                                    array('title' => 'White Label SEO', 'url' => home_url('/white-label-seo'))
                                 );
                             }
-                            foreach ($services as $service): ?>
-                                <li><a href="<?php echo esc_url($service['url']); ?>"><?php echo esc_html($service['title']); ?></a></li>
+                            foreach ($seo_services as $service): ?>
+                                <a href="<?php echo esc_url($service['url']); ?>" class="sitemap-link"><?php echo esc_html($service['title']); ?></a>
                             <?php endforeach; ?>
-                        </ul>
+                        </div>
+                    </div>
+
+                    <!-- Advertising & PPC Section -->
+                    <div class="sitemap-section animate-on-scroll animate-fade-up">
+                        <h2><?php echo esc_html(get_post_meta(get_the_ID(), '_sitemap_ppc_title', true) ?: 'Advertising & PPC'); ?></h2>
+                        <div class="sitemap-links">
+                            <?php 
+                            $ppc_services = get_post_meta(get_the_ID(), '_sitemap_ppc_services', true);
+                            if (empty($ppc_services)) {
+                                $ppc_services = array(
+                                    array('title' => 'Advertising & PPC', 'url' => home_url('/advertising-ppc')),
+                                    array('title' => 'Google Ads', 'url' => home_url('/google-ads')),
+                                    array('title' => 'Meta Ads', 'url' => home_url('/meta-ads')),
+                                    array('title' => 'Microsoft Ads', 'url' => home_url('/microsoft-ads')),
+                                    array('title' => 'Retargeting & Display', 'url' => home_url('/retargeting-display')),
+                                    array('title' => 'PPC Audit', 'url' => home_url('/ppc-audit')),
+                                    array('title' => 'White Label PPC', 'url' => home_url('/white-label-ppc'))
+                                );
+                            }
+                            foreach ($ppc_services as $service): ?>
+                                <a href="<?php echo esc_url($service['url']); ?>" class="sitemap-link"><?php echo esc_html($service['title']); ?></a>
+                            <?php endforeach; ?>
+                        </div>
+                    </div>
+
+                    <!-- Marketing Automation Section -->
+                    <div class="sitemap-section animate-on-scroll animate-fade-up">
+                        <h2><?php echo esc_html(get_post_meta(get_the_ID(), '_sitemap_automation_title', true) ?: 'Marketing Automation'); ?></h2>
+                        <div class="sitemap-links">
+                            <?php 
+                            $automation_services = get_post_meta(get_the_ID(), '_sitemap_automation_services', true);
+                            if (empty($automation_services)) {
+                                $automation_services = array(
+                                    array('title' => 'Marketing Automation', 'url' => home_url('/marketing-automation')),
+                                    array('title' => 'AI CRM Setup', 'url' => home_url('/ai-crm-setup')),
+                                    array('title' => 'Email & SMS Flows', 'url' => home_url('/email-sms-flows')),
+                                    array('title' => 'Email Campaigns', 'url' => home_url('/email-campaigns')),
+                                    array('title' => 'Funnel Automation', 'url' => home_url('/funnel-automation')),
+                                    array('title' => 'Chatbots', 'url' => home_url('/chatbots'))
+                                );
+                            }
+                            foreach ($automation_services as $service): ?>
+                                <a href="<?php echo esc_url($service['url']); ?>" class="sitemap-link"><?php echo esc_html($service['title']); ?></a>
+                            <?php endforeach; ?>
+                        </div>
+                    </div>
+
+                    <!-- Web Development Section -->
+                    <div class="sitemap-section animate-on-scroll animate-fade-up">
+                        <h2><?php echo esc_html(get_post_meta(get_the_ID(), '_sitemap_web_title', true) ?: 'Web Development'); ?></h2>
+                        <div class="sitemap-links">
+                            <?php 
+                            $web_services = get_post_meta(get_the_ID(), '_sitemap_web_services', true);
+                            if (empty($web_services)) {
+                                $web_services = array(
+                                    array('title' => 'Website Development', 'url' => home_url('/website-development')),
+                                    array('title' => 'Website Design', 'url' => home_url('/website-design')),
+                                    array('title' => 'Landing Pages', 'url' => home_url('/landing-pages')),
+                                    array('title' => 'Funnel Builds', 'url' => home_url('/funnel-builds')),
+                                    array('title' => 'UX/UI Design', 'url' => home_url('/ux-ui-optimisation'))
+                                );
+                            }
+                            foreach ($web_services as $service): ?>
+                                <a href="<?php echo esc_url($service['url']); ?>" class="sitemap-link"><?php echo esc_html($service['title']); ?></a>
+                            <?php endforeach; ?>
+                        </div>
                     </div>
 
                     <!-- Industries Section -->
                     <div class="sitemap-section animate-on-scroll animate-fade-up">
                         <h2><?php echo esc_html(get_post_meta(get_the_ID(), '_sitemap_industries_title', true) ?: 'Industries We Serve'); ?></h2>
-                        <ul class="sitemap-list">
+                        <div class="sitemap-links">
                             <?php 
                             $industries = get_post_meta(get_the_ID(), '_sitemap_industries', true);
                             if (empty($industries)) {
                                 $industries = array(
                                     array('title' => 'Estate Agents', 'url' => home_url('/estate-agents')),
                                     array('title' => 'E-commerce', 'url' => home_url('/ecommerce')),
-                                    array('title' => 'Finance & Banking', 'url' => home_url('/finance')),
-                                    array('title' => 'Healthcare', 'url' => home_url('/healthcare')),
-                                    array('title' => 'Legal Services', 'url' => home_url('/legal')),
-                                    array('title' => 'Technology', 'url' => home_url('/technology')),
-                                    array('title' => 'Retail', 'url' => home_url('/retail'))
+                                    array('title' => 'Finance', 'url' => home_url('/finance')),
+                                    array('title' => 'Professional Services', 'url' => home_url('/professional-services')),
+                                    array('title' => 'Coaches & Consultants', 'url' => home_url('/coaches-consultants')),
+                                    array('title' => 'Automotive', 'url' => home_url('/automotive')),
+                                    array('title' => 'Home & Garden', 'url' => home_url('/home-garden'))
                                 );
                             }
                             foreach ($industries as $industry): ?>
-                                <li><a href="<?php echo esc_url($industry['url']); ?>"><?php echo esc_html($industry['title']); ?></a></li>
+                                <a href="<?php echo esc_url($industry['url']); ?>" class="sitemap-link"><?php echo esc_html($industry['title']); ?></a>
                             <?php endforeach; ?>
-                        </ul>
+                        </div>
                     </div>
 
                     <!-- Solutions Section -->
                     <div class="sitemap-section animate-on-scroll animate-fade-up">
                         <h2><?php echo esc_html(get_post_meta(get_the_ID(), '_sitemap_solutions_title', true) ?: 'Solutions'); ?></h2>
-                        <ul class="sitemap-list">
+                        <div class="sitemap-links">
                             <?php 
                             $solutions = get_post_meta(get_the_ID(), '_sitemap_solutions', true);
                             if (empty($solutions)) {
                                 $solutions = array(
-                                    array('title' => 'Local SEO', 'url' => home_url('/local-seo')),
                                     array('title' => 'Lead Generation', 'url' => home_url('/lead-generation')),
-                                    array('title' => 'Brand Awareness', 'url' => home_url('/brand-awareness')),
-                                    array('title' => 'Conversion Optimization', 'url' => home_url('/conversion-optimization')),
-                                    array('title' => 'Online Reputation Management', 'url' => home_url('/reputation-management')),
-                                    array('title' => 'Marketing Automation', 'url' => home_url('/marketing-automation'))
+                                    array('title' => 'Automate Marketing', 'url' => home_url('/automate-marketing')),
+                                    array('title' => 'High-Converting Website', 'url' => home_url('/high-converting-website')),
+                                    array('title' => 'Improve ROI from Ads', 'url' => home_url('/improve-roi-ads')),
+                                    array('title' => 'Rank Higher Locally', 'url' => home_url('/rank-higher-locally')),
+                                    array('title' => 'Streamline Sales Funnel', 'url' => home_url('/streamline-sales-funnel'))
                                 );
                             }
                             foreach ($solutions as $solution): ?>
-                                <li><a href="<?php echo esc_url($solution['url']); ?>"><?php echo esc_html($solution['title']); ?></a></li>
+                                <a href="<?php echo esc_url($solution['url']); ?>" class="sitemap-link"><?php echo esc_html($solution['title']); ?></a>
                             <?php endforeach; ?>
-                        </ul>
+                        </div>
                     </div>
 
                     <!-- Resources Section -->
                     <div class="sitemap-section animate-on-scroll animate-fade-up">
-                        <h2><?php echo esc_html(get_post_meta(get_the_ID(), '_sitemap_resources_title', true) ?: 'Resources'); ?></h2>
-                        <ul class="sitemap-list">
+                        <h2><?php echo esc_html(get_post_meta(get_the_ID(), '_sitemap_resources_title', true) ?: 'Resources & Tools'); ?></h2>
+                        <div class="sitemap-links">
                             <?php 
                             $resources = get_post_meta(get_the_ID(), '_sitemap_resources', true);
                             if (empty($resources)) {
                                 $resources = array(
                                     array('title' => 'Blog', 'url' => home_url('/blog')),
                                     array('title' => 'Case Studies', 'url' => home_url('/case-studies')),
-                                    array('title' => 'White Papers', 'url' => home_url('/white-papers')),
-                                    array('title' => 'Free SEO Audit', 'url' => home_url('/free-seo-audit')),
-                                    array('title' => 'Digital Marketing Guide', 'url' => home_url('/digital-marketing-guide')),
-                                    array('title' => 'Webinars', 'url' => home_url('/webinars'))
+                                    array('title' => 'Resources', 'url' => home_url('/resources')),
+                                    array('title' => 'Templates & Tools', 'url' => home_url('/templates-tools')),
+                                    array('title' => 'SEO Audit', 'url' => home_url('/seo-audit')),
+                                    array('title' => 'PPC Audit', 'url' => home_url('/ppc-audit')),
+                                    array('title' => 'Events & Webinars', 'url' => home_url('/events-webinars'))
                                 );
                             }
                             foreach ($resources as $resource): ?>
-                                <li><a href="<?php echo esc_url($resource['url']); ?>"><?php echo esc_html($resource['title']); ?></a></li>
+                                <a href="<?php echo esc_url($resource['url']); ?>" class="sitemap-link"><?php echo esc_html($resource['title']); ?></a>
                             <?php endforeach; ?>
-                        </ul>
+                        </div>
                     </div>
 
                     <!-- Company Section -->
                     <div class="sitemap-section animate-on-scroll animate-fade-up">
                         <h2><?php echo esc_html(get_post_meta(get_the_ID(), '_sitemap_company_title', true) ?: 'Company'); ?></h2>
-                        <ul class="sitemap-list">
+                        <div class="sitemap-links">
                             <?php 
                             $company_pages = get_post_meta(get_the_ID(), '_sitemap_company_pages', true);
                             if (empty($company_pages)) {
                                 $company_pages = array(
                                     array('title' => 'About Us', 'url' => home_url('/about')),
+                                    array('title' => 'Company', 'url' => home_url('/company')),
                                     array('title' => 'Our Team', 'url' => home_url('/team')),
                                     array('title' => 'Careers', 'url' => home_url('/careers')),
                                     array('title' => 'Locations', 'url' => home_url('/locations')),
-                                    array('title' => 'News & Updates', 'url' => home_url('/news')),
-                                    array('title' => 'Awards & Recognition', 'url' => home_url('/awards'))
+                                    array('title' => 'Testimonials', 'url' => home_url('/testimonials'))
                                 );
                             }
                             foreach ($company_pages as $page): ?>
-                                <li><a href="<?php echo esc_url($page['url']); ?>"><?php echo esc_html($page['title']); ?></a></li>
+                                <a href="<?php echo esc_url($page['url']); ?>" class="sitemap-link"><?php echo esc_html($page['title']); ?></a>
                             <?php endforeach; ?>
-                        </ul>
+                        </div>
                     </div>
 
-                    <!-- Support Section -->
+
+
+                    <!-- Partnership Opportunities Section -->
                     <div class="sitemap-section animate-on-scroll animate-fade-up">
-                        <h2><?php echo esc_html(get_post_meta(get_the_ID(), '_sitemap_support_title', true) ?: 'Support'); ?></h2>
-                        <ul class="sitemap-list">
+                        <h2><?php echo esc_html(get_post_meta(get_the_ID(), '_sitemap_partnership_title', true) ?: 'Partnership Opportunities'); ?></h2>
+                        <div class="sitemap-links">
                             <?php 
-                            $support_pages = get_post_meta(get_the_ID(), '_sitemap_support_pages', true);
-                            if (empty($support_pages)) {
-                                $support_pages = array(
-                                    array('title' => 'Contact Us', 'url' => home_url('/contact')),
-                                    array('title' => 'FAQ', 'url' => home_url('/faq')),
-                                    array('title' => 'Support Center', 'url' => home_url('/support')),
-                                    array('title' => 'Client Portal', 'url' => home_url('/client-portal')),
-                                    array('title' => 'Report a Problem', 'url' => home_url('/report-problem'))
+                            $partnership_pages = get_post_meta(get_the_ID(), '_sitemap_partnership_pages', true);
+                            if (empty($partnership_pages)) {
+                                $partnership_pages = array(
+                                    array('title' => 'Become a Partner', 'url' => home_url('/become-a-partner')),
+                                    array('title' => 'Training & Mentoring', 'url' => home_url('/training-mentoring'))
                                 );
                             }
-                            foreach ($support_pages as $page): ?>
-                                <li><a href="<?php echo esc_url($page['url']); ?>"><?php echo esc_html($page['title']); ?></a></li>
+                            foreach ($partnership_pages as $page): ?>
+                                <a href="<?php echo esc_url($page['url']); ?>" class="sitemap-link"><?php echo esc_html($page['title']); ?></a>
                             <?php endforeach; ?>
-                        </ul>
+                        </div>
                     </div>
 
                     <!-- Legal Section -->
                     <div class="sitemap-section animate-on-scroll animate-fade-up">
                         <h2><?php echo esc_html(get_post_meta(get_the_ID(), '_sitemap_legal_title', true) ?: 'Legal'); ?></h2>
-                        <ul class="sitemap-list">
+                        <div class="sitemap-links">
                             <?php 
                             $legal_pages = get_post_meta(get_the_ID(), '_sitemap_legal_pages', true);
                             if (empty($legal_pages)) {
                                 $legal_pages = array(
                                     array('title' => 'Privacy Policy', 'url' => home_url('/privacy-policy')),
                                     array('title' => 'Terms of Service', 'url' => home_url('/terms-of-service')),
-                                    array('title' => 'Cookie Policy', 'url' => home_url('/cookie-policy')),
-                                    array('title' => 'Disclaimer', 'url' => home_url('/disclaimer')),
-                                    array('title' => 'Accessibility Statement', 'url' => home_url('/accessibility'))
+                                    array('title' => 'Sitemap', 'url' => home_url('/sitemap'))
                                 );
                             }
                             foreach ($legal_pages as $page): ?>
-                                <li><a href="<?php echo esc_url($page['url']); ?>"><?php echo esc_html($page['title']); ?></a></li>
+                                <a href="<?php echo esc_url($page['url']); ?>" class="sitemap-link"><?php echo esc_html($page['title']); ?></a>
                             <?php endforeach; ?>
-                        </ul>
+                        </div>
                     </div>
 
                 </div>
@@ -216,7 +281,6 @@ get_header(); ?>
                     <p><?php echo esc_html(get_post_meta(get_the_ID(), '_sitemap_info_content', true) ?: 'If you can\'t find the page you\'re looking for, please don\'t hesitate to contact us. Our team is here to help you navigate our website and find the information you need.'); ?></p>
                     <div class="sitemap-cta">
                         <a href="<?php echo esc_url(get_post_meta(get_the_ID(), '_sitemap_cta_url', true) ?: home_url('/contact')); ?>" class="btn-primary"><?php echo esc_html(get_post_meta(get_the_ID(), '_sitemap_cta_text', true) ?: 'Contact Us'); ?></a>
-                        <a href="<?php echo esc_url(get_post_meta(get_the_ID(), '_sitemap_search_url', true) ?: home_url('/?s=')); ?>" class="btn-outline"><?php echo esc_html(get_post_meta(get_the_ID(), '_sitemap_search_text', true) ?: 'Search Our Site'); ?></a>
                     </div>
                 </div>
             </div>
@@ -253,46 +317,33 @@ get_header(); ?>
     padding-bottom: 0.5rem;
 }
 
-.sitemap-list {
-    list-style: none;
-    padding: 0;
-    margin: 0;
+.sitemap-links {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
 }
 
-.sitemap-list li {
-    margin-bottom: 0.75rem;
-    position: relative;
-    padding-left: 1.5rem;
-}
-
-.sitemap-list li:before {
-    content: "";
-    background-image: url('<?php echo get_template_directory_uri(); ?>/assets/images/aimpro-target.png');
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
-    width: 16px;
-    height: 16px;
-    position: absolute;
-    left: 0;
-    top: 0.1em;
-}
-
-.sitemap-list li:last-child {
-    margin-bottom: 0;
-}
-
-.sitemap-list a {
+.sitemap-link {
+    display: block;
     color: #495057;
     text-decoration: none;
     font-size: 0.95rem;
     line-height: 1.4;
-    transition: color 0.3s ease;
+    padding: 0.75rem 1rem;
+    background: #ffffff;
+    border: 1px solid #e9ecef;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+    border-left: 3px solid transparent;
 }
 
-.sitemap-list a:hover {
+.sitemap-link:hover {
     color: #f15a25;
-    text-decoration: underline;
+    background: #fff5f0;
+    border-color: #f15a25;
+    border-left-color: #f15a25;
+    transform: translateX(3px);
+    text-decoration: none;
 }
 
 .sitemap-info {

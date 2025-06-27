@@ -38,7 +38,6 @@ function sitemap_meta_callback($post) {
     $solutions_title = get_post_meta($post->ID, '_sitemap_solutions_title', true);
     $resources_title = get_post_meta($post->ID, '_sitemap_resources_title', true);
     $company_title = get_post_meta($post->ID, '_sitemap_company_title', true);
-    $support_title = get_post_meta($post->ID, '_sitemap_support_title', true);
     $legal_title = get_post_meta($post->ID, '_sitemap_legal_title', true);
     
     // Section links
@@ -48,7 +47,6 @@ function sitemap_meta_callback($post) {
     $solutions = get_post_meta($post->ID, '_sitemap_solutions', true);
     $resources = get_post_meta($post->ID, '_sitemap_resources', true);
     $company_pages = get_post_meta($post->ID, '_sitemap_company_pages', true);
-    $support_pages = get_post_meta($post->ID, '_sitemap_support_pages', true);
     $legal_pages = get_post_meta($post->ID, '_sitemap_legal_pages', true);
     
     // Bottom section
@@ -56,8 +54,6 @@ function sitemap_meta_callback($post) {
     $info_content = get_post_meta($post->ID, '_sitemap_info_content', true);
     $cta_text = get_post_meta($post->ID, '_sitemap_cta_text', true);
     $cta_url = get_post_meta($post->ID, '_sitemap_cta_url', true);
-    $search_text = get_post_meta($post->ID, '_sitemap_search_text', true);
-    $search_url = get_post_meta($post->ID, '_sitemap_search_url', true);
     ?>
     
     <style>
@@ -135,12 +131,6 @@ function sitemap_meta_callback($post) {
                     <input type="text" id="sitemap_company_title" name="_sitemap_company_title" 
                            value="<?php echo esc_attr($company_title); ?>" 
                            placeholder="Company" />
-                </div>
-                <div class="sitemap-meta-field">
-                    <label for="sitemap_support_title">Support Section</label>
-                    <input type="text" id="sitemap_support_title" name="_sitemap_support_title" 
-                           value="<?php echo esc_attr($support_title); ?>" 
-                           placeholder="Support" />
                 </div>
                 <div class="sitemap-meta-field">
                     <label for="sitemap_legal_title">Legal Section</label>
@@ -221,18 +211,6 @@ function sitemap_meta_callback($post) {
                            value="<?php echo esc_attr($cta_url); ?>" 
                            placeholder="<?php echo home_url('/contact'); ?>" />
                 </div>
-                <div class="sitemap-meta-field">
-                    <label for="sitemap_search_text">Search Button Text</label>
-                    <input type="text" id="sitemap_search_text" name="_sitemap_search_text" 
-                           value="<?php echo esc_attr($search_text); ?>" 
-                           placeholder="Search Our Site" />
-                </div>
-                <div class="sitemap-meta-field">
-                    <label for="sitemap_search_url">Search Button URL</label>
-                    <input type="url" id="sitemap_search_url" name="_sitemap_search_url" 
-                           value="<?php echo esc_attr($search_url); ?>" 
-                           placeholder="<?php echo home_url('/?s='); ?>" />
-                </div>
             </div>
         </div>
     </div>
@@ -305,14 +283,11 @@ function save_sitemap_meta($post_id) {
         '_sitemap_solutions_title',
         '_sitemap_resources_title',
         '_sitemap_company_title',
-        '_sitemap_support_title',
         '_sitemap_legal_title',
         '_sitemap_info_title',
         '_sitemap_info_content',
         '_sitemap_cta_text',
-        '_sitemap_cta_url',
-        '_sitemap_search_text',
-        '_sitemap_search_url'
+        '_sitemap_cta_url'
     );
 
     // Save simple fields
@@ -331,7 +306,6 @@ function save_sitemap_meta($post_id) {
         '_sitemap_solutions',
         '_sitemap_resources',
         '_sitemap_company_pages',
-        '_sitemap_support_pages',
         '_sitemap_legal_pages'
     );
 
