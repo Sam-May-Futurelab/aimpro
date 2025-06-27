@@ -782,14 +782,15 @@
 
 .locations-page .cta-description {
     font-size: 1.125rem;
-    color: #000000;
+    color: #1a1a1a;
     line-height: 1.6;
     max-width: 800px;
     margin: 0 auto 2.5rem;
-    background: rgba(255, 255, 255, 0.9);
+    background: rgba(255, 255, 255, 0.95);
     padding: 1.5rem 2rem;
     border-radius: 12px;
     backdrop-filter: blur(10px);
+    font-weight: 500;
 }
 
 .locations-page .cta-buttons {
@@ -832,9 +833,11 @@
 }
 
 .locations-page .btn-secondary:hover {
-    background: rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.2);
     border-color: white;
+    color: white;
     transform: translateY(-2px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
 }
 
 /* Locations Page Specific Styles - Override conflicts */
