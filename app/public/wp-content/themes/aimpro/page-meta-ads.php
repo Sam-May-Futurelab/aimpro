@@ -461,7 +461,7 @@ function get_meta_ads_meta($key, $post_id, $defaults, $prefix = '_meta_ads_') {
     
     .meta-ads-page .tool-icon i {
         font-size: 2rem !important;
-        color: #f15a25 !important;
+        color: white !important;
     }
     
     .meta-ads-page .tool-item h3 {
