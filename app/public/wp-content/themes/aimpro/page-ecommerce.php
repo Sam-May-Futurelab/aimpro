@@ -298,6 +298,47 @@ get_header(); ?>
 </main>
 
 <style>
+/* General styles for service features alignment */
+.service-features {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-align: left;
+}
+
+.service-features li {
+    font-size: 0.9rem;
+    color: #495057;
+    padding: 0.375rem 0;
+    text-align: left;
+    position: relative;
+    padding-left: 1rem;
+    line-height: 1.4;
+}
+
+.service-features li:before {
+    content: "•";
+    color: #f15a25;
+    position: absolute;
+    left: 0;
+    top: 0.6rem;
+    font-weight: bold;
+    line-height: 1;
+}
+
+.service-features li:last-child {
+    border-bottom: none;
+}
+
+.service-card {
+    text-align: center;
+}
+
+.service-card .service-features {
+    text-align: left;
+    margin-top: 1rem;
+}
+
 /* Mobile optimizations for ecommerce results sections */
 @media (max-width: 768px) {
     /* Case Study Results Grid - Mobile Layout */
@@ -405,13 +446,27 @@ get_header(); ?>
         list-style: none;
         padding: 0;
         margin: 0;
+        text-align: left;
     }
     
     .service-features li {
         font-size: 0.85rem;
         color: #495057;
         padding: 0.25rem 0;
-        border-bottom: 1px solid #e9ecef;
+        text-align: left;
+        position: relative;
+        padding-left: 1rem;
+        line-height: 1.4;
+    }
+    
+    .service-features li:before {
+        content: "•";
+        color: #f15a25;
+        position: absolute;
+        left: 0;
+        top: 0.45rem;
+        font-weight: bold;
+        line-height: 1;
     }
     
     .service-features li:last-child {
