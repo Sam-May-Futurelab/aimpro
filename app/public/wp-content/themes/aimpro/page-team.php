@@ -60,10 +60,6 @@ get_header(); ?>
                                 <span class="specialty">Business Development</span>
                                 <span class="specialty">Client Relations</span>
                             </div>
-                            <div class="member-social">
-                                <a href="#" aria-label="LinkedIn">LinkedIn</a>
-                                <a href="#" aria-label="Twitter">Twitter</a>
-                            </div>
                         </div>
                     </div>                    <!-- Dinesh Thapa -->
                     <div class="team-member animate-on-scroll animate-stagger animate-fade-up">
@@ -81,13 +77,9 @@ get_header(); ?>
                             <h4>Business Growth Specialist</h4>
                             <p>Dinesh brings innovative growth strategies and deep analytics expertise to our team. He oversees marketing operations and ensures our campaigns deliver measurable results for clients.</p>
                             <div class="member-specialties">
-                                <span class="specialty">ROI optimisation</span>
+                                <span class="specialty">ROI Optimisation</span>
                                 <span class="specialty">Analytics</span>
                                 <span class="specialty">Business Growth</span>
-                            </div>
-                            <div class="member-social">
-                                <a href="#" aria-label="LinkedIn">LinkedIn</a>
-                                <a href="#" aria-label="Twitter">Twitter</a>
                             </div>
                         </div>
                     </div>                    <!-- James Butler -->
@@ -109,10 +101,6 @@ get_header(); ?>
                                 <span class="specialty">UX/UI Design</span>
                                 <span class="specialty">Brand Strategy</span>
                                 <span class="specialty">Creative Direction</span>
-                            </div>
-                            <div class="member-social">
-                                <a href="#" aria-label="LinkedIn">LinkedIn</a>
-                                <a href="#" aria-label="Dribbble">Dribbble</a>
                             </div>
                         </div>
                     </div>

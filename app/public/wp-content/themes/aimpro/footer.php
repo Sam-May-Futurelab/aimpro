@@ -15,7 +15,6 @@
                 <p class="footer-description">We're a certified digital marketing agency specialising in SEO, PPC, and web development. Let us help you dominate your market with data-driven strategies.</p>
                 <div class="footer-certifications">
                     <span class="cert-badge">Google Certified</span>
-                    <span class="cert-badge">Meta Partner</span>
                 </div>
             </div>
               <div class="footer-column footer-services">
@@ -35,17 +34,11 @@
             </div>
               <div class="footer-column footer-connect">
                 <h3>Connect With Us</h3>
-                <p class="connect-description">Follow us for the latest digital marketing insights and updates.</p>                <div class="social-icons">
-                    <a href="#" class="social-icon" aria-label="Follow us on LinkedIn">
+                <p class="connect-description">Follow us for the latest digital marketing insights and updates.</p>                <div class="social-icons" style="justify-content: center;">
+                    <a href="https://www.linkedin.com/company/105243652/admin/dashboard/" class="social-icon" aria-label="Follow us on LinkedIn" target="_blank" rel="noopener">
                         <i class="fab fa-linkedin-in"></i>
                     </a>
-                    <a href="#" class="social-icon" aria-label="Follow us on Twitter">
-                        <i class="fab fa-twitter"></i>
-                    </a>
-                    <a href="#" class="social-icon" aria-label="Follow us on Instagram">
-                        <i class="fab fa-instagram"></i>
-                    </a>
-                    <a href="https://www.youtube.com/@AimproDigital/videos" class="social-icon" aria-label="Subscribe to our YouTube channel" target="_blank" rel="noopener">
+                    <a href="https://www.youtube.com/ajaydhunna" class="social-icon" aria-label="Subscribe to our YouTube channel" target="_blank" rel="noopener">
                         <i class="fab fa-youtube"></i>
                     </a>
                 </div>
