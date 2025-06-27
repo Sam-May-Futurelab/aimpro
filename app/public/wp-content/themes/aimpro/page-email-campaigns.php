@@ -45,7 +45,6 @@ get_header(); ?>
                 </div>
                 <div class="hero-ctas">
                     <a href="#contact" class="btn-primary streamlined"><?php echo esc_html(get_post_meta(get_the_ID(), 'email_campaigns_hero_primary_btn', true) ?: 'Launch Campaigns'); ?></a>
-                    <a href="#packages" class="btn-outline streamlined"><?php echo esc_html(get_post_meta(get_the_ID(), 'email_campaigns_hero_secondary_btn', true) ?: 'View Packages'); ?></a>
                 </div>
             </div>
         </div>
@@ -444,12 +443,14 @@ get_header(); ?>
     }
     
     .email-campaigns-page .hero-stats .stat-item {
-        background: rgba(255, 255, 255, 0.1) !important;
+        background: rgba(255, 255, 255, 0.95) !important;
         backdrop-filter: blur(10px) !important;
         border-radius: 12px !important;
         padding: 20px !important;
         text-align: center !important;
         min-height: auto !important;
+        border: 1px solid rgba(255, 255, 255, 0.2) !important;
+        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1) !important;
     }
     
     .email-campaigns-page .hero-stats .stat-number {
@@ -462,7 +463,7 @@ get_header(); ?>
     
     .email-campaigns-page .hero-stats .stat-label {
         font-size: 0.95rem !important;
-        color: white !important;
+        color: #1e293b !important;
         font-weight: 500 !important;
         line-height: 1.3 !important;
     }
@@ -471,30 +472,25 @@ get_header(); ?>
         flex-direction: column !important;
         gap: 15px !important;
         width: 100% !important;
-        align-items: stretch !important;
+        align-items: center !important;
+        justify-content: center !important;
+        text-align: center !important;
     }
     
-    .email-campaigns-page .hero-ctas .btn-primary,
-    .email-campaigns-page .hero-ctas .btn-outline {
-        width: 100% !important;
-        padding: 16px 24px !important;
+    .email-campaigns-page .hero-ctas .btn-primary {
+        width: auto !important;
+        max-width: 280px !important;
+        padding: 16px 32px !important;
         font-size: 1.1rem !important;
         font-weight: 600 !important;
         text-align: center !important;
         border-radius: 8px !important;
         transition: all 0.3s ease !important;
-    }
-    
-    .email-campaigns-page .hero-ctas .btn-primary {
         background: #f15a25 !important;
         color: white !important;
         border: 2px solid #f15a25 !important;
-    }
-    
-    .email-campaigns-page .hero-ctas .btn-outline {
-        background: transparent !important;
-        color: white !important;
-        border: 2px solid white !important;
+        display: inline-block !important;
+        margin: 0 auto !important;
     }
     
     /* Service overview mobile adjustments */
