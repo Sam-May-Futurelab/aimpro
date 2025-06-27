@@ -565,6 +565,64 @@ get_header(); ?>
 <style>
 /* Services Page Mobile Optimization */
 
+/* Benefit Cards Styles */
+.benefits-grid-4 {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.benefit-card {
+    background: #ffffff;
+    border: 1px solid #e9ecef;
+    border-radius: 12px;
+    padding: 2rem 1.5rem;
+    text-align: center;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.benefit-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+    border-color: #f15a25;
+}
+
+.benefit-icon {
+    color: #f15a25;
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.benefit-icon svg {
+    width: 48px;
+    height: 48px;
+    stroke: currentColor;
+}
+
+.benefit-card h3 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #212529;
+    margin-bottom: 1rem;
+    line-height: 1.3;
+}
+
+.benefit-card p {
+    color: #6c757d;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    margin: 0;
+    flex-grow: 1;
+}
+
 /* Base styles for service subcategories */
 .service-subcategories {
     display: grid;
@@ -703,6 +761,37 @@ get_header(); ?>
 
 /* Mobile Responsive Styles */
 @media (max-width: 768px) {
+    /* Benefit cards mobile optimization */
+    .benefits-grid-4 {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+        margin-top: 1.5rem;
+    }
+    
+    .benefit-card {
+        padding: 1.5rem 1.25rem;
+        border-radius: 8px;
+    }
+    
+    .benefit-icon {
+        margin-bottom: 1rem;
+    }
+    
+    .benefit-icon svg {
+        width: 40px;
+        height: 40px;
+    }
+    
+    .benefit-card h3 {
+        font-size: 1.125rem;
+        margin-bottom: 0.75rem;
+    }
+    
+    .benefit-card p {
+        font-size: 0.9rem;
+        line-height: 1.4;
+    }
+    
     /* Service subcategories - single column on mobile */
     .service-subcategories {
         grid-template-columns: 1fr;
@@ -797,6 +886,31 @@ get_header(); ?>
 }
 
 @media (max-width: 480px) {
+    /* Benefit cards for extra small screens */
+    .benefit-card {
+        padding: 1.25rem 1rem;
+        border-radius: 6px;
+    }
+    
+    .benefit-icon {
+        margin-bottom: 0.75rem;
+    }
+    
+    .benefit-icon svg {
+        width: 36px;
+        height: 36px;
+    }
+    
+    .benefit-card h3 {
+        font-size: 1rem;
+        margin-bottom: 0.625rem;
+    }
+    
+    .benefit-card p {
+        font-size: 0.85rem;
+        line-height: 1.4;
+    }
+    
     /* Extra small screens */
     .subcategory-card {
         padding: 1rem;
@@ -832,6 +946,24 @@ get_header(); ?>
 
 /* Tablet responsive styles */
 @media (min-width: 769px) and (max-width: 1024px) {
+    /* Benefit cards tablet optimization */
+    .benefits-grid-4 {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+    }
+    
+    .benefit-card {
+        padding: 1.75rem 1.5rem;
+    }
+    
+    .benefit-card h3 {
+        font-size: 1.125rem;
+    }
+    
+    .benefit-card p {
+        font-size: 0.9rem;
+    }
+    
     .service-subcategories {
         grid-template-columns: repeat(2, 1fr);
         gap: 1.25rem;

@@ -323,7 +323,7 @@ get_header(); ?>
     .ecommerce-insights .result-number {
         font-size: 2.5rem;
         font-weight: 700;
-        color: #007bff;
+        color: #f15a25;
         line-height: 1;
         margin-bottom: 0.5rem;
     }
@@ -348,7 +348,7 @@ get_header(); ?>
         display: inline-block;
         width: 100%;
         padding: 0.875rem 1.5rem;
-        background: #007bff;
+        background: #f15a25;
         color: white !important;
         text-decoration: none;
         border-radius: 6px;
@@ -360,7 +360,7 @@ get_header(); ?>
     }
     
     .case-study-link:hover {
-        background: #0056b3;
+        background: #d54a20;
         color: white !important;
     }
     
@@ -385,7 +385,7 @@ get_header(); ?>
     
     .service-icon i {
         font-size: 2.5rem !important;
-        color: #007bff;
+        color: #f15a25;
     }
     
     .service-card h3 {
@@ -438,24 +438,24 @@ get_header(); ?>
     }
     
     .ecommerce-cta .btn-primary {
-        background: #007bff;
+        background: #f15a25;
         color: white !important;
-        border: 2px solid #007bff;
+        border: 2px solid #f15a25;
     }
     
     .ecommerce-cta .btn-primary:hover {
-        background: #0056b3;
-        border-color: #0056b3;
+        background: #d54a20;
+        border-color: #d54a20;
     }
     
     .ecommerce-cta .btn-secondary {
         background: transparent;
-        color: #007bff !important;
-        border: 2px solid #007bff;
+        color: #f15a25 !important;
+        border: 2px solid #f15a25;
     }
     
     .ecommerce-cta .btn-secondary:hover {
-        background: #007bff;
+        background: #f15a25;
         color: white !important;
     }
     
