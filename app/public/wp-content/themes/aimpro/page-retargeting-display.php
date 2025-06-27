@@ -648,6 +648,7 @@ get_header(); ?>
         text-align: center !important;
         max-width: 100% !important;
         padding: 0 20px !important;
+        margin: 0 auto !important;
     }
     
     .retargeting-page .cta-content h2 {
@@ -656,6 +657,7 @@ get_header(); ?>
         color: white !important;
         margin-bottom: 20px !important;
         line-height: 1.3 !important;
+        text-align: center !important;
     }
     
     .retargeting-page .cta-content p {
@@ -663,6 +665,7 @@ get_header(); ?>
         color: #cbd5e1 !important;
         line-height: 1.6 !important;
         margin-bottom: 30px !important;
+        text-align: center !important;
     }
     
     .retargeting-page .simple-cta-buttons {
@@ -670,11 +673,14 @@ get_header(); ?>
         flex-direction: column !important;
         gap: 15px !important;
         width: 100% !important;
-        align-items: stretch !important;
+        align-items: center !important;
+        justify-content: center !important;
+        margin: 0 auto !important;
     }
     
     .retargeting-page .simple-cta-buttons .btn {
         width: 100% !important;
+        max-width: 300px !important;
         padding: 16px 24px !important;
         font-size: 1.1rem !important;
         font-weight: 600 !important;
@@ -683,7 +689,7 @@ get_header(); ?>
         transition: all 0.3s ease !important;
         text-decoration: none !important;
         display: block !important;
-        margin: 0 !important;
+        margin: 0 auto !important;
     }
     
     .retargeting-page .simple-cta-buttons .btn-primary {
@@ -694,8 +700,13 @@ get_header(); ?>
     
     .retargeting-page .simple-cta-buttons .btn-outline {
         background: transparent !important;
+        color: #f15a25 !important;
+        border: 2px solid #f15a25 !important;
+    }
+    
+    .retargeting-page .simple-cta-buttons .btn-outline:hover {
+        background: #f15a25 !important;
         color: white !important;
-        border: 2px solid white !important;
     }
     
     /* Inline CTAs mobile adjustments */
