@@ -214,8 +214,8 @@ get_header(); ?>
                 </h2>
                 <p class="section-subtitle">Professional-grade resources trusted by thousands of marketers worldwide</p>
                   <div class="benefits-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin-top: 40px;">
-                    <div class="benefit-item">
-                        <div class="service-icon-container">
+                    <div class="benefit-item" style="text-align: center;">
+                        <div class="service-icon-container" style="display: flex; justify-content: center; margin-bottom: 1rem;">
                             <div class="service-icon-animated">
                                 <i class="fas fa-rocket"></i>
                             </div>
@@ -224,8 +224,8 @@ get_header(); ?>
                         <p>No complex setup required. Download and start using immediately to accelerate your marketing efforts.</p>
                     </div>
                     
-                    <div class="benefit-item">
-                        <div class="service-icon-container">
+                    <div class="benefit-item" style="text-align: center;">
+                        <div class="service-icon-container" style="display: flex; justify-content: center; margin-bottom: 1rem;">
                             <div class="service-icon-animated">
                                 <i class="fas fa-users"></i>
                             </div>
@@ -234,8 +234,8 @@ get_header(); ?>
                         <p>Created by our team of digital marketing experts with 10+ years of industry experience.</p>
                     </div>
                     
-                    <div class="benefit-item">
-                        <div class="service-icon-container">
+                    <div class="benefit-item" style="text-align: center;">
+                        <div class="service-icon-container" style="display: flex; justify-content: center; margin-bottom: 1rem;">
                             <div class="service-icon-animated">
                                 <i class="fas fa-chart-line"></i>
                             </div>
@@ -244,8 +244,8 @@ get_header(); ?>
                         <p>Used by 5,000+ businesses to improve their marketing performance and ROI.</p>
                     </div>
                     
-                    <div class="benefit-item">
-                        <div class="service-icon-container">
+                    <div class="benefit-item" style="text-align: center;">
+                        <div class="service-icon-container" style="display: flex; justify-content: center; margin-bottom: 1rem;">
                             <div class="service-icon-animated">
                                 <i class="fas fa-sync-alt"></i>
                             </div>
