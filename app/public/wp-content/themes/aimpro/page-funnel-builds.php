@@ -34,6 +34,51 @@ get_header(); ?>
     padding-top: 20px;
 }
 
+/* Fix for Font Awesome icons in type cards */
+.type-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 64px;
+    height: 64px;
+    margin: 0 auto 15px;
+    background: var(--primary-orange, #f15a25);
+    border-radius: 12px;
+    color: white;
+}
+
+.type-icon i {
+    font-size: 2rem;
+    color: white !important;
+}
+
+/* Fix for extra icons in funnel type lists */
+.type-card ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.type-card li {
+    position: relative;
+    padding-left: 20px;
+    margin-bottom: 0.5rem;
+    line-height: 1.5;
+}
+
+.type-card li:before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: var(--primary-orange, #f15a25);
+    font-weight: bold;
+    width: auto;
+    height: auto;
+    background-image: none !important;
+    background: none !important;
+}
+
 /* FAQ Section Styles - Reduced Font Size */
 .faq-section {
     padding: 60px 0;
@@ -184,7 +229,7 @@ get_header(); ?>
                     <div class="feature-icon">
                         <i class="fas fa-chart-line"></i>
                     </div>
-                    <h3>Conversion optimisation</h3>
+                    <h3>Conversion Optimisation</h3>
                     <p>Continuous testing and refinement to maximise conversions at each step of your sales funnel.</p>
                 </div>
             </div>

@@ -110,7 +110,7 @@ function aimpro_get_advertising_ppc_default_values() {
         'process_step_title_3' => 'Launch & Monitor',
         'process_step_content_3' => 'Campaign launch with close monitoring of performance metrics and immediate optimisations as needed.',
         
-        'process_step_title_4' => 'optimise & Scale',
+        'process_step_title_4' => 'Optimise & Scale',
         'process_step_content_4' => 'Continuous optimisation based on data insights, scaling successful campaigns and improving underperformers.',
         
         'process_step_title_5' => 'Report & Refine',

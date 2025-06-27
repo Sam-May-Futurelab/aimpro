@@ -273,7 +273,7 @@ get_header(); ?>
                     <div class="tool-icon" style="text-align: center; display: flex; justify-content: center;">
                         <i class="fas fa-bullseye"></i>
                     </div>
-                    <h3>behavioural Targeting</h3>
+                    <h3>Behavioural Targeting</h3>
                     <p>AI tracks customer behaviour patterns to trigger personalised engagement at optimal moments.</p>
                 </div>
                 

@@ -256,7 +256,7 @@ get_header(); ?>
                 <div class="process-step animate-on-scroll animate-stagger animate-fade-up">
                     <div class="step-number">6</div>
                     <div class="step-content">
-                        <h3>Launch & optimisation</h3>
+                        <h3>Launch & Optimisation</h3>
                         <p>Strategic launch with performance monitoring and ongoing optimisation for better results.</p>
                     </div>
                 </div>

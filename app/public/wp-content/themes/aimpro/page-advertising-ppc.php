@@ -284,7 +284,7 @@ function get_advertising_ppc_field($field_key, $post_id = null) {
                     <div class="process-step animate-on-scroll animate-stagger animate-fade-up">
                         <div class="step-number">4</div>
                         <div class="step-content">
-                            <h3>optimise & Scale</h3>
+                            <h3>Optimise & Scale</h3>
                             <p>Continuous optimisation based on data insights, scaling successful campaigns and improving underperformers.</p>
                         </div>
                     </div>

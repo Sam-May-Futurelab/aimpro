@@ -154,7 +154,7 @@ get_header(); ?>
                     <div class="process-step">
                         <div class="step-number">5</div>
                         <div class="step-content">
-                            <h3>Launch & optimisation</h3>
+                            <h3>Launch & Optimisation</h3>
                             <p>Strategic launch with ongoing monitoring, analytics setup, and continuous optimisation for better results.</p>
                         </div>
                     </div>
@@ -278,7 +278,7 @@ get_header(); ?>
                         <div class="service-icon">
                             <i class="fas fa-search"></i>
                         </div>
-                        <h3>SEO-optimised</h3>
+                        <h3>SEO-Optimised</h3>
                         <p>Built with SEO best practices, including proper structure, meta tags, and schema markup for better visibility.</p>
                     </div>
                     <div class="service-item">

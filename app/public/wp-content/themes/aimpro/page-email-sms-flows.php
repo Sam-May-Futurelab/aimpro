@@ -10,6 +10,29 @@
 get_header(); ?>
 
 <main id="primary" class="service-page email-sms-flows-page">
+    
+    <?php
+    // Check if there's content in the WordPress editor
+    if (have_posts()) :
+        while (have_posts()) : the_post();
+            $content = get_the_content();
+            if (!empty(trim($content))) :
+                // If there's content in the editor, display it instead of the hardcoded content
+                ?>
+                <div class="container">
+                    <div class="page-content">
+                        <h1><?php the_title(); ?></h1>
+                        <?php the_content(); ?>
+                    </div>
+                </div>
+                <?php
+                get_footer();
+                return; // Exit early to avoid showing the hardcoded content
+            endif;
+        endwhile;
+    endif;
+    // If no content in editor, show the hardcoded template below
+    ?>
     <!-- Breadcrumbs -->
     <div class="breadcrumbs-container">
         <div class="container">

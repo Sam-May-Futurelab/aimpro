@@ -302,7 +302,7 @@ get_header(); ?>
                     <div class="service-icon">
                         <i class="fas fa-user-tag"></i>
                     </div>
-                    <h3>Smart personalisation</h3>
+                    <h3>Smart Personalisation</h3>
                     <p>Go beyond "Hi [Name]" with behavioural personalisation based on purchase history and engagement patterns.</p>
                 </div>
                 

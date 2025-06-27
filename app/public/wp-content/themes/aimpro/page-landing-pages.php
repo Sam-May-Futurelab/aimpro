@@ -355,7 +355,7 @@ get_header(); ?>
                 <div class="process-step animate-on-scroll animate-stagger animate-fade-up">
                     <div class="step-number">5</div>
                     <div class="step-content">
-                        <h3>Testing & optimisation</h3>
+                        <h3>Testing & Optimisation</h3>
                         <p>Set up A/B tests and continuous optimisation to improve conversion rates over time.</p>
                     </div>
                 </div>

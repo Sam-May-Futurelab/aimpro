@@ -96,6 +96,7 @@ require_once get_template_directory() . '/includes/seo-audit-meta.php';
 require_once get_template_directory() . '/includes/technical-seo-meta.php';
 require_once get_template_directory() . '/includes/on-page-seo-meta.php';
 require_once get_template_directory() . '/includes/white-label-seo-meta.php';
+require_once get_template_directory() . '/includes/email-sms-flows-meta.php';
 require_once get_template_directory() . '/includes/locations-meta.php';
 
 // Include helper functions
