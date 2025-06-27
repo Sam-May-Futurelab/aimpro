@@ -131,7 +131,9 @@ get_header(); ?>
                         $values_list = 'Collaboration: We believe the best results come from working together, sharing knowledge, and supporting each other\'s growth.
 Continuous Learning: Digital marketing evolves rapidly, and we\'re committed to staying ahead through ongoing education and skill development.
 Client Success: Your success is our success. We\'re dedicated to delivering results that exceed expectations and drive real business growth.
-Innovation: We embrace new technologies and creative approaches to solve complex marketing challenges and stay ahead of the curve.';
+Innovation: We embrace new technologies and creative approaches to solve complex marketing challenges and stay ahead of the curve.
+Transparency: We maintain open, honest communication with our clients and team members, providing clear insights into our strategies and results.
+Excellence: We hold ourselves to the highest standards, constantly refining our processes and delivering work that exceeds industry benchmarks.';
                     }
                     
                     $values = explode("\n", $values_list);

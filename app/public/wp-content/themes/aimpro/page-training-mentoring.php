@@ -243,7 +243,7 @@ get_header(); ?>
                                 'results' => array('150% performance boost', 'Team alignment achieved')
                             ),
                             array(
-                                'quote' => 'The certification program gave me the confidence and skills to start my own digital marketing consultancy. I\'m now working with 8 clients and growing.',
+                                'quote' => 'The certification program gave me the confidence and skills to start my own digital marketing consultancy. The comprehensive training and ongoing support helped me build a solid foundation. I\'m now working with 8 clients and growing.',
                                 'name' => 'Lisa Rodriguez',
                                 'position' => 'Founder, Rodriguez Marketing',
                                 'results' => array('Started own business', '8 active clients')
