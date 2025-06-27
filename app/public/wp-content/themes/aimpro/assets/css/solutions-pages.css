@@ -745,7 +745,7 @@
     left: 0;
     right: 0;
     height: 4px;
-    background: linear-gradient(90deg, #667eea, #764ba2);
+    background: var(--gradient-orange);
 }
 
 .automation-card:hover,
@@ -759,13 +759,13 @@
 .solution-icon {
     width: 64px;
     height: 64px;
-    background: linear-gradient(45deg, #667eea, #764ba2);
+    background: var(--gradient-orange);
     border-radius: 12px;
     display: flex;
     align-items: center;
     justify-content: center;
     margin-bottom: 1.5rem;
-    box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+    box-shadow: var(--shadow-orange);
 }
 
 .solution-icon svg {
@@ -817,10 +817,10 @@
 .automation-features li::before,
 .solution-automation-features li::before,
 .solution-features li::before {
-    content: "";
+    content: "✓";
     position: absolute;
     left: 0;
-    color: #667eea;
+    color: var(--primary-orange);
     font-weight: bold;
     font-size: 1rem;
 }
@@ -1404,7 +1404,7 @@
     left: 0;
     right: 0;
     height: 4px;
-    background: linear-gradient(90deg, #667eea, #764ba2);
+    background: var(--gradient-orange);
 }
 
 .solution-card:hover {
@@ -1423,20 +1423,20 @@
 
 /* Solution Results Stats */
 .solution-results {
-    background: rgba(102, 126, 234, 0.08);
+    background: rgba(241, 90, 37, 0.08);
     padding: 1rem;
     border-radius: 8px;
     margin: 1.5rem 0;
     font-weight: 600;
-    color: #667eea;
+    color: var(--primary-orange);
     text-align: center;
-    border-left: 3px solid #667eea;
+    border-left: 3px solid var(--primary-orange);
 }
 
 /* Solution CTA Link */
 .solution-cta {
     display: inline-block;
-    background: linear-gradient(45deg, #667eea, #764ba2);
+    background: var(--gradient-orange);
     color: white;
     padding: 0.75rem 1.5rem;
     border-radius: 8px;
@@ -1448,7 +1448,7 @@
 
 .solution-cta:hover {
     transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+    box-shadow: var(--shadow-orange-hover);
 }
 
 /* Responsive Grid */
