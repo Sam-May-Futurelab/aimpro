@@ -371,4 +371,93 @@ get_header(); ?>
     </div>
 </main>
 
+<style>
+/* Responsive CSS for Local SEO Process Section */
+.local-seo-process .process-steps {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.local-seo-process .process-step {
+    display: flex;
+    align-items: flex-start;
+    gap: 1.5rem;
+}
+
+.local-seo-process .step-number {
+    background: #f15a25;
+    color: white;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 1.2rem;
+    flex-shrink: 0;
+}
+
+.local-seo-process .step-content h3 {
+    margin-bottom: 0.5rem;
+    color: #333;
+}
+
+.local-seo-process .step-content p {
+    margin: 0;
+    color: #666;
+    line-height: 1.6;
+}
+
+.local-seo-process .process-cta {
+    text-align: center;
+    margin-top: 3rem;
+}
+
+.local-seo-process .process-cta-btn {
+    background: #f15a25;
+    color: white;
+    padding: 1rem 2rem;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+}
+
+.local-seo-process .process-cta-btn:hover {
+    background: #d14619;
+}
+
+/* Mobile Responsive - Center step numbers above text */
+@media (max-width: 768px) {
+    .local-seo-process .process-step {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 1rem;
+    }
+    
+    .local-seo-process .step-number {
+        margin-bottom: 0.5rem;
+    }
+    
+    .local-seo-process .step-content {
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .local-seo-process .process-steps {
+        gap: 1.5rem;
+    }
+    
+    .local-seo-process .step-number {
+        width: 45px;
+        height: 45px;
+        font-size: 1.1rem;
+    }
+}
+</style>
+
 <?php get_footer(); ?>
