@@ -562,4 +562,300 @@ get_header(); ?>
     </div>
 </main>
 
+<style>
+/* Services Page Mobile Optimization */
+
+/* Base styles for service subcategories */
+.service-subcategories {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.subcategory-card {
+    background: #ffffff;
+    border: 1px solid #e9ecef;
+    border-radius: 12px;
+    padding: 1.5rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.subcategory-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+    border-color: #f15a25;
+}
+
+.subcategory-card h3 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #212529;
+    margin-bottom: 0.75rem;
+    line-height: 1.3;
+}
+
+.subcategory-card p {
+    color: #6c757d;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    margin-bottom: 1rem;
+    flex-grow: 1;
+}
+
+.service-features {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 1.5rem 0;
+}
+
+.service-features li {
+    color: #495057;
+    font-size: 0.9rem;
+    padding: 0.375rem 0;
+    border-bottom: 1px solid #f8f9fa;
+    position: relative;
+    padding-left: 1.25rem;
+}
+
+.service-features li:before {
+    content: '✓';
+    color: #f15a25;
+    font-weight: bold;
+    position: absolute;
+    left: 0;
+    top: 0.375rem;
+}
+
+.service-features li:last-child {
+    border-bottom: none;
+}
+
+.service-link {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    background: #f15a25;
+    color: white !important;
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: 600;
+    text-align: center;
+    transition: background-color 0.3s ease;
+    margin-top: auto;
+}
+
+.service-link:hover {
+    background: #d54a20;
+    color: white !important;
+}
+
+.category-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 2px solid #e9ecef;
+}
+
+.category-icon {
+    color: #f15a25;
+    flex-shrink: 0;
+}
+
+.category-info h2 {
+    color: #212529;
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 0.75rem;
+}
+
+.category-info p {
+    color: #6c757d;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+}
+
+.category-main-link {
+    display: inline-block;
+    padding: 0.875rem 1.75rem;
+    background: #f15a25;
+    color: white !important;
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+}
+
+.category-main-link:hover {
+    background: #d54a20;
+    color: white !important;
+}
+
+.service-category-section {
+    margin-bottom: 4rem;
+}
+
+/* Mobile Responsive Styles */
+@media (max-width: 768px) {
+    /* Service subcategories - single column on mobile */
+    .service-subcategories {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+        margin-top: 1.5rem;
+    }
+    
+    .subcategory-card {
+        padding: 1.25rem;
+        margin-bottom: 0;
+    }
+    
+    .subcategory-card h3 {
+        font-size: 1.125rem;
+        margin-bottom: 0.5rem;
+    }
+    
+    .subcategory-card p {
+        font-size: 0.9rem;
+        margin-bottom: 0.75rem;
+    }
+    
+    .service-features li {
+        font-size: 0.85rem;
+        padding: 0.25rem 0 0.25rem 1rem;
+    }
+    
+    .service-link {
+        padding: 0.625rem 1.25rem;
+        font-size: 0.9rem;
+        width: 100%;
+        box-sizing: border-box;
+    }
+    
+    /* Category header mobile adjustments */
+    .category-header {
+        flex-direction: column;
+        gap: 1rem;
+        text-align: center;
+        margin-bottom: 1.5rem;
+    }
+    
+    .category-icon {
+        align-self: center;
+    }
+    
+    .category-info h2 {
+        font-size: 1.5rem;
+        margin-bottom: 0.5rem;
+    }
+    
+    .category-info p {
+        font-size: 1rem;
+        margin-bottom: 0.75rem;
+    }
+    
+    .category-main-link {
+        padding: 0.75rem 1.5rem;
+        font-size: 0.9rem;
+    }
+    
+    .service-category-section {
+        margin-bottom: 2.5rem;
+    }
+    
+    /* Services grid mobile optimization */
+    .services-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+    
+    .service-card {
+        padding: 1.25rem;
+        text-align: center;
+    }
+    
+    .service-card h3 {
+        font-size: 1.125rem;
+        margin-bottom: 0.5rem;
+    }
+    
+    .service-card p {
+        font-size: 0.9rem;
+        margin-bottom: 0.75rem;
+    }
+    
+    .service-card .service-link {
+        width: 100%;
+        padding: 0.625rem;
+        font-size: 0.85rem;
+    }
+}
+
+@media (max-width: 480px) {
+    /* Extra small screens */
+    .subcategory-card {
+        padding: 1rem;
+        border-radius: 8px;
+    }
+    
+    .subcategory-card h3 {
+        font-size: 1rem;
+    }
+    
+    .subcategory-card p {
+        font-size: 0.85rem;
+    }
+    
+    .service-features li {
+        font-size: 0.8rem;
+        padding: 0.2rem 0 0.2rem 0.9rem;
+    }
+    
+    .service-link {
+        padding: 0.5rem 1rem;
+        font-size: 0.85rem;
+    }
+    
+    .category-info h2 {
+        font-size: 1.375rem;
+    }
+    
+    .category-info p {
+        font-size: 0.95rem;
+    }
+}
+
+/* Tablet responsive styles */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .service-subcategories {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.25rem;
+    }
+    
+    .subcategory-card {
+        padding: 1.375rem;
+    }
+    
+    .category-header {
+        gap: 1.25rem;
+    }
+}
+
+/* Ensure proper spacing and alignment */
+.services-categories {
+    padding: 3rem 0;
+}
+
+@media (max-width: 768px) {
+    .services-categories {
+        padding: 2rem 0;
+    }
+}
+</style>
+
 <?php get_footer(); ?>
