@@ -466,6 +466,51 @@ get_header(); ?>
 /* Mobile-specific styles for AI CRM page */
 @media (max-width: 768px) {
     /* Hero section mobile adjustments */
+    .ai-crm-page .page-hero {
+        padding: 80px 0 60px !important;
+        overflow-x: hidden !important;
+    }
+    
+    .ai-crm-page .page-hero .container {
+        width: 100% !important;
+        max-width: 100% !important;
+        padding: 0 20px !important;
+        overflow-x: hidden !important;
+    }
+    
+    .ai-crm-page .hero-content {
+        max-width: 100% !important;
+        width: 100% !important;
+        text-align: center !important;
+        overflow-x: hidden !important;
+    }
+    
+    .ai-crm-page .page-hero h1 {
+        font-size: 2.2rem !important;
+        font-weight: 700 !important;
+        color: #f15a25 !important;
+        margin-bottom: 20px !important;
+        line-height: 1.2 !important;
+        text-align: center !important;
+        padding: 0 10px !important;
+        word-wrap: break-word !important;
+        overflow-wrap: break-word !important;
+        hyphens: auto !important;
+        max-width: 100% !important;
+    }
+    
+    .ai-crm-page .hero-subtitle {
+        font-size: 1.1rem !important;
+        color: #cbd5e1 !important;
+        line-height: 1.5 !important;
+        margin-bottom: 30px !important;
+        text-align: center !important;
+        padding: 0 10px !important;
+        word-wrap: break-word !important;
+        overflow-wrap: break-word !important;
+        max-width: 100% !important;
+    }
+    
     .ai-crm-page .hero-stats {
         grid-template-columns: 1fr !important;
         gap: 20px !important;
@@ -473,12 +518,14 @@ get_header(); ?>
     }
     
     .ai-crm-page .hero-stats .stat-item {
-        background: rgba(255, 255, 255, 0.1) !important;
+        background: rgba(255, 255, 255, 0.95) !important;
         backdrop-filter: blur(10px) !important;
         border-radius: 12px !important;
         padding: 20px !important;
         text-align: center !important;
         min-height: auto !important;
+        border: 1px solid rgba(255, 255, 255, 0.2) !important;
+        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1) !important;
     }
     
     .ai-crm-page .hero-stats .stat-number {
@@ -491,7 +538,7 @@ get_header(); ?>
     
     .ai-crm-page .hero-stats .stat-label {
         font-size: 0.95rem !important;
-        color: white !important;
+        color: #1e293b !important;
         font-weight: 500 !important;
         line-height: 1.3 !important;
     }
@@ -500,18 +547,23 @@ get_header(); ?>
         flex-direction: column !important;
         gap: 15px !important;
         width: 100% !important;
-        align-items: stretch !important;
+        align-items: center !important;
+        justify-content: center !important;
+        text-align: center !important;
     }
     
     .ai-crm-page .hero-ctas .btn-primary,
     .ai-crm-page .hero-ctas .btn-outline {
-        width: 100% !important;
-        padding: 16px 24px !important;
+        width: auto !important;
+        max-width: 280px !important;
+        padding: 16px 32px !important;
         font-size: 1.1rem !important;
         font-weight: 600 !important;
         text-align: center !important;
         border-radius: 8px !important;
         transition: all 0.3s ease !important;
+        display: inline-block !important;
+        margin: 0 auto !important;
     }
     
     .ai-crm-page .hero-ctas .btn-primary {
