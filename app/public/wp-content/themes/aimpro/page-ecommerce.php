@@ -72,64 +72,66 @@ get_header(); ?>
             <div class="section-content">
                 <h2 class="animate-on-scroll animate-fade-up">Our E-commerce Marketing Services</h2>
                 <div class="services-grid animate-on-scroll animate-fade-up">
-                    
-                    <div class="service-card animate-on-scroll animate-stagger animate-fade-up">
-                        <div class="service-icon">
-                            <i class="fab fa-google" style="font-size: 48px;"></i>
+                    <?php 
+                    $services = get_post_meta(get_the_ID(), '_ecommerce_services', true);
+                    // Always use our 6-service array instead of potentially incomplete saved data
+                    if (empty($services) || count($services) < 6) {
+                        $services = array(
+                            array(
+                                'icon' => 'fab fa-google',
+                                'title' => 'Google Shopping & Product Ads',
+                                'description' => 'Maximize product visibility with optimised Google Shopping campaigns that drive qualified traffic to your product pages.',
+                                'features' => array('Google Shopping optimisation', 'Product feed management', 'Dynamic remarketing campaigns', 'Performance Max campaigns')
+                            ),
+                            array(
+                                'icon' => 'fas fa-search',
+                                'title' => 'E-commerce SEO',
+                                'description' => 'Improve organic rankings for product and category pages to drive free, qualified traffic to your online store.',
+                                'features' => array('Product page optimisation', 'Category page SEO', 'Technical e-commerce SEO', 'Content marketing for products')
+                            ),
+                            array(
+                                'icon' => 'fab fa-facebook',
+                                'title' => 'Social Commerce',
+                                'description' => 'Sell directly through social media platforms with engaging content and targeted advertising campaigns.',
+                                'features' => array('Facebook & Instagram Shopping', 'Social media advertising', 'Influencer partnerships', 'User-generated content campaigns')
+                            ),
+                            array(
+                                'icon' => 'fas fa-envelope',
+                                'title' => 'Email Marketing & Automation',
+                                'description' => 'Recover abandoned carts, increase customer lifetime value, and drive repeat purchases with strategic email campaigns.',
+                                'features' => array('Abandoned cart recovery', 'Post-purchase email sequences', 'Customer segmentation', 'Promotional campaign automation')
+                            ),
+                            array(
+                                'icon' => 'fas fa-chart-line',
+                                'title' => 'Conversion Rate Optimization',
+                                'description' => 'Maximize revenue from existing traffic by optimizing user experience, checkout process, and product presentation.',
+                                'features' => array('A/B testing product pages', 'Checkout optimization', 'Mobile user experience', 'Product recommendation engines')
+                            ),
+                            array(
+                                'icon' => 'fas fa-sync-alt',
+                                'title' => 'Customer Retention Marketing',
+                                'description' => 'Build long-term customer relationships and increase lifetime value through strategic retention and loyalty programs.',
+                                'features' => array('Loyalty program management', 'Customer lifecycle campaigns', 'Win-back automation', 'VIP customer strategies')
+                            )
+                        );
+                    }
+                    foreach ($services as $service): ?>
+                        <div class="service-card animate-on-scroll animate-stagger animate-fade-up">
+                            <div class="service-icon">
+                                <i class="<?php echo esc_attr($service['icon']); ?>" style="font-size: 48px;"></i>
+                            </div>
+                            <div class="service-content">
+                                <h3><?php echo esc_html($service['title']); ?></h3>
+                                <p><?php echo esc_html($service['description']); ?></p>
+                                <ul class="service-features">
+                                    <?php foreach ($service['features'] as $feature): ?>
+                                        <li><?php echo esc_html($feature); ?></li>
+                                    <?php endforeach; ?>
+                                </ul>
+                            </div>
                         </div>
-                        <div class="service-content">
-                            <h3>Google Shopping & Product Ads</h3>
-                            <p>Maximize product visibility with optimised Google Shopping campaigns that drive qualified traffic to your product pages.</p>
-                            <ul class="service-features">
-                                <li>Google Shopping optimisation</li>
-                                <li>Product feed management</li>
-                                <li>Dynamic remarketing campaigns</li>
-                                <li>Performance Max campaigns</li>
-                            </ul>
-                        </div>
-                    </div>                    <div class="service-card animate-on-scroll animate-stagger animate-fade-up">
-                        <div class="service-icon">
-                            <i class="fas fa-search" style="font-size: 48px;"></i>
-                        </div>
-                        <div class="service-content">
-                            <h3>E-commerce SEO</h3>
-                            <p>Improve organic rankings for product and category pages to drive free, qualified traffic to your online store.</p>
-                            <ul class="service-features">
-                                <li>Product page optimisation</li>
-                                <li>Category page SEO</li>
-                                <li>Technical e-commerce SEO</li>
-                                <li>Content marketing for products</li>
-                            </ul>
-                        </div>
-                    </div>                    <div class="service-card animate-on-scroll animate-stagger animate-fade-up">
-                        <div class="service-icon">
-                            <i class="fab fa-facebook" style="font-size: 48px;"></i>
-                        </div>
-                        <div class="service-content">
-                            <h3>Social Commerce</h3>
-                            <p>Sell directly through social media platforms with engaging content and targeted advertising campaigns.</p>
-                            <ul class="service-features">
-                                <li>Facebook & Instagram Shopping</li>
-                                <li>Social media advertising</li>
-                                <li>Influencer partnerships</li>
-                                <li>User-generated content campaigns</li>
-                            </ul>
-                        </div>
-                    </div>                    <div class="service-card animate-on-scroll animate-stagger animate-fade-up">
-                        <div class="service-icon">
-                            <i class="fas fa-envelope" style="font-size: 48px;"></i>
-                        </div>
-                        <div class="service-content">
-                            <h3>Email Marketing & Automation</h3>
-                            <p>Recover abandoned carts, increase customer lifetime value, and drive repeat purchases with strategic email campaigns.</p>
-                            <ul class="service-features">
-                                <li>Abandoned cart recovery</li>
-                                <li>Post-purchase email sequences</li>
-                                <li>Customer segmentation</li>
-                                <li>Promotional campaign automation</li>
-                            </ul>
-                        </div>
-                    </div>                </div>
+                    <?php endforeach; ?>
+                </div>
                 <div class="text-center mt-1 animate-on-scroll animate-fade-up">
                     <a href="/contact/" class="btn btn-primary">Boost Your E-commerce Performance</a>
                 </div>
