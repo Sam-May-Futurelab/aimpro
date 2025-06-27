@@ -470,4 +470,37 @@ get_header(); ?>
     </div>
 </main>
 
+<style>
+/* Center process step numbers on mobile for Improve ROI from Ads page */
+@media (max-width: 768px) {
+    .process-step {
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .step-number {
+        margin: 0 auto 15px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+    }
+    
+    .step-content {
+        text-align: center;
+        width: 100%;
+    }
+    
+    .step-content h3 {
+        text-align: center;
+    }
+    
+    .step-content p {
+        text-align: center;
+    }
+}
+</style>
+
 <?php get_footer(); ?>

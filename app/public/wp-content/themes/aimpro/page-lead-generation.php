@@ -393,7 +393,7 @@ get_header(); ?>
                 <p class="animate-on-scroll animate-fade-up animate-delay-200"><?php echo esc_html(get_post_meta(get_the_ID(), '_lead_generation_cta_subtitle', true) ?: 'Let\'s create a custom lead generation strategy that fills your sales pipeline with high-quality prospects.'); ?></p>
                 <div class="cta-buttons animate-on-scroll animate-scale-up animate-delay-400">
                     <a href="<?php echo esc_url(home_url(get_post_meta(get_the_ID(), '_lead_generation_cta_primary_url', true) ?: '/contact')); ?>" class="btn btn-primary"><?php echo esc_html(get_post_meta(get_the_ID(), '_lead_generation_cta_primary_text', true) ?: 'Get Free Lead Generation Audit'); ?></a>
-                    <a href="<?php echo esc_url(home_url(get_post_meta(get_the_ID(), '_lead_generation_cta_secondary_url', true) ?: '/case-studies')); ?>" class="btn btn-secondary"><?php echo esc_html(get_post_meta(get_the_ID(), '_lead_generation_cta_secondary_text', true) ?: 'View Lead Generation Success Stories'); ?></a>                </div>
+                </div>
                 <div class="cta-benefits animate-on-scroll animate-stagger animate-fade-up">
                     <?php
                     $benefits = get_post_meta(get_the_ID(), '_lead_generation_cta_benefits', true);
