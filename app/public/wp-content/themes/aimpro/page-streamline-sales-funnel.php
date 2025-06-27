@@ -40,7 +40,6 @@ get_header(); ?>
                 </div>
                 
                 <div class="hero-ctas">
-                    <a href="#contact" class="btn-primary streamlined"><?php echo esc_html(get_post_meta(get_the_ID(), 'streamline_hero_primary_btn', true) ?: 'optimise My Funnel'); ?></a>
                     <a href="#audit" class="btn-outline streamlined"><?php echo esc_html(get_post_meta(get_the_ID(), 'streamline_hero_secondary_btn', true) ?: 'Free Audit'); ?></a>
                 </div>
             </div>

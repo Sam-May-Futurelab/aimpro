@@ -734,16 +734,10 @@ get_header(); ?>
     padding: 0.75rem 0;
     border-bottom: 1px solid #f1f3f4;
     position: relative;
-    padding-left: 1.5rem;
 }
 
 .conversion-elements .tool-item:before {
-    content: "•";
-    color: #f15a25;
-    position: absolute;
-    left: 0;
-    font-weight: bold;
-    font-size: 1.2rem;
+    display: none; /* Hide bullet points */
 }
 
 .conversion-elements .tool-item:last-child {
@@ -756,6 +750,65 @@ get_header(); ?>
     line-height: 1.5;
     display: block;
     font-weight: 500;
+}
+
+/* Default styles for website process */
+.website-process .process-steps {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.website-process .process-step {
+    display: flex;
+    align-items: flex-start;
+    gap: 1.5rem;
+}
+
+.website-process .step-number {
+    background: #f15a25;
+    color: white;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 1.4rem;
+    flex-shrink: 0;
+}
+
+.website-process .step-content h3 {
+    margin-bottom: 0.5rem;
+    color: #333;
+    font-size: 1.3rem;
+}
+
+.website-process .step-content p {
+    margin: 0;
+    color: #666;
+    line-height: 1.6;
+    font-size: 1rem;
+}
+
+.website-process .process-cta {
+    text-align: center;
+    margin-top: 3rem;
+}
+
+.website-process .process-cta-btn {
+    background: #f15a25;
+    color: white;
+    padding: 1rem 2rem;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+}
+
+.website-process .process-cta-btn:hover {
+    background: #d14619;
 }
 
 /* Mobile optimizations for high converting website page */
@@ -811,19 +864,13 @@ get_header(); ?>
     }
     
     .conversion-elements .tool-item {
-        padding: 0.5rem 0 0.5rem 1.2rem;
+        padding: 0.5rem 0;
         border-bottom: 1px solid #e9ecef;
         position: relative;
     }
     
     .conversion-elements .tool-item:before {
-        content: "•";
-        color: #f15a25;
-        position: absolute;
-        left: 0;
-        font-weight: bold;
-        font-size: 1rem;
-        top: 0.5rem;
+        display: none; /* Hide bullet points on mobile */
     }
     
     .conversion-elements .tool-item:last-child {
@@ -946,7 +993,7 @@ get_header(); ?>
         margin-top: 1rem;
     }
     
-    /* Process Steps - Mobile Layout */
+    /* Process Steps - Mobile Layout with Centered Numbers */
     .website-process .process-steps {
         display: grid;
         grid-template-columns: 1fr;
@@ -959,28 +1006,35 @@ get_header(); ?>
         border-radius: 8px;
         padding: 1.5rem;
         display: flex;
-        align-items: flex-start;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
         gap: 1rem;
     }
     
     .website-process .step-number {
-        background: #ff6b35;
+        background: #f15a25;
         color: white;
-        width: 2.5rem;
-        height: 2.5rem;
+        width: 50px;
+        height: 50px;
         border-radius: 50%;
         display: flex;
         align-items: center;
         justify-content: center;
         font-weight: 700;
-        font-size: 1.1rem;
+        font-size: 1.2rem;
         flex-shrink: 0;
+        margin-bottom: 0.5rem;
+    }
+    
+    .website-process .step-content {
+        width: 100%;
     }
     
     .website-process .step-content h3 {
         font-size: 1.1rem;
         margin-bottom: 0.5rem;
-        color: #212529;
+        color: #333;
     }
     
     .website-process .step-content p {
