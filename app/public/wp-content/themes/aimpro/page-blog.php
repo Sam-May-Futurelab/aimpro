@@ -321,10 +321,10 @@ get_header(); ?>
                             <p><?php echo esc_html(get_post_meta(get_the_ID(), 'blog_newsletter_subtitle', true) ?: 'Get weekly insights delivered to your inbox.'); ?></p>
                             
                             <!-- Orange background box with inline styles to prevent any CSS conflicts -->
-                            <div style="background: linear-gradient(135deg, #f15a25 0%, #f47b51 100%); padding: 20px; border-radius: 8px; margin-top: 15px; colour: white; overflow: hidden;">
+                            <div style="background: linear-gradient(135deg, #f15a25 0%, #f47b51 100%); padding: 20px; border-radius: 8px; margin-top: 15px; color: white; overflow: hidden;">
                                 <form action="#" method="post" style="display: flex; flex-direction: column; gap: 10px;">
                                     <input type="email" name="email" placeholder="Email" required style="width: 100%; box-sizing: border-box; padding: 12px 15px; border-radius: 8px; border: none; margin: 0; font-size: 16px;">
-                                    <button type="submit" style="width: 100%; box-sizing: border-box; background: white; colour: #f15a25; border: none; padding: 12px; border-radius: 8px; font-weight: 600; cursor: pointer; font-size: 16px;"><?php echo esc_html(get_post_meta(get_the_ID(), 'blog_newsletter_button_text', true) ?: 'Subscribe'); ?></button>
+                                    <button type="submit" style="width: 100%; box-sizing: border-box; background: white; color: #f15a25; border: 2px solid #f15a25; padding: 12px; border-radius: 8px; font-weight: 600; cursor: pointer; font-size: 16px; transition: all 0.3s ease;" onmouseover="this.style.background='#f15a25'; this.style.color='white';" onmouseout="this.style.background='white'; this.style.color='#f15a25';"><?php echo esc_html(get_post_meta(get_the_ID(), 'blog_newsletter_button_text', true) ?: 'Subscribe'); ?></button>
                                 </form>
                             </div>
                         </div>
