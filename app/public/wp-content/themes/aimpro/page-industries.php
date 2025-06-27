@@ -281,3 +281,15 @@ get_header(); ?>
 
 <?php get_footer(); ?>
 
+<style>
+/* Center text in Learn More buttons on mobile */
+@media (max-width: 768px) {
+    .service-link {
+        text-align: center !important;
+        display: block !important;
+        padding: 12px 20px !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
+    }
+}
+</style>
