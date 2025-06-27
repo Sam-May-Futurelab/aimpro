@@ -201,8 +201,8 @@ get_header(); ?>
                     </div>                    <div class="process-step animate-on-scroll animate-stagger animate-fade-up">
                         <div class="step-number">2</div>
                         <div class="step-content">
-                            <h3>Conversion optimisation</h3>
-                            <p>optimise product pages, checkout process, and user experience to maximise conversion rates.</p>
+                            <h3>Conversion Optimisation</h3>
+                            <p>Optimise product pages, checkout process, and user experience to maximise conversion rates.</p>
                         </div>
                     </div>
 

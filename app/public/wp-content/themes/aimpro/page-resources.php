@@ -164,6 +164,30 @@ get_header(); ?>
                             <a href="<?php echo home_url('/mentoring'); ?>" class="btn btn-outline">Mentoring</a>
                         </div>
                     </div>
+
+                    <div class="service-card animate-on-scroll animate-stagger animate-fade-up">
+                        <div class="service-icon">
+                            <i class="fas fa-search-plus"></i>
+                        </div>
+                        <h3>SEO Guides & Resources</h3>
+                        <p>Comprehensive SEO guides, checklists, and resources to improve your search engine rankings.</p>
+                        <div class="service-links">
+                            <a href="<?php echo home_url('/seo-guides'); ?>" class="btn btn-primary">SEO Guides</a>
+                            <a href="<?php echo home_url('/seo-audit'); ?>" class="btn btn-outline">Free SEO Audit</a>
+                        </div>
+                    </div>
+
+                    <div class="service-card animate-on-scroll animate-stagger animate-fade-up">
+                        <div class="service-icon">
+                            <i class="fas fa-video"></i>
+                        </div>
+                        <h3>Webinars & Events</h3>
+                        <p>Join our live webinars and events to learn from industry experts and network with peers.</p>
+                        <div class="service-links">
+                            <a href="<?php echo home_url('/webinars'); ?>" class="btn btn-primary">Upcoming Webinars</a>
+                            <a href="<?php echo home_url('/events'); ?>" class="btn btn-outline">Past Events</a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section><!-- Newsletter CTA -->
