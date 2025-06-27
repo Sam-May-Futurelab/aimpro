@@ -502,6 +502,103 @@ get_header(); ?>
 </main>
 
 <style>
+/* Desktop CSS for Funnel Automation Components */
+.components-section {
+    padding: 80px 0;
+    background: #f8fafc;
+}
+
+.components-section .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.components-section h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #1e293b;
+    text-align: center;
+    margin-bottom: 60px;
+    line-height: 1.3;
+}
+
+.components-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+.component-item {
+    background: white;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    padding: 30px;
+    text-align: center;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.component-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+}
+
+.component-icon {
+    margin-bottom: 20px;
+    background: #f15a25;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px;
+}
+
+.component-icon i {
+    font-size: 2.5rem;
+    color: white;
+}
+
+.component-item h3 {
+    color: #1e293b;
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 15px;
+    line-height: 1.3;
+}
+
+.component-item p {
+    color: #64748b;
+    font-size: 1rem;
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* Section Titles Centering for Desktop */
+.pricing-section .section-header h2,
+.tools-section h2,
+.industries-section h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #1e293b;
+    margin-bottom: 60px;
+    line-height: 1.3;
+}
+
+.pricing-section .section-header p {
+    text-align: center;
+    font-size: 1.1rem;
+    color: #64748b;
+    line-height: 1.6;
+    max-width: 800px;
+    margin: 0 auto 40px;
+}
+
 /* Mobile CSS for Funnel Automation Page */
 @media (max-width: 768px) {
     /* Hero Section Mobile Optimization */
@@ -801,6 +898,58 @@ get_header(); ?>
         font-size: 0.85rem !important;
         font-weight: 600 !important;
         line-height: 1.3 !important;
+    }
+    
+    /* Components Grid Mobile */
+    .components-grid {
+        grid-template-columns: 1fr !important;
+        gap: 20px !important;
+        max-width: 100% !important;
+    }
+    
+    .component-item {
+        background: white !important;
+        border: 1px solid #e2e8f0 !important;
+        border-radius: 12px !important;
+        padding: 24px !important;
+        text-align: center !important;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.1) !important;
+        max-width: 100% !important;
+        word-wrap: break-word !important;
+    }
+    
+    .component-icon {
+        margin-bottom: 16px !important;
+        background: #f15a25 !important;
+        width: 64px !important;
+        height: 64px !important;
+        border-radius: 50% !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        margin: 0 auto 16px !important;
+    }
+    
+    .component-icon i {
+        font-size: 2rem !important;
+        color: white !important;
+    }
+    
+    .component-item h3 {
+        color: #1e293b !important;
+        font-size: 1.3rem !important;
+        font-weight: 700 !important;
+        margin-bottom: 12px !important;
+        line-height: 1.3 !important;
+    }
+    
+    .component-item p {
+        color: #64748b !important;
+        font-size: 0.95rem !important;
+        line-height: 1.6 !important;
+        margin: 0 !important;
+        hyphens: auto !important;
+        word-wrap: break-word !important;
     }
 }
 </style>

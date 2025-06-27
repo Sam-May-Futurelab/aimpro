@@ -6,6 +6,39 @@
 
 get_header(); ?>
 
+<style>
+/* Center process step numbers on mobile for Solutions page */
+@media (max-width: 768px) {
+    .process-step {
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .step-number {
+        margin: 0 auto 15px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+    }
+    
+    .step-content {
+        text-align: center;
+        width: 100%;
+    }
+    
+    .step-content h3 {
+        text-align: center;
+    }
+    
+    .step-content p {
+        text-align: center;
+    }
+}
+</style>
+
 <main id="main" class="main-content">
     <!-- Breadcrumbs -->
     <div class="breadcrumbs-container">
