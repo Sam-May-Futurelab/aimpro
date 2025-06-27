@@ -686,16 +686,89 @@ get_header(); ?>
 <?php get_footer(); ?>
 
 <style>
+/* Default styles for conversion elements */
+.conversion-elements .tools-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.conversion-elements .tools-category {
+    background: #ffffff;
+    border: 1px solid #e9ecef;
+    border-radius: 12px;
+    padding: 2rem;
+    text-align: left;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.07);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.conversion-elements .tools-category:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 15px rgba(0,0,0,0.1);
+}
+
+.conversion-elements .tools-category h3 {
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+    color: #f15a25;
+    font-weight: 600;
+    line-height: 1.3;
+}
+
+.conversion-elements .tools-category p {
+    font-size: 1rem;
+    color: #6c757d;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+}
+
+.conversion-elements .tools-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.conversion-elements .tool-item {
+    padding: 0.75rem 0;
+    border-bottom: 1px solid #f1f3f4;
+    position: relative;
+    padding-left: 1.5rem;
+}
+
+.conversion-elements .tool-item:before {
+    content: "•";
+    color: #f15a25;
+    position: absolute;
+    left: 0;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+.conversion-elements .tool-item:last-child {
+    border-bottom: none;
+}
+
+.conversion-elements .tool-name {
+    font-size: 0.95rem;
+    color: #495057;
+    line-height: 1.5;
+    display: block;
+    font-weight: 500;
+}
+
 /* Mobile optimizations for high converting website page */
 @media (max-width: 768px) {
     /* Key Conversion Elements - Mobile Layout */
     .conversion-elements .tools-grid {
-        display: grid;
-        grid-template-columns: 1fr;
+        display: grid !important;
+        grid-template-columns: 1fr !important;
         gap: 1.5rem;
         margin-top: 1.5rem;
         width: 100%;
         max-width: 100%;
+        padding: 0;
     }
     
     .conversion-elements .tools-category {
@@ -707,13 +780,21 @@ get_header(); ?>
         box-shadow: 0 2px 4px rgba(0,0,0,0.05);
         width: 100%;
         box-sizing: border-box;
+        margin: 0;
+        transform: none !important;
+    }
+    
+    .conversion-elements .tools-category:hover {
+        transform: none !important;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.05);
     }
     
     .conversion-elements .tools-category h3 {
         font-size: 1.25rem;
         margin-bottom: 0.75rem;
-        color: #212529;
+        color: #f15a25;
         line-height: 1.3;
+        font-weight: 600;
     }
     
     .conversion-elements .tools-category p {
@@ -730,8 +811,19 @@ get_header(); ?>
     }
     
     .conversion-elements .tool-item {
-        padding: 0.5rem 0;
+        padding: 0.5rem 0 0.5rem 1.2rem;
         border-bottom: 1px solid #e9ecef;
+        position: relative;
+    }
+    
+    .conversion-elements .tool-item:before {
+        content: "•";
+        color: #f15a25;
+        position: absolute;
+        left: 0;
+        font-weight: bold;
+        font-size: 1rem;
+        top: 0.5rem;
     }
     
     .conversion-elements .tool-item:last-child {
@@ -743,6 +835,7 @@ get_header(); ?>
         color: #495057;
         line-height: 1.4;
         display: block;
+        font-weight: 500;
     }
     
     /* Website Services Grid - Mobile Layout */
@@ -939,19 +1032,35 @@ get_header(); ?>
         border-radius: 8px;
     }
     
-    /* Container Overrides */
+    /* Container Overrides for Mobile */
+    .conversion-elements .section-content {
+        overflow: hidden;
+        width: 100%;
+        max-width: 100%;
+        padding: 0;
+        margin: 0;
+    }
+    
     .container {
         width: 100%;
         max-width: 100%;
         padding-left: 1rem;
         padding-right: 1rem;
         box-sizing: border-box;
+        margin-left: auto;
+        margin-right: auto;
     }
     
-    .conversion-elements .section-content,
-    .website-optimisation-services .section-content,
-    .website-types .section-content,
-    .website-process .section-content {
+    /* Force single column layout on mobile */
+    .conversion-elements .tools-grid {
+        display: block !important;
+    }
+    
+    .conversion-elements .tools-category {
+        display: block !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        margin-bottom: 1.5rem;
         overflow: hidden;
     }
     
