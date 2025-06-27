@@ -476,6 +476,27 @@ $challenges = get_post_meta(get_the_ID(), '_coaches_consultants_challenges', tru
         color: #28a745;
         font-size: 0.7rem;
     }
+    
+    /* Process Steps Mobile - Center step numbers above content */
+    .coaches-consultants-process .process-step {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        margin-bottom: 2rem;
+    }
+    
+    .coaches-consultants-process .step-number {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        order: -1;
+        margin-bottom: 1rem;
+    }
+    
+    .coaches-consultants-process .step-content {
+        width: 100%;
+    }
 }
 
 @media (min-width: 769px) and (max-width: 1024px) {

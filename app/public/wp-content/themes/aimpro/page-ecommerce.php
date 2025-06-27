@@ -475,6 +475,27 @@ get_header(); ?>
         font-size: 0.8rem;
         font-weight: 500;
     }
+    
+    /* Process Steps Mobile - Center step numbers above content */
+    .ecommerce-process .process-step {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        margin-bottom: 2rem;
+    }
+    
+    .ecommerce-process .step-number {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        order: -1;
+        margin-bottom: 1rem;
+    }
+    
+    .ecommerce-process .step-content {
+        width: 100%;
+    }
 }
 
 @media (min-width: 769px) and (max-width: 1024px) {
