@@ -774,17 +774,20 @@ add_action('admin_post_nopriv_career_application', 'aimpro_handle_career_applica
 
 // Handle Lead Magnet Form Submission
 function aimpro_handle_lead_magnet_form() {
-    if (!isset($_POST['lead_magnet_form']) || !wp_verify_nonce($_POST['lead_magnet_nonce'], 'lead_magnet_submission')) {
-        return;
+    // Verify nonce
+    if (!wp_verify_nonce($_POST['lead_magnet_nonce'], 'lead_magnet_nonce')) {
+        wp_redirect(add_query_arg('lead_error', '1', $_POST['_wp_http_referer'] ?? wp_get_referer()));
+        exit;
     }
     
     // Sanitize and validate input
-    $name = sanitize_text_field($_POST['lead_name']);
-    $email = sanitize_email($_POST['lead_email']);
-    $phone = sanitize_text_field($_POST['lead_phone']);
+    $email = sanitize_email($_POST['email']);
+    $magnet_type = sanitize_text_field($_POST['magnet_type']);
+    $pdf_id = isset($_POST['pdf_id']) ? intval($_POST['pdf_id']) : 0;
+    $pdf_url = isset($_POST['pdf_url']) ? esc_url_raw($_POST['pdf_url']) : '';
     
-    if (empty($name) || empty($email) || !is_email($email)) {
-        wp_redirect(add_query_arg('lead_error', '1', $_POST['_wp_http_referer']));
+    if (empty($email) || !is_email($email)) {
+        wp_redirect(add_query_arg('lead_error', '1', $_POST['_wp_http_referer'] ?? wp_get_referer()));
         exit;
     }
     
@@ -796,22 +799,27 @@ function aimpro_handle_lead_magnet_form() {
         $table_name,
         array(
             'form_type' => 'lead_magnet',
-            'name' => $name,
+            'name' => '', // No name field in new form
             'email' => $email,
-            'phone' => $phone,
+            'phone' => '', // No phone field in new form
+            'message' => $magnet_type, // Store magnet type in message field
             'ip_address' => $_SERVER['REMOTE_ADDR'],
             'user_agent' => $_SERVER['HTTP_USER_AGENT']
         ),
-        array('%s', '%s', '%s', '%s', '%s', '%s')
+        array('%s', '%s', '%s', '%s', '%s', '%s', '%s')
     );
     
-    if ($result) {        // Send email notification to admin
+    if ($result) {
+        // Send email notification to admin
         $to = 'sam@futurelab.solutions';
-        $subject = 'New Lead Magnet Download Request - ' . get_bloginfo('name');
-        $message = "New lead magnet download request:\n\n";
-        $message .= "Name: {$name}\n";
+        $subject = 'New Lead Magnet Download - ' . get_bloginfo('name');
+        $message = "New lead magnet download:\n\n";
         $message .= "Email: {$email}\n";
-        $message .= "Phone: {$phone}\n";
+        $message .= "Magnet Type: {$magnet_type}\n";
+        if ($pdf_id) {
+            $message .= "PDF ID: {$pdf_id}\n";
+            $message .= "PDF URL: {$pdf_url}\n";
+        }
         $message .= "IP Address: {$_SERVER['REMOTE_ADDR']}\n";
         $message .= "Date: " . current_time('mysql') . "\n";
         
@@ -823,12 +831,16 @@ function aimpro_handle_lead_magnet_form() {
         
         wp_mail($to, $subject, $message, $headers);
         
-        // Send auto-response to user
-        $user_subject = 'Your Free Digital Marketing Guide - ' . get_bloginfo('name');
-        $user_message = "Hi {$name},\n\n";
-        $user_message .= "Thank you for requesting our Digital Marketing Guide!\n\n";
-        $user_message .= "We'll be sending you the guide shortly along with some exclusive insights.\n\n";
-        $user_message .= "Our team will also be in touch within 24 hours to schedule your free consultation.\n\n";
+        // Send auto-response to user with PDF link if available
+        $user_subject = 'Your Free Download - ' . get_bloginfo('name');
+        $user_message = "Hi there,\n\n";
+        $user_message .= "Thank you for downloading our guide!\n\n";
+        
+        if (!empty($pdf_url)) {
+            $user_message .= "You can download your PDF here: {$pdf_url}\n\n";
+        }
+        
+        $user_message .= "We'll also be sending you exclusive insights and tips.\n\n";
         $user_message .= "Best regards,\n";
         $user_message .= "The Aimpro Team\n";
         $user_message .= "sam@futurelab.solutions\n";
@@ -841,9 +853,20 @@ function aimpro_handle_lead_magnet_form() {
         
         wp_mail($email, $user_subject, $user_message, $user_headers);
         
-        wp_redirect(add_query_arg('lead_success', '1', $_POST['_wp_http_referer']));
+        // If PDF URL is available, redirect to success page and trigger download
+        if (!empty($pdf_url)) {
+            // Create a success page with download link
+            $redirect_url = add_query_arg(array(
+                'lead_success' => '1',
+                'download' => base64_encode($pdf_url)
+            ), $_POST['_wp_http_referer'] ?? wp_get_referer());
+        } else {
+            $redirect_url = add_query_arg('lead_success', '1', $_POST['_wp_http_referer'] ?? wp_get_referer());
+        }
+        
+        wp_redirect($redirect_url);
     } else {
-        wp_redirect(add_query_arg('lead_error', '1', $_POST['_wp_http_referer']));
+        wp_redirect(add_query_arg('lead_error', '1', $_POST['_wp_http_referer'] ?? wp_get_referer()));
     }
     exit;
 }
@@ -1699,3 +1722,6 @@ require_once get_template_directory() . '/includes/email-campaigns-meta.php';
 
 // Include funnel automation meta functionality
 require_once get_template_directory() . '/includes/funnel-automation-meta.php';
+
+// Include single blog post meta functionality
+require_once get_template_directory() . '/includes/single-blog-meta.php';

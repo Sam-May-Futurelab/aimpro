@@ -159,32 +159,80 @@ get_header(); ?>
 
             <!-- Conversion Sidebar -->
             <aside class="blog-sidebar">
-                <!-- Lead Magnet 1: SEO Guide -->
+                <?php 
+                // Get lead magnet settings for this post
+                $lead_magnet = aimpro_get_blog_lead_magnet_data(get_the_ID());
+                
+                // Show lead magnet if enabled (default to enabled if not set)
+                if ($lead_magnet['enabled'] !== '' ? $lead_magnet['enabled'] : '1') :
+                ?>
+                <!-- Lead Magnet: Customizable Guide -->
                 <div class="lead-magnet">
                     <div class="magnet-header">
                         <div class="magnet-icon">
-                            <i class="fas fa-search"></i>
+                            <i class="<?php echo esc_attr($lead_magnet['icon']); ?>"></i>
                         </div>
-                        <span class="magnet-badge">Free Guide</span>
+                        <span class="magnet-badge"><?php echo esc_html($lead_magnet['badge']); ?></span>
                     </div>
-                    <h3>Complete SEO Checklist for 2025</h3>
-                    <p>Get our comprehensive 50-point SEO checklist to boost your search rankings and drive more organic traffic.</p>                    <ul class="magnet-benefits">
-                        <li>✓ Technical SEO audit points</li>
-                        <li>✓ Content optimisation tips</li>
-                        <li>✓ Local SEO strategies</li>
+                    <h3><?php echo esc_html($lead_magnet['title']); ?></h3>
+                    <p><?php echo esc_html($lead_magnet['description']); ?></p>
+                    <ul class="magnet-benefits">
+                        <?php 
+                        $benefits = explode("\n", $lead_magnet['benefits']);
+                        foreach ($benefits as $benefit) {
+                            $benefit = trim($benefit);
+                            if (!empty($benefit)) {
+                                echo '<li>✓ ' . esc_html($benefit) . '</li>';
+                            }
+                        }
+                        ?>
                     </ul>
+                    
+                    <?php
+                    // Handle lead magnet success/error messages
+                    if (isset($_GET['lead_success'])): ?>
+                        <div class="form-message success" style="background: #d4edda; color: #155724; padding: 15px; border-radius: 8px; margin-bottom: 20px; border-left: 4px solid #28a745;">
+                            <p style="margin: 0;"><strong>Thank you!</strong> Your download has been sent to your email.</p>
+                            <?php if (isset($_GET['download'])): 
+                                $download_url = base64_decode($_GET['download']); ?>
+                                <p style="margin: 10px 0 0 0;">
+                                    <a href="<?php echo esc_url($download_url); ?>" target="_blank" style="color: #155724; font-weight: bold; text-decoration: underline;">Click here to download your PDF</a>
+                                </p>
+                            <?php endif; ?>
+                        </div>
+                    <?php elseif (isset($_GET['lead_error'])): ?>
+                        <div class="form-message error" style="background: #f8d7da; color: #721c24; padding: 15px; border-radius: 8px; margin-bottom: 20px; border-left: 4px solid #dc3545;">
+                            <p style="margin: 0;"><strong>Error:</strong> There was a problem processing your request. Please try again.</p>
+                        </div>
+                    <?php endif; ?>
+                    
                     <!-- Lead magnet form with inline styles to prevent CSS conflicts -->
                     <div style="overflow: hidden;">
-                        <form action="<?php echo admin_url('admin-post.php'); ?>" method="post" style="display: flex; flex-direction: column; gap: 10px;">
-                            <?php wp_nonce_field('lead_magnet_nonce', 'lead_magnet_nonce'); ?>
-                            <input type="hidden" name="action" value="lead_magnet_form">
-                            <input type="hidden" name="magnet_type" value="seo_checklist">
-                            <input type="email" name="email" placeholder="Enter your email" required style="width: 100%; box-sizing: border-box; padding: 12px 15px; border-radius: 8px; border: 1px solid #e5e7eb; margin: 0; font-size: 16px;">
-                            <button type="submit" style="width: 100%; box-sizing: border-box; background: linear-gradient(135deg, #f15a25 0%, #f47b51 100%); color: white; border: none; padding: 12px; border-radius: 8px; font-weight: 600; cursor: pointer; font-size: 16px;">Download Free</button>
-                        </form>
+                        <?php if (!empty($lead_magnet['pdf_url'])): ?>
+                            <!-- PDF is available - direct download form -->
+                            <form action="<?php echo admin_url('admin-post.php'); ?>" method="post" style="display: flex; flex-direction: column; gap: 10px;">
+                                <?php wp_nonce_field('lead_magnet_nonce', 'lead_magnet_nonce'); ?>
+                                <input type="hidden" name="action" value="lead_magnet_form">
+                                <input type="hidden" name="magnet_type" value="<?php echo esc_attr($lead_magnet['type']); ?>">
+                                <input type="hidden" name="pdf_id" value="<?php echo esc_attr($lead_magnet['pdf_id']); ?>">
+                                <input type="hidden" name="pdf_url" value="<?php echo esc_attr($lead_magnet['pdf_url']); ?>">
+                                <input type="email" name="email" placeholder="Enter your email" required style="width: 100%; box-sizing: border-box; padding: 12px 15px; border-radius: 8px; border: 1px solid #e5e7eb; margin: 0; font-size: 16px;">
+                                <button type="submit" style="width: 100%; box-sizing: border-box; background: linear-gradient(135deg, #f15a25 0%, #f47b51 100%); color: white; border: none; padding: 12px; border-radius: 8px; font-weight: 600; cursor: pointer; font-size: 16px;"><?php echo esc_html($lead_magnet['button_text']); ?></button>
+                            </form>
+                        <?php else: ?>
+                            <!-- No PDF selected - fallback form -->
+                            <form action="<?php echo admin_url('admin-post.php'); ?>" method="post" style="display: flex; flex-direction: column; gap: 10px;">
+                                <?php wp_nonce_field('lead_magnet_nonce', 'lead_magnet_nonce'); ?>
+                                <input type="hidden" name="action" value="lead_magnet_form">
+                                <input type="hidden" name="magnet_type" value="<?php echo esc_attr($lead_magnet['type']); ?>">
+                                <input type="email" name="email" placeholder="Enter your email" required style="width: 100%; box-sizing: border-box; padding: 12px 15px; border-radius: 8px; border: 1px solid #e5e7eb; margin: 0; font-size: 16px;">
+                                <button type="submit" style="width: 100%; box-sizing: border-box; background: linear-gradient(135deg, #f15a25 0%, #f47b51 100%); color: white; border: none; padding: 12px; border-radius: 8px; font-weight: 600; cursor: pointer; font-size: 16px;"><?php echo esc_html($lead_magnet['button_text']); ?></button>
+                            </form>
+                        <?php endif; ?>
                         <p class="privacy-note">We respect your privacy. Unsubscribe anytime.</p>
                     </div>
                 </div>
+                <?php endif; ?>
 
                 <!-- Lead Magnet 3: Marketing Audit -->
                 <div class="lead-magnet featured-magnet">
