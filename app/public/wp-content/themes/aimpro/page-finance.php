@@ -73,7 +73,8 @@ get_header(); ?>
                 <div class="services-grid services-grid-2x2">
                     <?php 
                     $solutions = get_post_meta(get_the_ID(), '_finance_solutions', true);
-                    if (empty($solutions)) {
+                    // Always use our 6-service array instead of potentially incomplete saved data
+                    if (empty($solutions) || count($solutions) < 6) {
                         $solutions = array(
                             array(
                                 'icon' => 'fas fa-check-circle',
@@ -98,6 +99,18 @@ get_header(); ?>
                                 'title' => 'High-Value Lead Generation',
                                 'description' => 'Generate qualified leads for financial consultations, insurance quotes, and investment planning services.',
                                 'features' => array('Consultation booking optimisation', 'Financial calculator tools', 'Qualification-based lead scoring', 'Nurture sequence automation')
+                            ),
+                            array(
+                                'icon' => 'fas fa-shield-alt',
+                                'title' => 'Financial Security Marketing',
+                                'description' => 'Specialized marketing for insurance, protection, and security-focused financial products with emphasis on peace of mind.',
+                                'features' => array('Life insurance lead campaigns', 'Protection product positioning', 'Security-focused messaging', 'Family financial planning')
+                            ),
+                            array(
+                                'icon' => 'fas fa-chart-bar',
+                                'title' => 'Investment & Wealth Marketing',
+                                'description' => 'Sophisticated marketing strategies for investment management, wealth building, and high-net-worth financial services.',
+                                'features' => array('Investment strategy content', 'Wealth management positioning', 'High-net-worth targeting', 'Portfolio performance showcasing')
                             )
                         );
                     }
