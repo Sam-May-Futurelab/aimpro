@@ -275,6 +275,34 @@ get_header(); ?>
 <?php get_footer(); ?>
 
 <style>
+/* Default desktop styles for streamline sales funnel page */
+.process-cta {
+    text-align: center;
+    margin-top: 3rem;
+}
+
+.process-cta-btn {
+    display: inline-block;
+    background: #ff6b35;
+    color: white;
+    border: 2px solid #ff6b35;
+    padding: 1rem 2rem;
+    font-weight: 600;
+    border-radius: 6px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    font-size: 1rem;
+}
+
+.process-cta-btn:hover,
+.process-cta-btn:focus,
+.process-cta-btn:active {
+    background: #e55a2b;
+    border-color: #e55a2b;
+    color: white;
+    text-decoration: none;
+}
+
 /* Mobile optimizations for streamline sales funnel page */
 @media (max-width: 768px) {
     /* Case Study Results Grid - Mobile Layout */
@@ -498,18 +526,47 @@ get_header(); ?>
     .btn-secondary,
     .overview-cta-btn,
     .process-cta-btn {
-        background: #ff6b35;
+        background: #ff6b35 !important;
         color: white !important;
-        border: 2px solid #ff6b35;
+        border: 2px solid #ff6b35 !important;
     }
     
     .btn-primary:hover,
     .btn-secondary:hover,
     .overview-cta-btn:hover,
     .process-cta-btn:hover {
-        background: #e55a2b;
-        border-color: #e55a2b;
+        background: #e55a2b !important;
+        border-color: #e55a2b !important;
         color: white !important;
+    }
+    
+    /* Specific styling for process CTA button */
+    .process-cta {
+        text-align: center;
+        margin-top: 2rem;
+    }
+    
+    .process-cta-btn {
+        display: inline-block !important;
+        background: #ff6b35 !important;
+        color: white !important;
+        border: 2px solid #ff6b35 !important;
+        padding: 1rem 2rem !important;
+        font-weight: 600 !important;
+        border-radius: 6px !important;
+        text-decoration: none !important;
+        transition: all 0.3s ease !important;
+        width: auto !important;
+        min-width: 200px !important;
+    }
+    
+    .process-cta-btn:hover,
+    .process-cta-btn:focus,
+    .process-cta-btn:active {
+        background: #e55a2b !important;
+        border-color: #e55a2b !important;
+        color: white !important;
+        text-decoration: none !important;
     }
     
     .btn-outline {
