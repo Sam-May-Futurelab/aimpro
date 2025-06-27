@@ -791,18 +791,64 @@ function aimpro_handle_lead_magnet_form() {
         exit;
     }
     
+    // If PDF is available, force download directly
+    if (!empty($pdf_url) && $pdf_id) {
+        // Get the file path
+        $file_path = get_attached_file($pdf_id);
+        
+        if ($file_path && file_exists($file_path)) {
+            // Store the download in database for tracking
+            global $wpdb;
+            $table_name = $wpdb->prefix . 'aimpro_submissions';
+            
+            $wpdb->insert(
+                $table_name,
+                array(
+                    'form_type' => 'lead_magnet',
+                    'name' => '',
+                    'email' => $email,
+                    'phone' => '',
+                    'message' => $magnet_type,
+                    'ip_address' => $_SERVER['REMOTE_ADDR'],
+                    'user_agent' => $_SERVER['HTTP_USER_AGENT']
+                ),
+                array('%s', '%s', '%s', '%s', '%s', '%s', '%s')
+            );
+            
+            // Force PDF download
+            $filename = basename($file_path);
+            
+            // Set headers for PDF download
+            header('Content-Type: application/pdf');
+            header('Content-Disposition: attachment; filename="' . $filename . '"');
+            header('Content-Length: ' . filesize($file_path));
+            header('Cache-Control: private, no-transform, no-store, must-revalidate');
+            header('Pragma: no-cache');
+            header('Expires: 0');
+            
+            // Clear any previous output
+            if (ob_get_level()) {
+                ob_end_clean();
+            }
+            
+            // Output the file
+            readfile($file_path);
+            exit;
+        }
+    }
+    
+    // Fallback: store submission and redirect to success
     global $wpdb;
     $table_name = $wpdb->prefix . 'aimpro_submissions';
     
-    // Store in database
     $result = $wpdb->insert(
         $table_name,
         array(
             'form_type' => 'lead_magnet',
-            'name' => '', // No name field in new form
+            'name' => '',
             'email' => $email,
-            'phone' => '', // No phone field in new form
-            'message' => $magnet_type, // Store magnet type in message field
+            'phone' => '',
+            'message' => $magnet_type,
             'ip_address' => $_SERVER['REMOTE_ADDR'],
             'user_agent' => $_SERVER['HTTP_USER_AGENT']
         ),
@@ -810,61 +856,7 @@ function aimpro_handle_lead_magnet_form() {
     );
     
     if ($result) {
-        // Send email notification to admin
-        $to = 'sam@futurelab.solutions';
-        $subject = 'New Lead Magnet Download - ' . get_bloginfo('name');
-        $message = "New lead magnet download:\n\n";
-        $message .= "Email: {$email}\n";
-        $message .= "Magnet Type: {$magnet_type}\n";
-        if ($pdf_id) {
-            $message .= "PDF ID: {$pdf_id}\n";
-            $message .= "PDF URL: {$pdf_url}\n";
-        }
-        $message .= "IP Address: {$_SERVER['REMOTE_ADDR']}\n";
-        $message .= "Date: " . current_time('mysql') . "\n";
-        
-        $headers = array(
-            'Content-Type: text/plain; charset=UTF-8',
-            'From: ' . get_bloginfo('name') . ' <noreply@' . parse_url(home_url(), PHP_URL_HOST) . '>',
-            'Reply-To: ' . $email
-        );
-        
-        wp_mail($to, $subject, $message, $headers);
-        
-        // Send auto-response to user with PDF link if available
-        $user_subject = 'Your Free Download - ' . get_bloginfo('name');
-        $user_message = "Hi there,\n\n";
-        $user_message .= "Thank you for downloading our guide!\n\n";
-        
-        if (!empty($pdf_url)) {
-            $user_message .= "You can download your PDF here: {$pdf_url}\n\n";
-        }
-        
-        $user_message .= "We'll also be sending you exclusive insights and tips.\n\n";
-        $user_message .= "Best regards,\n";
-        $user_message .= "The Aimpro Team\n";
-        $user_message .= "sam@futurelab.solutions\n";
-        $user_message .= "Phone: +44 121 285 8490";
-        
-        $user_headers = array(
-            'Content-Type: text/plain; charset=UTF-8',
-            'From: Aimpro Digital <sam@futurelab.solutions>'
-        );
-        
-        wp_mail($email, $user_subject, $user_message, $user_headers);
-        
-        // If PDF URL is available, redirect to success page and trigger download
-        if (!empty($pdf_url)) {
-            // Create a success page with download link
-            $redirect_url = add_query_arg(array(
-                'lead_success' => '1',
-                'download' => base64_encode($pdf_url)
-            ), $_POST['_wp_http_referer'] ?? wp_get_referer());
-        } else {
-            $redirect_url = add_query_arg('lead_success', '1', $_POST['_wp_http_referer'] ?? wp_get_referer());
-        }
-        
-        wp_redirect($redirect_url);
+        wp_redirect(add_query_arg('lead_success', '1', $_POST['_wp_http_referer'] ?? wp_get_referer()));
     } else {
         wp_redirect(add_query_arg('lead_error', '1', $_POST['_wp_http_referer'] ?? wp_get_referer()));
     }
