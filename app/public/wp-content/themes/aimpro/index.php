@@ -799,9 +799,9 @@ get_header(); ?>
                 </div>
             <?php endif; ?>
             
-            <form class="newsletter-form" id="newsletter-form" method="post">
+            <form class="newsletter-form" id="newsletter-form" method="post" action="<?php echo admin_url('admin-post.php'); ?>">
+                <?php wp_nonce_field('newsletter_signup', 'newsletter_nonce'); ?>
                 <input type="hidden" name="action" value="newsletter_signup">
-                <input type="hidden" name="nonce" value="<?php echo wp_create_nonce('newsletter_signup'); ?>">
                 <div class="form-group">
                     <input type="text" name="subscriber_name" placeholder="Enter your name" required>
                     <input type="email" name="subscriber_email" placeholder="Enter your email address" required>

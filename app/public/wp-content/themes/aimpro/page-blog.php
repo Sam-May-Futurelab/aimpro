@@ -320,10 +320,23 @@ get_header(); ?>
                             <h3 class="widget-title"><?php echo esc_html(get_post_meta(get_the_ID(), 'blog_newsletter_title', true) ?: 'Stay Updated'); ?></h3>
                             <p><?php echo esc_html(get_post_meta(get_the_ID(), 'blog_newsletter_subtitle', true) ?: 'Get weekly insights delivered to your inbox.'); ?></p>
                             
+                            <?php if (isset($_GET['newsletter_success'])): ?>
+                                <div class="form-message success" style="background: #d4edda; color: #155724; padding: 15px; border-radius: 8px; margin-bottom: 20px; border-left: 4px solid #28a745;">
+                                    <p style="margin: 0;"><strong>Thank you!</strong> You've been successfully subscribed to our newsletter.</p>
+                                </div>
+                            <?php elseif (isset($_GET['newsletter_error'])): ?>
+                                <div class="form-message error" style="background: #f8d7da; color: #721c24; padding: 15px; border-radius: 8px; margin-bottom: 20px; border-left: 4px solid #dc3545;">
+                                    <p style="margin: 0;"><strong>Error:</strong> There was a problem with your subscription. Please try again.</p>
+                                </div>
+                            <?php endif; ?>
+                            
                             <!-- Orange background box with inline styles to prevent any CSS conflicts -->
                             <div style="background: linear-gradient(135deg, #f15a25 0%, #f47b51 100%); padding: 20px; border-radius: 8px; margin-top: 15px; color: white; overflow: hidden;">
-                                <form action="#" method="post" style="display: flex; flex-direction: column; gap: 10px;">
-                                    <input type="email" name="email" placeholder="Email" required style="width: 100%; box-sizing: border-box; padding: 12px 15px; border-radius: 8px; border: none; margin: 0; font-size: 16px;">
+                                <form method="post" action="<?php echo admin_url('admin-post.php'); ?>" style="display: flex; flex-direction: column; gap: 10px;">
+                                    <?php wp_nonce_field('newsletter_signup', 'newsletter_nonce'); ?>
+                                    <input type="hidden" name="action" value="newsletter_signup">
+                                    <input type="text" name="subscriber_name" placeholder="Name" required style="width: 100%; box-sizing: border-box; padding: 12px 15px; border-radius: 8px; border: none; margin: 0; font-size: 16px;">
+                                    <input type="email" name="subscriber_email" placeholder="Email" required style="width: 100%; box-sizing: border-box; padding: 12px 15px; border-radius: 8px; border: none; margin: 0; font-size: 16px;">
                                     <button type="submit" style="width: 100%; box-sizing: border-box; background: white; color: #f15a25; border: 2px solid #f15a25; padding: 12px; border-radius: 8px; font-weight: 600; cursor: pointer; font-size: 16px; transition: all 0.3s ease;" onmouseover="this.style.background='#f15a25'; this.style.color='white';" onmouseout="this.style.background='white'; this.style.color='#f15a25';"><?php echo esc_html(get_post_meta(get_the_ID(), 'blog_newsletter_button_text', true) ?: 'Subscribe'); ?></button>
                                 </form>
                             </div>

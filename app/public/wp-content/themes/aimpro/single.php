@@ -175,10 +175,12 @@ get_header(); ?>
                     </ul>
                     <!-- Lead magnet form with inline styles to prevent CSS conflicts -->
                     <div style="overflow: hidden;">
-                        <form action="#" method="post" style="display: flex; flex-direction: column; gap: 10px;">
+                        <form action="<?php echo admin_url('admin-post.php'); ?>" method="post" style="display: flex; flex-direction: column; gap: 10px;">
+                            <?php wp_nonce_field('lead_magnet_nonce', 'lead_magnet_nonce'); ?>
+                            <input type="hidden" name="action" value="lead_magnet_form">
+                            <input type="hidden" name="magnet_type" value="seo_checklist">
                             <input type="email" name="email" placeholder="Enter your email" required style="width: 100%; box-sizing: border-box; padding: 12px 15px; border-radius: 8px; border: 1px solid #e5e7eb; margin: 0; font-size: 16px;">
                             <button type="submit" style="width: 100%; box-sizing: border-box; background: linear-gradient(135deg, #f15a25 0%, #f47b51 100%); color: white; border: none; padding: 12px; border-radius: 8px; font-weight: 600; cursor: pointer; font-size: 16px;">Download Free</button>
-                            <input type="hidden" name="magnet_type" value="seo_checklist">
                         </form>
                         <p class="privacy-note">We respect your privacy. Unsubscribe anytime.</p>
                     </div>
@@ -208,11 +210,24 @@ get_header(); ?>
                     <h3 class="widget-title">Stay Updated</h3>
                     <p>Get weekly marketing insights and strategies delivered to your inbox.</p>
                     
+                    <?php if (isset($_GET['newsletter_success'])): ?>
+                        <div class="form-message success" style="background: #d4edda; color: #155724; padding: 15px; border-radius: 8px; margin-bottom: 20px; border-left: 4px solid #28a745;">
+                            <p style="margin: 0;"><strong>Thank you!</strong> You've been successfully subscribed to our newsletter.</p>
+                        </div>
+                    <?php elseif (isset($_GET['newsletter_error'])): ?>
+                        <div class="form-message error" style="background: #f8d7da; color: #721c24; padding: 15px; border-radius: 8px; margin-bottom: 20px; border-left: 4px solid #dc3545;">
+                            <p style="margin: 0;"><strong>Error:</strong> There was a problem with your subscription. Please try again.</p>
+                        </div>
+                    <?php endif; ?>
+                    
                     <!-- Orange background box with inline styles to prevent any CSS conflicts -->
-                    <div style="background: linear-gradient(135deg, #f15a25 0%, #f47b51 100%); padding: 20px; border-radius: 8px; margin-top: 15px; colour: white; overflow: hidden;">
-                        <form action="#" method="post" style="display: flex; flex-direction: column; gap: 10px;">
-                            <input type="email" name="email" placeholder="Enter your email" required style="width: 100%; box-sizing: border-box; padding: 12px 15px; border-radius: 8px; border: none; margin: 0; font-size: 16px;">
-                            <button type="submit" style="width: 100%; box-sizing: border-box; background: white; colour: #f15a25; border: none; padding: 12px; border-radius: 8px; font-weight: 600; cursor: pointer; font-size: 16px;">Subscribe</button>
+                    <div style="background: linear-gradient(135deg, #f15a25 0%, #f47b51 100%); padding: 20px; border-radius: 8px; margin-top: 15px; color: white; overflow: hidden;">
+                        <form method="post" action="<?php echo admin_url('admin-post.php'); ?>" style="display: flex; flex-direction: column; gap: 10px;">
+                            <?php wp_nonce_field('newsletter_signup', 'newsletter_nonce'); ?>
+                            <input type="hidden" name="action" value="newsletter_signup">
+                            <input type="text" name="subscriber_name" placeholder="Name" required style="width: 100%; box-sizing: border-box; padding: 12px 15px; border-radius: 8px; border: none; margin: 0; font-size: 16px;">
+                            <input type="email" name="subscriber_email" placeholder="Enter your email" required style="width: 100%; box-sizing: border-box; padding: 12px 15px; border-radius: 8px; border: none; margin: 0; font-size: 16px;">
+                            <button type="submit" style="width: 100%; box-sizing: border-box; background: white; color: #f15a25; border: none; padding: 12px; border-radius: 8px; font-weight: 600; cursor: pointer; font-size: 16px; transition: all 0.3s ease;">Subscribe</button>
                         </form>
                     </div>
                 </div>

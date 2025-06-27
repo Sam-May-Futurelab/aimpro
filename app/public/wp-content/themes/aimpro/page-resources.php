@@ -197,9 +197,9 @@ get_header(); ?>
                 <h2>Stay Updated with the Latest Insights</h2>
                 <p>Get the latest resources, industry updates, and expert tips delivered directly to your inbox every week.</p>
                 
-                <form class="newsletter-form" id="newsletter-form-resources" method="post">
+                <form class="newsletter-form" id="newsletter-form-resources" method="post" action="<?php echo admin_url('admin-post.php'); ?>">
+                    <?php wp_nonce_field('newsletter_signup', 'newsletter_nonce'); ?>
                     <input type="hidden" name="action" value="newsletter_signup">
-                    <input type="hidden" name="nonce" value="<?php echo wp_create_nonce('newsletter_signup'); ?>">
                     <div class="form-group">
                         <input type="text" name="subscriber_name" placeholder="Enter your name" required>
                         <input type="email" name="subscriber_email" placeholder="Enter your email address" required>

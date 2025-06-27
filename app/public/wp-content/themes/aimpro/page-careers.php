@@ -239,7 +239,20 @@ get_header(); ?>
                 <h2><?php echo esc_html(get_post_meta(get_the_ID(), 'careers_form_heading', true) ?: 'Ready to Apply?'); ?></h2>
                 <p><?php echo esc_html(get_post_meta(get_the_ID(), 'careers_form_description', true) ?: 'Don\'t see a position that fits? We\'re always looking for talented individuals to join our team.'); ?></p>
                 
-                <form class="career-application-form">
+                <?php if (isset($_GET['career_success'])): ?>
+                    <div class="form-message success">
+                        <p><strong>Thank you!</strong> Your application has been submitted successfully. We'll review it and get back to you soon.</p>
+                    </div>
+                <?php elseif (isset($_GET['career_error'])): ?>
+                    <div class="form-message error">
+                        <p><strong>Error:</strong> There was a problem submitting your application. Please try again or contact us directly at careers@aimpro.co.uk.</p>
+                    </div>
+                <?php endif; ?>
+                
+                <form class="career-application-form" method="post" action="<?php echo admin_url('admin-post.php'); ?>" enctype="multipart/form-data" novalidate>
+                    <?php wp_nonce_field('career_application', 'career_nonce'); ?>
+                    <input type="hidden" name="action" value="career_application">
+                    <input type="hidden" name="_wp_http_referer" value="<?php echo esc_url($_SERVER['REQUEST_URI']); ?>">
                     <div class="form-grid">
                         <div class="form-group">
                             <label for="first_name">First Name *</label>
