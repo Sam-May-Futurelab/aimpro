@@ -963,28 +963,26 @@ get_header(); ?>
     }
 }
 
-/* Glassmorphic Location Badge */
+/* Neumorphic Location Badge */
 .location-badge-glassmorphic {
     display: inline-flex;
     align-items: center;
     gap: 0.5rem;
     padding: 1rem 2rem;
-    border-radius: 20px;
+    border-radius: 25px;
     max-width: 100%;
     
-    /* Glassmorphic effect */
-    background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    
-    /* Subtle shadow */
+    /* Neumorphic effect */
+    background: #f8f9fa;
     box-shadow: 
-        0 8px 32px rgba(0, 0, 0, 0.1),
-        inset 0 1px 0 rgba(255, 255, 255, 0.2);
+        8px 8px 16px rgba(0, 0, 0, 0.1),
+        -8px -8px 16px rgba(255, 255, 255, 0.9),
+        inset 2px 2px 4px rgba(0, 0, 0, 0.05),
+        inset -2px -2px 4px rgba(255, 255, 255, 0.9);
+    border: 1px solid rgba(0, 0, 0, 0.05);
     
     /* Text styling */
-    color: white;
+    color: #333 !important;
     font-weight: 600;
     font-size: 0.9rem;
     letter-spacing: 1px;
@@ -996,7 +994,7 @@ get_header(); ?>
 }
 
 .location-badge-glassmorphic .location-icon {
-    color: #ff7b00;
+    color: #f15a25;
     flex-shrink: 0;
 }
 
@@ -1005,6 +1003,7 @@ get_header(); ?>
     overflow: hidden;
     text-overflow: ellipsis;
     max-width: 100%;
+    color: #333 !important;
 }
 
 /* Mobile responsive adjustments for location badge */
