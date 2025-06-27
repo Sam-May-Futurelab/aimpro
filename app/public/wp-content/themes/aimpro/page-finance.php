@@ -471,6 +471,75 @@ get_header(); ?>
         background: var(--primary-orange-dark) !important;
         transform: translateY(-2px) !important;
     }
+    
+    /* Financial Marketing Funnel - Mobile Layout with Centered Numbers */
+    .optimisation-process .process-timeline {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 1.5rem !important;
+    }
+    
+    .optimisation-process .process-step {
+        background: #f8f9fa !important;
+        border: 1px solid #e9ecef !important;
+        border-radius: 8px !important;
+        padding: 1.5rem !important;
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        text-align: center !important;
+        gap: 1rem !important;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.05) !important;
+    }
+    
+    .optimisation-process .step-number {
+        background: #f15a25 !important;
+        color: white !important;
+        width: 50px !important;
+        height: 50px !important;
+        border-radius: 50% !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        font-weight: 700 !important;
+        font-size: 1.2rem !important;
+        flex-shrink: 0 !important;
+        margin-bottom: 0.5rem !important;
+    }
+    
+    .optimisation-process .step-content {
+        width: 100% !important;
+    }
+    
+    .optimisation-process .step-content h3 {
+        font-size: 1.1rem !important;
+        margin-bottom: 0.5rem !important;
+        color: #333 !important;
+    }
+    
+    .optimisation-process .step-content p {
+        font-size: 0.9rem !important;
+        color: #6c757d !important;
+        line-height: 1.5 !important;
+        margin: 0 0 1rem 0 !important;
+    }
+    
+    .optimisation-process .step-tactics {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 0.5rem !important;
+        width: 100% !important;
+    }
+    
+    .optimisation-process .tactic-item {
+        background: #e9ecef !important;
+        color: #495057 !important;
+        padding: 0.5rem 1rem !important;
+        border-radius: 4px !important;
+        font-size: 0.85rem !important;
+        text-align: center !important;
+        line-height: 1.4 !important;
+    }
 }
 
 @media (max-width: 480px) {
