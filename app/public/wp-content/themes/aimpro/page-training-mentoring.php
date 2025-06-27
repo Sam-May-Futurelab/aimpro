@@ -443,3 +443,459 @@ get_header(); ?>
 
 <?php get_footer(); ?>
 
+<style>
+/* Mobile optimizations for Training & Mentoring page */
+@media (max-width: 768px) {
+    /* Page header mobile optimization */
+    .page-header-content {
+        text-align: center !important;
+        padding: 1.5rem 1rem !important;
+    }
+    
+    .page-header-content h1 {
+        font-size: 2rem !important;
+        margin-bottom: 1rem !important;
+        line-height: 1.2 !important;
+    }
+    
+    .page-subtitle {
+        font-size: 1rem !important;
+        line-height: 1.4 !important;
+        color: #666 !important;
+    }
+    
+    /* Training intro section mobile optimization */
+    .training-intro .section-content {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 2rem !important;
+        padding: 1.5rem 1rem !important;
+    }
+    
+    .intro-content {
+        text-align: center !important;
+        order: 1 !important;
+    }
+    
+    .intro-content h2 {
+        font-size: 1.8rem !important;
+        margin-bottom: 1rem !important;
+        color: #333 !important;
+        line-height: 1.3 !important;
+    }
+    
+    .intro-content p {
+        font-size: 1rem !important;
+        line-height: 1.5 !important;
+        color: #666 !important;
+    }
+    
+    .training-benefits {
+        order: 2 !important;
+        text-align: center !important;
+    }
+    
+    /* Success Stories Mobile Optimization - Main Focus */
+    .success-stories .section-content {
+        padding: 2rem 1rem !important;
+    }
+    
+    .success-stories h2 {
+        font-size: 1.8rem !important;
+        text-align: center !important;
+        margin-bottom: 2rem !important;
+        color: #333 !important;
+    }
+    
+    .stories-container {
+        display: grid !important;
+        grid-template-columns: 1fr !important;
+        gap: 2rem !important;
+        margin-top: 1.5rem !important;
+    }
+    
+    .story-card {
+        background: #f8f9fa !important;
+        border: 1px solid #e9ecef !important;
+        border-radius: 12px !important;
+        padding: 1.5rem !important;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.08) !important;
+        text-align: left !important;
+        transition: transform 0.3s ease !important;
+    }
+    
+    .story-card:hover {
+        transform: translateY(-4px) !important;
+        box-shadow: 0 8px 25px rgba(0,0,0,0.12) !important;
+    }
+    
+    .story-quote {
+        margin-bottom: 1.5rem !important;
+    }
+    
+    .story-quote p {
+        font-size: 1rem !important;
+        line-height: 1.6 !important;
+        color: #333 !important;
+        font-style: italic !important;
+        margin: 0 !important;
+        position: relative !important;
+    }
+    
+    .story-quote p:before {
+        content: '"' !important;
+        font-size: 2rem !important;
+        color: #f15a25 !important;
+        position: absolute !important;
+        left: -1rem !important;
+        top: -0.5rem !important;
+        font-family: serif !important;
+    }
+    
+    .story-quote p:after {
+        content: '"' !important;
+        font-size: 2rem !important;
+        color: #f15a25 !important;
+        position: absolute !important;
+        right: -0.5rem !important;
+        bottom: -1rem !important;
+        font-family: serif !important;
+    }
+    
+    .story-author {
+        border-top: 1px solid #e9ecef !important;
+        padding-top: 1rem !important;
+    }
+    
+    .story-author h4 {
+        font-size: 1.1rem !important;
+        font-weight: 600 !important;
+        color: #333 !important;
+        margin: 0 0 0.25rem 0 !important;
+        line-height: 1.3 !important;
+    }
+    
+    .story-author span {
+        font-size: 0.9rem !important;
+        color: #666 !important;
+        display: block !important;
+        margin-bottom: 1rem !important;
+        line-height: 1.4 !important;
+    }
+    
+    .story-results {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 0.5rem !important;
+        margin-top: 1rem !important;
+    }
+    
+    .result-item {
+        background: rgba(241, 90, 37, 0.1) !important;
+        color: #f15a25 !important;
+        padding: 0.5rem 0.75rem !important;
+        border-radius: 20px !important;
+        font-size: 0.8rem !important;
+        font-weight: 600 !important;
+        text-transform: uppercase !important;
+        letter-spacing: 0.3px !important;
+        display: inline-block !important;
+        width: fit-content !important;
+    }
+    
+    /* Learning Paths Mobile Optimization */
+    .learning-paths .section-content {
+        padding: 2rem 1rem !important;
+    }
+    
+    .learning-paths h2 {
+        font-size: 1.8rem !important;
+        text-align: center !important;
+        margin-bottom: 1rem !important;
+        color: #333 !important;
+    }
+    
+    .section-subtitle {
+        font-size: 1rem !important;
+        text-align: center !important;
+        color: #666 !important;
+        margin-bottom: 2rem !important;
+        line-height: 1.5 !important;
+    }
+    
+    .paths-grid {
+        display: grid !important;
+        grid-template-columns: 1fr !important;
+        gap: 2rem !important;
+        margin-top: 1.5rem !important;
+    }
+    
+    .learning-path {
+        background: #f8f9fa !important;
+        border: 1px solid #e9ecef !important;
+        border-radius: 12px !important;
+        padding: 1.5rem !important;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.08) !important;
+    }
+    
+    .path-header {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        text-align: center !important;
+        margin-bottom: 1rem !important;
+        gap: 0.5rem !important;
+    }
+    
+    .path-header h3 {
+        font-size: 1.3rem !important;
+        font-weight: 600 !important;
+        color: #333 !important;
+        margin: 0 !important;
+        line-height: 1.3 !important;
+    }
+    
+    .path-duration {
+        background: #f15a25 !important;
+        color: white !important;
+        padding: 0.25rem 0.75rem !important;
+        border-radius: 20px !important;
+        font-size: 0.8rem !important;
+        font-weight: 600 !important;
+        text-transform: uppercase !important;
+    }
+    
+    .path-content {
+        text-align: center !important;
+    }
+    
+    .path-content p {
+        font-size: 0.95rem !important;
+        line-height: 1.5 !important;
+        color: #666 !important;
+        margin-bottom: 1.5rem !important;
+    }
+    
+    .path-cta {
+        background: #f15a25 !important;
+        color: white !important;
+        padding: 0.75rem 1.5rem !important;
+        text-decoration: none !important;
+        border-radius: 8px !important;
+        font-weight: 600 !important;
+        font-size: 0.9rem !important;
+        text-transform: uppercase !important;
+        letter-spacing: 0.3px !important;
+        transition: all 0.3s ease !important;
+        display: inline-block !important;
+        margin-top: 1rem !important;
+    }
+    
+    .path-cta:hover {
+        background: #d14619 !important;
+        transform: translateY(-2px) !important;
+    }
+    
+    /* Mentoring Team Mobile Optimization */
+    .mentoring-team .section-content {
+        padding: 2rem 1rem !important;
+    }
+    
+    .mentoring-team h2 {
+        font-size: 1.8rem !important;
+        text-align: center !important;
+        margin-bottom: 2rem !important;
+        color: #333 !important;
+    }
+    
+    .mentors-grid {
+        display: grid !important;
+        grid-template-columns: 1fr !important;
+        gap: 2rem !important;
+        margin-top: 1.5rem !important;
+    }
+    
+    .mentor-card {
+        background: #f8f9fa !important;
+        border: 1px solid #e9ecef !important;
+        border-radius: 12px !important;
+        padding: 1.5rem !important;
+        text-align: center !important;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.08) !important;
+    }
+    
+    .mentor-card h3 {
+        font-size: 1.2rem !important;
+        font-weight: 600 !important;
+        color: #333 !important;
+        margin-bottom: 0.5rem !important;
+    }
+    
+    .mentor-card .title {
+        font-size: 0.9rem !important;
+        color: #f15a25 !important;
+        font-weight: 600 !important;
+        margin-bottom: 1rem !important;
+        text-transform: uppercase !important;
+        letter-spacing: 0.3px !important;
+    }
+    
+    .mentor-card p {
+        font-size: 0.9rem !important;
+        line-height: 1.5 !important;
+        color: #666 !important;
+        margin-bottom: 1rem !important;
+    }
+    
+    /* FAQ Mobile Optimization */
+    .faq-container {
+        padding: 1rem !important;
+    }
+    
+    .faq-item {
+        background: #f8f9fa !important;
+        border: 1px solid #e9ecef !important;
+        border-radius: 8px !important;
+        padding: 1.5rem !important;
+        margin-bottom: 1.5rem !important;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.05) !important;
+    }
+    
+    .faq-item h3 {
+        font-size: 1.1rem !important;
+        font-weight: 600 !important;
+        color: #333 !important;
+        margin-bottom: 0.75rem !important;
+        line-height: 1.3 !important;
+    }
+    
+    .faq-item p {
+        font-size: 0.9rem !important;
+        line-height: 1.5 !important;
+        color: #666 !important;
+        margin: 0 !important;
+    }
+    
+    /* CTA Section Mobile Optimization */
+    .training-cta .section-content {
+        padding: 2rem 1rem !important;
+        text-align: center !important;
+    }
+    
+    .training-cta h2 {
+        font-size: 1.8rem !important;
+        margin-bottom: 1rem !important;
+        color: #333 !important;
+        line-height: 1.3 !important;
+    }
+    
+    .training-cta p {
+        font-size: 1rem !important;
+        line-height: 1.5 !important;
+        color: #666 !important;
+        margin-bottom: 2rem !important;
+    }
+    
+    .cta-buttons {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 1rem !important;
+        margin-bottom: 1.5rem !important;
+    }
+    
+    .cta-button {
+        background: #f15a25 !important;
+        color: white !important;
+        padding: 1rem 2rem !important;
+        text-decoration: none !important;
+        border-radius: 8px !important;
+        font-weight: 600 !important;
+        font-size: 1rem !important;
+        text-transform: uppercase !important;
+        letter-spacing: 0.3px !important;
+        transition: all 0.3s ease !important;
+        display: block !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
+    }
+    
+    .cta-button:hover {
+        background: #d14619 !important;
+        transform: translateY(-2px) !important;
+    }
+    
+    .cta-button:nth-child(2) {
+        background: transparent !important;
+        color: #f15a25 !important;
+        border: 2px solid #f15a25 !important;
+    }
+    
+    .cta-button:nth-child(2):hover {
+        background: #f15a25 !important;
+        color: white !important;
+    }
+    
+    .cta-note {
+        font-size: 0.8rem !important;
+        color: #666 !important;
+        font-style: italic !important;
+        line-height: 1.4 !important;
+    }
+    
+    /* Container and section overrides */
+    .container {
+        width: 100% !important;
+        max-width: 100% !important;
+        padding-left: 1rem !important;
+        padding-right: 1rem !important;
+        box-sizing: border-box !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+    }
+    
+    .section-content {
+        width: 100% !important;
+        max-width: 100% !important;
+        padding: 1.5rem 1rem !important;
+        box-sizing: border-box !important;
+    }
+}
+
+@media (max-width: 480px) {
+    /* Very small screens optimization */
+    .page-header-content h1 {
+        font-size: 1.6rem !important;
+    }
+    
+    .success-stories h2,
+    .learning-paths h2,
+    .mentoring-team h2,
+    .training-cta h2 {
+        font-size: 1.5rem !important;
+    }
+    
+    .story-card,
+    .learning-path,
+    .mentor-card {
+        padding: 1rem !important;
+    }
+    
+    .story-quote p {
+        font-size: 0.9rem !important;
+    }
+    
+    .story-author h4 {
+        font-size: 1rem !important;
+    }
+    
+    .path-header h3 {
+        font-size: 1.1rem !important;
+    }
+    
+    .cta-button {
+        padding: 0.875rem 1.5rem !important;
+        font-size: 0.9rem !important;
+    }
+}
+</style>
+
