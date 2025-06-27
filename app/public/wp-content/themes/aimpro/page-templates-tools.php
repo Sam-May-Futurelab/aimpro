@@ -361,6 +361,28 @@ get_header(); ?>
         padding: 1rem !important;
     }
     
+    .content-item .service-icon-container {
+        display: flex !important;
+        justify-content: center !important;
+        margin-bottom: 1rem !important;
+    }
+    
+    .content-item .service-icon-animated {
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        width: 60px !important;
+        height: 60px !important;
+        background: rgba(241, 90, 37, 0.1) !important;
+        border-radius: 50% !important;
+        margin: 0 auto !important;
+    }
+    
+    .content-item .service-icon-animated i {
+        font-size: 24px !important;
+        color: #F15A25 !important;
+    }
+    
     .content-item h3 {
         font-size: 1.2rem !important;
         margin-bottom: 0.75rem !important;
