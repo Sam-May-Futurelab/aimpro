@@ -42,22 +42,24 @@ $services = get_post_meta(get_the_ID(), '_automotive_services', true) ?: array()
           <!-- Page Header -->
         <section class="page-header">
             <div class="page-header-content animate-on-scroll animate-fade-up">
-                <h1><?php echo esc_html($header_title); ?></h1>
-                <p class="page-subtitle"><?php echo esc_html($header_subtitle); ?></p>
+                <h1><?php echo wp_kses_post($header_title); ?></h1>
+                <div class="page-subtitle"><?php echo wp_kses_post($header_subtitle); ?></div>
             </div>
         </section>        <!-- Industry Overview -->
         <section class="industry-overview animate-on-scroll animate-fade-up">
             <div class="section-content">
                 <div class="overview-content">
                     <div class="overview-text animate-on-scroll animate-slide-left">
-                        <h2><?php echo esc_html($overview_title); ?></h2>
-                        <p><?php echo esc_html($overview_content); ?></p>
+                        <h2><?php echo wp_kses_post($overview_title); ?></h2>
+                        <div class="overview-content-formatted">
+                            <?php echo wp_kses_post($overview_content); ?>
+                        </div>
                         
                         <div class="industry-challenges animate-on-scroll animate-fade-up">
-                            <h3><?php echo esc_html($challenges_title); ?></h3>
+                            <h3><?php echo wp_kses_post($challenges_title); ?></h3>
                             <ul>
                                 <?php foreach ($challenges as $challenge): ?>
-                                    <li><?php echo esc_html($challenge); ?></li>
+                                    <li><?php echo wp_kses_post($challenge); ?></li>
                                 <?php endforeach; ?>
                             </ul>
                         </div>
@@ -74,7 +76,7 @@ $services = get_post_meta(get_the_ID(), '_automotive_services', true) ?: array()
         </section>        <!-- Automotive Services -->
         <section class="automotive-services animate-on-scroll animate-fade-up">
             <div class="section-content">
-                <h2 class="animate-on-scroll animate-fade-up"><?php echo esc_html($services_title); ?></h2>
+                <h2 class="animate-on-scroll animate-fade-up"><?php echo wp_kses_post($services_title); ?></h2>
                 <div class="benefits-grid-2x2">
                     <?php 
                     // Default services if none set
@@ -113,12 +115,14 @@ $services = get_post_meta(get_the_ID(), '_automotive_services', true) ?: array()
                             <i class="<?php echo esc_attr($service['icon']); ?>"></i>
                         </div>
                         <div class="benefit-content">
-                            <h3><?php echo esc_html($service['title']); ?></h3>
-                            <p><?php echo esc_html($service['description']); ?></p>
+                            <h3><?php echo wp_kses_post($service['title']); ?></h3>
+                            <div class="service-description">
+                                <?php echo wp_kses_post($service['description']); ?>
+                            </div>
                             <?php if (!empty($service['features'])): ?>
                             <ul class="feature-list">
                                 <?php foreach ($service['features'] as $feature): ?>
-                                    <li><?php echo esc_html($feature); ?></li>
+                                    <li><?php echo wp_kses_post($feature); ?></li>
                                 <?php endforeach; ?>
                             </ul>
                             <?php endif; ?>
@@ -158,24 +162,26 @@ $services = get_post_meta(get_the_ID(), '_automotive_services', true) ?: array()
                             'Review management and reputation building'
                         );
                         ?>
-                        <span class="case-study-label"><?php echo esc_html($case_study_label); ?></span>
-                        <h2><?php echo esc_html($case_study_title); ?></h2>
-                        <p><?php echo esc_html($case_study_content); ?></p>
+                        <span class="case-study-label"><?php echo wp_kses_post($case_study_label); ?></span>
+                        <h2><?php echo wp_kses_post($case_study_title); ?></h2>
+                        <div class="case-study-content-formatted">
+                            <?php echo wp_kses_post($case_study_content); ?>
+                        </div>
                         
                         <div class="case-study-challenge animate-on-scroll animate-fade-up">
-                            <h3><?php echo esc_html($case_study_challenge_title); ?></h3>
+                            <h3><?php echo wp_kses_post($case_study_challenge_title); ?></h3>
                             <ul>
                                 <?php foreach ($case_study_challenges as $challenge): ?>
-                                    <li><?php echo esc_html($challenge); ?></li>
+                                    <li><?php echo wp_kses_post($challenge); ?></li>
                                 <?php endforeach; ?>
                             </ul>
                         </div>
 
                         <div class="case-study-solution animate-on-scroll animate-fade-up">
-                            <h3><?php echo esc_html($case_study_solution_title); ?></h3>
+                            <h3><?php echo wp_kses_post($case_study_solution_title); ?></h3>
                             <ul>
                                 <?php foreach ($case_study_solutions as $solution): ?>
-                                    <li><?php echo esc_html($solution); ?></li>
+                                    <li><?php echo wp_kses_post($solution); ?></li>
                                 <?php endforeach; ?>
                             </ul>
                         </div>
@@ -190,16 +196,16 @@ $services = get_post_meta(get_the_ID(), '_automotive_services', true) ?: array()
                         );
                         $case_study_link_text = get_post_meta(get_the_ID(), '_automotive_case_study_link_text', true) ?: 'Read Full Case Study';
                         $case_study_link_url = get_post_meta(get_the_ID(), '_automotive_case_study_link_url', true) ?: home_url('/case-studies');
-                        ?>                        <h3><?php echo esc_html($case_study_results_title); ?></h3>
+                        ?>                        <h3><?php echo wp_kses_post($case_study_results_title); ?></h3>
                         <div class="results-grid">
                             <?php foreach ($case_study_results as $result): ?>
                             <div class="result-item animate-on-scroll animate-stagger animate-scale-up">
-                                <div class="result-number"><?php echo esc_html($result['number']); ?></div>
-                                <div class="result-label"><?php echo esc_html($result['label']); ?></div>
+                                <div class="result-number"><?php echo wp_kses_post($result['number']); ?></div>
+                                <div class="result-label"><?php echo wp_kses_post($result['label']); ?></div>
                             </div>
                             <?php endforeach; ?>
                         </div>
-                        <a href="<?php echo esc_url($case_study_link_url); ?>" class="case-study-link"><?php echo esc_html($case_study_link_text); ?></a>
+                        <a href="<?php echo esc_url($case_study_link_url); ?>" class="case-study-link"><?php echo wp_kses_post($case_study_link_text); ?></a>
                     </div>
                 </div>
             </div>        </section>        <!-- Automotive Marketing Process -->
@@ -211,7 +217,8 @@ $services = get_post_meta(get_the_ID(), '_automotive_services', true) ?: array()
                 }
                 .automotive-process h2 {
                     margin-bottom: 25px;
-                }                .automotive-process .process-steps {
+                }                
+                .automotive-process .process-steps {
                     margin-top: 0;
                     padding-top: 0;
                 }
@@ -225,6 +232,52 @@ $services = get_post_meta(get_the_ID(), '_automotive_services', true) ?: array()
                     left: 50%;
                     transform: translateX(-50%);
                     margin-left: 0;
+                }
+                
+                /* Style for rich text content */
+                .page-subtitle p, .cta-subtitle p {
+                    margin-top: 0;
+                    margin-bottom: 1rem;
+                }
+                .overview-content-formatted p, .case-study-content-formatted p {
+                    margin-bottom: 1rem;
+                }
+                .overview-content-formatted ul, .case-study-content-formatted ul {
+                    padding-left: 1.5rem;
+                    margin-bottom: 1rem;
+                }
+                .overview-content-formatted strong, 
+                .case-study-content-formatted strong, 
+                .page-subtitle strong, 
+                .cta-subtitle strong,
+                .step-description strong,
+                .service-description strong,
+                .stat-description strong {
+                    font-weight: bold;
+                }
+                .overview-content-formatted em, 
+                .case-study-content-formatted em, 
+                .page-subtitle em, 
+                .cta-subtitle em,
+                .step-description em,
+                .service-description em,
+                .stat-description em {
+                    font-style: italic;
+                }
+                
+                /* Rich text content formatting */
+                .step-description p, .service-description p, .stat-description p {
+                    margin-bottom: 1rem;
+                }
+                .step-description ul, .service-description ul, .stat-description ul {
+                    padding-left: 1.5rem;
+                    margin-bottom: 1rem;
+                    list-style-type: disc;
+                }
+                .step-description ol, .service-description ol, .stat-description ol {
+                    padding-left: 1.5rem;
+                    margin-bottom: 1rem;
+                    list-style-type: decimal;
                 }
                 
                 /* Mobile responsive styles for process steps */
@@ -302,14 +355,16 @@ $services = get_post_meta(get_the_ID(), '_automotive_services', true) ?: array()
                         'description' => 'Continuously monitor and optimise campaigns based on lead quality, cost per acquisition, and ROI.'                    )
                 );
                 ?>
-                <h2 class="animate-on-scroll animate-fade-up text-center"><?php echo esc_html($process_title); ?></h2>
+                <h2 class="animate-on-scroll animate-fade-up text-center"><?php echo wp_kses_post($process_title); ?></h2>
                 <div class="process-steps">
                     <?php foreach ($process_steps as $index => $step): ?>
                     <div class="process-step animate-on-scroll animate-stagger animate-slide-up">
                         <div class="step-number"><?php echo $index + 1; ?></div>
                         <div class="step-content">
-                            <h3><?php echo esc_html($step['title']); ?></h3>
-                            <p><?php echo esc_html($step['description']); ?></p>
+                            <h3><?php echo wp_kses_post($step['title']); ?></h3>
+                            <div class="step-description">
+                                <?php echo wp_kses_post($step['description']); ?>
+                            </div>
                         </div>
                     </div>
                     <?php endforeach; ?>
@@ -345,7 +400,7 @@ $services = get_post_meta(get_the_ID(), '_automotive_services', true) ?: array()
                     );
                     ?>
                     <h2 class="section-title animate-on-scroll animate-fade-up" style="text-align: center;">
-                        <?php echo esc_html($insights_title); ?>
+                        <?php echo wp_kses_post($insights_title); ?>
                         <style>
                         .automotive-insights .section-title::after {
                             left: 50%;
@@ -359,7 +414,9 @@ $services = get_post_meta(get_the_ID(), '_automotive_services', true) ?: array()
                             <div class="stat-number"><?php echo esc_html($insight['stat']); ?></div>
                             <div class="stat-content">
                                 <h3 class="stat-title"><?php echo esc_html($insight['title']); ?></h3>
-                                <p class="stat-description"><?php echo esc_html($insight['description']); ?></p>
+                                <div class="stat-description">
+                                    <?php echo wp_kses_post($insight['description']); ?>
+                                </div>
                             </div>
                         </div>
                         <?php endforeach; ?>
@@ -377,7 +434,7 @@ $services = get_post_meta(get_the_ID(), '_automotive_services', true) ?: array()
                     $testimonial_company = get_post_meta(get_the_ID(), '_automotive_testimonial_company', true) ?: 'Multi-brand dealership with 3 locations';
                     ?>
                     <blockquote>
-                        <?php echo esc_html($testimonial_quote); ?>
+                        <?php echo wp_kses_post($testimonial_quote); ?>
                     </blockquote>
                     <div class="testimonial-author">
                         <div class="author-info">
@@ -404,14 +461,14 @@ $services = get_post_meta(get_the_ID(), '_automotive_services', true) ?: array()
                 );
                 ?>
                 <h2 class="animate-on-scroll animate-fade-up"><?php echo esc_html($cta_title); ?></h2>
-                <p class="animate-on-scroll animate-fade-up"><?php echo esc_html($cta_subtitle); ?></p>
+                <div class="cta-subtitle animate-on-scroll animate-fade-up"><?php echo wp_kses_post($cta_subtitle); ?></div>
                 <div class="cta-buttons animate-on-scroll animate-scale-up">
                     <a href="<?php echo esc_url($cta_primary_url); ?>" class="btn btn-primary"><?php echo esc_html($cta_primary_text); ?></a>
                     <a href="<?php echo esc_url($cta_secondary_url); ?>" class="btn btn-secondary"><?php echo esc_html($cta_secondary_text); ?></a>
                 </div>
                 <div class="cta-benefits animate-on-scroll animate-fade-up">
                     <?php foreach ($cta_benefits as $benefit): ?>
-                        <span class="benefit"><?php echo esc_html($benefit); ?></span>
+                        <span class="benefit"><?php echo wp_kses_post($benefit); ?></span>
                     <?php endforeach; ?>
                 </div>
             </div>

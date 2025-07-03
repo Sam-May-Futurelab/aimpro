@@ -28,6 +28,9 @@ function automotive_meta_box_callback($post) {
     // Get existing values
     $header_title = get_post_meta($post->ID, '_automotive_header_title', true);
     $header_subtitle = get_post_meta($post->ID, '_automotive_header_subtitle', true);
+    if (empty($header_subtitle)) {
+        $header_subtitle = 'Drive more qualified leads to your dealership with proven automotive marketing strategies';
+    }
     $overview_title = get_post_meta($post->ID, '_automotive_overview_title', true);
     $overview_content = get_post_meta($post->ID, '_automotive_overview_content', true);
     $overview_image = get_post_meta($post->ID, '_automotive_overview_image', true);
@@ -182,9 +185,9 @@ function automotive_meta_box_callback($post) {
     $cta_benefits = get_post_meta($post->ID, '_automotive_cta_benefits', true);
     if (empty($cta_benefits)) {
         $cta_benefits = array(
-            '? Free competitive analysis',
-            '? Custom strategy recommendations',
-            '? No obligation consultation'
+            '✓ Free competitive analysis',
+            '✓ Custom strategy recommendations',
+            '✓ No obligation consultation'
         );
     }
 
@@ -264,8 +267,17 @@ function automotive_meta_box_callback($post) {
         }
         .image-preview {
             max-width: 200px;
+            max-height: 150px;
+            width: auto;
             height: auto;
             margin: 10px 0;
+            object-fit: contain;
+        }
+        #overview-image-preview {
+            width: fit-content;
+            height: fit-content;
+            max-width: 100%;
+            overflow: hidden;
         }
         .upload-button {
             background: #0073aa;
@@ -310,25 +322,121 @@ function automotive_meta_box_callback($post) {
             cursor: pointer;
             margin-top: 5px;
         }
+        /* Style for WordPress Editor */
+        .wp-editor-container {
+            border: 1px solid #ddd;
+            margin-bottom: 10px;
+        }
+        .automotive-meta .wp-editor-area {
+            height: 150px;
+        }
+        .editor-container {
+            min-height: 150px;
+            margin-bottom: 10px;
+        }
+        .wp-editor-tools {
+            margin-bottom: 5px;
+        }
+        .item-field {
+            margin-bottom: 12px;
+        }
     </style>
 
     <div class="automotive-meta">
         <table class="form-table">
             <tr>
                 <th><label for="automotive_header_title">Page Header Title</label></th>
-                <td><input type="text" id="automotive_header_title" name="automotive_header_title" value="<?php echo esc_attr($header_title); ?>" placeholder="Automotive Digital Marketing" /></td>
+                <td>
+                    <?php
+                    $header_title_settings = array(
+                        'textarea_name' => 'automotive_header_title',
+                        'textarea_rows' => 2,
+                        'media_buttons' => false,
+                        'teeny' => true,
+                        'quicktags' => true,
+                    );
+                    // Make sure we have content for the editor
+                    if (empty($header_title)) {
+                        $header_title = 'Automotive Digital Marketing';
+                    }
+                    
+                    wp_editor($header_title, 'automotive_header_title', $header_title_settings);
+                    ?>
+                    <p class="description">Add formatted header title text.</p>
+                </td>
             </tr>
             <tr>
                 <th><label for="automotive_header_subtitle">Page Header Subtitle</label></th>
-                <td><textarea id="automotive_header_subtitle" name="automotive_header_subtitle" placeholder="Drive more qualified leads to your dealership with proven automotive marketing strategies"><?php echo esc_textarea($header_subtitle); ?></textarea></td>
+                <td>
+                    <?php
+                    $header_subtitle_settings = array(
+                        'textarea_name' => 'automotive_header_subtitle',
+                        'textarea_rows' => 4,
+                        'media_buttons' => false,
+                        'teeny' => true,
+                        'quicktags' => true,
+                    );
+                    // Make sure we have content for the editor
+                    if (empty($header_subtitle)) {
+                        $header_subtitle = 'Drive more qualified leads to your dealership with proven automotive marketing strategies';
+                    }
+                    
+                    // Force the content to have some formatting to test rich text
+                    if ($header_subtitle === 'Drive more qualified leads to your dealership with proven automotive marketing strategies') {
+                        $header_subtitle = '<p>Drive <strong>more qualified leads</strong> to your dealership with <em>proven automotive marketing strategies</em></p>';
+                    }
+                    
+                    wp_editor($header_subtitle, 'automotive_header_subtitle', $header_subtitle_settings);
+                    ?>
+                    <p class="description">Add formatted subtitle text.</p>
+                </td>
             </tr>
             <tr>
                 <th><label for="automotive_overview_title">Overview Title</label></th>
-                <td><input type="text" id="automotive_overview_title" name="automotive_overview_title" value="<?php echo esc_attr($overview_title); ?>" placeholder="Accelerate Your Automotive Business" /></td>
+                <td>
+                    <?php
+                    $overview_title_settings = array(
+                        'textarea_name' => 'automotive_overview_title',
+                        'textarea_rows' => 2,
+                        'media_buttons' => false,
+                        'teeny' => true,
+                        'quicktags' => true,
+                    );
+                    // Make sure we have content for the editor
+                    if (empty($overview_title)) {
+                        $overview_title = 'Accelerate Your Automotive Business';
+                    }
+                    
+                    wp_editor($overview_title, 'automotive_overview_title', $overview_title_settings);
+                    ?>
+                    <p class="description">Add formatted title text.</p>
+                </td>
             </tr>
             <tr>
                 <th><label for="automotive_overview_content">Overview Content</label></th>
-                <td><textarea id="automotive_overview_content" name="automotive_overview_content" placeholder="The automotive industry has evolved dramatically..."><?php echo esc_textarea($overview_content); ?></textarea></td>
+                <td>
+                    <?php
+                    $editor_settings = array(
+                        'textarea_name' => 'automotive_overview_content',
+                        'textarea_rows' => 6,
+                        'media_buttons' => false,
+                        'teeny' => true,
+                        'quicktags' => true,
+                    );
+                    // Make sure we have content for the editor
+                    if (empty($overview_content)) {
+                        $overview_content = 'The automotive industry has evolved dramatically. Today\'s car buyers research extensively online before stepping foot on a lot. Our specialised automotive marketing strategies ensure you\'re visible throughout their entire buyer journey.';
+                    }
+                    
+                    // Force the content to have some formatting to test rich text
+                    if (strpos($overview_content, 'evolved dramatically') !== false) {
+                        $overview_content = '<p>The <strong>automotive industry</strong> has evolved dramatically. Today\'s car buyers research extensively online before stepping foot on a lot.</p><p>Our <em>specialised automotive marketing strategies</em> ensure you\'re visible throughout their entire buyer journey.</p>';
+                    }
+                    
+                    wp_editor($overview_content, 'automotive_overview_content', $editor_settings);
+                    ?>
+                    <p class="description">Add formatted content for the overview section.</p>
+                </td>
             </tr>
             <tr>
                 <th><label for="automotive_overview_image">Overview Image</label></th>
@@ -353,14 +461,33 @@ function automotive_meta_box_callback($post) {
             <table class="form-table">
                 <tr>
                     <th><label for="automotive_challenges_title">Challenges Title</label></th>
-                    <td><input type="text" id="automotive_challenges_title" name="automotive_challenges_title" value="<?php echo esc_attr($challenges_title); ?>" placeholder="Automotive Marketing Challenges We Solve:" /></td>
+                    <td>
+                        <?php
+                        $challenges_title_settings = array(
+                            'textarea_name' => 'automotive_challenges_title',
+                            'textarea_rows' => 2,
+                            'media_buttons' => false,
+                            'teeny' => true,
+                            'quicktags' => true,
+                        );
+                        // Make sure we have content for the editor
+                        if (empty($challenges_title)) {
+                            $challenges_title = 'Automotive Marketing Challenges We Solve:';
+                        }
+                        
+                        wp_editor($challenges_title, 'automotive_challenges_title', $challenges_title_settings);
+                        ?>
+                        <p class="description">Add formatted challenges title text.</p>
+                    </td>
                 </tr>
             </table>
             <div class="list-editor">
                 <div id="challenges-container">
                     <?php foreach ($challenges as $index => $challenge): ?>
                         <div class="list-item">
-                            <input type="text" name="automotive_challenges[<?php echo $index; ?>]" value="<?php echo esc_attr($challenge); ?>" placeholder="Challenge..." />
+                            <div class="editor-container" data-field-name="automotive_challenges[<?php echo $index; ?>]" data-editor-id="challenge_<?php echo $index; ?>" style="flex: 1; margin-right: 10px;">
+                                <?php echo wp_kses_post($challenge); ?>
+                            </div>
                             <button type="button" class="remove-list-item">Remove</button>
                         </div>
                     <?php endforeach; ?>
@@ -374,7 +501,24 @@ function automotive_meta_box_callback($post) {
             <table class="form-table">
                 <tr>
                     <th><label for="automotive_services_title">Services Title</label></th>
-                    <td><input type="text" id="automotive_services_title" name="automotive_services_title" value="<?php echo esc_attr($services_title); ?>" placeholder="Our Automotive Marketing Services" /></td>
+                    <td>
+                        <?php
+                        $services_title_settings = array(
+                            'textarea_name' => 'automotive_services_title',
+                            'textarea_rows' => 2,
+                            'media_buttons' => false,
+                            'teeny' => true,
+                            'quicktags' => true,
+                        );
+                        // Make sure we have content for the editor
+                        if (empty($services_title)) {
+                            $services_title = 'Our Automotive Marketing Services';
+                        }
+                        
+                        wp_editor($services_title, 'automotive_services_title', $services_title_settings);
+                        ?>
+                        <p class="description">Add formatted services title text.</p>
+                    </td>
                 </tr>
             </table>
             <div class="repeater-section">
@@ -388,11 +532,22 @@ function automotive_meta_box_callback($post) {
                             </div>
                             <div class="item-field">
                                 <label>Title:</label>
-                                <input type="text" name="automotive_services[<?php echo $index; ?>][title]" value="<?php echo esc_attr($service['title']); ?>" placeholder="Local SEO for Dealerships" />
+                                <div class="editor-container" data-field-name="automotive_services[<?php echo $index; ?>][title]" data-editor-id="service_title_<?php echo $index; ?>">
+                                    <?php echo wp_kses_post($service['title']); ?>
+                                </div>
                             </div>
                             <div class="item-field">
                                 <label>Description:</label>
-                                <textarea name="automotive_services[<?php echo $index; ?>][description]" placeholder="Dominate local search results..."><?php echo esc_textarea($service['description']); ?></textarea>
+                                <div class="editor-container" data-field-name="automotive_services[<?php echo $index; ?>][description]" data-editor-id="service_desc_<?php echo $index; ?>">
+                                    <?php 
+                                    // Make sure description has proper HTML formatting
+                                    $formatted_description = wp_kses_post($service['description']);
+                                    if (!empty($formatted_description) && strpos($formatted_description, '<p>') === false && strpos($formatted_description, '<div>') === false) {
+                                        $formatted_description = '<p>' . $formatted_description . '</p>';
+                                    }
+                                    echo $formatted_description; 
+                                    ?>
+                                </div>
                             </div>
                             <div class="item-field">
                                 <label>Features (one per line):</label>
@@ -410,19 +565,86 @@ function automotive_meta_box_callback($post) {
             <table class="form-table">
                 <tr>
                     <th><label for="automotive_case_study_label">Case Study Label</label></th>
-                    <td><input type="text" id="automotive_case_study_label" name="automotive_case_study_label" value="<?php echo esc_attr($case_study_label); ?>" placeholder="Success Story" /></td>
+                    <td>
+                        <?php
+                        $case_study_label_settings = array(
+                            'textarea_name' => 'automotive_case_study_label',
+                            'textarea_rows' => 2,
+                            'media_buttons' => false,
+                            'teeny' => true,
+                            'quicktags' => true,
+                        );
+                        // Make sure we have content for the editor
+                        if (empty($case_study_label)) {
+                            $case_study_label = 'Success Story';
+                        }
+                        
+                        wp_editor($case_study_label, 'automotive_case_study_label', $case_study_label_settings);
+                        ?>
+                        <p class="description">Add formatted case study label text.</p>
+                    </td>
                 </tr>
                 <tr>
                     <th><label for="automotive_case_study_title">Case Study Title</label></th>
-                    <td><input type="text" id="automotive_case_study_title" name="automotive_case_study_title" value="<?php echo esc_attr($case_study_title); ?>" placeholder="Premier Motors: 180% Increase in Qualified Leads" /></td>
+                    <td>
+                        <?php
+                        $case_study_title_settings = array(
+                            'textarea_name' => 'automotive_case_study_title',
+                            'textarea_rows' => 2,
+                            'media_buttons' => false,
+                            'teeny' => true,
+                            'quicktags' => true,
+                        );
+                        // Make sure we have content for the editor
+                        if (empty($case_study_title)) {
+                            $case_study_title = 'Premier Motors: 180% Increase in Qualified Leads';
+                        }
+                        
+                        wp_editor($case_study_title, 'automotive_case_study_title', $case_study_title_settings);
+                        ?>
+                        <p class="description">Add formatted case study title text.</p>
+                    </td>
                 </tr>
                 <tr>
                     <th><label for="automotive_case_study_content">Case Study Content</label></th>
-                    <td><textarea id="automotive_case_study_content" name="automotive_case_study_content" placeholder="Premier Motors, a multi-brand dealership..."><?php echo esc_textarea($case_study_content); ?></textarea></td>
+                    <td>
+                        <?php
+                        $case_study_editor_settings = array(
+                            'textarea_name' => 'automotive_case_study_content',
+                            'textarea_rows' => 5,
+                            'media_buttons' => false,
+                            'teeny' => true,
+                            'quicktags' => true,
+                        );
+                        // Make sure we have content for the editor
+                        if (empty($case_study_content)) {
+                            $case_study_content = 'Premier Motors, a multi-brand dealership, was struggling with online visibility and lead quality. Our comprehensive automotive marketing strategy transformed their digital presence.';
+                        }
+                        wp_editor($case_study_content, 'automotive_case_study_content', $case_study_editor_settings);
+                        ?>
+                        <p class="description">Add formatted content for the case study section.</p>
+                    </td>
                 </tr>
                 <tr>
                     <th><label for="automotive_case_study_challenge_title">Challenge Section Title</label></th>
-                    <td><input type="text" id="automotive_case_study_challenge_title" name="automotive_case_study_challenge_title" value="<?php echo esc_attr($case_study_challenge_title); ?>" placeholder="The Challenge" /></td>
+                    <td>
+                        <?php
+                        $case_study_challenge_title_settings = array(
+                            'textarea_name' => 'automotive_case_study_challenge_title',
+                            'textarea_rows' => 2,
+                            'media_buttons' => false,
+                            'teeny' => true,
+                            'quicktags' => true,
+                        );
+                        // Make sure we have content for the editor
+                        if (empty($case_study_challenge_title)) {
+                            $case_study_challenge_title = 'The Challenge';
+                        }
+                        
+                        wp_editor($case_study_challenge_title, 'automotive_case_study_challenge_title', $case_study_challenge_title_settings);
+                        ?>
+                        <p class="description">Add formatted challenge section title text.</p>
+                    </td>
                 </tr>
             </table>
             
@@ -431,7 +653,9 @@ function automotive_meta_box_callback($post) {
                 <div id="challenges-cs-container">
                     <?php foreach ($case_study_challenges as $index => $challenge): ?>
                         <div class="list-item">
-                            <input type="text" name="automotive_case_study_challenges[<?php echo $index; ?>]" value="<?php echo esc_attr($challenge); ?>" placeholder="Challenge..." />
+                            <div class="editor-container" data-field-name="automotive_case_study_challenges[<?php echo $index; ?>]" data-editor-id="cs_challenge_<?php echo $index; ?>" style="flex: 1; margin-right: 10px;">
+                                <?php echo wp_kses_post($challenge); ?>
+                            </div>
                             <button type="button" class="remove-list-item">Remove</button>
                         </div>
                     <?php endforeach; ?>
@@ -442,7 +666,24 @@ function automotive_meta_box_callback($post) {
             <table class="form-table">
                 <tr>
                     <th><label for="automotive_case_study_solution_title">Solution Section Title</label></th>
-                    <td><input type="text" id="automotive_case_study_solution_title" name="automotive_case_study_solution_title" value="<?php echo esc_attr($case_study_solution_title); ?>" placeholder="Our Solution" /></td>
+                    <td>
+                        <?php
+                        $case_study_solution_title_settings = array(
+                            'textarea_name' => 'automotive_case_study_solution_title',
+                            'textarea_rows' => 2,
+                            'media_buttons' => false,
+                            'teeny' => true,
+                            'quicktags' => true,
+                        );
+                        // Make sure we have content for the editor
+                        if (empty($case_study_solution_title)) {
+                            $case_study_solution_title = 'Our Solution';
+                        }
+                        
+                        wp_editor($case_study_solution_title, 'automotive_case_study_solution_title', $case_study_solution_title_settings);
+                        ?>
+                        <p class="description">Add formatted solution section title text.</p>
+                    </td>
                 </tr>
             </table>
             
@@ -451,7 +692,9 @@ function automotive_meta_box_callback($post) {
                 <div id="solutions-container">
                     <?php foreach ($case_study_solutions as $index => $solution): ?>
                         <div class="list-item">
-                            <input type="text" name="automotive_case_study_solutions[<?php echo $index; ?>]" value="<?php echo esc_attr($solution); ?>" placeholder="Solution..." />
+                            <div class="editor-container" data-field-name="automotive_case_study_solutions[<?php echo $index; ?>]" data-editor-id="solution_<?php echo $index; ?>" style="flex: 1; margin-right: 10px;">
+                                <?php echo wp_kses_post($solution); ?>
+                            </div>
                             <button type="button" class="remove-list-item">Remove</button>
                         </div>
                     <?php endforeach; ?>
@@ -462,7 +705,24 @@ function automotive_meta_box_callback($post) {
             <table class="form-table">
                 <tr>
                     <th><label for="automotive_case_study_results_title">Results Section Title</label></th>
-                    <td><input type="text" id="automotive_case_study_results_title" name="automotive_case_study_results_title" value="<?php echo esc_attr($case_study_results_title); ?>" placeholder="Results After 6 Months" /></td>
+                    <td>
+                        <?php
+                        $case_study_results_title_settings = array(
+                            'textarea_name' => 'automotive_case_study_results_title',
+                            'textarea_rows' => 2,
+                            'media_buttons' => false,
+                            'teeny' => true,
+                            'quicktags' => true,
+                        );
+                        // Make sure we have content for the editor
+                        if (empty($case_study_results_title)) {
+                            $case_study_results_title = 'Results After 6 Months';
+                        }
+                        
+                        wp_editor($case_study_results_title, 'automotive_case_study_results_title', $case_study_results_title_settings);
+                        ?>
+                        <p class="description">Add formatted results section title text.</p>
+                    </td>
                 </tr>
                 <tr>
                     <th><label for="automotive_case_study_link_text">Case Study Link Text</label></th>
@@ -500,7 +760,24 @@ function automotive_meta_box_callback($post) {
             <table class="form-table">
                 <tr>
                     <th><label for="automotive_process_title">Process Title</label></th>
-                    <td><input type="text" id="automotive_process_title" name="automotive_process_title" value="<?php echo esc_attr($process_title); ?>" placeholder="Our Automotive Marketing Process" /></td>
+                    <td>
+                        <?php
+                        $process_title_settings = array(
+                            'textarea_name' => 'automotive_process_title',
+                            'textarea_rows' => 2,
+                            'media_buttons' => false,
+                            'teeny' => true,
+                            'quicktags' => true,
+                        );
+                        // Make sure we have content for the editor
+                        if (empty($process_title)) {
+                            $process_title = 'Our Automotive Marketing Process';
+                        }
+                        
+                        wp_editor($process_title, 'automotive_process_title', $process_title_settings);
+                        ?>
+                        <p class="description">Add formatted process title text.</p>
+                    </td>
                 </tr>
             </table>
             <div class="repeater-section">
@@ -510,11 +787,15 @@ function automotive_meta_box_callback($post) {
                             <button type="button" class="remove-item remove-step">Remove</button>
                             <div class="item-field">
                                 <label>Step Title:</label>
-                                <input type="text" name="automotive_process_steps[<?php echo $index; ?>][title]" value="<?php echo esc_attr($step['title']); ?>" placeholder="Market Analysis" />
+                                <div class="editor-container" data-field-name="automotive_process_steps[<?php echo $index; ?>][title]" data-editor-id="step_title_<?php echo $index; ?>">
+                                    <?php echo wp_kses_post($step['title']); ?>
+                                </div>
                             </div>
                             <div class="item-field">
                                 <label>Step Description:</label>
-                                <textarea name="automotive_process_steps[<?php echo $index; ?>][description]" placeholder="We analyse your local automotive market..."><?php echo esc_textarea($step['description']); ?></textarea>
+                                <div class="editor-container" data-field-name="automotive_process_steps[<?php echo $index; ?>][description]" data-editor-id="step_desc_<?php echo $index; ?>">
+                                    <?php echo wp_kses_post($step['description']); ?>
+                                </div>
                             </div>
                         </div>
                     <?php endforeach; ?>
@@ -528,7 +809,24 @@ function automotive_meta_box_callback($post) {
             <table class="form-table">
                 <tr>
                     <th><label for="automotive_insights_title">Insights Title</label></th>
-                    <td><input type="text" id="automotive_insights_title" name="automotive_insights_title" value="<?php echo esc_attr($insights_title); ?>" placeholder="Automotive Industry Insights" /></td>
+                    <td>
+                        <?php
+                        $insights_title_settings = array(
+                            'textarea_name' => 'automotive_insights_title',
+                            'textarea_rows' => 2,
+                            'media_buttons' => false,
+                            'teeny' => true,
+                            'quicktags' => true,
+                        );
+                        // Make sure we have content for the editor
+                        if (empty($insights_title)) {
+                            $insights_title = 'Automotive Industry Insights';
+                        }
+                        
+                        wp_editor($insights_title, 'automotive_insights_title', $insights_title_settings);
+                        ?>
+                        <p class="description">Add formatted insights title text.</p>
+                    </td>
                 </tr>
             </table>
             <div class="repeater-section">
@@ -542,11 +840,15 @@ function automotive_meta_box_callback($post) {
                             </div>
                             <div class="item-field">
                                 <label>Title:</label>
-                                <input type="text" name="automotive_insights[<?php echo $index; ?>][title]" value="<?php echo esc_attr($insight['title']); ?>" placeholder="Research Online First" />
+                                <div class="editor-container" data-field-name="automotive_insights[<?php echo $index; ?>][title]" data-editor-id="insight_title_<?php echo $index; ?>">
+                                    <?php echo wp_kses_post($insight['title']); ?>
+                                </div>
                             </div>
                             <div class="item-field">
                                 <label>Description:</label>
-                                <textarea name="automotive_insights[<?php echo $index; ?>][description]" placeholder="95% of car buyers research vehicles online..."><?php echo esc_textarea($insight['description']); ?></textarea>
+                                <div class="editor-container" data-field-name="automotive_insights[<?php echo $index; ?>][description]" data-editor-id="insight_desc_<?php echo $index; ?>">
+                                    <?php echo wp_kses_post($insight['description']); ?>
+                                </div>
                             </div>
                         </div>
                     <?php endforeach; ?>
@@ -560,7 +862,23 @@ function automotive_meta_box_callback($post) {
             <table class="form-table">
                 <tr>
                     <th><label for="automotive_testimonial_quote">Testimonial Quote</label></th>
-                    <td><textarea id="automotive_testimonial_quote" name="automotive_testimonial_quote" placeholder="Aimpro Digital completely transformed our online presence..."><?php echo esc_textarea($testimonial_quote); ?></textarea></td>
+                    <td>
+                        <?php
+                        $testimonial_editor_settings = array(
+                            'textarea_name' => 'automotive_testimonial_quote',
+                            'textarea_rows' => 5,
+                            'media_buttons' => false,
+                            'teeny' => true,
+                            'quicktags' => true,
+                        );
+                        // Make sure we have content for the editor
+                        if (empty($testimonial_quote)) {
+                            $testimonial_quote = '"Aimpro Digital completely transformed our online presence. Their understanding of the automotive market helped us generate 180% more qualified leads and significantly improved our service department bookings. The team\'s expertise in automotive marketing is unmatched."';
+                        }
+                        wp_editor($testimonial_quote, 'automotive_testimonial_quote', $testimonial_editor_settings);
+                        ?>
+                        <p class="description">Add a formatted testimonial quote. You can use bold, italic, etc.</p>
+                    </td>
                 </tr>
                 <tr>
                     <th><label for="automotive_testimonial_name">Client Name</label></th>
@@ -582,11 +900,44 @@ function automotive_meta_box_callback($post) {
             <table class="form-table">
                 <tr>
                     <th><label for="automotive_cta_title">CTA Title</label></th>
-                    <td><input type="text" id="automotive_cta_title" name="automotive_cta_title" value="<?php echo esc_attr($cta_title); ?>" placeholder="Ready to Accelerate Your Automotive Marketing?" /></td>
+                    <td>
+                        <?php
+                        $cta_title_settings = array(
+                            'textarea_name' => 'automotive_cta_title',
+                            'textarea_rows' => 2,
+                            'media_buttons' => false,
+                            'teeny' => true,
+                            'quicktags' => true,
+                        );
+                        // Make sure we have content for the editor
+                        if (empty($cta_title)) {
+                            $cta_title = 'Ready to Accelerate Your Automotive Marketing?';
+                        }
+                        
+                        wp_editor($cta_title, 'automotive_cta_title', $cta_title_settings);
+                        ?>
+                        <p class="description">Add formatted CTA title text.</p>
+                    </td>
                 </tr>
                 <tr>
                     <th><label for="automotive_cta_subtitle">CTA Subtitle</label></th>
-                    <td><textarea id="automotive_cta_subtitle" name="automotive_cta_subtitle" placeholder="Let's discuss how our automotive marketing expertise..."><?php echo esc_textarea($cta_subtitle); ?></textarea></td>
+                    <td>
+                        <?php
+                        $cta_subtitle_settings = array(
+                            'textarea_name' => 'automotive_cta_subtitle',
+                            'textarea_rows' => 4,
+                            'media_buttons' => false,
+                            'teeny' => true,
+                            'quicktags' => true,
+                        );
+                        // Make sure we have content for the editor
+                        if (empty($cta_subtitle)) {
+                            $cta_subtitle = 'Let\'s discuss how our automotive marketing expertise can drive more qualified leads to your dealership.';
+                        }
+                        wp_editor($cta_subtitle, 'automotive_cta_subtitle', $cta_subtitle_settings);
+                        ?>
+                        <p class="description">Add formatted subtitle text for the CTA section.</p>
+                    </td>
                 </tr>
                 <tr>
                     <th><label for="automotive_cta_primary_text">Primary Button Text</label></th>
@@ -611,7 +962,7 @@ function automotive_meta_box_callback($post) {
                 <div id="cta-benefits-container">
                     <?php foreach ($cta_benefits as $index => $benefit): ?>
                         <div class="list-item">
-                            <input type="text" name="automotive_cta_benefits[<?php echo $index; ?>]" value="<?php echo esc_attr($benefit); ?>" placeholder="? Benefit..." />
+                            <input type="text" name="automotive_cta_benefits[<?php echo $index; ?>]" value="<?php echo esc_attr($benefit); ?>" placeholder="✓ Benefit..." />
                             <button type="button" class="remove-list-item">Remove</button>
                         </div>
                     <?php endforeach; ?>
@@ -643,6 +994,84 @@ function automotive_meta_box_callback($post) {
             $('#overview-image-preview').html('');
         });
 
+        // Function to initialize all wp_editors in the page
+        function initAllEditors() {
+            if (typeof tinyMCE !== 'undefined') {
+                tinyMCE.init({
+                    mode: "textareas",
+                    editor_selector: "mceEditor"
+                });
+            }
+        }
+
+        // Replace a simple textarea with wp_editor for repeater items
+        function setupDynamicEditor(container, fieldName, editorId, content) {
+            // Decode HTML entities before setting in textarea
+            var decodedContent = $('<div/>').html(content).text();
+            
+            // If content is empty, set default placeholder text based on the field type
+            if (!decodedContent || decodedContent.trim() === '') {
+                if (fieldName.includes('services') && fieldName.includes('description')) {
+                    decodedContent = 'Dominate local search results when customers search for "car dealerships near me" or specific vehicle models in your area.';
+                } else if (fieldName.includes('process_steps') && fieldName.includes('description')) {
+                    decodedContent = 'We analyse your local automotive market, competitor strategies, and customer behaviour patterns.';
+                } else if (fieldName.includes('insights') && fieldName.includes('description')) {
+                    decodedContent = '95% of car buyers research vehicles online before visiting a dealership';
+                }
+            }
+            
+            var editorHTML = '<div id="wp-' + editorId + '-wrap" class="wp-core-ui wp-editor-wrap tmce-active">' +
+                '<div class="wp-editor-tools">' +
+                '<div class="wp-editor-tabs">' +
+                '<button type="button" class="wp-switch-editor switch-tmce" data-wp-editor-id="' + editorId + '">Visual</button>' +
+                '<button type="button" class="wp-switch-editor switch-html" data-wp-editor-id="' + editorId + '">Text</button>' +
+                '</div>' +
+                '</div>' +
+                '<div class="wp-editor-container">' +
+                '<textarea class="wp-editor-area mceEditor" name="' + fieldName + '" id="' + editorId + '">' + decodedContent + '</textarea>' +
+                '</div>' +
+                '</div>';
+            
+            container.html(editorHTML);
+            
+            // Initialize this editor
+            if (typeof tinyMCE !== 'undefined') {
+                tinyMCE.execCommand('mceAddEditor', false, editorId);
+            }
+            
+            // Initialize QuickTags
+            if (typeof quicktags !== 'undefined') {
+                quicktags({id: editorId, buttons: 'strong,em,link,ul,ol,li,code'});
+            }
+        }
+
+        // Function to initialize the rich text editor with error handling
+        function initializeDynamicEditor(container, fieldName, editorId, content) {
+            try {
+                // Debug - log initialization
+                console.log('Initializing editor: ' + editorId + ' with content length: ' + (content ? content.length : 0));
+                
+                // Setup the editor
+                setupDynamicEditor(container, fieldName, editorId, content);
+                
+                // Additional safety check to ensure content was properly set
+                setTimeout(function() {
+                    var editor = tinymce.get(editorId);
+                    if (editor) {
+                        var currentContent = editor.getContent();
+                        if (!currentContent && content) {
+                            console.log('Retry setting content for ' + editorId);
+                            editor.setContent(content);
+                        }
+                    }
+                }, 500);
+            } catch (e) {
+                console.error('Error initializing editor ' + editorId + ':', e);
+                // Fallback to textarea if editor initialization fails
+                $(container).html('<textarea name="' + fieldName + '" style="width:100%;min-height:150px;">' + content + '</textarea>');
+            }
+        }
+
         // Add/remove functionality for all repeaters and lists
         var repeaterConfigs = [
             {addBtn: '.add-service', container: '#services-container', prefix: 'automotive_services', type: 'service'},
@@ -670,7 +1099,7 @@ function automotive_meta_box_callback($post) {
                         '<button type="button" class="remove-item remove-service">Remove</button>' +
                         '<div class="item-field"><label>Icon:</label><input type="text" name="' + config.prefix + '[' + index + '][icon]" placeholder="fas fa-map-marker-alt" /></div>' +
                         '<div class="item-field"><label>Title:</label><input type="text" name="' + config.prefix + '[' + index + '][title]" placeholder="Service Title" /></div>' +
-                        '<div class="item-field"><label>Description:</label><textarea name="' + config.prefix + '[' + index + '][description]" placeholder="Service description..."></textarea></div>' +
+                        '<div class="item-field"><label>Description:</label><div class="editor-container" data-field-name="' + config.prefix + '[' + index + '][description]" data-editor-id="service_desc_' + index + '"></div></div>' +
                         '<div class="item-field"><label>Features:</label><textarea name="' + config.prefix + '[' + index + '][features]" placeholder="Feature 1\nFeature 2"></textarea></div>' +
                         '</div>';
                 } else if (config.type === 'result') {
@@ -683,14 +1112,14 @@ function automotive_meta_box_callback($post) {
                     html = '<div class="repeater-item">' +
                         '<button type="button" class="remove-item remove-step">Remove</button>' +
                         '<div class="item-field"><label>Title:</label><input type="text" name="' + config.prefix + '[' + index + '][title]" placeholder="Step Title" /></div>' +
-                        '<div class="item-field"><label>Description:</label><textarea name="' + config.prefix + '[' + index + '][description]" placeholder="Step description..."></textarea></div>' +
+                        '<div class="item-field"><label>Step Description:</label><div class="editor-container" data-field-name="' + config.prefix + '[' + index + '][description]" data-editor-id="step_desc_' + index + '"></div></div>' +
                         '</div>';
                 } else if (config.type === 'insight') {
                     html = '<div class="repeater-item">' +
                         '<button type="button" class="remove-item remove-insight">Remove</button>' +
                         '<div class="item-field"><label>Statistic:</label><input type="text" name="' + config.prefix + '[' + index + '][stat]" placeholder="95%" /></div>' +
                         '<div class="item-field"><label>Title:</label><input type="text" name="' + config.prefix + '[' + index + '][title]" placeholder="Insight Title" /></div>' +
-                        '<div class="item-field"><label>Description:</label><textarea name="' + config.prefix + '[' + index + '][description]" placeholder="Insight description..."></textarea></div>' +
+                        '<div class="item-field"><label>Description:</label><div class="editor-container" data-field-name="' + config.prefix + '[' + index + '][description]" data-editor-id="insight_desc_' + index + '"></div></div>' +
                         '</div>';
                 }
                 
@@ -703,8 +1132,21 @@ function automotive_meta_box_callback($post) {
             $(document).on('click', config.addBtn, function() {
                 var container = $(config.container);
                 var index = container.find('.list-item').length;
+                var placeholder = "Item...";
+                
+                // Set specific placeholders based on the field type
+                if (config.prefix === 'automotive_challenges') {
+                    placeholder = "Challenge...";
+                } else if (config.prefix === 'automotive_case_study_challenges') {
+                    placeholder = "Challenge...";
+                } else if (config.prefix === 'automotive_case_study_solutions') {
+                    placeholder = "Solution...";
+                } else if (config.prefix === 'automotive_cta_benefits') {
+                    placeholder = "✓ Benefit...";
+                }
+                
                 var html = '<div class="list-item">' +
-                    '<input type="text" name="' + config.prefix + '[' + index + ']" placeholder="Item..." />' +
+                    '<input type="text" name="' + config.prefix + '[' + index + ']" placeholder="' + placeholder + '" />' +
                     '<button type="button" class="remove-list-item">Remove</button>' +
                     '</div>';
                 container.append(html);
@@ -714,6 +1156,47 @@ function automotive_meta_box_callback($post) {
         // Remove items
         $(document).on('click', '.remove-item, .remove-list-item', function() {
             $(this).closest('.repeater-item, .list-item').remove();
+        });
+
+        // Initialize all editors on page load
+        initAllEditors();
+
+        // Re-initialize editors when a repeater item is added
+        $(document).on('click', '.add-service, .add-step, .add-insight', function() {
+            var config = repeaterConfigs.find(c => $(this).hasClass(c.addBtn.replace('.', '')));
+            if (config) {
+                var container = $(config.container);
+                var index = container.find('.repeater-item').length - 1;
+                var newItem = container.find('.repeater-item').last();
+                
+                // Find all editor containers in this new item
+                newItem.find('.editor-container').each(function() {
+                    var fieldName = $(this).data('field-name') || $(this).attr('data-field-name');
+                    var editorId = $(this).data('editor-id') || $(this).attr('data-editor-id');
+                    if (fieldName && editorId) {
+                        initializeDynamicEditor($(this), fieldName, editorId, '');
+                    }
+                });
+            }
+        });
+        
+        // Initialize any existing editor containers on load
+        $('.editor-container').each(function() {
+            var fieldName = $(this).data('field-name');
+            var editorId = $(this).data('editor-id');
+            
+            // Get the content from the container's innerHTML
+            var content = $(this).html().trim();
+            
+            // Create an element to decode HTML entities
+            var textarea = document.createElement('textarea');
+            textarea.innerHTML = content;
+            content = textarea.value;
+            
+            // Debug
+            console.log('Editor ID: ' + editorId + ', Content: ' + content);
+            
+            initializeDynamicEditor($(this), fieldName, editorId, content);
         });
     });
     </script>
@@ -776,7 +1259,106 @@ function save_automotive_meta_box_data($post_id) {
 
     foreach ($fields as $field => $meta_key) {
         if (isset($_POST[$field])) {
-            update_post_meta($post_id, $meta_key, sanitize_text_field($_POST[$field]));
+            // Apply different sanitization based on field type
+            if (in_array($field, [
+                'automotive_overview_content', 
+                'automotive_case_study_content', 
+                'automotive_testimonial_quote',
+                'automotive_header_subtitle',
+                'automotive_cta_subtitle',
+                'automotive_header_title',
+                'automotive_overview_title',
+                'automotive_challenges_title',
+                'automotive_services_title',
+                'automotive_case_study_label',
+                'automotive_case_study_title',
+                'automotive_case_study_challenge_title',
+                'automotive_case_study_solution_title',
+                'automotive_case_study_results_title',
+                'automotive_process_title',
+                'automotive_insights_title',
+                'automotive_cta_title'
+            ])) {
+            // For rich text fields, use wp_kses to allow certain HTML tags
+                $allowed_html = array(
+                    'p' => array(
+                        'style' => array(),
+                        'class' => array()
+                    ),
+                    'strong' => array(),
+                    'em' => array(),
+                    'b' => array(),
+                    'i' => array(),
+                    'u' => array(),
+                    'a' => array(
+                        'href' => array(),
+                        'title' => array(),
+                        'target' => array(),
+                        'rel' => array(),
+                        'class' => array()
+                    ),
+                    'ul' => array(
+                        'class' => array(),
+                        'style' => array()
+                    ),
+                    'ol' => array(
+                        'class' => array(),
+                        'style' => array()
+                    ),
+                    'li' => array(
+                        'class' => array(),
+                        'style' => array()
+                    ),
+                    'span' => array(
+                        'style' => array(),
+                        'class' => array()
+                    ),
+                    'br' => array(),
+                    'div' => array(
+                        'class' => array(),
+                        'style' => array(),
+                        'id' => array()
+                    ),
+                    'h1' => array(
+                        'class' => array(),
+                        'style' => array()
+                    ),
+                    'h2' => array(
+                        'class' => array(),
+                        'style' => array()
+                    ),
+                    'h3' => array(
+                        'class' => array(),
+                        'style' => array()
+                    ),
+                    'h4' => array(
+                        'class' => array(),
+                        'style' => array()
+                    ),
+                    'h5' => array(
+                        'class' => array(),
+                        'style' => array()
+                    ),
+                    'h6' => array(
+                        'class' => array(),
+                        'style' => array()
+                    ),
+                    'img' => array(
+                        'src' => array(),
+                        'alt' => array(),
+                        'title' => array(),
+                        'width' => array(),
+                        'height' => array(),
+                        'class' => array(),
+                        'style' => array()
+                    )
+                );
+                // Use the built-in wp_kses_post which is more permissive than our custom filter
+                update_post_meta($post_id, $meta_key, wp_kses_post($_POST[$field]));
+            } else {
+                // For regular text fields, use sanitize_text_field
+                update_post_meta($post_id, $meta_key, sanitize_text_field($_POST[$field]));
+            }
         }
     }
 
@@ -785,13 +1367,17 @@ function save_automotive_meta_box_data($post_id) {
         'automotive_challenges' => '_automotive_challenges',
         'automotive_case_study_challenges' => '_automotive_case_study_challenges',
         'automotive_case_study_solutions' => '_automotive_case_study_solutions',
-        'automotive_cta_benefits' => '_automotive_cta_benefits'
     );
 
     foreach ($array_fields as $field => $meta_key) {
         if (isset($_POST[$field])) {
-            update_post_meta($post_id, $meta_key, array_map('sanitize_text_field', $_POST[$field]));
+            update_post_meta($post_id, $meta_key, array_map('wp_kses_post', $_POST[$field]));
         }
+    }
+    
+    // Save CTA benefits with HTML
+    if (isset($_POST['automotive_cta_benefits'])) {
+        update_post_meta($post_id, '_automotive_cta_benefits', array_map('wp_kses_post', $_POST['automotive_cta_benefits']));
     }
 
     // Save complex repeater fields
@@ -800,9 +1386,9 @@ function save_automotive_meta_box_data($post_id) {
         foreach ($_POST['automotive_services'] as $service) {
             $services[] = array(
                 'icon' => sanitize_text_field($service['icon']),
-                'title' => sanitize_text_field($service['title']),
-                'description' => sanitize_textarea_field($service['description']),
-                'features' => array_filter(array_map('trim', explode("\n", sanitize_textarea_field($service['features']))))
+                'title' => wp_kses_post($service['title']),
+                'description' => wp_kses_post($service['description']),
+                'features' => array_filter(array_map('trim', explode("\n", wp_kses_post($service['features']))))
             );
         }
         update_post_meta($post_id, '_automotive_services', $services);
@@ -823,8 +1409,8 @@ function save_automotive_meta_box_data($post_id) {
         $steps = array();
         foreach ($_POST['automotive_process_steps'] as $step) {
             $steps[] = array(
-                'title' => sanitize_text_field($step['title']),
-                'description' => sanitize_textarea_field($step['description'])
+                'title' => wp_kses_post($step['title']),
+                'description' => wp_kses_post($step['description'])
             );
         }
         update_post_meta($post_id, '_automotive_process_steps', $steps);
@@ -835,8 +1421,8 @@ function save_automotive_meta_box_data($post_id) {
         foreach ($_POST['automotive_insights'] as $insight) {
             $insights[] = array(
                 'stat' => sanitize_text_field($insight['stat']),
-                'title' => sanitize_text_field($insight['title']),
-                'description' => sanitize_textarea_field($insight['description'])
+                'title' => wp_kses_post($insight['title']),
+                'description' => wp_kses_post($insight['description'])
             );
         }
         update_post_meta($post_id, '_automotive_insights', $insights);
