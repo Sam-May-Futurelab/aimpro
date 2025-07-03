@@ -841,7 +841,13 @@ function automotive_meta_box_callback($post) {
                             <div class="item-field">
                                 <label>Title:</label>
                                 <div class="editor-container" data-field-name="automotive_insights[<?php echo $index; ?>][title]" data-editor-id="insight_title_<?php echo $index; ?>">
-                                    <?php echo wp_kses_post($insight['title']); ?>
+                                    <?php 
+                                    // Make sure title doesn't have wrapping <p> tags
+                                    $title_content = wp_kses_post($insight['title']);
+                                    // Strip wrapping <p> tags if they exist
+                                    $title_content = preg_replace('/<p>(.*?)<\/p>/', '$1', $title_content);
+                                    echo $title_content; 
+                                    ?>
                                 </div>
                             </div>
                             <div class="item-field">
@@ -1118,7 +1124,7 @@ function automotive_meta_box_callback($post) {
                     html = '<div class="repeater-item">' +
                         '<button type="button" class="remove-item remove-insight">Remove</button>' +
                         '<div class="item-field"><label>Statistic:</label><input type="text" name="' + config.prefix + '[' + index + '][stat]" placeholder="95%" /></div>' +
-                        '<div class="item-field"><label>Title:</label><input type="text" name="' + config.prefix + '[' + index + '][title]" placeholder="Insight Title" /></div>' +
+                        '<div class="item-field"><label>Title:</label><div class="editor-container" data-field-name="' + config.prefix + '[' + index + '][title]" data-editor-id="insight_title_' + index + '"></div></div>' +
                         '<div class="item-field"><label>Description:</label><div class="editor-container" data-field-name="' + config.prefix + '[' + index + '][description]" data-editor-id="insight_desc_' + index + '"></div></div>' +
                         '</div>';
                 }
@@ -1419,9 +1425,13 @@ function save_automotive_meta_box_data($post_id) {
     if (isset($_POST['automotive_insights'])) {
         $insights = array();
         foreach ($_POST['automotive_insights'] as $insight) {
+            // For the title, strip wrapping <p> tags if they exist
+            $title = wp_kses_post($insight['title']);
+            $title = preg_replace('/<p>(.*?)<\/p>/', '$1', $title);
+            
             $insights[] = array(
                 'stat' => sanitize_text_field($insight['stat']),
-                'title' => wp_kses_post($insight['title']),
+                'title' => $title,
                 'description' => wp_kses_post($insight['description'])
             );
         }

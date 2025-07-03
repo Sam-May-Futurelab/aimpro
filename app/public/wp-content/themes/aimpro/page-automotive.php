@@ -400,7 +400,11 @@ $services = get_post_meta(get_the_ID(), '_automotive_services', true) ?: array()
                     );
                     ?>
                     <h2 class="section-title animate-on-scroll animate-fade-up" style="text-align: center;">
-                        <?php echo wp_kses_post($insights_title); ?>
+                        <?php 
+                        // Strip wrapping <p> tags from main insights title
+                        $formatted_insights_title = wp_kses_post($insights_title);
+                        echo preg_replace('/<p>(.*?)<\/p>/', '$1', $formatted_insights_title); 
+                        ?>
                         <style>
                         .automotive-insights .section-title::after {
                             left: 50%;
@@ -413,7 +417,11 @@ $services = get_post_meta(get_the_ID(), '_automotive_services', true) ?: array()
                         <div class="stat-item animate-on-scroll animate-stagger animate-scale-up">
                             <div class="stat-number"><?php echo esc_html($insight['stat']); ?></div>
                             <div class="stat-content">
-                                <h3 class="stat-title"><?php echo esc_html($insight['title']); ?></h3>
+                                <h3 class="stat-title"><?php 
+                                    // Strip wrapping <p> tags from titles
+                                    $title = wp_kses_post($insight['title']);
+                                    echo preg_replace('/<p>(.*?)<\/p>/', '$1', $title); 
+                                ?></h3>
                                 <div class="stat-description">
                                     <?php echo wp_kses_post($insight['description']); ?>
                                 </div>
