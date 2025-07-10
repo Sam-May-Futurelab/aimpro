@@ -60,11 +60,17 @@ function events_webinars_meta_box_callback($post) {
         <table class="events-meta-table">
             <tr>
                 <th><label for="header_title">Header Title</label></th>
-                <td><input type="text" id="header_title" name="events_webinars_header_title" value="<?php echo esc_attr($header_title); ?>" /></td>
+                <td>
+                    <?php wp_editor($header_title, 'events_webinars_header_title', array('textarea_rows' => 3, 'media_buttons' => false)); ?>
+                    <p class="description">Main page heading. HTML allowed for formatting.</p>
+                </td>
             </tr>
             <tr>
                 <th><label for="header_subtitle">Header Subtitle</label></th>
-                <td><textarea id="header_subtitle" name="events_webinars_header_subtitle" rows="2"><?php echo esc_textarea($header_subtitle); ?></textarea></td>
+                <td>
+                    <?php wp_editor($header_subtitle, 'events_webinars_header_subtitle', array('textarea_rows' => 4, 'media_buttons' => false)); ?>
+                    <p class="description">Subtitle text below the main heading.</p>
+                </td>
             </tr>
         </table>
     </div>
@@ -74,11 +80,17 @@ function events_webinars_meta_box_callback($post) {
         <table class="events-meta-table">
             <tr>
                 <th><label for="intro_title">Intro Title</label></th>
-                <td><input type="text" id="intro_title" name="events_webinars_intro_title" value="<?php echo esc_attr($intro_title); ?>" /></td>
+                <td>
+                    <?php wp_editor($intro_title, 'events_webinars_intro_title', array('textarea_rows' => 3, 'media_buttons' => false)); ?>
+                    <p class="description">Introduction section heading.</p>
+                </td>
             </tr>
             <tr>
                 <th><label for="intro_content">Intro Content</label></th>
-                <td><textarea id="intro_content" name="events_webinars_intro_content" rows="3"><?php echo esc_textarea($intro_content); ?></textarea></td>
+                <td>
+                    <?php wp_editor($intro_content, 'events_webinars_intro_content', array('textarea_rows' => 6, 'media_buttons' => false)); ?>
+                    <p class="description">Introduction section content text.</p>
+                </td>
             </tr>
         </table>
     </div>
@@ -88,11 +100,17 @@ function events_webinars_meta_box_callback($post) {
         <table class="events-meta-table">
             <tr>
                 <th><label for="ondemand_title">Section Title</label></th>
-                <td><input type="text" id="ondemand_title" name="events_webinars_ondemand_title" value="<?php echo esc_attr($ondemand_title); ?>" /></td>
+                <td>
+                    <?php wp_editor($ondemand_title, 'events_webinars_ondemand_title', array('textarea_rows' => 3, 'media_buttons' => false)); ?>
+                    <p class="description">Heading for the on-demand webinars section.</p>
+                </td>
             </tr>
             <tr>
                 <th><label for="ondemand_subtitle">Section Subtitle</label></th>
-                <td><textarea id="ondemand_subtitle" name="events_webinars_ondemand_subtitle" rows="2"><?php echo esc_textarea($ondemand_subtitle); ?></textarea></td>
+                <td>
+                    <?php wp_editor($ondemand_subtitle, 'events_webinars_ondemand_subtitle', array('textarea_rows' => 4, 'media_buttons' => false)); ?>
+                    <p class="description">Subtitle for the on-demand webinars section.</p>
+                </td>
             </tr>
         </table>
         
@@ -161,11 +179,15 @@ function events_webinars_meta_box_callback($post) {
                     <table class="events-meta-table">
                         <tr>
                             <th>Title</th>
-                            <td><input type="text" name="events_webinars_ondemand_webinars[<?php echo $index; ?>][title]" value="<?php echo esc_attr($webinar['title'] ?? ''); ?>" /></td>
+                            <td>
+                                <?php wp_editor($webinar['title'] ?? '', 'events_webinars_ondemand_webinars_' . $index . '_title', array('textarea_rows' => 3, 'media_buttons' => false, 'textarea_name' => 'events_webinars_ondemand_webinars[' . $index . '][title]')); ?>
+                            </td>
                         </tr>
                         <tr>
                             <th>Description</th>
-                            <td><textarea name="events_webinars_ondemand_webinars[<?php echo $index; ?>][description]" rows="2"><?php echo esc_textarea($webinar['description'] ?? ''); ?></textarea></td>
+                            <td>
+                                <?php wp_editor($webinar['description'] ?? '', 'events_webinars_ondemand_webinars_' . $index . '_description', array('textarea_rows' => 4, 'media_buttons' => false, 'textarea_name' => 'events_webinars_ondemand_webinars[' . $index . '][description]')); ?>
+                            </td>
                         </tr>
                         <tr>
                             <th>Duration</th>
@@ -216,7 +238,9 @@ function events_webinars_meta_box_callback($post) {
         <table class="events-meta-table">
             <tr>
                 <th><label>Badge Text</label></th>
-                <td><input type="text" name="featured_event_badge" value="<?php echo esc_attr($featured_event['badge'] ?? ''); ?>" /></td>
+                <td>
+                    <?php wp_editor($featured_event['badge'] ?? '', 'featured_event_badge_editor', array('textarea_rows' => 2, 'media_buttons' => false, 'textarea_name' => 'featured_event_badge')); ?>
+                </td>
             </tr>
             <tr>
                 <th><label>Date</label></th>
@@ -228,23 +252,33 @@ function events_webinars_meta_box_callback($post) {
             </tr>
             <tr>
                 <th><label>Type</label></th>
-                <td><input type="text" name="featured_event_type" value="<?php echo esc_attr($featured_event['type'] ?? ''); ?>" placeholder="e.g. Live Webinar" /></td>
+                <td>
+                    <?php wp_editor($featured_event['type'] ?? '', 'featured_event_type_editor', array('textarea_rows' => 2, 'media_buttons' => false, 'textarea_name' => 'featured_event_type')); ?>
+                </td>
             </tr>
             <tr>
                 <th><label>Title</label></th>
-                <td><input type="text" name="featured_event_title" value="<?php echo esc_attr($featured_event['title'] ?? ''); ?>" /></td>
+                <td>
+                    <?php wp_editor($featured_event['title'] ?? '', 'featured_event_title_editor', array('textarea_rows' => 3, 'media_buttons' => false, 'textarea_name' => 'featured_event_title')); ?>
+                </td>
             </tr>
             <tr>
                 <th><label>Description</label></th>
-                <td><textarea name="featured_event_description" rows="3"><?php echo esc_textarea($featured_event['description'] ?? ''); ?></textarea></td>
+                <td>
+                    <?php wp_editor($featured_event['description'] ?? '', 'featured_event_description_editor', array('textarea_rows' => 5, 'media_buttons' => false, 'textarea_name' => 'featured_event_description')); ?>
+                </td>
             </tr>
             <tr>
                 <th><label>Price</label></th>
-                <td><input type="text" name="featured_event_price" value="<?php echo esc_attr($featured_event['price'] ?? ''); ?>" placeholder="e.g. Free Event" /></td>
+                <td>
+                    <?php wp_editor($featured_event['price'] ?? '', 'featured_event_price_editor', array('textarea_rows' => 2, 'media_buttons' => false, 'textarea_name' => 'featured_event_price')); ?>
+                </td>
             </tr>
             <tr>
                 <th><label>Seats Info</label></th>
-                <td><input type="text" name="featured_event_seats" value="<?php echo esc_attr($featured_event['seats'] ?? ''); ?>" placeholder="e.g. 42 seats remaining" /></td>
+                <td>
+                    <?php wp_editor($featured_event['seats'] ?? '', 'featured_event_seats_editor', array('textarea_rows' => 2, 'media_buttons' => false, 'textarea_name' => 'featured_event_seats')); ?>
+                </td>
             </tr>
         </table>
     </div>
@@ -282,23 +316,33 @@ function events_webinars_meta_box_callback($post) {
                         </tr>
                         <tr>
                             <th>Format</th>
-                            <td><input type="text" name="upcoming_events[<?php echo $index; ?>][format]" value="<?php echo esc_attr($event['format'] ?? ''); ?>" placeholder="e.g. Workshop" /></td>
+                            <td>
+                                <?php wp_editor($event['format'] ?? '', 'upcoming_events_' . $index . '_format', array('textarea_rows' => 2, 'media_buttons' => false, 'textarea_name' => 'upcoming_events[' . $index . '][format]')); ?>
+                            </td>
                         </tr>
                         <tr>
                             <th>Title</th>
-                            <td><input type="text" name="upcoming_events[<?php echo $index; ?>][title]" value="<?php echo esc_attr($event['title'] ?? ''); ?>" /></td>
+                            <td>
+                                <?php wp_editor($event['title'] ?? '', 'upcoming_events_' . $index . '_title', array('textarea_rows' => 3, 'media_buttons' => false, 'textarea_name' => 'upcoming_events[' . $index . '][title]')); ?>
+                            </td>
                         </tr>
                         <tr>
                             <th>Description</th>
-                            <td><textarea name="upcoming_events[<?php echo $index; ?>][description]" rows="2"><?php echo esc_textarea($event['description'] ?? ''); ?></textarea></td>
+                            <td>
+                                <?php wp_editor($event['description'] ?? '', 'upcoming_events_' . $index . '_description', array('textarea_rows' => 4, 'media_buttons' => false, 'textarea_name' => 'upcoming_events[' . $index . '][description]')); ?>
+                            </td>
                         </tr>
                         <tr>
                             <th>Attendees</th>
-                            <td><input type="text" name="upcoming_events[<?php echo $index; ?>][attendees]" value="<?php echo esc_attr($event['attendees'] ?? ''); ?>" placeholder="e.g. 156 registered" /></td>
+                            <td>
+                                <?php wp_editor($event['attendees'] ?? '', 'upcoming_events_' . $index . '_attendees', array('textarea_rows' => 2, 'media_buttons' => false, 'textarea_name' => 'upcoming_events[' . $index . '][attendees]')); ?>
+                            </td>
                         </tr>
                         <tr>
                             <th>Price</th>
-                            <td><input type="text" name="upcoming_events[<?php echo $index; ?>][price]" value="<?php echo esc_attr($event['price'] ?? ''); ?>" placeholder="e.g. £49 or Free" /></td>
+                            <td>
+                                <?php wp_editor($event['price'] ?? '', 'upcoming_events_' . $index . '_price', array('textarea_rows' => 2, 'media_buttons' => false, 'textarea_name' => 'upcoming_events[' . $index . '][price]')); ?>
+                            </td>
                         </tr>
                     </table>
                 </div>
@@ -314,11 +358,17 @@ function events_webinars_meta_box_callback($post) {
         <table class="events-meta-table">
             <tr>
                 <th><label for="newsletter_title">Newsletter Title</label></th>
-                <td><input type="text" id="newsletter_title" name="events_webinars_newsletter_title" value="<?php echo esc_attr($newsletter_title); ?>" /></td>
+                <td>
+                    <?php wp_editor($newsletter_title, 'events_webinars_newsletter_title', array('textarea_rows' => 3, 'media_buttons' => false)); ?>
+                    <p class="description">Newsletter section heading.</p>
+                </td>
             </tr>
             <tr>
                 <th><label for="newsletter_content">Newsletter Content</label></th>
-                <td><textarea id="newsletter_content" name="events_webinars_newsletter_content" rows="2"><?php echo esc_textarea($newsletter_content); ?></textarea></td>
+                <td>
+                    <?php wp_editor($newsletter_content, 'events_webinars_newsletter_content', array('textarea_rows' => 4, 'media_buttons' => false)); ?>
+                    <p class="description">Newsletter section description text.</p>
+                </td>
             </tr>
         </table>
     </div>
@@ -399,19 +449,19 @@ function save_events_webinars_meta($post_id) {
         return;
     }
 
-    // Save all fields safely
-    $fields = array(
-        'events_webinars_header_title' => 'sanitize_text_field',
-        'events_webinars_header_subtitle' => 'sanitize_textarea_field',
-        'events_webinars_intro_title' => 'sanitize_text_field',
-        'events_webinars_intro_content' => 'sanitize_textarea_field',
-        'events_webinars_newsletter_title' => 'sanitize_text_field',
-        'events_webinars_newsletter_content' => 'sanitize_textarea_field',
-        'events_webinars_ondemand_title' => 'sanitize_text_field',
-        'events_webinars_ondemand_subtitle' => 'sanitize_textarea_field'
+    // Save all fields safely with proper sanitization for rich text
+    $rich_text_fields = array(
+        'events_webinars_header_title' => 'wp_kses_post',
+        'events_webinars_header_subtitle' => 'wp_kses_post',
+        'events_webinars_intro_title' => 'wp_kses_post',
+        'events_webinars_intro_content' => 'wp_kses_post',
+        'events_webinars_newsletter_title' => 'wp_kses_post',
+        'events_webinars_newsletter_content' => 'wp_kses_post',
+        'events_webinars_ondemand_title' => 'wp_kses_post',
+        'events_webinars_ondemand_subtitle' => 'wp_kses_post'
     );
 
-    foreach ($fields as $field => $sanitize_function) {
+    foreach ($rich_text_fields as $field => $sanitize_function) {
         if (isset($_POST[$field])) {
             $value = $sanitize_function($_POST[$field]);
             update_post_meta($post_id, '_' . $field, $value);
@@ -425,8 +475,8 @@ function save_events_webinars_meta($post_id) {
         foreach ($_POST['events_webinars_ondemand_webinars'] as $webinar_data) {
             if (is_array($webinar_data) && !empty($webinar_data['title'])) {
                 $webinars[] = array(
-                    'title' => sanitize_text_field($webinar_data['title']),
-                    'description' => sanitize_textarea_field($webinar_data['description'] ?? ''),
+                    'title' => wp_kses_post($webinar_data['title']),
+                    'description' => wp_kses_post($webinar_data['description'] ?? ''),
                     'duration' => sanitize_text_field($webinar_data['duration'] ?? ''),
                     'views' => sanitize_text_field($webinar_data['views'] ?? ''),
                     'rating' => sanitize_text_field($webinar_data['rating'] ?? ''),
@@ -439,16 +489,16 @@ function save_events_webinars_meta($post_id) {
         update_post_meta($post_id, '_events_webinars_ondemand_webinars', $webinars);
     }
 
-    // Handle featured event
+    // Handle featured event with proper rich text sanitization
     $featured_event = array(
-        'badge' => sanitize_text_field($_POST['featured_event_badge'] ?? ''),
+        'badge' => wp_kses_post($_POST['featured_event_badge'] ?? ''),
         'date' => sanitize_text_field($_POST['featured_event_date'] ?? ''),
         'time' => sanitize_text_field($_POST['featured_event_time'] ?? ''),
-        'type' => sanitize_text_field($_POST['featured_event_type'] ?? ''),
-        'title' => sanitize_text_field($_POST['featured_event_title'] ?? ''),
-        'description' => sanitize_textarea_field($_POST['featured_event_description'] ?? ''),
-        'price' => sanitize_text_field($_POST['featured_event_price'] ?? ''),
-        'seats' => sanitize_text_field($_POST['featured_event_seats'] ?? '')
+        'type' => wp_kses_post($_POST['featured_event_type'] ?? ''),
+        'title' => wp_kses_post($_POST['featured_event_title'] ?? ''),
+        'description' => wp_kses_post($_POST['featured_event_description'] ?? ''),
+        'price' => wp_kses_post($_POST['featured_event_price'] ?? ''),
+        'seats' => wp_kses_post($_POST['featured_event_seats'] ?? '')
     );
     update_post_meta($post_id, '_events_webinars_featured_event', $featured_event);
 
@@ -462,11 +512,11 @@ function save_events_webinars_meta($post_id) {
                     'month' => sanitize_text_field($event_data['month'] ?? ''),
                     'day' => sanitize_text_field($event_data['day'] ?? ''),
                     'time' => sanitize_text_field($event_data['time'] ?? ''),
-                    'format' => sanitize_text_field($event_data['format'] ?? ''),
-                    'title' => sanitize_text_field($event_data['title']),
-                    'description' => sanitize_textarea_field($event_data['description'] ?? ''),
-                    'attendees' => sanitize_text_field($event_data['attendees'] ?? ''),
-                    'price' => sanitize_text_field($event_data['price'] ?? '')
+                    'format' => wp_kses_post($event_data['format'] ?? ''),
+                    'title' => wp_kses_post($event_data['title']),
+                    'description' => wp_kses_post($event_data['description'] ?? ''),
+                    'attendees' => wp_kses_post($event_data['attendees'] ?? ''),
+                    'price' => wp_kses_post($event_data['price'] ?? '')
                 );
             }
         }

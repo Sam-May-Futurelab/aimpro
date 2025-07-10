@@ -815,5 +815,3 @@ function save_estate_agents_meta_box_data($post_id) {
     }
 }
 add_action('save_post', 'save_estate_agents_meta_box_data');
-?>
-

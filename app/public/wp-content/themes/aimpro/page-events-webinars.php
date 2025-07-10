@@ -185,15 +185,15 @@ $newsletter_content = get_post_meta(get_the_ID(), '_events_webinars_newsletter_c
           <!-- Page Header -->
         <section class="page-header animate-on-scroll animate-fade-up">
             <div class="page-header-content">
-                <h1><?php echo esc_html($header_title); ?></h1>
-                <p class="page-subtitle"><?php echo esc_html($header_subtitle); ?></p>
+                <h1><?php echo wp_kses_post($header_title); ?></h1>
+                <p class="page-subtitle"><?php echo wp_kses_post($header_subtitle); ?></p>
             </div>
         </section>        <!-- Events Introduction -->
         <section class="events-intro animate-on-scroll animate-fade-up">
             <div class="section-content">
                 <div class="intro-content animate-on-scroll animate-slide-left">
-                    <h2><?php echo esc_html($intro_title); ?></h2>
-                    <p><?php echo esc_html($intro_content); ?></p>
+                    <h2><?php echo wp_kses_post($intro_title); ?></h2>
+                    <p><?php echo wp_kses_post($intro_content); ?></p>
                 </div>
                 <div class="event-stats animate-on-scroll animate-slide-right">
                     <?php foreach ($stats as $stat): ?>
@@ -208,15 +208,15 @@ $newsletter_content = get_post_meta(get_the_ID(), '_events_webinars_newsletter_c
         <section class="featured-event animate-on-scroll animate-fade-up">
             <div class="section-content">
                 <div class="event-featured animate-on-scroll animate-slide-up">
-                    <div class="event-badge"><?php echo esc_html($featured_event['badge']); ?></div>
+                    <div class="event-badge"><?php echo wp_kses_post($featured_event['badge']); ?></div>
                     <div class="event-content">
                         <div class="event-meta">
                             <span class="event-date"><?php echo esc_html($featured_event['date']); ?></span>
                             <span class="event-time"><?php echo esc_html($featured_event['time']); ?></span>
-                            <span class="event-type"><?php echo esc_html($featured_event['type']); ?></span>
+                            <span class="event-type"><?php echo wp_kses_post($featured_event['type']); ?></span>
                         </div>
-                        <h2><?php echo esc_html($featured_event['title']); ?></h2>
-                        <p class="event-description"><?php echo esc_html($featured_event['description']); ?></p>
+                        <h2><?php echo wp_kses_post($featured_event['title']); ?></h2>
+                        <p class="event-description"><?php echo wp_kses_post($featured_event['description']); ?></p>
                           <?php if (!empty($featured_event['speakers']) && is_array($featured_event['speakers'])): ?>
                         <div class="event-speakers animate-on-scroll animate-fade-up">
                             <h3>Featured Speakers</h3>
@@ -225,8 +225,8 @@ $newsletter_content = get_post_meta(get_the_ID(), '_events_webinars_newsletter_c
                                     <?php if (is_array($speaker) && isset($speaker['name']) && isset($speaker['title'])): ?>
                                     <div class="speaker">
                                         <div class="speaker-info">
-                                            <h4><?php echo esc_html($speaker['name']); ?></h4>
-                                            <span><?php echo esc_html($speaker['title']); ?></span>
+                                            <h4><?php echo wp_kses_post($speaker['name']); ?></h4>
+                                            <span><?php echo wp_kses_post($speaker['title']); ?></span>
                                         </div>
                                     </div>
                                     <?php endif; ?>
@@ -240,7 +240,7 @@ $newsletter_content = get_post_meta(get_the_ID(), '_events_webinars_newsletter_c
                             <h3>What You'll Learn</h3>
                             <ul>
                                 <?php foreach ($featured_event['agenda'] as $item): ?>
-                                    <li><?php echo esc_html($item); ?></li>
+                                    <li><?php echo wp_kses_post($item); ?></li>
                                 <?php endforeach; ?>
                             </ul>
                         </div>
@@ -271,10 +271,10 @@ $newsletter_content = get_post_meta(get_the_ID(), '_events_webinars_newsletter_c
                             <div class="event-content">
                                 <div class="event-meta">
                                     <span class="event-time"><?php echo esc_html($event['time']); ?></span>
-                                    <span class="event-format"><?php echo esc_html($event['format']); ?></span>
+                                    <span class="event-format"><?php echo wp_kses_post($event['format']); ?></span>
                                 </div>
-                                <h3><?php echo esc_html($event['title']); ?></h3>
-                                <p><?php echo esc_html($event['description']); ?></p>
+                                <h3><?php echo wp_kses_post($event['title']); ?></h3>
+                                <p><?php echo wp_kses_post($event['description']); ?></p>
                                 <div class="event-details">
                                     <span class="attendees"><?php echo esc_html($event['attendees']); ?></span>
                                     <span class="price"><?php echo esc_html($event['price']); ?></span>
@@ -290,8 +290,8 @@ $newsletter_content = get_post_meta(get_the_ID(), '_events_webinars_newsletter_c
         <?php if (!empty($ondemand_webinars)): ?>
         <section class="past-events animate-on-scroll animate-fade-up">
             <div class="section-content">
-                <h2 class="animate-on-scroll animate-fade-up"><?php echo esc_html($ondemand_title); ?></h2>
-                <p class="section-subtitle animate-on-scroll animate-fade-up"><?php echo esc_html($ondemand_subtitle); ?></p>
+                <h2 class="animate-on-scroll animate-fade-up"><?php echo wp_kses_post($ondemand_title); ?></h2>
+                <p class="section-subtitle animate-on-scroll animate-fade-up"><?php echo wp_kses_post($ondemand_subtitle); ?></p>
                 
                 <div class="on-demand-grid animate-on-scroll animate-fade-up">
                     <?php foreach ($ondemand_webinars as $index => $webinar): ?>
@@ -328,8 +328,8 @@ $newsletter_content = get_post_meta(get_the_ID(), '_events_webinars_newsletter_c
                                 <div class="duration"><?php echo esc_html($webinar['duration']); ?></div>
                             </div>
                             <div class="event-info">
-                                <h3><?php echo esc_html($webinar['title']); ?></h3>
-                                <p><?php echo esc_html($webinar['description']); ?></p>
+                                <h3><?php echo wp_kses_post($webinar['title']); ?></h3>
+                                <p><?php echo wp_kses_post($webinar['description']); ?></p>
                                 <div class="on-demand-event-stats">
                                     <span class="views"><?php echo esc_html($webinar['views']); ?></span>
                                     <span class="rating"><?php echo esc_html($webinar['rating']); ?></span>
@@ -347,8 +347,8 @@ $newsletter_content = get_post_meta(get_the_ID(), '_events_webinars_newsletter_c
                 <h2 class="animate-on-scroll animate-fade-up"><?php echo esc_html($categories_title); ?></h2>
                 <div class="categories-grid categories-grid-four animate-on-scroll animate-fade-up">                    <?php foreach ($event_categories as $category): ?>
                         <div class="category-card animate-on-scroll animate-stagger animate-fade-up">
-                            <h3><?php echo esc_html($category['title']); ?></h3>
-                            <p><?php echo esc_html($category['description']); ?></p>
+                            <h3><?php echo wp_kses_post($category['title']); ?></h3>
+                            <p><?php echo wp_kses_post($category['description']); ?></p>
                             <span class="category-frequency"><?php echo esc_html($category['frequency']); ?></span>
                         </div>
                     <?php endforeach; ?>
@@ -358,8 +358,8 @@ $newsletter_content = get_post_meta(get_the_ID(), '_events_webinars_newsletter_c
         <?php endif; ?>        <!-- Newsletter & Updates -->
         <section class="events-newsletter animate-on-scroll animate-fade-up">
             <div class="section-content">
-                <h2 class="animate-on-scroll animate-fade-up"><?php echo esc_html($newsletter_title); ?></h2>
-                <p class="animate-on-scroll animate-fade-up"><?php echo esc_html($newsletter_content); ?></p>
+                <h2 class="animate-on-scroll animate-fade-up"><?php echo wp_kses_post($newsletter_title); ?></h2>
+                <p class="animate-on-scroll animate-fade-up"><?php echo wp_kses_post($newsletter_content); ?></p>
                 <form class="newsletter-form animate-on-scroll animate-fade-up" id="newsletter-form">
                     <div class="form-group">
                         <input type="text" name="subscriber_name" placeholder="Enter your name" required>
