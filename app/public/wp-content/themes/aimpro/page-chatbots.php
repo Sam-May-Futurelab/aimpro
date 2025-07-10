@@ -179,87 +179,91 @@ function get_chatbot_field($field_key, $post_id = null) {
     <section class="tools-section">
         <div class="container">
             <div class="section-header animate-on-scroll animate-fade-up">
-                <h2>Advanced Chatbot Features</h2>
-                <p>Cutting-edge AI capabilities that make our chatbots intelligent, responsive, and highly effective.</p>
+                <?php 
+                    $features_title = get_post_meta(get_the_ID(), '_chatbots_features_title', true);
+                    if (empty($features_title)) $features_title = 'Advanced Chatbot Features';
+                ?>
+                <h2><?php echo wp_kses_post($features_title); ?></h2>
+                <?php 
+                    $features_subtitle = get_post_meta(get_the_ID(), '_chatbots_features_subtitle', true);
+                    if (empty($features_subtitle)) $features_subtitle = 'Cutting-edge AI capabilities that make our chatbots intelligent, responsive, and highly effective.';
+                ?>
+                <p><?php echo wp_kses_post($features_subtitle); ?></p>
             </div>
             <div class="tools-grid">
+                <?php 
+                // Default feature values
+                $defaults = array(
+                    1 => array('icon' => 'fas fa-brain', 'title' => 'Natural Language Processing', 'content' => 'Understanding context, intent, and nuance in human conversation for more natural interactions.'),
+                    2 => array('icon' => 'fas fa-user-tag', 'title' => 'Personalisation', 'content' => 'Tailored responses based on user behaviour, location, and previous interactions for relevant experiences.'),
+                    3 => array('icon' => 'fas fa-globe', 'title' => 'Multi-language Support', 'content' => 'Communicate with global audiences in their preferred language with automatic translation capabilities.'),
+                    4 => array('icon' => 'fas fa-mobile-alt', 'title' => 'Multi-platform Integration', 'content' => 'Deploy across website, Facebook Messenger, WhatsApp, and other messaging platforms seamlessly.'),
+                    5 => array('icon' => 'fas fa-hand-paper', 'title' => 'Human Handoff', 'content' => 'Smart escalation to human agents when conversations require personal attention or complex problem-solving.'),
+                    6 => array('icon' => 'fas fa-chart-line', 'title' => 'Advanced Analytics', 'content' => 'Detailed insights into conversation patterns, user satisfaction, and optimisation opportunities.')
+                );
+                
+                for ($i = 1; $i <= 6; $i++): 
+                    $feature_icon = get_post_meta(get_the_ID(), '_chatbots_feature_icon_' . $i, true);
+                    if (empty($feature_icon)) $feature_icon = $defaults[$i]['icon'];
+                    
+                    $feature_title = get_post_meta(get_the_ID(), '_chatbots_feature_title_' . $i, true);
+                    if (empty($feature_title)) $feature_title = $defaults[$i]['title'];
+                    
+                    $feature_content = get_post_meta(get_the_ID(), '_chatbots_feature_content_' . $i, true);
+                    if (empty($feature_content)) $feature_content = $defaults[$i]['content'];
+                    
+                    if ($feature_title): 
+                ?>
                 <div class="tool-item animate-on-scroll animate-stagger animate-fade-up">
                     <div class="tool-icon">
-                        <i class="fas fa-brain"></i>
+                        <i class="<?php echo esc_attr($feature_icon); ?>"></i>
                     </div>
-                    <h3>Natural Language Processing</h3>
-                    <p>Understanding context, intent, and nuance in human conversation for more natural interactions.</p>
+                    <h3><?php echo wp_kses_post($feature_title); ?></h3>
+                    <p><?php echo wp_kses_post($feature_content); ?></p>
                 </div>
-                <div class="tool-item animate-on-scroll animate-stagger animate-fade-up">
-                    <div class="tool-icon">
-                        <i class="fas fa-user-cog"></i>
-                    </div>
-                    <h3>Personalisation</h3>
-                    <p>Tailored responses based on user behaviour, location, and previous interactions for relevant experiences.</p>
-                </div>
-                <div class="tool-item animate-on-scroll animate-stagger animate-fade-up">
-                    <div class="tool-icon">
-                        <i class="fas fa-language"></i>
-                    </div>
-                    <h3>Multi-language Support</h3>
-                    <p>Communicate with global audiences in their preferred language with automatic translation capabilities.</p>
-                </div>
-                <div class="tool-item animate-on-scroll animate-stagger animate-fade-up">
-                    <div class="tool-icon">
-                        <i class="fas fa-comments"></i>
-                    </div>
-                    <h3>Multi-platform Integration</h3>
-                    <p>Deploy across website, Facebook Messenger, WhatsApp, and other messaging platforms seamlessly.</p>
-                </div>
-                <div class="tool-item animate-on-scroll animate-stagger animate-fade-up">
-                    <div class="tool-icon">
-                        <i class="fas fa-user-tie"></i>
-                    </div>
-                    <h3>Human Handoff</h3>
-                    <p>Smart escalation to human agents when conversations require personal attention or complex problem-solving.</p>
-                </div>
-                <div class="tool-item animate-on-scroll animate-stagger animate-fade-up">
-                    <div class="tool-icon">
-                        <i class="fas fa-chart-line"></i>
-                    </div>
-                    <h3>Advanced Analytics</h3>
-                    <p>Detailed insights into conversation patterns, user satisfaction, and optimisation opportunities.</p>
-                </div>
+                <?php endif; ?>
+                <?php endfor; ?>
             </div>
         </div>
     </section>    <!-- Platforms Section -->
     <section class="tools-section">
         <div class="container">
-            <h2 class="animate-on-scroll animate-fade-up">Chatbot Platforms We Use</h2>
+            <?php 
+                $platforms_title = get_post_meta(get_the_ID(), '_chatbots_platforms_title', true);
+                if (empty($platforms_title)) $platforms_title = 'Chatbot Platforms We Use';
+            ?>
+            <h2 class="animate-on-scroll animate-fade-up"><?php echo wp_kses_post($platforms_title); ?></h2>
             <div class="tools-grid">
+                <?php 
+                // Default platform values
+                $platform_defaults = array(
+                    1 => array('icon' => 'fas fa-comments', 'title' => 'Intercom', 'content' => 'Advanced conversational AI platform with sophisticated automation and customer support integration.'),
+                    2 => array('icon' => 'fas fa-robot', 'title' => 'Chatfuel', 'content' => 'User-friendly bot builder with powerful AI capabilities and multi-platform deployment options.'),
+                    3 => array('icon' => 'fab fa-microsoft', 'title' => 'Microsoft Bot Framework', 'content' => 'Enterprise-grade development platform for sophisticated, custom chatbot solutions.'),
+                    4 => array('icon' => 'fas fa-cog', 'title' => 'ManyChat', 'content' => 'Marketing-focused chatbot platform with excellent social media and automation integrations.')
+                );
+                
+                for ($i = 1; $i <= 4; $i++): 
+                    $platform_icon = get_post_meta(get_the_ID(), '_chatbots_platform_icon_' . $i, true);
+                    if (empty($platform_icon)) $platform_icon = $platform_defaults[$i]['icon'];
+                    
+                    $platform_title = get_post_meta(get_the_ID(), '_chatbots_platform_title_' . $i, true);
+                    if (empty($platform_title)) $platform_title = $platform_defaults[$i]['title'];
+                    
+                    $platform_content = get_post_meta(get_the_ID(), '_chatbots_platform_content_' . $i, true);
+                    if (empty($platform_content)) $platform_content = $platform_defaults[$i]['content'];
+                    
+                    if ($platform_title): 
+                ?>
                 <div class="tool-item animate-on-scroll animate-stagger animate-fade-up">
                     <div class="tool-icon">
-                        <i class="fas fa-intercom"></i>
+                        <i class="<?php echo esc_attr($platform_icon); ?>"></i>
                     </div>
-                    <h3>Intercom</h3>
-                    <p>Advanced conversational AI platform with sophisticated automation and customer support integration.</p>
+                    <h3><?php echo wp_kses_post($platform_title); ?></h3>
+                    <p><?php echo wp_kses_post($platform_content); ?></p>
                 </div>
-                <div class="tool-item animate-on-scroll animate-stagger animate-fade-up">
-                    <div class="tool-icon">
-                        <i class="fas fa-robot"></i>
-                    </div>
-                    <h3>Chatfuel</h3>
-                    <p>User-friendly bot builder with powerful AI capabilities and multi-platform deployment options.</p>
-                </div>
-                <div class="tool-item animate-on-scroll animate-stagger animate-fade-up">
-                    <div class="tool-icon">
-                        <i class="fab fa-microsoft"></i>
-                    </div>
-                    <h3>Microsoft Bot Framework</h3>
-                    <p>Enterprise-grade development platform for sophisticated, custom chatbot solutions.</p>
-                </div>
-                <div class="tool-item animate-on-scroll animate-stagger animate-fade-up">
-                    <div class="tool-icon">
-                        <i class="fas fa-comment-dots"></i>
-                    </div>
-                    <h3>ManyChat</h3>
-                    <p>Marketing-focused chatbot platform with excellent social media and automation integrations.</p>
-                </div>
+                <?php endif; ?>
+                <?php endfor; ?>
             </div>
         </div>
     </section><!-- Industries Section -->
