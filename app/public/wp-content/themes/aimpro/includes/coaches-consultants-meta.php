@@ -35,13 +35,23 @@ function coaches_consultants_meta_box_callback($post) {
 
     // Get existing values
     $header_title = get_post_meta($post->ID, '_coaches_consultants_header_title', true);
+    if (empty($header_title)) $header_title = 'Coaches & Consultants Digital Marketing';
+    
     $header_subtitle = get_post_meta($post->ID, '_coaches_consultants_header_subtitle', true);
+    if (empty($header_subtitle)) $header_subtitle = 'Build your personal brand, attract ideal clients, and scale your coaching or consulting business';
+    
     $overview_title = get_post_meta($post->ID, '_coaches_consultants_overview_title', true);
+    if (empty($overview_title)) $overview_title = 'Transform Your Expertise Into a Thriving Business';
+    
     $overview_content = get_post_meta($post->ID, '_coaches_consultants_overview_content', true);
+    if (empty($overview_content)) $overview_content = 'As a coach or consultant, your expertise is your greatest asset. Our specialised marketing strategies help you build a powerful personal brand, attract high-value clients, and position yourself as the go-to authority in your niche.';
+    
     $overview_image = get_post_meta($post->ID, '_coaches_consultants_overview_image', true);
 
     // Challenges section
     $challenges_title = get_post_meta($post->ID, '_coaches_consultants_challenges_title', true);
+    if (empty($challenges_title)) $challenges_title = 'Coaching & Consulting Marketing Challenges We Solve:';
+    
     $challenges = get_post_meta($post->ID, '_coaches_consultants_challenges', true);
     if (empty($challenges)) {
         $challenges = array(
@@ -56,6 +66,8 @@ function coaches_consultants_meta_box_callback($post) {
 
     // Marketing Services section (2x2 grid)
     $services_title = get_post_meta($post->ID, '_coaches_consultants_services_title', true);
+    if (empty($services_title)) $services_title = 'Our Coaching & Consulting Marketing Services';
+    
     $services = get_post_meta($post->ID, '_coaches_consultants_services', true);
     if (empty($services)) {
         $services = array(
@@ -88,9 +100,17 @@ function coaches_consultants_meta_box_callback($post) {
 
     // Case study section
     $case_study_label = get_post_meta($post->ID, '_coaches_consultants_case_study_label', true);
+    if (empty($case_study_label)) $case_study_label = 'Success Story';
+    
     $case_study_title = get_post_meta($post->ID, '_coaches_consultants_case_study_title', true);
+    if (empty($case_study_title)) $case_study_title = 'Strategic Business Solutions: 400% Client Growth';
+    
     $case_study_content = get_post_meta($post->ID, '_coaches_consultants_case_study_content', true);
+    if (empty($case_study_content)) $case_study_content = 'Mark Anderson, a business strategy consultant, needed to establish his authority and generate consistent high-value client leads.';
+    
     $case_study_challenge_title = get_post_meta($post->ID, '_coaches_consultants_case_study_challenge_title', true);
+    if (empty($case_study_challenge_title)) $case_study_challenge_title = 'The Challenge';
+    
     $case_study_challenges = get_post_meta($post->ID, '_coaches_consultants_case_study_challenges', true);
     if (empty($case_study_challenges)) {
         $case_study_challenges = array(
@@ -101,6 +121,8 @@ function coaches_consultants_meta_box_callback($post) {
         );
     }
     $case_study_solution_title = get_post_meta($post->ID, '_coaches_consultants_case_study_solution_title', true);
+    if (empty($case_study_solution_title)) $case_study_solution_title = 'Our Solution';
+    
     $case_study_solutions = get_post_meta($post->ID, '_coaches_consultants_case_study_solutions', true);
     if (empty($case_study_solutions)) {
         $case_study_solutions = array(
@@ -111,6 +133,8 @@ function coaches_consultants_meta_box_callback($post) {
         );
     }
     $case_study_results_title = get_post_meta($post->ID, '_coaches_consultants_case_study_results_title', true);
+    if (empty($case_study_results_title)) $case_study_results_title = 'Results After 9 Months';
+    
     $case_study_results = get_post_meta($post->ID, '_coaches_consultants_case_study_results', true);
     if (empty($case_study_results)) {
         $case_study_results = array(
@@ -260,19 +284,25 @@ function coaches_consultants_meta_box_callback($post) {
             <tr>
                 <th><label for="coaches_consultants_header_title">Page Title</label></th>
                 <td>
-                    <input type="text" 
-                           id="coaches_consultants_header_title" 
-                           name="coaches_consultants_header_title" 
-                           value="<?php echo esc_attr($header_title); ?>"
-                           placeholder="Coaches & Consultants Digital Marketing" />
+                    <?php wp_editor($header_title, 'coaches_consultants_header_title', array(
+                        'textarea_name' => 'coaches_consultants_header_title',
+                        'media_buttons' => false,
+                        'textarea_rows' => 3,
+                        'teeny' => true,
+                        'quicktags' => false
+                    )); ?>
                 </td>
             </tr>
             <tr>
                 <th><label for="coaches_consultants_header_subtitle">Page Subtitle</label></th>
                 <td>
-                    <textarea id="coaches_consultants_header_subtitle" 
-                              name="coaches_consultants_header_subtitle"
-                              placeholder="Build your personal brand, attract ideal clients, and scale your coaching or consulting business"><?php echo esc_textarea($header_subtitle); ?></textarea>
+                    <?php wp_editor($header_subtitle, 'coaches_consultants_header_subtitle', array(
+                        'textarea_name' => 'coaches_consultants_header_subtitle',
+                        'media_buttons' => false,
+                        'textarea_rows' => 4,
+                        'teeny' => true,
+                        'quicktags' => false
+                    )); ?>
                 </td>
             </tr>
         </table>
@@ -283,19 +313,25 @@ function coaches_consultants_meta_box_callback($post) {
             <tr>
                 <th><label for="coaches_consultants_overview_title">Overview Title</label></th>
                 <td>
-                    <input type="text" 
-                           id="coaches_consultants_overview_title" 
-                           name="coaches_consultants_overview_title" 
-                           value="<?php echo esc_attr($overview_title); ?>"
-                           placeholder="Transform Your Expertise Into a Thriving Business" />
+                    <?php wp_editor($overview_title, 'coaches_consultants_overview_title', array(
+                        'textarea_name' => 'coaches_consultants_overview_title',
+                        'media_buttons' => false,
+                        'textarea_rows' => 3,
+                        'teeny' => true,
+                        'quicktags' => false
+                    )); ?>
                 </td>
             </tr>
             <tr>
                 <th><label for="coaches_consultants_overview_content">Overview Content</label></th>
                 <td>
-                    <textarea id="coaches_consultants_overview_content" 
-                              name="coaches_consultants_overview_content"
-                              placeholder="As a coach or consultant, your expertise is your greatest asset..."><?php echo esc_textarea($overview_content); ?></textarea>
+                    <?php wp_editor($overview_content, 'coaches_consultants_overview_content', array(
+                        'textarea_name' => 'coaches_consultants_overview_content',
+                        'media_buttons' => false,
+                        'textarea_rows' => 6,
+                        'teeny' => true,
+                        'quicktags' => false
+                    )); ?>
                 </td>
             </tr>
             <tr>                <th><label for="coaches_consultants_overview_image">Overview Image</label></th>
@@ -321,11 +357,13 @@ function coaches_consultants_meta_box_callback($post) {
             <tr>
                 <th><label for="coaches_consultants_challenges_title">Challenges Title</label></th>
                 <td>
-                    <input type="text" 
-                           id="coaches_consultants_challenges_title" 
-                           name="coaches_consultants_challenges_title" 
-                           value="<?php echo esc_attr($challenges_title); ?>"
-                           placeholder="Coaching & Consulting Marketing Challenges We Solve:" />
+                    <?php wp_editor($challenges_title, 'coaches_consultants_challenges_title', array(
+                        'textarea_name' => 'coaches_consultants_challenges_title',
+                        'media_buttons' => false,
+                        'textarea_rows' => 3,
+                        'teeny' => true,
+                        'quicktags' => false
+                    )); ?>
                 </td>
             </tr>
             <tr>
@@ -335,10 +373,13 @@ function coaches_consultants_meta_box_callback($post) {
                         <?php if (!empty($challenges)): ?>
                             <?php foreach ($challenges as $index => $challenge): ?>
                                 <div class="repeater-field">
-                                    <input type="text" 
-                                           name="coaches_consultants_challenges[]" 
-                                           value="<?php echo esc_attr($challenge); ?>"
-                                           placeholder="Challenge item" />
+                                    <?php wp_editor($challenge, 'coaches_consultants_challenges_' . $index, array(
+                                        'textarea_name' => 'coaches_consultants_challenges[]',
+                                        'media_buttons' => false,
+                                        'textarea_rows' => 2,
+                                        'teeny' => true,
+                                        'quicktags' => false
+                                    )); ?>
                                     <button type="button" class="button remove-repeater-item">Remove</button>
                                 </div>
                             <?php endforeach; ?>
@@ -355,11 +396,13 @@ function coaches_consultants_meta_box_callback($post) {
             <tr>
                 <th><label for="coaches_consultants_services_title">Services Title</label></th>
                 <td>
-                    <input type="text" 
-                           id="coaches_consultants_services_title" 
-                           name="coaches_consultants_services_title" 
-                           value="<?php echo esc_attr($services_title); ?>"
-                           placeholder="Our Coaching & Consulting Marketing Services" />
+                    <?php wp_editor($services_title, 'coaches_consultants_services_title', array(
+                        'textarea_name' => 'coaches_consultants_services_title',
+                        'media_buttons' => false,
+                        'textarea_rows' => 3,
+                        'teeny' => true,
+                        'quicktags' => false
+                    )); ?>
                 </td>
             </tr>
         </table>
@@ -373,19 +416,30 @@ function coaches_consultants_meta_box_callback($post) {
                                name="coaches_consultants_services[<?php echo $index; ?>][icon]" 
                                value="<?php echo esc_attr($service['icon']); ?>"
                                placeholder="Icon class (e.g., fas fa-user-tie)" />
-                        <input type="text" 
-                               name="coaches_consultants_services[<?php echo $index; ?>][title]" 
-                               value="<?php echo esc_attr($service['title']); ?>"
-                               placeholder="Service title" />
-                        <textarea name="coaches_consultants_services[<?php echo $index; ?>][description]" 
-                                  placeholder="Service description"><?php echo esc_textarea($service['description']); ?></textarea>
+                        <?php wp_editor($service['title'], 'coaches_consultants_services_' . $index . '_title', array(
+                            'textarea_name' => 'coaches_consultants_services[' . $index . '][title]',
+                            'media_buttons' => false,
+                            'textarea_rows' => 2,
+                            'teeny' => true,
+                            'quicktags' => false
+                        )); ?>
+                        <?php wp_editor($service['description'], 'coaches_consultants_services_' . $index . '_description', array(
+                            'textarea_name' => 'coaches_consultants_services[' . $index . '][description]',
+                            'media_buttons' => false,
+                            'textarea_rows' => 4,
+                            'teeny' => true,
+                            'quicktags' => false
+                        )); ?>
                         <div>
                             <strong>Features:</strong>
                             <?php foreach ($service['features'] as $feat_index => $feature): ?>
-                                <input type="text" 
-                                       name="coaches_consultants_services[<?php echo $index; ?>][features][]" 
-                                       value="<?php echo esc_attr($feature); ?>"
-                                       placeholder="Feature" />
+                                <?php wp_editor($feature, 'coaches_consultants_services_' . $index . '_feature_' . $feat_index, array(
+                                    'textarea_name' => 'coaches_consultants_services[' . $index . '][features][]',
+                                    'media_buttons' => false,
+                                    'textarea_rows' => 1,
+                                    'teeny' => true,
+                                    'quicktags' => false
+                                )); ?>
                             <?php endforeach; ?>
                         </div>
                         <button type="button" class="button remove-repeater-item">Remove Service</button>
@@ -400,39 +454,49 @@ function coaches_consultants_meta_box_callback($post) {
             <tr>
                 <th><label for="coaches_consultants_case_study_label">Case Study Label</label></th>
                 <td>
-                    <input type="text" 
-                           id="coaches_consultants_case_study_label" 
-                           name="coaches_consultants_case_study_label" 
-                           value="<?php echo esc_attr($case_study_label); ?>"
-                           placeholder="Success Story" />
+                    <?php wp_editor($case_study_label, 'coaches_consultants_case_study_label', array(
+                        'textarea_name' => 'coaches_consultants_case_study_label',
+                        'media_buttons' => false,
+                        'textarea_rows' => 2,
+                        'teeny' => true,
+                        'quicktags' => false
+                    )); ?>
                 </td>
             </tr>
             <tr>
                 <th><label for="coaches_consultants_case_study_title">Case Study Title</label></th>
                 <td>
-                    <input type="text" 
-                           id="coaches_consultants_case_study_title" 
-                           name="coaches_consultants_case_study_title" 
-                           value="<?php echo esc_attr($case_study_title); ?>"
-                           placeholder="From Overworked Coach to Thriving Authority" />
+                    <?php wp_editor($case_study_title, 'coaches_consultants_case_study_title', array(
+                        'textarea_name' => 'coaches_consultants_case_study_title',
+                        'media_buttons' => false,
+                        'textarea_rows' => 3,
+                        'teeny' => true,
+                        'quicktags' => false
+                    )); ?>
                 </td>
             </tr>
             <tr>
                 <th><label for="coaches_consultants_case_study_content">Case Study Content</label></th>
                 <td>
-                    <textarea id="coaches_consultants_case_study_content" 
-                              name="coaches_consultants_case_study_content"
-                              placeholder="Case study description..."><?php echo esc_textarea($case_study_content); ?></textarea>
+                    <?php wp_editor($case_study_content, 'coaches_consultants_case_study_content', array(
+                        'textarea_name' => 'coaches_consultants_case_study_content',
+                        'media_buttons' => false,
+                        'textarea_rows' => 5,
+                        'teeny' => true,
+                        'quicktags' => false
+                    )); ?>
                 </td>
             </tr>
             <tr>
                 <th><label for="coaches_consultants_case_study_challenge_title">Challenge Section Title</label></th>
                 <td>
-                    <input type="text" 
-                           id="coaches_consultants_case_study_challenge_title" 
-                           name="coaches_consultants_case_study_challenge_title" 
-                           value="<?php echo esc_attr($case_study_challenge_title); ?>"
-                           placeholder="The Challenge" />
+                    <?php wp_editor($case_study_challenge_title, 'coaches_consultants_case_study_challenge_title', array(
+                        'textarea_name' => 'coaches_consultants_case_study_challenge_title',
+                        'media_buttons' => false,
+                        'textarea_rows' => 2,
+                        'teeny' => true,
+                        'quicktags' => false
+                    )); ?>
                 </td>
             </tr>
             <tr>
@@ -457,11 +521,13 @@ function coaches_consultants_meta_box_callback($post) {
             <tr>
                 <th><label for="coaches_consultants_case_study_solution_title">Solution Section Title</label></th>
                 <td>
-                    <input type="text" 
-                           id="coaches_consultants_case_study_solution_title" 
-                           name="coaches_consultants_case_study_solution_title" 
-                           value="<?php echo esc_attr($case_study_solution_title); ?>"
-                           placeholder="Our Solution" />
+                    <?php wp_editor($case_study_solution_title, 'coaches_consultants_case_study_solution_title', array(
+                        'textarea_name' => 'coaches_consultants_case_study_solution_title',
+                        'media_buttons' => false,
+                        'textarea_rows' => 2,
+                        'teeny' => true,
+                        'quicktags' => false
+                    )); ?>
                 </td>
             </tr>
             <tr>
@@ -486,11 +552,13 @@ function coaches_consultants_meta_box_callback($post) {
             <tr>
                 <th><label for="coaches_consultants_case_study_results_title">Results Section Title</label></th>
                 <td>
-                    <input type="text" 
-                           id="coaches_consultants_case_study_results_title" 
-                           name="coaches_consultants_case_study_results_title" 
-                           value="<?php echo esc_attr($case_study_results_title); ?>"
-                           placeholder="Results After 6 Months" />
+                    <?php wp_editor($case_study_results_title, 'coaches_consultants_case_study_results_title', array(
+                        'textarea_name' => 'coaches_consultants_case_study_results_title',
+                        'media_buttons' => false,
+                        'textarea_rows' => 2,
+                        'teeny' => true,
+                        'quicktags' => false
+                    )); ?>
                 </td>
             </tr>
         </table>
@@ -801,26 +869,55 @@ function coaches_consultants_meta_box_callback($post) {
 }
 
 function sanitize_coaches_consultants_meta_value($field, $value) {
+    // Rich text fields that should use wp_kses_post
+    $rich_text_fields = array(
+        'header_title', 'header_subtitle', 'overview_title', 'overview_content',
+        'challenges_title', 'services_title', 'case_study_label', 'case_study_title',
+        'case_study_content', 'case_study_challenge_title', 'case_study_solution_title',
+        'case_study_results_title', 'process_title', 'insights_title',
+        'testimonial_quote', 'cta_title', 'cta_subtitle'
+    );
+
     if (is_array($value)) {
         foreach ($value as &$item) {
             if (is_array($item)) {
                 foreach ($item as $key => &$subitem) {
                     if (is_array($subitem)) {
                         foreach ($subitem as &$sub_subitem) {
-                            $sub_subitem = sanitize_text_field($sub_subitem);
+                            // Check if this is rich text content
+                            if ($key === 'title' || $key === 'description' || strpos($key, 'content') !== false) {
+                                $sub_subitem = wp_kses_post($sub_subitem);
+                            } else {
+                                $sub_subitem = sanitize_text_field($sub_subitem);
+                            }
                         }
                     } else {
-                        $subitem = sanitize_text_field($subitem);
+                        // Check if this is rich text content
+                        if ($key === 'title' || $key === 'description' || strpos($key, 'content') !== false) {
+                            $subitem = wp_kses_post($subitem);
+                        } else {
+                            $subitem = sanitize_text_field($subitem);
+                        }
                     }
                 }
             } else {
-                $item = sanitize_text_field($item);
+                // For single values in arrays (like challenges)
+                $item = wp_kses_post($item);
             }
         }
         return $value;
     } else {
-        if (strpos($field, 'content') !== false || strpos($field, 'description') !== false) {
-            return sanitize_textarea_field($value);
+        // Check if this field should use rich text
+        $is_rich_text = false;
+        foreach ($rich_text_fields as $rich_field) {
+            if (strpos($field, $rich_field) !== false) {
+                $is_rich_text = true;
+                break;
+            }
+        }
+        
+        if ($is_rich_text) {
+            return wp_kses_post($value);
         } elseif (strpos($field, 'url') !== false || strpos($field, 'image') !== false) {
             return esc_url_raw($value);
         } else {

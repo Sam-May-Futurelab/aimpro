@@ -34,23 +34,23 @@ $challenges = get_post_meta(get_the_ID(), '_coaches_consultants_challenges', tru
           <!-- Page Header -->
         <section class="page-header">
             <div class="page-header-content animate-on-scroll animate-fade-up">
-                <h1><?php echo esc_html($header_title ?: 'Coaches & Consultants Digital Marketing'); ?></h1>
-                <p class="page-subtitle"><?php echo esc_html($header_subtitle ?: 'Build your personal brand, attract ideal clients, and scale your coaching or consulting business'); ?></p>
+                <h1><?php echo wp_kses_post($header_title ?: 'Coaches & Consultants Digital Marketing'); ?></h1>
+                <p class="page-subtitle"><?php echo wp_kses_post($header_subtitle ?: 'Build your personal brand, attract ideal clients, and scale your coaching or consulting business'); ?></p>
             </div>
         </section>        <!-- Industry Overview -->
         <section class="industry-overview animate-on-scroll animate-fade-up">
             <div class="section-content">
                 <div class="overview-content">
                     <div class="overview-text animate-on-scroll animate-slide-left">
-                        <h2><?php echo esc_html($overview_title ?: 'Transform Your Expertise Into a Thriving Business'); ?></h2>
-                        <p><?php echo esc_html($overview_content ?: 'As a coach or consultant, your expertise is your greatest asset. Our specialised marketing strategies help you build a powerful personal brand, attract high-value clients, and position yourself as the go-to authority in your niche.'); ?></p>
+                        <h2><?php echo wp_kses_post($overview_title ?: 'Transform Your Expertise Into a Thriving Business'); ?></h2>
+                        <p><?php echo wp_kses_post($overview_content ?: 'As a coach or consultant, your expertise is your greatest asset. Our specialised marketing strategies help you build a powerful personal brand, attract high-value clients, and position yourself as the go-to authority in your niche.'); ?></p>
                         
                         <div class="industry-challenges animate-on-scroll animate-fade-up">
-                            <h3><?php echo esc_html($challenges_title ?: 'Coaching & Consulting Marketing Challenges We Solve:'); ?></h3>
+                            <h3><?php echo wp_kses_post($challenges_title ?: 'Coaching & Consulting Marketing Challenges We Solve:'); ?></h3>
                             <ul>
                                 <?php if (!empty($challenges)): ?>
                                     <?php foreach ($challenges as $challenge): ?>
-                                        <li><?php echo esc_html($challenge); ?></li>
+                                        <li><?php echo wp_kses_post($challenge); ?></li>
                                     <?php endforeach; ?>
                                 <?php else: ?>
                                 <li>Building trust and credibility online</li>
