@@ -138,7 +138,7 @@ function aimpro_get_chatbots_default_values() {
         'feature_content_1' => 'Understanding context, intent, and nuance in human conversation for more natural interactions.',
         
         'feature_icon_2' => 'fas fa-user-tag',
-        'feature_title_2' => 'personalisation',
+        'feature_title_2' => 'Personalisation',
         'feature_content_2' => 'Tailored responses based on user behaviour, location, and previous interactions for relevant experiences.',
         
         'feature_icon_3' => 'fas fa-globe',
@@ -359,11 +359,23 @@ function aimpro_chatbots_hero_callback($post) {
     ?>
     <p>
         <label for="chatbots_hero_title"><?php _e('Title', 'aimpro'); ?></label><br>
-        <input type="text" id="chatbots_hero_title" name="chatbots_hero_title" value="<?php echo esc_attr($hero_title); ?>" class="widefat">
+        <?php wp_editor($hero_title, 'chatbots_hero_title', array(
+            'textarea_name' => 'chatbots_hero_title',
+            'media_buttons' => false,
+            'textarea_rows' => 3,
+            'teeny' => true,
+            'quicktags' => false
+        )); ?>
     </p>
     <p>
         <label for="chatbots_hero_subtitle"><?php _e('Subtitle', 'aimpro'); ?></label><br>
-        <textarea id="chatbots_hero_subtitle" name="chatbots_hero_subtitle" class="widefat" rows="3"><?php echo esc_textarea($hero_subtitle); ?></textarea>
+        <?php wp_editor($hero_subtitle, 'chatbots_hero_subtitle', array(
+            'textarea_name' => 'chatbots_hero_subtitle',
+            'media_buttons' => false,
+            'textarea_rows' => 4,
+            'teeny' => true,
+            'quicktags' => false
+        )); ?>
     </p>
     
     <h4><?php _e('Stats', 'aimpro'); ?></h4>
@@ -375,7 +387,13 @@ function aimpro_chatbots_hero_callback($post) {
             </p>
             <p>
                 <label for="chatbots_hero_stat1_label"><?php _e('Stat 1 Label', 'aimpro'); ?></label><br>
-                <input type="text" id="chatbots_hero_stat1_label" name="chatbots_hero_stat1_label" value="<?php echo esc_attr($hero_stat1_label); ?>" class="widefat">
+                <?php wp_editor($hero_stat1_label, 'chatbots_hero_stat1_label', array(
+                    'textarea_name' => 'chatbots_hero_stat1_label',
+                    'media_buttons' => false,
+                    'textarea_rows' => 2,
+                    'teeny' => true,
+                    'quicktags' => false
+                )); ?>
             </p>
         </div>
         <div style="flex: 1;">
@@ -385,7 +403,13 @@ function aimpro_chatbots_hero_callback($post) {
             </p>
             <p>
                 <label for="chatbots_hero_stat2_label"><?php _e('Stat 2 Label', 'aimpro'); ?></label><br>
-                <input type="text" id="chatbots_hero_stat2_label" name="chatbots_hero_stat2_label" value="<?php echo esc_attr($hero_stat2_label); ?>" class="widefat">
+                <?php wp_editor($hero_stat2_label, 'chatbots_hero_stat2_label', array(
+                    'textarea_name' => 'chatbots_hero_stat2_label',
+                    'media_buttons' => false,
+                    'textarea_rows' => 2,
+                    'teeny' => true,
+                    'quicktags' => false
+                )); ?>
             </p>
         </div>
         <div style="flex: 1;">
@@ -395,7 +419,13 @@ function aimpro_chatbots_hero_callback($post) {
             </p>
             <p>
                 <label for="chatbots_hero_stat3_label"><?php _e('Stat 3 Label', 'aimpro'); ?></label><br>
-                <input type="text" id="chatbots_hero_stat3_label" name="chatbots_hero_stat3_label" value="<?php echo esc_attr($hero_stat3_label); ?>" class="widefat">
+                <?php wp_editor($hero_stat3_label, 'chatbots_hero_stat3_label', array(
+                    'textarea_name' => 'chatbots_hero_stat3_label',
+                    'media_buttons' => false,
+                    'textarea_rows' => 2,
+                    'teeny' => true,
+                    'quicktags' => false
+                )); ?>
             </p>
         </div>
     </div>
@@ -405,13 +435,25 @@ function aimpro_chatbots_hero_callback($post) {
         <div style="flex: 1;">
             <p>
                 <label for="chatbots_hero_cta1_text"><?php _e('Primary CTA Text', 'aimpro'); ?></label><br>
-                <input type="text" id="chatbots_hero_cta1_text" name="chatbots_hero_cta1_text" value="<?php echo esc_attr($hero_cta1_text); ?>" class="widefat">
+                <?php wp_editor($hero_cta1_text, 'chatbots_hero_cta1_text', array(
+                    'textarea_name' => 'chatbots_hero_cta1_text',
+                    'media_buttons' => false,
+                    'textarea_rows' => 2,
+                    'teeny' => true,
+                    'quicktags' => false
+                )); ?>
             </p>
         </div>
         <div style="flex: 1;">
             <p>
                 <label for="chatbots_hero_cta2_text"><?php _e('Secondary CTA Text', 'aimpro'); ?></label><br>
-                <input type="text" id="chatbots_hero_cta2_text" name="chatbots_hero_cta2_text" value="<?php echo esc_attr($hero_cta2_text); ?>" class="widefat">
+                <?php wp_editor($hero_cta2_text, 'chatbots_hero_cta2_text', array(
+                    'textarea_name' => 'chatbots_hero_cta2_text',
+                    'media_buttons' => false,
+                    'textarea_rows' => 2,
+                    'teeny' => true,
+                    'quicktags' => false
+                )); ?>
             </p>
         </div>
     </div>
@@ -456,11 +498,23 @@ function aimpro_chatbots_overview_callback($post) {
     ?>
     <p>
         <label for="chatbots_overview_title"><?php _e('Section Title', 'aimpro'); ?></label><br>
-        <input type="text" id="chatbots_overview_title" name="chatbots_overview_title" value="<?php echo esc_attr($overview_title); ?>" class="widefat">
+        <?php wp_editor($overview_title, 'chatbots_overview_title', array(
+            'textarea_name' => 'chatbots_overview_title',
+            'media_buttons' => false,
+            'textarea_rows' => 3,
+            'teeny' => true,
+            'quicktags' => false
+        )); ?>
     </p>
     <p>
         <label for="chatbots_overview_content"><?php _e('Section Content', 'aimpro'); ?></label><br>
-        <textarea id="chatbots_overview_content" name="chatbots_overview_content" class="widefat" rows="3"><?php echo esc_textarea($overview_content); ?></textarea>
+        <?php wp_editor($overview_content, 'chatbots_overview_content', array(
+            'textarea_name' => 'chatbots_overview_content',
+            'media_buttons' => false,
+            'textarea_rows' => 5,
+            'teeny' => true,
+            'quicktags' => false
+        )); ?>
     </p>
     
     <h4><?php _e('Service Items', 'aimpro'); ?></h4>
@@ -474,11 +528,23 @@ function aimpro_chatbots_overview_callback($post) {
             </p>
             <p>
                 <label for="chatbots_service_title_<?php echo $i; ?>"><?php _e('Title', 'aimpro'); ?></label><br>
-                <input type="text" id="chatbots_service_title_<?php echo $i; ?>" name="chatbots_service_title_<?php echo $i; ?>" value="<?php echo esc_attr($services[$i]['title']); ?>" class="widefat">
+                <?php wp_editor($services[$i]['title'], 'chatbots_service_title_' . $i, array(
+                    'textarea_name' => 'chatbots_service_title_' . $i,
+                    'media_buttons' => false,
+                    'textarea_rows' => 2,
+                    'teeny' => true,
+                    'quicktags' => false
+                )); ?>
             </p>
             <p>
                 <label for="chatbots_service_content_<?php echo $i; ?>"><?php _e('Content', 'aimpro'); ?></label><br>
-                <textarea id="chatbots_service_content_<?php echo $i; ?>" name="chatbots_service_content_<?php echo $i; ?>" class="widefat" rows="3"><?php echo esc_textarea($services[$i]['content']); ?></textarea>
+                <?php wp_editor($services[$i]['content'], 'chatbots_service_content_' . $i, array(
+                    'textarea_name' => 'chatbots_service_content_' . $i,
+                    'media_buttons' => false,
+                    'textarea_rows' => 3,
+                    'teeny' => true,
+                    'quicktags' => false
+                )); ?>
             </p>
         </div>
     <?php endfor; ?>
@@ -534,37 +600,79 @@ function aimpro_chatbots_case_study_callback($post) {
     ?>
     <p>
         <label for="chatbots_case_study_title"><?php _e('Case Study Title', 'aimpro'); ?></label><br>
-        <input type="text" id="chatbots_case_study_title" name="chatbots_case_study_title" value="<?php echo esc_attr($case_study_title); ?>" class="widefat">
+        <?php wp_editor($case_study_title, 'chatbots_case_study_title', array(
+            'textarea_name' => 'chatbots_case_study_title',
+            'media_buttons' => false,
+            'textarea_rows' => 3,
+            'teeny' => true,
+            'quicktags' => false
+        )); ?>
     </p>
     <p>
         <label for="chatbots_case_study_intro"><?php _e('Case Study Intro', 'aimpro'); ?></label><br>
-        <textarea id="chatbots_case_study_intro" name="chatbots_case_study_intro" class="widefat" rows="3"><?php echo esc_textarea($case_study_intro); ?></textarea>
+        <?php wp_editor($case_study_intro, 'chatbots_case_study_intro', array(
+            'textarea_name' => 'chatbots_case_study_intro',
+            'media_buttons' => false,
+            'textarea_rows' => 4,
+            'teeny' => true,
+            'quicktags' => false
+        )); ?>
     </p>
     
     <h4><?php _e('The Challenge', 'aimpro'); ?></h4>
     <p>
         <label for="chatbots_challenge_title"><?php _e('Challenge Title', 'aimpro'); ?></label><br>
-        <input type="text" id="chatbots_challenge_title" name="chatbots_challenge_title" value="<?php echo esc_attr($challenge_title); ?>" class="widefat">
+        <?php wp_editor($challenge_title, 'chatbots_challenge_title', array(
+            'textarea_name' => 'chatbots_challenge_title',
+            'media_buttons' => false,
+            'textarea_rows' => 2,
+            'teeny' => true,
+            'quicktags' => false
+        )); ?>
     </p>
     <p>
         <label for="chatbots_challenge_content"><?php _e('Challenge Content', 'aimpro'); ?></label><br>
-        <textarea id="chatbots_challenge_content" name="chatbots_challenge_content" class="widefat" rows="3"><?php echo esc_textarea($challenge_content); ?></textarea>
+        <?php wp_editor($challenge_content, 'chatbots_challenge_content', array(
+            'textarea_name' => 'chatbots_challenge_content',
+            'media_buttons' => false,
+            'textarea_rows' => 4,
+            'teeny' => true,
+            'quicktags' => false
+        )); ?>
     </p>
     
     <h4><?php _e('The Solution', 'aimpro'); ?></h4>
     <p>
         <label for="chatbots_solution_title"><?php _e('Solution Title', 'aimpro'); ?></label><br>
-        <input type="text" id="chatbots_solution_title" name="chatbots_solution_title" value="<?php echo esc_attr($solution_title); ?>" class="widefat">
+        <?php wp_editor($solution_title, 'chatbots_solution_title', array(
+            'textarea_name' => 'chatbots_solution_title',
+            'media_buttons' => false,
+            'textarea_rows' => 2,
+            'teeny' => true,
+            'quicktags' => false
+        )); ?>
     </p>
     <p>
         <label for="chatbots_solution_list"><?php _e('Solution List (one item per line)', 'aimpro'); ?></label><br>
-        <textarea id="chatbots_solution_list" name="chatbots_solution_list" class="widefat" rows="5"><?php echo esc_textarea($solution_list); ?></textarea>
+        <?php wp_editor($solution_list, 'chatbots_solution_list', array(
+            'textarea_name' => 'chatbots_solution_list',
+            'media_buttons' => false,
+            'textarea_rows' => 6,
+            'teeny' => true,
+            'quicktags' => false
+        )); ?>
     </p>
     
     <h4><?php _e('The Results', 'aimpro'); ?></h4>
     <p>
         <label for="chatbots_results_title"><?php _e('Results Title', 'aimpro'); ?></label><br>
-        <input type="text" id="chatbots_results_title" name="chatbots_results_title" value="<?php echo esc_attr($results_title); ?>" class="widefat">
+        <?php wp_editor($results_title, 'chatbots_results_title', array(
+            'textarea_name' => 'chatbots_results_title',
+            'media_buttons' => false,
+            'textarea_rows' => 2,
+            'teeny' => true,
+            'quicktags' => false
+        )); ?>
     </p>
     
     <div style="display: flex; flex-wrap: wrap; gap: 20px;">
@@ -577,7 +685,13 @@ function aimpro_chatbots_case_study_callback($post) {
                 </p>
                 <p>
                     <label for="chatbots_result_label_<?php echo $i; ?>"><?php _e('Label', 'aimpro'); ?></label><br>
-                    <input type="text" id="chatbots_result_label_<?php echo $i; ?>" name="chatbots_result_label_<?php echo $i; ?>" value="<?php echo esc_attr($results[$i]['label']); ?>" class="widefat">
+                    <?php wp_editor($results[$i]['label'], 'chatbots_result_label_' . $i, array(
+                        'textarea_name' => 'chatbots_result_label_' . $i,
+                        'media_buttons' => false,
+                        'textarea_rows' => 2,
+                        'teeny' => true,
+                        'quicktags' => false
+                    )); ?>
                 </p>
             </div>
         <?php endfor; ?>
@@ -627,11 +741,23 @@ function aimpro_chatbots_types_callback($post) {
     ?>
     <p>
         <label for="chatbots_types_title"><?php _e('Section Title', 'aimpro'); ?></label><br>
-        <input type="text" id="chatbots_types_title" name="chatbots_types_title" value="<?php echo esc_attr($types_title); ?>" class="widefat">
+        <?php wp_editor($types_title, 'chatbots_types_title', array(
+            'textarea_name' => 'chatbots_types_title',
+            'media_buttons' => false,
+            'textarea_rows' => 3,
+            'teeny' => true,
+            'quicktags' => false
+        )); ?>
     </p>
     <p>
         <label for="chatbots_types_subtitle"><?php _e('Section Subtitle', 'aimpro'); ?></label><br>
-        <textarea id="chatbots_types_subtitle" name="chatbots_types_subtitle" class="widefat" rows="3"><?php echo esc_textarea($types_subtitle); ?></textarea>
+        <?php wp_editor($types_subtitle, 'chatbots_types_subtitle', array(
+            'textarea_name' => 'chatbots_types_subtitle',
+            'media_buttons' => false,
+            'textarea_rows' => 3,
+            'teeny' => true,
+            'quicktags' => false
+        )); ?>
     </p>
     
     <h4><?php _e('Chatbot Types', 'aimpro'); ?></h4>
@@ -645,15 +771,33 @@ function aimpro_chatbots_types_callback($post) {
             </p>
             <p>
                 <label for="chatbots_type_title_<?php echo $i; ?>"><?php _e('Title', 'aimpro'); ?></label><br>
-                <input type="text" id="chatbots_type_title_<?php echo $i; ?>" name="chatbots_type_title_<?php echo $i; ?>" value="<?php echo esc_attr($types[$i]['title']); ?>" class="widefat">
+                <?php wp_editor($types[$i]['title'], 'chatbots_type_title_' . $i, array(
+                    'textarea_name' => 'chatbots_type_title_' . $i,
+                    'media_buttons' => false,
+                    'textarea_rows' => 2,
+                    'teeny' => true,
+                    'quicktags' => false
+                )); ?>
             </p>
             <p>
                 <label for="chatbots_type_content_<?php echo $i; ?>"><?php _e('Content', 'aimpro'); ?></label><br>
-                <textarea id="chatbots_type_content_<?php echo $i; ?>" name="chatbots_type_content_<?php echo $i; ?>" class="widefat" rows="3"><?php echo esc_textarea($types[$i]['content']); ?></textarea>
+                <?php wp_editor($types[$i]['content'], 'chatbots_type_content_' . $i, array(
+                    'textarea_name' => 'chatbots_type_content_' . $i,
+                    'media_buttons' => false,
+                    'textarea_rows' => 3,
+                    'teeny' => true,
+                    'quicktags' => false
+                )); ?>
             </p>
             <p>
                 <label for="chatbots_type_metric_<?php echo $i; ?>"><?php _e('Metric', 'aimpro'); ?></label><br>
-                <input type="text" id="chatbots_type_metric_<?php echo $i; ?>" name="chatbots_type_metric_<?php echo $i; ?>" value="<?php echo esc_attr($types[$i]['metric']); ?>" class="widefat">
+                <?php wp_editor($types[$i]['metric'], 'chatbots_type_metric_' . $i, array(
+                    'textarea_name' => 'chatbots_type_metric_' . $i,
+                    'media_buttons' => false,
+                    'textarea_rows' => 2,
+                    'teeny' => true,
+                    'quicktags' => false
+                )); ?>
                 <small><?php _e('Example: Average: 45% lead capture rate', 'aimpro'); ?></small>
             </p>
         </div>
@@ -692,7 +836,13 @@ function aimpro_chatbots_process_callback($post) {
     ?>
     <p>
         <label for="chatbots_process_title"><?php _e('Section Title', 'aimpro'); ?></label><br>
-        <input type="text" id="chatbots_process_title" name="chatbots_process_title" value="<?php echo esc_attr($process_title); ?>" class="widefat">
+        <?php wp_editor($process_title, 'chatbots_process_title', array(
+            'textarea_name' => 'chatbots_process_title',
+            'media_buttons' => false,
+            'textarea_rows' => 3,
+            'teeny' => true,
+            'quicktags' => false
+        )); ?>
     </p>
     
     <h4><?php _e('Process Steps', 'aimpro'); ?></h4>
@@ -701,11 +851,23 @@ function aimpro_chatbots_process_callback($post) {
             <h4><?php printf(__('Step %d', 'aimpro'), $i); ?></h4>
             <p>
                 <label for="chatbots_process_step_title_<?php echo $i; ?>"><?php _e('Title', 'aimpro'); ?></label><br>
-                <input type="text" id="chatbots_process_step_title_<?php echo $i; ?>" name="chatbots_process_step_title_<?php echo $i; ?>" value="<?php echo esc_attr($steps[$i]['title']); ?>" class="widefat">
+                <?php wp_editor($steps[$i]['title'], 'chatbots_process_step_title_' . $i, array(
+                    'textarea_name' => 'chatbots_process_step_title_' . $i,
+                    'media_buttons' => false,
+                    'textarea_rows' => 2,
+                    'teeny' => true,
+                    'quicktags' => false
+                )); ?>
             </p>
             <p>
                 <label for="chatbots_process_step_content_<?php echo $i; ?>"><?php _e('Content', 'aimpro'); ?></label><br>
-                <textarea id="chatbots_process_step_content_<?php echo $i; ?>" name="chatbots_process_step_content_<?php echo $i; ?>" class="widefat" rows="3"><?php echo esc_textarea($steps[$i]['content']); ?></textarea>
+                <?php wp_editor($steps[$i]['content'], 'chatbots_process_step_content_' . $i, array(
+                    'textarea_name' => 'chatbots_process_step_content_' . $i,
+                    'media_buttons' => false,
+                    'textarea_rows' => 3,
+                    'teeny' => true,
+                    'quicktags' => false
+                )); ?>
             </p>
         </div>
     <?php endfor; ?>
@@ -750,11 +912,23 @@ function aimpro_chatbots_features_callback($post) {
     ?>
     <p>
         <label for="chatbots_features_title"><?php _e('Section Title', 'aimpro'); ?></label><br>
-        <input type="text" id="chatbots_features_title" name="chatbots_features_title" value="<?php echo esc_attr($features_title); ?>" class="widefat">
+        <?php wp_editor($features_title, 'chatbots_features_title', array(
+            'textarea_name' => 'chatbots_features_title',
+            'media_buttons' => false,
+            'textarea_rows' => 3,
+            'teeny' => true,
+            'quicktags' => false
+        )); ?>
     </p>
     <p>
         <label for="chatbots_features_subtitle"><?php _e('Section Subtitle', 'aimpro'); ?></label><br>
-        <textarea id="chatbots_features_subtitle" name="chatbots_features_subtitle" class="widefat" rows="3"><?php echo esc_textarea($features_subtitle); ?></textarea>
+        <?php wp_editor($features_subtitle, 'chatbots_features_subtitle', array(
+            'textarea_name' => 'chatbots_features_subtitle',
+            'media_buttons' => false,
+            'textarea_rows' => 3,
+            'teeny' => true,
+            'quicktags' => false
+        )); ?>
     </p>
     
     <h4><?php _e('Features', 'aimpro'); ?></h4>
@@ -768,11 +942,23 @@ function aimpro_chatbots_features_callback($post) {
             </p>
             <p>
                 <label for="chatbots_feature_title_<?php echo $i; ?>"><?php _e('Title', 'aimpro'); ?></label><br>
-                <input type="text" id="chatbots_feature_title_<?php echo $i; ?>" name="chatbots_feature_title_<?php echo $i; ?>" value="<?php echo esc_attr($features[$i]['title']); ?>" class="widefat">
+                <?php wp_editor($features[$i]['title'], 'chatbots_feature_title_' . $i, array(
+                    'textarea_name' => 'chatbots_feature_title_' . $i,
+                    'media_buttons' => false,
+                    'textarea_rows' => 2,
+                    'teeny' => true,
+                    'quicktags' => false
+                )); ?>
             </p>
             <p>
                 <label for="chatbots_feature_content_<?php echo $i; ?>"><?php _e('Content', 'aimpro'); ?></label><br>
-                <textarea id="chatbots_feature_content_<?php echo $i; ?>" name="chatbots_feature_content_<?php echo $i; ?>" class="widefat" rows="3"><?php echo esc_textarea($features[$i]['content']); ?></textarea>
+                <?php wp_editor($features[$i]['content'], 'chatbots_feature_content_' . $i, array(
+                    'textarea_name' => 'chatbots_feature_content_' . $i,
+                    'media_buttons' => false,
+                    'textarea_rows' => 3,
+                    'teeny' => true,
+                    'quicktags' => false
+                )); ?>
             </p>
         </div>
     <?php endfor; ?>
@@ -814,7 +1000,13 @@ function aimpro_chatbots_platforms_callback($post) {
     ?>
     <p>
         <label for="chatbots_platforms_title"><?php _e('Section Title', 'aimpro'); ?></label><br>
-        <input type="text" id="chatbots_platforms_title" name="chatbots_platforms_title" value="<?php echo esc_attr($platforms_title); ?>" class="widefat">
+        <?php wp_editor($platforms_title, 'chatbots_platforms_title', array(
+            'textarea_name' => 'chatbots_platforms_title',
+            'media_buttons' => false,
+            'textarea_rows' => 3,
+            'teeny' => true,
+            'quicktags' => false
+        )); ?>
     </p>
     
     <h4><?php _e('Platforms', 'aimpro'); ?></h4>
@@ -828,11 +1020,23 @@ function aimpro_chatbots_platforms_callback($post) {
             </p>
             <p>
                 <label for="chatbots_platform_title_<?php echo $i; ?>"><?php _e('Title', 'aimpro'); ?></label><br>
-                <input type="text" id="chatbots_platform_title_<?php echo $i; ?>" name="chatbots_platform_title_<?php echo $i; ?>" value="<?php echo esc_attr($platforms[$i]['title']); ?>" class="widefat">
+                <?php wp_editor($platforms[$i]['title'], 'chatbots_platform_title_' . $i, array(
+                    'textarea_name' => 'chatbots_platform_title_' . $i,
+                    'media_buttons' => false,
+                    'textarea_rows' => 2,
+                    'teeny' => true,
+                    'quicktags' => false
+                )); ?>
             </p>
             <p>
                 <label for="chatbots_platform_content_<?php echo $i; ?>"><?php _e('Content', 'aimpro'); ?></label><br>
-                <textarea id="chatbots_platform_content_<?php echo $i; ?>" name="chatbots_platform_content_<?php echo $i; ?>" class="widefat" rows="3"><?php echo esc_textarea($platforms[$i]['content']); ?></textarea>
+                <?php wp_editor($platforms[$i]['content'], 'chatbots_platform_content_' . $i, array(
+                    'textarea_name' => 'chatbots_platform_content_' . $i,
+                    'media_buttons' => false,
+                    'textarea_rows' => 3,
+                    'teeny' => true,
+                    'quicktags' => false
+                )); ?>
             </p>
         </div>
     <?php endfor; ?>
@@ -870,7 +1074,13 @@ function aimpro_chatbots_industries_callback($post) {
     ?>
     <p>
         <label for="chatbots_industries_title"><?php _e('Section Title', 'aimpro'); ?></label><br>
-        <input type="text" id="chatbots_industries_title" name="chatbots_industries_title" value="<?php echo esc_attr($industries_title); ?>" class="widefat">
+        <?php wp_editor($industries_title, 'chatbots_industries_title', array(
+            'textarea_name' => 'chatbots_industries_title',
+            'media_buttons' => false,
+            'textarea_rows' => 3,
+            'teeny' => true,
+            'quicktags' => false
+        )); ?>
     </p>
     
     <h4><?php _e('Industries', 'aimpro'); ?></h4>
@@ -879,11 +1089,23 @@ function aimpro_chatbots_industries_callback($post) {
             <h4><?php printf(__('Industry %d', 'aimpro'), $i); ?></h4>
             <p>
                 <label for="chatbots_industry_title_<?php echo $i; ?>"><?php _e('Title', 'aimpro'); ?></label><br>
-                <input type="text" id="chatbots_industry_title_<?php echo $i; ?>" name="chatbots_industry_title_<?php echo $i; ?>" value="<?php echo esc_attr($industries[$i]['title']); ?>" class="widefat">
+                <?php wp_editor($industries[$i]['title'], 'chatbots_industry_title_' . $i, array(
+                    'textarea_name' => 'chatbots_industry_title_' . $i,
+                    'media_buttons' => false,
+                    'textarea_rows' => 2,
+                    'teeny' => true,
+                    'quicktags' => false
+                )); ?>
             </p>
             <p>
                 <label for="chatbots_industry_content_<?php echo $i; ?>"><?php _e('Content', 'aimpro'); ?></label><br>
-                <textarea id="chatbots_industry_content_<?php echo $i; ?>" name="chatbots_industry_content_<?php echo $i; ?>" class="widefat" rows="3"><?php echo esc_textarea($industries[$i]['content']); ?></textarea>
+                <?php wp_editor($industries[$i]['content'], 'chatbots_industry_content_' . $i, array(
+                    'textarea_name' => 'chatbots_industry_content_' . $i,
+                    'media_buttons' => false,
+                    'textarea_rows' => 3,
+                    'teeny' => true,
+                    'quicktags' => false
+                )); ?>
             </p>
         </div>
     <?php endfor; ?>
@@ -912,15 +1134,33 @@ function aimpro_chatbots_testimonial_callback($post) {
     ?>
     <p>
         <label for="chatbots_testimonial_quote"><?php _e('Testimonial Quote', 'aimpro'); ?></label><br>
-        <textarea id="chatbots_testimonial_quote" name="chatbots_testimonial_quote" class="widefat" rows="4"><?php echo esc_textarea($testimonial_quote); ?></textarea>
+        <?php wp_editor($testimonial_quote, 'chatbots_testimonial_quote', array(
+            'textarea_name' => 'chatbots_testimonial_quote',
+            'media_buttons' => false,
+            'textarea_rows' => 4,
+            'teeny' => true,
+            'quicktags' => false
+        )); ?>
     </p>
     <p>
         <label for="chatbots_testimonial_name"><?php _e('Name', 'aimpro'); ?></label><br>
-        <input type="text" id="chatbots_testimonial_name" name="chatbots_testimonial_name" value="<?php echo esc_attr($testimonial_name); ?>" class="widefat">
+        <?php wp_editor($testimonial_name, 'chatbots_testimonial_name', array(
+            'textarea_name' => 'chatbots_testimonial_name',
+            'media_buttons' => false,
+            'textarea_rows' => 2,
+            'teeny' => true,
+            'quicktags' => false
+        )); ?>
     </p>
     <p>
         <label for="chatbots_testimonial_title"><?php _e('Title/Company', 'aimpro'); ?></label><br>
-        <input type="text" id="chatbots_testimonial_title" name="chatbots_testimonial_title" value="<?php echo esc_attr($testimonial_title); ?>" class="widefat">
+        <?php wp_editor($testimonial_title, 'chatbots_testimonial_title', array(
+            'textarea_name' => 'chatbots_testimonial_title',
+            'media_buttons' => false,
+            'textarea_rows' => 2,
+            'teeny' => true,
+            'quicktags' => false
+        )); ?>
     </p>
     <?php
 }
@@ -947,15 +1187,33 @@ function aimpro_chatbots_cta_callback($post) {
     ?>
     <p>
         <label for="chatbots_cta_title"><?php _e('CTA Title', 'aimpro'); ?></label><br>
-        <input type="text" id="chatbots_cta_title" name="chatbots_cta_title" value="<?php echo esc_attr($cta_title); ?>" class="widefat">
+        <?php wp_editor($cta_title, 'chatbots_cta_title', array(
+            'textarea_name' => 'chatbots_cta_title',
+            'media_buttons' => false,
+            'textarea_rows' => 3,
+            'teeny' => true,
+            'quicktags' => false
+        )); ?>
     </p>
     <p>
         <label for="chatbots_cta_content"><?php _e('CTA Content', 'aimpro'); ?></label><br>
-        <textarea id="chatbots_cta_content" name="chatbots_cta_content" class="widefat" rows="3"><?php echo esc_textarea($cta_content); ?></textarea>
+        <?php wp_editor($cta_content, 'chatbots_cta_content', array(
+            'textarea_name' => 'chatbots_cta_content',
+            'media_buttons' => false,
+            'textarea_rows' => 4,
+            'teeny' => true,
+            'quicktags' => false
+        )); ?>
     </p>
     <p>
         <label for="chatbots_cta_button_text"><?php _e('Button Text', 'aimpro'); ?></label><br>
-        <input type="text" id="chatbots_cta_button_text" name="chatbots_cta_button_text" value="<?php echo esc_attr($cta_button_text); ?>" class="widefat">
+        <?php wp_editor($cta_button_text, 'chatbots_cta_button_text', array(
+            'textarea_name' => 'chatbots_cta_button_text',
+            'media_buttons' => false,
+            'textarea_rows' => 2,
+            'teeny' => true,
+            'quicktags' => false
+        )); ?>
     </p>
     <?php
 }
@@ -980,10 +1238,10 @@ function aimpro_save_chatbots_meta_boxes($post_id) {
     if (isset($_POST['chatbots_hero_nonce']) && wp_verify_nonce($_POST['chatbots_hero_nonce'], basename(__FILE__))) {
         // Title and subtitle
         if (isset($_POST['chatbots_hero_title'])) {
-            update_post_meta($post_id, '_chatbots_hero_title', sanitize_text_field($_POST['chatbots_hero_title']));
+            update_post_meta($post_id, '_chatbots_hero_title', wp_kses_post($_POST['chatbots_hero_title']));
         }
         if (isset($_POST['chatbots_hero_subtitle'])) {
-            update_post_meta($post_id, '_chatbots_hero_subtitle', sanitize_textarea_field($_POST['chatbots_hero_subtitle']));
+            update_post_meta($post_id, '_chatbots_hero_subtitle', wp_kses_post($_POST['chatbots_hero_subtitle']));
         }
         
         // Stats
@@ -992,26 +1250,26 @@ function aimpro_save_chatbots_meta_boxes($post_id) {
                 update_post_meta($post_id, "_chatbots_hero_stat{$i}_number", sanitize_text_field($_POST["chatbots_hero_stat{$i}_number"]));
             }
             if (isset($_POST["chatbots_hero_stat{$i}_label"])) {
-                update_post_meta($post_id, "_chatbots_hero_stat{$i}_label", sanitize_text_field($_POST["chatbots_hero_stat{$i}_label"]));
+                update_post_meta($post_id, "_chatbots_hero_stat{$i}_label", wp_kses_post($_POST["chatbots_hero_stat{$i}_label"]));
             }
         }
         
         // CTAs
         if (isset($_POST['chatbots_hero_cta1_text'])) {
-            update_post_meta($post_id, '_chatbots_hero_cta1_text', sanitize_text_field($_POST['chatbots_hero_cta1_text']));
+            update_post_meta($post_id, '_chatbots_hero_cta1_text', wp_kses_post($_POST['chatbots_hero_cta1_text']));
         }
         if (isset($_POST['chatbots_hero_cta2_text'])) {
-            update_post_meta($post_id, '_chatbots_hero_cta2_text', sanitize_text_field($_POST['chatbots_hero_cta2_text']));
+            update_post_meta($post_id, '_chatbots_hero_cta2_text', wp_kses_post($_POST['chatbots_hero_cta2_text']));
         }
     }
     
     // Save Overview Section
     if (isset($_POST['chatbots_overview_nonce']) && wp_verify_nonce($_POST['chatbots_overview_nonce'], basename(__FILE__))) {
         if (isset($_POST['chatbots_overview_title'])) {
-            update_post_meta($post_id, '_chatbots_overview_title', sanitize_text_field($_POST['chatbots_overview_title']));
+            update_post_meta($post_id, '_chatbots_overview_title', wp_kses_post($_POST['chatbots_overview_title']));
         }
         if (isset($_POST['chatbots_overview_content'])) {
-            update_post_meta($post_id, '_chatbots_overview_content', sanitize_textarea_field($_POST['chatbots_overview_content']));
+            update_post_meta($post_id, '_chatbots_overview_content', wp_kses_post($_POST['chatbots_overview_content']));
         }
         
         // Services
@@ -1020,10 +1278,10 @@ function aimpro_save_chatbots_meta_boxes($post_id) {
                 update_post_meta($post_id, "_chatbots_service_icon_{$i}", sanitize_text_field($_POST["chatbots_service_icon_{$i}"]));
             }
             if (isset($_POST["chatbots_service_title_{$i}"])) {
-                update_post_meta($post_id, "_chatbots_service_title_{$i}", sanitize_text_field($_POST["chatbots_service_title_{$i}"]));
+                update_post_meta($post_id, "_chatbots_service_title_{$i}", wp_kses_post($_POST["chatbots_service_title_{$i}"]));
             }
             if (isset($_POST["chatbots_service_content_{$i}"])) {
-                update_post_meta($post_id, "_chatbots_service_content_{$i}", sanitize_textarea_field($_POST["chatbots_service_content_{$i}"]));
+                update_post_meta($post_id, "_chatbots_service_content_{$i}", wp_kses_post($_POST["chatbots_service_content_{$i}"]));
             }
         }
     }
@@ -1031,28 +1289,28 @@ function aimpro_save_chatbots_meta_boxes($post_id) {
     // Save Case Study Section
     if (isset($_POST['chatbots_case_study_nonce']) && wp_verify_nonce($_POST['chatbots_case_study_nonce'], basename(__FILE__))) {
         if (isset($_POST['chatbots_case_study_title'])) {
-            update_post_meta($post_id, '_chatbots_case_study_title', sanitize_text_field($_POST['chatbots_case_study_title']));
+            update_post_meta($post_id, '_chatbots_case_study_title', wp_kses_post($_POST['chatbots_case_study_title']));
         }
         if (isset($_POST['chatbots_case_study_intro'])) {
-            update_post_meta($post_id, '_chatbots_case_study_intro', sanitize_textarea_field($_POST['chatbots_case_study_intro']));
+            update_post_meta($post_id, '_chatbots_case_study_intro', wp_kses_post($_POST['chatbots_case_study_intro']));
         }
         
         if (isset($_POST['chatbots_challenge_title'])) {
-            update_post_meta($post_id, '_chatbots_challenge_title', sanitize_text_field($_POST['chatbots_challenge_title']));
+            update_post_meta($post_id, '_chatbots_challenge_title', wp_kses_post($_POST['chatbots_challenge_title']));
         }
         if (isset($_POST['chatbots_challenge_content'])) {
-            update_post_meta($post_id, '_chatbots_challenge_content', sanitize_textarea_field($_POST['chatbots_challenge_content']));
+            update_post_meta($post_id, '_chatbots_challenge_content', wp_kses_post($_POST['chatbots_challenge_content']));
         }
         
         if (isset($_POST['chatbots_solution_title'])) {
-            update_post_meta($post_id, '_chatbots_solution_title', sanitize_text_field($_POST['chatbots_solution_title']));
+            update_post_meta($post_id, '_chatbots_solution_title', wp_kses_post($_POST['chatbots_solution_title']));
         }
         if (isset($_POST['chatbots_solution_list'])) {
-            update_post_meta($post_id, '_chatbots_solution_list', sanitize_textarea_field($_POST['chatbots_solution_list']));
+            update_post_meta($post_id, '_chatbots_solution_list', wp_kses_post($_POST['chatbots_solution_list']));
         }
         
         if (isset($_POST['chatbots_results_title'])) {
-            update_post_meta($post_id, '_chatbots_results_title', sanitize_text_field($_POST['chatbots_results_title']));
+            update_post_meta($post_id, '_chatbots_results_title', wp_kses_post($_POST['chatbots_results_title']));
         }
         
         // Results
@@ -1061,7 +1319,7 @@ function aimpro_save_chatbots_meta_boxes($post_id) {
                 update_post_meta($post_id, "_chatbots_result_number_{$i}", sanitize_text_field($_POST["chatbots_result_number_{$i}"]));
             }
             if (isset($_POST["chatbots_result_label_{$i}"])) {
-                update_post_meta($post_id, "_chatbots_result_label_{$i}", sanitize_text_field($_POST["chatbots_result_label_{$i}"]));
+                update_post_meta($post_id, "_chatbots_result_label_{$i}", wp_kses_post($_POST["chatbots_result_label_{$i}"]));
             }
         }
     }
@@ -1069,10 +1327,10 @@ function aimpro_save_chatbots_meta_boxes($post_id) {
     // Save Chatbot Types Section
     if (isset($_POST['chatbots_types_nonce']) && wp_verify_nonce($_POST['chatbots_types_nonce'], basename(__FILE__))) {
         if (isset($_POST['chatbots_types_title'])) {
-            update_post_meta($post_id, '_chatbots_types_title', sanitize_text_field($_POST['chatbots_types_title']));
+            update_post_meta($post_id, '_chatbots_types_title', wp_kses_post($_POST['chatbots_types_title']));
         }
         if (isset($_POST['chatbots_types_subtitle'])) {
-            update_post_meta($post_id, '_chatbots_types_subtitle', sanitize_textarea_field($_POST['chatbots_types_subtitle']));
+            update_post_meta($post_id, '_chatbots_types_subtitle', wp_kses_post($_POST['chatbots_types_subtitle']));
         }
         
         // Type Items
@@ -1081,13 +1339,13 @@ function aimpro_save_chatbots_meta_boxes($post_id) {
                 update_post_meta($post_id, "_chatbots_type_icon_{$i}", sanitize_text_field($_POST["chatbots_type_icon_{$i}"]));
             }
             if (isset($_POST["chatbots_type_title_{$i}"])) {
-                update_post_meta($post_id, "_chatbots_type_title_{$i}", sanitize_text_field($_POST["chatbots_type_title_{$i}"]));
+                update_post_meta($post_id, "_chatbots_type_title_{$i}", wp_kses_post($_POST["chatbots_type_title_{$i}"]));
             }
             if (isset($_POST["chatbots_type_content_{$i}"])) {
-                update_post_meta($post_id, "_chatbots_type_content_{$i}", sanitize_textarea_field($_POST["chatbots_type_content_{$i}"]));
+                update_post_meta($post_id, "_chatbots_type_content_{$i}", wp_kses_post($_POST["chatbots_type_content_{$i}"]));
             }
             if (isset($_POST["chatbots_type_metric_{$i}"])) {
-                update_post_meta($post_id, "_chatbots_type_metric_{$i}", sanitize_text_field($_POST["chatbots_type_metric_{$i}"]));
+                update_post_meta($post_id, "_chatbots_type_metric_{$i}", wp_kses_post($_POST["chatbots_type_metric_{$i}"]));
             }
         }
     }
@@ -1095,16 +1353,16 @@ function aimpro_save_chatbots_meta_boxes($post_id) {
     // Save Process Section
     if (isset($_POST['chatbots_process_nonce']) && wp_verify_nonce($_POST['chatbots_process_nonce'], basename(__FILE__))) {
         if (isset($_POST['chatbots_process_title'])) {
-            update_post_meta($post_id, '_chatbots_process_title', sanitize_text_field($_POST['chatbots_process_title']));
+            update_post_meta($post_id, '_chatbots_process_title', wp_kses_post($_POST['chatbots_process_title']));
         }
         
         // Steps
         for ($i = 1; $i <= 5; $i++) {
             if (isset($_POST["chatbots_process_step_title_{$i}"])) {
-                update_post_meta($post_id, "_chatbots_process_step_title_{$i}", sanitize_text_field($_POST["chatbots_process_step_title_{$i}"]));
+                update_post_meta($post_id, "_chatbots_process_step_title_{$i}", wp_kses_post($_POST["chatbots_process_step_title_{$i}"]));
             }
             if (isset($_POST["chatbots_process_step_content_{$i}"])) {
-                update_post_meta($post_id, "_chatbots_process_step_content_{$i}", sanitize_textarea_field($_POST["chatbots_process_step_content_{$i}"]));
+                update_post_meta($post_id, "_chatbots_process_step_content_{$i}", wp_kses_post($_POST["chatbots_process_step_content_{$i}"]));
             }
         }
     }
@@ -1112,10 +1370,10 @@ function aimpro_save_chatbots_meta_boxes($post_id) {
     // Save Features Section
     if (isset($_POST['chatbots_features_nonce']) && wp_verify_nonce($_POST['chatbots_features_nonce'], basename(__FILE__))) {
         if (isset($_POST['chatbots_features_title'])) {
-            update_post_meta($post_id, '_chatbots_features_title', sanitize_text_field($_POST['chatbots_features_title']));
+            update_post_meta($post_id, '_chatbots_features_title', wp_kses_post($_POST['chatbots_features_title']));
         }
         if (isset($_POST['chatbots_features_subtitle'])) {
-            update_post_meta($post_id, '_chatbots_features_subtitle', sanitize_textarea_field($_POST['chatbots_features_subtitle']));
+            update_post_meta($post_id, '_chatbots_features_subtitle', wp_kses_post($_POST['chatbots_features_subtitle']));
         }
         
         // Features
@@ -1124,10 +1382,10 @@ function aimpro_save_chatbots_meta_boxes($post_id) {
                 update_post_meta($post_id, "_chatbots_feature_icon_{$i}", sanitize_text_field($_POST["chatbots_feature_icon_{$i}"]));
             }
             if (isset($_POST["chatbots_feature_title_{$i}"])) {
-                update_post_meta($post_id, "_chatbots_feature_title_{$i}", sanitize_text_field($_POST["chatbots_feature_title_{$i}"]));
+                update_post_meta($post_id, "_chatbots_feature_title_{$i}", wp_kses_post($_POST["chatbots_feature_title_{$i}"]));
             }
             if (isset($_POST["chatbots_feature_content_{$i}"])) {
-                update_post_meta($post_id, "_chatbots_feature_content_{$i}", sanitize_textarea_field($_POST["chatbots_feature_content_{$i}"]));
+                update_post_meta($post_id, "_chatbots_feature_content_{$i}", wp_kses_post($_POST["chatbots_feature_content_{$i}"]));
             }
         }
     }
@@ -1135,7 +1393,7 @@ function aimpro_save_chatbots_meta_boxes($post_id) {
     // Save Platforms Section
     if (isset($_POST['chatbots_platforms_nonce']) && wp_verify_nonce($_POST['chatbots_platforms_nonce'], basename(__FILE__))) {
         if (isset($_POST['chatbots_platforms_title'])) {
-            update_post_meta($post_id, '_chatbots_platforms_title', sanitize_text_field($_POST['chatbots_platforms_title']));
+            update_post_meta($post_id, '_chatbots_platforms_title', wp_kses_post($_POST['chatbots_platforms_title']));
         }
         
         // Platforms
@@ -1144,10 +1402,10 @@ function aimpro_save_chatbots_meta_boxes($post_id) {
                 update_post_meta($post_id, "_chatbots_platform_icon_{$i}", sanitize_text_field($_POST["chatbots_platform_icon_{$i}"]));
             }
             if (isset($_POST["chatbots_platform_title_{$i}"])) {
-                update_post_meta($post_id, "_chatbots_platform_title_{$i}", sanitize_text_field($_POST["chatbots_platform_title_{$i}"]));
+                update_post_meta($post_id, "_chatbots_platform_title_{$i}", wp_kses_post($_POST["chatbots_platform_title_{$i}"]));
             }
             if (isset($_POST["chatbots_platform_content_{$i}"])) {
-                update_post_meta($post_id, "_chatbots_platform_content_{$i}", sanitize_textarea_field($_POST["chatbots_platform_content_{$i}"]));
+                update_post_meta($post_id, "_chatbots_platform_content_{$i}", wp_kses_post($_POST["chatbots_platform_content_{$i}"]));
             }
         }
     }
@@ -1155,16 +1413,16 @@ function aimpro_save_chatbots_meta_boxes($post_id) {
     // Save Industries Section
     if (isset($_POST['chatbots_industries_nonce']) && wp_verify_nonce($_POST['chatbots_industries_nonce'], basename(__FILE__))) {
         if (isset($_POST['chatbots_industries_title'])) {
-            update_post_meta($post_id, '_chatbots_industries_title', sanitize_text_field($_POST['chatbots_industries_title']));
+            update_post_meta($post_id, '_chatbots_industries_title', wp_kses_post($_POST['chatbots_industries_title']));
         }
         
         // Industries
         for ($i = 1; $i <= 6; $i++) {
             if (isset($_POST["chatbots_industry_title_{$i}"])) {
-                update_post_meta($post_id, "_chatbots_industry_title_{$i}", sanitize_text_field($_POST["chatbots_industry_title_{$i}"]));
+                update_post_meta($post_id, "_chatbots_industry_title_{$i}", wp_kses_post($_POST["chatbots_industry_title_{$i}"]));
             }
             if (isset($_POST["chatbots_industry_content_{$i}"])) {
-                update_post_meta($post_id, "_chatbots_industry_content_{$i}", sanitize_textarea_field($_POST["chatbots_industry_content_{$i}"]));
+                update_post_meta($post_id, "_chatbots_industry_content_{$i}", wp_kses_post($_POST["chatbots_industry_content_{$i}"]));
             }
         }
     }
@@ -1172,26 +1430,26 @@ function aimpro_save_chatbots_meta_boxes($post_id) {
     // Save Testimonial Section
     if (isset($_POST['chatbots_testimonial_nonce']) && wp_verify_nonce($_POST['chatbots_testimonial_nonce'], basename(__FILE__))) {
         if (isset($_POST['chatbots_testimonial_quote'])) {
-            update_post_meta($post_id, '_chatbots_testimonial_quote', sanitize_textarea_field($_POST['chatbots_testimonial_quote']));
+            update_post_meta($post_id, '_chatbots_testimonial_quote', wp_kses_post($_POST['chatbots_testimonial_quote']));
         }
         if (isset($_POST['chatbots_testimonial_name'])) {
-            update_post_meta($post_id, '_chatbots_testimonial_name', sanitize_text_field($_POST['chatbots_testimonial_name']));
+            update_post_meta($post_id, '_chatbots_testimonial_name', wp_kses_post($_POST['chatbots_testimonial_name']));
         }
         if (isset($_POST['chatbots_testimonial_title'])) {
-            update_post_meta($post_id, '_chatbots_testimonial_title', sanitize_text_field($_POST['chatbots_testimonial_title']));
+            update_post_meta($post_id, '_chatbots_testimonial_title', wp_kses_post($_POST['chatbots_testimonial_title']));
         }
     }
     
     // Save CTA Section
     if (isset($_POST['chatbots_cta_nonce']) && wp_verify_nonce($_POST['chatbots_cta_nonce'], basename(__FILE__))) {
         if (isset($_POST['chatbots_cta_title'])) {
-            update_post_meta($post_id, '_chatbots_cta_title', sanitize_text_field($_POST['chatbots_cta_title']));
+            update_post_meta($post_id, '_chatbots_cta_title', wp_kses_post($_POST['chatbots_cta_title']));
         }
         if (isset($_POST['chatbots_cta_content'])) {
-            update_post_meta($post_id, '_chatbots_cta_content', sanitize_textarea_field($_POST['chatbots_cta_content']));
+            update_post_meta($post_id, '_chatbots_cta_content', wp_kses_post($_POST['chatbots_cta_content']));
         }
         if (isset($_POST['chatbots_cta_button_text'])) {
-            update_post_meta($post_id, '_chatbots_cta_button_text', sanitize_text_field($_POST['chatbots_cta_button_text']));
+            update_post_meta($post_id, '_chatbots_cta_button_text', wp_kses_post($_POST['chatbots_cta_button_text']));
         }
     }
 }
