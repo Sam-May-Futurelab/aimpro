@@ -23,13 +23,13 @@ get_header(); ?>
     <div class="container">        <!-- Page Header -->
         <section class="page-header animate-on-scroll animate-fade-up">
             <div class="page-header-content">
-                <h1><?php echo esc_html(get_post_meta(get_the_ID(), 'careers_header_title', true) ?: 'Careers at Aimpro Digital'); ?></h1>
-                <p class="page-subtitle"><?php echo esc_html(get_post_meta(get_the_ID(), 'careers_header_subtitle', true) ?: 'Join our team of digital marketing experts and help businesses grow'); ?></p>
+                <h1><?php echo wp_kses_post(get_post_meta(get_the_ID(), 'careers_header_title', true) ?: 'Careers at Aimpro Digital'); ?></h1>
+                <p class="page-subtitle"><?php echo wp_kses_post(get_post_meta(get_the_ID(), 'careers_header_subtitle', true) ?: 'Join our team of digital marketing experts and help businesses grow'); ?></p>
             </div>
         </section>        <!-- Why Work With Us -->
         <section class="why-work-with-us">
             <div class="section-content">
-                <h2 class="animate-on-scroll animate-fade-up"><?php echo esc_html(get_post_meta(get_the_ID(), 'careers_why_heading', true) ?: 'Why Choose Aimpro Digital?'); ?></h2>                <div class="benefits-grid">
+                <h2 class="animate-on-scroll animate-fade-up"><?php echo wp_kses_post(get_post_meta(get_the_ID(), 'careers_why_heading', true) ?: 'Why Choose Aimpro Digital?'); ?></h2>                <div class="benefits-grid">
                     <?php 
                     $benefit_icons = array(
                         1 => '<path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" stroke="currentcolour" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="9" cy="7" r="4" stroke="currentcolour" stroke-width="2"/><path d="m22 21-3-3m0 0a2 2 0 1 1-4 0 2 2 0 0 1 4 0" stroke="currentcolour" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>',
@@ -66,7 +66,7 @@ get_header(); ?>
             </div>
         </section>        <!-- Open Positions -->
         <section class="open-positions">            <div class="section-content">
-                <h2 class="animate-on-scroll animate-fade-up"><?php echo esc_html(get_post_meta(get_the_ID(), 'careers_openings_heading', true) ?: 'Current Openings'); ?></h2>
+                <h2 class="animate-on-scroll animate-fade-up"><?php echo wp_kses_post(get_post_meta(get_the_ID(), 'careers_openings_heading', true) ?: 'Current Openings'); ?></h2>
                 <div class="positions-grid">
                     <?php 
                     // Job defaults for initial setup
@@ -111,9 +111,9 @@ get_header(); ?>
                         <div class="position-header">
                             <h3><?php echo wp_kses_post($job_title); ?></h3>
                             <div class="position-meta">
-                                <span class="department"><?php echo esc_html($job_team); ?></span>
-                                <span class="type"><?php echo esc_html($job_type); ?></span>
-                                <span class="location"><?php echo esc_html($job_location); ?></span>
+                                <span class="department"><?php echo wp_kses_post($job_team); ?></span>
+                                <span class="type"><?php echo wp_kses_post($job_type); ?></span>
+                                <span class="location"><?php echo wp_kses_post($job_location); ?></span>
                             </div>
                         </div>
                         <div class="position-content">
@@ -144,7 +144,7 @@ get_header(); ?>
         <!-- Application Process -->
         <section class="application-process">
             <div class="section-content">
-                <h2><?php echo esc_html(get_post_meta(get_the_ID(), 'careers_process_heading', true) ?: 'Our Hiring Process'); ?></h2>
+                <h2><?php echo wp_kses_post(get_post_meta(get_the_ID(), 'careers_process_heading', true) ?: 'Our Hiring Process'); ?></h2>
                 <div class="process-steps">
                     <?php 
                     $process_defaults = array(
@@ -174,7 +174,7 @@ get_header(); ?>
         <!-- Employee Testimonials -->
         <section class="employee-testimonials">
             <div class="section-content">
-                <h2><?php echo esc_html(get_post_meta(get_the_ID(), 'careers_team_testimonials_heading', true) ?: 'What Our Team Says'); ?></h2>
+                <h2><?php echo wp_kses_post(get_post_meta(get_the_ID(), 'careers_team_testimonials_heading', true) ?: 'What Our Team Says'); ?></h2>
                 <div class="testimonials-grid">
                     <?php 
                     $testimonial_defaults = array(
@@ -193,8 +193,8 @@ get_header(); ?>
                             <?php echo wp_kses_post($quote); ?>
                         </blockquote>
                         <div class="testimonial-author">
-                            <h4><?php echo esc_html($author); ?></h4>
-                            <p><?php echo esc_html($title); ?></p>
+                            <h4><?php echo wp_kses_post($author); ?></h4>
+                            <p><?php echo wp_kses_post($title); ?></p>
                         </div>
                     </div>
                     <?php endfor; ?>
@@ -203,7 +203,7 @@ get_header(); ?>
         </section>        <!-- Application Form -->
         <section class="application-form">
             <div class="section-content">
-                <h2><?php echo esc_html(get_post_meta(get_the_ID(), 'careers_form_heading', true) ?: 'Ready to Apply?'); ?></h2>
+                <h2><?php echo wp_kses_post(get_post_meta(get_the_ID(), 'careers_form_heading', true) ?: 'Ready to Apply?'); ?></h2>
                 <p><?php echo wp_kses_post(get_post_meta(get_the_ID(), 'careers_form_description', true) ?: 'Don\'t see a position that fits? We\'re always looking for talented individuals to join our team.'); ?></p>
                 
                 <?php if (isset($_GET['career_success'])): ?>
@@ -280,7 +280,7 @@ get_header(); ?>
         </section>        <!-- Contact HR -->        
         <section class="contact-hr">
             <div class="section-content">
-                <h2><?php echo esc_html(get_post_meta(get_the_ID(), 'careers_contact_heading', true) ?: 'Questions About Careers?'); ?></h2>
+                <h2><?php echo wp_kses_post(get_post_meta(get_the_ID(), 'careers_contact_heading', true) ?: 'Questions About Careers?'); ?></h2>
                 <p><?php echo wp_kses_post(get_post_meta(get_the_ID(), 'careers_contact_description', true) ?: 'Our HR team is here to help answer any questions about working at Aimpro Digital'); ?></p>
                 <div class="cta-buttons" style="justify-content: center; margin-top: 2rem;">
                     <a href="mailto:<?php echo esc_attr(get_post_meta(get_the_ID(), 'careers_contact_email', true) ?: 'careers@aimpro.co.uk'); ?>" class="btn btn-primary">
