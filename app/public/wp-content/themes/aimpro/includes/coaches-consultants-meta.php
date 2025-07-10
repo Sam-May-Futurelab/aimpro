@@ -149,6 +149,8 @@ function coaches_consultants_meta_box_callback($post) {
 
     // Process section
     $process_title = get_post_meta($post->ID, '_coaches_consultants_process_title', true);
+    if (empty($process_title)) $process_title = 'Our Coaching & Consulting Marketing Process';
+    
     $process_steps = get_post_meta($post->ID, '_coaches_consultants_process_steps', true);
     if (empty($process_steps)) {
         $process_steps = array(
@@ -173,6 +175,8 @@ function coaches_consultants_meta_box_callback($post) {
 
     // Industry Insights section
     $insights_title = get_post_meta($post->ID, '_coaches_consultants_insights_title', true);
+    if (empty($insights_title)) $insights_title = 'Coaching & Consulting Industry Insights';
+    
     $insights = get_post_meta($post->ID, '_coaches_consultants_insights', true);
     if (empty($insights)) {
         $insights = array(
@@ -201,17 +205,35 @@ function coaches_consultants_meta_box_callback($post) {
 
     // Testimonial section (without image)
     $testimonial_quote = get_post_meta($post->ID, '_coaches_consultants_testimonial_quote', true);
+    if (empty($testimonial_quote)) $testimonial_quote = '"Aimpro Digital understood exactly what I needed as a consultant. They helped me build a powerful personal brand and create systems that generate high-quality leads consistently. My business has grown 400% and I can now command premium rates."';
+    
     $testimonial_name = get_post_meta($post->ID, '_coaches_consultants_testimonial_name', true);
+    if (empty($testimonial_name)) $testimonial_name = 'Mark Anderson';
+    
     $testimonial_position = get_post_meta($post->ID, '_coaches_consultants_testimonial_position', true);
+    if (empty($testimonial_position)) $testimonial_position = 'Principal, Strategic Business Solutions';
+    
     $testimonial_company = get_post_meta($post->ID, '_coaches_consultants_testimonial_company', true);
+    if (empty($testimonial_company)) $testimonial_company = 'Business strategy consultant & executive coach';
 
     // CTA section
     $cta_title = get_post_meta($post->ID, '_coaches_consultants_cta_title', true);
+    if (empty($cta_title)) $cta_title = 'Ready to Scale Your Coaching Business?';
+    
     $cta_subtitle = get_post_meta($post->ID, '_coaches_consultants_cta_subtitle', true);
+    if (empty($cta_subtitle)) $cta_subtitle = 'Let\'s discuss how our marketing expertise can help you build authority, attract premium clients, and create scalable systems.';
+    
     $cta_primary_text = get_post_meta($post->ID, '_coaches_consultants_cta_primary_text', true);
+    if (empty($cta_primary_text)) $cta_primary_text = 'Get Free Strategy Session';
+    
     $cta_primary_url = get_post_meta($post->ID, '_coaches_consultants_cta_primary_url', true);
+    if (empty($cta_primary_url)) $cta_primary_url = '/contact';
+    
     $cta_secondary_text = get_post_meta($post->ID, '_coaches_consultants_cta_secondary_text', true);
+    if (empty($cta_secondary_text)) $cta_secondary_text = 'View Coach Success Stories';
+    
     $cta_secondary_url = get_post_meta($post->ID, '_coaches_consultants_cta_secondary_url', true);
+    if (empty($cta_secondary_url)) $cta_secondary_url = '/case-studies';
     $cta_benefits = get_post_meta($post->ID, '_coaches_consultants_cta_benefits', true);
     if (empty($cta_benefits)) {
         $cta_benefits = array(
