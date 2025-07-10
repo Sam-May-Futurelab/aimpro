@@ -257,7 +257,7 @@ get_header(); ?>
         </section>        <!-- Website Optimisation Process -->
         <section class="website-process">
             <div class="section-content">
-                <h2 class="animate-on-scroll animate-fade-up"><?php echo get_post_meta(get_the_ID(), 'high_converting_website_process_title', true) ?: 'Our Website Optimisation Process'; ?></h2>
+                <h2 class="animate-on-scroll animate-fade-up"><?php echo wp_kses_post(get_post_meta(get_the_ID(), 'high_converting_website_process_title', true) ?: 'Our Website Optimisation Process'); ?></h2>
                 <div class="process-steps">                    <?php
                     $steps = get_post_meta(get_the_ID(), 'high_converting_website_process_steps', true);
                     if (!empty($steps) && is_array($steps)) {
@@ -317,7 +317,7 @@ get_header(); ?>
         </section>        <!-- Conversion Elements -->
         <section class="conversion-elements tools-section">
             <div class="section-content">
-                <h2 class="animate-on-scroll animate-fade-up"><?php echo get_post_meta(get_the_ID(), 'high_converting_website_elements_title', true) ?: 'Key Conversion Elements We Optimise'; ?></h2>
+                <h2 class="animate-on-scroll animate-fade-up"><?php echo wp_kses_post(get_post_meta(get_the_ID(), 'high_converting_website_elements_title', true) ?: 'Key Conversion Elements We Optimise'); ?></h2>
                 <div class="tools-grid">
                     <?php
                     $elements = get_post_meta(get_the_ID(), 'high_converting_website_elements', true);
@@ -425,7 +425,7 @@ get_header(); ?>
         </section><!-- Website Types -->
         <section class="website-types">
             <div class="section-content">
-                <h2 class="animate-on-scroll animate-fade-up"><?php echo get_post_meta(get_the_ID(), 'high_converting_website_types_title', true) ?: 'Website Optimisation by Type'; ?></h2>
+                <h2 class="animate-on-scroll animate-fade-up"><?php echo wp_kses_post(get_post_meta(get_the_ID(), 'high_converting_website_types_title', true) ?: 'Website Optimisation by Type'); ?></h2>
                 <div class="types-grid">
                     <?php
                     $types = get_post_meta(get_the_ID(), 'high_converting_website_types', true);

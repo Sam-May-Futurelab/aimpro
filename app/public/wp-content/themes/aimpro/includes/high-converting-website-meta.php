@@ -756,7 +756,12 @@ function high_converting_website_meta_box_callback($post) {
                 <tr>
                     <th><label for="high_converting_website_elements_title">Elements Section Title</label></th>
                     <td>
-                        <input type="text" id="high_converting_website_elements_title" name="high_converting_website_elements_title" value="<?php echo esc_attr($elements_title); ?>" />
+                        <?php wp_editor($elements_title, 'high_converting_website_elements_title', array(
+                            'textarea_name' => 'high_converting_website_elements_title',
+                            'textarea_rows' => 3,
+                            'teeny' => true,
+                            'media_buttons' => false
+                        )); ?>
                     </td>
                 </tr>
             </table>
@@ -825,7 +830,12 @@ function high_converting_website_meta_box_callback($post) {
                 <tr>
                     <th><label for="high_converting_website_types_title">Types Section Title</label></th>
                     <td>
-                        <input type="text" id="high_converting_website_types_title" name="high_converting_website_types_title" value="<?php echo esc_attr($types_title); ?>" />
+                        <?php wp_editor($types_title, 'high_converting_website_types_title', array(
+                            'textarea_name' => 'high_converting_website_types_title',
+                            'textarea_rows' => 3,
+                            'teeny' => true,
+                            'media_buttons' => false
+                        )); ?>
                     </td>
                 </tr>
             </table>
@@ -894,7 +904,12 @@ function high_converting_website_meta_box_callback($post) {
                 <tr>
                     <th><label for="high_converting_website_tools_title">Tools Section Title</label></th>
                     <td>
-                        <input type="text" id="high_converting_website_tools_title" name="high_converting_website_tools_title" value="<?php echo esc_attr($tools_title); ?>" />
+                        <?php wp_editor($tools_title, 'high_converting_website_tools_title', array(
+                            'textarea_name' => 'high_converting_website_tools_title',
+                            'textarea_rows' => 3,
+                            'teeny' => true,
+                            'media_buttons' => false
+                        )); ?>
                     </td>
                 </tr>
             </table>
