@@ -42,19 +42,19 @@ $services = get_post_meta(get_the_ID(), '_home_garden_services', true) ?: array(
           <!-- Page Header -->
         <section class="page-header">
             <div class="page-header-content animate-on-scroll animate-fade-up">
-                <h1><?php echo esc_html($header_title); ?></h1>
-                <p class="page-subtitle"><?php echo esc_html($header_subtitle); ?></p>
+                <h1><?php echo wp_kses_post($header_title); ?></h1>
+                <p class="page-subtitle"><?php echo wp_kses_post($header_subtitle); ?></p>
             </div>
         </section>        <!-- Industry Overview -->
         <section class="industry-overview animate-on-scroll animate-fade-up">
             <div class="section-content">
                 <div class="overview-content">
                     <div class="overview-text animate-on-scroll animate-slide-left">
-                        <h2><?php echo esc_html($overview_title); ?></h2>
-                        <p><?php echo esc_html($overview_content); ?></p>
+                        <h2><?php echo wp_kses_post($overview_title); ?></h2>
+                        <p><?php echo wp_kses_post($overview_content); ?></p>
                         
                         <div class="industry-challenges animate-on-scroll animate-fade-up">
-                            <h3><?php echo esc_html($challenges_title); ?></h3>
+                            <h3><?php echo wp_kses_post($challenges_title); ?></h3>
                             <ul>
                                 <?php foreach ($challenges as $challenge): ?>
                                     <li><?php echo esc_html($challenge); ?></li>
@@ -64,7 +64,7 @@ $services = get_post_meta(get_the_ID(), '_home_garden_services', true) ?: array(
                     </div>
                     <div class="overview-image animate-on-scroll animate-slide-right">
                         <?php if ($overview_image): ?>
-                            <img src="<?php echo esc_url($overview_image); ?>" alt="<?php echo esc_attr($overview_title); ?>" />
+                            <img src="<?php echo esc_url($overview_image); ?>" alt="<?php echo esc_attr(wp_strip_all_tags($overview_title)); ?>" />
                         <?php else: ?>
                             <img src="<?php echo get_template_directory_uri(); ?>/assets/images/industries/home-garden-overview.jpg" alt="Home & Garden Digital Marketing" />
                         <?php endif; ?>
@@ -74,7 +74,7 @@ $services = get_post_meta(get_the_ID(), '_home_garden_services', true) ?: array(
         </section>        <!-- Home & Garden Services -->
         <section class="home-garden-services animate-on-scroll animate-fade-up">
             <div class="section-content">
-                <h2 class="animate-on-scroll animate-fade-up"><?php echo esc_html($services_title); ?></h2>
+                <h2 class="animate-on-scroll animate-fade-up"><?php echo wp_kses_post($services_title); ?></h2>
                 <div class="benefits-grid-2x2">
                     <?php 
                     // Default services if none set
@@ -113,8 +113,8 @@ $services = get_post_meta(get_the_ID(), '_home_garden_services', true) ?: array(
                             <i class="<?php echo esc_attr($service['icon']); ?>"></i>
                         </div>
                         <div class="benefit-content">
-                            <h3><?php echo esc_html($service['title']); ?></h3>
-                            <p><?php echo esc_html($service['description']); ?></p>
+                            <h3><?php echo wp_kses_post($service['title']); ?></h3>
+                            <p><?php echo wp_kses_post($service['description']); ?></p>
                             <?php if (!empty($service['features'])): ?>
                             <ul class="feature-list">
                                 <?php foreach ($service['features'] as $feature): ?>
@@ -151,12 +151,12 @@ $services = get_post_meta(get_the_ID(), '_home_garden_services', true) ?: array(
                             'Year-round maintenance program promotion'
                         );
                         ?>
-                        <span class="case-study-label"><?php echo esc_html($case_study_label); ?></span>
-                        <h2><?php echo esc_html($case_study_title); ?></h2>
-                        <p><?php echo esc_html($case_study_content); ?></p>
+                        <span class="case-study-label"><?php echo wp_kses_post($case_study_label); ?></span>
+                        <h2><?php echo wp_kses_post($case_study_title); ?></h2>
+                        <p><?php echo wp_kses_post($case_study_content); ?></p>
                         
                         <div class="case-study-challenge animate-on-scroll animate-fade-up">
-                            <h3><?php echo esc_html($case_study_challenge_title); ?></h3>
+                            <h3><?php echo wp_kses_post($case_study_challenge_title); ?></h3>
                             <ul>
                                 <?php foreach ($case_study_challenges as $challenge): ?>
                                     <li><?php echo esc_html($challenge); ?></li>
@@ -165,7 +165,7 @@ $services = get_post_meta(get_the_ID(), '_home_garden_services', true) ?: array(
                         </div>
 
                         <div class="case-study-solution animate-on-scroll animate-fade-up">
-                            <h3><?php echo esc_html($case_study_solution_title); ?></h3>
+                            <h3><?php echo wp_kses_post($case_study_solution_title); ?></h3>
                             <ul>
                                 <?php foreach ($case_study_solutions as $solution): ?>
                                     <li><?php echo esc_html($solution); ?></li>
@@ -185,7 +185,7 @@ $services = get_post_meta(get_the_ID(), '_home_garden_services', true) ?: array(
                         $case_study_link_text = get_post_meta(get_the_ID(), '_home_garden_case_study_link_text', true) ?: 'Read Full Case Study';
                         $case_study_link_url = get_post_meta(get_the_ID(), '_home_garden_case_study_link_url', true) ?: home_url('/case-studies');
                         ?>
-                        <h3><?php echo esc_html($case_study_results_title); ?></h3>
+                        <h3><?php echo wp_kses_post($case_study_results_title); ?></h3>
                         <div class="results-grid">
                             <?php foreach ($case_study_results as $result): ?>
                             <div class="result-item animate-on-scroll animate-stagger animate-scale-up">
@@ -194,7 +194,7 @@ $services = get_post_meta(get_the_ID(), '_home_garden_services', true) ?: array(
                             </div>
                             <?php endforeach; ?>
                         </div>
-                        <a href="<?php echo esc_url($case_study_link_url); ?>" class="case-study-link"><?php echo esc_html($case_study_link_text); ?></a>
+                        <a href="<?php echo esc_url($case_study_link_url); ?>" class="case-study-link"><?php echo wp_kses_post($case_study_link_text); ?></a>
                     </div>
                 </div>
             </div>
@@ -239,7 +239,7 @@ $services = get_post_meta(get_the_ID(), '_home_garden_services', true) ?: array(
                     );
                 }
                 ?>
-                <h2 class="animate-on-scroll animate-fade-up"><?php echo esc_html($calendar_title); ?></h2>
+                <h2 class="animate-on-scroll animate-fade-up"><?php echo wp_kses_post($calendar_title); ?></h2>
                 <div class="calendar-grid">
                     <?php foreach ($seasons as $index => $season): 
                         $season_class = '';
@@ -301,13 +301,13 @@ $services = get_post_meta(get_the_ID(), '_home_garden_services', true) ?: array(
                     );
                 }
                 ?>
-                <h2 class="animate-on-scroll animate-fade-up"><?php echo esc_html($visual_title); ?></h2>
+                <h2 class="animate-on-scroll animate-fade-up"><?php echo wp_kses_post($visual_title); ?></h2>
                 <div class="visual-examples">
                     <?php foreach ($visual_examples as $example): ?>
                     <div class="example-card animate-on-scroll animate-stagger animate-scale-up">
                         <div class="example-content">
                             <h3><?php echo esc_html($example['title']); ?></h3>
-                            <p><?php echo esc_html($example['description']); ?></p>
+                            <p><?php echo wp_kses_post($example['description']); ?></p>
                             <div class="example-stats">
                                 <?php foreach ($example['stats'] as $stat): ?>
                                     <span class="stat"><?php echo esc_html($stat); ?></span>
@@ -329,7 +329,7 @@ $services = get_post_meta(get_the_ID(), '_home_garden_services', true) ?: array(
                     $testimonial_company = get_post_meta(get_the_ID(), '_home_garden_testimonial_company', true) ?: 'Garden centre & Landscaping Services';
                     ?>
                     <blockquote>
-                        <?php echo esc_html($testimonial_quote); ?>
+                        <?php echo wp_kses_post($testimonial_quote); ?>
                     </blockquote>
                     <div class="testimonial-author">
                         <div class="author-info">
@@ -356,11 +356,11 @@ $services = get_post_meta(get_the_ID(), '_home_garden_services', true) ?: array(
                     '✓ Visual marketing strategy'
                 );
                 ?>
-                <h2 class="animate-on-scroll animate-fade-up"><?php echo esc_html($cta_title); ?></h2>
-                <p class="animate-on-scroll animate-fade-up"><?php echo esc_html($cta_subtitle); ?></p>
+                <h2 class="animate-on-scroll animate-fade-up"><?php echo wp_kses_post($cta_title); ?></h2>
+                <p class="animate-on-scroll animate-fade-up"><?php echo wp_kses_post($cta_subtitle); ?></p>
                 <div class="cta-buttons animate-on-scroll animate-scale-up">
-                    <a href="<?php echo esc_url($cta_primary_url); ?>" class="btn btn-primary"><?php echo esc_html($cta_primary_text); ?></a>
-                    <a href="<?php echo esc_url($cta_secondary_url); ?>" class="btn btn-secondary"><?php echo esc_html($cta_secondary_text); ?></a>
+                    <a href="<?php echo esc_url($cta_primary_url); ?>" class="btn btn-primary"><?php echo wp_kses_post($cta_primary_text); ?></a>
+                    <a href="<?php echo esc_url($cta_secondary_url); ?>" class="btn btn-secondary"><?php echo wp_kses_post($cta_secondary_text); ?></a>
                 </div>
                 <div class="cta-benefits animate-on-scroll animate-fade-up">
                     <?php foreach ($cta_benefits as $benefit): ?>

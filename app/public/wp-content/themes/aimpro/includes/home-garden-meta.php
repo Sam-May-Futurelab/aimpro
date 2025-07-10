@@ -34,14 +34,14 @@ function home_garden_meta_box_callback($post) {
     wp_nonce_field('home_garden_meta_box', 'home_garden_meta_box_nonce');
 
     // Get existing values
-    $header_title = get_post_meta($post->ID, '_home_garden_header_title', true);
-    $header_subtitle = get_post_meta($post->ID, '_home_garden_header_subtitle', true);
-    $overview_title = get_post_meta($post->ID, '_home_garden_overview_title', true);
-    $overview_content = get_post_meta($post->ID, '_home_garden_overview_content', true);
+    $header_title = get_post_meta($post->ID, '_home_garden_header_title', true) ?: 'Home & Garden Digital Marketing';
+    $header_subtitle = get_post_meta($post->ID, '_home_garden_header_subtitle', true) ?: 'Grow your home improvement business with seasonal campaigns and local marketing strategies';
+    $overview_title = get_post_meta($post->ID, '_home_garden_overview_title', true) ?: 'Cultivate Your Home & Garden Business Growth';
+    $overview_content = get_post_meta($post->ID, '_home_garden_overview_content', true) ?: 'The home and garden industry is highly seasonal and location-dependent. Our specialised marketing strategies help landscapers, garden centres, contractors, and home improvement businesses maximise their peak seasons while maintaining steady growth year-round.';
     $overview_image = get_post_meta($post->ID, '_home_garden_overview_image', true);
 
     // Challenges section
-    $challenges_title = get_post_meta($post->ID, '_home_garden_challenges_title', true);
+    $challenges_title = get_post_meta($post->ID, '_home_garden_challenges_title', true) ?: 'Home & Garden Marketing Challenges We Solve:';
     $challenges = get_post_meta($post->ID, '_home_garden_challenges', true);
     if (empty($challenges)) {
         $challenges = array(
@@ -54,7 +54,7 @@ function home_garden_meta_box_callback($post) {
     }
 
     // Services section
-    $services_title = get_post_meta($post->ID, '_home_garden_services_title', true);
+    $services_title = get_post_meta($post->ID, '_home_garden_services_title', true) ?: 'Our Home & Garden Marketing Services';
     $services = get_post_meta($post->ID, '_home_garden_services', true);
     if (empty($services)) {
         $services = array(
@@ -86,10 +86,10 @@ function home_garden_meta_box_callback($post) {
     }
 
     // Case study section
-    $case_study_label = get_post_meta($post->ID, '_home_garden_case_study_label', true);
-    $case_study_title = get_post_meta($post->ID, '_home_garden_case_study_title', true);
-    $case_study_content = get_post_meta($post->ID, '_home_garden_case_study_content', true);
-    $case_study_challenge_title = get_post_meta($post->ID, '_home_garden_case_study_challenge_title', true);
+    $case_study_label = get_post_meta($post->ID, '_home_garden_case_study_label', true) ?: 'Success Story';
+    $case_study_title = get_post_meta($post->ID, '_home_garden_case_study_title', true) ?: 'Blooming Gardens: 220% Seasonal Revenue Boost';
+    $case_study_content = get_post_meta($post->ID, '_home_garden_case_study_content', true) ?: 'Blooming Gardens, a local garden centre and landscaping company, needed to maximise their peak spring season while building year-round revenue streams.';
+    $case_study_challenge_title = get_post_meta($post->ID, '_home_garden_case_study_challenge_title', true) ?: 'The Challenge';
     $case_study_challenges = get_post_meta($post->ID, '_home_garden_case_study_challenges', true);
     if (empty($case_study_challenges)) {
         $case_study_challenges = array(
@@ -99,7 +99,7 @@ function home_garden_meta_box_callback($post) {
             'Difficulty showcasing service quality online'
         );
     }
-    $case_study_solution_title = get_post_meta($post->ID, '_home_garden_case_study_solution_title', true);
+    $case_study_solution_title = get_post_meta($post->ID, '_home_garden_case_study_solution_title', true) ?: 'Our Solution';
     $case_study_solutions = get_post_meta($post->ID, '_home_garden_case_study_solutions', true);
     if (empty($case_study_solutions)) {
         $case_study_solutions = array(
@@ -109,7 +109,7 @@ function home_garden_meta_box_callback($post) {
             'Year-round maintenance program promotion'
         );
     }
-    $case_study_results_title = get_post_meta($post->ID, '_home_garden_case_study_results_title', true);
+    $case_study_results_title = get_post_meta($post->ID, '_home_garden_case_study_results_title', true) ?: 'Results After 12 Months';
     $case_study_results = get_post_meta($post->ID, '_home_garden_case_study_results', true);
     if (empty($case_study_results)) {
         $case_study_results = array(
@@ -119,11 +119,11 @@ function home_garden_meta_box_callback($post) {
             array('number' => '85%', 'label' => 'Increase in Repeat Customers')
         );
     }
-    $case_study_link_text = get_post_meta($post->ID, '_home_garden_case_study_link_text', true);
-    $case_study_link_url = get_post_meta($post->ID, '_home_garden_case_study_link_url', true);
+    $case_study_link_text = get_post_meta($post->ID, '_home_garden_case_study_link_text', true) ?: 'Read Full Case Study';
+    $case_study_link_url = get_post_meta($post->ID, '_home_garden_case_study_link_url', true) ?: '/case-studies';
 
     // Seasonal calendar section
-    $calendar_title = get_post_meta($post->ID, '_home_garden_calendar_title', true);
+    $calendar_title = get_post_meta($post->ID, '_home_garden_calendar_title', true) ?: 'Home & Garden Seasonal Marketing Calendar';
     $seasons = get_post_meta($post->ID, '_home_garden_seasons', true);
     if (empty($seasons)) {
         $seasons = array(
@@ -159,7 +159,7 @@ function home_garden_meta_box_callback($post) {
     }
 
     // Visual marketing section
-    $visual_title = get_post_meta($post->ID, '_home_garden_visual_title', true);
+    $visual_title = get_post_meta($post->ID, '_home_garden_visual_title', true) ?: 'The Power of Visual Marketing for Home & Garden';
     $visual_examples = get_post_meta($post->ID, '_home_garden_visual_examples', true);
     if (empty($visual_examples)) {
         $visual_examples = array(
@@ -185,18 +185,18 @@ function home_garden_meta_box_callback($post) {
     }
 
     // Testimonial section (without image)
-    $testimonial_quote = get_post_meta($post->ID, '_home_garden_testimonial_quote', true);
-    $testimonial_name = get_post_meta($post->ID, '_home_garden_testimonial_name', true);
-    $testimonial_position = get_post_meta($post->ID, '_home_garden_testimonial_position', true);
-    $testimonial_company = get_post_meta($post->ID, '_home_garden_testimonial_company', true);
+    $testimonial_quote = get_post_meta($post->ID, '_home_garden_testimonial_quote', true) ?: '"Working with Aimpro Digital transformed our seasonal business model. Their strategic approach to seasonal campaigns helped us generate 220% more revenue during peak season, and their year-round content strategy keeps customers engaged even in winter. The visual marketing campaigns they created showcase our work beautifully and generate consistent inquiries."';
+    $testimonial_name = get_post_meta($post->ID, '_home_garden_testimonial_name', true) ?: 'Sarah Mitchell';
+    $testimonial_position = get_post_meta($post->ID, '_home_garden_testimonial_position', true) ?: 'Owner, Blooming Gardens';
+    $testimonial_company = get_post_meta($post->ID, '_home_garden_testimonial_company', true) ?: 'Garden centre & Landscaping Services';
 
     // CTA section
-    $cta_title = get_post_meta($post->ID, '_home_garden_cta_title', true);
-    $cta_subtitle = get_post_meta($post->ID, '_home_garden_cta_subtitle', true);
-    $cta_primary_text = get_post_meta($post->ID, '_home_garden_cta_primary_text', true);
-    $cta_primary_url = get_post_meta($post->ID, '_home_garden_cta_primary_url', true);
-    $cta_secondary_text = get_post_meta($post->ID, '_home_garden_cta_secondary_text', true);
-    $cta_secondary_url = get_post_meta($post->ID, '_home_garden_cta_secondary_url', true);
+    $cta_title = get_post_meta($post->ID, '_home_garden_cta_title', true) ?: 'Ready to Grow Your Home & Garden Business?';
+    $cta_subtitle = get_post_meta($post->ID, '_home_garden_cta_subtitle', true) ?: 'Let\'s create a seasonal marketing strategy that maximises your peak seasons and builds year-round revenue.';
+    $cta_primary_text = get_post_meta($post->ID, '_home_garden_cta_primary_text', true) ?: 'Get Seasonal Marketing Plan';
+    $cta_primary_url = get_post_meta($post->ID, '_home_garden_cta_primary_url', true) ?: '/contact';
+    $cta_secondary_text = get_post_meta($post->ID, '_home_garden_cta_secondary_text', true) ?: 'View More Success Stories';
+    $cta_secondary_url = get_post_meta($post->ID, '_home_garden_cta_secondary_url', true) ?: '/case-studies';
     $cta_benefits = get_post_meta($post->ID, '_home_garden_cta_benefits', true);
     if (empty($cta_benefits)) {
         $cta_benefits = array(
@@ -334,19 +334,51 @@ function home_garden_meta_box_callback($post) {
         <table class="form-table">
             <tr>
                 <th><label for="home_garden_header_title">Page Header Title</label></th>
-                <td><input type="text" id="home_garden_header_title" name="home_garden_header_title" value="<?php echo esc_attr($header_title); ?>" placeholder="Home & Garden Digital Marketing" /></td>
+                <td>
+                    <?php wp_editor($header_title, 'home_garden_header_title', array(
+                        'textarea_name' => 'home_garden_header_title',
+                        'media_buttons' => false,
+                        'textarea_rows' => 3,
+                        'teeny' => true,
+                        'quicktags' => array('buttons' => 'strong,em,link')
+                    )); ?>
+                </td>
             </tr>
             <tr>
                 <th><label for="home_garden_header_subtitle">Page Header Subtitle</label></th>
-                <td><textarea id="home_garden_header_subtitle" name="home_garden_header_subtitle" placeholder="Grow your home improvement business with seasonal campaigns and local marketing strategies"><?php echo esc_textarea($header_subtitle); ?></textarea></td>
+                <td>
+                    <?php wp_editor($header_subtitle, 'home_garden_header_subtitle', array(
+                        'textarea_name' => 'home_garden_header_subtitle',
+                        'media_buttons' => false,
+                        'textarea_rows' => 4,
+                        'teeny' => true,
+                        'quicktags' => array('buttons' => 'strong,em,link,ul,ol,li')
+                    )); ?>
+                </td>
             </tr>
             <tr>
                 <th><label for="home_garden_overview_title">Overview Title</label></th>
-                <td><input type="text" id="home_garden_overview_title" name="home_garden_overview_title" value="<?php echo esc_attr($overview_title); ?>" placeholder="Cultivate Your Home & Garden Business Growth" /></td>
+                <td>
+                    <?php wp_editor($overview_title, 'home_garden_overview_title', array(
+                        'textarea_name' => 'home_garden_overview_title',
+                        'media_buttons' => false,
+                        'textarea_rows' => 2,
+                        'teeny' => true,
+                        'quicktags' => array('buttons' => 'strong,em,link')
+                    )); ?>
+                </td>
             </tr>
             <tr>
                 <th><label for="home_garden_overview_content">Overview Content</label></th>
-                <td><textarea id="home_garden_overview_content" name="home_garden_overview_content" placeholder="The home and garden industry is highly seasonal..."><?php echo esc_textarea($overview_content); ?></textarea></td>
+                <td>
+                    <?php wp_editor($overview_content, 'home_garden_overview_content', array(
+                        'textarea_name' => 'home_garden_overview_content',
+                        'media_buttons' => false,
+                        'textarea_rows' => 5,
+                        'teeny' => true,
+                        'quicktags' => array('buttons' => 'strong,em,link,ul,ol,li')
+                    )); ?>
+                </td>
             </tr>
             <tr>
                 <th><label for="home_garden_overview_image">Overview Image</label></th>
@@ -371,7 +403,15 @@ function home_garden_meta_box_callback($post) {
             <table class="form-table">
                 <tr>
                     <th><label for="home_garden_challenges_title">Challenges Title</label></th>
-                    <td><input type="text" id="home_garden_challenges_title" name="home_garden_challenges_title" value="<?php echo esc_attr($challenges_title); ?>" placeholder="Home & Garden Marketing Challenges We Solve:" /></td>
+                    <td>
+                        <?php wp_editor($challenges_title, 'home_garden_challenges_title', array(
+                            'textarea_name' => 'home_garden_challenges_title',
+                            'media_buttons' => false,
+                            'textarea_rows' => 2,
+                            'teeny' => true,
+                            'quicktags' => array('buttons' => 'strong,em,link')
+                        )); ?>
+                    </td>
                 </tr>
             </table>
             <div class="list-editor">
@@ -392,7 +432,15 @@ function home_garden_meta_box_callback($post) {
             <table class="form-table">
                 <tr>
                     <th><label for="home_garden_services_title">Services Title</label></th>
-                    <td><input type="text" id="home_garden_services_title" name="home_garden_services_title" value="<?php echo esc_attr($services_title); ?>" placeholder="Our Home & Garden Marketing Services" /></td>
+                    <td>
+                        <?php wp_editor($services_title, 'home_garden_services_title', array(
+                            'textarea_name' => 'home_garden_services_title',
+                            'media_buttons' => false,
+                            'textarea_rows' => 2,
+                            'teeny' => true,
+                            'quicktags' => array('buttons' => 'strong,em,link')
+                        )); ?>
+                    </td>
                 </tr>
             </table>
             <div class="repeater-section">
@@ -406,11 +454,23 @@ function home_garden_meta_box_callback($post) {
                             </div>
                             <div class="item-field">
                                 <label>Title:</label>
-                                <input type="text" name="home_garden_services[<?php echo $index; ?>][title]" value="<?php echo esc_attr($service['title']); ?>" placeholder="Seasonal Campaign optimisation" />
+                                <?php wp_editor($service['title'], "home_garden_services_{$index}_title", array(
+                                    'textarea_name' => "home_garden_services[{$index}][title]",
+                                    'media_buttons' => false,
+                                    'textarea_rows' => 2,
+                                    'teeny' => true,
+                                    'quicktags' => array('buttons' => 'strong,em,link')
+                                )); ?>
                             </div>
                             <div class="item-field">
                                 <label>Description:</label>
-                                <textarea name="home_garden_services[<?php echo $index; ?>][description]" placeholder="Maximize revenue during peak seasons..."><?php echo esc_textarea($service['description']); ?></textarea>
+                                <?php wp_editor($service['description'], "home_garden_services_{$index}_description", array(
+                                    'textarea_name' => "home_garden_services[{$index}][description]",
+                                    'media_buttons' => false,
+                                    'textarea_rows' => 4,
+                                    'teeny' => true,
+                                    'quicktags' => array('buttons' => 'strong,em,link,ul,ol,li')
+                                )); ?>
                             </div>
                             <div class="item-field">
                                 <label>Features (one per line):</label>
@@ -428,19 +488,51 @@ function home_garden_meta_box_callback($post) {
             <table class="form-table">
                 <tr>
                     <th><label for="home_garden_case_study_label">Case Study Label</label></th>
-                    <td><input type="text" id="home_garden_case_study_label" name="home_garden_case_study_label" value="<?php echo esc_attr($case_study_label); ?>" placeholder="Success Story" /></td>
+                    <td>
+                        <?php wp_editor($case_study_label, 'home_garden_case_study_label', array(
+                            'textarea_name' => 'home_garden_case_study_label',
+                            'media_buttons' => false,
+                            'textarea_rows' => 2,
+                            'teeny' => true,
+                            'quicktags' => array('buttons' => 'strong,em')
+                        )); ?>
+                    </td>
                 </tr>
                 <tr>
                     <th><label for="home_garden_case_study_title">Case Study Title</label></th>
-                    <td><input type="text" id="home_garden_case_study_title" name="home_garden_case_study_title" value="<?php echo esc_attr($case_study_title); ?>" placeholder="Blooming Gardens: 220% Seasonal Revenue Boost" /></td>
+                    <td>
+                        <?php wp_editor($case_study_title, 'home_garden_case_study_title', array(
+                            'textarea_name' => 'home_garden_case_study_title',
+                            'media_buttons' => false,
+                            'textarea_rows' => 2,
+                            'teeny' => true,
+                            'quicktags' => array('buttons' => 'strong,em,link')
+                        )); ?>
+                    </td>
                 </tr>
                 <tr>
                     <th><label for="home_garden_case_study_content">Case Study Content</label></th>
-                    <td><textarea id="home_garden_case_study_content" name="home_garden_case_study_content" placeholder="Blooming Gardens, a local garden centre..."><?php echo esc_textarea($case_study_content); ?></textarea></td>
+                    <td>
+                        <?php wp_editor($case_study_content, 'home_garden_case_study_content', array(
+                            'textarea_name' => 'home_garden_case_study_content',
+                            'media_buttons' => false,
+                            'textarea_rows' => 4,
+                            'teeny' => true,
+                            'quicktags' => array('buttons' => 'strong,em,link,ul,ol,li')
+                        )); ?>
+                    </td>
                 </tr>
                 <tr>
                     <th><label for="home_garden_case_study_challenge_title">Challenge Section Title</label></th>
-                    <td><input type="text" id="home_garden_case_study_challenge_title" name="home_garden_case_study_challenge_title" value="<?php echo esc_attr($case_study_challenge_title); ?>" placeholder="The Challenge" /></td>
+                    <td>
+                        <?php wp_editor($case_study_challenge_title, 'home_garden_case_study_challenge_title', array(
+                            'textarea_name' => 'home_garden_case_study_challenge_title',
+                            'media_buttons' => false,
+                            'textarea_rows' => 2,
+                            'teeny' => true,
+                            'quicktags' => array('buttons' => 'strong,em,link')
+                        )); ?>
+                    </td>
                 </tr>
             </table>
             
@@ -460,7 +552,15 @@ function home_garden_meta_box_callback($post) {
             <table class="form-table">
                 <tr>
                     <th><label for="home_garden_case_study_solution_title">Solution Section Title</label></th>
-                    <td><input type="text" id="home_garden_case_study_solution_title" name="home_garden_case_study_solution_title" value="<?php echo esc_attr($case_study_solution_title); ?>" placeholder="Our Solution" /></td>
+                    <td>
+                        <?php wp_editor($case_study_solution_title, 'home_garden_case_study_solution_title', array(
+                            'textarea_name' => 'home_garden_case_study_solution_title',
+                            'media_buttons' => false,
+                            'textarea_rows' => 2,
+                            'teeny' => true,
+                            'quicktags' => array('buttons' => 'strong,em,link')
+                        )); ?>
+                    </td>
                 </tr>
             </table>
             
@@ -480,11 +580,27 @@ function home_garden_meta_box_callback($post) {
             <table class="form-table">
                 <tr>
                     <th><label for="home_garden_case_study_results_title">Results Section Title</label></th>
-                    <td><input type="text" id="home_garden_case_study_results_title" name="home_garden_case_study_results_title" value="<?php echo esc_attr($case_study_results_title); ?>" placeholder="Results After 12 Months" /></td>
+                    <td>
+                        <?php wp_editor($case_study_results_title, 'home_garden_case_study_results_title', array(
+                            'textarea_name' => 'home_garden_case_study_results_title',
+                            'media_buttons' => false,
+                            'textarea_rows' => 2,
+                            'teeny' => true,
+                            'quicktags' => array('buttons' => 'strong,em,link')
+                        )); ?>
+                    </td>
                 </tr>
                 <tr>
                     <th><label for="home_garden_case_study_link_text">Case Study Link Text</label></th>
-                    <td><input type="text" id="home_garden_case_study_link_text" name="home_garden_case_study_link_text" value="<?php echo esc_attr($case_study_link_text); ?>" placeholder="Read Full Case Study" /></td>
+                    <td>
+                        <?php wp_editor($case_study_link_text, 'home_garden_case_study_link_text', array(
+                            'textarea_name' => 'home_garden_case_study_link_text',
+                            'media_buttons' => false,
+                            'textarea_rows' => 2,
+                            'teeny' => true,
+                            'quicktags' => array('buttons' => 'strong,em')
+                        )); ?>
+                    </td>
                 </tr>
                 <tr>
                     <th><label for="home_garden_case_study_link_url">Case Study Link URL</label></th>
@@ -518,7 +634,15 @@ function home_garden_meta_box_callback($post) {
             <table class="form-table">
                 <tr>
                     <th><label for="home_garden_calendar_title">Calendar Title</label></th>
-                    <td><input type="text" id="home_garden_calendar_title" name="home_garden_calendar_title" value="<?php echo esc_attr($calendar_title); ?>" placeholder="Home & Garden Seasonal Marketing Calendar" /></td>
+                    <td>
+                        <?php wp_editor($calendar_title, 'home_garden_calendar_title', array(
+                            'textarea_name' => 'home_garden_calendar_title',
+                            'media_buttons' => false,
+                            'textarea_rows' => 2,
+                            'teeny' => true,
+                            'quicktags' => array('buttons' => 'strong,em,link')
+                        )); ?>
+                    </td>
                 </tr>
             </table>
             <div class="repeater-section">
@@ -558,7 +682,15 @@ function home_garden_meta_box_callback($post) {
             <table class="form-table">
                 <tr>
                     <th><label for="home_garden_visual_title">Visual Marketing Title</label></th>
-                    <td><input type="text" id="home_garden_visual_title" name="home_garden_visual_title" value="<?php echo esc_attr($visual_title); ?>" placeholder="The Power of Visual Marketing for Home & Garden" /></td>
+                    <td>
+                        <?php wp_editor($visual_title, 'home_garden_visual_title', array(
+                            'textarea_name' => 'home_garden_visual_title',
+                            'media_buttons' => false,
+                            'textarea_rows' => 2,
+                            'teeny' => true,
+                            'quicktags' => array('buttons' => 'strong,em,link')
+                        )); ?>
+                    </td>
                 </tr>
             </table>
             <div class="repeater-section">
@@ -585,7 +717,13 @@ function home_garden_meta_box_callback($post) {
                             </div>
                             <div class="item-field">
                                 <label>Description:</label>
-                                <textarea name="home_garden_visual_examples[<?php echo $index; ?>][description]" placeholder="Showcase dramatic transformations..."><?php echo esc_textarea($example['description']); ?></textarea>
+                                <?php wp_editor($example['description'], "home_garden_visual_examples_{$index}_description", array(
+                                    'textarea_name' => "home_garden_visual_examples[{$index}][description]",
+                                    'media_buttons' => false,
+                                    'textarea_rows' => 4,
+                                    'teeny' => true,
+                                    'quicktags' => array('buttons' => 'strong,em,link,ul,ol,li')
+                                )); ?>
                             </div>
                             <div class="item-field">
                                 <label>Stats (one per line):</label>
@@ -603,7 +741,15 @@ function home_garden_meta_box_callback($post) {
             <table class="form-table">
                 <tr>
                     <th><label for="home_garden_testimonial_quote">Testimonial Quote</label></th>
-                    <td><textarea id="home_garden_testimonial_quote" name="home_garden_testimonial_quote" placeholder="Working with Aimpro Digital transformed our seasonal business model..."><?php echo esc_textarea($testimonial_quote); ?></textarea></td>
+                    <td>
+                        <?php wp_editor($testimonial_quote, 'home_garden_testimonial_quote', array(
+                            'textarea_name' => 'home_garden_testimonial_quote',
+                            'media_buttons' => false,
+                            'textarea_rows' => 4,
+                            'teeny' => true,
+                            'quicktags' => array('buttons' => 'strong,em,link')
+                        )); ?>
+                    </td>
                 </tr>
                 <tr>
                     <th><label for="home_garden_testimonial_name">Client Name</label></th>
@@ -625,15 +771,39 @@ function home_garden_meta_box_callback($post) {
             <table class="form-table">
                 <tr>
                     <th><label for="home_garden_cta_title">CTA Title</label></th>
-                    <td><input type="text" id="home_garden_cta_title" name="home_garden_cta_title" value="<?php echo esc_attr($cta_title); ?>" placeholder="Ready to Grow Your Home & Garden Business?" /></td>
+                    <td>
+                        <?php wp_editor($cta_title, 'home_garden_cta_title', array(
+                            'textarea_name' => 'home_garden_cta_title',
+                            'media_buttons' => false,
+                            'textarea_rows' => 2,
+                            'teeny' => true,
+                            'quicktags' => array('buttons' => 'strong,em,link')
+                        )); ?>
+                    </td>
                 </tr>
                 <tr>
                     <th><label for="home_garden_cta_subtitle">CTA Subtitle</label></th>
-                    <td><textarea id="home_garden_cta_subtitle" name="home_garden_cta_subtitle" placeholder="Let's create a seasonal marketing strategy..."><?php echo esc_textarea($cta_subtitle); ?></textarea></td>
+                    <td>
+                        <?php wp_editor($cta_subtitle, 'home_garden_cta_subtitle', array(
+                            'textarea_name' => 'home_garden_cta_subtitle',
+                            'media_buttons' => false,
+                            'textarea_rows' => 4,
+                            'teeny' => true,
+                            'quicktags' => array('buttons' => 'strong,em,link,ul,ol,li')
+                        )); ?>
+                    </td>
                 </tr>
                 <tr>
                     <th><label for="home_garden_cta_primary_text">Primary Button Text</label></th>
-                    <td><input type="text" id="home_garden_cta_primary_text" name="home_garden_cta_primary_text" value="<?php echo esc_attr($cta_primary_text); ?>" placeholder="Get Seasonal Marketing Plan" /></td>
+                    <td>
+                        <?php wp_editor($cta_primary_text, 'home_garden_cta_primary_text', array(
+                            'textarea_name' => 'home_garden_cta_primary_text',
+                            'media_buttons' => false,
+                            'textarea_rows' => 2,
+                            'teeny' => true,
+                            'quicktags' => array('buttons' => 'strong,em')
+                        )); ?>
+                    </td>
                 </tr>
                 <tr>
                     <th><label for="home_garden_cta_primary_url">Primary Button URL</label></th>
@@ -641,7 +811,15 @@ function home_garden_meta_box_callback($post) {
                 </tr>
                 <tr>
                     <th><label for="home_garden_cta_secondary_text">Secondary Button Text</label></th>
-                    <td><input type="text" id="home_garden_cta_secondary_text" name="home_garden_cta_secondary_text" value="<?php echo esc_attr($cta_secondary_text); ?>" placeholder="View More Success Stories" /></td>
+                    <td>
+                        <?php wp_editor($cta_secondary_text, 'home_garden_cta_secondary_text', array(
+                            'textarea_name' => 'home_garden_cta_secondary_text',
+                            'media_buttons' => false,
+                            'textarea_rows' => 2,
+                            'teeny' => true,
+                            'quicktags' => array('buttons' => 'strong,em')
+                        )); ?>
+                    </td>
                 </tr>
                 <tr>
                     <th><label for="home_garden_cta_secondary_url">Secondary Button URL</label></th>
@@ -813,13 +991,12 @@ function save_home_garden_meta_box_data($post_id) {
         }
     }
 
-    // Save all simple text fields
-    $fields = array(
+    // Save rich text fields
+    $rich_text_fields = array(
         'home_garden_header_title' => '_home_garden_header_title',
         'home_garden_header_subtitle' => '_home_garden_header_subtitle',
         'home_garden_overview_title' => '_home_garden_overview_title',
         'home_garden_overview_content' => '_home_garden_overview_content',
-        'home_garden_overview_image' => '_home_garden_overview_image',
         'home_garden_challenges_title' => '_home_garden_challenges_title',
         'home_garden_services_title' => '_home_garden_services_title',
         'home_garden_case_study_label' => '_home_garden_case_study_label',
@@ -829,18 +1006,29 @@ function save_home_garden_meta_box_data($post_id) {
         'home_garden_case_study_solution_title' => '_home_garden_case_study_solution_title',
         'home_garden_case_study_results_title' => '_home_garden_case_study_results_title',
         'home_garden_case_study_link_text' => '_home_garden_case_study_link_text',
-        'home_garden_case_study_link_url' => '_home_garden_case_study_link_url',
         'home_garden_calendar_title' => '_home_garden_calendar_title',
         'home_garden_visual_title' => '_home_garden_visual_title',
         'home_garden_testimonial_quote' => '_home_garden_testimonial_quote',
-        'home_garden_testimonial_name' => '_home_garden_testimonial_name',
-        'home_garden_testimonial_position' => '_home_garden_testimonial_position',
-        'home_garden_testimonial_company' => '_home_garden_testimonial_company',
         'home_garden_cta_title' => '_home_garden_cta_title',
         'home_garden_cta_subtitle' => '_home_garden_cta_subtitle',
         'home_garden_cta_primary_text' => '_home_garden_cta_primary_text',
+        'home_garden_cta_secondary_text' => '_home_garden_cta_secondary_text'
+    );
+
+    foreach ($rich_text_fields as $field => $meta_key) {
+        if (isset($_POST[$field])) {
+            update_post_meta($post_id, $meta_key, wp_kses_post($_POST[$field]));
+        }
+    }
+
+    // Save simple text fields
+    $fields = array(
+        'home_garden_overview_image' => '_home_garden_overview_image',
+        'home_garden_case_study_link_url' => '_home_garden_case_study_link_url',
+        'home_garden_testimonial_name' => '_home_garden_testimonial_name',
+        'home_garden_testimonial_position' => '_home_garden_testimonial_position',
+        'home_garden_testimonial_company' => '_home_garden_testimonial_company',
         'home_garden_cta_primary_url' => '_home_garden_cta_primary_url',
-        'home_garden_cta_secondary_text' => '_home_garden_cta_secondary_text',
         'home_garden_cta_secondary_url' => '_home_garden_cta_secondary_url'
     );
 
@@ -870,8 +1058,8 @@ function save_home_garden_meta_box_data($post_id) {
         foreach ($_POST['home_garden_services'] as $service) {
             $services[] = array(
                 'icon' => sanitize_text_field($service['icon']),
-                'title' => sanitize_text_field($service['title']),
-                'description' => sanitize_textarea_field($service['description']),
+                'title' => wp_kses_post($service['title']),
+                'description' => wp_kses_post($service['description']),
                 'features' => array_filter(array_map('trim', explode("\n", sanitize_textarea_field($service['features']))))
             );
         }
@@ -909,7 +1097,7 @@ function save_home_garden_meta_box_data($post_id) {
             $examples[] = array(
                 'image' => esc_url_raw($example['image']),
                 'title' => sanitize_text_field($example['title']),
-                'description' => sanitize_textarea_field($example['description']),
+                'description' => wp_kses_post($example['description']),
                 'stats' => array_filter(array_map('trim', explode("\n", sanitize_textarea_field($example['stats']))))
             );
         }
