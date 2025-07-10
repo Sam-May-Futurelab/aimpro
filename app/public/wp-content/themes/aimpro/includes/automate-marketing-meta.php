@@ -356,19 +356,35 @@ function automate_marketing_meta_box_callback($post) {
             <tr>
                 <th><label for="automate_marketing_header_title">Page Title</label></th>
                 <td>
-                    <input type="text" 
-                           id="automate_marketing_header_title" 
-                           name="automate_marketing_header_title" 
-                           value="<?php echo esc_attr($header_title); ?>"
-                           placeholder="Automate Marketing" />
+                    <?php 
+                    wp_editor($header_title, 'automate_marketing_header_title', array(
+                        'media_buttons' => false,
+                        'textarea_rows' => 3,
+                        'teeny' => true,
+                        'tinymce' => array(
+                            'toolbar1' => 'bold,italic,underline,strikethrough,|,bullist,numlist,|,link,unlink',
+                            'toolbar2' => '',
+                            'statusbar' => false
+                        )
+                    )); 
+                    ?>
                 </td>
             </tr>
             <tr>
                 <th><label for="automate_marketing_header_subtitle">Page Subtitle</label></th>
                 <td>
-                    <textarea id="automate_marketing_header_subtitle" 
-                              name="automate_marketing_header_subtitle"
-                              placeholder="Streamline your marketing processes with intelligent automation that works 24/7"><?php echo esc_textarea($header_subtitle); ?></textarea>
+                    <?php 
+                    wp_editor($header_subtitle, 'automate_marketing_header_subtitle', array(
+                        'media_buttons' => false,
+                        'textarea_rows' => 4,
+                        'teeny' => false,
+                        'tinymce' => array(
+                            'toolbar1' => 'bold,italic,underline,strikethrough,|,bullist,numlist,|,link,unlink',
+                            'toolbar2' => '',
+                            'statusbar' => false
+                        )
+                    )); 
+                    ?>
                 </td>
             </tr>
         </table>
@@ -379,18 +395,35 @@ function automate_marketing_meta_box_callback($post) {
             <tr>
                 <th><label for="automate_marketing_overview_title">Overview Title</label></th>
                 <td>
-                    <input type="text" 
-                           id="automate_marketing_overview_title" 
-                           name="automate_marketing_overview_title" 
-                           value="<?php echo esc_attr($overview_title); ?>"
-                           placeholder="Transform Manual Tasks Into Automated Success" />
+                    <?php 
+                    wp_editor($overview_title, 'automate_marketing_overview_title', array(
+                        'media_buttons' => false,
+                        'textarea_rows' => 3,
+                        'teeny' => true,
+                        'tinymce' => array(
+                            'toolbar1' => 'bold,italic,underline,strikethrough,|,bullist,numlist,|,link,unlink',
+                            'toolbar2' => '',
+                            'statusbar' => false
+                        )
+                    )); 
+                    ?>
                 </td>
-            </tr>            <tr>
+            </tr>
+            <tr>
                 <th><label for="automate_marketing_overview_content">Overview Content</label></th>
                 <td>
-                    <textarea id="automate_marketing_overview_content" 
-                              name="automate_marketing_overview_content"
-                              placeholder="Marketing automation eliminates repetitive tasks..."><?php echo esc_textarea($overview_content); ?></textarea>
+                    <?php 
+                    wp_editor($overview_content, 'automate_marketing_overview_content', array(
+                        'media_buttons' => false,
+                        'textarea_rows' => 6,
+                        'teeny' => false,
+                        'tinymce' => array(
+                            'toolbar1' => 'bold,italic,underline,strikethrough,|,bullist,numlist,|,link,unlink',
+                            'toolbar2' => '',
+                            'statusbar' => false
+                        )
+                    )); 
+                    ?>
                 </td>
             </tr>            <tr>
                 <th><label for="automate_marketing_overview_image">Overview Image</label></th>
@@ -416,11 +449,18 @@ function automate_marketing_meta_box_callback($post) {
             <tr>
                 <th><label for="automate_marketing_challenges_title">Challenges Title</label></th>
                 <td>
-                    <input type="text" 
-                           id="automate_marketing_challenges_title" 
-                           name="automate_marketing_challenges_title" 
-                           value="<?php echo esc_attr($challenges_title); ?>"
-                           placeholder="Marketing Automation Challenges We Solve:" />
+                    <?php 
+                    wp_editor($challenges_title, 'automate_marketing_challenges_title', array(
+                        'media_buttons' => false,
+                        'textarea_rows' => 3,
+                        'teeny' => true,
+                        'tinymce' => array(
+                            'toolbar1' => 'bold,italic,underline,strikethrough,|,bullist,numlist,|,link,unlink',
+                            'toolbar2' => '',
+                            'statusbar' => false
+                        )
+                    )); 
+                    ?>
                 </td>
             </tr>
             <tr>
@@ -450,11 +490,18 @@ function automate_marketing_meta_box_callback($post) {
             <tr>
                 <th><label for="automate_marketing_solutions_title">Solutions Title</label></th>
                 <td>
-                    <input type="text" 
-                           id="automate_marketing_solutions_title" 
-                           name="automate_marketing_solutions_title" 
-                           value="<?php echo esc_attr($solutions_title); ?>"
-                           placeholder="Our Marketing Automation Solutions" />
+                    <?php 
+                    wp_editor($solutions_title, 'automate_marketing_solutions_title', array(
+                        'media_buttons' => false,
+                        'textarea_rows' => 3,
+                        'teeny' => true,
+                        'tinymce' => array(
+                            'toolbar1' => 'bold,italic,underline,strikethrough,|,bullist,numlist,|,link,unlink',
+                            'toolbar2' => '',
+                            'statusbar' => false
+                        )
+                    )); 
+                    ?>
                 </td>
             </tr>
         </table>
@@ -468,8 +515,19 @@ function automate_marketing_meta_box_callback($post) {
                                name="automate_marketing_solutions[<?php echo $index; ?>][title]" 
                                value="<?php echo esc_attr($solution['title']); ?>"
                                placeholder="Solution title" />
-                        <textarea name="automate_marketing_solutions[<?php echo $index; ?>][description]" 
-                                  placeholder="Solution description"><?php echo esc_textarea($solution['description']); ?></textarea>
+                        <?php 
+                        wp_editor($solution['description'], 'automate_marketing_solutions_'.$index.'_description', array(
+                            'media_buttons' => false,
+                            'textarea_rows' => 4,
+                            'teeny' => false,
+                            'textarea_name' => 'automate_marketing_solutions['.$index.'][description]',
+                            'tinymce' => array(
+                                'toolbar1' => 'bold,italic,underline,strikethrough,|,bullist,numlist,|,link,unlink',
+                                'toolbar2' => '',
+                                'statusbar' => false
+                            )
+                        )); 
+                        ?>
                         <div>
                             <strong>Features:</strong>
                             <?php foreach ($solution['features'] as $feat_index => $feature): ?>
@@ -493,29 +551,52 @@ function automate_marketing_meta_box_callback($post) {
             <tr>
                 <th><label for="automate_marketing_case_study_label">Case Study Label</label></th>
                 <td>
-                    <input type="text" 
-                           id="automate_marketing_case_study_label" 
-                           name="automate_marketing_case_study_label" 
-                           value="<?php echo esc_attr($case_study_label); ?>"
-                           placeholder="Success Story" />
+                    <?php 
+                    wp_editor($case_study_label, 'automate_marketing_case_study_label', array(
+                        'media_buttons' => false,
+                        'textarea_rows' => 2,
+                        'teeny' => true,
+                        'tinymce' => array(
+                            'toolbar1' => 'bold,italic,underline,strikethrough,|,bullist,numlist,|,link,unlink',
+                            'toolbar2' => '',
+                            'statusbar' => false
+                        )
+                    )); 
+                    ?>
                 </td>
             </tr>
             <tr>
                 <th><label for="automate_marketing_case_study_title">Case Study Title</label></th>
                 <td>
-                    <input type="text" 
-                           id="automate_marketing_case_study_title" 
-                           name="automate_marketing_case_study_title" 
-                           value="<?php echo esc_attr($case_study_title); ?>"
-                           placeholder="GrowthTech: 60% Time Savings + 300% Lead Conversion" />
+                    <?php 
+                    wp_editor($case_study_title, 'automate_marketing_case_study_title', array(
+                        'media_buttons' => false,
+                        'textarea_rows' => 3,
+                        'teeny' => true,
+                        'tinymce' => array(
+                            'toolbar1' => 'bold,italic,underline,strikethrough,|,bullist,numlist,|,link,unlink',
+                            'toolbar2' => '',
+                            'statusbar' => false
+                        )
+                    )); 
+                    ?>
                 </td>
             </tr>
             <tr>
                 <th><label for="automate_marketing_case_study_content">Case Study Content</label></th>
                 <td>
-                    <textarea id="automate_marketing_case_study_content" 
-                              name="automate_marketing_case_study_content"
-                              placeholder="Case study description..."><?php echo esc_textarea($case_study_content); ?></textarea>
+                    <?php 
+                    wp_editor($case_study_content, 'automate_marketing_case_study_content', array(
+                        'media_buttons' => false,
+                        'textarea_rows' => 6,
+                        'teeny' => false,
+                        'tinymce' => array(
+                            'toolbar1' => 'bold,italic,underline,strikethrough,|,bullist,numlist,|,link,unlink',
+                            'toolbar2' => '',
+                            'statusbar' => false
+                        )
+                    )); 
+                    ?>
                 </td>
             </tr>
             <tr>
@@ -584,11 +665,18 @@ function automate_marketing_meta_box_callback($post) {
             <tr>
                 <th><label for="automate_marketing_results_title">Results Title</label></th>
                 <td>
-                    <input type="text" 
-                           id="automate_marketing_results_title" 
-                           name="automate_marketing_results_title" 
-                           value="<?php echo esc_attr($results_title); ?>"
-                           placeholder="Results After 3 Months" />
+                    <?php 
+                    wp_editor($results_title, 'automate_marketing_results_title', array(
+                        'media_buttons' => false,
+                        'textarea_rows' => 3,
+                        'teeny' => true,
+                        'tinymce' => array(
+                            'toolbar1' => 'bold,italic,underline,strikethrough,|,bullist,numlist,|,link,unlink',
+                            'toolbar2' => '',
+                            'statusbar' => false
+                        )
+                    )); 
+                    ?>
                 </td>
             </tr>
         </table>
@@ -642,11 +730,18 @@ function automate_marketing_meta_box_callback($post) {
             <tr>
                 <th><label for="automate_marketing_process_title">Process Title</label></th>
                 <td>
-                    <input type="text" 
-                           id="automate_marketing_process_title" 
-                           name="automate_marketing_process_title" 
-                           value="<?php echo esc_attr($process_title); ?>"
-                           placeholder="Our Marketing Automation Process" />
+                    <?php 
+                    wp_editor($process_title, 'automate_marketing_process_title', array(
+                        'media_buttons' => false,
+                        'textarea_rows' => 3,
+                        'teeny' => true,
+                        'tinymce' => array(
+                            'toolbar1' => 'bold,italic,underline,strikethrough,|,bullist,numlist,|,link,unlink',
+                            'toolbar2' => '',
+                            'statusbar' => false
+                        )
+                    )); 
+                    ?>
                 </td>
             </tr>
         </table>
@@ -664,8 +759,19 @@ function automate_marketing_meta_box_callback($post) {
                                name="automate_marketing_process_steps[<?php echo $index; ?>][title]" 
                                value="<?php echo esc_attr($step['title']); ?>"
                                placeholder="Step title" />
-                        <textarea name="automate_marketing_process_steps[<?php echo $index; ?>][description]" 
-                                  placeholder="Step description"><?php echo esc_textarea($step['description']); ?></textarea>
+                        <?php 
+                        wp_editor($step['description'], 'automate_marketing_process_steps_'.$index.'_description', array(
+                            'media_buttons' => false,
+                            'textarea_rows' => 4,
+                            'teeny' => false,
+                            'textarea_name' => 'automate_marketing_process_steps['.$index.'][description]',
+                            'tinymce' => array(
+                                'toolbar1' => 'bold,italic,underline,strikethrough,|,bullist,numlist,|,link,unlink',
+                                'toolbar2' => '',
+                                'statusbar' => false
+                            )
+                        )); 
+                        ?>
                         <button type="button" class="button remove-repeater-item">Remove Step</button>
                     </div>
                 <?php endforeach; ?>
@@ -679,11 +785,18 @@ function automate_marketing_meta_box_callback($post) {
             <tr>
                 <th><label for="automate_marketing_benefits_title">Benefits Title</label></th>
                 <td>
-                    <input type="text" 
-                           id="automate_marketing_benefits_title" 
-                           name="automate_marketing_benefits_title" 
-                           value="<?php echo esc_attr($benefits_title); ?>"
-                           placeholder="Marketing Automation Benefits" />
+                    <?php 
+                    wp_editor($benefits_title, 'automate_marketing_benefits_title', array(
+                        'media_buttons' => false,
+                        'textarea_rows' => 3,
+                        'teeny' => true,
+                        'tinymce' => array(
+                            'toolbar1' => 'bold,italic,underline,strikethrough,|,bullist,numlist,|,link,unlink',
+                            'toolbar2' => '',
+                            'statusbar' => false
+                        )
+                    )); 
+                    ?>
                 </td>
             </tr>
         </table>
@@ -697,8 +810,19 @@ function automate_marketing_meta_box_callback($post) {
                                name="automate_marketing_benefits[<?php echo $index; ?>][title]" 
                                value="<?php echo esc_attr($benefit['title']); ?>"
                                placeholder="Benefit title" />
-                        <textarea name="automate_marketing_benefits[<?php echo $index; ?>][description]" 
-                                  placeholder="Benefit description"><?php echo esc_textarea($benefit['description']); ?></textarea>
+                        <?php 
+                        wp_editor($benefit['description'], 'automate_marketing_benefits_'.$index.'_description', array(
+                            'media_buttons' => false,
+                            'textarea_rows' => 4,
+                            'teeny' => false,
+                            'textarea_name' => 'automate_marketing_benefits['.$index.'][description]',
+                            'tinymce' => array(
+                                'toolbar1' => 'bold,italic,underline,strikethrough,|,bullist,numlist,|,link,unlink',
+                                'toolbar2' => '',
+                                'statusbar' => false
+                            )
+                        )); 
+                        ?>
                         <input type="text" 
                                name="automate_marketing_benefits[<?php echo $index; ?>][icon_class]" 
                                value="<?php echo esc_attr($benefit['icon_class']); ?>"
@@ -716,11 +840,18 @@ function automate_marketing_meta_box_callback($post) {
             <tr>
                 <th><label for="automate_marketing_tools_title">Tools Title</label></th>
                 <td>
-                    <input type="text" 
-                           id="automate_marketing_tools_title" 
-                           name="automate_marketing_tools_title" 
-                           value="<?php echo esc_attr($tools_title); ?>"
-                           placeholder="Marketing Automation Platforms We Use" />
+                    <?php 
+                    wp_editor($tools_title, 'automate_marketing_tools_title', array(
+                        'media_buttons' => false,
+                        'textarea_rows' => 3,
+                        'teeny' => true,
+                        'tinymce' => array(
+                            'toolbar1' => 'bold,italic,underline,strikethrough,|,bullist,numlist,|,link,unlink',
+                            'toolbar2' => '',
+                            'statusbar' => false
+                        )
+                    )); 
+                    ?>
                 </td>
             </tr>
         </table>
@@ -757,9 +888,18 @@ function automate_marketing_meta_box_callback($post) {
             <tr>
                 <th><label for="automate_marketing_testimonial_quote">Testimonial Quote</label></th>
                 <td>
-                    <textarea id="automate_marketing_testimonial_quote" 
-                              name="automate_marketing_testimonial_quote"
-                              placeholder="Customer testimonial quote..."><?php echo esc_textarea($testimonial_quote); ?></textarea>
+                    <?php 
+                    wp_editor($testimonial_quote, 'automate_marketing_testimonial_quote', array(
+                        'media_buttons' => false,
+                        'textarea_rows' => 6,
+                        'teeny' => false,
+                        'tinymce' => array(
+                            'toolbar1' => 'bold,italic,underline,strikethrough,|,bullist,numlist,|,link,unlink',
+                            'toolbar2' => '',
+                            'statusbar' => false
+                        )
+                    )); 
+                    ?>
                 </td>
             </tr>
             <tr>
@@ -800,19 +940,35 @@ function automate_marketing_meta_box_callback($post) {
             <tr>
                 <th><label for="automate_marketing_cta_title">CTA Title</label></th>
                 <td>
-                    <input type="text" 
-                           id="automate_marketing_cta_title" 
-                           name="automate_marketing_cta_title" 
-                           value="<?php echo esc_attr($cta_title); ?>"
-                           placeholder="Ready to Automate Your Marketing?" />
+                    <?php 
+                    wp_editor($cta_title, 'automate_marketing_cta_title', array(
+                        'media_buttons' => false,
+                        'textarea_rows' => 3,
+                        'teeny' => true,
+                        'tinymce' => array(
+                            'toolbar1' => 'bold,italic,underline,strikethrough,|,bullist,numlist,|,link,unlink',
+                            'toolbar2' => '',
+                            'statusbar' => false
+                        )
+                    )); 
+                    ?>
                 </td>
             </tr>
             <tr>
                 <th><label for="automate_marketing_cta_subtitle">CTA Subtitle</label></th>
                 <td>
-                    <textarea id="automate_marketing_cta_subtitle" 
-                              name="automate_marketing_cta_subtitle"
-                              placeholder="Let's create a custom automation strategy that saves you time while improving your marketing results."><?php echo esc_textarea($cta_subtitle); ?></textarea>
+                    <?php 
+                    wp_editor($cta_subtitle, 'automate_marketing_cta_subtitle', array(
+                        'media_buttons' => false,
+                        'textarea_rows' => 4,
+                        'teeny' => false,
+                        'tinymce' => array(
+                            'toolbar1' => 'bold,italic,underline,strikethrough,|,bullist,numlist,|,link,unlink',
+                            'toolbar2' => '',
+                            'statusbar' => false
+                        )
+                    )); 
+                    ?>
                 </td>
             </tr>
             <tr>
@@ -898,7 +1054,7 @@ function automate_marketing_meta_box_callback($post) {
             var newField = '<div class="repeater-field">' +
                           '<h4>Solution ' + (index + 1) + '</h4>' +
                           '<input type="text" name="automate_marketing_solutions[' + index + '][title]" placeholder="Solution title" />' +
-                          '<textarea name="automate_marketing_solutions[' + index + '][description]" placeholder="Solution description"></textarea>' +
+                          '<textarea name="automate_marketing_solutions[' + index + '][description]" placeholder="Solution description" rows="4"></textarea>' +
                           '<div><strong>Features:</strong>' +
                           '<input type="text" name="automate_marketing_solutions[' + index + '][features][]" placeholder="Feature" />' +
                           '</div>' +
@@ -925,7 +1081,7 @@ function automate_marketing_meta_box_callback($post) {
                           '<h4>Step ' + (index + 1) + '</h4>' +
                           '<input type="text" name="automate_marketing_process_steps[' + index + '][number]" placeholder="Step number" />' +
                           '<input type="text" name="automate_marketing_process_steps[' + index + '][title]" placeholder="Step title" />' +
-                          '<textarea name="automate_marketing_process_steps[' + index + '][description]" placeholder="Step description"></textarea>' +
+                          '<textarea name="automate_marketing_process_steps[' + index + '][description]" placeholder="Step description" rows="4"></textarea>' +
                           '<button type="button" class="button remove-repeater-item">Remove Step</button>' +
                           '</div>';
             $('#process-steps-repeater').append(newField);
@@ -951,7 +1107,7 @@ function automate_marketing_meta_box_callback($post) {
             var newField = '<div class="repeater-field">' +
                           '<h4>Benefit ' + (index + 1) + '</h4>' +
                           '<input type="text" name="automate_marketing_benefits[' + index + '][title]" placeholder="Benefit title" />' +
-                          '<textarea name="automate_marketing_benefits[' + index + '][description]" placeholder="Benefit description"></textarea>' +
+                          '<textarea name="automate_marketing_benefits[' + index + '][description]" placeholder="Benefit description" rows="4"></textarea>' +
                           '<input type="text" name="automate_marketing_benefits[' + index + '][icon_class]" placeholder="Icon class (e.g. fas fa-clock)" />' +
                           '<button type="button" class="button remove-repeater-item">Remove Benefit</button>' +
                           '</div>';
@@ -1047,7 +1203,12 @@ function sanitize_automate_marketing_meta_value($field, $value) {
                             $sub_subitem = sanitize_text_field($sub_subitem);
                         }
                     } else {
-                        $subitem = sanitize_text_field($subitem);
+                        // Check if this is a description field within repeater arrays that should use wp_kses_post
+                        if ($key === 'description') {
+                            $subitem = wp_kses_post($subitem);
+                        } else {
+                            $subitem = sanitize_text_field($subitem);
+                        }
                     }
                 }
             } else {
@@ -1056,8 +1217,11 @@ function sanitize_automate_marketing_meta_value($field, $value) {
         }
         return $value;
     } else {
-        if (strpos($field, 'content') !== false || strpos($field, 'description') !== false || strpos($field, 'quote') !== false || strpos($field, 'subtitle') !== false) {
-            return sanitize_textarea_field($value);
+        // Rich text fields that should use wp_kses_post for HTML content
+        if (strpos($field, 'title') !== false || strpos($field, 'subtitle') !== false || 
+            strpos($field, 'content') !== false || strpos($field, 'quote') !== false || 
+            strpos($field, 'label') !== false) {
+            return wp_kses_post($value);
         } elseif (strpos($field, 'url') !== false) {
             return esc_url_raw($value);
         } else {

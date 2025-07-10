@@ -26,19 +26,19 @@ get_header(); ?>
           <!-- Page Header -->
         <section class="page-header">
             <div class="page-header-content animate-on-scroll animate-fade-up">
-                <h1><?php echo esc_html(get_post_meta(get_the_ID(), '_automate_marketing_header_title', true) ?: 'Automate Marketing'); ?></h1>
-                <p class="page-subtitle"><?php echo esc_html(get_post_meta(get_the_ID(), '_automate_marketing_header_subtitle', true) ?: 'Streamline your marketing processes with intelligent automation that works 24/7'); ?></p>
+                <h1><?php echo wp_kses_post(get_post_meta(get_the_ID(), '_automate_marketing_header_title', true) ?: 'Automate Marketing'); ?></h1>
+                <p class="page-subtitle"><?php echo wp_kses_post(get_post_meta(get_the_ID(), '_automate_marketing_header_subtitle', true) ?: 'Streamline your marketing processes with intelligent automation that works 24/7'); ?></p>
             </div>
         </section>        <!-- Solution Overview -->
         <section class="solution-overview animate-on-scroll animate-fade-up">
             <div class="section-content">
                 <div class="overview-content">
                     <div class="overview-text animate-on-scroll animate-slide-left">
-                        <h2><?php echo esc_html(get_post_meta(get_the_ID(), '_automate_marketing_overview_title', true) ?: 'Transform Manual Tasks Into Automated Success'); ?></h2>
-                        <p><?php echo esc_html(get_post_meta(get_the_ID(), '_automate_marketing_overview_content', true) ?: 'Marketing automation eliminates repetitive tasks while delivering personalised experiences at scale. Our comprehensive automation strategies help you nurture leads, engage customers, and drive conversions without constant manual intervention, freeing your team to focus on strategy and growth.'); ?></p>
+                        <h2><?php echo wp_kses_post(get_post_meta(get_the_ID(), '_automate_marketing_overview_title', true) ?: 'Transform Manual Tasks Into Automated Success'); ?></h2>
+                        <p><?php echo wp_kses_post(get_post_meta(get_the_ID(), '_automate_marketing_overview_content', true) ?: 'Marketing automation eliminates repetitive tasks while delivering personalised experiences at scale. Our comprehensive automation strategies help you nurture leads, engage customers, and drive conversions without constant manual intervention, freeing your team to focus on strategy and growth.'); ?></p>
                         
                         <div class="solution-challenges">
-                            <h3><?php echo esc_html(get_post_meta(get_the_ID(), '_automate_marketing_challenges_title', true) ?: 'Marketing Automation Challenges We Solve:'); ?></h3>
+                            <h3><?php echo wp_kses_post(get_post_meta(get_the_ID(), '_automate_marketing_challenges_title', true) ?: 'Marketing Automation Challenges We Solve:'); ?></h3>
                             <ul>
                                 <?php
                                 $challenges = get_post_meta(get_the_ID(), '_automate_marketing_challenges', true);
@@ -79,7 +79,7 @@ get_header(); ?>
         </section>        <!-- Automation Solutions -->
         <section class="automation-solutions animate-on-scroll animate-fade-up">
             <div class="section-content">
-                <h2 class="animate-on-scroll animate-fade-up"><?php echo esc_html(get_post_meta(get_the_ID(), '_automate_marketing_solutions_title', true) ?: 'Our Marketing Automation Solutions'); ?></h2>
+                <h2 class="animate-on-scroll animate-fade-up"><?php echo wp_kses_post(get_post_meta(get_the_ID(), '_automate_marketing_solutions_title', true) ?: 'Our Marketing Automation Solutions'); ?></h2>
                 <div class="solutions-grid animate-on-scroll animate-fade-up">
                     
                     <?php
@@ -142,7 +142,7 @@ get_header(); ?>
                         </div>
                         <div class="solution-content">
                             <h3><?php echo esc_html($solution['title']); ?></h3>
-                            <p><?php echo esc_html($solution['description']); ?></p>
+                            <p><?php echo wp_kses_post($solution['description']); ?></p>
                             <ul class="solution-features">
                                 <?php foreach ($solution['features'] as $feature) : ?>
                                     <li><?php echo esc_html($feature); ?></li>
@@ -159,9 +159,9 @@ get_header(); ?>
             <div class="section-content">
                 <div class="case-study-content">
                     <div class="case-study-text animate-on-scroll animate-slide-left">
-                        <span class="case-study-label"><?php echo esc_html(get_post_meta(get_the_ID(), '_automate_marketing_case_study_label', true) ?: 'Success Story'); ?></span>
-                        <h2><?php echo esc_html(get_post_meta(get_the_ID(), '_automate_marketing_case_study_title', true) ?: 'GrowthTech: 60% Time Savings + 300% Lead Conversion'); ?></h2>
-                        <p><?php echo esc_html(get_post_meta(get_the_ID(), '_automate_marketing_case_study_content', true) ?: 'GrowthTech, a SaaS company, was spending 40+ hours per week on manual marketing tasks and struggling with inconsistent lead follow-up.'); ?></p>
+                        <span class="case-study-label"><?php echo wp_kses_post(get_post_meta(get_the_ID(), '_automate_marketing_case_study_label', true) ?: 'Success Story'); ?></span>
+                        <h2><?php echo wp_kses_post(get_post_meta(get_the_ID(), '_automate_marketing_case_study_title', true) ?: 'GrowthTech: 60% Time Savings + 300% Lead Conversion'); ?></h2>
+                        <p><?php echo wp_kses_post(get_post_meta(get_the_ID(), '_automate_marketing_case_study_content', true) ?: 'GrowthTech, a SaaS company, was spending 40+ hours per week on manual marketing tasks and struggling with inconsistent lead follow-up.'); ?></p>
                         
                         <div class="case-study-challenge animate-on-scroll animate-fade-up">
                             <h3><?php echo esc_html(get_post_meta(get_the_ID(), '_automate_marketing_case_study_challenge_title', true) ?: 'The Challenge'); ?></h3>
@@ -204,7 +204,7 @@ get_header(); ?>
                         </div>
                     </div>
                     <div class="case-study-results">
-                        <h3><?php echo esc_html(get_post_meta(get_the_ID(), '_automate_marketing_results_title', true) ?: 'Results After 3 Months'); ?></h3>
+                        <h3><?php echo wp_kses_post(get_post_meta(get_the_ID(), '_automate_marketing_results_title', true) ?: 'Results After 3 Months'); ?></h3>
                         <div class="results-grid">
                             <?php
                             $results = get_post_meta(get_the_ID(), '_automate_marketing_results', true);
@@ -246,7 +246,7 @@ get_header(); ?>
         <!-- Automation Process -->
         <section class="automation-process">
             <div class="section-content">
-                <h2><?php echo esc_html(get_post_meta(get_the_ID(), '_automate_marketing_process_title', true) ?: 'Our Marketing Automation Process'); ?></h2>
+                <h2><?php echo wp_kses_post(get_post_meta(get_the_ID(), '_automate_marketing_process_title', true) ?: 'Our Marketing Automation Process'); ?></h2>
                 <div class="process-steps">
                     
                     <?php
@@ -282,7 +282,7 @@ get_header(); ?>
                         <div class="step-number"><?php echo esc_html($step['number']); ?></div>
                         <div class="step-content">
                             <h3><?php echo esc_html($step['title']); ?></h3>
-                            <p><?php echo esc_html($step['description']); ?></p>
+                            <p><?php echo wp_kses_post($step['description']); ?></p>
                         </div>
                     </div>
                     <?php endforeach; ?>
@@ -296,7 +296,7 @@ get_header(); ?>
         <!-- Automation Benefits -->
         <section class="automation-benefits">
             <div class="section-content">
-                <h2><?php echo esc_html(get_post_meta(get_the_ID(), '_automate_marketing_benefits_title', true) ?: 'Marketing Automation Benefits'); ?></h2>
+                <h2><?php echo wp_kses_post(get_post_meta(get_the_ID(), '_automate_marketing_benefits_title', true) ?: 'Marketing Automation Benefits'); ?></h2>
                 <div class="benefits-grid-4">
                     <?php
                     $benefits = get_post_meta(get_the_ID(), '_automate_marketing_benefits', true);
@@ -333,7 +333,7 @@ get_header(); ?>
                         </div>
                         <div class="benefit-content">
                             <h3><?php echo esc_html($benefit['title']); ?></h3>
-                            <p><?php echo esc_html($benefit['description']); ?></p>
+                            <p><?php echo wp_kses_post($benefit['description']); ?></p>
                         </div>
                     </div>
                     <?php endforeach; ?>
@@ -344,7 +344,7 @@ get_header(); ?>
         <!-- Automation Tools -->
         <section class="automation-tools">
             <div class="section-content">
-                <h2><?php echo esc_html(get_post_meta(get_the_ID(), '_automate_marketing_tools_title', true) ?: 'Marketing Automation Platforms We Use'); ?></h2>
+                <h2><?php echo wp_kses_post(get_post_meta(get_the_ID(), '_automate_marketing_tools_title', true) ?: 'Marketing Automation Platforms We Use'); ?></h2>
                 <div class="services-grid animate-on-scroll animate-stagger animate-scale-up">
                     <div class="service-item">
                         <div class="service-icon"><i class="fas fa-envelope-open-text"></i></div>
@@ -395,7 +395,7 @@ get_header(); ?>
             <div class="section-content">
                 <div class="testimonial-content">
                     <blockquote>
-                        "<?php echo esc_html(get_post_meta(get_the_ID(), '_automate_marketing_testimonial_quote', true) ?: 'The marketing automation system Aimpro Digital implemented has been a game-changer. We\'ve saved 25 hours per week on manual tasks and our lead conversion rate has tripled. The ROI has been incredible.'); ?>"
+                        "<?php echo wp_kses_post(get_post_meta(get_the_ID(), '_automate_marketing_testimonial_quote', true) ?: 'The marketing automation system Aimpro Digital implemented has been a game-changer. We\'ve saved 25 hours per week on manual tasks and our lead conversion rate has tripled. The ROI has been incredible.'); ?>"
                     </blockquote>
                     <div class="testimonial-author">
                         <div class="author-info">
@@ -412,8 +412,8 @@ get_header(); ?>
         <section class="cta-section">
             <div class="section-content">
                 <div class="cta-content">
-                    <h2><?php echo esc_html(get_post_meta(get_the_ID(), '_automate_marketing_cta_title', true) ?: 'Ready to Automate Your Marketing?'); ?></h2>
-                    <p><?php echo esc_html(get_post_meta(get_the_ID(), '_automate_marketing_cta_subtitle', true) ?: 'Let\'s create a custom automation strategy that saves you time while improving your marketing results.'); ?></p>                    <div class="cta-buttons">
+                    <h2><?php echo wp_kses_post(get_post_meta(get_the_ID(), '_automate_marketing_cta_title', true) ?: 'Ready to Automate Your Marketing?'); ?></h2>
+                    <p><?php echo wp_kses_post(get_post_meta(get_the_ID(), '_automate_marketing_cta_subtitle', true) ?: 'Let\'s create a custom automation strategy that saves you time while improving your marketing results.'); ?></p>                    <div class="cta-buttons">
                         <a href="<?php echo esc_url(home_url(get_post_meta(get_the_ID(), '_automate_marketing_cta_primary_url', true) ?: '/contact')); ?>" class="btn btn-primary"><?php echo esc_html(get_post_meta(get_the_ID(), '_automate_marketing_cta_primary_text', true) ?: 'Get Free Automation Audit'); ?></a>
                     </div>
                     <div class="cta-features">
