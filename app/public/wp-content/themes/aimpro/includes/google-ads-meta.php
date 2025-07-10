@@ -337,11 +337,23 @@ function aimpro_google_ads_hero_callback($post) {
     </p>
     <p>
         <label for="google_ads_hero_title"><?php _e('Hero Title', 'aimpro'); ?></label><br>
-        <input type="text" id="google_ads_hero_title" name="google_ads_hero_title" value="<?php echo esc_attr($hero_title); ?>" class="widefat">
+        <?php wp_editor($hero_title, 'google_ads_hero_title', array(
+            'textarea_name' => 'google_ads_hero_title',
+            'media_buttons' => false,
+            'textarea_rows' => 3,
+            'teeny' => true,
+            'quicktags' => array('buttons' => 'strong,em,link,ul,ol,li')
+        )); ?>
     </p>
     <p>
         <label for="google_ads_hero_subtitle"><?php _e('Hero Subtitle', 'aimpro'); ?></label><br>
-        <textarea id="google_ads_hero_subtitle" name="google_ads_hero_subtitle" class="widefat" rows="4"><?php echo esc_textarea($hero_subtitle); ?></textarea>
+        <?php wp_editor($hero_subtitle, 'google_ads_hero_subtitle', array(
+            'textarea_name' => 'google_ads_hero_subtitle',
+            'media_buttons' => false,
+            'textarea_rows' => 4,
+            'teeny' => true,
+            'quicktags' => array('buttons' => 'strong,em,link,ul,ol,li')
+        )); ?>
     </p>
     
     <h4><?php _e('Hero Stats', 'aimpro'); ?></h4>
@@ -414,11 +426,23 @@ function aimpro_google_ads_services_callback($post) {
     ?>
     <p>
         <label for="google_ads_services_title"><?php _e('Services Title', 'aimpro'); ?></label><br>
-        <input type="text" id="google_ads_services_title" name="google_ads_services_title" value="<?php echo esc_attr($services_title); ?>" class="widefat">
+        <?php wp_editor($services_title, 'google_ads_services_title', array(
+            'textarea_name' => 'google_ads_services_title',
+            'media_buttons' => false,
+            'textarea_rows' => 3,
+            'teeny' => true,
+            'quicktags' => array('buttons' => 'strong,em,link')
+        )); ?>
     </p>
     <p>
         <label for="google_ads_services_subtitle"><?php _e('Services Subtitle', 'aimpro'); ?></label><br>
-        <textarea id="google_ads_services_subtitle" name="google_ads_services_subtitle" class="widefat" rows="3"><?php echo esc_textarea($services_subtitle); ?></textarea>
+        <?php wp_editor($services_subtitle, 'google_ads_services_subtitle', array(
+            'textarea_name' => 'google_ads_services_subtitle',
+            'media_buttons' => false,
+            'textarea_rows' => 3,
+            'teeny' => true,
+            'quicktags' => array('buttons' => 'strong,em,link,ul,ol,li')
+        )); ?>
     </p>
     
     <h4><?php _e('Service Items', 'aimpro'); ?></h4>
@@ -436,11 +460,23 @@ function aimpro_google_ads_services_callback($post) {
         <h5><?php echo sprintf(__('Service %d', 'aimpro'), $i); ?></h5>
         <p>
             <label for="google_ads_service_title_<?php echo $i; ?>"><?php _e('Service Title', 'aimpro'); ?></label><br>
-            <input type="text" id="google_ads_service_title_<?php echo $i; ?>" name="google_ads_service_title_<?php echo $i; ?>" value="<?php echo esc_attr($service_title); ?>" class="widefat">
+            <?php wp_editor($service_title, "google_ads_service_title_{$i}", array(
+                'textarea_name' => "google_ads_service_title_{$i}",
+                'media_buttons' => false,
+                'textarea_rows' => 2,
+                'teeny' => true,
+                'quicktags' => array('buttons' => 'strong,em,link')
+            )); ?>
         </p>
         <p>
             <label for="google_ads_service_content_<?php echo $i; ?>"><?php _e('Service Content', 'aimpro'); ?></label><br>
-            <textarea id="google_ads_service_content_<?php echo $i; ?>" name="google_ads_service_content_<?php echo $i; ?>" class="widefat" rows="3"><?php echo esc_textarea($service_content); ?></textarea>
+            <?php wp_editor($service_content, "google_ads_service_content_{$i}", array(
+                'textarea_name' => "google_ads_service_content_{$i}",
+                'media_buttons' => false,
+                'textarea_rows' => 3,
+                'teeny' => true,
+                'quicktags' => array('buttons' => 'strong,em,link,ul,ol,li')
+            )); ?>
         </p>
         <p>
             <label for="google_ads_service_features_<?php echo $i; ?>"><?php _e('Service Features (one per line)', 'aimpro'); ?></label><br>
@@ -482,19 +518,43 @@ function aimpro_google_ads_case_study_callback($post) {
     </p>
     <p>
         <label for="google_ads_case_study_title"><?php _e('Case Study Title', 'aimpro'); ?></label><br>
-        <input type="text" id="google_ads_case_study_title" name="google_ads_case_study_title" value="<?php echo esc_attr($case_study_title); ?>" class="widefat">
+        <?php wp_editor($case_study_title, 'google_ads_case_study_title', array(
+            'textarea_name' => 'google_ads_case_study_title',
+            'media_buttons' => false,
+            'textarea_rows' => 2,
+            'teeny' => true,
+            'quicktags' => array('buttons' => 'strong,em,link')
+        )); ?>
     </p>
     <p>
         <label for="google_ads_case_study_challenge"><?php _e('Challenge', 'aimpro'); ?></label><br>
-        <textarea id="google_ads_case_study_challenge" name="google_ads_case_study_challenge" class="widefat" rows="3"><?php echo esc_textarea($case_study_challenge); ?></textarea>
+        <?php wp_editor($case_study_challenge, 'google_ads_case_study_challenge', array(
+            'textarea_name' => 'google_ads_case_study_challenge',
+            'media_buttons' => false,
+            'textarea_rows' => 3,
+            'teeny' => true,
+            'quicktags' => array('buttons' => 'strong,em,link,ul,ol,li')
+        )); ?>
     </p>
     <p>
         <label for="google_ads_case_study_solution"><?php _e('Solution', 'aimpro'); ?></label><br>
-        <textarea id="google_ads_case_study_solution" name="google_ads_case_study_solution" class="widefat" rows="3"><?php echo esc_textarea($case_study_solution); ?></textarea>
+        <?php wp_editor($case_study_solution, 'google_ads_case_study_solution', array(
+            'textarea_name' => 'google_ads_case_study_solution',
+            'media_buttons' => false,
+            'textarea_rows' => 3,
+            'teeny' => true,
+            'quicktags' => array('buttons' => 'strong,em,link,ul,ol,li')
+        )); ?>
     </p>
     <p>
         <label for="google_ads_case_study_results_intro"><?php _e('Results Intro', 'aimpro'); ?></label><br>
-        <textarea id="google_ads_case_study_results_intro" name="google_ads_case_study_results_intro" class="widefat" rows="2"><?php echo esc_textarea($case_study_results_intro); ?></textarea>
+        <?php wp_editor($case_study_results_intro, 'google_ads_case_study_results_intro', array(
+            'textarea_name' => 'google_ads_case_study_results_intro',
+            'media_buttons' => false,
+            'textarea_rows' => 2,
+            'teeny' => true,
+            'quicktags' => array('buttons' => 'strong,em,link')
+        )); ?>
     </p>
     
     <h4><?php _e('Case Study Results', 'aimpro'); ?></h4>
@@ -540,11 +600,23 @@ function aimpro_google_ads_process_callback($post) {
     ?>
     <p>
         <label for="google_ads_process_title"><?php _e('Process Title', 'aimpro'); ?></label><br>
-        <input type="text" id="google_ads_process_title" name="google_ads_process_title" value="<?php echo esc_attr($process_title); ?>" class="widefat">
+        <?php wp_editor($process_title, 'google_ads_process_title', array(
+            'textarea_name' => 'google_ads_process_title',
+            'media_buttons' => false,
+            'textarea_rows' => 2,
+            'teeny' => true,
+            'quicktags' => array('buttons' => 'strong,em,link')
+        )); ?>
     </p>
     <p>
         <label for="google_ads_process_subtitle"><?php _e('Process Subtitle', 'aimpro'); ?></label><br>
-        <textarea id="google_ads_process_subtitle" name="google_ads_process_subtitle" class="widefat" rows="3"><?php echo esc_textarea($process_subtitle); ?></textarea>
+        <?php wp_editor($process_subtitle, 'google_ads_process_subtitle', array(
+            'textarea_name' => 'google_ads_process_subtitle',
+            'media_buttons' => false,
+            'textarea_rows' => 3,
+            'teeny' => true,
+            'quicktags' => array('buttons' => 'strong,em,link,ul,ol,li')
+        )); ?>
     </p>
     
     <h4><?php _e('Process Steps', 'aimpro'); ?></h4>
@@ -570,11 +642,23 @@ function aimpro_google_ads_process_callback($post) {
             <div style="flex: 1;">
                 <p>
                     <label for="google_ads_process_step_title_<?php echo $i; ?>"><?php _e('Title', 'aimpro'); ?></label><br>
-                    <input type="text" id="google_ads_process_step_title_<?php echo $i; ?>" name="google_ads_process_step_title_<?php echo $i; ?>" value="<?php echo esc_attr($step_title); ?>" class="widefat">
+                    <?php wp_editor($step_title, "google_ads_process_step_title_{$i}", array(
+                        'textarea_name' => "google_ads_process_step_title_{$i}",
+                        'media_buttons' => false,
+                        'textarea_rows' => 2,
+                        'teeny' => true,
+                        'quicktags' => array('buttons' => 'strong,em,link')
+                    )); ?>
                 </p>
                 <p>
                     <label for="google_ads_process_step_content_<?php echo $i; ?>"><?php _e('Content', 'aimpro'); ?></label><br>
-                    <textarea id="google_ads_process_step_content_<?php echo $i; ?>" name="google_ads_process_step_content_<?php echo $i; ?>" class="widefat" rows="3"><?php echo esc_textarea($step_content); ?></textarea>
+                    <?php wp_editor($step_content, "google_ads_process_step_content_{$i}", array(
+                        'textarea_name' => "google_ads_process_step_content_{$i}",
+                        'media_buttons' => false,
+                        'textarea_rows' => 3,
+                        'teeny' => true,
+                        'quicktags' => array('buttons' => 'strong,em,link,ul,ol,li')
+                    )); ?>
                 </p>
             </div>
         </div>
@@ -601,11 +685,23 @@ function aimpro_google_ads_tools_callback($post) {
     ?>
     <p>
         <label for="google_ads_tools_title"><?php _e('Tools Title', 'aimpro'); ?></label><br>
-        <input type="text" id="google_ads_tools_title" name="google_ads_tools_title" value="<?php echo esc_attr($tools_title); ?>" class="widefat">
+        <?php wp_editor($tools_title, 'google_ads_tools_title', array(
+            'textarea_name' => 'google_ads_tools_title',
+            'media_buttons' => false,
+            'textarea_rows' => 2,
+            'teeny' => true,
+            'quicktags' => array('buttons' => 'strong,em,link')
+        )); ?>
     </p>
     <p>
         <label for="google_ads_tools_subtitle"><?php _e('Tools Subtitle', 'aimpro'); ?></label><br>
-        <textarea id="google_ads_tools_subtitle" name="google_ads_tools_subtitle" class="widefat" rows="3"><?php echo esc_textarea($tools_subtitle); ?></textarea>
+        <?php wp_editor($tools_subtitle, 'google_ads_tools_subtitle', array(
+            'textarea_name' => 'google_ads_tools_subtitle',
+            'media_buttons' => false,
+            'textarea_rows' => 3,
+            'teeny' => true,
+            'quicktags' => array('buttons' => 'strong,em,link,ul,ol,li')
+        )); ?>
     </p>
     
     <h4><?php _e('Tools List', 'aimpro'); ?></h4>
@@ -625,7 +721,13 @@ function aimpro_google_ads_tools_callback($post) {
             </p>
             <p>
                 <label for="google_ads_tool_description_<?php echo $i; ?>"><?php _e('Description', 'aimpro'); ?></label><br>
-                <textarea id="google_ads_tool_description_<?php echo $i; ?>" name="google_ads_tool_description_<?php echo $i; ?>" class="widefat" rows="2"><?php echo esc_textarea($tool_description); ?></textarea>
+                <?php wp_editor($tool_description, "google_ads_tool_description_{$i}", array(
+                    'textarea_name' => "google_ads_tool_description_{$i}",
+                    'media_buttons' => false,
+                    'textarea_rows' => 2,
+                    'teeny' => true,
+                    'quicktags' => array('buttons' => 'strong,em,link')
+                )); ?>
             </p>
         </div>
         <?php endfor; ?>
@@ -651,11 +753,23 @@ function aimpro_google_ads_industries_callback($post) {
     ?>
     <p>
         <label for="google_ads_industries_title"><?php _e('Industries Title', 'aimpro'); ?></label><br>
-        <input type="text" id="google_ads_industries_title" name="google_ads_industries_title" value="<?php echo esc_attr($industries_title); ?>" class="widefat">
+        <?php wp_editor($industries_title, 'google_ads_industries_title', array(
+            'textarea_name' => 'google_ads_industries_title',
+            'media_buttons' => false,
+            'textarea_rows' => 2,
+            'teeny' => true,
+            'quicktags' => array('buttons' => 'strong,em,link')
+        )); ?>
     </p>
     <p>
         <label for="google_ads_industries_subtitle"><?php _e('Industries Subtitle', 'aimpro'); ?></label><br>
-        <textarea id="google_ads_industries_subtitle" name="google_ads_industries_subtitle" class="widefat" rows="3"><?php echo esc_textarea($industries_subtitle); ?></textarea>
+        <?php wp_editor($industries_subtitle, 'google_ads_industries_subtitle', array(
+            'textarea_name' => 'google_ads_industries_subtitle',
+            'media_buttons' => false,
+            'textarea_rows' => 3,
+            'teeny' => true,
+            'quicktags' => array('buttons' => 'strong,em,link,ul,ol,li')
+        )); ?>
     </p>
     
     <h4><?php _e('Industries List', 'aimpro'); ?></h4>
@@ -675,7 +789,13 @@ function aimpro_google_ads_industries_callback($post) {
             </p>
             <p>
                 <label for="google_ads_industry_description_<?php echo $i; ?>"><?php _e('Description', 'aimpro'); ?></label><br>
-                <textarea id="google_ads_industry_description_<?php echo $i; ?>" name="google_ads_industry_description_<?php echo $i; ?>" class="widefat" rows="2"><?php echo esc_textarea($industry_description); ?></textarea>
+                <?php wp_editor($industry_description, "google_ads_industry_description_{$i}", array(
+                    'textarea_name' => "google_ads_industry_description_{$i}",
+                    'media_buttons' => false,
+                    'textarea_rows' => 2,
+                    'teeny' => true,
+                    'quicktags' => array('buttons' => 'strong,em,link')
+                )); ?>
             </p>
         </div>
         <?php endfor; ?>
@@ -701,11 +821,23 @@ function aimpro_google_ads_pricing_callback($post) {
     ?>
     <p>
         <label for="google_ads_pricing_title"><?php _e('Pricing Title', 'aimpro'); ?></label><br>
-        <input type="text" id="google_ads_pricing_title" name="google_ads_pricing_title" value="<?php echo esc_attr($pricing_title); ?>" class="widefat">
+        <?php wp_editor($pricing_title, 'google_ads_pricing_title', array(
+            'textarea_name' => 'google_ads_pricing_title',
+            'media_buttons' => false,
+            'textarea_rows' => 2,
+            'teeny' => true,
+            'quicktags' => array('buttons' => 'strong,em,link')
+        )); ?>
     </p>
     <p>
         <label for="google_ads_pricing_subtitle"><?php _e('Pricing Subtitle', 'aimpro'); ?></label><br>
-        <textarea id="google_ads_pricing_subtitle" name="google_ads_pricing_subtitle" class="widefat" rows="3"><?php echo esc_textarea($pricing_subtitle); ?></textarea>
+        <?php wp_editor($pricing_subtitle, 'google_ads_pricing_subtitle', array(
+            'textarea_name' => 'google_ads_pricing_subtitle',
+            'media_buttons' => false,
+            'textarea_rows' => 3,
+            'teeny' => true,
+            'quicktags' => array('buttons' => 'strong,em,link,ul,ol,li')
+        )); ?>
     </p>
     
     <h4><?php _e('Pricing Packages', 'aimpro'); ?></h4>
@@ -810,7 +942,13 @@ function aimpro_google_ads_testimonial_callback($post) {
     ?>
     <p>
         <label for="google_ads_testimonial_quote"><?php _e('Testimonial Quote', 'aimpro'); ?></label><br>
-        <textarea id="google_ads_testimonial_quote" name="google_ads_testimonial_quote" class="widefat" rows="5"><?php echo esc_textarea($testimonial_quote); ?></textarea>
+        <?php wp_editor($testimonial_quote, 'google_ads_testimonial_quote', array(
+            'textarea_name' => 'google_ads_testimonial_quote',
+            'media_buttons' => false,
+            'textarea_rows' => 5,
+            'teeny' => true,
+            'quicktags' => array('buttons' => 'strong,em,link')
+        )); ?>
     </p>
     <div style="display: flex; gap: 20px;">
         <div style="flex: 1;">
@@ -850,11 +988,23 @@ function aimpro_google_ads_simple_cta_callback($post) {
     ?>
     <p>
         <label for="google_ads_simple_cta_title"><?php _e('CTA Title', 'aimpro'); ?></label><br>
-        <input type="text" id="google_ads_simple_cta_title" name="google_ads_simple_cta_title" value="<?php echo esc_attr($simple_cta_title); ?>" class="widefat">
+        <?php wp_editor($simple_cta_title, 'google_ads_simple_cta_title', array(
+            'textarea_name' => 'google_ads_simple_cta_title',
+            'media_buttons' => false,
+            'textarea_rows' => 2,
+            'teeny' => true,
+            'quicktags' => array('buttons' => 'strong,em,link')
+        )); ?>
     </p>
     <p>
         <label for="google_ads_simple_cta_content"><?php _e('CTA Content', 'aimpro'); ?></label><br>
-        <textarea id="google_ads_simple_cta_content" name="google_ads_simple_cta_content" class="widefat" rows="3"><?php echo esc_textarea($simple_cta_content); ?></textarea>
+        <?php wp_editor($simple_cta_content, 'google_ads_simple_cta_content', array(
+            'textarea_name' => 'google_ads_simple_cta_content',
+            'media_buttons' => false,
+            'textarea_rows' => 3,
+            'teeny' => true,
+            'quicktags' => array('buttons' => 'strong,em,link,ul,ol,li')
+        )); ?>
     </p>
     <p>
         <label for="google_ads_simple_cta_button_text"><?php _e('Button Text', 'aimpro'); ?></label><br>
@@ -895,10 +1045,10 @@ function aimpro_save_google_ads_meta_boxes($post_id) {
             update_post_meta($post_id, '_google_ads_hero_badge', sanitize_text_field($_POST['google_ads_hero_badge']));
         }
         if (isset($_POST['google_ads_hero_title'])) {
-            update_post_meta($post_id, '_google_ads_hero_title', sanitize_text_field($_POST['google_ads_hero_title']));
+            update_post_meta($post_id, '_google_ads_hero_title', wp_kses_post($_POST['google_ads_hero_title']));
         }
         if (isset($_POST['google_ads_hero_subtitle'])) {
-            update_post_meta($post_id, '_google_ads_hero_subtitle', sanitize_textarea_field($_POST['google_ads_hero_subtitle']));
+            update_post_meta($post_id, '_google_ads_hero_subtitle', wp_kses_post($_POST['google_ads_hero_subtitle']));
         }
         
         // Hero Stats
@@ -923,19 +1073,19 @@ function aimpro_save_google_ads_meta_boxes($post_id) {
     // Save Services Section
     if (isset($_POST['google_ads_services_nonce']) && wp_verify_nonce($_POST['google_ads_services_nonce'], basename(__FILE__))) {
         if (isset($_POST['google_ads_services_title'])) {
-            update_post_meta($post_id, '_google_ads_services_title', sanitize_text_field($_POST['google_ads_services_title']));
+            update_post_meta($post_id, '_google_ads_services_title', wp_kses_post($_POST['google_ads_services_title']));
         }
         if (isset($_POST['google_ads_services_subtitle'])) {
-            update_post_meta($post_id, '_google_ads_services_subtitle', sanitize_textarea_field($_POST['google_ads_services_subtitle']));
+            update_post_meta($post_id, '_google_ads_services_subtitle', wp_kses_post($_POST['google_ads_services_subtitle']));
         }
         
         // Service Items
         for ($i = 1; $i <= 6; $i++) {
             if (isset($_POST["google_ads_service_title_{$i}"])) {
-                update_post_meta($post_id, "_google_ads_service_title_{$i}", sanitize_text_field($_POST["google_ads_service_title_{$i}"]));
+                update_post_meta($post_id, "_google_ads_service_title_{$i}", wp_kses_post($_POST["google_ads_service_title_{$i}"]));
             }
             if (isset($_POST["google_ads_service_content_{$i}"])) {
-                update_post_meta($post_id, "_google_ads_service_content_{$i}", sanitize_textarea_field($_POST["google_ads_service_content_{$i}"]));
+                update_post_meta($post_id, "_google_ads_service_content_{$i}", wp_kses_post($_POST["google_ads_service_content_{$i}"]));
             }
             if (isset($_POST["google_ads_service_features_{$i}"])) {
                 update_post_meta($post_id, "_google_ads_service_features_{$i}", sanitize_textarea_field($_POST["google_ads_service_features_{$i}"]));
@@ -949,16 +1099,16 @@ function aimpro_save_google_ads_meta_boxes($post_id) {
             update_post_meta($post_id, '_google_ads_case_study_label', sanitize_text_field($_POST['google_ads_case_study_label']));
         }
         if (isset($_POST['google_ads_case_study_title'])) {
-            update_post_meta($post_id, '_google_ads_case_study_title', sanitize_text_field($_POST['google_ads_case_study_title']));
+            update_post_meta($post_id, '_google_ads_case_study_title', wp_kses_post($_POST['google_ads_case_study_title']));
         }
         if (isset($_POST['google_ads_case_study_challenge'])) {
-            update_post_meta($post_id, '_google_ads_case_study_challenge', sanitize_textarea_field($_POST['google_ads_case_study_challenge']));
+            update_post_meta($post_id, '_google_ads_case_study_challenge', wp_kses_post($_POST['google_ads_case_study_challenge']));
         }
         if (isset($_POST['google_ads_case_study_solution'])) {
-            update_post_meta($post_id, '_google_ads_case_study_solution', sanitize_textarea_field($_POST['google_ads_case_study_solution']));
+            update_post_meta($post_id, '_google_ads_case_study_solution', wp_kses_post($_POST['google_ads_case_study_solution']));
         }
         if (isset($_POST['google_ads_case_study_results_intro'])) {
-            update_post_meta($post_id, '_google_ads_case_study_results_intro', sanitize_textarea_field($_POST['google_ads_case_study_results_intro']));
+            update_post_meta($post_id, '_google_ads_case_study_results_intro', wp_kses_post($_POST['google_ads_case_study_results_intro']));
         }
         
         // Case Study Results
@@ -975,10 +1125,10 @@ function aimpro_save_google_ads_meta_boxes($post_id) {
     // Save Process Section
     if (isset($_POST['google_ads_process_nonce']) && wp_verify_nonce($_POST['google_ads_process_nonce'], basename(__FILE__))) {
         if (isset($_POST['google_ads_process_title'])) {
-            update_post_meta($post_id, '_google_ads_process_title', sanitize_text_field($_POST['google_ads_process_title']));
+            update_post_meta($post_id, '_google_ads_process_title', wp_kses_post($_POST['google_ads_process_title']));
         }
         if (isset($_POST['google_ads_process_subtitle'])) {
-            update_post_meta($post_id, '_google_ads_process_subtitle', sanitize_textarea_field($_POST['google_ads_process_subtitle']));
+            update_post_meta($post_id, '_google_ads_process_subtitle', wp_kses_post($_POST['google_ads_process_subtitle']));
         }
         
         // Process Steps
@@ -987,10 +1137,10 @@ function aimpro_save_google_ads_meta_boxes($post_id) {
                 update_post_meta($post_id, "_google_ads_process_step_number_{$i}", sanitize_text_field($_POST["google_ads_process_step_number_{$i}"]));
             }
             if (isset($_POST["google_ads_process_step_title_{$i}"])) {
-                update_post_meta($post_id, "_google_ads_process_step_title_{$i}", sanitize_text_field($_POST["google_ads_process_step_title_{$i}"]));
+                update_post_meta($post_id, "_google_ads_process_step_title_{$i}", wp_kses_post($_POST["google_ads_process_step_title_{$i}"]));
             }
             if (isset($_POST["google_ads_process_step_content_{$i}"])) {
-                update_post_meta($post_id, "_google_ads_process_step_content_{$i}", sanitize_textarea_field($_POST["google_ads_process_step_content_{$i}"]));
+                update_post_meta($post_id, "_google_ads_process_step_content_{$i}", wp_kses_post($_POST["google_ads_process_step_content_{$i}"]));
             }
         }
     }
@@ -998,10 +1148,10 @@ function aimpro_save_google_ads_meta_boxes($post_id) {
     // Save Tools Section
     if (isset($_POST['google_ads_tools_nonce']) && wp_verify_nonce($_POST['google_ads_tools_nonce'], basename(__FILE__))) {
         if (isset($_POST['google_ads_tools_title'])) {
-            update_post_meta($post_id, '_google_ads_tools_title', sanitize_text_field($_POST['google_ads_tools_title']));
+            update_post_meta($post_id, '_google_ads_tools_title', wp_kses_post($_POST['google_ads_tools_title']));
         }
         if (isset($_POST['google_ads_tools_subtitle'])) {
-            update_post_meta($post_id, '_google_ads_tools_subtitle', sanitize_textarea_field($_POST['google_ads_tools_subtitle']));
+            update_post_meta($post_id, '_google_ads_tools_subtitle', wp_kses_post($_POST['google_ads_tools_subtitle']));
         }
         
         // Tools List
@@ -1010,7 +1160,7 @@ function aimpro_save_google_ads_meta_boxes($post_id) {
                 update_post_meta($post_id, "_google_ads_tool_name_{$i}", sanitize_text_field($_POST["google_ads_tool_name_{$i}"]));
             }
             if (isset($_POST["google_ads_tool_description_{$i}"])) {
-                update_post_meta($post_id, "_google_ads_tool_description_{$i}", sanitize_textarea_field($_POST["google_ads_tool_description_{$i}"]));
+                update_post_meta($post_id, "_google_ads_tool_description_{$i}", wp_kses_post($_POST["google_ads_tool_description_{$i}"]));
             }
         }
     }
@@ -1018,10 +1168,10 @@ function aimpro_save_google_ads_meta_boxes($post_id) {
     // Save Industries Section
     if (isset($_POST['google_ads_industries_nonce']) && wp_verify_nonce($_POST['google_ads_industries_nonce'], basename(__FILE__))) {
         if (isset($_POST['google_ads_industries_title'])) {
-            update_post_meta($post_id, '_google_ads_industries_title', sanitize_text_field($_POST['google_ads_industries_title']));
+            update_post_meta($post_id, '_google_ads_industries_title', wp_kses_post($_POST['google_ads_industries_title']));
         }
         if (isset($_POST['google_ads_industries_subtitle'])) {
-            update_post_meta($post_id, '_google_ads_industries_subtitle', sanitize_textarea_field($_POST['google_ads_industries_subtitle']));
+            update_post_meta($post_id, '_google_ads_industries_subtitle', wp_kses_post($_POST['google_ads_industries_subtitle']));
         }
         
         // Industries List
@@ -1030,7 +1180,7 @@ function aimpro_save_google_ads_meta_boxes($post_id) {
                 update_post_meta($post_id, "_google_ads_industry_name_{$i}", sanitize_text_field($_POST["google_ads_industry_name_{$i}"]));
             }
             if (isset($_POST["google_ads_industry_description_{$i}"])) {
-                update_post_meta($post_id, "_google_ads_industry_description_{$i}", sanitize_textarea_field($_POST["google_ads_industry_description_{$i}"]));
+                update_post_meta($post_id, "_google_ads_industry_description_{$i}", wp_kses_post($_POST["google_ads_industry_description_{$i}"]));
             }
         }
     }
@@ -1038,10 +1188,10 @@ function aimpro_save_google_ads_meta_boxes($post_id) {
     // Save Pricing Section
     if (isset($_POST['google_ads_pricing_nonce']) && wp_verify_nonce($_POST['google_ads_pricing_nonce'], basename(__FILE__))) {
         if (isset($_POST['google_ads_pricing_title'])) {
-            update_post_meta($post_id, '_google_ads_pricing_title', sanitize_text_field($_POST['google_ads_pricing_title']));
+            update_post_meta($post_id, '_google_ads_pricing_title', wp_kses_post($_POST['google_ads_pricing_title']));
         }
         if (isset($_POST['google_ads_pricing_subtitle'])) {
-            update_post_meta($post_id, '_google_ads_pricing_subtitle', sanitize_textarea_field($_POST['google_ads_pricing_subtitle']));
+            update_post_meta($post_id, '_google_ads_pricing_subtitle', wp_kses_post($_POST['google_ads_pricing_subtitle']));
         }
         
         // Pricing Packages
@@ -1075,7 +1225,7 @@ function aimpro_save_google_ads_meta_boxes($post_id) {
     // Save Testimonial Section
     if (isset($_POST['google_ads_testimonial_nonce']) && wp_verify_nonce($_POST['google_ads_testimonial_nonce'], basename(__FILE__))) {
         if (isset($_POST['google_ads_testimonial_quote'])) {
-            update_post_meta($post_id, '_google_ads_testimonial_quote', sanitize_textarea_field($_POST['google_ads_testimonial_quote']));
+            update_post_meta($post_id, '_google_ads_testimonial_quote', wp_kses_post($_POST['google_ads_testimonial_quote']));
         }
         if (isset($_POST['google_ads_testimonial_name'])) {
             update_post_meta($post_id, '_google_ads_testimonial_name', sanitize_text_field($_POST['google_ads_testimonial_name']));
@@ -1088,10 +1238,10 @@ function aimpro_save_google_ads_meta_boxes($post_id) {
     // Save Simple CTA Section
     if (isset($_POST['google_ads_simple_cta_nonce']) && wp_verify_nonce($_POST['google_ads_simple_cta_nonce'], basename(__FILE__))) {
         if (isset($_POST['google_ads_simple_cta_title'])) {
-            update_post_meta($post_id, '_google_ads_simple_cta_title', sanitize_text_field($_POST['google_ads_simple_cta_title']));
+            update_post_meta($post_id, '_google_ads_simple_cta_title', wp_kses_post($_POST['google_ads_simple_cta_title']));
         }
         if (isset($_POST['google_ads_simple_cta_content'])) {
-            update_post_meta($post_id, '_google_ads_simple_cta_content', sanitize_textarea_field($_POST['google_ads_simple_cta_content']));
+            update_post_meta($post_id, '_google_ads_simple_cta_content', wp_kses_post($_POST['google_ads_simple_cta_content']));
         }
         if (isset($_POST['google_ads_simple_cta_button_text'])) {
             update_post_meta($post_id, '_google_ads_simple_cta_button_text', sanitize_text_field($_POST['google_ads_simple_cta_button_text']));
