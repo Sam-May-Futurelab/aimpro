@@ -102,74 +102,74 @@ function aimpro_casestudies_meta_box_callback($post) {
     <div class="aimpro-casestudies-meta">
         <h4>Header Section</h4>
         <table class="form-table">
-            <tr><th><label for="cs_header_title">Title</label></th><td><input type="text" id="cs_header_title" name="cs_header_title" value="<?php echo esc_attr($cs_header_title); ?>" /></td></tr>
-            <tr><th><label for="cs_header_subtitle">Subtitle</label></th><td><input type="text" id="cs_header_subtitle" name="cs_header_subtitle" value="<?php echo esc_attr($cs_header_subtitle); ?>" /></td></tr>
+            <tr><th><label for="cs_header_title">Title</label></th><td><?php wp_editor($cs_header_title, "cs_header_title", array('textarea_rows' => 1, 'media_buttons' => false, 'teeny' => true)); ?></td></tr>
+            <tr><th><label for="cs_header_subtitle">Subtitle</label></th><td><?php wp_editor($cs_header_subtitle, "cs_header_subtitle", array('textarea_rows' => 1, 'media_buttons' => false, 'teeny' => true)); ?></td></tr>
         </table>
         
         <h4>Introduction Section</h4>
         <table class="form-table">
-            <tr><th><label for="cs_intro_title">Title</label></th><td><input type="text" id="cs_intro_title" name="cs_intro_title" value="<?php echo esc_attr($cs_intro_title); ?>" /></td></tr>
-            <tr><th><label for="cs_intro_description">Description</label></th><td><textarea id="cs_intro_description" name="cs_intro_description"><?php echo esc_textarea($cs_intro_description); ?></textarea></td></tr>
+            <tr><th><label for="cs_intro_title">Title</label></th><td><?php wp_editor($cs_intro_title, "cs_intro_title", array('textarea_rows' => 1, 'media_buttons' => false, 'teeny' => true)); ?></td></tr>
+            <tr><th><label for="cs_intro_description">Description</label></th><td><?php wp_editor($cs_intro_description, "cs_intro_description", array('textarea_rows' => 3, 'media_buttons' => false, 'teeny' => true)); ?></td></tr>
         </table>
         
         <h4>Results Overview Stats</h4>
         <table class="form-table">
-            <tr><th>Stat 1 Number</th><td><input type="text" name="cs_stat1_number" value="<?php echo esc_attr($cs_stat1_number); ?>" /></td></tr>
-            <tr><th>Stat 1 Label</th><td><input type="text" name="cs_stat1_label" value="<?php echo esc_attr($cs_stat1_label); ?>" /></td></tr>
-            <tr><th>Stat 2 Number</th><td><input type="text" name="cs_stat2_number" value="<?php echo esc_attr($cs_stat2_number); ?>" /></td></tr>
-            <tr><th>Stat 2 Label</th><td><input type="text" name="cs_stat2_label" value="<?php echo esc_attr($cs_stat2_label); ?>" /></td></tr>
-            <tr><th>Stat 3 Number</th><td><input type="text" name="cs_stat3_number" value="<?php echo esc_attr($cs_stat3_number); ?>" /></td></tr>
-            <tr><th>Stat 3 Label</th><td><input type="text" name="cs_stat3_label" value="<?php echo esc_attr($cs_stat3_label); ?>" /></td></tr>
+            <tr><th>Stat 1 Number</th><td><?php wp_editor($cs_stat1_number, "cs_stat1_number", array('textarea_rows' => 1, 'media_buttons' => false, 'teeny' => true)); ?></td></tr>
+            <tr><th>Stat 1 Label</th><td><?php wp_editor($cs_stat1_label, "cs_stat1_label", array('textarea_rows' => 1, 'media_buttons' => false, 'teeny' => true)); ?></td></tr>
+            <tr><th>Stat 2 Number</th><td><?php wp_editor($cs_stat2_number, "cs_stat2_number", array('textarea_rows' => 1, 'media_buttons' => false, 'teeny' => true)); ?></td></tr>
+            <tr><th>Stat 2 Label</th><td><?php wp_editor($cs_stat2_label, "cs_stat2_label", array('textarea_rows' => 1, 'media_buttons' => false, 'teeny' => true)); ?></td></tr>
+            <tr><th>Stat 3 Number</th><td><?php wp_editor($cs_stat3_number, "cs_stat3_number", array('textarea_rows' => 1, 'media_buttons' => false, 'teeny' => true)); ?></td></tr>
+            <tr><th>Stat 3 Label</th><td><?php wp_editor($cs_stat3_label, "cs_stat3_label", array('textarea_rows' => 1, 'media_buttons' => false, 'teeny' => true)); ?></td></tr>
         </table>
         
         <h4>Featured Case Study</h4>
         <table class="form-table">
-            <tr><th>Category</th><td><input type="text" name="cs_featured_category" value="<?php echo esc_attr($cs_featured_category); ?>" /></td></tr>
-            <tr><th>Title</th><td><input type="text" name="cs_featured_title" value="<?php echo esc_attr($cs_featured_title); ?>" /></td></tr>
-            <tr><th>Summary</th><td><textarea name="cs_featured_summary"><?php echo esc_textarea($cs_featured_summary); ?></textarea></td></tr>
-            <tr><th>Highlight 1 Number</th><td><input type="text" name="cs_featured_highlight1_number" value="<?php echo esc_attr($cs_featured_highlight1_number); ?>" /></td></tr>
-            <tr><th>Highlight 1 Label</th><td><input type="text" name="cs_featured_highlight1_label" value="<?php echo esc_attr($cs_featured_highlight1_label); ?>" /></td></tr>
-            <tr><th>Highlight 2 Number</th><td><input type="text" name="cs_featured_highlight2_number" value="<?php echo esc_attr($cs_featured_highlight2_number); ?>" /></td></tr>
-            <tr><th>Highlight 2 Label</th><td><input type="text" name="cs_featured_highlight2_label" value="<?php echo esc_attr($cs_featured_highlight2_label); ?>" /></td></tr>
-            <tr><th>Highlight 3 Number</th><td><input type="text" name="cs_featured_highlight3_number" value="<?php echo esc_attr($cs_featured_highlight3_number); ?>" /></td></tr>
-            <tr><th>Highlight 3 Label</th><td><input type="text" name="cs_featured_highlight3_label" value="<?php echo esc_attr($cs_featured_highlight3_label); ?>" /></td></tr>
-            <tr><th>CTA Text</th><td><input type="text" name="cs_featured_cta_text" value="<?php echo esc_attr($cs_featured_cta_text); ?>" /></td></tr>
+            <tr><th>Category</th><td><?php wp_editor($cs_featured_category, "cs_featured_category", array('textarea_rows' => 1, 'media_buttons' => false, 'teeny' => true)); ?></td></tr>
+            <tr><th>Title</th><td><?php wp_editor($cs_featured_title, "cs_featured_title", array('textarea_rows' => 1, 'media_buttons' => false, 'teeny' => true)); ?></td></tr>
+            <tr><th>Summary</th><td><?php wp_editor($cs_featured_summary, "cs_featured_summary", array('textarea_rows' => 3, 'media_buttons' => false, 'teeny' => true)); ?></td></tr>
+            <tr><th>Highlight 1 Number</th><td><?php wp_editor($cs_featured_highlight1_number, "cs_featured_highlight1_number", array('textarea_rows' => 1, 'media_buttons' => false, 'teeny' => true)); ?></td></tr>
+            <tr><th>Highlight 1 Label</th><td><?php wp_editor($cs_featured_highlight1_label, "cs_featured_highlight1_label", array('textarea_rows' => 1, 'media_buttons' => false, 'teeny' => true)); ?></td></tr>
+            <tr><th>Highlight 2 Number</th><td><?php wp_editor($cs_featured_highlight2_number, "cs_featured_highlight2_number", array('textarea_rows' => 1, 'media_buttons' => false, 'teeny' => true)); ?></td></tr>
+            <tr><th>Highlight 2 Label</th><td><?php wp_editor($cs_featured_highlight2_label, "cs_featured_highlight2_label", array('textarea_rows' => 1, 'media_buttons' => false, 'teeny' => true)); ?></td></tr>
+            <tr><th>Highlight 3 Number</th><td><?php wp_editor($cs_featured_highlight3_number, "cs_featured_highlight3_number", array('textarea_rows' => 1, 'media_buttons' => false, 'teeny' => true)); ?></td></tr>
+            <tr><th>Highlight 3 Label</th><td><?php wp_editor($cs_featured_highlight3_label, "cs_featured_highlight3_label", array('textarea_rows' => 1, 'media_buttons' => false, 'teeny' => true)); ?></td></tr>
+            <tr><th>CTA Text</th><td><?php wp_editor($cs_featured_cta_text, "cs_featured_cta_text", array('textarea_rows' => 1, 'media_buttons' => false, 'teeny' => true)); ?></td></tr>
             <tr><th>CTA URL</th><td><input type="text" name="cs_featured_cta_url" value="<?php echo esc_attr($cs_featured_cta_url); ?>" /></td></tr>
         </table>
         
         <?php foreach ($case_studies as $index => $case_study): ?>
         <h4>Case Study <?php echo $index; ?></h4>
         <table class="form-table">
-            <tr><th>Category</th><td><input type="text" name="cs_case<?php echo $index; ?>_category" value="<?php echo esc_attr($case_study['category']); ?>" /></td></tr>
-            <tr><th>Title</th><td><input type="text" name="cs_case<?php echo $index; ?>_title" value="<?php echo esc_attr($case_study['title']); ?>" /></td></tr>
-            <tr><th>Description</th><td><textarea name="cs_case<?php echo $index; ?>_description"><?php echo esc_textarea($case_study['description']); ?></textarea></td></tr>
-            <tr><th>Metric 1 Value</th><td><input type="text" name="cs_case<?php echo $index; ?>_metric1_value" value="<?php echo esc_attr($case_study['metric1_value']); ?>" /></td></tr>
-            <tr><th>Metric 1 Label</th><td><input type="text" name="cs_case<?php echo $index; ?>_metric1_label" value="<?php echo esc_attr($case_study['metric1_label']); ?>" /></td></tr>
-            <tr><th>Metric 2 Value</th><td><input type="text" name="cs_case<?php echo $index; ?>_metric2_value" value="<?php echo esc_attr($case_study['metric2_value']); ?>" /></td></tr>
-            <tr><th>Metric 2 Label</th><td><input type="text" name="cs_case<?php echo $index; ?>_metric2_label" value="<?php echo esc_attr($case_study['metric2_label']); ?>" /></td></tr>
-            <tr><th>Link Text</th><td><input type="text" name="cs_case<?php echo $index; ?>_link_text" value="<?php echo esc_attr($case_study['link_text']); ?>" /></td></tr>
+            <tr><th>Category</th><td><?php wp_editor($case_study['category'], "cs_case{$index}_category", array('textarea_rows' => 1, 'media_buttons' => false, 'teeny' => true)); ?></td></tr>
+            <tr><th>Title</th><td><?php wp_editor($case_study['title'], "cs_case{$index}_title", array('textarea_rows' => 1, 'media_buttons' => false, 'teeny' => true)); ?></td></tr>
+            <tr><th>Description</th><td><?php wp_editor($case_study['description'], "cs_case{$index}_description", array('textarea_rows' => 3, 'media_buttons' => false, 'teeny' => true)); ?></td></tr>
+            <tr><th>Metric 1 Value</th><td><?php wp_editor($case_study['metric1_value'], "cs_case{$index}_metric1_value", array('textarea_rows' => 1, 'media_buttons' => false, 'teeny' => true)); ?></td></tr>
+            <tr><th>Metric 1 Label</th><td><?php wp_editor($case_study['metric1_label'], "cs_case{$index}_metric1_label", array('textarea_rows' => 1, 'media_buttons' => false, 'teeny' => true)); ?></td></tr>
+            <tr><th>Metric 2 Value</th><td><?php wp_editor($case_study['metric2_value'], "cs_case{$index}_metric2_value", array('textarea_rows' => 1, 'media_buttons' => false, 'teeny' => true)); ?></td></tr>
+            <tr><th>Metric 2 Label</th><td><?php wp_editor($case_study['metric2_label'], "cs_case{$index}_metric2_label", array('textarea_rows' => 1, 'media_buttons' => false, 'teeny' => true)); ?></td></tr>
+            <tr><th>Link Text</th><td><?php wp_editor($case_study['link_text'], "cs_case{$index}_link_text", array('textarea_rows' => 1, 'media_buttons' => false, 'teeny' => true)); ?></td></tr>
             <tr><th>Link URL</th><td><input type="text" name="cs_case<?php echo $index; ?>_link_url" value="<?php echo esc_attr($case_study['link_url']); ?>" /></td></tr>
         </table>
         <?php endforeach; ?>
         
         <h4>Testimonials Section</h4>
         <table class="form-table">
-            <tr><th>Section Title</th><td><input type="text" name="cs_testimonials_title" value="<?php echo esc_attr($cs_testimonials_title); ?>" /></td></tr>
-            <tr><th>Testimonial 1 Content</th><td><textarea name="cs_testimonial1_content"><?php echo esc_textarea($cs_testimonial1_content); ?></textarea></td></tr>
-            <tr><th>Testimonial 1 Name</th><td><input type="text" name="cs_testimonial1_name" value="<?php echo esc_attr($cs_testimonial1_name); ?>" /></td></tr>
-            <tr><th>Testimonial 1 Title</th><td><input type="text" name="cs_testimonial1_title" value="<?php echo esc_attr($cs_testimonial1_title); ?>" /></td></tr>
-            <tr><th>Testimonial 2 Content</th><td><textarea name="cs_testimonial2_content"><?php echo esc_textarea($cs_testimonial2_content); ?></textarea></td></tr>
-            <tr><th>Testimonial 2 Name</th><td><input type="text" name="cs_testimonial2_name" value="<?php echo esc_attr($cs_testimonial2_name); ?>" /></td></tr>
-            <tr><th>Testimonial 2 Title</th><td><input type="text" name="cs_testimonial2_title" value="<?php echo esc_attr($cs_testimonial2_title); ?>" /></td></tr>
+            <tr><th>Section Title</th><td><?php wp_editor($cs_testimonials_title, "cs_testimonials_title", array('textarea_rows' => 1, 'media_buttons' => false, 'teeny' => true)); ?></td></tr>
+            <tr><th>Testimonial 1 Content</th><td><?php wp_editor($cs_testimonial1_content, "cs_testimonial1_content", array('textarea_rows' => 3, 'media_buttons' => false, 'teeny' => true)); ?></td></tr>
+            <tr><th>Testimonial 1 Name</th><td><?php wp_editor($cs_testimonial1_name, "cs_testimonial1_name", array('textarea_rows' => 1, 'media_buttons' => false, 'teeny' => true)); ?></td></tr>
+            <tr><th>Testimonial 1 Title</th><td><?php wp_editor($cs_testimonial1_title, "cs_testimonial1_title", array('textarea_rows' => 1, 'media_buttons' => false, 'teeny' => true)); ?></td></tr>
+            <tr><th>Testimonial 2 Content</th><td><?php wp_editor($cs_testimonial2_content, "cs_testimonial2_content", array('textarea_rows' => 3, 'media_buttons' => false, 'teeny' => true)); ?></td></tr>
+            <tr><th>Testimonial 2 Name</th><td><?php wp_editor($cs_testimonial2_name, "cs_testimonial2_name", array('textarea_rows' => 1, 'media_buttons' => false, 'teeny' => true)); ?></td></tr>
+            <tr><th>Testimonial 2 Title</th><td><?php wp_editor($cs_testimonial2_title, "cs_testimonial2_title", array('textarea_rows' => 1, 'media_buttons' => false, 'teeny' => true)); ?></td></tr>
         </table>
         
         <h4>CTA Section</h4>
         <table class="form-table">
-            <tr><th>CTA Title</th><td><input type="text" name="cs_cta_title" value="<?php echo esc_attr($cs_cta_title); ?>" /></td></tr>
-            <tr><th>CTA Description</th><td><textarea name="cs_cta_description"><?php echo esc_textarea($cs_cta_description); ?></textarea></td></tr>
-            <tr><th>Button 1 Text</th><td><input type="text" name="cs_cta_button1_text" value="<?php echo esc_attr($cs_cta_button1_text); ?>" /></td></tr>
+            <tr><th>CTA Title</th><td><?php wp_editor($cs_cta_title, "cs_cta_title", array('textarea_rows' => 1, 'media_buttons' => false, 'teeny' => true)); ?></td></tr>
+            <tr><th>CTA Description</th><td><?php wp_editor($cs_cta_description, "cs_cta_description", array('textarea_rows' => 3, 'media_buttons' => false, 'teeny' => true)); ?></td></tr>
+            <tr><th>Button 1 Text</th><td><?php wp_editor($cs_cta_button1_text, "cs_cta_button1_text", array('textarea_rows' => 1, 'media_buttons' => false, 'teeny' => true)); ?></td></tr>
             <tr><th>Button 1 URL</th><td><input type="text" name="cs_cta_button1_url" value="<?php echo esc_attr($cs_cta_button1_url); ?>" /></td></tr>
-            <tr><th>Button 2 Text</th><td><input type="text" name="cs_cta_button2_text" value="<?php echo esc_attr($cs_cta_button2_text); ?>" /></td></tr>
+            <tr><th>Button 2 Text</th><td><?php wp_editor($cs_cta_button2_text, "cs_cta_button2_text", array('textarea_rows' => 1, 'media_buttons' => false, 'teeny' => true)); ?></td></tr>
             <tr><th>Button 2 URL</th><td><input type="text" name="cs_cta_button2_url" value="<?php echo esc_attr($cs_cta_button2_url); ?>" /></td></tr>
         </table>
     </div>
@@ -216,10 +216,13 @@ function aimpro_save_casestudies_meta_fields($post_id) {
     foreach ($fields as $field) {
         if (isset($_POST[$field])) {
             $value = $_POST[$field];
-            if (strpos($field, 'description') !== false || strpos($field, 'summary') !== false || strpos($field, 'content') !== false) {
-                $value = wp_kses_post($value);
+            // Fields that should preserve rich text formatting
+            if (strpos($field, '_url') !== false) {
+                // URLs should be sanitized as URLs
+                $value = esc_url_raw($value);
             } else {
-                $value = sanitize_text_field($value);
+                // All other fields are rich text and should allow HTML formatting
+                $value = wp_kses_post($value);
             }
             update_post_meta($post_id, $field, $value);
         }
