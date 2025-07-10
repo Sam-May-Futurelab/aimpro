@@ -150,7 +150,18 @@ function aimpro_about_meta_box_callback($post) {
                         <label for="about_hero_badge">Hero Badge</label>
                     </th>
                     <td>
-                        <input type="text" id="about_hero_badge" name="about_hero_badge" value="<?php echo esc_attr($about_hero_badge); ?>" />
+                        <?php wp_editor($about_hero_badge, 'about_hero_badge', array(
+                            'textarea_name' => 'about_hero_badge',
+                            'media_buttons' => false,
+                            'textarea_rows' => 1,
+                            'teeny' => false,
+                            'tinymce' => array(
+                                'toolbar1' => 'bold,italic,underline,|,undo,redo',
+                                'toolbar2' => '',
+                                'plugins' => 'paste,wordpress'
+                            ),
+                            'quicktags' => array('buttons' => 'strong,em')
+                        )); ?>
                         <p class="description">Small text above the main heading (e.g., "About Us").</p>
                     </td>
                 </tr>
@@ -159,7 +170,18 @@ function aimpro_about_meta_box_callback($post) {
                         <label for="about_hero_heading">Hero Heading</label>
                     </th>
                     <td>
-                        <input type="text" id="about_hero_heading" name="about_hero_heading" value="<?php echo esc_attr($about_hero_heading); ?>" />
+                        <?php wp_editor($about_hero_heading, 'about_hero_heading', array(
+                            'textarea_name' => 'about_hero_heading',
+                            'media_buttons' => false,
+                            'textarea_rows' => 2,
+                            'teeny' => false,
+                            'tinymce' => array(
+                                'toolbar1' => 'bold,italic,underline,|,undo,redo',
+                                'toolbar2' => '',
+                                'plugins' => 'paste,wordpress'
+                            ),
+                            'quicktags' => array('buttons' => 'strong,em')
+                        )); ?>
                         <p class="description">Main page heading.</p>
                     </td>
                 </tr>
@@ -168,7 +190,18 @@ function aimpro_about_meta_box_callback($post) {
                         <label for="about_hero_subtitle">Hero Subtitle</label>
                     </th>
                     <td>
-                        <textarea id="about_hero_subtitle" name="about_hero_subtitle" rows="2"><?php echo esc_textarea($about_hero_subtitle); ?></textarea>
+                        <?php wp_editor($about_hero_subtitle, 'about_hero_subtitle', array(
+                            'textarea_name' => 'about_hero_subtitle',
+                            'media_buttons' => false,
+                            'textarea_rows' => 2,
+                            'teeny' => false,
+                            'tinymce' => array(
+                                'toolbar1' => 'bold,italic,underline,|,undo,redo',
+                                'toolbar2' => '',
+                                'plugins' => 'paste,wordpress'
+                            ),
+                            'quicktags' => array('buttons' => 'strong,em')
+                        )); ?>
                         <p class="description">Descriptive text shown below the main heading.</p>
                     </td>
                 </tr>
@@ -184,7 +217,18 @@ function aimpro_about_meta_box_callback($post) {
                         <label for="about_overview_heading">Overview Heading</label>
                     </th>
                     <td>
-                        <input type="text" id="about_overview_heading" name="about_overview_heading" value="<?php echo esc_attr($about_overview_heading); ?>" />
+                        <?php wp_editor($about_overview_heading, 'about_overview_heading', array(
+                            'textarea_name' => 'about_overview_heading',
+                            'media_buttons' => false,
+                            'textarea_rows' => 2,
+                            'teeny' => false,
+                            'tinymce' => array(
+                                'toolbar1' => 'bold,italic,underline,|,undo,redo',
+                                'toolbar2' => '',
+                                'plugins' => 'paste,wordpress'
+                            ),
+                            'quicktags' => array('buttons' => 'strong,em')
+                        )); ?>
                         <p class="description">Heading for the company overview section.</p>
                     </td>
                 </tr>
@@ -193,7 +237,18 @@ function aimpro_about_meta_box_callback($post) {
                         <label for="about_overview_description">Overview Description</label>
                     </th>
                     <td>
-                        <textarea id="about_overview_description" name="about_overview_description" rows="4"><?php echo esc_textarea($about_overview_description); ?></textarea>
+                        <?php wp_editor($about_overview_description, 'about_overview_description', array(
+                            'textarea_name' => 'about_overview_description',
+                            'media_buttons' => false,
+                            'textarea_rows' => 4,
+                            'teeny' => false,
+                            'tinymce' => array(
+                                'toolbar1' => 'bold,italic,underline,strikethrough,|,bullist,numlist,|,link,unlink,|,undo,redo',
+                                'toolbar2' => '',
+                                'plugins' => 'lists,paste,wordpress,wplink'
+                            ),
+                            'quicktags' => array('buttons' => 'strong,em,ul,ol,li,link,close')
+                        )); ?>
                         <p class="description">Detailed description of your company and mission.</p>
                     </td>
                 </tr>
@@ -209,7 +264,18 @@ function aimpro_about_meta_box_callback($post) {
                         <label for="about_video_heading">Video Heading</label>
                     </th>
                     <td>
-                        <input type="text" id="about_video_heading" name="about_video_heading" value="<?php echo esc_attr($about_video_heading); ?>" />
+                        <?php wp_editor($about_video_heading, 'about_video_heading', array(
+                            'textarea_name' => 'about_video_heading',
+                            'media_buttons' => false,
+                            'textarea_rows' => 2,
+                            'teeny' => false,
+                            'tinymce' => array(
+                                'toolbar1' => 'bold,italic,underline,|,undo,redo',
+                                'toolbar2' => '',
+                                'plugins' => 'paste,wordpress'
+                            ),
+                            'quicktags' => array('buttons' => 'strong,em')
+                        )); ?>
                         <p class="description">Heading above the video (optional).</p>
                     </td>
                 </tr>
@@ -218,7 +284,18 @@ function aimpro_about_meta_box_callback($post) {
                         <label for="about_video_description">Video Description</label>
                     </th>
                     <td>
-                        <textarea id="about_video_description" name="about_video_description" rows="2"><?php echo esc_textarea($about_video_description); ?></textarea>
+                        <?php wp_editor($about_video_description, 'about_video_description', array(
+                            'textarea_name' => 'about_video_description',
+                            'media_buttons' => false,
+                            'textarea_rows' => 2,
+                            'teeny' => false,
+                            'tinymce' => array(
+                                'toolbar1' => 'bold,italic,underline,|,undo,redo',
+                                'toolbar2' => '',
+                                'plugins' => 'paste,wordpress'
+                            ),
+                            'quicktags' => array('buttons' => 'strong,em')
+                        )); ?>
                         <p class="description">Description text below video heading (optional).</p>
                     </td>
                 </tr>
@@ -252,7 +329,18 @@ function aimpro_about_meta_box_callback($post) {
                         <label for="about_values_heading">Values Heading</label>
                     </th>
                     <td>
-                        <textarea id="about_values_heading" name="about_values_heading" rows="2"><?php echo esc_textarea($about_values_heading); ?></textarea>
+                        <?php wp_editor($about_values_heading, 'about_values_heading', array(
+                            'textarea_name' => 'about_values_heading',
+                            'media_buttons' => false,
+                            'textarea_rows' => 2,
+                            'teeny' => false,
+                            'tinymce' => array(
+                                'toolbar1' => 'bold,italic,underline,|,undo,redo',
+                                'toolbar2' => '',
+                                'plugins' => 'paste,wordpress'
+                            ),
+                            'quicktags' => array('buttons' => 'strong,em')
+                        )); ?>
                         <p class="description">Main heading for values section. HTML allowed for line breaks.</p>
                     </td>
                 </tr>
@@ -261,7 +349,18 @@ function aimpro_about_meta_box_callback($post) {
                         <label for="about_values_subtitle">Values Subtitle</label>
                     </th>
                     <td>
-                        <textarea id="about_values_subtitle" name="about_values_subtitle" rows="3"><?php echo esc_textarea($about_values_subtitle); ?></textarea>
+                        <?php wp_editor($about_values_subtitle, 'about_values_subtitle', array(
+                            'textarea_name' => 'about_values_subtitle',
+                            'media_buttons' => false,
+                            'textarea_rows' => 3,
+                            'teeny' => false,
+                            'tinymce' => array(
+                                'toolbar1' => 'bold,italic,underline,|,undo,redo',
+                                'toolbar2' => '',
+                                'plugins' => 'paste,wordpress'
+                            ),
+                            'quicktags' => array('buttons' => 'strong,em')
+                        )); ?>
                         <p class="description">Subtitle text. HTML allowed for line breaks.</p>
                     </td>
                 </tr>
@@ -273,36 +372,88 @@ function aimpro_about_meta_box_callback($post) {
                 <tr>
                     <th scope="row">Stat 1</th>
                     <td>
-                        <div style="display: flex; gap: 10px; margin-bottom: 10px;">
-                            <input type="text" name="about_stat_1_number" value="<?php echo esc_attr($about_stat_1_number); ?>" placeholder="Number" style="width: 100px;" />
-                            <input type="text" name="about_stat_1_label" value="<?php echo esc_attr($about_stat_1_label); ?>" placeholder="Label" style="flex: 1;" />
+                        <div style="margin-bottom: 10px;">
+                            <label style="display: block; margin-bottom: 5px; font-weight: 600;">Number:</label>
+                            <input type="text" name="about_stat_1_number" value="<?php echo esc_attr($about_stat_1_number); ?>" placeholder="Number (e.g., 25, 98%, 15+)" style="width: 150px; margin-bottom: 10px;" />
+                            <label style="display: block; margin-bottom: 5px; font-weight: 600;">Label:</label>
+                            <?php wp_editor($about_stat_1_label, 'about_stat_1_label', array(
+                                'textarea_name' => 'about_stat_1_label',
+                                'media_buttons' => false,
+                                'textarea_rows' => 1,
+                                'teeny' => false,
+                                'tinymce' => array(
+                                    'toolbar1' => 'bold,italic,underline,|,undo,redo',
+                                    'toolbar2' => '',
+                                    'plugins' => 'paste,wordpress'
+                                ),
+                                'quicktags' => array('buttons' => 'strong,em')
+                            )); ?>
                         </div>
                     </td>
                 </tr>
                 <tr>
                     <th scope="row">Stat 2</th>
                     <td>
-                        <div style="display: flex; gap: 10px; margin-bottom: 10px;">
-                            <input type="text" name="about_stat_2_number" value="<?php echo esc_attr($about_stat_2_number); ?>" placeholder="Number" style="width: 100px;" />
-                            <input type="text" name="about_stat_2_label" value="<?php echo esc_attr($about_stat_2_label); ?>" placeholder="Label" style="flex: 1;" />
+                        <div style="margin-bottom: 10px;">
+                            <label style="display: block; margin-bottom: 5px; font-weight: 600;">Number:</label>
+                            <input type="text" name="about_stat_2_number" value="<?php echo esc_attr($about_stat_2_number); ?>" placeholder="Number (e.g., 25, 98%, 15+)" style="width: 150px; margin-bottom: 10px;" />
+                            <label style="display: block; margin-bottom: 5px; font-weight: 600;">Label:</label>
+                            <?php wp_editor($about_stat_2_label, 'about_stat_2_label', array(
+                                'textarea_name' => 'about_stat_2_label',
+                                'media_buttons' => false,
+                                'textarea_rows' => 1,
+                                'teeny' => false,
+                                'tinymce' => array(
+                                    'toolbar1' => 'bold,italic,underline,|,undo,redo',
+                                    'toolbar2' => '',
+                                    'plugins' => 'paste,wordpress'
+                                ),
+                                'quicktags' => array('buttons' => 'strong,em')
+                            )); ?>
                         </div>
                     </td>
                 </tr>
                 <tr>
                     <th scope="row">Stat 3</th>
                     <td>
-                        <div style="display: flex; gap: 10px; margin-bottom: 10px;">
-                            <input type="text" name="about_stat_3_number" value="<?php echo esc_attr($about_stat_3_number); ?>" placeholder="Number" style="width: 100px;" />
-                            <input type="text" name="about_stat_3_label" value="<?php echo esc_attr($about_stat_3_label); ?>" placeholder="Label" style="flex: 1;" />
+                        <div style="margin-bottom: 10px;">
+                            <label style="display: block; margin-bottom: 5px; font-weight: 600;">Number:</label>
+                            <input type="text" name="about_stat_3_number" value="<?php echo esc_attr($about_stat_3_number); ?>" placeholder="Number (e.g., 25, 98%, 15+)" style="width: 150px; margin-bottom: 10px;" />
+                            <label style="display: block; margin-bottom: 5px; font-weight: 600;">Label:</label>
+                            <?php wp_editor($about_stat_3_label, 'about_stat_3_label', array(
+                                'textarea_name' => 'about_stat_3_label',
+                                'media_buttons' => false,
+                                'textarea_rows' => 1,
+                                'teeny' => false,
+                                'tinymce' => array(
+                                    'toolbar1' => 'bold,italic,underline,|,undo,redo',
+                                    'toolbar2' => '',
+                                    'plugins' => 'paste,wordpress'
+                                ),
+                                'quicktags' => array('buttons' => 'strong,em')
+                            )); ?>
                         </div>
                     </td>
                 </tr>
                 <tr>
                     <th scope="row">Stat 4</th>
                     <td>
-                        <div style="display: flex; gap: 10px;">
-                            <input type="text" name="about_stat_4_number" value="<?php echo esc_attr($about_stat_4_number); ?>" placeholder="Number" style="width: 100px;" />
-                            <input type="text" name="about_stat_4_label" value="<?php echo esc_attr($about_stat_4_label); ?>" placeholder="Label" style="flex: 1;" />
+                        <div>
+                            <label style="display: block; margin-bottom: 5px; font-weight: 600;">Number:</label>
+                            <input type="text" name="about_stat_4_number" value="<?php echo esc_attr($about_stat_4_number); ?>" placeholder="Number (e.g., 25, 98%, 15+)" style="width: 150px; margin-bottom: 10px;" />
+                            <label style="display: block; margin-bottom: 5px; font-weight: 600;">Label:</label>
+                            <?php wp_editor($about_stat_4_label, 'about_stat_4_label', array(
+                                'textarea_name' => 'about_stat_4_label',
+                                'media_buttons' => false,
+                                'textarea_rows' => 1,
+                                'teeny' => false,
+                                'tinymce' => array(
+                                    'toolbar1' => 'bold,italic,underline,|,undo,redo',
+                                    'toolbar2' => '',
+                                    'plugins' => 'paste,wordpress'
+                                ),
+                                'quicktags' => array('buttons' => 'strong,em')
+                            )); ?>
                         </div>
                     </td>
                 </tr>
@@ -316,43 +467,181 @@ function aimpro_about_meta_box_callback($post) {
                 <tr>
                     <th scope="row">Value 1</th>
                     <td>
-                        <input type="text" name="about_value_1_heading" value="<?php echo esc_attr($about_value_1_heading); ?>" placeholder="Value Heading" style="width: 100%; margin-bottom: 5px;" />
-                        <textarea name="about_value_1_description" rows="3" placeholder="Value Description" style="width: 100%;"><?php echo esc_textarea($about_value_1_description); ?></textarea>
+                        <?php wp_editor($about_value_1_heading, 'about_value_1_heading', array(
+                            'textarea_name' => 'about_value_1_heading',
+                            'media_buttons' => false,
+                            'textarea_rows' => 1,
+                            'teeny' => false,
+                            'tinymce' => array(
+                                'toolbar1' => 'bold,italic,underline,|,undo,redo',
+                                'toolbar2' => '',
+                                'plugins' => 'paste,wordpress'
+                            ),
+                            'quicktags' => array('buttons' => 'strong,em')
+                        )); ?>
+                        <div style="margin-top: 10px;"></div>
+                        <?php wp_editor($about_value_1_description, 'about_value_1_description', array(
+                            'textarea_name' => 'about_value_1_description',
+                            'media_buttons' => false,
+                            'textarea_rows' => 3,
+                            'teeny' => false,
+                            'tinymce' => array(
+                                'toolbar1' => 'bold,italic,underline,strikethrough,|,bullist,numlist,|,link,unlink,|,undo,redo',
+                                'toolbar2' => '',
+                                'plugins' => 'lists,paste,wordpress,wplink'
+                            ),
+                            'quicktags' => array('buttons' => 'strong,em,ul,ol,li,link,close')
+                        )); ?>
                     </td>
                 </tr>
                 <tr>
                     <th scope="row">Value 2</th>
                     <td>
-                        <input type="text" name="about_value_2_heading" value="<?php echo esc_attr($about_value_2_heading); ?>" placeholder="Value Heading" style="width: 100%; margin-bottom: 5px;" />
-                        <textarea name="about_value_2_description" rows="3" placeholder="Value Description" style="width: 100%;"><?php echo esc_textarea($about_value_2_description); ?></textarea>
+                        <?php wp_editor($about_value_2_heading, 'about_value_2_heading', array(
+                            'textarea_name' => 'about_value_2_heading',
+                            'media_buttons' => false,
+                            'textarea_rows' => 1,
+                            'teeny' => false,
+                            'tinymce' => array(
+                                'toolbar1' => 'bold,italic,underline,|,undo,redo',
+                                'toolbar2' => '',
+                                'plugins' => 'paste,wordpress'
+                            ),
+                            'quicktags' => array('buttons' => 'strong,em')
+                        )); ?>
+                        <div style="margin-top: 10px;"></div>
+                        <?php wp_editor($about_value_2_description, 'about_value_2_description', array(
+                            'textarea_name' => 'about_value_2_description',
+                            'media_buttons' => false,
+                            'textarea_rows' => 3,
+                            'teeny' => false,
+                            'tinymce' => array(
+                                'toolbar1' => 'bold,italic,underline,strikethrough,|,bullist,numlist,|,link,unlink,|,undo,redo',
+                                'toolbar2' => '',
+                                'plugins' => 'lists,paste,wordpress,wplink'
+                            ),
+                            'quicktags' => array('buttons' => 'strong,em,ul,ol,li,link,close')
+                        )); ?>
                     </td>
                 </tr>
                 <tr>
                     <th scope="row">Value 3</th>
                     <td>
-                        <input type="text" name="about_value_3_heading" value="<?php echo esc_attr($about_value_3_heading); ?>" placeholder="Value Heading" style="width: 100%; margin-bottom: 5px;" />
-                        <textarea name="about_value_3_description" rows="3" placeholder="Value Description" style="width: 100%;"><?php echo esc_textarea($about_value_3_description); ?></textarea>
+                        <?php wp_editor($about_value_3_heading, 'about_value_3_heading', array(
+                            'textarea_name' => 'about_value_3_heading',
+                            'media_buttons' => false,
+                            'textarea_rows' => 1,
+                            'teeny' => false,
+                            'tinymce' => array(
+                                'toolbar1' => 'bold,italic,underline,|,undo,redo',
+                                'toolbar2' => '',
+                                'plugins' => 'paste,wordpress'
+                            ),
+                            'quicktags' => array('buttons' => 'strong,em')
+                        )); ?>
+                        <div style="margin-top: 10px;"></div>
+                        <?php wp_editor($about_value_3_description, 'about_value_3_description', array(
+                            'textarea_name' => 'about_value_3_description',
+                            'media_buttons' => false,
+                            'textarea_rows' => 3,
+                            'teeny' => false,
+                            'tinymce' => array(
+                                'toolbar1' => 'bold,italic,underline,strikethrough,|,bullist,numlist,|,link,unlink,|,undo,redo',
+                                'toolbar2' => '',
+                                'plugins' => 'lists,paste,wordpress,wplink'
+                            ),
+                            'quicktags' => array('buttons' => 'strong,em,ul,ol,li,link,close')
+                        )); ?>
                     </td>
                 </tr>
                 <tr>
                     <th scope="row">Value 4</th>
                     <td>
-                        <input type="text" name="about_value_4_heading" value="<?php echo esc_attr($about_value_4_heading); ?>" placeholder="Value Heading" style="width: 100%; margin-bottom: 5px;" />
-                        <textarea name="about_value_4_description" rows="3" placeholder="Value Description" style="width: 100%;"><?php echo esc_textarea($about_value_4_description); ?></textarea>
+                        <?php wp_editor($about_value_4_heading, 'about_value_4_heading', array(
+                            'textarea_name' => 'about_value_4_heading',
+                            'media_buttons' => false,
+                            'textarea_rows' => 1,
+                            'teeny' => false,
+                            'tinymce' => array(
+                                'toolbar1' => 'bold,italic,underline,|,undo,redo',
+                                'toolbar2' => '',
+                                'plugins' => 'paste,wordpress'
+                            ),
+                            'quicktags' => array('buttons' => 'strong,em')
+                        )); ?>
+                        <div style="margin-top: 10px;"></div>
+                        <?php wp_editor($about_value_4_description, 'about_value_4_description', array(
+                            'textarea_name' => 'about_value_4_description',
+                            'media_buttons' => false,
+                            'textarea_rows' => 3,
+                            'teeny' => false,
+                            'tinymce' => array(
+                                'toolbar1' => 'bold,italic,underline,strikethrough,|,bullist,numlist,|,link,unlink,|,undo,redo',
+                                'toolbar2' => '',
+                                'plugins' => 'lists,paste,wordpress,wplink'
+                            ),
+                            'quicktags' => array('buttons' => 'strong,em,ul,ol,li,link,close')
+                        )); ?>
                     </td>
                 </tr>
                 <tr>
                     <th scope="row">Value 5</th>
                     <td>
-                        <input type="text" name="about_value_5_heading" value="<?php echo esc_attr($about_value_5_heading); ?>" placeholder="Value Heading" style="width: 100%; margin-bottom: 5px;" />
-                        <textarea name="about_value_5_description" rows="3" placeholder="Value Description" style="width: 100%;"><?php echo esc_textarea($about_value_5_description); ?></textarea>
+                        <?php wp_editor($about_value_5_heading, 'about_value_5_heading', array(
+                            'textarea_name' => 'about_value_5_heading',
+                            'media_buttons' => false,
+                            'textarea_rows' => 1,
+                            'teeny' => false,
+                            'tinymce' => array(
+                                'toolbar1' => 'bold,italic,underline,|,undo,redo',
+                                'toolbar2' => '',
+                                'plugins' => 'paste,wordpress'
+                            ),
+                            'quicktags' => array('buttons' => 'strong,em')
+                        )); ?>
+                        <div style="margin-top: 10px;"></div>
+                        <?php wp_editor($about_value_5_description, 'about_value_5_description', array(
+                            'textarea_name' => 'about_value_5_description',
+                            'media_buttons' => false,
+                            'textarea_rows' => 3,
+                            'teeny' => false,
+                            'tinymce' => array(
+                                'toolbar1' => 'bold,italic,underline,strikethrough,|,bullist,numlist,|,link,unlink,|,undo,redo',
+                                'toolbar2' => '',
+                                'plugins' => 'lists,paste,wordpress,wplink'
+                            ),
+                            'quicktags' => array('buttons' => 'strong,em,ul,ol,li,link,close')
+                        )); ?>
                     </td>
                 </tr>
                 <tr>
                     <th scope="row">Value 6</th>
                     <td>
-                        <input type="text" name="about_value_6_heading" value="<?php echo esc_attr($about_value_6_heading); ?>" placeholder="Value Heading" style="width: 100%; margin-bottom: 5px;" />
-                        <textarea name="about_value_6_description" rows="3" placeholder="Value Description" style="width: 100%;"><?php echo esc_textarea($about_value_6_description); ?></textarea>
+                        <?php wp_editor($about_value_6_heading, 'about_value_6_heading', array(
+                            'textarea_name' => 'about_value_6_heading',
+                            'media_buttons' => false,
+                            'textarea_rows' => 1,
+                            'teeny' => false,
+                            'tinymce' => array(
+                                'toolbar1' => 'bold,italic,underline,|,undo,redo',
+                                'toolbar2' => '',
+                                'plugins' => 'paste,wordpress'
+                            ),
+                            'quicktags' => array('buttons' => 'strong,em')
+                        )); ?>
+                        <div style="margin-top: 10px;"></div>
+                        <?php wp_editor($about_value_6_description, 'about_value_6_description', array(
+                            'textarea_name' => 'about_value_6_description',
+                            'media_buttons' => false,
+                            'textarea_rows' => 3,
+                            'teeny' => false,
+                            'tinymce' => array(
+                                'toolbar1' => 'bold,italic,underline,strikethrough,|,bullist,numlist,|,link,unlink,|,undo,redo',
+                                'toolbar2' => '',
+                                'plugins' => 'lists,paste,wordpress,wplink'
+                            ),
+                            'quicktags' => array('buttons' => 'strong,em,ul,ol,li,link,close')
+                        )); ?>
                     </td>
                 </tr>
             </table>
@@ -367,7 +656,18 @@ function aimpro_about_meta_box_callback($post) {
                         <label for="about_cta_heading">CTA Heading</label>
                     </th>
                     <td>
-                        <input type="text" id="about_cta_heading" name="about_cta_heading" value="<?php echo esc_attr($about_cta_heading); ?>" />
+                        <?php wp_editor($about_cta_heading, 'about_cta_heading', array(
+                            'textarea_name' => 'about_cta_heading',
+                            'media_buttons' => false,
+                            'textarea_rows' => 2,
+                            'teeny' => false,
+                            'tinymce' => array(
+                                'toolbar1' => 'bold,italic,underline,|,undo,redo',
+                                'toolbar2' => '',
+                                'plugins' => 'paste,wordpress'
+                            ),
+                            'quicktags' => array('buttons' => 'strong,em')
+                        )); ?>
                         <p class="description">Main heading for the call-to-action section.</p>
                     </td>
                 </tr>
@@ -376,7 +676,18 @@ function aimpro_about_meta_box_callback($post) {
                         <label for="about_cta_description">CTA Description</label>
                     </th>
                     <td>
-                        <textarea id="about_cta_description" name="about_cta_description" rows="2"><?php echo esc_textarea($about_cta_description); ?></textarea>
+                        <?php wp_editor($about_cta_description, 'about_cta_description', array(
+                            'textarea_name' => 'about_cta_description',
+                            'media_buttons' => false,
+                            'textarea_rows' => 2,
+                            'teeny' => false,
+                            'tinymce' => array(
+                                'toolbar1' => 'bold,italic,underline,|,undo,redo',
+                                'toolbar2' => '',
+                                'plugins' => 'paste,wordpress'
+                            ),
+                            'quicktags' => array('buttons' => 'strong,em')
+                        )); ?>
                         <p class="description">Description text for the CTA section.</p>
                     </td>
                 </tr>
@@ -482,8 +793,8 @@ function aimpro_save_about_meta_fields($post_id) {
             $value = $_POST[$field];
             
             // Sanitize based on field type
-            if (in_array($field, array('about_overview_description', 'about_values_heading', 'about_values_subtitle', 'about_hero_subtitle', 'about_video_description', 'about_cta_description'))) {
-                // Allow HTML for certain fields
+            if (in_array($field, array('about_overview_description', 'about_values_heading', 'about_values_subtitle', 'about_hero_subtitle', 'about_hero_badge', 'about_hero_heading', 'about_overview_heading', 'about_video_heading', 'about_video_description', 'about_cta_heading', 'about_cta_description', 'about_stat_1_label', 'about_stat_2_label', 'about_stat_3_label', 'about_stat_4_label'))) {
+                // Allow HTML for rich text editor fields
                 $value = wp_kses_post($value);
             } elseif (in_array($field, array('about_value_1_description', 'about_value_2_description', 'about_value_3_description', 'about_value_4_description', 'about_value_5_description', 'about_value_6_description'))) {
                 // Value descriptions - allow basic HTML
