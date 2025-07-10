@@ -50,23 +50,23 @@ get_header(); ?>
     <section class="page-hero service-hero">
         <div class="container">
             <div class="hero-content animate-on-scroll animate-fade-up">
-                <h1>Email & SMS Automation Flows</h1>
-                <p class="hero-subtitle">Create sophisticated multi-channel communication sequences that nurture leads, recover abandoned carts, and build lasting customer relationships through intelligent email and SMS automation.</p>
+                <h1><?php echo wp_kses_post(get_post_meta(get_the_ID(), 'email_sms_flows_hero_title', true) ?: 'Email & SMS Automation Flows'); ?></h1>
+                <p class="hero-subtitle"><?php echo wp_kses_post(get_post_meta(get_the_ID(), 'email_sms_flows_hero_subtitle', true) ?: 'Create sophisticated multi-channel communication sequences that nurture leads, recover abandoned carts, and build lasting customer relationships through intelligent email and SMS automation.'); ?></p>
                 <div class="hero-stats animate-on-scroll animate-stagger animate-scale-up">
                     <div class="stat-item">
-                        <div class="stat-number">580%</div>
-                        <div class="stat-label">Revenue Per Email Increase</div>
+                        <div class="stat-number"><?php echo esc_html(get_post_meta(get_the_ID(), 'email_sms_flows_hero_stat_1_number', true) ?: '580%'); ?></div>
+                        <div class="stat-label"><?php echo esc_html(get_post_meta(get_the_ID(), 'email_sms_flows_hero_stat_1_label', true) ?: 'Revenue Per Email Increase'); ?></div>
                     </div>
                     <div class="stat-item">
-                        <div class="stat-number">45%</div>
-                        <div class="stat-label">Higher SMS Open Rates</div>
+                        <div class="stat-number"><?php echo esc_html(get_post_meta(get_the_ID(), 'email_sms_flows_hero_stat_2_number', true) ?: '45%'); ?></div>
+                        <div class="stat-label"><?php echo esc_html(get_post_meta(get_the_ID(), 'email_sms_flows_hero_stat_2_label', true) ?: 'Higher SMS Open Rates'); ?></div>
                     </div>
                     <div class="stat-item">
-                        <div class="stat-number">320%</div>
-                        <div class="stat-label">Cart Recovery Improvement</div>
+                        <div class="stat-number"><?php echo esc_html(get_post_meta(get_the_ID(), 'email_sms_flows_hero_stat_3_number', true) ?: '320%'); ?></div>
+                        <div class="stat-label"><?php echo esc_html(get_post_meta(get_the_ID(), 'email_sms_flows_hero_stat_3_label', true) ?: 'Cart Recovery Improvement'); ?></div>
                     </div>
                 </div>                <div class="hero-ctas animate-on-scroll animate-fade-up">
-                    <a href="#contact" class="btn-primary streamlined">Build Your Flows</a>
+                    <a href="#contact" class="btn-primary streamlined"><?php echo wp_kses_post(get_post_meta(get_the_ID(), 'email_sms_flows_hero_button', true) ?: 'Build Your Flows'); ?></a>
                 </div>
             </div>
         </div>
@@ -74,8 +74,8 @@ get_header(); ?>
     <section class="service-overview">
         <div class="container">
             <div class="overview-content animate-on-scroll animate-fade-up">
-                <h2>Intelligent Multi-Channel Communication</h2>
-                <p>Transform one-time visitors into loyal customers with strategically designed email and SMS automation flows. Our data-driven approach ensures the right message reaches the right person at the perfect moment, maximising engagement and conversions.</p>
+                <h2><?php echo wp_kses_post(get_post_meta(get_the_ID(), 'email_sms_flows_overview_title', true) ?: 'Intelligent Multi-Channel Communication'); ?></h2>
+                <p><?php echo wp_kses_post(get_post_meta(get_the_ID(), 'email_sms_flows_overview_description', true) ?: 'Transform one-time visitors into loyal customers with strategically designed email and SMS automation flows. Our data-driven approach ensures the right message reaches the right person at the perfect moment, maximising engagement and conversions.'); ?></p>
             </div>
             
             <div class="services-grid">
@@ -83,48 +83,48 @@ get_header(); ?>
                     <div class="service-icon">
                         <i class="fas fa-envelope-open-text"></i>
                     </div>
-                    <h3>Welcome Email Series</h3>
-                    <p>Onboard new subscribers with engaging welcome sequences that build trust and drive first purchases.</p>
+                    <h3><?php echo wp_kses_post(get_post_meta(get_the_ID(), 'email_sms_flows_service_1_title', true) ?: 'Welcome Email Series'); ?></h3>
+                    <p><?php echo wp_kses_post(get_post_meta(get_the_ID(), 'email_sms_flows_service_1_desc', true) ?: 'Onboard new subscribers with engaging welcome sequences that build trust and drive first purchases.'); ?></p>
                 </div>
                 
                 <div class="service-item animate-on-scroll animate-stagger animate-fade-up">
                     <div class="service-icon">
                         <i class="fas fa-shopping-cart"></i>
                     </div>
-                    <h3>Abandoned Cart Recovery</h3>
-                    <p>Multi-step email and SMS sequences that recover lost sales with personalised product reminders and incentives.</p>
+                    <h3><?php echo wp_kses_post(get_post_meta(get_the_ID(), 'email_sms_flows_service_2_title', true) ?: 'Abandoned Cart Recovery'); ?></h3>
+                    <p><?php echo wp_kses_post(get_post_meta(get_the_ID(), 'email_sms_flows_service_2_desc', true) ?: 'Multi-step email and SMS sequences that recover lost sales with personalised product reminders and incentives.'); ?></p>
                 </div>
                 
                 <div class="service-item animate-on-scroll animate-stagger animate-fade-up">
                     <div class="service-icon">
                         <i class="fas fa-mobile-alt"></i>
                     </div>
-                    <h3>SMS Marketing Automation</h3>
-                    <p>High-impact SMS campaigns for time-sensitive offers, shipping updates, and urgent customer communications.</p>
+                    <h3><?php echo wp_kses_post(get_post_meta(get_the_ID(), 'email_sms_flows_service_3_title', true) ?: 'SMS Marketing Automation'); ?></h3>
+                    <p><?php echo wp_kses_post(get_post_meta(get_the_ID(), 'email_sms_flows_service_3_desc', true) ?: 'High-impact SMS campaigns for time-sensitive offers, shipping updates, and urgent customer communications.'); ?></p>
                 </div>
                 
                 <div class="service-item animate-on-scroll animate-stagger animate-fade-up">
                     <div class="service-icon">
                         <i class="fas fa-user-check"></i>
                     </div>
-                    <h3>Lead Nurturing Sequences</h3>
-                    <p>Educational and value-driven email flows that guide prospects through your sales funnel over time.</p>
+                    <h3><?php echo wp_kses_post(get_post_meta(get_the_ID(), 'email_sms_flows_service_4_title', true) ?: 'Lead Nurturing Sequences'); ?></h3>
+                    <p><?php echo wp_kses_post(get_post_meta(get_the_ID(), 'email_sms_flows_service_4_desc', true) ?: 'Educational and value-driven email flows that guide prospects through your sales funnel over time.'); ?></p>
                 </div>
                 
                 <div class="service-item animate-on-scroll animate-stagger animate-fade-up">
                     <div class="service-icon">
                         <i class="fas fa-sync-alt"></i>
                     </div>
-                    <h3>Re-engagement Campaigns</h3>
-                    <p>Win back inactive subscribers and customers with targeted campaigns designed to rekindle interest.</p>
+                    <h3><?php echo wp_kses_post(get_post_meta(get_the_ID(), 'email_sms_flows_service_5_title', true) ?: 'Re-engagement Campaigns'); ?></h3>
+                    <p><?php echo wp_kses_post(get_post_meta(get_the_ID(), 'email_sms_flows_service_5_desc', true) ?: 'Win back inactive subscribers and customers with targeted campaigns designed to rekindle interest.'); ?></p>
                 </div>
                 
                 <div class="service-item animate-on-scroll animate-stagger animate-fade-up">
                     <div class="service-icon">
                         <i class="fas fa-crown"></i>
                     </div>
-                    <h3>VIP Customer Flows</h3>
-                    <p>Exclusive communications for high-value customers with special offers and premium experiences.</p>
+                    <h3><?php echo wp_kses_post(get_post_meta(get_the_ID(), 'email_sms_flows_service_6_title', true) ?: 'VIP Customer Flows'); ?></h3>
+                    <p><?php echo wp_kses_post(get_post_meta(get_the_ID(), 'email_sms_flows_service_6_desc', true) ?: 'Exclusive communications for high-value customers with special offers and premium experiences.'); ?></p>
                 </div>            </div>
         </div>
     </section>
@@ -134,23 +134,30 @@ get_header(); ?>
         <div class="container">
             <div class="case-study-content">
                 <div class="case-study-text animate-on-scroll animate-slide-left">
-                    <h2>Case Study: E-commerce Revenue Recovery</h2>
-                    <p class="case-study-intro">How we helped an online fashion retailer increase revenue per email by 580% and recover 320% more abandoned carts through strategic email and SMS automation flows.</p>
+                    <h2><?php echo wp_kses_post(get_post_meta(get_the_ID(), 'email_sms_flows_case_title', true) ?: 'Case Study: E-commerce Revenue Recovery'); ?></h2>
+                    <p class="case-study-intro"><?php echo wp_kses_post(get_post_meta(get_the_ID(), 'email_sms_flows_case_intro', true) ?: 'How we helped an online fashion retailer increase revenue per email by 580% and recover 320% more abandoned carts through strategic email and SMS automation flows.'); ?></p>
                     
                     <div class="case-study-challenge">
                         <h3>The Challenge</h3>
-                        <p>A growing fashion e-commerce brand was losing 78% of potential customers to cart abandonment and had low customer lifetime value. Their basic email marketing generated minimal revenue, and they had no SMS strategy to complement their efforts.</p>
+                        <p><?php echo wp_kses_post(get_post_meta(get_the_ID(), 'email_sms_flows_case_challenge', true) ?: 'A growing fashion e-commerce brand was losing 78% of potential customers to cart abandonment and had low customer lifetime value. Their basic email marketing generated minimal revenue, and they had no SMS strategy to complement their efforts.'); ?></p>
                     </div>
                     
                     <div class="case-study-solution">
                         <h3>Our Flow Strategy</h3>
-                        <ul>
-                            <li>Designed 12-email welcome series with fashion styling tips and progressive discounts</li>
-                            <li>Created 5-step abandoned cart recovery flow with SMS integration</li>
-                            <li>Built browse abandonment flows for window shoppers</li>
-                            <li>Implemented post-purchase upsell and review request sequences</li>
-                            <li>Developed VIP customer program with exclusive SMS alerts</li>
-                        </ul>
+                        <?php 
+                        $solutions = get_post_meta(get_the_ID(), 'email_sms_flows_case_solution', true);
+                        if (empty($solutions)) {
+                            $solutions = "Designed 12-email welcome series with fashion styling tips and progressive discounts\nCreated 5-step abandoned cart recovery flow with SMS integration\nBuilt browse abandonment flows for window shoppers\nImplemented post-purchase upsell and review request sequences\nDeveloped VIP customer program with exclusive SMS alerts";
+                        }
+                        $solution_list = explode("\n", $solutions);
+                        echo '<ul>';
+                        foreach ($solution_list as $solution) {
+                            if (!empty(trim($solution))) {
+                                echo '<li>' . wp_kses_post(trim($solution)) . '</li>';
+                            }
+                        }
+                        echo '</ul>';
+                        ?>
                     </div>
                 </div>
                 
@@ -158,20 +165,20 @@ get_header(); ?>
                     <h3>The Results</h3>
                     <div class="results-grid">
                         <div class="result-item animate-on-scroll animate-stagger animate-scale-up">
-                            <div class="result-number">580%</div>
-                            <div class="result-label">Revenue Per Email Increase</div>
+                            <div class="result-number"><?php echo esc_html(get_post_meta(get_the_ID(), 'email_sms_flows_result_1_number', true) ?: '580%'); ?></div>
+                            <div class="result-label"><?php echo esc_html(get_post_meta(get_the_ID(), 'email_sms_flows_result_1_label', true) ?: 'Revenue Per Email Increase'); ?></div>
                         </div>
                         <div class="result-item animate-on-scroll animate-stagger animate-scale-up">
-                            <div class="result-number">320%</div>
-                            <div class="result-label">Cart Recovery Improvement</div>
+                            <div class="result-number"><?php echo esc_html(get_post_meta(get_the_ID(), 'email_sms_flows_result_2_number', true) ?: '320%'); ?></div>
+                            <div class="result-label"><?php echo esc_html(get_post_meta(get_the_ID(), 'email_sms_flows_result_2_label', true) ?: 'Cart Recovery Improvement'); ?></div>
                         </div>
                         <div class="result-item animate-on-scroll animate-stagger animate-scale-up">
-                            <div class="result-number">45%</div>
-                            <div class="result-label">SMS Open Rate</div>
+                            <div class="result-number"><?php echo esc_html(get_post_meta(get_the_ID(), 'email_sms_flows_result_3_number', true) ?: '45%'); ?></div>
+                            <div class="result-label"><?php echo esc_html(get_post_meta(get_the_ID(), 'email_sms_flows_result_3_label', true) ?: 'SMS Open Rate'); ?></div>
                         </div>
                         <div class="result-item animate-on-scroll animate-stagger animate-scale-up">
-                            <div class="result-number">£185K</div>
-                            <div class="result-label">Additional Monthly Revenue</div>
+                            <div class="result-number"><?php echo esc_html(get_post_meta(get_the_ID(), 'email_sms_flows_result_4_number', true) ?: '£185K'); ?></div>
+                            <div class="result-label"><?php echo esc_html(get_post_meta(get_the_ID(), 'email_sms_flows_result_4_label', true) ?: 'Additional Monthly Revenue'); ?></div>
                         </div>
                     </div>
                 </div>
@@ -376,11 +383,11 @@ get_header(); ?>
         <div class="container">
             <div class="testimonial-content animate-on-scroll animate-fade-up">
                 <blockquote>
-                    "Our email and SMS flows are now our most profitable marketing channel. Aimpro's automation strategy increased our revenue per email by 580% and we're recovering 3x more abandoned carts. The ROI is incredible."
+                    <?php echo wp_kses_post(get_post_meta(get_the_ID(), 'email_sms_flows_testimonial_quote', true) ?: 'Our email and SMS flows are now our most profitable marketing channel. Aimpro\'s automation strategy increased our revenue per email by 580% and we\'re recovering 3x more abandoned carts. The ROI is incredible.'); ?>
                 </blockquote>
                 <cite>
-                    <strong>Sophie Chen</strong><br>
-                    Marketing Director, StyleBox Fashion
+                    <strong><?php echo wp_kses_post(get_post_meta(get_the_ID(), 'email_sms_flows_testimonial_author', true) ?: 'Sophie Chen'); ?></strong><br>
+                    <?php echo wp_kses_post(get_post_meta(get_the_ID(), 'email_sms_flows_testimonial_position', true) ?: 'Marketing Director, StyleBox Fashion'); ?>
                 </cite>
             </div>
         </div>
@@ -390,10 +397,10 @@ get_header(); ?>
     <section id="contact" class="cta-section">
         <div class="container">
             <div class="cta-content animate-on-scroll animate-scale-up">
-                <h2 class="animate-on-scroll animate-fade-up">Ready to Build Revenue-Generating Automation Flows?</h2>
-                <p class="animate-on-scroll animate-fade-up">Stop leaving money on the table with basic email marketing. Our sophisticated email and SMS automation flows will turn your subscriber list into a predictable revenue engine that works 24/7.</p>
+                <h2 class="animate-on-scroll animate-fade-up"><?php echo wp_kses_post(get_post_meta(get_the_ID(), 'email_sms_flows_cta_title', true) ?: 'Ready to Build Revenue-Generating Automation Flows?'); ?></h2>
+                <p class="animate-on-scroll animate-fade-up"><?php echo wp_kses_post(get_post_meta(get_the_ID(), 'email_sms_flows_cta_description', true) ?: 'Stop leaving money on the table with basic email marketing. Our sophisticated email and SMS automation flows will turn your subscriber list into a predictable revenue engine that works 24/7.'); ?></p>
                 <div class="cta-buttons animate-on-scroll animate-fade-up">
-                    <a href="<?php echo home_url('/contact'); ?>" class="btn-outline" style="background-colour: white; colour: #333; border: 2px solid white;">Build Your Flows</a>
+                    <a href="<?php echo home_url('/contact'); ?>" class="btn-outline" style="background-colour: white; colour: #333; border: 2px solid white;"><?php echo wp_kses_post(get_post_meta(get_the_ID(), 'email_sms_flows_cta_button', true) ?: 'Build Your Flows'); ?></a>
                 </div>
             </div>
         </div>
