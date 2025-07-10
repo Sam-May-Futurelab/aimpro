@@ -218,6 +218,15 @@ function get_local_seo_defaults() {
             array('number' => '80+', 'label' => 'New Patient Reviews'),
             array('number' => '65%', 'label' => 'Increase in New Patients')
         ),
+        // Individual case study results for meta box fields
+        'case_study_result_1_number' => '500%',
+        'case_study_result_1_label' => 'Local Visibility Increase',
+        'case_study_result_2_number' => '350%',
+        'case_study_result_2_label' => 'More Phone Calls',
+        'case_study_result_3_number' => '80+',
+        'case_study_result_3_label' => 'New Patient Reviews',
+        'case_study_result_4_number' => '65%',
+        'case_study_result_4_label' => 'Increase in New Patients',
         'case_study_link_url' => home_url('/case-studies'),
         'case_study_link_text' => 'Read Full Case Study',
         
@@ -500,7 +509,7 @@ function local_seo_case_study_callback($post) {
     $solution_title = get_post_meta($post->ID, '_local_seo_case_study_solution_title', true) ?: $defaults['case_study_solution_title'];
     $solutions = get_post_meta($post->ID, '_local_seo_case_study_solutions', true) ?: $defaults['case_study_solutions'];
     $results_title = get_post_meta($post->ID, '_local_seo_case_study_results_title', true) ?: $defaults['case_study_results_title'];
-    $link = get_post_meta($post->ID, '_local_seo_case_study_link', true) ?: $defaults['case_study_link'];
+    $link = get_post_meta($post->ID, '_local_seo_case_study_link', true) ?: $defaults['case_study_link_url'];
     $link_text = get_post_meta($post->ID, '_local_seo_case_study_link_text', true) ?: $defaults['case_study_link_text'];
     
     echo '<table class="form-table">';
