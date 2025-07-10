@@ -369,9 +369,10 @@ function aimpro_save_careers_meta($post_id) {
     // Save team testimonials fields
     for ($i = 1; $i <= 3; $i++) {
         $testimonial_fields = array(
-            "careers_testimonial{$i}_quote" => 'sanitize_textarea_field',
+            "careers_testimonial{$i}_quote" => 'wp_kses_post',
             "careers_testimonial{$i}_author" => 'sanitize_text_field',
-            "careers_testimonial{$i}_title" => 'sanitize_text_field'        );
+            "careers_testimonial{$i}_title" => 'sanitize_text_field'
+        );
         
         foreach ($testimonial_fields as $field => $sanitize_func) {
             if (isset($_POST[$field])) {
@@ -385,8 +386,8 @@ function aimpro_save_careers_meta($post_id) {
             "careers_job{$i}_team" => 'sanitize_text_field',
             "careers_job{$i}_type" => 'sanitize_text_field',
             "careers_job{$i}_location" => 'sanitize_text_field',
-            "careers_job{$i}_desc" => 'sanitize_textarea_field',
-            "careers_job{$i}_requirements" => 'sanitize_textarea_field',
+            "careers_job{$i}_desc" => 'wp_kses_post',
+            "careers_job{$i}_requirements" => 'wp_kses_post',
             "careers_job{$i}_pdf" => 'esc_url_raw'
         );
         

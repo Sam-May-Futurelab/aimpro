@@ -59,7 +59,7 @@ get_header(); ?>
                             </svg>
                         </div>
                         <h3><?php echo esc_html($title); ?></h3>
-                        <p><?php echo esc_html($desc); ?></p>
+                        <p><?php echo wp_kses_post($desc); ?></p>
                     </div>
                     <?php endfor; ?>
                 </div>
@@ -117,23 +117,11 @@ get_header(); ?>
                             </div>
                         </div>
                         <div class="position-content">
-                            <p><?php echo esc_html($job_desc); ?></p>
+                            <p><?php echo wp_kses_post($job_desc); ?></p>
                             <?php if (!empty($job_requirements)): ?>
                             <div class="requirements">
                                 <h4>Key Requirements:</h4>
-                                <ul>
-                                    <?php 
-                                    $requirements = explode("\n", $job_requirements);
-                                    foreach ($requirements as $requirement):
-                                        $requirement = trim($requirement);
-                                        if (!empty($requirement)):
-                                    ?>
-                                        <li><?php echo esc_html($requirement); ?></li>
-                                    <?php 
-                                        endif;
-                                    endforeach; 
-                                    ?>
-                                </ul>
+                                <div><?php echo wp_kses_post($job_requirements); ?></div>
                             </div>
                             <?php endif; ?>                            <div class="position-actions">
                                 <a href="#apply" class="btn btn-primary">Apply Now</a>
@@ -158,41 +146,27 @@ get_header(); ?>
             <div class="section-content">
                 <h2><?php echo esc_html(get_post_meta(get_the_ID(), 'careers_process_heading', true) ?: 'Our Hiring Process'); ?></h2>
                 <div class="process-steps">
+                    <?php 
+                    $process_defaults = array(
+                        1 => array('title' => 'Application Review', 'desc' => 'We review your application and portfolio to assess your skills and experience.'),
+                        2 => array('title' => 'Initial Interview', 'desc' => 'Phone or video call to discuss your background and interest in the position.'),
+                        3 => array('title' => 'Skills Assessment', 'desc' => 'Practical test or case study relevant to the role you\'re applying for.'),
+                        4 => array('title' => 'Final Interview', 'desc' => 'Meet with team members and leadership to ensure mutual fit.'),
+                        5 => array('title' => 'Offer & Onboarding', 'desc' => 'Receive your offer and begin your journey with Aimpro Digital.')
+                    );
+                    
+                    for ($i = 1; $i <= 5; $i++):
+                        $step_title = get_post_meta(get_the_ID(), "careers_process{$i}_title", true) ?: $process_defaults[$i]['title'];
+                        $step_desc = get_post_meta(get_the_ID(), "careers_process{$i}_desc", true) ?: $process_defaults[$i]['desc'];
+                    ?>
                     <div class="step">
-                        <div class="step-number">1</div>
+                        <div class="step-number"><?php echo $i; ?></div>
                         <div class="step-content">
-                            <h3>Application Review</h3>
-                            <p>We review your application and portfolio to assess your skills and experience.</p>
+                            <h3><?php echo esc_html($step_title); ?></h3>
+                            <p><?php echo wp_kses_post($step_desc); ?></p>
                         </div>
                     </div>
-                    <div class="step">
-                        <div class="step-number">2</div>
-                        <div class="step-content">
-                            <h3>Initial Interview</h3>
-                            <p>Phone or video call to discuss your background and interest in the position.</p>
-                        </div>
-                    </div>
-                    <div class="step">
-                        <div class="step-number">3</div>
-                        <div class="step-content">
-                            <h3>Skills Assessment</h3>
-                            <p>Practical test or case study relevant to the role you're applying for.</p>
-                        </div>
-                    </div>
-                    <div class="step">
-                        <div class="step-number">4</div>
-                        <div class="step-content">
-                            <h3>Final Interview</h3>
-                            <p>Meet with team members and leadership to ensure mutual fit.</p>
-                        </div>
-                    </div>
-                    <div class="step">
-                        <div class="step-number">5</div>
-                        <div class="step-content">
-                            <h3>Offer & Onboarding</h3>
-                            <p>Receive your offer and begin your journey with Aimpro Digital.</p>
-                        </div>
-                    </div>
+                    <?php endfor; ?>
                 </div>
             </div>
         </section>
@@ -202,35 +176,28 @@ get_header(); ?>
             <div class="section-content">
                 <h2><?php echo esc_html(get_post_meta(get_the_ID(), 'careers_team_testimonials_heading', true) ?: 'What Our Team Says'); ?></h2>
                 <div class="testimonials-grid">
-                    <div class="testimonial-card">
-                        <blockquote>
-                            "Working at Aimpro Digital has been incredibly rewarding. The team is supportive, the work is challenging, and I've grown tremendously in my career."
-                        </blockquote>
-                        <div class="testimonial-author">
-                            <h4>Emily Rodriguez</h4>
-                            <p>SEO Team Lead</p>
-                        </div>
-                    </div>
+                    <?php 
+                    $testimonial_defaults = array(
+                        1 => array('quote' => 'Working at Aimpro Digital has been incredibly rewarding. The team is supportive, the work is challenging, and I\'ve grown tremendously in my career.', 'author' => 'Emily Rodriguez', 'title' => 'SEO Team Lead'),
+                        2 => array('quote' => 'The work-life balance here is exceptional. I can focus on delivering great results for clients while still having time for my family and personal interests.', 'author' => 'David Park', 'title' => 'Senior SEO Analyst'),
+                        3 => array('quote' => 'I love the collaborative environment and how everyone is always willing to share knowledge and help each other succeed.', 'author' => 'Lisa Thompson', 'title' => 'PPC Team Lead')
+                    );
                     
+                    for ($i = 1; $i <= 3; $i++):
+                        $quote = get_post_meta(get_the_ID(), "careers_testimonial{$i}_quote", true) ?: $testimonial_defaults[$i]['quote'];
+                        $author = get_post_meta(get_the_ID(), "careers_testimonial{$i}_author", true) ?: $testimonial_defaults[$i]['author'];
+                        $title = get_post_meta(get_the_ID(), "careers_testimonial{$i}_title", true) ?: $testimonial_defaults[$i]['title'];
+                    ?>
                     <div class="testimonial-card">
                         <blockquote>
-                            "The work-life balance here is exceptional. I can focus on delivering great results for clients while still having time for my family and personal interests."
+                            <?php echo wp_kses_post($quote); ?>
                         </blockquote>
                         <div class="testimonial-author">
-                            <h4>David Park</h4>
-                            <p>Senior SEO Analyst</p>
+                            <h4><?php echo esc_html($author); ?></h4>
+                            <p><?php echo esc_html($title); ?></p>
                         </div>
                     </div>
-                    
-                    <div class="testimonial-card">
-                        <blockquote>
-                            "I love the collaborative environment and how everyone is always willing to share knowledge and help each other succeed."
-                        </blockquote>
-                        <div class="testimonial-author">
-                            <h4>Lisa Thompson</h4>
-                            <p>PPC Team Lead</p>
-                        </div>
-                    </div>
+                    <?php endfor; ?>
                 </div>
             </div>
         </section>        <!-- Application Form -->
