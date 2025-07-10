@@ -127,7 +127,7 @@ function aimpro_contact_meta_box_callback($post) {
     if (empty($contact_social_proof_subtitle)) $contact_social_proof_subtitle = 'From startups to established enterprises, we\'ve helped businesses across industries achieve their digital marketing goals.';
     if (empty($contact_stat_1_number)) $contact_stat_1_number = '500%';
     if (empty($contact_stat_1_label)) $contact_stat_1_label = 'Average Lead Increase';
-    if (empty($contact_stat_2_number)) $contact_stat_2_number = '£2.4M+';
+    if (empty($contact_stat_2_number)) $contact_stat_2_number = 'ï¿½2.4M+';
     if (empty($contact_stat_2_label)) $contact_stat_2_label = 'Revenue Generated';
     if (empty($contact_stat_3_number)) $contact_stat_3_number = '98%';
     if (empty($contact_stat_3_label)) $contact_stat_3_label = 'Client Satisfaction';
@@ -140,7 +140,7 @@ function aimpro_contact_meta_box_callback($post) {
     if (empty($contact_final_cta_description)) $contact_final_cta_description = 'Don\'t let your competitors get ahead. Schedule a free consultation today and discover how we can help you achieve your business goals with proven digital marketing strategies.';
     if (empty($contact_final_cta_phone_text)) $contact_final_cta_phone_text = 'Call Now: +44 121 285 8490';
     if (empty($contact_final_cta_email_text)) $contact_final_cta_email_text = 'Send Email';
-    if (empty($contact_final_cta_guarantee)) $contact_final_cta_guarantee = 'Free Consultation • No Obligation • Immediate Value';
+    if (empty($contact_final_cta_guarantee)) $contact_final_cta_guarantee = 'Free Consultation ï¿½ No Obligation ï¿½ Immediate Value';
     
     ?>
     <style>
@@ -193,7 +193,7 @@ function aimpro_contact_meta_box_callback($post) {
                         <label for="contact_hero_badge">Hero Badge</label>
                     </th>
                     <td>
-                        <input type="text" id="contact_hero_badge" name="contact_hero_badge" value="<?php echo esc_attr($contact_hero_badge); ?>" />
+                        <?php wp_editor($contact_hero_badge, 'contact_hero_badge', array('textarea_rows' => 2, 'media_buttons' => false)); ?>
                         <p class="description">Small text above the main heading (e.g., "LOCATED IN BIRMINGHAM'S BUSINESS DISTRICT").</p>
                     </td>
                 </tr>
@@ -202,7 +202,7 @@ function aimpro_contact_meta_box_callback($post) {
                         <label for="contact_hero_heading">Hero Heading</label>
                     </th>
                     <td>
-                        <textarea id="contact_hero_heading" name="contact_hero_heading" rows="2"><?php echo esc_textarea($contact_hero_heading); ?></textarea>
+                        <?php wp_editor($contact_hero_heading, 'contact_hero_heading', array('textarea_rows' => 3, 'media_buttons' => false)); ?>
                         <p class="description">HTML allowed. Use &lt;span class="text-gradient"&gt; for gradient text.</p>
                     </td>
                 </tr>
@@ -211,7 +211,7 @@ function aimpro_contact_meta_box_callback($post) {
                         <label for="contact_hero_subtitle">Hero Subtitle</label>
                     </th>
                     <td>
-                        <textarea id="contact_hero_subtitle" name="contact_hero_subtitle" rows="3"><?php echo esc_textarea($contact_hero_subtitle); ?></textarea>
+                        <?php wp_editor($contact_hero_subtitle, 'contact_hero_subtitle', array('textarea_rows' => 4, 'media_buttons' => false)); ?>
                         <p class="description">Descriptive text shown below the main heading.</p>
                     </td>
                 </tr>
@@ -227,7 +227,7 @@ function aimpro_contact_meta_box_callback($post) {
                         <label for="contact_phone_label">Phone Label</label>
                     </th>
                     <td>
-                        <input type="text" id="contact_phone_label" name="contact_phone_label" value="<?php echo esc_attr($contact_phone_label); ?>" />
+                        <?php wp_editor($contact_phone_label, 'contact_phone_label', array('textarea_rows' => 2, 'media_buttons' => false)); ?>
                         <p class="description">Label above phone number (e.g., "Call Us Now").</p>
                     </td>
                 </tr>
@@ -245,7 +245,7 @@ function aimpro_contact_meta_box_callback($post) {
                         <label for="contact_email_label">Email Label</label>
                     </th>
                     <td>
-                        <input type="text" id="contact_email_label" name="contact_email_label" value="<?php echo esc_attr($contact_email_label); ?>" />
+                        <?php wp_editor($contact_email_label, 'contact_email_label', array('textarea_rows' => 2, 'media_buttons' => false)); ?>
                         <p class="description">Label above email address (e.g., "Email Us").</p>
                     </td>
                 </tr>
@@ -263,7 +263,7 @@ function aimpro_contact_meta_box_callback($post) {
                         <label for="contact_hours_label">Business Hours Label</label>
                     </th>
                     <td>
-                        <input type="text" id="contact_hours_label" name="contact_hours_label" value="<?php echo esc_attr($contact_hours_label); ?>" />
+                        <?php wp_editor($contact_hours_label, 'contact_hours_label', array('textarea_rows' => 2, 'media_buttons' => false)); ?>
                         <p class="description">Label above business hours (e.g., "Business Hours").</p>
                     </td>
                 </tr>
@@ -272,7 +272,7 @@ function aimpro_contact_meta_box_callback($post) {
                         <label for="contact_hours">Business Hours</label>
                     </th>
                     <td>
-                        <input type="text" id="contact_hours" name="contact_hours" value="<?php echo esc_attr($contact_hours); ?>" />
+                        <?php wp_editor($contact_hours, 'contact_hours', array('textarea_rows' => 2, 'media_buttons' => false)); ?>
                         <p class="description">Your business operating hours.</p>
                     </td>
                 </tr>
@@ -287,7 +287,7 @@ function aimpro_contact_meta_box_callback($post) {
                         <label for="contact_form_title">Form Title</label>
                     </th>
                     <td>
-                        <input type="text" id="contact_form_title" name="contact_form_title" value="<?php echo esc_attr($contact_form_title); ?>" />
+                        <?php wp_editor($contact_form_title, 'contact_form_title', array('textarea_rows' => 2, 'media_buttons' => false)); ?>
                         <p class="description">Main heading for the contact form section.</p>
                     </td>
                 </tr>
@@ -296,7 +296,7 @@ function aimpro_contact_meta_box_callback($post) {
                         <label for="contact_form_subtitle">Form Subtitle</label>
                     </th>
                     <td>
-                        <textarea id="contact_form_subtitle" name="contact_form_subtitle" rows="3"><?php echo esc_textarea($contact_form_subtitle); ?></textarea>
+                        <?php wp_editor($contact_form_subtitle, 'contact_form_subtitle', array('textarea_rows' => 4, 'media_buttons' => false)); ?>
                         <p class="description">Description text shown above the contact form.</p>
                     </td>
                 </tr>                <tr>
@@ -304,7 +304,7 @@ function aimpro_contact_meta_box_callback($post) {
                         <label for="contact_form_submit_text">Submit Button Text</label>
                     </th>
                     <td>
-                        <input type="text" id="contact_form_submit_text" name="contact_form_submit_text" value="<?php echo esc_attr($contact_form_submit_text); ?>" />
+                        <?php wp_editor($contact_form_submit_text, 'contact_form_submit_text', array('textarea_rows' => 2, 'media_buttons' => false)); ?>
                         <p class="description">Text displayed on the form submit button.</p>
                     </td>
                 </tr>
@@ -313,7 +313,7 @@ function aimpro_contact_meta_box_callback($post) {
                         <label for="contact_form_name_label">Name Field Label</label>
                     </th>
                     <td>
-                        <input type="text" id="contact_form_name_label" name="contact_form_name_label" value="<?php echo esc_attr($contact_form_name_label); ?>" />
+                        <?php wp_editor($contact_form_name_label, 'contact_form_name_label', array('textarea_rows' => 2, 'media_buttons' => false)); ?>
                         <p class="description">Label for the name input field.</p>
                     </td>
                 </tr>
@@ -322,7 +322,7 @@ function aimpro_contact_meta_box_callback($post) {
                         <label for="contact_form_email_label">Email Field Label</label>
                     </th>
                     <td>
-                        <input type="text" id="contact_form_email_label" name="contact_form_email_label" value="<?php echo esc_attr($contact_form_email_label); ?>" />
+                        <?php wp_editor($contact_form_email_label, 'contact_form_email_label', array('textarea_rows' => 2, 'media_buttons' => false)); ?>
                         <p class="description">Label for the email input field.</p>
                     </td>
                 </tr>
@@ -331,7 +331,7 @@ function aimpro_contact_meta_box_callback($post) {
                         <label for="contact_form_phone_label">Phone Field Label</label>
                     </th>
                     <td>
-                        <input type="text" id="contact_form_phone_label" name="contact_form_phone_label" value="<?php echo esc_attr($contact_form_phone_label); ?>" />
+                        <?php wp_editor($contact_form_phone_label, 'contact_form_phone_label', array('textarea_rows' => 2, 'media_buttons' => false)); ?>
                         <p class="description">Label for the phone input field.</p>
                     </td>
                 </tr>
@@ -340,7 +340,7 @@ function aimpro_contact_meta_box_callback($post) {
                         <label for="contact_form_referral_label">Referral Field Label</label>
                     </th>
                     <td>
-                        <input type="text" id="contact_form_referral_label" name="contact_form_referral_label" value="<?php echo esc_attr($contact_form_referral_label); ?>" />
+                        <?php wp_editor($contact_form_referral_label, 'contact_form_referral_label', array('textarea_rows' => 2, 'media_buttons' => false)); ?>
                         <p class="description">Label for the referral dropdown field.</p>
                     </td>
                 </tr>
@@ -349,7 +349,7 @@ function aimpro_contact_meta_box_callback($post) {
                         <label for="contact_form_query_label">Query Field Label</label>
                     </th>
                     <td>
-                        <input type="text" id="contact_form_query_label" name="contact_form_query_label" value="<?php echo esc_attr($contact_form_query_label); ?>" />
+                        <?php wp_editor($contact_form_query_label, 'contact_form_query_label', array('textarea_rows' => 2, 'media_buttons' => false)); ?>
                         <p class="description">Label for the query textarea field.</p>
                     </td>
                 </tr>
@@ -358,7 +358,7 @@ function aimpro_contact_meta_box_callback($post) {
                         <label for="contact_form_query_placeholder">Query Field Placeholder</label>
                     </th>
                     <td>
-                        <input type="text" id="contact_form_query_placeholder" name="contact_form_query_placeholder" value="<?php echo esc_attr($contact_form_query_placeholder); ?>" />
+                        <?php wp_editor($contact_form_query_placeholder, 'contact_form_query_placeholder', array('textarea_rows' => 2, 'media_buttons' => false)); ?>
                         <p class="description">Placeholder text for the query textarea field.</p>
                     </td>
                 </tr>
@@ -374,7 +374,7 @@ function aimpro_contact_meta_box_callback($post) {
                         <label for="contact_office_heading">Office Section Heading</label>
                     </th>
                     <td>
-                        <textarea id="contact_office_heading" name="contact_office_heading" rows="2"><?php echo esc_textarea($contact_office_heading); ?></textarea>
+                        <?php wp_editor($contact_office_heading, 'contact_office_heading', array('textarea_rows' => 3, 'media_buttons' => false)); ?>
                         <p class="description">Main heading for the office visit section. HTML allowed.</p>
                     </td>
                 </tr>
@@ -383,7 +383,7 @@ function aimpro_contact_meta_box_callback($post) {
                         <label for="contact_office_description">Office Description</label>
                     </th>
                     <td>
-                        <textarea id="contact_office_description" name="contact_office_description" rows="3"><?php echo esc_textarea($contact_office_description); ?></textarea>
+                        <?php wp_editor($contact_office_description, 'contact_office_description', array('textarea_rows' => 4, 'media_buttons' => false)); ?>
                         <p class="description">Description text about visiting your office.</p>
                     </td>
                 </tr>                <tr>
@@ -391,7 +391,7 @@ function aimpro_contact_meta_box_callback($post) {
                         <label for="contact_office_address">Office Address & Details</label>
                     </th>
                     <td>
-                        <textarea id="contact_office_address" name="contact_office_address" rows="3"><?php echo esc_textarea($contact_office_address); ?></textarea>
+                        <?php wp_editor($contact_office_address, 'contact_office_address', array('textarea_rows' => 4, 'media_buttons' => false)); ?>
                         <p class="description">Full office address and location details.</p>
                     </td>
                 </tr>
@@ -400,7 +400,7 @@ function aimpro_contact_meta_box_callback($post) {
                         <label for="contact_office_location">Office Location Name</label>
                     </th>
                     <td>
-                        <input type="text" id="contact_office_location" name="contact_office_location" value="<?php echo esc_attr($contact_office_location); ?>" />
+                        <?php wp_editor($contact_office_location, 'contact_office_location', array('textarea_rows' => 2, 'media_buttons' => false)); ?>
                         <p class="description">Name/title of the office location (e.g., "Our Birmingham Office").</p>
                     </td>
                 </tr>
@@ -409,7 +409,7 @@ function aimpro_contact_meta_box_callback($post) {
                         <label for="contact_office_building">Office Building</label>
                     </th>
                     <td>
-                        <input type="text" id="contact_office_building" name="contact_office_building" value="<?php echo esc_attr($contact_office_building); ?>" />
+                        <?php wp_editor($contact_office_building, 'contact_office_building', array('textarea_rows' => 2, 'media_buttons' => false)); ?>
                         <p class="description">Building name or number (e.g., "55 Colmore Row").</p>
                     </td>
                 </tr>
@@ -418,7 +418,7 @@ function aimpro_contact_meta_box_callback($post) {
                         <label for="contact_office_district">Office District Description</label>
                     </th>
                     <td>
-                        <input type="text" id="contact_office_district" name="contact_office_district" value="<?php echo esc_attr($contact_office_district); ?>" />
+                        <?php wp_editor($contact_office_district, 'contact_office_district', array('textarea_rows' => 2, 'media_buttons' => false)); ?>
                         <p class="description">Description of the area/district where the office is located.</p>
                     </td>
                 </tr>
@@ -427,7 +427,7 @@ function aimpro_contact_meta_box_callback($post) {
                         <label for="contact_office_cta_text">Office CTA Button Text</label>
                     </th>
                     <td>
-                        <input type="text" id="contact_office_cta_text" name="contact_office_cta_text" value="<?php echo esc_attr($contact_office_cta_text); ?>" />
+                        <?php wp_editor($contact_office_cta_text, 'contact_office_cta_text', array('textarea_rows' => 2, 'media_buttons' => false)); ?>
                         <p class="description">Text for the "book a meeting" button.</p>
                     </td>
                 </tr>
@@ -443,7 +443,7 @@ function aimpro_contact_meta_box_callback($post) {
                         <label for="contact_faq_heading">FAQ Section Heading</label>
                     </th>
                     <td>
-                        <input type="text" id="contact_faq_heading" name="contact_faq_heading" value="<?php echo esc_attr($contact_faq_heading); ?>" />
+                        <?php wp_editor($contact_faq_heading, 'contact_faq_heading', array('textarea_rows' => 2, 'media_buttons' => false)); ?>
                         <p class="description">Main heading for the FAQ section.</p>
                     </td>
                 </tr>                <tr>
@@ -451,7 +451,7 @@ function aimpro_contact_meta_box_callback($post) {
                         <label for="contact_faq_subtitle">FAQ Subtitle</label>
                     </th>
                     <td>
-                        <textarea id="contact_faq_subtitle" name="contact_faq_subtitle" rows="2"><?php echo esc_textarea($contact_faq_subtitle); ?></textarea>
+                        <?php wp_editor($contact_faq_subtitle, 'contact_faq_subtitle', array('textarea_rows' => 3, 'media_buttons' => false)); ?>
                         <p class="description">Description text below the FAQ heading.</p>
                     </td>
                 </tr>
@@ -460,7 +460,7 @@ function aimpro_contact_meta_box_callback($post) {
                         <label for="contact_faq_1_question">FAQ 1 - Question</label>
                     </th>
                     <td>
-                        <input type="text" id="contact_faq_1_question" name="contact_faq_1_question" value="<?php echo esc_attr(get_post_meta($post->ID, 'contact_faq_1_question', true) ?: 'How quickly can you start working on my project?'); ?>" />
+                        <?php wp_editor(get_post_meta($post->ID, 'contact_faq_1_question', true) ?: 'How quickly can you start working on my project?', 'contact_faq_1_question', array('textarea_rows' => 2, 'media_buttons' => false)); ?>
                         <p class="description">First FAQ question.</p>
                     </td>
                 </tr>
@@ -469,7 +469,7 @@ function aimpro_contact_meta_box_callback($post) {
                         <label for="contact_faq_1_answer">FAQ 1 - Answer</label>
                     </th>
                     <td>
-                        <textarea id="contact_faq_1_answer" name="contact_faq_1_answer" rows="3"><?php echo esc_textarea(get_post_meta($post->ID, 'contact_faq_1_answer', true) ?: 'We can typically begin new projects within 1-2 weeks of our initial consultation. For urgent requirements, we offer expedited onboarding within 48-72 hours.'); ?></textarea>
+                        <?php wp_editor(get_post_meta($post->ID, 'contact_faq_1_answer', true) ?: 'We can typically begin new projects within 1-2 weeks of our initial consultation. For urgent requirements, we offer expedited onboarding within 48-72 hours.', 'contact_faq_1_answer', array('textarea_rows' => 4, 'media_buttons' => false)); ?>
                         <p class="description">First FAQ answer.</p>
                     </td>
                 </tr>
@@ -478,7 +478,7 @@ function aimpro_contact_meta_box_callback($post) {
                         <label for="contact_faq_2_question">FAQ 2 - Question</label>
                     </th>
                     <td>
-                        <input type="text" id="contact_faq_2_question" name="contact_faq_2_question" value="<?php echo esc_attr(get_post_meta($post->ID, 'contact_faq_2_question', true) ?: 'Do you work with businesses outside Birmingham?'); ?>" />
+                        <?php wp_editor(get_post_meta($post->ID, 'contact_faq_2_question', true) ?: 'Do you work with businesses outside Birmingham?', 'contact_faq_2_question', array('textarea_rows' => 2, 'media_buttons' => false)); ?>
                         <p class="description">Second FAQ question.</p>
                     </td>
                 </tr>
@@ -487,7 +487,7 @@ function aimpro_contact_meta_box_callback($post) {
                         <label for="contact_faq_2_answer">FAQ 2 - Answer</label>
                     </th>
                     <td>
-                        <textarea id="contact_faq_2_answer" name="contact_faq_2_answer" rows="3"><?php echo esc_textarea(get_post_meta($post->ID, 'contact_faq_2_answer', true) ?: 'Absolutely! While we\'re based in Birmingham, we work with clients across the UK and internationally. Most of our services are delivered remotely with regular video calls and reports.'); ?></textarea>
+                        <?php wp_editor(get_post_meta($post->ID, 'contact_faq_2_answer', true) ?: 'Absolutely! While we\'re based in Birmingham, we work with clients across the UK and internationally. Most of our services are delivered remotely with regular video calls and reports.', 'contact_faq_2_answer', array('textarea_rows' => 4, 'media_buttons' => false)); ?>
                         <p class="description">Second FAQ answer.</p>
                     </td>
                 </tr>
@@ -496,7 +496,7 @@ function aimpro_contact_meta_box_callback($post) {
                         <label for="contact_faq_3_question">FAQ 3 - Question</label>
                     </th>
                     <td>
-                        <input type="text" id="contact_faq_3_question" name="contact_faq_3_question" value="<?php echo esc_attr(get_post_meta($post->ID, 'contact_faq_3_question', true) ?: 'What\'s included in your free consultation?'); ?>" />
+                        <?php wp_editor(get_post_meta($post->ID, 'contact_faq_3_question', true) ?: 'What\'s included in your free consultation?', 'contact_faq_3_question', array('textarea_rows' => 2, 'media_buttons' => false)); ?>
                         <p class="description">Third FAQ question.</p>
                     </td>
                 </tr>
@@ -505,7 +505,7 @@ function aimpro_contact_meta_box_callback($post) {
                         <label for="contact_faq_3_answer">FAQ 3 - Answer</label>
                     </th>
                     <td>
-                        <textarea id="contact_faq_3_answer" name="contact_faq_3_answer" rows="3"><?php echo esc_textarea(get_post_meta($post->ID, 'contact_faq_3_answer', true) ?: 'Our free consultation includes a comprehensive audit of your current digital marketing, competitive analysis, and a customised strategy recommendation with projected ROI.'); ?></textarea>
+                        <?php wp_editor(get_post_meta($post->ID, 'contact_faq_3_answer', true) ?: 'Our free consultation includes a comprehensive audit of your current digital marketing, competitive analysis, and a customised strategy recommendation with projected ROI.', 'contact_faq_3_answer', array('textarea_rows' => 4, 'media_buttons' => false)); ?>
                         <p class="description">Third FAQ answer.</p>
                     </td>
                 </tr>
@@ -514,7 +514,7 @@ function aimpro_contact_meta_box_callback($post) {
                         <label for="contact_faq_4_question">FAQ 4 - Question</label>
                     </th>
                     <td>
-                        <input type="text" id="contact_faq_4_question" name="contact_faq_4_question" value="<?php echo esc_attr(get_post_meta($post->ID, 'contact_faq_4_question', true) ?: 'Do you require long-term contracts?'); ?>" />
+                        <?php wp_editor(get_post_meta($post->ID, 'contact_faq_4_question', true) ?: 'Do you require long-term contracts?', 'contact_faq_4_question', array('textarea_rows' => 2, 'media_buttons' => false)); ?>
                         <p class="description">Fourth FAQ question.</p>
                     </td>
                 </tr>
@@ -523,7 +523,7 @@ function aimpro_contact_meta_box_callback($post) {
                         <label for="contact_faq_4_answer">FAQ 4 - Answer</label>
                     </th>
                     <td>
-                        <textarea id="contact_faq_4_answer" name="contact_faq_4_answer" rows="3"><?php echo esc_textarea(get_post_meta($post->ID, 'contact_faq_4_answer', true) ?: 'We prefer to work on monthly rolling contracts for most services, with a minimum 3-month commitment to ensure we can deliver meaningful results. No lengthy lock-ins required.'); ?></textarea>
+                        <?php wp_editor(get_post_meta($post->ID, 'contact_faq_4_answer', true) ?: 'We prefer to work on monthly rolling contracts for most services, with a minimum 3-month commitment to ensure we can deliver meaningful results. No lengthy lock-ins required.', 'contact_faq_4_answer', array('textarea_rows' => 4, 'media_buttons' => false)); ?>
                         <p class="description">Fourth FAQ answer.</p>
                     </td>
                 </tr>
@@ -532,7 +532,7 @@ function aimpro_contact_meta_box_callback($post) {
                         <label for="contact_faq_5_question">FAQ 5 - Question</label>
                     </th>
                     <td>
-                        <input type="text" id="contact_faq_5_question" name="contact_faq_5_question" value="<?php echo esc_attr(get_post_meta($post->ID, 'contact_faq_5_question', true) ?: 'Can you help with both B2B and B2C marketing?'); ?>" />
+                        <?php wp_editor(get_post_meta($post->ID, 'contact_faq_5_question', true) ?: 'Can you help with both B2B and B2C marketing?', 'contact_faq_5_question', array('textarea_rows' => 2, 'media_buttons' => false)); ?>
                         <p class="description">Fifth FAQ question.</p>
                     </td>
                 </tr>
@@ -541,7 +541,7 @@ function aimpro_contact_meta_box_callback($post) {
                         <label for="contact_faq_5_answer">FAQ 5 - Answer</label>
                     </th>
                     <td>
-                        <textarea id="contact_faq_5_answer" name="contact_faq_5_answer" rows="3"><?php echo esc_textarea(get_post_meta($post->ID, 'contact_faq_5_answer', true) ?: 'Yes! Our team has extensive experience in both B2B and B2C marketing across various industries including SaaS, e-commerce, professional services, and retail.'); ?></textarea>
+                        <?php wp_editor(get_post_meta($post->ID, 'contact_faq_5_answer', true) ?: 'Yes! Our team has extensive experience in both B2B and B2C marketing across various industries including SaaS, e-commerce, professional services, and retail.', 'contact_faq_5_answer', array('textarea_rows' => 4, 'media_buttons' => false)); ?>
                         <p class="description">Fifth FAQ answer.</p>
                     </td>
                 </tr>
@@ -550,7 +550,7 @@ function aimpro_contact_meta_box_callback($post) {
                         <label for="contact_faq_6_question">FAQ 6 - Question</label>
                     </th>
                     <td>
-                        <input type="text" id="contact_faq_6_question" name="contact_faq_6_question" value="<?php echo esc_attr(get_post_meta($post->ID, 'contact_faq_6_question', true) ?: 'What results can I expect and how quickly?'); ?>" />
+                        <?php wp_editor(get_post_meta($post->ID, 'contact_faq_6_question', true) ?: 'What results can I expect and how quickly?', 'contact_faq_6_question', array('textarea_rows' => 2, 'media_buttons' => false)); ?>
                         <p class="description">Sixth FAQ question.</p>
                     </td>
                 </tr>
@@ -559,7 +559,7 @@ function aimpro_contact_meta_box_callback($post) {
                         <label for="contact_faq_6_answer">FAQ 6 - Answer</label>
                     </th>
                     <td>
-                        <textarea id="contact_faq_6_answer" name="contact_faq_6_answer" rows="3"><?php echo esc_textarea(get_post_meta($post->ID, 'contact_faq_6_answer', true) ?: 'Most clients see initial improvements within 30-60 days, with significant results typically achieved within 3-6 months. We provide detailed monthly reports showing your progress and ROI.'); ?></textarea>
+                        <?php wp_editor(get_post_meta($post->ID, 'contact_faq_6_answer', true) ?: 'Most clients see initial improvements within 30-60 days, with significant results typically achieved within 3-6 months. We provide detailed monthly reports showing your progress and ROI.', 'contact_faq_6_answer', array('textarea_rows' => 4, 'media_buttons' => false)); ?>
                         <p class="description">Sixth FAQ answer.</p>
                     </td>
                 </tr>
@@ -575,8 +575,8 @@ function aimpro_contact_meta_box_callback($post) {
                         <label for="contact_social_proof_heading">Social Proof Heading</label>
                     </th>
                     <td>
-                        <input type="text" id="contact_social_proof_heading" name="contact_social_proof_heading" value="<?php echo esc_attr($contact_social_proof_heading); ?>" />
-                        <p class="description">Main heading for the social proof section.</p>
+                        <?php wp_editor($contact_social_proof_heading, 'contact_social_proof_heading', array('textarea_rows' => 3, 'media_buttons' => false)); ?>
+                        <p class="description">Main heading for the social proof section. HTML allowed for gradient text.</p>
                     </td>
                 </tr>
                 <tr>
@@ -584,7 +584,7 @@ function aimpro_contact_meta_box_callback($post) {
                         <label for="contact_social_proof_subtitle">Social Proof Subtitle</label>
                     </th>
                     <td>
-                        <textarea id="contact_social_proof_subtitle" name="contact_social_proof_subtitle" rows="2"><?php echo esc_textarea($contact_social_proof_subtitle); ?></textarea>
+                        <?php wp_editor($contact_social_proof_subtitle, 'contact_social_proof_subtitle', array('textarea_rows' => 3, 'media_buttons' => false)); ?>
                         <p class="description">Description text for the social proof section.</p>
                     </td>
                 </tr>
@@ -612,7 +612,7 @@ function aimpro_contact_meta_box_callback($post) {
                     </th>
                     <td>
                         <input type="text" id="contact_stat_2_number" name="contact_stat_2_number" value="<?php echo esc_attr($contact_stat_2_number); ?>" />
-                        <p class="description">Second statistic number (e.g., "£2.4M+").</p>
+                        <p class="description">Second statistic number (e.g., "ï¿½2.4M+").</p>
                     </td>
                 </tr>
                 <tr>
@@ -665,8 +665,8 @@ function aimpro_contact_meta_box_callback($post) {
                         <label for="contact_testimonial_quote">Testimonial Quote</label>
                     </th>
                     <td>
-                        <textarea id="contact_testimonial_quote" name="contact_testimonial_quote" rows="4"><?php echo esc_textarea($contact_testimonial_quote); ?></textarea>
-                        <p class="description">Client testimonial quote text.</p>
+                        <?php wp_editor($contact_testimonial_quote, 'contact_testimonial_quote', array('textarea_rows' => 5, 'media_buttons' => false)); ?>
+                        <p class="description">Client testimonial quote text. HTML allowed for formatting.</p>
                     </td>
                 </tr>
                 <tr>
@@ -699,7 +699,7 @@ function aimpro_contact_meta_box_callback($post) {
                         <label for="contact_final_cta_heading">Final CTA Heading</label>
                     </th>
                     <td>
-                        <textarea id="contact_final_cta_heading" name="contact_final_cta_heading" rows="2"><?php echo esc_textarea($contact_final_cta_heading); ?></textarea>
+                        <?php wp_editor($contact_final_cta_heading, 'contact_final_cta_heading', array('textarea_rows' => 3, 'media_buttons' => false)); ?>
                         <p class="description">Main heading for the final CTA section. HTML allowed for gradient text.</p>
                     </td>
                 </tr>
@@ -708,7 +708,7 @@ function aimpro_contact_meta_box_callback($post) {
                         <label for="contact_final_cta_description">Final CTA Description</label>
                     </th>
                     <td>
-                        <textarea id="contact_final_cta_description" name="contact_final_cta_description" rows="4"><?php echo esc_textarea($contact_final_cta_description); ?></textarea>
+                        <?php wp_editor($contact_final_cta_description, 'contact_final_cta_description', array('textarea_rows' => 5, 'media_buttons' => false)); ?>
                         <p class="description">Description text for the final call-to-action section.</p>
                     </td>
                 </tr>
@@ -728,6 +728,15 @@ function aimpro_contact_meta_box_callback($post) {
                     <td>
                         <input type="text" id="contact_final_cta_email_text" name="contact_final_cta_email_text" value="<?php echo esc_attr($contact_final_cta_email_text); ?>" />
                         <p class="description">Text for the email button.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row">
+                        <label for="contact_final_cta_guarantee">Final CTA Guarantee Text</label>
+                    </th>
+                    <td>
+                        <?php wp_editor($contact_final_cta_guarantee, 'contact_final_cta_guarantee', array('textarea_rows' => 2, 'media_buttons' => false)); ?>
+                        <p class="description">Guarantee or small print text below the CTA buttons.</p>
                     </td>
                 </tr>
             </table>
@@ -830,11 +839,22 @@ function aimpro_save_contact_meta_fields($post_id) {
     foreach ($contact_fields as $field) {
         if (isset($_POST[$field])) {
             $value = $_POST[$field];            // Sanitize based on field type
-            if (in_array($field, array('contact_hero_heading', 'contact_hero_subtitle', 'contact_form_subtitle', 'contact_office_heading', 'contact_office_description', 'contact_final_cta_heading', 'contact_final_cta_description', 'contact_faq_subtitle', 'contact_social_proof_subtitle', 'contact_testimonial_quote'))) {
-                // Allow HTML for certain fields
-                $value = wp_kses_post($value);
-            } elseif (in_array($field, array('contact_faq_1_answer', 'contact_faq_2_answer', 'contact_faq_3_answer', 'contact_faq_4_answer', 'contact_faq_5_answer', 'contact_faq_6_answer'))) {
-                // FAQ answers - allow basic HTML
+            if (in_array($field, array(
+                'contact_hero_heading', 'contact_hero_subtitle', 'contact_hero_badge',
+                'contact_phone_label', 'contact_email_label', 'contact_hours_label', 'contact_hours',
+                'contact_form_title', 'contact_form_subtitle', 'contact_form_submit_text',
+                'contact_form_name_label', 'contact_form_email_label', 'contact_form_phone_label',
+                'contact_form_referral_label', 'contact_form_query_label', 'contact_form_query_placeholder',
+                'contact_office_heading', 'contact_office_description', 'contact_office_location',
+                'contact_office_building', 'contact_office_address', 'contact_office_district', 'contact_office_cta_text',
+                'contact_faq_heading', 'contact_faq_subtitle',
+                'contact_faq_1_question', 'contact_faq_1_answer', 'contact_faq_2_question', 'contact_faq_2_answer',
+                'contact_faq_3_question', 'contact_faq_3_answer', 'contact_faq_4_question', 'contact_faq_4_answer',
+                'contact_faq_5_question', 'contact_faq_5_answer', 'contact_faq_6_question', 'contact_faq_6_answer',
+                'contact_social_proof_heading', 'contact_social_proof_subtitle', 'contact_testimonial_quote',
+                'contact_final_cta_heading', 'contact_final_cta_description', 'contact_final_cta_guarantee'
+            ))) {
+                // Rich text fields - allow HTML
                 $value = wp_kses_post($value);
             } elseif ($field === 'contact_email') {
                 // Sanitize email

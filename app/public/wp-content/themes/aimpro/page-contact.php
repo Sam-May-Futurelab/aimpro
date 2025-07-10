@@ -57,15 +57,15 @@ get_header(); ?>
         <div class="container">
             <div class="section-content">
                 <div class="content-centre">
-                    <h2><?php echo aimpro_get_field('contact_hero_heading', 'Get In Touch with Digital Marketing Experts'); ?></h2>
+                    <h2><?php echo wp_kses_post(aimpro_get_field('contact_hero_heading', 'Get In Touch with <span class="text-gradient">Digital Marketing Experts</span>')); ?></h2>
                     <div class="curly-underline-accent"></div>
-                    <p style="colour: #5a6c7d; font-size: 1.2rem; margin-bottom: 3rem;"><?php echo aimpro_get_field('contact_hero_subtitle', 'Ready to transform your business? Let\'s discuss your digital marketing goals and create a strategy that delivers measurable results.'); ?></p>
+                    <p style="colour: #5a6c7d; font-size: 1.2rem; margin-bottom: 3rem;"><?php echo wp_kses_post(aimpro_get_field('contact_hero_subtitle', 'Ready to transform your business? Let\'s discuss your digital marketing goals and create a strategy that delivers measurable results.')); ?></p>
                 </div>
                   <div class="values-grid">                    <div class="value-card animate-on-scroll animate-stagger animate-fade-up">
                         <div class="value-icon">
                             <i class="fas fa-phone" style="font-size: 2.5rem;"></i>
                         </div>
-                        <h3><?php echo aimpro_get_field('contact_phone_label', 'Call Us Now'); ?></h3>
+                        <h3><?php echo wp_kses_post(aimpro_get_field('contact_phone_label', 'Call Us Now')); ?></h3>
                         <p><strong><a href="tel:+441212858490" style="color: inherit; text-decoration: none;"><?php echo aimpro_get_field('contact_phone_display', '0121 285 8490'); ?></a></strong></p>
                         <p>Speak directly with our digital marketing experts for immediate assistance and consultation.</p>
                     </div>
@@ -73,15 +73,15 @@ get_header(); ?>
                         <div class="value-icon">
                             <i class="fas fa-envelope" style="font-size: 2.5rem;"></i>
                         </div>
-                        <h3><?php echo aimpro_get_field('contact_email_label', 'Email Us'); ?></h3>
+                        <h3><?php echo wp_kses_post(aimpro_get_field('contact_email_label', 'Email Us')); ?></h3>
                         <p><strong><a href="mailto:<?php echo aimpro_get_field('contact_email', 'hello@aimpro.co.uk'); ?>" style="color: inherit; text-decoration: none;"><?php echo aimpro_get_field('contact_email', 'hello@aimpro.co.uk'); ?></a></strong></p>
                         <p>Send us your project details and we'll respond within 24 hours with a tailored strategy.</p>
                     </div>                      <div class="value-card animate-on-scroll animate-stagger animate-fade-up">
                         <div class="value-icon">
                             <i class="fas fa-clock" style="font-size: 2.5rem;"></i>
                         </div>
-                        <h3><?php echo aimpro_get_field('contact_hours_label', 'Business Hours'); ?></h3>
-                        <p><strong><?php echo aimpro_get_field('contact_hours', 'Mon-Fri: 9AM-6PM'); ?></strong></p>
+                        <h3><?php echo wp_kses_post(aimpro_get_field('contact_hours_label', 'Business Hours')); ?></h3>
+                        <p><strong><?php echo wp_kses_post(aimpro_get_field('contact_hours', 'Mon-Fri: 9AM-6PM')); ?></strong></p>
                         <p>Our team is available during business hours to discuss your digital marketing needs.</p>
                     </div>
                 </div>                  <!-- Location Badge -->
@@ -91,7 +91,7 @@ get_header(); ?>
                             <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" fill="currentColor"/>
                         </svg>
                         <span class="location-text">
-                            <?php echo strtoupper(aimpro_get_field('contact_hero_badge', 'LOCATED IN BIRMINGHAM\'S BUSINESS DISTRICT')); ?>
+                            <?php echo strtoupper(wp_kses_post(aimpro_get_field('contact_hero_badge', 'LOCATED IN BIRMINGHAM\'S BUSINESS DISTRICT'))); ?>
                         </span>
                     </div>
                 </div>
@@ -102,9 +102,9 @@ get_header(); ?>
             <div style="max-width: 1000px; margin: 0 auto;">                  <!-- Contact Form Section -->                <div class="contact-form-section animate-on-scroll animate-fade-up" style="margin-top: 0;">
                     <!-- Contact Form Header -->
                     <div class="section-content" style="text-align: center; margin-bottom: 3rem;">
-                        <h2 style="text-align: center;">Send Us a Message</h2>
+                        <h2 style="text-align: center;"><?php echo wp_kses_post(aimpro_get_field('contact_form_title', 'Send Us a Message')); ?></h2>
                         <div class="curly-underline-accent" style="margin: 0 auto;"></div>
-                        <p style="color: #5a6c7d; font-size: 1.1rem; margin-top: 1rem; text-align: center;">Fill out the form below and we'll get back to you within 24 hours with a customised strategy for your business.</p>
+                        <p style="color: #5a6c7d; font-size: 1.1rem; margin-top: 1rem; text-align: center;"><?php echo wp_kses_post(aimpro_get_field('contact_form_subtitle', 'Fill out the form below and we\'ll get back to you within 24 hours with a customised strategy for your business.')); ?></p>
                     </div>
                     
                     <div class="contact-form-wrapper">
@@ -123,22 +123,22 @@ get_header(); ?>
                             
                             <div class="form-grid">
                                 <div class="form-group">
-                                    <label for="name"><?php echo aimpro_get_field('contact_form_name_label', 'Name *'); ?></label>
+                                    <label for="name"><?php echo wp_kses_post(aimpro_get_field('contact_form_name_label', 'Name *')); ?></label>
                                     <input type="text" id="name" name="name" required>
                                 </div>
                                 
                                 <div class="form-group">
-                                    <label for="email"><?php echo aimpro_get_field('contact_form_email_label', 'Email *'); ?></label>
+                                    <label for="email"><?php echo wp_kses_post(aimpro_get_field('contact_form_email_label', 'Email *')); ?></label>
                                     <input type="email" id="email" name="email" required>
                                 </div>
                                 
                                 <div class="form-group">
-                                    <label for="phone"><?php echo aimpro_get_field('contact_form_phone_label', 'Phone'); ?></label>
+                                    <label for="phone"><?php echo wp_kses_post(aimpro_get_field('contact_form_phone_label', 'Phone')); ?></label>
                                     <input type="tel" id="phone" name="phone">
                                 </div>
                                 
                                 <div class="form-group">
-                                    <label for="referral"><?php echo aimpro_get_field('contact_form_referral_label', 'Where did you find us?'); ?></label>
+                                    <label for="referral"><?php echo wp_kses_post(aimpro_get_field('contact_form_referral_label', 'Where did you find us?')); ?></label>
                                     <select id="referral" name="referral">
                                         <option value="">Please select...</option>
                                         <option value="google-search">Google Search</option>
@@ -152,13 +152,13 @@ get_header(); ?>
                                 </div>
                                 
                                 <div class="form-group full-width">
-                                    <label for="query"><?php echo aimpro_get_field('contact_form_query_label', 'Query'); ?></label>
+                                    <label for="query"><?php echo wp_kses_post(aimpro_get_field('contact_form_query_label', 'Query')); ?></label>
                                     <textarea id="query" name="query" rows="4" placeholder="<?php echo esc_attr(aimpro_get_field('contact_form_query_placeholder', 'Tell us about your inquiry...')); ?>"></textarea>
                                 </div>
                             </div>
                             
                             <div class="form-actions">
-                                <button type="submit" class="form-submit-btn"><?php echo aimpro_get_field('contact_form_submit_text', 'Submit'); ?></button>
+                                <button type="submit" class="form-submit-btn"><?php echo wp_kses_post(aimpro_get_field('contact_form_submit_text', 'Submit')); ?></button>
                             </div>
                         </form>
                     </div>                </div>
@@ -171,20 +171,20 @@ get_header(); ?>
         <div class="container">
             <div class="visit-us-container">
                 <div class="visit-us-content">
-                    <h2>Come See Us... We're a REAL Company with Real Humans</h2>
-                    <p>Let's discuss your project over a coffee. Book a time to visit our Birmingham office and meet the team behind your marketing success.</p>
+                    <h2><?php echo wp_kses_post(aimpro_get_field('contact_office_heading', 'Come See Us... We\'re a REAL Company with Real Humans')); ?></h2>
+                    <p><?php echo wp_kses_post(aimpro_get_field('contact_office_description', 'Let\'s discuss your project over a coffee. Book a time to visit our Birmingham office and meet the team behind your marketing success.')); ?></p>
                     
                     <div class="visit-cta">
-                        <a href="tel:+441212858490" class="btn btn-primary large">BOOK A COFFEE MEETING</a>
+                        <a href="tel:+441212858490" class="btn btn-primary large"><?php echo wp_kses_post(aimpro_get_field('contact_office_cta_text', 'BOOK A COFFEE MEETING')); ?></a>
                     </div>
                 </div>
                 
                 <div class="office-info">
                     <div class="office-details">
-                        <h3>Our Birmingham Office</h3>
-                        <p><strong>Located in:</strong> 55 Colmore Row</p>
-                        <p><strong>Address:</strong> 55 Colmore Row, Birmingham B3 2AA</p>
-                        <p>Right in the heart of Birmingham's business district</p>
+                        <h3><?php echo wp_kses_post(aimpro_get_field('contact_office_location', 'Our Birmingham Office')); ?></h3>
+                        <p><strong>Located in:</strong> <?php echo wp_kses_post(aimpro_get_field('contact_office_building', '55 Colmore Row')); ?></p>
+                        <p><strong>Address:</strong> <?php echo wp_kses_post(aimpro_get_field('contact_office_address', '55 Colmore Row, Birmingham B3 2AA')); ?></p>
+                        <p><?php echo wp_kses_post(aimpro_get_field('contact_office_district', 'Right in the heart of Birmingham\'s business district')); ?></p>
                     </div>
                       <div class="office-image">
                         <img src="https://images.unsplash.com/photo-1604328698692-f76ea9498e76?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="55 Colmore Row Birmingham Office">
@@ -197,47 +197,47 @@ get_header(); ?>
     <!-- FAQ Section -->
     <section class="contact-faq">
         <div class="container">            <div class="section-header">
-                <h2><?php echo aimpro_get_field('contact_faq_heading', 'Frequently Asked Questions'); ?></h2>
-                <p><?php echo aimpro_get_field('contact_faq_subtitle', 'Quick answers to common questions about working with our digital marketing agency.'); ?></p>
+                <h2><?php echo wp_kses_post(aimpro_get_field('contact_faq_heading', 'Frequently Asked Questions')); ?></h2>
+                <p><?php echo wp_kses_post(aimpro_get_field('contact_faq_subtitle', 'Quick answers to common questions about working with our digital marketing agency.')); ?></p>
             </div>
             
             <div class="faq-grid">
                 <div class="faq-item">
-                    <h3><?php echo aimpro_get_field('contact_faq_1_question', 'How quickly can you start working on my project?'); ?></h3>
-                    <p><?php echo aimpro_get_field('contact_faq_1_answer', 'We can typically begin new projects within 1-2 weeks of our initial consultation. For urgent requirements, we offer expedited onboarding within 48-72 hours.'); ?></p>
+                    <h3><?php echo wp_kses_post(aimpro_get_field('contact_faq_1_question', 'How quickly can you start working on my project?')); ?></h3>
+                    <p><?php echo wp_kses_post(aimpro_get_field('contact_faq_1_answer', 'We can typically begin new projects within 1-2 weeks of our initial consultation. For urgent requirements, we offer expedited onboarding within 48-72 hours.')); ?></p>
                 </div>
                 
                 <div class="faq-item">
-                    <h3><?php echo aimpro_get_field('contact_faq_2_question', 'Do you work with businesses outside Birmingham?'); ?></h3>
-                    <p><?php echo aimpro_get_field('contact_faq_2_answer', 'Absolutely! While we\'re based in Birmingham, we work with clients across the UK and internationally. Most of our services are delivered remotely with regular video calls and reports.'); ?></p>
+                    <h3><?php echo wp_kses_post(aimpro_get_field('contact_faq_2_question', 'Do you work with businesses outside Birmingham?')); ?></h3>
+                    <p><?php echo wp_kses_post(aimpro_get_field('contact_faq_2_answer', 'Absolutely! While we\'re based in Birmingham, we work with clients across the UK and internationally. Most of our services are delivered remotely with regular video calls and reports.')); ?></p>
                 </div>
                 
                 <div class="faq-item">
-                    <h3><?php echo aimpro_get_field('contact_faq_3_question', 'What\'s included in your free consultation?'); ?></h3>
-                    <p><?php echo aimpro_get_field('contact_faq_3_answer', 'Our free consultation includes a comprehensive audit of your current digital marketing, competitive analysis, and a customised strategy recommendation with projected ROI.'); ?></p>
+                    <h3><?php echo wp_kses_post(aimpro_get_field('contact_faq_3_question', 'What\'s included in your free consultation?')); ?></h3>
+                    <p><?php echo wp_kses_post(aimpro_get_field('contact_faq_3_answer', 'Our free consultation includes a comprehensive audit of your current digital marketing, competitive analysis, and a customised strategy recommendation with projected ROI.')); ?></p>
                 </div>
                 
                 <div class="faq-item">
-                    <h3><?php echo aimpro_get_field('contact_faq_4_question', 'Do you require long-term contracts?'); ?></h3>
-                    <p><?php echo aimpro_get_field('contact_faq_4_answer', 'We prefer to work on monthly rolling contracts for most services, with a minimum 3-month commitment to ensure we can deliver meaningful results. No lengthy lock-ins required.'); ?></p>
+                    <h3><?php echo wp_kses_post(aimpro_get_field('contact_faq_4_question', 'Do you require long-term contracts?')); ?></h3>
+                    <p><?php echo wp_kses_post(aimpro_get_field('contact_faq_4_answer', 'We prefer to work on monthly rolling contracts for most services, with a minimum 3-month commitment to ensure we can deliver meaningful results. No lengthy lock-ins required.')); ?></p>
                 </div>
                 
                 <div class="faq-item">
-                    <h3><?php echo aimpro_get_field('contact_faq_5_question', 'Can you help with both B2B and B2C marketing?'); ?></h3>
-                    <p><?php echo aimpro_get_field('contact_faq_5_answer', 'Yes! Our team has extensive experience in both B2B and B2C marketing across various industries including SaaS, e-commerce, professional services, and retail.'); ?></p>
+                    <h3><?php echo wp_kses_post(aimpro_get_field('contact_faq_5_question', 'Can you help with both B2B and B2C marketing?')); ?></h3>
+                    <p><?php echo wp_kses_post(aimpro_get_field('contact_faq_5_answer', 'Yes! Our team has extensive experience in both B2B and B2C marketing across various industries including SaaS, e-commerce, professional services, and retail.')); ?></p>
                 </div>
                 
                 <div class="faq-item">
-                    <h3><?php echo aimpro_get_field('contact_faq_6_question', 'What makes you different from other agencies?'); ?></h3>
-                    <p><?php echo aimpro_get_field('contact_faq_6_answer', 'We focus on measurable results with transparent reporting, offer genuine partnership rather than just service delivery, and use AI-powered tools to maximise efficiency and ROI.'); ?></p>
+                    <h3><?php echo wp_kses_post(aimpro_get_field('contact_faq_6_question', 'What results can I expect and how quickly?')); ?></h3>
+                    <p><?php echo wp_kses_post(aimpro_get_field('contact_faq_6_answer', 'Most clients see initial improvements within 30-60 days, with significant results typically achieved within 3-6 months. We provide detailed monthly reports showing your progress and ROI.')); ?></p>
                 </div>
             </div>
         </div>    </section>    <!-- Social Proof Section -->
     <section class="contact-social-proof" style="padding-top: 2rem;">
         <div class="container">
             <div class="social-proof-content">
-                <h2><?php echo aimpro_get_field('contact_social_proof_heading', 'Join 200+ Businesses That Trust Aimpro'); ?></h2>
-                <p><?php echo aimpro_get_field('contact_social_proof_subtitle', 'From startups to established enterprises, we\'ve helped businesses across industries achieve their digital marketing goals.'); ?></p>
+                <h2><?php echo wp_kses_post(aimpro_get_field('contact_social_proof_heading', 'Join 200+ Businesses That Trust Aimpro')); ?></h2>
+                <p><?php echo wp_kses_post(aimpro_get_field('contact_social_proof_subtitle', 'From startups to established enterprises, we\'ve helped businesses across industries achieve their digital marketing goals.')); ?></p>
                 
                 <div class="proof-stats">
                     <div class="proof-stat">
@@ -260,11 +260,11 @@ get_header(); ?>
                 
                 <div class="testimonial-highlight">
                     <blockquote>
-                        "<?php echo aimpro_get_field('contact_testimonial_quote', 'Aimpro transformed our digital presence completely. Within 6 months, we saw a 340% increase in qualified leads and our revenue doubled. Their team truly understands both the technical and strategic aspects of digital marketing.'); ?>"
+                        "<?php echo wp_kses_post(aimpro_get_field('contact_testimonial_quote', 'Aimpro transformed our digital presence completely. Within 6 months, we saw a 340% increase in qualified leads and our revenue doubled. Their team truly understands both the technical and strategic aspects of digital marketing.')); ?>"
                     </blockquote>
                     <cite>
-                        <strong><?php echo aimpro_get_field('contact_testimonial_author', 'Sarah Johnson'); ?></strong><br>
-                        <span><?php echo aimpro_get_field('contact_testimonial_position', 'Marketing Director, TechFlow Solutions'); ?></span>
+                        <strong><?php echo esc_html(aimpro_get_field('contact_testimonial_author', 'Sarah Johnson')); ?></strong><br>
+                        <span><?php echo esc_html(aimpro_get_field('contact_testimonial_position', 'Marketing Director, TechFlow Solutions')); ?></span>
                     </cite>
                 </div>
             </div>
@@ -273,14 +273,14 @@ get_header(); ?>
     <section class="contact-final-cta">
         <div class="container">
             <div class="final-cta-content">
-                <h2><?php echo aimpro_get_field('contact_final_cta_heading', 'Ready to <span class="text-gradient">Transform Your Digital Marketing?</span>'); ?></h2>
-                <p><?php echo aimpro_get_field('contact_final_cta_description', 'Don\'t let your competitors get ahead. Schedule a free consultation today and discover how we can help you achieve your business goals with proven digital marketing strategies.'); ?></p>                  <div class="cta-actions">
-                    <a href="tel:<?php echo aimpro_sanitize_phone(aimpro_get_field('contact_phone', '+441212858490')); ?>" class="btn btn-primary large"><?php echo aimpro_get_field('contact_final_cta_phone_text', 'Call Now: 0121 285 8490'); ?></a>
-                    <a href="mailto:<?php echo aimpro_get_field('contact_email', 'hello@aimpro.co.uk'); ?>" class="btn btn-outline large"><?php echo aimpro_get_field('contact_final_cta_email_text', 'Send Email'); ?></a>
+                <h2><?php echo wp_kses_post(aimpro_get_field('contact_final_cta_heading', 'Ready to <span class="text-gradient">Transform Your Digital Marketing?</span>')); ?></h2>
+                <p><?php echo wp_kses_post(aimpro_get_field('contact_final_cta_description', 'Don\'t let your competitors get ahead. Schedule a free consultation today and discover how we can help you achieve your business goals with proven digital marketing strategies.')); ?></p>                  <div class="cta-actions">
+                    <a href="tel:<?php echo aimpro_sanitize_phone(aimpro_get_field('contact_phone', '+441212858490')); ?>" class="btn btn-primary large"><?php echo esc_html(aimpro_get_field('contact_final_cta_phone_text', 'Call Now: 0121 285 8490')); ?></a>
+                    <a href="mailto:<?php echo aimpro_get_field('contact_email', 'hello@aimpro.co.uk'); ?>" class="btn btn-outline large"><?php echo esc_html(aimpro_get_field('contact_final_cta_email_text', 'Send Email')); ?></a>
                 </div>
                 
                 <div class="cta-guarantee">
-                    <p><strong><?php echo aimpro_get_field('contact_final_cta_guarantee', 'Free Consultation • No Obligation • Immediate Value'); ?></strong></p>
+                    <p><strong><?php echo wp_kses_post(aimpro_get_field('contact_final_cta_guarantee', 'Free Consultation • No Obligation • Immediate Value')); ?></strong></p>
                 </div>
             </div>
         </div>
