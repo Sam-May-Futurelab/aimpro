@@ -71,8 +71,8 @@ get_header(); ?>
                 <div class="services-grid">
                     <?php 
                     $services = get_post_meta(get_the_ID(), '_estate_agents_services', true);
-                    // Always use our 6-service array instead of potentially incomplete saved data
-                    if (empty($services) || count($services) < 6) {
+                    // Only use fallback if no services are saved at all
+                    if (empty($services)) {
                         $services = array(
                             array(
                                 'icon' => 'fas fa-home',
@@ -121,9 +121,11 @@ get_header(); ?>
                                 <h3><?php echo wp_kses_post($service['title']); ?></h3>
                                 <p><?php echo wp_kses_post($service['description']); ?></p>
                                 <ul class="service-features">
-                                    <?php foreach ($service['features'] as $feature): ?>
-                                        <li><?php echo wp_kses_post($feature); ?></li>
-                                    <?php endforeach; ?>
+                                    <?php if (isset($service['features']) && is_array($service['features'])): ?>
+                                        <?php foreach ($service['features'] as $feature): ?>
+                                            <li><?php echo wp_kses_post($feature); ?></li>
+                                        <?php endforeach; ?>
+                                    <?php endif; ?>
                                 </ul>
                             </div>
                         </div>
