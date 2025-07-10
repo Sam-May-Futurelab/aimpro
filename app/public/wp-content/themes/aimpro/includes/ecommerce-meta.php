@@ -259,19 +259,15 @@ function ecommerce_meta_box_callback($post) {
             <tr>
                 <th><label for="ecommerce_header_title">Page Title</label></th>
                 <td>
-                    <input type="text" 
-                           id="ecommerce_header_title" 
-                           name="ecommerce_header_title" 
-                           value="<?php echo esc_attr($header_title); ?>"
-                           placeholder="E-commerce Digital Marketing" />
+                    <?php wp_editor($header_title ?: 'E-commerce Digital Marketing', 'ecommerce_header_title', array('textarea_rows' => 3, 'media_buttons' => false)); ?>
+                    <p class="description">Main page heading. HTML allowed for gradient text.</p>
                 </td>
             </tr>
             <tr>
                 <th><label for="ecommerce_header_subtitle">Page Subtitle</label></th>
                 <td>
-                    <textarea id="ecommerce_header_subtitle" 
-                              name="ecommerce_header_subtitle"
-                              placeholder="Drive more traffic, increase conversions, and maximise revenue for your online store"><?php echo esc_textarea($header_subtitle); ?></textarea>
+                    <?php wp_editor($header_subtitle ?: 'Drive more traffic, increase conversions, and maximise revenue for your online store', 'ecommerce_header_subtitle', array('textarea_rows' => 4, 'media_buttons' => false)); ?>
+                    <p class="description">Subtitle text below the main heading.</p>
                 </td>
             </tr>
         </table>
@@ -282,19 +278,15 @@ function ecommerce_meta_box_callback($post) {
             <tr>
                 <th><label for="ecommerce_overview_title">Overview Title</label></th>
                 <td>
-                    <input type="text" 
-                           id="ecommerce_overview_title" 
-                           name="ecommerce_overview_title" 
-                           value="<?php echo esc_attr($overview_title); ?>"
-                           placeholder="Accelerate Your E-commerce Growth" />
+                    <?php wp_editor($overview_title ?: 'Accelerate Your E-commerce Growth', 'ecommerce_overview_title', array('textarea_rows' => 3, 'media_buttons' => false)); ?>
+                    <p class="description">Main heading for the overview section.</p>
                 </td>
             </tr>
             <tr>
                 <th><label for="ecommerce_overview_content">Overview Content</label></th>
                 <td>
-                    <textarea id="ecommerce_overview_content" 
-                              name="ecommerce_overview_content"
-                              placeholder="The e-commerce landscape is more competitive than ever..."><?php echo esc_textarea($overview_content); ?></textarea>
+                    <?php wp_editor($overview_content ?: 'The e-commerce landscape is more competitive than ever. Our specialised e-commerce marketing strategies help online retailers increase traffic, improve conversion rates, and maximise customer lifetime value through data-driven digital marketing.', 'ecommerce_overview_content', array('textarea_rows' => 6, 'media_buttons' => false)); ?>
+                    <p class="description">Main description text for the overview section.</p>
                 </td>
             </tr>
             <tr>                <th><label for="ecommerce_overview_image">Overview Image</label></th>
@@ -320,11 +312,8 @@ function ecommerce_meta_box_callback($post) {
             <tr>
                 <th><label for="ecommerce_challenges_title">Challenges Title</label></th>
                 <td>
-                    <input type="text" 
-                           id="ecommerce_challenges_title" 
-                           name="ecommerce_challenges_title" 
-                           value="<?php echo esc_attr($challenges_title); ?>"
-                           placeholder="E-commerce Marketing Challenges We Solve:" />
+                    <?php wp_editor($challenges_title ?: 'E-commerce Marketing Challenges We Solve:', 'ecommerce_challenges_title', array('textarea_rows' => 3, 'media_buttons' => false)); ?>
+                    <p class="description">Heading for the challenges section.</p>
                 </td>
             </tr>
             <tr>
@@ -354,11 +343,8 @@ function ecommerce_meta_box_callback($post) {
             <tr>
                 <th><label for="ecommerce_services_title">Services Title</label></th>
                 <td>
-                    <input type="text" 
-                           id="ecommerce_services_title" 
-                           name="ecommerce_services_title" 
-                           value="<?php echo esc_attr($services_title); ?>"
-                           placeholder="Our E-commerce Marketing Services" />
+                    <?php wp_editor($services_title ?: 'Our E-commerce Marketing Services', 'ecommerce_services_title', array('textarea_rows' => 3, 'media_buttons' => false)); ?>
+                    <p class="description">Main heading for the services section.</p>
                 </td>
             </tr>
         </table>
@@ -368,16 +354,15 @@ function ecommerce_meta_box_callback($post) {
                 <?php foreach ($services as $index => $service): ?>
                     <div class="repeater-field">
                         <h4>Service <?php echo $index + 1; ?></h4>
+                        <p><strong>Icon Class:</strong></p>
                         <input type="text" 
                                name="ecommerce_services[<?php echo $index; ?>][icon]" 
                                value="<?php echo esc_attr($service['icon']); ?>"
                                placeholder="Icon class (e.g., fas fa-shopping-cart)" />
-                        <input type="text" 
-                               name="ecommerce_services[<?php echo $index; ?>][title]" 
-                               value="<?php echo esc_attr($service['title']); ?>"
-                               placeholder="Service title" />
-                        <textarea name="ecommerce_services[<?php echo $index; ?>][description]" 
-                                  placeholder="Service description"><?php echo esc_textarea($service['description']); ?></textarea>
+                        <p><strong>Service Title:</strong></p>
+                        <?php wp_editor($service['title'], 'ecommerce_services_' . $index . '_title', array('textarea_rows' => 2, 'media_buttons' => false, 'textarea_name' => 'ecommerce_services[' . $index . '][title]')); ?>
+                        <p><strong>Service Description:</strong></p>
+                        <?php wp_editor($service['description'], 'ecommerce_services_' . $index . '_description', array('textarea_rows' => 4, 'media_buttons' => false, 'textarea_name' => 'ecommerce_services[' . $index . '][description]')); ?>
                         <div>
                             <strong>Features:</strong>
                             <?php foreach ($service['features'] as $feat_index => $feature): ?>
@@ -399,39 +384,29 @@ function ecommerce_meta_box_callback($post) {
             <tr>
                 <th><label for="ecommerce_case_study_label">Case Study Label</label></th>
                 <td>
-                    <input type="text" 
-                           id="ecommerce_case_study_label" 
-                           name="ecommerce_case_study_label" 
-                           value="<?php echo esc_attr($case_study_label); ?>"
-                           placeholder="Success Story" />
+                    <?php wp_editor($case_study_label ?: 'Success Story', 'ecommerce_case_study_label', array('textarea_rows' => 2, 'media_buttons' => false)); ?>
+                    <p class="description">Small label above the case study title.</p>
                 </td>
             </tr>
             <tr>
                 <th><label for="ecommerce_case_study_title">Case Study Title</label></th>
                 <td>
-                    <input type="text" 
-                           id="ecommerce_case_study_title" 
-                           name="ecommerce_case_study_title" 
-                           value="<?php echo esc_attr($case_study_title); ?>"
-                           placeholder="From Struggling Store to 7-Figure Success" />
+                    <?php wp_editor($case_study_title ?: 'Sports Equipment Plus: 320% Revenue Growth', 'ecommerce_case_study_title', array('textarea_rows' => 3, 'media_buttons' => false)); ?>
+                    <p class="description">Main heading for the case study.</p>
                 </td>
             </tr>
             <tr>
                 <th><label for="ecommerce_case_study_content">Case Study Content</label></th>
                 <td>
-                    <textarea id="ecommerce_case_study_content" 
-                              name="ecommerce_case_study_content"
-                              placeholder="Case study description..."><?php echo esc_textarea($case_study_content); ?></textarea>
+                    <?php wp_editor($case_study_content ?: 'Sports Equipment Plus, an online sports retailer, needed to compete against major e-commerce platforms and increase their market share.', 'ecommerce_case_study_content', array('textarea_rows' => 4, 'media_buttons' => false)); ?>
+                    <p class="description">Introduction paragraph for the case study.</p>
                 </td>
             </tr>
             <tr>
                 <th><label for="ecommerce_case_study_challenge_title">Challenge Section Title</label></th>
                 <td>
-                    <input type="text" 
-                           id="ecommerce_case_study_challenge_title" 
-                           name="ecommerce_case_study_challenge_title" 
-                           value="<?php echo esc_attr($case_study_challenge_title); ?>"
-                           placeholder="The Challenge" />
+                    <?php wp_editor($case_study_challenge_title ?: 'The Challenge', 'ecommerce_case_study_challenge_title', array('textarea_rows' => 2, 'media_buttons' => false)); ?>
+                    <p class="description">Heading for the challenge section.</p>
                 </td>
             </tr>
             <tr>
@@ -456,11 +431,8 @@ function ecommerce_meta_box_callback($post) {
             <tr>
                 <th><label for="ecommerce_case_study_solution_title">Solution Section Title</label></th>
                 <td>
-                    <input type="text" 
-                           id="ecommerce_case_study_solution_title" 
-                           name="ecommerce_case_study_solution_title" 
-                           value="<?php echo esc_attr($case_study_solution_title); ?>"
-                           placeholder="Our Solution" />
+                    <?php wp_editor($case_study_solution_title ?: 'Our Solution', 'ecommerce_case_study_solution_title', array('textarea_rows' => 2, 'media_buttons' => false)); ?>
+                    <p class="description">Heading for the solution section.</p>
                 </td>
             </tr>
             <tr>
@@ -485,11 +457,8 @@ function ecommerce_meta_box_callback($post) {
             <tr>
                 <th><label for="ecommerce_case_study_results_title">Results Section Title</label></th>
                 <td>
-                    <input type="text" 
-                           id="ecommerce_case_study_results_title" 
-                           name="ecommerce_case_study_results_title" 
-                           value="<?php echo esc_attr($case_study_results_title); ?>"
-                           placeholder="Results After 6 Months" />
+                    <?php wp_editor($case_study_results_title ?: 'Results After 8 Months', 'ecommerce_case_study_results_title', array('textarea_rows' => 2, 'media_buttons' => false)); ?>
+                    <p class="description">Heading for the results section.</p>
                 </td>
             </tr>
         </table>
@@ -517,11 +486,8 @@ function ecommerce_meta_box_callback($post) {
             <tr>
                 <th><label for="ecommerce_case_study_link_text">Case Study Link Text</label></th>
                 <td>
-                    <input type="text" 
-                           id="ecommerce_case_study_link_text" 
-                           name="ecommerce_case_study_link_text" 
-                           value="<?php echo esc_attr($case_study_link_text); ?>"
-                           placeholder="Read Full Case Study" />
+                    <?php wp_editor($case_study_link_text ?: 'Read Full Case Study', 'ecommerce_case_study_link_text', array('textarea_rows' => 2, 'media_buttons' => false)); ?>
+                    <p class="description">Text for the case study link button.</p>
                 </td>
             </tr>
             <tr>
@@ -542,11 +508,8 @@ function ecommerce_meta_box_callback($post) {
             <tr>
                 <th><label for="ecommerce_process_title">Process Title</label></th>
                 <td>
-                    <input type="text" 
-                           id="ecommerce_process_title" 
-                           name="ecommerce_process_title" 
-                           value="<?php echo esc_attr($process_title); ?>"
-                           placeholder="Our E-commerce Marketing Process" />
+                    <?php wp_editor($process_title ?: 'Our E-commerce Marketing Process', 'ecommerce_process_title', array('textarea_rows' => 3, 'media_buttons' => false)); ?>
+                    <p class="description">Main heading for the process section.</p>
                 </td>
             </tr>
         </table>
@@ -556,12 +519,10 @@ function ecommerce_meta_box_callback($post) {
                 <?php foreach ($process_steps as $index => $step): ?>
                     <div class="repeater-field">
                         <h4>Step <?php echo $index + 1; ?></h4>
-                        <input type="text" 
-                               name="ecommerce_process_steps[<?php echo $index; ?>][title]" 
-                               value="<?php echo esc_attr($step['title']); ?>"
-                               placeholder="Step title" />
-                        <textarea name="ecommerce_process_steps[<?php echo $index; ?>][description]" 
-                                  placeholder="Step description"><?php echo esc_textarea($step['description']); ?></textarea>
+                        <p><strong>Step Title:</strong></p>
+                        <?php wp_editor($step['title'], 'ecommerce_process_steps_' . $index . '_title', array('textarea_rows' => 2, 'media_buttons' => false, 'textarea_name' => 'ecommerce_process_steps[' . $index . '][title]')); ?>
+                        <p><strong>Step Description:</strong></p>
+                        <?php wp_editor($step['description'], 'ecommerce_process_steps_' . $index . '_description', array('textarea_rows' => 3, 'media_buttons' => false, 'textarea_name' => 'ecommerce_process_steps[' . $index . '][description]')); ?>
                         <button type="button" class="button remove-repeater-item">Remove Step</button>
                     </div>
                 <?php endforeach; ?>
@@ -574,11 +535,8 @@ function ecommerce_meta_box_callback($post) {
             <tr>
                 <th><label for="ecommerce_insights_title">Insights Title</label></th>
                 <td>
-                    <input type="text" 
-                           id="ecommerce_insights_title" 
-                           name="ecommerce_insights_title" 
-                           value="<?php echo esc_attr($insights_title); ?>"
-                           placeholder="E-commerce Industry Insights" />
+                    <?php wp_editor($insights_title ?: 'E-commerce Industry Insights', 'ecommerce_insights_title', array('textarea_rows' => 3, 'media_buttons' => false)); ?>
+                    <p class="description">Main heading for the insights section.</p>
                 </td>
             </tr>
         </table>
@@ -588,16 +546,18 @@ function ecommerce_meta_box_callback($post) {
                 <?php foreach ($insights as $index => $insight): ?>
                     <div class="repeater-field">
                         <h4>Insight <?php echo $index + 1; ?></h4>
+                        <p><strong>Statistic:</strong></p>
                         <input type="text" 
                                name="ecommerce_insights[<?php echo $index; ?>][stat]" 
                                value="<?php echo esc_attr($insight['stat']); ?>"
                                placeholder="Statistic (e.g., 68%)" />
+                        <p><strong>Insight Title:</strong></p>
                         <input type="text" 
                                name="ecommerce_insights[<?php echo $index; ?>][title]" 
                                value="<?php echo esc_attr($insight['title']); ?>"
                                placeholder="Insight title" />
-                        <textarea name="ecommerce_insights[<?php echo $index; ?>][description]" 
-                                  placeholder="Insight description"><?php echo esc_textarea($insight['description']); ?></textarea>
+                        <p><strong>Insight Description:</strong></p>
+                        <?php wp_editor($insight['description'], 'ecommerce_insights_' . $index . '_description', array('textarea_rows' => 2, 'media_buttons' => false, 'textarea_name' => 'ecommerce_insights[' . $index . '][description]')); ?>
                         <button type="button" class="button remove-repeater-item">Remove Insight</button>
                     </div>
                 <?php endforeach; ?>
@@ -610,9 +570,8 @@ function ecommerce_meta_box_callback($post) {
             <tr>
                 <th><label for="ecommerce_testimonial_quote">Testimonial Quote</label></th>
                 <td>
-                    <textarea id="ecommerce_testimonial_quote" 
-                              name="ecommerce_testimonial_quote"
-                              placeholder="Customer testimonial quote..."><?php echo esc_textarea($testimonial_quote); ?></textarea>
+                    <?php wp_editor($testimonial_quote ?: 'Working with this team transformed our e-commerce performance. Their data-driven approach and deep understanding of our industry helped us achieve incredible results that exceeded all our expectations.', 'ecommerce_testimonial_quote', array('textarea_rows' => 5, 'media_buttons' => false)); ?>
+                    <p class="description">Customer testimonial quote content.</p>
                 </td>
             </tr>
             <tr>
@@ -653,29 +612,22 @@ function ecommerce_meta_box_callback($post) {
             <tr>
                 <th><label for="ecommerce_cta_title">CTA Title</label></th>
                 <td>
-                    <input type="text" 
-                           id="ecommerce_cta_title" 
-                           name="ecommerce_cta_title" 
-                           value="<?php echo esc_attr($cta_title); ?>"
-                           placeholder="Ready to Scale Your E-commerce Business?" />
+                    <?php wp_editor($cta_title ?: 'Ready to Scale Your E-commerce Business?', 'ecommerce_cta_title', array('textarea_rows' => 3, 'media_buttons' => false)); ?>
+                    <p class="description">Main heading for the CTA section.</p>
                 </td>
             </tr>
             <tr>
                 <th><label for="ecommerce_cta_subtitle">CTA Subtitle</label></th>
                 <td>
-                    <textarea id="ecommerce_cta_subtitle" 
-                              name="ecommerce_cta_subtitle"
-                              placeholder="Let's discuss how our e-commerce marketing expertise can drive more traffic, conversions, and revenue for your online store."><?php echo esc_textarea($cta_subtitle); ?></textarea>
+                    <?php wp_editor($cta_subtitle ?: 'Let\'s discuss how our e-commerce marketing expertise can drive more traffic, conversions, and revenue for your online store.', 'ecommerce_cta_subtitle', array('textarea_rows' => 4, 'media_buttons' => false)); ?>
+                    <p class="description">Supporting text below the CTA title.</p>
                 </td>
             </tr>
             <tr>
                 <th><label for="ecommerce_cta_primary_text">Primary Button Text</label></th>
                 <td>
-                    <input type="text" 
-                           id="ecommerce_cta_primary_text" 
-                           name="ecommerce_cta_primary_text" 
-                           value="<?php echo esc_attr($cta_primary_text); ?>"
-                           placeholder="Get Free E-commerce Audit" />
+                    <?php wp_editor($cta_primary_text ?: 'Get Free E-commerce Audit', 'ecommerce_cta_primary_text', array('textarea_rows' => 2, 'media_buttons' => false)); ?>
+                    <p class="description">Text for the primary CTA button.</p>
                 </td>
             </tr>
             <tr>
@@ -691,11 +643,8 @@ function ecommerce_meta_box_callback($post) {
             <tr>
                 <th><label for="ecommerce_cta_secondary_text">Secondary Button Text</label></th>
                 <td>
-                    <input type="text" 
-                           id="ecommerce_cta_secondary_text" 
-                           name="ecommerce_cta_secondary_text" 
-                           value="<?php echo esc_attr($cta_secondary_text); ?>"
-                           placeholder="View E-commerce Success Stories" />
+                    <?php wp_editor($cta_secondary_text ?: 'View E-commerce Success Stories', 'ecommerce_cta_secondary_text', array('textarea_rows' => 2, 'media_buttons' => false)); ?>
+                    <p class="description">Text for the secondary CTA button.</p>
                 </td>
             </tr>
             <tr>
@@ -800,16 +749,50 @@ function ecommerce_meta_box_callback($post) {
 }
 
 function sanitize_ecommerce_meta_value($field, $value) {
+    // Rich text fields that should use wp_kses_post
+    $rich_text_fields = [
+        'ecommerce_header_title',
+        'ecommerce_header_subtitle', 
+        'ecommerce_overview_title',
+        'ecommerce_overview_content',
+        'ecommerce_challenges_title',
+        'ecommerce_services_title',
+        'ecommerce_case_study_label',
+        'ecommerce_case_study_title',
+        'ecommerce_case_study_content',
+        'ecommerce_case_study_challenge_title',
+        'ecommerce_case_study_solution_title',
+        'ecommerce_case_study_results_title',
+        'ecommerce_case_study_link_text',
+        'ecommerce_process_title',
+        'ecommerce_insights_title',
+        'ecommerce_testimonial_quote',
+        'ecommerce_cta_title',
+        'ecommerce_cta_subtitle',
+        'ecommerce_cta_primary_text',
+        'ecommerce_cta_secondary_text'
+    ];
+
     if (is_array($value)) {
         foreach ($value as &$item) {
             if (is_array($item)) {
                 foreach ($item as $key => &$subitem) {
                     if (is_array($subitem)) {
                         foreach ($subitem as &$sub_subitem) {
-                            $sub_subitem = sanitize_text_field($sub_subitem);
+                            // Check if this is a rich text field in service descriptions or process descriptions
+                            if ($key === 'title' || $key === 'description') {
+                                $sub_subitem = wp_kses_post($sub_subitem);
+                            } else {
+                                $sub_subitem = sanitize_text_field($sub_subitem);
+                            }
                         }
                     } else {
-                        $subitem = sanitize_text_field($subitem);
+                        // Check if this is a rich text field in service/process items
+                        if ($key === 'title' || $key === 'description') {
+                            $subitem = wp_kses_post($subitem);
+                        } else {
+                            $subitem = sanitize_text_field($subitem);
+                        }
                     }
                 }
             } else {
@@ -818,8 +801,9 @@ function sanitize_ecommerce_meta_value($field, $value) {
         }
         return $value;
     } else {
-        if (strpos($field, 'content') !== false || strpos($field, 'description') !== false || strpos($field, 'subtitle') !== false) {
-            return sanitize_textarea_field($value);
+        // Single field values
+        if (in_array($field, $rich_text_fields)) {
+            return wp_kses_post($value);
         } elseif (strpos($field, 'url') !== false || strpos($field, 'image') !== false) {
             return esc_url_raw($value);
         } else {

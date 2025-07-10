@@ -23,19 +23,19 @@ get_header(); ?>
     <div class="container">          <!-- Page Header -->
         <section class="page-header">
             <div class="page-header-content animate-on-scroll animate-fade-up">
-                <h1><?php echo esc_html(get_post_meta(get_the_ID(), '_ecommerce_header_title', true) ?: "E-commerce Digital Marketing"); ?></h1>
-                <p class="page-subtitle"><?php echo esc_html(get_post_meta(get_the_ID(), '_ecommerce_header_subtitle', true) ?: "Drive more traffic, increase conversions, and maximise revenue for your online store"); ?></p>
+                <h1><?php echo wp_kses_post(get_post_meta(get_the_ID(), '_ecommerce_header_title', true) ?: "E-commerce Digital Marketing"); ?></h1>
+                <p class="page-subtitle"><?php echo wp_kses_post(get_post_meta(get_the_ID(), '_ecommerce_header_subtitle', true) ?: "Drive more traffic, increase conversions, and maximise revenue for your online store"); ?></p>
             </div>
         </section>        <!-- Industry Overview -->
         <section class="industry-overview animate-on-scroll animate-fade-up">
             <div class="section-content">
                 <div class="overview-content">
                     <div class="overview-text animate-on-scroll animate-slide-left">
-                        <h2><?php echo esc_html(get_post_meta(get_the_ID(), '_ecommerce_overview_title', true) ?: "Accelerate Your E-commerce Growth"); ?></h2>
-                        <p><?php echo esc_html(get_post_meta(get_the_ID(), '_ecommerce_overview_content', true) ?: "The e-commerce landscape is more competitive than ever. Our specialised e-commerce marketing strategies help online retailers increase traffic, improve conversion rates, and maximise customer lifetime value through data-driven digital marketing."); ?></p>
+                        <h2><?php echo wp_kses_post(get_post_meta(get_the_ID(), '_ecommerce_overview_title', true) ?: "Accelerate Your E-commerce Growth"); ?></h2>
+                        <p><?php echo wp_kses_post(get_post_meta(get_the_ID(), '_ecommerce_overview_content', true) ?: "The e-commerce landscape is more competitive than ever. Our specialised e-commerce marketing strategies help online retailers increase traffic, improve conversion rates, and maximise customer lifetime value through data-driven digital marketing."); ?></p>
                         
                         <div class="industry-challenges animate-on-scroll animate-fade-up">
-                            <h3><?php echo esc_html(get_post_meta(get_the_ID(), '_ecommerce_challenges_title', true) ?: "E-commerce Marketing Challenges We Solve:"); ?></h3>
+                            <h3><?php echo wp_kses_post(get_post_meta(get_the_ID(), '_ecommerce_challenges_title', true) ?: "E-commerce Marketing Challenges We Solve:"); ?></h3>
                             <ul>
                                 <?php
                                 $challenges = get_post_meta(get_the_ID(), '_ecommerce_challenges', true);
@@ -70,7 +70,7 @@ get_header(); ?>
         </section>        <!-- E-commerce Services -->
         <section class="ecommerce-services animate-on-scroll animate-fade-up">
             <div class="section-content">
-                <h2 class="animate-on-scroll animate-fade-up">Our E-commerce Marketing Services</h2>
+                <h2 class="animate-on-scroll animate-fade-up"><?php echo wp_kses_post(get_post_meta(get_the_ID(), '_ecommerce_services_title', true) ?: "Our E-commerce Marketing Services"); ?></h2>
                 <div class="services-grid animate-on-scroll animate-fade-up">
                     <?php 
                     $services = get_post_meta(get_the_ID(), '_ecommerce_services', true);
@@ -121,8 +121,8 @@ get_header(); ?>
                                 <i class="<?php echo esc_attr($service['icon']); ?>" style="font-size: 48px;"></i>
                             </div>
                             <div class="service-content">
-                                <h3><?php echo esc_html($service['title']); ?></h3>
-                                <p><?php echo esc_html($service['description']); ?></p>
+                                <h3><?php echo wp_kses_post($service['title']); ?></h3>
+                                <p><?php echo wp_kses_post($service['description']); ?></p>
                                 <ul class="service-features">
                                     <?php foreach ($service['features'] as $feature): ?>
                                         <li><?php echo esc_html($feature); ?></li>
@@ -141,116 +141,150 @@ get_header(); ?>
             <div class="section-content">
                 <div class="case-study-content">
                     <div class="case-study-text animate-on-scroll animate-slide-left">
-                        <span class="case-study-label">Success Story</span>
-                        <h2>Sports Equipment Plus: 320% Revenue Growth</h2>
-                        <p>Sports Equipment Plus, an online sports retailer, needed to compete against major e-commerce platforms and increase their market share.</p>
+                        <span class="case-study-label"><?php echo wp_kses_post(get_post_meta(get_the_ID(), '_ecommerce_case_study_label', true) ?: "Success Story"); ?></span>
+                        <h2><?php echo wp_kses_post(get_post_meta(get_the_ID(), '_ecommerce_case_study_title', true) ?: "Sports Equipment Plus: 320% Revenue Growth"); ?></h2>
+                        <p><?php echo wp_kses_post(get_post_meta(get_the_ID(), '_ecommerce_case_study_content', true) ?: "Sports Equipment Plus, an online sports retailer, needed to compete against major e-commerce platforms and increase their market share."); ?></p>
                         
                         <div class="case-study-challenge animate-on-scroll animate-fade-up">
-                            <h3>The Challenge</h3>
+                            <h3><?php echo wp_kses_post(get_post_meta(get_the_ID(), '_ecommerce_case_study_challenge_title', true) ?: "The Challenge"); ?></h3>
                             <ul>
-                                <li>High customer acquisition costs</li>
-                                <li>Low conversion rates from paid traffic</li>
-                                <li>Poor product visibility in search</li>
-                                <li>Cart abandonment issues</li>
+                                <?php
+                                $case_study_challenges = get_post_meta(get_the_ID(), '_ecommerce_case_study_challenges', true);
+                                if (empty($case_study_challenges)) {
+                                    $case_study_challenges = array(
+                                        'High customer acquisition costs',
+                                        'Low conversion rates from paid traffic',
+                                        'Poor product visibility in search',
+                                        'Cart abandonment issues'
+                                    );
+                                }
+                                foreach ($case_study_challenges as $challenge) {
+                                    echo '<li>' . esc_html($challenge) . '</li>';
+                                }
+                                ?>
                             </ul>
                         </div>                        <div class="case-study-solution animate-on-scroll animate-fade-up">
-                            <h3>Our Solution</h3>
+                            <h3><?php echo wp_kses_post(get_post_meta(get_the_ID(), '_ecommerce_case_study_solution_title', true) ?: "Our Solution"); ?></h3>
                             <ul>
-                                <li>Comprehensive Google Shopping optimisation</li>
-                                <li>Product page SEO and conversion optimisation</li>
-                                <li>Email marketing automation</li>
-                                <li>Social commerce strategy</li>
+                                <?php
+                                $case_study_solutions = get_post_meta(get_the_ID(), '_ecommerce_case_study_solutions', true);
+                                if (empty($case_study_solutions)) {
+                                    $case_study_solutions = array(
+                                        'Comprehensive Google Shopping optimisation',
+                                        'Product page SEO and conversion optimisation',
+                                        'Email marketing automation',
+                                        'Social commerce strategy'
+                                    );
+                                }
+                                foreach ($case_study_solutions as $solution) {
+                                    echo '<li>' . esc_html($solution) . '</li>';
+                                }
+                                ?>
                             </ul>
                         </div>
                     </div>
                     <div class="case-study-results animate-on-scroll animate-slide-right">
-                        <h3>Results After 8 Months</h3>                        <div class="results-grid">
-                            <div class="result-item animate-on-scroll animate-stagger animate-scale-up">
-                                <div class="result-number">320%</div>
-                                <div class="result-label">Revenue Growth</div>
-                            </div>
-                            <div class="result-item animate-on-scroll animate-stagger animate-scale-up">
-                                <div class="result-number">180%</div>
-                                <div class="result-label">Conversion Rate Increase</div>
-                            </div>
-                            <div class="result-item animate-on-scroll animate-stagger animate-scale-up">
-                                <div class="result-number">250%</div>
-                                <div class="result-label">Organic Traffic Growth</div>
-                            </div>
-                            <div class="result-item animate-on-scroll animate-stagger animate-scale-up">
-                                <div class="result-number">45%</div>
-                                <div class="result-label">Cart Recovery Rate</div>
-                            </div>
+                        <h3><?php echo wp_kses_post(get_post_meta(get_the_ID(), '_ecommerce_case_study_results_title', true) ?: "Results After 8 Months"); ?></h3>                        <div class="results-grid">
+                            <?php
+                            $case_study_results = get_post_meta(get_the_ID(), '_ecommerce_case_study_results', true);
+                            if (empty($case_study_results)) {
+                                $case_study_results = array(
+                                    array('number' => '320%', 'label' => 'Revenue Growth'),
+                                    array('number' => '180%', 'label' => 'Conversion Rate Increase'),
+                                    array('number' => '250%', 'label' => 'Organic Traffic Growth'),
+                                    array('number' => '45%', 'label' => 'Cart Recovery Rate')
+                                );
+                            }
+                            foreach ($case_study_results as $result) {
+                                echo '<div class="result-item animate-on-scroll animate-stagger animate-scale-up">';
+                                echo '<div class="result-number">' . esc_html($result['number']) . '</div>';
+                                echo '<div class="result-label">' . esc_html($result['label']) . '</div>';
+                                echo '</div>';
+                            }
+                            ?>
                         </div>
-                        <a href="<?php echo home_url('/case-studies'); ?>" class="case-study-link">Read Full Case Study</a>
+                        <a href="<?php echo esc_url(get_post_meta(get_the_ID(), '_ecommerce_case_study_link_url', true) ?: home_url('/case-studies')); ?>" class="case-study-link"><?php echo wp_kses_post(get_post_meta(get_the_ID(), '_ecommerce_case_study_link_text', true) ?: "Read Full Case Study"); ?></a>
                     </div>
                 </div>
             </div>
         </section>        <!-- E-commerce Process -->
         <section class="ecommerce-process animate-on-scroll animate-fade-up">
             <div class="section-content">
-                <h2 class="animate-on-scroll animate-fade-up">Our E-commerce Marketing Process</h2>
+                <h2 class="animate-on-scroll animate-fade-up"><?php echo wp_kses_post(get_post_meta(get_the_ID(), '_ecommerce_process_title', true) ?: "Our E-commerce Marketing Process"); ?></h2>
                 <div class="process-steps animate-on-scroll animate-fade-up">
-                    
-                    <div class="process-step animate-on-scroll animate-stagger animate-fade-up">
-                        <div class="step-number">1</div>
-                        <div class="step-content">
-                            <h3>Store Audit</h3>
-                            <p>Comprehensive analysis of your e-commerce platform, user experience, and current marketing performance.</p>
-                        </div>
-                    </div>                    <div class="process-step animate-on-scroll animate-stagger animate-fade-up">
-                        <div class="step-number">2</div>
-                        <div class="step-content">
-                            <h3>Conversion Optimisation</h3>
-                            <p>Optimise product pages, checkout process, and user experience to maximise conversion rates.</p>
-                        </div>
-                    </div>
-
-                    <div class="process-step animate-on-scroll animate-stagger animate-fade-up">
-                        <div class="step-number">3</div>
-                        <div class="step-content">
-                            <h3>Multi-Channel Strategy</h3>
-                            <p>Implement integrated marketing across search, social, email, and marketplace channels.</p>
-                        </div>
-                    </div>
-
-                    <div class="process-step animate-on-scroll animate-stagger animate-fade-up">
-                        <div class="step-number">4</div>
-                        <div class="step-content">
-                            <h3>Performance Scaling</h3>
-                            <p>Continuously optimise and scale successful campaigns while improving customer lifetime value.</p>
-                        </div>
-                    </div>
-
+                    <?php
+                    $process_steps = get_post_meta(get_the_ID(), '_ecommerce_process_steps', true);
+                    if (empty($process_steps)) {
+                        $process_steps = array(
+                            array(
+                                'title' => 'Store Audit',
+                                'description' => 'Comprehensive analysis of your e-commerce platform, user experience, and current marketing performance.'
+                            ),
+                            array(
+                                'title' => 'Conversion Optimisation',
+                                'description' => 'Optimise product pages, checkout process, and user experience to maximise conversion rates.'
+                            ),
+                            array(
+                                'title' => 'Multi-Channel Strategy',
+                                'description' => 'Implement integrated marketing across search, social, email, and marketplace channels.'
+                            ),
+                            array(
+                                'title' => 'Performance Scaling',
+                                'description' => 'Continuously optimise and scale successful campaigns while improving customer lifetime value.'
+                            )
+                        );
+                    }
+                    foreach ($process_steps as $index => $step) {
+                        echo '<div class="process-step animate-on-scroll animate-stagger animate-fade-up">';
+                        echo '<div class="step-number">' . ($index + 1) . '</div>';
+                        echo '<div class="step-content">';
+                        echo '<h3>' . wp_kses_post($step['title']) . '</h3>';
+                        echo '<p>' . wp_kses_post($step['description']) . '</p>';
+                        echo '</div>';
+                        echo '</div>';
+                    }
+                    ?>
                 </div>
             </div>
         </section>        <!-- E-commerce Insights -->
         <section class="ecommerce-insights animate-on-scroll animate-fade-up">
             <div class="section-content">
-                <h2 class="animate-on-scroll animate-fade-up">E-commerce Industry Insights</h2>
+                <h2 class="animate-on-scroll animate-fade-up"><?php echo wp_kses_post(get_post_meta(get_the_ID(), '_ecommerce_insights_title', true) ?: "E-commerce Industry Insights"); ?></h2>
                 <div class="results-grid animate-on-scroll animate-fade-up">
-                    
-                    <div class="result-item animate-on-scroll animate-stagger animate-scale-up">
-                        <div class="result-number">70%</div>
-                        <div class="result-label">Cart Abandonment</div>
-                        <p>70% of online shopping carts are abandoned before purchase</p>
-                    </div>                    <div class="result-item animate-on-scroll animate-stagger animate-scale-up">
-                        <div class="result-number">86%</div>
-                        <div class="result-label">Product Research</div>
-                        <p>86% of consumers research products online before buying</p>
-                    </div>
-
-                    <div class="result-item animate-on-scroll animate-stagger animate-scale-up">
-                        <div class="result-number">73%</div>
-                        <div class="result-label">Mobile Shopping</div>
-                        <p>73% of e-commerce traffic comes from mobile devices</p>
-                    </div>
-
-                    <div class="result-item animate-on-scroll animate-stagger animate-scale-up">
-                        <div class="result-number">92%</div>
-                        <div class="result-label">Visual Influence</div>
-                        <p>92% of consumers make purchasing decisions based on visual content</p>
-                    </div>
+                    <?php
+                    $insights = get_post_meta(get_the_ID(), '_ecommerce_insights', true);
+                    if (empty($insights)) {
+                        $insights = array(
+                            array(
+                                'stat' => '70%',
+                                'title' => 'Cart Abandonment',
+                                'description' => '70% of online shopping carts are abandoned before purchase'
+                            ),
+                            array(
+                                'stat' => '86%',
+                                'title' => 'Product Research',
+                                'description' => '86% of consumers research products online before buying'
+                            ),
+                            array(
+                                'stat' => '73%',
+                                'title' => 'Mobile Shopping',
+                                'description' => '73% of e-commerce traffic comes from mobile devices'
+                            ),
+                            array(
+                                'stat' => '92%',
+                                'title' => 'Visual Influence',
+                                'description' => '92% of consumers make purchasing decisions based on visual content'
+                            )
+                        );
+                    }
+                    foreach ($insights as $insight) {
+                        echo '<div class="result-item animate-on-scroll animate-stagger animate-scale-up">';
+                        echo '<div class="result-number">' . esc_html($insight['stat']) . '</div>';
+                        echo '<div class="result-label">' . esc_html($insight['title']) . '</div>';
+                        echo '<p>' . wp_kses_post($insight['description']) . '</p>';
+                        echo '</div>';
+                    }
+                    ?>
                 </div>
             </div>
         </section>        <!-- E-commerce Testimonial -->
@@ -258,7 +292,7 @@ get_header(); ?>
             <div class="section-content">
                 <div class="testimonial-content animate-on-scroll animate-slide-up">
                     <blockquote>
-                        <?php echo esc_html(get_post_meta(get_the_ID(), '_ecommerce_testimonial_quote', true) ?: "Aimpro Digital transformed our e-commerce business. Their comprehensive approach to Google Shopping, SEO, and email marketing increased our revenue by 320%. The team's expertise in e-commerce marketing is outstanding."); ?>
+                        <?php echo wp_kses_post(get_post_meta(get_the_ID(), '_ecommerce_testimonial_quote', true) ?: "Aimpro Digital transformed our e-commerce business. Their comprehensive approach to Google Shopping, SEO, and email marketing increased our revenue by 320%. The team's expertise in e-commerce marketing is outstanding."); ?>
                     </blockquote>
                     <div class="testimonial-author">
                         <div class="author-info">
@@ -272,11 +306,11 @@ get_header(); ?>
         </section>        <!-- CTA Section -->
         <section class="ecommerce-cta text-center animate-on-scroll animate-fade-up">
             <div class="section-content">
-                <h2 class="animate-on-scroll animate-fade-up"><?php echo esc_html(get_post_meta(get_the_ID(), '_ecommerce_cta_title', true) ?: "Ready to Scale Your E-commerce Business?"); ?></h2>
-                <p class="animate-on-scroll animate-fade-up"><?php echo esc_html(get_post_meta(get_the_ID(), '_ecommerce_cta_subtitle', true) ?: "Let's discuss how our e-commerce marketing expertise can drive more traffic, conversions, and revenue for your online store."); ?></p>
+                <h2 class="animate-on-scroll animate-fade-up"><?php echo wp_kses_post(get_post_meta(get_the_ID(), '_ecommerce_cta_title', true) ?: "Ready to Scale Your E-commerce Business?"); ?></h2>
+                <p class="animate-on-scroll animate-fade-up"><?php echo wp_kses_post(get_post_meta(get_the_ID(), '_ecommerce_cta_subtitle', true) ?: "Let's discuss how our e-commerce marketing expertise can drive more traffic, conversions, and revenue for your online store."); ?></p>
                 <div class="cta-buttons animate-on-scroll animate-fade-up">
-                    <a href="<?php echo esc_url(get_post_meta(get_the_ID(), '_ecommerce_cta_primary_url', true) ?: home_url('/contact')); ?>" class="btn btn-primary"><?php echo esc_html(get_post_meta(get_the_ID(), '_ecommerce_cta_primary_text', true) ?: "Get Free E-commerce Audit"); ?></a>
-                    <a href="<?php echo esc_url(get_post_meta(get_the_ID(), '_ecommerce_cta_secondary_url', true) ?: home_url('/case-studies')); ?>" class="btn btn-secondary"><?php echo esc_html(get_post_meta(get_the_ID(), '_ecommerce_cta_secondary_text', true) ?: "View E-commerce Success Stories"); ?></a>
+                    <a href="<?php echo esc_url(get_post_meta(get_the_ID(), '_ecommerce_cta_primary_url', true) ?: home_url('/contact')); ?>" class="btn btn-primary"><?php echo wp_kses_post(get_post_meta(get_the_ID(), '_ecommerce_cta_primary_text', true) ?: "Get Free E-commerce Audit"); ?></a>
+                    <a href="<?php echo esc_url(get_post_meta(get_the_ID(), '_ecommerce_cta_secondary_url', true) ?: home_url('/case-studies')); ?>" class="btn btn-secondary"><?php echo wp_kses_post(get_post_meta(get_the_ID(), '_ecommerce_cta_secondary_text', true) ?: "View E-commerce Success Stories"); ?></a>
                 </div>
                 <div class="cta-benefits animate-on-scroll animate-fade-up">
                     <?php 
