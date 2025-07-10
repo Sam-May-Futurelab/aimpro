@@ -96,7 +96,7 @@ function aimpro_careers_meta_box_callback($post) {
         </tr>
         <tr>
             <th><label for="careers_benefit<?php echo $num; ?>_title">Title</label></th>
-            <td><input type="text" id="careers_benefit<?php echo $num; ?>_title" name="careers_benefit<?php echo $num; ?>_title" value="<?php echo esc_attr($benefit_title); ?>" class="regular-text" /></td>
+            <td><?php wp_editor($benefit_title, "careers_benefit{$num}_title", array('textarea_rows' => 1, 'media_buttons' => false, 'teeny' => true)); ?></td>
         </tr>
         <tr>
             <th><label for="careers_benefit<?php echo $num; ?>_desc">Description</label></th>
@@ -158,7 +158,7 @@ function aimpro_careers_meta_box_callback($post) {
         </tr>
         <tr>
             <th><label for="careers_job<?php echo $num; ?>_title">Job Title</label></th>
-            <td><input type="text" id="careers_job<?php echo $num; ?>_title" name="careers_job<?php echo $num; ?>_title" value="<?php echo esc_attr($job_title); ?>" class="regular-text" /></td>
+            <td><?php wp_editor($job_title, "careers_job{$num}_title", array('textarea_rows' => 1, 'media_buttons' => false, 'teeny' => true)); ?></td>
         </tr>
         <tr>
             <th><label for="careers_job<?php echo $num; ?>_team">Team</label></th>
@@ -221,7 +221,7 @@ function aimpro_careers_meta_box_callback($post) {
         </tr>
         <tr>
             <th><label for="careers_process<?php echo $num; ?>_title">Title</label></th>
-            <td><input type="text" id="careers_process<?php echo $num; ?>_title" name="careers_process<?php echo $num; ?>_title" value="<?php echo esc_attr($step_title); ?>" class="regular-text" /></td>
+            <td><?php wp_editor($step_title, "careers_process{$num}_title", array('textarea_rows' => 1, 'media_buttons' => false, 'teeny' => true)); ?></td>
         </tr>
         <tr>
             <th><label for="careers_process<?php echo $num; ?>_desc">Description</label></th>
@@ -341,7 +341,7 @@ function aimpro_save_careers_meta($post_id) {
     // Save benefits fields
     for ($i = 1; $i <= 6; $i++) {
         $benefit_fields = array(
-            "careers_benefit{$i}_title" => 'sanitize_text_field',
+            "careers_benefit{$i}_title" => 'wp_kses_post',
             "careers_benefit{$i}_desc" => 'wp_kses_post'
         );
         
@@ -355,7 +355,7 @@ function aimpro_save_careers_meta($post_id) {
     // Save process fields
     for ($i = 1; $i <= 5; $i++) {
         $process_fields = array(
-            "careers_process{$i}_title" => 'sanitize_text_field',
+            "careers_process{$i}_title" => 'wp_kses_post',
             "careers_process{$i}_desc" => 'wp_kses_post'
         );
         
@@ -382,7 +382,7 @@ function aimpro_save_careers_meta($post_id) {
     }    // Save job opening fields
     for ($i = 1; $i <= 6; $i++) {
         $job_fields = array(
-            "careers_job{$i}_title" => 'sanitize_text_field',
+            "careers_job{$i}_title" => 'wp_kses_post',
             "careers_job{$i}_team" => 'sanitize_text_field',
             "careers_job{$i}_type" => 'sanitize_text_field',
             "careers_job{$i}_location" => 'sanitize_text_field',

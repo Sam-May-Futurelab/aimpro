@@ -58,7 +58,7 @@ get_header(); ?>
                                 <?php echo $benefit_icons[$i]; ?>
                             </svg>
                         </div>
-                        <h3><?php echo esc_html($title); ?></h3>
+                        <h3><?php echo wp_kses_post($title); ?></h3>
                         <p><?php echo wp_kses_post($desc); ?></p>
                     </div>
                     <?php endfor; ?>
@@ -109,7 +109,7 @@ get_header(); ?>
                     ?>
                     <div class="position-card animate-on-scroll animate-stagger animate-fade-up">
                         <div class="position-header">
-                            <h3><?php echo esc_html($job_title); ?></h3>
+                            <h3><?php echo wp_kses_post($job_title); ?></h3>
                             <div class="position-meta">
                                 <span class="department"><?php echo esc_html($job_team); ?></span>
                                 <span class="type"><?php echo esc_html($job_type); ?></span>
@@ -162,7 +162,7 @@ get_header(); ?>
                     <div class="step">
                         <div class="step-number"><?php echo $i; ?></div>
                         <div class="step-content">
-                            <h3><?php echo esc_html($step_title); ?></h3>
+                            <h3><?php echo wp_kses_post($step_title); ?></h3>
                             <p><?php echo wp_kses_post($step_desc); ?></p>
                         </div>
                     </div>
@@ -204,7 +204,7 @@ get_header(); ?>
         <section class="application-form">
             <div class="section-content">
                 <h2><?php echo esc_html(get_post_meta(get_the_ID(), 'careers_form_heading', true) ?: 'Ready to Apply?'); ?></h2>
-                <p><?php echo esc_html(get_post_meta(get_the_ID(), 'careers_form_description', true) ?: 'Don\'t see a position that fits? We\'re always looking for talented individuals to join our team.'); ?></p>
+                <p><?php echo wp_kses_post(get_post_meta(get_the_ID(), 'careers_form_description', true) ?: 'Don\'t see a position that fits? We\'re always looking for talented individuals to join our team.'); ?></p>
                 
                 <?php if (isset($_GET['career_success'])): ?>
                     <div class="form-message success">
@@ -281,7 +281,7 @@ get_header(); ?>
         <section class="contact-hr">
             <div class="section-content">
                 <h2><?php echo esc_html(get_post_meta(get_the_ID(), 'careers_contact_heading', true) ?: 'Questions About Careers?'); ?></h2>
-                <p><?php echo esc_html(get_post_meta(get_the_ID(), 'careers_contact_description', true) ?: 'Our HR team is here to help answer any questions about working at Aimpro Digital'); ?></p>
+                <p><?php echo wp_kses_post(get_post_meta(get_the_ID(), 'careers_contact_description', true) ?: 'Our HR team is here to help answer any questions about working at Aimpro Digital'); ?></p>
                 <div class="cta-buttons" style="justify-content: center; margin-top: 2rem;">
                     <a href="mailto:<?php echo esc_attr(get_post_meta(get_the_ID(), 'careers_contact_email', true) ?: 'careers@aimpro.co.uk'); ?>" class="btn btn-primary">
                         <i class="fas fa-envelope" style="margin-right: 0.5rem;"></i>
