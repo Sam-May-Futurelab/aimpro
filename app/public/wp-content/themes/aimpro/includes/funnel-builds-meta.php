@@ -81,7 +81,7 @@ function aimpro_funnelbuilds_meta_box_callback($post) {
         'fb_case_study_challenge' => 'ProCoach had a great online course but was struggling with a single-page sales approach that achieved only a 1.8% conversion rate. Despite quality traffic from Facebook ads, they were losing potential customers due to asking for the sale too quickly without sufficient trust-building.',
         'fb_case_study_stat1_number' => '1.8%',
         'fb_case_study_stat1_label' => 'Conversion Rate',
-        'fb_case_study_stat2_number' => '£12.40',
+        'fb_case_study_stat2_number' => 'ï¿½12.40',
         'fb_case_study_stat2_label' => 'Cost per Lead',
         'fb_case_study_solution_title' => 'Our Solution',
         'fb_case_study_solution' => "Multi-Step Funnel Design: Created a 4-step funnel with micro-commitments instead of direct sales\nValue-First Approach: Delivered free valuable content before asking for the purchase\nWebinar Integration: Added a high-value webinar as a middle-funnel conversion tool\nEmail Nurture Sequence: Developed a 14-day email sequence to warm up cold leads\nRetargeting Strategy: Implemented targeted ads for visitors at different funnel stages",
@@ -90,9 +90,9 @@ function aimpro_funnelbuilds_meta_box_callback($post) {
         'fb_case_study_result1_label' => 'Increase in Course Sales',
         'fb_case_study_result2_number' => '21.6%',
         'fb_case_study_result2_label' => 'Final Conversion Rate',
-        'fb_case_study_result3_number' => '£3.80',
+        'fb_case_study_result3_number' => 'ï¿½3.80',
         'fb_case_study_result3_label' => 'Reduced Cost per Lead',
-        'fb_case_study_result4_number' => '£520K',
+        'fb_case_study_result4_number' => 'ï¿½520K',
         'fb_case_study_result4_label' => 'Additional Annual Revenue',
         
         // Types of Funnels Section
@@ -136,20 +136,20 @@ function aimpro_funnelbuilds_meta_box_callback($post) {
         'fb_packages_subtitle' => 'Complete funnel solutions designed to convert your prospects into paying customers',
         
         'fb_package1_title' => 'Lead Generation Funnel',
-        'fb_package1_price' => '£2,497',
+        'fb_package1_price' => 'ï¿½2,497',
         'fb_package1_description' => 'Perfect for growing your email list',
         'fb_package1_features' => "2-3 step funnel design\nLead magnet creation\nLanding page & thank you page\nEmail integration\n5-part email sequence\nBasic tracking setup\n14-day delivery\n30 days support",
         'fb_package1_cta' => 'Get Started',
         
         'fb_package2_title' => 'Full Sales Funnel',
-        'fb_package2_price' => '£4,997',
+        'fb_package2_price' => 'ï¿½4,997',
         'fb_package2_description' => 'Complete system to sell products or services',
         'fb_package2_features' => "4-6 step funnel design\nLead magnet & tripwire offer\nSales page & checkout integration\nUpsell/downsell sequences\n10-part email automation\nRetargeting strategy\nA/B testing setup\n21-day delivery\n60 days support",
         'fb_package2_label' => 'Best Value',
         'fb_package2_cta' => 'Get Started',
         
         'fb_package3_title' => 'Complete Funnel System',
-        'fb_package3_price' => '£9,997',
+        'fb_package3_price' => 'ï¿½9,997',
         'fb_package3_description' => 'End-to-end marketing and sales ecosystem',
         'fb_package3_features' => "Full marketing ecosystem\nMultiple interconnected funnels\nWebinar or video series funnel\nComplete email marketing system\nAdvanced segmentation\nFull analytics & reporting\nConversion optimisation\nSales integration & training\n30-day delivery\n90 days support\nOngoing optimisation",
         'fb_package3_cta' => 'Get Started',
@@ -287,7 +287,8 @@ function aimpro_funnelbuilds_meta_box_callback($post) {
                 <div class="meta-column">
                     <div class="meta-field">
                         <label class="meta-label" for="fb_hero_title">Hero Title</label>
-                        <input type="text" id="fb_hero_title" name="fb_hero_title" value="<?php echo esc_attr(get_meta_value('fb_hero_title', $defaults)); ?>" />
+                        <?php wp_editor(get_meta_value('fb_hero_title', $defaults), 'fb_hero_title', array('textarea_rows' => 3, 'media_buttons' => false)); ?>
+                        <p class="description">Main hero section heading. HTML allowed for formatting.</p>
                     </div>
                 </div>
             </div>
@@ -295,7 +296,8 @@ function aimpro_funnelbuilds_meta_box_callback($post) {
                 <div class="meta-column">
                     <div class="meta-field">
                         <label class="meta-label" for="fb_hero_subtitle">Hero Subtitle</label>
-                        <textarea id="fb_hero_subtitle" name="fb_hero_subtitle"><?php echo esc_textarea(get_meta_value('fb_hero_subtitle', $defaults)); ?></textarea>
+                        <?php wp_editor(get_meta_value('fb_hero_subtitle', $defaults), 'fb_hero_subtitle', array('textarea_rows' => 5, 'media_buttons' => false)); ?>
+                        <p class="description">Hero subtitle text content.</p>
                     </div>
                 </div>
             </div>
@@ -340,13 +342,15 @@ function aimpro_funnelbuilds_meta_box_callback($post) {
                 <div class="meta-column">
                     <div class="meta-field">
                         <label class="meta-label" for="fb_cta_primary">Primary CTA Button Text</label>
-                        <input type="text" id="fb_cta_primary" name="fb_cta_primary" value="<?php echo esc_attr(get_meta_value('fb_cta_primary', $defaults)); ?>" />
+                        <?php wp_editor(get_meta_value('fb_cta_primary', $defaults), 'fb_cta_primary', array('textarea_rows' => 2, 'media_buttons' => false)); ?>
+                        <p class="description">Primary CTA button text.</p>
                     </div>
                 </div>
                 <div class="meta-column">
                     <div class="meta-field">
                         <label class="meta-label" for="fb_cta_secondary">Secondary CTA Button Text</label>
-                        <input type="text" id="fb_cta_secondary" name="fb_cta_secondary" value="<?php echo esc_attr(get_meta_value('fb_cta_secondary', $defaults)); ?>" />
+                        <?php wp_editor(get_meta_value('fb_cta_secondary', $defaults), 'fb_cta_secondary', array('textarea_rows' => 2, 'media_buttons' => false)); ?>
+                        <p class="description">Secondary CTA button text.</p>
                     </div>
                 </div>
             </div>
@@ -359,7 +363,8 @@ function aimpro_funnelbuilds_meta_box_callback($post) {
                 <div class="meta-column">
                     <div class="meta-field">
                         <label class="meta-label" for="fb_intro_title">Introduction Title</label>
-                        <input type="text" id="fb_intro_title" name="fb_intro_title" value="<?php echo esc_attr(get_meta_value('fb_intro_title', $defaults)); ?>" />
+                        <?php wp_editor(get_meta_value('fb_intro_title', $defaults), 'fb_intro_title', array('textarea_rows' => 3, 'media_buttons' => false)); ?>
+                        <p class="description">Introduction section heading.</p>
                     </div>
                 </div>
             </div>
@@ -367,7 +372,8 @@ function aimpro_funnelbuilds_meta_box_callback($post) {
                 <div class="meta-column">
                     <div class="meta-field">
                         <label class="meta-label" for="fb_intro_description">Introduction Description</label>
-                        <textarea id="fb_intro_description" name="fb_intro_description"><?php echo esc_textarea(get_meta_value('fb_intro_description', $defaults)); ?></textarea>
+                        <?php wp_editor(get_meta_value('fb_intro_description', $defaults), 'fb_intro_description', array('textarea_rows' => 5, 'media_buttons' => false)); ?>
+                        <p class="description">Introduction description text.</p>
                     </div>
                 </div>
             </div>
@@ -381,13 +387,13 @@ function aimpro_funnelbuilds_meta_box_callback($post) {
                     <div class="meta-column">
                         <div class="meta-field">
                             <label class="meta-label" for="fb_feature<?php echo $i; ?>_title">Feature <?php echo $i; ?> Title</label>
-                            <input type="text" id="fb_feature<?php echo $i; ?>_title" name="fb_feature<?php echo $i; ?>_title" value="<?php echo esc_attr(get_meta_value("fb_feature{$i}_title", $defaults)); ?>" />
+                            <?php wp_editor(get_meta_value("fb_feature{$i}_title", $defaults), "fb_feature{$i}_title", array('textarea_name' => "fb_feature{$i}_title", 'textarea_rows' => 2, 'media_buttons' => false)); ?>
                         </div>
                     </div>
                     <div class="meta-column">
                         <div class="meta-field">
                             <label class="meta-label" for="fb_feature<?php echo $i; ?>_description">Feature <?php echo $i; ?> Description</label>
-                            <textarea id="fb_feature<?php echo $i; ?>_description" name="fb_feature<?php echo $i; ?>_description"><?php echo esc_textarea(get_meta_value("fb_feature{$i}_description", $defaults)); ?></textarea>
+                            <?php wp_editor(get_meta_value("fb_feature{$i}_description", $defaults), "fb_feature{$i}_description", array('textarea_name' => "fb_feature{$i}_description", 'textarea_rows' => 4, 'media_buttons' => false)); ?>
                         </div>
                     </div>
                 </div>
@@ -401,7 +407,8 @@ function aimpro_funnelbuilds_meta_box_callback($post) {
                 <div class="meta-column">
                     <div class="meta-field">
                         <label class="meta-label" for="fb_case_study_title">Case Study Title</label>
-                        <input type="text" id="fb_case_study_title" name="fb_case_study_title" value="<?php echo esc_attr(get_meta_value('fb_case_study_title', $defaults)); ?>" />
+                        <?php wp_editor(get_meta_value('fb_case_study_title', $defaults), 'fb_case_study_title', array('textarea_rows' => 3, 'media_buttons' => false)); ?>
+                        <p class="description">Case study main heading.</p>
                     </div>
                 </div>
             </div>
@@ -411,7 +418,8 @@ function aimpro_funnelbuilds_meta_box_callback($post) {
                 <div class="meta-column">
                     <div class="meta-field">
                         <label class="meta-label" for="fb_case_study_subtitle">Challenge Subtitle</label>
-                        <input type="text" id="fb_case_study_subtitle" name="fb_case_study_subtitle" value="<?php echo esc_attr(get_meta_value('fb_case_study_subtitle', $defaults)); ?>" />
+                        <?php wp_editor(get_meta_value('fb_case_study_subtitle', $defaults), 'fb_case_study_subtitle', array('textarea_rows' => 2, 'media_buttons' => false)); ?>
+                        <p class="description">Challenge section subtitle.</p>
                     </div>
                 </div>
             </div>
@@ -419,7 +427,8 @@ function aimpro_funnelbuilds_meta_box_callback($post) {
                 <div class="meta-column">
                     <div class="meta-field">
                         <label class="meta-label" for="fb_case_study_challenge">Challenge Description</label>
-                        <textarea id="fb_case_study_challenge" name="fb_case_study_challenge"><?php echo esc_textarea(get_meta_value('fb_case_study_challenge', $defaults)); ?></textarea>
+                        <?php wp_editor(get_meta_value('fb_case_study_challenge', $defaults), 'fb_case_study_challenge', array('textarea_rows' => 5, 'media_buttons' => false)); ?>
+                        <p class="description">Detailed challenge description.</p>
                     </div>
                 </div>
             </div>
@@ -452,7 +461,8 @@ function aimpro_funnelbuilds_meta_box_callback($post) {
                 <div class="meta-column">
                     <div class="meta-field">
                         <label class="meta-label" for="fb_case_study_solution_title">Solution Title</label>
-                        <input type="text" id="fb_case_study_solution_title" name="fb_case_study_solution_title" value="<?php echo esc_attr(get_meta_value('fb_case_study_solution_title', $defaults)); ?>" />
+                        <?php wp_editor(get_meta_value('fb_case_study_solution_title', $defaults), 'fb_case_study_solution_title', array('textarea_rows' => 2, 'media_buttons' => false)); ?>
+                        <p class="description">Solution section title.</p>
                     </div>
                 </div>
             </div>
@@ -461,6 +471,7 @@ function aimpro_funnelbuilds_meta_box_callback($post) {
                     <div class="meta-field">
                         <label class="meta-label" for="fb_case_study_solution">Solution Description (one point per line)</label>
                         <textarea id="fb_case_study_solution" name="fb_case_study_solution"><?php echo esc_textarea(get_meta_value('fb_case_study_solution', $defaults)); ?></textarea>
+                        <p class="description">Solution points, one per line.</p>
                     </div>
                 </div>
             </div>
@@ -470,7 +481,8 @@ function aimpro_funnelbuilds_meta_box_callback($post) {
                 <div class="meta-column">
                     <div class="meta-field">
                         <label class="meta-label" for="fb_case_study_results_title">Results Title</label>
-                        <input type="text" id="fb_case_study_results_title" name="fb_case_study_results_title" value="<?php echo esc_attr(get_meta_value('fb_case_study_results_title', $defaults)); ?>" />
+                        <?php wp_editor(get_meta_value('fb_case_study_results_title', $defaults), 'fb_case_study_results_title', array('textarea_rows' => 2, 'media_buttons' => false)); ?>
+                        <p class="description">Results section title.</p>
                     </div>
                 </div>
             </div>
@@ -498,7 +510,8 @@ function aimpro_funnelbuilds_meta_box_callback($post) {
                 <div class="meta-column">
                     <div class="meta-field">
                         <label class="meta-label" for="fb_types_title">Section Title</label>
-                        <input type="text" id="fb_types_title" name="fb_types_title" value="<?php echo esc_attr(get_meta_value('fb_types_title', $defaults)); ?>" />
+                        <?php wp_editor(get_meta_value('fb_types_title', $defaults), 'fb_types_title', array('textarea_rows' => 3, 'media_buttons' => false)); ?>
+                        <p class="description">Types of funnels section heading.</p>
                     </div>
                 </div>
             </div>
@@ -509,15 +522,16 @@ function aimpro_funnelbuilds_meta_box_callback($post) {
                         <h4>Type <?php echo $i; ?></h4>
                         <div class="meta-field">
                             <label class="meta-label" for="fb_type<?php echo $i; ?>_title">Type <?php echo $i; ?> Title</label>
-                            <input type="text" id="fb_type<?php echo $i; ?>_title" name="fb_type<?php echo $i; ?>_title" value="<?php echo esc_attr(get_meta_value("fb_type{$i}_title", $defaults)); ?>" />
+                            <?php wp_editor(get_meta_value("fb_type{$i}_title", $defaults), "fb_type{$i}_title", array('textarea_name' => "fb_type{$i}_title", 'textarea_rows' => 2, 'media_buttons' => false)); ?>
                         </div>
                         <div class="meta-field">
                             <label class="meta-label" for="fb_type<?php echo $i; ?>_description">Type <?php echo $i; ?> Description</label>
-                            <textarea id="fb_type<?php echo $i; ?>_description" name="fb_type<?php echo $i; ?>_description"><?php echo esc_textarea(get_meta_value("fb_type{$i}_description", $defaults)); ?></textarea>
+                            <?php wp_editor(get_meta_value("fb_type{$i}_description", $defaults), "fb_type{$i}_description", array('textarea_name' => "fb_type{$i}_description", 'textarea_rows' => 4, 'media_buttons' => false)); ?>
                         </div>
                         <div class="meta-field">
                             <label class="meta-label" for="fb_type<?php echo $i; ?>_items">Type <?php echo $i; ?> Items (one per line)</label>
                             <textarea id="fb_type<?php echo $i; ?>_items" name="fb_type<?php echo $i; ?>_items"><?php echo esc_textarea(get_meta_value("fb_type{$i}_items", $defaults)); ?></textarea>
+                            <p class="description">List items, one per line.</p>
                         </div>
                     </div>
                 </div>
@@ -531,7 +545,8 @@ function aimpro_funnelbuilds_meta_box_callback($post) {
                 <div class="meta-column">
                     <div class="meta-field">
                         <label class="meta-label" for="fb_process_title">Section Title</label>
-                        <input type="text" id="fb_process_title" name="fb_process_title" value="<?php echo esc_attr(get_meta_value('fb_process_title', $defaults)); ?>" />
+                        <?php wp_editor(get_meta_value('fb_process_title', $defaults), 'fb_process_title', array('textarea_rows' => 3, 'media_buttons' => false)); ?>
+                        <p class="description">Process section heading.</p>
                     </div>
                 </div>
             </div>
@@ -547,13 +562,13 @@ function aimpro_funnelbuilds_meta_box_callback($post) {
                     <div class="meta-column">
                         <div class="meta-field">
                             <label class="meta-label" for="fb_process<?php echo $i; ?>_title">Step <?php echo $i; ?> Title</label>
-                            <input type="text" id="fb_process<?php echo $i; ?>_title" name="fb_process<?php echo $i; ?>_title" value="<?php echo esc_attr(get_meta_value("fb_process{$i}_title", $defaults)); ?>" />
+                            <?php wp_editor(get_meta_value("fb_process{$i}_title", $defaults), "fb_process{$i}_title", array('textarea_name' => "fb_process{$i}_title", 'textarea_rows' => 2, 'media_buttons' => false)); ?>
                         </div>
                     </div>
                     <div class="meta-column">
                         <div class="meta-field">
                             <label class="meta-label" for="fb_process<?php echo $i; ?>_description">Step <?php echo $i; ?> Description</label>
-                            <textarea id="fb_process<?php echo $i; ?>_description" name="fb_process<?php echo $i; ?>_description"><?php echo esc_textarea(get_meta_value("fb_process{$i}_description", $defaults)); ?></textarea>
+                            <?php wp_editor(get_meta_value("fb_process{$i}_description", $defaults), "fb_process{$i}_description", array('textarea_name' => "fb_process{$i}_description", 'textarea_rows' => 4, 'media_buttons' => false)); ?>
                         </div>
                     </div>
                 </div>
@@ -567,7 +582,8 @@ function aimpro_funnelbuilds_meta_box_callback($post) {
                 <div class="meta-column">
                     <div class="meta-field">
                         <label class="meta-label" for="fb_packages_title">Section Title</label>
-                        <input type="text" id="fb_packages_title" name="fb_packages_title" value="<?php echo esc_attr(get_meta_value('fb_packages_title', $defaults)); ?>" />
+                        <?php wp_editor(get_meta_value('fb_packages_title', $defaults), 'fb_packages_title', array('textarea_rows' => 3, 'media_buttons' => false)); ?>
+                        <p class="description">Packages section heading.</p>
                     </div>
                 </div>
             </div>
@@ -575,7 +591,8 @@ function aimpro_funnelbuilds_meta_box_callback($post) {
                 <div class="meta-column">
                     <div class="meta-field">
                         <label class="meta-label" for="fb_packages_subtitle">Section Subtitle</label>
-                        <input type="text" id="fb_packages_subtitle" name="fb_packages_subtitle" value="<?php echo esc_attr(get_meta_value('fb_packages_subtitle', $defaults)); ?>" />
+                        <?php wp_editor(get_meta_value('fb_packages_subtitle', $defaults), 'fb_packages_subtitle', array('textarea_rows' => 3, 'media_buttons' => false)); ?>
+                        <p class="description">Packages section subtitle.</p>
                     </div>
                 </div>
             </div>
@@ -592,7 +609,7 @@ function aimpro_funnelbuilds_meta_box_callback($post) {
                         <?php endif; ?>
                         <div class="meta-field">
                             <label class="meta-label" for="fb_package<?php echo $i; ?>_title">Package Title</label>
-                            <input type="text" id="fb_package<?php echo $i; ?>_title" name="fb_package<?php echo $i; ?>_title" value="<?php echo esc_attr(get_meta_value("fb_package{$i}_title", $defaults)); ?>" />
+                            <?php wp_editor(get_meta_value("fb_package{$i}_title", $defaults), "fb_package{$i}_title", array('textarea_name' => "fb_package{$i}_title", 'textarea_rows' => 2, 'media_buttons' => false)); ?>
                         </div>
                         <div class="meta-field">
                             <label class="meta-label" for="fb_package<?php echo $i; ?>_price">Package Price</label>
@@ -600,15 +617,16 @@ function aimpro_funnelbuilds_meta_box_callback($post) {
                         </div>
                         <div class="meta-field">
                             <label class="meta-label" for="fb_package<?php echo $i; ?>_description">Package Description</label>
-                            <input type="text" id="fb_package<?php echo $i; ?>_description" name="fb_package<?php echo $i; ?>_description" value="<?php echo esc_attr(get_meta_value("fb_package{$i}_description", $defaults)); ?>" />
+                            <?php wp_editor(get_meta_value("fb_package{$i}_description", $defaults), "fb_package{$i}_description", array('textarea_name' => "fb_package{$i}_description", 'textarea_rows' => 3, 'media_buttons' => false)); ?>
                         </div>
                         <div class="meta-field">
                             <label class="meta-label" for="fb_package<?php echo $i; ?>_features">Package Features (one per line)</label>
                             <textarea id="fb_package<?php echo $i; ?>_features" name="fb_package<?php echo $i; ?>_features"><?php echo esc_textarea(get_meta_value("fb_package{$i}_features", $defaults)); ?></textarea>
+                            <p class="description">Package features, one per line.</p>
                         </div>
                         <div class="meta-field">
                             <label class="meta-label" for="fb_package<?php echo $i; ?>_cta">Package CTA Button Text</label>
-                            <input type="text" id="fb_package<?php echo $i; ?>_cta" name="fb_package<?php echo $i; ?>_cta" value="<?php echo esc_attr(get_meta_value("fb_package{$i}_cta", $defaults)); ?>" />
+                            <?php wp_editor(get_meta_value("fb_package{$i}_cta", $defaults), "fb_package{$i}_cta", array('textarea_name' => "fb_package{$i}_cta", 'textarea_rows' => 2, 'media_buttons' => false)); ?>
                         </div>
                     </div>
                 </div>
@@ -622,7 +640,8 @@ function aimpro_funnelbuilds_meta_box_callback($post) {
                 <div class="meta-column">
                     <div class="meta-field">
                         <label class="meta-label" for="fb_technology_title">Section Title</label>
-                        <input type="text" id="fb_technology_title" name="fb_technology_title" value="<?php echo esc_attr(get_meta_value('fb_technology_title', $defaults)); ?>" />
+                        <?php wp_editor(get_meta_value('fb_technology_title', $defaults), 'fb_technology_title', array('textarea_rows' => 3, 'media_buttons' => false)); ?>
+                        <p class="description">Technology section heading.</p>
                     </div>
                 </div>
             </div>
@@ -632,7 +651,7 @@ function aimpro_funnelbuilds_meta_box_callback($post) {
                     <div class="meta-column">
                         <div class="meta-field">
                             <label class="meta-label" for="fb_technology<?php echo $i; ?>_title">Technology Category <?php echo $i; ?> Title</label>
-                            <input type="text" id="fb_technology<?php echo $i; ?>_title" name="fb_technology<?php echo $i; ?>_title" value="<?php echo esc_attr(get_meta_value("fb_technology{$i}_title", $defaults)); ?>" />
+                            <?php wp_editor(get_meta_value("fb_technology{$i}_title", $defaults), "fb_technology{$i}_title", array('textarea_name' => "fb_technology{$i}_title", 'textarea_rows' => 2, 'media_buttons' => false)); ?>
                         </div>
                         <div class="meta-field">
                             <label class="meta-label" for="fb_technology<?php echo $i; ?>_items">Technology Items (one per line)</label>
@@ -650,7 +669,8 @@ function aimpro_funnelbuilds_meta_box_callback($post) {
                 <div class="meta-column">
                     <div class="meta-field">
                         <label class="meta-label" for="fb_elements_title">Section Title</label>
-                        <input type="text" id="fb_elements_title" name="fb_elements_title" value="<?php echo esc_attr(get_meta_value('fb_elements_title', $defaults)); ?>" />
+                        <?php wp_editor(get_meta_value('fb_elements_title', $defaults), 'fb_elements_title', array('textarea_rows' => 3, 'media_buttons' => false)); ?>
+                        <p class="description">Conversion elements section heading.</p>
                     </div>
                 </div>
             </div>
@@ -660,13 +680,13 @@ function aimpro_funnelbuilds_meta_box_callback($post) {
                     <div class="meta-column">
                         <div class="meta-field">
                             <label class="meta-label" for="fb_element<?php echo $i; ?>_title">Element <?php echo $i; ?> Title</label>
-                            <input type="text" id="fb_element<?php echo $i; ?>_title" name="fb_element<?php echo $i; ?>_title" value="<?php echo esc_attr(get_meta_value("fb_element{$i}_title", $defaults)); ?>" />
+                            <?php wp_editor(get_meta_value("fb_element{$i}_title", $defaults), "fb_element{$i}_title", array('textarea_name' => "fb_element{$i}_title", 'textarea_rows' => 2, 'media_buttons' => false)); ?>
                         </div>
                     </div>
                     <div class="meta-column">
                         <div class="meta-field">
                             <label class="meta-label" for="fb_element<?php echo $i; ?>_description">Element <?php echo $i; ?> Description</label>
-                            <textarea id="fb_element<?php echo $i; ?>_description" name="fb_element<?php echo $i; ?>_description"><?php echo esc_textarea(get_meta_value("fb_element{$i}_description", $defaults)); ?></textarea>
+                            <?php wp_editor(get_meta_value("fb_element{$i}_description", $defaults), "fb_element{$i}_description", array('textarea_name' => "fb_element{$i}_description", 'textarea_rows' => 4, 'media_buttons' => false)); ?>
                         </div>
                     </div>
                 </div>
@@ -680,7 +700,8 @@ function aimpro_funnelbuilds_meta_box_callback($post) {
                 <div class="meta-column">
                     <div class="meta-field">
                         <label class="meta-label" for="fb_industries_title">Section Title</label>
-                        <input type="text" id="fb_industries_title" name="fb_industries_title" value="<?php echo esc_attr(get_meta_value('fb_industries_title', $defaults)); ?>" />
+                        <?php wp_editor(get_meta_value('fb_industries_title', $defaults), 'fb_industries_title', array('textarea_rows' => 3, 'media_buttons' => false)); ?>
+                        <p class="description">Industries section heading.</p>
                     </div>
                 </div>
             </div>
@@ -696,7 +717,7 @@ function aimpro_funnelbuilds_meta_box_callback($post) {
                     <div class="meta-column">
                         <div class="meta-field">
                             <label class="meta-label" for="fb_industry<?php echo $i; ?>_description">Industry <?php echo $i; ?> Description</label>
-                            <input type="text" id="fb_industry<?php echo $i; ?>_description" name="fb_industry<?php echo $i; ?>_description" value="<?php echo esc_attr(get_meta_value("fb_industry{$i}_description", $defaults)); ?>" />
+                            <?php wp_editor(get_meta_value("fb_industry{$i}_description", $defaults), "fb_industry{$i}_description", array('textarea_name' => "fb_industry{$i}_description", 'textarea_rows' => 3, 'media_buttons' => false)); ?>
                         </div>
                     </div>
                 </div>
@@ -710,7 +731,8 @@ function aimpro_funnelbuilds_meta_box_callback($post) {
                 <div class="meta-column">
                     <div class="meta-field">
                         <label class="meta-label" for="fb_testimonials_title">Section Title</label>
-                        <input type="text" id="fb_testimonials_title" name="fb_testimonials_title" value="<?php echo esc_attr(get_meta_value('fb_testimonials_title', $defaults)); ?>" />
+                        <?php wp_editor(get_meta_value('fb_testimonials_title', $defaults), 'fb_testimonials_title', array('textarea_rows' => 3, 'media_buttons' => false)); ?>
+                        <p class="description">Testimonials section heading.</p>
                     </div>
                 </div>
             </div>
@@ -721,7 +743,7 @@ function aimpro_funnelbuilds_meta_box_callback($post) {
                         <h4>Testimonial <?php echo $i; ?></h4>
                         <div class="meta-field">
                             <label class="meta-label" for="fb_testimonial<?php echo $i; ?>_text">Testimonial Text</label>
-                            <textarea id="fb_testimonial<?php echo $i; ?>_text" name="fb_testimonial<?php echo $i; ?>_text"><?php echo esc_textarea(get_meta_value("fb_testimonial{$i}_text", $defaults)); ?></textarea>
+                            <?php wp_editor(get_meta_value("fb_testimonial{$i}_text", $defaults), "fb_testimonial{$i}_text", array('textarea_name' => "fb_testimonial{$i}_text", 'textarea_rows' => 5, 'media_buttons' => false)); ?>
                         </div>
                         <div class="meta-field">
                             <label class="meta-label" for="fb_testimonial<?php echo $i; ?>_name">Person Name</label>
@@ -743,7 +765,8 @@ function aimpro_funnelbuilds_meta_box_callback($post) {
                 <div class="meta-column">
                     <div class="meta-field">
                         <label class="meta-label" for="fb_faq_title">Section Title</label>
-                        <input type="text" id="fb_faq_title" name="fb_faq_title" value="<?php echo esc_attr(get_meta_value('fb_faq_title', $defaults)); ?>" />
+                        <?php wp_editor(get_meta_value('fb_faq_title', $defaults), 'fb_faq_title', array('textarea_rows' => 3, 'media_buttons' => false)); ?>
+                        <p class="description">FAQ section heading.</p>
                     </div>
                 </div>
             </div>
@@ -758,7 +781,7 @@ function aimpro_funnelbuilds_meta_box_callback($post) {
                         </div>
                         <div class="meta-field">
                             <label class="meta-label" for="fb_faq<?php echo $i; ?>_answer">Answer</label>
-                            <textarea id="fb_faq<?php echo $i; ?>_answer" name="fb_faq<?php echo $i; ?>_answer"><?php echo esc_textarea(get_meta_value("fb_faq{$i}_answer", $defaults)); ?></textarea>
+                            <?php wp_editor(get_meta_value("fb_faq{$i}_answer", $defaults), "fb_faq{$i}_answer", array('textarea_name' => "fb_faq{$i}_answer", 'textarea_rows' => 5, 'media_buttons' => false)); ?>
                         </div>
                     </div>
                 </div>
@@ -787,15 +810,10 @@ function aimpro_save_funnelbuilds_meta($post_id) {
         return;
     }
     
-    // Get all fields from $_POST
-    $fields = array(
+    // Rich text fields (use wp_kses_post)
+    $rich_text_fields = array(
         // Hero Section
         'fb_hero_title', 'fb_hero_subtitle',
-        
-        // Stats Section
-        'fb_stat1_number', 'fb_stat1_label',
-        'fb_stat2_number', 'fb_stat2_label',
-        'fb_stat3_number', 'fb_stat3_label',
         'fb_cta_primary', 'fb_cta_secondary',
         
         // Introduction Section
@@ -809,43 +827,33 @@ function aimpro_save_funnelbuilds_meta($post_id) {
         
         // Case Study Section
         'fb_case_study_title', 'fb_case_study_subtitle', 'fb_case_study_challenge',
-        'fb_case_study_stat1_number', 'fb_case_study_stat1_label',
-        'fb_case_study_stat2_number', 'fb_case_study_stat2_label',
-        'fb_case_study_solution_title', 'fb_case_study_solution',
-        'fb_case_study_results_title',
-        'fb_case_study_result1_number', 'fb_case_study_result1_label',
-        'fb_case_study_result2_number', 'fb_case_study_result2_label',
-        'fb_case_study_result3_number', 'fb_case_study_result3_label',
-        'fb_case_study_result4_number', 'fb_case_study_result4_label',
+        'fb_case_study_solution_title', 'fb_case_study_results_title',
         
         // Types of Funnels Section
         'fb_types_title',
-        'fb_type1_title', 'fb_type1_description', 'fb_type1_items',
-        'fb_type2_title', 'fb_type2_description', 'fb_type2_items',
-        'fb_type3_title', 'fb_type3_description', 'fb_type3_items',
-        'fb_type4_title', 'fb_type4_description', 'fb_type4_items',
+        'fb_type1_title', 'fb_type1_description',
+        'fb_type2_title', 'fb_type2_description',
+        'fb_type3_title', 'fb_type3_description',
+        'fb_type4_title', 'fb_type4_description',
         
         // Process Section
         'fb_process_title',
-        'fb_process1_number', 'fb_process1_title', 'fb_process1_description',
-        'fb_process2_number', 'fb_process2_title', 'fb_process2_description',
-        'fb_process3_number', 'fb_process3_title', 'fb_process3_description',
-        'fb_process4_number', 'fb_process4_title', 'fb_process4_description',
-        'fb_process5_number', 'fb_process5_title', 'fb_process5_description',
-        'fb_process6_number', 'fb_process6_title', 'fb_process6_description',
+        'fb_process1_title', 'fb_process1_description',
+        'fb_process2_title', 'fb_process2_description',
+        'fb_process3_title', 'fb_process3_description',
+        'fb_process4_title', 'fb_process4_description',
+        'fb_process5_title', 'fb_process5_description',
+        'fb_process6_title', 'fb_process6_description',
         
         // Packages Section
         'fb_packages_title', 'fb_packages_subtitle',
-        'fb_package1_title', 'fb_package1_price', 'fb_package1_description', 'fb_package1_features', 'fb_package1_cta',
-        'fb_package2_label', 'fb_package2_title', 'fb_package2_price', 'fb_package2_description', 'fb_package2_features', 'fb_package2_cta',
-        'fb_package3_title', 'fb_package3_price', 'fb_package3_description', 'fb_package3_features', 'fb_package3_cta',
+        'fb_package1_title', 'fb_package1_description', 'fb_package1_cta',
+        'fb_package2_title', 'fb_package2_description', 'fb_package2_cta',
+        'fb_package3_title', 'fb_package3_description', 'fb_package3_cta',
         
         // Technology Section
         'fb_technology_title',
-        'fb_technology1_title', 'fb_technology1_items',
-        'fb_technology2_title', 'fb_technology2_items',
-        'fb_technology3_title', 'fb_technology3_items',
-        'fb_technology4_title', 'fb_technology4_items',
+        'fb_technology1_title', 'fb_technology2_title', 'fb_technology3_title', 'fb_technology4_title',
         
         // Conversion Elements Section
         'fb_elements_title',
@@ -858,33 +866,83 @@ function aimpro_save_funnelbuilds_meta($post_id) {
         
         // Industries Section
         'fb_industries_title',
-        'fb_industry1_name', 'fb_industry1_description',
-        'fb_industry2_name', 'fb_industry2_description',
-        'fb_industry3_name', 'fb_industry3_description',
-        'fb_industry4_name', 'fb_industry4_description',
-        'fb_industry5_name', 'fb_industry5_description',
-        'fb_industry6_name', 'fb_industry6_description',
+        'fb_industry1_description', 'fb_industry2_description', 'fb_industry3_description',
+        'fb_industry4_description', 'fb_industry5_description', 'fb_industry6_description',
         
         // Testimonials Section
         'fb_testimonials_title',
-        'fb_testimonial1_text', 'fb_testimonial1_name', 'fb_testimonial1_title',
-        'fb_testimonial2_text', 'fb_testimonial2_name', 'fb_testimonial2_title',
-        'fb_testimonial3_text', 'fb_testimonial3_name', 'fb_testimonial3_title',
+        'fb_testimonial1_text', 'fb_testimonial2_text', 'fb_testimonial3_text',
         
         // FAQ Section
         'fb_faq_title',
-        'fb_faq1_question', 'fb_faq1_answer',
-        'fb_faq2_question', 'fb_faq2_answer',
-        'fb_faq3_question', 'fb_faq3_answer',
-        'fb_faq4_question', 'fb_faq4_answer',
-        'fb_faq5_question', 'fb_faq5_answer',
-        'fb_faq6_question', 'fb_faq6_answer'
+        'fb_faq1_answer', 'fb_faq2_answer', 'fb_faq3_answer',
+        'fb_faq4_answer', 'fb_faq5_answer', 'fb_faq6_answer'
     );
     
-    // Update post meta for each field
-    foreach ($fields as $field) {
+    // Simple text fields (use sanitize_text_field)
+    $simple_text_fields = array(
+        // Stats Section
+        'fb_stat1_number', 'fb_stat1_label',
+        'fb_stat2_number', 'fb_stat2_label',
+        'fb_stat3_number', 'fb_stat3_label',
+        
+        // Case Study Section
+        'fb_case_study_stat1_number', 'fb_case_study_stat1_label',
+        'fb_case_study_stat2_number', 'fb_case_study_stat2_label',
+        'fb_case_study_result1_number', 'fb_case_study_result1_label',
+        'fb_case_study_result2_number', 'fb_case_study_result2_label',
+        'fb_case_study_result3_number', 'fb_case_study_result3_label',
+        'fb_case_study_result4_number', 'fb_case_study_result4_label',
+        
+        // Process Section
+        'fb_process1_number', 'fb_process2_number', 'fb_process3_number',
+        'fb_process4_number', 'fb_process5_number', 'fb_process6_number',
+        
+        // Packages Section
+        'fb_package1_price', 'fb_package2_label', 'fb_package2_price', 'fb_package3_price',
+        
+        // Industries Section
+        'fb_industry1_name', 'fb_industry2_name', 'fb_industry3_name',
+        'fb_industry4_name', 'fb_industry5_name', 'fb_industry6_name',
+        
+        // Testimonials Section
+        'fb_testimonial1_name', 'fb_testimonial1_title',
+        'fb_testimonial2_name', 'fb_testimonial2_title',
+        'fb_testimonial3_name', 'fb_testimonial3_title',
+        
+        // FAQ Section
+        'fb_faq1_question', 'fb_faq2_question', 'fb_faq3_question',
+        'fb_faq4_question', 'fb_faq5_question', 'fb_faq6_question'
+    );
+    
+    // Textarea fields (use sanitize_textarea_field)
+    $textarea_fields = array(
+        'fb_case_study_solution',
+        'fb_type1_items', 'fb_type2_items', 'fb_type3_items', 'fb_type4_items',
+        'fb_package1_features', 'fb_package2_features', 'fb_package3_features',
+        'fb_technology1_items', 'fb_technology2_items', 'fb_technology3_items', 'fb_technology4_items'
+    );
+    
+    // Update rich text fields
+    foreach ($rich_text_fields as $field) {
         if (isset($_POST[$field])) {
             $value = wp_kses_post($_POST[$field]);
+            update_post_meta($post_id, $field, $value);
+        }
+    }
+    
+    // Update simple text fields
+    foreach ($simple_text_fields as $field) {
+        if (isset($_POST[$field])) {
+            $value = sanitize_text_field($_POST[$field]);
+            update_post_meta($post_id, $field, $value);
+        }
+    }
+    
+    // Update textarea fields
+    foreach ($textarea_fields as $field) {
+        if (isset($_POST[$field])) {
+            $value = sanitize_textarea_field($_POST[$field]);
             update_post_meta($post_id, $field, $value);
         }
     }
