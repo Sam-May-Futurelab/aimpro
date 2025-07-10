@@ -23,8 +23,8 @@ get_header(); ?>
     <div class="container">          <!-- Page Header -->
         <section class="page-header">
             <div class="page-header-content animate-on-scroll animate-fade-up">
-                <h1><?php echo esc_html(get_post_meta(get_the_ID(), 'blog_header_title', true) ?: 'Blog & Insights'); ?></h1>
-                <p class="page-subtitle"><?php echo esc_html(get_post_meta(get_the_ID(), 'blog_header_subtitle', true) ?: 'Stay ahead with the latest digital marketing insights and strategies'); ?></p>
+                <h1><?php echo wp_kses_post(get_post_meta(get_the_ID(), 'blog_header_title', true) ?: 'Blog & Insights'); ?></h1>
+                <p class="page-subtitle"><?php echo wp_kses_post(get_post_meta(get_the_ID(), 'blog_header_subtitle', true) ?: 'Stay ahead with the latest digital marketing insights and strategies'); ?></p>
             </div>
         </section>
 
@@ -91,7 +91,7 @@ get_header(); ?>
                             </div>
                         <?php endif; wp_reset_postdata(); ?>                        <!-- Blog Posts Grid -->
                         <div class="blog-posts">
-                            <h2 class="section-title animate-on-scroll animate-fade-up"><?php echo esc_html(get_post_meta(get_the_ID(), 'blog_latest_title', true) ?: 'Latest Articles'); ?></h2>
+                            <h2 class="section-title animate-on-scroll animate-fade-up"><?php echo wp_kses_post(get_post_meta(get_the_ID(), 'blog_latest_title', true) ?: 'Latest Articles'); ?></h2>
                             
                             <div class="posts-grid">
                                 <?php
@@ -234,7 +234,7 @@ get_header(); ?>
                     <aside class="blog-sidebar animate-on-scroll animate-slide-right">
                           <!-- Categories -->
                         <div class="sidebar-widget">
-                            <h3 class="widget-title"><?php echo esc_html(get_post_meta(get_the_ID(), 'blog_categories_title', true) ?: 'Categories'); ?></h3>
+                            <h3 class="widget-title"><?php echo wp_kses_post(get_post_meta(get_the_ID(), 'blog_categories_title', true) ?: 'Categories'); ?></h3>
                             <ul class="category-list">
                                 <?php
                                 $categories = get_categories(array(
@@ -265,7 +265,7 @@ get_header(); ?>
                         
                         <!-- Recent Posts -->
                         <div class="sidebar-widget">
-                            <h3 class="widget-title"><?php echo esc_html(get_post_meta(get_the_ID(), 'blog_recent_posts_title', true) ?: 'Recent Posts'); ?></h3>
+                            <h3 class="widget-title"><?php echo wp_kses_post(get_post_meta(get_the_ID(), 'blog_recent_posts_title', true) ?: 'Recent Posts'); ?></h3>
                             <div class="recent-posts">
                                 <?php
                                 $recent_args = array(
@@ -317,8 +317,8 @@ get_header(); ?>
 
                         <!-- Simple Newsletter Widget -->
                         <div class="sidebar-widget" style="overflow: hidden;">
-                            <h3 class="widget-title"><?php echo esc_html(get_post_meta(get_the_ID(), 'blog_newsletter_title', true) ?: 'Stay Updated'); ?></h3>
-                            <p><?php echo esc_html(get_post_meta(get_the_ID(), 'blog_newsletter_subtitle', true) ?: 'Get weekly insights delivered to your inbox.'); ?></p>
+                            <h3 class="widget-title"><?php echo wp_kses_post(get_post_meta(get_the_ID(), 'blog_newsletter_title', true) ?: 'Stay Updated'); ?></h3>
+                            <p><?php echo wp_kses_post(get_post_meta(get_the_ID(), 'blog_newsletter_subtitle', true) ?: 'Get weekly insights delivered to your inbox.'); ?></p>
                             
                             <?php if (isset($_GET['newsletter_success'])): ?>
                                 <div class="form-message success" style="background: #d4edda; color: #155724; padding: 15px; border-radius: 8px; margin-bottom: 20px; border-left: 4px solid #28a745;">

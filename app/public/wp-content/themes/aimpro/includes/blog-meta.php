@@ -55,26 +55,50 @@ function aimpro_blog_meta_box_callback($post) {
     <div class="aimpro-blog-meta">
         <h4>Header Section</h4>
         <table class="form-table">
-            <tr><th><label for="blog_header_title">Title</label></th><td><input type="text" id="blog_header_title" name="blog_header_title" value="<?php echo esc_attr($blog_header_title); ?>" /></td></tr>
-            <tr><th><label for="blog_header_subtitle">Subtitle</label></th><td><input type="text" id="blog_header_subtitle" name="blog_header_subtitle" value="<?php echo esc_attr($blog_header_subtitle); ?>" /></td></tr>
+            <tr>
+                <th><label for="blog_header_title">Title</label></th>
+                <td><?php wp_editor($blog_header_title, 'blog_header_title', array('textarea_rows' => 3, 'media_buttons' => false, 'teeny' => true)); ?></td>
+            </tr>
+            <tr>
+                <th><label for="blog_header_subtitle">Subtitle</label></th>
+                <td><?php wp_editor($blog_header_subtitle, 'blog_header_subtitle', array('textarea_rows' => 3, 'media_buttons' => false, 'teeny' => true)); ?></td>
+            </tr>
         </table>
         
         <h4>Blog Posts Section</h4>
         <table class="form-table">
-            <tr><th><label for="blog_latest_title">Latest Posts Title</label></th><td><input type="text" id="blog_latest_title" name="blog_latest_title" value="<?php echo esc_attr($blog_latest_title); ?>" /></td></tr>
+            <tr>
+                <th><label for="blog_latest_title">Latest Posts Title</label></th>
+                <td><?php wp_editor($blog_latest_title, 'blog_latest_title', array('textarea_rows' => 3, 'media_buttons' => false, 'teeny' => true)); ?></td>
+            </tr>
         </table>
         
         <h4>Sidebar Widgets</h4>
         <table class="form-table">
-            <tr><th><label for="blog_categories_title">Categories Widget Title</label></th><td><input type="text" id="blog_categories_title" name="blog_categories_title" value="<?php echo esc_attr($blog_categories_title); ?>" /></td></tr>
-            <tr><th><label for="blog_recent_posts_title">Recent Posts Widget Title</label></th><td><input type="text" id="blog_recent_posts_title" name="blog_recent_posts_title" value="<?php echo esc_attr($blog_recent_posts_title); ?>" /></td></tr>
+            <tr>
+                <th><label for="blog_categories_title">Categories Widget Title</label></th>
+                <td><?php wp_editor($blog_categories_title, 'blog_categories_title', array('textarea_rows' => 3, 'media_buttons' => false, 'teeny' => true)); ?></td>
+            </tr>
+            <tr>
+                <th><label for="blog_recent_posts_title">Recent Posts Widget Title</label></th>
+                <td><?php wp_editor($blog_recent_posts_title, 'blog_recent_posts_title', array('textarea_rows' => 3, 'media_buttons' => false, 'teeny' => true)); ?></td>
+            </tr>
         </table>
         
         <h4>Newsletter Widget</h4>
         <table class="form-table">
-            <tr><th><label for="blog_newsletter_title">Newsletter Title</label></th><td><input type="text" id="blog_newsletter_title" name="blog_newsletter_title" value="<?php echo esc_attr($blog_newsletter_title); ?>" /></td></tr>
-            <tr><th><label for="blog_newsletter_subtitle">Newsletter Subtitle</label></th><td><input type="text" id="blog_newsletter_subtitle" name="blog_newsletter_subtitle" value="<?php echo esc_attr($blog_newsletter_subtitle); ?>" /></td></tr>
-            <tr><th><label for="blog_newsletter_button_text">Button Text</label></th><td><input type="text" id="blog_newsletter_button_text" name="blog_newsletter_button_text" value="<?php echo esc_attr($blog_newsletter_button_text); ?>" /></td></tr>
+            <tr>
+                <th><label for="blog_newsletter_title">Newsletter Title</label></th>
+                <td><?php wp_editor($blog_newsletter_title, 'blog_newsletter_title', array('textarea_rows' => 3, 'media_buttons' => false, 'teeny' => true)); ?></td>
+            </tr>
+            <tr>
+                <th><label for="blog_newsletter_subtitle">Newsletter Subtitle</label></th>
+                <td><?php wp_editor($blog_newsletter_subtitle, 'blog_newsletter_subtitle', array('textarea_rows' => 3, 'media_buttons' => false, 'teeny' => true)); ?></td>
+            </tr>
+            <tr>
+                <th><label for="blog_newsletter_button_text">Button Text</label></th>
+                <td><?php wp_editor($blog_newsletter_button_text, 'blog_newsletter_button_text', array('textarea_rows' => 2, 'media_buttons' => false, 'teeny' => true)); ?></td>
+            </tr>
         </table>
     </div>
     <?php
@@ -103,7 +127,8 @@ function aimpro_save_blog_meta_fields($post_id) {
     
     foreach ($fields as $field) {
         if (isset($_POST[$field])) {
-            $value = sanitize_text_field($_POST[$field]);
+            // Use wp_kses_post for rich text fields (all fields use wp_editor)
+            $value = wp_kses_post($_POST[$field]);
             update_post_meta($post_id, $field, $value);
         }
     }
