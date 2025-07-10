@@ -160,7 +160,17 @@ function aimpro_partner_meta_box_callback($post) {
         </tr>
         <tr>
             <th><label for="partner_intro_text">Introduction Text</label></th>
-            <td><textarea id="partner_intro_text" name="partner_intro_text" rows="5" class="large-text"><?php echo esc_textarea($intro_text); ?></textarea></td>
+            <td>
+                <?php 
+                wp_editor($intro_text, 'partner_intro_text', array(
+                    'textarea_name' => 'partner_intro_text',
+                    'media_buttons' => false,
+                    'textarea_rows' => 5,
+                    'teeny' => true,
+                    'quicktags' => true
+                ));
+                ?>
+            </td>
         </tr>
         
         <tr>
@@ -212,7 +222,17 @@ function aimpro_partner_meta_box_callback($post) {
         </tr>
         <tr>
             <th><label for="partner_referral_description">Description</label></th>
-            <td><textarea id="partner_referral_description" name="partner_referral_description" rows="3" class="large-text"><?php echo esc_textarea($referral_description); ?></textarea></td>
+            <td>
+                <?php 
+                wp_editor($referral_description, 'partner_referral_description', array(
+                    'textarea_name' => 'partner_referral_description',
+                    'media_buttons' => false,
+                    'textarea_rows' => 3,
+                    'teeny' => true,
+                    'quicktags' => true
+                ));
+                ?>
+            </td>
         </tr>
         <tr>
             <th><label for="partner_referral_benefits">Benefits (one per line)</label></th>
@@ -220,7 +240,17 @@ function aimpro_partner_meta_box_callback($post) {
         </tr>
         <tr>
             <th><label for="partner_referral_ideal">Ideal For</label></th>
-            <td><textarea id="partner_referral_ideal" name="partner_referral_ideal" rows="2" class="large-text"><?php echo esc_textarea($referral_ideal); ?></textarea></td>
+            <td>
+                <?php 
+                wp_editor($referral_ideal, 'partner_referral_ideal', array(
+                    'textarea_name' => 'partner_referral_ideal',
+                    'media_buttons' => false,
+                    'textarea_rows' => 2,
+                    'teeny' => true,
+                    'quicktags' => true
+                ));
+                ?>
+            </td>
         </tr>
         
         <tr>
@@ -232,7 +262,17 @@ function aimpro_partner_meta_box_callback($post) {
         </tr>
         <tr>
             <th><label for="partner_tech_description">Description</label></th>
-            <td><textarea id="partner_tech_description" name="partner_tech_description" rows="3" class="large-text"><?php echo esc_textarea($tech_description); ?></textarea></td>
+            <td>
+                <?php 
+                wp_editor($tech_description, 'partner_tech_description', array(
+                    'textarea_name' => 'partner_tech_description',
+                    'media_buttons' => false,
+                    'textarea_rows' => 3,
+                    'teeny' => true,
+                    'quicktags' => true
+                ));
+                ?>
+            </td>
         </tr>
         <tr>
             <th><label for="partner_tech_benefits">Benefits (one per line)</label></th>
@@ -240,7 +280,17 @@ function aimpro_partner_meta_box_callback($post) {
         </tr>
         <tr>
             <th><label for="partner_tech_ideal">Ideal For</label></th>
-            <td><textarea id="partner_tech_ideal" name="partner_tech_ideal" rows="2" class="large-text"><?php echo esc_textarea($tech_ideal); ?></textarea></td>
+            <td>
+                <?php 
+                wp_editor($tech_ideal, 'partner_tech_ideal', array(
+                    'textarea_name' => 'partner_tech_ideal',
+                    'media_buttons' => false,
+                    'textarea_rows' => 2,
+                    'teeny' => true,
+                    'quicktags' => true
+                ));
+                ?>
+            </td>
         </tr>
         
         <tr>
@@ -252,7 +302,17 @@ function aimpro_partner_meta_box_callback($post) {
         </tr>
         <tr>
             <th><label for="partner_agency_description">Description</label></th>
-            <td><textarea id="partner_agency_description" name="partner_agency_description" rows="3" class="large-text"><?php echo esc_textarea($agency_description); ?></textarea></td>
+            <td>
+                <?php 
+                wp_editor($agency_description, 'partner_agency_description', array(
+                    'textarea_name' => 'partner_agency_description',
+                    'media_buttons' => false,
+                    'textarea_rows' => 3,
+                    'teeny' => true,
+                    'quicktags' => true
+                ));
+                ?>
+            </td>
         </tr>
         <tr>
             <th><label for="partner_agency_benefits">Benefits (one per line)</label></th>
@@ -260,7 +320,17 @@ function aimpro_partner_meta_box_callback($post) {
         </tr>
         <tr>
             <th><label for="partner_agency_ideal">Ideal For</label></th>
-            <td><textarea id="partner_agency_ideal" name="partner_agency_ideal" rows="2" class="large-text"><?php echo esc_textarea($agency_ideal); ?></textarea></td>
+            <td>
+                <?php 
+                wp_editor($agency_ideal, 'partner_agency_ideal', array(
+                    'textarea_name' => 'partner_agency_ideal',
+                    'media_buttons' => false,
+                    'textarea_rows' => 2,
+                    'teeny' => true,
+                    'quicktags' => true
+                ));
+                ?>
+            </td>
         </tr>
         
         <tr>
@@ -272,7 +342,17 @@ function aimpro_partner_meta_box_callback($post) {
         </tr>
         <tr>
             <th><label for="partner_reseller_description">Description</label></th>
-            <td><textarea id="partner_reseller_description" name="partner_reseller_description" rows="3" class="large-text"><?php echo esc_textarea($reseller_description); ?></textarea></td>
+            <td>
+                <?php 
+                wp_editor($reseller_description, 'partner_reseller_description', array(
+                    'textarea_name' => 'partner_reseller_description',
+                    'media_buttons' => false,
+                    'textarea_rows' => 3,
+                    'teeny' => true,
+                    'quicktags' => true
+                ));
+                ?>
+            </td>
         </tr>
         <tr>
             <th><label for="partner_reseller_benefits">Benefits (one per line)</label></th>
@@ -280,7 +360,17 @@ function aimpro_partner_meta_box_callback($post) {
         </tr>
         <tr>
             <th><label for="partner_reseller_ideal">Ideal For</label></th>
-            <td><textarea id="partner_reseller_ideal" name="partner_reseller_ideal" rows="2" class="large-text"><?php echo esc_textarea($reseller_ideal); ?></textarea></td>
+            <td>
+                <?php 
+                wp_editor($reseller_ideal, 'partner_reseller_ideal', array(
+                    'textarea_name' => 'partner_reseller_ideal',
+                    'media_buttons' => false,
+                    'textarea_rows' => 2,
+                    'teeny' => true,
+                    'quicktags' => true
+                ));
+                ?>
+            </td>
         </tr>
         
         <tr>
@@ -296,7 +386,17 @@ function aimpro_partner_meta_box_callback($post) {
         </tr>
         <tr>
             <th><label for="partner_why_benefit1_text">Benefit 1 Text</label></th>
-            <td><textarea id="partner_why_benefit1_text" name="partner_why_benefit1_text" rows="2" class="large-text"><?php echo esc_textarea($why_benefit1_text); ?></textarea></td>
+            <td>
+                <?php 
+                wp_editor($why_benefit1_text, 'partner_why_benefit1_text', array(
+                    'textarea_name' => 'partner_why_benefit1_text',
+                    'media_buttons' => false,
+                    'textarea_rows' => 2,
+                    'teeny' => true,
+                    'quicktags' => true
+                ));
+                ?>
+            </td>
         </tr>
         <tr>
             <th><label for="partner_why_benefit2_title">Benefit 2 Title</label></th>
@@ -304,7 +404,17 @@ function aimpro_partner_meta_box_callback($post) {
         </tr>
         <tr>
             <th><label for="partner_why_benefit2_text">Benefit 2 Text</label></th>
-            <td><textarea id="partner_why_benefit2_text" name="partner_why_benefit2_text" rows="2" class="large-text"><?php echo esc_textarea($why_benefit2_text); ?></textarea></td>
+            <td>
+                <?php 
+                wp_editor($why_benefit2_text, 'partner_why_benefit2_text', array(
+                    'textarea_name' => 'partner_why_benefit2_text',
+                    'media_buttons' => false,
+                    'textarea_rows' => 2,
+                    'teeny' => true,
+                    'quicktags' => true
+                ));
+                ?>
+            </td>
         </tr>
         <tr>
             <th><label for="partner_why_benefit3_title">Benefit 3 Title</label></th>
@@ -312,7 +422,17 @@ function aimpro_partner_meta_box_callback($post) {
         </tr>
         <tr>
             <th><label for="partner_why_benefit3_text">Benefit 3 Text</label></th>
-            <td><textarea id="partner_why_benefit3_text" name="partner_why_benefit3_text" rows="2" class="large-text"><?php echo esc_textarea($why_benefit3_text); ?></textarea></td>
+            <td>
+                <?php 
+                wp_editor($why_benefit3_text, 'partner_why_benefit3_text', array(
+                    'textarea_name' => 'partner_why_benefit3_text',
+                    'media_buttons' => false,
+                    'textarea_rows' => 2,
+                    'teeny' => true,
+                    'quicktags' => true
+                ));
+                ?>
+            </td>
         </tr>
         <tr>
             <th><label for="partner_why_benefit4_title">Benefit 4 Title</label></th>
@@ -320,7 +440,17 @@ function aimpro_partner_meta_box_callback($post) {
         </tr>
         <tr>
             <th><label for="partner_why_benefit4_text">Benefit 4 Text</label></th>
-            <td><textarea id="partner_why_benefit4_text" name="partner_why_benefit4_text" rows="2" class="large-text"><?php echo esc_textarea($why_benefit4_text); ?></textarea></td>
+            <td>
+                <?php 
+                wp_editor($why_benefit4_text, 'partner_why_benefit4_text', array(
+                    'textarea_name' => 'partner_why_benefit4_text',
+                    'media_buttons' => false,
+                    'textarea_rows' => 2,
+                    'teeny' => true,
+                    'quicktags' => true
+                ));
+                ?>
+            </td>
         </tr>
         <tr>
             <th><label for="partner_why_benefit5_title">Benefit 5 Title</label></th>
@@ -328,7 +458,17 @@ function aimpro_partner_meta_box_callback($post) {
         </tr>
         <tr>
             <th><label for="partner_why_benefit5_text">Benefit 5 Text</label></th>
-            <td><textarea id="partner_why_benefit5_text" name="partner_why_benefit5_text" rows="2" class="large-text"><?php echo esc_textarea($why_benefit5_text); ?></textarea></td>
+            <td>
+                <?php 
+                wp_editor($why_benefit5_text, 'partner_why_benefit5_text', array(
+                    'textarea_name' => 'partner_why_benefit5_text',
+                    'media_buttons' => false,
+                    'textarea_rows' => 2,
+                    'teeny' => true,
+                    'quicktags' => true
+                ));
+                ?>
+            </td>
         </tr>
         <tr>
             <th><label for="partner_why_benefit6_title">Benefit 6 Title</label></th>
@@ -336,7 +476,17 @@ function aimpro_partner_meta_box_callback($post) {
         </tr>
         <tr>
             <th><label for="partner_why_benefit6_text">Benefit 6 Text</label></th>
-            <td><textarea id="partner_why_benefit6_text" name="partner_why_benefit6_text" rows="2" class="large-text"><?php echo esc_textarea($why_benefit6_text); ?></textarea></td>
+            <td>
+                <?php 
+                wp_editor($why_benefit6_text, 'partner_why_benefit6_text', array(
+                    'textarea_name' => 'partner_why_benefit6_text',
+                    'media_buttons' => false,
+                    'textarea_rows' => 2,
+                    'teeny' => true,
+                    'quicktags' => true
+                ));
+                ?>
+            </td>
         </tr>
         
         <tr>
@@ -351,7 +501,17 @@ function aimpro_partner_meta_box_callback($post) {
         </tr>
         <tr>
             <th><label for="partner_testimonial1_quote">Testimonial 1 Quote</label></th>
-            <td><textarea id="partner_testimonial1_quote" name="partner_testimonial1_quote" rows="3" class="large-text"><?php echo esc_textarea($testimonial1_quote); ?></textarea></td>
+            <td>
+                <?php 
+                wp_editor($testimonial1_quote, 'partner_testimonial1_quote', array(
+                    'textarea_name' => 'partner_testimonial1_quote',
+                    'media_buttons' => false,
+                    'textarea_rows' => 3,
+                    'teeny' => true,
+                    'quicktags' => true
+                ));
+                ?>
+            </td>
         </tr>
         <tr>
             <th><label for="partner_testimonial1_name">Testimonial 1 Name</label></th>
@@ -370,7 +530,17 @@ function aimpro_partner_meta_box_callback($post) {
         </tr>
         <tr>
             <th><label for="partner_testimonial2_quote">Testimonial 2 Quote</label></th>
-            <td><textarea id="partner_testimonial2_quote" name="partner_testimonial2_quote" rows="3" class="large-text"><?php echo esc_textarea($testimonial2_quote); ?></textarea></td>
+            <td>
+                <?php 
+                wp_editor($testimonial2_quote, 'partner_testimonial2_quote', array(
+                    'textarea_name' => 'partner_testimonial2_quote',
+                    'media_buttons' => false,
+                    'textarea_rows' => 3,
+                    'teeny' => true,
+                    'quicktags' => true
+                ));
+                ?>
+            </td>
         </tr>
         <tr>
             <th><label for="partner_testimonial2_name">Testimonial 2 Name</label></th>
@@ -389,7 +559,17 @@ function aimpro_partner_meta_box_callback($post) {
         </tr>
         <tr>
             <th><label for="partner_testimonial3_quote">Testimonial 3 Quote</label></th>
-            <td><textarea id="partner_testimonial3_quote" name="partner_testimonial3_quote" rows="3" class="large-text"><?php echo esc_textarea($testimonial3_quote); ?></textarea></td>
+            <td>
+                <?php 
+                wp_editor($testimonial3_quote, 'partner_testimonial3_quote', array(
+                    'textarea_name' => 'partner_testimonial3_quote',
+                    'media_buttons' => false,
+                    'textarea_rows' => 3,
+                    'teeny' => true,
+                    'quicktags' => true
+                ));
+                ?>
+            </td>
         </tr>
         <tr>
             <th><label for="partner_testimonial3_name">Testimonial 3 Name</label></th>
@@ -424,7 +604,17 @@ function aimpro_partner_meta_box_callback($post) {
         </tr>
         <tr>
             <th><label for="partner_process_step1_text">Step 1 Text</label></th>
-            <td><textarea id="partner_process_step1_text" name="partner_process_step1_text" rows="2" class="large-text"><?php echo esc_textarea($process_step1_text); ?></textarea></td>
+            <td>
+                <?php 
+                wp_editor($process_step1_text, 'partner_process_step1_text', array(
+                    'textarea_name' => 'partner_process_step1_text',
+                    'media_buttons' => false,
+                    'textarea_rows' => 2,
+                    'teeny' => true,
+                    'quicktags' => true
+                ));
+                ?>
+            </td>
         </tr>
         <tr>
           <th colspan="2"><h4>Step 2</h4></th>
@@ -439,7 +629,17 @@ function aimpro_partner_meta_box_callback($post) {
         </tr>
         <tr>
             <th><label for="partner_process_step2_text">Step 2 Text</label></th>
-            <td><textarea id="partner_process_step2_text" name="partner_process_step2_text" rows="2" class="large-text"><?php echo esc_textarea($process_step2_text); ?></textarea></td>
+            <td>
+                <?php 
+                wp_editor($process_step2_text, 'partner_process_step2_text', array(
+                    'textarea_name' => 'partner_process_step2_text',
+                    'media_buttons' => false,
+                    'textarea_rows' => 2,
+                    'teeny' => true,
+                    'quicktags' => true
+                ));
+                ?>
+            </td>
         </tr>
         <tr>
           <th colspan="2"><h4>Step 3</h4></th>
@@ -454,7 +654,17 @@ function aimpro_partner_meta_box_callback($post) {
         </tr>
         <tr>
             <th><label for="partner_process_step3_text">Step 3 Text</label></th>
-            <td><textarea id="partner_process_step3_text" name="partner_process_step3_text" rows="2" class="large-text"><?php echo esc_textarea($process_step3_text); ?></textarea></td>
+            <td>
+                <?php 
+                wp_editor($process_step3_text, 'partner_process_step3_text', array(
+                    'textarea_name' => 'partner_process_step3_text',
+                    'media_buttons' => false,
+                    'textarea_rows' => 2,
+                    'teeny' => true,
+                    'quicktags' => true
+                ));
+                ?>
+            </td>
         </tr>
         <tr>
           <th colspan="2"><h4>Step 4</h4></th>
@@ -469,7 +679,17 @@ function aimpro_partner_meta_box_callback($post) {
         </tr>
         <tr>
             <th><label for="partner_process_step4_text">Step 4 Text</label></th>
-            <td><textarea id="partner_process_step4_text" name="partner_process_step4_text" rows="2" class="large-text"><?php echo esc_textarea($process_step4_text); ?></textarea></td>
+            <td>
+                <?php 
+                wp_editor($process_step4_text, 'partner_process_step4_text', array(
+                    'textarea_name' => 'partner_process_step4_text',
+                    'media_buttons' => false,
+                    'textarea_rows' => 2,
+                    'teeny' => true,
+                    'quicktags' => true
+                ));
+                ?>
+            </td>
         </tr>
         <tr>
           <th colspan="2"><h4>Step 5</h4></th>
@@ -484,7 +704,17 @@ function aimpro_partner_meta_box_callback($post) {
         </tr>
         <tr>
             <th><label for="partner_process_step5_text">Step 5 Text</label></th>
-            <td><textarea id="partner_process_step5_text" name="partner_process_step5_text" rows="2" class="large-text"><?php echo esc_textarea($process_step5_text); ?></textarea></td>
+            <td>
+                <?php 
+                wp_editor($process_step5_text, 'partner_process_step5_text', array(
+                    'textarea_name' => 'partner_process_step5_text',
+                    'media_buttons' => false,
+                    'textarea_rows' => 2,
+                    'teeny' => true,
+                    'quicktags' => true
+                ));
+                ?>
+            </td>
         </tr>
         
         <tr>
@@ -496,7 +726,17 @@ function aimpro_partner_meta_box_callback($post) {
         </tr>
         <tr>
             <th><label for="partner_form_description">Form Description</label></th>
-            <td><textarea id="partner_form_description" name="partner_form_description" rows="3" class="large-text"><?php echo esc_textarea($form_description); ?></textarea></td>
+            <td>
+                <?php 
+                wp_editor($form_description, 'partner_form_description', array(
+                    'textarea_name' => 'partner_form_description',
+                    'media_buttons' => false,
+                    'textarea_rows' => 3,
+                    'teeny' => true,
+                    'quicktags' => true
+                ));
+                ?>
+            </td>
         </tr>
         
         <tr>
@@ -508,7 +748,17 @@ function aimpro_partner_meta_box_callback($post) {
         </tr>
         <tr>
             <th><label for="partner_contact_description">Contact Description</label></th>
-            <td><textarea id="partner_contact_description" name="partner_contact_description" rows="2" class="large-text"><?php echo esc_textarea($contact_description); ?></textarea></td>
+            <td>
+                <?php 
+                wp_editor($contact_description, 'partner_contact_description', array(
+                    'textarea_name' => 'partner_contact_description',
+                    'media_buttons' => false,
+                    'textarea_rows' => 2,
+                    'teeny' => true,
+                    'quicktags' => true
+                ));
+                ?>
+            </td>
         </tr>
         <tr>
             <th><label for="partner_contact_email">Contact Email</label></th>
@@ -535,89 +785,103 @@ function aimpro_save_partner_meta($post_id) {
     if (defined('DOING_AUTOSAVE') && DOING_AUTOSAVE) {
         return;
     }
-      // Save all fields
+
+    // Function to sanitize based on field type (matching automate marketing pattern)
+    function sanitize_partner_meta_value($field, $value) {
+        // Rich text fields that should use wp_kses_post for HTML content
+        if (strpos($field, 'text') !== false || strpos($field, 'description') !== false || 
+            strpos($field, 'quote') !== false || strpos($field, 'ideal') !== false) {
+            return wp_kses_post($value);
+        } elseif (strpos($field, 'email') !== false) {
+            return sanitize_email($value);
+        } else {
+            return sanitize_text_field($value);
+        }
+    }
+    
+    // Save all fields
     $fields = array(
-        'partner_header_title' => 'sanitize_text_field',
-        'partner_header_subtitle' => 'sanitize_text_field',
-        'partner_intro_heading' => 'sanitize_text_field',
-        'partner_intro_text' => 'sanitize_textarea_field',
-        'partner_stats_heading' => 'sanitize_text_field',
-        'partner_stats_value1' => 'sanitize_text_field',
-        'partner_stats_label1' => 'sanitize_text_field',
-        'partner_stats_value2' => 'sanitize_text_field',
-        'partner_stats_label2' => 'sanitize_text_field',
-        'partner_stats_value3' => 'sanitize_text_field',
-        'partner_stats_label3' => 'sanitize_text_field',
-        'partner_opportunities_heading' => 'sanitize_text_field',
-        'partner_referral_title' => 'sanitize_text_field',
-        'partner_referral_description' => 'sanitize_textarea_field',
-        'partner_referral_benefits' => 'sanitize_textarea_field',
-        'partner_referral_ideal' => 'sanitize_textarea_field',
-        'partner_tech_title' => 'sanitize_text_field',
-        'partner_tech_description' => 'sanitize_textarea_field',
-        'partner_tech_benefits' => 'sanitize_textarea_field',
-        'partner_tech_ideal' => 'sanitize_textarea_field',
-        'partner_agency_title' => 'sanitize_text_field',
-        'partner_agency_description' => 'sanitize_textarea_field',
-        'partner_agency_benefits' => 'sanitize_textarea_field',
-        'partner_agency_ideal' => 'sanitize_textarea_field',
-        'partner_reseller_title' => 'sanitize_text_field',
-        'partner_reseller_description' => 'sanitize_textarea_field',
-        'partner_reseller_benefits' => 'sanitize_textarea_field',
-        'partner_reseller_ideal' => 'sanitize_textarea_field',
-        'partner_why_heading' => 'sanitize_text_field',
-        'partner_why_benefit1_title' => 'sanitize_text_field',
-        'partner_why_benefit1_text' => 'sanitize_textarea_field',
-        'partner_why_benefit2_title' => 'sanitize_text_field',
-        'partner_why_benefit2_text' => 'sanitize_textarea_field',
-        'partner_why_benefit3_title' => 'sanitize_text_field',
-        'partner_why_benefit3_text' => 'sanitize_textarea_field',
-        'partner_why_benefit4_title' => 'sanitize_text_field',
-        'partner_why_benefit4_text' => 'sanitize_textarea_field',
-        'partner_why_benefit5_title' => 'sanitize_text_field',
-        'partner_why_benefit5_text' => 'sanitize_textarea_field',
-        'partner_why_benefit6_title' => 'sanitize_text_field',
-        'partner_why_benefit6_text' => 'sanitize_textarea_field',
-        'partner_stories_heading' => 'sanitize_text_field',
-        'partner_testimonial1_quote' => 'sanitize_textarea_field',
-        'partner_testimonial1_name' => 'sanitize_text_field',
-        'partner_testimonial1_title' => 'sanitize_text_field',
-        'partner_testimonial1_type' => 'sanitize_text_field',
-        'partner_testimonial2_quote' => 'sanitize_textarea_field',
-        'partner_testimonial2_name' => 'sanitize_text_field',
-        'partner_testimonial2_title' => 'sanitize_text_field',
-        'partner_testimonial2_type' => 'sanitize_text_field',
-        'partner_testimonial3_quote' => 'sanitize_textarea_field',
-        'partner_testimonial3_name' => 'sanitize_text_field',
-        'partner_testimonial3_title' => 'sanitize_text_field',
-        'partner_testimonial3_type' => 'sanitize_text_field',
-        'partner_process_heading' => 'sanitize_text_field',
-        'partner_process_step1_number' => 'sanitize_text_field',
-        'partner_process_step1_title' => 'sanitize_text_field',
-        'partner_process_step1_text' => 'sanitize_textarea_field',
-        'partner_process_step2_number' => 'sanitize_text_field',
-        'partner_process_step2_title' => 'sanitize_text_field',
-        'partner_process_step2_text' => 'sanitize_textarea_field',
-        'partner_process_step3_number' => 'sanitize_text_field',
-        'partner_process_step3_title' => 'sanitize_text_field',
-        'partner_process_step3_text' => 'sanitize_textarea_field',
-        'partner_process_step4_number' => 'sanitize_text_field',
-        'partner_process_step4_title' => 'sanitize_text_field',
-        'partner_process_step4_text' => 'sanitize_textarea_field',
-        'partner_process_step5_number' => 'sanitize_text_field',
-        'partner_process_step5_title' => 'sanitize_text_field',
-        'partner_process_step5_text' => 'sanitize_textarea_field',
-        'partner_form_heading' => 'sanitize_text_field',
-        'partner_form_description' => 'sanitize_textarea_field',
-        'partner_contact_heading' => 'sanitize_text_field',
-        'partner_contact_description' => 'sanitize_textarea_field',
-        'partner_contact_email' => 'sanitize_email',
-        'partner_contact_phone' => 'sanitize_text_field'
+        'partner_header_title',
+        'partner_header_subtitle',
+        'partner_intro_heading',
+        'partner_intro_text',
+        'partner_stats_heading',
+        'partner_stats_value1',
+        'partner_stats_label1',
+        'partner_stats_value2',
+        'partner_stats_label2',
+        'partner_stats_value3',
+        'partner_stats_label3',
+        'partner_opportunities_heading',
+        'partner_referral_title',
+        'partner_referral_description',
+        'partner_referral_benefits',
+        'partner_referral_ideal',
+        'partner_tech_title',
+        'partner_tech_description',
+        'partner_tech_benefits',
+        'partner_tech_ideal',
+        'partner_agency_title',
+        'partner_agency_description',
+        'partner_agency_benefits',
+        'partner_agency_ideal',
+        'partner_reseller_title',
+        'partner_reseller_description',
+        'partner_reseller_benefits',
+        'partner_reseller_ideal',
+        'partner_why_heading',
+        'partner_why_benefit1_title',
+        'partner_why_benefit1_text',
+        'partner_why_benefit2_title',
+        'partner_why_benefit2_text',
+        'partner_why_benefit3_title',
+        'partner_why_benefit3_text',
+        'partner_why_benefit4_title',
+        'partner_why_benefit4_text',
+        'partner_why_benefit5_title',
+        'partner_why_benefit5_text',
+        'partner_why_benefit6_title',
+        'partner_why_benefit6_text',
+        'partner_stories_heading',
+        'partner_testimonial1_quote',
+        'partner_testimonial1_name',
+        'partner_testimonial1_title',
+        'partner_testimonial1_type',
+        'partner_testimonial2_quote',
+        'partner_testimonial2_name',
+        'partner_testimonial2_title',
+        'partner_testimonial2_type',
+        'partner_testimonial3_quote',
+        'partner_testimonial3_name',
+        'partner_testimonial3_title',
+        'partner_testimonial3_type',
+        'partner_process_heading',
+        'partner_process_step1_number',
+        'partner_process_step1_title',
+        'partner_process_step1_text',
+        'partner_process_step2_number',
+        'partner_process_step2_title',
+        'partner_process_step2_text',
+        'partner_process_step3_number',
+        'partner_process_step3_title',
+        'partner_process_step3_text',
+        'partner_process_step4_number',
+        'partner_process_step4_title',
+        'partner_process_step4_text',
+        'partner_process_step5_number',
+        'partner_process_step5_title',
+        'partner_process_step5_text',
+        'partner_form_heading',
+        'partner_form_description',
+        'partner_contact_heading',
+        'partner_contact_description',
+        'partner_contact_email',
+        'partner_contact_phone'
     );
     
-    foreach ($fields as $field => $sanitize_func) {
+    foreach ($fields as $field) {
         if (isset($_POST[$field])) {
-            update_post_meta($post_id, $field, $sanitize_func($_POST[$field]));
+            update_post_meta($post_id, $field, sanitize_partner_meta_value($field, $_POST[$field]));
         }
     }
 }
