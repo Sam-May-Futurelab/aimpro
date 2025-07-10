@@ -24,19 +24,19 @@ get_header(); ?>
           <!-- Page Header -->
         <section class="page-header">
             <div class="page-header-content animate-on-scroll animate-fade-up">
-                <h1><?php echo esc_html(get_post_meta(get_the_ID(), '_lead_generation_header_title', true) ?: 'Lead Generation (B2B/B2C)'); ?></h1>
-                <p class="page-subtitle"><?php echo esc_html(get_post_meta(get_the_ID(), '_lead_generation_header_subtitle', true) ?: 'Generate high-quality leads that convert into customers with proven strategies and targeted campaigns'); ?></p>
+                <h1><?php echo wp_kses_post(get_post_meta(get_the_ID(), '_lead_generation_header_title', true) ?: 'Lead Generation (B2B/B2C)'); ?></h1>
+                <p class="page-subtitle"><?php echo wp_kses_post(get_post_meta(get_the_ID(), '_lead_generation_header_subtitle', true) ?: 'Generate high-quality leads that convert into customers with proven strategies and targeted campaigns'); ?></p>
             </div>
         </section><!-- Solution Overview -->
         <section class="solution-overview">
             <div class="section-content">
                 <div class="overview-content">
                     <div class="overview-text animate-on-scroll animate-slide-left">
-                        <h2><?php echo esc_html(get_post_meta(get_the_ID(), '_lead_generation_overview_title', true) ?: 'Turn Prospects Into Qualified Leads'); ?></h2>
-                        <p><?php echo esc_html(get_post_meta(get_the_ID(), '_lead_generation_overview_content', true) ?: 'Lead generation is the lifeblood of any successful business. Our comprehensive lead generation strategies combine multiple touchpoints, compelling offers, and sophisticated targeting to attract and capture high-quality prospects who are ready to engage with your business.'); ?></p>
+                        <h2><?php echo wp_kses_post(get_post_meta(get_the_ID(), '_lead_generation_overview_title', true) ?: 'Turn Prospects Into Qualified Leads'); ?></h2>
+                        <p><?php echo wp_kses_post(get_post_meta(get_the_ID(), '_lead_generation_overview_content', true) ?: 'Lead generation is the lifeblood of any successful business. Our comprehensive lead generation strategies combine multiple touchpoints, compelling offers, and sophisticated targeting to attract and capture high-quality prospects who are ready to engage with your business.'); ?></p>
                         
                         <div class="solution-challenges">
-                            <h3><?php echo esc_html(get_post_meta(get_the_ID(), '_lead_generation_challenges_title', true) ?: 'Lead Generation Challenges We Solve:'); ?></h3>
+                            <h3><?php echo wp_kses_post(get_post_meta(get_the_ID(), '_lead_generation_challenges_title', true) ?: 'Lead Generation Challenges We Solve:'); ?></h3>
                             <ul>
                                 <?php
                                 $challenges = get_post_meta(get_the_ID(), '_lead_generation_challenges', true);
@@ -51,7 +51,7 @@ get_header(); ?>
                                     );
                                 }
                                 foreach ($challenges as $challenge) {
-                                    echo '<li>' . esc_html($challenge) . '</li>';                                }
+                                    echo '<li>' . wp_kses_post($challenge) . '</li>';                                }
                                 ?>
                             </ul>
                         </div>
@@ -74,7 +74,7 @@ get_header(); ?>
         </section>        <!-- Lead Generation Methods -->
         <section class="lead-generation-methods">
             <div class="section-content">
-                <h2 class="animate-on-scroll animate-fade-up"><?php echo esc_html(get_post_meta(get_the_ID(), '_lead_generation_methods_title', true) ?: 'Our Lead Generation Methods'); ?></h2>
+                <h2 class="animate-on-scroll animate-fade-up"><?php echo wp_kses_post(get_post_meta(get_the_ID(), '_lead_generation_methods_title', true) ?: 'Our Lead Generation Methods'); ?></h2>
                 <div class="methods-grid animate-on-scroll animate-stagger animate-scale-up">
                     
                     <?php
@@ -138,11 +138,11 @@ get_header(); ?>
                             <?php echo $method_icons[$icon_index]; ?>
                         </div>
                         <div class="method-content">
-                            <h3><?php echo esc_html($method['title']); ?></h3>
-                            <p><?php echo esc_html($method['description']); ?></p>
+                            <h3><?php echo wp_kses_post($method['title']); ?></h3>
+                            <p><?php echo wp_kses_post($method['description']); ?></p>
                             <ul class="method-features">
                                 <?php foreach ($method['features'] as $feature) : ?>
-                                    <li><?php echo esc_html($feature); ?></li>
+                                    <li><?php echo wp_kses_post($feature); ?></li>
                                 <?php endforeach; ?>
                             </ul>
                         </div>
@@ -156,12 +156,12 @@ get_header(); ?>
             <div class="section-content">
                 <div class="case-study-content animate-on-scroll animate-fade-up">
                     <div class="case-study-text">
-                        <span class="case-study-label"><?php echo esc_html(get_post_meta(get_the_ID(), '_lead_generation_case_study_label', true) ?: 'Success Story'); ?></span>
-                        <h2><?php echo esc_html(get_post_meta(get_the_ID(), '_lead_generation_case_study_title', true) ?: 'TechFlow Solutions: 450% Lead Increase in 4 Months'); ?></h2>
-                        <p><?php echo esc_html(get_post_meta(get_the_ID(), '_lead_generation_case_study_content', true) ?: 'TechFlow Solutions, a B2B software company, was struggling with inconsistent lead flow and poor lead quality from their existing marketing efforts.'); ?></p>
+                        <span class="case-study-label"><?php echo wp_kses_post(get_post_meta(get_the_ID(), '_lead_generation_case_study_label', true) ?: 'Success Story'); ?></span>
+                        <h2><?php echo wp_kses_post(get_post_meta(get_the_ID(), '_lead_generation_case_study_title', true) ?: 'TechFlow Solutions: 450% Lead Increase in 4 Months'); ?></h2>
+                        <p><?php echo wp_kses_post(get_post_meta(get_the_ID(), '_lead_generation_case_study_content', true) ?: 'TechFlow Solutions, a B2B software company, was struggling with inconsistent lead flow and poor lead quality from their existing marketing efforts.'); ?></p>
                         
                         <div class="case-study-challenge">
-                            <h3><?php echo esc_html(get_post_meta(get_the_ID(), '_lead_generation_case_study_challenge_title', true) ?: 'The Challenge'); ?></h3>
+                            <h3><?php echo wp_kses_post(get_post_meta(get_the_ID(), '_lead_generation_case_study_challenge_title', true) ?: 'The Challenge'); ?></h3>
                             <ul>
                                 <?php
                                 $case_challenges = get_post_meta(get_the_ID(), '_lead_generation_case_study_challenges', true);
@@ -174,14 +174,14 @@ get_header(); ?>
                                     );
                                 }
                                 foreach ($case_challenges as $challenge) {
-                                    echo '<li>' . esc_html($challenge) . '</li>';
+                                    echo '<li>' . wp_kses_post($challenge) . '</li>';
                                 }
                                 ?>
                             </ul>
                         </div>
 
                         <div class="case-study-solution">
-                            <h3><?php echo esc_html(get_post_meta(get_the_ID(), '_lead_generation_case_study_solution_title', true) ?: 'Our Solution'); ?></h3>
+                            <h3><?php echo wp_kses_post(get_post_meta(get_the_ID(), '_lead_generation_case_study_solution_title', true) ?: 'Our Solution'); ?></h3>
                             <ul>
                                 <?php
                                 $case_solutions = get_post_meta(get_the_ID(), '_lead_generation_case_study_solutions', true);
@@ -194,7 +194,7 @@ get_header(); ?>
                                     );
                                 }
                                 foreach ($case_solutions as $solution) {
-                                    echo '<li>' . esc_html($solution) . '</li>';
+                                    echo '<li>' . wp_kses_post($solution) . '</li>';
                                 }
                                 ?>
                             </ul>
@@ -205,7 +205,7 @@ get_header(); ?>
         </section>        <!-- Lead Generation Process -->
         <section class="lead-generation-process">
             <div class="section-content">
-                <h2 class="animate-on-scroll animate-fade-up"><?php echo esc_html(get_post_meta(get_the_ID(), '_lead_generation_process_title', true) ?: 'Our Lead Generation Process'); ?></h2>
+                <h2 class="animate-on-scroll animate-fade-up"><?php echo wp_kses_post(get_post_meta(get_the_ID(), '_lead_generation_process_title', true) ?: 'Our Lead Generation Process'); ?></h2>
                 <div class="process-steps animate-on-scroll animate-stagger animate-fade-up">
                     
                     <?php
@@ -239,8 +239,8 @@ get_header(); ?>
                     ?>                    <div class="process-step">
                         <div class="step-number"><?php echo esc_html($step['number']); ?></div>
                         <div class="step-content">
-                            <h3><?php echo esc_html($step['title']); ?></h3>
-                            <p><?php echo esc_html($step['description']); ?></p>
+                            <h3><?php echo wp_kses_post($step['title']); ?></h3>
+                            <p><?php echo wp_kses_post($step['description']); ?></p>
                         </div>
                     </div>
                     <?php endforeach; ?>                </div>
@@ -251,7 +251,7 @@ get_header(); ?>
         </section>        <!-- Lead Generation Types -->
         <section class="lead-generation-types text-center">
             <div class="section-content">
-                <h2 class="animate-on-scroll animate-fade-up"><?php echo esc_html(get_post_meta(get_the_ID(), '_lead_generation_types_title', true) ?: 'Lead Generation Strategies by Business Type'); ?></h2>
+                <h2 class="animate-on-scroll animate-fade-up"><?php echo wp_kses_post(get_post_meta(get_the_ID(), '_lead_generation_types_title', true) ?: 'Lead Generation Strategies by Business Type'); ?></h2>
                 <div class="types-grid animate-on-scroll animate-stagger animate-scale-up">
                     <?php
                     $types = get_post_meta(get_the_ID(), '_lead_generation_types', true);
@@ -293,10 +293,10 @@ get_header(); ?>
                     foreach ($types as $type) :
                     ?>
                     <div class="type-card">
-                        <h3><?php echo esc_html($type['title']); ?></h3>
+                        <h3><?php echo wp_kses_post($type['title']); ?></h3>
                         <ul class="type-features">
                             <?php foreach ($type['features'] as $feature) : ?>
-                                <li><?php echo esc_html($feature); ?></li>
+                                <li><?php echo wp_kses_post($feature); ?></li>
                             <?php endforeach; ?>
                         </ul>
                     </div>
@@ -307,7 +307,7 @@ get_header(); ?>
           <!-- Lead Generation Tools -->
         <section class="lead-generation-tools">
             <div class="section-content">
-                <h2 class="animate-on-scroll animate-fade-up"><?php echo esc_html(get_post_meta(get_the_ID(), '_lead_generation_tools_title', true) ?: 'Lead Generation Tools & Technologies'); ?></h2>
+                <h2 class="animate-on-scroll animate-fade-up"><?php echo wp_kses_post(get_post_meta(get_the_ID(), '_lead_generation_tools_title', true) ?: 'Lead Generation Tools & Technologies'); ?></h2>
                 <div class="tools-grid animate-on-scroll animate-stagger animate-scale-up">
                     
                     <?php
@@ -359,10 +359,10 @@ get_header(); ?>
                         $class_index = $index % count($tool_classes);
                     ?>
                     <div class="tool-card <?php echo esc_attr($tool_classes[$class_index]); ?>">
-                        <h3><?php echo esc_html($tool['title']); ?></h3>
+                        <h3><?php echo wp_kses_post($tool['title']); ?></h3>
                         <ul class="tool-features">
                             <?php foreach ($tool['features'] as $feature) : ?>
-                                <li><?php echo esc_html($feature); ?></li>
+                                <li><?php echo wp_kses_post($feature); ?></li>
                             <?php endforeach; ?>
                         </ul>
                     </div>
@@ -375,7 +375,7 @@ get_header(); ?>
             <div class="section-content">
                 <div class="testimonial-content animate-on-scroll animate-fade-up">
                     <blockquote>
-                        "<?php echo esc_html(get_post_meta(get_the_ID(), '_lead_generation_testimonial_quote', true) ?: 'Aimpro Digital completely transformed our lead generation. In just 4 months, we went from 20 leads per month to over 100 high-quality leads. Their multi-channel approach and systematic nurturing process has revolutionized our sales pipeline.'); ?>"
+                        "<?php echo wp_kses_post(get_post_meta(get_the_ID(), '_lead_generation_testimonial_quote', true) ?: 'Aimpro Digital completely transformed our lead generation. In just 4 months, we went from 20 leads per month to over 100 high-quality leads. Their multi-channel approach and systematic nurturing process has revolutionized our sales pipeline.'); ?>"
                     </blockquote>
                     <div class="testimonial-author">
                         <div class="author-info">
@@ -389,8 +389,8 @@ get_header(); ?>
         </section>        <!-- CTA Section -->
         <section class="lead-generation-cta text-center">
             <div class="section-content">
-                <h2 class="animate-on-scroll animate-fade-up"><?php echo esc_html(get_post_meta(get_the_ID(), '_lead_generation_cta_title', true) ?: 'Ready to Generate More Qualified Leads?'); ?></h2>
-                <p class="animate-on-scroll animate-fade-up animate-delay-200"><?php echo esc_html(get_post_meta(get_the_ID(), '_lead_generation_cta_subtitle', true) ?: 'Let\'s create a custom lead generation strategy that fills your sales pipeline with high-quality prospects.'); ?></p>
+                <h2 class="animate-on-scroll animate-fade-up"><?php echo wp_kses_post(get_post_meta(get_the_ID(), '_lead_generation_cta_title', true) ?: 'Ready to Generate More Qualified Leads?'); ?></h2>
+                <p class="animate-on-scroll animate-fade-up animate-delay-200"><?php echo wp_kses_post(get_post_meta(get_the_ID(), '_lead_generation_cta_subtitle', true) ?: 'Let\'s create a custom lead generation strategy that fills your sales pipeline with high-quality prospects.'); ?></p>
                 <div class="cta-buttons animate-on-scroll animate-scale-up animate-delay-400">
                     <a href="<?php echo esc_url(home_url(get_post_meta(get_the_ID(), '_lead_generation_cta_primary_url', true) ?: '/contact')); ?>" class="btn btn-primary"><?php echo esc_html(get_post_meta(get_the_ID(), '_lead_generation_cta_primary_text', true) ?: 'Get Free Lead Generation Audit'); ?></a>
                 </div>
@@ -404,7 +404,7 @@ get_header(); ?>
                         );
                     }
                     foreach ($benefits as $benefit) {
-                        echo '<span class="benefit">' . esc_html($benefit) . '</span>';
+                        echo '<span class="benefit">' . wp_kses_post($benefit) . '</span>';
                     }
                     ?>
                 </div>

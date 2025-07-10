@@ -328,19 +328,25 @@ function lead_generation_meta_box_callback($post) {
             <tr>
                 <th><label for="lead_generation_header_title">Page Title</label></th>
                 <td>
-                    <input type="text" 
-                           id="lead_generation_header_title" 
-                           name="lead_generation_header_title" 
-                           value="<?php echo esc_attr($header_title); ?>"
-                           placeholder="Lead Generation (B2B/B2C)" />
+                    <?php wp_editor($header_title, 'lead_generation_header_title', array(
+                        'textarea_name' => 'lead_generation_header_title',
+                        'media_buttons' => false,
+                        'textarea_rows' => 3,
+                        'teeny' => true,
+                        'quicktags' => array('buttons' => 'strong,em,link,ul,ol,li')
+                    )); ?>
                 </td>
             </tr>
             <tr>
                 <th><label for="lead_generation_header_subtitle">Page Subtitle</label></th>
                 <td>
-                    <textarea id="lead_generation_header_subtitle" 
-                              name="lead_generation_header_subtitle"
-                              placeholder="Generate high-quality leads that convert into customers with proven strategies and targeted campaigns"><?php echo esc_textarea($header_subtitle); ?></textarea>
+                    <?php wp_editor($header_subtitle, 'lead_generation_header_subtitle', array(
+                        'textarea_name' => 'lead_generation_header_subtitle',
+                        'media_buttons' => false,
+                        'textarea_rows' => 4,
+                        'teeny' => true,
+                        'quicktags' => array('buttons' => 'strong,em,link,ul,ol,li')
+                    )); ?>
                 </td>
             </tr>
         </table>
@@ -351,19 +357,26 @@ function lead_generation_meta_box_callback($post) {
             <tr>
                 <th><label for="lead_generation_overview_title">Overview Title</label></th>
                 <td>
-                    <input type="text" 
-                           id="lead_generation_overview_title" 
-                           name="lead_generation_overview_title" 
-                           value="<?php echo esc_attr($overview_title); ?>"
-                           placeholder="Turn Prospects Into Qualified Leads" />
+                    <?php wp_editor($overview_title, 'lead_generation_overview_title', array(
+                        'textarea_name' => 'lead_generation_overview_title',
+                        'media_buttons' => false,
+                        'textarea_rows' => 3,
+                        'teeny' => true,
+                        'quicktags' => array('buttons' => 'strong,em,link,ul,ol,li')
+                    )); ?>
                 </td>
             </tr>
             <tr>
                 <th><label for="lead_generation_overview_content">Overview Content</label></th>
                 <td>
-                    <textarea id="lead_generation_overview_content" 
-                              name="lead_generation_overview_content"
-                              placeholder="Lead generation is the lifeblood of any successful business..."><?php echo esc_textarea($overview_content); ?></textarea>                </td>
+                    <?php wp_editor($overview_content, 'lead_generation_overview_content', array(
+                        'textarea_name' => 'lead_generation_overview_content',
+                        'media_buttons' => false,
+                        'textarea_rows' => 6,
+                        'teeny' => true,
+                        'quicktags' => array('buttons' => 'strong,em,link,ul,ol,li')
+                    )); ?>
+                </td>
             </tr>
             <tr>
                 <th><label for="lead_generation_overview_image">Overview Image</label></th>
@@ -389,11 +402,13 @@ function lead_generation_meta_box_callback($post) {
             <tr>
                 <th><label for="lead_generation_challenges_title">Challenges Title</label></th>
                 <td>
-                    <input type="text" 
-                           id="lead_generation_challenges_title" 
-                           name="lead_generation_challenges_title" 
-                           value="<?php echo esc_attr($challenges_title); ?>"
-                           placeholder="Lead Generation Challenges We Solve:" />
+                    <?php wp_editor($challenges_title, 'lead_generation_challenges_title', array(
+                        'textarea_name' => 'lead_generation_challenges_title',
+                        'media_buttons' => false,
+                        'textarea_rows' => 2,
+                        'teeny' => true,
+                        'quicktags' => array('buttons' => 'strong,em,link,ul,ol,li')
+                    )); ?>
                 </td>
             </tr>
             <tr>
@@ -403,10 +418,13 @@ function lead_generation_meta_box_callback($post) {
                         <?php if (!empty($challenges)): ?>
                             <?php foreach ($challenges as $index => $challenge): ?>
                                 <div class="repeater-field">
-                                    <input type="text" 
-                                           name="lead_generation_challenges[]" 
-                                           value="<?php echo esc_attr($challenge); ?>"
-                                           placeholder="Challenge item" />
+                                    <?php wp_editor($challenge, 'lead_generation_challenges_' . $index, array(
+                                        'textarea_name' => 'lead_generation_challenges[]',
+                                        'media_buttons' => false,
+                                        'textarea_rows' => 2,
+                                        'teeny' => true,
+                                        'quicktags' => array('buttons' => 'strong,em,link,ul,ol,li')
+                                    )); ?>
                                     <button type="button" class="button remove-repeater-item">Remove</button>
                                 </div>
                             <?php endforeach; ?>
@@ -423,11 +441,13 @@ function lead_generation_meta_box_callback($post) {
             <tr>
                 <th><label for="lead_generation_methods_title">Methods Title</label></th>
                 <td>
-                    <input type="text" 
-                           id="lead_generation_methods_title" 
-                           name="lead_generation_methods_title" 
-                           value="<?php echo esc_attr($methods_title); ?>"
-                           placeholder="Our Lead Generation Methods" />
+                    <?php wp_editor($methods_title, 'lead_generation_methods_title', array(
+                        'textarea_name' => 'lead_generation_methods_title',
+                        'media_buttons' => false,
+                        'textarea_rows' => 2,
+                        'teeny' => true,
+                        'quicktags' => array('buttons' => 'strong,em,link,ul,ol,li')
+                    )); ?>
                 </td>
             </tr>
         </table>
@@ -437,19 +457,30 @@ function lead_generation_meta_box_callback($post) {
                 <?php foreach ($methods as $index => $method): ?>
                     <div class="repeater-field">
                         <h4>Method <?php echo $index + 1; ?></h4>
-                        <input type="text" 
-                               name="lead_generation_methods[<?php echo $index; ?>][title]" 
-                               value="<?php echo esc_attr($method['title']); ?>"
-                               placeholder="Method title" />
-                        <textarea name="lead_generation_methods[<?php echo $index; ?>][description]" 
-                                  placeholder="Method description"><?php echo esc_textarea($method['description']); ?></textarea>
+                        <?php wp_editor($method['title'], 'lead_generation_methods_' . $index . '_title', array(
+                            'textarea_name' => 'lead_generation_methods[' . $index . '][title]',
+                            'media_buttons' => false,
+                            'textarea_rows' => 2,
+                            'teeny' => true,
+                            'quicktags' => array('buttons' => 'strong,em,link,ul,ol,li')
+                        )); ?>
+                        <?php wp_editor($method['description'], 'lead_generation_methods_' . $index . '_description', array(
+                            'textarea_name' => 'lead_generation_methods[' . $index . '][description]',
+                            'media_buttons' => false,
+                            'textarea_rows' => 4,
+                            'teeny' => true,
+                            'quicktags' => array('buttons' => 'strong,em,link,ul,ol,li')
+                        )); ?>
                         <div>
                             <strong>Features:</strong>
                             <?php foreach ($method['features'] as $feat_index => $feature): ?>
-                                <input type="text" 
-                                       name="lead_generation_methods[<?php echo $index; ?>][features][]" 
-                                       value="<?php echo esc_attr($feature); ?>"
-                                       placeholder="Feature" />
+                                <?php wp_editor($feature, 'lead_generation_methods_' . $index . '_feature_' . $feat_index, array(
+                                    'textarea_name' => 'lead_generation_methods[' . $index . '][features][]',
+                                    'media_buttons' => false,
+                                    'textarea_rows' => 2,
+                                    'teeny' => true,
+                                    'quicktags' => array('buttons' => 'strong,em,link,ul,ol,li')
+                                )); ?>
                             <?php endforeach; ?>
                         </div>
                         <button type="button" class="button add-feature" data-method-index="<?php echo $index; ?>">Add Feature</button>
@@ -466,39 +497,49 @@ function lead_generation_meta_box_callback($post) {
             <tr>
                 <th><label for="lead_generation_case_study_label">Case Study Label</label></th>
                 <td>
-                    <input type="text" 
-                           id="lead_generation_case_study_label" 
-                           name="lead_generation_case_study_label" 
-                           value="<?php echo esc_attr($case_study_label); ?>"
-                           placeholder="Success Story" />
+                    <?php wp_editor($case_study_label, 'lead_generation_case_study_label', array(
+                        'textarea_name' => 'lead_generation_case_study_label',
+                        'media_buttons' => false,
+                        'textarea_rows' => 2,
+                        'teeny' => true,
+                        'quicktags' => array('buttons' => 'strong,em,link,ul,ol,li')
+                    )); ?>
                 </td>
             </tr>
             <tr>
                 <th><label for="lead_generation_case_study_title">Case Study Title</label></th>
                 <td>
-                    <input type="text" 
-                           id="lead_generation_case_study_title" 
-                           name="lead_generation_case_study_title" 
-                           value="<?php echo esc_attr($case_study_title); ?>"
-                           placeholder="TechFlow Solutions: 450% Lead Increase in 4 Months" />
+                    <?php wp_editor($case_study_title, 'lead_generation_case_study_title', array(
+                        'textarea_name' => 'lead_generation_case_study_title',
+                        'media_buttons' => false,
+                        'textarea_rows' => 3,
+                        'teeny' => true,
+                        'quicktags' => array('buttons' => 'strong,em,link,ul,ol,li')
+                    )); ?>
                 </td>
             </tr>
             <tr>
                 <th><label for="lead_generation_case_study_content">Case Study Content</label></th>
                 <td>
-                    <textarea id="lead_generation_case_study_content" 
-                              name="lead_generation_case_study_content"
-                              placeholder="Case study description..."><?php echo esc_textarea($case_study_content); ?></textarea>
+                    <?php wp_editor($case_study_content, 'lead_generation_case_study_content', array(
+                        'textarea_name' => 'lead_generation_case_study_content',
+                        'media_buttons' => false,
+                        'textarea_rows' => 5,
+                        'teeny' => true,
+                        'quicktags' => array('buttons' => 'strong,em,link,ul,ol,li')
+                    )); ?>
                 </td>
             </tr>
             <tr>
                 <th><label for="lead_generation_case_study_challenge_title">Challenge Section Title</label></th>
                 <td>
-                    <input type="text" 
-                           id="lead_generation_case_study_challenge_title" 
-                           name="lead_generation_case_study_challenge_title" 
-                           value="<?php echo esc_attr($case_study_challenge_title); ?>"
-                           placeholder="The Challenge" />
+                    <?php wp_editor($case_study_challenge_title, 'lead_generation_case_study_challenge_title', array(
+                        'textarea_name' => 'lead_generation_case_study_challenge_title',
+                        'media_buttons' => false,
+                        'textarea_rows' => 2,
+                        'teeny' => true,
+                        'quicktags' => array('buttons' => 'strong,em,link,ul,ol,li')
+                    )); ?>
                 </td>
             </tr>
             <tr>
@@ -506,12 +547,15 @@ function lead_generation_meta_box_callback($post) {
                 <td>
                     <div id="case-study-challenges-repeater">
                         <?php if (!empty($case_study_challenges)): ?>
-                            <?php foreach ($case_study_challenges as $challenge): ?>
+                            <?php foreach ($case_study_challenges as $index => $challenge): ?>
                                 <div class="repeater-field">
-                                    <input type="text" 
-                                           name="lead_generation_case_study_challenges[]" 
-                                           value="<?php echo esc_attr($challenge); ?>"
-                                           placeholder="Challenge item" />
+                                    <?php wp_editor($challenge, 'lead_generation_case_study_challenges_' . $index, array(
+                                        'textarea_name' => 'lead_generation_case_study_challenges[]',
+                                        'media_buttons' => false,
+                                        'textarea_rows' => 2,
+                                        'teeny' => true,
+                                        'quicktags' => array('buttons' => 'strong,em,link,ul,ol,li')
+                                    )); ?>
                                     <button type="button" class="button remove-repeater-item">Remove</button>
                                 </div>
                             <?php endforeach; ?>
@@ -523,11 +567,13 @@ function lead_generation_meta_box_callback($post) {
             <tr>
                 <th><label for="lead_generation_case_study_solution_title">Solution Section Title</label></th>
                 <td>
-                    <input type="text" 
-                           id="lead_generation_case_study_solution_title" 
-                           name="lead_generation_case_study_solution_title" 
-                           value="<?php echo esc_attr($case_study_solution_title); ?>"
-                           placeholder="Our Solution" />
+                    <?php wp_editor($case_study_solution_title, 'lead_generation_case_study_solution_title', array(
+                        'textarea_name' => 'lead_generation_case_study_solution_title',
+                        'media_buttons' => false,
+                        'textarea_rows' => 2,
+                        'teeny' => true,
+                        'quicktags' => array('buttons' => 'strong,em,link,ul,ol,li')
+                    )); ?>
                 </td>
             </tr>
             <tr>
@@ -535,12 +581,15 @@ function lead_generation_meta_box_callback($post) {
                 <td>
                     <div id="case-study-solutions-repeater">
                         <?php if (!empty($case_study_solutions)): ?>
-                            <?php foreach ($case_study_solutions as $solution): ?>
+                            <?php foreach ($case_study_solutions as $index => $solution): ?>
                                 <div class="repeater-field">
-                                    <input type="text" 
-                                           name="lead_generation_case_study_solutions[]" 
-                                           value="<?php echo esc_attr($solution); ?>"
-                                           placeholder="Solution item" />
+                                    <?php wp_editor($solution, 'lead_generation_case_study_solutions_' . $index, array(
+                                        'textarea_name' => 'lead_generation_case_study_solutions[]',
+                                        'media_buttons' => false,
+                                        'textarea_rows' => 2,
+                                        'teeny' => true,
+                                        'quicktags' => array('buttons' => 'strong,em,link,ul,ol,li')
+                                    )); ?>
                                     <button type="button" class="button remove-repeater-item">Remove</button>
                                 </div>
                             <?php endforeach; ?>
@@ -557,11 +606,13 @@ function lead_generation_meta_box_callback($post) {
             <tr>
                 <th><label for="lead_generation_process_title">Process Title</label></th>
                 <td>
-                    <input type="text" 
-                           id="lead_generation_process_title" 
-                           name="lead_generation_process_title" 
-                           value="<?php echo esc_attr($process_title); ?>"
-                           placeholder="Our Lead Generation Process" />
+                    <?php wp_editor($process_title, 'lead_generation_process_title', array(
+                        'textarea_name' => 'lead_generation_process_title',
+                        'media_buttons' => false,
+                        'textarea_rows' => 2,
+                        'teeny' => true,
+                        'quicktags' => array('buttons' => 'strong,em,link,ul,ol,li')
+                    )); ?>
                 </td>
             </tr>
         </table>
@@ -575,12 +626,20 @@ function lead_generation_meta_box_callback($post) {
                                name="lead_generation_process_steps[<?php echo $index; ?>][number]" 
                                value="<?php echo esc_attr($step['number']); ?>"
                                placeholder="Step number" />
-                        <input type="text" 
-                               name="lead_generation_process_steps[<?php echo $index; ?>][title]" 
-                               value="<?php echo esc_attr($step['title']); ?>"
-                               placeholder="Step title" />
-                        <textarea name="lead_generation_process_steps[<?php echo $index; ?>][description]" 
-                                  placeholder="Step description"><?php echo esc_textarea($step['description']); ?></textarea>
+                        <?php wp_editor($step['title'], 'lead_generation_process_steps_' . $index . '_title', array(
+                            'textarea_name' => 'lead_generation_process_steps[' . $index . '][title]',
+                            'media_buttons' => false,
+                            'textarea_rows' => 2,
+                            'teeny' => true,
+                            'quicktags' => array('buttons' => 'strong,em,link,ul,ol,li')
+                        )); ?>
+                        <?php wp_editor($step['description'], 'lead_generation_process_steps_' . $index . '_description', array(
+                            'textarea_name' => 'lead_generation_process_steps[' . $index . '][description]',
+                            'media_buttons' => false,
+                            'textarea_rows' => 4,
+                            'teeny' => true,
+                            'quicktags' => array('buttons' => 'strong,em,link,ul,ol,li')
+                        )); ?>
                         <button type="button" class="button remove-repeater-item">Remove Step</button>
                     </div>
                 <?php endforeach; ?>
@@ -594,11 +653,13 @@ function lead_generation_meta_box_callback($post) {
             <tr>
                 <th><label for="lead_generation_types_title">Types Title</label></th>
                 <td>
-                    <input type="text" 
-                           id="lead_generation_types_title" 
-                           name="lead_generation_types_title" 
-                           value="<?php echo esc_attr($types_title); ?>"
-                           placeholder="Lead Generation Strategies by Business Type" />
+                    <?php wp_editor($types_title, 'lead_generation_types_title', array(
+                        'textarea_name' => 'lead_generation_types_title',
+                        'media_buttons' => false,
+                        'textarea_rows' => 2,
+                        'teeny' => true,
+                        'quicktags' => array('buttons' => 'strong,em,link,ul,ol,li')
+                    )); ?>
                 </td>
             </tr>
         </table>
@@ -608,17 +669,23 @@ function lead_generation_meta_box_callback($post) {
                 <?php foreach ($types as $index => $type): ?>
                     <div class="repeater-field">
                         <h4>Business Type <?php echo $index + 1; ?></h4>
-                        <input type="text" 
-                               name="lead_generation_types[<?php echo $index; ?>][title]" 
-                               value="<?php echo esc_attr($type['title']); ?>"
-                               placeholder="Type title" />
+                        <?php wp_editor($type['title'], 'lead_generation_types_' . $index . '_title', array(
+                            'textarea_name' => 'lead_generation_types[' . $index . '][title]',
+                            'media_buttons' => false,
+                            'textarea_rows' => 2,
+                            'teeny' => true,
+                            'quicktags' => array('buttons' => 'strong,em,link,ul,ol,li')
+                        )); ?>
                         <div>
                             <strong>Features:</strong>
                             <?php foreach ($type['features'] as $feat_index => $feature): ?>
-                                <input type="text" 
-                                       name="lead_generation_types[<?php echo $index; ?>][features][]" 
-                                       value="<?php echo esc_attr($feature); ?>"
-                                       placeholder="Feature" />
+                                <?php wp_editor($feature, 'lead_generation_types_' . $index . '_feature_' . $feat_index, array(
+                                    'textarea_name' => 'lead_generation_types[' . $index . '][features][]',
+                                    'media_buttons' => false,
+                                    'textarea_rows' => 2,
+                                    'teeny' => true,
+                                    'quicktags' => array('buttons' => 'strong,em,link,ul,ol,li')
+                                )); ?>
                             <?php endforeach; ?>
                         </div>
                         <button type="button" class="button add-type-feature" data-type-index="<?php echo $index; ?>">Add Feature</button>
@@ -635,11 +702,13 @@ function lead_generation_meta_box_callback($post) {
             <tr>
                 <th><label for="lead_generation_tools_title">Tools Title</label></th>
                 <td>
-                    <input type="text" 
-                           id="lead_generation_tools_title" 
-                           name="lead_generation_tools_title" 
-                           value="<?php echo esc_attr($tools_title); ?>"
-                           placeholder="Lead Generation Tools & Technologies" />
+                    <?php wp_editor($tools_title, 'lead_generation_tools_title', array(
+                        'textarea_name' => 'lead_generation_tools_title',
+                        'media_buttons' => false,
+                        'textarea_rows' => 2,
+                        'teeny' => true,
+                        'quicktags' => array('buttons' => 'strong,em,link,ul,ol,li')
+                    )); ?>
                 </td>
             </tr>
         </table>
@@ -649,17 +718,23 @@ function lead_generation_meta_box_callback($post) {
                 <?php foreach ($tools as $index => $tool): ?>
                     <div class="repeater-field">
                         <h4>Tool Category <?php echo $index + 1; ?></h4>
-                        <input type="text" 
-                               name="lead_generation_tools[<?php echo $index; ?>][title]" 
-                               value="<?php echo esc_attr($tool['title']); ?>"
-                               placeholder="Tool category title" />
+                        <?php wp_editor($tool['title'], 'lead_generation_tools_' . $index . '_title', array(
+                            'textarea_name' => 'lead_generation_tools[' . $index . '][title]',
+                            'media_buttons' => false,
+                            'textarea_rows' => 2,
+                            'teeny' => true,
+                            'quicktags' => array('buttons' => 'strong,em,link,ul,ol,li')
+                        )); ?>
                         <div>
                             <strong>Features:</strong>
                             <?php foreach ($tool['features'] as $feat_index => $feature): ?>
-                                <input type="text" 
-                                       name="lead_generation_tools[<?php echo $index; ?>][features][]" 
-                                       value="<?php echo esc_attr($feature); ?>"
-                                       placeholder="Feature" />
+                                <?php wp_editor($feature, 'lead_generation_tools_' . $index . '_feature_' . $feat_index, array(
+                                    'textarea_name' => 'lead_generation_tools[' . $index . '][features][]',
+                                    'media_buttons' => false,
+                                    'textarea_rows' => 2,
+                                    'teeny' => true,
+                                    'quicktags' => array('buttons' => 'strong,em,link,ul,ol,li')
+                                )); ?>
                             <?php endforeach; ?>
                         </div>
                         <button type="button" class="button add-tool-feature" data-tool-index="<?php echo $index; ?>">Add Feature</button>
@@ -676,9 +751,13 @@ function lead_generation_meta_box_callback($post) {
             <tr>
                 <th><label for="lead_generation_testimonial_quote">Testimonial Quote</label></th>
                 <td>
-                    <textarea id="lead_generation_testimonial_quote" 
-                              name="lead_generation_testimonial_quote"
-                              placeholder="Customer testimonial quote..."><?php echo esc_textarea($testimonial_quote); ?></textarea>
+                    <?php wp_editor($testimonial_quote, 'lead_generation_testimonial_quote', array(
+                        'textarea_name' => 'lead_generation_testimonial_quote',
+                        'media_buttons' => false,
+                        'textarea_rows' => 4,
+                        'teeny' => true,
+                        'quicktags' => array('buttons' => 'strong,em,link,ul,ol,li')
+                    )); ?>
                 </td>
             </tr>
             <tr>
@@ -719,19 +798,25 @@ function lead_generation_meta_box_callback($post) {
             <tr>
                 <th><label for="lead_generation_cta_title">CTA Title</label></th>
                 <td>
-                    <input type="text" 
-                           id="lead_generation_cta_title" 
-                           name="lead_generation_cta_title" 
-                           value="<?php echo esc_attr($cta_title); ?>"
-                           placeholder="Ready to Generate More Qualified Leads?" />
+                    <?php wp_editor($cta_title, 'lead_generation_cta_title', array(
+                        'textarea_name' => 'lead_generation_cta_title',
+                        'media_buttons' => false,
+                        'textarea_rows' => 2,
+                        'teeny' => true,
+                        'quicktags' => array('buttons' => 'strong,em,link,ul,ol,li')
+                    )); ?>
                 </td>
             </tr>
             <tr>
                 <th><label for="lead_generation_cta_subtitle">CTA Subtitle</label></th>
                 <td>
-                    <textarea id="lead_generation_cta_subtitle" 
-                              name="lead_generation_cta_subtitle"
-                              placeholder="Let's create a custom lead generation strategy that fills your sales pipeline with high-quality prospects."><?php echo esc_textarea($cta_subtitle); ?></textarea>
+                    <?php wp_editor($cta_subtitle, 'lead_generation_cta_subtitle', array(
+                        'textarea_name' => 'lead_generation_cta_subtitle',
+                        'media_buttons' => false,
+                        'textarea_rows' => 4,
+                        'teeny' => true,
+                        'quicktags' => array('buttons' => 'strong,em,link,ul,ol,li')
+                    )); ?>
                 </td>
             </tr>
             <tr>
@@ -779,12 +864,15 @@ function lead_generation_meta_box_callback($post) {
                 <td>
                     <div id="cta-benefits-repeater">
                         <?php if (!empty($cta_benefits)): ?>
-                            <?php foreach ($cta_benefits as $benefit): ?>
+                            <?php foreach ($cta_benefits as $index => $benefit): ?>
                                 <div class="repeater-field">
-                                    <input type="text" 
-                                           name="lead_generation_cta_benefits[]" 
-                                           value="<?php echo esc_attr($benefit); ?>"
-                                           placeholder="? Benefit item" />
+                                    <?php wp_editor($benefit, 'lead_generation_cta_benefits_' . $index, array(
+                                        'textarea_name' => 'lead_generation_cta_benefits[]',
+                                        'media_buttons' => false,
+                                        'textarea_rows' => 2,
+                                        'teeny' => true,
+                                        'quicktags' => array('buttons' => 'strong,em,link,ul,ol,li')
+                                    )); ?>
                                     <button type="button" class="button remove-repeater-item">Remove</button>
                                 </div>
                             <?php endforeach; ?>
@@ -956,26 +1044,60 @@ function lead_generation_meta_box_callback($post) {
 }
 
 function sanitize_lead_generation_meta_value($field, $value) {
+    // Define which fields support rich text (wp_editor)
+    $rich_text_fields = [
+        'lead_generation_header_title',
+        'lead_generation_header_subtitle',
+        'lead_generation_overview_title',
+        'lead_generation_overview_content',
+        'lead_generation_challenges_title',
+        'lead_generation_methods_title',
+        'lead_generation_case_study_label',
+        'lead_generation_case_study_title',
+        'lead_generation_case_study_content',
+        'lead_generation_case_study_challenge_title',
+        'lead_generation_case_study_solution_title',
+        'lead_generation_process_title',
+        'lead_generation_types_title',
+        'lead_generation_tools_title',
+        'lead_generation_testimonial_quote',
+        'lead_generation_cta_title',
+        'lead_generation_cta_subtitle'
+    ];
+
     if (is_array($value)) {
         foreach ($value as &$item) {
             if (is_array($item)) {
+                // For nested arrays like methods, types, tools, process_steps
                 foreach ($item as $key => &$subitem) {
                     if (is_array($subitem)) {
+                        // For features arrays within methods/types/tools
                         foreach ($subitem as &$sub_subitem) {
-                            $sub_subitem = sanitize_text_field($sub_subitem);
+                            $sub_subitem = wp_kses_post($sub_subitem);
                         }
                     } else {
-                        $subitem = sanitize_text_field($subitem);
+                        // For individual properties like title, description
+                        if ($key === 'title' || $key === 'description') {
+                            $subitem = wp_kses_post($subitem);
+                        } else {
+                            $subitem = sanitize_text_field($subitem);
+                        }
                     }
                 }
             } else {
-                $item = sanitize_text_field($item);
+                // For simple arrays like challenges, case_study_challenges, case_study_solutions, cta_benefits
+                if (in_array($field, ['lead_generation_challenges', 'lead_generation_case_study_challenges', 'lead_generation_case_study_solutions', 'lead_generation_cta_benefits'])) {
+                    $item = wp_kses_post($item);
+                } else {
+                    $item = sanitize_text_field($item);
+                }
             }
         }
         return $value;
     } else {
-        if (strpos($field, 'content') !== false || strpos($field, 'description') !== false || strpos($field, 'quote') !== false || strpos($field, 'subtitle') !== false) {
-            return sanitize_textarea_field($value);
+        // Handle individual fields
+        if (in_array($field, $rich_text_fields)) {
+            return wp_kses_post($value);
         } elseif (strpos($field, 'url') !== false) {
             return esc_url_raw($value);
         } else {
