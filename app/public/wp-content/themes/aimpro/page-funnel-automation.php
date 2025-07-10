@@ -2,7 +2,30 @@
 /**
  * Template Name: Funnel Automation
  * 
- * Sales funnel automation services page
+ * Sales f                                            <div c                <div class="service-item animate-on-scroll animate-stagger animate-fade-up">
+                    <div class="service-icon">
+                        <i class="fas fa-cogs"></i>
+                    </div>
+                    <h3><?php echo wp_kses_post(get_post_meta(get_the_ID(), 'funnel_automation_service_6_title', true) ?: 'Continuous optimisation'); ?></h3>
+                    <p><?php echo wp_kses_post(get_post_meta(get_the_ID(), 'funnel_automation_service_6_desc', true) ?: 'Data-driven improvements and A/B testing to maximise conversion rates at every funnel stage.'); ?></p>                </div>            </div>service-item animate-on-scroll animate-stagger animate-fade-up">
+                    <div class="service-icon">
+                        <i class="fas fa-envelope-open-text"></i>
+                    </div>
+                    <h3><?php echo wp_kses_post(get_post_meta(get_the_ID(), 'funnel_automation_service_4_title', true) ?: 'Multi-Step Sequences'); ?></h3>
+                    <p><?php echo wp_kses_post(get_post_meta(get_the_ID(), 'funnel_automation_service_4_desc', true) ?: 'Automated email and SMS sequences that nurture leads through each stage of the buying journey.'); ?></p>
+                </div>class="service-item animate-on-scroll animate-stagger animate-fade-up">
+                    <div class="service-icon">
+                        <i class="fas fa-bullseye"></i>
+                    </div>
+                    <h3><?php echo wp_kses_post(get_post_meta(get_the_ID(), 'funnel_automation_service_3_title', true) ?: 'Landing Page optimisation'); ?></h3>
+                    <p><?php echo wp_kses_post(get_post_meta(get_the_ID(), 'funnel_automation_service_3_desc', true) ?: 'High-converting landing pages designed specifically for each funnel stage with focused messaging and clear CTAs.'); ?></p>
+                </div>class="service-item animate-on-scroll animate-stagger animate-fade-up">
+                    <div class="service-icon">
+                        <i class="fas fa-user-plus"></i>
+                    </div>
+                    <h3><?php echo wp_kses_post(get_post_meta(get_the_ID(), 'funnel_automation_service_2_title', true) ?: 'Lead Magnet Creation'); ?></h3>
+                    <p><?php echo wp_kses_post(get_post_meta(get_the_ID(), 'funnel_automation_service_2_desc', true) ?: 'Compelling lead magnets and opt-in offers that attract your ideal prospects and start the nurturing process.'); ?></p>
+                </div>utomation services page
  *
  * @package Aimpro
  */
@@ -27,8 +50,8 @@ get_header(); ?>
     <section class="page-hero service-hero">
         <div class="container">
             <div class="hero-content animate-on-scroll animate-fade-up">
-                <h1><?php echo esc_html(get_post_meta(get_the_ID(), 'funnel_automation_hero_title', true) ?: 'Sales Funnel Automation'); ?></h1>
-                <p class="hero-subtitle"><?php echo esc_html(get_post_meta(get_the_ID(), 'funnel_automation_hero_subtitle', true) ?: 'Build intelligent sales funnels that automatically guide prospects from awareness to purchase, nurturing leads at every stage while you focus on growing your business.'); ?></p>
+                <h1><?php echo wp_kses_post(get_post_meta(get_the_ID(), 'funnel_automation_hero_title', true) ?: 'Sales Funnel Automation'); ?></h1>
+                <p class="hero-subtitle"><?php echo wp_kses_post(get_post_meta(get_the_ID(), 'funnel_automation_hero_subtitle', true) ?: 'Build intelligent sales funnels that automatically guide prospects from awareness to purchase, nurturing leads at every stage while you focus on growing your business.'); ?></p>
                 <div class="hero-stats animate-on-scroll animate-stagger animate-scale-up">
                     <div class="stat-item">
                         <div class="stat-number"><?php echo esc_html(get_post_meta(get_the_ID(), 'funnel_automation_hero_stat_1_number', true) ?: '420%'); ?></div>
@@ -43,15 +66,15 @@ get_header(); ?>
                         <div class="stat-label"><?php echo esc_html(get_post_meta(get_the_ID(), 'funnel_automation_hero_stat_3_label', true) ?: 'Revenue Growth'); ?></div>
                     </div>
                 </div>                <div class="hero-ctas animate-on-scroll animate-fade-up">
-                    <a href="#contact" class="btn-primary streamlined"><?php echo esc_html(get_post_meta(get_the_ID(), 'funnel_automation_hero_primary_btn', true) ?: 'Build Your Funnel'); ?></a>
+                    <a href="#contact" class="btn-primary streamlined"><?php echo wp_kses_post(get_post_meta(get_the_ID(), 'funnel_automation_hero_primary_btn', true) ?: 'Build Your Funnel'); ?></a>
                 </div>
             </div>
         </div>
     </section>    <!-- Service Overview -->
     <section class="service-overview">
         <div class="container">            <div class="overview-content animate-on-scroll animate-fade-up">
-                <h2><?php echo esc_html(get_post_meta(get_the_ID(), 'funnel_automation_overview_title', true) ?: 'Intelligent Sales Funnel Design & Automation'); ?></h2>
-                <p><?php echo esc_html(get_post_meta(get_the_ID(), 'funnel_automation_overview_description', true) ?: 'Transform your scattered marketing efforts into a cohesive, automated system that consistently converts prospects into customers. Our funnel automation strategies eliminate manual bottlenecks and ensure no lead falls through the cracks.'); ?></p>
+                <h2><?php echo wp_kses_post(get_post_meta(get_the_ID(), 'funnel_automation_overview_title', true) ?: 'Intelligent Sales Funnel Design & Automation'); ?></h2>
+                <p><?php echo wp_kses_post(get_post_meta(get_the_ID(), 'funnel_automation_overview_description', true) ?: 'Transform your scattered marketing efforts into a cohesive, automated system that consistently converts prospects into customers. Our funnel automation strategies eliminate manual bottlenecks and ensure no lead falls through the cracks.'); ?></p>
             </div>
             
             <div class="services-grid">
@@ -59,47 +82,47 @@ get_header(); ?>
                     <div class="service-icon">
                         <i class="fas fa-sitemap"></i>
                     </div>
-                    <h3><?php echo esc_html(get_post_meta(get_the_ID(), 'funnel_automation_service_1_title', true) ?: 'Funnel Strategy & Design'); ?></h3>
-                    <p><?php echo esc_html(get_post_meta(get_the_ID(), 'funnel_automation_service_1_desc', true) ?: 'Custom funnel architecture tailored to your customer journey with optimised touchpoints and conversion paths.'); ?></p>
+                    <h3><?php echo wp_kses_post(get_post_meta(get_the_ID(), 'funnel_automation_service_1_title', true) ?: 'Funnel Strategy & Design'); ?></h3>
+                    <p><?php echo wp_kses_post(get_post_meta(get_the_ID(), 'funnel_automation_service_1_desc', true) ?: 'Custom funnel architecture tailored to your customer journey with optimised touchpoints and conversion paths.'); ?></p>
                 </div>                
                 <div class="service-item animate-on-scroll animate-stagger animate-fade-up">
                     <div class="service-icon">
                         <i class="fas fa-magnet"></i>
                     </div>
-                    <h3><?php echo esc_html(get_post_meta(get_the_ID(), 'funnel_automation_service_2_title', true) ?: 'Lead Magnet Creation'); ?></h3>
-                    <p><?php echo esc_html(get_post_meta(get_the_ID(), 'funnel_automation_service_2_desc', true) ?: 'Compelling lead magnets and opt-in offers that attract your ideal prospects and start the nurturing process.'); ?></p>
+                    <h3><?php echo wp_kses_post(get_post_meta(get_the_ID(), 'funnel_automation_service_2_title', true) ?: 'Lead Magnet Creation'); ?></h3>
+                    <p><?php echo wp_kses_post(get_post_meta(get_the_ID(), 'funnel_automation_service_2_desc', true) ?: 'Compelling lead magnets and opt-in offers that attract your ideal prospects and start the nurturing process.'); ?></p>
                 </div>
                 
                 <div class="service-item animate-on-scroll animate-stagger animate-fade-up">
                     <div class="service-icon">
                         <i class="fas fa-mouse-pointer"></i>
                     </div>
-                    <h3><?php echo esc_html(get_post_meta(get_the_ID(), 'funnel_automation_service_3_title', true) ?: 'Landing Page optimisation'); ?></h3>
-                    <p><?php echo esc_html(get_post_meta(get_the_ID(), 'funnel_automation_service_3_desc', true) ?: 'High-converting landing pages designed specifically for each funnel stage with focused messaging and clear CTAs.'); ?></p>
+                    <h3><?php echo wp_kses_post(get_post_meta(get_the_ID(), 'funnel_automation_service_3_title', true) ?: 'Landing Page optimisation'); ?></h3>
+                    <p><?php echo wp_kses_post(get_post_meta(get_the_ID(), 'funnel_automation_service_3_desc', true) ?: 'High-converting landing pages designed specifically for each funnel stage with focused messaging and clear CTAs.'); ?></p>
                 </div>
                 
                 <div class="service-item animate-on-scroll animate-stagger animate-fade-up">
                     <div class="service-icon">
                         <i class="fas fa-route"></i>
                     </div>
-                    <h3><?php echo esc_html(get_post_meta(get_the_ID(), 'funnel_automation_service_4_title', true) ?: 'Multi-Step Sequences'); ?></h3>
-                    <p><?php echo esc_html(get_post_meta(get_the_ID(), 'funnel_automation_service_4_desc', true) ?: 'Automated email and SMS sequences that nurture leads through each stage of the buying journey.'); ?></p>
+                    <h3><?php echo wp_kses_post(get_post_meta(get_the_ID(), 'funnel_automation_service_4_title', true) ?: 'Multi-Step Sequences'); ?></h3>
+                    <p><?php echo wp_kses_post(get_post_meta(get_the_ID(), 'funnel_automation_service_4_desc', true) ?: 'Automated email and SMS sequences that nurture leads through each stage of the buying journey.'); ?></p>
                 </div>
                 
                 <div class="service-item animate-on-scroll animate-stagger animate-fade-up">
                     <div class="service-icon">
                         <i class="fas fa-chart-line"></i>
                     </div>
-                    <h3><?php echo esc_html(get_post_meta(get_the_ID(), 'funnel_automation_service_5_title', true) ?: 'Conversion Tracking'); ?></h3>
-                    <p><?php echo esc_html(get_post_meta(get_the_ID(), 'funnel_automation_service_5_desc', true) ?: 'Comprehensive analytics and tracking to measure funnel performance and identify optimisation opportunities.'); ?></p>
+                    <h3><?php echo wp_kses_post(get_post_meta(get_the_ID(), 'funnel_automation_service_5_title', true) ?: 'Conversion Tracking'); ?></h3>
+                    <p><?php echo wp_kses_post(get_post_meta(get_the_ID(), 'funnel_automation_service_5_desc', true) ?: 'Comprehensive analytics and tracking to measure funnel performance and identify optimisation opportunities.'); ?></p>
                 </div>
                 
                 <div class="service-item animate-on-scroll animate-stagger animate-fade-up">
                     <div class="service-icon">
                         <i class="fas fa-sync-alt"></i>
                     </div>
-                    <h3><?php echo esc_html(get_post_meta(get_the_ID(), 'funnel_automation_service_6_title', true) ?: 'Continuous optimisation'); ?></h3>
-                    <p><?php echo esc_html(get_post_meta(get_the_ID(), 'funnel_automation_service_6_desc', true) ?: 'Data-driven improvements and A/B testing to maximise conversion rates at every funnel stage.'); ?></p>                </div>            </div>
+                    <h3><?php echo wp_kses_post(get_post_meta(get_the_ID(), 'funnel_automation_service_6_title', true) ?: 'Continuous optimisation'); ?></h3>
+                    <p><?php echo wp_kses_post(get_post_meta(get_the_ID(), 'funnel_automation_service_6_desc', true) ?: 'Data-driven improvements and A/B testing to maximise conversion rates at every funnel stage.'); ?></p>                </div>            </div>
               <!-- CTA after services overview -->
             <div class="text-center animate-on-scroll animate-fade-up" style="margin-top: 3rem;">
                 <a href="<?php echo home_url('/contact'); ?>" class="btn-primary">Get Your Custom Funnel Strategy</a>
@@ -110,12 +133,12 @@ get_header(); ?>
         <div class="container">
             <div class="case-study-content">
                 <div class="case-study-text animate-on-scroll animate-slide-left">
-                    <h2><?php echo esc_html(get_post_meta(get_the_ID(), 'funnel_automation_case_title', true) ?: 'Case Study: Coaching Business Transformation'); ?></h2>
-                    <p class="case-study-intro"><?php echo esc_html(get_post_meta(get_the_ID(), 'funnel_automation_case_intro', true) ?: 'How we helped a business coach increase conversions by 420% and automate 75% of their sales process through intelligent funnel automation, generating £1.2M in additional revenue.'); ?></p>
+                    <h2><?php echo wp_kses_post(get_post_meta(get_the_ID(), 'funnel_automation_case_title', true) ?: 'Case Study: Coaching Business Transformation'); ?></h2>
+                    <p class="case-study-intro"><?php echo wp_kses_post(get_post_meta(get_the_ID(), 'funnel_automation_case_intro', true) ?: 'How we helped a business coach increase conversions by 420% and automate 75% of their sales process through intelligent funnel automation, generating £1.2M in additional revenue.'); ?></p>
                     
                     <div class="case-study-challenge">
                         <h3>The Challenge</h3>
-                        <p><?php echo esc_html(get_post_meta(get_the_ID(), 'funnel_automation_case_challenge', true) ?: 'A successful business coach was spending 60+ hours per week manually following up with leads, conducting discovery calls, and nurturing prospects. Despite high expertise, their conversion rate was only 8% and they couldn\'t scale beyond their time limitations.'); ?></p>
+                        <p><?php echo wp_kses_post(get_post_meta(get_the_ID(), 'funnel_automation_case_challenge', true) ?: 'A successful business coach was spending 60+ hours per week manually following up with leads, conducting discovery calls, and nurturing prospects. Despite high expertise, their conversion rate was only 8% and they couldn\'t scale beyond their time limitations.'); ?></p>
                     </div>
                     
                     <div class="case-study-solution">
@@ -235,45 +258,45 @@ get_header(); ?>
     </section>    <!-- Process Section -->
     <section class="process-section">
         <div class="container">
-            <h2 class="animate-on-scroll animate-fade-up"><?php echo esc_html(get_post_meta(get_the_ID(), 'funnel_automation_process_title', true) ?: 'Our Funnel Development Process'); ?></h2>
+            <h2 class="animate-on-scroll animate-fade-up"><?php echo wp_kses_post(get_post_meta(get_the_ID(), 'funnel_automation_process_title', true) ?: 'Our Funnel Development Process'); ?></h2>
             <div class="process-steps">
                 <div class="process-step animate-on-scroll animate-stagger animate-fade-up">
                     <div class="step-number">1</div>
                     <div class="step-content">
-                        <h3><?php echo esc_html(get_post_meta(get_the_ID(), 'funnel_automation_step_1_title', true) ?: 'Customer Journey Analysis'); ?></h3>
-                        <p><?php echo esc_html(get_post_meta(get_the_ID(), 'funnel_automation_step_1_desc', true) ?: 'Map your customer\'s buying journey and identify key touchpoints where automation can improve conversions.'); ?></p>
+                        <h3><?php echo wp_kses_post(get_post_meta(get_the_ID(), 'funnel_automation_step_1_title', true) ?: 'Customer Journey Analysis'); ?></h3>
+                        <p><?php echo wp_kses_post(get_post_meta(get_the_ID(), 'funnel_automation_step_1_desc', true) ?: 'Map your customer\'s buying journey and identify key touchpoints where automation can improve conversions.'); ?></p>
                     </div>
                 </div>
                 
                 <div class="process-step animate-on-scroll animate-stagger animate-fade-up">
                     <div class="step-number">2</div>
                     <div class="step-content">
-                        <h3><?php echo esc_html(get_post_meta(get_the_ID(), 'funnel_automation_step_2_title', true) ?: 'Funnel Strategy Design'); ?></h3>
-                        <p><?php echo esc_html(get_post_meta(get_the_ID(), 'funnel_automation_step_2_desc', true) ?: 'Create comprehensive funnel blueprint with conversion goals, messaging strategy, and automation triggers.'); ?></p>
+                        <h3><?php echo wp_kses_post(get_post_meta(get_the_ID(), 'funnel_automation_step_2_title', true) ?: 'Funnel Strategy Design'); ?></h3>
+                        <p><?php echo wp_kses_post(get_post_meta(get_the_ID(), 'funnel_automation_step_2_desc', true) ?: 'Create comprehensive funnel blueprint with conversion goals, messaging strategy, and automation triggers.'); ?></p>
                     </div>
                 </div>
                 
                 <div class="process-step animate-on-scroll animate-stagger animate-fade-up">
                     <div class="step-number">3</div>
                     <div class="step-content">
-                        <h3><?php echo esc_html(get_post_meta(get_the_ID(), 'funnel_automation_step_3_title', true) ?: 'Asset Creation'); ?></h3>
-                        <p><?php echo esc_html(get_post_meta(get_the_ID(), 'funnel_automation_step_3_desc', true) ?: 'Develop lead magnets, landing pages, email sequences, and all creative assets needed for the funnel.'); ?></p>
+                        <h3><?php echo wp_kses_post(get_post_meta(get_the_ID(), 'funnel_automation_step_3_title', true) ?: 'Asset Creation'); ?></h3>
+                        <p><?php echo wp_kses_post(get_post_meta(get_the_ID(), 'funnel_automation_step_3_desc', true) ?: 'Develop lead magnets, landing pages, email sequences, and all creative assets needed for the funnel.'); ?></p>
                     </div>
                 </div>
                 
                 <div class="process-step animate-on-scroll animate-stagger animate-fade-up">
                     <div class="step-number">4</div>
                     <div class="step-content">
-                        <h3><?php echo esc_html(get_post_meta(get_the_ID(), 'funnel_automation_step_4_title', true) ?: 'Technical Implementation'); ?></h3>
-                        <p><?php echo esc_html(get_post_meta(get_the_ID(), 'funnel_automation_step_4_desc', true) ?: 'Build and configure all automation workflows, tracking systems, and integration connections.'); ?></p>
+                        <h3><?php echo wp_kses_post(get_post_meta(get_the_ID(), 'funnel_automation_step_4_title', true) ?: 'Technical Implementation'); ?></h3>
+                        <p><?php echo wp_kses_post(get_post_meta(get_the_ID(), 'funnel_automation_step_4_desc', true) ?: 'Build and configure all automation workflows, tracking systems, and integration connections.'); ?></p>
                     </div>
                 </div>
                 
                 <div class="process-step animate-on-scroll animate-stagger animate-fade-up">
                     <div class="step-number">5</div>
                     <div class="step-content">
-                        <h3><?php echo esc_html(get_post_meta(get_the_ID(), 'funnel_automation_step_5_title', true) ?: 'Testing & optimisation'); ?></h3>
-                        <p><?php echo esc_html(get_post_meta(get_the_ID(), 'funnel_automation_step_5_desc', true) ?: 'Launch with careful monitoring and continuous optimisation based on performance data and user behaviour.'); ?></p>
+                        <h3><?php echo wp_kses_post(get_post_meta(get_the_ID(), 'funnel_automation_step_5_title', true) ?: 'Testing & optimisation'); ?></h3>
+                        <p><?php echo wp_kses_post(get_post_meta(get_the_ID(), 'funnel_automation_step_5_desc', true) ?: 'Launch with careful monitoring and continuous optimisation based on performance data and user behaviour.'); ?></p>
                     </div>
                 </div>
             </div>
@@ -479,7 +502,7 @@ get_header(); ?>
         <div class="container">
             <div class="testimonial-content animate-on-scroll animate-fade-up">
                 <blockquote>
-                    "<?php echo esc_html(get_post_meta(get_the_ID(), 'funnel_automation_testimonial_quote', true) ?: 'The funnel automation Aimpro built transformed my business completely. I went from working 60+ hours a week chasing leads to having a system that generates £1.2M annually while I focus on what I love most - coaching.'); ?>"
+                    "<?php echo wp_kses_post(get_post_meta(get_the_ID(), 'funnel_automation_testimonial_quote', true) ?: 'The funnel automation Aimpro built transformed my business completely. I went from working 60+ hours a week chasing leads to having a system that generates £1.2M annually while I focus on what I love most - coaching.'); ?>"
                 </blockquote>
                 <cite>
                     <strong><?php echo esc_html(get_post_meta(get_the_ID(), 'funnel_automation_testimonial_author', true) ?: 'Patricia Williams'); ?></strong><br>
@@ -491,10 +514,10 @@ get_header(); ?>
     <section id="contact" class="cta-section">
         <div class="container">
             <div class="cta-content animate-on-scroll animate-fade-up">
-                <h2><?php echo esc_html(get_post_meta(get_the_ID(), 'funnel_automation_cta_title', true) ?: 'Ready to Automate Your Sales Funnel?'); ?></h2>
-                <p><?php echo esc_html(get_post_meta(get_the_ID(), 'funnel_automation_cta_description', true) ?: 'Stop losing leads to manual processes and inconsistent follow-up. Our intelligent funnel automation will transform your sales process and free up your time to focus on growing your business.'); ?></p>
+                <h2><?php echo wp_kses_post(get_post_meta(get_the_ID(), 'funnel_automation_cta_title', true) ?: 'Ready to Automate Your Sales Funnel?'); ?></h2>
+                <p><?php echo wp_kses_post(get_post_meta(get_the_ID(), 'funnel_automation_cta_description', true) ?: 'Stop losing leads to manual processes and inconsistent follow-up. Our intelligent funnel automation will transform your sales process and free up your time to focus on growing your business.'); ?></p>
                 <div class="cta-buttons">
-                    <a href="<?php echo home_url('/contact'); ?>" class="btn-outline"><?php echo esc_html(get_post_meta(get_the_ID(), 'funnel_automation_cta_button', true) ?: 'Build Your Funnel'); ?></a>
+                    <a href="<?php echo home_url('/contact'); ?>" class="btn-outline"><?php echo wp_kses_post(get_post_meta(get_the_ID(), 'funnel_automation_cta_button', true) ?: 'Build Your Funnel'); ?></a>
                 </div>
             </div>
         </div>
