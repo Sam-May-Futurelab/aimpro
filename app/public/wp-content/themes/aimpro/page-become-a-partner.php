@@ -23,15 +23,15 @@ get_header(); ?>
     <div class="container">          <!-- Page Header -->
         <section class="page-header animate-on-scroll animate-fade-up">
             <div class="page-header-content">
-                <h1><?php echo esc_html(get_post_meta(get_the_ID(), 'partner_header_title', true) ?: 'Become a Partner'); ?></h1>
-                <p class="page-subtitle"><?php echo esc_html(get_post_meta(get_the_ID(), 'partner_header_subtitle', true) ?: 'Join our network of strategic partners and grow together'); ?></p>
+                <h1><?php echo wp_kses_post(get_post_meta(get_the_ID(), 'partner_header_title', true) ?: 'Become a Partner'); ?></h1>
+                <p class="page-subtitle"><?php echo wp_kses_post(get_post_meta(get_the_ID(), 'partner_header_subtitle', true) ?: 'Join our network of strategic partners and grow together'); ?></p>
             </div>
         </section>        <!-- Partnership Overview -->
         <section class="partnership-overview">
             <div class="section-content">
                 <div class="overview-grid">
                     <div class="overview-content animate-on-scroll animate-slide-left">
-                        <h2><?php echo esc_html(get_post_meta(get_the_ID(), 'partner_intro_heading', true) ?: 'Partner with Aimpro Digital'); ?></h2>
+                        <h2><?php echo wp_kses_post(get_post_meta(get_the_ID(), 'partner_intro_heading', true) ?: 'Partner with Aimpro Digital'); ?></h2>
                         <?php 
                         $intro_text = get_post_meta(get_the_ID(), 'partner_intro_text', true) ?: 'We believe in the power of collaboration. Our partnership program is designed to create mutually beneficial relationships that help both parties grow and succeed in the digital marketing landscape.\n\nWhether you\'re a complementary service provider, technology vendor, or strategic ally, we offer various partnership opportunities that can expand your reach while providing additional value to our clients.';
                         echo wp_kses_post($intro_text);
@@ -69,7 +69,7 @@ get_header(); ?>
         </section>        <!-- Partnership Types -->
         <section class="partnership-types" id="partnership-opportunities">
             <div class="section-content">
-                <h2 class="animate-on-scroll animate-fade-up"><?php echo esc_html(get_post_meta(get_the_ID(), 'partner_opportunities_heading', true) ?: 'Partnership Opportunities'); ?></h2>
+                <h2 class="animate-on-scroll animate-fade-up"><?php echo wp_kses_post(get_post_meta(get_the_ID(), 'partner_opportunities_heading', true) ?: 'Partnership Opportunities'); ?></h2>
                 <div class="partnership-grid">                      <!-- Referral Partners -->
                     <div class="partnership-card animate-on-scroll animate-stagger animate-fade-up">
                         <div class="partnership-icon">
@@ -83,15 +83,10 @@ get_header(); ?>
                         <h3><?php echo esc_html(get_post_meta(get_the_ID(), 'partner_referral_title', true) ?: 'Referral Partners'); ?></h3>
                         <p><?php echo wp_kses_post(get_post_meta(get_the_ID(), 'partner_referral_description', true) ?: 'Earn generous commissions by referring clients to our digital marketing services. Perfect for consultants, web developers, and business advisors.'); ?></p>
                         <div class="partnership-benefits">
-                            <ul>
-                                <?php 
-                                $benefits = get_post_meta(get_the_ID(), 'partner_referral_benefits', true) ?: "Up to 20% commission on referred business\nDedicated partner support team\nMarketing materials and resources\nRegular training and updates";
-                                $benefits_array = explode("\n", $benefits);
-                                foreach ($benefits_array as $benefit) {
-                                    echo '<li>' . esc_html(trim($benefit)) . '</li>';
-                                }
-                                ?>
-                            </ul>
+                            <?php 
+                            $benefits = get_post_meta(get_the_ID(), 'partner_referral_benefits', true) ?: "Up to 20% commission on referred business\nDedicated partner support team\nMarketing materials and resources\nRegular training and updates";
+                            echo wp_kses_post($benefits);
+                            ?>
                         </div>
                         <div class="partnership-requirements">
                             <h4>Ideal For:</h4>
@@ -114,15 +109,10 @@ get_header(); ?>
                         <h3><?php echo esc_html(get_post_meta(get_the_ID(), 'partner_tech_title', true) ?: 'Technology Partners'); ?></h3>
                         <p><?php echo wp_kses_post(get_post_meta(get_the_ID(), 'partner_tech_description', true) ?: 'Integrate your software or tools with our marketing stack to provide enhanced solutions for our mutual clients.'); ?></p>
                         <div class="partnership-benefits">
-                            <ul>
-                                <?php 
-                                $benefits = get_post_meta(get_the_ID(), 'partner_tech_benefits', true) ?: "Technical integration and API access\nJoint marketing opportunities\nCo-branded solution development\nShared client success stories";
-                                $benefits_array = explode("\n", $benefits);
-                                foreach ($benefits_array as $benefit) {
-                                    echo '<li>' . esc_html(trim($benefit)) . '</li>';
-                                }
-                                ?>
-                            </ul>
+                            <?php 
+                            $benefits = get_post_meta(get_the_ID(), 'partner_tech_benefits', true) ?: "Technical integration and API access\nJoint marketing opportunities\nCo-branded solution development\nShared client success stories";
+                            echo wp_kses_post($benefits);
+                            ?>
                         </div>
                         <div class="partnership-requirements">
                             <h4>Ideal For:</h4>
@@ -143,15 +133,10 @@ get_header(); ?>
                         <h3><?php echo esc_html(get_post_meta(get_the_ID(), 'partner_agency_title', true) ?: 'Agency Partners'); ?></h3>
                         <p><?php echo wp_kses_post(get_post_meta(get_the_ID(), 'partner_agency_description', true) ?: 'White-label our services or collaborate on larger projects that require specialised expertise in digital marketing.'); ?></p>
                         <div class="partnership-benefits">
-                            <ul>
-                                <?php 
-                                $benefits = get_post_meta(get_the_ID(), 'partner_agency_benefits', true) ?: "White-label service delivery\nShared project management\nCollaborative proposal development\nResource and expertise sharing";
-                                $benefits_array = explode("\n", $benefits);
-                                foreach ($benefits_array as $benefit) {
-                                    echo '<li>' . esc_html(trim($benefit)) . '</li>';
-                                }
-                                ?>
-                            </ul>
+                            <?php 
+                            $benefits = get_post_meta(get_the_ID(), 'partner_agency_benefits', true) ?: "White-label service delivery\nShared project management\nCollaborative proposal development\nResource and expertise sharing";
+                            echo wp_kses_post($benefits);
+                            ?>
                         </div>
                         <div class="partnership-requirements">
                             <h4>Ideal For:</h4>
@@ -171,15 +156,10 @@ get_header(); ?>
                         <h3><?php echo esc_html(get_post_meta(get_the_ID(), 'partner_reseller_title', true) ?: 'Reseller Partners'); ?></h3>
                         <p><?php echo wp_kses_post(get_post_meta(get_the_ID(), 'partner_reseller_description', true) ?: 'Resell our digital marketing services under your own brand with full support and training from our team.'); ?></p>
                         <div class="partnership-benefits">
-                            <ul>
-                                <?php 
-                                $benefits = get_post_meta(get_the_ID(), 'partner_reseller_benefits', true) ?: "Competitive wholesale pricing\nComplete sales and marketing training\nDedicated account management\nOngoing technical support";
-                                $benefits_array = explode("\n", $benefits);
-                                foreach ($benefits_array as $benefit) {
-                                    echo '<li>' . esc_html(trim($benefit)) . '</li>';
-                                }
-                                ?>
-                            </ul>
+                            <?php 
+                            $benefits = get_post_meta(get_the_ID(), 'partner_reseller_benefits', true) ?: "Competitive wholesale pricing\nComplete sales and marketing training\nDedicated account management\nOngoing technical support";
+                            echo wp_kses_post($benefits);
+                            ?>
                         </div>                        <div class="partnership-requirements">
                             <h4>Ideal For:</h4>
                             <p><?php echo wp_kses_post(get_post_meta(get_the_ID(), 'partner_reseller_ideal', true) ?: 'Established businesses with existing client relationships who want to add digital marketing services to their portfolio.'); ?></p>
@@ -190,7 +170,7 @@ get_header(); ?>
         </section>        <!-- Partner Benefits -->
         <section class="partner-benefits">
             <div class="section-content">
-                <h2><?php echo esc_html(get_post_meta(get_the_ID(), 'partner_why_heading', true) ?: 'Why Partner with Aimpro Digital?'); ?></h2>
+                <h2><?php echo wp_kses_post(get_post_meta(get_the_ID(), 'partner_why_heading', true) ?: 'Why Partner with Aimpro Digital?'); ?></h2>
                 <div class="benefits-grid">
                     <div class="benefit-item">
                         <h3><?php echo esc_html(get_post_meta(get_the_ID(), 'partner_why_benefit1_title', true) ?: 'Proven Track Record'); ?></h3>
@@ -220,7 +200,7 @@ get_header(); ?>
         </section>        <!-- Partner Success Stories -->
         <section class="partner-testimonials">
             <div class="section-content">
-                <h2><?php echo esc_html(get_post_meta(get_the_ID(), 'partner_stories_heading', true) ?: 'Partner Success Stories'); ?></h2>
+                <h2><?php echo wp_kses_post(get_post_meta(get_the_ID(), 'partner_stories_heading', true) ?: 'Partner Success Stories'); ?></h2>
                 <div class="testimonials-grid">                    <div class="testimonial-card">
                         <blockquote>
                             "<?php echo wp_kses_post(get_post_meta(get_the_ID(), 'partner_testimonial1_quote', true) ?: 'Partnering with Aimpro Digital has allowed us to offer comprehensive digital marketing services to our clients without having to build that expertise in-house. The results have been outstanding.'); ?>"
@@ -258,7 +238,7 @@ get_header(); ?>
         </section>        <!-- Partnership Process -->
         <section class="partnership-process">
             <div class="section-content">
-                <h2><?php echo esc_html(get_post_meta(get_the_ID(), 'partner_process_heading', true) ?: 'How to Become a Partner'); ?></h2>                <div class="process-steps">
+                <h2><?php echo wp_kses_post(get_post_meta(get_the_ID(), 'partner_process_heading', true) ?: 'How to Become a Partner'); ?></h2>                <div class="process-steps">
                     <div class="step">
                         <div class="step-number"><?php echo esc_html(get_post_meta(get_the_ID(), 'partner_process_step1_number', true) ?: '1'); ?></div>
                         <div class="step-content">
@@ -298,7 +278,7 @@ get_header(); ?>
             </div>
         </section>        <!-- Partnership Application Form -->
         <section class="partnership-application" id="partnership-form">            <div class="section-content">
-                <h2><?php echo esc_html(get_post_meta(get_the_ID(), 'partner_form_heading', true) ?: 'Apply to Become a Partner'); ?></h2>
+                <h2><?php echo wp_kses_post(get_post_meta(get_the_ID(), 'partner_form_heading', true) ?: 'Apply to Become a Partner'); ?></h2>
                 <p><?php echo wp_kses_post(get_post_meta(get_the_ID(), 'partner_form_description', true) ?: 'Ready to explore partnership opportunities? Fill out the form below and we\'ll get back to you within 24 hours.'); ?></p>
                 
                 <?php if (isset($_GET['partnership_success'])): ?>
@@ -387,7 +367,7 @@ get_header(); ?>
         </section>        <!-- Contact Partnership Team -->
         <section class="contact-hr">
             <div class="section-content">
-                <h2><?php echo esc_html(get_post_meta(get_the_ID(), 'partner_contact_heading', true) ?: 'Questions About Partnerships?'); ?></h2>
+                <h2><?php echo wp_kses_post(get_post_meta(get_the_ID(), 'partner_contact_heading', true) ?: 'Questions About Partnerships?'); ?></h2>
                 <p><?php echo wp_kses_post(get_post_meta(get_the_ID(), 'partner_contact_description', true) ?: 'Our partnership team is here to answer any questions and help you find the right partnership opportunity'); ?></p>
                 <div class="cta-buttons" style="justify-content: center; margin-top: 2rem;">
                     <a href="mailto:<?php echo esc_attr(get_post_meta(get_the_ID(), 'partner_contact_email', true) ?: 'hello@aimpro.co.uk'); ?>" class="btn btn-primary">

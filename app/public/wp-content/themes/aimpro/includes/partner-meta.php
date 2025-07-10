@@ -144,11 +144,31 @@ function aimpro_partner_meta_box_callback($post) {
         </tr>
         <tr>
             <th><label for="partner_header_title">Page Title</label></th>
-            <td><input type="text" id="partner_header_title" name="partner_header_title" value="<?php echo esc_attr($header_title); ?>" class="regular-text" /></td>
+            <td>
+                <?php 
+                wp_editor($header_title, 'partner_header_title', array(
+                    'textarea_name' => 'partner_header_title',
+                    'media_buttons' => false,
+                    'textarea_rows' => 2,
+                    'teeny' => true,
+                    'quicktags' => true
+                ));
+                ?>
+            </td>
         </tr>
         <tr>
             <th><label for="partner_header_subtitle">Page Subtitle</label></th>
-            <td><input type="text" id="partner_header_subtitle" name="partner_header_subtitle" value="<?php echo esc_attr($header_subtitle); ?>" class="regular-text" /></td>
+            <td>
+                <?php 
+                wp_editor($header_subtitle, 'partner_header_subtitle', array(
+                    'textarea_name' => 'partner_header_subtitle',
+                    'media_buttons' => false,
+                    'textarea_rows' => 2,
+                    'teeny' => true,
+                    'quicktags' => true
+                ));
+                ?>
+            </td>
         </tr>
         
         <tr>
@@ -156,7 +176,17 @@ function aimpro_partner_meta_box_callback($post) {
         </tr>
         <tr>
             <th><label for="partner_intro_heading">Introduction Heading</label></th>
-            <td><input type="text" id="partner_intro_heading" name="partner_intro_heading" value="<?php echo esc_attr($intro_heading); ?>" class="regular-text" /></td>
+            <td>
+                <?php 
+                wp_editor($intro_heading, 'partner_intro_heading', array(
+                    'textarea_name' => 'partner_intro_heading',
+                    'media_buttons' => false,
+                    'textarea_rows' => 2,
+                    'teeny' => true,
+                    'quicktags' => true
+                ));
+                ?>
+            </td>
         </tr>
         <tr>
             <th><label for="partner_intro_text">Introduction Text</label></th>
@@ -178,31 +208,101 @@ function aimpro_partner_meta_box_callback($post) {
         </tr>
         <tr>
             <th><label for="partner_stats_heading">Stats Section Heading</label></th>
-            <td><input type="text" id="partner_stats_heading" name="partner_stats_heading" value="<?php echo esc_attr($stats_heading); ?>" class="regular-text" /></td>
+            <td>
+                <?php 
+                wp_editor($stats_heading, 'partner_stats_heading', array(
+                    'textarea_name' => 'partner_stats_heading',
+                    'media_buttons' => false,
+                    'textarea_rows' => 2,
+                    'teeny' => true,
+                    'quicktags' => true
+                ));
+                ?>
+            </td>
         </tr>
         <tr>
             <th><label for="partner_stats_value1">Stat 1 Value</label></th>
-            <td><input type="text" id="partner_stats_value1" name="partner_stats_value1" value="<?php echo esc_attr($stats_value1); ?>" class="regular-text" /></td>
+            <td>
+                <?php 
+                wp_editor($stats_value1, 'partner_stats_value1', array(
+                    'textarea_name' => 'partner_stats_value1',
+                    'media_buttons' => false,
+                    'textarea_rows' => 1,
+                    'teeny' => true,
+                    'quicktags' => true
+                ));
+                ?>
+            </td>
         </tr>
         <tr>
             <th><label for="partner_stats_label1">Stat 1 Label</label></th>
-            <td><input type="text" id="partner_stats_label1" name="partner_stats_label1" value="<?php echo esc_attr($stats_label1); ?>" class="regular-text" /></td>
+            <td>
+                <?php 
+                wp_editor($stats_label1, 'partner_stats_label1', array(
+                    'textarea_name' => 'partner_stats_label1',
+                    'media_buttons' => false,
+                    'textarea_rows' => 1,
+                    'teeny' => true,
+                    'quicktags' => true
+                ));
+                ?>
+            </td>
         </tr>
         <tr>
             <th><label for="partner_stats_value2">Stat 2 Value</label></th>
-            <td><input type="text" id="partner_stats_value2" name="partner_stats_value2" value="<?php echo esc_attr($stats_value2); ?>" class="regular-text" /></td>
+            <td>
+                <?php 
+                wp_editor($stats_value2, 'partner_stats_value2', array(
+                    'textarea_name' => 'partner_stats_value2',
+                    'media_buttons' => false,
+                    'textarea_rows' => 1,
+                    'teeny' => true,
+                    'quicktags' => true
+                ));
+                ?>
+            </td>
         </tr>
         <tr>
             <th><label for="partner_stats_label2">Stat 2 Label</label></th>
-            <td><input type="text" id="partner_stats_label2" name="partner_stats_label2" value="<?php echo esc_attr($stats_label2); ?>" class="regular-text" /></td>
+            <td>
+                <?php 
+                wp_editor($stats_label2, 'partner_stats_label2', array(
+                    'textarea_name' => 'partner_stats_label2',
+                    'media_buttons' => false,
+                    'textarea_rows' => 1,
+                    'teeny' => true,
+                    'quicktags' => true
+                ));
+                ?>
+            </td>
         </tr>
         <tr>
             <th><label for="partner_stats_value3">Stat 3 Value</label></th>
-            <td><input type="text" id="partner_stats_value3" name="partner_stats_value3" value="<?php echo esc_attr($stats_value3); ?>" class="regular-text" /></td>
+            <td>
+                <?php 
+                wp_editor($stats_value3, 'partner_stats_value3', array(
+                    'textarea_name' => 'partner_stats_value3',
+                    'media_buttons' => false,
+                    'textarea_rows' => 1,
+                    'teeny' => true,
+                    'quicktags' => true
+                ));
+                ?>
+            </td>
         </tr>
         <tr>
             <th><label for="partner_stats_label3">Stat 3 Label</label></th>
-            <td><input type="text" id="partner_stats_label3" name="partner_stats_label3" value="<?php echo esc_attr($stats_label3); ?>" class="regular-text" /></td>
+            <td>
+                <?php 
+                wp_editor($stats_label3, 'partner_stats_label3', array(
+                    'textarea_name' => 'partner_stats_label3',
+                    'media_buttons' => false,
+                    'textarea_rows' => 1,
+                    'teeny' => true,
+                    'quicktags' => true
+                ));
+                ?>
+            </td>
         </tr>
         
         <tr>
@@ -210,7 +310,17 @@ function aimpro_partner_meta_box_callback($post) {
         </tr>
         <tr>
             <th><label for="partner_opportunities_heading">Partnership Opportunities Heading</label></th>
-            <td><input type="text" id="partner_opportunities_heading" name="partner_opportunities_heading" value="<?php echo esc_attr($opportunities_heading); ?>" class="regular-text" /></td>
+            <td>
+                <?php 
+                wp_editor($opportunities_heading, 'partner_opportunities_heading', array(
+                    'textarea_name' => 'partner_opportunities_heading',
+                    'media_buttons' => false,
+                    'textarea_rows' => 2,
+                    'teeny' => true,
+                    'quicktags' => true
+                ));
+                ?>
+            </td>
         </tr>
         
         <tr>
@@ -236,7 +346,17 @@ function aimpro_partner_meta_box_callback($post) {
         </tr>
         <tr>
             <th><label for="partner_referral_benefits">Benefits (one per line)</label></th>
-            <td><textarea id="partner_referral_benefits" name="partner_referral_benefits" rows="4" class="large-text"><?php echo esc_textarea($referral_benefits); ?></textarea></td>
+            <td>
+                <?php 
+                wp_editor($referral_benefits, 'partner_referral_benefits', array(
+                    'textarea_name' => 'partner_referral_benefits',
+                    'media_buttons' => false,
+                    'textarea_rows' => 4,
+                    'teeny' => true,
+                    'quicktags' => true
+                ));
+                ?>
+            </td>
         </tr>
         <tr>
             <th><label for="partner_referral_ideal">Ideal For</label></th>
@@ -276,7 +396,17 @@ function aimpro_partner_meta_box_callback($post) {
         </tr>
         <tr>
             <th><label for="partner_tech_benefits">Benefits (one per line)</label></th>
-            <td><textarea id="partner_tech_benefits" name="partner_tech_benefits" rows="4" class="large-text"><?php echo esc_textarea($tech_benefits); ?></textarea></td>
+            <td>
+                <?php 
+                wp_editor($tech_benefits, 'partner_tech_benefits', array(
+                    'textarea_name' => 'partner_tech_benefits',
+                    'media_buttons' => false,
+                    'textarea_rows' => 4,
+                    'teeny' => true,
+                    'quicktags' => true
+                ));
+                ?>
+            </td>
         </tr>
         <tr>
             <th><label for="partner_tech_ideal">Ideal For</label></th>
@@ -316,7 +446,17 @@ function aimpro_partner_meta_box_callback($post) {
         </tr>
         <tr>
             <th><label for="partner_agency_benefits">Benefits (one per line)</label></th>
-            <td><textarea id="partner_agency_benefits" name="partner_agency_benefits" rows="4" class="large-text"><?php echo esc_textarea($agency_benefits); ?></textarea></td>
+            <td>
+                <?php 
+                wp_editor($agency_benefits, 'partner_agency_benefits', array(
+                    'textarea_name' => 'partner_agency_benefits',
+                    'media_buttons' => false,
+                    'textarea_rows' => 4,
+                    'teeny' => true,
+                    'quicktags' => true
+                ));
+                ?>
+            </td>
         </tr>
         <tr>
             <th><label for="partner_agency_ideal">Ideal For</label></th>
@@ -356,7 +496,17 @@ function aimpro_partner_meta_box_callback($post) {
         </tr>
         <tr>
             <th><label for="partner_reseller_benefits">Benefits (one per line)</label></th>
-            <td><textarea id="partner_reseller_benefits" name="partner_reseller_benefits" rows="4" class="large-text"><?php echo esc_textarea($reseller_benefits); ?></textarea></td>
+            <td>
+                <?php 
+                wp_editor($reseller_benefits, 'partner_reseller_benefits', array(
+                    'textarea_name' => 'partner_reseller_benefits',
+                    'media_buttons' => false,
+                    'textarea_rows' => 4,
+                    'teeny' => true,
+                    'quicktags' => true
+                ));
+                ?>
+            </td>
         </tr>
         <tr>
             <th><label for="partner_reseller_ideal">Ideal For</label></th>
@@ -378,7 +528,17 @@ function aimpro_partner_meta_box_callback($post) {
         </tr>
         <tr>
             <th><label for="partner_why_heading">Why Partner Section Heading</label></th>
-            <td><input type="text" id="partner_why_heading" name="partner_why_heading" value="<?php echo esc_attr($why_heading); ?>" class="regular-text" /></td>
+            <td>
+                <?php 
+                wp_editor($why_heading, 'partner_why_heading', array(
+                    'textarea_name' => 'partner_why_heading',
+                    'media_buttons' => false,
+                    'textarea_rows' => 2,
+                    'teeny' => true,
+                    'quicktags' => true
+                ));
+                ?>
+            </td>
         </tr>
         <tr>
             <th><label for="partner_why_benefit1_title">Benefit 1 Title</label></th>
@@ -494,7 +654,17 @@ function aimpro_partner_meta_box_callback($post) {
         </tr>
         <tr>
             <th><label for="partner_stories_heading">Success Stories Heading</label></th>
-            <td><input type="text" id="partner_stories_heading" name="partner_stories_heading" value="<?php echo esc_attr($stories_heading); ?>" class="regular-text" /></td>
+            <td>
+                <?php 
+                wp_editor($stories_heading, 'partner_stories_heading', array(
+                    'textarea_name' => 'partner_stories_heading',
+                    'media_buttons' => false,
+                    'textarea_rows' => 2,
+                    'teeny' => true,
+                    'quicktags' => true
+                ));
+                ?>
+            </td>
         </tr>
         <tr>
           <th colspan="2"><h4>Testimonial 1</h4></th>
@@ -589,7 +759,17 @@ function aimpro_partner_meta_box_callback($post) {
         </tr>
         <tr>
             <th><label for="partner_process_heading">Process Section Heading</label></th>
-            <td><input type="text" id="partner_process_heading" name="partner_process_heading" value="<?php echo esc_attr($process_heading); ?>" class="regular-text" /></td>
+            <td>
+                <?php 
+                wp_editor($process_heading, 'partner_process_heading', array(
+                    'textarea_name' => 'partner_process_heading',
+                    'media_buttons' => false,
+                    'textarea_rows' => 2,
+                    'teeny' => true,
+                    'quicktags' => true
+                ));
+                ?>
+            </td>
         </tr>
         <tr>
           <th colspan="2"><h4>Step 1</h4></th>
@@ -722,7 +902,17 @@ function aimpro_partner_meta_box_callback($post) {
         </tr>
         <tr>
             <th><label for="partner_form_heading">Form Heading</label></th>
-            <td><input type="text" id="partner_form_heading" name="partner_form_heading" value="<?php echo esc_attr($form_heading); ?>" class="regular-text" /></td>
+            <td>
+                <?php 
+                wp_editor($form_heading, 'partner_form_heading', array(
+                    'textarea_name' => 'partner_form_heading',
+                    'media_buttons' => false,
+                    'textarea_rows' => 2,
+                    'teeny' => true,
+                    'quicktags' => true
+                ));
+                ?>
+            </td>
         </tr>
         <tr>
             <th><label for="partner_form_description">Form Description</label></th>
@@ -744,7 +934,17 @@ function aimpro_partner_meta_box_callback($post) {
         </tr>
         <tr>
             <th><label for="partner_contact_heading">Contact Heading</label></th>
-            <td><input type="text" id="partner_contact_heading" name="partner_contact_heading" value="<?php echo esc_attr($contact_heading); ?>" class="regular-text" /></td>
+            <td>
+                <?php 
+                wp_editor($contact_heading, 'partner_contact_heading', array(
+                    'textarea_name' => 'partner_contact_heading',
+                    'media_buttons' => false,
+                    'textarea_rows' => 2,
+                    'teeny' => true,
+                    'quicktags' => true
+                ));
+                ?>
+            </td>
         </tr>
         <tr>
             <th><label for="partner_contact_description">Contact Description</label></th>
@@ -790,7 +990,9 @@ function aimpro_save_partner_meta($post_id) {
     function sanitize_partner_meta_value($field, $value) {
         // Rich text fields that should use wp_kses_post for HTML content
         if (strpos($field, 'text') !== false || strpos($field, 'description') !== false || 
-            strpos($field, 'quote') !== false || strpos($field, 'ideal') !== false) {
+            strpos($field, 'quote') !== false || strpos($field, 'ideal') !== false ||
+            strpos($field, 'heading') !== false || strpos($field, 'title') !== false ||
+            strpos($field, 'benefits') !== false) {
             return wp_kses_post($value);
         } elseif (strpos($field, 'email') !== false) {
             return sanitize_email($value);
