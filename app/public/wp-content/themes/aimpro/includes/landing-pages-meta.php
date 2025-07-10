@@ -75,7 +75,7 @@ function aimpro_landingpages_meta_box_callback($post) {
         'lp_case_study_challenge' => 'FitLife Academy was driving traffic to their course sales page but experiencing a disappointing 2.3% conversion rate. Despite quality traffic from Facebook ads, they were losing potential customers due to unclear messaging and poor page structure.',
         'lp_case_study_stat1_number' => '2.3%',
         'lp_case_study_stat1_label' => 'Conversion Rate',
-        'lp_case_study_stat2_number' => '£8.50',
+        'lp_case_study_stat2_number' => 'ï¿½8.50',
         'lp_case_study_stat2_label' => 'Cost per Lead',
         'lp_case_study_solution_title' => 'Our Solution',
         'lp_case_study_solution' => "Message-Match optimisation: Aligned landing page copy with ad messaging for consistency\nClear Value Proposition: Highlighted unique benefits and transformation outcomes\nSocial Proof Integration: Added testimonials, reviews, and success stories\nStreamlined Forms: Reduced form fields and optimised conversion flow\nMobile optimisation: Enhanced mobile experience for 70% mobile traffic",
@@ -84,9 +84,9 @@ function aimpro_landingpages_meta_box_callback($post) {
         'lp_case_study_result1_label' => 'Increase in Course Sales',
         'lp_case_study_result2_number' => '13.4%',
         'lp_case_study_result2_label' => 'New Conversion Rate',
-        'lp_case_study_result3_number' => '£2.10',
+        'lp_case_study_result3_number' => 'ï¿½2.10',
         'lp_case_study_result3_label' => 'Reduced Cost per Lead',
-        'lp_case_study_result4_number' => '£340K',
+        'lp_case_study_result4_number' => 'ï¿½340K',
         'lp_case_study_result4_label' => 'Additional Annual Revenue',
         
         // Types of Landing Pages Section
@@ -130,20 +130,20 @@ function aimpro_landingpages_meta_box_callback($post) {
         'lp_packages_subtitle' => 'Fast, effective landing pages designed to convert your traffic into customers.',
         
         'lp_package1_title' => 'Single Landing Page',
-        'lp_package1_price' => '£997',
+        'lp_package1_price' => 'ï¿½997',
         'lp_package1_description' => 'Perfect for single campaigns',
         'lp_package1_features' => "1 custom landing page\nMobile-responsive design\nLead capture form\nBasic analytics setup\n1 round of revisions\n7-day delivery\n14 days support",
         'lp_package1_cta' => 'Get Started',
         
         'lp_package2_title' => 'Landing Page Bundle',
-        'lp_package2_price' => '£2,497',
+        'lp_package2_price' => 'ï¿½2,497',
         'lp_package2_description' => 'Ideal for multiple campaigns',
         'lp_package2_features' => "3 custom landing pages\nAdvanced mobile optimisation\nMulti-step forms\nConversion tracking setup\nA/B testing setup\nCRM integration\n2 rounds of revisions\n10-day delivery\n30 days support",
         'lp_package2_label' => 'Best Value',
         'lp_package2_cta' => 'Get Started',
         
         'lp_package3_title' => 'Funnel Series',
-        'lp_package3_price' => '£4,997',
+        'lp_package3_price' => 'ï¿½4,997',
         'lp_package3_description' => 'Complete conversion funnel',
         'lp_package3_features' => "5+ landing pages\nComplete sales funnel\nAdvanced integrations\nEmail automation setup\nPayment processing\nComprehensive analytics\nUnlimited revisions\n14-day delivery\n60 days support\nOngoing optimisation",
         'lp_package3_cta' => 'Get Started',
@@ -270,7 +270,13 @@ function aimpro_landingpages_meta_box_callback($post) {
                 <div class="meta-column">
                     <div class="meta-field">
                         <label class="meta-label" for="lp_hero_title">Hero Title</label>
-                        <input type="text" id="lp_hero_title" name="lp_hero_title" value="<?php echo esc_attr(get_meta_value('lp_hero_title', $defaults)); ?>" />
+                        <?php wp_editor(get_meta_value('lp_hero_title', $defaults), 'lp_hero_title', array(
+                            'textarea_name' => 'lp_hero_title',
+                            'media_buttons' => false,
+                            'textarea_rows' => 3,
+                            'teeny' => true,
+                            'quicktags' => array('buttons' => 'strong,em,link,ul,ol,li')
+                        )); ?>
                     </div>
                 </div>
             </div>
@@ -278,7 +284,13 @@ function aimpro_landingpages_meta_box_callback($post) {
                 <div class="meta-column">
                     <div class="meta-field">
                         <label class="meta-label" for="lp_hero_subtitle">Hero Subtitle</label>
-                        <textarea id="lp_hero_subtitle" name="lp_hero_subtitle"><?php echo esc_textarea(get_meta_value('lp_hero_subtitle', $defaults)); ?></textarea>
+                        <?php wp_editor(get_meta_value('lp_hero_subtitle', $defaults), 'lp_hero_subtitle', array(
+                            'textarea_name' => 'lp_hero_subtitle',
+                            'media_buttons' => false,
+                            'textarea_rows' => 4,
+                            'teeny' => true,
+                            'quicktags' => array('buttons' => 'strong,em,link,ul,ol,li')
+                        )); ?>
                     </div>
                 </div>
             </div>
@@ -342,7 +354,13 @@ function aimpro_landingpages_meta_box_callback($post) {
                 <div class="meta-column">
                     <div class="meta-field">
                         <label class="meta-label" for="lp_intro_title">Introduction Title</label>
-                        <input type="text" id="lp_intro_title" name="lp_intro_title" value="<?php echo esc_attr(get_meta_value('lp_intro_title', $defaults)); ?>" />
+                        <?php wp_editor(get_meta_value('lp_intro_title', $defaults), 'lp_intro_title', array(
+                            'textarea_name' => 'lp_intro_title',
+                            'media_buttons' => false,
+                            'textarea_rows' => 3,
+                            'teeny' => true,
+                            'quicktags' => array('buttons' => 'strong,em,link,ul,ol,li')
+                        )); ?>
                     </div>
                 </div>
             </div>
@@ -350,7 +368,13 @@ function aimpro_landingpages_meta_box_callback($post) {
                 <div class="meta-column">
                     <div class="meta-field">
                         <label class="meta-label" for="lp_intro_description">Introduction Description</label>
-                        <textarea id="lp_intro_description" name="lp_intro_description"><?php echo esc_textarea(get_meta_value('lp_intro_description', $defaults)); ?></textarea>
+                        <?php wp_editor(get_meta_value('lp_intro_description', $defaults), 'lp_intro_description', array(
+                            'textarea_name' => 'lp_intro_description',
+                            'media_buttons' => false,
+                            'textarea_rows' => 5,
+                            'teeny' => true,
+                            'quicktags' => array('buttons' => 'strong,em,link,ul,ol,li')
+                        )); ?>
                     </div>
                 </div>
             </div>
@@ -364,13 +388,25 @@ function aimpro_landingpages_meta_box_callback($post) {
                     <div class="meta-column">
                         <div class="meta-field">
                             <label class="meta-label" for="lp_feature<?php echo $i; ?>_title">Feature <?php echo $i; ?> Title</label>
-                            <input type="text" id="lp_feature<?php echo $i; ?>_title" name="lp_feature<?php echo $i; ?>_title" value="<?php echo esc_attr(get_meta_value("lp_feature{$i}_title", $defaults)); ?>" />
+                            <?php wp_editor(get_meta_value("lp_feature{$i}_title", $defaults), "lp_feature{$i}_title", array(
+                                'textarea_name' => "lp_feature{$i}_title",
+                                'media_buttons' => false,
+                                'textarea_rows' => 2,
+                                'teeny' => true,
+                                'quicktags' => array('buttons' => 'strong,em,link,ul,ol,li')
+                            )); ?>
                         </div>
                     </div>
                     <div class="meta-column">
                         <div class="meta-field">
                             <label class="meta-label" for="lp_feature<?php echo $i; ?>_description">Feature <?php echo $i; ?> Description</label>
-                            <textarea id="lp_feature<?php echo $i; ?>_description" name="lp_feature<?php echo $i; ?>_description"><?php echo esc_textarea(get_meta_value("lp_feature{$i}_description", $defaults)); ?></textarea>
+                            <?php wp_editor(get_meta_value("lp_feature{$i}_description", $defaults), "lp_feature{$i}_description", array(
+                                'textarea_name' => "lp_feature{$i}_description",
+                                'media_buttons' => false,
+                                'textarea_rows' => 3,
+                                'teeny' => true,
+                                'quicktags' => array('buttons' => 'strong,em,link,ul,ol,li')
+                            )); ?>
                         </div>
                     </div>
                 </div>
@@ -384,7 +420,13 @@ function aimpro_landingpages_meta_box_callback($post) {
                 <div class="meta-column">
                     <div class="meta-field">
                         <label class="meta-label" for="lp_case_study_title">Case Study Title</label>
-                        <input type="text" id="lp_case_study_title" name="lp_case_study_title" value="<?php echo esc_attr(get_meta_value('lp_case_study_title', $defaults)); ?>" />
+                        <?php wp_editor(get_meta_value('lp_case_study_title', $defaults), 'lp_case_study_title', array(
+                            'textarea_name' => 'lp_case_study_title',
+                            'media_buttons' => false,
+                            'textarea_rows' => 3,
+                            'teeny' => true,
+                            'quicktags' => array('buttons' => 'strong,em,link,ul,ol,li')
+                        )); ?>
                     </div>
                 </div>
             </div>
@@ -394,7 +436,13 @@ function aimpro_landingpages_meta_box_callback($post) {
                 <div class="meta-column">
                     <div class="meta-field">
                         <label class="meta-label" for="lp_case_study_subtitle">Challenge Subtitle</label>
-                        <input type="text" id="lp_case_study_subtitle" name="lp_case_study_subtitle" value="<?php echo esc_attr(get_meta_value('lp_case_study_subtitle', $defaults)); ?>" />
+                        <?php wp_editor(get_meta_value('lp_case_study_subtitle', $defaults), 'lp_case_study_subtitle', array(
+                            'textarea_name' => 'lp_case_study_subtitle',
+                            'media_buttons' => false,
+                            'textarea_rows' => 2,
+                            'teeny' => true,
+                            'quicktags' => array('buttons' => 'strong,em,link,ul,ol,li')
+                        )); ?>
                     </div>
                 </div>
             </div>
@@ -402,7 +450,13 @@ function aimpro_landingpages_meta_box_callback($post) {
                 <div class="meta-column">
                     <div class="meta-field">
                         <label class="meta-label" for="lp_case_study_challenge">Challenge Description</label>
-                        <textarea id="lp_case_study_challenge" name="lp_case_study_challenge"><?php echo esc_textarea(get_meta_value('lp_case_study_challenge', $defaults)); ?></textarea>
+                        <?php wp_editor(get_meta_value('lp_case_study_challenge', $defaults), 'lp_case_study_challenge', array(
+                            'textarea_name' => 'lp_case_study_challenge',
+                            'media_buttons' => false,
+                            'textarea_rows' => 5,
+                            'teeny' => true,
+                            'quicktags' => array('buttons' => 'strong,em,link,ul,ol,li')
+                        )); ?>
                     </div>
                 </div>
             </div>
@@ -435,15 +489,27 @@ function aimpro_landingpages_meta_box_callback($post) {
                 <div class="meta-column">
                     <div class="meta-field">
                         <label class="meta-label" for="lp_case_study_solution_title">Solution Title</label>
-                        <input type="text" id="lp_case_study_solution_title" name="lp_case_study_solution_title" value="<?php echo esc_attr(get_meta_value('lp_case_study_solution_title', $defaults)); ?>" />
+                        <?php wp_editor(get_meta_value('lp_case_study_solution_title', $defaults), 'lp_case_study_solution_title', array(
+                            'textarea_name' => 'lp_case_study_solution_title',
+                            'media_buttons' => false,
+                            'textarea_rows' => 2,
+                            'teeny' => true,
+                            'quicktags' => array('buttons' => 'strong,em,link,ul,ol,li')
+                        )); ?>
                     </div>
                 </div>
             </div>
             <div class="meta-row">
                 <div class="meta-column">
                     <div class="meta-field">
-                        <label class="meta-label" for="lp_case_study_solution">Solution Description (one point per line)</label>
-                        <textarea id="lp_case_study_solution" name="lp_case_study_solution"><?php echo esc_textarea(get_meta_value('lp_case_study_solution', $defaults)); ?></textarea>
+                        <label class="meta-label" for="lp_case_study_solution">Solution Description</label>
+                        <?php wp_editor(get_meta_value('lp_case_study_solution', $defaults), 'lp_case_study_solution', array(
+                            'textarea_name' => 'lp_case_study_solution',
+                            'media_buttons' => false,
+                            'textarea_rows' => 5,
+                            'teeny' => true,
+                            'quicktags' => array('buttons' => 'strong,em,link,ul,ol,li')
+                        )); ?>
                     </div>
                 </div>
             </div>
@@ -453,7 +519,13 @@ function aimpro_landingpages_meta_box_callback($post) {
                 <div class="meta-column">
                     <div class="meta-field">
                         <label class="meta-label" for="lp_case_study_results_title">Results Title</label>
-                        <input type="text" id="lp_case_study_results_title" name="lp_case_study_results_title" value="<?php echo esc_attr(get_meta_value('lp_case_study_results_title', $defaults)); ?>" />
+                        <?php wp_editor(get_meta_value('lp_case_study_results_title', $defaults), 'lp_case_study_results_title', array(
+                            'textarea_name' => 'lp_case_study_results_title',
+                            'media_buttons' => false,
+                            'textarea_rows' => 2,
+                            'teeny' => true,
+                            'quicktags' => array('buttons' => 'strong,em,link,ul,ol,li')
+                        )); ?>
                     </div>
                 </div>
             </div>
@@ -481,7 +553,13 @@ function aimpro_landingpages_meta_box_callback($post) {
                 <div class="meta-column">
                     <div class="meta-field">
                         <label class="meta-label" for="lp_types_title">Section Title</label>
-                        <input type="text" id="lp_types_title" name="lp_types_title" value="<?php echo esc_attr(get_meta_value('lp_types_title', $defaults)); ?>" />
+                        <?php wp_editor(get_meta_value('lp_types_title', $defaults), 'lp_types_title', array(
+                            'textarea_name' => 'lp_types_title',
+                            'media_buttons' => false,
+                            'textarea_rows' => 2,
+                            'teeny' => true,
+                            'quicktags' => array('buttons' => 'strong,em,link,ul,ol,li')
+                        )); ?>
                     </div>
                 </div>
             </div>
@@ -492,15 +570,33 @@ function aimpro_landingpages_meta_box_callback($post) {
                         <h4>Type <?php echo $i; ?></h4>
                         <div class="meta-field">
                             <label class="meta-label" for="lp_type<?php echo $i; ?>_title">Type <?php echo $i; ?> Title</label>
-                            <input type="text" id="lp_type<?php echo $i; ?>_title" name="lp_type<?php echo $i; ?>_title" value="<?php echo esc_attr(get_meta_value("lp_type{$i}_title", $defaults)); ?>" />
+                            <?php wp_editor(get_meta_value("lp_type{$i}_title", $defaults), "lp_type{$i}_title", array(
+                                'textarea_name' => "lp_type{$i}_title",
+                                'media_buttons' => false,
+                                'textarea_rows' => 2,
+                                'teeny' => true,
+                                'quicktags' => array('buttons' => 'strong,em,link,ul,ol,li')
+                            )); ?>
                         </div>
                         <div class="meta-field">
                             <label class="meta-label" for="lp_type<?php echo $i; ?>_description">Type <?php echo $i; ?> Description</label>
-                            <textarea id="lp_type<?php echo $i; ?>_description" name="lp_type<?php echo $i; ?>_description"><?php echo esc_textarea(get_meta_value("lp_type{$i}_description", $defaults)); ?></textarea>
+                            <?php wp_editor(get_meta_value("lp_type{$i}_description", $defaults), "lp_type{$i}_description", array(
+                                'textarea_name' => "lp_type{$i}_description",
+                                'media_buttons' => false,
+                                'textarea_rows' => 3,
+                                'teeny' => true,
+                                'quicktags' => array('buttons' => 'strong,em,link,ul,ol,li')
+                            )); ?>
                         </div>
                         <div class="meta-field">
-                            <label class="meta-label" for="lp_type<?php echo $i; ?>_items">Type <?php echo $i; ?> Items (one per line)</label>
-                            <textarea id="lp_type<?php echo $i; ?>_items" name="lp_type<?php echo $i; ?>_items"><?php echo esc_textarea(get_meta_value("lp_type{$i}_items", $defaults)); ?></textarea>
+                            <label class="meta-label" for="lp_type<?php echo $i; ?>_items">Type <?php echo $i; ?> Items</label>
+                            <?php wp_editor(get_meta_value("lp_type{$i}_items", $defaults), "lp_type{$i}_items", array(
+                                'textarea_name' => "lp_type{$i}_items",
+                                'media_buttons' => false,
+                                'textarea_rows' => 4,
+                                'teeny' => true,
+                                'quicktags' => array('buttons' => 'strong,em,link,ul,ol,li')
+                            )); ?>
                         </div>
                     </div>
                 </div>
@@ -514,7 +610,13 @@ function aimpro_landingpages_meta_box_callback($post) {
                 <div class="meta-column">
                     <div class="meta-field">
                         <label class="meta-label" for="lp_process_title">Section Title</label>
-                        <input type="text" id="lp_process_title" name="lp_process_title" value="<?php echo esc_attr(get_meta_value('lp_process_title', $defaults)); ?>" />
+                        <?php wp_editor(get_meta_value('lp_process_title', $defaults), 'lp_process_title', array(
+                            'textarea_name' => 'lp_process_title',
+                            'media_buttons' => false,
+                            'textarea_rows' => 2,
+                            'teeny' => true,
+                            'quicktags' => array('buttons' => 'strong,em,link,ul,ol,li')
+                        )); ?>
                     </div>
                 </div>
             </div>
@@ -530,13 +632,25 @@ function aimpro_landingpages_meta_box_callback($post) {
                     <div class="meta-column">
                         <div class="meta-field">
                             <label class="meta-label" for="lp_process<?php echo $i; ?>_title">Step <?php echo $i; ?> Title</label>
-                            <input type="text" id="lp_process<?php echo $i; ?>_title" name="lp_process<?php echo $i; ?>_title" value="<?php echo esc_attr(get_meta_value("lp_process{$i}_title", $defaults)); ?>" />
+                            <?php wp_editor(get_meta_value("lp_process{$i}_title", $defaults), "lp_process{$i}_title", array(
+                                'textarea_name' => "lp_process{$i}_title",
+                                'media_buttons' => false,
+                                'textarea_rows' => 2,
+                                'teeny' => true,
+                                'quicktags' => array('buttons' => 'strong,em,link,ul,ol,li')
+                            )); ?>
                         </div>
                     </div>
                     <div class="meta-column">
                         <div class="meta-field">
                             <label class="meta-label" for="lp_process<?php echo $i; ?>_description">Step <?php echo $i; ?> Description</label>
-                            <textarea id="lp_process<?php echo $i; ?>_description" name="lp_process<?php echo $i; ?>_description"><?php echo esc_textarea(get_meta_value("lp_process{$i}_description", $defaults)); ?></textarea>
+                            <?php wp_editor(get_meta_value("lp_process{$i}_description", $defaults), "lp_process{$i}_description", array(
+                                'textarea_name' => "lp_process{$i}_description",
+                                'media_buttons' => false,
+                                'textarea_rows' => 3,
+                                'teeny' => true,
+                                'quicktags' => array('buttons' => 'strong,em,link,ul,ol,li')
+                            )); ?>
                         </div>
                     </div>
                 </div>
@@ -550,7 +664,13 @@ function aimpro_landingpages_meta_box_callback($post) {
                 <div class="meta-column">
                     <div class="meta-field">
                         <label class="meta-label" for="lp_packages_title">Section Title</label>
-                        <input type="text" id="lp_packages_title" name="lp_packages_title" value="<?php echo esc_attr(get_meta_value('lp_packages_title', $defaults)); ?>" />
+                        <?php wp_editor(get_meta_value('lp_packages_title', $defaults), 'lp_packages_title', array(
+                            'textarea_name' => 'lp_packages_title',
+                            'media_buttons' => false,
+                            'textarea_rows' => 2,
+                            'teeny' => true,
+                            'quicktags' => array('buttons' => 'strong,em,link,ul,ol,li')
+                        )); ?>
                     </div>
                 </div>
             </div>
@@ -558,7 +678,13 @@ function aimpro_landingpages_meta_box_callback($post) {
                 <div class="meta-column">
                     <div class="meta-field">
                         <label class="meta-label" for="lp_packages_subtitle">Section Subtitle</label>
-                        <input type="text" id="lp_packages_subtitle" name="lp_packages_subtitle" value="<?php echo esc_attr(get_meta_value('lp_packages_subtitle', $defaults)); ?>" />
+                        <?php wp_editor(get_meta_value('lp_packages_subtitle', $defaults), 'lp_packages_subtitle', array(
+                            'textarea_name' => 'lp_packages_subtitle',
+                            'media_buttons' => false,
+                            'textarea_rows' => 3,
+                            'teeny' => true,
+                            'quicktags' => array('buttons' => 'strong,em,link,ul,ol,li')
+                        )); ?>
                     </div>
                 </div>
             </div>
@@ -575,7 +701,13 @@ function aimpro_landingpages_meta_box_callback($post) {
                         <?php endif; ?>
                         <div class="meta-field">
                             <label class="meta-label" for="lp_package<?php echo $i; ?>_title">Package Title</label>
-                            <input type="text" id="lp_package<?php echo $i; ?>_title" name="lp_package<?php echo $i; ?>_title" value="<?php echo esc_attr(get_meta_value("lp_package{$i}_title", $defaults)); ?>" />
+                            <?php wp_editor(get_meta_value("lp_package{$i}_title", $defaults), "lp_package{$i}_title", array(
+                                'textarea_name' => "lp_package{$i}_title",
+                                'media_buttons' => false,
+                                'textarea_rows' => 2,
+                                'teeny' => true,
+                                'quicktags' => array('buttons' => 'strong,em,link,ul,ol,li')
+                            )); ?>
                         </div>
                         <div class="meta-field">
                             <label class="meta-label" for="lp_package<?php echo $i; ?>_price">Package Price</label>
@@ -583,11 +715,23 @@ function aimpro_landingpages_meta_box_callback($post) {
                         </div>
                         <div class="meta-field">
                             <label class="meta-label" for="lp_package<?php echo $i; ?>_description">Package Description</label>
-                            <input type="text" id="lp_package<?php echo $i; ?>_description" name="lp_package<?php echo $i; ?>_description" value="<?php echo esc_attr(get_meta_value("lp_package{$i}_description", $defaults)); ?>" />
+                            <?php wp_editor(get_meta_value("lp_package{$i}_description", $defaults), "lp_package{$i}_description", array(
+                                'textarea_name' => "lp_package{$i}_description",
+                                'media_buttons' => false,
+                                'textarea_rows' => 2,
+                                'teeny' => true,
+                                'quicktags' => array('buttons' => 'strong,em,link,ul,ol,li')
+                            )); ?>
                         </div>
                         <div class="meta-field">
                             <label class="meta-label" for="lp_package<?php echo $i; ?>_features">Package Features (one per line)</label>
-                            <textarea id="lp_package<?php echo $i; ?>_features" name="lp_package<?php echo $i; ?>_features"><?php echo esc_textarea(get_meta_value("lp_package{$i}_features", $defaults)); ?></textarea>
+                            <?php wp_editor(get_meta_value("lp_package{$i}_features", $defaults), "lp_package{$i}_features", array(
+                                'textarea_name' => "lp_package{$i}_features",
+                                'media_buttons' => false,
+                                'textarea_rows' => 5,
+                                'teeny' => true,
+                                'quicktags' => array('buttons' => 'strong,em,link,ul,ol,li')
+                            )); ?>
                         </div>
                         <div class="meta-field">
                             <label class="meta-label" for="lp_package<?php echo $i; ?>_cta">Package CTA Button Text</label>
@@ -605,7 +749,13 @@ function aimpro_landingpages_meta_box_callback($post) {
                 <div class="meta-column">
                     <div class="meta-field">
                         <label class="meta-label" for="lp_elements_title">Section Title</label>
-                        <input type="text" id="lp_elements_title" name="lp_elements_title" value="<?php echo esc_attr(get_meta_value('lp_elements_title', $defaults)); ?>" />
+                        <?php wp_editor(get_meta_value('lp_elements_title', $defaults), 'lp_elements_title', array(
+                            'textarea_name' => 'lp_elements_title',
+                            'media_buttons' => false,
+                            'textarea_rows' => 2,
+                            'teeny' => true,
+                            'quicktags' => array('buttons' => 'strong,em,link,ul,ol,li')
+                        )); ?>
                     </div>
                 </div>
             </div>
@@ -615,13 +765,25 @@ function aimpro_landingpages_meta_box_callback($post) {
                     <div class="meta-column">
                         <div class="meta-field">
                             <label class="meta-label" for="lp_element<?php echo $i; ?>_title">Element <?php echo $i; ?> Title</label>
-                            <input type="text" id="lp_element<?php echo $i; ?>_title" name="lp_element<?php echo $i; ?>_title" value="<?php echo esc_attr(get_meta_value("lp_element{$i}_title", $defaults)); ?>" />
+                            <?php wp_editor(get_meta_value("lp_element{$i}_title", $defaults), "lp_element{$i}_title", array(
+                                'textarea_name' => "lp_element{$i}_title",
+                                'media_buttons' => false,
+                                'textarea_rows' => 2,
+                                'teeny' => true,
+                                'quicktags' => array('buttons' => 'strong,em,link,ul,ol,li')
+                            )); ?>
                         </div>
                     </div>
                     <div class="meta-column">
                         <div class="meta-field">
                             <label class="meta-label" for="lp_element<?php echo $i; ?>_description">Element <?php echo $i; ?> Description</label>
-                            <textarea id="lp_element<?php echo $i; ?>_description" name="lp_element<?php echo $i; ?>_description"><?php echo esc_textarea(get_meta_value("lp_element{$i}_description", $defaults)); ?></textarea>
+                            <?php wp_editor(get_meta_value("lp_element{$i}_description", $defaults), "lp_element{$i}_description", array(
+                                'textarea_name' => "lp_element{$i}_description",
+                                'media_buttons' => false,
+                                'textarea_rows' => 3,
+                                'teeny' => true,
+                                'quicktags' => array('buttons' => 'strong,em,link,ul,ol,li')
+                            )); ?>
                         </div>
                     </div>
                 </div>
@@ -635,7 +797,13 @@ function aimpro_landingpages_meta_box_callback($post) {
                 <div class="meta-column">
                     <div class="meta-field">
                         <label class="meta-label" for="lp_industries_title">Section Title</label>
-                        <input type="text" id="lp_industries_title" name="lp_industries_title" value="<?php echo esc_attr(get_meta_value('lp_industries_title', $defaults)); ?>" />
+                        <?php wp_editor(get_meta_value('lp_industries_title', $defaults), 'lp_industries_title', array(
+                            'textarea_name' => 'lp_industries_title',
+                            'media_buttons' => false,
+                            'textarea_rows' => 2,
+                            'teeny' => true,
+                            'quicktags' => array('buttons' => 'strong,em,link,ul,ol,li')
+                        )); ?>
                     </div>
                 </div>
             </div>
@@ -645,13 +813,25 @@ function aimpro_landingpages_meta_box_callback($post) {
                     <div class="meta-column">
                         <div class="meta-field">
                             <label class="meta-label" for="lp_industry<?php echo $i; ?>_name">Industry <?php echo $i; ?> Name</label>
-                            <input type="text" id="lp_industry<?php echo $i; ?>_name" name="lp_industry<?php echo $i; ?>_name" value="<?php echo esc_attr(get_meta_value("lp_industry{$i}_name", $defaults)); ?>" />
+                            <?php wp_editor(get_meta_value("lp_industry{$i}_name", $defaults), "lp_industry{$i}_name", array(
+                                'textarea_name' => "lp_industry{$i}_name",
+                                'media_buttons' => false,
+                                'textarea_rows' => 2,
+                                'teeny' => true,
+                                'quicktags' => array('buttons' => 'strong,em,link,ul,ol,li')
+                            )); ?>
                         </div>
                     </div>
                     <div class="meta-column">
                         <div class="meta-field">
                             <label class="meta-label" for="lp_industry<?php echo $i; ?>_description">Industry <?php echo $i; ?> Description</label>
-                            <input type="text" id="lp_industry<?php echo $i; ?>_description" name="lp_industry<?php echo $i; ?>_description" value="<?php echo esc_attr(get_meta_value("lp_industry{$i}_description", $defaults)); ?>" />
+                            <?php wp_editor(get_meta_value("lp_industry{$i}_description", $defaults), "lp_industry{$i}_description", array(
+                                'textarea_name' => "lp_industry{$i}_description",
+                                'media_buttons' => false,
+                                'textarea_rows' => 3,
+                                'teeny' => true,
+                                'quicktags' => array('buttons' => 'strong,em,link,ul,ol,li')
+                            )); ?>
                         </div>
                     </div>
                 </div>
@@ -665,7 +845,13 @@ function aimpro_landingpages_meta_box_callback($post) {
                 <div class="meta-column">
                     <div class="meta-field">
                         <label class="meta-label" for="lp_testimonials_title">Section Title</label>
-                        <input type="text" id="lp_testimonials_title" name="lp_testimonials_title" value="<?php echo esc_attr(get_meta_value('lp_testimonials_title', $defaults)); ?>" />
+                        <?php wp_editor(get_meta_value('lp_testimonials_title', $defaults), 'lp_testimonials_title', array(
+                            'textarea_name' => 'lp_testimonials_title',
+                            'media_buttons' => false,
+                            'textarea_rows' => 2,
+                            'teeny' => true,
+                            'quicktags' => array('buttons' => 'strong,em,link,ul,ol,li')
+                        )); ?>
                     </div>
                 </div>
             </div>
@@ -676,7 +862,13 @@ function aimpro_landingpages_meta_box_callback($post) {
                         <h4>Testimonial <?php echo $i; ?></h4>
                         <div class="meta-field">
                             <label class="meta-label" for="lp_testimonial<?php echo $i; ?>_text">Testimonial Text</label>
-                            <textarea id="lp_testimonial<?php echo $i; ?>_text" name="lp_testimonial<?php echo $i; ?>_text"><?php echo esc_textarea(get_meta_value("lp_testimonial{$i}_text", $defaults)); ?></textarea>
+                            <?php wp_editor(get_meta_value("lp_testimonial{$i}_text", $defaults), "lp_testimonial{$i}_text", array(
+                                'textarea_name' => "lp_testimonial{$i}_text",
+                                'media_buttons' => false,
+                                'textarea_rows' => 4,
+                                'teeny' => true,
+                                'quicktags' => array('buttons' => 'strong,em,link,ul,ol,li')
+                            )); ?>
                         </div>
                         <div class="meta-field">
                             <label class="meta-label" for="lp_testimonial<?php echo $i; ?>_name">Person Name</label>
@@ -698,7 +890,13 @@ function aimpro_landingpages_meta_box_callback($post) {
                 <div class="meta-column">
                     <div class="meta-field">
                         <label class="meta-label" for="lp_faq_title">Section Title</label>
-                        <input type="text" id="lp_faq_title" name="lp_faq_title" value="<?php echo esc_attr(get_meta_value('lp_faq_title', $defaults)); ?>" />
+                        <?php wp_editor(get_meta_value('lp_faq_title', $defaults), 'lp_faq_title', array(
+                            'textarea_name' => 'lp_faq_title',
+                            'media_buttons' => false,
+                            'textarea_rows' => 2,
+                            'teeny' => true,
+                            'quicktags' => array('buttons' => 'strong,em,link,ul,ol,li')
+                        )); ?>
                     </div>
                 </div>
             </div>
@@ -709,11 +907,23 @@ function aimpro_landingpages_meta_box_callback($post) {
                         <h4>FAQ <?php echo $i; ?></h4>
                         <div class="meta-field">
                             <label class="meta-label" for="lp_faq<?php echo $i; ?>_question">Question</label>
-                            <input type="text" id="lp_faq<?php echo $i; ?>_question" name="lp_faq<?php echo $i; ?>_question" value="<?php echo esc_attr(get_meta_value("lp_faq{$i}_question", $defaults)); ?>" />
+                            <?php wp_editor(get_meta_value("lp_faq{$i}_question", $defaults), "lp_faq{$i}_question", array(
+                                'textarea_name' => "lp_faq{$i}_question",
+                                'media_buttons' => false,
+                                'textarea_rows' => 2,
+                                'teeny' => true,
+                                'quicktags' => array('buttons' => 'strong,em,link,ul,ol,li')
+                            )); ?>
                         </div>
                         <div class="meta-field">
                             <label class="meta-label" for="lp_faq<?php echo $i; ?>_answer">Answer</label>
-                            <textarea id="lp_faq<?php echo $i; ?>_answer" name="lp_faq<?php echo $i; ?>_answer"><?php echo esc_textarea(get_meta_value("lp_faq{$i}_answer", $defaults)); ?></textarea>
+                            <?php wp_editor(get_meta_value("lp_faq{$i}_answer", $defaults), "lp_faq{$i}_answer", array(
+                                'textarea_name' => "lp_faq{$i}_answer",
+                                'media_buttons' => false,
+                                'textarea_rows' => 4,
+                                'teeny' => true,
+                                'quicktags' => array('buttons' => 'strong,em,link,ul,ol,li')
+                            )); ?>
                         </div>
                     </div>
                 </div>
@@ -832,7 +1042,26 @@ function aimpro_save_landingpages_meta($post_id) {
     // Update post meta for each field
     foreach ($fields as $field) {
         if (isset($_POST[$field])) {
-            $value = wp_kses_post($_POST[$field]);
+            // Define fields that should only have basic text (no HTML)
+            $simple_text_fields = array(
+                'lp_stat1_number', 'lp_stat1_label', 'lp_stat2_number', 'lp_stat2_label', 'lp_stat3_number', 'lp_stat3_label',
+                'lp_cta_primary', 'lp_cta_secondary',
+                'lp_case_study_stat1_number', 'lp_case_study_stat1_label', 'lp_case_study_stat2_number', 'lp_case_study_stat2_label',
+                'lp_case_study_result1_number', 'lp_case_study_result1_label', 'lp_case_study_result2_number', 'lp_case_study_result2_label',
+                'lp_case_study_result3_number', 'lp_case_study_result3_label', 'lp_case_study_result4_number', 'lp_case_study_result4_label',
+                'lp_process1_number', 'lp_process2_number', 'lp_process3_number', 'lp_process4_number', 'lp_process5_number', 'lp_process6_number',
+                'lp_package1_price', 'lp_package1_cta', 'lp_package2_label', 'lp_package2_price', 'lp_package2_cta', 'lp_package3_price', 'lp_package3_cta',
+                'lp_testimonial1_name', 'lp_testimonial1_title', 'lp_testimonial2_name', 'lp_testimonial2_title', 'lp_testimonial3_name', 'lp_testimonial3_title'
+            );
+            
+            if (in_array($field, $simple_text_fields)) {
+                // Use sanitize_text_field for simple text fields
+                $value = sanitize_text_field($_POST[$field]);
+            } else {
+                // Use wp_kses_post for rich text fields
+                $value = wp_kses_post($_POST[$field]);
+            }
+            
             update_post_meta($post_id, $field, $value);
         }
     }

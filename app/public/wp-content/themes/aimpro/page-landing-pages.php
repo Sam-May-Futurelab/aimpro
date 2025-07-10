@@ -27,23 +27,23 @@ get_header(); ?>
     <section class="page-hero service-hero">
         <div class="container">
             <div class="hero-content animate-on-scroll animate-fade-up">
-                <h1>High-Converting Landing Pages</h1>
-                <p class="hero-subtitle">Purpose-built landing pages that turn visitors into customers with laser-focused messaging and conversion optimisation.</p>
+                <h1><?php echo wp_kses_post(get_post_meta(get_the_ID(), 'lp_hero_title', true) ?: 'High-Converting Landing Pages'); ?></h1>
+                <p class="hero-subtitle"><?php echo wp_kses_post(get_post_meta(get_the_ID(), 'lp_hero_subtitle', true) ?: 'Purpose-built landing pages that turn visitors into customers with laser-focused messaging and conversion optimisation.'); ?></p>
                 <div class="hero-stats animate-on-scroll animate-fade-up">
                     <div class="stat-item">
-                        <div class="stat-number">340%</div>
-                        <div class="stat-label">Average Conversion Increase</div>
+                        <div class="stat-number"><?php echo esc_html(get_post_meta(get_the_ID(), 'lp_stat1_number', true) ?: '340%'); ?></div>
+                        <div class="stat-label"><?php echo esc_html(get_post_meta(get_the_ID(), 'lp_stat1_label', true) ?: 'Average Conversion Increase'); ?></div>
                     </div>
                     <div class="stat-item">
-                        <div class="stat-number">7 Days</div>
-                        <div class="stat-label">Average Delivery Time</div>
+                        <div class="stat-number"><?php echo esc_html(get_post_meta(get_the_ID(), 'lp_stat2_number', true) ?: '7 Days'); ?></div>
+                        <div class="stat-label"><?php echo esc_html(get_post_meta(get_the_ID(), 'lp_stat2_label', true) ?: 'Average Delivery Time'); ?></div>
                     </div>
                     <div class="stat-item">
-                        <div class="stat-number">23%</div>
-                        <div class="stat-label">Average Conversion Rate</div>
+                        <div class="stat-number"><?php echo esc_html(get_post_meta(get_the_ID(), 'lp_stat3_number', true) ?: '23%'); ?></div>
+                        <div class="stat-label"><?php echo esc_html(get_post_meta(get_the_ID(), 'lp_stat3_label', true) ?: 'Average Conversion Rate'); ?></div>
                     </div>
                 </div>                <div class="hero-ctas animate-on-scroll animate-scale-up">
-                    <a href="#contact" class="btn-primary streamlined">Get Landing Page Quote</a>
+                    <a href="#contact" class="btn-primary streamlined"><?php echo esc_html(get_post_meta(get_the_ID(), 'lp_cta_primary', true) ?: 'Get Landing Page Quote'); ?></a>
                 </div>
             </div>
         </div>
@@ -52,29 +52,29 @@ get_header(); ?>
         <div class="container">
             <div class="overview-content">
                 <div class="overview-text animate-on-scroll animate-slide-left">
-                    <h2>Landing Pages That Convert Like Crazy</h2>
-                    <p class="overview-description">Our high-converting landing pages are meticulously crafted to achieve one goal: turn your traffic into leads and sales. Every element is strategically designed and tested to maximise conversions for your specific audience and offer.</p>
+                    <h2><?php echo wp_kses_post(get_post_meta(get_the_ID(), 'lp_intro_title', true) ?: 'Landing Pages That Convert Like Crazy'); ?></h2>
+                    <p class="overview-description"><?php echo wp_kses_post(get_post_meta(get_the_ID(), 'lp_intro_description', true) ?: 'Our high-converting landing pages are meticulously crafted to achieve one goal: turn your traffic into leads and sales. Every element is strategically designed and tested to maximise conversions for your specific audience and offer.'); ?></p>
                     
                     <h3 class="features-heading">Key Features</h3>
                     <div class="service-features-list">
                         <div class="service-feature-item">
-                            <h4><i class="fas fa-bullseye"></i> Conversion-Focused Design</h4>
-                            <p>Every element designed with one goal: converting visitors into customers through strategic placement and messaging.</p>
+                            <h4><i class="fas fa-bullseye"></i> <?php echo wp_kses_post(get_post_meta(get_the_ID(), 'lp_feature1_title', true) ?: 'Conversion-Focused Design'); ?></h4>
+                            <p><?php echo wp_kses_post(get_post_meta(get_the_ID(), 'lp_feature1_description', true) ?: 'Every element designed with one goal: converting visitors into customers through strategic placement and messaging.'); ?></p>
                         </div>
                         
                         <div class="service-feature-item">
-                            <h4><i class="fas fa-flask"></i> A/B Testing Ready</h4>
-                            <p>Built-in testing capabilities to continuously optimise performance and improve conversion rates.</p>
+                            <h4><i class="fas fa-flask"></i> <?php echo wp_kses_post(get_post_meta(get_the_ID(), 'lp_feature2_title', true) ?: 'A/B Testing Ready'); ?></h4>
+                            <p><?php echo wp_kses_post(get_post_meta(get_the_ID(), 'lp_feature2_description', true) ?: 'Built-in testing capabilities to continuously optimise performance and improve conversion rates.'); ?></p>
                         </div>
                         
                         <div class="service-feature-item">
-                            <h4><i class="fas fa-rocket"></i> Lightning Fast Loading</h4>
-                            <p>optimised for speed with under 2-second load times to minimise bounce rates and maximise conversions.</p>
+                            <h4><i class="fas fa-rocket"></i> <?php echo wp_kses_post(get_post_meta(get_the_ID(), 'lp_feature3_title', true) ?: 'Lightning Fast Loading'); ?></h4>
+                            <p><?php echo wp_kses_post(get_post_meta(get_the_ID(), 'lp_feature3_description', true) ?: 'optimised for speed with under 2-second load times to minimise bounce rates and maximise conversions.'); ?></p>
                         </div>
                         
                         <div class="service-feature-item">
-                            <h4><i class="fas fa-chart-bar"></i> Advanced Analytics</h4>
-                            <p>Comprehensive tracking and analytics to measure performance and identify optimisation opportunities.</p>
+                            <h4><i class="fas fa-chart-bar"></i> <?php echo wp_kses_post(get_post_meta(get_the_ID(), 'lp_feature4_title', true) ?: 'Advanced Analytics'); ?></h4>
+                            <p><?php echo wp_kses_post(get_post_meta(get_the_ID(), 'lp_feature4_description', true) ?: 'Comprehensive tracking and analytics to measure performance and identify optimisation opportunities.'); ?></p>
                         </div>
                     </div>
                 </div>
@@ -88,16 +88,16 @@ get_header(); ?>
                     </div>
                     
                     <div class="stat-item animate-on-scroll animate-stagger animate-scale-up">
-                        <span class="stat-number">340%</span>
-                        <span class="stat-label">Average Conversion Increase</span>
+                        <span class="stat-number"><?php echo esc_html(get_post_meta(get_the_ID(), 'lp_stat1_number', true) ?: '340%'); ?></span>
+                        <span class="stat-label"><?php echo esc_html(get_post_meta(get_the_ID(), 'lp_stat1_label', true) ?: 'Average Conversion Increase'); ?></span>
                     </div>
                     <div class="stat-item animate-on-scroll animate-stagger animate-scale-up">
-                        <span class="stat-number">7 Days</span>
-                        <span class="stat-label">Average Delivery Time</span>
+                        <span class="stat-number"><?php echo esc_html(get_post_meta(get_the_ID(), 'lp_stat2_number', true) ?: '7 Days'); ?></span>
+                        <span class="stat-label"><?php echo esc_html(get_post_meta(get_the_ID(), 'lp_stat2_label', true) ?: 'Average Delivery Time'); ?></span>
                     </div>
                     <div class="stat-item animate-on-scroll animate-stagger animate-scale-up">
-                        <span class="stat-number">23%</span>
-                        <span class="stat-label">Average Conversion Rate</span>
+                        <span class="stat-number"><?php echo esc_html(get_post_meta(get_the_ID(), 'lp_stat3_number', true) ?: '23%'); ?></span>
+                        <span class="stat-label"><?php echo esc_html(get_post_meta(get_the_ID(), 'lp_stat3_label', true) ?: 'Average Conversion Rate'); ?></span>
                     </div>                    <div class="overview-cta animate-on-scroll animate-fade-up" style="margin-top: 30px; text-align: center;">
                         <a href="<?php echo home_url('/contact'); ?>" class="btn-primary">Get a Free Landing Page Quote</a>
                     </div>
@@ -114,7 +114,7 @@ get_header(); ?>
                         <span class="badge-icon">📈</span>
                         <span class="badge-text">Success Story</span>
                     </div>
-                    <h2 class="case-study-title">How FitLife Academy Increased Course Sales by <span class="highlight-number">485%</span></h2>
+                    <h2 class="case-study-title"><?php echo wp_kses_post(get_post_meta(get_the_ID(), 'lp_case_study_title', true) ?: 'How FitLife Academy Increased Course Sales by <span class="highlight-number">485%</span>'); ?></h2>
                     <p class="case-study-subtitle">Transforming a struggling course sales page into a high-converting revenue generator</p>
                 </div>
 
@@ -124,18 +124,18 @@ get_header(); ?>
                     <div class="story-section challenge-section animate-on-scroll animate-slide-left">
                         <div class="section-header">
                             <div class="section-icon challenge-icon">⚡</div>
-                            <h3>The Challenge</h3>
+                            <h3><?php echo wp_kses_post(get_post_meta(get_the_ID(), 'lp_case_study_subtitle', true) ?: 'The Challenge'); ?></h3>
                         </div>
                         <div class="section-content">
-                            <p class="story-text">FitLife Academy was driving quality traffic from Facebook ads but experiencing a disappointing 2.3% conversion rate. Despite investing heavily in paid advertising, unclear messaging and poor page structure were causing them to lose potential customers at the final hurdle.</p>
+                            <p class="story-text"><?php echo wp_kses_post(get_post_meta(get_the_ID(), 'lp_case_study_challenge', true) ?: 'FitLife Academy was driving quality traffic from Facebook ads but experiencing a disappointing 2.3% conversion rate. Despite investing heavily in paid advertising, unclear messaging and poor page structure were causing them to lose potential customers at the final hurdle.'); ?></p>
                             <div class="inline-metrics">
                                 <div class="metric-item">
-                                    <span class="metric-number">2.3%</span>
-                                    <span class="metric-text">Conversion Rate</span>
+                                    <span class="metric-number"><?php echo esc_html(get_post_meta(get_the_ID(), 'lp_case_study_stat1_number', true) ?: '2.3%'); ?></span>
+                                    <span class="metric-text"><?php echo esc_html(get_post_meta(get_the_ID(), 'lp_case_study_stat1_label', true) ?: 'Conversion Rate'); ?></span>
                                 </div>
                                 <div class="metric-item">
-                                    <span class="metric-number">£8.50</span>
-                                    <span class="metric-text">Cost per Lead</span>
+                                    <span class="metric-number"><?php echo esc_html(get_post_meta(get_the_ID(), 'lp_case_study_stat2_number', true) ?: '£8.50'); ?></span>
+                                    <span class="metric-text"><?php echo esc_html(get_post_meta(get_the_ID(), 'lp_case_study_stat2_label', true) ?: 'Cost per Lead'); ?></span>
                                 </div>
                             </div>
                         </div>
@@ -151,9 +151,14 @@ get_header(); ?>
                     <div class="story-section solution-section animate-on-scroll animate-slide-right">
                         <div class="section-header">
                             <div class="section-icon solution-icon">🎯</div>
-                            <h3>Strategic Transformation</h3>
+                            <h3><?php echo wp_kses_post(get_post_meta(get_the_ID(), 'lp_case_study_solution_title', true) ?: 'Strategic Transformation'); ?></h3>
                         </div>
                         <div class="section-content">
+                            <?php 
+                            $solution_content = get_post_meta(get_the_ID(), 'lp_case_study_solution', true);
+                            if ($solution_content) {
+                                echo '<div class="solution-text">' . wp_kses_post($solution_content) . '</div>';
+                            } else { ?>
                             <div class="solution-grid">
                                 <div class="solution-item">
                                     <strong>Message-Match Optimisation</strong>
@@ -172,6 +177,7 @@ get_header(); ?>
                                     <p>Enhanced experience for 70% mobile traffic</p>
                                 </div>
                             </div>
+                            <?php } ?>
                         </div>
                     </div>
 
@@ -185,26 +191,26 @@ get_header(); ?>
                     <div class="story-section results-section animate-on-scroll animate-fade-up">
                         <div class="section-header">
                             <div class="section-icon results-icon">🚀</div>
-                            <h3>Exceptional Results</h3>
+                            <h3><?php echo wp_kses_post(get_post_meta(get_the_ID(), 'lp_case_study_results_title', true) ?: 'Exceptional Results'); ?></h3>
                         </div>
                         <div class="section-content">
                             <div class="results-showcase">
                                 <div class="primary-result">
-                                    <span class="big-number">485%</span>
-                                    <span class="big-label">Increase in Course Sales</span>
+                                    <span class="big-number"><?php echo esc_html(get_post_meta(get_the_ID(), 'lp_case_study_result1_number', true) ?: '485%'); ?></span>
+                                    <span class="big-label"><?php echo esc_html(get_post_meta(get_the_ID(), 'lp_case_study_result1_label', true) ?: 'Increase in Course Sales'); ?></span>
                                 </div>
                                 <div class="secondary-results">
                                     <div class="result-stat">
-                                        <span class="stat-number">13.4%</span>
-                                        <span class="stat-label">New Conversion Rate</span>
+                                        <span class="stat-number"><?php echo esc_html(get_post_meta(get_the_ID(), 'lp_case_study_result2_number', true) ?: '13.4%'); ?></span>
+                                        <span class="stat-label"><?php echo esc_html(get_post_meta(get_the_ID(), 'lp_case_study_result2_label', true) ?: 'New Conversion Rate'); ?></span>
                                     </div>
                                     <div class="result-stat">
-                                        <span class="stat-number">£2.10</span>
-                                        <span class="stat-label">Reduced Cost per Lead</span>
+                                        <span class="stat-number"><?php echo esc_html(get_post_meta(get_the_ID(), 'lp_case_study_result3_number', true) ?: '£2.10'); ?></span>
+                                        <span class="stat-label"><?php echo esc_html(get_post_meta(get_the_ID(), 'lp_case_study_result3_label', true) ?: 'Reduced Cost per Lead'); ?></span>
                                     </div>
                                     <div class="result-stat">
-                                        <span class="stat-number">£340K</span>
-                                        <span class="stat-label">Additional Annual Revenue</span>
+                                        <span class="stat-number"><?php echo esc_html(get_post_meta(get_the_ID(), 'lp_case_study_result4_number', true) ?: '£340K'); ?></span>
+                                        <span class="stat-label"><?php echo esc_html(get_post_meta(get_the_ID(), 'lp_case_study_result4_label', true) ?: 'Additional Annual Revenue'); ?></span>
                                     </div>
                                 </div>
                             </div>
@@ -231,62 +237,115 @@ get_header(); ?>
     </section><!-- Landing Page Types -->
     <section class="landing-page-types">
         <div class="container">
-            <h2 class="animate-on-scroll animate-fade-up">Types of Landing Pages We Create</h2>
+            <h2 class="animate-on-scroll animate-fade-up"><?php echo wp_kses_post(get_post_meta(get_the_ID(), 'lp_types_title', true) ?: 'Types of Landing Pages We Create'); ?></h2>
             
             <div class="types-grid">
                 <div class="type-card animate-on-scroll animate-stagger animate-fade-up">
                     <div class="type-icon">
                         <i class="fas fa-magnet"></i>
                     </div>
-                    <h3>Lead Generation Pages</h3>
-                    <p>Capture high-quality leads with compelling offers and optimised forms that convert visitors into prospects.</p>
+                    <h3><?php echo wp_kses_post(get_post_meta(get_the_ID(), 'lp_type1_title', true) ?: 'Lead Generation Pages'); ?></h3>
+                    <p><?php echo wp_kses_post(get_post_meta(get_the_ID(), 'lp_type1_description', true) ?: 'Capture high-quality leads with compelling offers and optimised forms that convert visitors into prospects.'); ?></p>
+                    <?php 
+                    $type1_items = get_post_meta(get_the_ID(), 'lp_type1_items', true);
+                    if ($type1_items) {
+                        // Convert line breaks to list items for better display
+                        $items = array_filter(explode("\n", $type1_items));
+                        if (!empty($items)) {
+                            echo '<ul>';
+                            foreach ($items as $item) {
+                                echo '<li>' . esc_html(trim($item)) . '</li>';
+                            }
+                            echo '</ul>';
+                        }
+                    } else { ?>
                     <ul>
                         <li>E-book downloads</li>
                         <li>Free trial signups</li>
                         <li>Newsletter subscriptions</li>
                         <li>Consultation bookings</li>
                     </ul>
+                    <?php } ?>
                 </div>
                 
                 <div class="type-card animate-on-scroll animate-stagger animate-fade-up">
                     <div class="type-icon">
                         <i class="fas fa-shopping-cart"></i>
                     </div>
-                    <h3>Sales Pages</h3>
-                    <p>Drive direct sales with persuasive copy, social proof, and clear purchasing pathways that convert browsers into buyers.</p>
+                    <h3><?php echo wp_kses_post(get_post_meta(get_the_ID(), 'lp_type2_title', true) ?: 'Sales Pages'); ?></h3>
+                    <p><?php echo wp_kses_post(get_post_meta(get_the_ID(), 'lp_type2_description', true) ?: 'Drive direct sales with persuasive copy, social proof, and clear purchasing pathways that convert browsers into buyers.'); ?></p>
+                    <?php 
+                    $type2_items = get_post_meta(get_the_ID(), 'lp_type2_items', true);
+                    if ($type2_items) {
+                        $items = array_filter(explode("\n", $type2_items));
+                        if (!empty($items)) {
+                            echo '<ul>';
+                            foreach ($items as $item) {
+                                echo '<li>' . esc_html(trim($item)) . '</li>';
+                            }
+                            echo '</ul>';
+                        }
+                    } else { ?>
                     <ul>
                         <li>Product sales pages</li>
                         <li>Course enrollment</li>
                         <li>Service bookings</li>
                         <li>Membership signups</li>
                     </ul>
+                    <?php } ?>
                 </div>
                 
                 <div class="type-card animate-on-scroll animate-stagger animate-fade-up">
                     <div class="type-icon">
                         <i class="fas fa-calendar-check"></i>
                     </div>
-                    <h3>Event Registration</h3>
-                    <p>Maximize event attendance with compelling event pages that highlight value and simplify registration.</p>
+                    <h3><?php echo wp_kses_post(get_post_meta(get_the_ID(), 'lp_type3_title', true) ?: 'Event Registration'); ?></h3>
+                    <p><?php echo wp_kses_post(get_post_meta(get_the_ID(), 'lp_type3_description', true) ?: 'Maximize event attendance with compelling event pages that highlight value and simplify registration.'); ?></p>
+                    <?php 
+                    $type3_items = get_post_meta(get_the_ID(), 'lp_type3_items', true);
+                    if ($type3_items) {
+                        $items = array_filter(explode("\n", $type3_items));
+                        if (!empty($items)) {
+                            echo '<ul>';
+                            foreach ($items as $item) {
+                                echo '<li>' . esc_html(trim($item)) . '</li>';
+                            }
+                            echo '</ul>';
+                        }
+                    } else { ?>
                     <ul>
                         <li>Webinar registration</li>
                         <li>Workshop signups</li>
                         <li>Conference tickets</li>
                         <li>Product launches</li>
                     </ul>
+                    <?php } ?>
                 </div>
                   <div class="type-card animate-on-scroll animate-stagger animate-fade-up">
                     <div class="type-icon">
                         <i class="fas fa-mobile-alt"></i>
                     </div>
-                    <h3>App Download Pages</h3>
-                    <p>Increase app downloads with focused pages that showcase features, benefits, and social proof.</p>
+                    <h3><?php echo wp_kses_post(get_post_meta(get_the_ID(), 'lp_type4_title', true) ?: 'App Download Pages'); ?></h3>
+                    <p><?php echo wp_kses_post(get_post_meta(get_the_ID(), 'lp_type4_description', true) ?: 'Increase app downloads with focused pages that showcase features, benefits, and social proof.'); ?></p>
+                    <?php 
+                    $type4_items = get_post_meta(get_the_ID(), 'lp_type4_items', true);
+                    if ($type4_items) {
+                        $items = array_filter(explode("\n", $type4_items));
+                        if (!empty($items)) {
+                            echo '<ul>';
+                            foreach ($items as $item) {
+                                echo '<li>' . esc_html(trim($item)) . '</li>';
+                            }
+                            echo '</ul>';
+                        }
+                    } else { ?>
                     <ul>
                         <li>Mobile app promotion</li>
                         <li>Software downloads</li>
                         <li>Tool installations</li>
                         <li>Game launches</li>
                     </ul>
+                    <?php } ?>
                 </div>
                 
                 <div class="type-card animate-on-scroll animate-stagger animate-fade-up">
@@ -321,51 +380,18 @@ get_header(); ?>
     </section>    <!-- Design Process -->
     <section class="design-process">
         <div class="container">
-            <h2 class="animate-on-scroll animate-fade-up">Our Landing Page Creation Process</h2>
+            <h2 class="animate-on-scroll animate-fade-up"><?php echo wp_kses_post(get_post_meta(get_the_ID(), 'lp_process_title', true) ?: 'Our Landing Page Creation Process'); ?></h2>
             
             <div class="process-timeline">
+                <?php for ($i = 1; $i <= 6; $i++) : ?>
                 <div class="process-step animate-on-scroll animate-stagger animate-fade-up">
-                    <div class="step-number">1</div>
+                    <div class="step-number"><?php echo esc_html(get_post_meta(get_the_ID(), "lp_process{$i}_number", true) ?: $i); ?></div>
                     <div class="step-content">
-                        <h3>Campaign Analysis</h3>
-                        <p>analyse your traffic source, audience, and campaign goals to create targeted landing page strategy.</p>
+                        <h3><?php echo wp_kses_post(get_post_meta(get_the_ID(), "lp_process{$i}_title", true) ?: 'Step ' . $i); ?></h3>
+                        <p><?php echo wp_kses_post(get_post_meta(get_the_ID(), "lp_process{$i}_description", true) ?: 'Description for step ' . $i); ?></p>
                     </div>
                 </div>
-                <div class="process-step animate-on-scroll animate-stagger animate-fade-up">
-                    <div class="step-number">2</div>
-                    <div class="step-content">
-                        <h3>Message & Offer Development</h3>
-                        <p>Craft compelling headlines, value propositions, and offers that resonate with your target audience.</p>
-                    </div>
-                </div>
-                <div class="process-step animate-on-scroll animate-stagger animate-fade-up">
-                    <div class="step-number">3</div>
-                    <div class="step-content">
-                        <h3>Conversion-Focused Design</h3>
-                        <p>Design pages with proven conversion elements: clear CTAs, social proof, and strategic layout.</p>
-                    </div>
-                </div>
-                <div class="process-step animate-on-scroll animate-stagger animate-fade-up">
-                    <div class="step-number">4</div>
-                    <div class="step-content">
-                        <h3>Development & Integration</h3>
-                        <p>Build fast-loading pages with proper tracking, form integrations, and mobile optimisation.</p>
-                    </div>
-                </div>
-                <div class="process-step animate-on-scroll animate-stagger animate-fade-up">
-                    <div class="step-number">5</div>
-                    <div class="step-content">
-                        <h3>Testing & Optimisation</h3>
-                        <p>Set up A/B tests and continuous optimisation to improve conversion rates over time.</p>
-                    </div>
-                </div>
-                <div class="process-step animate-on-scroll animate-stagger animate-fade-up">
-                    <div class="step-number">6</div>
-                    <div class="step-content">
-                        <h3>Launch & Monitor</h3>
-                        <p>Launch with full analytics tracking and provide ongoing performance monitoring and insights.</p>
-                    </div>
-                </div>
+                <?php endfor; ?>
             </div>
         </div>
     </section>    <!-- Pricing Section -->
