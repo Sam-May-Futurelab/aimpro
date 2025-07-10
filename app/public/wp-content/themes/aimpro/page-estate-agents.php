@@ -23,19 +23,19 @@ get_header(); ?>
     <div class="container">          <!-- Page Header -->
         <section class="page-header">
             <div class="page-header-content animate-on-scroll animate-fade-up">
-                <h1><?php echo esc_html(get_post_meta(get_the_ID(), '_estate_agents_header_title', true) ?: 'Estate Agent Digital Marketing'); ?></h1>
-                <p class="page-subtitle"><?php echo esc_html(get_post_meta(get_the_ID(), '_estate_agents_header_subtitle', true) ?: 'Generate quality property leads and dominate your local property market'); ?></p>
+                <h1><?php echo wp_kses_post(get_post_meta(get_the_ID(), '_estate_agents_header_title', true) ?: 'Estate Agent Digital Marketing'); ?></h1>
+                <p class="page-subtitle"><?php echo wp_kses_post(get_post_meta(get_the_ID(), '_estate_agents_header_subtitle', true) ?: 'Generate quality property leads and dominate your local property market'); ?></p>
             </div>
         </section>        <!-- Industry Overview -->
         <section class="industry-overview">
             <div class="section-content">
                 <div class="overview-content">
                     <div class="overview-text animate-on-scroll animate-slide-left">
-                        <h2><?php echo esc_html(get_post_meta(get_the_ID(), '_estate_agents_overview_title', true) ?: 'Sell More Properties, Attract More Vendors'); ?></h2>
-                        <p><?php echo esc_html(get_post_meta(get_the_ID(), '_estate_agents_overview_content', true) ?: 'The property market is fiercely competitive. Our specialised estate agent marketing strategies help you stand out, generate high-quality vendor and buyer leads, and establish your agency as the go-to property experts in your area.'); ?></p>
+                        <h2><?php echo wp_kses_post(get_post_meta(get_the_ID(), '_estate_agents_overview_title', true) ?: 'Sell More Properties, Attract More Vendors'); ?></h2>
+                        <p><?php echo wp_kses_post(get_post_meta(get_the_ID(), '_estate_agents_overview_content', true) ?: 'The property market is fiercely competitive. Our specialised estate agent marketing strategies help you stand out, generate high-quality vendor and buyer leads, and establish your agency as the go-to property experts in your area.'); ?></p>
                         
                         <div class="industry-challenges animate-on-scroll animate-fade-up">
-                            <h3><?php echo esc_html(get_post_meta(get_the_ID(), '_estate_agents_challenges_title', true) ?: 'Estate Agent Marketing Challenges We Solve:'); ?></h3>
+                            <h3><?php echo wp_kses_post(get_post_meta(get_the_ID(), '_estate_agents_challenges_title', true) ?: 'Estate Agent Marketing Challenges We Solve:'); ?></h3>
                             <ul>
                                 <?php 
                                 $challenges = get_post_meta(get_the_ID(), '_estate_agents_challenges', true);
@@ -50,7 +50,7 @@ get_header(); ?>
                                     );
                                 }
                                 foreach ($challenges as $challenge): ?>
-                                    <li><?php echo esc_html($challenge); ?></li>
+                                    <li><?php echo wp_kses_post($challenge); ?></li>
                                 <?php endforeach; ?>
                             </ul>
                         </div>                    </div>                    <div class="overview-image animate-on-scroll animate-slide-right">
@@ -67,7 +67,7 @@ get_header(); ?>
         </section>        <!-- Estate Agent Services (2x2 Grid) -->
         <section class="estate-agent-services">
             <div class="section-content">
-                <h2 class="animate-on-scroll animate-fade-up"><?php echo esc_html(get_post_meta(get_the_ID(), '_estate_agents_services_title', true) ?: 'Our Estate Agent Marketing Services'); ?></h2>
+                <h2 class="animate-on-scroll animate-fade-up"><?php echo wp_kses_post(get_post_meta(get_the_ID(), '_estate_agents_services_title', true) ?: 'Our Estate Agent Marketing Services'); ?></h2>
                 <div class="services-grid">
                     <?php 
                     $services = get_post_meta(get_the_ID(), '_estate_agents_services', true);
@@ -118,11 +118,11 @@ get_header(); ?>
                                 <i class="<?php echo esc_attr($service['icon']); ?>"></i>
                             </div>
                             <div class="service-content">
-                                <h3><?php echo esc_html($service['title']); ?></h3>
-                                <p><?php echo esc_html($service['description']); ?></p>
+                                <h3><?php echo wp_kses_post($service['title']); ?></h3>
+                                <p><?php echo wp_kses_post($service['description']); ?></p>
                                 <ul class="service-features">
                                     <?php foreach ($service['features'] as $feature): ?>
-                                        <li><?php echo esc_html($feature); ?></li>
+                                        <li><?php echo wp_kses_post($feature); ?></li>
                                     <?php endforeach; ?>
                                 </ul>
                             </div>
@@ -135,12 +135,12 @@ get_header(); ?>
             <div class="section-content">
                 <div class="case-study-content">
                     <div class="case-study-text animate-on-scroll animate-slide-left">
-                        <span class="case-study-label"><?php echo esc_html(get_post_meta(get_the_ID(), '_estate_agents_case_study_label', true) ?: 'Success Story'); ?></span>
-                        <h2><?php echo esc_html(get_post_meta(get_the_ID(), '_estate_agents_case_study_title', true) ?: 'PropertyPro: 280% Increase in Vendor Leads'); ?></h2>
-                        <p><?php echo esc_html(get_post_meta(get_the_ID(), '_estate_agents_case_study_content', true) ?: 'PropertyPro, an independent estate agency, needed to compete against national chains and generate more vendor leads in their local market.'); ?></p>
+                        <span class="case-study-label"><?php echo wp_kses_post(get_post_meta(get_the_ID(), '_estate_agents_case_study_label', true) ?: 'Success Story'); ?></span>
+                        <h2><?php echo wp_kses_post(get_post_meta(get_the_ID(), '_estate_agents_case_study_title', true) ?: 'PropertyPro: 280% Increase in Vendor Leads'); ?></h2>
+                        <p><?php echo wp_kses_post(get_post_meta(get_the_ID(), '_estate_agents_case_study_content', true) ?: 'PropertyPro, an independent estate agency, needed to compete against national chains and generate more vendor leads in their local market.'); ?></p>
                         
                         <div class="case-study-challenge animate-on-scroll animate-fade-up">
-                            <h3><?php echo esc_html(get_post_meta(get_the_ID(), '_estate_agents_case_study_challenge_title', true) ?: 'The Challenge'); ?></h3>
+                            <h3><?php echo wp_kses_post(get_post_meta(get_the_ID(), '_estate_agents_case_study_challenge_title', true) ?: 'The Challenge'); ?></h3>
                             <ul>
                                 <?php 
                                 $case_study_challenges = get_post_meta(get_the_ID(), '_estate_agents_case_study_challenges', true);
@@ -153,13 +153,13 @@ get_header(); ?>
                                     );
                                 }
                                 foreach ($case_study_challenges as $challenge): ?>
-                                    <li><?php echo esc_html($challenge); ?></li>
+                                    <li><?php echo wp_kses_post($challenge); ?></li>
                                 <?php endforeach; ?>
                             </ul>
                         </div>
 
                         <div class="case-study-solution animate-on-scroll animate-fade-up">
-                            <h3><?php echo esc_html(get_post_meta(get_the_ID(), '_estate_agents_case_study_solution_title', true) ?: 'Our Solution'); ?></h3>
+                            <h3><?php echo wp_kses_post(get_post_meta(get_the_ID(), '_estate_agents_case_study_solution_title', true) ?: 'Our Solution'); ?></h3>
                             <ul>
                                 <?php 
                                 $case_study_solutions = get_post_meta(get_the_ID(), '_estate_agents_case_study_solutions', true);
@@ -172,13 +172,13 @@ get_header(); ?>
                                     );
                                 }
                                 foreach ($case_study_solutions as $solution): ?>
-                                    <li><?php echo esc_html($solution); ?></li>
+                                    <li><?php echo wp_kses_post($solution); ?></li>
                                 <?php endforeach; ?>
                             </ul>
                         </div>
                     </div>
                     <div class="case-study-results animate-on-scroll animate-slide-right">
-                        <h3><?php echo esc_html(get_post_meta(get_the_ID(), '_estate_agents_case_study_results_title', true) ?: 'Results After 6 Months'); ?></h3>
+                        <h3><?php echo wp_kses_post(get_post_meta(get_the_ID(), '_estate_agents_case_study_results_title', true) ?: 'Results After 6 Months'); ?></h3>
                         <div class="results-grid">
                             <?php 
                             $case_study_results = get_post_meta(get_the_ID(), '_estate_agents_case_study_results', true);
@@ -197,14 +197,14 @@ get_header(); ?>
                                 </div>
                             <?php endforeach; ?>
                         </div>
-                        <a href="<?php echo esc_url(get_post_meta(get_the_ID(), '_estate_agents_case_study_link_url', true) ?: home_url('/case-studies')); ?>" class="case-study-link animate-on-scroll animate-fade-up"><?php echo esc_html(get_post_meta(get_the_ID(), '_estate_agents_case_study_link_text', true) ?: 'Read Full Case Study'); ?></a>
+                        <a href="<?php echo esc_url(get_post_meta(get_the_ID(), '_estate_agents_case_study_link_url', true) ?: home_url('/case-studies')); ?>" class="case-study-link animate-on-scroll animate-fade-up"><?php echo wp_kses_post(get_post_meta(get_the_ID(), '_estate_agents_case_study_link_text', true) ?: 'Read Full Case Study'); ?></a>
                     </div>
                 </div>
             </div>
         </section>        <!-- Estate Agent Process -->
         <section class="estate-agent-process">
             <div class="section-content">
-                <h2 class="animate-on-scroll animate-fade-up"><?php echo esc_html(get_post_meta(get_the_ID(), '_estate_agents_process_title', true) ?: 'Our Estate Agent Marketing Process'); ?></h2>
+                <h2 class="animate-on-scroll animate-fade-up"><?php echo wp_kses_post(get_post_meta(get_the_ID(), '_estate_agents_process_title', true) ?: 'Our Estate Agent Marketing Process'); ?></h2>
                 <div class="process-steps">
                     <?php 
                     $process_steps = get_post_meta(get_the_ID(), '_estate_agents_process_steps', true);
@@ -233,8 +233,8 @@ get_header(); ?>
                         <div class="process-step animate-on-scroll animate-stagger animate-slide-up">
                             <div class="step-number"><?php echo $step_number; ?></div>
                             <div class="step-content">
-                                <h3><?php echo esc_html($step['title']); ?></h3>
-                                <p><?php echo esc_html($step['description']); ?></p>
+                                <h3><?php echo wp_kses_post($step['title']); ?></h3>
+                                <p><?php echo wp_kses_post($step['description']); ?></p>
                             </div>
                         </div>
                     <?php 
@@ -278,13 +278,13 @@ get_header(); ?>
             <div class="section-content">
                 <div class="testimonial-content animate-on-scroll animate-fade-up">
                     <blockquote>
-                        "<?php echo esc_html(get_post_meta(get_the_ID(), '_estate_agents_testimonial_quote', true) ?: 'Aimpro Digital transformed our estate agency\'s online presence. Their understanding of the property market and local SEO expertise helped us generate 280% more vendor leads. We\'re now the leading independent agent in our area.'); ?>"
+                        "<?php echo wp_kses_post(get_post_meta(get_the_ID(), '_estate_agents_testimonial_quote', true) ?: 'Aimpro Digital transformed our estate agency\'s online presence. Their understanding of the property market and local SEO expertise helped us generate 280% more vendor leads. We\'re now the leading independent agent in our area.'); ?>"
                     </blockquote>
                     <div class="testimonial-author animate-on-scroll animate-slide-up">
                         <div class="author-info">
-                            <h4><?php echo esc_html(get_post_meta(get_the_ID(), '_estate_agents_testimonial_name', true) ?: 'Sarah Mitchell'); ?></h4>
-                            <span><?php echo esc_html(get_post_meta(get_the_ID(), '_estate_agents_testimonial_position', true) ?: 'Director, PropertyPro Estate Agents'); ?></span>
-                            <div class="author-company"><?php echo esc_html(get_post_meta(get_the_ID(), '_estate_agents_testimonial_company', true) ?: 'Independent estate agency with 3 offices'); ?></div>
+                            <h4><?php echo wp_kses_post(get_post_meta(get_the_ID(), '_estate_agents_testimonial_name', true) ?: 'Sarah Mitchell'); ?></h4>
+                            <span><?php echo wp_kses_post(get_post_meta(get_the_ID(), '_estate_agents_testimonial_position', true) ?: 'Director, PropertyPro Estate Agents'); ?></span>
+                            <div class="author-company"><?php echo wp_kses_post(get_post_meta(get_the_ID(), '_estate_agents_testimonial_company', true) ?: 'Independent estate agency with 3 offices'); ?></div>
                         </div>
                     </div>
                 </div>
@@ -293,11 +293,11 @@ get_header(); ?>
         <section class="cta-section">
             <div class="container">
                 <div class="cta-content animate-on-scroll animate-fade-up">
-                    <h2><?php echo esc_html(get_post_meta(get_the_ID(), '_estate_agents_cta_title', true) ?: 'Ready to Dominate Your Local Property Market?'); ?></h2>
-                    <p><?php echo esc_html(get_post_meta(get_the_ID(), '_estate_agents_cta_subtitle', true) ?: 'Let\'s discuss how our estate agent marketing expertise can generate more vendor leads and property sales.'); ?></p>
+                    <h2><?php echo wp_kses_post(get_post_meta(get_the_ID(), '_estate_agents_cta_title', true) ?: 'Ready to Dominate Your Local Property Market?'); ?></h2>
+                    <p><?php echo wp_kses_post(get_post_meta(get_the_ID(), '_estate_agents_cta_subtitle', true) ?: 'Let\'s discuss how our estate agent marketing expertise can generate more vendor leads and property sales.'); ?></p>
                     <div class="cta-buttons animate-on-scroll animate-slide-up">
-                        <a href="<?php echo esc_url(get_post_meta(get_the_ID(), '_estate_agents_cta_primary_url', true) ?: home_url('/contact')); ?>" class="btn-primary"><?php echo esc_html(get_post_meta(get_the_ID(), '_estate_agents_cta_primary_text', true) ?: 'Get Free Marketing Audit'); ?></a>
-                        <a href="<?php echo esc_url(get_post_meta(get_the_ID(), '_estate_agents_cta_secondary_url', true) ?: home_url('/case-studies')); ?>" class="btn-outline"><?php echo esc_html(get_post_meta(get_the_ID(), '_estate_agents_cta_secondary_text', true) ?: 'View Property Success Stories'); ?></a>
+                        <a href="<?php echo esc_url(get_post_meta(get_the_ID(), '_estate_agents_cta_primary_url', true) ?: home_url('/contact')); ?>" class="btn-primary"><?php echo wp_kses_post(get_post_meta(get_the_ID(), '_estate_agents_cta_primary_text', true) ?: 'Get Free Marketing Audit'); ?></a>
+                        <a href="<?php echo esc_url(get_post_meta(get_the_ID(), '_estate_agents_cta_secondary_url', true) ?: home_url('/case-studies')); ?>" class="btn-outline"><?php echo wp_kses_post(get_post_meta(get_the_ID(), '_estate_agents_cta_secondary_text', true) ?: 'View Property Success Stories'); ?></a>
                     </div>                    <div class="cta-features animate-on-scroll animate-fade-up">
                         <?php 
                         $cta_benefits = get_post_meta(get_the_ID(), '_estate_agents_cta_benefits', true);
@@ -309,7 +309,7 @@ get_header(); ?>
                             );
                         }
                         foreach ($cta_benefits as $benefit): ?>
-                            <span><?php echo esc_html($benefit); ?></span>
+                            <span><?php echo wp_kses_post($benefit); ?></span>
                         <?php endforeach; ?>
                     </div>
                 </div>

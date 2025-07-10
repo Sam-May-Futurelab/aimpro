@@ -254,19 +254,15 @@ function estate_agents_meta_box_callback($post) {
             <tr>
                 <th><label for="estate_agents_header_title">Page Title</label></th>
                 <td>
-                    <input type="text" 
-                           id="estate_agents_header_title" 
-                           name="estate_agents_header_title" 
-                           value="<?php echo esc_attr($header_title); ?>"
-                           placeholder="Estate Agent Digital Marketing" />
+                    <?php wp_editor($header_title ?: 'Estate Agent Digital Marketing', 'estate_agents_header_title', array('textarea_rows' => 3, 'media_buttons' => false)); ?>
+                    <p class="description">Main page heading. HTML allowed for formatting.</p>
                 </td>
             </tr>
             <tr>
                 <th><label for="estate_agents_header_subtitle">Page Subtitle</label></th>
                 <td>
-                    <textarea id="estate_agents_header_subtitle" 
-                              name="estate_agents_header_subtitle"
-                              placeholder="Generate quality property leads and dominate your local property market"><?php echo esc_textarea($header_subtitle); ?></textarea>
+                    <?php wp_editor($header_subtitle ?: 'Generate quality property leads and dominate your local property market', 'estate_agents_header_subtitle', array('textarea_rows' => 4, 'media_buttons' => false)); ?>
+                    <p class="description">Subtitle text below the main heading.</p>
                 </td>
             </tr>
         </table>
@@ -277,19 +273,15 @@ function estate_agents_meta_box_callback($post) {
             <tr>
                 <th><label for="estate_agents_overview_title">Overview Title</label></th>
                 <td>
-                    <input type="text" 
-                           id="estate_agents_overview_title" 
-                           name="estate_agents_overview_title" 
-                           value="<?php echo esc_attr($overview_title); ?>"
-                           placeholder="Sell More Properties, Attract More Vendors" />
+                    <?php wp_editor($overview_title ?: 'Sell More Properties, Attract More Vendors', 'estate_agents_overview_title', array('textarea_rows' => 3, 'media_buttons' => false)); ?>
+                    <p class="description">Main heading for the overview section.</p>
                 </td>
             </tr>
             <tr>
                 <th><label for="estate_agents_overview_content">Overview Content</label></th>
                 <td>
-                    <textarea id="estate_agents_overview_content" 
-                              name="estate_agents_overview_content"
-                              placeholder="The property market is fiercely competitive..."><?php echo esc_textarea($overview_content); ?></textarea>
+                    <?php wp_editor($overview_content ?: 'The property market is fiercely competitive. Our specialised estate agent marketing strategies help you stand out, generate high-quality vendor and buyer leads, and establish your agency as the go-to property experts in your area.', 'estate_agents_overview_content', array('textarea_rows' => 6, 'media_buttons' => false)); ?>
+                    <p class="description">Main description text for the overview section.</p>
                 </td>
             </tr>
             <tr>
@@ -317,11 +309,8 @@ function estate_agents_meta_box_callback($post) {
             <tr>
                 <th><label for="estate_agents_challenges_title">Challenges Title</label></th>
                 <td>
-                    <input type="text" 
-                           id="estate_agents_challenges_title" 
-                           name="estate_agents_challenges_title" 
-                           value="<?php echo esc_attr($challenges_title); ?>"
-                           placeholder="Estate Agent Marketing Challenges We Solve:" />
+                    <?php wp_editor($challenges_title ?: 'Estate Agent Marketing Challenges We Solve:', 'estate_agents_challenges_title', array('textarea_rows' => 3, 'media_buttons' => false)); ?>
+                    <p class="description">Heading for the challenges section.</p>
                 </td>
             </tr>
             <tr>
@@ -331,10 +320,7 @@ function estate_agents_meta_box_callback($post) {
                         <?php if (!empty($challenges)): ?>
                             <?php foreach ($challenges as $index => $challenge): ?>
                                 <div class="repeater-field">
-                                    <input type="text" 
-                                           name="estate_agents_challenges[]" 
-                                           value="<?php echo esc_attr($challenge); ?>"
-                                           placeholder="Challenge item" />
+                                    <?php wp_editor($challenge, 'estate_agents_challenges_' . $index, array('textarea_rows' => 2, 'media_buttons' => false, 'textarea_name' => 'estate_agents_challenges[]')); ?>
                                     <button type="button" class="button remove-repeater-item">Remove</button>
                                 </div>
                             <?php endforeach; ?>
@@ -351,11 +337,8 @@ function estate_agents_meta_box_callback($post) {
             <tr>
                 <th><label for="estate_agents_services_title">Services Title</label></th>
                 <td>
-                    <input type="text" 
-                           id="estate_agents_services_title" 
-                           name="estate_agents_services_title" 
-                           value="<?php echo esc_attr($services_title); ?>"
-                           placeholder="Our Estate Agent Marketing Services" />
+                    <?php wp_editor($services_title ?: 'Our Estate Agent Marketing Services', 'estate_agents_services_title', array('textarea_rows' => 3, 'media_buttons' => false)); ?>
+                    <p class="description">Main heading for the services section.</p>
                 </td>
             </tr>
         </table>
@@ -369,19 +352,16 @@ function estate_agents_meta_box_callback($post) {
                                name="estate_agents_services[<?php echo $index; ?>][icon]" 
                                value="<?php echo esc_attr($service['icon']); ?>"
                                placeholder="Icon class (e.g., fas fa-home)" />
-                        <input type="text" 
-                               name="estate_agents_services[<?php echo $index; ?>][title]" 
-                               value="<?php echo esc_attr($service['title']); ?>"
-                               placeholder="Service title" />
-                        <textarea name="estate_agents_services[<?php echo $index; ?>][description]" 
-                                  placeholder="Service description"><?php echo esc_textarea($service['description']); ?></textarea>
+                        <?php wp_editor($service['title'], 'estate_agents_services_' . $index . '_title', array('textarea_rows' => 2, 'media_buttons' => false, 'textarea_name' => 'estate_agents_services[' . $index . '][title]')); ?>
+                        <label>Service Title</label>
+                        
+                        <?php wp_editor($service['description'], 'estate_agents_services_' . $index . '_description', array('textarea_rows' => 4, 'media_buttons' => false, 'textarea_name' => 'estate_agents_services[' . $index . '][description]')); ?>
+                        <label>Service Description</label>
+                        
                         <div>
                             <strong>Features:</strong>
                             <?php foreach ($service['features'] as $feat_index => $feature): ?>
-                                <input type="text" 
-                                       name="estate_agents_services[<?php echo $index; ?>][features][]" 
-                                       value="<?php echo esc_attr($feature); ?>"
-                                       placeholder="Feature" />
+                                <?php wp_editor($feature, 'estate_agents_services_' . $index . '_feature_' . $feat_index, array('textarea_rows' => 2, 'media_buttons' => false, 'textarea_name' => 'estate_agents_services[' . $index . '][features][]')); ?>
                             <?php endforeach; ?>
                         </div>
                         <button type="button" class="button remove-repeater-item">Remove Service</button>
@@ -396,39 +376,29 @@ function estate_agents_meta_box_callback($post) {
             <tr>
                 <th><label for="estate_agents_case_study_label">Case Study Label</label></th>
                 <td>
-                    <input type="text" 
-                           id="estate_agents_case_study_label" 
-                           name="estate_agents_case_study_label" 
-                           value="<?php echo esc_attr($case_study_label); ?>"
-                           placeholder="Success Story" />
+                    <?php wp_editor($case_study_label ?: 'Success Story', 'estate_agents_case_study_label', array('textarea_rows' => 2, 'media_buttons' => false)); ?>
+                    <p class="description">Small label above the case study title.</p>
                 </td>
             </tr>
             <tr>
                 <th><label for="estate_agents_case_study_title">Case Study Title</label></th>
                 <td>
-                    <input type="text" 
-                           id="estate_agents_case_study_title" 
-                           name="estate_agents_case_study_title" 
-                           value="<?php echo esc_attr($case_study_title); ?>"
-                           placeholder="PropertyPro: 280% Increase in Vendor Leads" />
+                    <?php wp_editor($case_study_title ?: 'PropertyPro: 280% Increase in Vendor Leads', 'estate_agents_case_study_title', array('textarea_rows' => 3, 'media_buttons' => false)); ?>
+                    <p class="description">Main heading for the case study.</p>
                 </td>
             </tr>
             <tr>
                 <th><label for="estate_agents_case_study_content">Case Study Content</label></th>
                 <td>
-                    <textarea id="estate_agents_case_study_content" 
-                              name="estate_agents_case_study_content"
-                              placeholder="Case study description..."><?php echo esc_textarea($case_study_content); ?></textarea>
+                    <?php wp_editor($case_study_content ?: 'PropertyPro, an independent estate agency, needed to compete against national chains and generate more vendor leads in their local market.', 'estate_agents_case_study_content', array('textarea_rows' => 4, 'media_buttons' => false)); ?>
+                    <p class="description">Introduction paragraph for the case study.</p>
                 </td>
             </tr>
             <tr>
                 <th><label for="estate_agents_case_study_challenge_title">Challenge Section Title</label></th>
                 <td>
-                    <input type="text" 
-                           id="estate_agents_case_study_challenge_title" 
-                           name="estate_agents_case_study_challenge_title" 
-                           value="<?php echo esc_attr($case_study_challenge_title); ?>"
-                           placeholder="The Challenge" />
+                    <?php wp_editor($case_study_challenge_title ?: 'The Challenge', 'estate_agents_case_study_challenge_title', array('textarea_rows' => 2, 'media_buttons' => false)); ?>
+                    <p class="description">Heading for the challenge section.</p>
                 </td>
             </tr>
             <tr>
@@ -436,12 +406,9 @@ function estate_agents_meta_box_callback($post) {
                 <td>
                     <div id="case-study-challenges-repeater">
                         <?php if (!empty($case_study_challenges)): ?>
-                            <?php foreach ($case_study_challenges as $challenge): ?>
+                            <?php foreach ($case_study_challenges as $index => $challenge): ?>
                                 <div class="repeater-field">
-                                    <input type="text" 
-                                           name="estate_agents_case_study_challenges[]" 
-                                           value="<?php echo esc_attr($challenge); ?>"
-                                           placeholder="Challenge item" />
+                                    <?php wp_editor($challenge, 'estate_agents_case_study_challenges_' . $index, array('textarea_rows' => 2, 'media_buttons' => false, 'textarea_name' => 'estate_agents_case_study_challenges[]')); ?>
                                     <button type="button" class="button remove-repeater-item">Remove</button>
                                 </div>
                             <?php endforeach; ?>
@@ -453,11 +420,8 @@ function estate_agents_meta_box_callback($post) {
             <tr>
                 <th><label for="estate_agents_case_study_solution_title">Solution Section Title</label></th>
                 <td>
-                    <input type="text" 
-                           id="estate_agents_case_study_solution_title" 
-                           name="estate_agents_case_study_solution_title" 
-                           value="<?php echo esc_attr($case_study_solution_title); ?>"
-                           placeholder="Our Solution" />
+                    <?php wp_editor($case_study_solution_title ?: 'Our Solution', 'estate_agents_case_study_solution_title', array('textarea_rows' => 2, 'media_buttons' => false)); ?>
+                    <p class="description">Heading for the solution section.</p>
                 </td>
             </tr>
             <tr>
@@ -465,12 +429,9 @@ function estate_agents_meta_box_callback($post) {
                 <td>
                     <div id="case-study-solutions-repeater">
                         <?php if (!empty($case_study_solutions)): ?>
-                            <?php foreach ($case_study_solutions as $solution): ?>
+                            <?php foreach ($case_study_solutions as $index => $solution): ?>
                                 <div class="repeater-field">
-                                    <input type="text" 
-                                           name="estate_agents_case_study_solutions[]" 
-                                           value="<?php echo esc_attr($solution); ?>"
-                                           placeholder="Solution item" />
+                                    <?php wp_editor($solution, 'estate_agents_case_study_solutions_' . $index, array('textarea_rows' => 2, 'media_buttons' => false, 'textarea_name' => 'estate_agents_case_study_solutions[]')); ?>
                                     <button type="button" class="button remove-repeater-item">Remove</button>
                                 </div>
                             <?php endforeach; ?>
@@ -482,11 +443,8 @@ function estate_agents_meta_box_callback($post) {
             <tr>
                 <th><label for="estate_agents_case_study_results_title">Results Section Title</label></th>
                 <td>
-                    <input type="text" 
-                           id="estate_agents_case_study_results_title" 
-                           name="estate_agents_case_study_results_title" 
-                           value="<?php echo esc_attr($case_study_results_title); ?>"
-                           placeholder="Results After 6 Months" />
+                    <?php wp_editor($case_study_results_title ?: 'Results After 6 Months', 'estate_agents_case_study_results_title', array('textarea_rows' => 2, 'media_buttons' => false)); ?>
+                    <p class="description">Heading for the results section.</p>
                 </td>
             </tr>
         </table>
@@ -539,11 +497,8 @@ function estate_agents_meta_box_callback($post) {
             <tr>
                 <th><label for="estate_agents_process_title">Process Title</label></th>
                 <td>
-                    <input type="text" 
-                           id="estate_agents_process_title" 
-                           name="estate_agents_process_title" 
-                           value="<?php echo esc_attr($process_title); ?>"
-                           placeholder="Our Estate Agent Marketing Process" />
+                    <?php wp_editor($process_title ?: 'Our Estate Agent Marketing Process', 'estate_agents_process_title', array('textarea_rows' => 3, 'media_buttons' => false)); ?>
+                    <p class="description">Main heading for the process section.</p>
                 </td>
             </tr>
         </table>
@@ -553,12 +508,10 @@ function estate_agents_meta_box_callback($post) {
                 <?php foreach ($process_steps as $index => $step): ?>
                     <div class="repeater-field">
                         <h4>Step <?php echo $index + 1; ?></h4>
-                        <input type="text" 
-                               name="estate_agents_process_steps[<?php echo $index; ?>][title]" 
-                               value="<?php echo esc_attr($step['title']); ?>"
-                               placeholder="Step title" />
-                        <textarea name="estate_agents_process_steps[<?php echo $index; ?>][description]" 
-                                  placeholder="Step description"><?php echo esc_textarea($step['description']); ?></textarea>
+                        <?php wp_editor($step['title'], 'estate_agents_process_steps_' . $index . '_title', array('textarea_rows' => 2, 'media_buttons' => false, 'textarea_name' => 'estate_agents_process_steps[' . $index . '][title]')); ?>
+                        <label>Step Title</label>
+                        <?php wp_editor($step['description'], 'estate_agents_process_steps_' . $index . '_description', array('textarea_rows' => 3, 'media_buttons' => false, 'textarea_name' => 'estate_agents_process_steps[' . $index . '][description]')); ?>
+                        <label>Step Description</label>
                         <button type="button" class="button remove-repeater-item">Remove Step</button>
                     </div>
                 <?php endforeach; ?>
@@ -571,11 +524,8 @@ function estate_agents_meta_box_callback($post) {
             <tr>
                 <th><label for="estate_agents_insights_title">Insights Title</label></th>
                 <td>
-                    <input type="text" 
-                           id="estate_agents_insights_title" 
-                           name="estate_agents_insights_title" 
-                           value="<?php echo esc_attr($insights_title); ?>"
-                           placeholder="Property Market Insights" />
+                    <?php wp_editor($insights_title ?: 'Property Market Insights', 'estate_agents_insights_title', array('textarea_rows' => 3, 'media_buttons' => false)); ?>
+                    <p class="description">Main heading for the insights section.</p>
                 </td>
             </tr>
         </table>
@@ -589,12 +539,11 @@ function estate_agents_meta_box_callback($post) {
                                name="estate_agents_insights[<?php echo $index; ?>][stat]" 
                                value="<?php echo esc_attr($insight['stat']); ?>"
                                placeholder="Statistic (e.g., 92%)" />
-                        <input type="text" 
-                               name="estate_agents_insights[<?php echo $index; ?>][title]" 
-                               value="<?php echo esc_attr($insight['title']); ?>"
-                               placeholder="Insight title" />
-                        <textarea name="estate_agents_insights[<?php echo $index; ?>][description]" 
-                                  placeholder="Insight description"><?php echo esc_textarea($insight['description']); ?></textarea>
+                        <label>Statistic</label>
+                        <?php wp_editor($insight['title'], 'estate_agents_insights_' . $index . '_title', array('textarea_rows' => 2, 'media_buttons' => false, 'textarea_name' => 'estate_agents_insights[' . $index . '][title]')); ?>
+                        <label>Insight Title</label>
+                        <?php wp_editor($insight['description'], 'estate_agents_insights_' . $index . '_description', array('textarea_rows' => 3, 'media_buttons' => false, 'textarea_name' => 'estate_agents_insights[' . $index . '][description]')); ?>
+                        <label>Insight Description</label>
                         <button type="button" class="button remove-repeater-item">Remove Insight</button>
                     </div>
                 <?php endforeach; ?>
@@ -607,39 +556,29 @@ function estate_agents_meta_box_callback($post) {
             <tr>
                 <th><label for="estate_agents_testimonial_quote">Testimonial Quote</label></th>
                 <td>
-                    <textarea id="estate_agents_testimonial_quote" 
-                              name="estate_agents_testimonial_quote"
-                              placeholder="Customer testimonial quote..."><?php echo esc_textarea($testimonial_quote); ?></textarea>
+                    <?php wp_editor($testimonial_quote ?: 'Aimpro Digital transformed our estate agency\'s online presence. Their understanding of the property market and local SEO expertise helped us generate 280% more vendor leads. We\'re now the leading independent agent in our area.', 'estate_agents_testimonial_quote', array('textarea_rows' => 4, 'media_buttons' => false)); ?>
+                    <p class="description">Customer testimonial quote.</p>
                 </td>
             </tr>
             <tr>
                 <th><label for="estate_agents_testimonial_name">Customer Name</label></th>
                 <td>
-                    <input type="text" 
-                           id="estate_agents_testimonial_name" 
-                           name="estate_agents_testimonial_name" 
-                           value="<?php echo esc_attr($testimonial_name); ?>"
-                           placeholder="Sarah Mitchell" />
+                    <?php wp_editor($testimonial_name ?: 'Sarah Mitchell', 'estate_agents_testimonial_name', array('textarea_rows' => 2, 'media_buttons' => false)); ?>
+                    <p class="description">Name of the person giving the testimonial.</p>
                 </td>
             </tr>
             <tr>
                 <th><label for="estate_agents_testimonial_position">Customer Position</label></th>
                 <td>
-                    <input type="text" 
-                           id="estate_agents_testimonial_position" 
-                           name="estate_agents_testimonial_position" 
-                           value="<?php echo esc_attr($testimonial_position); ?>"
-                           placeholder="Director, PropertyPro Estate Agents" />
+                    <?php wp_editor($testimonial_position ?: 'Director, PropertyPro Estate Agents', 'estate_agents_testimonial_position', array('textarea_rows' => 2, 'media_buttons' => false)); ?>
+                    <p class="description">Position and company of the testimonial author.</p>
                 </td>
             </tr>
             <tr>
                 <th><label for="estate_agents_testimonial_company">Company Description</label></th>
                 <td>
-                    <input type="text" 
-                           id="estate_agents_testimonial_company" 
-                           name="estate_agents_testimonial_company" 
-                           value="<?php echo esc_attr($testimonial_company); ?>"
-                           placeholder="Independent estate agency with 3 offices" />
+                    <?php wp_editor($testimonial_company ?: 'Independent estate agency with 3 offices', 'estate_agents_testimonial_company', array('textarea_rows' => 2, 'media_buttons' => false)); ?>
+                    <p class="description">Additional company description.</p>
                 </td>
             </tr>
         </table>
@@ -650,29 +589,22 @@ function estate_agents_meta_box_callback($post) {
             <tr>
                 <th><label for="estate_agents_cta_title">CTA Title</label></th>
                 <td>
-                    <input type="text" 
-                           id="estate_agents_cta_title" 
-                           name="estate_agents_cta_title" 
-                           value="<?php echo esc_attr($cta_title); ?>"
-                           placeholder="Ready to Dominate Your Local Property Market?" />
+                    <?php wp_editor($cta_title ?: 'Ready to Dominate Your Local Property Market?', 'estate_agents_cta_title', array('textarea_rows' => 3, 'media_buttons' => false)); ?>
+                    <p class="description">Main heading for the CTA section.</p>
                 </td>
             </tr>
             <tr>
                 <th><label for="estate_agents_cta_subtitle">CTA Subtitle</label></th>
                 <td>
-                    <textarea id="estate_agents_cta_subtitle" 
-                              name="estate_agents_cta_subtitle"
-                              placeholder="Let's discuss how our estate agent marketing expertise can generate more vendor leads and property sales."><?php echo esc_textarea($cta_subtitle); ?></textarea>
+                    <?php wp_editor($cta_subtitle ?: 'Let\'s discuss how our estate agent marketing expertise can generate more vendor leads and property sales.', 'estate_agents_cta_subtitle', array('textarea_rows' => 4, 'media_buttons' => false)); ?>
+                    <p class="description">Description text for the CTA section.</p>
                 </td>
             </tr>
             <tr>
                 <th><label for="estate_agents_cta_primary_text">Primary Button Text</label></th>
                 <td>
-                    <input type="text" 
-                           id="estate_agents_cta_primary_text" 
-                           name="estate_agents_cta_primary_text" 
-                           value="<?php echo esc_attr($cta_primary_text); ?>"
-                           placeholder="Get Free Marketing Audit" />
+                    <?php wp_editor($cta_primary_text ?: 'Get Free Marketing Audit', 'estate_agents_cta_primary_text', array('textarea_rows' => 2, 'media_buttons' => false)); ?>
+                    <p class="description">Text for the primary CTA button.</p>
                 </td>
             </tr>
             <tr>
@@ -688,11 +620,8 @@ function estate_agents_meta_box_callback($post) {
             <tr>
                 <th><label for="estate_agents_cta_secondary_text">Secondary Button Text</label></th>
                 <td>
-                    <input type="text" 
-                           id="estate_agents_cta_secondary_text" 
-                           name="estate_agents_cta_secondary_text" 
-                           value="<?php echo esc_attr($cta_secondary_text); ?>"
-                           placeholder="View Property Success Stories" />
+                    <?php wp_editor($cta_secondary_text ?: 'View Property Success Stories', 'estate_agents_cta_secondary_text', array('textarea_rows' => 2, 'media_buttons' => false)); ?>
+                    <p class="description">Text for the secondary CTA button.</p>
                 </td>
             </tr>
             <tr>
@@ -710,12 +639,9 @@ function estate_agents_meta_box_callback($post) {
                 <td>
                     <div id="cta-benefits-repeater">
                         <?php if (!empty($cta_benefits)): ?>
-                            <?php foreach ($cta_benefits as $benefit): ?>
+                            <?php foreach ($cta_benefits as $index => $benefit): ?>
                                 <div class="repeater-field">
-                                    <input type="text" 
-                                           name="estate_agents_cta_benefits[]" 
-                                           value="<?php echo esc_attr($benefit); ?>"
-                                           placeholder="Benefit item" />
+                                    <?php wp_editor($benefit, 'estate_agents_cta_benefits_' . $index, array('textarea_rows' => 2, 'media_buttons' => false, 'textarea_name' => 'estate_agents_cta_benefits[]')); ?>
                                     <button type="button" class="button remove-repeater-item">Remove</button>
                                 </div>
                             <?php endforeach; ?>
@@ -790,15 +716,23 @@ function estate_agents_sanitize_meta_value($field, $value) {
         }, $value);
     }
     
+    // URL fields
     if (strpos($field, '_url') !== false || strpos($field, '_image') !== false) {
         return esc_url_raw($value);
     }
     
-    if (strpos($field, '_content') !== false || strpos($field, '_subtitle') !== false || strpos($field, '_quote') !== false) {
-        return sanitize_textarea_field($value);
+    // Stat/number fields (keep as text)
+    if (strpos($field, '_stat') !== false || strpos($field, '_number') !== false || strpos($field, '_label') !== false) {
+        return sanitize_text_field($value);
     }
     
-    return sanitize_text_field($value);
+    // Icon classes
+    if (strpos($field, '_icon') !== false) {
+        return sanitize_text_field($value);
+    }
+    
+    // All other content fields should allow rich text
+    return wp_kses_post($value);
 }
 
 function save_estate_agents_meta_box_data($post_id) {
