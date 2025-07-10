@@ -21,8 +21,8 @@ get_header(); ?>
     <div class="container">          <!-- Page Header -->
         <section class="page-header">
             <div class="page-header-content animate-on-scroll animate-fade-up">
-                <h1><?php echo esc_html(get_post_meta(get_the_ID(), '_industries_header_title', true) ?: 'Industries We Serve'); ?></h1>
-                <p class="page-subtitle"><?php echo esc_html(get_post_meta(get_the_ID(), '_industries_header_subtitle', true) ?: 'specialised digital marketing expertise across diverse sectors'); ?></p>
+                <h1><?php echo wp_kses_post(get_post_meta(get_the_ID(), '_industries_header_title', true) ?: 'Industries We Serve'); ?></h1>
+                <p class="page-subtitle"><?php echo wp_kses_post(get_post_meta(get_the_ID(), '_industries_header_subtitle', true) ?: 'specialised digital marketing expertise across diverse sectors'); ?></p>
             </div>
         </section>
 
@@ -30,8 +30,8 @@ get_header(); ?>
         <section class="industries-intro">
             <div class="section-content">
                 <div class="intro-content animate-on-scroll animate-slide-left">
-                    <h2><?php echo esc_html(get_post_meta(get_the_ID(), '_industries_intro_title', true) ?: 'Industry-Specific Digital Marketing Solutions'); ?></h2>
-                    <p><?php echo esc_html(get_post_meta(get_the_ID(), '_industries_intro_content', true) ?: 'Every industry has unique challenges, customer behaviours, and marketing opportunities. Our team brings deep sector expertise and proven strategies tailored to your specific market, ensuring maximum ROI and sustainable growth.'); ?></p>
+                    <h2><?php echo wp_kses_post(get_post_meta(get_the_ID(), '_industries_intro_title', true) ?: 'Industry-Specific Digital Marketing Solutions'); ?></h2>
+                    <p><?php echo wp_kses_post(get_post_meta(get_the_ID(), '_industries_intro_content', true) ?: 'Every industry has unique challenges, customer behaviours, and marketing opportunities. Our team brings deep sector expertise and proven strategies tailored to your specific market, ensuring maximum ROI and sustainable growth.'); ?></p>
                 </div>                <div class="industry-stats animate-on-scroll animate-slide-right" style="display: flex !important; justify-content: center !important; align-items: center !important; text-align: center !important; flex-wrap: wrap !important; gap: 2rem !important;">
                     <?php 
                     $industry_stats = get_post_meta(get_the_ID(), '_industries_stats', true);
@@ -60,8 +60,8 @@ get_header(); ?>
         <section class="service-overview">
             <div class="container">
                 <div class="section-header animate-on-scroll animate-fade-up">
-                    <h2><?php echo esc_html(get_post_meta(get_the_ID(), '_industries_expertise_title', true) ?: 'Our Industry Expertise'); ?></h2>
-                    <p><?php echo esc_html(get_post_meta(get_the_ID(), '_industries_expertise_subtitle', true) ?: 'specialised digital marketing solutions tailored to your industry\'s unique challenges and opportunities.'); ?></p>
+                    <h2><?php echo wp_kses_post(get_post_meta(get_the_ID(), '_industries_expertise_title', true) ?: 'Our Industry Expertise'); ?></h2>
+                    <p><?php echo wp_kses_post(get_post_meta(get_the_ID(), '_industries_expertise_subtitle', true) ?: 'specialised digital marketing solutions tailored to your industry\'s unique challenges and opportunities.'); ?></p>
                 </div>
                 <div class="services-grid">
                     <?php 
@@ -141,13 +141,24 @@ get_header(); ?>
                                 <?php endif; ?>
                             </div>
                             <h3><?php echo esc_html($industry['title']); ?></h3>
-                            <p><?php echo esc_html($industry['description']); ?></p>
-                            <?php if (!empty($industry['features']) && is_array($industry['features'])): ?>
-                                <ul class="service-features">
-                                    <?php foreach ($industry['features'] as $feature): ?>
-                                        <li><?php echo esc_html($feature); ?></li>
-                                    <?php endforeach; ?>
-                                </ul>
+                            <p><?php echo wp_kses_post($industry['description']); ?></p>
+                            <?php if (!empty($industry['features'])): ?>
+                                <div class="service-features">
+                                    <?php 
+                                    // Handle both array (legacy) and string (new rich text) formats
+                                    if (is_array($industry['features'])) {
+                                        // Legacy format - convert array to HTML list
+                                        echo '<ul>';
+                                        foreach ($industry['features'] as $feature) {
+                                            echo '<li>' . esc_html($feature) . '</li>';
+                                        }
+                                        echo '</ul>';
+                                    } else {
+                                        // New rich text format
+                                        echo wp_kses_post($industry['features']);
+                                    }
+                                    ?>
+                                </div>
                             <?php endif; ?>
                             <a href="<?php echo esc_url(home_url($industry['link_url'] ?? '')); ?>" class="service-link"><?php echo esc_html($industry['link_text'] ?? 'Learn More'); ?></a>
                         </div>
@@ -158,8 +169,8 @@ get_header(); ?>
         <section class="service-overview">
             <div class="container">
                 <div class="section-header">
-                    <h2><?php echo esc_html(get_post_meta(get_the_ID(), '_industries_success_title', true) ?: 'Cross-Industry Success'); ?></h2>
-                    <p><?php echo esc_html(get_post_meta(get_the_ID(), '_industries_success_subtitle', true) ?: 'Delivering exceptional results across diverse industries and business sectors.'); ?></p>
+                    <h2><?php echo wp_kses_post(get_post_meta(get_the_ID(), '_industries_success_title', true) ?: 'Cross-Industry Success'); ?></h2>
+                    <p><?php echo wp_kses_post(get_post_meta(get_the_ID(), '_industries_success_subtitle', true) ?: 'Delivering exceptional results across diverse industries and business sectors.'); ?></p>
                 </div>
                 <div class="success-stats">
                     <?php 
@@ -189,8 +200,8 @@ get_header(); ?>
         <section class="service-overview">
             <div class="container">
                 <div class="section-header">
-                    <h2><?php echo esc_html(get_post_meta(get_the_ID(), '_industries_expertise_matters_title', true) ?: 'Why Industry Expertise Matters'); ?></h2>
-                    <p><?php echo esc_html(get_post_meta(get_the_ID(), '_industries_expertise_matters_subtitle', true) ?: 'Generic marketing approaches fail because they don\'t account for industry-specific customer behaviours, seasonal patterns, and regulatory requirements. Our deep industry knowledge enables us to:'); ?></p>
+                    <h2><?php echo wp_kses_post(get_post_meta(get_the_ID(), '_industries_expertise_matters_title', true) ?: 'Why Industry Expertise Matters'); ?></h2>
+                    <p><?php echo wp_kses_post(get_post_meta(get_the_ID(), '_industries_expertise_matters_subtitle', true) ?: 'Generic marketing approaches fail because they don\'t account for industry-specific customer behaviours, seasonal patterns, and regulatory requirements. Our deep industry knowledge enables us to:'); ?></p>
                 </div>                <div class="benefits-grid-2x2">
                     <?php 
                     $expertise_points = get_post_meta(get_the_ID(), '_industries_expertise_points', true);
@@ -232,7 +243,7 @@ get_header(); ?>
                             </div>
                             <div class="benefit-content">
                                 <h3><?php echo esc_html($point['title']); ?></h3>
-                                <p><?php echo esc_html($point['description']); ?></p>
+                                <p><?php echo wp_kses_post($point['description']); ?></p>
                             </div>
                         </div>
                     <?php endforeach; ?>
@@ -241,7 +252,7 @@ get_header(); ?>
         </section>        <!-- Industry Testimonials -->
         <section class="industry-testimonials">
             <div class="section-content">
-                <h2><?php echo esc_html(get_post_meta(get_the_ID(), '_industries_testimonials_title', true) ?: 'What Our Industry Clients Say'); ?></h2>
+                <h2><?php echo wp_kses_post(get_post_meta(get_the_ID(), '_industries_testimonials_title', true) ?: 'What Our Industry Clients Say'); ?></h2>
                 <div class="testimonials-grid">
                     <?php 
                     $testimonials = get_post_meta(get_the_ID(), '_industries_testimonials', true);
@@ -276,7 +287,7 @@ get_header(); ?>
                     ?>
                         <div class="testimonial-card">
                             <div class="testimonial-content">
-                                <p>"<?php echo esc_html($testimonial['quote']); ?>"</p>
+                                <p>"<?php echo wp_kses_post($testimonial['quote']); ?>"</p>
                             </div>
                             <div class="testimonial-author">
                                 <div class="author-info">
@@ -299,8 +310,8 @@ get_header(); ?>
         <section id="contact" class="cta-section">
             <div class="container">
                 <div class="cta-content">
-                    <h2><?php echo esc_html(get_post_meta(get_the_ID(), '_industries_cta_title', true) ?: 'Ready to Dominate Your Industry?'); ?></h2>
-                    <p><?php echo esc_html(get_post_meta(get_the_ID(), '_industries_cta_subtitle', true) ?: 'Let\'s discuss how our industry-specific expertise can accelerate your business growth.'); ?></p>
+                    <h2><?php echo wp_kses_post(get_post_meta(get_the_ID(), '_industries_cta_title', true) ?: 'Ready to Dominate Your Industry?'); ?></h2>
+                    <p><?php echo wp_kses_post(get_post_meta(get_the_ID(), '_industries_cta_subtitle', true) ?: 'Let\'s discuss how our industry-specific expertise can accelerate your business growth.'); ?></p>
                     <div class="cta-buttons">
                         <a href="<?php echo esc_url(home_url(get_post_meta(get_the_ID(), '_industries_cta_primary_url', true) ?: '/contact')); ?>" class="btn-primary"><?php echo esc_html(get_post_meta(get_the_ID(), '_industries_cta_primary_text', true) ?: 'Get Industry Analysis'); ?></a>
                         <a href="<?php echo esc_url(home_url(get_post_meta(get_the_ID(), '_industries_cta_secondary_url', true) ?: '/case-studies')); ?>" class="btn-outline"><?php echo esc_html(get_post_meta(get_the_ID(), '_industries_cta_secondary_text', true) ?: 'View Success Stories'); ?></a>

@@ -294,19 +294,51 @@ function industries_meta_box_callback($post) {
         <table class="form-table">
             <tr>
                 <th><label for="industries_header_title">Page Header Title</label></th>
-                <td><input type="text" id="industries_header_title" name="industries_header_title" value="<?php echo esc_attr($header_title); ?>" placeholder="Industries We Serve" /></td>
+                <td>
+                    <?php wp_editor($header_title, 'industries_header_title', array(
+                        'textarea_name' => 'industries_header_title',
+                        'media_buttons' => false,
+                        'textarea_rows' => 3,
+                        'teeny' => true,
+                        'quicktags' => array('buttons' => 'strong,em,link,ul,ol,li')
+                    )); ?>
+                </td>
             </tr>
             <tr>
                 <th><label for="industries_header_subtitle">Page Header Subtitle</label></th>
-                <td><textarea id="industries_header_subtitle" name="industries_header_subtitle" placeholder="specialised digital marketing expertise across diverse sectors"><?php echo esc_textarea($header_subtitle); ?></textarea></td>
+                <td>
+                    <?php wp_editor($header_subtitle, 'industries_header_subtitle', array(
+                        'textarea_name' => 'industries_header_subtitle',
+                        'media_buttons' => false,
+                        'textarea_rows' => 4,
+                        'teeny' => true,
+                        'quicktags' => array('buttons' => 'strong,em,link,ul,ol,li')
+                    )); ?>
+                </td>
             </tr>
             <tr>
                 <th><label for="industries_intro_title">Introduction Title</label></th>
-                <td><input type="text" id="industries_intro_title" name="industries_intro_title" value="<?php echo esc_attr($intro_title); ?>" placeholder="Industry-Specific Digital Marketing Solutions" /></td>
+                <td>
+                    <?php wp_editor($intro_title, 'industries_intro_title', array(
+                        'textarea_name' => 'industries_intro_title',
+                        'media_buttons' => false,
+                        'textarea_rows' => 3,
+                        'teeny' => true,
+                        'quicktags' => array('buttons' => 'strong,em,link,ul,ol,li')
+                    )); ?>
+                </td>
             </tr>
             <tr>
                 <th><label for="industries_intro_content">Introduction Content</label></th>
-                <td><textarea id="industries_intro_content" name="industries_intro_content" placeholder="Every industry has unique challenges..."><?php echo esc_textarea($intro_content); ?></textarea></td>
+                <td>
+                    <?php wp_editor($intro_content, 'industries_intro_content', array(
+                        'textarea_name' => 'industries_intro_content',
+                        'media_buttons' => false,
+                        'textarea_rows' => 5,
+                        'teeny' => true,
+                        'quicktags' => array('buttons' => 'strong,em,link,ul,ol,li')
+                    )); ?>
+                </td>
             </tr>
         </table>
 
@@ -342,11 +374,27 @@ function industries_meta_box_callback($post) {
             <table class="form-table">
                 <tr>
                     <th><label for="industries_expertise_title">Expertise Title</label></th>
-                    <td><input type="text" id="industries_expertise_title" name="industries_expertise_title" value="<?php echo esc_attr($expertise_title); ?>" placeholder="Our Industry Expertise" /></td>
+                    <td>
+                        <?php wp_editor($expertise_title, 'industries_expertise_title', array(
+                            'textarea_name' => 'industries_expertise_title',
+                            'media_buttons' => false,
+                            'textarea_rows' => 3,
+                            'teeny' => true,
+                            'quicktags' => array('buttons' => 'strong,em,link,ul,ol,li')
+                        )); ?>
+                    </td>
                 </tr>
                 <tr>
                     <th><label for="industries_expertise_subtitle">Expertise Subtitle</label></th>
-                    <td><textarea id="industries_expertise_subtitle" name="industries_expertise_subtitle" placeholder="specialised digital marketing solutions..."><?php echo esc_textarea($expertise_subtitle); ?></textarea></td>
+                    <td>
+                        <?php wp_editor($expertise_subtitle, 'industries_expertise_subtitle', array(
+                            'textarea_name' => 'industries_expertise_subtitle',
+                            'media_buttons' => false,
+                            'textarea_rows' => 4,
+                            'teeny' => true,
+                            'quicktags' => array('buttons' => 'strong,em,link,ul,ol,li')
+                        )); ?>
+                    </td>
                 </tr>
             </table>
         </div>
@@ -373,11 +421,23 @@ function industries_meta_box_callback($post) {
                             </div>
                             <div class="item-field">
                                 <label>Description:</label>
-                                <textarea name="industries_list[<?php echo $index; ?>][description]" placeholder="Drive qualified leads to your dealership..."><?php echo esc_textarea($industry['description']); ?></textarea>
+                                <?php wp_editor($industry['description'], "industries_list_{$index}_description", array(
+                                    'textarea_name' => "industries_list[{$index}][description]",
+                                    'media_buttons' => false,
+                                    'textarea_rows' => 4,
+                                    'teeny' => true,
+                                    'quicktags' => array('buttons' => 'strong,em,link,ul,ol,li')
+                                )); ?>
                             </div>
                             <div class="item-field">
                                 <label>Features (one per line):</label>
-                                <textarea name="industries_list[<?php echo $index; ?>][features]" placeholder="Vehicle inventory marketing&#10;Service department promotion"><?php echo esc_textarea(is_array($industry['features'] ?? '') ? implode("\n", $industry['features']) : ($industry['features'] ?? '')); ?></textarea>
+                                <?php wp_editor(is_array($industry['features'] ?? '') ? implode("\n", $industry['features']) : ($industry['features'] ?? ''), "industries_list_{$index}_features", array(
+                                    'textarea_name' => "industries_list[{$index}][features]",
+                                    'media_buttons' => false,
+                                    'textarea_rows' => 3,
+                                    'teeny' => true,
+                                    'quicktags' => array('buttons' => 'strong,em,link,ul,ol,li')
+                                )); ?>
                             </div>
                             <div class="item-field">
                                 <label>Link Text:</label>
@@ -399,11 +459,27 @@ function industries_meta_box_callback($post) {
             <table class="form-table">
                 <tr>
                     <th><label for="industries_success_title">Success Title</label></th>
-                    <td><input type="text" id="industries_success_title" name="industries_success_title" value="<?php echo esc_attr($success_title); ?>" placeholder="Cross-Industry Success" /></td>
+                    <td>
+                        <?php wp_editor($success_title, 'industries_success_title', array(
+                            'textarea_name' => 'industries_success_title',
+                            'media_buttons' => false,
+                            'textarea_rows' => 3,
+                            'teeny' => true,
+                            'quicktags' => array('buttons' => 'strong,em,link,ul,ol,li')
+                        )); ?>
+                    </td>
                 </tr>
                 <tr>
                     <th><label for="industries_success_subtitle">Success Subtitle</label></th>
-                    <td><textarea id="industries_success_subtitle" name="industries_success_subtitle" placeholder="Delivering exceptional results..."><?php echo esc_textarea($success_subtitle); ?></textarea></td>
+                    <td>
+                        <?php wp_editor($success_subtitle, 'industries_success_subtitle', array(
+                            'textarea_name' => 'industries_success_subtitle',
+                            'media_buttons' => false,
+                            'textarea_rows' => 4,
+                            'teeny' => true,
+                            'quicktags' => array('buttons' => 'strong,em,link,ul,ol,li')
+                        )); ?>
+                    </td>
                 </tr>
             </table>
             <div class="repeater-section">
@@ -436,11 +512,27 @@ function industries_meta_box_callback($post) {
             <table class="form-table">
                 <tr>
                     <th><label for="industries_expertise_matters_title">Expertise Matters Title</label></th>
-                    <td><input type="text" id="industries_expertise_matters_title" name="industries_expertise_matters_title" value="<?php echo esc_attr($expertise_matters_title); ?>" placeholder="Why Industry Expertise Matters" /></td>
+                    <td>
+                        <?php wp_editor($expertise_matters_title, 'industries_expertise_matters_title', array(
+                            'textarea_name' => 'industries_expertise_matters_title',
+                            'media_buttons' => false,
+                            'textarea_rows' => 3,
+                            'teeny' => true,
+                            'quicktags' => array('buttons' => 'strong,em,link,ul,ol,li')
+                        )); ?>
+                    </td>
                 </tr>
                 <tr>
                     <th><label for="industries_expertise_matters_subtitle">Expertise Matters Subtitle</label></th>
-                    <td><textarea id="industries_expertise_matters_subtitle" name="industries_expertise_matters_subtitle" placeholder="Generic marketing approaches fail..."><?php echo esc_textarea($expertise_matters_subtitle); ?></textarea></td>
+                    <td>
+                        <?php wp_editor($expertise_matters_subtitle, 'industries_expertise_matters_subtitle', array(
+                            'textarea_name' => 'industries_expertise_matters_subtitle',
+                            'media_buttons' => false,
+                            'textarea_rows' => 5,
+                            'teeny' => true,
+                            'quicktags' => array('buttons' => 'strong,em,link,ul,ol,li')
+                        )); ?>
+                    </td>
                 </tr>
             </table>
             <div class="repeater-section">
@@ -463,7 +555,13 @@ function industries_meta_box_callback($post) {
                             </div>
                             <div class="item-field">
                                 <label>Description:</label>
-                                <textarea name="industries_expertise_points[<?php echo $index; ?>][description]" placeholder="We understand your customer's journey..."><?php echo esc_textarea($point['description']); ?></textarea>
+                                <?php wp_editor($point['description'], "industries_expertise_points_{$index}_description", array(
+                                    'textarea_name' => "industries_expertise_points[{$index}][description]",
+                                    'media_buttons' => false,
+                                    'textarea_rows' => 3,
+                                    'teeny' => true,
+                                    'quicktags' => array('buttons' => 'strong,em,link,ul,ol,li')
+                                )); ?>
                             </div>
                         </div>
                     <?php endforeach; ?>
@@ -477,7 +575,15 @@ function industries_meta_box_callback($post) {
             <table class="form-table">
                 <tr>
                     <th><label for="industries_testimonials_title">Testimonials Title</label></th>
-                    <td><input type="text" id="industries_testimonials_title" name="industries_testimonials_title" value="<?php echo esc_attr($testimonials_title); ?>" placeholder="What Our Industry Clients Say" /></td>
+                    <td>
+                        <?php wp_editor($testimonials_title, 'industries_testimonials_title', array(
+                            'textarea_name' => 'industries_testimonials_title',
+                            'media_buttons' => false,
+                            'textarea_rows' => 3,
+                            'teeny' => true,
+                            'quicktags' => array('buttons' => 'strong,em,link,ul,ol,li')
+                        )); ?>
+                    </td>
                 </tr>
             </table>
             <div class="repeater-section">
@@ -492,7 +598,13 @@ function industries_meta_box_callback($post) {
                             <button type="button" class="remove-item remove-testimonial">Remove</button>
                             <div class="item-field">
                                 <label>Quote:</label>
-                                <textarea name="industries_testimonials[<?php echo $index; ?>][quote]" placeholder="Their understanding of the automotive market..."><?php echo esc_textarea($testimonial['quote']); ?></textarea>
+                                <?php wp_editor($testimonial['quote'], "industries_testimonials_{$index}_quote", array(
+                                    'textarea_name' => "industries_testimonials[{$index}][quote]",
+                                    'media_buttons' => false,
+                                    'textarea_rows' => 4,
+                                    'teeny' => true,
+                                    'quicktags' => array('buttons' => 'strong,em,link,ul,ol,li')
+                                )); ?>
                             </div>
                             <div class="item-field">
                                 <label>Name:</label>
@@ -518,11 +630,27 @@ function industries_meta_box_callback($post) {
             <table class="form-table">
                 <tr>
                     <th><label for="industries_cta_title">CTA Title</label></th>
-                    <td><input type="text" id="industries_cta_title" name="industries_cta_title" value="<?php echo esc_attr($cta_title); ?>" placeholder="Ready to Dominate Your Industry?" /></td>
+                    <td>
+                        <?php wp_editor($cta_title, 'industries_cta_title', array(
+                            'textarea_name' => 'industries_cta_title',
+                            'media_buttons' => false,
+                            'textarea_rows' => 3,
+                            'teeny' => true,
+                            'quicktags' => array('buttons' => 'strong,em,link,ul,ol,li')
+                        )); ?>
+                    </td>
                 </tr>
                 <tr>
                     <th><label for="industries_cta_subtitle">CTA Subtitle</label></th>
-                    <td><textarea id="industries_cta_subtitle" name="industries_cta_subtitle" placeholder="Let's discuss how our industry-specific expertise..."><?php echo esc_textarea($cta_subtitle); ?></textarea></td>
+                    <td>
+                        <?php wp_editor($cta_subtitle, 'industries_cta_subtitle', array(
+                            'textarea_name' => 'industries_cta_subtitle',
+                            'media_buttons' => false,
+                            'textarea_rows' => 4,
+                            'teeny' => true,
+                            'quicktags' => array('buttons' => 'strong,em,link,ul,ol,li')
+                        )); ?>
+                    </td>
                 </tr>
                 <tr>
                     <th><label for="industries_cta_primary_text">Primary Button Text</label></th>
@@ -565,8 +693,8 @@ function industries_meta_box_callback($post) {
                 '<button type="button" class="remove-item remove-industry">Remove</button>' +
                 '<div class="item-field"><label>Icon:</label><input type="text" name="industries_list[' + index + '][icon]" placeholder="fas fa-car" /></div>' +
                 '<div class="item-field"><label>Title:</label><input type="text" name="industries_list[' + index + '][title]" placeholder="Automotive" /></div>' +
-                '<div class="item-field"><label>Description:</label><textarea name="industries_list[' + index + '][description]" placeholder="Drive qualified leads..."></textarea></div>' +
-                '<div class="item-field"><label>Features:</label><textarea name="industries_list[' + index + '][features]" placeholder="Feature 1\nFeature 2"></textarea></div>' +
+                '<div class="item-field"><label>Description:</label><textarea name="industries_list[' + index + '][description]" placeholder="Drive qualified leads..." rows="4"></textarea><p><em>Note: Rich text editor will be available after saving and refreshing the page.</em></p></div>' +
+                '<div class="item-field"><label>Features:</label><textarea name="industries_list[' + index + '][features]" placeholder="List your features here..." rows="3"></textarea><p><em>Note: Rich text editor will be available after saving and refreshing the page.</em></p></div>' +
                 '<div class="item-field"><label>Link Text:</label><input type="text" name="industries_list[' + index + '][link_text]" placeholder="Learn More" /></div>' +
                 '<div class="item-field"><label>Link URL:</label><input type="url" name="industries_list[' + index + '][link_url]" placeholder="/automotive" /></div>' +
                 '</div>';
@@ -591,7 +719,7 @@ function industries_meta_box_callback($post) {
                 '<button type="button" class="remove-item remove-expertise-point">Remove</button>' +
                 '<div class="item-field"><label>Icon:</label><input type="text" name="industries_expertise_points[' + index + '][icon]" placeholder="" /></div>' +
                 '<div class="item-field"><label>Title:</label><input type="text" name="industries_expertise_points[' + index + '][title]" placeholder="Target the Right Audience" /></div>' +
-                '<div class="item-field"><label>Description:</label><textarea name="industries_expertise_points[' + index + '][description]" placeholder="We understand your customer\'s journey..."></textarea></div>' +
+                '<div class="item-field"><label>Description:</label><textarea name="industries_expertise_points[' + index + '][description]" placeholder="We understand your customer\'s journey..." rows="3"></textarea><p><em>Note: Rich text editor will be available after saving and refreshing the page.</em></p></div>' +
                 '</div>';
             container.append(html);
         });
@@ -601,7 +729,7 @@ function industries_meta_box_callback($post) {
             var index = container.find('.repeater-item').length;
             var html = '<div class="repeater-item">' +
                 '<button type="button" class="remove-item remove-testimonial">Remove</button>' +
-                '<div class="item-field"><label>Quote:</label><textarea name="industries_testimonials[' + index + '][quote]" placeholder="Their understanding of the automotive market..."></textarea></div>' +
+                '<div class="item-field"><label>Quote:</label><textarea name="industries_testimonials[' + index + '][quote]" placeholder="Their understanding of the automotive market..." rows="4"></textarea><p><em>Note: Rich text editor will be available after saving and refreshing the page.</em></p></div>' +
                 '<div class="item-field"><label>Name:</label><input type="text" name="industries_testimonials[' + index + '][name]" placeholder="Mark Thompson" /></div>' +
                 '<div class="item-field"><label>Position:</label><input type="text" name="industries_testimonials[' + index + '][position]" placeholder="General Manager, Premier Motors" /></div>' +
                 '<div class="item-field"><label>Industry Tag:</label><input type="text" name="industries_testimonials[' + index + '][industry]" placeholder="Automotive" /></div>' +
@@ -664,7 +792,28 @@ function save_industries_meta_box_data($post_id) {
 
     foreach ($fields as $field => $meta_key) {
         if (isset($_POST[$field])) {
-            update_post_meta($post_id, $meta_key, sanitize_text_field($_POST[$field]));
+            // Use wp_kses_post for rich text fields to allow safe HTML
+            $rich_text_fields = array(
+                'industries_header_title',
+                'industries_header_subtitle',
+                'industries_intro_title',
+                'industries_intro_content',
+                'industries_expertise_title',
+                'industries_expertise_subtitle',
+                'industries_success_title',
+                'industries_success_subtitle',
+                'industries_expertise_matters_title',
+                'industries_expertise_matters_subtitle',
+                'industries_testimonials_title',
+                'industries_cta_title',
+                'industries_cta_subtitle'
+            );
+            
+            if (in_array($field, $rich_text_fields)) {
+                update_post_meta($post_id, $meta_key, wp_kses_post($_POST[$field]));
+            } else {
+                update_post_meta($post_id, $meta_key, sanitize_text_field($_POST[$field]));
+            }
         }
     }
 
@@ -686,8 +835,8 @@ function save_industries_meta_box_data($post_id) {
             $industries[] = array(
                 'icon' => sanitize_text_field($industry['icon']),
                 'title' => sanitize_text_field($industry['title']),
-                'description' => sanitize_textarea_field($industry['description']),
-                'features' => array_filter(array_map('trim', explode("\n", sanitize_textarea_field($industry['features'])))),
+                'description' => wp_kses_post($industry['description']), // Allow HTML for rich text
+                'features' => wp_kses_post($industry['features']), // Allow HTML for rich text features
                 'link_text' => sanitize_text_field($industry['link_text']),
                 'link_url' => sanitize_text_field($industry['link_url'])
             );
@@ -712,7 +861,7 @@ function save_industries_meta_box_data($post_id) {
             $points[] = array(
                 'icon' => sanitize_text_field($point['icon']),
                 'title' => sanitize_text_field($point['title']),
-                'description' => sanitize_textarea_field($point['description'])
+                'description' => wp_kses_post($point['description']) // Allow HTML for rich text
             );
         }
         update_post_meta($post_id, '_industries_expertise_points', $points);
@@ -722,7 +871,7 @@ function save_industries_meta_box_data($post_id) {
         $testimonials = array();
         foreach ($_POST['industries_testimonials'] as $testimonial) {
             $testimonials[] = array(
-                'quote' => sanitize_textarea_field($testimonial['quote']),
+                'quote' => wp_kses_post($testimonial['quote']), // Allow HTML for rich text
                 'name' => sanitize_text_field($testimonial['name']),
                 'position' => sanitize_text_field($testimonial['position']),
                 'industry' => sanitize_text_field($testimonial['industry'])
