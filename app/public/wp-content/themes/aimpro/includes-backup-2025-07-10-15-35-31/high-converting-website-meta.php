@@ -1708,35 +1708,80 @@ function high_converting_website_meta_box_callback($post) {
 }
 
 function sanitize_high_converting_website_meta_value($field, $value) {
-    // Skip array/repeater fields to avoid critical errors
     if (in_array($field, [
         'high_converting_website_challenges',
         'high_converting_website_case_study_challenges',
         'high_converting_website_case_study_solutions',
-        'high_converting_website_cta_benefits',
-        'high_converting_website_services',
-        'high_converting_website_process_steps',
-        'high_converting_website_elements',
-        'high_converting_website_types',
-        'high_converting_website_tools'
+        'high_converting_website_cta_benefits'
     ])) {
-        // These are array fields - skip to avoid errors
+        // For simple arrays of text
+        return array_map('sanitize_text_field', $value);
+    } elseif ($field === 'high_converting_website_services') {
+        // For complex arrays with nested arrays
+        foreach ($value as $key => $service) {
+            $value[$key]['title'] = sanitize_text_field($service['title']);
+            $value[$key]['description'] = sanitize_textarea_field($service['description']);
+            if (isset($service['features']) && is_array($service['features'])) {
+                $value[$key]['features'] = array_map('sanitize_text_field', $service['features']);
+            } else {
+                $value[$key]['features'] = array();
+            }
+        }
         return $value;
-    }
-    
-    // For image/URL fields, use basic sanitization
-    if (strpos($field, '_image') !== false || strpos($field, '_url') !== false) {
+    } elseif ($field === 'high_converting_website_process_steps') {
+        // For process steps array
+        foreach ($value as $key => $step) {
+            $value[$key]['number'] = sanitize_text_field($step['number']);
+            $value[$key]['title'] = sanitize_text_field($step['title']);
+            $value[$key]['description'] = sanitize_textarea_field($step['description']);
+        }
+        return $value;
+    } elseif ($field === 'high_converting_website_elements') {
+        // For elements array
+        foreach ($value as $key => $element) {
+            $value[$key]['title'] = sanitize_text_field($element['title']);
+            $value[$key]['description'] = sanitize_textarea_field($element['description']);
+            if (isset($element['features']) && is_array($element['features'])) {
+                $value[$key]['features'] = array_map('sanitize_text_field', $element['features']);
+            } else {
+                $value[$key]['features'] = array();
+            }
+        }
+        return $value;
+    } elseif ($field === 'high_converting_website_types') {
+        // For website types array
+        foreach ($value as $key => $type) {
+            $value[$key]['title'] = sanitize_text_field($type['title']);
+            $value[$key]['results'] = sanitize_text_field($type['results']);
+            if (isset($type['features']) && is_array($type['features'])) {
+                $value[$key]['features'] = array_map('sanitize_text_field', $type['features']);
+            } else {
+                $value[$key]['features'] = array();
+            }
+        }
+        return $value;
+    } elseif ($field === 'high_converting_website_tools') {
+        // For tools array
+        foreach ($value as $key => $tool) {
+            $value[$key]['title'] = sanitize_text_field($tool['title']);
+            if (isset($tool['items']) && is_array($tool['items'])) {
+                $value[$key]['items'] = array_map('sanitize_text_field', $tool['items']);
+            } else {
+                $value[$key]['items'] = array();
+            }
+        }
+        return $value;
+    } else {
+        // Check if this is a rich text field that should use wp_kses_post
+        if (strpos($field, '_content') !== false || 
+            strpos($field, 'testimonial_quote') !== false || 
+            strpos($field, 'subtitle') !== false ||
+            strpos($field, '_title') !== false ||
+            strpos($field, '_label') !== false) {
+            return wp_kses_post($value);
+        }
         return sanitize_text_field($value);
     }
-    
-    // For number fields, use basic sanitization
-    if (strpos($field, '_number') !== false) {
-        return sanitize_text_field($value);
-    }
-    
-    // All other individual fields are rich text fields using wp_editor
-    // Use wp_kses_post to allow safe HTML formatting
-    return wp_kses_post($value);
 }
 
 function save_high_converting_website_meta_box_data($post_id) {
@@ -1756,111 +1801,43 @@ function save_high_converting_website_meta_box_data($post_id) {
         if (!current_user_can('edit_page', $post_id)) {
             return;
         }
-    }    // Save all individual fields (skipping array/repeater fields to avoid errors)
+    }    // Save all fields
     $fields = [
-        // Header fields
         'high_converting_website_header_title',
         'high_converting_website_header_subtitle',
-        
-        // Overview fields
         'high_converting_website_overview_title',
         'high_converting_website_overview_content',
         'high_converting_website_overview_image',
-        
-        // Challenges section
         'high_converting_website_challenges_title',
-        'high_converting_website_challenge_1',
-        'high_converting_website_challenge_2',
-        'high_converting_website_challenge_3',
-        'high_converting_website_challenge_4',
-        'high_converting_website_challenge_5',
-        'high_converting_website_challenge_6',
-        
-        // Services section
+        'high_converting_website_challenges',
         'high_converting_website_services_title',
-        'high_converting_website_service_1_title',
-        'high_converting_website_service_1_description',
-        'high_converting_website_service_2_title',
-        'high_converting_website_service_2_description',
-        'high_converting_website_service_3_title',
-        'high_converting_website_service_3_description',
-        'high_converting_website_service_4_title',
-        'high_converting_website_service_4_description',
-        
-        // Case study section
+        'high_converting_website_services',
         'high_converting_website_case_study_label',
         'high_converting_website_case_study_title',
         'high_converting_website_case_study_content',
         'high_converting_website_case_study_challenge_title',
-        'high_converting_website_case_challenge_1',
-        'high_converting_website_case_challenge_2',
-        'high_converting_website_case_challenge_3',
-        'high_converting_website_case_challenge_4',
+        'high_converting_website_case_study_challenges',
         'high_converting_website_case_study_solution_title',
-        'high_converting_website_case_solution_1',
-        'high_converting_website_case_solution_2',
-        'high_converting_website_case_solution_3',
-        'high_converting_website_case_solution_4',
-        
-        // Process section
+        'high_converting_website_case_study_solutions',
         'high_converting_website_process_title',
-        'high_converting_website_process_step_1_title',
-        'high_converting_website_process_step_1_description',
-        'high_converting_website_process_step_2_title',
-        'high_converting_website_process_step_2_description',
-        'high_converting_website_process_step_3_title',
-        'high_converting_website_process_step_3_description',
-        'high_converting_website_process_step_4_title',
-        'high_converting_website_process_step_4_description',
-        
-        // Elements section
+        'high_converting_website_process_steps',
         'high_converting_website_elements_title',
-        'high_converting_website_element_1_title',
-        'high_converting_website_element_1_description',
-        'high_converting_website_element_2_title',
-        'high_converting_website_element_2_description',
-        'high_converting_website_element_3_title',
-        'high_converting_website_element_3_description',
-        'high_converting_website_element_4_title',
-        'high_converting_website_element_4_description',
-        
-        // Website types section
+        'high_converting_website_elements',
         'high_converting_website_types_title',
-        'high_converting_website_type_1_title',
-        'high_converting_website_type_1_description',
-        'high_converting_website_type_1_results',
-        'high_converting_website_type_2_title',
-        'high_converting_website_type_2_description',
-        'high_converting_website_type_2_results',
-        'high_converting_website_type_3_title',
-        'high_converting_website_type_3_description',
-        'high_converting_website_type_3_results',
-        
-        // Tools section
+        'high_converting_website_types',
         'high_converting_website_tools_title',
-        'high_converting_website_tool_1_title',
-        'high_converting_website_tool_1_description',
-        'high_converting_website_tool_2_title',
-        'high_converting_website_tool_2_description',
-        'high_converting_website_tool_3_title',
-        'high_converting_website_tool_3_description',
-        
-        // Testimonial section
+        'high_converting_website_tools',
         'high_converting_website_testimonial_quote',
         'high_converting_website_testimonial_name',
         'high_converting_website_testimonial_position',
         'high_converting_website_testimonial_company',
-        
-        // CTA section
         'high_converting_website_cta_title',
         'high_converting_website_cta_subtitle',
         'high_converting_website_cta_primary_text',
         'high_converting_website_cta_primary_url',
         'high_converting_website_cta_secondary_text',
         'high_converting_website_cta_secondary_url',
-        'high_converting_website_cta_benefit_1',
-        'high_converting_website_cta_benefit_2',
-        'high_converting_website_cta_benefit_3'
+        'high_converting_website_cta_benefits'
     ];
 
     foreach ($fields as $field) {

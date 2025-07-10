@@ -23,8 +23,8 @@ get_header(); ?>
           <!-- Page Header -->
         <section class="page-header">
             <div class="page-header-content animate-on-scroll animate-fade-up">
-                <h1><?php echo wp_kses_post(get_post_meta(get_the_ID(), 'high_converting_website_header_title', true) ?: 'Build a High-Converting Website'); ?></h1>
-                <p class="page-subtitle"><?php echo wp_kses_post(get_post_meta(get_the_ID(), 'high_converting_website_header_subtitle', true) ?: 'Create a website that turns visitors into customers with conversion-focused design and optimisation'); ?></p>
+                <h1><?php echo wp_kses_post(get_post_meta(get_the_ID(), '_high_converting_website_header_title', true) ?: 'Build a High-Converting Website'); ?></h1>
+                <p class="page-subtitle"><?php echo wp_kses_post(get_post_meta(get_the_ID(), '_high_converting_website_header_subtitle', true) ?: 'Create a website that turns visitors into customers with conversion-focused design and optimisation'); ?></p>
             </div>
         </section>
 
@@ -33,34 +33,41 @@ get_header(); ?>
             <div class="section-content">
                 <div class="overview-content">
                     <div class="overview-text animate-on-scroll animate-slide-left">
-                        <h2><?php echo wp_kses_post(get_post_meta(get_the_ID(), 'high_converting_website_overview_title', true) ?: 'Transform Visitors Into Paying Customers'); ?></h2>
+                        <h2><?php echo wp_kses_post(get_post_meta(get_the_ID(), '_high_converting_website_overview_title', true) ?: 'Transform Visitors Into Paying Customers'); ?></h2>
                         <?php 
                         $overview_content = get_post_meta(get_the_ID(), '_high_converting_website_overview_content', true) ?: 'Your website is your most powerful sales tool, working 24/7 to convert visitors into customers. Our data-driven approach to website design and optimisation focuses on user experience, conversion psychology, and performance to create websites that don\'t just look good—they deliver results.';
                         echo wp_kses_post($overview_content);
                         ?>
                         
                         <div class="solution-challenges animate-on-scroll animate-fade-up">
-                            <h3><?php echo wp_kses_post(get_post_meta(get_the_ID(), 'high_converting_website_challenges_title', true) ?: 'Website Conversion Challenges We Solve:'); ?></h3>
+                            <h3><?php echo wp_kses_post(get_post_meta(get_the_ID(), '_high_converting_website_challenges_title', true) ?: 'Website Conversion Challenges We Solve:'); ?></h3>
                             <ul>
                                 <?php
-                                $challenges = get_post_meta(get_the_ID(), 'high_converting_website_challenges', true);
-                                if (!empty($challenges) && is_array($challenges)) {
-                                    foreach ($challenges as $challenge) {
-                                        echo '<li>' . esc_html($challenge['challenge']) . '</li>';
-                                    }
-                                } else {
-                                    // Default challenges if none are set
-                                    $default_challenges = array(
-                                        'High bounce rates and low engagement',
-                                        'Poor mobile user experience',
-                                        'Unclear value propositions',
-                                        'Confusing navigation and user flow',
-                                        'Slow loading speeds',
-                                        'Weak calls-to-action'
-                                    );
-                                    
-                                    foreach ($default_challenges as $challenge) {
-                                        echo '<li>' . esc_html($challenge) . '</li>';
+                                // Get individual challenge fields
+                                $challenge_fields = [
+                                    '_high_converting_website_challenge_1',
+                                    '_high_converting_website_challenge_2',
+                                    '_high_converting_website_challenge_3',
+                                    '_high_converting_website_challenge_4',
+                                    '_high_converting_website_challenge_5',
+                                    '_high_converting_website_challenge_6'
+                                ];
+                                
+                                $default_challenges = [
+                                    'High bounce rates and low engagement',
+                                    'Poor mobile user experience',
+                                    'Unclear value propositions',
+                                    'Confusing navigation and user flow',
+                                    'Slow loading speeds',
+                                    'Weak calls-to-action'
+                                ];
+                                
+                                foreach ($challenge_fields as $index => $field) {
+                                    $challenge = get_post_meta(get_the_ID(), $field, true);
+                                    if (!empty($challenge)) {
+                                        echo '<li>' . wp_kses_post($challenge) . '</li>';
+                                    } elseif (isset($default_challenges[$index])) {
+                                        echo '<li>' . esc_html($default_challenges[$index]) . '</li>';
                                     }
                                 }
                                 ?>
@@ -86,7 +93,7 @@ get_header(); ?>
         </section>        <!-- Website Optimisation Services -->
         <section class="website-optimisation-services">
             <div class="section-content">
-                <h2 class="animate-on-scroll animate-fade-up"><?php echo wp_kses_post(get_post_meta(get_the_ID(), 'high_converting_website_services_title', true) ?: 'Our Website Conversion Services'); ?></h2>
+                <h2 class="animate-on-scroll animate-fade-up"><?php echo wp_kses_post(get_post_meta(get_the_ID(), '_high_converting_website_services_title', true) ?: 'Our Website Conversion Services'); ?></h2>
                 <div class="services-grid">
                     <?php
                     $services = get_post_meta(get_the_ID(), 'high_converting_website_services', true);
@@ -196,12 +203,12 @@ get_header(); ?>
             <div class="section-content">
                 <div class="case-study-content">
                     <div class="case-study-text animate-on-scroll animate-slide-left">
-                        <span class="case-study-label"><?php echo wp_kses_post(get_post_meta(get_the_ID(), 'high_converting_website_case_study_label', true) ?: 'Success Story'); ?></span>
-                        <h2><?php echo wp_kses_post(get_post_meta(get_the_ID(), 'high_converting_website_case_study_title', true) ?: 'FlexiFit: 280% Conversion Rate Improvement'); ?></h2>
-                        <p><?php echo wp_kses_post(get_post_meta(get_the_ID(), 'high_converting_website_case_study_content', true) ?: 'FlexiFit, an online fitness equipment retailer, had high traffic but poor conversion rates due to a confusing checkout process and weak value propositions.'); ?></p>
+                        <span class="case-study-label"><?php echo wp_kses_post(get_post_meta(get_the_ID(), '_high_converting_website_case_study_label', true) ?: 'Success Story'); ?></span>
+                        <h2><?php echo wp_kses_post(get_post_meta(get_the_ID(), '_high_converting_website_case_study_title', true) ?: 'FlexiFit: 280% Conversion Rate Improvement'); ?></h2>
+                        <p><?php echo wp_kses_post(get_post_meta(get_the_ID(), '_high_converting_website_case_study_content', true) ?: 'FlexiFit, an online fitness equipment retailer, had high traffic but poor conversion rates due to a confusing checkout process and weak value propositions.'); ?></p>
                         
                         <div class="case-study-challenge">
-                            <h3><?php echo wp_kses_post(get_post_meta(get_the_ID(), 'high_converting_website_case_study_challenge_title', true) ?: 'The Challenge'); ?></h3>
+                            <h3><?php echo wp_kses_post(get_post_meta(get_the_ID(), '_high_converting_website_case_study_challenge_title', true) ?: 'The Challenge'); ?></h3>
                             <ul>
                                 <?php
                                 $challenges = get_post_meta(get_the_ID(), 'high_converting_website_case_study_challenges', true);
@@ -227,7 +234,7 @@ get_header(); ?>
                         </div>
 
                         <div class="case-study-solution">
-                            <h3><?php echo wp_kses_post(get_post_meta(get_the_ID(), 'high_converting_website_case_study_solution_title', true) ?: 'Our Solution'); ?></h3>
+                            <h3><?php echo wp_kses_post(get_post_meta(get_the_ID(), '_high_converting_website_case_study_solution_title', true) ?: 'Our Solution'); ?></h3>
                             <ul>
                                 <?php
                                 $solutions = get_post_meta(get_the_ID(), 'high_converting_website_case_study_solutions', true);
@@ -257,7 +264,7 @@ get_header(); ?>
         </section>        <!-- Website Optimisation Process -->
         <section class="website-process">
             <div class="section-content">
-                <h2 class="animate-on-scroll animate-fade-up"><?php echo wp_kses_post(get_post_meta(get_the_ID(), 'high_converting_website_process_title', true) ?: 'Our Website Optimisation Process'); ?></h2>
+                <h2 class="animate-on-scroll animate-fade-up"><?php echo wp_kses_post(get_post_meta(get_the_ID(), '_high_converting_website_process_title', true) ?: 'Our Website Optimisation Process'); ?></h2>
                 <div class="process-steps">                    <?php
                     $steps = get_post_meta(get_the_ID(), 'high_converting_website_process_steps', true);
                     if (!empty($steps) && is_array($steps)) {
@@ -317,7 +324,7 @@ get_header(); ?>
         </section>        <!-- Conversion Elements -->
         <section class="conversion-elements tools-section">
             <div class="section-content">
-                <h2 class="animate-on-scroll animate-fade-up"><?php echo wp_kses_post(get_post_meta(get_the_ID(), 'high_converting_website_elements_title', true) ?: 'Key Conversion Elements We Optimise'); ?></h2>
+                <h2 class="animate-on-scroll animate-fade-up"><?php echo wp_kses_post(get_post_meta(get_the_ID(), '_high_converting_website_elements_title', true) ?: 'Key Conversion Elements We Optimise'); ?></h2>
                 <div class="tools-grid">
                     <?php
                     $elements = get_post_meta(get_the_ID(), 'high_converting_website_elements', true);
@@ -425,7 +432,7 @@ get_header(); ?>
         </section><!-- Website Types -->
         <section class="website-types">
             <div class="section-content">
-                <h2 class="animate-on-scroll animate-fade-up"><?php echo wp_kses_post(get_post_meta(get_the_ID(), 'high_converting_website_types_title', true) ?: 'Website Optimisation by Type'); ?></h2>
+                <h2 class="animate-on-scroll animate-fade-up"><?php echo wp_kses_post(get_post_meta(get_the_ID(), '_high_converting_website_types_title', true) ?: 'Website Optimisation by Type'); ?></h2>
                 <div class="types-grid">
                     <?php
                     $types = get_post_meta(get_the_ID(), 'high_converting_website_types', true);
@@ -551,13 +558,13 @@ get_header(); ?>
             <div class="section-content">
                 <div class="testimonial-content animate-on-scroll animate-fade-up">
                     <blockquote>
-                        <?php echo wp_kses_post(get_post_meta(get_the_ID(), 'high_converting_website_testimonial_quote', true) ?: 'The website redesign Aimpro Digital delivered exceeded all expectations. Our conversion rate increased by 280% and our online sales have tripled. The user experience is now seamless and professional.'); ?>
+                        <?php echo wp_kses_post(get_post_meta(get_the_ID(), '_high_converting_website_testimonial_quote', true) ?: 'The website redesign Aimpro Digital delivered exceeded all expectations. Our conversion rate increased by 280% and our online sales have tripled. The user experience is now seamless and professional.'); ?>
                     </blockquote>
                     <div class="testimonial-author">
                         <div class="author-info">
-                            <h4><?php echo get_post_meta(get_the_ID(), 'high_converting_website_testimonial_name', true) ?: 'Lisa Thompson'; ?></h4>
-                            <span><?php echo get_post_meta(get_the_ID(), 'high_converting_website_testimonial_position', true) ?: 'Owner, FlexiFit Online'; ?></span>
-                            <div class="author-company"><?php echo get_post_meta(get_the_ID(), 'high_converting_website_testimonial_company', true) ?: 'E-commerce Fitness Retailer'; ?></div>
+                            <h4><?php echo get_post_meta(get_the_ID(), '_high_converting_website_testimonial_name', true) ?: 'Lisa Thompson'; ?></h4>
+                            <span><?php echo get_post_meta(get_the_ID(), '_high_converting_website_testimonial_position', true) ?: 'Owner, FlexiFit Online'; ?></span>
+                            <div class="author-company"><?php echo get_post_meta(get_the_ID(), '_high_converting_website_testimonial_company', true) ?: 'E-commerce Fitness Retailer'; ?></div>
                         </div>
                     </div>
                 </div>
@@ -654,28 +661,32 @@ get_header(); ?>
         <!-- CTA Section -->
         <section class="website-cta text-center">
             <div class="section-content">
-                <h2 class="animate-on-scroll animate-fade-up"><?php echo wp_kses_post(get_post_meta(get_the_ID(), 'high_converting_website_cta_title', true) ?: 'Ready to Build a High-Converting Website?'); ?></h2>
-                <p class="animate-on-scroll animate-fade-up"><?php echo wp_kses_post(get_post_meta(get_the_ID(), 'high_converting_website_cta_subtitle', true) ?: 'Let\'s create a website that not only looks great but converts visitors into customers at a higher rate.'); ?></p>
+                <h2 class="animate-on-scroll animate-fade-up"><?php echo wp_kses_post(get_post_meta(get_the_ID(), '_high_converting_website_cta_title', true) ?: 'Ready to Build a High-Converting Website?'); ?></h2>
+                <p class="animate-on-scroll animate-fade-up"><?php echo wp_kses_post(get_post_meta(get_the_ID(), '_high_converting_website_cta_subtitle', true) ?: 'Let\'s create a website that not only looks great but converts visitors into customers at a higher rate.'); ?></p>
                 <div class="cta-buttons animate-on-scroll animate-scale-up">
-                    <a href="<?php echo get_post_meta(get_the_ID(), 'high_converting_website_cta_primary_link', true) ?: home_url('/contact'); ?>" class="btn btn-primary"><?php echo get_post_meta(get_the_ID(), 'high_converting_website_cta_primary_text', true) ?: 'Get Free Website Audit'; ?></a>
-                    <a href="<?php echo get_post_meta(get_the_ID(), 'high_converting_website_cta_secondary_link', true) ?: home_url('/case-studies'); ?>" class="btn btn-secondary"><?php echo get_post_meta(get_the_ID(), 'high_converting_website_cta_secondary_text', true) ?: 'View Website Success Stories'; ?></a>
+                    <a href="<?php echo get_post_meta(get_the_ID(), '_high_converting_website_cta_primary_url', true) ?: home_url('/contact'); ?>" class="btn btn-primary"><?php echo get_post_meta(get_the_ID(), '_high_converting_website_cta_primary_text', true) ?: 'Get Free Website Audit'; ?></a>
+                    <a href="<?php echo get_post_meta(get_the_ID(), '_high_converting_website_cta_secondary_url', true) ?: home_url('/case-studies'); ?>" class="btn btn-secondary"><?php echo get_post_meta(get_the_ID(), '_high_converting_website_cta_secondary_text', true) ?: 'View Website Success Stories'; ?></a>
                 </div>                <div class="cta-benefits animate-on-scroll animate-fade-up">
                     <?php
-                    $benefits = get_post_meta(get_the_ID(), 'high_converting_website_cta_benefits', true);
-                    if (!empty($benefits) && is_array($benefits)) {
-                        foreach ($benefits as $benefit) {
-                            echo '<span class="benefit"><i class="fas fa-check" aria-hidden="true"></i> ' . esc_html($benefit['benefit']) . '</span>';
-                        }
-                    } else {
-                        // Default benefits if none are set
-                        $default_benefits = array(
-                            'Conversion-focused design',
-                            'Mobile optimisation included',
-                            'A/B testing setup'
-                        );
-                        
-                        foreach ($default_benefits as $benefit) {
-                            echo '<span class="benefit"><i class="fas fa-check" aria-hidden="true"></i> ' . esc_html($benefit) . '</span>';
+                    // Get individual CTA benefit fields
+                    $benefit_fields = [
+                        '_high_converting_website_cta_benefit_1',
+                        '_high_converting_website_cta_benefit_2',
+                        '_high_converting_website_cta_benefit_3'
+                    ];
+                    
+                    $default_benefits = [
+                        'Conversion-focused design',
+                        'Mobile optimisation included',
+                        'A/B testing setup'
+                    ];
+                    
+                    foreach ($benefit_fields as $index => $field) {
+                        $benefit = get_post_meta(get_the_ID(), $field, true);
+                        if (!empty($benefit)) {
+                            echo '<span class="benefit"><i class="fas fa-check" aria-hidden="true"></i> ' . wp_kses_post($benefit) . '</span>';
+                        } elseif (isset($default_benefits[$index])) {
+                            echo '<span class="benefit"><i class="fas fa-check" aria-hidden="true"></i> ' . esc_html($default_benefits[$index]) . '</span>';
                         }
                     }
                     ?>
