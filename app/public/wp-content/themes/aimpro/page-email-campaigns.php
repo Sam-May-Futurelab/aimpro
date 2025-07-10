@@ -27,8 +27,8 @@ get_header(); ?>
     <section class="page-hero service-hero">
         <div class="container">
             <div class="hero-content animate-on-scroll animate-fade-up">
-                <h1><?php echo esc_html(get_post_meta(get_the_ID(), 'email_campaigns_hero_title', true) ?: 'Strategic Email Marketing Campaigns'); ?></h1>
-                <p class="hero-subtitle"><?php echo esc_html(get_post_meta(get_the_ID(), 'email_campaigns_hero_subtitle', true) ?: 'Drive engagement, nurture relationships, and boost sales with expertly crafted email campaigns that cut through inbox clutter and deliver measurable results for your business.'); ?></p>
+                <h1><?php echo wp_kses_post(get_post_meta(get_the_ID(), 'email_campaigns_hero_title', true) ?: 'Strategic Email Marketing Campaigns'); ?></h1>
+                <p class="hero-subtitle"><?php echo wp_kses_post(get_post_meta(get_the_ID(), 'email_campaigns_hero_subtitle', true) ?: 'Drive engagement, nurture relationships, and boost sales with expertly crafted email campaigns that cut through inbox clutter and deliver measurable results for your business.'); ?></p>
                 <div class="hero-stats animate-on-scroll animate-stagger animate-scale-up">
                     <div class="stat-item">
                         <div class="stat-number"><?php echo esc_html(get_post_meta(get_the_ID(), 'email_campaigns_hero_stat_1_number', true) ?: '4,200%'); ?></div>
@@ -44,7 +44,7 @@ get_header(); ?>
                     </div>
                 </div>
                 <div class="hero-ctas">
-                    <a href="#contact" class="btn-primary streamlined"><?php echo esc_html(get_post_meta(get_the_ID(), 'email_campaigns_hero_primary_btn', true) ?: 'Launch Campaigns'); ?></a>
+                    <a href="#contact" class="btn-primary streamlined"><?php echo wp_kses_post(get_post_meta(get_the_ID(), 'email_campaigns_hero_primary_btn', true) ?: 'Launch Campaigns'); ?></a>
                 </div>
             </div>
         </div>
@@ -52,8 +52,8 @@ get_header(); ?>
     <section class="service-overview">
         <div class="container">
             <div class="overview-content animate-on-scroll animate-fade-up">
-                <h2><?php echo esc_html(get_post_meta(get_the_ID(), 'email_campaigns_overview_title', true) ?: 'Professional Email Campaign Management'); ?></h2>
-                <p><?php echo esc_html(get_post_meta(get_the_ID(), 'email_campaigns_overview_description', true) ?: 'Email marketing remains one of the highest-ROI marketing channels when executed strategically. Our comprehensive email campaign services combine compelling design, persuasive copywriting, and advanced segmentation to deliver campaigns that your audience actually wants to read.'); ?></p>
+                <h2><?php echo wp_kses_post(get_post_meta(get_the_ID(), 'email_campaigns_overview_title', true) ?: 'Professional Email Campaign Management'); ?></h2>
+                <p><?php echo wp_kses_post(get_post_meta(get_the_ID(), 'email_campaigns_overview_description', true) ?: 'Email marketing remains one of the highest-ROI marketing channels when executed strategically. Our comprehensive email campaign services combine compelling design, persuasive copywriting, and advanced segmentation to deliver campaigns that your audience actually wants to read.'); ?></p>
             </div>
             
             <div class="services-grid animate-on-scroll animate-stagger animate-scale-up">
@@ -61,48 +61,48 @@ get_header(); ?>
                     <div class="service-icon">
                         <i class="fas fa-bullseye"></i>
                     </div>
-                    <h3><?php echo esc_html(get_post_meta(get_the_ID(), 'email_campaigns_service_1_title', true) ?: 'Strategic Campaign Planning'); ?></h3>
-                    <p><?php echo esc_html(get_post_meta(get_the_ID(), 'email_campaigns_service_1_desc', true) ?: 'Data-driven campaign strategies aligned with your business goals and customer journey stages.'); ?></p>
+                    <h3><?php echo wp_kses_post(get_post_meta(get_the_ID(), 'email_campaigns_service_1_title', true) ?: 'Strategic Campaign Planning'); ?></h3>
+                    <p><?php echo wp_kses_post(get_post_meta(get_the_ID(), 'email_campaigns_service_1_desc', true) ?: 'Data-driven campaign strategies aligned with your business goals and customer journey stages.'); ?></p>
                 </div>
                 
                 <div class="service-item">
                     <div class="service-icon">
                         <i class="fas fa-palette"></i>
                     </div>
-                    <h3><?php echo esc_html(get_post_meta(get_the_ID(), 'email_campaigns_service_2_title', true) ?: 'Professional Email Design'); ?></h3>
-                    <p><?php echo esc_html(get_post_meta(get_the_ID(), 'email_campaigns_service_2_desc', true) ?: 'Mobile-responsive, brand-aligned email templates that look stunning across all devices and email clients.'); ?></p>
+                    <h3><?php echo wp_kses_post(get_post_meta(get_the_ID(), 'email_campaigns_service_2_title', true) ?: 'Professional Email Design'); ?></h3>
+                    <p><?php echo wp_kses_post(get_post_meta(get_the_ID(), 'email_campaigns_service_2_desc', true) ?: 'Mobile-responsive, brand-aligned email templates that look stunning across all devices and email clients.'); ?></p>
                 </div>
                 
                 <div class="service-item">
                     <div class="service-icon">
                         <i class="fas fa-pen-fancy"></i>
                     </div>
-                    <h3><?php echo esc_html(get_post_meta(get_the_ID(), 'email_campaigns_service_3_title', true) ?: 'Conversion-Focused Copy'); ?></h3>
-                    <p><?php echo esc_html(get_post_meta(get_the_ID(), 'email_campaigns_service_3_desc', true) ?: 'Compelling subject lines and email content that drives opens, clicks, and conversions.'); ?></p>
+                    <h3><?php echo wp_kses_post(get_post_meta(get_the_ID(), 'email_campaigns_service_3_title', true) ?: 'Conversion-Focused Copy'); ?></h3>
+                    <p><?php echo wp_kses_post(get_post_meta(get_the_ID(), 'email_campaigns_service_3_desc', true) ?: 'Compelling subject lines and email content that drives opens, clicks, and conversions.'); ?></p>
                 </div>
                 
                 <div class="service-item">
                     <div class="service-icon">
                         <i class="fas fa-users"></i>
                     </div>
-                    <h3><?php echo esc_html(get_post_meta(get_the_ID(), 'email_campaigns_service_4_title', true) ?: 'Advanced Segmentation'); ?></h3>
-                    <p><?php echo esc_html(get_post_meta(get_the_ID(), 'email_campaigns_service_4_desc', true) ?: 'Precise audience targeting based on behaviour, demographics, and purchase history for maximum relevance.'); ?></p>
+                    <h3><?php echo wp_kses_post(get_post_meta(get_the_ID(), 'email_campaigns_service_4_title', true) ?: 'Advanced Segmentation'); ?></h3>
+                    <p><?php echo wp_kses_post(get_post_meta(get_the_ID(), 'email_campaigns_service_4_desc', true) ?: 'Precise audience targeting based on behaviour, demographics, and purchase history for maximum relevance.'); ?></p>
                 </div>
                 
                 <div class="service-item">
                     <div class="service-icon">
                         <i class="fas fa-chart-line"></i>
                     </div>
-                    <h3><?php echo esc_html(get_post_meta(get_the_ID(), 'email_campaigns_service_5_title', true) ?: 'Performance optimisation'); ?></h3>
-                    <p><?php echo esc_html(get_post_meta(get_the_ID(), 'email_campaigns_service_5_desc', true) ?: 'Continuous A/B testing and optimisation to improve open rates, click-through rates, and conversions.'); ?></p>
+                    <h3><?php echo wp_kses_post(get_post_meta(get_the_ID(), 'email_campaigns_service_5_title', true) ?: 'Performance optimisation'); ?></h3>
+                    <p><?php echo wp_kses_post(get_post_meta(get_the_ID(), 'email_campaigns_service_5_desc', true) ?: 'Continuous A/B testing and optimisation to improve open rates, click-through rates, and conversions.'); ?></p>
                 </div>
                 
                 <div class="service-item">
                     <div class="service-icon">
                         <i class="fas fa-calendar-alt"></i>
                     </div>
-                    <h3><?php echo esc_html(get_post_meta(get_the_ID(), 'email_campaigns_service_6_title', true) ?: 'Campaign Scheduling'); ?></h3>
-                    <p><?php echo esc_html(get_post_meta(get_the_ID(), 'email_campaigns_service_6_desc', true) ?: 'Strategic timing and frequency optimisation to maximise engagement while avoiding subscriber fatigue.'); ?></p>                </div>
+                    <h3><?php echo wp_kses_post(get_post_meta(get_the_ID(), 'email_campaigns_service_6_title', true) ?: 'Campaign Scheduling'); ?></h3>
+                    <p><?php echo wp_kses_post(get_post_meta(get_the_ID(), 'email_campaigns_service_6_desc', true) ?: 'Strategic timing and frequency optimisation to maximise engagement while avoiding subscriber fatigue.'); ?></p>                </div>
             </div>
         </div>
     </section>
@@ -113,49 +113,52 @@ get_header(); ?>
         <div class="container">
             <div class="case-study-content animate-on-scroll animate-fade-up">
                 <div class="case-study-text">
-                    <h2><?php echo esc_html(get_post_meta(get_the_ID(), 'email_campaigns_case_title', true) ?: 'Case Study: B2B Software Success'); ?></h2>
-                    <p class="case-study-intro"><?php echo esc_html(get_post_meta(get_the_ID(), 'email_campaigns_case_intro', true) ?: 'How we helped a B2B software company increase their email marketing ROI by 4,200% and generate £350K in additional revenue through strategic campaign optimisation.'); ?></p>
+                    <h2><?php echo wp_kses_post(get_post_meta(get_the_ID(), 'email_campaigns_case_title', true) ?: 'Case Study: B2B Software Success'); ?></h2>
+                    <p class="case-study-intro"><?php echo wp_kses_post(get_post_meta(get_the_ID(), 'email_campaigns_case_intro', true) ?: 'How we helped a B2B software company increase their email marketing ROI by 4,200% and generate £350K in additional revenue through strategic campaign optimisation.'); ?></p>
                     
                     <div class="case-study-challenge">
                         <h3>The Challenge</h3>
-                        <p><?php echo esc_html(get_post_meta(get_the_ID(), 'email_campaigns_case_challenge', true) ?: 'A growing B2B software company had a large email list but poor engagement rates. Their generic newsletters generated minimal revenue, open rates were below 15%, and they were struggling to convert trial users into paying customers through email.'); ?></p>
+                        <p><?php echo wp_kses_post(get_post_meta(get_the_ID(), 'email_campaigns_case_challenge', true) ?: 'A growing B2B software company had a large email list but poor engagement rates. Their generic newsletters generated minimal revenue, open rates were below 15%, and they were struggling to convert trial users into paying customers through email.'); ?></p>
                     </div>
                     
                     <div class="case-study-solution">
-                        <h3>Our Campaign Strategy</h3>
-                        <ul>
-                            <?php 
-                            $solution_points = get_post_meta(get_the_ID(), 'email_campaigns_case_solution', true) ?: "Segmented list into 8 distinct audience groups based on user behaviour\nCreated targeted campaign series for each segment and buyer journey stage\nRedesigned email templates with mobile-first, conversion-focused approach\nImplemented advanced personalisation using behavioural data\nDeveloped product-specific campaigns with case studies and social proof";
-                            $points = explode("\n", $solution_points);
-                            foreach ($points as $point) {
-                                if (trim($point)) {
-                                    echo '<li>' . esc_html(trim($point)) . '</li>';
-                                }
+                        <h3>Our Solution</h3>
+                        <?php 
+                        $solutions = get_post_meta(get_the_ID(), 'email_campaigns_case_solution', true);
+                        if (empty($solutions)) {
+                            $solutions = "Segmented list into 8 distinct audience groups based on user behaviour\nCreated targeted campaign series for each segment and buyer journey stage\nRedesigned email templates with mobile-first, conversion-focused approach\nImplemented advanced personalisation using behavioural data\nDeveloped product-specific campaigns with case studies and social proof";
+                        }
+                        $solution_list = explode("\n", $solutions);
+                        echo '<ul>';
+                        foreach ($solution_list as $solution) {
+                            if (!empty(trim($solution))) {
+                                echo '<li>' . wp_kses_post(trim($solution)) . '</li>';
                             }
-                            ?>
-                        </ul>
+                        }
+                        echo '</ul>';
+                        ?>
                     </div>
                 </div>
-                
-                <div class="case-study-results animate-on-scroll animate-fade-up animate-delay-200">
-                    <h3>The Results</h3>
-                    <div class="results-grid animate-on-scroll animate-stagger animate-scale-up">
-                        <div class="result-item">
-                            <div class="result-number"><?php echo esc_html(get_post_meta(get_the_ID(), 'email_campaigns_result_1_number', true) ?: '4,200%'); ?></div>
-                            <div class="result-label"><?php echo esc_html(get_post_meta(get_the_ID(), 'email_campaigns_result_1_label', true) ?: 'ROI Increase'); ?></div>
-                        </div>
-                        <div class="result-item">
-                            <div class="result-number"><?php echo esc_html(get_post_meta(get_the_ID(), 'email_campaigns_result_2_number', true) ?: '58%'); ?></div>
-                            <div class="result-label"><?php echo esc_html(get_post_meta(get_the_ID(), 'email_campaigns_result_2_label', true) ?: 'Open Rate Improvement'); ?></div>
-                        </div>
-                        <div class="result-item">
-                            <div class="result-number"><?php echo esc_html(get_post_meta(get_the_ID(), 'email_campaigns_result_3_number', true) ?: '280%'); ?></div>
-                            <div class="result-label"><?php echo esc_html(get_post_meta(get_the_ID(), 'email_campaigns_result_3_label', true) ?: 'Click-Through Rate Increase'); ?></div>
-                        </div>
-                        <div class="result-item">
-                            <div class="result-number"><?php echo esc_html(get_post_meta(get_the_ID(), 'email_campaigns_result_4_number', true) ?: '£350K'); ?></div>
-                            <div class="result-label"><?php echo esc_html(get_post_meta(get_the_ID(), 'email_campaigns_result_4_label', true) ?: 'Additional Annual Revenue'); ?></div>
-                        </div>
+            </div>
+            
+            <div class="case-study-results animate-on-scroll animate-fade-up animate-delay-200">
+                <h3>The Results</h3>
+                <div class="results-grid animate-on-scroll animate-stagger animate-scale-up">
+                    <div class="result-item">
+                        <div class="result-number"><?php echo esc_html(get_post_meta(get_the_ID(), 'email_campaigns_result_1_number', true) ?: '4,200%'); ?></div>
+                        <div class="result-label"><?php echo esc_html(get_post_meta(get_the_ID(), 'email_campaigns_result_1_label', true) ?: 'ROI Increase'); ?></div>
+                    </div>
+                    <div class="result-item">
+                        <div class="result-number"><?php echo esc_html(get_post_meta(get_the_ID(), 'email_campaigns_result_2_number', true) ?: '58%'); ?></div>
+                        <div class="result-label"><?php echo esc_html(get_post_meta(get_the_ID(), 'email_campaigns_result_2_label', true) ?: 'Open Rate Improvement'); ?></div>
+                    </div>
+                    <div class="result-item">
+                        <div class="result-number"><?php echo esc_html(get_post_meta(get_the_ID(), 'email_campaigns_result_3_number', true) ?: '280%'); ?></div>
+                        <div class="result-label"><?php echo esc_html(get_post_meta(get_the_ID(), 'email_campaigns_result_3_label', true) ?: 'Click-Through Rate Increase'); ?></div>
+                    </div>
+                    <div class="result-item">
+                        <div class="result-number"><?php echo esc_html(get_post_meta(get_the_ID(), 'email_campaigns_result_4_number', true) ?: '£350K'); ?></div>
+                        <div class="result-label"><?php echo esc_html(get_post_meta(get_the_ID(), 'email_campaigns_result_4_label', true) ?: 'Additional Annual Revenue'); ?></div>
                     </div>
                 </div>
             </div>
@@ -238,45 +241,45 @@ get_header(); ?>
     </section>    <!-- Process Section -->
     <section class="process-section">
         <div class="container">
-            <h2 class="animate-on-scroll animate-fade-up"><?php echo esc_html(get_post_meta(get_the_ID(), 'email_campaigns_process_title', true) ?: 'Our Email Campaign Process'); ?></h2>
+            <h2 class="animate-on-scroll animate-fade-up"><?php echo wp_kses_post(get_post_meta(get_the_ID(), 'email_campaigns_process_title', true) ?: 'Our Email Campaign Process'); ?></h2>
             <div class="process-steps animate-on-scroll animate-stagger animate-fade-up">
                 <div class="process-step">
                     <div class="step-number">1</div>
                     <div class="step-content">
-                        <h3><?php echo esc_html(get_post_meta(get_the_ID(), 'email_campaigns_step_1_title', true) ?: 'Strategy & Planning'); ?></h3>
-                        <p><?php echo esc_html(get_post_meta(get_the_ID(), 'email_campaigns_step_1_desc', true) ?: 'Define campaign objectives, target audiences, and key performance indicators aligned with your business goals.'); ?></p>
+                        <h3><?php echo wp_kses_post(get_post_meta(get_the_ID(), 'email_campaigns_step_1_title', true) ?: 'Strategy & Planning'); ?></h3>
+                        <p><?php echo wp_kses_post(get_post_meta(get_the_ID(), 'email_campaigns_step_1_desc', true) ?: 'Define campaign objectives, target audiences, and key performance indicators aligned with your business goals.'); ?></p>
                     </div>
                 </div>
                 
                 <div class="process-step">
                     <div class="step-number">2</div>
                     <div class="step-content">
-                        <h3><?php echo esc_html(get_post_meta(get_the_ID(), 'email_campaigns_step_2_title', true) ?: 'Audience Segmentation'); ?></h3>
-                        <p><?php echo esc_html(get_post_meta(get_the_ID(), 'email_campaigns_step_2_desc', true) ?: 'analyse your email list and create targeted segments based on behaviour, demographics, and engagement history.'); ?></p>
+                        <h3><?php echo wp_kses_post(get_post_meta(get_the_ID(), 'email_campaigns_step_2_title', true) ?: 'Audience Segmentation'); ?></h3>
+                        <p><?php echo wp_kses_post(get_post_meta(get_the_ID(), 'email_campaigns_step_2_desc', true) ?: 'analyse your email list and create targeted segments based on behaviour, demographics, and engagement history.'); ?></p>
                     </div>
                 </div>
                 
                 <div class="process-step">
                     <div class="step-number">3</div>
                     <div class="step-content">
-                        <h3><?php echo esc_html(get_post_meta(get_the_ID(), 'email_campaigns_step_3_title', true) ?: 'Content Creation'); ?></h3>
-                        <p><?php echo esc_html(get_post_meta(get_the_ID(), 'email_campaigns_step_3_desc', true) ?: 'Develop compelling copy and design mobile-responsive templates that align with your brand and campaign goals.'); ?></p>
+                        <h3><?php echo wp_kses_post(get_post_meta(get_the_ID(), 'email_campaigns_step_3_title', true) ?: 'Content Creation'); ?></h3>
+                        <p><?php echo wp_kses_post(get_post_meta(get_the_ID(), 'email_campaigns_step_3_desc', true) ?: 'Develop compelling copy and design mobile-responsive templates that align with your brand and campaign goals.'); ?></p>
                     </div>
                 </div>
                 
                 <div class="process-step">
                     <div class="step-number">4</div>
                     <div class="step-content">
-                        <h3><?php echo esc_html(get_post_meta(get_the_ID(), 'email_campaigns_step_4_title', true) ?: 'Testing & Launch'); ?></h3>
-                        <p><?php echo esc_html(get_post_meta(get_the_ID(), 'email_campaigns_step_4_desc', true) ?: 'A/B test subject lines, content, and send times before launching to optimise campaign performance.'); ?></p>
+                        <h3><?php echo wp_kses_post(get_post_meta(get_the_ID(), 'email_campaigns_step_4_title', true) ?: 'Testing & Launch'); ?></h3>
+                        <p><?php echo wp_kses_post(get_post_meta(get_the_ID(), 'email_campaigns_step_4_desc', true) ?: 'A/B test subject lines, content, and send times before launching to optimise campaign performance.'); ?></p>
                     </div>
                 </div>
                 
                 <div class="process-step">
                     <div class="step-number">5</div>
                     <div class="step-content">
-                        <h3><?php echo esc_html(get_post_meta(get_the_ID(), 'email_campaigns_step_5_title', true) ?: 'Analysis & optimisation'); ?></h3>
-                        <p><?php echo esc_html(get_post_meta(get_the_ID(), 'email_campaigns_step_5_desc', true) ?: 'Monitor performance metrics and continuously optimise future campaigns based on data insights.'); ?></p>
+                        <h3><?php echo wp_kses_post(get_post_meta(get_the_ID(), 'email_campaigns_step_5_title', true) ?: 'Analysis & optimisation'); ?></h3>
+                        <p><?php echo wp_kses_post(get_post_meta(get_the_ID(), 'email_campaigns_step_5_desc', true) ?: 'Monitor performance metrics and continuously optimise future campaigns based on data insights.'); ?></p>
                     </div>
                 </div>
             </div>
@@ -411,11 +414,11 @@ get_header(); ?>
         <div class="container">
             <div class="testimonial-content animate-on-scroll animate-fade-up">
                 <blockquote>
-                    "<?php echo esc_html(get_post_meta(get_the_ID(), 'email_campaigns_testimonial_quote', true) ?: 'Aimpro transformed our email marketing from an afterthought to our most profitable channel. Our ROI increased by 4,200% and we\'re generating £350K more revenue annually. Their strategic approach is unmatched.'); ?>"
+                    "<?php echo wp_kses_post(get_post_meta(get_the_ID(), 'email_campaigns_testimonial_quote', true) ?: 'Aimpro transformed our email marketing from an afterthought to our most profitable channel. Our ROI increased by 4,200% and we\'re generating £350K more revenue annually. Their strategic approach is unmatched.'); ?>"
                 </blockquote>
                 <cite>
-                    <strong><?php echo esc_html(get_post_meta(get_the_ID(), 'email_campaigns_testimonial_author', true) ?: 'Michael Roberts'); ?></strong><br>
-                    <?php echo esc_html(get_post_meta(get_the_ID(), 'email_campaigns_testimonial_position', true) ?: 'CEO, TechFlow Solutions'); ?>
+                    <strong><?php echo wp_kses_post(get_post_meta(get_the_ID(), 'email_campaigns_testimonial_author', true) ?: 'Michael Roberts'); ?></strong><br>
+                    <?php echo wp_kses_post(get_post_meta(get_the_ID(), 'email_campaigns_testimonial_position', true) ?: 'CEO, TechFlow Solutions'); ?>
                 </cite>
             </div>
         </div>
