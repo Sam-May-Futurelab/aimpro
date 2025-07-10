@@ -41,7 +41,7 @@ function industries_meta_box_callback($post) {
 
     // Industry stats
     $industry_stats = get_post_meta($post->ID, '_industries_stats', true);
-    if (empty($industry_stats)) {
+    if (empty($industry_stats) || !is_array($industry_stats)) {
         $industry_stats = array(
             array('number' => '7+', 'label' => 'Key Industries'),
             array('number' => '200+', 'label' => 'Industry Clients'),
@@ -55,7 +55,7 @@ function industries_meta_box_callback($post) {
 
     // Industries
     $industries = get_post_meta($post->ID, '_industries_list', true);
-    if (empty($industries)) {
+    if (empty($industries) || !is_array($industries)) {
         $industries = array(
             array(
                 'icon' => 'fas fa-car',
@@ -120,11 +120,11 @@ function industries_meta_box_callback($post) {
     $success_title = get_post_meta($post->ID, '_industries_success_title', true);
     $success_subtitle = get_post_meta($post->ID, '_industries_success_subtitle', true);
     $success_stats = get_post_meta($post->ID, '_industries_success_stats', true);
-    if (empty($success_stats)) {
+    if (empty($success_stats) || !is_array($success_stats)) {
         $success_stats = array(
             array('number' => '400%', 'label' => 'Average ROI increase across all industries'),
             array('number' => '95%', 'label' => 'Client retention rate'),
-            array('number' => '�2.8M+', 'label' => 'Revenue generated for clients')
+            array('number' => '£2.8M+', 'label' => 'Revenue generated for clients')
         );
     }
 
@@ -132,24 +132,25 @@ function industries_meta_box_callback($post) {
     $expertise_matters_title = get_post_meta($post->ID, '_industries_expertise_matters_title', true);
     $expertise_matters_subtitle = get_post_meta($post->ID, '_industries_expertise_matters_subtitle', true);
     $expertise_points = get_post_meta($post->ID, '_industries_expertise_points', true);
-    if (empty($expertise_points)) {        $expertise_points = array(
+    if (empty($expertise_points) || !is_array($expertise_points)) {
+        $expertise_points = array(
             array(
-                'icon' => '',
+                'icon' => 'fas fa-bullseye',
                 'title' => 'Target the Right Audience',
                 'description' => 'We understand your customer\'s journey, pain points, and decision-making process.'
             ),
             array(
-                'icon' => '??',
+                'icon' => 'fas fa-chart-bar',
                 'title' => 'Leverage Industry Data',
                 'description' => 'Access to sector-specific benchmarks, trends, and performance metrics.'
             ),
             array(
-                'icon' => '',
+                'icon' => 'fas fa-bolt',
                 'title' => 'Faster Results',
                 'description' => 'Pre-tested strategies and proven tactics that work in your specific market.'
             ),
             array(
-                'icon' => '??',
+                'icon' => 'fas fa-shield-alt',
                 'title' => 'Ensure Compliance',
                 'description' => 'Navigate industry regulations and advertising guidelines with confidence.'
             )
@@ -159,7 +160,7 @@ function industries_meta_box_callback($post) {
     // Testimonials (without images)
     $testimonials_title = get_post_meta($post->ID, '_industries_testimonials_title', true);
     $testimonials = get_post_meta($post->ID, '_industries_testimonials', true);
-    if (empty($testimonials)) {
+    if (empty($testimonials) || !is_array($testimonials)) {
         $testimonials = array(
             array(
                 'quote' => 'Their understanding of the automotive market is exceptional. We\'ve seen a 180% increase in qualified leads since working with Aimpro Digital.',
@@ -313,7 +314,12 @@ function industries_meta_box_callback($post) {
             <h3>Industry Stats</h3>
             <div class="repeater-section">
                 <div id="stats-container">
-                    <?php foreach ($industry_stats as $index => $stat): ?>
+                    <?php foreach ($industry_stats as $index => $stat): 
+                        // Ensure $stat is an array with the expected keys
+                        if (!is_array($stat) || !isset($stat['number']) || !isset($stat['label'])) {
+                            continue;
+                        }
+                    ?>
                         <div class="repeater-item">
                             <button type="button" class="remove-item remove-stat">Remove</button>
                             <div class="item-field">
@@ -349,12 +355,17 @@ function industries_meta_box_callback($post) {
             <h3>Industries List</h3>
             <div class="repeater-section">
                 <div id="industries-container">
-                    <?php foreach ($industries as $index => $industry): ?>
+                    <?php foreach ($industries as $index => $industry): 
+                        // Ensure $industry is an array with the expected keys
+                        if (!is_array($industry) || !isset($industry['title']) || !isset($industry['description'])) {
+                            continue;
+                        }
+                    ?>
                         <div class="repeater-item">
                             <button type="button" class="remove-item remove-industry">Remove</button>
                             <div class="item-field">
                                 <label>Icon (FontAwesome class or emoji):</label>
-                                <input type="text" name="industries_list[<?php echo $index; ?>][icon]" value="<?php echo esc_attr($industry['icon']); ?>" placeholder="fas fa-car" />
+                                <input type="text" name="industries_list[<?php echo $index; ?>][icon]" value="<?php echo esc_attr($industry['icon'] ?? ''); ?>" placeholder="fas fa-car" />
                             </div>
                             <div class="item-field">
                                 <label>Title:</label>
@@ -366,15 +377,15 @@ function industries_meta_box_callback($post) {
                             </div>
                             <div class="item-field">
                                 <label>Features (one per line):</label>
-                                <textarea name="industries_list[<?php echo $index; ?>][features]" placeholder="Vehicle inventory marketing&#10;Service department promotion"><?php echo esc_textarea(is_array($industry['features']) ? implode("\n", $industry['features']) : $industry['features']); ?></textarea>
+                                <textarea name="industries_list[<?php echo $index; ?>][features]" placeholder="Vehicle inventory marketing&#10;Service department promotion"><?php echo esc_textarea(is_array($industry['features'] ?? '') ? implode("\n", $industry['features']) : ($industry['features'] ?? '')); ?></textarea>
                             </div>
                             <div class="item-field">
                                 <label>Link Text:</label>
-                                <input type="text" name="industries_list[<?php echo $index; ?>][link_text]" value="<?php echo esc_attr($industry['link_text']); ?>" placeholder="Learn More" />
+                                <input type="text" name="industries_list[<?php echo $index; ?>][link_text]" value="<?php echo esc_attr($industry['link_text'] ?? ''); ?>" placeholder="Learn More" />
                             </div>
                             <div class="item-field">
                                 <label>Link URL:</label>
-                                <input type="url" name="industries_list[<?php echo $index; ?>][link_url]" value="<?php echo esc_attr($industry['link_url']); ?>" placeholder="/automotive" />
+                                <input type="url" name="industries_list[<?php echo $index; ?>][link_url]" value="<?php echo esc_attr($industry['link_url'] ?? ''); ?>" placeholder="/automotive" />
                             </div>
                         </div>
                     <?php endforeach; ?>
@@ -397,7 +408,12 @@ function industries_meta_box_callback($post) {
             </table>
             <div class="repeater-section">
                 <div id="success-stats-container">
-                    <?php foreach ($success_stats as $index => $stat): ?>
+                    <?php foreach ($success_stats as $index => $stat): 
+                        // Ensure $stat is an array with the expected keys
+                        if (!is_array($stat) || !isset($stat['number']) || !isset($stat['label'])) {
+                            continue;
+                        }
+                    ?>
                         <div class="repeater-item">
                             <button type="button" class="remove-item remove-success-stat">Remove</button>
                             <div class="item-field">
@@ -429,12 +445,17 @@ function industries_meta_box_callback($post) {
             </table>
             <div class="repeater-section">
                 <div id="expertise-points-container">
-                    <?php foreach ($expertise_points as $index => $point): ?>
+                    <?php foreach ($expertise_points as $index => $point): 
+                        // Ensure $point is an array with the expected keys
+                        if (!is_array($point) || !isset($point['title']) || !isset($point['description'])) {
+                            continue;
+                        }
+                    ?>
                         <div class="repeater-item">
                             <button type="button" class="remove-item remove-expertise-point">Remove</button>
                             <div class="item-field">
                                 <label>Icon (emoji or FontAwesome):</label>
-                                <input type="text" name="industries_expertise_points[<?php echo $index; ?>][icon]" value="<?php echo esc_attr($point['icon']); ?>" placeholder="" />
+                                <input type="text" name="industries_expertise_points[<?php echo $index; ?>][icon]" value="<?php echo esc_attr($point['icon'] ?? ''); ?>" placeholder="fas fa-bullseye" />
                             </div>
                             <div class="item-field">
                                 <label>Title:</label>
@@ -461,7 +482,12 @@ function industries_meta_box_callback($post) {
             </table>
             <div class="repeater-section">
                 <div id="testimonials-container">
-                    <?php foreach ($testimonials as $index => $testimonial): ?>
+                    <?php foreach ($testimonials as $index => $testimonial): 
+                        // Ensure $testimonial is an array with the expected keys
+                        if (!is_array($testimonial) || !isset($testimonial['quote'])) {
+                            continue;
+                        }
+                    ?>
                         <div class="repeater-item">
                             <button type="button" class="remove-item remove-testimonial">Remove</button>
                             <div class="item-field">
@@ -470,15 +496,15 @@ function industries_meta_box_callback($post) {
                             </div>
                             <div class="item-field">
                                 <label>Name:</label>
-                                <input type="text" name="industries_testimonials[<?php echo $index; ?>][name]" value="<?php echo esc_attr($testimonial['name']); ?>" placeholder="Mark Thompson" />
+                                <input type="text" name="industries_testimonials[<?php echo $index; ?>][name]" value="<?php echo esc_attr($testimonial['name'] ?? ''); ?>" placeholder="Mark Thompson" />
                             </div>
                             <div class="item-field">
                                 <label>Position:</label>
-                                <input type="text" name="industries_testimonials[<?php echo $index; ?>][position]" value="<?php echo esc_attr($testimonial['position']); ?>" placeholder="General Manager, Premier Motors" />
+                                <input type="text" name="industries_testimonials[<?php echo $index; ?>][position]" value="<?php echo esc_attr($testimonial['position'] ?? ''); ?>" placeholder="General Manager, Premier Motors" />
                             </div>
                             <div class="item-field">
                                 <label>Industry Tag:</label>
-                                <input type="text" name="industries_testimonials[<?php echo $index; ?>][industry]" value="<?php echo esc_attr($testimonial['industry']); ?>" placeholder="Automotive" />
+                                <input type="text" name="industries_testimonials[<?php echo $index; ?>][industry]" value="<?php echo esc_attr($testimonial['industry'] ?? ''); ?>" placeholder="Automotive" />
                             </div>
                         </div>
                     <?php endforeach; ?>
@@ -644,7 +670,14 @@ function save_industries_meta_box_data($post_id) {
 
     // Save repeater fields
     if (isset($_POST['industries_stats'])) {
-        update_post_meta($post_id, '_industries_stats', array_map('sanitize_text_field', $_POST['industries_stats']));
+        $stats = array();
+        foreach ($_POST['industries_stats'] as $stat) {
+            $stats[] = array(
+                'number' => sanitize_text_field($stat['number']),
+                'label' => sanitize_text_field($stat['label'])
+            );
+        }
+        update_post_meta($post_id, '_industries_stats', $stats);
     }
 
     if (isset($_POST['industries_list'])) {
@@ -663,7 +696,14 @@ function save_industries_meta_box_data($post_id) {
     }
 
     if (isset($_POST['industries_success_stats'])) {
-        update_post_meta($post_id, '_industries_success_stats', array_map('sanitize_text_field', $_POST['industries_success_stats']));
+        $success_stats = array();
+        foreach ($_POST['industries_success_stats'] as $stat) {
+            $success_stats[] = array(
+                'number' => sanitize_text_field($stat['number']),
+                'label' => sanitize_text_field($stat['label'])
+            );
+        }
+        update_post_meta($post_id, '_industries_success_stats', $success_stats);
     }
 
     if (isset($_POST['industries_expertise_points'])) {

@@ -35,7 +35,7 @@ get_header(); ?>
                 </div>                <div class="industry-stats animate-on-scroll animate-slide-right" style="display: flex !important; justify-content: center !important; align-items: center !important; text-align: center !important; flex-wrap: wrap !important; gap: 2rem !important;">
                     <?php 
                     $industry_stats = get_post_meta(get_the_ID(), '_industries_stats', true);
-                    if (empty($industry_stats)) {
+                    if (empty($industry_stats) || !is_array($industry_stats)) {
                         $industry_stats = array(
                             array('number' => '7+', 'label' => 'Key Industries'),
                             array('number' => '200+', 'label' => 'Industry Clients'),
@@ -43,7 +43,12 @@ get_header(); ?>
                         );
                     }
                     
-                    foreach ($industry_stats as $stat): ?>
+                    foreach ($industry_stats as $stat): 
+                        // Ensure $stat is an array with the expected keys
+                        if (!is_array($stat) || !isset($stat['number']) || !isset($stat['label'])) {
+                            continue;
+                        }
+                    ?>
                         <div class="stat-item">
                             <div class="stat-number"><?php echo esc_html($stat['number']); ?></div>
                             <div class="stat-label"><?php echo esc_html($stat['label']); ?></div>
@@ -121,25 +126,30 @@ get_header(); ?>
                             )
                         );
                     }                    
-                    foreach ($industries as $industry): ?>
+                    foreach ($industries as $industry): 
+                        // Ensure $industry is an array with the expected keys
+                        if (!is_array($industry) || !isset($industry['title']) || !isset($industry['description'])) {
+                            continue;
+                        }
+                    ?>
                         <div class="service-item animate-on-scroll animate-stagger animate-fade-up">
                             <div class="service-icon">
-                                <?php if (strpos($industry['icon'], 'fa') === 0): ?>
+                                <?php if (isset($industry['icon']) && strpos($industry['icon'], 'fa') === 0): ?>
                                     <i class="<?php echo esc_attr($industry['icon']); ?>"></i>
-                                <?php else: ?>
+                                <?php elseif (isset($industry['icon'])): ?>
                                     <span><?php echo esc_html($industry['icon']); ?></span>
                                 <?php endif; ?>
                             </div>
                             <h3><?php echo esc_html($industry['title']); ?></h3>
                             <p><?php echo esc_html($industry['description']); ?></p>
-                            <?php if (!empty($industry['features'])): ?>
+                            <?php if (!empty($industry['features']) && is_array($industry['features'])): ?>
                                 <ul class="service-features">
                                     <?php foreach ($industry['features'] as $feature): ?>
                                         <li><?php echo esc_html($feature); ?></li>
                                     <?php endforeach; ?>
                                 </ul>
                             <?php endif; ?>
-                            <a href="<?php echo esc_url(home_url($industry['link_url'])); ?>" class="service-link"><?php echo esc_html($industry['link_text'] ?: 'Learn More'); ?></a>
+                            <a href="<?php echo esc_url(home_url($industry['link_url'] ?? '')); ?>" class="service-link"><?php echo esc_html($industry['link_text'] ?? 'Learn More'); ?></a>
                         </div>
                     <?php endforeach; ?>
                 </div>
@@ -154,7 +164,7 @@ get_header(); ?>
                 <div class="success-stats">
                     <?php 
                     $success_stats = get_post_meta(get_the_ID(), '_industries_success_stats', true);
-                    if (empty($success_stats)) {
+                    if (empty($success_stats) || !is_array($success_stats)) {
                         $success_stats = array(
                             array('number' => '400%', 'label' => 'Average ROI increase across all industries'),
                             array('number' => '95%', 'label' => 'Client retention rate'),
@@ -162,7 +172,12 @@ get_header(); ?>
                         );
                     }
                     
-                    foreach ($success_stats as $stat): ?>
+                    foreach ($success_stats as $stat): 
+                        // Ensure $stat is an array with the expected keys
+                        if (!is_array($stat) || !isset($stat['number']) || !isset($stat['label'])) {
+                            continue;
+                        }
+                    ?>
                         <div class="stat-item">
                             <div class="stat-number"><?php echo esc_html($stat['number']); ?></div>
                             <div class="stat-label"><?php echo esc_html($stat['label']); ?></div>
@@ -204,9 +219,16 @@ get_header(); ?>
                         );
                     }
                     
-                    foreach ($expertise_points as $point): ?>                        <div class="benefit-card animate-on-scroll animate-stagger animate-fade-up">
+                    foreach ($expertise_points as $point): 
+                        // Ensure $point is an array with the expected keys
+                        if (!is_array($point) || !isset($point['title']) || !isset($point['description'])) {
+                            continue;
+                        }
+                    ?>                        <div class="benefit-card animate-on-scroll animate-stagger animate-fade-up">
                             <div class="benefit-icon">
-                                <i class="<?php echo esc_attr($point['icon']); ?>"></i>
+                                <?php if (isset($point['icon'])): ?>
+                                    <i class="<?php echo esc_attr($point['icon']); ?>"></i>
+                                <?php endif; ?>
                             </div>
                             <div class="benefit-content">
                                 <h3><?php echo esc_html($point['title']); ?></h3>
@@ -246,16 +268,27 @@ get_header(); ?>
                         );
                     }
                     
-                    foreach ($testimonials as $testimonial): ?>
+                    foreach ($testimonials as $testimonial): 
+                        // Ensure $testimonial is an array with the expected keys
+                        if (!is_array($testimonial) || !isset($testimonial['quote'])) {
+                            continue;
+                        }
+                    ?>
                         <div class="testimonial-card">
                             <div class="testimonial-content">
                                 <p>"<?php echo esc_html($testimonial['quote']); ?>"</p>
                             </div>
                             <div class="testimonial-author">
                                 <div class="author-info">
-                                    <h4><?php echo esc_html($testimonial['name']); ?></h4>
-                                    <span><?php echo esc_html($testimonial['position']); ?></span>
-                                    <div class="industry-tag"><?php echo esc_html($testimonial['industry']); ?></div>
+                                    <?php if (isset($testimonial['name'])): ?>
+                                        <h4><?php echo esc_html($testimonial['name']); ?></h4>
+                                    <?php endif; ?>
+                                    <?php if (isset($testimonial['position'])): ?>
+                                        <span><?php echo esc_html($testimonial['position']); ?></span>
+                                    <?php endif; ?>
+                                    <?php if (isset($testimonial['industry'])): ?>
+                                        <div class="industry-tag"><?php echo esc_html($testimonial['industry']); ?></div>
+                                    <?php endif; ?>
                                 </div>
                             </div>
                         </div>
