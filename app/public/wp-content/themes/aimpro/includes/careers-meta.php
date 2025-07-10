@@ -100,7 +100,7 @@ function aimpro_careers_meta_box_callback($post) {
         </tr>
         <tr>
             <th><label for="careers_benefit<?php echo $num; ?>_desc">Description</label></th>
-            <td><textarea id="careers_benefit<?php echo $num; ?>_desc" name="careers_benefit<?php echo $num; ?>_desc" rows="3" class="large-text"><?php echo esc_textarea($benefit_desc); ?></textarea></td>
+            <td><?php wp_editor($benefit_desc, "careers_benefit{$num}_desc", array('textarea_rows' => 3, 'media_buttons' => false, 'teeny' => true)); ?></td>
         </tr>
         <?php endforeach; ?>
           <tr>
@@ -174,10 +174,10 @@ function aimpro_careers_meta_box_callback($post) {
         </tr>
         <tr>
             <th><label for="careers_job<?php echo $num; ?>_desc">Description</label></th>
-            <td><textarea id="careers_job<?php echo $num; ?>_desc" name="careers_job<?php echo $num; ?>_desc" rows="3" class="large-text"><?php echo esc_textarea($job_desc); ?></textarea></td>
+            <td><?php wp_editor($job_desc, "careers_job{$num}_desc", array('textarea_rows' => 3, 'media_buttons' => false, 'teeny' => true)); ?></td>
         </tr>        <tr>
             <th><label for="careers_job<?php echo $num; ?>_requirements">Requirements (one per line)</label></th>
-            <td><textarea id="careers_job<?php echo $num; ?>_requirements" name="careers_job<?php echo $num; ?>_requirements" rows="4" class="large-text"><?php echo esc_textarea($job_requirements); ?></textarea></td>
+            <td><?php wp_editor($job_requirements, "careers_job{$num}_requirements", array('textarea_rows' => 4, 'media_buttons' => false, 'teeny' => true)); ?></td>
         </tr>
         <tr>
             <th><label for="careers_job<?php echo $num; ?>_pdf">Job Details PDF</label></th>
@@ -225,7 +225,7 @@ function aimpro_careers_meta_box_callback($post) {
         </tr>
         <tr>
             <th><label for="careers_process<?php echo $num; ?>_desc">Description</label></th>
-            <td><textarea id="careers_process<?php echo $num; ?>_desc" name="careers_process<?php echo $num; ?>_desc" rows="2" class="large-text"><?php echo esc_textarea($step_desc); ?></textarea></td>
+            <td><?php wp_editor($step_desc, "careers_process{$num}_desc", array('textarea_rows' => 2, 'media_buttons' => false, 'teeny' => true)); ?></td>
         </tr>
         <?php endforeach; ?>
         
@@ -254,7 +254,7 @@ function aimpro_careers_meta_box_callback($post) {
         </tr>
         <tr>
             <th><label for="careers_testimonial<?php echo $num; ?>_quote">Quote</label></th>
-            <td><textarea id="careers_testimonial<?php echo $num; ?>_quote" name="careers_testimonial<?php echo $num; ?>_quote" rows="3" class="large-text"><?php echo esc_textarea($testimonial_quote); ?></textarea></td>
+            <td><?php wp_editor($testimonial_quote, "careers_testimonial{$num}_quote", array('textarea_rows' => 3, 'media_buttons' => false, 'teeny' => true)); ?></td>
         </tr>
         <tr>
             <th><label for="careers_testimonial<?php echo $num; ?>_author">Author Name</label></th>
@@ -275,7 +275,7 @@ function aimpro_careers_meta_box_callback($post) {
         </tr>
         <tr>
             <th><label for="careers_form_description">Form Description</label></th>
-            <td><textarea id="careers_form_description" name="careers_form_description" rows="2" class="large-text"><?php echo esc_textarea($form_description); ?></textarea></td>
+            <td><?php wp_editor($form_description, "careers_form_description", array('textarea_rows' => 2, 'media_buttons' => false, 'teeny' => true)); ?></td>
         </tr>
         
         <tr>
@@ -287,7 +287,7 @@ function aimpro_careers_meta_box_callback($post) {
         </tr>
         <tr>
             <th><label for="careers_contact_description">Contact Description</label></th>
-            <td><textarea id="careers_contact_description" name="careers_contact_description" rows="2" class="large-text"><?php echo esc_textarea($contact_description); ?></textarea></td>
+            <td><?php wp_editor($contact_description, "careers_contact_description", array('textarea_rows' => 2, 'media_buttons' => false, 'teeny' => true)); ?></td>
         </tr>
         <tr>
             <th><label for="careers_contact_email">Contact Email</label></th>
@@ -325,9 +325,9 @@ function aimpro_save_careers_meta($post_id) {
         'careers_process_heading' => 'sanitize_text_field',
         'careers_team_testimonials_heading' => 'sanitize_text_field',
         'careers_form_heading' => 'sanitize_text_field',
-        'careers_form_description' => 'sanitize_textarea_field',
+        'careers_form_description' => 'wp_kses_post',
         'careers_contact_heading' => 'sanitize_text_field',
-        'careers_contact_description' => 'sanitize_textarea_field',
+        'careers_contact_description' => 'wp_kses_post',
         'careers_contact_email' => 'sanitize_email',
         'careers_contact_phone' => 'sanitize_text_field'
     );
@@ -342,7 +342,7 @@ function aimpro_save_careers_meta($post_id) {
     for ($i = 1; $i <= 6; $i++) {
         $benefit_fields = array(
             "careers_benefit{$i}_title" => 'sanitize_text_field',
-            "careers_benefit{$i}_desc" => 'sanitize_textarea_field'
+            "careers_benefit{$i}_desc" => 'wp_kses_post'
         );
         
         foreach ($benefit_fields as $field => $sanitize_func) {
@@ -356,7 +356,7 @@ function aimpro_save_careers_meta($post_id) {
     for ($i = 1; $i <= 5; $i++) {
         $process_fields = array(
             "careers_process{$i}_title" => 'sanitize_text_field',
-            "careers_process{$i}_desc" => 'sanitize_textarea_field'
+            "careers_process{$i}_desc" => 'wp_kses_post'
         );
         
         foreach ($process_fields as $field => $sanitize_func) {
