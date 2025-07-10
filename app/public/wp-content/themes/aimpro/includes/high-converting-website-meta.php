@@ -493,23 +493,75 @@ function high_converting_website_meta_box_callback($post) {
                 </tr>
             </table>
 
-            <div class="repeater" id="challenges_repeater">
-                <div class="repeater-label">Challenges List</div>
-                <?php if (!empty($challenges)) : ?>
-                    <?php foreach ($challenges as $index => $challenge) : ?>
-                        <div class="repeater-item">
-                            <span class="remove-item">�</span>
-                            <input type="text" name="high_converting_website_challenges[]" value="<?php echo esc_attr($challenge); ?>" placeholder="Enter a challenge..." />
-                        </div>
-                    <?php endforeach; ?>
-                <?php else : ?>
-                    <div class="repeater-item">
-                        <span class="remove-item">�</span>
-                        <input type="text" name="high_converting_website_challenges[]" value="" placeholder="Enter a challenge..." />
-                    </div>
-                <?php endif; ?>
-                <button type="button" class="button add-item">Add Challenge</button>
-            </div>
+            <!-- Individual Challenge Fields -->
+            <table>
+                <tr>
+                    <th><label for="high_converting_website_challenge_1">Challenge 1</label></th>
+                    <td>
+                        <?php wp_editor(isset($challenges[0]) ? $challenges[0] : 'High bounce rates and low engagement', 'high_converting_website_challenge_1', array(
+                            'textarea_name' => 'high_converting_website_challenge_1',
+                            'textarea_rows' => 3,
+                            'teeny' => true,
+                            'media_buttons' => false
+                        )); ?>
+                    </td>
+                </tr>
+                <tr>
+                    <th><label for="high_converting_website_challenge_2">Challenge 2</label></th>
+                    <td>
+                        <?php wp_editor(isset($challenges[1]) ? $challenges[1] : 'Poor mobile user experience', 'high_converting_website_challenge_2', array(
+                            'textarea_name' => 'high_converting_website_challenge_2',
+                            'textarea_rows' => 3,
+                            'teeny' => true,
+                            'media_buttons' => false
+                        )); ?>
+                    </td>
+                </tr>
+                <tr>
+                    <th><label for="high_converting_website_challenge_3">Challenge 3</label></th>
+                    <td>
+                        <?php wp_editor(isset($challenges[2]) ? $challenges[2] : 'Unclear value propositions', 'high_converting_website_challenge_3', array(
+                            'textarea_name' => 'high_converting_website_challenge_3',
+                            'textarea_rows' => 3,
+                            'teeny' => true,
+                            'media_buttons' => false
+                        )); ?>
+                    </td>
+                </tr>
+                <tr>
+                    <th><label for="high_converting_website_challenge_4">Challenge 4</label></th>
+                    <td>
+                        <?php wp_editor(isset($challenges[3]) ? $challenges[3] : 'Confusing navigation and user flow', 'high_converting_website_challenge_4', array(
+                            'textarea_name' => 'high_converting_website_challenge_4',
+                            'textarea_rows' => 3,
+                            'teeny' => true,
+                            'media_buttons' => false
+                        )); ?>
+                    </td>
+                </tr>
+                <tr>
+                    <th><label for="high_converting_website_challenge_5">Challenge 5</label></th>
+                    <td>
+                        <?php wp_editor(isset($challenges[4]) ? $challenges[4] : 'Slow loading speeds', 'high_converting_website_challenge_5', array(
+                            'textarea_name' => 'high_converting_website_challenge_5',
+                            'textarea_rows' => 3,
+                            'teeny' => true,
+                            'media_buttons' => false
+                        )); ?>
+                    </td>
+                </tr>
+                <tr>
+                    <th><label for="high_converting_website_challenge_6">Challenge 6</label></th>
+                    <td>
+                        <?php wp_editor(isset($challenges[5]) ? $challenges[5] : 'Weak calls-to-action', 'high_converting_website_challenge_6', array(
+                            'textarea_name' => 'high_converting_website_challenge_6',
+                            'textarea_rows' => 3,
+                            'teeny' => true,
+                            'media_buttons' => false
+                        )); ?>
+                    </td>
+                </tr>
+            </table>
         </div>
 
         <!-- Website Conversion Services Section -->
@@ -529,61 +581,104 @@ function high_converting_website_meta_box_callback($post) {
                 </tr>
             </table>
 
-            <div class="repeater" id="services_repeater">
-                <div class="repeater-label">Services</div>
-                <?php if (!empty($services)) : ?>
-                    <?php foreach ($services as $index => $service) : ?>
-                        <div class="repeater-item">
-                            <span class="remove-item">�</span>
-                            <div class="item-fields">
-                                <p>
-                                    <label class="repeater-label">Service Title</label>
-                                    <input type="text" name="high_converting_website_services[<?php echo $index; ?>][title]" value="<?php echo esc_attr($service['title']); ?>" placeholder="Service title..." />
-                                </p>
-                                <p>
-                                    <label class="repeater-label">Service Description</label>
-                                    <textarea name="high_converting_website_services[<?php echo $index; ?>][description]" placeholder="Service description..."><?php echo esc_textarea($service['description']); ?></textarea>
-                                </p>
-                                
-                                <div class="nested-repeater">
-                                    <label class="repeater-label">Service Features</label>
-                                    <?php foreach ($service['features'] as $feature_index => $feature) : ?>
-                                        <div class="repeater-item">
-                                            <span class="remove-item">�</span>
-                                            <input type="text" name="high_converting_website_services[<?php echo $index; ?>][features][]" value="<?php echo esc_attr($feature); ?>" placeholder="Feature..." />
-                                        </div>
-                                    <?php endforeach; ?>
-                                    <button type="button" class="button add-nested-item" data-parent="<?php echo $index; ?>">Add Feature</button>
-                                </div>
-                            </div>
-                        </div>
-                    <?php endforeach; ?>
-                <?php else : ?>
-                    <div class="repeater-item">
-                        <span class="remove-item">�</span>
-                        <div class="item-fields">
-                            <p>
-                                <label class="repeater-label">Service Title</label>
-                                <input type="text" name="high_converting_website_services[0][title]" value="" placeholder="Service title..." />
-                            </p>
-                            <p>
-                                <label class="repeater-label">Service Description</label>
-                                <textarea name="high_converting_website_services[0][description]" placeholder="Service description..."></textarea>
-                            </p>
-                            
-                            <div class="nested-repeater">
-                                <label class="repeater-label">Service Features</label>
-                                <div class="repeater-item">
-                                    <span class="remove-item">�</span>
-                                    <input type="text" name="high_converting_website_services[0][features][]" value="" placeholder="Feature..." />
-                                </div>
-                                <button type="button" class="button add-nested-item" data-parent="0">Add Feature</button>
-                            </div>
-                        </div>
-                    </div>
-                <?php endif; ?>
-                <button type="button" class="button add-service-item">Add Service</button>
-            </div>
+            <!-- Individual Service Fields -->
+            <table>
+                <!-- Service 1: Conversion-Focused Design -->
+                <tr>
+                    <th><label for="high_converting_website_service_1_title">Service 1 Title</label></th>
+                    <td>
+                        <?php wp_editor(isset($services[0]['title']) ? $services[0]['title'] : 'Conversion-Focused Design', 'high_converting_website_service_1_title', array(
+                            'textarea_name' => 'high_converting_website_service_1_title',
+                            'textarea_rows' => 2,
+                            'teeny' => true,
+                            'media_buttons' => false
+                        )); ?>
+                    </td>
+                </tr>
+                <tr>
+                    <th><label for="high_converting_website_service_1_description">Service 1 Description</label></th>
+                    <td>
+                        <?php wp_editor(isset($services[0]['description']) ? $services[0]['description'] : 'Design websites with psychology-based elements that guide visitors toward taking action.', 'high_converting_website_service_1_description', array(
+                            'textarea_name' => 'high_converting_website_service_1_description',
+                            'textarea_rows' => 4,
+                            'teeny' => true,
+                            'media_buttons' => false
+                        )); ?>
+                    </td>
+                </tr>
+                
+                <!-- Service 2: Landing Page Optimisation -->
+                <tr>
+                    <th><label for="high_converting_website_service_2_title">Service 2 Title</label></th>
+                    <td>
+                        <?php wp_editor(isset($services[1]['title']) ? $services[1]['title'] : 'Landing Page Optimisation', 'high_converting_website_service_2_title', array(
+                            'textarea_name' => 'high_converting_website_service_2_title',
+                            'textarea_rows' => 2,
+                            'teeny' => true,
+                            'media_buttons' => false
+                        )); ?>
+                    </td>
+                </tr>
+                <tr>
+                    <th><label for="high_converting_website_service_2_description">Service 2 Description</label></th>
+                    <td>
+                        <?php wp_editor(isset($services[1]['description']) ? $services[1]['description'] : 'Create high-converting landing pages that maximise conversions from your marketing campaigns.', 'high_converting_website_service_2_description', array(
+                            'textarea_name' => 'high_converting_website_service_2_description',
+                            'textarea_rows' => 4,
+                            'teeny' => true,
+                            'media_buttons' => false
+                        )); ?>
+                    </td>
+                </tr>
+                
+                <!-- Service 3: E-commerce Optimisation -->
+                <tr>
+                    <th><label for="high_converting_website_service_3_title">Service 3 Title</label></th>
+                    <td>
+                        <?php wp_editor(isset($services[2]['title']) ? $services[2]['title'] : 'E-commerce Optimisation', 'high_converting_website_service_3_title', array(
+                            'textarea_name' => 'high_converting_website_service_3_title',
+                            'textarea_rows' => 2,
+                            'teeny' => true,
+                            'media_buttons' => false
+                        )); ?>
+                    </td>
+                </tr>
+                <tr>
+                    <th><label for="high_converting_website_service_3_description">Service 3 Description</label></th>
+                    <td>
+                        <?php wp_editor(isset($services[2]['description']) ? $services[2]['description'] : 'Optimise online stores to increase sales, reduce cart abandonment, and improve customer experience.', 'high_converting_website_service_3_description', array(
+                            'textarea_name' => 'high_converting_website_service_3_description',
+                            'textarea_rows' => 4,
+                            'teeny' => true,
+                            'media_buttons' => false
+                        )); ?>
+                    </td>
+                </tr>
+                
+                <!-- Service 4: Performance Optimisation -->
+                <tr>
+                    <th><label for="high_converting_website_service_4_title">Service 4 Title</label></th>
+                    <td>
+                        <?php wp_editor(isset($services[3]['title']) ? $services[3]['title'] : 'Performance Optimisation', 'high_converting_website_service_4_title', array(
+                            'textarea_name' => 'high_converting_website_service_4_title',
+                            'textarea_rows' => 2,
+                            'teeny' => true,
+                            'media_buttons' => false
+                        )); ?>
+                    </td>
+                </tr>
+                <tr>
+                    <th><label for="high_converting_website_service_4_description">Service 4 Description</label></th>
+                    <td>
+                        <?php wp_editor(isset($services[3]['description']) ? $services[3]['description'] : 'Improve website speed and technical performance to reduce bounce rates and improve conversions.', 'high_converting_website_service_4_description', array(
+                            'textarea_name' => 'high_converting_website_service_4_description',
+                            'textarea_rows' => 4,
+                            'teeny' => true,
+                            'media_buttons' => false
+                        )); ?>
+                    </td>
+                </tr>
+            </table>
         </div>
 
         <!-- Case Study Section -->
@@ -636,23 +731,53 @@ function high_converting_website_meta_box_callback($post) {
                 </tr>
             </table>
 
-            <div class="repeater" id="case_challenges_repeater">
-                <div class="repeater-label">Case Study Challenges</div>
-                <?php if (!empty($case_challenges)) : ?>
-                    <?php foreach ($case_challenges as $index => $challenge) : ?>
-                        <div class="repeater-item">
-                            <span class="remove-item">�</span>
-                            <input type="text" name="high_converting_website_case_study_challenges[]" value="<?php echo esc_attr($challenge); ?>" placeholder="Enter a case study challenge..." />
-                        </div>
-                    <?php endforeach; ?>
-                <?php else : ?>
-                    <div class="repeater-item">
-                        <span class="remove-item">�</span>
-                        <input type="text" name="high_converting_website_case_study_challenges[]" value="" placeholder="Enter a case study challenge..." />
-                    </div>
-                <?php endif; ?>
-                <button type="button" class="button add-item">Add Challenge</button>
-            </div>
+            <!-- Individual Case Study Challenge Fields -->
+            <table>
+                <tr>
+                    <th><label for="high_converting_website_case_challenge_1">Case Challenge 1</label></th>
+                    <td>
+                        <?php wp_editor(isset($case_challenges[0]) ? $case_challenges[0] : '1.2% conversion rate on 50,000 monthly visitors', 'high_converting_website_case_challenge_1', array(
+                            'textarea_name' => 'high_converting_website_case_challenge_1',
+                            'textarea_rows' => 3,
+                            'teeny' => true,
+                            'media_buttons' => false
+                        )); ?>
+                    </td>
+                </tr>
+                <tr>
+                    <th><label for="high_converting_website_case_challenge_2">Case Challenge 2</label></th>
+                    <td>
+                        <?php wp_editor(isset($case_challenges[1]) ? $case_challenges[1] : '75% cart abandonment rate', 'high_converting_website_case_challenge_2', array(
+                            'textarea_name' => 'high_converting_website_case_challenge_2',
+                            'textarea_rows' => 3,
+                            'teeny' => true,
+                            'media_buttons' => false
+                        )); ?>
+                    </td>
+                </tr>
+                <tr>
+                    <th><label for="high_converting_website_case_challenge_3">Case Challenge 3</label></th>
+                    <td>
+                        <?php wp_editor(isset($case_challenges[2]) ? $case_challenges[2] : 'Poor mobile user experience', 'high_converting_website_case_challenge_3', array(
+                            'textarea_name' => 'high_converting_website_case_challenge_3',
+                            'textarea_rows' => 3,
+                            'teeny' => true,
+                            'media_buttons' => false
+                        )); ?>
+                    </td>
+                </tr>
+                <tr>
+                    <th><label for="high_converting_website_case_challenge_4">Case Challenge 4</label></th>
+                    <td>
+                        <?php wp_editor(isset($case_challenges[3]) ? $case_challenges[3] : 'Unclear product benefits and value props', 'high_converting_website_case_challenge_4', array(
+                            'textarea_name' => 'high_converting_website_case_challenge_4',
+                            'textarea_rows' => 3,
+                            'teeny' => true,
+                            'media_buttons' => false
+                        )); ?>
+                    </td>
+                </tr>
+            </table>
 
             <table>
                 <tr>
@@ -668,23 +793,53 @@ function high_converting_website_meta_box_callback($post) {
                 </tr>
             </table>
 
-            <div class="repeater" id="case_solutions_repeater">
-                <div class="repeater-label">Case Study Solutions</div>
-                <?php if (!empty($case_solutions)) : ?>
-                    <?php foreach ($case_solutions as $index => $solution) : ?>
-                        <div class="repeater-item">
-                            <span class="remove-item">�</span>
-                            <input type="text" name="high_converting_website_case_study_solutions[]" value="<?php echo esc_attr($solution); ?>" placeholder="Enter a case study solution..." />
-                        </div>
-                    <?php endforeach; ?>
-                <?php else : ?>
-                    <div class="repeater-item">
-                        <span class="remove-item">�</span>
-                        <input type="text" name="high_converting_website_case_study_solutions[]" value="" placeholder="Enter a case study solution..." />
-                    </div>
-                <?php endif; ?>
-                <button type="button" class="button add-item">Add Solution</button>
-            </div>
+            <!-- Individual Case Study Solution Fields -->
+            <table>
+                <tr>
+                    <th><label for="high_converting_website_case_solution_1">Case Solution 1</label></th>
+                    <td>
+                        <?php wp_editor(isset($case_solutions[0]) ? $case_solutions[0] : 'Complete website redesign with conversion focus', 'high_converting_website_case_solution_1', array(
+                            'textarea_name' => 'high_converting_website_case_solution_1',
+                            'textarea_rows' => 3,
+                            'teeny' => true,
+                            'media_buttons' => false
+                        )); ?>
+                    </td>
+                </tr>
+                <tr>
+                    <th><label for="high_converting_website_case_solution_2">Case Solution 2</label></th>
+                    <td>
+                        <?php wp_editor(isset($case_solutions[1]) ? $case_solutions[1] : 'Streamlined checkout process', 'high_converting_website_case_solution_2', array(
+                            'textarea_name' => 'high_converting_website_case_solution_2',
+                            'textarea_rows' => 3,
+                            'teeny' => true,
+                            'media_buttons' => false
+                        )); ?>
+                    </td>
+                </tr>
+                <tr>
+                    <th><label for="high_converting_website_case_solution_3">Case Solution 3</label></th>
+                    <td>
+                        <?php wp_editor(isset($case_solutions[2]) ? $case_solutions[2] : 'Mobile-first responsive design', 'high_converting_website_case_solution_3', array(
+                            'textarea_name' => 'high_converting_website_case_solution_3',
+                            'textarea_rows' => 3,
+                            'teeny' => true,
+                            'media_buttons' => false
+                        )); ?>
+                    </td>
+                </tr>
+                <tr>
+                    <th><label for="high_converting_website_case_solution_4">Case Solution 4</label></th>
+                    <td>
+                        <?php wp_editor(isset($case_solutions[3]) ? $case_solutions[3] : 'A/B tested product pages and CTAs', 'high_converting_website_case_solution_4', array(
+                            'textarea_name' => 'high_converting_website_case_solution_4',
+                            'textarea_rows' => 3,
+                            'teeny' => true,
+                            'media_buttons' => false
+                        )); ?>
+                    </td>
+                </tr>
+            </table>
         </div>
 
         <!-- Process Section -->
@@ -704,49 +859,144 @@ function high_converting_website_meta_box_callback($post) {
                 </tr>
             </table>
 
-            <div class="repeater" id="process_steps_repeater">
-                <div class="repeater-label">Process Steps</div>
-                <?php if (!empty($process_steps)) : ?>
-                    <?php foreach ($process_steps as $index => $step) : ?>
-                        <div class="repeater-item">
-                            <span class="remove-item">�</span>
-                            <div class="item-fields">
-                                <p>
-                                    <label class="repeater-label">Step Number</label>
-                                    <input type="text" name="high_converting_website_process_steps[<?php echo $index; ?>][number]" value="<?php echo esc_attr($step['number']); ?>" placeholder="e.g., 1" />
-                                </p>
-                                <p>
-                                    <label class="repeater-label">Step Title</label>
-                                    <input type="text" name="high_converting_website_process_steps[<?php echo $index; ?>][title]" value="<?php echo esc_attr($step['title']); ?>" placeholder="Step title..." />
-                                </p>
-                                <p>
-                                    <label class="repeater-label">Step Description</label>
-                                    <textarea name="high_converting_website_process_steps[<?php echo $index; ?>][description]" placeholder="Step description..."><?php echo esc_textarea($step['description']); ?></textarea>
-                                </p>
-                            </div>
-                        </div>
-                    <?php endforeach; ?>
-                <?php else : ?>
-                    <div class="repeater-item">
-                        <span class="remove-item">�</span>
-                        <div class="item-fields">
-                            <p>
-                                <label class="repeater-label">Step Number</label>
-                                <input type="text" name="high_converting_website_process_steps[0][number]" value="" placeholder="e.g., 1" />
-                            </p>
-                            <p>
-                                <label class="repeater-label">Step Title</label>
-                                <input type="text" name="high_converting_website_process_steps[0][title]" value="" placeholder="Step title..." />
-                            </p>
-                            <p>
-                                <label class="repeater-label">Step Description</label>
-                                <textarea name="high_converting_website_process_steps[0][description]" placeholder="Step description..."></textarea>
-                            </p>
-                        </div>
-                    </div>
-                <?php endif; ?>
-                <button type="button" class="button add-process-step">Add Process Step</button>
-            </div>
+            <!-- Individual Process Step Fields -->
+            <table>
+                <!-- Step 1 -->
+                <tr>
+                    <th><label for="high_converting_website_process_step_1_number">Step 1 Number</label></th>
+                    <td>
+                        <input type="text" 
+                               id="high_converting_website_process_step_1_number" 
+                               name="high_converting_website_process_step_1_number" 
+                               value="<?php echo esc_attr(isset($process_steps[0]['number']) ? $process_steps[0]['number'] : '1'); ?>"
+                               placeholder="e.g., 1" />
+                    </td>
+                </tr>
+                <tr>
+                    <th><label for="high_converting_website_process_step_1_title">Step 1 Title</label></th>
+                    <td>
+                        <?php wp_editor(isset($process_steps[0]['title']) ? $process_steps[0]['title'] : 'Conversion Audit', 'high_converting_website_process_step_1_title', array(
+                            'textarea_name' => 'high_converting_website_process_step_1_title',
+                            'textarea_rows' => 2,
+                            'teeny' => true,
+                            'media_buttons' => false
+                        )); ?>
+                    </td>
+                </tr>
+                <tr>
+                    <th><label for="high_converting_website_process_step_1_description">Step 1 Description</label></th>
+                    <td>
+                        <?php wp_editor(isset($process_steps[0]['description']) ? $process_steps[0]['description'] : 'Comprehensive analysis of your website\'s current performance, user behaviour, and conversion barriers.', 'high_converting_website_process_step_1_description', array(
+                            'textarea_name' => 'high_converting_website_process_step_1_description',
+                            'textarea_rows' => 4,
+                            'teeny' => true,
+                            'media_buttons' => false
+                        )); ?>
+                    </td>
+                </tr>
+                
+                <!-- Step 2 -->
+                <tr>
+                    <th><label for="high_converting_website_process_step_2_number">Step 2 Number</label></th>
+                    <td>
+                        <input type="text" 
+                               id="high_converting_website_process_step_2_number" 
+                               name="high_converting_website_process_step_2_number" 
+                               value="<?php echo esc_attr(isset($process_steps[1]['number']) ? $process_steps[1]['number'] : '2'); ?>"
+                               placeholder="e.g., 2" />
+                    </td>
+                </tr>
+                <tr>
+                    <th><label for="high_converting_website_process_step_2_title">Step 2 Title</label></th>
+                    <td>
+                        <?php wp_editor(isset($process_steps[1]['title']) ? $process_steps[1]['title'] : 'Strategy & Design', 'high_converting_website_process_step_2_title', array(
+                            'textarea_name' => 'high_converting_website_process_step_2_title',
+                            'textarea_rows' => 2,
+                            'teeny' => true,
+                            'media_buttons' => false
+                        )); ?>
+                    </td>
+                </tr>
+                <tr>
+                    <th><label for="high_converting_website_process_step_2_description">Step 2 Description</label></th>
+                    <td>
+                        <?php wp_editor(isset($process_steps[1]['description']) ? $process_steps[1]['description'] : 'Create conversion-focused wireframes and designs based on user psychology and best practices.', 'high_converting_website_process_step_2_description', array(
+                            'textarea_name' => 'high_converting_website_process_step_2_description',
+                            'textarea_rows' => 4,
+                            'teeny' => true,
+                            'media_buttons' => false
+                        )); ?>
+                    </td>
+                </tr>
+                
+                <!-- Step 3 -->
+                <tr>
+                    <th><label for="high_converting_website_process_step_3_number">Step 3 Number</label></th>
+                    <td>
+                        <input type="text" 
+                               id="high_converting_website_process_step_3_number" 
+                               name="high_converting_website_process_step_3_number" 
+                               value="<?php echo esc_attr(isset($process_steps[2]['number']) ? $process_steps[2]['number'] : '3'); ?>"
+                               placeholder="e.g., 3" />
+                    </td>
+                </tr>
+                <tr>
+                    <th><label for="high_converting_website_process_step_3_title">Step 3 Title</label></th>
+                    <td>
+                        <?php wp_editor(isset($process_steps[2]['title']) ? $process_steps[2]['title'] : 'Development & Testing', 'high_converting_website_process_step_3_title', array(
+                            'textarea_name' => 'high_converting_website_process_step_3_title',
+                            'textarea_rows' => 2,
+                            'teeny' => true,
+                            'media_buttons' => false
+                        )); ?>
+                    </td>
+                </tr>
+                <tr>
+                    <th><label for="high_converting_website_process_step_3_description">Step 3 Description</label></th>
+                    <td>
+                        <?php wp_editor(isset($process_steps[2]['description']) ? $process_steps[2]['description'] : 'Build optimised pages with A/B testing frameworks to validate improvements.', 'high_converting_website_process_step_3_description', array(
+                            'textarea_name' => 'high_converting_website_process_step_3_description',
+                            'textarea_rows' => 4,
+                            'teeny' => true,
+                            'media_buttons' => false
+                        )); ?>
+                    </td>
+                </tr>
+                
+                <!-- Step 4 -->
+                <tr>
+                    <th><label for="high_converting_website_process_step_4_number">Step 4 Number</label></th>
+                    <td>
+                        <input type="text" 
+                               id="high_converting_website_process_step_4_number" 
+                               name="high_converting_website_process_step_4_number" 
+                               value="<?php echo esc_attr(isset($process_steps[3]['number']) ? $process_steps[3]['number'] : '4'); ?>"
+                               placeholder="e.g., 4" />
+                    </td>
+                </tr>
+                <tr>
+                    <th><label for="high_converting_website_process_step_4_title">Step 4 Title</label></th>
+                    <td>
+                        <?php wp_editor(isset($process_steps[3]['title']) ? $process_steps[3]['title'] : 'Monitor & Optimise', 'high_converting_website_process_step_4_title', array(
+                            'textarea_name' => 'high_converting_website_process_step_4_title',
+                            'textarea_rows' => 2,
+                            'teeny' => true,
+                            'media_buttons' => false
+                        )); ?>
+                    </td>
+                </tr>
+                <tr>
+                    <th><label for="high_converting_website_process_step_4_description">Step 4 Description</label></th>
+                    <td>
+                        <?php wp_editor(isset($process_steps[3]['description']) ? $process_steps[3]['description'] : 'Continuously track performance and implement data-driven improvements.', 'high_converting_website_process_step_4_description', array(
+                            'textarea_name' => 'high_converting_website_process_step_4_description',
+                            'textarea_rows' => 4,
+                            'teeny' => true,
+                            'media_buttons' => false
+                        )); ?>
+                    </td>
+                </tr>
+            </table>
         </div>
 
         <!-- Conversion Elements Section -->
@@ -766,61 +1016,104 @@ function high_converting_website_meta_box_callback($post) {
                 </tr>
             </table>
 
-            <div class="repeater" id="elements_repeater">
-                <div class="repeater-label">Conversion Elements</div>
-                <?php if (!empty($elements)) : ?>
-                    <?php foreach ($elements as $index => $element) : ?>
-                        <div class="repeater-item">
-                            <span class="remove-item">�</span>
-                            <div class="item-fields">
-                                <p>
-                                    <label class="repeater-label">Element Title</label>
-                                    <input type="text" name="high_converting_website_elements[<?php echo $index; ?>][title]" value="<?php echo esc_attr($element['title']); ?>" placeholder="Element title..." />
-                                </p>
-                                <p>
-                                    <label class="repeater-label">Element Description</label>
-                                    <textarea name="high_converting_website_elements[<?php echo $index; ?>][description]" placeholder="Element description..."><?php echo esc_textarea($element['description']); ?></textarea>
-                                </p>
-                                
-                                <div class="nested-repeater">
-                                    <label class="repeater-label">Element Features</label>
-                                    <?php foreach ($element['features'] as $feature_index => $feature) : ?>
-                                        <div class="repeater-item">
-                                            <span class="remove-item">�</span>
-                                            <input type="text" name="high_converting_website_elements[<?php echo $index; ?>][features][]" value="<?php echo esc_attr($feature); ?>" placeholder="Feature..." />
-                                        </div>
-                                    <?php endforeach; ?>
-                                    <button type="button" class="button add-element-feature" data-parent="<?php echo $index; ?>">Add Feature</button>
-                                </div>
-                            </div>
-                        </div>
-                    <?php endforeach; ?>
-                <?php else : ?>
-                    <div class="repeater-item">
-                        <span class="remove-item">�</span>
-                        <div class="item-fields">
-                            <p>
-                                <label class="repeater-label">Element Title</label>
-                                <input type="text" name="high_converting_website_elements[0][title]" value="" placeholder="Element title..." />
-                            </p>
-                            <p>
-                                <label class="repeater-label">Element Description</label>
-                                <textarea name="high_converting_website_elements[0][description]" placeholder="Element description..."></textarea>
-                            </p>
-                            
-                            <div class="nested-repeater">
-                                <label class="repeater-label">Element Features</label>
-                                <div class="repeater-item">
-                                    <span class="remove-item">�</span>
-                                    <input type="text" name="high_converting_website_elements[0][features][]" value="" placeholder="Feature..." />
-                                </div>
-                                <button type="button" class="button add-element-feature" data-parent="0">Add Feature</button>
-                            </div>
-                        </div>
-                    </div>
-                <?php endif; ?>
-                <button type="button" class="button add-element-item">Add Element</button>
-            </div>
+            <!-- Individual Conversion Element Fields -->
+            <table>
+                <!-- Element 1: Value Propositions -->
+                <tr>
+                    <th><label for="high_converting_website_element_1_title">Element 1 Title</label></th>
+                    <td>
+                        <?php wp_editor(isset($elements[0]['title']) ? $elements[0]['title'] : 'Value Propositions', 'high_converting_website_element_1_title', array(
+                            'textarea_name' => 'high_converting_website_element_1_title',
+                            'textarea_rows' => 2,
+                            'teeny' => true,
+                            'media_buttons' => false
+                        )); ?>
+                    </td>
+                </tr>
+                <tr>
+                    <th><label for="high_converting_website_element_1_description">Element 1 Description</label></th>
+                    <td>
+                        <?php wp_editor(isset($elements[0]['description']) ? $elements[0]['description'] : 'Clear, compelling messaging that communicates your unique value and benefits.', 'high_converting_website_element_1_description', array(
+                            'textarea_name' => 'high_converting_website_element_1_description',
+                            'textarea_rows' => 4,
+                            'teeny' => true,
+                            'media_buttons' => false
+                        )); ?>
+                    </td>
+                </tr>
+                
+                <!-- Element 2: Call-to-Action (CTA) -->
+                <tr>
+                    <th><label for="high_converting_website_element_2_title">Element 2 Title</label></th>
+                    <td>
+                        <?php wp_editor(isset($elements[1]['title']) ? $elements[1]['title'] : 'Call-to-Action (CTA)', 'high_converting_website_element_2_title', array(
+                            'textarea_name' => 'high_converting_website_element_2_title',
+                            'textarea_rows' => 2,
+                            'teeny' => true,
+                            'media_buttons' => false
+                        )); ?>
+                    </td>
+                </tr>
+                <tr>
+                    <th><label for="high_converting_website_element_2_description">Element 2 Description</label></th>
+                    <td>
+                        <?php wp_editor(isset($elements[1]['description']) ? $elements[1]['description'] : 'Strategic placement and design of CTAs that guide users toward conversion.', 'high_converting_website_element_2_description', array(
+                            'textarea_name' => 'high_converting_website_element_2_description',
+                            'textarea_rows' => 4,
+                            'teeny' => true,
+                            'media_buttons' => false
+                        )); ?>
+                    </td>
+                </tr>
+                
+                <!-- Element 3: Trust Signals -->
+                <tr>
+                    <th><label for="high_converting_website_element_3_title">Element 3 Title</label></th>
+                    <td>
+                        <?php wp_editor(isset($elements[2]['title']) ? $elements[2]['title'] : 'Trust Signals', 'high_converting_website_element_3_title', array(
+                            'textarea_name' => 'high_converting_website_element_3_title',
+                            'textarea_rows' => 2,
+                            'teeny' => true,
+                            'media_buttons' => false
+                        )); ?>
+                    </td>
+                </tr>
+                <tr>
+                    <th><label for="high_converting_website_element_3_description">Element 3 Description</label></th>
+                    <td>
+                        <?php wp_editor(isset($elements[2]['description']) ? $elements[2]['description'] : 'Elements that build credibility and reduce purchase anxiety.', 'high_converting_website_element_3_description', array(
+                            'textarea_name' => 'high_converting_website_element_3_description',
+                            'textarea_rows' => 4,
+                            'teeny' => true,
+                            'media_buttons' => false
+                        )); ?>
+                    </td>
+                </tr>
+                
+                <!-- Element 4: User Experience -->
+                <tr>
+                    <th><label for="high_converting_website_element_4_title">Element 4 Title</label></th>
+                    <td>
+                        <?php wp_editor(isset($elements[3]['title']) ? $elements[3]['title'] : 'User Experience', 'high_converting_website_element_4_title', array(
+                            'textarea_name' => 'high_converting_website_element_4_title',
+                            'textarea_rows' => 2,
+                            'teeny' => true,
+                            'media_buttons' => false
+                        )); ?>
+                    </td>
+                </tr>
+                <tr>
+                    <th><label for="high_converting_website_element_4_description">Element 4 Description</label></th>
+                    <td>
+                        <?php wp_editor(isset($elements[3]['description']) ? $elements[3]['description'] : 'Smooth, intuitive navigation and user flow optimisation.', 'high_converting_website_element_4_description', array(
+                            'textarea_name' => 'high_converting_website_element_4_description',
+                            'textarea_rows' => 4,
+                            'teeny' => true,
+                            'media_buttons' => false
+                        )); ?>
+                    </td>
+                </tr>
+            </table>
         </div>
 
         <!-- Website Types Section -->
@@ -840,61 +1133,113 @@ function high_converting_website_meta_box_callback($post) {
                 </tr>
             </table>
 
-            <div class="repeater" id="types_repeater">
-                <div class="repeater-label">Website Types</div>
-                <?php if (!empty($types)) : ?>
-                    <?php foreach ($types as $index => $type) : ?>
-                        <div class="repeater-item">
-                            <span class="remove-item">�</span>
-                            <div class="item-fields">
-                                <p>
-                                    <label class="repeater-label">Website Type Title</label>
-                                    <input type="text" name="high_converting_website_types[<?php echo $index; ?>][title]" value="<?php echo esc_attr($type['title']); ?>" placeholder="Type title..." />
-                                </p>
-                                <p>
-                                    <label class="repeater-label">Results Text</label>
-                                    <input type="text" name="high_converting_website_types[<?php echo $index; ?>][results]" value="<?php echo esc_attr($type['results']); ?>" placeholder="e.g., Average: 200% lead increase" />
-                                </p>
-                                
-                                <div class="nested-repeater">
-                                    <label class="repeater-label">Type Features</label>
-                                    <?php foreach ($type['features'] as $feature_index => $feature) : ?>
-                                        <div class="repeater-item">
-                                            <span class="remove-item">�</span>
-                                            <input type="text" name="high_converting_website_types[<?php echo $index; ?>][features][]" value="<?php echo esc_attr($feature); ?>" placeholder="Feature..." />
-                                        </div>
-                                    <?php endforeach; ?>
-                                    <button type="button" class="button add-type-feature" data-parent="<?php echo $index; ?>">Add Feature</button>
-                                </div>
-                            </div>
-                        </div>
-                    <?php endforeach; ?>
-                <?php else : ?>
-                    <div class="repeater-item">
-                        <span class="remove-item">�</span>
-                        <div class="item-fields">
-                            <p>
-                                <label class="repeater-label">Website Type Title</label>
-                                <input type="text" name="high_converting_website_types[0][title]" value="" placeholder="Type title..." />
-                            </p>
-                            <p>
-                                <label class="repeater-label">Results Text</label>
-                                <input type="text" name="high_converting_website_types[0][results]" value="" placeholder="e.g., Average: 200% lead increase" />
-                            </p>
-                            
-                            <div class="nested-repeater">
-                                <label class="repeater-label">Type Features</label>
-                                <div class="repeater-item">
-                                    <span class="remove-item">�</span>
-                                    <input type="text" name="high_converting_website_types[0][features][]" value="" placeholder="Feature..." />
-                                </div>
-                                <button type="button" class="button add-type-feature" data-parent="0">Add Feature</button>
-                            </div>
-                        </div>
-                    </div>
-                <?php endif; ?>
-                <button type="button" class="button add-type-item">Add Website Type</button>
-            </div>
+            <!-- Individual Website Type Fields -->
+            <table>
+                <!-- Type 1: Lead Generation Websites -->
+                <tr>
+                    <th><label for="high_converting_website_type_1_title">Website Type 1 Title</label></th>
+                    <td>
+                        <?php wp_editor(isset($types[0]['title']) ? $types[0]['title'] : 'Lead Generation Websites', 'high_converting_website_type_1_title', array(
+                            'textarea_name' => 'high_converting_website_type_1_title',
+                            'textarea_rows' => 2,
+                            'teeny' => true,
+                            'media_buttons' => false
+                        )); ?>
+                    </td>
+                </tr>
+                <tr>
+                    <th><label for="high_converting_website_type_1_description">Website Type 1 Description</label></th>
+                    <td>
+                        <?php wp_editor(isset($types[0]['description']) ? $types[0]['description'] : 'Specialized optimization for websites focused on capturing leads and converting visitors into potential customers.', 'high_converting_website_type_1_description', array(
+                            'textarea_name' => 'high_converting_website_type_1_description',
+                            'textarea_rows' => 4,
+                            'teeny' => true,
+                            'media_buttons' => false
+                        )); ?>
+                    </td>
+                </tr>
+                <tr>
+                    <th><label for="high_converting_website_type_1_results">Website Type 1 Results</label></th>
+                    <td>
+                        <?php wp_editor(isset($types[0]['results']) ? $types[0]['results'] : 'Average: 200% lead increase', 'high_converting_website_type_1_results', array(
+                            'textarea_name' => 'high_converting_website_type_1_results',
+                            'textarea_rows' => 2,
+                            'teeny' => true,
+                            'media_buttons' => false
+                        )); ?>
+                    </td>
+                </tr>
+                
+                <!-- Type 2: E-commerce Websites -->
+                <tr>
+                    <th><label for="high_converting_website_type_2_title">Website Type 2 Title</label></th>
+                    <td>
+                        <?php wp_editor(isset($types[1]['title']) ? $types[1]['title'] : 'E-commerce Websites', 'high_converting_website_type_2_title', array(
+                            'textarea_name' => 'high_converting_website_type_2_title',
+                            'textarea_rows' => 2,
+                            'teeny' => true,
+                            'media_buttons' => false
+                        )); ?>
+                    </td>
+                </tr>
+                <tr>
+                    <th><label for="high_converting_website_type_2_description">Website Type 2 Description</label></th>
+                    <td>
+                        <?php wp_editor(isset($types[1]['description']) ? $types[1]['description'] : 'Complete optimization for online stores to increase sales, reduce cart abandonment, and maximize revenue.', 'high_converting_website_type_2_description', array(
+                            'textarea_name' => 'high_converting_website_type_2_description',
+                            'textarea_rows' => 4,
+                            'teeny' => true,
+                            'media_buttons' => false
+                        )); ?>
+                    </td>
+                </tr>
+                <tr>
+                    <th><label for="high_converting_website_type_2_results">Website Type 2 Results</label></th>
+                    <td>
+                        <?php wp_editor(isset($types[1]['results']) ? $types[1]['results'] : 'Average: 150% sales increase', 'high_converting_website_type_2_results', array(
+                            'textarea_name' => 'high_converting_website_type_2_results',
+                            'textarea_rows' => 2,
+                            'teeny' => true,
+                            'media_buttons' => false
+                        )); ?>
+                    </td>
+                </tr>
+                
+                <!-- Type 3: Service-Based Websites -->
+                <tr>
+                    <th><label for="high_converting_website_type_3_title">Website Type 3 Title</label></th>
+                    <td>
+                        <?php wp_editor(isset($types[2]['title']) ? $types[2]['title'] : 'Service-Based Websites', 'high_converting_website_type_3_title', array(
+                            'textarea_name' => 'high_converting_website_type_3_title',
+                            'textarea_rows' => 2,
+                            'teeny' => true,
+                            'media_buttons' => false
+                        )); ?>
+                    </td>
+                </tr>
+                <tr>
+                    <th><label for="high_converting_website_type_3_description">Website Type 3 Description</label></th>
+                    <td>
+                        <?php wp_editor(isset($types[2]['description']) ? $types[2]['description'] : 'Tailored optimization for service providers to showcase expertise and convert visitors into clients.', 'high_converting_website_type_3_description', array(
+                            'textarea_name' => 'high_converting_website_type_3_description',
+                            'textarea_rows' => 4,
+                            'teeny' => true,
+                            'media_buttons' => false
+                        )); ?>
+                    </td>
+                </tr>
+                <tr>
+                    <th><label for="high_converting_website_type_3_results">Website Type 3 Results</label></th>
+                    <td>
+                        <?php wp_editor(isset($types[2]['results']) ? $types[2]['results'] : 'Average: 180% inquiry increase', 'high_converting_website_type_3_results', array(
+                            'textarea_name' => 'high_converting_website_type_3_results',
+                            'textarea_rows' => 2,
+                            'teeny' => true,
+                            'media_buttons' => false
+                        )); ?>
+                    </td>
+                </tr>
+            </table>
         </div>
 
         <!-- Conversion Tools Section -->
@@ -914,53 +1259,80 @@ function high_converting_website_meta_box_callback($post) {
                 </tr>
             </table>
 
-            <div class="repeater" id="tools_repeater">
-                <div class="repeater-label">Tool Categories</div>
-                <?php if (!empty($tools)) : ?>
-                    <?php foreach ($tools as $index => $tool) : ?>
-                        <div class="repeater-item">
-                            <span class="remove-item">�</span>
-                            <div class="item-fields">
-                                <p>
-                                    <label class="repeater-label">Tool Category Title</label>
-                                    <input type="text" name="high_converting_website_tools[<?php echo $index; ?>][title]" value="<?php echo esc_attr($tool['title']); ?>" placeholder="Category title..." />
-                                </p>
-                                
-                                <div class="nested-repeater">
-                                    <label class="repeater-label">Tool Items</label>
-                                    <?php foreach ($tool['items'] as $item_index => $item) : ?>
-                                        <div class="repeater-item">
-                                            <span class="remove-item">�</span>
-                                            <input type="text" name="high_converting_website_tools[<?php echo $index; ?>][items][]" value="<?php echo esc_attr($item); ?>" placeholder="Tool item..." />
-                                        </div>
-                                    <?php endforeach; ?>
-                                    <button type="button" class="button add-tool-item" data-parent="<?php echo $index; ?>">Add Item</button>
-                                </div>
-                            </div>
-                        </div>
-                    <?php endforeach; ?>
-                <?php else : ?>
-                    <div class="repeater-item">
-                        <span class="remove-item">�</span>
-                        <div class="item-fields">
-                            <p>
-                                <label class="repeater-label">Tool Category Title</label>
-                                <input type="text" name="high_converting_website_tools[0][title]" value="" placeholder="Category title..." />
-                            </p>
-                            
-                            <div class="nested-repeater">
-                                <label class="repeater-label">Tool Items</label>
-                                <div class="repeater-item">
-                                    <span class="remove-item">�</span>
-                                    <input type="text" name="high_converting_website_tools[0][items][]" value="" placeholder="Tool item..." />
-                                </div>
-                                <button type="button" class="button add-tool-item" data-parent="0">Add Item</button>
-                            </div>
-                        </div>
-                    </div>
-                <?php endif; ?>
-                <button type="button" class="button add-tool-category">Add Tool Category</button>
-            </div>
+            <!-- Individual Tool Category Fields -->
+            <table>
+                <!-- Tool Category 1: Analytics & Testing -->
+                <tr>
+                    <th><label for="high_converting_website_tool_1_title">Tool Category 1 Title</label></th>
+                    <td>
+                        <?php wp_editor(isset($tools[0]['title']) ? $tools[0]['title'] : 'Analytics & Testing', 'high_converting_website_tool_1_title', array(
+                            'textarea_name' => 'high_converting_website_tool_1_title',
+                            'textarea_rows' => 2,
+                            'teeny' => true,
+                            'media_buttons' => false
+                        )); ?>
+                    </td>
+                </tr>
+                <tr>
+                    <th><label for="high_converting_website_tool_1_description">Tool Category 1 Description</label></th>
+                    <td>
+                        <?php wp_editor(isset($tools[0]['description']) ? $tools[0]['description'] : 'Advanced analytics and testing tools to measure performance and optimize conversion rates.', 'high_converting_website_tool_1_description', array(
+                            'textarea_name' => 'high_converting_website_tool_1_description',
+                            'textarea_rows' => 4,
+                            'teeny' => true,
+                            'media_buttons' => false
+                        )); ?>
+                    </td>
+                </tr>
+                
+                <!-- Tool Category 2: Performance Monitoring -->
+                <tr>
+                    <th><label for="high_converting_website_tool_2_title">Tool Category 2 Title</label></th>
+                    <td>
+                        <?php wp_editor(isset($tools[1]['title']) ? $tools[1]['title'] : 'Performance Monitoring', 'high_converting_website_tool_2_title', array(
+                            'textarea_name' => 'high_converting_website_tool_2_title',
+                            'textarea_rows' => 2,
+                            'teeny' => true,
+                            'media_buttons' => false
+                        )); ?>
+                    </td>
+                </tr>
+                <tr>
+                    <th><label for="high_converting_website_tool_2_description">Tool Category 2 Description</label></th>
+                    <td>
+                        <?php wp_editor(isset($tools[1]['description']) ? $tools[1]['description'] : 'Comprehensive performance monitoring tools to track website speed and user experience metrics.', 'high_converting_website_tool_2_description', array(
+                            'textarea_name' => 'high_converting_website_tool_2_description',
+                            'textarea_rows' => 4,
+                            'teeny' => true,
+                            'media_buttons' => false
+                        )); ?>
+                    </td>
+                </tr>
+                
+                <!-- Tool Category 3: User Experience -->
+                <tr>
+                    <th><label for="high_converting_website_tool_3_title">Tool Category 3 Title</label></th>
+                    <td>
+                        <?php wp_editor(isset($tools[2]['title']) ? $tools[2]['title'] : 'User Experience', 'high_converting_website_tool_3_title', array(
+                            'textarea_name' => 'high_converting_website_tool_3_title',
+                            'textarea_rows' => 2,
+                            'teeny' => true,
+                            'media_buttons' => false
+                        )); ?>
+                    </td>
+                </tr>
+                <tr>
+                    <th><label for="high_converting_website_tool_3_description">Tool Category 3 Description</label></th>
+                    <td>
+                        <?php wp_editor(isset($tools[2]['description']) ? $tools[2]['description'] : 'User experience analysis tools to understand visitor behavior and optimize user journeys.', 'high_converting_website_tool_3_description', array(
+                            'textarea_name' => 'high_converting_website_tool_3_description',
+                            'textarea_rows' => 4,
+                            'teeny' => true,
+                            'media_buttons' => false
+                        )); ?>
+                    </td>
+                </tr>
+            </table>
         </div>
 
         <!-- Testimonial Section (No Image) -->
@@ -1065,23 +1437,42 @@ function high_converting_website_meta_box_callback($post) {
                 </tr>
             </table>
 
-            <div class="repeater" id="cta_benefits_repeater">
-                <div class="repeater-label">CTA Benefits</div>
-                <?php if (!empty($cta_benefits)) : ?>
-                    <?php foreach ($cta_benefits as $index => $benefit) : ?>
-                        <div class="repeater-item">
-                            <span class="remove-item">�</span>
-                            <input type="text" name="high_converting_website_cta_benefits[]" value="<?php echo esc_attr($benefit); ?>" placeholder="Enter a CTA benefit..." />
-                        </div>
-                    <?php endforeach; ?>
-                <?php else : ?>
-                    <div class="repeater-item">
-                        <span class="remove-item">�</span>
-                        <input type="text" name="high_converting_website_cta_benefits[]" value="" placeholder="Enter a CTA benefit..." />
-                    </div>
-                <?php endif; ?>
-                <button type="button" class="button add-item">Add Benefit</button>
-            </div>
+            <!-- Individual CTA Benefit Fields -->
+            <table>
+                <tr>
+                    <th><label for="high_converting_website_cta_benefit_1">CTA Benefit 1</label></th>
+                    <td>
+                        <?php wp_editor(isset($cta_benefits[0]) ? $cta_benefits[0] : '✓ Conversion-focused design', 'high_converting_website_cta_benefit_1', array(
+                            'textarea_name' => 'high_converting_website_cta_benefit_1',
+                            'textarea_rows' => 2,
+                            'teeny' => true,
+                            'media_buttons' => false
+                        )); ?>
+                    </td>
+                </tr>
+                <tr>
+                    <th><label for="high_converting_website_cta_benefit_2">CTA Benefit 2</label></th>
+                    <td>
+                        <?php wp_editor(isset($cta_benefits[1]) ? $cta_benefits[1] : '✓ Mobile optimization included', 'high_converting_website_cta_benefit_2', array(
+                            'textarea_name' => 'high_converting_website_cta_benefit_2',
+                            'textarea_rows' => 2,
+                            'teeny' => true,
+                            'media_buttons' => false
+                        )); ?>
+                    </td>
+                </tr>
+                <tr>
+                    <th><label for="high_converting_website_cta_benefit_3">CTA Benefit 3</label></th>
+                    <td>
+                        <?php wp_editor(isset($cta_benefits[2]) ? $cta_benefits[2] : '✓ A/B testing setup', 'high_converting_website_cta_benefit_3', array(
+                            'textarea_name' => 'high_converting_website_cta_benefit_3',
+                            'textarea_rows' => 2,
+                            'teeny' => true,
+                            'media_buttons' => false
+                        )); ?>
+                    </td>
+                </tr>
+            </table>
         </div>
     </div>
 
