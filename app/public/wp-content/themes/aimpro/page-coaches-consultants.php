@@ -14,6 +14,46 @@ $overview_content = get_post_meta(get_the_ID(), '_coaches_consultants_overview_c
 $overview_image = get_post_meta(get_the_ID(), '_coaches_consultants_overview_image', true);
 $challenges_title = get_post_meta(get_the_ID(), '_coaches_consultants_challenges_title', true);
 $challenges = get_post_meta(get_the_ID(), '_coaches_consultants_challenges', true);
+
+// Services section
+$services_title = get_post_meta(get_the_ID(), '_coaches_consultants_services_title', true);
+$services = get_post_meta(get_the_ID(), '_coaches_consultants_services', true);
+
+// Case study section
+$case_study_label = get_post_meta(get_the_ID(), '_coaches_consultants_case_study_label', true);
+$case_study_title = get_post_meta(get_the_ID(), '_coaches_consultants_case_study_title', true);
+$case_study_content = get_post_meta(get_the_ID(), '_coaches_consultants_case_study_content', true);
+$case_study_challenge_title = get_post_meta(get_the_ID(), '_coaches_consultants_case_study_challenge_title', true);
+$case_study_challenges = get_post_meta(get_the_ID(), '_coaches_consultants_case_study_challenges', true);
+$case_study_solution_title = get_post_meta(get_the_ID(), '_coaches_consultants_case_study_solution_title', true);
+$case_study_solutions = get_post_meta(get_the_ID(), '_coaches_consultants_case_study_solutions', true);
+$case_study_results_title = get_post_meta(get_the_ID(), '_coaches_consultants_case_study_results_title', true);
+$case_study_results = get_post_meta(get_the_ID(), '_coaches_consultants_case_study_results', true);
+$case_study_link_text = get_post_meta(get_the_ID(), '_coaches_consultants_case_study_link_text', true);
+$case_study_link_url = get_post_meta(get_the_ID(), '_coaches_consultants_case_study_link_url', true);
+
+// Process section
+$process_title = get_post_meta(get_the_ID(), '_coaches_consultants_process_title', true);
+$process_steps = get_post_meta(get_the_ID(), '_coaches_consultants_process_steps', true);
+
+// Insights section
+$insights_title = get_post_meta(get_the_ID(), '_coaches_consultants_insights_title', true);
+$insights = get_post_meta(get_the_ID(), '_coaches_consultants_insights', true);
+
+// Testimonial section
+$testimonial_quote = get_post_meta(get_the_ID(), '_coaches_consultants_testimonial_quote', true);
+$testimonial_name = get_post_meta(get_the_ID(), '_coaches_consultants_testimonial_name', true);
+$testimonial_position = get_post_meta(get_the_ID(), '_coaches_consultants_testimonial_position', true);
+$testimonial_company = get_post_meta(get_the_ID(), '_coaches_consultants_testimonial_company', true);
+
+// CTA section
+$cta_title = get_post_meta(get_the_ID(), '_coaches_consultants_cta_title', true);
+$cta_subtitle = get_post_meta(get_the_ID(), '_coaches_consultants_cta_subtitle', true);
+$cta_primary_text = get_post_meta(get_the_ID(), '_coaches_consultants_cta_primary_text', true);
+$cta_primary_url = get_post_meta(get_the_ID(), '_coaches_consultants_cta_primary_url', true);
+$cta_secondary_text = get_post_meta(get_the_ID(), '_coaches_consultants_cta_secondary_text', true);
+$cta_secondary_url = get_post_meta(get_the_ID(), '_coaches_consultants_cta_secondary_url', true);
+$cta_benefits = get_post_meta(get_the_ID(), '_coaches_consultants_cta_benefits', true);
 ?>
 
 <main id="main" class="main-content">
@@ -74,66 +114,90 @@ $challenges = get_post_meta(get_the_ID(), '_coaches_consultants_challenges', tru
         </section>        <!-- Coaches Consultants Services -->
         <section class="coaches-consultants-services animate-on-scroll animate-fade-up">
             <div class="section-content">
-                <h2 class="animate-on-scroll animate-fade-up">Our Coaching & Consulting Marketing Services</h2>
+                <h2 class="animate-on-scroll animate-fade-up"><?php echo wp_kses_post($services_title ?: 'Our Coaching & Consulting Marketing Services'); ?></h2>
                 <div class="benefits-grid-2x2 animate-on-scroll animate-fade-up">
-                      <div class="benefit-card animate-on-scroll animate-stagger animate-fade-up">
-                        <div class="benefit-icon">
-                            <i class="fas fa-bullseye"></i>
+                    <?php if (!empty($services)): ?>
+                        <?php foreach ($services as $service): ?>
+                            <div class="benefit-card animate-on-scroll animate-stagger animate-fade-up">
+                                <div class="benefit-icon">
+                                    <i class="<?php echo esc_attr($service['icon'] ?: 'fas fa-star'); ?>"></i>
+                                </div>
+                                <div class="benefit-content">
+                                    <h3><?php echo wp_kses_post($service['title']); ?></h3>
+                                    <p><?php echo wp_kses_post($service['description']); ?></p>
+                                    <?php if (!empty($service['features'])): ?>
+                                        <ul class="target-list">
+                                            <?php foreach ($service['features'] as $feature): ?>
+                                                <li><?php echo wp_kses_post($feature); ?></li>
+                                            <?php endforeach; ?>
+                                        </ul>
+                                    <?php endif; ?>
+                                </div>
+                            </div>
+                        <?php endforeach; ?>
+                    <?php else: ?>
+                        <!-- Default fallback services -->
+                        <div class="benefit-card animate-on-scroll animate-stagger animate-fade-up">
+                            <div class="benefit-icon">
+                                <i class="fas fa-user-tie"></i>
+                            </div>
+                            <div class="benefit-content">
+                                <h3>Personal Brand Strategy</h3>
+                                <p>Build a powerful personal brand that positions you as the authority in your niche and attracts your ideal coaching clients.</p>
+                                <ul class="target-list">
+                                    <li>Authority positioning</li>
+                                    <li>Brand story development</li>
+                                    <li>Brand voice and messaging</li>
+                                    <li>Visual identity system</li>
+                                </ul>
+                            </div>
                         </div>
-                        <div class="benefit-content">
-                            <h3>Personal Brand Development</h3>
-                            <p>Build a powerful personal brand that establishes your authority and attracts your ideal clients consistently.</p>
-                            <ul class="target-list">
-                                <li>Brand positioning strategy</li>
-                                <li>Professional photography & video</li>
-                                <li>Website design for consultants</li>
-                                <li>Personal brand storytelling</li>
-                            </ul>
+                        <div class="benefit-card animate-on-scroll animate-stagger animate-fade-up">
+                            <div class="benefit-icon">
+                                <i class="fas fa-bullseye"></i>
+                            </div>
+                            <div class="benefit-content">
+                                <h3>High-Ticket Client Acquisition</h3>
+                                <p>Attract premium clients with targeted marketing campaigns designed to generate high-quality discovery calls and consultations.</p>
+                                <ul class="target-list">
+                                    <li>Ideal client targeting</li>
+                                    <li>Lead magnet creation</li>
+                                    <li>Automated nurture sequences</li>
+                                    <li>Application process optimisation</li>
+                                </ul>
+                            </div>
                         </div>
-                    </div>                    <div class="benefit-card animate-on-scroll animate-stagger animate-fade-up">
-                        <div class="benefit-icon">
-                            <i class="fas fa-lightbulb"></i>
+                        <div class="benefit-card animate-on-scroll animate-stagger animate-fade-up">
+                            <div class="benefit-icon">
+                                <i class="fas fa-chart-line"></i>
+                            </div>
+                            <div class="benefit-content">
+                                <h3>Authority Content Marketing</h3>
+                                <p>Establish your expertise with valuable content that educates prospects while positioning you as the go-to expert in your field.</p>
+                                <ul class="target-list">
+                                    <li>Thought leadership content</li>
+                                    <li>Podcast & interview strategy</li>
+                                    <li>Educational resources</li>
+                                    <li>SEO-optimised articles</li>
+                                </ul>
+                            </div>
                         </div>
-                        <div class="benefit-content">
-                            <h3>Content Marketing & Thought Leadership</h3>
-                            <p>Showcase your expertise through strategic content that demonstrates value and builds trust with potential clients.</p>
-                            <ul class="target-list">
-                                <li>Blog writing and strategy</li>
-                                <li>Video content creation</li>
-                                <li>Podcast development</li>
-                                <li>Social media content</li>
-                            </ul>
+                        <div class="benefit-card animate-on-scroll animate-stagger animate-fade-up">
+                            <div class="benefit-icon">
+                                <i class="fas fa-comment-dollar"></i>
+                            </div>
+                            <div class="benefit-content">
+                                <h3>Digital Sales Funnels</h3>
+                                <p>Convert more prospects into paying clients with proven sales funnels and automation that scale your coaching business.</p>
+                                <ul class="target-list">
+                                    <li>Webinar & workshop funnels</li>
+                                    <li>Application & discovery call systems</li>
+                                    <li>Email sequences</li>
+                                    <li>Conversion optimisation</li>
+                                </ul>
+                            </div>
                         </div>
-                    </div>                    <div class="benefit-card animate-on-scroll animate-stagger animate-fade-up">
-                        <div class="benefit-icon">
-                            <i class="fas fa-rocket"></i>
-                        </div>
-                        <div class="benefit-content">
-                            <h3>Lead Generation Funnels</h3>
-                            <p>Create sophisticated marketing funnels that attract, nurture, and convert your ideal clients automatically.</p>
-                            <ul class="target-list">
-                                <li>Lead magnet development</li>
-                                <li>Email nurture sequences</li>
-                                <li>Webinar funnel creation</li>
-                                <li>Client onboarding automation</li>
-                            </ul>
-                        </div>
-                    </div>                    <div class="benefit-card animate-on-scroll animate-stagger animate-fade-up">
-                        <div class="benefit-icon">
-                            <i class="fab fa-linkedin"></i>
-                        </div>
-                        <div class="benefit-content">
-                            <h3>LinkedIn & Social Media Strategy</h3>
-                            <p>Build your professional network and generate high-value leads through strategic social media engagement.</p>
-                            <ul class="target-list">
-                                <li>LinkedIn profile optimisation</li>
-                                <li>Content distribution strategy</li>
-                                <li>Social media advertising</li>
-                                <li>Community building</li>
-                            </ul>
-                        </div>
-                    </div>
-
+                    <?php endif; ?>
                 </div>
             </div>
         </section>        <!-- Coaches Consultants Success Story -->
@@ -141,146 +205,215 @@ $challenges = get_post_meta(get_the_ID(), '_coaches_consultants_challenges', tru
             <div class="section-content">
                 <div class="case-study-content">
                     <div class="case-study-text animate-on-scroll animate-slide-left">
-                        <span class="case-study-label">Success Story</span>
-                        <h2>Strategic Business Solutions: 400% Client Growth</h2>
-                        <p>Mark Anderson, a business strategy consultant, needed to establish his authority and generate consistent high-value client leads.</p>
+                        <span class="case-study-label"><?php echo wp_kses_post($case_study_label ?: 'Success Story'); ?></span>
+                        <h2><?php echo wp_kses_post($case_study_title ?: 'Strategic Business Solutions: 400% Client Growth'); ?></h2>
+                        <p><?php echo wp_kses_post($case_study_content ?: 'Mark Anderson, a business strategy consultant, needed to establish his authority and generate consistent high-value client leads.'); ?></p>
                         
                         <div class="case-study-challenge animate-on-scroll animate-fade-up">
-                            <h3>The Challenge</h3>
-                            <ul>
-                                <li>Invisible in a crowded consulting market</li>
-                                <li>Inconsistent lead generation</li>
-                                <li>Difficulty commanding premium rates</li>
-                                <li>Lack of systematic client acquisition</li>
-                            </ul>
-                        </div>                        <div class="case-study-solution animate-on-scroll animate-fade-up">
-                            <h3>Our Solution</h3>
-                            <ul>
-                                <li>Personal brand development strategy</li>
-                                <li>Thought leadership content creation</li>
-                                <li>LinkedIn authority building</li>
-                                <li>Automated lead nurturing funnel</li>
-                            </ul>
+                            <h3><?php echo wp_kses_post($case_study_challenge_title ?: 'The Challenge'); ?></h3>
+                            <?php if (!empty($case_study_challenges)): ?>
+                                <ul>
+                                    <?php foreach ($case_study_challenges as $challenge): ?>
+                                        <li><?php echo wp_kses_post($challenge); ?></li>
+                                    <?php endforeach; ?>
+                                </ul>
+                            <?php else: ?>
+                                <ul>
+                                    <li>Low visibility in a competitive niche</li>
+                                    <li>Inconsistent lead generation</li>
+                                    <li>Under-priced services</li>
+                                    <li>Limited scalability with 1:1 clients</li>
+                                </ul>
+                            <?php endif; ?>
+                        </div>
+
+                        <div class="case-study-solution animate-on-scroll animate-fade-up">
+                            <h3><?php echo wp_kses_post($case_study_solution_title ?: 'Our Solution'); ?></h3>
+                            <?php if (!empty($case_study_solutions)): ?>
+                                <ul>
+                                    <?php foreach ($case_study_solutions as $solution): ?>
+                                        <li><?php echo wp_kses_post($solution); ?></li>
+                                    <?php endforeach; ?>
+                                </ul>
+                            <?php else: ?>
+                                <ul>
+                                    <li>Authority positioning strategy</li>
+                                    <li>Automated lead generation system</li>
+                                    <li>Premium service packaging</li>
+                                    <li>Group program development</li>
+                                </ul>
+                            <?php endif; ?>
                         </div>
                     </div>
                     <div class="case-study-results animate-on-scroll animate-slide-right">
-                        <h3>Results After 9 Months</h3>                        <div class="results-grid">
-                            <div class="result-item animate-on-scroll animate-stagger animate-scale-up">
-                                <div class="result-number">400%</div>
-                                <div class="result-label">Client Base Growth</div>
-                            </div>
-                            <div class="result-item animate-on-scroll animate-stagger animate-scale-up">
-                                <div class="result-number">250%</div>
-                                <div class="result-label">LinkedIn Engagement</div>
-                            </div>
-                            <div class="result-item animate-on-scroll animate-stagger animate-scale-up">
-                                <div class="result-number">180%</div>
-                                <div class="result-label">Rate Increase</div>
-                            </div>
-                            <div class="result-item animate-on-scroll animate-stagger animate-scale-up">
-                                <div class="result-number">90%</div>
-                                <div class="result-label">Referral Rate</div>
-                            </div>
+                        <h3><?php echo wp_kses_post($case_study_results_title ?: 'Results After 9 Months'); ?></h3>
+                        <div class="results-grid">
+                            <?php if (!empty($case_study_results)): ?>
+                                <?php foreach ($case_study_results as $result): ?>
+                                    <div class="result-item animate-on-scroll animate-stagger animate-scale-up">
+                                        <div class="result-number"><?php echo wp_kses_post($result['number']); ?></div>
+                                        <div class="result-label"><?php echo wp_kses_post($result['label']); ?></div>
+                                    </div>
+                                <?php endforeach; ?>
+                            <?php else: ?>
+                                <div class="result-item animate-on-scroll animate-stagger animate-scale-up">
+                                    <div class="result-number">320%</div>
+                                    <div class="result-label">Increase in Discovery Calls</div>
+                                </div>
+                                <div class="result-item animate-on-scroll animate-stagger animate-scale-up">
+                                    <div class="result-number">250%</div>
+                                    <div class="result-label">Increase in Client Value</div>
+                                </div>
+                                <div class="result-item animate-on-scroll animate-stagger animate-scale-up">
+                                    <div class="result-number">400%</div>
+                                    <div class="result-label">Growth in Email Subscribers</div>
+                                </div>
+                                <div class="result-item animate-on-scroll animate-stagger animate-scale-up">
+                                    <div class="result-number">75%</div>
+                                    <div class="result-label">Reduction in Working Hours</div>
+                                </div>
+                            <?php endif; ?>
                         </div>
-                        <a href="<?php echo home_url('/case-studies'); ?>" class="case-study-link">Read Full Case Study</a>
+                        <?php if ($case_study_link_text && $case_study_link_url): ?>
+                            <a href="<?php echo esc_url($case_study_link_url); ?>" class="case-study-link"><?php echo wp_kses_post($case_study_link_text); ?></a>
+                        <?php else: ?>
+                            <a href="<?php echo home_url('/case-studies'); ?>" class="case-study-link">Read Full Case Study</a>
+                        <?php endif; ?>
                     </div>
                 </div>
             </div>
         </section>        <!-- Coaches Consultants Process -->
         <section class="coaches-consultants-process animate-on-scroll animate-fade-up">
             <div class="section-content">
-                <h2 class="animate-on-scroll animate-fade-up">Our Coaching & Consulting Marketing Process</h2>
+                <h2 class="animate-on-scroll animate-fade-up"><?php echo wp_kses_post($process_title ?: 'Our Coaching & Consulting Marketing Process'); ?></h2>
                 <div class="process-steps animate-on-scroll animate-fade-up">
-                    
-                    <div class="process-step animate-on-scroll animate-stagger animate-fade-up">
-                        <div class="step-number">1</div>
-                        <div class="step-content">
-                            <h3>Niche & Positioning</h3>
-                            <p>Define your unique value proposition and identify your ideal client avatar for targeted messaging.</p>
+                    <?php if (!empty($process_steps)): ?>
+                        <?php foreach ($process_steps as $index => $step): ?>
+                            <div class="process-step animate-on-scroll animate-stagger animate-fade-up">
+                                <div class="step-number"><?php echo $index + 1; ?></div>
+                                <div class="step-content">
+                                    <h3><?php echo wp_kses_post($step['title']); ?></h3>
+                                    <p><?php echo wp_kses_post($step['description']); ?></p>
+                                </div>
+                            </div>
+                        <?php endforeach; ?>
+                    <?php else: ?>
+                        <!-- Default fallback steps -->
+                        <div class="process-step animate-on-scroll animate-stagger animate-fade-up">
+                            <div class="step-number">1</div>
+                            <div class="step-content">
+                                <h3>Brand & Audience Analysis</h3>
+                                <p>We analyse your current brand positioning, audience, and competitor landscape to identify your unique advantage.</p>
+                            </div>
                         </div>
-                    </div>                    <div class="process-step animate-on-scroll animate-stagger animate-fade-up">
-                        <div class="step-number">2</div>
-                        <div class="step-content">
-                            <h3>Brand Development</h3>
-                            <p>Create a powerful personal brand that establishes your authority and differentiates you from competitors.</p>
+                        <div class="process-step animate-on-scroll animate-stagger animate-fade-up">
+                            <div class="step-number">2</div>
+                            <div class="step-content">
+                                <h3>Authority Strategy Development</h3>
+                                <p>We create a customised marketing roadmap to position you as the go-to authority in your niche.</p>
+                            </div>
                         </div>
-                    </div>
-
-                    <div class="process-step animate-on-scroll animate-stagger animate-fade-up">
-                        <div class="step-number">3</div>
-                        <div class="step-content">
-                            <h3>Content Strategy</h3>
-                            <p>Develop valuable content that showcases your expertise and builds trust with potential clients.</p>
+                        <div class="process-step animate-on-scroll animate-stagger animate-fade-up">
+                            <div class="step-number">3</div>
+                            <div class="step-content">
+                                <h3>Lead Generation Implementation</h3>
+                                <p>We build and launch targeted campaigns designed to attract high-quality coaching prospects.</p>
+                            </div>
                         </div>
-                    </div>
-
-                    <div class="process-step animate-on-scroll animate-stagger animate-fade-up">
-                        <div class="step-number">4</div>
-                        <div class="step-content">
-                            <h3>Lead Generation</h3>
-                            <p>Implement automated systems to attract, nurture, and convert prospects into high-value clients.</p>
+                        <div class="process-step animate-on-scroll animate-stagger animate-fade-up">
+                            <div class="step-number">4</div>
+                            <div class="step-content">
+                                <h3>Conversion & Scale optimisation</h3>
+                                <p>We optimise your sales process and develop scalable programs to increase revenue while reducing time commitment.</p>
+                            </div>
                         </div>
-                    </div>
-
+                    <?php endif; ?>
                 </div>
             </div>
         </section>        <!-- Coaches Consultants Insights -->
         <section class="coaches-consultants-insights animate-on-scroll animate-fade-up">
             <div class="section-content">
-                <h2 class="animate-on-scroll animate-fade-up">Coaching & Consulting Industry Insights</h2>
+                <h2 class="animate-on-scroll animate-fade-up"><?php echo wp_kses_post($insights_title ?: 'Coaching & Consulting Industry Insights'); ?></h2>
                 <div class="results-grid animate-on-scroll animate-fade-up">
-                    
-                    <div class="result-item animate-on-scroll animate-stagger animate-scale-up">
-                        <div class="result-number">88%</div>
-                        <div class="result-label">Trust Building</div>
-                        <p>88% of clients hire coaches/consultants based on trust and credibility</p>
-                    </div>                    <div class="result-item animate-on-scroll animate-stagger animate-scale-up">
-                        <div class="result-number">75%</div>
-                        <div class="result-label">Content Influence</div>
-                        <p>75% of potential clients consume content before making contact</p>
-                    </div>
-
-                    <div class="result-item animate-on-scroll animate-stagger animate-scale-up">
-                        <div class="result-number">92%</div>
-                        <div class="result-label">Referral Importance</div>
-                        <p>92% of successful coaches get clients through referrals and word-of-mouth</p>
-                    </div>
-
-                    <div class="result-item animate-on-scroll animate-stagger animate-scale-up">
-                        <div class="result-number">67%</div>
-                        <div class="result-label">LinkedIn Research</div>
-                        <p>67% of B2B buyers research consultants on LinkedIn before hiring</p>
-                    </div>
-
+                    <?php if (!empty($insights)): ?>
+                        <?php foreach ($insights as $insight): ?>
+                            <div class="result-item animate-on-scroll animate-stagger animate-scale-up">
+                                <div class="result-number"><?php echo wp_kses_post($insight['stat']); ?></div>
+                                <div class="result-label"><?php echo wp_kses_post($insight['title']); ?></div>
+                                <p><?php echo wp_kses_post($insight['description']); ?></p>
+                            </div>
+                        <?php endforeach; ?>
+                    <?php else: ?>
+                        <!-- Default fallback insights -->
+                        <div class="result-item animate-on-scroll animate-stagger animate-scale-up">
+                            <div class="result-number">81%</div>
+                            <div class="result-label">Trust Factor</div>
+                            <p>81% of clients research coaches online before making a decision</p>
+                        </div>
+                        <div class="result-item animate-on-scroll animate-stagger animate-scale-up">
+                            <div class="result-number">68%</div>
+                            <div class="result-label">Content Influence</div>
+                            <p>68% of prospects choose coaches who provide valuable free content</p>
+                        </div>
+                        <div class="result-item animate-on-scroll animate-stagger animate-scale-up">
+                            <div class="result-number">73%</div>
+                            <div class="result-label">Referral Importance</div>
+                            <p>73% of coaching clients come from referrals and word of mouth</p>
+                        </div>
+                        <div class="result-item animate-on-scroll animate-stagger animate-scale-up">
+                            <div class="result-number">89%</div>
+                            <div class="result-label">Website Importance</div>
+                            <p>89% of prospects visit a coach's website before contacting them</p>
+                        </div>
+                    <?php endif; ?>
                 </div>
             </div>
         </section>        <!-- Coaches Consultants Testimonial -->
+        <?php if ($testimonial_quote || $testimonial_name): ?>
         <section class="coaches-consultants-testimonial animate-on-scroll animate-fade-up">
             <div class="section-content">
                 <div class="testimonial-content animate-on-scroll animate-slide-up">
                     <blockquote>
-                        "Aimpro Digital understood exactly what I needed as a consultant. They helped me build a powerful personal brand and create systems that generate high-quality leads consistently. My business has grown 400% and I can now command premium rates."
-                    </blockquote>                    <div class="testimonial-author">
+                        <?php echo wp_kses_post($testimonial_quote ?: '"Aimpro Digital understood exactly what I needed as a consultant. They helped me build a powerful personal brand and create systems that generate high-quality leads consistently. My business has grown 400% and I can now command premium rates."'); ?>
+                    </blockquote>
+                    <div class="testimonial-author">
                         <div class="author-info">
-                            <h4>Mark Anderson</h4>
-                            <span>Principal, Strategic Business Solutions</span>
-                            <div class="author-company">Business strategy consultant & executive coach</div>
+                            <h4><?php echo wp_kses_post($testimonial_name ?: 'Mark Anderson'); ?></h4>
+                            <span><?php echo wp_kses_post($testimonial_position ?: 'Principal, Strategic Business Solutions'); ?></span>
+                            <div class="author-company"><?php echo wp_kses_post($testimonial_company ?: 'Business strategy consultant & executive coach'); ?></div>
                         </div>
                     </div>
                 </div>
             </div>
-        </section>        <!-- CTA Section -->
+        </section>
+        <?php endif; ?>        <!-- CTA Section -->
         <section class="coaches-consultants-cta text-center animate-on-scroll animate-fade-up">
             <div class="section-content">
-                <h2 class="animate-on-scroll animate-fade-up">Ready to Scale Your Coaching or Consulting Business?</h2>
-                <p class="animate-on-scroll animate-fade-up">Let's discuss how our expertise can help you build a powerful personal brand and generate consistent high-value clients.</p>
+                <h2 class="animate-on-scroll animate-fade-up"><?php echo wp_kses_post($cta_title ?: 'Ready to Scale Your Coaching or Consulting Business?'); ?></h2>
+                <p class="animate-on-scroll animate-fade-up"><?php echo wp_kses_post($cta_subtitle ?: 'Let\'s discuss how our expertise can help you build a powerful personal brand and generate consistent high-value clients.'); ?></p>
                 <div class="cta-buttons animate-on-scroll animate-fade-up">
-                    <a href="<?php echo home_url('/contact'); ?>" class="btn btn-primary">Get Free Brand Audit</a>
-                    <a href="<?php echo home_url('/case-studies'); ?>" class="btn btn-secondary">View Coaching Success Stories</a>
-                </div>                <div class="cta-benefits animate-on-scroll animate-fade-up">
-                    <span class="benefit"><i class="fas fa-check" aria-hidden="true"></i> Personal brand strategy</span>
-                    <span class="benefit"><i class="fas fa-check" aria-hidden="true"></i> Lead generation systems</span>
-                    <span class="benefit"><i class="fas fa-check" aria-hidden="true"></i> Authority building expertise</span>
+                    <?php if ($cta_primary_text && $cta_primary_url): ?>
+                        <a href="<?php echo esc_url($cta_primary_url); ?>" class="btn btn-primary"><?php echo wp_kses_post($cta_primary_text); ?></a>
+                    <?php else: ?>
+                        <a href="<?php echo home_url('/contact'); ?>" class="btn btn-primary">Get Free Brand Audit</a>
+                    <?php endif; ?>
+                    
+                    <?php if ($cta_secondary_text && $cta_secondary_url): ?>
+                        <a href="<?php echo esc_url($cta_secondary_url); ?>" class="btn btn-secondary"><?php echo wp_kses_post($cta_secondary_text); ?></a>
+                    <?php else: ?>
+                        <a href="<?php echo home_url('/case-studies'); ?>" class="btn btn-secondary">View Coaching Success Stories</a>
+                    <?php endif; ?>
+                </div>
+                <div class="cta-benefits animate-on-scroll animate-fade-up">
+                    <?php if (!empty($cta_benefits)): ?>
+                        <?php foreach ($cta_benefits as $benefit): ?>
+                            <span class="benefit"><i class="fas fa-check" aria-hidden="true"></i> <?php echo wp_kses_post(str_replace('✓', '', $benefit)); ?></span>
+                        <?php endforeach; ?>
+                    <?php else: ?>
+                        <span class="benefit"><i class="fas fa-check" aria-hidden="true"></i> Expert authority positioning</span>
+                        <span class="benefit"><i class="fas fa-check" aria-hidden="true"></i> Premium client acquisition</span>
+                        <span class="benefit"><i class="fas fa-check" aria-hidden="true"></i> Business scaling strategies</span>
+                    <?php endif; ?>
                 </div>
             </div>
         </section>

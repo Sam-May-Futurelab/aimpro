@@ -412,10 +412,14 @@ function coaches_consultants_meta_box_callback($post) {
                 <?php foreach ($services as $index => $service): ?>
                     <div class="repeater-field">
                         <h4>Service <?php echo $index + 1; ?></h4>
-                        <input type="text" 
-                               name="coaches_consultants_services[<?php echo $index; ?>][icon]" 
-                               value="<?php echo esc_attr($service['icon']); ?>"
-                               placeholder="Icon class (e.g., fas fa-user-tie)" />
+                        <label>Icon (e.g., fas fa-user-tie)</label>
+                        <?php wp_editor($service['icon'], 'coaches_consultants_services_' . $index . '_icon', array(
+                            'textarea_name' => 'coaches_consultants_services[' . $index . '][icon]',
+                            'media_buttons' => false,
+                            'textarea_rows' => 1,
+                            'teeny' => true,
+                            'quicktags' => false
+                        )); ?>
                         <?php wp_editor($service['title'], 'coaches_consultants_services_' . $index . '_title', array(
                             'textarea_name' => 'coaches_consultants_services[' . $index . '][title]',
                             'media_buttons' => false,
@@ -504,12 +508,16 @@ function coaches_consultants_meta_box_callback($post) {
                 <td>
                     <div id="case-study-challenges-repeater">
                         <?php if (!empty($case_study_challenges)): ?>
-                            <?php foreach ($case_study_challenges as $challenge): ?>
+                            <?php foreach ($case_study_challenges as $index => $challenge): ?>
                                 <div class="repeater-field">
-                                    <input type="text" 
-                                           name="coaches_consultants_case_study_challenges[]" 
-                                           value="<?php echo esc_attr($challenge); ?>"
-                                           placeholder="Challenge item" />
+                                    <label>Challenge Item</label>
+                                    <?php wp_editor($challenge, 'coaches_consultants_case_study_challenges_' . $index, array(
+                                        'textarea_name' => 'coaches_consultants_case_study_challenges[]',
+                                        'media_buttons' => false,
+                                        'textarea_rows' => 2,
+                                        'teeny' => true,
+                                        'quicktags' => false
+                                    )); ?>
                                     <button type="button" class="button remove-repeater-item">Remove</button>
                                 </div>
                             <?php endforeach; ?>
@@ -535,12 +543,16 @@ function coaches_consultants_meta_box_callback($post) {
                 <td>
                     <div id="case-study-solutions-repeater">
                         <?php if (!empty($case_study_solutions)): ?>
-                            <?php foreach ($case_study_solutions as $solution): ?>
+                            <?php foreach ($case_study_solutions as $index => $solution): ?>
                                 <div class="repeater-field">
-                                    <input type="text" 
-                                           name="coaches_consultants_case_study_solutions[]" 
-                                           value="<?php echo esc_attr($solution); ?>"
-                                           placeholder="Solution item" />
+                                    <label>Solution Item</label>
+                                    <?php wp_editor($solution, 'coaches_consultants_case_study_solutions_' . $index, array(
+                                        'textarea_name' => 'coaches_consultants_case_study_solutions[]',
+                                        'media_buttons' => false,
+                                        'textarea_rows' => 2,
+                                        'teeny' => true,
+                                        'quicktags' => false
+                                    )); ?>
                                     <button type="button" class="button remove-repeater-item">Remove</button>
                                 </div>
                             <?php endforeach; ?>
@@ -568,14 +580,22 @@ function coaches_consultants_meta_box_callback($post) {
                 <?php foreach ($case_study_results as $index => $result): ?>
                     <div class="repeater-field">
                         <h4>Result <?php echo $index + 1; ?></h4>
-                        <input type="text" 
-                               name="coaches_consultants_case_study_results[<?php echo $index; ?>][number]" 
-                               value="<?php echo esc_attr($result['number']); ?>"
-                               placeholder="Number (e.g., 320%)" />
-                        <input type="text" 
-                               name="coaches_consultants_case_study_results[<?php echo $index; ?>][label]" 
-                               value="<?php echo esc_attr($result['label']); ?>"
-                               placeholder="Label" />
+                        <label>Number (e.g., 320%)</label>
+                        <?php wp_editor($result['number'], 'coaches_consultants_case_study_results_' . $index . '_number', array(
+                            'textarea_name' => 'coaches_consultants_case_study_results[' . $index . '][number]',
+                            'media_buttons' => false,
+                            'textarea_rows' => 2,
+                            'teeny' => true,
+                            'quicktags' => false
+                        )); ?>
+                        <label>Label</label>
+                        <?php wp_editor($result['label'], 'coaches_consultants_case_study_results_' . $index . '_label', array(
+                            'textarea_name' => 'coaches_consultants_case_study_results[' . $index . '][label]',
+                            'media_buttons' => false,
+                            'textarea_rows' => 2,
+                            'teeny' => true,
+                            'quicktags' => false
+                        )); ?>
                         <button type="button" class="button remove-repeater-item">Remove Result</button>
                     </div>
                 <?php endforeach; ?>
@@ -586,11 +606,13 @@ function coaches_consultants_meta_box_callback($post) {
             <tr>
                 <th><label for="coaches_consultants_case_study_link_text">Case Study Link Text</label></th>
                 <td>
-                    <input type="text" 
-                           id="coaches_consultants_case_study_link_text" 
-                           name="coaches_consultants_case_study_link_text" 
-                           value="<?php echo esc_attr($case_study_link_text); ?>"
-                           placeholder="Read Full Case Study" />
+                    <?php wp_editor($case_study_link_text, 'coaches_consultants_case_study_link_text', array(
+                        'textarea_name' => 'coaches_consultants_case_study_link_text',
+                        'media_buttons' => false,
+                        'textarea_rows' => 2,
+                        'teeny' => true,
+                        'quicktags' => false
+                    )); ?>
                 </td>
             </tr>
             <tr>
@@ -611,11 +633,13 @@ function coaches_consultants_meta_box_callback($post) {
             <tr>
                 <th><label for="coaches_consultants_process_title">Process Title</label></th>
                 <td>
-                    <input type="text" 
-                           id="coaches_consultants_process_title" 
-                           name="coaches_consultants_process_title" 
-                           value="<?php echo esc_attr($process_title); ?>"
-                           placeholder="Our Coaching & Consulting Marketing Process" />
+                    <?php wp_editor($process_title, 'coaches_consultants_process_title', array(
+                        'textarea_name' => 'coaches_consultants_process_title',
+                        'media_buttons' => false,
+                        'textarea_rows' => 3,
+                        'teeny' => true,
+                        'quicktags' => false
+                    )); ?>
                 </td>
             </tr>
         </table>
@@ -625,12 +649,20 @@ function coaches_consultants_meta_box_callback($post) {
                 <?php foreach ($process_steps as $index => $step): ?>
                     <div class="repeater-field">
                         <h4>Step <?php echo $index + 1; ?></h4>
-                        <input type="text" 
-                               name="coaches_consultants_process_steps[<?php echo $index; ?>][title]" 
-                               value="<?php echo esc_attr($step['title']); ?>"
-                               placeholder="Step title" />
-                        <textarea name="coaches_consultants_process_steps[<?php echo $index; ?>][description]" 
-                                  placeholder="Step description"><?php echo esc_textarea($step['description']); ?></textarea>
+                        <?php wp_editor($step['title'], 'coaches_consultants_process_steps_' . $index . '_title', array(
+                            'textarea_name' => 'coaches_consultants_process_steps[' . $index . '][title]',
+                            'media_buttons' => false,
+                            'textarea_rows' => 2,
+                            'teeny' => true,
+                            'quicktags' => false
+                        )); ?>
+                        <?php wp_editor($step['description'], 'coaches_consultants_process_steps_' . $index . '_description', array(
+                            'textarea_name' => 'coaches_consultants_process_steps[' . $index . '][description]',
+                            'media_buttons' => false,
+                            'textarea_rows' => 4,
+                            'teeny' => true,
+                            'quicktags' => false
+                        )); ?>
                         <button type="button" class="button remove-repeater-item">Remove Step</button>
                     </div>
                 <?php endforeach; ?>
@@ -643,11 +675,13 @@ function coaches_consultants_meta_box_callback($post) {
             <tr>
                 <th><label for="coaches_consultants_insights_title">Insights Title</label></th>
                 <td>
-                    <input type="text" 
-                           id="coaches_consultants_insights_title" 
-                           name="coaches_consultants_insights_title" 
-                           value="<?php echo esc_attr($insights_title); ?>"
-                           placeholder="Coaching & Consulting Industry Insights" />
+                    <?php wp_editor($insights_title, 'coaches_consultants_insights_title', array(
+                        'textarea_name' => 'coaches_consultants_insights_title',
+                        'media_buttons' => false,
+                        'textarea_rows' => 3,
+                        'teeny' => true,
+                        'quicktags' => false
+                    )); ?>
                 </td>
             </tr>
         </table>
@@ -657,16 +691,28 @@ function coaches_consultants_meta_box_callback($post) {
                 <?php foreach ($insights as $index => $insight): ?>
                     <div class="repeater-field">
                         <h4>Insight <?php echo $index + 1; ?></h4>
-                        <input type="text" 
-                               name="coaches_consultants_insights[<?php echo $index; ?>][stat]" 
-                               value="<?php echo esc_attr($insight['stat']); ?>"
-                               placeholder="Statistic (e.g., 81%)" />
-                        <input type="text" 
-                               name="coaches_consultants_insights[<?php echo $index; ?>][title]" 
-                               value="<?php echo esc_attr($insight['title']); ?>"
-                               placeholder="Insight title" />
-                        <textarea name="coaches_consultants_insights[<?php echo $index; ?>][description]" 
-                                  placeholder="Insight description"><?php echo esc_textarea($insight['description']); ?></textarea>
+                        <label>Statistic (e.g., 81%)</label>
+                        <?php wp_editor($insight['stat'], 'coaches_consultants_insights_' . $index . '_stat', array(
+                            'textarea_name' => 'coaches_consultants_insights[' . $index . '][stat]',
+                            'media_buttons' => false,
+                            'textarea_rows' => 1,
+                            'teeny' => true,
+                            'quicktags' => false
+                        )); ?>
+                        <?php wp_editor($insight['title'], 'coaches_consultants_insights_' . $index . '_title', array(
+                            'textarea_name' => 'coaches_consultants_insights[' . $index . '][title]',
+                            'media_buttons' => false,
+                            'textarea_rows' => 2,
+                            'teeny' => true,
+                            'quicktags' => false
+                        )); ?>
+                        <?php wp_editor($insight['description'], 'coaches_consultants_insights_' . $index . '_description', array(
+                            'textarea_name' => 'coaches_consultants_insights[' . $index . '][description]',
+                            'media_buttons' => false,
+                            'textarea_rows' => 3,
+                            'teeny' => true,
+                            'quicktags' => false
+                        )); ?>
                         <button type="button" class="button remove-repeater-item">Remove Insight</button>
                     </div>
                 <?php endforeach; ?>
@@ -679,39 +725,49 @@ function coaches_consultants_meta_box_callback($post) {
             <tr>
                 <th><label for="coaches_consultants_testimonial_quote">Testimonial Quote</label></th>
                 <td>
-                    <textarea id="coaches_consultants_testimonial_quote" 
-                              name="coaches_consultants_testimonial_quote"
-                              placeholder="Customer testimonial quote..."><?php echo esc_textarea($testimonial_quote); ?></textarea>
+                    <?php wp_editor($testimonial_quote, 'coaches_consultants_testimonial_quote', array(
+                        'textarea_name' => 'coaches_consultants_testimonial_quote',
+                        'media_buttons' => false,
+                        'textarea_rows' => 5,
+                        'teeny' => true,
+                        'quicktags' => false
+                    )); ?>
                 </td>
             </tr>
             <tr>
                 <th><label for="coaches_consultants_testimonial_name">Customer Name</label></th>
                 <td>
-                    <input type="text" 
-                           id="coaches_consultants_testimonial_name" 
-                           name="coaches_consultants_testimonial_name" 
-                           value="<?php echo esc_attr($testimonial_name); ?>"
-                           placeholder="Michael Johnson" />
+                    <?php wp_editor($testimonial_name, 'coaches_consultants_testimonial_name', array(
+                        'textarea_name' => 'coaches_consultants_testimonial_name',
+                        'media_buttons' => false,
+                        'textarea_rows' => 2,
+                        'teeny' => true,
+                        'quicktags' => false
+                    )); ?>
                 </td>
             </tr>
             <tr>
                 <th><label for="coaches_consultants_testimonial_position">Customer Position</label></th>
                 <td>
-                    <input type="text" 
-                           id="coaches_consultants_testimonial_position" 
-                           name="coaches_consultants_testimonial_position" 
-                           value="<?php echo esc_attr($testimonial_position); ?>"
-                           placeholder="Business Coach & Consultant" />
+                    <?php wp_editor($testimonial_position, 'coaches_consultants_testimonial_position', array(
+                        'textarea_name' => 'coaches_consultants_testimonial_position',
+                        'media_buttons' => false,
+                        'textarea_rows' => 2,
+                        'teeny' => true,
+                        'quicktags' => false
+                    )); ?>
                 </td>
             </tr>
             <tr>
                 <th><label for="coaches_consultants_testimonial_company">Company Description</label></th>
                 <td>
-                    <input type="text" 
-                           id="coaches_consultants_testimonial_company" 
-                           name="coaches_consultants_testimonial_company" 
-                           value="<?php echo esc_attr($testimonial_company); ?>"
-                           placeholder="Success Strategies Coaching" />
+                    <?php wp_editor($testimonial_company, 'coaches_consultants_testimonial_company', array(
+                        'textarea_name' => 'coaches_consultants_testimonial_company',
+                        'media_buttons' => false,
+                        'textarea_rows' => 2,
+                        'teeny' => true,
+                        'quicktags' => false
+                    )); ?>
                 </td>
             </tr>
         </table>
@@ -722,29 +778,37 @@ function coaches_consultants_meta_box_callback($post) {
             <tr>
                 <th><label for="coaches_consultants_cta_title">CTA Title</label></th>
                 <td>
-                    <input type="text" 
-                           id="coaches_consultants_cta_title" 
-                           name="coaches_consultants_cta_title" 
-                           value="<?php echo esc_attr($cta_title); ?>"
-                           placeholder="Ready to Scale Your Coaching Business?" />
+                    <?php wp_editor($cta_title, 'coaches_consultants_cta_title', array(
+                        'textarea_name' => 'coaches_consultants_cta_title',
+                        'media_buttons' => false,
+                        'textarea_rows' => 3,
+                        'teeny' => true,
+                        'quicktags' => false
+                    )); ?>
                 </td>
             </tr>
             <tr>
                 <th><label for="coaches_consultants_cta_subtitle">CTA Subtitle</label></th>
                 <td>
-                    <textarea id="coaches_consultants_cta_subtitle" 
-                              name="coaches_consultants_cta_subtitle"
-                              placeholder="Let's discuss how our marketing expertise can help you build authority, attract premium clients, and create scalable systems."><?php echo esc_textarea($cta_subtitle); ?></textarea>
+                    <?php wp_editor($cta_subtitle, 'coaches_consultants_cta_subtitle', array(
+                        'textarea_name' => 'coaches_consultants_cta_subtitle',
+                        'media_buttons' => false,
+                        'textarea_rows' => 4,
+                        'teeny' => true,
+                        'quicktags' => false
+                    )); ?>
                 </td>
             </tr>
             <tr>
                 <th><label for="coaches_consultants_cta_primary_text">Primary Button Text</label></th>
                 <td>
-                    <input type="text" 
-                           id="coaches_consultants_cta_primary_text" 
-                           name="coaches_consultants_cta_primary_text" 
-                           value="<?php echo esc_attr($cta_primary_text); ?>"
-                           placeholder="Get Free Strategy Session" />
+                    <?php wp_editor($cta_primary_text, 'coaches_consultants_cta_primary_text', array(
+                        'textarea_name' => 'coaches_consultants_cta_primary_text',
+                        'media_buttons' => false,
+                        'textarea_rows' => 2,
+                        'teeny' => true,
+                        'quicktags' => false
+                    )); ?>
                 </td>
             </tr>
             <tr>
@@ -760,11 +824,13 @@ function coaches_consultants_meta_box_callback($post) {
             <tr>
                 <th><label for="coaches_consultants_cta_secondary_text">Secondary Button Text</label></th>
                 <td>
-                    <input type="text" 
-                           id="coaches_consultants_cta_secondary_text" 
-                           name="coaches_consultants_cta_secondary_text" 
-                           value="<?php echo esc_attr($cta_secondary_text); ?>"
-                           placeholder="View Coach Success Stories" />
+                    <?php wp_editor($cta_secondary_text, 'coaches_consultants_cta_secondary_text', array(
+                        'textarea_name' => 'coaches_consultants_cta_secondary_text',
+                        'media_buttons' => false,
+                        'textarea_rows' => 2,
+                        'teeny' => true,
+                        'quicktags' => false
+                    )); ?>
                 </td>
             </tr>
             <tr>
@@ -782,12 +848,16 @@ function coaches_consultants_meta_box_callback($post) {
                 <td>
                     <div id="cta-benefits-repeater">
                         <?php if (!empty($cta_benefits)): ?>
-                            <?php foreach ($cta_benefits as $benefit): ?>
+                            <?php foreach ($cta_benefits as $index => $benefit): ?>
                                 <div class="repeater-field">
-                                    <input type="text" 
-                                           name="coaches_consultants_cta_benefits[]" 
-                                           value="<?php echo esc_attr($benefit); ?>"
-                                           placeholder="? Benefit item" />
+                                    <label>Benefit Item</label>
+                                    <?php wp_editor($benefit, 'coaches_consultants_cta_benefits_' . $index, array(
+                                        'textarea_name' => 'coaches_consultants_cta_benefits[]',
+                                        'media_buttons' => false,
+                                        'textarea_rows' => 2,
+                                        'teeny' => true,
+                                        'quicktags' => false
+                                    )); ?>
                                     <button type="button" class="button remove-repeater-item">Remove</button>
                                 </div>
                             <?php endforeach; ?>
@@ -850,10 +920,28 @@ function coaches_consultants_meta_box_callback($post) {
         $('.add-repeater-item').click(function(e) {
             e.preventDefault();
             var target = $(this).data('target');
-            var newField = '<div class="repeater-field">' +
-                          '<input type="text" name="coaches_consultants_' + target.replace('-repeater', '').replace(/-/g, '_') + '[]" placeholder="Item" />' +
+            var fieldName = target.replace('-repeater', '').replace(/-/g, '_');
+            var index = $('#' + target + ' .repeater-field').length;
+            
+            var newField = '';
+            
+            // Create appropriate field based on repeater type
+            if (target === 'challenges-repeater' || target === 'case-study-challenges-repeater' || 
+                target === 'case-study-solutions-repeater' || target === 'cta-benefits-repeater') {
+                // Simple text fields that need rich text
+                newField = '<div class="repeater-field">' +
+                          '<label>Item</label>' +
+                          '<textarea name="coaches_consultants_' + fieldName + '[]" placeholder="Item" rows="2"></textarea>' +
                           '<button type="button" class="button remove-repeater-item">Remove</button>' +
                           '</div>';
+            } else {
+                // Default to textarea for new items
+                newField = '<div class="repeater-field">' +
+                          '<textarea name="coaches_consultants_' + fieldName + '[]" placeholder="Item" rows="2"></textarea>' +
+                          '<button type="button" class="button remove-repeater-item">Remove</button>' +
+                          '</div>';
+            }
+            
             $('#' + target).append(newField);
         });        // Remove repeater item
         $(document).on('click', '.remove-repeater-item', function(e) {
@@ -874,8 +962,9 @@ function sanitize_coaches_consultants_meta_value($field, $value) {
         'header_title', 'header_subtitle', 'overview_title', 'overview_content',
         'challenges_title', 'services_title', 'case_study_label', 'case_study_title',
         'case_study_content', 'case_study_challenge_title', 'case_study_solution_title',
-        'case_study_results_title', 'process_title', 'insights_title',
-        'testimonial_quote', 'cta_title', 'cta_subtitle'
+        'case_study_results_title', 'case_study_link_text', 'process_title', 'insights_title',
+        'testimonial_quote', 'testimonial_name', 'testimonial_position', 'testimonial_company',
+        'cta_title', 'cta_subtitle', 'cta_primary_text', 'cta_secondary_text'
     );
 
     if (is_array($value)) {
@@ -884,16 +973,16 @@ function sanitize_coaches_consultants_meta_value($field, $value) {
                 foreach ($item as $key => &$subitem) {
                     if (is_array($subitem)) {
                         foreach ($subitem as &$sub_subitem) {
-                            // Check if this is rich text content
-                            if ($key === 'title' || $key === 'description' || strpos($key, 'content') !== false) {
+                            // Check if this is rich text content - now treating most content as rich text
+                            if ($key === 'title' || $key === 'description' || $key === 'icon' || $key === 'label' || $key === 'number' || $key === 'stat' || strpos($key, 'content') !== false) {
                                 $sub_subitem = wp_kses_post($sub_subitem);
                             } else {
                                 $sub_subitem = sanitize_text_field($sub_subitem);
                             }
                         }
                     } else {
-                        // Check if this is rich text content
-                        if ($key === 'title' || $key === 'description' || strpos($key, 'content') !== false) {
+                        // Check if this is rich text content - now treating most content as rich text
+                        if ($key === 'title' || $key === 'description' || $key === 'icon' || $key === 'label' || $key === 'number' || $key === 'stat' || strpos($key, 'content') !== false) {
                             $subitem = wp_kses_post($subitem);
                         } else {
                             $subitem = sanitize_text_field($subitem);
@@ -901,7 +990,7 @@ function sanitize_coaches_consultants_meta_value($field, $value) {
                     }
                 }
             } else {
-                // For single values in arrays (like challenges)
+                // For single values in arrays (like challenges, solutions, benefits) - now rich text
                 $item = wp_kses_post($item);
             }
         }
