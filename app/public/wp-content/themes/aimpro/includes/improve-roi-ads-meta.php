@@ -110,9 +110,12 @@ function improve_roi_ads_meta_box_callback($post) {
     }
 
     // Success Story
+    $case_study_badge_text = get_post_meta($post->ID, '_improve_roi_ads_case_study_badge_text', true) ?: 'Success Story';
+    $case_study_main_title = get_post_meta($post->ID, '_improve_roi_ads_case_study_main_title', true) ?: 'EcoHome Solutions Achieves <span class="highlight-number" style="color: #f15a25;">320% ROI</span> Improvement';
+    $case_study_subtitle = get_post_meta($post->ID, '_improve_roi_ads_case_study_subtitle', true) ?: 'Transforming a wasteful £15,000/month Google Ads spend into a high-performing revenue engine';
     $case_study_label = get_post_meta($post->ID, '_improve_roi_ads_case_study_label', true) ?: 'Success Story';
     $case_study_title = get_post_meta($post->ID, '_improve_roi_ads_case_study_title', true) ?: 'EcoHome Solutions: 320% ROI Improvement';
-    $case_study_content = get_post_meta($post->ID, '_improve_roi_ads_case_study_content', true) ?: 'EcoHome Solutions was spending �15,000/month on Google Ads with poor returns and high cost per acquisition.';
+    $case_study_content = get_post_meta($post->ID, '_improve_roi_ads_case_study_content', true) ?: 'EcoHome Solutions was spending £15,000/month on Google Ads with poor returns and high cost per acquisition.';
     
     $case_study_challenge_title = get_post_meta($post->ID, '_improve_roi_ads_case_study_challenge_title', true) ?: 'The Challenge';
     $case_study_challenges = get_post_meta($post->ID, '_improve_roi_ads_case_study_challenges', true);
@@ -521,6 +524,42 @@ function improve_roi_ads_meta_box_callback($post) {
         <!-- Case Study Section -->
         <h3>Success Story Section</h3>
         <table class="form-table">
+            <tr>
+                <th><label for="improve_roi_ads_case_study_badge_text">Badge Text</label></th>
+                <td>
+                    <?php wp_editor($case_study_badge_text, 'improve_roi_ads_case_study_badge_text', array(
+                        'textarea_name' => 'improve_roi_ads_case_study_badge_text',
+                        'media_buttons' => false,
+                        'textarea_rows' => 1,
+                        'teeny' => true,
+                        'quicktags' => array('buttons' => 'strong,em,link')
+                    )); ?>
+                </td>
+            </tr>
+            <tr>
+                <th><label for="improve_roi_ads_case_study_main_title">Main Title</label></th>
+                <td>
+                    <?php wp_editor($case_study_main_title, 'improve_roi_ads_case_study_main_title', array(
+                        'textarea_name' => 'improve_roi_ads_case_study_main_title',
+                        'media_buttons' => false,
+                        'textarea_rows' => 3,
+                        'teeny' => true,
+                        'quicktags' => array('buttons' => 'strong,em,link')
+                    )); ?>
+                </td>
+            </tr>
+            <tr>
+                <th><label for="improve_roi_ads_case_study_subtitle">Subtitle</label></th>
+                <td>
+                    <?php wp_editor($case_study_subtitle, 'improve_roi_ads_case_study_subtitle', array(
+                        'textarea_name' => 'improve_roi_ads_case_study_subtitle',
+                        'media_buttons' => false,
+                        'textarea_rows' => 3,
+                        'teeny' => true,
+                        'quicktags' => array('buttons' => 'strong,em,link')
+                    )); ?>
+                </td>
+            </tr>
             <tr>
                 <th><label for="improve_roi_ads_case_study_label">Case Study Label</label></th>
                 <td>
@@ -1199,6 +1238,9 @@ function save_improve_roi_ads_meta_box_data($post_id) {
         'improve_roi_ads_challenges',
         'improve_roi_ads_methods_title',
         'improve_roi_ads_methods',
+        'improve_roi_ads_case_study_badge_text',
+        'improve_roi_ads_case_study_main_title',
+        'improve_roi_ads_case_study_subtitle',
         'improve_roi_ads_case_study_label',
         'improve_roi_ads_case_study_title',
         'improve_roi_ads_case_study_content',

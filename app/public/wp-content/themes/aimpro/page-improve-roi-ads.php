@@ -79,38 +79,60 @@ get_header(); ?>
             <div class="section-content">
                 <h2 class="animate-on-scroll animate-fade-up"><?php echo wp_kses_post(get_post_meta(get_the_ID(), '_improve_roi_ads_methods_title', true) ?: 'Our Ad ROI optimisation Methods'); ?></h2>
                 <div class="services-grid animate-on-scroll animate-stagger animate-scale-up">
+                    <?php
+                    $methods = get_post_meta(get_the_ID(), '_improve_roi_ads_methods', true);
+                    if (empty($methods)) {
+                        $methods = array(
+                            array(
+                                'title' => 'Advanced Conversion Tracking',
+                                'description' => 'Implement comprehensive tracking systems to measure true ROI and optimise for the metrics that matter most.',
+                                'features' => array(
+                                    'Enhanced e-commerce tracking',
+                                    'Offline conversion tracking',
+                                    'Customer lifetime value analysis',
+                                    'Attribution modeling setup'
+                                )
+                            ),
+                            array(
+                                'title' => 'Audience Optimisation',
+                                'description' => 'Refine targeting to reach high-value prospects while reducing spend on low-converting audiences.',
+                                'features' => array(
+                                    'Audience segmentation analysis',
+                                    'Lookalike audience creation',
+                                    'Negative audience exclusions',
+                                    'Custom intent audiences'
+                                )
+                            ),
+                            array(
+                                'title' => 'Landing Page optimisation',
+                                'description' => 'Improve post-click experience to maximise conversion rates and reduce cost per conversion.',
+                                'features' => array(
+                                    'Landing page A/B testing',
+                                    'Conversion rate optimisation',
+                                    'Mobile experience optimisation',
+                                    'Page speed improvements'
+                                )
+                            )
+                        );
+                    }
+
+                    $icons = array('fas fa-chart-line', 'fas fa-users', 'fas fa-mobile-alt', 'fas fa-cog', 'fas fa-search', 'fas fa-bullseye');
+                    foreach ($methods as $index => $method) :
+                        $icon = isset($icons[$index]) ? $icons[$index] : 'fas fa-chart-line';
+                    ?>
                     <div class="service-item">
-                        <div class="service-icon"><i class="fas fa-chart-line"></i></div>
-                        <h3>Advanced Conversion Tracking</h3>
-                        <p>Implement comprehensive tracking systems to measure true ROI and optimise for the metrics that matter most.</p>
+                        <div class="service-icon"><i class="<?php echo esc_attr($icon); ?>"></i></div>
+                        <h3><?php echo wp_kses_post($method['title']); ?></h3>
+                        <div><?php echo wp_kses_post($method['description']); ?></div>
+                        <?php if (!empty($method['features'])): ?>
                         <ul style="text-align: left; colour: #666; line-height: 1.8;">
-                            <li>Enhanced e-commerce tracking</li>
-                            <li>Offline conversion tracking</li>
-                            <li>Customer lifetime value analysis</li>
-                            <li>Attribution modeling setup</li>
+                            <?php foreach ($method['features'] as $feature) : ?>
+                                <li><?php echo esc_html($feature); ?></li>
+                            <?php endforeach; ?>
                         </ul>
+                        <?php endif; ?>
                     </div>
-                    <div class="service-item">
-                        <div class="service-icon"><i class="fas fa-users"></i></div>
-                        <h3>Audience Optimisation</h3>
-                        <p>Refine targeting to reach high-value prospects while reducing spend on low-converting audiences.</p>
-                        <ul style="text-align: left; colour: #666; line-height: 1.8;">
-                            <li>Audience segmentation analysis</li>
-                            <li>Lookalike audience creation</li>
-                            <li>Negative audience exclusions</li>
-                            <li>Custom intent audiences</li>
-                        </ul>                    </div>
-                    <div class="service-item">
-                        <div class="service-icon"><i class="fas fa-mobile-alt"></i></div>
-                        <h3>Landing Page optimisation</h3>
-                        <p>Improve post-click experience to maximise conversion rates and reduce cost per conversion.</p>
-                        <ul style="text-align: left; colour: #666; line-height: 1.8;">
-                            <li>Landing page A/B testing</li>
-                            <li>Conversion rate optimisation</li>
-                            <li>Mobile experience optimisation</li>
-                            <li>Page speed improvements</li>
-                        </ul>
-                    </div>
+                    <?php endforeach; ?>
                 </div>
             </div>
         </section>        <!-- Case Study Section with Better Styling -->
@@ -121,10 +143,10 @@ get_header(); ?>
                     <div class="case-study-intro animate-on-scroll animate-fade-up" style="text-align: center; margin-bottom: 60px;">
                         <div class="case-study-badge" style="display: inline-flex; align-items: center; gap: 8px; background: linear-gradient(135deg, #f15a25 0%, #e04a15 100%); color: white; padding: 8px 16px; border-radius: 50px; margin-bottom: 20px; font-weight: 600;">
                             <span class="badge-icon">📈</span>
-                            <span class="badge-text">Success Story</span>
+                            <span class="badge-text"><?php echo wp_kses_post(get_post_meta(get_the_ID(), '_improve_roi_ads_case_study_badge_text', true) ?: 'Success Story'); ?></span>
                         </div>
-                        <h2 class="case-study-title" style="font-size: 2.5rem; font-weight: 700; color: #1e293b; margin-bottom: 20px;">EcoHome Solutions Achieves <span class="highlight-number" style="color: #f15a25;">320% ROI</span> Improvement</h2>
-                        <p class="case-study-subtitle" style="font-size: 1.2rem; color: #64748b; max-width: 700px; margin: 0 auto;">Transforming a wasteful £15,000/month Google Ads spend into a high-performing revenue engine</p>
+                        <h2 class="case-study-title" style="font-size: 2.5rem; font-weight: 700; color: #1e293b; margin-bottom: 20px;"><?php echo wp_kses_post(get_post_meta(get_the_ID(), '_improve_roi_ads_case_study_main_title', true) ?: 'EcoHome Solutions Achieves <span class="highlight-number" style="color: #f15a25;">320% ROI</span> Improvement'); ?></h2>
+                        <p class="case-study-subtitle" style="font-size: 1.2rem; color: #64748b; max-width: 700px; margin: 0 auto;"><?php echo wp_kses_post(get_post_meta(get_the_ID(), '_improve_roi_ads_case_study_subtitle', true) ?: 'Transforming a wasteful £15,000/month Google Ads spend into a high-performing revenue engine'); ?></p>
                     </div>
 
                     <!-- Story Flow -->
@@ -133,19 +155,21 @@ get_header(); ?>
                         <div class="story-section challenge-section animate-on-scroll animate-slide-left" style="background: white; padding: 40px; border-radius: 16px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); margin-bottom: 30px;">
                             <div class="section-header" style="display: flex; align-items: center; gap: 15px; margin-bottom: 25px;">
                                 <div class="section-icon challenge-icon" style="width: 50px; height: 50px; background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.5rem;">⚡</div>
-                                <h3 style="font-size: 1.5rem; font-weight: 700; color: #1e293b; margin: 0;">The Challenge</h3>
+                                <h3 style="font-size: 1.5rem; font-weight: 700; color: #1e293b; margin: 0;"><?php echo wp_kses_post(get_post_meta(get_the_ID(), '_improve_roi_ads_case_study_challenge_title', true) ?: 'The Challenge'); ?></h3>
                             </div>
                             <div class="section-content">
-                                <p class="story-text" style="font-size: 1.1rem; line-height: 1.8; color: #64748b; margin-bottom: 25px;">EcoHome Solutions was spending £15,000/month on Google Ads with poor returns and high cost per acquisition. Despite significant investment, unclear targeting and poor campaign structure were causing massive budget waste.</p>
-                                <div class="inline-metrics" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 20px;">
-                                    <div class="metric-item" style="text-align: center; background: #fee2e2; padding: 15px; border-radius: 10px;">
-                                        <span class="metric-number" style="display: block; font-size: 1.8rem; font-weight: 700; color: #dc2626;">£250+</span>
-                                        <span class="metric-text" style="font-size: 0.9rem; color: #7f1d1d;">Cost per Lead</span>
-                                    </div>
-                                    <div class="metric-item" style="text-align: center; background: #fee2e2; padding: 15px; border-radius: 10px;">
-                                        <span class="metric-number" style="display: block; font-size: 1.8rem; font-weight: 700; color: #dc2626;">1.2%</span>
-                                        <span class="metric-text" style="font-size: 0.9rem; color: #7f1d1d;">Conversion Rate</span>
-                                    </div>
+                                <div class="story-text" style="font-size: 1.1rem; line-height: 1.8; color: #64748b; margin-bottom: 25px;"><?php echo wp_kses_post(get_post_meta(get_the_ID(), '_improve_roi_ads_case_study_content', true) ?: 'EcoHome Solutions was spending £15,000/month on Google Ads with poor returns and high cost per acquisition. Despite significant investment, unclear targeting and poor campaign structure were causing massive budget waste.'); ?></div>
+                                <div class="challenge-list">
+                                    <?php
+                                    $case_study_challenges = get_post_meta(get_the_ID(), '_improve_roi_ads_case_study_challenges', true);
+                                    if (!empty($case_study_challenges)) :
+                                    ?>
+                                    <ul style="list-style: none; padding: 0;">
+                                        <?php foreach ($case_study_challenges as $challenge) : ?>
+                                        <li style="padding: 8px 0; color: #dc2626; font-weight: 600;">• <?php echo esc_html($challenge); ?></li>
+                                        <?php endforeach; ?>
+                                    </ul>
+                                    <?php endif; ?>
                                 </div>
                             </div>
                         </div>
@@ -160,26 +184,22 @@ get_header(); ?>
                         <div class="story-section solution-section animate-on-scroll animate-slide-right" style="background: white; padding: 40px; border-radius: 16px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); margin-bottom: 30px;">
                             <div class="section-header" style="display: flex; align-items: center; gap: 15px; margin-bottom: 25px;">
                                 <div class="section-icon solution-icon" style="width: 50px; height: 50px; background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.5rem;">🎯</div>
-                                <h3 style="font-size: 1.5rem; font-weight: 700; color: #1e293b; margin: 0;">Strategic Transformation</h3>
+                                <h3 style="font-size: 1.5rem; font-weight: 700; color: #1e293b; margin: 0;"><?php echo wp_kses_post(get_post_meta(get_the_ID(), '_improve_roi_ads_case_study_solution_title', true) ?: 'Strategic Transformation'); ?></h3>
                             </div>
                             <div class="section-content">
                                 <div class="solution-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px;">
+                                    <?php
+                                    $case_study_solutions = get_post_meta(get_the_ID(), '_improve_roi_ads_case_study_solutions', true);
+                                    if (!empty($case_study_solutions)) :
+                                        foreach ($case_study_solutions as $solution) :
+                                    ?>
                                     <div class="solution-item" style="padding: 20px; background: #f8fafc; border-radius: 10px; border-left: 4px solid #f15a25;">
-                                        <strong style="display: block; color: #1e293b; margin-bottom: 8px;">Complete Conversion Tracking Overhaul</strong>
-                                        <p style="color: #64748b; margin: 0; font-size: 0.9rem; line-height: 1.6;">Implemented comprehensive tracking to measure true performance and ROI</p>
+                                        <strong style="display: block; color: #1e293b; margin-bottom: 8px;"><?php echo esc_html($solution); ?></strong>
                                     </div>
-                                    <div class="solution-item" style="padding: 20px; background: #f8fafc; border-radius: 10px; border-left: 4px solid #f15a25;">
-                                        <strong style="display: block; color: #1e293b; margin-bottom: 8px;">Campaign Restructuring & Optimisation</strong>
-                                        <p style="color: #64748b; margin: 0; font-size: 0.9rem; line-height: 1.6;">Rebuilt campaigns with precise targeting and improved ad group structure</p>
-                                    </div>
-                                    <div class="solution-item" style="padding: 20px; background: #f8fafc; border-radius: 10px; border-left: 4px solid #f15a25;">
-                                        <strong style="display: block; color: #1e293b; margin-bottom: 8px;">Landing Page Redesign & Testing</strong>
-                                        <p style="color: #64748b; margin: 0; font-size: 0.9rem; line-height: 1.6;">Created high-converting landing pages optimised for their specific audience</p>
-                                    </div>
-                                    <div class="solution-item" style="padding: 20px; background: #f8fafc; border-radius: 10px; border-left: 4px solid #f15a25;">
-                                        <strong style="display: block; color: #1e293b; margin-bottom: 8px;">Advanced Bidding Strategy Implementation</strong>
-                                        <p style="color: #64748b; margin: 0; font-size: 0.9rem; line-height: 1.6;">Deployed smart bidding strategies to maximise ROI and reduce costs</p>
-                                    </div>
+                                    <?php 
+                                        endforeach;
+                                    endif; 
+                                    ?>
                                 </div>
                             </div>
                         </div>
@@ -194,28 +214,36 @@ get_header(); ?>
                         <div class="story-section results-section animate-on-scroll animate-fade-up" style="background: white; padding: 40px; border-radius: 16px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
                             <div class="section-header" style="display: flex; align-items: center; gap: 15px; margin-bottom: 30px; justify-content: center;">
                                 <div class="section-icon results-icon" style="width: 50px; height: 50px; background: linear-gradient(135deg, #10b981 0%, #059669 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.5rem;">🚀</div>
-                                <h3 style="font-size: 1.5rem; font-weight: 700; color: #1e293b; margin: 0;">Exceptional Results After 5 Months</h3>
+                                <h3 style="font-size: 1.5rem; font-weight: 700; color: #1e293b; margin: 0;"><?php echo wp_kses_post(get_post_meta(get_the_ID(), '_improve_roi_ads_case_study_results_title', true) ?: 'Exceptional Results After 5 Months'); ?></h3>
                             </div>
                             <div class="section-content">
                                 <div class="results-showcase" style="text-align: center;">
+                                    <?php
+                                    $case_study_results = get_post_meta(get_the_ID(), '_improve_roi_ads_case_study_results', true);
+                                    if (!empty($case_study_results)) :
+                                        $primary_result = isset($case_study_results[0]) ? $case_study_results[0] : null;
+                                        if ($primary_result) :
+                                    ?>
                                     <div class="primary-result" style="margin-bottom: 30px;">
-                                        <span class="big-number" style="display: block; font-size: 4rem; font-weight: 800; background: linear-gradient(135deg, #f15a25 0%, #e04a15 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">320%</span>
-                                        <span class="big-label" style="font-size: 1.2rem; color: #64748b; font-weight: 600;">ROI Improvement</span>
+                                        <span class="big-number" style="display: block; font-size: 4rem; font-weight: 800; background: linear-gradient(135deg, #f15a25 0%, #e04a15 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;"><?php echo esc_html($primary_result['number']); ?></span>
+                                        <span class="big-label" style="font-size: 1.2rem; color: #64748b; font-weight: 600;"><?php echo esc_html($primary_result['label']); ?></span>
                                     </div>
+                                    <?php endif; ?>
+                                    
+                                    <?php if (count($case_study_results) > 1) : ?>
                                     <div class="secondary-results" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 25px; max-width: 600px; margin: 0 auto;">
+                                        <?php
+                                        for ($i = 1; $i < count($case_study_results); $i++) :
+                                            $result = $case_study_results[$i];
+                                        ?>
                                         <div class="result-stat" style="background: #f0fdf4; padding: 20px; border-radius: 12px; border: 1px solid #bbf7d0;">
-                                            <span class="stat-number" style="display: block; font-size: 2rem; font-weight: 700; color: #059669;">65%</span>
-                                            <span class="stat-label" style="font-size: 0.9rem; color: #065f46;">Cost Reduction</span>
+                                            <span class="stat-number" style="display: block; font-size: 2rem; font-weight: 700; color: #059669;"><?php echo esc_html($result['number']); ?></span>
+                                            <span class="stat-label" style="font-size: 0.9rem; color: #065f46;"><?php echo esc_html($result['label']); ?></span>
                                         </div>
-                                        <div class="result-stat" style="background: #f0fdf4; padding: 20px; border-radius: 12px; border: 1px solid #bbf7d0;">
-                                            <span class="stat-number" style="display: block; font-size: 2rem; font-weight: 700; color: #059669;">180%</span>
-                                            <span class="stat-label" style="font-size: 0.9rem; color: #065f46;">Conversion Rate Increase</span>
-                                        </div>
-                                        <div class="result-stat" style="background: #f0fdf4; padding: 20px; border-radius: 12px; border: 1px solid #bbf7d0;">
-                                            <span class="stat-number" style="display: block; font-size: 2rem; font-weight: 700; color: #059669;">450%</span>
-                                            <span class="stat-label" style="font-size: 0.9rem; color: #065f46;">Lead Volume Growth</span>
-                                        </div>
+                                        <?php endfor; ?>
                                     </div>
+                                    <?php endif; ?>
+                                    <?php endif; ?>
                                 </div>
                             </div>
                         </div>
@@ -232,7 +260,7 @@ get_header(); ?>
                                 <p class="cta-description" style="margin: 0; opacity: 0.9;">Let's transform your Google Ads into a profitable growth engine</p>
                             </div>
                             <div class="cta-action">
-                                <a href="<?php echo home_url('/contact'); ?>" class="btn-primary cta-btn-enhanced" style="background: white; color: #f15a25; border: none; padding: 15px 30px; border-radius: 8px; font-weight: 700; text-decoration: none; display: inline-block; transition: all 0.3s ease;">Get Your Free ROI Audit</a>
+                                <a href="<?php echo esc_url(home_url(get_post_meta(get_the_ID(), '_improve_roi_ads_case_study_link_url', true) ?: '/contact')); ?>" class="btn-primary cta-btn-enhanced" style="background: white; color: #f15a25; border: none; padding: 15px 30px; border-radius: 8px; font-weight: 700; text-decoration: none; display: inline-block; transition: all 0.3s ease;"><?php echo esc_html(get_post_meta(get_the_ID(), '_improve_roi_ads_case_study_link_text', true) ?: 'Get Your Free ROI Audit'); ?></a>
                             </div>
                         </div>
                     </div>
