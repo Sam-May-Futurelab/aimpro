@@ -118,6 +118,71 @@ function aimpro_ai_crm_meta_box_callback($post) {
     // CTA Section Fields
     $ai_cta_title = get_post_meta($post->ID, 'ai_cta_title', true) ?: 'Ready to Transform Your CRM with AI?';
 
+    // AI Features Section Fields
+    $ai_features_title = get_post_meta($post->ID, 'ai_features_title', true) ?: 'AI-Powered CRM Features';
+    $ai_features_subtitle = get_post_meta($post->ID, 'ai_features_subtitle', true) ?: 'Transform your customer relationship management with intelligent features that automate processes and drive better results.';
+    $ai_feature_1_title = get_post_meta($post->ID, 'ai_feature_1_title', true) ?: 'Smart Lead Scoring';
+    $ai_feature_1_desc = get_post_meta($post->ID, 'ai_feature_1_desc', true) ?: 'AI algorithms analyse 50+ data points to score leads and predict conversion probability in real-time.';
+    $ai_feature_2_title = get_post_meta($post->ID, 'ai_feature_2_title', true) ?: 'Predictive Forecasting';
+    $ai_feature_2_desc = get_post_meta($post->ID, 'ai_feature_2_desc', true) ?: 'Machine learning models predict sales outcomes, revenue forecasts, and optimal deal closure timing.';
+    $ai_feature_3_title = get_post_meta($post->ID, 'ai_feature_3_title', true) ?: 'Behavioural Targeting';
+    $ai_feature_3_desc = get_post_meta($post->ID, 'ai_feature_3_desc', true) ?: 'AI tracks customer behaviour patterns to trigger personalised engagement at optimal moments.';
+    $ai_feature_4_title = get_post_meta($post->ID, 'ai_feature_4_title', true) ?: 'Intelligent Reporting';
+    $ai_feature_4_desc = get_post_meta($post->ID, 'ai_feature_4_desc', true) ?: 'AI-generated insights and recommendations based on performance data and market trends.';
+
+    // Packages Section Fields
+    $ai_packages_title = get_post_meta($post->ID, 'ai_packages_title', true) ?: 'AI CRM Setup Packages';
+    $ai_packages_subtitle = get_post_meta($post->ID, 'ai_packages_subtitle', true) ?: 'Transform your customer relationship management with data-driven optimisation strategies.';
+    
+    // Package 1 - Essential
+    $ai_package_1_title = get_post_meta($post->ID, 'ai_package_1_title', true) ?: 'Essential AI CRM';
+    $ai_package_1_price = get_post_meta($post->ID, 'ai_package_1_price', true) ?: '£2,497';
+    $ai_package_1_subtitle = get_post_meta($post->ID, 'ai_package_1_subtitle', true) ?: 'Basic AI implementation';
+    $ai_package_1_features = get_post_meta($post->ID, 'ai_package_1_features', true) ?: "CRM platform setup (HubSpot/Salesforce)\nBasic AI lead scoring\nContact data migration\nEssential workflow automation\nTeam training (2 sessions)\n30-day support\nPerformance reporting";
+    
+    // Package 2 - Advanced
+    $ai_package_2_title = get_post_meta($post->ID, 'ai_package_2_title', true) ?: 'Advanced AI CRM';
+    $ai_package_2_price = get_post_meta($post->ID, 'ai_package_2_price', true) ?: '£4,997';
+    $ai_package_2_subtitle = get_post_meta($post->ID, 'ai_package_2_subtitle', true) ?: 'Complete AI implementation';
+    $ai_package_2_features = get_post_meta($post->ID, 'ai_package_2_features', true) ?: "Full CRM implementation\nAdvanced AI lead scoring & prediction\nOmnichannel integration\nIntelligent workflow automation\nCustom dashboards & reporting\nComprehensive team training\n90-day optimisation support";
+    
+    // Package 3 - Enterprise
+    $ai_package_3_title = get_post_meta($post->ID, 'ai_package_3_title', true) ?: 'Enterprise AI CRM';
+    $ai_package_3_price = get_post_meta($post->ID, 'ai_package_3_price', true) ?: '£9,997';
+    $ai_package_3_subtitle = get_post_meta($post->ID, 'ai_package_3_subtitle', true) ?: 'Full enterprise transformation';
+    $ai_package_3_features = get_post_meta($post->ID, 'ai_package_3_features', true) ?: "Enterprise CRM architecture\nCustom AI model development\nAdvanced predictive analytics\nMulti-system integrations\nWhite-glove implementation\nDedicated project manager\n6-month ongoing optimisation";
+
+    // Platforms Section Fields
+    $ai_platforms_title = get_post_meta($post->ID, 'ai_platforms_title', true) ?: 'Supported CRM Platforms';
+    $ai_platforms_subtitle = get_post_meta($post->ID, 'ai_platforms_subtitle', true) ?: 'We work with leading CRM platforms to implement AI-powered solutions that transform your customer management.';
+    $ai_platform_1_title = get_post_meta($post->ID, 'ai_platform_1_title', true) ?: 'HubSpot CRM';
+    $ai_platform_1_desc = get_post_meta($post->ID, 'ai_platform_1_desc', true) ?: 'Complete inbound marketing platform with powerful AI automation and lead nurturing capabilities.';
+    $ai_platform_2_title = get_post_meta($post->ID, 'ai_platform_2_title', true) ?: 'Salesforce';
+    $ai_platform_2_desc = get_post_meta($post->ID, 'ai_platform_2_desc', true) ?: 'Enterprise-grade CRM with Einstein AI for advanced predictive analytics and automation.';
+    $ai_platform_3_title = get_post_meta($post->ID, 'ai_platform_3_title', true) ?: 'Pipedrive';
+    $ai_platform_3_desc = get_post_meta($post->ID, 'ai_platform_3_desc', true) ?: 'Sales-focused CRM with AI-powered sales assistant and intelligent deal recommendations.';
+    $ai_platform_4_title = get_post_meta($post->ID, 'ai_platform_4_title', true) ?: 'ActiveCampaign';
+    $ai_platform_4_desc = get_post_meta($post->ID, 'ai_platform_4_desc', true) ?: 'Customer experience automation platform combining CRM, email marketing, and AI predictions.';
+    $ai_platform_5_title = get_post_meta($post->ID, 'ai_platform_5_title', true) ?: 'Zoho CRM';
+    $ai_platform_5_desc = get_post_meta($post->ID, 'ai_platform_5_desc', true) ?: 'Comprehensive business suite with Zia AI assistant for intelligent sales forecasting and customer insights.';
+    $ai_platform_6_title = get_post_meta($post->ID, 'ai_platform_6_title', true) ?: 'Microsoft Dynamics 365';
+    $ai_platform_6_desc = get_post_meta($post->ID, 'ai_platform_6_desc', true) ?: 'Enterprise CRM platform with built-in AI capabilities for sales acceleration and customer service automation.';
+
+    // Industries Section Fields
+    $ai_industries_title = get_post_meta($post->ID, 'ai_industries_title', true) ?: 'Industries We Serve';
+    $ai_industry_1_title = get_post_meta($post->ID, 'ai_industry_1_title', true) ?: 'SaaS & Technology';
+    $ai_industry_1_desc = get_post_meta($post->ID, 'ai_industry_1_desc', true) ?: 'optimise trial-to-paid conversions and reduce churn with predictive customer analytics.';
+    $ai_industry_2_title = get_post_meta($post->ID, 'ai_industry_2_title', true) ?: 'Professional Services';
+    $ai_industry_2_desc = get_post_meta($post->ID, 'ai_industry_2_desc', true) ?: 'Streamline client onboarding and automate proposal generation with AI workflows.';
+    $ai_industry_3_title = get_post_meta($post->ID, 'ai_industry_3_title', true) ?: 'E-commerce';
+    $ai_industry_3_desc = get_post_meta($post->ID, 'ai_industry_3_desc', true) ?: 'personalise customer journeys and predict purchase behaviour for increased sales.';
+    $ai_industry_4_title = get_post_meta($post->ID, 'ai_industry_4_title', true) ?: 'Real Estate';
+    $ai_industry_4_desc = get_post_meta($post->ID, 'ai_industry_4_desc', true) ?: 'Automate lead qualification and nurture prospects through complex sales cycles.';
+    $ai_industry_5_title = get_post_meta($post->ID, 'ai_industry_5_title', true) ?: 'Manufacturing';
+    $ai_industry_5_desc = get_post_meta($post->ID, 'ai_industry_5_desc', true) ?: 'Manage complex B2B relationships and optimise quote-to-cash processes.';
+    $ai_industry_6_title = get_post_meta($post->ID, 'ai_industry_6_title', true) ?: 'Healthcare';
+    $ai_industry_6_desc = get_post_meta($post->ID, 'ai_industry_6_desc', true) ?: 'Improve patient engagement and streamline appointment scheduling with AI automation.';
+
     ?>
     <style>
         .meta-table { border-collapse: collapse; width: 100%; }
@@ -136,14 +201,36 @@ function aimpro_ai_crm_meta_box_callback($post) {
             <tr>
                 <th><label for="ai_hero_title">Hero Title</label></th>
                 <td>
-                    <input type="text" id="ai_hero_title" name="ai_hero_title" value="<?php echo esc_attr($ai_hero_title); ?>" />
+                    <?php 
+                    wp_editor($ai_hero_title, 'ai_hero_title', array(
+                        'media_buttons' => false,
+                        'textarea_rows' => 3,
+                        'teeny' => true,
+                        'tinymce' => array(
+                            'toolbar1' => 'bold,italic,underline,strikethrough,|,bullist,numlist,|,link,unlink',
+                            'toolbar2' => '',
+                            'statusbar' => false
+                        )
+                    )); 
+                    ?>
                     <div class="meta-help">Main heading displayed in the hero section</div>
                 </td>
             </tr>
             <tr>
                 <th><label for="ai_hero_subtitle">Hero Subtitle</label></th>
                 <td>
-                    <textarea id="ai_hero_subtitle" name="ai_hero_subtitle"><?php echo esc_textarea($ai_hero_subtitle); ?></textarea>
+                    <?php 
+                    wp_editor($ai_hero_subtitle, 'ai_hero_subtitle', array(
+                        'media_buttons' => false,
+                        'textarea_rows' => 5,
+                        'teeny' => false,
+                        'tinymce' => array(
+                            'toolbar1' => 'bold,italic,underline,strikethrough,|,bullist,numlist,|,link,unlink',
+                            'toolbar2' => '',
+                            'statusbar' => false
+                        )
+                    )); 
+                    ?>
                     <div class="meta-help">Subtitle text displayed below the main heading</div>
                 </td>
             </tr>
@@ -212,14 +299,36 @@ function aimpro_ai_crm_meta_box_callback($post) {
             <tr>
                 <th><label for="ai_overview_title">Overview Title</label></th>
                 <td>
-                    <input type="text" id="ai_overview_title" name="ai_overview_title" value="<?php echo esc_attr($ai_overview_title); ?>" />
+                    <?php 
+                    wp_editor($ai_overview_title, 'ai_overview_title', array(
+                        'media_buttons' => false,
+                        'textarea_rows' => 3,
+                        'teeny' => true,
+                        'tinymce' => array(
+                            'toolbar1' => 'bold,italic,underline,strikethrough,|,bullist,numlist,|,link,unlink',
+                            'toolbar2' => '',
+                            'statusbar' => false
+                        )
+                    )); 
+                    ?>
                     <div class="meta-help">Title for the service overview section</div>
                 </td>
             </tr>
             <tr>
                 <th><label for="ai_overview_description">Overview Description</label></th>
                 <td>
-                    <textarea id="ai_overview_description" name="ai_overview_description"><?php echo esc_textarea($ai_overview_description); ?></textarea>
+                    <?php 
+                    wp_editor($ai_overview_description, 'ai_overview_description', array(
+                        'media_buttons' => false,
+                        'textarea_rows' => 6,
+                        'teeny' => false,
+                        'tinymce' => array(
+                            'toolbar1' => 'bold,italic,underline,strikethrough,|,bullist,numlist,|,link,unlink',
+                            'toolbar2' => '',
+                            'statusbar' => false
+                        )
+                    )); 
+                    ?>
                     <div class="meta-help">Description text for the overview section</div>
                 </td>
             </tr>
@@ -232,84 +341,216 @@ function aimpro_ai_crm_meta_box_callback($post) {
             <tr>
                 <th><label for="ai_service_1_title">Service 1 Title</label></th>
                 <td>
-                    <input type="text" id="ai_service_1_title" name="ai_service_1_title" value="<?php echo esc_attr($ai_service_1_title); ?>" />
+                    <?php 
+                    wp_editor($ai_service_1_title, 'ai_service_1_title', array(
+                        'media_buttons' => false,
+                        'textarea_rows' => 3,
+                        'teeny' => true,
+                        'tinymce' => array(
+                            'toolbar1' => 'bold,italic,underline,strikethrough,|,bullist,numlist,|,link,unlink',
+                            'toolbar2' => '',
+                            'statusbar' => false
+                        )
+                    )); 
+                    ?>
                     <div class="meta-help">Title for first service (AI Lead Scoring)</div>
                 </td>
             </tr>
             <tr>
                 <th><label for="ai_service_1_desc">Service 1 Description</label></th>
                 <td>
-                    <textarea id="ai_service_1_desc" name="ai_service_1_desc"><?php echo esc_textarea($ai_service_1_desc); ?></textarea>
+                    <?php 
+                    wp_editor($ai_service_1_desc, 'ai_service_1_desc', array(
+                        'media_buttons' => false,
+                        'textarea_rows' => 5,
+                        'teeny' => false,
+                        'tinymce' => array(
+                            'toolbar1' => 'bold,italic,underline,strikethrough,|,bullist,numlist,|,link,unlink',
+                            'toolbar2' => '',
+                            'statusbar' => false
+                        )
+                    )); 
+                    ?>
                     <div class="meta-help">Description for first service</div>
                 </td>
             </tr>
             <tr>
                 <th><label for="ai_service_2_title">Service 2 Title</label></th>
                 <td>
-                    <input type="text" id="ai_service_2_title" name="ai_service_2_title" value="<?php echo esc_attr($ai_service_2_title); ?>" />
+                    <?php 
+                    wp_editor($ai_service_2_title, 'ai_service_2_title', array(
+                        'media_buttons' => false,
+                        'textarea_rows' => 3,
+                        'teeny' => true,
+                        'tinymce' => array(
+                            'toolbar1' => 'bold,italic,underline,strikethrough,|,bullist,numlist,|,link,unlink',
+                            'toolbar2' => '',
+                            'statusbar' => false
+                        )
+                    )); 
+                    ?>
                     <div class="meta-help">Title for second service (Predictive Analytics)</div>
                 </td>
             </tr>
             <tr>
                 <th><label for="ai_service_2_desc">Service 2 Description</label></th>
                 <td>
-                    <textarea id="ai_service_2_desc" name="ai_service_2_desc"><?php echo esc_textarea($ai_service_2_desc); ?></textarea>
+                    <?php 
+                    wp_editor($ai_service_2_desc, 'ai_service_2_desc', array(
+                        'media_buttons' => false,
+                        'textarea_rows' => 5,
+                        'teeny' => false,
+                        'tinymce' => array(
+                            'toolbar1' => 'bold,italic,underline,strikethrough,|,bullist,numlist,|,link,unlink',
+                            'toolbar2' => '',
+                            'statusbar' => false
+                        )
+                    )); 
+                    ?>
                     <div class="meta-help">Description for second service</div>
                 </td>
             </tr>
             <tr>
                 <th><label for="ai_service_3_title">Service 3 Title</label></th>
                 <td>
-                    <input type="text" id="ai_service_3_title" name="ai_service_3_title" value="<?php echo esc_attr($ai_service_3_title); ?>" />
+                    <?php 
+                    wp_editor($ai_service_3_title, 'ai_service_3_title', array(
+                        'media_buttons' => false,
+                        'textarea_rows' => 3,
+                        'teeny' => true,
+                        'tinymce' => array(
+                            'toolbar1' => 'bold,italic,underline,strikethrough,|,bullist,numlist,|,link,unlink',
+                            'toolbar2' => '',
+                            'statusbar' => false
+                        )
+                    )); 
+                    ?>
                     <div class="meta-help">Title for third service (Workflow Automation)</div>
                 </td>
             </tr>
             <tr>
                 <th><label for="ai_service_3_desc">Service 3 Description</label></th>
                 <td>
-                    <textarea id="ai_service_3_desc" name="ai_service_3_desc"><?php echo esc_textarea($ai_service_3_desc); ?></textarea>
+                    <?php 
+                    wp_editor($ai_service_3_desc, 'ai_service_3_desc', array(
+                        'media_buttons' => false,
+                        'textarea_rows' => 5,
+                        'teeny' => false,
+                        'tinymce' => array(
+                            'toolbar1' => 'bold,italic,underline,strikethrough,|,bullist,numlist,|,link,unlink',
+                            'toolbar2' => '',
+                            'statusbar' => false
+                        )
+                    )); 
+                    ?>
                     <div class="meta-help">Description for third service</div>
                 </td>
             </tr>
             <tr>
                 <th><label for="ai_service_4_title">Service 4 Title</label></th>
                 <td>
-                    <input type="text" id="ai_service_4_title" name="ai_service_4_title" value="<?php echo esc_attr($ai_service_4_title); ?>" />
+                    <?php 
+                    wp_editor($ai_service_4_title, 'ai_service_4_title', array(
+                        'media_buttons' => false,
+                        'textarea_rows' => 3,
+                        'teeny' => true,
+                        'tinymce' => array(
+                            'toolbar1' => 'bold,italic,underline,strikethrough,|,bullist,numlist,|,link,unlink',
+                            'toolbar2' => '',
+                            'statusbar' => false
+                        )
+                    )); 
+                    ?>
                     <div class="meta-help">Title for fourth service (Sales Pipeline optimisation)</div>
                 </td>
             </tr>
             <tr>
                 <th><label for="ai_service_4_desc">Service 4 Description</label></th>
                 <td>
-                    <textarea id="ai_service_4_desc" name="ai_service_4_desc"><?php echo esc_textarea($ai_service_4_desc); ?></textarea>
+                    <?php 
+                    wp_editor($ai_service_4_desc, 'ai_service_4_desc', array(
+                        'media_buttons' => false,
+                        'textarea_rows' => 5,
+                        'teeny' => false,
+                        'tinymce' => array(
+                            'toolbar1' => 'bold,italic,underline,strikethrough,|,bullist,numlist,|,link,unlink',
+                            'toolbar2' => '',
+                            'statusbar' => false
+                        )
+                    )); 
+                    ?>
                     <div class="meta-help">Description for fourth service</div>
                 </td>
             </tr>
             <tr>
                 <th><label for="ai_service_5_title">Service 5 Title</label></th>
                 <td>
-                    <input type="text" id="ai_service_5_title" name="ai_service_5_title" value="<?php echo esc_attr($ai_service_5_title); ?>" />
+                    <?php 
+                    wp_editor($ai_service_5_title, 'ai_service_5_title', array(
+                        'media_buttons' => false,
+                        'textarea_rows' => 3,
+                        'teeny' => true,
+                        'tinymce' => array(
+                            'toolbar1' => 'bold,italic,underline,strikethrough,|,bullist,numlist,|,link,unlink',
+                            'toolbar2' => '',
+                            'statusbar' => false
+                        )
+                    )); 
+                    ?>
                     <div class="meta-help">Title for fifth service (Intelligent Customer Insights)</div>
                 </td>
             </tr>
             <tr>
                 <th><label for="ai_service_5_desc">Service 5 Description</label></th>
                 <td>
-                    <textarea id="ai_service_5_desc" name="ai_service_5_desc"><?php echo esc_textarea($ai_service_5_desc); ?></textarea>
+                    <?php 
+                    wp_editor($ai_service_5_desc, 'ai_service_5_desc', array(
+                        'media_buttons' => false,
+                        'textarea_rows' => 5,
+                        'teeny' => false,
+                        'tinymce' => array(
+                            'toolbar1' => 'bold,italic,underline,strikethrough,|,bullist,numlist,|,link,unlink',
+                            'toolbar2' => '',
+                            'statusbar' => false
+                        )
+                    )); 
+                    ?>
                     <div class="meta-help">Description for fifth service</div>
                 </td>
             </tr>
             <tr>
                 <th><label for="ai_service_6_title">Service 6 Title</label></th>
                 <td>
-                    <input type="text" id="ai_service_6_title" name="ai_service_6_title" value="<?php echo esc_attr($ai_service_6_title); ?>" />
+                    <?php 
+                    wp_editor($ai_service_6_title, 'ai_service_6_title', array(
+                        'media_buttons' => false,
+                        'textarea_rows' => 3,
+                        'teeny' => true,
+                        'tinymce' => array(
+                            'toolbar1' => 'bold,italic,underline,strikethrough,|,bullist,numlist,|,link,unlink',
+                            'toolbar2' => '',
+                            'statusbar' => false
+                        )
+                    )); 
+                    ?>
                     <div class="meta-help">Title for sixth service (Omnichannel Integration)</div>
                 </td>
             </tr>
             <tr>
                 <th><label for="ai_service_6_desc">Service 6 Description</label></th>
                 <td>
-                    <textarea id="ai_service_6_desc" name="ai_service_6_desc"><?php echo esc_textarea($ai_service_6_desc); ?></textarea>
+                    <?php 
+                    wp_editor($ai_service_6_desc, 'ai_service_6_desc', array(
+                        'media_buttons' => false,
+                        'textarea_rows' => 5,
+                        'teeny' => false,
+                        'tinymce' => array(
+                            'toolbar1' => 'bold,italic,underline,strikethrough,|,bullist,numlist,|,link,unlink',
+                            'toolbar2' => '',
+                            'statusbar' => false
+                        )
+                    )); 
+                    ?>
                     <div class="meta-help">Description for sixth service</div>
                 </td>
             </tr>
@@ -322,29 +563,73 @@ function aimpro_ai_crm_meta_box_callback($post) {
             <tr>
                 <th><label for="ai_case_title">Case Study Title</label></th>
                 <td>
-                    <input type="text" id="ai_case_title" name="ai_case_title" value="<?php echo esc_attr($ai_case_title); ?>" />
+                    <?php 
+                    wp_editor($ai_case_title, 'ai_case_title', array(
+                        'media_buttons' => false,
+                        'textarea_rows' => 3,
+                        'teeny' => true,
+                        'tinymce' => array(
+                            'toolbar1' => 'bold,italic,underline,strikethrough,|,bullist,numlist,|,link,unlink',
+                            'toolbar2' => '',
+                            'statusbar' => false
+                        )
+                    )); 
+                    ?>
                     <div class="meta-help">Title for the case study section</div>
                 </td>
             </tr>
             <tr>
                 <th><label for="ai_case_intro">Case Study Intro</label></th>
                 <td>
-                    <textarea id="ai_case_intro" name="ai_case_intro"><?php echo esc_textarea($ai_case_intro); ?></textarea>
+                    <?php 
+                    wp_editor($ai_case_intro, 'ai_case_intro', array(
+                        'media_buttons' => false,
+                        'textarea_rows' => 5,
+                        'teeny' => false,
+                        'tinymce' => array(
+                            'toolbar1' => 'bold,italic,underline,strikethrough,|,bullist,numlist,|,link,unlink',
+                            'toolbar2' => '',
+                            'statusbar' => false
+                        )
+                    )); 
+                    ?>
                     <div class="meta-help">Introductory text for the case study</div>
                 </td>
             </tr>
             <tr>
                 <th><label for="ai_case_challenge">Challenge Description</label></th>
                 <td>
-                    <textarea id="ai_case_challenge" name="ai_case_challenge"><?php echo esc_textarea($ai_case_challenge); ?></textarea>
+                    <?php 
+                    wp_editor($ai_case_challenge, 'ai_case_challenge', array(
+                        'media_buttons' => false,
+                        'textarea_rows' => 6,
+                        'teeny' => false,
+                        'tinymce' => array(
+                            'toolbar1' => 'bold,italic,underline,strikethrough,|,bullist,numlist,|,link,unlink',
+                            'toolbar2' => '',
+                            'statusbar' => false
+                        )
+                    )); 
+                    ?>
                     <div class="meta-help">Description of the client's challenge</div>
                 </td>
             </tr>
             <tr>
                 <th><label for="ai_case_solution">Solution Description</label></th>
                 <td>
-                    <textarea id="ai_case_solution" name="ai_case_solution"><?php echo esc_textarea($ai_case_solution); ?></textarea>
-                    <div class="meta-help">Description of the solution provided (use line breaks for bullet points)</div>
+                    <?php 
+                    wp_editor($ai_case_solution, 'ai_case_solution', array(
+                        'media_buttons' => false,
+                        'textarea_rows' => 8,
+                        'teeny' => false,
+                        'tinymce' => array(
+                            'toolbar1' => 'bold,italic,underline,strikethrough,|,bullist,numlist,|,link,unlink',
+                            'toolbar2' => '',
+                            'statusbar' => false
+                        )
+                    )); 
+                    ?>
+                    <div class="meta-help">Description of the solution provided (use bullet lists for multiple points)</div>
                 </td>
             </tr>
         </table>
@@ -418,77 +703,198 @@ function aimpro_ai_crm_meta_box_callback($post) {
             <tr>
                 <th><label for="ai_process_title">Process Title</label></th>
                 <td>
-                    <input type="text" id="ai_process_title" name="ai_process_title" value="<?php echo esc_attr($ai_process_title); ?>" />
+                    <?php 
+                    wp_editor($ai_process_title, 'ai_process_title', array(
+                        'media_buttons' => false,
+                        'textarea_rows' => 3,
+                        'teeny' => true,
+                        'tinymce' => array(
+                            'toolbar1' => 'bold,italic,underline,strikethrough,|,bullist,numlist,|,link,unlink',
+                            'toolbar2' => '',
+                            'statusbar' => false
+                        )
+                    )); 
+                    ?>
                     <div class="meta-help">Title for the implementation process section</div>
                 </td>
             </tr>
             <tr>
                 <th><label for="ai_step_1_title">Step 1 Title</label></th>
                 <td>
-                    <input type="text" id="ai_step_1_title" name="ai_step_1_title" value="<?php echo esc_attr($ai_step_1_title); ?>" />
+                    <?php 
+                    wp_editor($ai_step_1_title, 'ai_step_1_title', array(
+                        'media_buttons' => false,
+                        'textarea_rows' => 3,
+                        'teeny' => true,
+                        'tinymce' => array(
+                            'toolbar1' => 'bold,italic,underline,strikethrough,|,bullist,numlist,|,link,unlink',
+                            'toolbar2' => '',
+                            'statusbar' => false
+                        )
+                    )); 
+                    ?>
                     <div class="meta-help">Title for first implementation step</div>
                 </td>
             </tr>
             <tr>
                 <th><label for="ai_step_1_desc">Step 1 Description</label></th>
                 <td>
-                    <textarea id="ai_step_1_desc" name="ai_step_1_desc"><?php echo esc_textarea($ai_step_1_desc); ?></textarea>
+                    <?php 
+                    wp_editor($ai_step_1_desc, 'ai_step_1_desc', array(
+                        'media_buttons' => false,
+                        'textarea_rows' => 5,
+                        'teeny' => false,
+                        'tinymce' => array(
+                            'toolbar1' => 'bold,italic,underline,strikethrough,|,bullist,numlist,|,link,unlink',
+                            'toolbar2' => '',
+                            'statusbar' => false
+                        )
+                    )); 
+                    ?>
                     <div class="meta-help">Description for first step</div>
                 </td>
             </tr>
             <tr>
                 <th><label for="ai_step_2_title">Step 2 Title</label></th>
                 <td>
-                    <input type="text" id="ai_step_2_title" name="ai_step_2_title" value="<?php echo esc_attr($ai_step_2_title); ?>" />
+                    <?php 
+                    wp_editor($ai_step_2_title, 'ai_step_2_title', array(
+                        'media_buttons' => false,
+                        'textarea_rows' => 3,
+                        'teeny' => true,
+                        'tinymce' => array(
+                            'toolbar1' => 'bold,italic,underline,strikethrough,|,bullist,numlist,|,link,unlink',
+                            'toolbar2' => '',
+                            'statusbar' => false
+                        )
+                    )); 
+                    ?>
                     <div class="meta-help">Title for second implementation step</div>
                 </td>
             </tr>
             <tr>
                 <th><label for="ai_step_2_desc">Step 2 Description</label></th>
                 <td>
-                    <textarea id="ai_step_2_desc" name="ai_step_2_desc"><?php echo esc_textarea($ai_step_2_desc); ?></textarea>
+                    <?php 
+                    wp_editor($ai_step_2_desc, 'ai_step_2_desc', array(
+                        'media_buttons' => false,
+                        'textarea_rows' => 5,
+                        'teeny' => false,
+                        'tinymce' => array(
+                            'toolbar1' => 'bold,italic,underline,strikethrough,|,bullist,numlist,|,link,unlink',
+                            'toolbar2' => '',
+                            'statusbar' => false
+                        )
+                    )); 
+                    ?>
                     <div class="meta-help">Description for second step</div>
                 </td>
             </tr>
             <tr>
                 <th><label for="ai_step_3_title">Step 3 Title</label></th>
                 <td>
-                    <input type="text" id="ai_step_3_title" name="ai_step_3_title" value="<?php echo esc_attr($ai_step_3_title); ?>" />
+                    <?php 
+                    wp_editor($ai_step_3_title, 'ai_step_3_title', array(
+                        'media_buttons' => false,
+                        'textarea_rows' => 3,
+                        'teeny' => true,
+                        'tinymce' => array(
+                            'toolbar1' => 'bold,italic,underline,strikethrough,|,bullist,numlist,|,link,unlink',
+                            'toolbar2' => '',
+                            'statusbar' => false
+                        )
+                    )); 
+                    ?>
                     <div class="meta-help">Title for third implementation step</div>
                 </td>
             </tr>
             <tr>
                 <th><label for="ai_step_3_desc">Step 3 Description</label></th>
                 <td>
-                    <textarea id="ai_step_3_desc" name="ai_step_3_desc"><?php echo esc_textarea($ai_step_3_desc); ?></textarea>
+                    <?php 
+                    wp_editor($ai_step_3_desc, 'ai_step_3_desc', array(
+                        'media_buttons' => false,
+                        'textarea_rows' => 5,
+                        'teeny' => false,
+                        'tinymce' => array(
+                            'toolbar1' => 'bold,italic,underline,strikethrough,|,bullist,numlist,|,link,unlink',
+                            'toolbar2' => '',
+                            'statusbar' => false
+                        )
+                    )); 
+                    ?>
                     <div class="meta-help">Description for third step</div>
                 </td>
             </tr>
             <tr>
                 <th><label for="ai_step_4_title">Step 4 Title</label></th>
                 <td>
-                    <input type="text" id="ai_step_4_title" name="ai_step_4_title" value="<?php echo esc_attr($ai_step_4_title); ?>" />
+                    <?php 
+                    wp_editor($ai_step_4_title, 'ai_step_4_title', array(
+                        'media_buttons' => false,
+                        'textarea_rows' => 3,
+                        'teeny' => true,
+                        'tinymce' => array(
+                            'toolbar1' => 'bold,italic,underline,strikethrough,|,bullist,numlist,|,link,unlink',
+                            'toolbar2' => '',
+                            'statusbar' => false
+                        )
+                    )); 
+                    ?>
                     <div class="meta-help">Title for fourth implementation step</div>
                 </td>
             </tr>
             <tr>
                 <th><label for="ai_step_4_desc">Step 4 Description</label></th>
                 <td>
-                    <textarea id="ai_step_4_desc" name="ai_step_4_desc"><?php echo esc_textarea($ai_step_4_desc); ?></textarea>
+                    <?php 
+                    wp_editor($ai_step_4_desc, 'ai_step_4_desc', array(
+                        'media_buttons' => false,
+                        'textarea_rows' => 5,
+                        'teeny' => false,
+                        'tinymce' => array(
+                            'toolbar1' => 'bold,italic,underline,strikethrough,|,bullist,numlist,|,link,unlink',
+                            'toolbar2' => '',
+                            'statusbar' => false
+                        )
+                    )); 
+                    ?>
                     <div class="meta-help">Description for fourth step</div>
                 </td>
             </tr>
             <tr>
                 <th><label for="ai_step_5_title">Step 5 Title</label></th>
                 <td>
-                    <input type="text" id="ai_step_5_title" name="ai_step_5_title" value="<?php echo esc_attr($ai_step_5_title); ?>" />
+                    <?php 
+                    wp_editor($ai_step_5_title, 'ai_step_5_title', array(
+                        'media_buttons' => false,
+                        'textarea_rows' => 3,
+                        'teeny' => true,
+                        'tinymce' => array(
+                            'toolbar1' => 'bold,italic,underline,strikethrough,|,bullist,numlist,|,link,unlink',
+                            'toolbar2' => '',
+                            'statusbar' => false
+                        )
+                    )); 
+                    ?>
                     <div class="meta-help">Title for fifth implementation step</div>
                 </td>
             </tr>
             <tr>
                 <th><label for="ai_step_5_desc">Step 5 Description</label></th>
                 <td>
-                    <textarea id="ai_step_5_desc" name="ai_step_5_desc"><?php echo esc_textarea($ai_step_5_desc); ?></textarea>
+                    <?php 
+                    wp_editor($ai_step_5_desc, 'ai_step_5_desc', array(
+                        'media_buttons' => false,
+                        'textarea_rows' => 5,
+                        'teeny' => false,
+                        'tinymce' => array(
+                            'toolbar1' => 'bold,italic,underline,strikethrough,|,bullist,numlist,|,link,unlink',
+                            'toolbar2' => '',
+                            'statusbar' => false
+                        )
+                    )); 
+                    ?>
                     <div class="meta-help">Description for fifth step</div>
                 </td>
             </tr>
@@ -501,7 +907,18 @@ function aimpro_ai_crm_meta_box_callback($post) {
             <tr>
                 <th><label for="ai_testimonial_quote">Testimonial Quote</label></th>
                 <td>
-                    <textarea id="ai_testimonial_quote" name="ai_testimonial_quote"><?php echo esc_textarea($ai_testimonial_quote); ?></textarea>
+                    <?php 
+                    wp_editor($ai_testimonial_quote, 'ai_testimonial_quote', array(
+                        'media_buttons' => false,
+                        'textarea_rows' => 6,
+                        'teeny' => false,
+                        'tinymce' => array(
+                            'toolbar1' => 'bold,italic,underline,strikethrough,|,bullist,numlist,|,link,unlink',
+                            'toolbar2' => '',
+                            'statusbar' => false
+                        )
+                    )); 
+                    ?>
                     <div class="meta-help">Customer testimonial quote</div>
                 </td>
             </tr>
@@ -523,13 +940,867 @@ function aimpro_ai_crm_meta_box_callback($post) {
     </div>
 
     <div class="meta-section">
+        <h3>AI Features Section</h3>
+        <table class="meta-table">
+            <tr>
+                <th><label for="ai_features_title">Features Title</label></th>
+                <td>
+                    <?php 
+                    wp_editor($ai_features_title, 'ai_features_title', array(
+                        'media_buttons' => false,
+                        'textarea_rows' => 3,
+                        'teeny' => true,
+                        'tinymce' => array(
+                            'toolbar1' => 'bold,italic,underline,strikethrough,|,bullist,numlist,|,link,unlink',
+                            'toolbar2' => '',
+                            'statusbar' => false
+                        )
+                    )); 
+                    ?>
+                    <div class="meta-help">Title for the AI features section</div>
+                </td>
+            </tr>
+            <tr>
+                <th><label for="ai_features_subtitle">Features Subtitle</label></th>
+                <td>
+                    <?php 
+                    wp_editor($ai_features_subtitle, 'ai_features_subtitle', array(
+                        'media_buttons' => false,
+                        'textarea_rows' => 5,
+                        'teeny' => false,
+                        'tinymce' => array(
+                            'toolbar1' => 'bold,italic,underline,strikethrough,|,bullist,numlist,|,link,unlink',
+                            'toolbar2' => '',
+                            'statusbar' => false
+                        )
+                    )); 
+                    ?>
+                    <div class="meta-help">Subtitle for the AI features section</div>
+                </td>
+            </tr>
+            <tr>
+                <th><label for="ai_feature_1_title">Feature 1 Title</label></th>
+                <td>
+                    <?php 
+                    wp_editor($ai_feature_1_title, 'ai_feature_1_title', array(
+                        'media_buttons' => false,
+                        'textarea_rows' => 3,
+                        'teeny' => true,
+                        'tinymce' => array(
+                            'toolbar1' => 'bold,italic,underline,strikethrough,|,bullist,numlist,|,link,unlink',
+                            'toolbar2' => '',
+                            'statusbar' => false
+                        )
+                    )); 
+                    ?>
+                    <div class="meta-help">Title for first AI feature (Smart Lead Scoring)</div>
+                </td>
+            </tr>
+            <tr>
+                <th><label for="ai_feature_1_desc">Feature 1 Description</label></th>
+                <td>
+                    <?php 
+                    wp_editor($ai_feature_1_desc, 'ai_feature_1_desc', array(
+                        'media_buttons' => false,
+                        'textarea_rows' => 4,
+                        'teeny' => false,
+                        'tinymce' => array(
+                            'toolbar1' => 'bold,italic,underline,strikethrough,|,bullist,numlist,|,link,unlink',
+                            'toolbar2' => '',
+                            'statusbar' => false
+                        )
+                    )); 
+                    ?>
+                    <div class="meta-help">Description for first AI feature</div>
+                </td>
+            </tr>
+            <tr>
+                <th><label for="ai_feature_2_title">Feature 2 Title</label></th>
+                <td>
+                    <?php 
+                    wp_editor($ai_feature_2_title, 'ai_feature_2_title', array(
+                        'media_buttons' => false,
+                        'textarea_rows' => 3,
+                        'teeny' => true,
+                        'tinymce' => array(
+                            'toolbar1' => 'bold,italic,underline,strikethrough,|,bullist,numlist,|,link,unlink',
+                            'toolbar2' => '',
+                            'statusbar' => false
+                        )
+                    )); 
+                    ?>
+                    <div class="meta-help">Title for second AI feature (Predictive Forecasting)</div>
+                </td>
+            </tr>
+            <tr>
+                <th><label for="ai_feature_2_desc">Feature 2 Description</label></th>
+                <td>
+                    <?php 
+                    wp_editor($ai_feature_2_desc, 'ai_feature_2_desc', array(
+                        'media_buttons' => false,
+                        'textarea_rows' => 4,
+                        'teeny' => false,
+                        'tinymce' => array(
+                            'toolbar1' => 'bold,italic,underline,strikethrough,|,bullist,numlist,|,link,unlink',
+                            'toolbar2' => '',
+                            'statusbar' => false
+                        )
+                    )); 
+                    ?>
+                    <div class="meta-help">Description for second AI feature</div>
+                </td>
+            </tr>
+            <tr>
+                <th><label for="ai_feature_3_title">Feature 3 Title</label></th>
+                <td>
+                    <?php 
+                    wp_editor($ai_feature_3_title, 'ai_feature_3_title', array(
+                        'media_buttons' => false,
+                        'textarea_rows' => 3,
+                        'teeny' => true,
+                        'tinymce' => array(
+                            'toolbar1' => 'bold,italic,underline,strikethrough,|,bullist,numlist,|,link,unlink',
+                            'toolbar2' => '',
+                            'statusbar' => false
+                        )
+                    )); 
+                    ?>
+                    <div class="meta-help">Title for third AI feature (Behavioural Targeting)</div>
+                </td>
+            </tr>
+            <tr>
+                <th><label for="ai_feature_3_desc">Feature 3 Description</label></th>
+                <td>
+                    <?php 
+                    wp_editor($ai_feature_3_desc, 'ai_feature_3_desc', array(
+                        'media_buttons' => false,
+                        'textarea_rows' => 4,
+                        'teeny' => false,
+                        'tinymce' => array(
+                            'toolbar1' => 'bold,italic,underline,strikethrough,|,bullist,numlist,|,link,unlink',
+                            'toolbar2' => '',
+                            'statusbar' => false
+                        )
+                    )); 
+                    ?>
+                    <div class="meta-help">Description for third AI feature</div>
+                </td>
+            </tr>
+            <tr>
+                <th><label for="ai_feature_4_title">Feature 4 Title</label></th>
+                <td>
+                    <?php 
+                    wp_editor($ai_feature_4_title, 'ai_feature_4_title', array(
+                        'media_buttons' => false,
+                        'textarea_rows' => 3,
+                        'teeny' => true,
+                        'tinymce' => array(
+                            'toolbar1' => 'bold,italic,underline,strikethrough,|,bullist,numlist,|,link,unlink',
+                            'toolbar2' => '',
+                            'statusbar' => false
+                        )
+                    )); 
+                    ?>
+                    <div class="meta-help">Title for fourth AI feature (Intelligent Reporting)</div>
+                </td>
+            </tr>
+            <tr>
+                <th><label for="ai_feature_4_desc">Feature 4 Description</label></th>
+                <td>
+                    <?php 
+                    wp_editor($ai_feature_4_desc, 'ai_feature_4_desc', array(
+                        'media_buttons' => false,
+                        'textarea_rows' => 4,
+                        'teeny' => false,
+                        'tinymce' => array(
+                            'toolbar1' => 'bold,italic,underline,strikethrough,|,bullist,numlist,|,link,unlink',
+                            'toolbar2' => '',
+                            'statusbar' => false
+                        )
+                    )); 
+                    ?>
+                    <div class="meta-help">Description for fourth AI feature</div>
+                </td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="meta-section">
         <h3>Call-to-Action Section</h3>
         <table class="meta-table">
             <tr>
                 <th><label for="ai_cta_title">CTA Title</label></th>
                 <td>
-                    <input type="text" id="ai_cta_title" name="ai_cta_title" value="<?php echo esc_attr($ai_cta_title); ?>" />
+                    <?php 
+                    wp_editor($ai_cta_title, 'ai_cta_title', array(
+                        'media_buttons' => false,
+                        'textarea_rows' => 3,
+                        'teeny' => true,
+                        'tinymce' => array(
+                            'toolbar1' => 'bold,italic,underline,strikethrough,|,bullist,numlist,|,link,unlink',
+                            'toolbar2' => '',
+                            'statusbar' => false
+                        )
+                    )); 
+                    ?>
                     <div class="meta-help">Title for the final call-to-action section</div>
+                </td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="meta-section">
+        <h3>Package Pricing Section</h3>
+        <table class="meta-table">
+            <tr>
+                <th><label for="ai_packages_title">Packages Title</label></th>
+                <td>
+                    <?php 
+                    wp_editor($ai_packages_title, 'ai_packages_title', array(
+                        'media_buttons' => false,
+                        'textarea_rows' => 3,
+                        'teeny' => true,
+                        'tinymce' => array(
+                            'toolbar1' => 'bold,italic,underline,strikethrough,|,bullist,numlist,|,link,unlink',
+                            'toolbar2' => '',
+                            'statusbar' => false
+                        )
+                    )); 
+                    ?>
+                    <div class="meta-help">Title for the packages section</div>
+                </td>
+            </tr>
+            <tr>
+                <th><label for="ai_packages_subtitle">Packages Subtitle</label></th>
+                <td>
+                    <?php 
+                    wp_editor($ai_packages_subtitle, 'ai_packages_subtitle', array(
+                        'media_buttons' => false,
+                        'textarea_rows' => 4,
+                        'teeny' => false,
+                        'tinymce' => array(
+                            'toolbar1' => 'bold,italic,underline,strikethrough,|,bullist,numlist,|,link,unlink',
+                            'toolbar2' => '',
+                            'statusbar' => false
+                        )
+                    )); 
+                    ?>
+                    <div class="meta-help">Subtitle for the packages section</div>
+                </td>
+            </tr>
+            <tr>
+                <th><label for="ai_package_1_title">Package 1 Title</label></th>
+                <td>
+                    <input type="text" id="ai_package_1_title" name="ai_package_1_title" value="<?php echo esc_attr($ai_package_1_title); ?>" />
+                    <div class="meta-help">Title for Essential package</div>
+                </td>
+            </tr>
+            <tr>
+                <th><label for="ai_package_1_price">Package 1 Price</label></th>
+                <td>
+                    <input type="text" id="ai_package_1_price" name="ai_package_1_price" value="<?php echo esc_attr($ai_package_1_price); ?>" />
+                    <div class="meta-help">Price for Essential package (e.g., "£2,497")</div>
+                </td>
+            </tr>
+            <tr>
+                <th><label for="ai_package_1_subtitle">Package 1 Subtitle</label></th>
+                <td>
+                    <input type="text" id="ai_package_1_subtitle" name="ai_package_1_subtitle" value="<?php echo esc_attr($ai_package_1_subtitle); ?>" />
+                    <div class="meta-help">Subtitle for Essential package</div>
+                </td>
+            </tr>
+            <tr>
+                <th><label for="ai_package_1_features">Package 1 Features</label></th>
+                <td>
+                    <?php 
+                    wp_editor($ai_package_1_features, 'ai_package_1_features', array(
+                        'media_buttons' => false,
+                        'textarea_rows' => 8,
+                        'teeny' => false,
+                        'tinymce' => array(
+                            'toolbar1' => 'bold,italic,underline,strikethrough,|,bullist,numlist,|,link,unlink',
+                            'toolbar2' => '',
+                            'statusbar' => false
+                        )
+                    )); 
+                    ?>
+                    <div class="meta-help">Features list for Essential package (use bullet list format)</div>
+                </td>
+            </tr>
+            <tr>
+                <th><label for="ai_package_2_title">Package 2 Title</label></th>
+                <td>
+                    <input type="text" id="ai_package_2_title" name="ai_package_2_title" value="<?php echo esc_attr($ai_package_2_title); ?>" />
+                    <div class="meta-help">Title for Advanced package</div>
+                </td>
+            </tr>
+            <tr>
+                <th><label for="ai_package_2_price">Package 2 Price</label></th>
+                <td>
+                    <input type="text" id="ai_package_2_price" name="ai_package_2_price" value="<?php echo esc_attr($ai_package_2_price); ?>" />
+                    <div class="meta-help">Price for Advanced package</div>
+                </td>
+            </tr>
+            <tr>
+                <th><label for="ai_package_2_subtitle">Package 2 Subtitle</label></th>
+                <td>
+                    <input type="text" id="ai_package_2_subtitle" name="ai_package_2_subtitle" value="<?php echo esc_attr($ai_package_2_subtitle); ?>" />
+                    <div class="meta-help">Subtitle for Advanced package</div>
+                </td>
+            </tr>
+            <tr>
+                <th><label for="ai_package_2_features">Package 2 Features</label></th>
+                <td>
+                    <?php 
+                    wp_editor($ai_package_2_features, 'ai_package_2_features', array(
+                        'media_buttons' => false,
+                        'textarea_rows' => 8,
+                        'teeny' => false,
+                        'tinymce' => array(
+                            'toolbar1' => 'bold,italic,underline,strikethrough,|,bullist,numlist,|,link,unlink',
+                            'toolbar2' => '',
+                            'statusbar' => false
+                        )
+                    )); 
+                    ?>
+                    <div class="meta-help">Features list for Advanced package (use bullet list format)</div>
+                </td>
+            </tr>
+            <tr>
+                <th><label for="ai_package_3_title">Package 3 Title</label></th>
+                <td>
+                    <input type="text" id="ai_package_3_title" name="ai_package_3_title" value="<?php echo esc_attr($ai_package_3_title); ?>" />
+                    <div class="meta-help">Title for Enterprise package</div>
+                </td>
+            </tr>
+            <tr>
+                <th><label for="ai_package_3_price">Package 3 Price</label></th>
+                <td>
+                    <input type="text" id="ai_package_3_price" name="ai_package_3_price" value="<?php echo esc_attr($ai_package_3_price); ?>" />
+                    <div class="meta-help">Price for Enterprise package</div>
+                </td>
+            </tr>
+            <tr>
+                <th><label for="ai_package_3_subtitle">Package 3 Subtitle</label></th>
+                <td>
+                    <input type="text" id="ai_package_3_subtitle" name="ai_package_3_subtitle" value="<?php echo esc_attr($ai_package_3_subtitle); ?>" />
+                    <div class="meta-help">Subtitle for Enterprise package</div>
+                </td>
+            </tr>
+            <tr>
+                <th><label for="ai_package_3_features">Package 3 Features</label></th>
+                <td>
+                    <?php 
+                    wp_editor($ai_package_3_features, 'ai_package_3_features', array(
+                        'media_buttons' => false,
+                        'textarea_rows' => 8,
+                        'teeny' => false,
+                        'tinymce' => array(
+                            'toolbar1' => 'bold,italic,underline,strikethrough,|,bullist,numlist,|,link,unlink',
+                            'toolbar2' => '',
+                            'statusbar' => false
+                        )
+                    )); 
+                    ?>
+                    <div class="meta-help">Features list for Enterprise package (use bullet list format)</div>
+                </td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="meta-section">
+        <h3>CRM Platforms Section</h3>
+        <table class="meta-table">
+            <tr>
+                <th><label for="ai_platforms_title">Platforms Title</label></th>
+                <td>
+                    <?php 
+                    wp_editor($ai_platforms_title, 'ai_platforms_title', array(
+                        'media_buttons' => false,
+                        'textarea_rows' => 3,
+                        'teeny' => true,
+                        'tinymce' => array(
+                            'toolbar1' => 'bold,italic,underline,strikethrough,|,bullist,numlist,|,link,unlink',
+                            'toolbar2' => '',
+                            'statusbar' => false
+                        )
+                    )); 
+                    ?>
+                    <div class="meta-help">Title for the CRM platforms section</div>
+                </td>
+            </tr>
+            <tr>
+                <th><label for="ai_platforms_subtitle">Platforms Subtitle</label></th>
+                <td>
+                    <?php 
+                    wp_editor($ai_platforms_subtitle, 'ai_platforms_subtitle', array(
+                        'media_buttons' => false,
+                        'textarea_rows' => 4,
+                        'teeny' => false,
+                        'tinymce' => array(
+                            'toolbar1' => 'bold,italic,underline,strikethrough,|,bullist,numlist,|,link,unlink',
+                            'toolbar2' => '',
+                            'statusbar' => false
+                        )
+                    )); 
+                    ?>
+                    <div class="meta-help">Subtitle for the CRM platforms section</div>
+                </td>
+            </tr>
+            <tr>
+                <th><label for="ai_platform_1_title">Platform 1 Title</label></th>
+                <td>
+                    <?php 
+                    wp_editor($ai_platform_1_title, 'ai_platform_1_title', array(
+                        'media_buttons' => false,
+                        'textarea_rows' => 3,
+                        'teeny' => true,
+                        'tinymce' => array(
+                            'toolbar1' => 'bold,italic,underline,strikethrough,|,bullist,numlist,|,link,unlink',
+                            'toolbar2' => '',
+                            'statusbar' => false
+                        )
+                    )); 
+                    ?>
+                    <div class="meta-help">Title for HubSpot CRM</div>
+                </td>
+            </tr>
+            <tr>
+                <th><label for="ai_platform_1_desc">Platform 1 Description</label></th>
+                <td>
+                    <?php 
+                    wp_editor($ai_platform_1_desc, 'ai_platform_1_desc', array(
+                        'media_buttons' => false,
+                        'textarea_rows' => 4,
+                        'teeny' => false,
+                        'tinymce' => array(
+                            'toolbar1' => 'bold,italic,underline,strikethrough,|,bullist,numlist,|,link,unlink',
+                            'toolbar2' => '',
+                            'statusbar' => false
+                        )
+                    )); 
+                    ?>
+                    <div class="meta-help">Description for HubSpot CRM</div>
+                </td>
+            </tr>
+            <tr>
+                <th><label for="ai_platform_2_title">Platform 2 Title</label></th>
+                <td>
+                    <?php 
+                    wp_editor($ai_platform_2_title, 'ai_platform_2_title', array(
+                        'media_buttons' => false,
+                        'textarea_rows' => 3,
+                        'teeny' => true,
+                        'tinymce' => array(
+                            'toolbar1' => 'bold,italic,underline,strikethrough,|,bullist,numlist,|,link,unlink',
+                            'toolbar2' => '',
+                            'statusbar' => false
+                        )
+                    )); 
+                    ?>
+                    <div class="meta-help">Title for Salesforce</div>
+                </td>
+            </tr>
+            <tr>
+                <th><label for="ai_platform_2_desc">Platform 2 Description</label></th>
+                <td>
+                    <?php 
+                    wp_editor($ai_platform_2_desc, 'ai_platform_2_desc', array(
+                        'media_buttons' => false,
+                        'textarea_rows' => 4,
+                        'teeny' => false,
+                        'tinymce' => array(
+                            'toolbar1' => 'bold,italic,underline,strikethrough,|,bullist,numlist,|,link,unlink',
+                            'toolbar2' => '',
+                            'statusbar' => false
+                        )
+                    )); 
+                    ?>
+                    <div class="meta-help">Description for Salesforce</div>
+                </td>
+            </tr>
+            <tr>
+                <th><label for="ai_platform_3_title">Platform 3 Title</label></th>
+                <td>
+                    <?php 
+                    wp_editor($ai_platform_3_title, 'ai_platform_3_title', array(
+                        'media_buttons' => false,
+                        'textarea_rows' => 3,
+                        'teeny' => true,
+                        'tinymce' => array(
+                            'toolbar1' => 'bold,italic,underline,strikethrough,|,bullist,numlist,|,link,unlink',
+                            'toolbar2' => '',
+                            'statusbar' => false
+                        )
+                    )); 
+                    ?>
+                    <div class="meta-help">Title for Pipedrive</div>
+                </td>
+            </tr>
+            <tr>
+                <th><label for="ai_platform_3_desc">Platform 3 Description</label></th>
+                <td>
+                    <?php 
+                    wp_editor($ai_platform_3_desc, 'ai_platform_3_desc', array(
+                        'media_buttons' => false,
+                        'textarea_rows' => 4,
+                        'teeny' => false,
+                        'tinymce' => array(
+                            'toolbar1' => 'bold,italic,underline,strikethrough,|,bullist,numlist,|,link,unlink',
+                            'toolbar2' => '',
+                            'statusbar' => false
+                        )
+                    )); 
+                    ?>
+                    <div class="meta-help">Description for Pipedrive</div>
+                </td>
+            </tr>
+            <tr>
+                <th><label for="ai_platform_4_title">Platform 4 Title</label></th>
+                <td>
+                    <?php 
+                    wp_editor($ai_platform_4_title, 'ai_platform_4_title', array(
+                        'media_buttons' => false,
+                        'textarea_rows' => 3,
+                        'teeny' => true,
+                        'tinymce' => array(
+                            'toolbar1' => 'bold,italic,underline,strikethrough,|,bullist,numlist,|,link,unlink',
+                            'toolbar2' => '',
+                            'statusbar' => false
+                        )
+                    )); 
+                    ?>
+                    <div class="meta-help">Title for ActiveCampaign</div>
+                </td>
+            </tr>
+            <tr>
+                <th><label for="ai_platform_4_desc">Platform 4 Description</label></th>
+                <td>
+                    <?php 
+                    wp_editor($ai_platform_4_desc, 'ai_platform_4_desc', array(
+                        'media_buttons' => false,
+                        'textarea_rows' => 4,
+                        'teeny' => false,
+                        'tinymce' => array(
+                            'toolbar1' => 'bold,italic,underline,strikethrough,|,bullist,numlist,|,link,unlink',
+                            'toolbar2' => '',
+                            'statusbar' => false
+                        )
+                    )); 
+                    ?>
+                    <div class="meta-help">Description for ActiveCampaign</div>
+                </td>
+            </tr>
+            <tr>
+                <th><label for="ai_platform_5_title">Platform 5 Title</label></th>
+                <td>
+                    <?php 
+                    wp_editor($ai_platform_5_title, 'ai_platform_5_title', array(
+                        'media_buttons' => false,
+                        'textarea_rows' => 3,
+                        'teeny' => true,
+                        'tinymce' => array(
+                            'toolbar1' => 'bold,italic,underline,strikethrough,|,bullist,numlist,|,link,unlink',
+                            'toolbar2' => '',
+                            'statusbar' => false
+                        )
+                    )); 
+                    ?>
+                    <div class="meta-help">Title for Zoho CRM</div>
+                </td>
+            </tr>
+            <tr>
+                <th><label for="ai_platform_5_desc">Platform 5 Description</label></th>
+                <td>
+                    <?php 
+                    wp_editor($ai_platform_5_desc, 'ai_platform_5_desc', array(
+                        'media_buttons' => false,
+                        'textarea_rows' => 4,
+                        'teeny' => false,
+                        'tinymce' => array(
+                            'toolbar1' => 'bold,italic,underline,strikethrough,|,bullist,numlist,|,link,unlink',
+                            'toolbar2' => '',
+                            'statusbar' => false
+                        )
+                    )); 
+                    ?>
+                    <div class="meta-help">Description for Zoho CRM</div>
+                </td>
+            </tr>
+            <tr>
+                <th><label for="ai_platform_6_title">Platform 6 Title</label></th>
+                <td>
+                    <?php 
+                    wp_editor($ai_platform_6_title, 'ai_platform_6_title', array(
+                        'media_buttons' => false,
+                        'textarea_rows' => 3,
+                        'teeny' => true,
+                        'tinymce' => array(
+                            'toolbar1' => 'bold,italic,underline,strikethrough,|,bullist,numlist,|,link,unlink',
+                            'toolbar2' => '',
+                            'statusbar' => false
+                        )
+                    )); 
+                    ?>
+                    <div class="meta-help">Title for Microsoft Dynamics 365</div>
+                </td>
+            </tr>
+            <tr>
+                <th><label for="ai_platform_6_desc">Platform 6 Description</label></th>
+                <td>
+                    <?php 
+                    wp_editor($ai_platform_6_desc, 'ai_platform_6_desc', array(
+                        'media_buttons' => false,
+                        'textarea_rows' => 4,
+                        'teeny' => false,
+                        'tinymce' => array(
+                            'toolbar1' => 'bold,italic,underline,strikethrough,|,bullist,numlist,|,link,unlink',
+                            'toolbar2' => '',
+                            'statusbar' => false
+                        )
+                    )); 
+                    ?>
+                    <div class="meta-help">Description for Microsoft Dynamics 365</div>
+                </td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="meta-section">
+        <h3>Industries Section</h3>
+        <table class="meta-table">
+            <tr>
+                <th><label for="ai_industries_title">Industries Title</label></th>
+                <td>
+                    <?php 
+                    wp_editor($ai_industries_title, 'ai_industries_title', array(
+                        'media_buttons' => false,
+                        'textarea_rows' => 3,
+                        'teeny' => true,
+                        'tinymce' => array(
+                            'toolbar1' => 'bold,italic,underline,strikethrough,|,bullist,numlist,|,link,unlink',
+                            'toolbar2' => '',
+                            'statusbar' => false
+                        )
+                    )); 
+                    ?>
+                    <div class="meta-help">Title for the industries section</div>
+                </td>
+            </tr>
+            <tr>
+                <th><label for="ai_industry_1_title">Industry 1 Title</label></th>
+                <td>
+                    <?php 
+                    wp_editor($ai_industry_1_title, 'ai_industry_1_title', array(
+                        'media_buttons' => false,
+                        'textarea_rows' => 3,
+                        'teeny' => true,
+                        'tinymce' => array(
+                            'toolbar1' => 'bold,italic,underline,strikethrough,|,bullist,numlist,|,link,unlink',
+                            'toolbar2' => '',
+                            'statusbar' => false
+                        )
+                    )); 
+                    ?>
+                    <div class="meta-help">Title for SaaS & Technology industry</div>
+                </td>
+            </tr>
+            <tr>
+                <th><label for="ai_industry_1_desc">Industry 1 Description</label></th>
+                <td>
+                    <?php 
+                    wp_editor($ai_industry_1_desc, 'ai_industry_1_desc', array(
+                        'media_buttons' => false,
+                        'textarea_rows' => 4,
+                        'teeny' => false,
+                        'tinymce' => array(
+                            'toolbar1' => 'bold,italic,underline,strikethrough,|,bullist,numlist,|,link,unlink',
+                            'toolbar2' => '',
+                            'statusbar' => false
+                        )
+                    )); 
+                    ?>
+                    <div class="meta-help">Description for SaaS & Technology industry</div>
+                </td>
+            </tr>
+            <tr>
+                <th><label for="ai_industry_2_title">Industry 2 Title</label></th>
+                <td>
+                    <?php 
+                    wp_editor($ai_industry_2_title, 'ai_industry_2_title', array(
+                        'media_buttons' => false,
+                        'textarea_rows' => 3,
+                        'teeny' => true,
+                        'tinymce' => array(
+                            'toolbar1' => 'bold,italic,underline,strikethrough,|,bullist,numlist,|,link,unlink',
+                            'toolbar2' => '',
+                            'statusbar' => false
+                        )
+                    )); 
+                    ?>
+                    <div class="meta-help">Title for Professional Services industry</div>
+                </td>
+            </tr>
+            <tr>
+                <th><label for="ai_industry_2_desc">Industry 2 Description</label></th>
+                <td>
+                    <?php 
+                    wp_editor($ai_industry_2_desc, 'ai_industry_2_desc', array(
+                        'media_buttons' => false,
+                        'textarea_rows' => 4,
+                        'teeny' => false,
+                        'tinymce' => array(
+                            'toolbar1' => 'bold,italic,underline,strikethrough,|,bullist,numlist,|,link,unlink',
+                            'toolbar2' => '',
+                            'statusbar' => false
+                        )
+                    )); 
+                    ?>
+                    <div class="meta-help">Description for Professional Services industry</div>
+                </td>
+            </tr>
+            <tr>
+                <th><label for="ai_industry_3_title">Industry 3 Title</label></th>
+                <td>
+                    <?php 
+                    wp_editor($ai_industry_3_title, 'ai_industry_3_title', array(
+                        'media_buttons' => false,
+                        'textarea_rows' => 3,
+                        'teeny' => true,
+                        'tinymce' => array(
+                            'toolbar1' => 'bold,italic,underline,strikethrough,|,bullist,numlist,|,link,unlink',
+                            'toolbar2' => '',
+                            'statusbar' => false
+                        )
+                    )); 
+                    ?>
+                    <div class="meta-help">Title for E-commerce industry</div>
+                </td>
+            </tr>
+            <tr>
+                <th><label for="ai_industry_3_desc">Industry 3 Description</label></th>
+                <td>
+                    <?php 
+                    wp_editor($ai_industry_3_desc, 'ai_industry_3_desc', array(
+                        'media_buttons' => false,
+                        'textarea_rows' => 4,
+                        'teeny' => false,
+                        'tinymce' => array(
+                            'toolbar1' => 'bold,italic,underline,strikethrough,|,bullist,numlist,|,link,unlink',
+                            'toolbar2' => '',
+                            'statusbar' => false
+                        )
+                    )); 
+                    ?>
+                    <div class="meta-help">Description for E-commerce industry</div>
+                </td>
+            </tr>
+            <tr>
+                <th><label for="ai_industry_4_title">Industry 4 Title</label></th>
+                <td>
+                    <?php 
+                    wp_editor($ai_industry_4_title, 'ai_industry_4_title', array(
+                        'media_buttons' => false,
+                        'textarea_rows' => 3,
+                        'teeny' => true,
+                        'tinymce' => array(
+                            'toolbar1' => 'bold,italic,underline,strikethrough,|,bullist,numlist,|,link,unlink',
+                            'toolbar2' => '',
+                            'statusbar' => false
+                        )
+                    )); 
+                    ?>
+                    <div class="meta-help">Title for Real Estate industry</div>
+                </td>
+            </tr>
+            <tr>
+                <th><label for="ai_industry_4_desc">Industry 4 Description</label></th>
+                <td>
+                    <?php 
+                    wp_editor($ai_industry_4_desc, 'ai_industry_4_desc', array(
+                        'media_buttons' => false,
+                        'textarea_rows' => 4,
+                        'teeny' => false,
+                        'tinymce' => array(
+                            'toolbar1' => 'bold,italic,underline,strikethrough,|,bullist,numlist,|,link,unlink',
+                            'toolbar2' => '',
+                            'statusbar' => false
+                        )
+                    )); 
+                    ?>
+                    <div class="meta-help">Description for Real Estate industry</div>
+                </td>
+            </tr>
+            <tr>
+                <th><label for="ai_industry_5_title">Industry 5 Title</label></th>
+                <td>
+                    <?php 
+                    wp_editor($ai_industry_5_title, 'ai_industry_5_title', array(
+                        'media_buttons' => false,
+                        'textarea_rows' => 3,
+                        'teeny' => true,
+                        'tinymce' => array(
+                            'toolbar1' => 'bold,italic,underline,strikethrough,|,bullist,numlist,|,link,unlink',
+                            'toolbar2' => '',
+                            'statusbar' => false
+                        )
+                    )); 
+                    ?>
+                    <div class="meta-help">Title for Manufacturing industry</div>
+                </td>
+            </tr>
+            <tr>
+                <th><label for="ai_industry_5_desc">Industry 5 Description</label></th>
+                <td>
+                    <?php 
+                    wp_editor($ai_industry_5_desc, 'ai_industry_5_desc', array(
+                        'media_buttons' => false,
+                        'textarea_rows' => 4,
+                        'teeny' => false,
+                        'tinymce' => array(
+                            'toolbar1' => 'bold,italic,underline,strikethrough,|,bullist,numlist,|,link,unlink',
+                            'toolbar2' => '',
+                            'statusbar' => false
+                        )
+                    )); 
+                    ?>
+                    <div class="meta-help">Description for Manufacturing industry</div>
+                </td>
+            </tr>
+            <tr>
+                <th><label for="ai_industry_6_title">Industry 6 Title</label></th>
+                <td>
+                    <?php 
+                    wp_editor($ai_industry_6_title, 'ai_industry_6_title', array(
+                        'media_buttons' => false,
+                        'textarea_rows' => 3,
+                        'teeny' => true,
+                        'tinymce' => array(
+                            'toolbar1' => 'bold,italic,underline,strikethrough,|,bullist,numlist,|,link,unlink',
+                            'toolbar2' => '',
+                            'statusbar' => false
+                        )
+                    )); 
+                    ?>
+                    <div class="meta-help">Title for Healthcare industry</div>
+                </td>
+            </tr>
+            <tr>
+                <th><label for="ai_industry_6_desc">Industry 6 Description</label></th>
+                <td>
+                    <?php 
+                    wp_editor($ai_industry_6_desc, 'ai_industry_6_desc', array(
+                        'media_buttons' => false,
+                        'textarea_rows' => 4,
+                        'teeny' => false,
+                        'tinymce' => array(
+                            'toolbar1' => 'bold,italic,underline,strikethrough,|,bullist,numlist,|,link,unlink',
+                            'toolbar2' => '',
+                            'statusbar' => false
+                        )
+                    )); 
+                    ?>
+                    <div class="meta-help">Description for Healthcare industry</div>
                 </td>
             </tr>
         </table>
@@ -606,7 +1877,38 @@ function aimpro_save_ai_crm_meta($post_id) {
         'ai_testimonial_quote', 'ai_testimonial_author', 'ai_testimonial_position',
 
         // CTA Section
-        'ai_cta_title'
+        'ai_cta_title',
+
+        // AI Features Section
+        'ai_features_title', 'ai_features_subtitle',
+        'ai_feature_1_title', 'ai_feature_1_desc',
+        'ai_feature_2_title', 'ai_feature_2_desc',
+        'ai_feature_3_title', 'ai_feature_3_desc',
+        'ai_feature_4_title', 'ai_feature_4_desc',
+
+        // Packages Section
+        'ai_packages_title', 'ai_packages_subtitle',
+        'ai_package_1_title', 'ai_package_1_price', 'ai_package_1_subtitle', 'ai_package_1_features',
+        'ai_package_2_title', 'ai_package_2_price', 'ai_package_2_subtitle', 'ai_package_2_features',
+        'ai_package_3_title', 'ai_package_3_price', 'ai_package_3_subtitle', 'ai_package_3_features',
+
+        // Platforms Section
+        'ai_platforms_title', 'ai_platforms_subtitle',
+        'ai_platform_1_title', 'ai_platform_1_desc',
+        'ai_platform_2_title', 'ai_platform_2_desc',
+        'ai_platform_3_title', 'ai_platform_3_desc',
+        'ai_platform_4_title', 'ai_platform_4_desc',
+        'ai_platform_5_title', 'ai_platform_5_desc',
+        'ai_platform_6_title', 'ai_platform_6_desc',
+
+        // Industries Section
+        'ai_industries_title',
+        'ai_industry_1_title', 'ai_industry_1_desc',
+        'ai_industry_2_title', 'ai_industry_2_desc',
+        'ai_industry_3_title', 'ai_industry_3_desc',
+        'ai_industry_4_title', 'ai_industry_4_desc',
+        'ai_industry_5_title', 'ai_industry_5_desc',
+        'ai_industry_6_title', 'ai_industry_6_desc'
     ];
 
     // Save each meta field
@@ -615,14 +1917,22 @@ function aimpro_save_ai_crm_meta($post_id) {
             $value = $_POST[$field];
             
             // Sanitize the value based on field type
-            if (strpos($field, '_desc') !== false || strpos($field, '_quote') !== false || strpos($field, '_solution') !== false) {
-                // Text areas - allow line breaks
-                $value = sanitize_textarea_field($value);
+            if (strpos($field, '_title') !== false || 
+                strpos($field, '_subtitle') !== false || 
+                strpos($field, '_description') !== false ||
+                strpos($field, '_desc') !== false || 
+                strpos($field, '_quote') !== false || 
+                strpos($field, '_solution') !== false ||
+                strpos($field, '_challenge') !== false ||
+                strpos($field, '_intro') !== false ||
+                strpos($field, '_features') !== false) {
+                // Rich text fields - use wp_kses_post to allow HTML
+                $value = wp_kses_post($value);
             } elseif (strpos($field, '_url') !== false) {
                 // URLs
                 $value = esc_url_raw($value);
             } else {
-                // Regular text fields
+                // Regular text fields (numbers, labels, button text, author names, positions, prices)
                 $value = sanitize_text_field($value);
             }
             
