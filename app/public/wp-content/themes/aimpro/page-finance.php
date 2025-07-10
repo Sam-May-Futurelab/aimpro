@@ -24,19 +24,19 @@ get_header(); ?>
           <!-- Page Header -->
         <section class="page-header">
             <div class="page-header-content animate-on-scroll animate-fade-up">
-                <h1><?php echo esc_html(get_post_meta(get_the_ID(), '_finance_header_title', true) ?: 'Finance Digital Marketing'); ?></h1>
-                <p class="page-subtitle"><?php echo esc_html(get_post_meta(get_the_ID(), '_finance_header_subtitle', true) ?: 'Build trust and generate high-value leads with compliant financial services marketing'); ?></p>
+                <h1><?php echo wp_kses_post(get_post_meta(get_the_ID(), '_finance_header_title', true) ?: 'Finance Digital Marketing'); ?></h1>
+                <p class="page-subtitle"><?php echo wp_kses_post(get_post_meta(get_the_ID(), '_finance_header_subtitle', true) ?: 'Build trust and generate high-value leads with compliant financial services marketing'); ?></p>
             </div>
         </section>        <!-- Industry Overview -->
         <section class="industry-overview animate-on-scroll animate-fade-up">
             <div class="section-content">
                 <div class="overview-content">
                     <div class="overview-text animate-on-scroll animate-slide-left">
-                        <h2><?php echo esc_html(get_post_meta(get_the_ID(), '_finance_overview_title', true) ?: 'Navigate Financial Services Marketing with Confidence'); ?></h2>
-                        <p><?php echo esc_html(get_post_meta(get_the_ID(), '_finance_overview_content', true) ?: 'Financial services marketing requires a delicate balance of trust-building, compliance, and results. Our specialised approach helps financial advisors, banks, insurance companies, and fintech startups generate qualified leads while maintaining regulatory compliance.'); ?></p>
+                        <h2><?php echo wp_kses_post(get_post_meta(get_the_ID(), '_finance_overview_title', true) ?: 'Navigate Financial Services Marketing with Confidence'); ?></h2>
+                        <p><?php echo wp_kses_post(get_post_meta(get_the_ID(), '_finance_overview_content', true) ?: 'Financial services marketing requires a delicate balance of trust-building, compliance, and results. Our specialised approach helps financial advisors, banks, insurance companies, and fintech startups generate qualified leads while maintaining regulatory compliance.'); ?></p>
                         
                         <div class="industry-challenges animate-on-scroll animate-fade-up">
-                            <h3><?php echo esc_html(get_post_meta(get_the_ID(), '_finance_challenges_title', true) ?: 'Financial Marketing Challenges We Solve:'); ?></h3>
+                            <h3><?php echo wp_kses_post(get_post_meta(get_the_ID(), '_finance_challenges_title', true) ?: 'Financial Marketing Challenges We Solve:'); ?></h3>
                             <ul>
                                 <?php 
                                 $challenges = get_post_meta(get_the_ID(), '_finance_challenges', true);
@@ -69,7 +69,7 @@ get_header(); ?>
         </section>        <!-- Finance Services (2x2 Grid) -->
         <section class="finance-services animate-on-scroll animate-fade-up">
             <div class="section-content">
-                <h2 class="animate-on-scroll animate-fade-up"><?php echo esc_html(get_post_meta(get_the_ID(), '_finance_solutions_title', true) ?: 'Our Financial Services Marketing Solutions'); ?></h2>
+                <h2 class="animate-on-scroll animate-fade-up"><?php echo wp_kses_post(get_post_meta(get_the_ID(), '_finance_solutions_title', true) ?: 'Our Financial Services Marketing Solutions'); ?></h2>
                 <div class="services-grid services-grid-2x2">
                     <?php 
                     $solutions = get_post_meta(get_the_ID(), '_finance_solutions', true);
@@ -120,8 +120,8 @@ get_header(); ?>
                                 <i class="<?php echo esc_attr($solution['icon']); ?>"></i>
                             </div>
                             <div class="service-content">
-                                <h3><?php echo esc_html($solution['title']); ?></h3>
-                                <p><?php echo esc_html($solution['description']); ?></p>
+                                <h3><?php echo wp_kses_post($solution['title']); ?></h3>
+                                <p><?php echo wp_kses_post($solution['description']); ?></p>
                                 <ul class="service-features">
                                     <?php foreach ($solution['features'] as $feature): ?>
                                         <li><?php echo esc_html($feature); ?></li>
@@ -138,12 +138,12 @@ get_header(); ?>
             <div class="section-content">
                 <div class="case-study-content">
                     <div class="case-study-text animate-on-scroll animate-slide-left">
-                        <span class="case-study-label"><?php echo esc_html(get_post_meta(get_the_ID(), '_finance_case_study_label', true) ?: 'Success Story'); ?></span>
-                        <h2><?php echo esc_html(get_post_meta(get_the_ID(), '_finance_case_study_title', true) ?: 'WealthWise Financial: 150% Increase in Qualified Leads'); ?></h2>
-                        <p><?php echo esc_html(get_post_meta(get_the_ID(), '_finance_case_study_content', true) ?: 'WealthWise Financial, an independent financial advisory firm, needed to build their client base while maintaining strict compliance with FCA regulations.'); ?></p>
+                        <span class="case-study-label"><?php echo wp_kses_post(get_post_meta(get_the_ID(), '_finance_case_study_label', true) ?: 'Success Story'); ?></span>
+                        <h2><?php echo wp_kses_post(get_post_meta(get_the_ID(), '_finance_case_study_title', true) ?: 'WealthWise Financial: 150% Increase in Qualified Leads'); ?></h2>
+                        <p><?php echo wp_kses_post(get_post_meta(get_the_ID(), '_finance_case_study_content', true) ?: 'WealthWise Financial, an independent financial advisory firm, needed to build their client base while maintaining strict compliance with FCA regulations.'); ?></p>
                         
                         <div class="case-study-challenge animate-on-scroll animate-fade-up">
-                            <h3><?php echo esc_html(get_post_meta(get_the_ID(), '_finance_case_study_challenge_title', true) ?: 'The Challenge'); ?></h3>
+                            <h3><?php echo wp_kses_post(get_post_meta(get_the_ID(), '_finance_case_study_challenge_title', true) ?: 'The Challenge'); ?></h3>
                             <ul>
                                 <?php 
                                 $case_study_challenges = get_post_meta(get_the_ID(), '_finance_case_study_challenges', true);
@@ -162,7 +162,7 @@ get_header(); ?>
                         </div>
 
                         <div class="case-study-solution animate-on-scroll animate-fade-up">
-                            <h3><?php echo esc_html(get_post_meta(get_the_ID(), '_finance_case_study_solution_title', true) ?: 'Our Solution'); ?></h3>
+                            <h3><?php echo wp_kses_post(get_post_meta(get_the_ID(), '_finance_case_study_solution_title', true) ?: 'Our Solution'); ?></h3>
                             <ul>
                                 <?php 
                                 $case_study_solutions = get_post_meta(get_the_ID(), '_finance_case_study_solutions', true);
@@ -181,7 +181,7 @@ get_header(); ?>
                         </div>
                     </div>
                     <div class="case-study-results animate-on-scroll animate-slide-right">
-                        <h3><?php echo esc_html(get_post_meta(get_the_ID(), '_finance_case_study_results_title', true) ?: 'Results After 8 Months'); ?></h3>
+                        <h3><?php echo wp_kses_post(get_post_meta(get_the_ID(), '_finance_case_study_results_title', true) ?: 'Results After 8 Months'); ?></h3>
                         <div class="results-grid">
                             <?php 
                             $case_study_results = get_post_meta(get_the_ID(), '_finance_case_study_results', true);
@@ -200,14 +200,14 @@ get_header(); ?>
                                 </div>
                             <?php endforeach; ?>
                         </div>
-                        <a href="<?php echo esc_url(get_post_meta(get_the_ID(), '_finance_case_study_link_url', true) ?: home_url('/case-studies')); ?>" class="case-study-link"><?php echo esc_html(get_post_meta(get_the_ID(), '_finance_case_study_link_text', true) ?: 'Read Full Case Study'); ?></a>
+                        <a href="<?php echo esc_url(get_post_meta(get_the_ID(), '_finance_case_study_link_url', true) ?: home_url('/case-studies')); ?>" class="case-study-link"><?php echo wp_kses_post(get_post_meta(get_the_ID(), '_finance_case_study_link_text', true) ?: 'Read Full Case Study'); ?></a>
                     </div>
                 </div>
             </div>
         </section>        <!-- Financial Services Types (4x1 Grid) -->
         <section class="finance-types animate-on-scroll animate-fade-up">
             <div class="section-content">
-                <h2 class="animate-on-scroll animate-fade-up"><?php echo esc_html(get_post_meta(get_the_ID(), '_finance_types_title', true) ?: 'Financial Services We Specialise In'); ?></h2>
+                <h2 class="animate-on-scroll animate-fade-up"><?php echo wp_kses_post(get_post_meta(get_the_ID(), '_finance_types_title', true) ?: 'Financial Services We Specialise In'); ?></h2>
                 <div class="services-grid services-grid-2x2">
                     <?php 
                     $types = get_post_meta(get_the_ID(), '_finance_types', true);
@@ -245,8 +245,8 @@ get_header(); ?>
                                 <i class="<?php echo esc_attr($type['icon']); ?>"></i>
                             </div>
                             <div class="service-content">
-                                <h3><?php echo esc_html($type['title']); ?></h3>
-                                <p><?php echo esc_html($type['description'] ?? ''); ?></p>
+                                <h3><?php echo wp_kses_post($type['title']); ?></h3>
+                                <p><?php echo wp_kses_post($type['description'] ?? ''); ?></p>
                                 <ul class="service-features">
                                     <?php foreach ($type['services'] as $service): ?>
                                         <li><?php echo esc_html($service); ?></li>
@@ -260,7 +260,7 @@ get_header(); ?>
         </section>        <!-- Compliance Framework -->
         <section class="compliance-framework animate-on-scroll animate-fade-up">
             <div class="section-content">
-                <h2 class="animate-on-scroll animate-fade-up"><?php echo esc_html(get_post_meta(get_the_ID(), '_finance_compliance_title', true) ?: 'Our Financial Marketing Compliance Framework'); ?></h2>
+                <h2 class="animate-on-scroll animate-fade-up"><?php echo wp_kses_post(get_post_meta(get_the_ID(), '_finance_compliance_title', true) ?: 'Our Financial Marketing Compliance Framework'); ?></h2>
                 <div class="compliance-list-container animate-on-scroll animate-fade-up">
                     <ul class="feature-list compliance-list">
                         <?php 
@@ -295,7 +295,7 @@ get_header(); ?>
                         }
                         foreach ($compliance_points as $point): ?>
                             <li>
-                                <strong><?php echo esc_html($point['title']); ?></strong> - <?php echo esc_html($point['description']); ?>
+                                <strong><?php echo wp_kses_post($point['title']); ?></strong> - <?php echo wp_kses_post($point['description']); ?>
                             </li>
                         <?php endforeach; ?>
                     </ul>
@@ -304,7 +304,7 @@ get_header(); ?>
         </section>        <!-- Financial Marketing Funnel -->
         <section class="optimisation-process animate-on-scroll animate-fade-up">
             <div class="container">
-                <h2 class="animate-on-scroll animate-fade-up"><?php echo esc_html(get_post_meta(get_the_ID(), '_finance_funnel_title', true) ?: 'The Financial Services Marketing Funnel'); ?></h2>
+                <h2 class="animate-on-scroll animate-fade-up"><?php echo wp_kses_post(get_post_meta(get_the_ID(), '_finance_funnel_title', true) ?: 'The Financial Services Marketing Funnel'); ?></h2>
                 
                 <div class="process-timeline">
                     <?php 
@@ -337,8 +337,8 @@ get_header(); ?>
                     foreach ($funnel_steps as $step): ?>
                         <div class="process-step animate-on-scroll animate-stagger animate-slide-up">
                             <div class="step-number"><?php echo $step_number; ?></div>                            <div class="step-content">
-                                <h3><?php echo esc_html($step['title']); ?></h3>
-                                <p><?php echo esc_html($step['description']); ?></p>
+                                <h3><?php echo wp_kses_post($step['title']); ?></h3>
+                                <p><?php echo wp_kses_post($step['description']); ?></p>
                                 <div class="step-tactics">
                                     <?php foreach ($step['tactics'] as $tactic): ?>
                                         <div class="tactic-item"><?php echo esc_html($tactic); ?></div>
@@ -356,7 +356,7 @@ get_header(); ?>
             <div class="section-content">
                 <div class="testimonial-content animate-on-scroll animate-scale-up">
                     <blockquote>
-                        "<?php echo esc_html(get_post_meta(get_the_ID(), '_finance_testimonial_quote', true) ?: 'Aimpro Digital\'s understanding of financial services compliance is exceptional. They helped us navigate FCA regulations while generating 150% more qualified leads. Their educational content strategy positions us as thought leaders in our market, and the lead quality has improved dramatically. We finally have a marketing partner that understands our industry.'); ?>"
+                        "<?php echo wp_kses_post(get_post_meta(get_the_ID(), '_finance_testimonial_quote', true) ?: 'Aimpro Digital\'s understanding of financial services compliance is exceptional. They helped us navigate FCA regulations while generating 150% more qualified leads. Their educational content strategy positions us as thought leaders in our market, and the lead quality has improved dramatically. We finally have a marketing partner that understands our industry.'); ?>"
                     </blockquote>
                     <div class="testimonial-author">
                         <div class="author-info">
@@ -370,11 +370,11 @@ get_header(); ?>
         </section>        <!-- CTA Section -->
         <section class="finance-cta text-center animate-on-scroll animate-fade-up">
             <div class="section-content">
-                <h2 class="animate-on-scroll animate-fade-up"><?php echo esc_html(get_post_meta(get_the_ID(), '_finance_cta_title', true) ?: 'Ready to Grow Your Financial Services Business?'); ?></h2>
-                <p class="animate-on-scroll animate-fade-up"><?php echo esc_html(get_post_meta(get_the_ID(), '_finance_cta_subtitle', true) ?: 'Let\'s create a compliant, trust-building marketing strategy that generates high-value leads for your financial services.'); ?></p>
+                <h2 class="animate-on-scroll animate-fade-up"><?php echo wp_kses_post(get_post_meta(get_the_ID(), '_finance_cta_title', true) ?: 'Ready to Grow Your Financial Services Business?'); ?></h2>
+                <p class="animate-on-scroll animate-fade-up"><?php echo wp_kses_post(get_post_meta(get_the_ID(), '_finance_cta_subtitle', true) ?: 'Let\'s create a compliant, trust-building marketing strategy that generates high-value leads for your financial services.'); ?></p>
                 <div class="cta-buttons animate-on-scroll animate-scale-up">
-                    <a href="<?php echo esc_url(get_post_meta(get_the_ID(), '_finance_cta_primary_url', true) ?: home_url('/contact')); ?>" class="btn btn-primary"><?php echo esc_html(get_post_meta(get_the_ID(), '_finance_cta_primary_text', true) ?: 'Get Compliance Audit'); ?></a>
-                    <a href="<?php echo esc_url(get_post_meta(get_the_ID(), '_finance_cta_secondary_url', true) ?: home_url('/case-studies')); ?>" class="btn btn-secondary"><?php echo esc_html(get_post_meta(get_the_ID(), '_finance_cta_secondary_text', true) ?: 'View Finance Success Stories'); ?></a>
+                    <a href="<?php echo esc_url(get_post_meta(get_the_ID(), '_finance_cta_primary_url', true) ?: home_url('/contact')); ?>" class="btn btn-primary"><?php echo wp_kses_post(get_post_meta(get_the_ID(), '_finance_cta_primary_text', true) ?: 'Get Compliance Audit'); ?></a>
+                    <a href="<?php echo esc_url(get_post_meta(get_the_ID(), '_finance_cta_secondary_url', true) ?: home_url('/case-studies')); ?>" class="btn btn-secondary"><?php echo wp_kses_post(get_post_meta(get_the_ID(), '_finance_cta_secondary_text', true) ?: 'View Finance Success Stories'); ?></a>
                 </div>
                 <div class="cta-benefits animate-on-scroll animate-fade-up">
                     <?php 

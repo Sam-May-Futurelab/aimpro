@@ -1,5 +1,5 @@
 <?php
-// Simple Events & Webinars Page Meta Fields - No Corruption Issues
+// Simple Events & Webinars Page Meta Fields
 
 function add_events_webinars_meta_boxes() {
     global $post;

@@ -360,19 +360,31 @@ function finance_meta_box_callback($post) {
         <table class="form-table">
             <tr>
                 <th><label for="finance_header_title">Page Header Title</label></th>
-                <td><input type="text" id="finance_header_title" name="finance_header_title" value="<?php echo esc_attr($header_title); ?>" placeholder="Finance Digital Marketing" /></td>
+                <td>
+                    <?php wp_editor($header_title ?: 'Finance Digital Marketing', 'finance_header_title', array('textarea_rows' => 3, 'media_buttons' => false)); ?>
+                    <p class="description">Main page heading. HTML allowed for formatting.</p>
+                </td>
             </tr>
             <tr>
                 <th><label for="finance_header_subtitle">Page Header Subtitle</label></th>
-                <td><textarea id="finance_header_subtitle" name="finance_header_subtitle" placeholder="Build trust and generate high-value leads with compliant financial services marketing"><?php echo esc_textarea($header_subtitle); ?></textarea></td>
+                <td>
+                    <?php wp_editor($header_subtitle ?: 'Build trust and generate high-value leads with compliant financial services marketing', 'finance_header_subtitle', array('textarea_rows' => 4, 'media_buttons' => false)); ?>
+                    <p class="description">Subtitle text below the main heading.</p>
+                </td>
             </tr>
             <tr>
                 <th><label for="finance_overview_title">Overview Title</label></th>
-                <td><input type="text" id="finance_overview_title" name="finance_overview_title" value="<?php echo esc_attr($overview_title); ?>" placeholder="Navigate Financial Services Marketing with Confidence" /></td>
+                <td>
+                    <?php wp_editor($overview_title ?: 'Navigate Financial Services Marketing with Confidence', 'finance_overview_title', array('textarea_rows' => 3, 'media_buttons' => false)); ?>
+                    <p class="description">Overview section heading.</p>
+                </td>
             </tr>
             <tr>
                 <th><label for="finance_overview_content">Overview Content</label></th>
-                <td><textarea id="finance_overview_content" name="finance_overview_content" placeholder="Financial services marketing requires a delicate balance..."><?php echo esc_textarea($overview_content); ?></textarea></td>
+                <td>
+                    <?php wp_editor($overview_content ?: 'Financial services marketing requires a delicate balance of trust-building, compliance, and results. Our specialised approach helps financial advisors, banks, insurance companies, and fintech startups generate qualified leads while maintaining regulatory compliance.', 'finance_overview_content', array('textarea_rows' => 6, 'media_buttons' => false)); ?>
+                    <p class="description">Overview section content text.</p>
+                </td>
             </tr>
             <tr>
                 <th><label for="finance_overview_image">Overview Image</label></th>
@@ -397,7 +409,10 @@ function finance_meta_box_callback($post) {
             <table class="form-table">
                 <tr>
                     <th><label for="finance_challenges_title">Challenges Title</label></th>
-                    <td><input type="text" id="finance_challenges_title" name="finance_challenges_title" value="<?php echo esc_attr($challenges_title); ?>" placeholder="Financial Marketing Challenges We Solve:" /></td>
+                    <td>
+                        <?php wp_editor($challenges_title ?: 'Financial Marketing Challenges We Solve:', 'finance_challenges_title', array('textarea_rows' => 3, 'media_buttons' => false)); ?>
+                        <p class="description">Challenges section heading.</p>
+                    </td>
                 </tr>
             </table>
             <div class="list-editor">
@@ -418,7 +433,10 @@ function finance_meta_box_callback($post) {
             <table class="form-table">
                 <tr>
                     <th><label for="finance_solutions_title">Solutions Title</label></th>
-                    <td><input type="text" id="finance_solutions_title" name="finance_solutions_title" value="<?php echo esc_attr($solutions_title); ?>" placeholder="Our Financial Services Marketing Solutions" /></td>
+                    <td>
+                        <?php wp_editor($solutions_title ?: 'Our Financial Services Marketing Solutions', 'finance_solutions_title', array('textarea_rows' => 3, 'media_buttons' => false)); ?>
+                        <p class="description">Solutions section heading.</p>
+                    </td>
                 </tr>
             </table>
             <div class="repeater-section">
@@ -432,11 +450,11 @@ function finance_meta_box_callback($post) {
                             </div>
                             <div class="item-field">
                                 <label>Title:</label>
-                                <input type="text" name="finance_solutions[<?php echo $index; ?>][title]" value="<?php echo esc_attr($solution['title']); ?>" placeholder="Regulatory Compliant Campaigns" />
+                                <?php wp_editor($solution['title'], 'finance_solutions_' . $index . '_title', array('textarea_name' => 'finance_solutions[' . $index . '][title]', 'textarea_rows' => 2, 'media_buttons' => false)); ?>
                             </div>
                             <div class="item-field">
                                 <label>Description:</label>
-                                <textarea name="finance_solutions[<?php echo $index; ?>][description]" placeholder="Navigate FCA regulations..."><?php echo esc_textarea($solution['description']); ?></textarea>
+                                <?php wp_editor($solution['description'], 'finance_solutions_' . $index . '_description', array('textarea_name' => 'finance_solutions[' . $index . '][description]', 'textarea_rows' => 4, 'media_buttons' => false)); ?>
                             </div>
                             <div class="item-field">
                                 <label>Features (one per line):</label>
@@ -454,19 +472,31 @@ function finance_meta_box_callback($post) {
             <table class="form-table">
                 <tr>
                     <th><label for="finance_case_study_label">Case Study Label</label></th>
-                    <td><input type="text" id="finance_case_study_label" name="finance_case_study_label" value="<?php echo esc_attr($case_study_label); ?>" placeholder="Success Story" /></td>
+                    <td>
+                        <?php wp_editor($case_study_label ?: 'Success Story', 'finance_case_study_label', array('textarea_rows' => 2, 'media_buttons' => false)); ?>
+                        <p class="description">Case study section label.</p>
+                    </td>
                 </tr>
                 <tr>
                     <th><label for="finance_case_study_title">Case Study Title</label></th>
-                    <td><input type="text" id="finance_case_study_title" name="finance_case_study_title" value="<?php echo esc_attr($case_study_title); ?>" placeholder="WealthWise Financial: 150% Increase in Qualified Leads" /></td>
+                    <td>
+                        <?php wp_editor($case_study_title ?: 'WealthWise Financial: 150% Increase in Qualified Leads', 'finance_case_study_title', array('textarea_rows' => 3, 'media_buttons' => false)); ?>
+                        <p class="description">Case study main heading.</p>
+                    </td>
                 </tr>
                 <tr>
                     <th><label for="finance_case_study_content">Case Study Content</label></th>
-                    <td><textarea id="finance_case_study_content" name="finance_case_study_content" placeholder="WealthWise Financial, an independent financial advisory firm..."><?php echo esc_textarea($case_study_content); ?></textarea></td>
+                    <td>
+                        <?php wp_editor($case_study_content ?: 'WealthWise Financial, an independent financial advisory firm, needed to build their client base while maintaining strict compliance with FCA regulations.', 'finance_case_study_content', array('textarea_rows' => 5, 'media_buttons' => false)); ?>
+                        <p class="description">Case study introduction text.</p>
+                    </td>
                 </tr>
                 <tr>
                     <th><label for="finance_case_study_challenge_title">Challenge Section Title</label></th>
-                    <td><input type="text" id="finance_case_study_challenge_title" name="finance_case_study_challenge_title" value="<?php echo esc_attr($case_study_challenge_title); ?>" placeholder="The Challenge" /></td>
+                    <td>
+                        <?php wp_editor($case_study_challenge_title ?: 'The Challenge', 'finance_case_study_challenge_title', array('textarea_rows' => 2, 'media_buttons' => false)); ?>
+                        <p class="description">Challenge section heading.</p>
+                    </td>
                 </tr>
             </table>
             
@@ -486,7 +516,10 @@ function finance_meta_box_callback($post) {
             <table class="form-table">
                 <tr>
                     <th><label for="finance_case_study_solution_title">Solution Section Title</label></th>
-                    <td><input type="text" id="finance_case_study_solution_title" name="finance_case_study_solution_title" value="<?php echo esc_attr($case_study_solution_title); ?>" placeholder="Our Solution" /></td>
+                    <td>
+                        <?php wp_editor($case_study_solution_title ?: 'Our Solution', 'finance_case_study_solution_title', array('textarea_rows' => 2, 'media_buttons' => false)); ?>
+                        <p class="description">Solution section heading.</p>
+                    </td>
                 </tr>
             </table>
             
@@ -506,11 +539,17 @@ function finance_meta_box_callback($post) {
             <table class="form-table">
                 <tr>
                     <th><label for="finance_case_study_results_title">Results Section Title</label></th>
-                    <td><input type="text" id="finance_case_study_results_title" name="finance_case_study_results_title" value="<?php echo esc_attr($case_study_results_title); ?>" placeholder="Results After 8 Months" /></td>
+                    <td>
+                        <?php wp_editor($case_study_results_title ?: 'Results After 8 Months', 'finance_case_study_results_title', array('textarea_rows' => 2, 'media_buttons' => false)); ?>
+                        <p class="description">Results section heading.</p>
+                    </td>
                 </tr>
                 <tr>
                     <th><label for="finance_case_study_link_text">Case Study Link Text</label></th>
-                    <td><input type="text" id="finance_case_study_link_text" name="finance_case_study_link_text" value="<?php echo esc_attr($case_study_link_text); ?>" placeholder="Read Full Case Study" /></td>
+                    <td>
+                        <?php wp_editor($case_study_link_text ?: 'Read Full Case Study', 'finance_case_study_link_text', array('textarea_rows' => 2, 'media_buttons' => false)); ?>
+                        <p class="description">Link text for full case study.</p>
+                    </td>
                 </tr>
                 <tr>
                     <th><label for="finance_case_study_link_url">Case Study Link URL</label></th>
@@ -544,7 +583,10 @@ function finance_meta_box_callback($post) {
             <table class="form-table">
                 <tr>
                     <th><label for="finance_types_title">Types Title</label></th>
-                    <td><input type="text" id="finance_types_title" name="finance_types_title" value="<?php echo esc_attr($types_title); ?>" placeholder="Financial Services We specialise In" /></td>
+                    <td>
+                        <?php wp_editor($types_title ?: 'Financial Services We Specialise In', 'finance_types_title', array('textarea_rows' => 3, 'media_buttons' => false)); ?>
+                        <p class="description">Financial services types section heading.</p>
+                    </td>
                 </tr>
             </table>
             <div class="repeater-section">
@@ -558,7 +600,7 @@ function finance_meta_box_callback($post) {
                             </div>
                             <div class="item-field">
                                 <label>Title:</label>
-                                <input type="text" name="finance_types[<?php echo $index; ?>][title]" value="<?php echo esc_attr($type['title']); ?>" placeholder="Financial Advisory" />
+                                <?php wp_editor($type['title'], 'finance_types_' . $index . '_title', array('textarea_name' => 'finance_types[' . $index . '][title]', 'textarea_rows' => 2, 'media_buttons' => false)); ?>
                             </div>
                             <div class="item-field">
                                 <label>Services (one per line):</label>
@@ -576,7 +618,10 @@ function finance_meta_box_callback($post) {
             <table class="form-table">
                 <tr>
                     <th><label for="finance_compliance_title">Compliance Title</label></th>
-                    <td><input type="text" id="finance_compliance_title" name="finance_compliance_title" value="<?php echo esc_attr($compliance_title); ?>" placeholder="Our Financial Marketing Compliance Framework" /></td>
+                    <td>
+                        <?php wp_editor($compliance_title ?: 'Our Financial Marketing Compliance Framework', 'finance_compliance_title', array('textarea_rows' => 3, 'media_buttons' => false)); ?>
+                        <p class="description">Compliance section heading.</p>
+                    </td>
                 </tr>
             </table>
             <div class="repeater-section">
@@ -586,11 +631,11 @@ function finance_meta_box_callback($post) {
                             <button type="button" class="remove-item remove-compliance">Remove</button>
                             <div class="item-field">
                                 <label>Title:</label>
-                                <input type="text" name="finance_compliance_points[<?php echo $index; ?>][title]" value="<?php echo esc_attr($point['title']); ?>" placeholder="FCA Regulation Compliance" />
+                                <?php wp_editor($point['title'], 'finance_compliance_points_' . $index . '_title', array('textarea_name' => 'finance_compliance_points[' . $index . '][title]', 'textarea_rows' => 2, 'media_buttons' => false)); ?>
                             </div>
                             <div class="item-field">
                                 <label>Description:</label>
-                                <textarea name="finance_compliance_points[<?php echo $index; ?>][description]" placeholder="All campaigns reviewed for FCA compliance..."><?php echo esc_textarea($point['description']); ?></textarea>
+                                <?php wp_editor($point['description'], 'finance_compliance_points_' . $index . '_description', array('textarea_name' => 'finance_compliance_points[' . $index . '][description]', 'textarea_rows' => 4, 'media_buttons' => false)); ?>
                             </div>
                         </div>
                     <?php endforeach; ?>
@@ -604,7 +649,10 @@ function finance_meta_box_callback($post) {
             <table class="form-table">
                 <tr>
                     <th><label for="finance_funnel_title">Funnel Title</label></th>
-                    <td><input type="text" id="finance_funnel_title" name="finance_funnel_title" value="<?php echo esc_attr($funnel_title); ?>" placeholder="The Financial Services Marketing Funnel" /></td>
+                    <td>
+                        <?php wp_editor($funnel_title ?: 'The Financial Services Marketing Funnel', 'finance_funnel_title', array('textarea_rows' => 3, 'media_buttons' => false)); ?>
+                        <p class="description">Marketing funnel section heading.</p>
+                    </td>
                 </tr>
             </table>
             <div class="repeater-section">
@@ -614,11 +662,11 @@ function finance_meta_box_callback($post) {
                             <button type="button" class="remove-item remove-funnel">Remove</button>
                             <div class="item-field">
                                 <label>Step Title:</label>
-                                <input type="text" name="finance_funnel_steps[<?php echo $index; ?>][title]" value="<?php echo esc_attr($step['title']); ?>" placeholder="Awareness: Educational Content" />
+                                <?php wp_editor($step['title'], 'finance_funnel_steps_' . $index . '_title', array('textarea_name' => 'finance_funnel_steps[' . $index . '][title]', 'textarea_rows' => 2, 'media_buttons' => false)); ?>
                             </div>
                             <div class="item-field">
                                 <label>Step Description:</label>
-                                <textarea name="finance_funnel_steps[<?php echo $index; ?>][description]" placeholder="Attract prospects with educational content..."><?php echo esc_textarea($step['description']); ?></textarea>
+                                <?php wp_editor($step['description'], 'finance_funnel_steps_' . $index . '_description', array('textarea_name' => 'finance_funnel_steps[' . $index . '][description]', 'textarea_rows' => 4, 'media_buttons' => false)); ?>
                             </div>
                             <div class="item-field">
                                 <label>Tactics (one per line):</label>
@@ -636,7 +684,10 @@ function finance_meta_box_callback($post) {
             <table class="form-table">
                 <tr>
                     <th><label for="finance_testimonial_quote">Testimonial Quote</label></th>
-                    <td><textarea id="finance_testimonial_quote" name="finance_testimonial_quote" placeholder="Aimpro Digital's understanding of financial services compliance is exceptional..."><?php echo esc_textarea($testimonial_quote); ?></textarea></td>
+                    <td>
+                        <?php wp_editor($testimonial_quote ?: 'Aimpro Digital\'s understanding of financial services compliance is exceptional. They helped us navigate FCA regulations while generating 150% more qualified leads. Their educational content strategy positions us as thought leaders in our market, and the lead quality has improved dramatically. We finally have a marketing partner that understands our industry.', 'finance_testimonial_quote', array('textarea_rows' => 6, 'media_buttons' => false)); ?>
+                        <p class="description">Client testimonial quote content.</p>
+                    </td>
                 </tr>
                 <tr>
                     <th><label for="finance_testimonial_name">Client Name</label></th>
@@ -658,15 +709,24 @@ function finance_meta_box_callback($post) {
             <table class="form-table">
                 <tr>
                     <th><label for="finance_cta_title">CTA Title</label></th>
-                    <td><input type="text" id="finance_cta_title" name="finance_cta_title" value="<?php echo esc_attr($cta_title); ?>" placeholder="Ready to Grow Your Financial Services Business?" /></td>
+                    <td>
+                        <?php wp_editor($cta_title ?: 'Ready to Grow Your Financial Services Business?', 'finance_cta_title', array('textarea_rows' => 3, 'media_buttons' => false)); ?>
+                        <p class="description">Call-to-action section main heading.</p>
+                    </td>
                 </tr>
                 <tr>
                     <th><label for="finance_cta_subtitle">CTA Subtitle</label></th>
-                    <td><textarea id="finance_cta_subtitle" name="finance_cta_subtitle" placeholder="Let's create a compliant, trust-building marketing strategy..."><?php echo esc_textarea($cta_subtitle); ?></textarea></td>
+                    <td>
+                        <?php wp_editor($cta_subtitle ?: 'Let\'s create a compliant, trust-building marketing strategy that generates high-value leads for your financial services.', 'finance_cta_subtitle', array('textarea_rows' => 4, 'media_buttons' => false)); ?>
+                        <p class="description">Call-to-action subtitle text.</p>
+                    </td>
                 </tr>
                 <tr>
                     <th><label for="finance_cta_primary_text">Primary Button Text</label></th>
-                    <td><input type="text" id="finance_cta_primary_text" name="finance_cta_primary_text" value="<?php echo esc_attr($cta_primary_text); ?>" placeholder="Get Compliance Audit" /></td>
+                    <td>
+                        <?php wp_editor($cta_primary_text ?: 'Get Compliance Audit', 'finance_cta_primary_text', array('textarea_rows' => 2, 'media_buttons' => false)); ?>
+                        <p class="description">Primary call-to-action button text.</p>
+                    </td>
                 </tr>
                 <tr>
                     <th><label for="finance_cta_primary_url">Primary Button URL</label></th>
@@ -674,7 +734,10 @@ function finance_meta_box_callback($post) {
                 </tr>
                 <tr>
                     <th><label for="finance_cta_secondary_text">Secondary Button Text</label></th>
-                    <td><input type="text" id="finance_cta_secondary_text" name="finance_cta_secondary_text" value="<?php echo esc_attr($cta_secondary_text); ?>" placeholder="View Finance Success Stories" /></td>
+                    <td>
+                        <?php wp_editor($cta_secondary_text ?: 'View Finance Success Stories', 'finance_cta_secondary_text', array('textarea_rows' => 2, 'media_buttons' => false)); ?>
+                        <p class="description">Secondary call-to-action button text.</p>
+                    </td>
                 </tr>
                 <tr>
                     <th><label for="finance_cta_secondary_url">Secondary Button URL</label></th>
@@ -827,13 +890,12 @@ function save_finance_meta_box_data($post_id) {
         }
     }
 
-    // Save all simple text fields
-    $fields = array(
+    // Save all rich text content fields
+    $rich_text_fields = array(
         'finance_header_title' => '_finance_header_title',
         'finance_header_subtitle' => '_finance_header_subtitle',
         'finance_overview_title' => '_finance_overview_title',
         'finance_overview_content' => '_finance_overview_content',
-        'finance_overview_image' => '_finance_overview_image',
         'finance_challenges_title' => '_finance_challenges_title',
         'finance_solutions_title' => '_finance_solutions_title',
         'finance_case_study_label' => '_finance_case_study_label',
@@ -843,23 +905,34 @@ function save_finance_meta_box_data($post_id) {
         'finance_case_study_solution_title' => '_finance_case_study_solution_title',
         'finance_case_study_results_title' => '_finance_case_study_results_title',
         'finance_case_study_link_text' => '_finance_case_study_link_text',
-        'finance_case_study_link_url' => '_finance_case_study_link_url',
         'finance_types_title' => '_finance_types_title',
         'finance_compliance_title' => '_finance_compliance_title',
         'finance_funnel_title' => '_finance_funnel_title',
         'finance_testimonial_quote' => '_finance_testimonial_quote',
-        'finance_testimonial_name' => '_finance_testimonial_name',
-        'finance_testimonial_position' => '_finance_testimonial_position',
-        'finance_testimonial_company' => '_finance_testimonial_company',
         'finance_cta_title' => '_finance_cta_title',
         'finance_cta_subtitle' => '_finance_cta_subtitle',
         'finance_cta_primary_text' => '_finance_cta_primary_text',
+        'finance_cta_secondary_text' => '_finance_cta_secondary_text'
+    );
+
+    foreach ($rich_text_fields as $field => $meta_key) {
+        if (isset($_POST[$field])) {
+            update_post_meta($post_id, $meta_key, wp_kses_post($_POST[$field]));
+        }
+    }
+
+    // Save simple text fields (URLs, names, positions)
+    $simple_fields = array(
+        'finance_overview_image' => '_finance_overview_image',
+        'finance_case_study_link_url' => '_finance_case_study_link_url',
+        'finance_testimonial_name' => '_finance_testimonial_name',
+        'finance_testimonial_position' => '_finance_testimonial_position',
+        'finance_testimonial_company' => '_finance_testimonial_company',
         'finance_cta_primary_url' => '_finance_cta_primary_url',
-        'finance_cta_secondary_text' => '_finance_cta_secondary_text',
         'finance_cta_secondary_url' => '_finance_cta_secondary_url'
     );
 
-    foreach ($fields as $field => $meta_key) {
+    foreach ($simple_fields as $field => $meta_key) {
         if (isset($_POST[$field])) {
             update_post_meta($post_id, $meta_key, sanitize_text_field($_POST[$field]));
         }
@@ -885,8 +958,8 @@ function save_finance_meta_box_data($post_id) {
         foreach ($_POST['finance_solutions'] as $solution) {
             $solutions[] = array(
                 'icon' => sanitize_text_field($solution['icon']),
-                'title' => sanitize_text_field($solution['title']),
-                'description' => sanitize_textarea_field($solution['description']),
+                'title' => wp_kses_post($solution['title']),
+                'description' => wp_kses_post($solution['description']),
                 'features' => array_filter(array_map('trim', explode("\n", sanitize_textarea_field($solution['features']))))
             );
         }
@@ -909,7 +982,7 @@ function save_finance_meta_box_data($post_id) {
         foreach ($_POST['finance_types'] as $type) {
             $types[] = array(
                 'icon' => sanitize_text_field($type['icon']),
-                'title' => sanitize_text_field($type['title']),
+                'title' => wp_kses_post($type['title']),
                 'services' => array_filter(array_map('trim', explode("\n", sanitize_textarea_field($type['services']))))
             );
         }
@@ -920,8 +993,8 @@ function save_finance_meta_box_data($post_id) {
         $compliance = array();
         foreach ($_POST['finance_compliance_points'] as $point) {
             $compliance[] = array(
-                'title' => sanitize_text_field($point['title']),
-                'description' => sanitize_textarea_field($point['description'])
+                'title' => wp_kses_post($point['title']),
+                'description' => wp_kses_post($point['description'])
             );
         }
         update_post_meta($post_id, '_finance_compliance_points', $compliance);
@@ -931,8 +1004,8 @@ function save_finance_meta_box_data($post_id) {
         $funnel = array();
         foreach ($_POST['finance_funnel_steps'] as $step) {
             $funnel[] = array(
-                'title' => sanitize_text_field($step['title']),
-                'description' => sanitize_textarea_field($step['description']),
+                'title' => wp_kses_post($step['title']),
+                'description' => wp_kses_post($step['description']),
                 'tactics' => array_filter(array_map('trim', explode("\n", sanitize_textarea_field($step['tactics']))))
             );
         }
