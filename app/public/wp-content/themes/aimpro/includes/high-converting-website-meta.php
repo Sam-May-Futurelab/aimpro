@@ -419,13 +419,23 @@ function high_converting_website_meta_box_callback($post) {
                 <tr>
                     <th><label for="high_converting_website_header_title">Page Title</label></th>
                     <td>
-                        <input type="text" id="high_converting_website_header_title" name="high_converting_website_header_title" value="<?php echo esc_attr($header_title); ?>" />
+                        <?php wp_editor($header_title, 'high_converting_website_header_title', array(
+                            'textarea_name' => 'high_converting_website_header_title',
+                            'textarea_rows' => 3,
+                            'teeny' => true,
+                            'media_buttons' => false
+                        )); ?>
                     </td>
                 </tr>
                 <tr>
                     <th><label for="high_converting_website_header_subtitle">Page Subtitle</label></th>
                     <td>
-                        <textarea id="high_converting_website_header_subtitle" name="high_converting_website_header_subtitle"><?php echo esc_textarea($header_subtitle); ?></textarea>
+                        <?php wp_editor($header_subtitle, 'high_converting_website_header_subtitle', array(
+                            'textarea_name' => 'high_converting_website_header_subtitle',
+                            'textarea_rows' => 4,
+                            'teeny' => true,
+                            'media_buttons' => false
+                        )); ?>
                     </td>
                 </tr>
             </table>
@@ -438,12 +448,22 @@ function high_converting_website_meta_box_callback($post) {
                 <tr>
                     <th><label for="high_converting_website_overview_title">Overview Title</label></th>
                     <td>
-                        <input type="text" id="high_converting_website_overview_title" name="high_converting_website_overview_title" value="<?php echo esc_attr($overview_title); ?>" />
+                        <?php wp_editor($overview_title, 'high_converting_website_overview_title', array(
+                            'textarea_name' => 'high_converting_website_overview_title',
+                            'textarea_rows' => 3,
+                            'teeny' => true,
+                            'media_buttons' => false
+                        )); ?>
                     </td>
                 </tr>                <tr>
                     <th><label for="high_converting_website_overview_content">Overview Content</label></th>
                     <td>
-                        <textarea id="high_converting_website_overview_content" name="high_converting_website_overview_content"><?php echo esc_textarea($overview_content); ?></textarea>
+                        <?php wp_editor($overview_content, 'high_converting_website_overview_content', array(
+                            'textarea_name' => 'high_converting_website_overview_content',
+                            'textarea_rows' => 8,
+                            'teeny' => false,
+                            'media_buttons' => false
+                        )); ?>
                     </td>
                 </tr>
                 <tr>
@@ -463,7 +483,12 @@ function high_converting_website_meta_box_callback($post) {
                 <tr>
                     <th><label for="high_converting_website_challenges_title">Challenges Title</label></th>
                     <td>
-                        <input type="text" id="high_converting_website_challenges_title" name="high_converting_website_challenges_title" value="<?php echo esc_attr($challenges_title); ?>" />
+                        <?php wp_editor($challenges_title, 'high_converting_website_challenges_title', array(
+                            'textarea_name' => 'high_converting_website_challenges_title',
+                            'textarea_rows' => 3,
+                            'teeny' => true,
+                            'media_buttons' => false
+                        )); ?>
                     </td>
                 </tr>
             </table>
@@ -494,7 +519,12 @@ function high_converting_website_meta_box_callback($post) {
                 <tr>
                     <th><label for="high_converting_website_services_title">Services Section Title</label></th>
                     <td>
-                        <input type="text" id="high_converting_website_services_title" name="high_converting_website_services_title" value="<?php echo esc_attr($services_title); ?>" />
+                        <?php wp_editor($services_title, 'high_converting_website_services_title', array(
+                            'textarea_name' => 'high_converting_website_services_title',
+                            'textarea_rows' => 3,
+                            'teeny' => true,
+                            'media_buttons' => false
+                        )); ?>
                     </td>
                 </tr>
             </table>
@@ -563,25 +593,45 @@ function high_converting_website_meta_box_callback($post) {
                 <tr>
                     <th><label for="high_converting_website_case_study_label">Case Study Label</label></th>
                     <td>
-                        <input type="text" id="high_converting_website_case_study_label" name="high_converting_website_case_study_label" value="<?php echo esc_attr($case_study_label); ?>" />
+                        <?php wp_editor($case_study_label, 'high_converting_website_case_study_label', array(
+                            'textarea_name' => 'high_converting_website_case_study_label',
+                            'textarea_rows' => 2,
+                            'teeny' => true,
+                            'media_buttons' => false
+                        )); ?>
                     </td>
                 </tr>
                 <tr>
                     <th><label for="high_converting_website_case_study_title">Case Study Title</label></th>
                     <td>
-                        <input type="text" id="high_converting_website_case_study_title" name="high_converting_website_case_study_title" value="<?php echo esc_attr($case_study_title); ?>" />
+                        <?php wp_editor($case_study_title, 'high_converting_website_case_study_title', array(
+                            'textarea_name' => 'high_converting_website_case_study_title',
+                            'textarea_rows' => 3,
+                            'teeny' => true,
+                            'media_buttons' => false
+                        )); ?>
                     </td>
                 </tr>
                 <tr>
                     <th><label for="high_converting_website_case_study_content">Case Study Content</label></th>
                     <td>
-                        <textarea id="high_converting_website_case_study_content" name="high_converting_website_case_study_content"><?php echo esc_textarea($case_study_content); ?></textarea>
+                        <?php wp_editor($case_study_content, 'high_converting_website_case_study_content', array(
+                            'textarea_name' => 'high_converting_website_case_study_content',
+                            'textarea_rows' => 6,
+                            'teeny' => false,
+                            'media_buttons' => false
+                        )); ?>
                     </td>
                 </tr>
                 <tr>
                     <th><label for="high_converting_website_case_study_challenge_title">Challenge Section Title</label></th>
                     <td>
-                        <input type="text" id="high_converting_website_case_study_challenge_title" name="high_converting_website_case_study_challenge_title" value="<?php echo esc_attr($case_study_challenge_title); ?>" />
+                        <?php wp_editor($case_study_challenge_title, 'high_converting_website_case_study_challenge_title', array(
+                            'textarea_name' => 'high_converting_website_case_study_challenge_title',
+                            'textarea_rows' => 3,
+                            'teeny' => true,
+                            'media_buttons' => false
+                        )); ?>
                     </td>
                 </tr>
             </table>
@@ -608,7 +658,12 @@ function high_converting_website_meta_box_callback($post) {
                 <tr>
                     <th><label for="high_converting_website_case_study_solution_title">Solution Section Title</label></th>
                     <td>
-                        <input type="text" id="high_converting_website_case_study_solution_title" name="high_converting_website_case_study_solution_title" value="<?php echo esc_attr($case_study_solution_title); ?>" />
+                        <?php wp_editor($case_study_solution_title, 'high_converting_website_case_study_solution_title', array(
+                            'textarea_name' => 'high_converting_website_case_study_solution_title',
+                            'textarea_rows' => 3,
+                            'teeny' => true,
+                            'media_buttons' => false
+                        )); ?>
                     </td>
                 </tr>
             </table>
@@ -639,7 +694,12 @@ function high_converting_website_meta_box_callback($post) {
                 <tr>
                     <th><label for="high_converting_website_process_title">Process Section Title</label></th>
                     <td>
-                        <input type="text" id="high_converting_website_process_title" name="high_converting_website_process_title" value="<?php echo esc_attr($process_title); ?>" />
+                        <?php wp_editor($process_title, 'high_converting_website_process_title', array(
+                            'textarea_name' => 'high_converting_website_process_title',
+                            'textarea_rows' => 3,
+                            'teeny' => true,
+                            'media_buttons' => false
+                        )); ?>
                     </td>
                 </tr>
             </table>
@@ -895,9 +955,12 @@ function high_converting_website_meta_box_callback($post) {
                 <tr>
                     <th><label for="high_converting_website_testimonial_quote">Testimonial Quote</label></th>
                     <td>
-                        <textarea id="high_converting_website_testimonial_quote" 
-                              name="high_converting_website_testimonial_quote"
-                              placeholder="Customer testimonial quote..."><?php echo esc_textarea($testimonial_quote); ?></textarea>
+                        <?php wp_editor($testimonial_quote, 'high_converting_website_testimonial_quote', array(
+                            'textarea_name' => 'high_converting_website_testimonial_quote',
+                            'textarea_rows' => 6,
+                            'teeny' => false,
+                            'media_buttons' => false
+                        )); ?>
                     </td>
                 </tr>
                 <tr>
@@ -940,13 +1003,23 @@ function high_converting_website_meta_box_callback($post) {
                 <tr>
                     <th><label for="high_converting_website_cta_title">CTA Title</label></th>
                     <td>
-                        <input type="text" id="high_converting_website_cta_title" name="high_converting_website_cta_title" value="<?php echo esc_attr($cta_title); ?>" />
+                        <?php wp_editor($cta_title, 'high_converting_website_cta_title', array(
+                            'textarea_name' => 'high_converting_website_cta_title',
+                            'textarea_rows' => 3,
+                            'teeny' => true,
+                            'media_buttons' => false
+                        )); ?>
                     </td>
                 </tr>
                 <tr>
                     <th><label for="high_converting_website_cta_subtitle">CTA Subtitle</label></th>
                     <td>
-                        <textarea id="high_converting_website_cta_subtitle" name="high_converting_website_cta_subtitle"><?php echo esc_textarea($cta_subtitle); ?></textarea>
+                        <?php wp_editor($cta_subtitle, 'high_converting_website_cta_subtitle', array(
+                            'textarea_name' => 'high_converting_website_cta_subtitle',
+                            'textarea_rows' => 4,
+                            'teeny' => true,
+                            'media_buttons' => false
+                        )); ?>
                     </td>
                 </tr>
                 <tr>
@@ -1293,11 +1366,13 @@ function sanitize_high_converting_website_meta_value($field, $value) {
         }
         return $value;
     } else {
-        // For simple text fields
+        // Check if this is a rich text field that should use wp_kses_post
         if (strpos($field, '_content') !== false || 
             strpos($field, 'testimonial_quote') !== false || 
-            strpos($field, 'subtitle') !== false) {
-            return sanitize_textarea_field($value);
+            strpos($field, 'subtitle') !== false ||
+            strpos($field, '_title') !== false ||
+            strpos($field, '_label') !== false) {
+            return wp_kses_post($value);
         }
         return sanitize_text_field($value);
     }
