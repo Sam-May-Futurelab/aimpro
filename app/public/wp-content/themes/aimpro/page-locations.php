@@ -26,8 +26,8 @@ wp_enqueue_style('locations-page-css', get_template_directory_uri() . '/assets/c
     <section class="page-hero service-hero">
         <div class="container">
             <div class="hero-content animate-on-scroll animate-fade-up">
-                <h1><?php echo aimpro_get_field('locations_hero_heading', 'Our Locations'); ?></h1>
-                <p class="hero-subtitle"><?php echo aimpro_get_field('locations_hero_subtitle', 'Serving businesses across the UK with digital marketing excellence from our strategically located offices and comprehensive remote services.'); ?></p>
+                <h1><?php echo wp_kses_post(aimpro_get_field('locations_hero_title', 'Our Locations')); ?></h1>
+                <p class="hero-subtitle"><?php echo wp_kses_post(aimpro_get_field('locations_hero_subtitle', 'Serving businesses across the UK with digital marketing excellence from our strategically located offices and comprehensive remote services.')); ?></p>
             </div>
         </div>
     </section>
@@ -44,8 +44,8 @@ wp_enqueue_style('locations-page-css', get_template_directory_uri() . '/assets/c
                             </svg>
                             <?php echo strtoupper(aimpro_get_field('locations_remote_badge', 'REMOTE EXCELLENCE')); ?>
                         </div>
-                        <h2><?php echo aimpro_get_field('locations_remote_heading', 'World-Class Digital Marketing, Anywhere'); ?></h2>
-                        <p class="remote-description"><?php echo aimpro_get_field('locations_remote_description', 'Distance doesn\'t limit excellence. Our remote collaboration capabilities ensure you receive the same premium service quality whether you\'re across the street or across the country. Advanced project management, regular video calls, and transparent reporting keep you connected every step of the way.'); ?></p>
+                        <h2><?php echo wp_kses_post(aimpro_get_field('locations_remote_title', 'World-Class Digital Marketing, Anywhere')); ?></h2>
+                        <p class="remote-description"><?php echo wp_kses_post(aimpro_get_field('locations_remote_description', 'Distance doesn\'t limit excellence. Our remote collaboration capabilities ensure you receive the same premium service quality whether you\'re across the street or across the country. Advanced project management, regular video calls, and transparent reporting keep you connected every step of the way.')); ?></p>
                         
                         <div class="remote-features">
                             <div class="feature-item animate-on-scroll animate-stagger animate-fade-up">
@@ -53,8 +53,8 @@ wp_enqueue_style('locations-page-css', get_template_directory_uri() . '/assets/c
                                     <i class="fas fa-video"></i>
                                 </div>
                                 <div class="feature-content">
-                                    <h4>Virtual Consultations</h4>
-                                    <p>Face-to-face strategy sessions via secure video conferencing</p>
+                                    <h4><?php echo wp_kses_post(aimpro_get_field('locations_feature1_title', 'Virtual Consultations')); ?></h4>
+                                    <p><?php echo wp_kses_post(aimpro_get_field('locations_feature1_description', 'Face-to-face strategy sessions via secure video conferencing')); ?></p>
                                 </div>
                             </div>
 
@@ -63,8 +63,8 @@ wp_enqueue_style('locations-page-css', get_template_directory_uri() . '/assets/c
                                     <i class="fas fa-chart-line"></i>
                                 </div>
                                 <div class="feature-content">
-                                    <h4>Real-Time Reporting</h4>
-                                    <p>Live dashboards and instant performance updates</p>
+                                    <h4><?php echo wp_kses_post(aimpro_get_field('locations_feature2_title', 'Real-Time Reporting')); ?></h4>
+                                    <p><?php echo wp_kses_post(aimpro_get_field('locations_feature2_description', 'Live dashboards and instant performance updates')); ?></p>
                                 </div>
                             </div>
 
@@ -73,8 +73,8 @@ wp_enqueue_style('locations-page-css', get_template_directory_uri() . '/assets/c
                                     <i class="fas fa-headset"></i>
                                 </div>
                                 <div class="feature-content">
-                                    <h4>24/7 Support</h4>
-                                    <p>Dedicated support channels for immediate assistance</p>
+                                    <h4><?php echo wp_kses_post(aimpro_get_field('locations_feature3_title', '24/7 Support')); ?></h4>
+                                    <p><?php echo wp_kses_post(aimpro_get_field('locations_feature3_description', 'Dedicated support channels for immediate assistance')); ?></p>
                                 </div>
                             </div>
                         </div>
@@ -176,9 +176,9 @@ wp_enqueue_style('locations-page-css', get_template_directory_uri() . '/assets/c
         <div class="container">
             <div class="section-content">
                 <div class="content-header text-center animate-on-scroll animate-fade-up">
-                    <h2><?php echo aimpro_get_field('locations_areas_heading', 'Nationwide Service Coverage'); ?></h2>
+                    <h2><?php echo wp_kses_post(aimpro_get_field('locations_areas_title', 'Nationwide Service Coverage')); ?></h2>
                     <div class="curly-underline-accent"></div>
-                    <p class="section-description"><?php echo aimpro_get_field('locations_areas_description', 'While based in Birmingham, our digital marketing expertise extends across the entire UK. We serve clients from London to Edinburgh, delivering consistent, high-quality results regardless of location.'); ?></p>
+                    <p class="section-description"><?php echo wp_kses_post(aimpro_get_field('locations_areas_subtitle', 'While based in Birmingham, our digital marketing expertise extends across the entire UK. We serve clients from London to Edinburgh, delivering consistent, high-quality results regardless of location.')); ?></p>
                 </div>
 
                 <div class="service-areas-grid">
@@ -189,8 +189,8 @@ wp_enqueue_style('locations-page-css', get_template_directory_uri() . '/assets/c
                                 <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" fill="var(--primary-orange)"/>
                             </svg>
                         </div>
-                        <h3><?php echo aimpro_get_field('locations_primary_area', 'West Midlands'); ?></h3>
-                        <p><?php echo aimpro_get_field('locations_primary_description', 'Our primary service area including Birmingham, Coventry, Wolverhampton, and surrounding areas with dedicated on-site support.'); ?></p>
+                        <h3><?php echo wp_kses_post(aimpro_get_field('locations_area1_title', 'West Midlands')); ?></h3>
+                        <div class="area-cities"><?php echo wp_kses_post(aimpro_get_field('locations_area1_cities', 'Birmingham<br>Coventry<br>Wolverhampton<br>Walsall<br>Solihull')); ?></div>
                         <div class="area-badge primary">Primary Coverage</div>
                     </div>
 
@@ -201,8 +201,8 @@ wp_enqueue_style('locations-page-css', get_template_directory_uri() . '/assets/c
                                 <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z" fill="var(--primary-orange)"/>
                             </svg>
                         </div>
-                        <h3><?php echo aimpro_get_field('locations_secondary_area_1', 'Greater London'); ?></h3>
-                        <p><?php echo aimpro_get_field('locations_secondary_description_1', 'Full digital marketing services for London-based businesses with regular client visits and remote collaboration.'); ?></p>
+                        <h3><?php echo wp_kses_post(aimpro_get_field('locations_area2_title', 'Greater London')); ?></h3>
+                        <div class="area-cities"><?php echo wp_kses_post(aimpro_get_field('locations_area2_cities', 'Central London<br>Croydon<br>Greenwich<br>Bromley<br>Kingston')); ?></div>
                         <div class="area-badge">Regional Coverage</div>
                     </div>
 
@@ -212,8 +212,8 @@ wp_enqueue_style('locations-page-css', get_template_directory_uri() . '/assets/c
                                 <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z" fill="var(--primary-orange)"/>
                             </svg>
                         </div>
-                        <h3><?php echo aimpro_get_field('locations_secondary_area_2', 'Northern England'); ?></h3>
-                        <p><?php echo aimpro_get_field('locations_secondary_description_2', 'Comprehensive digital marketing solutions for Manchester, Leeds, Sheffield, and surrounding Northern regions.'); ?></p>
+                        <h3><?php echo wp_kses_post(aimpro_get_field('locations_area3_title', 'Manchester Area')); ?></h3>
+                        <div class="area-cities"><?php echo wp_kses_post(aimpro_get_field('locations_area3_cities', 'Manchester<br>Salford<br>Stockport<br>Oldham<br>Bolton')); ?></div>
                         <div class="area-badge">Regional Coverage</div>
                     </div>
 
@@ -223,8 +223,8 @@ wp_enqueue_style('locations-page-css', get_template_directory_uri() . '/assets/c
                                 <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z" fill="var(--primary-orange)"/>
                             </svg>
                         </div>
-                        <h3><?php echo aimpro_get_field('locations_secondary_area_3', 'Scotland & Wales'); ?></h3>
-                        <p><?php echo aimpro_get_field('locations_secondary_description_3', 'Expert digital marketing services for businesses across Scotland and Wales with remote-first approach.'); ?></p>
+                        <h3><?php echo wp_kses_post(aimpro_get_field('locations_area4_title', 'Nationwide')); ?></h3>
+                        <div class="area-cities"><?php echo wp_kses_post(aimpro_get_field('locations_area4_cities', 'Leeds<br>Liverpool<br>Bristol<br>Nottingham<br>Sheffield')); ?></div>
                         <div class="area-badge">Regional Coverage</div>
                     </div>
 
@@ -297,17 +297,17 @@ wp_enqueue_style('locations-page-css', get_template_directory_uri() . '/assets/c
                         <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" fill="white"/>
                     </svg>
                 </div>
-                <h2><?php echo aimpro_get_field('locations_cta_heading', 'Ready to Start Your Digital Journey?'); ?></h2>
-                <p class="cta-description"><?php echo aimpro_get_field('locations_cta_description', 'Contact our Birmingham team or schedule a remote consultation to discover how we can help you dominate your market.'); ?></p>
+                <h2><?php echo wp_kses_post(aimpro_get_field('locations_cta_title', 'Ready to Start Your Digital Journey?')); ?></h2>
+                <p class="cta-description"><?php echo wp_kses_post(aimpro_get_field('locations_cta_description', 'Contact our Birmingham team or schedule a remote consultation to discover how we can help you dominate your market.')); ?></p>
                 
                 <div class="cta-buttons">
                     <a href="<?php echo home_url('/contact'); ?>" class="btn btn-primary btn-large">
-                        <span>Get Free Consultation</span>
+                        <span><?php echo esc_html(aimpro_get_field('locations_cta_button1_text', 'Get Free Consultation')); ?></span>
                         <i class="fas fa-arrow-right"></i>
                     </a>
                     <a href="tel:+441212858490" class="btn btn-secondary btn-large">
                         <i class="fas fa-phone"></i>
-                        <span>Call Now: 0121 285 8490</span>
+                        <span><?php echo esc_html(aimpro_get_field('locations_cta_button2_text', 'Call Now: 0121 285 8490')); ?></span>
                     </a>
                 </div>
             </div>
