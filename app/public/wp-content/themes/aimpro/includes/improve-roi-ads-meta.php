@@ -362,19 +362,25 @@ function improve_roi_ads_meta_box_callback($post) {
             <tr>
                 <th><label for="improve_roi_ads_header_title">Page Title</label></th>
                 <td>
-                    <input type="text" 
-                           id="improve_roi_ads_header_title" 
-                           name="improve_roi_ads_header_title" 
-                           value="<?php echo esc_attr($header_title); ?>"
-                           placeholder="Improve ROI from Ads" />
+                    <?php wp_editor($header_title, 'improve_roi_ads_header_title', array(
+                        'textarea_name' => 'improve_roi_ads_header_title',
+                        'media_buttons' => false,
+                        'textarea_rows' => 3,
+                        'teeny' => true,
+                        'quicktags' => array('buttons' => 'strong,em,link')
+                    )); ?>
                 </td>
             </tr>
             <tr>
                 <th><label for="improve_roi_ads_header_subtitle">Page Subtitle</label></th>
                 <td>
-                    <textarea id="improve_roi_ads_header_subtitle" 
-                              name="improve_roi_ads_header_subtitle"
-                              placeholder="Maximize your advertising spend with data-driven optimisation strategies that deliver measurable results"><?php echo esc_textarea($header_subtitle); ?></textarea>
+                    <?php wp_editor($header_subtitle, 'improve_roi_ads_header_subtitle', array(
+                        'textarea_name' => 'improve_roi_ads_header_subtitle',
+                        'media_buttons' => false,
+                        'textarea_rows' => 4,
+                        'teeny' => true,
+                        'quicktags' => array('buttons' => 'strong,em,link,ul,ol,li')
+                    )); ?>
                 </td>
             </tr>
         </table>
@@ -385,18 +391,24 @@ function improve_roi_ads_meta_box_callback($post) {
             <tr>
                 <th><label for="improve_roi_ads_overview_title">Overview Title</label></th>
                 <td>
-                    <input type="text" 
-                           id="improve_roi_ads_overview_title" 
-                           name="improve_roi_ads_overview_title" 
-                           value="<?php echo esc_attr($overview_title); ?>"
-                           placeholder="Turn Ad Spend Into Profitable Growth" />
+                    <?php wp_editor($overview_title, 'improve_roi_ads_overview_title', array(
+                        'textarea_name' => 'improve_roi_ads_overview_title',
+                        'media_buttons' => false,
+                        'textarea_rows' => 2,
+                        'teeny' => true,
+                        'quicktags' => array('buttons' => 'strong,em,link')
+                    )); ?>
                 </td>
             </tr>            <tr>
                 <th><label for="improve_roi_ads_overview_content">Overview Content</label></th>
                 <td>
-                    <textarea id="improve_roi_ads_overview_content" 
-                              name="improve_roi_ads_overview_content"
-                              placeholder="Every advertising dollar should drive real business results..."><?php echo esc_textarea($overview_content); ?></textarea>
+                    <?php wp_editor($overview_content, 'improve_roi_ads_overview_content', array(
+                        'textarea_name' => 'improve_roi_ads_overview_content',
+                        'media_buttons' => false,
+                        'textarea_rows' => 5,
+                        'teeny' => true,
+                        'quicktags' => array('buttons' => 'strong,em,link,ul,ol,li')
+                    )); ?>
                 </td>
             </tr>
             <tr>
@@ -423,11 +435,13 @@ function improve_roi_ads_meta_box_callback($post) {
             <tr>
                 <th><label for="improve_roi_ads_challenges_title">Challenges Title</label></th>
                 <td>
-                    <input type="text" 
-                           id="improve_roi_ads_challenges_title" 
-                           name="improve_roi_ads_challenges_title" 
-                           value="<?php echo esc_attr($challenges_title); ?>"
-                           placeholder="Ad ROI Challenges We Solve:" />
+                    <?php wp_editor($challenges_title, 'improve_roi_ads_challenges_title', array(
+                        'textarea_name' => 'improve_roi_ads_challenges_title',
+                        'media_buttons' => false,
+                        'textarea_rows' => 2,
+                        'teeny' => true,
+                        'quicktags' => array('buttons' => 'strong,em,link')
+                    )); ?>
                 </td>
             </tr>
             <tr>
@@ -457,11 +471,13 @@ function improve_roi_ads_meta_box_callback($post) {
             <tr>
                 <th><label for="improve_roi_ads_methods_title">Methods Title</label></th>
                 <td>
-                    <input type="text" 
-                           id="improve_roi_ads_methods_title" 
-                           name="improve_roi_ads_methods_title" 
-                           value="<?php echo esc_attr($methods_title); ?>"
-                           placeholder="Our Ad ROI optimisation Methods" />
+                    <?php wp_editor($methods_title, 'improve_roi_ads_methods_title', array(
+                        'textarea_name' => 'improve_roi_ads_methods_title',
+                        'media_buttons' => false,
+                        'textarea_rows' => 2,
+                        'teeny' => true,
+                        'quicktags' => array('buttons' => 'strong,em,link')
+                    )); ?>
                 </td>
             </tr>
         </table>
@@ -471,12 +487,20 @@ function improve_roi_ads_meta_box_callback($post) {
                 <?php foreach ($methods as $index => $method): ?>
                     <div class="repeater-field">
                         <h4>Method <?php echo $index + 1; ?></h4>
-                        <input type="text" 
-                               name="improve_roi_ads_methods[<?php echo $index; ?>][title]" 
-                               value="<?php echo esc_attr($method['title']); ?>"
-                               placeholder="Method title" />
-                        <textarea name="improve_roi_ads_methods[<?php echo $index; ?>][description]" 
-                                  placeholder="Method description"><?php echo esc_textarea($method['description']); ?></textarea>
+                        <?php wp_editor($method['title'], 'improve_roi_ads_methods_' . $index . '_title', array(
+                            'textarea_name' => 'improve_roi_ads_methods[' . $index . '][title]',
+                            'media_buttons' => false,
+                            'textarea_rows' => 2,
+                            'teeny' => true,
+                            'quicktags' => array('buttons' => 'strong,em,link')
+                        )); ?>
+                        <?php wp_editor($method['description'], 'improve_roi_ads_methods_' . $index . '_description', array(
+                            'textarea_name' => 'improve_roi_ads_methods[' . $index . '][description]',
+                            'media_buttons' => false,
+                            'textarea_rows' => 4,
+                            'teeny' => true,
+                            'quicktags' => array('buttons' => 'strong,em,link,ul,ol,li')
+                        )); ?>
                         <div>
                             <strong>Features:</strong>
                             <?php foreach ($method['features'] as $feat_index => $feature): ?>
@@ -500,39 +524,49 @@ function improve_roi_ads_meta_box_callback($post) {
             <tr>
                 <th><label for="improve_roi_ads_case_study_label">Case Study Label</label></th>
                 <td>
-                    <input type="text" 
-                           id="improve_roi_ads_case_study_label" 
-                           name="improve_roi_ads_case_study_label" 
-                           value="<?php echo esc_attr($case_study_label); ?>"
-                           placeholder="Success Story" />
+                    <?php wp_editor($case_study_label, 'improve_roi_ads_case_study_label', array(
+                        'textarea_name' => 'improve_roi_ads_case_study_label',
+                        'media_buttons' => false,
+                        'textarea_rows' => 1,
+                        'teeny' => true,
+                        'quicktags' => array('buttons' => 'strong,em,link')
+                    )); ?>
                 </td>
             </tr>
             <tr>
                 <th><label for="improve_roi_ads_case_study_title">Case Study Title</label></th>
                 <td>
-                    <input type="text" 
-                           id="improve_roi_ads_case_study_title" 
-                           name="improve_roi_ads_case_study_title" 
-                           value="<?php echo esc_attr($case_study_title); ?>"
-                           placeholder="EcoHome Solutions: 320% ROI Improvement" />
+                    <?php wp_editor($case_study_title, 'improve_roi_ads_case_study_title', array(
+                        'textarea_name' => 'improve_roi_ads_case_study_title',
+                        'media_buttons' => false,
+                        'textarea_rows' => 2,
+                        'teeny' => true,
+                        'quicktags' => array('buttons' => 'strong,em,link')
+                    )); ?>
                 </td>
             </tr>
             <tr>
                 <th><label for="improve_roi_ads_case_study_content">Case Study Content</label></th>
                 <td>
-                    <textarea id="improve_roi_ads_case_study_content" 
-                              name="improve_roi_ads_case_study_content"
-                              placeholder="Case study description..."><?php echo esc_textarea($case_study_content); ?></textarea>
+                    <?php wp_editor($case_study_content, 'improve_roi_ads_case_study_content', array(
+                        'textarea_name' => 'improve_roi_ads_case_study_content',
+                        'media_buttons' => false,
+                        'textarea_rows' => 5,
+                        'teeny' => true,
+                        'quicktags' => array('buttons' => 'strong,em,link,ul,ol,li')
+                    )); ?>
                 </td>
             </tr>
             <tr>
                 <th><label for="improve_roi_ads_case_study_challenge_title">Challenge Section Title</label></th>
                 <td>
-                    <input type="text" 
-                           id="improve_roi_ads_case_study_challenge_title" 
-                           name="improve_roi_ads_case_study_challenge_title" 
-                           value="<?php echo esc_attr($case_study_challenge_title); ?>"
-                           placeholder="The Challenge" />
+                    <?php wp_editor($case_study_challenge_title, 'improve_roi_ads_case_study_challenge_title', array(
+                        'textarea_name' => 'improve_roi_ads_case_study_challenge_title',
+                        'media_buttons' => false,
+                        'textarea_rows' => 1,
+                        'teeny' => true,
+                        'quicktags' => array('buttons' => 'strong,em,link')
+                    )); ?>
                 </td>
             </tr>
             <tr>
@@ -557,11 +591,13 @@ function improve_roi_ads_meta_box_callback($post) {
             <tr>
                 <th><label for="improve_roi_ads_case_study_solution_title">Solution Section Title</label></th>
                 <td>
-                    <input type="text" 
-                           id="improve_roi_ads_case_study_solution_title" 
-                           name="improve_roi_ads_case_study_solution_title" 
-                           value="<?php echo esc_attr($case_study_solution_title); ?>"
-                           placeholder="Our Solution" />
+                    <?php wp_editor($case_study_solution_title, 'improve_roi_ads_case_study_solution_title', array(
+                        'textarea_name' => 'improve_roi_ads_case_study_solution_title',
+                        'media_buttons' => false,
+                        'textarea_rows' => 1,
+                        'teeny' => true,
+                        'quicktags' => array('buttons' => 'strong,em,link')
+                    )); ?>
                 </td>
             </tr>
             <tr>
@@ -586,11 +622,13 @@ function improve_roi_ads_meta_box_callback($post) {
             <tr>
                 <th><label for="improve_roi_ads_case_study_results_title">Results Section Title</label></th>
                 <td>
-                    <input type="text" 
-                           id="improve_roi_ads_case_study_results_title" 
-                           name="improve_roi_ads_case_study_results_title" 
-                           value="<?php echo esc_attr($case_study_results_title); ?>"
-                           placeholder="Results After 5 Months" />
+                    <?php wp_editor($case_study_results_title, 'improve_roi_ads_case_study_results_title', array(
+                        'textarea_name' => 'improve_roi_ads_case_study_results_title',
+                        'media_buttons' => false,
+                        'textarea_rows' => 1,
+                        'teeny' => true,
+                        'quicktags' => array('buttons' => 'strong,em,link')
+                    )); ?>
                 </td>
             </tr>
         </table>
@@ -644,11 +682,13 @@ function improve_roi_ads_meta_box_callback($post) {
             <tr>
                 <th><label for="improve_roi_ads_process_title">Process Title</label></th>
                 <td>
-                    <input type="text" 
-                           id="improve_roi_ads_process_title" 
-                           name="improve_roi_ads_process_title" 
-                           value="<?php echo esc_attr($process_title); ?>"
-                           placeholder="Our Ad ROI optimisation Process" />
+                    <?php wp_editor($process_title, 'improve_roi_ads_process_title', array(
+                        'textarea_name' => 'improve_roi_ads_process_title',
+                        'media_buttons' => false,
+                        'textarea_rows' => 2,
+                        'teeny' => true,
+                        'quicktags' => array('buttons' => 'strong,em,link')
+                    )); ?>
                 </td>
             </tr>
         </table>
@@ -662,12 +702,20 @@ function improve_roi_ads_meta_box_callback($post) {
                                name="improve_roi_ads_process_steps[<?php echo $index; ?>][number]" 
                                value="<?php echo esc_attr($step['number']); ?>"
                                placeholder="Step number" />
-                        <input type="text" 
-                               name="improve_roi_ads_process_steps[<?php echo $index; ?>][title]" 
-                               value="<?php echo esc_attr($step['title']); ?>"
-                               placeholder="Step title" />
-                        <textarea name="improve_roi_ads_process_steps[<?php echo $index; ?>][description]" 
-                                  placeholder="Step description"><?php echo esc_textarea($step['description']); ?></textarea>
+                        <?php wp_editor($step['title'], 'improve_roi_ads_process_steps_' . $index . '_title', array(
+                            'textarea_name' => 'improve_roi_ads_process_steps[' . $index . '][title]',
+                            'media_buttons' => false,
+                            'textarea_rows' => 2,
+                            'teeny' => true,
+                            'quicktags' => array('buttons' => 'strong,em,link')
+                        )); ?>
+                        <?php wp_editor($step['description'], 'improve_roi_ads_process_steps_' . $index . '_description', array(
+                            'textarea_name' => 'improve_roi_ads_process_steps[' . $index . '][description]',
+                            'media_buttons' => false,
+                            'textarea_rows' => 4,
+                            'teeny' => true,
+                            'quicktags' => array('buttons' => 'strong,em,link,ul,ol,li')
+                        )); ?>
                         <button type="button" class="button remove-repeater-item">Remove Step</button>
                     </div>
                 <?php endforeach; ?>
@@ -681,11 +729,13 @@ function improve_roi_ads_meta_box_callback($post) {
             <tr>
                 <th><label for="improve_roi_ads_platforms_title">Platforms Title</label></th>
                 <td>
-                    <input type="text" 
-                           id="improve_roi_ads_platforms_title" 
-                           name="improve_roi_ads_platforms_title" 
-                           value="<?php echo esc_attr($platforms_title); ?>"
-                           placeholder="Platform-Specific ROI optimisation" />
+                    <?php wp_editor($platforms_title, 'improve_roi_ads_platforms_title', array(
+                        'textarea_name' => 'improve_roi_ads_platforms_title',
+                        'media_buttons' => false,
+                        'textarea_rows' => 2,
+                        'teeny' => true,
+                        'quicktags' => array('buttons' => 'strong,em,link')
+                    )); ?>
                 </td>
             </tr>
         </table>
@@ -695,10 +745,13 @@ function improve_roi_ads_meta_box_callback($post) {
                 <?php foreach ($platforms as $index => $platform): ?>
                     <div class="repeater-field">
                         <h4>Platform <?php echo $index + 1; ?></h4>
-                        <input type="text" 
-                               name="improve_roi_ads_platforms[<?php echo $index; ?>][title]" 
-                               value="<?php echo esc_attr($platform['title']); ?>"
-                               placeholder="Platform title" />
+                        <?php wp_editor($platform['title'], 'improve_roi_ads_platforms_' . $index . '_title', array(
+                            'textarea_name' => 'improve_roi_ads_platforms[' . $index . '][title]',
+                            'media_buttons' => false,
+                            'textarea_rows' => 2,
+                            'teeny' => true,
+                            'quicktags' => array('buttons' => 'strong,em,link')
+                        )); ?>
                         <div>
                             <strong>Features:</strong>
                             <?php foreach ($platform['features'] as $feat_index => $feature): ?>
@@ -726,11 +779,13 @@ function improve_roi_ads_meta_box_callback($post) {
             <tr>
                 <th><label for="improve_roi_ads_metrics_title">Metrics Title</label></th>
                 <td>
-                    <input type="text" 
-                           id="improve_roi_ads_metrics_title" 
-                           name="improve_roi_ads_metrics_title" 
-                           value="<?php echo esc_attr($metrics_title); ?>"
-                           placeholder="Key ROI Metrics We Track & optimise" />
+                    <?php wp_editor($metrics_title, 'improve_roi_ads_metrics_title', array(
+                        'textarea_name' => 'improve_roi_ads_metrics_title',
+                        'media_buttons' => false,
+                        'textarea_rows' => 2,
+                        'teeny' => true,
+                        'quicktags' => array('buttons' => 'strong,em,link')
+                    )); ?>
                 </td>
             </tr>
         </table>
@@ -740,10 +795,13 @@ function improve_roi_ads_meta_box_callback($post) {
                 <?php foreach ($metrics as $index => $metric): ?>
                     <div class="repeater-field">
                         <h4>Metric Category <?php echo $index + 1; ?></h4>
-                        <input type="text" 
-                               name="improve_roi_ads_metrics[<?php echo $index; ?>][title]" 
-                               value="<?php echo esc_attr($metric['title']); ?>"
-                               placeholder="Metric category title" />
+                        <?php wp_editor($metric['title'], 'improve_roi_ads_metrics_' . $index . '_title', array(
+                            'textarea_name' => 'improve_roi_ads_metrics[' . $index . '][title]',
+                            'media_buttons' => false,
+                            'textarea_rows' => 2,
+                            'teeny' => true,
+                            'quicktags' => array('buttons' => 'strong,em,link')
+                        )); ?>
                         <div>
                             <strong>Metrics:</strong>
                             <?php foreach ($metric['items'] as $item_index => $item): ?>
@@ -767,9 +825,13 @@ function improve_roi_ads_meta_box_callback($post) {
             <tr>
                 <th><label for="improve_roi_ads_testimonial_quote">Testimonial Quote</label></th>
                 <td>
-                    <textarea id="improve_roi_ads_testimonial_quote" 
-                              name="improve_roi_ads_testimonial_quote"
-                              placeholder="Customer testimonial quote..."><?php echo esc_textarea($testimonial_quote); ?></textarea>
+                    <?php wp_editor($testimonial_quote, 'improve_roi_ads_testimonial_quote', array(
+                        'textarea_name' => 'improve_roi_ads_testimonial_quote',
+                        'media_buttons' => false,
+                        'textarea_rows' => 5,
+                        'teeny' => true,
+                        'quicktags' => array('buttons' => 'strong,em,link,ul,ol,li')
+                    )); ?>
                 </td>
             </tr>
             <tr>
@@ -810,19 +872,25 @@ function improve_roi_ads_meta_box_callback($post) {
             <tr>
                 <th><label for="improve_roi_ads_cta_title">CTA Title</label></th>
                 <td>
-                    <input type="text" 
-                           id="improve_roi_ads_cta_title" 
-                           name="improve_roi_ads_cta_title" 
-                           value="<?php echo esc_attr($cta_title); ?>"
-                           placeholder="Ready to Maximize Your Ad ROI?" />
+                    <?php wp_editor($cta_title, 'improve_roi_ads_cta_title', array(
+                        'textarea_name' => 'improve_roi_ads_cta_title',
+                        'media_buttons' => false,
+                        'textarea_rows' => 2,
+                        'teeny' => true,
+                        'quicktags' => array('buttons' => 'strong,em,link')
+                    )); ?>
                 </td>
             </tr>
             <tr>
                 <th><label for="improve_roi_ads_cta_subtitle">CTA Subtitle</label></th>
                 <td>
-                    <textarea id="improve_roi_ads_cta_subtitle" 
-                              name="improve_roi_ads_cta_subtitle"
-                              placeholder="Let's analyse your current ad performance and create a strategy to dramatically improve your return on investment."><?php echo esc_textarea($cta_subtitle); ?></textarea>
+                    <?php wp_editor($cta_subtitle, 'improve_roi_ads_cta_subtitle', array(
+                        'textarea_name' => 'improve_roi_ads_cta_subtitle',
+                        'media_buttons' => false,
+                        'textarea_rows' => 4,
+                        'teeny' => true,
+                        'quicktags' => array('buttons' => 'strong,em,link,ul,ol,li')
+                    )); ?>
                 </td>
             </tr>
             <tr>
@@ -1072,7 +1140,12 @@ function sanitize_improve_roi_ads_meta_value($field, $value) {
                             $sub_subitem = sanitize_text_field($sub_subitem);
                         }
                     } else {
-                        $subitem = sanitize_text_field($subitem);
+                        // Check if this field should use rich text sanitization
+                        if ($key === 'title' || $key === 'description') {
+                            $subitem = wp_kses_post($subitem);
+                        } else {
+                            $subitem = sanitize_text_field($subitem);
+                        }
                     }
                 }
             } else {
@@ -1081,8 +1154,14 @@ function sanitize_improve_roi_ads_meta_value($field, $value) {
         }
         return $value;
     } else {
-        if (strpos($field, 'content') !== false || strpos($field, 'description') !== false || strpos($field, 'quote') !== false || strpos($field, 'subtitle') !== false) {
-            return sanitize_textarea_field($value);
+        // Rich text fields - use wp_kses_post for HTML sanitization
+        if (strpos($field, 'title') !== false || 
+            strpos($field, 'content') !== false || 
+            strpos($field, 'description') !== false || 
+            strpos($field, 'quote') !== false || 
+            strpos($field, 'subtitle') !== false ||
+            strpos($field, 'label') !== false) {
+            return wp_kses_post($value);
         } elseif (strpos($field, 'url') !== false) {
             return esc_url_raw($value);
         } else {

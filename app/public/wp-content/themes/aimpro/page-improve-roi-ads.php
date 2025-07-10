@@ -23,8 +23,8 @@ get_header(); ?>
           <!-- Page Header -->
         <section class="page-header">
             <div class="page-header-content animate-on-scroll animate-fade-up">
-                <h1><?php echo esc_html(get_post_meta(get_the_ID(), '_improve_roi_ads_header_title', true) ?: 'Improve ROI from Ads'); ?></h1>
-                <p class="page-subtitle"><?php echo esc_html(get_post_meta(get_the_ID(), '_improve_roi_ads_header_subtitle', true) ?: 'Maximize your advertising spend with data-driven optimisation strategies that deliver measurable results'); ?></p>
+                <h1><?php echo wp_kses_post(get_post_meta(get_the_ID(), '_improve_roi_ads_header_title', true) ?: 'Improve ROI from Ads'); ?></h1>
+                <p class="page-subtitle"><?php echo wp_kses_post(get_post_meta(get_the_ID(), '_improve_roi_ads_header_subtitle', true) ?: 'Maximize your advertising spend with data-driven optimisation strategies that deliver measurable results'); ?></p>
             </div>
         </section>
 
@@ -33,11 +33,11 @@ get_header(); ?>
             <div class="section-content">
                 <div class="overview-content">
                     <div class="overview-text animate-on-scroll animate-slide-left">
-                        <h2><?php echo esc_html(get_post_meta(get_the_ID(), '_improve_roi_ads_overview_title', true) ?: 'Turn Ad Spend Into Profitable Growth'); ?></h2>
-                        <p><?php echo esc_html(get_post_meta(get_the_ID(), '_improve_roi_ads_overview_content', true) ?: 'Every advertising dollar should drive real business results. Our comprehensive ad optimisation strategies combine advanced analytics, conversion tracking, and continuous testing to maximise your return on ad spend (ROAS) while reducing customer acquisition costs and improving campaign performance.'); ?></p>
+                        <h2><?php echo wp_kses_post(get_post_meta(get_the_ID(), '_improve_roi_ads_overview_title', true) ?: 'Turn Ad Spend Into Profitable Growth'); ?></h2>
+                        <div><?php echo wp_kses_post(get_post_meta(get_the_ID(), '_improve_roi_ads_overview_content', true) ?: 'Every advertising dollar should drive real business results. Our comprehensive ad optimisation strategies combine advanced analytics, conversion tracking, and continuous testing to maximise your return on ad spend (ROAS) while reducing customer acquisition costs and improving campaign performance.'); ?></div>
                         
                         <div class="solution-challenges animate-on-scroll animate-fade-up">
-                            <h3><?php echo esc_html(get_post_meta(get_the_ID(), '_improve_roi_ads_challenges_title', true) ?: 'Ad ROI Challenges We Solve:'); ?></h3>
+                            <h3><?php echo wp_kses_post(get_post_meta(get_the_ID(), '_improve_roi_ads_challenges_title', true) ?: 'Ad ROI Challenges We Solve:'); ?></h3>
                             <ul>
                                 <?php
                                 $challenges = get_post_meta(get_the_ID(), '_improve_roi_ads_challenges', true);
@@ -77,7 +77,7 @@ get_header(); ?>
         </section>        <!-- ROI optimisation Methods -->
         <section class="roi-optimisation-methods">
             <div class="section-content">
-                <h2 class="animate-on-scroll animate-fade-up"><?php echo esc_html(get_post_meta(get_the_ID(), '_improve_roi_ads_methods_title', true) ?: 'Our Ad ROI optimisation Methods'); ?></h2>
+                <h2 class="animate-on-scroll animate-fade-up"><?php echo wp_kses_post(get_post_meta(get_the_ID(), '_improve_roi_ads_methods_title', true) ?: 'Our Ad ROI optimisation Methods'); ?></h2>
                 <div class="services-grid animate-on-scroll animate-stagger animate-scale-up">
                     <div class="service-item">
                         <div class="service-icon"><i class="fas fa-chart-line"></i></div>
@@ -243,7 +243,7 @@ get_header(); ?>
         <!-- ROI Process -->
         <section class="roi-process">
             <div class="section-content">
-                <h2 class="animate-on-scroll animate-fade-up"><?php echo esc_html(get_post_meta(get_the_ID(), '_improve_roi_ads_process_title', true) ?: 'Our Ad ROI optimisation Process'); ?></h2>
+                <h2 class="animate-on-scroll animate-fade-up"><?php echo wp_kses_post(get_post_meta(get_the_ID(), '_improve_roi_ads_process_title', true) ?: 'Our Ad ROI optimisation Process'); ?></h2>
                 <div class="process-steps">
                     
                     <?php
@@ -278,8 +278,8 @@ get_header(); ?>
                     <div class="process-step animate-on-scroll animate-stagger animate-slide-up">
                         <div class="step-number"><?php echo esc_html($step['number']); ?></div>
                         <div class="step-content">
-                            <h3><?php echo esc_html($step['title']); ?></h3>
-                            <p><?php echo esc_html($step['description']); ?></p>
+                            <h3><?php echo wp_kses_post($step['title']); ?></h3>
+                            <div><?php echo wp_kses_post($step['description']); ?></div>
                         </div>
                     </div>
                     <?php endforeach; ?>
@@ -291,7 +291,7 @@ get_header(); ?>
         </section>        <!-- Platform optimisation -->
         <section class="platform-optimisation">
             <div class="section-content">
-                <h2 class="animate-on-scroll animate-fade-up"><?php echo esc_html(get_post_meta(get_the_ID(), '_improve_roi_ads_platforms_title', true) ?: 'Platform-Specific ROI optimisation'); ?></h2>
+                <h2 class="animate-on-scroll animate-fade-up"><?php echo wp_kses_post(get_post_meta(get_the_ID(), '_improve_roi_ads_platforms_title', true) ?: 'Platform-Specific ROI optimisation'); ?></h2>
                 <div class="platforms-grid">
                     
                     <?php
@@ -337,7 +337,7 @@ get_header(); ?>
                     foreach ($platforms as $platform) :
                     ?>
                     <div class="platform-card animate-on-scroll animate-stagger animate-fade-up">
-                        <h3><?php echo esc_html($platform['title']); ?></h3>
+                        <h3><?php echo wp_kses_post($platform['title']); ?></h3>
                         <ul class="platform-features">
                             <?php foreach ($platform['features'] as $feature) : ?>
                                 <li><?php echo esc_html($feature); ?></li>
@@ -356,7 +356,7 @@ get_header(); ?>
         <!-- ROI Metrics -->
         <section class="roi-metrics">
             <div class="section-content">
-                <h2 class="animate-on-scroll animate-fade-up"><?php echo esc_html(get_post_meta(get_the_ID(), '_improve_roi_ads_metrics_title', true) ?: 'Key ROI Metrics We Track & optimise'); ?></h2>
+                <h2 class="animate-on-scroll animate-fade-up"><?php echo wp_kses_post(get_post_meta(get_the_ID(), '_improve_roi_ads_metrics_title', true) ?: 'Key ROI Metrics We Track & optimise'); ?></h2>
                 <div class="metrics-grid">
                     
                     <?php
@@ -409,7 +409,7 @@ get_header(); ?>
                     foreach ($metrics as $metric) :
                     ?>
                     <div class="metric-category animate-on-scroll animate-stagger animate-slide-up">
-                        <h3><?php echo esc_html($metric['title']); ?></h3>
+                        <h3><?php echo wp_kses_post($metric['title']); ?></h3>
                         <ul class="metric-list">
                             <?php foreach ($metric['items'] as $item) : ?>
                                 <li><?php echo esc_html($item); ?></li>
@@ -427,7 +427,7 @@ get_header(); ?>
             <div class="section-content">
                 <div class="testimonial-content animate-on-scroll animate-fade-up">
                     <blockquote>
-                        "<?php echo esc_html(get_post_meta(get_the_ID(), '_improve_roi_ads_testimonial_quote', true) ?: 'Aimpro Digital took our ad performance from break-even to highly profitable. Our ROI improved by 320% and we\'re now getting 4x more leads for the same budget. Their optimisation expertise is exceptional.'); ?>"
+                        "<?php echo wp_kses_post(get_post_meta(get_the_ID(), '_improve_roi_ads_testimonial_quote', true) ?: 'Aimpro Digital took our ad performance from break-even to highly profitable. Our ROI improved by 320% and we\'re now getting 4x more leads for the same budget. Their optimisation expertise is exceptional.'); ?>"
                     </blockquote>
                     <div class="testimonial-author animate-on-scroll animate-slide-up">
                         <div class="author-info">
@@ -444,8 +444,8 @@ get_header(); ?>
         <section class="cta-section">
             <div class="section-content">
                 <div class="cta-content animate-on-scroll animate-fade-up">
-                    <h2><?php echo esc_html(get_post_meta(get_the_ID(), '_improve_roi_ads_cta_title', true) ?: 'Ready to Maximize Your Ad ROI?'); ?></h2>
-                    <p><?php echo esc_html(get_post_meta(get_the_ID(), '_improve_roi_ads_cta_subtitle', true) ?: 'Let\'s analyse your current ad performance and create a strategy to dramatically improve your return on investment.'); ?></p>                    <div class="cta-buttons animate-on-scroll animate-slide-up">
+                    <h2><?php echo wp_kses_post(get_post_meta(get_the_ID(), '_improve_roi_ads_cta_title', true) ?: 'Ready to Maximize Your Ad ROI?'); ?></h2>
+                    <div><?php echo wp_kses_post(get_post_meta(get_the_ID(), '_improve_roi_ads_cta_subtitle', true) ?: 'Let\'s analyse your current ad performance and create a strategy to dramatically improve your return on investment.'); ?></div>                    <div class="cta-buttons animate-on-scroll animate-slide-up">
                         <a href="<?php echo esc_url(home_url(get_post_meta(get_the_ID(), '_improve_roi_ads_cta_primary_url', true) ?: '/contact')); ?>" class="btn btn-primary"><?php echo esc_html(get_post_meta(get_the_ID(), '_improve_roi_ads_cta_primary_text', true) ?: 'Get Free Ad Account Audit'); ?></a>
                     </div>
                     <div class="cta-features animate-on-scroll animate-fade-up">
