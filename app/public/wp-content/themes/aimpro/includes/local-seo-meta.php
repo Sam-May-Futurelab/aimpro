@@ -306,9 +306,25 @@ function local_seo_header_callback($post) {
     
     echo '<table class="form-table">';
     echo '<tr><th><label for="local_seo_header_title">Page Title</label></th>';
-    echo '<td><input type="text" id="local_seo_header_title" name="local_seo_header_title" value="' . esc_attr($title) . '" style="width: 100%;" /></td></tr>';
+    echo '<td>';
+    wp_editor($title, 'local_seo_header_title', array(
+        'textarea_name' => 'local_seo_header_title',
+        'media_buttons' => false,
+        'textarea_rows' => 3,
+        'teeny' => true,
+        'quicktags' => array('buttons' => 'strong,em,link,ul,ol,li')
+    ));
+    echo '</td></tr>';
     echo '<tr><th><label for="local_seo_header_subtitle">Page Subtitle</label></th>';
-    echo '<td><textarea id="local_seo_header_subtitle" name="local_seo_header_subtitle" rows="3" style="width: 100%;">' . esc_textarea($subtitle) . '</textarea></td></tr>';
+    echo '<td>';
+    wp_editor($subtitle, 'local_seo_header_subtitle', array(
+        'textarea_name' => 'local_seo_header_subtitle',
+        'media_buttons' => false,
+        'textarea_rows' => 4,
+        'teeny' => true,
+        'quicktags' => array('buttons' => 'strong,em,link,ul,ol,li')
+    ));
+    echo '</td></tr>';
     echo '</table>';
 }
 
@@ -323,13 +339,46 @@ function local_seo_overview_callback($post) {
     
     echo '<table class="form-table">';
     echo '<tr><th><label for="local_seo_overview_title">Section Title</label></th>';
-    echo '<td><input type="text" id="local_seo_overview_title" name="local_seo_overview_title" value="' . esc_attr($title) . '" style="width: 100%;" /></td></tr>';
+    echo '<td>';
+    wp_editor($title, 'local_seo_overview_title', array(
+        'textarea_name' => 'local_seo_overview_title',
+        'media_buttons' => false,
+        'textarea_rows' => 3,
+        'teeny' => true,
+        'quicktags' => array('buttons' => 'strong,em,link,ul,ol,li')
+    ));
+    echo '</td></tr>';
     echo '<tr><th><label for="local_seo_overview_description">Description</label></th>';
-    echo '<td><textarea id="local_seo_overview_description" name="local_seo_overview_description" rows="4" style="width: 100%;">' . esc_textarea($description) . '</textarea></td></tr>';
+    echo '<td>';
+    wp_editor($description, 'local_seo_overview_description', array(
+        'textarea_name' => 'local_seo_overview_description',
+        'media_buttons' => false,
+        'textarea_rows' => 6,
+        'teeny' => true,
+        'quicktags' => array('buttons' => 'strong,em,link,ul,ol,li')
+    ));
+    echo '</td></tr>';
     echo '<tr><th><label for="local_seo_overview_benefits_title">Benefits Section Title</label></th>';
-    echo '<td><input type="text" id="local_seo_overview_benefits_title" name="local_seo_overview_benefits_title" value="' . esc_attr($benefits_title) . '" style="width: 100%;" /></td></tr>';
+    echo '<td>';
+    wp_editor($benefits_title, 'local_seo_overview_benefits_title', array(
+        'textarea_name' => 'local_seo_overview_benefits_title',
+        'media_buttons' => false,
+        'textarea_rows' => 2,
+        'teeny' => true,
+        'quicktags' => array('buttons' => 'strong,em,link,ul,ol,li')
+    ));
+    echo '</td></tr>';
     echo '<tr><th><label for="local_seo_overview_benefits">Benefits (one per line)</label></th>';
-    echo '<td><textarea id="local_seo_overview_benefits" name="local_seo_overview_benefits" rows="5" style="width: 100%;">' . esc_textarea(implode("\n", (array)$benefits)) . '</textarea></td></tr>';
+    echo '<td>';
+    $benefits_text = is_array($benefits) ? implode("\n", $benefits) : $benefits;
+    wp_editor($benefits_text, 'local_seo_overview_benefits', array(
+        'textarea_name' => 'local_seo_overview_benefits',
+        'media_buttons' => false,
+        'textarea_rows' => 5,
+        'teeny' => true,
+        'quicktags' => array('buttons' => 'strong,em,link,ul,ol,li')
+    ));
+    echo '</td></tr>';
     echo '<tr><th><label for="local_seo_overview_image">Hero Image</label></th>';
     echo '<td>';
     echo '<input type="hidden" id="local_seo_overview_image" name="local_seo_overview_image" value="' . esc_attr($image) . '" />';
@@ -385,7 +434,15 @@ function local_seo_services_callback($post) {
     
     echo '<table class="form-table">';
     echo '<tr><th><label for="local_seo_services_title">Services Section Title</label></th>';
-    echo '<td><input type="text" id="local_seo_services_title" name="local_seo_services_title" value="' . esc_attr($services_title) . '" style="width: 100%;" /></td></tr>';
+    echo '<td>';
+    wp_editor($services_title, 'local_seo_services_title', array(
+        'textarea_name' => 'local_seo_services_title',
+        'media_buttons' => false,
+        'textarea_rows' => 2,
+        'teeny' => true,
+        'quicktags' => array('buttons' => 'strong,em,link,ul,ol,li')
+    ));
+    echo '</td></tr>';
     echo '</table>';
     
     echo '<h4>Service Cards</h4>';
@@ -398,11 +455,36 @@ function local_seo_services_callback($post) {
         echo '<h5>Service ' . $i . '</h5>';
         echo '<table class="form-table">';
         echo '<tr><th><label for="local_seo_service_' . $i . '_title">Title</label></th>';
-        echo '<td><input type="text" id="local_seo_service_' . $i . '_title" name="local_seo_service_' . $i . '_title" value="' . esc_attr($title) . '" style="width: 100%;" /></td></tr>';
+        echo '<td>';
+        wp_editor($title, 'local_seo_service_' . $i . '_title', array(
+            'textarea_name' => 'local_seo_service_' . $i . '_title',
+            'media_buttons' => false,
+            'textarea_rows' => 2,
+            'teeny' => true,
+            'quicktags' => array('buttons' => 'strong,em,link,ul,ol,li')
+        ));
+        echo '</td></tr>';
         echo '<tr><th><label for="local_seo_service_' . $i . '_description">Description</label></th>';
-        echo '<td><textarea id="local_seo_service_' . $i . '_description" name="local_seo_service_' . $i . '_description" rows="3" style="width: 100%;">' . esc_textarea($description) . '</textarea></td></tr>';
+        echo '<td>';
+        wp_editor($description, 'local_seo_service_' . $i . '_description', array(
+            'textarea_name' => 'local_seo_service_' . $i . '_description',
+            'media_buttons' => false,
+            'textarea_rows' => 4,
+            'teeny' => true,
+            'quicktags' => array('buttons' => 'strong,em,link,ul,ol,li')
+        ));
+        echo '</td></tr>';
         echo '<tr><th><label for="local_seo_service_' . $i . '_features">Features (one per line)</label></th>';
-        echo '<td><textarea id="local_seo_service_' . $i . '_features" name="local_seo_service_' . $i . '_features" rows="5" style="width: 100%;">' . esc_textarea(implode("\n", (array)$features)) . '</textarea></td></tr>';
+        echo '<td>';
+        $features_text = is_array($features) ? implode("\n", $features) : $features;
+        wp_editor($features_text, 'local_seo_service_' . $i . '_features', array(
+            'textarea_name' => 'local_seo_service_' . $i . '_features',
+            'media_buttons' => false,
+            'textarea_rows' => 5,
+            'teeny' => true,
+            'quicktags' => array('buttons' => 'strong,em,link,ul,ol,li')
+        ));
+        echo '</td></tr>';
         echo '</table><hr>';
     }
 }
@@ -423,21 +505,87 @@ function local_seo_case_study_callback($post) {
     
     echo '<table class="form-table">';
     echo '<tr><th><label for="local_seo_case_study_label">Case Study Label</label></th>';
-    echo '<td><input type="text" id="local_seo_case_study_label" name="local_seo_case_study_label" value="' . esc_attr($label) . '" style="width: 100%;" /></td></tr>';
+    echo '<td>';
+    wp_editor($label, 'local_seo_case_study_label', array(
+        'textarea_name' => 'local_seo_case_study_label',
+        'media_buttons' => false,
+        'textarea_rows' => 2,
+        'teeny' => true,
+        'quicktags' => array('buttons' => 'strong,em,link,ul,ol,li')
+    ));
+    echo '</td></tr>';
     echo '<tr><th><label for="local_seo_case_study_title">Case Study Title</label></th>';
-    echo '<td><input type="text" id="local_seo_case_study_title" name="local_seo_case_study_title" value="' . esc_attr($title) . '" style="width: 100%;" /></td></tr>';
+    echo '<td>';
+    wp_editor($title, 'local_seo_case_study_title', array(
+        'textarea_name' => 'local_seo_case_study_title',
+        'media_buttons' => false,
+        'textarea_rows' => 3,
+        'teeny' => true,
+        'quicktags' => array('buttons' => 'strong,em,link,ul,ol,li')
+    ));
+    echo '</td></tr>';
     echo '<tr><th><label for="local_seo_case_study_description">Description</label></th>';
-    echo '<td><textarea id="local_seo_case_study_description" name="local_seo_case_study_description" rows="3" style="width: 100%;">' . esc_textarea($description) . '</textarea></td></tr>';
+    echo '<td>';
+    wp_editor($description, 'local_seo_case_study_description', array(
+        'textarea_name' => 'local_seo_case_study_description',
+        'media_buttons' => false,
+        'textarea_rows' => 4,
+        'teeny' => true,
+        'quicktags' => array('buttons' => 'strong,em,link,ul,ol,li')
+    ));
+    echo '</td></tr>';
     echo '<tr><th><label for="local_seo_case_study_challenge_title">Challenge Section Title</label></th>';
-    echo '<td><input type="text" id="local_seo_case_study_challenge_title" name="local_seo_case_study_challenge_title" value="' . esc_attr($challenge_title) . '" style="width: 100%;" /></td></tr>';
+    echo '<td>';
+    wp_editor($challenge_title, 'local_seo_case_study_challenge_title', array(
+        'textarea_name' => 'local_seo_case_study_challenge_title',
+        'media_buttons' => false,
+        'textarea_rows' => 2,
+        'teeny' => true,
+        'quicktags' => array('buttons' => 'strong,em,link,ul,ol,li')
+    ));
+    echo '</td></tr>';
     echo '<tr><th><label for="local_seo_case_study_challenges">Challenges (one per line)</label></th>';
-    echo '<td><textarea id="local_seo_case_study_challenges" name="local_seo_case_study_challenges" rows="4" style="width: 100%;">' . esc_textarea(implode("\n", (array)$challenges)) . '</textarea></td></tr>';
+    echo '<td>';
+    $challenges_text = is_array($challenges) ? implode("\n", $challenges) : $challenges;
+    wp_editor($challenges_text, 'local_seo_case_study_challenges', array(
+        'textarea_name' => 'local_seo_case_study_challenges',
+        'media_buttons' => false,
+        'textarea_rows' => 4,
+        'teeny' => true,
+        'quicktags' => array('buttons' => 'strong,em,link,ul,ol,li')
+    ));
+    echo '</td></tr>';
     echo '<tr><th><label for="local_seo_case_study_solution_title">Solution Section Title</label></th>';
-    echo '<td><input type="text" id="local_seo_case_study_solution_title" name="local_seo_case_study_solution_title" value="' . esc_attr($solution_title) . '" style="width: 100%;" /></td></tr>';
+    echo '<td>';
+    wp_editor($solution_title, 'local_seo_case_study_solution_title', array(
+        'textarea_name' => 'local_seo_case_study_solution_title',
+        'media_buttons' => false,
+        'textarea_rows' => 2,
+        'teeny' => true,
+        'quicktags' => array('buttons' => 'strong,em,link,ul,ol,li')
+    ));
+    echo '</td></tr>';
     echo '<tr><th><label for="local_seo_case_study_solutions">Solutions (one per line)</label></th>';
-    echo '<td><textarea id="local_seo_case_study_solutions" name="local_seo_case_study_solutions" rows="4" style="width: 100%;">' . esc_textarea(implode("\n", (array)$solutions)) . '</textarea></td></tr>';
+    echo '<td>';
+    $solutions_text = is_array($solutions) ? implode("\n", $solutions) : $solutions;
+    wp_editor($solutions_text, 'local_seo_case_study_solutions', array(
+        'textarea_name' => 'local_seo_case_study_solutions',
+        'media_buttons' => false,
+        'textarea_rows' => 4,
+        'teeny' => true,
+        'quicktags' => array('buttons' => 'strong,em,link,ul,ol,li')
+    ));
+    echo '</td></tr>';
     echo '<tr><th><label for="local_seo_case_study_results_title">Results Section Title</label></th>';
-    echo '<td><input type="text" id="local_seo_case_study_results_title" name="local_seo_case_study_results_title" value="' . esc_attr($results_title) . '" style="width: 100%;" /></td></tr>';
+    echo '<td>';
+    wp_editor($results_title, 'local_seo_case_study_results_title', array(
+        'textarea_name' => 'local_seo_case_study_results_title',
+        'media_buttons' => false,
+        'textarea_rows' => 2,
+        'teeny' => true,
+        'quicktags' => array('buttons' => 'strong,em,link,ul,ol,li')
+    ));
+    echo '</td></tr>';
     echo '</table>';
     
     echo '<h4>Results</h4>';
@@ -468,7 +616,15 @@ function local_seo_process_callback($post) {
     
     echo '<table class="form-table">';
     echo '<tr><th><label for="local_seo_process_title">Process Section Title</label></th>';
-    echo '<td><input type="text" id="local_seo_process_title" name="local_seo_process_title" value="' . esc_attr($title) . '" style="width: 100%;" /></td></tr>';
+    echo '<td>';
+    wp_editor($title, 'local_seo_process_title', array(
+        'textarea_name' => 'local_seo_process_title',
+        'media_buttons' => false,
+        'textarea_rows' => 2,
+        'teeny' => true,
+        'quicktags' => array('buttons' => 'strong,em,link,ul,ol,li')
+    ));
+    echo '</td></tr>';
     echo '</table>';
     
     echo '<h4>Process Steps</h4>';
@@ -479,9 +635,25 @@ function local_seo_process_callback($post) {
         echo '<h5>Step ' . $i . '</h5>';
         echo '<table class="form-table">';
         echo '<tr><th><label for="local_seo_process_step_' . $i . '_title">Step Title</label></th>';
-        echo '<td><input type="text" id="local_seo_process_step_' . $i . '_title" name="local_seo_process_step_' . $i . '_title" value="' . esc_attr($step_title) . '" style="width: 100%;" /></td></tr>';
+        echo '<td>';
+        wp_editor($step_title, 'local_seo_process_step_' . $i . '_title', array(
+            'textarea_name' => 'local_seo_process_step_' . $i . '_title',
+            'media_buttons' => false,
+            'textarea_rows' => 2,
+            'teeny' => true,
+            'quicktags' => array('buttons' => 'strong,em,link,ul,ol,li')
+        ));
+        echo '</td></tr>';
         echo '<tr><th><label for="local_seo_process_step_' . $i . '_description">Step Description</label></th>';
-        echo '<td><textarea id="local_seo_process_step_' . $i . '_description" name="local_seo_process_step_' . $i . '_description" rows="3" style="width: 100%;">' . esc_textarea($step_description) . '</textarea></td></tr>';
+        echo '<td>';
+        wp_editor($step_description, 'local_seo_process_step_' . $i . '_description', array(
+            'textarea_name' => 'local_seo_process_step_' . $i . '_description',
+            'media_buttons' => false,
+            'textarea_rows' => 4,
+            'teeny' => true,
+            'quicktags' => array('buttons' => 'strong,em,link,ul,ol,li')
+        ));
+        echo '</td></tr>';
         echo '</table>';
     }
 }
@@ -493,7 +665,15 @@ function local_seo_industries_callback($post) {
     
     echo '<table class="form-table">';
     echo '<tr><th><label for="local_seo_industries_title">Industries Section Title</label></th>';
-    echo '<td><input type="text" id="local_seo_industries_title" name="local_seo_industries_title" value="' . esc_attr($title) . '" style="width: 100%;" /></td></tr>';
+    echo '<td>';
+    wp_editor($title, 'local_seo_industries_title', array(
+        'textarea_name' => 'local_seo_industries_title',
+        'media_buttons' => false,
+        'textarea_rows' => 2,
+        'teeny' => true,
+        'quicktags' => array('buttons' => 'strong,em,link,ul,ol,li')
+    ));
+    echo '</td></tr>';
     echo '</table>';
     
     echo '<h4>Industry Cards</h4>';
@@ -504,9 +684,26 @@ function local_seo_industries_callback($post) {
         echo '<h5>Industry ' . $i . '</h5>';
         echo '<table class="form-table">';
         echo '<tr><th><label for="local_seo_industry_' . $i . '_title">Industry Title</label></th>';
-        echo '<td><input type="text" id="local_seo_industry_' . $i . '_title" name="local_seo_industry_' . $i . '_title" value="' . esc_attr($industry_title) . '" style="width: 100%;" /></td></tr>';
+        echo '<td>';
+        wp_editor($industry_title, 'local_seo_industry_' . $i . '_title', array(
+            'textarea_name' => 'local_seo_industry_' . $i . '_title',
+            'media_buttons' => false,
+            'textarea_rows' => 2,
+            'teeny' => true,
+            'quicktags' => array('buttons' => 'strong,em,link,ul,ol,li')
+        ));
+        echo '</td></tr>';
         echo '<tr><th><label for="local_seo_industry_' . $i . '_features">Industry Features (one per line)</label></th>';
-        echo '<td><textarea id="local_seo_industry_' . $i . '_features" name="local_seo_industry_' . $i . '_features" rows="4" style="width: 100%;">' . esc_textarea(implode("\n", (array)$industry_features)) . '</textarea></td></tr>';
+        echo '<td>';
+        $features_text = is_array($industry_features) ? implode("\n", $industry_features) : $industry_features;
+        wp_editor($features_text, 'local_seo_industry_' . $i . '_features', array(
+            'textarea_name' => 'local_seo_industry_' . $i . '_features',
+            'media_buttons' => false,
+            'textarea_rows' => 4,
+            'teeny' => true,
+            'quicktags' => array('buttons' => 'strong,em,link,ul,ol,li')
+        ));
+        echo '</td></tr>';
         echo '</table>';
     }
 }
@@ -518,7 +715,15 @@ function local_seo_tools_callback($post) {
     
     echo '<table class="form-table">';
     echo '<tr><th><label for="local_seo_tools_title">Tools Section Title</label></th>';
-    echo '<td><input type="text" id="local_seo_tools_title" name="local_seo_tools_title" value="' . esc_attr($title) . '" style="width: 100%;" /></td></tr>';
+    echo '<td>';
+    wp_editor($title, 'local_seo_tools_title', array(
+        'textarea_name' => 'local_seo_tools_title',
+        'media_buttons' => false,
+        'textarea_rows' => 2,
+        'teeny' => true,
+        'quicktags' => array('buttons' => 'strong,em,link,ul,ol,li')
+    ));
+    echo '</td></tr>';
     echo '</table>';
     
     echo '<h4>Tool Categories</h4>';
@@ -529,9 +734,26 @@ function local_seo_tools_callback($post) {
         echo '<h5>Category ' . $i . '</h5>';
         echo '<table class="form-table">';
         echo '<tr><th><label for="local_seo_tools_category_' . $i . '_title">Category Title</label></th>';
-        echo '<td><input type="text" id="local_seo_tools_category_' . $i . '_title" name="local_seo_tools_category_' . $i . '_title" value="' . esc_attr($category_title) . '" style="width: 100%;" /></td></tr>';
+        echo '<td>';
+        wp_editor($category_title, 'local_seo_tools_category_' . $i . '_title', array(
+            'textarea_name' => 'local_seo_tools_category_' . $i . '_title',
+            'media_buttons' => false,
+            'textarea_rows' => 2,
+            'teeny' => true,
+            'quicktags' => array('buttons' => 'strong,em,link,ul,ol,li')
+        ));
+        echo '</td></tr>';
         echo '<tr><th><label for="local_seo_tools_category_' . $i . '_tools">Tools (one per line)</label></th>';
-        echo '<td><textarea id="local_seo_tools_category_' . $i . '_tools" name="local_seo_tools_category_' . $i . '_tools" rows="4" style="width: 100%;">' . esc_textarea(implode("\n", (array)$tools)) . '</textarea></td></tr>';
+        echo '<td>';
+        $tools_text = is_array($tools) ? implode("\n", $tools) : $tools;
+        wp_editor($tools_text, 'local_seo_tools_category_' . $i . '_tools', array(
+            'textarea_name' => 'local_seo_tools_category_' . $i . '_tools',
+            'media_buttons' => false,
+            'textarea_rows' => 4,
+            'teeny' => true,
+            'quicktags' => array('buttons' => 'strong,em,link,ul,ol,li')
+        ));
+        echo '</td></tr>';
         echo '</table>';
     }
 }
@@ -547,7 +769,15 @@ function local_seo_testimonial_callback($post) {
     
     echo '<table class="form-table">';
     echo '<tr><th><label for="local_seo_testimonial_quote">Testimonial Quote</label></th>';
-    echo '<td><textarea id="local_seo_testimonial_quote" name="local_seo_testimonial_quote" rows="4" style="width: 100%;">' . esc_textarea($quote) . '</textarea></td></tr>';
+    echo '<td>';
+    wp_editor($quote, 'local_seo_testimonial_quote', array(
+        'textarea_name' => 'local_seo_testimonial_quote',
+        'media_buttons' => false,
+        'textarea_rows' => 4,
+        'teeny' => true,
+        'quicktags' => array('buttons' => 'strong,em,link,ul,ol,li')
+    ));
+    echo '</td></tr>';
     echo '<tr><th><label for="local_seo_testimonial_image">Author Image (Optional)</label></th>';
     echo '<td>';
     echo '<input type="hidden" id="local_seo_testimonial_image" name="local_seo_testimonial_image" value="' . esc_attr($image) . '" />';
@@ -616,9 +846,25 @@ function local_seo_cta_callback($post) {
     
     echo '<table class="form-table">';
     echo '<tr><th><label for="local_seo_cta_title">CTA Title</label></th>';
-    echo '<td><input type="text" id="local_seo_cta_title" name="local_seo_cta_title" value="' . esc_attr($title) . '" style="width: 100%;" /></td></tr>';
+    echo '<td>';
+    wp_editor($title, 'local_seo_cta_title', array(
+        'textarea_name' => 'local_seo_cta_title',
+        'media_buttons' => false,
+        'textarea_rows' => 3,
+        'teeny' => true,
+        'quicktags' => array('buttons' => 'strong,em,link,ul,ol,li')
+    ));
+    echo '</td></tr>';
     echo '<tr><th><label for="local_seo_cta_description">CTA Description</label></th>';
-    echo '<td><textarea id="local_seo_cta_description" name="local_seo_cta_description" rows="3" style="width: 100%;">' . esc_textarea($description) . '</textarea></td></tr>';
+    echo '<td>';
+    wp_editor($description, 'local_seo_cta_description', array(
+        'textarea_name' => 'local_seo_cta_description',
+        'media_buttons' => false,
+        'textarea_rows' => 3,
+        'teeny' => true,
+        'quicktags' => array('buttons' => 'strong,em,link,ul,ol,li')
+    ));
+    echo '</td></tr>';
     echo '<tr><th><label for="local_seo_cta_primary_text">Primary Button Text</label></th>';
     echo '<td><input type="text" id="local_seo_cta_primary_text" name="local_seo_cta_primary_text" value="' . esc_attr($primary_text) . '" style="width: 100%;" /></td></tr>';
     echo '<tr><th><label for="local_seo_cta_primary_link">Primary Button Link</label></th>';
@@ -628,7 +874,15 @@ function local_seo_cta_callback($post) {
     echo '<tr><th><label for="local_seo_cta_secondary_link">Secondary Button Link</label></th>';
     echo '<td><input type="url" id="local_seo_cta_secondary_link" name="local_seo_cta_secondary_link" value="' . esc_url($secondary_link) . '" style="width: 100%;" /></td></tr>';
     echo '<tr><th><label for="local_seo_cta_benefits">CTA Benefits (one per line)</label></th>';
-    echo '<td><textarea id="local_seo_cta_benefits" name="local_seo_cta_benefits" rows="3" style="width: 100%;">' . esc_textarea(implode("\n", (array)$benefits)) . '</textarea></td></tr>';
+    echo '<td>';
+    wp_editor(implode("\n", (array)$benefits), 'local_seo_cta_benefits', array(
+        'textarea_name' => 'local_seo_cta_benefits',
+        'media_buttons' => false,
+        'textarea_rows' => 3,
+        'teeny' => true,
+        'quicktags' => array('buttons' => 'strong,em,link,ul,ol,li')
+    ));
+    echo '</td></tr>';
     echo '</table>';
 }
 
@@ -654,13 +908,13 @@ function save_local_seo_meta($post_id) {
         return;
     }
 
-    // List of all meta fields to save
-    $meta_fields = array(
+    // List of all meta fields to save (rich text fields)
+    $rich_text_fields = array(
         // Header
         'local_seo_header_title', 'local_seo_header_subtitle',
         
         // Overview
-        'local_seo_overview_title', 'local_seo_overview_description', 'local_seo_overview_benefits_title', 'local_seo_overview_image',
+        'local_seo_overview_title', 'local_seo_overview_description', 'local_seo_overview_benefits_title',
         
         // Services
         'local_seo_services_title',
@@ -668,7 +922,6 @@ function save_local_seo_meta($post_id) {
         // Case Study
         'local_seo_case_study_label', 'local_seo_case_study_title', 'local_seo_case_study_description',
         'local_seo_case_study_challenge_title', 'local_seo_case_study_solution_title', 'local_seo_case_study_results_title',
-        'local_seo_case_study_link', 'local_seo_case_study_link_text',
         
         // Process
         'local_seo_process_title',
@@ -680,51 +933,74 @@ function save_local_seo_meta($post_id) {
         'local_seo_tools_title',
         
         // Testimonial
-        'local_seo_testimonial_quote', 'local_seo_testimonial_image', 'local_seo_testimonial_name',
+        'local_seo_testimonial_quote',
+        
+        // CTA
+        'local_seo_cta_title', 'local_seo_cta_description'
+    );
+
+    // List of simple text fields (non-rich text)
+    $simple_text_fields = array(
+        // Overview
+        'local_seo_overview_image',
+        
+        // Case Study
+        'local_seo_case_study_link', 'local_seo_case_study_link_text',
+        
+        // Testimonial
+        'local_seo_testimonial_image', 'local_seo_testimonial_name',
         'local_seo_testimonial_title', 'local_seo_testimonial_company',
         
         // CTA
-        'local_seo_cta_title', 'local_seo_cta_description', 'local_seo_cta_primary_text', 'local_seo_cta_primary_link',
+        'local_seo_cta_primary_text', 'local_seo_cta_primary_link',
         'local_seo_cta_secondary_text', 'local_seo_cta_secondary_link'
     );
 
+    // Save rich text fields using wp_kses_post
+    foreach ($rich_text_fields as $field) {
+        if (isset($_POST[$field])) {
+            update_post_meta($post_id, '_' . $field, wp_kses_post($_POST[$field]));
+        }
+    }
+
     // Save simple text fields
-    foreach ($meta_fields as $field) {
+    foreach ($simple_text_fields as $field) {
         if (isset($_POST[$field])) {
             update_post_meta($post_id, '_' . $field, sanitize_text_field($_POST[$field]));
         }
     }
 
-    // Save array fields (lists)
-    $array_fields = array(
+    // Save array fields (lists) - some may contain rich text
+    $rich_text_array_fields = array(
         'local_seo_overview_benefits', 'local_seo_case_study_challenges', 'local_seo_case_study_solutions', 'local_seo_cta_benefits'
     );
     
-    foreach ($array_fields as $field) {
+    foreach ($rich_text_array_fields as $field) {
         if (isset($_POST[$field])) {
             $lines = explode("\n", $_POST[$field]);
-            $cleaned_lines = array_map('sanitize_text_field', $lines);
+            $cleaned_lines = array_map('wp_kses_post', $lines);
             $cleaned_lines = array_filter($cleaned_lines); // Remove empty lines
             update_post_meta($post_id, '_' . $field, $cleaned_lines);
         }
     }
 
-    // Save service cards (1-6)
+    // Save service cards (1-6) - now with rich text support
     for ($i = 1; $i <= 6; $i++) {
-        $service_fields = array(
+        // Rich text fields
+        $service_rich_text_fields = array(
             "local_seo_service_{$i}_title", "local_seo_service_{$i}_description"
         );
         
-        foreach ($service_fields as $field) {
+        foreach ($service_rich_text_fields as $field) {
             if (isset($_POST[$field])) {
-                update_post_meta($post_id, '_' . $field, sanitize_text_field($_POST[$field]));
+                update_post_meta($post_id, '_' . $field, wp_kses_post($_POST[$field]));
             }
         }
         
-        // Save service features (array)
+        // Save service features (array with rich text)
         if (isset($_POST["local_seo_service_{$i}_features"])) {
             $lines = explode("\n", $_POST["local_seo_service_{$i}_features"]);
-            $cleaned_lines = array_map('sanitize_text_field', $lines);
+            $cleaned_lines = array_map('wp_kses_post', $lines);
             $cleaned_lines = array_filter($cleaned_lines);
             update_post_meta($post_id, "_local_seo_service_{$i}_features", $cleaned_lines);
         }
@@ -740,37 +1016,37 @@ function save_local_seo_meta($post_id) {
         }
     }
 
-    // Save process steps (1-4)
+    // Save process steps (1-4) - now with rich text support
     for ($i = 1; $i <= 4; $i++) {
         if (isset($_POST["local_seo_process_step_{$i}_title"])) {
-            update_post_meta($post_id, "_local_seo_process_step_{$i}_title", sanitize_text_field($_POST["local_seo_process_step_{$i}_title"]));
+            update_post_meta($post_id, "_local_seo_process_step_{$i}_title", wp_kses_post($_POST["local_seo_process_step_{$i}_title"]));
         }
         if (isset($_POST["local_seo_process_step_{$i}_description"])) {
-            update_post_meta($post_id, "_local_seo_process_step_{$i}_description", sanitize_text_field($_POST["local_seo_process_step_{$i}_description"]));
+            update_post_meta($post_id, "_local_seo_process_step_{$i}_description", wp_kses_post($_POST["local_seo_process_step_{$i}_description"]));
         }
     }
 
-    // Save industry cards (1-4)
+    // Save industry cards (1-4) - now with rich text support
     for ($i = 1; $i <= 4; $i++) {
         if (isset($_POST["local_seo_industry_{$i}_title"])) {
-            update_post_meta($post_id, "_local_seo_industry_{$i}_title", sanitize_text_field($_POST["local_seo_industry_{$i}_title"]));
+            update_post_meta($post_id, "_local_seo_industry_{$i}_title", wp_kses_post($_POST["local_seo_industry_{$i}_title"]));
         }
         if (isset($_POST["local_seo_industry_{$i}_features"])) {
             $lines = explode("\n", $_POST["local_seo_industry_{$i}_features"]);
-            $cleaned_lines = array_map('sanitize_text_field', $lines);
+            $cleaned_lines = array_map('wp_kses_post', $lines);
             $cleaned_lines = array_filter($cleaned_lines);
             update_post_meta($post_id, "_local_seo_industry_{$i}_features", $cleaned_lines);
         }
     }
 
-    // Save tool categories (1-4)
+    // Save tool categories (1-4) - now with rich text support
     for ($i = 1; $i <= 4; $i++) {
         if (isset($_POST["local_seo_tools_category_{$i}_title"])) {
-            update_post_meta($post_id, "_local_seo_tools_category_{$i}_title", sanitize_text_field($_POST["local_seo_tools_category_{$i}_title"]));
+            update_post_meta($post_id, "_local_seo_tools_category_{$i}_title", wp_kses_post($_POST["local_seo_tools_category_{$i}_title"]));
         }
         if (isset($_POST["local_seo_tools_category_{$i}_tools"])) {
             $lines = explode("\n", $_POST["local_seo_tools_category_{$i}_tools"]);
-            $cleaned_lines = array_map('sanitize_text_field', $lines);
+            $cleaned_lines = array_map('wp_kses_post', $lines);
             $cleaned_lines = array_filter($cleaned_lines);
             update_post_meta($post_id, "_local_seo_tools_category_{$i}_tools", $cleaned_lines);
         }

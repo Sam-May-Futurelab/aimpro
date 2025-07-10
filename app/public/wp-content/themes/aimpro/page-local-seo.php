@@ -35,8 +35,8 @@ $header_subtitle = get_post_meta(get_the_ID(), '_local_seo_header_subtitle', tru
           <!-- Page Header -->
         <section class="page-header">
             <div class="page-header-content animate-on-scroll animate-fade-up">
-                <h1><?php echo esc_html($header_title); ?></h1>
-                <p class="page-subtitle"><?php echo esc_html($header_subtitle); ?></p>
+                <h1><?php echo wp_kses_post($header_title); ?></h1>
+                <p class="page-subtitle"><?php echo wp_kses_post($header_subtitle); ?></p>
             </div>
         </section>
 
@@ -51,14 +51,14 @@ $header_subtitle = get_post_meta(get_the_ID(), '_local_seo_header_subtitle', tru
                         $benefits_title = get_post_meta(get_the_ID(), '_local_seo_overview_benefits_title', true) ?: $defaults['overview_benefits_title'];
                         $benefits = get_post_meta(get_the_ID(), '_local_seo_overview_benefits', true) ?: $defaults['overview_benefits'];
                         ?>
-                        <h2><?php echo esc_html($overview_title); ?></h2>
-                        <p><?php echo esc_html($overview_description); ?></p>
+                        <h2><?php echo wp_kses_post($overview_title); ?></h2>
+                        <p><?php echo wp_kses_post($overview_description); ?></p>
                         
                         <div class="local-seo-benefits">
-                            <h3><?php echo esc_html($benefits_title); ?></h3>
+                            <h3><?php echo wp_kses_post($benefits_title); ?></h3>
                             <ul>
                                 <?php foreach ((array)$benefits as $benefit): ?>
-                                    <li><?php echo esc_html($benefit); ?></li>
+                                    <li><?php echo wp_kses_post($benefit); ?></li>
                                 <?php endforeach; ?>
                             </ul>
                         </div>
@@ -77,7 +77,7 @@ $header_subtitle = get_post_meta(get_the_ID(), '_local_seo_header_subtitle', tru
                 <?php
                 $services_title = get_post_meta(get_the_ID(), '_local_seo_services_title', true) ?: $defaults['services_title'];
                 ?>
-                <h2 class="animate-on-scroll animate-fade-up"><?php echo esc_html($services_title); ?></h2>
+                <h2 class="animate-on-scroll animate-fade-up"><?php echo wp_kses_post($services_title); ?></h2>
                 <div class="services-grid">
                     
                     <?php for ($i = 1; $i <= 6; $i++): 
@@ -102,11 +102,11 @@ $header_subtitle = get_post_meta(get_the_ID(), '_local_seo_header_subtitle', tru
                             ?>
                         </div>
                         <div class="service-content">
-                            <h3><?php echo esc_html($service_title); ?></h3>
-                            <p><?php echo esc_html($service_description); ?></p>
+                            <h3><?php echo wp_kses_post($service_title); ?></h3>
+                            <p><?php echo wp_kses_post($service_description); ?></p>
                             <ul class="service-features">
                                 <?php foreach ((array)$service_features as $feature): ?>
-                                    <li><?php echo esc_html($feature); ?></li>
+                                    <li><?php echo wp_kses_post($feature); ?></li>
                                 <?php endforeach; ?>
                             </ul>
                         </div>
@@ -251,7 +251,7 @@ $header_subtitle = get_post_meta(get_the_ID(), '_local_seo_header_subtitle', tru
                 <?php
                 $process_title = get_post_meta(get_the_ID(), '_local_seo_process_title', true) ?: $defaults['process_title'];
                 ?>
-                <h2 class="animate-on-scroll animate-fade-up"><?php echo esc_html($process_title); ?></h2>
+                <h2 class="animate-on-scroll animate-fade-up"><?php echo wp_kses_post($process_title); ?></h2>
                 <div class="process-steps">
                     
                     <?php for ($i = 1; $i <= 4; $i++): 
@@ -261,8 +261,8 @@ $header_subtitle = get_post_meta(get_the_ID(), '_local_seo_header_subtitle', tru
                     <div class="process-step animate-on-scroll animate-stagger animate-fade-up">
                         <div class="step-number"><?php echo $i; ?></div>
                         <div class="step-content">
-                            <h3><?php echo esc_html($step_title); ?></h3>
-                            <p><?php echo esc_html($step_description); ?></p>
+                            <h3><?php echo wp_kses_post($step_title); ?></h3>
+                            <p><?php echo wp_kses_post($step_description); ?></p>
                         </div>
                     </div>
                     <?php endfor; ?>
@@ -275,7 +275,7 @@ $header_subtitle = get_post_meta(get_the_ID(), '_local_seo_header_subtitle', tru
                 <?php
                 $industries_title = get_post_meta(get_the_ID(), '_local_seo_industries_title', true) ?: $defaults['industries_title'];
                 ?>
-                <h2 class="animate-on-scroll animate-fade-up"><?php echo esc_html($industries_title); ?></h2>
+                <h2 class="animate-on-scroll animate-fade-up"><?php echo wp_kses_post($industries_title); ?></h2>
                 <div class="industries-grid">
                     
                     <?php for ($i = 1; $i <= 4; $i++): 
@@ -283,10 +283,10 @@ $header_subtitle = get_post_meta(get_the_ID(), '_local_seo_header_subtitle', tru
                         $industry_features = get_post_meta(get_the_ID(), "_local_seo_industry_{$i}_features", true) ?: $defaults["industry_{$i}_features"];
                     ?>
                     <div class="industry-card animate-on-scroll animate-stagger animate-fade-up">
-                        <h3><?php echo esc_html($industry_title); ?></h3>
+                        <h3><?php echo wp_kses_post($industry_title); ?></h3>
                         <ul class="industry-features">
                             <?php foreach ((array)$industry_features as $feature): ?>
-                                <li><?php echo esc_html($feature); ?></li>
+                                <li><?php echo wp_kses_post($feature); ?></li>
                             <?php endforeach; ?>
                         </ul>
                     </div>
@@ -355,13 +355,20 @@ $header_subtitle = get_post_meta(get_the_ID(), '_local_seo_header_subtitle', tru
         <section class="local-seo-testimonial">
             <div class="section-content">
                 <div class="testimonial-content animate-on-scroll animate-fade-up">
+                    <?php
+                    $testimonial_quote = get_post_meta(get_the_ID(), '_local_seo_testimonial_quote', true) ?: $defaults['testimonial_quote'];
+                    $testimonial_name = get_post_meta(get_the_ID(), '_local_seo_testimonial_name', true) ?: $defaults['testimonial_name'];
+                    $testimonial_title = get_post_meta(get_the_ID(), '_local_seo_testimonial_title', true) ?: $defaults['testimonial_title'];
+                    $testimonial_company = get_post_meta(get_the_ID(), '_local_seo_testimonial_company', true) ?: $defaults['testimonial_company'];
+                    ?>
                     <blockquote>
-                        "The local SEO work Aimpro Digital did for our dental practice was phenomenal. We went from being invisible in local search to ranking #1 for 'dentist Birmingham' and have seen a 65% increase in new patients. The team's expertise in local SEO is outstanding."
-                    </blockquote>                    <div class="testimonial-author">
+                        <?php echo wp_kses_post($testimonial_quote); ?>
+                    </blockquote>
+                    <div class="testimonial-author">
                         <div class="author-info">
-                            <h4>Dr. Sarah Williams</h4>
-                            <span>Practice Owner, Birmingham Dental Care</span>
-                            <div class="author-company">Healthcare Provider</div>
+                            <h4><?php echo esc_html($testimonial_name); ?></h4>
+                            <span><?php echo esc_html($testimonial_title); ?></span>
+                            <div class="author-company"><?php echo esc_html($testimonial_company); ?></div>
                         </div>
                     </div>
                 </div>
@@ -371,15 +378,25 @@ $header_subtitle = get_post_meta(get_the_ID(), '_local_seo_header_subtitle', tru
         <!-- CTA Section -->
         <section class="local-seo-cta">
             <div class="section-content">
-                <h2 class="animate-on-scroll animate-fade-up">Ready to Dominate Local Search?</h2>
-                <p class="animate-on-scroll animate-fade-up">Let's get your business ranking #1 in local search results and attract more customers in your area.</p>
+                <?php
+                $cta_title = get_post_meta(get_the_ID(), '_local_seo_cta_title', true) ?: $defaults['cta_title'];
+                $cta_description = get_post_meta(get_the_ID(), '_local_seo_cta_description', true) ?: $defaults['cta_description'];
+                $cta_primary_text = get_post_meta(get_the_ID(), '_local_seo_cta_primary_text', true) ?: $defaults['cta_primary_text'];
+                $cta_primary_link = get_post_meta(get_the_ID(), '_local_seo_cta_primary_link', true) ?: $defaults['cta_primary_link'];
+                $cta_secondary_text = get_post_meta(get_the_ID(), '_local_seo_cta_secondary_text', true) ?: $defaults['cta_secondary_text'];
+                $cta_secondary_link = get_post_meta(get_the_ID(), '_local_seo_cta_secondary_link', true) ?: $defaults['cta_secondary_link'];
+                $cta_benefits = get_post_meta(get_the_ID(), '_local_seo_cta_benefits', true) ?: $defaults['cta_benefits'];
+                ?>
+                <h2 class="animate-on-scroll animate-fade-up"><?php echo wp_kses_post($cta_title); ?></h2>
+                <p class="animate-on-scroll animate-fade-up"><?php echo wp_kses_post($cta_description); ?></p>
                 <div class="cta-buttons animate-on-scroll animate-scale-up">
-                    <a href="<?php echo home_url('/contact'); ?>" class="btn btn-primary">Get Free Local SEO Audit</a>
-                    <a href="<?php echo home_url('/case-studies'); ?>" class="btn btn-secondary">View Local SEO Results</a>
-                </div>                <div class="cta-benefits animate-on-scroll animate-fade-up">
-                    <span class="benefit"><i class="fas fa-check" aria-hidden="true"></i> Local market analysis included</span>
-                    <span class="benefit"><i class="fas fa-check" aria-hidden="true"></i> Google My Business optimisation</span>
-                    <span class="benefit"><i class="fas fa-check" aria-hidden="true"></i> Citation audit and cleanup</span>
+                    <a href="<?php echo esc_url($cta_primary_link); ?>" class="btn btn-primary"><?php echo esc_html($cta_primary_text); ?></a>
+                    <a href="<?php echo esc_url($cta_secondary_link); ?>" class="btn btn-secondary"><?php echo esc_html($cta_secondary_text); ?></a>
+                </div>
+                <div class="cta-benefits animate-on-scroll animate-fade-up">
+                    <?php foreach ((array)$cta_benefits as $benefit): ?>
+                        <span class="benefit"><i class="fas fa-check" aria-hidden="true"></i> <?php echo wp_kses_post($benefit); ?></span>
+                    <?php endforeach; ?>
                 </div>
             </div>
         </section>
