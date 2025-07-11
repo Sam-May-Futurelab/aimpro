@@ -121,10 +121,26 @@ function on_page_seo_header_callback($post) {
     
     echo '<table class="form-table">';
     echo '<tr><th><label for="on_page_seo_header_title">Header Title</label></th>';
-    echo '<td><input type="text" id="on_page_seo_header_title" name="on_page_seo_header_title" value="' . esc_attr($header_title) . '" style="width: 100%;" /></td></tr>';
+    echo '<td>';
+    wp_editor($header_title, 'on_page_seo_header_title', array(
+        'textarea_name' => 'on_page_seo_header_title',
+        'media_buttons' => false,
+        'textarea_rows' => 3,
+        'teeny' => true,
+        'quicktags' => array('buttons' => 'strong,em,link')
+    ));
+    echo '</td></tr>';
     
     echo '<tr><th><label for="on_page_seo_header_subtitle">Header Subtitle</label></th>';
-    echo '<td><textarea id="on_page_seo_header_subtitle" name="on_page_seo_header_subtitle" rows="3" style="width: 100%;">' . esc_textarea($header_subtitle) . '</textarea></td></tr>';
+    echo '<td>';
+    wp_editor($header_subtitle, 'on_page_seo_header_subtitle', array(
+        'textarea_name' => 'on_page_seo_header_subtitle',
+        'media_buttons' => false,
+        'textarea_rows' => 3,
+        'teeny' => true,
+        'quicktags' => array('buttons' => 'strong,em,link')
+    ));
+    echo '</td></tr>';
     
     echo '<tr><th><label>Header Badges</label></th>';
     echo '<td>';
@@ -152,13 +168,37 @@ function on_page_seo_overview_callback($post) {
     
     echo '<table class="form-table">';
     echo '<tr><th><label for="on_page_seo_overview_title">Overview Title</label></th>';
-    echo '<td><input type="text" id="on_page_seo_overview_title" name="on_page_seo_overview_title" value="' . esc_attr($overview_title) . '" style="width: 100%;" /></td></tr>';
+    echo '<td>';
+    wp_editor($overview_title, 'on_page_seo_overview_title', array(
+        'textarea_name' => 'on_page_seo_overview_title',
+        'media_buttons' => false,
+        'textarea_rows' => 3,
+        'teeny' => true,
+        'quicktags' => array('buttons' => 'strong,em,link')
+    ));
+    echo '</td></tr>';
     
     echo '<tr><th><label for="on_page_seo_overview_description_1">Overview Description 1</label></th>';
-    echo '<td><textarea id="on_page_seo_overview_description_1" name="on_page_seo_overview_description_1" rows="4" style="width: 100%;">' . esc_textarea($overview_description_1) . '</textarea></td></tr>';
+    echo '<td>';
+    wp_editor($overview_description_1, 'on_page_seo_overview_description_1', array(
+        'textarea_name' => 'on_page_seo_overview_description_1',
+        'media_buttons' => false,
+        'textarea_rows' => 4,
+        'teeny' => true,
+        'quicktags' => array('buttons' => 'strong,em,link,ul,ol,li')
+    ));
+    echo '</td></tr>';
     
     echo '<tr><th><label for="on_page_seo_overview_description_2">Overview Description 2</label></th>';
-    echo '<td><textarea id="on_page_seo_overview_description_2" name="on_page_seo_overview_description_2" rows="4" style="width: 100%;">' . esc_textarea($overview_description_2) . '</textarea></td></tr>';
+    echo '<td>';
+    wp_editor($overview_description_2, 'on_page_seo_overview_description_2', array(
+        'textarea_name' => 'on_page_seo_overview_description_2',
+        'media_buttons' => false,
+        'textarea_rows' => 4,
+        'teeny' => true,
+        'quicktags' => array('buttons' => 'strong,em,link,ul,ol,li')
+    ));
+    echo '</td></tr>';
     
     echo '<tr><th><label>Statistics</label></th>';
     echo '<td>';
@@ -244,7 +284,15 @@ function on_page_seo_services_callback($post) {
     
     echo '<table class="form-table">';
     echo '<tr><th><label for="on_page_seo_services_title">Services Title</label></th>';
-    echo '<td><input type="text" id="on_page_seo_services_title" name="on_page_seo_services_title" value="' . esc_attr($services_title) . '" style="width: 100%;" /></td></tr>';
+    echo '<td>';
+    wp_editor($services_title, 'on_page_seo_services_title', array(
+        'textarea_name' => 'on_page_seo_services_title',
+        'media_buttons' => false,
+        'textarea_rows' => 3,
+        'teeny' => true,
+        'quicktags' => array('buttons' => 'strong,em,link')
+    ));
+    echo '</td></tr>';
     
     echo '<tr><th><label>Services</label></th>';
     echo '<td>';
@@ -253,10 +301,22 @@ function on_page_seo_services_callback($post) {
             echo '<div style="margin-bottom: 20px; border: 1px solid #ddd; padding: 15px;">';
             echo '<h4>Service ' . ($i + 1) . '</h4>';
             echo '<label>Title:</label><br>';
-            echo '<input type="text" name="on_page_seo_services[' . $i . '][title]" value="' . esc_attr($service['title']) . '" style="width: 100%; margin-bottom: 10px;" /><br>';
-            echo '<label>Description:</label><br>';
-            echo '<textarea name="on_page_seo_services[' . $i . '][description]" rows="3" style="width: 100%; margin-bottom: 10px;">' . esc_textarea($service['description']) . '</textarea><br>';
-            echo '<label>Features:</label><br>';
+            wp_editor($service['title'], "on_page_seo_services_{$i}_title", array(
+                'textarea_name' => "on_page_seo_services[{$i}][title]",
+                'media_buttons' => false,
+                'textarea_rows' => 2,
+                'teeny' => true,
+                'quicktags' => array('buttons' => 'strong,em,link')
+            ));
+            echo '<br><label>Description:</label><br>';
+            wp_editor($service['description'], "on_page_seo_services_{$i}_description", array(
+                'textarea_name' => "on_page_seo_services[{$i}][description]",
+                'media_buttons' => false,
+                'textarea_rows' => 4,
+                'teeny' => true,
+                'quicktags' => array('buttons' => 'strong,em,link,ul,ol,li')
+            ));
+            echo '<br><label>Features:</label><br>';
             if (isset($service['features']) && is_array($service['features'])) {
                 foreach ($service['features'] as $j => $feature) {
                     echo '<input type="text" name="on_page_seo_services[' . $i . '][features][]" value="' . esc_attr($feature) . '" style="width: 100%; margin-bottom: 5px;" /><br>';
@@ -295,13 +355,37 @@ function on_page_seo_case_study_callback($post) {
     
     echo '<table class="form-table">';
     echo '<tr><th><label for="on_page_seo_case_study_title">Case Study Title</label></th>';
-    echo '<td><input type="text" id="on_page_seo_case_study_title" name="on_page_seo_case_study_title" value="' . esc_attr($case_study_title) . '" style="width: 100%;" /></td></tr>';
+    echo '<td>';
+    wp_editor($case_study_title, 'on_page_seo_case_study_title', array(
+        'textarea_name' => 'on_page_seo_case_study_title',
+        'media_buttons' => false,
+        'textarea_rows' => 3,
+        'teeny' => true,
+        'quicktags' => array('buttons' => 'strong,em,link')
+    ));
+    echo '</td></tr>';
     
     echo '<tr><th><label for="on_page_seo_case_study_subtitle">Case Study Subtitle</label></th>';
-    echo '<td><input type="text" id="on_page_seo_case_study_subtitle" name="on_page_seo_case_study_subtitle" value="' . esc_attr($case_study_subtitle) . '" style="width: 100%;" /></td></tr>';
+    echo '<td>';
+    wp_editor($case_study_subtitle, 'on_page_seo_case_study_subtitle', array(
+        'textarea_name' => 'on_page_seo_case_study_subtitle',
+        'media_buttons' => false,
+        'textarea_rows' => 3,
+        'teeny' => true,
+        'quicktags' => array('buttons' => 'strong,em,link')
+    ));
+    echo '</td></tr>';
     
     echo '<tr><th><label for="on_page_seo_case_study_description">Case Study Description</label></th>';
-    echo '<td><textarea id="on_page_seo_case_study_description" name="on_page_seo_case_study_description" rows="4" style="width: 100%;">' . esc_textarea($case_study_description) . '</textarea></td></tr>';
+    echo '<td>';
+    wp_editor($case_study_description, 'on_page_seo_case_study_description', array(
+        'textarea_name' => 'on_page_seo_case_study_description',
+        'media_buttons' => false,
+        'textarea_rows' => 5,
+        'teeny' => true,
+        'quicktags' => array('buttons' => 'strong,em,link,ul,ol,li')
+    ));
+    echo '</td></tr>';
     
     echo '<tr><th><label>Challenges</label></th>';
     echo '<td>';
@@ -369,7 +453,15 @@ function on_page_seo_process_callback($post) {
     
     echo '<table class="form-table">';
     echo '<tr><th><label for="on_page_seo_process_title">Process Title</label></th>';
-    echo '<td><input type="text" id="on_page_seo_process_title" name="on_page_seo_process_title" value="' . esc_attr($process_title) . '" style="width: 100%;" /></td></tr>';
+    echo '<td>';
+    wp_editor($process_title, 'on_page_seo_process_title', array(
+        'textarea_name' => 'on_page_seo_process_title',
+        'media_buttons' => false,
+        'textarea_rows' => 3,
+        'teeny' => true,
+        'quicktags' => array('buttons' => 'strong,em,link')
+    ));
+    echo '</td></tr>';
     
     echo '<tr><th><label>Process Steps</label></th>';
     echo '<td>';
@@ -377,9 +469,21 @@ function on_page_seo_process_callback($post) {
         foreach ($process_steps as $i => $step) {
             echo '<div style="margin-bottom: 15px; border: 1px solid #ddd; padding: 10px;">';
             echo '<label>Step ' . ($i + 1) . ' Title:</label><br>';
-            echo '<input type="text" name="on_page_seo_process_steps[' . $i . '][title]" value="' . esc_attr($step['title']) . '" style="width: 100%; margin-bottom: 5px;" /><br>';
-            echo '<label>Step ' . ($i + 1) . ' Description:</label><br>';
-            echo '<textarea name="on_page_seo_process_steps[' . $i . '][description]" rows="3" style="width: 100%;">' . esc_textarea($step['description']) . '</textarea>';
+            wp_editor($step['title'], "on_page_seo_process_step_{$i}_title", array(
+                'textarea_name' => "on_page_seo_process_steps[{$i}][title]",
+                'media_buttons' => false,
+                'textarea_rows' => 2,
+                'teeny' => true,
+                'quicktags' => array('buttons' => 'strong,em,link')
+            ));
+            echo '<br><label>Step ' . ($i + 1) . ' Description:</label><br>';
+            wp_editor($step['description'], "on_page_seo_process_step_{$i}_description", array(
+                'textarea_name' => "on_page_seo_process_steps[{$i}][description]",
+                'media_buttons' => false,
+                'textarea_rows' => 4,
+                'teeny' => true,
+                'quicktags' => array('buttons' => 'strong,em,link,ul,ol,li')
+            ));
             echo '</div>';
         }
     }
@@ -431,7 +535,15 @@ function on_page_seo_tools_callback($post) {
     
     echo '<table class="form-table">';
     echo '<tr><th><label for="on_page_seo_tools_title">Tools Title</label></th>';
-    echo '<td><input type="text" id="on_page_seo_tools_title" name="on_page_seo_tools_title" value="' . esc_attr($tools_title) . '" style="width: 100%;" /></td></tr>';
+    echo '<td>';
+    wp_editor($tools_title, 'on_page_seo_tools_title', array(
+        'textarea_name' => 'on_page_seo_tools_title',
+        'media_buttons' => false,
+        'textarea_rows' => 3,
+        'teeny' => true,
+        'quicktags' => array('buttons' => 'strong,em,link')
+    ));
+    echo '</td></tr>';
     
     echo '<tr><th><label>Tool Categories</label></th>';
     echo '<td>';
@@ -439,8 +551,14 @@ function on_page_seo_tools_callback($post) {
         foreach ($tool_categories as $i => $category) {
             echo '<div style="margin-bottom: 15px; border: 1px solid #ddd; padding: 10px;">';
             echo '<label>Category ' . ($i + 1) . ' Title:</label><br>';
-            echo '<input type="text" name="on_page_seo_tool_categories[' . $i . '][title]" value="' . esc_attr($category['title']) . '" style="width: 100%; margin-bottom: 10px;" /><br>';
-            echo '<label>Tools:</label><br>';
+            wp_editor($category['title'], "on_page_seo_tool_category_{$i}_title", array(
+                'textarea_name' => "on_page_seo_tool_categories[{$i}][title]",
+                'media_buttons' => false,
+                'textarea_rows' => 2,
+                'teeny' => true,
+                'quicktags' => array('buttons' => 'strong,em,link')
+            ));
+            echo '<br><label>Tools:</label><br>';
             if (isset($category['tools']) && is_array($category['tools'])) {
                 foreach ($category['tools'] as $j => $tool) {
                     echo '<input type="text" name="on_page_seo_tool_categories[' . $i . '][tools][]" value="' . esc_attr($tool) . '" style="width: 100%; margin-bottom: 5px;" /><br>';
@@ -477,7 +595,15 @@ function on_page_seo_industries_callback($post) {
     
     echo '<table class="form-table">';
     echo '<tr><th><label for="on_page_seo_industries_title">Industries Title</label></th>';
-    echo '<td><input type="text" id="on_page_seo_industries_title" name="on_page_seo_industries_title" value="' . esc_attr($industries_title) . '" style="width: 100%;" /></td></tr>';
+    echo '<td>';
+    wp_editor($industries_title, 'on_page_seo_industries_title', array(
+        'textarea_name' => 'on_page_seo_industries_title',
+        'media_buttons' => false,
+        'textarea_rows' => 3,
+        'teeny' => true,
+        'quicktags' => array('buttons' => 'strong,em,link')
+    ));
+    echo '</td></tr>';
     
     echo '<tr><th><label>Industries</label></th>';
     echo '<td>';
@@ -485,9 +611,21 @@ function on_page_seo_industries_callback($post) {
         foreach ($industries as $i => $industry) {
             echo '<div style="margin-bottom: 15px; border: 1px solid #ddd; padding: 10px;">';
             echo '<label>Industry ' . ($i + 1) . ' Title:</label><br>';
-            echo '<input type="text" name="on_page_seo_industries[' . $i . '][title]" value="' . esc_attr($industry['title']) . '" style="width: 100%; margin-bottom: 5px;" /><br>';
-            echo '<label>Industry ' . ($i + 1) . ' Description:</label><br>';
-            echo '<textarea name="on_page_seo_industries[' . $i . '][description]" rows="3" style="width: 100%;">' . esc_textarea($industry['description']) . '</textarea>';
+            wp_editor($industry['title'], "on_page_seo_industry_{$i}_title", array(
+                'textarea_name' => "on_page_seo_industries[{$i}][title]",
+                'media_buttons' => false,
+                'textarea_rows' => 2,
+                'teeny' => true,
+                'quicktags' => array('buttons' => 'strong,em,link')
+            ));
+            echo '<br><label>Industry ' . ($i + 1) . ' Description:</label><br>';
+            wp_editor($industry['description'], "on_page_seo_industry_{$i}_description", array(
+                'textarea_name' => "on_page_seo_industries[{$i}][description]",
+                'media_buttons' => false,
+                'textarea_rows' => 4,
+                'teeny' => true,
+                'quicktags' => array('buttons' => 'strong,em,link,ul,ol,li')
+            ));
             echo '</div>';
         }
     }
@@ -519,7 +657,15 @@ function on_page_seo_faqs_callback($post) {
     
     echo '<table class="form-table">';
     echo '<tr><th><label for="on_page_seo_faqs_title">FAQs Title</label></th>';
-    echo '<td><input type="text" id="on_page_seo_faqs_title" name="on_page_seo_faqs_title" value="' . esc_attr($faqs_title) . '" style="width: 100%;" /></td></tr>';
+    echo '<td>';
+    wp_editor($faqs_title, 'on_page_seo_faqs_title', array(
+        'textarea_name' => 'on_page_seo_faqs_title',
+        'media_buttons' => false,
+        'textarea_rows' => 3,
+        'teeny' => true,
+        'quicktags' => array('buttons' => 'strong,em,link')
+    ));
+    echo '</td></tr>';
     
     echo '<tr><th><label>FAQ Items</label></th>';
     echo '<td>';
@@ -527,9 +673,21 @@ function on_page_seo_faqs_callback($post) {
         foreach ($faqs as $i => $faq) {
             echo '<div style="margin-bottom: 15px; border: 1px solid #ddd; padding: 10px;">';
             echo '<label>FAQ ' . ($i + 1) . ' Question:</label><br>';
-            echo '<input type="text" name="on_page_seo_faqs[' . $i . '][question]" value="' . esc_attr($faq['question']) . '" style="width: 100%; margin-bottom: 5px;" /><br>';
-            echo '<label>FAQ ' . ($i + 1) . ' Answer:</label><br>';
-            echo '<textarea name="on_page_seo_faqs[' . $i . '][answer]" rows="3" style="width: 100%;">' . esc_textarea($faq['answer']) . '</textarea>';
+            wp_editor($faq['question'], "on_page_seo_faq_{$i}_question", array(
+                'textarea_name' => "on_page_seo_faqs[{$i}][question]",
+                'media_buttons' => false,
+                'textarea_rows' => 2,
+                'teeny' => true,
+                'quicktags' => array('buttons' => 'strong,em,link')
+            ));
+            echo '<br><label>FAQ ' . ($i + 1) . ' Answer:</label><br>';
+            wp_editor($faq['answer'], "on_page_seo_faq_{$i}_answer", array(
+                'textarea_name' => "on_page_seo_faqs[{$i}][answer]",
+                'media_buttons' => false,
+                'textarea_rows' => 4,
+                'teeny' => true,
+                'quicktags' => array('buttons' => 'strong,em,link,ul,ol,li')
+            ));
             echo '</div>';
         }
     }
@@ -545,13 +703,37 @@ function on_page_seo_testimonial_callback($post) {
     
     echo '<table class="form-table">';
     echo '<tr><th><label for="on_page_seo_testimonial_quote">Testimonial Quote</label></th>';
-    echo '<td><textarea id="on_page_seo_testimonial_quote" name="on_page_seo_testimonial_quote" rows="5" style="width: 100%;">' . esc_textarea($testimonial_quote) . '</textarea></td></tr>';
+    echo '<td>';
+    wp_editor($testimonial_quote, 'on_page_seo_testimonial_quote', array(
+        'textarea_name' => 'on_page_seo_testimonial_quote',
+        'media_buttons' => false,
+        'textarea_rows' => 5,
+        'teeny' => true,
+        'quicktags' => array('buttons' => 'strong,em,link')
+    ));
+    echo '</td></tr>';
     
     echo '<tr><th><label for="on_page_seo_testimonial_author_name">Author Name</label></th>';
-    echo '<td><input type="text" id="on_page_seo_testimonial_author_name" name="on_page_seo_testimonial_author_name" value="' . esc_attr($testimonial_author_name) . '" style="width: 100%;" /></td></tr>';
+    echo '<td>';
+    wp_editor($testimonial_author_name, 'on_page_seo_testimonial_author_name', array(
+        'textarea_name' => 'on_page_seo_testimonial_author_name',
+        'media_buttons' => false,
+        'textarea_rows' => 2,
+        'teeny' => true,
+        'quicktags' => array('buttons' => 'strong,em,link')
+    ));
+    echo '</td></tr>';
     
     echo '<tr><th><label for="on_page_seo_testimonial_author_title">Author Title</label></th>';
-    echo '<td><input type="text" id="on_page_seo_testimonial_author_title" name="on_page_seo_testimonial_author_title" value="' . esc_attr($testimonial_author_title) . '" style="width: 100%;" /></td></tr>';
+    echo '<td>';
+    wp_editor($testimonial_author_title, 'on_page_seo_testimonial_author_title', array(
+        'textarea_name' => 'on_page_seo_testimonial_author_title',
+        'media_buttons' => false,
+        'textarea_rows' => 2,
+        'teeny' => true,
+        'quicktags' => array('buttons' => 'strong,em,link')
+    ));
+    echo '</td></tr>';
     
     echo '</table>';
 }
@@ -572,19 +754,51 @@ function on_page_seo_cta_callback($post) {
     
     echo '<table class="form-table">';
     echo '<tr><th><label for="on_page_seo_cta_title">CTA Title</label></th>';
-    echo '<td><input type="text" id="on_page_seo_cta_title" name="on_page_seo_cta_title" value="' . esc_attr($cta_title) . '" style="width: 100%;" /></td></tr>';
+    echo '<td>';
+    wp_editor($cta_title, 'on_page_seo_cta_title', array(
+        'textarea_name' => 'on_page_seo_cta_title',
+        'media_buttons' => false,
+        'textarea_rows' => 3,
+        'teeny' => true,
+        'quicktags' => array('buttons' => 'strong,em,link')
+    ));
+    echo '</td></tr>';
     
     echo '<tr><th><label for="on_page_seo_cta_description">CTA Description</label></th>';
-    echo '<td><textarea id="on_page_seo_cta_description" name="on_page_seo_cta_description" rows="3" style="width: 100%;">' . esc_textarea($cta_description) . '</textarea></td></tr>';
+    echo '<td>';
+    wp_editor($cta_description, 'on_page_seo_cta_description', array(
+        'textarea_name' => 'on_page_seo_cta_description',
+        'media_buttons' => false,
+        'textarea_rows' => 4,
+        'teeny' => true,
+        'quicktags' => array('buttons' => 'strong,em,link,ul,ol,li')
+    ));
+    echo '</td></tr>';
     
     echo '<tr><th><label for="on_page_seo_cta_primary_text">Primary Button Text</label></th>';
-    echo '<td><input type="text" id="on_page_seo_cta_primary_text" name="on_page_seo_cta_primary_text" value="' . esc_attr($cta_primary_text) . '" style="width: 100%;" /></td></tr>';
+    echo '<td>';
+    wp_editor($cta_primary_text, 'on_page_seo_cta_primary_text', array(
+        'textarea_name' => 'on_page_seo_cta_primary_text',
+        'media_buttons' => false,
+        'textarea_rows' => 2,
+        'teeny' => true,
+        'quicktags' => array('buttons' => 'strong,em,link')
+    ));
+    echo '</td></tr>';
     
     echo '<tr><th><label for="on_page_seo_cta_primary_url">Primary Button URL</label></th>';
     echo '<td><input type="text" id="on_page_seo_cta_primary_url" name="on_page_seo_cta_primary_url" value="' . esc_attr($cta_primary_url) . '" style="width: 100%;" /></td></tr>';
     
     echo '<tr><th><label for="on_page_seo_cta_secondary_text">Secondary Button Text</label></th>';
-    echo '<td><input type="text" id="on_page_seo_cta_secondary_text" name="on_page_seo_cta_secondary_text" value="' . esc_attr($cta_secondary_text) . '" style="width: 100%;" /></td></tr>';
+    echo '<td>';
+    wp_editor($cta_secondary_text, 'on_page_seo_cta_secondary_text', array(
+        'textarea_name' => 'on_page_seo_cta_secondary_text',
+        'media_buttons' => false,
+        'textarea_rows' => 2,
+        'teeny' => true,
+        'quicktags' => array('buttons' => 'strong,em,link')
+    ));
+    echo '</td></tr>';
     
     echo '<tr><th><label for="on_page_seo_cta_secondary_url">Secondary Button URL</label></th>';
     echo '<td><input type="text" id="on_page_seo_cta_secondary_url" name="on_page_seo_cta_secondary_url" value="' . esc_attr($cta_secondary_url) . '" style="width: 100%;" /></td></tr>';
@@ -617,46 +831,120 @@ function on_page_seo_save_meta($post_id) {
     }
 
     // Save all meta fields
-    $meta_fields = array(
+    $rich_text_fields = array(
         'on_page_seo_header_title',
         'on_page_seo_header_subtitle',
-        'on_page_seo_header_badges',
         'on_page_seo_overview_title',
         'on_page_seo_overview_description_1',
         'on_page_seo_overview_description_2',
-        'on_page_seo_stats',
         'on_page_seo_services_title',
-        'on_page_seo_services',
         'on_page_seo_case_study_title',
-        'on_page_seo_case_study_subtitle',
+        'on_page_seo_case_study_subtitle', 
         'on_page_seo_case_study_description',
-        'on_page_seo_challenges',
-        'on_page_seo_solutions',
-        'on_page_seo_metrics',
         'on_page_seo_process_title',
-        'on_page_seo_process_steps',
         'on_page_seo_tools_title',
-        'on_page_seo_tool_categories',
         'on_page_seo_industries_title',
-        'on_page_seo_industries',
         'on_page_seo_faqs_title',
-        'on_page_seo_faqs',
         'on_page_seo_testimonial_quote',
         'on_page_seo_testimonial_author_name',
         'on_page_seo_testimonial_author_title',
         'on_page_seo_cta_title',
         'on_page_seo_cta_description',
         'on_page_seo_cta_primary_text',
+        'on_page_seo_cta_secondary_text'
+    );
+    
+    $regular_fields = array(
+        'on_page_seo_header_badges',
+        'on_page_seo_stats',
+        'on_page_seo_services',
+        'on_page_seo_challenges',
+        'on_page_seo_solutions',
+        'on_page_seo_metrics',
+        'on_page_seo_process_steps',
+        'on_page_seo_tool_categories',
+        'on_page_seo_industries',
+        'on_page_seo_faqs',
         'on_page_seo_cta_primary_url',
-        'on_page_seo_cta_secondary_text',
         'on_page_seo_cta_secondary_url',
         'on_page_seo_cta_features'
     );
 
-    foreach ($meta_fields as $field) {
+    // Save rich text fields with wp_kses_post()
+    foreach ($rich_text_fields as $field) {
+        if (isset($_POST[$field])) {
+            update_post_meta($post_id, $field, wp_kses_post($_POST[$field]));
+        }
+    }
+    
+    // Save regular fields (arrays and simple text)
+    foreach ($regular_fields as $field) {
         if (isset($_POST[$field])) {
             update_post_meta($post_id, $field, $_POST[$field]);
         }
+    }
+    
+    // Handle complex array fields with rich text content
+    if (isset($_POST['on_page_seo_services']) && is_array($_POST['on_page_seo_services'])) {
+        $services = $_POST['on_page_seo_services'];
+        foreach ($services as $i => $service) {
+            if (isset($service['title'])) {
+                $services[$i]['title'] = wp_kses_post($service['title']);
+            }
+            if (isset($service['description'])) {
+                $services[$i]['description'] = wp_kses_post($service['description']);
+            }
+        }
+        update_post_meta($post_id, 'on_page_seo_services', $services);
+    }
+    
+    if (isset($_POST['on_page_seo_process_steps']) && is_array($_POST['on_page_seo_process_steps'])) {
+        $steps = $_POST['on_page_seo_process_steps'];
+        foreach ($steps as $i => $step) {
+            if (isset($step['title'])) {
+                $steps[$i]['title'] = wp_kses_post($step['title']);
+            }
+            if (isset($step['description'])) {
+                $steps[$i]['description'] = wp_kses_post($step['description']);
+            }
+        }
+        update_post_meta($post_id, 'on_page_seo_process_steps', $steps);
+    }
+    
+    if (isset($_POST['on_page_seo_tool_categories']) && is_array($_POST['on_page_seo_tool_categories'])) {
+        $categories = $_POST['on_page_seo_tool_categories'];
+        foreach ($categories as $i => $category) {
+            if (isset($category['title'])) {
+                $categories[$i]['title'] = wp_kses_post($category['title']);
+            }
+        }
+        update_post_meta($post_id, 'on_page_seo_tool_categories', $categories);
+    }
+    
+    if (isset($_POST['on_page_seo_industries']) && is_array($_POST['on_page_seo_industries'])) {
+        $industries = $_POST['on_page_seo_industries'];
+        foreach ($industries as $i => $industry) {
+            if (isset($industry['title'])) {
+                $industries[$i]['title'] = wp_kses_post($industry['title']);
+            }
+            if (isset($industry['description'])) {
+                $industries[$i]['description'] = wp_kses_post($industry['description']);
+            }
+        }
+        update_post_meta($post_id, 'on_page_seo_industries', $industries);
+    }
+    
+    if (isset($_POST['on_page_seo_faqs']) && is_array($_POST['on_page_seo_faqs'])) {
+        $faqs = $_POST['on_page_seo_faqs'];
+        foreach ($faqs as $i => $faq) {
+            if (isset($faq['question'])) {
+                $faqs[$i]['question'] = wp_kses_post($faq['question']);
+            }
+            if (isset($faq['answer'])) {
+                $faqs[$i]['answer'] = wp_kses_post($faq['answer']);
+            }
+        }
+        update_post_meta($post_id, 'on_page_seo_faqs', $faqs);
     }
 }
 

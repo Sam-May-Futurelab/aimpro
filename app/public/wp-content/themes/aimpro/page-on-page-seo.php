@@ -34,8 +34,8 @@ get_header(); ?>
                     'User Experience'
                 );
                 ?>
-                <h1><?php echo esc_html($header_title); ?></h1>
-                <p class="page-subtitle"><?php echo esc_html($header_subtitle); ?></p>
+                <h1><?php echo wp_kses_post($header_title); ?></h1>
+                <p class="page-subtitle"><?php echo wp_kses_post($header_subtitle); ?></p>
                 <div class="header-badges animate-on-scroll animate-fade-up">
                     <?php foreach ($header_badges as $badge): ?>
                         <span class="badge"><?php echo esc_html($badge); ?></span>
@@ -52,9 +52,9 @@ get_header(); ?>
                         $overview_description_1 = get_post_meta(get_the_ID(), 'on_page_seo_overview_description_1', true) ?: 'Our on-page SEO services focus on optimising individual web pages to rank higher and earn more relevant traffic in search engines. We optimise both the content and HTML source code of a page, ensuring every element contributes to your search visibility and user experience.';
                         $overview_description_2 = get_post_meta(get_the_ID(), 'on_page_seo_overview_description_2', true) ?: 'From title tags and meta descriptions to content structure and internal linking, our systematic approach to on-page SEO ensures your website communicates effectively with both search engines and users.';
                         ?>
-                        <h2><?php echo esc_html($overview_title); ?></h2>
-                        <p><?php echo esc_html($overview_description_1); ?></p>
-                        <p><?php echo esc_html($overview_description_2); ?></p>
+                        <h2><?php echo wp_kses_post($overview_title); ?></h2>
+                        <p><?php echo wp_kses_post($overview_description_1); ?></p>
+                        <p><?php echo wp_kses_post($overview_description_2); ?></p>
                     </div>
                     <div class="overview-stats animate-on-scroll animate-slide-right">
                         <?php 
@@ -141,7 +141,7 @@ get_header(); ?>
                     )
                 );
                 ?>
-                <h2 class="animate-on-scroll animate-fade-up"><?php echo esc_html($services_title); ?></h2>                <div class="components-grid">
+                <h2 class="animate-on-scroll animate-fade-up"><?php echo wp_kses_post($services_title); ?></h2>                <div class="components-grid">
                     <?php 
                     // Define icons for each service
                     $service_icons = array(
@@ -159,8 +159,8 @@ get_header(); ?>
                                 <i class="<?php echo esc_attr($service_icons[$service['title']] ?? 'fas fa-cog'); ?>"></i>
                             </div>
                             <div class="component-content">
-                                <h3><?php echo esc_html($service['title']); ?></h3>
-                                <p><?php echo esc_html($service['description']); ?></p>
+                                <h3><?php echo wp_kses_post($service['title']); ?></h3>
+                                <p><?php echo wp_kses_post($service['description']); ?></p>
                                 <?php if (isset($service['features']) && is_array($service['features'])): ?>
                                     <ul class="component-features">
                                         <?php foreach ($service['features'] as $feature): ?>
@@ -194,9 +194,9 @@ get_header(); ?>
                             'Schema markup for all service pages'
                         );
                         ?>
-                        <h2><?php echo esc_html($case_study_title); ?></h2>
-                        <h3><?php echo esc_html($case_study_subtitle); ?></h3>
-                        <p><?php echo esc_html($case_study_description); ?></p>
+                        <h2><?php echo wp_kses_post($case_study_title); ?></h2>
+                        <h3><?php echo wp_kses_post($case_study_subtitle); ?></h3>
+                        <p><?php echo wp_kses_post($case_study_description); ?></p>
                         
                         <div class="challenge-solution animate-on-scroll animate-fade-up">
                             <div class="challenge">
@@ -261,14 +261,14 @@ get_header(); ?>
                         'description' => 'Ongoing monitoring of performance metrics and continuous refinement of on-page elements based on data and results.'
                     )
                 );
-                ?>                <h2 class="animate-on-scroll animate-fade-up"><?php echo esc_html($process_title); ?></h2>
+                ?>                <h2 class="animate-on-scroll animate-fade-up"><?php echo wp_kses_post($process_title); ?></h2>
                 <div class="process-steps">
                     <?php foreach ($process_steps as $index => $step): ?>
                         <div class="process-step animate-on-scroll animate-stagger animate-fade-up">
                             <div class="step-number"><?php echo ($index + 1); ?></div>
                             <div class="step-content">
-                                <h3><?php echo esc_html($step['title']); ?></h3>
-                                <p><?php echo esc_html($step['description']); ?></p>
+                                <h3><?php echo wp_kses_post($step['title']); ?></h3>
+                                <p><?php echo wp_kses_post($step['description']); ?></p>
                             </div>
                         </div>
                     <?php endforeach; ?>
@@ -384,12 +384,12 @@ get_header(); ?>
                         'description' => 'Property listing optimisation, local area content, and schema markup for enhanced search visibility.'
                     )
                 );
-                ?>                <h2 class="animate-on-scroll animate-fade-up"><?php echo esc_html($industries_title); ?></h2>
+                ?>                <h2 class="animate-on-scroll animate-fade-up"><?php echo wp_kses_post($industries_title); ?></h2>
                 <div class="industry-grid">
                     <?php foreach ($industries as $industry): ?>
                         <div class="industry-item animate-on-scroll animate-stagger animate-fade-up">
-                            <h3><?php echo esc_html($industry['title']); ?></h3>
-                            <p><?php echo esc_html($industry['description']); ?></p>
+                            <h3><?php echo wp_kses_post($industry['title']); ?></h3>
+                            <p><?php echo wp_kses_post($industry['description']); ?></p>
                         </div>
                     <?php endforeach; ?>
                 </div>
@@ -417,13 +417,13 @@ get_header(); ?>
                         'answer' => 'We track keyword rankings, organic traffic growth, click-through rates, time on page, and conversions to measure the effectiveness of our on-page optimisations.'
                     )
                 );
-                ?>                <h2 class="animate-on-scroll animate-fade-up"><?php echo esc_html($faqs_title); ?></h2>
+                ?>                <h2 class="animate-on-scroll animate-fade-up"><?php echo wp_kses_post($faqs_title); ?></h2>
                 <div class="faq-list">
                     <?php foreach ($faqs as $faq): ?>
                         <div class="faq-item animate-on-scroll animate-stagger animate-fade-up">
-                            <button class="faq-question"><?php echo esc_html($faq['question']); ?></button>
+                            <button class="faq-question"><?php echo wp_kses_post($faq['question']); ?></button>
                             <div class="faq-answer">
-                                <p><?php echo esc_html($faq['answer']); ?></p>
+                                <p><?php echo wp_kses_post($faq['answer']); ?></p>
                             </div>
                         </div>
                     <?php endforeach; ?>
@@ -445,11 +445,11 @@ get_header(); ?>
                     $testimonial_author_title = get_post_meta(get_the_ID(), 'on_page_seo_testimonial_author_title', true) ?: 'Marketing Director, Professional Services Ltd';
                     ?>
                     <blockquote>
-                        <?php echo esc_html($testimonial_quote); ?>
+                        <?php echo wp_kses_post($testimonial_quote); ?>
                     </blockquote>
                     <div class="testimonial-author">
-                        <strong><?php echo esc_html($testimonial_author_name); ?></strong>
-                        <span><?php echo esc_html($testimonial_author_title); ?></span>
+                        <strong><?php echo wp_kses_post($testimonial_author_name); ?></strong>
+                        <span><?php echo wp_kses_post($testimonial_author_title); ?></span>
                     </div>
                 </div>
             </div>
@@ -469,11 +469,11 @@ get_header(); ?>
                         'No obligation quote'
                     );
                     ?>
-                    <h2><?php echo esc_html($cta_title); ?></h2>
-                    <p><?php echo esc_html($cta_description); ?></p>
+                    <h2><?php echo wp_kses_post($cta_title); ?></h2>
+                    <p><?php echo wp_kses_post($cta_description); ?></p>
                     <div class="simple-cta-buttons">
-                        <a href="<?php echo esc_url($cta_primary_url); ?>" class="btn btn-primary"><?php echo esc_html($cta_primary_text); ?></a>
-                        <a href="<?php echo esc_url($cta_secondary_url); ?>" class="btn btn-secondary"><?php echo esc_html($cta_secondary_text); ?></a>
+                        <a href="<?php echo esc_url($cta_primary_url); ?>" class="btn btn-primary"><?php echo wp_kses_post($cta_primary_text); ?></a>
+                        <a href="<?php echo esc_url($cta_secondary_url); ?>" class="btn btn-secondary"><?php echo wp_kses_post($cta_secondary_text); ?></a>
                     </div>
                     <div class="simple-cta-features">
                         <?php foreach ($cta_features as $feature): ?>
