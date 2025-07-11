@@ -95,6 +95,16 @@ Certification Guidance';
     $resources_training_link_text = get_post_meta($post->ID, 'resources_training_link_text', true) ?: 'Learn More';
     $resources_training_link_url = get_post_meta($post->ID, 'resources_training_link_url', true) ?: '/training-mentoring';
     
+    // SEO Guides Category
+    $resources_seo_title = get_post_meta($post->ID, 'resources_seo_title', true) ?: 'SEO Guides & Resources';
+    $resources_seo_description = get_post_meta($post->ID, 'resources_seo_description', true) ?: 'Expert SEO guides and resources to improve your search rankings and organic traffic.';
+    $resources_seo_features = get_post_meta($post->ID, 'resources_seo_features', true) ?: 'Technical SEO Guides
+Keyword Research Tools
+Content Optimization Tips
+Local SEO Strategies';
+    $resources_seo_link_text = get_post_meta($post->ID, 'resources_seo_link_text', true) ?: 'SEO Guides';
+    $resources_seo_link_url = get_post_meta($post->ID, 'resources_seo_link_url', true) ?: '/seo-guides';
+    
     // Featured Resources Section
     $resources_featured_title = get_post_meta($post->ID, 'resources_featured_title', true) ?: 'Featured Resources';
     $resources_featured_subtitle = get_post_meta($post->ID, 'resources_featured_subtitle', true) ?: 'Hand-picked resources to accelerate your digital marketing success and stay ahead of the competition.';
@@ -126,72 +136,81 @@ Certification Guidance';
     <div class="aimpro-resources-meta">
         <h4>Hero Section</h4>
         <table class="form-table">
-            <tr><th><label for="resources_hero_title">Title</label></th><td><input type="text" id="resources_hero_title" name="resources_hero_title" value="<?php echo esc_attr($resources_hero_title); ?>" /></td></tr>
-            <tr><th><label for="resources_hero_subtitle">Subtitle</label></th><td><input type="text" id="resources_hero_subtitle" name="resources_hero_subtitle" value="<?php echo esc_attr($resources_hero_subtitle); ?>" /></td></tr>
-            <tr><th><label for="resources_hero_description">Description</label></th><td><textarea id="resources_hero_description" name="resources_hero_description"><?php echo esc_textarea($resources_hero_description); ?></textarea></td></tr>
+            <tr><th><label for="resources_hero_title">Title</label></th><td><?php wp_editor($resources_hero_title, 'resources_hero_title', array('textarea_name' => 'resources_hero_title', 'teeny' => true, 'media_buttons' => false, 'quicktags' => array('buttons' => 'strong,em,link'))); ?></td></tr>
+            <tr><th><label for="resources_hero_subtitle">Subtitle</label></th><td><?php wp_editor($resources_hero_subtitle, 'resources_hero_subtitle', array('textarea_name' => 'resources_hero_subtitle', 'teeny' => true, 'media_buttons' => false, 'quicktags' => array('buttons' => 'strong,em,link'))); ?></td></tr>
+            <tr><th><label for="resources_hero_description">Description</label></th><td><?php wp_editor($resources_hero_description, 'resources_hero_description', array('textarea_name' => 'resources_hero_description', 'teeny' => true, 'media_buttons' => false, 'quicktags' => array('buttons' => 'strong,em,link'))); ?></td></tr>
         </table>
         
         <h4>Resource Categories Section</h4>
         <table class="form-table">
-            <tr><th><label for="resources_categories_title">Section Title</label></th><td><input type="text" id="resources_categories_title" name="resources_categories_title" value="<?php echo esc_attr($resources_categories_title); ?>" /></td></tr>
-            <tr><th><label for="resources_categories_subtitle">Section Subtitle</label></th><td><input type="text" id="resources_categories_subtitle" name="resources_categories_subtitle" value="<?php echo esc_attr($resources_categories_subtitle); ?>" /></td></tr>
+            <tr><th><label for="resources_categories_title">Section Title</label></th><td><?php wp_editor($resources_categories_title, 'resources_categories_title', array('textarea_name' => 'resources_categories_title', 'teeny' => true, 'media_buttons' => false, 'quicktags' => array('buttons' => 'strong,em,link'))); ?></td></tr>
+            <tr><th><label for="resources_categories_subtitle">Section Subtitle</label></th><td><?php wp_editor($resources_categories_subtitle, 'resources_categories_subtitle', array('textarea_name' => 'resources_categories_subtitle', 'teeny' => true, 'media_buttons' => false, 'quicktags' => array('buttons' => 'strong,em,link'))); ?></td></tr>
         </table>
         
         <h4>Blog & Insights Category</h4>
         <table class="form-table">
-            <tr><th><label for="resources_blog_title">Title</label></th><td><input type="text" id="resources_blog_title" name="resources_blog_title" value="<?php echo esc_attr($resources_blog_title); ?>" /></td></tr>
-            <tr><th><label for="resources_blog_description">Description</label></th><td><textarea id="resources_blog_description" name="resources_blog_description"><?php echo esc_textarea($resources_blog_description); ?></textarea></td></tr>
-            <tr><th><label for="resources_blog_features">Features (One per line)</label></th><td><textarea id="resources_blog_features" name="resources_blog_features" rows="4"><?php echo esc_textarea($resources_blog_features); ?></textarea></td></tr>
+            <tr><th><label for="resources_blog_title">Title</label></th><td><?php wp_editor($resources_blog_title, 'resources_blog_title', array('textarea_name' => 'resources_blog_title', 'teeny' => true, 'media_buttons' => false, 'quicktags' => array('buttons' => 'strong,em,link'))); ?></td></tr>
+            <tr><th><label for="resources_blog_description">Description</label></th><td><?php wp_editor($resources_blog_description, 'resources_blog_description', array('textarea_name' => 'resources_blog_description', 'teeny' => true, 'media_buttons' => false, 'quicktags' => array('buttons' => 'strong,em,link'))); ?></td></tr>
+            <tr><th><label for="resources_blog_features">Features (One per line)</label></th><td><?php wp_editor($resources_blog_features, 'resources_blog_features', array('textarea_name' => 'resources_blog_features', 'teeny' => true, 'media_buttons' => false, 'quicktags' => array('buttons' => 'strong,em,link'))); ?></td></tr>
             <tr><th><label for="resources_blog_link_text">Link Text</label></th><td><input type="text" id="resources_blog_link_text" name="resources_blog_link_text" value="<?php echo esc_attr($resources_blog_link_text); ?>" /></td></tr>
             <tr><th><label for="resources_blog_link_url">Link URL</label></th><td><input type="text" id="resources_blog_link_url" name="resources_blog_link_url" value="<?php echo esc_attr($resources_blog_link_url); ?>" /></td></tr>
         </table>
         
         <h4>Case Studies Category</h4>
         <table class="form-table">
-            <tr><th><label for="resources_casestudies_title">Title</label></th><td><input type="text" id="resources_casestudies_title" name="resources_casestudies_title" value="<?php echo esc_attr($resources_casestudies_title); ?>" /></td></tr>
-            <tr><th><label for="resources_casestudies_description">Description</label></th><td><textarea id="resources_casestudies_description" name="resources_casestudies_description"><?php echo esc_textarea($resources_casestudies_description); ?></textarea></td></tr>
-            <tr><th><label for="resources_casestudies_features">Features (One per line)</label></th><td><textarea id="resources_casestudies_features" name="resources_casestudies_features" rows="4"><?php echo esc_textarea($resources_casestudies_features); ?></textarea></td></tr>
+            <tr><th><label for="resources_casestudies_title">Title</label></th><td><?php wp_editor($resources_casestudies_title, 'resources_casestudies_title', array('textarea_name' => 'resources_casestudies_title', 'teeny' => true, 'media_buttons' => false, 'quicktags' => array('buttons' => 'strong,em,link'))); ?></td></tr>
+            <tr><th><label for="resources_casestudies_description">Description</label></th><td><?php wp_editor($resources_casestudies_description, 'resources_casestudies_description', array('textarea_name' => 'resources_casestudies_description', 'teeny' => true, 'media_buttons' => false, 'quicktags' => array('buttons' => 'strong,em,link'))); ?></td></tr>
+            <tr><th><label for="resources_casestudies_features">Features (One per line)</label></th><td><?php wp_editor($resources_casestudies_features, 'resources_casestudies_features', array('textarea_name' => 'resources_casestudies_features', 'teeny' => true, 'media_buttons' => false, 'quicktags' => array('buttons' => 'strong,em,link'))); ?></td></tr>
             <tr><th><label for="resources_casestudies_link_text">Link Text</label></th><td><input type="text" id="resources_casestudies_link_text" name="resources_casestudies_link_text" value="<?php echo esc_attr($resources_casestudies_link_text); ?>" /></td></tr>
             <tr><th><label for="resources_casestudies_link_url">Link URL</label></th><td><input type="text" id="resources_casestudies_link_url" name="resources_casestudies_link_url" value="<?php echo esc_attr($resources_casestudies_link_url); ?>" /></td></tr>
         </table>
         
         <h4>Templates & Tools Category</h4>
         <table class="form-table">
-            <tr><th><label for="resources_templates_title">Title</label></th><td><input type="text" id="resources_templates_title" name="resources_templates_title" value="<?php echo esc_attr($resources_templates_title); ?>" /></td></tr>
-            <tr><th><label for="resources_templates_description">Description</label></th><td><textarea id="resources_templates_description" name="resources_templates_description"><?php echo esc_textarea($resources_templates_description); ?></textarea></td></tr>
-            <tr><th><label for="resources_templates_features">Features (One per line)</label></th><td><textarea id="resources_templates_features" name="resources_templates_features" rows="4"><?php echo esc_textarea($resources_templates_features); ?></textarea></td></tr>
+            <tr><th><label for="resources_templates_title">Title</label></th><td><?php wp_editor($resources_templates_title, 'resources_templates_title', array('textarea_name' => 'resources_templates_title', 'teeny' => true, 'media_buttons' => false, 'quicktags' => array('buttons' => 'strong,em,link'))); ?></td></tr>
+            <tr><th><label for="resources_templates_description">Description</label></th><td><?php wp_editor($resources_templates_description, 'resources_templates_description', array('textarea_name' => 'resources_templates_description', 'teeny' => true, 'media_buttons' => false, 'quicktags' => array('buttons' => 'strong,em,link'))); ?></td></tr>
+            <tr><th><label for="resources_templates_features">Features (One per line)</label></th><td><?php wp_editor($resources_templates_features, 'resources_templates_features', array('textarea_name' => 'resources_templates_features', 'teeny' => true, 'media_buttons' => false, 'quicktags' => array('buttons' => 'strong,em,link'))); ?></td></tr>
             <tr><th><label for="resources_templates_link_text">Link Text</label></th><td><input type="text" id="resources_templates_link_text" name="resources_templates_link_text" value="<?php echo esc_attr($resources_templates_link_text); ?>" /></td></tr>
             <tr><th><label for="resources_templates_link_url">Link URL</label></th><td><input type="text" id="resources_templates_link_url" name="resources_templates_link_url" value="<?php echo esc_attr($resources_templates_link_url); ?>" /></td></tr>
         </table>
         
         <h4>Events & Webinars Category</h4>
         <table class="form-table">
-            <tr><th><label for="resources_events_title">Title</label></th><td><input type="text" id="resources_events_title" name="resources_events_title" value="<?php echo esc_attr($resources_events_title); ?>" /></td></tr>
-            <tr><th><label for="resources_events_description">Description</label></th><td><textarea id="resources_events_description" name="resources_events_description"><?php echo esc_textarea($resources_events_description); ?></textarea></td></tr>
-            <tr><th><label for="resources_events_features">Features (One per line)</label></th><td><textarea id="resources_events_features" name="resources_events_features" rows="4"><?php echo esc_textarea($resources_events_features); ?></textarea></td></tr>
+            <tr><th><label for="resources_events_title">Title</label></th><td><?php wp_editor($resources_events_title, 'resources_events_title', array('textarea_name' => 'resources_events_title', 'teeny' => true, 'media_buttons' => false, 'quicktags' => array('buttons' => 'strong,em,link'))); ?></td></tr>
+            <tr><th><label for="resources_events_description">Description</label></th><td><?php wp_editor($resources_events_description, 'resources_events_description', array('textarea_name' => 'resources_events_description', 'teeny' => true, 'media_buttons' => false, 'quicktags' => array('buttons' => 'strong,em,link'))); ?></td></tr>
+            <tr><th><label for="resources_events_features">Features (One per line)</label></th><td><?php wp_editor($resources_events_features, 'resources_events_features', array('textarea_name' => 'resources_events_features', 'teeny' => true, 'media_buttons' => false, 'quicktags' => array('buttons' => 'strong,em,link'))); ?></td></tr>
             <tr><th><label for="resources_events_link_text">Link Text</label></th><td><input type="text" id="resources_events_link_text" name="resources_events_link_text" value="<?php echo esc_attr($resources_events_link_text); ?>" /></td></tr>
             <tr><th><label for="resources_events_link_url">Link URL</label></th><td><input type="text" id="resources_events_link_url" name="resources_events_link_url" value="<?php echo esc_attr($resources_events_link_url); ?>" /></td></tr>
         </table>
         
         <h4>Training & Mentoring Category</h4>
         <table class="form-table">
-            <tr><th><label for="resources_training_title">Title</label></th><td><input type="text" id="resources_training_title" name="resources_training_title" value="<?php echo esc_attr($resources_training_title); ?>" /></td></tr>
-            <tr><th><label for="resources_training_description">Description</label></th><td><textarea id="resources_training_description" name="resources_training_description"><?php echo esc_textarea($resources_training_description); ?></textarea></td></tr>
-            <tr><th><label for="resources_training_features">Features (One per line)</label></th><td><textarea id="resources_training_features" name="resources_training_features" rows="4"><?php echo esc_textarea($resources_training_features); ?></textarea></td></tr>
+            <tr><th><label for="resources_training_title">Title</label></th><td><?php wp_editor($resources_training_title, 'resources_training_title', array('textarea_name' => 'resources_training_title', 'teeny' => true, 'media_buttons' => false, 'quicktags' => array('buttons' => 'strong,em,link'))); ?></td></tr>
+            <tr><th><label for="resources_training_description">Description</label></th><td><?php wp_editor($resources_training_description, 'resources_training_description', array('textarea_name' => 'resources_training_description', 'teeny' => true, 'media_buttons' => false, 'quicktags' => array('buttons' => 'strong,em,link'))); ?></td></tr>
+            <tr><th><label for="resources_training_features">Features (One per line)</label></th><td><?php wp_editor($resources_training_features, 'resources_training_features', array('textarea_name' => 'resources_training_features', 'teeny' => true, 'media_buttons' => false, 'quicktags' => array('buttons' => 'strong,em,link'))); ?></td></tr>
             <tr><th><label for="resources_training_link_text">Link Text</label></th><td><input type="text" id="resources_training_link_text" name="resources_training_link_text" value="<?php echo esc_attr($resources_training_link_text); ?>" /></td></tr>
             <tr><th><label for="resources_training_link_url">Link URL</label></th><td><input type="text" id="resources_training_link_url" name="resources_training_link_url" value="<?php echo esc_attr($resources_training_link_url); ?>" /></td></tr>
         </table>
         
+        <h4>SEO Guides Category</h4>
+        <table class="form-table">
+            <tr><th><label for="resources_seo_title">Title</label></th><td><?php wp_editor($resources_seo_title, 'resources_seo_title', array('textarea_name' => 'resources_seo_title', 'teeny' => true, 'media_buttons' => false, 'quicktags' => array('buttons' => 'strong,em,link'))); ?></td></tr>
+            <tr><th><label for="resources_seo_description">Description</label></th><td><?php wp_editor($resources_seo_description, 'resources_seo_description', array('textarea_name' => 'resources_seo_description', 'teeny' => true, 'media_buttons' => false, 'quicktags' => array('buttons' => 'strong,em,link'))); ?></td></tr>
+            <tr><th><label for="resources_seo_features">Features (One per line)</label></th><td><?php wp_editor($resources_seo_features, 'resources_seo_features', array('textarea_name' => 'resources_seo_features', 'teeny' => true, 'media_buttons' => false, 'quicktags' => array('buttons' => 'strong,em,link'))); ?></td></tr>
+            <tr><th><label for="resources_seo_link_text">Link Text</label></th><td><input type="text" id="resources_seo_link_text" name="resources_seo_link_text" value="<?php echo esc_attr($resources_seo_link_text); ?>" /></td></tr>
+            <tr><th><label for="resources_seo_link_url">Link URL</label></th><td><input type="text" id="resources_seo_link_url" name="resources_seo_link_url" value="<?php echo esc_attr($resources_seo_link_url); ?>" /></td></tr>
+        </table>
+        
         <h4>Featured Resources Section</h4>
         <table class="form-table">
-            <tr><th><label for="resources_featured_title">Section Title</label></th><td><input type="text" id="resources_featured_title" name="resources_featured_title" value="<?php echo esc_attr($resources_featured_title); ?>" /></td></tr>
-            <tr><th><label for="resources_featured_subtitle">Section Subtitle</label></th><td><input type="text" id="resources_featured_subtitle" name="resources_featured_subtitle" value="<?php echo esc_attr($resources_featured_subtitle); ?>" /></td></tr>
+            <tr><th><label for="resources_featured_title">Section Title</label></th><td><?php wp_editor($resources_featured_title, 'resources_featured_title', array('textarea_name' => 'resources_featured_title', 'teeny' => true, 'media_buttons' => false, 'quicktags' => array('buttons' => 'strong,em,link'))); ?></td></tr>
+            <tr><th><label for="resources_featured_subtitle">Section Subtitle</label></th><td><?php wp_editor($resources_featured_subtitle, 'resources_featured_subtitle', array('textarea_name' => 'resources_featured_subtitle', 'teeny' => true, 'media_buttons' => false, 'quicktags' => array('buttons' => 'strong,em,link'))); ?></td></tr>
         </table>
           <h4>Featured Resource 1</h4>
         <table class="form-table">
             <tr><th><label for="resources_featured1_type">Resource Type</label></th><td><input type="text" id="resources_featured1_type" name="resources_featured1_type" value="<?php echo esc_attr($resources_featured1_type); ?>" /></td></tr>
-            <tr><th><label for="resources_featured1_title">Title</label></th><td><input type="text" id="resources_featured1_title" name="resources_featured1_title" value="<?php echo esc_attr($resources_featured1_title); ?>" /></td></tr>
-            <tr><th><label for="resources_featured1_description">Description</label></th><td><textarea id="resources_featured1_description" name="resources_featured1_description"><?php echo esc_textarea($resources_featured1_description); ?></textarea></td></tr>
+            <tr><th><label for="resources_featured1_title">Title</label></th><td><?php wp_editor($resources_featured1_title, 'resources_featured1_title', array('textarea_name' => 'resources_featured1_title', 'teeny' => true, 'media_buttons' => false, 'quicktags' => array('buttons' => 'strong,em,link'))); ?></td></tr>
+            <tr><th><label for="resources_featured1_description">Description</label></th><td><?php wp_editor($resources_featured1_description, 'resources_featured1_description', array('textarea_name' => 'resources_featured1_description', 'teeny' => true, 'media_buttons' => false, 'quicktags' => array('buttons' => 'strong,em,link'))); ?></td></tr>
             <tr><th><label for="resources_featured1_link_text">Link Text</label></th><td><input type="text" id="resources_featured1_link_text" name="resources_featured1_link_text" value="<?php echo esc_attr($resources_featured1_link_text); ?>" /></td></tr>
             <tr><th><label for="resources_featured1_link_url">Link URL</label></th><td><input type="text" id="resources_featured1_link_url" name="resources_featured1_link_url" value="<?php echo esc_attr($resources_featured1_link_url); ?>" /></td></tr>
         </table>
@@ -199,24 +218,24 @@ Certification Guidance';
         <h4>Featured Resource 2</h4>
         <table class="form-table">
             <tr><th><label for="resources_featured2_type">Resource Type</label></th><td><input type="text" id="resources_featured2_type" name="resources_featured2_type" value="<?php echo esc_attr($resources_featured2_type); ?>" /></td></tr>
-            <tr><th><label for="resources_featured2_title">Title</label></th><td><input type="text" id="resources_featured2_title" name="resources_featured2_title" value="<?php echo esc_attr($resources_featured2_title); ?>" /></td></tr>
-            <tr><th><label for="resources_featured2_description">Description</label></th><td><textarea id="resources_featured2_description" name="resources_featured2_description"><?php echo esc_textarea($resources_featured2_description); ?></textarea></td></tr>
+            <tr><th><label for="resources_featured2_title">Title</label></th><td><?php wp_editor($resources_featured2_title, 'resources_featured2_title', array('textarea_name' => 'resources_featured2_title', 'teeny' => true, 'media_buttons' => false, 'quicktags' => array('buttons' => 'strong,em,link'))); ?></td></tr>
+            <tr><th><label for="resources_featured2_description">Description</label></th><td><?php wp_editor($resources_featured2_description, 'resources_featured2_description', array('textarea_name' => 'resources_featured2_description', 'teeny' => true, 'media_buttons' => false, 'quicktags' => array('buttons' => 'strong,em,link'))); ?></td></tr>
             <tr><th><label for="resources_featured2_link_text">Link Text</label></th><td><input type="text" id="resources_featured2_link_text" name="resources_featured2_link_text" value="<?php echo esc_attr($resources_featured2_link_text); ?>" /></td></tr>
             <tr><th><label for="resources_featured2_link_url">Link URL</label></th><td><input type="text" id="resources_featured2_link_url" name="resources_featured2_link_url" value="<?php echo esc_attr($resources_featured2_link_url); ?>" /></td></tr>
         </table>
           <h4>Featured Resource 3</h4>
         <table class="form-table">
             <tr><th><label for="resources_featured3_type">Resource Type</label></th><td><input type="text" id="resources_featured3_type" name="resources_featured3_type" value="<?php echo esc_attr($resources_featured3_type); ?>" /></td></tr>
-            <tr><th><label for="resources_featured3_title">Title</label></th><td><input type="text" id="resources_featured3_title" name="resources_featured3_title" value="<?php echo esc_attr($resources_featured3_title); ?>" /></td></tr>
-            <tr><th><label for="resources_featured3_description">Description</label></th><td><textarea id="resources_featured3_description" name="resources_featured3_description"><?php echo esc_textarea($resources_featured3_description); ?></textarea></td></tr>
+            <tr><th><label for="resources_featured3_title">Title</label></th><td><?php wp_editor($resources_featured3_title, 'resources_featured3_title', array('textarea_name' => 'resources_featured3_title', 'teeny' => true, 'media_buttons' => false, 'quicktags' => array('buttons' => 'strong,em,link'))); ?></td></tr>
+            <tr><th><label for="resources_featured3_description">Description</label></th><td><?php wp_editor($resources_featured3_description, 'resources_featured3_description', array('textarea_name' => 'resources_featured3_description', 'teeny' => true, 'media_buttons' => false, 'quicktags' => array('buttons' => 'strong,em,link'))); ?></td></tr>
             <tr><th><label for="resources_featured3_link_text">Link Text</label></th><td><input type="text" id="resources_featured3_link_text" name="resources_featured3_link_text" value="<?php echo esc_attr($resources_featured3_link_text); ?>" /></td></tr>
             <tr><th><label for="resources_featured3_link_url">Link URL</label></th><td><input type="text" id="resources_featured3_link_url" name="resources_featured3_link_url" value="<?php echo esc_attr($resources_featured3_link_url); ?>" /></td></tr>
         </table>
         
         <h4>Newsletter CTA Section</h4>
         <table class="form-table">
-            <tr><th><label for="resources_newsletter_title">Title</label></th><td><input type="text" id="resources_newsletter_title" name="resources_newsletter_title" value="<?php echo esc_attr($resources_newsletter_title); ?>" /></td></tr>
-            <tr><th><label for="resources_newsletter_description">Description</label></th><td><textarea id="resources_newsletter_description" name="resources_newsletter_description"><?php echo esc_textarea($resources_newsletter_description); ?></textarea></td></tr>
+            <tr><th><label for="resources_newsletter_title">Title</label></th><td><?php wp_editor($resources_newsletter_title, 'resources_newsletter_title', array('textarea_name' => 'resources_newsletter_title', 'teeny' => true, 'media_buttons' => false, 'quicktags' => array('buttons' => 'strong,em,link'))); ?></td></tr>
+            <tr><th><label for="resources_newsletter_description">Description</label></th><td><?php wp_editor($resources_newsletter_description, 'resources_newsletter_description', array('textarea_name' => 'resources_newsletter_description', 'teeny' => true, 'media_buttons' => false, 'quicktags' => array('buttons' => 'strong,em,link'))); ?></td></tr>
         </table>
     </div>
     <?php
@@ -229,58 +248,51 @@ function aimpro_save_resources_meta_fields($post_id) {
     if (defined('DOING_AUTOSAVE') && DOING_AUTOSAVE) return;
     if (get_post_type($post_id) !== 'page') return;
     
-    $fields = array(
-        // Hero Section
+    // Define which fields should use wp_kses_post for rich text content
+    $rich_text_fields = array(
         'resources_hero_title', 'resources_hero_subtitle', 'resources_hero_description',
-        
-        // Resource Categories Section
         'resources_categories_title', 'resources_categories_subtitle',
-        
-        // Blog & Insights Category
-        'resources_blog_title', 'resources_blog_description', 'resources_blog_features', 
-        'resources_blog_link_text', 'resources_blog_link_url',
-        
-        // Case Studies Category
-        'resources_casestudies_title', 'resources_casestudies_description', 'resources_casestudies_features', 
-        'resources_casestudies_link_text', 'resources_casestudies_link_url',
-        
-        // Templates & Tools Category
-        'resources_templates_title', 'resources_templates_description', 'resources_templates_features', 
-        'resources_templates_link_text', 'resources_templates_link_url',
-        
-        // Events & Webinars Category
-        'resources_events_title', 'resources_events_description', 'resources_events_features', 
-        'resources_events_link_text', 'resources_events_link_url',
-        
-        // Training & Mentoring Category
-        'resources_training_title', 'resources_training_description', 'resources_training_features', 
-        'resources_training_link_text', 'resources_training_link_url',
-        
-        // Featured Resources Section
+        'resources_blog_title', 'resources_blog_description', 'resources_blog_features',
+        'resources_casestudies_title', 'resources_casestudies_description', 'resources_casestudies_features',
+        'resources_templates_title', 'resources_templates_description', 'resources_templates_features',
+        'resources_events_title', 'resources_events_description', 'resources_events_features',
+        'resources_training_title', 'resources_training_description', 'resources_training_features',
+        'resources_seo_title', 'resources_seo_description', 'resources_seo_features',
         'resources_featured_title', 'resources_featured_subtitle',
-          // Featured Resource 1
-        'resources_featured1_type', 'resources_featured1_title', 'resources_featured1_description', 
-        'resources_featured1_link_text', 'resources_featured1_link_url',
-        
-        // Featured Resource 2
-        'resources_featured2_type', 'resources_featured2_title', 'resources_featured2_description', 
-        'resources_featured2_link_text', 'resources_featured2_link_url',
-        
-        // Featured Resource 3
-        'resources_featured3_type', 'resources_featured3_title', 'resources_featured3_description', 
-        'resources_featured3_link_text', 'resources_featured3_link_url',
-        
-        // Newsletter CTA Section
+        'resources_featured1_title', 'resources_featured1_description',
+        'resources_featured2_title', 'resources_featured2_description',
+        'resources_featured3_title', 'resources_featured3_description',
         'resources_newsletter_title', 'resources_newsletter_description'
     );
     
-    foreach ($fields as $field) {
+    // Define text fields (non-rich text)
+    $text_fields = array(
+        'resources_blog_link_text', 'resources_blog_link_url',
+        'resources_casestudies_link_text', 'resources_casestudies_link_url',
+        'resources_templates_link_text', 'resources_templates_link_url',
+        'resources_events_link_text', 'resources_events_link_url',
+        'resources_training_link_text', 'resources_training_link_url',
+        'resources_seo_link_text', 'resources_seo_link_url',
+        'resources_featured1_type', 'resources_featured1_link_text', 'resources_featured1_link_url',
+        'resources_featured2_type', 'resources_featured2_link_text', 'resources_featured2_link_url',
+        'resources_featured3_type', 'resources_featured3_link_text', 'resources_featured3_link_url'
+    );
+    
+    // Save rich text fields
+    foreach ($rich_text_fields as $field) {
         if (isset($_POST[$field])) {
-            $value = $_POST[$field];
-            if (strpos($field, 'description') !== false || strpos($field, 'features') !== false) {
-                $value = wp_kses_post($value);
+            $value = wp_kses_post($_POST[$field]);
+            update_post_meta($post_id, $field, $value);
+        }
+    }
+    
+    // Save text fields  
+    foreach ($text_fields as $field) {
+        if (isset($_POST[$field])) {
+            if (strpos($field, 'url') !== false) {
+                $value = esc_url_raw($_POST[$field]);
             } else {
-                $value = sanitize_text_field($value);
+                $value = sanitize_text_field($_POST[$field]);
             }
             update_post_meta($post_id, $field, $value);
         }

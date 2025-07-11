@@ -21,14 +21,19 @@ get_header(); ?>
         <!-- Page Header -->
         <section class="page-header">
             <div class="page-header-content animate-on-scroll animate-fade-up">
-                <h1><?php echo esc_html(get_post_meta(get_the_ID(), 'resources_hero_title', true) ?: 'Resources'); ?></h1>
-                <p class="page-subtitle"><?php echo esc_html(get_post_meta(get_the_ID(), 'resources_hero_subtitle', true) ?: 'Your Digital Marketing Knowledge Hub - Everything you need to succeed in digital marketing'); ?></p>
+                <h1><?php echo wp_kses_post(get_post_meta(get_the_ID(), 'resources_hero_title', true) ?: 'Resources'); ?></h1>
+                <p class="page-subtitle"><?php echo wp_kses_post(get_post_meta(get_the_ID(), 'resources_hero_subtitle', true) ?: 'Your Digital Marketing Knowledge Hub - Everything you need to succeed in digital marketing'); ?></p>
+                <?php if (get_post_meta(get_the_ID(), 'resources_hero_description', true)): ?>
+                <div class="page-description">
+                    <p><?php echo wp_kses_post(get_post_meta(get_the_ID(), 'resources_hero_description', true)); ?></p>
+                </div>
+                <?php endif; ?>
             </div>        </section>        <!-- Resources Grid -->
         <section class="service-overview">
             <div class="container">
                 <div class="section-header animate-on-scroll animate-fade-up">
-                    <h2>Resource Categories</h2>
-                    <p>Comprehensive resources to power your digital marketing success across all channels and strategies.</p>
+                    <h2><?php echo wp_kses_post(get_post_meta(get_the_ID(), 'resources_categories_title', true) ?: 'Resource Categories'); ?></h2>
+                    <p><?php echo wp_kses_post(get_post_meta(get_the_ID(), 'resources_categories_subtitle', true) ?: 'Comprehensive resources to power your digital marketing success across all channels and strategies.'); ?></p>
                 </div>
                 
                 <!-- Services Quick Links -->
@@ -112,8 +117,8 @@ get_header(); ?>
         <section class="service-overview knowledge-hub">
             <div class="container">
                 <div class="section-header text-center animate-on-scroll animate-fade-up">
-                    <h2>Digital Marketing Knowledge Hub</h2>
-                    <p>Expert insights, guides, and resources to accelerate your digital marketing success</p>
+                    <h2><?php echo wp_kses_post(get_post_meta(get_the_ID(), 'resources_featured_title', true) ?: 'Digital Marketing Knowledge Hub'); ?></h2>
+                    <p><?php echo wp_kses_post(get_post_meta(get_the_ID(), 'resources_featured_subtitle', true) ?: 'Expert insights, guides, and resources to accelerate your digital marketing success'); ?></p>
                 </div>
                 
                 <div class="services-grid resources-services-grid">
@@ -121,10 +126,10 @@ get_header(); ?>
                         <div class="service-icon">
                             <i class="fas fa-blog"></i>
                         </div>
-                        <h3>Blog & Insights</h3>
-                        <p>Stay updated with the latest digital marketing trends, strategies, and expert insights.</p>
+                        <h3><?php echo wp_kses_post(get_post_meta(get_the_ID(), 'resources_blog_title', true) ?: 'Blog & Insights'); ?></h3>
+                        <p><?php echo wp_kses_post(get_post_meta(get_the_ID(), 'resources_blog_description', true) ?: 'Stay updated with the latest digital marketing trends, strategies, and expert insights.'); ?></p>
                         <div class="service-links">
-                            <a href="<?php echo home_url('/blog'); ?>" class="btn btn-primary">Read Our Blog</a>
+                            <a href="<?php echo esc_url(get_post_meta(get_the_ID(), 'resources_blog_link_url', true) ?: '/blog'); ?>" class="btn btn-primary"><?php echo esc_html(get_post_meta(get_the_ID(), 'resources_blog_link_text', true) ?: 'Read Our Blog'); ?></a>
                             <a href="<?php echo home_url('/insights'); ?>" class="btn btn-outline">Expert Insights</a>
                         </div>
                     </div>
@@ -133,10 +138,10 @@ get_header(); ?>
                         <div class="service-icon">
                             <i class="fas fa-chart-bar"></i>
                         </div>
-                        <h3>Case Studies</h3>
-                        <p>Discover real success stories and proven strategies that drive exceptional results.</p>
+                        <h3><?php echo wp_kses_post(get_post_meta(get_the_ID(), 'resources_casestudies_title', true) ?: 'Case Studies'); ?></h3>
+                        <p><?php echo wp_kses_post(get_post_meta(get_the_ID(), 'resources_casestudies_description', true) ?: 'Discover real success stories and proven strategies that drive exceptional results.'); ?></p>
                         <div class="service-links">
-                            <a href="<?php echo home_url('/case-studies'); ?>" class="btn btn-primary">View Case Studies</a>
+                            <a href="<?php echo esc_url(get_post_meta(get_the_ID(), 'resources_casestudies_link_url', true) ?: '/case-studies'); ?>" class="btn btn-primary"><?php echo esc_html(get_post_meta(get_the_ID(), 'resources_casestudies_link_text', true) ?: 'View Case Studies'); ?></a>
                             <a href="<?php echo home_url('/success-stories'); ?>" class="btn btn-outline">Success Stories</a>
                         </div>
                     </div>
@@ -145,10 +150,10 @@ get_header(); ?>
                         <div class="service-icon">
                             <i class="fas fa-tools"></i>
                         </div>
-                        <h3>Free Tools & Templates</h3>
-                        <p>Access our collection of free templates, checklists, and tools to streamline your marketing.</p>
+                        <h3><?php echo wp_kses_post(get_post_meta(get_the_ID(), 'resources_templates_title', true) ?: 'Free Tools & Templates'); ?></h3>
+                        <p><?php echo wp_kses_post(get_post_meta(get_the_ID(), 'resources_templates_description', true) ?: 'Access our collection of free templates, checklists, and tools to streamline your marketing.'); ?></p>
                         <div class="service-links">
-                            <a href="<?php echo home_url('/free-tools'); ?>" class="btn btn-primary">Get Free Tools</a>
+                            <a href="<?php echo esc_url(get_post_meta(get_the_ID(), 'resources_templates_link_url', true) ?: '/free-tools'); ?>" class="btn btn-primary"><?php echo esc_html(get_post_meta(get_the_ID(), 'resources_templates_link_text', true) ?: 'Get Free Tools'); ?></a>
                             <a href="<?php echo home_url('/templates'); ?>" class="btn btn-outline">Templates</a>
                         </div>
                     </div>
@@ -157,10 +162,10 @@ get_header(); ?>
                         <div class="service-icon">
                             <i class="fas fa-chalkboard-teacher"></i>
                         </div>
-                        <h3>Training & Mentoring</h3>
-                        <p>Accelerate your skills with personalised training programs and expert mentoring.</p>
+                        <h3><?php echo wp_kses_post(get_post_meta(get_the_ID(), 'resources_training_title', true) ?: 'Training & Mentoring'); ?></h3>
+                        <p><?php echo wp_kses_post(get_post_meta(get_the_ID(), 'resources_training_description', true) ?: 'Accelerate your skills with personalised training programs and expert mentoring.'); ?></p>
                         <div class="service-links">
-                            <a href="<?php echo home_url('/training'); ?>" class="btn btn-primary">Learn More</a>
+                            <a href="<?php echo esc_url(get_post_meta(get_the_ID(), 'resources_training_link_url', true) ?: '/training'); ?>" class="btn btn-primary"><?php echo esc_html(get_post_meta(get_the_ID(), 'resources_training_link_text', true) ?: 'Learn More'); ?></a>
                             <a href="<?php echo home_url('/mentoring'); ?>" class="btn btn-outline">Mentoring</a>
                         </div>
                     </div>
@@ -169,10 +174,10 @@ get_header(); ?>
                         <div class="service-icon">
                             <i class="fas fa-search-plus"></i>
                         </div>
-                        <h3>SEO Guides & Resources</h3>
-                        <p>Expert SEO guides and resources to improve your search rankings and organic traffic.</p>
+                        <h3><?php echo wp_kses_post(get_post_meta(get_the_ID(), 'resources_seo_title', true) ?: 'SEO Guides & Resources'); ?></h3>
+                        <p><?php echo wp_kses_post(get_post_meta(get_the_ID(), 'resources_seo_description', true) ?: 'Expert SEO guides and resources to improve your search rankings and organic traffic.'); ?></p>
                         <div class="service-links">
-                            <a href="<?php echo home_url('/seo-guides'); ?>" class="btn btn-primary">SEO Guides</a>
+                            <a href="<?php echo esc_url(get_post_meta(get_the_ID(), 'resources_seo_link_url', true) ?: '/seo-guides'); ?>" class="btn btn-primary"><?php echo esc_html(get_post_meta(get_the_ID(), 'resources_seo_link_text', true) ?: 'SEO Guides'); ?></a>
                             <a href="<?php echo home_url('/seo-audit'); ?>" class="btn btn-outline">Free SEO Audit</a>
                         </div>
                     </div>
@@ -181,21 +186,97 @@ get_header(); ?>
                         <div class="service-icon">
                             <i class="fas fa-video"></i>
                         </div>
-                        <h3>Webinars & Events</h3>
-                        <p>Join our live webinars and events to learn from industry experts and network with peers.</p>
+                        <h3><?php echo wp_kses_post(get_post_meta(get_the_ID(), 'resources_events_title', true) ?: 'Webinars & Events'); ?></h3>
+                        <p><?php echo wp_kses_post(get_post_meta(get_the_ID(), 'resources_events_description', true) ?: 'Join our live webinars and events to learn from industry experts and network with peers.'); ?></p>
                         <div class="service-links">
-                            <a href="<?php echo home_url('/webinars'); ?>" class="btn btn-primary">Upcoming Webinars</a>
+                            <a href="<?php echo esc_url(get_post_meta(get_the_ID(), 'resources_events_link_url', true) ?: '/webinars'); ?>" class="btn btn-primary"><?php echo esc_html(get_post_meta(get_the_ID(), 'resources_events_link_text', true) ?: 'Upcoming Webinars'); ?></a>
                             <a href="<?php echo home_url('/events'); ?>" class="btn btn-outline">Past Events</a>
                         </div>
                     </div>
                 </div>
             </div>
-        </section><!-- Newsletter CTA -->
+        </section>
+
+        <!-- Featured Resources -->
+        <?php if (get_post_meta(get_the_ID(), 'resources_featured_title', true) || get_post_meta(get_the_ID(), 'resources_featured1_title', true)): ?>
+        <section class="service-overview featured-resources">
+            <div class="container">
+                <div class="section-header text-center animate-on-scroll animate-fade-up">
+                    <h2><?php echo wp_kses_post(get_post_meta(get_the_ID(), 'resources_featured_title', true) ?: 'Featured Resources'); ?></h2>
+                    <p><?php echo wp_kses_post(get_post_meta(get_the_ID(), 'resources_featured_subtitle', true) ?: 'Hand-picked resources to accelerate your digital marketing success'); ?></p>
+                </div>
+                
+                <div class="services-grid featured-resources-grid">
+                    <?php 
+                    // Featured Resource 1
+                    $featured1_title = get_post_meta(get_the_ID(), 'resources_featured1_title', true);
+                    if ($featured1_title): ?>
+                    <div class="service-card animate-on-scroll animate-stagger animate-fade-up">
+                        <div class="resource-type">
+                            <span class="badge"><?php echo esc_html(get_post_meta(get_the_ID(), 'resources_featured1_type', true) ?: 'Resource'); ?></span>
+                        </div>
+                        <h3><?php echo wp_kses_post($featured1_title); ?></h3>
+                        <p><?php echo wp_kses_post(get_post_meta(get_the_ID(), 'resources_featured1_description', true)); ?></p>
+                        <?php if (get_post_meta(get_the_ID(), 'resources_featured1_link_url', true)): ?>
+                        <div class="resource-link">
+                            <a href="<?php echo esc_url(get_post_meta(get_the_ID(), 'resources_featured1_link_url', true)); ?>" class="btn btn-primary">
+                                <?php echo esc_html(get_post_meta(get_the_ID(), 'resources_featured1_link_text', true) ?: 'Learn More'); ?>
+                            </a>
+                        </div>
+                        <?php endif; ?>
+                    </div>
+                    <?php endif; ?>
+
+                    <?php 
+                    // Featured Resource 2
+                    $featured2_title = get_post_meta(get_the_ID(), 'resources_featured2_title', true);
+                    if ($featured2_title): ?>
+                    <div class="service-card animate-on-scroll animate-stagger animate-fade-up">
+                        <div class="resource-type">
+                            <span class="badge"><?php echo esc_html(get_post_meta(get_the_ID(), 'resources_featured2_type', true) ?: 'Resource'); ?></span>
+                        </div>
+                        <h3><?php echo wp_kses_post($featured2_title); ?></h3>
+                        <p><?php echo wp_kses_post(get_post_meta(get_the_ID(), 'resources_featured2_description', true)); ?></p>
+                        <?php if (get_post_meta(get_the_ID(), 'resources_featured2_link_url', true)): ?>
+                        <div class="resource-link">
+                            <a href="<?php echo esc_url(get_post_meta(get_the_ID(), 'resources_featured2_link_url', true)); ?>" class="btn btn-primary">
+                                <?php echo esc_html(get_post_meta(get_the_ID(), 'resources_featured2_link_text', true) ?: 'Learn More'); ?>
+                            </a>
+                        </div>
+                        <?php endif; ?>
+                    </div>
+                    <?php endif; ?>
+
+                    <?php 
+                    // Featured Resource 3
+                    $featured3_title = get_post_meta(get_the_ID(), 'resources_featured3_title', true);
+                    if ($featured3_title): ?>
+                    <div class="service-card animate-on-scroll animate-stagger animate-fade-up">
+                        <div class="resource-type">
+                            <span class="badge"><?php echo esc_html(get_post_meta(get_the_ID(), 'resources_featured3_type', true) ?: 'Resource'); ?></span>
+                        </div>
+                        <h3><?php echo wp_kses_post($featured3_title); ?></h3>
+                        <p><?php echo wp_kses_post(get_post_meta(get_the_ID(), 'resources_featured3_description', true)); ?></p>
+                        <?php if (get_post_meta(get_the_ID(), 'resources_featured3_link_url', true)): ?>
+                        <div class="resource-link">
+                            <a href="<?php echo esc_url(get_post_meta(get_the_ID(), 'resources_featured3_link_url', true)); ?>" class="btn btn-primary">
+                                <?php echo esc_html(get_post_meta(get_the_ID(), 'resources_featured3_link_text', true) ?: 'Learn More'); ?>
+                            </a>
+                        </div>
+                        <?php endif; ?>
+                    </div>
+                    <?php endif; ?>
+                </div>
+            </div>
+        </section>
+        <?php endif; ?>
+
+    <!-- Newsletter CTA -->
     <section class="cta-section newsletter-cta">
         <div class="container">
             <div class="cta-content text-center animate-on-scroll animate-scale-up">
-                <h2>Stay Updated with the Latest Insights</h2>
-                <p>Get the latest resources, industry updates, and expert tips delivered directly to your inbox every week.</p>
+                <h2><?php echo wp_kses_post(get_post_meta(get_the_ID(), 'resources_newsletter_title', true) ?: 'Stay Updated with the Latest Insights'); ?></h2>
+                <p><?php echo wp_kses_post(get_post_meta(get_the_ID(), 'resources_newsletter_description', true) ?: 'Get the latest resources, industry updates, and expert tips delivered directly to your inbox every week.'); ?></p>
                 
                 <form class="newsletter-form" id="newsletter-form-resources" method="post" action="<?php echo admin_url('admin-post.php'); ?>">
                     <?php wp_nonce_field('newsletter_signup', 'newsletter_nonce'); ?>
