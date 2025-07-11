@@ -22,94 +22,89 @@ get_header(); ?>
           <!-- Page Header -->
         <section class="page-header">
             <div class="page-header-content animate-on-scroll animate-fade-up">
-                <h1>Services</h1>
-                <p class="page-subtitle">Comprehensive digital marketing services that drive measurable results</p>
+                <?php 
+                $header_title = get_post_meta(get_the_ID(), '_services_header_title', true) ?: 'Services';
+                $header_subtitle = get_post_meta(get_the_ID(), '_services_header_subtitle', true) ?: 'Comprehensive digital marketing services that drive measurable results';
+                ?>
+                <h1><?php echo wp_kses_post($header_title); ?></h1>
+                <p class="page-subtitle"><?php echo wp_kses_post($header_subtitle); ?></p>
             </div>
         </section>
 
         <!-- Services Introduction -->
         <section class="services-intro">
             <div class="section-content">
+                <?php 
+                $intro_title = get_post_meta(get_the_ID(), '_services_intro_title', true) ?: 'Award-Winning Digital Marketing Services';
+                $intro_description = get_post_meta(get_the_ID(), '_services_intro_description', true) ?: 'From SEO and PPC to website development and marketing automation, our comprehensive suite of services is designed to accelerate your business growth. Each service is delivered by certified experts using proven methodologies and cutting-edge technology.';
+                ?>
                 <div class="intro-content animate-on-scroll animate-slide-left">
-                    <h2>Award-Winning Digital Marketing Services</h2>
-                    <p>From SEO and PPC to website development and marketing automation, our comprehensive suite of services is designed to accelerate your business growth. Each service is delivered by certified experts using proven methodologies and cutting-edge technology.</p>
-                </div>                <div class="services-stats animate-on-scroll animate-slide-right">
+                    <h2><?php echo wp_kses_post($intro_title); ?></h2>
+                    <p><?php echo wp_kses_post($intro_description); ?></p>
+                </div>                <?php 
+                // Get statistics
+                $stats = array();
+                for ($i = 1; $i <= 3; $i++) {
+                    $stat_number = get_post_meta(get_the_ID(), "_services_stat_{$i}_number", true);
+                    $stat_label = get_post_meta(get_the_ID(), "_services_stat_{$i}_label", true);
+                    
+                    if ($stat_number || $stat_label) {
+                        $stats[] = array(
+                            'number' => $stat_number ?: ($i == 1 ? '15+' : ($i == 2 ? '500+' : '98%')),
+                            'label' => $stat_label ?: ($i == 1 ? 'Service Categories' : ($i == 2 ? 'Successful Projects' : 'Client Satisfaction'))
+                        );
+                    }
+                }
+                ?>
+                <div class="services-stats animate-on-scroll animate-slide-right">
+                    <?php foreach ($stats as $stat): ?>
                     <div class="stat-item">
-                        <div class="stat-number">15+</div>
-                        <div class="stat-label">Service Categories</div>
+                        <div class="stat-number"><?php echo wp_kses_post($stat['number']); ?></div>
+                        <div class="stat-label"><?php echo wp_kses_post($stat['label']); ?></div>
                     </div>
-                    <div class="stat-item">
-                        <div class="stat-number">500+</div>
-                        <div class="stat-label">Successful Projects</div>
-                    </div>
-                    <div class="stat-item">
-                        <div class="stat-number">98%</div>
-                        <div class="stat-label">Client Satisfaction</div>
-                    </div>
+                    <?php endforeach; ?>
                 </div>
             </div>
         </section>        <!-- Service Links Grid -->
         <section class="service-links-grid">
             <div class="section-content">
+                <?php 
+                $grid_title = get_post_meta(get_the_ID(), '_services_grid_title', true) ?: 'Our Services';
+                $grid_subtitle = get_post_meta(get_the_ID(), '_services_grid_subtitle', true) ?: 'Explore our comprehensive range of services designed to elevate your digital presence';
+                ?>
                 <div class="service-links-heading animate-on-scroll animate-fade-up">
-                    <h2>Our Services</h2>
-                    <p>Explore our comprehensive range of services designed to elevate your digital presence</p>
+                    <h2><?php echo wp_kses_post($grid_title); ?></h2>
+                    <p><?php echo wp_kses_post($grid_subtitle); ?></p>
                 </div>
                 
                 <!-- Quick Service Navigation Grid -->
                 <div class="services-grid">
-                    <div class="service-card animate-on-scroll animate-stagger animate-fade-up">
-                        <div class="service-icon">
-                            <i class="fas fa-search" aria-hidden="true"></i>
-                        </div>
-                        <h3>SEO Services</h3>
-                        <p>Improve search rankings and organic traffic</p>
-                        <a href="<?php echo home_url('/seo-services'); ?>" class="service-link">Learn More</a>
-                    </div>                    
-                    <div class="service-card animate-on-scroll animate-stagger animate-fade-up">
-                        <div class="service-icon">
-                            <i class="fas fa-bullhorn" aria-hidden="true"></i>
-                        </div>
-                        <h3>PPC Advertising</h3>
-                        <p>Maximize ROI with targeted advertising</p>
-                        <a href="<?php echo home_url('/advertising-ppc'); ?>" class="service-link">Learn More</a>
-                    </div>
+                    <?php 
+                    // Default services data
+                    $default_services = array(
+                        1 => array('title' => 'SEO Services', 'description' => 'Improve search rankings and organic traffic', 'icon' => 'fas fa-search', 'link' => home_url('/seo-services')),
+                        2 => array('title' => 'PPC Advertising', 'description' => 'Maximize ROI with targeted advertising', 'icon' => 'fas fa-bullhorn', 'link' => home_url('/advertising-ppc')),
+                        3 => array('title' => 'Website Design', 'description' => 'Beautiful, conversion-focused websites', 'icon' => 'fas fa-paint-brush', 'link' => home_url('/website-design')),
+                        4 => array('title' => 'Marketing Automation', 'description' => 'Streamline and scale your marketing', 'icon' => 'fas fa-cogs', 'link' => home_url('/automate-marketing')),
+                        5 => array('title' => 'Lead Generation', 'description' => 'Convert visitors into qualified leads', 'icon' => 'fas fa-chart-line', 'link' => home_url('/lead-generation')),
+                        6 => array('title' => 'Sales Funnels', 'description' => 'Optimise your conversion process', 'icon' => 'fas fa-funnel-dollar', 'link' => home_url('/streamline-sales-funnel'))
+                    );
                     
+                    for ($i = 1; $i <= 6; $i++):
+                        $service_title = get_post_meta(get_the_ID(), "_services_service_{$i}_title", true) ?: $default_services[$i]['title'];
+                        $service_description = get_post_meta(get_the_ID(), "_services_service_{$i}_description", true) ?: $default_services[$i]['description'];
+                        $service_icon = get_post_meta(get_the_ID(), "_services_service_{$i}_icon", true) ?: $default_services[$i]['icon'];
+                        $service_link = get_post_meta(get_the_ID(), "_services_service_{$i}_link", true) ?: $default_services[$i]['link'];
+                    ?>
                     <div class="service-card animate-on-scroll animate-stagger animate-fade-up">
                         <div class="service-icon">
-                            <i class="fas fa-paint-brush" aria-hidden="true"></i>
+                            <i class="<?php echo esc_attr($service_icon); ?>" aria-hidden="true"></i>
                         </div>
-                        <h3>Website Design</h3>
-                        <p>Beautiful, conversion-focused websites</p>
-                        <a href="<?php echo home_url('/website-design'); ?>" class="service-link">Learn More</a>
+                        <h3><?php echo wp_kses_post($service_title); ?></h3>
+                        <p><?php echo wp_kses_post($service_description); ?></p>
+                        <a href="<?php echo esc_url($service_link); ?>" class="service-link">Learn More</a>
                     </div>
-                    
-                    <div class="service-card animate-on-scroll animate-stagger animate-fade-up">
-                        <div class="service-icon">
-                            <i class="fas fa-cogs" aria-hidden="true"></i>
-                        </div>
-                        <h3>Marketing Automation</h3>
-                        <p>Streamline and scale your marketing</p>
-                        <a href="<?php echo home_url('/automate-marketing'); ?>" class="service-link">Learn More</a>
-                    </div>
-                    
-                    <div class="service-card animate-on-scroll animate-stagger animate-fade-up">
-                        <div class="service-icon">
-                            <i class="fas fa-chart-line" aria-hidden="true"></i>
-                        </div>
-                        <h3>Lead Generation</h3>
-                        <p>Convert visitors into qualified leads</p>
-                        <a href="<?php echo home_url('/lead-generation'); ?>" class="service-link">Learn More</a>
-                    </div>
-                    
-                    <div class="service-card animate-on-scroll animate-stagger animate-fade-up">
-                        <div class="service-icon">
-                            <i class="fas fa-funnel-dollar" aria-hidden="true"></i>
-                        </div>
-                        <h3>Sales Funnels</h3>
-                        <p>optimise your conversion process</p>
-                        <a href="<?php echo home_url('/streamline-sales-funnel'); ?>" class="service-link">Learn More</a>
-                    </div>
+                    <?php endfor; ?>
                 </div>
             </div>
         </section>
@@ -451,52 +446,40 @@ get_header(); ?>
         <!-- Why Choose Our Services -->
         <section class="services-benefits services-why-choose">
             <div class="section-content">
-                <h2>Why Choose Aimpro Digital Services?</h2>
+                <?php 
+                $benefits_title = get_post_meta(get_the_ID(), '_services_benefits_title', true) ?: 'Why Choose Aimpro Digital Services?';
+                ?>
+                <h2><?php echo wp_kses_post($benefits_title); ?></h2>
                 <div class="benefits-grid benefits-grid-4">
+                    <?php 
+                    // Default benefits data
+                    $default_benefits = array(
+                        1 => array('title' => 'Certified Experts', 'description' => 'Our team holds certifications from Google, Meta, Microsoft, and other leading platforms.'),
+                        2 => array('title' => 'Data-Driven Results', 'description' => 'Every strategy is backed by data analysis and proven methodologies for measurable results.'),
+                        3 => array('title' => 'Integrated Approach', 'description' => 'All our services work together seamlessly to create a comprehensive marketing ecosystem.'),
+                        4 => array('title' => 'Transparent Reporting', 'description' => 'Regular, detailed reports keep you informed about performance and ROI at every step.')
+                    );
                     
+                    // SVG icons for each benefit
+                    $benefit_icons = array(
+                        1 => '<svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M9 12L11 14L15 10M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z" stroke="currentcolour" stroke-width="2"/></svg>',
+                        2 => '<svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M18 20V10" stroke="currentcolour" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M12 20V4" stroke="currentcolour" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M6 20V14" stroke="currentcolour" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>',
+                        3 => '<svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="currentcolour" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M2 17L12 22L22 17" stroke="currentcolour" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>',
+                        4 => '<svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M22 12H18L15 21L9 3L6 12H2" stroke="currentcolour" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>'
+                    );
+                    
+                    for ($i = 1; $i <= 4; $i++):
+                        $benefit_title = get_post_meta(get_the_ID(), "_services_benefit_{$i}_title", true) ?: $default_benefits[$i]['title'];
+                        $benefit_description = get_post_meta(get_the_ID(), "_services_benefit_{$i}_description", true) ?: $default_benefits[$i]['description'];
+                    ?>
                     <div class="benefit-card">
                         <div class="benefit-icon">
-                            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M9 12L11 14L15 10M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z" stroke="currentcolour" stroke-width="2"/>
-                            </svg>
+                            <?php echo $benefit_icons[$i]; ?>
                         </div>
-                        <h3>Certified Experts</h3>
-                        <p>Our team holds certifications from Google, Meta, Microsoft, and other leading platforms.</p>
+                        <h3><?php echo wp_kses_post($benefit_title); ?></h3>
+                        <p><?php echo wp_kses_post($benefit_description); ?></p>
                     </div>
-
-                    <div class="benefit-card">
-                        <div class="benefit-icon">
-                            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M18 20V10" stroke="currentcolour" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                <path d="M12 20V4" stroke="currentcolour" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                <path d="M6 20V14" stroke="currentcolour" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                            </svg>
-                        </div>
-                        <h3>Data-Driven Results</h3>
-                        <p>Every strategy is backed by data analysis and proven methodologies for measurable results.</p>
-                    </div>
-
-                    <div class="benefit-card">
-                        <div class="benefit-icon">
-                            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="currentcolour" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                <path d="M2 17L12 22L22 17" stroke="currentcolour" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                            </svg>
-                        </div>
-                        <h3>Integrated Approach</h3>
-                        <p>All our services work together seamlessly to create a comprehensive marketing ecosystem.</p>
-                    </div>
-
-                    <div class="benefit-card">
-                        <div class="benefit-icon">
-                            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M22 12H18L15 21L9 3L6 12H2" stroke="currentcolour" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                            </svg>
-                        </div>
-                        <h3>Transparent Reporting</h3>
-                        <p>Regular, detailed reports keep you informed about performance and ROI at every step.</p>
-                    </div>
-
+                    <?php endfor; ?>
                 </div>
             </div>
         </section>
@@ -504,41 +487,32 @@ get_header(); ?>
         <!-- Service Process -->
         <section class="services-process">
             <div class="section-content">
-                <h2>Our Service Delivery Process</h2>
+                <?php 
+                $process_title = get_post_meta(get_the_ID(), '_services_process_title', true) ?: 'Our Service Delivery Process';
+                ?>
+                <h2><?php echo wp_kses_post($process_title); ?></h2>
                 <div class="process-steps">
+                    <?php 
+                    // Default process steps
+                    $default_steps = array(
+                        1 => array('title' => 'Discovery & Analysis', 'description' => 'We analyze your business, goals, and current performance to create a tailored strategy.'),
+                        2 => array('title' => 'Strategy Development', 'description' => 'Our experts develop a comprehensive plan aligned with your objectives and budget.'),
+                        3 => array('title' => 'Implementation', 'description' => 'We execute the strategy using proven methodologies and cutting-edge tools.'),
+                        4 => array('title' => 'Monitor & Optimize', 'description' => 'Continuous monitoring and optimization ensure maximum performance and ROI.')
+                    );
                     
+                    for ($i = 1; $i <= 4; $i++):
+                        $step_title = get_post_meta(get_the_ID(), "_services_process_step_{$i}_title", true) ?: $default_steps[$i]['title'];
+                        $step_description = get_post_meta(get_the_ID(), "_services_process_step_{$i}_description", true) ?: $default_steps[$i]['description'];
+                    ?>
                     <div class="process-step">
-                        <div class="step-number">1</div>
+                        <div class="step-number"><?php echo $i; ?></div>
                         <div class="step-content">
-                            <h3>Discovery & Analysis</h3>
-                            <p>We start by understanding your business, goals, and current situation through comprehensive analysis.</p>
+                            <h3><?php echo wp_kses_post($step_title); ?></h3>
+                            <p><?php echo wp_kses_post($step_description); ?></p>
                         </div>
                     </div>
-
-                    <div class="process-step">
-                        <div class="step-number">2</div>
-                        <div class="step-content">
-                            <h3>Strategy Development</h3>
-                            <p>Create a customised strategy tailored to your specific needs and market opportunities.</p>
-                        </div>
-                    </div>
-
-                    <div class="process-step">
-                        <div class="step-number">3</div>
-                        <div class="step-content">
-                            <h3>Implementation</h3>
-                            <p>Execute the strategy with precision, using best practices and proven methodologies.</p>
-                        </div>
-                    </div>
-
-                    <div class="process-step">
-                        <div class="step-number">4</div>
-                        <div class="step-content">
-                            <h3>Monitor & optimise</h3>
-                            <p>Continuously track performance and make data-driven optimisations for maximum results.</p>
-                        </div>
-                    </div>
-
+                    <?php endfor; ?>
                 </div>
             </div>
         </section>
@@ -546,15 +520,26 @@ get_header(); ?>
         <!-- CTA Section -->
         <section class="services-cta">
             <div class="section-content">
-                <h2>Ready to Transform Your Digital Presence?</h2>
-                <p>Let's discuss which services will have the biggest impact on your business growth.</p>
+                <?php 
+                $cta_title = get_post_meta(get_the_ID(), '_services_cta_title', true) ?: 'Ready to Transform Your Digital Presence?';
+                $cta_description = get_post_meta(get_the_ID(), '_services_cta_description', true) ?: 'Let\'s discuss which services will have the biggest impact on your business growth.';
+                $cta_primary_text = get_post_meta(get_the_ID(), '_services_cta_primary_text', true) ?: 'Get Free Consultation';
+                $cta_primary_link = get_post_meta(get_the_ID(), '_services_cta_primary_link', true) ?: home_url('/contact');
+                $cta_secondary_text = get_post_meta(get_the_ID(), '_services_cta_secondary_text', true) ?: 'View Our Results';
+                $cta_secondary_link = get_post_meta(get_the_ID(), '_services_cta_secondary_link', true) ?: home_url('/case-studies');
+                $cta_features = get_post_meta(get_the_ID(), '_services_cta_features', true) ?: array('Free strategy session', 'No obligation consultation', 'Custom recommendations');
+                ?>
+                <h2><?php echo wp_kses_post($cta_title); ?></h2>
+                <p><?php echo wp_kses_post($cta_description); ?></p>
                 <div class="cta-buttons">
-                    <a href="<?php echo home_url('/contact'); ?>" class="btn btn-primary">Get Free Consultation</a>
-                    <a href="<?php echo home_url('/case-studies'); ?>" class="btn btn-secondary">View Our Results</a>
+                    <a href="<?php echo esc_url($cta_primary_link); ?>" class="btn btn-primary"><?php echo wp_kses_post($cta_primary_text); ?></a>
+                    <a href="<?php echo esc_url($cta_secondary_link); ?>" class="btn btn-secondary"><?php echo wp_kses_post($cta_secondary_text); ?></a>
                 </div>                <div class="cta-benefits">
-                    <span class="benefit"><i class="fas fa-check" aria-hidden="true"></i> Free strategy session</span>
-                    <span class="benefit"><i class="fas fa-check" aria-hidden="true"></i> No obligation consultation</span>
-                    <span class="benefit"><i class="fas fa-check" aria-hidden="true"></i> Custom recommendations</span>
+                    <?php foreach ((array)$cta_features as $feature): ?>
+                        <?php if (!empty(trim($feature))): ?>
+                        <span class="benefit"><i class="fas fa-check" aria-hidden="true"></i> <?php echo esc_html($feature); ?></span>
+                        <?php endif; ?>
+                    <?php endforeach; ?>
                 </div>
             </div>
         </section>
