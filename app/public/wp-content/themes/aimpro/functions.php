@@ -84,68 +84,71 @@ function aimpro_check_submissions_table() {
 }
 add_action('wp_loaded', 'aimpro_check_submissions_table');
 
-// Include contact page meta functionality
-require_once get_template_directory() . '/includes/contact-meta.php';
+// Include meta functionality only in admin area to prevent header issues
+if (is_admin()) {
+    // Include contact page meta functionality
+    require_once get_template_directory() . '/includes/contact-meta.php';
 
-// Include author settings meta functionality
-require_once get_template_directory() . '/includes/author-settings-meta.php';
+    // Include author settings meta functionality
+    require_once get_template_directory() . '/includes/author-settings-meta.php';
 
-// Include about page meta functionality
-require_once get_template_directory() . '/includes/about-meta.php';
+    // Include about page meta functionality
+    require_once get_template_directory() . '/includes/about-meta.php';
 
-// Include AI CRM Setup page meta functionality
-require_once get_template_directory() . '/includes/ai-crm-setup-meta.php';
+    // Include AI CRM Setup page meta functionality
+    require_once get_template_directory() . '/includes/ai-crm-setup-meta.php';
 
-// Include company page meta functionality
-require_once get_template_directory() . '/includes/company-meta.php';
+    // Include company page meta functionality
+    require_once get_template_directory() . '/includes/company-meta.php';
 
-// Include team page meta functionality
-require_once get_template_directory() . '/includes/team-meta.php';
+    // Include team page meta functionality
+    require_once get_template_directory() . '/includes/team-meta.php';
 
-// Include landing pages meta functionality
-require_once get_template_directory() . '/includes/landing-pages-meta.php';
+    // Include landing pages meta functionality
+    require_once get_template_directory() . '/includes/landing-pages-meta.php';
 
-// Include testimonials page meta functionality
-require_once get_template_directory() . '/includes/testimonials-meta.php';
-require_once get_template_directory() . '/includes/careers-meta.php';
-require_once get_template_directory() . '/includes/partner-meta.php';
-require_once get_template_directory() . '/includes/resources-meta.php';
-require_once get_template_directory() . '/includes/blog-meta.php';
-require_once get_template_directory() . '/includes/case-studies-meta.php';
-require_once get_template_directory() . '/includes/templates-tools-meta.php';
-require_once get_template_directory() . '/includes/events-webinars-meta-simple.php';
-require_once get_template_directory() . '/includes/training-mentoring-meta.php';
-require_once get_template_directory() . '/includes/industries-meta.php';
-require_once get_template_directory() . '/includes/automotive-meta.php';
-require_once get_template_directory() . '/includes/home-garden-meta.php';
-require_once get_template_directory() . '/includes/finance-meta.php';
-require_once get_template_directory() . '/includes/professional-services-meta.php';
-require_once get_template_directory() . '/includes/estate-agents-meta.php';
-require_once get_template_directory() . '/includes/coaches-consultants-meta.php';
-require_once get_template_directory() . '/includes/ecommerce-meta.php';
-require_once get_template_directory() . '/includes/solutions-meta.php';
-require_once get_template_directory() . '/includes/lead-generation-meta.php';
-require_once get_template_directory() . '/includes/improve-roi-ads-meta.php';
-require_once get_template_directory() . '/includes/rank-higher-locally-meta.php';
-require_once get_template_directory() . '/includes/automate-marketing-meta.php';
-require_once get_template_directory() . '/includes/finance-meta.php';
-require_once get_template_directory() . '/includes/high-converting-website-meta.php';
-require_once get_template_directory() . '/includes/pdf-download-handler.php';
-require_once get_template_directory() . '/includes/chatbots-meta.php';
-require_once get_template_directory() . '/includes/advertising-ppc-meta.php';
-require_once get_template_directory() . '/includes/google-ads-meta.php';
-require_once get_template_directory() . '/includes/meta-ads-meta.php';
-require_once get_template_directory() . '/includes/microsoft-ads-meta.php';
-require_once get_template_directory() . '/includes/retargeting-display-meta.php';
-require_once get_template_directory() . '/includes/ppc-audit-meta.php';
-require_once get_template_directory() . '/includes/seo-services-meta.php';
-require_once get_template_directory() . '/includes/local-seo-meta.php';
-require_once get_template_directory() . '/includes/seo-audit-meta.php';
-require_once get_template_directory() . '/includes/technical-seo-meta.php';
-require_once get_template_directory() . '/includes/on-page-seo-meta.php';
-require_once get_template_directory() . '/includes/white-label-seo-meta.php';
-require_once get_template_directory() . '/includes/email-sms-flows-meta.php';
-require_once get_template_directory() . '/includes/locations-meta.php';
+    // Include testimonials page meta functionality
+    require_once get_template_directory() . '/includes/testimonials-meta.php';
+    require_once get_template_directory() . '/includes/careers-meta.php';
+    require_once get_template_directory() . '/includes/partner-meta.php';
+    require_once get_template_directory() . '/includes/resources-meta.php';
+    require_once get_template_directory() . '/includes/blog-meta.php';
+    require_once get_template_directory() . '/includes/case-studies-meta.php';
+    require_once get_template_directory() . '/includes/templates-tools-meta.php';
+    require_once get_template_directory() . '/includes/events-webinars-meta-simple.php';
+    require_once get_template_directory() . '/includes/training-mentoring-meta.php';
+    require_once get_template_directory() . '/includes/industries-meta.php';
+    require_once get_template_directory() . '/includes/automotive-meta.php';
+    require_once get_template_directory() . '/includes/home-garden-meta.php';
+    require_once get_template_directory() . '/includes/finance-meta.php';
+    require_once get_template_directory() . '/includes/professional-services-meta.php';
+    require_once get_template_directory() . '/includes/estate-agents-meta.php';
+    require_once get_template_directory() . '/includes/coaches-consultants-meta.php';
+    require_once get_template_directory() . '/includes/ecommerce-meta.php';
+    require_once get_template_directory() . '/includes/solutions-meta.php';
+    require_once get_template_directory() . '/includes/lead-generation-meta.php';
+    require_once get_template_directory() . '/includes/improve-roi-ads-meta.php';
+    require_once get_template_directory() . '/includes/rank-higher-locally-meta.php';
+    require_once get_template_directory() . '/includes/automate-marketing-meta.php';
+    require_once get_template_directory() . '/includes/finance-meta.php';
+    require_once get_template_directory() . '/includes/high-converting-website-meta.php';
+    require_once get_template_directory() . '/includes/pdf-download-handler.php';
+    require_once get_template_directory() . '/includes/chatbots-meta.php';
+    require_once get_template_directory() . '/includes/advertising-ppc-meta.php';
+    require_once get_template_directory() . '/includes/google-ads-meta.php';
+    require_once get_template_directory() . '/includes/meta-ads-meta.php';
+    require_once get_template_directory() . '/includes/microsoft-ads-meta.php';
+    require_once get_template_directory() . '/includes/retargeting-display-meta.php';
+    require_once get_template_directory() . '/includes/ppc-audit-meta.php';
+    require_once get_template_directory() . '/includes/seo-services-meta.php';
+    require_once get_template_directory() . '/includes/local-seo-meta.php';
+    require_once get_template_directory() . '/includes/seo-audit-meta.php';
+    require_once get_template_directory() . '/includes/technical-seo-meta.php';
+    require_once get_template_directory() . '/includes/on-page-seo-meta.php';
+    require_once get_template_directory() . '/includes/white-label-seo-meta.php';
+    require_once get_template_directory() . '/includes/email-sms-flows-meta.php';
+    require_once get_template_directory() . '/includes/locations-meta.php';
+}
 
 // Include helper functions
 require_once get_template_directory() . '/includes/helpers.php';

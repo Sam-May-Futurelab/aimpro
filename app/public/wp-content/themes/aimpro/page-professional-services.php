@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 /**
  * Template Name: Professional Services Industry Page
  * Description: Digital marketing for professional services firms
@@ -31,19 +31,19 @@ get_header(); ?>
     <div class="container">          <!-- Page Header -->
         <section class="page-header">
             <div class="page-header-content animate-on-scroll animate-fade-up">
-                <h1><?php echo esc_html(get_post_meta(get_the_ID(), '_professional_services_header_title', true) ?: 'Professional Services Digital Marketing'); ?></h1>
-                <p class="page-subtitle"><?php echo esc_html(get_post_meta(get_the_ID(), '_professional_services_header_subtitle', true) ?: 'Build trust, establish authority, and generate high-quality leads for your professional practice'); ?></p>
+                <h1><?php echo wp_kses_post(get_post_meta(get_the_ID(), '_professional_services_header_title', true) ?: 'Professional Services Digital Marketing'); ?></h1>
+                <p class="page-subtitle"><?php echo wp_kses_post(get_post_meta(get_the_ID(), '_professional_services_header_subtitle', true) ?: 'Build trust, establish authority, and generate high-quality leads for your professional practice'); ?></p>
             </div>
         </section>        <!-- Industry Overview -->
         <section class="industry-overview animate-on-scroll animate-fade-up">
             <div class="section-content">
                 <div class="overview-content">
                     <div class="overview-text animate-on-scroll animate-slide-left">
-                        <h2><?php echo esc_html(get_post_meta(get_the_ID(), '_professional_services_overview_title', true) ?: 'Elevate Your Professional Practice'); ?></h2>
-                        <p><?php echo esc_html(get_post_meta(get_the_ID(), '_professional_services_overview_content', true) ?: 'Professional services clients expect expertise, trust, and results. Our specialised marketing strategies help law firms, accounting practices, consulting agencies, and other professional services establish authority and attract qualified prospects.'); ?></p>
+                        <h2><?php echo wp_kses_post(get_post_meta(get_the_ID(), '_professional_services_overview_title', true) ?: 'Elevate Your Professional Practice'); ?></h2>
+                        <p><?php echo wp_kses_post(get_post_meta(get_the_ID(), '_professional_services_overview_content', true) ?: 'Professional services clients expect expertise, trust, and results. Our specialised marketing strategies help law firms, accounting practices, consulting agencies, and other professional services establish authority and attract qualified prospects.'); ?></p>
                         
                         <div class="industry-challenges animate-on-scroll animate-fade-up">
-                            <h3><?php echo esc_html(get_post_meta(get_the_ID(), '_professional_services_challenges_title', true) ?: 'Professional Services Marketing Challenges We Solve:'); ?></h3>
+                            <h3><?php echo wp_kses_post(get_post_meta(get_the_ID(), '_professional_services_challenges_title', true) ?: 'Professional Services Marketing Challenges We Solve:'); ?></h3>
                             <ul>
                                 <?php 
                                 $challenges = get_post_meta(get_the_ID(), '_professional_services_challenges', true);
@@ -76,7 +76,7 @@ get_header(); ?>
         </section><!-- Professional Services (2x2 Grid) -->
         <section class="professional-services animate-on-scroll animate-fade-up">
             <div class="section-content">
-                <h2 class="animate-on-scroll animate-fade-up"><?php echo esc_html(get_post_meta(get_the_ID(), '_professional_services_solutions_title', true) ?: 'Our Professional Services Marketing Solutions'); ?></h2>
+                <h2 class="animate-on-scroll animate-fade-up"><?php echo wp_kses_post(get_post_meta(get_the_ID(), '_professional_services_solutions_title', true) ?: 'Our Professional Services Marketing Solutions'); ?></h2>
                 <div class="benefits-grid-2x2">
                     <?php 
                     $solutions = get_post_meta(get_the_ID(), '_professional_services_solutions', true);
@@ -131,12 +131,12 @@ get_header(); ?>
             <div class="section-content">
                 <div class="case-study-content">
                     <div class="case-study-text animate-on-scroll animate-slide-left">
-                        <span class="case-study-label"><?php echo esc_html(get_post_meta(get_the_ID(), '_professional_services_case_study_label', true) ?: 'Success Story'); ?></span>
-                        <h2><?php echo esc_html(get_post_meta(get_the_ID(), '_professional_services_case_study_title', true) ?: 'WealthWise Advisors: 300% Lead Quality Improvement'); ?></h2>
-                        <p><?php echo esc_html(get_post_meta(get_the_ID(), '_professional_services_case_study_content', true) ?: 'WealthWise Advisors, a financial planning firm, needed to generate high-quality leads while maintaining professional standards and regulatory compliance.'); ?></p>
+                        <span class="case-study-label"><?php echo wp_kses_post(get_post_meta(get_the_ID(), '_professional_services_case_study_label', true) ?: 'Success Story'); ?></span>
+                        <h2><?php echo wp_kses_post(get_post_meta(get_the_ID(), '_professional_services_case_study_title', true) ?: 'WealthWise Advisors: 300% Lead Quality Improvement'); ?></h2>
+                        <p><?php echo wp_kses_post(get_post_meta(get_the_ID(), '_professional_services_case_study_content', true) ?: 'WealthWise Advisors, a financial planning firm, needed to generate high-quality leads while maintaining professional standards and regulatory compliance.'); ?></p>
                         
                         <div class="case-study-challenge animate-on-scroll animate-fade-up">
-                            <h3><?php echo esc_html(get_post_meta(get_the_ID(), '_professional_services_case_study_challenge_title', true) ?: 'The Challenge'); ?></h3>
+                            <h3><?php echo wp_kses_post(get_post_meta(get_the_ID(), '_professional_services_case_study_challenge_title', true) ?: 'The Challenge'); ?></h3>
                             <ul>
                                 <?php 
                                 $case_study_challenges = get_post_meta(get_the_ID(), '_professional_services_case_study_challenges', true);
@@ -155,7 +155,7 @@ get_header(); ?>
                         </div>
 
                         <div class="case-study-solution animate-on-scroll animate-fade-up">
-                            <h3><?php echo esc_html(get_post_meta(get_the_ID(), '_professional_services_case_study_solution_title', true) ?: 'Our Solution'); ?></h3>
+                            <h3><?php echo wp_kses_post(get_post_meta(get_the_ID(), '_professional_services_case_study_solution_title', true) ?: 'Our Solution'); ?></h3>
                             <ul>
                                 <?php 
                                 $case_study_solutions = get_post_meta(get_the_ID(), '_professional_services_case_study_solutions', true);
@@ -174,7 +174,7 @@ get_header(); ?>
                         </div>
                     </div>
                     <div class="case-study-results animate-on-scroll animate-slide-right">
-                        <h3><?php echo esc_html(get_post_meta(get_the_ID(), '_professional_services_case_study_results_title', true) ?: 'Results After 8 Months'); ?></h3>
+                        <h3><?php echo wp_kses_post(get_post_meta(get_the_ID(), '_professional_services_case_study_results_title', true) ?: 'Results After 8 Months'); ?></h3>
                         <div class="results-grid">
                             <?php 
                             $case_study_results = get_post_meta(get_the_ID(), '_professional_services_case_study_results', true);
@@ -200,7 +200,7 @@ get_header(); ?>
         </section>        <!-- Professional Services Process -->
         <section class="professional-process animate-on-scroll animate-fade-up">
             <div class="section-content">
-                <h2 class="animate-on-scroll animate-fade-up"><?php echo esc_html(get_post_meta(get_the_ID(), '_professional_services_process_title', true) ?: 'Our Professional Services Marketing Process'); ?></h2>
+                <h2 class="animate-on-scroll animate-fade-up"><?php echo wp_kses_post(get_post_meta(get_the_ID(), '_professional_services_process_title', true) ?: 'Our Professional Services Marketing Process'); ?></h2>
                 <div class="process-steps animate-on-scroll animate-fade-up">
                     <?php 
                     $process_steps = get_post_meta(get_the_ID(), '_professional_services_process_steps', true);
@@ -240,7 +240,7 @@ get_header(); ?>
         </section>        <!-- Professional Services Insights -->
         <section class="professional-insights animate-on-scroll animate-fade-up">
             <div class="section-content">
-                <h2 class="animate-on-scroll animate-fade-up"><?php echo esc_html(get_post_meta(get_the_ID(), '_professional_services_insights_title', true) ?: 'Professional Services Industry Insights'); ?></h2>
+                <h2 class="animate-on-scroll animate-fade-up"><?php echo wp_kses_post(get_post_meta(get_the_ID(), '_professional_services_insights_title', true) ?: 'Professional Services Industry Insights'); ?></h2>
                 <div class="results-grid animate-on-scroll animate-fade-up">
                     <?php 
                     $insights = get_post_meta(get_the_ID(), '_professional_services_insights', true);
@@ -281,7 +281,7 @@ get_header(); ?>
             <div class="section-content">
                 <div class="testimonial-content animate-on-scroll animate-slide-up">
                     <blockquote>
-                        "<?php echo esc_html(get_post_meta(get_the_ID(), '_professional_services_testimonial_quote', true) ?: 'Aimpro Digital\'s understanding of professional services marketing is exceptional. They helped us maintain compliance while dramatically improving our lead quality. The team\'s strategic approach to long sales cycles and high-value clients made all the difference.'); ?>"
+                        "<?php echo wp_kses_post(get_post_meta(get_the_ID(), '_professional_services_testimonial_quote', true) ?: 'Aimpro Digital\'s understanding of professional services marketing is exceptional. They helped us maintain compliance while dramatically improving our lead quality. The team\'s strategic approach to long sales cycles and high-value clients made all the difference.'); ?>"
                     </blockquote>
                     <div class="testimonial-author">
                         <div class="author-info">
@@ -295,8 +295,8 @@ get_header(); ?>
         </section>        <!-- CTA Section -->        
         <section class="professional-cta text-center animate-on-scroll animate-fade-up">
             <div class="section-content">
-                <h2 class="animate-on-scroll animate-fade-up"><?php echo esc_html(get_post_meta(get_the_ID(), '_professional_services_cta_title', true) ?: 'Ready to Elevate Your Professional Practice?'); ?></h2>
-                <p class="animate-on-scroll animate-fade-up"><?php echo esc_html(get_post_meta(get_the_ID(), '_professional_services_cta_subtitle', true) ?: 'Let\'s discuss how our professional services marketing expertise can generate high-quality leads for your firm.'); ?></p>
+                <h2 class="animate-on-scroll animate-fade-up"><?php echo wp_kses_post(get_post_meta(get_the_ID(), '_professional_services_cta_title', true) ?: 'Ready to Elevate Your Professional Practice?'); ?></h2>
+                <p class="animate-on-scroll animate-fade-up"><?php echo wp_kses_post(get_post_meta(get_the_ID(), '_professional_services_cta_subtitle', true) ?: 'Let\'s discuss how our professional services marketing expertise can generate high-quality leads for your firm.'); ?></p>
                 <div class="cta-buttons animate-on-scroll animate-fade-up">
                     <a href="<?php echo esc_url(get_post_meta(get_the_ID(), '_professional_services_cta_primary_url', true) ?: home_url('/contact')); ?>" class="btn btn-primary"><?php echo esc_html(get_post_meta(get_the_ID(), '_professional_services_cta_primary_text', true) ?: 'Get Free Practice Audit'); ?></a>
                     <a href="<?php echo esc_url(get_post_meta(get_the_ID(), '_professional_services_cta_secondary_url', true) ?: home_url('/case-studies')); ?>" class="btn btn-secondary"><?php echo esc_html(get_post_meta(get_the_ID(), '_professional_services_cta_secondary_text', true) ?: 'View More Success Stories'); ?></a>

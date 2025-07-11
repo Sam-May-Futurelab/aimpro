@@ -260,19 +260,25 @@ function professional_services_meta_box_callback($post) {
             <tr>
                 <th><label for="professional_services_header_title">Page Title</label></th>
                 <td>
-                    <input type="text" 
-                           id="professional_services_header_title" 
-                           name="professional_services_header_title" 
-                           value="<?php echo esc_attr($header_title); ?>"
-                           placeholder="Professional Services Digital Marketing" />
+                    <?php wp_editor($header_title, 'professional_services_header_title_editor', array(
+                        'textarea_name' => 'professional_services_header_title',
+                        'media_buttons' => false,
+                        'textarea_rows' => 2,
+                        'teeny' => true,
+                        'quicktags' => array('buttons' => 'strong,em,link')
+                    )); ?>
                 </td>
             </tr>
             <tr>
                 <th><label for="professional_services_header_subtitle">Page Subtitle</label></th>
                 <td>
-                    <textarea id="professional_services_header_subtitle" 
-                              name="professional_services_header_subtitle"
-                              placeholder="Build trust, establish authority, and generate high-quality leads for your professional practice"><?php echo esc_textarea($header_subtitle); ?></textarea>
+                    <?php wp_editor($header_subtitle, 'professional_services_header_subtitle_editor', array(
+                        'textarea_name' => 'professional_services_header_subtitle',
+                        'media_buttons' => false,
+                        'textarea_rows' => 3,
+                        'teeny' => true,
+                        'quicktags' => array('buttons' => 'strong,em,link')
+                    )); ?>
                 </td>
             </tr>
         </table>
@@ -283,19 +289,25 @@ function professional_services_meta_box_callback($post) {
             <tr>
                 <th><label for="professional_services_overview_title">Overview Title</label></th>
                 <td>
-                    <input type="text" 
-                           id="professional_services_overview_title" 
-                           name="professional_services_overview_title" 
-                           value="<?php echo esc_attr($overview_title); ?>"
-                           placeholder="Elevate Your Professional Practice" />
+                    <?php wp_editor($overview_title, 'professional_services_overview_title_editor', array(
+                        'textarea_name' => 'professional_services_overview_title',
+                        'media_buttons' => false,
+                        'textarea_rows' => 2,
+                        'teeny' => true,
+                        'quicktags' => array('buttons' => 'strong,em,link')
+                    )); ?>
                 </td>
             </tr>
             <tr>
                 <th><label for="professional_services_overview_content">Overview Content</label></th>
                 <td>
-                    <textarea id="professional_services_overview_content" 
-                              name="professional_services_overview_content"
-                              placeholder="Professional services clients expect expertise, trust, and results..."><?php echo esc_textarea($overview_content); ?></textarea>
+                    <?php wp_editor($overview_content, 'professional_services_overview_content_editor', array(
+                        'textarea_name' => 'professional_services_overview_content',
+                        'media_buttons' => false,
+                        'textarea_rows' => 6,
+                        'teeny' => true,
+                        'quicktags' => array('buttons' => 'strong,em,link,ul,ol,li')
+                    )); ?>
                 </td>
             </tr>
             <tr>
@@ -323,11 +335,13 @@ function professional_services_meta_box_callback($post) {
             <tr>
                 <th><label for="professional_services_challenges_title">Challenges Title</label></th>
                 <td>
-                    <input type="text" 
-                           id="professional_services_challenges_title" 
-                           name="professional_services_challenges_title" 
-                           value="<?php echo esc_attr($challenges_title); ?>"
-                           placeholder="Professional Services Marketing Challenges We Solve:" />
+                    <?php wp_editor($challenges_title, 'professional_services_challenges_title_editor', array(
+                        'textarea_name' => 'professional_services_challenges_title',
+                        'media_buttons' => false,
+                        'textarea_rows' => 2,
+                        'teeny' => true,
+                        'quicktags' => array('buttons' => 'strong,em,link')
+                    )); ?>
                 </td>
             </tr>
             <tr>
@@ -357,11 +371,13 @@ function professional_services_meta_box_callback($post) {
             <tr>
                 <th><label for="professional_services_solutions_title">Solutions Title</label></th>
                 <td>
-                    <input type="text" 
-                           id="professional_services_solutions_title" 
-                           name="professional_services_solutions_title" 
-                           value="<?php echo esc_attr($solutions_title); ?>"
-                           placeholder="Our Professional Services Marketing Solutions" />
+                    <?php wp_editor($solutions_title, 'professional_services_solutions_title_editor', array(
+                        'textarea_name' => 'professional_services_solutions_title',
+                        'media_buttons' => false,
+                        'textarea_rows' => 2,
+                        'teeny' => true,
+                        'quicktags' => array('buttons' => 'strong,em,link')
+                    )); ?>
                 </td>
             </tr>
         </table>
@@ -379,8 +395,13 @@ function professional_services_meta_box_callback($post) {
                                name="professional_services_solutions[<?php echo $index; ?>][title]" 
                                value="<?php echo esc_attr($solution['title']); ?>"
                                placeholder="Solution title" />
-                        <textarea name="professional_services_solutions[<?php echo $index; ?>][description]" 
-                                  placeholder="Solution description"><?php echo esc_textarea($solution['description']); ?></textarea>
+                        <?php wp_editor($solution['description'], 'professional_services_solutions_description_' . $index . '_editor', array(
+                            'textarea_name' => 'professional_services_solutions[' . $index . '][description]',
+                            'media_buttons' => false,
+                            'textarea_rows' => 3,
+                            'teeny' => true,
+                            'quicktags' => array('buttons' => 'strong,em,link')
+                        )); ?>
                         <div>
                             <strong>Features:</strong>
                             <?php foreach ($solution['features'] as $feat_index => $feature): ?>
@@ -402,39 +423,49 @@ function professional_services_meta_box_callback($post) {
             <tr>
                 <th><label for="professional_services_case_study_label">Case Study Label</label></th>
                 <td>
-                    <input type="text" 
-                           id="professional_services_case_study_label" 
-                           name="professional_services_case_study_label" 
-                           value="<?php echo esc_attr($case_study_label); ?>"
-                           placeholder="Success Story" />
+                    <?php wp_editor($case_study_label, 'professional_services_case_study_label_editor', array(
+                        'textarea_name' => 'professional_services_case_study_label',
+                        'media_buttons' => false,
+                        'textarea_rows' => 1,
+                        'teeny' => true,
+                        'quicktags' => array('buttons' => 'strong,em,link')
+                    )); ?>
                 </td>
             </tr>
             <tr>
                 <th><label for="professional_services_case_study_title">Case Study Title</label></th>
                 <td>
-                    <input type="text" 
-                           id="professional_services_case_study_title" 
-                           name="professional_services_case_study_title" 
-                           value="<?php echo esc_attr($case_study_title); ?>"
-                           placeholder="WealthWise Advisors: 300% Lead Quality Improvement" />
+                    <?php wp_editor($case_study_title, 'professional_services_case_study_title_editor', array(
+                        'textarea_name' => 'professional_services_case_study_title',
+                        'media_buttons' => false,
+                        'textarea_rows' => 2,
+                        'teeny' => true,
+                        'quicktags' => array('buttons' => 'strong,em,link')
+                    )); ?>
                 </td>
             </tr>
             <tr>
                 <th><label for="professional_services_case_study_content">Case Study Content</label></th>
                 <td>
-                    <textarea id="professional_services_case_study_content" 
-                              name="professional_services_case_study_content"
-                              placeholder="Case study description..."><?php echo esc_textarea($case_study_content); ?></textarea>
+                    <?php wp_editor($case_study_content, 'professional_services_case_study_content_editor', array(
+                        'textarea_name' => 'professional_services_case_study_content',
+                        'media_buttons' => false,
+                        'textarea_rows' => 4,
+                        'teeny' => true,
+                        'quicktags' => array('buttons' => 'strong,em,link,ul,ol,li')
+                    )); ?>
                 </td>
             </tr>
             <tr>
                 <th><label for="professional_services_case_study_challenge_title">Challenge Section Title</label></th>
                 <td>
-                    <input type="text" 
-                           id="professional_services_case_study_challenge_title" 
-                           name="professional_services_case_study_challenge_title" 
-                           value="<?php echo esc_attr($case_study_challenge_title); ?>"
-                           placeholder="The Challenge" />
+                    <?php wp_editor($case_study_challenge_title, 'professional_services_case_study_challenge_title_editor', array(
+                        'textarea_name' => 'professional_services_case_study_challenge_title',
+                        'media_buttons' => false,
+                        'textarea_rows' => 1,
+                        'teeny' => true,
+                        'quicktags' => array('buttons' => 'strong,em,link')
+                    )); ?>
                 </td>
             </tr>
             <tr>
@@ -459,11 +490,13 @@ function professional_services_meta_box_callback($post) {
             <tr>
                 <th><label for="professional_services_case_study_solution_title">Solution Section Title</label></th>
                 <td>
-                    <input type="text" 
-                           id="professional_services_case_study_solution_title" 
-                           name="professional_services_case_study_solution_title" 
-                           value="<?php echo esc_attr($case_study_solution_title); ?>"
-                           placeholder="Our Solution" />
+                    <?php wp_editor($case_study_solution_title, 'professional_services_case_study_solution_title_editor', array(
+                        'textarea_name' => 'professional_services_case_study_solution_title',
+                        'media_buttons' => false,
+                        'textarea_rows' => 1,
+                        'teeny' => true,
+                        'quicktags' => array('buttons' => 'strong,em,link')
+                    )); ?>
                 </td>
             </tr>
             <tr>
@@ -488,11 +521,13 @@ function professional_services_meta_box_callback($post) {
             <tr>
                 <th><label for="professional_services_case_study_results_title">Results Section Title</label></th>
                 <td>
-                    <input type="text" 
-                           id="professional_services_case_study_results_title" 
-                           name="professional_services_case_study_results_title" 
-                           value="<?php echo esc_attr($case_study_results_title); ?>"
-                           placeholder="Results After 8 Months" />
+                    <?php wp_editor($case_study_results_title, 'professional_services_case_study_results_title_editor', array(
+                        'textarea_name' => 'professional_services_case_study_results_title',
+                        'media_buttons' => false,
+                        'textarea_rows' => 1,
+                        'teeny' => true,
+                        'quicktags' => array('buttons' => 'strong,em,link')
+                    )); ?>
                 </td>
             </tr>
         </table>
@@ -545,11 +580,13 @@ function professional_services_meta_box_callback($post) {
             <tr>
                 <th><label for="professional_services_process_title">Process Title</label></th>
                 <td>
-                    <input type="text" 
-                           id="professional_services_process_title" 
-                           name="professional_services_process_title" 
-                           value="<?php echo esc_attr($process_title); ?>"
-                           placeholder="Our Professional Services Marketing Process" />
+                    <?php wp_editor($process_title, 'professional_services_process_title_editor', array(
+                        'textarea_name' => 'professional_services_process_title',
+                        'media_buttons' => false,
+                        'textarea_rows' => 2,
+                        'teeny' => true,
+                        'quicktags' => array('buttons' => 'strong,em,link')
+                    )); ?>
                 </td>
             </tr>
         </table>
@@ -563,8 +600,13 @@ function professional_services_meta_box_callback($post) {
                                name="professional_services_process_steps[<?php echo $index; ?>][title]" 
                                value="<?php echo esc_attr($step['title']); ?>"
                                placeholder="Step title" />
-                        <textarea name="professional_services_process_steps[<?php echo $index; ?>][description]" 
-                                  placeholder="Step description"><?php echo esc_textarea($step['description']); ?></textarea>
+                        <?php wp_editor($step['description'], 'professional_services_process_steps_description_' . $index . '_editor', array(
+                            'textarea_name' => 'professional_services_process_steps[' . $index . '][description]',
+                            'media_buttons' => false,
+                            'textarea_rows' => 3,
+                            'teeny' => true,
+                            'quicktags' => array('buttons' => 'strong,em,link,ul,ol,li')
+                        )); ?>
                         <button type="button" class="button remove-repeater-item">Remove Step</button>
                     </div>
                 <?php endforeach; ?>
@@ -577,11 +619,13 @@ function professional_services_meta_box_callback($post) {
             <tr>
                 <th><label for="professional_services_insights_title">Insights Title</label></th>
                 <td>
-                    <input type="text" 
-                           id="professional_services_insights_title" 
-                           name="professional_services_insights_title" 
-                           value="<?php echo esc_attr($insights_title); ?>"
-                           placeholder="Professional Services Industry Insights" />
+                    <?php wp_editor($insights_title, 'professional_services_insights_title_editor', array(
+                        'textarea_name' => 'professional_services_insights_title',
+                        'media_buttons' => false,
+                        'textarea_rows' => 2,
+                        'teeny' => true,
+                        'quicktags' => array('buttons' => 'strong,em,link')
+                    )); ?>
                 </td>
             </tr>
         </table>
@@ -599,8 +643,13 @@ function professional_services_meta_box_callback($post) {
                                name="professional_services_insights[<?php echo $index; ?>][title]" 
                                value="<?php echo esc_attr($insight['title']); ?>"
                                placeholder="Insight title" />
-                        <textarea name="professional_services_insights[<?php echo $index; ?>][description]" 
-                                  placeholder="Insight description"><?php echo esc_textarea($insight['description']); ?></textarea>
+                        <?php wp_editor($insight['description'], 'professional_services_insights_description_' . $index . '_editor', array(
+                            'textarea_name' => 'professional_services_insights[' . $index . '][description]',
+                            'media_buttons' => false,
+                            'textarea_rows' => 2,
+                            'teeny' => true,
+                            'quicktags' => array('buttons' => 'strong,em,link')
+                        )); ?>
                         <button type="button" class="button remove-repeater-item">Remove Insight</button>
                     </div>
                 <?php endforeach; ?>
@@ -613,9 +662,13 @@ function professional_services_meta_box_callback($post) {
             <tr>
                 <th><label for="professional_services_testimonial_quote">Testimonial Quote</label></th>
                 <td>
-                    <textarea id="professional_services_testimonial_quote" 
-                              name="professional_services_testimonial_quote"
-                              placeholder="Customer testimonial quote..."><?php echo esc_textarea($testimonial_quote); ?></textarea>
+                    <?php wp_editor($testimonial_quote, 'professional_services_testimonial_quote_editor', array(
+                        'textarea_name' => 'professional_services_testimonial_quote',
+                        'media_buttons' => false,
+                        'textarea_rows' => 4,
+                        'teeny' => true,
+                        'quicktags' => array('buttons' => 'strong,em,link')
+                    )); ?>
                 </td>
             </tr>
             <tr>
@@ -656,19 +709,25 @@ function professional_services_meta_box_callback($post) {
             <tr>
                 <th><label for="professional_services_cta_title">CTA Title</label></th>
                 <td>
-                    <input type="text" 
-                           id="professional_services_cta_title" 
-                           name="professional_services_cta_title" 
-                           value="<?php echo esc_attr($cta_title); ?>"
-                           placeholder="Ready to Elevate Your Professional Practice?" />
+                    <?php wp_editor($cta_title, 'professional_services_cta_title_editor', array(
+                        'textarea_name' => 'professional_services_cta_title',
+                        'media_buttons' => false,
+                        'textarea_rows' => 2,
+                        'teeny' => true,
+                        'quicktags' => array('buttons' => 'strong,em,link')
+                    )); ?>
                 </td>
             </tr>
             <tr>
                 <th><label for="professional_services_cta_subtitle">CTA Subtitle</label></th>
                 <td>
-                    <textarea id="professional_services_cta_subtitle" 
-                              name="professional_services_cta_subtitle"
-                              placeholder="Let's discuss how our professional services marketing expertise can generate high-quality leads for your firm."><?php echo esc_textarea($cta_subtitle); ?></textarea>
+                    <?php wp_editor($cta_subtitle, 'professional_services_cta_subtitle_editor', array(
+                        'textarea_name' => 'professional_services_cta_subtitle',
+                        'media_buttons' => false,
+                        'textarea_rows' => 3,
+                        'teeny' => true,
+                        'quicktags' => array('buttons' => 'strong,em,link')
+                    )); ?>
                 </td>
             </tr>
             <tr>
@@ -808,48 +867,76 @@ function save_professional_services_meta_box_data($post_id) {
         }
     }
 
-    // Save all fields
-    $fields = [
+    // Rich text fields that should use wp_kses_post()
+    $rich_text_fields = [
         'professional_services_header_title',
         'professional_services_header_subtitle',
         'professional_services_overview_title',
         'professional_services_overview_content',
-        'professional_services_overview_image',
         'professional_services_challenges_title',
-        'professional_services_challenges',
         'professional_services_solutions_title',
-        'professional_services_solutions',
         'professional_services_case_study_label',
         'professional_services_case_study_title',
         'professional_services_case_study_content',
         'professional_services_case_study_challenge_title',
-        'professional_services_case_study_challenges',
         'professional_services_case_study_solution_title',
-        'professional_services_case_study_solutions',
         'professional_services_case_study_results_title',
-        'professional_services_case_study_results',
-        'professional_services_case_study_link_text',
-        'professional_services_case_study_link_url',
         'professional_services_process_title',
-        'professional_services_process_steps',
         'professional_services_insights_title',
-        'professional_services_insights',
         'professional_services_testimonial_quote',
-        'professional_services_testimonial_name',
-        'professional_services_testimonial_position',
-        'professional_services_testimonial_company',
         'professional_services_cta_title',
-        'professional_services_cta_subtitle',
-        'professional_services_cta_primary_text',
-        'professional_services_cta_primary_url',
-        'professional_services_cta_secondary_text',
-        'professional_services_cta_secondary_url',
+        'professional_services_cta_subtitle'
+    ];
+
+    // Array fields and other fields that need special handling
+    $array_fields = [
+        'professional_services_challenges',
+        'professional_services_solutions',
+        'professional_services_case_study_challenges',
+        'professional_services_case_study_solutions',
+        'professional_services_case_study_results',
+        'professional_services_process_steps',
+        'professional_services_insights',
         'professional_services_cta_benefits'
     ];
 
-    foreach ($fields as $field) {
+    // URL/Text fields that should use sanitize_text_field()
+    $text_fields = [
+        'professional_services_overview_image',
+        'professional_services_case_study_link_text',
+        'professional_services_case_study_link_url',
+        'professional_services_testimonial_name',
+        'professional_services_testimonial_position',
+        'professional_services_testimonial_company',
+        'professional_services_cta_primary_text',
+        'professional_services_cta_primary_url',
+        'professional_services_cta_secondary_text',
+        'professional_services_cta_secondary_url'
+    ];
+
+    // Save rich text fields with wp_kses_post()
+    foreach ($rich_text_fields as $field) {
         if (isset($_POST[$field])) {
-            update_post_meta($post_id, '_' . $field, sanitize_meta_value($field, $_POST[$field]));
+            update_post_meta($post_id, '_' . $field, wp_kses_post($_POST[$field]));
+        }
+    }
+
+    // Save array fields with special handling
+    foreach ($array_fields as $field) {
+        if (isset($_POST[$field])) {
+            $sanitized_array = sanitize_meta_value($field, $_POST[$field]);
+            update_post_meta($post_id, '_' . $field, $sanitized_array);
+        }
+    }
+
+    // Save simple text fields with sanitize_text_field()
+    foreach ($text_fields as $field) {
+        if (isset($_POST[$field])) {
+            if (strpos($field, '_url') !== false || strpos($field, '_image') !== false) {
+                update_post_meta($post_id, '_' . $field, esc_url_raw($_POST[$field]));
+            } else {
+                update_post_meta($post_id, '_' . $field, sanitize_text_field($_POST[$field]));
+            }
         }
     }
 }
@@ -858,7 +945,23 @@ add_action('save_post', 'save_professional_services_meta_box_data');
 function sanitize_meta_value($field, $value) {
     if (is_array($value)) {
         return array_map(function($item) use ($field) {
-            return sanitize_meta_value($field, $item);
+            if (is_array($item)) {
+                // For nested arrays like solutions and process steps
+                $sanitized_item = array();
+                foreach ($item as $key => $val) {
+                    if ($key === 'description') {
+                        // Rich text content for descriptions
+                        $sanitized_item[$key] = wp_kses_post($val);
+                    } elseif (is_array($val)) {
+                        // For features arrays
+                        $sanitized_item[$key] = array_map('sanitize_text_field', $val);
+                    } else {
+                        $sanitized_item[$key] = sanitize_text_field($val);
+                    }
+                }
+                return $sanitized_item;
+            }
+            return sanitize_text_field($item);
         }, $value);
     }
     
@@ -867,10 +970,8 @@ function sanitize_meta_value($field, $value) {
     }
     
     if (strpos($field, '_content') !== false || strpos($field, '_subtitle') !== false || strpos($field, '_quote') !== false) {
-        return sanitize_textarea_field($value);
+        return wp_kses_post($value);
     }
     
     return sanitize_text_field($value);
 }
-?>
-
