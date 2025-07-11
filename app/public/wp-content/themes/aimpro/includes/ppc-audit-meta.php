@@ -302,11 +302,23 @@ function aimpro_ppc_audit_hero_callback($post) {
     ?>
     <p>
         <label for="ppc_audit_hero_title"><?php _e('Hero Title', 'aimpro'); ?></label><br>
-        <input type="text" id="ppc_audit_hero_title" name="ppc_audit_hero_title" value="<?php echo esc_attr($hero_title); ?>" class="widefat">
+        <?php wp_editor($hero_title, 'ppc_audit_hero_title', array(
+            'textarea_name' => 'ppc_audit_hero_title',
+            'media_buttons' => false,
+            'textarea_rows' => 3,
+            'teeny' => true,
+            'quicktags' => array('buttons' => 'strong,em,link')
+        )); ?>
     </p>
     <p>
         <label for="ppc_audit_hero_subtitle"><?php _e('Hero Subtitle', 'aimpro'); ?></label><br>
-        <textarea id="ppc_audit_hero_subtitle" name="ppc_audit_hero_subtitle" class="widefat" rows="4"><?php echo esc_textarea($hero_subtitle); ?></textarea>
+        <?php wp_editor($hero_subtitle, 'ppc_audit_hero_subtitle', array(
+            'textarea_name' => 'ppc_audit_hero_subtitle',
+            'media_buttons' => false,
+            'textarea_rows' => 4,
+            'teeny' => true,
+            'quicktags' => array('buttons' => 'strong,em,link,ul,ol,li')
+        )); ?>
     </p>
     
     <h4><?php _e('Hero Stats', 'aimpro'); ?></h4>
@@ -314,31 +326,67 @@ function aimpro_ppc_audit_hero_callback($post) {
         <div style="flex: 1;">
             <p>
                 <label for="ppc_audit_hero_stat1_number"><?php _e('Stat 1 Number', 'aimpro'); ?></label><br>
-                <input type="text" id="ppc_audit_hero_stat1_number" name="ppc_audit_hero_stat1_number" value="<?php echo esc_attr($hero_stat1_number); ?>" class="widefat">
+                <?php wp_editor($hero_stat1_number, 'ppc_audit_hero_stat1_number', array(
+                    'textarea_name' => 'ppc_audit_hero_stat1_number',
+                    'media_buttons' => false,
+                    'textarea_rows' => 2,
+                    'teeny' => true,
+                    'quicktags' => array('buttons' => 'strong,em,link')
+                )); ?>
             </p>
             <p>
                 <label for="ppc_audit_hero_stat1_label"><?php _e('Stat 1 Label', 'aimpro'); ?></label><br>
-                <input type="text" id="ppc_audit_hero_stat1_label" name="ppc_audit_hero_stat1_label" value="<?php echo esc_attr($hero_stat1_label); ?>" class="widefat">
+                <?php wp_editor($hero_stat1_label, 'ppc_audit_hero_stat1_label', array(
+                    'textarea_name' => 'ppc_audit_hero_stat1_label',
+                    'media_buttons' => false,
+                    'textarea_rows' => 2,
+                    'teeny' => true,
+                    'quicktags' => array('buttons' => 'strong,em,link')
+                )); ?>
             </p>
         </div>
         <div style="flex: 1;">
             <p>
                 <label for="ppc_audit_hero_stat2_number"><?php _e('Stat 2 Number', 'aimpro'); ?></label><br>
-                <input type="text" id="ppc_audit_hero_stat2_number" name="ppc_audit_hero_stat2_number" value="<?php echo esc_attr($hero_stat2_number); ?>" class="widefat">
+                <?php wp_editor($hero_stat2_number, 'ppc_audit_hero_stat2_number', array(
+                    'textarea_name' => 'ppc_audit_hero_stat2_number',
+                    'media_buttons' => false,
+                    'textarea_rows' => 2,
+                    'teeny' => true,
+                    'quicktags' => array('buttons' => 'strong,em,link')
+                )); ?>
             </p>
             <p>
                 <label for="ppc_audit_hero_stat2_label"><?php _e('Stat 2 Label', 'aimpro'); ?></label><br>
-                <input type="text" id="ppc_audit_hero_stat2_label" name="ppc_audit_hero_stat2_label" value="<?php echo esc_attr($hero_stat2_label); ?>" class="widefat">
+                <?php wp_editor($hero_stat2_label, 'ppc_audit_hero_stat2_label', array(
+                    'textarea_name' => 'ppc_audit_hero_stat2_label',
+                    'media_buttons' => false,
+                    'textarea_rows' => 2,
+                    'teeny' => true,
+                    'quicktags' => array('buttons' => 'strong,em,link')
+                )); ?>
             </p>
         </div>
         <div style="flex: 1;">
             <p>
                 <label for="ppc_audit_hero_stat3_number"><?php _e('Stat 3 Number', 'aimpro'); ?></label><br>
-                <input type="text" id="ppc_audit_hero_stat3_number" name="ppc_audit_hero_stat3_number" value="<?php echo esc_attr($hero_stat3_number); ?>" class="widefat">
+                <?php wp_editor($hero_stat3_number, 'ppc_audit_hero_stat3_number', array(
+                    'textarea_name' => 'ppc_audit_hero_stat3_number',
+                    'media_buttons' => false,
+                    'textarea_rows' => 2,
+                    'teeny' => true,
+                    'quicktags' => array('buttons' => 'strong,em,link')
+                )); ?>
             </p>
             <p>
                 <label for="ppc_audit_hero_stat3_label"><?php _e('Stat 3 Label', 'aimpro'); ?></label><br>
-                <input type="text" id="ppc_audit_hero_stat3_label" name="ppc_audit_hero_stat3_label" value="<?php echo esc_attr($hero_stat3_label); ?>" class="widefat">
+                <?php wp_editor($hero_stat3_label, 'ppc_audit_hero_stat3_label', array(
+                    'textarea_name' => 'ppc_audit_hero_stat3_label',
+                    'media_buttons' => false,
+                    'textarea_rows' => 2,
+                    'teeny' => true,
+                    'quicktags' => array('buttons' => 'strong,em,link')
+                )); ?>
             </p>
         </div>
     </div>
@@ -348,13 +396,25 @@ function aimpro_ppc_audit_hero_callback($post) {
         <div style="flex: 1;">
             <p>
                 <label for="ppc_audit_hero_cta1_text"><?php _e('Primary CTA Text', 'aimpro'); ?></label><br>
-                <input type="text" id="ppc_audit_hero_cta1_text" name="ppc_audit_hero_cta1_text" value="<?php echo esc_attr($hero_cta1_text); ?>" class="widefat">
+                <?php wp_editor($hero_cta1_text, 'ppc_audit_hero_cta1_text', array(
+                    'textarea_name' => 'ppc_audit_hero_cta1_text',
+                    'media_buttons' => false,
+                    'textarea_rows' => 2,
+                    'teeny' => true,
+                    'quicktags' => array('buttons' => 'strong,em,link')
+                )); ?>
             </p>
         </div>
         <div style="flex: 1;">
             <p>
                 <label for="ppc_audit_hero_cta2_text"><?php _e('Secondary CTA Text', 'aimpro'); ?></label><br>
-                <input type="text" id="ppc_audit_hero_cta2_text" name="ppc_audit_hero_cta2_text" value="<?php echo esc_attr($hero_cta2_text); ?>" class="widefat">
+                <?php wp_editor($hero_cta2_text, 'ppc_audit_hero_cta2_text', array(
+                    'textarea_name' => 'ppc_audit_hero_cta2_text',
+                    'media_buttons' => false,
+                    'textarea_rows' => 2,
+                    'teeny' => true,
+                    'quicktags' => array('buttons' => 'strong,em,link')
+                )); ?>
             </p>
         </div>
     </div>
@@ -378,11 +438,23 @@ function aimpro_ppc_audit_overview_callback($post) {
     ?>
     <p>
         <label for="ppc_audit_overview_title"><?php _e('Overview Title', 'aimpro'); ?></label><br>
-        <input type="text" id="ppc_audit_overview_title" name="ppc_audit_overview_title" value="<?php echo esc_attr($overview_title); ?>" class="widefat">
+        <?php wp_editor($overview_title, 'ppc_audit_overview_title', array(
+            'textarea_name' => 'ppc_audit_overview_title',
+            'media_buttons' => false,
+            'textarea_rows' => 3,
+            'teeny' => true,
+            'quicktags' => array('buttons' => 'strong,em,link')
+        )); ?>
     </p>
     <p>
         <label for="ppc_audit_overview_content"><?php _e('Overview Content', 'aimpro'); ?></label><br>
-        <textarea id="ppc_audit_overview_content" name="ppc_audit_overview_content" class="widefat" rows="5"><?php echo esc_textarea($overview_content); ?></textarea>
+        <?php wp_editor($overview_content, 'ppc_audit_overview_content', array(
+            'textarea_name' => 'ppc_audit_overview_content',
+            'media_buttons' => false,
+            'textarea_rows' => 5,
+            'teeny' => true,
+            'quicktags' => array('buttons' => 'strong,em,link,ul,ol,li')
+        )); ?>
     </p>
     <?php
 }
@@ -414,11 +486,23 @@ function aimpro_ppc_audit_services_callback($post) {
                 
                 <p>
                     <label for="ppc_audit_service_title_<?php echo $i; ?>"><?php _e('Service Title', 'aimpro'); ?></label><br>
-                    <input type="text" id="ppc_audit_service_title_<?php echo $i; ?>" name="ppc_audit_service_title_<?php echo $i; ?>" value="<?php echo esc_attr($service_title); ?>" class="widefat">
+                    <?php wp_editor($service_title, "ppc_audit_service_title_{$i}", array(
+                        'textarea_name' => "ppc_audit_service_title_{$i}",
+                        'media_buttons' => false,
+                        'textarea_rows' => 2,
+                        'teeny' => true,
+                        'quicktags' => array('buttons' => 'strong,em,link')
+                    )); ?>
                 </p>
                 <p>
                     <label for="ppc_audit_service_content_<?php echo $i; ?>"><?php _e('Service Content', 'aimpro'); ?></label><br>
-                    <textarea id="ppc_audit_service_content_<?php echo $i; ?>" name="ppc_audit_service_content_<?php echo $i; ?>" class="widefat" rows="3"><?php echo esc_textarea($service_content); ?></textarea>
+                    <?php wp_editor($service_content, "ppc_audit_service_content_{$i}", array(
+                        'textarea_name' => "ppc_audit_service_content_{$i}",
+                        'media_buttons' => false,
+                        'textarea_rows' => 4,
+                        'teeny' => true,
+                        'quicktags' => array('buttons' => 'strong,em,link,ul,ol,li')
+                    )); ?>
                 </p>
                 <p>
                     <label for="ppc_audit_service_icon_<?php echo $i; ?>"><?php _e('Service Icon (Font Awesome class)', 'aimpro'); ?></label><br>
@@ -444,7 +528,13 @@ function aimpro_ppc_audit_process_callback($post) {
     ?>
     <p>
         <label for="ppc_audit_process_title"><?php _e('Process Title', 'aimpro'); ?></label><br>
-        <input type="text" id="ppc_audit_process_title" name="ppc_audit_process_title" value="<?php echo esc_attr($process_title); ?>" class="widefat">
+        <?php wp_editor($process_title, 'ppc_audit_process_title', array(
+            'textarea_name' => 'ppc_audit_process_title',
+            'media_buttons' => false,
+            'textarea_rows' => 3,
+            'teeny' => true,
+            'quicktags' => array('buttons' => 'strong,em,link')
+        )); ?>
     </p>
     
     <div id="ppc-audit-process-categories">
@@ -465,11 +555,23 @@ function aimpro_ppc_audit_process_callback($post) {
                 
                 <p>
                     <label for="ppc_audit_process_category_title_<?php echo $i; ?>"><?php _e('Category Title', 'aimpro'); ?></label><br>
-                    <input type="text" id="ppc_audit_process_category_title_<?php echo $i; ?>" name="ppc_audit_process_category_title_<?php echo $i; ?>" value="<?php echo esc_attr($category_title); ?>" class="widefat">
+                    <?php wp_editor($category_title, "ppc_audit_process_category_title_{$i}", array(
+                        'textarea_name' => "ppc_audit_process_category_title_{$i}",
+                        'media_buttons' => false,
+                        'textarea_rows' => 2,
+                        'teeny' => true,
+                        'quicktags' => array('buttons' => 'strong,em,link')
+                    )); ?>
                 </p>
                 <p>
                     <label for="ppc_audit_process_category_content_<?php echo $i; ?>"><?php _e('Category Items (one per line)', 'aimpro'); ?></label><br>
-                    <textarea id="ppc_audit_process_category_content_<?php echo $i; ?>" name="ppc_audit_process_category_content_<?php echo $i; ?>" class="widefat" rows="5"><?php echo esc_textarea($category_content); ?></textarea>
+                    <?php wp_editor($category_content, "ppc_audit_process_category_content_{$i}", array(
+                        'textarea_name' => "ppc_audit_process_category_content_{$i}",
+                        'media_buttons' => false,
+                        'textarea_rows' => 5,
+                        'teeny' => true,
+                        'quicktags' => array('buttons' => 'strong,em,link,ul,ol,li')
+                    )); ?>
                 </p>
                 <p>
                     <label for="ppc_audit_process_category_icon_<?php echo $i; ?>"><?php _e('Category Icon (Font Awesome class)', 'aimpro'); ?></label><br>
@@ -504,19 +606,43 @@ function aimpro_ppc_audit_case_study_callback($post) {
     ?>
     <p>
         <label for="ppc_audit_case_study_title"><?php _e('Case Study Title', 'aimpro'); ?></label><br>
-        <input type="text" id="ppc_audit_case_study_title" name="ppc_audit_case_study_title" value="<?php echo esc_attr($case_study_title); ?>" class="widefat">
+        <?php wp_editor($case_study_title, 'ppc_audit_case_study_title', array(
+            'textarea_name' => 'ppc_audit_case_study_title',
+            'media_buttons' => false,
+            'textarea_rows' => 3,
+            'teeny' => true,
+            'quicktags' => array('buttons' => 'strong,em,link')
+        )); ?>
     </p>
     <p>
         <label for="ppc_audit_case_study_intro"><?php _e('Case Study Intro', 'aimpro'); ?></label><br>
-        <textarea id="ppc_audit_case_study_intro" name="ppc_audit_case_study_intro" class="widefat" rows="3"><?php echo esc_textarea($case_study_intro); ?></textarea>
+        <?php wp_editor($case_study_intro, 'ppc_audit_case_study_intro', array(
+            'textarea_name' => 'ppc_audit_case_study_intro',
+            'media_buttons' => false,
+            'textarea_rows' => 4,
+            'teeny' => true,
+            'quicktags' => array('buttons' => 'strong,em,link,ul,ol,li')
+        )); ?>
     </p>
     <p>
         <label for="ppc_audit_case_study_challenge"><?php _e('Challenge', 'aimpro'); ?></label><br>
-        <textarea id="ppc_audit_case_study_challenge" name="ppc_audit_case_study_challenge" class="widefat" rows="4"><?php echo esc_textarea($case_study_challenge); ?></textarea>
+        <?php wp_editor($case_study_challenge, 'ppc_audit_case_study_challenge', array(
+            'textarea_name' => 'ppc_audit_case_study_challenge',
+            'media_buttons' => false,
+            'textarea_rows' => 5,
+            'teeny' => true,
+            'quicktags' => array('buttons' => 'strong,em,link,ul,ol,li')
+        )); ?>
     </p>
     <p>
         <label for="ppc_audit_case_study_solution"><?php _e('Audit Findings (one per line)', 'aimpro'); ?></label><br>
-        <textarea id="ppc_audit_case_study_solution" name="ppc_audit_case_study_solution" class="widefat" rows="6"><?php echo esc_textarea($case_study_solution); ?></textarea>
+        <?php wp_editor($case_study_solution, 'ppc_audit_case_study_solution', array(
+            'textarea_name' => 'ppc_audit_case_study_solution',
+            'media_buttons' => false,
+            'textarea_rows' => 6,
+            'teeny' => true,
+            'quicktags' => array('buttons' => 'strong,em,link,ul,ol,li')
+        )); ?>
     </p>
     
     <h4><?php _e('Case Study Results', 'aimpro'); ?></h4>
@@ -558,7 +684,13 @@ function aimpro_ppc_audit_deliverables_callback($post) {
     ?>
     <p>
         <label for="ppc_audit_deliverables_title"><?php _e('Deliverables Section Title', 'aimpro'); ?></label><br>
-        <input type="text" id="ppc_audit_deliverables_title" name="ppc_audit_deliverables_title" value="<?php echo esc_attr($deliverables_title); ?>" class="widefat">
+        <?php wp_editor($deliverables_title, 'ppc_audit_deliverables_title', array(
+            'textarea_name' => 'ppc_audit_deliverables_title',
+            'media_buttons' => false,
+            'textarea_rows' => 3,
+            'teeny' => true,
+            'quicktags' => array('buttons' => 'strong,em,link')
+        )); ?>
     </p>
     
     <div id="ppc-audit-deliverables">
@@ -579,11 +711,23 @@ function aimpro_ppc_audit_deliverables_callback($post) {
                 
                 <p>
                     <label for="ppc_audit_deliverable_title_<?php echo $i; ?>"><?php _e('Deliverable Title', 'aimpro'); ?></label><br>
-                    <input type="text" id="ppc_audit_deliverable_title_<?php echo $i; ?>" name="ppc_audit_deliverable_title_<?php echo $i; ?>" value="<?php echo esc_attr($deliverable_title); ?>" class="widefat">
+                    <?php wp_editor($deliverable_title, "ppc_audit_deliverable_title_{$i}", array(
+                        'textarea_name' => "ppc_audit_deliverable_title_{$i}",
+                        'media_buttons' => false,
+                        'textarea_rows' => 2,
+                        'teeny' => true,
+                        'quicktags' => array('buttons' => 'strong,em,link')
+                    )); ?>
                 </p>
                 <p>
                     <label for="ppc_audit_deliverable_content_<?php echo $i; ?>"><?php _e('Deliverable Content', 'aimpro'); ?></label><br>
-                    <textarea id="ppc_audit_deliverable_content_<?php echo $i; ?>" name="ppc_audit_deliverable_content_<?php echo $i; ?>" class="widefat" rows="3"><?php echo esc_textarea($deliverable_content); ?></textarea>
+                    <?php wp_editor($deliverable_content, "ppc_audit_deliverable_content_{$i}", array(
+                        'textarea_name' => "ppc_audit_deliverable_content_{$i}",
+                        'media_buttons' => false,
+                        'textarea_rows' => 3,
+                        'teeny' => true,
+                        'quicktags' => array('buttons' => 'strong,em,link,ul,ol,li')
+                    )); ?>
                 </p>
                 <p>
                     <label for="ppc_audit_deliverable_icon_<?php echo $i; ?>"><?php _e('Deliverable Icon (Font Awesome class)', 'aimpro'); ?></label><br>
@@ -609,7 +753,13 @@ function aimpro_ppc_audit_why_callback($post) {
     ?>
     <p>
         <label for="ppc_audit_why_audit_title"><?php _e('Why Audit Section Title', 'aimpro'); ?></label><br>
-        <input type="text" id="ppc_audit_why_audit_title" name="ppc_audit_why_audit_title" value="<?php echo esc_attr($why_audit_title); ?>" class="widefat">
+        <?php wp_editor($why_audit_title, 'ppc_audit_why_audit_title', array(
+            'textarea_name' => 'ppc_audit_why_audit_title',
+            'media_buttons' => false,
+            'textarea_rows' => 3,
+            'teeny' => true,
+            'quicktags' => array('buttons' => 'strong,em,link')
+        )); ?>
     </p>
     
     <div id="ppc-audit-why-reasons">
@@ -630,11 +780,23 @@ function aimpro_ppc_audit_why_callback($post) {
                 
                 <p>
                     <label for="ppc_audit_why_reason_title_<?php echo $i; ?>"><?php _e('Reason Title', 'aimpro'); ?></label><br>
-                    <input type="text" id="ppc_audit_why_reason_title_<?php echo $i; ?>" name="ppc_audit_why_reason_title_<?php echo $i; ?>" value="<?php echo esc_attr($reason_title); ?>" class="widefat">
+                    <?php wp_editor($reason_title, "ppc_audit_why_reason_title_{$i}", array(
+                        'textarea_name' => "ppc_audit_why_reason_title_{$i}",
+                        'media_buttons' => false,
+                        'textarea_rows' => 2,
+                        'teeny' => true,
+                        'quicktags' => array('buttons' => 'strong,em,link')
+                    )); ?>
                 </p>
                 <p>
                     <label for="ppc_audit_why_reason_content_<?php echo $i; ?>"><?php _e('Reason Content', 'aimpro'); ?></label><br>
-                    <textarea id="ppc_audit_why_reason_content_<?php echo $i; ?>" name="ppc_audit_why_reason_content_<?php echo $i; ?>" class="widefat" rows="3"><?php echo esc_textarea($reason_content); ?></textarea>
+                    <?php wp_editor($reason_content, "ppc_audit_why_reason_content_{$i}", array(
+                        'textarea_name' => "ppc_audit_why_reason_content_{$i}",
+                        'media_buttons' => false,
+                        'textarea_rows' => 3,
+                        'teeny' => true,
+                        'quicktags' => array('buttons' => 'strong,em,link,ul,ol,li')
+                    )); ?>
                 </p>
                 <p>
                     <label for="ppc_audit_why_reason_icon_<?php echo $i; ?>"><?php _e('Reason Icon (Font Awesome class)', 'aimpro'); ?></label><br>
@@ -666,7 +828,13 @@ function aimpro_ppc_audit_testimonial_callback($post) {
     ?>
     <p>
         <label for="ppc_audit_testimonial_quote"><?php _e('Testimonial Quote', 'aimpro'); ?></label><br>
-        <textarea id="ppc_audit_testimonial_quote" name="ppc_audit_testimonial_quote" class="widefat" rows="4"><?php echo esc_textarea($testimonial_quote); ?></textarea>
+        <?php wp_editor($testimonial_quote, 'ppc_audit_testimonial_quote', array(
+            'textarea_name' => 'ppc_audit_testimonial_quote',
+            'media_buttons' => false,
+            'textarea_rows' => 4,
+            'teeny' => true,
+            'quicktags' => array('buttons' => 'strong,em,link,ul,ol,li')
+        )); ?>
     </p>
     <p>
         <label for="ppc_audit_testimonial_name"><?php _e('Client Name', 'aimpro'); ?></label><br>
@@ -699,11 +867,23 @@ function aimpro_ppc_audit_cta_callback($post) {
     ?>
     <p>
         <label for="ppc_audit_cta_title"><?php _e('CTA Title', 'aimpro'); ?></label><br>
-        <input type="text" id="ppc_audit_cta_title" name="ppc_audit_cta_title" value="<?php echo esc_attr($cta_title); ?>" class="widefat">
+        <?php wp_editor($cta_title, 'ppc_audit_cta_title', array(
+            'textarea_name' => 'ppc_audit_cta_title',
+            'media_buttons' => false,
+            'textarea_rows' => 3,
+            'teeny' => true,
+            'quicktags' => array('buttons' => 'strong,em,link')
+        )); ?>
     </p>
     <p>
         <label for="ppc_audit_cta_content"><?php _e('CTA Content', 'aimpro'); ?></label><br>
-        <textarea id="ppc_audit_cta_content" name="ppc_audit_cta_content" class="widefat" rows="3"><?php echo esc_textarea($cta_content); ?></textarea>
+        <?php wp_editor($cta_content, 'ppc_audit_cta_content', array(
+            'textarea_name' => 'ppc_audit_cta_content',
+            'media_buttons' => false,
+            'textarea_rows' => 3,
+            'teeny' => true,
+            'quicktags' => array('buttons' => 'strong,em,link,ul,ol,li')
+        )); ?>
     </p>
     <p>
         <label for="ppc_audit_cta_button_text"><?php _e('Button Text', 'aimpro'); ?></label><br>
@@ -730,19 +910,16 @@ function aimpro_save_ppc_audit_meta_boxes($post_id) {
     
     // Save Hero Section
     if (isset($_POST['ppc_audit_hero_nonce']) && wp_verify_nonce($_POST['ppc_audit_hero_nonce'], basename(__FILE__))) {
-        $hero_fields = [
+        $hero_rich_text_fields = [
             'ppc_audit_hero_title' => '_ppc_audit_hero_title',
             'ppc_audit_hero_subtitle' => '_ppc_audit_hero_subtitle',
             'ppc_audit_hero_cta1_text' => '_ppc_audit_hero_cta1_text',
             'ppc_audit_hero_cta2_text' => '_ppc_audit_hero_cta2_text'
         ];
         
-        foreach ($hero_fields as $field => $meta_key) {
+        foreach ($hero_rich_text_fields as $field => $meta_key) {
             if (isset($_POST[$field])) {
-                $value = ($field === 'ppc_audit_hero_subtitle') ? 
-                    sanitize_textarea_field($_POST[$field]) : 
-                    sanitize_text_field($_POST[$field]);
-                update_post_meta($post_id, $meta_key, $value);
+                update_post_meta($post_id, $meta_key, wp_kses_post($_POST[$field]));
             }
         }
         
@@ -760,10 +937,10 @@ function aimpro_save_ppc_audit_meta_boxes($post_id) {
     // Save Overview Section
     if (isset($_POST['ppc_audit_overview_nonce']) && wp_verify_nonce($_POST['ppc_audit_overview_nonce'], basename(__FILE__))) {
         if (isset($_POST['ppc_audit_overview_title'])) {
-            update_post_meta($post_id, '_ppc_audit_overview_title', sanitize_text_field($_POST['ppc_audit_overview_title']));
+            update_post_meta($post_id, '_ppc_audit_overview_title', wp_kses_post($_POST['ppc_audit_overview_title']));
         }
         if (isset($_POST['ppc_audit_overview_content'])) {
-            update_post_meta($post_id, '_ppc_audit_overview_content', sanitize_textarea_field($_POST['ppc_audit_overview_content']));
+            update_post_meta($post_id, '_ppc_audit_overview_content', wp_kses_post($_POST['ppc_audit_overview_content']));
         }
     }
     
@@ -771,10 +948,10 @@ function aimpro_save_ppc_audit_meta_boxes($post_id) {
     if (isset($_POST['ppc_audit_services_nonce']) && wp_verify_nonce($_POST['ppc_audit_services_nonce'], basename(__FILE__))) {
         for ($i = 1; $i <= 6; $i++) {
             if (isset($_POST["ppc_audit_service_title_{$i}"])) {
-                update_post_meta($post_id, "_ppc_audit_service_title_{$i}", sanitize_text_field($_POST["ppc_audit_service_title_{$i}"]));
+                update_post_meta($post_id, "_ppc_audit_service_title_{$i}", wp_kses_post($_POST["ppc_audit_service_title_{$i}"]));
             }
             if (isset($_POST["ppc_audit_service_content_{$i}"])) {
-                update_post_meta($post_id, "_ppc_audit_service_content_{$i}", sanitize_textarea_field($_POST["ppc_audit_service_content_{$i}"]));
+                update_post_meta($post_id, "_ppc_audit_service_content_{$i}", wp_kses_post($_POST["ppc_audit_service_content_{$i}"]));
             }
             if (isset($_POST["ppc_audit_service_icon_{$i}"])) {
                 update_post_meta($post_id, "_ppc_audit_service_icon_{$i}", sanitize_text_field($_POST["ppc_audit_service_icon_{$i}"]));
@@ -785,15 +962,15 @@ function aimpro_save_ppc_audit_meta_boxes($post_id) {
     // Save Process Section
     if (isset($_POST['ppc_audit_process_nonce']) && wp_verify_nonce($_POST['ppc_audit_process_nonce'], basename(__FILE__))) {
         if (isset($_POST['ppc_audit_process_title'])) {
-            update_post_meta($post_id, '_ppc_audit_process_title', sanitize_text_field($_POST['ppc_audit_process_title']));
+            update_post_meta($post_id, '_ppc_audit_process_title', wp_kses_post($_POST['ppc_audit_process_title']));
         }
         
         for ($i = 1; $i <= 5; $i++) {
             if (isset($_POST["ppc_audit_process_category_title_{$i}"])) {
-                update_post_meta($post_id, "_ppc_audit_process_category_title_{$i}", sanitize_text_field($_POST["ppc_audit_process_category_title_{$i}"]));
+                update_post_meta($post_id, "_ppc_audit_process_category_title_{$i}", wp_kses_post($_POST["ppc_audit_process_category_title_{$i}"]));
             }
             if (isset($_POST["ppc_audit_process_category_content_{$i}"])) {
-                update_post_meta($post_id, "_ppc_audit_process_category_content_{$i}", sanitize_textarea_field($_POST["ppc_audit_process_category_content_{$i}"]));
+                update_post_meta($post_id, "_ppc_audit_process_category_content_{$i}", wp_kses_post($_POST["ppc_audit_process_category_content_{$i}"]));
             }
             if (isset($_POST["ppc_audit_process_category_icon_{$i}"])) {
                 update_post_meta($post_id, "_ppc_audit_process_category_icon_{$i}", sanitize_text_field($_POST["ppc_audit_process_category_icon_{$i}"]));
@@ -803,19 +980,16 @@ function aimpro_save_ppc_audit_meta_boxes($post_id) {
     
     // Save Case Study Section
     if (isset($_POST['ppc_audit_case_study_nonce']) && wp_verify_nonce($_POST['ppc_audit_case_study_nonce'], basename(__FILE__))) {
-        $case_study_fields = [
+        $case_study_rich_text_fields = [
             'ppc_audit_case_study_title' => '_ppc_audit_case_study_title',
             'ppc_audit_case_study_intro' => '_ppc_audit_case_study_intro',
             'ppc_audit_case_study_challenge' => '_ppc_audit_case_study_challenge',
             'ppc_audit_case_study_solution' => '_ppc_audit_case_study_solution'
         ];
         
-        foreach ($case_study_fields as $field => $meta_key) {
+        foreach ($case_study_rich_text_fields as $field => $meta_key) {
             if (isset($_POST[$field])) {
-                $value = ($field === 'ppc_audit_case_study_title') ? 
-                    sanitize_text_field($_POST[$field]) : 
-                    sanitize_textarea_field($_POST[$field]);
-                update_post_meta($post_id, $meta_key, $value);
+                update_post_meta($post_id, $meta_key, wp_kses_post($_POST[$field]));
             }
         }
         
@@ -833,15 +1007,15 @@ function aimpro_save_ppc_audit_meta_boxes($post_id) {
     // Save Deliverables Section
     if (isset($_POST['ppc_audit_deliverables_nonce']) && wp_verify_nonce($_POST['ppc_audit_deliverables_nonce'], basename(__FILE__))) {
         if (isset($_POST['ppc_audit_deliverables_title'])) {
-            update_post_meta($post_id, '_ppc_audit_deliverables_title', sanitize_text_field($_POST['ppc_audit_deliverables_title']));
+            update_post_meta($post_id, '_ppc_audit_deliverables_title', wp_kses_post($_POST['ppc_audit_deliverables_title']));
         }
         
         for ($i = 1; $i <= 6; $i++) {
             if (isset($_POST["ppc_audit_deliverable_title_{$i}"])) {
-                update_post_meta($post_id, "_ppc_audit_deliverable_title_{$i}", sanitize_text_field($_POST["ppc_audit_deliverable_title_{$i}"]));
+                update_post_meta($post_id, "_ppc_audit_deliverable_title_{$i}", wp_kses_post($_POST["ppc_audit_deliverable_title_{$i}"]));
             }
             if (isset($_POST["ppc_audit_deliverable_content_{$i}"])) {
-                update_post_meta($post_id, "_ppc_audit_deliverable_content_{$i}", sanitize_textarea_field($_POST["ppc_audit_deliverable_content_{$i}"]));
+                update_post_meta($post_id, "_ppc_audit_deliverable_content_{$i}", wp_kses_post($_POST["ppc_audit_deliverable_content_{$i}"]));
             }
             if (isset($_POST["ppc_audit_deliverable_icon_{$i}"])) {
                 update_post_meta($post_id, "_ppc_audit_deliverable_icon_{$i}", sanitize_text_field($_POST["ppc_audit_deliverable_icon_{$i}"]));
@@ -852,15 +1026,15 @@ function aimpro_save_ppc_audit_meta_boxes($post_id) {
     // Save Why Audit Section
     if (isset($_POST['ppc_audit_why_nonce']) && wp_verify_nonce($_POST['ppc_audit_why_nonce'], basename(__FILE__))) {
         if (isset($_POST['ppc_audit_why_audit_title'])) {
-            update_post_meta($post_id, '_ppc_audit_why_audit_title', sanitize_text_field($_POST['ppc_audit_why_audit_title']));
+            update_post_meta($post_id, '_ppc_audit_why_audit_title', wp_kses_post($_POST['ppc_audit_why_audit_title']));
         }
         
         for ($i = 1; $i <= 4; $i++) {
             if (isset($_POST["ppc_audit_why_reason_title_{$i}"])) {
-                update_post_meta($post_id, "_ppc_audit_why_reason_title_{$i}", sanitize_text_field($_POST["ppc_audit_why_reason_title_{$i}"]));
+                update_post_meta($post_id, "_ppc_audit_why_reason_title_{$i}", wp_kses_post($_POST["ppc_audit_why_reason_title_{$i}"]));
             }
             if (isset($_POST["ppc_audit_why_reason_content_{$i}"])) {
-                update_post_meta($post_id, "_ppc_audit_why_reason_content_{$i}", sanitize_textarea_field($_POST["ppc_audit_why_reason_content_{$i}"]));
+                update_post_meta($post_id, "_ppc_audit_why_reason_content_{$i}", wp_kses_post($_POST["ppc_audit_why_reason_content_{$i}"]));
             }
             if (isset($_POST["ppc_audit_why_reason_icon_{$i}"])) {
                 update_post_meta($post_id, "_ppc_audit_why_reason_icon_{$i}", sanitize_text_field($_POST["ppc_audit_why_reason_icon_{$i}"]));
@@ -871,7 +1045,7 @@ function aimpro_save_ppc_audit_meta_boxes($post_id) {
     // Save Testimonial Section
     if (isset($_POST['ppc_audit_testimonial_nonce']) && wp_verify_nonce($_POST['ppc_audit_testimonial_nonce'], basename(__FILE__))) {
         if (isset($_POST['ppc_audit_testimonial_quote'])) {
-            update_post_meta($post_id, '_ppc_audit_testimonial_quote', sanitize_textarea_field($_POST['ppc_audit_testimonial_quote']));
+            update_post_meta($post_id, '_ppc_audit_testimonial_quote', wp_kses_post($_POST['ppc_audit_testimonial_quote']));
         }
         if (isset($_POST['ppc_audit_testimonial_name'])) {
             update_post_meta($post_id, '_ppc_audit_testimonial_name', sanitize_text_field($_POST['ppc_audit_testimonial_name']));
@@ -884,10 +1058,10 @@ function aimpro_save_ppc_audit_meta_boxes($post_id) {
     // Save CTA Section
     if (isset($_POST['ppc_audit_cta_nonce']) && wp_verify_nonce($_POST['ppc_audit_cta_nonce'], basename(__FILE__))) {
         if (isset($_POST['ppc_audit_cta_title'])) {
-            update_post_meta($post_id, '_ppc_audit_cta_title', sanitize_text_field($_POST['ppc_audit_cta_title']));
+            update_post_meta($post_id, '_ppc_audit_cta_title', wp_kses_post($_POST['ppc_audit_cta_title']));
         }
         if (isset($_POST['ppc_audit_cta_content'])) {
-            update_post_meta($post_id, '_ppc_audit_cta_content', sanitize_textarea_field($_POST['ppc_audit_cta_content']));
+            update_post_meta($post_id, '_ppc_audit_cta_content', wp_kses_post($_POST['ppc_audit_cta_content']));
         }
         if (isset($_POST['ppc_audit_cta_button_text'])) {
             update_post_meta($post_id, '_ppc_audit_cta_button_text', sanitize_text_field($_POST['ppc_audit_cta_button_text']));

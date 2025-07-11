@@ -43,8 +43,8 @@ get_header(); ?>
                 $hero_cta2_text = get_post_meta(get_the_ID(), '_ppc_audit_hero_cta2_text', true);
                 if (empty($hero_cta2_text)) $hero_cta2_text = $defaults['hero_cta2_text'];
                 ?>
-                <h1><?php echo esc_html($hero_title); ?></h1>
-                <p class="hero-subtitle"><?php echo esc_html($hero_subtitle); ?></p>
+                <h1><?php echo wp_kses_post($hero_title); ?></h1>
+                <p class="hero-subtitle"><?php echo wp_kses_post($hero_subtitle); ?></p>
                 <div class="hero-stats animate-on-scroll animate-stagger animate-scale-up">
                     <?php for ($i = 1; $i <= 3; $i++) : ?>
                         <?php
@@ -60,7 +60,7 @@ get_header(); ?>
                         </div>
                     <?php endfor; ?>
                 </div>                <div class="hero-ctas animate-on-scroll animate-fade-up">
-                    <a href="#contact" class="btn-primary streamlined"><?php echo esc_html($hero_cta1_text); ?></a>
+                    <a href="#contact" class="btn-primary streamlined"><?php echo wp_kses_post($hero_cta1_text); ?></a>
                 </div>
             </div>
         </div>
@@ -75,8 +75,8 @@ get_header(); ?>
                 $overview_content = get_post_meta(get_the_ID(), '_ppc_audit_overview_content', true);
                 if (empty($overview_content)) $overview_content = $defaults['overview_content'];
                 ?>
-                <h2><?php echo esc_html($overview_title); ?></h2>
-                <p><?php echo esc_html($overview_content); ?></p>
+                <h2><?php echo wp_kses_post($overview_title); ?></h2>
+                <p><?php echo wp_kses_post($overview_content); ?></p>
             </div>
             
             <div class="services-grid">
@@ -95,8 +95,8 @@ get_header(); ?>
                         <div class="service-icon">
                             <i class="<?php echo esc_attr($service_icon); ?>"></i>
                         </div>
-                        <h3><?php echo esc_html($service_title); ?></h3>
-                        <p><?php echo esc_html($service_content); ?></p>
+                        <h3><?php echo wp_kses_post($service_title); ?></h3>
+                        <p><?php echo wp_kses_post($service_content); ?></p>
                     </div>                <?php endfor; ?>            </div>            <div class="text-center mt-1 animate-on-scroll animate-fade-up">
                 <a href="/contact/" class="btn btn-primary">Request Your Free PPC Audit</a>
             </div>
@@ -107,7 +107,7 @@ get_header(); ?>
             $process_title = get_post_meta(get_the_ID(), '_ppc_audit_process_title', true);
             if (empty($process_title)) $process_title = $defaults['process_title'];
             ?>
-            <h2 class="animate-on-scroll animate-fade-up"><?php echo esc_html($process_title); ?></h2>            <div class="benefits-grid">
+            <h2 class="animate-on-scroll animate-fade-up"><?php echo wp_kses_post($process_title); ?></h2>            <div class="benefits-grid">
                 <?php for ($i = 1; $i <= 6; $i++) : ?>
                     <?php
                     $category_title = get_post_meta(get_the_ID(), "_ppc_audit_process_category_title_{$i}", true);
@@ -122,7 +122,7 @@ get_header(); ?>
                     <div class="benefit-card animate-on-scroll animate-stagger animate-fade-up">
                         <div class="benefit-icon">
                             <i class="<?php echo esc_attr($category_icon); ?>"></i>
-                        </div>                        <h3><?php echo esc_html($category_title); ?></h3>
+                        </div>                        <h3><?php echo wp_kses_post($category_title); ?></h3>
                         <?php
                         // Convert newlines to line breaks (no bullet points)
                         $content_items = explode("\n", $category_content);
@@ -131,12 +131,12 @@ get_header(); ?>
                             foreach ($content_items as $item) {
                                 $item = trim($item);
                                 if (!empty($item)) {
-                                    echo '<div class="checklist-item">' . esc_html($item) . '</div>';
+                                    echo '<div class="checklist-item">' . wp_kses_post($item) . '</div>';
                                 }
                             }
                             echo '</div>';
                         } else {
-                            echo '<p>' . esc_html($category_content) . '</p>';
+                            echo '<p>' . wp_kses_post($category_content) . '</p>';
                         }
                         ?>
                     </div>                <?php endfor; ?>
@@ -288,7 +288,7 @@ get_header(); ?>
             $deliverables_title = get_post_meta(get_the_ID(), '_ppc_audit_deliverables_title', true);
             if (empty($deliverables_title)) $deliverables_title = $defaults['deliverables_title'];
             ?>
-            <h2 class="animate-on-scroll animate-fade-up"><?php echo esc_html($deliverables_title); ?></h2>
+            <h2 class="animate-on-scroll animate-fade-up"><?php echo wp_kses_post($deliverables_title); ?></h2>
             <div class="benefits-grid">
                 <?php for ($i = 1; $i <= 6; $i++) : ?>
                     <?php
@@ -305,8 +305,8 @@ get_header(); ?>
                         <div class="benefit-icon">
                             <i class="<?php echo esc_attr($deliverable_icon); ?>"></i>
                         </div>
-                        <h3><?php echo esc_html($deliverable_title); ?></h3>
-                        <p><?php echo esc_html($deliverable_content); ?></p>
+                        <h3><?php echo wp_kses_post($deliverable_title); ?></h3>
+                        <p><?php echo wp_kses_post($deliverable_content); ?></p>
                     </div>                <?php endfor; ?>
             </div>
               <!-- CTA after deliverables -->
@@ -325,7 +325,7 @@ get_header(); ?>
             $why_audit_title = get_post_meta(get_the_ID(), '_ppc_audit_why_audit_title', true);
             if (empty($why_audit_title)) $why_audit_title = $defaults['why_audit_title'];
             ?>
-            <h2 class="animate-on-scroll animate-fade-up"><?php echo esc_html($why_audit_title); ?></h2>
+            <h2 class="animate-on-scroll animate-fade-up"><?php echo wp_kses_post($why_audit_title); ?></h2>
             <div class="benefits-grid benefits-grid-2x2">
                 <?php for ($i = 1; $i <= 4; $i++) : ?>
                     <?php
@@ -342,8 +342,8 @@ get_header(); ?>
                         <div class="benefit-icon">
                             <i class="<?php echo esc_attr($reason_icon); ?>"></i>
                         </div>
-                        <h3><?php echo esc_html($reason_title); ?></h3>
-                        <p><?php echo esc_html($reason_content); ?></p>
+                        <h3><?php echo wp_kses_post($reason_title); ?></h3>
+                        <p><?php echo wp_kses_post($reason_content); ?></p>
                     </div>                <?php endfor; ?>
             </div>
               <!-- CTA after why audit section -->
@@ -369,7 +369,7 @@ get_header(); ?>
                 if (empty($testimonial_title)) $testimonial_title = $defaults['testimonial_title'];
                 ?>
                 <blockquote>
-                    "<?php echo esc_html($testimonial_quote); ?>"
+                    "<?php echo wp_kses_post($testimonial_quote); ?>"
                 </blockquote>
                 <cite>
                     <strong><?php echo esc_html($testimonial_name); ?></strong><br>
@@ -391,8 +391,8 @@ get_header(); ?>
                 $cta_button_text = get_post_meta(get_the_ID(), '_ppc_audit_cta_button_text', true);
                 if (empty($cta_button_text)) $cta_button_text = $defaults['cta_button_text'];
                 ?>
-                <h2><?php echo esc_html($cta_title); ?></h2>
-                <p><?php echo esc_html($cta_content); ?></p>
+                <h2><?php echo wp_kses_post($cta_title); ?></h2>
+                <p><?php echo wp_kses_post($cta_content); ?></p>
                 <div class="simple-cta-buttons animate-on-scroll animate-fade-up">
                     <a href="<?php echo home_url('/contact'); ?>" class="btn btn-primary"><?php echo esc_html($cta_button_text); ?></a>
                 </div>
