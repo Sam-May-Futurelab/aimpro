@@ -32,10 +32,10 @@ function templates_tools_meta_box_callback($post) {
     }
 
     wp_nonce_field('templates_tools_meta_box', 'templates_tools_meta_box_nonce');    // Get existing values
-    $header_title = get_post_meta($post->ID, '_templates_tools_header_title', true);
-    $header_subtitle = get_post_meta($post->ID, '_templates_tools_header_subtitle', true);
-    $intro_title = get_post_meta($post->ID, '_templates_tools_intro_title', true);
-    $intro_content = get_post_meta($post->ID, '_templates_tools_intro_content', true);
+    $header_title = get_post_meta($post->ID, '_templates_tools_header_title', true) ?: 'Templates & Tools';
+    $header_subtitle = get_post_meta($post->ID, '_templates_tools_header_subtitle', true) ?: 'Free marketing templates and tools to accelerate your growth';
+    $intro_title = get_post_meta($post->ID, '_templates_tools_intro_title', true) ?: 'Professional Marketing <span class="highlight curly-underline">RESOURCES</span>';
+    $intro_content = get_post_meta($post->ID, '_templates_tools_intro_content', true) ?: 'Transform your marketing efforts with our comprehensive collection of professional-grade templates and tools. Whether you\'re looking to optimise your SEO strategy, plan effective PPC campaigns, or streamline your content marketing process, our expertly crafted resources provide the <strong class="highlight-word">foundation for success</strong>.';
 
     // Tool categories
     $categories = get_post_meta($post->ID, '_templates_tools_categories', true);
@@ -136,7 +136,7 @@ function templates_tools_meta_box_callback($post) {
             )
         );
     }    // Featured resources
-    $featured_title = get_post_meta($post->ID, '_templates_tools_featured_title', true);
+    $featured_title = get_post_meta($post->ID, '_templates_tools_featured_title', true) ?: 'Most Popular Resources';
     $featured_resources = get_post_meta($post->ID, '_templates_tools_featured_resources', true);
     if (empty($featured_resources)) {
         $featured_resources = array(
@@ -165,8 +165,8 @@ function templates_tools_meta_box_callback($post) {
     }
 
     // Newsletter/CTA section
-    $cta_title = get_post_meta($post->ID, '_templates_tools_cta_title', true);
-    $cta_content = get_post_meta($post->ID, '_templates_tools_cta_content', true);
+    $cta_title = get_post_meta($post->ID, '_templates_tools_cta_title', true) ?: 'Get New Tools First';
+    $cta_content = get_post_meta($post->ID, '_templates_tools_cta_content', true) ?: 'Be the first to access our latest templates and tools delivered straight to your inbox.';
 
     ?>
     <style>
@@ -242,19 +242,19 @@ function templates_tools_meta_box_callback($post) {
         <table class="form-table">
             <tr>
                 <th><label for="templates_tools_header_title">Page Header Title</label></th>
-                <td><input type="text" id="templates_tools_header_title" name="templates_tools_header_title" value="<?php echo esc_attr($header_title); ?>" placeholder="Templates & Tools" /></td>
+                <td><?php wp_editor($header_title, 'templates_tools_header_title', array('textarea_rows' => 2, 'media_buttons' => false, 'teeny' => true, 'quicktags' => array('buttons' => 'strong,em,link'))); ?></td>
             </tr>
             <tr>
                 <th><label for="templates_tools_header_subtitle">Page Header Subtitle</label></th>
-                <td><textarea id="templates_tools_header_subtitle" name="templates_tools_header_subtitle" placeholder="Free resources to accelerate your digital marketing success"><?php echo esc_textarea($header_subtitle); ?></textarea></td>
+                <td><?php wp_editor($header_subtitle, 'templates_tools_header_subtitle', array('textarea_rows' => 3, 'media_buttons' => false, 'teeny' => true, 'quicktags' => array('buttons' => 'strong,em,link'))); ?></td>
             </tr>
             <tr>
                 <th><label for="templates_tools_intro_title">Introduction Title</label></th>
-                <td><input type="text" id="templates_tools_intro_title" name="templates_tools_intro_title" value="<?php echo esc_attr($intro_title); ?>" placeholder="Professional-Grade Tools & Templates" /></td>
+                <td><?php wp_editor($intro_title, 'templates_tools_intro_title', array('textarea_rows' => 2, 'media_buttons' => false, 'teeny' => true, 'quicktags' => array('buttons' => 'strong,em,link'))); ?></td>
             </tr>
             <tr>
                 <th><label for="templates_tools_intro_content">Introduction Content</label></th>
-                <td><textarea id="templates_tools_intro_content" name="templates_tools_intro_content" placeholder="Access our curated collection..."><?php echo esc_textarea($intro_content); ?></textarea></td>
+                <td><?php wp_editor($intro_content, 'templates_tools_intro_content', array('textarea_rows' => 4, 'media_buttons' => false, 'teeny' => true, 'quicktags' => array('buttons' => 'strong,em,link'))); ?></td>
             </tr>
         </table>
 
@@ -336,7 +336,7 @@ function templates_tools_meta_box_callback($post) {
             <table class="form-table">
                 <tr>
                     <th><label for="templates_tools_featured_title">Featured Section Title</label></th>
-                    <td><input type="text" id="templates_tools_featured_title" name="templates_tools_featured_title" value="<?php echo esc_attr($featured_title); ?>" placeholder="Most Popular Resources" /></td>
+                    <td><?php wp_editor($featured_title, 'templates_tools_featured_title', array('textarea_rows' => 2, 'media_buttons' => false, 'teeny' => true, 'quicktags' => array('buttons' => 'strong,em,link'))); ?></td>
                 </tr>
             </table>
             
@@ -381,11 +381,11 @@ function templates_tools_meta_box_callback($post) {
             <table class="form-table">
                 <tr>
                     <th><label for="templates_tools_cta_title">CTA Title</label></th>
-                    <td><input type="text" id="templates_tools_cta_title" name="templates_tools_cta_title" value="<?php echo esc_attr($cta_title); ?>" placeholder="Get New Tools First" /></td>
+                    <td><?php wp_editor($cta_title, 'templates_tools_cta_title', array('textarea_rows' => 2, 'media_buttons' => false, 'teeny' => true, 'quicktags' => array('buttons' => 'strong,em,link'))); ?></td>
                 </tr>
                 <tr>
                     <th><label for="templates_tools_cta_content">CTA Content</label></th>
-                    <td><textarea id="templates_tools_cta_content" name="templates_tools_cta_content" placeholder="Be the first to access our latest templates..."><?php echo esc_textarea($cta_content); ?></textarea></td>
+                    <td><?php wp_editor($cta_content, 'templates_tools_cta_content', array('textarea_rows' => 3, 'media_buttons' => false, 'teeny' => true, 'quicktags' => array('buttons' => 'strong,em,link'))); ?></td>
                 </tr>
             </table>
         </div>
@@ -541,7 +541,23 @@ function save_templates_tools_meta($post_id) {
 
     foreach ($fields as $field) {
         if (isset($_POST[$field])) {
-            update_post_meta($post_id, '_' . $field, sanitize_textarea_field($_POST[$field]));
+            // Fields converted to wp_editor need wp_kses_post for HTML preservation
+            $wp_editor_fields = array(
+                'templates_tools_header_title',
+                'templates_tools_header_subtitle',
+                'templates_tools_intro_title',
+                'templates_tools_intro_content',
+                'templates_tools_featured_title',
+                'templates_tools_cta_title',
+                'templates_tools_cta_content'
+            );
+
+            if (in_array($field, $wp_editor_fields)) {
+                $value = wp_kses_post($_POST[$field]);
+            } else {
+                $value = sanitize_textarea_field($_POST[$field]);
+            }
+            update_post_meta($post_id, '_' . $field, $value);
         }
     }
 

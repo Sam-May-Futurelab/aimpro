@@ -23,14 +23,14 @@ get_header(); ?>
     <div class="container">        <!-- Page Header -->
         <section class="page-header">
             <div class="page-header-content animate-on-scroll animate-fade-up">
-                <h1><?php echo esc_html(get_post_meta(get_the_ID(), '_templates_tools_header_title', true) ?: 'Templates & Tools'); ?></h1>
-                <p class="page-subtitle"><?php echo esc_html(get_post_meta(get_the_ID(), '_templates_tools_header_subtitle', true) ?: 'Free marketing templates and tools to accelerate your growth'); ?></p>
+                <h1><?php echo wp_kses_post(get_post_meta(get_the_ID(), '_templates_tools_header_title', true) ?: 'Templates & Tools'); ?></h1>
+                <p class="page-subtitle"><?php echo wp_kses_post(get_post_meta(get_the_ID(), '_templates_tools_header_subtitle', true) ?: 'Free marketing templates and tools to accelerate your growth'); ?></p>
             </div>
         </section>        <!-- Written Content Section -->
         <section class="content-section">
             <div class="content-centre">
                 <div class="written-content animate-on-scroll animate-fade-up"><div class="content-highlight">                        <h2 class="section-title" style="text-align: center;">
-                            Professional Marketing <span class="highlight curly-underline">RESOURCES</span>
+                            <?php echo wp_kses_post(get_post_meta(get_the_ID(), '_templates_tools_intro_title', true) ?: 'Professional Marketing <span class="highlight curly-underline">RESOURCES</span>'); ?>
                             <style>
                             .content-section .section-title::after {
                                 left: 50%;
@@ -38,7 +38,7 @@ get_header(); ?>
                             }
                             </style>
                         </h2>
-                        <p class="section-subtitle">Transform your marketing efforts with our comprehensive collection of professional-grade templates and tools. Whether you're looking to optimise your SEO strategy, plan effective PPC campaigns, or streamline your content marketing process, our expertly crafted resources provide the <strong class="highlight-word">foundation for success</strong>.</p>
+                        <p class="section-subtitle"><?php echo wp_kses_post(get_post_meta(get_the_ID(), '_templates_tools_intro_content', true) ?: 'Transform your marketing efforts with our comprehensive collection of professional-grade templates and tools. Whether you\'re looking to optimise your SEO strategy, plan effective PPC campaigns, or streamline your content marketing process, our expertly crafted resources provide the <strong class="highlight-word">foundation for success</strong>.'); ?></p>
                     </div>                    <div class="content-grid animate-on-scroll animate-stagger animate-fade-up" style="display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin: 10px 0 40px 0 !important;">
                         <div class="content-item">
                             <div class="service-icon-container">
@@ -165,7 +165,7 @@ get_header(); ?>
         $featured_resources = get_post_meta(get_the_ID(), '_templates_tools_featured_resources', true);
         if (!empty($featured_resources)) : ?>
             <section class="featured-resources-section">                <div class="content-centre">                    <h2 class="section-title" style="text-align: center;">
-                        <?php echo esc_html($featured_title ?: 'Most Popular Resources'); ?>
+                        <?php echo wp_kses_post($featured_title ?: 'Most Popular Resources'); ?>
                         <style>
                         .featured-resources-section .section-title::after {
                             left: 50%;
@@ -288,8 +288,8 @@ get_header(); ?>
         if ($cta_title || $cta_content) : ?>
             <section class="newsletter-cta-section">
                 <div class="cta-content">
-                    <h2><?php echo esc_html($cta_title ?: 'Get New Tools First'); ?></h2>
-                    <p><?php echo esc_html($cta_content ?: 'Be the first to access our latest templates and tools delivered straight to your inbox.'); ?></p>
+                    <h2><?php echo wp_kses_post($cta_title ?: 'Get New Tools First'); ?></h2>
+                    <p><?php echo wp_kses_post($cta_content ?: 'Be the first to access our latest templates and tools delivered straight to your inbox.'); ?></p>
                     
                     <!-- Newsletter Signup Form -->
                     <div class="newsletter-form-wrapper">
