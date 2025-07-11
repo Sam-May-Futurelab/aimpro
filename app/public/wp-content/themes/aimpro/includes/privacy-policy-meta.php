@@ -70,15 +70,25 @@ function privacy_policy_meta_callback($post) {
             <h3>Page Header</h3>
             <div class="privacy-meta-field">
                 <label for="privacy_header_title">Page Title</label>
-                <input type="text" id="privacy_header_title" name="privacy_header_title" 
-                       value="<?php echo esc_attr($header_title); ?>" 
-                       placeholder="Privacy Policy" />
+                <?php wp_editor($header_title, 'privacy_header_title_editor', array(
+                    'textarea_name' => 'privacy_header_title',
+                    'media_buttons' => false,
+                    'textarea_rows' => 2,
+                    'teeny' => true,
+                    'quicktags' => array('buttons' => 'strong,em,link'),
+                    'wpautop' => false
+                )); ?>
             </div>
             <div class="privacy-meta-field">
                 <label for="privacy_header_subtitle">Page Subtitle</label>
-                <input type="text" id="privacy_header_subtitle" name="privacy_header_subtitle" 
-                       value="<?php echo esc_attr($header_subtitle); ?>" 
-                       placeholder="How we collect, use, and protect your information" />
+                <?php wp_editor($header_subtitle, 'privacy_header_subtitle_editor', array(
+                    'textarea_name' => 'privacy_header_subtitle',
+                    'media_buttons' => false,
+                    'textarea_rows' => 3,
+                    'teeny' => true,
+                    'quicktags' => array('buttons' => 'strong,em,link'),
+                    'wpautop' => false
+                )); ?>
             </div>
             <div class="privacy-meta-field">
                 <label for="privacy_last_updated">Last Updated Date</label>
@@ -93,8 +103,15 @@ function privacy_policy_meta_callback($post) {
             <h3>1. Information We Collect</h3>
             <div class="privacy-meta-field">
                 <label for="privacy_info_collect">Content</label>
-                <textarea id="privacy_info_collect" name="privacy_info_collect" rows="6"><?php echo esc_textarea($info_collect_content); ?></textarea>
-                <p class="description">Use line breaks for bullet points. Each line starting with "- " will become a bullet point.</p>
+                <?php wp_editor($info_collect_content, 'privacy_info_collect_editor', array(
+                    'textarea_name' => 'privacy_info_collect',
+                    'media_buttons' => false,
+                    'textarea_rows' => 6,
+                    'teeny' => true,
+                    'quicktags' => array('buttons' => 'strong,em,link,ul,ol,li'),
+                    'wpautop' => true
+                )); ?>
+                <p class="description">Use the editor toolbar to format text and create bullet points with the list buttons.</p>
             </div>
         </div>
 
@@ -103,7 +120,14 @@ function privacy_policy_meta_callback($post) {
             <h3>2. How We Use Your Information</h3>
             <div class="privacy-meta-field">
                 <label for="privacy_info_use">Content</label>
-                <textarea id="privacy_info_use" name="privacy_info_use" rows="6"><?php echo esc_textarea($info_use_content); ?></textarea>
+                <?php wp_editor($info_use_content, 'privacy_info_use_editor', array(
+                    'textarea_name' => 'privacy_info_use',
+                    'media_buttons' => false,
+                    'textarea_rows' => 6,
+                    'teeny' => true,
+                    'quicktags' => array('buttons' => 'strong,em,link,ul,ol,li'),
+                    'wpautop' => true
+                )); ?>
             </div>
         </div>
 
@@ -112,7 +136,14 @@ function privacy_policy_meta_callback($post) {
             <h3>3. Information Sharing</h3>
             <div class="privacy-meta-field">
                 <label for="privacy_info_sharing">Content</label>
-                <textarea id="privacy_info_sharing" name="privacy_info_sharing" rows="6"><?php echo esc_textarea($info_sharing_content); ?></textarea>
+                <?php wp_editor($info_sharing_content, 'privacy_info_sharing_editor', array(
+                    'textarea_name' => 'privacy_info_sharing',
+                    'media_buttons' => false,
+                    'textarea_rows' => 6,
+                    'teeny' => true,
+                    'quicktags' => array('buttons' => 'strong,em,link,ul,ol,li'),
+                    'wpautop' => true
+                )); ?>
             </div>
         </div>
 
@@ -121,7 +152,14 @@ function privacy_policy_meta_callback($post) {
             <h3>4. Cookies and Tracking</h3>
             <div class="privacy-meta-field">
                 <label for="privacy_cookies">Content</label>
-                <textarea id="privacy_cookies" name="privacy_cookies" rows="6"><?php echo esc_textarea($cookies_content); ?></textarea>
+                <?php wp_editor($cookies_content, 'privacy_cookies_editor', array(
+                    'textarea_name' => 'privacy_cookies',
+                    'media_buttons' => false,
+                    'textarea_rows' => 6,
+                    'teeny' => true,
+                    'quicktags' => array('buttons' => 'strong,em,link,ul,ol,li'),
+                    'wpautop' => true
+                )); ?>
             </div>
         </div>
 
@@ -130,7 +168,14 @@ function privacy_policy_meta_callback($post) {
             <h3>5. Data Security</h3>
             <div class="privacy-meta-field">
                 <label for="privacy_security">Content</label>
-                <textarea id="privacy_security" name="privacy_security" rows="4"><?php echo esc_textarea($security_content); ?></textarea>
+                <?php wp_editor($security_content, 'privacy_security_editor', array(
+                    'textarea_name' => 'privacy_security',
+                    'media_buttons' => false,
+                    'textarea_rows' => 4,
+                    'teeny' => true,
+                    'quicktags' => array('buttons' => 'strong,em,link,ul,ol,li'),
+                    'wpautop' => true
+                )); ?>
             </div>
         </div>
 
@@ -139,7 +184,14 @@ function privacy_policy_meta_callback($post) {
             <h3>6. Your Rights</h3>
             <div class="privacy-meta-field">
                 <label for="privacy_user_rights">Content</label>
-                <textarea id="privacy_user_rights" name="privacy_user_rights" rows="6"><?php echo esc_textarea($user_rights_content); ?></textarea>
+                <?php wp_editor($user_rights_content, 'privacy_user_rights_editor', array(
+                    'textarea_name' => 'privacy_user_rights',
+                    'media_buttons' => false,
+                    'textarea_rows' => 6,
+                    'teeny' => true,
+                    'quicktags' => array('buttons' => 'strong,em,link,ul,ol,li'),
+                    'wpautop' => true
+                )); ?>
             </div>
         </div>
 
@@ -148,7 +200,14 @@ function privacy_policy_meta_callback($post) {
             <h3>7. Third-Party Services</h3>
             <div class="privacy-meta-field">
                 <label for="privacy_third_party">Content</label>
-                <textarea id="privacy_third_party" name="privacy_third_party" rows="4"><?php echo esc_textarea($third_party_content); ?></textarea>
+                <?php wp_editor($third_party_content, 'privacy_third_party_editor', array(
+                    'textarea_name' => 'privacy_third_party',
+                    'media_buttons' => false,
+                    'textarea_rows' => 4,
+                    'teeny' => true,
+                    'quicktags' => array('buttons' => 'strong,em,link,ul,ol,li'),
+                    'wpautop' => true
+                )); ?>
             </div>
         </div>
 
@@ -157,7 +216,14 @@ function privacy_policy_meta_callback($post) {
             <h3>8. Changes to This Policy</h3>
             <div class="privacy-meta-field">
                 <label for="privacy_changes">Content</label>
-                <textarea id="privacy_changes" name="privacy_changes" rows="4"><?php echo esc_textarea($changes_content); ?></textarea>
+                <?php wp_editor($changes_content, 'privacy_changes_editor', array(
+                    'textarea_name' => 'privacy_changes',
+                    'media_buttons' => false,
+                    'textarea_rows' => 4,
+                    'teeny' => true,
+                    'quicktags' => array('buttons' => 'strong,em,link,ul,ol,li'),
+                    'wpautop' => true
+                )); ?>
             </div>
         </div>
 
@@ -166,7 +232,14 @@ function privacy_policy_meta_callback($post) {
             <h3>9. Contact Us</h3>
             <div class="privacy-meta-field">
                 <label for="privacy_contact">Content</label>
-                <textarea id="privacy_contact" name="privacy_contact" rows="4"><?php echo esc_textarea($contact_content); ?></textarea>
+                <?php wp_editor($contact_content, 'privacy_contact_editor', array(
+                    'textarea_name' => 'privacy_contact',
+                    'media_buttons' => false,
+                    'textarea_rows' => 4,
+                    'teeny' => true,
+                    'quicktags' => array('buttons' => 'strong,em,link,ul,ol,li'),
+                    'wpautop' => true
+                )); ?>
                 <p class="description">Contact information will be automatically added from theme settings if left empty.</p>
             </div>
         </div>
@@ -176,13 +249,25 @@ function privacy_policy_meta_callback($post) {
             <h3>Bottom CTA Section</h3>
             <div class="privacy-meta-field">
                 <label for="privacy_cta_heading">CTA Heading</label>
-                <input type="text" id="privacy_cta_heading" name="privacy_cta_heading" 
-                       value="<?php echo esc_attr($cta_heading); ?>" 
-                       placeholder="Questions About Our Privacy Policy?" />
+                <?php wp_editor($cta_heading, 'privacy_cta_heading_editor', array(
+                    'textarea_name' => 'privacy_cta_heading',
+                    'media_buttons' => false,
+                    'textarea_rows' => 2,
+                    'teeny' => true,
+                    'quicktags' => array('buttons' => 'strong,em,link'),
+                    'wpautop' => false
+                )); ?>
             </div>
             <div class="privacy-meta-field">
                 <label for="privacy_cta_description">CTA Description</label>
-                <textarea id="privacy_cta_description" name="privacy_cta_description" rows="2"><?php echo esc_textarea($cta_description); ?></textarea>
+                <?php wp_editor($cta_description, 'privacy_cta_description_editor', array(
+                    'textarea_name' => 'privacy_cta_description',
+                    'media_buttons' => false,
+                    'textarea_rows' => 2,
+                    'teeny' => true,
+                    'quicktags' => array('buttons' => 'strong,em,link,ul,ol,li'),
+                    'wpautop' => false
+                )); ?>
             </div>
             <div class="privacy-meta-grid">
                 <div class="privacy-meta-field">
@@ -241,11 +326,10 @@ function privacy_policy_save_meta($post_id) {
         return;
     }
 
-    // Array of fields to save
-    $fields = [
+    // Array of rich text fields that should use wp_kses_post()
+    $rich_text_fields = [
         'privacy_header_title',
         'privacy_header_subtitle',
-        'privacy_last_updated',
         'privacy_info_collect',
         'privacy_info_use',
         'privacy_info_sharing',
@@ -256,17 +340,29 @@ function privacy_policy_save_meta($post_id) {
         'privacy_changes',
         'privacy_contact',
         'privacy_cta_heading',
-        'privacy_cta_description',
+        'privacy_cta_description'
+    ];
+    
+    // Array of simple text fields that should use sanitize_text_field()
+    $text_fields = [
+        'privacy_last_updated',
         'privacy_cta_button1_text',
         'privacy_cta_button1_url',
         'privacy_cta_button2_text',
         'privacy_cta_button2_url'
     ];
 
-    // Save each field
-    foreach ($fields as $field) {
+    // Save rich text fields with wp_kses_post()
+    foreach ($rich_text_fields as $field) {
         if (isset($_POST[$field])) {
-            update_post_meta($post_id, $field, sanitize_textarea_field($_POST[$field]));
+            update_post_meta($post_id, $field, wp_kses_post($_POST[$field]));
+        }
+    }
+    
+    // Save simple text fields with sanitize_text_field()
+    foreach ($text_fields as $field) {
+        if (isset($_POST[$field])) {
+            update_post_meta($post_id, $field, sanitize_text_field($_POST[$field]));
         }
     }
 }

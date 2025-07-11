@@ -22,8 +22,8 @@ get_header(); ?>
         <!-- Page Header -->
         <section class="page-header">
             <div class="page-header-content animate-on-scroll animate-fade-up">
-                <h1><?php echo esc_html(get_post_meta(get_the_ID(), 'privacy_header_title', true) ?: 'Privacy Policy'); ?></h1>
-                <p class="page-subtitle"><?php echo esc_html(get_post_meta(get_the_ID(), 'privacy_header_subtitle', true) ?: 'How we collect, use, and protect your information'); ?></p>
+                <h1><?php echo wp_kses_post(get_post_meta(get_the_ID(), 'privacy_header_title', true) ?: 'Privacy Policy'); ?></h1>
+                <p class="page-subtitle"><?php echo wp_kses_post(get_post_meta(get_the_ID(), 'privacy_header_subtitle', true) ?: 'How we collect, use, and protect your information'); ?></p>
                 <?php 
                 $last_updated = get_post_meta(get_the_ID(), 'privacy_last_updated', true);
                 if (empty($last_updated)) {
@@ -46,35 +46,8 @@ get_header(); ?>
                         $content = $default_content;
                     }
                     
-                    // Split content into paragraphs and bullet points
-                    $lines = explode("\n", $content);
-                    $output = '';
-                    $in_list = false;
-                    
-                    foreach ($lines as $line) {
-                        $line = trim($line);
-                        if (empty($line)) continue;
-                        
-                        if (strpos($line, '- ') === 0) {
-                            if (!$in_list) {
-                                $output .= '<ul>';
-                                $in_list = true;
-                            }
-                            $output .= '<li>' . esc_html(substr($line, 2)) . '</li>';
-                        } else {
-                            if ($in_list) {
-                                $output .= '</ul>';
-                                $in_list = false;
-                            }
-                            $output .= '<p>' . esc_html($line) . '</p>';
-                        }
-                    }
-                    
-                    if ($in_list) {
-                        $output .= '</ul>';
-                    }
-                    
-                    return $output;
+                    // For rich text content, just return with wp_kses_post
+                    return wp_kses_post($content);
                 }
                 
                 // Default content
@@ -184,7 +157,7 @@ Email: hello@aimpro.co.uk';
                         echo '<p>Email: <a href="mailto:hello@aimpro.co.uk">hello@aimpro.co.uk</a></p>';
                         echo '</div>';
                     } else {
-                        echo format_privacy_content($contact_content, '');
+                        echo wp_kses_post($contact_content);
                     }
                     ?>
                 </div>
@@ -194,8 +167,8 @@ Email: hello@aimpro.co.uk';
         <!-- Contact CTA -->
         <section class="testimonials-cta">
             <div class="section-content">
-                <h2><?php echo esc_html(get_post_meta(get_the_ID(), 'privacy_cta_heading', true) ?: 'Questions About Our Privacy Policy?'); ?></h2>
-                <p><?php echo esc_html(get_post_meta(get_the_ID(), 'privacy_cta_description', true) ?: 'We\'re here to help clarify any concerns you may have about how we handle your data'); ?></p>
+                <h2><?php echo wp_kses_post(get_post_meta(get_the_ID(), 'privacy_cta_heading', true) ?: 'Questions About Our Privacy Policy?'); ?></h2>
+                <p><?php echo wp_kses_post(get_post_meta(get_the_ID(), 'privacy_cta_description', true) ?: 'We\'re here to help clarify any concerns you may have about how we handle your data'); ?></p>
                 <div class="cta-buttons">
                     <?php 
                     $button1_text = get_post_meta(get_the_ID(), 'privacy_cta_button1_text', true) ?: 'Contact Us';
