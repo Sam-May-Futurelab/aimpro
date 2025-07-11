@@ -88,21 +88,24 @@ function aimpro_uxui_meta_box_callback($post) {
         
         // Process Section
         'uxui_process_title' => 'Our UX/UI optimisation Process',
-        'uxui_process1_number' => '1',
-        'uxui_process1_title' => 'UX Audit & Analysis',
-        'uxui_process1_description' => 'Comprehensive analysis of your current website performance, user behaviour, and conversion barriers.',
-        'uxui_process2_number' => '2',
-        'uxui_process2_title' => 'Strategy Development',
-        'uxui_process2_description' => 'Create optimisation strategy based on data insights and industry best practices.',
-        'uxui_process3_number' => '3',
-        'uxui_process3_title' => 'Design & Development',
-        'uxui_process3_description' => 'Implement improvements to interface design, user flow, and conversion elements.',
-        'uxui_process4_number' => '4',
-        'uxui_process4_title' => 'Testing & Validation',
-        'uxui_process4_description' => 'A/B test changes and validate improvements through data analysis.',
-        'uxui_process5_number' => '5',
-        'uxui_process5_title' => 'Launch & Monitor',
-        'uxui_process5_description' => 'Deploy optimisations and monitor performance metrics for continued improvement.',
+        'uxui_process_step1_number' => '1',
+        'uxui_process_step1_title' => 'UX Audit & Analysis',
+        'uxui_process_step1_description' => 'Comprehensive analysis of your current website performance, user behaviour, and conversion barriers.',
+        'uxui_process_step2_number' => '2',
+        'uxui_process_step2_title' => 'Strategy Development',
+        'uxui_process_step2_description' => 'Create optimisation strategy based on data insights and industry best practices.',
+        'uxui_process_step3_number' => '3',
+        'uxui_process_step3_title' => 'Design & Development',
+        'uxui_process_step3_description' => 'Implement improvements to interface design, user flow, and conversion elements.',
+        'uxui_process_step4_number' => '4',
+        'uxui_process_step4_title' => 'Testing & Validation',
+        'uxui_process_step4_description' => 'A/B test changes and validate improvements through data analysis.',
+        'uxui_process_step5_number' => '5',
+        'uxui_process_step5_title' => 'Launch & Monitor',
+        'uxui_process_step5_description' => 'Deploy optimisations and monitor performance metrics for continued improvement.',
+        'uxui_process_step6_number' => '6',
+        'uxui_process_step6_title' => 'Monitor & Iterate',
+        'uxui_process_step6_description' => 'Continuous monitoring and iterative improvements based on real user data and performance metrics.',
         
         // Packages Section
         'uxui_packages_title' => 'UX/UI optimisation Packages',
@@ -229,7 +232,7 @@ function aimpro_uxui_meta_box_callback($post) {
                 <div class="meta-column">
                     <div class="meta-field">
                         <label class="meta-label" for="uxui_hero_title">Hero Title</label>
-                        <input type="text" id="uxui_hero_title" name="uxui_hero_title" value="<?php echo esc_attr(get_meta_value('uxui_hero_title', $defaults)); ?>" />
+                        <?php wp_editor(get_meta_value('uxui_hero_title', $defaults), 'uxui_hero_title', array('textarea_rows' => 2, 'media_buttons' => false, 'teeny' => true, 'quicktags' => array('buttons' => 'strong,em,link'))); ?>
                     </div>
                 </div>
             </div>
@@ -237,7 +240,7 @@ function aimpro_uxui_meta_box_callback($post) {
                 <div class="meta-column">
                     <div class="meta-field">
                         <label class="meta-label" for="uxui_hero_subtitle">Hero Subtitle</label>
-                        <textarea id="uxui_hero_subtitle" name="uxui_hero_subtitle"><?php echo esc_textarea(get_meta_value('uxui_hero_subtitle', $defaults)); ?></textarea>
+                        <?php wp_editor(get_meta_value('uxui_hero_subtitle', $defaults), 'uxui_hero_subtitle', array('textarea_rows' => 3, 'media_buttons' => false, 'teeny' => true, 'quicktags' => array('buttons' => 'strong,em,link'))); ?>
                     </div>
                 </div>
             </div>
@@ -301,7 +304,7 @@ function aimpro_uxui_meta_box_callback($post) {
                 <div class="meta-column">
                     <div class="meta-field">
                         <label class="meta-label" for="uxui_intro_title">Introduction Title</label>
-                        <input type="text" id="uxui_intro_title" name="uxui_intro_title" value="<?php echo esc_attr(get_meta_value('uxui_intro_title', $defaults)); ?>" />
+                        <?php wp_editor(get_meta_value('uxui_intro_title', $defaults), 'uxui_intro_title', array('textarea_rows' => 2, 'media_buttons' => false, 'teeny' => true, 'quicktags' => array('buttons' => 'strong,em,link'))); ?>
                     </div>
                 </div>
             </div>
@@ -309,7 +312,7 @@ function aimpro_uxui_meta_box_callback($post) {
                 <div class="meta-column">
                     <div class="meta-field">
                         <label class="meta-label" for="uxui_intro_description">Introduction Description</label>
-                        <textarea id="uxui_intro_description" name="uxui_intro_description"><?php echo esc_textarea(get_meta_value('uxui_intro_description', $defaults)); ?></textarea>
+                        <?php wp_editor(get_meta_value('uxui_intro_description', $defaults), 'uxui_intro_description', array('textarea_rows' => 4, 'media_buttons' => false, 'teeny' => true, 'quicktags' => array('buttons' => 'strong,em,link'))); ?>
                     </div>
                 </div>
             </div>
@@ -323,13 +326,13 @@ function aimpro_uxui_meta_box_callback($post) {
                     <div class="meta-column">
                         <div class="meta-field">
                             <label class="meta-label" for="uxui_feature<?php echo $i; ?>_title">Feature <?php echo $i; ?> Title</label>
-                            <input type="text" id="uxui_feature<?php echo $i; ?>_title" name="uxui_feature<?php echo $i; ?>_title" value="<?php echo esc_attr(get_meta_value("uxui_feature{$i}_title", $defaults)); ?>" />
+                            <?php wp_editor(get_meta_value("uxui_feature{$i}_title", $defaults), "uxui_feature{$i}_title", array('textarea_rows' => 2, 'media_buttons' => false, 'teeny' => true, 'quicktags' => array('buttons' => 'strong,em,link'))); ?>
                         </div>
                     </div>
                     <div class="meta-column">
                         <div class="meta-field">
                             <label class="meta-label" for="uxui_feature<?php echo $i; ?>_description">Feature <?php echo $i; ?> Description</label>
-                            <textarea id="uxui_feature<?php echo $i; ?>_description" name="uxui_feature<?php echo $i; ?>_description"><?php echo esc_textarea(get_meta_value("uxui_feature{$i}_description", $defaults)); ?></textarea>
+                            <?php wp_editor(get_meta_value("uxui_feature{$i}_description", $defaults), "uxui_feature{$i}_description", array('textarea_rows' => 3, 'media_buttons' => false, 'teeny' => true, 'quicktags' => array('buttons' => 'strong,em,link'))); ?>
                         </div>
                     </div>
                 </div>
@@ -343,7 +346,7 @@ function aimpro_uxui_meta_box_callback($post) {
                 <div class="meta-column">
                     <div class="meta-field">
                         <label class="meta-label" for="uxui_case_study_title">Case Study Title</label>
-                        <input type="text" id="uxui_case_study_title" name="uxui_case_study_title" value="<?php echo esc_attr(get_meta_value('uxui_case_study_title', $defaults)); ?>" />
+                        <?php wp_editor(get_meta_value('uxui_case_study_title', $defaults), 'uxui_case_study_title', array('textarea_rows' => 3, 'media_buttons' => false, 'teeny' => true, 'quicktags' => array('buttons' => 'strong,em,link'))); ?>
                     </div>
                 </div>
             </div>
@@ -361,7 +364,7 @@ function aimpro_uxui_meta_box_callback($post) {
                 <div class="meta-column">
                     <div class="meta-field">
                         <label class="meta-label" for="uxui_case_study_challenge">Challenge Description</label>
-                        <textarea id="uxui_case_study_challenge" name="uxui_case_study_challenge"><?php echo esc_textarea(get_meta_value('uxui_case_study_challenge', $defaults)); ?></textarea>
+                        <?php wp_editor(get_meta_value('uxui_case_study_challenge', $defaults), 'uxui_case_study_challenge', array('textarea_rows' => 4, 'media_buttons' => false, 'teeny' => true, 'quicktags' => array('buttons' => 'strong,em,link'))); ?>
                     </div>
                 </div>
             </div>
@@ -402,7 +405,7 @@ function aimpro_uxui_meta_box_callback($post) {
                 <div class="meta-column">
                     <div class="meta-field">
                         <label class="meta-label" for="uxui_case_study_solution">Solution Description (one point per line)</label>
-                        <textarea id="uxui_case_study_solution" name="uxui_case_study_solution"><?php echo esc_textarea(get_meta_value('uxui_case_study_solution', $defaults)); ?></textarea>
+                        <?php wp_editor(get_meta_value('uxui_case_study_solution', $defaults), 'uxui_case_study_solution', array('textarea_rows' => 5, 'media_buttons' => false, 'teeny' => true, 'quicktags' => array('buttons' => 'strong,em,link'))); ?>
                     </div>
                 </div>
             </div>
@@ -440,29 +443,29 @@ function aimpro_uxui_meta_box_callback($post) {
                 <div class="meta-column">
                     <div class="meta-field">
                         <label class="meta-label" for="uxui_process_title">Section Title</label>
-                        <input type="text" id="uxui_process_title" name="uxui_process_title" value="<?php echo esc_attr(get_meta_value('uxui_process_title', $defaults)); ?>" />
+                        <?php wp_editor(get_meta_value('uxui_process_title', $defaults), 'uxui_process_title', array('textarea_rows' => 2, 'media_buttons' => false, 'teeny' => true, 'quicktags' => array('buttons' => 'strong,em,link'))); ?>
                     </div>
                 </div>
             </div>
             
-            <?php for ($i = 1; $i <= 5; $i++) : ?>
+            <?php for ($i = 1; $i <= 6; $i++) : ?>
                 <div class="meta-row">
                     <div class="meta-column" style="flex: 0 0 80px;">
                         <div class="meta-field">
-                            <label class="meta-label" for="uxui_process<?php echo $i; ?>_number">Step Number</label>
-                            <input type="text" id="uxui_process<?php echo $i; ?>_number" name="uxui_process<?php echo $i; ?>_number" value="<?php echo esc_attr(get_meta_value("uxui_process{$i}_number", $defaults)); ?>" />
+                            <label class="meta-label" for="uxui_process_step<?php echo $i; ?>_number">Step Number</label>
+                            <input type="text" id="uxui_process_step<?php echo $i; ?>_number" name="uxui_process_step<?php echo $i; ?>_number" value="<?php echo esc_attr(get_meta_value("uxui_process_step{$i}_number", $defaults)); ?>" />
                         </div>
                     </div>
                     <div class="meta-column">
                         <div class="meta-field">
-                            <label class="meta-label" for="uxui_process<?php echo $i; ?>_title">Step <?php echo $i; ?> Title</label>
-                            <input type="text" id="uxui_process<?php echo $i; ?>_title" name="uxui_process<?php echo $i; ?>_title" value="<?php echo esc_attr(get_meta_value("uxui_process{$i}_title", $defaults)); ?>" />
+                            <label class="meta-label" for="uxui_process_step<?php echo $i; ?>_title">Step <?php echo $i; ?> Title</label>
+                            <?php wp_editor(get_meta_value("uxui_process_step{$i}_title", $defaults), "uxui_process_step{$i}_title", array('textarea_rows' => 2, 'media_buttons' => false, 'teeny' => true, 'quicktags' => array('buttons' => 'strong,em,link'))); ?>
                         </div>
                     </div>
                     <div class="meta-column">
                         <div class="meta-field">
-                            <label class="meta-label" for="uxui_process<?php echo $i; ?>_description">Step <?php echo $i; ?> Description</label>
-                            <textarea id="uxui_process<?php echo $i; ?>_description" name="uxui_process<?php echo $i; ?>_description"><?php echo esc_textarea(get_meta_value("uxui_process{$i}_description", $defaults)); ?></textarea>
+                            <label class="meta-label" for="uxui_process_step<?php echo $i; ?>_description">Step <?php echo $i; ?> Description</label>
+                            <?php wp_editor(get_meta_value("uxui_process_step{$i}_description", $defaults), "uxui_process_step{$i}_description", array('textarea_rows' => 3, 'media_buttons' => false, 'teeny' => true, 'quicktags' => array('buttons' => 'strong,em,link'))); ?>
                         </div>
                     </div>
                 </div>
@@ -476,7 +479,7 @@ function aimpro_uxui_meta_box_callback($post) {
                 <div class="meta-column">
                     <div class="meta-field">
                         <label class="meta-label" for="uxui_packages_title">Section Title</label>
-                        <input type="text" id="uxui_packages_title" name="uxui_packages_title" value="<?php echo esc_attr(get_meta_value('uxui_packages_title', $defaults)); ?>" />
+                        <?php wp_editor(get_meta_value('uxui_packages_title', $defaults), 'uxui_packages_title', array('textarea_rows' => 2, 'media_buttons' => false, 'teeny' => true, 'quicktags' => array('buttons' => 'strong,em,link'))); ?>
                     </div>
                 </div>
             </div>
@@ -484,7 +487,7 @@ function aimpro_uxui_meta_box_callback($post) {
                 <div class="meta-column">
                     <div class="meta-field">
                         <label class="meta-label" for="uxui_packages_subtitle">Section Subtitle</label>
-                        <input type="text" id="uxui_packages_subtitle" name="uxui_packages_subtitle" value="<?php echo esc_attr(get_meta_value('uxui_packages_subtitle', $defaults)); ?>" />
+                        <?php wp_editor(get_meta_value('uxui_packages_subtitle', $defaults), 'uxui_packages_subtitle', array('textarea_rows' => 2, 'media_buttons' => false, 'teeny' => true, 'quicktags' => array('buttons' => 'strong,em,link'))); ?>
                     </div>
                 </div>
             </div>
@@ -501,7 +504,7 @@ function aimpro_uxui_meta_box_callback($post) {
                         <?php endif; ?>
                         <div class="meta-field">
                             <label class="meta-label" for="uxui_package<?php echo $i; ?>_title">Package Title</label>
-                            <input type="text" id="uxui_package<?php echo $i; ?>_title" name="uxui_package<?php echo $i; ?>_title" value="<?php echo esc_attr(get_meta_value("uxui_package{$i}_title", $defaults)); ?>" />
+                            <?php wp_editor(get_meta_value("uxui_package{$i}_title", $defaults), "uxui_package{$i}_title", array('textarea_rows' => 2, 'media_buttons' => false, 'teeny' => true, 'quicktags' => array('buttons' => 'strong,em,link'))); ?>
                         </div>
                         <div class="meta-field">
                             <label class="meta-label" for="uxui_package<?php echo $i; ?>_price">Package Price</label>
@@ -509,11 +512,11 @@ function aimpro_uxui_meta_box_callback($post) {
                         </div>
                         <div class="meta-field">
                             <label class="meta-label" for="uxui_package<?php echo $i; ?>_description">Package Description</label>
-                            <input type="text" id="uxui_package<?php echo $i; ?>_description" name="uxui_package<?php echo $i; ?>_description" value="<?php echo esc_attr(get_meta_value("uxui_package{$i}_description", $defaults)); ?>" />
+                            <?php wp_editor(get_meta_value("uxui_package{$i}_description", $defaults), "uxui_package{$i}_description", array('textarea_rows' => 2, 'media_buttons' => false, 'teeny' => true, 'quicktags' => array('buttons' => 'strong,em,link'))); ?>
                         </div>
                         <div class="meta-field">
                             <label class="meta-label" for="uxui_package<?php echo $i; ?>_features">Package Features (one per line)</label>
-                            <textarea id="uxui_package<?php echo $i; ?>_features" name="uxui_package<?php echo $i; ?>_features"><?php echo esc_textarea(get_meta_value("uxui_package{$i}_features", $defaults)); ?></textarea>
+                            <?php wp_editor(get_meta_value("uxui_package{$i}_features", $defaults), "uxui_package{$i}_features", array('textarea_rows' => 4, 'media_buttons' => false, 'teeny' => true, 'quicktags' => array('buttons' => 'strong,em,link'))); ?>
                         </div>
                         <div class="meta-field">
                             <label class="meta-label" for="uxui_package<?php echo $i; ?>_cta">Package CTA Button Text</label>
@@ -531,7 +534,7 @@ function aimpro_uxui_meta_box_callback($post) {
                 <div class="meta-column">
                     <div class="meta-field">
                         <label class="meta-label" for="uxui_industries_title">Section Title</label>
-                        <input type="text" id="uxui_industries_title" name="uxui_industries_title" value="<?php echo esc_attr(get_meta_value('uxui_industries_title', $defaults)); ?>" />
+                        <?php wp_editor(get_meta_value('uxui_industries_title', $defaults), 'uxui_industries_title', array('textarea_rows' => 2, 'media_buttons' => false, 'teeny' => true, 'quicktags' => array('buttons' => 'strong,em,link'))); ?>
                     </div>
                 </div>
             </div>
@@ -541,13 +544,13 @@ function aimpro_uxui_meta_box_callback($post) {
                     <div class="meta-column">
                         <div class="meta-field">
                             <label class="meta-label" for="uxui_industry<?php echo $i; ?>_name">Industry <?php echo $i; ?> Name</label>
-                            <input type="text" id="uxui_industry<?php echo $i; ?>_name" name="uxui_industry<?php echo $i; ?>_name" value="<?php echo esc_attr(get_meta_value("uxui_industry{$i}_name", $defaults)); ?>" />
+                            <?php wp_editor(get_meta_value("uxui_industry{$i}_name", $defaults), "uxui_industry{$i}_name", array('textarea_rows' => 2, 'media_buttons' => false, 'teeny' => true, 'quicktags' => array('buttons' => 'strong,em,link'))); ?>
                         </div>
                     </div>
                     <div class="meta-column">
                         <div class="meta-field">
                             <label class="meta-label" for="uxui_industry<?php echo $i; ?>_description">Industry <?php echo $i; ?> Description</label>
-                            <input type="text" id="uxui_industry<?php echo $i; ?>_description" name="uxui_industry<?php echo $i; ?>_description" value="<?php echo esc_attr(get_meta_value("uxui_industry{$i}_description", $defaults)); ?>" />
+                            <?php wp_editor(get_meta_value("uxui_industry{$i}_description", $defaults), "uxui_industry{$i}_description", array('textarea_rows' => 3, 'media_buttons' => false, 'teeny' => true, 'quicktags' => array('buttons' => 'strong,em,link'))); ?>
                         </div>
                     </div>
                 </div>
@@ -561,7 +564,7 @@ function aimpro_uxui_meta_box_callback($post) {
                 <div class="meta-column">
                     <div class="meta-field">
                         <label class="meta-label" for="uxui_testimonials_title">Section Title</label>
-                        <input type="text" id="uxui_testimonials_title" name="uxui_testimonials_title" value="<?php echo esc_attr(get_meta_value('uxui_testimonials_title', $defaults)); ?>" />
+                        <?php wp_editor(get_meta_value('uxui_testimonials_title', $defaults), 'uxui_testimonials_title', array('textarea_rows' => 2, 'media_buttons' => false, 'teeny' => true, 'quicktags' => array('buttons' => 'strong,em,link'))); ?>
                     </div>
                 </div>
             </div>
@@ -572,15 +575,15 @@ function aimpro_uxui_meta_box_callback($post) {
                         <h4>Testimonial <?php echo $i; ?></h4>
                         <div class="meta-field">
                             <label class="meta-label" for="uxui_testimonial<?php echo $i; ?>_text">Testimonial Text</label>
-                            <textarea id="uxui_testimonial<?php echo $i; ?>_text" name="uxui_testimonial<?php echo $i; ?>_text"><?php echo esc_textarea(get_meta_value("uxui_testimonial{$i}_text", $defaults)); ?></textarea>
+                            <?php wp_editor(get_meta_value("uxui_testimonial{$i}_text", $defaults), "uxui_testimonial{$i}_text", array('textarea_rows' => 4, 'media_buttons' => false, 'teeny' => true, 'quicktags' => array('buttons' => 'strong,em,link'))); ?>
                         </div>
                         <div class="meta-field">
                             <label class="meta-label" for="uxui_testimonial<?php echo $i; ?>_name">Person Name</label>
-                            <input type="text" id="uxui_testimonial<?php echo $i; ?>_name" name="uxui_testimonial<?php echo $i; ?>_name" value="<?php echo esc_attr(get_meta_value("uxui_testimonial{$i}_name", $defaults)); ?>" />
+                            <?php wp_editor(get_meta_value("uxui_testimonial{$i}_name", $defaults), "uxui_testimonial{$i}_name", array('textarea_rows' => 2, 'media_buttons' => false, 'teeny' => true, 'quicktags' => array('buttons' => 'strong,em,link'))); ?>
                         </div>
                         <div class="meta-field">
                             <label class="meta-label" for="uxui_testimonial<?php echo $i; ?>_title">Person Title</label>
-                            <input type="text" id="uxui_testimonial<?php echo $i; ?>_title" name="uxui_testimonial<?php echo $i; ?>_title" value="<?php echo esc_attr(get_meta_value("uxui_testimonial{$i}_title", $defaults)); ?>" />
+                            <?php wp_editor(get_meta_value("uxui_testimonial{$i}_title", $defaults), "uxui_testimonial{$i}_title", array('textarea_rows' => 2, 'media_buttons' => false, 'teeny' => true, 'quicktags' => array('buttons' => 'strong,em,link'))); ?>
                         </div>
                     </div>
                 </div>
@@ -594,7 +597,7 @@ function aimpro_uxui_meta_box_callback($post) {
                 <div class="meta-column">
                     <div class="meta-field">
                         <label class="meta-label" for="uxui_faq_title">Section Title</label>
-                        <input type="text" id="uxui_faq_title" name="uxui_faq_title" value="<?php echo esc_attr(get_meta_value('uxui_faq_title', $defaults)); ?>" />
+                        <?php wp_editor(get_meta_value('uxui_faq_title', $defaults), 'uxui_faq_title', array('textarea_rows' => 2, 'media_buttons' => false, 'teeny' => true, 'quicktags' => array('buttons' => 'strong,em,link'))); ?>
                     </div>
                 </div>
             </div>
@@ -605,11 +608,11 @@ function aimpro_uxui_meta_box_callback($post) {
                         <h4>FAQ <?php echo $i; ?></h4>
                         <div class="meta-field">
                             <label class="meta-label" for="uxui_faq<?php echo $i; ?>_question">Question</label>
-                            <input type="text" id="uxui_faq<?php echo $i; ?>_question" name="uxui_faq<?php echo $i; ?>_question" value="<?php echo esc_attr(get_meta_value("uxui_faq{$i}_question", $defaults)); ?>" />
+                            <?php wp_editor(get_meta_value("uxui_faq{$i}_question", $defaults), "uxui_faq{$i}_question", array('textarea_rows' => 2, 'media_buttons' => false, 'teeny' => true, 'quicktags' => array('buttons' => 'strong,em,link'))); ?>
                         </div>
                         <div class="meta-field">
                             <label class="meta-label" for="uxui_faq<?php echo $i; ?>_answer">Answer</label>
-                            <textarea id="uxui_faq<?php echo $i; ?>_answer" name="uxui_faq<?php echo $i; ?>_answer"><?php echo esc_textarea(get_meta_value("uxui_faq{$i}_answer", $defaults)); ?></textarea>
+                            <?php wp_editor(get_meta_value("uxui_faq{$i}_answer", $defaults), "uxui_faq{$i}_answer", array('textarea_rows' => 4, 'media_buttons' => false, 'teeny' => true, 'quicktags' => array('buttons' => 'strong,em,link'))); ?>
                         </div>
                     </div>
                 </div>
@@ -638,52 +641,27 @@ function aimpro_save_uxui_meta($post_id) {
         return;
     }
     
-    // Get all fields from $_POST
-    $fields = array(
-        // Hero Section
+    // wp_editor fields that allow HTML content
+    $wp_editor_fields = array(
         'uxui_hero_title', 'uxui_hero_subtitle',
-        
-        // Stats Section
-        'uxui_stat1_number', 'uxui_stat1_label',
-        'uxui_stat2_number', 'uxui_stat2_label',
-        'uxui_stat3_number', 'uxui_stat3_label',
-        'uxui_cta_primary', 'uxui_cta_secondary',
-        
-        // Introduction Section
         'uxui_intro_title', 'uxui_intro_description',
-        
-        // Features Section
         'uxui_feature1_title', 'uxui_feature1_description',
         'uxui_feature2_title', 'uxui_feature2_description',
         'uxui_feature3_title', 'uxui_feature3_description',
         'uxui_feature4_title', 'uxui_feature4_description',
-        
-        // Case Study Section
-        'uxui_case_study_title', 'uxui_case_study_subtitle', 'uxui_case_study_challenge',
-        'uxui_case_study_stat1_number', 'uxui_case_study_stat1_label',
-        'uxui_case_study_stat2_number', 'uxui_case_study_stat2_label',
-        'uxui_case_study_solution_title', 'uxui_case_study_solution',
-        'uxui_case_study_results_title',
-        'uxui_case_study_result1_number', 'uxui_case_study_result1_label',
-        'uxui_case_study_result2_number', 'uxui_case_study_result2_label',
-        'uxui_case_study_result3_number', 'uxui_case_study_result3_label',
-        'uxui_case_study_result4_number', 'uxui_case_study_result4_label',
-        
-        // Process Section
+        'uxui_case_study_title', 'uxui_case_study_challenge',
+        'uxui_case_study_solution',
         'uxui_process_title',
-        'uxui_process1_number', 'uxui_process1_title', 'uxui_process1_description',
-        'uxui_process2_number', 'uxui_process2_title', 'uxui_process2_description',
-        'uxui_process3_number', 'uxui_process3_title', 'uxui_process3_description',
-        'uxui_process4_number', 'uxui_process4_title', 'uxui_process4_description',
-        'uxui_process5_number', 'uxui_process5_title', 'uxui_process5_description',
-        
-        // Packages Section
+        'uxui_process_step1_title', 'uxui_process_step1_description',
+        'uxui_process_step2_title', 'uxui_process_step2_description',
+        'uxui_process_step3_title', 'uxui_process_step3_description',
+        'uxui_process_step4_title', 'uxui_process_step4_description',
+        'uxui_process_step5_title', 'uxui_process_step5_description',
+        'uxui_process_step6_title', 'uxui_process_step6_description',
         'uxui_packages_title', 'uxui_packages_subtitle',
-        'uxui_package1_title', 'uxui_package1_price', 'uxui_package1_description', 'uxui_package1_features', 'uxui_package1_cta',
-        'uxui_package2_label', 'uxui_package2_title', 'uxui_package2_price', 'uxui_package2_description', 'uxui_package2_features', 'uxui_package2_cta',
-        'uxui_package3_title', 'uxui_package3_price', 'uxui_package3_description', 'uxui_package3_features', 'uxui_package3_cta',
-        
-        // Industries Section
+        'uxui_package1_title', 'uxui_package1_description', 'uxui_package1_features',
+        'uxui_package2_title', 'uxui_package2_description', 'uxui_package2_features',
+        'uxui_package3_title', 'uxui_package3_description', 'uxui_package3_features',
         'uxui_industries_title',
         'uxui_industry1_name', 'uxui_industry1_description',
         'uxui_industry2_name', 'uxui_industry2_description',
@@ -691,14 +669,10 @@ function aimpro_save_uxui_meta($post_id) {
         'uxui_industry4_name', 'uxui_industry4_description',
         'uxui_industry5_name', 'uxui_industry5_description',
         'uxui_industry6_name', 'uxui_industry6_description',
-        
-        // Testimonials Section
         'uxui_testimonials_title',
         'uxui_testimonial1_text', 'uxui_testimonial1_name', 'uxui_testimonial1_title',
         'uxui_testimonial2_text', 'uxui_testimonial2_name', 'uxui_testimonial2_title',
         'uxui_testimonial3_text', 'uxui_testimonial3_name', 'uxui_testimonial3_title',
-        
-        // FAQ Section
         'uxui_faq_title',
         'uxui_faq1_question', 'uxui_faq1_answer',
         'uxui_faq2_question', 'uxui_faq2_answer',
@@ -708,10 +682,47 @@ function aimpro_save_uxui_meta($post_id) {
         'uxui_faq6_question', 'uxui_faq6_answer'
     );
     
-    // Update post meta for each field
-    foreach ($fields as $field) {
+    // Regular input fields that should be sanitized as text
+    $text_fields = array(
+        // Stats Section
+        'uxui_stat1_number', 'uxui_stat1_label',
+        'uxui_stat2_number', 'uxui_stat2_label',
+        'uxui_stat3_number', 'uxui_stat3_label',
+        'uxui_cta_primary', 'uxui_cta_secondary',
+        
+        // Case Study Section
+        'uxui_case_study_subtitle',
+        'uxui_case_study_stat1_number', 'uxui_case_study_stat1_label',
+        'uxui_case_study_stat2_number', 'uxui_case_study_stat2_label',
+        'uxui_case_study_solution_title',
+        'uxui_case_study_results_title',
+        'uxui_case_study_result1_number', 'uxui_case_study_result1_label',
+        'uxui_case_study_result2_number', 'uxui_case_study_result2_label',
+        'uxui_case_study_result3_number', 'uxui_case_study_result3_label',
+        'uxui_case_study_result4_number', 'uxui_case_study_result4_label',
+        
+        // Process Section
+        'uxui_process_step1_number', 'uxui_process_step2_number', 'uxui_process_step3_number', 
+        'uxui_process_step4_number', 'uxui_process_step5_number', 'uxui_process_step6_number',
+        
+        // Packages Section
+        'uxui_package1_price', 'uxui_package1_cta',
+        'uxui_package2_label', 'uxui_package2_price', 'uxui_package2_cta',
+        'uxui_package3_price', 'uxui_package3_cta'
+    );
+    
+    // Save wp_editor fields with HTML preservation
+    foreach ($wp_editor_fields as $field) {
         if (isset($_POST[$field])) {
             $value = wp_kses_post($_POST[$field]);
+            update_post_meta($post_id, $field, $value);
+        }
+    }
+    
+    // Save regular text fields with sanitization
+    foreach ($text_fields as $field) {
+        if (isset($_POST[$field])) {
+            $value = sanitize_text_field($_POST[$field]);
             update_post_meta($post_id, $field, $value);
         }
     }

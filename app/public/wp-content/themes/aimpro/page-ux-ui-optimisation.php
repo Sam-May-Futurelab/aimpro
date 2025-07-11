@@ -385,8 +385,8 @@ get_header(); ?>
     </div>    <!-- Hero Section -->    <section class="page-hero service-hero">
         <div class="container">
             <div class="hero-content animate-on-scroll animate-fade-up">
-                <h1><?php echo get_post_meta(get_the_ID(), 'uxui_hero_title', true) ?: 'UX/UI optimisation'; ?></h1>
-                <p class="hero-subtitle"><?php echo get_post_meta(get_the_ID(), 'uxui_hero_subtitle', true) ?: 'Transform your existing website into a conversion machine through data-driven user experience optimisation and interface improvements.'; ?></p>
+                <h1><?php echo wp_kses_post(get_post_meta(get_the_ID(), 'uxui_hero_title', true)) ?: 'UX/UI optimisation'; ?></h1>
+                <p class="hero-subtitle"><?php echo wp_kses_post(get_post_meta(get_the_ID(), 'uxui_hero_subtitle', true)) ?: 'Transform your existing website into a conversion machine through data-driven user experience optimisation and interface improvements.'; ?></p>
                 <div class="hero-stats animate-on-scroll animate-stagger animate-scale-up">
                     <div class="stat-item">
                         <div class="stat-number"><?php echo get_post_meta(get_the_ID(), 'uxui_hero_stat1_number', true) ?: '275%'; ?></div>
@@ -411,29 +411,29 @@ get_header(); ?>
         <div class="container">
             <div class="overview-content">
                 <div class="overview-text animate-on-scroll animate-slide-left">
-                    <h2><?php echo get_post_meta(get_the_ID(), 'uxui_intro_title', true) ?: 'optimise Your Website for Maximum Performance'; ?></h2>
-                    <p class="overview-description"><?php echo get_post_meta(get_the_ID(), 'uxui_intro_description', true) ?: 'Our UX/UI optimisation service transforms underperforming websites into conversion powerhouses through systematic analysis, strategic improvements, and data-driven testing. We focus on enhancing user experience while dramatically improving your business metrics.'; ?></p>
+                    <h2><?php echo wp_kses_post(get_post_meta(get_the_ID(), 'uxui_intro_title', true)) ?: 'optimise Your Website for Maximum Performance'; ?></h2>
+                    <p class="overview-description"><?php echo wp_kses_post(get_post_meta(get_the_ID(), 'uxui_intro_description', true)) ?: 'Our UX/UI optimisation service transforms underperforming websites into conversion powerhouses through systematic analysis, strategic improvements, and data-driven testing. We focus on enhancing user experience while dramatically improving your business metrics.'; ?></p>
                     
                     <h3 class="features-heading">Key UX/UI Features</h3>
                     <div class="service-features-list">
                         <div class="service-feature-item">
-                            <h4><i class="fas fa-search-plus"></i> <?php echo get_post_meta(get_the_ID(), 'uxui_feature1_title', true) ?: 'Comprehensive UX Audit'; ?></h4>
-                            <p><?php echo get_post_meta(get_the_ID(), 'uxui_feature1_description', true) ?: 'Deep analysis of user behaviour, conversion barriers, and optimisation opportunities using advanced analytics.'; ?></p>
+                            <h4><i class="fas fa-search-plus"></i> <?php echo wp_kses_post(get_post_meta(get_the_ID(), 'uxui_feature1_title', true)) ?: 'Comprehensive UX Audit'; ?></h4>
+                            <p><?php echo wp_kses_post(get_post_meta(get_the_ID(), 'uxui_feature1_description', true)) ?: 'Deep analysis of user behaviour, conversion barriers, and optimisation opportunities using advanced analytics.'; ?></p>
                         </div>
                         
                         <div class="service-feature-item">
-                            <h4><i class="fas fa-chart-line"></i> <?php echo get_post_meta(get_the_ID(), 'uxui_feature2_title', true) ?: 'Conversion Rate optimisation'; ?></h4>
-                            <p><?php echo get_post_meta(get_the_ID(), 'uxui_feature2_description', true) ?: 'Strategic improvements to forms, CTAs, and user flow to maximise conversions and revenue.'; ?></p>
+                            <h4><i class="fas fa-chart-line"></i> <?php echo wp_kses_post(get_post_meta(get_the_ID(), 'uxui_feature2_title', true)) ?: 'Conversion Rate optimisation'; ?></h4>
+                            <p><?php echo wp_kses_post(get_post_meta(get_the_ID(), 'uxui_feature2_description', true)) ?: 'Strategic improvements to forms, CTAs, and user flow to maximise conversions and revenue.'; ?></p>
                         </div>
                         
                         <div class="service-feature-item">
-                            <h4><i class="fas fa-mobile-alt"></i> <?php echo get_post_meta(get_the_ID(), 'uxui_feature3_title', true) ?: 'Mobile Experience Enhancement'; ?></h4>
-                            <p><?php echo get_post_meta(get_the_ID(), 'uxui_feature3_description', true) ?: 'optimise mobile user experience for the majority of your traffic with responsive design improvements.'; ?></p>
+                            <h4><i class="fas fa-mobile-alt"></i> <?php echo wp_kses_post(get_post_meta(get_the_ID(), 'uxui_feature3_title', true)) ?: 'Mobile Experience Enhancement'; ?></h4>
+                            <p><?php echo wp_kses_post(get_post_meta(get_the_ID(), 'uxui_feature3_description', true)) ?: 'optimise mobile user experience for the majority of your traffic with responsive design improvements.'; ?></p>
                         </div>
                         
                         <div class="service-feature-item">
-                            <h4><i class="fas fa-tachometer-alt"></i> <?php echo get_post_meta(get_the_ID(), 'uxui_feature4_title', true) ?: 'Performance optimisation'; ?></h4>
-                            <p><?php echo get_post_meta(get_the_ID(), 'uxui_feature4_description', true) ?: 'Speed optimisation and Core Web Vitals improvements for better user experience and SEO rankings.'; ?></p>
+                            <h4><i class="fas fa-tachometer-alt"></i> <?php echo wp_kses_post(get_post_meta(get_the_ID(), 'uxui_feature4_title', true)) ?: 'Performance optimisation'; ?></h4>
+                            <p><?php echo wp_kses_post(get_post_meta(get_the_ID(), 'uxui_feature4_description', true)) ?: 'Speed optimisation and Core Web Vitals improvements for better user experience and SEO rankings.'; ?></p>
                         </div>
                     </div>
                 </div>
@@ -628,49 +628,49 @@ get_header(); ?>
         </div>
     </section><!-- optimisation Process -->    <section class="optimisation-process">
         <div class="container">
-            <h2 class="animate-on-scroll animate-fade-up"><?php echo get_post_meta(get_the_ID(), 'uxui_process_title', true) ?: 'Our UX/UI optimisation Process'; ?></h2>
+            <h2 class="animate-on-scroll animate-fade-up"><?php echo wp_kses_post(get_post_meta(get_the_ID(), 'uxui_process_title', true)) ?: 'Our UX/UI optimisation Process'; ?></h2>
             
             <div class="process-timeline">
                 <div class="process-step animate-on-scroll animate-stagger animate-fade-up">
                     <div class="step-number">1</div>
                     <div class="step-content">
-                        <h3><?php echo get_post_meta(get_the_ID(), 'uxui_process_step1_title', true) ?: 'Comprehensive UX Audit'; ?></h3>
-                        <p><?php echo get_post_meta(get_the_ID(), 'uxui_process_step1_description', true) ?: 'analyse current performance, user behaviour, and identify optimisation opportunities using advanced analytics tools.'; ?></p>
+                        <h3><?php echo wp_kses_post(get_post_meta(get_the_ID(), 'uxui_process_step1_title', true)) ?: 'Comprehensive UX Audit'; ?></h3>
+                        <p><?php echo wp_kses_post(get_post_meta(get_the_ID(), 'uxui_process_step1_description', true)) ?: 'analyse current performance, user behaviour, and identify optimisation opportunities using advanced analytics tools.'; ?></p>
                     </div>
                 </div>
                 <div class="process-step animate-on-scroll animate-stagger animate-fade-up">
                     <div class="step-number">2</div>
                     <div class="step-content">
-                        <h3><?php echo get_post_meta(get_the_ID(), 'uxui_process_step2_title', true) ?: 'User Research & Testing'; ?></h3>
-                        <p><?php echo get_post_meta(get_the_ID(), 'uxui_process_step2_description', true) ?: 'Conduct user testing, heatmap analysis, and behavioural research to understand user pain points.'; ?></p>
+                        <h3><?php echo wp_kses_post(get_post_meta(get_the_ID(), 'uxui_process_step2_title', true)) ?: 'User Research & Testing'; ?></h3>
+                        <p><?php echo wp_kses_post(get_post_meta(get_the_ID(), 'uxui_process_step2_description', true)) ?: 'Conduct user testing, heatmap analysis, and behavioural research to understand user pain points.'; ?></p>
                     </div>
                 </div>
                 <div class="process-step animate-on-scroll animate-stagger animate-fade-up">
                     <div class="step-number">3</div>
                     <div class="step-content">
-                        <h3><?php echo get_post_meta(get_the_ID(), 'uxui_process_step3_title', true) ?: 'Strategy Development'; ?></h3>
-                        <p><?php echo get_post_meta(get_the_ID(), 'uxui_process_step3_description', true) ?: 'Create detailed optimisation strategy with prioritised improvements based on impact and effort.'; ?></p>
+                        <h3><?php echo wp_kses_post(get_post_meta(get_the_ID(), 'uxui_process_step3_title', true)) ?: 'Strategy Development'; ?></h3>
+                        <p><?php echo wp_kses_post(get_post_meta(get_the_ID(), 'uxui_process_step3_description', true)) ?: 'Create detailed optimisation strategy with prioritised improvements based on impact and effort.'; ?></p>
                     </div>
                 </div>
                 <div class="process-step animate-on-scroll animate-stagger animate-fade-up">
                     <div class="step-number">4</div>
                     <div class="step-content">
-                        <h3><?php echo get_post_meta(get_the_ID(), 'uxui_process_step4_title', true) ?: 'Design & Implementation'; ?></h3>
-                        <p><?php echo get_post_meta(get_the_ID(), 'uxui_process_step4_description', true) ?: 'Implement strategic improvements with focus on user experience and conversion optimisation.'; ?></p>
+                        <h3><?php echo wp_kses_post(get_post_meta(get_the_ID(), 'uxui_process_step4_title', true)) ?: 'Design & Implementation'; ?></h3>
+                        <p><?php echo wp_kses_post(get_post_meta(get_the_ID(), 'uxui_process_step4_description', true)) ?: 'Implement strategic improvements with focus on user experience and conversion optimisation.'; ?></p>
                     </div>
                 </div>
                 <div class="process-step animate-on-scroll animate-stagger animate-fade-up">
                     <div class="step-number">5</div>
                     <div class="step-content">
-                        <h3><?php echo get_post_meta(get_the_ID(), 'uxui_process_step5_title', true) ?: 'A/B Testing'; ?></h3>
-                        <p><?php echo get_post_meta(get_the_ID(), 'uxui_process_step5_description', true) ?: 'Test variations to ensure improvements deliver measurable results and optimal performance.'; ?></p>
+                        <h3><?php echo wp_kses_post(get_post_meta(get_the_ID(), 'uxui_process_step5_title', true)) ?: 'A/B Testing'; ?></h3>
+                        <p><?php echo wp_kses_post(get_post_meta(get_the_ID(), 'uxui_process_step5_description', true)) ?: 'Test variations to ensure improvements deliver measurable results and optimal performance.'; ?></p>
                     </div>
                 </div>
                 <div class="process-step animate-on-scroll animate-stagger animate-fade-up">
                     <div class="step-number">6</div>
                     <div class="step-content">
-                        <h3><?php echo get_post_meta(get_the_ID(), 'uxui_process_step6_title', true) ?: 'Monitor & Iterate'; ?></h3>
-                        <p><?php echo get_post_meta(get_the_ID(), 'uxui_process_step6_description', true) ?: 'Continuous monitoring and iterative improvements based on real user data and performance metrics.'; ?></p>
+                        <h3><?php echo wp_kses_post(get_post_meta(get_the_ID(), 'uxui_process_step6_title', true)) ?: 'Monitor & Iterate'; ?></h3>
+                        <p><?php echo wp_kses_post(get_post_meta(get_the_ID(), 'uxui_process_step6_description', true)) ?: 'Continuous monitoring and iterative improvements based on real user data and performance metrics.'; ?></p>
                     </div>
                 </div>
             </div>
