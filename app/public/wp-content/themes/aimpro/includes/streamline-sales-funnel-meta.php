@@ -27,11 +27,35 @@ function streamline_sales_funnel_meta_callback($post) {
         <h3>Hero Section</h3>
         <div class="streamline-meta-field">
             <label>Hero Title</label>
-            <input type="text" name="streamline_hero_title" value="<?php echo esc_attr(get_post_meta($post->ID, 'streamline_hero_title', true) ?: 'Streamline Your Sales Funnel'); ?>" />
+            <?php
+            wp_editor(
+                get_post_meta($post->ID, 'streamline_hero_title', true) ?: 'Streamline Your Sales Funnel',
+                'streamline_hero_title',
+                array(
+                    'textarea_name' => 'streamline_hero_title',
+                    'textarea_rows' => 2,
+                    'teeny' => true,
+                    'media_buttons' => false,
+                    'quicktags' => array('buttons' => 'strong,em,link')
+                )
+            );
+            ?>
         </div>
         <div class="streamline-meta-field">
             <label>Hero Subtitle</label>
-            <textarea name="streamline_hero_subtitle"><?php echo esc_textarea(get_post_meta($post->ID, 'streamline_hero_subtitle', true) ?: 'Transform scattered marketing efforts into a cohesive, high-converting sales system that works around the clock.'); ?></textarea>
+            <?php
+            wp_editor(
+                get_post_meta($post->ID, 'streamline_hero_subtitle', true) ?: 'Transform scattered marketing efforts into a cohesive, high-converting sales system that works around the clock.',
+                'streamline_hero_subtitle',
+                array(
+                    'textarea_name' => 'streamline_hero_subtitle',
+                    'textarea_rows' => 3,
+                    'teeny' => true,
+                    'media_buttons' => false,
+                    'quicktags' => array('buttons' => 'strong,em,link')
+                )
+            );
+            ?>
         </div>
         <div class="streamline-stats-row">
             <div class="streamline-meta-field">
@@ -77,11 +101,35 @@ function streamline_sales_funnel_meta_callback($post) {
         <h3>Services Overview</h3>
         <div class="streamline-meta-field">
             <label>Overview Title</label>
-            <input type="text" name="streamline_overview_title" value="<?php echo esc_attr(get_post_meta($post->ID, 'streamline_overview_title', true) ?: 'Complete Sales Funnel Streamlining Solutions'); ?>" />
+            <?php
+            wp_editor(
+                get_post_meta($post->ID, 'streamline_overview_title', true) ?: 'Complete Sales Funnel Streamlining Solutions',
+                'streamline_overview_title',
+                array(
+                    'textarea_name' => 'streamline_overview_title',
+                    'textarea_rows' => 2,
+                    'teeny' => true,
+                    'media_buttons' => false,
+                    'quicktags' => array('buttons' => 'strong,em,link')
+                )
+            );
+            ?>
         </div>
         <div class="streamline-meta-field">
             <label>Overview Description</label>
-            <textarea name="streamline_overview_description"><?php echo esc_textarea(get_post_meta($post->ID, 'streamline_overview_description', true) ?: 'Eliminate inefficiencies and gaps in your current sales process with our systematic approach to funnel optimisation and automation.'); ?></textarea>
+            <?php
+            wp_editor(
+                get_post_meta($post->ID, 'streamline_overview_description', true) ?: 'Eliminate inefficiencies and gaps in your current sales process with our systematic approach to funnel optimisation and automation.',
+                'streamline_overview_description',
+                array(
+                    'textarea_name' => 'streamline_overview_description',
+                    'textarea_rows' => 4,
+                    'teeny' => true,
+                    'media_buttons' => false,
+                    'quicktags' => array('buttons' => 'strong,em,link')
+                )
+            );
+            ?>
         </div>
         
         <div class="streamline-meta-field">
@@ -107,86 +155,314 @@ function streamline_sales_funnel_meta_callback($post) {
         <h4>Service Items</h4>
         <div class="streamline-meta-field">
             <label>Service 1 Title</label>
-            <input type="text" name="streamline_service_1_title" value="<?php echo esc_attr(get_post_meta($post->ID, 'streamline_service_1_title', true) ?: 'Funnel Analysis & Audit'); ?>" />
+            <?php
+            wp_editor(
+                get_post_meta($post->ID, 'streamline_service_1_title', true) ?: 'Funnel Analysis & Audit',
+                'streamline_service_1_title',
+                array(
+                    'textarea_name' => 'streamline_service_1_title',
+                    'textarea_rows' => 2,
+                    'teeny' => true,
+                    'media_buttons' => false,
+                    'quicktags' => array('buttons' => 'strong,em,link')
+                )
+            );
+            ?>
         </div>
         <div class="streamline-meta-field">
             <label>Service 1 Description</label>
-            <textarea name="streamline_service_1_desc"><?php echo esc_textarea(get_post_meta($post->ID, 'streamline_service_1_desc', true) ?: 'Comprehensive review of your existing sales process to identify bottlenecks, gaps, and optimisation opportunities.'); ?></textarea>
+            <?php
+            wp_editor(
+                get_post_meta($post->ID, 'streamline_service_1_desc', true) ?: 'Comprehensive review of your existing sales process to identify bottlenecks, gaps, and optimisation opportunities.',
+                'streamline_service_1_desc',
+                array(
+                    'textarea_name' => 'streamline_service_1_desc',
+                    'textarea_rows' => 3,
+                    'teeny' => true,
+                    'media_buttons' => false,
+                    'quicktags' => array('buttons' => 'strong,em,link')
+                )
+            );
+            ?>
         </div>
 
         <div class="streamline-meta-field">
             <label>Service 2 Title</label>
-            <input type="text" name="streamline_service_2_title" value="<?php echo esc_attr(get_post_meta($post->ID, 'streamline_service_2_title', true) ?: 'Process Mapping & Design'); ?>" />
+            <?php
+            wp_editor(
+                get_post_meta($post->ID, 'streamline_service_2_title', true) ?: 'Process Mapping & Design',
+                'streamline_service_2_title',
+                array(
+                    'textarea_name' => 'streamline_service_2_title',
+                    'textarea_rows' => 2,
+                    'teeny' => true,
+                    'media_buttons' => false,
+                    'quicktags' => array('buttons' => 'strong,em,link')
+                )
+            );
+            ?>
         </div>
         <div class="streamline-meta-field">
             <label>Service 2 Description</label>
-            <textarea name="streamline_service_2_desc"><?php echo esc_textarea(get_post_meta($post->ID, 'streamline_service_2_desc', true) ?: 'Visual mapping of your optimised sales journey with clear touchpoints and decision paths for maximum efficiency.'); ?></textarea>
+            <?php
+            wp_editor(
+                get_post_meta($post->ID, 'streamline_service_2_desc', true) ?: 'Visual mapping of your optimised sales journey with clear touchpoints and decision paths for maximum efficiency.',
+                'streamline_service_2_desc',
+                array(
+                    'textarea_name' => 'streamline_service_2_desc',
+                    'textarea_rows' => 3,
+                    'teeny' => true,
+                    'media_buttons' => false,
+                    'quicktags' => array('buttons' => 'strong,em,link')
+                )
+            );
+            ?>
         </div>
 
         <div class="streamline-meta-field">
             <label>Service 3 Title</label>
-            <input type="text" name="streamline_service_3_title" value="<?php echo esc_attr(get_post_meta($post->ID, 'streamline_service_3_title', true) ?: 'Lead Qualification System'); ?>" />
+            <?php
+            wp_editor(
+                get_post_meta($post->ID, 'streamline_service_3_title', true) ?: 'Lead Qualification System',
+                'streamline_service_3_title',
+                array(
+                    'textarea_name' => 'streamline_service_3_title',
+                    'textarea_rows' => 2,
+                    'teeny' => true,
+                    'media_buttons' => false,
+                    'quicktags' => array('buttons' => 'strong,em,link')
+                )
+            );
+            ?>
         </div>
         <div class="streamline-meta-field">
             <label>Service 3 Description</label>
-            <textarea name="streamline_service_3_desc"><?php echo esc_textarea(get_post_meta($post->ID, 'streamline_service_3_desc', true) ?: 'Automated lead scoring and qualification processes that ensure your team focuses on the highest-value prospects.'); ?></textarea>
+            <?php
+            wp_editor(
+                get_post_meta($post->ID, 'streamline_service_3_desc', true) ?: 'Automated lead scoring and qualification processes that ensure your team focuses on the highest-value prospects.',
+                'streamline_service_3_desc',
+                array(
+                    'textarea_name' => 'streamline_service_3_desc',
+                    'textarea_rows' => 3,
+                    'teeny' => true,
+                    'media_buttons' => false,
+                    'quicktags' => array('buttons' => 'strong,em,link')
+                )
+            );
+            ?>
         </div>
 
         <div class="streamline-meta-field">
             <label>Service 4 Title</label>
-            <input type="text" name="streamline_service_4_title" value="<?php echo esc_attr(get_post_meta($post->ID, 'streamline_service_4_title', true) ?: 'Nurture Sequence optimisation'); ?>" />
+            <?php
+            wp_editor(
+                get_post_meta($post->ID, 'streamline_service_4_title', true) ?: 'Nurture Sequence optimisation',
+                'streamline_service_4_title',
+                array(
+                    'textarea_name' => 'streamline_service_4_title',
+                    'textarea_rows' => 2,
+                    'teeny' => true,
+                    'media_buttons' => false,
+                    'quicktags' => array('buttons' => 'strong,em,link')
+                )
+            );
+            ?>
         </div>
         <div class="streamline-meta-field">
             <label>Service 4 Description</label>
-            <textarea name="streamline_service_4_desc"><?php echo esc_textarea(get_post_meta($post->ID, 'streamline_service_4_desc', true) ?: 'Refined email and communication sequences that move prospects smoothly through each stage of your funnel.'); ?></textarea>
+            <?php
+            wp_editor(
+                get_post_meta($post->ID, 'streamline_service_4_desc', true) ?: 'Refined email and communication sequences that move prospects smoothly through each stage of your funnel.',
+                'streamline_service_4_desc',
+                array(
+                    'textarea_name' => 'streamline_service_4_desc',
+                    'textarea_rows' => 3,
+                    'teeny' => true,
+                    'media_buttons' => false,
+                    'quicktags' => array('buttons' => 'strong,em,link')
+                )
+            );
+            ?>
         </div>
 
         <div class="streamline-meta-field">
             <label>Service 5 Title</label>
-            <input type="text" name="streamline_service_5_title" value="<?php echo esc_attr(get_post_meta($post->ID, 'streamline_service_5_title', true) ?: 'Conversion Point Enhancement'); ?>" />
+            <?php
+            wp_editor(
+                get_post_meta($post->ID, 'streamline_service_5_title', true) ?: 'Conversion Point Enhancement',
+                'streamline_service_5_title',
+                array(
+                    'textarea_name' => 'streamline_service_5_title',
+                    'textarea_rows' => 2,
+                    'teeny' => true,
+                    'media_buttons' => false,
+                    'quicktags' => array('buttons' => 'strong,em,link')
+                )
+            );
+            ?>
         </div>
         <div class="streamline-meta-field">
             <label>Service 5 Description</label>
-            <textarea name="streamline_service_5_desc"><?php echo esc_textarea(get_post_meta($post->ID, 'streamline_service_5_desc', true) ?: 'Strategic optimisation of key conversion moments to reduce friction and increase completion rates.'); ?></textarea>
+            <?php
+            wp_editor(
+                get_post_meta($post->ID, 'streamline_service_5_desc', true) ?: 'Strategic optimisation of key conversion moments to reduce friction and increase completion rates.',
+                'streamline_service_5_desc',
+                array(
+                    'textarea_name' => 'streamline_service_5_desc',
+                    'textarea_rows' => 3,
+                    'teeny' => true,
+                    'media_buttons' => false,
+                    'quicktags' => array('buttons' => 'strong,em,link')
+                )
+            );
+            ?>
         </div>
 
         <div class="streamline-meta-field">
             <label>Service 6 Title</label>
-            <input type="text" name="streamline_service_6_title" value="<?php echo esc_attr(get_post_meta($post->ID, 'streamline_service_6_title', true) ?: 'Performance Monitoring'); ?>" />
+            <?php
+            wp_editor(
+                get_post_meta($post->ID, 'streamline_service_6_title', true) ?: 'Performance Monitoring',
+                'streamline_service_6_title',
+                array(
+                    'textarea_name' => 'streamline_service_6_title',
+                    'textarea_rows' => 2,
+                    'teeny' => true,
+                    'media_buttons' => false,
+                    'quicktags' => array('buttons' => 'strong,em,link')
+                )
+            );
+            ?>
         </div>
         <div class="streamline-meta-field">
             <label>Service 6 Description</label>
-            <textarea name="streamline_service_6_desc"><?php echo esc_textarea(get_post_meta($post->ID, 'streamline_service_6_desc', true) ?: 'Ongoing analytics and reporting to track funnel performance and identify continuous improvement opportunities.'); ?></textarea>
+            <?php
+            wp_editor(
+                get_post_meta($post->ID, 'streamline_service_6_desc', true) ?: 'Ongoing analytics and reporting to track funnel performance and identify continuous improvement opportunities.',
+                'streamline_service_6_desc',
+                array(
+                    'textarea_name' => 'streamline_service_6_desc',
+                    'textarea_rows' => 3,
+                    'teeny' => true,
+                    'media_buttons' => false,
+                    'quicktags' => array('buttons' => 'strong,em,link')
+                )
+            );
+            ?>
         </div>
 
         <h4>Problems We Solve</h4>
         <div class="streamline-meta-field">
             <label>Problems Title</label>
-            <input type="text" name="streamline_problems_title" value="<?php echo esc_attr(get_post_meta($post->ID, 'streamline_problems_title', true) ?: 'Sales Funnel Problems We Solve:'); ?>" />
+            <?php
+            wp_editor(
+                get_post_meta($post->ID, 'streamline_problems_title', true) ?: 'Sales Funnel Problems We Solve:',
+                'streamline_problems_title',
+                array(
+                    'textarea_name' => 'streamline_problems_title',
+                    'textarea_rows' => 2,
+                    'teeny' => true,
+                    'media_buttons' => false,
+                    'quicktags' => array('buttons' => 'strong,em,link')
+                )
+            );
+            ?>
         </div>
         <div class="streamline-meta-field">
             <label>Problem 1</label>
-            <input type="text" name="streamline_problem_1" value="<?php echo esc_attr(get_post_meta($post->ID, 'streamline_problem_1', true) ?: 'High drop-off rates between funnel stages'); ?>" />
+            <?php
+            wp_editor(
+                get_post_meta($post->ID, 'streamline_problem_1', true) ?: 'High drop-off rates between funnel stages',
+                'streamline_problem_1',
+                array(
+                    'textarea_name' => 'streamline_problem_1',
+                    'textarea_rows' => 2,
+                    'teeny' => true,
+                    'media_buttons' => false,
+                    'quicktags' => array('buttons' => 'strong,em,link')
+                )
+            );
+            ?>
         </div>
         <div class="streamline-meta-field">
             <label>Problem 2</label>
-            <input type="text" name="streamline_problem_2" value="<?php echo esc_attr(get_post_meta($post->ID, 'streamline_problem_2', true) ?: 'Poor lead qualification and scoring systems'); ?>" />
+            <?php
+            wp_editor(
+                get_post_meta($post->ID, 'streamline_problem_2', true) ?: 'Poor lead qualification and scoring systems',
+                'streamline_problem_2',
+                array(
+                    'textarea_name' => 'streamline_problem_2',
+                    'textarea_rows' => 2,
+                    'teeny' => true,
+                    'media_buttons' => false,
+                    'quicktags' => array('buttons' => 'strong,em,link')
+                )
+            );
+            ?>
         </div>
         <div class="streamline-meta-field">
             <label>Problem 3</label>
-            <input type="text" name="streamline_problem_3" value="<?php echo esc_attr(get_post_meta($post->ID, 'streamline_problem_3', true) ?: 'Inconsistent follow-up and nurturing sequences'); ?>" />
+            <?php
+            wp_editor(
+                get_post_meta($post->ID, 'streamline_problem_3', true) ?: 'Inconsistent follow-up and nurturing sequences',
+                'streamline_problem_3',
+                array(
+                    'textarea_name' => 'streamline_problem_3',
+                    'textarea_rows' => 2,
+                    'teeny' => true,
+                    'media_buttons' => false,
+                    'quicktags' => array('buttons' => 'strong,em,link')
+                )
+            );
+            ?>
         </div>
         <div class="streamline-meta-field">
             <label>Problem 4</label>
-            <input type="text" name="streamline_problem_4" value="<?php echo esc_attr(get_post_meta($post->ID, 'streamline_problem_4', true) ?: 'Lack of funnel visibility and performance tracking'); ?>" />
+            <?php
+            wp_editor(
+                get_post_meta($post->ID, 'streamline_problem_4', true) ?: 'Lack of funnel visibility and performance tracking',
+                'streamline_problem_4',
+                array(
+                    'textarea_name' => 'streamline_problem_4',
+                    'textarea_rows' => 2,
+                    'teeny' => true,
+                    'media_buttons' => false,
+                    'quicktags' => array('buttons' => 'strong,em,link')
+                )
+            );
+            ?>
         </div>
         <div class="streamline-meta-field">
             <label>Problem 5</label>
-            <input type="text" name="streamline_problem_5" value="<?php echo esc_attr(get_post_meta($post->ID, 'streamline_problem_5', true) ?: 'Misaligned marketing and sales efforts'); ?>" />
+            <?php
+            wp_editor(
+                get_post_meta($post->ID, 'streamline_problem_5', true) ?: 'Misaligned marketing and sales efforts',
+                'streamline_problem_5',
+                array(
+                    'textarea_name' => 'streamline_problem_5',
+                    'textarea_rows' => 2,
+                    'teeny' => true,
+                    'media_buttons' => false,
+                    'quicktags' => array('buttons' => 'strong,em,link')
+                )
+            );
+            ?>
         </div>
         <div class="streamline-meta-field">
             <label>Problem 6</label>
-            <input type="text" name="streamline_problem_6" value="<?php echo esc_attr(get_post_meta($post->ID, 'streamline_problem_6', true) ?: 'Manual processes slowing down conversions'); ?>" />
+            <?php
+            wp_editor(
+                get_post_meta($post->ID, 'streamline_problem_6', true) ?: 'Manual processes slowing down conversions',
+                'streamline_problem_6',
+                array(
+                    'textarea_name' => 'streamline_problem_6',
+                    'textarea_rows' => 2,
+                    'teeny' => true,
+                    'media_buttons' => false,
+                    'quicktags' => array('buttons' => 'strong,em,link')
+                )
+            );
+            ?>
         </div>
     </div>
 
@@ -194,11 +470,35 @@ function streamline_sales_funnel_meta_callback($post) {
         <h3>Case Study</h3>
         <div class="streamline-meta-field">
             <label>Case Study Title</label>
-            <input type="text" name="streamline_case_title" value="<?php echo esc_attr(get_post_meta($post->ID, 'streamline_case_title', true) ?: 'Case Study: TechFlow Solutions Results'); ?>" />
+            <?php
+            wp_editor(
+                get_post_meta($post->ID, 'streamline_case_title', true) ?: 'Case Study: TechFlow Solutions Results',
+                'streamline_case_title',
+                array(
+                    'textarea_name' => 'streamline_case_title',
+                    'textarea_rows' => 2,
+                    'teeny' => true,
+                    'media_buttons' => false,
+                    'quicktags' => array('buttons' => 'strong,em,link')
+                )
+            );
+            ?>
         </div>
         <div class="streamline-meta-field">
             <label>Case Study Intro</label>
-            <textarea name="streamline_case_intro"><?php echo esc_textarea(get_post_meta($post->ID, 'streamline_case_intro', true) ?: 'A B2B software company struggling with low conversion rates and long sales cycles. We completely redesigned their funnel strategy and implemented automated nurturing sequences.'); ?></textarea>
+            <?php
+            wp_editor(
+                get_post_meta($post->ID, 'streamline_case_intro', true) ?: 'A B2B software company struggling with low conversion rates and long sales cycles. We completely redesigned their funnel strategy and implemented automated nurturing sequences.',
+                'streamline_case_intro',
+                array(
+                    'textarea_name' => 'streamline_case_intro',
+                    'textarea_rows' => 3,
+                    'teeny' => true,
+                    'media_buttons' => false,
+                    'quicktags' => array('buttons' => 'strong,em,link')
+                )
+            );
+            ?>
         </div>
 
         <h4>Case Study Results</h4>
@@ -235,7 +535,7 @@ function streamline_sales_funnel_meta_callback($post) {
         <div class="streamline-stats-row">
             <div class="streamline-meta-field">
                 <label>Result 4 Number</label>
-                <input type="text" name="streamline_result_4_number" value="<?php echo esc_attr(get_post_meta($post->ID, 'streamline_result_4_number', true) ?: '£125K'); ?>" />
+                <input type="text" name="streamline_result_4_number" value="<?php echo esc_attr(get_post_meta($post->ID, 'streamline_result_4_number', true) ?: 'ï¿½125K'); ?>" />
             </div>
             <div class="streamline-meta-field">
                 <label>Result 4 Label</label>
@@ -246,16 +546,40 @@ function streamline_sales_funnel_meta_callback($post) {
         <h4>Case Study Challenge & Solution</h4>
         <div class="streamline-meta-field">
             <label>Case Study Challenge</label>
-            <textarea name="streamline_case_challenge"><?php echo esc_textarea(get_post_meta($post->ID, 'streamline_case_challenge', true) ?: 'TechFlow Solutions was struggling with a 12% conversion rate and losing 68% of qualified leads due to poor follow-up processes and a fragmented sales funnel with multiple drop-off points.'); ?></textarea>
+            <?php
+            wp_editor(
+                get_post_meta($post->ID, 'streamline_case_challenge', true) ?: 'TechFlow Solutions was struggling with a 12% conversion rate and losing 68% of qualified leads due to poor follow-up processes and a fragmented sales funnel with multiple drop-off points.',
+                'streamline_case_challenge',
+                array(
+                    'textarea_name' => 'streamline_case_challenge',
+                    'textarea_rows' => 4,
+                    'teeny' => true,
+                    'media_buttons' => false,
+                    'quicktags' => array('buttons' => 'strong,em,link')
+                )
+            );
+            ?>
         </div>
         <div class="streamline-meta-field">
             <label>Case Study Solution (one point per line)</label>
-            <textarea name="streamline_case_solution" rows="8"><?php echo esc_textarea(get_post_meta($post->ID, 'streamline_case_solution', true) ?: 'Redesigned complete 7-stage funnel with optimised touchpoints
+            <?php
+            wp_editor(
+                get_post_meta($post->ID, 'streamline_case_solution', true) ?: 'Redesigned complete 7-stage funnel with optimised touchpoints
 Implemented automated lead scoring and qualification system
 Created personalised nurturing sequences based on prospect behaviour
 Built conversion-optimised landing pages for each funnel stage
 Set up comprehensive analytics and performance tracking
-Integrated CRM with marketing automation for seamless handoffs'); ?></textarea>
+Integrated CRM with marketing automation for seamless handoffs',
+                'streamline_case_solution',
+                array(
+                    'textarea_name' => 'streamline_case_solution',
+                    'textarea_rows' => 8,
+                    'teeny' => true,
+                    'media_buttons' => false,
+                    'quicktags' => array('buttons' => 'strong,em,link')
+                )
+            );
+            ?>
         </div>
     </div>
 
@@ -263,7 +587,19 @@ Integrated CRM with marketing automation for seamless handoffs'); ?></textarea>
         <h3>Process Steps</h3>
         <div class="streamline-meta-field">
             <label>Process Title</label>
-            <input type="text" name="streamline_process_title" value="<?php echo esc_attr(get_post_meta($post->ID, 'streamline_process_title', true) ?: 'Our Proven Funnel optimisation Process'); ?>" />
+            <?php
+            wp_editor(
+                get_post_meta($post->ID, 'streamline_process_title', true) ?: 'Our Proven <strong>Funnel Optimisation Process</strong>',
+                'streamline_process_title',
+                array(
+                    'textarea_name' => 'streamline_process_title',
+                    'textarea_rows' => 2,
+                    'teeny' => true,
+                    'media_buttons' => false,
+                    'quicktags' => array('buttons' => 'strong,em,link')
+                )
+            );
+            ?>
         </div>
 
         <h4>Process Steps</h4>
@@ -273,11 +609,35 @@ Integrated CRM with marketing automation for seamless handoffs'); ?></textarea>
         </div>
         <div class="streamline-meta-field">
             <label>Step 1 Title</label>
-            <input type="text" name="streamline_step_1_title" value="<?php echo esc_attr(get_post_meta($post->ID, 'streamline_step_1_title', true) ?: 'Audit & Analysis'); ?>" />
+            <?php
+            wp_editor(
+                get_post_meta($post->ID, 'streamline_step_1_title', true) ?: 'Audit & Analysis',
+                'streamline_step_1_title',
+                array(
+                    'textarea_name' => 'streamline_step_1_title',
+                    'textarea_rows' => 2,
+                    'teeny' => true,
+                    'media_buttons' => false,
+                    'quicktags' => array('buttons' => 'strong,em,link')
+                )
+            );
+            ?>
         </div>
         <div class="streamline-meta-field">
             <label>Step 1 Description</label>
-            <textarea name="streamline_step_1_desc"><?php echo esc_textarea(get_post_meta($post->ID, 'streamline_step_1_desc', true) ?: 'Comprehensive review of your current funnel performance and identification of optimisation opportunities.'); ?></textarea>
+            <?php
+            wp_editor(
+                get_post_meta($post->ID, 'streamline_step_1_desc', true) ?: 'Comprehensive review of your current funnel performance and identification of optimisation opportunities.',
+                'streamline_step_1_desc',
+                array(
+                    'textarea_name' => 'streamline_step_1_desc',
+                    'textarea_rows' => 3,
+                    'teeny' => true,
+                    'media_buttons' => false,
+                    'quicktags' => array('buttons' => 'strong,em,link')
+                )
+            );
+            ?>
         </div>
 
         <div class="streamline-meta-field">
@@ -286,11 +646,35 @@ Integrated CRM with marketing automation for seamless handoffs'); ?></textarea>
         </div>
         <div class="streamline-meta-field">
             <label>Step 2 Title</label>
-            <input type="text" name="streamline_step_2_title" value="<?php echo esc_attr(get_post_meta($post->ID, 'streamline_step_2_title', true) ?: 'Strategy Development'); ?>" />
+            <?php
+            wp_editor(
+                get_post_meta($post->ID, 'streamline_step_2_title', true) ?: 'Strategy Development',
+                'streamline_step_2_title',
+                array(
+                    'textarea_name' => 'streamline_step_2_title',
+                    'textarea_rows' => 2,
+                    'teeny' => true,
+                    'media_buttons' => false,
+                    'quicktags' => array('buttons' => 'strong,em,link')
+                )
+            );
+            ?>
         </div>
         <div class="streamline-meta-field">
             <label>Step 2 Description</label>
-            <textarea name="streamline_step_2_desc"><?php echo esc_textarea(get_post_meta($post->ID, 'streamline_step_2_desc', true) ?: 'Custom funnel strategy tailored to your business goals and customer journey requirements.'); ?></textarea>
+            <?php
+            wp_editor(
+                get_post_meta($post->ID, 'streamline_step_2_desc', true) ?: 'Custom funnel strategy tailored to your business goals and customer journey requirements.',
+                'streamline_step_2_desc',
+                array(
+                    'textarea_name' => 'streamline_step_2_desc',
+                    'textarea_rows' => 3,
+                    'teeny' => true,
+                    'media_buttons' => false,
+                    'quicktags' => array('buttons' => 'strong,em,link')
+                )
+            );
+            ?>
         </div>
 
         <div class="streamline-meta-field">
@@ -299,11 +683,35 @@ Integrated CRM with marketing automation for seamless handoffs'); ?></textarea>
         </div>
         <div class="streamline-meta-field">
             <label>Step 3 Title</label>
-            <input type="text" name="streamline_step_3_title" value="<?php echo esc_attr(get_post_meta($post->ID, 'streamline_step_3_title', true) ?: 'Implementation'); ?>" />
+            <?php
+            wp_editor(
+                get_post_meta($post->ID, 'streamline_step_3_title', true) ?: 'Implementation',
+                'streamline_step_3_title',
+                array(
+                    'textarea_name' => 'streamline_step_3_title',
+                    'textarea_rows' => 2,
+                    'teeny' => true,
+                    'media_buttons' => false,
+                    'quicktags' => array('buttons' => 'strong,em,link')
+                )
+            );
+            ?>
         </div>
         <div class="streamline-meta-field">
             <label>Step 3 Description</label>
-            <textarea name="streamline_step_3_desc"><?php echo esc_textarea(get_post_meta($post->ID, 'streamline_step_3_desc', true) ?: 'Systematic implementation of optimisations and automation across all funnel touchpoints.'); ?></textarea>
+            <?php
+            wp_editor(
+                get_post_meta($post->ID, 'streamline_step_3_desc', true) ?: 'Systematic implementation of optimisations and automation across all funnel touchpoints.',
+                'streamline_step_3_desc',
+                array(
+                    'textarea_name' => 'streamline_step_3_desc',
+                    'textarea_rows' => 3,
+                    'teeny' => true,
+                    'media_buttons' => false,
+                    'quicktags' => array('buttons' => 'strong,em,link')
+                )
+            );
+            ?>
         </div>
 
         <div class="streamline-meta-field">
@@ -312,19 +720,43 @@ Integrated CRM with marketing automation for seamless handoffs'); ?></textarea>
         </div>
         <div class="streamline-meta-field">
             <label>Step 4 Title</label>
-            <input type="text" name="streamline_step_4_title" value="<?php echo esc_attr(get_post_meta($post->ID, 'streamline_step_4_title', true) ?: 'Monitor & optimise'); ?>" />
+            <?php
+            wp_editor(
+                get_post_meta($post->ID, 'streamline_step_4_title', true) ?: 'Monitor & Optimise',
+                'streamline_step_4_title',
+                array(
+                    'textarea_name' => 'streamline_step_4_title',
+                    'textarea_rows' => 2,
+                    'teeny' => true,
+                    'media_buttons' => false,
+                    'quicktags' => array('buttons' => 'strong,em,link')
+                )
+            );
+            ?>
         </div>
         <div class="streamline-meta-field">
             <label>Step 4 Description</label>
-            <textarea name="streamline_step_4_desc"><?php echo esc_textarea(get_post_meta($post->ID, 'streamline_step_4_desc', true) ?: 'Continuous monitoring and data-driven optimisation to maximise funnel performance.'); ?></textarea>
+            <?php
+            wp_editor(
+                get_post_meta($post->ID, 'streamline_step_4_desc', true) ?: 'Continuous monitoring and data-driven optimisation to maximise funnel performance.',
+                'streamline_step_4_desc',
+                array(
+                    'textarea_name' => 'streamline_step_4_desc',
+                    'textarea_rows' => 3,
+                    'teeny' => true,
+                    'media_buttons' => false,
+                    'quicktags' => array('buttons' => 'strong,em,link')
+                )
+            );
+            ?>
         </div>
     </div>
 
     <div class="streamline-meta-section">
         <h3>Breadcrumbs & Navigation</h3>
         <div class="streamline-meta-field">
-            <label>Breadcrumb Path (e.g., Home › Services › Marketing Automation › Streamline Sales Funnel)</label>
-            <input type="text" name="streamline_breadcrumb_path" value="<?php echo esc_attr(get_post_meta($post->ID, 'streamline_breadcrumb_path', true) ?: 'Home › Services › Marketing Automation › Streamline Sales Funnel'); ?>" />
+            <label>Breadcrumb Path (e.g., Home ï¿½ Services ï¿½ Marketing Automation ï¿½ Streamline Sales Funnel)</label>
+            <input type="text" name="streamline_breadcrumb_path" value="<?php echo esc_attr(get_post_meta($post->ID, 'streamline_breadcrumb_path', true) ?: 'Home ï¿½ Services ï¿½ Marketing Automation ï¿½ Streamline Sales Funnel'); ?>" />
         </div>
     </div>
 
@@ -366,29 +798,101 @@ Integrated CRM with marketing automation for seamless handoffs'); ?></textarea>
         <h4>Benefits</h4>
         <div class="streamline-meta-field">
             <label>Benefit 1 Title</label>
-            <input type="text" name="streamline_benefit_1_title" value="<?php echo esc_attr(get_post_meta($post->ID, 'streamline_benefit_1_title', true) ?: 'Data-Driven Approach'); ?>" />
+            <?php
+            wp_editor(
+                get_post_meta($post->ID, 'streamline_benefit_1_title', true) ?: 'Data-Driven Approach',
+                'streamline_benefit_1_title',
+                array(
+                    'textarea_name' => 'streamline_benefit_1_title',
+                    'textarea_rows' => 2,
+                    'teeny' => true,
+                    'media_buttons' => false,
+                    'quicktags' => array('buttons' => 'strong,em,link')
+                )
+            );
+            ?>
         </div>
         <div class="streamline-meta-field">
             <label>Benefit 1 Description</label>
-            <textarea name="streamline_benefit_1_desc"><?php echo esc_textarea(get_post_meta($post->ID, 'streamline_benefit_1_desc', true) ?: 'Every optimisation is backed by comprehensive analytics and A/B testing to ensure maximum ROI.'); ?></textarea>
+            <?php
+            wp_editor(
+                get_post_meta($post->ID, 'streamline_benefit_1_desc', true) ?: 'Every optimisation is backed by comprehensive analytics and A/B testing to ensure maximum ROI.',
+                'streamline_benefit_1_desc',
+                array(
+                    'textarea_name' => 'streamline_benefit_1_desc',
+                    'textarea_rows' => 3,
+                    'teeny' => true,
+                    'media_buttons' => false,
+                    'quicktags' => array('buttons' => 'strong,em,link')
+                )
+            );
+            ?>
         </div>
 
         <div class="streamline-meta-field">
             <label>Benefit 2 Title</label>
-            <input type="text" name="streamline_benefit_2_title" value="<?php echo esc_attr(get_post_meta($post->ID, 'streamline_benefit_2_title', true) ?: 'Industry Expertise'); ?>" />
+            <?php
+            wp_editor(
+                get_post_meta($post->ID, 'streamline_benefit_2_title', true) ?: 'Industry Expertise',
+                'streamline_benefit_2_title',
+                array(
+                    'textarea_name' => 'streamline_benefit_2_title',
+                    'textarea_rows' => 2,
+                    'teeny' => true,
+                    'media_buttons' => false,
+                    'quicktags' => array('buttons' => 'strong,em,link')
+                )
+            );
+            ?>
         </div>
         <div class="streamline-meta-field">
             <label>Benefit 2 Description</label>
-            <textarea name="streamline_benefit_2_desc"><?php echo esc_textarea(get_post_meta($post->ID, 'streamline_benefit_2_desc', true) ?: '5+ years optimising funnels across diverse industries with proven conversion improvements.'); ?></textarea>
+            <?php
+            wp_editor(
+                get_post_meta($post->ID, 'streamline_benefit_2_desc', true) ?: '5+ years optimising funnels across diverse industries with proven conversion improvements.',
+                'streamline_benefit_2_desc',
+                array(
+                    'textarea_name' => 'streamline_benefit_2_desc',
+                    'textarea_rows' => 3,
+                    'teeny' => true,
+                    'media_buttons' => false,
+                    'quicktags' => array('buttons' => 'strong,em,link')
+                )
+            );
+            ?>
         </div>
 
         <div class="streamline-meta-field">
             <label>Benefit 3 Title</label>
-            <input type="text" name="streamline_benefit_3_title" value="<?php echo esc_attr(get_post_meta($post->ID, 'streamline_benefit_3_title', true) ?: 'Ongoing Support'); ?>" />
+            <?php
+            wp_editor(
+                get_post_meta($post->ID, 'streamline_benefit_3_title', true) ?: 'Ongoing Support',
+                'streamline_benefit_3_title',
+                array(
+                    'textarea_name' => 'streamline_benefit_3_title',
+                    'textarea_rows' => 2,
+                    'teeny' => true,
+                    'media_buttons' => false,
+                    'quicktags' => array('buttons' => 'strong,em,link')
+                )
+            );
+            ?>
         </div>
         <div class="streamline-meta-field">
             <label>Benefit 3 Description</label>
-            <textarea name="streamline_benefit_3_desc"><?php echo esc_textarea(get_post_meta($post->ID, 'streamline_benefit_3_desc', true) ?: 'Continuous monitoring and optimisation to maintain peak funnel performance as your business grows.'); ?></textarea>
+            <?php
+            wp_editor(
+                get_post_meta($post->ID, 'streamline_benefit_3_desc', true) ?: 'Continuous monitoring and optimisation to maintain peak funnel performance as your business grows.',
+                'streamline_benefit_3_desc',
+                array(
+                    'textarea_name' => 'streamline_benefit_3_desc',
+                    'textarea_rows' => 3,
+                    'teeny' => true,
+                    'media_buttons' => false,
+                    'quicktags' => array('buttons' => 'strong,em,link')
+                )
+            );
+            ?>
         </div>
     </div>
 
@@ -396,35 +900,119 @@ Integrated CRM with marketing automation for seamless handoffs'); ?></textarea>
         <h3>FAQ Section</h3>
         <div class="streamline-meta-field">
             <label>FAQ Title</label>
-            <input type="text" name="streamline_faq_title" value="<?php echo esc_attr(get_post_meta($post->ID, 'streamline_faq_title', true) ?: 'Frequently Asked Questions'); ?>" />
+            <?php
+            wp_editor(
+                get_post_meta($post->ID, 'streamline_faq_title', true) ?: 'Frequently Asked Questions',
+                'streamline_faq_title',
+                array(
+                    'textarea_name' => 'streamline_faq_title',
+                    'textarea_rows' => 2,
+                    'teeny' => true,
+                    'media_buttons' => false,
+                    'quicktags' => array('buttons' => 'strong,em,link')
+                )
+            );
+            ?>
         </div>
 
         <h4>FAQ Items</h4>
         <div class="streamline-meta-field">
             <label>FAQ 1 Question</label>
-            <input type="text" name="streamline_faq_1_question" value="<?php echo esc_attr(get_post_meta($post->ID, 'streamline_faq_1_question', true) ?: 'How long does it take to see results from funnel optimisation?'); ?>" />
+            <?php
+            wp_editor(
+                get_post_meta($post->ID, 'streamline_faq_1_question', true) ?: 'How long does it take to see results from funnel optimisation?',
+                'streamline_faq_1_question',
+                array(
+                    'textarea_name' => 'streamline_faq_1_question',
+                    'textarea_rows' => 2,
+                    'teeny' => true,
+                    'media_buttons' => false,
+                    'quicktags' => array('buttons' => 'strong,em,link')
+                )
+            );
+            ?>
         </div>
         <div class="streamline-meta-field">
             <label>FAQ 1 Answer</label>
-            <textarea name="streamline_faq_1_answer"><?php echo esc_textarea(get_post_meta($post->ID, 'streamline_faq_1_answer', true) ?: 'Most clients see initial improvements within 2-4 weeks, with significant results typically visible within 6-8 weeks as we test, refine, and optimise the funnel based on real user data.'); ?></textarea>
+            <?php
+            wp_editor(
+                get_post_meta($post->ID, 'streamline_faq_1_answer', true) ?: 'Most clients see initial improvements within 2-4 weeks, with significant results typically visible within 6-8 weeks as we test, refine, and optimise the funnel based on real user data.',
+                'streamline_faq_1_answer',
+                array(
+                    'textarea_name' => 'streamline_faq_1_answer',
+                    'textarea_rows' => 4,
+                    'teeny' => true,
+                    'media_buttons' => false,
+                    'quicktags' => array('buttons' => 'strong,em,link')
+                )
+            );
+            ?>
         </div>
 
         <div class="streamline-meta-field">
             <label>FAQ 2 Question</label>
-            <input type="text" name="streamline_faq_2_question" value="<?php echo esc_attr(get_post_meta($post->ID, 'streamline_faq_2_question', true) ?: 'What tools do you use for funnel optimisation?'); ?>" />
+            <?php
+            wp_editor(
+                get_post_meta($post->ID, 'streamline_faq_2_question', true) ?: 'What tools do you use for funnel optimisation?',
+                'streamline_faq_2_question',
+                array(
+                    'textarea_name' => 'streamline_faq_2_question',
+                    'textarea_rows' => 2,
+                    'teeny' => true,
+                    'media_buttons' => false,
+                    'quicktags' => array('buttons' => 'strong,em,link')
+                )
+            );
+            ?>
         </div>
         <div class="streamline-meta-field">
             <label>FAQ 2 Answer</label>
-            <textarea name="streamline_faq_2_answer"><?php echo esc_textarea(get_post_meta($post->ID, 'streamline_faq_2_answer', true) ?: 'We use industry-leading tools including HubSpot, Klaviyo, Google Analytics, Hotjar, and custom tracking solutions to analyse user behaviour and optimise every touchpoint.'); ?></textarea>
+            <?php
+            wp_editor(
+                get_post_meta($post->ID, 'streamline_faq_2_answer', true) ?: 'We use industry-leading tools including HubSpot, Klaviyo, Google Analytics, Hotjar, and custom tracking solutions to analyse user behaviour and optimise every touchpoint.',
+                'streamline_faq_2_answer',
+                array(
+                    'textarea_name' => 'streamline_faq_2_answer',
+                    'textarea_rows' => 4,
+                    'teeny' => true,
+                    'media_buttons' => false,
+                    'quicktags' => array('buttons' => 'strong,em,link')
+                )
+            );
+            ?>
         </div>
 
         <div class="streamline-meta-field">
             <label>FAQ 3 Question</label>
-            <input type="text" name="streamline_faq_3_question" value="<?php echo esc_attr(get_post_meta($post->ID, 'streamline_faq_3_question', true) ?: 'Do you work with existing funnels or build from scratch?'); ?>" />
+            <?php
+            wp_editor(
+                get_post_meta($post->ID, 'streamline_faq_3_question', true) ?: 'Do you work with existing funnels or build from scratch?',
+                'streamline_faq_3_question',
+                array(
+                    'textarea_name' => 'streamline_faq_3_question',
+                    'textarea_rows' => 2,
+                    'teeny' => true,
+                    'media_buttons' => false,
+                    'quicktags' => array('buttons' => 'strong,em,link')
+                )
+            );
+            ?>
         </div>
         <div class="streamline-meta-field">
             <label>FAQ 3 Answer</label>
-            <textarea name="streamline_faq_3_answer"><?php echo esc_textarea(get_post_meta($post->ID, 'streamline_faq_3_answer', true) ?: 'We can optimise your existing funnel or build a completely new one from scratch, depending on your current setup and business needs. We always start with a comprehensive audit.'); ?></textarea>
+            <?php
+            wp_editor(
+                get_post_meta($post->ID, 'streamline_faq_3_answer', true) ?: 'We can optimise your existing funnel or build a completely new one from scratch, depending on your current setup and business needs. We always start with a comprehensive audit.',
+                'streamline_faq_3_answer',
+                array(
+                    'textarea_name' => 'streamline_faq_3_answer',
+                    'textarea_rows' => 4,
+                    'teeny' => true,
+                    'media_buttons' => false,
+                    'quicktags' => array('buttons' => 'strong,em,link')
+                )
+            );
+            ?>
         </div>
     </div>
 
@@ -432,19 +1020,67 @@ Integrated CRM with marketing automation for seamless handoffs'); ?></textarea>
         <h3>CTA Section</h3>
         <div class="streamline-meta-field">
             <label>CTA Title</label>
-            <input type="text" name="streamline_cta_title" value="<?php echo esc_attr(get_post_meta($post->ID, 'streamline_cta_title', true) ?: 'Ready to Streamline Your Sales Funnel?'); ?>" />
+            <?php
+            wp_editor(
+                get_post_meta($post->ID, 'streamline_cta_title', true) ?: 'Ready to <strong>Streamline Your Sales Funnel?</strong>',
+                'streamline_cta_title',
+                array(
+                    'textarea_name' => 'streamline_cta_title',
+                    'textarea_rows' => 2,
+                    'teeny' => true,
+                    'media_buttons' => false,
+                    'quicktags' => array('buttons' => 'strong,em,link')
+                )
+            );
+            ?>
         </div>
         <div class="streamline-meta-field">
             <label>CTA Description</label>
-            <textarea name="streamline_cta_description"><?php echo esc_textarea(get_post_meta($post->ID, 'streamline_cta_description', true) ?: 'Let\'s analyse your current funnel and create a strategy that converts more prospects into customers.'); ?></textarea>
+            <?php
+            wp_editor(
+                get_post_meta($post->ID, 'streamline_cta_description', true) ?: 'Let\'s analyse your current funnel and create a strategy that converts more prospects into customers.',
+                'streamline_cta_description',
+                array(
+                    'textarea_name' => 'streamline_cta_description',
+                    'textarea_rows' => 3,
+                    'teeny' => true,
+                    'media_buttons' => false,
+                    'quicktags' => array('buttons' => 'strong,em,link')
+                )
+            );
+            ?>
         </div>
         <div class="streamline-meta-field">
             <label>Primary Button Text</label>
-            <input type="text" name="streamline_cta_button_primary" value="<?php echo esc_attr(get_post_meta($post->ID, 'streamline_cta_button_primary', true) ?: 'Start Your Funnel Audit'); ?>" />
+            <?php
+            wp_editor(
+                get_post_meta($post->ID, 'streamline_cta_button_primary', true) ?: 'Start Your Funnel Audit',
+                'streamline_cta_button_primary',
+                array(
+                    'textarea_name' => 'streamline_cta_button_primary',
+                    'textarea_rows' => 2,
+                    'teeny' => true,
+                    'media_buttons' => false,
+                    'quicktags' => array('buttons' => 'strong,em,link')
+                )
+            );
+            ?>
         </div>
         <div class="streamline-meta-field">
             <label>Secondary Button Text</label>
-            <input type="text" name="streamline_cta_button_secondary" value="<?php echo esc_attr(get_post_meta($post->ID, 'streamline_cta_button_secondary', true) ?: 'Book Free Consultation'); ?>" />
+            <?php
+            wp_editor(
+                get_post_meta($post->ID, 'streamline_cta_button_secondary', true) ?: 'Book Free Consultation',
+                'streamline_cta_button_secondary',
+                array(
+                    'textarea_name' => 'streamline_cta_button_secondary',
+                    'textarea_rows' => 2,
+                    'teeny' => true,
+                    'media_buttons' => false,
+                    'quicktags' => array('buttons' => 'strong,em,link')
+                )
+            );
+            ?>
         </div>
     </div>
     
@@ -518,10 +1154,10 @@ add_action('save_post', function($post_id) {
 
     // Save all hero fields
     if (isset($_POST['streamline_hero_title'])) {
-        update_post_meta($post_id, 'streamline_hero_title', sanitize_text_field($_POST['streamline_hero_title']));
+        update_post_meta($post_id, 'streamline_hero_title', wp_kses_post($_POST['streamline_hero_title']));
     }
     if (isset($_POST['streamline_hero_subtitle'])) {
-        update_post_meta($post_id, 'streamline_hero_subtitle', sanitize_textarea_field($_POST['streamline_hero_subtitle']));
+        update_post_meta($post_id, 'streamline_hero_subtitle', wp_kses_post($_POST['streamline_hero_subtitle']));
     }
     if (isset($_POST['streamline_hero_primary_btn'])) {
         update_post_meta($post_id, 'streamline_hero_primary_btn', sanitize_text_field($_POST['streamline_hero_primary_btn']));
@@ -545,10 +1181,10 @@ add_action('save_post', function($post_id) {
 
     // Save overview fields
     if (isset($_POST['streamline_overview_title'])) {
-        update_post_meta($post_id, 'streamline_overview_title', sanitize_text_field($_POST['streamline_overview_title']));
+        update_post_meta($post_id, 'streamline_overview_title', wp_kses_post($_POST['streamline_overview_title']));
     }
     if (isset($_POST['streamline_overview_description'])) {
-        update_post_meta($post_id, 'streamline_overview_description', sanitize_textarea_field($_POST['streamline_overview_description']));
+        update_post_meta($post_id, 'streamline_overview_description', wp_kses_post($_POST['streamline_overview_description']));
     }
     if (isset($_POST['streamline_overview_image'])) {
         update_post_meta($post_id, 'streamline_overview_image', sanitize_text_field($_POST['streamline_overview_image']));
@@ -557,25 +1193,25 @@ add_action('save_post', function($post_id) {
     // Save service fields
     for ($i = 1; $i <= 6; $i++) {
         if (isset($_POST["streamline_service_{$i}_title"])) {
-            update_post_meta($post_id, "streamline_service_{$i}_title", sanitize_text_field($_POST["streamline_service_{$i}_title"]));
+            update_post_meta($post_id, "streamline_service_{$i}_title", wp_kses_post($_POST["streamline_service_{$i}_title"]));
         }
         if (isset($_POST["streamline_service_{$i}_desc"])) {
-            update_post_meta($post_id, "streamline_service_{$i}_desc", sanitize_textarea_field($_POST["streamline_service_{$i}_desc"]));
+            update_post_meta($post_id, "streamline_service_{$i}_desc", wp_kses_post($_POST["streamline_service_{$i}_desc"]));
         }
     }
 
     // Save case study fields
     if (isset($_POST['streamline_case_title'])) {
-        update_post_meta($post_id, 'streamline_case_title', sanitize_text_field($_POST['streamline_case_title']));
+        update_post_meta($post_id, 'streamline_case_title', wp_kses_post($_POST['streamline_case_title']));
     }
     if (isset($_POST['streamline_case_intro'])) {
-        update_post_meta($post_id, 'streamline_case_intro', sanitize_textarea_field($_POST['streamline_case_intro']));
+        update_post_meta($post_id, 'streamline_case_intro', wp_kses_post($_POST['streamline_case_intro']));
     }
     if (isset($_POST['streamline_case_challenge'])) {
-        update_post_meta($post_id, 'streamline_case_challenge', sanitize_textarea_field($_POST['streamline_case_challenge']));
+        update_post_meta($post_id, 'streamline_case_challenge', wp_kses_post($_POST['streamline_case_challenge']));
     }
     if (isset($_POST['streamline_case_solution'])) {
-        update_post_meta($post_id, 'streamline_case_solution', sanitize_textarea_field($_POST['streamline_case_solution']));
+        update_post_meta($post_id, 'streamline_case_solution', wp_kses_post($_POST['streamline_case_solution']));
     }
 
     // Save case study results
@@ -590,7 +1226,7 @@ add_action('save_post', function($post_id) {
 
     // Save process fields
     if (isset($_POST['streamline_process_title'])) {
-        update_post_meta($post_id, 'streamline_process_title', sanitize_text_field($_POST['streamline_process_title']));
+        update_post_meta($post_id, 'streamline_process_title', wp_kses_post($_POST['streamline_process_title']));
     }
 
     // Save process steps
@@ -599,20 +1235,20 @@ add_action('save_post', function($post_id) {
             update_post_meta($post_id, "streamline_step_{$i}_number", sanitize_text_field($_POST["streamline_step_{$i}_number"]));
         }
         if (isset($_POST["streamline_step_{$i}_title"])) {
-            update_post_meta($post_id, "streamline_step_{$i}_title", sanitize_text_field($_POST["streamline_step_{$i}_title"]));
+            update_post_meta($post_id, "streamline_step_{$i}_title", wp_kses_post($_POST["streamline_step_{$i}_title"]));
         }
         if (isset($_POST["streamline_step_{$i}_desc"])) {
-            update_post_meta($post_id, "streamline_step_{$i}_desc", sanitize_textarea_field($_POST["streamline_step_{$i}_desc"]));
+            update_post_meta($post_id, "streamline_step_{$i}_desc", wp_kses_post($_POST["streamline_step_{$i}_desc"]));
         }
     }
 
     // Save problems/challenges
     if (isset($_POST['streamline_problems_title'])) {
-        update_post_meta($post_id, 'streamline_problems_title', sanitize_text_field($_POST['streamline_problems_title']));
+        update_post_meta($post_id, 'streamline_problems_title', wp_kses_post($_POST['streamline_problems_title']));
     }
     for ($i = 1; $i <= 6; $i++) {
         if (isset($_POST["streamline_problem_{$i}"])) {
-            update_post_meta($post_id, "streamline_problem_{$i}", sanitize_text_field($_POST["streamline_problem_{$i}"]));
+            update_post_meta($post_id, "streamline_problem_{$i}", wp_kses_post($_POST["streamline_problem_{$i}"]));
         }
     }
 
@@ -622,38 +1258,38 @@ add_action('save_post', function($post_id) {
     }
     for ($i = 1; $i <= 3; $i++) {
         if (isset($_POST["streamline_benefit_{$i}_title"])) {
-            update_post_meta($post_id, "streamline_benefit_{$i}_title", sanitize_text_field($_POST["streamline_benefit_{$i}_title"]));
+            update_post_meta($post_id, "streamline_benefit_{$i}_title", wp_kses_post($_POST["streamline_benefit_{$i}_title"]));
         }
         if (isset($_POST["streamline_benefit_{$i}_desc"])) {
-            update_post_meta($post_id, "streamline_benefit_{$i}_desc", sanitize_textarea_field($_POST["streamline_benefit_{$i}_desc"]));
+            update_post_meta($post_id, "streamline_benefit_{$i}_desc", wp_kses_post($_POST["streamline_benefit_{$i}_desc"]));
         }
     }
 
     // Save FAQ
     if (isset($_POST['streamline_faq_title'])) {
-        update_post_meta($post_id, 'streamline_faq_title', sanitize_text_field($_POST['streamline_faq_title']));
+        update_post_meta($post_id, 'streamline_faq_title', wp_kses_post($_POST['streamline_faq_title']));
     }
     for ($i = 1; $i <= 3; $i++) {
         if (isset($_POST["streamline_faq_{$i}_question"])) {
-            update_post_meta($post_id, "streamline_faq_{$i}_question", sanitize_text_field($_POST["streamline_faq_{$i}_question"]));
+            update_post_meta($post_id, "streamline_faq_{$i}_question", wp_kses_post($_POST["streamline_faq_{$i}_question"]));
         }
         if (isset($_POST["streamline_faq_{$i}_answer"])) {
-            update_post_meta($post_id, "streamline_faq_{$i}_answer", sanitize_textarea_field($_POST["streamline_faq_{$i}_answer"]));
+            update_post_meta($post_id, "streamline_faq_{$i}_answer", wp_kses_post($_POST["streamline_faq_{$i}_answer"]));
         }
     }
 
     // Save CTA Section
     if (isset($_POST['streamline_cta_title'])) {
-        update_post_meta($post_id, 'streamline_cta_title', sanitize_text_field($_POST['streamline_cta_title']));
+        update_post_meta($post_id, 'streamline_cta_title', wp_kses_post($_POST['streamline_cta_title']));
     }
     if (isset($_POST['streamline_cta_description'])) {
-        update_post_meta($post_id, 'streamline_cta_description', sanitize_textarea_field($_POST['streamline_cta_description']));
+        update_post_meta($post_id, 'streamline_cta_description', wp_kses_post($_POST['streamline_cta_description']));
     }
     if (isset($_POST['streamline_cta_button_primary'])) {
-        update_post_meta($post_id, 'streamline_cta_button_primary', sanitize_text_field($_POST['streamline_cta_button_primary']));
+        update_post_meta($post_id, 'streamline_cta_button_primary', wp_kses_post($_POST['streamline_cta_button_primary']));
     }
     if (isset($_POST['streamline_cta_button_secondary'])) {
-        update_post_meta($post_id, 'streamline_cta_button_secondary', sanitize_text_field($_POST['streamline_cta_button_secondary']));
+        update_post_meta($post_id, 'streamline_cta_button_secondary', wp_kses_post($_POST['streamline_cta_button_secondary']));
     }
     
     // Save Overview Image

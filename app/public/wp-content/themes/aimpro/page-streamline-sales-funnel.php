@@ -21,8 +21,8 @@ get_header(); ?>
     <section class="page-hero service-hero">
         <div class="container">
             <div class="hero-content animate-on-scroll animate-fade-up">
-                <h1><?php echo esc_html(get_post_meta(get_the_ID(), 'streamline_hero_title', true) ?: 'Streamline Your Sales Funnel'); ?></h1>
-                <p class="hero-subtitle"><?php echo esc_html(get_post_meta(get_the_ID(), 'streamline_hero_subtitle', true) ?: 'Transform scattered marketing efforts into a cohesive, high-converting sales system that works around the clock.'); ?></p>
+                <h1><?php echo wp_kses_post(get_post_meta(get_the_ID(), 'streamline_hero_title', true) ?: 'Streamline Your Sales Funnel'); ?></h1>
+                <p class="hero-subtitle"><?php echo wp_kses_post(get_post_meta(get_the_ID(), 'streamline_hero_subtitle', true) ?: 'Transform scattered marketing efforts into a cohesive, high-converting sales system that works around the clock.'); ?></p>
                 
                 <div class="hero-stats animate-on-scroll animate-fade-up">
                     <div class="stat-item">
@@ -48,8 +48,8 @@ get_header(); ?>
         <div class="container">
             <div class="overview-content">
                 <div class="overview-text animate-on-scroll animate-slide-left">
-                    <h2><?php echo esc_html(get_post_meta(get_the_ID(), 'streamline_overview_title', true) ?: 'Complete Sales Funnel Streamlining Solutions'); ?></h2>
-                    <p><?php echo esc_html(get_post_meta(get_the_ID(), 'streamline_overview_description', true) ?: 'Eliminate inefficiencies and gaps in your current sales process with our systematic approach to funnel optimisation and automation.'); ?></p>
+                    <h2><?php echo wp_kses_post(get_post_meta(get_the_ID(), 'streamline_overview_title', true) ?: 'Complete Sales Funnel Streamlining Solutions'); ?></h2>
+                    <p><?php echo wp_kses_post(get_post_meta(get_the_ID(), 'streamline_overview_description', true) ?: 'Eliminate inefficiencies and gaps in your current sales process with our systematic approach to funnel optimisation and automation.'); ?></p>
                     
                     <div class="solution-challenges">
                         <h3><?php echo esc_html(get_post_meta(get_the_ID(), 'streamline_problems_title', true) ?: 'Sales Funnel Problems We Solve:'); ?></h3>
@@ -79,23 +79,23 @@ get_header(); ?>
                     <div class="service-icon">
                         <i class="fas fa-search-plus"></i>
                     </div>
-                    <h3><?php echo esc_html(get_post_meta(get_the_ID(), 'streamline_service_1_title', true) ?: 'Funnel Analysis & Audit'); ?></h3>
-                    <p><?php echo esc_html(get_post_meta(get_the_ID(), 'streamline_service_1_desc', true) ?: 'Comprehensive review of your existing sales process to identify bottlenecks, gaps, and optimisation opportunities.'); ?></p>
+                    <h3><?php echo wp_kses_post(get_post_meta(get_the_ID(), 'streamline_service_1_title', true) ?: 'Funnel Analysis & Audit'); ?></h3>
+                    <p><?php echo wp_kses_post(get_post_meta(get_the_ID(), 'streamline_service_1_desc', true) ?: 'Comprehensive review of your existing sales process to identify bottlenecks, gaps, and optimisation opportunities.'); ?></p>
                 </div>                
                 <div class="service-item animate-on-scroll animate-stagger animate-fade-up">
                     <div class="service-icon">
                         <i class="fas fa-project-diagram"></i>
                     </div>
-                    <h3><?php echo esc_html(get_post_meta(get_the_ID(), 'streamline_service_2_title', true) ?: 'Process Mapping & Design'); ?></h3>
-                    <p><?php echo esc_html(get_post_meta(get_the_ID(), 'streamline_service_2_desc', true) ?: 'Visual mapping of your optimised sales journey with clear touchpoints and decision paths for maximum efficiency.'); ?></p>
+                    <h3><?php echo wp_kses_post(get_post_meta(get_the_ID(), 'streamline_service_2_title', true) ?: 'Process Mapping & Design'); ?></h3>
+                    <p><?php echo wp_kses_post(get_post_meta(get_the_ID(), 'streamline_service_2_desc', true) ?: 'Visual mapping of your optimised sales journey with clear touchpoints and decision paths for maximum efficiency.'); ?></p>
                 </div>
                 
                 <div class="service-item animate-on-scroll animate-stagger animate-fade-up">
                     <div class="service-icon">
                         <i class="fas fa-user-check"></i>
                     </div>
-                    <h3><?php echo esc_html(get_post_meta(get_the_ID(), 'streamline_service_3_title', true) ?: 'Lead Qualification System'); ?></h3>
-                    <p><?php echo esc_html(get_post_meta(get_the_ID(), 'streamline_service_3_desc', true) ?: 'Automated lead scoring and qualification processes that ensure your team focuses on the highest-value prospects.'); ?></p>
+                    <h3><?php echo wp_kses_post(get_post_meta(get_the_ID(), 'streamline_service_3_title', true) ?: 'Lead Qualification System'); ?></h3>
+                    <p><?php echo wp_kses_post(get_post_meta(get_the_ID(), 'streamline_service_3_desc', true) ?: 'Automated lead scoring and qualification processes that ensure your team focuses on the highest-value prospects.'); ?></p>
                 </div>
                 
                 <div class="service-item animate-on-scroll animate-stagger animate-fade-up">
