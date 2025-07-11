@@ -11,176 +11,6 @@ if (!defined('ABSPATH')) {
 }
 
 /**
- * Set default values for Retargeting & Display Ads page meta fields
- * This ensures fields are pre-populated with the frontend content
- */
-function aimpro_get_retargeting_display_default_values() {
-    return array(
-        // Hero Section
-        'hero_title' => 'Retargeting & Display Advertising',
-        'hero_subtitle' => 'Re-engage interested prospects and build brand awareness with strategic retargeting and display campaigns that convert browsers into buyers across the web.',
-        
-        // Hero Stats
-        'hero_stat1_number' => '475%',
-        'hero_stat1_label' => 'Conversion Rate Increase',
-        'hero_stat2_number' => '68%',
-        'hero_stat2_label' => 'Lower Cost Per Conversion',
-        'hero_stat3_number' => '12x',
-        'hero_stat3_label' => 'Higher Click-Through Rate',
-        
-        // Hero CTAs
-        'hero_cta1_text' => 'Start Retargeting',
-        'hero_cta2_text' => 'View Packages',
-        
-        // Service Overview Section
-        'overview_title' => 'Strategic Retargeting & Display Campaigns',
-        'overview_content' => 'Most website visitors leave without converting. Our retargeting and display advertising strategies keep your brand top-of-mind, re-engage interested prospects, and guide them back to complete their purchase or inquiry across millions of websites.',
-        
-        // Service Items (6 services)
-        'service_title_1' => 'Website Retargeting',
-        'service_content_1' => 'Re-engage website visitors with personalised ads based on their browsing behaviour and pages visited.',
-        'service_icon_1' => 'fas fa-bullseye',
-        
-        'service_title_2' => 'Abandoned Cart Recovery',
-        'service_content_2' => 'Win back shoppers who left items in their cart with targeted ads featuring the exact products they viewed.',
-        'service_icon_2' => 'fas fa-shopping-cart',
-        
-        'service_title_3' => 'Display Advertising',
-        'service_content_3' => 'Build brand awareness and reach new audiences through visually compelling display ads across premium websites.',
-        'service_icon_3' => 'fas fa-ad',
-        
-        'service_title_4' => 'Video Retargeting',
-        'service_content_4' => 'Engage prospects with dynamic video content that showcases your products or services in action.',
-        'service_icon_4' => 'fas fa-play-circle',
-        
-        'service_title_5' => 'Lookalike Audiences',
-        'service_content_5' => 'Expand your reach by targeting new prospects who share characteristics with your best customers.',
-        'service_icon_5' => 'fas fa-user-friends',
-        
-        'service_title_6' => 'Cross-Platform Campaigns',
-        'service_content_6' => 'Coordinate retargeting efforts across Google, Facebook, Instagram, and other platforms for maximum impact.',
-        'service_icon_6' => 'fas fa-sync-alt',
-        
-        // Case Study Section
-        'case_study_title' => 'Case Study: E-commerce Cart Recovery',
-        'case_study_intro' => 'How we helped an online retailer recover 475% more abandoned carts and increase overall conversion rates through strategic retargeting campaigns.',
-        'case_study_challenge' => 'A fashion e-commerce store was losing 85% of potential customers to cart abandonment. Their existing email recovery campaigns were generating minimal results, and they needed a comprehensive strategy to re-engage prospects across multiple touchpoints.',
-        'case_study_solution' => "Implemented pixel-based retargeting across Google Display Network and Facebook\nCreated dynamic product ads featuring abandoned cart items\nDeveloped sequential retargeting campaigns with progressive messaging\nLaunched lookalike audiences based on high-value customers\nA/B tested creative formats and messaging strategies",
-        
-        // Case Study Results
-        'case_result_1_number' => '475%',
-        'case_result_1_label' => 'Cart Recovery Increase',
-        'case_result_2_number' => '68%',
-        'case_result_2_label' => 'Lower Cost Per Conversion',
-        'case_result_3_number' => '12x',
-        'case_result_3_label' => 'Higher CTR vs Display Average',
-        'case_result_4_number' => '235%',
-        'case_result_4_label' => 'Return on Ad Spend',
-        
-        // Process Section
-        'process_title' => 'Our Retargeting Process',
-        
-        'process_step_number_1' => '1',
-        'process_step_title_1' => 'Audience Segmentation',
-        'process_step_content_1' => 'analyse website behaviour to create detailed audience segments based on pages visited, engagement level, and conversion intent.',
-        
-        'process_step_number_2' => '2',
-        'process_step_title_2' => 'Pixel Implementation',
-        'process_step_content_2' => 'Install and configure tracking pixels across all relevant platforms to capture audience data and enable precise targeting.',
-        
-        'process_step_number_3' => '3',
-        'process_step_title_3' => 'Creative Development',
-        'process_step_content_3' => 'Design compelling ad creative with personalised messaging that addresses specific user behaviours and intent signals.',
-        
-        'process_step_number_4' => '4',
-        'process_step_title_4' => 'Campaign Launch & Testing',
-        'process_step_content_4' => 'Deploy retargeting campaigns with systematic A/B testing of creative, messaging, and frequency caps.',
-        
-        'process_step_number_5' => '5',
-        'process_step_title_5' => 'Optimisation & Scaling',
-        'process_step_content_5' => 'Continuously optimise based on performance data and scale successful campaigns across additional platforms and audiences.',
-        
-        // Retargeting Types Section
-        'types_title' => 'Types of Retargeting We Implement',
-        
-        'type_title_1' => 'Pixel-Based Retargeting',
-        'type_content_1' => 'Track anonymous website visitors and serve them relevant ads across the web based on their browsing behaviour.',
-        'type_icon_1' => 'fas fa-mouse-pointer',
-        
-        'type_title_2' => 'List-Based Retargeting',
-        'type_content_2' => 'Upload customer email lists to create targeted campaigns for existing contacts and previous customers.',
-        'type_icon_2' => 'fas fa-database',
-        
-        'type_title_3' => 'Email Retargeting',
-        'type_content_3' => 'Target users who interacted with your emails but didn\'t convert with coordinated display advertising.',
-        'type_icon_3' => 'fas fa-envelope',
-        
-        'type_title_4' => 'Video View Retargeting',
-        'type_content_4' => 'Re-engage users who watched your video content with follow-up campaigns driving specific actions.',
-        'type_icon_4' => 'fas fa-play',
-        
-        'type_title_5' => 'Social Media Retargeting',
-        'type_content_5' => 'Target website visitors on social platforms where they spend time with native, engaging ad formats.',
-        'type_icon_5' => 'fas fa-share-alt',
-        
-        'type_title_6' => 'Cross-Device Retargeting',
-        'type_content_6' => 'Follow users across all their devices to maintain consistent messaging and maximise conversion opportunities.',
-        'type_icon_6' => 'fas fa-mobile-alt',
-        
-        // Tools Section
-        'tools_title' => 'Tools & Technologies We Use',
-        
-        'tool_title_1' => 'Google Display Network',
-        'tool_content_1' => 'Reach users across millions of websites, apps, and Google properties with targeted display campaigns.',
-        'tool_icon_1' => 'fab fa-google',
-        
-        'tool_title_2' => 'Facebook Pixel',
-        'tool_content_2' => 'Advanced retargeting and conversion tracking across Facebook and Instagram platforms.',
-        'tool_icon_2' => 'fab fa-facebook',
-        
-        'tool_title_3' => 'Google Analytics',
-        'tool_content_3' => 'Comprehensive audience analysis and behaviour tracking for precise retargeting segmentation.',
-        'tool_icon_3' => 'fas fa-chart-bar',
-        
-        'tool_title_4' => 'Dynamic Creative Tools',
-        'tool_content_4' => 'Automated ad creation and personalisation based on user behaviour and product interests.',
-        'tool_icon_4' => 'fas fa-palette',
-        
-        // Industries Section
-        'industries_title' => 'Industries We Serve',
-        
-        'industry_title_1' => 'E-commerce & Retail',
-        'industry_content_1' => 'Recover abandoned carts and increase customer lifetime value through strategic retargeting.',
-        
-        'industry_title_2' => 'SaaS & Technology',
-        'industry_content_2' => 'Nurture trial users and free account holders toward paid conversions.',
-        
-        'industry_title_3' => 'Financial Services',
-        'industry_content_3' => 'Re-engage prospects who showed interest in loans, insurance, or investment products.',
-        
-        'industry_title_4' => 'Real Estate',
-        'industry_content_4' => 'Follow up with property viewers and keep listings top-of-mind for potential buyers.',
-        
-        'industry_title_5' => 'Travel & Hospitality',
-        'industry_content_5' => 'Recapture booking abandoners and promote special offers to interested travelers.',
-        
-        'industry_title_6' => 'Healthcare',
-        'industry_content_6' => 'Nurture patients who researched treatments or services with compliant retargeting campaigns.',
-        
-        // Testimonial Section
-        'testimonial_quote' => 'Our retargeting campaigns with Aimpro have been phenomenal. We\'re recovering 475% more abandoned carts and our cost per conversion dropped by 68%. It\'s transformed our entire marketing ROI.',
-        'testimonial_name' => 'Emma Thompson',
-        'testimonial_title' => 'E-commerce Director, StyleHub',
-        
-        // CTA Section
-        'cta_title' => 'Ready to Re-Engage Your Lost Prospects?',
-        'cta_content' => 'Stop losing potential customers forever. Our retargeting experts will help you build campaigns that bring visitors back and convert them into loyal customers. Start recovering lost revenue today.',
-        'cta_button_1_text' => 'Start Retargeting',
-        'cta_button_2_text' => 'View All Services',
-    );
-}
-
-/**
  * Register Retargeting & Display Ads meta boxes
  */
 function aimpro_register_retargeting_display_meta_boxes() {
@@ -330,11 +160,11 @@ function aimpro_retargeting_display_hero_callback($post) {
     ?>
     <p>
         <label for="retargeting_display_hero_title"><?php _e('Hero Title', 'aimpro'); ?></label><br>
-        <input type="text" id="retargeting_display_hero_title" name="retargeting_display_hero_title" value="<?php echo esc_attr($hero_title); ?>" class="widefat">
+        <?php wp_editor($hero_title, 'retargeting_display_hero_title', array('textarea_name' => 'retargeting_display_hero_title', 'teeny' => true, 'media_buttons' => false, 'textarea_rows' => 3, 'quicktags' => array('buttons' => 'strong,em,link'))); ?>
     </p>
     <p>
         <label for="retargeting_display_hero_subtitle"><?php _e('Hero Subtitle', 'aimpro'); ?></label><br>
-        <textarea id="retargeting_display_hero_subtitle" name="retargeting_display_hero_subtitle" class="widefat" rows="4"><?php echo esc_textarea($hero_subtitle); ?></textarea>
+        <?php wp_editor($hero_subtitle, 'retargeting_display_hero_subtitle', array('textarea_name' => 'retargeting_display_hero_subtitle', 'teeny' => true, 'media_buttons' => false, 'textarea_rows' => 4, 'quicktags' => array('buttons' => 'strong,em,link'))); ?>
     </p>
     
     <h4><?php _e('Hero Stats', 'aimpro'); ?></h4>
@@ -408,11 +238,11 @@ function aimpro_retargeting_display_overview_callback($post) {
     ?>
     <p>
         <label for="retargeting_display_overview_title"><?php _e('Overview Title', 'aimpro'); ?></label><br>
-        <input type="text" id="retargeting_display_overview_title" name="retargeting_display_overview_title" value="<?php echo esc_attr($overview_title); ?>" class="widefat">
+        <?php wp_editor($overview_title, 'retargeting_display_overview_title', array('textarea_name' => 'retargeting_display_overview_title', 'teeny' => true, 'media_buttons' => false, 'textarea_rows' => 3, 'quicktags' => array('buttons' => 'strong,em,link'))); ?>
     </p>
     <p>
         <label for="retargeting_display_overview_content"><?php _e('Overview Content', 'aimpro'); ?></label><br>
-        <textarea id="retargeting_display_overview_content" name="retargeting_display_overview_content" class="widefat" rows="5"><?php echo esc_textarea($overview_content); ?></textarea>
+        <?php wp_editor($overview_content, 'retargeting_display_overview_content', array('textarea_name' => 'retargeting_display_overview_content', 'teeny' => true, 'media_buttons' => false, 'textarea_rows' => 6, 'quicktags' => array('buttons' => 'strong,em,link'))); ?>
     </p>
     <?php
 }
@@ -444,11 +274,11 @@ function aimpro_retargeting_display_services_callback($post) {
                 
                 <p>
                     <label for="retargeting_display_service_title_<?php echo $i; ?>"><?php _e('Service Title', 'aimpro'); ?></label><br>
-                    <input type="text" id="retargeting_display_service_title_<?php echo $i; ?>" name="retargeting_display_service_title_<?php echo $i; ?>" value="<?php echo esc_attr($service_title); ?>" class="widefat">
+                    <?php wp_editor($service_title, "retargeting_display_service_title_{$i}", array('textarea_name' => "retargeting_display_service_title_{$i}", 'teeny' => true, 'media_buttons' => false, 'textarea_rows' => 2, 'quicktags' => array('buttons' => 'strong,em,link'))); ?>
                 </p>
                 <p>
                     <label for="retargeting_display_service_content_<?php echo $i; ?>"><?php _e('Service Content', 'aimpro'); ?></label><br>
-                    <textarea id="retargeting_display_service_content_<?php echo $i; ?>" name="retargeting_display_service_content_<?php echo $i; ?>" class="widefat" rows="3"><?php echo esc_textarea($service_content); ?></textarea>
+                    <?php wp_editor($service_content, "retargeting_display_service_content_{$i}", array('textarea_name' => "retargeting_display_service_content_{$i}", 'teeny' => true, 'media_buttons' => false, 'textarea_rows' => 4, 'quicktags' => array('buttons' => 'strong,em,link'))); ?>
                 </p>
                 <p>
                     <label for="retargeting_display_service_icon_<?php echo $i; ?>"><?php _e('Service Icon (Font Awesome class)', 'aimpro'); ?></label><br>
@@ -483,19 +313,19 @@ function aimpro_retargeting_display_case_study_callback($post) {
     ?>
     <p>
         <label for="retargeting_display_case_study_title"><?php _e('Case Study Title', 'aimpro'); ?></label><br>
-        <input type="text" id="retargeting_display_case_study_title" name="retargeting_display_case_study_title" value="<?php echo esc_attr($case_study_title); ?>" class="widefat">
+        <?php wp_editor($case_study_title, 'retargeting_display_case_study_title', array('textarea_name' => 'retargeting_display_case_study_title', 'teeny' => true, 'media_buttons' => false, 'textarea_rows' => 3, 'quicktags' => array('buttons' => 'strong,em,link'))); ?>
     </p>
     <p>
         <label for="retargeting_display_case_study_intro"><?php _e('Case Study Intro', 'aimpro'); ?></label><br>
-        <textarea id="retargeting_display_case_study_intro" name="retargeting_display_case_study_intro" class="widefat" rows="3"><?php echo esc_textarea($case_study_intro); ?></textarea>
+        <?php wp_editor($case_study_intro, 'retargeting_display_case_study_intro', array('textarea_name' => 'retargeting_display_case_study_intro', 'teeny' => true, 'media_buttons' => false, 'textarea_rows' => 4, 'quicktags' => array('buttons' => 'strong,em,link'))); ?>
     </p>
     <p>
         <label for="retargeting_display_case_study_challenge"><?php _e('Challenge', 'aimpro'); ?></label><br>
-        <textarea id="retargeting_display_case_study_challenge" name="retargeting_display_case_study_challenge" class="widefat" rows="4"><?php echo esc_textarea($case_study_challenge); ?></textarea>
+        <?php wp_editor($case_study_challenge, 'retargeting_display_case_study_challenge', array('textarea_name' => 'retargeting_display_case_study_challenge', 'teeny' => true, 'media_buttons' => false, 'textarea_rows' => 5, 'quicktags' => array('buttons' => 'strong,em,link'))); ?>
     </p>
     <p>
         <label for="retargeting_display_case_study_solution"><?php _e('Solution', 'aimpro'); ?></label><br>
-        <textarea id="retargeting_display_case_study_solution" name="retargeting_display_case_study_solution" class="widefat" rows="6"><?php echo esc_textarea($case_study_solution); ?></textarea>
+        <?php wp_editor($case_study_solution, 'retargeting_display_case_study_solution', array('textarea_name' => 'retargeting_display_case_study_solution', 'teeny' => true, 'media_buttons' => false, 'textarea_rows' => 5, 'quicktags' => array('buttons' => 'strong,em,link'))); ?>
     </p>
     
     <h4><?php _e('Case Study Results', 'aimpro'); ?></h4>
@@ -537,7 +367,7 @@ function aimpro_retargeting_display_process_callback($post) {
     ?>
     <p>
         <label for="retargeting_display_process_title"><?php _e('Process Title', 'aimpro'); ?></label><br>
-        <input type="text" id="retargeting_display_process_title" name="retargeting_display_process_title" value="<?php echo esc_attr($process_title); ?>" class="widefat">
+        <?php wp_editor($process_title, 'retargeting_display_process_title', array('textarea_name' => 'retargeting_display_process_title', 'teeny' => true, 'media_buttons' => false, 'textarea_rows' => 3, 'quicktags' => array('buttons' => 'strong,em,link'))); ?>
     </p>
     
     <div id="retargeting-display-process-steps">
@@ -566,11 +396,11 @@ function aimpro_retargeting_display_process_callback($post) {
                     <div style="flex: 1;">
                         <p>
                             <label for="retargeting_display_process_step_title_<?php echo $i; ?>"><?php _e('Step Title', 'aimpro'); ?></label><br>
-                            <input type="text" id="retargeting_display_process_step_title_<?php echo $i; ?>" name="retargeting_display_process_step_title_<?php echo $i; ?>" value="<?php echo esc_attr($step_title); ?>" class="widefat">
+                            <?php wp_editor($step_title, "retargeting_display_process_step_title_{$i}", array('textarea_name' => "retargeting_display_process_step_title_{$i}", 'teeny' => true, 'media_buttons' => false, 'textarea_rows' => 2, 'quicktags' => array('buttons' => 'strong,em,link'))); ?>
                         </p>
                         <p>
                             <label for="retargeting_display_process_step_content_<?php echo $i; ?>"><?php _e('Step Content', 'aimpro'); ?></label><br>
-                            <textarea id="retargeting_display_process_step_content_<?php echo $i; ?>" name="retargeting_display_process_step_content_<?php echo $i; ?>" class="widefat" rows="3"><?php echo esc_textarea($step_content); ?></textarea>
+                            <?php wp_editor($step_content, "retargeting_display_process_step_content_{$i}", array('textarea_name' => "retargeting_display_process_step_content_{$i}", 'teeny' => true, 'media_buttons' => false, 'textarea_rows' => 3, 'quicktags' => array('buttons' => 'strong,em,link'))); ?>
                         </p>
                     </div>
                 </div>
@@ -594,7 +424,7 @@ function aimpro_retargeting_display_types_callback($post) {
     ?>
     <p>
         <label for="retargeting_display_types_title"><?php _e('Types Section Title', 'aimpro'); ?></label><br>
-        <input type="text" id="retargeting_display_types_title" name="retargeting_display_types_title" value="<?php echo esc_attr($types_title); ?>" class="widefat">
+        <?php wp_editor($types_title, 'retargeting_display_types_title', array('textarea_name' => 'retargeting_display_types_title', 'teeny' => true, 'media_buttons' => false, 'textarea_rows' => 3, 'quicktags' => array('buttons' => 'strong,em,link'))); ?>
     </p>
     
     <div id="retargeting-display-types">
@@ -615,11 +445,11 @@ function aimpro_retargeting_display_types_callback($post) {
                 
                 <p>
                     <label for="retargeting_display_type_title_<?php echo $i; ?>"><?php _e('Type Title', 'aimpro'); ?></label><br>
-                    <input type="text" id="retargeting_display_type_title_<?php echo $i; ?>" name="retargeting_display_type_title_<?php echo $i; ?>" value="<?php echo esc_attr($type_title); ?>" class="widefat">
+                    <?php wp_editor($type_title, "retargeting_display_type_title_{$i}", array('textarea_name' => "retargeting_display_type_title_{$i}", 'teeny' => true, 'media_buttons' => false, 'textarea_rows' => 2, 'quicktags' => array('buttons' => 'strong,em,link'))); ?>
                 </p>
                 <p>
                     <label for="retargeting_display_type_content_<?php echo $i; ?>"><?php _e('Type Content', 'aimpro'); ?></label><br>
-                    <textarea id="retargeting_display_type_content_<?php echo $i; ?>" name="retargeting_display_type_content_<?php echo $i; ?>" class="widefat" rows="3"><?php echo esc_textarea($type_content); ?></textarea>
+                    <?php wp_editor($type_content, "retargeting_display_type_content_{$i}", array('textarea_name' => "retargeting_display_type_content_{$i}", 'teeny' => true, 'media_buttons' => false, 'textarea_rows' => 4, 'quicktags' => array('buttons' => 'strong,em,link'))); ?>
                 </p>
                 <p>
                     <label for="retargeting_display_type_icon_<?php echo $i; ?>"><?php _e('Type Icon (Font Awesome class)', 'aimpro'); ?></label><br>
@@ -645,7 +475,7 @@ function aimpro_retargeting_display_tools_callback($post) {
     ?>
     <p>
         <label for="retargeting_display_tools_title"><?php _e('Tools Section Title', 'aimpro'); ?></label><br>
-        <input type="text" id="retargeting_display_tools_title" name="retargeting_display_tools_title" value="<?php echo esc_attr($tools_title); ?>" class="widefat">
+        <?php wp_editor($tools_title, 'retargeting_display_tools_title', array('textarea_name' => 'retargeting_display_tools_title', 'teeny' => true, 'media_buttons' => false, 'textarea_rows' => 3, 'quicktags' => array('buttons' => 'strong,em,link'))); ?>
     </p>
     
     <div id="retargeting-display-tools">
@@ -666,11 +496,11 @@ function aimpro_retargeting_display_tools_callback($post) {
                 
                 <p>
                     <label for="retargeting_display_tool_title_<?php echo $i; ?>"><?php _e('Tool Title', 'aimpro'); ?></label><br>
-                    <input type="text" id="retargeting_display_tool_title_<?php echo $i; ?>" name="retargeting_display_tool_title_<?php echo $i; ?>" value="<?php echo esc_attr($tool_title); ?>" class="widefat">
+                    <?php wp_editor($tool_title, "retargeting_display_tool_title_{$i}", array('textarea_name' => "retargeting_display_tool_title_{$i}", 'teeny' => true, 'media_buttons' => false, 'textarea_rows' => 2, 'quicktags' => array('buttons' => 'strong,em,link'))); ?>
                 </p>
                 <p>
                     <label for="retargeting_display_tool_content_<?php echo $i; ?>"><?php _e('Tool Content', 'aimpro'); ?></label><br>
-                    <textarea id="retargeting_display_tool_content_<?php echo $i; ?>" name="retargeting_display_tool_content_<?php echo $i; ?>" class="widefat" rows="3"><?php echo esc_textarea($tool_content); ?></textarea>
+                    <?php wp_editor($tool_content, "retargeting_display_tool_content_{$i}", array('textarea_name' => "retargeting_display_tool_content_{$i}", 'teeny' => true, 'media_buttons' => false, 'textarea_rows' => 4, 'quicktags' => array('buttons' => 'strong,em,link'))); ?>
                 </p>
                 <p>
                     <label for="retargeting_display_tool_icon_<?php echo $i; ?>"><?php _e('Tool Icon (Font Awesome class)', 'aimpro'); ?></label><br>
@@ -696,7 +526,7 @@ function aimpro_retargeting_display_industries_callback($post) {
     ?>
     <p>
         <label for="retargeting_display_industries_title"><?php _e('Industries Section Title', 'aimpro'); ?></label><br>
-        <input type="text" id="retargeting_display_industries_title" name="retargeting_display_industries_title" value="<?php echo esc_attr($industries_title); ?>" class="widefat">
+        <?php wp_editor($industries_title, 'retargeting_display_industries_title', array('textarea_name' => 'retargeting_display_industries_title', 'teeny' => true, 'media_buttons' => false, 'textarea_rows' => 3, 'quicktags' => array('buttons' => 'strong,em,link'))); ?>
     </p>
     
     <div id="retargeting-display-industries">
@@ -714,11 +544,11 @@ function aimpro_retargeting_display_industries_callback($post) {
                 
                 <p>
                     <label for="retargeting_display_industry_title_<?php echo $i; ?>"><?php _e('Industry Title', 'aimpro'); ?></label><br>
-                    <input type="text" id="retargeting_display_industry_title_<?php echo $i; ?>" name="retargeting_display_industry_title_<?php echo $i; ?>" value="<?php echo esc_attr($industry_title); ?>" class="widefat">
+                    <?php wp_editor($industry_title, "retargeting_display_industry_title_{$i}", array('textarea_name' => "retargeting_display_industry_title_{$i}", 'teeny' => true, 'media_buttons' => false, 'textarea_rows' => 2, 'quicktags' => array('buttons' => 'strong,em,link'))); ?>
                 </p>
                 <p>
                     <label for="retargeting_display_industry_content_<?php echo $i; ?>"><?php _e('Industry Content', 'aimpro'); ?></label><br>
-                    <textarea id="retargeting_display_industry_content_<?php echo $i; ?>" name="retargeting_display_industry_content_<?php echo $i; ?>" class="widefat" rows="3"><?php echo esc_textarea($industry_content); ?></textarea>
+                    <?php wp_editor($industry_content, "retargeting_display_industry_content_{$i}", array('textarea_name' => "retargeting_display_industry_content_{$i}", 'teeny' => true, 'media_buttons' => false, 'textarea_rows' => 4, 'quicktags' => array('buttons' => 'strong,em,link'))); ?>
                 </p>
             </div>
         <?php endfor; ?>
@@ -746,7 +576,7 @@ function aimpro_retargeting_display_testimonial_callback($post) {
     ?>
     <p>
         <label for="retargeting_display_testimonial_quote"><?php _e('Testimonial Quote', 'aimpro'); ?></label><br>
-        <textarea id="retargeting_display_testimonial_quote" name="retargeting_display_testimonial_quote" class="widefat" rows="4"><?php echo esc_textarea($testimonial_quote); ?></textarea>
+        <?php wp_editor($testimonial_quote, 'retargeting_display_testimonial_quote', array('textarea_name' => 'retargeting_display_testimonial_quote', 'teeny' => true, 'media_buttons' => false, 'textarea_rows' => 4, 'quicktags' => array('buttons' => 'strong,em,link'))); ?>
     </p>
     <p>
         <label for="retargeting_display_testimonial_name"><?php _e('Client Name', 'aimpro'); ?></label><br>
@@ -782,11 +612,11 @@ function aimpro_retargeting_display_cta_callback($post) {
     ?>
     <p>
         <label for="retargeting_display_cta_title"><?php _e('CTA Title', 'aimpro'); ?></label><br>
-        <input type="text" id="retargeting_display_cta_title" name="retargeting_display_cta_title" value="<?php echo esc_attr($cta_title); ?>" class="widefat">
+        <?php wp_editor($cta_title, 'retargeting_display_cta_title', array('textarea_name' => 'retargeting_display_cta_title', 'teeny' => true, 'media_buttons' => false, 'textarea_rows' => 3, 'quicktags' => array('buttons' => 'strong,em,link'))); ?>
     </p>
     <p>
         <label for="retargeting_display_cta_content"><?php _e('CTA Content', 'aimpro'); ?></label><br>
-        <textarea id="retargeting_display_cta_content" name="retargeting_display_cta_content" class="widefat" rows="3"><?php echo esc_textarea($cta_content); ?></textarea>
+        <?php wp_editor($cta_content, 'retargeting_display_cta_content', array('textarea_name' => 'retargeting_display_cta_content', 'teeny' => true, 'media_buttons' => false, 'textarea_rows' => 4, 'quicktags' => array('buttons' => 'strong,em,link'))); ?>
     </p>
     <div style="display: flex; gap: 20px;">
         <div style="flex: 1;">
@@ -820,6 +650,76 @@ function aimpro_save_retargeting_display_meta_boxes($post_id) {
             return;
         }
     }
+
+    // Define rich text fields that use wp_editor (use wp_kses_post)
+    $rich_text_fields = [
+        'retargeting_display_hero_title',
+        'retargeting_display_hero_subtitle',
+        'retargeting_display_overview_title',
+        'retargeting_display_overview_content',
+        'retargeting_display_case_study_title',
+        'retargeting_display_case_study_intro',
+        'retargeting_display_case_study_challenge',
+        'retargeting_display_case_study_solution',
+        'retargeting_display_process_title',
+        'retargeting_display_types_title',
+        'retargeting_display_tools_title',
+        'retargeting_display_industries_title',
+        'retargeting_display_testimonial_quote',
+        'retargeting_display_cta_title',
+        'retargeting_display_cta_content'
+    ];
+
+    // Add dynamic rich text fields for services, process steps, types, tools, industries
+    for ($i = 1; $i <= 6; $i++) {
+        $rich_text_fields[] = "retargeting_display_service_title_{$i}";
+        $rich_text_fields[] = "retargeting_display_service_content_{$i}";
+        $rich_text_fields[] = "retargeting_display_type_title_{$i}";
+        $rich_text_fields[] = "retargeting_display_type_content_{$i}";
+        $rich_text_fields[] = "retargeting_display_industry_title_{$i}";
+        $rich_text_fields[] = "retargeting_display_industry_content_{$i}";
+    }
+    
+    for ($i = 1; $i <= 5; $i++) {
+        $rich_text_fields[] = "retargeting_display_process_step_title_{$i}";
+        $rich_text_fields[] = "retargeting_display_process_step_content_{$i}";
+    }
+    
+    for ($i = 1; $i <= 4; $i++) {
+        $rich_text_fields[] = "retargeting_display_tool_title_{$i}";
+        $rich_text_fields[] = "retargeting_display_tool_content_{$i}";
+    }
+
+    // Define text fields that remain plain text (use sanitize_text_field)
+    $text_fields = [
+        'retargeting_display_hero_cta1_text',
+        'retargeting_display_hero_cta2_text',
+        'retargeting_display_testimonial_name',
+        'retargeting_display_testimonial_title',
+        'retargeting_display_cta_button_1_text',
+        'retargeting_display_cta_button_2_text'
+    ];
+
+    // Add dynamic text fields
+    for ($i = 1; $i <= 3; $i++) {
+        $text_fields[] = "retargeting_display_hero_stat{$i}_number";
+        $text_fields[] = "retargeting_display_hero_stat{$i}_label";
+    }
+    
+    for ($i = 1; $i <= 6; $i++) {
+        $text_fields[] = "retargeting_display_service_icon_{$i}";
+        $text_fields[] = "retargeting_display_type_icon_{$i}";
+    }
+    
+    for ($i = 1; $i <= 5; $i++) {
+        $text_fields[] = "retargeting_display_process_step_number_{$i}";
+    }
+    
+    for ($i = 1; $i <= 4; $i++) {
+        $text_fields[] = "retargeting_display_case_result_{$i}_number";
+        $text_fields[] = "retargeting_display_case_result_{$i}_label";
+        $text_fields[] = "retargeting_display_tool_icon_{$i}";
+    }
     
     // Save Hero Section
     if (isset($_POST['retargeting_display_hero_nonce']) && wp_verify_nonce($_POST['retargeting_display_hero_nonce'], basename(__FILE__))) {
@@ -832,9 +732,7 @@ function aimpro_save_retargeting_display_meta_boxes($post_id) {
         
         foreach ($hero_fields as $field => $meta_key) {
             if (isset($_POST[$field])) {
-                $value = ($field === 'retargeting_display_hero_subtitle') ? 
-                    sanitize_textarea_field($_POST[$field]) : 
-                    sanitize_text_field($_POST[$field]);
+                $value = in_array($field, $rich_text_fields) ? wp_kses_post($_POST[$field]) : sanitize_text_field($_POST[$field]);
                 update_post_meta($post_id, $meta_key, $value);
             }
         }
@@ -853,10 +751,10 @@ function aimpro_save_retargeting_display_meta_boxes($post_id) {
     // Save Overview Section
     if (isset($_POST['retargeting_display_overview_nonce']) && wp_verify_nonce($_POST['retargeting_display_overview_nonce'], basename(__FILE__))) {
         if (isset($_POST['retargeting_display_overview_title'])) {
-            update_post_meta($post_id, '_retargeting_display_overview_title', sanitize_text_field($_POST['retargeting_display_overview_title']));
+            update_post_meta($post_id, '_retargeting_display_overview_title', wp_kses_post($_POST['retargeting_display_overview_title']));
         }
         if (isset($_POST['retargeting_display_overview_content'])) {
-            update_post_meta($post_id, '_retargeting_display_overview_content', sanitize_textarea_field($_POST['retargeting_display_overview_content']));
+            update_post_meta($post_id, '_retargeting_display_overview_content', wp_kses_post($_POST['retargeting_display_overview_content']));
         }
     }
     
@@ -864,10 +762,10 @@ function aimpro_save_retargeting_display_meta_boxes($post_id) {
     if (isset($_POST['retargeting_display_services_nonce']) && wp_verify_nonce($_POST['retargeting_display_services_nonce'], basename(__FILE__))) {
         for ($i = 1; $i <= 6; $i++) {
             if (isset($_POST["retargeting_display_service_title_{$i}"])) {
-                update_post_meta($post_id, "_retargeting_display_service_title_{$i}", sanitize_text_field($_POST["retargeting_display_service_title_{$i}"]));
+                update_post_meta($post_id, "_retargeting_display_service_title_{$i}", wp_kses_post($_POST["retargeting_display_service_title_{$i}"]));
             }
             if (isset($_POST["retargeting_display_service_content_{$i}"])) {
-                update_post_meta($post_id, "_retargeting_display_service_content_{$i}", sanitize_textarea_field($_POST["retargeting_display_service_content_{$i}"]));
+                update_post_meta($post_id, "_retargeting_display_service_content_{$i}", wp_kses_post($_POST["retargeting_display_service_content_{$i}"]));
             }
             if (isset($_POST["retargeting_display_service_icon_{$i}"])) {
                 update_post_meta($post_id, "_retargeting_display_service_icon_{$i}", sanitize_text_field($_POST["retargeting_display_service_icon_{$i}"]));
@@ -886,10 +784,7 @@ function aimpro_save_retargeting_display_meta_boxes($post_id) {
         
         foreach ($case_study_fields as $field => $meta_key) {
             if (isset($_POST[$field])) {
-                $value = ($field === 'retargeting_display_case_study_title') ? 
-                    sanitize_text_field($_POST[$field]) : 
-                    sanitize_textarea_field($_POST[$field]);
-                update_post_meta($post_id, $meta_key, $value);
+                update_post_meta($post_id, $meta_key, wp_kses_post($_POST[$field]));
             }
         }
         
@@ -907,7 +802,7 @@ function aimpro_save_retargeting_display_meta_boxes($post_id) {
     // Save Process Section
     if (isset($_POST['retargeting_display_process_nonce']) && wp_verify_nonce($_POST['retargeting_display_process_nonce'], basename(__FILE__))) {
         if (isset($_POST['retargeting_display_process_title'])) {
-            update_post_meta($post_id, '_retargeting_display_process_title', sanitize_text_field($_POST['retargeting_display_process_title']));
+            update_post_meta($post_id, '_retargeting_display_process_title', wp_kses_post($_POST['retargeting_display_process_title']));
         }
         
         for ($i = 1; $i <= 5; $i++) {
@@ -915,10 +810,10 @@ function aimpro_save_retargeting_display_meta_boxes($post_id) {
                 update_post_meta($post_id, "_retargeting_display_process_step_number_{$i}", sanitize_text_field($_POST["retargeting_display_process_step_number_{$i}"]));
             }
             if (isset($_POST["retargeting_display_process_step_title_{$i}"])) {
-                update_post_meta($post_id, "_retargeting_display_process_step_title_{$i}", sanitize_text_field($_POST["retargeting_display_process_step_title_{$i}"]));
+                update_post_meta($post_id, "_retargeting_display_process_step_title_{$i}", wp_kses_post($_POST["retargeting_display_process_step_title_{$i}"]));
             }
             if (isset($_POST["retargeting_display_process_step_content_{$i}"])) {
-                update_post_meta($post_id, "_retargeting_display_process_step_content_{$i}", sanitize_textarea_field($_POST["retargeting_display_process_step_content_{$i}"]));
+                update_post_meta($post_id, "_retargeting_display_process_step_content_{$i}", wp_kses_post($_POST["retargeting_display_process_step_content_{$i}"]));
             }
         }
     }
@@ -926,15 +821,15 @@ function aimpro_save_retargeting_display_meta_boxes($post_id) {
     // Save Retargeting Types Section
     if (isset($_POST['retargeting_display_types_nonce']) && wp_verify_nonce($_POST['retargeting_display_types_nonce'], basename(__FILE__))) {
         if (isset($_POST['retargeting_display_types_title'])) {
-            update_post_meta($post_id, '_retargeting_display_types_title', sanitize_text_field($_POST['retargeting_display_types_title']));
+            update_post_meta($post_id, '_retargeting_display_types_title', wp_kses_post($_POST['retargeting_display_types_title']));
         }
         
         for ($i = 1; $i <= 6; $i++) {
             if (isset($_POST["retargeting_display_type_title_{$i}"])) {
-                update_post_meta($post_id, "_retargeting_display_type_title_{$i}", sanitize_text_field($_POST["retargeting_display_type_title_{$i}"]));
+                update_post_meta($post_id, "_retargeting_display_type_title_{$i}", wp_kses_post($_POST["retargeting_display_type_title_{$i}"]));
             }
             if (isset($_POST["retargeting_display_type_content_{$i}"])) {
-                update_post_meta($post_id, "_retargeting_display_type_content_{$i}", sanitize_textarea_field($_POST["retargeting_display_type_content_{$i}"]));
+                update_post_meta($post_id, "_retargeting_display_type_content_{$i}", wp_kses_post($_POST["retargeting_display_type_content_{$i}"]));
             }
             if (isset($_POST["retargeting_display_type_icon_{$i}"])) {
                 update_post_meta($post_id, "_retargeting_display_type_icon_{$i}", sanitize_text_field($_POST["retargeting_display_type_icon_{$i}"]));
@@ -945,15 +840,15 @@ function aimpro_save_retargeting_display_meta_boxes($post_id) {
     // Save Tools Section
     if (isset($_POST['retargeting_display_tools_nonce']) && wp_verify_nonce($_POST['retargeting_display_tools_nonce'], basename(__FILE__))) {
         if (isset($_POST['retargeting_display_tools_title'])) {
-            update_post_meta($post_id, '_retargeting_display_tools_title', sanitize_text_field($_POST['retargeting_display_tools_title']));
+            update_post_meta($post_id, '_retargeting_display_tools_title', wp_kses_post($_POST['retargeting_display_tools_title']));
         }
         
         for ($i = 1; $i <= 4; $i++) {
             if (isset($_POST["retargeting_display_tool_title_{$i}"])) {
-                update_post_meta($post_id, "_retargeting_display_tool_title_{$i}", sanitize_text_field($_POST["retargeting_display_tool_title_{$i}"]));
+                update_post_meta($post_id, "_retargeting_display_tool_title_{$i}", wp_kses_post($_POST["retargeting_display_tool_title_{$i}"]));
             }
             if (isset($_POST["retargeting_display_tool_content_{$i}"])) {
-                update_post_meta($post_id, "_retargeting_display_tool_content_{$i}", sanitize_textarea_field($_POST["retargeting_display_tool_content_{$i}"]));
+                update_post_meta($post_id, "_retargeting_display_tool_content_{$i}", wp_kses_post($_POST["retargeting_display_tool_content_{$i}"]));
             }
             if (isset($_POST["retargeting_display_tool_icon_{$i}"])) {
                 update_post_meta($post_id, "_retargeting_display_tool_icon_{$i}", sanitize_text_field($_POST["retargeting_display_tool_icon_{$i}"]));
@@ -964,15 +859,15 @@ function aimpro_save_retargeting_display_meta_boxes($post_id) {
     // Save Industries Section
     if (isset($_POST['retargeting_display_industries_nonce']) && wp_verify_nonce($_POST['retargeting_display_industries_nonce'], basename(__FILE__))) {
         if (isset($_POST['retargeting_display_industries_title'])) {
-            update_post_meta($post_id, '_retargeting_display_industries_title', sanitize_text_field($_POST['retargeting_display_industries_title']));
+            update_post_meta($post_id, '_retargeting_display_industries_title', wp_kses_post($_POST['retargeting_display_industries_title']));
         }
         
         for ($i = 1; $i <= 6; $i++) {
             if (isset($_POST["retargeting_display_industry_title_{$i}"])) {
-                update_post_meta($post_id, "_retargeting_display_industry_title_{$i}", sanitize_text_field($_POST["retargeting_display_industry_title_{$i}"]));
+                update_post_meta($post_id, "_retargeting_display_industry_title_{$i}", wp_kses_post($_POST["retargeting_display_industry_title_{$i}"]));
             }
             if (isset($_POST["retargeting_display_industry_content_{$i}"])) {
-                update_post_meta($post_id, "_retargeting_display_industry_content_{$i}", sanitize_textarea_field($_POST["retargeting_display_industry_content_{$i}"]));
+                update_post_meta($post_id, "_retargeting_display_industry_content_{$i}", wp_kses_post($_POST["retargeting_display_industry_content_{$i}"]));
             }
         }
     }
@@ -980,7 +875,7 @@ function aimpro_save_retargeting_display_meta_boxes($post_id) {
     // Save Testimonial Section
     if (isset($_POST['retargeting_display_testimonial_nonce']) && wp_verify_nonce($_POST['retargeting_display_testimonial_nonce'], basename(__FILE__))) {
         if (isset($_POST['retargeting_display_testimonial_quote'])) {
-            update_post_meta($post_id, '_retargeting_display_testimonial_quote', sanitize_textarea_field($_POST['retargeting_display_testimonial_quote']));
+            update_post_meta($post_id, '_retargeting_display_testimonial_quote', wp_kses_post($_POST['retargeting_display_testimonial_quote']));
         }
         if (isset($_POST['retargeting_display_testimonial_name'])) {
             update_post_meta($post_id, '_retargeting_display_testimonial_name', sanitize_text_field($_POST['retargeting_display_testimonial_name']));
@@ -993,10 +888,10 @@ function aimpro_save_retargeting_display_meta_boxes($post_id) {
     // Save CTA Section
     if (isset($_POST['retargeting_display_cta_nonce']) && wp_verify_nonce($_POST['retargeting_display_cta_nonce'], basename(__FILE__))) {
         if (isset($_POST['retargeting_display_cta_title'])) {
-            update_post_meta($post_id, '_retargeting_display_cta_title', sanitize_text_field($_POST['retargeting_display_cta_title']));
+            update_post_meta($post_id, '_retargeting_display_cta_title', wp_kses_post($_POST['retargeting_display_cta_title']));
         }
         if (isset($_POST['retargeting_display_cta_content'])) {
-            update_post_meta($post_id, '_retargeting_display_cta_content', sanitize_textarea_field($_POST['retargeting_display_cta_content']));
+            update_post_meta($post_id, '_retargeting_display_cta_content', wp_kses_post($_POST['retargeting_display_cta_content']));
         }
         if (isset($_POST['retargeting_display_cta_button_1_text'])) {
             update_post_meta($post_id, '_retargeting_display_cta_button_1_text', sanitize_text_field($_POST['retargeting_display_cta_button_1_text']));

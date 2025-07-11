@@ -84,6 +84,179 @@ function aimpro_check_submissions_table() {
 }
 add_action('wp_loaded', 'aimpro_check_submissions_table');
 
+// Include retargeting display default values function for both frontend and admin
+if (!function_exists('aimpro_get_retargeting_display_default_values')) {
+    /**
+     * Set default values for Retargeting & Display Ads page meta fields
+     * This ensures fields are pre-populated with the frontend content
+     */
+    function aimpro_get_retargeting_display_default_values() {
+        return array(
+            // Hero Section
+            'hero_title' => 'Retargeting & Display Advertising',
+            'hero_subtitle' => 'Re-engage interested prospects and build brand awareness with strategic retargeting and display campaigns that convert browsers into buyers across the web.',
+            
+            // Hero Stats
+            'hero_stat1_number' => '475%',
+            'hero_stat1_label' => 'Conversion Rate Increase',
+            'hero_stat2_number' => '68%',
+            'hero_stat2_label' => 'Lower Cost Per Conversion',
+            'hero_stat3_number' => '12x',
+            'hero_stat3_label' => 'Higher Click-Through Rate',
+            
+            // Hero CTAs
+            'hero_cta1_text' => 'Start Retargeting',
+            'hero_cta2_text' => 'View Packages',
+            
+            // Service Overview Section
+            'overview_title' => 'Strategic Retargeting & Display Campaigns',
+            'overview_content' => 'Most website visitors leave without converting. Our retargeting and display advertising strategies keep your brand top-of-mind, re-engage interested prospects, and guide them back to complete their purchase or inquiry across millions of websites.',
+            
+            // Service Items (6 services)
+            'service_title_1' => 'Website Retargeting',
+            'service_content_1' => 'Re-engage website visitors with personalised ads based on their browsing behaviour and pages visited.',
+            'service_icon_1' => 'fas fa-bullseye',
+            
+            'service_title_2' => 'Abandoned Cart Recovery',
+            'service_content_2' => 'Win back shoppers who left items in their cart with targeted ads featuring the exact products they viewed.',
+            'service_icon_2' => 'fas fa-shopping-cart',
+            
+            'service_title_3' => 'Display Advertising',
+            'service_content_3' => 'Build brand awareness and reach new audiences through visually compelling display ads across premium websites.',
+            'service_icon_3' => 'fas fa-ad',
+            
+            'service_title_4' => 'Video Retargeting',
+            'service_content_4' => 'Engage prospects with dynamic video content that showcases your products or services in action.',
+            'service_icon_4' => 'fas fa-play-circle',
+            
+            'service_title_5' => 'Lookalike Audiences',
+            'service_content_5' => 'Expand your reach by targeting new prospects who share characteristics with your best customers.',
+            'service_icon_5' => 'fas fa-user-friends',
+            
+            'service_title_6' => 'Cross-Platform Campaigns',
+            'service_content_6' => 'Coordinate retargeting efforts across Google, Facebook, Instagram, and other platforms for maximum impact.',
+            'service_icon_6' => 'fas fa-sync-alt',
+            
+            // Case Study Section
+            'case_study_title' => 'Case Study: E-commerce Cart Recovery',
+            'case_study_intro' => 'How we helped an online retailer recover 475% more abandoned carts and increase overall conversion rates through strategic retargeting campaigns.',
+            'case_study_challenge' => 'A fashion e-commerce store was losing 85% of potential customers to cart abandonment. Their existing email recovery campaigns were generating minimal results, and they needed a comprehensive strategy to re-engage prospects across multiple touchpoints.',
+            'case_study_solution' => "Implemented pixel-based retargeting across Google Display Network and Facebook\nCreated dynamic product ads featuring abandoned cart items\nDeveloped sequential retargeting campaigns with progressive messaging\nLaunched lookalike audiences based on high-value customers\nA/B tested creative formats and messaging strategies",
+            
+            // Case Study Results
+            'case_result_1_number' => '475%',
+            'case_result_1_label' => 'Cart Recovery Increase',
+            'case_result_2_number' => '68%',
+            'case_result_2_label' => 'Lower Cost Per Conversion',
+            'case_result_3_number' => '12x',
+            'case_result_3_label' => 'Higher CTR vs Display Average',
+            'case_result_4_number' => '235%',
+            'case_result_4_label' => 'Return on Ad Spend',
+            
+            // Process Section
+            'process_title' => 'Our Retargeting Process',
+            
+            'process_step_number_1' => '1',
+            'process_step_title_1' => 'Audience Segmentation',
+            'process_step_content_1' => 'analyse website behaviour to create detailed audience segments based on pages visited, engagement level, and conversion intent.',
+            
+            'process_step_number_2' => '2',
+            'process_step_title_2' => 'Pixel Implementation',
+            'process_step_content_2' => 'Install and configure tracking pixels across all relevant platforms to capture audience data and enable precise targeting.',
+            
+            'process_step_number_3' => '3',
+            'process_step_title_3' => 'Creative Development',
+            'process_step_content_3' => 'Design compelling ad creative with personalised messaging that addresses specific user behaviours and intent signals.',
+            
+            'process_step_number_4' => '4',
+            'process_step_title_4' => 'Campaign Launch & Testing',
+            'process_step_content_4' => 'Deploy retargeting campaigns with systematic A/B testing of creative, messaging, and frequency caps.',
+            
+            'process_step_number_5' => '5',
+            'process_step_title_5' => 'Optimisation & Scaling',
+            'process_step_content_5' => 'Continuously optimise based on performance data and scale successful campaigns across additional platforms and audiences.',
+            
+            // Retargeting Types Section
+            'types_title' => 'Types of Retargeting We Implement',
+            
+            'type_title_1' => 'Pixel-Based Retargeting',
+            'type_content_1' => 'Track anonymous website visitors and serve them relevant ads across the web based on their browsing behaviour.',
+            'type_icon_1' => 'fas fa-mouse-pointer',
+            
+            'type_title_2' => 'List-Based Retargeting',
+            'type_content_2' => 'Upload customer email lists to create targeted campaigns for existing contacts and previous customers.',
+            'type_icon_2' => 'fas fa-database',
+            
+            'type_title_3' => 'Email Retargeting',
+            'type_content_3' => 'Target users who interacted with your emails but didn\'t convert with coordinated display advertising.',
+            'type_icon_3' => 'fas fa-envelope',
+            
+            'type_title_4' => 'Video View Retargeting',
+            'type_content_4' => 'Re-engage users who watched your video content with follow-up campaigns driving specific actions.',
+            'type_icon_4' => 'fas fa-play',
+            
+            'type_title_5' => 'Social Media Retargeting',
+            'type_content_5' => 'Target website visitors on social platforms where they spend time with native, engaging ad formats.',
+            'type_icon_5' => 'fas fa-share-alt',
+            
+            'type_title_6' => 'Cross-Device Retargeting',
+            'type_content_6' => 'Follow users across all their devices to maintain consistent messaging and maximise conversion opportunities.',
+            'type_icon_6' => 'fas fa-mobile-alt',
+            
+            // Tools Section
+            'tools_title' => 'Tools & Technologies We Use',
+            
+            'tool_title_1' => 'Google Display Network',
+            'tool_content_1' => 'Reach users across millions of websites, apps, and Google properties with targeted display campaigns.',
+            'tool_icon_1' => 'fab fa-google',
+            
+            'tool_title_2' => 'Facebook Pixel',
+            'tool_content_2' => 'Advanced retargeting and conversion tracking across Facebook and Instagram platforms.',
+            'tool_icon_2' => 'fab fa-facebook',
+            
+            'tool_title_3' => 'Google Analytics',
+            'tool_content_3' => 'Comprehensive audience analysis and behaviour tracking for precise retargeting segmentation.',
+            'tool_icon_3' => 'fas fa-chart-bar',
+            
+            'tool_title_4' => 'Dynamic Creative Tools',
+            'tool_content_4' => 'Automated ad creation and personalisation based on user behaviour and product interests.',
+            'tool_icon_4' => 'fas fa-palette',
+            
+            // Industries Section
+            'industries_title' => 'Industries We Serve',
+            
+            'industry_title_1' => 'E-commerce & Retail',
+            'industry_content_1' => 'Recover abandoned carts and increase customer lifetime value through strategic retargeting.',
+            
+            'industry_title_2' => 'SaaS & Technology',
+            'industry_content_2' => 'Nurture trial users and free account holders toward paid conversions.',
+            
+            'industry_title_3' => 'Financial Services',
+            'industry_content_3' => 'Re-engage prospects who showed interest in loans, insurance, or investment products.',
+            
+            'industry_title_4' => 'Real Estate',
+            'industry_content_4' => 'Follow up with property viewers and keep listings top-of-mind for potential buyers.',
+            
+            'industry_title_5' => 'Travel & Hospitality',
+            'industry_content_5' => 'Recapture booking abandoners and promote special offers to interested travelers.',
+            
+            'industry_title_6' => 'Healthcare',
+            'industry_content_6' => 'Nurture patients who researched treatments or services with compliant retargeting campaigns.',
+            
+            // Testimonial Section
+            'testimonial_quote' => 'Our retargeting campaigns with Aimpro have been phenomenal. We\'re recovering 475% more abandoned carts and our cost per conversion dropped by 68%. It\'s transformed our entire marketing ROI.',
+            'testimonial_name' => 'Emma Thompson',
+            'testimonial_title' => 'E-commerce Director, StyleHub',
+            
+            // CTA Section
+            'cta_title' => 'Ready to Re-Engage Your Lost Prospects?',
+            'cta_content' => 'Stop losing potential customers forever. Our retargeting experts will help you build campaigns that bring visitors back and convert them into loyal customers. Start recovering lost revenue today.',
+            'cta_button_1_text' => 'Start Retargeting',
+            'cta_button_2_text' => 'View All Services',
+        );
+    }
+}
+
 // Include meta functionality only in admin area to prevent header issues
 if (is_admin()) {
     // Include contact page meta functionality

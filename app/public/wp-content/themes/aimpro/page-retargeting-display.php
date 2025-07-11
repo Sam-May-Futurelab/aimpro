@@ -41,8 +41,8 @@ get_header(); ?>
                 
                 $hero_cta2_text = get_post_meta(get_the_ID(), '_retargeting_display_hero_cta2_text', true);
                 if (empty($hero_cta2_text)) $hero_cta2_text = $defaults['hero_cta2_text'];
-                ?>                <h1><?php echo esc_html($hero_title); ?></h1>
-                <p class="hero-subtitle"><?php echo esc_html($hero_subtitle); ?></p>
+                ?>                <h1><?php echo wp_kses_post($hero_title); ?></h1>
+                <p class="hero-subtitle"><?php echo wp_kses_post($hero_subtitle); ?></p>
                 <div class="hero-stats animate-on-scroll animate-fade-up">
                     <?php for ($i = 1; $i <= 3; $i++) : ?>
                         <?php
@@ -72,8 +72,8 @@ get_header(); ?>
                 $overview_content = get_post_meta(get_the_ID(), '_retargeting_display_overview_content', true);
                 if (empty($overview_content)) $overview_content = $defaults['overview_content'];
                 ?>
-                <h2><?php echo esc_html($overview_title); ?></h2>
-                <p><?php echo esc_html($overview_content); ?></p>
+                <h2><?php echo wp_kses_post($overview_title); ?></h2>
+                <p><?php echo wp_kses_post($overview_content); ?></p>
             </div>
             
             <div class="services-grid">
@@ -92,8 +92,8 @@ get_header(); ?>
                         <div class="service-icon">
                             <i class="<?php echo esc_attr($service_icon); ?>"></i>
                         </div>
-                        <h3><?php echo esc_html($service_title); ?></h3>
-                        <p><?php echo esc_html($service_content); ?></p>
+                        <h3><?php echo wp_kses_post($service_title); ?></h3>
+                        <p><?php echo wp_kses_post($service_content); ?></p>
                     </div>                <?php endfor; ?>            </div>            <div class="text-center mt-1 animate-on-scroll animate-fade-up">
                 <a href="/contact/" class="btn btn-primary">Get Started with Retargeting</a>
             </div>
@@ -115,12 +115,12 @@ get_header(); ?>
                     $case_study_solution = get_post_meta(get_the_ID(), '_retargeting_display_case_study_solution', true);
                     if (empty($case_study_solution)) $case_study_solution = $defaults['case_study_solution'];
                     ?>
-                    <h2><?php echo esc_html($case_study_title); ?></h2>
-                    <p class="case-study-intro"><?php echo esc_html($case_study_intro); ?></p>
+                    <h2><?php echo wp_kses_post($case_study_title); ?></h2>
+                    <p class="case-study-intro"><?php echo wp_kses_post($case_study_intro); ?></p>
                     
                     <div class="case-study-challenge">
                         <h3>The Challenge</h3>
-                        <p><?php echo esc_html($case_study_challenge); ?></p>
+                        <p><?php echo wp_kses_post($case_study_challenge); ?></p>
                     </div>
                     
                     <div class="case-study-solution">
@@ -138,7 +138,7 @@ get_header(); ?>
                             }
                             echo '</ul>';
                         } else {
-                            echo '<p>' . esc_html($case_study_solution) . '</p>';
+                            echo '<p>' . wp_kses_post($case_study_solution) . '</p>';
                         }
                         ?>
                     </div>
@@ -175,7 +175,7 @@ get_header(); ?>
             $process_title = get_post_meta(get_the_ID(), '_retargeting_display_process_title', true);
             if (empty($process_title)) $process_title = $defaults['process_title'];
             ?>
-            <h2 class="animate-on-scroll animate-fade-up" style="text-align: center;"><?php echo esc_html($process_title); ?></h2>
+            <h2 class="animate-on-scroll animate-fade-up" style="text-align: center;"><?php echo wp_kses_post($process_title); ?></h2>
             <div class="process-steps">
                 <?php for ($i = 1; $i <= 5; $i++) : ?>
                     <?php
@@ -191,8 +191,8 @@ get_header(); ?>
                     <div class="process-step animate-on-scroll animate-stagger animate-fade-up">
                         <div class="step-number"><?php echo esc_html($step_number); ?></div>
                         <div class="step-content">
-                            <h3><?php echo esc_html($step_title); ?></h3>
-                            <p><?php echo esc_html($step_content); ?></p>
+                            <h3><?php echo wp_kses_post($step_title); ?></h3>
+                            <p><?php echo wp_kses_post($step_content); ?></p>
                         </div>
                     </div>                <?php endfor; ?>
             </div>
@@ -210,7 +210,7 @@ get_header(); ?>
             $types_title = get_post_meta(get_the_ID(), '_retargeting_display_types_title', true);
             if (empty($types_title)) $types_title = $defaults['types_title'];
             ?>
-            <h2 class="animate-on-scroll animate-fade-up" style="text-align: center; margin-bottom: 2rem;"><?php echo esc_html($types_title); ?></h2>
+            <h2 class="animate-on-scroll animate-fade-up" style="text-align: center; margin-bottom: 2rem;"><?php echo wp_kses_post($types_title); ?></h2>
             <div class="types-grid" style="margin: 2.5rem 0;">
                 <?php for ($i = 1; $i <= 6; $i++) : ?>
                     <?php
@@ -224,8 +224,8 @@ get_header(); ?>
                     if (empty($type_icon)) $type_icon = $defaults["type_icon_{$i}"];
                     ?>
                     <div class="type-item animate-on-scroll animate-stagger animate-fade-up">
-                        <h3><?php echo esc_html($type_title); ?></h3>
-                        <p><?php echo esc_html($type_content); ?></p>
+                        <h3><?php echo wp_kses_post($type_title); ?></h3>
+                        <p><?php echo wp_kses_post($type_content); ?></p>
                     </div>                <?php endfor; ?>
             </div>
               <!-- CTA after retargeting types -->
@@ -242,7 +242,7 @@ get_header(); ?>
             $tools_title = get_post_meta(get_the_ID(), '_retargeting_display_tools_title', true);
             if (empty($tools_title)) $tools_title = $defaults['tools_title'];
             ?>
-            <h2 class="animate-on-scroll animate-fade-up" style="text-align: center;"><?php echo esc_html($tools_title); ?></h2>
+            <h2 class="animate-on-scroll animate-fade-up" style="text-align: center;"><?php echo wp_kses_post($tools_title); ?></h2>
             <div class="tools-grid">
                 <?php for ($i = 1; $i <= 4; $i++) : ?>
                     <?php
@@ -259,8 +259,8 @@ get_header(); ?>
                         <div class="tool-icon">
                             <i class="<?php echo esc_attr($tool_icon); ?>"></i>
                         </div>
-                        <h3><?php echo esc_html($tool_title); ?></h3>
-                        <p><?php echo esc_html($tool_content); ?></p>
+                        <h3><?php echo wp_kses_post($tool_title); ?></h3>
+                        <p><?php echo wp_kses_post($tool_content); ?></p>
                     </div>                <?php endfor; ?>
             </div>
               <!-- CTA after tools section -->
@@ -277,7 +277,7 @@ get_header(); ?>
             $industries_title = get_post_meta(get_the_ID(), '_retargeting_display_industries_title', true);
             if (empty($industries_title)) $industries_title = $defaults['industries_title'];
             ?>
-            <h2 class="animate-on-scroll animate-fade-up" style="text-align: center;"><?php echo esc_html($industries_title); ?></h2>
+            <h2 class="animate-on-scroll animate-fade-up" style="text-align: center;"><?php echo wp_kses_post($industries_title); ?></h2>
             <div class="industries-grid">
                 <?php for ($i = 1; $i <= 6; $i++) : ?>
                     <?php
@@ -288,8 +288,8 @@ get_header(); ?>
                     if (empty($industry_content)) $industry_content = $defaults["industry_content_{$i}"];
                     ?>
                     <div class="industry-item animate-on-scroll animate-stagger animate-fade-up">
-                        <h3><?php echo esc_html($industry_title); ?></h3>
-                        <p><?php echo esc_html($industry_content); ?></p>
+                        <h3><?php echo wp_kses_post($industry_title); ?></h3>
+                        <p><?php echo wp_kses_post($industry_content); ?></p>
                     </div>
                 <?php endfor; ?>
             </div>
@@ -308,7 +308,7 @@ get_header(); ?>
                 if (empty($testimonial_title)) $testimonial_title = $defaults['testimonial_title'];
                 ?>
                 <blockquote>
-                    "<?php echo esc_html($testimonial_quote); ?>"
+                    "<?php echo wp_kses_post($testimonial_quote); ?>"
                 </blockquote>
                 <cite>
                     <strong><?php echo esc_html($testimonial_name); ?></strong><br>
@@ -332,8 +332,8 @@ get_header(); ?>
                 $cta_button_2_text = get_post_meta(get_the_ID(), '_retargeting_display_cta_button_2_text', true);
                 if (empty($cta_button_2_text)) $cta_button_2_text = $defaults['cta_button_2_text'];
                 ?>
-                <h2 class="animate-on-scroll animate-scale-up"><?php echo esc_html($cta_title); ?></h2>
-                <p><?php echo esc_html($cta_content); ?></p>
+                <h2 class="animate-on-scroll animate-scale-up"><?php echo wp_kses_post($cta_title); ?></h2>
+                <p><?php echo wp_kses_post($cta_content); ?></p>
                 <div class="simple-cta-buttons">
                     <a href="<?php echo home_url('/contact'); ?>" class="btn btn-primary"><?php echo esc_html($cta_button_1_text); ?></a>
                     <?php if (!empty($cta_button_2_text)) : ?>
