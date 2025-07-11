@@ -24,8 +24,8 @@ get_header(); ?>
           <!-- Page Header -->
         <section class="page-header">
             <div class="page-header-content animate-on-scroll animate-fade-up">
-                <h1><?php echo esc_html(get_post_meta(get_the_ID(), '_rank_higher_locally_header_title', true) ?: 'Rank Higher Locally'); ?></h1>
-                <p class="page-subtitle"><?php echo esc_html(get_post_meta(get_the_ID(), '_rank_higher_locally_header_subtitle', true) ?: 'Dominate local search results and attract customers in your area with comprehensive local SEO strategies'); ?></p>
+                <h1><?php echo wp_kses_post(get_post_meta(get_the_ID(), '_rank_higher_locally_header_title', true) ?: 'Rank Higher Locally'); ?></h1>
+                <p class="page-subtitle"><?php echo wp_kses_post(get_post_meta(get_the_ID(), '_rank_higher_locally_header_subtitle', true) ?: 'Dominate local search results and attract customers in your area with comprehensive local SEO strategies'); ?></p>
             </div>
         </section>
 
@@ -34,11 +34,11 @@ get_header(); ?>
             <div class="section-content">
                 <div class="overview-content">
                     <div class="overview-text animate-on-scroll animate-slide-left">
-                        <h2><?php echo esc_html(get_post_meta(get_the_ID(), '_rank_higher_locally_overview_title', true) ?: 'Become the Local Leader in Your Industry'); ?></h2>
-                        <p><?php echo esc_html(get_post_meta(get_the_ID(), '_rank_higher_locally_overview_content', true) ?: 'Local search drives immediate action. When potential customers search for services "near me," you want to be the first business they find. Our comprehensive local SEO strategies help you dominate local search results, increase visibility, and attract more qualified customers in your service area.'); ?></p>
+                        <h2><?php echo wp_kses_post(get_post_meta(get_the_ID(), '_rank_higher_locally_overview_title', true) ?: 'Become the Local Leader in Your Industry'); ?></h2>
+                        <p><?php echo wp_kses_post(get_post_meta(get_the_ID(), '_rank_higher_locally_overview_content', true) ?: 'Local search drives immediate action. When potential customers search for services "near me," you want to be the first business they find. Our comprehensive local SEO strategies help you dominate local search results, increase visibility, and attract more qualified customers in your service area.'); ?></p>
                         
                         <div class="solution-challenges animate-on-scroll animate-fade-up">
-                            <h3><?php echo esc_html(get_post_meta(get_the_ID(), '_rank_higher_locally_challenges_title', true) ?: 'Local Search Challenges We Solve:'); ?></h3>
+                            <h3><?php echo wp_kses_post(get_post_meta(get_the_ID(), '_rank_higher_locally_challenges_title', true) ?: 'Local Search Challenges We Solve:'); ?></h3>
                             <ul>
                                 <?php
                                 $challenges = get_post_meta(get_the_ID(), '_rank_higher_locally_challenges', true);
@@ -79,7 +79,7 @@ get_header(); ?>
         <section class="service-overview">
             <div class="container">
                 <div class="section-header animate-on-scroll animate-fade-up">
-                    <h2><?php echo esc_html(get_post_meta(get_the_ID(), '_rank_higher_locally_services_title', true) ?: 'Our Local SEO Services'); ?></h2>
+                    <h2><?php echo wp_kses_post(get_post_meta(get_the_ID(), '_rank_higher_locally_services_title', true) ?: 'Our Local SEO Services'); ?></h2>
                 </div>                <div class="services-grid">
                     <?php
                     // Force use of updated hardcoded services array
@@ -141,12 +141,12 @@ get_header(); ?>
             <div class="section-content">
                 <div class="case-study-content">
                     <div class="case-study-text">
-                        <span class="case-study-label"><?php echo esc_html(get_post_meta(get_the_ID(), '_rank_higher_locally_case_study_label', true) ?: 'Success Story'); ?></span>
-                        <h2><?php echo esc_html(get_post_meta(get_the_ID(), '_rank_higher_locally_case_study_title', true) ?: 'Precision Dental: 500% Local Visibility Increase'); ?></h2>
-                        <p><?php echo esc_html(get_post_meta(get_the_ID(), '_rank_higher_locally_case_study_content', true) ?: 'Precision Dental, a family dental practice, was invisible in local search results despite serving the community for 15 years.'); ?></p>
+                        <span class="case-study-label"><?php echo wp_kses_post(get_post_meta(get_the_ID(), '_rank_higher_locally_case_study_label', true) ?: 'Success Story'); ?></span>
+                        <h2><?php echo wp_kses_post(get_post_meta(get_the_ID(), '_rank_higher_locally_case_study_title', true) ?: 'Precision Dental: 500% Local Visibility Increase'); ?></h2>
+                        <p><?php echo wp_kses_post(get_post_meta(get_the_ID(), '_rank_higher_locally_case_study_content', true) ?: 'Precision Dental, a family dental practice, was invisible in local search results despite serving the community for 15 years.'); ?></p>
                         
                         <div class="case-study-challenge">
-                            <h3><?php echo esc_html(get_post_meta(get_the_ID(), '_rank_higher_locally_case_study_challenge_title', true) ?: 'The Challenge'); ?></h3>
+                            <h3><?php echo wp_kses_post(get_post_meta(get_the_ID(), '_rank_higher_locally_case_study_challenge_title', true) ?: 'The Challenge'); ?></h3>
                             <ul>
                                 <?php
                                 $case_challenges = get_post_meta(get_the_ID(), '_rank_higher_locally_case_study_challenges', true);
@@ -166,7 +166,7 @@ get_header(); ?>
                         </div>
 
                         <div class="case-study-solution">
-                            <h3><?php echo esc_html(get_post_meta(get_the_ID(), '_rank_higher_locally_case_study_solution_title', true) ?: 'Our Solution'); ?></h3>
+                            <h3><?php echo wp_kses_post(get_post_meta(get_the_ID(), '_rank_higher_locally_case_study_solution_title', true) ?: 'Our Solution'); ?></h3>
                             <ul>
                                 <?php
                                 $case_solutions = get_post_meta(get_the_ID(), '_rank_higher_locally_case_study_solutions', true);
@@ -186,7 +186,7 @@ get_header(); ?>
                         </div>
                     </div>
                     <div class="case-study-results">
-                        <h3><?php echo esc_html(get_post_meta(get_the_ID(), '_rank_higher_locally_case_study_results_title', true) ?: 'Results After 6 Months'); ?></h3>
+                        <h3><?php echo wp_kses_post(get_post_meta(get_the_ID(), '_rank_higher_locally_case_study_results_title', true) ?: 'Results After 6 Months'); ?></h3>
                         <div class="results-grid">
                             <?php
                             $results = get_post_meta(get_the_ID(), '_rank_higher_locally_case_study_results', true);
@@ -223,7 +223,7 @@ get_header(); ?>
         </section>        <!-- Local SEO Process -->
         <section class="local-seo-process">
             <div class="section-content">
-                <h2 class="animate-on-scroll animate-fade-up"><?php echo esc_html(get_post_meta(get_the_ID(), '_rank_higher_locally_process_title', true) ?: 'Our Local SEO Process'); ?></h2>
+                <h2 class="animate-on-scroll animate-fade-up"><?php echo wp_kses_post(get_post_meta(get_the_ID(), '_rank_higher_locally_process_title', true) ?: 'Our Local SEO Process'); ?></h2>
                 <div class="process-steps">
                     <?php
                     $process_steps = get_post_meta(get_the_ID(), '_rank_higher_locally_process_steps', true);
@@ -258,7 +258,7 @@ get_header(); ?>
                         <div class="step-number"><?php echo esc_html($step['number']); ?></div>
                         <div class="step-content">
                             <h3><?php echo esc_html($step['title']); ?></h3>
-                            <p><?php echo esc_html($step['description']); ?></p>
+                            <p><?php echo wp_kses_post($step['description']); ?></p>
                         </div>
                     </div>
                     <?php endforeach; ?>
@@ -271,8 +271,8 @@ get_header(); ?>
         <section class="service-overview">
             <div class="container">
                 <div class="overview-content animate-on-scroll animate-fade-up">
-                    <h2><?php echo esc_html(get_post_meta(get_the_ID(), '_rank_higher_locally_benefits_title', true) ?: 'Local SEO Benefits for Your Business'); ?></h2>
-                    <p><?php echo esc_html(get_post_meta(get_the_ID(), '_rank_higher_locally_benefits_description', true) ?: 'Powerful local search optimisation that drives real business results'); ?></p>
+                    <h2><?php echo wp_kses_post(get_post_meta(get_the_ID(), '_rank_higher_locally_benefits_title', true) ?: 'Local SEO Benefits for Your Business'); ?></h2>
+                    <p><?php echo wp_kses_post(get_post_meta(get_the_ID(), '_rank_higher_locally_benefits_description', true) ?: 'Powerful local search optimisation that drives real business results'); ?></p>
                 </div>
                 
                 <div class="services-grid">
@@ -328,7 +328,7 @@ get_header(); ?>
             <div class="section-content">
                 <div class="testimonial-content animate-on-scroll animate-fade-up">
                     <blockquote>
-                        "<?php echo esc_html(get_post_meta(get_the_ID(), '_rank_higher_locally_testimonial_quote', true) ?: 'Our local visibility has completely transformed since working with Aimpro Digital. We now rank #1 for all our key local searches and get 300% more phone calls. Our practice has never been busier.'); ?>"
+                        "<?php echo wp_kses_post(get_post_meta(get_the_ID(), '_rank_higher_locally_testimonial_quote', true) ?: 'Our local visibility has completely transformed since working with Aimpro Digital. We now rank #1 for all our key local searches and get 300% more phone calls. Our practice has never been busier.'); ?>"
                     </blockquote>
                     <div class="testimonial-author animate-on-scroll animate-slide-up">
                         <div class="author-info">
@@ -344,8 +344,8 @@ get_header(); ?>
         <!-- CTA Section -->
         <section class="local-seo-cta">
             <div class="section-content">
-                <h2 class="animate-on-scroll animate-fade-up"><?php echo esc_html(get_post_meta(get_the_ID(), '_rank_higher_locally_cta_title', true) ?: 'Ready to Dominate Local Search?'); ?></h2>
-                <p class="animate-on-scroll animate-fade-up"><?php echo esc_html(get_post_meta(get_the_ID(), '_rank_higher_locally_cta_subtitle', true) ?: 'Let\'s create a comprehensive local SEO strategy that puts your business at the top of local search results.'); ?></p>
+                <h2 class="animate-on-scroll animate-fade-up"><?php echo wp_kses_post(get_post_meta(get_the_ID(), '_rank_higher_locally_cta_title', true) ?: 'Ready to Dominate Local Search?'); ?></h2>
+                <p class="animate-on-scroll animate-fade-up"><?php echo wp_kses_post(get_post_meta(get_the_ID(), '_rank_higher_locally_cta_subtitle', true) ?: 'Let\'s create a comprehensive local SEO strategy that puts your business at the top of local search results.'); ?></p>
                 <div class="cta-buttons animate-on-scroll animate-slide-up">
                     <a href="<?php echo esc_url(home_url(get_post_meta(get_the_ID(), '_rank_higher_locally_cta_primary_url', true) ?: '/contact')); ?>" class="btn btn-primary"><?php echo esc_html(get_post_meta(get_the_ID(), '_rank_higher_locally_cta_primary_text', true) ?: 'Get Free Local SEO Audit'); ?></a>
                     <a href="<?php echo esc_url(home_url(get_post_meta(get_the_ID(), '_rank_higher_locally_cta_secondary_url', true) ?: '/case-studies')); ?>" class="btn btn-secondary"><?php echo esc_html(get_post_meta(get_the_ID(), '_rank_higher_locally_cta_secondary_text', true) ?: 'View Local Success Stories'); ?></a>

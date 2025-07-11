@@ -353,13 +353,25 @@ function rank_higher_locally_meta_box_callback($post) {
                 <tr>
                     <th><label for="rank_higher_locally_header_title">Page Title</label></th>
                     <td>
-                        <input type="text" id="rank_higher_locally_header_title" name="rank_higher_locally_header_title" value="<?php echo esc_attr($header_title); ?>" />
+                        <?php wp_editor($header_title, 'rank_higher_locally_header_title_editor', array(
+                            'textarea_name' => 'rank_higher_locally_header_title',
+                            'media_buttons' => false,
+                            'textarea_rows' => 2,
+                            'teeny' => true,
+                            'quicktags' => array('buttons' => 'strong,em,link')
+                        )); ?>
                     </td>
                 </tr>
                 <tr>
                     <th><label for="rank_higher_locally_header_subtitle">Page Subtitle</label></th>
                     <td>
-                        <textarea id="rank_higher_locally_header_subtitle" name="rank_higher_locally_header_subtitle"><?php echo esc_textarea($header_subtitle); ?></textarea>
+                        <?php wp_editor($header_subtitle, 'rank_higher_locally_header_subtitle_editor', array(
+                            'textarea_name' => 'rank_higher_locally_header_subtitle',
+                            'media_buttons' => false,
+                            'textarea_rows' => 3,
+                            'teeny' => true,
+                            'quicktags' => array('buttons' => 'strong,em,link')
+                        )); ?>
                     </td>
                 </tr>
             </table>
@@ -372,12 +384,24 @@ function rank_higher_locally_meta_box_callback($post) {
                 <tr>
                     <th><label for="rank_higher_locally_overview_title">Overview Title</label></th>
                     <td>
-                        <input type="text" id="rank_higher_locally_overview_title" name="rank_higher_locally_overview_title" value="<?php echo esc_attr($overview_title); ?>" />
+                        <?php wp_editor($overview_title, 'rank_higher_locally_overview_title_editor', array(
+                            'textarea_name' => 'rank_higher_locally_overview_title',
+                            'media_buttons' => false,
+                            'textarea_rows' => 2,
+                            'teeny' => true,
+                            'quicktags' => array('buttons' => 'strong,em,link')
+                        )); ?>
                     </td>
                 </tr>                <tr>
                     <th><label for="rank_higher_locally_overview_content">Overview Content</label></th>
                     <td>
-                        <textarea id="rank_higher_locally_overview_content" name="rank_higher_locally_overview_content"><?php echo esc_textarea($overview_content); ?></textarea>
+                        <?php wp_editor($overview_content, 'rank_higher_locally_overview_content_editor', array(
+                            'textarea_name' => 'rank_higher_locally_overview_content',
+                            'media_buttons' => false,
+                            'textarea_rows' => 6,
+                            'teeny' => true,
+                            'quicktags' => array('buttons' => 'strong,em,link,ul,ol,li')
+                        )); ?>
                     </td>
                 </tr>
                 <tr>
@@ -399,7 +423,13 @@ function rank_higher_locally_meta_box_callback($post) {
                 <tr>
                     <th><label for="rank_higher_locally_challenges_title">Challenges Title</label></th>
                     <td>
-                        <input type="text" id="rank_higher_locally_challenges_title" name="rank_higher_locally_challenges_title" value="<?php echo esc_attr($challenges_title); ?>" />
+                        <?php wp_editor($challenges_title, 'rank_higher_locally_challenges_title_editor', array(
+                            'textarea_name' => 'rank_higher_locally_challenges_title',
+                            'media_buttons' => false,
+                            'textarea_rows' => 2,
+                            'teeny' => true,
+                            'quicktags' => array('buttons' => 'strong,em,link')
+                        )); ?>
                     </td>
                 </tr>
             </table>
@@ -430,7 +460,13 @@ function rank_higher_locally_meta_box_callback($post) {
                 <tr>
                     <th><label for="rank_higher_locally_services_title">Services Section Title</label></th>
                     <td>
-                        <input type="text" id="rank_higher_locally_services_title" name="rank_higher_locally_services_title" value="<?php echo esc_attr($services_title); ?>" />
+                        <?php wp_editor($services_title, 'rank_higher_locally_services_title_editor', array(
+                            'textarea_name' => 'rank_higher_locally_services_title',
+                            'media_buttons' => false,
+                            'textarea_rows' => 2,
+                            'teeny' => true,
+                            'quicktags' => array('buttons' => 'strong,em,link')
+                        )); ?>
                     </td>
                 </tr>
             </table>
@@ -448,7 +484,13 @@ function rank_higher_locally_meta_box_callback($post) {
                                 </p>
                                 <p>
                                     <label class="repeater-label">Service Description</label>
-                                    <textarea name="rank_higher_locally_services[<?php echo $index; ?>][description]" placeholder="Service description..."><?php echo esc_textarea($service['description']); ?></textarea>
+                                    <?php wp_editor($service['description'], 'rank_higher_locally_services_description_' . $index . '_editor', array(
+                                        'textarea_name' => 'rank_higher_locally_services[' . $index . '][description]',
+                                        'media_buttons' => false,
+                                        'textarea_rows' => 3,
+                                        'teeny' => true,
+                                        'quicktags' => array('buttons' => 'strong,em,link')
+                                    )); ?>
                                 </p>
                                 <p>
                                     <label class="repeater-label">Icon Class</label>
@@ -509,25 +551,49 @@ function rank_higher_locally_meta_box_callback($post) {
                 <tr>
                     <th><label for="rank_higher_locally_case_study_label">Case Study Label</label></th>
                     <td>
-                        <input type="text" id="rank_higher_locally_case_study_label" name="rank_higher_locally_case_study_label" value="<?php echo esc_attr($case_study_label); ?>" />
+                        <?php wp_editor($case_study_label, 'rank_higher_locally_case_study_label_editor', array(
+                            'textarea_name' => 'rank_higher_locally_case_study_label',
+                            'media_buttons' => false,
+                            'textarea_rows' => 1,
+                            'teeny' => true,
+                            'quicktags' => array('buttons' => 'strong,em,link')
+                        )); ?>
                     </td>
                 </tr>
                 <tr>
                     <th><label for="rank_higher_locally_case_study_title">Case Study Title</label></th>
                     <td>
-                        <input type="text" id="rank_higher_locally_case_study_title" name="rank_higher_locally_case_study_title" value="<?php echo esc_attr($case_study_title); ?>" />
+                        <?php wp_editor($case_study_title, 'rank_higher_locally_case_study_title_editor', array(
+                            'textarea_name' => 'rank_higher_locally_case_study_title',
+                            'media_buttons' => false,
+                            'textarea_rows' => 2,
+                            'teeny' => true,
+                            'quicktags' => array('buttons' => 'strong,em,link')
+                        )); ?>
                     </td>
                 </tr>
                 <tr>
                     <th><label for="rank_higher_locally_case_study_content">Case Study Content</label></th>
                     <td>
-                        <textarea id="rank_higher_locally_case_study_content" name="rank_higher_locally_case_study_content"><?php echo esc_textarea($case_study_content); ?></textarea>
+                        <?php wp_editor($case_study_content, 'rank_higher_locally_case_study_content_editor', array(
+                            'textarea_name' => 'rank_higher_locally_case_study_content',
+                            'media_buttons' => false,
+                            'textarea_rows' => 4,
+                            'teeny' => true,
+                            'quicktags' => array('buttons' => 'strong,em,link,ul,ol,li')
+                        )); ?>
                     </td>
                 </tr>
                 <tr>
                     <th><label for="rank_higher_locally_case_study_challenge_title">Challenge Section Title</label></th>
                     <td>
-                        <input type="text" id="rank_higher_locally_case_study_challenge_title" name="rank_higher_locally_case_study_challenge_title" value="<?php echo esc_attr($case_study_challenge_title); ?>" />
+                        <?php wp_editor($case_study_challenge_title, 'rank_higher_locally_case_study_challenge_title_editor', array(
+                            'textarea_name' => 'rank_higher_locally_case_study_challenge_title',
+                            'media_buttons' => false,
+                            'textarea_rows' => 1,
+                            'teeny' => true,
+                            'quicktags' => array('buttons' => 'strong,em,link')
+                        )); ?>
                     </td>
                 </tr>
             </table>
@@ -554,7 +620,13 @@ function rank_higher_locally_meta_box_callback($post) {
                 <tr>
                     <th><label for="rank_higher_locally_case_study_solution_title">Solution Section Title</label></th>
                     <td>
-                        <input type="text" id="rank_higher_locally_case_study_solution_title" name="rank_higher_locally_case_study_solution_title" value="<?php echo esc_attr($case_study_solution_title); ?>" />
+                        <?php wp_editor($case_study_solution_title, 'rank_higher_locally_case_study_solution_title_editor', array(
+                            'textarea_name' => 'rank_higher_locally_case_study_solution_title',
+                            'media_buttons' => false,
+                            'textarea_rows' => 1,
+                            'teeny' => true,
+                            'quicktags' => array('buttons' => 'strong,em,link')
+                        )); ?>
                     </td>
                 </tr>
             </table>
@@ -581,7 +653,13 @@ function rank_higher_locally_meta_box_callback($post) {
                 <tr>
                     <th><label for="rank_higher_locally_case_study_results_title">Results Section Title</label></th>
                     <td>
-                        <input type="text" id="rank_higher_locally_case_study_results_title" name="rank_higher_locally_case_study_results_title" value="<?php echo esc_attr($case_study_results_title); ?>" />
+                        <?php wp_editor($case_study_results_title, 'rank_higher_locally_case_study_results_title_editor', array(
+                            'textarea_name' => 'rank_higher_locally_case_study_results_title',
+                            'media_buttons' => false,
+                            'textarea_rows' => 1,
+                            'teeny' => true,
+                            'quicktags' => array('buttons' => 'strong,em,link')
+                        )); ?>
                     </td>
                 </tr>
             </table>
@@ -646,7 +724,13 @@ function rank_higher_locally_meta_box_callback($post) {
                 <tr>
                     <th><label for="rank_higher_locally_process_title">Process Section Title</label></th>
                     <td>
-                        <input type="text" id="rank_higher_locally_process_title" name="rank_higher_locally_process_title" value="<?php echo esc_attr($process_title); ?>" />
+                        <?php wp_editor($process_title, 'rank_higher_locally_process_title_editor', array(
+                            'textarea_name' => 'rank_higher_locally_process_title',
+                            'media_buttons' => false,
+                            'textarea_rows' => 2,
+                            'teeny' => true,
+                            'quicktags' => array('buttons' => 'strong,em,link')
+                        )); ?>
                     </td>
                 </tr>
             </table>
@@ -668,7 +752,13 @@ function rank_higher_locally_meta_box_callback($post) {
                                 </p>
                                 <p>
                                     <label class="repeater-label">Step Description</label>
-                                    <textarea name="rank_higher_locally_process_steps[<?php echo $index; ?>][description]" placeholder="Step description..."><?php echo esc_textarea($step['description']); ?></textarea>
+                                    <?php wp_editor($step['description'], 'rank_higher_locally_process_steps_description_' . $index . '_editor', array(
+                                        'textarea_name' => 'rank_higher_locally_process_steps[' . $index . '][description]',
+                                        'media_buttons' => false,
+                                        'textarea_rows' => 3,
+                                        'teeny' => true,
+                                        'quicktags' => array('buttons' => 'strong,em,link,ul,ol,li')
+                                    )); ?>
                                 </p>
                             </div>
                         </div>
@@ -703,13 +793,25 @@ function rank_higher_locally_meta_box_callback($post) {
                 <tr>
                     <th><label for="rank_higher_locally_benefits_title">Benefits Section Title</label></th>
                     <td>
-                        <input type="text" id="rank_higher_locally_benefits_title" name="rank_higher_locally_benefits_title" value="<?php echo esc_attr($benefits_title); ?>" />
+                        <?php wp_editor($benefits_title, 'rank_higher_locally_benefits_title_editor', array(
+                            'textarea_name' => 'rank_higher_locally_benefits_title',
+                            'media_buttons' => false,
+                            'textarea_rows' => 2,
+                            'teeny' => true,
+                            'quicktags' => array('buttons' => 'strong,em,link')
+                        )); ?>
                     </td>
                 </tr>
                 <tr>
                     <th><label for="rank_higher_locally_benefits_description">Benefits Description</label></th>
                     <td>
-                        <input type="text" id="rank_higher_locally_benefits_description" name="rank_higher_locally_benefits_description" value="<?php echo esc_attr($benefits_description); ?>" />
+                        <?php wp_editor($benefits_description, 'rank_higher_locally_benefits_description_editor', array(
+                            'textarea_name' => 'rank_higher_locally_benefits_description',
+                            'media_buttons' => false,
+                            'textarea_rows' => 3,
+                            'teeny' => true,
+                            'quicktags' => array('buttons' => 'strong,em,link')
+                        )); ?>
                     </td>
                 </tr>
             </table>
@@ -768,9 +870,13 @@ function rank_higher_locally_meta_box_callback($post) {
                 <tr>
                     <th><label for="rank_higher_locally_testimonial_quote">Testimonial Quote</label></th>
                     <td>
-                        <textarea id="rank_higher_locally_testimonial_quote" 
-                              name="rank_higher_locally_testimonial_quote"
-                              placeholder="Customer testimonial quote..."><?php echo esc_textarea($testimonial_quote); ?></textarea>
+                        <?php wp_editor($testimonial_quote, 'rank_higher_locally_testimonial_quote_editor', array(
+                            'textarea_name' => 'rank_higher_locally_testimonial_quote',
+                            'media_buttons' => false,
+                            'textarea_rows' => 4,
+                            'teeny' => true,
+                            'quicktags' => array('buttons' => 'strong,em,link')
+                        )); ?>
                     </td>
                 </tr>
                 <tr>
@@ -813,13 +919,25 @@ function rank_higher_locally_meta_box_callback($post) {
                 <tr>
                     <th><label for="rank_higher_locally_cta_title">CTA Title</label></th>
                     <td>
-                        <input type="text" id="rank_higher_locally_cta_title" name="rank_higher_locally_cta_title" value="<?php echo esc_attr($cta_title); ?>" />
+                        <?php wp_editor($cta_title, 'rank_higher_locally_cta_title_editor', array(
+                            'textarea_name' => 'rank_higher_locally_cta_title',
+                            'media_buttons' => false,
+                            'textarea_rows' => 2,
+                            'teeny' => true,
+                            'quicktags' => array('buttons' => 'strong,em,link')
+                        )); ?>
                     </td>
                 </tr>
                 <tr>
                     <th><label for="rank_higher_locally_cta_subtitle">CTA Subtitle</label></th>
                     <td>
-                        <textarea id="rank_higher_locally_cta_subtitle" name="rank_higher_locally_cta_subtitle"><?php echo esc_textarea($cta_subtitle); ?></textarea>
+                        <?php wp_editor($cta_subtitle, 'rank_higher_locally_cta_subtitle_editor', array(
+                            'textarea_name' => 'rank_higher_locally_cta_subtitle',
+                            'media_buttons' => false,
+                            'textarea_rows' => 3,
+                            'teeny' => true,
+                            'quicktags' => array('buttons' => 'strong,em,link')
+                        )); ?>
                     </td>
                 </tr>
                 <tr>
@@ -1055,7 +1173,7 @@ function sanitize_rank_higher_locally_meta_value($field, $value) {
         // For complex arrays with nested arrays
         foreach ($value as $key => $service) {
             $value[$key]['title'] = sanitize_text_field($service['title']);
-            $value[$key]['description'] = sanitize_textarea_field($service['description']);
+            $value[$key]['description'] = wp_kses_post($service['description']);
             $value[$key]['icon'] = sanitize_text_field($service['icon']);
             if (isset($service['features']) && is_array($service['features'])) {
                 $value[$key]['features'] = array_map('sanitize_text_field', $service['features']);
@@ -1076,14 +1194,14 @@ function sanitize_rank_higher_locally_meta_value($field, $value) {
         foreach ($value as $key => $step) {
             $value[$key]['number'] = sanitize_text_field($step['number']);
             $value[$key]['title'] = sanitize_text_field($step['title']);
-            $value[$key]['description'] = sanitize_textarea_field($step['description']);
+            $value[$key]['description'] = wp_kses_post($step['description']);
         }
         return $value;
     } elseif ($field === 'rank_higher_locally_benefits') {
         // For benefits array
         foreach ($value as $key => $benefit) {
             $value[$key]['title'] = sanitize_text_field($benefit['title']);
-            $value[$key]['description'] = sanitize_textarea_field($benefit['description']);
+            $value[$key]['description'] = wp_kses_post($benefit['description']);
             $value[$key]['icon'] = sanitize_text_field($benefit['icon']);
         }
         return $value;
@@ -1117,48 +1235,77 @@ function save_rank_higher_locally_meta_box_data($post_id) {
         }
     }
 
-    // Save all fields
-    $fields = [
+    // Rich text fields that should use wp_kses_post()
+    $rich_text_fields = [
         'rank_higher_locally_header_title',
-        'rank_higher_locally_header_subtitle',        'rank_higher_locally_overview_title',
+        'rank_higher_locally_header_subtitle',
+        'rank_higher_locally_overview_title',
         'rank_higher_locally_overview_content',
-        'rank_higher_locally_overview_image',
         'rank_higher_locally_challenges_title',
-        'rank_higher_locally_challenges',
         'rank_higher_locally_services_title',
-        'rank_higher_locally_services',
         'rank_higher_locally_case_study_label',
         'rank_higher_locally_case_study_title',
         'rank_higher_locally_case_study_content',
         'rank_higher_locally_case_study_challenge_title',
-        'rank_higher_locally_case_study_challenges',
         'rank_higher_locally_case_study_solution_title',
-        'rank_higher_locally_case_study_solutions',
         'rank_higher_locally_case_study_results_title',
-        'rank_higher_locally_case_study_results',
-        'rank_higher_locally_case_study_link_text',
-        'rank_higher_locally_case_study_link_url',
         'rank_higher_locally_process_title',
-        'rank_higher_locally_process_steps',
         'rank_higher_locally_benefits_title',
         'rank_higher_locally_benefits_description',
-        'rank_higher_locally_benefits',
         'rank_higher_locally_testimonial_quote',
-        'rank_higher_locally_testimonial_name',
-        'rank_higher_locally_testimonial_position',
-        'rank_higher_locally_testimonial_company',
         'rank_higher_locally_cta_title',
-        'rank_higher_locally_cta_subtitle',
-        'rank_higher_locally_cta_primary_text',
-        'rank_higher_locally_cta_primary_url',
-        'rank_higher_locally_cta_secondary_text',
-        'rank_higher_locally_cta_secondary_url',
+        'rank_higher_locally_cta_subtitle'
+    ];
+
+    // Array fields and other fields that need special handling
+    $array_fields = [
+        'rank_higher_locally_challenges',
+        'rank_higher_locally_services',
+        'rank_higher_locally_case_study_challenges',
+        'rank_higher_locally_case_study_solutions',
+        'rank_higher_locally_case_study_results',
+        'rank_higher_locally_process_steps',
+        'rank_higher_locally_benefits',
         'rank_higher_locally_cta_benefits'
     ];
 
-    foreach ($fields as $field) {
+    // URL/Text fields that should use sanitize_text_field()
+    $text_fields = [
+        'rank_higher_locally_overview_image',
+        'rank_higher_locally_case_study_link_text',
+        'rank_higher_locally_case_study_link_url',
+        'rank_higher_locally_testimonial_name',
+        'rank_higher_locally_testimonial_position',
+        'rank_higher_locally_testimonial_company',
+        'rank_higher_locally_cta_primary_text',
+        'rank_higher_locally_cta_primary_url',
+        'rank_higher_locally_cta_secondary_text',
+        'rank_higher_locally_cta_secondary_url'
+    ];
+
+    // Save rich text fields with wp_kses_post()
+    foreach ($rich_text_fields as $field) {
         if (isset($_POST[$field])) {
-            update_post_meta($post_id, '_' . $field, sanitize_rank_higher_locally_meta_value($field, $_POST[$field]));
+            update_post_meta($post_id, '_' . $field, wp_kses_post($_POST[$field]));
+        }
+    }
+
+    // Save array fields with special handling
+    foreach ($array_fields as $field) {
+        if (isset($_POST[$field])) {
+            $sanitized_array = sanitize_rank_higher_locally_meta_value($field, $_POST[$field]);
+            update_post_meta($post_id, '_' . $field, $sanitized_array);
+        }
+    }
+
+    // Save simple text fields with sanitize_text_field()
+    foreach ($text_fields as $field) {
+        if (isset($_POST[$field])) {
+            if (strpos($field, '_url') !== false || strpos($field, '_image') !== false) {
+                update_post_meta($post_id, '_' . $field, esc_url_raw($_POST[$field]));
+            } else {
+                update_post_meta($post_id, '_' . $field, sanitize_text_field($_POST[$field]));
+            }
         }
     }
 }
