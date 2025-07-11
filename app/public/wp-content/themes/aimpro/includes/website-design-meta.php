@@ -143,6 +143,7 @@ add_action('add_meta_boxes', function() {
     
     // Show meta box only for website design template/page
     if ($template === 'page-website-design.php' || 
+        $template === 'Custom Website Design' ||
         $page_slug === 'website-design' || 
         $page_slug === 'custom-website-design') {
         add_meta_box(
@@ -204,13 +205,24 @@ function website_design_meta_callback($post) {
     if (!is_array($faqs) || empty($faqs)) $faqs = $defaults['faqs'];
     
     ?>
-    <div style="margin-bottom:20px;">
-        <label><strong>Header Title</strong></label><br>
-        <input type="text" name="website_design_header_title" value="<?php echo esc_attr($header_title); ?>" style="width:100%;" />
+    <style>
+        .meta-field {
+            margin-bottom: 20px;
+        }
+        .meta-field label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+    </style>
+    
+    <div class="meta-field">
+        <label><strong>Header Title</strong></label>
+        <?php wp_editor($header_title, 'website_design_header_title', array('textarea_rows' => 2, 'media_buttons' => false, 'teeny' => true, 'quicktags' => array('buttons' => 'strong,em,link'))); ?>
     </div>
-    <div style="margin-bottom:20px;">
-        <label><strong>Header Subtitle</strong></label><br>
-        <textarea name="website_design_header_subtitle" style="width:100%;height:60px;"><?php echo esc_textarea($header_subtitle); ?></textarea>
+    <div class="meta-field">
+        <label><strong>Header Subtitle</strong></label>
+        <?php wp_editor($header_subtitle, 'website_design_header_subtitle', array('textarea_rows' => 3, 'media_buttons' => false, 'teeny' => true, 'quicktags' => array('buttons' => 'strong,em,link'))); ?>
     </div>
     <div style="margin-bottom:20px;">
         <label><strong>Header Stats (repeatable: number & label)</strong></label><br>
@@ -243,13 +255,13 @@ function website_design_meta_callback($post) {
         <label><strong>Secondary CTA Link</strong></label><br>
         <input type="text" name="website_design_header_cta_secondary_link" value="<?php echo esc_attr($header_cta_secondary_link); ?>" style="width:100%;" />
     </div>
-    <div style="margin-bottom:20px;">
-        <label><strong>Overview Title</strong></label><br>
-        <input type="text" name="website_design_overview_title" value="<?php echo esc_attr($overview_title); ?>" style="width:100%;" />
+    <div class="meta-field">
+        <label><strong>Overview Title</strong></label>
+        <?php wp_editor($overview_title, 'website_design_overview_title', array('textarea_rows' => 2, 'media_buttons' => false, 'teeny' => true, 'quicktags' => array('buttons' => 'strong,em,link'))); ?>
     </div>
-    <div style="margin-bottom:20px;">
-        <label><strong>Overview Description</strong></label><br>
-        <textarea name="website_design_overview_description" style="width:100%;height:80px;"><?php echo esc_textarea($overview_description); ?></textarea>
+    <div class="meta-field">
+        <label><strong>Overview Description</strong></label>
+        <?php wp_editor($overview_description, 'website_design_overview_description', array('textarea_rows' => 4, 'media_buttons' => false, 'teeny' => true, 'quicktags' => array('buttons' => 'strong,em,link'))); ?>
     </div>
     <div style="margin-bottom:20px;">
         <label><strong>Features (repeatable: title & description)</strong></label><br>
@@ -266,21 +278,21 @@ function website_design_meta_callback($post) {
         ?>
         <button type="button" class="button add-feature">Add Feature</button>
     </div>
-    <div style="margin-bottom:20px;">
-        <label><strong>Case Study Title</strong></label><br>
-        <input type="text" name="website_design_case_study_title" value="<?php echo esc_attr($case_study_title); ?>" style="width:100%;" />
+    <div class="meta-field">
+        <label><strong>Case Study Title</strong></label>
+        <?php wp_editor($case_study_title, 'website_design_case_study_title', array('textarea_rows' => 2, 'media_buttons' => false, 'teeny' => true, 'quicktags' => array('buttons' => 'strong,em,link'))); ?>
     </div>
-    <div style="margin-bottom:20px;">
-        <label><strong>Case Study Subtitle</strong></label><br>
-        <input type="text" name="website_design_case_study_subtitle" value="<?php echo esc_attr($case_study_subtitle); ?>" style="width:100%;" />
+    <div class="meta-field">
+        <label><strong>Case Study Subtitle</strong></label>
+        <?php wp_editor($case_study_subtitle, 'website_design_case_study_subtitle', array('textarea_rows' => 2, 'media_buttons' => false, 'teeny' => true, 'quicktags' => array('buttons' => 'strong,em,link'))); ?>
     </div>
-    <div style="margin-bottom:20px;">
-        <label><strong>Challenge Title</strong></label><br>
-        <input type="text" name="website_design_case_study_challenge_title" value="<?php echo esc_attr($case_study_challenge_title); ?>" style="width:100%;" />
+    <div class="meta-field">
+        <label><strong>Challenge Title</strong></label>
+        <?php wp_editor($case_study_challenge_title, 'website_design_case_study_challenge_title', array('textarea_rows' => 2, 'media_buttons' => false, 'teeny' => true, 'quicktags' => array('buttons' => 'strong,em,link'))); ?>
     </div>
-    <div style="margin-bottom:20px;">
-        <label><strong>Challenge Description</strong></label><br>
-        <textarea name="website_design_case_study_challenge_description" style="width:100%;height:60px;"><?php echo esc_textarea($case_study_challenge_description); ?></textarea>
+    <div class="meta-field">
+        <label><strong>Challenge Description</strong></label>
+        <?php wp_editor($case_study_challenge_description, 'website_design_case_study_challenge_description', array('textarea_rows' => 4, 'media_buttons' => false, 'teeny' => true, 'quicktags' => array('buttons' => 'strong,em,link'))); ?>
     </div>
     <div style="margin-bottom:20px;">
         <label><strong>Challenge Stats (repeatable: number & label)</strong></label><br>
@@ -297,17 +309,17 @@ function website_design_meta_callback($post) {
         ?>
         <button type="button" class="button add-challenge-stat">Add Challenge Stat</button>
     </div>
-    <div style="margin-bottom:20px;">
-        <label><strong>Solution Title</strong></label><br>
-        <input type="text" name="website_design_case_study_solution_title" value="<?php echo esc_attr($case_study_solution_title); ?>" style="width:100%;" />
+    <div class="meta-field">
+        <label><strong>Solution Title</strong></label>
+        <?php wp_editor($case_study_solution_title, 'website_design_case_study_solution_title', array('textarea_rows' => 2, 'media_buttons' => false, 'teeny' => true, 'quicktags' => array('buttons' => 'strong,em,link'))); ?>
     </div>
-    <div style="margin-bottom:20px;">
-        <label><strong>Solutions (one per line)</strong></label><br>
-        <textarea name="website_design_case_study_solutions" style="width:100%;height:80px;"><?php echo esc_textarea($case_study_solutions); ?></textarea>
+    <div class="meta-field">
+        <label><strong>Solutions (one per line)</strong></label>
+        <?php wp_editor($case_study_solutions, 'website_design_case_study_solutions', array('textarea_rows' => 5, 'media_buttons' => false, 'teeny' => true, 'quicktags' => array('buttons' => 'strong,em,link'))); ?>
     </div>
-    <div style="margin-bottom:20px;">
-        <label><strong>Results Title</strong></label><br>
-        <input type="text" name="website_design_case_study_results_title" value="<?php echo esc_attr($case_study_results_title); ?>" style="width:100%;" />
+    <div class="meta-field">
+        <label><strong>Results Title</strong></label>
+        <?php wp_editor($case_study_results_title, 'website_design_case_study_results_title', array('textarea_rows' => 2, 'media_buttons' => false, 'teeny' => true, 'quicktags' => array('buttons' => 'strong,em,link'))); ?>
     </div>
     <div style="margin-bottom:20px;">
         <label><strong>Results (repeatable: number & label)</strong></label><br>
@@ -324,9 +336,9 @@ function website_design_meta_callback($post) {
         ?>
         <button type="button" class="button add-result">Add Result</button>
     </div>
-    <div style="margin-bottom:20px;">
-        <label><strong>Process Title</strong></label><br>
-        <input type="text" name="website_design_process_title" value="<?php echo esc_attr($process_title); ?>" style="width:100%;" />
+    <div class="meta-field">
+        <label><strong>Process Title</strong></label>
+        <?php wp_editor($process_title, 'website_design_process_title', array('textarea_rows' => 2, 'media_buttons' => false, 'teeny' => true, 'quicktags' => array('buttons' => 'strong,em,link'))); ?>
     </div>
     <div style="margin-bottom:20px;">
         <label><strong>Process Steps (repeatable: title & description)</strong></label><br>
@@ -343,22 +355,22 @@ function website_design_meta_callback($post) {
         ?>
         <button type="button" class="button add-step">Add Step</button>
     </div>
-    <div style="margin-bottom:20px;">
-        <label><strong>Packages Title</strong></label><br>
-        <input type="text" name="website_design_packages_title" value="<?php echo esc_attr($packages_title); ?>" style="width:100%;" />
+    <div class="meta-field">
+        <label><strong>Packages Title</strong></label>
+        <?php wp_editor($packages_title, 'website_design_packages_title', array('textarea_rows' => 2, 'media_buttons' => false, 'teeny' => true, 'quicktags' => array('buttons' => 'strong,em,link'))); ?>
     </div>
-    <div style="margin-bottom:20px;">
-        <label><strong>Packages Subtitle</strong></label><br>
-        <input type="text" name="website_design_packages_subtitle" value="<?php echo esc_attr($packages_subtitle); ?>" style="width:100%;" />
+    <div class="meta-field">
+        <label><strong>Packages Subtitle</strong></label>
+        <?php wp_editor($packages_subtitle, 'website_design_packages_subtitle', array('textarea_rows' => 2, 'media_buttons' => false, 'teeny' => true, 'quicktags' => array('buttons' => 'strong,em,link'))); ?>
     </div>
     <div style="margin-bottom:20px;">
         <label><strong>Packages (complex repeatable)</strong></label><br>
         <p><em>Note: This is a complex field. For full package editing, consider using a dedicated interface.</em></p>
         <textarea name="website_design_packages_json" style="width:100%;height:120px;" placeholder="JSON format for packages"><?php echo esc_textarea(json_encode($packages, JSON_PRETTY_PRINT)); ?></textarea>
     </div>
-    <div style="margin-bottom:20px;">
-        <label><strong>Tools Title</strong></label><br>
-        <input type="text" name="website_design_tools_title" value="<?php echo esc_attr($tools_title); ?>" style="width:100%;" />
+    <div class="meta-field">
+        <label><strong>Tools Title</strong></label>
+        <?php wp_editor($tools_title, 'website_design_tools_title', array('textarea_rows' => 2, 'media_buttons' => false, 'teeny' => true, 'quicktags' => array('buttons' => 'strong,em,link'))); ?>
     </div>
     <div style="margin-bottom:20px;">
         <label><strong>Tool Categories (repeatable: category & tools)</strong></label><br>
@@ -375,9 +387,9 @@ function website_design_meta_callback($post) {
         ?>
         <button type="button" class="button add-tool-category">Add Tool Category</button>
     </div>
-    <div style="margin-bottom:20px;">
-        <label><strong>Testimonials Title</strong></label><br>
-        <input type="text" name="website_design_testimonials_title" value="<?php echo esc_attr($testimonials_title); ?>" style="width:100%;" />
+    <div class="meta-field">
+        <label><strong>Testimonials Title</strong></label>
+        <?php wp_editor($testimonials_title, 'website_design_testimonials_title', array('textarea_rows' => 2, 'media_buttons' => false, 'teeny' => true, 'quicktags' => array('buttons' => 'strong,em,link'))); ?>
     </div>
     <div style="margin-bottom:20px;">
         <label><strong>Testimonials (repeatable: quote, name & position)</strong></label><br>
@@ -395,9 +407,9 @@ function website_design_meta_callback($post) {
         ?>
         <button type="button" class="button add-testimonial">Add Testimonial</button>
     </div>
-    <div style="margin-bottom:20px;">
-        <label><strong>FAQ Title</strong></label><br>
-        <input type="text" name="website_design_faq_title" value="<?php echo esc_attr($faq_title); ?>" style="width:100%;" />
+    <div class="meta-field">
+        <label><strong>FAQ Title</strong></label>
+        <?php wp_editor($faq_title, 'website_design_faq_title', array('textarea_rows' => 2, 'media_buttons' => false, 'teeny' => true, 'quicktags' => array('buttons' => 'strong,em,link'))); ?>
     </div>
     <div style="margin-bottom:20px;">
         <label><strong>FAQs (repeatable: question & answer)</strong></label><br>
@@ -546,7 +558,32 @@ add_action('save_post', function($post_id) {
 
     foreach ($fields as $field) {
         if (isset($_POST[$field])) {
-            update_post_meta($post_id, $field, $_POST[$field]);
+            // These fields use wp_editor and need wp_kses_post sanitization
+            $wp_editor_fields = [
+                'website_design_header_title',
+                'website_design_header_subtitle', 
+                'website_design_overview_title',
+                'website_design_overview_description',
+                'website_design_case_study_title',
+                'website_design_case_study_subtitle',
+                'website_design_case_study_challenge_title',
+                'website_design_case_study_challenge_description',
+                'website_design_case_study_solution_title',
+                'website_design_case_study_solutions',
+                'website_design_case_study_results_title',
+                'website_design_process_title',
+                'website_design_packages_title',
+                'website_design_packages_subtitle',
+                'website_design_tools_title',
+                'website_design_testimonials_title',
+                'website_design_faq_title'
+            ];
+            
+            if (in_array($field, $wp_editor_fields)) {
+                update_post_meta($post_id, $field, wp_kses_post($_POST[$field]));
+            } else {
+                update_post_meta($post_id, $field, $_POST[$field]);
+            }
         }
     }
 

@@ -59,53 +59,81 @@ get_header(); ?>
     <section class="page-hero service-hero">
         <div class="container">
             <div class="hero-content animate-on-scroll animate-fade-up">
-                <h1>Custom Website Design</h1>
-                <p class="hero-subtitle">Beautiful, conversion-focused websites that perfectly represent your brand and drive measurable business results.</p>
+                <?php
+                $header_title = get_post_meta(get_the_ID(), 'website_design_header_title', true);
+                $header_subtitle = get_post_meta(get_the_ID(), 'website_design_header_subtitle', true);
+                $header_stats = get_post_meta(get_the_ID(), 'website_design_header_stats', true);
+                $header_cta_primary_text = get_post_meta(get_the_ID(), 'website_design_header_cta_primary_text', true);
+                $header_cta_primary_link = get_post_meta(get_the_ID(), 'website_design_header_cta_primary_link', true);
+                
+                // Fallback to defaults if empty
+                if (!$header_title) $header_title = 'Custom Website Design';
+                if (!$header_subtitle) $header_subtitle = 'Beautiful, conversion-focused websites that perfectly represent your brand and drive measurable business results.';
+                if (!$header_cta_primary_text) $header_cta_primary_text = 'Get Design Quote';
+                if (!$header_cta_primary_link) $header_cta_primary_link = '#contact';
+                ?>
+                <h1><?php echo wp_kses_post($header_title); ?></h1>
+                <p class="hero-subtitle"><?php echo wp_kses_post($header_subtitle); ?></p>
+                <?php if ($header_stats && is_array($header_stats)): ?>
                 <div class="hero-stats animate-on-scroll animate-stagger animate-scale-up">
+                    <?php foreach ($header_stats as $stat): ?>
                     <div class="stat-item">
-                        <div class="stat-number">285%</div>
-                        <div class="stat-label">Average Engagement Increase</div>
+                        <div class="stat-number"><?php echo esc_html($stat['number']); ?></div>
+                        <div class="stat-label"><?php echo esc_html($stat['label']); ?></div>
                     </div>
-                    <div class="stat-item">
-                        <div class="stat-number">95%</div>
-                        <div class="stat-label">Client Satisfaction Rate</div>
-                    </div>
-                    <div class="stat-item">
-                        <div class="stat-number">2.1s</div>
-                        <div class="stat-label">Average Load Time</div>
-                    </div>
-                </div>                <div class="hero-ctas animate-on-scroll animate-fade-up">
-                    <a href="#contact" class="btn-primary streamlined">Get Design Quote</a>
+                    <?php endforeach; ?>
+                </div>
+                <?php endif; ?>
+                <div class="hero-ctas animate-on-scroll animate-fade-up">
+                    <a href="<?php echo esc_url($header_cta_primary_link); ?>" class="btn-primary streamlined"><?php echo esc_html($header_cta_primary_text); ?></a>
                 </div>
             </div>
-        </div>    </section>    <!-- Service Overview -->
+        </div>
+    </section>    <!-- Service Overview -->
     <section class="service-overview">
         <div class="container">
-            <div class="overview-content">                <div class="overview-text animate-on-scroll animate-slide-left">
-                    <h2>Websites That Work As Hard As You Do</h2>
-                    <p class="overview-description">Our custom website design service creates powerful digital experiences that not only look stunning but convert visitors into customers. Every design decision is backed by user experience research and conversion optimisation principles.</p>
+            <div class="overview-content">
+                <div class="overview-text animate-on-scroll animate-slide-left">
+                    <?php
+                    $overview_title = get_post_meta(get_the_ID(), 'website_design_overview_title', true);
+                    $overview_description = get_post_meta(get_the_ID(), 'website_design_overview_description', true);
+                    $features = get_post_meta(get_the_ID(), 'website_design_features', true);
+                    
+                    // Fallback to defaults if empty
+                    if (!$overview_title) $overview_title = 'Websites That Work As Hard As You Do';
+                    if (!$overview_description) $overview_description = 'Our custom website design service creates powerful digital experiences that not only look stunning but convert visitors into customers. Every design decision is backed by user experience research and conversion optimisation principles.';
+                    ?>
+                    <h2><?php echo wp_kses_post($overview_title); ?></h2>
+                    <p class="overview-description"><?php echo wp_kses_post($overview_description); ?></p>
                     
                     <h3 class="features-heading">Key Design Features</h3>
                     <div class="service-features-list">
-                        <div class="service-feature-item">
-                            <h4><i class="fas fa-palette"></i> Brand-Aligned Design</h4>
-                            <p>Custom designs that perfectly reflect your brand identity and values across every element.</p>
-                        </div>
-                        
-                        <div class="service-feature-item">
-                            <h4><i class="fas fa-mobile-alt"></i> Mobile-First Approach</h4>
-                            <p>Responsive designs optimised for all devices with emphasis on mobile user experience.</p>
-                        </div>
-                        
-                        <div class="service-feature-item">
-                            <h4><i class="fas fa-chart-line"></i> Conversion optimisation</h4>
-                            <p>Every element designed to guide visitors toward your desired actions and business goals.</p>
-                        </div>
-                        
-                        <div class="service-feature-item">
-                            <h4><i class="fas fa-search"></i> SEO Foundation</h4>
-                            <p>Built-in SEO best practices ensuring your website ranks well from day one.</p>
-                        </div>
+                        <?php if ($features && is_array($features)): ?>
+                            <?php foreach ($features as $feature): ?>
+                            <div class="service-feature-item">
+                                <h4><i class="fas fa-palette"></i> <?php echo esc_html($feature['title']); ?></h4>
+                                <p><?php echo esc_html($feature['description']); ?></p>
+                            </div>
+                            <?php endforeach; ?>
+                        <?php else: ?>
+                            <!-- Default features if none saved -->
+                            <div class="service-feature-item">
+                                <h4><i class="fas fa-palette"></i> Brand-Aligned Design</h4>
+                                <p>Custom designs that perfectly reflect your brand identity and values across every element.</p>
+                            </div>
+                            <div class="service-feature-item">
+                                <h4><i class="fas fa-mobile-alt"></i> Mobile-First Approach</h4>
+                                <p>Responsive designs optimised for all devices with emphasis on mobile user experience.</p>
+                            </div>
+                            <div class="service-feature-item">
+                                <h4><i class="fas fa-chart-line"></i> Conversion optimisation</h4>
+                                <p>Every element designed to guide visitors toward your desired actions and business goals.</p>
+                            </div>
+                            <div class="service-feature-item">
+                                <h4><i class="fas fa-search"></i> SEO Foundation</h4>
+                                <p>Built-in SEO best practices ensuring your website ranks well from day one.</p>
+                            </div>
+                        <?php endif; ?>
                     </div>
                 </div>                <div class="overview-stats animate-on-scroll animate-slide-right">                    <h3 class="stats-heading">Proven Results</h3>
                     <p class="stats-description">Our designs don't just look good—they deliver measurable business results. Every project is built with conversion and user experience as top priorities.</p>                    <div class="target-icon" style="max-width: 350px; margin: 0 auto 20px; border-radius: 10px; overflow: hidden; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
