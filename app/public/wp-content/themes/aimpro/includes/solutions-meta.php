@@ -271,19 +271,29 @@ function solutions_meta_box_callback($post) {
             <tr>
                 <th><label for="solutions_header_title">Page Title</label></th>
                 <td>
-                    <input type="text" 
-                           id="solutions_header_title" 
-                           name="solutions_header_title" 
-                           value="<?php echo esc_attr($header_title); ?>"
-                           placeholder="Solutions" />
+                    <?php 
+                    wp_editor($header_title, 'solutions_header_title', array(
+                        'textarea_name' => 'solutions_header_title',
+                        'teeny' => true,
+                        'media_buttons' => false,
+                        'textarea_rows' => 2,
+                        'quicktags' => array('buttons' => 'strong,em,link')
+                    ));
+                    ?>
                 </td>
             </tr>
             <tr>
                 <th><label for="solutions_header_subtitle">Page Subtitle</label></th>
                 <td>
-                    <textarea id="solutions_header_subtitle" 
-                              name="solutions_header_subtitle"
-                              placeholder="Proven digital marketing solutions that drive real business results"><?php echo esc_textarea($header_subtitle); ?></textarea>
+                    <?php 
+                    wp_editor($header_subtitle, 'solutions_header_subtitle', array(
+                        'textarea_name' => 'solutions_header_subtitle',
+                        'teeny' => true,
+                        'media_buttons' => false,
+                        'textarea_rows' => 3,
+                        'quicktags' => array('buttons' => 'strong,em,link')
+                    ));
+                    ?>
                 </td>
             </tr>
         </table>
@@ -294,19 +304,29 @@ function solutions_meta_box_callback($post) {
             <tr>
                 <th><label for="solutions_intro_title">Introduction Title</label></th>
                 <td>
-                    <input type="text" 
-                           id="solutions_intro_title" 
-                           name="solutions_intro_title" 
-                           value="<?php echo esc_attr($intro_title); ?>"
-                           placeholder="Transform Your Business with Strategic Digital Solutions" />
+                    <?php 
+                    wp_editor($intro_title, 'solutions_intro_title', array(
+                        'textarea_name' => 'solutions_intro_title',
+                        'teeny' => true,
+                        'media_buttons' => false,
+                        'textarea_rows' => 2,
+                        'quicktags' => array('buttons' => 'strong,em,link')
+                    ));
+                    ?>
                 </td>
             </tr>
             <tr>
                 <th><label for="solutions_intro_content">Introduction Content</label></th>
                 <td>
-                    <textarea id="solutions_intro_content" 
-                              name="solutions_intro_content"
-                              placeholder="Every business faces unique challenges..."><?php echo esc_textarea($intro_content); ?></textarea>
+                    <?php 
+                    wp_editor($intro_content, 'solutions_intro_content', array(
+                        'textarea_name' => 'solutions_intro_content',
+                        'teeny' => true,
+                        'media_buttons' => false,
+                        'textarea_rows' => 5,
+                        'quicktags' => array('buttons' => 'strong,em,link')
+                    ));
+                    ?>
                 </td>
             </tr>
         </table>
@@ -318,14 +338,26 @@ function solutions_meta_box_callback($post) {
                 <?php foreach ($solution_stats as $index => $stat): ?>
                     <div class="repeater-field">
                         <h4>Stat <?php echo $index + 1; ?></h4>
-                        <input type="text" 
-                               name="solutions_stats[<?php echo $index; ?>][number]" 
-                               value="<?php echo esc_attr($stat['number']); ?>"
-                               placeholder="Number (e.g., 6)" />
-                        <input type="text" 
-                               name="solutions_stats[<?php echo $index; ?>][label]" 
-                               value="<?php echo esc_attr($stat['label']); ?>"
-                               placeholder="Label (e.g., Core Solutions)" />
+                        <p><strong>Number/Value:</strong></p>
+                        <?php 
+                        wp_editor($stat['number'], 'solutions_stats_' . $index . '_number', array(
+                            'textarea_name' => 'solutions_stats[' . $index . '][number]',
+                            'teeny' => true,
+                            'media_buttons' => false,
+                            'textarea_rows' => 2,
+                            'quicktags' => array('buttons' => 'strong,em,link')
+                        ));
+                        ?>
+                        <p><strong>Label:</strong></p>
+                        <?php 
+                        wp_editor($stat['label'], 'solutions_stats_' . $index . '_label', array(
+                            'textarea_name' => 'solutions_stats[' . $index . '][label]',
+                            'teeny' => true,
+                            'media_buttons' => false,
+                            'textarea_rows' => 2,
+                            'quicktags' => array('buttons' => 'strong,em,link')
+                        ));
+                        ?>
                         <button type="button" class="button remove-repeater-item">Remove Stat</button>
                     </div>
                 <?php endforeach; ?>
@@ -339,11 +371,15 @@ function solutions_meta_box_callback($post) {
             <tr>
                 <th><label for="solutions_grid_title">Grid Title</label></th>
                 <td>
-                    <input type="text" 
-                           id="solutions_grid_title" 
-                           name="solutions_grid_title" 
-                           value="<?php echo esc_attr($solutions_grid_title); ?>"
-                           placeholder="Our Digital Marketing Solutions" />
+                    <?php 
+                    wp_editor($solutions_grid_title, 'solutions_grid_title', array(
+                        'textarea_name' => 'solutions_grid_title',
+                        'teeny' => true,
+                        'media_buttons' => false,
+                        'textarea_rows' => 2,
+                        'quicktags' => array('buttons' => 'strong,em,link')
+                    ));
+                    ?>
                 </td>
             </tr>
         </table>
@@ -353,39 +389,55 @@ function solutions_meta_box_callback($post) {
                 <?php foreach ($solutions_cards as $index => $card): ?>
                     <div class="repeater-field">
                         <h4>Solution Card <?php echo $index + 1; ?></h4>
-                        <input type="text" 
-                               name="solutions_cards[<?php echo $index; ?>][title]" 
-                               value="<?php echo esc_attr($card['title']); ?>"
-                               placeholder="Solution Title" />
-                        <textarea name="solutions_cards[<?php echo $index; ?>][description]" 
-                                  placeholder="Solution description"><?php echo esc_textarea($card['description']); ?></textarea>
+                        <p><strong>Title:</strong></p>
+                        <?php 
+                        wp_editor($card['title'], 'solutions_cards_' . $index . '_title', array(
+                            'textarea_name' => 'solutions_cards[' . $index . '][title]',
+                            'teeny' => true,
+                            'media_buttons' => false,
+                            'textarea_rows' => 2,
+                            'quicktags' => array('buttons' => 'strong,em,link')
+                        ));
+                        ?>
+                        <p><strong>Description:</strong></p>
+                        <?php 
+                        wp_editor($card['description'], 'solutions_cards_' . $index . '_description', array(
+                            'textarea_name' => 'solutions_cards[' . $index . '][description]',
+                            'teeny' => true,
+                            'media_buttons' => false,
+                            'textarea_rows' => 4,
+                            'quicktags' => array('buttons' => 'strong,em,link')
+                        ));
+                        ?>
                         
-                        <h5>Features</h5>
-                        <div class="features-container">
-                            <?php foreach ($card['features'] as $feat_index => $feature): ?>
-                                <div class="feature-item">
-                                    <input type="text" 
-                                           name="solutions_cards[<?php echo $index; ?>][features][]" 
-                                           value="<?php echo esc_attr($feature); ?>"
-                                           placeholder="Feature" />
-                                    <button type="button" class="button remove-feature">Remove</button>
-                                </div>
-                            <?php endforeach; ?>
-                        </div>
-                        <button type="button" class="button add-feature" data-card-index="<?php echo $index; ?>">Add Feature</button>
+                        <p><strong>Features (one per line):</strong></p>
+                        <textarea name="solutions_cards[<?php echo $index; ?>][features]" rows="4" style="width: 100%;"><?php echo esc_textarea(is_array($card['features']) ? implode("\n", $card['features']) : $card['features']); ?></textarea>
                         
-                        <input type="text" 
-                               name="solutions_cards[<?php echo $index; ?>][results]" 
-                               value="<?php echo esc_attr($card['results']); ?>"
-                               placeholder="Results (e.g., Average: 250% lead increase)" />
-                        <input type="text" 
-                               name="solutions_cards[<?php echo $index; ?>][cta_text]" 
-                               value="<?php echo esc_attr($card['cta_text']); ?>"
-                               placeholder="CTA Text (e.g., Explore Lead Generation)" />
-                        <input type="text" 
-                               name="solutions_cards[<?php echo $index; ?>][cta_url]" 
-                               value="<?php echo esc_attr($card['cta_url']); ?>"
-                               placeholder="CTA URL (e.g., /lead-generation)" />
+                        <p><strong>Results:</strong></p>
+                        <?php 
+                        wp_editor($card['results'], 'solutions_cards_' . $index . '_results', array(
+                            'textarea_name' => 'solutions_cards[' . $index . '][results]',
+                            'teeny' => true,
+                            'media_buttons' => false,
+                            'textarea_rows' => 2,
+                            'quicktags' => array('buttons' => 'strong,em,link')
+                        ));
+                        ?>
+                        
+                        <p><strong>CTA Text:</strong></p>
+                        <?php 
+                        wp_editor($card['cta_text'], 'solutions_cards_' . $index . '_cta_text', array(
+                            'textarea_name' => 'solutions_cards[' . $index . '][cta_text]',
+                            'teeny' => true,
+                            'media_buttons' => false,
+                            'textarea_rows' => 2,
+                            'quicktags' => array('buttons' => 'strong,em,link')
+                        ));
+                        ?>
+                        
+                        <p><strong>CTA URL:</strong></p>
+                        <input type="url" name="solutions_cards[<?php echo $index; ?>][cta_url]" value="<?php echo esc_url($card['cta_url']); ?>" style="width: 100%;" placeholder="/solution-page" />
+                        
                         <button type="button" class="button remove-repeater-item">Remove Solution Card</button>
                     </div>
                 <?php endforeach; ?>
@@ -399,11 +451,15 @@ function solutions_meta_box_callback($post) {
             <tr>
                 <th><label for="solutions_process_title">Process Title</label></th>
                 <td>
-                    <input type="text" 
-                           id="solutions_process_title" 
-                           name="solutions_process_title" 
-                           value="<?php echo esc_attr($process_title); ?>"
-                           placeholder="Our Solution Implementation Process" />
+                    <?php 
+                    wp_editor($process_title, 'solutions_process_title', array(
+                        'textarea_name' => 'solutions_process_title',
+                        'teeny' => true,
+                        'media_buttons' => false,
+                        'textarea_rows' => 2,
+                        'quicktags' => array('buttons' => 'strong,em,link')
+                    ));
+                    ?>
                 </td>
             </tr>
         </table>
@@ -413,16 +469,31 @@ function solutions_meta_box_callback($post) {
                 <?php foreach ($process_steps as $index => $step): ?>
                     <div class="repeater-field">
                         <h4>Process Step <?php echo $index + 1; ?></h4>
+                        <p><strong>Step Number:</strong></p>
                         <input type="text" 
                                name="solutions_process_steps[<?php echo $index; ?>][number]" 
                                value="<?php echo esc_attr($step['number']); ?>"
-                               placeholder="Step Number (e.g., 1)" />
-                        <input type="text" 
-                               name="solutions_process_steps[<?php echo $index; ?>][title]" 
-                               value="<?php echo esc_attr($step['title']); ?>"
-                               placeholder="Step Title (e.g., Discovery & Analysis)" />
-                        <textarea name="solutions_process_steps[<?php echo $index; ?>][description]" 
-                                  placeholder="Step description"><?php echo esc_textarea($step['description']); ?></textarea>
+                               placeholder="Step Number (e.g., 1)" style="width: 100%;" />
+                        <p><strong>Step Title:</strong></p>
+                        <?php 
+                        wp_editor($step['title'], 'solutions_process_steps_' . $index . '_title', array(
+                            'textarea_name' => 'solutions_process_steps[' . $index . '][title]',
+                            'teeny' => true,
+                            'media_buttons' => false,
+                            'textarea_rows' => 2,
+                            'quicktags' => array('buttons' => 'strong,em,link')
+                        ));
+                        ?>
+                        <p><strong>Step Description:</strong></p>
+                        <?php 
+                        wp_editor($step['description'], 'solutions_process_steps_' . $index . '_description', array(
+                            'textarea_name' => 'solutions_process_steps[' . $index . '][description]',
+                            'teeny' => true,
+                            'media_buttons' => false,
+                            'textarea_rows' => 4,
+                            'quicktags' => array('buttons' => 'strong,em,link')
+                        ));
+                        ?>
                         <button type="button" class="button remove-repeater-item">Remove Process Step</button>
                     </div>
                 <?php endforeach; ?>
@@ -436,11 +507,15 @@ function solutions_meta_box_callback($post) {
             <tr>
                 <th><label for="solutions_success_stories_title">Success Stories Title</label></th>
                 <td>
-                    <input type="text" 
-                           id="solutions_success_stories_title" 
-                           name="solutions_success_stories_title" 
-                           value="<?php echo esc_attr($success_stories_title); ?>"
-                           placeholder="Solution Success Stories" />
+                    <?php 
+                    wp_editor($success_stories_title, 'solutions_success_stories_title', array(
+                        'textarea_name' => 'solutions_success_stories_title',
+                        'teeny' => true,
+                        'media_buttons' => false,
+                        'textarea_rows' => 2,
+                        'quicktags' => array('buttons' => 'strong,em,link')
+                    ));
+                    ?>
                 </td>
             </tr>
         </table>
@@ -450,24 +525,56 @@ function solutions_meta_box_callback($post) {
                 <?php foreach ($success_stories as $index => $story): ?>
                     <div class="repeater-field">
                         <h4>Success Story <?php echo $index + 1; ?></h4>
-                        <input type="text" 
-                               name="solutions_success_stories[<?php echo $index; ?>][metric_number]" 
-                               value="<?php echo esc_attr($story['metric_number']); ?>"
-                               placeholder="Metric Number (e.g., 450%)" />
-                        <input type="text" 
-                               name="solutions_success_stories[<?php echo $index; ?>][metric_label]" 
-                               value="<?php echo esc_attr($story['metric_label']); ?>"
-                               placeholder="Metric Label (e.g., Lead Increase)" />
-                        <input type="text" 
-                               name="solutions_success_stories[<?php echo $index; ?>][title]" 
-                               value="<?php echo esc_attr($story['title']); ?>"
-                               placeholder="Story Title (e.g., Manufacturing Company)" />
-                        <textarea name="solutions_success_stories[<?php echo $index; ?>][description]" 
-                                  placeholder="Success story description"><?php echo esc_textarea($story['description']); ?></textarea>
-                        <input type="text" 
-                               name="solutions_success_stories[<?php echo $index; ?>][solution_used]" 
-                               value="<?php echo esc_attr($story['solution_used']); ?>"
-                               placeholder="Solutions Used (e.g., Lead Generation + Marketing Automation)" />
+                        <p><strong>Metric Number:</strong></p>
+                        <?php 
+                        wp_editor($story['metric_number'], 'solutions_success_stories_' . $index . '_metric_number', array(
+                            'textarea_name' => 'solutions_success_stories[' . $index . '][metric_number]',
+                            'teeny' => true,
+                            'media_buttons' => false,
+                            'textarea_rows' => 2,
+                            'quicktags' => array('buttons' => 'strong,em,link')
+                        ));
+                        ?>
+                        <p><strong>Metric Label:</strong></p>
+                        <?php 
+                        wp_editor($story['metric_label'], 'solutions_success_stories_' . $index . '_metric_label', array(
+                            'textarea_name' => 'solutions_success_stories[' . $index . '][metric_label]',
+                            'teeny' => true,
+                            'media_buttons' => false,
+                            'textarea_rows' => 2,
+                            'quicktags' => array('buttons' => 'strong,em,link')
+                        ));
+                        ?>
+                        <p><strong>Story Title:</strong></p>
+                        <?php 
+                        wp_editor($story['title'], 'solutions_success_stories_' . $index . '_title', array(
+                            'textarea_name' => 'solutions_success_stories[' . $index . '][title]',
+                            'teeny' => true,
+                            'media_buttons' => false,
+                            'textarea_rows' => 2,
+                            'quicktags' => array('buttons' => 'strong,em,link')
+                        ));
+                        ?>
+                        <p><strong>Description:</strong></p>
+                        <?php 
+                        wp_editor($story['description'], 'solutions_success_stories_' . $index . '_description', array(
+                            'textarea_name' => 'solutions_success_stories[' . $index . '][description]',
+                            'teeny' => true,
+                            'media_buttons' => false,
+                            'textarea_rows' => 4,
+                            'quicktags' => array('buttons' => 'strong,em,link')
+                        ));
+                        ?>
+                        <p><strong>Solutions Used:</strong></p>
+                        <?php 
+                        wp_editor($story['solution_used'], 'solutions_success_stories_' . $index . '_solution_used', array(
+                            'textarea_name' => 'solutions_success_stories[' . $index . '][solution_used]',
+                            'teeny' => true,
+                            'media_buttons' => false,
+                            'textarea_rows' => 2,
+                            'quicktags' => array('buttons' => 'strong,em,link')
+                        ));
+                        ?>
                         <button type="button" class="button remove-repeater-item">Remove Success Story</button>
                     </div>
                 <?php endforeach; ?>
@@ -481,29 +588,43 @@ function solutions_meta_box_callback($post) {
             <tr>
                 <th><label for="solutions_cta_title">CTA Title</label></th>
                 <td>
-                    <input type="text" 
-                           id="solutions_cta_title" 
-                           name="solutions_cta_title" 
-                           value="<?php echo esc_attr($cta_title); ?>"
-                           placeholder="Ready to Transform Your Business?" />
+                    <?php 
+                    wp_editor($cta_title, 'solutions_cta_title', array(
+                        'textarea_name' => 'solutions_cta_title',
+                        'teeny' => true,
+                        'media_buttons' => false,
+                        'textarea_rows' => 2,
+                        'quicktags' => array('buttons' => 'strong,em,link')
+                    ));
+                    ?>
                 </td>
             </tr>
             <tr>
                 <th><label for="solutions_cta_subtitle">CTA Subtitle</label></th>
                 <td>
-                    <textarea id="solutions_cta_subtitle" 
-                              name="solutions_cta_subtitle"
-                              placeholder="Let's identify the perfect solution combination for your unique challenges and growth goals."><?php echo esc_textarea($cta_subtitle); ?></textarea>
+                    <?php 
+                    wp_editor($cta_subtitle, 'solutions_cta_subtitle', array(
+                        'textarea_name' => 'solutions_cta_subtitle',
+                        'teeny' => true,
+                        'media_buttons' => false,
+                        'textarea_rows' => 3,
+                        'quicktags' => array('buttons' => 'strong,em,link')
+                    ));
+                    ?>
                 </td>
             </tr>
             <tr>
                 <th><label for="solutions_cta_primary_text">Primary Button Text</label></th>
                 <td>
-                    <input type="text" 
-                           id="solutions_cta_primary_text" 
-                           name="solutions_cta_primary_text" 
-                           value="<?php echo esc_attr($cta_primary_text); ?>"
-                           placeholder="Get Free Strategy Session" />
+                    <?php 
+                    wp_editor($cta_primary_text, 'solutions_cta_primary_text', array(
+                        'textarea_name' => 'solutions_cta_primary_text',
+                        'teeny' => true,
+                        'media_buttons' => false,
+                        'textarea_rows' => 2,
+                        'quicktags' => array('buttons' => 'strong,em,link')
+                    ));
+                    ?>
                 </td>
             </tr>
             <tr>
@@ -513,17 +634,21 @@ function solutions_meta_box_callback($post) {
                            id="solutions_cta_primary_url" 
                            name="solutions_cta_primary_url" 
                            value="<?php echo esc_url($cta_primary_url); ?>"
-                           placeholder="/contact" />
+                           placeholder="/contact" style="width: 100%;" />
                 </td>
             </tr>
             <tr>
                 <th><label for="solutions_cta_secondary_text">Secondary Button Text</label></th>
                 <td>
-                    <input type="text" 
-                           id="solutions_cta_secondary_text" 
-                           name="solutions_cta_secondary_text" 
-                           value="<?php echo esc_attr($cta_secondary_text); ?>"
-                           placeholder="View All Success Stories" />
+                    <?php 
+                    wp_editor($cta_secondary_text, 'solutions_cta_secondary_text', array(
+                        'textarea_name' => 'solutions_cta_secondary_text',
+                        'teeny' => true,
+                        'media_buttons' => false,
+                        'textarea_rows' => 2,
+                        'quicktags' => array('buttons' => 'strong,em,link')
+                    ));
+                    ?>
                 </td>
             </tr>
             <tr>
@@ -533,7 +658,7 @@ function solutions_meta_box_callback($post) {
                            id="solutions_cta_secondary_url" 
                            name="solutions_cta_secondary_url" 
                            value="<?php echo esc_url($cta_secondary_url); ?>"
-                           placeholder="/case-studies" />
+                           placeholder="/case-studies" style="width: 100%;" />
                 </td>
             </tr>
             <tr>
@@ -622,9 +747,12 @@ function solutions_meta_box_callback($post) {
             var index = $('#process-steps-repeater .repeater-field').length;
             var newField = '<div class="repeater-field">' +
                           '<h4>Process Step ' + (index + 1) + '</h4>' +
-                          '<input type="text" name="solutions_process_steps[' + index + '][number]" placeholder="Step Number (e.g., 1)" />' +
-                          '<input type="text" name="solutions_process_steps[' + index + '][title]" placeholder="Step Title (e.g., Discovery & Analysis)" />' +
-                          '<textarea name="solutions_process_steps[' + index + '][description]" placeholder="Step description"></textarea>' +
+                          '<p><strong>Step Number:</strong></p>' +
+                          '<input type="text" name="solutions_process_steps[' + index + '][number]" placeholder="Step Number (e.g., 1)" style="width: 100%;" />' +
+                          '<p><strong>Step Title:</strong></p>' +
+                          '<textarea name="solutions_process_steps[' + index + '][title]" placeholder="Step Title (e.g., Discovery & Analysis)" rows="2" style="width: 100%;"></textarea>' +
+                          '<p><strong>Step Description:</strong></p>' +
+                          '<textarea name="solutions_process_steps[' + index + '][description]" placeholder="Step description" rows="4" style="width: 100%;"></textarea>' +
                           '<button type="button" class="button remove-repeater-item">Remove Process Step</button>' +
                           '</div>';
             $('#process-steps-repeater').append(newField);
@@ -673,20 +801,44 @@ function sanitize_solutions_meta_value($field, $value) {
                 foreach ($item as $key => &$subitem) {
                     if (is_array($subitem)) {
                         foreach ($subitem as &$sub_subitem) {
-                            $sub_subitem = sanitize_text_field($sub_subitem);
+                            // Check if this is likely rich text content from wp_editor
+                            if (in_array($key, ['title', 'description', 'results', 'cta_text', 'metric_number', 'metric_label', 'solution_used'])) {
+                                $sub_subitem = wp_kses_post($sub_subitem);
+                            } else {
+                                $sub_subitem = sanitize_text_field($sub_subitem);
+                            }
                         }
                     } else {
-                        $subitem = sanitize_text_field($subitem);
+                        // Check if this is likely rich text content from wp_editor
+                        if (in_array($key, ['title', 'description', 'results', 'cta_text', 'metric_number', 'metric_label', 'solution_used', 'number', 'label'])) {
+                            $subitem = wp_kses_post($subitem);
+                        } elseif ($key === 'features') {
+                            // Features can be plain text (array or string)
+                            $subitem = is_array($subitem) ? array_map('sanitize_text_field', $subitem) : sanitize_textarea_field($subitem);
+                        } else {
+                            $subitem = sanitize_text_field($subitem);
+                        }
                     }
                 }
             } else {
+                // Handle top-level array items (like CTA benefits)
                 $item = sanitize_text_field($item);
             }
         }
         return $value;
     } else {
-        if (strpos($field, 'content') !== false || strpos($field, 'description') !== false || strpos($field, 'subtitle') !== false) {
-            return sanitize_textarea_field($value);
+        // Single values - check if this is from wp_editor fields
+        $wp_editor_fields = [
+            'solutions_header_title', 'solutions_header_subtitle',
+            'solutions_intro_title', 'solutions_intro_content',
+            'solutions_grid_title', 'solutions_process_title',
+            'solutions_success_stories_title', 'solutions_cta_title',
+            'solutions_cta_subtitle', 'solutions_cta_primary_text',
+            'solutions_cta_secondary_text'
+        ];
+        
+        if (in_array($field, $wp_editor_fields)) {
+            return wp_kses_post($value);
         } elseif (strpos($field, 'url') !== false) {
             return esc_url_raw($value);
         } else {

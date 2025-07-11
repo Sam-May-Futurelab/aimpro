@@ -54,15 +54,15 @@ get_header(); ?>
     <div class="container">          <!-- Page Header -->
         <section class="page-header">
             <div class="page-header-content animate-on-scroll animate-fade-up">
-                <h1><?php echo esc_html(get_post_meta(get_the_ID(), '_solutions_header_title', true) ?: 'Solutions'); ?></h1>
-                <p class="page-subtitle"><?php echo esc_html(get_post_meta(get_the_ID(), '_solutions_header_subtitle', true) ?: 'Proven digital marketing solutions that drive real business results'); ?></p>
+                <h1><?php echo wp_kses_post(get_post_meta(get_the_ID(), '_solutions_header_title', true) ?: 'Solutions'); ?></h1>
+                <p class="page-subtitle"><?php echo wp_kses_post(get_post_meta(get_the_ID(), '_solutions_header_subtitle', true) ?: 'Proven digital marketing solutions that drive real business results'); ?></p>
             </div>
         </section>        <!-- Solutions Introduction -->
         <section class="solutions-intro">
             <div class="section-content">
                 <div class="intro-content animate-on-scroll animate-slide-left">
-                    <h2><?php echo esc_html(get_post_meta(get_the_ID(), '_solutions_intro_title', true) ?: 'Transform Your Business with Strategic Digital Solutions'); ?></h2>
-                    <p><?php echo esc_html(get_post_meta(get_the_ID(), '_solutions_intro_content', true) ?: 'Every business faces unique challenges in today\'s digital landscape. Our comprehensive solutions are designed to address your most pressing needs, from generating quality leads to maximising ROI from your marketing investments. Discover how our proven methodologies can accelerate your growth.'); ?></p>
+                    <h2><?php echo wp_kses_post(get_post_meta(get_the_ID(), '_solutions_intro_title', true) ?: 'Transform Your Business with Strategic Digital Solutions'); ?></h2>
+                    <p><?php echo wp_kses_post(get_post_meta(get_the_ID(), '_solutions_intro_content', true) ?: 'Every business faces unique challenges in today\'s digital landscape. Our comprehensive solutions are designed to address your most pressing needs, from generating quality leads to maximising ROI from your marketing investments. Discover how our proven methodologies can accelerate your growth.'); ?></p>
                 </div>                <div class="solution-stats animate-on-scroll animate-stagger animate-scale-up">
                     <?php 
                     $solution_stats = get_post_meta(get_the_ID(), '_solutions_stats', true);
@@ -77,8 +77,8 @@ get_header(); ?>
                     foreach ($solution_stats as $stat) {
                         ?>
                         <div class="stat-item">
-                            <div class="stat-number"><?php echo esc_html($stat['number']); ?></div>
-                            <div class="stat-label"><?php echo esc_html($stat['label']); ?></div>
+                            <div class="stat-number"><?php echo wp_kses_post($stat['number']); ?></div>
+                            <div class="stat-label"><?php echo wp_kses_post($stat['label']); ?></div>
                         </div>
                         <?php
                     }
@@ -88,7 +88,7 @@ get_header(); ?>
         </section>        <!-- Solutions Grid -->
         <section class="solutions-section">
             <div class="section-content">
-                <h2 class="animate-on-scroll animate-fade-up"><?php echo esc_html(get_post_meta(get_the_ID(), '_solutions_grid_title', true) ?: 'Our Digital Marketing Solutions'); ?></h2>
+                <h2 class="animate-on-scroll animate-fade-up"><?php echo wp_kses_post(get_post_meta(get_the_ID(), '_solutions_grid_title', true) ?: 'Our Digital Marketing Solutions'); ?></h2>
                 <div class="solutions-main-grid">
                     <?php 
                     $solutions_cards = get_post_meta(get_the_ID(), '_solutions_cards', true);
@@ -177,19 +177,26 @@ get_header(); ?>
                       foreach ($solutions_cards as $card) {
                         ?>
                         <div class="solution-card animate-on-scroll animate-stagger animate-fade-up">
-                            <h3><?php echo esc_html($card['title']); ?></h3>
-                            <p><?php echo esc_html($card['description']); ?></p>
+                            <h3><?php echo wp_kses_post($card['title']); ?></h3>
+                            <p><?php echo wp_kses_post($card['description']); ?></p>
                             <?php if (!empty($card['features'])) { ?>
                                 <ul class="solution-features">
-                                    <?php foreach ($card['features'] as $feature) { ?>
-                                        <li><?php echo esc_html($feature); ?></li>
-                                    <?php } ?>
+                                    <?php 
+                                    $features = is_array($card['features']) ? $card['features'] : explode("\n", $card['features']);
+                                    foreach ($features as $feature) { 
+                                        if (trim($feature)) {
+                                    ?>
+                                        <li><?php echo esc_html(trim($feature)); ?></li>
+                                    <?php 
+                                        }
+                                    } 
+                                    ?>
                                 </ul>
                             <?php } ?>
                             <div class="solution-results">
-                                <?php echo esc_html($card['results']); ?>
+                                <?php echo wp_kses_post($card['results']); ?>
                             </div>
-                            <a href="<?php echo esc_url(home_url($card['cta_url'])); ?>" class="solution-cta"><?php echo esc_html($card['cta_text']); ?></a>
+                            <a href="<?php echo esc_url(home_url($card['cta_url'])); ?>" class="solution-cta"><?php echo wp_kses_post($card['cta_text']); ?></a>
                         </div>
                         <?php
                     }
@@ -199,7 +206,7 @@ get_header(); ?>
         </section>        <!-- Solution Process -->
         <section class="solution-process">
             <div class="section-content">
-                <h2 class="animate-on-scroll animate-fade-up"><?php echo esc_html(get_post_meta(get_the_ID(), '_solutions_process_title', true) ?: 'Our Solution Implementation Process'); ?></h2>
+                <h2 class="animate-on-scroll animate-fade-up"><?php echo wp_kses_post(get_post_meta(get_the_ID(), '_solutions_process_title', true) ?: 'Our Solution Implementation Process'); ?></h2>
                 <div class="process-steps">
                     <?php 
                     $process_steps = get_post_meta(get_the_ID(), '_solutions_process_steps', true);
@@ -232,8 +239,8 @@ get_header(); ?>
                         <div class="process-step animate-on-scroll animate-stagger animate-fade-up">
                             <div class="step-number"><?php echo esc_html($step['number']); ?></div>
                             <div class="step-content">
-                                <h3><?php echo esc_html($step['title']); ?></h3>
-                                <p><?php echo esc_html($step['description']); ?></p>
+                                <h3><?php echo wp_kses_post($step['title']); ?></h3>
+                                <p><?php echo wp_kses_post($step['description']); ?></p>
                             </div>
                         </div>
                         <?php
@@ -244,7 +251,7 @@ get_header(); ?>
         </section>        <!-- Success Stories -->
         <section class="solution-success">
             <div class="section-content">
-                <h2 class="animate-on-scroll animate-fade-up"><?php echo esc_html(get_post_meta(get_the_ID(), '_solutions_success_stories_title', true) ?: 'Solution Success Stories'); ?></h2>
+                <h2 class="animate-on-scroll animate-fade-up"><?php echo wp_kses_post(get_post_meta(get_the_ID(), '_solutions_success_stories_title', true) ?: 'Solution Success Stories'); ?></h2>
                 <div class="success-grid">
                     <?php 
                     $success_stories = get_post_meta(get_the_ID(), '_solutions_success_stories', true);
@@ -277,13 +284,13 @@ get_header(); ?>
                         ?>
                         <div class="success-story animate-on-scroll animate-stagger animate-slide-left">
                             <div class="story-metric">
-                                <span class="metric-number"><?php echo esc_html($story['metric_number']); ?></span>
-                                <span class="metric-label"><?php echo esc_html($story['metric_label']); ?></span>
+                                <span class="metric-number"><?php echo wp_kses_post($story['metric_number']); ?></span>
+                                <span class="metric-label"><?php echo wp_kses_post($story['metric_label']); ?></span>
                             </div>
                             <div class="story-content">
-                                <h3><?php echo esc_html($story['title']); ?></h3>
-                                <p><?php echo esc_html($story['description']); ?></p>
-                                <span class="story-solution"><?php echo esc_html($story['solution_used']); ?></span>
+                                <h3><?php echo wp_kses_post($story['title']); ?></h3>
+                                <p><?php echo wp_kses_post($story['description']); ?></p>
+                                <span class="story-solution"><?php echo wp_kses_post($story['solution_used']); ?></span>
                             </div>
                         </div>
                         <?php
@@ -295,11 +302,11 @@ get_header(); ?>
         <section class="solution-cta-section">
             <div class="section-content">
                 <div class="cta-content animate-on-scroll animate-scale-up">
-                    <h2><?php echo esc_html(get_post_meta(get_the_ID(), '_solutions_cta_title', true) ?: 'Ready to Transform Your Business?'); ?></h2>
-                    <p><?php echo esc_html(get_post_meta(get_the_ID(), '_solutions_cta_subtitle', true) ?: 'Let\'s identify the perfect solution combination for your unique challenges and growth goals.'); ?></p>
+                    <h2><?php echo wp_kses_post(get_post_meta(get_the_ID(), '_solutions_cta_title', true) ?: 'Ready to Transform Your Business?'); ?></h2>
+                    <p><?php echo wp_kses_post(get_post_meta(get_the_ID(), '_solutions_cta_subtitle', true) ?: 'Let\'s identify the perfect solution combination for your unique challenges and growth goals.'); ?></p>
                     <div class="cta-buttons">
-                        <a href="<?php echo esc_url(home_url(get_post_meta(get_the_ID(), '_solutions_cta_primary_url', true) ?: '/contact')); ?>" class="btn btn-primary"><?php echo esc_html(get_post_meta(get_the_ID(), '_solutions_cta_primary_text', true) ?: 'Get Free Strategy Session'); ?></a>
-                        <a href="<?php echo esc_url(home_url(get_post_meta(get_the_ID(), '_solutions_cta_secondary_url', true) ?: '/case-studies')); ?>" class="btn btn-secondary"><?php echo esc_html(get_post_meta(get_the_ID(), '_solutions_cta_secondary_text', true) ?: 'View All Success Stories'); ?></a>
+                        <a href="<?php echo esc_url(home_url(get_post_meta(get_the_ID(), '_solutions_cta_primary_url', true) ?: '/contact')); ?>" class="btn btn-primary"><?php echo wp_kses_post(get_post_meta(get_the_ID(), '_solutions_cta_primary_text', true) ?: 'Get Free Strategy Session'); ?></a>
+                        <a href="<?php echo esc_url(home_url(get_post_meta(get_the_ID(), '_solutions_cta_secondary_url', true) ?: '/case-studies')); ?>" class="btn btn-secondary"><?php echo wp_kses_post(get_post_meta(get_the_ID(), '_solutions_cta_secondary_text', true) ?: 'View All Success Stories'); ?></a>
                     </div>
                     <div class="cta-benefits">
                         <?php
