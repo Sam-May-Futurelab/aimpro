@@ -108,10 +108,14 @@ function seo_audit_header_callback($post) {
     
     echo '<table class="form-table">';
     echo '<tr><th><label for="seo_audit_header_title">Page Title</label></th>';
-    echo '<td><input type="text" id="seo_audit_header_title" name="seo_audit_header_title" value="' . esc_attr($title) . '" style="width: 100%;" /></td></tr>';
+    echo '<td>';
+    wp_editor($title, 'seo_audit_header_title', array('textarea_name' => 'seo_audit_header_title', 'teeny' => true, 'media_buttons' => false, 'textarea_rows' => 3, 'quicktags' => array('buttons' => 'strong,em,link')));
+    echo '</td></tr>';
     
     echo '<tr><th><label for="seo_audit_header_subtitle">Page Subtitle</label></th>';
-    echo '<td><textarea id="seo_audit_header_subtitle" name="seo_audit_header_subtitle" rows="3" style="width: 100%;">' . esc_textarea($subtitle) . '</textarea></td></tr>';
+    echo '<td>';
+    wp_editor($subtitle, 'seo_audit_header_subtitle', array('textarea_name' => 'seo_audit_header_subtitle', 'teeny' => true, 'media_buttons' => false, 'textarea_rows' => 4, 'quicktags' => array('buttons' => 'strong,em,link')));
+    echo '</td></tr>';
     
     echo '<tr><th><label for="seo_audit_hero_image">Hero Image</label></th>';
     echo '<td>';
@@ -146,13 +150,19 @@ function seo_audit_overview_callback($post) {
     
     echo '<table class="form-table">';
     echo '<tr><th><label for="seo_audit_overview_title">Overview Title</label></th>';
-    echo '<td><input type="text" id="seo_audit_overview_title" name="seo_audit_overview_title" value="' . esc_attr($overview_title) . '" style="width: 100%;" /></td></tr>';
+    echo '<td>';
+    wp_editor($overview_title, 'seo_audit_overview_title', array('textarea_name' => 'seo_audit_overview_title', 'teeny' => true, 'media_buttons' => false, 'textarea_rows' => 2, 'quicktags' => array('buttons' => 'strong,em,link')));
+    echo '</td></tr>';
     
     echo '<tr><th><label for="seo_audit_overview_description">Overview Description</label></th>';
-    echo '<td><textarea id="seo_audit_overview_description" name="seo_audit_overview_description" rows="4" style="width: 100%;">' . esc_textarea($overview_description) . '</textarea></td></tr>';
+    echo '<td>';
+    wp_editor($overview_description, 'seo_audit_overview_description', array('textarea_name' => 'seo_audit_overview_description', 'teeny' => true, 'media_buttons' => false, 'textarea_rows' => 6, 'quicktags' => array('buttons' => 'strong,em,link')));
+    echo '</td></tr>';
     
     echo '<tr><th><label for="seo_audit_benefits_title">Benefits Title</label></th>';
-    echo '<td><input type="text" id="seo_audit_benefits_title" name="seo_audit_benefits_title" value="' . esc_attr($benefits_title) . '" style="width: 100%;" /></td></tr>';
+    echo '<td>';
+    wp_editor($benefits_title, 'seo_audit_benefits_title', array('textarea_name' => 'seo_audit_benefits_title', 'teeny' => true, 'media_buttons' => false, 'textarea_rows' => 2, 'quicktags' => array('buttons' => 'strong,em,link')));
+    echo '</td></tr>';
     
     echo '<tr><th><label>Benefits List</label></th>';
     echo '<td>';
@@ -266,33 +276,37 @@ function seo_audit_components_callback($post) {
     
     echo '<table class="form-table">';
     echo '<tr><th><label for="seo_audit_components_title">Components Section Title</label></th>';
-    echo '<td><input type="text" id="seo_audit_components_title" name="seo_audit_components_title" value="' . esc_attr($components_title) . '" style="width: 100%;" /></td></tr>';
+    echo '<td>';
+    wp_editor($components_title, 'seo_audit_components_title', array('textarea_name' => 'seo_audit_components_title', 'teeny' => true, 'media_buttons' => false, 'textarea_rows' => 2, 'quicktags' => array('buttons' => 'strong,em,link')));
+    echo '</td></tr>';
     echo '</table>';
     
     echo '<h4>Audit Components</h4>';
     if (is_array($components)) {
         foreach ($components as $i => $component) {
-            echo '<div class="component-item" style="border: 1px solid #ddd; padding: 15px; margin-bottom: 15px;">';
-            echo '<h4>Component ' . ($i + 1) . '</h4>';
-            
-            echo '<label>Title:</label><br>';
-            echo '<input type="text" name="seo_audit_components[' . $i . '][title]" value="' . esc_attr($component['title']) . '" style="width: 100%; margin-bottom: 10px;" />';
-            
-            echo '<label>Description:</label><br>';
-            echo '<textarea name="seo_audit_components[' . $i . '][description]" rows="3" style="width: 100%; margin-bottom: 10px;">' . esc_textarea($component['description']) . '</textarea>';
-            
-            echo '<label>Featured Component:</label><br>';
-            echo '<input type="checkbox" name="seo_audit_components[' . $i . '][featured]" value="1" ' . (isset($component['featured']) && $component['featured'] ? 'checked' : '') . ' /> Yes<br><br>';
-            
-            echo '<label>Features:</label><br>';
-            if (isset($component['features']) && is_array($component['features'])) {
-                foreach ($component['features'] as $j => $feature) {
-                    echo '<div style="margin-bottom: 5px;">';
-                    echo '<input type="text" name="seo_audit_components[' . $i . '][features][]" value="' . esc_attr($feature) . '" style="width: 90%;" />';
-                    echo '</div>';
+            if (is_array($component) && isset($component['title']) && isset($component['description'])) {
+                echo '<div class="component-item" style="border: 1px solid #ddd; padding: 15px; margin-bottom: 15px;">';
+                echo '<h4>Component ' . ($i + 1) . '</h4>';
+                
+                echo '<label>Title:</label><br>';
+                wp_editor($component['title'], 'seo_audit_component_title_' . $i, array('textarea_name' => 'seo_audit_components[' . $i . '][title]', 'teeny' => true, 'media_buttons' => false, 'textarea_rows' => 2, 'quicktags' => array('buttons' => 'strong,em,link')));
+                
+                echo '<label>Description:</label><br>';
+                wp_editor($component['description'], 'seo_audit_component_description_' . $i, array('textarea_name' => 'seo_audit_components[' . $i . '][description]', 'teeny' => true, 'media_buttons' => false, 'textarea_rows' => 4, 'quicktags' => array('buttons' => 'strong,em,link')));
+                
+                echo '<label>Featured Component:</label><br>';
+                echo '<input type="checkbox" name="seo_audit_components[' . $i . '][featured]" value="1" ' . (isset($component['featured']) && $component['featured'] ? 'checked' : '') . ' /> Yes<br><br>';
+                
+                echo '<label>Features:</label><br>';
+                if (isset($component['features']) && is_array($component['features'])) {
+                    foreach ($component['features'] as $j => $feature) {
+                        echo '<div style="margin-bottom: 5px;">';
+                        echo '<input type="text" name="seo_audit_components[' . $i . '][features][]" value="' . esc_attr($feature) . '" style="width: 90%;" />';
+                        echo '</div>';
+                    }
                 }
+                echo '</div>';
             }
-            echo '</div>';
         }
     }
 }
@@ -313,7 +327,9 @@ function seo_audit_sample_callback($post) {
     
     echo '<table class="form-table">';
     echo '<tr><th><label for="seo_audit_sample_title">Sample Section Title</label></th>';
-    echo '<td><input type="text" id="seo_audit_sample_title" name="seo_audit_sample_title" value="' . esc_attr($sample_title) . '" style="width: 100%;" /></td></tr>';
+    echo '<td>';
+    wp_editor($sample_title, 'seo_audit_sample_title', array('textarea_name' => 'seo_audit_sample_title', 'teeny' => true, 'media_buttons' => false, 'textarea_rows' => 2, 'quicktags' => array('buttons' => 'strong,em,link')));
+    echo '</td></tr>';
     
     echo '<tr><th><label for="seo_audit_sample_subtitle">Sample Subtitle</label></th>';
     echo '<td><input type="text" id="seo_audit_sample_subtitle" name="seo_audit_sample_subtitle" value="' . esc_attr($sample_subtitle) . '" style="width: 100%;" /></td></tr>';
@@ -325,12 +341,14 @@ function seo_audit_sample_callback($post) {
     echo '<h4>Report Sections</h4>';
     if (is_array($report_sections)) {
         foreach ($report_sections as $i => $section) {
-            echo '<div style="margin-bottom: 15px; padding: 10px; border: 1px solid #ddd;">';
-            echo '<label>Section Title:</label><br>';
-            echo '<input type="text" name="seo_audit_report_sections[' . $i . '][title]" value="' . esc_attr($section['title']) . '" style="width: 100%; margin-bottom: 5px;" />';
-            echo '<label>Section Description:</label><br>';
-            echo '<input type="text" name="seo_audit_report_sections[' . $i . '][description]" value="' . esc_attr($section['description']) . '" style="width: 100%;" />';
-            echo '</div>';
+            if (is_array($section) && isset($section['title']) && isset($section['description'])) {
+                echo '<div style="margin-bottom: 15px; padding: 10px; border: 1px solid #ddd;">';
+                echo '<label>Section Title:</label><br>';
+                echo '<input type="text" name="seo_audit_report_sections[' . $i . '][title]" value="' . esc_attr($section['title']) . '" style="width: 100%; margin-bottom: 5px;" />';
+                echo '<label>Section Description:</label><br>';
+                echo '<input type="text" name="seo_audit_report_sections[' . $i . '][description]" value="' . esc_attr($section['description']) . '" style="width: 100%;" />';
+                echo '</div>';
+            }
         }
     }
 }
@@ -363,21 +381,25 @@ function seo_audit_process_callback($post) {
     
     echo '<table class="form-table">';
     echo '<tr><th><label for="seo_audit_process_title">Process Section Title</label></th>';
-    echo '<td><input type="text" id="seo_audit_process_title" name="seo_audit_process_title" value="' . esc_attr($process_title) . '" style="width: 100%;" /></td></tr>';
+    echo '<td>';
+    wp_editor($process_title, 'seo_audit_process_title', array('textarea_name' => 'seo_audit_process_title', 'teeny' => true, 'media_buttons' => false, 'textarea_rows' => 2, 'quicktags' => array('buttons' => 'strong,em,link')));
+    echo '</td></tr>';
     echo '</table>';
     
     echo '<h4>Process Steps</h4>';
     if (is_array($process_steps)) {
         foreach ($process_steps as $i => $step) {
-            echo '<div style="margin-bottom: 15px; padding: 10px; border: 1px solid #ddd;">';
-            echo '<h4>Step ' . ($i + 1) . '</h4>';
-            echo '<label>Step Title:</label><br>';
-            echo '<input type="text" name="seo_audit_process_steps[' . $i . '][title]" value="' . esc_attr($step['title']) . '" style="width: 100%; margin-bottom: 5px;" />';
-            echo '<label>Step Description:</label><br>';
-            echo '<textarea name="seo_audit_process_steps[' . $i . '][description]" rows="3" style="width: 100%; margin-bottom: 5px;">' . esc_textarea($step['description']) . '</textarea>';
-            echo '<label>Duration:</label><br>';
-            echo '<input type="text" name="seo_audit_process_steps[' . $i . '][duration]" value="' . esc_attr($step['duration']) . '" style="width: 100%;" />';
-            echo '</div>';
+            if (is_array($step) && isset($step['title']) && isset($step['description']) && isset($step['duration'])) {
+                echo '<div style="margin-bottom: 15px; padding: 10px; border: 1px solid #ddd;">';
+                echo '<h4>Step ' . ($i + 1) . '</h4>';
+                echo '<label>Step Title:</label><br>';
+                wp_editor($step['title'], 'seo_audit_process_step_title_' . $i, array('textarea_name' => 'seo_audit_process_steps[' . $i . '][title]', 'teeny' => true, 'media_buttons' => false, 'textarea_rows' => 2, 'quicktags' => array('buttons' => 'strong,em,link')));
+                echo '<label>Step Description:</label><br>';
+                wp_editor($step['description'], 'seo_audit_process_step_description_' . $i, array('textarea_name' => 'seo_audit_process_steps[' . $i . '][description]', 'teeny' => true, 'media_buttons' => false, 'textarea_rows' => 4, 'quicktags' => array('buttons' => 'strong,em,link')));
+                echo '<label>Duration:</label><br>';
+                wp_editor($step['duration'], 'seo_audit_process_step_duration_' . $i, array('textarea_name' => 'seo_audit_process_steps[' . $i . '][duration]', 'teeny' => true, 'media_buttons' => false, 'textarea_rows' => 2, 'quicktags' => array('buttons' => 'strong,em,link')));
+                echo '</div>';
+            }
         }
     }
 }
@@ -418,13 +440,19 @@ function seo_audit_case_study_callback($post) {
     echo '<td><input type="text" id="seo_audit_case_study_label" name="seo_audit_case_study_label" value="' . esc_attr($case_study_label) . '" style="width: 100%;" /></td></tr>';
     
     echo '<tr><th><label for="seo_audit_case_study_title">Case Study Title</label></th>';
-    echo '<td><input type="text" id="seo_audit_case_study_title" name="seo_audit_case_study_title" value="' . esc_attr($case_study_title) . '" style="width: 100%;" /></td></tr>';
+    echo '<td>';
+    wp_editor($case_study_title, 'seo_audit_case_study_title', array('textarea_name' => 'seo_audit_case_study_title', 'teeny' => true, 'media_buttons' => false, 'textarea_rows' => 3, 'quicktags' => array('buttons' => 'strong,em,link')));
+    echo '</td></tr>';
     
     echo '<tr><th><label for="seo_audit_case_study_description">Case Study Description</label></th>';
-    echo '<td><textarea id="seo_audit_case_study_description" name="seo_audit_case_study_description" rows="4" style="width: 100%;">' . esc_textarea($case_study_description) . '</textarea></td></tr>';
+    echo '<td>';
+    wp_editor($case_study_description, 'seo_audit_case_study_description', array('textarea_name' => 'seo_audit_case_study_description', 'teeny' => true, 'media_buttons' => false, 'textarea_rows' => 5, 'quicktags' => array('buttons' => 'strong,em,link')));
+    echo '</td></tr>';
     
     echo '<tr><th><label for="seo_audit_case_study_challenge_title">Challenges Title</label></th>';
-    echo '<td><input type="text" id="seo_audit_case_study_challenge_title" name="seo_audit_case_study_challenge_title" value="' . esc_attr($case_study_challenge_title) . '" style="width: 100%;" /></td></tr>';
+    echo '<td>';
+    wp_editor($case_study_challenge_title, 'seo_audit_case_study_challenge_title', array('textarea_name' => 'seo_audit_case_study_challenge_title', 'teeny' => true, 'media_buttons' => false, 'textarea_rows' => 2, 'quicktags' => array('buttons' => 'strong,em,link')));
+    echo '</td></tr>';
     
     echo '<tr><th><label>Challenges List</label></th>';
     echo '<td>';
@@ -464,12 +492,14 @@ function seo_audit_case_study_callback($post) {
     echo '<h4>Results Statistics</h4>';
     if (is_array($case_study_results)) {
         foreach ($case_study_results as $i => $result) {
-            echo '<div style="margin-bottom: 10px; padding: 10px; border: 1px solid #ddd;">';
-            echo '<label>Result Number:</label><br>';
-            echo '<input type="text" name="seo_audit_case_study_results[' . $i . '][number]" value="' . esc_attr($result['number']) . '" style="width: 100%; margin-bottom: 5px;" />';
-            echo '<label>Result Label:</label><br>';
-            echo '<input type="text" name="seo_audit_case_study_results[' . $i . '][label]" value="' . esc_attr($result['label']) . '" style="width: 100%;" />';
-            echo '</div>';
+            if (is_array($result) && isset($result['number']) && isset($result['label'])) {
+                echo '<div style="margin-bottom: 10px; padding: 10px; border: 1px solid #ddd;">';
+                echo '<label>Result Number:</label><br>';
+                echo '<input type="text" name="seo_audit_case_study_results[' . $i . '][number]" value="' . esc_attr($result['number']) . '" style="width: 100%; margin-bottom: 5px;" />';
+                echo '<label>Result Label:</label><br>';
+                echo '<input type="text" name="seo_audit_case_study_results[' . $i . '][label]" value="' . esc_attr($result['label']) . '" style="width: 100%;" />';
+                echo '</div>';
+            }
         }
     }
 }
@@ -524,18 +554,20 @@ function seo_audit_tools_callback($post) {
     echo '<h4>Tool Categories</h4>';
     if (is_array($tool_categories)) {
         foreach ($tool_categories as $i => $category) {
-            echo '<div style="margin-bottom: 15px; padding: 10px; border: 1px solid #ddd;">';
-            echo '<label>Category Title:</label><br>';
-            echo '<input type="text" name="seo_audit_tool_categories[' . $i . '][title]" value="' . esc_attr($category['title']) . '" style="width: 100%; margin-bottom: 10px;" />';
-            echo '<label>Tools:</label><br>';
-            if (isset($category['tools']) && is_array($category['tools'])) {
-                foreach ($category['tools'] as $j => $tool) {
-                    echo '<div style="margin-bottom: 5px;">';
-                    echo '<input type="text" name="seo_audit_tool_categories[' . $i . '][tools][]" value="' . esc_attr($tool) . '" style="width: 100%;" />';
-                    echo '</div>';
+            if (is_array($category) && isset($category['title'])) {
+                echo '<div style="margin-bottom: 15px; padding: 10px; border: 1px solid #ddd;">';
+                echo '<label>Category Title:</label><br>';
+                echo '<input type="text" name="seo_audit_tool_categories[' . $i . '][title]" value="' . esc_attr($category['title']) . '" style="width: 100%; margin-bottom: 10px;" />';
+                echo '<label>Tools:</label><br>';
+                if (isset($category['tools']) && is_array($category['tools'])) {
+                    foreach ($category['tools'] as $j => $tool) {
+                        echo '<div style="margin-bottom: 5px;">';
+                        echo '<input type="text" name="seo_audit_tool_categories[' . $i . '][tools][]" value="' . esc_attr($tool) . '" style="width: 100%;" />';
+                        echo '</div>';
+                    }
                 }
+                echo '</div>';
             }
-            echo '</div>';
         }
     }
 }
@@ -550,16 +582,24 @@ function seo_audit_testimonial_callback($post) {
     
     echo '<table class="form-table">';
     echo '<tr><th><label for="seo_audit_testimonial_quote">Testimonial Quote</label></th>';
-    echo '<td><textarea id="seo_audit_testimonial_quote" name="seo_audit_testimonial_quote" rows="5" style="width: 100%;">' . esc_textarea($testimonial_quote) . '</textarea></td></tr>';
+    echo '<td>';
+    wp_editor($testimonial_quote, 'seo_audit_testimonial_quote', array('textarea_name' => 'seo_audit_testimonial_quote', 'teeny' => true, 'media_buttons' => false, 'textarea_rows' => 6, 'quicktags' => array('buttons' => 'strong,em,link')));
+    echo '</td></tr>';
     
     echo '<tr><th><label for="seo_audit_testimonial_author_name">Author Name</label></th>';
-    echo '<td><input type="text" id="seo_audit_testimonial_author_name" name="seo_audit_testimonial_author_name" value="' . esc_attr($testimonial_author_name) . '" style="width: 100%;" /></td></tr>';
+    echo '<td>';
+    wp_editor($testimonial_author_name, 'seo_audit_testimonial_author_name', array('textarea_name' => 'seo_audit_testimonial_author_name', 'teeny' => true, 'media_buttons' => false, 'textarea_rows' => 2, 'quicktags' => array('buttons' => 'strong,em,link')));
+    echo '</td></tr>';
     
     echo '<tr><th><label for="seo_audit_testimonial_author_title">Author Title</label></th>';
-    echo '<td><input type="text" id="seo_audit_testimonial_author_title" name="seo_audit_testimonial_author_title" value="' . esc_attr($testimonial_author_title) . '" style="width: 100%;" /></td></tr>';
+    echo '<td>';
+    wp_editor($testimonial_author_title, 'seo_audit_testimonial_author_title', array('textarea_name' => 'seo_audit_testimonial_author_title', 'teeny' => true, 'media_buttons' => false, 'textarea_rows' => 2, 'quicktags' => array('buttons' => 'strong,em,link')));
+    echo '</td></tr>';
     
     echo '<tr><th><label for="seo_audit_testimonial_author_company">Author Company</label></th>';
-    echo '<td><input type="text" id="seo_audit_testimonial_author_company" name="seo_audit_testimonial_author_company" value="' . esc_attr($testimonial_author_company) . '" style="width: 100%;" /></td></tr>';
+    echo '<td>';
+    wp_editor($testimonial_author_company, 'seo_audit_testimonial_author_company', array('textarea_name' => 'seo_audit_testimonial_author_company', 'teeny' => true, 'media_buttons' => false, 'textarea_rows' => 2, 'quicktags' => array('buttons' => 'strong,em,link')));
+    echo '</td></tr>';
     
     echo '<tr><th><label for="seo_audit_testimonial_image">Author Image</label></th>';
     echo '<td>';
@@ -593,19 +633,27 @@ function seo_audit_cta_callback($post) {
     
     echo '<table class="form-table">';
     echo '<tr><th><label for="seo_audit_cta_title">CTA Title</label></th>';
-    echo '<td><input type="text" id="seo_audit_cta_title" name="seo_audit_cta_title" value="' . esc_attr($cta_title) . '" style="width: 100%;" /></td></tr>';
+    echo '<td>';
+    wp_editor($cta_title, 'seo_audit_cta_title', array('textarea_name' => 'seo_audit_cta_title', 'teeny' => true, 'media_buttons' => false, 'textarea_rows' => 2, 'quicktags' => array('buttons' => 'strong,em,link')));
+    echo '</td></tr>';
     
     echo '<tr><th><label for="seo_audit_cta_description">CTA Description</label></th>';
-    echo '<td><textarea id="seo_audit_cta_description" name="seo_audit_cta_description" rows="3" style="width: 100%;">' . esc_textarea($cta_description) . '</textarea></td></tr>';
+    echo '<td>';
+    wp_editor($cta_description, 'seo_audit_cta_description', array('textarea_name' => 'seo_audit_cta_description', 'teeny' => true, 'media_buttons' => false, 'textarea_rows' => 4, 'quicktags' => array('buttons' => 'strong,em,link')));
+    echo '</td></tr>';
     
     echo '<tr><th><label for="seo_audit_cta_primary_text">Primary Button Text</label></th>';
-    echo '<td><input type="text" id="seo_audit_cta_primary_text" name="seo_audit_cta_primary_text" value="' . esc_attr($cta_primary_text) . '" style="width: 100%;" /></td></tr>';
+    echo '<td>';
+    wp_editor($cta_primary_text, 'seo_audit_cta_primary_text', array('textarea_name' => 'seo_audit_cta_primary_text', 'teeny' => true, 'media_buttons' => false, 'textarea_rows' => 2, 'quicktags' => array('buttons' => 'strong,em,link')));
+    echo '</td></tr>';
     
     echo '<tr><th><label for="seo_audit_cta_primary_url">Primary Button URL</label></th>';
     echo '<td><input type="text" id="seo_audit_cta_primary_url" name="seo_audit_cta_primary_url" value="' . esc_attr($cta_primary_url) . '" style="width: 100%;" /></td></tr>';
     
     echo '<tr><th><label for="seo_audit_cta_secondary_text">Secondary Button Text</label></th>';
-    echo '<td><input type="text" id="seo_audit_cta_secondary_text" name="seo_audit_cta_secondary_text" value="' . esc_attr($cta_secondary_text) . '" style="width: 100%;" /></td></tr>';
+    echo '<td>';
+    wp_editor($cta_secondary_text, 'seo_audit_cta_secondary_text', array('textarea_name' => 'seo_audit_cta_secondary_text', 'teeny' => true, 'media_buttons' => false, 'textarea_rows' => 2, 'quicktags' => array('buttons' => 'strong,em,link')));
+    echo '</td></tr>';
     
     echo '<tr><th><label for="seo_audit_cta_secondary_url">Secondary Button URL</label></th>';
     echo '<td><input type="text" id="seo_audit_cta_secondary_url" name="seo_audit_cta_secondary_url" value="' . esc_attr($cta_secondary_url) . '" style="width: 100%;" /></td></tr>';
@@ -637,54 +685,101 @@ function seo_audit_save_meta($post_id) {
         return;
     }
 
-    // Save all meta fields
-    $meta_fields = array(
+    // Rich text fields that need wp_kses_post() sanitization
+    $rich_text_fields = array(
         'seo_audit_header_title',
         'seo_audit_header_subtitle',
-        'seo_audit_hero_image',
         'seo_audit_overview_title',
         'seo_audit_overview_description',
         'seo_audit_benefits_title',
-        'seo_audit_benefits',
-        'seo_audit_overview_image',
         'seo_audit_components_title',
-        'seo_audit_components',
         'seo_audit_sample_title',
-        'seo_audit_sample_subtitle',
-        'seo_audit_sample_image',
-        'seo_audit_report_sections',
         'seo_audit_process_title',
-        'seo_audit_process_steps',
-        'seo_audit_case_study_label',
         'seo_audit_case_study_title',
         'seo_audit_case_study_description',
         'seo_audit_case_study_challenge_title',
-        'seo_audit_case_study_challenges',
-        'seo_audit_case_study_solution_title',
-        'seo_audit_case_study_solutions',
-        'seo_audit_case_study_results_title',
-        'seo_audit_case_study_results',
-        'seo_audit_case_study_link_text',
-        'seo_audit_case_study_link_url',
-        'seo_audit_tools_title',
-        'seo_audit_tool_categories',
         'seo_audit_testimonial_quote',
         'seo_audit_testimonial_author_name',
         'seo_audit_testimonial_author_title',
         'seo_audit_testimonial_author_company',
-        'seo_audit_testimonial_image',
         'seo_audit_cta_title',
         'seo_audit_cta_description',
         'seo_audit_cta_primary_text',
+        'seo_audit_cta_secondary_text'
+    );
+
+    // Plain text fields
+    $plain_text_fields = array(
+        'seo_audit_hero_image',
+        'seo_audit_overview_image',
+        'seo_audit_sample_subtitle',
+        'seo_audit_sample_image',
+        'seo_audit_case_study_label',
+        'seo_audit_case_study_solution_title',
+        'seo_audit_case_study_results_title',
+        'seo_audit_case_study_link_text',
+        'seo_audit_case_study_link_url',
+        'seo_audit_tools_title',
+        'seo_audit_testimonial_image',
         'seo_audit_cta_primary_url',
-        'seo_audit_cta_secondary_text',
-        'seo_audit_cta_secondary_url',
+        'seo_audit_cta_secondary_url'
+    );
+
+    // Array fields
+    $array_fields = array(
+        'seo_audit_benefits',
+        'seo_audit_components',
+        'seo_audit_report_sections',
+        'seo_audit_process_steps',
+        'seo_audit_case_study_challenges',
+        'seo_audit_case_study_solutions',
+        'seo_audit_case_study_results',
+        'seo_audit_tool_categories',
         'seo_audit_cta_benefits'
     );
 
-    foreach ($meta_fields as $field) {
+    // Save rich text fields with wp_kses_post()
+    foreach ($rich_text_fields as $field) {
         if (isset($_POST[$field])) {
-            update_post_meta($post_id, $field, $_POST[$field]);
+            update_post_meta($post_id, $field, wp_kses_post($_POST[$field]));
+        }
+    }
+
+    // Save plain text fields with sanitize_text_field()
+    foreach ($plain_text_fields as $field) {
+        if (isset($_POST[$field])) {
+            update_post_meta($post_id, $field, sanitize_text_field($_POST[$field]));
+        }
+    }
+
+    // Save array fields with proper array handling
+    foreach ($array_fields as $field) {
+        if (isset($_POST[$field])) {
+            $data = $_POST[$field];
+            if (is_array($data)) {
+                // Handle arrays of arrays (like components and process steps)
+                if ($field === 'seo_audit_components' || $field === 'seo_audit_process_steps') {
+                    $sanitized_data = array();
+                    foreach ($data as $item) {
+                        if (is_array($item)) {
+                            $sanitized_item = array();
+                            foreach ($item as $key => $value) {
+                                if ($key === 'title' || $key === 'description') {
+                                    $sanitized_item[$key] = wp_kses_post($value);
+                                } else {
+                                    $sanitized_item[$key] = sanitize_text_field($value);
+                                }
+                            }
+                            $sanitized_data[] = $sanitized_item;
+                        }
+                    }
+                    update_post_meta($post_id, $field, $sanitized_data);
+                } else {
+                    // Handle simple arrays
+                    $sanitized_data = array_map('sanitize_text_field', $data);
+                    update_post_meta($post_id, $field, $sanitized_data);
+                }
+            }
         }
     }
 }

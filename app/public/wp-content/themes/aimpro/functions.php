@@ -1896,3 +1896,50 @@ require_once get_template_directory() . '/includes/single-blog-meta.php';
 require_once get_template_directory() . '/includes/privacy-policy-meta.php';
 require_once get_template_directory() . '/includes/terms-of-service-meta.php';
 require_once get_template_directory() . '/includes/sitemap-meta.php';
+
+if (!function_exists('aimpro_get_seo_audit_default_values')) {
+    /**
+     * Set default values for SEO Audit page meta fields
+     * This ensures fields are pre-populated with the frontend content
+     */
+    function aimpro_get_seo_audit_default_values() {
+        return array(
+            // Header Section
+            'seo_audit_header_title' => 'Comprehensive SEO Audit',
+            'seo_audit_header_subtitle' => 'Get a detailed analysis of your website\'s SEO performance with actionable recommendations to boost your search rankings and organic traffic.',
+            
+            // Overview Section
+            'seo_audit_overview_title' => 'What\'s Included in Your SEO Audit',
+            'seo_audit_overview_description' => 'Our comprehensive SEO audit examines every aspect of your website\'s search performance to identify opportunities for improvement and provide clear, actionable recommendations.',
+            
+            // Benefits Section
+            'seo_audit_benefits_title' => 'What Our SEO Audit Reveals:',
+            
+            // Components Section
+            'seo_audit_components_title' => 'Complete SEO Audit Components',
+            
+            // Sample Section
+            'seo_audit_sample_title' => 'What\'s Included in Your SEO Audit Report',
+            
+            // Process Section
+            'seo_audit_process_title' => 'Our SEO Audit Process',
+            
+            // Case Study Section
+            'seo_audit_case_study_title' => 'TechStart Solutions: From Audit to 380% Traffic Growth',
+            'seo_audit_case_study_description' => 'Discover how our comprehensive SEO audit helped a technology company identify critical issues and implement strategies that resulted in a 380% increase in organic traffic and first-page rankings for 47 target keywords.',
+            'seo_audit_case_study_challenge_title' => 'The Challenge',
+            
+            // Testimonial Section
+            'seo_audit_testimonial_quote' => 'The SEO audit from Aimpro Digital was incredibly detailed and actionable. They found issues we never knew existed and provided a clear roadmap to fix them. After implementing their recommendations, our organic traffic increased by 380% in just 6 months.',
+            'seo_audit_testimonial_author_name' => 'Sarah Mitchell',
+            'seo_audit_testimonial_author_title' => 'Marketing Director',
+            'seo_audit_testimonial_author_company' => 'TechStart Solutions',
+            
+            // CTA Section
+            'seo_audit_cta_title' => 'Ready to Uncover Your SEO Opportunities?',
+            'seo_audit_cta_description' => 'Get your comprehensive SEO audit today and discover exactly what\'s holding your website back from ranking higher and attracting more organic traffic.',
+            'seo_audit_cta_primary_text' => 'Get Your Free SEO Audit',
+            'seo_audit_cta_secondary_text' => 'View All Services',
+        );
+    }
+}
