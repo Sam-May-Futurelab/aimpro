@@ -23,13 +23,13 @@ get_header(); ?>
     <div class="container">          <!-- Page Header -->
         <section class="page-header">
             <div class="page-header-content animate-on-scroll animate-fade-up">
-                <h1><?php echo esc_html(get_post_meta(get_the_ID(), 'testimonials_header_title', true) ?: 'Client Testimonials'); ?></h1>
-                <p class="page-subtitle"><?php echo esc_html(get_post_meta(get_the_ID(), 'testimonials_header_subtitle', true) ?: 'See what our clients have to say about working with Aimpro Digital'); ?></p>
+                <h1><?php echo wp_kses_post(get_post_meta(get_the_ID(), 'testimonials_header_title', true) ?: 'Client Testimonials'); ?></h1>
+                <p class="page-subtitle"><?php echo wp_kses_post(get_post_meta(get_the_ID(), 'testimonials_header_subtitle', true) ?: 'See what our clients have to say about working with Aimpro Digital'); ?></p>
             </div>
         </section>        <!-- Featured Testimonials -->
         <section class="featured-testimonials">
             <div class="section-content">
-                <h2 class="animate-on-scroll animate-fade-up"><?php echo esc_html(get_post_meta(get_the_ID(), 'testimonials_featured_heading', true) ?: 'Success Stories'); ?></h2>
+                <h2 class="animate-on-scroll animate-fade-up"><?php echo wp_kses_post(get_post_meta(get_the_ID(), 'testimonials_featured_heading', true) ?: 'Success Stories'); ?></h2>
                 <div class="testimonials-grid">
                     <?php for ($i = 1; $i <= 2; $i++): 
                         $quote = get_post_meta(get_the_ID(), "testimonial{$i}_quote", true);
@@ -72,7 +72,7 @@ get_header(); ?>
                                     <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" fill="currentcolour"/>
                                 </svg>
                             </div>
-                            <blockquote><?php echo esc_html($quote); ?></blockquote>
+                            <blockquote><?php echo wp_kses_post($quote); ?></blockquote>
                             <div class="testimonial-author">
                                 <div class="author-info">
                                     <h4><?php echo esc_html($author); ?></h4>
@@ -105,7 +105,7 @@ get_header(); ?>
         </section>        <!-- Industry Testimonials -->
         <section class="industry-testimonials">
             <div class="section-content">
-                <h2 class="animate-on-scroll animate-fade-up"><?php echo esc_html(get_post_meta(get_the_ID(), 'testimonials_industry_heading', true) ?: 'Testimonials by Industry'); ?></h2>
+                <h2 class="animate-on-scroll animate-fade-up"><?php echo wp_kses_post(get_post_meta(get_the_ID(), 'testimonials_industry_heading', true) ?: 'Testimonials by Industry'); ?></h2>
                 
                 <?php for ($ind = 1; $ind <= 4; $ind++): 
                     $industry_title = get_post_meta(get_the_ID(), "industry{$ind}_title", true);
@@ -152,7 +152,7 @@ get_header(); ?>
                         ?>
                         <div class="testimonial-card animate-on-scroll animate-stagger animate-fade-up">
                             <blockquote>
-                                "<?php echo esc_html($quote); ?>"
+                                "<?php echo wp_kses_post($quote); ?>"
                             </blockquote>
                             <div class="testimonial-author">
                                 <h4><?php echo esc_html($author); ?></h4>
@@ -167,7 +167,7 @@ get_header(); ?>
         </section>        <!-- Metrics & Results -->
         <section class="testimonial-metrics">
             <div class="section-content">
-                <h2 class="animate-on-scroll animate-fade-up"><?php echo esc_html(get_post_meta(get_the_ID(), 'testimonials_metrics_heading', true) ?: 'Client Results by the Numbers'); ?></h2>
+                <h2 class="animate-on-scroll animate-fade-up"><?php echo wp_kses_post(get_post_meta(get_the_ID(), 'testimonials_metrics_heading', true) ?: 'Client Results by the Numbers'); ?></h2>
                 <div class="metrics-grid">
                     <div class="metric-card animate-on-scroll animate-stagger animate-scale-up">
                         <span class="metric-number">500+</span>
@@ -193,8 +193,8 @@ get_header(); ?>
         <section class="testimonials-cta">
             <div class="section-content">
                 <div class="animate-on-scroll animate-scale-up">
-                    <h2><?php echo esc_html(get_post_meta(get_the_ID(), 'testimonials_cta_heading', true) ?: 'Ready to Join Our Success Stories?'); ?></h2>
-                    <p><?php echo esc_html(get_post_meta(get_the_ID(), 'testimonials_cta_text', true) ?: 'Let\'s discuss how we can help your business achieve similar results'); ?></p>
+                    <h2><?php echo wp_kses_post(get_post_meta(get_the_ID(), 'testimonials_cta_heading', true) ?: 'Ready to Join Our Success Stories?'); ?></h2>
+                    <p><?php echo wp_kses_post(get_post_meta(get_the_ID(), 'testimonials_cta_text', true) ?: 'Let\'s discuss how we can help your business achieve similar results'); ?></p>
                     <div class="cta-buttons">
                         <a href="<?php echo home_url(get_post_meta(get_the_ID(), 'testimonials_cta_button1_url', true) ?: '/contact'); ?>" class="btn btn-primary"><?php echo esc_html(get_post_meta(get_the_ID(), 'testimonials_cta_button1_text', true) ?: 'Start Your Success Story'); ?></a>
                         <a href="<?php echo home_url(get_post_meta(get_the_ID(), 'testimonials_cta_button2_url', true) ?: '/case-studies'); ?>" class="btn btn-secondary"><?php echo esc_html(get_post_meta(get_the_ID(), 'testimonials_cta_button2_text', true) ?: 'View Case Studies'); ?></a>

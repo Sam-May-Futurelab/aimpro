@@ -43,11 +43,11 @@ function aimpro_testimonials_meta_box_callback($post) {
         </tr>
         <tr>
             <th><label for="testimonials_header_title">Page Title</label></th>
-            <td><input type="text" id="testimonials_header_title" name="testimonials_header_title" value="<?php echo esc_attr($header_title); ?>" class="regular-text" /></td>
+            <td><?php wp_editor($header_title, 'testimonials_header_title', array('textarea_rows' => 2, 'media_buttons' => false, 'teeny' => true, 'quicktags' => array('buttons' => 'strong,em,link'))); ?></td>
         </tr>
         <tr>
             <th><label for="testimonials_header_subtitle">Page Subtitle</label></th>
-            <td><input type="text" id="testimonials_header_subtitle" name="testimonials_header_subtitle" value="<?php echo esc_attr($header_subtitle); ?>" class="regular-text" /></td>
+            <td><?php wp_editor($header_subtitle, 'testimonials_header_subtitle', array('textarea_rows' => 3, 'media_buttons' => false, 'teeny' => true, 'quicktags' => array('buttons' => 'strong,em,link'))); ?></td>
         </tr>
         
         <tr>
@@ -55,7 +55,7 @@ function aimpro_testimonials_meta_box_callback($post) {
         </tr>
         <tr>
             <th><label for="testimonials_featured_heading">Section Heading</label></th>
-            <td><input type="text" id="testimonials_featured_heading" name="testimonials_featured_heading" value="<?php echo esc_attr($featured_heading); ?>" class="regular-text" /></td>
+            <td><?php wp_editor($featured_heading, 'testimonials_featured_heading', array('textarea_rows' => 2, 'media_buttons' => false, 'teeny' => true, 'quicktags' => array('buttons' => 'strong,em,link'))); ?></td>
         </tr>
         
         <?php for ($i = 1; $i <= 2; $i++): 
@@ -104,7 +104,7 @@ function aimpro_testimonials_meta_box_callback($post) {
         </tr>
         <tr>
             <th><label for="testimonial<?php echo $i; ?>_quote">Quote</label></th>
-            <td><textarea id="testimonial<?php echo $i; ?>_quote" name="testimonial<?php echo $i; ?>_quote" rows="4" class="large-text"><?php echo esc_textarea($testimonial_quote); ?></textarea></td>
+            <td><?php wp_editor($testimonial_quote, "testimonial{$i}_quote", array('textarea_rows' => 4, 'media_buttons' => false, 'teeny' => true, 'quicktags' => array('buttons' => 'strong,em,link'))); ?></td>
         </tr>
         <tr>
             <th><label for="testimonial<?php echo $i; ?>_author">Author Name</label></th>
@@ -153,7 +153,7 @@ function aimpro_testimonials_meta_box_callback($post) {
         </tr>
         <tr>
             <th><label for="testimonials_industry_heading">Industry Section Heading</label></th>
-            <td><input type="text" id="testimonials_industry_heading" name="testimonials_industry_heading" value="<?php echo esc_attr(get_post_meta($post->ID, 'testimonials_industry_heading', true) ?: 'Testimonials by Industry'); ?>" class="regular-text" /></td>
+            <td><?php wp_editor(get_post_meta($post->ID, 'testimonials_industry_heading', true) ?: 'Testimonials by Industry', 'testimonials_industry_heading', array('textarea_rows' => 2, 'media_buttons' => false, 'teeny' => true, 'quicktags' => array('buttons' => 'strong,em,link'))); ?></td>
         </tr>
         
         <?php 
@@ -222,7 +222,7 @@ function aimpro_testimonials_meta_box_callback($post) {
         </tr>
         <tr>
             <th><label for="industry<?php echo $ind_num; ?>_testimonial<?php echo $t; ?>_quote">Quote</label></th>
-            <td><textarea id="industry<?php echo $ind_num; ?>_testimonial<?php echo $t; ?>_quote" name="industry<?php echo $ind_num; ?>_testimonial<?php echo $t; ?>_quote" rows="3" class="large-text"><?php echo esc_textarea($testimonial_quote); ?></textarea></td>
+            <td><?php wp_editor($testimonial_quote, "industry{$ind_num}_testimonial{$t}_quote", array('textarea_rows' => 3, 'media_buttons' => false, 'teeny' => true, 'quicktags' => array('buttons' => 'strong,em,link'))); ?></td>
         </tr>
         <tr>
             <th><label for="industry<?php echo $ind_num; ?>_testimonial<?php echo $t; ?>_author">Author Name</label></th>
@@ -241,7 +241,7 @@ function aimpro_testimonials_meta_box_callback($post) {
         </tr>
         <tr>
             <th><label for="testimonials_metrics_heading">Metrics Section Heading</label></th>
-            <td><input type="text" id="testimonials_metrics_heading" name="testimonials_metrics_heading" value="<?php echo esc_attr(get_post_meta($post->ID, 'testimonials_metrics_heading', true) ?: 'Client Results by the Numbers'); ?>" class="regular-text" /></td>
+            <td><?php wp_editor(get_post_meta($post->ID, 'testimonials_metrics_heading', true) ?: 'Client Results by the Numbers', 'testimonials_metrics_heading', array('textarea_rows' => 2, 'media_buttons' => false, 'teeny' => true, 'quicktags' => array('buttons' => 'strong,em,link'))); ?></td>
         </tr>
         
         <tr>
@@ -249,11 +249,11 @@ function aimpro_testimonials_meta_box_callback($post) {
         </tr>
         <tr>
             <th><label for="testimonials_cta_heading">CTA Heading</label></th>
-            <td><input type="text" id="testimonials_cta_heading" name="testimonials_cta_heading" value="<?php echo esc_attr(get_post_meta($post->ID, 'testimonials_cta_heading', true) ?: 'Ready to Join Our Success Stories?'); ?>" class="regular-text" /></td>
+            <td><?php wp_editor(get_post_meta($post->ID, 'testimonials_cta_heading', true) ?: 'Ready to Join Our Success Stories?', 'testimonials_cta_heading', array('textarea_rows' => 2, 'media_buttons' => false, 'teeny' => true, 'quicktags' => array('buttons' => 'strong,em,link'))); ?></td>
         </tr>
         <tr>
             <th><label for="testimonials_cta_text">CTA Text</label></th>
-            <td><input type="text" id="testimonials_cta_text" name="testimonials_cta_text" value="<?php echo esc_attr(get_post_meta($post->ID, 'testimonials_cta_text', true) ?: 'Let\'s discuss how we can help your business achieve similar results'); ?>" class="regular-text" /></td>
+            <td><?php wp_editor(get_post_meta($post->ID, 'testimonials_cta_text', true) ?: 'Let\'s discuss how we can help your business achieve similar results', 'testimonials_cta_text', array('textarea_rows' => 3, 'media_buttons' => false, 'teeny' => true, 'quicktags' => array('buttons' => 'strong,em,link'))); ?></td>
         </tr>
         <tr>
             <th><label for="testimonials_cta_button1_text">Primary Button Text</label></th>
@@ -290,21 +290,25 @@ function aimpro_save_testimonials_meta($post_id) {
         return;
     }
     
-    // Save header fields
+    // Save header fields with wp_editor support
     if (isset($_POST['testimonials_header_title'])) {
-        update_post_meta($post_id, 'testimonials_header_title', sanitize_text_field($_POST['testimonials_header_title']));
+        update_post_meta($post_id, 'testimonials_header_title', wp_kses_post($_POST['testimonials_header_title']));
     }
     if (isset($_POST['testimonials_header_subtitle'])) {
-        update_post_meta($post_id, 'testimonials_header_subtitle', sanitize_text_field($_POST['testimonials_header_subtitle']));
-    }    if (isset($_POST['testimonials_featured_heading'])) {
-        update_post_meta($post_id, 'testimonials_featured_heading', sanitize_text_field($_POST['testimonials_featured_heading']));
+        update_post_meta($post_id, 'testimonials_header_subtitle', wp_kses_post($_POST['testimonials_header_subtitle']));
+    }
+    if (isset($_POST['testimonials_featured_heading'])) {
+        update_post_meta($post_id, 'testimonials_featured_heading', wp_kses_post($_POST['testimonials_featured_heading']));
+    }
+    if (isset($_POST['testimonials_industry_heading'])) {
+        update_post_meta($post_id, 'testimonials_industry_heading', wp_kses_post($_POST['testimonials_industry_heading']));
     }
     
-    // Save metrics and CTA fields
+    // Save metrics and CTA fields with wp_editor support
     $additional_fields = array(
-        'testimonials_metrics_heading' => 'sanitize_text_field',
-        'testimonials_cta_heading' => 'sanitize_text_field',
-        'testimonials_cta_text' => 'sanitize_text_field',
+        'testimonials_metrics_heading' => 'wp_kses_post',
+        'testimonials_cta_heading' => 'wp_kses_post',
+        'testimonials_cta_text' => 'wp_kses_post',
         'testimonials_cta_button1_text' => 'sanitize_text_field',
         'testimonials_cta_button1_url' => 'sanitize_text_field',
         'testimonials_cta_button2_text' => 'sanitize_text_field',
@@ -329,7 +333,7 @@ function aimpro_save_testimonials_meta($post_id) {
         
         for ($t = 1; $t <= 2; $t++) {
             $industry_fields = array(
-                "industry{$ind}_testimonial{$t}_quote" => 'sanitize_textarea_field',
+                "industry{$ind}_testimonial{$t}_quote" => 'wp_kses_post',
                 "industry{$ind}_testimonial{$t}_author" => 'sanitize_text_field',
                 "industry{$ind}_testimonial{$t}_title" => 'sanitize_text_field'
             );
@@ -345,7 +349,7 @@ function aimpro_save_testimonials_meta($post_id) {
     // Save testimonial fields
     for ($i = 1; $i <= 2; $i++) {
         $fields = array(
-            "testimonial{$i}_quote" => 'sanitize_textarea_field',
+            "testimonial{$i}_quote" => 'wp_kses_post',
             "testimonial{$i}_author" => 'sanitize_text_field',
             "testimonial{$i}_title" => 'sanitize_text_field',
             "testimonial{$i}_company" => 'sanitize_text_field',
