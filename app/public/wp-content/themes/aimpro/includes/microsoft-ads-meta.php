@@ -17,8 +17,8 @@ if (!defined('ABSPATH')) {
 function aimpro_get_microsoft_ads_default_values() {
     return array(
         // Hero Section
-        'hero_title' => 'Microsoft/Bing Ads Management',
-        'hero_subtitle' => 'Tap into the less competitive, higher-converting Bing search network to reach quality prospects and achieve better ROI with lower cost-per-click rates.',
+        'hero_title' => '<strong>Microsoft/Bing Ads</strong> Management',
+        'hero_subtitle' => 'Tap into the <em>less competitive</em>, higher-converting Bing search network to reach quality prospects and achieve <strong>better ROI</strong> with lower cost-per-click rates.',
         
         // Hero Stats
         'hero_stat1_number' => '45%',
@@ -33,31 +33,31 @@ function aimpro_get_microsoft_ads_default_values() {
         'hero_cta2_text' => 'View Packages',
         
         // Service Overview Section
-        'overview_title' => 'Strategic Microsoft/Bing Ads Management',
-        'overview_content' => 'While Google dominates search, Microsoft\'s Bing network (including Yahoo and AOL) represents a significant opportunity with less competition, higher-income demographics, and often better conversion rates. Our Bing Ads specialists help you capitalize on this underutilized platform.',
+        'overview_title' => 'Strategic <strong>Microsoft/Bing Ads</strong> Management',
+        'overview_content' => 'While Google dominates search, Microsoft\'s Bing network (including Yahoo and AOL) represents a <strong>significant opportunity</strong> with less competition, higher-income demographics, and often <em>better conversion rates</em>. Our Bing Ads specialists help you capitalize on this underutilized platform.',
         
         // Service Items (6 services)
-        'service_title_1' => 'Bing Search Campaigns',
-        'service_content_1' => 'Strategic search advertising on Bing, Yahoo, and partner networks with optimised bidding and targeting strategies.',
+        'service_title_1' => '<strong>Bing Search</strong> Campaigns',
+        'service_content_1' => 'Strategic search advertising on Bing, Yahoo, and partner networks with <em>optimised bidding</em> and targeting strategies.',
         'service_icon_1' => 'fab fa-microsoft',
         
-        'service_title_2' => 'Microsoft Shopping Ads',
-        'service_content_2' => 'Product listing ads that showcase your inventory directly in Bing search results with competitive pricing advantages.',
+        'service_title_2' => 'Microsoft <strong>Shopping Ads</strong>',
+        'service_content_2' => 'Product listing ads that showcase your inventory directly in Bing search results with <em>competitive pricing advantages</em>.',
         'service_icon_2' => 'fas fa-shopping-bag',
         
-        'service_title_3' => 'Audience Targeting',
-        'service_content_3' => 'Leverage Microsoft\'s LinkedIn data integration for precise B2B targeting and professional demographic reach.',
+        'service_title_3' => '<strong>Audience Targeting</strong>',
+        'service_content_3' => 'Leverage Microsoft\'s <em>LinkedIn data integration</em> for precise B2B targeting and professional demographic reach.',
         'service_icon_3' => 'fas fa-users',
         
-        'service_title_4' => 'Campaign optimisation',
-        'service_content_4' => 'Continuous improvement through automated bidding, ad testing, and performance analysis specific to Bing\'s algorithm.',
+        'service_title_4' => 'Campaign <strong>Optimisation</strong>',
+        'service_content_4' => 'Continuous improvement through <em>automated bidding</em>, ad testing, and performance analysis specific to Bing\'s algorithm.',
         'service_icon_4' => 'fas fa-sync-alt',
-          'service_title_5' => 'Conversion Tracking',
-        'service_content_5' => 'Comprehensive reporting and insights comparing Bing performance to other platforms for optimal budget allocation.',
+          'service_title_5' => '<strong>Conversion Tracking</strong>',
+        'service_content_5' => 'Comprehensive reporting and insights comparing Bing performance to other platforms for <em>optimal budget allocation</em>.',
         'service_icon_5' => 'fas fa-chart-line',
         
-        'service_title_6' => 'Google Ads Import',
-        'service_content_6' => 'Seamless migration and optimisation of existing Google Ads campaigns to maximise Bing network potential.',
+        'service_title_6' => '<strong>Google Ads</strong> Import',
+        'service_content_6' => 'Seamless migration and optimisation of existing Google Ads campaigns to <em>maximise Bing network potential</em>.',
         'service_icon_6' => 'fas fa-download',
         
         // Case Study Section
@@ -298,11 +298,27 @@ function aimpro_microsoft_ads_hero_callback($post) {
     ?>
     <p>
         <label for="microsoft_ads_hero_title"><?php _e('Hero Title', 'aimpro'); ?></label><br>
-        <input type="text" id="microsoft_ads_hero_title" name="microsoft_ads_hero_title" value="<?php echo esc_attr($hero_title); ?>" class="widefat">
+        <?php
+        wp_editor($hero_title, 'microsoft_ads_hero_title', array(
+            'textarea_name' => 'microsoft_ads_hero_title',
+            'media_buttons' => false,
+            'textarea_rows' => 3,
+            'teeny' => true,
+            'quicktags' => array('buttons' => 'strong,em,link')
+        ));
+        ?>
     </p>
     <p>
         <label for="microsoft_ads_hero_subtitle"><?php _e('Hero Subtitle', 'aimpro'); ?></label><br>
-        <textarea id="microsoft_ads_hero_subtitle" name="microsoft_ads_hero_subtitle" class="widefat" rows="4"><?php echo esc_textarea($hero_subtitle); ?></textarea>
+        <?php
+        wp_editor($hero_subtitle, 'microsoft_ads_hero_subtitle', array(
+            'textarea_name' => 'microsoft_ads_hero_subtitle',
+            'media_buttons' => false,
+            'textarea_rows' => 4,
+            'teeny' => true,
+            'quicktags' => array('buttons' => 'strong,em,link')
+        ));
+        ?>
     </p>
     
     <h4><?php _e('Hero Stats', 'aimpro'); ?></h4>
@@ -374,11 +390,27 @@ function aimpro_microsoft_ads_overview_callback($post) {
     ?>
     <p>
         <label for="microsoft_ads_overview_title"><?php _e('Overview Title', 'aimpro'); ?></label><br>
-        <input type="text" id="microsoft_ads_overview_title" name="microsoft_ads_overview_title" value="<?php echo esc_attr($overview_title); ?>" class="widefat">
+        <?php
+        wp_editor($overview_title, 'microsoft_ads_overview_title', array(
+            'textarea_name' => 'microsoft_ads_overview_title',
+            'media_buttons' => false,
+            'textarea_rows' => 3,
+            'teeny' => true,
+            'quicktags' => array('buttons' => 'strong,em,link')
+        ));
+        ?>
     </p>
     <p>
         <label for="microsoft_ads_overview_content"><?php _e('Overview Content', 'aimpro'); ?></label><br>
-        <textarea id="microsoft_ads_overview_content" name="microsoft_ads_overview_content" class="widefat" rows="5"><?php echo esc_textarea($overview_content); ?></textarea>
+        <?php
+        wp_editor($overview_content, 'microsoft_ads_overview_content', array(
+            'textarea_name' => 'microsoft_ads_overview_content',
+            'media_buttons' => false,
+            'textarea_rows' => 5,
+            'teeny' => true,
+            'quicktags' => array('buttons' => 'strong,em,link,ul,ol,li')
+        ));
+        ?>
     </p>
     <?php
 }
@@ -409,11 +441,27 @@ function aimpro_microsoft_ads_services_callback($post) {
         <h4><?php echo sprintf(__('Service %d', 'aimpro'), $i); ?></h4>
         <p>
             <label for="microsoft_ads_service_title_<?php echo $i; ?>"><?php _e('Service Title', 'aimpro'); ?></label><br>
-            <input type="text" id="microsoft_ads_service_title_<?php echo $i; ?>" name="microsoft_ads_service_title_<?php echo $i; ?>" value="<?php echo esc_attr($service_title); ?>" class="widefat">
+            <?php
+            wp_editor($service_title, "microsoft_ads_service_title_{$i}", array(
+                'textarea_name' => "microsoft_ads_service_title_{$i}",
+                'media_buttons' => false,
+                'textarea_rows' => 2,
+                'teeny' => true,
+                'quicktags' => array('buttons' => 'strong,em,link')
+            ));
+            ?>
         </p>
         <p>
             <label for="microsoft_ads_service_content_<?php echo $i; ?>"><?php _e('Service Content', 'aimpro'); ?></label><br>
-            <textarea id="microsoft_ads_service_content_<?php echo $i; ?>" name="microsoft_ads_service_content_<?php echo $i; ?>" class="widefat" rows="3"><?php echo esc_textarea($service_content); ?></textarea>
+            <?php
+            wp_editor($service_content, "microsoft_ads_service_content_{$i}", array(
+                'textarea_name' => "microsoft_ads_service_content_{$i}",
+                'media_buttons' => false,
+                'textarea_rows' => 3,
+                'teeny' => true,
+                'quicktags' => array('buttons' => 'strong,em,link,ul,ol,li')
+            ));
+            ?>
         </p>
         <p>
             <label for="microsoft_ads_service_icon_<?php echo $i; ?>"><?php _e('Service Icon (FontAwesome class)', 'aimpro'); ?></label><br>
@@ -448,19 +496,51 @@ function aimpro_microsoft_ads_case_study_callback($post) {
     ?>
     <p>
         <label for="microsoft_ads_case_study_title"><?php _e('Case Study Title', 'aimpro'); ?></label><br>
-        <input type="text" id="microsoft_ads_case_study_title" name="microsoft_ads_case_study_title" value="<?php echo esc_attr($case_study_title); ?>" class="widefat">
+        <?php
+        wp_editor($case_study_title, 'microsoft_ads_case_study_title', array(
+            'textarea_name' => 'microsoft_ads_case_study_title',
+            'media_buttons' => false,
+            'textarea_rows' => 3,
+            'teeny' => true,
+            'quicktags' => array('buttons' => 'strong,em,link')
+        ));
+        ?>
     </p>
     <p>
         <label for="microsoft_ads_case_study_intro"><?php _e('Case Study Intro', 'aimpro'); ?></label><br>
-        <textarea id="microsoft_ads_case_study_intro" name="microsoft_ads_case_study_intro" class="widefat" rows="3"><?php echo esc_textarea($case_study_intro); ?></textarea>
+        <?php
+        wp_editor($case_study_intro, 'microsoft_ads_case_study_intro', array(
+            'textarea_name' => 'microsoft_ads_case_study_intro',
+            'media_buttons' => false,
+            'textarea_rows' => 3,
+            'teeny' => true,
+            'quicktags' => array('buttons' => 'strong,em,link')
+        ));
+        ?>
     </p>
     <p>
         <label for="microsoft_ads_case_study_challenge"><?php _e('The Challenge', 'aimpro'); ?></label><br>
-        <textarea id="microsoft_ads_case_study_challenge" name="microsoft_ads_case_study_challenge" class="widefat" rows="4"><?php echo esc_textarea($case_study_challenge); ?></textarea>
+        <?php
+        wp_editor($case_study_challenge, 'microsoft_ads_case_study_challenge', array(
+            'textarea_name' => 'microsoft_ads_case_study_challenge',
+            'media_buttons' => false,
+            'textarea_rows' => 4,
+            'teeny' => true,
+            'quicktags' => array('buttons' => 'strong,em,link,ul,ol,li')
+        ));
+        ?>
     </p>
     <p>
         <label for="microsoft_ads_case_study_solution"><?php _e('Our Solution (one per line)', 'aimpro'); ?></label><br>
-        <textarea id="microsoft_ads_case_study_solution" name="microsoft_ads_case_study_solution" class="widefat" rows="5"><?php echo esc_textarea($case_study_solution); ?></textarea>
+        <?php
+        wp_editor($case_study_solution, 'microsoft_ads_case_study_solution', array(
+            'textarea_name' => 'microsoft_ads_case_study_solution',
+            'media_buttons' => false,
+            'textarea_rows' => 5,
+            'teeny' => true,
+            'quicktags' => array('buttons' => 'strong,em,link,ul,ol,li')
+        ));
+        ?>
     </p>
     
     <h4><?php _e('Case Study Results', 'aimpro'); ?></h4>
@@ -496,7 +576,15 @@ function aimpro_microsoft_ads_process_callback($post) {
     ?>
     <p>
         <label for="microsoft_ads_process_title"><?php _e('Process Section Title', 'aimpro'); ?></label><br>
-        <input type="text" id="microsoft_ads_process_title" name="microsoft_ads_process_title" value="<?php echo esc_attr($process_title); ?>" class="widefat">
+        <?php
+        wp_editor($process_title, 'microsoft_ads_process_title', array(
+            'textarea_name' => 'microsoft_ads_process_title',
+            'media_buttons' => false,
+            'textarea_rows' => 3,
+            'teeny' => true,
+            'quicktags' => array('buttons' => 'strong,em,link')
+        ));
+        ?>
     </p>
     
     <h4><?php _e('Process Steps', 'aimpro'); ?></h4>
@@ -520,12 +608,28 @@ function aimpro_microsoft_ads_process_callback($post) {
             </div>
             <div style="flex: 1;">
                 <label for="microsoft_ads_process_step_title_<?php echo $i; ?>"><?php _e('Step Title', 'aimpro'); ?></label><br>
-                <input type="text" id="microsoft_ads_process_step_title_<?php echo $i; ?>" name="microsoft_ads_process_step_title_<?php echo $i; ?>" value="<?php echo esc_attr($step_title); ?>" class="widefat">
+                <?php
+                wp_editor($step_title, "microsoft_ads_process_step_title_{$i}", array(
+                    'textarea_name' => "microsoft_ads_process_step_title_{$i}",
+                    'media_buttons' => false,
+                    'textarea_rows' => 2,
+                    'teeny' => true,
+                    'quicktags' => array('buttons' => 'strong,em,link')
+                ));
+                ?>
             </div>
         </div>
         <p>
             <label for="microsoft_ads_process_step_content_<?php echo $i; ?>"><?php _e('Step Content', 'aimpro'); ?></label><br>
-            <textarea id="microsoft_ads_process_step_content_<?php echo $i; ?>" name="microsoft_ads_process_step_content_<?php echo $i; ?>" class="widefat" rows="3"><?php echo esc_textarea($step_content); ?></textarea>
+            <?php
+            wp_editor($step_content, "microsoft_ads_process_step_content_{$i}", array(
+                'textarea_name' => "microsoft_ads_process_step_content_{$i}",
+                'media_buttons' => false,
+                'textarea_rows' => 3,
+                'teeny' => true,
+                'quicktags' => array('buttons' => 'strong,em,link,ul,ol,li')
+            ));
+            ?>
         </p>
     </div>
     
@@ -547,7 +651,15 @@ function aimpro_microsoft_ads_tools_callback($post) {
     ?>
     <p>
         <label for="microsoft_ads_tools_title"><?php _e('Tools Section Title', 'aimpro'); ?></label><br>
-        <input type="text" id="microsoft_ads_tools_title" name="microsoft_ads_tools_title" value="<?php echo esc_attr($tools_title); ?>" class="widefat">
+        <?php
+        wp_editor($tools_title, 'microsoft_ads_tools_title', array(
+            'textarea_name' => 'microsoft_ads_tools_title',
+            'media_buttons' => false,
+            'textarea_rows' => 3,
+            'teeny' => true,
+            'quicktags' => array('buttons' => 'strong,em,link')
+        ));
+        ?>
     </p>
     
     <h4><?php _e('Tools (4 items)', 'aimpro'); ?></h4>
@@ -566,11 +678,27 @@ function aimpro_microsoft_ads_tools_callback($post) {
         <h4><?php echo sprintf(__('Tool %d', 'aimpro'), $i); ?></h4>
         <p>
             <label for="microsoft_ads_tool_title_<?php echo $i; ?>"><?php _e('Tool Title', 'aimpro'); ?></label><br>
-            <input type="text" id="microsoft_ads_tool_title_<?php echo $i; ?>" name="microsoft_ads_tool_title_<?php echo $i; ?>" value="<?php echo esc_attr($tool_title); ?>" class="widefat">
+            <?php
+            wp_editor($tool_title, "microsoft_ads_tool_title_{$i}", array(
+                'textarea_name' => "microsoft_ads_tool_title_{$i}",
+                'media_buttons' => false,
+                'textarea_rows' => 2,
+                'teeny' => true,
+                'quicktags' => array('buttons' => 'strong,em,link')
+            ));
+            ?>
         </p>
         <p>
             <label for="microsoft_ads_tool_content_<?php echo $i; ?>"><?php _e('Tool Content', 'aimpro'); ?></label><br>
-            <textarea id="microsoft_ads_tool_content_<?php echo $i; ?>" name="microsoft_ads_tool_content_<?php echo $i; ?>" class="widefat" rows="3"><?php echo esc_textarea($tool_content); ?></textarea>
+            <?php
+            wp_editor($tool_content, "microsoft_ads_tool_content_{$i}", array(
+                'textarea_name' => "microsoft_ads_tool_content_{$i}",
+                'media_buttons' => false,
+                'textarea_rows' => 3,
+                'teeny' => true,
+                'quicktags' => array('buttons' => 'strong,em,link,ul,ol,li')
+            ));
+            ?>
         </p>
         <p>
             <label for="microsoft_ads_tool_icon_<?php echo $i; ?>"><?php _e('Tool Icon (FontAwesome class)', 'aimpro'); ?></label><br>
@@ -596,7 +724,15 @@ function aimpro_microsoft_ads_benefits_callback($post) {
     ?>
     <p>
         <label for="microsoft_ads_benefits_title"><?php _e('Benefits Section Title', 'aimpro'); ?></label><br>
-        <input type="text" id="microsoft_ads_benefits_title" name="microsoft_ads_benefits_title" value="<?php echo esc_attr($benefits_title); ?>" class="widefat">
+        <?php
+        wp_editor($benefits_title, 'microsoft_ads_benefits_title', array(
+            'textarea_name' => 'microsoft_ads_benefits_title',
+            'media_buttons' => false,
+            'textarea_rows' => 3,
+            'teeny' => true,
+            'quicktags' => array('buttons' => 'strong,em,link')
+        ));
+        ?>
     </p>
     
     <h4><?php _e('Benefits (6 items)', 'aimpro'); ?></h4>
@@ -615,11 +751,27 @@ function aimpro_microsoft_ads_benefits_callback($post) {
         <h4><?php echo sprintf(__('Benefit %d', 'aimpro'), $i); ?></h4>
         <p>
             <label for="microsoft_ads_benefit_title_<?php echo $i; ?>"><?php _e('Benefit Title', 'aimpro'); ?></label><br>
-            <input type="text" id="microsoft_ads_benefit_title_<?php echo $i; ?>" name="microsoft_ads_benefit_title_<?php echo $i; ?>" value="<?php echo esc_attr($benefit_title); ?>" class="widefat">
+            <?php
+            wp_editor($benefit_title, "microsoft_ads_benefit_title_{$i}", array(
+                'textarea_name' => "microsoft_ads_benefit_title_{$i}",
+                'media_buttons' => false,
+                'textarea_rows' => 2,
+                'teeny' => true,
+                'quicktags' => array('buttons' => 'strong,em,link')
+            ));
+            ?>
         </p>
         <p>
             <label for="microsoft_ads_benefit_content_<?php echo $i; ?>"><?php _e('Benefit Content', 'aimpro'); ?></label><br>
-            <textarea id="microsoft_ads_benefit_content_<?php echo $i; ?>" name="microsoft_ads_benefit_content_<?php echo $i; ?>" class="widefat" rows="3"><?php echo esc_textarea($benefit_content); ?></textarea>
+            <?php
+            wp_editor($benefit_content, "microsoft_ads_benefit_content_{$i}", array(
+                'textarea_name' => "microsoft_ads_benefit_content_{$i}",
+                'media_buttons' => false,
+                'textarea_rows' => 3,
+                'teeny' => true,
+                'quicktags' => array('buttons' => 'strong,em,link,ul,ol,li')
+            ));
+            ?>
         </p>
         <p>
             <label for="microsoft_ads_benefit_icon_<?php echo $i; ?>"><?php _e('Benefit Icon (FontAwesome class)', 'aimpro'); ?></label><br>
@@ -651,7 +803,15 @@ function aimpro_microsoft_ads_testimonial_callback($post) {
     ?>
     <p>
         <label for="microsoft_ads_testimonial_quote"><?php _e('Testimonial Quote', 'aimpro'); ?></label><br>
-        <textarea id="microsoft_ads_testimonial_quote" name="microsoft_ads_testimonial_quote" class="widefat" rows="4"><?php echo esc_textarea($testimonial_quote); ?></textarea>
+        <?php
+        wp_editor($testimonial_quote, 'microsoft_ads_testimonial_quote', array(
+            'textarea_name' => 'microsoft_ads_testimonial_quote',
+            'media_buttons' => false,
+            'textarea_rows' => 4,
+            'teeny' => true,
+            'quicktags' => array('buttons' => 'strong,em,link')
+        ));
+        ?>
     </p>
     <div style="display: flex; gap: 20px;">
         <div style="flex: 1;">
@@ -693,11 +853,27 @@ function aimpro_microsoft_ads_cta_callback($post) {
     ?>
     <p>
         <label for="microsoft_ads_cta_title"><?php _e('CTA Title', 'aimpro'); ?></label><br>
-        <input type="text" id="microsoft_ads_cta_title" name="microsoft_ads_cta_title" value="<?php echo esc_attr($cta_title); ?>" class="widefat">
+        <?php
+        wp_editor($cta_title, 'microsoft_ads_cta_title', array(
+            'textarea_name' => 'microsoft_ads_cta_title',
+            'media_buttons' => false,
+            'textarea_rows' => 3,
+            'teeny' => true,
+            'quicktags' => array('buttons' => 'strong,em,link')
+        ));
+        ?>
     </p>
     <p>
         <label for="microsoft_ads_cta_content"><?php _e('CTA Content', 'aimpro'); ?></label><br>
-        <textarea id="microsoft_ads_cta_content" name="microsoft_ads_cta_content" class="widefat" rows="3"><?php echo esc_textarea($cta_content); ?></textarea>
+        <?php
+        wp_editor($cta_content, 'microsoft_ads_cta_content', array(
+            'textarea_name' => 'microsoft_ads_cta_content',
+            'media_buttons' => false,
+            'textarea_rows' => 3,
+            'teeny' => true,
+            'quicktags' => array('buttons' => 'strong,em,link,ul,ol,li')
+        ));
+        ?>
     </p>
     
     <h4><?php _e('CTA Buttons', 'aimpro'); ?></h4>
@@ -737,10 +913,10 @@ function aimpro_save_microsoft_ads_meta_boxes($post_id) {
     // Save Hero Section
     if (isset($_POST['microsoft_ads_hero_nonce']) && wp_verify_nonce($_POST['microsoft_ads_hero_nonce'], basename(__FILE__))) {
         if (isset($_POST['microsoft_ads_hero_title'])) {
-            update_post_meta($post_id, '_microsoft_ads_hero_title', sanitize_text_field($_POST['microsoft_ads_hero_title']));
+            update_post_meta($post_id, '_microsoft_ads_hero_title', wp_kses_post($_POST['microsoft_ads_hero_title']));
         }
         if (isset($_POST['microsoft_ads_hero_subtitle'])) {
-            update_post_meta($post_id, '_microsoft_ads_hero_subtitle', sanitize_textarea_field($_POST['microsoft_ads_hero_subtitle']));
+            update_post_meta($post_id, '_microsoft_ads_hero_subtitle', wp_kses_post($_POST['microsoft_ads_hero_subtitle']));
         }
         
         // Hero Stats
@@ -765,10 +941,10 @@ function aimpro_save_microsoft_ads_meta_boxes($post_id) {
     // Save Overview Section
     if (isset($_POST['microsoft_ads_overview_nonce']) && wp_verify_nonce($_POST['microsoft_ads_overview_nonce'], basename(__FILE__))) {
         if (isset($_POST['microsoft_ads_overview_title'])) {
-            update_post_meta($post_id, '_microsoft_ads_overview_title', sanitize_text_field($_POST['microsoft_ads_overview_title']));
+            update_post_meta($post_id, '_microsoft_ads_overview_title', wp_kses_post($_POST['microsoft_ads_overview_title']));
         }
         if (isset($_POST['microsoft_ads_overview_content'])) {
-            update_post_meta($post_id, '_microsoft_ads_overview_content', sanitize_textarea_field($_POST['microsoft_ads_overview_content']));
+            update_post_meta($post_id, '_microsoft_ads_overview_content', wp_kses_post($_POST['microsoft_ads_overview_content']));
         }
     }
     
@@ -776,10 +952,10 @@ function aimpro_save_microsoft_ads_meta_boxes($post_id) {
     if (isset($_POST['microsoft_ads_services_nonce']) && wp_verify_nonce($_POST['microsoft_ads_services_nonce'], basename(__FILE__))) {
         for ($i = 1; $i <= 6; $i++) {
             if (isset($_POST["microsoft_ads_service_title_{$i}"])) {
-                update_post_meta($post_id, "_microsoft_ads_service_title_{$i}", sanitize_text_field($_POST["microsoft_ads_service_title_{$i}"]));
+                update_post_meta($post_id, "_microsoft_ads_service_title_{$i}", wp_kses_post($_POST["microsoft_ads_service_title_{$i}"]));
             }
             if (isset($_POST["microsoft_ads_service_content_{$i}"])) {
-                update_post_meta($post_id, "_microsoft_ads_service_content_{$i}", sanitize_textarea_field($_POST["microsoft_ads_service_content_{$i}"]));
+                update_post_meta($post_id, "_microsoft_ads_service_content_{$i}", wp_kses_post($_POST["microsoft_ads_service_content_{$i}"]));
             }
             if (isset($_POST["microsoft_ads_service_icon_{$i}"])) {
                 update_post_meta($post_id, "_microsoft_ads_service_icon_{$i}", sanitize_text_field($_POST["microsoft_ads_service_icon_{$i}"]));
@@ -790,16 +966,16 @@ function aimpro_save_microsoft_ads_meta_boxes($post_id) {
     // Save Case Study Section
     if (isset($_POST['microsoft_ads_case_study_nonce']) && wp_verify_nonce($_POST['microsoft_ads_case_study_nonce'], basename(__FILE__))) {
         if (isset($_POST['microsoft_ads_case_study_title'])) {
-            update_post_meta($post_id, '_microsoft_ads_case_study_title', sanitize_text_field($_POST['microsoft_ads_case_study_title']));
+            update_post_meta($post_id, '_microsoft_ads_case_study_title', wp_kses_post($_POST['microsoft_ads_case_study_title']));
         }
         if (isset($_POST['microsoft_ads_case_study_intro'])) {
-            update_post_meta($post_id, '_microsoft_ads_case_study_intro', sanitize_textarea_field($_POST['microsoft_ads_case_study_intro']));
+            update_post_meta($post_id, '_microsoft_ads_case_study_intro', wp_kses_post($_POST['microsoft_ads_case_study_intro']));
         }
         if (isset($_POST['microsoft_ads_case_study_challenge'])) {
-            update_post_meta($post_id, '_microsoft_ads_case_study_challenge', sanitize_textarea_field($_POST['microsoft_ads_case_study_challenge']));
+            update_post_meta($post_id, '_microsoft_ads_case_study_challenge', wp_kses_post($_POST['microsoft_ads_case_study_challenge']));
         }
         if (isset($_POST['microsoft_ads_case_study_solution'])) {
-            update_post_meta($post_id, '_microsoft_ads_case_study_solution', sanitize_textarea_field($_POST['microsoft_ads_case_study_solution']));
+            update_post_meta($post_id, '_microsoft_ads_case_study_solution', wp_kses_post($_POST['microsoft_ads_case_study_solution']));
         }
         
         // Case Study Results
@@ -816,7 +992,7 @@ function aimpro_save_microsoft_ads_meta_boxes($post_id) {
     // Save Process Section
     if (isset($_POST['microsoft_ads_process_nonce']) && wp_verify_nonce($_POST['microsoft_ads_process_nonce'], basename(__FILE__))) {
         if (isset($_POST['microsoft_ads_process_title'])) {
-            update_post_meta($post_id, '_microsoft_ads_process_title', sanitize_text_field($_POST['microsoft_ads_process_title']));
+            update_post_meta($post_id, '_microsoft_ads_process_title', wp_kses_post($_POST['microsoft_ads_process_title']));
         }
         
         // Process Steps
@@ -825,10 +1001,10 @@ function aimpro_save_microsoft_ads_meta_boxes($post_id) {
                 update_post_meta($post_id, "_microsoft_ads_process_step_number_{$i}", sanitize_text_field($_POST["microsoft_ads_process_step_number_{$i}"]));
             }
             if (isset($_POST["microsoft_ads_process_step_title_{$i}"])) {
-                update_post_meta($post_id, "_microsoft_ads_process_step_title_{$i}", sanitize_text_field($_POST["microsoft_ads_process_step_title_{$i}"]));
+                update_post_meta($post_id, "_microsoft_ads_process_step_title_{$i}", wp_kses_post($_POST["microsoft_ads_process_step_title_{$i}"]));
             }
             if (isset($_POST["microsoft_ads_process_step_content_{$i}"])) {
-                update_post_meta($post_id, "_microsoft_ads_process_step_content_{$i}", sanitize_textarea_field($_POST["microsoft_ads_process_step_content_{$i}"]));
+                update_post_meta($post_id, "_microsoft_ads_process_step_content_{$i}", wp_kses_post($_POST["microsoft_ads_process_step_content_{$i}"]));
             }
         }
     }
@@ -836,16 +1012,16 @@ function aimpro_save_microsoft_ads_meta_boxes($post_id) {
     // Save Tools Section
     if (isset($_POST['microsoft_ads_tools_nonce']) && wp_verify_nonce($_POST['microsoft_ads_tools_nonce'], basename(__FILE__))) {
         if (isset($_POST['microsoft_ads_tools_title'])) {
-            update_post_meta($post_id, '_microsoft_ads_tools_title', sanitize_text_field($_POST['microsoft_ads_tools_title']));
+            update_post_meta($post_id, '_microsoft_ads_tools_title', wp_kses_post($_POST['microsoft_ads_tools_title']));
         }
         
         // Tools
         for ($i = 1; $i <= 4; $i++) {
             if (isset($_POST["microsoft_ads_tool_title_{$i}"])) {
-                update_post_meta($post_id, "_microsoft_ads_tool_title_{$i}", sanitize_text_field($_POST["microsoft_ads_tool_title_{$i}"]));
+                update_post_meta($post_id, "_microsoft_ads_tool_title_{$i}", wp_kses_post($_POST["microsoft_ads_tool_title_{$i}"]));
             }
             if (isset($_POST["microsoft_ads_tool_content_{$i}"])) {
-                update_post_meta($post_id, "_microsoft_ads_tool_content_{$i}", sanitize_textarea_field($_POST["microsoft_ads_tool_content_{$i}"]));
+                update_post_meta($post_id, "_microsoft_ads_tool_content_{$i}", wp_kses_post($_POST["microsoft_ads_tool_content_{$i}"]));
             }
             if (isset($_POST["microsoft_ads_tool_icon_{$i}"])) {
                 update_post_meta($post_id, "_microsoft_ads_tool_icon_{$i}", sanitize_text_field($_POST["microsoft_ads_tool_icon_{$i}"]));
@@ -856,16 +1032,16 @@ function aimpro_save_microsoft_ads_meta_boxes($post_id) {
     // Save Benefits Section
     if (isset($_POST['microsoft_ads_benefits_nonce']) && wp_verify_nonce($_POST['microsoft_ads_benefits_nonce'], basename(__FILE__))) {
         if (isset($_POST['microsoft_ads_benefits_title'])) {
-            update_post_meta($post_id, '_microsoft_ads_benefits_title', sanitize_text_field($_POST['microsoft_ads_benefits_title']));
+            update_post_meta($post_id, '_microsoft_ads_benefits_title', wp_kses_post($_POST['microsoft_ads_benefits_title']));
         }
         
         // Benefits
         for ($i = 1; $i <= 6; $i++) {
             if (isset($_POST["microsoft_ads_benefit_title_{$i}"])) {
-                update_post_meta($post_id, "_microsoft_ads_benefit_title_{$i}", sanitize_text_field($_POST["microsoft_ads_benefit_title_{$i}"]));
+                update_post_meta($post_id, "_microsoft_ads_benefit_title_{$i}", wp_kses_post($_POST["microsoft_ads_benefit_title_{$i}"]));
             }
             if (isset($_POST["microsoft_ads_benefit_content_{$i}"])) {
-                update_post_meta($post_id, "_microsoft_ads_benefit_content_{$i}", sanitize_textarea_field($_POST["microsoft_ads_benefit_content_{$i}"]));
+                update_post_meta($post_id, "_microsoft_ads_benefit_content_{$i}", wp_kses_post($_POST["microsoft_ads_benefit_content_{$i}"]));
             }
             if (isset($_POST["microsoft_ads_benefit_icon_{$i}"])) {
                 update_post_meta($post_id, "_microsoft_ads_benefit_icon_{$i}", sanitize_text_field($_POST["microsoft_ads_benefit_icon_{$i}"]));
@@ -876,7 +1052,7 @@ function aimpro_save_microsoft_ads_meta_boxes($post_id) {
     // Save Testimonial Section
     if (isset($_POST['microsoft_ads_testimonial_nonce']) && wp_verify_nonce($_POST['microsoft_ads_testimonial_nonce'], basename(__FILE__))) {
         if (isset($_POST['microsoft_ads_testimonial_quote'])) {
-            update_post_meta($post_id, '_microsoft_ads_testimonial_quote', sanitize_textarea_field($_POST['microsoft_ads_testimonial_quote']));
+            update_post_meta($post_id, '_microsoft_ads_testimonial_quote', wp_kses_post($_POST['microsoft_ads_testimonial_quote']));
         }
         if (isset($_POST['microsoft_ads_testimonial_name'])) {
             update_post_meta($post_id, '_microsoft_ads_testimonial_name', sanitize_text_field($_POST['microsoft_ads_testimonial_name']));
@@ -889,10 +1065,10 @@ function aimpro_save_microsoft_ads_meta_boxes($post_id) {
     // Save CTA Section
     if (isset($_POST['microsoft_ads_cta_nonce']) && wp_verify_nonce($_POST['microsoft_ads_cta_nonce'], basename(__FILE__))) {
         if (isset($_POST['microsoft_ads_cta_title'])) {
-            update_post_meta($post_id, '_microsoft_ads_cta_title', sanitize_text_field($_POST['microsoft_ads_cta_title']));
+            update_post_meta($post_id, '_microsoft_ads_cta_title', wp_kses_post($_POST['microsoft_ads_cta_title']));
         }
         if (isset($_POST['microsoft_ads_cta_content'])) {
-            update_post_meta($post_id, '_microsoft_ads_cta_content', sanitize_textarea_field($_POST['microsoft_ads_cta_content']));
+            update_post_meta($post_id, '_microsoft_ads_cta_content', wp_kses_post($_POST['microsoft_ads_cta_content']));
         }
         if (isset($_POST['microsoft_ads_cta_button_1_text'])) {
             update_post_meta($post_id, '_microsoft_ads_cta_button_1_text', sanitize_text_field($_POST['microsoft_ads_cta_button_1_text']));
