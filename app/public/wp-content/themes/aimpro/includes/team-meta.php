@@ -78,11 +78,39 @@ Innovation: We embrace new technologies and creative approaches to solve complex
         </tr>
         <tr>
             <th><label for="team_header_title">Page Title</label></th>
-            <td><input type="text" id="team_header_title" name="team_header_title" value="<?php echo esc_attr($team_header_title); ?>" class="regular-text" /></td>
+            <td>
+                <?php
+                wp_editor(
+                    $team_header_title,
+                    'team_header_title',
+                    array(
+                        'textarea_name' => 'team_header_title',
+                        'textarea_rows' => 2,
+                        'teeny' => true,
+                        'media_buttons' => false,
+                        'quicktags' => array('buttons' => 'strong,em,link')
+                    )
+                );
+                ?>
+            </td>
         </tr>
         <tr>
             <th><label for="team_header_subtitle">Page Subtitle</label></th>
-            <td><input type="text" id="team_header_subtitle" name="team_header_subtitle" value="<?php echo esc_attr($team_header_subtitle); ?>" class="regular-text" /></td>
+            <td>
+                <?php
+                wp_editor(
+                    $team_header_subtitle,
+                    'team_header_subtitle',
+                    array(
+                        'textarea_name' => 'team_header_subtitle',
+                        'textarea_rows' => 2,
+                        'teeny' => true,
+                        'media_buttons' => false,
+                        'quicktags' => array('buttons' => 'strong,em,link')
+                    )
+                );
+                ?>
+            </td>
         </tr>
         
         <tr>
@@ -90,18 +118,60 @@ Innovation: We embrace new technologies and creative approaches to solve complex
         </tr>
         <tr>
             <th><label for="team_intro_heading">Introduction Heading</label></th>
-            <td><input type="text" id="team_intro_heading" name="team_intro_heading" value="<?php echo esc_attr($team_intro_heading); ?>" class="regular-text" /></td>
+            <td>
+                <?php
+                wp_editor(
+                    $team_intro_heading,
+                    'team_intro_heading',
+                    array(
+                        'textarea_name' => 'team_intro_heading',
+                        'textarea_rows' => 2,
+                        'teeny' => true,
+                        'media_buttons' => false,
+                        'quicktags' => array('buttons' => 'strong,em,link')
+                    )
+                );
+                ?>
+            </td>
         </tr>
         <tr>
             <th><label for="team_intro_desc">Introduction Description</label></th>
-            <td><textarea id="team_intro_desc" name="team_intro_desc" rows="4" class="large-text"><?php echo esc_textarea($team_intro_desc); ?></textarea></td>
+            <td>
+                <?php
+                wp_editor(
+                    $team_intro_desc,
+                    'team_intro_desc',
+                    array(
+                        'textarea_name' => 'team_intro_desc',
+                        'textarea_rows' => 4,
+                        'teeny' => true,
+                        'media_buttons' => false,
+                        'quicktags' => array('buttons' => 'strong,em,link')
+                    )
+                );
+                ?>
+            </td>
         </tr>
         
         <tr>
           <th colspan="2"><h3>Leadership Team</h3></th>
         </tr>        <tr>
             <th><label for="leadership_heading">Leadership Section Heading</label></th>
-            <td><input type="text" id="leadership_heading" name="leadership_heading" value="<?php echo esc_attr($leadership_heading); ?>" class="regular-text" /></td>
+            <td>
+                <?php
+                wp_editor(
+                    $leadership_heading,
+                    'leadership_heading',
+                    array(
+                        'textarea_name' => 'leadership_heading',
+                        'textarea_rows' => 2,
+                        'teeny' => true,
+                        'media_buttons' => false,
+                        'quicktags' => array('buttons' => 'strong,em,link')
+                    )
+                );
+                ?>
+            </td>
         </tr>
         
         <!-- Team Member 1 - Ajay Dhunna -->
@@ -118,7 +188,21 @@ Innovation: We embrace new technologies and creative approaches to solve complex
         </tr>
         <tr>
             <th><label for="member1_bio">Bio</label></th>
-            <td><textarea id="member1_bio" name="member1_bio" rows="3" class="large-text"><?php echo esc_textarea(get_post_meta($post->ID, 'member1_bio', true) ?: 'With over 15 years of experience in digital marketing, Ajay leads strategic initiatives and ensures exceptional value to clients. His expertise spans SEO, PPC, and growth marketing.'); ?></textarea></td>
+            <td>
+                <?php
+                wp_editor(
+                    get_post_meta($post->ID, 'member1_bio', true) ?: 'With over 15 years of experience in digital marketing, Ajay leads strategic initiatives and ensures exceptional value to clients. His expertise spans SEO, PPC, and growth marketing.',
+                    'member1_bio',
+                    array(
+                        'textarea_name' => 'member1_bio',
+                        'textarea_rows' => 3,
+                        'teeny' => true,
+                        'media_buttons' => false,
+                        'quicktags' => array('buttons' => 'strong,em,link')
+                    )
+                );
+                ?>
+            </td>
         </tr>
         <tr>
             <th><label for="member1_specialties">Specialties (comma separated)</label></th>
@@ -139,7 +223,21 @@ Innovation: We embrace new technologies and creative approaches to solve complex
         </tr>
         <tr>
             <th><label for="member2_bio">Bio</label></th>
-            <td><textarea id="member2_bio" name="member2_bio" rows="3" class="large-text"><?php echo esc_textarea(get_post_meta($post->ID, 'member2_bio', true) ?: 'Dinesh brings innovative growth strategies and deep analytics expertise to our team. He oversees marketing operations and ensures our campaigns deliver measurable results for clients.'); ?></textarea></td>
+            <td>
+                <?php
+                wp_editor(
+                    get_post_meta($post->ID, 'member2_bio', true) ?: 'Dinesh brings innovative growth strategies and deep analytics expertise to our team. He oversees marketing operations and ensures our campaigns deliver measurable results for clients.',
+                    'member2_bio',
+                    array(
+                        'textarea_name' => 'member2_bio',
+                        'textarea_rows' => 3,
+                        'teeny' => true,
+                        'media_buttons' => false,
+                        'quicktags' => array('buttons' => 'strong,em,link')
+                    )
+                );
+                ?>
+            </td>
         </tr>
         <tr>
             <th><label for="member2_specialties">Specialties (comma separated)</label></th>
@@ -160,7 +258,21 @@ Innovation: We embrace new technologies and creative approaches to solve complex
         </tr>
         <tr>
             <th><label for="member3_bio">Bio</label></th>
-            <td><textarea id="member3_bio" name="member3_bio" rows="3" class="large-text"><?php echo esc_textarea(get_post_meta($post->ID, 'member3_bio', true) ?: 'James oversees our creative initiatives and ensures we stay at the forefront of digital design. His expertise in UX and brand strategy drives our creative solutions.'); ?></textarea></td>
+            <td>
+                <?php
+                wp_editor(
+                    get_post_meta($post->ID, 'member3_bio', true) ?: 'James oversees our creative initiatives and ensures we stay at the forefront of digital design. His expertise in UX and brand strategy drives our creative solutions.',
+                    'member3_bio',
+                    array(
+                        'textarea_name' => 'member3_bio',
+                        'textarea_rows' => 3,
+                        'teeny' => true,
+                        'media_buttons' => false,
+                        'quicktags' => array('buttons' => 'strong,em,link')
+                    )
+                );
+                ?>
+            </td>
         </tr>
         <tr>
             <th><label for="member3_specialties">Specialties (comma separated)</label></th>
@@ -172,12 +284,38 @@ Innovation: We embrace new technologies and creative approaches to solve complex
         </tr>
         <tr>
             <th><label for="values_heading">Values Section Heading</label></th>
-            <td><input type="text" id="values_heading" name="values_heading" value="<?php echo esc_attr($values_heading); ?>" class="regular-text" /></td>
+            <td>
+                <?php
+                wp_editor(
+                    $values_heading,
+                    'values_heading',
+                    array(
+                        'textarea_name' => 'values_heading',
+                        'textarea_rows' => 2,
+                        'teeny' => true,
+                        'media_buttons' => false,
+                        'quicktags' => array('buttons' => 'strong,em,link')
+                    )
+                );
+                ?>
+            </td>
         </tr>
         <tr>
             <th><label for="values_list">Values List</label></th>
             <td>
-                <textarea id="values_list" name="values_list" rows="6" class="large-text"><?php echo esc_textarea($values_list); ?></textarea>
+                <?php
+                wp_editor(
+                    $values_list,
+                    'values_list',
+                    array(
+                        'textarea_name' => 'values_list',
+                        'textarea_rows' => 6,
+                        'teeny' => true,
+                        'media_buttons' => false,
+                        'quicktags' => array('buttons' => 'strong,em,link')
+                    )
+                );
+                ?>
                 <p class="description">Format: Value Name: Value Description (one per line)</p>
             </td>
         </tr>
@@ -187,11 +325,39 @@ Innovation: We embrace new technologies and creative approaches to solve complex
         </tr>
         <tr>
             <th><label for="team_cta_heading">CTA Heading</label></th>
-            <td><input type="text" id="team_cta_heading" name="team_cta_heading" value="<?php echo esc_attr($cta_heading); ?>" class="regular-text" /></td>
+            <td>
+                <?php
+                wp_editor(
+                    $cta_heading,
+                    'team_cta_heading',
+                    array(
+                        'textarea_name' => 'team_cta_heading',
+                        'textarea_rows' => 2,
+                        'teeny' => true,
+                        'media_buttons' => false,
+                        'quicktags' => array('buttons' => 'strong,em,link')
+                    )
+                );
+                ?>
+            </td>
         </tr>
         <tr>
             <th><label for="team_cta_desc">CTA Description</label></th>
-            <td><input type="text" id="team_cta_desc" name="team_cta_desc" value="<?php echo esc_attr($cta_desc); ?>" class="regular-text" /></td>
+            <td>
+                <?php
+                wp_editor(
+                    $cta_desc,
+                    'team_cta_desc',
+                    array(
+                        'textarea_name' => 'team_cta_desc',
+                        'textarea_rows' => 3,
+                        'teeny' => true,
+                        'media_buttons' => false,
+                        'quicktags' => array('buttons' => 'strong,em,link')
+                    )
+                );
+                ?>
+            </td>
         </tr>
         <tr>
             <th><label for="team_cta_button1_text">Primary Button Text</label></th>
@@ -233,22 +399,22 @@ function aimpro_save_team_meta($post_id) {
     
     // Header fields
     if (isset($_POST['team_header_title'])) {
-        update_post_meta($post_id, 'team_header_title', sanitize_text_field($_POST['team_header_title']));
+        update_post_meta($post_id, 'team_header_title', wp_kses_post($_POST['team_header_title']));
     }
     if (isset($_POST['team_header_subtitle'])) {
-        update_post_meta($post_id, 'team_header_subtitle', sanitize_text_field($_POST['team_header_subtitle']));
+        update_post_meta($post_id, 'team_header_subtitle', wp_kses_post($_POST['team_header_subtitle']));
     }
     
     // Intro fields
     if (isset($_POST['team_intro_heading'])) {
-        update_post_meta($post_id, 'team_intro_heading', sanitize_text_field($_POST['team_intro_heading']));
+        update_post_meta($post_id, 'team_intro_heading', wp_kses_post($_POST['team_intro_heading']));
     }
     if (isset($_POST['team_intro_desc'])) {
-        update_post_meta($post_id, 'team_intro_desc', sanitize_textarea_field($_POST['team_intro_desc']));
+        update_post_meta($post_id, 'team_intro_desc', wp_kses_post($_POST['team_intro_desc']));
     }
       // Leadership fields
     if (isset($_POST['leadership_heading'])) {
-        update_post_meta($post_id, 'leadership_heading', sanitize_text_field($_POST['leadership_heading']));
+        update_post_meta($post_id, 'leadership_heading', wp_kses_post($_POST['leadership_heading']));
     }
     
     // Team member fields
@@ -260,7 +426,7 @@ function aimpro_save_team_meta($post_id) {
             update_post_meta($post_id, "member{$i}_title", sanitize_text_field($_POST["member{$i}_title"]));
         }
         if (isset($_POST["member{$i}_bio"])) {
-            update_post_meta($post_id, "member{$i}_bio", sanitize_textarea_field($_POST["member{$i}_bio"]));
+            update_post_meta($post_id, "member{$i}_bio", wp_kses_post($_POST["member{$i}_bio"]));
         }
         if (isset($_POST["member{$i}_specialties"])) {
             update_post_meta($post_id, "member{$i}_specialties", sanitize_text_field($_POST["member{$i}_specialties"]));
@@ -269,18 +435,18 @@ function aimpro_save_team_meta($post_id) {
     
     // Values fields
     if (isset($_POST['values_heading'])) {
-        update_post_meta($post_id, 'values_heading', sanitize_text_field($_POST['values_heading']));
+        update_post_meta($post_id, 'values_heading', wp_kses_post($_POST['values_heading']));
     }
     if (isset($_POST['values_list'])) {
-        update_post_meta($post_id, 'values_list', sanitize_textarea_field($_POST['values_list']));
+        update_post_meta($post_id, 'values_list', wp_kses_post($_POST['values_list']));
     }
     
     // CTA fields
     if (isset($_POST['team_cta_heading'])) {
-        update_post_meta($post_id, 'team_cta_heading', sanitize_text_field($_POST['team_cta_heading']));
+        update_post_meta($post_id, 'team_cta_heading', wp_kses_post($_POST['team_cta_heading']));
     }
     if (isset($_POST['team_cta_desc'])) {
-        update_post_meta($post_id, 'team_cta_desc', sanitize_text_field($_POST['team_cta_desc']));
+        update_post_meta($post_id, 'team_cta_desc', wp_kses_post($_POST['team_cta_desc']));
     }
     if (isset($_POST['team_cta_button1_text'])) {
         update_post_meta($post_id, 'team_cta_button1_text', sanitize_text_field($_POST['team_cta_button1_text']));
