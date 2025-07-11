@@ -344,19 +344,75 @@ function training_mentoring_meta_box_callback($post) {
         <table class="form-table">
             <tr>
                 <th><label for="training_mentoring_header_title">Page Header Title</label></th>
-                <td><input type="text" id="training_mentoring_header_title" name="training_mentoring_header_title" value="<?php echo esc_attr($header_title); ?>" placeholder="Training & Mentoring" /></td>
+                <td>
+                    <?php
+                    wp_editor(
+                        $header_title ?: 'Training & Mentoring',
+                        'training_mentoring_header_title',
+                        array(
+                            'textarea_name' => 'training_mentoring_header_title',
+                            'textarea_rows' => 2,
+                            'teeny' => true,
+                            'media_buttons' => false,
+                            'quicktags' => array('buttons' => 'strong,em,link')
+                        )
+                    );
+                    ?>
+                </td>
             </tr>
             <tr>
                 <th><label for="training_mentoring_header_subtitle">Page Header Subtitle</label></th>
-                <td><textarea id="training_mentoring_header_subtitle" name="training_mentoring_header_subtitle" placeholder="Accelerate your digital marketing expertise with personalised guidance"><?php echo esc_textarea($header_subtitle); ?></textarea></td>
+                <td>
+                    <?php
+                    wp_editor(
+                        $header_subtitle ?: 'Accelerate your digital marketing expertise with personalised guidance',
+                        'training_mentoring_header_subtitle',
+                        array(
+                            'textarea_name' => 'training_mentoring_header_subtitle',
+                            'textarea_rows' => 3,
+                            'teeny' => true,
+                            'media_buttons' => false,
+                            'quicktags' => array('buttons' => 'strong,em,link')
+                        )
+                    );
+                    ?>
+                </td>
             </tr>
             <tr>
                 <th><label for="training_mentoring_intro_title">Introduction Title</label></th>
-                <td><input type="text" id="training_mentoring_intro_title" name="training_mentoring_intro_title" value="<?php echo esc_attr($intro_title); ?>" placeholder="Invest in Your Digital Marketing Future" /></td>
+                <td>
+                    <?php
+                    wp_editor(
+                        $intro_title ?: 'Invest in Your Digital Marketing Future',
+                        'training_mentoring_intro_title',
+                        array(
+                            'textarea_name' => 'training_mentoring_intro_title',
+                            'textarea_rows' => 2,
+                            'teeny' => true,
+                            'media_buttons' => false,
+                            'quicktags' => array('buttons' => 'strong,em,link')
+                        )
+                    );
+                    ?>
+                </td>
             </tr>
             <tr>
                 <th><label for="training_mentoring_intro_content">Introduction Content</label></th>
-                <td><textarea id="training_mentoring_intro_content" name="training_mentoring_intro_content" placeholder="Whether you're looking to upskill your team..."><?php echo esc_textarea($intro_content); ?></textarea></td>
+                <td>
+                    <?php
+                    wp_editor(
+                        $intro_content ?: 'Whether you\'re looking to upskill your team, advance your career, or master specific digital marketing disciplines, our training and mentoring programs provide the personalised guidance you need to achieve your goals faster.',
+                        'training_mentoring_intro_content',
+                        array(
+                            'textarea_name' => 'training_mentoring_intro_content',
+                            'textarea_rows' => 4,
+                            'teeny' => true,
+                            'media_buttons' => false,
+                            'quicktags' => array('buttons' => 'strong,em,link')
+                        )
+                    );
+                    ?>
+                </td>
             </tr>
         </table>
 
@@ -473,7 +529,21 @@ function training_mentoring_meta_box_callback($post) {
             <table class="form-table">
                 <tr>
                     <th><label for="training_mentoring_success_stories_title">Section Title</label></th>
-                    <td><input type="text" id="training_mentoring_success_stories_title" name="training_mentoring_success_stories_title" value="<?php echo esc_attr($success_stories_title); ?>" placeholder="Success Stories" /></td>
+                    <td>
+                        <?php
+                        wp_editor(
+                            $success_stories_title ?: 'Success Stories',
+                            'training_mentoring_success_stories_title',
+                            array(
+                                'textarea_name' => 'training_mentoring_success_stories_title',
+                                'textarea_rows' => 2,
+                                'teeny' => true,
+                                'media_buttons' => false,
+                                'quicktags' => array('buttons' => 'strong,em,link')
+                            )
+                        );
+                        ?>
+                    </td>
                 </tr>
             </table>
             
@@ -522,11 +592,11 @@ function training_mentoring_meta_box_callback($post) {
             <table class="form-table">
                 <tr>
                     <th><label for="training_mentoring_learning_paths_title">Section Title</label></th>
-                    <td><input type="text" id="training_mentoring_learning_paths_title" name="training_mentoring_learning_paths_title" value="<?php echo esc_attr($learning_paths_title); ?>" placeholder="Learning Paths" /></td>
+                    <td><?php wp_editor($learning_paths_title, 'training_mentoring_learning_paths_title', array('textarea_rows' => 2, 'media_buttons' => false, 'teeny' => true, 'quicktags' => array('buttons' => 'strong,em,link'))); ?></td>
                 </tr>
                 <tr>
                     <th><label for="training_mentoring_learning_paths_subtitle">Section Subtitle</label></th>
-                    <td><textarea id="training_mentoring_learning_paths_subtitle" name="training_mentoring_learning_paths_subtitle" placeholder="Structured progression routes based on your career goals"><?php echo esc_textarea($learning_paths_subtitle); ?></textarea></td>
+                    <td><?php wp_editor($learning_paths_subtitle, 'training_mentoring_learning_paths_subtitle', array('textarea_rows' => 3, 'media_buttons' => false, 'teeny' => true, 'quicktags' => array('buttons' => 'strong,em,link'))); ?></td>
                 </tr>
             </table>
             
@@ -583,7 +653,7 @@ function training_mentoring_meta_box_callback($post) {
             <table class="form-table">
                 <tr>
                     <th><label for="training_mentoring_mentors_title">Section Title</label></th>
-                    <td><input type="text" id="training_mentoring_mentors_title" name="training_mentoring_mentors_title" value="<?php echo esc_attr($mentors_title); ?>" placeholder="Meet Your Mentors" /></td>
+                    <td><?php wp_editor($mentors_title, 'training_mentoring_mentors_title', array('textarea_rows' => 2, 'media_buttons' => false, 'teeny' => true, 'quicktags' => array('buttons' => 'strong,em,link'))); ?></td>
                 </tr>
             </table>
             
@@ -648,7 +718,7 @@ function training_mentoring_meta_box_callback($post) {
             <table class="form-table">
                 <tr>
                     <th><label for="training_mentoring_faq_title">FAQ Title</label></th>
-                    <td><input type="text" id="training_mentoring_faq_title" name="training_mentoring_faq_title" value="<?php echo esc_attr($faq_title); ?>" placeholder="Frequently Asked Questions" /></td>
+                    <td><?php wp_editor($faq_title, 'training_mentoring_faq_title', array('textarea_rows' => 2, 'media_buttons' => false, 'teeny' => true, 'quicktags' => array('buttons' => 'strong,em,link'))); ?></td>
                 </tr>
             </table>
             
@@ -677,15 +747,15 @@ function training_mentoring_meta_box_callback($post) {
             <table class="form-table">
                 <tr>
                     <th><label for="training_mentoring_cta_title">CTA Title</label></th>
-                    <td><input type="text" id="training_mentoring_cta_title" name="training_mentoring_cta_title" value="<?php echo esc_attr($cta_title); ?>" placeholder="Ready to Accelerate Your Marketing Career?" /></td>
+                    <td><?php wp_editor($cta_title, 'training_mentoring_cta_title', array('textarea_rows' => 2, 'media_buttons' => false, 'teeny' => true, 'quicktags' => array('buttons' => 'strong,em,link'))); ?></td>
                 </tr>
                 <tr>
                     <th><label for="training_mentoring_cta_content">CTA Content</label></th>
-                    <td><textarea id="training_mentoring_cta_content" name="training_mentoring_cta_content" placeholder="Book a free consultation to discuss your goals..."><?php echo esc_textarea($cta_content); ?></textarea></td>
+                    <td><?php wp_editor($cta_content, 'training_mentoring_cta_content', array('textarea_rows' => 4, 'media_buttons' => false, 'teeny' => true, 'quicktags' => array('buttons' => 'strong,em,link'))); ?></td>
                 </tr>
                 <tr>
                     <th><label for="training_mentoring_cta_primary_text">Primary Button Text</label></th>
-                    <td><input type="text" id="training_mentoring_cta_primary_text" name="training_mentoring_cta_primary_text" value="<?php echo esc_attr($cta_primary_text); ?>" placeholder="Book Free Consultation" /></td>
+                    <td><?php wp_editor($cta_primary_text, 'training_mentoring_cta_primary_text', array('textarea_rows' => 2, 'media_buttons' => false, 'teeny' => true, 'quicktags' => array('buttons' => 'strong,em,link'))); ?></td>
                 </tr>
                 <tr>
                     <th><label for="training_mentoring_cta_primary_url">Primary Button URL</label></th>
@@ -693,7 +763,7 @@ function training_mentoring_meta_box_callback($post) {
                 </tr>
                 <tr>
                     <th><label for="training_mentoring_cta_secondary_text">Secondary Button Text</label></th>
-                    <td><input type="text" id="training_mentoring_cta_secondary_text" name="training_mentoring_cta_secondary_text" value="<?php echo esc_attr($cta_secondary_text); ?>" placeholder="Contact Us" /></td>
+                    <td><?php wp_editor($cta_secondary_text, 'training_mentoring_cta_secondary_text', array('textarea_rows' => 2, 'media_buttons' => false, 'teeny' => true, 'quicktags' => array('buttons' => 'strong,em,link'))); ?></td>
                 </tr>
                 <tr>
                     <th><label for="training_mentoring_cta_secondary_url">Secondary Button URL</label></th>
@@ -701,7 +771,7 @@ function training_mentoring_meta_box_callback($post) {
                 </tr>
                 <tr>
                     <th><label for="training_mentoring_cta_note">CTA Note</label></th>
-                    <td><input type="text" id="training_mentoring_cta_note" name="training_mentoring_cta_note" value="<?php echo esc_attr($cta_note); ?>" placeholder="Free 15-minute consultation � No obligation � personalised recommendations" /></td>
+                    <td><?php wp_editor($cta_note, 'training_mentoring_cta_note', array('textarea_rows' => 2, 'media_buttons' => false, 'teeny' => true, 'quicktags' => array('buttons' => 'strong,em,link'))); ?></td>
                 </tr>
             </table>
         </div>
@@ -793,9 +863,31 @@ function save_training_mentoring_meta($post_id) {
 
     foreach ($fields as $field) {
         if (isset($_POST[$field])) {
-            $value = ($field === 'training_mentoring_cta_primary_url' || $field === 'training_mentoring_cta_secondary_url') 
-                ? esc_url_raw($_POST[$field]) 
-                : sanitize_textarea_field($_POST[$field]);
+            // Fields converted to wp_editor need wp_kses_post for HTML preservation
+            $wp_editor_fields = array(
+                'training_mentoring_header_title',
+                'training_mentoring_header_subtitle', 
+                'training_mentoring_intro_title',
+                'training_mentoring_intro_content',
+                'training_mentoring_success_stories_title',
+                'training_mentoring_learning_paths_title',
+                'training_mentoring_learning_paths_subtitle',
+                'training_mentoring_mentors_title',
+                'training_mentoring_faq_title',
+                'training_mentoring_cta_title',
+                'training_mentoring_cta_content',
+                'training_mentoring_cta_primary_text',
+                'training_mentoring_cta_secondary_text',
+                'training_mentoring_cta_note'
+            );
+
+            if (in_array($field, $wp_editor_fields)) {
+                $value = wp_kses_post($_POST[$field]);
+            } elseif ($field === 'training_mentoring_cta_primary_url' || $field === 'training_mentoring_cta_secondary_url') {
+                $value = esc_url_raw($_POST[$field]);
+            } else {
+                $value = sanitize_textarea_field($_POST[$field]);
+            }
             update_post_meta($post_id, '_' . $field, $value);
         }
     }
