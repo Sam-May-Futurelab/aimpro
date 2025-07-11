@@ -1,7 +1,15 @@
 ﻿<?php
 /**
  * Template Name: SEO Services Page
- * Description: Comprehensive SEO services overview
+                            <h2><?php echo wp_kses_post($overview_title); ?></h2>
+                        <p><?php echo wp_kses_post($overview_description); ?></p>
+                        
+                        <div class="benefits-section">
+                            <h3><?php echo wp_kses_post($benefits_title); ?></h3>               <h2><?php echo wp_kses_post($overview_title); ?></h2>
+                        <p><?php echo wp_kses_post($overview_description); ?></p>
+                        
+                        <div class="benefits-section">
+                            <h3><?php echo wp_kses_post($benefits_title); ?></h3>scription: Comprehensive SEO services overview
  */
 
 get_header(); 
@@ -33,8 +41,8 @@ $header_subtitle = get_post_meta(get_the_ID(), '_seo_header_subtitle', true) ?: 
           <!-- Page Header -->
         <section class="page-header">
             <div class="page-header-content animate-on-scroll animate-fade-up">
-                <h1><?php echo esc_html($header_title); ?></h1>
-                <p class="page-subtitle"><?php echo esc_html($header_subtitle); ?></p>
+                <h1><?php echo wp_kses_post($header_title); ?></h1>
+                <p class="page-subtitle"><?php echo wp_kses_post($header_subtitle); ?></p>
             </div>
         </section>        <!-- SEO Overview -->
         <section class="seo-overview">
@@ -48,7 +56,7 @@ $header_subtitle = get_post_meta(get_the_ID(), '_seo_header_subtitle', true) ?: 
                         $benefits = get_post_meta(get_the_ID(), '_seo_overview_benefits', true) ?: $defaults['overview_benefits'];
                         ?>
                         <h2><?php echo esc_html($overview_title); ?></h2>
-                        <p><?php echo esc_html($overview_description); ?></p>
+                        <p><?php echo wp_kses_post($overview_description); ?></p>
                         
                         <div class="seo-benefits">
                             <h3><?php echo esc_html($benefits_title); ?></h3>
@@ -73,7 +81,7 @@ $header_subtitle = get_post_meta(get_the_ID(), '_seo_header_subtitle', true) ?: 
                 <?php
                 $services_grid_title = get_post_meta(get_the_ID(), '_seo_services_grid_title', true) ?: $defaults['services_grid_title'];
                 ?>
-                <h2 class="animate-on-scroll animate-fade-up"><?php echo esc_html($services_grid_title); ?></h2>
+                <h2 class="animate-on-scroll animate-fade-up"><?php echo wp_kses_post($services_grid_title); ?></h2>
                 <div class="services-grid">
                     
                     <?php for ($i = 1; $i <= 5; $i++): 
@@ -139,12 +147,12 @@ $header_subtitle = get_post_meta(get_the_ID(), '_seo_header_subtitle', true) ?: 
                         $solution_title = get_post_meta(get_the_ID(), '_seo_case_study_solution_title', true) ?: $defaults['case_study_solution_title'];
                         $solutions = get_post_meta(get_the_ID(), '_seo_case_study_solutions', true) ?: $defaults['case_study_solutions'];
                         ?>
-                        <span class="case-study-label"><?php echo esc_html($case_study_label); ?></span>
-                        <h2><?php echo esc_html($case_study_title); ?></h2>
-                        <p><?php echo esc_html($case_study_description); ?></p>
+                        <span class="case-study-label"><?php echo wp_kses_post($case_study_label); ?></span>
+                        <h2><?php echo wp_kses_post($case_study_title); ?></h2>
+                        <p><?php echo wp_kses_post($case_study_description); ?></p>
                         
                         <div class="case-study-challenge animate-on-scroll animate-fade-up">
-                            <h3><?php echo esc_html($challenge_title); ?></h3>
+                            <h3><?php echo wp_kses_post($challenge_title); ?></h3>
                             <ul>
                                 <?php foreach ((array)$challenges as $challenge): ?>
                                     <li><?php echo esc_html($challenge); ?></li>
@@ -153,7 +161,7 @@ $header_subtitle = get_post_meta(get_the_ID(), '_seo_header_subtitle', true) ?: 
                         </div>
 
                         <div class="case-study-solution animate-on-scroll animate-fade-up">
-                            <h3><?php echo esc_html($solution_title); ?></h3>
+                            <h3><?php echo wp_kses_post($solution_title); ?></h3>
                             <ul>
                                 <?php foreach ((array)$solutions as $solution): ?>
                                     <li><?php echo esc_html($solution); ?></li>
@@ -167,19 +175,19 @@ $header_subtitle = get_post_meta(get_the_ID(), '_seo_header_subtitle', true) ?: 
                         $case_study_link = get_post_meta(get_the_ID(), '_seo_case_study_link', true) ?: $defaults['case_study_link'];
                         $case_study_link_text = get_post_meta(get_the_ID(), '_seo_case_study_link_text', true) ?: $defaults['case_study_link_text'];
                         ?>
-                        <h3><?php echo esc_html($results_title); ?></h3>
+                        <h3><?php echo wp_kses_post($results_title); ?></h3>
                         <div class="results-grid">
                             <?php for ($i = 1; $i <= 4; $i++): 
                                 $result_number = get_post_meta(get_the_ID(), "_seo_case_study_result_{$i}_number", true) ?: $defaults["case_study_result_{$i}_number"];
                                 $result_label = get_post_meta(get_the_ID(), "_seo_case_study_result_{$i}_label", true) ?: $defaults["case_study_result_{$i}_label"];
                             ?>
                             <div class="result-item animate-on-scroll animate-stagger animate-scale-up">
-                                <div class="result-number"><?php echo esc_html($result_number); ?></div>
-                                <div class="result-label"><?php echo esc_html($result_label); ?></div>
+                                <div class="result-number"><?php echo wp_kses_post($result_number); ?></div>
+                                <div class="result-label"><?php echo wp_kses_post($result_label); ?></div>
                             </div>
                             <?php endfor; ?>
                         </div>
-                        <a href="<?php echo esc_url($case_study_link); ?>" class="case-study-link"><?php echo esc_html($case_study_link_text); ?></a>
+                        <a href="<?php echo esc_url($case_study_link); ?>" class="case-study-link"><?php echo wp_kses_post($case_study_link_text); ?></a>
                     </div>
                 </div>
             </div>
@@ -189,7 +197,7 @@ $header_subtitle = get_post_meta(get_the_ID(), '_seo_header_subtitle', true) ?: 
                 <?php
                 $process_title = get_post_meta(get_the_ID(), '_seo_process_title', true) ?: $defaults['process_title'];
                 ?>
-                <h2 class="animate-on-scroll animate-fade-up"><?php echo esc_html($process_title); ?></h2>
+                <h2 class="animate-on-scroll animate-fade-up"><?php echo wp_kses_post($process_title); ?></h2>
                 <div class="process-steps">
                     
                     <?php for ($i = 1; $i <= 4; $i++): 
@@ -310,16 +318,16 @@ $header_subtitle = get_post_meta(get_the_ID(), '_seo_header_subtitle', true) ?: 
                     $testimonial_company = get_post_meta(get_the_ID(), '_seo_testimonial_company', true) ?: $defaults['testimonial_company'];
                     ?>
                     <blockquote>
-                        <?php echo esc_html($testimonial_quote); ?>
+                        <?php echo wp_kses_post($testimonial_quote); ?>
                     </blockquote>
                     <div class="testimonial-author">
                         <?php if (!empty($testimonial_image)): ?>
                             <img src="<?php echo esc_url($testimonial_image); ?>" alt="<?php echo esc_attr($testimonial_name); ?>" />
                         <?php endif; ?>
                         <div class="author-info">
-                            <h4><?php echo esc_html($testimonial_name); ?></h4>
-                            <span><?php echo esc_html($testimonial_title); ?></span>
-                            <div class="author-company"><?php echo esc_html($testimonial_company); ?></div>
+                            <h4><?php echo wp_kses_post($testimonial_name); ?></h4>
+                            <span><?php echo wp_kses_post($testimonial_title); ?></span>
+                            <div class="author-company"><?php echo wp_kses_post($testimonial_company); ?></div>
                         </div>
                     </div>
                 </div>
@@ -337,11 +345,11 @@ $header_subtitle = get_post_meta(get_the_ID(), '_seo_header_subtitle', true) ?: 
                     $cta_secondary_link = get_post_meta(get_the_ID(), '_seo_cta_secondary_link', true) ?: $defaults['cta_secondary_link'];
                     $cta_features = get_post_meta(get_the_ID(), '_seo_cta_features', true) ?: $defaults['cta_features'];
                     ?>
-                    <h2><?php echo esc_html($cta_title); ?></h2>
-                    <p><?php echo esc_html($cta_description); ?></p>
+                    <h2><?php echo wp_kses_post($cta_title); ?></h2>
+                    <p><?php echo wp_kses_post($cta_description); ?></p>
                     <div class="cta-buttons">
-                        <a href="<?php echo esc_url($cta_primary_link); ?>" class="btn-primary"><?php echo esc_html($cta_primary_text); ?></a>
-                        <a href="<?php echo esc_url($cta_secondary_link); ?>" class="btn-outline"><?php echo esc_html($cta_secondary_text); ?></a>
+                        <a href="<?php echo esc_url($cta_primary_link); ?>" class="btn-primary"><?php echo wp_kses_post($cta_primary_text); ?></a>
+                        <a href="<?php echo esc_url($cta_secondary_link); ?>" class="btn-outline"><?php echo wp_kses_post($cta_secondary_text); ?></a>
                     </div>
                     <div class="cta-features">
                         <?php foreach ((array)$cta_features as $feature): ?>
