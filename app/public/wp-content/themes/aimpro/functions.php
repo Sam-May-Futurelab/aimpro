@@ -87,7 +87,7 @@ add_action('wp_loaded', 'aimpro_check_submissions_table');
 // Include retargeting display default values function for both frontend and admin
 if (!function_exists('aimpro_get_retargeting_display_default_values')) {
     /**
-     * Set default values for Retargeting & Display Ads page meta fields
+     * Set default values for Retargeting & Display Advertising page meta fields
      * This ensures fields are pre-populated with the frontend content
      */
     function aimpro_get_retargeting_display_default_values() {
@@ -1940,6 +1940,156 @@ if (!function_exists('aimpro_get_seo_audit_default_values')) {
             'seo_audit_cta_description' => 'Get your comprehensive SEO audit today and discover exactly what\'s holding your website back from ranking higher and attracting more organic traffic.',
             'seo_audit_cta_primary_text' => 'Get Your Free SEO Audit',
             'seo_audit_cta_secondary_text' => 'View All Services',
+        );
+    }
+}
+
+// Get SEO Services default values
+if (!function_exists('get_seo_services_defaults')) {
+    function get_seo_services_defaults() {
+        return array(
+            'header_title' => 'Professional SEO Services',
+            'header_subtitle' => 'Drive more organic traffic and boost your search rankings with our data-driven SEO strategies and proven methodologies.',
+            'overview_title' => 'Comprehensive SEO Solutions That Drive Results',
+            'overview_description' => 'Our proven SEO strategies help businesses increase organic traffic, improve search rankings, and drive sustainable growth. From technical optimization to content strategy, we provide end-to-end SEO services that deliver measurable results.',
+            'overview_benefits_title' => 'Why Choose Our SEO Services:',
+            'overview_benefits' => array(
+                'Proven track record with 300+ successful campaigns',
+                'Data-driven approach with transparent reporting',
+                'White-hat techniques that ensure long-term success',
+                'Dedicated account management and regular updates',
+                'Custom strategies tailored to your industry',
+                'Local, national, and international SEO expertise'
+            ),
+            'overview_image' => '',
+            'services_grid_title' => 'Our SEO Service Portfolio',
+            
+            // Service 1 - Technical SEO
+            'service_1_title' => 'Technical SEO',
+            'service_1_description' => 'Optimize your website\'s technical foundation for better crawlability, indexing, and user experience.',
+            'service_1_features' => array('Site speed optimization', 'Mobile responsiveness', 'Core Web Vitals', 'XML sitemaps', 'Schema markup'),
+            'service_1_result' => '45% average improvement in Core Web Vitals',
+            'service_1_link' => '/services/technical-seo',
+            'service_1_featured' => true,
+            
+            // Service 2 - On-Page SEO
+            'service_2_title' => 'On-Page SEO',
+            'service_2_description' => 'Optimize individual pages for target keywords and improve content quality and relevance.',
+            'service_2_features' => array('Keyword optimization', 'Meta tags', 'Content optimization', 'Internal linking', 'Header structure'),
+            'service_2_result' => '68% increase in keyword rankings',
+            'service_2_link' => '/services/on-page-seo',
+            'service_2_featured' => false,
+            
+            // Service 3 - Local SEO
+            'service_3_title' => 'Local SEO',
+            'service_3_description' => 'Dominate local search results and attract more customers from your geographic area.',
+            'service_3_features' => array('Google My Business', 'Local citations', 'Review management', 'Local keywords', 'NAP consistency'),
+            'service_3_result' => '89% increase in local visibility',
+            'service_3_link' => '/services/local-seo',
+            'service_3_featured' => false,
+            
+            // Service 4 - Content SEO
+            'service_4_title' => 'Content SEO',
+            'service_4_description' => 'Create and optimize high-quality content that ranks well and engages your audience.',
+            'service_4_features' => array('Content strategy', 'Keyword research', 'Blog optimization', 'Content audits', 'Topic clusters'),
+            'service_4_result' => '125% growth in organic traffic',
+            'service_4_link' => '/services/content-seo',
+            'service_4_featured' => false,
+            
+            // Service 5 - Link Building
+            'service_5_title' => 'Link Building',
+            'service_5_description' => 'Build high-quality backlinks to increase domain authority and improve search rankings.',
+            'service_5_features' => array('White-hat link building', 'Guest posting', 'Digital PR', 'Resource pages', 'Broken link building'),
+            'service_5_result' => '78% increase in domain authority',
+            'service_5_link' => '/services/link-building',
+            'service_5_featured' => false,
+            
+            // Service 6 - SEO Audits
+            'service_6_title' => 'SEO Audits',
+            'service_6_description' => 'Comprehensive analysis of your website\'s SEO performance and actionable improvement recommendations.',
+            'service_6_features' => array('Technical analysis', 'Competitor research', 'Keyword gaps', 'Content audit', 'Backlink analysis'),
+            'service_6_result' => '40+ page detailed report',
+            'service_6_link' => '/services/seo-audit',
+            'service_6_featured' => false,
+            
+            // Case Study
+            'case_study_label' => 'SEO Success Story',
+            'case_study_title' => 'TechStart Solutions: 380% Organic Traffic Growth',
+            'case_study_description' => 'TechStart Solutions was struggling with declining organic traffic and poor search rankings. Our comprehensive SEO strategy transformed their digital presence.',
+            'case_study_challenge_title' => 'The Challenge',
+            'case_study_challenges' => array(
+                'Poor technical SEO foundation',
+                'Limited content strategy',
+                'Weak backlink profile',
+                'No local SEO presence',
+                'Outdated SEO practices'
+            ),
+            'case_study_solution_title' => 'Our Solution',
+            'case_study_solutions' => array(
+                'Complete technical SEO overhaul',
+                'Comprehensive content strategy',
+                'Strategic link building campaign',
+                'Local SEO optimization',
+                'Ongoing monitoring and optimization'
+            ),
+            'case_study_results_title' => 'Results Achieved',
+            'case_study_link' => '/case-studies',
+            'case_study_link_text' => 'Read Full Case Study',
+            
+            // Case Study Results
+            'case_study_result_1_number' => '380%',
+            'case_study_result_1_label' => 'Organic Traffic Increase',
+            'case_study_result_2_number' => '250%',
+            'case_study_result_2_label' => 'Keyword Rankings Improved',
+            'case_study_result_3_number' => '68%',
+            'case_study_result_3_label' => 'Conversion Rate Boost',
+            'case_study_result_4_number' => '45%',
+            'case_study_result_4_label' => 'Page Speed Improvement',
+            
+            // Process
+            'process_title' => 'Our Proven SEO Process',
+            'process_step_1_title' => 'SEO Audit & Strategy',
+            'process_step_1_description' => 'Comprehensive analysis of your current SEO performance and competitive landscape to develop a custom strategy.',
+            'process_step_2_title' => 'Technical Optimization',
+            'process_step_2_description' => 'Fix technical issues, improve site speed, and ensure proper indexing and crawlability.',
+            'process_step_3_title' => 'Content & On-Page',
+            'process_step_3_description' => 'Optimize existing content and create new, high-quality content targeting relevant keywords.',
+            'process_step_4_title' => 'Link Building & Promotion',
+            'process_step_4_description' => 'Build high-quality backlinks and increase domain authority through strategic outreach and promotion.',
+            'process_step_5_title' => 'Monitor & Optimize',
+            'process_step_5_description' => 'Continuous monitoring, reporting, and optimization to ensure sustained growth and performance.',
+            
+            // Industries
+            'industries_title' => 'SEO Services by Industry',
+            'industry_1_title' => 'E-commerce SEO',
+            'industry_1_description' => 'Specialized SEO strategies for online stores to increase product visibility and drive sales.',
+            'industry_1_features' => array('Product page optimization', 'Category pages', 'Shopping campaigns', 'Local inventory'),
+            'industry_2_title' => 'Healthcare SEO',
+            'industry_2_description' => 'Compliant SEO solutions for healthcare providers to attract more patients and build trust.',
+            'industry_2_features' => array('HIPAA compliance', 'Local medical SEO', 'Medical content', 'Reputation management'),
+            'industry_3_title' => 'Legal SEO',
+            'industry_3_description' => 'Specialized SEO for law firms to increase client acquisition and establish authority.',
+            'industry_3_features' => array('Legal content', 'Local law SEO', 'Practice area pages', 'Client testimonials'),
+            
+            // Testimonial
+            'testimonial_quote' => 'The SEO team at Aimpro Digital transformed our organic presence. Our traffic increased by 380% and we\'re now ranking #1 for our most important keywords. Their data-driven approach and clear communication made all the difference.',
+            'testimonial_name' => 'Sarah Mitchell',
+            'testimonial_title' => 'Marketing Director',
+            'testimonial_company' => 'TechStart Solutions',
+            
+            // CTA
+            'cta_title' => 'Ready to Dominate Search Results?',
+            'cta_description' => 'Get a free SEO audit and discover how we can help you outrank your competition and drive more organic traffic.',
+            'cta_primary_text' => 'Get Free SEO Audit',
+            'cta_primary_link' => '/contact',
+            'cta_secondary_text' => 'View Our SEO Packages',
+            'cta_secondary_link' => '/services/seo-packages',
+            'cta_features' => array(
+                'Free 40+ page SEO audit',
+                'Competitive analysis included',
+                'Custom strategy consultation',
+                'No obligation required'
+            )
         );
     }
 }
