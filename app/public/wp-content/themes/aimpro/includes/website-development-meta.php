@@ -72,7 +72,7 @@ function get_website_development_defaults() {
     );
 }
 
-add_action('add_meta_boxes', function() {
+function website_development_add_meta_boxes() {
     global $post;
     
     // Check if this is the right page/template
@@ -94,7 +94,8 @@ add_action('add_meta_boxes', function() {
             'high'
         );
     }
-});
+}
+add_action('add_meta_boxes', 'website_development_add_meta_boxes');
 
 function website_development_meta_callback($post) {
     wp_nonce_field('website_development_meta', 'website_development_meta_nonce');
@@ -144,23 +145,63 @@ function website_development_meta_callback($post) {
     ?>
     <div style="margin-bottom:20px;">
         <label><strong>Header Title</strong></label><br>
-        <input type="text" name="website_development_header_title" value="<?php echo esc_attr($header_title); ?>" style="width:100%;" />
+        <?php 
+        wp_editor($header_title, 'website_development_header_title', array(
+            'textarea_name' => 'website_development_header_title',
+            'media_buttons' => false,
+            'textarea_rows' => 2,
+            'teeny' => true,
+            'quicktags' => array('buttons' => 'strong,em,link')
+        )); 
+        ?>
     </div>
     <div style="margin-bottom:20px;">
         <label><strong>Header Subtitle</strong></label><br>
-        <input type="text" name="website_development_header_subtitle" value="<?php echo esc_attr($header_subtitle); ?>" style="width:100%;" />
+        <?php 
+        wp_editor($header_subtitle, 'website_development_header_subtitle', array(
+            'textarea_name' => 'website_development_header_subtitle',
+            'media_buttons' => false,
+            'textarea_rows' => 3,
+            'teeny' => true,
+            'quicktags' => array('buttons' => 'strong,em,link')
+        )); 
+        ?>
     </div>
     <div style="margin-bottom:20px;">
         <label><strong>Header Tags (one per line)</strong></label><br>
-        <textarea name="website_development_header_tags" style="width:100%;height:40px;"><?php echo esc_textarea($header_tags); ?></textarea>
+        <?php 
+        wp_editor($header_tags, 'website_development_header_tags', array(
+            'textarea_name' => 'website_development_header_tags',
+            'media_buttons' => false,
+            'textarea_rows' => 3,
+            'teeny' => true,
+            'quicktags' => array('buttons' => 'strong,em,link')
+        )); 
+        ?>
     </div>
     <div style="margin-bottom:20px;">
         <label><strong>Overview Title</strong></label><br>
-        <input type="text" name="website_development_overview_title" value="<?php echo esc_attr($overview_title); ?>" style="width:100%;" />
+        <?php 
+        wp_editor($overview_title, 'website_development_overview_title', array(
+            'textarea_name' => 'website_development_overview_title',
+            'media_buttons' => false,
+            'textarea_rows' => 2,
+            'teeny' => true,
+            'quicktags' => array('buttons' => 'strong,em,link')
+        )); 
+        ?>
     </div>
     <div style="margin-bottom:20px;">
         <label><strong>Overview Description</strong></label><br>
-        <textarea name="website_development_overview_description" style="width:100%;height:80px;"><?php echo esc_textarea($overview_description); ?></textarea>
+        <?php 
+        wp_editor($overview_description, 'website_development_overview_description', array(
+            'textarea_name' => 'website_development_overview_description',
+            'media_buttons' => false,
+            'textarea_rows' => 5,
+            'teeny' => true,
+            'quicktags' => array('buttons' => 'strong,em,link')
+        )); 
+        ?>
     </div>
     <div style="margin-bottom:20px;">
         <label><strong>Stats (repeatable: number & label)</strong></label><br>
@@ -179,23 +220,63 @@ function website_development_meta_callback($post) {
     </div>
     <div style="margin-bottom:20px;">
         <label><strong>Case Study Title</strong></label><br>
-        <input type="text" name="website_development_case_title" value="<?php echo esc_attr($case_title); ?>" style="width:100%;" />
+        <?php 
+        wp_editor($case_title, 'website_development_case_title', array(
+            'textarea_name' => 'website_development_case_title',
+            'media_buttons' => false,
+            'textarea_rows' => 2,
+            'teeny' => true,
+            'quicktags' => array('buttons' => 'strong,em,link')
+        )); 
+        ?>
     </div>
     <div style="margin-bottom:20px;">
         <label><strong>Case Study Subtitle</strong></label><br>
-        <input type="text" name="website_development_case_subtitle" value="<?php echo esc_attr($case_subtitle); ?>" style="width:100%;" />
+        <?php 
+        wp_editor($case_subtitle, 'website_development_case_subtitle', array(
+            'textarea_name' => 'website_development_case_subtitle',
+            'media_buttons' => false,
+            'textarea_rows' => 2,
+            'teeny' => true,
+            'quicktags' => array('buttons' => 'strong,em,link')
+        )); 
+        ?>
     </div>
     <div style="margin-bottom:20px;">
         <label><strong>Case Study Description</strong></label><br>
-        <textarea name="website_development_case_description" style="width:100%;height:60px;"><?php echo esc_textarea($case_description); ?></textarea>
+        <?php 
+        wp_editor($case_description, 'website_development_case_description', array(
+            'textarea_name' => 'website_development_case_description',
+            'media_buttons' => false,
+            'textarea_rows' => 4,
+            'teeny' => true,
+            'quicktags' => array('buttons' => 'strong,em,link')
+        )); 
+        ?>
     </div>
     <div style="margin-bottom:20px;">
         <label><strong>Case Study Challenges (one per line)</strong></label><br>
-        <textarea name="website_development_case_challenges" style="width:100%;height:60px;"><?php echo esc_textarea($case_challenges); ?></textarea>
+        <?php 
+        wp_editor($case_challenges, 'website_development_case_challenges', array(
+            'textarea_name' => 'website_development_case_challenges',
+            'media_buttons' => false,
+            'textarea_rows' => 4,
+            'teeny' => true,
+            'quicktags' => array('buttons' => 'strong,em,link')
+        )); 
+        ?>
     </div>
     <div style="margin-bottom:20px;">
         <label><strong>Case Study Solutions (one per line)</strong></label><br>
-        <textarea name="website_development_case_solutions" style="width:100%;height:60px;"><?php echo esc_textarea($case_solutions); ?></textarea>
+        <?php 
+        wp_editor($case_solutions, 'website_development_case_solutions', array(
+            'textarea_name' => 'website_development_case_solutions',
+            'media_buttons' => false,
+            'textarea_rows' => 4,
+            'teeny' => true,
+            'quicktags' => array('buttons' => 'strong,em,link')
+        )); 
+        ?>
     </div>
     <div style="margin-bottom:20px;">
         <label><strong>Case Study Results (repeatable: number & label)</strong></label><br>
@@ -214,7 +295,15 @@ function website_development_meta_callback($post) {
     </div>
     <div style="margin-bottom:20px;">
         <label><strong>Process Title</strong></label><br>
-        <input type="text" name="website_development_process_title" value="<?php echo esc_attr($process_title); ?>" style="width:100%;" />
+        <?php 
+        wp_editor($process_title, 'website_development_process_title', array(
+            'textarea_name' => 'website_development_process_title',
+            'media_buttons' => false,
+            'textarea_rows' => 2,
+            'teeny' => true,
+            'quicktags' => array('buttons' => 'strong,em,link')
+        )); 
+        ?>
     </div>
     <div style="margin-bottom:20px;">
         <label><strong>Process Steps (repeatable: title & description)</strong></label><br>
@@ -233,11 +322,27 @@ function website_development_meta_callback($post) {
     </div>
     <div style="margin-bottom:20px;">
         <label><strong>Technologies Title</strong></label><br>
-        <input type="text" name="website_development_tech_title" value="<?php echo esc_attr($tech_title); ?>" style="width:100%;" />
+        <?php 
+        wp_editor($tech_title, 'website_development_tech_title', array(
+            'textarea_name' => 'website_development_tech_title',
+            'media_buttons' => false,
+            'textarea_rows' => 2,
+            'teeny' => true,
+            'quicktags' => array('buttons' => 'strong,em,link')
+        )); 
+        ?>
     </div>
     <div style="margin-bottom:20px;">
         <label><strong>Technologies Description</strong></label><br>
-        <textarea name="website_development_tech_description" style="width:100%;height:40px;"><?php echo esc_textarea($tech_description); ?></textarea>
+        <?php 
+        wp_editor($tech_description, 'website_development_tech_description', array(
+            'textarea_name' => 'website_development_tech_description',
+            'media_buttons' => false,
+            'textarea_rows' => 3,
+            'teeny' => true,
+            'quicktags' => array('buttons' => 'strong,em,link')
+        )); 
+        ?>
     </div>
     <div style="margin-bottom:20px;">
         <label><strong>Technology Categories (repeatable: category & tools)</strong></label><br>
@@ -399,7 +504,7 @@ function website_development_meta_callback($post) {
     <?php
 }
 
-add_action('save_post', function($post_id) {
+function website_development_save_meta($post_id) {
     if (!isset($_POST['website_development_meta_nonce']) || 
         !wp_verify_nonce($_POST['website_development_meta_nonce'], 'website_development_meta')) {
         return;
@@ -409,7 +514,7 @@ add_action('save_post', function($post_id) {
     if (!current_user_can('edit_page', $post_id)) return;
 
     // Save all meta fields
-    $fields = [
+    $fields = array(
         'website_development_header_title',
         'website_development_header_subtitle',
         'website_development_header_tags',
@@ -441,7 +546,7 @@ add_action('save_post', function($post_id) {
         'website_development_cta_primary_link',
         'website_development_cta_secondary_text',
         'website_development_cta_secondary_link'
-    ];
+    );
 
     foreach ($fields as $field) {
         if (isset($_POST[$field])) {
@@ -457,9 +562,9 @@ add_action('save_post', function($post_id) {
                 if (is_array($value)) {
                     // For tech categories, convert tools from newline-separated to array
                     if (strpos($field, '_categories') !== false) {
-                        foreach ($value as &$category) {
+                        foreach ($value as $key => $category) {
                             if (isset($category['tools']) && is_string($category['tools'])) {
-                                $category['tools'] = array_filter(explode("\n", trim($category['tools'])));
+                                $value[$key]['tools'] = array_filter(explode("\n", trim($category['tools'])));
                             }
                         }
                     }
@@ -479,4 +584,5 @@ add_action('save_post', function($post_id) {
             }
         }
     }
-});
+}
+add_action('save_post', 'website_development_save_meta');

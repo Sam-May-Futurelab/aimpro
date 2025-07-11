@@ -119,15 +119,18 @@ function white_label_seo_header_callback($post) {
     
     wp_nonce_field('white_label_seo_meta_nonce', 'white_label_seo_meta_nonce');
     
-    echo '<table class="form-table">';
-    echo '<tr><th><label for="white_label_seo_header_title">Header Title</label></th>';
-    echo '<td><input type="text" id="white_label_seo_header_title" name="white_label_seo_header_title" value="' . esc_attr($header_title) . '" style="width: 100%;" /></td></tr>';
+    echo '<div style="margin-bottom: 20px;">';
+    echo '<label><strong>Header Title</strong></label><br>';
+    wp_editor($header_title, 'white_label_seo_header_title', array('textarea_rows' => 2, 'media_buttons' => false, 'teeny' => true, 'quicktags' => array('buttons' => 'strong,em,link')));
+    echo '</div>';
     
-    echo '<tr><th><label for="white_label_seo_header_subtitle">Header Subtitle</label></th>';
-    echo '<td><textarea id="white_label_seo_header_subtitle" name="white_label_seo_header_subtitle" rows="3" style="width: 100%;">' . esc_textarea($header_subtitle) . '</textarea></td></tr>';
+    echo '<div style="margin-bottom: 20px;">';
+    echo '<label><strong>Header Subtitle</strong></label><br>';
+    wp_editor($header_subtitle, 'white_label_seo_header_subtitle', array('textarea_rows' => 3, 'media_buttons' => false, 'teeny' => true, 'quicktags' => array('buttons' => 'strong,em,link')));
+    echo '</div>';
     
-    echo '<tr><th><label>Header Badges</label></th>';
-    echo '<td>';
+    echo '<div style="margin-bottom: 20px;">';
+    echo '<label><strong>Header Badges</strong></label><br>';
     if (is_array($header_badges)) {
         foreach ($header_badges as $i => $badge) {
             echo '<div style="margin-bottom: 5px;">';
@@ -135,8 +138,7 @@ function white_label_seo_header_callback($post) {
             echo '</div>';
         }
     }
-    echo '</td></tr>';
-    echo '</table>';
+    echo '</div>';
 }
 
 // Overview callback
@@ -150,18 +152,23 @@ function white_label_seo_overview_callback($post) {
         array('number' => '48hr', 'label' => 'Average response time')
     );
     
-    echo '<table class="form-table">';
-    echo '<tr><th><label for="white_label_seo_overview_title">Overview Title</label></th>';
-    echo '<td><input type="text" id="white_label_seo_overview_title" name="white_label_seo_overview_title" value="' . esc_attr($overview_title) . '" style="width: 100%;" /></td></tr>';
+    echo '<div style="margin-bottom: 20px;">';
+    echo '<label><strong>Overview Title</strong></label><br>';
+    wp_editor($overview_title, 'white_label_seo_overview_title', array('textarea_rows' => 2, 'media_buttons' => false, 'teeny' => true, 'quicktags' => array('buttons' => 'strong,em,link')));
+    echo '</div>';
     
-    echo '<tr><th><label for="white_label_seo_overview_description_1">Overview Description 1</label></th>';
-    echo '<td><textarea id="white_label_seo_overview_description_1" name="white_label_seo_overview_description_1" rows="4" style="width: 100%;">' . esc_textarea($overview_description_1) . '</textarea></td></tr>';
+    echo '<div style="margin-bottom: 20px;">';
+    echo '<label><strong>Overview Description 1</strong></label><br>';
+    wp_editor($overview_description_1, 'white_label_seo_overview_description_1', array('textarea_rows' => 4, 'media_buttons' => false, 'teeny' => true, 'quicktags' => array('buttons' => 'strong,em,link')));
+    echo '</div>';
     
-    echo '<tr><th><label for="white_label_seo_overview_description_2">Overview Description 2</label></th>';
-    echo '<td><textarea id="white_label_seo_overview_description_2" name="white_label_seo_overview_description_2" rows="4" style="width: 100%;">' . esc_textarea($overview_description_2) . '</textarea></td></tr>';
+    echo '<div style="margin-bottom: 20px;">';
+    echo '<label><strong>Overview Description 2</strong></label><br>';
+    wp_editor($overview_description_2, 'white_label_seo_overview_description_2', array('textarea_rows' => 4, 'media_buttons' => false, 'teeny' => true, 'quicktags' => array('buttons' => 'strong,em,link')));
+    echo '</div>';
     
-    echo '<tr><th><label>Statistics</label></th>';
-    echo '<td>';
+    echo '<div style="margin-bottom: 20px;">';
+    echo '<label><strong>Statistics</strong></label><br>';
     if (is_array($stats)) {
         foreach ($stats as $i => $stat) {
             echo '<div style="margin-bottom: 10px; border: 1px solid #ddd; padding: 10px;">';
@@ -172,8 +179,7 @@ function white_label_seo_overview_callback($post) {
             echo '</div>';
         }
     }
-    echo '</td></tr>';
-    echo '</table>';
+    echo '</div>';
 }
 
 // Benefits callback
@@ -198,24 +204,30 @@ function white_label_seo_benefits_callback($post) {
         )
     );
     
-    echo '<table class="form-table">';
-    echo '<tr><th><label for="white_label_seo_benefits_title">Benefits Title</label></th>';
-    echo '<td><input type="text" id="white_label_seo_benefits_title" name="white_label_seo_benefits_title" value="' . esc_attr($benefits_title) . '" style="width: 100%;" /></td></tr>';
+    echo '<div style="margin-bottom: 20px;">';
+    echo '<label><strong>Benefits Title</strong></label><br>';
+    wp_editor($benefits_title, 'white_label_seo_benefits_title', array('textarea_rows' => 2, 'media_buttons' => false, 'teeny' => true, 'quicktags' => array('buttons' => 'strong,em,link')));
+    echo '</div>';
     
-    echo '<tr><th><label>Benefits</label></th>';
-    echo '<td>';
+    echo '<div style="margin-bottom: 20px;">';
+    echo '<label><strong>Benefits</strong></label><br>';
     if (is_array($benefits)) {
         foreach ($benefits as $i => $benefit) {
             echo '<div style="margin-bottom: 15px; border: 1px solid #ddd; padding: 10px;">';
             echo '<label>Benefit ' . ($i + 1) . ' Title:</label><br>';
             echo '<input type="text" name="white_label_seo_benefits[' . $i . '][title]" value="' . esc_attr($benefit['title']) . '" style="width: 100%; margin-bottom: 5px;" /><br>';
             echo '<label>Benefit ' . ($i + 1) . ' Description:</label><br>';
-            echo '<textarea name="white_label_seo_benefits[' . $i . '][description]" rows="3" style="width: 100%;">' . esc_textarea($benefit['description']) . '</textarea>';
+            wp_editor($benefit['description'], 'white_label_seo_benefits_' . $i . '_description', array(
+                'textarea_name' => 'white_label_seo_benefits[' . $i . '][description]',
+                'textarea_rows' => 3, 
+                'media_buttons' => false, 
+                'teeny' => true, 
+                'quicktags' => array('buttons' => 'strong,em,link')
+            ));
             echo '</div>';
         }
     }
-    echo '</td></tr>';
-    echo '</table>';
+    echo '</div>';
 }
 
 // Services callback
@@ -284,12 +296,13 @@ function white_label_seo_services_callback($post) {
         )
     );
     
-    echo '<table class="form-table">';
-    echo '<tr><th><label for="white_label_seo_services_title">Services Title</label></th>';
-    echo '<td><input type="text" id="white_label_seo_services_title" name="white_label_seo_services_title" value="' . esc_attr($services_title) . '" style="width: 100%;" /></td></tr>';
+    echo '<div style="margin-bottom: 20px;">';
+    echo '<label><strong>Services Title</strong></label><br>';
+    wp_editor($services_title, 'white_label_seo_services_title', array('textarea_rows' => 2, 'media_buttons' => false, 'teeny' => true, 'quicktags' => array('buttons' => 'strong,em,link')));
+    echo '</div>';
     
-    echo '<tr><th><label>Services</label></th>';
-    echo '<td>';
+    echo '<div style="margin-bottom: 20px;">';
+    echo '<label><strong>Services</strong></label><br>';
     if (is_array($services)) {
         foreach ($services as $i => $service) {
             echo '<div style="margin-bottom: 20px; border: 1px solid #ddd; padding: 15px;">';
@@ -297,8 +310,14 @@ function white_label_seo_services_callback($post) {
             echo '<label>Title:</label><br>';
             echo '<input type="text" name="white_label_seo_services[' . $i . '][title]" value="' . esc_attr($service['title']) . '" style="width: 100%; margin-bottom: 10px;" /><br>';
             echo '<label>Description:</label><br>';
-            echo '<textarea name="white_label_seo_services[' . $i . '][description]" rows="3" style="width: 100%; margin-bottom: 10px;">' . esc_textarea($service['description']) . '</textarea><br>';
-            echo '<label>Features:</label><br>';
+            wp_editor($service['description'], 'white_label_seo_services_' . $i . '_description', array(
+                'textarea_name' => 'white_label_seo_services[' . $i . '][description]',
+                'textarea_rows' => 3, 
+                'media_buttons' => false, 
+                'teeny' => true, 
+                'quicktags' => array('buttons' => 'strong,em,link')
+            ));
+            echo '<br><label>Features:</label><br>';
             if (isset($service['features']) && is_array($service['features'])) {
                 foreach ($service['features'] as $j => $feature) {
                     echo '<input type="text" name="white_label_seo_services[' . $i . '][features][]" value="' . esc_attr($feature) . '" style="width: 100%; margin-bottom: 5px;" /><br>';
@@ -307,8 +326,7 @@ function white_label_seo_services_callback($post) {
             echo '</div>';
         }
     }
-    echo '</td></tr>';
-    echo '</table>';
+    echo '</div>';
 }
 
 // Packages callback
@@ -427,18 +445,23 @@ function white_label_seo_case_study_callback($post) {
         array('number' => '18 Months', 'label' => 'Partnership Duration')
     );
     
-    echo '<table class="form-table">';
-    echo '<tr><th><label for="white_label_seo_case_study_title">Case Study Title</label></th>';
-    echo '<td><input type="text" id="white_label_seo_case_study_title" name="white_label_seo_case_study_title" value="' . esc_attr($case_study_title) . '" style="width: 100%;" /></td></tr>';
+    echo '<div style="margin-bottom: 20px;">';
+    echo '<label><strong>Case Study Title</strong></label><br>';
+    wp_editor($case_study_title, 'white_label_seo_case_study_title', array('textarea_rows' => 2, 'media_buttons' => false, 'teeny' => true, 'quicktags' => array('buttons' => 'strong,em,link')));
+    echo '</div>';
     
-    echo '<tr><th><label for="white_label_seo_case_study_subtitle">Case Study Subtitle</label></th>';
-    echo '<td><input type="text" id="white_label_seo_case_study_subtitle" name="white_label_seo_case_study_subtitle" value="' . esc_attr($case_study_subtitle) . '" style="width: 100%;" /></td></tr>';
+    echo '<div style="margin-bottom: 20px;">';
+    echo '<label><strong>Case Study Subtitle</strong></label><br>';
+    wp_editor($case_study_subtitle, 'white_label_seo_case_study_subtitle', array('textarea_rows' => 2, 'media_buttons' => false, 'teeny' => true, 'quicktags' => array('buttons' => 'strong,em,link')));
+    echo '</div>';
     
-    echo '<tr><th><label for="white_label_seo_case_study_description">Case Study Description</label></th>';
-    echo '<td><textarea id="white_label_seo_case_study_description" name="white_label_seo_case_study_description" rows="4" style="width: 100%;">' . esc_textarea($case_study_description) . '</textarea></td></tr>';
+    echo '<div style="margin-bottom: 20px;">';
+    echo '<label><strong>Case Study Description</strong></label><br>';
+    wp_editor($case_study_description, 'white_label_seo_case_study_description', array('textarea_rows' => 4, 'media_buttons' => false, 'teeny' => true, 'quicktags' => array('buttons' => 'strong,em,link')));
+    echo '</div>';
     
-    echo '<tr><th><label>Challenges</label></th>';
-    echo '<td>';
+    echo '<div style="margin-bottom: 20px;">';
+    echo '<label><strong>Challenges</strong></label><br>';
     if (is_array($challenges)) {
         foreach ($challenges as $i => $challenge) {
             echo '<div style="margin-bottom: 5px;">';
@@ -446,10 +469,10 @@ function white_label_seo_case_study_callback($post) {
             echo '</div>';
         }
     }
-    echo '</td></tr>';
+    echo '</div>';
     
-    echo '<tr><th><label>Solutions</label></th>';
-    echo '<td>';
+    echo '<div style="margin-bottom: 20px;">';
+    echo '<label><strong>Solutions</strong></label><br>';
     if (is_array($solutions)) {
         foreach ($solutions as $i => $solution) {
             echo '<div style="margin-bottom: 5px;">';
@@ -457,10 +480,10 @@ function white_label_seo_case_study_callback($post) {
             echo '</div>';
         }
     }
-    echo '</td></tr>';
+    echo '</div>';
     
-    echo '<tr><th><label>Metrics</label></th>';
-    echo '<td>';
+    echo '<div style="margin-bottom: 20px;">';
+    echo '<label><strong>Metrics</strong></label><br>';
     if (is_array($metrics)) {
         foreach ($metrics as $i => $metric) {
             echo '<div style="margin-bottom: 10px; border: 1px solid #ddd; padding: 10px;">';
@@ -471,8 +494,7 @@ function white_label_seo_case_study_callback($post) {
             echo '</div>';
         }
     }
-    echo '</td></tr>';
-    echo '</table>';
+    echo '</div>';
 }
 
 // Included callback
@@ -627,7 +649,9 @@ function white_label_seo_testimonial_callback($post) {
     echo '</td></tr>';
     
     echo '<tr><th><label for="white_label_seo_testimonial_quote">Testimonial Quote</label></th>';
-    echo '<td><textarea id="white_label_seo_testimonial_quote" name="white_label_seo_testimonial_quote" rows="5" style="width: 100%;">' . esc_textarea($testimonial_quote) . '</textarea></td></tr>';
+    echo '<td>';
+    wp_editor($testimonial_quote, 'white_label_seo_testimonial_quote', array('textarea_rows' => 5, 'media_buttons' => false, 'teeny' => true, 'quicktags' => array('buttons' => 'strong,em,link')));
+    echo '</td></tr>';
     
     echo '<tr><th><label for="white_label_seo_testimonial_author">Author Name</label></th>';
     echo '<td><input type="text" id="white_label_seo_testimonial_author" name="white_label_seo_testimonial_author" value="' . esc_attr($testimonial_author) . '" style="width: 100%;" /></td></tr>';
@@ -650,21 +674,28 @@ function white_label_seo_cta_callback($post) {
         '100% satisfaction guarantee'
     );
     
-    echo '<table class="form-table">';
-    echo '<tr><th><label for="white_label_seo_cta_title">CTA Title</label></th>';
-    echo '<td><input type="text" id="white_label_seo_cta_title" name="white_label_seo_cta_title" value="' . esc_attr($cta_title) . '" style="width: 100%;" /></td></tr>';
+    echo '<div style="margin-bottom: 20px;">';
+    echo '<label><strong>CTA Title</strong></label><br>';
+    wp_editor($cta_title, 'white_label_seo_cta_title', array('textarea_rows' => 2, 'media_buttons' => false, 'teeny' => true, 'quicktags' => array('buttons' => 'strong,em,link')));
+    echo '</div>';
     
-    echo '<tr><th><label for="white_label_seo_cta_description">CTA Description</label></th>';
-    echo '<td><textarea id="white_label_seo_cta_description" name="white_label_seo_cta_description" rows="3" style="width: 100%;">' . esc_textarea($cta_description) . '</textarea></td></tr>';
+    echo '<div style="margin-bottom: 20px;">';
+    echo '<label><strong>CTA Description</strong></label><br>';
+    wp_editor($cta_description, 'white_label_seo_cta_description', array('textarea_rows' => 3, 'media_buttons' => false, 'teeny' => true, 'quicktags' => array('buttons' => 'strong,em,link')));
+    echo '</div>';
     
-    echo '<tr><th><label for="white_label_seo_cta_button_text">Button Text</label></th>';
-    echo '<td><input type="text" id="white_label_seo_cta_button_text" name="white_label_seo_cta_button_text" value="' . esc_attr($cta_button_text) . '" style="width: 100%;" /></td></tr>';
+    echo '<div style="margin-bottom: 20px;">';
+    echo '<label><strong>Button Text</strong></label><br>';
+    echo '<input type="text" id="white_label_seo_cta_button_text" name="white_label_seo_cta_button_text" value="' . esc_attr($cta_button_text) . '" style="width: 100%;" />';
+    echo '</div>';
     
-    echo '<tr><th><label for="white_label_seo_cta_button_url">Button URL</label></th>';
-    echo '<td><input type="text" id="white_label_seo_cta_button_url" name="white_label_seo_cta_button_url" value="' . esc_attr($cta_button_url) . '" style="width: 100%;" /></td></tr>';
+    echo '<div style="margin-bottom: 20px;">';
+    echo '<label><strong>Button URL</strong></label><br>';
+    echo '<input type="text" id="white_label_seo_cta_button_url" name="white_label_seo_cta_button_url" value="' . esc_attr($cta_button_url) . '" style="width: 100%;" />';
+    echo '</div>';
     
-    echo '<tr><th><label>Features</label></th>';
-    echo '<td>';
+    echo '<div style="margin-bottom: 20px;">';
+    echo '<label><strong>Features</strong></label><br>';
     if (is_array($cta_features)) {
         foreach ($cta_features as $i => $feature) {
             echo '<div style="margin-bottom: 5px;">';
@@ -672,8 +703,7 @@ function white_label_seo_cta_callback($post) {
             echo '</div>';
         }
     }
-    echo '</td></tr>';
-    echo '</table>';
+    echo '</div>';
 }
 
 // Save meta data

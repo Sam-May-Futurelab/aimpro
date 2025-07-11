@@ -24,8 +24,8 @@ get_header(); ?>
     <div class="container">        <!-- Page Header -->
         <section class="page-header">
             <div class="page-header-content animate-on-scroll animate-fade-up">
-                <h1><?php echo esc_html(get_post_meta(get_the_ID(), 'white_label_seo_header_title', true) ?: 'White Label SEO Services'); ?></h1>
-                <p class="page-subtitle"><?php echo esc_html(get_post_meta(get_the_ID(), 'white_label_seo_header_subtitle', true) ?: 'Scale your agency with our comprehensive white label SEO solutions'); ?></p>
+                <h1><?php echo wp_kses_post(get_post_meta(get_the_ID(), 'white_label_seo_header_title', true) ?: 'White Label SEO Services'); ?></h1>
+                <p class="page-subtitle"><?php echo wp_kses_post(get_post_meta(get_the_ID(), 'white_label_seo_header_subtitle', true) ?: 'Scale your agency with our comprehensive white label SEO solutions'); ?></p>
                 <div class="header-badges">
                     <?php 
                     $badges = get_post_meta(get_the_ID(), 'white_label_seo_header_badges', true) ?: ['Agency Partners', 'Your Branding', 'Full Transparency'];
@@ -39,9 +39,9 @@ get_header(); ?>
             <div class="section-content">
                 <div class="overview-content">
                     <div class="overview-text animate-on-scroll animate-slide-left">
-                        <h2><?php echo esc_html(get_post_meta(get_the_ID(), 'white_label_seo_overview_title', true) ?: 'Professional SEO Services Under Your Brand'); ?></h2>
-                        <p><?php echo esc_html(get_post_meta(get_the_ID(), 'white_label_seo_overview_description_1', true) ?: 'Our white label SEO services allow agencies, consultants, and business owners to offer comprehensive SEO solutions to their clients without the overhead of building an in-house team. We work behind the scenes, delivering exceptional results while you maintain the client relationship.'); ?></p>
-                        <p><?php echo esc_html(get_post_meta(get_the_ID(), 'white_label_seo_overview_description_2', true) ?: 'From technical audits to content optimisation and link building, our team becomes an extension of your agency, delivering consistent, high-quality SEO services that help you scale your business and increase profitability.'); ?></p>
+                        <h2><?php echo wp_kses_post(get_post_meta(get_the_ID(), 'white_label_seo_overview_title', true) ?: 'Professional SEO Services Under Your Brand'); ?></h2>
+                        <p><?php echo wp_kses_post(get_post_meta(get_the_ID(), 'white_label_seo_overview_description_1', true) ?: 'Our white label SEO services allow agencies, consultants, and business owners to offer comprehensive SEO solutions to their clients without the overhead of building an in-house team. We work behind the scenes, delivering exceptional results while you maintain the client relationship.'); ?></p>
+                        <p><?php echo wp_kses_post(get_post_meta(get_the_ID(), 'white_label_seo_overview_description_2', true) ?: 'From technical audits to content optimisation and link building, our team becomes an extension of your agency, delivering consistent, high-quality SEO services that help you scale your business and increase profitability.'); ?></p>
                     </div>
                     <div class="overview-stats animate-on-scroll animate-slide-right">
                         <?php 
@@ -62,7 +62,7 @@ get_header(); ?>
         </section>        <!-- Why Choose White Label -->
         <section class="whitelabel-benefits">
             <div class="section-content">
-                <h2 class="animate-on-scroll animate-fade-up"><?php echo esc_html(get_post_meta(get_the_ID(), 'white_label_seo_benefits_title', true) ?: 'Why Choose White Label SEO?'); ?></h2>
+                <h2 class="animate-on-scroll animate-fade-up"><?php echo wp_kses_post(get_post_meta(get_the_ID(), 'white_label_seo_benefits_title', true) ?: 'Why Choose White Label SEO?'); ?></h2>
                 <div class="benefits-grid benefits-grid-4">
                     <?php 
                     $benefits = get_post_meta(get_the_ID(), 'white_label_seo_benefits', true) ?: [
@@ -77,7 +77,7 @@ get_header(); ?>
                                 <i class="<?php echo esc_attr($benefit['icon']); ?>"></i>
                             </div>
                             <h3><?php echo esc_html($benefit['title']); ?></h3>
-                            <p><?php echo esc_html($benefit['description']); ?></p>
+                            <p><?php echo wp_kses_post($benefit['description']); ?></p>
                         </div>                    <?php endforeach; ?>                </div>
                 <div class="text-center mt-1 animate-on-scroll animate-fade-up">
                     <a href="/contact/" class="btn btn-primary">Become a White Label Partner</a>
@@ -86,7 +86,7 @@ get_header(); ?>
         </section>        <!-- Services Grid -->
         <section class="seo-services-grid">
             <div class="section-content">
-                <h2 class="animate-on-scroll animate-fade-up"><?php echo esc_html(get_post_meta(get_the_ID(), 'white_label_seo_services_title', true) ?: 'White Label SEO Services We Provide'); ?></h2>
+                <h2 class="animate-on-scroll animate-fade-up"><?php echo wp_kses_post(get_post_meta(get_the_ID(), 'white_label_seo_services_title', true) ?: 'White Label SEO Services We Provide'); ?></h2>
                 <div class="services-grid">
                     <?php 
                     $services = get_post_meta(get_the_ID(), 'white_label_seo_services', true) ?: [
@@ -125,7 +125,7 @@ get_header(); ?>
                         <div class="service-card animate-on-scroll animate-stagger animate-fade-up">
                             <div class="service-content">
                                 <h3><?php echo esc_html($service['title']); ?></h3>
-                                <p><?php echo esc_html($service['description']); ?></p>
+                                <p><?php echo wp_kses_post($service['description']); ?></p>
                                 <ul class="service-features-list">
                                     <?php foreach ($service['features'] as $feature): ?>
                                         <li><?php echo esc_html($feature); ?></li>
@@ -221,9 +221,9 @@ get_header(); ?>
             <div class="section-content">
                 <div class="case-study-content">
                     <div class="case-study-text animate-on-scroll animate-fade-up">
-                        <h2><?php echo esc_html(get_post_meta(get_the_ID(), 'white_label_seo_case_study_title', true) ?: 'Partner Success Story'); ?></h2>
-                        <h3><?php echo esc_html(get_post_meta(get_the_ID(), 'white_label_seo_case_study_subtitle', true) ?: 'Digital Agency Scales to £50K Monthly Revenue'); ?></h3>
-                        <p><?php echo esc_html(get_post_meta(get_the_ID(), 'white_label_seo_case_study_description', true) ?: 'A small digital marketing agency approached us looking to add SEO services to their offering without the overhead of hiring specialists. Our white label partnership helped them transform their business.'); ?></p>
+                        <h2><?php echo wp_kses_post(get_post_meta(get_the_ID(), 'white_label_seo_case_study_title', true) ?: 'Partner Success Story'); ?></h2>
+                        <h3><?php echo wp_kses_post(get_post_meta(get_the_ID(), 'white_label_seo_case_study_subtitle', true) ?: 'Digital Agency Scales to £50K Monthly Revenue'); ?></h3>
+                        <p><?php echo wp_kses_post(get_post_meta(get_the_ID(), 'white_label_seo_case_study_description', true) ?: 'A small digital marketing agency approached us looking to add SEO services to their offering without the overhead of hiring specialists. Our white label partnership helped them transform their business.'); ?></p>
                         
                         <div class="challenge-solution">
                             <div class="challenge animate-on-scroll animate-slide-left">
@@ -345,7 +345,7 @@ get_header(); ?>
                         </div>
                     <?php endif; ?>
                     <blockquote>
-                        <?php echo esc_html(get_post_meta(get_the_ID(), 'white_label_seo_testimonial_quote', true) ?: 'Partnering with AIM Pro Marketing for white label SEO has been a game-changer for our agency. We\'ve added £30K in monthly recurring revenue and our clients are seeing incredible results. The team is professional, transparent, and delivers exactly what they promise.'); ?>
+                        <?php echo wp_kses_post(get_post_meta(get_the_ID(), 'white_label_seo_testimonial_quote', true) ?: 'Partnering with AIM Pro Marketing for white label SEO has been a game-changer for our agency. We\'ve added £30K in monthly recurring revenue and our clients are seeing incredible results. The team is professional, transparent, and delivers exactly what they promise.'); ?>
                     </blockquote>
                     <div class="testimonial-author">
                         <strong><?php echo esc_html(get_post_meta(get_the_ID(), 'white_label_seo_testimonial_author', true) ?: 'James Richardson'); ?></strong>
@@ -357,8 +357,8 @@ get_header(); ?>
         <section class="simple-cta-section">
             <div class="section-content">
                 <div class="simple-cta-content animate-on-scroll animate-fade-up">
-                    <h2><?php echo esc_html(get_post_meta(get_the_ID(), 'white_label_seo_cta_title', true) ?: 'Ready to Scale Your Agency with SEO?'); ?></h2>
-                    <p><?php echo esc_html(get_post_meta(get_the_ID(), 'white_label_seo_cta_description', true) ?: 'Join over 150 successful agency partners who trust us to deliver exceptional SEO results under their brand. Schedule a consultation to learn how our white label services can help you grow.'); ?></p>
+                    <h2><?php echo wp_kses_post(get_post_meta(get_the_ID(), 'white_label_seo_cta_title', true) ?: 'Ready to Scale Your Agency with SEO?'); ?></h2>
+                    <p><?php echo wp_kses_post(get_post_meta(get_the_ID(), 'white_label_seo_cta_description', true) ?: 'Join over 150 successful agency partners who trust us to deliver exceptional SEO results under their brand. Schedule a consultation to learn how our white label services can help you grow.'); ?></p>
                     <div class="simple-cta-buttons">
                         <a href="<?php echo esc_url(get_post_meta(get_the_ID(), 'white_label_seo_cta_button_url', true) ?: home_url('/contact')); ?>" class="btn btn-primary"><?php echo esc_html(get_post_meta(get_the_ID(), 'white_label_seo_cta_button_text', true) ?: 'Schedule Partnership Call'); ?></a>
                     </div>
