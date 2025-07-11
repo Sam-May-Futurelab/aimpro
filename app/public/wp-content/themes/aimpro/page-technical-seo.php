@@ -33,8 +33,8 @@ $hero_image = get_post_meta(get_the_ID(), 'technical_seo_hero_image', true);
           <!-- Page Header -->
         <section class="page-header">
             <div class="page-header-content animate-on-scroll animate-fade-up">
-                <h1><?php echo esc_html($header_title); ?></h1>
-                <p class="page-subtitle"><?php echo esc_html($header_subtitle); ?></p>
+                <h1><?php echo wp_kses_post($header_title); ?></h1>
+                <p class="page-subtitle"><?php echo wp_kses_post($header_subtitle); ?></p>
             </div>
             <?php if ($hero_image): ?>
                 <div class="page-header-image animate-on-scroll animate-scale-up">
@@ -60,8 +60,8 @@ $hero_image = get_post_meta(get_the_ID(), 'technical_seo_hero_image', true);
                         $overview_image_id = get_post_meta(get_the_ID(), 'technical_seo_overview_image_id', true);
                         $overview_image = get_post_meta(get_the_ID(), 'technical_seo_overview_image', true) ?: get_template_directory_uri() . '/assets/images/services/technical-seo-overview.jpg';
                         ?>
-                        <h2><?php echo esc_html($overview_title); ?></h2>
-                        <p><?php echo esc_html($overview_description); ?></p>
+                        <h2><?php echo wp_kses_post($overview_title); ?></h2>
+                        <p><?php echo wp_kses_post($overview_description); ?></p>
                         
                         <div class="technical-benefits animate-on-scroll animate-fade-up">
                             <h3><?php echo esc_html($benefits_title); ?></h3>
@@ -176,7 +176,7 @@ $hero_image = get_post_meta(get_the_ID(), 'technical_seo_hero_image', true);
                         'featured' => false
                     )
                 );
-                ?>                <h2 class="animate-on-scroll animate-fade-up"><?php echo esc_html($services_title); ?></h2>
+                ?>                <h2 class="animate-on-scroll animate-fade-up"><?php echo wp_kses_post($services_title); ?></h2>
                 <div class="services-grid">
                       <?php foreach ($services as $service): ?>
                         <div class="service-card <?php echo (isset($service['featured']) && $service['featured']) ? 'featured' : ''; ?> animate-on-scroll animate-stagger animate-fade-up">
@@ -279,7 +279,7 @@ $hero_image = get_post_meta(get_the_ID(), 'technical_seo_hero_image', true);
                         'description' => 'Test implementations and monitor performance improvements continuously.'
                     )
                 );
-                ?>                <h2 class="animate-on-scroll animate-fade-up"><?php echo esc_html($process_title); ?></h2>
+                ?>                <h2 class="animate-on-scroll animate-fade-up"><?php echo wp_kses_post($process_title); ?></h2>
                 <div class="process-steps">
                     
                     <?php foreach ($process_steps as $index => $step): ?>
@@ -432,7 +432,7 @@ $hero_image = get_post_meta(get_the_ID(), 'technical_seo_hero_image', true);
                         )
                     )
                 );
-                ?>                <h2 class="animate-on-scroll animate-fade-up"><?php echo esc_html($issues_title); ?></h2>
+                ?>                <h2 class="animate-on-scroll animate-fade-up"><?php echo wp_kses_post($issues_title); ?></h2>
                 <div class="issues-grid">
                     
                     <?php foreach ($issues as $issue): ?>
@@ -461,16 +461,16 @@ $hero_image = get_post_meta(get_the_ID(), 'technical_seo_hero_image', true);
                     $testimonial_image = get_post_meta(get_the_ID(), 'technical_seo_testimonial_image', true);
                     ?>
                     <blockquote>
-                        <?php echo esc_html($testimonial_quote); ?>
+                        <?php echo wp_kses_post($testimonial_quote); ?>
                     </blockquote>
                     <div class="testimonial-author animate-on-scroll animate-slide-up">
                         <?php if ($testimonial_image): ?>
                             <img src="<?php echo esc_url($testimonial_image); ?>" alt="<?php echo esc_attr($testimonial_author_name); ?>" />
                         <?php endif; ?>
                         <div class="author-info">
-                            <h4><?php echo esc_html($testimonial_author_name); ?></h4>
-                            <span><?php echo esc_html($testimonial_author_title); ?></span>
-                            <div class="author-company"><?php echo esc_html($testimonial_author_company); ?></div>
+                            <h4><?php echo wp_kses_post($testimonial_author_name); ?></h4>
+                            <span><?php echo wp_kses_post($testimonial_author_title); ?></span>
+                            <div class="author-company"><?php echo wp_kses_post($testimonial_author_company); ?></div>
                         </div>
                     </div>
                 </div>
@@ -490,11 +490,11 @@ $hero_image = get_post_meta(get_the_ID(), 'technical_seo_hero_image', true);
                         '<i class="fas fa-check" aria-hidden="true"></i> Site speed improvements'
                     );
                     ?>
-                    <h2><?php echo esc_html($cta_title); ?></h2>
-                    <p><?php echo esc_html($cta_description); ?></p>
+                    <h2><?php echo wp_kses_post($cta_title); ?></h2>
+                    <p><?php echo wp_kses_post($cta_description); ?></p>
                     <div class="cta-buttons animate-on-scroll animate-slide-up">
-                        <a href="<?php echo esc_url($cta_primary_url); ?>" class="btn-primary"><?php echo esc_html($cta_primary_text); ?></a>
-                        <a href="<?php echo esc_url($cta_secondary_url); ?>" class="btn-outline"><?php echo esc_html($cta_secondary_text); ?></a>
+                        <a href="<?php echo esc_url($cta_primary_url); ?>" class="btn-primary"><?php echo wp_kses_post($cta_primary_text); ?></a>
+                        <a href="<?php echo esc_url($cta_secondary_url); ?>" class="btn-outline"><?php echo wp_kses_post($cta_secondary_text); ?></a>
                     </div>
                     <div class="cta-features animate-on-scroll animate-fade-up">
                         <?php foreach ($cta_benefits as $benefit): ?>

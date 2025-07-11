@@ -108,10 +108,14 @@ function technical_seo_header_callback($post) {
     
     echo '<table class="form-table">';
     echo '<tr><th><label for="technical_seo_header_title">Page Title</label></th>';
-    echo '<td><input type="text" id="technical_seo_header_title" name="technical_seo_header_title" value="' . esc_attr($title) . '" style="width: 100%;" /></td></tr>';
+    echo '<td>';
+    wp_editor($title, 'technical_seo_header_title', array('textarea_rows' => 2, 'media_buttons' => false, 'teeny' => true, 'quicktags' => array('buttons' => 'strong,em,link')));
+    echo '</td></tr>';
     
     echo '<tr><th><label for="technical_seo_header_subtitle">Page Subtitle</label></th>';
-    echo '<td><textarea id="technical_seo_header_subtitle" name="technical_seo_header_subtitle" rows="3" style="width: 100%;">' . esc_textarea($subtitle) . '</textarea></td></tr>';
+    echo '<td>';
+    wp_editor($subtitle, 'technical_seo_header_subtitle', array('textarea_rows' => 3, 'media_buttons' => false, 'teeny' => true, 'quicktags' => array('buttons' => 'strong,em,link')));
+    echo '</td></tr>';
     
     echo '<tr><th><label for="technical_seo_hero_image">Hero Image</label></th>';
     echo '<td>';
@@ -145,13 +149,19 @@ function technical_seo_overview_callback($post) {    $overview_title = get_post_
     
     echo '<table class="form-table">';
     echo '<tr><th><label for="technical_seo_overview_title">Overview Title</label></th>';
-    echo '<td><input type="text" id="technical_seo_overview_title" name="technical_seo_overview_title" value="' . esc_attr($overview_title) . '" style="width: 100%;" /></td></tr>';
+    echo '<td>';
+    wp_editor($overview_title, 'technical_seo_overview_title', array('textarea_rows' => 2, 'media_buttons' => false, 'teeny' => true, 'quicktags' => array('buttons' => 'strong,em,link')));
+    echo '</td></tr>';
     
     echo '<tr><th><label for="technical_seo_overview_description">Overview Description</label></th>';
-    echo '<td><textarea id="technical_seo_overview_description" name="technical_seo_overview_description" rows="4" style="width: 100%;">' . esc_textarea($overview_description) . '</textarea></td></tr>';
+    echo '<td>';
+    wp_editor($overview_description, 'technical_seo_overview_description', array('textarea_rows' => 4, 'media_buttons' => false, 'teeny' => true, 'quicktags' => array('buttons' => 'strong,em,link')));
+    echo '</td></tr>';
     
     echo '<tr><th><label for="technical_seo_benefits_title">Benefits Title</label></th>';
-    echo '<td><input type="text" id="technical_seo_benefits_title" name="technical_seo_benefits_title" value="' . esc_attr($benefits_title) . '" style="width: 100%;" /></td></tr>';
+    echo '<td>';
+    wp_editor($benefits_title, 'technical_seo_benefits_title', array('textarea_rows' => 2, 'media_buttons' => false, 'teeny' => true, 'quicktags' => array('buttons' => 'strong,em,link')));
+    echo '</td></tr>';
     
     echo '<tr><th><label>Benefits List</label></th>';
     echo '<td>';
@@ -275,7 +285,9 @@ function technical_seo_services_callback($post) {
     
     echo '<table class="form-table">';
     echo '<tr><th><label for="technical_seo_services_title">Services Section Title</label></th>';
-    echo '<td><input type="text" id="technical_seo_services_title" name="technical_seo_services_title" value="' . esc_attr($services_title) . '" style="width: 100%;" /></td></tr>';
+    echo '<td>';
+    wp_editor($services_title, 'technical_seo_services_title', array('textarea_rows' => 2, 'media_buttons' => false, 'teeny' => true, 'quicktags' => array('buttons' => 'strong,em,link')));
+    echo '</td></tr>';
     echo '</table>';
     
     echo '<h4>Technical SEO Services</h4>';
@@ -335,16 +347,24 @@ function technical_seo_case_study_callback($post) {
     
     echo '<table class="form-table">';
     echo '<tr><th><label for="technical_seo_case_study_label">Case Study Label</label></th>';
-    echo '<td><input type="text" id="technical_seo_case_study_label" name="technical_seo_case_study_label" value="' . esc_attr($case_study_label) . '" style="width: 100%;" /></td></tr>';
+    echo '<td>';
+    wp_editor($case_study_label, 'technical_seo_case_study_label', array('textarea_rows' => 2, 'media_buttons' => false, 'teeny' => true, 'quicktags' => array('buttons' => 'strong,em,link')));
+    echo '</td></tr>';
     
     echo '<tr><th><label for="technical_seo_case_study_title">Case Study Title</label></th>';
-    echo '<td><input type="text" id="technical_seo_case_study_title" name="technical_seo_case_study_title" value="' . esc_attr($case_study_title) . '" style="width: 100%;" /></td></tr>';
+    echo '<td>';
+    wp_editor($case_study_title, 'technical_seo_case_study_title', array('textarea_rows' => 2, 'media_buttons' => false, 'teeny' => true, 'quicktags' => array('buttons' => 'strong,em,link')));
+    echo '</td></tr>';
     
     echo '<tr><th><label for="technical_seo_case_study_description">Case Study Description</label></th>';
-    echo '<td><textarea id="technical_seo_case_study_description" name="technical_seo_case_study_description" rows="4" style="width: 100%;">' . esc_textarea($case_study_description) . '</textarea></td></tr>';
+    echo '<td>';
+    wp_editor($case_study_description, 'technical_seo_case_study_description', array('textarea_rows' => 4, 'media_buttons' => false, 'teeny' => true, 'quicktags' => array('buttons' => 'strong,em,link')));
+    echo '</td></tr>';
     
     echo '<tr><th><label for="technical_seo_case_study_challenge_title">Challenges Title</label></th>';
-    echo '<td><input type="text" id="technical_seo_case_study_challenge_title" name="technical_seo_case_study_challenge_title" value="' . esc_attr($case_study_challenge_title) . '" style="width: 100%;" /></td></tr>';
+    echo '<td>';
+    wp_editor($case_study_challenge_title, 'technical_seo_case_study_challenge_title', array('textarea_rows' => 2, 'media_buttons' => false, 'teeny' => true, 'quicktags' => array('buttons' => 'strong,em,link')));
+    echo '</td></tr>';
     
     echo '<tr><th><label>Challenges List</label></th>';
     echo '<td>';
@@ -358,7 +378,9 @@ function technical_seo_case_study_callback($post) {
     echo '</td></tr>';
     
     echo '<tr><th><label for="technical_seo_case_study_solution_title">Solutions Title</label></th>';
-    echo '<td><input type="text" id="technical_seo_case_study_solution_title" name="technical_seo_case_study_solution_title" value="' . esc_attr($case_study_solution_title) . '" style="width: 100%;" /></td></tr>';
+    echo '<td>';
+    wp_editor($case_study_solution_title, 'technical_seo_case_study_solution_title', array('textarea_rows' => 2, 'media_buttons' => false, 'teeny' => true, 'quicktags' => array('buttons' => 'strong,em,link')));
+    echo '</td></tr>';
     
     echo '<tr><th><label>Solutions List</label></th>';
     echo '<td>';
@@ -397,7 +419,9 @@ function technical_seo_process_callback($post) {
     
     echo '<table class="form-table">';
     echo '<tr><th><label for="technical_seo_process_title">Process Section Title</label></th>';
-    echo '<td><input type="text" id="technical_seo_process_title" name="technical_seo_process_title" value="' . esc_attr($process_title) . '" style="width: 100%;" /></td></tr>';
+    echo '<td>';
+    wp_editor($process_title, 'technical_seo_process_title', array('textarea_rows' => 2, 'media_buttons' => false, 'teeny' => true, 'quicktags' => array('buttons' => 'strong,em,link')));
+    echo '</td></tr>';
     echo '</table>';
     
     echo '<h4>Process Steps</h4>';
@@ -532,7 +556,9 @@ function technical_seo_issues_callback($post) {
     
     echo '<table class="form-table">';
     echo '<tr><th><label for="technical_seo_issues_title">Issues Section Title</label></th>';
-    echo '<td><input type="text" id="technical_seo_issues_title" name="technical_seo_issues_title" value="' . esc_attr($issues_title) . '" style="width: 100%;" /></td></tr>';
+    echo '<td>';
+    wp_editor($issues_title, 'technical_seo_issues_title', array('textarea_rows' => 2, 'media_buttons' => false, 'teeny' => true, 'quicktags' => array('buttons' => 'strong,em,link')));
+    echo '</td></tr>';
     echo '</table>';
     
     echo '<h4>Technical Issues</h4>';
@@ -572,16 +598,24 @@ function technical_seo_testimonial_callback($post) {
     
     echo '<table class="form-table">';
     echo '<tr><th><label for="technical_seo_testimonial_quote">Testimonial Quote</label></th>';
-    echo '<td><textarea id="technical_seo_testimonial_quote" name="technical_seo_testimonial_quote" rows="5" style="width: 100%;">' . esc_textarea($testimonial_quote) . '</textarea></td></tr>';
+    echo '<td>';
+    wp_editor($testimonial_quote, 'technical_seo_testimonial_quote', array('textarea_rows' => 4, 'media_buttons' => false, 'teeny' => true, 'quicktags' => array('buttons' => 'strong,em,link')));
+    echo '</td></tr>';
     
     echo '<tr><th><label for="technical_seo_testimonial_author_name">Author Name</label></th>';
-    echo '<td><input type="text" id="technical_seo_testimonial_author_name" name="technical_seo_testimonial_author_name" value="' . esc_attr($testimonial_author_name) . '" style="width: 100%;" /></td></tr>';
+    echo '<td>';
+    wp_editor($testimonial_author_name, 'technical_seo_testimonial_author_name', array('textarea_rows' => 2, 'media_buttons' => false, 'teeny' => true, 'quicktags' => array('buttons' => 'strong,em,link')));
+    echo '</td></tr>';
     
     echo '<tr><th><label for="technical_seo_testimonial_author_title">Author Title</label></th>';
-    echo '<td><input type="text" id="technical_seo_testimonial_author_title" name="technical_seo_testimonial_author_title" value="' . esc_attr($testimonial_author_title) . '" style="width: 100%;" /></td></tr>';
+    echo '<td>';
+    wp_editor($testimonial_author_title, 'technical_seo_testimonial_author_title', array('textarea_rows' => 2, 'media_buttons' => false, 'teeny' => true, 'quicktags' => array('buttons' => 'strong,em,link')));
+    echo '</td></tr>';
     
     echo '<tr><th><label for="technical_seo_testimonial_author_company">Author Company</label></th>';
-    echo '<td><input type="text" id="technical_seo_testimonial_author_company" name="technical_seo_testimonial_author_company" value="' . esc_attr($testimonial_author_company) . '" style="width: 100%;" /></td></tr>';
+    echo '<td>';
+    wp_editor($testimonial_author_company, 'technical_seo_testimonial_author_company', array('textarea_rows' => 2, 'media_buttons' => false, 'teeny' => true, 'quicktags' => array('buttons' => 'strong,em,link')));
+    echo '</td></tr>';
     
     echo '<tr><th><label for="technical_seo_testimonial_image">Author Image</label></th>';
     echo '<td>';
@@ -615,19 +649,27 @@ function technical_seo_cta_callback($post) {
     
     echo '<table class="form-table">';
     echo '<tr><th><label for="technical_seo_cta_title">CTA Title</label></th>';
-    echo '<td><input type="text" id="technical_seo_cta_title" name="technical_seo_cta_title" value="' . esc_attr($cta_title) . '" style="width: 100%;" /></td></tr>';
+    echo '<td>';
+    wp_editor($cta_title, 'technical_seo_cta_title', array('textarea_rows' => 2, 'media_buttons' => false, 'teeny' => true, 'quicktags' => array('buttons' => 'strong,em,link')));
+    echo '</td></tr>';
     
     echo '<tr><th><label for="technical_seo_cta_description">CTA Description</label></th>';
-    echo '<td><textarea id="technical_seo_cta_description" name="technical_seo_cta_description" rows="3" style="width: 100%;">' . esc_textarea($cta_description) . '</textarea></td></tr>';
+    echo '<td>';
+    wp_editor($cta_description, 'technical_seo_cta_description', array('textarea_rows' => 3, 'media_buttons' => false, 'teeny' => true, 'quicktags' => array('buttons' => 'strong,em,link')));
+    echo '</td></tr>';
     
     echo '<tr><th><label for="technical_seo_cta_primary_text">Primary Button Text</label></th>';
-    echo '<td><input type="text" id="technical_seo_cta_primary_text" name="technical_seo_cta_primary_text" value="' . esc_attr($cta_primary_text) . '" style="width: 100%;" /></td></tr>';
+    echo '<td>';
+    wp_editor($cta_primary_text, 'technical_seo_cta_primary_text', array('textarea_rows' => 2, 'media_buttons' => false, 'teeny' => true, 'quicktags' => array('buttons' => 'strong,em,link')));
+    echo '</td></tr>';
     
     echo '<tr><th><label for="technical_seo_cta_primary_url">Primary Button URL</label></th>';
     echo '<td><input type="text" id="technical_seo_cta_primary_url" name="technical_seo_cta_primary_url" value="' . esc_attr($cta_primary_url) . '" style="width: 100%;" /></td></tr>';
     
     echo '<tr><th><label for="technical_seo_cta_secondary_text">Secondary Button Text</label></th>';
-    echo '<td><input type="text" id="technical_seo_cta_secondary_text" name="technical_seo_cta_secondary_text" value="' . esc_attr($cta_secondary_text) . '" style="width: 100%;" /></td></tr>';
+    echo '<td>';
+    wp_editor($cta_secondary_text, 'technical_seo_cta_secondary_text', array('textarea_rows' => 2, 'media_buttons' => false, 'teeny' => true, 'quicktags' => array('buttons' => 'strong,em,link')));
+    echo '</td></tr>';
     
     echo '<tr><th><label for="technical_seo_cta_secondary_url">Secondary Button URL</label></th>';
     echo '<td><input type="text" id="technical_seo_cta_secondary_url" name="technical_seo_cta_secondary_url" value="' . esc_attr($cta_secondary_url) . '" style="width: 100%;" /></td></tr>';
@@ -698,7 +740,37 @@ function technical_seo_save_meta($post_id) {
 
     foreach ($meta_fields as $field) {
         if (isset($_POST[$field])) {
-            update_post_meta($post_id, $field, $_POST[$field]);
+            // Fields converted to wp_editor need wp_kses_post for HTML preservation
+            $wp_editor_fields = array(
+                'technical_seo_header_title',
+                'technical_seo_header_subtitle',
+                'technical_seo_overview_title',
+                'technical_seo_overview_description',
+                'technical_seo_benefits_title',
+                'technical_seo_services_title',
+                'technical_seo_case_study_label',
+                'technical_seo_case_study_title',
+                'technical_seo_case_study_description',
+                'technical_seo_case_study_challenge_title',
+                'technical_seo_case_study_solution_title',
+                'technical_seo_process_title',
+                'technical_seo_issues_title',
+                'technical_seo_testimonial_quote',
+                'technical_seo_testimonial_author_name',
+                'technical_seo_testimonial_author_title',
+                'technical_seo_testimonial_author_company',
+                'technical_seo_cta_title',
+                'technical_seo_cta_description',
+                'technical_seo_cta_primary_text',
+                'technical_seo_cta_secondary_text'
+            );
+
+            if (in_array($field, $wp_editor_fields)) {
+                $value = wp_kses_post($_POST[$field]);
+            } else {
+                $value = $_POST[$field];
+            }
+            update_post_meta($post_id, $field, $value);
         }
     }
 }
