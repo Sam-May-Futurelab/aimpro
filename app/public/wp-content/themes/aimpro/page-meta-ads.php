@@ -38,8 +38,8 @@ function get_meta_ads_meta($key, $post_id, $defaults, $prefix = '_meta_ads_') {
     <section class="page-hero service-hero">
         <div class="container">
             <div class="hero-content animate-on-scroll animate-fade-up">
-                <h1><?php echo esc_html(get_meta_ads_meta('hero_title', $post_id, $defaults)); ?></h1>
-                <p class="hero-subtitle"><?php echo esc_html(get_meta_ads_meta('hero_subtitle', $post_id, $defaults)); ?></p>
+                <h1><?php echo wp_kses_post(get_meta_ads_meta('hero_title', $post_id, $defaults)); ?></h1>
+                <p class="hero-subtitle"><?php echo wp_kses_post(get_meta_ads_meta('hero_subtitle', $post_id, $defaults)); ?></p>
                 <div class="hero-stats animate-on-scroll animate-fade-up">
                     <div class="stat-item">
                         <div class="stat-number"><?php echo esc_html(get_meta_ads_meta('hero_stat1_number', $post_id, $defaults)); ?></div>
@@ -62,8 +62,8 @@ function get_meta_ads_meta($key, $post_id, $defaults, $prefix = '_meta_ads_') {
     <section class="service-overview">
         <div class="container">
             <div class="overview-content animate-on-scroll animate-fade-up">
-                <h2><?php echo esc_html(get_meta_ads_meta('overview_title', $post_id, $defaults)); ?></h2>
-                <p><?php echo esc_html(get_meta_ads_meta('overview_content', $post_id, $defaults)); ?></p>
+                <h2><?php echo wp_kses_post(get_meta_ads_meta('overview_title', $post_id, $defaults)); ?></h2>
+                <p><?php echo wp_kses_post(get_meta_ads_meta('overview_content', $post_id, $defaults)); ?></p>
             </div>
             
             <div class="services-grid">
@@ -72,8 +72,8 @@ function get_meta_ads_meta($key, $post_id, $defaults, $prefix = '_meta_ads_') {
                     <div class="service-icon">
                         <i class="<?php echo esc_attr(get_meta_ads_meta("service_icon_{$i}", $post_id, $defaults)); ?>"></i>
                     </div>
-                    <h3><?php echo esc_html(get_meta_ads_meta("service_title_{$i}", $post_id, $defaults)); ?></h3>
-                    <p><?php echo esc_html(get_meta_ads_meta("service_content_{$i}", $post_id, $defaults)); ?></p>
+                    <h3><?php echo wp_kses_post(get_meta_ads_meta("service_title_{$i}", $post_id, $defaults)); ?></h3>
+                    <p><?php echo wp_kses_post(get_meta_ads_meta("service_content_{$i}", $post_id, $defaults)); ?></p>
                 </div>                <?php endfor; ?>            </div>
             <div class="text-center mt-1 animate-on-scroll animate-fade-up">
                 <a href="/contact/" class="btn btn-primary">Schedule Your Meta Ads Consultation</a>
@@ -211,14 +211,14 @@ function get_meta_ads_meta($key, $post_id, $defaults, $prefix = '_meta_ads_') {
     </section><!-- Process Section -->
     <section class="process-section">
         <div class="container">
-            <h2 class="animate-on-scroll animate-fade-up"><?php echo esc_html(get_meta_ads_meta('process_title', $post_id, $defaults)); ?></h2>
+            <h2 class="animate-on-scroll animate-fade-up"><?php echo wp_kses_post(get_meta_ads_meta('process_title', $post_id, $defaults)); ?></h2>
             <div class="process-steps">
                 <?php for($i = 1; $i <= 5; $i++) : ?>
                 <div class="process-step animate-on-scroll animate-stagger animate-fade-up">
                     <div class="step-number"><?php echo esc_html(get_meta_ads_meta("process_step_number_{$i}", $post_id, $defaults)); ?></div>
                     <div class="step-content">
-                        <h3><?php echo esc_html(get_meta_ads_meta("process_step_title_{$i}", $post_id, $defaults)); ?></h3>
-                        <p><?php echo esc_html(get_meta_ads_meta("process_step_content_{$i}", $post_id, $defaults)); ?></p>
+                        <h3><?php echo wp_kses_post(get_meta_ads_meta("process_step_title_{$i}", $post_id, $defaults)); ?></h3>
+                        <p><?php echo wp_kses_post(get_meta_ads_meta("process_step_content_{$i}", $post_id, $defaults)); ?></p>
                     </div>
                 </div>
                 <?php endfor; ?>
@@ -228,8 +228,8 @@ function get_meta_ads_meta($key, $post_id, $defaults, $prefix = '_meta_ads_') {
     <section id="packages" class="pricing-section">
         <div class="container">
             <div class="section-header animate-on-scroll animate-fade-up">
-                <h2><?php echo esc_html(get_meta_ads_meta('pricing_title', $post_id, $defaults)); ?></h2>
-                <p><?php echo esc_html(get_meta_ads_meta('pricing_subtitle', $post_id, $defaults)); ?></p>
+                <h2><?php echo wp_kses_post(get_meta_ads_meta('pricing_title', $post_id, $defaults)); ?></h2>
+                <p><?php echo wp_kses_post(get_meta_ads_meta('pricing_subtitle', $post_id, $defaults)); ?></p>
             </div>
             
             <div class="pricing-grid">
@@ -244,14 +244,14 @@ function get_meta_ads_meta($key, $post_id, $defaults, $prefix = '_meta_ads_') {
                     <div class="pricing-header">
                         <h3><?php echo esc_html(get_meta_ads_meta("pricing_package_{$i}_name", $post_id, $defaults)); ?></h3>
                         <div class="price"><?php echo esc_html(get_meta_ads_meta("pricing_package_{$i}_price", $post_id, $defaults)); ?><span><?php echo esc_html(get_meta_ads_meta("pricing_package_{$i}_period", $post_id, $defaults)); ?></span></div>
-                        <p><?php echo esc_html(get_meta_ads_meta("pricing_package_{$i}_description", $post_id, $defaults)); ?></p>
+                        <p><?php echo wp_kses_post(get_meta_ads_meta("pricing_package_{$i}_description", $post_id, $defaults)); ?></p>
                     </div>
                     <ul class="pricing-features">
                         <?php 
                         $features = explode("\n", get_meta_ads_meta("pricing_package_{$i}_features", $post_id, $defaults));
                         foreach($features as $feature) {
                             if (!empty(trim($feature))) {
-                                echo '<li>' . esc_html(trim($feature)) . '</li>';
+                                echo '<li>' . wp_kses_post(trim($feature)) . '</li>';
                             }
                         }
                         ?>
@@ -264,15 +264,15 @@ function get_meta_ads_meta($key, $post_id, $defaults, $prefix = '_meta_ads_') {
     </section>    <!-- Tools & Technologies -->
     <section class="tools-section">
         <div class="container">
-            <h2 class="animate-on-scroll animate-fade-up"><?php echo esc_html(get_meta_ads_meta('tools_title', $post_id, $defaults)); ?></h2>
+            <h2 class="animate-on-scroll animate-fade-up"><?php echo wp_kses_post(get_meta_ads_meta('tools_title', $post_id, $defaults)); ?></h2>
             <div class="tools-grid">
                 <?php for($i = 1; $i <= 4; $i++) : ?>
                 <div class="tool-item animate-on-scroll animate-stagger animate-fade-up">
                     <div class="tool-icon">
                         <i class="<?php echo esc_attr(get_meta_ads_meta("tool_icon_{$i}", $post_id, $defaults)); ?>"></i>
                     </div>
-                    <h3><?php echo esc_html(get_meta_ads_meta("tool_title_{$i}", $post_id, $defaults)); ?></h3>
-                    <p><?php echo esc_html(get_meta_ads_meta("tool_content_{$i}", $post_id, $defaults)); ?></p>
+                    <h3><?php echo wp_kses_post(get_meta_ads_meta("tool_title_{$i}", $post_id, $defaults)); ?></h3>
+                    <p><?php echo wp_kses_post(get_meta_ads_meta("tool_content_{$i}", $post_id, $defaults)); ?></p>
                 </div>
                 <?php endfor; ?>
             </div>
@@ -280,12 +280,12 @@ function get_meta_ads_meta($key, $post_id, $defaults, $prefix = '_meta_ads_') {
     </section>    <!-- Industries Section -->
     <section class="industries-section">
         <div class="container">
-            <h2 class="animate-on-scroll animate-fade-up"><?php echo esc_html(get_meta_ads_meta('industries_title', $post_id, $defaults)); ?></h2>
+            <h2 class="animate-on-scroll animate-fade-up"><?php echo wp_kses_post(get_meta_ads_meta('industries_title', $post_id, $defaults)); ?></h2>
             <div class="industries-grid">
                 <?php for($i = 1; $i <= 6; $i++) : ?>
                 <div class="industry-item animate-on-scroll animate-stagger animate-fade-up">
-                    <h3><?php echo esc_html(get_meta_ads_meta("industry_title_{$i}", $post_id, $defaults)); ?></h3>
-                    <p><?php echo esc_html(get_meta_ads_meta("industry_content_{$i}", $post_id, $defaults)); ?></p>
+                    <h3><?php echo wp_kses_post(get_meta_ads_meta("industry_title_{$i}", $post_id, $defaults)); ?></h3>
+                    <p><?php echo wp_kses_post(get_meta_ads_meta("industry_content_{$i}", $post_id, $defaults)); ?></p>
                 </div>
                 <?php endfor; ?>
             </div>
@@ -295,7 +295,7 @@ function get_meta_ads_meta($key, $post_id, $defaults, $prefix = '_meta_ads_') {
         <div class="container">
             <div class="testimonial-content animate-on-scroll animate-fade-up">
                 <blockquote>
-                    "<?php echo esc_html(get_meta_ads_meta('testimonial_quote', $post_id, $defaults)); ?>"
+                    "<?php echo wp_kses_post(get_meta_ads_meta('testimonial_quote', $post_id, $defaults)); ?>"
                 </blockquote>
                 <cite>
                     <strong><?php echo esc_html(get_meta_ads_meta('testimonial_name', $post_id, $defaults)); ?></strong><br>
@@ -307,8 +307,8 @@ function get_meta_ads_meta($key, $post_id, $defaults, $prefix = '_meta_ads_') {
       <!-- CTA Section -->
     <section class="meta-ads-cta text-center">
         <div class="section-content animate-on-scroll animate-fade-up">
-            <h2 class="animate-on-scroll animate-scale-up"><?php echo esc_html(get_meta_ads_meta('cta_title', $post_id, $defaults)); ?></h2>
-            <p><?php echo esc_html(get_meta_ads_meta('cta_content', $post_id, $defaults)); ?></p>
+            <h2 class="animate-on-scroll animate-scale-up"><?php echo wp_kses_post(get_meta_ads_meta('cta_title', $post_id, $defaults)); ?></h2>
+            <p><?php echo wp_kses_post(get_meta_ads_meta('cta_content', $post_id, $defaults)); ?></p>
             <div class="cta-buttons">
                 <a href="<?php echo home_url('/contact'); ?>" class="btn btn-primary"><?php echo esc_html(get_meta_ads_meta('cta_button_1_text', $post_id, $defaults)); ?></a>
                 <a href="<?php echo home_url('/services'); ?>" class="btn btn-secondary"><?php echo esc_html(get_meta_ads_meta('cta_button_2_text', $post_id, $defaults)); ?></a>
