@@ -28,29 +28,36 @@ get_header(); ?>
             <div class="hero-content animate-on-scroll animate-fade-up">
                 <?php
                 // Get hero content from meta fields with fallbacks
-                $defaults = aimpro_get_retargeting_display_default_values();
+                $defaults = function_exists('aimpro_get_retargeting_display_default_values') 
+                    ? aimpro_get_retargeting_display_default_values() 
+                    : array();
+                
+                // Helper function for safe array access
+                function get_default($defaults, $key, $fallback = '') {
+                    return isset($defaults[$key]) ? $defaults[$key] : $fallback;
+                }
                 
                 $hero_title = get_post_meta(get_the_ID(), '_retargeting_display_hero_title', true);
-                if (empty($hero_title)) $hero_title = $defaults['hero_title'];
+                if (empty($hero_title)) $hero_title = get_default($defaults, 'hero_title', 'Retargeting & Display Advertising');
                 
                 $hero_subtitle = get_post_meta(get_the_ID(), '_retargeting_display_hero_subtitle', true);
-                if (empty($hero_subtitle)) $hero_subtitle = $defaults['hero_subtitle'];
+                if (empty($hero_subtitle)) $hero_subtitle = get_default($defaults, 'hero_subtitle', 'Re-engage interested prospects and build brand awareness with strategic retargeting campaigns.');
                 
                 $hero_cta1_text = get_post_meta(get_the_ID(), '_retargeting_display_hero_cta1_text', true);
-                if (empty($hero_cta1_text)) $hero_cta1_text = $defaults['hero_cta1_text'];
+                if (empty($hero_cta1_text)) $hero_cta1_text = get_default($defaults, 'hero_cta1_text', 'Start Retargeting');
                 
                 $hero_cta2_text = get_post_meta(get_the_ID(), '_retargeting_display_hero_cta2_text', true);
-                if (empty($hero_cta2_text)) $hero_cta2_text = $defaults['hero_cta2_text'];
+                if (empty($hero_cta2_text)) $hero_cta2_text = get_default($defaults, 'hero_cta2_text', 'View Packages');
                 ?>                <h1><?php echo wp_kses_post($hero_title); ?></h1>
                 <p class="hero-subtitle"><?php echo wp_kses_post($hero_subtitle); ?></p>
                 <div class="hero-stats animate-on-scroll animate-fade-up">
                     <?php for ($i = 1; $i <= 3; $i++) : ?>
                         <?php
                         $stat_number = get_post_meta(get_the_ID(), "_retargeting_display_hero_stat{$i}_number", true);
-                        if (empty($stat_number)) $stat_number = $defaults["hero_stat{$i}_number"];
+                        if (empty($stat_number)) $stat_number = get_default($defaults, "hero_stat{$i}_number", $i == 1 ? '475%' : ($i == 2 ? '68%' : '12x'));
                         
                         $stat_label = get_post_meta(get_the_ID(), "_retargeting_display_hero_stat{$i}_label", true);
-                        if (empty($stat_label)) $stat_label = $defaults["hero_stat{$i}_label"];
+                        if (empty($stat_label)) $stat_label = get_default($defaults, "hero_stat{$i}_label", $i == 1 ? 'Conversion Rate Increase' : ($i == 2 ? 'Lower Cost Per Conversion' : 'Higher Click-Through Rate'));
                         ?>
                         <div class="stat-item">
                             <div class="stat-number"><?php echo esc_html($stat_number); ?></div>
@@ -67,10 +74,10 @@ get_header(); ?>
             <div class="overview-content animate-on-scroll animate-fade-up">
                 <?php
                 $overview_title = get_post_meta(get_the_ID(), '_retargeting_display_overview_title', true);
-                if (empty($overview_title)) $overview_title = $defaults['overview_title'];
+                if (empty($overview_title)) $overview_title = get_default($defaults, 'overview_title', 'Strategic Retargeting & Display Campaigns');
                 
                 $overview_content = get_post_meta(get_the_ID(), '_retargeting_display_overview_content', true);
-                if (empty($overview_content)) $overview_content = $defaults['overview_content'];
+                if (empty($overview_content)) $overview_content = get_default($defaults, 'overview_content', 'Most website visitors leave without converting. Our retargeting and display advertising strategies keep your brand top-of-mind.');
                 ?>
                 <h2><?php echo wp_kses_post($overview_title); ?></h2>
                 <p><?php echo wp_kses_post($overview_content); ?></p>
@@ -80,13 +87,29 @@ get_header(); ?>
                 <?php for ($i = 1; $i <= 6; $i++) : ?>
                     <?php
                     $service_title = get_post_meta(get_the_ID(), "_retargeting_display_service_title_{$i}", true);
-                    if (empty($service_title)) $service_title = $defaults["service_title_{$i}"];
+                    if (empty($service_title)) {
+                        $titles = ['Website Retargeting', 'Abandoned Cart Recovery', 'Display Advertising', 'Video Retargeting', 'Lookalike Audiences', 'Cross-Platform Campaigns'];
+                        $service_title = get_default($defaults, "service_title_{$i}", isset($titles[$i-1]) ? $titles[$i-1] : 'Retargeting Service');
+                    }
                     
                     $service_content = get_post_meta(get_the_ID(), "_retargeting_display_service_content_{$i}", true);
-                    if (empty($service_content)) $service_content = $defaults["service_content_{$i}"];
+                    if (empty($service_content)) {
+                        $contents = [
+                            'Re-engage website visitors with personalised ads based on their browsing behaviour.',
+                            'Win back shoppers who left items in their cart with targeted ads.',
+                            'Build brand awareness through visually compelling display ads.',
+                            'Engage prospects with dynamic video content.',
+                            'Expand your reach by targeting similar prospects.',
+                            'Coordinate retargeting efforts across multiple platforms.'
+                        ];
+                        $service_content = get_default($defaults, "service_content_{$i}", isset($contents[$i-1]) ? $contents[$i-1] : 'Professional retargeting services.');
+                    }
                     
                     $service_icon = get_post_meta(get_the_ID(), "_retargeting_display_service_icon_{$i}", true);
-                    if (empty($service_icon)) $service_icon = $defaults["service_icon_{$i}"];
+                    if (empty($service_icon)) {
+                        $icons = ['fas fa-bullseye', 'fas fa-shopping-cart', 'fas fa-ad', 'fas fa-play-circle', 'fas fa-user-friends', 'fas fa-sync-alt'];
+                        $service_icon = get_default($defaults, "service_icon_{$i}", isset($icons[$i-1]) ? $icons[$i-1] : 'fas fa-bullseye');
+                    }
                     ?>
                     <div class="service-item animate-on-scroll animate-stagger animate-fade-up">
                         <div class="service-icon">
@@ -104,16 +127,16 @@ get_header(); ?>
                 <div class="case-study-text animate-on-scroll animate-slide-left">
                     <?php
                     $case_study_title = get_post_meta(get_the_ID(), '_retargeting_display_case_study_title', true);
-                    if (empty($case_study_title)) $case_study_title = $defaults['case_study_title'];
+                    if (empty($case_study_title)) $case_study_title = get_default($defaults, 'case_study_title', 'Case Study: E-commerce Cart Recovery');
                     
                     $case_study_intro = get_post_meta(get_the_ID(), '_retargeting_display_case_study_intro', true);
-                    if (empty($case_study_intro)) $case_study_intro = $defaults['case_study_intro'];
+                    if (empty($case_study_intro)) $case_study_intro = get_default($defaults, 'case_study_intro', 'How we helped an online retailer recover 475% more abandoned carts.');
                     
                     $case_study_challenge = get_post_meta(get_the_ID(), '_retargeting_display_case_study_challenge', true);
-                    if (empty($case_study_challenge)) $case_study_challenge = $defaults['case_study_challenge'];
+                    if (empty($case_study_challenge)) $case_study_challenge = get_default($defaults, 'case_study_challenge', 'A fashion e-commerce store was losing 85% of potential customers to cart abandonment.');
                     
                     $case_study_solution = get_post_meta(get_the_ID(), '_retargeting_display_case_study_solution', true);
-                    if (empty($case_study_solution)) $case_study_solution = $defaults['case_study_solution'];
+                    if (empty($case_study_solution)) $case_study_solution = get_default($defaults, 'case_study_solution', 'Implemented strategic retargeting campaigns across multiple platforms.');
                     ?>
                     <h2><?php echo wp_kses_post($case_study_title); ?></h2>
                     <p class="case-study-intro"><?php echo wp_kses_post($case_study_intro); ?></p>
@@ -149,10 +172,16 @@ get_header(); ?>
                         <?php for ($i = 1; $i <= 4; $i++) : ?>
                             <?php
                             $result_number = get_post_meta(get_the_ID(), "_retargeting_display_case_result_{$i}_number", true);
-                            if (empty($result_number)) $result_number = $defaults["case_result_{$i}_number"];
+                            if (empty($result_number)) {
+                                $numbers = ['475%', '68%', '12x', '235%'];
+                                $result_number = get_default($defaults, "case_result_{$i}_number", isset($numbers[$i-1]) ? $numbers[$i-1] : '100%');
+                            }
                             
                             $result_label = get_post_meta(get_the_ID(), "_retargeting_display_case_result_{$i}_label", true);
-                            if (empty($result_label)) $result_label = $defaults["case_result_{$i}_label"];
+                            if (empty($result_label)) {
+                                $labels = ['Cart Recovery Increase', 'Lower Cost Per Conversion', 'Higher CTR', 'Return on Ad Spend'];
+                                $result_label = get_default($defaults, "case_result_{$i}_label", isset($labels[$i-1]) ? $labels[$i-1] : 'Improvement');
+                            }
                             ?>
                             <div class="result-item animate-on-scroll animate-stagger animate-scale-up">
                                 <div class="result-number"><?php echo esc_html($result_number); ?></div>
@@ -173,20 +202,32 @@ get_header(); ?>
         <div class="container">
             <?php
             $process_title = get_post_meta(get_the_ID(), '_retargeting_display_process_title', true);
-            if (empty($process_title)) $process_title = $defaults['process_title'];
+            if (empty($process_title)) $process_title = get_default($defaults, 'process_title', 'Our Retargeting Process');
             ?>
             <h2 class="animate-on-scroll animate-fade-up" style="text-align: center;"><?php echo wp_kses_post($process_title); ?></h2>
             <div class="process-steps">
                 <?php for ($i = 1; $i <= 5; $i++) : ?>
                     <?php
                     $step_number = get_post_meta(get_the_ID(), "_retargeting_display_process_step_number_{$i}", true);
-                    if (empty($step_number)) $step_number = $defaults["process_step_number_{$i}"];
+                    if (empty($step_number)) $step_number = get_default($defaults, "process_step_number_{$i}", (string)$i);
                     
                     $step_title = get_post_meta(get_the_ID(), "_retargeting_display_process_step_title_{$i}", true);
-                    if (empty($step_title)) $step_title = $defaults["process_step_title_{$i}"];
+                    if (empty($step_title)) {
+                        $titles = ['Audience Segmentation', 'Pixel Implementation', 'Creative Development', 'Campaign Launch & Testing', 'Optimisation & Scaling'];
+                        $step_title = get_default($defaults, "process_step_title_{$i}", isset($titles[$i-1]) ? $titles[$i-1] : 'Process Step');
+                    }
                     
                     $step_content = get_post_meta(get_the_ID(), "_retargeting_display_process_step_content_{$i}", true);
-                    if (empty($step_content)) $step_content = $defaults["process_step_content_{$i}"];
+                    if (empty($step_content)) {
+                        $contents = [
+                            'Analyse website behaviour to create detailed audience segments.',
+                            'Install and configure tracking pixels across all platforms.',
+                            'Design compelling ad creative with personalised messaging.',
+                            'Deploy retargeting campaigns with systematic A/B testing.',
+                            'Continuously optimise and scale successful campaigns.'
+                        ];
+                        $step_content = get_default($defaults, "process_step_content_{$i}", isset($contents[$i-1]) ? $contents[$i-1] : 'Process step description.');
+                    }
                     ?>
                     <div class="process-step animate-on-scroll animate-stagger animate-fade-up">
                         <div class="step-number"><?php echo esc_html($step_number); ?></div>
@@ -208,20 +249,36 @@ get_header(); ?>
         <div class="container">
             <?php
             $types_title = get_post_meta(get_the_ID(), '_retargeting_display_types_title', true);
-            if (empty($types_title)) $types_title = $defaults['types_title'];
+            if (empty($types_title)) $types_title = get_default($defaults, 'types_title', 'Types of Retargeting We Implement');
             ?>
             <h2 class="animate-on-scroll animate-fade-up" style="text-align: center; margin-bottom: 2rem;"><?php echo wp_kses_post($types_title); ?></h2>
             <div class="types-grid" style="margin: 2.5rem 0;">
                 <?php for ($i = 1; $i <= 6; $i++) : ?>
                     <?php
                     $type_title = get_post_meta(get_the_ID(), "_retargeting_display_type_title_{$i}", true);
-                    if (empty($type_title)) $type_title = $defaults["type_title_{$i}"];
+                    if (empty($type_title)) {
+                        $titles = ['Pixel-Based Retargeting', 'List-Based Retargeting', 'Email Retargeting', 'Video View Retargeting', 'Social Media Retargeting', 'Cross-Device Retargeting'];
+                        $type_title = get_default($defaults, "type_title_{$i}", isset($titles[$i-1]) ? $titles[$i-1] : 'Retargeting Type');
+                    }
                     
                     $type_content = get_post_meta(get_the_ID(), "_retargeting_display_type_content_{$i}", true);
-                    if (empty($type_content)) $type_content = $defaults["type_content_{$i}"];
+                    if (empty($type_content)) {
+                        $contents = [
+                            'Track anonymous website visitors and serve them relevant ads.',
+                            'Upload customer email lists to create targeted campaigns.',
+                            'Target users who interacted with your emails.',
+                            'Re-engage users who watched your video content.',
+                            'Target website visitors on social platforms.',
+                            'Follow users across all their devices.'
+                        ];
+                        $type_content = get_default($defaults, "type_content_{$i}", isset($contents[$i-1]) ? $contents[$i-1] : 'Retargeting strategy description.');
+                    }
                     
                     $type_icon = get_post_meta(get_the_ID(), "_retargeting_display_type_icon_{$i}", true);
-                    if (empty($type_icon)) $type_icon = $defaults["type_icon_{$i}"];
+                    if (empty($type_icon)) {
+                        $icons = ['fas fa-mouse-pointer', 'fas fa-database', 'fas fa-envelope', 'fas fa-play', 'fas fa-share-alt', 'fas fa-mobile-alt'];
+                        $type_icon = get_default($defaults, "type_icon_{$i}", isset($icons[$i-1]) ? $icons[$i-1] : 'fas fa-bullseye');
+                    }
                     ?>
                     <div class="type-item animate-on-scroll animate-stagger animate-fade-up">
                         <h3><?php echo wp_kses_post($type_title); ?></h3>
@@ -240,20 +297,34 @@ get_header(); ?>
         <div class="container">
             <?php
             $tools_title = get_post_meta(get_the_ID(), '_retargeting_display_tools_title', true);
-            if (empty($tools_title)) $tools_title = $defaults['tools_title'];
+            if (empty($tools_title)) $tools_title = get_default($defaults, 'tools_title', 'Tools & Technologies We Use');
             ?>
             <h2 class="animate-on-scroll animate-fade-up" style="text-align: center;"><?php echo wp_kses_post($tools_title); ?></h2>
             <div class="tools-grid">
                 <?php for ($i = 1; $i <= 4; $i++) : ?>
                     <?php
                     $tool_title = get_post_meta(get_the_ID(), "_retargeting_display_tool_title_{$i}", true);
-                    if (empty($tool_title)) $tool_title = $defaults["tool_title_{$i}"];
+                    if (empty($tool_title)) {
+                        $titles = ['Google Display Network', 'Facebook Pixel', 'Google Analytics', 'Dynamic Creative Tools'];
+                        $tool_title = get_default($defaults, "tool_title_{$i}", isset($titles[$i-1]) ? $titles[$i-1] : 'Marketing Tool');
+                    }
                     
                     $tool_content = get_post_meta(get_the_ID(), "_retargeting_display_tool_content_{$i}", true);
-                    if (empty($tool_content)) $tool_content = $defaults["tool_content_{$i}"];
+                    if (empty($tool_content)) {
+                        $contents = [
+                            'Reach users across millions of websites.',
+                            'Advanced retargeting across Facebook and Instagram.',
+                            'Comprehensive audience analysis and tracking.',
+                            'Automated ad creation and personalisation.'
+                        ];
+                        $tool_content = get_default($defaults, "tool_content_{$i}", isset($contents[$i-1]) ? $contents[$i-1] : 'Professional marketing tool.');
+                    }
                     
                     $tool_icon = get_post_meta(get_the_ID(), "_retargeting_display_tool_icon_{$i}", true);
-                    if (empty($tool_icon)) $tool_icon = $defaults["tool_icon_{$i}"];
+                    if (empty($tool_icon)) {
+                        $icons = ['fab fa-google', 'fab fa-facebook', 'fas fa-chart-bar', 'fas fa-palette'];
+                        $tool_icon = get_default($defaults, "tool_icon_{$i}", isset($icons[$i-1]) ? $icons[$i-1] : 'fas fa-tools');
+                    }
                     ?>
                     <div class="tool-item animate-on-scroll animate-stagger animate-fade-up">
                         <div class="tool-icon">
@@ -275,17 +346,30 @@ get_header(); ?>
         <div class="container">
             <?php
             $industries_title = get_post_meta(get_the_ID(), '_retargeting_display_industries_title', true);
-            if (empty($industries_title)) $industries_title = $defaults['industries_title'];
+            if (empty($industries_title)) $industries_title = get_default($defaults, 'industries_title', 'Industries We Serve');
             ?>
             <h2 class="animate-on-scroll animate-fade-up" style="text-align: center;"><?php echo wp_kses_post($industries_title); ?></h2>
             <div class="industries-grid">
                 <?php for ($i = 1; $i <= 6; $i++) : ?>
                     <?php
                     $industry_title = get_post_meta(get_the_ID(), "_retargeting_display_industry_title_{$i}", true);
-                    if (empty($industry_title)) $industry_title = $defaults["industry_title_{$i}"];
+                    if (empty($industry_title)) {
+                        $titles = ['E-commerce & Retail', 'SaaS & Technology', 'Financial Services', 'Real Estate', 'Travel & Hospitality', 'Healthcare'];
+                        $industry_title = get_default($defaults, "industry_title_{$i}", isset($titles[$i-1]) ? $titles[$i-1] : 'Industry Sector');
+                    }
                     
                     $industry_content = get_post_meta(get_the_ID(), "_retargeting_display_industry_content_{$i}", true);
-                    if (empty($industry_content)) $industry_content = $defaults["industry_content_{$i}"];
+                    if (empty($industry_content)) {
+                        $contents = [
+                            'Recover abandoned carts and increase customer lifetime value.',
+                            'Nurture trial users toward paid conversions.',
+                            'Re-engage prospects interested in financial products.',
+                            'Follow up with property viewers.',
+                            'Recapture booking abandoners.',
+                            'Nurture patients who researched treatments.'
+                        ];
+                        $industry_content = get_default($defaults, "industry_content_{$i}", isset($contents[$i-1]) ? $contents[$i-1] : 'Specialized retargeting for this industry.');
+                    }
                     ?>
                     <div class="industry-item animate-on-scroll animate-stagger animate-fade-up">
                         <h3><?php echo wp_kses_post($industry_title); ?></h3>
@@ -299,13 +383,13 @@ get_header(); ?>
             <div class="testimonial-content animate-on-scroll animate-fade-up">
                 <?php
                 $testimonial_quote = get_post_meta(get_the_ID(), '_retargeting_display_testimonial_quote', true);
-                if (empty($testimonial_quote)) $testimonial_quote = $defaults['testimonial_quote'];
+                if (empty($testimonial_quote)) $testimonial_quote = get_default($defaults, 'testimonial_quote', 'Our retargeting campaigns with Aimpro have been phenomenal. We\'re recovering 475% more abandoned carts and our cost per conversion dropped by 68%. It\'s transformed our entire marketing ROI.');
                 
                 $testimonial_name = get_post_meta(get_the_ID(), '_retargeting_display_testimonial_name', true);
-                if (empty($testimonial_name)) $testimonial_name = $defaults['testimonial_name'];
+                if (empty($testimonial_name)) $testimonial_name = get_default($defaults, 'testimonial_name', 'Emma Thompson');
                 
                 $testimonial_title = get_post_meta(get_the_ID(), '_retargeting_display_testimonial_title', true);
-                if (empty($testimonial_title)) $testimonial_title = $defaults['testimonial_title'];
+                if (empty($testimonial_title)) $testimonial_title = get_default($defaults, 'testimonial_title', 'E-commerce Director, StyleHub');
                 ?>
                 <blockquote>
                     "<?php echo wp_kses_post($testimonial_quote); ?>"
@@ -321,16 +405,16 @@ get_header(); ?>
             <div class="simple-cta-content animate-on-scroll animate-fade-up">
                 <?php
                 $cta_title = get_post_meta(get_the_ID(), '_retargeting_display_cta_title', true);
-                if (empty($cta_title)) $cta_title = $defaults['cta_title'];
+                if (empty($cta_title)) $cta_title = get_default($defaults, 'cta_title', 'Ready to Re-Engage Your Lost Prospects?');
                 
                 $cta_content = get_post_meta(get_the_ID(), '_retargeting_display_cta_content', true);
-                if (empty($cta_content)) $cta_content = $defaults['cta_content'];
+                if (empty($cta_content)) $cta_content = get_default($defaults, 'cta_content', 'Stop losing potential customers forever. Start recovering lost revenue today.');
                 
                 $cta_button_1_text = get_post_meta(get_the_ID(), '_retargeting_display_cta_button_1_text', true);
-                if (empty($cta_button_1_text)) $cta_button_1_text = $defaults['cta_button_1_text'];
+                if (empty($cta_button_1_text)) $cta_button_1_text = get_default($defaults, 'cta_button_1_text', 'Start Retargeting');
                 
                 $cta_button_2_text = get_post_meta(get_the_ID(), '_retargeting_display_cta_button_2_text', true);
-                if (empty($cta_button_2_text)) $cta_button_2_text = $defaults['cta_button_2_text'];
+                if (empty($cta_button_2_text)) $cta_button_2_text = get_default($defaults, 'cta_button_2_text', 'View All Services');
                 ?>
                 <h2 class="animate-on-scroll animate-scale-up"><?php echo wp_kses_post($cta_title); ?></h2>
                 <p><?php echo wp_kses_post($cta_content); ?></p>

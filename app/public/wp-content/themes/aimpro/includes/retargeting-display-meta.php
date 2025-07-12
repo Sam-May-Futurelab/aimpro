@@ -116,45 +116,173 @@ function aimpro_register_retargeting_display_meta_boxes() {
 add_action('add_meta_boxes_page', 'aimpro_register_retargeting_display_meta_boxes');
 
 /**
+ * Helper function to get retargeting defaults safely
+ */
+if (!function_exists('get_retargeting_meta_default')) {
+    function get_retargeting_meta_default($key, $fallback = '') {
+        if (function_exists('aimpro_get_retargeting_display_default_values')) {
+            $defaults = aimpro_get_retargeting_display_default_values();
+            return isset($defaults[$key]) ? $defaults[$key] : $fallback;
+        }
+        
+        // Comprehensive fallback defaults for meta interface
+        $meta_defaults = array(
+            'hero_title' => 'Retargeting & Display Advertising',
+            'hero_subtitle' => 'Re-engage interested prospects and build brand awareness with strategic retargeting campaigns.',
+            'hero_stat1_number' => '475%',
+            'hero_stat1_label' => 'Average CTR Increase',
+            'hero_stat2_number' => '68%',
+            'hero_stat2_label' => 'Conversion Rate Boost',
+            'hero_stat3_number' => '12x',
+            'hero_stat3_label' => 'ROAS Improvement',
+            'hero_cta1_text' => 'Start Retargeting',
+            'hero_cta2_text' => 'View Packages',
+            'overview_title' => 'Strategic Retargeting & Display Solutions',
+            'overview_content' => 'Reconnect with your most valuable prospects through targeted display campaigns.',
+            'service_title_1' => 'Website Retargeting',
+            'service_content_1' => 'Target visitors who explored your site but didn\'t convert.',
+            'service_icon_1' => 'fas fa-globe',
+            'service_title_2' => 'Email Retargeting',
+            'service_content_2' => 'Re-engage subscribers with personalized display ads.',
+            'service_icon_2' => 'fas fa-envelope',
+            'service_title_3' => 'Dynamic Product Ads',
+            'service_content_3' => 'Show specific products to interested prospects.',
+            'service_icon_3' => 'fas fa-shopping-cart',
+            'service_title_4' => 'Video Retargeting',
+            'service_content_4' => 'Target viewers of your video content.',
+            'service_icon_4' => 'fas fa-video',
+            'service_title_5' => 'Social Media Retargeting',
+            'service_content_5' => 'Reach prospects across social platforms.',
+            'service_icon_5' => 'fas fa-share-alt',
+            'service_title_6' => 'Cross-Device Targeting',
+            'service_content_6' => 'Follow prospects across all their devices.',
+            'service_icon_6' => 'fas fa-mobile-alt',
+            'case_study_title' => 'Retargeting Success Story',
+            'case_study_intro' => 'How we increased conversions by 340% for an e-commerce client.',
+            'case_study_challenge' => 'High traffic but low conversion rates on product pages.',
+            'case_study_solution' => 'Strategic retargeting campaign with dynamic product ads.',
+            'case_result_1_number' => '340%',
+            'case_result_1_label' => 'Conversion Increase',
+            'case_result_2_number' => '65%',
+            'case_result_2_label' => 'Lower CPA',
+            'case_result_3_number' => '8.2x',
+            'case_result_3_label' => 'ROAS Achievement',
+            'case_result_4_number' => '45%',
+            'case_result_4_label' => 'Brand Recall Lift',
+            'process_title' => 'Our Retargeting Process',
+            'process_step_number_1' => '01',
+            'process_step_title_1' => 'Audience Analysis',
+            'process_step_content_1' => 'Identify and segment your most valuable prospects.',
+            'process_step_number_2' => '02',
+            'process_step_title_2' => 'Creative Development',
+            'process_step_content_2' => 'Design compelling ads that drive action.',
+            'process_step_number_3' => '03',
+            'process_step_title_3' => 'Campaign Setup',
+            'process_step_content_3' => 'Configure targeting and bidding strategies.',
+            'process_step_number_4' => '04',
+            'process_step_title_4' => 'Launch & Monitor',
+            'process_step_content_4' => 'Deploy campaigns and track performance.',
+            'process_step_number_5' => '05',
+            'process_step_title_5' => 'Optimize & Scale',
+            'process_step_content_5' => 'Refine campaigns for maximum ROI.',
+            'types_title' => 'Retargeting Campaign Types',
+            'type_title_1' => 'Standard Retargeting',
+            'type_content_1' => 'Show ads to previous website visitors.',
+            'type_icon_1' => 'fas fa-redo',
+            'type_title_2' => 'Dynamic Retargeting',
+            'type_content_2' => 'Display specific products viewed.',
+            'type_icon_2' => 'fas fa-sync-alt',
+            'type_title_3' => 'Search Retargeting',
+            'type_content_3' => 'Target users based on search behavior.',
+            'type_icon_3' => 'fas fa-search',
+            'type_title_4' => 'Email Retargeting',
+            'type_content_4' => 'Reach email subscribers across the web.',
+            'type_icon_4' => 'fas fa-at',
+            'type_title_5' => 'Video Retargeting',
+            'type_content_5' => 'Target video viewers with display ads.',
+            'type_icon_5' => 'fas fa-play',
+            'type_title_6' => 'Customer Lookalikes',
+            'type_content_6' => 'Find new prospects similar to customers.',
+            'type_icon_6' => 'fas fa-users',
+            'tools_title' => 'Retargeting Platforms We Use',
+            'tool_title_1' => 'Google Ads',
+            'tool_content_1' => 'Reach audiences across Google\'s network.',
+            'tool_icon_1' => 'fab fa-google',
+            'tool_title_2' => 'Facebook Ads',
+            'tool_content_2' => 'Target users on Facebook and Instagram.',
+            'tool_icon_2' => 'fab fa-facebook',
+            'tool_title_3' => 'LinkedIn Ads',
+            'tool_content_3' => 'Professional B2B retargeting campaigns.',
+            'tool_icon_3' => 'fab fa-linkedin',
+            'tool_title_4' => 'Display Networks',
+            'tool_content_4' => 'Premium placements across the web.',
+            'tool_icon_4' => 'fas fa-ad',
+            'industries_title' => 'Industries We Serve',
+            'industry_title_1' => 'E-commerce',
+            'industry_content_1' => 'Drive product sales and reduce cart abandonment.',
+            'industry_title_2' => 'SaaS',
+            'industry_content_2' => 'Convert trial users to paid subscribers.',
+            'industry_title_3' => 'Healthcare',
+            'industry_content_3' => 'Reach patients seeking medical services.',
+            'industry_title_4' => 'Financial Services',
+            'industry_content_4' => 'Generate leads for financial products.',
+            'industry_title_5' => 'Education',
+            'industry_content_5' => 'Attract students to courses and programs.',
+            'industry_title_6' => 'Real Estate',
+            'industry_content_6' => 'Connect with property buyers and sellers.',
+            'testimonial_quote' => 'Their retargeting campaigns brought back 40% of our lost prospects and generated our highest ROI to date.',
+            'testimonial_name' => 'Jennifer Martinez',
+            'testimonial_title' => 'Marketing Director, TechFlow Solutions',
+            'cta_title' => 'Ready to Re-Engage Your Prospects?',
+            'cta_content' => 'Let us create a retargeting strategy that brings back your most valuable prospects.',
+            'cta_button_1_text' => 'Start Retargeting Campaign',
+            'cta_button_2_text' => 'Get Free Consultation'
+        );
+        
+        return isset($meta_defaults[$key]) ? $meta_defaults[$key] : $fallback;
+    }
+}
+
+/**
  * Hero Section Callback
  */
 function aimpro_retargeting_display_hero_callback($post) {
     wp_nonce_field(basename(__FILE__), 'retargeting_display_hero_nonce');
     
-    $defaults = aimpro_get_retargeting_display_default_values();
+    // Use safe helper function instead of direct call
     
     // Get saved values or use defaults if empty
     $hero_title = get_post_meta($post->ID, '_retargeting_display_hero_title', true);
-    if (empty($hero_title)) $hero_title = $defaults['hero_title'];
+    if (empty($hero_title)) $hero_title = get_retargeting_meta_default('hero_title');
     
     $hero_subtitle = get_post_meta($post->ID, '_retargeting_display_hero_subtitle', true);
-    if (empty($hero_subtitle)) $hero_subtitle = $defaults['hero_subtitle'];
+    if (empty($hero_subtitle)) $hero_subtitle = get_retargeting_meta_default('hero_subtitle');
     
     // Hero Stats
     $hero_stat1_number = get_post_meta($post->ID, '_retargeting_display_hero_stat1_number', true);
-    if (empty($hero_stat1_number)) $hero_stat1_number = $defaults['hero_stat1_number'];
+    if (empty($hero_stat1_number)) $hero_stat1_number = get_retargeting_meta_default('hero_stat1_number');
     
     $hero_stat1_label = get_post_meta($post->ID, '_retargeting_display_hero_stat1_label', true);
-    if (empty($hero_stat1_label)) $hero_stat1_label = $defaults['hero_stat1_label'];
+    if (empty($hero_stat1_label)) $hero_stat1_label = get_retargeting_meta_default('hero_stat1_label');
     
     $hero_stat2_number = get_post_meta($post->ID, '_retargeting_display_hero_stat2_number', true);
-    if (empty($hero_stat2_number)) $hero_stat2_number = $defaults['hero_stat2_number'];
+    if (empty($hero_stat2_number)) $hero_stat2_number = get_retargeting_meta_default('hero_stat2_number');
     
     $hero_stat2_label = get_post_meta($post->ID, '_retargeting_display_hero_stat2_label', true);
-    if (empty($hero_stat2_label)) $hero_stat2_label = $defaults['hero_stat2_label'];
+    if (empty($hero_stat2_label)) $hero_stat2_label = get_retargeting_meta_default('hero_stat2_label');
     
     $hero_stat3_number = get_post_meta($post->ID, '_retargeting_display_hero_stat3_number', true);
-    if (empty($hero_stat3_number)) $hero_stat3_number = $defaults['hero_stat3_number'];
+    if (empty($hero_stat3_number)) $hero_stat3_number = get_retargeting_meta_default('hero_stat3_number');
     
     $hero_stat3_label = get_post_meta($post->ID, '_retargeting_display_hero_stat3_label', true);
-    if (empty($hero_stat3_label)) $hero_stat3_label = $defaults['hero_stat3_label'];
+    if (empty($hero_stat3_label)) $hero_stat3_label = get_retargeting_meta_default('hero_stat3_label');
     
     // Hero CTAs
     $hero_cta1_text = get_post_meta($post->ID, '_retargeting_display_hero_cta1_text', true);
-    if (empty($hero_cta1_text)) $hero_cta1_text = $defaults['hero_cta1_text'];
+    if (empty($hero_cta1_text)) $hero_cta1_text = get_retargeting_meta_default('hero_cta1_text');
     
     $hero_cta2_text = get_post_meta($post->ID, '_retargeting_display_hero_cta2_text', true);
-    if (empty($hero_cta2_text)) $hero_cta2_text = $defaults['hero_cta2_text'];
+    if (empty($hero_cta2_text)) $hero_cta2_text = get_retargeting_meta_default('hero_cta2_text');
     
     // Output fields
     ?>
@@ -227,13 +355,11 @@ function aimpro_retargeting_display_hero_callback($post) {
 function aimpro_retargeting_display_overview_callback($post) {
     wp_nonce_field(basename(__FILE__), 'retargeting_display_overview_nonce');
     
-    $defaults = aimpro_get_retargeting_display_default_values();
-    
     $overview_title = get_post_meta($post->ID, '_retargeting_display_overview_title', true);
-    if (empty($overview_title)) $overview_title = $defaults['overview_title'];
+    if (empty($overview_title)) $overview_title = get_retargeting_meta_default('overview_title');
     
     $overview_content = get_post_meta($post->ID, '_retargeting_display_overview_content', true);
-    if (empty($overview_content)) $overview_content = $defaults['overview_content'];
+    if (empty($overview_content)) $overview_content = get_retargeting_meta_default('overview_content');
     
     ?>
     <p>
@@ -253,8 +379,6 @@ function aimpro_retargeting_display_overview_callback($post) {
 function aimpro_retargeting_display_services_callback($post) {
     wp_nonce_field(basename(__FILE__), 'retargeting_display_services_nonce');
     
-    $defaults = aimpro_get_retargeting_display_default_values();
-    
     ?>
     <div id="retargeting-display-services">
         <?php for ($i = 1; $i <= 6; $i++) : ?>
@@ -263,13 +387,13 @@ function aimpro_retargeting_display_services_callback($post) {
                 
                 <?php
                 $service_title = get_post_meta($post->ID, "_retargeting_display_service_title_{$i}", true);
-                if (empty($service_title)) $service_title = $defaults["service_title_{$i}"];
+                if (empty($service_title)) $service_title = get_retargeting_meta_default("service_title_{$i}");
                 
                 $service_content = get_post_meta($post->ID, "_retargeting_display_service_content_{$i}", true);
-                if (empty($service_content)) $service_content = $defaults["service_content_{$i}"];
+                if (empty($service_content)) $service_content = get_retargeting_meta_default("service_content_{$i}");
                 
                 $service_icon = get_post_meta($post->ID, "_retargeting_display_service_icon_{$i}", true);
-                if (empty($service_icon)) $service_icon = $defaults["service_icon_{$i}"];
+                if (empty($service_icon)) $service_icon = get_retargeting_meta_default("service_icon_{$i}");
                 ?>
                 
                 <p>
@@ -296,19 +420,17 @@ function aimpro_retargeting_display_services_callback($post) {
 function aimpro_retargeting_display_case_study_callback($post) {
     wp_nonce_field(basename(__FILE__), 'retargeting_display_case_study_nonce');
     
-    $defaults = aimpro_get_retargeting_display_default_values();
-    
     $case_study_title = get_post_meta($post->ID, '_retargeting_display_case_study_title', true);
-    if (empty($case_study_title)) $case_study_title = $defaults['case_study_title'];
+    if (empty($case_study_title)) $case_study_title = get_retargeting_meta_default('case_study_title');
     
     $case_study_intro = get_post_meta($post->ID, '_retargeting_display_case_study_intro', true);
-    if (empty($case_study_intro)) $case_study_intro = $defaults['case_study_intro'];
+    if (empty($case_study_intro)) $case_study_intro = get_retargeting_meta_default('case_study_intro');
     
     $case_study_challenge = get_post_meta($post->ID, '_retargeting_display_case_study_challenge', true);
-    if (empty($case_study_challenge)) $case_study_challenge = $defaults['case_study_challenge'];
+    if (empty($case_study_challenge)) $case_study_challenge = get_retargeting_meta_default('case_study_challenge');
     
     $case_study_solution = get_post_meta($post->ID, '_retargeting_display_case_study_solution', true);
-    if (empty($case_study_solution)) $case_study_solution = $defaults['case_study_solution'];
+    if (empty($case_study_solution)) $case_study_solution = get_retargeting_meta_default('case_study_solution');
     
     ?>
     <p>
@@ -334,10 +456,10 @@ function aimpro_retargeting_display_case_study_callback($post) {
             <div style="flex: 1; min-width: 200px;">
                 <?php
                 $result_number = get_post_meta($post->ID, "_retargeting_display_case_result_{$i}_number", true);
-                if (empty($result_number)) $result_number = $defaults["case_result_{$i}_number"];
+                if (empty($result_number)) $result_number = get_retargeting_meta_default("case_result_{$i}_number");
                 
                 $result_label = get_post_meta($post->ID, "_retargeting_display_case_result_{$i}_label", true);
-                if (empty($result_label)) $result_label = $defaults["case_result_{$i}_label"];
+                if (empty($result_label)) $result_label = get_retargeting_meta_default("case_result_{$i}_label");
                 ?>
                 <p>
                     <label for="retargeting_display_case_result_<?php echo $i; ?>_number"><?php echo sprintf(__('Result %d Number', 'aimpro'), $i); ?></label><br>
@@ -359,10 +481,8 @@ function aimpro_retargeting_display_case_study_callback($post) {
 function aimpro_retargeting_display_process_callback($post) {
     wp_nonce_field(basename(__FILE__), 'retargeting_display_process_nonce');
     
-    $defaults = aimpro_get_retargeting_display_default_values();
-    
     $process_title = get_post_meta($post->ID, '_retargeting_display_process_title', true);
-    if (empty($process_title)) $process_title = $defaults['process_title'];
+    if (empty($process_title)) $process_title = get_retargeting_meta_default('process_title');
     
     ?>
     <p>
@@ -377,13 +497,13 @@ function aimpro_retargeting_display_process_callback($post) {
                 
                 <?php
                 $step_number = get_post_meta($post->ID, "_retargeting_display_process_step_number_{$i}", true);
-                if (empty($step_number)) $step_number = $defaults["process_step_number_{$i}"];
+                if (empty($step_number)) $step_number = get_retargeting_meta_default("process_step_number_{$i}");
                 
                 $step_title = get_post_meta($post->ID, "_retargeting_display_process_step_title_{$i}", true);
-                if (empty($step_title)) $step_title = $defaults["process_step_title_{$i}"];
+                if (empty($step_title)) $step_title = get_retargeting_meta_default("process_step_title_{$i}");
                 
                 $step_content = get_post_meta($post->ID, "_retargeting_display_process_step_content_{$i}", true);
-                if (empty($step_content)) $step_content = $defaults["process_step_content_{$i}"];
+                if (empty($step_content)) $step_content = get_retargeting_meta_default("process_step_content_{$i}");
                 ?>
                 
                 <div style="display: flex; gap: 20px;">
@@ -416,10 +536,8 @@ function aimpro_retargeting_display_process_callback($post) {
 function aimpro_retargeting_display_types_callback($post) {
     wp_nonce_field(basename(__FILE__), 'retargeting_display_types_nonce');
     
-    $defaults = aimpro_get_retargeting_display_default_values();
-    
     $types_title = get_post_meta($post->ID, '_retargeting_display_types_title', true);
-    if (empty($types_title)) $types_title = $defaults['types_title'];
+    if (empty($types_title)) $types_title = get_retargeting_meta_default('types_title');
     
     ?>
     <p>
@@ -434,13 +552,13 @@ function aimpro_retargeting_display_types_callback($post) {
                 
                 <?php
                 $type_title = get_post_meta($post->ID, "_retargeting_display_type_title_{$i}", true);
-                if (empty($type_title)) $type_title = $defaults["type_title_{$i}"];
+                if (empty($type_title)) $type_title = get_retargeting_meta_default("type_title_{$i}");
                 
                 $type_content = get_post_meta($post->ID, "_retargeting_display_type_content_{$i}", true);
-                if (empty($type_content)) $type_content = $defaults["type_content_{$i}"];
+                if (empty($type_content)) $type_content = get_retargeting_meta_default("type_content_{$i}");
                 
                 $type_icon = get_post_meta($post->ID, "_retargeting_display_type_icon_{$i}", true);
-                if (empty($type_icon)) $type_icon = $defaults["type_icon_{$i}"];
+                if (empty($type_icon)) $type_icon = get_retargeting_meta_default("type_icon_{$i}");
                 ?>
                 
                 <p>
@@ -467,10 +585,8 @@ function aimpro_retargeting_display_types_callback($post) {
 function aimpro_retargeting_display_tools_callback($post) {
     wp_nonce_field(basename(__FILE__), 'retargeting_display_tools_nonce');
     
-    $defaults = aimpro_get_retargeting_display_default_values();
-    
     $tools_title = get_post_meta($post->ID, '_retargeting_display_tools_title', true);
-    if (empty($tools_title)) $tools_title = $defaults['tools_title'];
+    if (empty($tools_title)) $tools_title = get_retargeting_meta_default('tools_title');
     
     ?>
     <p>
@@ -485,13 +601,13 @@ function aimpro_retargeting_display_tools_callback($post) {
                 
                 <?php
                 $tool_title = get_post_meta($post->ID, "_retargeting_display_tool_title_{$i}", true);
-                if (empty($tool_title)) $tool_title = $defaults["tool_title_{$i}"];
+                if (empty($tool_title)) $tool_title = get_retargeting_meta_default("tool_title_{$i}");
                 
                 $tool_content = get_post_meta($post->ID, "_retargeting_display_tool_content_{$i}", true);
-                if (empty($tool_content)) $tool_content = $defaults["tool_content_{$i}"];
+                if (empty($tool_content)) $tool_content = get_retargeting_meta_default("tool_content_{$i}");
                 
                 $tool_icon = get_post_meta($post->ID, "_retargeting_display_tool_icon_{$i}", true);
-                if (empty($tool_icon)) $tool_icon = $defaults["tool_icon_{$i}"];
+                if (empty($tool_icon)) $tool_icon = get_retargeting_meta_default("tool_icon_{$i}");
                 ?>
                 
                 <p>
@@ -518,10 +634,8 @@ function aimpro_retargeting_display_tools_callback($post) {
 function aimpro_retargeting_display_industries_callback($post) {
     wp_nonce_field(basename(__FILE__), 'retargeting_display_industries_nonce');
     
-    $defaults = aimpro_get_retargeting_display_default_values();
-    
     $industries_title = get_post_meta($post->ID, '_retargeting_display_industries_title', true);
-    if (empty($industries_title)) $industries_title = $defaults['industries_title'];
+    if (empty($industries_title)) $industries_title = get_retargeting_meta_default('industries_title');
     
     ?>
     <p>
@@ -536,10 +650,10 @@ function aimpro_retargeting_display_industries_callback($post) {
                 
                 <?php
                 $industry_title = get_post_meta($post->ID, "_retargeting_display_industry_title_{$i}", true);
-                if (empty($industry_title)) $industry_title = $defaults["industry_title_{$i}"];
+                if (empty($industry_title)) $industry_title = get_retargeting_meta_default("industry_title_{$i}");
                 
                 $industry_content = get_post_meta($post->ID, "_retargeting_display_industry_content_{$i}", true);
-                if (empty($industry_content)) $industry_content = $defaults["industry_content_{$i}"];
+                if (empty($industry_content)) $industry_content = get_retargeting_meta_default("industry_content_{$i}");
                 ?>
                 
                 <p>
@@ -562,16 +676,14 @@ function aimpro_retargeting_display_industries_callback($post) {
 function aimpro_retargeting_display_testimonial_callback($post) {
     wp_nonce_field(basename(__FILE__), 'retargeting_display_testimonial_nonce');
     
-    $defaults = aimpro_get_retargeting_display_default_values();
-    
     $testimonial_quote = get_post_meta($post->ID, '_retargeting_display_testimonial_quote', true);
-    if (empty($testimonial_quote)) $testimonial_quote = $defaults['testimonial_quote'];
+    if (empty($testimonial_quote)) $testimonial_quote = get_retargeting_meta_default('testimonial_quote');
     
     $testimonial_name = get_post_meta($post->ID, '_retargeting_display_testimonial_name', true);
-    if (empty($testimonial_name)) $testimonial_name = $defaults['testimonial_name'];
+    if (empty($testimonial_name)) $testimonial_name = get_retargeting_meta_default('testimonial_name');
     
     $testimonial_title = get_post_meta($post->ID, '_retargeting_display_testimonial_title', true);
-    if (empty($testimonial_title)) $testimonial_title = $defaults['testimonial_title'];
+    if (empty($testimonial_title)) $testimonial_title = get_retargeting_meta_default('testimonial_title');
     
     ?>
     <p>
@@ -595,19 +707,17 @@ function aimpro_retargeting_display_testimonial_callback($post) {
 function aimpro_retargeting_display_cta_callback($post) {
     wp_nonce_field(basename(__FILE__), 'retargeting_display_cta_nonce');
     
-    $defaults = aimpro_get_retargeting_display_default_values();
-    
     $cta_title = get_post_meta($post->ID, '_retargeting_display_cta_title', true);
-    if (empty($cta_title)) $cta_title = $defaults['cta_title'];
+    if (empty($cta_title)) $cta_title = get_retargeting_meta_default('cta_title');
     
     $cta_content = get_post_meta($post->ID, '_retargeting_display_cta_content', true);
-    if (empty($cta_content)) $cta_content = $defaults['cta_content'];
+    if (empty($cta_content)) $cta_content = get_retargeting_meta_default('cta_content');
     
     $cta_button_1_text = get_post_meta($post->ID, '_retargeting_display_cta_button_1_text', true);
-    if (empty($cta_button_1_text)) $cta_button_1_text = $defaults['cta_button_1_text'];
+    if (empty($cta_button_1_text)) $cta_button_1_text = get_retargeting_meta_default('cta_button_1_text');
     
     $cta_button_2_text = get_post_meta($post->ID, '_retargeting_display_cta_button_2_text', true);
-    if (empty($cta_button_2_text)) $cta_button_2_text = $defaults['cta_button_2_text'];
+    if (empty($cta_button_2_text)) $cta_button_2_text = get_retargeting_meta_default('cta_button_2_text');
     
     ?>
     <p>
