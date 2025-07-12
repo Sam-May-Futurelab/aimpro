@@ -103,44 +103,126 @@ function website_development_meta_callback($post) {
     // Default values
     $defaults = get_website_development_defaults();
     
-    // Get current values or use defaults
-    $header_title = get_post_meta($post->ID, 'website_development_header_title', true) ?: $defaults['header_title'];
-    $header_subtitle = get_post_meta($post->ID, 'website_development_header_subtitle', true) ?: $defaults['header_subtitle'];
-    $header_tags = get_post_meta($post->ID, 'website_development_header_tags', true) ?: $defaults['header_tags'];
-    $overview_title = get_post_meta($post->ID, 'website_development_overview_title', true) ?: $defaults['overview_title'];
-    $overview_description = get_post_meta($post->ID, 'website_development_overview_description', true) ?: $defaults['overview_description'];
+    // Get current values or use defaults - ensure text fields are strings
+    $header_title = get_post_meta($post->ID, 'website_development_header_title', true);
+    if (empty($header_title)) $header_title = isset($defaults['header_title']) ? $defaults['header_title'] : '';
+    
+    $header_subtitle = get_post_meta($post->ID, 'website_development_header_subtitle', true);
+    if (empty($header_subtitle)) $header_subtitle = isset($defaults['header_subtitle']) ? $defaults['header_subtitle'] : '';
+    
+    $header_tags = get_post_meta($post->ID, 'website_development_header_tags', true);
+    if (empty($header_tags)) $header_tags = isset($defaults['header_tags']) ? $defaults['header_tags'] : '';
+    
+    $overview_title = get_post_meta($post->ID, 'website_development_overview_title', true);
+    if (empty($overview_title)) $overview_title = isset($defaults['overview_title']) ? $defaults['overview_title'] : '';
+    
+    $overview_description = get_post_meta($post->ID, 'website_development_overview_description', true);
+    if (empty($overview_description)) $overview_description = isset($defaults['overview_description']) ? $defaults['overview_description'] : '';
+    
     $stats = get_post_meta($post->ID, 'website_development_stats', true);
-    if (!is_array($stats) || empty($stats)) $stats = $defaults['stats'];
-    $case_title = get_post_meta($post->ID, 'website_development_case_title', true) ?: $defaults['case_title'];
-    $case_subtitle = get_post_meta($post->ID, 'website_development_case_subtitle', true) ?: $defaults['case_subtitle'];
-    $case_description = get_post_meta($post->ID, 'website_development_case_description', true) ?: $defaults['case_description'];
-    $case_challenges = get_post_meta($post->ID, 'website_development_case_challenges', true) ?: $defaults['case_challenges'];
-    $case_solutions = get_post_meta($post->ID, 'website_development_case_solutions', true) ?: $defaults['case_solutions'];
+    if (!is_array($stats) || empty($stats)) $stats = isset($defaults['stats']) ? $defaults['stats'] : array();
+    
+    $case_title = get_post_meta($post->ID, 'website_development_case_title', true);
+    if (empty($case_title)) $case_title = $defaults['case_title'];
+    
+    $case_subtitle = get_post_meta($post->ID, 'website_development_case_subtitle', true);
+    if (empty($case_subtitle)) $case_subtitle = $defaults['case_subtitle'];
+    
+    $case_description = get_post_meta($post->ID, 'website_development_case_description', true);
+    if (empty($case_description)) $case_description = $defaults['case_description'];
+    
+    $case_challenges = get_post_meta($post->ID, 'website_development_case_challenges', true);
+    if (empty($case_challenges)) $case_challenges = $defaults['case_challenges'];
+    
+    $case_solutions = get_post_meta($post->ID, 'website_development_case_solutions', true);
+    if (empty($case_solutions)) $case_solutions = $defaults['case_solutions'];
+    
     $case_results = get_post_meta($post->ID, 'website_development_case_results', true);
     if (!is_array($case_results) || empty($case_results)) $case_results = $defaults['case_results'];
-    $process_title = get_post_meta($post->ID, 'website_development_process_title', true) ?: $defaults['process_title'];
+    
+    $process_title = get_post_meta($post->ID, 'website_development_process_title', true);
+    if (empty($process_title)) $process_title = $defaults['process_title'];
+    
     $process_steps = get_post_meta($post->ID, 'website_development_process_steps', true);
     if (!is_array($process_steps) || empty($process_steps)) $process_steps = $defaults['process_steps'];
-    $tech_title = get_post_meta($post->ID, 'website_development_tech_title', true) ?: $defaults['tech_title'];
-    $tech_description = get_post_meta($post->ID, 'website_development_tech_description', true) ?: $defaults['tech_description'];
+    
+    $tech_title = get_post_meta($post->ID, 'website_development_tech_title', true);
+    if (empty($tech_title)) $tech_title = $defaults['tech_title'];
+    
+    $tech_description = get_post_meta($post->ID, 'website_development_tech_description', true);
+    if (empty($tech_description)) $tech_description = $defaults['tech_description'];
+    
     $tech_categories = get_post_meta($post->ID, 'website_development_tech_categories', true);
     if (!is_array($tech_categories) || empty($tech_categories)) $tech_categories = $defaults['tech_categories'];
-    $features_title = get_post_meta($post->ID, 'website_development_features_title', true) ?: $defaults['features_title'];
-    $features_description = get_post_meta($post->ID, 'website_development_features_description', true) ?: $defaults['features_description'];
+    
+    $features_title = get_post_meta($post->ID, 'website_development_features_title', true);
+    if (empty($features_title)) $features_title = $defaults['features_title'];
+    
+    $features_description = get_post_meta($post->ID, 'website_development_features_description', true);
+    if (empty($features_description)) $features_description = $defaults['features_description'];
+    
     $features = get_post_meta($post->ID, 'website_development_features', true);
     if (!is_array($features) || empty($features)) $features = $defaults['features'];
-    $industries_title = get_post_meta($post->ID, 'website_development_industries_title', true) ?: $defaults['industries_title'];
+    
+    $industries_title = get_post_meta($post->ID, 'website_development_industries_title', true);
+    if (empty($industries_title)) $industries_title = $defaults['industries_title'];
+    
     $industries = get_post_meta($post->ID, 'website_development_industries', true);
     if (!is_array($industries) || empty($industries)) $industries = $defaults['industries'];
-    $testimonial_quote = get_post_meta($post->ID, 'website_development_testimonial_quote', true) ?: $defaults['testimonial_quote'];
-    $testimonial_name = get_post_meta($post->ID, 'website_development_testimonial_name', true) ?: $defaults['testimonial_name'];
-    $testimonial_position = get_post_meta($post->ID, 'website_development_testimonial_position', true) ?: $defaults['testimonial_position'];
-    $cta_title = get_post_meta($post->ID, 'website_development_cta_title', true) ?: $defaults['cta_title'];
-    $cta_description = get_post_meta($post->ID, 'website_development_cta_description', true) ?: $defaults['cta_description'];
-    $cta_primary_text = get_post_meta($post->ID, 'website_development_cta_primary_text', true) ?: $defaults['cta_primary_text'];
-    $cta_primary_link = get_post_meta($post->ID, 'website_development_cta_primary_link', true) ?: $defaults['cta_primary_link'];
-    $cta_secondary_text = get_post_meta($post->ID, 'website_development_cta_secondary_text', true) ?: $defaults['cta_secondary_text'];
-    $cta_secondary_link = get_post_meta($post->ID, 'website_development_cta_secondary_link', true) ?: $defaults['cta_secondary_link'];
+    
+    $testimonial_quote = get_post_meta($post->ID, 'website_development_testimonial_quote', true);
+    if (empty($testimonial_quote)) $testimonial_quote = $defaults['testimonial_quote'];
+    
+    $testimonial_name = get_post_meta($post->ID, 'website_development_testimonial_name', true);
+    if (empty($testimonial_name)) $testimonial_name = $defaults['testimonial_name'];
+    
+    $testimonial_position = get_post_meta($post->ID, 'website_development_testimonial_position', true);
+    if (empty($testimonial_position)) $testimonial_position = $defaults['testimonial_position'];
+    
+    $cta_title = get_post_meta($post->ID, 'website_development_cta_title', true);
+    if (empty($cta_title)) $cta_title = $defaults['cta_title'];
+    
+    $cta_description = get_post_meta($post->ID, 'website_development_cta_description', true);
+    if (empty($cta_description)) $cta_description = $defaults['cta_description'];
+    
+    $cta_primary_text = get_post_meta($post->ID, 'website_development_cta_primary_text', true);
+    if (empty($cta_primary_text)) $cta_primary_text = $defaults['cta_primary_text'];
+    
+    $cta_primary_link = get_post_meta($post->ID, 'website_development_cta_primary_link', true);
+    if (empty($cta_primary_link)) $cta_primary_link = $defaults['cta_primary_link'];
+    
+    $cta_secondary_text = get_post_meta($post->ID, 'website_development_cta_secondary_text', true);
+    if (empty($cta_secondary_text)) $cta_secondary_text = $defaults['cta_secondary_text'];
+    
+    $cta_secondary_link = get_post_meta($post->ID, 'website_development_cta_secondary_link', true);
+    if (empty($cta_secondary_link)) $cta_secondary_link = isset($defaults['cta_secondary_link']) ? $defaults['cta_secondary_link'] : '';
+    
+    // Ensure ALL text variables are strings to prevent wp_editor errors
+    $header_title = is_string($header_title) ? $header_title : '';
+    $header_subtitle = is_string($header_subtitle) ? $header_subtitle : '';
+    $header_tags = is_string($header_tags) ? $header_tags : '';
+    $overview_title = is_string($overview_title) ? $overview_title : '';
+    $overview_description = is_string($overview_description) ? $overview_description : '';
+    $case_title = is_string($case_title) ? $case_title : '';
+    $case_subtitle = is_string($case_subtitle) ? $case_subtitle : '';
+    $case_description = is_string($case_description) ? $case_description : '';
+    $case_challenges = is_string($case_challenges) ? $case_challenges : '';
+    $case_solutions = is_string($case_solutions) ? $case_solutions : '';
+    $process_title = is_string($process_title) ? $process_title : '';
+    $tech_title = is_string($tech_title) ? $tech_title : '';
+    $tech_description = is_string($tech_description) ? $tech_description : '';
+    $features_title = is_string($features_title) ? $features_title : '';
+    $features_description = is_string($features_description) ? $features_description : '';
+    $industries_title = is_string($industries_title) ? $industries_title : '';
+    $testimonial_quote = is_string($testimonial_quote) ? $testimonial_quote : '';
+    $testimonial_name = is_string($testimonial_name) ? $testimonial_name : '';
+    $testimonial_position = is_string($testimonial_position) ? $testimonial_position : '';
+    $cta_title = is_string($cta_title) ? $cta_title : '';
+    $cta_description = is_string($cta_description) ? $cta_description : '';
+    $cta_primary_text = is_string($cta_primary_text) ? $cta_primary_text : '';
+    $cta_primary_link = is_string($cta_primary_link) ? $cta_primary_link : '';
+    $cta_secondary_text = is_string($cta_secondary_text) ? $cta_secondary_text : '';
+    $cta_secondary_link = is_string($cta_secondary_link) ? $cta_secondary_link : '';
     
     ?>
     <div style="margin-bottom:20px;">
@@ -361,11 +443,27 @@ function website_development_meta_callback($post) {
     </div>
     <div style="margin-bottom:20px;">
         <label><strong>Features Title</strong></label><br>
-        <input type="text" name="website_development_features_title" value="<?php echo esc_attr($features_title); ?>" style="width:100%;" />
+        <?php 
+        wp_editor($features_title, 'website_development_features_title', array(
+            'textarea_name' => 'website_development_features_title',
+            'media_buttons' => false,
+            'textarea_rows' => 2,
+            'teeny' => true,
+            'quicktags' => array('buttons' => 'strong,em,link')
+        )); 
+        ?>
     </div>
     <div style="margin-bottom:20px;">
         <label><strong>Features Description</strong></label><br>
-        <textarea name="website_development_features_description" style="width:100%;height:40px;"><?php echo esc_textarea($features_description); ?></textarea>
+        <?php 
+        wp_editor($features_description, 'website_development_features_description', array(
+            'textarea_name' => 'website_development_features_description',
+            'media_buttons' => false,
+            'textarea_rows' => 3,
+            'teeny' => true,
+            'quicktags' => array('buttons' => 'strong,em,link')
+        )); 
+        ?>
     </div>
     <div style="margin-bottom:20px;">
         <label><strong>Features (repeatable: title & description)</strong></label><br>
@@ -384,7 +482,15 @@ function website_development_meta_callback($post) {
     </div>
     <div style="margin-bottom:20px;">
         <label><strong>Industries Title</strong></label><br>
-        <input type="text" name="website_development_industries_title" value="<?php echo esc_attr($industries_title); ?>" style="width:100%;" />
+        <?php 
+        wp_editor($industries_title, 'website_development_industries_title', array(
+            'textarea_name' => 'website_development_industries_title',
+            'media_buttons' => false,
+            'textarea_rows' => 2,
+            'teeny' => true,
+            'quicktags' => array('buttons' => 'strong,em,link')
+        )); 
+        ?>
     </div>
     <div style="margin-bottom:20px;">
         <label><strong>Industries (repeatable: title & description)</strong></label><br>
@@ -403,7 +509,15 @@ function website_development_meta_callback($post) {
     </div>
     <div style="margin-bottom:20px;">
         <label><strong>Testimonial Quote</strong></label><br>
-        <textarea name="website_development_testimonial_quote" style="width:100%;height:60px;"><?php echo esc_textarea($testimonial_quote); ?></textarea>
+        <?php 
+        wp_editor($testimonial_quote, 'website_development_testimonial_quote', array(
+            'textarea_name' => 'website_development_testimonial_quote',
+            'media_buttons' => false,
+            'textarea_rows' => 4,
+            'teeny' => true,
+            'quicktags' => array('buttons' => 'strong,em,link')
+        )); 
+        ?>
     </div>
     <div style="margin-bottom:20px;">
         <label><strong>Testimonial Name</strong></label><br>
@@ -415,11 +529,27 @@ function website_development_meta_callback($post) {
     </div>
     <div style="margin-bottom:20px;">
         <label><strong>CTA Title</strong></label><br>
-        <input type="text" name="website_development_cta_title" value="<?php echo esc_attr($cta_title); ?>" style="width:100%;" />
+        <?php 
+        wp_editor($cta_title, 'website_development_cta_title', array(
+            'textarea_name' => 'website_development_cta_title',
+            'media_buttons' => false,
+            'textarea_rows' => 2,
+            'teeny' => true,
+            'quicktags' => array('buttons' => 'strong,em,link')
+        )); 
+        ?>
     </div>
     <div style="margin-bottom:20px;">
         <label><strong>CTA Description</strong></label><br>
-        <textarea name="website_development_cta_description" style="width:100%;height:40px;"><?php echo esc_textarea($cta_description); ?></textarea>
+        <?php 
+        wp_editor($cta_description, 'website_development_cta_description', array(
+            'textarea_name' => 'website_development_cta_description',
+            'media_buttons' => false,
+            'textarea_rows' => 3,
+            'teeny' => true,
+            'quicktags' => array('buttons' => 'strong,em,link')
+        )); 
+        ?>
     </div>
     <div style="margin-bottom:20px;">
         <label><strong>CTA Primary Button Text</strong></label><br>
@@ -570,17 +700,10 @@ function website_development_save_meta($post_id) {
                     }
                     update_post_meta($post_id, $field, $value);
                 }
-            } elseif (strpos($field, '_challenges') !== false || strpos($field, '_solutions') !== false) {
-                // Convert newline-separated to array for challenges and solutions
-                $value = array_filter(explode("\n", trim($_POST[$field])));
-                update_post_meta($post_id, $field, $value);
-            } elseif (strpos($field, '_tags') !== false) {
-                // Convert newline-separated to array for tags
-                $value = array_filter(explode("\n", trim($_POST[$field])));
-                update_post_meta($post_id, $field, $value);
             } else {
-                // Regular text fields
-                update_post_meta($post_id, $field, sanitize_text_field($_POST[$field]));
+                // Regular text fields (including wp_editor fields)
+                // wp_editor fields now save as HTML/text content, not arrays
+                update_post_meta($post_id, $field, wp_kses_post($_POST[$field]));
             }
         }
     }

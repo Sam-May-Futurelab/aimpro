@@ -4,6 +4,9 @@
  * Description: Comprehensive website development services overview
  */
 
+// Include the meta defaults function
+require_once get_template_directory() . '/includes/website-development-meta.php';
+
 get_header(); ?>
 
 <main id="main" class="main-content">
@@ -23,16 +26,40 @@ get_header(); ?>
     </div>
 
     <div class="container">
+        <?php
+        // Get meta values with defaults
+        $header_title = get_post_meta(get_the_ID(), 'website_development_header_title', true);
+        $header_subtitle = get_post_meta(get_the_ID(), 'website_development_header_subtitle', true);
+        $header_tags = get_post_meta(get_the_ID(), 'website_development_header_tags', true);
+        $overview_title = get_post_meta(get_the_ID(), 'website_development_overview_title', true);
+        $overview_description = get_post_meta(get_the_ID(), 'website_development_overview_description', true);
+        $stats = get_post_meta(get_the_ID(), 'website_development_stats', true);
+        
+        // Get defaults if fields are empty
+        $defaults = get_website_development_defaults();
+        if (empty($header_title)) $header_title = $defaults['header_title'];
+        if (empty($header_subtitle)) $header_subtitle = $defaults['header_subtitle'];
+        if (empty($header_tags)) $header_tags = $defaults['header_tags'];
+        if (empty($overview_title)) $overview_title = $defaults['overview_title'];
+        if (empty($overview_description)) $overview_description = $defaults['overview_description'];
+        if (empty($stats) || !is_array($stats)) $stats = $defaults['stats'];
+        ?>
         
         <!-- Page Header -->
         <section class="page-header">
             <div class="page-header-content">
-                <h1>Website Development Services</h1>
-                <p class="page-subtitle">Create high-converting websites that drive results and grow your business</p>
+                <h1><?php echo wp_kses_post($header_title); ?></h1>
+                <p class="page-subtitle"><?php echo wp_kses_post($header_subtitle); ?></p>
                 <div class="header-badges">
-                    <span class="badge">Mobile-First</span>
-                    <span class="badge">Conversion optimised</span>
-                    <span class="badge">SEO Ready</span>
+                    <?php 
+                    // Handle tags - could be string or array
+                    $tags = is_string($header_tags) ? explode("\n", $header_tags) : $header_tags;
+                    if (is_array($tags)) {
+                        foreach ($tags as $tag) {
+                            echo '<span class="badge">' . esc_html(trim($tag)) . '</span>';
+                        }
+                    }
+                    ?>
                 </div>
             </div>
         </section>
@@ -42,23 +69,16 @@ get_header(); ?>
             <div class="section-content">
                 <div class="overview-content">
                     <div class="overview-text">
-                        <h2>Build Websites That Convert</h2>
-                        <p>Our website development services focus on creating beautiful, fast, and conversion-optimised websites that not only look great but drive real business results. From custom website design to high-converting landing pages, we build digital experiences that engage visitors and turn them into customers.</p>
-                        <p>Every website we develop is built with performance, user experience, and search engine optimisation in mind, ensuring your investment delivers maximum return through increased traffic, leads, and sales.</p>
+                        <h2><?php echo wp_kses_post($overview_title); ?></h2>
+                        <?php echo wpautop(wp_kses_post($overview_description)); ?>
                     </div>
                     <div class="overview-stats">
+                        <?php foreach ($stats as $stat): ?>
                         <div class="stat-item">
-                            <span class="stat-number">280%</span>
-                            <span class="stat-label">Average conversion increase</span>
+                            <span class="stat-number"><?php echo esc_html($stat['number']); ?></span>
+                            <span class="stat-label"><?php echo esc_html($stat['label']); ?></span>
                         </div>
-                        <div class="stat-item">
-                            <span class="stat-number">&lt;3 Sec</span>
-                            <span class="stat-label">Average load time</span>
-                        </div>
-                        <div class="stat-item">
-                            <span class="stat-number">98%</span>
-                            <span class="stat-label">Mobile performance score</span>
-                        </div>
+                        <?php endforeach; ?>
                     </div>
                 </div>
             </div>
@@ -68,51 +88,66 @@ get_header(); ?>
         <section class="development-case-study">
             <div class="section-content">
                 <div class="case-study-content">
+                    <?php
+                    // Get case study meta values
+                    $case_title = get_post_meta(get_the_ID(), 'website_development_case_title', true);
+                    $case_subtitle = get_post_meta(get_the_ID(), 'website_development_case_subtitle', true);
+                    $case_description = get_post_meta(get_the_ID(), 'website_development_case_description', true);
+                    $case_challenges = get_post_meta(get_the_ID(), 'website_development_case_challenges', true);
+                    $case_solutions = get_post_meta(get_the_ID(), 'website_development_case_solutions', true);
+                    $case_results = get_post_meta(get_the_ID(), 'website_development_case_results', true);
+                    
+                    // Get defaults if empty
+                    if (empty($case_title)) $case_title = $defaults['case_title'];
+                    if (empty($case_subtitle)) $case_subtitle = $defaults['case_subtitle'];
+                    if (empty($case_description)) $case_description = $defaults['case_description'];
+                    if (empty($case_challenges)) $case_challenges = $defaults['case_challenges'];
+                    if (empty($case_solutions)) $case_solutions = $defaults['case_solutions'];
+                    if (empty($case_results) || !is_array($case_results)) $case_results = $defaults['case_results'];
+                    ?>
                     <div class="case-study-text">
-                        <h2>Case Study: E-commerce Website Redesign</h2>
-                        <h3>Complete Website Overhaul Generates 380% Revenue Increase</h3>
-                        <p>An established e-commerce business approached us with an outdated website that was hurting their sales. Our comprehensive redesign and optimisation strategy transformed their online presence and dramatically improved their bottom line.</p>
+                        <h2><?php echo wp_kses_post($case_title); ?></h2>
+                        <h3><?php echo wp_kses_post($case_subtitle); ?></h3>
+                        <?php echo wpautop(wp_kses_post($case_description)); ?>
                         
                         <div class="challenge-solution">
                             <div class="challenge">
                                 <h4>The Challenge</h4>
                                 <ul>
-                                    <li>Outdated design reducing customer trust</li>
-                                    <li>Poor mobile experience (65% mobile traffic)</li>
-                                    <li>Slow loading times (8+ seconds)</li>
-                                    <li>Confusing navigation and checkout process</li>
-                                    <li>Low conversion rate (0.8%)</li>
+                                    <?php 
+                                    // Handle challenges - could be string or array
+                                    $challenges = is_string($case_challenges) ? explode("\n", $case_challenges) : $case_challenges;
+                                    if (is_array($challenges)) {
+                                        foreach ($challenges as $challenge) {
+                                            echo '<li>' . esc_html(trim($challenge)) . '</li>';
+                                        }
+                                    }
+                                    ?>
                                 </ul>
                             </div>
                             <div class="solution">
                                 <h4>Our Solution</h4>
                                 <ul>
-                                    <li>Modern, mobile-first responsive design</li>
-                                    <li>Streamlined user experience and navigation</li>
-                                    <li>optimised checkout process (one-click checkout)</li>
-                                    <li>Performance optimisation (2.1s load time)</li>
-                                    <li>A/B tested conversion elements</li>
+                                    <?php 
+                                    // Handle solutions - could be string or array
+                                    $solutions = is_string($case_solutions) ? explode("\n", $case_solutions) : $case_solutions;
+                                    if (is_array($solutions)) {
+                                        foreach ($solutions as $solution) {
+                                            echo '<li>' . esc_html(trim($solution)) . '</li>';
+                                        }
+                                    }
+                                    ?>
                                 </ul>
                             </div>
                         </div>
                     </div>
                     <div class="case-study-metrics">
+                        <?php foreach ($case_results as $result): ?>
                         <div class="metric-card">
-                            <div class="metric-number">380%</div>
-                            <div class="metric-label">Revenue Increase</div>
+                            <div class="metric-number"><?php echo esc_html($result['number']); ?></div>
+                            <div class="metric-label"><?php echo esc_html($result['label']); ?></div>
                         </div>
-                        <div class="metric-card">
-                            <div class="metric-number">450%</div>
-                            <div class="metric-label">Conversion Rate Improvement</div>
-                        </div>
-                        <div class="metric-card">
-                            <div class="metric-number">75%</div>
-                            <div class="metric-label">Faster Load Times</div>
-                        </div>
-                        <div class="metric-card">
-                            <div class="metric-number">6 Weeks</div>
-                            <div class="metric-label">Development Timeline</div>
-                        </div>
+                        <?php endforeach; ?>
                     </div>
                 </div>
             </div>
