@@ -259,6 +259,15 @@ if (!function_exists('aimpro_get_retargeting_display_default_values')) {
 
 // Include meta functionality only in admin area to prevent header issues
 if (is_admin()) {
+    // Enqueue necessary scripts for wp_editor in admin
+    add_action('admin_enqueue_scripts', function($hook) {
+        if ($hook == 'post.php' || $hook == 'post-new.php') {
+            wp_enqueue_script('wp-tinymce');
+            wp_enqueue_script('editor');
+            wp_enqueue_script('quicktags');
+        }
+    });
+    
     // Include contact page meta functionality
     require_once get_template_directory() . '/includes/contact-meta.php';
 

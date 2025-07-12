@@ -3,9 +3,65 @@
  * Terms of Service Page Meta Box
  */
 
+/**
+ * Helper function to get terms defaults safely
+ */
+if (!function_exists('get_terms_meta_default')) {
+    function get_terms_meta_default($key, $fallback = '') {
+        // Comprehensive fallback defaults for terms meta interface
+        $meta_defaults = array(
+            'header_title' => 'Terms of Service',
+            'header_subtitle' => 'Please read these terms and conditions carefully before using our services',
+            'last_updated' => 'Last updated: ' . date('F j, Y'),
+            'intro_title' => '1. Introduction',
+            'intro_content' => 'Welcome to Aimpro Digital. These terms and conditions ("Terms", "Agreement") are an agreement between Aimpro Digital ("we", "us", "our") and you ("User", "you", "your"). This Agreement sets forth the general terms and conditions of your use of our website and services.',
+            'acceptance_title' => '2. Acceptance of Terms',
+            'acceptance_content' => 'By accessing and using our website and services, you accept and agree to be bound by the terms and provision of this agreement. If you do not agree to abide by the above, please do not use this service.',
+            'services_title' => '3. Services Description',
+            'services_content' => 'Aimpro Digital provides digital marketing services including but not limited to: search engine optimization (SEO), pay-per-click advertising (PPC), social media marketing, content marketing, web design and development, and related digital marketing consultancy services.',
+            'services_list' => "Search Engine Optimization (SEO)\nPay-Per-Click Advertising (PPC)\nSocial Media Marketing\nContent Marketing\nWeb Design and Development\nDigital Marketing Consultancy\nAnalytics and Reporting Services",
+            'obligations_title' => '4. User Obligations',
+            'obligations_content' => 'As a user of our services, you agree to:',
+            'obligations_list' => "Provide accurate and complete information\nComply with all applicable laws and regulations\nNot use our services for any unlawful purposes\nRespect intellectual property rights\nMaintain confidentiality of login credentials\nNotify us of any unauthorized use of your account",
+            'payment_title' => '5. Payment Terms',
+            'payment_content' => 'Payment terms are specified in individual service agreements. Generally, services are billed monthly in advance unless otherwise agreed. Late payments may result in service suspension or termination.',
+            'ip_title' => '6. Intellectual Property',
+            'ip_content' => 'The service and its original content, features and functionality are and will remain the exclusive property of Aimpro Digital and its licensors. The service is protected by copyright, trademark, and other laws. Our trademarks and trade dress may not be used in connection with any product or service without our prior written consent.',
+            'liability_title' => '7. Limitation of Liability',
+            'liability_content' => 'In no event shall Aimpro Digital, nor its directors, employees, partners, agents, suppliers, or affiliates, be liable for any indirect, incidental, special, consequential, or punitive damages, including without limitation, loss of profits, data, use, goodwill, or other intangible losses, resulting from your use of the service.',
+            'termination_title' => '8. Termination',
+            'termination_content' => 'We may terminate or suspend your access immediately, without prior notice or liability, for any reason whatsoever, including without limitation if you breach the Terms. Upon termination, your right to use the service will cease immediately.',
+            'law_title' => '9. Governing Law',
+            'law_content' => 'These Terms shall be interpreted and governed by the laws of England and Wales, without regard to its conflict of law provisions. Our failure to enforce any right or provision of these Terms will not be considered a waiver of those rights.',
+            'changes_title' => '10. Changes to Terms',
+            'changes_content' => 'We reserve the right, at our sole discretion, to modify or replace these Terms at any time. If a revision is material, we will try to provide at least 30 days notice prior to any new terms taking effect.',
+            'contact_title' => '11. Contact Information',
+            'contact_content' => 'If you have any questions about these Terms of Service, please contact us at:',
+            'contact_email' => 'info@aimprodigital.com',
+            'contact_phone' => '0121 285 2866',
+            'contact_address' => 'Birmingham, UK'
+        );
+        
+        return isset($meta_defaults[$key]) ? $meta_defaults[$key] : $fallback;
+    }
+}
+
 // Add meta box for Terms of Service page
 add_action('add_meta_boxes', 'terms_of_service_meta_boxes');
 function terms_of_service_meta_boxes() {
+    // Only show this meta box on the Terms of Service page template or page with terms-of-service slug
+    $screen = get_current_screen();
+    if ($screen->id == 'page' && isset($_GET['post'])) {
+        $template = get_post_meta($_GET['post'], '_wp_page_template', true);
+        $post = get_post($_GET['post']);
+        $slug = $post ? $post->post_name : '';
+        
+        // Show meta box if template matches OR slug matches
+        if ($template != 'page-terms-of-service.php' && $slug != 'terms-of-service') {
+            return;
+        }
+    }
+    
     add_meta_box(
         'terms_of_service_meta',
         'Terms of Service Content',
@@ -18,68 +74,109 @@ function terms_of_service_meta_boxes() {
 
 // Meta box callback
 function terms_of_service_meta_callback($post) {
-    // Only show for pages using the Terms of Service template
-    $template = get_post_meta($post->ID, '_wp_page_template', true);
-    if ($template !== 'page-terms-of-service.php') {
-        echo '<p>This meta box is only available for pages using the "Terms of Service" template.</p>';
-        return;
-    }
-
     wp_nonce_field('terms_of_service_meta_nonce', 'terms_of_service_meta_nonce');
     
-    // Get existing values
+    // Get existing values with safe defaults
     $header_title = get_post_meta($post->ID, '_terms_header_title', true);
+    if (empty($header_title)) $header_title = get_terms_meta_default('header_title');
+    
     $header_subtitle = get_post_meta($post->ID, '_terms_header_subtitle', true);
+    if (empty($header_subtitle)) $header_subtitle = get_terms_meta_default('header_subtitle');
+    
     $last_updated = get_post_meta($post->ID, '_terms_last_updated', true);
+    if (empty($last_updated)) $last_updated = get_terms_meta_default('last_updated');
     
     // Introduction section
     $intro_title = get_post_meta($post->ID, '_terms_intro_title', true);
+    if (empty($intro_title)) $intro_title = get_terms_meta_default('intro_title');
+    
     $intro_content = get_post_meta($post->ID, '_terms_intro_content', true);
+    if (empty($intro_content)) $intro_content = get_terms_meta_default('intro_content');
     
     // Acceptance section
     $acceptance_title = get_post_meta($post->ID, '_terms_acceptance_title', true);
+    if (empty($acceptance_title)) $acceptance_title = get_terms_meta_default('acceptance_title');
+    
     $acceptance_content = get_post_meta($post->ID, '_terms_acceptance_content', true);
+    if (empty($acceptance_content)) $acceptance_content = get_terms_meta_default('acceptance_content');
     
     // Services section
     $services_title = get_post_meta($post->ID, '_terms_services_title', true);
+    if (empty($services_title)) $services_title = get_terms_meta_default('services_title');
+    
     $services_content = get_post_meta($post->ID, '_terms_services_content', true);
+    if (empty($services_content)) $services_content = get_terms_meta_default('services_content');
+    
     $services_list = get_post_meta($post->ID, '_terms_services_list', true);
+    if (empty($services_list)) $services_list = get_terms_meta_default('services_list');
     
     // User obligations section
     $obligations_title = get_post_meta($post->ID, '_terms_obligations_title', true);
+    if (empty($obligations_title)) $obligations_title = get_terms_meta_default('obligations_title');
+    
     $obligations_content = get_post_meta($post->ID, '_terms_obligations_content', true);
+    if (empty($obligations_content)) $obligations_content = get_terms_meta_default('obligations_content');
+    
     $obligations_list = get_post_meta($post->ID, '_terms_obligations_list', true);
+    if (empty($obligations_list)) $obligations_list = get_terms_meta_default('obligations_list');
     
     // Payment terms section
     $payment_title = get_post_meta($post->ID, '_terms_payment_title', true);
+    if (empty($payment_title)) $payment_title = get_terms_meta_default('payment_title');
+    
     $payment_content = get_post_meta($post->ID, '_terms_payment_content', true);
+    if (empty($payment_content)) $payment_content = get_terms_meta_default('payment_content');
     
     // Intellectual property section
     $ip_title = get_post_meta($post->ID, '_terms_ip_title', true);
+    if (empty($ip_title)) $ip_title = get_terms_meta_default('ip_title');
+    
     $ip_content = get_post_meta($post->ID, '_terms_ip_content', true);
+    if (empty($ip_content)) $ip_content = get_terms_meta_default('ip_content');
     
     // Limitation of liability section
     $liability_title = get_post_meta($post->ID, '_terms_liability_title', true);
+    if (empty($liability_title)) $liability_title = get_terms_meta_default('liability_title');
+    
     $liability_content = get_post_meta($post->ID, '_terms_liability_content', true);
+    if (empty($liability_content)) $liability_content = get_terms_meta_default('liability_content');
     
     // Termination section
     $termination_title = get_post_meta($post->ID, '_terms_termination_title', true);
+    if (empty($termination_title)) $termination_title = get_terms_meta_default('termination_title');
+    
     $termination_content = get_post_meta($post->ID, '_terms_termination_content', true);
+    if (empty($termination_content)) $termination_content = get_terms_meta_default('termination_content');
     
     // Governing law section
     $law_title = get_post_meta($post->ID, '_terms_law_title', true);
+    if (empty($law_title)) $law_title = get_terms_meta_default('law_title');
+    
     $law_content = get_post_meta($post->ID, '_terms_law_content', true);
+    if (empty($law_content)) $law_content = get_terms_meta_default('law_content');
     
     // Changes to terms section
     $changes_title = get_post_meta($post->ID, '_terms_changes_title', true);
+    if (empty($changes_title)) $changes_title = get_terms_meta_default('changes_title');
+    
     $changes_content = get_post_meta($post->ID, '_terms_changes_content', true);
+    if (empty($changes_content)) $changes_content = get_terms_meta_default('changes_content');
     
     // Contact information section
     $contact_title = get_post_meta($post->ID, '_terms_contact_title', true);
+    if (empty($contact_title)) $contact_title = get_terms_meta_default('contact_title');
+    
     $contact_content = get_post_meta($post->ID, '_terms_contact_content', true);
+    if (empty($contact_content)) $contact_content = get_terms_meta_default('contact_content');
+    
     $contact_email = get_post_meta($post->ID, '_terms_contact_email', true);
+    if (empty($contact_email)) $contact_email = get_terms_meta_default('contact_email');
+    
     $contact_phone = get_post_meta($post->ID, '_terms_contact_phone', true);
+    if (empty($contact_phone)) $contact_phone = get_terms_meta_default('contact_phone');
+    
     $contact_address = get_post_meta($post->ID, '_terms_contact_address', true);
+    if (empty($contact_address)) $contact_address = get_terms_meta_default('contact_address');
     ?>
     
     <style>
@@ -108,9 +205,7 @@ function terms_of_service_meta_callback($post) {
             </div>
             <div class="terms-meta-field">
                 <label for="terms_header_subtitle">Page Subtitle</label>
-                <input type="text" id="terms_header_subtitle" name="_terms_header_subtitle" 
-                       value="<?php echo esc_attr($header_subtitle); ?>" 
-                       placeholder="Please read these terms and conditions carefully before using our services" />
+                <?php wp_editor($header_subtitle, 'terms_header_subtitle', array('textarea_name' => 'terms_header_subtitle', 'teeny' => true, 'media_buttons' => false, 'textarea_rows' => 3, 'quicktags' => array('buttons' => 'strong,em,link'))); ?>
             </div>
             <div class="terms-meta-field">
                 <label for="terms_last_updated">Last Updated Text</label>
@@ -132,7 +227,7 @@ function terms_of_service_meta_callback($post) {
             </div>
             <div class="terms-meta-field">
                 <label for="terms_intro_content">Content</label>
-                <textarea id="terms_intro_content" name="_terms_intro_content" rows="4"><?php echo esc_textarea($intro_content); ?></textarea>
+                <?php wp_editor($intro_content, 'terms_intro_content', array('textarea_name' => 'terms_intro_content', 'teeny' => true, 'media_buttons' => false, 'textarea_rows' => 4, 'quicktags' => array('buttons' => 'strong,em,link'))); ?>
             </div>
         </div>
 
@@ -147,7 +242,7 @@ function terms_of_service_meta_callback($post) {
             </div>
             <div class="terms-meta-field">
                 <label for="terms_acceptance_content">Content</label>
-                <textarea id="terms_acceptance_content" name="_terms_acceptance_content" rows="4"><?php echo esc_textarea($acceptance_content); ?></textarea>
+                <?php wp_editor($acceptance_content, 'terms_acceptance_content', array('textarea_name' => 'terms_acceptance_content', 'teeny' => true, 'media_buttons' => false, 'textarea_rows' => 4, 'quicktags' => array('buttons' => 'strong,em,link'))); ?>
             </div>
         </div>
 
@@ -162,7 +257,7 @@ function terms_of_service_meta_callback($post) {
             </div>
             <div class="terms-meta-field">
                 <label for="terms_services_content">Content</label>
-                <textarea id="terms_services_content" name="_terms_services_content" rows="4"><?php echo esc_textarea($services_content); ?></textarea>
+                <?php wp_editor($services_content, 'terms_services_content', array('textarea_name' => 'terms_services_content', 'teeny' => true, 'media_buttons' => false, 'textarea_rows' => 4, 'quicktags' => array('buttons' => 'strong,em,link'))); ?>
             </div>
             <div class="terms-meta-field">
                 <label for="terms_services_list">Services List</label>
@@ -188,7 +283,7 @@ function terms_of_service_meta_callback($post) {
             </div>
             <div class="terms-meta-field">
                 <label for="terms_obligations_content">Content</label>
-                <textarea id="terms_obligations_content" name="_terms_obligations_content" rows="3"><?php echo esc_textarea($obligations_content); ?></textarea>
+                <?php wp_editor($obligations_content, 'terms_obligations_content', array('textarea_name' => 'terms_obligations_content', 'teeny' => true, 'media_buttons' => false, 'textarea_rows' => 3, 'quicktags' => array('buttons' => 'strong,em,link'))); ?>
             </div>
             <div class="terms-meta-field">
                 <label for="terms_obligations_list">Obligations List</label>
@@ -214,7 +309,7 @@ function terms_of_service_meta_callback($post) {
             </div>
             <div class="terms-meta-field">
                 <label for="terms_payment_content">Content</label>
-                <textarea id="terms_payment_content" name="_terms_payment_content" rows="4"><?php echo esc_textarea($payment_content); ?></textarea>
+                <?php wp_editor($payment_content, 'terms_payment_content', array('textarea_name' => 'terms_payment_content', 'teeny' => true, 'media_buttons' => false, 'textarea_rows' => 4, 'quicktags' => array('buttons' => 'strong,em,link'))); ?>
             </div>
         </div>
 
@@ -229,7 +324,7 @@ function terms_of_service_meta_callback($post) {
             </div>
             <div class="terms-meta-field">
                 <label for="terms_ip_content">Content</label>
-                <textarea id="terms_ip_content" name="_terms_ip_content" rows="4"><?php echo esc_textarea($ip_content); ?></textarea>
+                <?php wp_editor($ip_content, 'terms_ip_content', array('textarea_name' => 'terms_ip_content', 'teeny' => true, 'media_buttons' => false, 'textarea_rows' => 4, 'quicktags' => array('buttons' => 'strong,em,link'))); ?>
             </div>
         </div>
 
@@ -244,7 +339,7 @@ function terms_of_service_meta_callback($post) {
             </div>
             <div class="terms-meta-field">
                 <label for="terms_liability_content">Content</label>
-                <textarea id="terms_liability_content" name="_terms_liability_content" rows="4"><?php echo esc_textarea($liability_content); ?></textarea>
+                <?php wp_editor($liability_content, 'terms_liability_content', array('textarea_name' => 'terms_liability_content', 'teeny' => true, 'media_buttons' => false, 'textarea_rows' => 4, 'quicktags' => array('buttons' => 'strong,em,link'))); ?>
             </div>
         </div>
 
@@ -259,7 +354,7 @@ function terms_of_service_meta_callback($post) {
             </div>
             <div class="terms-meta-field">
                 <label for="terms_termination_content">Content</label>
-                <textarea id="terms_termination_content" name="_terms_termination_content" rows="4"><?php echo esc_textarea($termination_content); ?></textarea>
+                <?php wp_editor($termination_content, 'terms_termination_content', array('textarea_name' => 'terms_termination_content', 'teeny' => true, 'media_buttons' => false, 'textarea_rows' => 4, 'quicktags' => array('buttons' => 'strong,em,link'))); ?>
             </div>
         </div>
 
@@ -274,7 +369,7 @@ function terms_of_service_meta_callback($post) {
             </div>
             <div class="terms-meta-field">
                 <label for="terms_law_content">Content</label>
-                <textarea id="terms_law_content" name="_terms_law_content" rows="4"><?php echo esc_textarea($law_content); ?></textarea>
+                <?php wp_editor($law_content, 'terms_law_content', array('textarea_name' => 'terms_law_content', 'teeny' => true, 'media_buttons' => false, 'textarea_rows' => 4, 'quicktags' => array('buttons' => 'strong,em,link'))); ?>
             </div>
         </div>
 
@@ -289,7 +384,7 @@ function terms_of_service_meta_callback($post) {
             </div>
             <div class="terms-meta-field">
                 <label for="terms_changes_content">Content</label>
-                <textarea id="terms_changes_content" name="_terms_changes_content" rows="4"><?php echo esc_textarea($changes_content); ?></textarea>
+                <?php wp_editor($changes_content, 'terms_changes_content', array('textarea_name' => 'terms_changes_content', 'teeny' => true, 'media_buttons' => false, 'textarea_rows' => 4, 'quicktags' => array('buttons' => 'strong,em,link'))); ?>
             </div>
         </div>
 
@@ -304,7 +399,7 @@ function terms_of_service_meta_callback($post) {
             </div>
             <div class="terms-meta-field">
                 <label for="terms_contact_content">Content</label>
-                <textarea id="terms_contact_content" name="_terms_contact_content" rows="3"><?php echo esc_textarea($contact_content); ?></textarea>
+                <?php wp_editor($contact_content, 'terms_contact_content', array('textarea_name' => 'terms_contact_content', 'teeny' => true, 'media_buttons' => false, 'textarea_rows' => 3, 'quicktags' => array('buttons' => 'strong,em,link'))); ?>
             </div>
             <div class="terms-meta-grid">
                 <div class="terms-meta-field">
@@ -328,6 +423,7 @@ function terms_of_service_meta_callback($post) {
             </div>
         </div>
     </div>
+
     <?php
 }
 
@@ -349,9 +445,13 @@ function save_terms_of_service_meta($post_id) {
         return;
     }
 
-    // Only save for pages using the Terms of Service template
+    // Only save for pages using the Terms of Service template or with terms-of-service slug
     $template = get_post_meta($post_id, '_wp_page_template', true);
-    if ($template !== 'page-terms-of-service.php') {
+    $post = get_post($post_id);
+    $slug = $post ? $post->post_name : '';
+    
+    // Save meta if template matches OR slug matches
+    if ($template !== 'page-terms-of-service.php' && $slug !== 'terms-of-service') {
         return;
     }
 
@@ -389,26 +489,51 @@ function save_terms_of_service_meta($post_id) {
         '_terms_contact_address'
     );
 
+    // Define rich text fields that use wp_editor (use wp_kses_post)
+    $rich_text_fields = array(
+        '_terms_header_subtitle',
+        '_terms_intro_content',
+        '_terms_acceptance_content',
+        '_terms_services_content',
+        '_terms_obligations_content',
+        '_terms_payment_content',
+        '_terms_ip_content',
+        '_terms_liability_content',
+        '_terms_termination_content',
+        '_terms_law_content',
+        '_terms_changes_content',
+        '_terms_contact_content'
+    );
+
     // Save each field
     foreach ($meta_fields as $field) {
+        // Check both underscore and non-underscore versions
+        $field_without_underscore = ltrim($field, '_');
+        
         if (isset($_POST[$field])) {
             $value = $_POST[$field];
-            
-            // Handle list fields specially - convert text to array
-            if ($field === '_terms_services_list' || $field === '_terms_obligations_list') {
-                if (is_string($value) && !empty($value)) {
-                    $value = array_filter(array_map('trim', explode("\n", $value)));
-                }
-            }
-            
-            // Sanitize and save
-            if (is_array($value)) {
-                $value = array_map('sanitize_text_field', $value);
-            } else {
-                $value = sanitize_textarea_field($value);
-            }
-            
-            update_post_meta($post_id, $field, $value);
+        } elseif (isset($_POST[$field_without_underscore])) {
+            $value = $_POST[$field_without_underscore];
+        } else {
+            continue;
         }
+        
+        // Handle list fields specially - convert text to array
+        if ($field === '_terms_services_list' || $field === '_terms_obligations_list') {
+            if (is_string($value) && !empty($value)) {
+                $value = array_filter(array_map('trim', explode("\n", $value)));
+            }
+        }
+        
+        // Sanitize and save
+        if (is_array($value)) {
+            $value = array_map('sanitize_text_field', $value);
+        } elseif (in_array($field, $rich_text_fields)) {
+            $value = wp_kses_post($value);
+        } else {
+            $value = sanitize_text_field($value);
+        }
+        
+        update_post_meta($post_id, $field, $value);
     }
 }
