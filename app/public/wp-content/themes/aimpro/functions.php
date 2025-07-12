@@ -325,6 +325,9 @@ if (is_admin()) {
     require_once get_template_directory() . '/includes/white-label-seo-meta.php';
     require_once get_template_directory() . '/includes/email-sms-flows-meta.php';
     require_once get_template_directory() . '/includes/locations-meta.php';
+    require_once get_template_directory() . '/includes/privacy-policy-meta.php';
+    require_once get_template_directory() . '/includes/terms-of-service-meta.php';
+    require_once get_template_directory() . '/includes/sitemap-meta.php';
 }
 
 // Include helper functions
@@ -1897,9 +1900,6 @@ require_once get_template_directory() . '/includes/funnel-automation-meta.php';
 
 // Include single blog post meta functionality
 require_once get_template_directory() . '/includes/single-blog-meta.php';
-require_once get_template_directory() . '/includes/privacy-policy-meta.php';
-require_once get_template_directory() . '/includes/terms-of-service-meta.php';
-require_once get_template_directory() . '/includes/sitemap-meta.php';
 
 if (!function_exists('aimpro_get_seo_audit_default_values')) {
     /**

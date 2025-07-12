@@ -8,6 +8,20 @@
 
 // Add custom meta boxes for Email & SMS Flows page
 function email_sms_flows_meta_boxes() {
+    // Only add meta box for the Email & SMS Flows page
+    global $post;
+    if (!$post) {
+        return;
+    }
+    
+    $template = get_page_template_slug($post->ID);
+    $slug = get_post_field('post_name', $post->ID);
+    
+    // Only add meta box for the Email & SMS Flows page template or slug
+    if ($template !== 'page-email-sms-flows.php' && $slug !== 'email-sms-flows') {
+        return;
+    }
+    
     add_meta_box(
         'email_sms_flows_settings',
         'Email & SMS Flows Settings',
@@ -20,13 +34,6 @@ function email_sms_flows_meta_boxes() {
 
 // Meta box callback function
 function email_sms_flows_meta_callback($post) {
-    // Only show for the Email & SMS Flows page template
-    $template = get_page_template_slug($post->ID);
-    $slug = get_post_field('post_name', $post->ID);
-    if ($template !== 'page-email-sms-flows.php' && $slug !== 'email-sms-flows') {
-        return;
-    }
-    
     // Add nonce for security
     wp_nonce_field('email_sms_flows_meta', 'email_sms_flows_meta_nonce');
     
