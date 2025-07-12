@@ -27,15 +27,17 @@ get_header(); ?>
         <div class="container">
             <div class="hero-content animate-on-scroll animate-fade-up">
                 <?php
+                // Helper function for safe array access
+                if (!function_exists('get_retargeting_default')) {
+                    function get_retargeting_default($defaults, $key, $fallback = '') {
+                        return isset($defaults[$key]) ? $defaults[$key] : $fallback;
+                    }
+                }
+                
                 // Get hero content from meta fields with fallbacks
                 $defaults = function_exists('aimpro_get_retargeting_display_default_values') 
                     ? aimpro_get_retargeting_display_default_values() 
                     : array();
-                
-                // Helper function for safe array access
-                function get_default($defaults, $key, $fallback = '') {
-                    return isset($defaults[$key]) ? $defaults[$key] : $fallback;
-                }
                 
                 $hero_title = get_post_meta(get_the_ID(), '_retargeting_display_hero_title', true);
                 if (empty($hero_title)) $hero_title = get_default($defaults, 'hero_title', 'Retargeting & Display Advertising');

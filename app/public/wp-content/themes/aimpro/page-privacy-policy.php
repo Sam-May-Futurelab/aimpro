@@ -22,8 +22,22 @@ get_header(); ?>
         <!-- Page Header -->
         <section class="page-header">
             <div class="page-header-content animate-on-scroll animate-fade-up">
-                <h1><?php echo wp_kses_post(get_post_meta(get_the_ID(), 'privacy_header_title', true) ?: 'Privacy Policy'); ?></h1>
-                <p class="page-subtitle"><?php echo wp_kses_post(get_post_meta(get_the_ID(), 'privacy_header_subtitle', true) ?: 'How we collect, use, and protect your information'); ?></p>
+                <div class="header-title">
+                    <?php 
+                    $header_title = get_post_meta(get_the_ID(), 'privacy_header_title', true) ?: 'Privacy Policy';
+                    // Strip any wrapper p tags and ensure it's an h1
+                    $header_title = strip_tags($header_title, '<strong><em><span>');
+                    echo '<h1>' . wp_kses_post($header_title) . '</h1>';
+                    ?>
+                </div>
+                <div class="header-subtitle">
+                    <?php 
+                    $header_subtitle = get_post_meta(get_the_ID(), 'privacy_header_subtitle', true) ?: 'How we collect, use, and protect your information';
+                    // Strip any wrapper p tags and ensure proper subtitle formatting
+                    $header_subtitle = strip_tags($header_subtitle, '<strong><em><span>');
+                    echo '<p class="hero-subtitle">' . wp_kses_post($header_subtitle) . '</p>';
+                    ?>
+                </div>
                 <?php 
                 $last_updated = get_post_meta(get_the_ID(), 'privacy_last_updated', true);
                 if (empty($last_updated)) {
@@ -187,6 +201,43 @@ Email: hello@aimpro.co.uk';
 </main>
 
 <style>
+.page-header {
+    text-align: center;
+    padding: 3rem 0;
+    background: linear-gradient(135deg, var(--bg-primary) 0%, var(--bg-secondary) 100%);
+    margin-bottom: 2rem;
+}
+
+.page-header-content h1,
+.header-title h1 {
+    font-size: 3rem !important;
+    font-weight: 700 !important;
+    color: var(--heading-color) !important;
+    margin-bottom: 1rem !important;
+    line-height: 1.2 !important;
+}
+
+.page-header-content .hero-subtitle,
+.header-subtitle .hero-subtitle,
+.header-subtitle p {
+    font-size: 1.25rem !important;
+    color: var(--text-secondary) !important;
+    margin-bottom: 1.5rem !important;
+    font-weight: 400 !important;
+    line-height: 1.4 !important;
+}
+
+/* Ensure rich text editor content doesn't override header styling */
+.page-header-content p:not(.hero-subtitle):not(.last-updated),
+.header-title p,
+.header-subtitle p:not(.hero-subtitle) {
+    font-size: 1.25rem !important;
+    color: var(--text-secondary) !important;
+    margin-bottom: 1.5rem !important;
+    font-weight: 400 !important;
+    line-height: 1.4 !important;
+}
+
 .privacy-content {
     padding: 2rem 0;
 }
@@ -226,10 +277,11 @@ Email: hello@aimpro.co.uk';
 }
 
 .last-updated {
-    font-style: italic;
-    color: var(--text-muted);
-    font-size: 0.9rem;
+    font-style: italic !important;
+    color: var(--text-muted) !important;
+    font-size: 0.9rem !important;
     margin-top: 0.5rem !important;
+    font-weight: 400 !important;
 }
 
 .contact-info {
@@ -253,6 +305,23 @@ Email: hello@aimpro.co.uk';
 }
 
 @media (max-width: 768px) {
+    .page-header {
+        padding: 2rem 0;
+    }
+    
+    .page-header-content h1,
+    .header-title h1 {
+        font-size: 2rem !important;
+    }
+    
+    .page-header-content .hero-subtitle,
+    .header-subtitle .hero-subtitle,
+    .header-subtitle p,
+    .page-header-content p:not(.hero-subtitle):not(.last-updated),
+    .header-title p {
+        font-size: 1.1rem !important;
+    }
+    
     .privacy-content {
         padding: 1rem 0;
     }

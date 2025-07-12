@@ -6,6 +6,19 @@
 // Add meta box for Privacy Policy page
 add_action('add_meta_boxes', 'privacy_policy_meta_boxes');
 function privacy_policy_meta_boxes() {
+    // Only show this meta box on the Privacy Policy page template or page with privacy-policy slug
+    $screen = get_current_screen();
+    if ($screen->id == 'page' && isset($_GET['post'])) {
+        $template = get_post_meta($_GET['post'], '_wp_page_template', true);
+        $post = get_post($_GET['post']);
+        $slug = $post ? $post->post_name : '';
+        
+        // Show meta box if template matches OR slug matches
+        if ($template != 'page-privacy-policy.php' && $slug != 'privacy-policy') {
+            return;
+        }
+    }
+    
     add_meta_box(
         'privacy_policy_meta',
         'Privacy Policy Content',
@@ -18,38 +31,64 @@ function privacy_policy_meta_boxes() {
 
 // Meta box callback
 function privacy_policy_meta_callback($post) {
-    // Only show for pages using the Privacy Policy template
-    $template = get_post_meta($post->ID, '_wp_page_template', true);
-    if ($template !== 'page-privacy-policy.php') {
-        echo '<p>This meta box is only available for pages using the "Privacy Policy Page" template.</p>';
-        return;
-    }
-
     wp_nonce_field('privacy_policy_meta_nonce', 'privacy_policy_meta_nonce');
     
-    // Get existing values
+    // Get existing values with safe defaults
     $header_title = get_post_meta($post->ID, 'privacy_header_title', true);
+    if (empty($header_title)) $header_title = 'Privacy Policy';
+    
     $header_subtitle = get_post_meta($post->ID, 'privacy_header_subtitle', true);
+    if (empty($header_subtitle)) $header_subtitle = 'How we collect, use, and protect your information';
+    
     $last_updated = get_post_meta($post->ID, 'privacy_last_updated', true);
+    if (empty($last_updated)) $last_updated = date('Y-m-d');
     
-    // Policy sections
+    // Policy sections with defaults
     $info_collect_content = get_post_meta($post->ID, 'privacy_info_collect', true);
-    $info_use_content = get_post_meta($post->ID, 'privacy_info_use', true);
-    $info_sharing_content = get_post_meta($post->ID, 'privacy_info_sharing', true);
-    $cookies_content = get_post_meta($post->ID, 'privacy_cookies', true);
-    $security_content = get_post_meta($post->ID, 'privacy_security', true);
-    $user_rights_content = get_post_meta($post->ID, 'privacy_user_rights', true);
-    $third_party_content = get_post_meta($post->ID, 'privacy_third_party', true);
-    $changes_content = get_post_meta($post->ID, 'privacy_changes', true);
-    $contact_content = get_post_meta($post->ID, 'privacy_contact', true);
+    if (empty($info_collect_content)) $info_collect_content = 'We collect information you provide directly to us, such as when you fill out contact forms, subscribe to our newsletter, or engage with our services. This may include your name, email address, phone number, company information, and any other details you choose to provide.';
     
-    // CTA section
+    $info_use_content = get_post_meta($post->ID, 'privacy_info_use', true);
+    if (empty($info_use_content)) $info_use_content = 'We use the information we collect to provide and improve our digital marketing services, respond to your inquiries, send you relevant marketing communications (with your consent), and analyze website usage to improve user experience.';
+    
+    $info_sharing_content = get_post_meta($post->ID, 'privacy_info_sharing', true);
+    if (empty($info_sharing_content)) $info_sharing_content = 'We do not sell, trade, or rent your personal information to third parties. We may share your information only with your explicit consent, to comply with legal requirements, or with trusted service providers who assist in our operations under strict confidentiality.';
+    
+    $cookies_content = get_post_meta($post->ID, 'privacy_cookies', true);
+    if (empty($cookies_content)) $cookies_content = 'Our website uses cookies and similar tracking technologies to remember your preferences, analyze website traffic, provide personalized content, and enable social media features. You can control cookie settings through your browser preferences.';
+    
+    $security_content = get_post_meta($post->ID, 'privacy_security', true);
+    if (empty($security_content)) $security_content = 'We implement appropriate technical and organizational measures to protect your personal information against unauthorized access, alteration, disclosure, or destruction. However, no internet transmission is 100% secure, and we cannot guarantee absolute security.';
+    
+    $user_rights_content = get_post_meta($post->ID, 'privacy_user_rights', true);
+    if (empty($user_rights_content)) $user_rights_content = 'Depending on your location, you may have certain rights regarding your personal information, including access, correction, deletion, withdrawal of consent, and data portability. To exercise these rights, please contact us using the information provided below.';
+    
+    $third_party_content = get_post_meta($post->ID, 'privacy_third_party', true);
+    if (empty($third_party_content)) $third_party_content = 'Our website may contain links to third-party websites or integrate with external services. These third parties have their own privacy policies, and we are not responsible for their practices.';
+    
+    $changes_content = get_post_meta($post->ID, 'privacy_changes', true);
+    if (empty($changes_content)) $changes_content = 'We may update this Privacy Policy from time to time to reflect changes in our practices or applicable laws. We will notify you of any material changes by posting the updated policy on our website.';
+    
+    $contact_content = get_post_meta($post->ID, 'privacy_contact', true);
+    if (empty($contact_content)) $contact_content = 'If you have any questions about this Privacy Policy or our data practices, please contact us at: <strong>Aimpro Digital</strong>, Birmingham, UK. Email: hello@aimpro.co.uk, Phone: 0121 285 8490';
+    
+    // CTA section with defaults
     $cta_heading = get_post_meta($post->ID, 'privacy_cta_heading', true);
+    if (empty($cta_heading)) $cta_heading = 'Questions About Our Privacy Policy?';
+    
     $cta_description = get_post_meta($post->ID, 'privacy_cta_description', true);
+    if (empty($cta_description)) $cta_description = 'We\'re here to help clarify any concerns you may have about how we handle your data';
+    
     $cta_button1_text = get_post_meta($post->ID, 'privacy_cta_button1_text', true);
+    if (empty($cta_button1_text)) $cta_button1_text = 'Contact Us';
+    
     $cta_button1_url = get_post_meta($post->ID, 'privacy_cta_button1_url', true);
+    if (empty($cta_button1_url)) $cta_button1_url = '/contact';
+    
     $cta_button2_text = get_post_meta($post->ID, 'privacy_cta_button2_text', true);
+    if (empty($cta_button2_text)) $cta_button2_text = 'Back to Home';
+    
     $cta_button2_url = get_post_meta($post->ID, 'privacy_cta_button2_url', true);
+    if (empty($cta_button2_url)) $cta_button2_url = '/';
     ?>
     
     <style>
@@ -320,9 +359,13 @@ function privacy_policy_save_meta($post_id) {
         return;
     }
 
-    // Only save for Privacy Policy template
+    // Only save for pages using the Privacy Policy template or with privacy-policy slug
     $template = get_post_meta($post_id, '_wp_page_template', true);
-    if ($template !== 'page-privacy-policy.php') {
+    $post = get_post($post_id);
+    $slug = $post ? $post->post_name : '';
+    
+    // Save meta if template matches OR slug matches
+    if ($template !== 'page-privacy-policy.php' && $slug !== 'privacy-policy') {
         return;
     }
 
