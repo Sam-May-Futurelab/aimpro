@@ -268,6 +268,9 @@ if (is_admin()) {
         }
     });
     
+    // Include homepage meta functionality
+    require_once get_template_directory() . '/includes/homepage-meta.php';
+
     // Include contact page meta functionality
     require_once get_template_directory() . '/includes/contact-meta.php';
 
