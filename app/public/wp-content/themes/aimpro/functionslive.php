@@ -84,260 +84,75 @@ function aimpro_check_submissions_table() {
 }
 add_action('wp_loaded', 'aimpro_check_submissions_table');
 
-// Include retargeting display default values function for both frontend and admin
-if (!function_exists('aimpro_get_retargeting_display_default_values')) {
-    /**
-     * Set default values for Retargeting & Display Advertising page meta fields
-     * This ensures fields are pre-populated with the frontend content
-     */
-    function aimpro_get_retargeting_display_default_values() {
-        return array(
-            // Hero Section
-            'hero_title' => 'Retargeting & Display Advertising',
-            'hero_subtitle' => 'Re-engage interested prospects and build brand awareness with strategic retargeting and display campaigns that convert browsers into buyers across the web.',
-            
-            // Hero Stats
-            'hero_stat1_number' => '475%',
-            'hero_stat1_label' => 'Conversion Rate Increase',
-            'hero_stat2_number' => '68%',
-            'hero_stat2_label' => 'Lower Cost Per Conversion',
-            'hero_stat3_number' => '12x',
-            'hero_stat3_label' => 'Higher Click-Through Rate',
-            
-            // Hero CTAs
-            'hero_cta1_text' => 'Start Retargeting',
-            'hero_cta2_text' => 'View Packages',
-            
-            // Service Overview Section
-            'overview_title' => 'Strategic Retargeting & Display Campaigns',
-            'overview_content' => 'Most website visitors leave without converting. Our retargeting and display advertising strategies keep your brand top-of-mind, re-engage interested prospects, and guide them back to complete their purchase or inquiry across millions of websites.',
-            
-            // Service Items (6 services)
-            'service_title_1' => 'Website Retargeting',
-            'service_content_1' => 'Re-engage website visitors with personalised ads based on their browsing behaviour and pages visited.',
-            'service_icon_1' => 'fas fa-bullseye',
-            
-            'service_title_2' => 'Abandoned Cart Recovery',
-            'service_content_2' => 'Win back shoppers who left items in their cart with targeted ads featuring the exact products they viewed.',
-            'service_icon_2' => 'fas fa-shopping-cart',
-            
-            'service_title_3' => 'Display Advertising',
-            'service_content_3' => 'Build brand awareness and reach new audiences through visually compelling display ads across premium websites.',
-            'service_icon_3' => 'fas fa-ad',
-            
-            'service_title_4' => 'Video Retargeting',
-            'service_content_4' => 'Engage prospects with dynamic video content that showcases your products or services in action.',
-            'service_icon_4' => 'fas fa-play-circle',
-            
-            'service_title_5' => 'Lookalike Audiences',
-            'service_content_5' => 'Expand your reach by targeting new prospects who share characteristics with your best customers.',
-            'service_icon_5' => 'fas fa-user-friends',
-            
-            'service_title_6' => 'Cross-Platform Campaigns',
-            'service_content_6' => 'Coordinate retargeting efforts across Google, Facebook, Instagram, and other platforms for maximum impact.',
-            'service_icon_6' => 'fas fa-sync-alt',
-            
-            // Case Study Section
-            'case_study_title' => 'Case Study: E-commerce Cart Recovery',
-            'case_study_intro' => 'How we helped an online retailer recover 475% more abandoned carts and increase overall conversion rates through strategic retargeting campaigns.',
-            'case_study_challenge' => 'A fashion e-commerce store was losing 85% of potential customers to cart abandonment. Their existing email recovery campaigns were generating minimal results, and they needed a comprehensive strategy to re-engage prospects across multiple touchpoints.',
-            'case_study_solution' => "Implemented pixel-based retargeting across Google Display Network and Facebook\nCreated dynamic product ads featuring abandoned cart items\nDeveloped sequential retargeting campaigns with progressive messaging\nLaunched lookalike audiences based on high-value customers\nA/B tested creative formats and messaging strategies",
-            
-            // Case Study Results
-            'case_result_1_number' => '475%',
-            'case_result_1_label' => 'Cart Recovery Increase',
-            'case_result_2_number' => '68%',
-            'case_result_2_label' => 'Lower Cost Per Conversion',
-            'case_result_3_number' => '12x',
-            'case_result_3_label' => 'Higher CTR vs Display Average',
-            'case_result_4_number' => '235%',
-            'case_result_4_label' => 'Return on Ad Spend',
-            
-            // Process Section
-            'process_title' => 'Our Retargeting Process',
-            
-            'process_step_number_1' => '1',
-            'process_step_title_1' => 'Audience Segmentation',
-            'process_step_content_1' => 'analyse website behaviour to create detailed audience segments based on pages visited, engagement level, and conversion intent.',
-            
-            'process_step_number_2' => '2',
-            'process_step_title_2' => 'Pixel Implementation',
-            'process_step_content_2' => 'Install and configure tracking pixels across all relevant platforms to capture audience data and enable precise targeting.',
-            
-            'process_step_number_3' => '3',
-            'process_step_title_3' => 'Creative Development',
-            'process_step_content_3' => 'Design compelling ad creative with personalised messaging that addresses specific user behaviours and intent signals.',
-            
-            'process_step_number_4' => '4',
-            'process_step_title_4' => 'Campaign Launch & Testing',
-            'process_step_content_4' => 'Deploy retargeting campaigns with systematic A/B testing of creative, messaging, and frequency caps.',
-            
-            'process_step_number_5' => '5',
-            'process_step_title_5' => 'Optimisation & Scaling',
-            'process_step_content_5' => 'Continuously optimise based on performance data and scale successful campaigns across additional platforms and audiences.',
-            
-            // Retargeting Types Section
-            'types_title' => 'Types of Retargeting We Implement',
-            
-            'type_title_1' => 'Pixel-Based Retargeting',
-            'type_content_1' => 'Track anonymous website visitors and serve them relevant ads across the web based on their browsing behaviour.',
-            'type_icon_1' => 'fas fa-mouse-pointer',
-            
-            'type_title_2' => 'List-Based Retargeting',
-            'type_content_2' => 'Upload customer email lists to create targeted campaigns for existing contacts and previous customers.',
-            'type_icon_2' => 'fas fa-database',
-            
-            'type_title_3' => 'Email Retargeting',
-            'type_content_3' => 'Target users who interacted with your emails but didn\'t convert with coordinated display advertising.',
-            'type_icon_3' => 'fas fa-envelope',
-            
-            'type_title_4' => 'Video View Retargeting',
-            'type_content_4' => 'Re-engage users who watched your video content with follow-up campaigns driving specific actions.',
-            'type_icon_4' => 'fas fa-play',
-            
-            'type_title_5' => 'Social Media Retargeting',
-            'type_content_5' => 'Target website visitors on social platforms where they spend time with native, engaging ad formats.',
-            'type_icon_5' => 'fas fa-share-alt',
-            
-            'type_title_6' => 'Cross-Device Retargeting',
-            'type_content_6' => 'Follow users across all their devices to maintain consistent messaging and maximise conversion opportunities.',
-            'type_icon_6' => 'fas fa-mobile-alt',
-            
-            // Tools Section
-            'tools_title' => 'Tools & Technologies We Use',
-            
-            'tool_title_1' => 'Google Display Network',
-            'tool_content_1' => 'Reach users across millions of websites, apps, and Google properties with targeted display campaigns.',
-            'tool_icon_1' => 'fab fa-google',
-            
-            'tool_title_2' => 'Facebook Pixel',
-            'tool_content_2' => 'Advanced retargeting and conversion tracking across Facebook and Instagram platforms.',
-            'tool_icon_2' => 'fab fa-facebook',
-            
-            'tool_title_3' => 'Google Analytics',
-            'tool_content_3' => 'Comprehensive audience analysis and behaviour tracking for precise retargeting segmentation.',
-            'tool_icon_3' => 'fas fa-chart-bar',
-            
-            'tool_title_4' => 'Dynamic Creative Tools',
-            'tool_content_4' => 'Automated ad creation and personalisation based on user behaviour and product interests.',
-            'tool_icon_4' => 'fas fa-palette',
-            
-            // Industries Section
-            'industries_title' => 'Industries We Serve',
-            
-            'industry_title_1' => 'E-commerce & Retail',
-            'industry_content_1' => 'Recover abandoned carts and increase customer lifetime value through strategic retargeting.',
-            
-            'industry_title_2' => 'SaaS & Technology',
-            'industry_content_2' => 'Nurture trial users and free account holders toward paid conversions.',
-            
-            'industry_title_3' => 'Financial Services',
-            'industry_content_3' => 'Re-engage prospects who showed interest in loans, insurance, or investment products.',
-            
-            'industry_title_4' => 'Real Estate',
-            'industry_content_4' => 'Follow up with property viewers and keep listings top-of-mind for potential buyers.',
-            
-            'industry_title_5' => 'Travel & Hospitality',
-            'industry_content_5' => 'Recapture booking abandoners and promote special offers to interested travelers.',
-            
-            'industry_title_6' => 'Healthcare',
-            'industry_content_6' => 'Nurture patients who researched treatments or services with compliant retargeting campaigns.',
-            
-            // Testimonial Section
-            'testimonial_quote' => 'Our retargeting campaigns with Aimpro have been phenomenal. We\'re recovering 475% more abandoned carts and our cost per conversion dropped by 68%. It\'s transformed our entire marketing ROI.',
-            'testimonial_name' => 'Emma Thompson',
-            'testimonial_title' => 'E-commerce Director, StyleHub',
-            
-            // CTA Section
-            'cta_title' => 'Ready to Re-Engage Your Lost Prospects?',
-            'cta_content' => 'Stop losing potential customers forever. Our retargeting experts will help you build campaigns that bring visitors back and convert them into loyal customers. Start recovering lost revenue today.',
-            'cta_button_1_text' => 'Start Retargeting',
-            'cta_button_2_text' => 'View All Services',
-        );
-    }
-}
+// Include contact page meta functionality
+require_once get_template_directory() . '/includes/contact-meta.php';
 
-// Include meta functionality only in admin area to prevent header issues
-if (is_admin()) {
-    // Enqueue necessary scripts for wp_editor in admin
-    add_action('admin_enqueue_scripts', function($hook) {
-        if ($hook == 'post.php' || $hook == 'post-new.php') {
-            wp_enqueue_script('wp-tinymce');
-            wp_enqueue_script('editor');
-            wp_enqueue_script('quicktags');
-        }
-    });
-    
-    // Include contact page meta functionality
-    require_once get_template_directory() . '/includes/contact-meta.php';
+// Include author settings meta functionality
+require_once get_template_directory() . '/includes/author-settings-meta.php';
 
-    // Include author settings meta functionality
-    require_once get_template_directory() . '/includes/author-settings-meta.php';
+// Include homepage (index) meta functionality (IMPORTANT - DO NOT REMOVE)
+require_once get_template_directory() . '/includes/index-meta.php';
 
-    // Include about page meta functionality
-    require_once get_template_directory() . '/includes/about-meta.php';
+// Include about page meta functionality
+require_once get_template_directory() . '/includes/about-meta.php';
 
-    // Include AI CRM Setup page meta functionality
-    require_once get_template_directory() . '/includes/ai-crm-setup-meta.php';
+// Include AI CRM Setup page meta functionality
+require_once get_template_directory() . '/includes/ai-crm-setup-meta.php';
 
-    // Include company page meta functionality
-    require_once get_template_directory() . '/includes/company-meta.php';
+// Include company page meta functionality
+require_once get_template_directory() . '/includes/company-meta.php';
 
-    // Include team page meta functionality
-    require_once get_template_directory() . '/includes/team-meta.php';
+// Include team page meta functionality
+require_once get_template_directory() . '/includes/team-meta.php';
 
-    // Include landing pages meta functionality
-    require_once get_template_directory() . '/includes/landing-pages-meta.php';
+// Include landing pages meta functionality
+require_once get_template_directory() . '/includes/landing-pages-meta.php';
 
-    // Include testimonials page meta functionality
-    require_once get_template_directory() . '/includes/testimonials-meta.php';
-    require_once get_template_directory() . '/includes/careers-meta.php';
-    require_once get_template_directory() . '/includes/partner-meta.php';
-    require_once get_template_directory() . '/includes/resources-meta.php';
-    require_once get_template_directory() . '/includes/blog-meta.php';
-    require_once get_template_directory() . '/includes/case-studies-meta.php';
-    require_once get_template_directory() . '/includes/templates-tools-meta.php';
-    require_once get_template_directory() . '/includes/events-webinars-meta-simple.php';
-    require_once get_template_directory() . '/includes/training-mentoring-meta.php';
-    require_once get_template_directory() . '/includes/services-meta.php';
-    require_once get_template_directory() . '/includes/industries-meta.php';
-    require_once get_template_directory() . '/includes/automotive-meta.php';
-    require_once get_template_directory() . '/includes/home-garden-meta.php';
-    require_once get_template_directory() . '/includes/website-design-meta.php';
-    require_once get_template_directory() . '/includes/website-development-meta.php';
-    require_once get_template_directory() . '/includes/white-label-ppc-meta.php';
-    require_once get_template_directory() . '/includes/finance-meta.php';
-    require_once get_template_directory() . '/includes/professional-services-meta.php';
-    require_once get_template_directory() . '/includes/estate-agents-meta.php';
-    require_once get_template_directory() . '/includes/coaches-consultants-meta.php';
-    require_once get_template_directory() . '/includes/ecommerce-meta.php';
-    require_once get_template_directory() . '/includes/solutions-meta.php';
-    require_once get_template_directory() . '/includes/lead-generation-meta.php';
-    require_once get_template_directory() . '/includes/improve-roi-ads-meta.php';
-    require_once get_template_directory() . '/includes/rank-higher-locally-meta.php';
-    require_once get_template_directory() . '/includes/automate-marketing-meta.php';
-    require_once get_template_directory() . '/includes/finance-meta.php';
-    require_once get_template_directory() . '/includes/high-converting-website-meta.php';
-    require_once get_template_directory() . '/includes/pdf-download-handler.php';
-    require_once get_template_directory() . '/includes/chatbots-meta.php';
-    require_once get_template_directory() . '/includes/advertising-ppc-meta.php';
-    require_once get_template_directory() . '/includes/google-ads-meta.php';
-    require_once get_template_directory() . '/includes/meta-ads-meta.php';
-    require_once get_template_directory() . '/includes/microsoft-ads-meta.php';
-    require_once get_template_directory() . '/includes/retargeting-display-meta.php';
-    require_once get_template_directory() . '/includes/ppc-audit-meta.php';
-    require_once get_template_directory() . '/includes/seo-services-meta.php';
-    require_once get_template_directory() . '/includes/local-seo-meta.php';
-    require_once get_template_directory() . '/includes/seo-audit-meta.php';
-    require_once get_template_directory() . '/includes/technical-seo-meta.php';
-    require_once get_template_directory() . '/includes/on-page-seo-meta.php';
-    require_once get_template_directory() . '/includes/white-label-seo-meta.php';
-    require_once get_template_directory() . '/includes/email-sms-flows-meta.php';
-    require_once get_template_directory() . '/includes/locations-meta.php';
-    require_once get_template_directory() . '/includes/privacy-policy-meta.php';
-    require_once get_template_directory() . '/includes/terms-of-service-meta.php';
-    require_once get_template_directory() . '/includes/sitemap-meta.php';
-}
+// Include testimonials page meta functionality
+require_once get_template_directory() . '/includes/testimonials-meta.php';
+require_once get_template_directory() . '/includes/careers-meta.php';
+require_once get_template_directory() . '/includes/partner-meta.php';
+require_once get_template_directory() . '/includes/resources-meta.php';
+require_once get_template_directory() . '/includes/blog-meta.php';
+require_once get_template_directory() . '/includes/case-studies-meta.php';
+require_once get_template_directory() . '/includes/templates-tools-meta.php';
+require_once get_template_directory() . '/includes/events-webinars-meta-simple.php';
+require_once get_template_directory() . '/includes/training-mentoring-meta.php';
+require_once get_template_directory() . '/includes/services-meta.php';
+require_once get_template_directory() . '/includes/industries-meta.php';
+require_once get_template_directory() . '/includes/automotive-meta.php';
+require_once get_template_directory() . '/includes/home-garden-meta.php';
+require_once get_template_directory() . '/includes/website-design-meta.php';
+require_once get_template_directory() . '/includes/website-development-meta.php';
+require_once get_template_directory() . '/includes/finance-meta.php';
+require_once get_template_directory() . '/includes/professional-services-meta.php';
+require_once get_template_directory() . '/includes/estate-agents-meta.php';
+require_once get_template_directory() . '/includes/coaches-consultants-meta.php';
+require_once get_template_directory() . '/includes/ecommerce-meta.php';
+require_once get_template_directory() . '/includes/solutions-meta.php';
+require_once get_template_directory() . '/includes/lead-generation-meta.php';
+require_once get_template_directory() . '/includes/improve-roi-ads-meta.php';
+require_once get_template_directory() . '/includes/rank-higher-locally-meta.php';
+require_once get_template_directory() . '/includes/automate-marketing-meta.php';
+require_once get_template_directory() . '/includes/high-converting-website-meta.php';
+require_once get_template_directory() . '/includes/pdf-download-handler.php';
+require_once get_template_directory() . '/includes/chatbots-meta.php';
+require_once get_template_directory() . '/includes/advertising-ppc-meta.php';
+require_once get_template_directory() . '/includes/google-ads-meta.php';
+require_once get_template_directory() . '/includes/meta-ads-meta.php';
+require_once get_template_directory() . '/includes/microsoft-ads-meta.php';
+require_once get_template_directory() . '/includes/retargeting-display-meta.php';
+require_once get_template_directory() . '/includes/ppc-audit-meta.php';
+require_once get_template_directory() . '/includes/seo-services-meta.php';
+require_once get_template_directory() . '/includes/local-seo-meta.php';
+require_once get_template_directory() . '/includes/seo-audit-meta.php';
+require_once get_template_directory() . '/includes/technical-seo-meta.php';
+require_once get_template_directory() . '/includes/on-page-seo-meta.php';
+require_once get_template_directory() . '/includes/white-label-seo-meta.php';
+require_once get_template_directory() . '/includes/email-sms-flows-meta.php';
+require_once get_template_directory() . '/includes/locations-meta.php';
+require_once get_template_directory() . '/includes/privacy-policy-meta.php';
+
 
 // Include helper functions
 require_once get_template_directory() . '/includes/helpers.php';
@@ -730,7 +545,7 @@ function aimpro_handle_contact_form() {
     );
     
     if ($result) {        // Send email notification to admin
-        $to = 'sam@futurelab.solutions';
+        $to = 'hello@aimpro.co.uk';
         $subject = 'New Contact Form Submission - ' . get_bloginfo('name');
         $message_body = "New contact form submission:\n\n";
         $message_body .= "Name: {$name}\n";
@@ -756,12 +571,12 @@ function aimpro_handle_contact_form() {
         $user_message .= "We've received your message and one of our team members will respond within 24 hours.\n\n";        $user_message .= "In the meantime, feel free to check out our latest insights and case studies on our website.\n\n";
         $user_message .= "Best regards,\n";
         $user_message .= "The Aimpro Team\n";
-        $user_message .= "sam@futurelab.solutions\n";
+        $user_message .= "hello@aimpro.co.uk\n";
         $user_message .= "Phone: +44 121 285 8490";
         
         $user_headers = array(
             'Content-Type: text/plain; charset=UTF-8',
-            'From: Aimpro Digital <sam@futurelab.solutions>'
+            'From: Aimpro Digital <hello@aimpro.co.uk>'
         );
         
         wp_mail($email, $user_subject, $user_message, $user_headers);
@@ -1123,7 +938,7 @@ function aimpro_handle_newsletter_signup() {
     
     if ($result) {
         // Send email notification to admin
-        $to = 'sam@futurelab.solutions';
+        $to = 'hello@aimpro.co.uk';
         $subject = 'New Newsletter Subscription - ' . get_bloginfo('name');
         $message_body = "New newsletter subscription:\n\n";
         $message_body .= "Name: $name\n";
@@ -1214,7 +1029,7 @@ function aimpro_handle_newsletter_signup_ajax() {
     
     if ($result) {
         // Send email notification to admin
-        $to = 'sam@futurelab.solutions';
+        $to = 'hello@aimpro.co.uk';
         $subject = 'New Newsletter Subscription - ' . get_bloginfo('name');
         $message_body = "New newsletter subscription:\n\n";
         $message_body .= "Name: $name\n";
@@ -1299,6 +1114,9 @@ function aimpro_submissions_page() {
                                         case 'lead_magnet':
                                             echo 'Lead Magnet';
                                             break;
+                                        case 'newsletter':
+                                            echo 'Newsletter';
+                                            break;
                                         case 'contact':
                                         default:
                                             echo 'Contact Form';
@@ -1351,760 +1169,8 @@ function aimpro_submissions_page() {
 }
 
 /**
- * Breadcrumbs Functionality
+ * Add Homepage Settings admin page
  */
-/**
- * Helper function to display embedded videos consistently across templates
- *
- * @param string $video_url The URL of the video to embed
- * @param array $args Optional. Additional arguments for the video embed
- * @return string HTML output for the video embed
- */
-function aimpro_video_embed($video_url, $args = array()) {
-    if (empty($video_url)) {
-        return '';
-    }
-
-    $defaults = array(
-        'class' => 'video-embed',
-        'width' => 800,
-        'height' => 450,
-        'title' => '',
-    );
-    
-    $args = wp_parse_args($args, $defaults);
-    
-    // Get oEmbed HTML
-    $embed_code = wp_oembed_get($video_url, array(
-        'width' => $args['width'],
-        'height' => $args['height'],
-    ));
-    
-    if (!$embed_code) {
-        return '';
-    }
-    
-    $output = '<div class="' . esc_attr($args['class']) . '">';
-    $output .= $embed_code;
-    $output .= '</div>';
-    
-    if (!empty($args['title'])) {
-        $output .= '<div class="video-caption">' . esc_html($args['title']) . '</div>';
-    }
-    
-    return $output;
-}
-
-/**
- * Breadcrumbs function for all page templates
- * 
- * @return string HTML output for the breadcrumbs
- */
-function aimpro_breadcrumbs() {
-    // Settings
-    $breadcrumb_separator = '<span class="breadcrumb-separator">/</span>';
-    $home_title = 'Home';
-    
-    // Get the query & post information
-    global $post, $wp_query;
-    
-    // Do not display on the homepage
-    if (!is_front_page()) {
-        
-        // Build the breadcrumbs
-        echo '<nav aria-label="Breadcrumb" class="breadcrumbs">';
-        echo '<ol>';
-        
-        // Home page
-        echo '<li class="breadcrumb-item"><a href="' . esc_url(home_url()) . '">' . esc_html($home_title) . '</a></li>';
-        echo $breadcrumb_separator;
-        
-        if (is_archive() && !is_tax() && !is_category() && !is_tag()) {
-            
-            // Archive page
-            echo '<li class="breadcrumb-item current">' . post_type_archive_title('', false) . '</li>';
-            
-        } else if (is_archive() && is_tax() && !is_category() && !is_tag()) {
-            
-            // Custom post type archive
-            $post_type = get_post_type();
-            if ($post_type != 'post') {
-                $post_type_object = get_post_type_object($post_type);
-                $post_type_archive = get_post_type_archive_link($post_type);
-                echo '<li class="breadcrumb-item"><a href="' . esc_url($post_type_archive) . '">' . esc_html($post_type_object->labels->name) . '</a></li>';
-                echo $breadcrumb_separator;
-            }
-            
-            // Current term
-            $current_term = get_queried_object();
-            $taxonomy = get_taxonomy($current_term->taxonomy);
-            echo '<li class="breadcrumb-item current">' . esc_html($current_term->name) . '</li>';
-            
-        } else if (is_single()) {
-            
-            // Single post
-            $post_type = get_post_type();
-            
-            if ($post_type != 'post') {
-                $post_type_object = get_post_type_object($post_type);
-                $post_type_archive = get_post_type_archive_link($post_type);
-                echo '<li class="breadcrumb-item"><a href="' . esc_url($post_type_archive) . '">' . esc_html($post_type_object->labels->name) . '</a></li>';
-                echo $breadcrumb_separator;
-            } else {
-                // Categories
-                $categories = get_the_category();
-                if ($categories) {
-                    $category = $categories[0];
-                    echo '<li class="breadcrumb-item"><a href="' . esc_url(get_category_link($category->term_id)) . '">' . esc_html($category->name) . '</a></li>';
-                    echo $breadcrumb_separator;
-                }
-            }
-            
-            // Current post
-            echo '<li class="breadcrumb-item current">' . get_the_title() . '</li>';
-            
-        } else if (is_page()) {
-            
-            // Standard page
-            if ($post->post_parent) {
-                // Parent pages
-                $parent_id = $post->post_parent;
-                $breadcrumbs = array();
-                
-                while ($parent_id) {
-                    $page = get_post($parent_id);
-                    $breadcrumbs[] = '<li class="breadcrumb-item"><a href="' . esc_url(get_permalink($page->ID)) . '">' . get_the_title($page->ID) . '</a></li>';
-                    $parent_id = $page->post_parent;
-                }
-                
-                // Display breadcrumbs in reverse order
-                $breadcrumbs = array_reverse($breadcrumbs);
-                for ($i = 0; $i < count($breadcrumbs); $i++) {
-                    echo $breadcrumbs[$i];
-                    if ($i != count($breadcrumbs) - 1) echo $breadcrumb_separator;
-                }
-                
-                echo $breadcrumb_separator;
-            }
-            
-            // Current page
-            echo '<li class="breadcrumb-item current">' . get_the_title() . '</li>';
-            
-        } else if (is_category()) {
-            
-            // Category page
-            echo '<li class="breadcrumb-item current">' . single_cat_title('', false) . '</li>';
-            
-        } else if (is_tag()) {
-            
-            // Tag page
-            echo '<li class="breadcrumb-item current">' . single_tag_title('', false) . '</li>';
-            
-        } else if (is_author()) {
-            
-            // Author archive
-            global $author;
-            $userdata = get_userdata($author);
-            echo '<li class="breadcrumb-item current">' . esc_html($userdata->display_name) . '</li>';
-            
-        } else if (is_search()) {
-            
-            // Search results page
-            echo '<li class="breadcrumb-item current">Search results for "' . get_search_query() . '"</li>';
-            
-        } else if (is_404()) {
-            
-            // 404 page
-            echo '<li class="breadcrumb-item current">404 Error</li>';
-            
-        }
-        
-        echo '</ol>';
-        echo '</nav>';
-    }
-}
-
-/**
- * About Page Video Management
- * Add custom meta box for video upload in WordPress admin
- */
-
- // Add meta box for About page video
-function aimpro_add_about_video_meta_box() {
-    global $post;
-    if (empty($post)) return;
-    
-    $page_template = get_page_template_slug($post->ID);
-    $page_slug = $post->post_name;
-    
-    // Only add to the About page or pages using the About template
-    if ($page_slug === 'about' || $page_template === 'page-about.php' || $post->ID === get_option('aimpro_about_page_id')) {
-        add_meta_box(
-            'about_page_video',
-            'About Page Video',
-            'aimpro_about_video_meta_box_callback',
-            'page',
-            'normal',
-            'high'
-        );
-    }
-}
-add_action('add_meta_boxes', 'aimpro_add_about_video_meta_box');
-
-// Meta box callback function
-function aimpro_about_video_meta_box_callback($post) {
-    wp_nonce_field('aimpro_about_video_nonce', 'aimpro_about_video_nonce');
-    
-    $video_url = get_post_meta($post->ID, '_about_page_video', true);
-    $video_type = get_post_meta($post->ID, '_about_page_video_type', true);
-    $video_enabled = get_post_meta($post->ID, '_about_page_video_enabled', true);
-    
-    if (!$video_type) $video_type = 'upload'; // Default to upload
-    
-    ?>
-    <table class="form-table">
-        <tr>
-            <th scope="row">
-                <label for="about_video_enabled">Enable Video Section</label>
-            </th>
-            <td>
-                <input type="checkbox" id="about_video_enabled" name="about_video_enabled" value="1" <?php checked($video_enabled, '1'); ?> />
-                <p class="description">Check to display the video section on the About page.</p>
-            </td>
-        </tr>
-        <tr>
-            <th scope="row">
-                <label for="video_type">Video Type</label>
-            </th>
-            <td>
-                <label style="margin-right: 20px;">
-                    <input type="radio" name="video_type" value="upload" <?php checked($video_type, 'upload'); ?> />
-                    Upload Video File
-                </label>
-                <label>
-                    <input type="radio" name="video_type" value="url" <?php checked($video_type, 'url'); ?> />
-                    YouTube/Vimeo URL
-                </label>
-                <p class="description">Choose whether to upload a video file or use a YouTube/Vimeo URL.</p>
-            </td>
-        </tr>
-        <tr id="upload_video_row" style="<?php echo $video_type === 'url' ? 'display: none;' : ''; ?>">
-            <th scope="row">
-                <label for="about_video_url">Upload Video</label>
-            </th>
-            <td>
-                <input type="hidden" id="about_video_url" name="about_video_url" value="<?php echo esc_url($video_url); ?>" />
-                <div id="video_preview" style="margin-bottom: 10px;">
-                    <?php if ($video_url && $video_type === 'upload'): ?>
-                        <video width="300" height="200" controls>
-                            <source src="<?php echo esc_url($video_url); ?>" type="video/mp4">
-                            Your browser does not support the video tag.
-                        </video>
-                        <br>
-                        <button type="button" class="button" id="remove_video_btn">Remove Video</button>
-                    <?php else: ?>
-                        <p>No video selected</p>
-                    <?php endif; ?>
-                </div>
-                <button type="button" class="button" id="upload_video_btn">
-                    <?php echo ($video_url && $video_type === 'upload') ? 'Change Video' : 'Upload Video'; ?>
-                </button>
-                <p class="description">Upload a video file (MP4 recommended) for the About page.</p>
-            </td>
-        </tr>
-        <tr id="url_video_row" style="<?php echo $video_type === 'upload' ? 'display: none;' : ''; ?>">
-            <th scope="row">
-                <label for="video_url_input">Video URL</label>
-            </th>
-            <td>
-                <input type="url" id="video_url_input" name="video_url_input" value="<?php echo $video_type === 'url' ? esc_url($video_url) : ''; ?>" style="width: 100%; max-width: 500px;" placeholder="https://www.youtube.com/watch?v=..." />
-                <div id="url_video_preview" style="margin-top: 10px;">
-                    <?php if ($video_url && $video_type === 'url'): ?>
-                        <div style="max-width: 300px;">
-                            <?php echo aimpro_get_video_embed($video_url, 300, 200); ?>
-                        </div>
-                    <?php endif; ?>
-                </div>
-                <p class="description">
-                    Paste a YouTube or Vimeo URL here. Examples:<br>
-                    • https://www.youtube.com/watch?v=VIDEO_ID<br>
-                    • https://youtu.be/VIDEO_ID<br>
-                    • https://vimeo.com/VIDEO_ID
-                </p>
-            </td>
-        </tr>
-    </table>
-      <script>
-    jQuery(document).ready(function($) {
-        var mediaUploader;
-        
-        // Handle video type toggle
-        $('input[name="video_type"]').change(function() {
-            var selectedType = $(this).val();
-            if (selectedType === 'upload') {
-                $('#upload_video_row').show();
-                $('#url_video_row').hide();
-                $('#video_url_input').val('');
-                $('#url_video_preview').empty();
-            } else {
-                $('#upload_video_row').hide();
-                $('#url_video_row').show();
-                $('#about_video_url').val('');
-                updateVideoPreview('');
-            }
-        });
-        
-        // Handle URL input changes
-        $('#video_url_input').on('input', function() {
-            var url = $(this).val();
-            if (url) {
-                updateUrlPreview(url);
-            } else {
-                $('#url_video_preview').empty();
-            }
-        });
-        
-        function updateUrlPreview(url) {
-            if (isValidVideoUrl(url)) {
-                var embedCode = getEmbedCode(url, 300, 200);
-                $('#url_video_preview').html('<div style="max-width: 300px;">' + embedCode + '</div>');
-            } else {
-                $('#url_video_preview').html('<p style="color: #d63384;">Please enter a valid YouTube or Vimeo URL</p>');
-            }
-        }
-        
-        function isValidVideoUrl(url) {
-            var youtubeRegex = /(?:youtube\.com\/(?:[^\/]+\/.+\/|(?:v|e(?:mbed)?)\/|.*[?&]v=)|youtu\.be\/)([^"&?\/\s]{11})/;
-            var vimeoRegex = /(?:vimeo)\.com.*(?:videos|video|channels|)\/([\d]+)/i;
-            return youtubeRegex.test(url) || vimeoRegex.test(url);
-        }
-        
-        function getEmbedCode(url, width, height) {
-            // YouTube
-            var youtubeMatch = url.match(/(?:youtube\.com\/(?:[^\/]+\/.+\/|(?:v|e(?:mbed)?)\/|.*[?&]v=)|youtu\.be\/)([^"&?\/\s]{11})/);
-            if (youtubeMatch) {
-                var videoId = youtubeMatch[1];
-                return '<iframe width="' + width + '" height="' + height + '" src="https://www.youtube.com/embed/' + videoId + '" frameborder="0" allowfullscreen></iframe>';
-            }
-            
-            // Vimeo
-            var vimeoMatch = url.match(/(?:vimeo)\.com.*(?:videos|video|channels|)\/([\d]+)/i);
-            if (vimeoMatch) {
-                var videoId = vimeoMatch[1];
-                return '<iframe width="' + width + '" height="' + height + '" src="https://player.vimeo.com/video/' + videoId + '" frameborder="0" allowfullscreen></iframe>';
-            }
-            
-            return '<p>Preview not available</p>';
-        }
-        
-        $('#upload_video_btn').click(function(e) {
-            e.preventDefault();
-            
-            if (mediaUploader) {
-                mediaUploader.open();
-                return;
-            }
-            
-            mediaUploader = wp.media({
-                title: 'Choose Video',
-                button: {
-                    text: 'Choose Video'
-                },
-                library: {
-                    type: 'video'
-                },
-                multiple: false
-            });
-            
-            mediaUploader.on('select', function() {
-                var attachment = mediaUploader.state().get('selection').first().toJSON();
-                $('#about_video_url').val(attachment.url);
-                updateVideoPreview(attachment.url);
-                $('#upload_video_btn').text('Change Video');
-            });
-            
-            mediaUploader.open();
-        });
-        
-        $('#remove_video_btn').click(function(e) {
-            e.preventDefault();
-            $('#about_video_url').val('');
-            $('#video_preview').html('<p>No video selected</p>');
-            $('#upload_video_btn').text('Upload Video');
-        });
-        
-        function updateVideoPreview(url) {
-            if (url) {
-                var preview = '<video width="300" height="200" controls>' +
-                             '<source src="' + url + '" type="video/mp4">' +
-                             'Your browser does not support the video tag.' +
-                             '</video><br>' +
-                             '<button type="button" class="button" id="remove_video_btn">Remove Video</button>';
-                $('#video_preview').html(preview);
-                
-                // Re-bind remove button
-                $('#remove_video_btn').click(function(e) {
-                    e.preventDefault();
-                    $('#about_video_url').val('');
-                    $('#video_preview').html('<p>No video selected</p>');
-                    $('#upload_video_btn').text('Upload Video');
-                });
-            } else {
-                $('#video_preview').html('<p>No video selected</p>');
-            }
-        }
-    });
-    </script>
-    <?php
-}
-
-// Save meta box data
-function aimpro_save_about_video_meta_box($post_id) {
-    if (!isset($_POST['aimpro_about_video_nonce']) || !wp_verify_nonce($_POST['aimpro_about_video_nonce'], 'aimpro_about_video_nonce')) {
-        return;
-    }
-    
-    if (defined('DOING_AUTOSAVE') && DOING_AUTOSAVE) {
-        return;
-    }
-    
-    if (!current_user_can('edit_post', $post_id)) {
-        return;
-    }
-    
-    // Save video enabled status
-    $video_enabled = isset($_POST['about_video_enabled']) ? '1' : '0';
-    update_post_meta($post_id, '_about_page_video_enabled', $video_enabled);
-    
-    // Save video type
-    $video_type = isset($_POST['video_type']) ? sanitize_text_field($_POST['video_type']) : 'upload';
-    update_post_meta($post_id, '_about_page_video_type', $video_type);
-    
-    // Save video URL based on type
-    if ($video_type === 'upload' && isset($_POST['about_video_url'])) {
-        update_post_meta($post_id, '_about_page_video', sanitize_url($_POST['about_video_url']));
-    } elseif ($video_type === 'url' && isset($_POST['video_url_input'])) {
-        $video_url = sanitize_url($_POST['video_url_input']);
-        if (aimpro_is_valid_video_url($video_url)) {
-            update_post_meta($post_id, '_about_page_video', $video_url);
-        }
-    }
-}
-add_action('save_post', 'aimpro_save_about_video_meta_box');
-
-
-// Function to get about page video
-function aimpro_get_about_video() {
-    $about_page = get_page_by_path('about');
-    if (!$about_page) {
-        return false;
-    }
-    
-    $video_enabled = get_post_meta($about_page->ID, '_about_page_video_enabled', true);
-    $video_url = get_post_meta($about_page->ID, '_about_page_video', true);
-    
-    if ($video_enabled === '1' && !empty($video_url)) {
-        return $video_url;
-    }
-    
-    return false;
-}
-
-// Helper function to validate video URLs
-function aimpro_is_valid_video_url($url) {
-    $youtube_regex = '/(?:youtube\.com\/(?:[^\/]+\/.+\/|(?:v|e(?:mbed)?)\/|.*[?&]v=)|youtu\.be\/)([^"&?\/\s]{11})/';
-    $vimeo_regex = '/(?:vimeo)\.com.*(?:videos|video|channels|)\/([\d]+)/i';
-    
-    return preg_match($youtube_regex, $url) || preg_match($vimeo_regex, $url);
-}
-
-// Helper function to get video embed code
-function aimpro_get_video_embed($url, $width = 560, $height = 315) {
-    if (!aimpro_is_valid_video_url($url)) {
-        return '<p>Invalid video URL</p>';
-    }
-    
-    // YouTube
-    if (preg_match('/(?:youtube\.com\/(?:[^\/]+\/.+\/|(?:v|e(?:mbed)?)\/|.*[?&]v=)|youtu\.be\/)([^"&?\/\s]{11})/', $url, $matches)) {
-        $video_id = $matches[1];
-        return '<iframe width="' . $width . '" height="' . $height . '" src="https://www.youtube.com/embed/' . $video_id . '" frameborder="0" allowfullscreen></iframe>';
-    }
-    
-    // Vimeo
-    if (preg_match('/(?:vimeo)\.com.*(?:videos|video|channels|)\/([\d]+)/i', $url, $matches)) {
-        $video_id = $matches[1];
-        return '<iframe width="' . $width . '" height="' . $height . '" src="https://player.vimeo.com/video/' . $video_id . '" frameborder="0" allowfullscreen></iframe>';
-    }
-    
-    return '<p>Video format not supported</p>';
-}
-
-// Helper function to get video type from About page
-function aimpro_get_about_video_type() {
-    $about_page = get_page_by_path('about');
-    if (!$about_page) {
-        return false;
-    }
-    
-    return get_post_meta($about_page->ID, '_about_page_video_type', true);
-}
-
-// Function to display About page video section
-function aimpro_display_about_video() {
-    $video_url = aimpro_get_about_video();
-    $video_type = aimpro_get_about_video_type();
-    
-    if (!$video_url) {
-        return '';
-    }
-    
-    $output = '<div class="about-video-section">';
-    
-    if ($video_type === 'url') {
-        // For YouTube/Vimeo URLs, use embed code
-        $output .= '<div class="video-container">';
-        $output .= aimpro_get_video_embed($video_url, 800, 450);
-        $output .= '</div>';
-    } else {
-        // For uploaded videos, use HTML5 video tag
-        $output .= '<div class="video-container">';
-        $output .= '<video width="800" height="450" controls>';
-        $output .= '<source src="' . esc_url($video_url) . '" type="video/mp4">';
-        $output .= 'Your browser does not support the video tag.';
-        $output .= '</video>';
-        $output .= '</div>';
-    }
-    
-    $output .= '</div>';
-    
-    return $output;
-}
-
-/**
- * Calculate estimated reading time for content
- */
-function aimpro_estimated_reading_time($content) {
-    $word_count = str_word_count(strip_tags($content));
-    $reading_time = ceil($word_count / 200); // 200 words per minute average
-    return max(1, $reading_time); // Minimum 1 minute
-}
-
-// Include streamline sales funnel meta functionality
-require_once get_template_directory() . '/includes/streamline-sales-funnel-meta.php';
-
-// Include funnel builds meta functionality
-require_once get_template_directory() . '/includes/funnel-builds-meta.php';
-
-// Include UX/UI optimisation meta functionality
-require_once get_template_directory() . '/includes/ux-ui-optimisation-meta.php';
-
-// Include email campaigns meta functionality
-require_once get_template_directory() . '/includes/email-campaigns-meta.php';
-
-// Include funnel automation meta functionality
-require_once get_template_directory() . '/includes/funnel-automation-meta.php';
-
-// Include single blog post meta functionality
-require_once get_template_directory() . '/includes/single-blog-meta.php';
-
-if (!function_exists('aimpro_get_seo_audit_default_values')) {
-    /**
-     * Set default values for SEO Audit page meta fields
-     * This ensures fields are pre-populated with the frontend content
-     */
-    function aimpro_get_seo_audit_default_values() {
-        return array(
-            // Header Section
-            'seo_audit_header_title' => 'Comprehensive SEO Audit',
-            'seo_audit_header_subtitle' => 'Get a detailed analysis of your website\'s SEO performance with actionable recommendations to boost your search rankings and organic traffic.',
-            
-            // Overview Section
-            'seo_audit_overview_title' => 'What\'s Included in Your SEO Audit',
-            'seo_audit_overview_description' => 'Our comprehensive SEO audit examines every aspect of your website\'s search performance to identify opportunities for improvement and provide clear, actionable recommendations.',
-            
-            // Benefits Section
-            'seo_audit_benefits_title' => 'What Our SEO Audit Reveals:',
-            
-            // Components Section
-            'seo_audit_components_title' => 'Complete SEO Audit Components',
-            
-            // Sample Section
-            'seo_audit_sample_title' => 'What\'s Included in Your SEO Audit Report',
-            
-            // Process Section
-            'seo_audit_process_title' => 'Our SEO Audit Process',
-            
-            // Case Study Section
-            'seo_audit_case_study_title' => 'TechStart Solutions: From Audit to 380% Traffic Growth',
-            'seo_audit_case_study_description' => 'Discover how our comprehensive SEO audit helped a technology company identify critical issues and implement strategies that resulted in a 380% increase in organic traffic and first-page rankings for 47 target keywords.',
-            'seo_audit_case_study_challenge_title' => 'The Challenge',
-            
-            // Testimonial Section
-            'seo_audit_testimonial_quote' => 'The SEO audit from Aimpro Digital was incredibly detailed and actionable. They found issues we never knew existed and provided a clear roadmap to fix them. After implementing their recommendations, our organic traffic increased by 380% in just 6 months.',
-            'seo_audit_testimonial_author_name' => 'Sarah Mitchell',
-            'seo_audit_testimonial_author_title' => 'Marketing Director',
-            'seo_audit_testimonial_author_company' => 'TechStart Solutions',
-            
-            // CTA Section
-            'seo_audit_cta_title' => 'Ready to Uncover Your SEO Opportunities?',
-            'seo_audit_cta_description' => 'Get your comprehensive SEO audit today and discover exactly what\'s holding your website back from ranking higher and attracting more organic traffic.',
-            'seo_audit_cta_primary_text' => 'Get Your Free SEO Audit',
-            'seo_audit_cta_secondary_text' => 'View All Services',
-        );
-    }
-}
-
-// Get SEO Services default values
-if (!function_exists('get_seo_services_defaults')) {
-    function get_seo_services_defaults() {
-        return array(
-            'header_title' => 'Professional SEO Services',
-            'header_subtitle' => 'Drive more organic traffic and boost your search rankings with our data-driven SEO strategies and proven methodologies.',
-            'overview_title' => 'Comprehensive SEO Solutions That Drive Results',
-            'overview_description' => 'Our proven SEO strategies help businesses increase organic traffic, improve search rankings, and drive sustainable growth. From technical optimization to content strategy, we provide end-to-end SEO services that deliver measurable results.',
-            'overview_benefits_title' => 'Why Choose Our SEO Services:',
-            'overview_benefits' => array(
-                'Proven track record with 300+ successful campaigns',
-                'Data-driven approach with transparent reporting',
-                'White-hat techniques that ensure long-term success',
-                'Dedicated account management and regular updates',
-                'Custom strategies tailored to your industry',
-                'Local, national, and international SEO expertise'
-            ),
-            'overview_image' => '',
-            'services_grid_title' => 'Our SEO Service Portfolio',
-            
-            // Service 1 - Technical SEO
-            'service_1_title' => 'Technical SEO',
-            'service_1_description' => 'Optimize your website\'s technical foundation for better crawlability, indexing, and user experience.',
-            'service_1_features' => array('Site speed optimization', 'Mobile responsiveness', 'Core Web Vitals', 'XML sitemaps', 'Schema markup'),
-            'service_1_result' => '45% average improvement in Core Web Vitals',
-            'service_1_link' => '/services/technical-seo',
-            'service_1_featured' => true,
-            
-            // Service 2 - On-Page SEO
-            'service_2_title' => 'On-Page SEO',
-            'service_2_description' => 'Optimize individual pages for target keywords and improve content quality and relevance.',
-            'service_2_features' => array('Keyword optimization', 'Meta tags', 'Content optimization', 'Internal linking', 'Header structure'),
-            'service_2_result' => '68% increase in keyword rankings',
-            'service_2_link' => '/services/on-page-seo',
-            'service_2_featured' => false,
-            
-            // Service 3 - Local SEO
-            'service_3_title' => 'Local SEO',
-            'service_3_description' => 'Dominate local search results and attract more customers from your geographic area.',
-            'service_3_features' => array('Google My Business', 'Local citations', 'Review management', 'Local keywords', 'NAP consistency'),
-            'service_3_result' => '89% increase in local visibility',
-            'service_3_link' => '/services/local-seo',
-            'service_3_featured' => false,
-            
-            // Service 4 - Content SEO
-            'service_4_title' => 'Content SEO',
-            'service_4_description' => 'Create and optimize high-quality content that ranks well and engages your audience.',
-            'service_4_features' => array('Content strategy', 'Keyword research', 'Blog optimization', 'Content audits', 'Topic clusters'),
-            'service_4_result' => '125% growth in organic traffic',
-            'service_4_link' => '/services/content-seo',
-            'service_4_featured' => false,
-            
-            // Service 5 - Link Building
-            'service_5_title' => 'Link Building',
-            'service_5_description' => 'Build high-quality backlinks to increase domain authority and improve search rankings.',
-            'service_5_features' => array('White-hat link building', 'Guest posting', 'Digital PR', 'Resource pages', 'Broken link building'),
-            'service_5_result' => '78% increase in domain authority',
-            'service_5_link' => '/services/link-building',
-            'service_5_featured' => false,
-            
-            // Service 6 - SEO Audits
-            'service_6_title' => 'SEO Audits',
-            'service_6_description' => 'Comprehensive analysis of your website\'s SEO performance and actionable improvement recommendations.',
-            'service_6_features' => array('Technical analysis', 'Competitor research', 'Keyword gaps', 'Content audit', 'Backlink analysis'),
-            'service_6_result' => '40+ page detailed report',
-            'service_6_link' => '/services/seo-audit',
-            'service_6_featured' => false,
-            
-            // Case Study
-            'case_study_label' => 'SEO Success Story',
-            'case_study_title' => 'TechStart Solutions: 380% Organic Traffic Growth',
-            'case_study_description' => 'TechStart Solutions was struggling with declining organic traffic and poor search rankings. Our comprehensive SEO strategy transformed their digital presence.',
-            'case_study_challenge_title' => 'The Challenge',
-            'case_study_challenges' => array(
-                'Poor technical SEO foundation',
-                'Limited content strategy',
-                'Weak backlink profile',
-                'No local SEO presence',
-                'Outdated SEO practices'
-            ),
-            'case_study_solution_title' => 'Our Solution',
-            'case_study_solutions' => array(
-                'Complete technical SEO overhaul',
-                'Comprehensive content strategy',
-                'Strategic link building campaign',
-                'Local SEO optimization',
-                'Ongoing monitoring and optimization'
-            ),
-            'case_study_results_title' => 'Results Achieved',
-            'case_study_link' => '/case-studies',
-            'case_study_link_text' => 'Read Full Case Study',
-            
-            // Case Study Results
-            'case_study_result_1_number' => '380%',
-            'case_study_result_1_label' => 'Organic Traffic Increase',
-            'case_study_result_2_number' => '250%',
-            'case_study_result_2_label' => 'Keyword Rankings Improved',
-            'case_study_result_3_number' => '68%',
-            'case_study_result_3_label' => 'Conversion Rate Boost',
-            'case_study_result_4_number' => '45%',
-            'case_study_result_4_label' => 'Page Speed Improvement',
-            
-            // Process
-            'process_title' => 'Our Proven SEO Process',
-            'process_step_1_title' => 'SEO Audit & Strategy',
-            'process_step_1_description' => 'Comprehensive analysis of your current SEO performance and competitive landscape to develop a custom strategy.',
-            'process_step_2_title' => 'Technical Optimization',
-            'process_step_2_description' => 'Fix technical issues, improve site speed, and ensure proper indexing and crawlability.',
-            'process_step_3_title' => 'Content & On-Page',
-            'process_step_3_description' => 'Optimize existing content and create new, high-quality content targeting relevant keywords.',
-            'process_step_4_title' => 'Link Building & Promotion',
-            'process_step_4_description' => 'Build high-quality backlinks and increase domain authority through strategic outreach and promotion.',
-            'process_step_5_title' => 'Monitor & Optimize',
-            'process_step_5_description' => 'Continuous monitoring, reporting, and optimization to ensure sustained growth and performance.',
-            
-            // Industries
-            'industries_title' => 'SEO Services by Industry',
-            'industry_1_title' => 'E-commerce SEO',
-            'industry_1_description' => 'Specialized SEO strategies for online stores to increase product visibility and drive sales.',
-            'industry_1_features' => array('Product page optimization', 'Category pages', 'Shopping campaigns', 'Local inventory'),
-            'industry_2_title' => 'Healthcare SEO',
-            'industry_2_description' => 'Compliant SEO solutions for healthcare providers to attract more patients and build trust.',
-            'industry_2_features' => array('HIPAA compliance', 'Local medical SEO', 'Medical content', 'Reputation management'),
-            'industry_3_title' => 'Legal SEO',
-            'industry_3_description' => 'Specialized SEO for law firms to increase client acquisition and establish authority.',
-            'industry_3_features' => array('Legal content', 'Local law SEO', 'Practice area pages', 'Client testimonials'),
-            
-            // Testimonial
-            'testimonial_quote' => 'The SEO team at Aimpro Digital transformed our organic presence. Our traffic increased by 380% and we\'re now ranking #1 for our most important keywords. Their data-driven approach and clear communication made all the difference.',
-            'testimonial_name' => 'Sarah Mitchell',
-            'testimonial_title' => 'Marketing Director',
-            'testimonial_company' => 'TechStart Solutions',
-            
-            // CTA
-            'cta_title' => 'Ready to Dominate Search Results?',
-            'cta_description' => 'Get a free SEO audit and discover how we can help you outrank your competition and drive more organic traffic.',
-            'cta_primary_text' => 'Get Free SEO Audit',
-            'cta_primary_link' => '/contact',
-            'cta_secondary_text' => 'View Our SEO Packages',
-            'cta_secondary_link' => '/services/seo-packages',
-            'cta_features' => array(
-                'Free 40+ page SEO audit',
-                'Competitive analysis included',
-                'Custom strategy consultation',
-                'No obligation required'
-            )
-        );
-    }
-}
-
-// Add Homepage Settings admin page
 function aimpro_add_homepage_settings_menu() {
     add_menu_page(
         'Homepage Settings',
@@ -2324,11 +1390,6 @@ function aimpro_homepage_settings_page() {
                         </td>
                     </tr>
                 </table>
-            </div>
-            
-            <div id="other-sections" class="tab-content" style="display:none;">
-                <h3>Other Homepage Sections</h3>
-                <p>Additional sections like blog, testimonials, and final CTA can be added here as needed.</p>
             </div>
             
             <div id="lead-magnet-section" class="tab-content" style="display:none;">
@@ -2626,3 +1687,12 @@ function aimpro_homepage_settings_page() {
     </div>
     <?php
 }
+
+/**
+ * Force light theme on all pages
+ */
+function aimpro_force_light_theme($classes) {
+    $classes[] = 'light-theme';
+    return $classes;
+}
+add_filter('body_class', 'aimpro_force_light_theme');

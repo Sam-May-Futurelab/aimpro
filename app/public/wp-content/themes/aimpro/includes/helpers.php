@@ -157,6 +157,38 @@ function aimpro_get_field($field_name, $default = '') {
     );
     
     // Combine all page-specific fields
+    // List of homepage fields that should check WordPress options directly
+    $homepage_fields = array(
+        'hero_badge_text', 'hero_title', 'hero_strapline_1', 'hero_strapline_2', 
+        'hero_strapline_3', 'hero_strapline_4', 'hero_subtitle', 'hero_primary_cta_text', 
+        'hero_primary_cta_url', 'value_statement_title', 'value_statement_description', 
+        'value_statement_cta_text', 'value_statement_cta_url', 'stat_1_number', 'stat_1_label', 
+        'stat_2_number', 'stat_2_label', 'stat_3_number', 'stat_3_label', 'stat_4_number', 
+        'stat_4_label', 'services_title', 'services_subtitle', 'lead_magnet_title', 
+        'lead_magnet_subtitle', 'lead_magnet_ebook_title', 'lead_magnet_ebook_description', 
+        'lead_magnet_form_title', 'lead_magnet_form_subtitle', 'office_title', 'office_description', 
+        'coffee_meeting_url', 'office_address_title', 'office_address', 'about_page_url', 
+        'team_section_url', 'company_page_url', 'team_section_title', 'team_section_subtitle',
+        'team_cta_text', 'team_cta_url', 'testimonials_badge', 'testimonials_title', 
+        'testimonials_subtitle', 'testimonials_cta_text', 'testimonials_cta_url',
+        'testimonials_stat_1_number', 'testimonials_stat_1_label', 'testimonials_stat_2_number',
+        'testimonials_stat_2_label', 'testimonials_stat_3_number', 'testimonials_stat_3_label',
+        'blog_title', 'blog_subtitle', 'blog_cta_text', 'blog_cta_url', 'homepage_blog_1_image', 
+        'homepage_blog_1_date', 'homepage_blog_1_category', 'homepage_blog_1_title', 
+        'homepage_blog_1_excerpt', 'homepage_blog_1_url', 'homepage_blog_2_image', 
+        'homepage_blog_2_date', 'homepage_blog_2_category', 'homepage_blog_2_title', 
+        'homepage_blog_2_excerpt', 'homepage_blog_2_url', 'homepage_blog_3_image', 
+        'homepage_blog_3_date', 'homepage_blog_3_category', 'homepage_blog_3_title', 
+        'homepage_blog_3_excerpt', 'homepage_blog_3_url', 'final_cta_title', 
+        'final_cta_description', 'newsletter_title', 'newsletter_subtitle', 'service_tags'
+    );
+
+    // For homepage fields, check WordPress options directly
+    if (in_array($field_name, $homepage_fields)) {
+        $value = get_option($field_name, $default);
+        return !empty($value) ? $value : $default;
+    }
+
     $page_meta_fields = array_merge($contact_fields, $about_fields, $locations_fields);
     
     // For page-specific fields, check post meta first
